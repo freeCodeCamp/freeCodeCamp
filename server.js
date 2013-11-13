@@ -1,24 +1,37 @@
 var express = require('express'),
-    mongoose = require('mongoose'),
+    http = require('http'),
+    path = require('path'),
     fs = require('fs'),
+    mongoose = require('mongoose'),
+    passport = require('passport'),
     config = require('./conf');
 
+var User = require('./server/models/User');
 
 var db = mongoose.connect(config.db);
 var app = express();
 
-
-/**
- * Express Settings
- */
 app.set('port', process.env.PORT || 3000);
+app.set('views', __dirname + '/client/views');
+app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.cookieParser());
+app.use(express.bodyParser());
 app.use(express.methodOverride());
+app.use(express.cookieSession({ secret: process.env.COOKIE_SECRET || 'secret' }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(app.router);
 app.use(express.static(config.root + '/public'));
+
+passport.use(User.localStrategy);
+passport.use(User.twitterStrategy());
+passport.use(User.facebookStrategy());
+passport.use(User.googleStrategy());
+passport.use(User.linkedInStrategy());
+passport.serializeUser(User.serializeUser);
+passport.deserializeUser(User.deserializeUser);
 
 
 /**
@@ -26,13 +39,6 @@ app.use(express.static(config.root + '/public'));
  */
 var articles = require('./controllers/articles');
 var users = require('./controllers/users');
-
-
-/**
- * API Models
- */
-var Article = require('./models/article');
-var User = require('./models/user');
 
 
 /**
