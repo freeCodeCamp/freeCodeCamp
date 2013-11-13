@@ -1,0 +1,25 @@
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+	<form class="form-horizontal" data-ng-submit="update()">
+		<div class="control-group">
+			<label class="control-label" for="title">Title</label>
+
+			<div class="controls">
+				<input type="text" data-ng-model="article.title" id="title" placeholder="Title" required>
+				</input>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="content">Content</label>
+
+			<div class="controls">
+				<textarea data-ng-model="article.content" id="content" cols="30" rows="10" placeholder="Content">
+				</textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" class="btn">
+			</div>
+		</div>
+	</form>
+</section>
