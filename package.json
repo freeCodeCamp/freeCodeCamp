@@ -1,40 +1,18 @@
 {
-    "name": "angular-quickstart",
-    "version": "0.1.0",
-    "scripts": {
-        "start": "node node_modules/grunt-cli/bin/grunt",
-        "test": "node node_modules/grunt-cli/bin/grunt test",
-        "postinstall": "bower install"
-    },
-    "dependencies": {
-        "express": "latest",
-        "jade": "latest",
-        "mongoose": "latest",
-        "connect-mongo": "latest",
-        "connect-flash": "latest",
-        "crypto": "latest",
-        "passport": "latest",
-        "passport-local": "latest",
-        "passport-facebook": "latest",
-        "passport-twitter": "latest",
-        "passport-github": "latest",
-        "passport-google-oauth": "latest",
-        "underscore": "latest",
-        "view-helpers": "latest",
-        "mean-logger": "latest",
-        "forever": "latest",
-        "bower": "latest",
-        "grunt": "latest",
-        "grunt-cli": "latest",
-        "grunt-env": "latest"
-    },
-    "devDependencies": {
-        "supertest": "latest",
-        "should": "latest",
-        "grunt-contrib-watch": "latest",
-        "grunt-contrib-jshint": "latest",
-        "grunt-nodemon": "latest",
-        "grunt-concurrent": "latest",
-        "grunt-mocha-test": "latest"
-    }
+  "name": "angular-quickstart",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest",
+    "mongoose": "latest",
+    "crypto": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "passport-facebook": "latest",
+    "passport-google": "latest",
+    "passport-linkedin": "latest",
+    "passport-twitter": "latest",
+    "underscore": "latest",
+    "forever": "latest"
+  }
 }
