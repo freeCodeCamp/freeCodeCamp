@@ -22,6 +22,20 @@ app.use(express.static(config.root + '/public'));
 
 
 /**
+ * API Controllers
+ */
+var articles = require('./controllers/articles');
+var users = require('./controllers/users');
+
+
+/**
+ * API Models
+ */
+var Article = require('./models/article');
+var User = require('./models/user');
+
+
+/**
  * API Routes
  */
 app.post('/api/users', users.create);

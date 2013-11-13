@@ -1,16 +1,9 @@
-/**
- * Module dependencies.
- */
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema,
-  crypto = require('crypto'),
-  _ = require('underscore'),
-  authTypes = ['github', 'twitter', 'facebook', 'google'];
+    Schema = mongoose.Schema,
+    crypto = require('crypto'),
+    _ = require('underscore');
 
 
-/**
- * User Schema
- */
 var UserSchema = new Schema({
   name: String,
   email: String,
@@ -23,7 +16,6 @@ var UserSchema = new Schema({
   salt: String,
   facebook: {},
   twitter: {},
-  github: {},
   google: {}
 });
 
