@@ -43,60 +43,58 @@ var users = [
 ];
 
 module.exports = {
+
   addUser: function(username, password, role, callback) {
-    if (this.findByUsername(username) !== undefined) {
+    if (this.findByUsername(username)) {
       return callback("UserAlreadyExists");
     }
 
-    // Clean up when 500 users reached
-    if(users.length > 500) {
-      users = users.slice(0, 2);
-    }
-
     var user = new User({
-      id:         _.max(users, function(user) { return user.id; }).id + 1,
       username:   username,
       password:   password,
       role:       role
     });
-    users.push(user);
-    callback(null, user);
+
+    user.save(function(err) {
+      callback(null, user);
+    });
   },
 
   findOrCreateOauthUser: function(provider, providerId) {
-    var user = module.exports.findByProviderId(provider, providerId);
-    if(!user) {
-      user = {
-        id: _.max(users, function(user) { return user.id; }).id + 1,
-        username: provider + '_user', // Should keep Oauth users anonymous on demo site
-        role: userRoles.user,
-        provider: provider
-      };
-      user[provider] = providerId;
-      users.push(user);
-    }
-
-    return user;
-  },
-
-  findAll: function() {
-    return _.map(users, function(user) { return _.clone(user); });
-  },
-
-  findById: function(id) {
-    return _.clone(_.find(users, function(user) { return user.id === id }));
-  },
-
-  findByUsername: function(username) {
-    User.findOne({ username: username }, function(err, user) {
+    User.findOne({ $where: provider + '===' + providerId }, function(err, user) {
       if (user) {
         return user;
+      } else {
+        user = {
+          username: provider + '_user',
+          role: userRoles.user,
+          provider: provider
+        };
+        user[provider] = providerId;
+
+        user.save(function(err) {
+          return user;
+        });
       }
     });
   },
 
-  findByProviderId: function(provider, id) {
-    return _.find(users, function(user) { return user[provider] === id; });
+  findAll: function() {
+    User.find(function(err, users) {
+      return users;
+    });
+  },
+
+  findById: function(id) {
+    User.findById(id, function(err, user) {
+      if (user) return user;
+    });
+  },
+
+  findByUsername: function(username) {
+    User.findOne({ username: username }, function(err, user) {
+      if (user) return user;
+    });
   },
 
   validate: function(user) {
