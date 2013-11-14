@@ -5,46 +5,50 @@ var express = require('express'),
     mongoose = require('mongoose'),
     passport = require('passport'),
 
-    index = require('./controllers'),
-    api = require('./controllers/api');
+    config = require('./config'),
 
+    // Load controllers
+    home = require('./controllers/home'),
+    api = require('./controllers/api'),
+    auth = require('./controllers/auth'),
+    users = require('./controllers/users');
 
+// Connect to database
+mongoose.connect(config.db, function(err, res) {
+  if (err) {
+    console.log ('Error connecting to database: ' + err);
+  } else {
+    console.log ('Successfully connected to database!');
+  }
+});
 
-var db = module.exports = mongoose.connect('localhost');
 var app = module.exports = express();
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(express.favicon());
 app.use(express.logger('dev'));
+app.use(express.errorHandler());
+app.use(express.favicon());
 app.use(express.cookieParser());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieSession({ secret: 'secret' }));
+app.use(express.session({ secret: 'Bob-Alice' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-
-if (app.get('env') === 'development') {
-  app.use(express.errorHandler());
-};
-
-
-/**
- * API Routes
- */
-app.get('/', index.index);
-app.get('/partial/:name', index.partial);
-
-
-// JSON API
-app.get('/api/name', api.name);
-
-// redirect all others to the index (HTML5 history)
-app.get('*', index.index);
+// Routes
+app.get('/', home.index);
+app.get('/partials/:name', home.partials);
+//app.get('/account', auth.ensureAuthenticated, users.account);
+//app.get('/logout', users.logout);
+//app.post('/login', users.postlogin);
+//app.get('/login', users.getlogin);
+//app.get('/admin', auth.ensureAuthenticated, auth.ensureAdmin(), users.admin);
+//app.get('/api/name', api.name);
+app.get('*', home.index);
 
 
 app.listen(app.get('port'), function() {
