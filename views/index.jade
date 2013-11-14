@@ -1,0 +1,25 @@
+extends layout
+block body
+  .navbar.navbar-default.navbar-fixed-top(role="navigation")
+    .navbar-header
+      button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="#") Brand
+    .collapse.navbar-collapse.navbar-ex1-collapse
+      ul.nav.navbar-nav
+        li
+          a(href="view1") View1
+        li
+          a(href="view2") View2 
+  .container
+    div(ng-controller='AppCtrl')
+      .jumbotron
+        h1 Hello {{name}}
+      div(ng-view)
+    hr
+    div
+      | Angular seed app: v
+      span(app-version)

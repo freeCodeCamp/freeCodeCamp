@@ -5,7 +5,7 @@
     "express": "latest",
     "jade": "latest",
     "mongoose": "latest",
-    "crypto": "latest",
+    "bcrypt": "latest",
     "passport": "latest",
     "passport-local": "latest",
     "passport-facebook": "latest",
