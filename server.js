@@ -6,7 +6,7 @@ var express = require('express'),
     passport = require('passport'),
     config = require('./conf');
 
-var User = require('./server/models/User');
+var Auth = require('./server/controllers/auth');
 
 var db = mongoose.connect(config.db);
 var app = express();
@@ -25,13 +25,13 @@ app.use(passport.session());
 app.use(app.router);
 app.use(express.static(config.root + '/public'));
 
-passport.use(User.localStrategy);
-passport.use(User.twitterStrategy());
-passport.use(User.facebookStrategy());
-passport.use(User.googleStrategy());
-passport.use(User.linkedInStrategy());
-passport.serializeUser(User.serializeUser);
-passport.deserializeUser(User.deserializeUser);
+passport.use(Auth.localStrategy);
+passport.use(Auth.twitterStrategy());
+passport.use(Auth.facebookStrategy());
+passport.use(Auth.googleStrategy());
+passport.use(Auth.linkedInStrategy());
+passport.serializeUser(Auth.serializeUser);
+passport.deserializeUser(Auth.deserializeUser);
 
 
 /**
