@@ -1,5 +1,6 @@
-var mongoose = require('mongoose');
-var User = require('../models/user');
+var mongoose = require('mongoose'),
+    passport = require('passport'),
+    User = require('../models/user');
 
 exports.account = function(req, res) {
   res.render('account', { user: req.user });

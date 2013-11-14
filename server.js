@@ -41,13 +41,16 @@ app.use(app.router);
 
 // Routes
 app.get('/', home.index);
-app.get('/partials/:name', home.partials);
+
 //app.get('/account', auth.ensureAuthenticated, users.account);
-//app.get('/logout', users.logout);
-//app.post('/login', users.postlogin);
-//app.get('/login', users.getlogin);
+app.get('/logout', users.logout);
+app.post('/login', users.postlogin);
 //app.get('/admin', auth.ensureAuthenticated, auth.ensureAdmin(), users.admin);
 //app.get('/api/name', api.name);
+app.get('/partials/login', users.getlogin);
+
+app.get('/partials/:name', home.partials);
+
 app.get('*', home.index);
 
 
