@@ -1,0 +1,10 @@
+{
+  "name": "angular-quickstart",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "latest",
+    "todc-bootstrap-main": "latest",
+    "angular": "1.2.x",
+    "angular-route": "1.2.x"
+  }
+}
