@@ -14,8 +14,14 @@ block body
           a(href="view1") View1
         li
           a(href="view2") View2
-        li
-          a(href="login") login
+        if !user
+          li
+            a(href="login") login
+        else
+          li
+            a(href='#') Welcome
+          li
+            a(href='logout') Logout
   .container
     div(ng-controller='AppCtrl')
       .jumbotron

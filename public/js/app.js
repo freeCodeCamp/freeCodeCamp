@@ -16,6 +16,9 @@ angular.module('myApp', ['ngRoute', 'myApp.filters', 'myApp.services', 'myApp.di
       templateUrl: 'partials/login',
       controller: MyCtrl3
     });
+    $routeProvider.when('/logout', {
+
+    });
     $routeProvider.otherwise({ redirectTo: '/view1' });
     $locationProvider.html5Mode(true);
   }]);

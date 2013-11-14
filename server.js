@@ -48,7 +48,6 @@ app.post('/login', users.postlogin);
 //app.get('/admin', auth.ensureAuthenticated, auth.ensureAdmin(), users.admin);
 //app.get('/api/name', api.name);
 app.get('/partials/login', users.getlogin);
-
 app.get('/partials/:name', home.partials);
 
 app.get('*', home.index);
