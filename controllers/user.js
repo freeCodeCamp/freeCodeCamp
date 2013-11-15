@@ -1,6 +1,8 @@
 var mongoose = require('mongoose'),
-    passport = require('passport'),
-    User = require('../models/user');
+    passport = require('passport');
+
+// Import models
+var User = require('../models/user');
 
 exports.account = function(req, res) {
   res.render('account', { user: req.user });
