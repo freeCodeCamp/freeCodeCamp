@@ -4,15 +4,24 @@ block content
   if message
     p= message
 
-  form(action='/login', method='post')
-    div
-      label Username:
-      input(type='text', name='username')
-      br
-      div
-        label Password:
-        input(type='password', name='password')
-      div
-        input(type='submit', value='Submit')
-    p
-      small Hint - bob:secret
+  .main
+    h3 Signup Form
+    form(role='form')
+      .form-group
+        .row
+          .col-xs-6.col-md-6
+            label(for='inputUsernameEmail') First Name
+            input.form-control(name='firstname', type='text', required='', autofocus='')
+          .col-xs-6.col-md-6
+            label(for='inputUsernameEmail') Last Name
+            input.form-control(name='lastname', type='text', required='')
+      .form-group
+        label(for='inputUsernameEmail') Email
+        input#inputUsernameEmail.form-control(type='text')
+      .form-group
+        label(for='inputPassword') Password
+        input#inputPassword.form-control(type='password')
+      .form-group
+        label(for='inputPassword') Confirm Password
+        input#inputPassword.form-control(type='password')
+      button.btn.btn.btn-primary(type='submit') Signup
