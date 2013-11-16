@@ -9,19 +9,19 @@ block content
     form(role='form')
       .form-group
         .row
-          .col-xs-6.col-md-6
-            label(for='inputUsernameEmail') First Name
-            input.form-control(name='firstname', type='text', required='', autofocus='')
-          .col-xs-6.col-md-6
-            label(for='inputUsernameEmail') Last Name
-            input.form-control(name='lastname', type='text', required='')
+          .col-xs-6.col-sm-6.col-md-6
+            label(for='firstName') First Name
+            input.form-control(name='firstName', type='text', autofocus='')
+          .col-xs-6.col-sm-6.col-md-6
+            label(for='lastName') Last Name
+            input.form-control(name='lastName', type='text')
       .form-group
-        label(for='inputUsernameEmail') Email
-        input#inputUsernameEmail.form-control(type='text')
+        label(for='email') Email
+        input.form-control(type='email', name='email', id='email')
       .form-group
-        label(for='inputPassword') Password
-        input#inputPassword.form-control(type='password')
+        label(for='password') Password
+        input.form-control(type='password', name='password', id='password')
       .form-group
-        label(for='inputPassword') Confirm Password
-        input#inputPassword.form-control(type='password')
+        label(for='confirmPassword') Confirm Password
+        input.form-control(type='password', id='confirmPassword')
       button.btn.btn.btn-primary(type='submit') Signup
