@@ -1,87 +1,9 @@
 extends layout
-block body
-  .navbar.navbar-default.navbar-fixed-top(role="navigation")
-    .navbar-header
-      button.navbar-toggle(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse")
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href="#") Brand
-    .collapse.navbar-collapse.navbar-ex1-collapse
-      ul.nav.navbar-nav
-        li
-          a(href="view1") View1
-        li
-          a(href="view2") View2
-        if !user
-          li
-            a(href="login") login
-        else
-          li
-            a(href='#') Welcome
-          li
-            a(href='logout') Logout
-  .container
-    div(ng-controller='AppCtrl')
-      .jumbotron
-        h1 Hello {{name}}
-        h2 3 times 3 mod 3 is {{3*3%3}}
-      div(ng-view)
-    br
-    button.btn.btn-labeled.btn-success(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-ok
-      | Success
-    br
-    button.btn.btn-labeled.btn-danger(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-remove
-      | Cancel
-    br
-    button.btn.btn-labeled.btn-warning(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-bookmark
-      | Bookmark
-    br
-    button.btn.btn-labeled.btn-primary(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-camera
-      | Camera
-    br
-    button.btn.btn-labeled.btn-default(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-chevron-left
-      | Left
-    br
-    button.btn.btn-labeled.btn-default(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-chevron-right
-      | Right
-    br
-    button.btn.btn-labeled.btn-success(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-thumbs-up
-      | Thumbs
-      | Up
-    br
-    button.btn.btn-labeled.btn-danger(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-thumbs-down
-      | Thumbs
-      | Down
-    br
-    button.btn.btn-labeled.btn-info(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-refresh
-      | Refresh
-    br
-    button.btn.btn-labeled.btn-danger(type='button')
-      span.btn-label
-        i.glyphicon.glyphicon-trash
-      | Trash
 
-    hr
-    div
-      | Angular seed app: v
-      span(app-version)
+block content
+  .starter-template
+    h1 Bootstrap starter template
+    p.lead
+      | Use this document as a way to quickly start any new project.
+      br
+      | All you get is this text and a mostly barebones HTML document.

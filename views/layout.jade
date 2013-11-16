@@ -1,19 +1,33 @@
-!!!
-html(ng-app="myApp")
+!!! 5
+html(lang='en')
   head
-    meta(charset='utf8')
-    base(href='/')
-    title Angular Express Bootstrap Seed App
-    link(rel='stylesheet', href='/css/bootstrap.css')
-    link(rel='stylesheet', href='/css/todc-bootstrap.css')
-    link(rel='stylesheet', href='/css/app.css')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Starter Template for Bootstrap
+    link(href='/css/bootstrap.css', rel='stylesheet')
+    link(href='/css/app.css', rel='stylesheet')
   body
-    block body
+    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#') Project name
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='#') Home
+            li
+              a(href='#about') About
+            li
+              a(href='#contact') Contact
+    .container
+      block content
 
-    script(src='/js/lib/angular.js')
-    script(src='/js/lib/angular-route.js')
-    script(src='/js/app.js')
-    script(src='/js/services.js')
-    script(src='/js/controllers.js')
-    script(src='/js/filters.js')
-    script(src='/js/directives.js')
+    script(src='/js/lib/jquery.js')
