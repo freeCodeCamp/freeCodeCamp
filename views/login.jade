@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  if message
+    p= message
+
+  .row
+    .main
+      h3
+        | Please Login, or&nbsp;
+        a(href='/signup') Sign Up
+      .row
+        .col-xs-6.col-sm-6.col-md-6
+          a.btn.btn-lg.btn-primary.btn-block(href='#') Facebook
+        .col-xs-6.col-sm-6.col-md-6
+          a.btn.btn-lg.btn-info.btn-block(href='#') Google
+      .login-or
+        hr.hr-or
+        span.span-or or
+      form(role='form')
+        .form-group
+          label(for='inputUsernameEmail') Username or email
+          input#inputUsernameEmail.form-control(type='text')
+        .form-group
+          a.pull-right(href='#') Forgot password?
+          label(for='inputPassword') Password
+          input#inputPassword.form-control(type='password')
+        .checkbox.pull-right
+          label
+            input(type='checkbox')
+            | Remember me
+        button.btn.btn.btn-primary(type='submit')
+          | Log In

@@ -9,7 +9,6 @@
     "passport": "latest",
     "passport-local": "latest",
     "underscore": "latest",
-    "forever": "latest",
-    "hbs": "latest"
+    "forever": "latest"
  }
 }

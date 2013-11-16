@@ -27,7 +27,13 @@ html(lang='en')
               a(href='#about') About
             li
               a(href='#contact') Contact
-    .container
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='/login') Login
+            li
+              a(href='/signup') Create Account
+
+  .container
       block content
 
     script(src='/js/lib/jquery.js')

@@ -8,8 +8,16 @@ exports.account = function(req, res) {
   res.render('account', { user: req.user });
 };
 
-exports.getlogin = function(req, res) {
-  res.render('partials/login', { user: req.user, message: req.session.messages });
+exports.getLogin = function(req, res) {
+  res.render('login', { user: req.user, message: req.session.messages });
+};
+
+exports.getSignup = function(req, res) {
+  res.render('signup', { user: req.user, message: req.session.messages });
+};
+
+exports.postSignup = function(req, res) {
+  console.log('posted signup');
 };
 
 exports.admin = function(req, res) {

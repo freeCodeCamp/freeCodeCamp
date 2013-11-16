@@ -12,7 +12,7 @@ var config = require('./config.json');
 var home = require('./controllers/home'),
     api = require('./controllers/api'),
     auth = require('./controllers/auth'),
-    users = require('./controllers/user');
+    user = require('./controllers/user');
 
 // Connect to database
 var db = mongoose.connect(config.db);
@@ -38,12 +38,19 @@ app.use(app.router);
 // Routes
 app.get('/', home.index);
 
-app.get('/account', auth.ensureAuthenticated, users.account);
-app.get('/logout', users.logout);
-app.post('/login', users.postlogin);
-app.get('/admin', auth.ensureAuthenticated, auth.ensureAdmin(), users.admin);
+app.get('/login', user.getLogin);
+app.get('/signup', user.getSignup);
+
+app.get('/logout', user.logout);
+
+app.post('/login', user.postlogin);
+app.post('/signup', user.postSignup);
+
+app.get('/account', auth.ensureAuthenticated, user.account);
+
+
+app.get('/admin', auth.ensureAuthenticated, auth.ensureAdmin(), user.admin);
 app.get('/api/name', api.name);
-app.get('/partials/login', users.getlogin);
 app.get('/partials/:name', home.partials);
 app.get('*', home.index);
 
