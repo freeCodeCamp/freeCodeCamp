@@ -18,12 +18,12 @@ block content
       span.span-or or
     form(role='form')
       .form-group
-        label(for='inputUsernameEmail') Username or email
-        input#inputUsernameEmail.form-control(type='text')
+        label(for='email') Email
+        input.form-control(type='text', name='email', id='email', placeholder='Email')
       .form-group
         a.pull-right(href='#') Forgot password?
-        label(for='inputPassword') Password
-        input#inputPassword.form-control(type='password')
+        label(for='password') Password
+        input.form-control(type='password', name='password', id='password', placeholder='Password')
       .checkbox.pull-right
         label
           input(type='checkbox')
