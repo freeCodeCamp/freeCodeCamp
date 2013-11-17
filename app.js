@@ -35,23 +35,23 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-// Routes
+// Routes (url path, corresponding controller)
 app.get('/', home.index);
 
 app.get('/login', user.getLogin);
-app.get('/signup', user.getSignup);
+app.post('/login', user.postlogin);
 
 app.get('/logout', user.logout);
 
-app.post('/login', user.postlogin);
+app.get('/signup', user.getSignup);
 app.post('/signup', user.postSignup);
 
 app.get('/account', auth.ensureAuthenticated, user.account);
 
-
 app.get('/admin', auth.ensureAuthenticated, auth.ensureAdmin(), user.admin);
 app.get('/api/name', api.name);
 app.get('/partials/:name', home.partials);
+
 app.get('*', home.index);
 
 

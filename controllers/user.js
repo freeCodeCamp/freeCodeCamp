@@ -13,11 +13,30 @@ exports.getLogin = function(req, res) {
 };
 
 exports.getSignup = function(req, res) {
-  res.render('signup', { user: req.user, message: req.session.messages });
+  res.render('signup', {
+    user: req.user,
+    message: req.session.messages
+  });
 };
 
 exports.postSignup = function(req, res) {
-  console.log('posted signup');
+
+  var user = new User({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password
+  });
+
+  // TODO: add User.schema.path validation
+  // TODO: check if user already exists in user.save() by catching that error
+  user.save(function(err) {
+    console.log('New user created');
+    req.login(user, function(err) {
+      if (err) throw err;
+      res.redirect('/');
+    });
+  });
 };
 
 exports.admin = function(req, res) {
