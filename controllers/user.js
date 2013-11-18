@@ -38,8 +38,13 @@ exports.postSignup = function(req, res) {
   // TODO: add User.schema.path validation
   // TODO: check if user already exists in user.save() by catching that error
   user.save(function(err) {
-    if (err) throw err;
-    console.log('New user created');
+    if (err) {
+      if (err.code === 11000) {
+        return res.send('Duplicate user detected');
+      } else {
+        return res.send('Database validation error');
+      }
+    }
     req.login(user, function(err) {
       if (err) throw err;
       res.redirect('/');
