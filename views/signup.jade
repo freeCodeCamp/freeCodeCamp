@@ -25,3 +25,9 @@ block content
         label(for='confirmPassword') Confirm Password
         input.form-control(type='password', id='confirmPassword', placeholder='Confirm Password')
       button.btn.btn.btn-primary(type='submit') Signup
+
+    if messages.length
+      for msg in messages
+        p.alert.alert-danger
+          strong #{msg.name}:
+          |  #{msg.message}

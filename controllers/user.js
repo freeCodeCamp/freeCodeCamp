@@ -1,7 +1,9 @@
 var mongoose = require('mongoose'),
-    passport = require('passport');
+    passport = require('passport'),
+    _ = require('underscore');
 
 // Import models
+var User = require('../models/User');
 
 exports.account = function(req, res) {
   res.render('account', { user: req.user });
@@ -45,7 +47,7 @@ exports.getSignup = function(req, res) {
   res.render('signup', {
     title: 'Create Account',
     user: req.user,
-    message: req.session.messages
+    messages: req.flash('messages')
   });
 };
 
@@ -63,9 +65,13 @@ exports.postSignup = function(req, res) {
   user.save(function(err) {
     if (err) {
       if (err.code === 11000) {
-        return res.send('Duplicate user detected');
+        req.flash('messages', 'Duplicate user detected');
+        return res.redirect('/signup');
       } else if (err.name === 'ValidationError') {
-        return res.send(err.errors);
+        console.log();
+        req.flash('messages', _.toArray(err.errors));
+        //console.log(err);
+        return res.redirect('/signup');
       }
     }
     req.logIn(user, function(err) {
