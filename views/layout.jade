@@ -28,10 +28,16 @@ html
             li(class=title=='Contact'?'active':undefined)
               a(href='#contact') Contact
           ul.nav.navbar-nav.navbar-right
-            li(class=title=='Login'?'active':undefined)
-              a(href='/login') Login
-            li(class=title=='Create Account'?'active':undefined)
-              a(href='/signup') Create Account
+            if !user
+              li(class=title=='Login'?'active':undefined)
+                a(href='/login') Login
+              li(class=title=='Create Account'?'active':undefined)
+                a(href='/signup') Create Account
+            else
+              li.navbar-text
+                | Welcome, #{user.firstName}  #{user.lastName}
+              li
+                a(href='/logout') Logout
   .container
       block content
   script(src='/js/lib/jquery.js')

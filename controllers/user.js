@@ -33,17 +33,15 @@ exports.postSignup = function(req, res) {
     password: req.body.password
   });
 
-  // TODO: add User.schema.path validation
   user.save(function(err) {
     if (err) {
-      console.log(err);
       if (err.code === 11000) {
         return res.send('Duplicate user detected');
       } else if (err.name === 'ValidationError') {
         return res.send(err.errors);
       }
     }
-    req.login(user, function(err) {
+    req.logIn(user, function(err) {
       if (err) throw err;
       res.redirect('/');
     });
