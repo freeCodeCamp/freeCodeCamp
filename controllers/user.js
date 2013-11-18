@@ -14,7 +14,7 @@ exports.getLogin = function(req, res) {
   res.render('login', {
     title: 'Login',
     user: req.user,
-    message: req.session.messages
+    messages: req.flash('messages')
   });
 };
 
@@ -28,7 +28,7 @@ exports.postLogin = function(req, res, next) {
       return next(err);
     }
     if (!user) {
-      req.flash('message', [info.message]);
+      req.flash('messages', info.message);
       return res.redirect('/login');
     }
     req.logIn(user, function(err) {
@@ -53,7 +53,6 @@ exports.getSignup = function(req, res) {
  * POST /signup
  */
 exports.postSignup = function(req, res) {
-
   var user = new User({
     firstName: req.body.firstName,
     lastName: req.body.lastName,

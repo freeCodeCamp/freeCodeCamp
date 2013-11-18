@@ -1,8 +1,7 @@
 extends layout
 
 block content
-  if message
-    p= message
+
 
   .main
     h3
@@ -30,3 +29,8 @@ block content
           | Remember me
       button.btn.btn.btn-success(type='submit')
         | Log In
+
+    if messages.length
+      p.alert.alert-danger
+        strong Error!
+        |  #{messages}
