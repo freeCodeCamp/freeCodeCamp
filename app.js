@@ -2,6 +2,7 @@ var express = require('express'),
     http = require('http'),
     path = require('path'),
     fs = require('fs'),
+    flash = require('connect-flash'),
     mongoose = require('mongoose'),
     passport = require('passport');
 
@@ -32,6 +33,7 @@ app.use(express.methodOverride());
 app.use(express.session({ secret: 'Bob-Alice' }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
