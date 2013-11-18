@@ -33,16 +33,14 @@ exports.postSignup = function(req, res) {
     password: req.body.password
   });
 
-  console.log(req.body);
-
   // TODO: add User.schema.path validation
-  // TODO: check if user already exists in user.save() by catching that error
   user.save(function(err) {
     if (err) {
+      console.log(err);
       if (err.code === 11000) {
         return res.send('Duplicate user detected');
-      } else {
-        return res.send('Database validation error');
+      } else if (err.name === 'ValidationError') {
+        return res.send(err.errors);
       }
     }
     req.login(user, function(err) {
