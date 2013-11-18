@@ -2,12 +2,14 @@ var mongoose = require('mongoose'),
     passport = require('passport');
 
 // Import models
-var User = require('../models/user');
 
 exports.account = function(req, res) {
   res.render('account', { user: req.user });
 };
 
+/**
+ * GET /login
+ */
 exports.getLogin = function(req, res) {
   res.render('login', {
     title: 'Login',
@@ -16,6 +18,29 @@ exports.getLogin = function(req, res) {
   });
 };
 
+/**
+ * POST /login
+ */
+exports.postLogin = function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    }
+    if (!user) {
+      req.flash('message', [info.message]);
+      return res.redirect('/login');
+    }
+    req.logIn(user, function(err) {
+      if (err) return next(err);
+      return res.redirect('/');
+    });
+  })(req, res, next);
+};
+
+/**
+ * GET /signup
+ */
 exports.getSignup = function(req, res) {
   res.render('signup', {
     title: 'Create Account',
@@ -24,6 +49,9 @@ exports.getSignup = function(req, res) {
   });
 };
 
+/**
+ * POST /signup
+ */
 exports.postSignup = function(req, res) {
 
   var user = new User({
@@ -48,24 +76,16 @@ exports.postSignup = function(req, res) {
   });
 };
 
+/**
+ * GET /admin
+ */
 exports.admin = function(req, res) {
   res.send('access granted admin!');
 };
 
-exports.postlogin = function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
-    if (err) return next(err);
-    if (!user) {
-      req.flash('messages', [info.message]);
-      return res.redirect('/login');
-    }
-    req.logIn(user, function(err) {
-      if (err) { return next(err); }
-      return res.redirect('/');
-    });
-  })(req, res, next);
-};
-
+/**
+ * GET /logout
+ */
 exports.logout = function(req, res) {
   req.logout();
   res.redirect('/');

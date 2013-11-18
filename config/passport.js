@@ -1,6 +1,6 @@
 var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
-    User = require('../models/user');
+    User = require('../models/User');
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -12,10 +12,10 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-passport.use(new LocalStrategy(function(username, password, done) {
-  User.findOne({ username: username }, function(err, user) {
+passport.use(new LocalStrategy({ usernameField: 'email' },function(email, password, done) {
+  User.findOne({ email: email }, function(err, user) {
     if (err) { return done(err); }
-    if (!user) { return done(null, false, { message: 'Unknown user ' + username }); }
+    if (!user) { return done(null, false, { message: 'Unknown user ' + email }); }
     user.comparePassword(password, function(err, isMatch) {
       if (err) return done(err);
       if(isMatch) {

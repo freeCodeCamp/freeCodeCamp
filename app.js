@@ -8,11 +8,10 @@ var express = require('express'),
 
 // Configuration (API Keys, Database URI)
 var config = require('./config.json');
+var passportConf = require('./config/passport');
 
 // Load controllers
 var home = require('./controllers/home'),
-    api = require('./controllers/api'),
-    auth = require('./controllers/auth'),
     user = require('./controllers/user');
 
 // Connect to database
@@ -41,17 +40,16 @@ app.use(app.router);
 app.get('/', home.index);
 
 app.get('/login', user.getLogin);
-app.post('/login', user.postlogin);
+app.post('/login', user.postLogin);
 
 app.get('/logout', user.logout);
 
 app.get('/signup', user.getSignup);
 app.post('/signup', user.postSignup);
 
-app.get('/account', auth.ensureAuthenticated, user.account);
+app.get('/account', passportConf.ensureAuthenticated, user.account);
 
-app.get('/admin', auth.ensureAuthenticated, auth.ensureAdmin(), user.admin);
-app.get('/api/name', api.name);
+app.get('/admin', passportConf.ensureAuthenticated, passportConf.ensureAdmin(), user.admin);
 app.get('/partials/:name', home.partials);
 
 app.get('*', home.index);
