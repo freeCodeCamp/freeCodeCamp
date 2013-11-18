@@ -1,5 +1,8 @@
 exports.index = function(req, res){
-  res.render('index', { user: req.user });
+  res.render('index', {
+    user: req.user,
+    title: 'Home'
+  });
 };
 
 exports.partials = function (req, res) {

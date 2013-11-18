@@ -9,11 +9,16 @@ exports.account = function(req, res) {
 };
 
 exports.getLogin = function(req, res) {
-  res.render('login', { user: req.user, message: req.session.messages });
+  res.render('login', {
+    title: 'Login',
+    user: req.user,
+    message: req.session.messages
+  });
 };
 
 exports.getSignup = function(req, res) {
   res.render('signup', {
+    title: 'Create Account',
     user: req.user,
     message: req.session.messages
   });

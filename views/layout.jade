@@ -1,5 +1,5 @@
-!!! 5
-html(lang='en')
+doctype 5
+html
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -21,19 +21,17 @@ html(lang='en')
           a.navbar-brand(href='/') Project name
         .collapse.navbar-collapse
           ul.nav.navbar-nav
-            li.active
+            li(class=title=='Home'?'active':undefined)
               a(href='/') Home
-            li
+            li(class=title=='About'?'active':undefined)
               a(href='#about') About
-            li
+            li(class=title=='Contact'?'active':undefined)
               a(href='#contact') Contact
           ul.nav.navbar-nav.navbar-right
-            li
+            li(class=title=='Login'?'active':undefined)
               a(href='/login') Login
-            li
+            li(class=title=='Create Account'?'active':undefined)
               a(href='/signup') Create Account
-
   .container
       block content
-
-    script(src='/js/lib/jquery.js')
+  script(src='/js/lib/jquery.js')
