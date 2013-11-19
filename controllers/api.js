@@ -16,7 +16,8 @@ var foursquareAccessToken = 'MY_FOURSQUARE_ACCESS_TOKEN';
 
 exports.apiBrowser = function(req, res) {
   res.render('api', {
-    title: 'API Browser'
+    title: 'API Browser',
+    user: req.user
   });
 };
 
@@ -24,7 +25,8 @@ exports.apiBrowser = function(req, res) {
 exports.foursquare = function(req, res) {
 
   res.render('api/foursquare', {
-    title: 'Foursquare API'
+    title: 'Foursquare API',
+    user: req.user
   });
 
 };
