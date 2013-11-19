@@ -4,6 +4,8 @@ var passport = require('passport'),
     User = require('../models/User'),
     config = require('./config.json');
 
+// TODO: Request email permission from Oauth
+// TODO: if email matches, users are the same, merge accounts
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);

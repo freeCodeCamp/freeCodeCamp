@@ -12,7 +12,9 @@ var passportConf = require('./config/passport');
 
 // Load controllers
 var home = require('./controllers/home'),
-    user = require('./controllers/user');
+    user = require('./controllers/user'),
+    api = require('./controllers/api'),
+    contact = require('./controllers/contact');
 
 // Connect to database
 var db = mongoose.connect(config.db);
@@ -29,7 +31,7 @@ app.use(express.favicon());
 app.use(express.cookieParser());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.session({ secret: 'Bob-Alice' }));
+app.use(express.session({ secret: 'Bob-vs-Alice' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -51,6 +53,13 @@ app.get('/account', passportConf.ensureAuthenticated, user.account);
 
 app.get('/admin', passportConf.ensureAuthenticated, passportConf.ensureAdmin(), user.admin);
 app.get('/partials/:name', home.partials);
+
+app.get('/api', api.apiBrowser);
+
+app.get('/contact', contact.getContact);
+app.post('/contact', contact.postContact);
+
+
 
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
