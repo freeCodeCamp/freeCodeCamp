@@ -64,6 +64,7 @@ exports.postSignup = function(req, res) {
 
   user.save(function(err) {
     if (err) {
+      console.log(err);
       if (err.code === 11000) {
         req.flash('messages', 'User already exists');
         return res.redirect('/signup');
