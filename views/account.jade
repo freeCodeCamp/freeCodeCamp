@@ -1,0 +1,27 @@
+extends layout
+block content
+  h3 Account Management
+  form(role='form', method='POST')
+    .form-group
+      .row
+        .col-xs-6.col-sm-6.col-md-6
+          label(for='firstName') First Name
+          input.form-control(type='text', name='firstName', id='firstName', placeholder='First Name', autofocus='')
+        .col-xs-6.col-sm-6.col-md-6
+          label(for='lastName') Last Name
+          input.form-control(type='text', name='lastName', id='lastName', placeholder='Last Name')
+    .form-group
+      label(for='email') Email
+      input.form-control(type='email', name='email', id='email', placeholder='Email')
+    .form-group
+      label(for='password') Password
+      input.form-control(type='password', name='password', id='password', placeholder='Password')
+    .form-group
+      label(for='confirmPassword') Confirm Password
+      input.form-control(type='password', id='confirmPassword', placeholder='Confirm Password')
+    .form-group
+      button.btn.btn.btn-primary(type='submit') Update
+  if messages.length
+    .alert.alert-danger
+      for message in messages
+        div= message

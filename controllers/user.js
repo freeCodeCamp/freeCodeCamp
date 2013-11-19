@@ -6,7 +6,11 @@ var mongoose = require('mongoose'),
 var User = require('../models/User');
 
 exports.account = function(req, res) {
-  res.render('account', { user: req.user });
+  res.render('account', {
+    title: 'Account Management',
+    user: req.user,
+    messages: req.flash('messages')
+  });
 };
 
 /**

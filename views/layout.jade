@@ -37,8 +37,8 @@ html
               li(class=title=='Create Account'?'active':undefined)
                 a(href='/signup') Create Account
             else
-              li.navbar-text
-                | Welcome, #{user.firstName}  #{user.lastName}
+              li
+                a(href='/account') Welcome,  #{user.firstName} #{user.lastName}
               li
                 a(href='/logout') Logout
   .container
