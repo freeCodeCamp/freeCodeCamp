@@ -1,0 +1,3 @@
+/* global $ */
+
+$('form').validate();
