@@ -60,23 +60,20 @@ app.get('/admin', passportConf.ensureAuthenticated, passportConf.ensureAdmin(), 
 app.get('/partials/:name', home.partials);
 
 app.get('/api', api.apiBrowser);
-app.get('/api/foursquare', api.foursquare);
-app.get('/api/foursquare/callback', api.foursquareCallback);
+app.get('/api/foursquare', passportConf.ensureAuthenticated, api.foursquare);
 
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
 
 
-
+/**
+ * Authentication Routes
+ */
 app.get('/auth/facebook', passport.authenticate('facebook'));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', {
-  successRedirect: '/',
-  failureRedirect: '/login'
-}));
-
-
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
 app.get('/auth/foursquare', api.foursquareAuth);
 app.get('/auth/foursquare/callback', api.foursquareCallback);
+
 
 app.get('*', home.index);
 
