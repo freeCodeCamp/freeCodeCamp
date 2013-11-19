@@ -6,9 +6,11 @@ var express = require('express'),
     mongoose = require('mongoose'),
     passport = require('passport');
 
-// Configuration (API Keys, Database URI)
+
+// App Configuration (API Keys, Database URI)
 var config = require('./config/config.json');
 var passportConf = require('./config/passport');
+
 
 // Load controllers
 var home = require('./controllers/home'),
@@ -18,6 +20,8 @@ var home = require('./controllers/home'),
 
 // Connect to database
 var db = mongoose.connect(config.db);
+
+
 
 // Initialize express application
 var app = express();
@@ -55,6 +59,8 @@ app.get('/admin', passportConf.ensureAuthenticated, passportConf.ensureAdmin(), 
 app.get('/partials/:name', home.partials);
 
 app.get('/api', api.apiBrowser);
+app.get('/api/foursquare', api.foursquare);
+app.get('/api/foursquare/callback', api.foursquareCallback);
 
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
