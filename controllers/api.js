@@ -24,9 +24,13 @@ exports.apiBrowser = function(req, res) {
 
 exports.foursquare = function(req, res) {
 
-  res.render('api/foursquare', {
-    title: 'Foursquare API',
-    user: req.user
+  foursquare.Venues.getTrending(40.7,-74, { limit: 10 }, req.user.tokens.foursquare, function(err, results) {
+    console.log(results);
+    res.render('api/foursquare', {
+      title: 'Foursquare API',
+      user: req.user,
+      results: results
+    });
   });
 
 };
