@@ -7,7 +7,7 @@ var express = require('express'),
     passport = require('passport');
 
 // Configuration (API Keys, Database URI)
-var config = require('./config.json');
+var config = require('./config/config.json');
 var passportConf = require('./config/passport');
 
 // Load controllers

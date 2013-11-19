@@ -1,6 +1,9 @@
 var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
-    User = require('../models/User');
+    FacebookStrategy = require('passport-facebook').Strategy,
+    User = require('../models/User'),
+    config = require('.config.json');
+
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -12,7 +15,10 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-passport.use(new LocalStrategy({ usernameField: 'email' },function(email, password, done) {
+passport.use(new LocalStrategy({
+    usernameField: 'email'
+  },
+  function(email, password, done) {
   User.findOne({ email: email }, function(err, user) {
     if (err) { return done(err); }
     if (!user) { return done(null, false, { message: 'Unknown user ' + email }); }
@@ -25,6 +31,16 @@ passport.use(new LocalStrategy({ usernameField: 'email' },function(email, passwo
       }
     });
   });
+}));
+
+passport.use(new FacebookStrategy({
+    clientID: config.facebook.clientId,
+    clientSecret: config.facebook.clientSecret,
+    callbackURL: config.facebook.callbackUrl || "http://localhost:8000/auth/facebook/callback"
+  },
+  function (accessToken, refreshToken, profile, done) {
+  var user = module.exports.findOrCreateOauthUser(profile.provider, profile.id);
+  done(null, user);
 }));
 
 // Simple route middleware to ensure user is authenticated.  Otherwise send to login page.
