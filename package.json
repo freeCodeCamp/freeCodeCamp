@@ -8,6 +8,8 @@
     "bcrypt": "latest",
     "passport": "latest",
     "passport-local": "latest",
+    "passport-facebook": "latest",
+    "passport-google": "latest",
     "underscore": "latest",
     "forever": "latest"
  }
