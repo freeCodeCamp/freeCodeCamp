@@ -2,7 +2,7 @@ var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     FacebookStrategy = require('passport-facebook').Strategy,
     User = require('../models/User'),
-    config = require('.config.json');
+    config = require('./config.json');
 
 
 passport.serializeUser(function(user, done) {
