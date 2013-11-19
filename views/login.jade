@@ -23,14 +23,14 @@ block content
         a.pull-right(href='#') Forgot password?
         label(for='password') Password
         input.form-control(type='password', name='password', id='password', placeholder='Password')
-      .checkbox.pull-right
-        label
-          input(type='checkbox')
-          | Remember me
-      button.btn.btn.btn-success(type='submit')
-        | Log In
+      .form-group
+        .checkbox.pull-right
+          label
+            input(type='checkbox')
+            | Remember me
+      .form-group
+        button.btn.btn.btn-success(type='submit') Log In
 
     if messages.length
-      .alert.alert-danger
-        strong Error!
-        |  #{messages}
+      .alert.alert-danger.alert-dismissable
+        strong= messages
