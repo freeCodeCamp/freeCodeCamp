@@ -41,14 +41,11 @@ passport.use(new FacebookStrategy({
   function (accessToken, refreshToken, profile, done) {
     User.findOne({ $where: profile.provider + '==' + profile.id }, function(err, existingUser) {
       if (existingUser) {
-        console.log('already exists')
         done(null, existingUser);
       } else {
-        console.log('making new user');
-        console.log(profile)
         var user = new User({
-          firstName: profile.first_name,
-          lastName: profile.last_name,
+          firstName: profile.name.givenName,
+          lastName: profile.name.familyName,
           provider: profile.provider
         });
         user[profile.provider] = profile.id;
