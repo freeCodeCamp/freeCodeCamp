@@ -39,9 +39,24 @@ passport.use(new FacebookStrategy({
     callbackURL: config.facebook.callbackUrl || "http://localhost:8000/auth/facebook/callback"
   },
   function (accessToken, refreshToken, profile, done) {
-  var user = module.exports.findOrCreateOauthUser(profile.provider, profile.id);
-  done(null, user);
-}));
+    User.findOne({ $where: profile.provider + '==' + profile.id }, function(err, existingUser) {
+      if (existingUser) {
+        done(null, existingUser);
+      } else {
+        var user = new User({
+          firstName: profile.first_name,
+          lastName: profile.last_name,
+          provider: profile.provider
+        });
+        user[profile.provider] = profile.id;
+        user.save(function(err) {
+          done(null, user);
+        });
+      }
+    });
+
+  }
+));
 
 // Simple route middleware to ensure user is authenticated.  Otherwise send to login page.
 exports.ensureAuthenticated = function ensureAuthenticated(req, res, next) {
