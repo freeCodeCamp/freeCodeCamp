@@ -20,7 +20,7 @@ passport.use(new LocalStrategy({
   },
   function(email, password, done) {
   User.findOne({ email: email }, function(err, user) {
-    if (err) { return done(err); }
+    if (err) return done(err);
     if (!user) { return done(null, false, { message: 'Unknown user ' + email }); }
     user.comparePassword(password, function(err, isMatch) {
       if (err) return done(err);
@@ -39,23 +39,29 @@ passport.use(new FacebookStrategy({
     callbackURL: config.facebook.callbackUrl || "http://localhost:8000/auth/facebook/callback"
   },
   function (accessToken, refreshToken, profile, done) {
-    console.log(profile.provider);
-    console.log(profile.id);
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
-      console.log(err);
-      console.log(existingUser);
-      if (existingUser) return done(null, existingUser);
+
+      if (err) {
+        done(err);
+      }
+
+      if (existingUser) {
+        return done(null, existingUser);
+      }
+
       var user = new User({
         firstName: profile.name.givenName,
         lastName: profile.name.familyName,
         provider: profile.provider
       });
+
       user[profile.provider] = profile.id;
 
       user.save(function(err) {
-        if (err) throw err;
+        if (err) console.log(err);
         done(null, user);
       });
+
     });
 
   }
