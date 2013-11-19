@@ -27,7 +27,6 @@ block content
       button.btn.btn.btn-primary(type='submit') Signup
 
     if messages.length
-      for msg in messages
-        p.alert.alert-danger
-          strong #{msg.name}:
-          |  #{msg.message}
+      .alert.alert-danger
+        for message in messages
+          div= message

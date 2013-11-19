@@ -65,12 +65,10 @@ exports.postSignup = function(req, res) {
   user.save(function(err) {
     if (err) {
       if (err.code === 11000) {
-        req.flash('messages', 'Duplicate user detected');
+        req.flash('messages', 'User already exists');
         return res.redirect('/signup');
       } else if (err.name === 'ValidationError') {
-        console.log();
-        req.flash('messages', _.toArray(err.errors));
-        //console.log(err);
+        req.flash('messages', _.pluck(_.toArray(err.errors), 'message'));
         return res.redirect('/signup');
       }
     }
