@@ -8,8 +8,10 @@ html
     meta(name='author', content='')
     title Starter Template for Bootstrap
     link(href='/css/bootstrap.css', rel='stylesheet')
-    link(href='/css/app.css', rel='stylesheet')
     link(href='/css/flat-ui.css', rel='stylesheet')
+    link(href='/css/font-awesome.min.css', rel='stylesheet')
+    link(href='/css/app.css', rel='stylesheet')
+
   body
     .navbar.navbar-default.navbar-fixed-top(role='navigation')
       .container
@@ -40,5 +42,5 @@ html
               li
                 a(href='/logout') Logout
   .container
-      block content
+    block content
   script(src='/js/lib/jquery.js')

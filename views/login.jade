@@ -9,9 +9,13 @@ block content
       a(href='/signup') Sign Up
     .row
       .col-xs-6.col-sm-6.col-md-6
-        a.btn.btn-lg.btn-primary.btn-block(href='#') Facebook
+        a.btn.btn-lg.btn-primary.btn-block(href='#')
+          i.fa.fa-facebook-square
+          |  Facebook
       .col-xs-6.col-sm-6.col-md-6
-        a.btn.btn-lg.btn-danger.btn-block(href='#') Google
+        a.btn.btn-lg.btn-danger.btn-block(href='#')
+          i.fa.fa-google-plus-square
+          |  Google
     .login-or
       hr.hr-or
       span.span-or or
@@ -32,5 +36,5 @@ block content
         button.btn.btn.btn-success(type='submit') Log In
 
     if messages.length
-      .alert.alert-danger.alert-dismissable
+      .alert.alert-danger
         strong= messages
