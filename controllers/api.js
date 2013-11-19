@@ -15,7 +15,9 @@ var foursquareAccessToken = 'MY_FOURSQUARE_ACCESS_TOKEN';
 
 
 exports.apiBrowser = function(req, res) {
-  res.render('api');
+  res.render('api', {
+    title: 'API Browser'
+  });
 };
 
 
@@ -44,8 +46,10 @@ exports.foursquareAuth = function(req, res) {
 exports.foursquareCallback = function(req, res) {
   foursquare.getAccessToken({ code: req.query.code }, function(err, accessToken) {
     if (err) throw err;
-
-    console.log(accessToken);
+    User.findByIdAndUpdate(req.user._id, { $set: { tokens: { foursquare: accessToken } } }, null, function(err, user) {
+      if (err) throw err;
+      res.redirect('/api/foursquare');
+    });
   });
 };
 

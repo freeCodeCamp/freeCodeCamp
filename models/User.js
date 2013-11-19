@@ -7,7 +7,7 @@ var userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   password: String,
-  tokens: Array,
+  tokens: mongoose.Schema.Types.Mixed,
   provider: String,
   facebook: String,
   google: String
