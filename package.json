@@ -12,6 +12,8 @@
     "passport-google": "latest",
     "underscore": "latest",
     "forever": "latest",
-    "node-foursquare": "latest"
+    "node-foursquare": "latest",
+
+    "opencv": "latest"
  }
 }
