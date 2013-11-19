@@ -39,21 +39,23 @@ passport.use(new FacebookStrategy({
     callbackURL: config.facebook.callbackUrl || "http://localhost:8000/auth/facebook/callback"
   },
   function (accessToken, refreshToken, profile, done) {
-    User.findOne({ $where: profile.provider + '==' + profile.id }, function(err, existingUser) {
-      if (existingUser) {
-        done(null, existingUser);
-      } else {
-        var user = new User({
-          firstName: profile.name.givenName,
-          lastName: profile.name.familyName,
-          provider: profile.provider
-        });
-        user[profile.provider] = profile.id;
-        user.save(function(err) {
-          if (err) throw err;
-          done(null, user);
-        });
-      }
+    console.log(profile.provider);
+    console.log(profile.id);
+    User.findOne({ facebook: profile.id }, function(err, existingUser) {
+      console.log(err);
+      console.log(existingUser);
+      if (existingUser) return done(null, existingUser);
+      var user = new User({
+        firstName: profile.name.givenName,
+        lastName: profile.name.familyName,
+        provider: profile.provider
+      });
+      user[profile.provider] = profile.id;
+
+      user.save(function(err) {
+        if (err) throw err;
+        done(null, user);
+      });
     });
 
   }
