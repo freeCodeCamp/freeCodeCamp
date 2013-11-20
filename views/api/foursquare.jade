@@ -16,11 +16,13 @@ block content
       a(href='#nearby', data-toggle='tab') Nearby
   div.tab-content
     #venues.tab-pane.fade.active.in
-      .lead Trending Venues
+      .lead
+        i.fa.fa-signal
+        |  Trending Venues
       .list-group
         for venue in venues
-          a.list-group-item(href='#')
-            span.badge #{venue.stats.checkinsCount}
-            | #{venue.name}
+          a.list-group-item(href='#{venue.url}') #{venue.name}
+            .text-muted
+              small #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
     #nearby.tab-pane.fade
       p TODO: Nearby
