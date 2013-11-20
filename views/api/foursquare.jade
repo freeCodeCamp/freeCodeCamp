@@ -1,7 +1,11 @@
 extends ../layout
 
 block content
-  h1 Foursquare API
+  .jumbotron
+    h1 Foursquare API
+    p Demonstration of some Foursquare API endpoints
+    p
+      a.btn.btn-default(href='https://developer.foursquare.com/docs/', role='button') Foursquare Documentation
 
   if !user.tokens.foursquare
     a.btn.btn-large.btn-primary(href='/auth/foursquare') Get Foursquare Token
