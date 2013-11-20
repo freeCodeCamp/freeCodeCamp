@@ -7,17 +7,6 @@ body {
   text-align: center;
 }
 
-.help-block.error,
-label.error {
-  color: #e74c3c;
-}
-
-.form-control.error,
-.form-control.error:focus {
-  border: 2px solid #e74c3c;
-}
-
-
 .btn-label {
   position: relative;
   left: -12px;
