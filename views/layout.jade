@@ -26,8 +26,8 @@ html
           ul.nav.navbar-nav
             li(class=title=='Home'?'active':undefined)
               a(href='/') Home
-            li(class=title=='About'?'active':undefined)
-              a(href='/api') API
+            li(class=title=='API Browser'?'active':undefined)
+              a(href='/api') API Browser
             li(class=title=='Contact'?'active':undefined)
               a(href='/contact') Contact
           ul.nav.navbar-nav.navbar-right
@@ -43,6 +43,10 @@ html
                 a(href='/logout') Logout
   .container
     block content
+
+  footer
+    .container
+      p &copy; 2013. All Rights Reserved.
 
   script(src='/js/lib/jquery.js')
   script(src='/js/lib/bootstrap.js')
