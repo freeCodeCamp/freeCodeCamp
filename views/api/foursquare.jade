@@ -4,3 +4,19 @@ block content
   h1 Foursquare API
   h2= results
   a.btn.btn-large.btn-primary(href='/auth/foursquare') Get Foursquare Token
+
+  ul.nav.nav-tabs
+    li.active
+      a(href='#trending', data-toggle='tab') Trending Venues
+    li
+      a(href='#nearby', data-toggle='tab') Nearby
+  .tab-content
+    #trending.tab-pane.fade.active.in
+      h4 Locations
+      ul.list-group
+        for venue in venues
+          li.list-group-item
+            span.badge #{venue.stats.checkinsCount}
+            | #{venue.name}
+    #nearby.tab-pane.fade
+      p TODO: Nearby

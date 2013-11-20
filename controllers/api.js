@@ -29,7 +29,7 @@ exports.foursquare = function(req, res) {
     res.render('api/foursquare', {
       title: 'Foursquare API',
       user: req.user,
-      results: results
+      venues: results.venues
     });
   });
 
