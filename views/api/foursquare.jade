@@ -13,7 +13,9 @@ block content
     li.active
       a(href='#venues', data-toggle='tab') Venues
     li
-      a(href='#nearby', data-toggle='tab') Nearby
+      a(href='#users', data-toggle='tab') Users
+    li
+      a(href='#checkins', data-toggle='tab') Checkins
   div.tab-content
     #venues.tab-pane.fade.active.in
       .lead
@@ -24,5 +26,8 @@ block content
           a.list-group-item(href='#{venue.url}') #{venue.name}
             .text-muted
               small #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
-    #nearby.tab-pane.fade
-      p TODO: Nearby
+    #users.tab-pane.fade
+      p TODO: Users
+
+    #checkins.tab-pane.fade
+      p TODO: Checkins
