@@ -2,8 +2,9 @@ extends ../layout
 
 block content
   h1 Foursquare API
-  h2= results
-  a.btn.btn-large.btn-primary(href='/auth/foursquare') Get Foursquare Token
+
+  if !user.tokens.foursquare
+    a.btn.btn-large.btn-primary(href='/auth/foursquare') Get Foursquare Token
 
   ul.nav.nav-tabs
     li.active
