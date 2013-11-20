@@ -59,23 +59,31 @@ exports.getSignup = function(req, res) {
  * POST /signup
  */
 exports.postSignup = function(req, res) {
+
   var user = new User({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    confirmPassword: req.body.confirmPassword
   });
+
+  if (req.body.password !== req.body.confirmPassword) {
+    req.flash('messages', 'Passwords do not match');
+    return res.redirect('/signup');
+  }
 
   user.save(function(err) {
     if (err) {
-      console.log(err);
+      if (err.name === 'ValidationError') {
+        req.flash('messages', _.map(err.errors, function(value, key) { return value.message; }));
+
+      }
       if (err.code === 11000) {
         req.flash('messages', 'User already exists');
-        return res.redirect('/signup');
-      } else if (err.name === 'ValidationError') {
-        req.flash('messages', _.pluck(_.toArray(err.errors), 'message'));
-        return res.redirect('/signup');
       }
+
+      return res.redirect('/signup');
     }
     req.logIn(user, function(err) {
       if (err) throw err;
@@ -87,7 +95,7 @@ exports.postSignup = function(req, res) {
 /**
  * GET /admin
  */
-exports.admin = function(req, res) {
+exports.getAdmin = function(req, res) {
   res.send('access granted admin!');
 };
 

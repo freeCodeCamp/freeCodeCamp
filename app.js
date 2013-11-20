@@ -7,7 +7,8 @@ var express = require('express'),
     passport = require('passport');
 
 // TODO: Add node-opencv!!
-
+// TODO: "Lego-like" modules, e.g. swap one login view for another
+// TODO: Let users plug any components of the website
 // App Configuration (API Keys, Database URI)
 var config = require('./config/config.json');
 var passportConf = require('./config/passport');
@@ -43,38 +44,25 @@ app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-// Routes (url path, corresponding controller)
-app.get('/', home.index);
 
+app.get('/', home.index);
 app.get('/login', user.getLogin);
 app.post('/login', user.postLogin);
-
 app.get('/logout', user.logout);
-
 app.get('/signup', user.getSignup);
 app.post('/signup', user.postSignup);
-
 app.get('/account', passportConf.ensureAuthenticated, user.account);
-
-app.get('/admin', passportConf.ensureAuthenticated, passportConf.ensureAdmin(), user.admin);
+app.get('/admin', passportConf.ensureAuthenticated, passportConf.ensureAdmin(), user.getAdmin);
 app.get('/partials/:name', home.partials);
-
 app.get('/api', api.apiBrowser);
 app.get('/api/foursquare', passportConf.ensureAuthenticated, api.foursquare);
-
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
 
-
-/**
- * Authentication Routes
- */
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
 app.get('/auth/foursquare', api.foursquareAuth);
 app.get('/auth/foursquare/callback', api.foursquareCallback);
-
-
 app.get('*', home.index);
 
 
