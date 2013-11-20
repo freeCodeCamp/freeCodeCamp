@@ -75,10 +75,11 @@ exports.postSignup = function(req, res) {
 
   user.save(function(err) {
     if (err) {
+
       if (err.name === 'ValidationError') {
         req.flash('messages', _.map(err.errors, function(value, key) { return value.message; }));
-
       }
+
       if (err.code === 11000) {
         req.flash('messages', 'User already exists');
       }

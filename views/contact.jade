@@ -1,4 +1,25 @@
 extends layout
 
 block content
-  h1 Contact page
+  h3 Contact Form
+  form(role='form', method='POST')
+    .form-group
+      .row
+        .col-xs-6.col-sm-6.col-md-6
+          label(for='firstName') First Name
+          input.form-control(type='text', name='firstName', id='firstName')
+        .col-xs-6.col-sm-6.col-md-6
+          label(for='lastName') Last Name
+          input.form-control(type='text', name='lastName', id='lastName')
+    .form-group
+      label(for='email') Email
+      input.form-control(type='email', name='email', id='email')
+    .form-group
+      label(for='contactBody') Body
+      textarea.form-control(type='text', name='contactBody', id='contactBody')
+    .form-group
+      button.btn.btn.btn-primary(type='submit') Send
+  if messages.length
+    .alert.alert-danger
+      for message in messages
+        div= message
