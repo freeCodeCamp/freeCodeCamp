@@ -1,11 +1,10 @@
 extends ../layout
 
 block content
-  .jumbotron
-    h1 Foursquare API
-    p Demonstration of some Foursquare API endpoints
-    p
-      a.btn.btn-default(href='https://developer.foursquare.com/docs/', role='button') Foursquare Documentation
+  .page-header
+    h1
+      i.fa.fa-foursquare
+      |  Foursquare API
 
   if !user.tokens.foursquare
     a.btn.btn-large.btn-primary(href='/auth/foursquare') Get Foursquare Token
@@ -17,10 +16,10 @@ block content
       a(href='#nearby', data-toggle='tab') Nearby
   div.tab-content
     #venues.tab-pane.fade.active.in
-      h4 Trending
-      ul.list-group
+      .lead Trending Venues
+      .list-group
         for venue in venues
-          li.list-group-item
+          a.list-group-item(href='#')
             span.badge #{venue.stats.checkinsCount}
             | #{venue.name}
     #nearby.tab-pane.fade
