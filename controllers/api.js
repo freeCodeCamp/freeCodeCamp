@@ -1,3 +1,5 @@
+var geoip = require('geoip-lite');
+
 var config = require('../config/config.json');
 
 var User = require('../models/User');
@@ -23,14 +25,15 @@ exports.apiBrowser = function(req, res) {
 
 
 exports.foursquare = function(req, res) {
+  var geo = geoip.lookup('4.17.136.0' || req.connection.remoteAddress);
 
-  foursquare.Venues.getTrending(40.7,-74, { limit: 10 }, req.user.tokens.foursquare, function(err, results) {
-    console.log(results);
+  foursquare.Venues.getTrending(geo.ll[0], geo.ll[1], { limit: 10 }, req.user.tokens.foursquare, function(err, results) {
     res.render('api/foursquare', {
       title: 'Foursquare API',
       user: req.user,
       venues: results.venues
     });
+
   });
 
 };
