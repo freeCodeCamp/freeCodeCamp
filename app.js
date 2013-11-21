@@ -61,6 +61,25 @@ app.post('/contact', contact.postContact);
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
+
+
+app.get('/auth/google', passport.authenticate('google', {
+  scope: [
+    'https://www.googleapis.com/auth/userinfo.profile',
+    'https://www.googleapis.com/auth/userinfo.email'
+  ]
+}), function (req, res) {
+  // The request will be redirected to Google for authentication, so this
+  // function will not be called.
+});
+
+app.get('/auth/google/callback', passport.authenticate('google', {
+  failureRedirect: '/login'
+}), function (req, res) {
+  res.redirect('/');
+});
+
+
 app.get('/auth/foursquare', api.foursquareAuth);
 app.get('/auth/foursquare/callback', api.foursquareCallback);
 app.get('*', home.index);

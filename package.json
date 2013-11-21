@@ -9,7 +9,7 @@
     "passport": "latest",
     "passport-local": "latest",
     "passport-facebook": "latest",
-    "passport-google": "latest",
+    "passport-google-oauth": "latest",
     "underscore": "latest",
     "forever": "latest",
     "node-foursquare": "latest",

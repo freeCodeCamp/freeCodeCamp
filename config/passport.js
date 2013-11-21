@@ -1,6 +1,7 @@
 var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     FacebookStrategy = require('passport-facebook').Strategy,
+    GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     User = require('../models/User'),
     config = require('./config.json');
 
@@ -65,7 +66,46 @@ passport.use(new FacebookStrategy({
       });
 
     });
+  }
+));
 
+passport.use(new GoogleStrategy({
+    clientID: config.google.clientId,
+    clientSecret: config.google.clientSecret,
+    callbackURL: config.google.callbackUrl
+  },
+  function(accessToken, refreshToken, profile, done) {
+    console.log(accessToken);
+    console.log(profile);
+    User.findOne({ google: profile.id }, function(err, existingUser) {
+
+      if (err) {
+        done(err);
+      }
+
+      if (existingUser) {
+        return done(null, existingUser);
+      }
+
+      var user = new User({
+        firstName: profile.name.givenName,
+        lastName: profile.name.familyName,
+        provider: profile.provider
+      });
+
+      user[profile.provider] = profile.id;
+
+      user.save(function(err) {
+        if (err) {
+          if (err.code === 11000) {
+            // Found another user with the same email
+
+          }
+        }
+        done(null, user);
+      });
+
+    });
   }
 ));
 
