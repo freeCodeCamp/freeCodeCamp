@@ -36,6 +36,7 @@ passport.use(new LocalStrategy({
   });
 }));
 
+// FACEBOOK OAUTH2 LOGIN
 passport.use(new FacebookStrategy({
     clientID: config.facebook.clientId,
     clientSecret: config.facebook.clientSecret,
@@ -69,6 +70,7 @@ passport.use(new FacebookStrategy({
   }
 ));
 
+// GOOGLE OAUTH2 LOGIN
 passport.use(new GoogleStrategy({
     clientID: config.google.clientId,
     clientSecret: config.google.clientSecret,
@@ -90,6 +92,7 @@ passport.use(new GoogleStrategy({
       var user = new User({
         firstName: profile.name.givenName,
         lastName: profile.name.familyName,
+        email: profile._json.email,
         provider: profile.provider
       });
 
