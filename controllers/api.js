@@ -17,12 +17,15 @@ var foursquareAccessToken = 'MY_FOURSQUARE_ACCESS_TOKEN';
 
 
 exports.apiBrowser = function(req, res) {
+  console.log(req.user);
   res.render('api', {
     title: 'API Browser',
     user: req.user
   });
 };
 
+// TODO: require foursquare auth when clicking on foursquare url
+// being logged in is not enough
 
 exports.foursquare = function(req, res) {
   var geo = geoip.lookup('4.17.136.0' || req.connection.remoteAddress);
