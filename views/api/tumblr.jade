@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  .page-header
+    h1
+      i.fa.fa-tumblr-square
+      |  Tumblr API
+
+  if !user.tokens.foursquare
+    a.btn.btn-large.btn-primary(href='/auth/tumblr') Get Tumblr Token

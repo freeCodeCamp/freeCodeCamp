@@ -56,6 +56,7 @@ app.get('/admin', passportConf.ensureAuthenticated, passportConf.ensureAdmin(), 
 app.get('/partials/:name', home.partials);
 app.get('/api', api.apiBrowser);
 app.get('/api/foursquare', passportConf.ensureAuthenticated, api.foursquare);
+app.get('/api/tumblr', passportConf.ensureAuthenticated, api.tumblr);
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
 

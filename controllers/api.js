@@ -42,6 +42,15 @@ exports.foursquare = function(req, res) {
 };
 
 
+exports.tumblr = function(req, res) {
+
+  res.render('api/tumblr', {
+    title: 'Tumblr API',
+    user: req.user
+  });
+
+};
+
 /**
  * GET /auth/foursquare
  * Display Foursquare authentication screen
