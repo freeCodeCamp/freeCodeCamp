@@ -59,7 +59,15 @@ app.get('/api/foursquare', passportConf.ensureAuthenticated, api.foursquare);
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
 
-app.get('/auth/facebook', passport.authenticate('facebook'));
+app.get('/auth/facebook', passport.authenticate('facebook', {
+  scope: [
+    'email'
+  ]
+}), function(req, res) {
+  // The request will be redirected to Facebook for authentication, so this
+  // function will not be called.
+});
+
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
 
 
