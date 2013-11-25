@@ -43,6 +43,8 @@ passport.use(new FacebookStrategy({
     callbackURL: config.facebook.callbackUrl || "http://localhost:8000/auth/facebook/callback"
   },
   function (accessToken, refreshToken, profile, done) {
+    console.log(profile);
+
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
 
       if (err) {
@@ -56,7 +58,8 @@ passport.use(new FacebookStrategy({
       var user = new User({
         firstName: profile.name.givenName,
         lastName: profile.name.familyName,
-        provider: profile.provider
+        provider: profile.provider,
+        email: profile._json.email
       });
 
       user[profile.provider] = profile.id;
