@@ -28,16 +28,22 @@ exports.apiBrowser = function(req, res) {
 // being logged in is not enough
 
 exports.foursquare = function(req, res) {
-  var geo = geoip.lookup('4.17.136.0' || req.connection.remoteAddress);
-
-  foursquare.Venues.getTrending(geo.ll[0], geo.ll[1], { limit: 5 }, req.user.tokens.foursquare, function(err, results) {
+  if (req.user.tokens && req.user.tokens.foursquare) {
+    var geo = geoip.lookup('4.17.136.0' || req.connection.remoteAddress);
+    foursquare.Venues.getTrending(geo.ll[0], geo.ll[1], { limit: 5 }, req.user.tokens.foursquare, function(err, results) {
+      res.render('api/foursquare', {
+        title: 'Foursquare API',
+        user: req.user,
+        venues: results.venues
+      });
+    });
+  } else {
     res.render('api/foursquare', {
       title: 'Foursquare API',
-      user: req.user,
-      venues: results.venues
+      user: req.user
     });
+  }
 
-  });
 
 };
 

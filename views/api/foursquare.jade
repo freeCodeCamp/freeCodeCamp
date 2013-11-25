@@ -6,28 +6,28 @@ block content
       i.fa.fa-foursquare
       |  Foursquare API
 
-  if !user.tokens.foursquare
+  if !(user.tokens && user.tokens.foursquare)
     a.btn.btn-large.btn-primary(href='/auth/foursquare') Get Foursquare Token
+  else
+    ul.nav.nav-pills(style='margin-bottom: 15px;')
+      li.active
+        a(href='#venues', data-toggle='tab') Venues
+      li
+        a(href='#users', data-toggle='tab') Users
+      li
+        a(href='#checkins', data-toggle='tab') Checkins
+    div.tab-content
+      #venues.tab-pane.fade.active.in
+        .lead
+          i.fa.fa-signal
+          |  Trending Venues
+        .list-group
+          for venue in venues
+            a.list-group-item(href='#{venue.url}') #{venue.name}
+              .text-muted
+                small #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
+      #users.tab-pane.fade
+        p TODO: Users
 
-  ul.nav.nav-pills(style='margin-bottom: 15px;')
-    li.active
-      a(href='#venues', data-toggle='tab') Venues
-    li
-      a(href='#users', data-toggle='tab') Users
-    li
-      a(href='#checkins', data-toggle='tab') Checkins
-  div.tab-content
-    #venues.tab-pane.fade.active.in
-      .lead
-        i.fa.fa-signal
-        |  Trending Venues
-      .list-group
-        for venue in venues
-          a.list-group-item(href='#{venue.url}') #{venue.name}
-            .text-muted
-              small #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
-    #users.tab-pane.fade
-      p TODO: Users
-
-    #checkins.tab-pane.fade
-      p TODO: Checkins
+      #checkins.tab-pane.fade
+        p TODO: Checkins
