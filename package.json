@@ -13,6 +13,7 @@
     "underscore": "latest",
     "forever": "latest",
     "node-foursquare": "latest",
+    "tumblrwks": "latest",
     "geoip-lite": "latest",
     "opencv": "latest"
  }

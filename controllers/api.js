@@ -5,6 +5,7 @@ var config = require('../config/config.json');
 var User = require('../models/User');
 
 // API PROVIDERS SETUP
+var Tumblr = require('tumblrwks');
 var foursquare = require('node-foursquare')({
   secrets: {
     clientId: config.foursquare.clientId,
@@ -13,7 +14,13 @@ var foursquare = require('node-foursquare')({
   }
 });
 
-var foursquareAccessToken = 'MY_FOURSQUARE_ACCESS_TOKEN';
+var tumblr = new Tumblr(
+  {
+    consumerKey: 'your consumer key'
+  }//, "arktest.tumblr.com"
+  // specify the blog url now or the time you want to use
+);
+
 
 
 exports.apiBrowser = function(req, res) {
@@ -28,6 +35,7 @@ exports.apiBrowser = function(req, res) {
 // being logged in is not enough
 
 exports.foursquare = function(req, res) {
+  // TODO: Do try catch on req.user.tokens.foursquare
   if (req.user.tokens && req.user.tokens.foursquare) {
     var geo = geoip.lookup('4.17.136.0' || req.connection.remoteAddress);
     foursquare.Venues.getTrending(geo.ll[0], geo.ll[1], { limit: 5 }, req.user.tokens.foursquare, function(err, results) {
@@ -43,12 +51,14 @@ exports.foursquare = function(req, res) {
       user: req.user
     });
   }
-
-
 };
 
 
 exports.tumblr = function(req, res) {
+
+  tumblr.get('/info', { hostname: 'sahat.tumblr.com' }, function(err, json){
+    console.log(json);
+  });
 
   res.render('api/tumblr', {
     title: 'Tumblr API',
