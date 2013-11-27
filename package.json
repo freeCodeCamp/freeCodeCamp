@@ -2,18 +2,20 @@
   "name": "angular-quickstart",
   "version": "1.0.0",
   "dependencies": {
-    "express": "latest",
-    "jade": "latest",
-    "mongoose": "latest",
-    "bcrypt": "latest",
-    "passport": "latest",
-    "passport-local": "latest",
-    "passport-facebook": "latest",
-    "passport-google-oauth": "latest",
-    "underscore": "latest",
-    "forever": "latest",
-    "node-foursquare": "latest",
-    "tumblrwks": "latest",
-    "geoip-lite": "latest"
- }
+    "async": "*",
+    "bcrypt": "*",
+    "express": "*",
+    "forever": "*",
+    "fb": "*",
+    "geoip-lite": "*",
+    "jade": "*",
+    "mongoose": "*",
+    "node-foursquare": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "passport-facebook": "*",
+    "passport-google-oauth": "*",
+    "tumblrwks": "*",
+    "underscore": "*"
+  }
 }
