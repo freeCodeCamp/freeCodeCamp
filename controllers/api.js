@@ -14,7 +14,6 @@ var foursquare = require('node-foursquare')({
   }
 });
 
-
 exports.apiBrowser = function(req, res) {
   console.log(req.user);
   res.render('api', {
@@ -47,13 +46,19 @@ exports.foursquare = function(req, res) {
 
 
 exports.tumblr = function(req, res) {
-
   res.render('api/tumblr', {
     title: 'Tumblr API',
     user: req.user
   });
-
 };
+
+exports.facebook = function(req, res) {
+  res.render('api/facebook', {
+    title: 'Facebook API',
+    user: req.user
+  });
+};
+
 
 /**
  * GET /auth/foursquare

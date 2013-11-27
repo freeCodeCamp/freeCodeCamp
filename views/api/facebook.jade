@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  .page-header
+    h1
+      i.fa.fa-facebook-square
+      |  Facebook API
+  if !user.tokens.facebook
+    a.btn.btn-large.btn-primary(href='/auth/facebook') Get Facebook Token

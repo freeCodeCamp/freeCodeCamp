@@ -28,7 +28,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.logger('dev'));
-app.use(express.errorHandler());
+app.use(express.errorHandler({showStack: true, dumpExceptions: true}));
 app.use(express.favicon());
 app.use(express.cookieParser());
 app.use(express.bodyParser());
@@ -56,6 +56,7 @@ app.get('/partials/:name', home.partials);
 app.get('/api', api.apiBrowser);
 app.get('/api/foursquare', passportConf.ensureAuthenticated, api.foursquare);
 app.get('/api/tumblr', passportConf.ensureAuthenticated, api.tumblr);
+app.get('/api/facebook', passportConf.ensureAuthenticated, api.facebook);
 
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
@@ -69,6 +70,7 @@ app.get('/auth/google/callback', passport.authenticate('google', { successRedire
 
 app.get('/auth/foursquare', api.foursquareAuth);
 app.get('/auth/foursquare/callback', api.foursquareCallback);
+
 app.get('*', home.index);
 
 
