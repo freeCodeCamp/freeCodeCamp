@@ -1,3 +1,4 @@
+// Load modules and libraries
 var express = require('express'),
     http = require('http'),
     path = require('path'),
@@ -6,28 +7,23 @@ var express = require('express'),
     mongoose = require('mongoose'),
     passport = require('passport');
 
-// TODO: Add node-opencv!!
-// TODO: "Lego-like" modules, e.g. swap one login view for another
-// TODO: Let users plug any components of the website
-// App Configuration (API Keys, Database URI)
-var config = require('./config/config.json');
-var passportConf = require('./config/passport');
-
-
 // Load controllers
 var home = require('./controllers/home'),
     user = require('./controllers/user'),
     api = require('./controllers/api'),
     contact = require('./controllers/contact');
 
+// App Configuration (API Keys, Database URI)
+var config = require('./config/config.json');
+var passportConf = require('./config/passport');
+
 // Connect to database
 var db = mongoose.connect(config.db);
-
-
 
 // Initialize express application
 var app = express();
 
+// Express Configuration
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -44,7 +40,7 @@ app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-
+// Express Routes
 app.get('/', home.index);
 app.get('/login', user.getLogin);
 app.post('/login', user.postLogin);

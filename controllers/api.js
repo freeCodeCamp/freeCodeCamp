@@ -5,7 +5,7 @@ var config = require('../config/config.json');
 var User = require('../models/User');
 
 // API PROVIDERS SETUP
-var Tumblr = require('tumblrwks');
+//var Tumblr = require('tumblrwks');
 var foursquare = require('node-foursquare')({
   secrets: {
     clientId: config.foursquare.clientId,
@@ -13,14 +13,6 @@ var foursquare = require('node-foursquare')({
     redirectUrl: config.foursquare.callbackUrl
   }
 });
-
-var tumblr = new Tumblr(
-  {
-    consumerKey: 'your consumer key'
-  }//, "arktest.tumblr.com"
-  // specify the blog url now or the time you want to use
-);
-
 
 
 exports.apiBrowser = function(req, res) {
@@ -56,10 +48,6 @@ exports.foursquare = function(req, res) {
 
 exports.tumblr = function(req, res) {
 
-  tumblr.get('/info', { hostname: 'sahat.tumblr.com' }, function(err, json){
-    console.log(json);
-  });
-
   res.render('api/tumblr', {
     title: 'Tumblr API',
     user: req.user
@@ -82,7 +70,6 @@ exports.foursquareAuth = function(req, res) {
  */
 exports.foursquareCallback = function(req, res) {
   foursquare.getAccessToken({ code: req.query.code }, function(err, accessToken) {
-    if (err) throw err;
     User.findByIdAndUpdate(req.user._id, { $set: { tokens: { foursquare: accessToken } } }, null, function(err, user) {
       if (err) throw err;
       res.redirect('/api/foursquare');
