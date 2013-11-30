@@ -5,7 +5,8 @@ exports.getContact = function(req, res) {
   res.render('contact', {
     title: 'Contact',
     user: req.user,
-    messages: req.flash('messages')
+    success: req.flash('success'),
+    error: req.flash('error')
   });
 };
 
@@ -15,13 +16,20 @@ exports.postContact = function(req, res) {
   var email = req.body.email;
   var body = req.body.contactBody;
 
+  var sendTo = 'sakhat@gmail.com';
+  var subject = 'API Example | Contact Form';
+
   sendgrid.send({
-    to:       'example@example.com',
-    from:     'other@example.com',
-    subject:  'Hello World',
-    text:     'My first email through SendGrid.'
+    to:       sendTo,
+    from:     email,
+    subject:  subject,
+    text:     body
   }, function(err, json) {
-    if (err) { return console.error(err); }
-    console.log(json);
+    if (err) {
+      req.flash('error', err.message);
+      return res.redirect('/contact');
+    }
+    req.flash('success', 'Email has been sent successfully!');
+    res.redirect('/contact');
   });
 };

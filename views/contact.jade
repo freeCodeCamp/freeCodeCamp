@@ -25,7 +25,9 @@ block content
           i.fa.fa-location-arrow
           |  Send
         button.btn.btn-link(disabled='') Powered by SendGrid
-    if messages.length
+    if error.length
       .alert.alert-danger
-        for message in messages
-          div= message
+        p= error
+    if success.length
+      .alert.alert-success
+        p= success
