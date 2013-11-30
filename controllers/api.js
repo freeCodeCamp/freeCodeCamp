@@ -35,13 +35,20 @@ exports.foursquare = function(req, res) {
       });
     },
     venueDetail: function(callback) {
-      callback(null, 'details');
+      foursquare.Venues.getVenue('40a55d80f964a52020f31ee3', req.user.tokens.foursquare, function(err, results) {
+        console.log(results);
+        callback(err, results.venue);
+      });
+    },
+    userCheckins: function(callback) {
+      callback(null);
     }
   }, function(err, results) {
     res.render('api/foursquare', {
       title: 'Foursquare API',
       user: req.user,
-      venues: results.trendingVenues
+      venue: results.venueDetail,
+      trendingVenues: results.trendingVenues
     });
   });
 };

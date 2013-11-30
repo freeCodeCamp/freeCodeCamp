@@ -31,21 +31,21 @@ block content
               th Checkins
               th Here Now
           tbody
-            for venue in venues
+            for venue in trendingVenues
               tr
                 td= venue.name
                 td #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
                 td= venue.stats.checkinsCount
                 td= venue.hereNow.count
 
-        //.lead Venue Detail
-        //  p Name: #{venue.name}
-        //  p Location: #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
-        //  p Categories:
-        //    for category in venue.categories
-        //      span= category.name
-        //  p Likes: #{venue.likes.count}
-        //  p Rating: #{venue.rating}
+        .lead Venue Detail
+          p Name: #{venue.name}
+          p Location: #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
+          p Categories:
+            for category in venue.categories
+              span= category.name
+          p Likes: #{venue.likes.count}
+          p Rating: #{venue.rating}
 
       #users.tab-pane.fade
         p TODO: Users
