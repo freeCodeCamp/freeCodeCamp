@@ -76,3 +76,6 @@ app.get('*', home.index);
 app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+// TODO: List.js for examples
+// TODO: jquery-spinner for some examples (signup page?)

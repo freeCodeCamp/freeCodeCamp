@@ -9,4 +9,6 @@ block content
       | All you get is this text and a mostly barebones HTML document.
 
     if user
-      .alert.alert-info Congratulations, you are logged in!
+      .alert.alert-success.fade.in
+        button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+        | Congratulations, you are logged in!
