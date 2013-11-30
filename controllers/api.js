@@ -25,22 +25,25 @@ exports.apiBrowser = function(req, res) {
 // being logged in is not enough
 
 exports.foursquare = function(req, res) {
-  // TODO: Do try catch on req.user.tokens.foursquare
-  if (req.user.tokens && req.user.tokens.foursquare) {
-    var geo = geoip.lookup('4.17.136.0' || req.connection.remoteAddress);
-    foursquare.Venues.getTrending(geo.ll[0], geo.ll[1], { limit: 5 }, req.user.tokens.foursquare, function(err, results) {
-      res.render('api/foursquare', {
-        title: 'Foursquare API',
-        user: req.user,
-        venues: results.venues
+  async.parallel({
+    trendingVenues: function(callback) {
+      var geo = geoip.lookup('4.17.136.0');
+      var latitude = geo.ll[0];
+      var longitude = geo.ll[1];
+      foursquare.Venues.getTrending(latitude, longitude, { limit: 10 }, req.user.tokens.foursquare, function(err, results) {
+        callback(err, results.venues);
       });
-    });
-  } else {
+    },
+    venueDetail: function(callback) {
+      callback(null, 'details');
+    }
+  }, function(err, results) {
     res.render('api/foursquare', {
       title: 'Foursquare API',
-      user: req.user
+      user: req.user,
+      venues: results.trendingVenues
     });
-  }
+  });
 };
 
 exports.tumblr = function(req, res) {
