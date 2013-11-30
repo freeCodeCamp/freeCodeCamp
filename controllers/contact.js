@@ -7,5 +7,8 @@ exports.getContact = function(req, res) {
 };
 
 exports.postContact = function(req, res) {
-
+  var firstName = req.body.firstName;
+  var lastName = req.body.lastName;
+  var email = req.body.email;
+  var body = req.body.contactBody;
 };

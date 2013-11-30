@@ -21,9 +21,6 @@ exports.apiBrowser = function(req, res) {
   });
 };
 
-// TODO: require foursquare auth when clicking on foursquare url
-// being logged in is not enough
-
 exports.foursquare = function(req, res) {
   async.parallel({
     trendingVenues: function(callback) {
@@ -76,7 +73,7 @@ exports.facebook = function(req, res) {
 
 /**
  * GET /auth/foursquare
- * Display Foursquare authentication screen
+ * Shows the foursquare authentication dialog
  */
 exports.foursquareAuth = function(req, res) {
   res.writeHead(303, { location: foursquare.getAuthClientRedirectUrl() });

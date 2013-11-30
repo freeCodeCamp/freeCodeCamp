@@ -14,12 +14,17 @@ block content
             input.form-control(type='text', name='lastName', id='lastName')
       .form-group
         label(for='email') Email
+          span.text-danger *
         input.form-control(type='email', name='email', id='email')
       .form-group
         label(for='contactBody') Body
+          span.text-danger *
         textarea.form-control(type='text', name='contactBody', id='contactBody', rows='7')
       .form-group
-        button.btn.btn.btn-primary(type='submit') Send
+        button.btn.btn-primary(type='submit')
+          i.fa.fa-location-arrow
+          |  Send
+        button.btn.btn-link(disabled='') Powered by SendGrid
     if messages.length
       .alert.alert-danger
         for message in messages
