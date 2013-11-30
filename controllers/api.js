@@ -31,12 +31,12 @@ exports.foursquare = function(req, res) {
       var latitude = geo.ll[0];
       var longitude = geo.ll[1];
       foursquare.Venues.getTrending(latitude, longitude, { limit: 10 }, req.user.tokens.foursquare, function(err, results) {
-        callback(err, results.venues);
+        callback(err, results);
       });
     },
     venueDetail: function(callback) {
       foursquare.Venues.getVenue('40a55d80f964a52020f31ee3', req.user.tokens.foursquare, function(err, results) {
-        callback(err, results.venue);
+        callback(err, results);
       });
     },
     userCheckins: function(callback) {
@@ -53,8 +53,8 @@ exports.foursquare = function(req, res) {
       message: req.flash('info'),
       user: req.user,
       trendingVenues: results.trendingVenues,
-      venue: results.venueDetail,
-      checkins: results.userCheckins
+      venueDetail: results.venueDetail,
+      userCheckins: results.userCheckins
     });
   });
 };

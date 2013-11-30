@@ -31,7 +31,7 @@ block content
               th Checkins
               th Here Now
           tbody
-            for venue in trendingVenues
+            for venue in trendingVenues.venues
               tr
                 td= venue.name
                 td #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
@@ -40,13 +40,13 @@ block content
 
         .lead Venue Detail
         img.img-thumbnail(src='https://irs3.4sqi.net/img/general/200x200/11109710_xePHC-bh76LL_EaG-tsM1lUV6Bp-VUG1r_haDSqSvBM.jpg')
-        p.text-danger Name: #{venue.name}
-        p.text-muted Location: #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
+        p.text-danger Name: #{venueDetail.venue.name}
+        p.text-muted Location: #{venueDetail.venue.location.address}, #{venueDetail.venue.location.city}, #{venueDetail.venue.location.state}
         p.text-success Categories:
-          for category in venue.categories
+          for category in venueDetail.venue.categories
             span  #{category.shortName} |
-        p.text-info Likes: #{venue.likes.count}
-        p.text-warning Rating: #{venue.rating}
+        p.text-info Likes: #{venueDetail.venue.likes.count}
+        p.text-warning Rating: #{venueDetail.venue.rating}
 
       #users.tab-pane.fade
         .lead User Checkins
@@ -58,7 +58,7 @@ block content
               th Category
               th Checkins
           tbody
-            for checkin in checkins
+            for checkin in userCheckins.checkins.items
               tr
                 td= checkin.venue.name
                 td #{checkin.venue.location.address}, #{checkin.venue.location.city}, #{checkin.venue.location.state}
