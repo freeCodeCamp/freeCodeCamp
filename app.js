@@ -1,17 +1,17 @@
 // Load modules and libraries
-var express = require('express'),
-    http = require('http'),
-    path = require('path'),
-    fs = require('fs'),
-    flash = require('connect-flash'),
-    mongoose = require('mongoose'),
-    passport = require('passport');
+var express = require('express');
+var http = require('http');
+var path = require('path');
+var fs = require('fs');
+var flash = require('connect-flash');
+var mongoose = require('mongoose');
+var passport = require('passport');
 
 // Load controllers
-var home = require('./controllers/home'),
-    user = require('./controllers/user'),
-    api = require('./controllers/api'),
-    contact = require('./controllers/contact');
+var home = require('./controllers/home');
+var user = require('./controllers/user');
+var api = require('./controllers/api');
+var contact = require('./controllers/contact');
 
 // App Configuration (API Keys, Database URI)
 var config = require('./config/config.json');

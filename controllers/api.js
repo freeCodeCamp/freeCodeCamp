@@ -1,13 +1,8 @@
+var async = require('async');
 var geoip = require('geoip-lite');
+var config = require('../config/config.json');
 var FB = require('fb');
 var Tumblr = require('tumblrwks');
-
-var config = require('../config/config.json');
-
-// Load models
-var User = require('../models/User');
-
-// API PROVIDERS SETUP
 var foursquare = require('node-foursquare')({
   secrets: {
     clientId: config.foursquare.clientId,
@@ -15,6 +10,8 @@ var foursquare = require('node-foursquare')({
     redirectUrl: config.foursquare.callbackUrl
   }
 });
+
+var User = require('../models/User');
 
 exports.apiBrowser = function(req, res) {
   console.log(req.user);
