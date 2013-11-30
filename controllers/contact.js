@@ -11,20 +11,20 @@ exports.getContact = function(req, res) {
 };
 
 exports.postContact = function(req, res) {
-  var firstName = req.body.firstName;
-  var lastName = req.body.lastName;
-  var email = req.body.email;
+  var from = req.body.email;
   var body = req.body.contactBody;
 
   var sendTo = 'sakhat@gmail.com';
   var subject = 'API Example | Contact Form';
 
-  sendgrid.send({
+  var email = new sendgrid.Email({
     to:       sendTo,
-    from:     email,
+    from:     from,
     subject:  subject,
     text:     body
-  }, function(err, json) {
+  });
+
+  sendgrid.send(email, function(err) {
     if (err) {
       req.flash('error', err.message);
       return res.redirect('/contact');
