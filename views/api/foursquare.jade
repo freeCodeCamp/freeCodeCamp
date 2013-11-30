@@ -19,16 +19,25 @@ block content
         a(href='#users', data-toggle='tab') Users
       li
         a(href='#checkins', data-toggle='tab') Checkins
+
     div.tab-content
       #venues.tab-pane.fade.active.in
-        .lead
-          i.fa.fa-signal
-          |  Trending Venues
-        .list-group
-          for venue in venues
-            a.list-group-item(href='#{venue.url}') #{venue.name}
-              .text-muted
-                small #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
+        .lead Trending Venues
+        table.table.table-bordered.table-hover
+          thead
+            tr
+              th Name
+              th Location
+              th Checkins
+              th Here Now
+          tbody
+            for venue in venues
+              tr
+                td= venue.name
+                td #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
+                td= venue.stats.checkinsCount
+                td= venue.hereNow.count
+
       #users.tab-pane.fade
         p TODO: Users
 
