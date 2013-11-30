@@ -17,8 +17,6 @@ block content
         a(href='#venues', data-toggle='tab') Venues
       li
         a(href='#users', data-toggle='tab') Users
-      li
-        a(href='#checkins', data-toggle='tab') Checkins
 
     div.tab-content
       #venues.tab-pane.fade.active.in
@@ -64,7 +62,3 @@ block content
                 td #{checkin.venue.location.address}, #{checkin.venue.location.city}, #{checkin.venue.location.state}
                 td= checkin.venue.categories[0].shortName
                 td= checkin.venue.stats.checkinsCount
-
-
-      #checkins.tab-pane.fade
-        p TODO: Checkins
