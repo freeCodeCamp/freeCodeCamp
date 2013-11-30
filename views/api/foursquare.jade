@@ -39,8 +39,9 @@ block content
                 td= venue.hereNow.count
 
         .lead Venue Detail
+        img.img-thumbnail(src='https://irs3.4sqi.net/img/general/200x200/11109710_xePHC-bh76LL_EaG-tsM1lUV6Bp-VUG1r_haDSqSvBM.jpg')
         p.text-danger Name: #{venue.name}
-        p.text-info Location: #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
+        p.text-muted Location: #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
         p.text-success Categories:
           for category in venue.categories
             span  #{category.shortName} |
@@ -48,7 +49,22 @@ block content
         p.text-warning Rating: #{venue.rating}
 
       #users.tab-pane.fade
-        p TODO: Users
+        .lead User Checkins
+        table.table.table-bordered.table-hover
+          thead
+            tr
+              th Name
+              th Location
+              th Category
+              th Checkins
+          tbody
+            for checkin in checkins
+              tr
+                td= checkin.venue.name
+                td #{checkin.venue.location.address}, #{checkin.venue.location.city}, #{checkin.venue.location.state}
+                td= checkin.venue.categories[0].shortName
+                td= checkin.venue.stats.checkinsCount
+
 
       #checkins.tab-pane.fade
         p TODO: Checkins
