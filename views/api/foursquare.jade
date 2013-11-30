@@ -6,8 +6,10 @@ block content
       i.fa.fa-foursquare
       |  Foursquare API
 
-  if !(user.tokens && user.tokens.foursquare)
-    .alert.alert-warning No Token Found
+  if !user.tokens.foursquare
+    .alert.alert-warning
+      button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+      p= message
     a.btn.btn-large.btn-primary(href='/auth/foursquare')
       i.fa.fa-qrcode.fa-spin
       |  Get Foursquare Token

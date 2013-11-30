@@ -41,12 +41,16 @@ exports.foursquare = function(req, res) {
     },
     userCheckins: function(callback) {
       foursquare.Users.getCheckins('self', null, req.user.tokens.foursquare, function(err, results) {
-        callback(err, results.checkins.items);
+        callback(err, results);
       });
     }
   }, function(err, results) {
+    if (err) {
+      req.flash('info', err);
+    }
     res.render('api/foursquare', {
       title: 'Foursquare API',
+      message: req.flash('info'),
       user: req.user,
       trendingVenues: results.trendingVenues,
       venue: results.venueDetail,
