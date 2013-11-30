@@ -7,7 +7,9 @@ block content
       |  Foursquare API
 
   if !(user.tokens && user.tokens.foursquare)
-    a.btn.btn-large.btn-primary(href='/auth/foursquare') Get Foursquare Token
+    a.btn.btn-large.btn-primary(href='/auth/foursquare')
+      i.fa.fa-qrcode.fa-spin
+      |  Get Foursquare Token
   else
     ul.nav.nav-pills(style='margin-bottom: 15px;')
       li.active
