@@ -7,6 +7,7 @@ block content
       |  Foursquare API
 
   if !(user.tokens && user.tokens.foursquare)
+    .alert.alert-warning No Token Found
     a.btn.btn-large.btn-primary(href='/auth/foursquare')
       i.fa.fa-qrcode.fa-spin
       |  Get Foursquare Token
