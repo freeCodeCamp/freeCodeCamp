@@ -41,7 +41,8 @@ exports.foursquare = function(req, res) {
         callback(err, results);
       });
     }
-  }, function(err, results) {
+  },
+  function(err, results) {
     if (err) {
       req.flash('info', err);
     }
