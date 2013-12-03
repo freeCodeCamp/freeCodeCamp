@@ -70,7 +70,7 @@ passport.use(new TwitterStrategy({
     callbackURL: '/auth/twitter/callback'
   },
   function(token, tokenSecret, profile, done) {
-    User.findOne({ facebook: profile.id }, function(err, existingUser) {
+    User.findOne({ twitter: profile.id }, function(err, existingUser) {
       if (err) done(err);
       if (existingUser) return done(null, existingUser);
       console.log(profile);
