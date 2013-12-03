@@ -14,6 +14,7 @@
     "passport": "*",
     "passport-local": "*",
     "passport-facebook": "*",
+    "passport-twitter": "*",
     "passport-google-oauth": "*",
     "sendgrid": "*",
     "tumblrwks": "*",

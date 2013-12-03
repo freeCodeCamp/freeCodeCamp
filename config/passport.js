@@ -1,6 +1,7 @@
 var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     FacebookStrategy = require('passport-facebook').Strategy,
+    TwitterStrategy = require('passport-twitter').Strategy,
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     User = require('../models/User'),
     config = require('./config.json');
@@ -40,17 +41,10 @@ passport.use(new FacebookStrategy({
     callbackURL: config.facebook.callbackUrl || "http://localhost:8000/auth/facebook/callback"
   },
   function (accessToken, refreshToken, profile, done) {
-    console.log(profile);
-
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
+      if (err) done(err);
 
-      if (err) {
-        done(err);
-      }
-
-      if (existingUser) {
-        return done(null, existingUser);
-      }
+      if (existingUser) return done(null, existingUser);
 
       var user = new User({
         firstName: profile.name.givenName,
@@ -65,7 +59,32 @@ passport.use(new FacebookStrategy({
         if (err) console.log(err);
         done(null, user);
       });
+    });
+  }
+));
 
+// TWITTER OAUTH2 LOGIN
+passport.use(new TwitterStrategy({
+    consumerKey: config.twitter.clientId,
+    consumerSecret: config.twitter.clientSecret,
+    callbackURL: '/auth/twitter/callback'
+  },
+  function(token, tokenSecret, profile, done) {
+    User.findOne({ facebook: profile.id }, function(err, existingUser) {
+      if (err) done(err);
+      if (existingUser) return done(null, existingUser);
+      console.log(profile);
+      var user = new User({
+        username: profile.username,
+        displayName: profile.displayName,
+        photo: profile.photos[0].value,
+        provider: profile.provider,
+      });
+      user[profile.provider] = profile.id;
+      user.save(function(err) {
+        if (err) console.log(err);
+        done(null, user);
+      });
     });
   }
 ));
