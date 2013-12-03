@@ -2,6 +2,7 @@ var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     FacebookStrategy = require('passport-facebook').Strategy,
     TwitterStrategy = require('passport-twitter').Strategy,
+    GitHubStrategy = require('passport-github').Strategy,
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     User = require('../models/User'),
     config = require('./config.json');
@@ -65,13 +66,26 @@ passport.use(new FacebookStrategy({
 
 // GITHUB OAUTH2 LOGIN
 passport.use(new GitHubStrategy({
-    clientID: GITHUB_CLIENT_ID,
-    clientSecret: GITHUB_CLIENT_SECRET,
-    callbackURL: "http://127.0.0.1:3000/auth/github/callback"
+    clientID: config.github.clientId,
+    clientSecret: config.github.clientSecret,
+    callbackURL: config.github.callbackUrl
   },
   function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate({ githubId: profile.id }, function (err, user) {
-      return done(err, user);
+    User.findOne({ github: profile.id }, function(err, existingUser) {
+      if (err) done(err);
+      if (existingUser) return done(null, existingUser);
+      console.log(profile);
+      var user = new User({
+        username: profile.username,
+        displayName: profile.displayName,
+        email: profile.emails[0].value,
+        provider: profile.provider
+      });
+      user[profile.provider] = profile.id;
+      user.save(function(err) {
+        if (err) console.log(err);
+        done(null, user);
+      });
     });
   }
 ));
