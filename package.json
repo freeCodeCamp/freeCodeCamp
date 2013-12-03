@@ -13,6 +13,7 @@
     "node-foursquare": "*",
     "passport": "*",
     "passport-local": "*",
+    "passport-github": "*",
     "passport-facebook": "*",
     "passport-twitter": "*",
     "passport-google-oauth": "*",
