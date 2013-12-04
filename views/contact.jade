@@ -2,23 +2,26 @@ extends layout
 
 block content
   .col-sm-8.col-sm-offset-2
-    .page-header
-      h1 Contact Form
-    form(role='form', method='POST')
-      .form-group
-        label(class='control-label', for='email') Email
-        input.form-control(type='email', name='email', id='email')
-      .form-group
-        label(class='control-label', for='contactBody') Body
-        textarea.form-control(type='text', name='contactBody', id='contactBody', rows='7')
-      .form-group
-        button.btn.btn-primary(type='submit')
-          i.fa.fa-location-arrow
-          |  Send
-        button.btn.btn-link(disabled='') Powered by SendGrid
-    if error.length
-      .alert.alert-danger
-        p= error
-    if success.length
-      .alert.alert-success
-        p= success
+    .panel.panel-default
+      .panel-heading
+        i.fa.fa-envelope
+        | Contact Form
+      .panel-body
+        form(role='form', method='POST')
+          .form-group
+            label(class='control-label', for='email') Email
+            input.form-control(type='email', name='email', id='email')
+          .form-group
+            label(class='control-label', for='contactBody') Body
+            textarea.form-control(type='text', name='contactBody', id='contactBody', rows='7')
+          .form-group
+            button.btn.btn-primary(type='submit')
+              i.fa.fa-location-arrow
+              | Send
+            button.btn.btn-link(disabled='') Powered by SendGrid
+        if error.length
+          .alert.alert-danger
+            p= error
+        if success.length
+          .alert.alert-success
+            p= success

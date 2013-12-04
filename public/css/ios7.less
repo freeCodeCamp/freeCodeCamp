@@ -16,6 +16,11 @@ body {
   min-height: 100%;
 }
 
+[class^="fa-"],
+[class*="fa-"] {
+  margin-right: 10px;
+}
+
 
 // Navbar =====================================================================
 .navbar-default {
@@ -49,16 +54,59 @@ body {
   }
 }
 // Buttons ====================================================================
+.btn {
+  font-weight: 300;
+  margin: 0 10px 10px 0;
+  transition: all 0.15s;
 
+  &:active,
+  .active {
+    box-shadow: none;
+  }
+}
 
-// Grid =======================================================================
-[class*="col-xs"],
-[class*="col-sm"],
-[class*="col-md"],
-[class*="col-lg"] {
+.btn-default {
+  background: #bbbbbb;
+  border-color: #bbbbbb;
+  color: white; }
+.btn-default .caret {
+  border-top-color: white; }
+.btn-default:hover, .btn-default.active {
+  background: transparent;
+  color: #aaaaaa;
+  border-color: #bbbbbb; }
+.btn-default:hover .caret, .btn-default.active .caret {
+  border-top-color: #bbbbbb; }
+
+.btn-primary {
+  background: #007aff;
+  border-color: #007aff; }
+.btn-primary:hover, .btn-primary.active {
+  background: transparent;
+  color: #007aff;
+  border-color: #007aff; }
+.btn-primary:hover .caret, .btn-primary.active .caret {
+  border-top-color: #007aff; }
+
+// Panel ======================================================================
+.panel {
   background-color: #fff;
+  border-radius: 0;
+  border: 0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+}
+
+.panel-default {
+  > .panel-heading {
+    background-color: #fff;
+    border: 0;
+    height: 50px;
+    color: #007aff;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+    padding: 15px 15px;
+  }
 }
 
 
@@ -77,6 +125,7 @@ body {
 // Forms =================================================================
 .form-control {
   transition: all 0.4s;
+  box-shadow: none;
 
   &:focus {
     border-color: #007aff;
