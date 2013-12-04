@@ -17,6 +17,10 @@ exports.account = function(req, res) {
  * GET /login
  */
 exports.getLogin = function(req, res) {
+  if (req.user) {
+    return res.redirect('back');
+  }
+
   res.render('login', {
     title: 'Login',
     user: req.user,
@@ -48,6 +52,10 @@ exports.postLogin = function(req, res, next) {
  * GET /signup
  */
 exports.getSignup = function(req, res) {
+  if (req.user) {
+    return res.redirect('back');
+  }
+
   res.render('signup', {
     title: 'Create Account',
     user: req.user,
