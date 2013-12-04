@@ -7,12 +7,18 @@ block content
       |  Foursquare API
 
   if !user.tokens.foursquare
-    .alert.alert-warning
-      button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
-      p= message
-    a.btn.btn-large.btn-primary(href='/auth/foursquare')
-      i.fa.fa-qrcode.fa-spin
-      |  Get Foursquare Token
+    .panel.panel-default
+      .panel-heading
+        i.fa.fa-shield
+        | Authorization Required
+      .panel-body
+        a(href='/auth/foursquare')
+          .label.label-primary.label-block
+            h2
+              i.fa.fa-qrcode
+              | Get Foursquare Token
+      .panel-footer
+        div= message
   else
     ul.nav.nav-pills(style='margin-bottom: 15px;')
       li.active
