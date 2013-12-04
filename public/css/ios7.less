@@ -285,13 +285,37 @@ a {
 
 
 // Datatable =============================================================
+.dataTables_filter {
+  float: right;
+
+  input {
+    .form-control;
+    display: inline-block;
+    width: inherit;
+    height: 30px;
+    margin: 0 0 5px 5px;
+    &:focus {
+      border-color: #007aff;
+      box-shadow: none;
+    }
+  }
+}
+
+.dataTables_length {
+  float: left;
+}
+
 .dataTable th {
   padding-right: 20px;
   position: relative;
-  font-weight: normal; }
-.dataTable th.sorting {
-  color: #007aff;
-  cursor: pointer; }
+  font-weight: normal;
+
+  .sorting {
+    color: #007aff;
+    cursor: pointer;
+  }
+}
+
 .dataTable th.sorting:after, .dataTable th.sorting:before {
   content: "";
   width: 0;
