@@ -1,14 +1,13 @@
 extends layout
 
 block content
-  .starter-template
-    h1 Bootstrap starter template
-    p.lead
-      | Use this document as a way to quickly start any new project.
-      br
-      | All you get is this text and a mostly barebones HTML document.
+  h1 Bootstrap starter template
+  p.lead
+    | Use this document as a way to quickly start any new project.
+    br
+    | All you get is this text and a mostly barebones HTML document.
 
-    if user
-      .alert.alert-success.fade.in
-        button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
-        | Congratulations, you are logged in!
+  if user
+    .alert.alert-success.fade.in
+      button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+      | Congratulations, you are logged in!
