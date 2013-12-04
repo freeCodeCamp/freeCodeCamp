@@ -3,7 +3,8 @@ extends layout
 block content
   if messages.length
     .alert.alert-danger
-      strong= messages
+      for message in messages
+        div= message
   .login-container.signup.animated.fadeIn
     h3.text-center
       span.text-primary PROJECT
@@ -41,8 +42,3 @@ block content
           | GitHub
     p Already have an account?&nbsp;
       a(href='/login') Login now
-
-    if messages.length
-      .alert.alert-danger
-        for message in messages
-          div= message

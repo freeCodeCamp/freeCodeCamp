@@ -15,10 +15,10 @@ block content
           label(class='col-sm-2 control-label', for='contactBody') Body
           .col-sm-10
             textarea.form-control(type='text', name='contactBody', id='contactBody', rows='7')
-            p.help-block Powered by SendGrid
         .form-group
           .col-sm-offset-2.col-sm-10
             button.btn.btn-primary(type='submit') Send
+            .pull-right.clearfix Powered by SendGrid
 
         if error.length
           .alert.alert-danger
