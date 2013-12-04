@@ -1,24 +1,27 @@
 extends layout
 
 block content
-  .col-sm-8.col-sm-offset-2
-    .panel.panel-default
-      .panel-heading
-        i.fa.fa-envelope
-        | Contact Form
-      .panel-body
-        form(role='form', method='POST')
-          .form-group
-            label(class='control-label', for='email') Email
+  .panel.panel-default
+    .panel-heading
+      i.fa.fa-envelope
+      | Contact Form
+    .panel-body
+      form.form-horizontal(role='form', method='POST')
+        .form-group
+          label(class='col-sm-2 control-label', for='email') Email
+          .col-sm-10
             input.form-control(type='email', name='email', id='email')
-          .form-group
-            label(class='control-label', for='contactBody') Body
+        .form-group
+          label(class='col-sm-2 control-label', for='contactBody') Body
+          .col-sm-10
             textarea.form-control(type='text', name='contactBody', id='contactBody', rows='7')
-          .form-group
+        .form-group
+          .col-sm-offset-2.col-sm-10
             button.btn.btn-primary(type='submit')
               i.fa.fa-location-arrow
               | Send
             button.btn.btn-link(disabled='') Powered by SendGrid
+
         if error.length
           .alert.alert-danger
             p= error
