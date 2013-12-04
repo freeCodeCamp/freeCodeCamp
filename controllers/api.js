@@ -27,7 +27,7 @@ exports.foursquare = function(req, res) {
       var geo = geoip.lookup('4.17.136.0');
       var latitude = geo.ll[0];
       var longitude = geo.ll[1];
-      foursquare.Venues.getTrending(latitude, longitude, { limit: 10 }, req.user.tokens.foursquare, function(err, results) {
+      foursquare.Venues.getTrending(latitude, longitude, { limit: 50 }, req.user.tokens.foursquare, function(err, results) {
         callback(err, results);
       });
     },

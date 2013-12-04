@@ -284,6 +284,58 @@ a {
 }
 
 
+// Datatable =============================================================
+.dataTable th {
+  padding-right: 20px;
+  position: relative;
+  font-weight: normal; }
+.dataTable th.sorting {
+  color: #007aff;
+  cursor: pointer; }
+.dataTable th.sorting:after, .dataTable th.sorting:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 12px;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent; }
+.dataTable th.sorting:after {
+  top: 19px;
+  border-top: 5px solid #007aff !important; }
+.dataTable th.sorting:before {
+  top: 11px;
+  border-bottom: 5px solid #007aff !important; }
+.dataTable th.sorting_asc {
+  color: #007aff;
+  cursor: pointer; }
+.dataTable th.sorting_asc:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 12px;
+  top: 15px;
+  border-bottom: 5px solid #007aff !important;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent; }
+.dataTable th.sorting_desc {
+  color: #007aff;
+  cursor: pointer; }
+.dataTable th.sorting_desc:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 12px;
+  top: 15px;
+  border-top: 5px solid #007aff !important;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent; }
+
+th:active {
+  outline: none; }
+
 // Forms =================================================================
 .form-control {
   transition: all 0.4s;
