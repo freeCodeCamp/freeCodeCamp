@@ -9,6 +9,7 @@
     "fb": "*",
     "geoip-lite": "*",
     "jade": "*",
+    "less-middleware": "*",
     "mongoose": "*",
     "node-foursquare": "*",
     "passport": "*",

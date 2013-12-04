@@ -1,6 +1,7 @@
 // Load modules and libraries
 var express = require('express');
 var http = require('http');
+var less = require('less-middleware');
 var path = require('path');
 var fs = require('fs');
 var flash = require('connect-flash');
@@ -32,10 +33,11 @@ app.use(express.favicon());
 app.use(express.cookieParser());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.session({ secret: 'Bob-vs-Alice' }));
+app.use(express.session({ secret: 'Bob vs Alice' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+app.use(less({ src: __dirname + '/public', compress: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
