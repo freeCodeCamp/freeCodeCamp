@@ -1,0 +1,209 @@
+//
+// Responsive: Utility classes
+// --------------------------------------------------
+
+
+// IE10 in Windows (Phone) 8
+//
+// Support for responsive views via media queries is kind of borked in IE10, for
+// Surface/desktop in split view and for Windows Phone 8. This particular fix
+// must be accompanied by a snippet of JavaScript to sniff the user agent and
+// apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
+// our Getting Started page for more information on this bug.
+//
+// For more information, see the following:
+//
+// Issue: https://github.com/twbs/bootstrap/issues/10497
+// Docs: http://getbootstrap.com/getting-started/#browsers
+// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+
+@-ms-viewport {
+  width: device-width;
+}
+
+
+// Visibility utilities
+
+.visible-xs {
+  .responsive-invisibility();
+  @media (max-width: @screen-xs-max) {
+    .responsive-visibility();
+  }
+  &.visible-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-visibility();
+    }
+  }
+  &.visible-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-visibility();
+    }
+  }
+  &.visible-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-visibility();
+    }
+  }
+}
+.visible-sm {
+  .responsive-invisibility();
+  &.visible-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-visibility();
+    }
+  }
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .responsive-visibility();
+  }
+  &.visible-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-visibility();
+    }
+  }
+  &.visible-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-visibility();
+    }
+  }
+}
+.visible-md {
+  .responsive-invisibility();
+  &.visible-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-visibility();
+    }
+  }
+  &.visible-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-visibility();
+    }
+  }
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .responsive-visibility();
+  }
+  &.visible-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-visibility();
+    }
+  }
+}
+.visible-lg {
+  .responsive-invisibility();
+  &.visible-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-visibility();
+    }
+  }
+  &.visible-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-visibility();
+    }
+  }
+  &.visible-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-visibility();
+    }
+  }
+  @media (min-width: @screen-lg-min) {
+    .responsive-visibility();
+  }
+}
+
+.hidden-xs {
+  .responsive-visibility();
+  @media (max-width: @screen-xs-max) {
+    .responsive-invisibility();
+  }
+  &.hidden-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.hidden-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.hidden-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-invisibility();
+    }
+  }
+}
+.hidden-sm {
+  .responsive-visibility();
+  &.hidden-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-invisibility();
+    }
+  }
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .responsive-invisibility();
+  }
+  &.hidden-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.hidden-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-invisibility();
+    }
+  }
+}
+.hidden-md {
+  .responsive-visibility();
+  &.hidden-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.hidden-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-invisibility();
+    }
+  }
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .responsive-invisibility();
+  }
+  &.hidden-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-invisibility();
+    }
+  }
+}
+.hidden-lg {
+  .responsive-visibility();
+  &.hidden-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.hidden-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.hidden-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-invisibility();
+    }
+  }
+  @media (min-width: @screen-lg-min) {
+    .responsive-invisibility();
+  }
+}
+
+// Print utilities
+.visible-print {
+  .responsive-invisibility();
+}
+
+@media print {
+  .visible-print {
+    .responsive-visibility();
+  }
+  .hidden-print {
+    .responsive-invisibility();
+  }
+}
