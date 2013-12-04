@@ -2,13 +2,14 @@ extends layout
 
 block content
   .col-sm-8.col-sm-offset-2
-    h3 Contact Form
+    .page-header
+      h1 Contact Form
     form(role='form', method='POST')
       .form-group
-        label(for='email') Email
+        label(class='control-label', for='email') Email
         input.form-control(type='email', name='email', id='email')
       .form-group
-        label(for='contactBody') Body
+        label(class='control-label', for='contactBody') Body
         textarea.form-control(type='text', name='contactBody', id='contactBody', rows='7')
       .form-group
         button.btn.btn-primary(type='submit')

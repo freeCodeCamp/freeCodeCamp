@@ -51,9 +51,27 @@ body {
 // Buttons ====================================================================
 
 
+// Grid =======================================================================
+[class*="col-xs"],
+[class*="col-sm"],
+[class*="col-md"],
+[class*="col-lg"] {
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
 
 // Typography =================================================================
 
+.page-header {
+  margin: 0;
+  border: 0;
+  h1 {
+    color: #5e5e5e;
+    font-weight: 300;
+  }
+}
 
 
 // Forms =================================================================
@@ -68,17 +86,9 @@ body {
 
 label {
   font-weight: normal;
-
-  > .error {
-    color: #d9534f;
-    margin-top: 5px;
-  }
 }
 
-.has-error,
-.error {
-  &,
-  &:focus {
-    border-color: #d9534f;
-  }
+// Params: text-color; border-color; background-color
+.has-error {
+  .form-control-validation(#d9534f; #d9534f; #d9534f);
 }
