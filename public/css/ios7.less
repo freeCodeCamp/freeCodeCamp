@@ -4,12 +4,53 @@
 
 @import url("//fonts.googleapis.com/css?family=Lato:100,300,400,700");
 
-// Navbar =====================================================================
+// Body =======================================================================
+body {
+  font-family: "Lato", sans-serif;
+  color: #666;
+  background: #e8e8e8;
+  min-height: 100%;
+}
 
+
+// Navbar =====================================================================
+.navbar {
+  min-height: 45px;
+  width: 100%;
+}
+
+.navbar-default {
+  background: rgba(255, 255, 255, 0.95);
+  border: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+
+  .navbar-nav {
+    > li > a {
+      color: #999;
+      transition: all 0.3s;
+
+      &:hover,
+      &:focus {
+        color: #999;
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    > .active > a {
+      &,
+      &:focus {
+        color: #007aff;
+        background-color: transparent;
+      }
+      &:hover {
+        color: #007aff;
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
 // Buttons ====================================================================
 
-.btn {
-  border: none;
-}
+
 
 // Typography =================================================================
