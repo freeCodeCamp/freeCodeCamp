@@ -42,3 +42,9 @@ block content
           | GitHub
     p Already have an account?&nbsp;
       a(href='/login') Login now
+
+  script
+    $(function() {
+      $('.navbar').remove();
+      $('body').addClass('signup-body');
+    });
