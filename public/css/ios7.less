@@ -53,12 +53,13 @@ body {
     }
   }
 }
+
+
 // Buttons ====================================================================
 .btn {
   font-weight: 300;
-  margin: 0 10px 10px 0;
   transition: all 0.15s;
-
+  margin: 0 10px 10px 0;
   &:active,
   .active {
     box-shadow: none;
@@ -66,27 +67,39 @@ body {
 }
 
 .btn-default {
-  background: #bbbbbb;
-  border-color: #bbbbbb;
-  color: white; }
-.btn-default .caret {
-  border-top-color: white; }
-.btn-default:hover, .btn-default.active {
-  background: transparent;
-  color: #aaaaaa;
-  border-color: #bbbbbb; }
-.btn-default:hover .caret, .btn-default.active .caret {
-  border-top-color: #bbbbbb; }
+  background: #bbb;
+  border-color: #bbb;
+  color: #fff;
+
+  &:hover,
+  &.active {
+    background: transparent;
+    color: #aaa;
+    border-color: #bbb;
+  }
+}
 
 .btn-primary {
   background: #007aff;
-  border-color: #007aff; }
-.btn-primary:hover, .btn-primary.active {
-  background: transparent;
-  color: #007aff;
-  border-color: #007aff; }
-.btn-primary:hover .caret, .btn-primary.active .caret {
-  border-top-color: #007aff; }
+  border-color: #007aff;
+
+  &:hover,
+  &.active {
+    background: transparent;
+    color: #007aff;
+    border-color: #007aff;
+  }
+}
+
+.facebook {
+  background-color: #335397;
+  border-color: #335397;
+  &:focus,
+  &:hover {
+    background-color: transparent;
+    color: #335397;
+  }
+}
 
 // Panel ======================================================================
 .panel {
@@ -140,4 +153,76 @@ label {
 // Params: text-color; border-color; background-color
 .has-error {
   .form-control-validation(#d9534f; #d9534f; #d9534f);
+}
+
+// Misc ===================================================================
+.login-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 40px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 380px;
+  height: 390px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -190px 0 15px -190px;
+  opacity: 0;
+  transition: all 0.75s 0.375s;
+
+  &.active {
+    opacity: 1;
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  .form-control {
+    height: 48px;
+    font-size: 15px;
+    box-shadow: none;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid #d6d6d6;
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+  }
+
+  .form-options {
+    margin: 20px 0 30px;
+
+    .checkbox {
+      display: inline-block;
+    }
+  }
+
+  button[type="submit"] {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    opacity: 0.5;
+    font-family: "FontAwesome";
+    background: transparent;
+    color: #888;
+    border: 2px solid #888;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding-left: 7px;
+    line-height: 24px;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    [class^="fa-"],
+    [class*="fa-"] {
+      margin-right: 0;
+    }
+  }
+
 }
