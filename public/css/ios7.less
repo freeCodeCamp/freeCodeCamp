@@ -4,7 +4,11 @@
 
 @import url("//fonts.googleapis.com/css?family=Lato:100,300,400,700");
 
-// Body =======================================================================
+// Variables  =================================================================
+@navbar-height: 45px;
+
+
+// Global =====================================================================
 body {
   font-family: "Lato", sans-serif;
   color: #666;
@@ -14,11 +18,6 @@ body {
 
 
 // Navbar =====================================================================
-.navbar {
-  min-height: 45px;
-  width: 100%;
-}
-
 .navbar-default {
   background: rgba(255, 255, 255, 0.95);
   border: 0;
@@ -54,3 +53,32 @@ body {
 
 
 // Typography =================================================================
+
+
+
+// Forms =================================================================
+.form-control {
+  transition: all 0.4s;
+
+  &:focus {
+    border-color: #007aff;
+    box-shadow: none;
+  }
+}
+
+label {
+  font-weight: normal;
+
+  > .error {
+    color: #d9534f;
+    margin-top: 5px;
+  }
+}
+
+.has-error,
+.error {
+  &,
+  &:focus {
+    border-color: #d9534f;
+  }
+}
