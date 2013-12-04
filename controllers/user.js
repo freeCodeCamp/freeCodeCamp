@@ -66,8 +66,6 @@ exports.getSignup = function(req, res) {
 exports.postSignup = function(req, res) {
 
   var user = new User({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
     confirmPassword: req.body.confirmPassword
