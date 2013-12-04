@@ -11,6 +11,10 @@
   outline: 0 !important;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   color: #666;
   background: #e8e8e8;
@@ -29,6 +33,11 @@ a {
     color: #666666;
     text-decoration: none;
   }
+}
+
+.login-body {
+  background: url(../img/6.jpg) no-repeat;
+  background-size: cover;
 }
 
 // Navbar =====================================================================
@@ -517,6 +526,9 @@ input[type="radio"]:checked + span:after {
 }
 
 // Misc ===================================================================
+
+
+
 .login-container {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 40px;
@@ -529,6 +541,13 @@ input[type="radio"]:checked + span:after {
   top: 50%;
   left: 50%;
   margin: -190px 0 15px -190px;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
 
   &.signup {
    height: 430px;
