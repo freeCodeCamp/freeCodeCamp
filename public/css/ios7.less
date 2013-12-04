@@ -60,6 +60,39 @@ a {
 }
 
 
+// Labels ======================================================================
+.label {
+  display: inline-block;
+  font-size: 85%;
+  font-weight: 300;
+  line-height: 1.4;
+  border-radius: 0px;
+  margin: 0 5px;
+
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 100;
+  }
+}
+
+.label-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.label-success {
+  background-color: #60c560;
+}
+
+.label-primary {
+  background-color: #007aff;
+}
+
+
+
+
 // Alerts ======================================================================
 .alert {
   border-radius: 0px;
@@ -147,6 +180,19 @@ a {
     background: transparent;
     color: #d9534f;
     border-color: #d9534f;
+  }
+}
+
+.btn-magenta {
+  background: #d94084;
+  border-color: #d94084;
+  color: #fff;
+
+  &:hover,
+  &.active {
+    background: transparent;
+    color: #d94084;
+    border-color: #d94084;
   }
 }
 
