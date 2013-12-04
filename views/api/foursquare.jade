@@ -33,19 +33,19 @@ block content
             i.fa.fa-signal
             | Trending Venues
           .panel-body
-            table.dataTable.table.table-hover.table-condensed
+            table.dataTable.table.table-striped.table-bordered
               thead
                 tr
                   th Name
-                  th.hidden-xs.hidden-sm Location
+                  th.hidden-xs.hidden-sm Category
                   th.hidden-xs Checkins
                   th Here Now
               tbody
                 for venue in trendingVenues.venues
                   tr
                     td= venue.name
-                    td.hidden-xs.hidden-sm #{venue.location.address}, #{venue.location.city}, #{venue.location.state}
-                    td.hidden-xs= venue.stats.checkinsCount
+                    td.hidden-xs.hidden-sm #{venue.categories[0].name}
+                    td.hidden-xs #{venue.stats.checkinsCount}
                     td= venue.hereNow.count
 
         .panel.panel-default

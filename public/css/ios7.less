@@ -6,7 +6,11 @@
 @navbar-height: 45px;
 
 
-// Global =====================================================================
+// Document ===================================================================
+* {
+  outline: 0 !important;
+}
+
 body {
   color: #666;
   background: #e8e8e8;
@@ -284,7 +288,9 @@ a {
 }
 
 
-// Datatable =============================================================
+// Datatables ================================================================
+
+// Search field
 .dataTables_filter {
   float: right;
 
@@ -294,6 +300,7 @@ a {
     width: inherit;
     height: 30px;
     margin: 0 0 5px 5px;
+
     &:focus {
       border-color: #007aff;
       box-shadow: none;
@@ -301,64 +308,120 @@ a {
   }
 }
 
+// Show "X" entries
 .dataTables_length {
   float: left;
 }
 
+// Sorting controls
 .dataTable th {
-  padding-right: 20px;
   position: relative;
   font-weight: normal;
 
-  .sorting {
+  &.sorting {
     color: #007aff;
     cursor: pointer;
+
+    &:after,
+    &:before {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 8px;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+    }
+
+    &:after {
+      top: 19px;
+      border-top: 5px solid #007aff;
+    }
+
+    &:before {
+      top: 11px;
+      border-bottom: 5px solid #007aff;
+    }
+  }
+
+  &.sorting_asc {
+    color: #007aff;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 12px;
+      top: 15px;
+      border-bottom: 5px solid #007aff;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+    }
+  }
+
+  &.sorting_desc {
+    color: #007aff;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 12px;
+      top: 15px;
+      border-top: 5px solid #007aff;
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+    }
   }
 }
 
-.dataTable th.sorting:after, .dataTable th.sorting:before {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  right: 12px;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent; }
-.dataTable th.sorting:after {
-  top: 19px;
-  border-top: 5px solid #007aff !important; }
-.dataTable th.sorting:before {
-  top: 11px;
-  border-bottom: 5px solid #007aff !important; }
-.dataTable th.sorting_asc {
-  color: #007aff;
-  cursor: pointer; }
-.dataTable th.sorting_asc:after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  right: 12px;
-  top: 15px;
-  border-bottom: 5px solid #007aff !important;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent; }
-.dataTable th.sorting_desc {
-  color: #007aff;
-  cursor: pointer; }
-.dataTable th.sorting_desc:after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  right: 12px;
-  top: 15px;
-  border-top: 5px solid #007aff !important;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent; }
+// Showing 1 to 10 of "X" entries
+.dataTables_info {
+  float: left;
+  margin-top: 4px;
+  font-size: 13px;
+}
 
-th:active {
-  outline: none; }
+// Pagination container
+.dataTables_paginate {
+  float: right;
+  text-align: right;
+  margin: 5px 0;
+}
+
+// Pagination buttons
+.dataTables_paginate a {
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #aaa;
+  color: #999;
+  background: #fff;
+  padding: 4px 8px;
+  margin-left:5px;
+
+  &:hover {
+    color: #007aff;
+    border-color: #007aff;
+  }
+
+  &.paginate_active {
+    border-color: #007aff;
+    background: #007aff;
+    color: #fff;
+  }
+
+  &.paginate_button_disabled {
+    border-color: #e3e3e3;
+    color: #ddd;
+    pointer-events: none;
+  }
+}
+
 
 // Forms =================================================================
 .form-control {
