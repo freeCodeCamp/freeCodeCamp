@@ -1,28 +1,46 @@
 extends layout
 
 block content
-  .main
-    h3 Signup Form
-    form(role='form', method='POST')
+  if messages.length
+    .alert.alert-danger
+      strong= messages
+  .login-container.signup
+    h3.text-center
+      span.text-primary PROJECT
+      span.text-muted NAME
+    form(method='POST')
       .form-group
-        .row
-          .col-xs-6.col-sm-6.col-md-6
-            label.control-label(for='firstName') First Name
-            input.form-control(type='text', name='firstName', id='firstName', placeholder='First Name', autofocus='')
-          .col-xs-6.col-sm-6.col-md-6
-            label.control-label(for='lastName') Last Name
-            input.form-control(type='text', name='lastName', id='lastName', placeholder='Last Name')
-      .form-group
-        label.control-label(for='email') Email
         input.form-control(type='email', name='email', id='email', placeholder='Email')
       .form-group
-        label.control-label(for='password') Password
         input.form-control(type='password', name='password', id='password', placeholder='Password')
       .form-group
-        label.control-label(for='confirmPassword') Confirm Password
         input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
-      .form-group
-        button.btn.btn.btn-primary(type='submit') Signup
+        button(type='submit')
+          i.fa.fa-chevron-right
+      .form-options.clearfix
+        label.checkbox
+          input(type='checkbox')
+          span I agree to terms and conditions
+    .row
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-primary.btn-block.facebook(href='/auth/facebook')
+          i.fa.fa-facebook
+          | Facebook
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-danger.btn-block.google(href='/auth/google')
+          i.fa.fa-google-plus
+          | Google
+    .row
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-info.btn-block.twitter(href='/auth/twitter')
+          i.fa.fa-twitter
+          | Twitter
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-default.btn-block.github(href='/auth/github')
+          i.fa.fa-github
+          | GitHub
+    p Already have an account?&nbsp;
+      a(href='/login') Login now
 
     if messages.length
       .alert.alert-danger
