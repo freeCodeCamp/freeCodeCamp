@@ -1,46 +1,43 @@
 extends layout
 
 block content
-  .login-wrapper
-    .login-container
-      h3.text-center
-        span.text-primary PROJECT
-        span.text-muted NAME
-      form(method='POST')
-        .form-group
-          input.form-control(type='text', name='usernameOrEmail', id='usernameOrEmail', placeholder='Username or Email', autofocus='')
-        .form-group
-          input.form-control(type='password', name='password', id='password', placeholder='Password')
-          button(type='submit')
-            i.fa.fa-chevron-right
-        .form-options.clearfix
-          a.pull-right(href='#') Forgot password?
-          .text-left
-            label.checkbox
-              input(type='checkbox')
-              span Remember me
-      .row
-        .col-xs-6.col-sm-6.col-md-6
-          a.btn.btn-primary.btn-block.facebook(href='/auth/facebook')
-            i.fa.fa-facebook
-            | Facebook
-        .col-xs-6.col-sm-6.col-md-6
-          a.btn.btn-danger.btn-block.google(href='/auth/google')
-            i.fa.fa-google-plus
-            | &nbsp; Google
-      .row
-        .col-xs-6.col-sm-6.col-md-6
-          a.btn.btn-info.btn-block.twitter(href='/auth/twitter')
-            i.fa.fa-twitter
-            | &nbsp; Twitter
-        .col-xs-6.col-sm-6.col-md-6
-          a.btn.btn-default.btn-block.github(href='/auth/github')
-            i.fa.fa-github
-            | &nbsp; GitHub
-      p Don't have an account yet?&nbsp;
-        a(href='/signup') Sign up now
-
-
-      if messages.length
-        .alert.alert-danger
-          strong= messages
+  if messages.length
+    .alert.alert-danger
+      strong= messages
+  .login-container
+    h3.text-center
+      span.text-primary PROJECT
+      span.text-muted NAME
+    form(method='POST')
+      .form-group
+        input.form-control(type='text', name='usernameEmail', id='usernameEmail', placeholder='Username or Email', autofocus='')
+      .form-group
+        input.form-control(type='password', name='password', id='password', placeholder='Password')
+        button(type='submit')
+          i.fa.fa-chevron-right
+      .form-options.clearfix
+        a.pull-right(href='#') Forgot password?
+        .text-left
+          label.checkbox
+            input(type='checkbox')
+            span Remember me
+    .row
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-primary.btn-block.facebook(href='/auth/facebook')
+          i.fa.fa-facebook
+          | Facebook
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-danger.btn-block.google(href='/auth/google')
+          i.fa.fa-google-plus
+          | &nbsp; Google
+    .row
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-info.btn-block.twitter(href='/auth/twitter')
+          i.fa.fa-twitter
+          | &nbsp; Twitter
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-default.btn-block.github(href='/auth/github')
+          i.fa.fa-github
+          | &nbsp; GitHub
+    p Don't have an account yet?&nbsp;
+      a(href='/signup') Sign up now

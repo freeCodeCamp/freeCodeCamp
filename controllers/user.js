@@ -33,10 +33,7 @@ exports.getLogin = function(req, res) {
  */
 exports.postLogin = function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
-    if (err) {
-      console.log(err);
-      return next(err);
-    }
+    if (err) return next(err);
     if (!user) {
       req.flash('messages', info.message);
       return res.redirect('/login');
