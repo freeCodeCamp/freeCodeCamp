@@ -18,6 +18,14 @@ body {
   margin-right: 10px;
 }
 
+a {
+  color: #007aff;
+
+  &:hover {
+    color: #666666;
+    text-decoration: none;
+  }
+}
 
 // Navbar =====================================================================
 .navbar-default {
@@ -88,6 +96,55 @@ body {
   }
 }
 
+.btn-success {
+  background: #60c560;
+  border-color: #60c560;
+
+  &:hover,
+  &.active {
+    background: transparent;
+    color: #60c560;
+    border-color: #60c560;
+  }
+}
+
+.btn-info {
+  background: #5bc0de;
+  border-color: #5bc0de;
+
+  &:hover,
+  &.active {
+    background: transparent;
+    color: #5bc0de;
+    border-color: #5bc0de;
+  }
+}
+
+
+.btn-warning {
+  background: #f0ad4e;
+  border-color: #f0ad4e;
+
+  &:hover,
+  &.active {
+    background: transparent;
+    color: #f0ad4e;
+    border-color: #f0ad4e;
+  }
+}
+
+.btn-danger {
+  background: #d9534f;
+  border-color: #d9534f;
+
+  &:hover,
+  &.active {
+    background: transparent;
+    color: #d9534f;
+    border-color: #d9534f;
+  }
+}
+
 .facebook {
   background-color: #335397;
   border-color: #335397;
@@ -95,6 +152,36 @@ body {
   &:hover {
     background-color: transparent;
     color: #335397;
+  }
+}
+
+.twitter {
+  background-color: #00c7f7;
+  border-color: #00c7f7;
+  &:focus,
+  &:hover {
+    background-color: transparent;
+    color: #00c7f7;
+  }
+}
+
+.google {
+  background-color: #d34836;
+  border-color: #d34836;
+  &:focus,
+  &:hover {
+    background-color: transparent;
+    color: #d34836;
+  }
+}
+
+.github {
+  background-color: #000;
+  border-color: #000;
+  &:focus,
+  &:hover {
+    background-color: transparent;
+    color: #000;
   }
 }
 
@@ -129,6 +216,10 @@ body {
     color: #5e5e5e;
     font-weight: 300;
   }
+}
+
+.text-primary {
+  color: #007aff;
 }
 
 
@@ -232,7 +323,7 @@ input[type="radio"]:checked + span:after {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
   padding: 30px;
   width: 380px;
-  height: 390px;
+  height: 380px;
   text-align: center;
   position: absolute;
   top: 50%;
