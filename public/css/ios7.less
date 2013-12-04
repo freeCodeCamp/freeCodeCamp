@@ -67,10 +67,11 @@ a {
   font-weight: 300;
   line-height: 1.4;
   border-radius: 0px;
-  margin: 0 5px;
+  border: 1px solid transparent;
+  transition: all 0.15s;
 
   h2 {
-    margin-bottom: 20px;
+    margin-top: 10px;
     font-weight: 100;
   }
 }
@@ -88,6 +89,13 @@ a {
 
 .label-primary {
   background-color: #007aff;
+
+  &:hover,
+  &.active {
+    background: transparent;
+    color: #007aff;
+    border-color: #007aff;
+  }
 }
 
 
@@ -245,19 +253,17 @@ a {
 }
 
 .panel-body {
-  padding: 15px 15px 0 15px;
+  padding: 0 15px 15px;
 }
 
 .panel-default {
   > .panel-heading {
     background-color: #fff;
     border: 0;
-    height: 50px;
     color: #007aff;
     font-size: 15px;
     font-weight: 400;
     margin: 0;
-    padding: 15px 15px;
   }
 }
 
