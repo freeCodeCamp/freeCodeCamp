@@ -8,6 +8,10 @@ block content
     .panel-body
       form.form-horizontal(role='form', method='POST')
         .form-group
+          label(class='col-sm-2 control-label', for='email') Name
+          .col-sm-10
+            input.form-control(type='name', name='name', id='name')
+        .form-group
           label(class='col-sm-2 control-label', for='email') Email
           .col-sm-10
             input.form-control(type='email', name='email', id='email')

@@ -12,6 +12,7 @@ exports.getContact = function(req, res) {
 
 exports.postContact = function(req, res) {
   var from = req.body.email;
+  var name = req.body.name;
   var body = req.body.contactBody;
 
   var sendTo = 'sakhat@gmail.com';
