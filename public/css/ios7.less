@@ -16,7 +16,6 @@ html {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 300;
-  margin: 0 0 15px;
   }
 
 [class^="fa-"],
@@ -239,11 +238,12 @@ label-info {
     > a {
       color: #555;
       border-radius: 0;
-
+      border-bottom: 1px solid #007aff;
       transition: all 0.3s;
 
       &:hover {
         color: #333;
+        border-bottom-color: #007aff;
         background-color: rgba(0,0,0,0.05);
       }
     }
@@ -253,6 +253,8 @@ label-info {
       &:hover,
       &:focus {
         color: #007aff;
+        border: 1px solid #007aff;
+        border-bottom-color: #fff;
       }
     }
   }
