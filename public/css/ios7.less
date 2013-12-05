@@ -51,19 +51,25 @@ a {
 }
 
 // Navbar =====================================================================
+
+.navbar-inverse {
+  background-color: #007aff;
+  border: 0
+}
+
 .navbar-default {
   background: rgba(255, 255, 255, 0.95);
-  border: 0;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  border-color: rgba(238,238,238,0.95);
 
+  .navbar-brand {
+    color: #007aff;
+  }
   .navbar-nav {
     > li > a {
-      color: #999;
       transition: all 0.3s;
 
       &:hover,
       &:focus {
-        color: #999;
         background: rgba(0, 0, 0, 0.05);
       }
     }
