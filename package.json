@@ -4,6 +4,7 @@
   "dependencies": {
     "async": "*",
     "bcrypt": "*",
+    "connect-flash": "*",
     "express": "*",
     "forever": "*",
     "fb": "*",
