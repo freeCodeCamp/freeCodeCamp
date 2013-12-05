@@ -51,7 +51,9 @@ block content
             h3.lead.text-primary Venue Detail
             p
               span.label.label-primary #{venueDetail.venue.name} (#{venueDetail.venue.categories[0].shortName})
+            p
               span.label.label-success #{venueDetail.venue.location.address}, #{venueDetail.venue.location.city}, #{venueDetail.venue.location.state}
+            p
               span.label.label-warning #{venueDetail.venue.likes.count} likes, #{venueDetail.venue.rating} rating
 
             img.pull-left(src='#{venueDetail.venue.photos.groups[0].items[0].prefix}150x150#{venueDetail.venue.photos.groups[0].items[0].suffix}')
