@@ -1,28 +1,77 @@
 extends layout
 
 block content
-  h3 Account Management
-  form(role='form', method='POST')
-    .form-group
-      .row
-        .col-xs-6.col-sm-6.col-md-6
-          label(for='firstName') First Name
-          input.form-control(type='text', name='firstName', id='firstName', value='#{user.firstName}')
-        .col-xs-6.col-sm-6.col-md-6
-          label(for='lastName') Last Name
-          input.form-control(type='text', name='lastName', id='lastName', value='#{user.lastName}')
-    .form-group
-      label(for='email') Email
-      input.form-control(type='email', name='email', id='email', value='#{user.email}')
-    .form-group
-      label(for='password') Password
-      input.form-control(type='password', name='password', id='password', placeholder='Password')
-    .form-group
-      label(for='confirmPassword') Confirm Password
-      input.form-control(type='password', id='confirmPassword', placeholder='Confirm Password')
-    .form-group
-      button.btn.btn.btn-info(type='submit') Update
+  h2 Account Settings
+  ul.nav.nav-tabs
+    li.active
+      a(href='#basic', data-toggle='tab') Basic Info
+    li
+      a(href='#settings', data-toggle='tab') Settings
+  .tab-content
+    #basic.tab-pane.fade.active.in
+      form.form-horizontal(role='form', method='POST')
+        .form-group
+          label.col-sm-2.control-label(for='name') Name
+          .col-sm-4
+            input.form-control(type='text', name='name', id='name')
+        .form-group
+          label.col-sm-2.control-label(for='email') Email
+          .col-sm-4
+            input.form-control(type='email', name='email', id='email')
+        .form-group
+          label.col-sm-2.control-label(for='location') Location
+          .col-sm-4
+            input.form-control(type='text', name='location', id='location')
+        .form-group
+          label.col-sm-2.control-label(for='website') Website
+          .col-sm-4
+            input.form-control(type='text', name='website', id='website')
+        .form-group
+          label.col-sm-2.control-label(for='twitter') Twitter
+          .col-sm-4
+            input.form-control(type='text', name='twitter', id='twitter')
+        .form-group
+          label.col-sm-2.control-label(for='linkedin') LinkedIn URL
+          .col-sm-4
+            input.form-control(type='text', name='linkedin', id='linkedin')
+        .form-group
+          label.col-sm-2.control-label(for='profilePicture') Profile picture
+          .col-sm-8
+            .btn.btn-danger.google Use Google
+            .btn.btn-primary.facebook Use Facebook
+            .btn.btn-info.twitter Use Twitter
+            .fileinput.fileinput-new(data-provides='fileinput')
+              span.btn.btn-default.btn-file
+                span.fileinput-new Select File
+                span.fileinput-exists Change
+                input(type='file', name='...')
+              span.fileinput-filename
+              a.close.fileinput-exists(href='#', data-dismiss='fileinput', style='float: none;')  ×
+            img(width=100, height=100, src='http://www.faithlineprotestants.org/wp-content/uploads/2010/12/facebook-default-no-profile-pic.jpg')
+        .form-group
+          button.btn.btn.btn-primary(type='submit') Update Profile
+
+
+
+
+
+
+    #settings.tab-pane.fade
+      .form-group
+        label(for='password') Password
+        input.form-control(type='password', name='password', id='password', placeholder='Password')
+      .form-group
+        label(for='confirmPassword') Confirm Password
+        input.form-control(type='password', id='confirmPassword', placeholder='Confirm Password')
+
+
+
+
+
   if messages.length
     .alert.alert-danger
       for message in messages
         div= message
+
+  script
+    $('.fileinput').fileinput()

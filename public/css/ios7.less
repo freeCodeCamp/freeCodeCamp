@@ -234,6 +234,8 @@ label-info {
 
 .nav-tabs {
   border-bottom: 1px solid #007aff;
+  margin-bottom: 20px;
+
   > li {
     > a {
       color: #555;
@@ -676,6 +678,10 @@ label-info {
 
 
 // Forms =================================================================
+.form-horizontal .control-label {
+  text-align: left;
+}
+
 .form-control {
   transition: all 0.4s;
   box-shadow: none;
@@ -847,4 +853,9 @@ input[type="radio"]:checked + span:after {
     }
   }
 
+}
+
+
+.fileinput-filename {
+  vertical-align: super;
 }
