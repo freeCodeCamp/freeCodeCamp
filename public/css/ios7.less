@@ -15,7 +15,6 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-top: 0;
   font-weight: 300;
 }
 
@@ -217,39 +216,68 @@ label-info {
   border-radius: 0px;
 }
 
-nav-tabs > li > a > [class*="icon-"] {
-  margin-right: 0 !important;
-}
-.nav-tabs > li > a > [class*="icon-"] + span {
-  display: none;
-}
-
 // Tabs ========================================================================
 
-.nav-tabs > li {
-
-  > a {
-  border-radius: 0px;
-  padding: 7px 15px;
+.nav-tabs-justified {
+  > li > a {
+    border-radius: 0;
+    border-bottom: 1px solid #007aff;
   }
-  .active > a {
 
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    border: 1px solid #007aff;
+    border-bottom-color: #fff;
   }
 }
 
 .nav-tabs {
-  margin-top: -5px;
-  border: 0;
-}
+  border-bottom: 1px solid #007aff;
+  > li {
+    > a {
+      color: #555;
+      border: 1px solid transparent;
+      border-radius: 0;
 
-.tab-content {
-  .row {
-    margin: 0;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #333;
+        background-color: rgba(0,0,0,0.05);
+      }
+    }
+
+    // Active state, and it's :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: #007aff;
+      }
+    }
   }
 }
 
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
-  background-color: #007aff;
+.nav-pills {
+  > li {
+    > a {
+      border: 1px solid #007aff;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: #007aff;
+      }
+    }
+  }
 }
 
 
