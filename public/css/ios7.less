@@ -124,6 +124,38 @@ a {
   border-radius: 0px;
 }
 
+nav-tabs > li > a > [class*="icon-"] {
+  margin-right: 0 !important;
+}
+.nav-tabs > li > a > [class*="icon-"] + span {
+  display: none;
+}
+
+// Tabs ========================================================================
+
+.nav-tabs > li {
+
+  > a {
+  border-radius: 0px;
+  padding: 7px 15px;
+  }
+  .active > a {
+
+  }
+}
+
+.nav-tabs {
+  margin-top: -5px;
+  border: 0;
+}
+
+.tab-content {
+  .row {
+    margin: 0;
+  }
+}
+
+
 // Buttons ====================================================================
 .btn {
   font-weight: 300;
@@ -282,6 +314,11 @@ a {
     font-size: 15px;
     font-weight: 400;
     margin: 0;
+
+    &.tabs {
+      background: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+    }
   }
 }
 
@@ -301,6 +338,13 @@ a {
   color: #007aff;
 }
 
+.text-warning {
+  color: #f0ad4e;
+}
+
+.list-inline {
+  margin-bottom: 0;
+}
 
 // Datatables ================================================================
 
@@ -393,18 +437,19 @@ a {
   }
 }
 
+.dataTables_wrapper {
+  .clearfix;
+}
+
 // Showing 1 to 10 of "X" entries
 .dataTables_info {
   float: left;
-  margin-top: 4px;
   font-size: 13px;
 }
 
 // Pagination container
 .dataTables_paginate {
   float: right;
-  text-align: right;
-  margin: 5px 0;
 }
 
 // Pagination buttons

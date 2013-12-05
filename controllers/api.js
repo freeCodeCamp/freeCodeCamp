@@ -32,7 +32,7 @@ exports.foursquare = function(req, res) {
       });
     },
     venueDetail: function(callback) {
-      foursquare.Venues.getVenue('40a55d80f964a52020f31ee3', req.user.tokens.foursquare, function(err, results) {
+      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', req.user.tokens.foursquare, function(err, results) {
         callback(err, results);
       });
     },

@@ -1,11 +1,6 @@
 extends ../layout
 
 block content
-  .page-header
-    h1
-      i.fa.fa-foursquare
-      |  Foursquare API
-
   if !user.tokens.foursquare
     .panel.panel-default
       .panel-heading
@@ -20,19 +15,24 @@ block content
       .panel-footer
         div= message
   else
-    ul.nav.nav-pills(style='margin-bottom: 15px;')
-      li.active
-        a(href='#venues', data-toggle='tab') Venues
-      li
-        a(href='#users', data-toggle='tab') Users
+    .panel.panel-default
+      .panel-heading.tabs
+        i.fa.fa-foursquare
+        | Foursquare API
+        ul.nav.nav-tabs.pull-right
+          li.active
+            a(href='#venues', data-toggle='tab')
+              i.fa.fa-map-marker
+              | Venues
+          li
+            a(href='#users', data-toggle='tab')
+              i.fa.fa-user
+              | Users
+      .panel-body
+        .tab-content
+          #venues.tab-pane.fade.active.in
+            h3.lead.text-primary Trending Venues
 
-    div.tab-content
-      #venues.tab-pane.fade.active.in
-        .panel.panel-default
-          .panel-heading
-            i.fa.fa-signal
-            | Trending Venues
-          .panel-body
             table.dataTable.table.table-striped.table-bordered
               thead
                 tr
@@ -48,33 +48,27 @@ block content
                     td.hidden-xs #{venue.stats.checkinsCount}
                     td= venue.hereNow.count
 
-        .panel.panel-default
-          .panel-heading
-            i.fa.fa-ticket
-            | Venue Detail
-          .panel-body
-            img.img-thumbnail(src='https://irs3.4sqi.net/img/general/200x200/11109710_xePHC-bh76LL_EaG-tsM1lUV6Bp-VUG1r_haDSqSvBM.jpg')
-            p.text-danger Name: #{venueDetail.venue.name}
-            p.text-muted Location: #{venueDetail.venue.location.address}, #{venueDetail.venue.location.city}, #{venueDetail.venue.location.state}
-            p.text-success Categories:
-              for category in venueDetail.venue.categories
-                span  #{category.shortName} |
-            p.text-info Likes: #{venueDetail.venue.likes.count}
-            p.text-warning Rating: #{venueDetail.venue.rating}
+            h3.lead.text-primary Venue Detail
+            p
+              span.label.label-primary #{venueDetail.venue.name} (#{venueDetail.venue.categories[0].shortName})
+              span.label.label-success #{venueDetail.venue.location.address}, #{venueDetail.venue.location.city}, #{venueDetail.venue.location.state}
+              span.label.label-warning #{venueDetail.venue.likes.count} likes, #{venueDetail.venue.rating} rating
 
-      #users.tab-pane.fade
-        .lead User Checkins
-        table.dataTable.table.table-bordered.table-hover
-          thead
-            tr
-              th Name
-              th Location
-              th Category
-              th Checkins
-          tbody
-            for checkin in userCheckins.checkins.items
-              tr
-                td= checkin.venue.name
-                td #{checkin.venue.location.address}, #{checkin.venue.location.city}, #{checkin.venue.location.state}
-                td= checkin.venue.categories[0].shortName
-                td= checkin.venue.stats.checkinsCount
+            img.pull-left(src='#{venueDetail.venue.photos.groups[0].items[0].prefix}150x150#{venueDetail.venue.photos.groups[0].items[0].suffix}')
+
+          #users.tab-pane.fade
+            .lead User Checkins
+            table.dataTable.table.table-bordered.table-hover
+              thead
+                tr
+                  th Name
+                  th Location
+                  th Category
+                  th Checkins
+              tbody
+                for checkin in userCheckins.checkins.items
+                  tr
+                    td= checkin.venue.name
+                    td #{checkin.venue.location.address}, #{checkin.venue.location.city}, #{checkin.venue.location.state}
+                    td= checkin.venue.categories[0].shortName
+                    td= checkin.venue.stats.checkinsCount
