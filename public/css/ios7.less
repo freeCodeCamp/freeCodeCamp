@@ -14,6 +14,7 @@ html {
   height: 100%;
 }
 
+
 [class^="fa-"],
 [class*="fa-"] {
   margin-right: 10px;
@@ -23,7 +24,7 @@ a {
   color: #007aff;
 
   &:hover {
-    color: #666666;
+    color: #0062cc;
     text-decoration: none;
   }
 }
@@ -63,6 +64,10 @@ a {
 
   .navbar-brand {
     color: #007aff;
+
+    &:hover {
+      color: #0062cc;
+    }
   }
   .navbar-nav {
     > li > a {
@@ -241,6 +246,10 @@ nav-tabs > li > a > [class*="icon-"] {
   }
 }
 
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background-color: #007aff;
+}
+
 
 // Buttons ====================================================================
 .btn {
@@ -327,16 +336,75 @@ nav-tabs > li > a > [class*="icon-"] {
   }
 }
 
-.btn-magenta {
-  background: #d94084;
-  border-color: #d94084;
-  color: #fff;
+.btn-default-outline {
+  color: #999;
+  border: 1px solid #bbb;
+  background: transparent;
 
   &:hover,
   &.active {
-    background: transparent;
-    color: #d94084;
-    border-color: #d94084;
+  background: #bbb;
+  color: #fff;
+  }
+}
+
+.btn-primary-outline {
+  color: #007aff;
+  border: 1px solid #007aff;
+  background: transparent;
+
+  &:hover,
+  &.active {
+    background: #007aff;
+    color: #fff;
+  }
+}
+
+.btn-success-outline {
+  color: #60c560;
+  border: 1px solid #60c560;
+  background: transparent;
+
+  &:hover,
+  &.active {
+    background: #60c560;
+    color: #fff;
+  }
+}
+
+.btn-info-outline {
+  color: #5bc0de;
+  border: 1px solid #5bc0de;
+  background: transparent;
+
+  &:hover,
+  &.active {
+    background: #5bc0de;
+    color: #fff;
+  }
+}
+
+.btn-warning-outline {
+  color: #f0ad4e;
+  border: 1px solid #f0ad4e;
+  background: transparent;
+
+  &:hover,
+  &.active {
+    background: #f0ad4e;
+    color: #fff;
+  }
+}
+
+.btn-danger-outline {
+  color: #d9534f;
+  border: 1px solid #d9534f;
+  background: transparent;
+
+  &:hover,
+  &.active {
+    background: #d9534f;
+    color: #fff;
   }
 }
 
