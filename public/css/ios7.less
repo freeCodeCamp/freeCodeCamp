@@ -14,10 +14,14 @@ html {
   height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  font-weight: 300;
+}
 
 [class^="fa-"],
 [class*="fa-"] {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 a {
@@ -64,13 +68,11 @@ a {
 
   .navbar-brand {
     color: #007aff;
-
-    &:hover {
-      color: #0062cc;
-    }
   }
+
   .navbar-nav {
     > li > a {
+      color: #999;
       transition: all 0.3s;
 
       &:hover,
@@ -406,6 +408,18 @@ nav-tabs > li > a > [class*="icon-"] {
     background: #d9534f;
     color: #fff;
   }
+}
+
+.btn-group {
+  margin: 0 10px 15px 0;
+}
+
+.btn-group.pull-right {
+  margin-right: 0;
+}
+
+.btn-group > .btn {
+  margin: 0;
 }
 
 .facebook {
