@@ -14,12 +14,13 @@ exports.getAccount = function(req, res) {
 };
 
 exports.postAccountProfile = function(req, res) {
+  console.log(req.body.gender);
   User.findById(req.user.id, function(err, user) {
     user.profile.name = req.body.name || '';
     user.profile.email = req.body.email || '';
+    user.profile.gender = req.body.gender || '';
     user.profile.location = req.body.location || '';
     user.profile.website = req.body.website || '';
-    user.profile.picture = req.body.picture || '';
 
     user.save(function(err) {
       res.redirect('/account');

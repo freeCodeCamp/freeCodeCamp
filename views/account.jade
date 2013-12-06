@@ -18,10 +18,10 @@ block content
           label.col-sm-2.control-label(for='name') Gender
           .col-sm-4
             label.radio-inline
-              input(checked=user.profile.gender=='male', name='optionsRadios2', type='radio', value='option1')
+              input(checked=user.profile.gender=='Male', name='gender', type='radio', value='Male')
               span Male
             label.radio-inline
-              input(checked=user.profile.gender=='female', name='optionsRadios2', type='radio', value='option2')
+              input(checked=user.profile.gender=='Female', name='gender', type='radio', value='Female')
               span Female
         .form-group
           label.col-sm-2.control-label(for='email') Email
@@ -48,7 +48,7 @@ block content
                 input(type='file', name='...')
               span.fileinput-filename
               a.close.fileinput-exists(href='#', data-dismiss='fileinput', style='float: none;')  ×
-            img(width=100, height=100, src='http://www.faithlineprotestants.org/wp-content/uploads/2010/12/facebook-default-no-profile-pic.jpg')
+            img(width=100, height=100, src='#{user.profile.picture}')
         .form-group
           button.btn.btn.btn-primary(type='submit') Update Profile
 
