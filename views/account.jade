@@ -15,6 +15,15 @@ block content
           .col-sm-4
             input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
         .form-group
+          label.col-sm-2.control-label(for='name') Gender
+          .col-sm-4
+            label.radio-inline
+              input(checked=user.profile.gender=='male', name='optionsRadios2', type='radio', value='option1')
+              span Male
+            label.radio-inline
+              input(checked=user.profile.gender=='female', name='optionsRadios2', type='radio', value='option2')
+              span Female
+        .form-group
           label.col-sm-2.control-label(for='email') Email
           .col-sm-4
             input.form-control(type='email', name='email', id='email', value='#{user.profile.email}')

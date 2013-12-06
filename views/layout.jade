@@ -41,7 +41,7 @@ html
                 a(href='/signup') Create Account
             else
               li
-                a(href='/account') Welcome,  #{user.firstName} #{user.lastName}
+                a(href='/account') #{user.profile.name}
               li
                 a(href='/logout') Logout
   .container

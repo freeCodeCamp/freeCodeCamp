@@ -126,17 +126,15 @@ passport.use(new GoogleStrategy({
       if (existingUser) {
         return done(null, existingUser);
       }
-
+      console.log(profile);
       var user = new User({
-        name: profile.displayName,
-        email: profile._json.email,
-        gender: profile._json.gender,
-        picture: profile._json.picture,
-        provider: profile.provider
+        google: profile.id
       });
-
       user.tokens.google = accessToken;
-      user[profile.provider] = profile.id;
+      user.profile.name = profile.displayName;
+      user.profile.email = profile._json.email;
+      user.profile.gender = profile._json.gender;
+      user.profile.picture = profile._json.picture;
 
       user.save(function(err) {
         done(err, user);
