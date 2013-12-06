@@ -40,8 +40,10 @@ html
               li(class=title=='Create Account'?'active':undefined)
                 a(href='/signup') Create Account
             else
-              li
-                a(href='/account') #{user.profile.name}
+              li.user
+                a(href='/account')
+                  img(src='#{user.profile.picture}')
+                  | #{user.profile.name}
               li
                 a(href='/logout') Logout
   .container
