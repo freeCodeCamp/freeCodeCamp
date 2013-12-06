@@ -16,11 +16,11 @@ var userSchema = new mongoose.Schema({
 
   // Optional profile information
   profile: {
-    name: String,
-    email: String,
-    location: String,
-    website: String,
-    picture: String
+    name: { type: String, default: '' },
+    email: { type: String, default: '' },
+    location: { type: String, default: '' },
+    website: { type: String, default: '' },
+    picture: { type: String, default: '' }
   },
 
   // API access tokens
