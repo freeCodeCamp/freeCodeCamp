@@ -2,18 +2,14 @@ extends ../layout
 
 block content
   if !user.tokens.foursquare
-    .panel.panel-default
-      .panel-heading
-        i.fa.fa-shield
-        | Authorization Required
-      .panel-body
-        a(href='/auth/foursquare')
-          .label.label-primary.label-block
-            h2
-              i.fa.fa-qrcode
-              | Get Foursquare Token
-      .panel-footer
-        div= message
+    h3
+      i.fa.fa-shield
+      | Authorization Required
+    a(href='/auth/foursquare')
+      .label.label-primary.label-block
+        h2
+          i.fa.fa-qrcode
+          | Get Foursquare Token
   else
     .page-header
       h1
