@@ -2,21 +2,35 @@ var mongoose = require('mongoose'),
     bcrypt = require('bcrypt');
 
 var userSchema = new mongoose.Schema({
+
+  // Local authentication
   username: { type: String, index: true, unique: true },
-  email: String,
-  name: String,
   password: String,
+
+  // OAuth 2.0 authentication
+  provider: String,
+  facebook: String,
+  twitter: String,
+  google: String,
+  github: String,
+
+  // Optional profile information
+  profile: {
+    name: String,
+    email: String,
+    location: String,
+    website: String,
+    picture: String
+  },
+
+  // API access tokens
   tokens: {
     google: String,
     facebook: String,
     foursquare: String,
     twitter: String,
     github: String
-  },
-  provider: String,
-  facebook: String,
-  google: String,
-  isAdmin: Boolean
+  }
 });
 
 userSchema.path('password').validate(function(password) {
