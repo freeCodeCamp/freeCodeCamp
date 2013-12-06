@@ -2,12 +2,12 @@ var mongoose = require('mongoose'),
     bcrypt = require('bcrypt');
 
 var userSchema = new mongoose.Schema({
-  email: { type: String, unique: true },
-  admin: { type: Boolean, default: false },
-  firstName: String,
-  lastName: String,
+  username: { type: String, unique: true },
+  email: String,
+  name: String,
   password: String,
   tokens: {
+    google: String,
     facebook: String,
     foursquare: String,
     twitter: String,
@@ -15,7 +15,8 @@ var userSchema = new mongoose.Schema({
   },
   provider: String,
   facebook: String,
-  google: String
+  google: String,
+  isAdmin: Boolean,
 });
 
 userSchema.path('password').validate(function(password) {
