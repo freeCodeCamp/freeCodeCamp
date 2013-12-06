@@ -16,7 +16,7 @@ var userSchema = new mongoose.Schema({
   provider: String,
   facebook: String,
   google: String,
-  isAdmin: Boolean,
+  isAdmin: Boolean
 });
 
 userSchema.path('password').validate(function(password) {
@@ -24,20 +24,11 @@ userSchema.path('password').validate(function(password) {
   return password.length;
 }, 'Password cannot be blank');
 
-userSchema.path('email').validate(function(email) {
+userSchema.path('username').validate(function(username) {
   if (this.provider) return true;
-  return email.length;
-}, 'Email cannot be blank');
+  return username.length;
+}, 'Username cannot be blank');
 
-userSchema.path('firstName').validate(function(firstName) {
-  if (this.provider) return true;
-  return firstName.length;
-}, 'First Name cannot be blank');
-
-userSchema.path('lastName').validate(function(lastName) {
-  if (this.provider) return true;
-  return lastName.length;
-}, 'Last Name cannot be blank');
 
 userSchema.pre('save', function(next) {
   var user = this;

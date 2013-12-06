@@ -17,13 +17,10 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-passport.use(new LocalStrategy({
-    usernameField: 'email'
-  },
-  function(email, password, done) {
-  User.findOne({ email: email }, function(err, user) {
+passport.use(new LocalStrategy(function(username, password, done) {
+  User.findOne({ username: username }, function(err, user) {
     if (err) return done(err);
-    if (!user) { return done(null, false, { message: 'Unknown user ' + email }); }
+    if (!user) { return done(null, false, { message: 'Unknown user ' + username }); }
     user.comparePassword(password, function(err, isMatch) {
       if (err) return done(err);
       if(isMatch) {
@@ -123,37 +120,27 @@ passport.use(new GoogleStrategy({
     callbackURL: config.google.callbackUrl
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(accessToken);
-    console.log(profile);
     User.findOne({ google: profile.id }, function(err, existingUser) {
-
-      if (err) {
-        done(err);
-      }
+      if (err) done(err);
 
       if (existingUser) {
         return done(null, existingUser);
       }
 
       var user = new User({
-        firstName: profile.name.givenName,
-        lastName: profile.name.familyName,
+        name: profile.displayName,
         email: profile._json.email,
+        gender: profile._json.gender,
+        picture: profile._json.picture,
         provider: profile.provider
       });
 
+      user.tokens.google = accessToken;
       user[profile.provider] = profile.id;
 
       user.save(function(err) {
-        if (err) {
-          if (err.code === 11000) {
-            // Found another user with the same email
-
-          }
-        }
-        done(null, user);
+        done(err, user);
       });
-
     });
   }
 ));
