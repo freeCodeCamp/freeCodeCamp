@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 var userSchema = new mongoose.Schema({
 
   // Local authentication
-  username: { type: String, index: true, unique: true },
+  username: { type: String, unique: true, sparse: true },
   password: String,
 
   // OAuth 2.0 authentication
