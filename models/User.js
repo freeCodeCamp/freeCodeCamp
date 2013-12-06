@@ -21,7 +21,7 @@ var userSchema = new mongoose.Schema({
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
     website: { type: String, default: '' },
-    picture: { type: String, default: '' }
+    picture: { type: String, default: 'http://bit.ly/1cppDAL' }
   },
 
   // API access tokens
