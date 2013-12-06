@@ -10,9 +10,9 @@ block content
       span.text-muted NAME
     form(method='POST')
       .form-group
-        input.form-control(type='text', name='username', id='username', placeholder='Email', autofocus='')
+        input.form-control(type='text', name='username', id='username', placeholder='Email', autofocus='', required='')
       .form-group
-        input.form-control(type='password', name='password', id='password', placeholder='Password')
+        input.form-control(type='password', name='password', id='password', placeholder='Password', required='')
         button(type='submit')
           i.fa.fa-chevron-right
       .form-options.clearfix
