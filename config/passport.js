@@ -93,21 +93,24 @@ passport.use(new TwitterStrategy({
     consumerSecret: config.twitter.clientSecret,
     callbackURL: '/auth/twitter/callback'
   },
-  function(token, tokenSecret, profile, done) {
+  function(accessToken, tokenSecret, profile, done) {
     User.findOne({ twitter: profile.id }, function(err, existingUser) {
-      if (err) done(err);
-      if (existingUser) return done(null, existingUser);
-      console.log(profile);
+      if (err) return done(err);
+
+      if (existingUser) {
+        return done(null, existingUser);
+      }
+
       var user = new User({
-        username: profile.username,
-        displayName: profile.displayName,
-        photo: profile.photos[0].value,
-        provider: profile.provider,
+        twitter: profile.id
       });
-      user[profile.provider] = profile.id;
+      user.tokens.twitter = accessToken;
+      user.profile.name = profile.displayName;
+      user.profile.location = profile._json.location;
+      user.profile.picture = profile._json.profile_image_url;
+
       user.save(function(err) {
-        if (err) console.log(err);
-        done(null, user);
+        done(err, user);
       });
     });
   }
@@ -126,7 +129,6 @@ passport.use(new GoogleStrategy({
       if (existingUser) {
         return done(null, existingUser);
       }
-      console.log(profile);
       var user = new User({
         google: profile.id
       });
