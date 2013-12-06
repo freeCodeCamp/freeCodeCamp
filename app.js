@@ -76,12 +76,8 @@ app.get('/auth/google/callback', passport.authenticate('google', { successRedire
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/', failureRedirect: '/login' }));
 
-
 app.get('/auth/foursquare', api.foursquareAuth);
 app.get('/auth/foursquare/callback', api.foursquareCallback);
-
-app.get('*', home.index);
-
 
 app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
