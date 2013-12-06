@@ -50,8 +50,10 @@ app.get('/logout', user.logout);
 app.get('/signup', user.getSignup);
 app.post('/signup', user.postSignup);
 
-app.get('/account', passportConf.ensureAuthenticated, user.account);
-app.get('/admin', passportConf.ensureAuthenticated, passportConf.ensureAdmin(), user.getAdmin);
+app.get('/account', passportConf.ensureAuthenticated, user.getAccount);
+app.post('/account/profile', passportConf.ensureAuthenticated, user.postAccountProfile);
+app.post('/account/settings', passportConf.ensureAuthenticated, user.postAccountSettings);
+
 app.get('/partials/:name', home.partials);
 
 app.get('/api', api.apiBrowser);

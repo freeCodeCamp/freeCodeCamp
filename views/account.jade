@@ -9,33 +9,25 @@ block content
       a(href='#settings', data-toggle='tab') Settings
   .tab-content
     #basic.tab-pane.fade.active.in
-      form.form-horizontal(role='form', method='POST')
+      form.form-horizontal(action='/account/profile', method='POST')
         .form-group
           label.col-sm-2.control-label(for='name') Name
           .col-sm-4
-            input.form-control(type='text', name='name', id='name')
+            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
         .form-group
           label.col-sm-2.control-label(for='email') Email
           .col-sm-4
-            input.form-control(type='email', name='email', id='email')
+            input.form-control(type='email', name='email', id='email', value='#{user.profile.email}')
         .form-group
           label.col-sm-2.control-label(for='location') Location
           .col-sm-4
-            input.form-control(type='text', name='location', id='location')
+            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
         .form-group
           label.col-sm-2.control-label(for='website') Website
           .col-sm-4
-            input.form-control(type='text', name='website', id='website')
+            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
         .form-group
-          label.col-sm-2.control-label(for='twitter') Twitter
-          .col-sm-4
-            input.form-control(type='text', name='twitter', id='twitter')
-        .form-group
-          label.col-sm-2.control-label(for='linkedin') LinkedIn URL
-          .col-sm-4
-            input.form-control(type='text', name='linkedin', id='linkedin')
-        .form-group
-          label.col-sm-2.control-label(for='profilePicture') Profile picture
+          label.col-sm-2.control-label(for='profilePicture') Profile Picture
           .col-sm-8
             .btn.btn-danger.google Use Google
             .btn.btn-primary.facebook Use Facebook

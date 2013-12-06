@@ -5,12 +5,30 @@ var mongoose = require('mongoose'),
 // Import models
 var User = require('../models/User');
 
-exports.account = function(req, res) {
+exports.getAccount = function(req, res) {
   res.render('account', {
     title: 'Account Management',
     user: req.user,
     messages: req.flash('messages')
   });
+};
+
+exports.postAccountProfile = function(req, res) {
+  User.findById(req.user.id, function(err, user) {
+    user.profile.name = req.body.name || '';
+    user.profile.email = req.body.email || '';
+    user.profile.location = req.body.location || '';
+    user.profile.website = req.body.website || '';
+    user.profile.picture = req.body.picture || '';
+
+    user.save(function(err) {
+      res.redirect('/account');
+    });
+  });
+};
+
+exports.postAccountSettings = function(req, res) {
+  console.log('okay!!');
 };
 
 /**
