@@ -40,22 +40,22 @@ passport.use(new FacebookStrategy({
   },
   function (accessToken, refreshToken, profile, done) {
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
-      if (err) done(err);
+      if (err) return done(err);
 
-      if (existingUser) return done(null, existingUser);
+      if (existingUser) {
+        return done(null, existingUser);
+      }
 
       var user = new User({
-        firstName: profile.name.givenName,
-        lastName: profile.name.familyName,
-        provider: profile.provider,
-        email: profile._json.email
+        facebook: profile.id
       });
-
-      user[profile.provider] = profile.id;
+      user.profile.name = profile.displayName;
+      user.profile.email = profile._json.email;
+      user.profile.gender = profile._json.gender;
+      user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=normal';
 
       user.save(function(err) {
-        if (err) console.log(err);
-        done(null, user);
+        done(err, user);
       });
     });
   }
