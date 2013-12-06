@@ -11,11 +11,11 @@ block content
       span.text-muted NAME
     form(method='POST')
       .form-group
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus='')
+        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus='', required='')
       .form-group
-        input.form-control(type='password', name='password', id='password', placeholder='Password')
+        input.form-control(type='password', name='password', id='password', placeholder='Password', required='')
       .form-group
-        input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
+        input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', required='')
         button(type='submit')
           i.fa.fa-chevron-right
       .form-options.clearfix

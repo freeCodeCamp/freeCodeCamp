@@ -65,30 +65,27 @@ exports.getSignup = function(req, res) {
  */
 exports.postSignup = function(req, res) {
 
-  var user = new User({
-    username: req.body.email,
-    password: req.body.password,
-    confirmPassword: req.body.confirmPassword
-  });
-
   if (req.body.password !== req.body.confirmPassword) {
     req.flash('messages', 'Passwords do not match');
     return res.redirect('/signup');
   }
 
+  var user = new User({
+    username: req.body.email,
+    password: req.body.password
+  });
+
   user.save(function(err) {
     if (err) {
-
       if (err.name === 'ValidationError') {
         req.flash('messages', _.map(err.errors, function(value, key) { return value.message; }));
       }
-
       if (err.code === 11000) {
         req.flash('messages', 'User already exists');
       }
-
       return res.redirect('/signup');
     }
+
     req.logIn(user, function(err) {
       if (err) throw err;
       res.redirect('/');
