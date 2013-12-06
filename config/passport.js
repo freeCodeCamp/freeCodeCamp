@@ -69,19 +69,23 @@ passport.use(new GitHubStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOne({ github: profile.id }, function(err, existingUser) {
-      if (err) done(err);
-      if (existingUser) return done(null, existingUser);
-      console.log(profile);
+      if (err) return done(err);
+
+      if (existingUser) {
+        return done(null, existingUser);
+      }
+      console.log(profile)
       var user = new User({
-        username: profile.username,
-        displayName: profile.displayName,
-        email: profile.emails[0].value,
-        provider: profile.provider
+        github: profile.id
       });
-      user[profile.provider] = profile.id;
+      user.profile.name = profile.displayName;
+      user.profile.email = profile._json.email;
+      user.profile.picture = profile._json.avatar_url;
+      user.profile.location = profile._json.location;
+      user.profile.website = profile._json.blog;
+
       user.save(function(err) {
-        if (err) console.log(err);
-        done(null, user);
+        done(err, user);
       });
     });
   }
