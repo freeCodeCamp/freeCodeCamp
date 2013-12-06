@@ -18,7 +18,8 @@ block content
       .form-group
         .col-sm-offset-2.col-sm-8
           button.btn.btn-primary(type='submit') Send
-          .pull-right.clearfix Powered by SendGrid
+          span.pull-right.clearfix Powered by
+            img(height='34', src='/img/sendgrid.png')
 
       if error.length
         .alert.alert-danger
