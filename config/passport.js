@@ -106,7 +106,7 @@ passport.use('tumblr', new OAuthStrategy({
     User.findById(req.user._id, function(err, user) {
       user.tokens.tumblr = token;
       user.save(function(err) {
-        done(err);
+        done(err, req.user);
       });
     });
   }
@@ -125,4 +125,9 @@ exports.ensureAdmin = function ensureAdmin(req, res, next) {
     else
       res.send(403);
   };
+};
+
+
+exports.tumblrCallback = function(req, res) {
+  res.redirect('/api/tumblr');
 };

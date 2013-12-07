@@ -1,11 +1,11 @@
+var config = require('../config/config');
+var User = require('../models/User');
 var async = require('async');
 var geoip = require('geoip-lite');
-var config = require('../config/config');
 var FB = require('fb');
 var tumblr = require('tumblr.js');
 var foursquare = require('node-foursquare')({ secrets: config.foursquare });
 
-var User = require('../models/User');
 
 /**
  * GET /api
@@ -36,6 +36,7 @@ exports.getFoursquare = function(req, res) {
       });
     },
     userCheckins: function(callback) {
+      console.log('I AM RUNNING');
       foursquare.Users.getCheckins('self', null, req.user.tokens.foursquare, function(err, results) {
         callback(err, results);
       });
@@ -66,6 +67,9 @@ exports.getTumblr = function(req, res) {
     user: req.user
   });
 };
+
+
+
 
 /**
  * GET /api/facebook
@@ -98,11 +102,3 @@ exports.foursquareCallback = function(req, res) {
     });
   });
 };
-
-/**
-* GET /auth/tumblr/callback
-*/
-exports.tumblrCallback = function(req, res) {
-
-};
-
