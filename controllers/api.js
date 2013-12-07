@@ -2,6 +2,7 @@ var config = require('../config/config');
 var User = require('../models/User');
 var async = require('async');
 var cheerio = require('cheerio');
+var request = require('request');
 var _ = require('underscore');
 var geoip = require('geoip-lite');
 var FB = require('fb');
@@ -105,8 +106,16 @@ exports.getFacebook = function(req, res) {
 };
 
 exports.getScraping = function(req, res) {
-  res.render('api/scraping', {
-    title: 'Web Scraping',
-    user: req.user
+  request.get('https://news.ycombinator.com/', function(error, request, body) {
+    var $ = cheerio.load(body);
+    var links = [];
+    $('.title').find('a').slice(0,30).each(function(i, elem) {
+      links.push($(elem));
+    });
+    res.render('api/scraping', {
+      title: 'Web Scraping',
+      links: links,
+      user: req.user
+    });
   });
 };

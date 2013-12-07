@@ -64,7 +64,7 @@ app.get('/api', api.getApi);
 app.get('/api/foursquare', passportConf.ensureAuthenticated, api.getFoursquare);
 app.get('/api/tumblr', passportConf.ensureAuthenticated, api.getTumblr);
 app.get('/api/facebook', passportConf.ensureAuthenticated, api.getFacebook);
-app.get('/api/scraping', passportConf.ensureAuthenticated, api.getScraping);
+app.get('/api/scraping', api.getScraping);
 
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
