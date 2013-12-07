@@ -22,7 +22,9 @@ exports.getApi = function(req, res) {
  * GET /api/foursquare
  */
 exports.getFoursquare = function(req, res) {
-  if (!req.user.tokens.foursquare) {
+  var token = _.findWhere(req.user.tokens, { kind: 'foursquare' });
+
+  if (!token) {
     return res.render('api/unauthorized', {
       title: 'Foursquare API',
       provider: 'Foursquare',
@@ -35,18 +37,17 @@ exports.getFoursquare = function(req, res) {
       var geo = geoip.lookup('4.17.136.0');
       var lat = geo.ll[0];
       var lon = geo.ll[1];
-      foursquare.Venues.getTrending(lat, lon, { limit: 50 }, req.user.tokens.foursquare, function(err, results) {
+      foursquare.Venues.getTrending(lat, lon, { limit: 50 }, token.token, function(err, results) {
         callback(err, results);
       });
-    },
+    }
     venueDetail: function(callback) {
-      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', req.user.tokens.foursquare, function(err, results) {
+      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', token.token, function(err, results) {
         callback(err, results);
       });
     },
     userCheckins: function(callback) {
-      console.log('I AM RUNNING');
-      foursquare.Users.getCheckins('self', null, req.user.tokens.foursquare, function(err, results) {
+      foursquare.Users.getCheckins('self', null, token.token, function(err, results) {
         callback(err, results);
       });
     }
