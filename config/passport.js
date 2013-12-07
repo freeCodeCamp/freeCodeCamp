@@ -93,17 +93,26 @@ passport.use(new GoogleStrategy(config.google, function(accessToken, refreshToke
   });
 }));
 
-// Simple route middleware to ensure user is authenticated.  Otherwise send to login page.
-exports.ensureAuthenticated = function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
+passport.use('tumblr', new OAuthStrategy({
+    requestTokenURL: 'http://www.tumblr.com/oauth/request_token',
+    accessTokenURL: 'http://www.tumblr.com/oauth/access_token',
+    userAuthorizationURL: 'http://www.tumblr.com/oauth/authorize',
+    consumerKey: config.tumblr.consumerKey,
+    consumerSecret: config.tumblr.consumerSecret,
+    callbackURL: config.tumblr.callbackURL
+  },
+  function(token, tokenSecret, profile, done) {
+    User.findOne({ tumblr: profile.id }, function(err, existingUser) {
+
+    });
   }
+));
+
+exports.ensureAuthenticated = function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) return next();
   res.redirect('/login');
 };
 
-
-// Check for admin middleware, this is unrelated to passport.js
-// You can delete this if you use different method to check for admins or don't need admins
 exports.ensureAdmin = function ensureAdmin(req, res, next) {
   return function(req, res, next) {
     console.log(req.user);
