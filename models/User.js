@@ -1,13 +1,11 @@
-var mongoose = require('mongoose'),
-    bcrypt = require('bcrypt');
+var mongoose = require('mongoose');
+var bcrypt = require('bcrypt');
 
 var userSchema = new mongoose.Schema({
 
-  // Local authentication
   username: { type: String, unique: true, sparse: true },
   password: String,
 
-  // OAuth 2.0 authentication
   tokens: Array,
   provider: String,
   facebook: String,
@@ -15,7 +13,6 @@ var userSchema = new mongoose.Schema({
   google: String,
   github: String,
 
-  // Optional profile information
   profile: {
     name: { type: String, default: '' },
     email: { type: String, default: '' },
@@ -24,9 +21,6 @@ var userSchema = new mongoose.Schema({
     website: { type: String, default: '' },
     picture: { type: String, default: 'http://bit.ly/1cppDAL' }
   }
-
-  // API access tokens
-
 });
 
 userSchema.path('password').validate(function(password) {
