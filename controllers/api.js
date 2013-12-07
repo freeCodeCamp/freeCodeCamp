@@ -1,6 +1,7 @@
 var config = require('../config/config');
 var User = require('../models/User');
 var async = require('async');
+var cheerio = require('cheerio');
 var _ = require('underscore');
 var geoip = require('geoip-lite');
 var FB = require('fb');
@@ -99,6 +100,13 @@ exports.getTumblr = function(req, res) {
 exports.getFacebook = function(req, res) {
   res.render('api/facebook', {
     title: 'Facebook API',
+    user: req.user
+  });
+};
+
+exports.getScraping = function(req, res) {
+  res.render('api/scraping', {
+    title: 'Web Scraping',
     user: req.user
   });
 };

@@ -1,4 +1,3 @@
-var cheerio = require('cheerio');
 var express = require('express');
 var less = require('less-middleware');
 var path = require('path');
@@ -65,6 +64,7 @@ app.get('/api', api.getApi);
 app.get('/api/foursquare', passportConf.ensureAuthenticated, api.getFoursquare);
 app.get('/api/tumblr', passportConf.ensureAuthenticated, api.getTumblr);
 app.get('/api/facebook', passportConf.ensureAuthenticated, api.getFacebook);
+app.get('/api/scraping', passportConf.ensureAuthenticated, api.getScraping);
 
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
