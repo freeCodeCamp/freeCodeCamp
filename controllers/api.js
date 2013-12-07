@@ -40,7 +40,7 @@ exports.getFoursquare = function(req, res) {
       foursquare.Venues.getTrending(lat, lon, { limit: 50 }, token.token, function(err, results) {
         callback(err, results);
       });
-    }
+    },
     venueDetail: function(callback) {
       foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', token.token, function(err, results) {
         callback(err, results);
@@ -93,9 +93,6 @@ exports.getTumblr = function(req, res) {
   });
 };
 
-
-
-
 /**
  * GET /api/facebook
  */
@@ -103,27 +100,5 @@ exports.getFacebook = function(req, res) {
   res.render('api/facebook', {
     title: 'Facebook API',
     user: req.user
-  });
-};
-
-
-/**
- * GET /auth/foursquare
- * Shows the foursquare authentication dialog
- */
-exports.foursquareAuth = function(req, res) {
-  res.writeHead(303, { location: foursquare.getAuthClientRedirectUrl() });
-  res.end();
-};
-
-/**
- * GET /auth/foursquare/callback
- */
-exports.foursquareCallback = function(req, res) {
-  foursquare.getAccessToken({ code: req.query.code }, function(err, accessToken) {
-    User.findByIdAndUpdate(req.user._id, { $set: { tokens: { foursquare: accessToken } } }, null, function(err, user) {
-      if (err) throw err;
-      res.redirect('/api/foursquare');
-    });
   });
 };
