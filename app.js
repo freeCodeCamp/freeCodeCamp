@@ -64,7 +64,7 @@ app.get('/partials/:name', home.partials);
 app.get('/api', api.getApi);
 app.get('/api/foursquare', passportConf.ensureAuthenticated, api.getFoursquare);
 app.get('/api/tumblr', passportConf.ensureAuthenticated, api.getTumblr);
-app.get('/api/facebook', passportConf.ensureAuthenticated, api.facebook);
+app.get('/api/facebook', passportConf.ensureAuthenticated, api.getFacebook);
 
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
@@ -84,9 +84,8 @@ app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedi
 app.get('/auth/foursquare', api.foursquareAuth);
 app.get('/auth/foursquare/callback', api.foursquareCallback);
 
-app.get('/auth/tumblr', passport.authenticate('provider'));
-app.get('/auth/tumblr/callback', passport.authenticate('provider', { successRedirect: '/', failureRedirect: '/login' }));
-
+app.get('/auth/tumblr', passport.authorize('tumblr', { failureRedirect: '/api' }));
+app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), api.tumblrCallback);
 
 app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
