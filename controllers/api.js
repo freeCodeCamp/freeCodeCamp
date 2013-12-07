@@ -21,6 +21,14 @@ exports.getApi = function(req, res) {
  * GET /api/foursquare
  */
 exports.getFoursquare = function(req, res) {
+  if (!req.user.tokens.foursquare) {
+    return res.render('api/unauthorized', {
+      title: 'Foursquare API',
+      provider: 'Foursquare',
+      user: req.user
+    });
+  }
+
   async.parallel({
     trendingVenues: function(callback) {
       var geo = geoip.lookup('4.17.136.0');
@@ -43,12 +51,8 @@ exports.getFoursquare = function(req, res) {
     }
   },
   function(err, results) {
-    if (err) {
-      req.flash('info', err);
-    }
     res.render('api/foursquare', {
       title: 'Foursquare API',
-      message: req.flash('info'),
       user: req.user,
       trendingVenues: results.trendingVenues,
       venueDetail: results.venueDetail,
