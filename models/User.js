@@ -30,7 +30,8 @@ var userSchema = new mongoose.Schema({
     facebook: String,
     foursquare: String,
     twitter: String,
-    github: String
+    github: String,
+    tumblr: String
   }
 });
 
