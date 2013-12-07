@@ -1,4 +1,4 @@
-// Load modules and libraries
+var cheerio = require('cheerio');
 var express = require('express');
 var less = require('less-middleware');
 var path = require('path');

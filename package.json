@@ -4,6 +4,7 @@
   "dependencies": {
     "async": "*",
     "bcrypt": "*",
+    "cheerio": "*",
     "connect-flash": "*",
     "express": "*",
     "forever": "*",
