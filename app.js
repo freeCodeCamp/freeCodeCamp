@@ -1,6 +1,5 @@
 // Load modules and libraries
 var express = require('express');
-var http = require('http');
 var less = require('less-middleware');
 var path = require('path');
 var fs = require('fs');
@@ -15,7 +14,7 @@ var api = require('./controllers/api');
 var contact = require('./controllers/contact');
 
 // App Configuration (API Keys, Database URI)
-var config = require('./config/config.json');
+var config = require('./config/config');
 var passportConf = require('./config/passport');
 
 // Connect to database
@@ -26,20 +25,26 @@ var app = express();
 
 // Express Configuration
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.logger('dev'));
 app.use(express.favicon());
+app.use(express.logger('dev'));
 app.use(express.cookieParser());
-app.use(express.bodyParser());
+app.use(express.json());
+app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.session({ secret: 'Bob vs Alice' }));
+app.use(express.session({ secret: '0000' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(less({ src: __dirname + '/public', compress: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
+
+// development only
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
+}
 
 // Express Routes
 app.get('/', home.index);
