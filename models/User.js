@@ -8,6 +8,7 @@ var userSchema = new mongoose.Schema({
   password: String,
 
   // OAuth 2.0 authentication
+  tokens: Array,
   provider: String,
   facebook: String,
   twitter: String,
@@ -22,17 +23,10 @@ var userSchema = new mongoose.Schema({
     location: { type: String, default: '' },
     website: { type: String, default: '' },
     picture: { type: String, default: 'http://bit.ly/1cppDAL' }
-  },
+  }
 
   // API access tokens
-  tokens: {
-    google: String,
-    facebook: String,
-    foursquare: String,
-    twitter: String,
-    github: String,
-    tumblr: String
-  }
+
 });
 
 userSchema.path('password').validate(function(password) {

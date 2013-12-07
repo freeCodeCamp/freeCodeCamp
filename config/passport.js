@@ -104,7 +104,7 @@ passport.use('tumblr', new OAuthStrategy({
   },
   function (req, token, tokenSecret, profile, done) {
     User.findById(req.user._id, function(err, user) {
-      user.tokens.tumblr = token;
+      user.tokens.push({ kind: 'tumblr', token: token, tokenSecret: tokenSecret });
       user.save(function(err) {
         done(err, req.user);
       });
