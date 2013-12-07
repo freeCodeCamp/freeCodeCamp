@@ -65,6 +65,13 @@ exports.getFoursquare = function(req, res) {
  * GET /api/tumblr
  */
 exports.getTumblr = function(req, res) {
+  if (!req.user.tokens.tumblr) {
+    return res.render('api/unauthorized', {
+      title: 'Tumblr API',
+      provider: 'Tumblr',
+      user: req.user
+    });
+  }
 
   res.render('api/tumblr', {
     title: 'Tumblr API',

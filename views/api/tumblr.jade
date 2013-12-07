@@ -6,14 +6,4 @@ block content
       i.fa.fa-tumblr-square
       |  Tumblr API
 
-  if !user.tokens.tumblr
-    h3
-      i.fa.fa-shield
-      | Authorization Required
-    a(href='/auth/tumblr')
-      .label.label-primary.label-block
-        h2
-          i.fa.fa-qrcode
-          | Get Tumblr Token
-  else
-    h2 else
+  .btn.btn-success Authorized!
