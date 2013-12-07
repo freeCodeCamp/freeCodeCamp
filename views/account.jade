@@ -39,6 +39,8 @@ block content
           button.btn.btn.btn-primary(type='submit') Update Profile
 
     #settings.tab-pane.fade
+      .page-header
+        h3 Change Password
       form.form-horizontal(action='/account/profile', method='POST')
         .form-group
           label.col-sm-3.control-label(for='password') Password
@@ -50,7 +52,11 @@ block content
             input.form-control(type='password', id='confirmPassword')
         .form-group
           .col-sm-offset-3.col-sm-4
-            button.btn.btn.btn-default(type='submit') Change Password
+            button.btn.btn.btn-primary-outline(type='submit') Change Password
+      .page-header
+        h3 Delete Account
+        p You can delete your account, but keep in mind this action is irreversiable.
+        a.btn.btn-danger-outline(href='#') Delete my account
 
   if messages.length
     .alert.alert-danger
