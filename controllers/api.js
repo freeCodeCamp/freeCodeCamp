@@ -1,6 +1,7 @@
 var config = require('../config/config');
 var User = require('../models/User');
 var async = require('async');
+var _ = require('underscore');
 var geoip = require('geoip-lite');
 var FB = require('fb');
 var tumblr = require('tumblr.js');
@@ -65,7 +66,9 @@ exports.getFoursquare = function(req, res) {
  * GET /api/tumblr
  */
 exports.getTumblr = function(req, res) {
-  if (!req.user.tokens.tumblr) {
+  var token = _.findWhere(req.user.tokens, { kind: 'tumblr' });
+
+  if (!token) {
     return res.render('api/unauthorized', {
       title: 'Tumblr API',
       provider: 'Tumblr',
@@ -74,15 +77,18 @@ exports.getTumblr = function(req, res) {
   }
 
   var client = tumblr.createClient({
-    consumer_key: '<consumer key>',
-    consumer_secret: '<consumer secret>',
-    token: '<oauth token>',
-    token_secret: '<oauth token secret>'
+    consumer_key: config.tumblr.consumerKey,
+    consumer_secret: config.tumblr.consumerSecret,
+    token: token.token,
+    token_secret: token.tokenSecret
   });
 
-  res.render('api/tumblr', {
-    title: 'Tumblr API',
-    user: req.user
+  client.blogInfo('sahat.tumblr.com', function(err, data) {
+    res.render('api/tumblr', {
+      title: 'Tumblr API',
+      blog: data.blog.title,
+      user: req.user
+    });
   });
 };
 
