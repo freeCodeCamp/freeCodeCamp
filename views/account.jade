@@ -36,7 +36,8 @@ block content
           .col-sm-4
             input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
         .form-group
-          button.btn.btn.btn-primary(type='submit') Update Profile
+          .col-sm-offset-2.col-sm-4
+            button.btn.btn.btn-primary(type='submit') Update Profile
 
     #settings.tab-pane.fade
       .page-header
@@ -57,6 +58,17 @@ block content
         h3 Delete Account
         p You can delete your account, but keep in mind this action is irreversiable.
         a.btn.btn-danger-outline(href='#') Delete my account
+
+      .page-header
+        h3 Linked Accounts
+        p
+          a.text-danger(href='#') Unlink your Google account
+        p
+          a(href='#') Link your Facebook account
+        p
+          a(href='#') Link your Twitter account
+        p
+          a(href='#') Link your GitHub account
 
   if messages.length
     .alert.alert-danger
