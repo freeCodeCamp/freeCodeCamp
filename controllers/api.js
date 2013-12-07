@@ -2,14 +2,8 @@ var async = require('async');
 var geoip = require('geoip-lite');
 var config = require('../config/config');
 var FB = require('fb');
-var Tumblr = require('tumblrwks');
-var foursquare = require('node-foursquare')({
-  secrets: {
-    clientId: config.foursquare.clientId,
-    clientSecret: config.foursquare.clientSecret,
-    redirectUrl: config.foursquare.callbackUrl
-  }
-});
+var tumblr = require('tumblr.js');
+var foursquare = require('node-foursquare')({ secrets: config.foursquare });
 
 var User = require('../models/User');
 
@@ -106,9 +100,9 @@ exports.foursquareCallback = function(req, res) {
 };
 
 /**
- * GET /auth/tumblr/callback
- */
+* GET /auth/tumblr/callback
+*/
 exports.tumblrCallback = function(req, res) {
-  console.log('e');
+
 };
 
