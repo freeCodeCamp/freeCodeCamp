@@ -126,8 +126,3 @@ exports.ensureAdmin = function ensureAdmin(req, res, next) {
       res.send(403);
   };
 };
-
-
-exports.tumblrCallback = function(req, res) {
-  res.redirect('/api/tumblr');
-};
