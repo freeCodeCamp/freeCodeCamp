@@ -68,7 +68,7 @@ exports.getFoursquare = function(req, res) {
  */
 exports.getTumblr = function(req, res) {
   var token = _.findWhere(req.user.tokens, { kind: 'tumblr' });
-
+  // TODO: MIDDLEWARE
   if (!token) {
     return res.render('api/unauthorized', {
       title: 'Tumblr API',
