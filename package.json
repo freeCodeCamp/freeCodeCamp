@@ -12,15 +12,16 @@
     "jade": "*",
     "less-middleware": "*",
     "mongoose": "*",
-    "node-foursquare": "*",
+    "underscore": "*",
     "passport": "*",
+    "passport-oauth": "*",
     "passport-local": "*",
     "passport-github": "*",
     "passport-facebook": "*",
     "passport-twitter": "*",
     "passport-google-oauth": "*",
     "sendgrid": "*",
-    "tumblrwks": "*",
-    "underscore": "*"
+    "tumblr.js": "*",
+    "node-foursquare": "*"
   }
 }
