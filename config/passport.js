@@ -36,6 +36,7 @@ passport.use(new FacebookStrategy(config.facebook, function (accessToken, refres
     if (existingUser) return done(null, existingUser);
     var user = new User();
     user.facebook = profile.id;
+    user.tokens.push({ kind: 'facebook', token: accessToken });
     user.profile.name = profile.displayName;
     user.profile.email = profile._json.email;
     user.profile.gender = profile._json.gender;
@@ -51,6 +52,7 @@ passport.use(new GitHubStrategy(config.github, function(accessToken, refreshToke
     if (existingUser) return done(null, existingUser);
     var user = new User();
     user.github = profile.id;
+    user.tokens.push({ kind: 'github', token: accessToken });
     user.profile.name = profile.displayName;
     user.profile.email = profile._json.email;
     user.profile.picture = profile._json.avatar_url;
@@ -67,7 +69,7 @@ passport.use(new TwitterStrategy(config.twitter, function(accessToken, tokenSecr
     if (existingUser) return done(null, existingUser);
     var user = new User();
     user.twitter = profile.id;
-    user.tokens.twitter = accessToken;
+    user.tokens.push({ kind: 'twitter', token: accessToken });
     user.profile.name = profile.displayName;
     user.profile.location = profile._json.location;
     user.profile.picture = profile._json.profile_image_url;
@@ -82,7 +84,7 @@ passport.use(new GoogleStrategy(config.google, function(accessToken, refreshToke
     if (existingUser) return done(null, existingUser);
     var user = new User();
     user.google = profile.id;
-    user.tokens.google = accessToken;
+    user.tokens.push({ kind: 'google', token: accessToken });
     user.profile.name = profile.displayName;
     user.profile.email = profile._json.email;
     user.profile.gender = profile._json.gender;
