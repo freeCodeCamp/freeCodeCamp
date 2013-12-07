@@ -7,7 +7,7 @@
     "connect-flash": "*",
     "express": "*",
     "forever": "*",
-    "fb": "*",
+    "request": "*",
     "geoip-lite": "*",
     "jade": "*",
     "less-middleware": "*",
@@ -22,6 +22,7 @@
     "passport-google-oauth": "*",
     "sendgrid": "*",
     "tumblr.js": "*",
+    "fb": "*",
     "node-foursquare": "*"
   }
 }
