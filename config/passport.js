@@ -99,11 +99,15 @@ passport.use('tumblr', new OAuthStrategy({
     userAuthorizationURL: 'http://www.tumblr.com/oauth/authorize',
     consumerKey: config.tumblr.consumerKey,
     consumerSecret: config.tumblr.consumerSecret,
-    callbackURL: config.tumblr.callbackURL
+    callbackURL: config.tumblr.callbackURL,
+    passReqToCallback: true
   },
-  function(token, tokenSecret, profile, done) {
-    User.findOne({ tumblr: profile.id }, function(err, existingUser) {
-
+  function (req, token, tokenSecret, profile, done) {
+    User.findById(req.user._id, function(err, user) {
+      user.tokens.tumblr = token;
+      user.save(function(err) {
+        done(err);
+      });
     });
   }
 ));
