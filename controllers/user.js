@@ -36,9 +36,7 @@ exports.postAccountSettings = function(req, res) {
  * GET /login
  */
 exports.getLogin = function(req, res) {
-  if (req.user) {
-    return res.redirect('back');
-  }
+  if (req.user) return res.redirect('back');
 
   res.render('login', {
     title: 'Login',
@@ -52,8 +50,6 @@ exports.getLogin = function(req, res) {
  */
 exports.postLogin = function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
-    console.log(user)
-    console.log(info)
     if (err) return next(err);
     if (!user) {
       req.flash('messages', info.message);
@@ -70,9 +66,7 @@ exports.postLogin = function(req, res, next) {
  * GET /signup
  */
 exports.getSignup = function(req, res) {
-  if (req.user) {
-    return res.redirect('back');
-  }
+  if (req.user) return res.redirect('back');
 
   res.render('signup', {
     title: 'Create Account',
@@ -86,17 +80,19 @@ exports.getSignup = function(req, res) {
  */
 exports.postSignup = function(req, res) {
 
+  // TODO: Mongoose virtual, move logic to model
   if (req.body.password !== req.body.confirmPassword) {
     req.flash('messages', 'Passwords do not match');
     return res.redirect('/signup');
   }
 
   var user = new User({
-    username: req.body.email,
-    password: req.body.password
+    username: req.body.username || '',
+    password: req.body.password || ''
   });
 
   user.save(function(err) {
+    // TODO: Simplify
     if (err) {
       if (err.name === 'ValidationError') {
         req.flash('messages', _.map(err.errors, function(value, key) { return value.message; }));
@@ -108,7 +104,6 @@ exports.postSignup = function(req, res) {
     }
 
     req.logIn(user, function(err) {
-      if (err) throw err;
       res.redirect('/');
     });
   });
