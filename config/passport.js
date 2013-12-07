@@ -1,11 +1,12 @@
-var passport = require('passport'),
-    LocalStrategy = require('passport-local').Strategy,
-    FacebookStrategy = require('passport-facebook').Strategy,
-    TwitterStrategy = require('passport-twitter').Strategy,
-    GitHubStrategy = require('passport-github').Strategy,
-    GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
-    User = require('../models/User'),
-    config = require('./config');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var OAuthStrategy = require('passport-oauth').OAuthStrategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
+var GitHubStrategy = require('passport-github').Strategy;
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var User = require('../models/User');
+var config = require('./config');
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
