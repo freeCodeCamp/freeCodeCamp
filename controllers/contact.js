@@ -1,4 +1,4 @@
-var config = require('../config/config.json');
+var config = require('../config/config');
 var sendgrid  = require('sendgrid')(config.sendgrid.user, config.sendgrid.password);
 
 exports.getContact = function(req, res) {

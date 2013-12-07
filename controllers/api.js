@@ -1,6 +1,7 @@
+//var request = require('request');
 var async = require('async');
 var geoip = require('geoip-lite');
-var config = require('../config/config.json');
+var config = require('../config/config');
 var FB = require('fb');
 var Tumblr = require('tumblrwks');
 var foursquare = require('node-foursquare')({
@@ -58,6 +59,20 @@ exports.foursquare = function(req, res) {
 };
 
 exports.tumblr = function(req, res) {
+//  var requestTokenUrl = 'http://www.tumblr.com/oauth/request_token';
+//  var accessTokenUrl = 'http://www.tumblr.com/oauth/access_token';
+//  var authorizeUrl = 'http://www.tumblr.com/oauth/authorize';
+//
+//  request.get('');
+//
+//  var client = tumblr.createClient({
+//    consumer_key: config.tumblr.clientId,
+//    consumer_secret: config.tumblr.clientSecret,
+//    token: '<oauth token>',
+//    token_secret: '<oauth token secret>'
+//  });
+
+
   res.render('api/tumblr', {
     title: 'Tumblr API',
     user: req.user
@@ -90,6 +105,28 @@ exports.foursquareCallback = function(req, res) {
     User.findByIdAndUpdate(req.user._id, { $set: { tokens: { foursquare: accessToken } } }, null, function(err, user) {
       if (err) throw err;
       res.redirect('/api/foursquare');
+    });
+  });
+};
+
+/**
+ * GET /auth/tumblr
+ * Shows the tumblr authentication dialog
+ */
+exports.tumblrAuth = function(req, res) {
+  res.writeHead(303, { location: foursquare.getAuthClientRedirectUrl() });
+  res.end();
+};
+
+/**
+ * GET /auth/tumblr/callback
+ * Called when user presses Accept on the Foursquare authentication screen
+ */
+exports.tumblrCallback = function(req, res) {
+  foursquare.getAccessToken({ code: req.query.code }, function(err, accessToken) {
+    User.findByIdAndUpdate(req.user._id, { $set: { tokens: { foursquare: accessToken } } }, null, function(err, user) {
+      if (err) throw err;
+      res.redirect('/api/tumblr');
     });
   });
 };
