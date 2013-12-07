@@ -1,6 +1,7 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var OAuthStrategy = require('passport-oauth').OAuthStrategy;
+var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 var GitHubStrategy = require('passport-github').Strategy;
@@ -107,6 +108,24 @@ passport.use('tumblr', new OAuthStrategy({
   function (req, token, tokenSecret, profile, done) {
     User.findById(req.user._id, function(err, user) {
       user.tokens.push({ kind: 'tumblr', token: token, tokenSecret: tokenSecret });
+      user.save(function(err) {
+        done(err, user);
+      });
+    });
+  }
+));
+
+passport.use('foursquare', new OAuth2Strategy({
+    authorizationURL: 'https://foursquare.com/oauth2/authorize',
+    tokenURL: 'https://foursquare.com/oauth2/access_token',
+    clientID: config.foursquare.clientId,
+    clientSecret: config.foursquare.clientSecret,
+    callbackURL: config.foursquare.redirectUrl,
+    passReqToCallback: true
+  },
+  function (req, accessToken, refreshToken, profile, done) {
+    User.findById(req.user._id, function(err, user) {
+      user.tokens.push({ kind: 'foursquare', token: accessToken });
       user.save(function(err) {
         done(err, user);
       });
