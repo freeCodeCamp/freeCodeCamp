@@ -570,6 +570,30 @@ span {
   }
 }
 
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  li {
+    padding: 10px 15px 12px 2px;
+    border-bottom: 1px solid #e2e2e2;
+    margin: 0;
+
+    img {
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      border: 0;
+    }
+
+    &:only-child {
+      border-bottom: 1px solid #e2e2e2;
+    }
+  }
+}
+
 // Datatables ================================================================
 
 // Search field
