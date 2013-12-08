@@ -21,6 +21,8 @@ block content
   h6 Email: #{me.email}
 
   h3.text-primary /me/friends
-  h4= me.name
-  h6 Username: #{me.username}
-  h6 Email: #{me.email}
+  ul.list
+    for friend in friends
+      li
+        img.img-circle(src='https://graph.facebook.com/#{friend.id}/picture?type=normal', width=30, height=30)
+        a(href='http://facebook.com/#{friend.id}') #{friend.name}

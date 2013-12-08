@@ -110,15 +110,27 @@ exports.getFacebook = function(req, res) {
   }
 
   graph.setAccessToken(token.token);
-
-  graph.get('100000588912346', function(err, me) {
-    console.log(me);
+  async.parallel({
+    getMe: function(done) {
+      graph.get('100000588912346', function(err, me) {
+        done(err, me);
+      });
+    },
+    getMyFriends: function(done) {
+      graph.get('100000588912346/friends', function(err, friends) {
+        done(err, friends.data);
+      });
+    }
+  },
+  function(err, results) {
     res.render('api/facebook', {
       title: 'Facebook API',
-      me: me,
+      me: results.getMe,
+      friends: results.getMyFriends,
       user: req.user
     });
   });
+
 
 
 };
