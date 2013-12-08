@@ -26,19 +26,18 @@ block content
         .col-xs-8
           h4
             a(href='#{repo.html_url}') #{repo.name}
-          p
-            .btn.btn-sm.btn-primary-outline
-              i.fa.fa-eye-slash
-              | Watchers: #{repo.watchers_count}
-            .btn.btn-sm.btn-primary-outline
-              i.fa.fa-star
-              | Starred: #{repo.stargazers_count}
-            .btn.btn-sm.btn-primary-outline
-              i.fa.fa-code-fork
-              | Forks: #{repo.forks_count}
-            .btn.btn-sm.btn-primary-outline
-              i.fa.fa-code
-              | #{repo.language}
+          .btn.btn-sm.btn-primary-outline
+            i.fa.fa-eye-slash
+            | Watchers: #{repo.watchers_count}
+          .btn.btn-sm.btn-primary-outline
+            i.fa.fa-star
+            | Starred: #{repo.stargazers_count}
+          .btn.btn-sm.btn-primary-outline
+            i.fa.fa-code-fork
+            | Forks: #{repo.forks_count}
+          .btn.btn-sm.btn-primary-outline
+            i.fa.fa-code
+            | #{repo.language}
           .well
             strong DESCRIPTION
             p= repo.description
