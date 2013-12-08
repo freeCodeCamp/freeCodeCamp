@@ -28,7 +28,7 @@ block content
             a(href='#{repo.html_url}') #{repo.name}
           .btn.btn-sm.btn-primary-outline
             i.fa.fa-eye-slash
-            | Watchers: #{repo.watchers_count}
+            | Subscribers: #{repo.subscribers_count}
           .btn.btn-sm.btn-primary-outline
             i.fa.fa-star
             | Starred: #{repo.stargazers_count}
@@ -38,6 +38,6 @@ block content
           .btn.btn-sm.btn-primary-outline
             i.fa.fa-code
             | #{repo.language}
-          .well
-            strong DESCRIPTION
-            p= repo.description
+          br
+          strong DESCRIPTION
+          p= repo.description

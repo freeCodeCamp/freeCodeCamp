@@ -86,10 +86,11 @@ exports.getTumblr = function(req, res) {
     token_secret: token.tokenSecret
   });
 
-  client.blogInfo('sahat.tumblr.com', function(err, data) {
+  client.posts('goddess-of-imaginary-light.tumblr.com', { type: 'photo' }, function(err, data) {
     res.render('api/tumblr', {
       title: 'Tumblr API',
-      blog: data.blog.title,
+      blog: data.blog,
+      photos: _.flatten(_.pluck(data.posts, 'photos')),
       user: req.user
     });
   });
@@ -160,7 +161,7 @@ exports.getGithub = function(req, res) {
   }
   // TODO: Fix rate limit on passport-github token
   var github = new Github({ token: token.token });
-  var repo = github.getRepo('sahat', 'cloudbucket');
+  var repo = github.getRepo('sahat', 'requirejs-library');
   repo.show(function(err, repo) {
     res.render('api/github', {
       title: 'GitHub API',

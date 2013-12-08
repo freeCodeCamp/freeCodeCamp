@@ -16,4 +16,12 @@ block content
       i.fa.fa-code-fork
       | API Endpoints
 
-  h2= blog
+  h3.text-primary #{blog.name}'s blog
+  strong Blog Stats
+  p
+    .btn.btn-xs.btn-primary-outline
+      i.fa.fa-file-text-o
+      | #{blog.posts} posts
+
+  for photo in photos
+      img(src='#{photo.alt_sizes.slice(-3)[0].url}')
