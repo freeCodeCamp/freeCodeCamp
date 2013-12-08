@@ -24,30 +24,24 @@ exports.getApi = function(req, res) {
  * GET /api/foursquare
  */
 exports.getFoursquare = function(req, res) {
-  var token = _.findWhere(req.user.tokens, { kind: 'foursquare' });
-  if (!token) {
-    return res.render('api/unauthorized', {
-      title: 'Foursquare API',
-      provider: 'Foursquare',
-      user: req.user
-    });
-  }
+  var foursquareToken = _.findWhere(req.user.tokens, { kind: 'foursquare' });
+  if (!foursquareToken) return res.redirect('/auth/foursquare');
   async.parallel({
     trendingVenues: function(callback) {
       var geo = geoip.lookup('4.17.136.0');
       var lat = geo.ll[0];
       var lon = geo.ll[1];
-      foursquare.Venues.getTrending(lat, lon, { limit: 50 }, token.token, function(err, results) {
+      foursquare.Venues.getTrending(lat, lon, { limit: 50 }, foursquareToken.token, function(err, results) {
         callback(err, results);
       });
     },
     venueDetail: function(callback) {
-      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', token.token, function(err, results) {
+      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', foursquareToken.token, function(err, results) {
         callback(err, results);
       });
     },
     userCheckins: function(callback) {
-      foursquare.Users.getCheckins('self', null, token.token, function(err, results) {
+      foursquare.Users.getCheckins('self', null, foursquareToken.token, function(err, results) {
         callback(err, results);
       });
     }
@@ -67,23 +61,14 @@ exports.getFoursquare = function(req, res) {
  * GET /api/tumblr
  */
 exports.getTumblr = function(req, res) {
-  var token = _.findWhere(req.user.tokens, { kind: 'tumblr' });
-  // TODO: MIDDLEWARE
-  if (!token) {
-    return res.render('api/unauthorized', {
-      title: 'Tumblr API',
-      provider: 'Tumblr',
-      user: req.user
-    });
-  }
-
+  var tumblrToken = _.findWhere(req.user.tokens, { kind: 'tumblr' });
+  if (!tumblrToken) return res.redirect('/auth/tumblr');
   var client = tumblr.createClient({
     consumer_key: config.tumblr.consumerKey,
     consumer_secret: config.tumblr.consumerSecret,
-    token: token.token,
-    token_secret: token.tokenSecret
+    token: tumblrToken.token,
+    token_secret: tumblrToken.tokenSecret
   });
-
   client.posts('goddess-of-imaginary-light.tumblr.com', { type: 'photo' }, function(err, data) {
     res.render('api/tumblr', {
       title: 'Tumblr API',
@@ -98,17 +83,9 @@ exports.getTumblr = function(req, res) {
  * GET /api/facebook
  */
 exports.getFacebook = function(req, res) {
-  var token = _.findWhere(req.user.tokens, { kind: 'facebook' });
-  // TODO: MIDDLEWARE
-  // TODO: OR just redirect directly to /auth/facebook
-  if (!token) {
-    return res.render('api/unauthorized', {
-      title: 'Facebook API',
-      provider: 'Facebook',
-      user: req.user
-    });
-  }
-  graph.setAccessToken(token.token);
+  var facebookToken = _.findWhere(req.user.tokens, { kind: 'facebook' });
+  if (!facebookToken) return res.redirect('/auth/facebook');
+  graph.setAccessToken(facebookToken.token);
   async.parallel({
     getMe: function(done) {
       graph.get(req.user.facebook, function(err, me) {
@@ -129,9 +106,6 @@ exports.getFacebook = function(req, res) {
       user: req.user
     });
   });
-
-
-
 };
 
 exports.getScraping = function(req, res) {
@@ -150,16 +124,10 @@ exports.getScraping = function(req, res) {
 };
 
 exports.getGithub = function(req, res) {
-  var token = _.findWhere(req.user.tokens, { kind: 'github' });
-  if (!token) {
-    return res.render('api/unauthorized', {
-      title: 'GitHub API',
-      provider: 'GitHub',
-      user: req.user
-    });
-  }
+  var githubToken = _.findWhere(req.user.tokens, { kind: 'github' });
+  if (!githubToken) return res.redirect('/auth/github');
   // TODO: Fix rate limit on passport-github token
-  var github = new Github({ token: token.token });
+  var github = new Github({ token: githubToken.token });
   var repo = github.getRepo('sahat', 'requirejs-library');
   repo.show(function(err, repo) {
     res.render('api/github', {
@@ -171,6 +139,9 @@ exports.getGithub = function(req, res) {
 
 };
 
+/**
+ * GET /api/twilio
+ */
 exports.getTwilio = function(req, res) {
 
 };

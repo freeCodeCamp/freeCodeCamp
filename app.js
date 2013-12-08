@@ -61,11 +61,11 @@ app.post('/account/settings', passportConf.isAuthenticated, user.postAccountSett
 app.get('/partials/:name', home.partials);
 
 app.get('/api', api.getApi);
-app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized('foursquare'), api.getFoursquare);
-app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized('foursquare'), api.getTumblr);
+app.get('/api/foursquare', passportConf.isAuthenticated, api.getFoursquare);
+app.get('/api/tumblr', passportConf.isAuthenticated, api.getTumblr);
 app.get('/api/facebook', passportConf.isAuthenticated, api.getFacebook);
 app.get('/api/scraping', api.getScraping);
-app.get('/api/github', passportConf.isAuthorized('github'), api.getGithub);
+app.get('/api/github', api.getGithub);
 app.get('/api/lastfm', api.getLastfm);
 app.get('/api/nyt', api.getNewYorkTimes);
 app.get('/api/twilio', api.getTwilio);

@@ -138,15 +138,3 @@ exports.isAuthenticated = function(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/login');
 };
-
-exports.isAuthorized = function(provider) {
-  return function(req, res, next) {
-    var accessToken = _.findWhere(req.user.tokens, { kind: provider });
-    if (accessToken) return next();
-    res.render('api/unauthorized', {
-      title: provider + ' API',
-      provider: provider,
-      user: req.user
-    });
-  };
-};
