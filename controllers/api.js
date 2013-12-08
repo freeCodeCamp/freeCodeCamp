@@ -5,7 +5,7 @@ var cheerio = require('cheerio');
 var request = require('request');
 var _ = require('underscore');
 var geoip = require('geoip-lite');
-var FB = require('fb');
+var graph = require('fbgraph');
 var tumblr = require('tumblr.js');
 var foursquare = require('node-foursquare')({ secrets: config.foursquare });
 var Github = require('github-api');
@@ -99,10 +99,28 @@ exports.getTumblr = function(req, res) {
  * GET /api/facebook
  */
 exports.getFacebook = function(req, res) {
-  res.render('api/facebook', {
-    title: 'Facebook API',
-    user: req.user
+  var token = _.findWhere(req.user.tokens, { kind: 'facebook' });
+  // TODO: MIDDLEWARE
+  if (!token) {
+    return res.render('api/unauthorized', {
+      title: 'Facebook API',
+      provider: 'Facebook',
+      user: req.user
+    });
+  }
+
+  graph.setAccessToken(token.token);
+
+  graph.get('100000588912346', function(err, me) {
+    console.log(me);
+    res.render('api/facebook', {
+      title: 'Facebook API',
+      me: me,
+      user: req.user
+    });
   });
+
+
 };
 
 exports.getScraping = function(req, res) {

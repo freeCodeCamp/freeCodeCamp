@@ -37,7 +37,6 @@ exports.postAccountSettings = function(req, res) {
  */
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('back');
-
   res.render('login', {
     title: 'Login',
     user: req.user,

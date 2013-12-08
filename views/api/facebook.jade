@@ -15,4 +15,12 @@ block content
     a.btn.btn-lg.btn-primary(href='https://developers.facebook.com/docs/graph-api/reference/', target='_blank')
       i.fa.fa-code-fork
       | API Reference
-  p Facebook
+  h3.text-primary /me
+  h4= me.name
+  h6 Username: #{me.username}
+  h6 Email: #{me.email}
+
+  h3.text-primary /me/friends
+  h4= me.name
+  h6 Username: #{me.username}
+  h6 Email: #{me.email}
