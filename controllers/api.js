@@ -108,16 +108,15 @@ exports.getFacebook = function(req, res) {
       user: req.user
     });
   }
-
   graph.setAccessToken(token.token);
   async.parallel({
     getMe: function(done) {
-      graph.get('100000588912346', function(err, me) {
+      graph.get(req.user.facebook, function(err, me) {
         done(err, me);
       });
     },
     getMyFriends: function(done) {
-      graph.get('100000588912346/friends', function(err, friends) {
+      graph.get(req.user.facebook + '/friends', function(err, friends) {
         done(err, friends.data);
       });
     }
