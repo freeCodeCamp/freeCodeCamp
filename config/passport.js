@@ -8,6 +8,7 @@ var GitHubStrategy = require('passport-github').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var User = require('../models/User');
 var config = require('./config');
+var _ = require('underscore');
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -133,7 +134,7 @@ passport.use('foursquare', new OAuth2Strategy({
   }
 ));
 
-exports.ensureAuthenticated = function(req, res, next) {
+exports.isAuthenticated = function(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/login');
 };
@@ -143,8 +144,8 @@ exports.isAuthorized = function(provider) {
     var accessToken = _.findWhere(req.user.tokens, { kind: provider });
     if (accessToken) return next();
     res.render('api/unauthorized', {
-      title: 'Facebook API',
-      provider: 'Facebook',
+      title: provider + ' API',
+      provider: provider,
       user: req.user
     });
   };

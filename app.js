@@ -54,23 +54,23 @@ app.get('/logout', user.logout);
 app.get('/signup', user.getSignup);
 app.post('/signup', user.postSignup);
 
-app.get('/account', passportConf.ensureAuthenticated, user.getAccount);
-app.post('/account/profile', passportConf.ensureAuthenticated, user.postAccountProfile);
-app.post('/account/settings', passportConf.ensureAuthenticated, user.postAccountSettings);
+app.get('/account', passportConf.isAuthenticated, user.getAccount);
+app.post('/account/profile', passportConf.isAuthenticated, user.postAccountProfile);
+app.post('/account/settings', passportConf.isAuthenticated, user.postAccountSettings);
 
 app.get('/partials/:name', home.partials);
 
 app.get('/api', api.getApi);
-app.get('/api/foursquare', passportConf.ensureAuthenticated, api.getFoursquare);
-app.get('/api/tumblr', passportConf.ensureAuthenticated, api.getTumblr);
-app.get('/api/facebook', passportConf.ensureAuthenticated, api.getFacebook);
+app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized('foursquare'), api.getFoursquare);
+app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized('foursquare'), api.getTumblr);
+app.get('/api/facebook', passportConf.isAuthenticated, api.getFacebook);
 app.get('/api/scraping', api.getScraping);
 app.get('/api/github', passportConf.isAuthorized('github'), api.getGithub);
 app.get('/api/lastfm', api.getLastfm);
 app.get('/api/nyt', api.getNewYorkTimes);
 app.get('/api/twilio', api.getTwilio);
 app.get('/api/etsy', api.getEtsy);
-app.get('/api/twitter', passportConf.ensureAuthenticated, api.getTwitter);
+app.get('/api/twitter', passportConf.isAuthenticated, api.getTwitter);
 app.get('/api/aviary', api.getAviary);
 
 app.get('/contact', contact.getContact);
