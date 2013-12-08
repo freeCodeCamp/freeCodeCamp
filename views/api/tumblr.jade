@@ -17,11 +17,11 @@ block content
       | API Endpoints
 
   h3.text-primary #{blog.name}'s blog
-  strong Blog Stats
+  h4 Blog Stats
   p
     .btn.btn-xs.btn-primary-outline
       i.fa.fa-file-text-o
       | #{blog.posts} posts
-
-  for photo in photos
-      img(src='#{photo.alt_sizes.slice(-3)[0].url}')
+  h4 Latest Photo Post
+  for photo in photoset
+    img.item(src='#{photo.original_size.url}')

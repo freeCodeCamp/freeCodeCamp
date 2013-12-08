@@ -90,7 +90,7 @@ exports.getTumblr = function(req, res) {
     res.render('api/tumblr', {
       title: 'Tumblr API',
       blog: data.blog,
-      photos: _.flatten(_.pluck(data.posts, 'photos')),
+      photoset: data.posts[0].photos,
       user: req.user
     });
   });
