@@ -178,7 +178,9 @@ exports.getTwilio = function(req, res) {
  * GET /api/aviary
  */
 exports.getAviary = function(req, res) {
-
+  res.render('api/aviary', {
+    title: 'Aviary API'
+  });
 };
 
 exports.getEtsy = function(req, res) {

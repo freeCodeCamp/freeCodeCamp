@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+  .page-header
+    h1
+      i.fa.fa-picture-o
+      | Aviary API
+  .btn-group.btn-group-justified
+    a.btn.btn-lg.btn-primary(href='http://developers.aviary.com/docs/web/setup-guide#constructor', target='_blank')
+      i.fa.fa-check-square-o
+      | API Overview
+    a.btn.btn-lg.btn-primary(href='http://developers.aviary.com/docs/web/setup-guide#saving', target='_blank')
+      i.fa.fa-save
+      | Saving Images
+    a.btn.btn-lg.btn-primary(href='http://developers.aviary.com/docs/web/setup-guide#styling', target='_blank')
+      i.fa.fa-flask
+      | CSS Styling
+  button.btn.btn-primary-outline(onclick='return launchEditor("evanescence", "http://i.imgur.com/fM7OHvr.png");')
+    i.fa.fa-magic
+    | Edit Photo
+  br
+  img#evanescence(src='http://i.imgur.com/fM7OHvr.png')
+
+  script(src='http://feather.aviary.com/js/feather.js')
+  script
+    var featherEditor = new Aviary.Feather({
+      apiKey: 'c83c98c0da041785',
+      apiVersion: 3,
+      theme: 'dark',
+      tools: 'all',
+      appendTo: '',
+      onSave: function(imageID, newURL) {
+        var img = document.getElementById(imageID);
+        img.src = newURL;
+      },
+      onError: function(errorObj) {
+        alert(errorObj.message);
+      }
+    });
+    function launchEditor(id, src) {
+      featherEditor.launch({
+        image: id,
+        url: src
+      });
+      return false;
+    }
