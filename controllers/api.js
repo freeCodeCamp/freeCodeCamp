@@ -25,7 +25,6 @@ exports.getApi = function(req, res) {
  */
 exports.getFoursquare = function(req, res) {
   var token = _.findWhere(req.user.tokens, { kind: 'foursquare' });
-
   if (!token) {
     return res.render('api/unauthorized', {
       title: 'Foursquare API',
@@ -33,7 +32,6 @@ exports.getFoursquare = function(req, res) {
       user: req.user
     });
   }
-
   async.parallel({
     trendingVenues: function(callback) {
       var geo = geoip.lookup('4.17.136.0');
@@ -173,6 +171,13 @@ exports.getGithub = function(req, res) {
 };
 
 exports.getTwilio = function(req, res) {
+
+};
+
+/**
+ * GET /api/aviary
+ */
+exports.getAviary = function(req, res) {
 
 };
 

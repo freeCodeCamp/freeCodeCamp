@@ -17,11 +17,9 @@ block content
       | API Endpoints
 
   h3.text-primary #{blog.name}'s blog
-  h4 Blog Stats
-  p
-    .btn.btn-xs.btn-primary-outline
-      i.fa.fa-file-text-o
-      | #{blog.posts} posts
+  .btn.btn-xs.btn-primary-outline
+    i.fa.fa-file-text-o
+    | #{blog.posts} posts
   h4 Latest Photo Post
   for photo in photoset
     img.item(src='#{photo.original_size.url}')

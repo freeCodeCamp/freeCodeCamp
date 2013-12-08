@@ -71,6 +71,7 @@ app.get('/api/nyt', api.getNewYorkTimes);
 app.get('/api/twilio', api.getTwilio);
 app.get('/api/etsy', api.getEtsy);
 app.get('/api/twitter', passportConf.ensureAuthenticated, api.getTwitter);
+app.get('/api/aviary', passportConf.ensureAuthenticated, api.getAviary);
 
 app.get('/contact', contact.getContact);
 app.post('/contact', contact.postContact);
