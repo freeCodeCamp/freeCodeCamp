@@ -100,6 +100,7 @@ exports.getTumblr = function(req, res) {
 exports.getFacebook = function(req, res) {
   var token = _.findWhere(req.user.tokens, { kind: 'facebook' });
   // TODO: MIDDLEWARE
+  // TODO: OR just redirect directly to /auth/facebook
   if (!token) {
     return res.render('api/unauthorized', {
       title: 'Facebook API',

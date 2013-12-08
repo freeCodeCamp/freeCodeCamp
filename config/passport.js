@@ -133,7 +133,19 @@ passport.use('foursquare', new OAuth2Strategy({
   }
 ));
 
-exports.ensureAuthenticated = function ensureAuthenticated(req, res, next) {
+exports.ensureAuthenticated = function(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/login');
+};
+
+exports.isAuthorized = function(provider) {
+  return function(req, res, next) {
+    var accessToken = _.findWhere(req.user.tokens, { kind: provider });
+    if (accessToken) return next();
+    res.render('api/unauthorized', {
+      title: 'Facebook API',
+      provider: 'Facebook',
+      user: req.user
+    });
+  };
 };

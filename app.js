@@ -65,7 +65,7 @@ app.get('/api/foursquare', passportConf.ensureAuthenticated, api.getFoursquare);
 app.get('/api/tumblr', passportConf.ensureAuthenticated, api.getTumblr);
 app.get('/api/facebook', passportConf.ensureAuthenticated, api.getFacebook);
 app.get('/api/scraping', api.getScraping);
-app.get('/api/github', passportConf.ensureAuthenticated, api.getGithub);
+app.get('/api/github', passportConf.isAuthorized('github'), api.getGithub);
 app.get('/api/lastfm', api.getLastfm);
 app.get('/api/nyt', api.getNewYorkTimes);
 app.get('/api/twilio', api.getTwilio);
