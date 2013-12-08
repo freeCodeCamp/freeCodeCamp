@@ -61,8 +61,8 @@ app.post('/account/settings', passportConf.isAuthenticated, user.postAccountSett
 app.get('/partials/:name', home.partials);
 
 app.get('/api', api.getApi);
-app.get('/api/foursquare', passportConf.isAuthenticated, api.getFoursquare);
-app.get('/api/tumblr', passportConf.isAuthenticated, api.getTumblr);
+app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized, api.getFoursquare);
+app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized, api.getTumblr);
 app.get('/api/facebook', passportConf.isAuthenticated, api.getFacebook);
 app.get('/api/scraping', api.getScraping);
 app.get('/api/github', api.getGithub);

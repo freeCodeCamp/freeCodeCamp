@@ -25,7 +25,6 @@ exports.getApi = function(req, res) {
  */
 exports.getFoursquare = function(req, res) {
   var foursquareToken = _.findWhere(req.user.tokens, { kind: 'foursquare' });
-  if (!foursquareToken) return res.redirect('/auth/foursquare');
   async.parallel({
     trendingVenues: function(callback) {
       var geo = geoip.lookup('4.17.136.0');
@@ -62,7 +61,6 @@ exports.getFoursquare = function(req, res) {
  */
 exports.getTumblr = function(req, res) {
   var tumblrToken = _.findWhere(req.user.tokens, { kind: 'tumblr' });
-  if (!tumblrToken) return res.redirect('/auth/tumblr');
   var client = tumblr.createClient({
     consumer_key: config.tumblr.consumerKey,
     consumer_secret: config.tumblr.consumerSecret,
@@ -84,7 +82,6 @@ exports.getTumblr = function(req, res) {
  */
 exports.getFacebook = function(req, res) {
   var facebookToken = _.findWhere(req.user.tokens, { kind: 'facebook' });
-  if (!facebookToken) return res.redirect('/auth/facebook');
   graph.setAccessToken(facebookToken.token);
   async.parallel({
     getMe: function(done) {
@@ -125,7 +122,6 @@ exports.getScraping = function(req, res) {
 
 exports.getGithub = function(req, res) {
   var githubToken = _.findWhere(req.user.tokens, { kind: 'github' });
-  if (!githubToken) return res.redirect('/auth/github');
   // TODO: Fix rate limit on passport-github token
   var github = new Github({ token: githubToken.token });
   var repo = github.getRepo('sahat', 'requirejs-library');
