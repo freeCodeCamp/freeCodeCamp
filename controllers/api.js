@@ -8,7 +8,7 @@ var geoip = require('geoip-lite');
 var FB = require('fb');
 var tumblr = require('tumblr.js');
 var foursquare = require('node-foursquare')({ secrets: config.foursquare });
-
+var Github = require('github-api');
 
 /**
  * GET /api
@@ -119,3 +119,46 @@ exports.getScraping = function(req, res) {
     });
   });
 };
+
+exports.getGithub = function(req, res) {
+  var token = _.findWhere(req.user.tokens, { kind: 'github' });
+  if (!token) {
+    return res.render('api/unauthorized', {
+      title: 'GitHub API',
+      provider: 'GitHub',
+      user: req.user
+    });
+  }
+  // TODO: Fix rate limit on passport-github token
+  var github = new Github({ token: token.token });
+  var repo = github.getRepo('sahat', 'cloudbucket');
+  repo.show(function(err, repo) {
+    res.render('api/github', {
+      title: 'GitHub API',
+      repo: repo,
+      user: req.user
+    });
+  });
+
+};
+
+exports.getTwilio = function(req, res) {
+
+};
+
+exports.getEtsy = function(req, res) {
+
+};
+
+exports.getNewYorkTimes = function(req, res) {
+
+};
+
+exports.getLastfm = function(req, res) {
+
+};
+
+exports.getTwitter = function(req, res) {
+
+};
+

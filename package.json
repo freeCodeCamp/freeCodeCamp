@@ -8,6 +8,7 @@
     "connect-flash": "*",
     "express": "*",
     "forever": "*",
+    "github-api": "*",
     "request": "*",
     "geoip-lite": "*",
     "jade": "*",
