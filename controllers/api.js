@@ -6,6 +6,7 @@ var request = require('request');
 var _ = require('underscore');
 var geoip = require('geoip-lite');
 var graph = require('fbgraph');
+var LastFmNode = require('lastfm').LastFmNode;
 var tumblr = require('tumblr.js');
 var foursquare = require('node-foursquare')({ secrets: config.foursquare });
 var Github = require('github-api');
@@ -180,7 +181,11 @@ exports.getNewYorkTimes = function(req, res) {
  * Last.fm API example
  */
 exports.getLastfm = function(req, res) {
-
+  var lastfm = new LastFmNode({
+    api_key: 'apikey',    // sign-up for a key at http://www.last.fm/api
+    secret: 'secret',
+    useragent: 'appname/vX.X MyApp' // optional. defaults to lastfm-node.
+  });
 };
 
 /**

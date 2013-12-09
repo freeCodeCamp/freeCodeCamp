@@ -12,6 +12,7 @@
     "request": "*",
     "geoip-lite": "*",
     "jade": "*",
+    "lastfm": "*",
     "less-middleware": "*",
     "mongoose": "*",
     "underscore": "*",

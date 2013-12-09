@@ -1,10 +1,2 @@
-Sendgrid
-Facebook
-Rdio
-Tumblr
-Twitter
-Twilio
-Etsy
-Foursquare
-New York Times
-github
+Learn Jade interactively:
+http://naltatis.github.io/jade-syntax-docs/
