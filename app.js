@@ -94,6 +94,10 @@ app.get('/auth/foursquare/callback', passport.authorize('foursquare', { failureR
 app.get('/auth/tumblr', passport.authorize('tumblr'));
 app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), function(req, res) { res.redirect('/api/tumblr'); });
 
+app.get('/auth/lastfm', passport.authorize('lastfm'));
+app.get('/auth/lastfm/callback', passport.authorize('lastfm', { failureRedirect: '/api' }), function(req, res) { res.redirect('/api/lastfm'); });
+
+
 app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
