@@ -12,6 +12,7 @@ var Github = require('github-api');
 
 /**
  * GET /api
+ * List of API examples
  */
 exports.getApi = function(req, res) {
   res.render('api', {
@@ -22,6 +23,7 @@ exports.getApi = function(req, res) {
 
 /**
  * GET /api/foursquare
+ * Foursquare API example
  */
 exports.getFoursquare = function(req, res) {
   var foursquareToken = _.findWhere(req.user.tokens, { kind: 'foursquare' });
@@ -58,6 +60,7 @@ exports.getFoursquare = function(req, res) {
 
 /**
  * GET /api/tumblr
+ * Tumblr API example
  */
 exports.getTumblr = function(req, res) {
   var tumblrToken = _.findWhere(req.user.tokens, { kind: 'tumblr' });
@@ -79,6 +82,7 @@ exports.getTumblr = function(req, res) {
 
 /**
  * GET /api/facebook
+ * Facebook API example
  */
 exports.getFacebook = function(req, res) {
   var facebookToken = _.findWhere(req.user.tokens, { kind: 'facebook' });
@@ -105,6 +109,10 @@ exports.getFacebook = function(req, res) {
   });
 };
 
+/**
+ * GET /api/scraping
+ * Web scraping example using Cheerio library
+ */
 exports.getScraping = function(req, res) {
   request.get('https://news.ycombinator.com/', function(error, request, body) {
     var $ = cheerio.load(body);
@@ -151,18 +159,34 @@ exports.getAviary = function(req, res) {
   });
 };
 
+/**
+ * GET /api/etsy
+ *  Etsy API example
+ */
 exports.getEtsy = function(req, res) {
 
 };
 
+/**
+ * GET /api/nyt
+ * New York Times API example
+ */
 exports.getNewYorkTimes = function(req, res) {
 
 };
 
+/**
+ * GET /api/lastfm
+ * Last.fm API example
+ */
 exports.getLastfm = function(req, res) {
 
 };
 
+/**
+ * GET /api/twitter
+ * Twiter API example
+ */
 exports.getTwitter = function(req, res) {
 
 };
