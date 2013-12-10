@@ -190,27 +190,56 @@ exports.getLastfm = function(req, res) {
     secret: '4ae76d10d76cf680cebf4f0c8dea1aa4'
   });
 
-  lastfm.request("artist.getInfo", {
-    artist: 'Epica',
-    handlers: {
-      success: function(data) {
-        var artist = {
-          name: data.artist.name,
-          image: data.artist.image.slice(-1)[0]['#text'],
-          tags: data.artist.tags.tag,
-          bio: data.artist.bio.summary,
-          stats: data.artist.stats,
-          similar: data.artist.similar.artist
-        };
-        res.render('api/lastfm', {
-          title: 'Last.fm API',
-          artist: artist
-        });
-      },
-      error: function(error) {
-        res.send(error.message);
-      }
+  async.parallel({
+    artistInfo: function(done) {
+      lastfm.request("artist.getInfo", {
+        artist: 'Epica',
+        handlers: {
+          success: function(data) {
+            done(null, data);
+          },
+          error: function(error) {
+            done(error);
+          }
+        }
+      });
+    },
+    artistTopAlbums: function(done) {
+      lastfm.request("artist.getTopAlbums", {
+        artist: 'Epica',
+        handlers: {
+          success: function(data) {
+            var albums = [];
+            _.each(data.topalbums.album, function(album) {
+              albums.push(album.image.slice(-1)[0]['#text']);
+            });
+            done(null, albums);
+          },
+          error: function(error) {
+            done(error);
+          }
+        }
+      });
     }
+  },
+  function(err, results) {
+    if (err) return res.send(err);
+    console.log('===')
+    console.log(err);
+    console.log(results);
+    var artist = {
+      name: results.artistInfo.artist.name,
+      image: results.artistInfo.artist.image.slice(-1)[0]['#text'],
+      tags: results.artistInfo.artist.tags.tag,
+      bio: results.artistInfo.artist.bio.summary,
+      stats: results.artistInfo.artist.stats,
+      similar: results.artistInfo.artist.similar.artist,
+      topAlbums: results.artistTopAlbums
+    };
+    res.render('api/lastfm', {
+      title: 'Last.fm API',
+      artist: artist
+    });
   });
 };
 
