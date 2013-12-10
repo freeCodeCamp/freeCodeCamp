@@ -17,26 +17,25 @@ block content
       | Documentation
 
   h3.text-primary Artist Information
-  form.form-horizontal(role='form', method='POST')
-    .form-group
-      label(class='col-sm-2 control-label', for='artist') Artist
-      .col-sm-4
-        input.form-control(type='text', name='artist', id='artist')
-    .form-group
-      .col-sm-offset-2.col-sm-4
-        button.btn.btn-primary-outline(type='submit') Submit
 
-  .panel.panel-default
-    .panel-heading
-      h3.title #{artist.name}
-    .panel-body
-      .row
-        .col-xs-3
-          img(src='#{artist.image}')
-        .col-xs-9
-          strong Artist Bio
-          br
-          p= artist.bio
+  h4= artist.name
+  .btn.btn-sm.btn-primary-outline
+    i.fa.fa-users
+    | Listeners: #{artist.stats.listeners}
+  .btn.btn-sm.btn-primary-outline
+    i.fa.fa-headphones
+    | Scrobbles #{artist.stats.playcount}
+  p
+    img(src='#{artist.image}')
+  p
+    for tag in artist.tags
+      span.label.label-primary
+        i.fa.fa-tag
+        | #{tag.name}
+      |&nbsp;
+  p!= artist.bio
+
+
 
 
   h3.text-primary Song Information

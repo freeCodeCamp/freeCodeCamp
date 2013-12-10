@@ -174,6 +174,10 @@ exports.getEtsy = function(req, res) {
  */
 exports.getNewYorkTimes = function(req, res) {
 
+  res.render('api/nyt', {
+    title: 'New York Times API',
+
+  });
 };
 
 /**
@@ -186,10 +190,34 @@ exports.getLastfm = function(req, res) {
     secret: '4ae76d10d76cf680cebf4f0c8dea1aa4'
   });
 
-  res.render('api/lastfm', {
-    title: 'Last.fm API',
+  lastfm.request("artist.getInfo", {
+    artist: 'Epica',
+    handlers: {
+      success: function(data) {
+        console.log(data);
 
+        var artist = {
+          name: data.artist.name,
+          image: data.artist.image.slice(-1)[0]['#text'],
+          tags: data.artist.tags.tag,
+          bio: data.artist.bio.summary,
+          stats: data.artist.stats
+        };
+
+        res.render('api/lastfm', {
+          title: 'Last.fm API',
+          artist: artist
+        });
+        //return res.send(data.artist);
+      },
+      error: function(error) {
+        console.log(error.message);
+        return error.message;
+      }
+    }
   });
+
+
 };
 
 /**
