@@ -171,6 +171,7 @@ exports.getNewYorkTimes = function(req, res) {
   var url = 'http://api.nytimes.com/svc/books/v2/lists?' + query;
   request.get(url, function(error, request, body) {
     var bestSellers = JSON.parse(body);
+    console.log(bestSellers.results[0].book_details);
     res.render('api/nyt', {
       title: 'New York Times API',
       books: bestSellers.results

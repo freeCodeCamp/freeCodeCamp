@@ -3,7 +3,7 @@ extends ../layout
 block content
   .page-header
     h1
-      i.fa.fa-music
+      i.fa.fa-building-o
       | New York Times API
   .btn-group.btn-group-justified
     a.btn.btn-lg.btn-primary(href='http://developer.github.com/guides/getting-started/', target='_blank')
@@ -16,4 +16,20 @@ block content
       i.fa.fa-file-text-o
       | Documentation
 
-  p nyt api
+  h3 Young Adult Best Sellers
+  table.dataTable.table.table-striped.table-bordered
+    thead
+      tr
+        th Rank
+        th Title
+        th.hidden-xs Description
+        th Author
+        th.hidden-xs ISBN-13
+    tbody
+      for book in books
+        tr
+          td= book.rank
+          td= book.book_details[0].title
+          td.hidden-xs= book.book_details[0].description
+          td= book.book_details[0].author
+          td.hidden-xs= book.book_details[0].primary_isbn13
