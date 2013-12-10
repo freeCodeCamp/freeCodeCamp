@@ -25,5 +25,5 @@ block content
           .panel-body
             .clearfix
               - var image = tweet.user.profile_image_url.replace('_normal', '');
-              img.pull-left(src='#{image}', width=50, height=50)
+              img.pull-left(src='#{image}', width=50, height=50, style='margin-right: 10px')
               small #{tweet.text}
