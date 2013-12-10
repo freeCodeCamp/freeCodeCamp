@@ -202,7 +202,6 @@ exports.getLastfm = function(req, res) {
           stats: data.artist.stats,
           similar: data.artist.similar.artist
         };
-//
         res.render('api/lastfm', {
           title: 'Last.fm API',
           artist: artist

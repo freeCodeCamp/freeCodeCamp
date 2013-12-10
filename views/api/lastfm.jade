@@ -43,5 +43,4 @@ block content
   ul.list
     for similarArtist in artist.similar
       li
-        != '<img src="#{similarArtist.image[0].#text}">'
         a(href='#{similarArtist.url}') #{similarArtist.name}
