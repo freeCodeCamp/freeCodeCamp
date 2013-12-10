@@ -213,7 +213,7 @@ exports.getLastfm = function(req, res) {
             _.each(data.topalbums.album, function(album) {
               albums.push(album.image.slice(-1)[0]['#text']);
             });
-            done(null, albums);
+            done(null, albums.slice(0,4));
           },
           error: function(error) {
             done(error);
@@ -224,9 +224,6 @@ exports.getLastfm = function(req, res) {
   },
   function(err, results) {
     if (err) return res.send(err);
-    console.log('===')
-    console.log(err);
-    console.log(results);
     var artist = {
       name: results.artistInfo.artist.name,
       image: results.artistInfo.artist.image.slice(-1)[0]['#text'],
