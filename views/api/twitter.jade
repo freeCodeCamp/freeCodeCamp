@@ -5,22 +5,23 @@ block content
       i.fa.fa-twitter(style='color: #4099ff')
       | Twitter API
   .btn-group.btn-group-justified
-    a.btn.btn-lg.btn-primary(href='https://github.com/ttezel/twit', target='_blank')
+    a.btn.btn-lg.btn-primary-outline(href='https://github.com/ttezel/twit', target='_blank')
       i.fa.fa-file-text-o
       | Twit Library Docs
-    a.btn.btn-lg.btn-primary(href='https://dev.twitter.com/docs', target='_blank')
+    a.btn.btn-lg.btn-primary-outline(href='https://dev.twitter.com/docs', target='_blank')
       i.fa.fa-check-square-o
       | Overview
-    a.btn.btn-lg.btn-primary(href='https://dev.twitter.com/docs/api/1.1', target='_blank')
+    a.btn.btn-lg.btn-primary-outline(href='https://dev.twitter.com/docs/api/1.1', target='_blank')
       i.fa.fa-code-fork
       | API Endpoints
-  h3.text-primary Latest 50 Tweets containing the word "Hackathon"
+  h3.text-primary Latest 50 Tweets containing the word "Hackathon" within NYC 5 mile radius
   ul.list
     for tweet in tweets
       li
         small
           strong #{tweet.user.name}
           span.text-muted  @#{tweet.user.screen_name}
-        img(src='#{tweet.user.profile_image_url}')
-        p.well
+        .clearfix
+          - var image = tweet.user.profile_image_url.replace('_normal', '');
+          img.pull-left(src='#{image}', width=50, height=50)
           small #{tweet.text}

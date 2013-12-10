@@ -255,7 +255,7 @@ exports.getTwitter = function(req, res) {
   });
 
 
-  T.get('search/tweets', { q: 'hackathon since:2013-01-01', count: 50 }, function(err, reply) {
+  T.get('search/tweets', { q: 'hackathon since:2013-01-01', geocode: '40.71448,-74.00598,5mi', count: 50 }, function(err, reply) {
     res.render('api/twitter', {
       title: 'Twitter API',
       user: req.user,
