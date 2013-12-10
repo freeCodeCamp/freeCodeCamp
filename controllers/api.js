@@ -186,17 +186,48 @@ exports.getLastfm = function(req, res) {
     secret: '4ae76d10d76cf680cebf4f0c8dea1aa4'
   });
 
-  lastfm.request("artist.getInfo", {
-    artist: 'Evanescence',
-    handlers: {
-      success: function(data) {
-        console.log(data);
-      },
-      error: function(error) {
-        console.log(error.message);
-      }
-    }
+  res.render('api/lastfm', {
+    title: 'Last.fm API',
+
   });
+};
+
+/**
+ * POST /api/lastfm
+ * Form submission to retrieve artist/track information
+ * Accessed via AJAX
+ */
+exports.postLastfm = function(req, res) {
+  if (req.body.track) {
+    lastfm.request("track.getInfo", {
+      artist: 'Evanescence',
+      track: 'My Immortal',
+      handlers: {
+        success: function(data) {
+          console.log(data);
+          return data;
+        },
+        error: function(error) {
+          console.log(error.message);
+          return error.message;
+        }
+      }
+    });
+  }
+
+  if (req.body.artist) {
+    lastfm.request("artist.getInfo", {
+      artist: 'Evanescence',
+      handlers: {
+        success: function(data) {
+          console.log(data);
+        },
+        error: function(error) {
+          console.log(error.message);
+        }
+      }
+    });
+  }
 };
 
 /**
