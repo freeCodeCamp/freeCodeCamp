@@ -19,12 +19,17 @@ block content
   h3.text-primary Artist Information
 
   h4= artist.name
-  .btn.btn-sm.btn-primary-outline
-    i.fa.fa-users
-    | Listeners: #{artist.stats.listeners}
-  .btn.btn-sm.btn-primary-outline
-    i.fa.fa-headphones
-    | Scrobbles #{artist.stats.playcount}
+  ul.list-inline
+    li
+      small.text-primary
+        i.fa.fa-users
+        strong Listeners:
+        |  #{artist.stats.listeners}
+    li
+      small.text-primary
+        i.fa.fa-headphones
+        strong Scrobbles:
+        |  #{artist.stats.playcount}
   p
     img(src='#{artist.image}')
   p
@@ -34,16 +39,9 @@ block content
         | #{tag.name}
       |&nbsp;
   p!= artist.bio
-
-
-
-
-  h3.text-primary Song Information
-  form.form-horizontal(role='form', method='POST')
-    .form-group
-      label(class='col-sm-2 control-label', for='artist') Song
-      .col-sm-4
-        input.form-control(type='text', name='artist', id='artist')
-    .form-group
-      .col-sm-offset-2.col-sm-4
-        button.btn.btn-primary-outline(type='submit') Submit
+  strong Similar Artists
+  ul.list
+    for similarArtist in artist.similar
+      li
+        != '<img src="#{similarArtist.image[0].#text}">'
+        a(href='#{similarArtist.url}') #{similarArtist.name}

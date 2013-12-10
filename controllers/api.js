@@ -194,68 +194,25 @@ exports.getLastfm = function(req, res) {
     artist: 'Epica',
     handlers: {
       success: function(data) {
-        console.log(data);
-
         var artist = {
           name: data.artist.name,
           image: data.artist.image.slice(-1)[0]['#text'],
           tags: data.artist.tags.tag,
           bio: data.artist.bio.summary,
-          stats: data.artist.stats
+          stats: data.artist.stats,
+          similar: data.artist.similar.artist
         };
-
+//
         res.render('api/lastfm', {
           title: 'Last.fm API',
           artist: artist
         });
-        //return res.send(data.artist);
       },
       error: function(error) {
-        console.log(error.message);
-        return error.message;
+        res.send(error.message);
       }
     }
   });
-
-
-};
-
-/**
- * POST /api/lastfm
- * Form submission to retrieve artist/track information
- * Accessed via AJAX
- */
-exports.postLastfm = function(req, res) {
-  if (req.body.track) {
-    lastfm.request("track.getInfo", {
-      artist: 'Evanescence',
-      track: 'My Immortal',
-      handlers: {
-        success: function(data) {
-          console.log(data);
-          return data;
-        },
-        error: function(error) {
-          console.log(error.message);
-          return error.message;
-        }
-      }
-    });
-  }
-
-  if (req.body.artist) {
-    lastfm.request("artist.getInfo", {
-      artist: 'Evanescence',
-      handlers: {
-        success: function(data) {
-          console.log(data);
-        },
-        error: function(error) {
-          console.log(error.message);
-        }
-      }
-    });
-  }
 };
 
 /**
