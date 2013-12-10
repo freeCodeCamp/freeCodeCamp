@@ -11,6 +11,7 @@ var LastFmNode = require('lastfm').LastFmNode;
 var tumblr = require('tumblr.js');
 var foursquare = require('node-foursquare')({ secrets: config.foursquare });
 var Github = require('github-api');
+var Twit = require('twit');
 
 /**
  * GET /api
@@ -244,6 +245,22 @@ exports.getLastfm = function(req, res) {
  * Twiter API example
  */
 exports.getTwitter = function(req, res) {
+  var twitterToken = _.findWhere(req.user.tokens, { kind: 'twitter' });
 
+  var T = new Twit({
+    consumer_key: config.twitter.consumerKey,
+    consumer_secret: config.twitter.consumerSecret,
+    access_token: twitterToken.token,
+    access_token_secret: twitterToken.tokenSecret
+  });
+
+
+  T.get('search/tweets', { q: 'hackathon since:2013-01-01', count: 50 }, function(err, reply) {
+    res.render('api/twitter', {
+      title: 'Twitter API',
+      user: req.user,
+      tweets: reply.statuses
+    });
+  });
 };
 
