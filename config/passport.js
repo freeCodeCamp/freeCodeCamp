@@ -71,7 +71,7 @@ passport.use(new TwitterStrategy(config.twitter, function(accessToken, tokenSecr
     if (existingUser) return done(null, existingUser);
     var user = new User();
     user.twitter = profile.id;
-    user.tokens.push({ kind: 'twitter', token: accessToken });
+    user.tokens.push({ kind: 'twitter', token: accessToken, tokenSecret: tokenSecret });
     user.profile.name = profile.displayName;
     user.profile.location = profile._json.location;
     user.profile.picture = profile._json.profile_image_url;
