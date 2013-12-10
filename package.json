@@ -25,6 +25,7 @@
     "passport-google-oauth": "*",
     "sendgrid": "*",
     "tumblr.js": "*",
+    "twit": "*",
     "fbgraph": "*",
     "node-foursquare": "*"
   }
