@@ -182,8 +182,20 @@ exports.getNewYorkTimes = function(req, res) {
  */
 exports.getLastfm = function(req, res) {
   var lastfm = new LastFmNode({
-    api_key: '1f3e35019e98124cc8f75f8ae99df25f',    // sign-up for a key at http://www.last.fm/api
+    api_key: '1f3e35019e98124cc8f75f8ae99df25f',
     secret: '4ae76d10d76cf680cebf4f0c8dea1aa4'
+  });
+
+  lastfm.request("artist.getInfo", {
+    artist: 'Evanescence',
+    handlers: {
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(error) {
+        console.log(error.message);
+      }
+    }
   });
 };
 
