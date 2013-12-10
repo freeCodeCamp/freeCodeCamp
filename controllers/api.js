@@ -1,5 +1,6 @@
 var config = require('../config/config');
 var User = require('../models/User');
+var querystring = require('querystring');
 var async = require('async');
 var cheerio = require('cheerio');
 var request = require('request');
@@ -145,13 +146,6 @@ exports.getGithub = function(req, res) {
 };
 
 /**
- * GET /api/twilio
- */
-exports.getTwilio = function(req, res) {
-
-};
-
-/**
  * GET /api/aviary
  */
 exports.getAviary = function(req, res) {
@@ -173,10 +167,14 @@ exports.getEtsy = function(req, res) {
  * New York Times API example
  */
 exports.getNewYorkTimes = function(req, res) {
-
-  res.render('api/nyt', {
-    title: 'New York Times API',
-
+  var query = querystring.stringify({ 'api-key': config.nyt.key, 'list-name': 'young-adult' });
+  var url = 'http://api.nytimes.com/svc/books/v2/lists?' + query;
+  request.get(url, function(error, request, body) {
+    var bestSellers = JSON.parse(body);
+    res.render('api/nyt', {
+      title: 'New York Times API',
+      books: bestSellers.results
+    });
   });
 };
 

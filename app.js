@@ -69,7 +69,6 @@ app.get('/api/scraping', api.getScraping);
 app.get('/api/github', passportConf.isAuthorized, api.getGithub);
 app.get('/api/lastfm', api.getLastfm);
 app.get('/api/nyt', api.getNewYorkTimes);
-app.get('/api/twilio', api.getTwilio);
 app.get('/api/etsy', api.getEtsy);
 app.get('/api/twitter', passportConf.isAuthenticated, api.getTwitter);
 app.get('/api/aviary', api.getAviary);
