@@ -14,14 +14,16 @@ block content
     a.btn.btn-lg.btn-primary-outline(href='https://dev.twitter.com/docs/api/1.1', target='_blank')
       i.fa.fa-code-fork
       | API Endpoints
-  h3.text-primary Latest 50 Tweets containing the word "Hackathon" within NYC 5 mile radius
-  ul.list
+  h3.text-primary Latest 50 Tweets containing "Hackathon" in NYC within 5 miles
+  ul.list-unstyled
     for tweet in tweets
       li
-        small
-          strong #{tweet.user.name}
-          span.text-muted  @#{tweet.user.screen_name}
-        .clearfix
-          - var image = tweet.user.profile_image_url.replace('_normal', '');
-          img.pull-left(src='#{image}', width=50, height=50)
-          small #{tweet.text}
+        .panel.panel-default
+          .panel-heading
+            =tweet.user.name
+            small.text-muted  @#{tweet.user.screen_name}
+          .panel-body
+            .clearfix
+              - var image = tweet.user.profile_image_url.replace('_normal', '');
+              img.pull-left(src='#{image}', width=50, height=50)
+              small #{tweet.text}
