@@ -1,0 +1,23 @@
+extends ../layout
+block content
+  .page-header
+    h1
+      i.fa.fa-tumblr-square
+      | Twitter API
+  .btn-group.btn-group-justified
+    a.btn.btn-lg.btn-primary(href='https://github.com/ttezel/twit', target='_blank')
+      i.fa.fa-file-text-o
+      | Twit Library Docs
+    a.btn.btn-lg.btn-primary(href='https://dev.twitter.com/docs', target='_blank')
+      i.fa.fa-check-square-o
+      | Overview
+    a.btn.btn-lg.btn-primary(href='https://dev.twitter.com/docs/api/1.1', target='_blank')
+      i.fa.fa-code-fork
+      | API Endpoints
+  h3.text-primary #{blog.name}'s blog
+  .btn.btn-xs.btn-primary-outline
+    i.fa.fa-file-text-o
+    | #{blog.posts} posts
+  h4 Latest Photo Post
+  for photo in photoset
+    img.item(src='#{photo.original_size.url}')
