@@ -2,7 +2,7 @@ extends ../layout
 block content
   .page-header
     h1
-      i.fa.fa-tumblr-square
+      i.fa.fa-twitter(style='color: #4099ff')
       | Twitter API
   .btn-group.btn-group-justified
     a.btn.btn-lg.btn-primary(href='https://github.com/ttezel/twit', target='_blank')
@@ -14,10 +14,13 @@ block content
     a.btn.btn-lg.btn-primary(href='https://dev.twitter.com/docs/api/1.1', target='_blank')
       i.fa.fa-code-fork
       | API Endpoints
-  h3.text-primary #{blog.name}'s blog
-  .btn.btn-xs.btn-primary-outline
-    i.fa.fa-file-text-o
-    | #{blog.posts} posts
-  h4 Latest Photo Post
-  for photo in photoset
-    img.item(src='#{photo.original_size.url}')
+  h3.text-primary Latest 50 Tweets containing the word "Hackathon"
+  ul.list
+    for tweet in tweets
+      li
+        small
+          strong #{tweet.user.name}
+          span.text-muted  @#{tweet.user.screen_name}
+        img(src='#{tweet.user.profile_image_url}')
+        p.well
+          small #{tweet.text}
