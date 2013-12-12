@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  h2 Account Management
   ul.nav.nav-tabs
     li.active
       a(href='#basic', data-toggle='tab') Basic Info
@@ -10,6 +9,7 @@ block content
   .tab-content
     #basic.tab-pane.fade.active.in
       form.form-horizontal(action='/account/profile', method='POST')
+        legend Profile Information
         .form-group
           label.col-sm-2.control-label(for='name') Name
           .col-sm-4
@@ -40,9 +40,8 @@ block content
             button.btn.btn.btn-primary(type='submit') Update Profile
 
     #settings.tab-pane.fade
-      .page-header
-        h3 Change Password
       form.form-horizontal(action='/account/profile', method='POST')
+        legend Change Password
         .form-group
           label.col-sm-3.control-label(for='password') Password
           .col-sm-4
