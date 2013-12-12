@@ -1,0 +1,142 @@
+extends layout
+
+block content
+  if messages.length
+    .alert.alert-danger
+      for message in messages
+        div= message
+  .login-container.signup.animated.fadeIn
+    h3.text-center
+      span.text-primary PROJECT
+      span.text-muted NAME
+    form(method='POST')
+      .form-group
+        input.form-control(type='email', name='username', id='username', placeholder='Email', autofocus='', required='')
+      .form-group
+        input.form-control(type='password', name='password', id='password', placeholder='Password', required='')
+      .form-group
+        input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password', required='')
+        button(type='submit')
+          i.fa.fa-chevron-right
+      .form-options.clearfix
+        label.checkbox
+          input(type='checkbox')
+          span I agree to&nbsp;
+          a(href='#terms-conditions', data-toggle='modal') terms and conditions
+    .row
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-primary.btn-block.facebook(href='/auth/facebook')
+          i.fa.fa-facebook
+          | Facebook
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-info.btn-block.twitter(href='/auth/twitter')
+          i.fa.fa-twitter
+          | Twitter
+    .row
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-danger.btn-block.google(href='/auth/google')
+          i.fa.fa-google-plus
+          | Google
+      .col-xs-6.col-sm-6.col-md-6
+        a.btn.btn-default.btn-block.github(href='/auth/github')
+          i.fa.fa-github
+          | GitHub
+    p Already have an account?&nbsp;
+      a(href='/login') Login now
+
+
+  #terms-conditions.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+          h4#myModalLabel.modal-title
+            i.fa.fa-legal
+            | Terms and Conditions of Use
+        .modal-body
+          h3
+            | 1. Terms
+          p
+            | By accessing this web site, you are agreeing to be bound by these
+            | web site Terms and Conditions of Use, all applicable laws and regulations,
+            | and agree that you are responsible for compliance with any applicable local
+            | laws. If you do not agree with any of these terms, you are prohibited from
+            | using or accessing this site. The materials contained in this web site are
+            | protected by applicable copyright and trade mark law.
+          h3
+            | 2. Use License
+          ol(type='a')
+            li
+              | Permission is granted to temporarily download one copy of the materials
+              | (information or software) on Project Name's web site for personal,
+              | non-commercial transitory viewing only. This is the grant of a license,
+              | not a transfer of title, and under this license you may not:
+              ol(type='i')
+                li modify or copy the materials;
+                li
+                  | use the materials for any commercial purpose, or for any public display (commercial or non-commercial);
+                li
+                  | attempt to decompile or reverse engineer any software contained on Project Name's web site;
+                li remove any copyright or other proprietary notations from the materials; or
+                li
+                  | transfer the materials to another person or "mirror" the materials on any other server.
+            li
+              | This license shall automatically terminate if you violate any of these restrictions and may be terminated by Project Name at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
+          h3
+            | 3. Disclaimer
+          ol(type='a')
+            li
+              | The materials on Project Name's web site are provided "as is". Project Name makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Project Name does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.
+          h3
+            | 4. Limitations
+          p
+            | In no event shall Project Name or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Project Name's Internet site, even if Project Name or a Project Name authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+          h3
+            | 5. Revisions and Errata
+          p
+            | The materials appearing on Project Name's web site could include technical, typographical, or photographic errors. Project Name does not warrant that any of the materials on its web site are accurate, complete, or current. Project Name may make changes to the materials contained on its web site at any time without notice. Project Name does not, however, make any commitment to update the materials.
+          h3
+            | 6. Links
+          p
+            | Project Name has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Project Name of the site. Use of any such linked web site is at the user's own risk.
+          h3
+            | 7. Site Terms of Use Modifications
+          p
+            | Project Name may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.
+          h3
+            | 8. Governing Law
+          p
+            | Any claim relating to Project Name's web site shall be governed by the laws of the State of New York without regard to its conflict of law provisions.
+          p
+            | General Terms and Conditions applicable to Use of a Web Site.
+          h2
+            | Privacy Policy
+          p
+            | Your privacy is very important to us. Accordingly, we have developed this Policy in order for you to understand how we collect, use, communicate and disclose and make use of personal information. The following outlines our privacy policy.
+          ul
+            li
+              | Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.
+            li
+              | We will collect and use of personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.
+            li
+              | We will only retain personal information as long as necessary for the fulfillment of those purposes.
+            li
+              | We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned.
+            li
+              | Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date.
+            li
+              | We will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.
+            li
+              | We will make readily available to customers information about our policies and practices relating to the management of personal information.
+          p
+            | We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.
+        .modal-footer
+          button.btn.btn-primary(type='button', data-dismiss='modal')
+            i.fa.fa-times-circle
+            | Close
+
+  script
+    $(function() {
+      $('.navbar').remove();
+      $('body').addClass('signup-body');
+    });
