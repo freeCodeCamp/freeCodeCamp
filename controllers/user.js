@@ -124,10 +124,21 @@ exports.postSignup = function(req, res) {
 };
 
 /**
- * GET /admin
+ * POST /account/link
+ * @param req
+ * @param res
  */
-exports.getAdmin = function(req, res) {
-  res.send('access granted admin!');
+exports.postOauthLink = function(req, res) {
+  console.log('linking oauth2');
+};
+
+/**
+ * POST /account/unlink
+ * @param req
+ * @param res
+ */
+exports.postOauthUnlink = function(req, res) {
+  console.log('unlinking oauth2');
 };
 
 /**

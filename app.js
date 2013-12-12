@@ -58,6 +58,8 @@ app.get('/account', passportConf.isAuthenticated, user.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, user.postAccountProfile);
 app.post('/account/settings', passportConf.isAuthenticated, user.postAccountSettings);
 app.post('/account/delete', passportConf.isAuthenticated, user.deleteAccount);
+app.post('/account/link', passportConf.isAuthenticated, user.postOauthLink);
+app.post('/account/unlink', passportConf.isAuthenticated, user.postOauthUnlink);
 
 app.get('/api', api.getApi);
 app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized, api.getFoursquare);
