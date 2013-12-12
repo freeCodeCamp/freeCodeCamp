@@ -79,7 +79,14 @@ exports.getSignup = function(req, res) {
  */
 exports.postSignup = function(req, res) {
 
+  console.log(req.body.tos);
+  // TODO: add mongoose validation on ToS (virtual?)
   // TODO: Mongoose virtual, move logic to model
+
+  if (!req.body.tos) {
+    req.flash('messages', 'You must agree to terms and conditions');
+    return res.redirect('/signup');
+  }
   if (req.body.password !== req.body.confirmPassword) {
     req.flash('messages', 'Passwords do not match');
     return res.redirect('/signup');
