@@ -1,7 +1,8 @@
 extends layout
 
 block content
-    h2.text Contact Form
+  h2.text-center Contact Form
+  .center-block
     form.form-horizontal(role='form', method='POST')
       .form-group
         label(class='col-sm-2 control-label', for='email') Name
@@ -17,9 +18,8 @@ block content
           textarea.form-control(type='text', name='contactBody', id='contactBody', rows='7')
       .form-group
         .col-sm-offset-2.col-sm-8
-          button.btn.btn-primary(type='submit') Send
-          span.pull-right.clearfix Powered by
-            img(height='34', src='/img/sendgrid.png')
+          button.btn.btn-success(type='submit') Send
+          img.pull-right(height='34', src='/img/sendgrid.png')
 
       if error.length
         .alert.alert-danger
