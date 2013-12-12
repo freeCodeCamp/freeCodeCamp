@@ -4,9 +4,25 @@ block content
   if messages.length
     .alert.alert-danger
       strong= messages
-  .page-header
-    h2 Login
+
+  h2.text-center Login
+
   form.form-horizontal(method='POST')
+
+    .form-group
+      label.col-sm-2.control-label(for='username') Email
+      .col-sm-8
+        input.form-control(type='text', name='username', id='username', placeholder='Email', autofocus='')
+    .form-group
+      label.col-sm-2.control-label(for='username') Password
+      .col-sm-8
+        .input-group
+          input.form-control(type='password', name='password', id='password', placeholder='Password')
+          span.input-group-btn
+            button.btn.btn-primary(type='button') Go!
+        .help-block
+          a.pull-right(href='#') Forgot password?
+
     .form-group
       .col-sm-offset-2.col-sm-8
         .btn-group.btn-group-justified
@@ -16,23 +32,9 @@ block content
           a.btn.btn-sm.btn-info.twitter(href='/auth/twitter')
             i.fa.fa-twitter
             | Twitter
-          a.btn.btn-sm.btn-danger.google(href='/auth/google')
-            i.fa.fa-google-plus
-            | Google
           a.btn.btn-sm.btn-default.github(href='/auth/github')
             i.fa.fa-github
             | GitHub
-    .form-group
-      label.col-sm-2.control-label(for='username') Email
-      .col-sm-8
-        input.form-control(type='text', name='username', id='username', placeholder='Email', autofocus='', required='')
-    .form-group
-      label.col-sm-2.control-label(for='username') Password
-      .col-sm-8
-        input.form-control(type='password', name='password', id='password', placeholder='Password', required='')
-        .help-block
-          a.pull-right(href='#') Forgot password?
-    .form-group
-      .col-sm-offset-2.col-sm-8
-        button.btn.btn-success(type='submit') Login
-
+          a.btn.btn-sm.btn-danger.google(href='/auth/google')
+            i.fa.fa-google-plus
+            | Google

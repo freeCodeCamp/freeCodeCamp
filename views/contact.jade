@@ -1,7 +1,15 @@
 extends layout
 
 block content
+  if error.length
+    .alert.alert-danger
+      p= error
+    if success.length
+      .alert.alert-success
+        p= success
+
   h2.text-center Contact Form
+
   .center-block
     form.form-horizontal(role='form', method='POST')
       .form-group
@@ -21,9 +29,4 @@ block content
           button.btn.btn-success(type='submit') Send
           img.pull-right(height='34', src='/img/sendgrid.png')
 
-      if error.length
-        .alert.alert-danger
-          p= error
-      if success.length
-        .alert.alert-success
-          p= success
+
