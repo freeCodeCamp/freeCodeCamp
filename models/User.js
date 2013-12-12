@@ -18,7 +18,7 @@ var userSchema = new mongoose.Schema({
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
     website: { type: String, default: '' },
-    picture: { type: String, default: 'http://bit.ly/1cppDAL' }
+    picture: { type: String, default: '' }
   }
 });
 
@@ -30,7 +30,7 @@ userSchema.path('password').validate(function(password) {
 userSchema.path('username').validate(function(username) {
   if (this.provider) return true;
   return username.length;
-}, 'Username cannot be blank');
+}, 'Email cannot be blank');
 
 
 userSchema.pre('save', function(next) {
