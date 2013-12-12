@@ -32,6 +32,13 @@ exports.postAccountSettings = function(req, res) {
   console.log('okay!!');
 };
 
+exports.deleteAccount = function(req, res) {
+  User.remove({ _id: req.user.id }, function(err) {
+    req.logout();
+    res.redirect('/');
+  });
+};
+
 /**
  * GET /login
  */

@@ -23,7 +23,7 @@ var db = mongoose.connect(config.db);
 var app = express();
 
 // Express Configuration
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.favicon());
@@ -57,6 +57,7 @@ app.post('/signup', user.postSignup);
 app.get('/account', passportConf.isAuthenticated, user.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, user.postAccountProfile);
 app.post('/account/settings', passportConf.isAuthenticated, user.postAccountSettings);
+app.post('/account/delete', passportConf.isAuthenticated, user.deleteAccount);
 
 app.get('/api', api.getApi);
 app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized, api.getFoursquare);

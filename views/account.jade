@@ -56,7 +56,8 @@ block content
       .page-header
         h3 Delete Account
         p You can delete your account, but keep in mind this action is irreversiable.
-        a.btn.btn-danger-outline(href='#') Delete my account
+        form(action='/account/delete', method='POST')
+          button.btn.btn-danger(type='submit') Delete my account
 
       .page-header
         h3 Linked Accounts
