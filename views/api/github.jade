@@ -1,22 +1,22 @@
 extends ../layout
 
 block content
-  .page-header
-    h1
-      i.fa.fa-github
-      | GitHub API
+  h2
+    i.fa.fa-github
+    | GitHub API
+
   .btn-group.btn-group-justified
-    a.btn.btn-lg.btn-primary(href='http://developer.github.com/guides/getting-started/', target='_blank')
+    a.btn.btn-primary(href='http://developer.github.com/guides/getting-started/', target='_blank')
       i.fa.fa-check-square-o
       | Getting Started
-    a.btn.btn-lg.btn-primary(href='https://apigee.com/console/github', target='_blank')
+    a.btn.btn-primary(href='https://apigee.com/console/github', target='_blank')
       i.fa.fa-laptop
       | API Console
-    a.btn.btn-lg.btn-primary(href='http://developer.github.com/v3/', target='_blank')
+    a.btn.btn-primary(href='http://developer.github.com/v3/', target='_blank')
       i.fa.fa-file-text-o
       | Documentation
-
-  .panel.panel-default
+  br
+  .panel.panel-primary
     .panel-heading
       h3.panel-title Repository Information
     .panel-body
@@ -26,18 +26,18 @@ block content
         .col-xs-8
           h4
             a(href='#{repo.html_url}') #{repo.name}
-          .btn.btn-sm.btn-primary-outline
-            i.fa.fa-eye-slash
-            | Subscribers: #{repo.subscribers_count}
-          .btn.btn-sm.btn-primary-outline
-            i.fa.fa-star
-            | Starred: #{repo.stargazers_count}
-          .btn.btn-sm.btn-primary-outline
-            i.fa.fa-code-fork
-            | Forks: #{repo.forks_count}
-          .btn.btn-sm.btn-primary-outline
-            i.fa.fa-code
-            | #{repo.language}
-          br
+          ul.list-inline
+            li
+              i.fa.fa-eye-slash
+              | Subscribers: #{repo.subscribers_count}
+            li
+              i.fa.fa-star
+              | Starred: #{repo.stargazers_count}
+            li
+              i.fa.fa-code-fork
+              | Forks: #{repo.forks_count}
+            li
+              i.fa.fa-code
+              | #{repo.language}
           strong DESCRIPTION
           p= repo.description
