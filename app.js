@@ -59,8 +59,6 @@ app.get('/account', passportConf.isAuthenticated, user.getAccount);
 app.post('/account/profile', passportConf.isAuthenticated, user.postAccountProfile);
 app.post('/account/settings', passportConf.isAuthenticated, user.postAccountSettings);
 
-app.get('/partials/:name', home.partials);
-
 app.get('/api', api.getApi);
 app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized, api.getFoursquare);
 app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized, api.getTumblr);
