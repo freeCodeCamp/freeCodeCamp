@@ -4,48 +4,35 @@ block content
   if messages.length
     .alert.alert-danger
       strong= messages
-  .login-container.animated.fadeIn
-    h3.text-center
-      span.text-primary PROJECT
-      span.text-muted NAME
-    form(method='POST')
-      .form-group
+  .page-header
+    h2 Login
+  form.form-horizontal(method='POST')
+    .form-group
+      .col-sm-offset-2.col-sm-8
+        .btn-group.btn-group-justified
+          a.btn.btn-sm.btn-primary.facebook(href='/auth/facebook')
+            i.fa.fa-facebook
+            | Facebook
+          a.btn.btn-sm.btn-info.twitter(href='/auth/twitter')
+            i.fa.fa-twitter
+            | Twitter
+          a.btn.btn-sm.btn-danger.google(href='/auth/google')
+            i.fa.fa-google-plus
+            | Google
+          a.btn.btn-sm.btn-default.github(href='/auth/github')
+            i.fa.fa-github
+            | GitHub
+    .form-group
+      label.col-sm-2.control-label(for='username') Email
+      .col-sm-8
         input.form-control(type='text', name='username', id='username', placeholder='Email', autofocus='', required='')
-      .form-group
+    .form-group
+      label.col-sm-2.control-label(for='username') Password
+      .col-sm-8
         input.form-control(type='password', name='password', id='password', placeholder='Password', required='')
-        button(type='submit')
-          i.fa.fa-chevron-right
-      .form-options.clearfix
-        a.pull-right(href='#') Forgot password?
-        .text-left
-          label.checkbox
-            input(type='checkbox')
-            span Remember me
-    .row
-      .col-xs-6.col-sm-6.col-md-6
-        a.btn.btn-primary.btn-block.facebook(href='/auth/facebook')
-          i.fa.fa-facebook
-          | Facebook
+        .help-block
+          a.pull-right(href='#') Forgot password?
+    .form-group
+      .col-sm-offset-2.col-sm-8
+        button.btn.btn-success(type='submit') Login
 
-      .col-xs-6.col-sm-6.col-md-6
-        a.btn.btn-info.btn-block.twitter(href='/auth/twitter')
-          i.fa.fa-twitter
-          | &nbsp; Twitter
-
-    .row
-      .col-xs-6.col-sm-6.col-md-6
-        a.btn.btn-danger.btn-block.google(href='/auth/google')
-          i.fa.fa-google-plus
-          | &nbsp; Google
-      .col-xs-6.col-sm-6.col-md-6
-        a.btn.btn-default.btn-block.github(href='/auth/github')
-          i.fa.fa-github
-          | &nbsp; GitHub
-    p Don't have an account yet?&nbsp;
-      a(href='/signup') Sign up now
-
-  script
-    $(function() {
-      $('.navbar').remove();
-      $('body').addClass('login-body');
-    });
