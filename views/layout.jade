@@ -45,7 +45,7 @@ html
               li(class=title=='Create Account'?'active':undefined)
                 a(href='/signup') Create Account
             else
-              li.user(class=title=='Account Management'?'active':undefined)
+              li(class=title=='Account Management'?'active':undefined)
                 a(href='/account')
                   if user.profile.picture
                     img(src='#{user.profile.picture}')
