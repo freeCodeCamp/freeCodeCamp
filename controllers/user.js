@@ -28,6 +28,7 @@ exports.postAccountProfile = function(req, res) {
   });
 };
 
+// todo: change to change postPassword
 exports.postAccountSettings = function(req, res) {
   console.log('okay!!');
 };

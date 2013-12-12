@@ -10,6 +10,7 @@ block content
     #basic.tab-pane.fade.active.in
       .pahe-header
         h3 Profile Information
+
       form.form-horizontal(action='/account/profile', method='POST')
         .form-group
           label.col-sm-2.control-label(for='name') Name
@@ -43,6 +44,7 @@ block content
     #settings.tab-pane.fade
       .page-header
         h3 Change Password
+
       form.form-horizontal(action='/account/profile', method='POST')
         .form-group
           label.col-sm-3.control-label(for='password') Password
@@ -55,22 +57,37 @@ block content
         .form-group
           .col-sm-offset-3.col-sm-4
             button.btn.btn.btn-primary(type='submit') Change Password
+
       .page-header
         h3 Delete Account
+
       p You can delete your account, but keep in mind this action is irreversiable.
       form(action='/account/delete', method='POST')
         button.btn.btn-danger(type='submit') Delete my account
 
       .page-header
         h3 Linked Accounts
-      p
-        a.text-danger(href='#') Unlink your Google account
-      p
-        a(href='#') Link your Facebook account
-      p
-        a(href='#') Link your Twitter account
-      p
-        a(href='#') Link your GitHub account
+
+      if user.google
+        p: a.text-danger(href='#') Unlink your Google account
+      else
+        p: a(href='#') Link your Google account
+
+      if user.facebook
+        p: a.text-danger(href='#') Unlink your Facebook account
+      else
+        p: a(href='#') Link your Facebook account
+
+      if user.twitter
+        p: a.text-danger(href='#') Unlink your Twitter account
+      else
+        p: a(href='#') Link your Twitter account
+
+      if user.github
+        p: a.text-danger(href='#') Unlink your GitHub account
+      else
+        p: a(href='#') Link your GitHub account
+
 
   if messages.length
     .alert.alert-danger
