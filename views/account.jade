@@ -8,8 +8,9 @@ block content
       a(href='#settings', data-toggle='tab') Settings
   .tab-content
     #basic.tab-pane.fade.active.in
+      .pahe-header
+        h3 Profile Information
       form.form-horizontal(action='/account/profile', method='POST')
-        legend Profile Information
         .form-group
           label.col-sm-2.control-label(for='name') Name
           .col-sm-4
@@ -40,8 +41,9 @@ block content
             button.btn.btn.btn-primary(type='submit') Update Profile
 
     #settings.tab-pane.fade
+      .page-header
+        h3 Change Password
       form.form-horizontal(action='/account/profile', method='POST')
-        legend Change Password
         .form-group
           label.col-sm-3.control-label(for='password') Password
           .col-sm-4
@@ -52,23 +54,23 @@ block content
             input.form-control(type='password', id='confirmPassword')
         .form-group
           .col-sm-offset-3.col-sm-4
-            button.btn.btn.btn-primary-outline(type='submit') Change Password
+            button.btn.btn.btn-primary(type='submit') Change Password
       .page-header
         h3 Delete Account
-        p You can delete your account, but keep in mind this action is irreversiable.
-        form(action='/account/delete', method='POST')
-          button.btn.btn-danger(type='submit') Delete my account
+      p You can delete your account, but keep in mind this action is irreversiable.
+      form(action='/account/delete', method='POST')
+        button.btn.btn-danger(type='submit') Delete my account
 
       .page-header
         h3 Linked Accounts
-        p
-          a.text-danger(href='#') Unlink your Google account
-        p
-          a(href='#') Link your Facebook account
-        p
-          a(href='#') Link your Twitter account
-        p
-          a(href='#') Link your GitHub account
+      p
+        a.text-danger(href='#') Unlink your Google account
+      p
+        a(href='#') Link your Facebook account
+      p
+        a(href='#') Link your Twitter account
+      p
+        a(href='#') Link your GitHub account
 
   if messages.length
     .alert.alert-danger
