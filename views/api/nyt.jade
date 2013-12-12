@@ -2,21 +2,22 @@ extends ../layout
 
 block content
   .page-header
-    h1
+    h2
       i.fa.fa-building-o
       | New York Times API
+
   .btn-group.btn-group-justified
-    a.btn.btn-lg.btn-primary(href='http://developer.nytimes.com/page', target='_blank')
+    a.btn.btn-primary(href='http://developer.nytimes.com/page', target='_blank')
       i.fa.fa-check-square-o
       | Overview
-    a.btn.btn-lg.btn-primary(href='http://prototype.nytimes.com/gst/apitool/index.html', target='_blank')
+    a.btn.btn-primary(href='http://prototype.nytimes.com/gst/apitool/index.html', target='_blank')
       i.fa.fa-laptop
       | API Console
-    a.btn.btn-lg.btn-primary(href='http://developer.nytimes.com/docs', target='_blank')
+    a.btn.btn-primary(href='http://developer.nytimes.com/docs', target='_blank')
       i.fa.fa-code-fork
       | API Endspoints
 
-  h3 Young Adult Best Sellers
+  h4 Young Adult Best Sellers
   table.dataTable.table.table-striped.table-bordered
     thead
       tr

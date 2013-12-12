@@ -2,17 +2,18 @@ extends ../layout
 
 block content
   .page-header
-    h1
+    h2
       i.fa.fa-music
       | Last.fm API
+
   .btn-group.btn-group-justified
-    a.btn.btn-lg.btn-primary(href='https://github.com/jammus/lastfm-node#lastfm-node', target='_blank')
+    a.btn.btn-primary(href='https://github.com/jammus/lastfm-node#lastfm-node', target='_blank')
       i.fa.fa-check-square-o
       | Last.fm Node Docs
-    a.btn.btn-lg.btn-primary(href='http://www.last.fm/api/account/create', target='_blank')
+    a.btn.btn-primary(href='http://www.last.fm/api/account/create', target='_blank')
       i.fa.fa-laptop
       | Create API Account
-    a.btn.btn-lg.btn-primary(href='http://www.last.fm/api', target='_blank')
+    a.btn.btn-primary(href='http://www.last.fm/api', target='_blank')
       i.fa.fa-code-fork
       | API Endpoints
 
@@ -39,7 +40,7 @@ block content
         | #{tag.name}
       |&nbsp;
 
-  .panel.panel-default
+  .panel.panel-primary
     .panel-heading Biography
     .panel-body
       != artist.bio
@@ -50,7 +51,7 @@ block content
     |&nbsp;
 
   h4 Similar Artists
-  ul.list
+  ul.list-unstyled
     for similarArtist in artist.similar
       li
-        a(href='#{similarArtist.url}') #{similarArtist.name}
+        a.lead(href='#{similarArtist.url}') #{similarArtist.name}

@@ -2,17 +2,18 @@ extends ../layout
 
 block content
   .page-header
-    h1
-      i.fa.fa-facebook-square
+    h2
+      i.fa.fa-facebook-square(style='color: #335397')
       | Facebook API
+
   .btn-group.btn-group-justified
-    a.btn.btn-lg.btn-primary(href='https://developers.facebook.com/docs/graph-api/quickstart/', target='_blank')
+    a.btn.btn-primary(href='https://developers.facebook.com/docs/graph-api/quickstart/', target='_blank')
       i.fa.fa-check-square-o
       | Quickstart
-    a.btn.btn-lg.btn-primary(href='https://developers.facebook.com/tools/explorer', target='_blank')
+    a.btn.btn-primary(href='https://developers.facebook.com/tools/explorer', target='_blank')
       i.fa.fa-facebook
       | Graph API Explorer
-    a.btn.btn-lg.btn-primary(href='https://developers.facebook.com/docs/graph-api/reference/', target='_blank')
+    a.btn.btn-primary(href='https://developers.facebook.com/docs/graph-api/reference/', target='_blank')
       i.fa.fa-code-fork
       | API Reference
   h3.text-primary /me
@@ -21,8 +22,8 @@ block content
   h6 Email: #{me.email}
 
   h3.text-primary /me/friends
-  ul.list
+  ul.list-unstyled
     for friend in friends
       li
-        img.img-circle(src='https://graph.facebook.com/#{friend.id}/picture?type=normal', width=30, height=30)
+        img(src='https://graph.facebook.com/#{friend.id}/picture?type=normal', width=30, height=30)
         a(href='http://facebook.com/#{friend.id}') #{friend.name}

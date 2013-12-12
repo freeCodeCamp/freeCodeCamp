@@ -1,17 +1,19 @@
 extends ../layout
 block content
   .page-header
-    h1
+    h2
       i.fa.fa-twitter(style='color: #4099ff')
       | Twitter API
+
+  //TODO: Dropdown menu next to h2 instead of this btn-group
   .btn-group.btn-group-justified
-    a.btn.btn-lg.btn-primary-outline(href='https://github.com/ttezel/twit', target='_blank')
+    a.btn.btn-primary(href='https://github.com/ttezel/twit', target='_blank')
       i.fa.fa-file-text-o
       | Twit Library Docs
-    a.btn.btn-lg.btn-primary-outline(href='https://dev.twitter.com/docs', target='_blank')
+    a.btn.btn-primary(href='https://dev.twitter.com/docs', target='_blank')
       i.fa.fa-check-square-o
       | Overview
-    a.btn.btn-lg.btn-primary-outline(href='https://dev.twitter.com/docs/api/1.1', target='_blank')
+    a.btn.btn-primary(href='https://dev.twitter.com/docs/api/1.1', target='_blank')
       i.fa.fa-code-fork
       | API Endpoints
   h3.text-primary Latest 50 Tweets containing "Hackathon" in NYC within 5 miles
