@@ -56,7 +56,7 @@ exports.postAccountSettings = function(req, res) {
   //TODO: change user's password
 };
 
-exports.deleteAccount = function(req, res) {
+exports.postDeleteAccount = function(req, res) {
   User.remove({ _id: req.user.id }, function(err) {
     req.logout();
     res.redirect('/');
