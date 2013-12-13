@@ -74,22 +74,22 @@ block content
         h3 Linked Accounts
 
       if user.google
-        p: a.text-danger(href='/auth/google') Unlink your Google account
+        p: a.text-danger(href='/account/unlink/google') Unlink your Google account
       else
         p: a(href='/auth/google') Link your Google account
 
       if user.facebook
-        p: a.text-danger(href='/auth/facebook') Unlink your Facebook account
+        p: a.text-danger(href='/account/unlink/') Unlink your Facebook account
       else
         p: a(href='/auth/facebook') Link your Facebook account
 
       if user.twitter
-        p: a.text-danger(href='/auth/twitter') Unlink your Twitter account
+        p: a.text-danger(href='/account/unlink/') Unlink your Twitter account
       else
         p: a(href='/auth/twitter') Link your Twitter account
 
       if user.github
-        p: a.text-danger(href='/auth/github') Unlink your GitHub account
+        p: a.text-danger(href='/account/unlink/') Unlink your GitHub account
       else
         p: a(href='/auth/github') Link your GitHub account
 

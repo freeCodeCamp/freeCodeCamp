@@ -156,8 +156,8 @@ exports.getOauthUnlink = function(req, res) {
   console.log('unlinking oauth2');
   var provider = req.params.provider;
   User.findById(req.user.id, function(err, user) {
-    delete user[provider];
-    user.tokens = _.reject(x.tokens, function(tok) { return tok.kind === 'google'; });
+    user[provider] = undefined;
+    user.tokens = _.reject(user.tokens, function(token) { return token.kind === 'google'; });
     user.save(function(err) {
       console.log('Successfully unlinked:', provider);
       res.redirect('/account#settings');
