@@ -31,6 +31,9 @@ exports.postAccountProfile = function(req, res) {
 // todo: change to change postPassword
 exports.postAccountSettings = function(req, res) {
   console.log('okay!!');
+  // TODO: add new field "Existing password"
+  // TODO: validate if all passwords are matching
+  //TODO: change user's password
 };
 
 exports.deleteAccount = function(req, res) {
@@ -91,18 +94,20 @@ exports.postSignup = function(req, res) {
   // TODO: add mongoose validation on ToS (virtual?)
   // TODO: Mongoose virtual, move logic to model
 
-  if (!req.body.tos) {
-    req.flash('messages', 'You must agree to terms and conditions');
-    return res.redirect('/signup');
-  }
   if (req.body.password !== req.body.confirmPassword) {
     req.flash('messages', 'Passwords do not match');
     return res.redirect('/signup');
   }
 
+  if (!req.body.tos) {
+    req.flash('messages', 'You must agree to terms and conditions');
+    return res.redirect('/signup');
+  }
+
+
   var user = new User({
-    username: req.body.username || '',
-    password: req.body.password || ''
+    username: req.body.username,
+    password: req.body.password
   });
 
   user.save(function(err) {
