@@ -81,20 +81,34 @@ passport.use(new TwitterStrategy(config.twitter, function(accessToken, tokenSecr
   });
 }));
 
-passport.use(new GoogleStrategy(config.google, function(accessToken, refreshToken, profile, done) {
-  User.findOne({ google: profile.id }, function(err, existingUser) {
-    if (existingUser) return done(null, existingUser);
-    var user = new User();
-    user.google = profile.id;
-    user.tokens.push({ kind: 'google', token: accessToken });
-    user.profile.name = profile.displayName;
-    user.profile.email = profile._json.email;
-    user.profile.gender = profile._json.gender;
-    user.profile.picture = profile._json.picture;
-    user.save(function(err) {
-      done(err, user);
+passport.use(new GoogleStrategy(config.google, function(req, accessToken, refreshToken, profile, done) {
+  if (req.user) {
+    User.findById(req.user.id, function(err, user) {
+      user.google = profile.id;
+      user.tokens.push({ kind: 'google', token: accessToken });
+      user.profile.name = profile.displayName;
+      user.profile.email = user.profile.email || profile._json.email;
+      user.profile.gender = user.profile.gender || profile._json.gender;
+      user.profile.picture = user.profile.picture || profile._json.picture;
+      user.save(function(err) {
+        done(err, user);
+      });
     });
-  });
+  } else {
+    User.findOne({ google: profile.id }, function(err, existingUser) {
+      if (existingUser) return done(null, existingUser);
+      var user = new User();
+      user.google = profile.id;
+      user.tokens.push({ kind: 'google', token: accessToken });
+      user.profile.name = profile.displayName;
+      user.profile.email = profile._json.email;
+      user.profile.gender = profile._json.gender;
+      user.profile.picture = profile._json.picture;
+      user.save(function(err) {
+        done(err, user);
+      });
+    });
+  }
 }));
 
 passport.use('tumblr', new OAuthStrategy({
