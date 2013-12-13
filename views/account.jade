@@ -1,6 +1,11 @@
 extends layout
 
 block content
+  if messages.length
+    .alert.alert-danger
+      for message in messages
+        div= message
+
   ul.nav.nav-tabs
     li.active
       a(href='#basic', data-toggle='tab') Basic Info
@@ -45,7 +50,7 @@ block content
       .page-header
         h3 Change Password
 
-      form.form-horizontal(action='/account/profile', method='POST')
+      form.form-horizontal(action='/account/settings', method='POST')
         .form-group
           label.col-sm-3.control-label(for='password') Password
           .col-sm-4
@@ -53,7 +58,7 @@ block content
         .form-group
           label.col-sm-3.control-label(for='confirmPassword') Confirm Password
           .col-sm-4
-            input.form-control(type='password', id='confirmPassword')
+            input.form-control(type='password', name='confirmPassword', id='confirmPassword')
         .form-group
           .col-sm-offset-3.col-sm-4
             button.btn.btn.btn-primary(type='submit') Change Password
@@ -89,7 +94,3 @@ block content
         p: a(href='#') Link your GitHub account
 
 
-  if messages.length
-    .alert.alert-danger
-      for message in messages
-        div= message

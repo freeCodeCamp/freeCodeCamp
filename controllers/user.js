@@ -31,6 +31,26 @@ exports.postAccountProfile = function(req, res) {
 // todo: change to change postPassword
 exports.postAccountSettings = function(req, res) {
   console.log('okay!!');
+   // TODO: change url on tab change in account.jade
+  // Check if password matches confirm password
+
+  if (req.body.password !== req.body.confirmPassword) {
+    req.flash('messages', 'Passwords do not match');
+    return res.redirect('/account');
+  }
+
+  User.findById(req.user.id, function(err, user) {
+    user.password = req.body.password;
+    user.save(function(err) {
+      console.log('Password has been changed.');
+      //TODO: change messages to success/errors
+      req.flash('messages', 'Password has been successfully changed!');
+      res.redirect('/account');
+    });
+  });
+
+
+
   // TODO: add new field "Existing password"
   // TODO: validate if all passwords are matching
   //TODO: change user's password
