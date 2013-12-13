@@ -6,7 +6,7 @@ block content
       for message in messages
         div= message
 
-  ul.nav.nav-tabs
+  ul.nav.nav-tabs#myTab
     li.active
       a(href='#basic', data-toggle='tab') Basic Info
     li
@@ -74,23 +74,38 @@ block content
         h3 Linked Accounts
 
       if user.google
-        p: a.text-danger(href='#') Unlink your Google account
+        p: a.text-danger(href='/auth/google') Unlink your Google account
       else
-        p: a(href='#') Link your Google account
+        p: a(href='/auth/google') Link your Google account
 
       if user.facebook
-        p: a.text-danger(href='#') Unlink your Facebook account
+        p: a.text-danger(href='/auth/facebook') Unlink your Facebook account
       else
-        p: a(href='#') Link your Facebook account
+        p: a(href='/auth/facebook') Link your Facebook account
 
       if user.twitter
-        p: a.text-danger(href='#') Unlink your Twitter account
+        p: a.text-danger(href='/auth/twitter') Unlink your Twitter account
       else
-        p: a(href='#') Link your Twitter account
+        p: a(href='/auth/twitter') Link your Twitter account
 
       if user.github
-        p: a.text-danger(href='#') Unlink your GitHub account
+        p: a.text-danger(href='/auth/github') Unlink your GitHub account
       else
-        p: a(href='#') Link your GitHub account
+        p: a(href='/auth/github') Link your GitHub account
 
 
+  script
+    $('#myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+
+    // store the currently selected tab in the hash value
+    $("ul.nav-tabs > li > a").on("shown.bs.tab", function (e) {
+        var id = $(e.target).attr("href").substr(1);
+        window.location.hash = id;
+    });
+
+    // on load of the page: switch to the currently selected tab
+    var hash = window.location.hash;
+    $('#myTab a[href="' + hash + '"]').tab('show');
