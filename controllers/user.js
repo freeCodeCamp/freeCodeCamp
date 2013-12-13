@@ -164,6 +164,15 @@ exports.postOauthLink = function(req, res) {
  */
 exports.postOauthUnlink = function(req, res) {
   console.log('unlinking oauth2');
+  var provider = req.body.provider;
+  User.findById(req.user.id, function(err, user) {
+    user.tokens = _.reject(x.tokens, function(tok) { return tok.kind === 'google'; });
+    delete user[provider];
+    user.save(function(err) {
+      console.log('Successfully unlinked:', provider);
+      res.redirect('/account');
+    });
+  });
 };
 
 /**
