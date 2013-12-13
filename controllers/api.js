@@ -151,7 +151,8 @@ exports.getGithub = function(req, res) {
  */
 exports.getAviary = function(req, res) {
   res.render('api/aviary', {
-    title: 'Aviary API'
+    title: 'Aviary API',
+    user: req.user
   });
 };
 
@@ -175,7 +176,8 @@ exports.getNewYorkTimes = function(req, res) {
     console.log(bestSellers.results[0].book_details);
     res.render('api/nyt', {
       title: 'New York Times API',
-      books: bestSellers.results
+      books: bestSellers.results,
+      user: req.user
     });
   });
 };
@@ -235,7 +237,8 @@ exports.getLastfm = function(req, res) {
     };
     res.render('api/lastfm', {
       title: 'Last.fm API',
-      artist: artist
+      artist: artist,
+      user: req.user
     });
   });
 };
