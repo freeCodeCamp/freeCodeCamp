@@ -148,29 +148,19 @@ exports.postSignup = function(req, res) {
   });
 };
 
-/**
- * POST /account/link
- * @param req
- * @param res
- */
-exports.postOauthLink = function(req, res) {
-  console.log('linking oauth2');
-};
 
 /**
- * POST /account/unlink
- * @param req
- * @param res
+ * GET /account/unlink/:provider
  */
-exports.postOauthUnlink = function(req, res) {
+exports.getOauthUnlink = function(req, res) {
   console.log('unlinking oauth2');
-  var provider = req.body.provider;
+  var provider = req.params.provider;
   User.findById(req.user.id, function(err, user) {
-    user.tokens = _.reject(x.tokens, function(tok) { return tok.kind === 'google'; });
     delete user[provider];
+    user.tokens = _.reject(x.tokens, function(tok) { return tok.kind === 'google'; });
     user.save(function(err) {
       console.log('Successfully unlinked:', provider);
-      res.redirect('/account');
+      res.redirect('/account#settings');
     });
   });
 };
