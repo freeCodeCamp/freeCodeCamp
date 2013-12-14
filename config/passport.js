@@ -66,19 +66,32 @@ passport.use(new GitHubStrategy(config.github, function(accessToken, refreshToke
   });
 }));
 
-passport.use(new TwitterStrategy(config.twitter, function(accessToken, tokenSecret, profile, done) {
-  User.findOne({ twitter: profile.id }, function(err, existingUser) {
-    if (existingUser) return done(null, existingUser);
-    var user = new User();
-    user.twitter = profile.id;
-    user.tokens.push({ kind: 'twitter', token: accessToken, tokenSecret: tokenSecret });
-    user.profile.name = profile.displayName;
-    user.profile.location = profile._json.location;
-    user.profile.picture = profile._json.profile_image_url;
-    user.save(function(err) {
-      done(err, user);
+passport.use(new TwitterStrategy(config.twitter, function(req, accessToken, tokenSecret, profile, done) {
+  if (req.user) {
+    User.findById(req.user.id, function(err, user) {
+      user.twitter = profile.id;
+      user.tokens.push({ kind: 'twitter', token: accessToken, tokenSecret: tokenSecret });
+      user.profile.name = profile.displayName;
+      user.profile.location = user.profile.location || profile._json.location;
+      user.profile.picture = user.profile.picture || profile._json.profile_image_url;
+      user.save(function(err) {
+        done(err, user);
+      });
     });
-  });
+  } else {
+    User.findOne({ twitter: profile.id }, function(err, existingUser) {
+      if (existingUser) return done(null, existingUser);
+      var user = new User();
+      user.twitter = profile.id;
+      user.tokens.push({ kind: 'twitter', token: accessToken, tokenSecret: tokenSecret });
+      user.profile.name = profile.displayName;
+      user.profile.location = profile._json.location;
+      user.profile.picture = profile._json.profile_image_url;
+      user.save(function(err) {
+        done(err, user);
+      });
+    });
+  }
 }));
 
 passport.use(new GoogleStrategy(config.google, function(req, accessToken, refreshToken, profile, done) {
