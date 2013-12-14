@@ -31,6 +31,7 @@ block content
               input(checked=user.profile.gender=='female', name='gender', type='radio', value='female')
               span Female
         .form-group
+          // TODO: differentiate between username as email
           label.col-sm-2.control-label(for='email') Email
           .col-sm-4
             input.form-control(type='email', name='email', id='email', value='#{user.profile.email}')
