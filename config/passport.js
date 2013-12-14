@@ -49,21 +49,36 @@ passport.use(new FacebookStrategy(config.facebook, function (accessToken, refres
   });
 }));
 
-passport.use(new GitHubStrategy(config.github, function(accessToken, refreshToken, profile, done) {
-  User.findOne({ github: profile.id }, function(err, existingUser) {
-    if (existingUser) return done(null, existingUser);
-    var user = new User();
-    user.github = profile.id;
-    user.tokens.push({ kind: 'github', token: accessToken });
-    user.profile.name = profile.displayName;
-    user.profile.email = profile._json.email;
-    user.profile.picture = profile._json.avatar_url;
-    user.profile.location = profile._json.location;
-    user.profile.website = profile._json.blog;
-    user.save(function(err) {
-      done(err, user);
+passport.use(new GitHubStrategy(config.github, function(req, accessToken, refreshToken, profile, done) {
+  if (req.user) {
+    User.findById(req.user.id, function(err, user) {
+      user.github = profile.id;
+      user.tokens.push({ kind: 'github', token: accessToken, tokenSecret: tokenSecret });
+      user.profile.name = profile.displayName;
+      user.profile.email = user.profile.email || profile._json.email;
+      user.profile.picture = user.profile.picture || profile._json.profile_image_url;
+      user.profile.location = user.profile.location || profile._json.location;
+      user.profile.website = user.profile.website || profile._json.blog;
+      user.save(function(err) {
+        done(err, user);
+      });
     });
-  });
+  } else {
+    User.findOne({ github: profile.id }, function(err, existingUser) {
+      if (existingUser) return done(null, existingUser);
+      var user = new User();
+      user.github = profile.id;
+      user.tokens.push({ kind: 'github', token: accessToken });
+      user.profile.name = profile.displayName;
+      user.profile.email = profile._json.email;
+      user.profile.picture = profile._json.avatar_url;
+      user.profile.location = profile._json.location;
+      user.profile.website = profile._json.blog;
+      user.save(function(err) {
+        done(err, user);
+      });
+    });
+  }
 }));
 
 passport.use(new TwitterStrategy(config.twitter, function(req, accessToken, tokenSecret, profile, done) {
