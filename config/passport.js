@@ -33,27 +33,41 @@ passport.use(new LocalStrategy(function(username, password, done) {
   });
 }));
 
-passport.use(new FacebookStrategy(config.facebook, function (accessToken, refreshToken, profile, done) {
-  User.findOne({ facebook: profile.id }, function(err, existingUser) {
-    if (existingUser) return done(null, existingUser);
-    var user = new User();
-    user.facebook = profile.id;
-    user.tokens.push({ kind: 'facebook', token: accessToken });
-    user.profile.name = profile.displayName;
-    user.profile.email = profile._json.email;
-    user.profile.gender = profile._json.gender;
-    user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=normal';
-    user.save(function(err) {
-      done(err, user);
+passport.use(new FacebookStrategy(config.facebook, function (req, accessToken, refreshToken, profile, done) {
+  if (req.user) {
+    User.findById(req.user.id, function(err, user) {
+      user.facebook = profile.id;
+      user.tokens.push({ kind: 'facebook', token: accessToken });
+      user.profile.name = profile.displayName;
+      user.profile.email = user.profile.email || profile._json.email;
+      user.profile.gender = user.profile.gender || profile._json.gender;
+      user.profile.picture = user.profile.picture || profile._json.profile_image_url;
+      user.save(function(err) {
+        done(err, user);
+      });
     });
-  });
+  } else {
+    User.findOne({ facebook: profile.id }, function(err, existingUser) {
+      if (existingUser) return done(null, existingUser);
+      var user = new User();
+      user.facebook = profile.id;
+      user.tokens.push({ kind: 'facebook', token: accessToken });
+      user.profile.name = profile.displayName;
+      user.profile.email = profile._json.email;
+      user.profile.gender = profile._json.gender;
+      user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=normal';
+      user.save(function(err) {
+        done(err, user);
+      });
+    });
+  }
 }));
 
 passport.use(new GitHubStrategy(config.github, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
     User.findById(req.user.id, function(err, user) {
       user.github = profile.id;
-      user.tokens.push({ kind: 'github', token: accessToken, tokenSecret: tokenSecret });
+      user.tokens.push({ kind: 'github', token: accessToken });
       user.profile.name = profile.displayName;
       user.profile.email = user.profile.email || profile._json.email;
       user.profile.picture = user.profile.picture || profile._json.profile_image_url;
