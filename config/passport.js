@@ -10,6 +10,7 @@ var User = require('../models/User');
 var config = require('./config');
 var _ = require('underscore');
 
+
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
@@ -70,7 +71,7 @@ passport.use(new GitHubStrategy(config.github, function(req, accessToken, refres
       user.tokens.push({ kind: 'github', token: accessToken });
       user.profile.name = profile.displayName;
       user.profile.email = user.profile.email || profile._json.email;
-      user.profile.picture = user.profile.picture || profile._json.profile_image_url;
+      user.profile.picture = user.profile.picture || profile._json.avatar_url;
       user.profile.location = user.profile.location || profile._json.location;
       user.profile.website = user.profile.website || profile._json.blog;
       user.save(function(err) {
