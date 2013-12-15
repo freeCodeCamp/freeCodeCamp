@@ -55,8 +55,8 @@ app.get('/signup', user.getSignup);
 app.post('/signup', user.postSignup);
 
 app.get('/account', passportConf.isAuthenticated, user.getAccount);
-app.post('/account/profile', passportConf.isAuthenticated, user.postAccountProfile);
-app.post('/account/settings', passportConf.isAuthenticated, user.postAccountSettings);
+app.post('/account/profile', passportConf.isAuthenticated, user.postAccountProfileTab);
+app.post('/account/settings', passportConf.isAuthenticated, user.postAccountSettingsTab);
 app.post('/account/delete', passportConf.isAuthenticated, user.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, user.getOauthUnlink);
 

@@ -5,6 +5,9 @@ var mongoose = require('mongoose'),
 // Import models
 var User = require('../models/User');
 
+/**
+ * GET /account
+ */
 exports.getAccount = function(req, res) {
   res.render('account', {
     title: 'Account Management',
@@ -13,8 +16,10 @@ exports.getAccount = function(req, res) {
   });
 };
 
-exports.postAccountProfile = function(req, res) {
-  console.log(req.body.gender);
+/**
+ * POST /account#profile
+ */
+exports.postAccountProfileTab = function(req, res) {
   User.findById(req.user.id, function(err, user) {
     user.profile.name = req.body.name || '';
     user.profile.email = req.body.email || '';
@@ -28,12 +33,10 @@ exports.postAccountProfile = function(req, res) {
   });
 };
 
-// todo: change to change postPassword
-exports.postAccountSettings = function(req, res) {
-  console.log('okay!!');
-   // TODO: change url on tab change in account.jade
-  // Check if password matches confirm password
-
+/**
+ * POST /account#settings
+ */
+exports.postAccountSettingsTab = function(req, res) {
   if (req.body.password !== req.body.confirmPassword) {
     req.flash('messages', 'Passwords do not match');
     return res.redirect('/account');
@@ -48,14 +51,11 @@ exports.postAccountSettings = function(req, res) {
       res.redirect('/account');
     });
   });
-
-
-
-  // TODO: add new field "Existing password"
-  // TODO: validate if all passwords are matching
-  //TODO: change user's password
 };
 
+/**
+ * POST /account/delete
+ */
 exports.postDeleteAccount = function(req, res) {
   User.remove({ _id: req.user.id }, function(err) {
     req.logout();
