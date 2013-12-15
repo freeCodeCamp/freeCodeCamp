@@ -12,7 +12,8 @@ exports.getAccount = function(req, res) {
   res.render('account', {
     title: 'Account Management',
     user: req.user,
-    messages: req.flash('messages')
+    success: req.flash('success'),
+    error: req.flash('error')
   });
 };
 
@@ -28,6 +29,7 @@ exports.postAccountProfileTab = function(req, res) {
     user.profile.website = req.body.website || '';
 
     user.save(function(err) {
+      req.flash('success', 'Profile information updated');
       res.redirect('/account');
     });
   });
@@ -37,17 +39,21 @@ exports.postAccountProfileTab = function(req, res) {
  * POST /account#settings
  */
 exports.postAccountSettingsTab = function(req, res) {
+
+  if (!req.body.password || !req.body.confirm.password) {
+    req.flash('error', 'Passwords cannot be blank');
+    return res.redirect('/account');
+  }
+
   if (req.body.password !== req.body.confirmPassword) {
-    req.flash('messages', 'Passwords do not match');
+    req.flash('error', 'Passwords do not match');
     return res.redirect('/account');
   }
 
   User.findById(req.user.id, function(err, user) {
     user.password = req.body.password;
     user.save(function(err) {
-      console.log('Password has been changed.');
-      //TODO: change messages to success/errors
-      req.flash('messages', 'Password has been successfully changed!');
+      req.flash('success', 'Password has been changed');
       res.redirect('/account');
     });
   });
@@ -153,13 +159,11 @@ exports.postSignup = function(req, res) {
  * GET /account/unlink/:provider
  */
 exports.getOauthUnlink = function(req, res) {
-  console.log('unlinking oauth2');
   var provider = req.params.provider;
   User.findById(req.user.id, function(err, user) {
     user[provider] = undefined;
     user.tokens = _.reject(user.tokens, function(token) { return token.kind === 'google'; });
     user.save(function(err) {
-      console.log('Successfully unlinked:', provider);
       res.redirect('/account#settings');
     });
   });

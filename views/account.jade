@@ -1,10 +1,12 @@
 extends layout
 
 block content
-  if messages.length
+  if error.length
     .alert.alert-danger
-      for message in messages
-        div= message
+      p= error
+  if success.length
+    .alert.alert-success
+      p= success
 
   ul.nav.nav-tabs#myTab
     li.active
