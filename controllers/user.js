@@ -154,6 +154,24 @@ exports.postSignup = function(req, res) {
   });
 };
 
+/**
+ * POST /signup/available
+ * Checks if current username is available
+ */
+exports.postAvailability = function(req, res) {
+  User.findOne({ username: req.body.username }, function(err, user) {
+    if (user) {
+      // unavailable
+      // has-error
+      return;
+    } else {
+      // username is available
+      // has-success
+      return;
+    }
+  });
+};
+
 
 /**
  * GET /account/unlink/:provider
