@@ -26,12 +26,12 @@ block content
         .form-group
           label.col-sm-2.control-label(for='name') Gender
           .col-sm-4
-            label.radio-inline
-              input(checked=user.profile.gender=='male', name='gender', type='radio', value='male')
-              span Male
-            label.radio-inline
-              input(checked=user.profile.gender=='female', name='gender', type='radio', value='female')
-              span Female
+            label.radio
+              input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
+              | Male
+            label.radio
+              input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
+              | Female
         .form-group
           // TODO: differentiate between username as email
           label.col-sm-2.control-label(for='email') Email
