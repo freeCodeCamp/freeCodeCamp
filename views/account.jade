@@ -2,11 +2,13 @@ extends layout
 
 block content
   if error.length
-    .alert.alert-danger
-      p= error
+    .alert.alert-danger.fade.in
+      button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+      = error
   if success.length
-    .alert.alert-success
-      p= success
+    .alert.alert-success.fade.in
+      button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+      = success
 
   ul.nav.nav-tabs#myTab
     li.active
