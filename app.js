@@ -39,6 +39,10 @@ app.use(flash());
 app.use(less({ src: __dirname + '/public', compress: true }));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(function(req, res) {
+  res.status(404);
+  res.render('404');
+});
 
 // Development only
 if ('development' === app.get('env')) {
