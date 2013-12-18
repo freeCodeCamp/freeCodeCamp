@@ -244,6 +244,7 @@ you can use the generic selector below, but it's slower:
 @gray:                   #95a5a6;
 @gray-light:             #b4bcc2;
 @gray-lighter:           #ecf0f1;
+@inverse:          			 white;
 
 // Brand colors
 // -------------------------
@@ -293,6 +294,9 @@ you can use the generic selector below, but it's slower:
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
+@input-font-size-base:		 @font-size-base;
+
+@input-icon-font-size:		 ceil(@font-size-base * 1.333);  // ~20px
 
 // Iconography
 // -------------------------
@@ -1189,4 +1193,76 @@ input[type="color"],
       }
     }
   }
+}
+
+//
+// Input Icons
+// --------------------------------------------------
+
+.form-group {
+  position: relative;
+}
+
+.form-control {
+  & + .input-icon {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    line-height: 37px;
+    vertical-align: middle;
+    font-size: @input-icon-font-size;
+    color: desaturate(lighten(@brand-primary, 45%), 15%);
+    background-color: transparent;
+    padding: 0 25px 0 0;
+    border-radius: @input-border-radius;
+  }
+}
+
+// Icons sizing
+// ---------------------------
+
+// Huge
+.input-hg + .input-icon {
+  line-height: 49px;
+  padding: 0 16px 0 0;
+}
+
+//Large
+.input-lg + .input-icon {
+  line-height: 41px;
+  padding: 0 15px 0 0;
+}
+
+// Small
+.input-sm + .input-icon {
+  font-size: @font-size-base;
+  line-height: 30px;
+  padding: 0 10px 0 0;
+}
+
+
+// Icons states
+// ---------------------------
+
+.has-success {
+  .input-icon {
+    color: @brand-success;
+  }
+}
+.has-warning {
+  .input-icon {
+    color: @brand-warning;
+  }
+}
+.has-error {
+  .input-icon {
+    color: @brand-danger;
+  }
+}
+.form-control[disabled] + .input-icon,
+.form-control[readonly] + .input-icon,
+fieldset[disabled] .form-control + .input-icon,
+.form-control.disabled + .input-icon {
+  color: mix(@gray, white, 40%);
+  background-color: mix(@gray, white, 10%);
 }
