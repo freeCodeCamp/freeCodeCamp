@@ -1,16 +1,240 @@
-// Flatly 3.0.3
+// Flatly 3.0.3 (MODIFIED)
 // Bootswatch
 // -----------------------------------------------------
-@import url(http://fonts.googleapis.com/css?family=Lato);
 
-// Flatly 3.0.3
+// Fonts
+// --------------------------------------------------
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-black-webfont.eot');
+  src: url('../fonts/lato/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/lato/lato-black-webfont.woff') format('woff'),
+  url('../fonts/lato/lato-black-webfont.ttf') format('truetype'),
+  url('../fonts/lato/lato-black-webfont.svg#latoblack') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-bold-webfont.eot');
+  src: url('../fonts/lato/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/lato/lato-bold-webfont.woff') format('woff'),
+  url('../fonts/lato/lato-bold-webfont.ttf') format('truetype'),
+  url('../fonts/lato/lato-bold-webfont.svg#latobold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-bolditalic-webfont.eot');
+  src: url('../fonts/lato/lato-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/lato/lato-bolditalic-webfont.woff') format('woff'),
+  url('../fonts/lato/lato-bolditalic-webfont.ttf') format('truetype'),
+  url('../fonts/lato/lato-bolditalic-webfont.svg#latobold_italic') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-italic-webfont.eot');
+  src: url('../fonts/lato/lato-italic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/lato/lato-italic-webfont.woff') format('woff'),
+  url('../fonts/lato/lato-italic-webfont.ttf') format('truetype'),
+  url('../fonts/lato/lato-italic-webfont.svg#latoitalic') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-light-webfont.eot');
+  src: url('../fonts/lato/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/lato/lato-light-webfont.woff') format('woff'),
+  url('../fonts/lato/lato-light-webfont.ttf') format('truetype'),
+  url('../fonts/lato/lato-light-webfont.svg#latolight') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/lato/lato-regular-webfont.eot');
+  src: url('../fonts/lato/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/lato/lato-regular-webfont.woff') format('woff'),
+  url('../fonts/lato/lato-regular-webfont.ttf') format('truetype'),
+  url('../fonts/lato/lato-regular-webfont.svg#latoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Flat-UI-Icons';
+  src:url('../fonts/Flat-UI-Icons.eot');
+  src:url('../fonts/Flat-UI-Icons.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Flat-UI-Icons.woff') format('woff'),
+  url('../fonts/Flat-UI-Icons.ttf') format('truetype'),
+  url('../fonts/Flat-UI-Icons.svg#Flat-UI-Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'Flat-UI-Icons';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="fui-"] {
+*/
+.fui-arrow-right, .fui-arrow-left, .fui-cmd, .fui-check-inverted, .fui-heart, .fui-location, .fui-plus, .fui-check, .fui-cross, .fui-list, .fui-new, .fui-video, .fui-photo, .fui-volume, .fui-time, .fui-eye, .fui-chat, .fui-search, .fui-user, .fui-mail, .fui-lock, .fui-gear, .fui-radio-unchecked, .fui-radio-checked, .fui-checkbox-unchecked, .fui-checkbox-checked, .fui-calendar-solid, .fui-pause, .fui-play, .fui-check-inverted-2 {
+  display: inline-block;
+  font-family: 'Flat-UI-Icons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+}
+.fui-arrow-right:before {
+  content: "\e02c";
+}
+.fui-arrow-left:before {
+  content: "\e02d";
+}
+.fui-cmd:before {
+  content: "\e02f";
+}
+.fui-check-inverted:before {
+  content: "\e006";
+}
+.fui-heart:before {
+  content: "\e007";
+}
+.fui-location:before {
+  content: "\e008";
+}
+.fui-plus:before {
+  content: "\e009";
+}
+.fui-check:before {
+  content: "\e00a";
+}
+.fui-cross:before {
+  content: "\e00b";
+}
+.fui-list:before {
+  content: "\e00c";
+}
+.fui-new:before {
+  content: "\e00d";
+}
+.fui-video:before {
+  content: "\e00e";
+}
+.fui-photo:before {
+  content: "\e00f";
+}
+.fui-volume:before {
+  content: "\e010";
+}
+.fui-time:before {
+  content: "\e011";
+}
+.fui-eye:before {
+  content: "\e012";
+}
+.fui-chat:before {
+  content: "\e013";
+}
+.fui-search:before {
+  content: "\e01c";
+}
+.fui-user:before {
+  content: "\e01d";
+}
+.fui-mail:before {
+  content: "\e01e";
+}
+.fui-lock:before {
+  content: "\e01f";
+}
+.fui-gear:before {
+  content: "\e024";
+}
+.fui-radio-unchecked:before {
+  content: "\e02b";
+}
+.fui-radio-checked:before {
+  content: "\e032";
+}
+.fui-checkbox-unchecked:before {
+  content: "\e033";
+}
+.fui-checkbox-checked:before {
+  content: "\e034";
+}
+.fui-calendar-solid:before {
+  content: "\e022";
+}
+.fui-pause:before {
+  content: "\e03b";
+}
+.fui-play:before {
+  content: "\e03c";
+}
+.fui-check-inverted-2:before {
+  content: "\e000";
+}
+
+
 // Variables
 // --------------------------------------------------
 
 
 // Global values
 // --------------------------------------------------
+@turquoise:     #1abc9c;
+@green-sea:     #16a085;
 
+@emerald:      #2ecc71;
+@nephritis:     #27ae60;
+
+@peter-river:   #3498db;
+@belize-hole:   #2980b9;
+
+@amethyst:      #9b59b6;
+@wisteria:      #8e44ad;
+
+@wet-asphalt:   #34495e;
+@midnight-blue: #2c3e50;
+
+@sun-flower:    #f1c40f;
+@orange:        #f39c12;
+
+@carrot:        #e67e22;
+@pumpkin:       #d35400;
+
+@alizarin:      #e74c3c;
+@pomegranate:   #c0392b;
+
+@clouds:        #ecf0f1;
+@silver:        #bdc3c7;
+
+@concrete:      #95a5a6;
+@asbestos:      #7f8c8d;
 
 // Grays
 // -------------------------
@@ -647,18 +871,17 @@
 @container-large-desktop:      ((1140px + @grid-gutter-width));
 @container-lg:                 @container-large-desktop;
 
-@import url("//fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
 
 // Navbar =====================================================================
 
 // Buttons ====================================================================
 
 .btn:active {
-	.box-shadow(none);
+	box-shadow: none;
 }
 
 .btn-group.open .dropdown-toggle {
-	.box-shadow(none);
+	box-shadow: none;
 }
 
 // Typography =================================================================
@@ -718,10 +941,10 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
 	border-width: 2px;
-	.box-shadow(none);
+	box-shadow: none;
 
 	&:focus {
-		.box-shadow(none);
+		box-shadow: none;
 	}
 }
 
@@ -819,12 +1042,156 @@ input[type="color"],
 
 .progress {
 	height: 10px;
-	.box-shadow(none);
+	box-shadow: none;
 }
 
 // Containers =================================================================
 
 .well {
-	.box-shadow(none);
+	box-shadow: none;
 	border-width: 0;
+}
+
+//
+// Checkbox & Radio
+// --------------------------------------------------
+
+.checkbox,
+.radio {
+  margin-bottom: 12px;
+  padding-left: 32px;
+  position: relative;
+  transition: color .25s linear;
+  font-size: ceil(@font-size-base * 0.933); // ~14px
+  line-height: 1.5; // 21px;
+
+  input {
+    outline: none !important;
+    display: none;
+  }
+
+  // Replace icons
+  // --------------------------------------------------
+  .icons {
+    color: @gray-light;
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+    text-align: center;
+    line-height: 21px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color .25s linear;
+
+    .first-icon,
+    .second-icon {
+      display: inline-table;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: #fff;
+      margin: 0;
+      opacity: 1;
+    }
+    .second-icon {
+      opacity: 0;
+    }
+  }
+
+  // Alternate States
+  // --------------------------------------------------
+
+  // Hover State
+  &:hover {
+    transition: color .25s linear;
+
+    .first-icon {
+      opacity: 0;
+    }
+    .second-icon {
+      opacity: 1;
+    }
+  }
+
+  // Checked State
+  &.checked {
+    color: @brand-success;
+
+    .first-icon {
+      opacity: 0;
+    }
+    .second-icon {
+      opacity: 1;
+      color: @brand-success;
+      transition: color .25s linear;
+    }
+  }
+
+  // Disabled state
+  &.disabled {
+    cursor: default;
+    color: mix(@gray-light, white, 38%);
+
+    .icons {
+      color: mix(@gray-light, white, 38%);
+    }
+    .first-icon {
+      opacity: 1;
+    }
+    .second-icon {
+      opacity: 0;
+    }
+    &.checked {
+      .icons {
+        color: mix(@gray-light, white, 38%);
+      }
+      .first-icon {
+        opacity: 0;
+      }
+      .second-icon {
+        opacity: 1;
+        color: mix(@gray-light, white, 38%);
+      }
+    }
+  }
+
+  // Alternate Color
+  // --------------------------------------------------
+
+  // Primary
+  &.primary {
+    .icons {
+      color: @brand-primary;
+    }
+    // Checked State
+    &.checked {
+      color: @brand-success;
+
+      .icons {
+        color: @brand-success;
+      }
+    }
+    // Disabled state
+    &.disabled {
+      cursor: default;
+      color: @gray-light;
+
+      .icons {
+        color: @gray-light;
+      }
+      &.checked {
+        .icons {
+          color: @gray-light;
+        }
+      }
+    }
+  }
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: 10px;
 }
