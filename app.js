@@ -1,3 +1,4 @@
+var domain = require('domain').create();
 var express = require('express');
 var less = require('less-middleware');
 var path = require('path');
@@ -16,8 +17,18 @@ var contact = require('./controllers/contact');
 var config = require('./config/config');
 var passportConf = require('./config/passport');
 
-// Connect to database
-var db = mongoose.connect(config.db);
+// Connect to MongoDB on a separate domain
+domain.run(function() {
+  mongoose.connect(config.db);
+});
+
+// Graceful error handling for MongoDB
+domain.on('error', function(err) {
+  console.error(err.message);
+  setTimeout(function() {
+    mongoose.connect(config.db);
+  }, 2000);
+});
 
 // Initialize express application
 var app = express();
