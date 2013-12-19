@@ -184,11 +184,7 @@ exports.getNewYorkTimes = function(req, res) {
  * Last.fm API example
  */
 exports.getLastfm = function(req, res) {
-  var lastfm = new LastFmNode({
-    api_key: '1f3e35019e98124cc8f75f8ae99df25f',
-    secret: '4ae76d10d76cf680cebf4f0c8dea1aa4'
-  });
-
+  var lastfm = new LastFmNode(config.lastfm);
   async.parallel({
     artistInfo: function(done) {
       lastfm.request("artist.getInfo", {
