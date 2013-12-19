@@ -22,7 +22,7 @@ exports.postContact = function(req, res) {
     to:       sendTo,
     from:     from,
     subject:  subject,
-    text:     body
+    text:     body + '\n\n' + name
   });
 
   sendgrid.send(email, function(err) {

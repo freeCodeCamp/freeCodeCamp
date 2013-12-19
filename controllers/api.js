@@ -66,12 +66,12 @@ exports.getFoursquare = function(req, res) {
  * Tumblr API example
  */
 exports.getTumblr = function(req, res) {
-  var tumblrToken = _.findWhere(req.user.tokens, { kind: 'tumblr' });
+  var tumblr = _.findWhere(req.user.tokens, { kind: 'tumblr' });
   var client = tumblr.createClient({
     consumer_key: config.tumblr.consumerKey,
     consumer_secret: config.tumblr.consumerSecret,
-    token: tumblrToken.token,
-    token_secret: tumblrToken.tokenSecret
+    token: tumblr.token,
+    token_secret: tumblr.tokenSecret
   });
   client.posts('goddess-of-imaginary-light.tumblr.com', { type: 'photo' }, function(err, data) {
     res.render('api/tumblr', {
