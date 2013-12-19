@@ -131,6 +131,10 @@ exports.getScraping = function(req, res) {
   });
 };
 
+/**
+ * GET /api/github
+ * Show GitHub repository information
+ */
 exports.getGithub = function(req, res) {
   var githubToken = _.findWhere(req.user.tokens, { kind: 'github' });
   // TODO: Fix rate limit on passport-github token
@@ -148,20 +152,13 @@ exports.getGithub = function(req, res) {
 
 /**
  * GET /api/aviary
+ * Client-side Aviary image processing example
  */
 exports.getAviary = function(req, res) {
   res.render('api/aviary', {
     title: 'Aviary API',
     user: req.user
   });
-};
-
-/**
- * GET /api/etsy
- *  Etsy API example
- */
-exports.getEtsy = function(req, res) {
-
 };
 
 /**
@@ -248,16 +245,13 @@ exports.getLastfm = function(req, res) {
  * Twiter API example
  */
 exports.getTwitter = function(req, res) {
-  var twitterToken = _.findWhere(req.user.tokens, { kind: 'twitter' });
-
+  var twitter = _.findWhere(req.user.tokens, { kind: 'twitter' });
   var T = new Twit({
     consumer_key: config.twitter.consumerKey,
     consumer_secret: config.twitter.consumerSecret,
-    access_token: twitterToken.token,
-    access_token_secret: twitterToken.tokenSecret
+    access_token: twitter.token,
+    access_token_secret: twitter.tokenSecret
   });
-
-
   T.get('search/tweets', { q: 'hackathon since:2013-01-01', geocode: '40.71448,-74.00598,5mi', count: 50 }, function(err, reply) {
     res.render('api/twitter', {
       title: 'Twitter API',
@@ -266,4 +260,3 @@ exports.getTwitter = function(req, res) {
     });
   });
 };
-
