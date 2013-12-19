@@ -22,6 +22,10 @@ exports.getAccount = function(req, res) {
  */
 exports.postAccountProfileTab = function(req, res) {
   User.findById(req.user.id, function(err, user) {
+    if (err) {
+      req.flash('error', err.message);
+      return res.redirect('/account');
+    }
     user.profile.name = req.body.name || '';
     user.profile.email = req.body.email || '';
     user.profile.gender = req.body.gender || '';
@@ -29,6 +33,10 @@ exports.postAccountProfileTab = function(req, res) {
     user.profile.website = req.body.website || '';
 
     user.save(function(err) {
+      if (err) {
+        req.flash('error', err.message);
+        return res.redirect('/contact');
+      }
       req.flash('success', 'Profile information updated');
       res.redirect('/account');
     });
@@ -51,8 +59,16 @@ exports.postAccountSettingsTab = function(req, res) {
   }
 
   User.findById(req.user.id, function(err, user) {
+    if (err) {
+      req.flash('error', err.message);
+      return res.redirect('/account');
+    }
     user.password = req.body.password;
     user.save(function(err) {
+      if (err) {
+        req.flash('error', err.message);
+        return res.redirect('/account');
+      }
       req.flash('success', 'Password has been changed');
       res.redirect('/account');
     });
