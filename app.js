@@ -60,11 +60,6 @@ app.use(function(err, req, res, next){
   res.render('500');
 });
 
-// Development only
-if ('development' === app.get('env')) {
-  app.use(express.errorHandler());
-}
-
 // Login/Signup Routes
 app.get('/', home.index);
 app.get('/login', user.getLogin);
