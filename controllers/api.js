@@ -1,4 +1,4 @@
-var config = require('../config/config');
+var secrets = require('../config/secrets');
 var User = require('../models/User');
 var querystring = require('querystring');
 var async = require('async');
@@ -9,7 +9,7 @@ var geoip = require('geoip-lite');
 var graph = require('fbgraph');
 var LastFmNode = require('lastfm').LastFmNode;
 var tumblr = require('tumblr.js');
-var foursquare = require('node-foursquare')({ secrets: config.foursquare });
+var foursquare = require('node-foursquare')({ secrets: secrets.foursquare });
 var Github = require('github-api');
 var Twit = require('twit');
 
@@ -68,8 +68,8 @@ exports.getFoursquare = function(req, res) {
 exports.getTumblr = function(req, res) {
   var tumblr = _.findWhere(req.user.tokens, { kind: 'tumblr' });
   var client = tumblr.createClient({
-    consumer_key: config.tumblr.consumerKey,
-    consumer_secret: config.tumblr.consumerSecret,
+    consumer_key: secrets.tumblr.consumerKey,
+    consumer_secret: secrets.tumblr.consumerSecret,
     token: tumblr.token,
     token_secret: tumblr.tokenSecret
   });
@@ -166,7 +166,7 @@ exports.getAviary = function(req, res) {
  * New York Times API example
  */
 exports.getNewYorkTimes = function(req, res) {
-  var query = querystring.stringify({ 'api-key': config.nyt.key, 'list-name': 'young-adult' });
+  var query = querystring.stringify({ 'api-key': secrets.nyt.key, 'list-name': 'young-adult' });
   var url = 'http://api.nytimes.com/svc/books/v2/lists?' + query;
   request.get(url, function(error, request, body) {
     var bestSellers = JSON.parse(body);
@@ -184,7 +184,7 @@ exports.getNewYorkTimes = function(req, res) {
  * Last.fm API example
  */
 exports.getLastfm = function(req, res) {
-  var lastfm = new LastFmNode(config.lastfm);
+  var lastfm = new LastFmNode(secrets.lastfm);
   async.parallel({
     artistInfo: function(done) {
       lastfm.request("artist.getInfo", {
@@ -243,8 +243,8 @@ exports.getLastfm = function(req, res) {
 exports.getTwitter = function(req, res) {
   var twitter = _.findWhere(req.user.tokens, { kind: 'twitter' });
   var T = new Twit({
-    consumer_key: config.twitter.consumerKey,
-    consumer_secret: config.twitter.consumerSecret,
+    consumer_key: secrets.twitter.consumerKey,
+    consumer_secret: secrets.twitter.consumerSecret,
     access_token: twitter.token,
     access_token_secret: twitter.tokenSecret
   });

@@ -14,20 +14,20 @@ var api = require('./controllers/api');
 var contact = require('./controllers/contact');
 
 // App Configuration (API Keys, Database URI)
-var config = require('./config/config');
+var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
 // Connect to MongoDB on a separate domain
 var dbDomain = domain.create();
 dbDomain.run(function() {
-  mongoose.connect(config.db);
+  mongoose.connect(secrets.db);
 });
 
 // Graceful error handling for MongoDB
 dbDomain.on('error', function(err) {
   console.error(err.message);
   setTimeout(function() {
-    mongoose.connect(config.db);
+    mongoose.connect(secrets.db);
   }, 1000);
 });
 

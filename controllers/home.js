@@ -4,8 +4,3 @@ exports.index = function(req, res) {
     title: 'Home'
   });
 };
-
-exports.partials = function (req, res) {
-  var name = req.params.name;
-  res.render('partials/' + name);
-};

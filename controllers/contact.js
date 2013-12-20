@@ -1,5 +1,5 @@
-var config = require('../config/config');
-var sendgrid  = require('sendgrid')(config.sendgrid.user, config.sendgrid.password);
+var secrets = require('../config/secrets');
+var sendgrid  = require('sendgrid')(secrets.sendgrid.user, secrets.sendgrid.password);
 
 exports.getContact = function(req, res) {
   res.render('contact', {
