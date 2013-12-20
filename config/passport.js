@@ -34,6 +34,7 @@ passport.use(new LocalStrategy(function(username, password, done) {
 }));
 
 passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, refreshToken, profile, done) {
+  // TODO: remove duplication
   if (req.user) {
     User.findById(req.user.id, function(err, user) {
       user.facebook = profile.id;

@@ -44,9 +44,9 @@ exports.postAccountProfileTab = function(req, res, next) {
  * POST /account#settings
  * Update user's current password
  */
-exports.postAccountSettingsTab = function(req, res) {
+exports.postAccountSettingsTab = function(req, res, next) {
 
-  // TODO: Virtual mongodb
+  // TODO: Use Virtuals (mongoose)
   if (!req.body.password || !req.body.confirm.password) {
     req.flash('error', 'Passwords cannot be blank');
     return res.redirect('/account');
@@ -58,16 +58,10 @@ exports.postAccountSettingsTab = function(req, res) {
   }
 
   User.findById(req.user.id, function(err, user) {
-    if (err) {
-      req.flash('error', err.message);
-      return res.redirect('/account');
-    }
+    if (err) return next(err);
     user.password = req.body.password;
     user.save(function(err) {
-      if (err) {
-        req.flash('error', err.message);
-        return res.redirect('/account');
-      }
+      if (err) return next(err);
       req.flash('success', 'Password has been changed');
       res.redirect('/account');
     });
@@ -123,7 +117,6 @@ exports.postLogin = function(req, res, next) {
  */
 exports.getSignup = function(req, res) {
   if (req.user) return res.redirect('back');
-
   res.render('signup', {
     title: 'Create Account',
     user: req.user,
@@ -154,9 +147,11 @@ exports.postSignup = function(req, res, next) {
     password: req.body.password
   });
 
+  // TODO: simplify
   user.save(function(err) {
     if (err) {
       if (err.name === 'ValidationError') {
+        // TODO: make more explicit
         req.flash('messages', _.map(err.errors, function(value, key) { return value.message; }));
       }
       if (err.code === 11000) {
@@ -166,7 +161,7 @@ exports.postSignup = function(req, res, next) {
     }
 
     req.logIn(user, function(err) {
-      if (err) throw err;
+      if (err) return next(err);
       res.redirect('/');
     });
   });
