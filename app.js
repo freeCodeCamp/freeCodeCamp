@@ -1,4 +1,4 @@
-var domain = require('domain').create();
+var domain = require('domain');
 var express = require('express');
 var fs = require('fs');
 var flash = require('connect-flash');
@@ -18,16 +18,17 @@ var config = require('./config/config');
 var passportConf = require('./config/passport');
 
 // Connect to MongoDB on a separate domain
-domain.run(function() {
+var dbDomain = domain.create();
+dbDomain.run(function() {
   mongoose.connect(config.db);
 });
 
 // Graceful error handling for MongoDB
-domain.on('error', function(err) {
+dbDomain.on('error', function(err) {
   console.error(err.message);
   setTimeout(function() {
     mongoose.connect(config.db);
-  }, 2000);
+  }, 1000);
 });
 
 // Initialize express application

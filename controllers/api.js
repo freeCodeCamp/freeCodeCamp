@@ -29,23 +29,23 @@ exports.getApi = function(req, res) {
  * Foursquare API example
  */
 exports.getFoursquare = function(req, res) {
-  var foursquareToken = _.findWhere(req.user.tokens, { kind: 'foursquare' });
+  var foursquare = _.findWhere(req.user.tokens, { kind: 'foursquare' });
   async.parallel({
     trendingVenues: function(callback) {
       var geo = geoip.lookup('4.17.136.0');
       var lat = geo.ll[0];
       var lon = geo.ll[1];
-      foursquare.Venues.getTrending(lat, lon, { limit: 50 }, foursquareToken.token, function(err, results) {
+      foursquare.Venues.getTrending(lat, lon, { limit: 50 }, foursquare.token, function(err, results) {
         callback(err, results);
       });
     },
     venueDetail: function(callback) {
-      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', foursquareToken.token, function(err, results) {
+      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', foursquare.token, function(err, results) {
         callback(err, results);
       });
     },
     userCheckins: function(callback) {
-      foursquare.Users.getCheckins('self', null, foursquareToken.token, function(err, results) {
+      foursquare.Users.getCheckins('self', null, foursquare.token, function(err, results) {
         callback(err, results);
       });
     }

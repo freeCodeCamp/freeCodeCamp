@@ -23,6 +23,7 @@ exports.getAccount = function(req, res) {
 exports.postAccountProfileTab = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
+
     user.profile.name = req.body.name || '';
     user.profile.email = req.body.email || '';
     user.profile.gender = req.body.gender || '';
@@ -42,6 +43,7 @@ exports.postAccountProfileTab = function(req, res, next) {
  */
 exports.postAccountSettingsTab = function(req, res) {
 
+  // TODO: Virtual mongodb
   if (!req.body.password || !req.body.confirm.password) {
     req.flash('error', 'Passwords cannot be blank');
     return res.redirect('/account');
@@ -125,7 +127,7 @@ exports.getSignup = function(req, res) {
 /**
  * POST /signup
  */
-exports.postSignup = function(req, res) {
+exports.postSignup = function(req, res, next) {
   // TODO: add mongoose validation on ToS (virtual?)
   // TODO: Mongoose virtual, move logic to model
 
@@ -138,7 +140,6 @@ exports.postSignup = function(req, res) {
     req.flash('messages', 'You must agree to terms and conditions');
     return res.redirect('/signup');
   }
-
 
   var user = new User({
     username: req.body.username,
