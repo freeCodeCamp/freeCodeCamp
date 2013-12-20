@@ -82,7 +82,7 @@ app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthoriz
 app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized, api.getTumblr);
 app.get('/api/facebook', passportConf.isAuthenticated, api.getFacebook);
 app.get('/api/scraping', api.getScraping);
-app.get('/api/github', passportConf.isAuthorized, api.getGithub);
+app.get('/api/github', passportConf.isAuthenticated, passportConf.isAuthorized, api.getGithub);
 app.get('/api/lastfm', api.getLastfm);
 app.get('/api/nyt', api.getNewYorkTimes);
 app.get('/api/twitter', passportConf.isAuthenticated, api.getTwitter);

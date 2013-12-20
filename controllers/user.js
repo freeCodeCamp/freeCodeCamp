@@ -1,6 +1,6 @@
-var mongoose = require('mongoose'),
-    passport = require('passport'),
-    _ = require('underscore');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var _ = require('underscore');
 
 // Import models
 var User = require('../models/User');
@@ -34,7 +34,7 @@ exports.postAccountProfileTab = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
-      req.flash('success', 'Profile information updated');
+      req.flash('success', { success: 'Profile information updated' });
       res.redirect('/account');
     });
   });
