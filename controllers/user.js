@@ -7,6 +7,7 @@ var User = require('../models/User');
 
 /**
  * GET /account
+ * User account page
  */
 exports.getAccount = function(req, res) {
   res.render('account', {
@@ -19,6 +20,7 @@ exports.getAccount = function(req, res) {
 
 /**
  * POST /account#profile
+ * Update user's profile information
  */
 exports.postAccountProfileTab = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
@@ -40,6 +42,7 @@ exports.postAccountProfileTab = function(req, res, next) {
 
 /**
  * POST /account#settings
+ * Update user's current password
  */
 exports.postAccountSettingsTab = function(req, res) {
 
@@ -73,6 +76,7 @@ exports.postAccountSettingsTab = function(req, res) {
 
 /**
  * POST /account/delete
+ * Delete user's account
  */
 exports.postDeleteAccount = function(req, res, next) {
   User.remove({ _id: req.user.id }, function(err) {
@@ -84,6 +88,7 @@ exports.postDeleteAccount = function(req, res, next) {
 
 /**
  * GET /login
+ * User login page
  */
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('back');
@@ -96,6 +101,7 @@ exports.getLogin = function(req, res) {
 
 /**
  * POST /login
+ * Log in with provided credentials (non-oauth)
  */
 exports.postLogin = function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
@@ -113,6 +119,7 @@ exports.postLogin = function(req, res, next) {
 
 /**
  * GET /signup
+ * User signup page
  */
 exports.getSignup = function(req, res) {
   if (req.user) return res.redirect('back');
@@ -126,6 +133,7 @@ exports.getSignup = function(req, res) {
 
 /**
  * POST /signup
+ * Create a new user (non-oauth)
  */
 exports.postSignup = function(req, res, next) {
   // TODO: add mongoose validation on ToS (virtual?)
@@ -166,13 +174,16 @@ exports.postSignup = function(req, res, next) {
 
 /**
  * GET /account/unlink/:provider
+ * Unlink an oauth provider from the current user
  */
 exports.getOauthUnlink = function(req, res, next) {
   var provider = req.params.provider;
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
+
     user[provider] = undefined;
     user.tokens = _.reject(user.tokens, function(token) { return token.kind === 'google'; });
+
     user.save(function(err) {
       if (err) return next(err);
       res.redirect('/account#settings');
@@ -182,6 +193,7 @@ exports.getOauthUnlink = function(req, res, next) {
 
 /**
  * GET /logout
+ * Log out
  */
 exports.logout = function(req, res) {
   req.logout();
