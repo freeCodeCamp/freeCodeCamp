@@ -37,7 +37,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
   if (req.user) {
     User.findById(req.user.id, function(err, user) {
       user.facebook = profile.id;
-      user.tokens.push({ kind: 'facebook', token: accessToken });
+      user.tokens.push({ kind: 'facebook', accessToken: accessToken });
       user.profile.name = profile.displayName;
       user.profile.email = user.profile.email || profile._json.email;
       user.profile.gender = user.profile.gender || profile._json.gender;
@@ -51,7 +51,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
       if (existingUser) return done(null, existingUser);
       var user = new User();
       user.facebook = profile.id;
-      user.tokens.push({ kind: 'facebook', token: accessToken });
+      user.tokens.push({ kind: 'facebook', accessToken: accessToken });
       user.profile.name = profile.displayName;
       user.profile.email = profile._json.email;
       user.profile.gender = profile._json.gender;
@@ -67,7 +67,7 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
   if (req.user) {
     User.findById(req.user.id, function(err, user) {
       user.github = profile.id;
-      user.tokens.push({ kind: 'github', token: accessToken });
+      user.tokens.push({ kind: 'github', accessToken: accessToken });
       user.profile.name = profile.displayName;
       user.profile.email = user.profile.email || profile._json.email;
       user.profile.picture = user.profile.picture || profile._json.avatar_url;
@@ -82,7 +82,7 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
       if (existingUser) return done(null, existingUser);
       var user = new User();
       user.github = profile.id;
-      user.tokens.push({ kind: 'github', token: accessToken });
+      user.tokens.push({ kind: 'github', accessToken: accessToken });
       user.profile.name = profile.displayName;
       user.profile.email = profile._json.email;
       user.profile.picture = profile._json.avatar_url;
@@ -99,7 +99,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
   if (req.user) {
     User.findById(req.user.id, function(err, user) {
       user.twitter = profile.id;
-      user.tokens.push({ kind: 'twitter', token: accessToken, tokenSecret: tokenSecret });
+      user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
       user.profile.name = profile.displayName;
       user.profile.location = user.profile.location || profile._json.location;
       user.profile.picture = user.profile.picture || profile._json.profile_image_url;
@@ -112,7 +112,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
       if (existingUser) return done(null, existingUser);
       var user = new User();
       user.twitter = profile.id;
-      user.tokens.push({ kind: 'twitter', token: accessToken, tokenSecret: tokenSecret });
+      user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
       user.profile.name = profile.displayName;
       user.profile.location = profile._json.location;
       user.profile.picture = profile._json.profile_image_url;
@@ -127,7 +127,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
   if (req.user) {
     User.findById(req.user.id, function(err, user) {
       user.google = profile.id;
-      user.tokens.push({ kind: 'google', token: accessToken });
+      user.tokens.push({ kind: 'google', accessToken: accessToken });
       user.profile.name = profile.displayName;
       user.profile.email = user.profile.email || profile._json.email;
       user.profile.gender = user.profile.gender || profile._json.gender;
@@ -141,7 +141,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
       if (existingUser) return done(null, existingUser);
       var user = new User();
       user.google = profile.id;
-      user.tokens.push({ kind: 'google', token: accessToken });
+      user.tokens.push({ kind: 'google', accessToken: accessToken });
       user.profile.name = profile.displayName;
       user.profile.email = profile._json.email;
       user.profile.gender = profile._json.gender;
@@ -164,7 +164,7 @@ passport.use('tumblr', new OAuthStrategy({
   },
   function (req, token, tokenSecret, profile, done) {
     User.findById(req.user._id, function(err, user) {
-      user.tokens.push({ kind: 'tumblr', token: token, tokenSecret: tokenSecret });
+      user.tokens.push({ kind: 'tumblr', accessToken: token, tokenSecret: tokenSecret });
       user.save(function(err) {
         done(err, user);
       });
@@ -182,7 +182,7 @@ passport.use('foursquare', new OAuth2Strategy({
   },
   function (req, accessToken, refreshToken, profile, done) {
     User.findById(req.user._id, function(err, user) {
-      user.tokens.push({ kind: 'foursquare', token: accessToken });
+      user.tokens.push({ kind: 'foursquare', accessToken: accessToken });
       user.save(function(err) {
         done(err, user);
       });

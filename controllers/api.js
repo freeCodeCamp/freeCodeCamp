@@ -29,28 +29,29 @@ exports.getApi = function(req, res) {
  * Foursquare API example
  */
 exports.getFoursquare = function(req, res) {
-  var foursquare = _.findWhere(req.user.tokens, { kind: 'foursquare' });
+  var token = _.findWhere(req.user.tokens, { kind: 'foursquare' });
   async.parallel({
     trendingVenues: function(callback) {
       var geo = geoip.lookup('4.17.136.0');
       var lat = geo.ll[0];
       var lon = geo.ll[1];
-      foursquare.Venues.getTrending(lat, lon, { limit: 50 }, foursquare.token, function(err, results) {
+      foursquare.Venues.getTrending(lat, lon, { limit: 50 }, token.accessToken, function(err, results) {
         callback(err, results);
       });
     },
     venueDetail: function(callback) {
-      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', foursquare.token, function(err, results) {
+      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', token.accessToken, function(err, results) {
         callback(err, results);
       });
     },
     userCheckins: function(callback) {
-      foursquare.Users.getCheckins('self', null, foursquare.token, function(err, results) {
+      foursquare.Users.getCheckins('self', null, token.accessToken, function(err, results) {
         callback(err, results);
       });
     }
   },
   function(err, results) {
+    if (err) return next(err);
     res.render('api/foursquare', {
       title: 'Foursquare API',
       user: req.user,
@@ -66,12 +67,12 @@ exports.getFoursquare = function(req, res) {
  * Tumblr API example
  */
 exports.getTumblr = function(req, res) {
-  var tumblr = _.findWhere(req.user.tokens, { kind: 'tumblr' });
+  var token = _.findWhere(req.user.tokens, { kind: 'tumblr' });
   var client = tumblr.createClient({
     consumer_key: secrets.tumblr.consumerKey,
     consumer_secret: secrets.tumblr.consumerSecret,
-    token: tumblr.token,
-    token_secret: tumblr.tokenSecret
+    token: token.accessToken,
+    token_secret: token.tokenSecret
   });
   client.posts('goddess-of-imaginary-light.tumblr.com', { type: 'photo' }, function(err, data) {
     res.render('api/tumblr', {
@@ -87,9 +88,9 @@ exports.getTumblr = function(req, res) {
  * GET /api/facebook
  * Facebook API example
  */
-exports.getFacebook = function(req, res) {
-  var facebookToken = _.findWhere(req.user.tokens, { kind: 'facebook' });
-  graph.setAccessToken(facebookToken.token);
+exports.getFacebook = function(req, res, next) {
+  var token = _.findWhere(req.user.tokens, { kind: 'facebook' });
+  graph.setAccessToken(token.accessToken);
   async.parallel({
     getMe: function(done) {
       graph.get(req.user.facebook, function(err, me) {
@@ -103,6 +104,7 @@ exports.getFacebook = function(req, res) {
     }
   },
   function(err, results) {
+    if (err) return next(err);
     res.render('api/facebook', {
       title: 'Facebook API',
       me: results.getMe,
@@ -116,8 +118,9 @@ exports.getFacebook = function(req, res) {
  * GET /api/scraping
  * Web scraping example using Cheerio library
  */
-exports.getScraping = function(req, res) {
-  request.get('https://news.ycombinator.com/', function(error, request, body) {
+exports.getScraping = function(req, res, next) {
+  request.get('https://news.ycombinator.com/', function(err, request, body) {
+    if (err) return next(err);
     var $ = cheerio.load(body);
     var links = [];
     $('.title').find('a').slice(0,30).each(function(i, elem) {
@@ -136,9 +139,8 @@ exports.getScraping = function(req, res) {
  * Show GitHub repository information
  */
 exports.getGithub = function(req, res) {
-  var githubToken = _.findWhere(req.user.tokens, { kind: 'github' });
-  // TODO: Fix rate limit on passport-github token
-  var github = new Github({ token: githubToken.token });
+  var token = _.findWhere(req.user.tokens, { kind: 'github' });
+  var github = new Github({ token: token.accessToken });
   var repo = github.getRepo('sahat', 'requirejs-library');
   repo.show(function(err, repo) {
     res.render('api/github', {
@@ -169,11 +171,10 @@ exports.getNewYorkTimes = function(req, res) {
   var query = querystring.stringify({ 'api-key': secrets.nyt.key, 'list-name': 'young-adult' });
   var url = 'http://api.nytimes.com/svc/books/v2/lists?' + query;
   request.get(url, function(error, request, body) {
-    var bestSellers = JSON.parse(body);
-    console.log(bestSellers.results[0].book_details);
+    var bestsellers = JSON.parse(body);
     res.render('api/nyt', {
       title: 'New York Times API',
-      books: bestSellers.results,
+      books: bestsellers.results,
       user: req.user
     });
   });
@@ -193,8 +194,8 @@ exports.getLastfm = function(req, res) {
           success: function(data) {
             done(null, data);
           },
-          error: function(error) {
-            done(error);
+          error: function(err) {
+            done(err);
           }
         }
       });
@@ -210,15 +211,15 @@ exports.getLastfm = function(req, res) {
             });
             done(null, albums.slice(0,4));
           },
-          error: function(error) {
-            done(error);
+          error: function(err) {
+            done(err);
           }
         }
       });
     }
   },
   function(err, results) {
-    if (err) return res.send(err);
+    if (err) return next(err);
     var artist = {
       name: results.artistInfo.artist.name,
       image: results.artistInfo.artist.image.slice(-1)[0]['#text'],
@@ -241,12 +242,12 @@ exports.getLastfm = function(req, res) {
  * Twiter API example
  */
 exports.getTwitter = function(req, res) {
-  var twitter = _.findWhere(req.user.tokens, { kind: 'twitter' });
+  var token = _.findWhere(req.user.tokens, { kind: 'twitter' });
   var T = new Twit({
     consumer_key: secrets.twitter.consumerKey,
     consumer_secret: secrets.twitter.consumerSecret,
-    access_token: twitter.token,
-    access_token_secret: twitter.tokenSecret
+    access_token: token.accessToken,
+    access_token_secret: token.tokenSecret
   });
   T.get('search/tweets', { q: 'hackathon since:2013-01-01', geocode: '40.71448,-74.00598,5mi', count: 50 }, function(err, reply) {
     res.render('api/twitter', {
