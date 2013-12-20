@@ -20,12 +20,9 @@ exports.getAccount = function(req, res) {
 /**
  * POST /account#profile
  */
-exports.postAccountProfileTab = function(req, res) {
+exports.postAccountProfileTab = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
-    if (err) {
-      req.flash('error', err.message);
-      return res.redirect('/account');
-    }
+    if (err) return next(err);
     user.profile.name = req.body.name || '';
     user.profile.email = req.body.email || '';
     user.profile.gender = req.body.gender || '';
@@ -33,10 +30,7 @@ exports.postAccountProfileTab = function(req, res) {
     user.profile.website = req.body.website || '';
 
     user.save(function(err) {
-      if (err) {
-        req.flash('error', err.message);
-        return res.redirect('/contact');
-      }
+      if (err) return next(err);
       req.flash('success', 'Profile information updated');
       res.redirect('/account');
     });
@@ -78,8 +72,9 @@ exports.postAccountSettingsTab = function(req, res) {
 /**
  * POST /account/delete
  */
-exports.postDeleteAccount = function(req, res) {
+exports.postDeleteAccount = function(req, res, next) {
   User.remove({ _id: req.user.id }, function(err) {
+    if (err) return next(err);
     req.logout();
     res.redirect('/');
   });
@@ -131,8 +126,6 @@ exports.getSignup = function(req, res) {
  * POST /signup
  */
 exports.postSignup = function(req, res) {
-
-  console.log(req.body.tos);
   // TODO: add mongoose validation on ToS (virtual?)
   // TODO: Mongoose virtual, move logic to model
 
@@ -153,7 +146,6 @@ exports.postSignup = function(req, res) {
   });
 
   user.save(function(err) {
-    // TODO: Simplify
     if (err) {
       if (err.name === 'ValidationError') {
         req.flash('messages', _.map(err.errors, function(value, key) { return value.message; }));
@@ -165,6 +157,7 @@ exports.postSignup = function(req, res) {
     }
 
     req.logIn(user, function(err) {
+      if (err) throw err;
       res.redirect('/');
     });
   });
@@ -173,12 +166,14 @@ exports.postSignup = function(req, res) {
 /**
  * GET /account/unlink/:provider
  */
-exports.getOauthUnlink = function(req, res) {
+exports.getOauthUnlink = function(req, res, next) {
   var provider = req.params.provider;
   User.findById(req.user.id, function(err, user) {
+    if (err) return next(err);
     user[provider] = undefined;
     user.tokens = _.reject(user.tokens, function(token) { return token.kind === 'google'; });
     user.save(function(err) {
+      if (err) return next(err);
       res.redirect('/account#settings');
     });
   });
