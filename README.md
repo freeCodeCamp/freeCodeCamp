@@ -4,6 +4,16 @@ A kickstarter for **Node.js** projects.
 
 ![](https://lh6.googleusercontent.com/-NikjFtdyOq8/UsCv7URplAI/AAAAAAAADrE/a417u0cZU7Y/w1278-h958-no/Screenshot+2013-12-29+18.27.10.png)
 
+Features
+--------
+- Local authentication using Email and Password
+- OAuth2 authentication via Twitter, Facebook, Google or GitHub
+- MVC Structure
+- Bootstrap 3 + Flat UI
+- Contact Form
+- Account Management
+- API Examples
+
 Prerequisites
 -------------
  - MongoDB
