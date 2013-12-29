@@ -2,6 +2,8 @@ Hackathon Starter
 =================
 A kickstarter for **Node.js** projects.
 
+![](https://lh6.googleusercontent.com/-NikjFtdyOq8/UsCv7URplAI/AAAAAAAADrE/a417u0cZU7Y/w1278-h958-no/Screenshot+2013-12-29+18.27.10.png)
+
 Prerequisites
 -------------
  - MongoDB
