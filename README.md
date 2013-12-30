@@ -20,9 +20,9 @@ Features
 
 Prerequisites
 -------------
- - MongoDB
- - Node.js
- - **Xcode** (Mac OS X) or **Visual Studio** (Windows)
+> - MongoDB
+> - Node.js
+> - **Xcode** (Mac OS X) or **Visual Studio** (Windows)
 
 
 Quick Start
@@ -36,4 +36,4 @@ node app.js
 
 Contributing
 ------------
-This boilerplate project was created for you. If something is unclear, confusing, or needs refactoring, please let me know. Pull requests are always welcome, but due to the opinionated nature of the project, I cannot accept every pull request. Please open an issue before submitting a pull request.
+If something is unclear, confusing, or needs to be refactored, please let me know. Pull requests are always welcome, but due to the opinionated nature of this project, I cannot accept every pull request. Please open an issue before submitting a pull request.
