@@ -22,17 +22,6 @@ var userSchema = new mongoose.Schema({
   }
 });
 
-userSchema.path('password').validate(function(password) {
-  if (this.provider) return true;
-  return password.length;
-}, 'Password cannot be blank');
-
-userSchema.path('username').validate(function(username) {
-  if (this.provider) return true;
-  return username.length;
-}, 'Email cannot be blank');
-
-
 userSchema.pre('save', function(next) {
   var user = this;
   var SALT_FACTOR = 5;
