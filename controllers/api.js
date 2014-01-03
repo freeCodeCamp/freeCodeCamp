@@ -123,8 +123,8 @@ exports.getScraping = function(req, res, next) {
     if (err) return next(err);
     var $ = cheerio.load(body);
     var links = [];
-    $('.title').find('a').slice(0,30).each(function(i, elem) {
-      links.push($(elem));
+    $('.title a').each(function() {
+      links.push($(this));
     });
     res.render('api/scraping', {
       title: 'Web Scraping',
