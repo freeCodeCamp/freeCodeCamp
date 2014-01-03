@@ -12,7 +12,6 @@ var User = require('../models/User');
 exports.getAccount = function(req, res) {
   res.render('account', {
     title: 'Account Management',
-    user: req.user,
     success: req.flash('success'),
     error: req.flash('error')
   });
@@ -88,7 +87,6 @@ exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('back');
   res.render('login', {
     title: 'Login',
-    user: req.user,
     messages: req.flash('messages')
   });
 };
@@ -119,7 +117,6 @@ exports.getSignup = function(req, res) {
   if (req.user) return res.redirect('back');
   res.render('signup', {
     title: 'Create Account',
-    user: req.user,
     messages: req.flash('messages')
   });
 };

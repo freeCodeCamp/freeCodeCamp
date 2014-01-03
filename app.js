@@ -47,6 +47,10 @@ app.use(express.methodOverride());
 app.use(express.session({ secret: '0000' }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 app.use(flash());
 app.use(less({ src: __dirname + '/public', compress: true }));
 app.use(app.router);

@@ -19,8 +19,7 @@ var Twit = require('twit');
  */
 exports.getApi = function(req, res) {
   res.render('api', {
-    title: 'API Browser',
-    user: req.user
+    title: 'API Browser'
   });
 };
 
@@ -54,7 +53,6 @@ exports.getFoursquare = function(req, res) {
     if (err) return next(err);
     res.render('api/foursquare', {
       title: 'Foursquare API',
-      user: req.user,
       trendingVenues: results.trendingVenues,
       venueDetail: results.venueDetail,
       userCheckins: results.userCheckins
@@ -78,8 +76,7 @@ exports.getTumblr = function(req, res) {
     res.render('api/tumblr', {
       title: 'Tumblr API',
       blog: data.blog,
-      photoset: data.posts[0].photos,
-      user: req.user
+      photoset: data.posts[0].photos
     });
   });
 };
@@ -108,8 +105,7 @@ exports.getFacebook = function(req, res, next) {
     res.render('api/facebook', {
       title: 'Facebook API',
       me: results.getMe,
-      friends: results.getMyFriends,
-      user: req.user
+      friends: results.getMyFriends
     });
   });
 };
@@ -128,8 +124,7 @@ exports.getScraping = function(req, res, next) {
     });
     res.render('api/scraping', {
       title: 'Web Scraping',
-      links: links,
-      user: req.user
+      links: links
     });
   });
 };
@@ -145,8 +140,7 @@ exports.getGithub = function(req, res) {
   repo.show(function(err, repo) {
     res.render('api/github', {
       title: 'GitHub API',
-      repo: repo,
-      user: req.user
+      repo: repo
     });
   });
 
@@ -158,8 +152,7 @@ exports.getGithub = function(req, res) {
  */
 exports.getAviary = function(req, res) {
   res.render('api/aviary', {
-    title: 'Aviary API',
-    user: req.user
+    title: 'Aviary API'
   });
 };
 
@@ -174,8 +167,7 @@ exports.getNewYorkTimes = function(req, res) {
     var bestsellers = JSON.parse(body);
     res.render('api/nyt', {
       title: 'New York Times API',
-      books: bestsellers.results,
-      user: req.user
+      books: bestsellers.results
     });
   });
 };
@@ -231,8 +223,7 @@ exports.getLastfm = function(req, res) {
     };
     res.render('api/lastfm', {
       title: 'Last.fm API',
-      artist: artist,
-      user: req.user
+      artist: artist
     });
   });
 };
@@ -252,7 +243,6 @@ exports.getTwitter = function(req, res) {
   T.get('search/tweets', { q: 'hackathon since:2013-01-01', geocode: '40.71448,-74.00598,5mi', count: 50 }, function(err, reply) {
     res.render('api/twitter', {
       title: 'Twitter API',
-      user: req.user,
       tweets: reply.statuses
     });
   });
