@@ -8,6 +8,7 @@ var flash = require('connect-flash');
 var less = require('less-middleware');
 var path = require('path');
 var mongoose = require('mongoose');
+var MongoStore = require('connect-mongo')(express);
 var passport = require('passport');
 var cluster = require('cluster');
 
@@ -58,7 +59,10 @@ if (cluster.isMaster) {
   app.use(express.json());
   app.use(express.urlencoded());
   app.use(express.methodOverride());
-  app.use(express.session({ secret: '0000' }));
+  app.use(express.session({
+    secret: '0000',
+    store: new MongoStore({ db: secrets.db })
+  }));
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(function(req, res, next) {

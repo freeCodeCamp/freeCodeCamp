@@ -1,5 +1,5 @@
 {
-  "name": "angular-quickstart",
+  "name": "hackathon-starter",
   "version": "1.0.0",
   "dependencies": {
     "async": "*",
@@ -27,6 +27,7 @@
     "tumblr.js": "*",
     "twit": "*",
     "fbgraph": "*",
-    "node-foursquare": "*"
+    "node-foursquare": "*",
+    "connect-mongo": "*"
   }
 }
