@@ -10,7 +10,7 @@ var User = require('../models/User');
  * User account page
  */
 exports.getAccount = function(req, res) {
-  res.render('account', {
+  res.render('account/account', {
     title: 'Account Management',
     success: req.flash('success'),
     error: req.flash('error')
@@ -85,7 +85,7 @@ exports.postDeleteAccount = function(req, res, next) {
  */
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('back');
-  res.render('login', {
+  res.render('account/login', {
     title: 'Login',
     messages: req.flash('messages')
   });
@@ -115,7 +115,7 @@ exports.postLogin = function(req, res, next) {
  */
 exports.getSignup = function(req, res) {
   if (req.user) return res.redirect('back');
-  res.render('signup', {
+  res.render('account/signup', {
     title: 'Create Account',
     messages: req.flash('messages')
   });
