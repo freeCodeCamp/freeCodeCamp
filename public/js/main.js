@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-  $('.dataTable').dataTable({
-    sPaginationType: 'full_numbers'
-  });
+  // Place JavaScript code here...
 
 });
