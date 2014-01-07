@@ -10,7 +10,7 @@ var User = require('../models/User');
  * User account page
  */
 exports.getAccount = function(req, res) {
-  res.render('account/account', {
+  res.render('account/profile', {
     title: 'Account Management',
     success: req.flash('success'),
     error: req.flash('error')
