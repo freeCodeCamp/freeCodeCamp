@@ -3,97 +3,89 @@ extends ../layout
 block content
   if error.length
     .alert.alert-danger.fade.in
-      button.close(data-dismiss='alert'): i.fa.fa-times-circle
+      button.close(data-dixsiss='alert'): i.fa.fa-times-circle
       = error
   if success.length
     .alert.alert-success.fade.in
-      button.close(data-dismiss='alert'): i.fa.fa-times-circle
+      button.close(data-dixsiss='alert'): i.fa.fa-times-circle
       = success
 
-  ul.nav.nav-tabs#myTab
-    li.active
-      a(href='#profile', data-toggle='tab') Profile
-    li
-      a(href='#settings', data-toggle='tab') Settings
-  .tab-content
-    #profile.tab-pane.fade.active.in
-      .pahe-header
-        h3 Profile Information
+  .page-header
+    h3 Profile Information
 
-      form.form-horizontal(action='/account/profile', method='POST')
-        .form-group
-          label.col-sm-2.control-label(for='name') Name
-          .col-sm-4
-            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-        .form-group
-          label.col-sm-2.control-label(for='name') Gender
-          .col-sm-4
-            label.radio
-              input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
-              | Male
-            label.radio
-              input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
-              | Female
-        .form-group
-          // TODO: differentiate between username as email
-          label.col-sm-2.control-label(for='email') Email
-          .col-sm-4
-            input.form-control(type='email', name='email', id='email', value='#{user.profile.email}')
-        .form-group
-          label.col-sm-2.control-label(for='location') Location
-          .col-sm-4
-            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-        .form-group
-          label.col-sm-2.control-label(for='website') Website
-          .col-sm-4
-            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-        .form-group
-          .col-sm-offset-2.col-sm-4
-            button.btn.btn.btn-primary(type='submit') Update Profile
+  form.form-horizontal(action='/account/profile', method='POST')
+    .form-group
+      label.col-xs-2.control-label(for='name') Name
+      .col-xs-4
+        input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+    .form-group
+      label.col-xs-2.control-label(for='name') Gender
+      .col-xs-4
+        label.radio
+          input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
+          | Male
+        label.radio
+          input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
+          | Female
+    .form-group
+      // TODO: differentiate between username as email
+      label.col-xs-2.control-label(for='email') Email
+      .col-xs-4
+        input.form-control(type='email', name='email', id='email', value='#{user.profile.email}')
+    .form-group
+      label.col-xs-2.control-label(for='location') Location
+      .col-xs-4
+        input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+    .form-group
+      label.col-xs-2.control-label(for='website') Website
+      .col-xs-4
+        input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+    .form-group
+      .col-xs-offset-2.col-xs-4
+        button.btn.btn.btn-primary(type='submit') Update Profile
 
-    #settings.tab-pane.fade
-      .page-header
-        h3 Change Password
+  .page-header
+    h3 Change Password
 
-      form.form-horizontal(action='/account/settings', method='POST')
-        .form-group
-          label.col-sm-3.control-label(for='password') Password
-          .col-sm-4
-            input.form-control(type='password', name='password', id='password')
-        .form-group
-          label.col-sm-3.control-label(for='confirmPassword') Confirm Password
-          .col-sm-4
-            input.form-control(type='password', name='confirmPassword', id='confirmPassword')
-        .form-group
-          .col-sm-offset-3.col-sm-4
-            button.btn.btn.btn-primary(type='submit') Change Password
+  form.form-horizontal(action='/account/settings', method='POST')
+    .form-group
+      label.col-xs-3.control-label(for='password') Password
+      .col-xs-4
+        input.form-control(type='password', name='password', id='password')
+    .form-group
+      label.col-xs-3.control-label(for='confirmPassword') Confirm Password
+      .col-xs-4
+        input.form-control(type='password', name='confirmPassword', id='confirmPassword')
+    .form-group
+      .col-xs-offset-3.col-xs-4
+        button.btn.btn.btn-primary(type='submit') Change Password
 
-      .page-header
-        h3 Delete Account
+  .page-header
+    h3 Delete Account
 
-      p You can delete your account, but keep in mind this action is irreversiable.
-      form(action='/account/delete', method='POST')
-        button.btn.btn-danger(type='submit') Delete my account
+  p You can delete your account, but keep in mind this action is irreversiable.
+  form(action='/account/delete', method='POST')
+    button.btn.btn-danger(type='submit') Delete my account
 
-      .page-header
-        h3 Linked Accounts
+  .page-header
+    h3 Linked Accounts
 
-      if user.google
-        p: a.text-danger(href='/account/unlink/google') Unlink your Google account
-      else
-        p: a(href='/auth/google') Link your Google account
+  if user.google
+    p: a.text-danger(href='/account/unlink/google') Unlink your Google account
+  else
+    p: a(href='/auth/google') Link your Google account
 
-      if user.facebook
-        p: a.text-danger(href='/account/unlink/') Unlink your Facebook account
-      else
-        p: a(href='/auth/facebook') Link your Facebook account
+  if user.facebook
+    p: a.text-danger(href='/account/unlink/') Unlink your Facebook account
+  else
+    p: a(href='/auth/facebook') Link your Facebook account
 
-      if user.twitter
-        p: a.text-danger(href='/account/unlink/') Unlink your Twitter account
-      else
-        p: a(href='/auth/twitter') Link your Twitter account
+  if user.twitter
+    p: a.text-danger(href='/account/unlink/') Unlink your Twitter account
+  else
+    p: a(href='/auth/twitter') Link your Twitter account
 
-      if user.github
-        p: a.text-danger(href='/account/unlink/') Unlink your GitHub account
-      else
-        p: a(href='/auth/github') Link your GitHub account
+  if user.github
+    p: a.text-danger(href='/account/unlink/') Unlink your GitHub account
+  else
+    p: a(href='/auth/github') Link your GitHub account
