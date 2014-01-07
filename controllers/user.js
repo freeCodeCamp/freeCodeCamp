@@ -174,7 +174,7 @@ exports.getOauthUnlink = function(req, res, next) {
     if (err) return next(err);
 
     user[provider] = undefined;
-    user.tokens = _.reject(user.tokens, function(token) { return token.kind === 'google'; });
+    user.tokens = _.reject(user.tokens, function(token) { return token.kind === provider; });
 
     user.save(function(err) {
       if (err) return next(err);
