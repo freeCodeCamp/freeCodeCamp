@@ -1,13 +1,42 @@
+/**
+ * Module dependencies.
+ */
 var mongoose = require('mongoose');
 var passport = require('passport');
 var _ = require('underscore');
 
-// Import models
+/**
+ * Models.
+ */
 var User = require('../models/User');
 
 /**
+ * GET /login
+ * Login page.
+ */
+exports.getLogin = function(req, res) {
+  if (req.user) return res.redirect('/');
+  res.render('account/login', {
+    title: 'Login',
+    messages: req.flash('messages')
+  });
+};
+
+/**
+ * GET /signup
+ * Signup page.
+ */
+exports.getSignup = function(req, res) {
+  if (req.user) return res.redirect('/');
+  res.render('account/signup', {
+    title: 'Create Account',
+    messages: req.flash('messages')
+  });
+};
+
+/**
  * GET /account
- * User account page.
+ * Profile page.
  */
 exports.getAccount = function(req, res) {
   res.render('account/profile', {
@@ -16,6 +45,77 @@ exports.getAccount = function(req, res) {
     error: req.flash('error')
   });
 };
+
+/**
+ * POST /login
+ * Sign in using email and password.
+ */
+exports.postLogin = function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) return next(err);
+    if (!user) {
+      req.flash('messages', info.message);
+      return res.redirect('/login');
+    }
+    req.logIn(user, function(err) {
+      if (err) return next(err);
+      return res.redirect('/');
+    });
+  })(req, res, next);
+};
+
+/**
+ * POST /signup
+ * Create a new local account.
+ * @param {String} req.body.email
+ * @param {String} req.body.password
+ */
+exports.postSignup = function(req, res, next) {
+
+  var errors = [];
+
+  if (!req.body.email) {
+    errors.push('Email is missing.');
+  }
+
+  if (!req.body.password) {
+    errors.push('Password is missing.');
+  }
+
+  if (req.body.password !== req.body.confirmPassword) {
+    errors.push('Passwords do not match.');
+  }
+
+  if (errors.length) {
+    req.flash('messages', errors);
+    return res.redirect('/signup');
+  }
+
+  var user = new User({
+    username: req.body.username,
+    password: req.body.password
+  });
+
+  // TODO: simplify
+  user.save(function(err) {
+    if (err) {
+      if (err.name === 'ValidationError') {
+        // TODO: make more explicit
+        req.flash('messages', _.map(err.errors, function(value, key) { return value.message; }));
+      }
+      if (err.code === 11000) {
+        req.flash('messages', 'User already exists.');
+      }
+      return res.redirect('/signup');
+    }
+
+    req.logIn(user, function(err) {
+      if (err) return next(err);
+      res.redirect('/');
+    });
+  });
+};
+
 
 /**
  * POST /account/profile
@@ -46,7 +146,7 @@ exports.postUpdateProfile = function(req, res, next) {
 exports.postUpdatePassword = function(req, res, next) {
 
   // TODO: Use Virtuals (mongoose)
-  if (!req.body.password || !req.body.confirm.password) {
+  if (!req.body.password || !req.body.confirmPassword) {
     req.flash('error', 'Passwords cannot be blank');
     return res.redirect('/account');
   }
@@ -80,91 +180,6 @@ exports.postDeleteAccount = function(req, res, next) {
 };
 
 /**
- * GET /login
- * User login page
- */
-exports.getLogin = function(req, res) {
-  if (req.user) return res.redirect('back');
-  res.render('account/login', {
-    title: 'Login',
-    messages: req.flash('messages')
-  });
-};
-
-/**
- * POST /login
- * Log in with provided credentials (non-oauth)
- */
-exports.postLogin = function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
-    if (err) return next(err);
-    if (!user) {
-      req.flash('messages', info.message);
-      return res.redirect('/login');
-    }
-    req.logIn(user, function(err) {
-      if (err) return next(err);
-      return res.redirect('/');
-    });
-  })(req, res, next);
-};
-
-/**
- * GET /signup
- * User signup page
- */
-exports.getSignup = function(req, res) {
-  if (req.user) return res.redirect('back');
-  res.render('account/signup', {
-    title: 'Create Account',
-    messages: req.flash('messages')
-  });
-};
-
-/**
- * POST /signup
- * Create a new user (non-oauth)
- */
-exports.postSignup = function(req, res, next) {
-  // TODO: add mongoose validation on ToS (virtual?)
-  // TODO: Mongoose virtual, move logic to model
-
-  if (req.body.password !== req.body.confirmPassword) {
-    req.flash('messages', 'Passwords do not match');
-    return res.redirect('/signup');
-  }
-
-  if (!req.body.tos) {
-    req.flash('messages', 'You must agree to terms and conditions');
-    return res.redirect('/signup');
-  }
-
-  var user = new User({
-    username: req.body.username,
-    password: req.body.password
-  });
-
-  // TODO: simplify
-  user.save(function(err) {
-    if (err) {
-      if (err.name === 'ValidationError') {
-        // TODO: make more explicit
-        req.flash('messages', _.map(err.errors, function(value, key) { return value.message; }));
-      }
-      if (err.code === 11000) {
-        req.flash('messages', 'User already exists');
-      }
-      return res.redirect('/signup');
-    }
-
-    req.logIn(user, function(err) {
-      if (err) return next(err);
-      res.redirect('/');
-    });
-  });
-};
-
-/**
  * GET /account/unlink/:provider
  * Unlink an oauth provider from the current user
  */
@@ -178,7 +193,7 @@ exports.getOauthUnlink = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
-      res.redirect('/account#settings');
+      res.redirect('/account');
     });
   });
 };
