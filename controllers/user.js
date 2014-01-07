@@ -96,19 +96,13 @@ exports.postSignup = function(req, res, next) {
     password: req.body.password
   });
 
-  // TODO: simplify
   user.save(function(err) {
     if (err) {
-      if (err.name === 'ValidationError') {
-        // TODO: make more explicit
-        req.flash('messages', _.map(err.errors, function(value, key) { return value.message; }));
-      }
       if (err.code === 11000) {
         req.flash('messages', 'User already exists.');
       }
       return res.redirect('/signup');
     }
-
     req.logIn(user, function(err) {
       if (err) return next(err);
       res.redirect('/');
@@ -133,7 +127,7 @@ exports.postUpdateProfile = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
-      req.flash('success', { success: 'Profile information updated' });
+      req.flash('success', { success: 'Profile information updated.' });
       res.redirect('/account');
     });
   });
@@ -145,23 +139,24 @@ exports.postUpdateProfile = function(req, res, next) {
  */
 exports.postUpdatePassword = function(req, res, next) {
 
-  // TODO: Use Virtuals (mongoose)
-  if (!req.body.password || !req.body.confirmPassword) {
-    req.flash('error', 'Passwords cannot be blank');
+  if (!req.body.password) {
+    req.flash('error', 'Passwords cannot be blank.');
     return res.redirect('/account');
   }
 
   if (req.body.password !== req.body.confirmPassword) {
-    req.flash('error', 'Passwords do not match');
+    req.flash('error', 'Passwords do not match.');
     return res.redirect('/account');
   }
 
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
+
     user.password = req.body.password;
+
     user.save(function(err) {
       if (err) return next(err);
-      req.flash('success', 'Password has been changed');
+      req.flash('success', 'Password has been changed.');
       res.redirect('/account');
     });
   });
@@ -181,7 +176,7 @@ exports.postDeleteAccount = function(req, res, next) {
 
 /**
  * GET /account/unlink/:provider
- * Unlink an oauth provider from the current user
+ * Unlink OAuth2 provider from the current user.
  */
 exports.getOauthUnlink = function(req, res, next) {
   var provider = req.params.provider;
@@ -200,7 +195,7 @@ exports.getOauthUnlink = function(req, res, next) {
 
 /**
  * GET /logout
- * Log out
+ * Log out.
  */
 exports.logout = function(req, res) {
   req.logout();

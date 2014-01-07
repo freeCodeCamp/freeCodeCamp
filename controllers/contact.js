@@ -3,7 +3,7 @@ var sendgrid  = require('sendgrid')(secrets.sendgrid.user, secrets.sendgrid.pass
 
 /**
  * GET /contact
- * Contact form page
+ * Contact form page.
  */
 exports.getContact = function(req, res) {
   res.render('contact', {
@@ -15,7 +15,7 @@ exports.getContact = function(req, res) {
 
 /**
  * POST /contact
- * Send a contact form message via SendGrid
+ * Send a contact form message via SendGrid.
  */
 exports.postContact = function(req, res) {
   var from = req.body.email;
