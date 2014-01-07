@@ -95,8 +95,8 @@ if (cluster.isMaster) {
   app.get('/contact', contactController.getContact);
   app.post('/contact', contactController.postContact);
   app.get('/account', passportConf.isAuthenticated, userController.getAccount);
-  app.post('/account/profile', passportConf.isAuthenticated, userController.postAccountProfileTab);
-  app.post('/account/settings', passportConf.isAuthenticated, userController.postAccountSettingsTab);
+  app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
+  app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
   app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
   app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
   app.get('/api', apiController.getApi);

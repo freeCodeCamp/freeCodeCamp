@@ -7,7 +7,7 @@ var User = require('../models/User');
 
 /**
  * GET /account
- * User account page
+ * User account page.
  */
 exports.getAccount = function(req, res) {
   res.render('account/profile', {
@@ -18,10 +18,10 @@ exports.getAccount = function(req, res) {
 };
 
 /**
- * POST /account#profile
- * Update user's profile information
+ * POST /account/profile
+ * Update profile information.
  */
-exports.postAccountProfileTab = function(req, res, next) {
+exports.postUpdateProfile = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
 
@@ -40,10 +40,10 @@ exports.postAccountProfileTab = function(req, res, next) {
 };
 
 /**
- * POST /account#settings
- * Update user's current password
+ * POST /account/password
+ * Update current password.
  */
-exports.postAccountSettingsTab = function(req, res, next) {
+exports.postUpdatePassword = function(req, res, next) {
 
   // TODO: Use Virtuals (mongoose)
   if (!req.body.password || !req.body.confirm.password) {
@@ -69,7 +69,7 @@ exports.postAccountSettingsTab = function(req, res, next) {
 
 /**
  * POST /account/delete
- * Delete user's account
+ * Delete user account.
  */
 exports.postDeleteAccount = function(req, res, next) {
   User.remove({ _id: req.user.id }, function(err) {
