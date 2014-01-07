@@ -49,11 +49,10 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
       var user = new User();
-      user.username = profile.id;
+      user.email = profile._json.email;
       user.facebook = profile.id;
       user.tokens.push({ kind: 'facebook', accessToken: accessToken });
       user.profile.name = profile.displayName;
-      user.profile.email = profile._json.email;
       user.profile.gender = profile._json.gender;
       user.profile.picture = profile._json.profile_image_url;
       user.save(function(err) {
@@ -69,7 +68,6 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
       user.github = profile.id;
       user.tokens.push({ kind: 'github', accessToken: accessToken });
       user.profile.name = user.profile.name || profile.displayName;
-      user.profile.email = user.profile.email || profile._json.email;
       user.profile.picture = user.profile.picture || profile._json.avatar_url;
       user.profile.location = user.profile.location || profile._json.location;
       user.profile.website = user.profile.website || profile._json.blog;
@@ -81,10 +79,10 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
     User.findOne({ github: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
       var user = new User();
+      user.email = profile._json.email;
       user.github = profile.id;
       user.tokens.push({ kind: 'github', accessToken: accessToken });
       user.profile.name = profile.displayName;
-      user.profile.email = profile._json.email;
       user.profile.picture = profile._json.avatar_url;
       user.profile.location = profile._json.location;
       user.profile.website = profile._json.blog;
@@ -111,6 +109,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
     User.findOne({ twitter: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
       var user = new User();
+      user.email = profile.displayName;
       user.twitter = profile.id;
       user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
       user.profile.name = profile.displayName;
@@ -129,7 +128,6 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
       user.google = profile.id;
       user.tokens.push({ kind: 'google', accessToken: accessToken });
       user.profile.name = user.profile.name || profile.displayName;
-      user.profile.email = user.profile.email || profile._json.email;
       user.profile.gender = user.profile.gender || profile._json.gender;
       user.profile.picture = user.profile.picture || profile._json.picture;
       user.save(function(err) {
@@ -140,10 +138,10 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
     User.findOne({ google: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
       var user = new User();
+      user.email = profile._json.email;
       user.google = profile.id;
       user.tokens.push({ kind: 'google', accessToken: accessToken });
       user.profile.name = profile.displayName;
-      user.profile.email = profile._json.email;
       user.profile.gender = profile._json.gender;
       user.profile.picture = profile._json.picture;
       user.save(function(err) {
