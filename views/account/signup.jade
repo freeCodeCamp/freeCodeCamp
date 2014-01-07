@@ -9,13 +9,9 @@ block content
   form.form-horizontal(id='signup-form', method='POST')
     legend Signup
     .form-group
-      label.col-sm-3.control-label(for='name') Name
+      label.col-sm-3.control-label(for='email') Email
       .col-sm-7
-        input.form-control(type='text', name='name', id='name', placeholder='Name', autofocus=true)
-    .form-group
-      label.col-sm-3.control-label(for='username') Email
-      .col-sm-7
-        input.form-control(type='email', name='username', id='username', placeholder='Email', required=true)
+        input.form-control(type='text', name='email', id='email', placeholder='Email', required=true)
     .form-group
       label.col-sm-3.control-label(for='username') Password
       .col-sm-7
