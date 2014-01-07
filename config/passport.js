@@ -34,12 +34,11 @@ passport.use(new LocalStrategy(function(username, password, done) {
 }));
 
 passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, refreshToken, profile, done) {
-  // TODO: remove duplication
   if (req.user) {
     User.findById(req.user.id, function(err, user) {
       user.facebook = profile.id;
       user.tokens.push({ kind: 'facebook', accessToken: accessToken });
-      user.profile.name = profile.displayName;
+      user.profile.name = user.profile.name || profile.displayName;
       user.profile.email = user.profile.email || profile._json.email;
       user.profile.gender = user.profile.gender || profile._json.gender;
       user.profile.picture = user.profile.picture || profile._json.profile_image_url;
@@ -56,7 +55,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
       user.profile.name = profile.displayName;
       user.profile.email = profile._json.email;
       user.profile.gender = profile._json.gender;
-      user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=normal';
+      user.profile.picture = profile._json.profile_image_url;
       user.save(function(err) {
         done(err, user);
       });
@@ -69,7 +68,7 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
     User.findById(req.user.id, function(err, user) {
       user.github = profile.id;
       user.tokens.push({ kind: 'github', accessToken: accessToken });
-      user.profile.name = profile.displayName;
+      user.profile.name = user.profile.name || profile.displayName;
       user.profile.email = user.profile.email || profile._json.email;
       user.profile.picture = user.profile.picture || profile._json.avatar_url;
       user.profile.location = user.profile.location || profile._json.location;
@@ -101,7 +100,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
     User.findById(req.user.id, function(err, user) {
       user.twitter = profile.id;
       user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
-      user.profile.name = profile.displayName;
+      user.profile.name = user.profile.name || profile.displayName;
       user.profile.location = user.profile.location || profile._json.location;
       user.profile.picture = user.profile.picture || profile._json.profile_image_url;
       user.save(function(err) {
@@ -129,7 +128,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
     User.findById(req.user.id, function(err, user) {
       user.google = profile.id;
       user.tokens.push({ kind: 'google', accessToken: accessToken });
-      user.profile.name = profile.displayName;
+      user.profile.name = user.profile.name || profile.displayName;
       user.profile.email = user.profile.email || profile._json.email;
       user.profile.gender = user.profile.gender || profile._json.gender;
       user.profile.picture = user.profile.picture || profile._json.picture;
