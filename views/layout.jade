@@ -46,7 +46,7 @@ html
                 a(href='/account')
                   if user.profile.picture
                     img(src='#{user.profile.picture}')
-                  = user.username || user.profile.name || user.id
+                  = user.profile.name || user.id
               li
                 a(href='/logout') Logout
   .container
