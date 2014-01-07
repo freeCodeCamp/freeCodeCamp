@@ -1,3 +1,6 @@
+/**
+ * Module dependencies.
+ */
 var domain = require('domain');
 var express = require('express');
 var fs = require('fs');
@@ -8,16 +11,23 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var cluster = require('cluster');
 
-// Load controllers
+/**
+ * Controllers.
+ */
 var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
-// App Configuration (API Keys, Database URI)
+/**
+ * API keys and Passport configuration.
+ */
 var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
+/**
+ * Spawn worker processes.
+ */
 if (cluster.isMaster) {
   var numCPUs = require('os').cpus().length;
 
@@ -25,7 +35,7 @@ if (cluster.isMaster) {
     cluster.fork();
   }
 
-  cluster.on('disconnect', function(worker, code, signal) {
+  cluster.on('disconnect', function(worker) {
     console.error('worker ' + worker.process.pid + ' died');
     cluster.fork();
   });
@@ -34,10 +44,11 @@ if (cluster.isMaster) {
 
   mongoose.connect(secrets.db);
 
-// Initialize express application
   var app = express();
 
-// Express Configuration
+  /**
+   * Express configuration.
+   */
   app.set('port', process.env.PORT || 3000);
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'jade');
@@ -68,15 +79,15 @@ if (cluster.isMaster) {
     res.render('500');
   });
 
-// Login/Signup Routes
+  /**
+   * Routes.
+   */
   app.get('/', homeController.index);
   app.get('/login', userController.getLogin);
   app.post('/login', userController.postLogin);
   app.get('/logout', userController.logout);
   app.get('/signup', userController.getSignup);
   app.post('/signup', userController.postSignup);
-
-  // Primary Routes
   app.get('/contact', contactController.getContact);
   app.post('/contact', contactController.postContact);
   app.get('/account', passportConf.isAuthenticated, userController.getAccount);
@@ -94,8 +105,6 @@ if (cluster.isMaster) {
   app.get('/api/nyt', apiController.getNewYorkTimes);
   app.get('/api/twitter', passportConf.isAuthenticated, apiController.getTwitter);
   app.get('/api/aviary', apiController.getAviary);
-
-  // OAuth Routes
   app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
   app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
   app.get('/auth/github', passport.authenticate('github'));

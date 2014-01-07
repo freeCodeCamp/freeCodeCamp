@@ -12,8 +12,9 @@ Features
 --------
 - Local authentication using Email and Password
 - OAuth2 authentication via Twitter, Facebook, Google or GitHub
-- MVC Structure
+- MVC Code Structure
 - Bootstrap 3 + Flat UI
+- LESS stylesheets (auto-compiled)
 - Contact Form
 - Account Management
 - API Examples
