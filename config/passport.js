@@ -20,9 +20,9 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-passport.use(new LocalStrategy(function(username, password, done) {
-  User.findOne({ username: username }, function(err, user) {
-    if (!user) return done(null, false, { message: 'No match found for user: ' + username });
+passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, password, done) {
+  User.findOne({ email: email }, function(err, user) {
+    if (!user) return done(null, false, { message: 'No match found for user: ' + email });
     user.comparePassword(password, function(err, isMatch) {
       if(isMatch) {
         return done(null, user);
@@ -39,7 +39,6 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
       user.facebook = profile.id;
       user.tokens.push({ kind: 'facebook', accessToken: accessToken });
       user.profile.name = user.profile.name || profile.displayName;
-      user.profile.email = user.profile.email || profile._json.email;
       user.profile.gender = user.profile.gender || profile._json.gender;
       user.profile.picture = user.profile.picture || profile._json.profile_image_url;
       user.save(function(err) {
@@ -50,6 +49,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
       var user = new User();
+      user.username = profile.id;
       user.facebook = profile.id;
       user.tokens.push({ kind: 'facebook', accessToken: accessToken });
       user.profile.name = profile.displayName;
