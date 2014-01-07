@@ -15,6 +15,10 @@ block content
 
   form.form-horizontal(action='/account/profile', method='POST')
     .form-group
+      label.col-xs-2.control-label(for='email') Email
+      .col-xs-4
+        input.form-control(type='text', name='email', id='email', value='#{user.email}')
+    .form-group
       label.col-xs-2.control-label(for='name') Name
       .col-xs-4
         input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
@@ -28,11 +32,6 @@ block content
           input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
           | Female
     .form-group
-      // TODO: differentiate between username as email
-      label.col-xs-2.control-label(for='email') Email
-      .col-xs-4
-        input.form-control(type='email', name='email', id='email', value='#{user.profile.email}')
-    .form-group
       label.col-xs-2.control-label(for='location') Location
       .col-xs-4
         input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
@@ -44,12 +43,14 @@ block content
       .col-xs-offset-2.col-xs-4
         button.btn.btn.btn-primary(type='submit') Update Profile
 
+
+
   .page-header
     h3 Change Password
 
-  form.form-horizontal(action='/account/settings', method='POST')
+  form.form-horizontal(action='/account/password', method='POST')
     .form-group
-      label.col-xs-3.control-label(for='password') Password
+      label.col-xs-3.control-label(for='password') New Password
       .col-xs-4
         input.form-control(type='password', name='password', id='password')
     .form-group
