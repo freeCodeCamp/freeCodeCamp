@@ -13,11 +13,12 @@ Features
 - Local authentication using Email and Password
 - OAuth2 authentication via Twitter, Facebook, Google or GitHub
 - MVC Code Structure
-- Bootstrap 3 + Flat UI
+- Bootstrap 3 + Flat UI + iOS7 Themes
 - LESS stylesheets (auto-compiled)
-- Contact Form
-- Account Management
-- API Examples
+- Contact Form (powered by Sendgrid)
+- Account Management page
+- 9 API Examples
+- Zero-downtime using Node.js Clusters
 
 Prerequisites
 -------------
