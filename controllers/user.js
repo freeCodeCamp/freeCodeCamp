@@ -75,11 +75,11 @@ exports.postSignup = function(req, res, next) {
   var errors = [];
 
   if (!req.body.email) {
-    errors.push('Email is missing.');
+    errors.push('Email cannot be blank.');
   }
 
   if (!req.body.password) {
-    errors.push('Password is missing.');
+    errors.push('Password cannot be blank.');
   }
 
   if (req.body.password !== req.body.confirmPassword) {
