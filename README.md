@@ -18,7 +18,6 @@ Features
 - Contact Form (powered by Sendgrid)
 - Account Management page
 - 9 API Examples
-- Zero-downtime using Node.js Clusters
 
 Prerequisites
 -------------
@@ -29,9 +28,11 @@ Prerequisites
 
 Quick Start
 -----------
+[Download the latest release](https://github.com/sahat/hackathon-starter/releases).
+
+Then follow these commands to install third-party library dependencies and start the server.
 ```
-git clone git://github.com/sahat/hackathon-starter
-cd hackathon-starter
+cd hackathon-starter-1.0
 npm install
 node app.js
 ```
