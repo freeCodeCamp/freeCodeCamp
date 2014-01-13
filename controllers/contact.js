@@ -5,6 +5,7 @@ var sendgrid  = require('sendgrid')(secrets.sendgrid.user, secrets.sendgrid.pass
  * GET /contact
  * Contact form page.
  */
+
 exports.getContact = function(req, res) {
   res.render('contact', {
     title: 'Contact',
@@ -25,11 +26,11 @@ exports.postContact = function(req, res) {
   var from = req.body.email;
   var name = req.body.name;
   var body = req.body.message;
-  var sendTo = 'sahat@me.com';
+  var to = 'sahat@me.com';
   var subject = 'API Example | Contact Form';
 
   var email = new sendgrid.Email({
-    to: sendTo,
+    to: to,
     from: from,
     subject: subject,
     text: body + '\n\n' + name

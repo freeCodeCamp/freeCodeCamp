@@ -1,19 +1,13 @@
-/**
- * Module dependencies.
- */
 var mongoose = require('mongoose');
 var passport = require('passport');
 var _ = require('underscore');
-
-/**
- * Models.
- */
 var User = require('../models/User');
 
 /**
  * GET /login
  * Login page.
  */
+
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('account/login', {
@@ -26,6 +20,7 @@ exports.getLogin = function(req, res) {
  * GET /signup
  * Signup page.
  */
+
 exports.getSignup = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('account/signup', {
@@ -38,6 +33,7 @@ exports.getSignup = function(req, res) {
  * GET /account
  * Profile page.
  */
+
 exports.getAccount = function(req, res) {
   res.render('account/profile', {
     title: 'Account Management',
@@ -49,14 +45,19 @@ exports.getAccount = function(req, res) {
 /**
  * POST /login
  * Sign in using email and password.
+ * @param {string} email
+ * @param {string} password
  */
+
 exports.postLogin = function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
     if (err) return next(err);
+
     if (!user) {
       req.flash('messages', info.message);
       return res.redirect('/login');
     }
+
     req.logIn(user, function(err) {
       if (err) return next(err);
       return res.redirect('/');
@@ -67,11 +68,11 @@ exports.postLogin = function(req, res, next) {
 /**
  * POST /signup
  * Create a new local account.
- * @param {String} req.body.email
- * @param {String} req.body.password
+ * @param {string} email
+ * @param {string} password
  */
-exports.postSignup = function(req, res, next) {
 
+exports.postSignup = function(req, res, next) {
   var errors = [];
 
   if (!req.body.email) {
@@ -136,11 +137,12 @@ exports.postUpdateProfile = function(req, res, next) {
 /**
  * POST /account/password
  * Update current password.
+ * @param {string} password
  */
-exports.postUpdatePassword = function(req, res, next) {
 
+exports.postUpdatePassword = function(req, res, next) {
   if (!req.body.password) {
-    req.flash('error', 'Passwords cannot be blank.');
+    req.flash('error', 'Password cannot be blank.');
     return res.redirect('/account');
   }
 
@@ -165,7 +167,9 @@ exports.postUpdatePassword = function(req, res, next) {
 /**
  * POST /account/delete
  * Delete user account.
+ * @param {string} id
  */
+
 exports.postDeleteAccount = function(req, res, next) {
   User.remove({ _id: req.user.id }, function(err) {
     if (err) return next(err);
@@ -177,7 +181,10 @@ exports.postDeleteAccount = function(req, res, next) {
 /**
  * GET /account/unlink/:provider
  * Unlink OAuth2 provider from the current user.
+ * @param {string} provider
+ * @param {string} id
  */
+
 exports.getOauthUnlink = function(req, res, next) {
   var provider = req.params.provider;
   User.findById(req.user.id, function(err, user) {
@@ -197,6 +204,7 @@ exports.getOauthUnlink = function(req, res, next) {
  * GET /logout
  * Log out.
  */
+
 exports.logout = function(req, res) {
   req.logout();
   res.redirect('/');
