@@ -15,13 +15,17 @@ exports.getContact = function(req, res) {
 
 /**
  * POST /contact
- * Send a contact form message via SendGrid.
+ * Send a contact form via SendGrid.
+ * @param {string} email
+ * @param {string} name
+ * @param {string} message
  */
+
 exports.postContact = function(req, res) {
   var from = req.body.email;
   var name = req.body.name;
-  var body = req.body.contactBody;
-  var sendTo = 'sakhat@gmail.com';
+  var body = req.body.message;
+  var sendTo = 'sahat@me.com';
   var subject = 'API Example | Contact Form';
 
   var email = new sendgrid.Email({

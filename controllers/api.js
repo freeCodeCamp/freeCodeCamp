@@ -15,8 +15,9 @@ var Twit = require('twit');
 
 /**
  * GET /api
- * List of API examples
+ * List of API examples.
  */
+
 exports.getApi = function(req, res) {
   res.render('api/index', {
     title: 'API Browser'
@@ -25,9 +26,10 @@ exports.getApi = function(req, res) {
 
 /**
  * GET /api/foursquare
- * Foursquare API example
+ * Foursquare API example.
  */
-exports.getFoursquare = function(req, res) {
+
+exports.getFoursquare = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'foursquare' });
   async.parallel({
     trendingVenues: function(callback) {
@@ -62,8 +64,9 @@ exports.getFoursquare = function(req, res) {
 
 /**
  * GET /api/tumblr
- * Tumblr API example
+ * Tumblr API example.
  */
+
 exports.getTumblr = function(req, res) {
   var token = _.findWhere(req.user.tokens, { kind: 'tumblr' });
   var client = tumblr.createClient({
@@ -83,8 +86,9 @@ exports.getTumblr = function(req, res) {
 
 /**
  * GET /api/facebook
- * Facebook API example
+ * Facebook API example.
  */
+
 exports.getFacebook = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'facebook' });
   graph.setAccessToken(token.accessToken);
@@ -112,8 +116,9 @@ exports.getFacebook = function(req, res, next) {
 
 /**
  * GET /api/scraping
- * Web scraping example using Cheerio library
+ * Web scraping example using Cheerio library.
  */
+
 exports.getScraping = function(req, res, next) {
   request.get('https://news.ycombinator.com/', function(err, request, body) {
     if (err) return next(err);
@@ -131,7 +136,7 @@ exports.getScraping = function(req, res, next) {
 
 /**
  * GET /api/github
- * Show GitHub repository information
+ * GitHub API Example.
  */
 exports.getGithub = function(req, res) {
   var token = _.findWhere(req.user.tokens, { kind: 'github' });
@@ -148,8 +153,9 @@ exports.getGithub = function(req, res) {
 
 /**
  * GET /api/aviary
- * Client-side Aviary image processing example
+ * Aviary image processing example.
  */
+
 exports.getAviary = function(req, res) {
   res.render('api/aviary', {
     title: 'Aviary API'
@@ -158,8 +164,9 @@ exports.getAviary = function(req, res) {
 
 /**
  * GET /api/nyt
- * New York Times API example
+ * New York Times API example.
  */
+
 exports.getNewYorkTimes = function(req, res) {
   var query = querystring.stringify({ 'api-key': secrets.nyt.key, 'list-name': 'young-adult' });
   var url = 'http://api.nytimes.com/svc/books/v2/lists?' + query;
@@ -174,9 +181,10 @@ exports.getNewYorkTimes = function(req, res) {
 
 /**
  * GET /api/lastfm
- * Last.fm API example
+ * Last.fm API example.
  */
-exports.getLastfm = function(req, res) {
+
+exports.getLastfm = function(req, res, next) {
   var lastfm = new LastFmNode(secrets.lastfm);
   async.parallel({
     artistInfo: function(done) {
@@ -230,9 +238,10 @@ exports.getLastfm = function(req, res) {
 
 /**
  * GET /api/twitter
- * Twiter API example
+ * Twiter API example.
  */
-exports.getTwitter = function(req, res) {
+
+exports.getTwitter = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'twitter' });
   var T = new Twit({
     consumer_key: secrets.twitter.consumerKey,
@@ -241,6 +250,7 @@ exports.getTwitter = function(req, res) {
     access_token_secret: token.tokenSecret
   });
   T.get('search/tweets', { q: 'hackathon since:2013-01-01', geocode: '40.71448,-74.00598,5mi', count: 50 }, function(err, reply) {
+    if (err) return next(err);
     res.render('api/twitter', {
       title: 'Twitter API',
       tweets: reply.statuses

@@ -12,7 +12,7 @@ var MongoStore = require('connect-mongo')(express);
 var passport = require('passport');
 
 /**
- * Controllers.
+ * Load controllers.
  */
 
 var homeController = require('./controllers/home');
@@ -21,19 +21,19 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
 /**
- * API keys and Passport configuration.
+ * API keys + Passport configuration.
  */
 
 var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
 
 /**
- * Connect to MongoDB.
+ * Mongoose configuration.
  */
-var opts = { server: { auto_reconnect: true } };
-mongoose.connect(secrets.db, opts);
+
+mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
-  console.log('MongoDB Connection Error');
+  console.log('← MongoDB Connection Error →');
 });
 
 var app = express();
@@ -72,7 +72,7 @@ app.use(function(req, res) {
 app.use(express.errorHandler());
 
 /**
- * Routes.
+ * Application routes.
  */
 
 app.get('/', homeController.index);
