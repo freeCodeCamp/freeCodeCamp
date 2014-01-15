@@ -37,6 +37,19 @@ npm install
 node app.js
 ```
 
+Recommended node.js libraries
+----------------
+
+- geoip-lite - get location name from IP address.
+- [node-validator](https://github.com/chriso/node-validator) - input validation and sanitization.
+
+
+Recommended client-side libraries
+---------------------------------
+- [Hover](https://github.com/IanLunn/Hover) - awesome css3 animations on mouse hover.
+- [platform.js](https://github.com/bestiejs/platform.js) - get client's operating system name, version, and other useful information.
+- [iCheck](https://github.com/fronteed/iCheck) - custom nice looking radio and check boxes.
+
 Contributing
 ------------
 If something is unclear, confusing, or needs to be refactored, please let me know. Pull requests are always welcome, but due to the opinionated nature of this project, I cannot accept every pull request. Please open an issue before submitting a pull request.
