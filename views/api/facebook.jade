@@ -7,21 +7,22 @@ block content
       | Facebook API
 
   .btn-group.btn-group-justified
-    a.btn.btn-primary(href='https://developers.facebook.com/docs/graph-api/quickstart/', target='_blank')
+    a.btn.btn-success(href='https://developers.facebook.com/docs/graph-api/quickstart/', target='_blank')
       i.fa.fa-check-square-o
       | Quickstart
-    a.btn.btn-primary(href='https://developers.facebook.com/tools/explorer', target='_blank')
+    a.btn.btn-success(href='https://developers.facebook.com/tools/explorer', target='_blank')
       i.fa.fa-facebook
       | Graph API Explorer
-    a.btn.btn-primary(href='https://developers.facebook.com/docs/graph-api/reference/', target='_blank')
+    a.btn.btn-success(href='https://developers.facebook.com/docs/graph-api/reference/', target='_blank')
       i.fa.fa-code-fork
       | API Reference
-  h3.text-primary /me
+
+  h2 My Info
   h4= me.name
   h6 Username: #{me.username}
   h6 Email: #{me.email}
 
-  h3.text-primary /me/friends
+  h2 List of my friends
   ul.list-unstyled
     for friend in friends
       li
