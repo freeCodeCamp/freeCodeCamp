@@ -93,7 +93,7 @@ exports.postSignup = function(req, res, next) {
   }
 
   var user = new User({
-    username: req.body.username,
+    email: req.body.email,
     password: req.body.password
   });
 
