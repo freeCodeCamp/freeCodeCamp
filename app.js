@@ -8,7 +8,6 @@ var flash = require('connect-flash');
 var less = require('less-middleware');
 var path = require('path');
 var mongoose = require('mongoose');
-var MongoStore = require('connect-mongo')(express);
 var passport = require('passport');
 
 /**
@@ -51,10 +50,7 @@ app.use(express.cookieParser());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.session({
-  secret: '0000',
-  store: new MongoStore({ db: secrets.db })
-}));
+app.use(express.session({ secret: 'your secret code' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
