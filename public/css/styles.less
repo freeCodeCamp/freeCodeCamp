@@ -2,12 +2,14 @@
 
 // Scaffolding
 // -------------------------
+
 body {
   padding-top: 70px;
 }
 
 // Brand Colors
 // -------------------------
+
 @brand-primary: #4d90fc;
 @brand-success: #60bf60;
 @brand-warning: #ff9800;
@@ -18,6 +20,7 @@ body {
 
 // Navbar
 // -------------------------
+
 @navbar-height: 45px;
 
 .navbar-brand {
@@ -28,6 +31,26 @@ body {
   padding-left: 40px;
   margin-left: 15px;
 }
+
+// Buttons
+// -------------------------
+
+@btn-primary-border: darken(@btn-primary-bg, 3.2%);
+@btn-success-border: darken(@btn-success-bg, 3.2%);
+@btn-warning-border: darken(@btn-warning-bg, 3.2%);
+@btn-danger-border: darken(@btn-danger-bg, 3.2%);
+@btn-info-border: darken(@btn-info-bg, 3.2%);
+
+.btn {
+  border-radius: 0;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.11), 1px 1px 0 rgba(255, 255, 255, 0.21) inset;
+  outline: none !important;
+}
+
+.btn-default, .btn-default:focus {
+  background-image: linear-gradient(to bottom, #ffffff 60%, #f8f8f8 100%);
+}
+
 
 // Form states and alerts
 // -------------------------
