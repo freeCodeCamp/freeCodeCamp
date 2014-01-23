@@ -44,13 +44,39 @@ body {
 .btn {
   border-radius: 0;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.11), 1px 1px 0 rgba(255, 255, 255, 0.21) inset;
-  outline: none !important;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn-default, .btn-default:focus {
   background-image: linear-gradient(to bottom, #ffffff 60%, #f8f8f8 100%);
 }
 
+.btn-facebook {
+  color: #fff;
+  background: #3b5998;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.btn-twitter {
+  color: #fff;
+  background: #00aced;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.btn-google-plus {
+  color: #fff;
+  background: #dd4b39;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.btn-github {
+  color: #fff;
+  background: #333;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
 
 // Form states and alerts
 // -------------------------
@@ -88,27 +114,6 @@ body {
 [class^="fa-"],
 [class*="fa-"] {
   margin-right: 5px;
-}
-
-.facebook {
-  background-color: #335397;
-  border-color: #335397;
-}
-
-.twitter {
-  background-color: #00c7f7;
-  border-color: #00c7f7;
-}
-
-.google {
-  background-color: #dd4b39;
-  border-color: #dd4b39;
-}
-
-.github {
-  color: #fff;
-  background-color: #333;
-  border-color: #333;
 }
 
 .form-horizontal .checkbox,
