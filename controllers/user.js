@@ -12,7 +12,7 @@ exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('account/login', {
     title: 'Login',
-    messages: req.flash('messages')
+    errors: req.flash('errors')
   });
 };
 
@@ -50,11 +50,22 @@ exports.getAccount = function(req, res) {
  */
 
 exports.postLogin = function(req, res, next) {
+  req.assert('email', 'Email cannot be blank').notEmpty();
+  req.assert('email', 'Email is not valid').isEmail();
+  req.assert('password', 'Password cannot be blank').notEmpty();
+
+  var errors = req.validationErrors();
+
+  if (errors) {
+    req.flash('errors', errors);
+    return res.redirect('/login');
+  }
+
   passport.authenticate('local', function(err, user, info) {
     if (err) return next(err);
 
     if (!user) {
-      req.flash('messages', info.message);
+      req.flash('errors', { msg: info.message });
       return res.redirect('/login');
     }
 
