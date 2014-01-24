@@ -38,7 +38,7 @@ exports.postContact = function(req, res) {
   var from = req.body.email;
   var name = req.body.name;
   var body = req.body.message;
-  var to = 'sahat@me.com';
+  var to = 'you@email.com';
   var subject = 'API Example | Contact Form';
 
   var email = new sendgrid.Email({
@@ -50,7 +50,7 @@ exports.postContact = function(req, res) {
 
   sendgrid.send(email, function(err) {
     if (err) {
-      req.flash('error', err.message);
+      req.flash('errors', err.message);
       return res.redirect('/contact');
     }
     req.flash('success', 'Email has been sent successfully!');
