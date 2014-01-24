@@ -10,7 +10,7 @@ exports.getContact = function(req, res) {
   res.render('contact', {
     title: 'Contact',
     success: req.flash('success'),
-    error: req.flash('error')
+    errors: req.flash('errors')
   });
 };
 
@@ -23,6 +23,18 @@ exports.getContact = function(req, res) {
  */
 
 exports.postContact = function(req, res) {
+  req.assert('name', 'Name cannot be blank').notEmpty();
+  req.assert('email', 'Email cannot be blank').notEmpty();
+  req.assert('email', 'Email is not valid').isEmail();
+  req.assert('message', 'Message cannot be blank').notEmpty();
+
+  var errors = req.validationErrors();
+
+  if (errors) {
+    req.flash('errors', errors);
+    return res.redirect('/contact');
+  }
+
   var from = req.body.email;
   var name = req.body.name;
   var body = req.body.message;

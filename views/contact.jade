@@ -1,9 +1,10 @@
 extends layout
 
 block content
-  if error.length
+  if errors.length
     .alert.alert-danger
-      p= error
+      for error in errors
+        div= error.msg
   if success.length
     .alert.alert-success
       p= success
@@ -15,15 +16,15 @@ block content
     .form-group
       label(class='col-sm-2 control-label', for='email') Name
       .col-sm-8
-        input.form-control(type='name', name='name', id='name', required=true)
+        input.form-control(type='name', name='name', id='name', autofocus=true)
     .form-group
       label(class='col-sm-2 control-label', for='email') Email
       .col-sm-8
-        input.form-control(type='email', name='email', id='email', required=true)
+        input.form-control(type='text', name='email', id='email')
     .form-group
       label(class='col-sm-2 control-label', for='contactBody') Body
       .col-sm-8
-        textarea.form-control(type='text', name='message', id='message', rows='7', required=true)
+        textarea.form-control(type='text', name='message', id='message', rows='7')
     .form-group
       .col-sm-offset-2.col-sm-8
         button.btn.btn-default(type='submit')
