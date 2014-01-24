@@ -25,7 +25,7 @@ exports.getSignup = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('account/signup', {
     title: 'Create Account',
-    messages: req.flash('messages')
+    errors: req.flash('errors')
   });
 };
 
@@ -73,22 +73,16 @@ exports.postLogin = function(req, res, next) {
  */
 
 exports.postSignup = function(req, res, next) {
-  var errors = [];
+  req.assert('email', 'Email cannot be blank').notEmpty();
+  req.assert('email', 'Email is not valid').isEmail();
+  req.assert('password', 'Password cannot be blank').notEmpty();
+  req.assert('password', 'Password must be at least 4 characters long').len(4);
+  req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
 
-  if (!req.body.email) {
-    errors.push('Email cannot be blank.');
-  }
+  var errors = req.validationErrors();
 
-  if (!req.body.password) {
-    errors.push('Password cannot be blank.');
-  }
-
-  if (req.body.password !== req.body.confirmPassword) {
-    errors.push('Passwords do not match.');
-  }
-
-  if (errors.length) {
-    req.flash('messages', errors);
+  if (errors) {
+    req.flash('errors', errors);
     return res.redirect('/signup');
   }
 
@@ -100,7 +94,7 @@ exports.postSignup = function(req, res, next) {
   user.save(function(err) {
     if (err) {
       if (err.code === 11000) {
-        req.flash('messages', 'User already exists.');
+        req.flash('errors', { msg: 'User already exists.' });
       }
       return res.redirect('/signup');
     }

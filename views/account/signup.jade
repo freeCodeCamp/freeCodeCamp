@@ -1,10 +1,10 @@
 extends ../layout
 
 block content
-  if messages.length
-    .alert.alert-danger
-      for message in messages
-        div= message
+  if errors.length
+    .alert.alert-danger.animated.fadeIn
+      for error in errors
+        div= error.msg
 
   form.form-horizontal(id='signup-form', method='POST')
     legend Signup
@@ -22,6 +22,6 @@ block content
         input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
     .form-group
       .col-sm-offset-3.col-sm-7
-        button.btn.btn-primary(type='submit')
+        button.btn.btn-success(type='submit')
           i.fa.fa-check
           | Signup
