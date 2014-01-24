@@ -9,6 +9,8 @@ var less = require('less-middleware');
 var path = require('path');
 var mongoose = require('mongoose');
 var passport = require('passport');
+var expressValidator = require('express-validator');
+
 
 /**
  * Load controllers.
@@ -49,6 +51,7 @@ app.use(express.logger('dev'));
 app.use(express.cookieParser());
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(expressValidator());
 app.use(express.methodOverride());
 app.use(express.session({ secret: 'your secret code' }));
 app.use(passport.initialize());

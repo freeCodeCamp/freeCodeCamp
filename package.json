@@ -1,6 +1,6 @@
 {
   "name": "hackathon-starter",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "dependencies": {
     "async": "*",
     "bcrypt": "*",
@@ -28,6 +28,7 @@
     "twit": "*",
     "fbgraph": "*",
     "node-foursquare": "*",
-    "connect-mongo": "*"
+    "connect-mongo": "*",
+    "express-validator": "*"
   }
 }
