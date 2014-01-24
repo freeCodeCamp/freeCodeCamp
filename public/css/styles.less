@@ -3,8 +3,29 @@
 // Scaffolding
 // -------------------------
 
+html, body {
+  height: 100%;
+}
+
 body {
   padding-top: 70px;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -150px;
+  /* Pad bottom by footer height */
+  padding: 0 0 150px;
+}
+
+#footer {
+  height: 150px;
+  padding-top: 35px;
+  background-color: @navbar-default-bg;
+  border-top: 1px solid @navbar-default-border;
 }
 
 // Brand Colors
@@ -15,7 +36,6 @@ body {
 @brand-warning: #ff9800;
 @brand-danger: #de4b33;
 @brand-info: #5bc0dd;
-
 
 
 // Navbar
@@ -132,6 +152,7 @@ body {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
 }
 
+// Misc
 .navbar-nav img {
   width: 30px;
   height: 30px;
@@ -150,3 +171,5 @@ body {
   margin-bottom: 12px;
   padding-top: 0;
 }
+
+
