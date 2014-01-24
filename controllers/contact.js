@@ -50,7 +50,7 @@ exports.postContact = function(req, res) {
 
   sendgrid.send(email, function(err) {
     if (err) {
-      req.flash('errors', err.message);
+      req.flash('errors', { msg: err.message });
       return res.redirect('/contact');
     }
     req.flash('success', 'Email has been sent successfully!');
