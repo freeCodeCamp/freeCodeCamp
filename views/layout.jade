@@ -44,12 +44,17 @@ html
               li(class=title=='Create Account'?'active':undefined)
                 a(href='/signup') Create Account
             else
-              li(class=title=='Account Management'?'active':undefined)
-                a(href='/account')
+              li.dropdown(class=title=='Account Management'?'active':undefined)
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
                   if user.profile.picture
                     img(src='#{user.profile.picture}')
-                  = user.profile.name || user.id
-              li
-                a(href='/logout') Logout
+                  | #{user.profile.name || user.id}&nbsp;
+                  i.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/account') My Account
+                  li.divider
+                  li
+                    a(href='/logout') Logout
   .container
     block content
