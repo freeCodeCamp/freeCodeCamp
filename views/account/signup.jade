@@ -11,7 +11,7 @@ block content
     .form-group
       label.col-sm-3.control-label(for='email') Email
       .col-sm-7
-        input.form-control(type='email', name='email', id='email', placeholder='Email')
+        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus)
     .form-group
       label.col-sm-3.control-label(for='username') Password
       .col-sm-7
@@ -22,4 +22,6 @@ block content
         input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
     .form-group
       .col-sm-offset-3.col-sm-7
-        button.btn.btn-primary(type='submit') Signup
+        button.btn.btn-primary(type='submit')
+          i.fa.fa-check
+          | Signup
