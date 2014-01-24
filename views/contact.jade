@@ -8,25 +8,23 @@ block content
     .alert.alert-success
       p= success
 
-  h2.text-center Contact Form
+  .page-header
+    h3 Contact Form
 
-  .center-block
-    form.form-horizontal(role='form', method='POST')
-      .form-group
-        label(class='col-sm-2 control-label', for='email') Name
-        .col-sm-8
-          input.form-control(type='name', name='name', id='name')
-      .form-group
-        label(class='col-sm-2 control-label', for='email') Email
-        .col-sm-8
-          input.form-control(type='email', name='email', id='email')
-      .form-group
-        label(class='col-sm-2 control-label', for='contactBody') Body
-        .col-sm-8
-          textarea.form-control(type='text', name='message', id='message', rows='7')
-      .form-group
-        .col-sm-offset-2.col-sm-8
-          button.btn.btn-success(type='submit') Send
-          img.pull-right(height='34', src='/img/sendgrid.png')
-
-
+  form.form-horizontal(role='form', method='POST')
+    .form-group
+      label(class='col-sm-2 control-label', for='email') Name
+      .col-sm-8
+        input.form-control(type='name', name='name', id='name')
+    .form-group
+      label(class='col-sm-2 control-label', for='email') Email
+      .col-sm-8
+        input.form-control(type='email', name='email', id='email')
+    .form-group
+      label(class='col-sm-2 control-label', for='contactBody') Body
+      .col-sm-8
+        textarea.form-control(type='text', name='message', id='message', rows='7')
+    .form-group
+      .col-sm-offset-2.col-sm-8
+        button.btn.btn-success(type='submit') Send
+        img.pull-right(height='34', src='/img/sendgrid.png')
