@@ -1,9 +1,10 @@
 extends ../layout
 
 block content
-  if messages.length
+  if errors.length
     .alert.alert-danger.animated.fadeIn
-      strong= messages
+      for error in errors
+        div= error.msg
 
   .col-sm-8.col-sm-offset-2
     form(method='POST')
@@ -24,7 +25,7 @@ block content
             | Google
       .form-group
         label.control-label(for='email') Email
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
+        input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
       .form-group
         label.control-label(for='username') Password
         input.form-control(type='password', name='password', id='password', placeholder='Password')

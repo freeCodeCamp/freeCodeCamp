@@ -2,11 +2,11 @@ extends layout
 
 block content
   if errors.length
-    .alert.alert-danger
+    .alert.alert-danger.animated.fadeIn
       for error in errors
         div= error.msg
   if success.length
-    .alert.alert-success
+    .alert.alert-success.animated.fadeIn
       p= success
 
   .page-header
