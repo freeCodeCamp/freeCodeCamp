@@ -1,5 +1,5 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
-Hackathon Starter
+Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.png?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter)
 =================
 A kickstarter for **Node.js** web applications.
 
@@ -31,7 +31,7 @@ Features
 --------
 - **Local Authentication** using Email and Password
 - **OAuth 2.0 Authentication** via Twitter, Facebook, Google or GitHub
-- Error and Success flash notifications
+- Sweet Error and Success flash notifications with animations by *animate.css*
 - MVC Project Structure
 - LESS stylesheets (auto-compiled via Express middleware)
 - Bootstrap 3 + Flat UI + iOS7 Theme
@@ -39,7 +39,7 @@ Features
 - **Account Management**
  - Profile Details
  - Change Password
- - Link OAuth 2.0 strategies
+ - Link multipleOAuth 2.0 strategies to one account
  - Delete Account
 - **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, and more.
 
