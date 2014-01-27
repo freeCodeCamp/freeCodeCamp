@@ -1,7 +1,7 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
 Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.png?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter)
 =================
-A kickstarter for **Node.js** web applications. 
+A kickstarter for **Node.js** web applications.
 
 **Live Demo**: http://hackathonstarter.herokuapp.com
 
@@ -43,7 +43,7 @@ Features
  - Change Password
  - Link multipleOAuth 2.0 strategies to one account
  - Delete Account
-- **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, and more.
+- **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, PayPal, and more.
 
 Prerequisites
 -------------
@@ -111,6 +111,15 @@ Obtaining API Keys
 - Click on *Settings* on the sidebar, then click **+ Add Platform**
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
+
+<img src="https://www.paypalobjects.com/webstatic/developer/logo_paypal-developer_beta.png" width="200">
+- Visit [PayPal Developer](https://developer.paypal.com/)
+- Log in using your existing PayPal account
+- Click **Applications > Create App** in the navigation bar
+- Enter *Application Name*, then click **Create app**
+- Copy and paste *Client ID* and *Secret* keys into `config/secrets.js`
+- *App ID* is **client_id**, *App Secret* is **client_secret**
+- Change **host** to api.paypal.com if you want to test against production and use the live credentials
 
 *TODO: Add Twitter and GitHub instructions.*
 
