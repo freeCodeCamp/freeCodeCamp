@@ -80,12 +80,12 @@ Obtaining API Keys
 >    your new url to Authorized Javascript origins and Authorized redirect URI,
 >   e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively.
 
-
 <img src="http://www.doit.ba/img/facebook.jpg" width="200">
 - Visit [Facebook Developers](https://developers.facebook.com/)
 - Click **Apps > Create a New App** in the navigation bar
 - Enter *Display Name*, then choose a category, then click **Create app**
 - Copy and paste *App ID* and *App Secret* keys into `config/secrets.js`
+ - *App ID* is **clientID**, *App Secret* is **clientSecret**
 - Click on *Settings* on the sidebar, then click **+ Add Platform**
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
