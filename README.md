@@ -1,7 +1,9 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
 Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.png?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter)
 =================
-A kickstarter for **Node.js** web applications.
+A kickstarter for **Node.js** web applications. 
+
+**Live Demo**: http://hackathonstarter.herokuapp.com
 
 If you have attended any hackathons in the past then you know how much time it takes to
 get a project started. Decide on an idea, pick a programming language, pick a web framework,
