@@ -19,7 +19,7 @@ without being too specific. In the worst case you can use this as a guide for yo
 interested in **Sign in with Google** authentication and nothing else.
 
 Chances are, you might not need all 4 types of OAuth2 authentication methods, or all 9 API examples.
-Sadly, there is no step-by-step wizzard to configure the boilerplate code just for your use case. So, use what you need, simply delete what you don't need.
+Sadly, there is no step-by-step wizard to configure the boilerplate code just for your use case. So, use what you need, simply delete what you don't need.
 
 <h4 align="center">Flatly Bootstrap Theme</h3>
 
