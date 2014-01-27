@@ -33,27 +33,34 @@ Prerequisites
 > - **Xcode** (Mac OS X) or **Visual Studio** (Windows)
 
 
-Quick Start
------------
-Git clone: `git clone --depth=1 git@github.com:sahat/hackathon-starter.git`
-**Note**: The depth=1 specifies to clone only the latest revision, instead of cloning the entire repo with full history.
+Getting Started
+---------------
 
-[Download the latest release](https://github.com/sahat/hackathon-starter/releases).
+The easiest way to get started is to clone the repository:
 
-Then follow these commands to install third-party library dependencies and start the server.
+```bash
+# Fetch only the latest commits.
+git clone --depth=1 git@github.com:sahat/hackathon-starter.git
 
-```
-cd hackathon-starter-1.0
+# Move the repository to your own project name.
+mv hackathon-starter my-project
+
+cd my-project
+
+# Install NPM dependencies
 npm install
+
 node app.js
 ```
 
-**Note**: I highly recommend installing nodemon `sudo npm install -g nodemon`.
-It will monitor for any changes in your node.js
-application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
+> **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
+> It will monitor for any changes in your node.js
+> application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
+> It will be a huge time saver.
 
-Next, if you want to use any of the APIs or OAuth2 authentication methods, you will need to obtain
-appropriate ClientID/ClientSecret, API Key, or Username/Password.
+Next up, if you want to use any of the APIs or OAuth2 authentication methods, you will need to obtain
+appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
+need to go through each provider to generate new credentials.
 
 Obtaining API Keys
 ------------------
