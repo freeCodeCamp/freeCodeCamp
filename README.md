@@ -17,14 +17,19 @@ Chances are, you will not need all 4 types of OAuth2 authentication methods, or 
 
 Features
 --------
-- Local authentication using Email and Password
-- OAuth2 authentication via Twitter, Facebook, Google or GitHub
-- MVC Code Structure
-- Bootstrap 3 + Flat UI + iOS7 Themes
-- LESS stylesheets (auto-compiled)
+- **Local Authentication** using Email and Password
+- **OAuth 2.0 Authentication** via Twitter, Facebook, Google or GitHub
+- Error and Success flash notifications
+- MVC Project Structure
+- LESS stylesheets (auto-compiled via Express middleware)
+- Bootstrap 3 + Flat UI + iOS7 Theme
 - Contact Form (powered by Sendgrid)
-- Account Management page
-- 9 API Examples
+- **Account Management**
+ - Profile Details
+ - Change Password
+ - Link OAuth 2.0 strategies
+ - Delete Account
+- **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, and more...
 
 Prerequisites
 -------------
