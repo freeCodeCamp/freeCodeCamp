@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  .page-header
+    h2
+      i.fa.fa-dollar(style='color: #1B4A7D')
+      | PayPal API
+
+  .btn-group.btn-group-justified
+    a.btn.btn-primary(href='https://developer.paypal.com/docs/integration/direct/make-your-first-call/', target='_blank')
+      i.fa.fa-check-square-o
+      | Quickstart
+    a.btn.btn-primary(href='https://developer.paypal.com/docs/api/', target='_blank')
+      i.fa.fa-code
+      | API Reference
+    a.btn.btn-primary(href='https://devtools-paypal.com/hateoas/index.html', target='_blank')
+      i.fa.fa-gear
+      | API Playground
+
+  h3
+    img(src='/img/paypal.png', width=50, height=50)
+    span  Sample Payment
+
+    if result
+      if canceled
+        h3 Payment got canceled!
+      if success
+        h3 Payment got executed successfully!
+      a(href='/api/paypal')
+          button.btn.btn-primary New payment
+    else
+      div
+        p Redirects to PayPal and allows authorizing the sample payment.
+        a(href=approval_url)
+          button.btn.btn-primary Authorize payment
