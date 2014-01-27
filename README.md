@@ -49,6 +49,9 @@ Prerequisites
 > - Node.js
 > - **Xcode** (Mac OS X) or **Visual Studio** (Windows)
 
+**Note**: If you are new to Node.js or Express framework,
+I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast that teaches Node and Express from scratch.
+
 
 Getting Started
 ---------------
@@ -73,7 +76,7 @@ node app.js
 > **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
 > It will monitor for any changes in your node.js
 > application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
-> It will be a huge time saver.
+> It is a big time saver in the long run.
 
 Next up, if you want to use any of the APIs or OAuth2 authentication methods, you will need to obtain
 appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
@@ -107,6 +110,7 @@ Obtaining API Keys
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
 
+*TODO: Add Twitter and GitHub instructions.*
 
 Project Structure
 -----------------
@@ -145,6 +149,7 @@ Recommended Node.js Libraries
 - [geoip-lite](https://github.com/bluesmoon/node-geoip) - get location name from IP address.
 - [email.js](https://github.com/eleith/emailjs) - send emails with node.js (without sendgrid or mailgun).
 - [filesize.js](http://filesizejs.com/) - make file size pretty, e.g. `filesize(265318); // "265.32 kB"`.
+- [Numeral.js](http://numeraljs.com) - a javascript library for formatting and manipulating numbers.
 
 Recommended Client-Side libraries
 ---------------------------------
@@ -153,6 +158,12 @@ Recommended Client-Side libraries
 - [iCheck](https://github.com/fronteed/iCheck) - Custom nice looking radio and check boxes.
 - [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/) - Responsive jQuery Lightbox Plugin.
 - [jQuery Raty](http://wbotelhos.com/raty/) - Star Rating Plugin.
+- [Headroom.js](http://wicky.nillia.ms/headroom.js/) - Hide your header until you need it.
+- [Fotorama](http://fotorama.io) - Very nice jQuery gallery.
+- [X-editable](http://vitalets.github.io/x-editable/) - Edit form elements inline.
+- [Offline.js](http://github.hubspot.com/offline/docs/welcome/) - Detect when user's internet connection goes offline.
+- [Color Thief](https://github.com/lokesh/color-thief) - Grabs the dominant color or a representative color palette from an image.
+- [Alertify.js](http://fabien-d.github.io/alertify.js/) - Sweet looking alerts and browser dialogs.
 
 TODO
 ----
