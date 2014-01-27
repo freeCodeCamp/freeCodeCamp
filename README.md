@@ -125,9 +125,15 @@ Project Structure
 | **controllers**/user.js | Controller for user account management page.      |
 | **models**/User.js | Mongoose schema and model for User.      |
 | **public/*** | Static assets, i.e. fonts, css, js, img.   |
-| **views/*** | Jade views for controllers     |
+| **views/account** | Templates relating to user account.     |
+| **views/api** | Templates relating to API Examples.   |
+| **views**/layout.jade | Base template.     |
+| **views**/home.jade | Home page template.     |
 
-> **Note:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
+
+**Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
+
+**Note 2:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
 
 Useful Tools
 ------------
@@ -169,6 +175,7 @@ TODO
 ----
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
 - Add more API examples.
+- Mocha tests.
 
 Contributing
 ------------
