@@ -5,7 +5,6 @@ var async = require('async');
 var cheerio = require('cheerio');
 var request = require('request');
 var _ = require('underscore');
-var geoip = require('geoip-lite');
 var graph = require('fbgraph');
 var LastFmNode = require('lastfm').LastFmNode;
 var tumblr = require('tumblr.js');
@@ -33,10 +32,7 @@ exports.getFoursquare = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'foursquare' });
   async.parallel({
     trendingVenues: function(callback) {
-      var geo = geoip.lookup('4.17.136.0');
-      var lat = geo.ll[0];
-      var lon = geo.ll[1];
-      foursquare.Venues.getTrending(lat, lon, { limit: 50 }, token.accessToken, function(err, results) {
+      foursquare.Venues.getTrending('40.7222756', '-74.0022724', { limit: 50 }, token.accessToken, function(err, results) {
         callback(err, results);
       });
     },

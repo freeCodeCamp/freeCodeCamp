@@ -10,7 +10,6 @@
     "forever": "*",
     "github-api": "*",
     "request": "*",
-    "geoip-lite": "*",
     "jade": "*",
     "lastfm": "*",
     "less-middleware": "*",
