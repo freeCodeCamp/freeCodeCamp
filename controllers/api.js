@@ -163,10 +163,11 @@ exports.getAviary = function(req, res) {
  * New York Times API example.
  */
 
-exports.getNewYorkTimes = function(req, res) {
+exports.getNewYorkTimes = function(req, res, next) {
   var query = querystring.stringify({ 'api-key': secrets.nyt.key, 'list-name': 'young-adult' });
   var url = 'http://api.nytimes.com/svc/books/v2/lists?' + query;
   request.get(url, function(error, request, body) {
+    if (request.statusCode === 403) return next(Error('Missing New York Times API Key'));
     var bestsellers = JSON.parse(body);
     res.render('api/nyt', {
       title: 'New York Times API',
