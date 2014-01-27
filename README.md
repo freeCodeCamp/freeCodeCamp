@@ -107,6 +107,24 @@ Obtaining API Keys
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
 
+
+Project Structure
+-----------------
+
+| Name          | Description   |
+| ------------- |:-------------:|
+| **config**/passport.js      | Passport Local and OAuth strategies + Passport middleware. |
+| **config**/secrets.js    | Your API keys, tokens, passwords and database URL.      |
+| **controllers**/api.js | Controller for /api route and all api examples.      |
+| **controllers**/contact.js | Controller for contact form.      |
+| **controllers**/home.js | Controller for home page (index).
+| **controllers**/user.js | Controller for user account management page.      |
+| **models**/User.js | Mongoose schema and model for User.      |
+| **public/*** | Static assets, i.e. fonts, css, js, img.   |
+| **views/*** | Jade views for controllers     |
+
+> **Note:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
+
 Useful Tools
 ------------
 [HTML to Jade converter](http://html2jade.aaron-powell.com)
