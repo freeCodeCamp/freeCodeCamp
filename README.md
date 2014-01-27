@@ -3,9 +3,14 @@ Hackathon Starter
 =================
 A kickstarter for **Node.js** web applications. 
 
-When I started this project, my primary focus was on **simplicity** and **ease of use**. Anyone who knows a little bit of JavaScript should be able to get started without too much pain. I tried to make it as **generic** and **reusable** as possible to cover most use cases of hackathon web apps, without being too specific.
+When I started this project, my primary focus was on **simplicity** and **ease of use**.
+Anyone who knows a little bit of JavaScript should be able to get started without too much pain.
+I tried to make it as **generic** and **reusable** as possible to cover most use cases of hackathon web apps,
+without being too specific. In the worst case you can use this as a guide for your projects, if for example you are only
+interested in **Sign in with Google** authentication and nothing else.
 
-Chances are, you will not need all 4 types of OAuth2 authentication methods, or all 9 API Browser examples. Sadly, there is no step-by-step wizzard to configure the boilerplate code just for your use case. So, use what you need, simply delete what you don't need.
+Chances are, you might not need all 4 types of OAuth2 authentication methods, or all 9 API examples.
+Sadly, there is no step-by-step wizzard to configure the boilerplate code just for your use case. So, use what you need, simply delete what you don't need.
 
 <h3 align="center">Flatly Bootstrap Theme</h3>
 
@@ -29,7 +34,7 @@ Features
  - Change Password
  - Link OAuth 2.0 strategies
  - Delete Account
-- **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, and more...
+- **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, and more.
 
 Prerequisites
 -------------
@@ -109,6 +114,23 @@ Recommended client-side libraries
 - [platform.js](https://github.com/bestiejs/platform.js) - get client's operating system name, version, and other useful information.
 - [iCheck](https://github.com/fronteed/iCheck) - custom nice looking radio and check boxes.
 
+TODO
+----
+- Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
+- Add more API examples
+
 Contributing
 ------------
 If something is unclear, confusing, or needs to be refactored, please let me know. Pull requests are always welcome, but due to the opinionated nature of this project, I cannot accept every pull request. Please open an issue before submitting a pull request.
+
+License
+-------
+The MIT License (MIT)
+
+Copyright (c) 2014 Sahat Yalkabov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
