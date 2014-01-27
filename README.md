@@ -1,22 +1,29 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
 Hackathon Starter
 =================
-A kickstarter for **Node.js** web applications. 
+A kickstarter for **Node.js** web applications.
+
+If you have attended any hackathons in the past then you know how much time it takes to
+get a project started. Decide on an idea, pick a programming language, pick a web framework,
+pick a CSS framework. A while later, you will have an initial project up on GitHub, and only then can other team members
+start contributing. Or what about doing something as simple as OAuth 2.0 Authentication? You can spend hours
+on it if you are not familiar with how OAuth 2.0 works. *(As a side-note, over a year ago
+I had no idea WTF was REST or OAuth2, or how to do a simple "Sign in with Facebook".
+It was a frustrating experience to say the least.)*
 
 When I started this project, my primary focus was on **simplicity** and **ease of use**.
-Anyone who knows a little bit of JavaScript should be able to get started without too much pain.
-I tried to make it as **generic** and **reusable** as possible to cover most use cases of hackathon web apps,
+I also tried to make it as **generic** and **reusable** as possible to cover most use cases of hackathon web apps,
 without being too specific. In the worst case you can use this as a guide for your projects, if for example you are only
 interested in **Sign in with Google** authentication and nothing else.
 
 Chances are, you might not need all 4 types of OAuth2 authentication methods, or all 9 API examples.
 Sadly, there is no step-by-step wizzard to configure the boilerplate code just for your use case. So, use what you need, simply delete what you don't need.
 
-<h3 align="center">Flatly Bootstrap Theme</h3>
+<h4 align="center">Flatly Bootstrap Theme</h3>
 
 ![Alt](https://lh6.googleusercontent.com/-NikjFtdyOq8/UsCv7URplAI/AAAAAAAADrE/a417u0cZU7Y/w1278-h958-no/Screenshot+2013-12-29+18.27.10.png)
 
-<h3 align="center">Default Theme</h3>
+<h4 align="center">Default Theme</h3>
 
 ![Alt](https://lh5.googleusercontent.com/-KmlaMLKGCqg/UuWt4MrXzeI/AAAAAAAAD6o/KUucObo33zU/w1170-h860-no/Screenshot+2014-01-26+19.52.03.png)
 
@@ -42,6 +49,8 @@ Prerequisites
 > - Node.js
 > - **Xcode** (Mac OS X) or **Visual Studio** (Windows)
 
+**Note**: If you are new to Node.js or Express framework,
+I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast that teaches Node and Express from scratch.
 
 Getting Started
 ---------------
@@ -66,7 +75,7 @@ node app.js
 > **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
 > It will monitor for any changes in your node.js
 > application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
-> It will be a huge time saver.
+> It's a big time saver in the long run.
 
 Next up, if you want to use any of the APIs or OAuth2 authentication methods, you will need to obtain
 appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
@@ -100,6 +109,21 @@ Obtaining API Keys
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
 
+*TODO: Add Twitter and GitHub instructions.*
+
+Useful Tools
+------------
+[HTML to Jade converter](http://html2jade.aaron-powell.com)
+
+Recommended Design
+------------------
+- [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap
+- [Colors](http://clrs.cc) - a nicer color palette for the web.
+- [CSS Spinning Loaders](http://codepen.io/andymcfee/pen/ioskA) - spinning loader in css.
+- [Creative Button Styles](http://tympanus.net/Development/CreativeButtons/) - awesome button styles.
+- [3D Dropdown Menu](http://soulwire.github.io/Makisu/) - CSS3 3D Dropdown Menu that folds and unfolds.
+- [Calendar in CSS](http://cssdeck.com/labs/vr7yddm7) - Nice looking calendar in pure HTML and CSS.
+- [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
 
 Recommended Node.js Libraries
 -----------------------------
@@ -107,6 +131,7 @@ Recommended Node.js Libraries
 - [geoip-lite](https://github.com/bluesmoon/node-geoip) - get location name from IP address.
 - [email.js](https://github.com/eleith/emailjs) - send emails with node.js (without sendgrid or mailgun).
 - [filesize.js](http://filesizejs.com/) - make file size pretty, e.g. `filesize(265318); // "265.32 kB"`.
+- [Numeral.js](http://numeraljs.com) - a javascript library for formatting and manipulating numbers.
 
 Recommended Client-Side libraries
 ---------------------------------
@@ -114,7 +139,13 @@ Recommended Client-Side libraries
 - [platform.js](https://github.com/bestiejs/platform.js) - Get client's operating system name, version, and other useful information.
 - [iCheck](https://github.com/fronteed/iCheck) - Custom nice looking radio and check boxes.
 - [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/) - Responsive jQuery Lightbox Plugin.
-- [jQuery Raty](http://wbotelhos.com/raty/) Star Rating Plugin.
+- [jQuery Raty](http://wbotelhos.com/raty/) - Star Rating Plugin.
+- [Headroom.js](http://wicky.nillia.ms/headroom.js/) - Hide your header until you need it.
+- [Fotorama](http://fotorama.io) - Very nice jQuery gallery.
+- [X-editable](http://vitalets.github.io/x-editable/) - Edit form elements inline.
+- [Offline.js](http://github.hubspot.com/offline/docs/welcome/) - Detect when user's internet connection goes offline.
+- [Color Thief](https://github.com/lokesh/color-thief) - Grabs the dominant color or a representative color palette from an image.
+- [Alertify.js](http://fabien-d.github.io/alertify.js/) - Sweet looking alerts and browser dialogs.
 
 TODO
 ----
