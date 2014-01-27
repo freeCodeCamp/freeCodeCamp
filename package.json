@@ -7,12 +7,10 @@
     "cheerio": "*",
     "connect-flash": "*",
     "express": "*",
-    "forever": "*",
-    "github-api": "*",
+    "express-validator": "*",
+    "less-middleware": "*",
     "request": "*",
     "jade": "*",
-    "lastfm": "*",
-    "less-middleware": "*",
     "mongoose": "*",
     "underscore": "*",
     "passport": "*",
@@ -22,12 +20,13 @@
     "passport-facebook": "*",
     "passport-twitter": "*",
     "passport-google-oauth": "*",
+
+    "lastfm": "*",
+    "github-api": "*",
     "sendgrid": "*",
     "tumblr.js": "*",
     "twit": "*",
     "fbgraph": "*",
-    "node-foursquare": "*",
-    "connect-mongo": "*",
-    "express-validator": "*"
+    "node-foursquare": "*"
   }
 }
