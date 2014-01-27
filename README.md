@@ -1,5 +1,5 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
-Hackathon Starter
+Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.png?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter)
 =================
 A kickstarter for **Node.js** web applications.
 
@@ -31,7 +31,7 @@ Features
 --------
 - **Local Authentication** using Email and Password
 - **OAuth 2.0 Authentication** via Twitter, Facebook, Google or GitHub
-- Error and Success flash notifications
+- Sweet Error and Success flash notifications with animations by *animate.css*
 - MVC Project Structure
 - LESS stylesheets (auto-compiled via Express middleware)
 - Bootstrap 3 + Flat UI + iOS7 Theme
@@ -39,7 +39,7 @@ Features
 - **Account Management**
  - Profile Details
  - Change Password
- - Link OAuth 2.0 strategies
+ - Link multipleOAuth 2.0 strategies to one account
  - Delete Account
 - **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, and more.
 
@@ -51,6 +51,7 @@ Prerequisites
 
 **Note**: If you are new to Node.js or Express framework,
 I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast that teaches Node and Express from scratch.
+
 
 Getting Started
 ---------------
@@ -75,7 +76,7 @@ node app.js
 > **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
 > It will monitor for any changes in your node.js
 > application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
-> It's a big time saver in the long run.
+> It is a big time saver in the long run.
 
 Next up, if you want to use any of the APIs or OAuth2 authentication methods, you will need to obtain
 appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
@@ -110,6 +111,29 @@ Obtaining API Keys
 - Enter `http://localhost:3000` for *Site URL*
 
 *TODO: Add Twitter and GitHub instructions.*
+
+Project Structure
+-----------------
+
+| Name          | Description   |
+| ------------- |:-------------:|
+| **config**/passport.js      | Passport Local and OAuth strategies + Passport middleware. |
+| **config**/secrets.js    | Your API keys, tokens, passwords and database URL.      |
+| **controllers**/api.js | Controller for /api route and all api examples.      |
+| **controllers**/contact.js | Controller for contact form.      |
+| **controllers**/home.js | Controller for home page (index).
+| **controllers**/user.js | Controller for user account management page.      |
+| **models**/User.js | Mongoose schema and model for User.      |
+| **public/*** | Static assets, i.e. fonts, css, js, img.   |
+| **views/account** | Templates relating to user account.     |
+| **views/api** | Templates relating to API Examples.   |
+| **views**/layout.jade | Base template.     |
+| **views**/home.jade | Home page template.     |
+
+
+**Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
+
+**Note 2:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
 
 Useful Tools
 ------------
@@ -151,6 +175,7 @@ TODO
 ----
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
 - Add more API examples.
+- Mocha tests.
 
 Contributing
 ------------
