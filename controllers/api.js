@@ -167,7 +167,7 @@ exports.getNewYorkTimes = function(req, res, next) {
   var query = querystring.stringify({ 'api-key': secrets.nyt.key, 'list-name': 'young-adult' });
   var url = 'http://api.nytimes.com/svc/books/v2/lists?' + query;
   request.get(url, function(error, request, body) {
-    if (request.statusCode === 403) return next(Error('Missing New York Times API Key'));
+    if (request.statusCode === 403) return next(Error('Missing or Invalid New York Times API Key'));
     var bestsellers = JSON.parse(body);
     res.render('api/nyt', {
       title: 'New York Times API',
@@ -216,7 +216,7 @@ exports.getLastfm = function(req, res, next) {
     }
   },
   function(err, results) {
-    if (err) return next(err);
+    if (err) return next(err.message);
     var artist = {
       name: results.artistInfo.artist.name,
       image: results.artistInfo.artist.image.slice(-1)[0]['#text'],
