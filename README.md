@@ -66,19 +66,30 @@ Obtaining API Keys
 ------------------
 
 <img src="http://images.google.com/intl/en_ALL/images/srpr/logo6w.png" width="200">
- - Go to [https://cloud.google.com/console/project](https://cloud.google.com/console/project)
- - Click **CREATE PROJECT** button
- - Enter *Project Name*, then click **CREATE**
- - Then select *APIs & auth* from the sidebar and click on *Credentials* tab
- - Click **CREATE NEW CLIENT ID** button
-  - **Application Type**: Web Application
-  - **Authorized Javascript origins**: http://localhost:3000
-  - **Authorized redirect URI**: http://localhost:3000/auth/google/callback
- - Copy and paste *Client ID* and *Client secret* keys into `config/secrets.js`
+- Visit [Google Cloud Console](https://cloud.google.com/console/project)
+- Click **CREATE PROJECT** button
+- Enter *Project Name*, then click **CREATE**
+- Then select *APIs & auth* from the sidebar and click on *Credentials* tab
+- Click **CREATE NEW CLIENT ID** button
+ - **Application Type**: Web Application
+ - **Authorized Javascript origins**: http://localhost:3000
+ - **Authorized redirect URI**: http://localhost:3000/auth/google/callback
+- Copy and paste *Client ID* and *Client secret* keys into `config/secrets.js`
 
 > **Note**: When you ready to deploy to production don't forget to add
 >    your new url to Authorized Javascript origins and Authorized redirect URI,
 >   e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively.
+
+
+<img src="http://www.doit.ba/img/facebook.jpg" width="200">
+- Visit [Facebook Developers](https://developers.facebook.com/)
+- Click **Apps > Create a New App** in the navigation bar
+- Enter *Display Name*, then choose a category, then click **Create app**
+- Copy and paste *App ID* and *App Secret* keys into `config/secrets.js`
+- Click on *Settings* on the sidebar, then click **+ Add Platform**
+- Select **Website**
+- Enter `http://localhost:3000` for *Site URL*
+
 
 Recommended Node.js Libraries
 -----------------------------
