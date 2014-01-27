@@ -49,7 +49,7 @@ Prerequisites
 -------------
 > - MongoDB
 > - Node.js
-> - **Xcode** (Mac OS X) or **Visual Studio** (Windows)
+> - GCC - provided by **Xcode** in Mac OS X and **Visual Studio** Windows, or via your friendly Linux package manager
 
 **Note**: If you are new to Node.js or Express framework,
 I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast that teaches Node and Express from scratch.
