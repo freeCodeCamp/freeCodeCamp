@@ -171,6 +171,16 @@ Recommended Client-Side libraries
 - [Color Thief](https://github.com/lokesh/color-thief) - Grabs the dominant color or a representative color palette from an image.
 - [Alertify.js](http://fabien-d.github.io/alertify.js/) - Sweet looking alerts and browser dialogs.
 
+
+FAQ
+---
+### Why Jade and not Handlebars template engine?
+When I first created this project I didn't have any experience with Handlebars. Since then I have worked on Ember.js apps and got myself familiar with the Handlebars syntax. While it is true Handlebars is easier, because it looks like good old HTML, I have no regrets picking Jade over Handlebars. First off, it's the default template engine in Express, so someone who has built Express apps in the past already knows it. Secondly, I find `extends` and `block` to be indispensable, which as far as I know, Handlebars does not have out of the box. And lastly, subjectively speaking, Jade looks much cleaner and shorter than Handlebars, or any non-HAML style for that matter.
+
+### Why do you have all routes in app.js?
+For the sake of simplicity. While there might be a better approach, such as passing `app` context to each controller as outlined in this [blog](http://timstermatic.github.io/blog/2013/08/17/a-simple-mvc-framework-with-node-and-express/), I find such style to be confusing for beginners. It took me a long time to grasp the concept of `exports` and `module.exports`, let alone having a global `app` reference in other files. That to me is a backward thinking. The `app.js` is the "center of the universe", it should be the one referencing models, routes, controllers, etc. When working solo I actually prefer to have everything in `app.js` as is the case with this REST API server for [ember-sass-express-starter's app.js file](https://github.com/sahat/ember-sass-express-starter/blob/master/app.js). That makes things so much simpler!
+
+
 TODO
 ----
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
