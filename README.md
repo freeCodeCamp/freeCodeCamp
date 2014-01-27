@@ -103,21 +103,23 @@ Obtaining API Keys
 
 Recommended Node.js Libraries
 -----------------------------
-- nodemon - automatically restart node.js server on code change.
-- geoip-lite - get location name from IP address.
-- [node-validator](https://github.com/chriso/node-validator) - input validation and sanitization.
+- [nodemon](https://github.com/remy/nodemon) - automatically restart node.js server on code change.
+- [geoip-lite](https://github.com/bluesmoon/node-geoip) - get location name from IP address.
+- [email.js](https://github.com/eleith/emailjs) - send emails with node.js (without sendgrid or mailgun).
+- [filesize.js](http://filesizejs.com/) - make file size pretty, e.g. `filesize(265318); // "265.32 kB"`.
 
-
-Recommended client-side libraries
+Recommended Client-Side libraries
 ---------------------------------
-- [Hover](https://github.com/IanLunn/Hover) - awesome css3 animations on mouse hover.
-- [platform.js](https://github.com/bestiejs/platform.js) - get client's operating system name, version, and other useful information.
-- [iCheck](https://github.com/fronteed/iCheck) - custom nice looking radio and check boxes.
+- [Hover](https://github.com/IanLunn/Hover) - Awesome css3 animations on mouse hover.
+- [platform.js](https://github.com/bestiejs/platform.js) - Get client's operating system name, version, and other useful information.
+- [iCheck](https://github.com/fronteed/iCheck) - Custom nice looking radio and check boxes.
+- [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/) - Responsive jQuery Lightbox Plugin.
+- [jQuery Raty](http://wbotelhos.com/raty/) Star Rating Plugin.
 
 TODO
 ----
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
-- Add more API examples
+- Add more API examples.
 
 Contributing
 ------------
