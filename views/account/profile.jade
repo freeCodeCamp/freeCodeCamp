@@ -1,16 +1,6 @@
 extends ../layout
 
 block content
-  if error.length
-    .alert.alert-danger.animated.fadeIn
-      button.close(data-dismiss='alert') ×
-      = error
-  if success.length
-    .alert.alert-success.animated.fadeInUp
-      button.close(data-dismiss='alert') ×
-      i.fa.fa-check
-      = success
-
   .page-header
     h3 Profile Information
 

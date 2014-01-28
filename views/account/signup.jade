@@ -1,11 +1,6 @@
 extends ../layout
 
 block content
-  if errors.length
-    .alert.alert-danger.animated.fadeIn
-      for error in errors
-        div= error.msg
-
   form.form-horizontal(id='signup-form', method='POST')
     legend Signup
     .form-group

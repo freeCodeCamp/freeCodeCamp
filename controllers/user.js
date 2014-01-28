@@ -11,34 +11,7 @@ var User = require('../models/User');
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('account/login', {
-    title: 'Login',
-    errors: req.flash('errors')
-  });
-};
-
-/**
- * GET /signup
- * Signup page.
- */
-
-exports.getSignup = function(req, res) {
-  if (req.user) return res.redirect('/');
-  res.render('account/signup', {
-    title: 'Create Account',
-    errors: req.flash('errors')
-  });
-};
-
-/**
- * GET /account
- * Profile page.
- */
-
-exports.getAccount = function(req, res) {
-  res.render('account/profile', {
-    title: 'Account Management',
-    success: req.flash('success'),
-    error: req.flash('error')
+    title: 'Login'
   });
 };
 
@@ -74,6 +47,18 @@ exports.postLogin = function(req, res, next) {
       return res.redirect('/');
     });
   })(req, res, next);
+};
+
+/**
+ * GET /signup
+ * Signup page.
+ */
+
+exports.getSignup = function(req, res) {
+  if (req.user) return res.redirect('/');
+  res.render('account/signup', {
+    title: 'Create Account'
+  });
 };
 
 /**
@@ -116,11 +101,22 @@ exports.postSignup = function(req, res, next) {
   });
 };
 
+/**
+ * GET /account
+ * Profile page.
+ */
+
+exports.getAccount = function(req, res) {
+  res.render('account/profile', {
+    title: 'Account Management'
+  });
+};
 
 /**
  * POST /account/profile
  * Update profile information.
  */
+
 exports.postUpdateProfile = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
@@ -133,7 +129,7 @@ exports.postUpdateProfile = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
-      req.flash('success', 'Profile information updated.');
+      req.flash('success', { msg: 'Profile information updated.' });
       res.redirect('/account');
     });
   });
@@ -147,12 +143,12 @@ exports.postUpdateProfile = function(req, res, next) {
 
 exports.postUpdatePassword = function(req, res, next) {
   if (!req.body.password) {
-    req.flash('error', 'Password cannot be blank.');
+    req.flash('errors', { msg: 'Password cannot be blank.' });
     return res.redirect('/account');
   }
 
   if (req.body.password !== req.body.confirmPassword) {
-    req.flash('error', 'Passwords do not match.');
+    req.flash('errors', { msg: 'Passwords do not match.' });
     return res.redirect('/account');
   }
 
@@ -163,7 +159,7 @@ exports.postUpdatePassword = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
-      req.flash('success', 'Password has been changed.');
+      req.flash('success', { msg: 'Password has been changed.' });
       res.redirect('/account');
     });
   });

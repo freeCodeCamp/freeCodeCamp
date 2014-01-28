@@ -1,11 +1,6 @@
 extends ../layout
 
 block content
-  if errors.length
-    .alert.alert-danger.animated.fadeIn
-      for error in errors
-        div= error.msg
-
   .col-sm-8.col-sm-offset-2
     form(method='POST')
       legend Sign In
