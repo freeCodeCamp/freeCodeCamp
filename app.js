@@ -3,7 +3,7 @@
  */
 
 var express = require('express');
-var flash = require('connect-flash');
+var flash = require('express-flash');
 var less = require('less-middleware');
 var path = require('path');
 var mongoose = require('mongoose');
@@ -64,6 +64,10 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(flash());
+app.use(function(req, res, next) {
+  res.locals.flash = req.flash.bind(req);
+  next();
+});
 app.use(less({ src: __dirname + '/public', compress: true }));
 app.use(app.router);
 app.use(express.static( path.join(__dirname, 'public'), { maxAge: 864000000 } ));
