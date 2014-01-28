@@ -1,7 +1,7 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
 Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.png?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter)
 =================
-A kickstarter for **Node.js** web applications. 
+A boilerplate for **Node.js** web applications.
 
 **Live Demo**: http://hackathonstarter.herokuapp.com
 
@@ -203,6 +203,7 @@ For the sake of simplicity. While there might be a better approach, such as pass
 
 TODO
 ----
+- Concatenate and minify all assets via Express middleware if possible, otherwise Gulp.js. Because even with caching enabled, there is at least 50-80ms delay for each static file request (On Heroku).
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
 - Add more API examples.
 - Mocha tests.
