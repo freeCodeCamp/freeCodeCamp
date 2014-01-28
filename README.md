@@ -3,7 +3,7 @@ Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-sta
 =================
 A boilerplate for **Node.js** web applications.
 
-**Live Demo**: http://hackathonstarter.herokuapp.com
+**Live Demo**: http://hackathonstarter.herokuapp.com :octocat:
 
 If you have attended any hackathons in the past then you know how much time it takes to
 get a project started. Decide on an idea, pick a programming language, pick a web framework,
@@ -57,7 +57,7 @@ Prerequisites
  - **Fedora**: `sudo yum groupinstall "Development Tools"`
  - **OpenSUSE**: `sudo zypper install --type pattern devel_basis`
 
-:heavy_exclamation_mark: **Note**: If you are new to Node.js or Express framework,
+:exclamation: **Note**: If you are new to Node.js or Express framework,
 I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast that teaches Node and Express from scratch.
 
 
@@ -78,10 +78,10 @@ npm install
 node app.js
 ```
 
-> **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
-> It will monitor for any changes in your node.js
-> application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
-> It is a big time saver in the long run.
+>:exclamation: **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
+>It will monitor for any changes in your node.js
+>application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
+>It is a big time saver in the long run.
 
 Next up, if you want to use any of the APIs or OAuth authentication methods, you will need to obtain
 appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
