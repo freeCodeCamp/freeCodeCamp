@@ -33,7 +33,7 @@ var passportConf = require('./config/passport');
 
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
-  console.log('← MongoDB Connection Error →');
+  console.log('✗ MongoDB Connection Error. Please make sure MongoDB is running.'.red);
 });
 
 var app = express();
