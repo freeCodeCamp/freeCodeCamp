@@ -48,9 +48,13 @@ Features
 
 Prerequisites
 -------------
-> - MongoDB
-> - Node.js
-> - GCC - provided by **Xcode** in Mac OS X and **Visual Studio** Windows, or via your friendly Linux package manager
+- MongoDB
+- Node.js
+- Command Line Tools
+ - **Mac OS X**: Xcode 
+ - **Windows**: [Visual Studio](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8)
+ - **Ubuntu**: `sudo apt-get install build-essential`
+ - **Fedora**: `sudo yum groupinstall "Development Tools"`
 
 **Note**: If you are new to Node.js or Express framework,
 I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast that teaches Node and Express from scratch.
@@ -103,6 +107,8 @@ Obtaining API Keys
 >    your new url to Authorized Javascript origins and Authorized redirect URI,
 >   e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively.
 
+<hr>
+
 <img src="http://www.doit.ba/img/facebook.jpg" width="200">
 - Visit [Facebook Developers](https://developers.facebook.com/)
 - Click **Apps > Create a New App** in the navigation bar
@@ -112,6 +118,8 @@ Obtaining API Keys
 - Click on *Settings* on the sidebar, then click **+ Add Platform**
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
+
+<hr>
 
 <img src="https://www.paypalobjects.com/webstatic/developer/logo_paypal-developer_beta.png" width="200">
 - Visit [PayPal Developer](https://developer.paypal.com/)
