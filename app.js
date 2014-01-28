@@ -3,7 +3,6 @@
  */
 
 var express = require('express');
-var fs = require('fs');
 var flash = require('connect-flash');
 var less = require('less-middleware');
 var path = require('path');
