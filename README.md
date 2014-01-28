@@ -67,10 +67,7 @@ The easiest way to get started is to clone the repository:
 
 ```bash
 # Fetch only the latest commits.
-git clone --depth=1 git@github.com:sahat/hackathon-starter.git
-
-# Move the repository to your own project name.
-mv hackathon-starter my-project
+git clone --depth=1 git@github.com:sahat/hackathon-starter.git my-project
 
 cd my-project
 
