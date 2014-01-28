@@ -55,8 +55,9 @@ Prerequisites
  - **Windows**: [Visual Studio](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8)
  - **Ubuntu**: `sudo apt-get install build-essential`
  - **Fedora**: `sudo yum groupinstall "Development Tools"`
+ - **OpenSUSE**: `sudo zypper install --type pattern devel_basis`
 
-**Note**: If you are new to Node.js or Express framework,
+:heavy_exclamation_mark: **Note**: If you are new to Node.js or Express framework,
 I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast that teaches Node and Express from scratch.
 
 
