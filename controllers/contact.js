@@ -8,9 +8,7 @@ var sendgrid  = require('sendgrid')(secrets.sendgrid.user, secrets.sendgrid.pass
 
 exports.getContact = function(req, res) {
   res.render('contact', {
-    title: 'Contact',
-    success: req.flash('success'),
-    errors: req.flash('errors')
+    title: 'Contact'
   });
 };
 
@@ -53,7 +51,7 @@ exports.postContact = function(req, res) {
       req.flash('errors', { msg: err.message });
       return res.redirect('/contact');
     }
-    req.flash('success', 'Email has been sent successfully!');
+    req.flash('success', { msg: 'Email has been sent successfully!' });
     res.redirect('/contact');
   });
 };
