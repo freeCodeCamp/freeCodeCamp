@@ -51,7 +51,7 @@ Prerequisites
 - MongoDB
 - Node.js
 - Command Line Tools
- - **Mac OS X**: Xcode 
+ - **Mac OS X**: [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (or **OS X 10.9 Mavericks**: `xcode-select --install`)
  - **Windows**: [Visual Studio](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8)
  - **Ubuntu**: `sudo apt-get install build-essential`
  - **Fedora**: `sudo yum groupinstall "Development Tools"`
