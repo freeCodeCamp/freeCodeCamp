@@ -41,7 +41,7 @@ var app = express();
 /**
  * Express configuration.
  */
-
+app.locals.cacheBuster = Date.now();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -63,7 +63,7 @@ app.use(function(req, res, next) {
 app.use(flash());
 app.use(less({ src: __dirname + '/public', compress: true }));
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static( path.join(__dirname, 'public'), { maxAge: 864000000 } ));
 app.use(function(req, res) {
   res.status(404);
   res.render('404');
