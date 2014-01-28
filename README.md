@@ -129,7 +129,16 @@ Obtaining API Keys
 
 <hr>
 
-
+<img src="https://g.twimg.com/Twitter_logo_blue.png" width="200">
+- Sign in at [https://dev.twitter.com](https://dev.twitter.com/)
+- From the profile picture dropdown menu select **My Applications**
+- Click **Create a new application**
+- Enter your application name, website and description
+- For **Callback URL**: http://127.0.0.1:3000/auth/twitter/callback
+- Go to **Settings** tab
+- Under *Application Type* select **Read and Write** access
+- Check the box *Allow this application to be used to Sign in with Twitter*
+- Click **Update this Twitter's applications settings**
 
 <hr>
 
