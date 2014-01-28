@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  .col-sm-8.col-sm-offset-2
+    form(method='POST')
+      legend Forgot Password
+
+    div.form-group
+      label.control-label(for='email') Enter Your Email:
+      input.form-control(type='text', name='email', id='email', autofocus=true)
+
+    div.form-group
+      button.btn.btn-primary(type='submit') Send Reset
+      |&nbsp;
+      a.btn.btn-default(href='/login') Back to Login
