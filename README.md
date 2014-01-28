@@ -130,7 +130,7 @@ Obtaining API Keys
 
 <hr>
 
-<img src="https://g.twimg.com/Twitter_logo_blue.png" width="200">
+<img src="https://g.twimg.com/Twitter_logo_blue.png" width="100">
 - Sign in at [https://dev.twitter.com](https://dev.twitter.com/)
 - From the profile picture dropdown menu select **My Applications**
 - Click **Create a new application**
@@ -171,20 +171,21 @@ Project Structure
 | **views**/home.jade | Home page template.     |
 
 
-**Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
+:exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
 
-**Note 2:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
+:exclamation: **Note 2:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
 
 Useful Tools
 ------------
-[Jade Syntax Documentation by Example](http://naltatis.github.io/jade-syntax-docs/#attributes) - Better than official docs.
-[HTML to Jade converter](http://html2jade.aaron-powell.com) - Extremely valuable when you need to quickly copy and paste HTML snippets from the web.
+- [Jade Syntax Documentation by Example](http://naltatis.github.io/jade-syntax-docs/#attributes) - Better than official docs.
+- [HTML to Jade converter](http://html2jade.aaron-powell.com) - Extremely valuable when you need to quickly copy and paste HTML snippets from the web.
 
 Recommended Design
 ------------------
 - [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap.
 - [Colors](http://clrs.cc) - a nicer color palette for the web.
-- [CSS Spinning Loaders](http://codepen.io/andymcfee/pen/ioskA) - spinning loader in css.
+- [CSS Spinning Loaders](http://codepen.io/andymcfee/pen/ioskA) - spinning loader in CSS.
+- [SpinKit](http://tobiasahlin.com/spinkit/) - 8 awesome looking spinning loaders in CSS.
 - [Creative Button Styles](http://tympanus.net/Development/CreativeButtons/) - awesome button styles.
 - [3D Dropdown Menu](http://soulwire.github.io/Makisu/) - CSS3 3D Dropdown Menu that folds and unfolds.
 - [Calendar in CSS](http://cssdeck.com/labs/vr7yddm7) - Nice looking calendar in pure HTML and CSS.
@@ -193,7 +194,7 @@ Recommended Design
 Recommended Node.js Libraries
 -----------------------------
 - [nodemon](https://github.com/remy/nodemon) - automatically restart node.js server on code change.
-- [geoip-lite](https://github.com/bluesmoon/node-geoip) - get location name from IP address.
+- [geoip-lite](https://github.com/bluesmoon/node-geoip) - get geolocation coordinates from IP address.
 - [email.js](https://github.com/eleith/emailjs) - send emails with node.js (without sendgrid or mailgun).
 - [filesize.js](http://filesizejs.com/) - make file size pretty, e.g. `filesize(265318); // "265.32 kB"`.
 - [Numeral.js](http://numeraljs.com) - a javascript library for formatting and manipulating numbers.
