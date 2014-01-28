@@ -67,10 +67,7 @@ The easiest way to get started is to clone the repository:
 
 ```bash
 # Fetch only the latest commits.
-git clone --depth=1 git@github.com:sahat/hackathon-starter.git
-
-# Move the repository to your own project name.
-mv hackathon-starter my-project
+git clone --depth=1 git@github.com:sahat/hackathon-starter.git my-project
 
 cd my-project
 
@@ -121,6 +118,17 @@ Obtaining API Keys
 
 <hr>
 
+<img src="https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Logo.png" width="200">
+- Go to [Account Settings](https://github.com/settings/profile)
+- Select **Applications** from the sidebar
+- Then inside **Developer applications** click on **Register new application**
+- Enter *Application Name* and *Homepage URL*.
+- For *Authorization Callback URL*: http://localhost:3000/auth/github/callback
+- Click **Register application**
+- Now copy and paste *Client ID* and *Client Secret* keys into `config/secrets.js`
+
+<hr>
+
 <img src="https://www.paypalobjects.com/webstatic/developer/logo_paypal-developer_beta.png" width="200">
 - Visit [PayPal Developer](https://developer.paypal.com/)
 - Log in using your existing PayPal account
@@ -130,7 +138,8 @@ Obtaining API Keys
 - *App ID* is **client_id**, *App Secret* is **client_secret**
 - Change **host** to api.paypal.com if you want to test against production and use the live credentials
 
-*TODO: Add Twitter and GitHub instructions.*
+
+*TODO: Add Twitter instructions*
 
 Project Structure
 -----------------
@@ -200,6 +209,8 @@ When I first created this project I didn't have any experience with Handlebars. 
 ### Why do you have all routes in app.js?
 For the sake of simplicity. While there might be a better approach, such as passing `app` context to each controller as outlined in this [blog](http://timstermatic.github.io/blog/2013/08/17/a-simple-mvc-framework-with-node-and-express/), I find such style to be confusing for beginners. It took me a long time to grasp the concept of `exports` and `module.exports`, let alone having a global `app` reference in other files. That to me is a backward thinking. The `app.js` is the "center of the universe", it should be the one referencing models, routes, controllers, etc. When working solo I actually prefer to have everything in `app.js` as is the case with this REST API server for [ember-sass-express-starter's app.js file](https://github.com/sahat/ember-sass-express-starter/blob/master/app.js). That makes things so much simpler!
 
+### I don't need a sticky footer, can I delete it?
+Absolutely. But unlike a regular footer there is a bit more work involved. First, delete `#wrap` and `#footer` *ID*s from **styles.less**. Next delete `#wrap` and `#footer` from **layout.jade**. If no element is specified before the class or id, Jade assumes it's a `div` element. Don't forget to indent everything under `#wrap` to the left once, since this project uses two spaces per block indentation.
 
 TODO
 ----
