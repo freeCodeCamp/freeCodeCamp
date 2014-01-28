@@ -1,7 +1,7 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
 Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.png?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter)
 =================
-A kickstarter for **Node.js** web applications.
+A kickstarter for **Node.js** web applications. 
 
 **Live Demo**: http://hackathonstarter.herokuapp.com
 
@@ -10,7 +10,7 @@ get a project started. Decide on an idea, pick a programming language, pick a we
 pick a CSS framework. A while later, you will have an initial project up on GitHub, and only then can other team members
 start contributing. Or what about doing something as simple as OAuth 2.0 Authentication? You can spend hours
 on it if you are not familiar with how OAuth 2.0 works. *(As a side-note, over a year ago
-I had no idea WTF was REST or OAuth2, or how to do a simple "Sign in with Facebook".
+I had no idea WTF REST or OAuth were, or how to do a simple "Sign in with Facebook".
 It was a frustrating experience to say the least.)*
 
 When I started this project, my primary focus was on **simplicity** and **ease of use**.
@@ -18,7 +18,7 @@ I also tried to make it as **generic** and **reusable** as possible to cover mos
 without being too specific. In the worst case you can use this as a guide for your projects, if for example you are only
 interested in **Sign in with Google** authentication and nothing else.
 
-Chances are, you might not need all 4 types of OAuth2 authentication methods, or all 9 API examples.
+Chances are, you might not need all 4 types of OAuth 1.0a/OAuth2 authentication methods, or all 9 API examples.
 Sadly, there is no step-by-step wizard to configure the boilerplate code just for your use case. So, use what you need, simply delete what you don't need.
 
 <h4 align="center">Flatly Bootstrap Theme</h3>
@@ -32,7 +32,8 @@ Sadly, there is no step-by-step wizard to configure the boilerplate code just fo
 Features
 --------
 - **Local Authentication** using Email and Password
-- **OAuth 2.0 Authentication** via Twitter, Facebook, Google or GitHub
+- **OAuth 1.0a Authentication** via Twitter
+- **OAuth 2.0 Authentication** via Facebook, Google or GitHub
 - Sweet Error and Success flash notifications with animations by *animate.css*
 - MVC Project Structure
 - LESS stylesheets (auto-compiled via Express middleware)
@@ -41,7 +42,7 @@ Features
 - **Account Management**
  - Profile Details
  - Change Password
- - Link multipleOAuth 2.0 strategies to one account
+ - Link multiple OAuth strategies to one account
  - Delete Account
 - **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, PayPal, and more.
 
@@ -80,7 +81,7 @@ node app.js
 > application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
 > It is a big time saver in the long run.
 
-Next up, if you want to use any of the APIs or OAuth2 authentication methods, you will need to obtain
+Next up, if you want to use any of the APIs or OAuth authentication methods, you will need to obtain
 appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
 need to go through each provider to generate new credentials.
 
