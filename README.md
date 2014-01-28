@@ -34,7 +34,7 @@ Features
 - **Local Authentication** using Email and Password
 - **OAuth 1.0a Authentication** via Twitter
 - **OAuth 2.0 Authentication** via Facebook, Google or GitHub
-- Sweet Error and Success flash notifications with animations by *animate.css*
+- Awesome flash notifications with animations by *animate.css*
 - MVC Project Structure
 - LESS stylesheets (auto-compiled via Express middleware)
 - Bootstrap 3 + Flat UI + iOS7 Theme
@@ -101,7 +101,7 @@ Obtaining API Keys
  - **Authorized redirect URI**: http://localhost:3000/auth/google/callback
 - Copy and paste *Client ID* and *Client secret* keys into `config/secrets.js`
 
-> **Note**: When you ready to deploy to production don't forget to add
+>:exclamation: **Note**: When you ready to deploy to production don't forget to add
 >    your new url to Authorized Javascript origins and Authorized redirect URI,
 >   e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively.
 
@@ -158,17 +158,20 @@ Project Structure
 | Name          | Description   |
 | ------------- |:-------------:|
 | **config**/passport.js      | Passport Local and OAuth strategies + Passport middleware. |
-| **config**/secrets.js    | Your API keys, tokens, passwords and database URL.      |
-| **controllers**/api.js | Controller for /api route and all api examples.      |
-| **controllers**/contact.js | Controller for contact form.      |
-| **controllers**/home.js | Controller for home page (index).
-| **controllers**/user.js | Controller for user account management page.      |
-| **models**/User.js | Mongoose schema and model for User.      |
-| **public/*** | Static assets, i.e. fonts, css, js, img.   |
-| **views/account/*** | Templates relating to user account.     |
-| **views/api/*** | Templates relating to API Examples.   |
-| **views**/layout.jade | Base template.     |
-| **views**/home.jade | Home page template.     |
+| **config**/secrets.js    | Your API keys, tokens, passwords and database URL.            |
+| **controllers**/api.js | Controller for /api route and all api examples.                 |
+| **controllers**/contact.js | Controller for contact form.                                |
+| **controllers**/home.js | Controller for home page (index).                              |
+| **controllers**/user.js | Controller for user account management page.                   |
+| **models**/User.js | Mongoose schema and model for User.                                 |
+| **public/*** | Static assets, i.e. fonts, css, js, img.                                  |
+| **views/account/*** | Templates relating to user account.                                |
+| **views/api/*** | Templates relating to API Examples.                                    |
+| **views/partials**/flash.jade      | Error, info and success notifications.              |
+| **views/partials**/navigation.jade | Navbar partial template.                            |
+| **views/partials**/footer.jade     | Footer partial template.                            |
+| **views**/layout.jade              | Base template.                                      |
+| **views**/home.jade                | Home page template.                                 |
 
 
 :exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
@@ -231,7 +234,8 @@ I specifically avoided client-side MV* frameworks in this project to keep things
 There is a big shift in the way you develop apps with Ember, Backbone, Angular
 as opposed to server-side frameworks like Express, Flask, Rails, Django. Not only
 would you need to know how to use Express in this case, but also the client-side framework of your choice,
-which in itself is not a trivial task. It's best if you use a boilerplate of choice for your particular
+which in itself is not a trivial task. And then there is a whole different process
+for authentication with single page applications. It's best if you use a boilerplate of choice for your particular
 client-side framework and just grab the pieces you need from the Hackathon Starter.
 
 TODO
