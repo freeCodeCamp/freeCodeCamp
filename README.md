@@ -82,6 +82,8 @@ node app.js
 > application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
 > It is a big time saver in the long run.
 
+> **Cluster**: You can execute an instance of `app.js` for each CPU by calling `node cluster_app.js` instead of `node app.js`
+
 Next up, if you want to use any of the APIs or OAuth authentication methods, you will need to obtain
 appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
 need to go through each provider to generate new credentials.
@@ -211,6 +213,14 @@ For the sake of simplicity. While there might be a better approach, such as pass
 
 ### I don't need a sticky footer, can I delete it?
 Absolutely. But unlike a regular footer there is a bit more work involved. First, delete `#wrap` and `#footer` *ID*s from **styles.less**. Next delete `#wrap` and `#footer` from **layout.jade**. If no element is specified before the class or id, Jade assumes it's a `div` element. Don't forget to indent everything under `#wrap` to the left once, since this project uses two spaces per block indentation.
+
+### What is cluster_app.js?
+Per the [documentation](http://nodejs.org/api/cluster.html):
+> A single instance of Node runs in a single thread. To take advantage of multi-core systems
+> the user will sometimes want to launch a cluster of Node processes to handle the load.
+> The cluster module allows you to easily create child processes that all share server ports.
+
+`cluster_app.js` allows you to take advantage of this feature by forking a process of `app.js` for each CPU detected. For the majority of applications serving HTTP requests, this is a resounding boon. However, the cluster module is still considered **"Stability: 1 - Experimental"**, therefore it should only be used after understanding it's purpose and behavior.
 
 TODO
 ----
