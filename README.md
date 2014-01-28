@@ -118,6 +118,17 @@ Obtaining API Keys
 
 <hr>
 
+<img src="https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Logo.png" width="200">
+- Go to [Account Settings](https://github.com/settings/profile)
+- Select **Applications** from the sidebar
+- Then inside **Developer applications** click on **Register new application**
+- Enter *Application Name* and *Homepage URL*.
+- For *Authorization Callback URL*: http://localhost:3000/auth/github/callback
+- Click **Register application**
+- Now copy and paste *Client ID* and *Client Secret* keys into `config/secrets.js`
+
+<hr>
+
 <img src="https://www.paypalobjects.com/webstatic/developer/logo_paypal-developer_beta.png" width="200">
 - Visit [PayPal Developer](https://developer.paypal.com/)
 - Log in using your existing PayPal account
@@ -127,7 +138,8 @@ Obtaining API Keys
 - *App ID* is **client_id**, *App Secret* is **client_secret**
 - Change **host** to api.paypal.com if you want to test against production and use the live credentials
 
-*TODO: Add Twitter and GitHub instructions.*
+
+*TODO: Add Twitter instructions*
 
 Project Structure
 -----------------
