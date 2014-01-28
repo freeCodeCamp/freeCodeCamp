@@ -129,6 +129,10 @@ Obtaining API Keys
 
 <hr>
 
+
+
+<hr>
+
 <img src="https://www.paypalobjects.com/webstatic/developer/logo_paypal-developer_beta.png" width="200">
 - Visit [PayPal Developer](https://developer.paypal.com/)
 - Log in using your existing PayPal account
@@ -137,9 +141,6 @@ Obtaining API Keys
 - Copy and paste *Client ID* and *Secret* keys into `config/secrets.js`
 - *App ID* is **client_id**, *App Secret* is **client_secret**
 - Change **host** to api.paypal.com if you want to test against production and use the live credentials
-
-
-*TODO: Add Twitter instructions*
 
 Project Structure
 -----------------
@@ -154,8 +155,8 @@ Project Structure
 | **controllers**/user.js | Controller for user account management page.      |
 | **models**/User.js | Mongoose schema and model for User.      |
 | **public/*** | Static assets, i.e. fonts, css, js, img.   |
-| **views/account** | Templates relating to user account.     |
-| **views/api** | Templates relating to API Examples.   |
+| **views/account/*** | Templates relating to user account.     |
+| **views/api/*** | Templates relating to API Examples.   |
 | **views**/layout.jade | Base template.     |
 | **views**/home.jade | Home page template.     |
 
@@ -166,11 +167,12 @@ Project Structure
 
 Useful Tools
 ------------
-[HTML to Jade converter](http://html2jade.aaron-powell.com)
+[Jade Syntax Documentation by Example](http://naltatis.github.io/jade-syntax-docs/#attributes) - Better than official docs.
+[HTML to Jade converter](http://html2jade.aaron-powell.com) - Extremely valuable when you need to quickly copy and paste HTML snippets from the web.
 
 Recommended Design
 ------------------
-- [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap
+- [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap.
 - [Colors](http://clrs.cc) - a nicer color palette for the web.
 - [CSS Spinning Loaders](http://codepen.io/andymcfee/pen/ioskA) - spinning loader in css.
 - [Creative Button Styles](http://tympanus.net/Development/CreativeButtons/) - awesome button styles.
@@ -210,7 +212,7 @@ When I first created this project I didn't have any experience with Handlebars. 
 For the sake of simplicity. While there might be a better approach, such as passing `app` context to each controller as outlined in this [blog](http://timstermatic.github.io/blog/2013/08/17/a-simple-mvc-framework-with-node-and-express/), I find such style to be confusing for beginners. It took me a long time to grasp the concept of `exports` and `module.exports`, let alone having a global `app` reference in other files. That to me is a backward thinking. The `app.js` is the "center of the universe", it should be the one referencing models, routes, controllers, etc. When working solo I actually prefer to have everything in `app.js` as is the case with this REST API server for [ember-sass-express-starter's app.js file](https://github.com/sahat/ember-sass-express-starter/blob/master/app.js). That makes things so much simpler!
 
 ### I don't need a sticky footer, can I delete it?
-Absolutely. But unlike a regular footer there is a bit more work involved. First, delete `#wrap` and `#footer` *ID*s from **styles.less**. Next delete `#wrap` and `#footer` from **layout.jade**. If no element is specified before the class or id, Jade assumes it's a `div` element. Don't forget to indent everything under `#wrap` to the left once, since this project uses two spaces per block indentation.
+Absolutely. But unlike a regular footer there is a bit more work involved. First, delete `#wrap` and `#footer` ID selectors from **styles.less**. Next, delete `#wrap` and `#footer` lines from **layout.jade** (By the way, If no element is specified before the class or id, Jade assumes it's a `div` element). Don't forget to indent everything under `#wrap` to the left once, since this project uses two spaces per block indentation.
 
 TODO
 ----
