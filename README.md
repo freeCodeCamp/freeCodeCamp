@@ -34,8 +34,9 @@ Features
 - **Local Authentication** using Email and Password
 - **OAuth 1.0a Authentication** via Twitter
 - **OAuth 2.0 Authentication** via Facebook, Google or GitHub
-- Awesome flash notifications with animations by *animate.css*
+- Awesome flash notifications with animations by [animate.css](http://daneden.github.io/animate.css/)
 - MVC Project Structure
+- Node.js clusters support
 - LESS stylesheets (auto-compiled via Express middleware)
 - Bootstrap 3 + Flat UI + iOS7 Theme
 - Contact Form (powered by Sendgrid)
