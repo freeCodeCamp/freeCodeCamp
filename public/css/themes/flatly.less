@@ -1,240 +1,9 @@
-// Flatly 3.0.3 (MODIFIED)
-// Bootswatch
-// -----------------------------------------------------
-
-// Fonts
-// --------------------------------------------------
-@font-face {
-  font-family: 'Lato';
-  src: url('../../fonts/lato/lato-black-webfont.eot');
-  src: url('../../fonts/lato/lato-black-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/lato/lato-black-webfont.woff') format('woff'),
-  url('../../fonts/lato/lato-black-webfont.ttf') format('truetype'),
-  url('../../fonts/lato/lato-black-webfont.svg#latoblack') format('svg');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../../fonts/lato/lato-bold-webfont.eot');
-  src: url('../../fonts/lato/lato-bold-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/lato/lato-bold-webfont.woff') format('woff'),
-  url('../../fonts/lato/lato-bold-webfont.ttf') format('truetype'),
-  url('../../fonts/lato/lato-bold-webfont.svg#latobold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../../fonts/lato/lato-bolditalic-webfont.eot');
-  src: url('../../fonts/lato/lato-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/lato/lato-bolditalic-webfont.woff') format('woff'),
-  url('../../fonts/lato/lato-bolditalic-webfont.ttf') format('truetype'),
-  url('../../fonts/lato/lato-bolditalic-webfont.svg#latobold_italic') format('svg');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../../fonts/lato/lato-italic-webfont.eot');
-  src: url('../../fonts/lato/lato-italic-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/lato/lato-italic-webfont.woff') format('woff'),
-  url('../../fonts/lato/lato-italic-webfont.ttf') format('truetype'),
-  url('../../fonts/lato/lato-italic-webfont.svg#latoitalic') format('svg');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../../fonts/lato/lato-light-webfont.eot');
-  src: url('../../fonts/lato/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/lato/lato-light-webfont.woff') format('woff'),
-  url('../../fonts/lato/lato-light-webfont.ttf') format('truetype'),
-  url('../../fonts/lato/lato-light-webfont.svg#latolight') format('svg');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('../../fonts/lato/lato-regular-webfont.eot');
-  src: url('../../fonts/lato/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/lato/lato-regular-webfont.woff') format('woff'),
-  url('../../fonts/lato/lato-regular-webfont.ttf') format('truetype'),
-  url('../../fonts/lato/lato-regular-webfont.svg#latoregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Flat-UI-Icons';
-  src:url('../../fonts/Flat-UI-Icons.eot');
-  src:url('../../fonts/Flat-UI-Icons.eot?#iefix') format('embedded-opentype'),
-  url('../../fonts/Flat-UI-Icons.woff') format('woff'),
-  url('../../fonts/Flat-UI-Icons.ttf') format('truetype'),
-  url('../../fonts/Flat-UI-Icons.svg#Flat-UI-Icons') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
-  font-family: 'Flat-UI-Icons';
-  content: attr(data-icon);
-  speak: none;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="fui-"] {
-*/
-.fui-arrow-right, .fui-arrow-left, .fui-cmd, .fui-check-inverted, .fui-heart, .fui-location, .fui-plus, .fui-check, .fui-cross, .fui-list, .fui-new, .fui-video, .fui-photo, .fui-volume, .fui-time, .fui-eye, .fui-chat, .fui-search, .fui-user, .fui-mail, .fui-lock, .fui-gear, .fui-radio-unchecked, .fui-radio-checked, .fui-checkbox-unchecked, .fui-checkbox-checked, .fui-calendar-solid, .fui-pause, .fui-play, .fui-check-inverted-2 {
-  display: inline-block;
-  font-family: 'Flat-UI-Icons';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-}
-.fui-arrow-right:before {
-  content: "\e02c";
-}
-.fui-arrow-left:before {
-  content: "\e02d";
-}
-.fui-cmd:before {
-  content: "\e02f";
-}
-.fui-check-inverted:before {
-  content: "\e006";
-}
-.fui-heart:before {
-  content: "\e007";
-}
-.fui-location:before {
-  content: "\e008";
-}
-.fui-plus:before {
-  content: "\e009";
-}
-.fui-check:before {
-  content: "\e00a";
-}
-.fui-cross:before {
-  content: "\e00b";
-}
-.fui-list:before {
-  content: "\e00c";
-}
-.fui-new:before {
-  content: "\e00d";
-}
-.fui-video:before {
-  content: "\e00e";
-}
-.fui-photo:before {
-  content: "\e00f";
-}
-.fui-volume:before {
-  content: "\e010";
-}
-.fui-time:before {
-  content: "\e011";
-}
-.fui-eye:before {
-  content: "\e012";
-}
-.fui-chat:before {
-  content: "\e013";
-}
-.fui-search:before {
-  content: "\e01c";
-}
-.fui-user:before {
-  content: "\e01d";
-}
-.fui-mail:before {
-  content: "\e01e";
-}
-.fui-lock:before {
-  content: "\e01f";
-}
-.fui-gear:before {
-  content: "\e024";
-}
-.fui-radio-unchecked:before {
-  content: "\e02b";
-}
-.fui-radio-checked:before {
-  content: "\e032";
-}
-.fui-checkbox-unchecked:before {
-  content: "\e033";
-}
-.fui-checkbox-checked:before {
-  content: "\e034";
-}
-.fui-calendar-solid:before {
-  content: "\e022";
-}
-.fui-pause:before {
-  content: "\e03b";
-}
-.fui-play:before {
-  content: "\e03c";
-}
-.fui-check-inverted-2:before {
-  content: "\e000";
-}
-
-
-// Variables
+// Flatly 3.0.3
 // --------------------------------------------------
 
 
 // Global values
 // --------------------------------------------------
-@turquoise:     #1abc9c;
-@green-sea:     #16a085;
-
-@emerald:       #2ecc71;
-@nephritis:     #27ae60;
-
-@peter-river:   #3498db;
-@belize-hole:   #2980b9;
-
-@amethyst:      #9b59b6;
-@wisteria:      #8e44ad;
-
-@wet-asphalt:   #34495e;
-@midnight-blue: #2c3e50;
-
-@sun-flower:    #f1c40f;
-@orange:        #f39c12;
-
-@carrot:        #e67e22;
-@pumpkin:       #d35400;
-
-@alizarin:      #e74c3c;
-@pomegranate:   #c0392b;
-
-@clouds:        #ecf0f1;
-@silver:        #bdc3c7;
-
-@concrete:      #95a5a6;
-@asbestos:      #7f8c8d;
 
 // Grays
 // -------------------------
@@ -244,16 +13,15 @@ you can use the generic selector below, but it's slower:
 @gray:                   #95a5a6;
 @gray-light:             #b4bcc2;
 @gray-lighter:           #ecf0f1;
-@inverse:          			 white;
 
 // Brand colors
 // -------------------------
 
 @brand-primary:         #2C3E50;
 @brand-success:         #18BC9C;
-@brand-warning:         #f1c40f;
-@brand-danger:          #e74c3c;
-@brand-info:            #3498db;
+@brand-warning:         #F39C12;
+@brand-danger:          #E74C3C;
+@brand-info:            #3498DB;
 
 // Scaffolding
 // -------------------------
@@ -294,9 +62,6 @@ you can use the generic selector below, but it's slower:
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
-@input-font-size-base:		 @font-size-base;
-
-@input-icon-font-size:		 ceil(@font-size-base * 1.333);  // ~20px
 
 // Iconography
 // -------------------------
@@ -494,7 +259,7 @@ you can use the generic selector below, but it's slower:
 // -------------------------
 
 // Basics of a navbar
-@navbar-height:                    40px;
+@navbar-height:                    60px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
 @navbar-padding-horizontal:        floor(@grid-gutter-width / 2);  // ~15px
@@ -514,7 +279,7 @@ you can use the generic selector below, but it's slower:
 @navbar-default-link-disabled-bg:          transparent;
 
 // Navbar brand label
-@navbar-default-brand-color:               @navbar-default-link-hover-color;
+@navbar-default-brand-color:               @navbar-default-link-color;
 @navbar-default-brand-hover-color:         @navbar-default-link-hover-color;
 @navbar-default-brand-hover-bg:            transparent;
 
@@ -875,55 +640,60 @@ you can use the generic selector below, but it's slower:
 @container-large-desktop:      ((1140px + @grid-gutter-width));
 @container-lg:                 @container-large-desktop;
 
+// Flatly 3.0.3
+// Bootswatch
+// -----------------------------------------------------
+
+@import url("//fonts.googleapis.com/css?family=Lato:400,700,900,400italic");
 
 // Navbar =====================================================================
 
 // Buttons ====================================================================
 
 .btn:active {
-	box-shadow: none;
+  .box-shadow(none);
 }
 
 .btn-group.open .dropdown-toggle {
-	box-shadow: none;
+  .box-shadow(none);
 }
 
 // Typography =================================================================
 
 .text-primary,
 .text-primary:hover {
-	color: @brand-primary;
+  color: @brand-primary;
 }
 
 .text-success,
 .text-success:hover {
-	color: @brand-success;
+  color: @brand-success;
 }
 
 .text-danger,
 .text-danger:hover {
-	color: @brand-danger;
+  color: @brand-danger;
 }
 
 .text-warning,
 .text-warning:hover {
-	color: @brand-warning;
+  color: @brand-warning;
 }
 
 .text-info,
 .text-info:hover {
-	color: @brand-info;
+  color: @brand-info;
 }
 
 // Tables =====================================================================
 
 .table {
 
-	tr.success,
-	tr.warning,
-	tr.danger {
-		color: #fff;
-	}
+  tr.success,
+  tr.warning,
+  tr.danger {
+    color: #fff;
+  }
 }
 
 // Forms ======================================================================
@@ -944,325 +714,114 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-	border-width: 2px;
-	box-shadow: none;
+  border-width: 2px;
+  .box-shadow(none);
 
-	&:focus {
-		box-shadow: none;
-	}
+  &:focus {
+    .box-shadow(none);
+  }
 }
 
 .has-warning {
-	.help-block,
-	.control-label {
-		color: @brand-warning;
-	}
+  .help-block,
+  .control-label {
+    color: @brand-warning;
+  }
 
-	.form-control,
-	.form-control:focus {
-		border: 2px solid @brand-warning;
-	}
+  .form-control,
+  .form-control:focus {
+    border: 2px solid @brand-warning;
+  }
 }
 
 .has-error {
-	.help-block,
-	.control-label {
-		color: @brand-danger;
-	}
+  .help-block,
+  .control-label {
+    color: @brand-danger;
+  }
 
-	.form-control,
-	.form-control:focus {
-		border: 2px solid @brand-danger;
-	}
+  .form-control,
+  .form-control:focus {
+    border: 2px solid @brand-danger;
+  }
 }
 
 .has-success {
-	.help-block,
-	.control-label {
-		color: @brand-success;
-	}
+  .help-block,
+  .control-label {
+    color: @brand-success;
+  }
 
-	.form-control,
-	.form-control:focus {
-		border: 2px solid @brand-success;
-	}
+  .form-control,
+  .form-control:focus {
+    border: 2px solid @brand-success;
+  }
 }
 
 // Navs =======================================================================
 
 .nav {
-	.open > a,
-	.open > a:hover,
-	.open > a:focus {
-		border-color: transparent;
-	}
+  .open > a,
+  .open > a:hover,
+  .open > a:focus {
+    border-color: transparent;
+  }
 }
 
 .pagination {
-	
-	a,
-	a:hover {
-		color: #fff;
-	}
 
-	.disabled {
-		&>a,
-		&>a:hover,
-		&>a:focus,
-		&>span {
-			background-color: lighten(@brand-success, 15%);
-		}
-	}
+  a,
+  a:hover {
+    color: #fff;
+  }
+
+  .disabled {
+    &>a,
+    &>a:hover,
+    &>a:focus,
+    &>span {
+      background-color: lighten(@brand-success, 15%);
+    }
+  }
 }
 
 .pager {
-	a,
-	a:hover {
-		color: #fff;
-	}
+  a,
+  a:hover {
+    color: #fff;
+  }
 
-	.disabled {
-		&>a,
-		&>a:hover,
-		&>a:focus,
-		&>span {
-			background-color: lighten(@brand-success, 15%);
-		}
-	}
+  .disabled {
+    &>a,
+    &>a:hover,
+    &>a:focus,
+    &>span {
+      background-color: lighten(@brand-success, 15%);
+    }
+  }
 }
 
 // Indicators =================================================================
 
 .alert {
 
-	a,
-	.alert-link {
-		color: #fff;
-		text-decoration: underline;
-	}
+  a,
+  .alert-link {
+    color: #fff;
+    text-decoration: underline;
+  }
 }
 
 // Progress bars ==============================================================
 
 .progress {
-	height: 10px;
-	box-shadow: none;
+  height: 10px;
+  .box-shadow(none);
 }
 
 // Containers =================================================================
 
 .well {
-	box-shadow: none;
-	border-width: 0;
-}
-
-//
-// Checkbox & Radio
-// --------------------------------------------------
-
-.checkbox,
-.radio {
-  margin-bottom: 12px;
-  padding-left: 32px;
-  position: relative;
-  transition: color .25s linear;
-  font-size: ceil(@font-size-base * 0.933); // ~14px
-  line-height: 1.5; // 21px;
-
-  input {
-    outline: none !important;
-    display: none;
-  }
-
-  // Replace icons
-  // --------------------------------------------------
-  .icons {
-    color: @gray-light;
-    display: block;
-    height: 20px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 20px;
-    text-align: center;
-    line-height: 21px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: color .25s linear;
-
-    .first-icon,
-    .second-icon {
-      display: inline-table;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background-color: #fff;
-      margin: 0;
-      opacity: 1;
-    }
-    .second-icon {
-      opacity: 0;
-    }
-  }
-
-  // Alternate States
-  // --------------------------------------------------
-
-  // Hover State
-  &:hover {
-    transition: color .25s linear;
-
-    .first-icon {
-      opacity: 0;
-    }
-    .second-icon {
-      opacity: 1;
-    }
-  }
-
-  // Checked State
-  &.checked {
-    color: @brand-success;
-
-    .first-icon {
-      opacity: 0;
-    }
-    .second-icon {
-      opacity: 1;
-      color: @brand-success;
-      transition: color .25s linear;
-    }
-  }
-
-  // Disabled state
-  &.disabled {
-    cursor: default;
-    color: mix(@gray-light, white, 38%);
-
-    .icons {
-      color: mix(@gray-light, white, 38%);
-    }
-    .first-icon {
-      opacity: 1;
-    }
-    .second-icon {
-      opacity: 0;
-    }
-    &.checked {
-      .icons {
-        color: mix(@gray-light, white, 38%);
-      }
-      .first-icon {
-        opacity: 0;
-      }
-      .second-icon {
-        opacity: 1;
-        color: mix(@gray-light, white, 38%);
-      }
-    }
-  }
-
-  // Alternate Color
-  // --------------------------------------------------
-
-  // Primary
-  &.primary {
-    .icons {
-      color: @brand-primary;
-    }
-    // Checked State
-    &.checked {
-      color: @brand-success;
-
-      .icons {
-        color: @brand-success;
-      }
-    }
-    // Disabled state
-    &.disabled {
-      cursor: default;
-      color: @gray-light;
-
-      .icons {
-        color: @gray-light;
-      }
-      &.checked {
-        .icons {
-          color: @gray-light;
-        }
-      }
-    }
-  }
-}
-
-//
-// Input Icons
-// --------------------------------------------------
-
-.form-group {
-  position: relative;
-}
-
-.form-control {
-  & + .input-icon {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    line-height: 37px;
-    vertical-align: middle;
-    font-size: @input-icon-font-size;
-    color: desaturate(lighten(@brand-primary, 45%), 15%);
-    background-color: transparent;
-    padding: 0 25px 0 0;
-    border-radius: @input-border-radius;
-  }
-}
-
-// Icons sizing
-// ---------------------------
-
-// Huge
-.input-hg + .input-icon {
-  line-height: 49px;
-  padding: 0 16px 0 0;
-}
-
-//Large
-.input-lg + .input-icon {
-  line-height: 41px;
-  padding: 0 15px 0 0;
-}
-
-// Small
-.input-sm + .input-icon {
-  font-size: @font-size-base;
-  line-height: 30px;
-  padding: 0 10px 0 0;
-}
-
-
-// Icons states
-// ---------------------------
-
-.has-success {
-  .input-icon {
-    color: @brand-success;
-  }
-}
-.has-warning {
-  .input-icon {
-    color: @brand-warning;
-  }
-}
-.has-error {
-  .input-icon {
-    color: @brand-danger;
-  }
-}
-.form-control[disabled] + .input-icon,
-.form-control[readonly] + .input-icon,
-fieldset[disabled] .form-control + .input-icon,
-.form-control.disabled + .input-icon {
-  color: mix(@gray, white, 40%);
-  background-color: mix(@gray, white, 10%);
+  .box-shadow(none);
+  border-width: 0;
 }
