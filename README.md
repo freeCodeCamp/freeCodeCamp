@@ -1,7 +1,7 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
 Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.png?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter)
 =================
-A boilerplate for **Node.js** web applications.
+A boilerp1late for **Node.js** web applications.
 
 **Live Demo**: http://hackathonstarter.herokuapp.com :octocat:
 
@@ -179,7 +179,7 @@ Project Structure
 
 :exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
 
-:exclamation: **Note 2:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
+:bangbang: **Note 2:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
 
 Useful Tools
 ------------
@@ -197,7 +197,7 @@ Recommended Design
 - [3D Dropdown Menu](http://soulwire.github.io/Makisu/) - CSS3 3D Dropdown Menu that folds and unfolds.
 - [Calendar in CSS](http://cssdeck.com/labs/vr7yddm7) - Nice looking calendar in pure HTML and CSS.
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
-
+- [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.
 Recommended Node.js Libraries
 -----------------------------
 - [nodemon](https://github.com/remy/nodemon) - automatically restart node.js server on code change.
@@ -329,10 +329,10 @@ or send a pull request if you  would like to include something that I missed.
 
 <hr>
 
-###:page_facing_up: How do I create a new page?
+###:pencil: How do I create a new page?
 TODO
 
-### How "Forgot your password" works?
+###:unlock: How "Forgot your password" works?
 
 "Forgot your password" is only partially implemented at this time
  (Views and GET controller to display a form). Once the feature is live,
