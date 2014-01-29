@@ -26,7 +26,7 @@
             a.dropdown-toggle(href='#', data-toggle='dropdown')
               if user.profile.picture
                 img.profile-image(src='#{user.profile.picture}')
-              | #{user.profile.name || user.id}&nbsp;
+              | #{user.profile.name || user.email || user.id}&nbsp;
               i.caret
             ul.dropdown-menu
               li: a(href='/account') My Account
