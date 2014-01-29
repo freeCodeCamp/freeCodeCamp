@@ -25,7 +25,7 @@
           li.dropdown(class=title=='Account Management'?'active':undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
               if user.profile.picture
-                img(src='#{user.profile.picture}')
+                img.profile-image(src='#{user.profile.picture}')
               | #{user.profile.name || user.id}&nbsp;
               i.caret
             ul.dropdown-menu
