@@ -229,9 +229,6 @@ For the sake of simplicity. While there might be a better approach, such as pass
 ### I don't need a sticky footer, can I delete it?
 Absolutely. But unlike a regular footer there is a bit more work involved. First, delete `#wrap` and `#footer` ID selectors and `html, body { height: 100%; }` from **styles.less**. Next, delete `#wrap` and `#footer` lines from **layout.jade** (By the way, If no element is specified before the class or id, Jade assumes it's a `div` element). Don't forget to indent everything under `#wrap` to the left once, since this project uses two spaces per block indentation.
 
-### How do flash messages work in this project?
-
-
 ### Can I use Ember, Angular or Backbone with Hackathon Starter?
 It might be possible, but why would you want to?
 I specifically avoided client-side MV* frameworks in this project to keep things simple.
@@ -242,12 +239,30 @@ which in itself is not a trivial task. And then there is a whole different proce
 for authentication with single page applications. It's best if you use a boilerplate of choice for your particular
 client-side framework and just grab the pieces you need from the Hackathon Starter.
 
+HOW IT WORKS
+------------
+This section is intended for giving you a detailed explanation about
+how a particular functionality works. Maybe you are just curious about
+how it works, or maybe you are lost and confused while reading the code,
+I hope it provides some guidance to you.
+
+### How do flash messages work in this project?
 TODO
-----
+
+### How "Forgot your password" works?
+TODO
+
+
+
+
+TODO LIST
+---------
 - Concatenate and minify all assets via Express middleware if possible, otherwise Gulp.js. Because even with caching enabled, there is at least 50-80ms delay for each static file request (On Heroku).
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
 - Add more API examples.
 - Mocha tests.
+- Once things are stabilized, create a CHANGELOG.md and follow a version format so people who already use Hackathon Starter could know what are the new changes.
+
 
 Contributing
 ------------
