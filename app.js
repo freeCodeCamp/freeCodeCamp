@@ -3,6 +3,7 @@
  */
 
 var express = require('express');
+var MongoStore = require('connect-mongo')(express);
 var flash = require('express-flash');
 var less = require('less-middleware');
 var path = require('path');
@@ -34,9 +35,6 @@ var passportConf = require('./config/passport');
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
   console.log('✗ MongoDB Connection Error. Please make sure MongoDB is running.'.red);
-  setTimeout(function() {
-    mongoose.connect(secrets.db);
-  }, 5000);
 });
 
 var app = express();
@@ -56,7 +54,12 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(expressValidator());
 app.use(express.methodOverride());
-app.use(express.session({ secret: 'your secret code' }));
+app.use(express.session({
+  secret: 'your secret code',
+  store: new MongoStore({
+    db: secrets.db
+  })
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
@@ -116,5 +119,5 @@ app.get('/auth/tumblr', passport.authorize('tumblr'));
 app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), function(req, res) { res.redirect('/api/tumblr'); });
 
 app.listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('✔ Express server listening on port ' + app.get('port'));
 });
