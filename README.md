@@ -240,7 +240,18 @@ From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_
 
 `cluster_app.js` allows you to take advantage of this feature by forking a process of `app.js`
 for each CPU detected. For the majority of applications serving HTTP requests,
-this is a resounding boon. However, the cluster module is still in experimental stage, therefore it should only be used after understanding its purpose and behavior. To use it, simply run `node cluster_app.js`. **Its use is completely optional and `app.js` is not tied in any way to it**. As a reminder, if you plan to use `cluster_app.js` instead of `app.js`, be sure to indicate that in `Procfile` if you are deploying your app to Heroku.
+this is a resounding boon. However, the cluster module is still in experimental stage, therefore it should only be used after understanding its purpose and behavior. To use it, simply run `node cluster_app.js`. **Its use is entirely optional and `app.js` is not tied in any way to it**. As a reminder, if you plan to use `cluster_app.js` instead of `app.js`, be sure to indicate that in `Procfile` if you are deploying your app to Heroku.
+
+### I am getting MongoDB Connection Error, how do I fix it?
+That's a custom error message defined in `app.js` to indicate that there was a connection problem to MongoDB:
+```
+mongoose.connection.on('error', function() {
+  console.log('✗ MongoDB Connection Error. Please make sure MongoDB is running.'.red);
+});
+```
+As the messages implies, you need to have a MongoDB server running before launching `app.js`. You can get MongoDB from
+[mongodb.org/downloads](mongodb.org/downloads), or install it via a package manager
+([Homebrew](http://brew.sh/) on Mac, `apt-get` on Ubuntu, `yum` on Fedora, etc.)
 
 ### Why Jade and not Handlebars template engine?
 When I first started this project I didn't have any experience with Handlebars. Since then I have worked on Ember.js apps and got myself familiar with the Handlebars syntax. While it is true Handlebars is easier, because it looks like good old HTML, I have no regrets picking Jade over Handlebars. First off, it's the default template engine in Express, so someone who has built Express apps in the past already knows it. Secondly, I find `extends` and `block` to be indispensable, which as far as I know, Handlebars does not have out of the box. And lastly, subjectively speaking, Jade looks much cleaner and shorter than Handlebars, or any non-HAML style for that matter.
@@ -332,16 +343,16 @@ body
   include partials/footer
 ```
 
-:question: If you have any further questions about flash messages,
+If you have any further questions about flash messages,
 please feel free to open an issue and I will update this mini-guide accordingly,
 or send a pull request if you  would like to include something that I missed.
 
 <hr>
 
-###:pencil: How do I create a new page?
-TODO
+### How do I create a new page?
+Todo
 
-###:unlock: How "Forgot your password" works?
+### How "Forgot your password" works?
 
 "Forgot your password" is only partially implemented at this time
  (Views and GET controller to display a form). Once the feature is live,
