@@ -179,7 +179,7 @@ Project Structure
 
 :exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
 
-:bangbang: **Note 2:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
+:bangbang: **Note:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate minified **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
 
 Useful Tools
 ------------
@@ -198,6 +198,7 @@ Recommended Design
 - [Calendar in CSS](http://cssdeck.com/labs/vr7yddm7) - Nice looking calendar in pure HTML and CSS.
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
 - [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.
+
 Recommended Node.js Libraries
 -----------------------------
 - [nodemon](https://github.com/remy/nodemon) - automatically restart node.js server on code change.
@@ -223,7 +224,7 @@ Recommended Client-Side libraries
 Pro Tips
 --------
 - When you install a new npm package, add a *--save* flag and it will be automatially
-added to `package.json` as well! For example, `npm install moment --save`.
+added to `package.json` as well. For example, `npm install moment --save`.
 - Use [async.parallel()](https://github.com/caolan/async#parallel) when you neeed to run multiple
 asynchronous tasks, and then render a page, but only when all tasks are completed. For example, you might
 want to scrape 3 different websites for some data (async operation) and render the results
