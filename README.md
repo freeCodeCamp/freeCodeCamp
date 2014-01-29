@@ -157,21 +157,23 @@ Project Structure
 
 | Name          | Description   |
 | ------------- |:-------------:|
-| **config**/passport.js      | Passport Local and OAuth strategies + Passport middleware. |
-| **config**/secrets.js    | Your API keys, tokens, passwords and database URL.            |
-| **controllers**/api.js | Controller for /api route and all api examples.                 |
-| **controllers**/contact.js | Controller for contact form.                                |
-| **controllers**/home.js | Controller for home page (index).                              |
-| **controllers**/user.js | Controller for user account management page.                   |
-| **models**/User.js | Mongoose schema and model for User.                                 |
-| **public/*** | Static assets, i.e. fonts, css, js, img.                                  |
-| **views/account/*** | Templates relating to user account.                                |
-| **views/api/*** | Templates relating to API Examples.                                    |
-| **views/partials**/flash.jade      | Error, info and success notifications.              |
-| **views/partials**/navigation.jade | Navbar partial template.                            |
-| **views/partials**/footer.jade     | Footer partial template.                            |
-| **views**/layout.jade              | Base template.                                      |
-| **views**/home.jade                | Home page template.                                 |
+| **config**/passport.js      | Passport Local and OAuth strategies + Passport middleware.         |
+| **config**/secrets.js    | Your API keys, tokens, passwords and database URL.                    |
+| **controllers**/api.js | Controller for /api route and all api examples.                         |
+| **controllers**/contact.js | Controller for contact form.                                        |
+| **controllers**/home.js | Controller for home page (index).                                      |
+| **controllers**/user.js | Controller for user account management page.                           |
+| **models**/User.js | Mongoose schema and model for User.                                         |
+| **public/*** | Static assets, i.e. fonts, css, js, img.                                          |
+| **public/css**/styles.less | Imports Bootstrap + a theme that overrides default Bootstrap.       |
+| **public/css/theme**/default.less | The default styles that were previously inside style.less.   |
+| **views/account/*** | Templates relating to user account.                                        |
+| **views/api/*** | Templates relating to API Examples.                                            |
+| **views/partials**/flash.jade      | Error, info and success notifications.                      |
+| **views/partials**/navigation.jade | Navbar partial template.                                    |
+| **views/partials**/footer.jade     | Footer partial template.                                    |
+| **views**/layout.jade              | Base template.                                              |
+| **views**/home.jade                | Home page template.                                         |
 
 
 :exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
