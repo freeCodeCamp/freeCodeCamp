@@ -260,13 +260,82 @@ how a particular functionality works. Maybe you are just curious about
 how it works, or maybe you are lost and confused while reading the code,
 I hope it provides some guidance to you.
 
-### How do flash messages work in this project?
-TODO
+### :bulb: How do flash messages work in this project?
+This project uses *express-flash* module for flash messages. And that
+module is built on top of *connect-flash*, which is what I used in
+this project initially. With *express-flash* you don't have to
+explicity send a flash message to every view inside `res.render`.
+All flash messages are available in your views via `messages` object by default,
+thanks to *express-flash*.
+
+Flash messages have a two-step process. You use `req.flash('errors', { msg: 'Error messages goes here' }`
+to create a flash message in your controllers, and then display them in your views:
+```jade
+if messages.errors
+  .alert.alert-danger.animated.fadeIn
+    for error in messages.errors
+      div= error.msg
+```
+In the first step, `'errors'` is the name of a flash message, which should match the
+name of the property on `messages` object in your views. You place alert messages
+inside `if message.errors` because you don't want to show them flash messages are actually present.
+The reason why you pass an error like `{ msg: 'Error messages goes here' }` instead
+of just a string - `'Error messages goes here'`, is for the sake of consistency.
+To clarify that, *express-validator* module which is used for validating and sanitizing user's input,
+returns all errors as an array of objects, where each object has a `msg` property with a message
+why an error has occured. To keep consistent with that style, you should pass all flash messages
+as `{ msg: 'My flash message' }` instead of a string. Otherwise you will just see an alert box
+without an error message. That is because, in **partials/flash.jade** template it will try to output
+`error.msg` (i.e. `"My flash message".msg`), in other words it will try to call a `msg` method on a *String* object,
+which will return *undefined*. Everything I just mentioned about errors, also applies
+to "info" and "success" flash messages, and you could even create a new one yourself, such as:
+
+**Data Usage Controller (Example)**
+```
+req.flash('warning', 'You have exceeded 90% of your data usage');
+```
+
+**User Account Page (Example)**
+```jade
+if messages.warning
+  .alert.alert-warning.animated.fadeIn
+    for warning in messages.warning
+      div= warning.msg
+```
+
+`partials/flash.jade` is a partial template that contains how flash messages
+are formatted. If you don't like the *fadeIn* animation, try something like
+*flipInX* (refer to [animate.css](http://daneden.github.io/animate.css/)), or just
+delete `.animated.fadeIn` from alerts if you don't want any animations. Or if you
+want to customize your flash messages by displaying ✔ on success flash and ✗ on error
+flash, this is the place where you would do all those customizations. Previously, flash
+messages were scattered throughout each view that used flash messages
+(contact, login, signup, profile), but now, thankfully it is uses a *DRY* approach.
+
+The flash messages partial template is *included* in the `layout.jade`, along with footer and navigation.
+```jade
+body
+  #wrap
+    include partials/navigation
+    .container
+      include partials/flash
+      block content
+  include partials/footer
+```
+
+:question: If you have any further questions about flash messages,
+please feel free to open an issue and I will update this mini-guide accordingly,
+or send a pull request if you  would like to include something that I missed.
+
+<hr>
 
 ### How "Forgot your password" works?
-TODO
 
-###
+"Forgot your password" is only partially implemented at this time
+ (Views and GET controller to display a form). Once the feature is live,
+ I will update this section.
+
+<hr>
 
 
 TODO LIST
