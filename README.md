@@ -222,6 +222,16 @@ Recommended Client-Side libraries
 
 FAQ
 ---
+### What is `cluster_app.js`?
+From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_it_works):
+> A single instance of Node runs in a single thread. To take advantage of multi-core systems
+> the user will sometimes want to launch a cluster of Node processes to handle the load.
+> The cluster module allows you to easily create child processes that all share server ports.
+
+`cluster_app.js` allows you to take advantage of this feature by forking a process of `app.js`
+for each CPU detected. For the majority of applications serving HTTP requests,
+this is a resounding boon. However, the cluster module is still in experimental stage, therefore it should only be used after understanding its purpose and behavior. To use it, simply run `node cluster_app.js`. **Its use is completely optional and `app.js` is not tied in any way to it**. As a reminder, if you plan to use `cluster_app.js` instead of `app.js`, be sure to indicate that in `Procfile` if you are deploying your app to Heroku.
+
 ### Why Jade and not Handlebars template engine?
 When I first created this project I didn't have any experience with Handlebars. Since then I have worked on Ember.js apps and got myself familiar with the Handlebars syntax. While it is true Handlebars is easier, because it looks like good old HTML, I have no regrets picking Jade over Handlebars. First off, it's the default template engine in Express, so someone who has built Express apps in the past already knows it. Secondly, I find `extends` and `block` to be indispensable, which as far as I know, Handlebars does not have out of the box. And lastly, subjectively speaking, Jade looks much cleaner and shorter than Handlebars, or any non-HAML style for that matter.
 
