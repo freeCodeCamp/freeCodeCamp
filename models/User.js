@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt-nodejs');
 
 var userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
@@ -30,7 +30,7 @@ userSchema.pre('save', function(next) {
   bcrypt.genSalt(SALT_FACTOR, function(err, salt) {
     if (err) return next(err);
 
-    bcrypt.hash(user.password, salt, function(err, hash) {
+    bcrypt.hash(user.password, salt, null, function(err, hash) {
       if (err) return next(err);
       user.password = hash;
       next();
