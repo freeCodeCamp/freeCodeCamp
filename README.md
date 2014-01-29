@@ -138,7 +138,7 @@ Obtaining API Keys
 - For **Callback URL**: http://127.0.0.1:3000/auth/twitter/callback
 - Go to **Settings** tab
 - Under *Application Type* select **Read and Write** access
-- Check the box *Allow this application to be used to Sign in with Twitter*
+- Check the box **Allow this application to be used to Sign in with Twitter**
 - Click **Update this Twitter's applications settings**
 
 <hr>
@@ -238,7 +238,8 @@ There is a big shift in the way you develop apps with Ember, Backbone, Angular
 as opposed to server-side frameworks like Express, Flask, Rails, Django. Not only
 would you need to know how to use Express in this case, but also the client-side framework of your choice,
 which in itself is not a trivial task. And then there is a whole different process
-for authentication with single page applications. It's best if you use a boilerplate of choice for your particular
+for authentication with single page applications. If you insist on using
+a client-side framework, it's best if you use a boilerplate of choice for your particular
 client-side framework and just grab the pieces you need from the Hackathon Starter.
 
 HOW IT WORKS
@@ -254,7 +255,7 @@ TODO
 ### How "Forgot your password" works?
 TODO
 
-
+###
 
 
 TODO LIST
