@@ -253,14 +253,14 @@ for authentication with single page applications. If you insist on using
 a client-side framework, it's best if you use a boilerplate of choice for your particular
 client-side framework and just grab the pieces you need from the Hackathon Starter.
 
-HOW IT WORKS
+HOW IT WORKS (mini guide series)
 ------------
 This section is intended for giving you a detailed explanation about
 how a particular functionality works. Maybe you are just curious about
 how it works, or maybe you are lost and confused while reading the code,
 I hope it provides some guidance to you.
 
-### :bulb: How do flash messages work in this project?
+###:bulb: How do flash messages work in this project?
 This project uses *express-flash* module for flash messages. And that
 module is built on top of *connect-flash*, which is what I used in
 this project initially. With *express-flash* you don't have to
@@ -328,6 +328,9 @@ please feel free to open an issue and I will update this mini-guide accordingly,
 or send a pull request if you  would like to include something that I missed.
 
 <hr>
+
+###:page_facing_up: How do I create a new page?
+TODO
 
 ### How "Forgot your password" works?
 
