@@ -63,7 +63,7 @@ app.use(express.methodOverride());
 app.use(express.session({
   secret: 'your secret code',
   store: new MongoStore({
-    db: secrets.db
+    db: mongoose.connection.db
   })
 }));
 app.use(passport.initialize());
