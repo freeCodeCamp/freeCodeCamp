@@ -423,10 +423,14 @@ We are done with the server-side business.
 You now have a choice - to include your JavaScript code in Jade templates or have all your client-side
 JavaScript in a separate file - in `main.js`. I will admit, when I first started out with Node.js and JavaScript in general,
 I placed all JavaScript code inside templates because I have access to template variables passed in from Express
-right then and there. It's the easiest thing you can do, but also the least efficient and harder to maintain.
+right then and there. It's the easiest thing you can do, but also the least efficient and harder to maintain. Since then I
+almost never include inline JavaScript inside templates anymore.
 
-But it's understandable if you take the easier road. Most of the time you don't care about performance during hackathons, you just
+But it's also understandable if you want take the easier road.
+Most of the time you don't even care about performance during hackathons, you just
 want to [*"get shit done"*](http://www.startupvitamins.com/media/products/13/aaron_levie_poster_black.jpg) before the time runs out.
+Well, either way, use whichever approach makes more sense to you. At the end of the day,
+it's **what** you build that matters, not **how** you build it.
 
 If you want to stick all your JavaScript inside templates, then in `layout.jade` -
 your main template file, add this to `head` block.
@@ -446,7 +450,8 @@ inside the `$(document).ready()`. Oh, and notice the path of socket.io file, you
 have to have `socket.io.js` file anywhere in your project, it will be generated automatically
 at runtime.
 
-And that's it, we are done!
+And that's it, we are done! If you want to see a really
+cool real-time dashboard example, refer to [pull request #23](https://github.com/sahat/hackathon-starter/pull/23/files).
 
 <hr>
 
