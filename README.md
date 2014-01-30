@@ -202,7 +202,7 @@ Recommended Node.js Libraries
 -----------------------------
 - [nodemon](https://github.com/remy/nodemon) - automatically restart node.js server on code change.
 - [geoip-lite](https://github.com/bluesmoon/node-geoip) - get geolocation coordinates from IP address.
-- [email.js](https://github.com/eleith/emailjs) - send emails with node.js (without sendgrid or mailgun).
+- [Nodemailer](https://github.com/andris9/Nodemailer) - send emails with node.js (without sendgrid or mailgun).
 - [filesize.js](http://filesizejs.com/) - make file size pretty, e.g. `filesize(265318); // "265.32 kB"`.
 - [Numeral.js](http://numeraljs.com) - a javascript library for formatting and manipulating numbers.
 
@@ -256,7 +256,17 @@ As the messages implies, you need to have a MongoDB server running before launch
 When I first started this project I didn't have any experience with Handlebars. Since then I have worked on Ember.js apps and got myself familiar with the Handlebars syntax. While it is true Handlebars is easier, because it looks like good old HTML, I have no regrets picking Jade over Handlebars. First off, it's the default template engine in Express, so someone who has built Express apps in the past already knows it. Secondly, I find `extends` and `block` to be indispensable, which as far as I know, Handlebars does not have out of the box. And lastly, subjectively speaking, Jade looks much cleaner and shorter than Handlebars, or any non-HAML style for that matter.
 
 ### Why do you have all routes defined in app.js?
-For the sake of simplicity. While there might be a better approach, such as passing `app` context to each controller as outlined in this [blog](http://timstermatic.github.io/blog/2013/08/17/a-simple-mvc-framework-with-node-and-express/), I find such style to be confusing for beginners. It took me a long time to grasp the concept of `exports` and `module.exports`, let alone having a global `app` reference in other files. That to me is a backward thinking. The `app.js` is the "center of the universe", it should be the one referencing models, routes, controllers, etc. When working solo I actually prefer to have everything in `app.js` as is the case with this REST API server for [ember-sass-express-starter's app.js file](https://github.com/sahat/ember-sass-express-starter/blob/master/app.js). That makes things so much simpler!
+For the sake of simplicity. While there might be a better approach,
+such as passing `app` context to each controller as outlined in this
+[blog](http://timstermatic.github.io/blog/2013/08/17/a-simple-mvc-framework-with-node-and-express/),
+I find such style to be confusing for beginners.
+It took me a long time to grasp the concept of `exports` and `module.exports`,
+let alone having a global `app` reference in other files.
+That to me is a backward thinking.
+The `app.js` is the "heart of the app", it should be the one referencing
+models, routes, controllers, etc.
+When working solo on small projects I actually prefer to have everything inside `app.js` as is the case with [this]((https://github.com/sahat/ember-sass-express-starter/blob/master/app.js))
+REST API server.
 
 ### I don't need a sticky footer, can I delete it?
 Absolutely. But unlike a regular footer there is a bit more work involved. First, delete `#wrap` and `#footer` ID selectors and `html, body { height: 100%; }` from **styles.less**. Next, delete `#wrap` and `#footer` lines from **layout.jade** (By the way, If no element is specified before the class or id, Jade assumes it's a `div` element). Don't forget to indent everything under `#wrap` to the left once, since this project uses two spaces per block indentation.
@@ -271,6 +281,18 @@ which in itself is not a trivial task. And then there is a whole different proce
 for authentication with single page applications. If you insist on using
 a client-side framework, it's best if you use a boilerplate of choice for your particular
 client-side framework and just grab the pieces you need from the Hackathon Starter.
+
+### Why is there no "Forgot Password" during login?
+I started working on it, but quickly realized it should be library's responsibility. It would
+add a lot of extra code to an already hefty boilerplate that people would have to go through.
+That's part of the reason. The main reason is I have never built this feature before,
+and there is no "one true way" to do it if you search the web. I don't
+want to invest a lot of time into it by putting together a quick hack, trying to mimick the way
+others have build this feature. Ideally, I wish there was node.js library that integrates
+well with *passport-local*, but AFAIK it does not exist yet. Even, [Keystone.JS](http://keystonejs.com/) - a node.js CMS does not have
+this feature. I have started working on it, but if it's really that important and you would like to continue
+it, check out the `forgot-password` branch. So far it has a template, GET controller to render that template,
+POST controller to send an email via Nodemailer.
 
 How it works (mini guide)
 -------------------------
