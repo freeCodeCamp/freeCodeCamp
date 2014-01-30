@@ -195,7 +195,6 @@ Recommended Design
 - [SpinKit](http://tobiasahlin.com/spinkit/) - 8 awesome looking spinning loaders in CSS.
 - [Creative Button Styles](http://tympanus.net/Development/CreativeButtons/) - awesome button styles.
 - [3D Dropdown Menu](http://soulwire.github.io/Makisu/) - CSS3 3D Dropdown Menu that folds and unfolds.
-- [Calendar in CSS](http://cssdeck.com/labs/vr7yddm7) - Nice looking calendar in pure HTML and CSS.
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
 - [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.
 
@@ -274,7 +273,7 @@ a client-side framework, it's best if you use a boilerplate of choice for your p
 client-side framework and just grab the pieces you need from the Hackathon Starter.
 
 HOW IT WORKS (mini guide series)
-------------
+--------------------------------
 This section is intended for giving you a detailed explanation about
 how a particular functionality works. Maybe you are just curious about
 how it works, or maybe you are lost and confused while reading the code,
@@ -351,12 +350,6 @@ or send a pull request if you  would like to include something that I missed.
 
 ### How do I create a new page?
 Todo
-
-### How "Forgot your password" works?
-
-"Forgot your password" is only partially implemented at this time
- (Views and GET controller to display a form). Once the feature is live,
- I will update this section.
 
 <hr>
 
