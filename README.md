@@ -248,9 +248,9 @@ mongoose.connection.on('error', function() {
   console.log('✗ MongoDB Connection Error. Please make sure MongoDB is running.'.red);
 });
 ```
-As the messages implies, you need to have a MongoDB server running before launching `app.js`. You can get MongoDB from
+As the message says, you need to have a MongoDB server running before launching `app.js`. You can get MongoDB from
 [mongodb.org/downloads](mongodb.org/downloads), or install it via a package manager
-([Homebrew](http://brew.sh/) on Mac, `apt-get` on Ubuntu, `yum` on Fedora, etc.)
+([Homebrew](http://brew.sh/) on Mac, **apt-get** on Ubuntu, **yum** on Fedora, etc.)
 
 ### Why Jade and not Handlebars template engine?
 When I first started this project I didn't have any experience with Handlebars. Since then I have worked on Ember.js apps and got myself familiar with the Handlebars syntax. While it is true Handlebars is easier, because it looks like good old HTML, I have no regrets picking Jade over Handlebars. First off, it's the default template engine in Express, so someone who has built Express apps in the past already knows it. Secondly, I find `extends` and `block` to be indispensable, which as far as I know, Handlebars does not have out of the box. And lastly, subjectively speaking, Jade looks much cleaner and shorter than Handlebars, or any non-HAML style for that matter.
@@ -291,7 +291,7 @@ want to invest a lot of time into it by putting together a quick hack, trying to
 others have build this feature. Ideally, I wish there was node.js library that integrates
 well with *passport-local*, but AFAIK it does not exist yet. Even, [Keystone.JS](http://keystonejs.com/) - a node.js CMS does not have
 this feature. I have started working on it, but if it's really that important and you would like to continue
-it, check out the `forgot-password` branch. So far it has a template, GET controller to render that template,
+it, check out the [forgot-password](https://github.com/sahat/hackathon-starter/tree/forgot-password) branch. So far it has a template, GET controller to render that template,
 POST controller to send an email via Nodemailer.
 
 How it works (mini guide)
@@ -370,12 +370,12 @@ or send a pull request if you  would like to include something that I missed.
 
 <hr>
 
-### How do I create a new page?
+###:snowman: How do I create a new page?
 Todo
 
 <hr>
 
-### How do I use Socket.io with Hackathon Starter?
+###:dizzy: How do I use Socket.io with Hackathon Starter?
 [Dan Stroot](https://github.com/dstroot) submitted an excellent [pull request](https://github.com/dstroot/hackathon-starter/commit/0a632def1ce8da446709d92812423d337c977d75) that adds a real-time dashboard with socket.io.
 And as  much as I'd like to add it to the project, I think it violates one of the main
 principles of the Hackathon Starter:
