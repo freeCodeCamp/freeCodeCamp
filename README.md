@@ -309,7 +309,7 @@ page and come back to the login page, that error message will be gone. It is onl
 This project uses *express-flash* module for flash messages. And that
 module is built on top of *connect-flash*, which is what I used in
 this project initially. With *express-flash* you don't have to
-explicity send a flash message to every view inside `res.render`.
+explicity send a flash message to every view inside `res.render()`.
 All flash messages are available in your views via `messages` object by default,
 thanks to *express-flash*.
 
@@ -504,12 +504,12 @@ I wouldn't even know I had to use port 8000.
 
 I am really glad that Heroku and OpenShift at least
 have a websockets support, because many other PaaS providers still do not support it.
-Due to the aforementioned issues with websockets, I cannot include socket.io as part of the Hackathon Starter. *For now*.
-If you need to use socket.io in your app, then continue reading.
+Due to the aforementioned issues with websockets, I cannot include socket.io as part of the Hackathon Starter. *For now...*
+If you need to use socket.io in your app, please continue reading.
 
 First you need to install socket.io:
 ```js
-npm install socket.io --save`
+npm install socket.io --save
 ```
 
 Replace `var app = express();` with the following code:
