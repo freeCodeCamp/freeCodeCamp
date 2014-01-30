@@ -386,14 +386,18 @@ principles of the Hackathon Starter:
 When I need to use socket.io, I **really** need it, but most of the time - I don't. But more
 importantly, websockets support is still experimental on most hosting providers. As of October 2013,
 Heroku supports websockets, but not until you opt-in by running this command:
-```
+
+```js
 heroku labs:enable websockets -a myapp
 ```
+
 And what if you are deploying to OpenShift? They do support websockets, but it is currently in a
 preview state. So, for OpenShift you would need to change the socket.io connect URI to the following:
-```
+
+```js
 var socket = io.connect('http://yoursite-namespace.rhcloud.com:8000');
 ```
+
 Wait, why is it on port 8000? Who knows, and if I didn't run across this [blog post](http://velin-georgiev-blog.appspot.com/blog/set-up-nodejs-express-socketio-application-using-websockets-on-openshift-by-red-hat/)
 I wouldn't even know I had to use port 8000.
 
@@ -403,18 +407,17 @@ Due to the aforementioned issues with websockets, I cannot include socket.io as 
 If you need to use socket.io in your app, then continue reading.
 
 First you need to install socket.io:
-```
+```js
 npm install socket.io --save`
 ```
 
 Replace `var app = express();` with the following code:
 
-```
+```js
 var app = express();
 var http = require('http');
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
-
 ```
 
 I like to have the following code organization in `app.js` (from top to bottom): module dependencies,
@@ -423,7 +426,7 @@ start the server, socket.io stuff. That way I always know where to look for thin
 
 Add the following code at the end of `app.js`:
 
-```
+```js
 io.configure(function() {
   io.set('transports', ['websocket']);
 });
@@ -456,7 +459,7 @@ it's **what** you build that matters, not **how** you build it.
 If you want to stick all your JavaScript inside templates, then in `layout.jade` -
 your main template file, add this to `head` block.
 
-```
+```jade
 script(src='/socket.io/socket.io.js?v=#{cacheBuster}')
 script.
     var socket = io.connect(window.location.href);
@@ -481,7 +484,7 @@ TODO
 ----
 - Concatenate and minify all assets via Express middleware if possible, otherwise Gulp.js. Because even with caching enabled, there is at least 50-80ms delay for each static file request (On Heroku).
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
-
+- Merge strategy for combining local + OAuth accounts for the same user
 
 Contributing
 ------------
