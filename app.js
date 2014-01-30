@@ -42,6 +42,12 @@ mongoose.connection.on('error', function() {
 /**
  * Express configuration.
  */
+
+var hour = 3600000;
+var day = (hour * 24);
+var week = (day * 7);
+var month = (day * 30);
+
 app.locals.cacheBuster = Date.now();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -69,7 +75,7 @@ app.use(function(req, res, next) {
 app.use(flash());
 app.use(less({ src: __dirname + '/public', compress: true }));
 app.use(app.router);
-app.use(express.static( path.join(__dirname, 'public'), { maxAge: 864000000 } ));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 app.use(function(req, res) {
   res.render('404', { status: 404 });
 });
@@ -114,9 +120,13 @@ app.get('/auth/google/callback', passport.authenticate('google', { successRedire
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/', failureRedirect: '/login' }));
 app.get('/auth/foursquare', passport.authorize('foursquare'));
-app.get('/auth/foursquare/callback', passport.authorize('foursquare', { failureRedirect: '/api' }), function(req, res) { res.redirect('/api/foursquare'); });
+app.get('/auth/foursquare/callback', passport.authorize('foursquare', { failureRedirect: '/api' }), function(req, res) {
+  res.redirect('/api/foursquare');
+});
 app.get('/auth/tumblr', passport.authorize('tumblr'));
-app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), function(req, res) { res.redirect('/api/tumblr'); });
+app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), function(req, res) {
+  res.redirect('/api/tumblr');
+});
 
 app.listen(app.get('port'), function() {
   console.log("✔ Express server listening on port %d in %s mode", app.get('port'), app.settings.env);
