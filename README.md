@@ -302,6 +302,10 @@ how it works, or maybe you are lost and confused while reading the code,
 I hope it provides some guidance to you.
 
 ###:bulb: How do flash messages work in this project?
+Flash messages allow you to display a message at the end of the request and access
+it on next request and only next request. For instance, on a failed login attempt, you would
+display an alert with some error message, but as soon as you refresh that page or visit a different
+page and come back to the login page, that error message will be gone. It is only displayed once.
 This project uses *express-flash* module for flash messages. And that
 module is built on top of *connect-flash*, which is what I used in
 this project initially. With *express-flash* you don't have to
