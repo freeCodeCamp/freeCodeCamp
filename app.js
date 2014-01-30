@@ -11,6 +11,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 
+var app = express();
 
 /**
  * Load controllers.
@@ -37,7 +38,6 @@ mongoose.connection.on('error', function() {
   console.log('✗ MongoDB Connection Error. Please make sure MongoDB is running.'.red);
 });
 
-var app = express();
 
 /**
  * Express configuration.
