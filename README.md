@@ -371,7 +371,104 @@ or send a pull request if you  would like to include something that I missed.
 <hr>
 
 ###:snowman: How do I create a new page?
-Todo
+A more correct way to be to say "How do I create a route". The main file `app.js` contains all the routes.
+Each route has a callback function (aka controller) associated with it. Sometimes you will see 3 or more arguments
+to routes. In cases like that, the first argument is still a URL string, the middle arguments
+are what's called middleware. Think of middleware as a door. If this door prevents you from
+continuing forward, well, you won't get to your callback function (aka controller). One such example is authentication.
+
+```js
+app.get('/account', passportConf.isAuthenticated, userController.getAccount);
+```
+
+It always goes from left to right. A user visits `/account` page. Then `isAuthenticated` middleware
+checks if you are authenticated:
+
+```js
+exports.isAuthenticated = function(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect('/login');
+};
+```
+
+If you are authenticated, you let this visitor pass through your "door" by calling `return next();`. It then proceeds to the
+next middleware until it reaches the last argument which is a callback function that usually renders a template,
+or responds with a JSON data, if you are building a REST API. But in this example it simply renders a page and nothing more:
+
+```js
+exports.getAccount = function(req, res) {
+  res.render('account/profile', {
+    title: 'Account Management'
+  });
+};
+```
+
+Express.js has `app.get`, `app.post`, `app.put`, `app.del`, but for the most part you will only use the first two.
+If you just want to display a page, then use `GET`, if you are submitting a form, sending a file then use `POST`.
+
+Here is a typical workflow of adding new routes to your application. Let's say we are building
+a page that lists all books from the database.
+
+1. Start by defining a route.
+```js
+app.get('/books', bookController.getBooks);
+
+```
+2. Create a new controller file called `book.js`.
+
+```js
+/**
+ * GET /books
+ * List all books.
+ */
+
+exports.getBooks = function(req, res) {
+  Book.find(function(err, docs) {
+    res.render('books', { books: docs });
+  });
+};
+```
+
+3. Import that controller in `app.js`.
+```js
+var bookController = require('./controllers/book');
+```
+
+4. Create a books.jade template.
+```jade
+extends layout
+
+block content
+  .page-header
+    h3 All Books
+
+  ul
+    for book in books
+      li= book.name
+```
+
+That's it! I must say that you could have combined Step 1,2,3 as following:
+
+```js
+app.get('/books', function(req, res) {
+  Book.find(function(err, docs) {
+    res.render('books', { books: docs });
+  });
+});
+```
+
+Sure, it's simpler, but as soon as you pass 1000 lines of code in `app.js` it becomes difficult to manage.
+I mean, the whole point of this boilerplate was to separate concerns, so you could
+work with your teammates without running into *MERGE CONFLICTS*. Imagine you have 4 developers
+working on a single `app.js`, I promise you it won't be fun resolving merge conflicts all the time.
+If you are the only developer then it's fine. But as I said, once it gets up to a certain LoC size, it becomes
+difficult to maintain everything in a single file.
+
+That's all there is to it. Express.js is super simple to use.
+Most of the time you will be dealing with other APIs to do the real work:
+Mongoose for querying the database, socket.io for sending and receiving messages over websockets,
+sending emails via Nodemailer, form validation using express-validatory library,
+parsing websites using Cheerio, and etc.
 
 <hr>
 
@@ -477,8 +574,6 @@ at runtime.
 And that's it, we are done!
 
 If you want to see a really cool real-time dashboard check out this [live example](http://hackathonstarter.herokuapp.com/dashboard). Refer to the [pull request #23](https://github.com/sahat/hackathon-starter/pull/23/files) to see how it is implemented.
-
-<hr>
 
 TODO
 ----
