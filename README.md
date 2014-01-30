@@ -409,13 +409,13 @@ If you just want to display a page, then use `GET`, if you are submitting a form
 Here is a typical workflow of adding new routes to your application. Let's say we are building
 a page that lists all books from the database.
 
-1. Start by defining a route.
+**Step 1.** Start by defining a route.
 ```js
 app.get('/books', bookController.getBooks);
 
 ```
-2. Create a new controller file called `book.js`.
 
+**Step 2.** Create a new controller file called `book.js`.
 ```js
 /**
  * GET /books
@@ -429,12 +429,12 @@ exports.getBooks = function(req, res) {
 };
 ```
 
-3. Import that controller in `app.js`.
+**Step 3.** Import that controller in `app.js`.
 ```js
 var bookController = require('./controllers/book');
 ```
 
-4. Create a books.jade template.
+**Step 4.** Create `books.jade` template.
 ```jade
 extends layout
 
@@ -447,7 +447,7 @@ block content
       li= book.name
 ```
 
-That's it! I must say that you could have combined Step 1,2,3 as following:
+That's it! I will say that you could have combined Step 1, 2, 3 as following:
 
 ```js
 app.get('/books', function(req, res) {
@@ -457,8 +457,8 @@ app.get('/books', function(req, res) {
 });
 ```
 
-Sure, it's simpler, but as soon as you pass 1000 lines of code in `app.js` it becomes difficult to manage.
-I mean, the whole point of this boilerplate was to separate concerns, so you could
+Sure, it's simpler, but as soon as you pass 1000 lines of code in `app.js` it becomes a little difficult to navigate the file.
+I mean, the whole point of this boilerplate project was to separate concerns, so you could
 work with your teammates without running into *MERGE CONFLICTS*. Imagine you have 4 developers
 working on a single `app.js`, I promise you it won't be fun resolving merge conflicts all the time.
 If you are the only developer then it's fine. But as I said, once it gets up to a certain LoC size, it becomes
@@ -466,9 +466,9 @@ difficult to maintain everything in a single file.
 
 That's all there is to it. Express.js is super simple to use.
 Most of the time you will be dealing with other APIs to do the real work:
-Mongoose for querying the database, socket.io for sending and receiving messages over websockets,
-sending emails via Nodemailer, form validation using express-validatory library,
-parsing websites using Cheerio, and etc.
+[Mongoose](http://mongoosejs.com/docs/guide.html) for querying the database, socket.io for sending and receiving messages over websockets,
+sending emails via [Nodemailer](http://www.nodemailer.com/), form validation using [express-validator](https://github.com/ctavan/express-validator) library,
+parsing websites using [Cheerio](https://github.com/MatthewMueller/cheerio), and etc.
 
 <hr>
 
