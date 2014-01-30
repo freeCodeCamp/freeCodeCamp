@@ -272,8 +272,8 @@ for authentication with single page applications. If you insist on using
 a client-side framework, it's best if you use a boilerplate of choice for your particular
 client-side framework and just grab the pieces you need from the Hackathon Starter.
 
-HOW IT WORKS (mini guide series)
---------------------------------
+How it works (mini guide)
+-------------------------
 This section is intended for giving you a detailed explanation about
 how a particular functionality works. Maybe you are just curious about
 how it works, or maybe you are lost and confused while reading the code,
@@ -353,14 +353,107 @@ Todo
 
 <hr>
 
+### How do I use Socket.io with Hackathon Starter?
+[Dan Stroot](https://github.com/dstroot) submitted an excellent [pull request](https://github.com/dstroot/hackathon-starter/commit/0a632def1ce8da446709d92812423d337c977d75) that adds a real-time dashboard with socket.io.
+And as  much as I'd like to add it to the project, I think it violates one of the main
+principles of the Hackathon Starter:
+> When I started this project, my primary focus was on simplicity and ease of use.
+> I also tried to make it as generic and reusable as possible to cover most use cases of
+> hackathon web apps, **without being too specific**.
 
-TODO LIST
----------
+When I need to use socket.io, I **really** need it, but most of the time - I don't. But more
+importantly, websockets support is still experimental on most hosting providers. As of October 2013,
+Heroku supports websockets, but not until you opt-in by running this command:
+```
+heroku labs:enable websockets -a myapp
+```
+And what if you are deploying to OpenShift? They do support websockets, but it is currently in a
+preview state. So, for OpenShift you would need to change the socket.io connect URI to the following:
+```
+var socket = io.connect('http://yoursite-namespace.rhcloud.com:8000');
+```
+Wait, why is it on port 8000? And why is it you don't have to specify the port number when you are
+deploying your app to Heroku? Who knows, and if I didn't run across this [blog post](http://velin-georgiev-blog.appspot.com/blog/set-up-nodejs-express-socketio-application-using-websockets-on-openshift-by-red-hat/)
+I wouldn't even know I had to use port 8000.
+
+I am really glad that Heroku and OpenShift at least
+have a websockets support, because many other PaaS providers still do not support it.
+Due to the aforementioned issues with websockets, I cannot include socket.io as part of the Hackathon Starter. *For now*.
+If you need to use socket.io in your app, then continue reading.
+
+First you need to install socket.io:
+```
+npm install socket.io --save`
+```
+
+Replace `var app = express();` with the following code:
+
+```
+var app = express();
+var http = require('http');
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
+
+```
+
+I like to have the following code organization in `app.js` (from top to bottom): module dependencies,
+import controllers, import configs, connect to database, express configuration, routes,
+start the server, socket.io stuff. That way I always know where to look for things.
+
+Add the following code at the end of `app.js`:
+
+```
+io.configure(function() {
+  io.set('transports', ['websocket']);
+});
+
+io.sockets.on('connection', function(socket) {
+  socket.emit('greet', { hello: 'Hey, Mr.Client!' });
+  socket.on('respond', function(data) {
+    console.log(data);
+  });
+  socket.on('disconnect', function() {
+    console.log('Socket disconnected');
+  });
+});
+```
+
+We are done with the server-side business.
+
+You now have a choice - to include your JavaScript code in Jade templates or have all your client-side
+JavaScript in a separate file - in `main.js`. I will admit, when I first started out with Node.js and JavaScript in general,
+I placed all JavaScript code inside templates because I have access to template variables passed in from Express
+right then and there. It's the easiest thing you can do, but also the least efficient and harder to maintain.
+
+But it's understandable if you take the easier road. Most of the time you don't care about performance during hackathons, you just
+want to [*"get shit done"*](http://www.startupvitamins.com/media/products/13/aaron_levie_poster_black.jpg) before the time runs out.
+
+If you want to stick all your JavaScript inside templates, then in `layout.jade` -
+your main template file, add this to `head` block.
+
+```
+script(src='/socket.io/socket.io.js?v=#{cacheBuster}')
+script.
+    var socket = io.connect(window.location.href);
+    socket.on('greet', function (data) {
+      console.log(data);
+      socket.emit('respond', { message: 'Hello to you too, Mr.Server!' });
+    });
+```
+
+If you want to have JavaScript code separate from templates, move that inline script code into `main.js`,
+inside the `$(document).ready()`. Oh, and notice the path of socket.io file, you don't actually
+have to have `socket.io.js` file anywhere in your project, it will be generated automatically
+at runtime.
+
+And that's it, we are done!
+
+<hr>
+
+TODO
+----
 - Concatenate and minify all assets via Express middleware if possible, otherwise Gulp.js. Because even with caching enabled, there is at least 50-80ms delay for each static file request (On Heroku).
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
-- Add more API examples.
-- Mocha tests.
-- Once things are stabilized, create a CHANGELOG.md and follow a version format so people who already use Hackathon Starter could know what are the new changes.
 
 
 Contributing
