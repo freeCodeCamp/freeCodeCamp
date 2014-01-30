@@ -372,8 +372,7 @@ preview state. So, for OpenShift you would need to change the socket.io connect 
 ```
 var socket = io.connect('http://yoursite-namespace.rhcloud.com:8000');
 ```
-Wait, why is it on port 8000? And why is it you don't have to specify the port number when you are
-deploying your app to Heroku? Who knows, and if I didn't run across this [blog post](http://velin-georgiev-blog.appspot.com/blog/set-up-nodejs-express-socketio-application-using-websockets-on-openshift-by-red-hat/)
+Wait, why is it on port 8000? Who knows, and if I didn't run across this [blog post](http://velin-georgiev-blog.appspot.com/blog/set-up-nodejs-express-socketio-application-using-websockets-on-openshift-by-red-hat/)
 I wouldn't even know I had to use port 8000.
 
 I am really glad that Heroku and OpenShift at least
