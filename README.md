@@ -449,8 +449,9 @@ inside the `$(document).ready()`. Oh, and notice the path of socket.io file, you
 have to have `socket.io.js` file anywhere in your project, it will be generated automatically
 at runtime.
 
-And that's it, we are done! If you want to see a really
-cool real-time dashboard example, refer to [pull request #23](https://github.com/sahat/hackathon-starter/pull/23/files).
+And that's it, we are done!
+
+If you want to see a really cool real-time dashboard check out this [live example](http://hackathonstarter.herokuapp.com/dashboard). Refer to the [pull request #23](https://github.com/sahat/hackathon-starter/pull/23/files) to see how it is implemented.
 
 <hr>
 
