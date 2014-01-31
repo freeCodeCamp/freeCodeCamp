@@ -175,6 +175,8 @@ Project Structure
 | **views/partials**/footer.jade     | Footer partial template.                                    |
 | **views**/layout.jade              | Base template.                                              |
 | **views**/home.jade                | Home page template.                                         |
+| app.js                             | Main application file.                                      |
+| cluster_app.js                     | Creates multiple instances of `app.js` via Node.js clusters.|
 
 
 :exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
@@ -591,6 +593,7 @@ TODO
  - Just as above but they are now signing in with a different provider.
  - A user is logged in with a provider but they try to login with the same provider again.
  - A user is logged in but they try to login with a different provider.
+
 Contributing
 ------------
 If something is unclear, confusing, or needs to be refactored, please let me know. Pull requests are always welcome, but due to the opinionated nature of this project, I cannot accept every pull request. Please open an issue before submitting a pull request.
