@@ -584,10 +584,13 @@ If you want to see a really cool real-time dashboard check out this [live exampl
 
 TODO
 ----
-- Concatenate and minify all assets via Express middleware if possible, otherwise Gulp.js. Because even with caching enabled, there is at least 50-80ms delay for each static file request (On Heroku).
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
-- Merge strategy for combining local + OAuth accounts for the same user
-
+- Authentication strategies should handles all edge cases below:
+ - A user has never used your site before. They have no User model and no Identities either.
+ - A user is logged out but they have logged into your site with a provider previously. They are now signing in with the same one again.
+ - Just as above but they are now signing in with a different provider.
+ - A user is logged in with a provider but they try to login with the same provider again.
+ - A user is logged in but they try to login with a different provider.
 Contributing
 ------------
 If something is unclear, confusing, or needs to be refactored, please let me know. Pull requests are always welcome, but due to the opinionated nature of this project, I cannot accept every pull request. Please open an issue before submitting a pull request.
