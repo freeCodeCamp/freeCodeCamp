@@ -8,22 +8,22 @@
   margin: @line-height-computed 0;
   list-style: none;
   text-align: center;
-  .clearfix();
+  &:extend(.clearfix all);
   li {
     display: inline;
     > a,
     > span {
       display: inline-block;
       padding: 5px 14px;
-      background-color: @pagination-bg;
-      border: 1px solid @pagination-border;
+      background-color: @pager-bg;
+      border: 1px solid @pager-border;
       border-radius: @pager-border-radius;
     }
 
     > a:hover,
     > a:focus {
       text-decoration: none;
-      background-color: @pagination-hover-bg;
+      background-color: @pager-hover-bg;
     }
   }
 
@@ -47,7 +47,7 @@
     > a:focus,
     > span {
       color: @pager-disabled-color;
-      background-color: @pagination-bg;
+      background-color: @pager-bg;
       cursor: not-allowed;
     }
   }

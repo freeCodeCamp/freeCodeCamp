@@ -4,8 +4,13 @@
 
 
 // Reset the box-sizing
-
-*,
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+* {
+  .box-sizing(border-box);
+}
 *:before,
 *:after {
   .box-sizing(border-box);
@@ -53,6 +58,16 @@ a {
   &:focus {
     .tab-focus();
   }
+}
+
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure {
+  margin: 0;
 }
 
 

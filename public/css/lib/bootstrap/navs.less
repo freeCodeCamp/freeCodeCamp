@@ -10,7 +10,7 @@
   margin-bottom: 0;
   padding-left: 0; // Override default ul/ol
   list-style: none;
-  .clearfix();
+  &:extend(.clearfix all);
 
   > li {
     position: relative;
@@ -48,11 +48,6 @@
     &:focus {
       background-color: @nav-link-hover-bg;
       border-color: @link-color;
-
-      .caret {
-        border-top-color: @link-hover-color;
-        border-bottom-color: @link-hover-color;
-      }
     }
   }
 
@@ -96,7 +91,7 @@
       }
     }
 
-    // Active state, and it's :hover to override normal :hover
+    // Active state, and its :hover to override normal :hover
     &.active > a {
       &,
       &:hover,
@@ -138,11 +133,6 @@
       &:focus {
         color: @nav-pills-active-link-hover-color;
         background-color: @nav-pills-active-link-hover-bg;
-
-        .caret {
-          border-top-color: @nav-pills-active-link-hover-color;
-          border-bottom-color: @nav-pills-active-link-hover-color;
-        }
       }
     }
   }
@@ -242,16 +232,6 @@
 
 // Dropdowns
 // -------------------------
-
-// Make dropdown carets use link color in navs
-.nav .caret {
-  border-top-color: @link-color;
-  border-bottom-color: @link-color;
-}
-.nav a:hover .caret {
-  border-top-color: @link-hover-color;
-  border-bottom-color: @link-hover-color;
-}
 
 // Specific dropdowns
 .nav-tabs .dropdown-menu {

@@ -10,13 +10,18 @@
   border-collapse: separate; // prevent input groups from inheriting border styles from table cells when placed within a table
 
   // Undo padding and float of grid classes
-  &.col {
+  &[class*="col-"] {
     float: none;
     padding-left: 0;
     padding-right: 0;
   }
 
   .form-control {
+    // IE9 fubars the placeholder attribute in text inputs and the arrows on
+    // select elements in input groups. To fix it, we float the input. Details:
+    // https://github.com/twbs/bootstrap/issues/11561#issuecomment-28936855
+    float: left;
+
     width: 100%;
     margin-bottom: 0;
   }
@@ -90,8 +95,10 @@
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .btn-group > .btn,
 .input-group-btn:first-child > .dropdown-toggle,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
   .border-right-radius(0);
 }
 .input-group-addon:first-child {
@@ -100,8 +107,10 @@
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .btn-group > .btn,
 .input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child) {
+.input-group-btn:first-child > .btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
   .border-left-radius(0);
 }
 .input-group-addon:last-child {
@@ -112,25 +121,37 @@
 // -------------------------
 .input-group-btn {
   position: relative;
+  // Jankily prevent input button groups from wrapping with `white-space` and
+  // `font-size` in combination with `inline-block` on buttons.
+  font-size: 0;
   white-space: nowrap;
 
+  // Negative margin for spacing, position for bringing hovered/focused/actived
+  // element above the siblings.
+  > .btn {
+    position: relative;
+    + .btn {
+      margin-left: -1px;
+    }
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active {
+      z-index: 2;
+    }
+  }
+
   // Negative margin to only have a 1px border between the two
-  &:first-child > .btn {
-    margin-right: -1px;
+  &:first-child {
+    > .btn,
+    > .btn-group {
+      margin-right: -1px;
+    }
   }
-  &:last-child > .btn {
-    margin-left: -1px;
-  }
-}
-.input-group-btn > .btn {
-  position: relative;
-  // Jankily prevent input button groups from wrapping
-  + .btn {
-    margin-left: -4px;
-  }
-  // Bring the "active" button to the front
-  &:hover,
-  &:active {
-    z-index: 2;
+  &:last-child {
+    > .btn,
+    > .btn-group {
+      margin-left: -1px;
+    }
   }
 }

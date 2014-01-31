@@ -19,8 +19,8 @@
 .clearfix() {
   &:before,
   &:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " "; // 1
+    display: table; // 2
   }
   &:after {
     clear: both;
@@ -30,7 +30,7 @@
 // WebKit-style focus
 .tab-focus() {
   // Default
-  outline: thin dotted #333;
+  outline: thin dotted;
   // WebKit
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -55,7 +55,8 @@
 // Placeholder text
 .placeholder(@color: @input-color-placeholder) {
   &:-moz-placeholder            { color: @color; } // Firefox 4-18
-  &::-moz-placeholder           { color: @color; } // Firefox 19+
+  &::-moz-placeholder           { color: @color;   // Firefox 19+
+                                  opacity: 1; } // See https://github.com/twbs/bootstrap/pull/11526
   &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
   &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
 }
@@ -87,11 +88,7 @@
 }
 // New mixin to use as of v3.0.1
 .text-hide() {
-  font: ~"0/0" a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
+  .hide-text();
 }
 
 
@@ -118,6 +115,10 @@
 }
 
 // Drop shadows
+//
+// Note: Deprecated `.box-shadow()` as of v3.1.0 since all of Bootstrap's
+//   supported browsers that have box shadow capabilities now support the
+//   standard `box-shadow` property.
 .box-shadow(@shadow) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
           box-shadow: @shadow;
@@ -150,17 +151,17 @@
 // Transformations
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
-      -ms-transform: rotate(@degrees); // IE9+
+      -ms-transform: rotate(@degrees); // IE9 only
           transform: rotate(@degrees);
 }
-.scale(@ratio) {
-  -webkit-transform: scale(@ratio);
-      -ms-transform: scale(@ratio); // IE9+
-          transform: scale(@ratio);
+.scale(@ratio; @ratio-y...) {
+  -webkit-transform: scale(@ratio, @ratio-y);
+      -ms-transform: scale(@ratio, @ratio-y); // IE9 only
+          transform: scale(@ratio, @ratio-y);
 }
 .translate(@x; @y) {
   -webkit-transform: translate(@x, @y);
-      -ms-transform: translate(@x, @y); // IE9+
+      -ms-transform: translate(@x, @y); // IE9 only
           transform: translate(@x, @y);
 }
 .skew(@x; @y) {
@@ -175,12 +176,12 @@
 
 .rotateX(@degrees) {
   -webkit-transform: rotateX(@degrees);
-      -ms-transform: rotateX(@degrees); // IE9+
+      -ms-transform: rotateX(@degrees); // IE9 only
           transform: rotateX(@degrees);
 }
 .rotateY(@degrees) {
   -webkit-transform: rotateY(@degrees);
-      -ms-transform: rotateY(@degrees); // IE9+
+      -ms-transform: rotateY(@degrees); // IE9 only
           transform: rotateY(@degrees);
 }
 .perspective(@perspective) {
@@ -196,6 +197,7 @@
 .transform-origin(@origin) {
   -webkit-transform-origin: @origin;
      -moz-transform-origin: @origin;
+      -ms-transform-origin: @origin; // IE9 only
           transform-origin: @origin;
 }
 
@@ -203,6 +205,30 @@
 .animation(@animation) {
   -webkit-animation: @animation;
           animation: @animation;
+}
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+          animation-name: @name;
+}
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+          animation-duration: @duration;
+}
+.animation-timing-function(@timing-function) {
+  -webkit-animation-timing-function: @timing-function;
+          animation-timing-function: @timing-function;
+}
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+          animation-delay: @delay;
+}
+.animation-iteration-count(@iteration-count) {
+  -webkit-animation-iteration-count: @iteration-count;
+          animation-iteration-count: @iteration-count;
+}
+.animation-direction(@direction) {
+  -webkit-animation-direction: @direction;
+          animation-direction: @direction;
 }
 
 // Backface visibility
@@ -277,10 +303,8 @@
   // Creates two color stops, start and end, by specifying a color and position for each color stop.
   // Color stops are not available in IE9 and below.
   .horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
-    background-image: -webkit-gradient(linear, @start-percent top, @end-percent top, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
-    background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1+, Chrome 10+
-    background-image: -moz-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
-    background-image:  linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
+    background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1-6, Chrome 10+
+    background-image:  linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
     background-repeat: repeat-x;
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
   }
@@ -290,47 +314,36 @@
   // Creates two color stops, start and end, by specifying a color and position for each color stop.
   // Color stops are not available in IE9 and below.
   .vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
-    background-image: -webkit-gradient(linear, left @start-percent, left @end-percent, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
-    background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // Safari 5.1+, Chrome 10+
-    background-image:  -moz-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
-    background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
+    background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
+    background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
     background-repeat: repeat-x;
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
   }
 
   .directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
     background-repeat: repeat-x;
-    background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1+, Chrome 10+
-    background-image: -moz-linear-gradient(@deg, @start-color, @end-color); // FF 3.6+
-    background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10
+    background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1-6, Chrome 10+
+    background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
   }
   .horizontal-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
-    background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
     background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
-    background-image: -moz-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
     background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
     background-repeat: no-repeat;
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
   }
   .vertical-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
     background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
-    background-image: -moz-linear-gradient(top, @start-color, @mid-color @color-stop, @end-color);
     background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
     background-repeat: no-repeat;
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
   }
   .radial(@inner-color: #555; @outer-color: #333) {
-    background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@inner-color), to(@outer-color));
     background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
-    background-image: -moz-radial-gradient(circle, @inner-color, @outer-color);
     background-image: radial-gradient(circle, @inner-color, @outer-color);
     background-repeat: no-repeat;
   }
   .striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
-    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, @color), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, @color), color-stop(.75, @color), color-stop(.75, transparent), to(transparent));
     background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
-    background-image: -moz-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
     background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
   }
 }
@@ -369,7 +382,7 @@
 //
 // Keep images from scaling beyond the width of their parents.
 
-.img-responsive(@display: block;) {
+.img-responsive(@display: block) {
   display: @display;
   max-width: 100%; // Part 1: Set a maximum relative to the parent
   height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
@@ -391,7 +404,7 @@
 
 // Panels
 // -------------------------
-.panel-variant(@border; @heading-text-color; @heading-bg-color; @heading-border;) {
+.panel-variant(@border; @heading-text-color; @heading-bg-color; @heading-border) {
   border-color: @border;
 
   & > .panel-heading {
@@ -401,9 +414,6 @@
 
     + .panel-collapse .panel-body {
       border-top-color: @border;
-    }
-    & > .dropdown .caret {
-      border-color: @heading-text-color transparent;
     }
   }
   & > .panel-footer {
@@ -430,7 +440,7 @@
 
 // Tables
 // -------------------------
-.table-row-variant(@state; @background; @border) {
+.table-row-variant(@state; @background) {
   // Exact selectors below required to override `.table-striped` and prevent
   // inheritance to nested tables.
   .table > thead > tr,
@@ -452,6 +462,34 @@
     &.@{state}:hover > td,
     &.@{state}:hover > th {
       background-color: darken(@background, 5%);
+    }
+  }
+}
+
+// List Groups
+// -------------------------
+.list-group-item-variant(@state; @background; @color) {
+  .list-group-item-@{state} {
+    color: @color;
+    background-color: @background;
+
+    a& {
+      color: @color;
+
+      .list-group-item-heading { color: inherit; }
+
+      &:hover,
+      &:focus {
+        color: @color;
+        background-color: darken(@background, 5%);
+      }
+      &.active,
+      &.active:hover,
+      &.active:focus {
+        color: #fff;
+        background-color: @color;
+        border-color: @color;
+      }
     }
   }
 }
@@ -490,6 +528,11 @@
       background-color: @background;
           border-color: @border;
     }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
   }
 }
 
@@ -538,6 +581,24 @@
   }
 }
 
+// Contextual backgrounds
+// -------------------------
+.bg-variant(@color) {
+  background-color: @color;
+  a&:hover {
+    background-color: darken(@color, 10%);
+  }
+}
+
+// Typography
+// -------------------------
+.text-emphasis-variant(@color) {
+  color: @color;
+  a&:hover {
+    color: darken(@color, 10%);
+  }
+}
+
 // Navbar vertical align
 // -------------------------
 // Vertically center elements in the navbar.
@@ -561,9 +622,10 @@
 // More easily include all the states for responsive-utilities.less.
 .responsive-visibility() {
   display: block !important;
-  tr& { display: table-row !important; }
+  table&  { display: table; }
+  tr&     { display: table-row !important; }
   th&,
-  td& { display: table-cell !important; }
+  td&     { display: table-cell !important; }
 }
 
 .responsive-invisibility() {
@@ -583,14 +645,14 @@
   margin-left: auto;
   padding-left:  (@grid-gutter-width / 2);
   padding-right: (@grid-gutter-width / 2);
-  .clearfix();
+  &:extend(.clearfix all);
 }
 
 // Creates a wrapper for a series of columns
 .make-row(@gutter: @grid-gutter-width) {
   margin-left:  (@gutter / -2);
   margin-right: (@gutter / -2);
-  .clearfix();
+  &:extend(.clearfix all);
 }
 
 // Generate the extra small columns
@@ -598,30 +660,39 @@
   position: relative;
   float: left;
   width: percentage((@columns / @grid-columns));
-  // Prevent columns from collapsing when empty
   min-height: 1px;
-  // Inner gutter via padding
   padding-left:  (@gutter / 2);
   padding-right: (@gutter / 2);
 }
+.make-xs-column-offset(@columns) {
+  @media (min-width: @screen-xs-min) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-xs-column-push(@columns) {
+  @media (min-width: @screen-xs-min) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-xs-column-pull(@columns) {
+  @media (min-width: @screen-xs-min) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
 
 // Generate the small columns
 .make-sm-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
-  // Prevent columns from collapsing when empty
   min-height: 1px;
-  // Inner gutter via padding
   padding-left:  (@gutter / 2);
   padding-right: (@gutter / 2);
 
-  // Calculate width based on number of columns available
   @media (min-width: @screen-sm-min) {
     float: left;
     width: percentage((@columns / @grid-columns));
   }
 }
-
-// Generate the small column offsets
 .make-sm-column-offset(@columns) {
   @media (min-width: @screen-sm-min) {
     margin-left: percentage((@columns / @grid-columns));
@@ -638,30 +709,26 @@
   }
 }
 
+
 // Generate the medium columns
 .make-md-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
-  // Prevent columns from collapsing when empty
   min-height: 1px;
-  // Inner gutter via padding
   padding-left:  (@gutter / 2);
   padding-right: (@gutter / 2);
 
-  // Calculate width based on number of columns available
   @media (min-width: @screen-md-min) {
     float: left;
     width: percentage((@columns / @grid-columns));
   }
 }
-
-// Generate the medium column offsets
 .make-md-column-offset(@columns) {
   @media (min-width: @screen-md-min) {
     margin-left: percentage((@columns / @grid-columns));
   }
 }
 .make-md-column-push(@columns) {
-  @media (min-width: @screen-md) {
+  @media (min-width: @screen-md-min) {
     left: percentage((@columns / @grid-columns));
   }
 }
@@ -671,23 +738,19 @@
   }
 }
 
+
 // Generate the large columns
 .make-lg-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
-  // Prevent columns from collapsing when empty
   min-height: 1px;
-  // Inner gutter via padding
   padding-left:  (@gutter / 2);
   padding-right: (@gutter / 2);
 
-  // Calculate width based on number of columns available
   @media (min-width: @screen-lg-min) {
     float: left;
     width: percentage((@columns / @grid-columns));
   }
 }
-
-// Generate the large column offsets
 .make-lg-column-offset(@columns) {
   @media (min-width: @screen-lg-min) {
     margin-left: percentage((@columns / @grid-columns));
@@ -714,11 +777,11 @@
   // Common styles for all sizes of grid columns, widths 1-12
   .col(@index) when (@index = 1) { // initial
     @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
-    .col(@index + 1, @item);
+    .col((@index + 1), @item);
   }
   .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
     @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
-    .col(@index + 1, ~"@{list}, @{item}");
+    .col((@index + 1), ~"@{list}, @{item}");
   }
   .col(@index, @list) when (@index > @grid-columns) { // terminal
     @{list} {
@@ -736,13 +799,13 @@
 .make-grid-columns-float(@class) {
   .col(@index) when (@index = 1) { // initial
     @item: ~".col-@{class}-@{index}";
-    .col(@index + 1, @item);
+    .col((@index + 1), @item);
   }
-  .col(@index, @list) when (@index < @grid-columns) { // general
+  .col(@index, @list) when (@index =< @grid-columns) { // general
     @item: ~".col-@{class}-@{index}";
-    .col(@index + 1, ~"@{list}, @{item}");
+    .col((@index + 1), ~"@{list}, @{item}");
   }
-  .col(@index, @list) when (@index = @grid-columns) { // terminal
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
     @{list} {
       float: left;
     }
@@ -775,7 +838,7 @@
 .make-grid(@index, @class, @type) when (@index >= 0) {
   .calc-grid(@index, @class, @type);
   // next iteration
-  .make-grid(@index - 1, @class, @type);
+  .make-grid((@index - 1), @class, @type);
 }
 
 
@@ -809,6 +872,10 @@
     color: @text-color;
     border-color: @border-color;
     background-color: @background-color;
+  }
+  // Optional feedback icon
+  .form-control-feedback {
+    color: @text-color;
   }
 }
 
@@ -852,7 +919,8 @@
     line-height: @input-height;
   }
 
-  textarea& {
+  textarea&,
+  select[multiple]& {
     height: auto;
   }
 }

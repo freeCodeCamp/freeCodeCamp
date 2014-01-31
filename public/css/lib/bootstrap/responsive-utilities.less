@@ -23,187 +23,71 @@
 
 
 // Visibility utilities
-
 .visible-xs {
   .responsive-invisibility();
+
   @media (max-width: @screen-xs-max) {
     .responsive-visibility();
-  }
-  &.visible-sm {
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-      .responsive-visibility();
-    }
-  }
-  &.visible-md {
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-      .responsive-visibility();
-    }
-  }
-  &.visible-lg {
-    @media (min-width: @screen-lg-min) {
-      .responsive-visibility();
-    }
   }
 }
 .visible-sm {
   .responsive-invisibility();
-  &.visible-xs {
-    @media (max-width: @screen-xs-max) {
-      .responsive-visibility();
-    }
-  }
+
   @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
     .responsive-visibility();
-  }
-  &.visible-md {
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-      .responsive-visibility();
-    }
-  }
-  &.visible-lg {
-    @media (min-width: @screen-lg-min) {
-      .responsive-visibility();
-    }
   }
 }
 .visible-md {
   .responsive-invisibility();
-  &.visible-xs {
-    @media (max-width: @screen-xs-max) {
-      .responsive-visibility();
-    }
-  }
-  &.visible-sm {
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-      .responsive-visibility();
-    }
-  }
+
   @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
     .responsive-visibility();
-  }
-  &.visible-lg {
-    @media (min-width: @screen-lg-min) {
-      .responsive-visibility();
-    }
   }
 }
 .visible-lg {
   .responsive-invisibility();
-  &.visible-xs {
-    @media (max-width: @screen-xs-max) {
-      .responsive-visibility();
-    }
-  }
-  &.visible-sm {
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-      .responsive-visibility();
-    }
-  }
-  &.visible-md {
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-      .responsive-visibility();
-    }
-  }
+
   @media (min-width: @screen-lg-min) {
     .responsive-visibility();
   }
 }
 
 .hidden-xs {
-  .responsive-visibility();
   @media (max-width: @screen-xs-max) {
     .responsive-invisibility();
   }
-  &.hidden-sm {
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-      .responsive-invisibility();
-    }
-  }
-  &.hidden-md {
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-      .responsive-invisibility();
-    }
-  }
-  &.hidden-lg {
-    @media (min-width: @screen-lg-min) {
-      .responsive-invisibility();
-    }
-  }
 }
 .hidden-sm {
-  .responsive-visibility();
-  &.hidden-xs {
-    @media (max-width: @screen-xs-max) {
-      .responsive-invisibility();
-    }
-  }
   @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
     .responsive-invisibility();
   }
-  &.hidden-md {
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-      .responsive-invisibility();
-    }
-  }
-  &.hidden-lg {
-    @media (min-width: @screen-lg-min) {
-      .responsive-invisibility();
-    }
-  }
 }
 .hidden-md {
-  .responsive-visibility();
-  &.hidden-xs {
-    @media (max-width: @screen-xs-max) {
-      .responsive-invisibility();
-    }
-  }
-  &.hidden-sm {
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-      .responsive-invisibility();
-    }
-  }
   @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
     .responsive-invisibility();
   }
-  &.hidden-lg {
-    @media (min-width: @screen-lg-min) {
-      .responsive-invisibility();
-    }
-  }
 }
 .hidden-lg {
-  .responsive-visibility();
-  &.hidden-xs {
-    @media (max-width: @screen-xs-max) {
-      .responsive-invisibility();
-    }
-  }
-  &.hidden-sm {
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-      .responsive-invisibility();
-    }
-  }
-  &.hidden-md {
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-      .responsive-invisibility();
-    }
-  }
   @media (min-width: @screen-lg-min) {
     .responsive-invisibility();
   }
 }
 
+
 // Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
 .visible-print {
   .responsive-invisibility();
-}
 
-@media print {
-  .visible-print {
+  @media print {
     .responsive-visibility();
   }
-  .hidden-print {
+}
+
+.hidden-print {
+  @media print {
     .responsive-invisibility();
   }
 }

@@ -2,17 +2,21 @@
 // List groups
 // --------------------------------------------------
 
+
 // Base class
 //
 // Easily usable on <ul>, <ol>, or <div>.
+
 .list-group {
   // No need to set list-style: none; since .list-group-item is block level
   margin-bottom: 20px;
   padding-left: 0; // reset padding because ul and ol
 }
 
+
 // Individual list items
-// -------------------------
+//
+// Use on `li`s or `div`s within the `.list-group` parent.
 
 .list-group-item {
   position: relative;
@@ -41,7 +45,12 @@
   }
 }
 
+
 // Linked list items
+//
+// Use anchor elements instead of `li`s or `div`s to create linked list items.
+// Includes an extra `.active` modifier class for showing selected items.
+
 a.list-group-item {
   color: @list-group-link-color;
 
@@ -70,13 +79,26 @@ a.list-group-item {
       color: inherit;
     }
     .list-group-item-text {
-      color: lighten(@list-group-active-bg, 40%);
+      color: @list-group-active-text-color;
     }
   }
 }
 
+
+// Contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+.list-group-item-variant(success; @state-success-bg; @state-success-text);
+.list-group-item-variant(info; @state-info-bg; @state-info-text);
+.list-group-item-variant(warning; @state-warning-bg; @state-warning-text);
+.list-group-item-variant(danger; @state-danger-bg; @state-danger-text);
+
+
 // Custom content options
-// -------------------------
+//
+// Extra classes for creating well-formatted content within `.list-group-item`s.
 
 .list-group-item-heading {
   margin-top: 0;

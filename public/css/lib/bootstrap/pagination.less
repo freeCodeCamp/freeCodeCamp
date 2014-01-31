@@ -16,6 +16,7 @@
       padding: @padding-base-vertical @padding-base-horizontal;
       line-height: @line-height-base;
       text-decoration: none;
+      color: @pagination-color;
       background-color: @pagination-bg;
       border: 1px solid @pagination-border;
       margin-left: -1px;
@@ -39,7 +40,9 @@
   > li > span {
     &:hover,
     &:focus {
+      color: @pagination-hover-color;
       background-color: @pagination-hover-bg;
+      border-color: @pagination-hover-border;
     }
   }
 
@@ -51,7 +54,7 @@
       z-index: 2;
       color: @pagination-active-color;
       background-color: @pagination-active-bg;
-      border-color: @pagination-active-bg;
+      border-color: @pagination-active-border;
       cursor: default;
     }
   }
@@ -64,8 +67,8 @@
     > a:hover,
     > a:focus {
       color: @pagination-disabled-color;
-      background-color: @pagination-bg;
-      border-color: @pagination-border;
+      background-color: @pagination-disabled-bg;
+      border-color: @pagination-disabled-border;
       cursor: not-allowed;
     }
   }

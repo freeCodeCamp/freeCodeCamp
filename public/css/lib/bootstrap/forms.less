@@ -11,6 +11,10 @@ fieldset {
   padding: 0;
   margin: 0;
   border: 0;
+  // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
+  // so we reset that to ensure it behaves more like a standard block element.
+  // See https://github.com/twbs/bootstrap/issues/12359.
+  min-width: 0;
 }
 
 legend {
@@ -33,6 +37,10 @@ label {
 
 
 // Normalize form controls
+//
+// While most of our form styles require extra classes, some basic normalization
+// is required to ensure optimum display with or without those classes to better
+// address browser inconsistencies.
 
 // Override content-box in Normalize (* isn't specific enough)
 input[type="search"] {
@@ -47,9 +55,15 @@ input[type="checkbox"] {
   line-height: normal;
 }
 
-// Set the height of select and file controls to match text inputs
+// Set the height of file controls to match text inputs
 input[type="file"] {
   display: block;
+}
+
+// Make range inputs behave like textual form controls
+input[type="range"] {
+  display: block;
+  width: 100%;
 }
 
 // Make multiple select elements height not fixed
@@ -58,28 +72,11 @@ select[size] {
   height: auto;
 }
 
-// Fix optgroup Firefox bug per https://github.com/twbs/bootstrap/issues/7611
-select optgroup {
-  font-size: inherit;
-  font-style: inherit;
-  font-family: inherit;
-}
-
-// Focus for select, file, radio, and checkbox
+// Focus for file, radio, and checkbox
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
   .tab-focus();
-}
-
-// Fix for Chrome number input
-// Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
-// See https://github.com/twbs/bootstrap/issues/8350 for more.
-input[type="number"] {
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    height: auto;
-  }
 }
 
 // Adjust output element
@@ -89,7 +86,6 @@ output {
   font-size: @font-size-base;
   line-height: @line-height-base;
   color: @input-color;
-  vertical-align: middle;
 }
 
 
@@ -123,7 +119,6 @@ output {
   font-size: @font-size-base;
   line-height: @line-height-base;
   color: @input-color;
-  vertical-align: middle;
   background-color: @input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid @input-border;
@@ -135,9 +130,6 @@ output {
   .form-control-focus();
 
   // Placeholder
-  //
-  // Placeholder text gets special styles because when browsers invalidate entire
-  // lines if it doesn't understand a selector/
   .placeholder();
 
   // Disabled and read-only inputs
@@ -149,12 +141,21 @@ output {
   fieldset[disabled] & {
     cursor: not-allowed;
     background-color: @input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content
   }
 
   // Reset height for `textarea`s
   textarea& {
     height: auto;
   }
+}
+
+// Special styles for iOS date input
+//
+// In Mobile Safari, date inputs require a pixel line-height that matches the
+// given height of the input.
+input[type="date"] {
+  line-height: @input-height-base;
 }
 
 
@@ -179,10 +180,8 @@ output {
   margin-top: 10px;
   margin-bottom: 10px;
   padding-left: 20px;
-  vertical-align: middle;
   label {
     display: inline;
-    margin-bottom: 0;
     font-weight: normal;
     cursor: pointer;
   }
@@ -230,7 +229,12 @@ input[type="checkbox"],
   }
 }
 
+
 // Form control sizing
+//
+// Build on `.form-control` with modifier classes to decrease or increase the
+// height and font-size of form controls.
+
 .input-sm {
   .input-size(@input-height-small; @padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
 }
@@ -244,17 +248,37 @@ input[type="checkbox"],
 //
 // Apply contextual and semantic states to individual form controls.
 
-// Warning
+.has-feedback {
+  // Enable absolute positioning
+  position: relative;
+
+  // Ensure icons don't overlap text
+  .form-control {
+    padding-right: (@input-height-base * 1.25);
+  }
+
+  // Feedback icon (requires .glyphicon classes)
+  .form-control-feedback {
+    position: absolute;
+    top: (@line-height-computed + 5); // Height of the `label` and its margin
+    right: 0;
+    display: block;
+    width: @input-height-base;
+    height: @input-height-base;
+    line-height: @input-height-base;
+    text-align: center;
+  }
+}
+
+// Feedback states
+.has-success {
+  .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
+}
 .has-warning {
   .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
 }
-// Error
 .has-error {
   .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
-}
-// Success
-.has-success {
-  .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
 }
 
 
@@ -296,9 +320,9 @@ input[type="checkbox"],
 .form-inline {
 
   // Kick in the inline
-  @media (min-width: @screen-sm) {
+  @media (min-width: @screen-sm-min) {
     // Inline-block all the things for "inline"
-    .form-group  {
+    .form-group {
       display: inline-block;
       margin-bottom: 0;
       vertical-align: middle;
@@ -307,6 +331,13 @@ input[type="checkbox"],
     // In navbar-form, allow folks to *not* use `.form-group`
     .form-control {
       display: inline-block;
+      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      vertical-align: middle;
+    }
+
+    .control-label {
+      margin-bottom: 0;
+      vertical-align: middle;
     }
 
     // Remove default margin on radios/checkboxes that were used for stacking, and
@@ -318,11 +349,20 @@ input[type="checkbox"],
       margin-top: 0;
       margin-bottom: 0;
       padding-left: 0;
+      vertical-align: middle;
     }
     .radio input[type="radio"],
     .checkbox input[type="checkbox"] {
       float: none;
       margin-left: 0;
+    }
+
+    // Validation states
+    //
+    // Reposition the icon because it's now within a grid column and columns have
+    // `position: relative;` on them. Also accounts for the grid gutter padding.
+    .has-feedback .form-control-feedback {
+      top: 0;
     }
   }
 }
@@ -345,6 +385,12 @@ input[type="checkbox"],
     margin-bottom: 0;
     padding-top: (@padding-base-vertical + 1); // Default padding plus a border
   }
+  // Account for padding we're adding to ensure the alignment and of help text
+  // and other content below items
+  .radio,
+  .checkbox {
+    min-height: (@line-height-computed + (@padding-base-vertical + 1));
+  }
 
   // Make form groups behave like rows
   .form-group {
@@ -360,5 +406,14 @@ input[type="checkbox"],
     .control-label {
       text-align: right;
     }
+  }
+
+  // Validation states
+  //
+  // Reposition the icon because it's now within a grid column and columns have
+  // `position: relative;` on them. Also accounts for the grid gutter padding.
+  .has-feedback .form-control-feedback {
+    top: 0;
+    right: (@grid-gutter-width / 2);
   }
 }
