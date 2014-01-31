@@ -33,20 +33,52 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, passw
   });
 }));
 
+/**
+ * Sign in with Facebook.
+ *
+ * Possible authentication states:
+ *
+ * 1. User is logged in.
+ *   a. Already signed in with Facebook before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
+ *   b. First time signing in with Facebook. (ADD FACEBOOK ID TO EXISTING USER)
+ * 2. User is not logged in.
+ *   a. Already signed with Facebook before. (LOGIN)
+ *   b. First time signing in with Facebook. (CREATE ACCOUNT)
+ */
+
 passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findById(req.user.id, function(err, user) {
-      user.facebook = profile.id;
-      user.tokens.push({ kind: 'facebook', accessToken: accessToken });
-      user.profile.name = user.profile.name || profile.displayName;
-      user.profile.gender = user.profile.gender || profile._json.gender;
-      user.profile.picture = user.profile.picture || profile._json.profile_image_url;
-      user.save(function(err) {
-        done(err, user);
-      });
+    User.findOne({ facebook: profile.id }, function(err, existingUser) {
+      if (existingUser) {
+        existingUser.github = existingUser.github || req.user.github;
+        existingUser.google = existingUser.google || req.user.google;
+        existingUser.twitter = existingUser.twitter || req.user.twitter;
+        existingUser.email = existingUser.email || req.user.email;
+        existingUser.password = existingUser.password || req.user.password;
+        existingUser.profile = existingUser.profile || req.user.profile;
+        existingUser.tokens = _.union(existingUser.tokens, req.user.tokens);
+        existingUser.save(function(err) {
+          User.remove({ _id: req.user.id }, function(err) {
+            req.flash('info', { msg: 'Your accont has been merged with an existing one.' });
+            return done(null, existingUser);
+          });
+        });
+      } else {
+        User.findById(req.user.id, function(err, user) {
+          user.facebook = profile.id;
+          user.tokens.push({ kind: 'facebook', accessToken: accessToken });
+          user.profile.name = user.profile.name || profile.displayName;
+          user.profile.gender = user.profile.gender || profile._json.gender;
+          user.profile.picture = user.profile.picture || profile._json.profile_image_url;
+          user.save(function(err) {
+            done(err, user);
+          });
+        });
+      }
     });
   } else {
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
+      console.log(profile);
       if (existingUser) return done(null, existingUser);
       var user = new User();
       user.email = profile._json.email;
