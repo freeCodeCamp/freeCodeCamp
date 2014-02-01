@@ -50,8 +50,9 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
   if (req.user) {
     User.findOne({ $or: [{ facebook: profile.id }, { email: profile.email }] }, function(err, existingUser) {
       if (existingUser) {
-        existingUser.github = existingUser.github || req.user.github;
+        existingUser.facebook = existingUser.facebook || req.user.facebook;
         existingUser.google = existingUser.google || req.user.google;
+        existingUser.github = existingUser.github || req.user.github;
         existingUser.twitter = existingUser.twitter || req.user.twitter;
         existingUser.email = existingUser.email || req.user.email;
         existingUser.password = existingUser.password || req.user.password;
@@ -113,6 +114,7 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
       if (existingUser) {
         existingUser.facebook = existingUser.facebook || req.user.facebook;
         existingUser.google = existingUser.google || req.user.google;
+        existingUser.github = existingUser.github || req.user.github;
         existingUser.twitter = existingUser.twitter || req.user.twitter;
         existingUser.email = existingUser.email || req.user.email;
         existingUser.password = existingUser.password || req.user.password;
@@ -174,8 +176,9 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
     User.findOne({ $or: [{ twitter: profile.id }, { email: profile.email }] }, function(err, existingUser) {
       if (existingUser) {
         existingUser.facebook = existingUser.facebook || req.user.facebook;
-        existingUser.github = existingUser.github || req.user.github;
         existingUser.google = existingUser.google || req.user.google;
+        existingUser.twitter = existingUser.twitter || req.user.twitter;
+        existingUser.github = existingUser.github || req.user.github;
         existingUser.email = existingUser.email || req.user.email;
         existingUser.password = existingUser.password || req.user.password;
         existingUser.profile = existingUser.profile || req.user.profile;
@@ -235,6 +238,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
     User.findOne({ $or: [{ google: profile.id }, { email: profile.email }] }, function(err, existingUser) {
       if (existingUser) {
         existingUser.facebook = existingUser.facebook || req.user.facebook;
+        existingUser.google = existingUser.google || req.user.google;
         existingUser.github = existingUser.github || req.user.github;
         existingUser.twitter = existingUser.twitter || req.user.twitter;
         existingUser.email = existingUser.email || req.user.email;
