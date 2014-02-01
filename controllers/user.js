@@ -90,7 +90,7 @@ exports.postSignup = function(req, res, next) {
   user.save(function(err) {
     if (err) {
       if (err.code === 11000) {
-        req.flash('errors', { msg: 'User already exists.' });
+        req.flash('errors', { msg: 'User with that email already exists.' });
       }
       return res.redirect('/signup');
     }
@@ -195,6 +195,7 @@ exports.getOauthUnlink = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
+      req.flash('info', { msg: provider + ' account has been unlinked.' });
       res.redirect('/account');
     });
   });
