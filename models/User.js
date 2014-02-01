@@ -5,12 +5,11 @@ var userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
 
-  tokens: Array,
-  provider: String,
   facebook: { type: String, unique: true, sparse: true },
   twitter: { type: String, unique: true, sparse: true },
   google: { type: String, unique: true, sparse: true },
   github: { type: String, unique: true, sparse: true },
+  tokens: Array,
 
   profile: {
     name: { type: String, default: '' },
@@ -20,6 +19,10 @@ var userSchema = new mongoose.Schema({
     picture: { type: String, default: '' }
   }
 });
+
+/**
+ * Hash the password for security.
+ */
 
 userSchema.pre('save', function(next) {
   var user = this;
