@@ -35,15 +35,6 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, passw
 
 /**
  * Sign in with Facebook.
- *
- * Possible authentication states:
- *
- * 1. User is logged in.
- *   a. Already signed in with Facebook before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
- *   b. First time signing in with Facebook. (ADD FACEBOOK ID TO EXISTING USER)
- * 2. User is not logged in.
- *   a. Already signed with Facebook before. (LOGIN)
- *   b. First time signing in with Facebook. (CREATE ACCOUNT)
  */
 
 passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, refreshToken, profile, done) {
@@ -86,15 +77,6 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
 
 /**
  * Sign in with GitHub.
- *
- * Possible authentication states:
- *
- * 1. User is logged in.
- *   a. Already signed in with GitHub before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
- *   b. First time signing in with GitHub. (ADD GITHUB ID TO EXISTING USER)
- * 2. User is not logged in.
- *   a. Already signed with GitHub before. (LOGIN)
- *   b. First time signing in with GitHub. (CREATE ACCOUNT)
  */
 
 passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refreshToken, profile, done) {
