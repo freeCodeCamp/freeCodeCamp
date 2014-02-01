@@ -253,12 +253,12 @@ added to `package.json` as well. For example, `npm install moment --save`.
 asynchronous tasks, and then render a page, but only when all tasks are completed. For example, you might
 want to scrape 3 different websites for some data (async operation) and render the results
 on a page after all 3 websites have been scraped.
-- Want to find a specific object in an array? Use *Underscore's* [_.findWhere](http://underscorejs.org/#findWhere)
+- Need to find a specific object in an array? Use [_.findWhere](http://underscorejs.org/#findWhere) function from Underscore.js.
 
 
 FAQ
 ---
-### What is `cluster_app.js`?
+### What is cluster_app.js?
 From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_it_works):
 > A single instance of Node runs in a single thread. To take advantage of multi-core systems
 > the user will sometimes want to launch a cluster of Node processes to handle the load.
