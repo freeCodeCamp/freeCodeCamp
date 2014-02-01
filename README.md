@@ -306,6 +306,58 @@ how a particular functionality works. Maybe you are just curious about
 how it works, or maybe you are lost and confused while reading the code,
 I hope it provides some guidance to you.
 
+###:rose: Custom HTML and CSS Design 101
+[HTML5 UP](http://html5up.net/) has many beautiful templates that you can download for free, like the ones you see below:
+![Alt](http://html5up.net/uploads/previews/6742121165068310.jpg)
+![Alt](http://html5up.net/uploads/previews/9257227011867312.jpg)
+
+When you download the ZIP file, it will come with *index.html*, *images*, *css* and *js* folders. So, how do you
+integrate it with Hackathon Starter? Hackathon Starter uses Bootstrap CSS framework, but these templates do not.
+Trying to use both CSS files at the same time will likely result in undesired effects.
+
+:exclamation: **Note:** Using the custom templates approach, you should understand that you cannot reuse any of the views I have created: layout, home page, api browser, login, signup, account management, contact. Those views were built using Bootstrap grid and styles. You will have to manually update the grid using a different syntax provided in the template. **Having said that, you can mix and match if you want to do so: Use Bootstrap for main app interface, and a custom template for a landing page.** 
+
+Let's start from the beginning. For this example I will use [Escape Velocity](http://html5up.net/escape-velocity/) template:
+![Alt](http://html5up.net/uploads/previews/6330653905846315.jpg)
+
+**Note**: For the sake of simplicity I will only consider `index.html`, and skip `left-sidebar.html`,
+`no-sidebar.html`, `right-sidebar.html`.
+
+Move all javascript files from `html5up-escape-velocity/js` to `public/js`. Then move all css files from `html5up-escape-velocity/css` to `public/css`. And finally, move all images from `html5up-escape-velocity/images` to `public/images` (You could move it to the existing **img** folder, but then you would have to manually change every `img` reference). Grab the contents of `index.html` and paste it into [HTML To Jade](http://html2jade.aaron-powell.com/).
+
+Create a new file `escape-velocity.jade` and paste the Jade markup there. Change `!!! 5` to `doctype html`. It's a fairly recent
+change in **Jade** language, but http://html2jade.aaron-powell.com hasn't caught up to this change yet.
+
+Let's see how it looks. Create a new controller html5up in `controllers/home.js`.
+
+```js
+exports.escapeVelocity = function(req, res) {
+  res.render('escape-velocity', {
+    title: 'Landing Page'
+  });
+};
+```
+
+And then create a route in `app.js`. I placed it right after the index controller:
+```js
+app.get('/escape-velocity', homeController.escapeVelocity);
+```
+
+Restart the server (if you are not using **nodemon**), then you should see the new template at http://localhost:3000/escape-velocity.
+
+I will stop here, but if you would like to use this template as more than just a single page, take a look at how these Jade templates work: `layout.jade` - base template, `index.jade` - home page, `partials/navigation` - Bootstrap navbar, `partials/footer` - Sticky footer. You will have to manually break it apart into smaller pieces. Figure out which part of the template you want to keep the same on all pages - that's your new `layout.jade`. Then, each page that changes, be it `index.jade`, `about.jade`, `contact.jade` will be included in the new `layout.jade` via:
+
+```jade
+extends layout
+
+block content
+  // your markup goes here
+```
+
+This is a lengthy process, I know, and templates you get from outside **HTML5** UP, will have yet another grid system. That's why I chose Bootstrap CSS for the Hackathon Starter. Most peopel are familiar with Bootstrap, it's easy to get started, very extendable. You can also buy a Bootstrap theme and just drop it in into your project and everything looks great without a single change to your markup or CSS class names. However, if you would like to go with a completely custom design, there you have it! 
+
+<hr>
+
 ###:bulb: How do flash messages work in this project?
 Flash messages allow you to display a message at the end of the request and access
 it on next request and only next request. For instance, on a failed login attempt, you would
