@@ -199,6 +199,7 @@ Recommended Design
 - [3D Dropdown Menu](http://soulwire.github.io/Makisu/) - CSS3 3D Dropdown Menu that folds and unfolds.
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
 - [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.
+- [HTML5UP](http://html5up.net/) - Beautifully designed HTML templates.
 
 Recommended Node.js Libraries
 -----------------------------
