@@ -59,8 +59,8 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
         existingUser.tokens = _.union(existingUser.tokens, req.user.tokens);
         existingUser.save(function(err) {
           User.remove({ _id: req.user.id }, function(err) {
-            req.flash('info', { msg: 'Your account has been merged with an existing one that belongs to you' });
-            return done(null, existingUser);
+            req.flash('info', { msg: 'Your accounts have been merged' });
+            return done(err, existingUser);
           });
         });
       } else {
@@ -94,18 +94,49 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
   }
 }));
 
+/**
+ * Sign in with GitHub.
+ *
+ * Possible authentication states:
+ *
+ * 1. User is logged in.
+ *   a. Already signed in with GitHub before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
+ *   b. First time signing in with GitHub. (ADD GITHUB ID TO EXISTING USER)
+ * 2. User is not logged in.
+ *   a. Already signed with GitHub before. (LOGIN)
+ *   b. First time signing in with GitHub. (CREATE ACCOUNT)
+ */
+
 passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findById(req.user.id, function(err, user) {
-      user.github = profile.id;
-      user.tokens.push({ kind: 'github', accessToken: accessToken });
-      user.profile.name = user.profile.name || profile.displayName;
-      user.profile.picture = user.profile.picture || profile._json.avatar_url;
-      user.profile.location = user.profile.location || profile._json.location;
-      user.profile.website = user.profile.website || profile._json.blog;
-      user.save(function(err) {
-        done(err, user);
-      });
+    User.findOne({ $or: [{ github: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+      if (existingUser) {
+        existingUser.facebook = existingUser.facebook || req.user.facebook;
+        existingUser.google = existingUser.google || req.user.google;
+        existingUser.twitter = existingUser.twitter || req.user.twitter;
+        existingUser.email = existingUser.email || req.user.email;
+        existingUser.password = existingUser.password || req.user.password;
+        existingUser.profile = existingUser.profile || req.user.profile;
+        existingUser.tokens = _.union(existingUser.tokens, req.user.tokens);
+        existingUser.save(function(err) {
+          User.remove({ _id: req.user.id }, function(err) {
+            req.flash('info', { msg: 'Your accounts have been merged' });
+            return done(err, existingUser);
+          });
+        });
+      } else {
+        User.findById(req.user.id, function(err, user) {
+          user.github = profile.id;
+          user.tokens.push({ kind: 'github', accessToken: accessToken });
+          user.profile.name = user.profile.name || profile.displayName;
+          user.profile.picture = user.profile.picture || profile._json.avatar_url;
+          user.profile.location = user.profile.location || profile._json.location;
+          user.profile.website = user.profile.website || profile._json.blog;
+          user.save(function(err) {
+            done(err, user);
+          });
+        });
+      }
     });
   } else {
     User.findOne({ github: profile.id }, function(err, existingUser) {
@@ -154,17 +185,49 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
   }
 }));
 
+/**
+ * Sign in with Google.
+ *
+ * Possible authentication states:
+ *
+ * 1. User is logged in.
+ *   a. Already signed in with Google before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
+ *   b. First time signing in with Google. (ADD GOOGLE ID TO EXISTING USER)
+ * 2. User is not logged in.
+ *   a. Already signed with GitHub before. (LOGIN)
+ *   b. First time signing in with Google. (CREATE ACCOUNT)
+ */
+
 passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findById(req.user.id, function(err, user) {
-      user.google = profile.id;
-      user.tokens.push({ kind: 'google', accessToken: accessToken });
-      user.profile.name = user.profile.name || profile.displayName;
-      user.profile.gender = user.profile.gender || profile._json.gender;
-      user.profile.picture = user.profile.picture || profile._json.picture;
-      user.save(function(err) {
-        done(err, user);
-      });
+
+    User.findOne({ $or: [{ google: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+      if (existingUser) {
+        existingUser.facebook = existingUser.facebook || req.user.facebook;
+        existingUser.github = existingUser.github || req.user.github;
+        existingUser.twitter = existingUser.twitter || req.user.twitter;
+        existingUser.email = existingUser.email || req.user.email;
+        existingUser.password = existingUser.password || req.user.password;
+        existingUser.profile = existingUser.profile || req.user.profile;
+        existingUser.tokens = _.union(existingUser.tokens, req.user.tokens);
+        existingUser.save(function(err) {
+          User.remove({ _id: req.user.id }, function(err) {
+            req.flash('info', { msg: 'Your accounts have been merged' });
+            return done(err, existingUser);
+          });
+        });
+      } else {
+        User.findById(req.user.id, function(err, user) {
+          user.google = profile.id;
+          user.tokens.push({ kind: 'google', accessToken: accessToken });
+          user.profile.name = user.profile.name || profile.displayName;
+          user.profile.gender = user.profile.gender || profile._json.gender;
+          user.profile.picture = user.profile.picture || profile._json.picture;
+          user.save(function(err) {
+            done(err, user);
+          });
+        });
+      }
     });
   } else {
     User.findOne({ google: profile.id }, function(err, existingUser) {
