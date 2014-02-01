@@ -34,21 +34,21 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, passw
 }));
 
 /**
- * Sign in with Facebook.
- *
- * Possible authentication states:
- *
- * 1. User is logged in.
- *   a. Already signed in with Facebook before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
- *   b. First time signing in with Facebook. (ADD FACEBOOK ID TO EXISTING USER)
- * 2. User is not logged in.
- *   a. Already signed with Facebook before. (LOGIN)
- *   b. First time signing in with Facebook. (CREATE ACCOUNT)
- */
+* Sign in with Facebook.
+*
+* Possible authentication states:
+*
+* 1. User is logged in.
+*   a. Already signed in with Facebook before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
+*   b. First time signing in with Facebook. (ADD FACEBOOK ID TO EXISTING USER)
+* 2. User is not logged in.
+*   a. Already signed with Facebook before. (LOGIN)
+*   b. First time signing in with Facebook. (CREATE ACCOUNT)
+*/
 
 passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findOne({ facebook: profile.id }, function(err, existingUser) {
+    User.findOne({ $or: [{ facebook: profile.id }, { email: profile.email }] }, function(err, existingUser) {
       if (existingUser) {
         existingUser.github = existingUser.github || req.user.github;
         existingUser.google = existingUser.google || req.user.google;
@@ -59,7 +59,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
         existingUser.tokens = _.union(existingUser.tokens, req.user.tokens);
         existingUser.save(function(err) {
           User.remove({ _id: req.user.id }, function(err) {
-            req.flash('info', { msg: 'Your accont has been merged with an existing one.' });
+            req.flash('info', { msg: 'Your account has been merged with an existing one that belongs to you' });
             return done(null, existingUser);
           });
         });
@@ -69,7 +69,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
           user.tokens.push({ kind: 'facebook', accessToken: accessToken });
           user.profile.name = user.profile.name || profile.displayName;
           user.profile.gender = user.profile.gender || profile._json.gender;
-          user.profile.picture = user.profile.picture || profile._json.profile_image_url;
+          user.profile.picture = user.profile.picture || 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
           user.save(function(err) {
             done(err, user);
           });
@@ -78,7 +78,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
     });
   } else {
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
-      console.log(profile);
+      console.log(profile)
       if (existingUser) return done(null, existingUser);
       var user = new User();
       user.email = profile._json.email;
@@ -86,7 +86,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
       user.tokens.push({ kind: 'facebook', accessToken: accessToken });
       user.profile.name = profile.displayName;
       user.profile.gender = profile._json.gender;
-      user.profile.picture = profile._json.profile_image_url;
+      user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
       user.save(function(err) {
         done(err, user);
       });
