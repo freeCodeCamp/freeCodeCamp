@@ -195,6 +195,7 @@ exports.getOauthUnlink = function(req, res, next) {
 
     user.save(function(err) {
       if (err) return next(err);
+      req.flash('info', { msg: provider + ' account has been unlinked.' });
       res.redirect('/account');
     });
   });
