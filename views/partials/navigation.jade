@@ -10,17 +10,11 @@
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li(class=title=='Home'?'active':undefined)
-          a(href='/')
-            i.fa.fa-home
-            | Home
+          a(href='/') Home
         li(class=title=='API Browser'?'active':undefined)
-          a(href='/api')
-            i.fa.fa-cogs
-            | API Browser
+          a(href='/api') API Browser
         li(class=title=='Contact'?'active':undefined)
-          a(href='/contact')
-            i.fa.fa-envelope-o
-            | Contact
+          a(href='/contact') Contact
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=title=='Login'?'active':undefined)
