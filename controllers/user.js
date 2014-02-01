@@ -90,7 +90,7 @@ exports.postSignup = function(req, res, next) {
   user.save(function(err) {
     if (err) {
       if (err.code === 11000) {
-        req.flash('errors', { msg: 'User already exists.' });
+        req.flash('errors', { msg: 'User with that email already exists.' });
       }
       return res.redirect('/signup');
     }
