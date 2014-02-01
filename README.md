@@ -329,7 +329,7 @@ Move all javascript files from `html5up-escape-velocity/js` to `public/js`. Then
 Create a new file `escape-velocity.jade` and paste the Jade markup there. Change `!!! 5` to `doctype html`. It's a fairly recent
 change in **Jade** language, but http://html2jade.aaron-powell.com hasn't caught up to this change yet.
 
-Let's see how it looks. Create a new controller html5up in `controllers/home.js`.
+Let's see how it looks. Create a new controller **escapeVelocity** inside `controllers/home.js`:
 
 ```js
 exports.escapeVelocity = function(req, res) {
@@ -344,18 +344,16 @@ And then create a route in `app.js`. I placed it right after the index controlle
 app.get('/escape-velocity', homeController.escapeVelocity);
 ```
 
-Restart the server (if you are not using **nodemon**), then you should see the new template at http://localhost:3000/escape-velocity.
+Restart the server (if you are not using **nodemon**), then you should see the new template at [http://localhost:3000/escape-velocity](http://localhost:3000/escape-velocity).
 
-I will stop here, but if you would like to use this template as more than just a single page, take a look at how these Jade templates work: `layout.jade` - base template, `index.jade` - home page, `partials/navigation` - Bootstrap navbar, `partials/footer` - Sticky footer. You will have to manually break it apart into smaller pieces. Figure out which part of the template you want to keep the same on all pages - that's your new `layout.jade`. Then, each page that changes, be it `index.jade`, `about.jade`, `contact.jade` will be included in the new `layout.jade` via:
+I will stop here, but if you would like to use this template as more than just a single page, take a look at how these Jade templates work: `layout.jade` - base template, `index.jade` - home page, `partials/navigation.jade` - Bootstrap navbar, `partials/footer.jade` - sticky footer. You will have to manually break it apart into smaller pieces. Figure out which part of the template you want to keep the same on all pages - that's your new `layout.jade`.
+Then, each page that changes, be it `index.jade`, `about.jade`, `contact.jade`
+will be embedded in the new `layout.jade` via `block content`.
 
-```jade
-extends layout
-
-block content
-  // your markup goes here
-```
-
-This is a lengthy process, I know, and templates you get from outside **HTML5** UP, will have yet another grid system. That's why I chose Bootstrap CSS for the Hackathon Starter. Most peopel are familiar with Bootstrap, it's easy to get started, very extendable. You can also buy a Bootstrap theme and just drop it in into your project and everything looks great without a single change to your markup or CSS class names. However, if you would like to go with a completely custom design, there you have it! 
+This is a lengthy process, I know, and templates you get from outside **HTML5**UP,
+will have yet another grid system. That's why I chose Bootstrap CSS for the Hackathon Starter.
+ Most people are familiar with Bootstrap, it's easy to get started, very extendable.
+ You can also buy a Bootstrap theme drop it in into your project, and everything looks great without a single change to your markup or CSS class names. However, if you would like to go with a completely custom design, there you have it!
 
 <hr>
 
