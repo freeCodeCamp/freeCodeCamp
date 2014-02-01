@@ -90,7 +90,6 @@ need to go through each provider to generate new credentials.
 
 Obtaining API Keys
 ------------------
-
 <img src="http://images.google.com/intl/en_ALL/images/srpr/logo6w.png" width="200">
 - Visit [Google Cloud Console](https://cloud.google.com/console/project)
 - Click **CREATE PROJECT** button
@@ -102,9 +101,7 @@ Obtaining API Keys
  - **Authorized redirect URI**: http://localhost:3000/auth/google/callback
 - Copy and paste *Client ID* and *Client secret* keys into `config/secrets.js`
 
->:exclamation: **Note**: When you ready to deploy to production don't forget to add
->    your new url to Authorized Javascript origins and Authorized redirect URI,
->   e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively.
+:exclamation: **Note**: When you ready to deploy to production don't forget to add your new url to **Authorized Javascript origins** and **Authorized redirect URI**, e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively. The same goes for other providers.
 
 <hr>
 
@@ -169,10 +166,10 @@ Obtaining API Keys
 
 <img src="http://www.athgo.org/ablog/wp-content/uploads/2013/02/tumblr_logo.png" width="200">
 - Go to http://www.tumblr.com/oauth/apps
-- Once signed in, click **+ Register application**
+- Once signed in, click **+Register application**
 - Fill in all the details
 - For **Default Callback URL**: http://localhost:3000/auth/tumblr/callback
-- Click **✔ Register**
+- Click **✔Register**
 - Copy and paste *OAuth consumer key* and *OAuth consumer secret* keys into `config/secrets.js`
 
 Project Structure
