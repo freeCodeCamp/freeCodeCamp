@@ -50,24 +50,8 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
   if (req.user) {
     User.findOne({ $or: [{ facebook: profile.id }, { email: profile.email }] }, function(err, existingUser) {
       if (existingUser) {
-        console.log(existingUser.facebook)
-        console.log(req.user.facebook)
-        console.log(existingUser.google)
-        console.log(req.user.google)
-        existingUser.facebook = existingUser.facebook || req.user.facebook;
-        existingUser.google = existingUser.google || req.user.google;
-        existingUser.github = existingUser.github || req.user.github;
-        existingUser.twitter = existingUser.twitter || req.user.twitter;
-        existingUser.email = existingUser.email || req.user.email;
-        existingUser.password = existingUser.password || req.user.password;
-        existingUser.profile = existingUser.profile || req.user.profile;
-        existingUser.tokens = _.union(existingUser.tokens, req.user.tokens);
-        existingUser.save(function(err) {
-          User.remove({ _id: req.user.id }, function(err) {
-            req.flash('info', { msg: 'Your accounts have been merged' });
-            return done(err, existingUser);
-          });
-        });
+        req.flash('errors', { msg: 'There is already a Facebook account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+        done(err);
       } else {
         User.findById(req.user.id, function(err, user) {
           user.facebook = profile.id;
@@ -76,6 +60,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
           user.profile.gender = user.profile.gender || profile._json.gender;
           user.profile.picture = user.profile.picture || 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
           user.save(function(err) {
+            req.flash('info', { msg: 'Facebook account has been linked.' });
             done(err, user);
           });
         });
@@ -116,20 +101,8 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
   if (req.user) {
     User.findOne({ $or: [{ github: profile.id }, { email: profile.email }] }, function(err, existingUser) {
       if (existingUser) {
-        existingUser.facebook = existingUser.facebook || req.user.facebook;
-        existingUser.google = existingUser.google || req.user.google;
-        existingUser.github = existingUser.github || req.user.github;
-        existingUser.twitter = existingUser.twitter || req.user.twitter;
-        existingUser.email = existingUser.email || req.user.email;
-        existingUser.password = existingUser.password || req.user.password;
-        existingUser.profile = existingUser.profile || req.user.profile;
-        existingUser.tokens = _.union(existingUser.tokens, req.user.tokens);
-        existingUser.save(function(err) {
-          User.remove({ _id: req.user.id }, function(err) {
-            req.flash('info', { msg: 'Your accounts have been merged' });
-            return done(err, existingUser);
-          });
-        });
+        req.flash('errors', { msg: 'There is already a GitHub account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+        done(err);
       } else {
         User.findById(req.user.id, function(err, user) {
           user.github = profile.id;
@@ -139,6 +112,7 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
           user.profile.location = user.profile.location || profile._json.location;
           user.profile.website = user.profile.website || profile._json.blog;
           user.save(function(err) {
+            req.flash('info', { msg: 'GitHub account has been linked.' });
             done(err, user);
           });
         });
@@ -164,37 +138,14 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
 
 /**
  * Sign in with Twitter.
- *
- * Possible authentication states:
- *
- * 1. User is logged in.
- *   a. Already signed in with Twitter before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
- *   b. First time signing in with Twitter. (ADD TWITTER ID TO EXISTING USER)
- * 2. User is not logged in.
- *   a. Already signed with Twitter before. (LOGIN)
- *   b. First time signing in with Twitter. (CREATE ACCOUNT)
  */
 
 passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tokenSecret, profile, done) {
   if (req.user) {
     User.findOne({ twitter: profile.id }, function(err, existingUser) {
       if (existingUser) {
-        existingUser.facebook = existingUser.facebook || req.user.facebook;
-        existingUser.google = existingUser.google || req.user.google;
-        existingUser.twitter = existingUser.twitter || req.user.twitter;
-        existingUser.github = existingUser.github || req.user.github;
-        existingUser.email = req.user.email;
-        existingUser.password = existingUser.password || req.user.password;
-        existingUser.profile = existingUser.profile || req.user.profile;
-        existingUser.tokens = _.union(existingUser.tokens, req.user.tokens);
-        existingUser.save(function(err) {
-          console.log(existingUser);
-          console.log(req.user.google)
-          User.remove({ _id: req.user.id }, function(err) {
-            req.flash('info', { msg: 'Your accounts have been merged' });
-            return done(err, existingUser);
-          });
-        });
+        req.flash('errors', { msg: 'There is already a Twitter account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+        done(err);
       } else {
         User.findById(req.user.id, function(err, user) {
           user.twitter = profile.id;
@@ -203,6 +154,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
           user.profile.location = user.profile.location || profile._json.location;
           user.profile.picture = user.profile.picture || profile._json.profile_image_url;
           user.save(function(err) {
+            req.flash('info', { msg: 'Twitter account has been linked.' });
             done(err, user);
           });
         });
@@ -228,15 +180,6 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
 
 /**
  * Sign in with Google.
- *
- * Possible authentication states:
- *
- * 1. User is logged in.
- *   a. Already signed in with Google before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
- *   b. First time signing in with Google. (ADD GOOGLE ID TO EXISTING USER)
- * 2. User is not logged in.
- *   a. Already signed with GitHub before. (LOGIN)
- *   b. First time signing in with Google. (CREATE ACCOUNT)
  */
 
 passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refreshToken, profile, done) {
