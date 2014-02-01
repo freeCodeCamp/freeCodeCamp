@@ -638,12 +638,6 @@ If you want to see a really cool real-time dashboard check out this [live exampl
 TODO
 ----
 - Pages that require login, should automatically redirect to last attempted URL on successful sign-in.
-- Authentication strategies should handles all edge cases below:
- - A user has never used your site before. They have no User model and no Identities either.
- - A user is logged out but they have logged into your site with a provider previously. They are now signing in with the same one again.
- - Just as above but they are now signing in with a different provider.
- - A user is logged in with a provider but they try to login with the same provider again.
- - A user is logged in but they try to login with a different provider.
 
 Contributing
 ------------
