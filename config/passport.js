@@ -156,18 +156,50 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
   }
 }));
 
+/**
+ * Sign in with Twitter.
+ *
+ * Possible authentication states:
+ *
+ * 1. User is logged in.
+ *   a. Already signed in with Twitter before. (MERGE ACCOUNTS, EXISTING ACCOUNT HAS PRECEDENCE)
+ *   b. First time signing in with Twitter. (ADD TWITTER ID TO EXISTING USER)
+ * 2. User is not logged in.
+ *   a. Already signed with Twitter before. (LOGIN)
+ *   b. First time signing in with Twitter. (CREATE ACCOUNT)
+ */
+
 passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tokenSecret, profile, done) {
   if (req.user) {
-    User.findById(req.user.id, function(err, user) {
-      user.twitter = profile.id;
-      user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
-      user.profile.name = user.profile.name || profile.displayName;
-      user.profile.location = user.profile.location || profile._json.location;
-      user.profile.picture = user.profile.picture || profile._json.profile_image_url;
-      user.save(function(err) {
-        done(err, user);
-      });
+    User.findOne({ $or: [{ twitter: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+      if (existingUser) {
+        existingUser.facebook = existingUser.facebook || req.user.facebook;
+        existingUser.github = existingUser.github || req.user.github;
+        existingUser.google = existingUser.google || req.user.google;
+        existingUser.email = existingUser.email || req.user.email;
+        existingUser.password = existingUser.password || req.user.password;
+        existingUser.profile = existingUser.profile || req.user.profile;
+        existingUser.tokens = _.union(existingUser.tokens, req.user.tokens);
+        existingUser.save(function(err) {
+          User.remove({ _id: req.user.id }, function(err) {
+            req.flash('info', { msg: 'Your accounts have been merged' });
+            return done(err, existingUser);
+          });
+        });
+      } else {
+        User.findById(req.user.id, function(err, user) {
+          user.twitter = profile.id;
+          user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
+          user.profile.name = user.profile.name || profile.displayName;
+          user.profile.location = user.profile.location || profile._json.location;
+          user.profile.picture = user.profile.picture || profile._json.profile_image_url;
+          user.save(function(err) {
+            done(err, user);
+          });
+        });
+      }
     });
+
   } else {
     User.findOne({ twitter: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
@@ -200,7 +232,6 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
 
 passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-
     User.findOne({ $or: [{ google: profile.id }, { email: profile.email }] }, function(err, existingUser) {
       if (existingUser) {
         existingUser.facebook = existingUser.facebook || req.user.facebook;
