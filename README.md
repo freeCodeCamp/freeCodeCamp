@@ -141,6 +141,7 @@ Obtaining API Keys
 - Under *Application Type* select **Read and Write** access
 - Check the box **Allow this application to be used to Sign in with Twitter**
 - Click **Update this Twitter's applications settings**
+- Copy and paste *Consumer Key* and *Consumer Secret* keys into `config/secrets.js`
 
 <hr>
 
@@ -152,6 +153,18 @@ Obtaining API Keys
 - Copy and paste *Client ID* and *Secret* keys into `config/secrets.js`
 - *App ID* is **client_id**, *App Secret* is **client_secret**
 - Change **host** to api.paypal.com if you want to test against production and use the live credentials
+
+<hr>
+
+<img src="https://www.dropboxatwork.com/wp-content/uploads/2013/02/foursquare-logo.png" width="200">
+- Go to [foursquare for Developers](https://developer.foursquare.com/)
+- Click on **My Apps** in the top menu
+- Click the **Create A New App** button
+- Enter *App Name*, *Welcome page url*,
+- For **Redirect URI**: http://localhost:3000/auth/foursquare/callback
+- Click **Save Changes**
+- Copy and paste *Client ID* and *Client Secret* keys into `config/secrets.js`
+
 
 Project Structure
 -----------------
