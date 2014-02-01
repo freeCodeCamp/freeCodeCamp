@@ -165,6 +165,15 @@ Obtaining API Keys
 - Click **Save Changes**
 - Copy and paste *Client ID* and *Client Secret* keys into `config/secrets.js`
 
+<hr>
+
+<img src="http://www.athgo.org/ablog/wp-content/uploads/2013/02/tumblr_logo.png" width="200">
+- Go to http://www.tumblr.com/oauth/apps
+- Once signed in, click **+ Register application**
+- Fill in all the details
+- For **Default Callback URL**: http://localhost:3000/auth/tumblr/callback
+- Click **✔ Register**
+- Copy and paste *OAuth consumer key* and *OAuth consumer secret* keys into `config/secrets.js`
 
 Project Structure
 -----------------
