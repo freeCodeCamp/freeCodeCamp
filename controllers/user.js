@@ -141,13 +141,14 @@ exports.postUpdateProfile = function(req, res, next) {
  */
 
 exports.postUpdatePassword = function(req, res, next) {
-  if (!req.body.password) {
-    req.flash('errors', { msg: 'Password cannot be blank.' });
-    return res.redirect('/account');
-  }
+  req.assert('password', 'Password cannot be blank').notEmpty();
+  req.assert('password', 'Password must be at least 4 characters long').len(4);
+  req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
 
-  if (req.body.password !== req.body.confirmPassword) {
-    req.flash('errors', { msg: 'Passwords do not match.' });
+  var errors = req.validationErrors();
+
+  if (errors) {
+    req.flash('errors', errors);
     return res.redirect('/account');
   }
 
