@@ -405,7 +405,16 @@ The reason why you pass an error like `{ msg: 'Error messages goes here' }` inst
 of just a string - `'Error messages goes here'`, is for the sake of consistency.
 To clarify that, *express-validator* module which is used for validating and sanitizing user's input,
 returns all errors as an array of objects, where each object has a `msg` property with a message
-why an error has occured. To keep consistent with that style, you should pass all flash messages
+why an error has occured. Here is a more general example of what express-validator returns when there are errors present:
+
+```js
+[
+  { param: "name", msg: "Name is required", value: "<received input>" },
+  { param: "email", msg: "A valid email is required", value: "<received input>" }
+]
+```
+
+To keep consistent with that style, you should pass all flash messages
 as `{ msg: 'My flash message' }` instead of a string. Otherwise you will just see an alert box
 without an error message. That is because, in **partials/flash.jade** template it will try to output
 `error.msg` (i.e. `"My flash message".msg`), in other words it will try to call a `msg` method on a *String* object,
