@@ -260,6 +260,7 @@ exports.getTwitter = function(req, res, next) {
  * GET /api/paypal
  * PayPal SDK example
  */
+
 exports.getPayPal = function(req, res, next) {
   paypal.configure(secrets.paypal);
   var payment_details = {
@@ -300,6 +301,7 @@ exports.getPayPal = function(req, res, next) {
  * GET /api/paypal/success
  * PayPal SDK example
  */
+
 exports.getPayPalSuccess = function(req, res, next) {
   var payment_id = req.session.payment_id;
   var payment_details = { 'payer_id': req.query.PayerID };
@@ -322,6 +324,7 @@ exports.getPayPalSuccess = function(req, res, next) {
  * GET /api/paypal/cancel
  * PayPal SDK example
  */
+
 exports.getPayPalCancel = function(req, res, next) {
   req.session.payment_id = null;
   res.render('api/paypal', {
