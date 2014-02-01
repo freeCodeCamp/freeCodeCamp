@@ -90,7 +90,6 @@ need to go through each provider to generate new credentials.
 
 Obtaining API Keys
 ------------------
-
 <img src="http://images.google.com/intl/en_ALL/images/srpr/logo6w.png" width="200">
 - Visit [Google Cloud Console](https://cloud.google.com/console/project)
 - Click **CREATE PROJECT** button
@@ -102,9 +101,7 @@ Obtaining API Keys
  - **Authorized redirect URI**: http://localhost:3000/auth/google/callback
 - Copy and paste *Client ID* and *Client secret* keys into `config/secrets.js`
 
->:exclamation: **Note**: When you ready to deploy to production don't forget to add
->    your new url to Authorized Javascript origins and Authorized redirect URI,
->   e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively.
+:exclamation: **Note**: When you ready to deploy to production don't forget to add your new url to **Authorized Javascript origins** and **Authorized redirect URI**, e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively. The same goes for other providers.
 
 <hr>
 
@@ -141,6 +138,7 @@ Obtaining API Keys
 - Under *Application Type* select **Read and Write** access
 - Check the box **Allow this application to be used to Sign in with Twitter**
 - Click **Update this Twitter's applications settings**
+- Copy and paste *Consumer Key* and *Consumer Secret* keys into `config/secrets.js`
 
 <hr>
 
@@ -152,6 +150,27 @@ Obtaining API Keys
 - Copy and paste *Client ID* and *Secret* keys into `config/secrets.js`
 - *App ID* is **client_id**, *App Secret* is **client_secret**
 - Change **host** to api.paypal.com if you want to test against production and use the live credentials
+
+<hr>
+
+<img src="https://www.dropboxatwork.com/wp-content/uploads/2013/02/foursquare-logo.png" width="200">
+- Go to [foursquare for Developers](https://developer.foursquare.com/)
+- Click on **My Apps** in the top menu
+- Click the **Create A New App** button
+- Enter *App Name*, *Welcome page url*,
+- For **Redirect URI**: http://localhost:3000/auth/foursquare/callback
+- Click **Save Changes**
+- Copy and paste *Client ID* and *Client Secret* keys into `config/secrets.js`
+
+<hr>
+
+<img src="http://www.athgo.org/ablog/wp-content/uploads/2013/02/tumblr_logo.png" width="200">
+- Go to http://www.tumblr.com/oauth/apps
+- Once signed in, click **+Register application**
+- Fill in all the details
+- For **Default Callback URL**: http://localhost:3000/auth/tumblr/callback
+- Click **✔Register**
+- Copy and paste *OAuth consumer key* and *OAuth consumer secret* keys into `config/secrets.js`
 
 Project Structure
 -----------------
