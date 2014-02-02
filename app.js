@@ -12,12 +12,6 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 
 /**
- * Create Express server.
- */
-
-var app = express();
-
-/**
  * Load controllers.
  */
 
@@ -32,6 +26,13 @@ var contactController = require('./controllers/contact');
 
 var secrets = require('./config/secrets');
 var passportConf = require('./config/passport');
+
+/**
+ * Create Express server.
+ */
+
+var app = express();
+
 
 /**
  * Mongoose configuration.
