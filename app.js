@@ -83,7 +83,8 @@ app.use(less({ src: __dirname + '/public', compress: true }));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 app.use(function(req, res) {
-  res.render('404', { status: 404 });
+  res.status(404);
+  res.render('404');
 });
 app.use(express.errorHandler());
 
