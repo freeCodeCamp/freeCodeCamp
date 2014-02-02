@@ -248,12 +248,12 @@ Recommended Client-Side libraries
 Pro Tips
 --------
 - When you install a new npm package, add a *--save* flag and it will be automatially
-added to `package.json` as well. For example, `npm install moment --save`.
+added to `package.json` as well. For example, `npm install --save moment`.
 - Use [async.parallel()](https://github.com/caolan/async#parallel) when you neeed to run multiple
 asynchronous tasks, and then render a page, but only when all tasks are completed. For example, you might
 want to scrape 3 different websites for some data (async operation) and render the results
 on a page after all 3 websites have been scraped.
-- Need to find a specific object in an array? Use [_.findWhere](http://underscorejs.org/#findWhere) function from Underscore.js.
+- Need to find a specific object inside an Array? Use [_.findWhere](http://underscorejs.org/#findWhere) function from Underscore.js. For example, this is how you would retrieve a Twitter token from database: `var token = _.findWhere(req.user.tokens, { kind: 'twitter' });`, where `req.user.tokens` is an Array, and a second parameter is an object with a given key/value.
 
 
 FAQ
@@ -497,7 +497,7 @@ Express.js has `app.get`, `app.post`, `app.put`, `app.del`, but for the most par
 If you just want to display a page, then use `GET`, if you are submitting a form, sending a file then use `POST`.
 
 Here is a typical workflow of adding new routes to your application. Let's say we are building
-a page that lists all books from the database.
+a page that lists all books from database.
 
 **Step 1.** Start by defining a route.
 ```js
@@ -556,7 +556,7 @@ difficult to maintain everything in a single file.
 
 That's all there is to it. Express.js is super simple to use.
 Most of the time you will be dealing with other APIs to do the real work:
-[Mongoose](http://mongoosejs.com/docs/guide.html) for querying the database, socket.io for sending and receiving messages over websockets,
+[Mongoose](http://mongoosejs.com/docs/guide.html) for querying database, socket.io for sending and receiving messages over websockets,
 sending emails via [Nodemailer](http://www.nodemailer.com/), form validation using [express-validator](https://github.com/ctavan/express-validator) library,
 parsing websites using [Cheerio](https://github.com/MatthewMueller/cheerio), and etc.
 
