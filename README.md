@@ -185,8 +185,8 @@ Project Structure
 | **controllers**/user.js | Controller for user account management page.                           |
 | **models**/User.js | Mongoose schema and model for User.                                         |
 | **public/*** | Static assets, i.e. fonts, css, js, img.                                          |
-| **public/css**/styles.less | Imports Bootstrap + a theme that overrides default Bootstrap.       |
-| **public/css/theme**/default.less | The default styles that were previously inside style.less.   |
+| **public/css**/styles.less | Main stylesheet for your app.                                       |
+| **public/css/themes**/default.less | Some Bootstrap overrides to make it look prettier.          |
 | **views/account/*** | Templates relating to user account.                                        |
 | **views/api/*** | Templates relating to API Examples.                                            |
 | **views/partials**/flash.jade      | Error, info and success notifications.                      |
