@@ -49,8 +49,8 @@ Features
 
 Prerequisites
 -------------
-- MongoDB
-- Node.js
+- [MongoDB](http://www.mongodb.org/downloads)
+- [Node.js](http://nodejs.org)
 - Command Line Tools
  - **Mac OS X**: [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (or **OS X 10.9 Mavericks**: `xcode-select --install`)
  - **Windows**: [Visual Studio](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8)
@@ -656,10 +656,25 @@ script.
     });
 ```
 
-If you want to have JavaScript code separate from templates, move that inline script code into `main.js`,
-inside the `$(document).ready()`. Oh, and notice the path of socket.io file, you don't actually
-have to have `socket.io.js` file anywhere in your project, it will be generated automatically
+**Note**: Notice the path of the `socket.io.js`, you don't actually
+have to have `socket.io.js` file anywhere in your project; it will be generated automatically
 at runtime.
+
+If you want to have JavaScript code separate from templates, move that inline script code into `main.js`,
+inside the `$(document).ready()` function:
+
+```js
+$(document).ready(function() {
+
+  // Place JavaScript code here...
+  var socket = io.connect(window.location.href);
+  socket.on('greet', function (data) {
+    console.log(data);
+    socket.emit('respond', { message: 'Hello to you too, Mr.Server!' });
+  });
+
+});
+```
 
 And that's it, we are done!
 
