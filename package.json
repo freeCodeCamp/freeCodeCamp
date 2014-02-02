@@ -5,6 +5,7 @@
     "async": "~0.2.10",
     "bcrypt-nodejs": "~0.0.3",
     "cheerio": "~0.13.1",
+    "connect-assets": "~2.5.4",
     "express": "~3.4.8",
     "express-flash": "~0.0.2",
     "express-validator": "~1.0.1",
