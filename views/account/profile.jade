@@ -31,8 +31,11 @@ block content
       .col-xs-4
         input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
     .form-group
+        input.form-control(type='hidden', name='_csrf', value=token) 
+    .form-group
       .col-xs-offset-2.col-xs-4
         button.btn.btn.btn-primary(type='submit') Update Profile
+
 
 
 
@@ -48,6 +51,8 @@ block content
       label.col-xs-3.control-label(for='confirmPassword') Confirm Password
       .col-xs-4
         input.form-control(type='password', name='confirmPassword', id='confirmPassword')
+    .form-group
+        input.form-control(type='hidden', name='_csrf', value=token) 
     .form-group
       .col-xs-offset-3.col-xs-4
         button.btn.btn.btn-primary(type='submit') Change Password

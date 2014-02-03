@@ -69,16 +69,18 @@ app.use(express.urlencoded());
 app.use(expressValidator());
 app.use(express.methodOverride());
 app.use(express.session({
-  secret: 'your secret code',
+  secret: secrets.sessionSecret,
   store: new MongoStore({
     db: mongoose.connection.db,
     auto_reconnect: true
   })
 }));
+app.use(express.csrf());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
   res.locals.user = req.user;
+  res.locals.token = req.csrfToken(); 
   next();
 });
 app.use(flash());
@@ -89,6 +91,13 @@ app.use(function(req, res) {
   res.render('404');
 });
 app.use(express.errorHandler());
+
+/*Helper function for CSRF 
+app.dynamicHelpers({
+    token: function(req, res) {
+        return req.session._csrf;
+    }
+});*/
 
 /**
  * Application routes.
