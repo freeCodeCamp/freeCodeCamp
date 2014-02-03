@@ -49,10 +49,15 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
   });
 };
 
-userSchema.methods.gravatar = function() {
+/**
+ *  Get a url to a User's Gravatar email
+ */
+userSchema.methods.gravatar = function(size,defaults) {
+  if (!size) size = 200;
+  if (!defaults) defaults = 'retro';
   var md5 = crypto.createHash('md5');
   md5.update(this.email);
-  return 'https://gravatar.com/avatar/' + md5.digest('hex').toString() + '?s=200';
+  return 'https://gravatar.com/avatar/' + md5.digest('hex').toString() + '?s='+size+'&d='+defaults;
 };
 
 module.exports = mongoose.model('User', userSchema);
