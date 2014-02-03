@@ -68,7 +68,7 @@ app.use(express.urlencoded());
 app.use(expressValidator());
 app.use(express.methodOverride());
 app.use(express.session({
-  secret: 'your secret code',
+  secret: secrets.sessionSecret,
   store: new MongoStore({
     db: mongoose.connection.db,
     auto_reconnect: true
