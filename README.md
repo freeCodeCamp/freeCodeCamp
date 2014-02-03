@@ -294,8 +294,8 @@ Using connect-assets library it's as as simple as:
 ```
 
 The only thing you need to know is to define your JavaScript files inside `public/js/application.js` using this
-strange syntax convention borrowed from Rails. I know it's an extra thing to learn for someone who has never seen
-Rails asset pipeline, but in this case benefits outweigh the costs.
+strange syntax convention (Sprockets-style) borrowed from Rails. I know it's an extra thing to learn
+for someone who has never seen Rails asset pipeline, but in this case benefits outweigh the costs.
 
 ```js
 //= require lib/jquery-2.1.0.min
@@ -304,7 +304,8 @@ Rails asset pipeline, but in this case benefits outweigh the costs.
 ```
 Using this approach, when in `development` mode, **connect-assets** will load each file individually,
 without minifying or concatenating. When you deploy your app, it will run in `production` mode, and so
-**connect-assets** will automatically serve a single concatenated + minified `application.js`.
+**connect-assets** will automatically serve a single concatenated + minified `application.js`. For more
+information see [Sprockets-style concatenation](https://github.com/adunkman/connect-assets/#sprockets-style-concatenation)
 
 
 ### I am getting MongoDB Connection Error, how do I fix it?
