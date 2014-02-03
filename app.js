@@ -40,7 +40,7 @@ var app = express();
 
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
-  console.log('✗ MongoDB Connection Error. Please make sure MongoDB is running.'.red);
+  console.error('✗ MongoDB Connection Error. Please make sure MongoDB is running.');
 });
 
 
