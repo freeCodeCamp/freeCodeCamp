@@ -37,7 +37,9 @@ block content
             img(src="#{user.gravatar()}", class='profile', width='100', height='100')
         .form-group
           .col-xs-offset-2.col-xs-4
-            button.btn.btn.btn-primary(type='submit') Update Profile
+            button.btn.btn.btn-primary(type='submit')
+              i.fa.fa-magnet
+              | Update Profile
 
 
 
@@ -55,14 +57,18 @@ block content
         input.form-control(type='password', name='confirmPassword', id='confirmPassword')
     .form-group
       .col-xs-offset-3.col-xs-4
-        button.btn.btn.btn-primary(type='submit') Change Password
+        button.btn.btn.btn-primary(type='submit')
+          i.fa.fa-keyboard-o
+          | Change Password
 
   .page-header
     h3 Delete Account
 
   p You can delete your account, but keep in mind this action is irreversible.
   form(action='/account/delete', method='POST')
-    button.btn.btn-danger(type='submit') Delete my account
+    button.btn.btn-danger(type='submit')
+      i.fa.fa-trash-o
+      | Delete my account
 
   .page-header
     h3 Linked Accounts
