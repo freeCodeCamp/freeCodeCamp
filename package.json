@@ -13,7 +13,7 @@
     "github-api": "~0.7.0",
     "jade": "~1.1.5",
     "lastfm": "~0.9.0",
-    "less-middleware": "~0.1.15",
+    "less": "~1.6.2",
     "mongoose": "~3.8.5",
     "node-foursquare": "~0.2.0",
     "passport": "~0.2.0",
