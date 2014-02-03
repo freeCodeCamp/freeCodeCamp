@@ -74,10 +74,12 @@ app.use(express.session({
     auto_reconnect: true
   })
 }));
+app.use(express.csrf());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
   res.locals.user = req.user;
+  res.locals.token = req.csrfToken();
   next();
 });
 app.use(flash());
@@ -88,6 +90,13 @@ app.use(function(req, res) {
   res.render('404');
 });
 app.use(express.errorHandler());
+
+/*Helper function for CSRF 
+app.dynamicHelpers({
+    token: function(req, res) {
+        return req.session._csrf;
+    }
+});*/
 
 /**
  * Application routes.
