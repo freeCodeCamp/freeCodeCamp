@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
+var crypto = require('crypto');
 
 var userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
@@ -46,6 +47,12 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
     if(err) return cb(err);
     cb(null, isMatch);
   });
+};
+
+userSchema.methods.gravatar = function() {
+  var md5 = crypto.createHash('md5');
+  md5.update(this.email);
+  return 'https://gravatar.com/avatar/' + md5.digest('hex').toString() + '?s=200';
 };
 
 module.exports = mongoose.model('User', userSchema);

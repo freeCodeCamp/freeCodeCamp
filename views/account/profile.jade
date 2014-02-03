@@ -3,36 +3,41 @@ extends ../layout
 block content
   .page-header
     h3 Profile Information
-
   form.form-horizontal(action='/account/profile', method='POST')
-    .form-group
-      label.col-xs-2.control-label(for='email') Email
-      .col-xs-4
-        input.form-control(type='email', name='email', id='email', value='#{user.email}')
-    .form-group
-      label.col-xs-2.control-label(for='name') Name
-      .col-xs-4
-        input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-    .form-group
-      label.col-xs-2.control-label(for='name') Gender
-      .col-xs-4
-        label.radio
-          input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
-          | Male
-        label.radio
-          input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
-          | Female
-    .form-group
-      label.col-xs-2.control-label(for='location') Location
-      .col-xs-4
-        input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-    .form-group
-      label.col-xs-2.control-label(for='website') Website
-      .col-xs-4
-        input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-    .form-group
-      .col-xs-offset-2.col-xs-4
-        button.btn.btn.btn-primary(type='submit') Update Profile
+    .row
+      .col-xs-2 
+        img(src="#{user.gravatar()}")
+        small Change your photo at 
+          a(href="http://gravatar.com") Gravatar
+      .col-xs-10
+        .form-group
+          label.col-xs-2.control-label(for='email') Email
+          .col-xs-4
+            input.form-control(type='email', name='email', id='email', value='#{user.email}')
+        .form-group
+          label.col-xs-2.control-label(for='name') Name
+          .col-xs-4
+            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+        .form-group
+          label.col-xs-2.control-label(for='name') Gender
+          .col-xs-4
+            label.radio
+              input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
+              | Male
+            label.radio
+              input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
+              | Female
+        .form-group
+          label.col-xs-2.control-label(for='location') Location
+          .col-xs-4
+            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+        .form-group
+          label.col-xs-2.control-label(for='website') Website
+          .col-xs-4
+            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+        .form-group
+          .col-xs-offset-2.col-xs-4
+            button.btn.btn.btn-primary(type='submit') Update Profile
 
 
 
