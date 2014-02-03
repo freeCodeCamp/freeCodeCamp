@@ -37,6 +37,7 @@ Features
 - Awesome flash notifications with animations by [animate.css](http://daneden.github.io/animate.css/)
 - MVC Project Structure
 - Node.js clusters support
+- Rails 3.1-style asset pipeline (See FAQ)
 - LESS stylesheets (auto-compiled via Express middleware)
 - Bootstrap 3 + Flat UI + iOS7 Theme
 - Contact Form (powered by Sendgrid)
@@ -269,6 +270,42 @@ From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_
 for each CPU detected. For the majority of applications serving HTTP requests,
 this is a resounding boon. However, the cluster module is still in experimental stage, therefore it should only be used after understanding its purpose and behavior. To use it, simply run `node cluster_app.js`. **Its use is entirely optional and `app.js` is not tied in any way to it**. As a reminder, if you plan to use `cluster_app.js` instead of `app.js`, be sure to indicate that in `Procfile` if you are deploying your app to Heroku.
 
+### What is this Rails 3.1-style asset pipeline that you mentioned in Features?
+This is how you typically define static files inside HTML, Jade or any template for that matter:
+```jade
+link(href='/css/styles.css', rel='stylesheet')
+script(src='/js/lib/jquery-2.1.0.min.js')
+script(src='/js/lib/bootstrap.min.js')
+script(src='/js/main.js')
+```
+Simple enough right? But wouldn't it be nice to have it just like that in development mode, but when you deploy
+to production, have it minified and concatenated automatically without any extra effort on you part?
+```jade
+link(href='/css/styles.css', rel='stylesheet')
+script(src='/js/application.js')
+```
+As soon as you start bringing in more JavaScript libraries, the benefits of concatenating and minifying
+JavaScript files will be even greater.
+Using connect-assets library it's as as simple as:
+```jade
+!= css('styles')      // expects public/css/styles.less
+!= js('application')  // expects public/js/application.js
+```
+
+The only thing you need to know is to define your JavaScript files inside `public/js/application.js` using this
+strange syntax convention borrowed from Rails. I know it's an extra thing to learn for someone who has never seen
+Rails asset pipeline, but in this case benefits outweigh the costs.
+
+```js
+//= require lib/jquery-2.1.0.min
+//= require lib/bootstrap.min
+//= require main
+```
+Using this approach, when in `development` mode, **connect-assets** will load each file individually,
+without minifying or concatenating. When you deploy your app, it will run in `production` mode, and so
+**connect-assets** will automatically serve a single concatenated + minified `application.js`.
+
+
 ### I am getting MongoDB Connection Error, how do I fix it?
 That's a custom error message defined in `app.js` to indicate that there was a connection problem to MongoDB:
 ```
@@ -338,7 +375,7 @@ When you download the ZIP file, it will come with *index.html*, *images*, *css* 
 integrate it with Hackathon Starter? Hackathon Starter uses Bootstrap CSS framework, but these templates do not.
 Trying to use both CSS files at the same time will likely result in undesired effects.
 
-:exclamation: **Note:** Using the custom templates approach, you should understand that you cannot reuse any of the views I have created: layout, home page, api browser, login, signup, account management, contact. Those views were built using Bootstrap grid and styles. You will have to manually update the grid using a different syntax provided in the template. **Having said that, you can mix and match if you want to do so: Use Bootstrap for main app interface, and a custom template for a landing page.** 
+:exclamation: **Note:** Using the custom templates approach, you should understand that you cannot reuse any of the views I have created: layout, home page, api browser, login, signup, account management, contact. Those views were built using Bootstrap grid and styles. You will have to manually update the grid using a different syntax provided in the template. **Having said that, you can mix and match if you want to do so: Use Bootstrap for main app interface, and a custom template for a landing page.**
 
 Let's start from the beginning. For this example I will use [Escape Velocity](http://html5up.net/escape-velocity/) template:
 ![Alt](http://html5up.net/uploads/previews/6330653905846315.jpg)
