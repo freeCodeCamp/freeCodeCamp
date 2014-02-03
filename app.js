@@ -92,13 +92,6 @@ app.use(function(req, res) {
 });
 app.use(express.errorHandler());
 
-/*Helper function for CSRF 
-app.dynamicHelpers({
-    token: function(req, res) {
-        return req.session._csrf;
-    }
-});*/
-
 /**
  * Application routes.
  */
