@@ -5,10 +5,6 @@ block content
     h3 Profile Information
   form.form-horizontal(action='/account/profile', method='POST')
     .row
-      .col-md-2.col-xs-4 
-        img(src="#{user.gravatar()}", class='profile')
-        small Change your photo at 
-          a(href="http://gravatar.com") Gravatar
       .col-xs-10
         .form-group
           label.col-xs-2.control-label(for='email') Email
@@ -35,6 +31,10 @@ block content
           label.col-xs-2.control-label(for='website') Website
           .col-xs-4
             input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+        .form-group
+          label.col-xs-2.control-label(for='gravatar') Gravatar
+          .col-xs-4
+            img(src="#{user.gravatar()}", class='profile', width='100', height='100')
         .form-group
           .col-xs-offset-2.col-xs-4
             button.btn.btn.btn-primary(type='submit') Update Profile
