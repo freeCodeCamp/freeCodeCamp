@@ -20,4 +20,4 @@ node_modules
 .DS_Store
 Thumbs.db
 
-public/vendor
+public/css/styles.css
