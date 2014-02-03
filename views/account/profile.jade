@@ -5,8 +5,8 @@ block content
     h3 Profile Information
   form.form-horizontal(action='/account/profile', method='POST')
     .row
-      .col-xs-2 
-        img(src="#{user.gravatar()}")
+      .col-md-2.col-xs-4 
+        img(src="#{user.gravatar()}", class='profile')
         small Change your photo at 
           a(href="http://gravatar.com") Gravatar
       .col-xs-10

@@ -52,7 +52,7 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 userSchema.methods.gravatar = function() {
   var md5 = crypto.createHash('md5');
   md5.update(this.email);
-  return 'https://gravatar.com/avatar/' + md5.digest('hex').toString() + '?s=200';
+  return 'https://gravatar.com/avatar/' + md5.digest('hex').toString() + '?s=200&d=retro';
 };
 
 module.exports = mongoose.model('User', userSchema);
