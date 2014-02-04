@@ -42,6 +42,7 @@ Table of Contents
 - [Recommended Client-Side libraries](#recommended-client-side-libraries)
 - [Pro Tips](#pro-tips)
 - [FAQ](#faq)
+- [Deployment](#deployment)
 - [TODO](#todo) 
 - [Contributing](#contributing)
 - [License](#license)
@@ -768,7 +769,7 @@ experience, **Heroku** is the easiest to get started with, it will automatically
 - Finally, in `secrets.js` instead of `db: 'localhost'`, use the following URI with your credentials:
  - `db: 'mongodb://<dbuser>:<dbpassword>@ds027479.mongolab.com:27479/<dbname>'`
 
-**:exclamation:Note**: As an alternative to MongoLab there is also [MongoHQ[(http://www.mongohq.com/home).
+**:exclamation:Note**: As an alternative to MongoLab there is also [MongoHQ](http://www.mongohq.com/home).
 
 ### Heroku
 
