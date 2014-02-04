@@ -79,7 +79,7 @@ Prerequisites
  - **OpenSUSE**: `sudo zypper install --type pattern devel_basis`
 
 :exclamation: **Note**: If you are new to Node.js or Express framework,
-I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast that teaches Node and Express from scratch.
+I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast by Alex Ford that teaches Node and Express from scratch.
 
 
 Getting Started
@@ -299,7 +299,7 @@ script(src='/js/lib/bootstrap.min.js')
 script(src='/js/main.js')
 ```
 Simple enough right? But wouldn't it be nice to have it just like that in development mode, but when you deploy
-to production, have it minified and concatenated automatically without any extra effort on you part?
+to production, have it minified and concatenated into a single file automatically without any extra effort on you part?
 ```jade
 link(href='/css/styles.css', rel='stylesheet')
 script(src='/js/application.js')
@@ -312,25 +312,24 @@ Using connect-assets library it's as as simple as:
 != js('application')  // expects public/js/application.js
 ```
 
-The only thing you need to know is to define your JavaScript files inside `public/js/application.js` using this
-strange syntax convention (Sprockets-style) borrowed from Rails. I know it's an extra thing to learn
-for someone who has never seen Rails asset pipeline, but in this case benefits outweigh the costs.
-
+The only thing you need to remember is to define your JavaScript files inside `public/js/application.js` using this
+strange syntax notation (Sprockets-style) borrowed from Rails. I know it's an extra thing to learn
+for someone who has never seen Rails asset pipeline before, but in this case, I think benefits outweigh the costs.
 ```js
 //= require lib/jquery-2.1.0.min
 //= require lib/bootstrap.min
 //= require main
 ```
-Using this approach, when in `development` mode, **connect-assets** will load each file individually,
-without minifying or concatenating. When you deploy your app, it will run in `production` mode, and so
+Using this approach, when working in `development` mode, **connect-assets** will load each file individually,
+without minifying or concatenating anything. When you deploy your app, it will run in `production` mode, and so
 **connect-assets** will automatically serve a single concatenated + minified `application.js`. For more
 information see [Sprockets-style concatenation](https://github.com/adunkman/connect-assets/#sprockets-style-concatenation)
 
 ### I am getting MongoDB Connection Error, how do I fix it?
 That's a custom error message defined in `app.js` to indicate that there was a connection problem to MongoDB:
-```
+```js
 mongoose.connection.on('error', function() {
-  console.log('✗ MongoDB Connection Error. Please make sure MongoDB is running.'.red);
+  console.error('✗ MongoDB Connection Error. Please make sure MongoDB is running.');
 });
 ```
 As the message says, you need to have a MongoDB server running before launching `app.js`. You can get MongoDB from
@@ -343,7 +342,7 @@ on your machine as long as MongoDB is running. When you deploy to Heroku, OpenSh
 running on `localhost`. You need to create an account with [MongoLab](http://mongolab.com) or [MongoHQ](http://mongohq.com), then create a free tier database. See **Deployment** (coming soon) section for more information on how to 
 setup an account and a new database step-by-step with MongoLab.
 
-### Why Jade and not Handlebars template engine?
+### Why Jade instead of Handlebars template engine?
 When I first started this project I didn't have any experience with Handlebars. Since then I have worked on Ember.js apps and got myself familiar with the Handlebars syntax. While it is true Handlebars is easier, because it looks like good old HTML, I have no regrets picking Jade over Handlebars. First off, it's the default template engine in Express, so someone who has built Express apps in the past already knows it. Secondly, I find `extends` and `block` to be indispensable, which as far as I know, Handlebars does not have out of the box. And lastly, subjectively speaking, Jade looks much cleaner and shorter than Handlebars, or any non-HAML style for that matter.
 
 ### Why do you have all routes defined in app.js?
