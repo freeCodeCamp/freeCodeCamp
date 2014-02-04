@@ -44,20 +44,21 @@ userSchema.pre('save', function(next) {
 
 userSchema.methods.comparePassword = function(candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-    if(err) return cb(err);
+    if (err) return cb(err);
     cb(null, isMatch);
   });
 };
 
 /**
- *  Get a url to a User's Gravatar email
+ *  Get a URL to a user's Gravatar email.
  */
-userSchema.methods.gravatar = function(size,defaults) {
+
+userSchema.methods.gravatar = function(size, defaults) {
   if (!size) size = 200;
   if (!defaults) defaults = 'retro';
   var md5 = crypto.createHash('md5');
   md5.update(this.email);
-  return 'https://gravatar.com/avatar/' + md5.digest('hex').toString() + '?s='+size+'&d='+defaults;
+  return 'https://gravatar.com/avatar/' + md5.digest('hex').toString() + '?s=' + size + '&d=' + defaults;
 };
 
 module.exports = mongoose.model('User', userSchema);
