@@ -29,6 +29,23 @@ Sadly, there is no step-by-step wizard to configure the boilerplate code just fo
 
 ![Alt](https://lh5.googleusercontent.com/-KmlaMLKGCqg/UuWt4MrXzeI/AAAAAAAAD6o/KUucObo33zU/w1170-h860-no/Screenshot+2014-01-26+19.52.03.png)
 
+Table of Contents
+-----------------
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Obtaining API Keys](#obtaining-api-keys)
+- [Project Structure](#project-structure)
+- [Useful Tools](#use-tools)
+- [Recommended Design](#recommended-design)
+- [Recommended Node.js Libraries](#recommended-nodejs-libraries)
+- [Recommended Client-Side libraries](#recommended-client-side-libraries)
+- [Pro Tips](#pro-tips)
+- [FAQ](#faq)
+- [TODO](#todo) 
+- [Contributing](#contributing)
+- [License](#license)
+
 Features
 --------
 - **Local Authentication** using Email and Password
