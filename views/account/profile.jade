@@ -3,44 +3,44 @@ extends ../layout
 block content
   .page-header
     h3 Profile Information
-  form.form-horizontal(action='/account/profile', method='POST')
-    .row
-      .col-xs-10
-        .form-group
-          label.col-xs-2.control-label(for='email') Email
-          .col-xs-4
-            input.form-control(type='email', name='email', id='email', value='#{user.email}')
-        .form-group
-          label.col-xs-2.control-label(for='name') Name
-          .col-xs-4
-            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-        .form-group
-          label.col-xs-2.control-label(for='name') Gender
-          .col-xs-4
-            label.radio
-              input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
-              | Male
-            label.radio
-              input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
-              | Female
-        .form-group
-          label.col-xs-2.control-label(for='location') Location
-          .col-xs-4
-            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-        .form-group
-          label.col-xs-2.control-label(for='website') Website
-          .col-xs-4
-            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-        .form-group
-          label.col-xs-2.control-label(for='gravatar') Gravatar
-          .col-xs-4
-            img(src="#{user.gravatar()}", class='profile', width='100', height='100')
-        .form-group
-          .col-xs-offset-2.col-xs-4
-            button.btn.btn.btn-primary(type='submit')
-              i.fa.fa-magnet
-              | Update Profile
 
+  form.form-horizontal(action='/account/profile', method='POST')
+    .form-group
+      label.col-xs-2.control-label(for='email') Email
+      .col-xs-4
+        input.form-control(type='email', name='email', id='email', value='#{user.email}')
+    .form-group
+      label.col-xs-2.control-label(for='name') Name
+      .col-xs-4
+        input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+    .form-group
+      label.col-xs-2.control-label(for='name') Gender
+      .col-xs-4
+        label.radio
+          input(type='radio', checked=user.profile.gender=='male', name='gender', value='male', data-toggle='radio')
+          | Male
+        label.radio
+          input(type='radio', checked=user.profile.gender=='female', name='gender', value='female', data-toggle='radio')
+          | Female
+    .form-group
+      label.col-xs-2.control-label(for='location') Location
+      .col-xs-4
+        input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+    .form-group
+      label.col-xs-2.control-label(for='website') Website
+      .col-xs-4
+        input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+    .form-group
+      label.col-xs-2.control-label(for='gravatar') Gravatar
+      .col-xs-4
+        img(src="#{user.gravatar()}", class='profile', width='100', height='100')
+    .form-group
+      input.form-control(type='hidden', name='_csrf', value=token)
+    .form-group
+      .col-xs-offset-2.col-xs-4
+        button.btn.btn.btn-primary(type='submit')
+          i.fa.fa-magnet
+          | Update Profile
 
 
   .page-header
@@ -55,6 +55,8 @@ block content
       label.col-xs-3.control-label(for='confirmPassword') Confirm Password
       .col-xs-4
         input.form-control(type='password', name='confirmPassword', id='confirmPassword')
+    .form-group
+        input.form-control(type='hidden', name='_csrf', value=token) 
     .form-group
       .col-xs-offset-3.col-xs-4
         button.btn.btn.btn-primary(type='submit')
