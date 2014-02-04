@@ -68,6 +68,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function (req, accessToken, 
       user.profile.name = profile.displayName;
       user.profile.gender = profile._json.gender;
       user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
+      user.profile.location = profile._json.location.name;
       user.save(function(err) {
         done(err, user);
       });
@@ -147,7 +148,10 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
     User.findOne({ twitter: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
       var user = new User();
-      user.email = profile.displayName;
+      // Twitter will not provide an email address.  Period.
+      // But a person’s twitter username is guaranteed to be unique
+      // so we can “fake” a twitter email address as follows:
+      user.email = profile.username + "@twitter.com";
       user.twitter = profile.id;
       user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
       user.profile.name = profile.displayName;
