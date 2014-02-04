@@ -36,7 +36,7 @@ Table of Contents
 - [Getting Started](#getting-started)
 - [Obtaining API Keys](#obtaining-api-keys)
 - [Project Structure](#project-structure)
-- [Useful Tools](#use-tools)
+- [Useful Tools](#useful-tools)
 - [Recommended Design](#recommended-design)
 - [Recommended Node.js Libraries](#recommended-nodejs-libraries)
 - [Recommended Client-Side libraries](#recommended-client-side-libraries)
