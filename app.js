@@ -79,7 +79,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
   res.locals.user = req.user;
-  res.locals.token = req.csrfToken(); 
+  res.locals.token = req.csrfToken();
   next();
 });
 app.use(flash());
@@ -126,7 +126,7 @@ app.get('/api/paypal/cancel', apiController.getPayPalCancel);
  * OAuth routes for sign-in.
  */
 
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
 app.get('/auth/github', passport.authenticate('github'));
 app.get('/auth/github/callback', passport.authenticate('github', { successRedirect: '/', failureRedirect: '/login' }));
