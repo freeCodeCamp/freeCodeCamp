@@ -746,7 +746,25 @@ If you want to see a really cool real-time dashboard check out this [live exampl
 Deployment
 ----------
 
-### MongoLab
+
+<img src="http://i.imgur.com/7KnCa5a.png" width="200">
+
+- Open [mongolab.com](https://mongolab.com) website
+- Click the yellow **Sign up** button
+- Fill in your user information then hit **Create account**
+- From the dashboard, click on **:zap:Create new** button
+- Select **any** cloud provider (I usually go with AWS)
+- Under *Plan* click on **Single-node (development)** tab and select **Sandbox** (it's free)
+ - *Leave MongoDB version as is - `2.4.x`*
+- Enter *Database name** for your web app
+- Then click on **:zap:Create new MongoDB deployment** button
+- Now, to access your database you need to create a DB user
+- You should see the following message:
+ - *A database user is required to connect to this database.* **Click here** *to create a new one.*
+- Click the link and fill in **DB Username** and **DB Password** fields
+- Finally, in `secrets.js` instead of `db: 'localhost'`, use the following URI with your credentials:
+ - `db: 'mongodb://<dbuser>:<dbpassword>@ds027479.mongolab.com:27479/<dbname>'`
+
 
 ### Heroku
 
