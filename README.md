@@ -768,15 +768,25 @@ experience, **Heroku** is the easiest to get started with, it will automatically
 - Finally, in `secrets.js` instead of `db: 'localhost'`, use the following URI with your credentials:
  - `db: 'mongodb://<dbuser>:<dbpassword>@ds027479.mongolab.com:27479/<dbname>'`
 
-**:exclamation:Note**: As an alternative to MongoLab there is also [MongoHQ](http://www.mongohq.com/home).
+> **:exclamation:Note**: As an alternative to MongoLab, there is also [MongoHQ](http://www.mongohq.com/home).
 
-### Heroku
+<img src="http://blog.exadel.com/wp-content/uploads/2013/10/heroku-Logo-1.jpg" width="200">
+- Download and install [Heroku Toolbelt](https://toolbelt.heroku.com/osx)
+- In terminal, run `heroku login` and enter your Heroku credentials
+- From *your app* directory run `heroku create`, followed by `git push heroku master`
+- Done!
 
 ### OpenShift
+<img src="http://www.opencloudconf.com/images/openshift_logo.png" width="200">
+
+- Install Ruby gem :gem: `sudo gem install rhc`
+
 
 ### Nodejitsu
+<img src="https://nodejs-in-production.nodejitsu.com/img/nodejitsu.png" width="200">
 
-### Windows Azure
+### Azure
+<img src="http://upload.wikimedia.org/wikipedia/en/f/ff/Windows_Azure_logo.png" width="200">
 
 TODO
 ----
