@@ -307,7 +307,6 @@ without minifying or concatenating. When you deploy your app, it will run in `pr
 **connect-assets** will automatically serve a single concatenated + minified `application.js`. For more
 information see [Sprockets-style concatenation](https://github.com/adunkman/connect-assets/#sprockets-style-concatenation)
 
-
 ### I am getting MongoDB Connection Error, how do I fix it?
 That's a custom error message defined in `app.js` to indicate that there was a connection problem to MongoDB:
 ```
@@ -318,6 +317,12 @@ mongoose.connection.on('error', function() {
 As the message says, you need to have a MongoDB server running before launching `app.js`. You can get MongoDB from
 [mongodb.org/downloads](mongodb.org/downloads), or install it via a package manager
 ([Homebrew](http://brew.sh/) on Mac, **apt-get** on Ubuntu, **yum** on Fedora, etc.)
+
+### I get an error when I deploy my app, why?
+Chances are you haven't changed the *Dabatase URI* in `secrets.js`. If `db` is set to `localhost`, it will only work
+on your machine as long as MongoDB is running. When you deploy to Heroku, OpenShift or some other provider, you will not have MongoDB
+running on `localhost`. You need to create an account with [MongoLab](http://mongolab.com) or [MongoHQ](http://mongohq.com), then create a free tier database. See **Deployment** (coming soon) section for more information on how to 
+setup an account and a new database step-by-step with MongoLab.
 
 ### Why Jade and not Handlebars template engine?
 When I first started this project I didn't have any experience with Handlebars. Since then I have worked on Ember.js apps and got myself familiar with the Handlebars syntax. While it is true Handlebars is easier, because it looks like good old HTML, I have no regrets picking Jade over Handlebars. First off, it's the default template engine in Express, so someone who has built Express apps in the past already knows it. Secondly, I find `extends` and `block` to be indispensable, which as far as I know, Handlebars does not have out of the box. And lastly, subjectively speaking, Jade looks much cleaner and shorter than Handlebars, or any non-HAML style for that matter.
