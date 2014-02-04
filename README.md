@@ -776,17 +776,48 @@ experience, **Heroku** is the easiest to get started with, it will automatically
 - From *your app* directory run `heroku create`, followed by `git push heroku master`
 - Done!
 
-### OpenShift
 <img src="http://www.opencloudconf.com/images/openshift_logo.png" width="200">
+- First, install this Ruby gem: `sudo gem install rhc` :gem:
+- Run `rhc login` and enter your OpenShift credentials
+- From *your app* directory run `rhc app create MyApp nodejs-0.10`
+ - **Note**: *MyApp* is what you want to name your app (no spaces)
+- Once that is done, you will be provided with **URL**, **SSH** and **Git Remote** links
+- Visit that **URL** and you should see *Welcome to your Node.js application on OpenShift* page
+- Copy **Git Remote** and paste it into `git remote add openshift your_git_remote`
+- Before you push your app, you need to do a few modifications to your code
 
-- Install Ruby gem :gem: `sudo gem install rhc`
+Add these two lines to `app.js`, just place them anywhere before `app.listen()`:
+```js
+var IP_ADDRESS = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+```
 
+Then change `app.listen()` to:
+```js
+app.listen(PORT, IP_ADDRESS, function() {
+  console.log("✔ Express server listening on port %d in %s mode", PORT, app.settings.env);
+});
+```
+Add this to `package.json`, after *name* and *version*. This is necessary because, by default, OpenShift looks for `server.js` file. And by specifying `supervisor app.js` it will automatically restart the server when node.js process crashes.
 
-### Nodejitsu
+```js
+"main": "app.js",
+"scripts": {
+  "start": "supervisor app.js"
+},
+```
+
+- Finally, now you can push your code to OpenShift by running `git push -f openshift master`
+ - **Note**: The first time you run this command, you have to pass `-f` (force) flag because OpenShift creates a dummy server with the welcome page when you create a new Node.js app. Passing `-f` flag will override everything with your *Hackathon Starter* project repository. Please **do not** do `git pull` as it will create unnecessary merge conflicts.
+- And you are done! (Not quite as simple as Heroku, huh?)
+
 <img src="https://nodejs-in-production.nodejitsu.com/img/nodejitsu.png" width="200">
 
-### Azure
+TODO: Will be added soon.
+
 <img src="http://upload.wikimedia.org/wikipedia/en/f/ff/Windows_Azure_logo.png" width="200">
+
+TODO: Will be added soon.
 
 TODO
 ----
