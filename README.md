@@ -39,11 +39,12 @@ Table of Contents
 - [Useful Tools](#useful-tools)
 - [Recommended Design](#recommended-design)
 - [Recommended Node.js Libraries](#recommended-nodejs-libraries)
-- [Recommended Client-Side libraries](#recommended-client-side-libraries)
+- [Recommended Client-Side Libraries](#recommended-client-side-libraries)
 - [Pro Tips](#pro-tips)
 - [FAQ](#faq)
+- [How It Works](#how-it-works-mini-guides)
 - [Deployment](#deployment)
-- [TODO](#todo) 
+- [TODO](#todo)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -384,8 +385,8 @@ this feature. I have started working on it, but if it's really that important an
 it, check out the [forgot-password](https://github.com/sahat/hackathon-starter/tree/forgot-password) branch. So far it has a template, GET controller to render that template,
 POST controller to send an email via Nodemailer.
 
-How it works (mini guide)
--------------------------
+How It Works (mini guides)
+--------------------------
 This section is intended for giving you a detailed explanation about
 how a particular functionality works. Maybe you are just curious about
 how it works, or maybe you are lost and confused while reading the code,
