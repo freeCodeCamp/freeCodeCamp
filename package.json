@@ -28,8 +28,6 @@
     "twit": "~1.1.12",
     "underscore": "~1.5.2",
     "paypal-rest-sdk": "~0.6.4",
-    "connect-mongo": "~0.4.0",
-    "passport-steam": "~0.1.3",
-    "steam-web": "~0.2.1"
+    "connect-mongo": "~0.4.0"
   }
 }

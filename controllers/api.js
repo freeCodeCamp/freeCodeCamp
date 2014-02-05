@@ -12,9 +12,6 @@ var foursquare = require('node-foursquare')({ secrets: secrets.foursquare });
 var Github = require('github-api');
 var Twit = require('twit');
 var paypal = require('paypal-rest-sdk');
-var steam = require('steam-web');
-
-
 
 /**
  * GET /api
@@ -342,17 +339,51 @@ exports.getPayPalCancel = function(req, res, next) {
  */
 
 exports.getSteam = function(req, res) {
-  var S = new steam({
-    apiKey: secrets.steam.apiKey
-  });
+  var defaultSteamId = '76561197992403307';
+  var steamId = _.findWhere(req.user.tokens, { kind: 'steam' }).steamId || defaultSteamId; 
+  var query = { l: 'english', steamid: steamId, key: secrets.steam.apiKey };
   
-  S.getPlayerSummaries({
-    steamids: [ req.user.steam ],
-    callback: function(err, data) {
-      res.render('api/steam', {
-        title: 'Steam Web API',
-        players: data.response.players,
+  async.parallel([
+    function (callback) {
+      builtQuery = querystring.stringify(query);
+      request.get({url:'http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?' + builtQuery, json:true}, function(err, request, body) {
+        if (err) return next(err);
+        callback(null, body);
       });
-    }
+    },
+    function (callback) {
+      query.appid = '570'; // Dota 2
+      builtQuery = querystring.stringify(query);
+      request.get({url:'http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?' + builtQuery, json:true}, function(err, request, body) {
+        if (err) return next(err);
+        delete query.appid;
+        callback(null, body);
+      });
+    },
+    function (callback) {
+      query.appid = '219640'; //Chivalry: Medieval Warfare
+      builtQuery = querystring.stringify(query);
+      request.get({url:'http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?' + builtQuery, json:true}, function(err, request, body) {
+        if (err) return next(err);
+        delete query.appid;
+        callback(null, body);
+      });
+    },
+    function (callback) {
+      delete query.steamid;
+      query.steamids = steamId; //this request can be supplied a set of comma seperated steam ids
+      builtQuery = querystring.stringify(query);
+      request.get({url:'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?' + builtQuery, json:true}, function(err, request, body) {
+        if (err) return next(err);
+        callback(null, body);
+      });
+    },
+  ],
+  function (err, results) {
+    console.log(require('util').inspect(results, false, null));
+    if (err) return next(err);
+    else res.render('api/steam', {
+      title: 'Steam Web API',
+      items: results });
   });
 };

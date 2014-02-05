@@ -118,7 +118,7 @@ app.get('/api/aviary', apiController.getAviary);
 app.get('/api/paypal', apiController.getPayPal);
 app.get('/api/paypal/success', apiController.getPayPalSuccess);
 app.get('/api/paypal/cancel', apiController.getPayPalCancel);
-app.get('/api/steam', passportConf.isAuthorized, passportConf.isAuthorized, apiController.getSteam);
+app.get('/api/steam', apiController.getSteam);
 
 
 /**
@@ -145,10 +145,6 @@ app.get('/auth/foursquare/callback', passport.authorize('foursquare', { failureR
 app.get('/auth/tumblr', passport.authorize('tumblr'));
 app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), function(req, res) {
   res.redirect('/api/tumblr');
-});
-app.get('/auth/steam', passport.authenticate('steam'));
-app.get('/auth/steam/callback', passport.authenticate('steam', { failureRedirect: '/login' }), function(req, res) {
-  res.redirect('/api/steam');
 });
 
 app.listen(app.get('port'), function() {
