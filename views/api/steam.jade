@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  .page-header
+    h2
+      i.fa.fa-gamepad
+      | Steam Web API
+
+  .btn-group.btn-group-justified
+    a.btn.btn-primary(href='https://developer.valvesoftware.com/wiki/Steam_Web_API', target='_blank')
+      i.fa.fa-check-square-o
+      | Overview
+
+  h4 Steam Players
+  
+  ul.list-unstyled
+    for player in players
+      li
+        .panel.panel-default
+          .panel-body
+            .clearfix
+              img.pull-left(src='#{player.avatarfull}', style='margin-right: 10px')
+              =player.personaname
