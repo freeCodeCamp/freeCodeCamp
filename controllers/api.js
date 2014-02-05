@@ -12,6 +12,9 @@ var foursquare = require('node-foursquare')({ secrets: secrets.foursquare });
 var Github = require('github-api');
 var Twit = require('twit');
 var paypal = require('paypal-rest-sdk');
+var steam = require('steam-web');
+
+
 
 /**
  * GET /api
@@ -330,5 +333,26 @@ exports.getPayPalCancel = function(req, res, next) {
   res.render('api/paypal', {
     result: true,
     canceled: true
+  });
+};
+
+/**
+ * GET /api/steam
+ * Steam API example.
+ */
+
+exports.getSteam = function(req, res) {
+  var S = new steam({
+    apiKey: secrets.steam.apiKey
+  });
+  
+  S.getPlayerSummaries({
+    steamids: [ req.user.steam ],
+    callback: function(err, data) {
+      res.render('api/steam', {
+        title: 'Steam Web API',
+        players: data.response.players,
+      });
+    }
   });
 };
