@@ -6,7 +6,6 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 var GitHubStrategy = require('passport-github').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var SteamStrategy = require('passport-steam').Strategy;
 var User = require('../models/User');
 var secrets = require('./secrets');
 var _ = require('underscore');
@@ -199,43 +198,6 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
       user.profile.name = profile.displayName;
       user.profile.gender = profile._json.gender;
       user.profile.picture = profile._json.picture;
-      user.save(function(err) {
-        done(err, user);
-      });
-    });
-  }
-}));
-
-/**
- * Sign in with Steam.
- */
- 
-passport.use(new SteamStrategy(secrets.steam, function(req, identifier, profile, done) {
-  identifier = identifier.match('http://steamcommunity.com/openid/id/([0-9]{17,25})');
-  var steam_id = identifier[1];
-  if (req.user) {
-    User.findOne({ steam: steam_id }, function(err, existingUser) {
-      if (existingUser) {
-        req.flash('errors', { msg: 'There is already a Steam account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-        done(err);
-      } else {
-        User.findById(req.user.id, function(err, user) {
-          user.steam = steam_id;
-          user.tokens.push({ kind: 'steam', accessToken: steam_id });
-          user.save(function(err) {
-            req.flash('info', { msg: 'Steam account has been linked.' });
-            done(err, user);
-          });
-        });
-      }
-    });
-
-  } else {
-    User.findOne({ steam: steam_id }, function(err, existingUser) {
-      if (existingUser) return done(null, existingUser);
-      var user = new User();
-      user.steam = steam_id;
-      user.tokens.push({ kind: 'steam', steam_id: steam_id });
       user.save(function(err) {
         done(err, user);
       });
