@@ -284,8 +284,9 @@ asynchronous tasks, and then render a page, but only when all tasks are complete
 want to scrape 3 different websites for some data (async operation) and render the results
 on a page after all 3 websites have been scraped.
 - Need to find a specific object inside an Array? Use [_.findWhere](http://underscorejs.org/#findWhere) function from Underscore.js. For example, this is how you would retrieve a Twitter token from database: `var token = _.findWhere(req.user.tokens, { kind: 'twitter' });`, where `req.user.tokens` is an Array, and a second parameter is an object with a given key/value.
-- If you right click and select **View Page Source**, notice how Express minified HTML for you. If you
-would like to see original, non-minified markup, add `app.locals.pretty = true;` to Express configuration.
+- If you right click and select **View Page Source**, notice how *Express*
+minified HTML for you. If you would like to see non-minified markup,
+add `app.locals.pretty = true;` to **app.js** with the rest of the Express configuration.
 
 FAQ
 ---
