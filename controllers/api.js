@@ -397,7 +397,7 @@ exports.postTwilio = function(req, res, next) {
   };
   twilio.sendMessage(message, function(err, responseData) {
     if (err) return next(err);
-    console.log(responseData.from);
-    console.log(responseData.body);
+    req.flash('success', { msg: 'Text sent to ' + responseData.to + '.'})
+    res.redirect('/api/twilio');
   });
 };
