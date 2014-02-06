@@ -11,9 +11,22 @@ block content
       i.fa.fa-check-square-o
       | Overview
 
+  h3 Profile Information
+  .lead
+  // profile name
+  // profile avatar
+  // online status
+
   h3 Player achievements for #{playerAchievemments.gameName}
   p Returns a list of achievements for this user by app id
   ul.lead.list-unstyled
     for achievement in playerAchievemments.achievements
       if achievement.achieved
         li.text-success= achievement.name
+
+  h3 Owned Games
+  ul.list-unstyled
+    for game in ownedGames
+      li
+        img(src='#')
+
