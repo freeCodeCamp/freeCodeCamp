@@ -381,3 +381,11 @@ exports.getSteam = function(req, res, next) {
     });
   });
 };
+
+exports.getTwilio = function(req, res, next) {
+  res.render('api/twilio', {
+    title: 'Twilio API'
+  });
+
+
+};

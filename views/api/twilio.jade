@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  .page-header
+    h2
+      i.fa.fa-phone
+      | Twilio API
+
+  .btn-group.btn-group-justified
+    a.btn.btn-primary(href='http://developer.nytimes.com/page', target='_blank')
+      i.fa.fa-check-square-o
+      | Overview
+    a.btn.btn-primary(href='http://prototype.nytimes.com/gst/apitool/index.html', target='_blank')
+      i.fa.fa-laptop
+      | API Console
+    a.btn.btn-primary(href='http://developer.nytimes.com/docs', target='_blank')
+      i.fa.fa-code-fork
+      | API Endspoints
+
+  h4 Send a text message
+  .row
+    .col-sm-6
+      form(method='POST')
+        .form-group
+          .input-group
+            input.form-control(type='text', name='telephone')
+            span.input-group-btn
+              button.btn.btn-success(type='submit') Send
