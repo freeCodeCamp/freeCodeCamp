@@ -12,6 +12,7 @@ var foursquare = require('node-foursquare')({ secrets: secrets.foursquare });
 var Github = require('github-api');
 var Twit = require('twit');
 var paypal = require('paypal-rest-sdk');
+var twilio = require('twilio')(secrets.twilio.sid, secrets.twilio.token);
 
 /**
  * GET /api
@@ -386,6 +387,17 @@ exports.getTwilio = function(req, res, next) {
   res.render('api/twilio', {
     title: 'Twilio API'
   });
+};
 
-
+exports.postTwilio = function(req, res, next) {
+  var message = {
+    to: req.body.telephone,
+    from: '+13472235148',
+    body: 'Hello from the Hackathon Starter'
+  };
+  twilio.sendMessage(message, function(err, responseData) {
+    if (err) return next(err);
+    console.log(responseData.from);
+    console.log(responseData.body);
+  });
 };

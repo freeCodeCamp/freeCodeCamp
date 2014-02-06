@@ -116,6 +116,7 @@ app.get('/api/paypal/cancel', apiController.getPayPalCancel);
 app.get('/api/steam', apiController.getSteam);
 app.get('/api/scraping', apiController.getScraping);
 app.get('/api/twilio', apiController.getTwilio);
+app.post('/api/twilio', apiController.postTwilio);
 app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFoursquare);
 app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getTumblr);
 app.get('/api/facebook', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFacebook);

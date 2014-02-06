@@ -20,9 +20,10 @@ block content
   h4 Send a text message
   .row
     .col-sm-6
-      form(method='POST')
+      form(role='form', method='POST')
+        input(type='hidden', name='_csrf', value=token)
         .form-group
           .input-group
-            input.form-control(type='text', name='telephone')
+            input.form-control(type='text', name='telephone', placeholder='Phone Number')
             span.input-group-btn
               button.btn.btn-success(type='submit') Send
