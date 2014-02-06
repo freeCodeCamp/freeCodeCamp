@@ -12,10 +12,11 @@ block content
       | Overview
 
   h3 Profile Information
-  .lead
-  // profile name
-  // profile avatar
-  // online status
+  .lead #{playerSummaries.personaname}
+  img(src='#{playerSummaries.avatarmedium}')
+  .lead Account since #{playerSummaries.timecreated}
+  .lead Last Online: #{playerSummaries.lastlogoff}
+  .lead Online Status: #{playerSummaries.personastatus}
 
   h3 Player achievements for #{playerAchievemments.gameName}
   p Returns a list of achievements for this user by app id
@@ -25,8 +26,9 @@ block content
         li.text-success= achievement.name
 
   h3 Owned Games
-  ul.list-unstyled
+  ul.list-unstyled.list-inline
     for game in ownedGames
       li
-        img(src='#')
+        a(href='http://store.steampowered.com/app/#{game.appid}/')
+          img(src='http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_logo_url}.jpg' width="92")
 

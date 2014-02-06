@@ -356,13 +356,14 @@ exports.getSteam = function(req, res) {
       query.steamids = steamId;
       var qs = querystring.stringify(query);
       request.get({ url: 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?' + qs, json: true }, function(error, request, body) {
-        done(error, body);
+        done(error, body.response.players[0]);
       });
     },
     ownedGames: function(done) {
+      query.include_appinfo = 1;
       var qs = querystring.stringify(query);
       request.get({ url: 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?' + qs, json: true }, function(error, request, body) {
-        done(error, body);
+        done(error, body.response.games);
       });
     }
   },
