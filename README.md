@@ -195,10 +195,11 @@ Obtaining API Keys
 
 <hr>
 
-<img src="http://www.userlogos.org/files/logos/jumpordie/steam_01.png" width="200">
+<img src="http://www.outofoursystem.com/wp-content/uploads/2012/06/steam-logo-white.jpg" width="200">
 - Go to http://steamcommunity.com/dev/apikey
-- Once signed in, enter your domainm agree to terms, and click **Register**
-- Copy and paste *key* into `config.secrets.js`
+- Sign in with your existing Steam account
+- Enter your *Domain Name*, then and click **Register**
+- Copy and paste *Key* into `config.secrets.js`
 
 Project Structure
 -----------------
@@ -212,18 +213,18 @@ Project Structure
 | **controllers**/home.js | Controller for home page (index).                                      |
 | **controllers**/user.js | Controller for user account management page.                           |
 | **models**/User.js | Mongoose schema and model for User.                                         |
-| **public/*** | Static assets, i.e. fonts, css, js, img.                                          |
-| **public/css**/styles.less | Main stylesheet for your app.                                       |
+| **public/***                       | Static assets (fonts, css, js, img)                         |
+| **public/css**/styles.less         | Main stylesheet for your app.                               |
 | **public/css/themes**/default.less | Some Bootstrap overrides to make it look prettier.          |
-| **views/account/*** | Templates relating to user account.                                        |
-| **views/api/*** | Templates relating to API Examples.                                            |
-| **views/partials**/flash.jade      | Error, info and success notifications.                      |
+| **views/account/***                | Templates for *login, signup, profile*.                     |
+| **views/api/***                    | Templates for API Examples.                                 |
+| **views/partials**/flash.jade      | Error, info and success flash notifications.                |
 | **views/partials**/navigation.jade | Navbar partial template.                                    |
 | **views/partials**/footer.jade     | Footer partial template.                                    |
 | **views**/layout.jade              | Base template.                                              |
 | **views**/home.jade                | Home page template.                                         |
 | app.js                             | Main application file.                                      |
-| cluster_app.js                     | Creates multiple instances of `app.js` via Node.js clusters.|
+| cluster_app.js                     | Creates multiple processes of `app.js` using Node.js clusters.|
 
 
 :exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
@@ -757,6 +758,10 @@ $(document).ready(function() {
 And that's it, we are done!
 
 If you want to see a really cool real-time dashboard check out this [live example](http://hackathonstarter.herokuapp.com/dashboard). Refer to the [pull request #23](https://github.com/sahat/hackathon-starter/pull/23/files) to see how it is implemented.
+
+Mongoose Cheatsheet
+-------------------
+TODO
 
 Deployment
 ----------
