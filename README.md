@@ -80,7 +80,7 @@ Prerequisites
  - **OpenSUSE**: `sudo zypper install --type pattern devel_basis`
 
 :exclamation: **Note**: If you are new to Node.js or Express framework,
-I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast by Alex Ford that teaches Node and Express from scratch.
+I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast by Alex Ford that teaches Node and Express from scratch. Alternatively, here is another great tutorial for complete beginners - [Getting Started With Node.js, Express, MongoDB](http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/).
 
 
 Getting Started
