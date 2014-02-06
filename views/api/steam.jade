@@ -9,17 +9,29 @@ block content
   .btn-group.btn-group-justified
     a.btn.btn-primary(href='https://developer.valvesoftware.com/wiki/Steam_Web_API', target='_blank')
       i.fa.fa-check-square-o
-      | Overview
+      | API Overview
+
+  br
+
+  .alert.alert-info
+    strong Steam ID
+    p Displaying public information for Steam ID #{playerSummaries.steamid}.
 
   h3 Profile Information
-  .lead #{playerSummaries.personaname}
-  img(src='#{playerSummaries.avatarmedium}')
-  .lead Account since #{playerSummaries.timecreated}
-  .lead Last Online: #{playerSummaries.lastlogoff}
-  .lead Online Status: #{playerSummaries.personastatus}
+  .row
+    .col-sm-2
+      img(src='#{playerSummaries.avatarfull}', width='92', height='92')
+    .col-sm-8
+      span.lead #{playerSummaries.personaname}
+      div Account since: #{new Date(playerSummaries.timecreated * 1000)}
+      div Last Online: #{new Date(playerSummaries.lastlogoff * 1000)}
+      div Online Status:
+        if playerSummaries.personastate == 1
+          strong.text-success  Online
+        else
+          strong.text-danger  Offline
 
-  h3 Player achievements for #{playerAchievemments.gameName}
-  p Returns a list of achievements for this user by app id
+  h3 #{playerAchievemments.gameName} Achievements
   ul.lead.list-unstyled
     for achievement in playerAchievemments.achievements
       if achievement.achieved
