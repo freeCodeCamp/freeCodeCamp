@@ -195,10 +195,11 @@ Obtaining API Keys
 
 <hr>
 
-<img src="http://www.userlogos.org/files/logos/jumpordie/steam_01.png" width="200">
+<img src="http://www.outofoursystem.com/wp-content/uploads/2012/06/steam-logo-white.jpg" width="200">
 - Go to http://steamcommunity.com/dev/apikey
-- Once signed in, enter your domainm agree to terms, and click **Register**
-- Copy and paste *key* into `config.secrets.js`
+- Sign in with your existing Steam account
+- Enter your *Domain Name*, then and click **Register**
+- Copy and paste *Key* into `config.secrets.js`
 
 Project Structure
 -----------------
