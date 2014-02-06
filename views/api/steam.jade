@@ -28,7 +28,7 @@ block content
   h3 Owned Games
   ul.list-unstyled.list-inline
     for game in ownedGames
-      li
+      li.thumb
         a(href='http://store.steampowered.com/app/#{game.appid}/')
           img(src='http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_logo_url}.jpg' width="92")
 

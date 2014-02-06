@@ -361,6 +361,7 @@ exports.getSteam = function(req, res) {
     },
     ownedGames: function(done) {
       query.include_appinfo = 1;
+      query.include_played_free_games = 1;
       var qs = querystring.stringify(query);
       request.get({ url: 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?' + qs, json: true }, function(error, request, body) {
         done(error, body.response.games);
