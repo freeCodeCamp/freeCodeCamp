@@ -340,7 +340,7 @@ exports.getPayPalCancel = function(req, res, next) {
  * Steam API example.
  */
 
-exports.getSteam = function(req, res) {
+exports.getSteam = function(req, res, next) {
   var steamId = '76561197982488301';
   var query = { l: 'english', steamid: steamId, key: secrets.steam.apiKey };
 
@@ -349,14 +349,16 @@ exports.getSteam = function(req, res) {
       query.appid = '49520';
       var qs = querystring.stringify(query);
       request.get({ url: 'http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?' + qs, json: true }, function(error, request, body) {
-        done(error, body.playerstats);
+        if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
+        done(error, body);
       });
     },
     playerSummaries: function(done) {
       query.steamids = steamId;
       var qs = querystring.stringify(query);
       request.get({ url: 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?' + qs, json: true }, function(error, request, body) {
-        done(error, body.response.players[0]);
+        if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
+        done(error, body);
       });
     },
     ownedGames: function(done) {
@@ -364,7 +366,8 @@ exports.getSteam = function(req, res) {
       query.include_played_free_games = 1;
       var qs = querystring.stringify(query);
       request.get({ url: 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?' + qs, json: true }, function(error, request, body) {
-        done(error, body.response.games);
+        if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
+        done(error, body);
       });
     }
   },
@@ -372,9 +375,9 @@ exports.getSteam = function(req, res) {
     if (err) return next(err);
       res.render('api/steam', {
       title: 'Steam Web API',
-      ownedGames: results.ownedGames,
-      playerAchievemments: results.playerAchievements,
-      playerSummary: results.playerSummaries
+      ownedGames: results.ownedGames.response.games,
+      playerAchievemments: results.playerAchievements.playerstats,
+      playerSummary: results.playerSummaries.response.players[0]
     });
   });
 };
