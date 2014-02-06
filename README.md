@@ -752,6 +752,10 @@ And that's it, we are done!
 
 If you want to see a really cool real-time dashboard check out this [live example](http://hackathonstarter.herokuapp.com/dashboard). Refer to the [pull request #23](https://github.com/sahat/hackathon-starter/pull/23/files) to see how it is implemented.
 
+Mongoose Cheatsheet
+-------------------
+TODO
+
 Deployment
 ----------
 
