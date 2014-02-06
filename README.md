@@ -288,6 +288,13 @@ would like to see original, non-minified markup, add `app.locals.pretty = true;`
 
 FAQ
 ---
+### Why do I keep getting `403 Error: Forbidden` on submitting a **POST** request?
+You need to add this hidden input element to your form. This has been added in the
+pull request [#40](https://github.com/sahat/hackathon-starter/pull/40).
+```
+input(type='hidden', name='_csrf', value=token)
+```
+
 ### What is cluster_app.js?
 From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_it_works):
 > A single instance of Node runs in a single thread. To take advantage of multi-core systems
