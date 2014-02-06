@@ -370,13 +370,11 @@ exports.getSteam = function(req, res) {
   },
   function(err, results) {
     if (err) return next(err);
-    console.log(results.ownedGames);
-    console.log(results.playerSummaries);
-    res.render('api/steam', {
+      res.render('api/steam', {
       title: 'Steam Web API',
       ownedGames: results.ownedGames,
       playerAchievemments: results.playerAchievements,
-      playerSummaries: results.playerSummaries
+      playerSummary: results.playerSummaries
     });
   });
 };

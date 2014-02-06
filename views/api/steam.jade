@@ -15,18 +15,18 @@ block content
 
   .alert.alert-info
     strong Steam ID
-    p Displaying public information for Steam ID #{playerSummaries.steamid}.
+    p Displaying public information for Steam ID #{playerSummary.steamid}.
 
   h3 Profile Information
   .row
     .col-sm-2
-      img(src='#{playerSummaries.avatarfull}', width='92', height='92')
+      img(src='#{playerSummary.avatarfull}', width='92', height='92')
     .col-sm-8
-      span.lead #{playerSummaries.personaname}
-      div Account since: #{new Date(playerSummaries.timecreated * 1000)}
-      div Last Online: #{new Date(playerSummaries.lastlogoff * 1000)}
+      span.lead #{playerSummary.personaname}
+      div Account since: #{new Date(playerSummary.timecreated * 1000)}
+      div Last Online: #{new Date(playerSummary.lastlogoff * 1000)}
       div Online Status:
-        if playerSummaries.personastate == 1
+        if playerSummary.personastate == 1
           strong.text-success  Online
         else
           strong.text-danger  Offline
