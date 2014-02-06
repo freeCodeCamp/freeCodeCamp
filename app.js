@@ -121,6 +121,8 @@ app.get('/api/aviary', apiController.getAviary);
 app.get('/api/paypal', apiController.getPayPal);
 app.get('/api/paypal/success', apiController.getPayPalSuccess);
 app.get('/api/paypal/cancel', apiController.getPayPalCancel);
+app.get('/api/steam', apiController.getSteam);
+
 
 /**
  * OAuth routes for sign-in.
