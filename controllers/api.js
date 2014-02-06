@@ -396,7 +396,7 @@ exports.postTwilio = function(req, res, next) {
     body: 'Hello from the Hackathon Starter'
   };
   twilio.sendMessage(message, function(err, responseData) {
-    if (err) return next(err);
+    if (err) return next(err.message);
     req.flash('success', { msg: 'Text sent to ' + responseData.to + '.'})
     res.redirect('/api/twilio');
   });
