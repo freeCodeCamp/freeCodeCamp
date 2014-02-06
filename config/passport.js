@@ -205,10 +205,6 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
   }
 }));
 
-/**
- * Sign in with Tumblr.
- */
-
 passport.use('tumblr', new OAuthStrategy({
     requestTokenURL: 'http://www.tumblr.com/oauth/request_token',
     accessTokenURL: 'http://www.tumblr.com/oauth/access_token',
@@ -227,10 +223,6 @@ passport.use('tumblr', new OAuthStrategy({
     });
   }
 ));
-
-/**
- * Sign in with Foursquare.
- */
 
 passport.use('foursquare', new OAuth2Strategy({
     authorizationURL: 'https://foursquare.com/oauth2/authorize',
