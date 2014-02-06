@@ -10,3 +10,10 @@ block content
     a.btn.btn-primary(href='https://developer.valvesoftware.com/wiki/Steam_Web_API', target='_blank')
       i.fa.fa-check-square-o
       | Overview
+
+  h3 Player achievements for #{playerAchievemments.gameName}
+  p Returns a list of achievements for this user by app id
+  ul.lead.list-unstyled
+    for achievement in playerAchievemments.achievements
+      if achievement.achieved
+        li.text-success= achievement.name
