@@ -503,7 +503,7 @@ to "info" and "success" flash messages, and you could even create a new one your
 
 **Data Usage Controller (Example)**
 ```
-req.flash('warning', 'You have exceeded 90% of your data usage');
+req.flash('warning', {msg: 'You have exceeded 90% of your data usage'});
 ```
 
 **User Account Page (Example)**
