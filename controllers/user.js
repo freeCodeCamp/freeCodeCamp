@@ -17,8 +17,8 @@ exports.getLogin = function(req, res) {
 /**
  * POST /login
  * Sign in using email and password.
- * @param {string} email
- * @param {string} password
+ * @param email
+ * @param password
  */
 
 exports.postLogin = function(req, res, next) {
@@ -48,6 +48,16 @@ exports.postLogin = function(req, res, next) {
 };
 
 /**
+ * GET /logout
+ * Log out.
+ */
+
+exports.logout = function(req, res) {
+  req.logout();
+  res.redirect('/');
+};
+
+/**
  * GET /signup
  * Signup page.
  */
@@ -62,8 +72,8 @@ exports.getSignup = function(req, res) {
 /**
  * POST /signup
  * Create a new local account.
- * @param {string} email
- * @param {string} password
+ * @param email
+ * @param password
  */
 
 exports.postSignup = function(req, res, next) {
@@ -133,7 +143,7 @@ exports.postUpdateProfile = function(req, res, next) {
 /**
  * POST /account/password
  * Update current password.
- * @param {string} password
+ * @param password
  */
 
 exports.postUpdatePassword = function(req, res, next) {
@@ -163,7 +173,7 @@ exports.postUpdatePassword = function(req, res, next) {
 /**
  * POST /account/delete
  * Delete user account.
- * @param {string} id
+ * @param id - User ObjectId
  */
 
 exports.postDeleteAccount = function(req, res, next) {
@@ -177,8 +187,8 @@ exports.postDeleteAccount = function(req, res, next) {
 /**
  * GET /account/unlink/:provider
  * Unlink OAuth2 provider from the current user.
- * @param {string} provider
- * @param {string} id
+ * @param provider
+ * @param id - User ObjectId
  */
 
 exports.getOauthUnlink = function(req, res, next) {
@@ -195,14 +205,4 @@ exports.getOauthUnlink = function(req, res, next) {
       res.redirect('/account');
     });
   });
-};
-
-/**
- * GET /logout
- * Log out.
- */
-
-exports.logout = function(req, res) {
-  req.logout();
-  res.redirect('/');
 };
