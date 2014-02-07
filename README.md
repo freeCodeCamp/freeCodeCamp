@@ -135,6 +135,7 @@ Obtaining API Keys
 - Click on *Settings* on the sidebar, then click **+ Add Platform**
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
+- Note: Once user logs in and Facebook redirects back to website, they will append "#_=_" to your URL. See [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) for ways to handle it.
 
 <hr>
 
