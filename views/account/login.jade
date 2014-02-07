@@ -6,27 +6,32 @@ block content
       legend Sign In
       .form-group
         .btn-group.btn-group-justified
-          a.btn.btn-facebook(href='/auth/facebook')
-            i.fa.fa-facebook
-            | Facebook
-          a.btn.btn-twitter(href='/auth/twitter')
-            i.fa.fa-twitter
-            | Twitter
-          a.btn.btn-github(href='/auth/github')
-            i.fa.fa-github
-            | GitHub
-          a.btn.btn-google-plus(href='/auth/google')
-            i.fa.fa-google-plus
-            | Google
-      .form-group
-        label.control-label(for='email') Email
-        input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
-      .form-group
-        label.control-label(for='password') Password
-        input.form-control(type='password', name='password', id='password', placeholder='Password')
-      .form-group
-        input.form-control(type='hidden', name='_csrf', value=token) 
-      .form-group
-        button.btn.btn-primary(type='submit')
-          i.fa.fa-unlock-alt
-          | Login
+          if secrets.facebookAuth
+            a.btn.btn-facebook(href='/auth/facebook')
+              i.fa.fa-facebook
+              | Facebook
+          if secrets.twitterAuth
+            a.btn.btn-twitter(href='/auth/twitter')
+              i.fa.fa-twitter
+              | Twitter
+          if secrets.githubAuth
+            a.btn.btn-github(href='/auth/github')
+              i.fa.fa-github
+              | GitHub
+          if secrets.googleAuth
+            a.btn.btn-google-plus(href='/auth/google')
+              i.fa.fa-google-plus
+              | Google
+      if secrets.localAuth
+        .form-group
+          label.control-label(for='email') Email
+          input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
+        .form-group
+          label.control-label(for='password') Password
+          input.form-control(type='password', name='password', id='password', placeholder='Password')
+        .form-group
+          input.form-control(type='hidden', name='_csrf', value=token) 
+        .form-group
+          button.btn.btn-primary(type='submit')
+            i.fa.fa-unlock-alt
+            | Login

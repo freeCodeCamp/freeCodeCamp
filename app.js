@@ -78,6 +78,7 @@ app.use(passport.session());
 app.use(function(req, res, next) {
   res.locals.user = req.user;
   res.locals.token = req.csrfToken();
+  res.locals.secrets = secrets;
   next();
 });
 app.use(flash());
