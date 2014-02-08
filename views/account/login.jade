@@ -3,6 +3,7 @@ extends ../layout
 block content
   .col-sm-8.col-sm-offset-2
     form(method='POST')
+      input(type='hidden', name='_csrf', value=token)
       legend Sign In
       .form-group
         .btn-group.btn-group-justified
@@ -24,8 +25,6 @@ block content
       .form-group
         label.control-label(for='password') Password
         input.form-control(type='password', name='password', id='password', placeholder='Password')
-      .form-group
-        input.form-control(type='hidden', name='_csrf', value=token) 
       .form-group
         button.btn.btn-primary(type='submit')
           i.fa.fa-unlock-alt

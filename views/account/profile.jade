@@ -5,6 +5,7 @@ block content
     h3 Profile Information
 
   form.form-horizontal(action='/account/profile', method='POST')
+    input(type='hidden', name='_csrf', value=token)
     .form-group
       label.col-sm-2.control-label(for='email') Email
       .col-sm-4
@@ -35,8 +36,6 @@ block content
       .col-sm-4
         img(src="#{user.gravatar()}", class='profile', width='100', height='100')
     .form-group
-      input.form-control(type='hidden', name='_csrf', value=token)
-    .form-group
       .col-sm-offset-2.col-sm-4
         button.btn.btn.btn-primary(type='submit')
           i.fa.fa-magnet
@@ -47,6 +46,7 @@ block content
     h3 Change Password
 
   form.form-horizontal(action='/account/password', method='POST')
+    input(type='hidden', name='_csrf', value=token)
     .form-group
       label.col-sm-3.control-label(for='password') New Password
       .col-sm-4
@@ -55,8 +55,6 @@ block content
       label.col-sm-3.control-label(for='confirmPassword') Confirm Password
       .col-sm-4
         input.form-control(type='password', name='confirmPassword', id='confirmPassword')
-    .form-group
-        input.form-control(type='hidden', name='_csrf', value=token)
     .form-group
       .col-sm-offset-3.col-sm-4
         button.btn.btn.btn-primary(type='submit')

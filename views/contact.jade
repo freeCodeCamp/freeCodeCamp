@@ -5,6 +5,7 @@ block content
     h3 Contact Form
 
   form.form-horizontal(role='form', method='POST')
+    input(type='hidden', name='_csrf', value=token)
     .form-group
       label(class='col-sm-2 control-label', for='name') Name
       .col-sm-8
@@ -17,8 +18,6 @@ block content
       label(class='col-sm-2 control-label', for='message') Body
       .col-sm-8
         textarea.form-control(type='text', name='message', id='message', rows='7')
-    .form-group
-        input.form-control(type='hidden', name='_csrf', value=token) 
     .form-group
       .col-sm-offset-2.col-sm-8
         button.btn.btn-default(type='submit')

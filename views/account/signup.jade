@@ -2,6 +2,7 @@ extends ../layout
 
 block content
   form.form-horizontal(id='signup-form', method='POST')
+    input(type='hidden', name='_csrf', value=token)
     legend Signup
     .form-group
       label.col-sm-3.control-label(for='email') Email
@@ -15,8 +16,6 @@ block content
       label.col-sm-3.control-label(for='confirmPassword') Confirm Password
       .col-sm-7
         input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
-    .form-group
-        input.form-control(type='hidden', name='_csrf', value=token) 
     .form-group
       .col-sm-offset-3.col-sm-7
         button.btn.btn-success(type='submit')
