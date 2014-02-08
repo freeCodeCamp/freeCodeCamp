@@ -122,7 +122,7 @@ Obtaining API Keys
  - **Authorized redirect URI**: http://localhost:3000/auth/google/callback
 - Copy and paste *Client ID* and *Client secret* keys into `config/secrets.js`
 
-:exclamation: **Note**: When you ready to deploy to production don't forget to add your new url to **Authorized Javascript origins** and **Authorized redirect URI**, e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively. The same goes for other providers.
+:exclamation: **Note**: When you ready to deploy to production don't forget to add your new url to *Authorized Javascript origins* and *Authorized redirect URI*, e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively. The same goes for other providers.
 
 <hr>
 
@@ -135,7 +135,8 @@ Obtaining API Keys
 - Click on *Settings* on the sidebar, then click **+ Add Platform**
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
-- Note: Once user logs in and Facebook redirects back to website, they will append "#_=_" to your URL. See [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) for ways to handle it.
+
+:exclamation: **Note**: After a successful sign in with Facebook, user will be redirected back to home page with the appended hash `#_=_` in your URL. This is *not* a bug. See [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) for ways to handle it.
 
 <hr>
 
@@ -504,7 +505,7 @@ to "info" and "success" flash messages, and you could even create a new one your
 
 **Data Usage Controller (Example)**
 ```
-req.flash('warning', {msg: 'You have exceeded 90% of your data usage'});
+req.flash('warning', { msg: 'You have exceeded 90% of your data usage' });
 ```
 
 **User Account Page (Example)**
