@@ -291,14 +291,14 @@ add `app.locals.pretty = true;` to **app.js** with the rest of the Express confi
 
 FAQ
 ---
-### Why do I keep getting `403 Error: Forbidden` on submitting a **POST** request?
+### Why do I get `403 Error: Forbidden` when submitting a POST form?
 You need to add this hidden input element to your form. This has been added in the
 pull request [#40](https://github.com/sahat/hackathon-starter/pull/40).
 ```
 input(type='hidden', name='_csrf', value=token)
 ```
 
-### What is cluster_app.js?
+### What is `cluster_app.js`?
 From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_it_works):
 > A single instance of Node runs in a single thread. To take advantage of multi-core systems
 > the user will sometimes want to launch a cluster of Node processes to handle the load.
