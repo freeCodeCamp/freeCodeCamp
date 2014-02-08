@@ -56,7 +56,7 @@ block content
       .col-sm-4
         input.form-control(type='password', name='confirmPassword', id='confirmPassword')
     .form-group
-        input.form-control(type='hidden', name='_csrf', value=token) 
+        input.form-control(type='hidden', name='_csrf', value=token)
     .form-group
       .col-sm-offset-3.col-sm-4
         button.btn.btn.btn-primary(type='submit')
@@ -68,6 +68,7 @@ block content
 
   p You can delete your account, but keep in mind this action is irreversible.
   form(action='/account/delete', method='POST')
+    input(type='hidden', name='_csrf', value=token)
     button.btn.btn-danger(type='submit')
       i.fa.fa-trash-o
       | Delete my account
