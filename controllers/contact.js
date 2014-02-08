@@ -15,9 +15,9 @@ exports.getContact = function(req, res) {
 /**
  * POST /contact
  * Send a contact form via SendGrid.
- * @param {string} email
- * @param {string} name
- * @param {string} message
+ * @param email
+ * @param name
+ * @param message
  */
 
 exports.postContact = function(req, res) {

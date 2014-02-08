@@ -5,6 +5,7 @@ block content
     h3 Profile Information
 
   form.form-horizontal(action='/account/profile', method='POST')
+    input(type='hidden', name='_csrf', value=token)
     .form-group
       label.col-sm-2.control-label(for='email') Email
       .col-sm-4
@@ -35,8 +36,6 @@ block content
       .col-sm-4
         img(src="#{user.gravatar()}", class='profile', width='100', height='100')
     .form-group
-      input.form-control(type='hidden', name='_csrf', value=token)
-    .form-group
       .col-sm-offset-2.col-sm-4
         button.btn.btn.btn-primary(type='submit')
           i.fa.fa-magnet
@@ -46,29 +45,29 @@ block content
   if secrets.localAuth
     .page-header
       h3 Change Password
-
-    form.form-horizontal(action='/account/password', method='POST')
-      .form-group
-        label.col-sm-3.control-label(for='password') New Password
-        .col-sm-4
-          input.form-control(type='password', name='password', id='password')
-      .form-group
-        label.col-sm-3.control-label(for='confirmPassword') Confirm Password
-        .col-sm-4
-          input.form-control(type='password', name='confirmPassword', id='confirmPassword')
-      .form-group
-          input.form-control(type='hidden', name='_csrf', value=token) 
-      .form-group
-        .col-sm-offset-3.col-sm-4
-          button.btn.btn.btn-primary(type='submit')
-            i.fa.fa-keyboard-o
-            | Change Password
+			
+	  form.form-horizontal(action='/account/password', method='POST')
+	    input(type='hidden', name='_csrf', value=token)
+	    .form-group
+	      label.col-sm-3.control-label(for='password') New Password
+	      .col-sm-4
+	        input.form-control(type='password', name='password', id='password')
+	    .form-group
+	      label.col-sm-3.control-label(for='confirmPassword') Confirm Password
+	      .col-sm-4
+	        input.form-control(type='password', name='confirmPassword', id='confirmPassword')
+	    .form-group
+	      .col-sm-offset-3.col-sm-4
+	        button.btn.btn.btn-primary(type='submit')
+	          i.fa.fa-keyboard-o
+	          | Change Password
 
   .page-header
     h3 Delete Account
 
   p You can delete your account, but keep in mind this action is irreversible.
   form(action='/account/delete', method='POST')
+    input(type='hidden', name='_csrf', value=token)
     button.btn.btn-danger(type='submit')
       i.fa.fa-trash-o
       | Delete my account

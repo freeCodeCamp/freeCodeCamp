@@ -398,6 +398,7 @@ exports.getTwilio = function(req, res, next) {
 /**
  * POST /api/twilio
  * Twilio API example.
+ * @param telephone
  */
 
 exports.postTwilio = function(req, res, next) {
