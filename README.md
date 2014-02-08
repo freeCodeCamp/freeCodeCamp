@@ -136,7 +136,7 @@ Obtaining API Keys
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
 
-:exclamation: **Note**: After a successful sign in with Facebook, user will be redirected back to home page with the appended hash `#_=_` in your URL. This is *not* a bug. See [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) for ways to handle it.
+:exclamation: **Note**: After a successful sign in with Facebook, a user will be redirected back to home page with appended hash `#_=_` in the URL. It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
 
 <hr>
 
@@ -264,7 +264,6 @@ Recommended Client-Side libraries
 ---------------------------------
 - [Hover](https://github.com/IanLunn/Hover) - Awesome css3 animations on mouse hover.
 - [platform.js](https://github.com/bestiejs/platform.js) - Get client's operating system name, version, and other useful information.
-- [iCheck](https://github.com/fronteed/iCheck) - Custom nice looking radio and check boxes.
 - [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/) - Responsive jQuery Lightbox Plugin.
 - [jQuery Raty](http://wbotelhos.com/raty/) - Star Rating Plugin.
 - [Headroom.js](http://wicky.nillia.ms/headroom.js/) - Hide your header until you need it.
