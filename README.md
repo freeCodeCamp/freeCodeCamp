@@ -306,7 +306,7 @@ From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_
 
 `cluster_app.js` allows you to take advantage of this feature by forking a process of `app.js`
 for each CPU detected. For the majority of applications serving HTTP requests,
-this is a resounding boon. However, the cluster module is still in experimental stage, therefore it should only be used after understanding its purpose and behavior. To use it, simply run `node cluster_app.js`. **Its use is entirely optional and `app.js` is not tied in any way to it**. As a reminder, if you plan to use `cluster_app.js` instead of `app.js`, be sure to indicate that in `Procfile` if you are deploying your app to Heroku.
+this is a resounding boon. However, the cluster module is still in experimental stage, therefore it should only be used after understanding its purpose and behavior. To use it, simply run `node cluster_app.js`. **Its use is entirely optional and `app.js` is not tied in any way to it**. As a reminder, if you plan to use `cluster_app.js` instead of `app.js`, be sure to indicate that in `package.json` when you are ready to deploy your app.
 
 ### What is this Rails 3.1-style asset pipeline that you mentioned in Features?
 This is how you typically define static files inside HTML, Jade or any template for that matter:

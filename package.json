@@ -1,6 +1,9 @@
 {
   "name": "hackathon-starter",
   "version": "0.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "async": "~0.2.10",
     "bcrypt-nodejs": "~0.0.3",
