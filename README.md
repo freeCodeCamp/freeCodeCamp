@@ -771,7 +771,7 @@ Deployment
 Once you are ready to deploy your app, you will need to create an account with a cloud platform to host it. These are not
 the only choices, but they are my top picks. Create an account with **MongoLab** and then pick one of the 4 providers
 below. Once again, there are plenty of other choices and you are not limited to just the ones listed below. From my
-experience, **Heroku** is the easiest to get started with, it will automatically restart your node.js process when it crashes, custom domain support on free accounts, hot push deployments, and *Hackathon Starter* already includes `Procfile`, which is necessary for deployment to **Heroku**.
+experience, **Heroku** is the easiest to get started with, it will automatically restart your node.js process when it crashes, custom domain support on free accounts and zero-downtime deployments.
 
 <img src="http://i.imgur.com/7KnCa5a.png" width="200">
 - Open [mongolab.com](https://mongolab.com) website
