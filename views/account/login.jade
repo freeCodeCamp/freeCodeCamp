@@ -23,15 +23,15 @@ block content
             a.btn.btn-google-plus(href='/auth/google')
               i.fa.fa-google-plus
               | Google
-			if secrets.localAuth			
-	      .form-group
-	        label.control-label(for='email') Email
-	        input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
-	      .form-group
-	        label.control-label(for='password') Password
-	        input.form-control(type='password', name='password', id='password', placeholder='Password')
-	      .form-group
-	        button.btn.btn-primary(type='submit')
-	          i.fa.fa-unlock-alt
-	          | Login
+      if secrets.localAuth
+        .form-group
+          label.control-label(for='email') Email
+          input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
+        .form-group
+          label.control-label(for='password') Password
+          input.form-control(type='password', name='password', id='password', placeholder='Password')
+        .form-group
+          button.btn.btn-primary(type='submit')
+            i.fa.fa-unlock-alt
+            | Login
 
