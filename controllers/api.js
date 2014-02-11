@@ -482,7 +482,3 @@ exports.postVenmo = function(req, res, next) {
     res.redirect('/api/venmo');
   });
 };
-
-// remove thumb css
-// add venmo instructions
-// update auth optional instructions
