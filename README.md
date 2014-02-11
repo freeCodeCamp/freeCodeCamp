@@ -111,6 +111,9 @@ need to go through each provider to generate new credentials.
 
 Obtaining API Keys
 ------------------
+
+:pushpin: You could support all 5 authentication methods by setting up OAuth keys, but you don't have to. If you would only like to have **Facebook sign-in** and **Local sign-in** with email and password, in **secrets.js** set `googleAuth: false`, `twitterOauth: false`, `githubAuth: false`. By doing so, *Google, Twitter and Github* buttons will not show up on the *Login* page. If you set `localAuth: false`, users will not be able to login/create an account with email and password or change password in the *Account Management* page.
+
 <img src="http://images.google.com/intl/en_ALL/images/srpr/logo6w.png" width="200">
 - Visit [Google Cloud Console](https://cloud.google.com/console/project)
 - Click **CREATE PROJECT** button
