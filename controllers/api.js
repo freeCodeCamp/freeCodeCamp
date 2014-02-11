@@ -464,7 +464,7 @@ exports.postVenmo = function(req, res, next) {
 
   if (validator.isEmail(req.body.user)) {
     formData.email = req.body.user;
-  } else if (validator.isNumberic(req.body.user) &&
+  } else if (validator.isNumeric(req.body.user) &&
     validator.isLength(req.body.user, 10, 11)) {
     formData.phone = req.body.user;
   } else {
@@ -472,7 +472,7 @@ exports.postVenmo = function(req, res, next) {
   }
 
   // Send money
-  request.post('https://sandbox-api.venmo.com/v1/payments', { form: formData }, function(err, request, body) {
+  request.post('https://api.venmo.com/v1/payments', { form: formData }, function(err, request, body) {
     if (err) return next(err);
     if (request.statusCode !== 200) {
       req.flash('errors', { msg: JSON.parse(body).error.message });
