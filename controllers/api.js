@@ -413,3 +413,9 @@ exports.postTwilio = function(req, res, next) {
     res.redirect('/api/twilio');
   });
 };
+
+exports.getVenmo = function(req, res, next) {
+  res.render('api/venmo', {
+    title: 'Venmo API'
+  });
+};

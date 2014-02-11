@@ -123,6 +123,7 @@ app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized, 
 app.get('/api/facebook', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFacebook);
 app.get('/api/github', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getGithub);
 app.get('/api/twitter', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getTwitter);
+app.get('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getVenmo);
 
 /**
  * OAuth routes for sign-in.
@@ -148,6 +149,11 @@ app.get('/auth/foursquare/callback', passport.authorize('foursquare', { failureR
 app.get('/auth/tumblr', passport.authorize('tumblr'));
 app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), function(req, res) {
   res.redirect('/api/tumblr');
+});
+app.get('/auth/venmo', passport.authorize('venmo', { scope: 'access_profile make_payments' }));
+app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '/api' }), function(req, res) {
+  console.log('Success');
+  res.redirect('/api/venmo');
 });
 
 /**
