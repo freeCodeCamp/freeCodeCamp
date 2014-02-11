@@ -451,7 +451,7 @@ exports.postVenmo = function(req, res, next) {
 
   if (validator.isEmail(req.body.user)) {
     formData.email = req.body.user;
-  } else if (validator.isLength(req.body.user, 7, 10)) {
+  } else if (validator.isLength(req.body.user, 10, 11)) {
     formData.phone = req.body.user;
   } else {
     formData.user_id = req.body.user;
@@ -461,7 +461,10 @@ exports.postVenmo = function(req, res, next) {
   // Send money
   request.post('https://api.venmo.com/v1/payments', { form: formData }, function(err, request, body) {
     if (err) return next(err);
-    console.log(body);
+    if (request.statusCode !== 200) {
+      req.flash('errors', { msg: JSON.parse(body).error.message });
+      return res.redirect('/api/venmo');
+    }
     req.flash('success', 'Venmo money transfer complete');
     res.redirect('/api/venmo');
   });
