@@ -150,7 +150,7 @@ app.get('/auth/tumblr', passport.authorize('tumblr'));
 app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), function(req, res) {
   res.redirect('/api/tumblr');
 });
-app.get('/auth/venmo', passport.authorize('venmo', { scope: 'access_profile make_payments' }));
+app.get('/auth/venmo', passport.authorize('venmo', { scope: 'make_payments access_profile access_balance access_email access_phone' }));
 app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '/api' }), function(req, res) {
   console.log('Success');
   res.redirect('/api/venmo');

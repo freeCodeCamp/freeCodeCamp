@@ -415,7 +415,15 @@ exports.postTwilio = function(req, res, next) {
 };
 
 exports.getVenmo = function(req, res, next) {
-  res.render('api/venmo', {
-    title: 'Venmo API'
+  var token = _.findWhere(req.user.tokens, { kind: 'venmo' });
+  var query = querystring.stringify({ access_token: token.accessToken });
+  request.get({ url: 'https://api.venmo.com/v1/me?' + query, json: true }, function(err, request, body) {
+    if (err) return next(err);
+    res.render('api/venmo', {
+      title: 'Venmo API',
+      profile: body.data
+    });
+
   });
+
 };
