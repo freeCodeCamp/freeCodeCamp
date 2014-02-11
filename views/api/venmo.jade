@@ -61,4 +61,23 @@ block content
   br
 
   h3 Recent Payments
-
+  table.table.table-striped.table-bordered
+    thead
+      tr
+        th To
+        th Amount
+        th Status
+        th Date
+        th Note
+    tbody
+      if recentPayments.length
+        for payment in recentPayments
+          tr
+            td= payment.target.phone || payment.target.email
+            td= payment.amount
+            td= payment.status
+            td= payment.date_created
+            td= payment.note
+      else
+        tr
+          td(colspan=5) No recent payments.

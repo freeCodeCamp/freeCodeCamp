@@ -347,41 +347,41 @@ exports.getSteam = function(req, res, next) {
   var query = { l: 'english', steamid: steamId, key: secrets.steam.apiKey };
 
   async.parallel({
-    playerAchievements: function(done) {
-      query.appid = '49520';
-      var qs = querystring.stringify(query);
-      request.get({ url: 'http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?' + qs, json: true }, function(error, request, body) {
-        if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
-        done(error, body);
-      });
+      playerAchievements: function(done) {
+        query.appid = '49520';
+        var qs = querystring.stringify(query);
+        request.get({ url: 'http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?' + qs, json: true }, function(error, request, body) {
+          if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
+          done(error, body);
+        });
+      },
+      playerSummaries: function(done) {
+        query.steamids = steamId;
+        var qs = querystring.stringify(query);
+        request.get({ url: 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?' + qs, json: true }, function(error, request, body) {
+          if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
+          done(error, body);
+        });
+      },
+      ownedGames: function(done) {
+        query.include_appinfo = 1;
+        query.include_played_free_games = 1;
+        var qs = querystring.stringify(query);
+        request.get({ url: 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?' + qs, json: true }, function(error, request, body) {
+          if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
+          done(error, body);
+        });
+      }
     },
-    playerSummaries: function(done) {
-      query.steamids = steamId;
-      var qs = querystring.stringify(query);
-      request.get({ url: 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?' + qs, json: true }, function(error, request, body) {
-        if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
-        done(error, body);
-      });
-    },
-    ownedGames: function(done) {
-      query.include_appinfo = 1;
-      query.include_played_free_games = 1;
-      var qs = querystring.stringify(query);
-      request.get({ url: 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?' + qs, json: true }, function(error, request, body) {
-        if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
-        done(error, body);
-      });
-    }
-  },
-  function(err, results) {
-    if (err) return next(err);
+    function(err, results) {
+      if (err) return next(err);
       res.render('api/steam', {
-      title: 'Steam Web API',
-      ownedGames: results.ownedGames.response.games,
-      playerAchievemments: results.playerAchievements.playerstats,
-      playerSummary: results.playerSummaries.response.players[0]
+        title: 'Steam Web API',
+        ownedGames: results.ownedGames.response.games,
+        playerAchievemments: results.playerAchievements.playerstats,
+        playerSummary: results.playerSummaries.response.players[0]
+      });
     });
-  });
 };
 
 /**
@@ -419,13 +419,24 @@ exports.getVenmo = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'venmo' });
   var query = querystring.stringify({ access_token: token.accessToken });
 
-  // Get profile information
-  request.get({ url: 'https://api.venmo.com/v1/me?' + query, json: true }, function(err, request, body) {
+  async.parallel({
+    getProfile: function(done) {
+      request.get({ url: 'https://api.venmo.com/v1/me?' + query, json: true }, function(err, request, body) {
+        done(err, body);
+      });
+    },
+    getRecentPayments: function(done) {
+      request.get({ url: 'https://api.venmo.com/v1/payments?' + query, json: true }, function(err, request, body) {
+        done(err, body);
+      });
+    }
+  },
+  function(err, results) {
     if (err) return next(err);
-
     res.render('api/venmo', {
       title: 'Venmo API',
-      profile: body.data
+      profile: results.getProfile.data,
+      recentPayments: results.getRecentPayments.data
     });
   });
 };
