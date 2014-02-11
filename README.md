@@ -201,7 +201,7 @@ Obtaining API Keys
 - Go to http://steamcommunity.com/dev/apikey
 - Sign in with your existing Steam account
 - Enter your *Domain Name*, then and click **Register**
-- Copy and paste *Key* into `config.secrets.js`
+- Copy and paste *Key* into `config/secrets.js`
 
 Project Structure
 -----------------
