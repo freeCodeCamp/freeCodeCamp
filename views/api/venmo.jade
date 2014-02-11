@@ -61,7 +61,7 @@ block content
   br
 
   h3 Recent Payments
-  table.table.table-striped.table-bordered
+  table.table.table-striped.table-condensed.table-bordered
     thead
       tr
         th To
@@ -73,8 +73,8 @@ block content
       if recentPayments.length
         for payment in recentPayments
           tr
-            td= payment.target.phone || payment.target.email
-            td= payment.amount
+            td= payment.target.phone || payment.target.email || payment.target.user
+            td $#{payment.amount}
             td= payment.status
             td= payment.date_created
             td= payment.note

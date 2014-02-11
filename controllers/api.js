@@ -428,6 +428,7 @@ exports.getVenmo = function(req, res, next) {
     getRecentPayments: function(done) {
       request.get({ url: 'https://api.venmo.com/v1/payments?' + query, json: true }, function(err, request, body) {
         done(err, body);
+
       });
     }
   },
@@ -444,7 +445,7 @@ exports.getVenmo = function(req, res, next) {
 exports.postVenmo = function(req, res, next) {
   req.assert('user', 'Phone, Email or Venmo User ID cannot be blank').notEmpty();
   req.assert('note', 'Please enter a message to accompany the payment').notEmpty();
-  req.assert('amount', 'They amount you want to pay cannot be blank').notEmpty();
+  req.assert('amount', 'The amount you want to pay cannot be blank').notEmpty();
 
   var errors = req.validationErrors();
 
