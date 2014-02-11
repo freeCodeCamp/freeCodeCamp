@@ -424,6 +424,9 @@ this feature. I have started working on it, but if it's really that important an
 it, check out the [forgot-password](https://github.com/sahat/hackathon-starter/tree/forgot-password) branch. So far it has a template, GET controller to render that template,
 POST controller to send an email via Nodemailer.
 
+### How do I switch SendGrid for another email delivery service?
+If you would like to use [Mailgun](http://mailgun.com) service instead of [SendGrid](http://sendgrid.com) for sending emails, open `controllers/contact.js`, then inside `var smtpTransport = nodemailer.createTransport('SMTP', { });` comment out or delete **SendGrid** code block, and uncomment **Mailgun** code block. You are not limited to just SendGrid or Mailgun. **Nodemailer** supports other providers as well, including GMail, iCloud, Hotmail, Yahoo, Mail.ru.
+
 How It Works (mini guides)
 --------------------------
 This section is intended for giving you a detailed explanation about
