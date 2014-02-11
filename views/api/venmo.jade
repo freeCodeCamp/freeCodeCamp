@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  .page-header
+    h2
+      i.fa.fa-money
+      | Venmo API
+
+  .btn-group.btn-group-justified
+    a.btn.btn-primary(href='https://developer.venmo.com/docs/quickstart', target='_blank')
+      i.fa.fa-book
+      | Quickstart
+    a.btn.btn-primary(href='https://developer.venmo.com/docs/api-console', target='_blank')
+      i.fa.fa-laptop
+      | API Console
+    a.btn.btn-primary(href='https://developer.venmo.com/docs/endpoints/payments', target='_blank')
+      i.fa.fa-code-fork
+      | API Endspoints
+
+  h3 Venmo Profile
+  .col-sm-2
+    img(src='#{profile.user.profile_picture_url}')
+  .col-sm-8
+    .lead Balance:
+      strong  $#{profile.balance}
+    .lead Display Name:
+      strong  #{profile.user.display_name}
+    .lead Email:
+      strong  #{profile.user.email}
+    .lead Phone:
+      strong  #{profile.user.phone}
+
+
