@@ -223,7 +223,7 @@ Obtaining API Keys
 <img src="https://raw.github.com/mailgun/media/master/Mailgun_Primary.png" width="200">
 - Go to http://www.mailgun.com
 - Sign up and add your *Domain Name*
-- From the domain overview, copy and paste the default SMTP *Login* and *Password* into `config.secrets.js`
+- From the domain overview, copy and paste the default SMTP *Login* and *Password* into `config/secrets.js`
 
 Project Structure
 -----------------
@@ -425,7 +425,7 @@ it, check out the [forgot-password](https://github.com/sahat/hackathon-starter/t
 POST controller to send an email via Nodemailer.
 
 ### How do I switch SendGrid for another email delivery service?
-If you would like to use [Mailgun](http://mailgun.com) service instead of [SendGrid](http://sendgrid.com) for sending emails, open `controllers/contact.js`, then inside `var smtpTransport = nodemailer.createTransport('SMTP', { });` comment out or delete **SendGrid** code block, and uncomment **Mailgun** code block. You are not limited to just SendGrid or Mailgun. **Nodemailer** supports other providers as well, including GMail, iCloud, Hotmail, Yahoo, Mail.ru.
+If you would like to use [Mailgun](http://mailgun.com) service instead of [SendGrid](http://sendgrid.com) for sending emails, open `controllers/contact.js`, then inside `var smtpTransport = nodemailer.createTransport('SMTP', { });` comment out or delete **SendGrid** code block, and uncomment **Mailgun** code block. You are not limited to just SendGrid or Mailgun. **Nodemailer** library supports many other providers, including GMail, iCloud, Hotmail, Yahoo, Mail.ru. Just don't forget to add *username* and *password* for that service provider to `secrets.js`.
 
 How It Works (mini guides)
 --------------------------
