@@ -59,7 +59,7 @@ Features
 - Rails 3.1-style asset pipeline (See FAQ)
 - LESS stylesheets (auto-compiled via Express middleware)
 - Bootstrap 3 + Flat UI + iOS7 Theme
-- Contact Form (powered by Sendgrid)
+- Contact Form (powered by Mailgun or Sendgrid)
 - **Account Management**
  - Gravatar
  - Profile Details
@@ -217,6 +217,13 @@ Obtaining API Keys
 - Sign in with your existing Steam account
 - Enter your *Domain Name*, then and click **Register**
 - Copy and paste *Key* into `config/secrets.js`
+
+<hr>
+
+<img src="https://raw.github.com/mailgun/media/master/Mailgun_Primary.png" width="200">
+- Go to http://www.mailgun.com
+- Sign up and add your *Domain Name*
+- From the domain overview, copy and paste the default SMTP *Login* and *Password* into `config.secrets.js`
 
 Project Structure
 -----------------
