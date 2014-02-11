@@ -18,16 +18,32 @@ block content
       | API Endspoints
 
   h3 Venmo Profile
-  .col-sm-2
-    img(src='#{profile.user.profile_picture_url}')
-  .col-sm-8
-    .lead Balance:
-      strong  $#{profile.balance}
-    .lead Display Name:
-      strong  #{profile.user.display_name}
-    .lead Email:
-      strong  #{profile.user.email}
-    .lead Phone:
-      strong  #{profile.user.phone}
+  //.col-sm-2
+  //  img(src='#{profile.user.profile_picture_url}')
+  //.col-sm-8
+  //  .lead Balance:
+  //    strong  $#{profile.balance}
+  //  .lead Display Name:
+  //    strong  #{profile.user.display_name}
+  //  .lead Email:
+  //    strong  #{profile.user.email}
+  //  .lead Phone:
+  //    strong  #{profile.user.phone}
+  //
 
-
+  form(role='form', method='POST')
+    legend Make a payment
+    input(type='hidden', name='_csrf', value=token)
+    .form-group
+      label.control-label(for='user') Email, Phone, or User ID
+      input.form-control(type='text', name='user', id='user', autofocus=true)
+    .form-group
+      label.control-label(for='note') Note
+      input.form-control(type='text', name='note', id='note')
+    .form-group
+      label.control-label(for='amount') Amount
+      input.form-control(type='text', name='amount', id='amount')
+    .form-group
+      button.btn.btn-default(type='submit')
+        i.fa.fa-usd
+        | Send
