@@ -1,6 +1,7 @@
 var secrets = require('../config/secrets');
 var User = require('../models/User');
 var querystring = require('querystring');
+var validator = require('validator');
 var async = require('async');
 var cheerio = require('cheerio');
 var request = require('request');
@@ -417,13 +418,55 @@ exports.postTwilio = function(req, res, next) {
 exports.getVenmo = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'venmo' });
   var query = querystring.stringify({ access_token: token.accessToken });
+
+  // Get profile information
   request.get({ url: 'https://api.venmo.com/v1/me?' + query, json: true }, function(err, request, body) {
     if (err) return next(err);
+
     res.render('api/venmo', {
       title: 'Venmo API',
       profile: body.data
     });
-
   });
-
 };
+
+exports.postVenmo = function(req, res, next) {
+  req.assert('user', 'Phone, Email or Venmo User ID cannot be blank').notEmpty();
+  req.assert('note', 'Please enter a message to accompany the payment').notEmpty();
+  req.assert('amount', 'They amount you want to pay cannot be blank').notEmpty();
+
+  var errors = req.validationErrors();
+
+  if (errors) {
+    req.flash('errors', errors);
+    return res.redirect('/api/venmo');
+  }
+
+  var token = _.findWhere(req.user.tokens, { kind: 'venmo' });
+  var formData = {
+    access_token: token.accessToken,
+    note: req.body.note,
+    amount: req.body.amount
+  };
+
+  if (validator.isEmail(req.body.user)) {
+    formData.email = req.body.user;
+  } else if (validator.isLength(req.body.user, 7, 10)) {
+    formData.phone = req.body.user;
+  } else {
+    formData.user_id = req.body.user;
+  }
+
+
+  // Send money
+  request.post('https://api.venmo.com/v1/payments', { form: formData }, function(err, request, body) {
+    if (err) return next(err);
+    console.log(body);
+    req.flash('success', 'Venmo money transfer complete');
+    res.redirect('/api/venmo');
+  });
+};
+
+// remove thumb css
+// add venmo instructions
+// update auth optional instructions

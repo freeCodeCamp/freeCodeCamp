@@ -18,32 +18,47 @@ block content
       | API Endspoints
 
   h3 Venmo Profile
-  //.col-sm-2
-  //  img(src='#{profile.user.profile_picture_url}')
-  //.col-sm-8
-  //  .lead Balance:
-  //    strong  $#{profile.balance}
-  //  .lead Display Name:
-  //    strong  #{profile.user.display_name}
-  //  .lead Email:
-  //    strong  #{profile.user.email}
-  //  .lead Phone:
-  //    strong  #{profile.user.phone}
-  //
+  .row
+    .col-sm-2
+      img(src='#{profile.user.profile_picture_url}')
+    .col-sm-8
+      .row
+        .col-sm-6
+          strong  #{profile.user.display_name}
+          div Balance:
+            strong  $#{profile.balance}
+          div Friends:
+            strong  #{profile.user.friends_count}
+        .col-sm-6
+          div Email:
+            strong  #{profile.user.email}
+          div Phone:
+            strong  #{profile.user.phone}
+          div ID:
+            strong  #{profile.user.id}
+      p #{profile.user.about}
 
-  form(role='form', method='POST')
-    legend Make a payment
-    input(type='hidden', name='_csrf', value=token)
-    .form-group
-      label.control-label(for='user') Email, Phone, or User ID
-      input.form-control(type='text', name='user', id='user', autofocus=true)
-    .form-group
-      label.control-label(for='note') Note
-      input.form-control(type='text', name='note', id='note')
-    .form-group
-      label.control-label(for='amount') Amount
-      input.form-control(type='text', name='amount', id='amount')
-    .form-group
-      button.btn.btn-default(type='submit')
-        i.fa.fa-usd
-        | Send
+  br
+
+  .row
+    .col-sm-5
+      h3 Make Payment
+      form(role='form', method='POST')
+        input(type='hidden', name='_csrf', value=token)
+        .form-group
+          label.control-label(for='user') Phone, Email or Venmo User ID
+          input.form-control(type='text', name='user', id='user', autofocus=true)
+        .form-group
+          label.control-label(for='note') Note
+          input.form-control(type='text', name='note', id='note')
+        .form-group
+          label.control-label(for='amount') Amount
+          input.form-control(type='text', name='amount', id='amount')
+        .form-group
+          button.btn.btn-primary(type='submit')
+            i.fa.fa-usd
+            | Send
+  br
+
+  h3 Recent Payments
+
