@@ -168,9 +168,21 @@ Obtaining API Keys
 
 <hr>
 
+<img src="https://s3.amazonaws.com/venmo/venmo_logo_blue.png" width="200">
+- Visit the **Account** section of your Venmo profile after logging in
+- Click on the **Developers** tab
+- Then click on the [new](https://venmo.com/account/app/new) link next to **Your Applications (0)**
+- Fill in the required fields: *App Name* and *What Will The App Be Used For?*
+- For **Web Redirect URL** enter: http://localhost:3000/auth/venmo/callback
+- Hit **Create** button
+- Back on the **Developers** tab click on **view** link next to **Your Applications (1) new**
+- Copy and paste **ID** and **Secret** keys into `config/secrets.js`
+
+<hr>
+
 <img src="https://www.paypalobjects.com/webstatic/developer/logo_paypal-developer_beta.png" width="200">
 - Visit [PayPal Developer](https://developer.paypal.com/)
-- Log in using your existing PayPal account
+- Log in to your PayPal account
 - Click **Applications > Create App** in the navigation bar
 - Enter *Application Name*, then click **Create app**
 - Copy and paste *Client ID* and *Secret* keys into `config/secrets.js`
