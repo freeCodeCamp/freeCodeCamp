@@ -248,7 +248,7 @@ Project Structure
 | **views**/layout.jade              | Base template.                                              |
 | **views**/home.jade                | Home page template.                                         |
 | app.js                             | Main application file.                                      |
-| cluster_app.js                     | Creates multiple processes of `app.js` using Node.js clusters.|
+| cluster_app.js                     | Runs multiple instances of `app.js` using <a href="http://nodejs.org/api/cluster.html" target="_blank">Node.js clusters</a>.|
 
 
 :exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
