@@ -443,6 +443,7 @@ exports.postVenmo = function(req, res, next) {
   }
 
   var token = _.findWhere(req.user.tokens, { kind: 'venmo' });
+
   var formData = {
     access_token: token.accessToken,
     note: req.body.note,
@@ -451,21 +452,21 @@ exports.postVenmo = function(req, res, next) {
 
   if (validator.isEmail(req.body.user)) {
     formData.email = req.body.user;
-  } else if (validator.isLength(req.body.user, 10, 11)) {
+  } else if (validator.isNumberic(req.body.user) &&
+    validator.isLength(req.body.user, 10, 11)) {
     formData.phone = req.body.user;
   } else {
     formData.user_id = req.body.user;
   }
 
-
   // Send money
-  request.post('https://api.venmo.com/v1/payments', { form: formData }, function(err, request, body) {
+  request.post('https://sandbox-api.venmo.com/v1/payments', { form: formData }, function(err, request, body) {
     if (err) return next(err);
     if (request.statusCode !== 200) {
       req.flash('errors', { msg: JSON.parse(body).error.message });
       return res.redirect('/api/venmo');
     }
-    req.flash('success', 'Venmo money transfer complete');
+    req.flash('success', { msg: 'Venmo money transfer complete' });
     res.redirect('/api/venmo');
   });
 };
