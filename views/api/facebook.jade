@@ -28,9 +28,10 @@ block content
   h6 Locale: #{me.locale}
   h6 Timezone: #{me.timezone}
 
-  h2 List of my friends
-  ul.list-unstyled
+  h2 /me/friends
+  .row
     for friend in friends
-      li
-        img(src='https://graph.facebook.com/#{friend.id}/picture?type=normal', width=30, height=30)
-        a(href='http://facebook.com/#{friend.id}') #{friend.name}
+      .col-xs-3.col-md-2
+        a.thumbnail(href='http://facebook.com/#{friend.id}')
+          img(src='https://graph.facebook.com/#{friend.id}/picture?width=150&height=150')
+          div.facebook-caption= friend.name
