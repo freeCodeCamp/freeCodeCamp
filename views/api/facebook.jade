@@ -18,6 +18,7 @@ block content
       | API Reference
 
   h2 /me
+  img(src='https://graph.facebook.com/#{me.id}/picture?type=large', width='90', height='90')
   h4= me.name
   h6 First Name: #{me.first_name}
   h6 Last Name: #{me.last_name}
