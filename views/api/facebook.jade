@@ -7,20 +7,26 @@ block content
       | Facebook API
 
   .btn-group.btn-group-justified
-    a.btn.btn-success(href='https://developers.facebook.com/docs/graph-api/quickstart/', target='_blank')
+    a.btn.btn-primary(href='https://developers.facebook.com/docs/graph-api/quickstart/', target='_blank')
       i.fa.fa-check-square-o
       | Quickstart
-    a.btn.btn-success(href='https://developers.facebook.com/tools/explorer', target='_blank')
+    a.btn.btn-primary(href='https://developers.facebook.com/tools/explorer', target='_blank')
       i.fa.fa-facebook
       | Graph API Explorer
-    a.btn.btn-success(href='https://developers.facebook.com/docs/graph-api/reference/', target='_blank')
+    a.btn.btn-primary(href='https://developers.facebook.com/docs/graph-api/reference/', target='_blank')
       i.fa.fa-code-fork
       | API Reference
 
-  h2 My Info
+  h2 /me
   h4= me.name
+  h6 First Name: #{me.first_name}
+  h6 Last Name: #{me.last_name}
+  h6 Gender: #{me.gender}
   h6 Username: #{me.username}
+  h6 Link: #{me.link}
   h6 Email: #{me.email}
+  h6 Locale: #{me.locale}
+  h6 Timezone: #{me.timezone}
 
   h2 List of my friends
   ul.list-unstyled
