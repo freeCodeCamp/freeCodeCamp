@@ -412,17 +412,12 @@ for authentication with single page applications. If you insist on using
 a client-side framework, it's best if you use a boilerplate of choice for your particular
 client-side framework and just grab the pieces you need from the Hackathon Starter.
 
-### Why is there no "Forgot Password" during login?
-I started working on it, but quickly realized it should be library's responsibility. It would
-add a lot of extra code to an already hefty boilerplate that people would have to go through.
-That's part of the reason. The main reason is I have never built this feature before,
-and there is no "one true way" to do it if you search the web. I don't
-want to invest a lot of time into it by putting together a quick hack, trying to mimick the way
-others have build this feature. Ideally, I wish there was node.js library that integrates
-well with *passport-local*, but AFAIK it does not exist yet. Even, [Keystone.JS](http://keystonejs.com/) - a node.js CMS does not have
-this feature. I have started working on it, but if it's really that important and you would like to continue
-it, check out the [forgot-password](https://github.com/sahat/hackathon-starter/tree/forgot-password) branch. So far it has a template, GET controller to render that template,
-POST controller to send an email via Nodemailer.
+### Why is there no Mozilla Persona as a sign-in option?
+If you would like to use **Persona** authentication strategy, use the [pull request #64](https://github.com/sahat/hackathon-starter/pull/64) as
+a reference guide. I have explained my reasons why it could not be merged into the *Hackathon Starter* in
+[issue #63](https://github.com/sahat/hackathon-starter/issues/63#issuecomment-34898290).
+
+
 
 ### How do I switch SendGrid for another email delivery service?
 If you would like to use [Mailgun](http://mailgun.com) service instead of [SendGrid](http://sendgrid.com) for sending emails, open `controllers/contact.js`, then inside `var smtpTransport = nodemailer.createTransport('SMTP', { });` comment out or delete **SendGrid** code block, and uncomment **Mailgun** code block. You are not limited to just SendGrid or Mailgun. **Nodemailer** library supports many other providers, including GMail, iCloud, Hotmail, Yahoo, Mail.ru. Just don't forget to add *username* and *password* for that service provider to `secrets.js`.
