@@ -18,8 +18,7 @@ I also tried to make it as **generic** and **reusable** as possible to cover mos
 without being too specific. In the worst case you can use this as a guide for your projects, if for example you are only
 interested in **Sign in with Google** authentication and nothing else.
 
-Chances are, you might not need all 4 types of OAuth 1.0a/OAuth2 authentication methods, or all 9 API examples.
-Sadly, there is no step-by-step wizard to configure the boilerplate code just for your use case. So, use what you need, simply delete what you don't need.
+Chances are, you might not need all 4 types of OAuth 1.0a/OAuth2 authentication methods, or all 12+ API examples. So, use what you need and delete what you don't need. As of recently, it is possible to selectively *enable/disable* authentication methods in `config/secrets.js`.
 
 <h4 align="center">Flatly Bootstrap Theme</h3>
 
@@ -43,6 +42,7 @@ Table of Contents
 - [Pro Tips](#pro-tips)
 - [FAQ](#faq)
 - [How It Works](#how-it-works-mini-guides)
+- [Mongoose Cheatsheet](#mongoose-cheatsheet)
 - [Deployment](#deployment)
 - [TODO](#todo)
 - [Contributing](#contributing)
@@ -783,7 +783,39 @@ If you want to see a really cool real-time dashboard check out this [live exampl
 
 Mongoose Cheatsheet
 -------------------
-TODO
+#### Find all users:
+```js
+User.find(function(err, users) {
+  console.log(users);
+});
+```
+
+#### Find a user by email:
+```js
+var userEmail = 'example@gmail.com';
+User.findOne({ email: userEmail }, function(err, user) {
+  console.log(user);
+});
+```
+
+#### Find 5 most recent user accounts:
+```js
+User
+  .find()
+  .sort({ _id: -1 })
+  .limit(5)
+  .exec(function(err, users) {
+    console.log(users);
+  });
+```
+
+#### Get total count of a field from all documents:
+Let's suppose that each user has a `votes` field and you would like to count the total number of votes in your database accross all users. One very inefficient way would be to loop through each document and manually accumulate the count. Or you could use [MongoDB Aggregation Framework](http://docs.mongodb.org/manual/core/aggregation-introduction/) instead:
+```js
+User.aggregate({ $group: { _id: null, total: { $sum: '$votes' } } }, function(err, votesCount) {
+  console.log(votesCount.total);
+});
+```
 
 Deployment
 ----------
