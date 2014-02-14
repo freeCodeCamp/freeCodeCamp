@@ -15,7 +15,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findById(id, function (err, user) {
+  User.findById(id, function(err, user) {
     done(err, user);
   });
 });
@@ -209,7 +209,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
     User.findOne({ google: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
       User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
-        if(existingEmailUser) {
+        if (existingEmailUser) {
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
           done(err);
         } else {
@@ -243,7 +243,7 @@ passport.use('tumblr', new OAuthStrategy({
     callbackURL: secrets.tumblr.callbackURL,
     passReqToCallback: true
   },
-  function (req, token, tokenSecret, profile, done) {
+  function(req, token, tokenSecret, profile, done) {
     User.findById(req.user._id, function(err, user) {
       user.tokens.push({ kind: 'tumblr', accessToken: token, tokenSecret: tokenSecret });
       user.save(function(err) {
@@ -266,7 +266,7 @@ passport.use('foursquare', new OAuth2Strategy({
     callbackURL: secrets.foursquare.redirectUrl,
     passReqToCallback: true
   },
-  function (req, accessToken, refreshToken, profile, done) {
+  function(req, accessToken, refreshToken, profile, done) {
     User.findById(req.user._id, function(err, user) {
       user.tokens.push({ kind: 'foursquare', accessToken: accessToken });
       user.save(function(err) {
@@ -289,7 +289,7 @@ passport.use('venmo', new OAuth2Strategy({
     callbackURL: secrets.venmo.redirectUrl,
     passReqToCallback: true
   },
-  function (req, accessToken, refreshToken, profile, done) {
+  function(req, accessToken, refreshToken, profile, done) {
     User.findById(req.user._id, function(err, user) {
       user.tokens.push({ kind: 'venmo', accessToken: accessToken });
       user.save(function(err) {
