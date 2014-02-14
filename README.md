@@ -35,6 +35,7 @@ Table of Contents
 - [Getting Started](#getting-started)
 - [Obtaining API Keys](#obtaining-api-keys)
 - [Project Structure](#project-structure)
+- [List of Packages](#list-of-packages)
 - [Useful Tools](#useful-tools)
 - [Recommended Design](#recommended-design)
 - [Recommended Node.js Libraries](#recommended-nodejs-libraries)
@@ -256,6 +257,40 @@ Project Structure
 | **views**/home.jade                | Home page template.                                         |
 | app.js                             | Main application file.                                      |
 | cluster_app.js                     | Runs multiple instances of `app.js` using <a href="http://nodejs.org/api/cluster.html" target="_blank">Node.js clusters</a>.|
+
+List of Packages
+----------------
+| Package       | Description   |
+| ------------- |:-------------:|
+| async         | Utility library that provides asynchronous control flow. |
+| bcrypt-nodejs | Library for hashing and salting user passwords. |
+| cheerio | Scrape web pages using jQuery-style syntax.  |
+| connect-mongo | MongoDB session store for Express. Users will remain logged-in when app restarts. |
+| connect-assets | Compiles LESS stylesheets, also concatenates and minifies JavaScript in production mode. |
+| express | Web framework. |
+| express-flash | Provides flash messages for Express. Uses connect-flash internally. |
+| express-validator | Easy form validation for Express. Uses node-validator internally. |
+| fbgraph | Facebook Graph API library |
+| github-api | GitHub API library |
+| jade | Template engine for node.js |
+| lastfm | Last.fm API library |
+| less | LESS compiler. Used implicitly by connect-assets. |
+| mongoose | MongoDB object modeling tool |
+| node-foursquare | Foursquare API library |
+| nodemailer | Node.js library for sending emails |
+| passport | Simple and elegant authentication library for node.js |
+| passport-facebook | Sign-in with Facebook plugin. |
+| passport-github | Sign-in with GitHub plugin. |
+| passport-google-oauth | Sign-in with Google plugin. |
+| passport-twitter | Sign-in with Twitter plugin. |
+| passport-local | Sign-in with Username and Password plugin. |
+| passport-oauth | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies. |
+| request | Simplified HTTP request library. |
+| tumblr.js | Tumblr API library. |
+| underscore | Handy JavaScript utlities library. |
+| paypal-rest-sdk | PayPal API library. |
+| twilio | Twilio API library. |
+| validator | Used in conjunction with express-validator in **controllers/api.js**. |
 
 
 :exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
