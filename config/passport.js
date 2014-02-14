@@ -63,18 +63,24 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
     });
   } else {
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
-      console.log(profile)
       if (existingUser) return done(null, existingUser);
-      var user = new User();
-      user.email = profile._json.email;
-      user.facebook = profile.id;
-      user.tokens.push({ kind: 'facebook', accessToken: accessToken });
-      user.profile.name = profile.displayName;
-      user.profile.gender = profile._json.gender;
-      user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
-      user.profile.location = (profile._json.location) ? profile._json.location.name : '';
-      user.save(function(err) {
-        done(err, user);
+      User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+        if (existingEmailUser) {
+          req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Facebook manually from Account Settings.' });
+          done(err);
+        } else {
+          var user = new User();
+          user.email = profile._json.email;
+          user.facebook = profile.id;
+          user.tokens.push({ kind: 'facebook', accessToken: accessToken });
+          user.profile.name = profile.displayName;
+          user.profile.gender = profile._json.gender;
+          user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
+          user.profile.location = (profile._json.location) ? profile._json.location.name : '';
+          user.save(function(err) {
+            done(err, user);
+          });
+        }
       });
     });
   }
@@ -204,7 +210,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
       if (existingUser) return done(null, existingUser);
       User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
         if(existingEmailUser) {
-          req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with GitHub manually from Account Settings.' });
+          req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
           done(err);
         } else {
           var user = new User();
