@@ -202,10 +202,10 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
   } else {
     User.findOne({ google: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
-      User.findOne({ email: profile._json.email }, function(err2, existingEmailUser) {   
+      User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
         if(existingEmailUser) {
-          req.flash('errors', { msg: 'There is already an account using this Google account\'s email address. Sign in with that account or delete it, then link it with your current account.' });
-          done(err2);
+          req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with GitHub manually from Account Settings.' });
+          done(err);
         } else {
           var user = new User();
           user.email = profile._json.email;
