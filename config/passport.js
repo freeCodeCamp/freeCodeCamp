@@ -1,14 +1,14 @@
+var _ = require('underscore');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var OAuthStrategy = require('passport-oauth').OAuthStrategy;
-var OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 var GitHubStrategy = require('passport-github').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var OAuthStrategy = require('passport-oauth').OAuthStrategy; // Tumblr
+var OAuth2Strategy = require('passport-oauth').OAuth2Strategy; // Venmo, Foursquare
 var User = require('../models/User');
 var secrets = require('./secrets');
-var _ = require('underscore');
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -19,6 +19,10 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+
+/**
+ * Sign in using Email and Password.
+ */
 
 passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, password, done) {
   User.findOne({ email: email }, function(err, user) {
@@ -205,6 +209,11 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
   }
 }));
 
+/**
+ * Tumblr API
+ * Uses OAuth 1.0a Strategy.
+ */
+
 passport.use('tumblr', new OAuthStrategy({
     requestTokenURL: 'http://www.tumblr.com/oauth/request_token',
     accessTokenURL: 'http://www.tumblr.com/oauth/access_token',
@@ -224,6 +233,11 @@ passport.use('tumblr', new OAuthStrategy({
   }
 ));
 
+/**
+ * Foursquare API
+ * Uses OAuth 2.0 Strategy.
+ */
+
 passport.use('foursquare', new OAuth2Strategy({
     authorizationURL: 'https://foursquare.com/oauth2/authorize',
     tokenURL: 'https://foursquare.com/oauth2/access_token',
@@ -241,6 +255,11 @@ passport.use('foursquare', new OAuth2Strategy({
     });
   }
 ));
+
+/**
+ * Venmo API
+ * Uses OAuth 2.0 Strategy.
+ */
 
 passport.use('venmo', new OAuth2Strategy({
     authorizationURL: 'https://api.venmo.com/v1/oauth/authorize',
@@ -260,10 +279,18 @@ passport.use('venmo', new OAuth2Strategy({
   }
 ));
 
+/**
+ * Login Required middleware.
+ */
+
 exports.isAuthenticated = function(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/login');
 };
+
+/**
+ * Authorization Required middleware.
+ */
 
 exports.isAuthorized = function(req, res, next) {
   var provider = req.path.split('/').slice(-1)[0];
