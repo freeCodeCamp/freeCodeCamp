@@ -195,15 +195,22 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
   } else {
     User.findOne({ google: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
-      var user = new User();
-      user.email = profile._json.email;
-      user.google = profile.id;
-      user.tokens.push({ kind: 'google', accessToken: accessToken });
-      user.profile.name = profile.displayName;
-      user.profile.gender = profile._json.gender;
-      user.profile.picture = profile._json.picture;
-      user.save(function(err) {
-        done(err, user);
+      User.findOne({ email: profile._json.email }, function(err2, existingEmailUser) {   
+        if(existingEmailUser) {
+          req.flash('errors', { msg: 'There is already an account using this google account\'s email address, login and link your account to your google account from account settings' });
+          done(err2);
+        } else {
+          var user = new User();
+          user.email = profile._json.email;
+          user.google = profile.id;
+          user.tokens.push({ kind: 'google', accessToken: accessToken });
+          user.profile.name = profile.displayName;
+          user.profile.gender = profile._json.gender;
+          user.profile.picture = profile._json.picture;
+          user.save(function(err) {
+            done(err, user);
+          });
+        }
       });
     });
   }
