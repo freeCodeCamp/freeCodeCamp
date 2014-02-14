@@ -57,7 +57,7 @@ userSchema.methods.gravatar = function(size, defaults) {
   if (!size) size = 200;
   if (!defaults) defaults = 'retro';
 
-  if(!this.email) {
+  if (!this.email) {
     return 'https://gravatar.com/avatar/?s=' + size + '&d=' + defaults;
   }
 
