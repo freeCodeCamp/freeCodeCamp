@@ -258,6 +258,10 @@ Project Structure
 | app.js                             | Main application file.                                      |
 | cluster_app.js                     | Runs multiple instances of `app.js` using <a href="http://nodejs.org/api/cluster.html" target="_blank">Node.js clusters</a>.|
 
+:exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
+
+:bangbang: **Note:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate minified **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
+
 List of Packages
 ----------------
 | Package       | Description   |
@@ -265,8 +269,8 @@ List of Packages
 | async         | Utility library that provides asynchronous control flow. |
 | bcrypt-nodejs | Library for hashing and salting user passwords. |
 | cheerio | Scrape web pages using jQuery-style syntax.  |
-| connect-mongo | MongoDB session store for Express. Users will remain logged-in when app restarts. |
-| connect-assets | Compiles LESS stylesheets, also concatenates and minifies JavaScript in production mode. |
+| connect-mongo | MongoDB session store for Express. |
+| connect-assets | Compiles LESS stylesheets, concatenates/minifies JavaScript. |
 | express | Web framework. |
 | express-flash | Provides flash messages for Express. Uses connect-flash internally. |
 | express-validator | Easy form validation for Express. Uses node-validator internally. |
@@ -292,10 +296,6 @@ List of Packages
 | twilio | Twilio API library. |
 | validator | Used in conjunction with express-validator in **controllers/api.js**. |
 
-
-:exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
-
-:bangbang: **Note:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate minified **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
 
 Useful Tools
 ------------
