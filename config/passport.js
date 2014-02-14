@@ -197,7 +197,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
       if (existingUser) return done(null, existingUser);
       User.findOne({ email: profile._json.email }, function(err2, existingEmailUser) {   
         if(existingEmailUser) {
-          req.flash('errors', { msg: 'There is already an account using this google account\'s email address, login and link your account to your google account from account settings' });
+          req.flash('errors', { msg: 'There is already an account using this Google account\'s email address. Sign in with that account or delete it, then link it with your current account.' });
           done(err2);
         } else {
           var user = new User();
