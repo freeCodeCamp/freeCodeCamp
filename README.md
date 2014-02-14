@@ -886,6 +886,11 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 - And you are done! (Not quite as simple as Heroku, huh?)
 
 <img src="https://www.nodejitsu.com/img/media/nodejitsu-transparent.png" width="200">
+- To install **jitsu**, open a terminal and type: `sudo npm install -g jitsu`
+- Run `jitsu login` and enter your login credentials
+- From your app directory, run `jitsu deploy`
+ - This will create a new application snapshot, generate and/or update project metadata
+- Done!
 
 TODO: Will be added soon.
 
