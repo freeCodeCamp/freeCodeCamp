@@ -899,8 +899,6 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
  - This will create a new application snapshot, generate and/or update project metadata
 - Done!
 
-TODO: Will be added soon.
-
 <img src="http://upload.wikimedia.org/wikipedia/en/f/ff/Windows_Azure_logo.png" width="200">
 
 TODO: Will be added soon.
