@@ -2,7 +2,6 @@
 // Mixins
 // --------------------------------------------------
 
-
 // Utilities
 // -------------------------
 
@@ -48,17 +47,26 @@
   width: @width;
   height: @height;
 }
+
 .square(@size) {
   .size(@size; @size);
 }
 
 // Placeholder text
 .placeholder(@color: @input-color-placeholder) {
-  &:-moz-placeholder            { color: @color; } // Firefox 4-18
-  &::-moz-placeholder           { color: @color;   // Firefox 19+
-                                  opacity: 1; } // See https://github.com/twbs/bootstrap/pull/11526
-  &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
-  &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+  &::-moz-placeholder {
+    color: @color; // Firefox
+    opacity: 1;
+  }
+  // See https://github.com/twbs/bootstrap/pull/11526
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+  // Internet Explorer 10+
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  // Safari and Chrome
 }
 
 // Text overflow
@@ -86,12 +94,11 @@
   background-color: transparent;
   border: 0;
 }
+
 // New mixin to use as of v3.0.1
 .text-hide() {
   .hide-text();
 }
-
-
 
 // CSS3 PROPERTIES
 // --------------------------------------------------
@@ -99,19 +106,22 @@
 // Single side border-radius
 .border-top-radius(@radius) {
   border-top-right-radius: @radius;
-   border-top-left-radius: @radius;
+  border-top-left-radius: @radius;
 }
+
 .border-right-radius(@radius) {
   border-bottom-right-radius: @radius;
-     border-top-right-radius: @radius;
+  border-top-right-radius: @radius;
 }
+
 .border-bottom-radius(@radius) {
   border-bottom-right-radius: @radius;
-   border-bottom-left-radius: @radius;
+  border-bottom-left-radius: @radius;
 }
+
 .border-left-radius(@radius) {
   border-bottom-left-radius: @radius;
-     border-top-left-radius: @radius;
+  border-top-left-radius: @radius;
 }
 
 // Drop shadows
@@ -121,140 +131,157 @@
 //   standard `box-shadow` property.
 .box-shadow(@shadow) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
-          box-shadow: @shadow;
+  box-shadow: @shadow;
 }
 
 // Transitions
 .transition(@transition) {
   -webkit-transition: @transition;
-          transition: @transition;
+  transition: @transition;
 }
+
 .transition-property(@transition-property) {
   -webkit-transition-property: @transition-property;
-          transition-property: @transition-property;
+  transition-property: @transition-property;
 }
+
 .transition-delay(@transition-delay) {
   -webkit-transition-delay: @transition-delay;
-          transition-delay: @transition-delay;
+  transition-delay: @transition-delay;
 }
+
 .transition-duration(@transition-duration) {
   -webkit-transition-duration: @transition-duration;
-          transition-duration: @transition-duration;
+  transition-duration: @transition-duration;
 }
+
 .transition-transform(@transition) {
   -webkit-transition: -webkit-transform @transition;
-     -moz-transition: -moz-transform @transition;
-       -o-transition: -o-transform @transition;
-          transition: transform @transition;
+  -moz-transition: -moz-transform @transition;
+  -o-transition: -o-transform @transition;
+  transition: transform @transition;
 }
 
 // Transformations
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
-      -ms-transform: rotate(@degrees); // IE9 only
-          transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees); // IE9 only
+  transform: rotate(@degrees);
 }
+
 .scale(@ratio; @ratio-y...) {
   -webkit-transform: scale(@ratio, @ratio-y);
-      -ms-transform: scale(@ratio, @ratio-y); // IE9 only
-          transform: scale(@ratio, @ratio-y);
+  -ms-transform: scale(@ratio, @ratio-y); // IE9 only
+  transform: scale(@ratio, @ratio-y);
 }
+
 .translate(@x; @y) {
   -webkit-transform: translate(@x, @y);
-      -ms-transform: translate(@x, @y); // IE9 only
-          transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y); // IE9 only
+  transform: translate(@x, @y);
 }
+
 .skew(@x; @y) {
   -webkit-transform: skew(@x, @y);
-      -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
-          transform: skew(@x, @y);
+  -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+  transform: skew(@x, @y);
 }
+
 .translate3d(@x; @y; @z) {
   -webkit-transform: translate3d(@x, @y, @z);
-          transform: translate3d(@x, @y, @z);
+  transform: translate3d(@x, @y, @z);
 }
 
 .rotateX(@degrees) {
   -webkit-transform: rotateX(@degrees);
-      -ms-transform: rotateX(@degrees); // IE9 only
-          transform: rotateX(@degrees);
+  -ms-transform: rotateX(@degrees); // IE9 only
+  transform: rotateX(@degrees);
 }
+
 .rotateY(@degrees) {
   -webkit-transform: rotateY(@degrees);
-      -ms-transform: rotateY(@degrees); // IE9 only
-          transform: rotateY(@degrees);
+  -ms-transform: rotateY(@degrees); // IE9 only
+  transform: rotateY(@degrees);
 }
+
 .perspective(@perspective) {
   -webkit-perspective: @perspective;
-     -moz-perspective: @perspective;
-          perspective: @perspective;
+  -moz-perspective: @perspective;
+  perspective: @perspective;
 }
+
 .perspective-origin(@perspective) {
   -webkit-perspective-origin: @perspective;
-     -moz-perspective-origin: @perspective;
-          perspective-origin: @perspective;
+  -moz-perspective-origin: @perspective;
+  perspective-origin: @perspective;
 }
+
 .transform-origin(@origin) {
   -webkit-transform-origin: @origin;
-     -moz-transform-origin: @origin;
-      -ms-transform-origin: @origin; // IE9 only
-          transform-origin: @origin;
+  -moz-transform-origin: @origin;
+  -ms-transform-origin: @origin; // IE9 only
+  transform-origin: @origin;
 }
 
 // Animations
 .animation(@animation) {
   -webkit-animation: @animation;
-          animation: @animation;
+  animation: @animation;
 }
+
 .animation-name(@name) {
   -webkit-animation-name: @name;
-          animation-name: @name;
+  animation-name: @name;
 }
+
 .animation-duration(@duration) {
   -webkit-animation-duration: @duration;
-          animation-duration: @duration;
+  animation-duration: @duration;
 }
+
 .animation-timing-function(@timing-function) {
   -webkit-animation-timing-function: @timing-function;
-          animation-timing-function: @timing-function;
+  animation-timing-function: @timing-function;
 }
+
 .animation-delay(@delay) {
   -webkit-animation-delay: @delay;
-          animation-delay: @delay;
+  animation-delay: @delay;
 }
+
 .animation-iteration-count(@iteration-count) {
   -webkit-animation-iteration-count: @iteration-count;
-          animation-iteration-count: @iteration-count;
+  animation-iteration-count: @iteration-count;
 }
+
 .animation-direction(@direction) {
   -webkit-animation-direction: @direction;
-          animation-direction: @direction;
+  animation-direction: @direction;
 }
 
 // Backface visibility
 // Prevent browsers from flickering when using CSS 3D transforms.
 // Default value is `visible`, but can be changed to `hidden`
-.backface-visibility(@visibility){
+.backface-visibility(@visibility) {
   -webkit-backface-visibility: @visibility;
-     -moz-backface-visibility: @visibility;
-          backface-visibility: @visibility;
+  -moz-backface-visibility: @visibility;
+  backface-visibility: @visibility;
 }
 
 // Box sizing
 .box-sizing(@boxmodel) {
   -webkit-box-sizing: @boxmodel;
-     -moz-box-sizing: @boxmodel;
-          box-sizing: @boxmodel;
+  -moz-box-sizing: @boxmodel;
+  box-sizing: @boxmodel;
 }
 
 // User select
 // For selecting text on the page
 .user-select(@select) {
   -webkit-user-select: @select;
-     -moz-user-select: @select;
-      -ms-user-select: @select; // IE10+
-       -o-user-select: @select;
-          user-select: @select;
+  -moz-user-select: @select;
+  -ms-user-select: @select; // IE10+
+  user-select: @select;
 }
 
 // Resize anything
@@ -266,21 +293,21 @@
 // CSS3 Content Columns
 .content-columns(@column-count; @column-gap: @grid-gutter-width) {
   -webkit-column-count: @column-count;
-     -moz-column-count: @column-count;
-          column-count: @column-count;
+  -moz-column-count: @column-count;
+  column-count: @column-count;
   -webkit-column-gap: @column-gap;
-     -moz-column-gap: @column-gap;
-          column-gap: @column-gap;
+  -moz-column-gap: @column-gap;
+  column-gap: @column-gap;
 }
 
 // Optional hyphenation
 .hyphens(@mode: auto) {
   word-wrap: break-word;
   -webkit-hyphens: @mode;
-     -moz-hyphens: @mode;
-      -ms-hyphens: @mode; // IE10+
-       -o-hyphens: @mode;
-          hyphens: @mode;
+  -moz-hyphens: @mode;
+  -ms-hyphens: @mode; // IE10+
+  -o-hyphens: @mode;
+  hyphens: @mode;
 }
 
 // Opacity
@@ -290,8 +317,6 @@
   @opacity-ie: (@opacity * 100);
   filter: ~"alpha(opacity=@{opacity-ie})";
 }
-
-
 
 // GRADIENTS
 // --------------------------------------------------
@@ -304,9 +329,9 @@
   // Color stops are not available in IE9 and below.
   .horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
     background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1-6, Chrome 10+
-    background-image:  linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
     background-repeat: repeat-x;
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color), argb(@end-color))); // IE9 and down
   }
 
   // Vertical gradient, from top to bottom
@@ -314,10 +339,10 @@
   // Creates two color stops, start and end, by specifying a color and position for each color stop.
   // Color stops are not available in IE9 and below.
   .vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
-    background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
+    background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // Safari 5.1-6, Chrome 10+
     background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
     background-repeat: repeat-x;
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color), argb(@end-color))); // IE9 and down
   }
 
   .directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
@@ -329,13 +354,13 @@
     background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
     background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
     background-repeat: no-repeat;
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color), argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
   }
   .vertical-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
     background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
     background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
     background-repeat: no-repeat;
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color), argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
   }
   .radial(@inner-color: #555; @outer-color: #333) {
     background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
@@ -356,8 +381,6 @@
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
 }
 
-
-
 // Retina images
 //
 // Short retina mixin for setting background-image and -size
@@ -365,18 +388,11 @@
 .img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
   background-image: url("@{file-1x}");
 
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
     background-image: url("@{file-2x}");
     background-size: @width-1x @height-1x;
   }
 }
-
 
 // Responsive image
 //
@@ -387,7 +403,6 @@
   max-width: 100%; // Part 1: Set a maximum relative to the parent
   height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 }
-
 
 // COMPONENT MIXINS
 // --------------------------------------------------
@@ -476,7 +491,9 @@
     a& {
       color: @color;
 
-      .list-group-item-heading { color: inherit; }
+      .list-group-item-heading {
+        color: inherit;
+      }
 
       &:hover,
       &:focus {
@@ -507,14 +524,14 @@
   &:focus,
   &:active,
   &.active,
-  .open .dropdown-toggle& {
+  .open .dropdown-toggle & {
     color: @color;
     background-color: darken(@background, 8%);
-        border-color: darken(@border, 12%);
+    border-color: darken(@border, 12%);
   }
   &:active,
   &.active,
-  .open .dropdown-toggle& {
+  .open .dropdown-toggle & {
     background-image: none;
   }
   &.disabled,
@@ -526,7 +543,7 @@
     &:active,
     &.active {
       background-color: @background;
-          border-color: @border;
+      border-color: @border;
     }
   }
 
@@ -622,19 +639,21 @@
 // More easily include all the states for responsive-utilities.less.
 .responsive-visibility() {
   display: block !important;
-  table&  { display: table; }
-  tr&     { display: table-row !important; }
+  table& {
+    display: table;
+  }
+  tr& {
+    display: table-row !important;
+  }
   th&,
-  td&     { display: table-cell !important; }
+  td& {
+    display: table-cell !important;
+  }
 }
 
 .responsive-invisibility() {
-    &,
-  tr&,
-  th&,
-  td& { display: none !important; }
+  display: none !important;
 }
-
 
 // Grid System
 // -----------
@@ -643,16 +662,18 @@
 .container-fixed() {
   margin-right: auto;
   margin-left: auto;
-  padding-left:  (@grid-gutter-width / 2);
+  padding-left: (@grid-gutter-width / 2);
   padding-right: (@grid-gutter-width / 2);
-  &:extend(.clearfix all);
+  &:extend(.clearfix all)
+;
 }
 
 // Creates a wrapper for a series of columns
 .make-row(@gutter: @grid-gutter-width) {
-  margin-left:  (@gutter / -2);
+  margin-left: (@gutter / -2);
   margin-right: (@gutter / -2);
-  &:extend(.clearfix all);
+  &:extend(.clearfix all)
+;
 }
 
 // Generate the extra small columns
@@ -661,31 +682,33 @@
   float: left;
   width: percentage((@columns / @grid-columns));
   min-height: 1px;
-  padding-left:  (@gutter / 2);
+  padding-left: (@gutter / 2);
   padding-right: (@gutter / 2);
 }
+
 .make-xs-column-offset(@columns) {
   @media (min-width: @screen-xs-min) {
     margin-left: percentage((@columns / @grid-columns));
   }
 }
+
 .make-xs-column-push(@columns) {
   @media (min-width: @screen-xs-min) {
     left: percentage((@columns / @grid-columns));
   }
 }
+
 .make-xs-column-pull(@columns) {
   @media (min-width: @screen-xs-min) {
     right: percentage((@columns / @grid-columns));
   }
 }
 
-
 // Generate the small columns
 .make-sm-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
   min-height: 1px;
-  padding-left:  (@gutter / 2);
+  padding-left: (@gutter / 2);
   padding-right: (@gutter / 2);
 
   @media (min-width: @screen-sm-min) {
@@ -693,28 +716,30 @@
     width: percentage((@columns / @grid-columns));
   }
 }
+
 .make-sm-column-offset(@columns) {
   @media (min-width: @screen-sm-min) {
     margin-left: percentage((@columns / @grid-columns));
   }
 }
+
 .make-sm-column-push(@columns) {
   @media (min-width: @screen-sm-min) {
     left: percentage((@columns / @grid-columns));
   }
 }
+
 .make-sm-column-pull(@columns) {
   @media (min-width: @screen-sm-min) {
     right: percentage((@columns / @grid-columns));
   }
 }
 
-
 // Generate the medium columns
 .make-md-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
   min-height: 1px;
-  padding-left:  (@gutter / 2);
+  padding-left: (@gutter / 2);
   padding-right: (@gutter / 2);
 
   @media (min-width: @screen-md-min) {
@@ -722,28 +747,30 @@
     width: percentage((@columns / @grid-columns));
   }
 }
+
 .make-md-column-offset(@columns) {
   @media (min-width: @screen-md-min) {
     margin-left: percentage((@columns / @grid-columns));
   }
 }
+
 .make-md-column-push(@columns) {
   @media (min-width: @screen-md-min) {
     left: percentage((@columns / @grid-columns));
   }
 }
+
 .make-md-column-pull(@columns) {
   @media (min-width: @screen-md-min) {
     right: percentage((@columns / @grid-columns));
   }
 }
 
-
 // Generate the large columns
 .make-lg-column(@columns; @gutter: @grid-gutter-width) {
   position: relative;
   min-height: 1px;
-  padding-left:  (@gutter / 2);
+  padding-left: (@gutter / 2);
   padding-right: (@gutter / 2);
 
   @media (min-width: @screen-lg-min) {
@@ -751,22 +778,24 @@
     width: percentage((@columns / @grid-columns));
   }
 }
+
 .make-lg-column-offset(@columns) {
   @media (min-width: @screen-lg-min) {
     margin-left: percentage((@columns / @grid-columns));
   }
 }
+
 .make-lg-column-push(@columns) {
   @media (min-width: @screen-lg-min) {
     left: percentage((@columns / @grid-columns));
   }
 }
+
 .make-lg-column-pull(@columns) {
   @media (min-width: @screen-lg-min) {
     right: percentage((@columns / @grid-columns));
   }
 }
-
 
 // Framework grid generation
 //
@@ -775,37 +804,43 @@
 
 .make-grid-columns() {
   // Common styles for all sizes of grid columns, widths 1-12
-  .col(@index) when (@index = 1) { // initial
+  .col(@index) when (@index = 1) {
+    // initial
     @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
     .col((@index + 1), @item);
   }
-  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+  .col(@index, @list) when (@index =< @grid-columns) {
+    // general; "=<" isn't a typo
     @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
     .col((@index + 1), ~"@{list}, @{item}");
   }
-  .col(@index, @list) when (@index > @grid-columns) { // terminal
+  .col(@index, @list) when (@index > @grid-columns) {
+    // terminal
     @{list} {
       position: relative;
       // Prevent columns from collapsing when empty
       min-height: 1px;
       // Inner gutter via padding
-      padding-left:  (@grid-gutter-width / 2);
+      padding-left: (@grid-gutter-width / 2);
       padding-right: (@grid-gutter-width / 2);
     }
   }
   .col(1); // kickstart it
 }
 
-.make-grid-columns-float(@class) {
-  .col(@index) when (@index = 1) { // initial
+.float-grid-columns(@class) {
+  .col(@index) when (@index = 1) {
+    // initial
     @item: ~".col-@{class}-@{index}";
     .col((@index + 1), @item);
   }
-  .col(@index, @list) when (@index =< @grid-columns) { // general
+  .col(@index, @list) when (@index =< @grid-columns) {
+    // general
     @item: ~".col-@{class}-@{index}";
     .col((@index + 1), ~"@{list}, @{item}");
   }
-  .col(@index, @list) when (@index > @grid-columns) { // terminal
+  .col(@index, @list) when (@index > @grid-columns) {
+    // terminal
     @{list} {
       float: left;
     }
@@ -813,34 +848,45 @@
   .col(1); // kickstart it
 }
 
-.calc-grid(@index, @class, @type) when (@type = width) and (@index > 0) {
+.calc-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
   .col-@{class}-@{index} {
     width: percentage((@index / @grid-columns));
   }
 }
-.calc-grid(@index, @class, @type) when (@type = push) {
+
+.calc-grid-column(@index, @class, @type) when (@type = push) {
   .col-@{class}-push-@{index} {
     left: percentage((@index / @grid-columns));
   }
 }
-.calc-grid(@index, @class, @type) when (@type = pull) {
+
+.calc-grid-column(@index, @class, @type) when (@type = pull) {
   .col-@{class}-pull-@{index} {
     right: percentage((@index / @grid-columns));
   }
 }
-.calc-grid(@index, @class, @type) when (@type = offset) {
+
+.calc-grid-column(@index, @class, @type) when (@type = offset) {
   .col-@{class}-offset-@{index} {
     margin-left: percentage((@index / @grid-columns));
   }
 }
 
 // Basic looping in LESS
-.make-grid(@index, @class, @type) when (@index >= 0) {
-  .calc-grid(@index, @class, @type);
+.loop-grid-columns(@index, @class, @type) when (@index >= 0) {
+  .calc-grid-column(@index, @class, @type);
   // next iteration
-  .make-grid((@index - 1), @class, @type);
+  .loop-grid-columns((@index - 1), @class, @type);
 }
 
+// Create grid for specific class
+.make-grid(@class) {
+  .float-grid-columns(@class);
+  .loop-grid-columns(@grid-columns, @class, width);
+  .loop-grid-columns(@grid-columns, @class, pull);
+  .loop-grid-columns(@grid-columns, @class, push);
+  .loop-grid-columns(@grid-columns, @class, offset);
+}
 
 // Form validation states
 //
@@ -854,16 +900,16 @@
   .radio,
   .checkbox,
   .radio-inline,
-  .checkbox-inline  {
+  .checkbox-inline {
     color: @text-color;
   }
   // Set the border and box shadow on specific inputs to match
   .form-control {
     border-color: @border-color;
-    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075)); // Redeclare so transitions work
     &:focus {
       border-color: darken(@border-color, 10%);
-      @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@border-color, 20%);
+      @shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten(@border-color, 20%);
       .box-shadow(@shadow);
     }
   }
@@ -920,7 +966,7 @@
   }
 
   textarea&,
-  select[multiple]& {
+  select[multiple] & {
     height: auto;
   }
 }

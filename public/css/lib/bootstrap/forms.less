@@ -2,7 +2,6 @@
 // Forms
 // --------------------------------------------------
 
-
 // Normalize non-controls
 //
 // Restyle and baseline non-control form elements.
@@ -34,7 +33,6 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
-
 
 // Normalize form controls
 //
@@ -88,7 +86,6 @@ output {
   color: @input-color;
 }
 
-
 // Common form controls
 //
 // Shared size and type resets for form controls. Apply `.form-control` to any
@@ -123,7 +120,7 @@ output {
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid @input-border;
   border-radius: @input-border-radius;
-  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
 
   // Customize the `:focus` state to imitate native WebKit styles.
@@ -133,9 +130,10 @@ output {
   .placeholder();
 
   // Disabled and read-only inputs
-  // Note: HTML5 says that controls under a fieldset > legend:first-child won't
-  // be disabled if the fieldset is disabled. Due to implementation difficulty,
-  // we don't honor that edge case; we style them as disabled anyway.
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
   &[disabled],
   &[readonly],
   fieldset[disabled] & {
@@ -150,14 +148,25 @@ output {
   }
 }
 
+// Search inputs in iOS
+//
+// This overrides the extra rounded corners on search inputs in iOS so that our
+// `.form-control` class can properly style them. Note that this cannot simply
+// be added to `.form-control` as it's not specific enough. For details, see
+// https://github.com/twbs/bootstrap/issues/11586.
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
 // Special styles for iOS date input
 //
 // In Mobile Safari, date inputs require a pixel line-height that matches the
 // given height of the input.
+
 input[type="date"] {
   line-height: @input-height-base;
 }
-
 
 // Form groups
 //
@@ -167,7 +176,6 @@ input[type="date"] {
 .form-group {
   margin-bottom: 15px;
 }
-
 
 // Checkboxes and radios
 //
@@ -186,6 +194,7 @@ input[type="date"] {
     cursor: pointer;
   }
 }
+
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
@@ -193,6 +202,7 @@ input[type="date"] {
   float: left;
   margin-left: -20px;
 }
+
 .radio + .radio,
 .checkbox + .checkbox {
   margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
@@ -208,6 +218,7 @@ input[type="date"] {
   font-weight: normal;
   cursor: pointer;
 }
+
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
@@ -229,7 +240,6 @@ input[type="checkbox"],
   }
 }
 
-
 // Form control sizing
 //
 // Build on `.form-control` with modifier classes to decrease or increase the
@@ -242,7 +252,6 @@ input[type="checkbox"],
 .input-lg {
   .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
 }
-
 
 // Form control feedback states
 //
@@ -274,13 +283,14 @@ input[type="checkbox"],
 .has-success {
   .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
 }
+
 .has-warning {
   .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
 }
+
 .has-error {
   .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
 }
-
 
 // Static form control text
 //
@@ -290,7 +300,6 @@ input[type="checkbox"],
 .form-control-static {
   margin-bottom: 0; // Remove default margin from `p`
 }
-
 
 // Help text
 //
@@ -303,8 +312,6 @@ input[type="checkbox"],
   margin-bottom: 10px;
   color: lighten(@text-color, 25%); // lighten the text some for contrast
 }
-
-
 
 // Inline forms
 //
@@ -335,6 +342,11 @@ input[type="checkbox"],
       vertical-align: middle;
     }
 
+    // Input groups need that 100% width though
+    .input-group > .form-control {
+      width: 100%;
+    }
+
     .control-label {
       margin-bottom: 0;
       vertical-align: middle;
@@ -351,6 +363,7 @@ input[type="checkbox"],
       padding-left: 0;
       vertical-align: middle;
     }
+
     .radio input[type="radio"],
     .checkbox input[type="checkbox"] {
       float: none;
@@ -366,7 +379,6 @@ input[type="checkbox"],
     }
   }
 }
-
 
 // Horizontal forms
 //

@@ -2,7 +2,6 @@
 // Typography
 // --------------------------------------------------
 
-
 // Headings
 // -------------------------
 
@@ -32,6 +31,7 @@ h3, .h3 {
     font-size: 65%;
   }
 }
+
 h4, .h4,
 h5, .h5,
 h6, .h6 {
@@ -44,13 +44,29 @@ h6, .h6 {
   }
 }
 
-h1, .h1 { font-size: @font-size-h1; }
-h2, .h2 { font-size: @font-size-h2; }
-h3, .h3 { font-size: @font-size-h3; }
-h4, .h4 { font-size: @font-size-h4; }
-h5, .h5 { font-size: @font-size-h5; }
-h6, .h6 { font-size: @font-size-h6; }
+h1, .h1 {
+  font-size: @font-size-h1;
+}
 
+h2, .h2 {
+  font-size: @font-size-h2;
+}
+
+h3, .h3 {
+  font-size: @font-size-h3;
+}
+
+h4, .h4 {
+  font-size: @font-size-h4;
+}
+
+h5, .h5 {
+  font-size: @font-size-h5;
+}
+
+h6, .h6 {
+  font-size: @font-size-h6;
+}
 
 // Body text
 // -------------------------
@@ -70,39 +86,58 @@ p {
   }
 }
 
-
 // Emphasis & misc
 // -------------------------
 
 // Ex: 14px base font * 85% = about 12px
 small,
-.small  { font-size: 85%; }
+.small {
+  font-size: 85%;
+}
 
 // Undo browser default styling
-cite    { font-style: normal; }
+cite {
+  font-style: normal;
+}
 
 // Alignment
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
-.text-justify        { text-align: justify; }
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
 
 // Contextual colors
 .text-muted {
   color: @text-muted;
 }
+
 .text-primary {
   .text-emphasis-variant(@brand-primary);
 }
+
 .text-success {
   .text-emphasis-variant(@state-success-text);
 }
+
 .text-info {
   .text-emphasis-variant(@state-info-text);
 }
+
 .text-warning {
   .text-emphasis-variant(@state-warning-text);
 }
+
 .text-danger {
   .text-emphasis-variant(@state-danger-text);
 }
@@ -116,19 +151,22 @@ cite    { font-style: normal; }
   color: #fff;
   .bg-variant(@brand-primary);
 }
+
 .bg-success {
   .bg-variant(@state-success-bg);
 }
+
 .bg-info {
   .bg-variant(@state-info-bg);
 }
+
 .bg-warning {
   .bg-variant(@state-warning-bg);
 }
+
 .bg-danger {
   .bg-variant(@state-danger-bg);
 }
-
 
 // Page header
 // -------------------------
@@ -138,7 +176,6 @@ cite    { font-style: normal; }
   margin: (@line-height-computed * 2) 0 @line-height-computed;
   border-bottom: 1px solid @page-header-border-color;
 }
-
 
 // Lists
 // --------------------------------------------------
@@ -165,15 +202,12 @@ ol {
 // Inline turns list items into inline-block
 .list-inline {
   .list-unstyled();
+  margin-left: -5px;
 
   > li {
     display: inline-block;
     padding-left: 5px;
     padding-right: 5px;
-
-    &:first-child {
-      padding-left: 0;
-    }
   }
 }
 
@@ -182,13 +216,16 @@ dl {
   margin-top: 0; // Remove browser default
   margin-bottom: @line-height-computed;
 }
+
 dt,
 dd {
   line-height: @line-height-base;
 }
+
 dt {
   font-weight: bold;
 }
+
 dd {
   margin-left: 0; // Undo browser default
 }
@@ -209,7 +246,8 @@ dd {
     }
     dd {
       margin-left: @component-offset-horizontal;
-      &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
+      &:extend(.clearfix all)
+    ; // Clear the floated `dt` if an empty `dd` is present
     }
   }
 }
@@ -219,11 +257,12 @@ dd {
 
 // Abbreviations and acronyms
 abbr[title],
-// Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
+  // Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted @abbr-border-color;
 }
+
 .initialism {
   font-size: 90%;
   text-transform: uppercase;
@@ -233,7 +272,7 @@ abbr[data-original-title] {
 blockquote {
   padding: (@line-height-computed / 2) @line-height-computed;
   margin: 0 0 @line-height-computed;
-  font-size: (@font-size-base * 1.25);
+  font-size: @blockquote-font-size;
   border-left: 5px solid @blockquote-border-color;
 
   p,
@@ -275,7 +314,9 @@ blockquote.pull-right {
   footer,
   small,
   .small {
-    &:before { content: ''; }
+    &:before {
+      content: '';
+    }
     &:after {
       content: '\00A0 \2014'; // nbsp, em dash
     }

@@ -2,7 +2,6 @@
 // Carousel
 // --------------------------------------------------
 
-
 // Wrapper for the slide container and indicators
 .carousel {
   position: relative;
@@ -21,14 +20,17 @@
     // Account for jankitude on images
     > img,
     > a > img {
-      .img-responsive();
+      &:extend(.img-responsive)
+    ;
       line-height: 1;
     }
   }
 
   > .active,
   > .next,
-  > .prev { display: block; }
+  > .prev {
+    display: block;
+  }
 
   > .active {
     left: 0;
@@ -117,7 +119,7 @@
   }
   .icon-prev,
   .icon-next {
-    width:  20px;
+    width: 20px;
     height: 20px;
     margin-top: -10px;
     margin-left: -10px;
@@ -126,12 +128,12 @@
 
   .icon-prev {
     &:before {
-      content: '\2039';// SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
+      content: '\2039'; // SINGLE LEFT-POINTING ANGLE QUOTATION MARK (U+2039)
     }
   }
   .icon-next {
     &:before {
-      content: '\203a';// SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
+      content: '\203a'; // SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (U+203A)
     }
   }
 }
@@ -154,7 +156,7 @@
 
   li {
     display: inline-block;
-    width:  10px;
+    width: 10px;
     height: 10px;
     margin: 1px;
     text-indent: -999px;
@@ -171,11 +173,11 @@
     // For IE8, we set solid black as it doesn't support `rgba()`. For IE9, we
     // set alpha transparency for the best results possible.
     background-color: #000 \9; // IE8
-    background-color: rgba(0,0,0,0); // IE9
+    background-color: rgba(0, 0, 0, 0); // IE9
   }
   .active {
     margin: 0;
-    width:  12px;
+    width: 12px;
     height: 12px;
     background-color: @carousel-indicator-active-bg;
   }
@@ -200,14 +202,13 @@
   }
 }
 
-
 // Scale up controls for tablets and up
 @media screen and (min-width: @screen-sm-min) {
 
   // Scale up the controls a smidge
   .carousel-control {
-    .glyphicons-chevron-left,
-    .glyphicons-chevron-right,
+    .glyphicon-chevron-left,
+    .glyphicon-chevron-right,
     .icon-prev,
     .icon-next {
       width: 30px;
