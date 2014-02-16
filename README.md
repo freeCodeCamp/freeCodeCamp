@@ -315,6 +315,7 @@ Recommended Design
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
 - [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.
 - [HTML5UP](http://html5up.net/) - Beautifully designed HTML templates.
+- [Progre(c)ss](https://github.com/jh3y/progre-c-ss) - Pure CSS progress bars.
 
 Recommended Node.js Libraries
 -----------------------------
@@ -339,6 +340,7 @@ Recommended Client-Side libraries
 - [select.js](http://github.hubspot.com/select/docs/welcome/) - Styleable select elements.
 - [drop.js](http://github.hubspot.com/drop/docs/welcome/) -  Powerful Javascript and CSS library for creating dropdowns and other floating displays.
 - [scrollReveal.js](https://github.com/julianlloyd/scrollReveal.js) - Declarative on-scroll reveal animations.
+- [InstantClick](http://instantclick.io) - Makes your pages load instantly by pre-loading them on mouse hover.
 
 Pro Tips
 --------
