@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        br
+        br
+        form(method='POST')
+          input(type='hidden', name='_csrf', value=token)
+          legend Forgot Password
+          div.form-group
+            p Enter your email address and we'll send you reset instructions.
+            label.sr-only(for='email') Enter Your Email:
+            input.form-control(type='email', name='email', id='email', placeholder='Your Email', autofocus=true, required)
+          div.form-group
+            button.btn.btn-primary(type='submit') Reset Password
+        br
+        p Or, if you rembered your password
+          a(href='login') <strong> sign in.</strong>
+
+//- Form Notes
+//- ===========================================
+//- 1) Always add labels!
+//-    Screen readers will have trouble with your forms if you don't include a label for every input.
+//-    NOTE: you can hide the labels using the .sr-only class.
+//- 2) Use proper HTML5 input types (email, password, date, etc.)  This adds some HTML5 validation as
+//-    well as the correct keyboard on mobile devices.

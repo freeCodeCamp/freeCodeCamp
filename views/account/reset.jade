@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        .page-header
+          h1 Reset Your Password
+        form(method='POST')
+          input(type='hidden', name='_csrf', value=token)
+          .form-group
+            label.sr-only(for='password') New Password:
+            input.form-control(type='password', name='password', value='', placeholder='New password', autofocus=true, required)
+          .form-group
+            label.sr-only(for='confirm') Confirm Password:
+            input.form-control(type='password', name='confirm', value='', placeholder='Confirm your new password', required)
+          .form-group
+            button.btn.btn-primary.btn-reset(type='submit') Set Password
+        hr
+        p Need to try again?
+          a(href='/forgot') <strong> Forgot my password</strong>
+  script.
+    $(document).ready(function() {
+      if ( #{validToken} === false ) {
+        $("input").prop('disabled', true);
+        $("button").prop('disabled', true);
+      }
+    });
+
+//- Form Notes
+//- ===========================================
+//- 1) Always add labels!
+//-    Screen readers will have trouble with your forms if you don't include a label for every input.
+//-    NOTE: you can hide the labels using the .sr-only class.
+//- 2) Use proper HTML5 input types (email, password, date, etc.)  This adds some HTML5 validation as
+//-    well as the correct keyboard on mobile devices.

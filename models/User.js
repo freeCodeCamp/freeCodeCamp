@@ -18,7 +18,10 @@ var userSchema = new mongoose.Schema({
     location: { type: String, default: '' },
     website: { type: String, default: '' },
     picture: { type: String, default: '' }
-  }
+  },
+
+  resetPasswordToken: { type: String, default: '' },
+  resetPasswordExpires: { type: Date }
 });
 
 /**
