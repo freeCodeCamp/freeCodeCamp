@@ -154,14 +154,12 @@ exports.postForgot = function(req, res) {
   workflow.on('sendEmail', function(token, user) {
 
     // Create a reusable nodemailer transport method (opens a pool of SMTP connections)
-    var smtpTransport = nodemailer.createTransport("SMTP",{
-        service: "Gmail",
-        auth: {
-            user: secrets.gmail.user,
-            pass: secrets.gmail.password
-        }
-        // See nodemailer docs for other transports
-        // https://github.com/andris9/Nodemailer
+    var smtpTransport = nodemailer.createTransport('SMTP', {
+      service: 'SendGrid',
+      auth: {
+        user: secrets.sendgrid.user,
+        pass: secrets.sendgrid.password
+      }
     });
 
     console.log('User: ' + secrets.gmail.user);
