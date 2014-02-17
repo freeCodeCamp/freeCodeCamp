@@ -774,7 +774,16 @@ io.sockets.on('connection', function(socket) {
 });
 ```
 
-We are done with the server-side business.
+One last thing left to change:
+```js
+app.listen(app.get('port'), function() {
+```
+to
+```js
+server.listen(app.get('port'), function() {
+```
+
+At this point we are done with the back-end.
 
 You now have a choice - to include your JavaScript code in Jade templates or have all your client-side
 JavaScript in a separate file - in `main.js`. I will admit, when I first started out with Node.js and JavaScript in general,
