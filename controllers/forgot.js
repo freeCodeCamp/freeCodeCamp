@@ -128,7 +128,7 @@ exports.postForgot = function(req, res) {
       }
 
       user.resetPasswordToken = token;
-      user.resetPasswordExpires = Date.now() + 10000000;
+      user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
 
       // update the user's record with the token
       user.save(function(err) {
@@ -166,14 +166,13 @@ exports.postForgot = function(req, res) {
         'If you did not request this, please ignore this email and your password will remain unchanged.\n'
     };
 
-    // send email
     smtpTransport.sendMail(mailOptions, function(err) {
       if (err) {
         req.flash('errors', { msg: err.message });
         return res.redirect('/forgot');
       } else {
         // Message to user
-        req.flash('info', { msg: 'If you have an account with that email address then we sent you an email with instructions. Check your email!' });
+        req.flash('info', { msg: 'We have sent an email to ' + user.email + ' for further instructions.' });
         return res.redirect('/forgot');
       }
     });
