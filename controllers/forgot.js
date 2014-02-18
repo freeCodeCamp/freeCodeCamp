@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+var async = require('async');
 var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
 var mongoose = require('mongoose');
@@ -72,120 +72,68 @@ exports.getForgot = function(req, res) {
  */
 
 exports.postForgot = function(req, res) {
+  req.assert('email', 'Please enter a valid email address.').isEmail();
 
-  // Begin a workflow
-  var workflow = new (require('events').EventEmitter)();
+  var errors = req.validationErrors();
 
-  /**
-   * Step 1: Is the email valid?
-   */
+  if (errors) {
+    req.flash('errors', errors);
+    return res.redirect('/forgot');
+  }
 
-  workflow.on('validate', function() {
-
-    // Check for form errors
-    req.assert('email', 'Please enter a valid email address.').isEmail();
-    var errors = req.validationErrors();
-
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/forgot');
-    }
-
-    // next step
-    workflow.emit('generateToken');
-  });
-
-  /**
-   * Step 2: Generate a one-time (nonce) token
-   */
-
-  workflow.on('generateToken', function() {
-    // generate token
-    crypto.randomBytes(24, function(err, buf) {
-      if (err) return next(err);
-      var token = buf.toString('base64');
-      console.log(token);
-      workflow.emit('saveToken', token)
-    });
-  });
-
-  /**
-   * Step 3: Save the token and token expiration
-   */
-
-  workflow.on('saveToken', function(token) {
-    // lookup user
-    User.findOne({ email: req.body.email.toLowerCase() }, function(err, user) {
-      if (err) {
-        req.flash('errors', err);
-        return res.redirect('/forgot');
-      }
-      if (!user) {
-        // If we didn't find a user associated with that
-        // email address then just finish the workflow
-        req.flash('info', { msg: 'If you have an account with that email address then we sent you an email with instructions. Check your email!' });
-        return res.redirect('/forgot');
-      }
-
-      user.resetPasswordToken = token;
-      user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
-
-      // update the user's record with the token
-      user.save(function(err) {
-        if (err) {
-          req.flash('errors', err);
+  async.waterfall([
+    function(done) {
+      /**
+       * Generate a one-time token.
+       */
+      crypto.randomBytes(32, function(err, buf) {
+        var token = buf.toString('base64');
+        done(err, token);
+      });
+    },
+    function(token, done) {
+      /**
+       * Save the token and token expiration.
+       */
+      User.findOne({ email: req.body.email.toLowerCase() }, function(err, user) {
+        if (!user) {
+          req.flash('errors', { msg: 'No account with that email address exists.' });
           return res.redirect('/forgot');
         }
+
+        user.resetPasswordToken = token;
+        user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+
+        user.save(function(err) {
+          done(err, token, user);
+        });
       });
-
-      // next step
-      workflow.emit('sendEmail', token, user);
-    });
-  });
-
-  /**
-   * Step 4: Send the user an email with a reset link
-   */
-
-  workflow.on('sendEmail', function(token, user) {
-    var smtpTransport = nodemailer.createTransport('SMTP', {
-      service: 'SendGrid',
-      auth: {
-        user: secrets.sendgrid.user,
-        pass: secrets.sendgrid.password
-      }
-    });
-
-    var mailOptions = {
-      to: user.profile.name + ' <' + user.email + '>',
-      from: 'hackathon@starter.com',
-      subject: 'Hackathon Starter Password Reset',
-      text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
-        'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-        'http://' + req.headers.host + '/reset/' + token + '\n\n' +
-        'If you did not request this, please ignore this email and your password will remain unchanged.\n'
-    };
-
-    smtpTransport.sendMail(mailOptions, function(err) {
-      if (err) {
-        req.flash('errors', { msg: err.message });
-        return res.redirect('/forgot');
-      } else {
-        // Message to user
+    },
+    function(token, user, done) {
+      /**
+       * Send the user an email with a reset link.
+       */
+      var smtpTransport = nodemailer.createTransport('SMTP', {
+        service: 'SendGrid',
+        auth: {
+          user: secrets.sendgrid.user,
+          pass: secrets.sendgrid.password
+        }
+      });
+      var mailOptions = {
+        to: user.profile.name + ' <' + user.email + '>',
+        from: 'hackathon@starter.com',
+        subject: 'Hackathon Starter Password Reset',
+        text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+      };
+      smtpTransport.sendMail(mailOptions, function(err) {
         req.flash('info', { msg: 'We have sent an email to ' + user.email + ' for further instructions.' });
-        return res.redirect('/forgot');
-      }
-    });
-
-    // shut down the connection pool, no more messages
-    smtpTransport.close();
-
-  });
-
-  /**
-   * Initiate the workflow
-   */
-
-  workflow.emit('validate');
-
+        done(err, 'done');
+        res.redirect('/forgot');
+      });
+    }
+  ]);
 };
