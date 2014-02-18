@@ -1,65 +1,18 @@
-'use strict';
-
-/**
- * Module dependencies.
- */
 var async = require('async');
-var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
-var mongoose = require('mongoose');
 var nodemailer = require("nodemailer");
 var User = require('../models/User');
 var secrets = require('../config/secrets');
 
 /**
- * Forgot Controller
- */
-
-/**
-
- The general outline of the best practice is:
-
- 1) Identify the user is a valid account holder. Use as much information as practical.
- - Email Address  (*Bare Minimin*)
- - Username
- - Account Number
- - Security Questions
- - Etc.
-
- 2) Create a special one-time (nonce) token, with a expiration period, tied to the person's account.
- In this example We will store this in the database on the user's record.
-
- 3) Send the user a link which contains the route ( /reset/:id/:token/ ) where the
- user can change their password.
-
- 4) When the user clicks the link:
- - Lookup the user/nonce token and check expiration. If any issues send a message
- to the user: "this link is invalid".
- - If all good then continue - render password reset form.
-
- 5) The user enters their new password (and possibly a second time for verification)
- and posts this back.
-
- 6) Validate the password(s) meet complexity requirements and match.  If so, hash the
- password and save it to the database.  Here we will also clear the reset token.
-
- 7) Email the user "Success, your password is reset".  This is important in case the user
- did not initiate the reset!
-
- 7) Redirect the user.  Could be to the login page but since we know the users email and
- password we can simply authenticate them and redirect to a logged in location - usually
- home page.
-
- */
-
-
-/**
  * GET /forgot
- * Forgot your password page.
+ * Forgot Password page.
  */
 
 exports.getForgot = function(req, res) {
-  if (req.user) return res.redirect('/');  //user already logged in!
+  if (req.isAuthenticated()) {
+    return res.redirect('/');
+  }
   res.render('account/forgot', {
     title: 'Forgot Password'
   });
@@ -68,7 +21,7 @@ exports.getForgot = function(req, res) {
 /**
  * POST /forgot
  * Reset Password.
- * @param {string} email
+ * @param email
  */
 
 exports.postForgot = function(req, res) {
@@ -83,18 +36,12 @@ exports.postForgot = function(req, res) {
 
   async.waterfall([
     function(done) {
-      /**
-       * Generate a one-time token.
-       */
       crypto.randomBytes(32, function(err, buf) {
         var token = buf.toString('base64');
         done(err, token);
       });
     },
     function(token, done) {
-      /**
-       * Save the token and token expiration.
-       */
       User.findOne({ email: req.body.email.toLowerCase() }, function(err, user) {
         if (!user) {
           req.flash('errors', { msg: 'No account with that email address exists.' });
@@ -110,9 +57,6 @@ exports.postForgot = function(req, res) {
       });
     },
     function(token, user, done) {
-      /**
-       * Send the user an email with a reset link.
-       */
       var smtpTransport = nodemailer.createTransport('SMTP', {
         service: 'SendGrid',
         auth: {
