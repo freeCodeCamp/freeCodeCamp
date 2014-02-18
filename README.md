@@ -360,9 +360,12 @@ FAQ
 ### Why do I get `403 Error: Forbidden` when submitting a POST form?
 You need to add this hidden input element to your form. This has been added in the
 pull request [#40](https://github.com/sahat/hackathon-starter/pull/40).
+
 ```
 input(type='hidden', name='_csrf', value=token)
 ```
+You can read more about [CSRF protection middleware](http://expressjs.com/api.html#csrf) at the Express API Reference.
+
 
 ### What is `cluster_app.js`?
 From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_it_works):
