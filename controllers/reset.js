@@ -1,7 +1,7 @@
 var async = require('async');
-var bcrypt = require('bcrypt-nodejs');
 var nodemailer = require('nodemailer');
 var User = require('../models/User');
+var secrets = require('../config/secrets');
 
 /**
  * GET /reset/:token
@@ -82,6 +82,7 @@ exports.postReset = function(req, res, next) {
           'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
+        req.flash('success', { msg: 'Success! Your password has been changed.' });
         done(err);
       });
     }
