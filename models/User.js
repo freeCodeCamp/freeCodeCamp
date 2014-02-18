@@ -20,8 +20,8 @@ var userSchema = new mongoose.Schema({
     picture: { type: String, default: '' }
   },
 
-  resetPasswordToken: { type: String, default: '' },
-  resetPasswordExpires: { type: Date }
+  resetPasswordToken: String,
+  resetPasswordExpires: Date
 });
 
 /**
