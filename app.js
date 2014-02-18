@@ -18,6 +18,8 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var forgotController = require('./controllers/forgot');
+var resetController = require('./controllers/reset');
 
 /**
  * API keys + Passport configuration.
@@ -98,6 +100,10 @@ app.get('/', homeController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
+app.get('/forgot', forgotController.getForgot);
+app.post('/forgot', forgotController.postForgot);
+app.get('/reset/:token', resetController.getReset);
+app.post('/reset/:token', resetController.postReset);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
 app.get('/contact', contactController.getContact);

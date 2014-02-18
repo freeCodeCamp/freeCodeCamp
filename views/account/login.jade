@@ -3,8 +3,8 @@ extends ../layout
 block content
   .col-sm-8.col-sm-offset-2
     form(method='POST')
-      input(type='hidden', name='_csrf', value=token)
       legend Sign In
+      input(type='hidden', name='_csrf', value=token)
       .form-group
         .btn-group.btn-group-justified
           if secrets.facebookAuth
@@ -34,4 +34,4 @@ block content
           button.btn.btn-primary(type='submit')
             i.fa.fa-unlock-alt
             | Login
-
+          a.btn.btn-link(href='/forgot') Forgot your password?
