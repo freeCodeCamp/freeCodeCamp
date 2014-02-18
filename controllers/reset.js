@@ -14,7 +14,7 @@ exports.getReset = function(req, res) {
   }
 
   User
-    .where('resetPasswordToken', req.params.token)
+    .findOne({ resetPasswordToken: req.params.token })
     .where('resetPasswordExpires').gt(Date.now())
     .exec(function(err, user) {
       if (!user) {
@@ -46,27 +46,25 @@ exports.postReset = function(req, res, next) {
   async.waterfall([
     function(done) {
       User
-        .where('resetPasswordToken', req.params.token)
+        .findOne({ resetPasswordToken: req.params.token })
         .where('resetPasswordExpires').gt(Date.now())
         .exec(function(err, user) {
           if (!user) {
-            req.flash('errors', { msg: 'Password reset request is invalid.  It may have expired.' });
+            req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
             return res.redirect('back');
           }
-          done(err, user);
-        });
-    },
-    function(user, done) {
-      user.password = req.body.password;
-      user.resetPasswordToken = undefined;
-      user.resetPasswordExpires = undefined;
 
-      user.save(function(err) {
-        if (err) return next(err);
-        req.logIn(user, function(err) {
-          done(err, user);
+          user.password = req.body.password;
+          user.resetPasswordToken = undefined;
+          user.resetPasswordExpires = undefined;
+
+          user.save(function(err) {
+            if (err) return next(err);
+            req.logIn(user, function(err) {
+              done(err, user);
+            });
+          });
         });
-      });
     },
     function(user, done) {
       var smtpTransport = nodemailer.createTransport('SMTP', {
