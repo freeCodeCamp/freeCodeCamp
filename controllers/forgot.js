@@ -20,7 +20,7 @@ exports.getForgot = function(req, res) {
 
 /**
  * POST /forgot
- * Reset Password.
+ * Create a random token, then the send user an email with a reset link.
  * @param email
  */
 
