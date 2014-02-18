@@ -4,12 +4,12 @@
  * Module dependencies.
  */
 
-var bcrypt        = require('bcrypt-nodejs');
-var crypto        = require('crypto');
-var mongoose      = require('mongoose');
-var nodemailer    = require("nodemailer");
-var User          = require('../models/User');
-var secrets       = require('../config/secrets');
+var bcrypt = require('bcrypt-nodejs');
+var crypto = require('crypto');
+var mongoose = require('mongoose');
+var nodemailer = require("nodemailer");
+var User = require('../models/User');
+var secrets = require('../config/secrets');
 
 /**
  * Forgot Controller
@@ -17,40 +17,40 @@ var secrets       = require('../config/secrets');
 
 /**
 
-  The general outline of the best practice is:
+ The general outline of the best practice is:
 
-  1) Identify the user is a valid account holder. Use as much information as practical.
-      - Email Address  (*Bare Minimin*)
-      - Username
-      - Account Number
-      - Security Questions
-      - Etc.
+ 1) Identify the user is a valid account holder. Use as much information as practical.
+ - Email Address  (*Bare Minimin*)
+ - Username
+ - Account Number
+ - Security Questions
+ - Etc.
 
-  2) Create a special one-time (nonce) token, with a expiration period, tied to the person's account.
-     In this example We will store this in the database on the user's record.
+ 2) Create a special one-time (nonce) token, with a expiration period, tied to the person's account.
+ In this example We will store this in the database on the user's record.
 
-  3) Send the user a link which contains the route ( /reset/:id/:token/ ) where the
-     user can change their password.
+ 3) Send the user a link which contains the route ( /reset/:id/:token/ ) where the
+ user can change their password.
 
-  4) When the user clicks the link:
-      - Lookup the user/nonce token and check expiration. If any issues send a message
-        to the user: "this link is invalid".
-      - If all good then continue - render password reset form.
+ 4) When the user clicks the link:
+ - Lookup the user/nonce token and check expiration. If any issues send a message
+ to the user: "this link is invalid".
+ - If all good then continue - render password reset form.
 
-  5) The user enters their new password (and possibly a second time for verification)
-     and posts this back.
+ 5) The user enters their new password (and possibly a second time for verification)
+ and posts this back.
 
-  6) Validate the password(s) meet complexity requirements and match.  If so, hash the
-     password and save it to the database.  Here we will also clear the reset token.
+ 6) Validate the password(s) meet complexity requirements and match.  If so, hash the
+ password and save it to the database.  Here we will also clear the reset token.
 
-  7) Email the user "Success, your password is reset".  This is important in case the user
-     did not initiate the reset!
+ 7) Email the user "Success, your password is reset".  This is important in case the user
+ did not initiate the reset!
 
-  7) Redirect the user.  Could be to the login page but since we know the users email and
-     password we can simply authenticate them and redirect to a logged in location - usually
-     home page.
+ 7) Redirect the user.  Could be to the login page but since we know the users email and
+ password we can simply authenticate them and redirect to a logged in location - usually
+ home page.
 
-*/
+ */
 
 
 /**
@@ -82,7 +82,6 @@ exports.postForgot = function(req, res) {
   workflow.on('validate', function() {
 
     // Check for form errors
-    req.assert('email', 'Email cannot be blank.').notEmpty();
     req.assert('email', 'Please enter a valid email address.').isEmail();
     var errors = req.validationErrors();
 
@@ -105,10 +104,10 @@ exports.postForgot = function(req, res) {
       var token = buf.toString('hex');
       // hash token
       bcrypt.genSalt(10, function(err, salt) {
-          bcrypt.hash(token, salt, null, function(err, hash) {
-              // next step
-              workflow.emit('saveToken', token, hash);
-          });
+        bcrypt.hash(token, salt, null, function(err, hash) {
+          // next step
+          workflow.emit('saveToken', token, hash);
+        });
       });
     });
   });
@@ -167,10 +166,10 @@ exports.postForgot = function(req, res) {
 
     // create email
     var mailOptions = {
-      to:       user.profile.name + ' <' + user.email + '>',
-      from:     'hackathon@starter.com',  // TODO parameterize
-      subject:  'Password Reset Link',
-      text:     'Hello from hackathon-starter. Your password reset link is:' + '\n\n' + req.protocol +'://'+ req.headers.host +'/reset/'+ user.id +'/'+ token
+      to: user.profile.name + ' <' + user.email + '>',
+      from: 'hackathon@starter.com',  // TODO parameterize
+      subject: 'Password Reset Link',
+      text: 'Hello from hackathon-starter. Your password reset link is:' + '\n\n' + req.protocol + '://' + req.headers.host + '/reset/' + user.id + '/' + token
     };
 
     // send email
