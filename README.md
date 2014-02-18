@@ -90,7 +90,7 @@ Getting Started
 The easiest way to get started is to clone the repository:
 
 ```bash
-# Fetch only the latest commits.
+# Fetch only the latest commits
 git clone --depth=1 git@github.com:sahat/hackathon-starter.git my-project
 
 cd my-project
@@ -101,12 +101,12 @@ npm install
 node app.js
 ```
 
->:exclamation: **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
->It will monitor for any changes in your node.js
->application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
->It is a big time saver in the long run.
+:exclamation: **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
+It will monitor for any changes in your node.js
+application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
+It will save you a lot of time in the long run, because you won't need to manually restart the server each time you make a change.
 
-Next up, if you want to use any of the APIs or OAuth authentication methods, you will need to obtain
+Next, if you want to use any of the included APIs or OAuth authentication methods, you will need to obtain
 appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
 need to go through each provider to generate new credentials.
 
