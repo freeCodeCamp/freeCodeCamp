@@ -36,8 +36,8 @@ exports.postForgot = function(req, res, next) {
 
   async.waterfall([
     function(done) {
-      crypto.randomBytes(32, function(err, buf) {
-        var token = buf.toString('base64');
+      crypto.randomBytes(20, function(err, buf) {
+        var token = buf.toString('hex');
         done(err, token);
       });
     },
