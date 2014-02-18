@@ -101,15 +101,11 @@ exports.postForgot = function(req, res) {
 
   workflow.on('generateToken', function() {
     // generate token
-    crypto.randomBytes(21, function(err, buf) {
-      var token = buf.toString('hex');
-      // hash token
-      bcrypt.genSalt(10, function(err, salt) {
-        bcrypt.hash(token, salt, null, function(err, hash) {
-          // next step
-          workflow.emit('saveToken', token, hash);
-        });
-      });
+    crypto.randomBytes(24, function(err, buf) {
+      if (err) return next(err);
+      var token = buf.toString('base64');
+      console.log(token);
+      workflow.emit('saveToken', token)
     });
   });
 
@@ -117,7 +113,7 @@ exports.postForgot = function(req, res) {
    * Step 3: Save the token and token expiration
    */
 
-  workflow.on('saveToken', function(token, hash) {
+  workflow.on('saveToken', function(token) {
     // lookup user
     User.findOne({ email: req.body.email.toLowerCase() }, function(err, user) {
       if (err) {
@@ -131,7 +127,7 @@ exports.postForgot = function(req, res) {
         return res.redirect('/forgot');
       }
 
-      user.resetPasswordToken = hash;
+      user.resetPasswordToken = token;
       user.resetPasswordExpires = Date.now() + 10000000;
 
       // update the user's record with the token
@@ -152,8 +148,6 @@ exports.postForgot = function(req, res) {
    */
 
   workflow.on('sendEmail', function(token, user) {
-
-    // Create a reusable nodemailer transport method (opens a pool of SMTP connections)
     var smtpTransport = nodemailer.createTransport('SMTP', {
       service: 'SendGrid',
       auth: {
@@ -162,15 +156,14 @@ exports.postForgot = function(req, res) {
       }
     });
 
-    console.log('User: ' + secrets.gmail.user);
-    console.log('Pass: ' + secrets.gmail.password);
-
-    // create email
     var mailOptions = {
       to: user.profile.name + ' <' + user.email + '>',
-      from: 'hackathon@starter.com',  // TODO parameterize
-      subject: 'Password Reset Link',
-      text: 'Hello from hackathon-starter. Your password reset link is:' + '\n\n' + req.protocol + '://' + req.headers.host + '/reset/' + user.id + '/' + token
+      from: 'hackathon@starter.com',
+      subject: 'Hackathon Starter Password Reset',
+      text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+        'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+        'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+        'If you did not request this, please ignore this email and your password will remain unchanged.\n'
     };
 
     // send email
