@@ -67,6 +67,7 @@ Features
  - Change Password
  - Link multiple OAuth strategies to one account
  - Delete Account
+ - Forgot Password
 - **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, PayPal, and more.
 
 Prerequisites
