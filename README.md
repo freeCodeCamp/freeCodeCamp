@@ -515,14 +515,14 @@ app.get('/escape-velocity', homeController.escapeVelocity);
 
 Restart the server (if you are not using **nodemon**), then you should see the new template at [http://localhost:3000/escape-velocity](http://localhost:3000/escape-velocity).
 
-I will stop here, but if you would like to use this template as more than just a single page, take a look at how these Jade templates work: `layout.jade` - base template, `index.jade` - home page, `partials/navigation.jade` - Bootstrap navbar, `partials/footer.jade` - sticky footer. You will have to manually break it apart into smaller pieces. Figure out which part of the template you want to keep the same on all pages - that's your new `layout.jade`.
+I will stop right here, but if you would like to use this template as more than just a single page, take a look at how these Jade templates work: `layout.jade` - base template, `index.jade` - home page, `partials/navigation.jade` - Bootstrap navbar, `partials/footer.jade` - sticky footer. You will have to manually break it apart into smaller pieces. Figure out which part of the template you want to keep the same on all pages - that's your new `layout.jade`.
 Then, each page that changes, be it `index.jade`, `about.jade`, `contact.jade`
-will be embedded in the new `layout.jade` via `block content`.
+will be embedded in your new `layout.jade` via `block content`. Use existing templates as a reference.
 
-This is a lengthy process, I know, and templates you get from outside **HTML5**UP,
-will have yet another grid system. That's why I chose Bootstrap CSS for the Hackathon Starter.
- Most people are familiar with Bootstrap, it's easy to get started, very extendable.
- You can also buy a Bootstrap theme drop it in into your project, and everything looks great without a single change to your markup or CSS class names. However, if you would like to go with a completely custom design, there you have it!
+This is a rather lengthy process, and templates you get from elsewhere,
+might have yet another grid system. That's why I chose *Bootstrap* for the Hackathon Starter.
+ Many people are already familiar with *Bootstrap*, plus it's easy to get started with it if you have never used *Bootstrap*.
+ You can also buy many beautifully designed *Bootstrap* themes at [Themeforest](http://themeforest.net/), and use them as a drop-in replacement for Hackathon Starter. However, if you would like to go with a completely custom HTML/CSS design, this should help you to get started!
 
 <hr>
 
@@ -609,11 +609,11 @@ or send a pull request if you  would like to include something that I missed.
 <hr>
 
 ###:snowman: How do I create a new page?
-A more correct way to be to say "How do I create a route". The main file `app.js` contains all the routes.
-Each route has a callback function (aka controller) associated with it. Sometimes you will see 3 or more arguments
-to routes. In cases like that, the first argument is still a URL string, the middle arguments
+A more correct way to be to say "How do I create a new route". The main file `app.js` contains all the routes.
+Each route has a callback function associated with it. Sometimes you will see 3 or more arguments
+to routes. In cases like that, the first argument is still a URL string, while middle arguments
 are what's called middleware. Think of middleware as a door. If this door prevents you from
-continuing forward, well, you won't get to your callback function (aka controller). One such example is authentication.
+continuing forward, you won't get to your callback function. One such example is a route that requires authentication.
 
 ```js
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
@@ -624,14 +624,15 @@ checks if you are authenticated:
 
 ```js
 exports.isAuthenticated = function(req, res, next) {
-  if (req.isAuthenticated()) return next();
+  if (req.isAuthenticated()) {
+    return next();
+  }
   res.redirect('/login');
 };
 ```
 
 If you are authenticated, you let this visitor pass through your "door" by calling `return next();`. It then proceeds to the
-next middleware until it reaches the last argument which is a callback function that usually renders a template,
-or responds with a JSON data, if you are building a REST API. But in this example it simply renders a page and nothing more:
+next middleware until it reaches the last argument, which is a callback function that typically renders a template on `GET` requests or redirects on `POST` requests. In this case, if you are authenticated, then you will see *Account Management* page, otherwise you will be redirected to *Login* page.
 
 ```js
 exports.getAccount = function(req, res) {
@@ -644,7 +645,7 @@ exports.getAccount = function(req, res) {
 Express.js has `app.get`, `app.post`, `app.put`, `app.del`, but for the most part you will only use the first two.
 If you just want to display a page, then use `GET`, if you are submitting a form, sending a file then use `POST`.
 
-Here is a typical workflow of adding new routes to your application. Let's say we are building
+Here is a typical workflow for adding new routes to your application. Let's say we are building
 a page that lists all books from database.
 
 **Step 1.** Start by defining a route.
