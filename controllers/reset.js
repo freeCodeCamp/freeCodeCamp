@@ -1,22 +1,16 @@
-'use strict';
+var bcrypt = require('bcrypt-nodejs');
+var nodemailer = require('nodemailer');
+var User = require('../models/User');
 
 /**
- * Module Dependencies
- */
-
-var bcrypt        = require('bcrypt-nodejs');
-var mongoose      = require('mongoose');
-var nodemailer    = require("nodemailer");
-var User          = require('../models/User');
-var secrets       = require('../config/secrets');
-
-/**
- * GET /reset/:id/:token
- * Reset your password page
+ * GET /reset/:token
+ * Reset Password page.
  */
 
 exports.getReset = function(req, res) {
-  if (req.user) return res.redirect('/');  //user already logged in!
+  if (req.isAuthenticated()) {
+    return res.redirect('/');
+  }
 
   var conditions = {
     _id: req.params.id,
@@ -32,10 +26,8 @@ exports.getReset = function(req, res) {
       });
     }
     if (!user) {
-      req.flash('errors', { msg: 'Your reset request is invalid.  It may have expired.' });
-      return res.render('account/reset', {
-        validToken: false
-      });
+      req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
+      return res.redirect('/forgot');
     }
     // Validate the token
     bcrypt.compare(req.params.token, user.resetPasswordToken, function(err, isValid) {
@@ -168,22 +160,22 @@ exports.postReset = function(req, res) {
   workflow.on('sendEmail', function(user) {
 
     // Create a reusable nodemailer transport method (opens a pool of SMTP connections)
-    var smtpTransport = nodemailer.createTransport("SMTP",{
-        service: "Gmail",
-        auth: {
-            user: process.env.SMTP_USERNAME || '',
-            pass: process.env.SMTP_PASSWORD || ''
-        }
-        // See nodemailer docs for other transports
-        // https://github.com/andris9/Nodemailer
+    var smtpTransport = nodemailer.createTransport("SMTP", {
+      service: "Gmail",
+      auth: {
+        user: process.env.SMTP_USERNAME || '',
+        pass: process.env.SMTP_PASSWORD || ''
+      }
+      // See nodemailer docs for other transports
+      // https://github.com/andris9/Nodemailer
     });
 
     // create email
     var mailOptions = {
-      to:       user.profile.name + ' <' + user.email + '>',
-      from:     'hackathon@starter.com',  // TODO parameterize
-      subject:  'Password Reset Notice',
-      text:     'This is a courtesy message from hackathon-starter.  Your password was just reset.  Cheers!'
+      to: user.profile.name + ' <' + user.email + '>',
+      from: 'hackathon@starter.com',  // TODO parameterize
+      subject: 'Password Reset Notice',
+      text: 'This is a courtesy message from hackathon-starter.  Your password was just reset.  Cheers!'
     };
 
     // send email
