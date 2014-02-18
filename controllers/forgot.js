@@ -61,6 +61,7 @@ var secrets = require('../config/secrets');
 exports.getForgot = function(req, res) {
   if (req.user) return res.redirect('/');  //user already logged in!
   res.render('account/forgot', {
+    title: 'Forgot Password'
   });
 };
 
