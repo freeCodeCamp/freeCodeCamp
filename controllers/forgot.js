@@ -24,7 +24,7 @@ exports.getForgot = function(req, res) {
  * @param email
  */
 
-exports.postForgot = function(req, res) {
+exports.postForgot = function(req, res, next) {
   req.assert('email', 'Please enter a valid email address.').isEmail();
 
   var errors = req.validationErrors();
@@ -76,8 +76,10 @@ exports.postForgot = function(req, res) {
       smtpTransport.sendMail(mailOptions, function(err) {
         req.flash('info', { msg: 'An e-mail has been sent to ' + user.email + ' with further instructions.' });
         done(err, 'done');
-        res.redirect('/forgot');
       });
     }
-  ]);
+  ], function(err) {
+    if (err) return next(err);
+    res.redirect('/forgot');
+  });
 };
