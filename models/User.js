@@ -26,15 +26,15 @@ var userSchema = new mongoose.Schema({
 
 /**
  * Hash the password for security.
+ * "Pre" is a Mongoose middleware that executes before each user.save() call.
  */
 
 userSchema.pre('save', function(next) {
   var user = this;
-  var SALT_FACTOR = 5;
 
   if (!user.isModified('password')) return next();
 
-  bcrypt.genSalt(SALT_FACTOR, function(err, salt) {
+  bcrypt.genSalt(5, function(err, salt) {
     if (err) return next(err);
 
     bcrypt.hash(user.password, salt, null, function(err, hash) {
@@ -45,6 +45,11 @@ userSchema.pre('save', function(next) {
   });
 });
 
+/**
+ * Validate user's password.
+ * Used by Passport-Local Strategy for password validation.
+ */
+
 userSchema.methods.comparePassword = function(candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
     if (err) return cb(err);
@@ -53,7 +58,8 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 };
 
 /**
- *  Get a URL to a user's Gravatar email.
+ * Get URL to a user's gravatar.
+ * Used in Navbar and Account Management page.
  */
 
 userSchema.methods.gravatar = function(size, defaults) {
