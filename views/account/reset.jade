@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  .col-sm-6.col-sm-offset-3
+  .col-sm-8.col-sm-offset-2
     form(method='POST')
       legend Reset Password
       input(type='hidden', name='_csrf', value=token)
@@ -12,4 +12,6 @@ block content
         label(for='confirm') Confirm Password
         input.form-control(type='password', name='confirm', value='', placeholder='Confirm password')
       .form-group
-        button.btn.btn-primary.btn-reset(type='submit') Update Password
+        button.btn.btn-primary.btn-reset(type='submit')
+          i.fa.fa-keyboard-o
+          | Update Password
