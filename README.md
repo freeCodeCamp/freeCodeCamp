@@ -838,6 +838,30 @@ And that's it, we are done!
 
 If you want to see a really cool real-time dashboard check out this [live example](http://hackathonstarter.herokuapp.com/dashboard). Refer to the [pull request #23](https://github.com/sahat/hackathon-starter/pull/23/files) to see how it is implemented.
 
+### How does “Forgot your password” feature work?
+
+There are **4** routes in total that handle forgot password and reset password:
+```js
+app.get('/forgot', forgotController.getForgot);
+app.post('/forgot', forgotController.postForgot);
+app.get('/reset/:token', resetController.getReset);
+app.post('/reset/:token', resetController.postReset);
+```
+
+The first step begins at the get `GET /forgot` when user clicks on **Forgot your password?** link on the *Login* page. The `POST /forgot` handles the form submission. If email address is valid, it creates a random 20-bit hash, finds that user’s email in the database and sets `resetPasswordToken` field to the newly  generated random 20-bit hash, additionally `resetPasswordExpires` is set to 1 hour into the future. That means from the moment you receive an email, that reset link will be valid only for one hour (for security reasons it’s a good practice to expire reset password links). If 1 hour is too short for your needs, feel free to increase it. The final step is to actually send an email with a reset link. This is all elegantly done using **async.waterfall** control flow.
+
+Notice how it handles the case when no email address exists:
+```js
+if (!user) {
+  req.flash('errors', { msg: 'No account with that email address exists.' });
+  return res.redirect('/forgot');
+}
+```
+
+Some people might find this approach to be less secure. Maybe a better approach might have been to let the user know “If there is an account with provided e-mail address, we will send you a reset link”. Again, feel free to change it based on your application needs.
+
+The second step involves resetting a password. After clicking on a reset link, it redirects you to a page where you can set a new password. The token validity check is performed twice - on `GET` request when you click on a reset link and on `POST` request after you submit a new password. After selecting a new password, both `passwordResetToken` and `resetPasswordExpire` fields are deleted from the database. This is easily done by setting their value to `undefined`; *Mongoose* will run `$unset` internally. And finally, user is logged in with the new password and a confirmation email is sent notifying about the password change.
+
 Mongoose Cheatsheet
 -------------------
 #### Find all users:
