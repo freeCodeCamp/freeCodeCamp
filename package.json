@@ -27,7 +27,7 @@
     "passport-local": "~0.1.6",
     "passport-oauth": "~1.0.0",
     "passport-twitter": "~1.0.2",
-    "request": "~2.33.0",
+    "request": "~2.34.0",
     "tumblr.js": "~0.0.4",
     "twit": "~1.1.12",
     "underscore": "~1.6.0",
