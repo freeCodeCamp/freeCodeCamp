@@ -261,8 +261,6 @@ Project Structure
 
 :exclamation: **Note:** There is no preference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers.
 
-:bangbang: **Note:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate a minified **styles.css** whenever it detects changes in the *LESS* file. This is done via [connect-assets](https://github.com/adunkman/connect-assets) and [less.js](https://github.com/less/less.js).
-
 List of Packages
 ----------------
 | Package       | Description   |
