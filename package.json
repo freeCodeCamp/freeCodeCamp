@@ -8,7 +8,7 @@
     "async": "~0.2.10",
     "bcrypt-nodejs": "~0.0.3",
     "cheerio": "~0.13.1",
-    "connect-assets": "~2.5.4",
+    "connect-assets": "~3.0.0-beta1",
     "express": "~3.4.8",
     "express-flash": "~0.0.2",
     "express-validator": "~1.0.1",
@@ -35,6 +35,8 @@
     "connect-mongo": "~0.4.0",
     "twilio": "~1.5.0",
     "validator": "~3.2.1",
-    "crypto": "0.0.3"
+    "crypto": "0.0.3",
+    "csso": "~1.3.11",
+    "uglify-js": "~2.4.12"
   }
 }
