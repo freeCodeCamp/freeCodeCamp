@@ -343,7 +343,7 @@ Recommended Client-Side libraries
 
 Pro Tips
 --------
-- When you install a new npm package, add a *--save* flag and it will be automatially
+- When installing an NPM package, add a *--save* flag, and it will be automatially
 added to `package.json` as well. For example, `npm install --save moment`.
 - Use [async.parallel()](https://github.com/caolan/async#parallel) when you neeed to run multiple
 asynchronous tasks, and then render a page, but only when all tasks are completed. For example, you might
@@ -391,11 +391,14 @@ script(src='/js/application.js')
 ```
 As soon as you start bringing in more JavaScript libraries, the benefits of concatenating and minifying
 JavaScript files will be even greater.
-Using connect-assets library it's as as simple as:
-```jade
+Using **connect-assets** library, it is as as simple as declaring these two lines:
+
+```
 != css('styles')      // expects public/css/styles.less
 != js('application')  // expects public/js/application.js
 ```
+
+:bulb: **Tip:** This works because in *connect-assets* middleware we have specified `helperContext: app.locals`.
 
 The only thing you need to remember is to define your JavaScript files inside `public/js/application.js` using this
 strange syntax notation (Sprockets-style) borrowed from Rails. I know it's an extra thing to learn
