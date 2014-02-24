@@ -10,6 +10,8 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 
+
+
 /**
  * Load controllers.
  */
@@ -117,6 +119,8 @@ app.get('/api/paypal/cancel', apiController.getPayPalCancel);
 app.get('/api/steam', apiController.getSteam);
 app.get('/api/scraping', apiController.getScraping);
 app.get('/api/twilio', apiController.getTwilio);
+app.get('/api/clockwork', apiController.getClockwork);
+app.post('/api/clockwork', apiController.postClockwork);
 app.post('/api/twilio', apiController.postTwilio);
 app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFoursquare);
 app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getTumblr);

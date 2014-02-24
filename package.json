@@ -34,6 +34,7 @@
     "paypal-rest-sdk": "~0.6.4",
     "connect-mongo": "~0.4.0",
     "twilio": "~1.5.0",
-    "validator": "~3.2.1"
+    "validator": "~3.2.1",
+    "clockwork": "0.1.0"
   }
 }

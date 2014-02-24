@@ -14,6 +14,7 @@ var Github = require('github-api');
 var Twit = require('twit');
 var paypal = require('paypal-rest-sdk');
 var twilio = require('twilio')(secrets.twilio.sid, secrets.twilio.token);
+var clockwork = require('clockwork')({key: secrets.clockwork.apiKey});
 
 /**
  * GET /api
@@ -412,6 +413,38 @@ exports.postTwilio = function(req, res, next) {
     if (err) return next(err.message);
     req.flash('success', { msg: 'Text sent to ' + responseData.to + '.'})
     res.redirect('/api/twilio');
+  });
+};
+
+
+/**
+ * GET /api/Clockwork
+ * Clockwork SMS API example.
+ */
+
+exports.getClockwork = function(req, res, next) {
+  res.render('api/clockwork', {
+    title: 'Clockwork SMS API'
+  });
+};
+
+
+/**
+ * POST /api/clockwork
+ * Clockwork SMS API example.
+ * @param telephone
+ */
+
+exports.postClockwork = function(req, res, next) {
+  var message = {
+    To: req.body.telephone,
+    From: 'Hackathon',
+    Content: 'Hello from the Hackathon Starter'
+  };
+  clockwork.sendSms(message, function(err, responseData) {
+    if (err) return next(err.message);
+    req.flash('success', { msg: 'Text sent to ' + responseData.SMS_Resp.To});
+    res.redirect('/api/clockwork');
   });
 };
 
