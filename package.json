@@ -2,7 +2,7 @@
   "name": "hackathon-starter",
   "version": "0.0.0",
   "scripts": {
-    "start": "node app.js", 
+    "start": "node app.js",
     "test": "mocha tests/**/*.js"
   },
   "dependencies": {
@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "chai": "~1.9.0",
-    "mocha": "~1.17.1"
+    "mocha": "~1.17.1",
+    "supertest": "~0.9.0"
   }
 }

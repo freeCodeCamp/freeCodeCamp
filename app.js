@@ -34,12 +34,13 @@ var passportConf = require('./config/passport');
  */
 
 var app = express();
+module.exports = app;
 
 /**
  * Mongoose configuration.
  */
 
-mongoose.connect(secrets.db);
+mongoose.connect(secrets.url);
 mongoose.connection.on('error', function() {
   console.error('✗ MongoDB Connection Error. Please make sure MongoDB is running.');
 });
@@ -71,7 +72,7 @@ app.use(express.methodOverride());
 app.use(express.session({
   secret: secrets.sessionSecret,
   store: new MongoStore({
-    db: mongoose.connection.db,
+    url: secrets.url,
     auto_reconnect: true
   })
 }));
