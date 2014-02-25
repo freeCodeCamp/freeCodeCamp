@@ -4,6 +4,7 @@ var User = require('../../models/User');
 
 var mocha = require('mocha')
   , chai = require('chai')
+  , should = chai.should()
   , expect = chai.expect
   , mongoose = require('mongoose');
 
@@ -16,11 +17,15 @@ describe('User attributes', function() {
   });
   
   it('_id is a mongoDB ObjectId', function() {
-    expect( user._id ).to.be.an.instanceOf(mongoose.Types.ObjectId);
+    user._id.should.be.an.instanceOf(mongoose.Types.ObjectId);
   });
   
   it('email should be a string', function() {
-    expect( user.email ).to.be.a( 'string' );
+    user.email.should.be.a( 'string' );
+  });
+  
+  it('password should be a string', function() {
+    expect( user.password ).to.be.a( 'string' );
   });
 })
 
