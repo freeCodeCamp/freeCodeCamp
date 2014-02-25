@@ -2,7 +2,8 @@
   "name": "hackathon-starter",
   "version": "0.0.0",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js", 
+    "test": "mocha tests/**/*.js"
   },
   "dependencies": {
     "async": "~0.2.10",
@@ -38,5 +39,9 @@
     "crypto": "0.0.3",
     "csso": "~1.3.11",
     "uglify-js": "~2.4.12"
+  },
+  "devDependencies": {
+    "chai": "~1.9.0",
+    "mocha": "~1.17.1"
   }
 }
