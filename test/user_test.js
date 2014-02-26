@@ -34,7 +34,9 @@ describe('User attributes', function() {
 
   it('should not allow users with duplicate emails', function(done) {
     user.save(function(err) {
-      err.code.should.equal(11000);
+      if (err) {
+        err.code.should.equal(11000);
+      }
       done();
     });
   });
