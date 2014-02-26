@@ -977,7 +977,20 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 
 <img src="http://upload.wikimedia.org/wikipedia/en/f/ff/Windows_Azure_logo.png" width="200">
 
-TODO: Will be added soon.
+- Login to [Windows Azure Management Portal](http://manage.windowsazure.com/)
+- Click the **+ NEW** button on the bottom left of the portal
+- Click **WEB SITE**, then **QUICK CREATE**
+- Enter a name for **URL** and select the datacenter **REGION** for your web site
+- Click on **CREATE WEB SITE** button
+- Once the web site status changes to *Running*, click on the name of the web site to access the Dashboard
+- At the bottom right of the Quickstart page, select **Set up a deployment from source control**
+- Select **Local Git repository** from the list, and then click the arrow
+- To enable Git publishing, Azure will ask you to create a user name and password
+- Once the Git repository is ready, you will be presented with a **GIT URL**
+- Inside your *Hackathon Starter* directory, run `git remote add azure [Azure Git URL]`
+- To push your changes simply run `git push azure master`
+ - **Note:** *You will be prompted for the password you created earlier*
+- On **Deployments** tab of your Windows Azure Web Site, you will see the deployment history
 
 TODO
 ----
