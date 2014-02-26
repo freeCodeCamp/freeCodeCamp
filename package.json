@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node app.js",
-    "test": "mocha test/**/*.js"
+    "test": "mocha"
   },
   "dependencies": {
     "async": "~0.2.10",
