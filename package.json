@@ -36,7 +36,6 @@
     "connect-mongo": "~0.4.0",
     "twilio": "~1.5.0",
     "validator": "~3.3.0",
-    "crypto": "0.0.3",
     "csso": "~1.3.11",
     "uglify-js": "~2.4.12"
   },
