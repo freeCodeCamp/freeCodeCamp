@@ -71,7 +71,7 @@ app.use(express.methodOverride());
 app.use(express.session({
   secret: secrets.sessionSecret,
   store: new MongoStore({
-    db: mongoose.connection.db,
+    url: secrets.db,
     auto_reconnect: true
   })
 }));
