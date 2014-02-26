@@ -8,3 +8,12 @@ describe('GET /', function() {
       .expect(200, done);
   });
 });
+
+describe('GET /reset', function() {
+  it('should load password reset page', function(done) {
+    request(app)
+      .get('/reset')
+      .expect(200, done);
+    // this will fail
+  });
+});
