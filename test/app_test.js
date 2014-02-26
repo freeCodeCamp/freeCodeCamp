@@ -10,10 +10,10 @@ describe('GET /', function() {
 });
 
 describe('GET /reset', function() {
-  it('should load password reset page', function(done) {
+  it('should return 404', function(done) {
     request(app)
       .get('/reset')
-      .expect(200, done);
+      .expect(404, done);
     // this will fail
   });
 });
