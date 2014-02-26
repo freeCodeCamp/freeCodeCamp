@@ -34,13 +34,12 @@ var passportConf = require('./config/passport');
  */
 
 var app = express();
-module.exports = app;
 
 /**
  * Mongoose configuration.
  */
 
-mongoose.connect(secrets.url);
+mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
   console.error('✗ MongoDB Connection Error. Please make sure MongoDB is running.');
 });
@@ -72,7 +71,7 @@ app.use(express.methodOverride());
 app.use(express.session({
   secret: secrets.sessionSecret,
   store: new MongoStore({
-    url: secrets.url,
+    db: mongoose.connection.db,
     auto_reconnect: true
   })
 }));
@@ -171,3 +170,5 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
 app.listen(app.get('port'), function() {
   console.log("✔ Express server listening on port %d in %s mode", app.get('port'), app.settings.env);
 });
+
+module.exports = app;
