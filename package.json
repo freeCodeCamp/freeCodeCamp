@@ -1,6 +1,10 @@
 {
   "name": "hackathon-starter",
   "version": "0.0.0",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/sahat/hackathon-starter.git"
+  },
   "scripts": {
     "start": "node app.js",
     "test": "mocha"
