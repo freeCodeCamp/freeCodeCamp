@@ -6,8 +6,3 @@ services:
 node_js:
   - '0.11'
   - '0.10'
-  - '0.8'
-  - '0.6'
-
-# NOTE - TravisCI for Nodejs defaults to `npm test`.
-# More info here, http://docs.travis-ci.com/user/languages/javascript-with-nodejs/#Default-Test-Script
