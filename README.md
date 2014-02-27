@@ -177,18 +177,18 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
 
 <hr>
 
-<img src="http://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2013/11/linkedin_logo_11.jpg" width="200">
+<img src="http://www.danpontefract.com/wp-content/uploads/2014/02/logo-linkedin.png" width="200">
 - Sign in at [LinkedIn Developer Network](http://developer.linkedin.com/)
 - From the account name dropdown menu select **API Keys**
- - It might ask you to sign in once again
-- Click on **+ Add New Application**
+ - *It may ask you to sign in once again*
+- Click **+ Add New Application** button
 - Fill in all the required fields
 - For **Default Scope** make sure *at least* the following is checked:
- - **r_basicprofile**
- - **r_emailaddress**
+ - `r_basicprofile`
+ - `r_emailaddress`
 - For **OAuth 1.0 Accept Redirect URL**: http://localhost:3000/
-- Click on **Add Application** button
-- Copy and paste *OAuth User Token* and *OAuth User Secret* keys into `config/secrets.js`
+- Finish by clicking **Add Application** button
+- Copy and paste *API Key* and *Secret Key* keys into `config/secrets.js`
  - *API Key* is your **clientID**
  - *Secret Key* is your **clientSecret**
 
