@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+  .page-header
+    h2
+      i.fa.fa-linkedin-square
+      | LinkedIn API
+
+  .btn-group.btn-group-justified
+    a.btn.btn-primary(href='https://github.com/Kuew/node-linkedin', target='_blank')
+      i.fa.fa-book
+      | Node LinkedIn Docs
+    a.btn.btn-primary(href='http://developer.linkedin.com/documents/authentication', target='_blank')
+      i.fa.fa-check-square-o
+      | Getting Started
+    a.btn.btn-primary(href='http://developer.linkedin.com/apis', target='_blank')
+      i.fa.fa-code-fork
+      | API Endpoints
+
+  h3.text-primary My Profile
+  .well.well-sm
+    .row
+      .col-xs-2
+        img(src='#{profile.pictureUrl}')
+      .col-xs-10
+        h3= profile.formattedName
+        h4= profile.headline
+        span.text-muted #{profile.location.name} | #{profile.industry}
+    .row
+      hr
+      dl.dl-horizontal
+        dt.text-muted Current
+        dd A description list is perfect for defining terms.
+        dt.text-muted Education
+          for education in profile.educations.values
+            dd= education.schoolName
+        dt.text-muted Recommendations
+        dd #{profile.recommendationsReceived} recommendation(s) received
+        dt.text-muted Connections
+        dd #{profile.numConnections} connections
+
+  h3 Connections
+  .row
+    for connection in connections.values
+      .col-xs-3.col-md-2
+        img(src='#{connection.pictureUrl}')
+        div.facebook-caption= connection.firstName
+
+  h3 Company Information

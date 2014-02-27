@@ -184,8 +184,9 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
 - Click **+ Add New Application** button
 - Fill out all *required* fields
 - For **Default Scope** make sure *at least* the following is checked:
- - `r_basicprofile`
+ - `r_fullprofile`
  - `r_emailaddress`
+ - `r_network`
 - Finish by clicking **Add Application** button
 - Copy and paste *API Key* and *Secret Key* keys into `config/secrets.js`
  - *API Key* is your **clientID**

@@ -486,7 +486,7 @@ exports.postVenmo = function(req, res, next) {
 
 exports.getLinkedin = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'linkedin' });
-  var linkedin = Linkedin.init(token);
+  var linkedin = Linkedin.init(token.accessToken);
 
   async.parallel({
       profile: function(done) {
@@ -495,20 +495,14 @@ exports.getLinkedin = function(req, res, next) {
           done(err, $in);
         });
       },
-      profileById: function(doone) {
-        linkedin.people.url('linkedin_id', function(err, $in) {
-          console.log($in);
-          done(err, $in);
-        });
-      },
       connections: function(done) {
-        linkedin.connections.me(function(err, $in) {
-          console.log($in);
+        linkedin.connections.retrieve(function(err, $in) {
+//          console.log($in);
           done(err, $in);
         });
       },
       companies: function(done) {
-        linkedin.companies.me(function(err, $in) {
+        linkedin.companies.company('http://www.linkedin.com/company/continuum-analytics-inc-', function(err, $in) {
           console.log($in);
           done(err, $in);
         });
@@ -519,7 +513,6 @@ exports.getLinkedin = function(req, res, next) {
       res.render('api/linkedin', {
         title: 'LinkedIn API',
         profile: results.profile,
-        profileById: results.profileById,
         connections: results.connections,
         companies: results.companies
       });
