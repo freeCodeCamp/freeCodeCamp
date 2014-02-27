@@ -182,11 +182,10 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
 - From the account name dropdown menu select **API Keys**
  - *It may ask you to sign in once again*
 - Click **+ Add New Application** button
-- Fill in all the required fields
+- Fill out all *required* fields
 - For **Default Scope** make sure *at least* the following is checked:
  - `r_basicprofile`
  - `r_emailaddress`
-- For **OAuth 1.0 Accept Redirect URL**: http://localhost:3000/
 - Finish by clicking **Add Application** button
 - Copy and paste *API Key* and *Secret Key* keys into `config/secrets.js`
  - *API Key* is your **clientID**
