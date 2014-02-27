@@ -177,6 +177,23 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
 
 <hr>
 
+<img src="http://www.danpontefract.com/wp-content/uploads/2014/02/logo-linkedin.png" width="200">
+- Sign in at [LinkedIn Developer Network](http://developer.linkedin.com/)
+- From the account name dropdown menu select **API Keys**
+ - *It may ask you to sign in once again*
+- Click **+ Add New Application** button
+- Fill out all *required* fields
+- For **Default Scope** make sure *at least* the following is checked:
+ - `r_fullprofile`
+ - `r_emailaddress`
+ - `r_network`
+- Finish by clicking **Add Application** button
+- Copy and paste *API Key* and *Secret Key* keys into `config/secrets.js`
+ - *API Key* is your **clientID**
+ - *Secret Key* is your **clientSecret**
+
+<hr>
+
 <img src="https://s3.amazonaws.com/venmo/venmo_logo_blue.png" width="200">
 - Visit the **Account** section of your Venmo profile after logging in
 - Click on the **Developers** tab
