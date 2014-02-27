@@ -5,6 +5,7 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 var GitHubStrategy = require('passport-github').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 var OAuthStrategy = require('passport-oauth').OAuthStrategy; // Tumblr
 var OAuth2Strategy = require('passport-oauth').OAuth2Strategy; // Venmo, Foursquare
 var User = require('../models/User');
@@ -220,6 +221,59 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
           user.profile.name = profile.displayName;
           user.profile.gender = profile._json.gender;
           user.profile.picture = profile._json.picture;
+          user.save(function(err) {
+            done(err, user);
+          });
+        }
+      });
+    });
+  }
+}));
+
+/**
+ * Sign in with LinkedIn.
+ */
+
+passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
+  if (req.user) {
+    User.findOne({ $or: [
+      { linkedin: profile.id },
+      { email: profile._json.emailAddress }
+    ] }, function(err, existingUser) {
+      if (existingUser) {
+        req.flash('errors', { msg: 'There is already a LinkedIn account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+        done(err);
+      } else {
+        User.findById(req.user.id, function(err, user) {
+          user.linkedin = profile.id;
+          user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+          user.profile.name = user.profile.name || profile.displayName;
+          user.profile.location = user.profile.location || profile._json.location.name;
+          user.profile.picture = user.profile.picture || profile._json.pictureUrl;
+          user.profile.website = user.profile.website || profile._json.publicProfileUrl;
+          user.save(function(err) {
+            req.flash('info', { msg: 'LinkedIn account has been linked.' });
+            done(err, user);
+          });
+        });
+      }
+    });
+  } else {
+    User.findOne({ linkedin: profile.id }, function(err, existingUser) {
+      if (existingUser) return done(null, existingUser);
+      User.findOne({ email: profile._json.emailAddress }, function(err, existingEmailUser) {
+        if (existingEmailUser) {
+          req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
+          done(err);
+        } else {
+          var user = new User();
+          user.linkedin = profile.id;
+          user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+          user.email = profile._json.emailAddress;
+          user.profile.name = profile.displayName;
+          user.profile.location = profile._json.location.name;
+          user.profile.picture = profile._json.pictureUrl;
+          user.profile.website = profile._json.publicProfileUrl;
           user.save(function(err) {
             done(err, user);
           });
