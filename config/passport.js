@@ -263,7 +263,7 @@ passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, r
       if (existingUser) return done(null, existingUser);
       User.findOne({ email: profile._json.emailAddress }, function(err, existingEmailUser) {
         if (existingEmailUser) {
-          req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
+          req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with LinkedIn manually from Account Settings.' });
           done(err);
         } else {
           var user = new User();
