@@ -285,18 +285,15 @@ exports.getPayPal = function(req, res, next) {
       }
     ]
   };
-  paypal.payment.create(payment_details, function(error, payment) {
-    if (error) {
-      console.log(error);
-    } else {
-      req.session.payment_id = payment.id;
-      var links = payment.links;
-      for (var i = 0; i < links.length; i++) {
-        if (links[i].rel === 'approval_url') {
-          res.render('api/paypal', {
-            approval_url: links[i].href
-          });
-        }
+  paypal.payment.create(payment_details, function(err, payment) {
+    if (err) return next(err);
+    req.session.payment_id = payment.id;
+    var links = payment.links;
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].rel === 'approval_url') {
+        res.render('api/paypal', {
+          approval_url: links[i].href
+        });
       }
     }
   });
@@ -416,6 +413,11 @@ exports.postTwilio = function(req, res, next) {
   });
 };
 
+/**
+ * GET /api/venmo
+ * Venmo API example.
+ */
+
 exports.getVenmo = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'venmo' });
   var query = querystring.stringify({ access_token: token.accessToken });
@@ -442,6 +444,14 @@ exports.getVenmo = function(req, res, next) {
     });
   });
 };
+
+/**
+ * POST /api/venmo
+ * @param user
+ * @param note
+ * @param amount
+ * Send money.
+ */
 
 exports.postVenmo = function(req, res, next) {
   req.assert('user', 'Phone, Email or Venmo User ID cannot be blank').notEmpty();
@@ -472,7 +482,6 @@ exports.postVenmo = function(req, res, next) {
     formData.user_id = req.body.user;
   }
 
-  // Send money
   request.post('https://api.venmo.com/v1/payments', { form: formData }, function(err, request, body) {
     if (err) return next(err);
     if (request.statusCode !== 200) {
@@ -484,13 +493,17 @@ exports.postVenmo = function(req, res, next) {
   });
 };
 
+/**
+ * GET /api/linkedin
+ * LinkedIn API example.
+ */
+
 exports.getLinkedin = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'linkedin' });
   var linkedin = Linkedin.init(token.accessToken);
 
   linkedin.people.me(function(err, $in) {
     if (err) return next(err);
-    console.log($in.positions.values);
     res.render('api/linkedin', {
       title: 'LinkedIn API',
       profile: $in
