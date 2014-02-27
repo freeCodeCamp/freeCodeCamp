@@ -488,33 +488,12 @@ exports.getLinkedin = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'linkedin' });
   var linkedin = Linkedin.init(token.accessToken);
 
-  async.parallel({
-      profile: function(done) {
-        linkedin.people.me(function(err, $in) {
-          console.log($in);
-          done(err, $in);
-        });
-      },
-      connections: function(done) {
-        linkedin.connections.retrieve(function(err, $in) {
-//          console.log($in);
-          done(err, $in);
-        });
-      },
-      companies: function(done) {
-        linkedin.companies.company('http://www.linkedin.com/company/continuum-analytics-inc-', function(err, $in) {
-          console.log($in);
-          done(err, $in);
-        });
-      }
-    },
-    function(err, results) {
-      if (err) return next(err);
-      res.render('api/linkedin', {
-        title: 'LinkedIn API',
-        profile: results.profile,
-        connections: results.connections,
-        companies: results.companies
-      });
+  linkedin.people.me(function(err, $in) {
+    if (err) return next(err);
+    console.log($in.positions.values);
+    res.render('api/linkedin', {
+      title: 'LinkedIn API',
+      profile: $in
     });
+  });
 };

@@ -17,33 +17,55 @@ block content
       i.fa.fa-code-fork
       | API Endpoints
 
-  h3.text-primary My Profile
+  h3.text-primary My LinkedIn Profile
   .well.well-sm
     .row
-      .col-xs-2
-        img(src='#{profile.pictureUrl}')
-      .col-xs-10
-        h3= profile.formattedName
-        h4= profile.headline
-        span.text-muted #{profile.location.name} | #{profile.industry}
+      .col-sm-12
+        .col-sm-2
+          br
+          img.thumbnail(src='#{profile.pictureUrl}')
+        .col-sm-10
+          h3= profile.formattedName
+          h4= profile.headline
+          span.text-muted #{profile.location.name} | #{profile.industry}
+    br
     .row
-      hr
-      dl.dl-horizontal
-        dt.text-muted Current
-        dd A description list is perfect for defining terms.
-        dt.text-muted Education
-          for education in profile.educations.values
-            dd= education.schoolName
-        dt.text-muted Recommendations
-        dd #{profile.recommendationsReceived} recommendation(s) received
-        dt.text-muted Connections
-        dd #{profile.numConnections} connections
+      .col-sm-12
+        dl.dl-horizontal
+          dt.text-muted Current
+          for company in profile.positions.values
+            if company.isCurrent
+              dd
+                strong= company.title
+                | at
+                strong  #{company.company.name}
+          dt.text-muted Previous
+            for company in profile.positions.values
+              if !company.isCurrent
+                dd
+                  | #{company.title}
+                  | at
+                  | #{company.company.name}
+          dt.text-muted Education
+            for education in profile.educations.values
+              dd= education.schoolName
+          dt.text-muted Recommendations
+          dd
+            strong #{profile.numRecommenders}
+            | recommendation(s) received
+          dt.text-muted Connections
+          dd
+            strong #{profile.numConnections}
+            | connections
+        .text-center
+          small.text-muted= profile.publicProfileUrl
 
-  h3 Connections
-  .row
-    for connection in connections.values
-      .col-xs-3.col-md-2
-        img(src='#{connection.pictureUrl}')
-        div.facebook-caption= connection.firstName
-
-  h3 Company Information
+  h3.text-primary LinkedIn Connections
+  table.table.table-hover.table-striped.table-bordered
+    tbody
+    for connection in profile.connections.values
+      if connection.id != 'private'
+        tr
+          td
+            strong #{connection.firstName} #{connection.lastName}
+            .text-muted #{connection.headline}
