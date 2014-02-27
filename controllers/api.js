@@ -35,31 +35,31 @@ exports.getApi = function(req, res) {
 exports.getFoursquare = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'foursquare' });
   async.parallel({
-      trendingVenues: function(callback) {
-        foursquare.Venues.getTrending('40.7222756', '-74.0022724', { limit: 50 }, token.accessToken, function(err, results) {
-          callback(err, results);
-        });
-      },
-      venueDetail: function(callback) {
-        foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', token.accessToken, function(err, results) {
-          callback(err, results);
-        });
-      },
-      userCheckins: function(callback) {
-        foursquare.Users.getCheckins('self', null, token.accessToken, function(err, results) {
-          callback(err, results);
-        });
-      }
-    },
-    function(err, results) {
-      if (err) return next(err);
-      res.render('api/foursquare', {
-        title: 'Foursquare API',
-        trendingVenues: results.trendingVenues,
-        venueDetail: results.venueDetail,
-        userCheckins: results.userCheckins
+    trendingVenues: function(callback) {
+      foursquare.Venues.getTrending('40.7222756', '-74.0022724', { limit: 50 }, token.accessToken, function(err, results) {
+        callback(err, results);
       });
+    },
+    venueDetail: function(callback) {
+      foursquare.Venues.getVenue('49da74aef964a5208b5e1fe3', token.accessToken, function(err, results) {
+        callback(err, results);
+      });
+    },
+    userCheckins: function(callback) {
+      foursquare.Users.getCheckins('self', null, token.accessToken, function(err, results) {
+        callback(err, results);
+      });
+    }
+  },
+  function(err, results) {
+    if (err) return next(err);
+    res.render('api/foursquare', {
+      title: 'Foursquare API',
+      trendingVenues: results.trendingVenues,
+      venueDetail: results.venueDetail,
+      userCheckins: results.userCheckins
     });
+  });
 };
 
 /**
@@ -93,25 +93,25 @@ exports.getFacebook = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'facebook' });
   graph.setAccessToken(token.accessToken);
   async.parallel({
-      getMe: function(done) {
-        graph.get(req.user.facebook, function(err, me) {
-          done(err, me);
-        });
-      },
-      getMyFriends: function(done) {
-        graph.get(req.user.facebook + '/friends', function(err, friends) {
-          done(err, friends.data);
-        });
-      }
-    },
-    function(err, results) {
-      if (err) return next(err);
-      res.render('api/facebook', {
-        title: 'Facebook API',
-        me: results.getMe,
-        friends: results.getMyFriends
+    getMe: function(done) {
+      graph.get(req.user.facebook, function(err, me) {
+        done(err, me);
       });
+    },
+    getMyFriends: function(done) {
+      graph.get(req.user.facebook + '/friends', function(err, friends) {
+        done(err, friends.data);
+      });
+    }
+  },
+  function(err, results) {
+    if (err) return next(err);
+    res.render('api/facebook', {
+      title: 'Facebook API',
+      me: results.getMe,
+      friends: results.getMyFriends
     });
+  });
 };
 
 /**
@@ -188,53 +188,53 @@ exports.getNewYorkTimes = function(req, res, next) {
 exports.getLastfm = function(req, res, next) {
   var lastfm = new LastFmNode(secrets.lastfm);
   async.parallel({
-      artistInfo: function(done) {
-        lastfm.request("artist.getInfo", {
-          artist: 'Epica',
-          handlers: {
-            success: function(data) {
-              done(null, data);
-            },
-            error: function(err) {
-              done(err);
-            }
+    artistInfo: function(done) {
+      lastfm.request("artist.getInfo", {
+        artist: 'Epica',
+        handlers: {
+          success: function(data) {
+            done(null, data);
+          },
+          error: function(err) {
+            done(err);
           }
-        });
-      },
-      artistTopAlbums: function(done) {
-        lastfm.request("artist.getTopAlbums", {
-          artist: 'Epica',
-          handlers: {
-            success: function(data) {
-              var albums = [];
-              _.each(data.topalbums.album, function(album) {
-                albums.push(album.image.slice(-1)[0]['#text']);
-              });
-              done(null, albums.slice(0, 4));
-            },
-            error: function(err) {
-              done(err);
-            }
-          }
-        });
-      }
-    },
-    function(err, results) {
-      if (err) return next(err.message);
-      var artist = {
-        name: results.artistInfo.artist.name,
-        image: results.artistInfo.artist.image.slice(-1)[0]['#text'],
-        tags: results.artistInfo.artist.tags.tag,
-        bio: results.artistInfo.artist.bio.summary,
-        stats: results.artistInfo.artist.stats,
-        similar: results.artistInfo.artist.similar.artist,
-        topAlbums: results.artistTopAlbums
-      };
-      res.render('api/lastfm', {
-        title: 'Last.fm API',
-        artist: artist
+        }
       });
+    },
+    artistTopAlbums: function(done) {
+      lastfm.request("artist.getTopAlbums", {
+        artist: 'Epica',
+        handlers: {
+          success: function(data) {
+            var albums = [];
+            _.each(data.topalbums.album, function(album) {
+              albums.push(album.image.slice(-1)[0]['#text']);
+            });
+            done(null, albums.slice(0, 4));
+          },
+          error: function(err) {
+            done(err);
+          }
+        }
+      });
+    }
+  },
+  function(err, results) {
+    if (err) return next(err.message);
+    var artist = {
+      name: results.artistInfo.artist.name,
+      image: results.artistInfo.artist.image.slice(-1)[0]['#text'],
+      tags: results.artistInfo.artist.tags.tag,
+      bio: results.artistInfo.artist.bio.summary,
+      stats: results.artistInfo.artist.stats,
+      similar: results.artistInfo.artist.similar.artist,
+      topAlbums: results.artistTopAlbums
+    };
+    res.render('api/lastfm', {
+      title: 'Last.fm API',
+      artist: artist
     });
+  });
 };
 
 /**
@@ -348,41 +348,41 @@ exports.getSteam = function(req, res, next) {
   var query = { l: 'english', steamid: steamId, key: secrets.steam.apiKey };
 
   async.parallel({
-      playerAchievements: function(done) {
-        query.appid = '49520';
-        var qs = querystring.stringify(query);
-        request.get({ url: 'http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?' + qs, json: true }, function(error, request, body) {
-          if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
-          done(error, body);
-        });
-      },
-      playerSummaries: function(done) {
-        query.steamids = steamId;
-        var qs = querystring.stringify(query);
-        request.get({ url: 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?' + qs, json: true }, function(error, request, body) {
-          if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
-          done(error, body);
-        });
-      },
-      ownedGames: function(done) {
-        query.include_appinfo = 1;
-        query.include_played_free_games = 1;
-        var qs = querystring.stringify(query);
-        request.get({ url: 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?' + qs, json: true }, function(error, request, body) {
-          if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
-          done(error, body);
-        });
-      }
-    },
-    function(err, results) {
-      if (err) return next(err);
-      res.render('api/steam', {
-        title: 'Steam Web API',
-        ownedGames: results.ownedGames.response.games,
-        playerAchievemments: results.playerAchievements.playerstats,
-        playerSummary: results.playerSummaries.response.players[0]
+    playerAchievements: function(done) {
+      query.appid = '49520';
+      var qs = querystring.stringify(query);
+      request.get({ url: 'http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?' + qs, json: true }, function(error, request, body) {
+        if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
+        done(error, body);
       });
+    },
+    playerSummaries: function(done) {
+      query.steamids = steamId;
+      var qs = querystring.stringify(query);
+      request.get({ url: 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?' + qs, json: true }, function(error, request, body) {
+        if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
+        done(error, body);
+      });
+    },
+    ownedGames: function(done) {
+      query.include_appinfo = 1;
+      query.include_played_free_games = 1;
+      var qs = querystring.stringify(query);
+      request.get({ url: 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?' + qs, json: true }, function(error, request, body) {
+        if (request.statusCode === 401) return done(new Error('Missing or Invalid Steam API Key'));
+        done(error, body);
+      });
+    }
+  },
+  function(err, results) {
+    if (err) return next(err);
+    res.render('api/steam', {
+      title: 'Steam Web API',
+      ownedGames: results.ownedGames.response.games,
+      playerAchievemments: results.playerAchievements.playerstats,
+      playerSummary: results.playerSummaries.response.players[0]
     });
+  });
 };
 
 /**
@@ -421,26 +421,26 @@ exports.getVenmo = function(req, res, next) {
   var query = querystring.stringify({ access_token: token.accessToken });
 
   async.parallel({
-      getProfile: function(done) {
-        request.get({ url: 'https://api.venmo.com/v1/me?' + query, json: true }, function(err, request, body) {
-          done(err, body);
-        });
-      },
-      getRecentPayments: function(done) {
-        request.get({ url: 'https://api.venmo.com/v1/payments?' + query, json: true }, function(err, request, body) {
-          done(err, body);
-
-        });
-      }
-    },
-    function(err, results) {
-      if (err) return next(err);
-      res.render('api/venmo', {
-        title: 'Venmo API',
-        profile: results.getProfile.data,
-        recentPayments: results.getRecentPayments.data
+    getProfile: function(done) {
+      request.get({ url: 'https://api.venmo.com/v1/me?' + query, json: true }, function(err, request, body) {
+        done(err, body);
       });
+    },
+    getRecentPayments: function(done) {
+      request.get({ url: 'https://api.venmo.com/v1/payments?' + query, json: true }, function(err, request, body) {
+        done(err, body);
+
+      });
+    }
+  },
+  function(err, results) {
+    if (err) return next(err);
+    res.render('api/venmo', {
+      title: 'Venmo API',
+      profile: results.getProfile.data,
+      recentPayments: results.getRecentPayments.data
     });
+  });
 };
 
 exports.postVenmo = function(req, res, next) {

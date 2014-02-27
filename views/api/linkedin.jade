@@ -37,14 +37,14 @@ block content
             if company.isCurrent
               dd
                 strong= company.title
-                | at
+                |  at
                 strong  #{company.company.name}
           dt.text-muted Previous
             for company in profile.positions.values
               if !company.isCurrent
                 dd
                   | #{company.title}
-                  | at
+                  |  at
                   | #{company.company.name}
           dt.text-muted Education
             for education in profile.educations.values
@@ -52,11 +52,11 @@ block content
           dt.text-muted Recommendations
           dd
             strong #{profile.numRecommenders}
-            | recommendation(s) received
+            |  recommendation(s) received
           dt.text-muted Connections
           dd
             strong #{profile.numConnections}
-            | connections
+            |  connections
         .text-center
           small.text-muted= profile.publicProfileUrl
 
