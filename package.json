@@ -26,6 +26,7 @@
     "less": "~1.6.3",
     "mongoose": "~3.8.7",
     "node-foursquare": "~0.2.0",
+    "node-linkedin": "~0.1.4",
     "nodemailer": "~0.6.0",
     "passport": "~0.2.0",
     "passport-facebook": "~1.0.2",
