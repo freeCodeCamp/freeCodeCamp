@@ -9,6 +9,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
+var connectAssets = require('connect-assets');
 
 
 
@@ -20,6 +21,8 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var forgotController = require('./controllers/forgot');
+var resetController = require('./controllers/reset');
 
 /**
  * API keys + Passport configuration.
@@ -55,8 +58,8 @@ var month = (day * 30);
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(require('connect-assets')({
-  src: 'public',
+app.use(connectAssets({
+  paths: ['public/css', 'public/js'],
   helperContext: app.locals
 }));
 app.use(express.compress());
@@ -70,7 +73,7 @@ app.use(express.methodOverride());
 app.use(express.session({
   secret: secrets.sessionSecret,
   store: new MongoStore({
-    db: mongoose.connection.db,
+    url: secrets.db,
     auto_reconnect: true
   })
 }));
@@ -100,6 +103,10 @@ app.get('/', homeController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
+app.get('/forgot', forgotController.getForgot);
+app.post('/forgot', forgotController.postForgot);
+app.get('/reset/:token', resetController.getReset);
+app.post('/reset/:token', resetController.postReset);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
 app.get('/contact', contactController.getContact);
@@ -167,3 +174,5 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
 app.listen(app.get('port'), function() {
   console.log("✔ Express server listening on port %d in %s mode", app.get('port'), app.settings.env);
 });
+
+module.exports = app;

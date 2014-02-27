@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .col-sm-8.col-sm-offset-2
+    form(method='POST')
+      legend Reset Password
+      input(type='hidden', name='_csrf', value=token)
+      .form-group
+        label(for='password') New Password
+        input.form-control(type='password', name='password', value='', placeholder='New password', autofocus=true)
+      .form-group
+        label(for='confirm') Confirm Password
+        input.form-control(type='password', name='confirm', value='', placeholder='Confirm password')
+      .form-group
+        button.btn.btn-primary.btn-reset(type='submit')
+          i.fa.fa-keyboard-o
+          | Update Password

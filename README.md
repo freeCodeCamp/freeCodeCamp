@@ -1,5 +1,5 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
-Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.png?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter)
+Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.png?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter) [![Build Status](https://travis-ci.org/sahat/hackathon-starter.png)](https://travis-ci.org/sahat/hackathon-starter)
 =================
 A boilerplate for **Node.js** web applications.
 
@@ -35,6 +35,7 @@ Table of Contents
 - [Getting Started](#getting-started)
 - [Obtaining API Keys](#obtaining-api-keys)
 - [Project Structure](#project-structure)
+- [List of Packages](#list-of-packages)
 - [Useful Tools](#useful-tools)
 - [Recommended Design](#recommended-design)
 - [Recommended Node.js Libraries](#recommended-nodejs-libraries)
@@ -66,6 +67,7 @@ Features
  - Change Password
  - Link multiple OAuth strategies to one account
  - Delete Account
+ - Forgot Password
 - **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, PayPal, and more.
 
 Prerequisites
@@ -89,7 +91,7 @@ Getting Started
 The easiest way to get started is to clone the repository:
 
 ```bash
-# Fetch only the latest commits.
+# Fetch only the latest commits
 git clone --depth=1 git@github.com:sahat/hackathon-starter.git my-project
 
 cd my-project
@@ -100,12 +102,12 @@ npm install
 node app.js
 ```
 
->:exclamation: **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
->It will monitor for any changes in your node.js
->application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
->It is a big time saver in the long run.
+:exclamation: **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
+It will monitor for any changes in your node.js
+application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
+It will save you a lot of time in the long run, because you won't need to manually restart the server each time you make a change.
 
-Next up, if you want to use any of the APIs or OAuth authentication methods, you will need to obtain
+Next, if you want to use any of the included APIs or OAuth authentication methods, you will need to obtain
 appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
 need to go through each provider to generate new credentials.
 
@@ -113,6 +115,13 @@ Obtaining API Keys
 ------------------
 
 :pushpin: You could support all 5 authentication methods by setting up OAuth keys, but you don't have to. If you would only like to have **Facebook sign-in** and **Local sign-in** with email and password, in **secrets.js** set `googleAuth: false`, `twitterOauth: false`, `githubAuth: false`. By doing so, *Google, Twitter and Github* buttons will not show up on the *Login* page. If you set `localAuth: false`, users will not be able to login/create an account with email and password or change password in the *Account Management* page.
+
+:bulb: Alternatively, if you would like to completely remove authentication methods that you do not plan on using, you will need to manually delete the code yourself. Let's say you want to keep only **Local authentication**. Start by deleting *FacebookStrategy, TwitterStrategy, GitHubStrategy, GoogleStrategy* `require` lines and their corresponding defined strategies in **passport.js**. Then in **login.jade** template delete the entire `.btn-group`, leaving only the form with Email and Password.
+Update **User.js** model by deleting the following fields: `facebook`, `github`, `google`, `twitter`. In your **profile.jade** template delete the entire code starting with **h3 Linked Accounts**. And finally delete the corresponding routes that have **/auth/provider** and **/auth/provider/callback**, for example:
+```js
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
+```
 
 <img src="http://images.google.com/intl/en_ALL/images/srpr/logo6w.png" width="200">
 - Visit [Google Cloud Console](https://cloud.google.com/console/project)
@@ -250,10 +259,42 @@ Project Structure
 | app.js                             | Main application file.                                      |
 | cluster_app.js                     | Runs multiple instances of `app.js` using <a href="http://nodejs.org/api/cluster.html" target="_blank">Node.js clusters</a>.|
 
+:exclamation: **Note:** There is no preference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers.
 
-:exclamation: **Note:** There is no difference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers. For smaller apps, I find having a flat folder structure to be easier to work with.
+List of Packages
+----------------
+| Package       | Description   |
+| ------------- |:-------------:|
+| async         | Utility library that provides asynchronous control flow. |
+| bcrypt-nodejs | Library for hashing and salting user passwords. |
+| cheerio | Scrape web pages using jQuery-style syntax.  |
+| connect-mongo | MongoDB session store for Express. |
+| connect-assets | Compiles LESS stylesheets, concatenates/minifies JavaScript. |
+| express | Web framework. |
+| express-flash | Provides flash messages for Express. Uses connect-flash internally. |
+| express-validator | Easy form validation for Express. Uses node-validator internally. |
+| fbgraph | Facebook Graph API library |
+| github-api | GitHub API library |
+| jade | Template engine for node.js |
+| lastfm | Last.fm API library |
+| less | LESS compiler. Used implicitly by connect-assets. |
+| mongoose | MongoDB object modeling tool |
+| node-foursquare | Foursquare API library |
+| nodemailer | Node.js library for sending emails |
+| passport | Simple and elegant authentication library for node.js |
+| passport-facebook | Sign-in with Facebook plugin. |
+| passport-github | Sign-in with GitHub plugin. |
+| passport-google-oauth | Sign-in with Google plugin. |
+| passport-twitter | Sign-in with Twitter plugin. |
+| passport-local | Sign-in with Username and Password plugin. |
+| passport-oauth | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies. |
+| request | Simplified HTTP request library. |
+| tumblr.js | Tumblr API library. |
+| underscore | Handy JavaScript utlities library. |
+| paypal-rest-sdk | PayPal API library. |
+| twilio | Twilio API library. |
+| validator | Used in conjunction with express-validator in **controllers/api.js**. |
 
-:bangbang: **Note:** Although your main template - **layout.jade** only knows about `/css/styles.css` file, you should be editing **styles.less** stylesheet. Express will automatically generate minified **styles.css** whenever there are changes in LESS file. This is done via [less-middleware](https://github.com/emberfeather/less.js-middleware) node.js library.
 
 Useful Tools
 ------------
@@ -273,6 +314,7 @@ Recommended Design
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
 - [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.
 - [HTML5UP](http://html5up.net/) - Beautifully designed HTML templates.
+- [Progre(c)ss](https://github.com/jh3y/progre-c-ss) - Pure CSS progress bars.
 
 Recommended Node.js Libraries
 -----------------------------
@@ -281,6 +323,7 @@ Recommended Node.js Libraries
 - [Nodemailer](https://github.com/andris9/Nodemailer) - send emails with node.js (without sendgrid or mailgun).
 - [filesize.js](http://filesizejs.com/) - make file size pretty, e.g. `filesize(265318); // "265.32 kB"`.
 - [Numeral.js](http://numeraljs.com) - a javascript library for formatting and manipulating numbers.
+- [Node Inspector](https://github.com/node-inspector/node-inspector) - Node.js debugger based on Chrome Developer Tools.
 
 Recommended Client-Side libraries
 ---------------------------------
@@ -297,15 +340,15 @@ Recommended Client-Side libraries
 - [select.js](http://github.hubspot.com/select/docs/welcome/) - Styleable select elements.
 - [drop.js](http://github.hubspot.com/drop/docs/welcome/) -  Powerful Javascript and CSS library for creating dropdowns and other floating displays.
 - [scrollReveal.js](https://github.com/julianlloyd/scrollReveal.js) - Declarative on-scroll reveal animations.
+- [InstantClick](http://instantclick.io) - Makes your pages load instantly by pre-loading them on mouse hover.
 
 Pro Tips
 --------
-- When you install a new npm package, add a *--save* flag and it will be automatially
+- When installing an NPM package, add a *--save* flag, and it will be automatially
 added to `package.json` as well. For example, `npm install --save moment`.
 - Use [async.parallel()](https://github.com/caolan/async#parallel) when you neeed to run multiple
 asynchronous tasks, and then render a page, but only when all tasks are completed. For example, you might
-want to scrape 3 different websites for some data (async operation) and render the results
-on a page after all 3 websites have been scraped.
+want to scrape 3 different websites for some data (async operation) and render the results in a template  after all 3 websites have been scraped.
 - Need to find a specific object inside an Array? Use [_.findWhere](http://underscorejs.org/#findWhere) function from Underscore.js. For example, this is how you would retrieve a Twitter token from database: `var token = _.findWhere(req.user.tokens, { kind: 'twitter' });`, where `req.user.tokens` is an Array, and a second parameter is an object with a given key/value.
 - If you right click and select **View Page Source**, notice how *Express*
 minified HTML for you. If you would like to see non-minified markup,
@@ -316,9 +359,12 @@ FAQ
 ### Why do I get `403 Error: Forbidden` when submitting a POST form?
 You need to add this hidden input element to your form. This has been added in the
 pull request [#40](https://github.com/sahat/hackathon-starter/pull/40).
+
 ```
 input(type='hidden', name='_csrf', value=token)
 ```
+You can read more about [CSRF protection middleware](http://expressjs.com/api.html#csrf) at the Express API Reference.
+
 
 ### What is `cluster_app.js`?
 From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_it_works):
@@ -346,11 +392,14 @@ script(src='/js/application.js')
 ```
 As soon as you start bringing in more JavaScript libraries, the benefits of concatenating and minifying
 JavaScript files will be even greater.
-Using connect-assets library it's as as simple as:
-```jade
+Using **connect-assets** library, it is as as simple as declaring these two lines:
+
+```
 != css('styles')      // expects public/css/styles.less
 != js('application')  // expects public/js/application.js
 ```
+
+:bulb: **Tip:** This works because in *connect-assets* middleware we have specified `helperContext: app.locals`.
 
 The only thing you need to remember is to define your JavaScript files inside `public/js/application.js` using this
 strange syntax notation (Sprockets-style) borrowed from Rails. I know it's an extra thing to learn
@@ -468,14 +517,14 @@ app.get('/escape-velocity', homeController.escapeVelocity);
 
 Restart the server (if you are not using **nodemon**), then you should see the new template at [http://localhost:3000/escape-velocity](http://localhost:3000/escape-velocity).
 
-I will stop here, but if you would like to use this template as more than just a single page, take a look at how these Jade templates work: `layout.jade` - base template, `index.jade` - home page, `partials/navigation.jade` - Bootstrap navbar, `partials/footer.jade` - sticky footer. You will have to manually break it apart into smaller pieces. Figure out which part of the template you want to keep the same on all pages - that's your new `layout.jade`.
+I will stop right here, but if you would like to use this template as more than just a single page, take a look at how these Jade templates work: `layout.jade` - base template, `index.jade` - home page, `partials/navigation.jade` - Bootstrap navbar, `partials/footer.jade` - sticky footer. You will have to manually break it apart into smaller pieces. Figure out which part of the template you want to keep the same on all pages - that's your new `layout.jade`.
 Then, each page that changes, be it `index.jade`, `about.jade`, `contact.jade`
-will be embedded in the new `layout.jade` via `block content`.
+will be embedded in your new `layout.jade` via `block content`. Use existing templates as a reference.
 
-This is a lengthy process, I know, and templates you get from outside **HTML5**UP,
-will have yet another grid system. That's why I chose Bootstrap CSS for the Hackathon Starter.
- Most people are familiar with Bootstrap, it's easy to get started, very extendable.
- You can also buy a Bootstrap theme drop it in into your project, and everything looks great without a single change to your markup or CSS class names. However, if you would like to go with a completely custom design, there you have it!
+This is a rather lengthy process, and templates you get from elsewhere,
+might have yet another grid system. That's why I chose *Bootstrap* for the Hackathon Starter.
+ Many people are already familiar with *Bootstrap*, plus it's easy to get started with it if you have never used *Bootstrap*.
+ You can also buy many beautifully designed *Bootstrap* themes at [Themeforest](http://themeforest.net/), and use them as a drop-in replacement for Hackathon Starter. However, if you would like to go with a completely custom HTML/CSS design, this should help you to get started!
 
 <hr>
 
@@ -562,11 +611,11 @@ or send a pull request if you  would like to include something that I missed.
 <hr>
 
 ###:snowman: How do I create a new page?
-A more correct way to be to say "How do I create a route". The main file `app.js` contains all the routes.
-Each route has a callback function (aka controller) associated with it. Sometimes you will see 3 or more arguments
-to routes. In cases like that, the first argument is still a URL string, the middle arguments
+A more correct way to be to say "How do I create a new route". The main file `app.js` contains all the routes.
+Each route has a callback function associated with it. Sometimes you will see 3 or more arguments
+to routes. In cases like that, the first argument is still a URL string, while middle arguments
 are what's called middleware. Think of middleware as a door. If this door prevents you from
-continuing forward, well, you won't get to your callback function (aka controller). One such example is authentication.
+continuing forward, you won't get to your callback function. One such example is a route that requires authentication.
 
 ```js
 app.get('/account', passportConf.isAuthenticated, userController.getAccount);
@@ -577,14 +626,15 @@ checks if you are authenticated:
 
 ```js
 exports.isAuthenticated = function(req, res, next) {
-  if (req.isAuthenticated()) return next();
+  if (req.isAuthenticated()) {
+    return next();
+  }
   res.redirect('/login');
 };
 ```
 
 If you are authenticated, you let this visitor pass through your "door" by calling `return next();`. It then proceeds to the
-next middleware until it reaches the last argument which is a callback function that usually renders a template,
-or responds with a JSON data, if you are building a REST API. But in this example it simply renders a page and nothing more:
+next middleware until it reaches the last argument, which is a callback function that typically renders a template on `GET` requests or redirects on `POST` requests. In this case, if you are authenticated, then you will see *Account Management* page, otherwise you will be redirected to *Login* page.
 
 ```js
 exports.getAccount = function(req, res) {
@@ -597,7 +647,7 @@ exports.getAccount = function(req, res) {
 Express.js has `app.get`, `app.post`, `app.put`, `app.del`, but for the most part you will only use the first two.
 If you just want to display a page, then use `GET`, if you are submitting a form, sending a file then use `POST`.
 
-Here is a typical workflow of adding new routes to your application. Let's say we are building
+Here is a typical workflow for adding new routes to your application. Let's say we are building
 a page that lists all books from database.
 
 **Step 1.** Start by defining a route.
@@ -730,7 +780,16 @@ io.sockets.on('connection', function(socket) {
 });
 ```
 
-We are done with the server-side business.
+One last thing left to change:
+```js
+app.listen(app.get('port'), function() {
+```
+to
+```js
+server.listen(app.get('port'), function() {
+```
+
+At this point we are done with the back-end.
 
 You now have a choice - to include your JavaScript code in Jade templates or have all your client-side
 JavaScript in a separate file - in `main.js`. I will admit, when I first started out with Node.js and JavaScript in general,
@@ -780,6 +839,30 @@ $(document).ready(function() {
 And that's it, we are done!
 
 If you want to see a really cool real-time dashboard check out this [live example](http://hackathonstarter.herokuapp.com/dashboard). Refer to the [pull request #23](https://github.com/sahat/hackathon-starter/pull/23/files) to see how it is implemented.
+
+### How does “Forgot your password” feature work?
+
+There are **4** routes in total that handle forgot password and reset password:
+```js
+app.get('/forgot', forgotController.getForgot);
+app.post('/forgot', forgotController.postForgot);
+app.get('/reset/:token', resetController.getReset);
+app.post('/reset/:token', resetController.postReset);
+```
+
+The first step begins at the get `GET /forgot` when user clicks on **Forgot your password?** link on the *Login* page. The `POST /forgot` handles the form submission. If email address is valid, it creates a random 20-bit hash, finds that user’s email in the database and sets `resetPasswordToken` field to the newly  generated random 20-bit hash, additionally `resetPasswordExpires` is set to 1 hour into the future. That means from the moment you receive an email, that reset link will be valid only for one hour (for security reasons it’s a good practice to expire reset password links). If 1 hour is too short for your needs, feel free to increase it. The final step is to actually send an email with a reset link. This is all elegantly done using **async.waterfall** control flow.
+
+Notice how it handles the case when no email address exists:
+```js
+if (!user) {
+  req.flash('errors', { msg: 'No account with that email address exists.' });
+  return res.redirect('/forgot');
+}
+```
+
+Some people might find this approach to be less secure. Maybe a better approach might have been to let the user know “If there is an account with provided e-mail address, we will send you a reset link”. Again, feel free to change it based on your application needs.
+
+The second step involves resetting a password. After clicking on a reset link, it redirects you to a page where you can set a new password. The token validity check is performed twice - on `GET` request when you click on a reset link and on `POST` request after you submit a new password. After selecting a new password, both `passwordResetToken` and `resetPasswordExpire` fields are deleted from the database. This is easily done by setting their value to `undefined`; *Mongoose* will run `$unset` internally. And finally, user is logged in with the new password and a confirmation email is sent notifying about the password change.
 
 Mongoose Cheatsheet
 -------------------
@@ -886,12 +969,28 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 - And you are done! (Not quite as simple as Heroku, huh?)
 
 <img src="https://www.nodejitsu.com/img/media/nodejitsu-transparent.png" width="200">
-
-TODO: Will be added soon.
+- To install **jitsu**, open a terminal and type: `sudo npm install -g jitsu`
+- Run `jitsu login` and enter your login credentials
+- From your app directory, run `jitsu deploy`
+ - This will create a new application snapshot, generate and/or update project metadata
+- Done!
 
 <img src="http://upload.wikimedia.org/wikipedia/en/f/ff/Windows_Azure_logo.png" width="200">
 
-TODO: Will be added soon.
+- Login to [Windows Azure Management Portal](http://manage.windowsazure.com/)
+- Click the **+ NEW** button on the bottom left of the portal
+- Click **WEB SITE**, then **QUICK CREATE**
+- Enter a name for **URL** and select the datacenter **REGION** for your web site
+- Click on **CREATE WEB SITE** button
+- Once the web site status changes to *Running*, click on the name of the web site to access the Dashboard
+- At the bottom right of the Quickstart page, select **Set up a deployment from source control**
+- Select **Local Git repository** from the list, and then click the arrow
+- To enable Git publishing, Azure will ask you to create a user name and password
+- Once the Git repository is ready, you will be presented with a **GIT URL**
+- Inside your *Hackathon Starter* directory, run `git remote add azure [Azure Git URL]`
+- To push your changes simply run `git push azure master`
+ - **Note:** *You will be prompted for the password you created earlier*
+- On **Deployments** tab of your Windows Azure Web Site, you will see the deployment history
 
 TODO
 ----
@@ -899,7 +998,7 @@ TODO
 
 Contributing
 ------------
-If something is unclear, confusing, or needs to be refactored, please let me know. Pull requests are always welcome, but due to the opinionated nature of this project, I cannot accept every pull request. Please open an issue before submitting a pull request. This project uses [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with a few exceptions.
+If something is unclear, confusing, or needs to be refactored, please let me know. Pull requests are always welcome, but due to the opinionated nature of this project, I cannot accept every pull request. Please open an issue before submitting a pull request. This project uses [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with a few minor exceptions. If you are submitting a pull request that involves Jade templates, please make sure you are using *spaces*, not tabs.
 
 License
 -------

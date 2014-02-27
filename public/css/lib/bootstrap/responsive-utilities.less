@@ -2,7 +2,6 @@
 // Responsive: Utility classes
 // --------------------------------------------------
 
-
 // IE10 in Windows (Phone) 8
 //
 // Support for responsive views via media queries is kind of borked in IE10, for
@@ -21,32 +20,33 @@
   width: device-width;
 }
 
-
 // Visibility utilities
-.visible-xs {
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
   .responsive-invisibility();
+}
 
+.visible-xs {
   @media (max-width: @screen-xs-max) {
     .responsive-visibility();
   }
 }
-.visible-sm {
-  .responsive-invisibility();
 
+.visible-sm {
   @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
     .responsive-visibility();
   }
 }
-.visible-md {
-  .responsive-invisibility();
 
+.visible-md {
   @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
     .responsive-visibility();
   }
 }
-.visible-lg {
-  .responsive-invisibility();
 
+.visible-lg {
   @media (min-width: @screen-lg-min) {
     .responsive-visibility();
   }
@@ -57,22 +57,24 @@
     .responsive-invisibility();
   }
 }
+
 .hidden-sm {
   @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
     .responsive-invisibility();
   }
 }
+
 .hidden-md {
   @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
     .responsive-invisibility();
   }
 }
+
 .hidden-lg {
   @media (min-width: @screen-lg-min) {
     .responsive-invisibility();
   }
 }
-
 
 // Print utilities
 //

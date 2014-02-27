@@ -124,7 +124,7 @@ exports.getScraping = function(req, res, next) {
     if (err) return next(err);
     var $ = cheerio.load(body);
     var links = [];
-    $('.title a').each(function() {
+    $(".title a[href^='http'], a[href^='https']").each(function() {
       links.push($(this));
     });
     res.render('api/scraping', {
