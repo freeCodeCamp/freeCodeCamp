@@ -2,8 +2,8 @@
   "name": "hackathon-starter",
   "version": "0.0.0",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/sahat/hackathon-starter.git"
+    "type": "git",
+    "url": "https://github.com/sahat/hackathon-starter.git"
   },
   "scripts": {
     "start": "node app.js",
@@ -14,6 +14,8 @@
     "bcrypt-nodejs": "~0.0.3",
     "cheerio": "~0.13.1",
     "connect-assets": "~3.0.0-beta1",
+    "connect-mongo": "~0.4.0",
+    "csso": "~1.3.11",
     "express": "~3.4.8",
     "express-flash": "~0.0.2",
     "express-validator": "~1.0.1",
@@ -29,19 +31,18 @@
     "passport-facebook": "~1.0.2",
     "passport-github": "~0.1.5",
     "passport-google-oauth": "~0.1.5",
+    "passport-linkedin": "~0.1.3",
     "passport-local": "~0.1.6",
     "passport-oauth": "~1.0.0",
     "passport-twitter": "~1.0.2",
+    "paypal-rest-sdk": "~0.6.4",
     "request": "~2.34.0",
     "tumblr.js": "~0.0.4",
+    "twilio": "~1.5.0",
     "twit": "~1.1.12",
     "underscore": "~1.6.0",
-    "paypal-rest-sdk": "~0.6.4",
-    "connect-mongo": "~0.4.0",
-    "twilio": "~1.5.0",
-    "validator": "~3.3.0",
-    "csso": "~1.3.11",
-    "uglify-js": "~2.4.12"
+    "uglify-js": "~2.4.12",
+    "validator": "~3.3.0"
   },
   "devDependencies": {
     "chai": "~1.9.0",
