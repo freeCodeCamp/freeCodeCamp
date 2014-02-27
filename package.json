@@ -39,7 +39,7 @@
     "paypal-rest-sdk": "~0.6.4",
     "connect-mongo": "~0.4.0",
     "twilio": "~1.5.0",
-    "clockwork": ">=0.1.0",
+    "clockwork": "~0.1.1",
     "validator": "~3.3.0",
     "csso": "~1.3.11",
     "uglify-js": "~2.4.12"

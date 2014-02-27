@@ -430,7 +430,7 @@ exports.getClockwork = function(req, res, next) {
 
 
 /**
- * POST /api/clockwork
+ * POST /api/Clockwork
  * Clockwork SMS API example.
  * @param telephone
  */
@@ -443,7 +443,7 @@ exports.postClockwork = function(req, res, next) {
   };
   clockwork.sendSms(message, function(err, responseData) {
     if (err) return next(err.message);
-    req.flash('success', { msg: 'Text sent to ' + responseData.SMS_Resp.To});
+    req.flash('success', { msg: 'Text sent to ' + responseData.responses[0].to});
     res.redirect('/api/clockwork');
   });
 };
