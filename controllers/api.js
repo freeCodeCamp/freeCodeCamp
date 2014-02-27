@@ -14,6 +14,7 @@ var Github = require('github-api');
 var Twit = require('twit');
 var paypal = require('paypal-rest-sdk');
 var twilio = require('twilio')(secrets.twilio.sid, secrets.twilio.token);
+var Linkedin = require('node-linkedin')(secrets.linkedin.clientID, secrets.linkedin.clientSecret, secrets.linkedin.callbackURL);
 
 /**
  * GET /api
@@ -420,26 +421,26 @@ exports.getVenmo = function(req, res, next) {
   var query = querystring.stringify({ access_token: token.accessToken });
 
   async.parallel({
-    getProfile: function(done) {
-      request.get({ url: 'https://api.venmo.com/v1/me?' + query, json: true }, function(err, request, body) {
-        done(err, body);
-      });
-    },
-    getRecentPayments: function(done) {
-      request.get({ url: 'https://api.venmo.com/v1/payments?' + query, json: true }, function(err, request, body) {
-        done(err, body);
+      getProfile: function(done) {
+        request.get({ url: 'https://api.venmo.com/v1/me?' + query, json: true }, function(err, request, body) {
+          done(err, body);
+        });
+      },
+      getRecentPayments: function(done) {
+        request.get({ url: 'https://api.venmo.com/v1/payments?' + query, json: true }, function(err, request, body) {
+          done(err, body);
 
+        });
+      }
+    },
+    function(err, results) {
+      if (err) return next(err);
+      res.render('api/venmo', {
+        title: 'Venmo API',
+        profile: results.getProfile.data,
+        recentPayments: results.getRecentPayments.data
       });
-    }
-  },
-  function(err, results) {
-    if (err) return next(err);
-    res.render('api/venmo', {
-      title: 'Venmo API',
-      profile: results.getProfile.data,
-      recentPayments: results.getRecentPayments.data
     });
-  });
 };
 
 exports.postVenmo = function(req, res, next) {
@@ -481,4 +482,46 @@ exports.postVenmo = function(req, res, next) {
     req.flash('success', { msg: 'Venmo money transfer complete' });
     res.redirect('/api/venmo');
   });
+};
+
+exports.getLinkedin = function(req, res, next) {
+  var token = _.findWhere(req.user.tokens, { kind: 'linkedin' });
+  var linkedin = Linkedin.init(token);
+
+  async.parallel({
+      profile: function(done) {
+        linkedin.people.me(function(err, $in) {
+          console.log($in);
+          done(err, $in);
+        });
+      },
+      profileById: function(doone) {
+        linkedin.people.url('linkedin_id', function(err, $in) {
+          console.log($in);
+          done(err, $in);
+        });
+      },
+      connections: function(done) {
+        linkedin.connections.me(function(err, $in) {
+          console.log($in);
+          done(err, $in);
+        });
+      },
+      companies: function(done) {
+        linkedin.companies.me(function(err, $in) {
+          console.log($in);
+          done(err, $in);
+        });
+      }
+    },
+    function(err, results) {
+      if (err) return next(err);
+      res.render('api/linkedin', {
+        title: 'LinkedIn API',
+        profile: results.profile,
+        profileById: results.profileById,
+        connections: results.connections,
+        companies: results.companies
+      });
+    });
 };
