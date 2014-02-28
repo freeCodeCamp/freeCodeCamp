@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  .page-header
+    h2
+      i.fa.fa-phone
+      | Clockwork SMS API
+
+  .btn-group.btn-group-justified
+    a.btn.btn-primary(href='http://github.com/mediaburst/node-clockwork', target='_blank')
+      i.fa.fa-check-square-o
+      | Clockwork Node
+    a.btn.btn-primary(href='http://www.clockworksms.com/doc/clever-stuff/xml-interface/send-sms/', target='_blank')
+      i.fa.fa-code-fork
+      | XML API
+
+  h4 Send a text message
+  .row
+    .col-sm-6
+      form(role='form', method='POST')
+        input(type='hidden', name='_csrf', value=token)
+        .form-group
+          .input-group
+            input.form-control(type='text', name='telephone', placeholder='Phone Number (international format)')
+            span.input-group-btn
+              button.btn.btn-success(type='submit') Send

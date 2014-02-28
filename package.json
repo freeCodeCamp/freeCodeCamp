@@ -13,6 +13,7 @@
     "async": "~0.2.10",
     "bcrypt-nodejs": "~0.0.3",
     "cheerio": "~0.13.1",
+    "clockwork": "~0.1.1",
     "connect-assets": "~3.0.0-beta1",
     "connect-mongo": "~0.4.0",
     "csso": "~1.3.11",

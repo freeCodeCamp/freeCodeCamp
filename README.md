@@ -310,6 +310,7 @@ List of Packages
 | underscore | Handy JavaScript utlities library. |
 | paypal-rest-sdk | PayPal API library. |
 | twilio | Twilio API library. |
+| clockwork | Clockwork SMS API library. |
 | validator | Used in conjunction with express-validator in **controllers/api.js**. |
 
 
