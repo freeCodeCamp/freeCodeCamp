@@ -49,6 +49,7 @@
   "devDependencies": {
     "chai": "~1.9.0",
     "mocha": "~1.17.1",
-    "supertest": "~0.9.0"
+    "supertest": "~0.9.0",
+    "zombie": "~2.0.0-alpha30"
   }
 }
