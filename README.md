@@ -420,11 +420,11 @@ Using **connect-assets** library, it is as as simple as declaring these two line
 != js('application')  // expects public/js/application.js
 ```
 
-:bulb: **Tip:** This works because in *connect-assets* middleware we have specified `helperContext: app.locals`.
+:bulb: **Tip:** This works, because in **connect-assets** middleware we specified `helperContext: app.locals`.
 
 The only thing you need to remember is to define your JavaScript files inside `public/js/application.js` using this
 strange syntax notation (Sprockets-style) borrowed from Rails. I know it's an extra thing to learn
-for someone who has never seen Rails asset pipeline before, but in this case, I think benefits outweigh the costs.
+for someone who has never seen Rails asset pipeline before, but in this case, benefits outweigh the cost.
 ```js
 //= require lib/jquery-2.1.0.min
 //= require lib/bootstrap.min
@@ -442,8 +442,7 @@ mongoose.connection.on('error', function() {
   console.error('✗ MongoDB Connection Error. Please make sure MongoDB is running.');
 });
 ```
-As the message says, you need to have a MongoDB server running before launching `app.js`. You can get MongoDB from
-[mongodb.org/downloads](mongodb.org/downloads), or install it via a package manager
+As the message says, you need to have a MongoDB server running before launching `app.js`. You can download MongoDB [here](mongodb.org/downloads), or install it via a package manager
 ([Homebrew](http://brew.sh/) on Mac, `apt-get` on Ubuntu, `yum` on Fedora, etc.)
 
 ### I get an error when I deploy my app, why?
