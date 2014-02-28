@@ -6,11 +6,11 @@ var userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
 
-  facebook: { type: String, unique: true, sparse: true },
-  twitter: { type: String, unique: true, sparse: true },
-  google: { type: String, unique: true, sparse: true },
-  github: { type: String, unique: true, sparse: true },
-  linkedin: { type: String, unique: true, sparse: true },
+  facebook: String,
+  twitter: String,
+  google: String,
+  github: String,
+  linkedin: String,
   tokens: Array,
 
   profile: {
