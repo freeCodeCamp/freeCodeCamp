@@ -53,7 +53,7 @@ Features
 --------
 - **Local Authentication** using Email and Password
 - **OAuth 1.0a Authentication** via Twitter
-- **OAuth 2.0 Authentication** via Facebook, Google or GitHub
+- **OAuth 2.0 Authentication** via Facebook, Google, GitHub or LinkedIn
 - Awesome flash notifications with animations by [animate.css](http://daneden.github.io/animate.css/)
 - MVC Project Structure
 - Node.js clusters support
