@@ -416,7 +416,7 @@ exports.postTwilio = function(req, res, next) {
 
 
 /**
- * GET /api/Clockwork
+ * GET /api/clockwork
  * Clockwork SMS API example.
  */
 
@@ -434,13 +434,14 @@ exports.getClockwork = function(req, res, next) {
  */
 
 exports.postClockwork = function(req, res, next) {
+  console.log('hi')
   var message = {
     To: req.body.telephone,
     From: 'Hackathon',
     Content: 'Hello from the Hackathon Starter'
   };
   clockwork.sendSms(message, function(err, responseData) {
-    if (err) return next(err.message);
+    if (err) return next(err.errDesc);
     req.flash('success', { msg: 'Text sent to ' + responseData.responses[0].to});
     res.redirect('/api/clockwork');
   });
