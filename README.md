@@ -163,7 +163,7 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
 
 <hr>
 
-<img src="https://g.twimg.com/Twitter_logo_blue.png" width="100">
+<img src="https://g.twimg.com/Twitter_logo_blue.png" width="90">
 - Sign in at [https://dev.twitter.com](https://dev.twitter.com/)
 - From the profile picture dropdown menu select **My Applications**
 - Click **Create a new application**
@@ -285,8 +285,10 @@ List of Packages
 | async         | Utility library that provides asynchronous control flow. |
 | bcrypt-nodejs | Library for hashing and salting user passwords. |
 | cheerio | Scrape web pages using jQuery-style syntax.  |
+| clockwork | Clockwork SMS API library. |
 | connect-mongo | MongoDB session store for Express. |
 | connect-assets | Compiles LESS stylesheets, concatenates/minifies JavaScript. |
+| csso | Dependency for connect-assets library. |
 | express | Web framework. |
 | express-flash | Provides flash messages for Express. Uses connect-flash internally. |
 | express-validator | Easy form validation for Express. Uses node-validator internally. |
@@ -297,6 +299,7 @@ List of Packages
 | less | LESS compiler. Used implicitly by connect-assets. |
 | mongoose | MongoDB object modeling tool |
 | node-foursquare | Foursquare API library |
+| node-linkedin | LinkedIn API library |
 | nodemailer | Node.js library for sending emails |
 | passport | Simple and elegant authentication library for node.js |
 | passport-facebook | Sign-in with Facebook plugin. |
@@ -304,15 +307,15 @@ List of Packages
 | passport-google-oauth | Sign-in with Google plugin. |
 | passport-twitter | Sign-in with Twitter plugin. |
 | passport-local | Sign-in with Username and Password plugin. |
+| passport-linkedin-oauth2 | Sign-in with LinkedIn plugin. |
 | passport-oauth | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies. |
 | request | Simplified HTTP request library. |
 | tumblr.js | Tumblr API library. |
 | underscore | Handy JavaScript utlities library. |
+| uglify-js | Dependency for connect-assets library. |
 | paypal-rest-sdk | PayPal API library. |
 | twilio | Twilio API library. |
-| clockwork | Clockwork SMS API library. |
 | validator | Used in conjunction with express-validator in **controllers/api.js**. |
-
 
 Useful Tools
 ------------
