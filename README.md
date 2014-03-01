@@ -335,7 +335,6 @@ Recommended Design
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
 - [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.
 - [HTML5UP](http://html5up.net/) - Beautifully designed HTML templates.
-- [Progre(c)ss](https://github.com/jh3y/progre-c-ss) - Pure CSS progress bars.
 
 Recommended Node.js Libraries
 -----------------------------
@@ -348,21 +347,19 @@ Recommended Node.js Libraries
 
 Recommended Client-Side libraries
 ---------------------------------
-- [Hover](https://github.com/IanLunn/Hover) - Awesome css3 animations on mouse hover.
+- [Hover](https://github.com/IanLunn/Hover) - Awesome CSS3 animations on mouse hover.
 - [platform.js](https://github.com/bestiejs/platform.js) - Get client's operating system name, version, and other useful information.
 - [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/) - Responsive jQuery Lightbox Plugin.
 - [jQuery Raty](http://wbotelhos.com/raty/) - Star Rating Plugin.
 - [Headroom.js](http://wicky.nillia.ms/headroom.js/) - Hide your header until you need it.
-- [Fotorama](http://fotorama.io) - Very nice jQuery gallery.
 - [X-editable](http://vitalets.github.io/x-editable/) - Edit form elements inline.
 - [Offline.js](http://github.hubspot.com/offline/docs/welcome/) - Detect when user's internet connection goes offline.
-- [Color Thief](https://github.com/lokesh/color-thief) - Grabs the dominant color or a representative color palette from an image.
 - [Alertify.js](http://fabien-d.github.io/alertify.js/) - Sweet looking alerts and browser dialogs.
 - [select.js](http://github.hubspot.com/select/docs/welcome/) - Styleable select elements.
 - [drop.js](http://github.hubspot.com/drop/docs/welcome/) -  Powerful Javascript and CSS library for creating dropdowns and other floating displays.
 - [scrollReveal.js](https://github.com/julianlloyd/scrollReveal.js) - Declarative on-scroll reveal animations.
 - [InstantClick](http://instantclick.io) - Makes your pages load instantly by pre-loading them on mouse hover.
-
+- [NProgress.js](https://github.com/rstacruz/nprogress) - Slim progress bars like on YouTube and Medium.
 Pro Tips
 --------
 - When installing an NPM package, add a *--save* flag, and it will be automatially
