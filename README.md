@@ -360,6 +360,7 @@ Recommended Client-Side libraries
 - [scrollReveal.js](https://github.com/julianlloyd/scrollReveal.js) - Declarative on-scroll reveal animations.
 - [InstantClick](http://instantclick.io) - Makes your pages load instantly by pre-loading them on mouse hover.
 - [NProgress.js](https://github.com/rstacruz/nprogress) - Slim progress bars like on YouTube and Medium.
+
 Pro Tips
 --------
 - When installing an NPM package, add a *--save* flag, and it will be automatially
@@ -496,9 +497,8 @@ how it works, or maybe you are lost and confused while reading the code,
 I hope it provides some guidance to you.
 
 ###:rose: Custom HTML and CSS Design 101
-[HTML5 UP](http://html5up.net/) has many beautiful templates that you can download for free, like the ones you see below:
+[HTML5 UP](http://html5up.net/) has many beautiful templates that you can download for free.
 ![Alt](http://html5up.net/uploads/previews/6742121165068310.jpg)
-![Alt](http://html5up.net/uploads/previews/9257227011867312.jpg)
 
 When you download the ZIP file, it will come with *index.html*, *images*, *css* and *js* folders. So, how do you
 integrate it with Hackathon Starter? Hackathon Starter uses Bootstrap CSS framework, but these templates do not.
