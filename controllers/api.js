@@ -394,7 +394,6 @@ exports.getTwilio = function(req, res, next) {
   });
 };
 
-
 /**
  * POST /api/twilio
  * Twilio API example.
@@ -414,27 +413,24 @@ exports.postTwilio = function(req, res, next) {
   });
 };
 
-
 /**
  * GET /api/clockwork
  * Clockwork SMS API example.
  */
 
-exports.getClockwork = function(req, res, next) {
+exports.getClockwork = function(req, res) {
   res.render('api/clockwork', {
     title: 'Clockwork SMS API'
   });
 };
 
-
 /**
- * POST /api/Clockwork
+ * POST /api/clockwork
  * Clockwork SMS API example.
  * @param telephone
  */
 
 exports.postClockwork = function(req, res, next) {
-  console.log('hi')
   var message = {
     To: req.body.telephone,
     From: 'Hackathon',
@@ -442,7 +438,7 @@ exports.postClockwork = function(req, res, next) {
   };
   clockwork.sendSms(message, function(err, responseData) {
     if (err) return next(err.errDesc);
-    req.flash('success', { msg: 'Text sent to ' + responseData.responses[0].to});
+    req.flash('success', { msg: 'Text sent to ' + responseData.responses[0].to });
     res.redirect('/api/clockwork');
   });
 };
