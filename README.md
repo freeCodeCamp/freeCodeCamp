@@ -985,7 +985,7 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
  - **Note**: The first time you run this command, you have to pass `-f` (force) flag because OpenShift creates a dummy server with the welcome page when you create a new Node.js app. Passing `-f` flag will override everything with your *Hackathon Starter* project repository. Please **do not** do `git pull` as it will create unnecessary merge conflicts.
 - And you are done! (Not quite as simple as Heroku, huh?)
 
-<img src="https://www.nodejitsu.com/img/media/nodejitsu-transparent.png" width="200">
+<img src="http://www.joyent.com/content/08-company/05-customers/13-nodejitsu/header.png" width="200">
 - To install **jitsu**, open a terminal and type: `sudo npm install -g jitsu`
 - Run `jitsu login` and enter your login credentials
 - From your app directory, run `jitsu deploy`
