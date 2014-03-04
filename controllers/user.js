@@ -9,6 +9,15 @@ var User = require('../models/User');
 
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('/');
+  
+  // If the host in the header of the User Agent making the request is
+  // the same as the server host, keep a copy of the referrer url and 
+  // redirect to that later
+  if(req.header('host') == 'localhost:3000'){
+    req.session.referrer = req.header('Referrer');
+    console.log(req.session.referrer);
+  }
+  
   res.render('account/login', {
     title: 'Login'
   });
@@ -43,7 +52,9 @@ exports.postLogin = function(req, res, next) {
     req.logIn(user, function(err) {
       if (err) return next(err);
       req.flash('success', { msg: 'Success! You are logged in.' });
-      return res.redirect('/');
+      // redirecting toa referrer page else to home page
+      if(req.session.referrer) return res.redirect(req.session.referrer);
+      return res.redirect('/')
     });
   })(req, res, next);
 };
