@@ -2,43 +2,40 @@ var chai = require('chai');
 var should = chai.should();
 var User = require('../models/User');
 
-describe('Users', function() {
-
-
-  before(function(done) {
-    user = new User({
-      email: 'janedoe@gmail.com',
+describe('User Model', function() {
+  it('should create a new user', function(done) {
+    var user = new User({
+      email: 'test@gmail.com',
       password: 'password'
     });
-    done();
+    user.save(function(err) {
+      if (err) return done(err);
+      done();
+    })
   });
 
-  it('email should be a string', function() {
-    user.email.should.be.a('string');
+  it('should not create a user with the unique email', function(done) {
+    var user = new User({
+      email: 'test@gmail.com',
+      password: 'password'
+    });
+    user.save(function(err) {
+      if (err) return done();
+      done('Created a user with duplicate email');
+    });
   });
 
-  it('password should be a string', function() {
-    user.password.should.be.a('string');
-  });
-
-  it('should save a user', function(done) {
-    user.save();
-    done();
-  });
-
-  it('should find our newly created user', function(done) {
-    User.findOne({ email: user.email }, function(err, user) {
-      should.exist(user);
-      user.email.should.equal('janedoe@gmail.com');
+  it('should find user by email', function(done) {
+    User.findOne({ email: 'test@gmail.com' }, function(err, user) {
+      if (err) return done(err);
+      user.email.should.equal('test@gmail.com');
       done();
     });
   });
 
-  it('should not allow users with duplicate emails', function(done) {
-    user.save(function(err) {
-      if (err) {
-        err.code.should.equal(11000);
-      }
+  it('should delete a user', function(done) {
+    User.remove({ email: 'test@gmail.com' }, function(err) {
+      if (err) return done(err);
       done();
     });
   });
