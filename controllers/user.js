@@ -9,7 +9,7 @@ var User = require('../models/User');
 
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('/');
-  req.session.lastUrl = req.header('Referer');
+  req.session.lastUrl = req.header('Referrer');
   res.render('account/login', {
     title: 'Login'
   });
