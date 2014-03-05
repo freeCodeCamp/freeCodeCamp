@@ -5,7 +5,20 @@ block content
     legend Sign In
     input(type='hidden', name='_csrf', value=token)
     .row
-      .col-sm-4
+      .col-sm-8.col-sm-offset-2
+        if secrets.localAuth
+          .form-group
+            label.control-label(for='email') Email
+            input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
+          .form-group
+            label.control-label(for='password') Password
+            input.form-control(type='password', name='password', id='password', placeholder='Password')
+          .form-group
+            button.btn.btn-primary(type='submit')
+              i.fa.fa-unlock-alt
+              | Login
+            a.btn.btn-link(href='/forgot') Forgot your password?
+          hr
         if secrets.facebookAuth
           a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
             i.fa.fa-facebook
@@ -26,16 +39,3 @@ block content
           a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
             i.fa.fa-linkedin
             | Sign in with LinkedIn
-      if secrets.localAuth
-        .col-sm-8
-          .form-group
-            label.control-label(for='email') Email
-            input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
-          .form-group
-            label.control-label(for='password') Password
-            input.form-control(type='password', name='password', id='password', placeholder='Password')
-          .form-group
-            button.btn.btn-primary(type='submit')
-              i.fa.fa-unlock-alt
-              | Login
-            a.btn.btn-link(href='/forgot') Forgot your password?
