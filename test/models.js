@@ -2,7 +2,9 @@ var chai = require('chai');
 var should = chai.should();
 var User = require('../models/User');
 
-describe('User attributes', function() {
+describe('Users', function() {
+
+
   before(function(done) {
     user = new User({
       email: 'janedoe@gmail.com',
