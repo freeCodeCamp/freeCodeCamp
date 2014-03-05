@@ -20,8 +20,8 @@ describe('User Model', function() {
       password: 'password'
     });
     user.save(function(err) {
-      if (err) return done();
-      done('Created a user with duplicate email');
+      if (err) err.code.should.equal(11000);
+      done();
     });
   });
 
