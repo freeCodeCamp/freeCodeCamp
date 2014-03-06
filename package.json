@@ -40,11 +40,11 @@
     "paypal-rest-sdk": "~0.6.4",
     "request": "~2.34.0",
     "tumblr.js": "~0.0.4",
-    "twilio": "~1.5.0",
+    "twilio": "~1.6.0",
     "twit": "~1.1.12",
     "underscore": "~1.6.0",
     "uglify-js": "~2.4.12",
-    "validator": "~3.3.0"
+    "validator": "~3.4.0"
   },
   "devDependencies": {
     "mocha": "~1.17.1",
