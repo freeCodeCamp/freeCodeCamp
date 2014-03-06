@@ -75,7 +75,7 @@ exports.postReset = function(req, res, next) {
         }
       });
       var mailOptions = {
-        to: user.profile.name + ' <' + user.email + '>',
+        to: user.email,
         from: 'hackathon@starter.com',
         subject: 'Your Hackathon Starter password has been changed',
         text: 'Hello,\n\n' +
