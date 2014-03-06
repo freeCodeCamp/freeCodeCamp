@@ -65,9 +65,9 @@ exports.postForgot = function(req, res, next) {
         }
       });
       var mailOptions = {
-        to: user.profile.name + ' <' + user.email + '>',
+        to: user.email,
         from: 'hackathon@starter.com',
-        subject: 'Hackathon Starter Password Reset',
+        subject: 'Reset your password on Hackathon Starter',
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           'http://' + req.headers.host + '/reset/' + token + '\n\n' +
