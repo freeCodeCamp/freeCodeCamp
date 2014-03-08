@@ -13,7 +13,6 @@ var secrets = require('../config/secrets');
 
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('/');
-  req.session.lastUrl = req.header('Referrer');
   res.render('account/login', {
     title: 'Login'
   });
@@ -46,7 +45,7 @@ exports.postLogin = function(req, res, next) {
     req.logIn(user, function(err) {
       if (err) return next(err);
       req.flash('success', { msg: 'Success! You are logged in.' });
-      res.redirect(req.session.lastUrl || '/');
+      res.redirect(req.session.returnTo || '/');
     });
   })(req, res, next);
 };
