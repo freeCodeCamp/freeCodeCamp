@@ -261,12 +261,14 @@ Project Structure
 | **controllers**/api.js | Controller for /api route and all api examples.                         |
 | **controllers**/contact.js | Controller for contact form.                                        |
 | **controllers**/home.js | Controller for home page (index).                                      |
-| **controllers**/user.js | Controller for user account management page.                           |
+| **controllers**/user.js | Controller for user account management.                           |
 | **models**/User.js | Mongoose schema and model for User.                                         |
 | **public/***                       | Static assets (fonts, css, js, img)                         |
+| **public/js/**application.js*      | Declare which JavaScript files should be loaded, e.g. *jQuery*, *Bootstrap*, *main.js*.             |
+| **public/js/**main.js*             | Place your client-side JavaScript here.                     |
 | **public/css**/styles.less         | Main stylesheet for your app.                               |
 | **public/css/themes**/default.less | Some Bootstrap overrides to make it look prettier.          |
-| **views/account/***                | Templates for *login, signup, profile*.                     |
+| **views/account/***                | Templates for *login, password reset, signup, profile*.     |
 | **views/api/***                    | Templates for API Examples.                                 |
 | **views/partials**/flash.jade      | Error, info and success flash notifications.                |
 | **views/partials**/navigation.jade | Navbar partial template.                                    |
