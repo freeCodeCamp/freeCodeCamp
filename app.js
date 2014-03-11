@@ -11,8 +11,6 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
-
-
 /**
  * Load controllers.
  */
@@ -50,7 +48,6 @@ mongoose.connection.on('error', function() {
 
 var hour = 3600000;
 var day = (hour * 24);
-var week = (day * 7);
 var month = (day * 30);
 
 app.set('port', process.env.PORT || 3000);
@@ -85,8 +82,9 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(flash());
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: month }));
 app.use(function(req, res, next) {
+  // Keep track of previous URL
   if (req.method !== 'GET') return next();
   var path = req.path.split('/')[1];
   if (/(auth|login|logout|signup)$/.test(path)) return next();
