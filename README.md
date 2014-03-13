@@ -317,6 +317,7 @@ List of Packages
 | uglify-js | Dependency for connect-assets library. |
 | paypal-rest-sdk | PayPal API library. |
 | twilio | Twilio API library. |
+| twit   | Twitter API library. |
 | validator | Used in conjunction with express-validator in **controllers/api.js**. |
 
 Useful Tools
