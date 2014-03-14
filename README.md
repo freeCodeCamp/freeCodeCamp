@@ -939,6 +939,7 @@ experience, **Heroku** is the easiest to get started with, it will automatically
 - Enter *Database name** for your web app
 - Then click on **:zap:Create new MongoDB deployment** button
 - Now, to access your database you need to create a DB user
+- Click to the recently created database
 - You should see the following message:
  - *A database user is required to connect to this database.* **Click here** *to create a new one.*
 - Click the link and fill in **DB Username** and **DB Password** fields
