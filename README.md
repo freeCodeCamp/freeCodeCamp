@@ -329,6 +329,7 @@ Useful Tools
 Recommended Design
 ------------------
 - [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap.
+- [Bootflat](http://bootflat.github.io) - Open Source Flat UI Kit based on Twitter Bootstrap 3.
 - [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/icons/) - It's already part of the Hackathon Starter, so use this page as a reference.
 - [Colors](http://clrs.cc) - a nicer color palette for the web.
 - [CSS Spinning Loaders](http://codepen.io/andymcfee/pen/ioskA) - spinning loader in CSS.
