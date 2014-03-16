@@ -48,13 +48,13 @@ exports.postContact = function(req, res) {
   var name = req.body.name;
   var body = req.body.message;
   var to = 'your@email.com';
-  var subject = 'API Example | Contact Form';
+  var subject = 'Contact Form | Hackathon Starter';
 
   var mailOptions = {
     to: to,
     from: from,
     subject: subject,
-    text: body + '\n\n' + name
+    text: body
   };
 
   smtpTransport.sendMail(mailOptions, function(err) {
