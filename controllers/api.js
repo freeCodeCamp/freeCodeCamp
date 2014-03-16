@@ -267,28 +267,30 @@ exports.getTwitter = function(req, res, next) {
 
 exports.getPayPal = function(req, res, next) {
   paypal.configure(secrets.paypal);
-  var payment_details = {
-    'intent': 'sale',
-    'payer': {
-      'payment_method': 'paypal'
+
+  var paymentDetails = {
+    intent: 'sale',
+    payer: {
+      payment_method: 'paypal'
     },
-    'redirect_urls': {
-      'return_url': secrets.paypal.returnUrl,
-      'cancel_url': secrets.paypal.cancelUrl
+    redirect_urls: {
+      return_url: secrets.paypal.returnUrl,
+      cancel_url: secrets.paypal.cancelUrl
     },
-    'transactions': [
+    transactions: [
       {
-        'description': 'Node.js Boilerplate',
-        'amount': {
-          'currency': 'USD',
-          'total': '2.99'
+        description: 'Node.js Boilerplate',
+        amount: {
+          currency: 'USD',
+          total: '2.99'
         }
       }
     ]
   };
-  paypal.payment.create(payment_details, function(err, payment) {
+
+  paypal.payment.create(paymentDetails, function(err, payment) {
     if (err) return next(err);
-    req.session.payment_id = payment.id;
+    req.session.paymentId = payment.id;
     var links = payment.links;
     for (var i = 0; i < links.length; i++) {
       if (links[i].rel === 'approval_url') {
@@ -306,10 +308,10 @@ exports.getPayPal = function(req, res, next) {
  */
 
 exports.getPayPalSuccess = function(req, res, next) {
-  var payment_id = req.session.payment_id;
-  var payment_details = { 'payer_id': req.query.PayerID };
-  paypal.payment.execute(payment_id, payment_details, function(error, payment) {
-    if (error) {
+  var paymentId = req.session.paymentId;
+  var paymentDetails = { 'payer_id': req.query.PayerID };
+  paypal.payment.execute(paymentId, paymentDetails, function(err, payment) {
+    if (err) {
       res.render('api/paypal', {
         result: true,
         success: false

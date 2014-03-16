@@ -3,7 +3,7 @@ extends ../layout
 block content
   .page-header
     h2
-      i.fa.fa-dollar(style='color: #1B4A7D')
+      i.fa.fa-dollar
       | PayPal API
 
   .btn-group.btn-group-justified
@@ -17,19 +17,15 @@ block content
       i.fa.fa-gear
       | API Playground
 
-  h3
-    img(src='/img/paypal.png', width=50, height=50)
-    span  Sample Payment
 
-    if result
-      if canceled
-        h3 Payment got canceled!
-      if success
-        h3 Payment got executed successfully!
-      a(href='/api/paypal')
-          button.btn.btn-primary New payment
-    else
-      div
-        p Redirects to PayPal and allows authorizing the sample payment.
-        a(href=approval_url)
-          button.btn.btn-primary Authorize payment
+  if result
+    if canceled
+      h3 Payment got canceled!
+    if success
+      h3 Payment got executed successfully!
+    a(href='/api/paypal')
+        button.btn.btn-primary New payment
+  else
+    p.lead Redirects to PayPal and allows authorizing the sample payment.
+    a(href=approval_url)
+      button.btn.btn-primary Authorize payment
