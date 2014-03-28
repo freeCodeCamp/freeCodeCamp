@@ -10,7 +10,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "async": "~0.2.10",
+    "async": "~0.4.0",
     "bcrypt-nodejs": "~0.0.3",
     "cheerio": "~0.13.1",
     "clockwork": "~0.1.1",
