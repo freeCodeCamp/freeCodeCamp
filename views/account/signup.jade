@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   form.form-horizontal(id='signup-form', method='POST')
-    input(type='hidden', name='_csrf', value=token)
+    input(type='hidden', name='_csrf', value=_csrf)
     legend Signup
     .form-group
       label.col-sm-3.control-label(for='email') Email
