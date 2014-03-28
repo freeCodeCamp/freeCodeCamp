@@ -4,7 +4,7 @@ block content
   .col-sm-8.col-sm-offset-2
     form(method='POST')
       legend Reset Password
-      input(type='hidden', name='_csrf', value=token)
+      input(type='hidden', name='_csrf', value=_csrf)
       .form-group
         label(for='password') New Password
         input.form-control(type='password', name='password', value='', placeholder='New password', autofocus=true)
