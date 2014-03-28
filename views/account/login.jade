@@ -3,7 +3,7 @@ extends ../layout
 block content
   form(method='POST')
     legend Sign In
-    input(type='hidden', name='_csrf', value=token)
+    input(type='hidden', name='_csrf', value=_csrf)
     .col-sm-8.col-sm-offset-2
       if secrets.localAuth
         .form-group
