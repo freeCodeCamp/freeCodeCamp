@@ -42,7 +42,7 @@ block content
     .col-sm-5
       h3 Make Payment
       form(role='form', method='POST')
-        input(type='hidden', name='_csrf', value=token)
+        input(type='hidden', name='_csrf', value=_csrf)
         .form-group
           label.control-label(for='user') Phone, Email or Venmo User ID
           input.form-control(type='text', name='user', id='user', placeholder='15555555555', autofocus=true)
