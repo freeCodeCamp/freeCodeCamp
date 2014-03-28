@@ -5,7 +5,7 @@ block content
     h3 Contact Form
 
   form.form-horizontal(role='form', method='POST')
-    input(type='hidden', name='_csrf', value=token)
+    input(type='hidden', name='_csrf', value=_csrf)
     .form-group
       label(class='col-sm-2 control-label', for='name') Name
       .col-sm-8
