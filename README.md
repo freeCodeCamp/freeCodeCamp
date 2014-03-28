@@ -45,7 +45,6 @@ Table of Contents
 - [How It Works](#how-it-works-mini-guides)
 - [Mongoose Cheatsheet](#mongoose-cheatsheet)
 - [Deployment](#deployment)
-- [TODO](#todo)
 - [Contributing](#contributing)
 - [License](#license)
 

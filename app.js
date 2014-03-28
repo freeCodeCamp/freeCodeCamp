@@ -87,7 +87,7 @@ app.use(function(req, res, next) {
   // Keep track of previous URL
   if (req.method !== 'GET') return next();
   var path = req.path.split('/')[1];
-  if (/(auth|login|logout|signup)$/.test(path)) return next();
+  if (/(auth|login|logout|signup)$/i.test(path)) return next();
   req.session.returnTo = req.path;
   next();
 });
@@ -188,7 +188,7 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
  */
 
 app.listen(app.get('port'), function() {
-  console.log("✔ Express server listening on port %d in %s mode", app.get('port'), app.settings.env);
+  console.log("✔ Express server listening on port %d in %s mode", app.get('port'), app.get('env'));
 });
 
 module.exports = app;
