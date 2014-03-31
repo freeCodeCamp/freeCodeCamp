@@ -1,0 +1,67 @@
+extends ../../layout
+
+block content
+  .page-header
+    h2
+      i.fa.fa-dollar
+      | Stripe API
+
+  .btn-group.btn-group-justified
+    a.btn.btn-primary(href='/api/stripe')
+      i.fa.fa-home
+      | All API Calls
+    a.btn.btn-primary(href='https://stripe.com/docs/api', target='_blank')
+      i.fa.fa-code
+      | API Reference
+    a.btn.btn-primary(href='https://manage.stripe.com/account/apikeys', target='_blank')
+      i.fa.fa-gear
+      | API Keys
+  br
+  .row  
+    .col-sm-4
+      form(role='form', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        br
+        .form-group
+          label(for='customerName') Customer Name
+          input#customerName.form-control(type='text', name='customerName', placeholder='Customer Name')
+          label(for='customerEmail') Email address
+          input#customerEmail.form-control(type='email', name='email', placeholder='Enter email')
+          label(for='chargeAmount') Enter Charge
+          .input-group
+            span.input-group-addon $
+            input.form-control(type='text',name='chargeAmount')
+            span.input-group-addon .00
+
+        .form-group
+          label(for='ccnumber') Credit Card Number
+          input#ccnumber.form-control(type='text', size='20', name='ccNumber')
+
+          label(for='CVC') CVC
+          input#CVC.form-control(type='text', size='4', name='cvc')
+
+          label(for='exp-month') Expiration (MM/YYYY)
+          input#exp-month.form-control(type='text', size='2', name='expMonth')
+          input#exp-year.form-control(type='text', size='4', name='expYear')
+        button.btn.btn-primary(type='submit') Submit Payment
+    .col-sm-7.col-sm-offset-1
+      if charge
+        h2 Customer
+        pre
+          |!{JSON.stringify(customer)}
+        h2 Payment
+        pre
+          |!{JSON.stringify(charge)}
+      else
+        h2 Stripe Charge API
+        p
+        | Please note that this API does not use Stripe.js for its form. It tokenizes the credit card on the backend. After it generates the token it creates a new user and adds the token to that account. Finally it charges the user the amount entered in the box. 
+        br
+        br
+        | This is for a one-time charge, and not a reoccuring charge / subscription. Also, the form does not do any validation on the client side, I would suggest using something like 
+        a(href='http://jquerycreditcardvalidator.com/') this. 
+        br
+        br
+        | Test Credit Card: 4242424242424242
+        br 
+        | Any CVC & valid experation date. 
