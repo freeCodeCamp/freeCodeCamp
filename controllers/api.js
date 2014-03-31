@@ -385,6 +385,12 @@ exports.getSteam = function(req, res, next) {
     });
   });
 };
+
+/**
+ * GET /api/stripe
+ * Stripe API example.
+ */
+
 exports.getStripe = function(req, res, next) {
     //Create a token for the CC
     res.render('api/stripe/index', {
@@ -392,6 +398,10 @@ exports.getStripe = function(req, res, next) {
     });
 };
 
+/**
+ * GET /api/onetime
+ * Stripe One Time Charge API example.
+ */
 exports.getStripeOnetime = function(req, res, next) {
     //Create a token for the CC
     res.render('api/stripe/onetime', {
@@ -399,6 +409,18 @@ exports.getStripeOnetime = function(req, res, next) {
     });
 };
 
+/**
+ * POST /api/stripe/onetime
+ * @param ccNumber
+ * @param expMonth
+ * @param expYear
+ * @param ccNumber
+ * @param expMonth
+ * @param expYear
+ * @param customerName
+ * @param email
+ * @param chargeAmount
+ */
 exports.postStripeOnetime = function(req, res, next) {
     stripe.tokens.create({
       card: {
@@ -440,7 +462,10 @@ exports.postStripeOnetime = function(req, res, next) {
     });
 };
 
-
+/**
+ * GET /api/newsubscriber
+ * Stripe Subscription API example.
+ */
 exports.getStripeNewSubscriber = function(req, res, next) {
     stripe.plans.list(function(err, plans) {
         res.render('api/stripe/newsubscriber', {
@@ -450,6 +475,18 @@ exports.getStripeNewSubscriber = function(req, res, next) {
     });
 };
 
+/**
+ * POST /api/stripe/newsubscriber
+ * @param ccNumber
+ * @param expMonth
+ * @param expYear
+ * @param ccNumber
+ * @param expMonth
+ * @param expYear
+ * @param customerName
+ * @param email
+ * @param plantype
+ */
 exports.postStripeNewSubscriber = function(req, res, next) {
     console.log(req.body.plantype);
     
@@ -496,15 +533,6 @@ exports.postStripeNewSubscriber = function(req, res, next) {
     });
 };
 
-exports.getStripeCustomers = function(req, res, next) {
-    stripe.customers.list(function(err, customers) {
-        customersList = JSON.stringify(customers.data);
-        res.render('api/stripe/customers', {
-            title: 'Stripe API',
-            customers: customersList
-        });
-    });
-};
 
 /**
  * GET /api/twilio
