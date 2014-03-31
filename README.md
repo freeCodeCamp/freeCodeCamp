@@ -318,6 +318,7 @@ List of Packages
 | passport-linkedin-oauth2 | Sign-in with LinkedIn plugin. |
 | passport-oauth | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies. |
 | request | Simplified HTTP request library. |
+| stripe | Offical Stripe API library. |
 | tumblr.js | Tumblr API library. |
 | underscore | Handy JavaScript utlities library. |
 | uglify-js | Dependency for connect-assets library. |
