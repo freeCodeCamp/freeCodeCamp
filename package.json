@@ -12,7 +12,7 @@
   "dependencies": {
     "async": "~0.6.1",
     "bcrypt-nodejs": "~0.0.3",
-    "cheerio": "~0.13.1",
+    "cheerio": "~0.14.0",
     "clockwork": "~0.1.1",
     "connect-assets": "~3.0.0-beta2",
     "connect-mongo": "~0.4.0",
@@ -44,7 +44,7 @@
     "twit": "~1.1.12",
     "underscore": "~1.6.0",
     "uglify-js": "~2.4.12",
-    "validator": "~3.5.1"
+    "validator": "~3.6.0"
   },
   "devDependencies": {
     "mocha": "~1.18.2",
