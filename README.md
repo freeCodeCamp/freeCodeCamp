@@ -327,29 +327,28 @@ Useful Tools
 
 Recommended Design
 ------------------
+- [Bootstrap Zero](http://bootstrapzero.com/) - Free Bootstrap templates themes.
 - [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap.
 - [Bootflat](http://bootflat.github.io) - Open Source Flat UI Kit based on Twitter Bootstrap 3.
 - [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/icons/) - It's already part of the Hackathon Starter, so use this page as a reference.
 - [Colors](http://clrs.cc) - a nicer color palette for the web.
-- [CSS Spinning Loaders](http://codepen.io/andymcfee/pen/ioskA) - spinning loader in CSS.
 - [SpinKit](http://tobiasahlin.com/spinkit/) - 8 awesome looking spinning loaders in CSS.
 - [Creative Button Styles](http://tympanus.net/Development/CreativeButtons/) - awesome button styles.
-- [3D Dropdown Menu](http://soulwire.github.io/Makisu/) - CSS3 3D Dropdown Menu that folds and unfolds.
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
 - [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.
-- [HTML5UP](http://html5up.net/) - Beautifully designed HTML templates.
 
 Recommended Node.js Libraries
 -----------------------------
-- [nodemon](https://github.com/remy/nodemon) - automatically restart node.js server on code change.
-- [geoip-lite](https://github.com/bluesmoon/node-geoip) - get geolocation coordinates from IP address.
-- [Nodemailer](https://github.com/andris9/Nodemailer) - send emails with node.js (without sendgrid or mailgun).
-- [filesize.js](http://filesizejs.com/) - make file size pretty, e.g. `filesize(265318); // "265.32 kB"`.
-- [Numeral.js](http://numeraljs.com) - a javascript library for formatting and manipulating numbers.
+- [nodemon](https://github.com/remy/nodemon) - Automatically restart Node.js server on code changes.
+- [geoip-lite](https://github.com/bluesmoon/node-geoip) - Geolocation coordinates from IP address.
+- [filesize.js](http://filesizejs.com/) - Pretty file sizes, e.g. `filesize(265318); // "265.32 kB"`.
+- [Numeral.js](http://numeraljs.com) - JavaScript library for formatting and manipulating numbers.
 - [Node Inspector](https://github.com/node-inspector/node-inspector) - Node.js debugger based on Chrome Developer Tools.
 
 Recommended Client-Side libraries
 ---------------------------------
+- [InstantClick](http://instantclick.io) - Makes your pages load instantly by pre-loading them on mouse hover.
+- [NProgress.js](https://github.com/rstacruz/nprogress) - Slim progress bars like on YouTube and Medium.
 - [Hover](https://github.com/IanLunn/Hover) - Awesome CSS3 animations on mouse hover.
 - [platform.js](https://github.com/bestiejs/platform.js) - Get client's operating system name, version, and other useful information.
 - [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/) - Responsive jQuery Lightbox Plugin.
@@ -361,8 +360,6 @@ Recommended Client-Side libraries
 - [select.js](http://github.hubspot.com/select/docs/welcome/) - Styleable select elements.
 - [drop.js](http://github.hubspot.com/drop/docs/welcome/) -  Powerful Javascript and CSS library for creating dropdowns and other floating displays.
 - [scrollReveal.js](https://github.com/julianlloyd/scrollReveal.js) - Declarative on-scroll reveal animations.
-- [InstantClick](http://instantclick.io) - Makes your pages load instantly by pre-loading them on mouse hover.
-- [NProgress.js](https://github.com/rstacruz/nprogress) - Slim progress bars like on YouTube and Medium.
 
 Pro Tips
 --------
@@ -383,7 +380,7 @@ You need to add this hidden input element to your form. This has been added in t
 pull request [#40](https://github.com/sahat/hackathon-starter/pull/40).
 
 ```
-input(type='hidden', name='_csrf', value=token)
+input(type='hidden', name='_csrf', value=_csrf)
 ```
 You can read more about [CSRF protection middleware](http://expressjs.com/api.html#csrf) at the Express API Reference.
 
