@@ -267,8 +267,8 @@ Project Structure
 | **public/js/**main.js             | Place your client-side JavaScript here.                     |
 | **public/css**/styles.less         | Main stylesheet for your app.                               |
 | **public/css/themes**/default.less | Some Bootstrap overrides to make it look prettier.          |
-| **views/account/***                | Templates for *login, password reset, signup, profile*.     |
-| **views/api/***                    | Templates for API Examples.                                 |
+| **views/account/**                | Templates for *login, password reset, signup, profile*.     |
+| **views/api/**                    | Templates for API Examples.                                 |
 | **views/partials**/flash.jade      | Error, info and success flash notifications.                |
 | **views/partials**/navigation.jade | Navbar partial template.                                    |
 | **views/partials**/footer.jade     | Footer partial template.                                    |
@@ -327,6 +327,7 @@ Useful Tools
 
 Recommended Design
 ------------------
+- [UIBox](http://www.uibox.in) - Curated HTML, CSS, JS, UI components.
 - [Bootstrap Zero](http://bootstrapzero.com/) - Free Bootstrap templates themes.
 - [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap.
 - [Bootflat](http://bootflat.github.io) - Open Source Flat UI Kit based on Twitter Bootstrap 3.
@@ -351,14 +352,13 @@ Recommended Client-Side libraries
 - [InstantClick](http://instantclick.io) - Makes your pages load instantly by pre-loading them on mouse hover.
 - [NProgress.js](https://github.com/rstacruz/nprogress) - Slim progress bars like on YouTube and Medium.
 - [Hover](https://github.com/IanLunn/Hover) - Awesome CSS3 animations on mouse hover.
-- [platform.js](https://github.com/bestiejs/platform.js) - Get client's operating system name, version, and other useful information.
 - [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/) - Responsive jQuery Lightbox Plugin.
 - [jQuery Raty](http://wbotelhos.com/raty/) - Star Rating Plugin.
 - [Headroom.js](http://wicky.nillia.ms/headroom.js/) - Hide your header until you need it.
 - [X-editable](http://vitalets.github.io/x-editable/) - Edit form elements inline.
 - [Offline.js](http://github.hubspot.com/offline/docs/welcome/) - Detect when user's internet connection goes offline.
 - [Alertify.js](http://fabien-d.github.io/alertify.js/) - Sweet looking alerts and browser dialogs.
-- [select.js](http://github.hubspot.com/select/docs/welcome/) - Styleable select elements.
+- [selectize.js](http://brianreavis.github.io/selectize.js/) - Styleable select elements and input tags.
 - [drop.js](http://github.hubspot.com/drop/docs/welcome/) -  Powerful Javascript and CSS library for creating dropdowns and other floating displays.
 - [scrollReveal.js](https://github.com/julianlloyd/scrollReveal.js) - Declarative on-scroll reveal animations.
 
