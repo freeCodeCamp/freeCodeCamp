@@ -1,6 +1,5 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
 Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.svg?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter) [![Build Status](https://travis-ci.org/terinjokes/gulp-uglify.svg?branch=master)](https://travis-ci.org/terinjokes/gulp-uglify) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
-
 =================
 A boilerplate for **Node.js** web applications.
 
@@ -264,8 +263,8 @@ Project Structure
 | **controllers**/user.js | Controller for user account management.                           |
 | **models**/User.js | Mongoose schema and model for User.                                         |
 | **public/***                       | Static assets (fonts, css, js, img)                         |
-| **public/js/**application.js*      | Declare which JavaScript files should be loaded, e.g. *jQuery*, *Bootstrap*, *main.js*.             |
-| **public/js/**main.js*             | Place your client-side JavaScript here.                     |
+| **public/js/**application.js      | Declare which JavaScript files should be loaded, e.g. *jQuery*, *Bootstrap*, *main.js*.             |
+| **public/js/**main.js             | Place your client-side JavaScript here.                     |
 | **public/css**/styles.less         | Main stylesheet for your app.                               |
 | **public/css/themes**/default.less | Some Bootstrap overrides to make it look prettier.          |
 | **views/account/***                | Templates for *login, password reset, signup, profile*.     |
@@ -348,6 +347,7 @@ Recommended Node.js Libraries
 
 Recommended Client-Side libraries
 ---------------------------------
+- [Framework7](http://www.idangero.us/framework7) - Full Featured HTML Framework For Building iOS7 Apps.
 - [InstantClick](http://instantclick.io) - Makes your pages load instantly by pre-loading them on mouse hover.
 - [NProgress.js](https://github.com/rstacruz/nprogress) - Slim progress bars like on YouTube and Medium.
 - [Hover](https://github.com/IanLunn/Hover) - Awesome CSS3 animations on mouse hover.
