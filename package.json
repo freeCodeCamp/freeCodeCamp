@@ -12,7 +12,7 @@
   "dependencies": {
     "async": "~0.7.0",
     "bcrypt-nodejs": "~0.0.3",
-    "cheerio": "~0.14.0",
+    "cheerio": "~0.15.0",
     "clockwork": "~0.1.1",
     "connect-assets": "~3.0.0-beta2",
     "connect-mongo": "~0.4.0",
