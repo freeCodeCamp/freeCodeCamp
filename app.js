@@ -57,8 +57,8 @@ mongoose.connection.on('error', function() {
  */
 
 var hour = 3600000;
-var day = (hour * 24);
-var month = (day * 30);
+var day = hour * 24;
+var week = day * 7;
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -92,7 +92,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(flash());
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: month }));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 app.use(function(req, res, next) {
   // Keep track of previous URL
   if (req.method !== 'GET') return next();
