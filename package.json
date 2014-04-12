@@ -17,7 +17,7 @@
     "connect-assets": "~3.0.0-beta2",
     "connect-mongo": "~0.4.0",
     "csso": "~1.3.11",
-    "express": "~3.5.1",
+    "express": "^4.0.0",
     "express-flash": "~0.0.2",
     "express-validator": "~2.1.1",
     "fbgraph": "~0.2.10",
@@ -44,7 +44,7 @@
     "twit": "~1.1.12",
     "underscore": "~1.6.0",
     "uglify-js": "~2.4.12",
-    "validator": "~3.8.0"
+    "validator": "~3.8.0",
   },
   "devDependencies": {
     "mocha": "~1.18.2",
