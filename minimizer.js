@@ -120,6 +120,7 @@ inquirer.prompt({
              p: a(href='/auth/facebook') Link your Facebook account
          ***/
       });
+      var facebookModel = '  facebook: String,';
 
       var passportConfigFile = 'config/passport.js';
       var userModelFile = 'models/User.js';
@@ -129,6 +130,7 @@ inquirer.prompt({
       var passportConfig = fs.readFileSync(passportConfigFile).toString();
       var loginTemplate = fs.readFileSync(loginTemplateFile).toString();
       var profileTemplate = fs.readFileSync(profileTemplateFile).toString();
+      var userModel = fs.readFileSync(userModelFile).toString();
 
       var index,
           output;
@@ -137,9 +139,9 @@ inquirer.prompt({
         if (passportConfig.indexOf(facebookStrategyRequire) < 0) {
           // config/passport.js (add)
           passportConfig = passportConfig.split('\n');
-          index = passportConfig.lastIndexOf("var passport = require('passport');");
+          index = passportConfig.indexOf("var passport = require('passport');");
           passportConfig.splice(index + 1, 0, facebookStrategyRequire);
-          index = passportConfig.lastIndexOf('passport.deserializeUser(function(id, done) {');
+          index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, facebookStrategy);
           output = passportConfig.join('\n');
           fs.writeFileSync(passportConfigFile, output);
@@ -157,6 +159,13 @@ inquirer.prompt({
           output = profileTemplate.join('\n');
           fs.writeFileSync(profileTemplateFile, output);
 
+          // models/User.js
+          userModel = userModel.split('\n');
+          index = userModel.indexOf('  tokens: Array,');
+          userModel.splice(index -1 , 0, facebookModel);
+          output = userModel.join('\n');
+          fs.writeFileSync(userModelFile, output);
+
           console.log('Facebook authentication has been added.'.info);
         } else {
           console.log('Facebook authentication is already active.'.warn);
@@ -164,9 +173,9 @@ inquirer.prompt({
       } else {
         // config/passport.js (remove)
         passportConfig = passportConfig.split('\n');
-        index = passportConfig.lastIndexOf(facebookStrategyRequire);
+        index = passportConfig.indexOf(facebookStrategyRequire);
         passportConfig.splice(index, 1);
-        index = passportConfig.lastIndexOf('// Sign in with Facebook.');
+        index = passportConfig.indexOf('// Sign in with Facebook.');
         passportConfig.splice(index, 47);
         output = passportConfig.join('\n');
         fs.writeFileSync(passportConfigFile, output);
@@ -184,6 +193,13 @@ inquirer.prompt({
         profileTemplate.splice(index - 1, 5);
         output = profileTemplate.join('\n');
         fs.writeFileSync(profileTemplateFile, output);
+
+        // models/User.js
+        userModel = userModel.split('\n');
+        index = userModel.indexOf('  facebook: String,');
+        userModel.splice(index, 1);
+        output = userModel.join('\n');
+        fs.writeFileSync(userModelFile, output);
 
         console.log('Facebook authentication has been removed.'.error);
       }
