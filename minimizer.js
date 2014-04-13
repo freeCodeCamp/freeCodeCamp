@@ -295,7 +295,7 @@ inquirer.prompt({
         index = passportConfig.indexOf(githubStrategyRequire);
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with GitHub.');
-        passportConfig.splice(index, 46);
+        passportConfig.splice(index, 48);
         fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
         // views/account/login.jade (-)
@@ -304,7 +304,7 @@ inquirer.prompt({
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
         // views/account/profile.jade (-)
-        index = profileTemplate.indexOf("  if user.github");
+        index = profileTemplate.indexOf('  if user.github');
         profileTemplate.splice(index - 1, 5);
         fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
@@ -429,7 +429,7 @@ inquirer.prompt({
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
         // views/account/profile.jade (-)
-        index = profileTemplate.indexOf("  if user.google");
+        index = profileTemplate.indexOf('  if user.google');
         profileTemplate.splice(index - 1, 5);
         fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
@@ -439,6 +439,127 @@ inquirer.prompt({
         fs.writeFileSync(userModelFile, userModel.join('\n'));
 
         console.log('✗ Google authentication has been removed.'.error);
+      }
+
+      if (_.contains(answer.auth, 'Twitter')) {
+        var twitterStrategyRequire = "var TwitterStrategy = require('passport-twitter').Strategy;";
+        var twitterStrategy = M(function() {
+          /***
+          // Sign in with Twitter.
+
+          passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tokenSecret, profile, done) {
+            if (req.user) {
+              User.findOne({ twitter: profile.id }, function(err, existingUser) {
+                if (existingUser) {
+                  req.flash('errors', { msg: 'There is already a Twitter account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                  done(err);
+                } else {
+                  User.findById(req.user.id, function(err, user) {
+                    user.twitter = profile.id;
+                    user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
+                    user.profile.name = user.profile.name || profile.displayName;
+                    user.profile.location = user.profile.location || profile._json.location;
+                    user.profile.picture = user.profile.picture || profile._json.profile_image_url;
+                    user.save(function(err) {
+                      req.flash('info', { msg: 'Twitter account has been linked.' });
+                      done(err, user);
+                    });
+                  });
+                }
+              });
+
+            } else {
+              User.findOne({ twitter: profile.id }, function(err, existingUser) {
+                if (existingUser) return done(null, existingUser);
+                var user = new User();
+                // Twitter will not provide an email address.  Period.
+                // But a person’s twitter username is guaranteed to be unique
+                // so we can "fake" a twitter email address as follows:
+                user.email = profile.username + "@twitter.com";
+                     user.twitter = profile.id;
+                     user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
+                     user.profile.name = profile.displayName;
+                     user.profile.location = profile._json.location;
+                     user.profile.picture = profile._json.profile_image_url;
+                     user.save(function(err) {
+                  done(err, user);
+                });
+              });
+            }
+          }));
+          ***/
+        });
+
+        var twitterButton = M(function() {
+          /***
+           a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')
+           i.fa.fa-google-plus
+           | Sign in with Google
+           ***/
+        });
+        var twitterLinkUnlink = M(function() {
+          /***
+
+           if user.google
+           p: a.text-danger(href='/account/unlink/google') Unlink your Google account
+           else
+           p: a(href='/auth/google') Link your Google account
+           ***/
+        });
+        var twitterModel = '  twitter: String,';
+
+        if (passportConfig.indexOf(twitterStrategyRequire) < 0) {
+
+          // config/passport.js (+)
+          index = passportConfig.indexOf("var passport = require('passport');");
+          passportConfig.splice(index + 1, 0, twitterStrategyRequire);
+          index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
+          passportConfig.splice(index + 6, 0, twitterStrategy);
+          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+          // views/account/login.jade (+)
+          loginTemplate.push(twitterButton);
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+          // views/account/profile.jade (+)
+          index = profileTemplate.indexOf('    h3 Linked Accounts');
+          profileTemplate.splice(index + 1, 0, twitterLinkUnlink);
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+          // models/User.js (+)
+          index = userModel.indexOf('  tokens: Array,');
+          userModel.splice(index - 1, 0, twitterModel);
+          fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+          console.log('✓ Twitter authentication has been added.'.info);
+        } else {
+          console.log('✓ Twitter authentication is already active.'.warn);
+        }
+      } else {
+
+        // config/passport.js (-)
+        index = passportConfig.indexOf(twitterStrategyRequire);
+        passportConfig.splice(index, 1);
+        index = passportConfig.indexOf('// Sign in with Twitter.');
+        passportConfig.splice(index, 43);
+        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+        // views/account/login.jade (-)
+        index = loginTemplate.indexOf("      a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')");
+        loginTemplate.splice(index, 4);
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+        // views/account/profile.jade (-)
+        index = profileTemplate.indexOf('  if user.twitter');
+        profileTemplate.splice(index - 1, 5);
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+        // models/User.js (-)
+        index = userModel.indexOf('  twitter: String,');
+        userModel.splice(index, 1);
+        fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+        console.log('✗ Twitter authentication has been removed.'.error);
       }
     });
   }
