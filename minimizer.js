@@ -127,79 +127,64 @@ inquirer.prompt({
       var profileTemplateFile = 'views/account/profile.jade';
       var loginTemplateFile = 'views/account/login.jade';
 
-      var passportConfig = fs.readFileSync(passportConfigFile).toString();
-      var loginTemplate = fs.readFileSync(loginTemplateFile).toString();
-      var profileTemplate = fs.readFileSync(profileTemplateFile).toString();
-      var userModel = fs.readFileSync(userModelFile).toString();
+      var passportConfig = fs.readFileSync(passportConfigFile).toString().split('\n');
+      var loginTemplate = fs.readFileSync(loginTemplateFile).toString().split('\n');
+      var profileTemplate = fs.readFileSync(profileTemplateFile).toString().split('\n');
+      var userModel = fs.readFileSync(userModelFile).toString().split('\n');
 
-      var index,
-          output;
+      var index;
 
       if (_.contains(answer.auth, 'facebook')) {
         if (passportConfig.indexOf(facebookStrategyRequire) < 0) {
-          // config/passport.js (add)
-          passportConfig = passportConfig.split('\n');
+
+          // config/passport.js (+)
           index = passportConfig.indexOf("var passport = require('passport');");
           passportConfig.splice(index + 1, 0, facebookStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, facebookStrategy);
-          output = passportConfig.join('\n');
-          fs.writeFileSync(passportConfigFile, output);
+          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-          // views/account/login.jade (add)
-          loginTemplate = loginTemplate.split('\n');
+          // views/account/login.jade (+)
           loginTemplate.push(facebookButton);
-          output = loginTemplate.join('\n');
-          fs.writeFileSync(loginTemplateFile, output);
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-          // views/account/profile.jade (add)
-          profileTemplate = profileTemplate.split('\n');
+          // views/account/profile.jade (+)
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, facebookLinkUnlink);
-          output = profileTemplate.join('\n');
-          fs.writeFileSync(profileTemplateFile, output);
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-          // models/User.js
-          userModel = userModel.split('\n');
+          // models/User.js (+)
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index -1 , 0, facebookModel);
-          output = userModel.join('\n');
-          fs.writeFileSync(userModelFile, output);
+          fs.writeFileSync(userModelFile, userModel.join('\n'));
 
           console.log('Facebook authentication has been added.'.info);
         } else {
           console.log('Facebook authentication is already active.'.warn);
         }
       } else {
-        // config/passport.js (remove)
-        passportConfig = passportConfig.split('\n');
+
+        // config/passport.js (-)
         index = passportConfig.indexOf(facebookStrategyRequire);
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with Facebook.');
         passportConfig.splice(index, 47);
-        output = passportConfig.join('\n');
-        fs.writeFileSync(passportConfigFile, output);
+        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-        // views/account/login.jade (remove)
-        loginTemplate = loginTemplate.split('\n');
+        // views/account/login.jade (-)
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')");
         loginTemplate.splice(index, 4);
-        output = loginTemplate.join('\n');
-        fs.writeFileSync(loginTemplateFile, output);
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-        // views/account/profile.jade (remove)
-        profileTemplate = profileTemplate.split('\n');
+        // views/account/profile.jade (-)
         index = profileTemplate.indexOf("  if user.facebook");
         profileTemplate.splice(index - 1, 5);
-        output = profileTemplate.join('\n');
-        fs.writeFileSync(profileTemplateFile, output);
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-        // models/User.js
-        userModel = userModel.split('\n');
+        // models/User.js (-)
         index = userModel.indexOf('  facebook: String,');
         userModel.splice(index, 1);
-        output = userModel.join('\n');
-        fs.writeFileSync(userModelFile, output);
+        fs.writeFileSync(userModelFile, userModel.join('\n'));
 
         console.log('Facebook authentication has been removed.'.error);
       }
