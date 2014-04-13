@@ -1,12 +1,13 @@
+var _ = require('underscore');
+var colors = require('colors');
 var fs = require('fs');
 var inquirer = require('inquirer');
-var _ = require('underscore');
 var M = require('mstring')
 
 inquirer.prompt({
   type: 'list',
   name: 'category',
-  message: '☂  Hackathon Starter',
+  message: 'Hackathon Starter Generator:',
   choices: ['Authentication', 'API Examples', 'Exit'],
   filter: function(val) {
     return val.toLowerCase();
@@ -38,14 +39,17 @@ inquirer.prompt({
         });
       }
     }, function(answer) {
-      var passportFile = 'config/passport.js';
-      if (_.contains(answer.auth, 'facebook')) {
-        var search = "var FacebookStrategy = require('passport-facebook').Strategy;";
-        var strategy = M(function() {
-          /***
-          // Sign in with Facebook.
+      var passportConfig = 'config/passport.js';
+      var userModel  = 'models/User.js';
+      var profileTemplate = 'views/account/profile.jade';
+      var loginTemplate = 'views/account/login.jade';
 
-          passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, refreshToken, profile, done) {
+      var facebookStrategyRequire = "var FacebookStrategy = require('passport-facebook').Strategy;";
+      var facebookStrategy = M(function() {
+        /***
+         // Sign in with Facebook.
+
+         passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, refreshToken, profile, done) {
             if (req.user) {
               User.findOne({ $or: [{ facebook: profile.id }, { email: profile.email }] }, function(err, existingUser) {
                 if (existingUser) {
@@ -90,19 +94,35 @@ inquirer.prompt({
             }
           }));
 
-          ***/
-        });
-        var body = fs.readFileSync(passportFile).toString();
-        if (body.indexOf(search) < 0) {
+         ***/
+      });
+
+      var body = fs.readFileSync(passportConfig).toString();
+
+      if (_.contains(answer.auth, 'facebook')) {
+
+        if (body.indexOf(facebookStrategyRequire) < 0) {
           body = body.split('\n');
           var idx = body.lastIndexOf("var passport = require('passport');");
-          body.splice(idx + 1, 0, search);
+          body.splice(idx + 1, 0, facebookStrategyRequire);
           var idx2 = body.lastIndexOf("passport.deserializeUser(function(id, done) {");
-          body.splice(idx2 + 6, 0, strategy);
-
+          body.splice(idx2 + 6, 0, facebookStrategy);
           var output = body.join('\n');
-          fs.writeFileSync(passportFile, output);
+          fs.writeFileSync(passportConfig, output);
+          console.log('Facebook authentication has been added.');
+        } else {
+          console.log('Facebook authentication is already active.');
         }
+      } else {
+        // If unchecked, delete Facebook auth completely.
+        body = body.split('\n');
+        var idx = body.lastIndexOf(facebookStrategyRequire);
+        body.splice(idx, 1);
+        var idx2 = body.lastIndexOf('// Sign in with Facebook.');
+        body.splice(idx2, 47);
+        var output = body.join('\n');
+        fs.writeFileSync(passportConfig, output);
+        console.log('Facebook authentication has been deleted.');
       }
     });
   } else if (answer.category === 'api examples') {
