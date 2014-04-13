@@ -52,11 +52,6 @@ inquirer.prompt({
         });
       }
     }, function(answer) {
-      var passportConfig = 'config/passport.js';
-      var userModel = 'models/User.js';
-      var profileTemplate = 'views/account/profile.jade';
-      var loginTemplate = 'views/account/login.jade';
-
       var facebookStrategyRequire = "var FacebookStrategy = require('passport-facebook').Strategy;";
       var facebookStrategy = M(function() {
         /***
@@ -109,21 +104,54 @@ inquirer.prompt({
 
          ***/
       });
+      var facebookButton = M(function() {
+        /***
+               a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+                 i.fa.fa-facebook
+                 | Sign in with Facebook
+         ***/
+      });
 
-      var body = fs.readFileSync(passportConfig).toString();
+      var passportConfigFile = 'config/passport.js';
+      var userModelFile = 'models/User.js';
+      var profileTemplateFile = 'views/account/profile.jade';
+      var loginTemplateFile = 'views/account/login.jade';
+
+      var passportConfig = fs.readFileSync(passportConfigFile).toString();
+      var loginTemplate = fs.readFileSync(loginTemplateFile).toString();
+      var profileTemplate = fs.readFileSync(profileTemplateFile).toString();
+
+      var index,
+          output;
 
       if (_.contains(answer.auth, 'facebook')) {
-
         // Check if FacebookStrategy is already in use. If it isn't defined,
-        // append it to passport.js
-        if (body.indexOf(facebookStrategyRequire) < 0) {
-          body = body.split('\n');
-          var idx = body.lastIndexOf("var passport = require('passport');");
-          body.splice(idx + 1, 0, facebookStrategyRequire);
-          var idx2 = body.lastIndexOf("passport.deserializeUser(function(id, done) {");
-          body.splice(idx2 + 6, 0, facebookStrategy);
-          var output = body.join('\n');
-          fs.writeFileSync(passportConfig, output);
+        // add Facebook authentication.
+        if (passportConfig.indexOf(facebookStrategyRequire) < 0) {
+
+          // config/passport.js
+          passportConfig = passportConfig.split('\n');
+
+          index = passportConfig.lastIndexOf("var passport = require('passport');");
+          passportConfig.splice(index + 1, 0, facebookStrategyRequire);
+          index = passportConfig.lastIndexOf('passport.deserializeUser(function(id, done) {');
+          passportConfig.splice(index + 6, 0, facebookStrategy);
+          output = passportConfig.join('\n');
+          fs.writeFileSync(passportConfigFile, output);
+
+          // views/account/login.jade
+          loginTemplate = loginTemplate.split('\n');
+          loginTemplate.push(facebookButton);
+          output = loginTemplate.join('\n');
+          fs.writeFileSync(loginTemplateFile, output);
+
+          // views/account/profile.jade
+          profileTemplate = profileTemplate.split('\n');
+          profileTemplate.push(facebookButton);
+          output = loginTemplate.join('\n');
+          fs.writeFileSync(loginTemplateFile, output);
+
+
           console.log('Facebook authentication has been added.'.info);
         } else {
           // Otherwise, safely ignore it. No need to add it twice.
@@ -131,13 +159,23 @@ inquirer.prompt({
         }
       } else {
         // If checkbox is unchecked, delete Facebook authentication entirely.
-        body = body.split('\n');
-        var idx = body.lastIndexOf(facebookStrategyRequire);
-        body.splice(idx, 1);
-        var idx2 = body.lastIndexOf('// Sign in with Facebook.');
-        body.splice(idx2, 47);
-        var output = body.join('\n');
-        fs.writeFileSync(passportConfig, output);
+        passportConfig = passportConfig.split('\n');
+
+        index = passportConfig.lastIndexOf(facebookStrategyRequire);
+        passportConfig.splice(index, 1);
+
+        index = passportConfig.lastIndexOf('// Sign in with Facebook.');
+        passportConfig.splice(index, 47);
+
+        output = passportConfig.join('\n');
+        fs.writeFileSync(passportConfigFile, output);
+
+        loginTemplate = loginTemplate.split('\n');
+        index = loginTemplate.indexOf("      a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')");
+        loginTemplate.splice(index, 3);
+        output = loginTemplate.join('\n');
+        fs.writeFileSync(loginTemplateFile, output);
+
         console.log('Facebook authentication has been removed.'.error);
       }
     });
