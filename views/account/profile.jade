@@ -41,26 +41,24 @@ block content
           i.fa.fa-magnet
           | Update Profile
 
+  .page-header
+    h3 Change Password
 
-  if secrets.localAuth
-    .page-header
-      h3 Change Password
-
-    form.form-horizontal(action='/account/password', method='POST')
-      input(type='hidden', name='_csrf', value=_csrf)
-      .form-group
-        label.col-sm-3.control-label(for='password') New Password
-        .col-sm-4
-          input.form-control(type='password', name='password', id='password')
-      .form-group
-        label.col-sm-3.control-label(for='confirmPassword') Confirm Password
-        .col-sm-4
-          input.form-control(type='password', name='confirmPassword', id='confirmPassword')
-      .form-group
-        .col-sm-offset-3.col-sm-4
-          button.btn.btn.btn-primary(type='submit')
-            i.fa.fa-keyboard-o
-            | Change Password
+  form.form-horizontal(action='/account/password', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='password') New Password
+      .col-sm-4
+        input.form-control(type='password', name='password', id='password')
+    .form-group
+      label.col-sm-3.control-label(for='confirmPassword') Confirm Password
+      .col-sm-4
+        input.form-control(type='password', name='confirmPassword', id='confirmPassword')
+    .form-group
+      .col-sm-offset-3.col-sm-4
+        button.btn.btn.btn-primary(type='submit')
+          i.fa.fa-keyboard-o
+          | Change Password
 
   .page-header
     h3 Delete Account
