@@ -21,12 +21,9 @@ inquirer.prompt({
   type: 'list',
   name: 'category',
   message: 'Hackathon Starter Generator:',
-  choices: ['Authentication', 'API Examples', 'Exit'],
-  filter: function(val) {
-    return val.toLowerCase();
-  }
+  choices: ['Authentication', 'Exit']
 }, function(answer) {
-  if (answer.category === 'authentication') {
+  if (answer.category === 'Authentication') {
     inquirer.prompt({
       type: 'checkbox',
       message: 'Select Authentication Providers:',
@@ -45,11 +42,6 @@ inquirer.prompt({
           return 'You must choose at least one authentication method.';
         }
         return true;
-      },
-      filter: function(val) {
-        return _.map(val, function(auth) {
-          return auth.toLowerCase();
-        });
       }
     }, function(answer) {
       var facebookStrategyRequire = "var FacebookStrategy = require('passport-facebook').Strategy;";
@@ -134,7 +126,7 @@ inquirer.prompt({
 
       var index;
 
-      if (_.contains(answer.auth, 'facebook')) {
+      if (_.contains(answer.auth, 'FCodeacebook')) {
         if (passportConfig.indexOf(facebookStrategyRequire) < 0) {
 
           // config/passport.js (+)
