@@ -20,7 +20,7 @@ colors.setTheme({
 inquirer.prompt({
   type: 'list',
   name: 'category',
-  message: 'Hackathon Starter Generator:',
+  message: 'Hackathon Starter:',
   choices: ['☂ Authentication', '☱ Exit']
 }, function(answer) {
   if (answer.category.match('Authentication')) {
@@ -48,7 +48,7 @@ inquirer.prompt({
         new inquirer.Separator('Press ctrl+ to quit'),
       ],
       validate: function(answer) {
-        if (answer.length < 1) return 'You must choose at least one authentication method.';
+        if (answer.length < 1) return 'You must choose at least one authentication provider.';
         return true;
       }
     }, function(answer) {
@@ -187,6 +187,133 @@ inquirer.prompt({
         fs.writeFileSync(userModelFile, userModel.join('\n'));
 
         console.log('✗ Facebook authentication has been removed.'.error);
+      }
+
+      if (_.contains(answer.auth, 'GitHub')) {
+        var githubStrategyRequire = "var GitHubStrategy = require('passport-github').Strategy;";
+        var githubStrategy = M(function() {
+          /***
+          // Sign in with GitHub.
+
+          passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refreshToken, profile, done) {
+            if (req.user) {
+              User.findOne({ $or: [{ github: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+                if (existingUser) {
+                  req.flash('errors', { msg: 'There is already a GitHub account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                  done(err);
+                } else {
+                  User.findById(req.user.id, function(err, user) {
+                    user.github = profile.id;
+                    user.tokens.push({ kind: 'github', accessToken: accessToken });
+                    user.profile.name = user.profile.name || profile.displayName;
+                    user.profile.picture = user.profile.picture || profile._json.avatar_url;
+                    user.profile.location = user.profile.location || profile._json.location;
+                    user.profile.website = user.profile.website || profile._json.blog;
+                    user.save(function(err) {
+                      req.flash('info', { msg: 'GitHub account has been linked.' });
+                      done(err, user);
+                    });
+                  });
+                }
+              });
+            } else {
+              User.findOne({ github: profile.id }, function(err, existingUser) {
+                if (existingUser) return done(null, existingUser);
+                User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+                  if (existingEmailUser) {
+                    req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with GitHub manually from Account Settings.' });
+                    done(err);
+                  } else {
+                    var user = new User();
+                    user.email = profile._json.email;
+                    user.github = profile.id;
+                    user.tokens.push({ kind: 'github', accessToken: accessToken });
+                    user.profile.name = profile.displayName;
+                    user.profile.picture = profile._json.avatar_url;
+                    user.profile.location = profile._json.location;
+                    user.profile.website = profile._json.blog;
+                    user.save(function(err) {
+                      done(err, user);
+                    });
+                  }
+                });
+              });
+            }
+          }));
+
+          ***/
+        });
+
+        var githubButton = M(function() {
+          /***
+           a.btn.btn-block.btn-github.btn-social(href='/auth/github')
+             i.fa.fa-github
+             | Sign in with GitHub
+           ***/
+        });
+        var githubLinkUnlink = M(function() {
+          /***
+
+           if user.github
+             p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
+           else
+             p: a(href='/auth/github') Link your GitHub account
+           ***/
+        });
+        var githubModel = '  github: String,';
+
+        if (passportConfig.indexOf(githubStrategyRequire) < 0) {
+
+          // config/passport.js (+)
+          index = passportConfig.indexOf("var passport = require('passport');");
+          passportConfig.splice(index + 1, 0, githubStrategyRequire);
+          index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
+          passportConfig.splice(index + 6, 0, githubStrategy);
+          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+          // views/account/login.jade (+)
+          loginTemplate.push(githubButton);
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+          // views/account/profile.jade (+)
+          index = profileTemplate.indexOf('    h3 Linked Accounts');
+          profileTemplate.splice(index + 1, 0, githubLinkUnlink);
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+          // models/User.js (+)
+          index = userModel.indexOf('  tokens: Array,');
+          userModel.splice(index - 1, 0, githubModel);
+          fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+          console.log('✓ GitHub authentication has been added.'.info);
+        } else {
+          console.log('✓ GitHub authentication is already active.'.warn);
+        }
+      } else {
+
+        // config/passport.js (-)
+        index = passportConfig.indexOf(githubStrategyRequire);
+        passportConfig.splice(index, 1);
+        index = passportConfig.indexOf('// Sign in with GitHub.');
+        passportConfig.splice(index, 46);
+        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+        // views/account/login.jade (-)
+        index = loginTemplate.indexOf("      a.btn.btn-block.btn-github.btn-social(href='/auth/github')");
+        loginTemplate.splice(index, 4);
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+        // views/account/profile.jade (-)
+        index = profileTemplate.indexOf("  if user.github");
+        profileTemplate.splice(index - 1, 5);
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+        // models/User.js (-)
+        index = userModel.indexOf('  github: String,');
+        userModel.splice(index, 1);
+        fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+        console.log('✗ GitHub authentication has been removed.'.error);
       }
 
       if (_.contains(answer.auth, 'Google')) {
