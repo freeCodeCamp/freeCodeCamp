@@ -111,6 +111,15 @@ inquirer.prompt({
                  | Sign in with Facebook
          ***/
       });
+      var facebookLinkUnlink = M(function() {
+        /***
+
+           if user.facebook
+             p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
+           else
+             p: a(href='/auth/facebook') Link your Facebook account
+         ***/
+      });
 
       var passportConfigFile = 'config/passport.js';
       var userModelFile = 'models/User.js';
@@ -125,13 +134,9 @@ inquirer.prompt({
           output;
 
       if (_.contains(answer.auth, 'facebook')) {
-        // Check if FacebookStrategy is already in use. If it isn't defined,
-        // add Facebook authentication.
         if (passportConfig.indexOf(facebookStrategyRequire) < 0) {
-
-          // config/passport.js
+          // config/passport.js (add)
           passportConfig = passportConfig.split('\n');
-
           index = passportConfig.lastIndexOf("var passport = require('passport');");
           passportConfig.splice(index + 1, 0, facebookStrategyRequire);
           index = passportConfig.lastIndexOf('passport.deserializeUser(function(id, done) {');
@@ -139,42 +144,46 @@ inquirer.prompt({
           output = passportConfig.join('\n');
           fs.writeFileSync(passportConfigFile, output);
 
-          // views/account/login.jade
+          // views/account/login.jade (add)
           loginTemplate = loginTemplate.split('\n');
           loginTemplate.push(facebookButton);
           output = loginTemplate.join('\n');
           fs.writeFileSync(loginTemplateFile, output);
 
-          // views/account/profile.jade
+          // views/account/profile.jade (add)
           profileTemplate = profileTemplate.split('\n');
-          profileTemplate.push(facebookButton);
-          output = loginTemplate.join('\n');
-          fs.writeFileSync(loginTemplateFile, output);
-
+          index = profileTemplate.indexOf('    h3 Linked Accounts');
+          profileTemplate.splice(index + 1, 0, facebookLinkUnlink);
+          output = profileTemplate.join('\n');
+          fs.writeFileSync(profileTemplateFile, output);
 
           console.log('Facebook authentication has been added.'.info);
         } else {
-          // Otherwise, safely ignore it. No need to add it twice.
           console.log('Facebook authentication is already active.'.warn);
         }
       } else {
-        // If checkbox is unchecked, delete Facebook authentication entirely.
+        // config/passport.js (remove)
         passportConfig = passportConfig.split('\n');
-
         index = passportConfig.lastIndexOf(facebookStrategyRequire);
         passportConfig.splice(index, 1);
-
         index = passportConfig.lastIndexOf('// Sign in with Facebook.');
         passportConfig.splice(index, 47);
-
         output = passportConfig.join('\n');
         fs.writeFileSync(passportConfigFile, output);
 
+        // views/account/login.jade (remove)
         loginTemplate = loginTemplate.split('\n');
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')");
-        loginTemplate.splice(index, 3);
+        loginTemplate.splice(index, 4);
         output = loginTemplate.join('\n');
         fs.writeFileSync(loginTemplateFile, output);
+
+        // views/account/profile.jade (remove)
+        profileTemplate = profileTemplate.split('\n');
+        index = profileTemplate.indexOf("  if user.facebook");
+        profileTemplate.splice(index - 1, 5);
+        output = profileTemplate.join('\n');
+        fs.writeFileSync(profileTemplateFile, output);
 
         console.log('Facebook authentication has been removed.'.error);
       }
