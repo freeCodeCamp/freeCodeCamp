@@ -76,7 +76,7 @@ exports.getTumblr = function(req, res) {
     token: token.accessToken,
     token_secret: token.tokenSecret
   });
-  client.posts('goddess-of-imaginary-light.tumblr.com', { type: 'photo' }, function(err, data) {
+  client.posts('withinthisnightmare.tumblr.com', { type: 'photo' }, function(err, data) {
     res.render('api/tumblr', {
       title: 'Tumblr API',
       blog: data.blog,
