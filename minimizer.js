@@ -690,6 +690,257 @@ inquirer.prompt({
 
         console.log('✗ LinkedIn authentication has been removed.'.error);
       }
+
+      if (_.contains(answer.auth, 'LinkedIn')) {
+        var linkedinStrategyRequire = "var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;";
+        var linkedinStrategy = M(function() {
+          /***
+           // Sign in with LinkedIn.
+
+           passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
+            if (req.user) {
+              User.findOne({ $or: [
+                { linkedin: profile.id },
+                { email: profile._json.emailAddress }
+              ] }, function(err, existingUser) {
+                if (existingUser) {
+                  req.flash('errors', { msg: 'There is already a LinkedIn account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                  done(err);
+                } else {
+                  User.findById(req.user.id, function(err, user) {
+                    user.linkedin = profile.id;
+                    user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+                    user.profile.name = user.profile.name || profile.displayName;
+                    user.profile.location = user.profile.location || profile._json.location.name;
+                    user.profile.picture = user.profile.picture || profile._json.pictureUrl;
+                    user.profile.website = user.profile.website || profile._json.publicProfileUrl;
+                    user.save(function(err) {
+                      req.flash('info', { msg: 'LinkedIn account has been linked.' });
+                      done(err, user);
+                    });
+                  });
+                }
+              });
+            } else {
+              User.findOne({ linkedin: profile.id }, function(err, existingUser) {
+                if (existingUser) return done(null, existingUser);
+                User.findOne({ email: profile._json.emailAddress }, function(err, existingEmailUser) {
+                  if (existingEmailUser) {
+                    req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with LinkedIn manually from Account Settings.' });
+                    done(err);
+                  } else {
+                    var user = new User();
+                    user.linkedin = profile.id;
+                    user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+                    user.email = profile._json.emailAddress;
+                    user.profile.name = profile.displayName;
+                    user.profile.location = profile._json.location.name;
+                    user.profile.picture = profile._json.pictureUrl;
+                    user.profile.website = profile._json.publicProfileUrl;
+                    user.save(function(err) {
+                      done(err, user);
+                    });
+                  }
+                });
+              });
+            }
+          }));
+           ***/
+        });
+
+        var linkedinButton = M(function() {
+          /***
+           a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
+           i.fa.fa-linkedin
+           | Sign in with LinkedIn
+           ***/
+        });
+        var linkedinLinkUnlink = M(function() {
+          /***
+
+           if user.linkedin
+           p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
+           else
+           p: a(href='/auth/linkedin') Link your LinkedIn account
+           ***/
+        });
+        var linkedinModel = '  linkedin: String,';
+
+        if (passportConfig.indexOf(linkedinStrategyRequire) < 0) {
+
+          // config/passport.js (+)
+          index = passportConfig.indexOf("var passport = require('passport');");
+          passportConfig.splice(index + 1, 0, linkedinStrategyRequire);
+          index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
+          passportConfig.splice(index + 6, 0, linkedinStrategy);
+          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+          // views/account/login.jade (+)
+          loginTemplate.push(linkedinButton);
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+          // views/account/profile.jade (+)
+          index = profileTemplate.indexOf('    h3 Linked Accounts');
+          profileTemplate.splice(index + 1, 0, linkedinLinkUnlink);
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+          // models/User.js (+)
+          index = userModel.indexOf('  tokens: Array,');
+          userModel.splice(index - 1, 0, linkedinModel);
+          fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+          console.log('✓ LinkedIn authentication has been added.'.info);
+        } else {
+          console.log('✓ LinkedIn authentication is already active.'.warn);
+        }
+      } else {
+
+        // config/passport.js (-)
+        index = passportConfig.indexOf(linkedinStrategyRequire);
+        passportConfig.splice(index, 1);
+        index = passportConfig.indexOf('// Sign in with LinkedIn.');
+        passportConfig.splice(index, 51);
+        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+        // views/account/login.jade (-)
+        index = loginTemplate.indexOf("      a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')");
+        loginTemplate.splice(index, 4);
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+        // views/account/profile.jade (-)
+        index = profileTemplate.indexOf('  if user.linkedin');
+        profileTemplate.splice(index - 1, 5);
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+        // models/User.js (-)
+        index = userModel.indexOf('  linkedin: String,');
+        userModel.splice(index, 1);
+        fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+        console.log('✗ LinkedIn authentication has been removed.'.error);
+      }
+
+      if (_.contains(answer.auth, 'Local')) {
+        var localStrategyRequire = "var LocalStrategy = require('passport-local').Strategy;";
+        var localStrategy = M(function() {
+          /***
+          // Sign in using Email and Password.
+
+          passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, password, done) {
+            User.findOne({ email: email }, function(err, user) {
+              if (!user) return done(null, false, { message: 'Email ' + email + ' not found'});
+              user.comparePassword(password, function(err, isMatch) {
+                if (isMatch) {
+                  return done(null, user);
+                } else {
+                  return done(null, false, { message: 'Invalid email or password.' });
+                }
+              });
+            });
+          }));
+          ***/
+        });
+
+        var localLoginForm = M(function() {
+          /***
+            form(method='POST')
+              legend Sign In
+              input(type='hidden', name='_csrf', value=_csrf)
+              .col-sm-8.col-sm-offset-2
+                .form-group
+                  label.control-label(for='email') Email
+                  input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
+                .form-group
+                  label.control-label(for='password') Password
+                  input.form-control(type='password', name='password', id='password', placeholder='Password')
+                .form-group
+                  button.btn.btn-primary(type='submit')
+                    i.fa.fa-unlock-alt
+                    | Login
+                  a.btn.btn-link(href='/forgot') Forgot your password?
+                hr
+          ***/
+        });
+
+        var localChangePassword = M(function() {
+          /***
+            .page-header
+              h3 Change Password
+
+            form.form-horizontal(action='/account/password', method='POST')
+              input(type='hidden', name='_csrf', value=_csrf)
+              .form-group
+                label.col-sm-3.control-label(for='password') New Password
+                .col-sm-4
+                  input.form-control(type='password', name='password', id='password')
+              .form-group
+                label.col-sm-3.control-label(for='confirmPassword') Confirm Password
+                .col-sm-4
+                  input.form-control(type='password', name='confirmPassword', id='confirmPassword')
+              .form-group
+                .col-sm-offset-3.col-sm-4
+              button.btn.btn.btn-primary(type='submit')
+                i.fa.fa-keyboard-o
+                | Change Password
+           ***/
+        });
+
+        var localModel = '  password: String,';
+
+        if (passportConfig.indexOf(localStrategyRequire) < 0) {
+
+          // config/passport.js (+)
+          index = passportConfig.indexOf("var passport = require('passport');");
+          passportConfig.splice(index + 1, 0, localStrategyRequire);
+          index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
+          passportConfig.splice(index + 6, 0, localStrategy);
+          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+          // views/account/login.jade (+)
+          index = profileTemplate.indexOf('block content');
+          profileTemplate.splice(index + 1, 0, localLoginForm);
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+          // views/account/profile.jade (+)
+          index = profileTemplate.indexOf('          | Update Profile');
+          profileTemplate.splice(index + 1, 0, localChangePassword);
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+          // models/User.js (+)
+          index = userModel.indexOf('email: { type: String, unique: true, lowercase: true },');
+          userModel.splice(index, 0, localModel);
+          fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+          console.log('✓ Local authentication has been added.'.info);
+        } else {
+          console.log('✓ Local authentication is already active.'.warn);
+        }
+      } else {
+
+        // config/passport.js (-)
+        index = passportConfig.indexOf(localStrategyRequire);
+        passportConfig.splice(index, 1);
+        index = passportConfig.indexOf('// Sign in using Email and Password.');
+        passportConfig.splice(index, 15);
+        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+        // views/account/login.jade (-)
+        index = loginTemplate.indexOf("  form(method='POST')");
+        loginTemplate.splice(index, 15);
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+        // views/account/profile.jade (-)
+        index = profileTemplate.indexOf('    h3 Change Password');
+        profileTemplate.splice(index - 1, 19);
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+        // models/User.js (-)
+        index = userModel.indexOf('  password: String,');
+        userModel.splice(index, 1);
+        fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+        console.log('✗ Local authentication has been removed.'.error);
+      }
     });
   }
 });
