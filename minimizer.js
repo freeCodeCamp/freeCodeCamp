@@ -2,7 +2,20 @@ var _ = require('underscore');
 var colors = require('colors');
 var fs = require('fs');
 var inquirer = require('inquirer');
-var M = require('mstring')
+var M = require('mstring');
+
+colors.setTheme({
+  silly: 'rainbow',
+  input: 'grey',
+  verbose: 'cyan',
+  prompt: 'grey',
+  info: 'green',
+  data: 'grey',
+  help: 'cyan',
+  warn: 'yellow',
+  debug: 'blue',
+  error: 'red'
+});
 
 inquirer.prompt({
   type: 'list',
@@ -29,7 +42,7 @@ inquirer.prompt({
       ],
       validate: function(answer) {
         if (answer.length < 1) {
-          return "You must choose at least one authentication method.";
+          return 'You must choose at least one authentication method.';
         }
         return true;
       },
@@ -40,7 +53,7 @@ inquirer.prompt({
       }
     }, function(answer) {
       var passportConfig = 'config/passport.js';
-      var userModel  = 'models/User.js';
+      var userModel = 'models/User.js';
       var profileTemplate = 'views/account/profile.jade';
       var loginTemplate = 'views/account/login.jade';
 
@@ -101,6 +114,8 @@ inquirer.prompt({
 
       if (_.contains(answer.auth, 'facebook')) {
 
+        // Check if FacebookStrategy is already in use. If it isn't defined,
+        // append it to passport.js
         if (body.indexOf(facebookStrategyRequire) < 0) {
           body = body.split('\n');
           var idx = body.lastIndexOf("var passport = require('passport');");
@@ -109,12 +124,13 @@ inquirer.prompt({
           body.splice(idx2 + 6, 0, facebookStrategy);
           var output = body.join('\n');
           fs.writeFileSync(passportConfig, output);
-          console.log('Facebook authentication has been added.');
+          console.log('Facebook authentication has been added.'.info);
         } else {
-          console.log('Facebook authentication is already active.');
+          // Otherwise, safely ignore it. No need to add it twice.
+          console.log('Facebook authentication is already active.'.warn);
         }
       } else {
-        // If unchecked, delete Facebook auth completely.
+        // If checkbox is unchecked, delete Facebook authentication entirely.
         body = body.split('\n');
         var idx = body.lastIndexOf(facebookStrategyRequire);
         body.splice(idx, 1);
@@ -122,10 +138,8 @@ inquirer.prompt({
         body.splice(idx2, 47);
         var output = body.join('\n');
         fs.writeFileSync(passportConfig, output);
-        console.log('Facebook authentication has been deleted.');
+        console.log('Facebook authentication has been removed.'.error);
       }
     });
-  } else if (answer.category === 'api examples') {
-    console.log('selected api examples');
   }
 });
