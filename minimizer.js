@@ -21,20 +21,31 @@ inquirer.prompt({
   type: 'list',
   name: 'category',
   message: 'Hackathon Starter Generator:',
-  choices: ['Authentication', 'Exit']
+  choices: ['☂ Authentication', '☱ Exit']
 }, function(answer) {
-  if (answer.category === 'Authentication') {
+  if (answer.category.match('Authentication')) {
     inquirer.prompt({
       type: 'checkbox',
-      message: 'Select Authentication Providers:',
+      message: 'Select Authentication Providers',
       name: 'auth',
       choices: [
+        new inquirer.Separator(M(function() {
+          /***
+
+           ╔═════════════════════════════════════════════════════════════════╗
+           ║ THIS TOOL IS STILL IN EXPERIMENTAL STAGE! USE AT YOUR OWN RISK. ║
+           ║ ALWAYS USE VERSION CONTROL SYSTEM SO YOU COULD REVERT CHANGES.  ║
+           ╚═════════════════════════════════════════════════════════════════╝
+
+          ***/
+        })),
         { name: 'Facebook', checked: true },
         { name: 'GitHub', checked: true },
         { name: 'Google', checked: true },
         { name: 'Twitter', checked: true },
         { name: 'Local', checked: true },
-        { name: 'LinkedIn', checked: true }
+        { name: 'LinkedIn', checked: true },
+        new inquirer.Separator('Press ctrl+ to quit'),
       ],
       validate: function(answer) {
         if (answer.length < 1) return 'You must choose at least one authentication method.';
@@ -147,9 +158,9 @@ inquirer.prompt({
           userModel.splice(index - 1, 0, facebookModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
 
-          console.log('Facebook authentication has been added.'.info);
+          console.log('✓ Facebook authentication has been added.'.info);
         } else {
-          console.log('Facebook authentication is already active.'.warn);
+          console.log('✓ Facebook authentication is already active.'.warn);
         }
       } else {
 
@@ -175,7 +186,7 @@ inquirer.prompt({
         userModel.splice(index, 1);
         fs.writeFileSync(userModelFile, userModel.join('\n'));
 
-        console.log('Facebook authentication has been removed.'.error);
+        console.log('✗ Facebook authentication has been removed.'.error);
       }
 
       if (_.contains(answer.auth, 'Google')) {
@@ -272,9 +283,9 @@ inquirer.prompt({
           userModel.splice(index - 1, 0, googleModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
 
-          console.log('Google authentication has been added.'.info);
+          console.log('✓ Google authentication has been added.'.info);
         } else {
-          console.log('Google authentication is already active.'.warn);
+          console.log('✓ Google authentication is already active.'.warn);
         }
       } else {
 
@@ -300,7 +311,7 @@ inquirer.prompt({
         userModel.splice(index, 1);
         fs.writeFileSync(userModelFile, userModel.join('\n'));
 
-        console.log('Google authentication has been removed.'.error);
+        console.log('✗ Google authentication has been removed.'.error);
       }
     });
   }
