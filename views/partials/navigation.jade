@@ -19,9 +19,8 @@
         if !user
           li(class=title=='Login'?'active':undefined)
             a(href='/login') Login
-          if secrets.localAuth
-            li(class=title=='Create Account'?'active':undefined)
-              a(href='/signup') Create Account
+          li(class=title=='Create Account'?'active':undefined)
+            a(href='/signup') Create Account
         else
           li.dropdown(class=title=='Account Management'?'active':undefined)
             a.dropdown-toggle(href='#', data-toggle='dropdown')
