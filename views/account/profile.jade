@@ -41,26 +41,24 @@ block content
           i.fa.fa-magnet
           | Update Profile
 
+  .page-header
+    h3 Change Password
 
-  if secrets.localAuth
-    .page-header
-      h3 Change Password
-
-    form.form-horizontal(action='/account/password', method='POST')
-      input(type='hidden', name='_csrf', value=_csrf)
-      .form-group
-        label.col-sm-3.control-label(for='password') New Password
-        .col-sm-4
-          input.form-control(type='password', name='password', id='password')
-      .form-group
-        label.col-sm-3.control-label(for='confirmPassword') Confirm Password
-        .col-sm-4
-          input.form-control(type='password', name='confirmPassword', id='confirmPassword')
-      .form-group
-        .col-sm-offset-3.col-sm-4
-          button.btn.btn.btn-primary(type='submit')
-            i.fa.fa-keyboard-o
-            | Change Password
+  form.form-horizontal(action='/account/password', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    .form-group
+      label.col-sm-3.control-label(for='password') New Password
+      .col-sm-4
+        input.form-control(type='password', name='password', id='password')
+    .form-group
+      label.col-sm-3.control-label(for='confirmPassword') Confirm Password
+      .col-sm-4
+        input.form-control(type='password', name='confirmPassword', id='confirmPassword')
+    .form-group
+      .col-sm-offset-3.col-sm-4
+        button.btn.btn.btn-primary(type='submit')
+          i.fa.fa-keyboard-o
+          | Change Password
 
   .page-header
     h3 Delete Account
@@ -75,32 +73,27 @@ block content
   .page-header
     h3 Linked Accounts
 
-  if secrets.googleAuth
-    if user.google
-      p: a.text-danger(href='/account/unlink/google') Unlink your Google account
-    else
-      p: a(href='/auth/google') Link your Google account
+  if user.google
+    p: a.text-danger(href='/account/unlink/google') Unlink your Google account
+  else
+    p: a(href='/auth/google') Link your Google account
 
-  if secrets.facebookAuth
-    if user.facebook
-      p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
-    else
-      p: a(href='/auth/facebook') Link your Facebook account
+  if user.facebook
+    p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
+  else
+    p: a(href='/auth/facebook') Link your Facebook account
 
-  if secrets.twitterAuth
-    if user.twitter
-      p: a.text-danger(href='/account/unlink/twitter') Unlink your Twitter account
-    else
-      p: a(href='/auth/twitter') Link your Twitter account
+  if user.twitter
+    p: a.text-danger(href='/account/unlink/twitter') Unlink your Twitter account
+  else
+    p: a(href='/auth/twitter') Link your Twitter account
 
-  if secrets.githubAuth
-    if user.github
-      p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
-    else
-      p: a(href='/auth/github') Link your GitHub account
+  if user.github
+    p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
+  else
+    p: a(href='/auth/github') Link your GitHub account
 
-  if secrets.linkedinAuth
-    if user.linkedin
-      p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
-    else
-      p: a(href='/auth/linkedin') Link your LinkedIn account
+  if user.linkedin
+    p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
+  else
+    p: a(href='/auth/linkedin') Link your LinkedIn account
