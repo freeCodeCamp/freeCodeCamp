@@ -32,10 +32,10 @@ inquirer.prompt({
         new inquirer.Separator(M(function() {
           /***
 
-           ╔═════════════════════════════════════════════════════════════════╗
-           ║ THIS TOOL IS STILL IN EXPERIMENTAL STAGE! USE AT YOUR OWN RISK. ║
-           ║ ALWAYS USE VERSION CONTROL SYSTEM SO YOU COULD REVERT CHANGES.  ║
-           ╚═════════════════════════════════════════════════════════════════╝
+           ╔═════════════════════════════════════════════════════════════════════╗
+           ║ THIS TOOL IS STILL IN EXPERIMENTAL STAGE! USE AT YOUR OWN RISK.     ║
+           ║ ALWAYS USE VERSION CONTROL SYSTEM SO YOU COULD REVERT THE CHANGES.  ║
+           ╚═════════════════════════════════════════════════════════════════════╝
 
           ***/
         })),
@@ -46,7 +46,7 @@ inquirer.prompt({
         { name: 'Local', checked: true },
         { name: 'LinkedIn', checked: true },
         { name: 'Instagram' },
-        new inquirer.Separator('Press ctrl+ to quit'),
+        new inquirer.Separator('Press ctrl+ to quit')
       ],
       validate: function(answer) {
         if (answer.length < 1) return 'You must choose at least one authentication provider.';
@@ -165,7 +165,7 @@ inquirer.prompt({
 
           console.log('✓ Facebook authentication has been added.'.info);
         } else {
-          console.log('✓ Facebook authentication is already active.'.warn);
+          console.log('✓ Facebook authentication is already active.'.data);
         }
       } else {
 
@@ -292,7 +292,7 @@ inquirer.prompt({
 
           console.log('✓ GitHub authentication has been added.'.info);
         } else {
-          console.log('✓ GitHub authentication is already active.'.warn);
+          console.log('✓ GitHub authentication is already active.'.data);
         }
       } else {
 
@@ -417,7 +417,7 @@ inquirer.prompt({
 
           console.log('✓ Google authentication has been added.'.info);
         } else {
-          console.log('✓ Google authentication is already active.'.warn);
+          console.log('✓ Google authentication is already active.'.data);
         }
       } else {
 
@@ -538,7 +538,7 @@ inquirer.prompt({
 
           console.log('✓ Twitter authentication has been added.'.info);
         } else {
-          console.log('✓ Twitter authentication is already active.'.warn);
+          console.log('✓ Twitter authentication is already active.'.data);
         }
       } else {
 
@@ -667,7 +667,7 @@ inquirer.prompt({
 
           console.log('✓ LinkedIn authentication has been added.'.info);
         } else {
-          console.log('✓ LinkedIn authentication is already active.'.warn);
+          console.log('✓ LinkedIn authentication is already active.'.data);
         }
       } else {
 
@@ -796,7 +796,7 @@ inquirer.prompt({
 
           console.log('✓ LinkedIn authentication has been added.'.info);
         } else {
-          console.log('✓ LinkedIn authentication is already active.'.warn);
+          console.log('✓ LinkedIn authentication is already active.'.data);
         }
       } else {
 
@@ -918,7 +918,7 @@ inquirer.prompt({
 
           console.log('✓ Local authentication has been added.'.info);
         } else {
-          console.log('✓ Local authentication is already active.'.warn);
+          console.log('✓ Local authentication is already active.'.data);
         }
       } else {
 
@@ -1009,6 +1009,7 @@ inquirer.prompt({
               });
             }
           }));
+
           ***/
         });
 
@@ -1062,12 +1063,9 @@ inquirer.prompt({
           secrets.splice(index + 1, 0, instagramSecrets);
           fs.writeFileSync(secretsFile, secrets.join('\n'));
 
-          var exec = require('child_process').exec;
-          child = exec('npm install passport-instagram').stderr.pipe(process.stderr);
-
           console.log('✓ Instagram authentication has been added.'.info);
         } else {
-          console.log('✓ Instagram authentication is already active.'.warn);
+          console.log('✓ Instagram authentication is already active.'.data);
         }
       } else {
 
