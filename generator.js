@@ -45,6 +45,7 @@ inquirer.prompt({
         { name: 'Twitter', checked: true },
         { name: 'Local', checked: true },
         { name: 'LinkedIn', checked: true },
+        { name: 'Instagram' },
         new inquirer.Separator('Press ctrl+ to quit'),
       ],
       validate: function(answer) {
@@ -56,6 +57,8 @@ inquirer.prompt({
 
       var passportConfigFile = 'config/passport.js';
       var userModelFile = 'models/User.js';
+      var appFile = 'app.js';
+      var secretsFile = 'config/secrets.js';
       var profileTemplateFile = 'views/account/profile.jade';
       var loginTemplateFile = 'views/account/login.jade';
 
@@ -63,6 +66,8 @@ inquirer.prompt({
       var loginTemplate = fs.readFileSync(loginTemplateFile).toString().split('\n');
       var profileTemplate = fs.readFileSync(profileTemplateFile).toString().split('\n');
       var userModel = fs.readFileSync(userModelFile).toString().split('\n');
+      var app = fs.readFileSync(appFile).toString().split('\n');
+      var secrets = fs.readFileSync(secretsFile).toString().split('\n');
 
       if (_.contains(answer.auth, 'Facebook')) {
         var facebookStrategyRequire = "var FacebookStrategy = require('passport-facebook').Strategy;";
@@ -940,6 +945,155 @@ inquirer.prompt({
         fs.writeFileSync(userModelFile, userModel.join('\n'));
 
         console.log('✗ Local authentication has been removed.'.error);
+      }
+
+      if (_.contains(answer.auth, 'Instagram')) {
+        var instagramRoutes = M(function() {
+          /***
+          app.get('/auth/instagram', passport.authenticate('instagram'));
+          app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
+            res.redirect(req.session.returnTo || '/');
+          });
+          ***/
+        });
+        var instagramSecrets = M(function() {
+          /***
+            instagram: {
+              clientID: process.env.INSTAGRAM_ID || 'Your Client ID',
+              clientSecret: process.env.INSTAGRAM_SECRET || 'Your Client Secret',
+              callbackURL: '/auth/instagram/callback',
+              passReqToCallback: true
+            },
+
+          ***/
+        });
+        var instagramStrategyRequire = "var InstagramStrategy = require('passport-instagram').Strategy;";
+        var instagramStrategy = M(function() {
+          /***
+          // Sign in with Instagram.
+
+          passport.use(new InstagramStrategy(secrets.instagram,function(req, accessToken, refreshToken, profile, done) {
+            if (req.user) {
+              User.findOne({ $or: [{ instagram: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+                if (existingUser) {
+                  req.flash('errors', { msg: 'There is already an Instagram account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                  done(err);
+                } else {
+                  User.findById(req.user.id, function(err, user) {
+                    user.instagram = profile.id;
+                    user.tokens.push({ kind: 'instagram', accessToken: accessToken });
+                    user.profile.name = user.profile.name || profile.displayName;
+                    user.profile.picture = user.profile.picture || profile._json.data.profile_picture;
+                    user.profile.website = user.profile.website || profile._json.data.website;
+                    user.save(function(err) {
+                      req.flash('info', { msg: 'Instagram account has been linked.' });
+                      done(err, user);
+                    });
+                  });
+                }
+              });
+            } else {
+              User.findOne({ instagram: profile.id }, function(err, existingUser) {
+                if (existingUser) return done(null, existingUser);
+
+                var user = new User();
+                user.instagram = profile.id;
+                user.tokens.push({ kind: 'instagram', accessToken: accessToken });
+                user.profile.name = profile.displayName;
+                user.email = '';
+                user.profile.website = profile._json.data.website;
+                user.profile.picture = profile._json.data.profile_picture;
+                user.save(function(err) {
+                  done(err, user);
+                });
+              });
+            }
+          }));
+          ***/
+        });
+
+        var instagramButton = M(function() {
+          /***
+          a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
+            i.fa.fa-instagram
+            | Sign in with Instagram
+          ***/
+        });
+        var instagramLinkUnlink = M(function() {
+          /***
+          if user.instagram
+            p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
+          else
+            p: a(href='/auth/linkedin') Link your Instagram account
+          ***/
+        });
+        var instagramModel = '  instagram: String,';
+
+        if (passportConfig.indexOf(instagramStrategyRequire) < 0) {
+
+          // Add Instagram to passport.js
+          index = passportConfig.indexOf("var passport = require('passport');");
+          passportConfig.splice(index + 1, 0, instagramStrategyRequire);
+          index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
+          passportConfig.splice(index + 6, 0, instagramStrategy);
+          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+          // Add Instagram to login.jade
+          loginTemplate.push(instagramButton);
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+          // Add Instagram to profile.jade
+          index = profileTemplate.indexOf('    h3 Linked Accounts');
+          profileTemplate.splice(index + 1, 0, instagramLinkUnlink);
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+          // Add Instagram to User.js
+          index = userModel.indexOf('  tokens: Array,');
+          userModel.splice(index - 1, 0, instagramModel);
+          fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+          // Add Instagram to app.js
+          index = app.indexOf(' * OAuth routes for sign-in.');
+          app.splice(index + 2, 0, instagramRoutes);
+          fs.writeFileSync(appFile, app.join('\n'));
+
+          // Add Instagram to secrets.js
+          index = secrets.indexOf('module.exports = {');
+          secrets.splice(index + 1, 0, instagramSecrets);
+          fs.writeFileSync(secretsFile, secrets.join('\n'));
+
+          var exec = require('child_process').exec;
+          child = exec('npm install passport-instagram').stderr.pipe(process.stderr);
+
+          console.log('✓ Instagram authentication has been added.'.info);
+        } else {
+          console.log('✓ Instagram authentication is already active.'.warn);
+        }
+      } else {
+
+        // Remove Instagram from passport.js
+        index = passportConfig.indexOf(instagramStrategyRequire);
+        passportConfig.splice(index, 1);
+        index = passportConfig.indexOf('// Sign in with Instagram.');
+        passportConfig.splice(index, 40);
+        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+
+        // Remove Instagram from login.jade
+        index = loginTemplate.indexOf("      a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')");
+        loginTemplate.splice(index, 4);
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+
+        // Remove Instagram from profile.jade
+        index = profileTemplate.indexOf('  if user.instagram');
+        profileTemplate.splice(index - 1, 5);
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+        // Remove Instagram from User.js
+        index = userModel.indexOf('  instagram: String,');
+        userModel.splice(index, 1);
+        fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+        console.log('✗ Instagram authentication has been removed.'.error);
       }
     });
   }
