@@ -31,8 +31,10 @@ you still have to manually remove API examples that you don't need.
 <h4 align="center">Hackathon Starter Generator</h3>
 
 ![](https://lh6.googleusercontent.com/-61huCORb8w0/U0wq1xj3IiI/AAAAAAAAD_8/tnkfKnwOpGM/w1370-h962-no/Screenshot+2014-04-14+14.33.06.png)
+
 Table of Contents
 -----------------
+
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
@@ -48,33 +50,37 @@ Table of Contents
 - [How It Works](#how-it-works-mini-guides)
 - [Mongoose Cheatsheet](#mongoose-cheatsheet)
 - [Deployment](#deployment)
-- [Changelog](#changelog)
+- [CHANGELOG](#changelog)
 - [Contributing](#contributing)
 - [License](#license)
 
 Features
 --------
+
 - **Local Authentication** using Email and Password
 - **OAuth 1.0a Authentication** via Twitter
-- **OAuth 2.0 Authentication** via Facebook, Google, GitHub or LinkedIn
-- Awesome flash notifications with animations by [animate.css](http://daneden.github.io/animate.css/)
+- **OAuth 2.0 Authentication** via Facebook, Google, GitHub, LinkedIn or Instagram
+- Flash notifications with animations by [animate.css](http://daneden.github.io/animate.css/)
 - MVC Project Structure
-- Node.js clusters support
-- Rails 3.1-style asset pipeline (See FAQ)
-- LESS stylesheets (auto-compiled via Express middleware)
-- Bootstrap 3 + Flat UI + iOS7 Theme
+- Node.js [clusters](http://nodejs.org/api/cluster.html#cluster_cluster) support
+- Rails 3.1-style asset pipeline by [connect-assets](https://github.com/adunkman/connect-assets) (See FAQ)
+- LESS stylesheets (auto-compiled without any Gulp/Grunt hassle)
+- Bootstrap 3 + Flat UI + iOS7
 - Contact Form (powered by Mailgun or Sendgrid)
 - **Account Management**
  - Gravatar
  - Profile Details
  - Change Password
+ - Forgot Password
+ - Reset Password
  - Link multiple OAuth strategies to one account
  - Delete Account
- - Forgot Password
-- **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, PayPal, and more.
+- CSRF protection
+- **API Examples**: Facebook, Foursquare, Last.fm, Tumblr, Twitter, Stripe, LinkedIn and more.
 
 Prerequisites
 -------------
+
 - [MongoDB](http://www.mongodb.org/downloads)
 - [Node.js](http://nodejs.org)
 - Command Line Tools
@@ -84,9 +90,10 @@ Prerequisites
  - <img src="http://i1-news.softpedia-static.com/images/extra/LINUX/small/slw218news1.png" height="17">&nbsp;**Fedora**: `sudo yum groupinstall "Development Tools"`
  - <img src="https://en.opensuse.org/images/b/be/Logo-geeko_head.png" height="17">&nbsp;**OpenSUSE**: `sudo zypper install --type pattern devel_basis`
 
-:exclamation: **Note**: If you are new to Node.js or Express framework,
-I highly recommend watching [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU) screencast by Alex Ford that teaches Node and Express from scratch. Alternatively, here is another great tutorial for complete beginners - [Getting Started With Node.js, Express, MongoDB](http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/).
-
+:exclamation: **Note**: If you are new to Node or Express, I recommend to watch
+[Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU)
+screencast by Alex Ford that teaches Node and Express from scratch. Alternatively,
+here is another great tutorial for complete beginners - [Getting Started With Node.js, Express, MongoDB](http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/).
 
 Getting Started
 ---------------
