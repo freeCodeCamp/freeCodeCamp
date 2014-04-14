@@ -59,6 +59,9 @@
   "devDependencies": {
     "mocha": "^1.18.2",
     "chai": "^1.9.1",
-    "supertest": "^0.10.0"
+    "supertest": "^0.10.0",
+    "mstring": "^0.1.2",
+    "inquirer": "^0.4.1",
+    "colors": "^0.6.2"
   }
 }
