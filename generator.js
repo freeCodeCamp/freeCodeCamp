@@ -11,7 +11,7 @@ colors.setTheme({
   prompt: 'grey',
   info: 'green',
   data: 'grey',
-  help: 'cyan',
+  help: 'white',
   warn: 'yellow',
   debug: 'blue',
   error: 'red'
@@ -21,8 +21,73 @@ inquirer.prompt({
   type: 'list',
   name: 'category',
   message: 'Hackathon Starter:',
-  choices: ['☂ Authentication', '☱ Exit']
+  choices: ['☂ Authentication', '☎ Email Service', '☱ Exit']
 }, function(answer) {
+
+  if (answer.category.match('Email Service')) {
+    inquirer.prompt({
+      type: 'list',
+      name: 'email',
+      message: 'Choose Email Delivery Service:',
+      choices: ['SendGrid', 'Mailgun', 'Cancel']
+    }, function(answer) {
+
+      var index;
+
+      var contactControllerFile = 'controllers/contact.js';
+      var userControllerFile = 'controllers/user.js';
+
+      var contactController = fs.readFileSync(contactControllerFile).toString().split('\n');
+      var userController = fs.readFileSync(userControllerFile).toString().split('\n');
+
+      if (answer.email.match('SendGrid')) {
+
+        // Change SMPT Transport to SendGrid in controllers/contact.js
+        index = contactController.indexOf('var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+        contactController.splice(index + 1, 1, '  service: \'SendGrid\',');
+        contactController.splice(index + 3, 1, '       user: secrets.sendgrid.user,');
+        contactController.splice(index + 4, 1, '       pass: secrets.sendgrid.password');
+        fs.writeFileSync(contactControllerFile, contactController.join('\n'));
+
+        // Change SMPT Transport to SendGrid in controllers/user.js
+        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+        userController.splice(index + 1, 1, '        service: \'SendGrid\',');
+        userController.splice(index + 3, 1, '          user: secrets.sendgrid.user,');
+        userController.splice(index + 4, 1, '          pass: secrets.sendgrid.password');
+        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', 1);
+        userController.splice(index + 1, 1, '        service: \'SendGrid\',');
+        userController.splice(index + 3, 1, '          user: secrets.sendgrid.user,');
+        userController.splice(index + 4, 1, '          pass: secrets.sendgrid.password');
+        fs.writeFileSync(userControllerFile, userController.join('\n'));
+
+        console.log('✓ Email Delivery Service has been switched to'.info, 'SendGrid'.help);
+      }
+
+      if (answer.email.match('Mailgun')) {
+
+        // Change SMPT Transport to Mailgun in controllers/contact.js
+        index = contactController.indexOf('var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+        contactController.splice(index + 1, 1, '  service: \'Mailgun\',');
+        contactController.splice(index + 3, 1, '       user: secrets.mailgun.login,');
+        contactController.splice(index + 4, 1, '       pass: secrets.mailgun.password');
+        fs.writeFileSync(contactControllerFile, contactController.join('\n'));
+
+        // Change SMPT Transport to Mailgun in controllers/user.js
+        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+        userController.splice(index + 1, 1, '        service: \'Mailgun\',');
+        userController.splice(index + 3, 1, '          user: secrets.mailgun.login,');
+        userController.splice(index + 4, 1, '          pass: secrets.mailgun.password');
+        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', 1);
+        userController.splice(index + 1, 1, '        service: \'Mailgun\',');
+        userController.splice(index + 3, 1, '          user: secrets.mailgun.login,');
+        userController.splice(index + 4, 1, '          pass: secrets.mailgun.password');
+        fs.writeFileSync(userControllerFile, userController.join('\n'));
+
+        console.log('✓ Email Delivery Service has been switched to'.info, '@'.error + 'mail'.data + 'gun'.error);
+      }
+    });
+  }
+
   if (answer.category.match('Authentication')) {
     inquirer.prompt({
       type: 'checkbox',
