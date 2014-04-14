@@ -48,13 +48,13 @@
     "passport-twitter": "^1.0.2",
     "paypal-rest-sdk": "^0.7.0",
     "request": "^2.34.0",
+    "stripe": "^2.5.0",
     "tumblr.js": "^0.0.4",
     "twilio": "^1.6.0",
     "twit": "^1.1.12",
     "underscore": "^1.6.0",
     "uglify-js": "^2.4.12",
     "validator": "^3.8.0"
-
   },
   "devDependencies": {
     "mocha": "^1.18.2",
