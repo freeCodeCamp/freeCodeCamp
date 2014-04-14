@@ -45,6 +45,7 @@ Table of Contents
 - [How It Works](#how-it-works-mini-guides)
 - [Mongoose Cheatsheet](#mongoose-cheatsheet)
 - [Deployment](#deployment)
+- [Changelog](#changelog)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -1010,6 +1011,14 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 - To push your changes simply run `git push azure master`
  - **Note:** *You will be prompted for the password you created earlier*
 - On **Deployments** tab of your Windows Azure Web Site, you will see the deployment history
+
+Changelog
+---------
+2.0.0 - 04/15/2014
+
+- x
+- y
+- z
 
 Contributing
 ------------
