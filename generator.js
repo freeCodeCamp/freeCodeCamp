@@ -111,7 +111,7 @@ inquirer.prompt({
         { name: 'Local', checked: true },
         { name: 'LinkedIn', checked: true },
         { name: 'Instagram' },
-        new inquirer.Separator('Press ctrl+ to quit')
+        new inquirer.Separator('Press ctrl+c to cancel'.warn)
       ],
       validate: function(answer) {
         if (answer.length < 1) return 'You must choose at least one authentication provider.';
