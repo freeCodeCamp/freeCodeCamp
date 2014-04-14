@@ -1015,17 +1015,18 @@ inquirer.prompt({
 
         var instagramButton = M(function() {
           /***
-          a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
-            i.fa.fa-instagram
-            | Sign in with Instagram
+                a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
+                  i.fa.fa-instagram
+                  | Sign in with Instagram
           ***/
         });
         var instagramLinkUnlink = M(function() {
           /***
-          if user.instagram
-            p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
-          else
-            p: a(href='/auth/linkedin') Link your Instagram account
+
+            if user.instagram
+              p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
+            else
+              p: a(href='/auth/linkedin') Link your Instagram account
           ***/
         });
         var instagramModel = '  instagram: String,';
@@ -1055,7 +1056,7 @@ inquirer.prompt({
 
           // Add Instagram to app.js
           index = app.indexOf(' * OAuth routes for sign-in.');
-          app.splice(index + 2, 0, instagramRoutes);
+          app.splice(index + 3, 0, instagramRoutes);
           fs.writeFileSync(appFile, app.join('\n'));
 
           // Add Instagram to secrets.js
