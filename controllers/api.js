@@ -24,7 +24,7 @@ var clockwork = require('clockwork')({key: secrets.clockwork.apiKey});
 
 exports.getApi = function(req, res) {
   res.render('api/index', {
-    title: 'API Browser'
+    title: 'API Examples'
   });
 };
 
