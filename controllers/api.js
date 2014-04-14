@@ -13,6 +13,7 @@ var foursquare = require('node-foursquare')({ secrets: secrets.foursquare });
 var Github = require('github-api');
 var Twit = require('twit');
 var paypal = require('paypal-rest-sdk');
+var stripe =  require('stripe')(secrets.stripe.apiKey);
 var twilio = require('twilio')(secrets.twilio.sid, secrets.twilio.token);
 var Linkedin = require('node-linkedin')(secrets.linkedin.clientID, secrets.linkedin.clientSecret, secrets.linkedin.callbackURL);
 var clockwork = require('clockwork')({key: secrets.clockwork.apiKey});
@@ -386,6 +387,154 @@ exports.getSteam = function(req, res, next) {
 };
 
 /**
+ * GET /api/stripe
+ * Stripe API example.
+ */
+
+exports.getStripe = function(req, res, next) {
+    //Create a token for the CC
+    res.render('api/stripe/index', {
+        title: 'Stripe API'
+    });
+};
+
+/**
+ * GET /api/onetime
+ * Stripe One Time Charge API example.
+ */
+exports.getStripeOnetime = function(req, res, next) {
+    //Create a token for the CC
+    res.render('api/stripe/onetime', {
+        title: 'Stripe API'
+    });
+};
+
+/**
+ * POST /api/stripe/onetime
+ * @param ccNumber
+ * @param expMonth
+ * @param expYear
+ * @param ccNumber
+ * @param expMonth
+ * @param expYear
+ * @param customerName
+ * @param email
+ * @param chargeAmount
+ */
+exports.postStripeOnetime = function(req, res, next) {
+    stripe.tokens.create({
+      card: {
+        "number": req.body.ccNumber,
+        "exp_month": req.body.expMonth,
+        "exp_year": req.body.expYear,
+        "cvc": req.body.cvc
+      }
+    }, function(err, token) {
+        if (err) {
+            req.flash('errors', { msg: err.message });
+            return res.redirect('/api/stripe/onetime');
+        }
+        //Create a new customer
+        stripe.customers.create({
+            card: token.id,
+            description: req.body.customerName,
+            email: req.body.email
+        }).then(function(customer) {
+            //charge the customer
+            stripe.charges.create({
+                amount: req.body.chargeAmount * 100, // amount in cents
+                currency: "usd",
+                customer: customer.id
+            }, function(err, charge) {
+                if (err) {
+                    req.flash('errors', { msg: err.message });
+                    return res.redirect('/api/stripe/onetime');
+                }else{
+                    req.flash('success', { msg: 'Charged Successfully'});
+                    res.render('api/stripe/onetime', {
+                        title: 'Stipe API',
+                        customer: customer,
+                        charge: charge
+                    });
+                }
+            });
+        });
+    });
+};
+
+/**
+ * GET /api/newsubscriber
+ * Stripe Subscription API example.
+ */
+exports.getStripeNewSubscriber = function(req, res, next) {
+    stripe.plans.list(function(err, plans) {
+        res.render('api/stripe/newsubscriber', {
+            title: 'Stripe API',
+            plans: _.pluck(plans.data, 'name')
+        });
+    });
+};
+
+/**
+ * POST /api/stripe/newsubscriber
+ * @param ccNumber
+ * @param expMonth
+ * @param expYear
+ * @param ccNumber
+ * @param expMonth
+ * @param expYear
+ * @param customerName
+ * @param email
+ * @param plantype
+ */
+exports.postStripeNewSubscriber = function(req, res, next) {
+    console.log(req.body.plantype);
+    
+    stripe.tokens.create({
+      card: {
+        "number": req.body.ccNumber,
+        "exp_month": req.body.expMonth,
+        "exp_year": req.body.expYear,
+        "cvc": req.body.cvc
+      }
+    }, function(err, token) {
+        if (err) {
+            req.flash('errors', { msg: err.message });
+            return res.redirect('/api/stripe/newsubscriber');
+        }
+        //Create a new customer
+        stripe.customers.create({
+            card: token.id,
+            description: req.body.customerName,
+            email: req.body.email
+        }).then(function(customer) {
+            //charge the customer
+            stripe.customers.createSubscription(
+              customer.id,
+              {plan: req.body.plantype},
+              function(err, subscription) {
+                if (err) {
+                    req.flash('errors', { msg: err.message });
+                    return res.redirect('/api/stripe/newsubscriber');
+                }else{
+                    stripe.plans.list(function(err, plans) {
+                        req.flash('success', { msg: 'Subscribed Successfully'});
+                        res.render('api/stripe/newsubscriber', {
+                            title: 'Stipe API',
+                            customer: customer,
+                            subscription: subscription,
+                            plans: _.pluck(plans.data, 'name')
+                        });
+                    });
+                }
+              }
+            );
+        });
+    });
+};
+
+
+/**
  * GET /api/twilio
  * Twilio API example.
  */
@@ -410,7 +559,7 @@ exports.postTwilio = function(req, res, next) {
   };
   twilio.sendMessage(message, function(err, responseData) {
     if (err) return next(err.message);
-    req.flash('success', { msg: 'Text sent to ' + responseData.to + '.'})
+    req.flash('success', { msg: 'Text sent to ' + responseData.to + '.'});
     res.redirect('/api/twilio');
   });
 };

@@ -210,6 +210,13 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
 
 <hr>
 
+<img src="https://stripe.com/img/about/logos/logos/black@2x.png" width="200">
+- [Sign up](http://stripe.com) or log into your your [dashboard](https://manage.stripe.com)
+- Click on your profile and click on Account Settings
+- Then click on [API Keys](https://manage.stripe.com/account/apikeys) 
+- Copy the **Secret Key**. and add this into `config/secrets.js`
+<hr>
+
 <img src="https://www.paypalobjects.com/webstatic/developer/logo_paypal-developer_beta.png" width="200">
 - Visit [PayPal Developer](https://developer.paypal.com/)
 - Log in to your PayPal account
@@ -316,6 +323,7 @@ List of Packages
 | passport-linkedin-oauth2 | Sign-in with LinkedIn plugin. |
 | passport-oauth | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies. |
 | request | Simplified HTTP request library. |
+| stripe | Offical Stripe API library. |
 | tumblr.js | Tumblr API library. |
 | underscore | Handy JavaScript utlities library. |
 | uglify-js | Dependency for connect-assets library. |
