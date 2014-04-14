@@ -1,37 +1,36 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
-Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.svg?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter) [![Build Status](https://travis-ci.org/terinjokes/gulp-uglify.svg?branch=master)](https://travis-ci.org/terinjokes/gulp-uglify) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
-=================
+Hackathon Starter 2.0 [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.svg?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter) [![Build Status](https://travis-ci.org/sahat/hackathon-starter.svg?branch=master)](https://travis-ci.org/sahat/hackathon-starter) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
+=====================
 A boilerplate for **Node.js** web applications.
 
 **Live Demo**: http://hackathonstarter.herokuapp.com :octocat:
 
-If you have attended any hackathons in the past then you know how much time it takes to
-get a project started. Decide on an idea, pick a programming language, pick a web framework,
-pick a CSS framework. A while later, you will have an initial project up on GitHub, and only then can other team members
-start contributing. Or what about doing something as simple as OAuth 2.0 Authentication? You can spend hours
-on it if you are not familiar with how OAuth 2.0 works. *(As a side-note, over a year ago
-I had no idea WTF REST or OAuth were, or how to do a simple "Sign in with Facebook".
-It was a frustrating experience to say the least.)*
+If you have attended any hackathons in the past, then you know how much time it takes to
+get a project started: decide on what to build, pick a programming language, pick a web framework,
+pick a CSS framework. A while later, you might have an initial project up on GitHub and only then
+can other team members start contributing. Or how about doing something as simple as *Sign in with Facebook*
+authentication? You can spend hours on it if you are not familiar with how OAuth 2.0 works.
 
 When I started this project, my primary focus was on **simplicity** and **ease of use**.
 I also tried to make it as **generic** and **reusable** as possible to cover most use cases of hackathon web apps,
-without being too specific. In the worst case you can use this as a guide for your projects, if for example you are only
-interested in **Sign in with Google** authentication and nothing else.
+without being too specific. In the worst case you can use this as a learning guide for your projects,
+if for example you are only interested in **Sign in with Google** authentication and nothing else.
 
-Chances are, you might not need all 4 types of OAuth 1.0a/OAuth2 authentication methods, or all 12+ API examples. So, use what you need and delete what you don't need. As of recently, it is possible to selectively *enable/disable* authentication methods in `config/secrets.js`.
+Chances are you do not need all authentication methods or API examples. As of **Hackathon Starter 2.0**
+it is possible to selectively check which authentication methods you need by running `generator.js`. For now
+you still have to manually remove API examples that you don't need.
 
 <h4 align="center">Flatly Bootstrap Theme</h3>
 
-![Alt](https://lh6.googleusercontent.com/-NikjFtdyOq8/UsCv7URplAI/AAAAAAAADrE/a417u0cZU7Y/w1278-h958-no/Screenshot+2013-12-29+18.27.10.png)
+![](https://lh6.googleusercontent.com/-hcbsNx9tagc/U0xhUuAAPSI/AAAAAAAAEAg/kppd76NPORs/w1210-h952-no/Screenshot+2014-04-14+18.28.02.png)
 
 <h4 align="center">Default Theme</h3>
 
-![Alt](https://lh5.googleusercontent.com/-KmlaMLKGCqg/UuWt4MrXzeI/AAAAAAAAD6o/KUucObo33zU/w1170-h860-no/Screenshot+2014-01-26+19.52.03.png)
+![](https://lh5.googleusercontent.com/-KmlaMLKGCqg/UuWt4MrXzeI/AAAAAAAAD6o/KUucObo33zU/w1170-h860-no/Screenshot+2014-01-26+19.52.03.png)
 
 <h4 align="center">Hackathon Starter Generator</h3>
 
-[Alt](https://lh6.googleusercontent.com/-61huCORb8w0/U0wq1xj3IiI/AAAAAAAAD_8/tnkfKnwOpGM/w1370-h962-no/Screenshot+2014-04-14+14.33.06.png)
-
+![](https://lh6.googleusercontent.com/-61huCORb8w0/U0wq1xj3IiI/AAAAAAAAD_8/tnkfKnwOpGM/w1370-h962-no/Screenshot+2014-04-14+14.33.06.png)
 Table of Contents
 -----------------
 - [Features](#features)
@@ -213,7 +212,7 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
 <img src="https://stripe.com/img/about/logos/logos/black@2x.png" width="200">
 - [Sign up](http://stripe.com) or log into your your [dashboard](https://manage.stripe.com)
 - Click on your profile and click on Account Settings
-- Then click on [API Keys](https://manage.stripe.com/account/apikeys) 
+- Then click on [API Keys](https://manage.stripe.com/account/apikeys)
 - Copy the **Secret Key**. and add this into `config/secrets.js`
 <hr>
 
