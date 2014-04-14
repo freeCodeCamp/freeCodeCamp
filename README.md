@@ -28,6 +28,10 @@ Chances are, you might not need all 4 types of OAuth 1.0a/OAuth2 authentication 
 
 ![Alt](https://lh5.googleusercontent.com/-KmlaMLKGCqg/UuWt4MrXzeI/AAAAAAAAD6o/KUucObo33zU/w1170-h860-no/Screenshot+2014-01-26+19.52.03.png)
 
+<h4 align="center">Hackathon Starter Generator</h3>
+
+[Alt](https://lh6.googleusercontent.com/-61huCORb8w0/U0wq1xj3IiI/AAAAAAAAD_8/tnkfKnwOpGM/w1370-h962-no/Screenshot+2014-04-14+14.33.06.png)
+
 Table of Contents
 -----------------
 - [Features](#features)
@@ -266,7 +270,7 @@ Project Structure
 | **public/***                       | Static assets (fonts, css, js, img)                         |
 | **public/js/**application.js      | Declare which JavaScript files should be loaded, e.g. *jQuery*, *Bootstrap*, *main.js*.             |
 | **public/js/**main.js             | Place your client-side JavaScript here.                     |
-| **public/css**/styles.less         | Main stylesheet for your app.                               |
+| **public/css/**styles.less         | Main stylesheet for your app.                               |
 | **public/css/themes**/default.less | Some Bootstrap overrides to make it look prettier.          |
 | **views/account/**                | Templates for *login, password reset, signup, profile*.     |
 | **views/api/**                    | Templates for API Examples.                                 |
@@ -486,10 +490,9 @@ If you would like to use **Persona** authentication strategy, use the [pull requ
 a reference guide. I have explained my reasons why it could not be merged into the *Hackathon Starter* in
 [issue #63](https://github.com/sahat/hackathon-starter/issues/63#issuecomment-34898290).
 
-
-
 ### How do I switch SendGrid for another email delivery service?
-If you would like to use [Mailgun](http://mailgun.com) service instead of [SendGrid](http://sendgrid.com) for sending emails, open `controllers/contact.js`, then inside `var smtpTransport = nodemailer.createTransport('SMTP', { });` comment out or delete **SendGrid** code block, and uncomment **Mailgun** code block. You are not limited to just SendGrid or Mailgun. **Nodemailer** library supports many other providers, including GMail, iCloud, Hotmail, Yahoo, Mail.ru. Just don't forget to add *username* and *password* for that service provider to `secrets.js`.
+Run `node generator.js` and select **Email Service**. This change affects
+only *Contact Form* and and *Password Reset* pages.
 
 How It Works (mini guides)
 --------------------------
@@ -1012,9 +1015,13 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
  - **Note:** *You will be prompted for the password you created earlier*
 - On **Deployments** tab of your Windows Azure Web Site, you will see the deployment history
 
-Changelog
+CHANGELOG
 ---------
-2.0.0 - 04/15/2014
+## 2.0.0 (April 14, 2014)
+New Features
+
+Bug Fixes
+
 
 - x
 - y
