@@ -391,148 +391,36 @@ exports.getSteam = function(req, res, next) {
  * Stripe API example.
  */
 
-exports.getStripe = function(req, res, next) {
-    //Create a token for the CC
-    res.render('api/stripe/index', {
-        title: 'Stripe API'
-    });
+exports.getStripe = function(req, res) {
+  res.render('api/stripe', {
+    title: 'Stripe API'
+  });
 };
 
 /**
- * GET /api/onetime
- * Stripe One Time Charge API example.
+ * POST /api/stripe
+ * @param stipeToken
+ * @param stripeEmail
  */
-exports.getStripeOnetime = function(req, res, next) {
-    //Create a token for the CC
-    res.render('api/stripe/onetime', {
-        title: 'Stripe API'
-    });
-};
 
-/**
- * POST /api/stripe/onetime
- * @param ccNumber
- * @param expMonth
- * @param expYear
- * @param ccNumber
- * @param expMonth
- * @param expYear
- * @param customerName
- * @param email
- * @param chargeAmount
- */
-exports.postStripeOnetime = function(req, res, next) {
-    stripe.tokens.create({
-      card: {
-        "number": req.body.ccNumber,
-        "exp_month": req.body.expMonth,
-        "exp_year": req.body.expYear,
-        "cvc": req.body.cvc
-      }
-    }, function(err, token) {
-        if (err) {
-            req.flash('errors', { msg: err.message });
-            return res.redirect('/api/stripe/onetime');
-        }
-        //Create a new customer
-        stripe.customers.create({
-            card: token.id,
-            description: req.body.customerName,
-            email: req.body.email
-        }).then(function(customer) {
-            //charge the customer
-            stripe.charges.create({
-                amount: req.body.chargeAmount * 100, // amount in cents
-                currency: "usd",
-                customer: customer.id
-            }, function(err, charge) {
-                if (err) {
-                    req.flash('errors', { msg: err.message });
-                    return res.redirect('/api/stripe/onetime');
-                }else{
-                    req.flash('success', { msg: 'Charged Successfully'});
-                    res.render('api/stripe/onetime', {
-                        title: 'Stipe API',
-                        customer: customer,
-                        charge: charge
-                    });
-                }
-            });
-        });
-    });
-};
+exports.postStripe = function(req, res, next) {
+  var stripeToken = req.body.stripeToken;
+  var stripeEmail = req.body.stripeEmail;
 
-/**
- * GET /api/newsubscriber
- * Stripe Subscription API example.
- */
-exports.getStripeNewSubscriber = function(req, res, next) {
-    stripe.plans.list(function(err, plans) {
-        res.render('api/stripe/newsubscriber', {
-            title: 'Stripe API',
-            plans: _.pluck(plans.data, 'name')
-        });
-    });
+  stripe.charges.create({
+    amount: 395,
+    currency: 'usd',
+    card: stripeToken,
+    description: stripeEmail
+  }, function(err, charge) {
+    if (err && err.type === 'StripeCardError') {
+      req.flash('errors', { msg: 'Your card has been declined.'});
+      res.redirect('/api/stripe');
+    }
+    req.flash('success', { msg: 'Your card has been charged successfully.'});
+    res.redirect('/api/stripe');
+  });
 };
-
-/**
- * POST /api/stripe/newsubscriber
- * @param ccNumber
- * @param expMonth
- * @param expYear
- * @param ccNumber
- * @param expMonth
- * @param expYear
- * @param customerName
- * @param email
- * @param plantype
- */
-exports.postStripeNewSubscriber = function(req, res, next) {
-    console.log(req.body.plantype);
-    
-    stripe.tokens.create({
-      card: {
-        "number": req.body.ccNumber,
-        "exp_month": req.body.expMonth,
-        "exp_year": req.body.expYear,
-        "cvc": req.body.cvc
-      }
-    }, function(err, token) {
-        if (err) {
-            req.flash('errors', { msg: err.message });
-            return res.redirect('/api/stripe/newsubscriber');
-        }
-        //Create a new customer
-        stripe.customers.create({
-            card: token.id,
-            description: req.body.customerName,
-            email: req.body.email
-        }).then(function(customer) {
-            //charge the customer
-            stripe.customers.createSubscription(
-              customer.id,
-              {plan: req.body.plantype},
-              function(err, subscription) {
-                if (err) {
-                    req.flash('errors', { msg: err.message });
-                    return res.redirect('/api/stripe/newsubscriber');
-                }else{
-                    stripe.plans.list(function(err, plans) {
-                        req.flash('success', { msg: 'Subscribed Successfully'});
-                        res.render('api/stripe/newsubscriber', {
-                            title: 'Stipe API',
-                            customer: customer,
-                            subscription: subscription,
-                            plans: _.pluck(plans.data, 'name')
-                        });
-                    });
-                }
-              }
-            );
-        });
-    });
-};
-
 
 /**
  * GET /api/twilio
