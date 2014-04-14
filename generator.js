@@ -97,10 +97,11 @@ inquirer.prompt({
         new inquirer.Separator(M(function() {
           /***
 
-           ╔═════════════════════════════════════════════════════════════════════╗
-           ║ THIS TOOL IS STILL IN EXPERIMENTAL STAGE! USE AT YOUR OWN RISK.     ║
-           ║ ALWAYS USE VERSION CONTROL SYSTEM SO YOU COULD REVERT THE CHANGES.  ║
-           ╚═════════════════════════════════════════════════════════════════════╝
+           ╔══════════════════════════════════════════════════════════════════════╗
+           ║ THIS TOOL IS STILL IN EXPERIMENTAL STAGE! USE AT YOUR OWN RISK.      ║
+           ║ ALWAYS USE VERSION CONTROL SYSTEM SO YOU COULD REVERT THE CHANGES.   ║
+           ║ REPORT BUGS AT HTTPS://GITHUB.COM/SAHAT/HACKATHON-STARTER/ISSUES/NEW ║
+           ╚══════════════════════════════════════════════════════════════════════╝
 
           ***/
         })),
