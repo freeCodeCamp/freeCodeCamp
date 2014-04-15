@@ -743,6 +743,11 @@ inquirer.prompt({
           userModel.splice(index - 1, 0, linkedinModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
 
+          // Add LinkedIn to app.js
+          index = app.indexOf(' * OAuth routes for sign-in.');
+          app.splice(index + 3, 0, linkedinRoutes);
+          fs.writeFileSync(appFile, app.join('\n'));
+
           console.log('✓ LinkedIn authentication has been added.'.info);
         } else {
           console.log('✓ LinkedIn authentication is already active.'.data);
@@ -768,6 +773,11 @@ inquirer.prompt({
         index = profileTemplate.indexOf('  if user.linkedin');
         profileTemplate.splice(index - 1, 5);
         fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+        // Remove LinkedIn from app.js
+        index = app.indexOf("app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));");
+        app.splice(index, 4);
+        fs.writeFileSync(appFile, app.join('\n'));
 
         // Remove LinkedIn from User.js
         index = userModel.indexOf('  linkedin: String,');
