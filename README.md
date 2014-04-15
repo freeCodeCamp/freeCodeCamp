@@ -64,7 +64,7 @@ Features
 
 - **Local Authentication** using Email and Password
 - **OAuth 1.0a Authentication** via Twitter
-- **OAuth 2.0 Authentication** via Facebook, Google, GitHub, LinkedIn or Instagram
+- **OAuth 2.0 Authentication** via Facebook, Google, GitHub, LinkedIn, Instagram
 - Flash notifications with animations by [animate.css](http://daneden.github.io/animate.css/)
 - MVC Project Structure
 - Node.js [clusters](http://nodejs.org/api/cluster.html#cluster_cluster) support
@@ -278,31 +278,36 @@ The same goes for other providers.
 Project Structure
 -----------------
 
-| Name          | Description   |
-| ------------- |:-------------:|
-| **config**/passport.js      | Passport Local and OAuth strategies + Passport middleware.         |
-| **config**/secrets.js    | Your API keys, tokens, passwords and database URL.                    |
-| **controllers**/api.js | Controller for /api route and all api examples.                         |
-| **controllers**/contact.js | Controller for contact form.                                        |
-| **controllers**/home.js | Controller for home page (index).                                      |
-| **controllers**/user.js | Controller for user account management.                           |
-| **models**/User.js | Mongoose schema and model for User.                                         |
-| **public/***                       | Static assets (fonts, css, js, img)                         |
-| **public/js/**application.js      | Declare which JavaScript files should be loaded, e.g. *jQuery*, *Bootstrap*, *main.js*.             |
-| **public/js/**main.js             | Place your client-side JavaScript here.                     |
-| **public/css/**styles.less         | Main stylesheet for your app.                               |
+| Name                               | Description                                                 |
+| ---------------------------------- |:-----------------------------------------------------------:|
+| **config**/passport.js             | Passport Local and OAuth strategies, plus login middleware. |
+| **config**/secrets.js              | Your API keys, tokens, passwords and database URL.          |
+| **controllers**/api.js             | Controller for /api route and all api examples.             |
+| **controllers**/contact.js         | Controller for contact form.                                |
+| **controllers**/home.js            | Controller for home page (index).                           |
+| **controllers**/user.js            | Controller for user account management.                     |
+| **models**/User.js                 | Mongoose schema and model for User.                         |
+| **public**/                        | Static assets (fonts, css, js, img).                        |
+| **public**/**js**/application.js   | Specify client-side JavaScript dependencies.                |
+| **public**/**js**/main.js          | Place your client-side JavaScript here.                     |
+| **public**/**css**/styles.less     | Main stylesheet for your app.                               |
 | **public/css/themes**/default.less | Some Bootstrap overrides to make it look prettier.          |
-| **views/account/**                | Templates for *login, password reset, signup, profile*.     |
-| **views/api/**                    | Templates for API Examples.                                 |
+| **views/account**/                 | Templates for *login, password reset, signup, profile*.     |
+| **views/api**/                     | Templates for API Examples.                                 |
 | **views/partials**/flash.jade      | Error, info and success flash notifications.                |
 | **views/partials**/navigation.jade | Navbar partial template.                                    |
 | **views/partials**/footer.jade     | Footer partial template.                                    |
 | **views**/layout.jade              | Base template.                                              |
 | **views**/home.jade                | Home page template.                                         |
 | app.js                             | Main application file.                                      |
-| cluster_app.js                     | Runs multiple instances of `app.js` using <a href="http://nodejs.org/api/cluster.html" target="_blank">Node.js clusters</a>.|
+| cluster_app.js                     | Runs multiple instances of `app.js` Node.js clusters.       |
+| generator.js                       | Tool for adding/removing authentications and other things.  |
 
-:exclamation: **Note:** There is no preference how you name or structure your views. You could place all your templates in a top-level `views` directory without having a nested folder structure, if that makes things easier for you. Just don't forget to update `extends ../layout`  and corresponding `res.render()` method in controllers.
+:exclamation: **Note:** There is no preference how you name or structure your views.
+You could place all your templates in a top-level `views` directory without
+having a nested folder structure, if that makes things easier for you.
+Just don't forget to update `extends ../layout`  and corresponding
+`res.render()` paths in controllers.
 
 List of Packages
 ----------------
