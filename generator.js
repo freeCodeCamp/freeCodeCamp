@@ -112,11 +112,7 @@ inquirer.prompt({
         { name: 'LinkedIn', checked: true },
         { name: 'Instagram' },
         new inquirer.Separator('Press ctrl+c to cancel'.warn)
-      ],
-      validate: function(answer) {
-        if (answer.length < 1) return 'You must choose at least one authentication provider.';
-        return true;
-      }
+      ]
     }, function(answer) {
       var index;
 
