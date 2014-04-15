@@ -640,97 +640,97 @@ inquirer.prompt({
       var linkedinStrategyRequire = "var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;";
       var linkedinStrategy = M(function() {
         /***
-         // Sign in with LinkedIn.
+        // Sign in with LinkedIn.
 
-         passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
-            if (req.user) {
-              User.findOne({ $or: [
-                { linkedin: profile.id },
-                { email: profile._json.emailAddress }
-              ] }, function(err, existingUser) {
-                if (existingUser) {
-                  req.flash('errors', { msg: 'There is already a LinkedIn account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+        passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
+          if (req.user) {
+            User.findOne({ $or: [
+              { linkedin: profile.id },
+              { email: profile._json.emailAddress }
+            ] }, function(err, existingUser) {
+              if (existingUser) {
+                req.flash('errors', { msg: 'There is already a LinkedIn account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                done(err);
+              } else {
+                User.findById(req.user.id, function(err, user) {
+                  user.linkedin = profile.id;
+                  user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+                  user.profile.name = user.profile.name || profile.displayName;
+                  user.profile.location = user.profile.location || profile._json.location.name;
+                  user.profile.picture = user.profile.picture || profile._json.pictureUrl;
+                  user.profile.website = user.profile.website || profile._json.publicProfileUrl;
+                  user.save(function(err) {
+                    req.flash('info', { msg: 'LinkedIn account has been linked.' });
+                    done(err, user);
+                  });
+                });
+              }
+            });
+          } else {
+            User.findOne({ linkedin: profile.id }, function(err, existingUser) {
+              if (existingUser) return done(null, existingUser);
+              User.findOne({ email: profile._json.emailAddress }, function(err, existingEmailUser) {
+                if (existingEmailUser) {
+                  req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with LinkedIn manually from Account Settings.' });
                   done(err);
                 } else {
-                  User.findById(req.user.id, function(err, user) {
-                    user.linkedin = profile.id;
-                    user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
-                    user.profile.name = user.profile.name || profile.displayName;
-                    user.profile.location = user.profile.location || profile._json.location.name;
-                    user.profile.picture = user.profile.picture || profile._json.pictureUrl;
-                    user.profile.website = user.profile.website || profile._json.publicProfileUrl;
-                    user.save(function(err) {
-                      req.flash('info', { msg: 'LinkedIn account has been linked.' });
-                      done(err, user);
-                    });
+                  var user = new User();
+                  user.linkedin = profile.id;
+                  user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+                  user.email = profile._json.emailAddress;
+                  user.profile.name = profile.displayName;
+                  user.profile.location = profile._json.location.name;
+                  user.profile.picture = profile._json.pictureUrl;
+                  user.profile.website = profile._json.publicProfileUrl;
+                  user.save(function(err) {
+                    done(err, user);
                   });
                 }
               });
-            } else {
-              User.findOne({ linkedin: profile.id }, function(err, existingUser) {
-                if (existingUser) return done(null, existingUser);
-                User.findOne({ email: profile._json.emailAddress }, function(err, existingEmailUser) {
-                  if (existingEmailUser) {
-                    req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with LinkedIn manually from Account Settings.' });
-                    done(err);
-                  } else {
-                    var user = new User();
-                    user.linkedin = profile.id;
-                    user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
-                    user.email = profile._json.emailAddress;
-                    user.profile.name = profile.displayName;
-                    user.profile.location = profile._json.location.name;
-                    user.profile.picture = profile._json.pictureUrl;
-                    user.profile.website = profile._json.publicProfileUrl;
-                    user.save(function(err) {
-                      done(err, user);
-                    });
-                  }
-                });
-              });
-            }
-          }));
-         ***/
+            });
+          }
+        }));
+        ***/
       });
 
       var linkedinButton = M(function() {
         /***
-         a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
-           i.fa.fa-linkedin
-           | Sign in with LinkedIn
-         ***/
+              a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
+                i.fa.fa-linkedin
+                | Sign in with LinkedIn
+        ***/
       });
       var linkedinLinkUnlink = M(function() {
         /***
 
-         if user.linkedin
-           p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
-         else
-           p: a(href='/auth/linkedin') Link your LinkedIn account
-         ***/
+          if user.linkedin
+            p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
+          else
+            p: a(href='/auth/linkedin') Link your LinkedIn account
+        ***/
       });
       var linkedinModel = '  linkedin: String,';
 
       if (_.contains(answer.auth, 'LinkedIn')) {
         if (passportConfig.indexOf(linkedinStrategyRequire) < 0) {
 
-          // config/passport.js (+)
+          // Add LinkedIn to passport.js
           index = passportConfig.indexOf("var passport = require('passport');");
           passportConfig.splice(index + 1, 0, linkedinStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, linkedinStrategy);
           fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-          // views/account/login.jade (+)
+          // Add LinkedIn to login.jade
           loginTemplate.push(linkedinButton);
           fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-          // views/account/profile.jade (+)
+          // Add LinkedIn to profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, linkedinLinkUnlink);
           fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-          // models/User.js (+)
+          // Add LinkedIn to models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, linkedinModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
@@ -744,7 +744,7 @@ inquirer.prompt({
         // Check if we have LinkedIn authentication to begin with.
         if (passportConfig.indexOf(linkedinStrategyRequire) < 0) return;
 
-        // Removed LinkedIn from config/passport.js
+        // Removed LinkedIn from passport.js
         index = passportConfig.indexOf(linkedinStrategyRequire);
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with LinkedIn.');
@@ -890,7 +890,7 @@ inquirer.prompt({
 
         console.log('✗ Local authentication has been removed.'.error);
       }
-      
+
       //////////////////////////////
       // Instagram Authentication //
       //////////////////////////////
