@@ -311,44 +311,59 @@ Just don't forget to update `extends ../layout`  and corresponding
 
 List of Packages
 ----------------
-| Package       | Description   |
-| ------------- |:-------------:|
-| async         | Utility library that provides asynchronous control flow. |
-| bcrypt-nodejs | Library for hashing and salting user passwords. |
-| cheerio | Scrape web pages using jQuery-style syntax.  |
-| clockwork | Clockwork SMS API library. |
-| connect-mongo | MongoDB session store for Express. |
-| connect-assets | Compiles LESS stylesheets, concatenates/minifies JavaScript. |
-| csso | Dependency for connect-assets library. |
-| express | Web framework. |
-| express-flash | Provides flash messages for Express. Uses connect-flash internally. |
-| express-validator | Easy form validation for Express. Uses node-validator internally. |
-| fbgraph | Facebook Graph API library |
-| github-api | GitHub API library |
-| jade | Template engine for node.js |
-| lastfm | Last.fm API library |
-| less | LESS compiler. Used implicitly by connect-assets. |
-| mongoose | MongoDB object modeling tool |
-| node-foursquare | Foursquare API library |
-| node-linkedin | LinkedIn API library |
-| nodemailer | Node.js library for sending emails |
-| passport | Simple and elegant authentication library for node.js |
-| passport-facebook | Sign-in with Facebook plugin. |
-| passport-github | Sign-in with GitHub plugin. |
-| passport-google-oauth | Sign-in with Google plugin. |
-| passport-twitter | Sign-in with Twitter plugin. |
-| passport-local | Sign-in with Username and Password plugin. |
-| passport-linkedin-oauth2 | Sign-in with LinkedIn plugin. |
-| passport-oauth | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies. |
-| request | Simplified HTTP request library. |
-| stripe | Offical Stripe API library. |
-| tumblr.js | Tumblr API library. |
-| underscore | Handy JavaScript utlities library. |
-| uglify-js | Dependency for connect-assets library. |
-| paypal-rest-sdk | PayPal API library. |
-| twilio | Twilio API library. |
-| twit   | Twitter API library. |
-| validator | Used in conjunction with express-validator in **controllers/api.js**. |
+
+| Package                         | Description   |
+| ------------------------------- |:-------------:|
+| async                           | Utility library that provides asynchronous control flow. |
+| bcrypt-nodejs                   | Library for hashing and salting user passwords. |
+| cheerio                         | Scrape web pages using jQuery-style syntax.  |
+| clockwork                       | Clockwork SMS API library. |
+| connect-assets                  | Compiles LESS stylesheets, concatenates & minifies JavaScript. |
+| connect-mongo                   | MongoDB session store for Express. |
+| csso                            | Dependency for connect-assets library to minify CSS. |
+| express                         | Node.js web framework. |
+| body-parser                     | Express 4.0 middleware. |
+| cookie-parser                   | Express 4.0 middleware. |
+| static-favicon                  | Express 4.0 middleware. |
+| express-session                 | Express 4.0 middleware. |
+| morgan                          | Express 4.0 middleware. |
+| csurf                           | Express 4.0 middleware. |
+| compression                     | Express 4.0 middleware. |
+| errorhandler                    | Express 4.0 middleware. |
+| method-override                 | Express 4.0 middleware. |
+| express-flash                   | Provides flash messages for Express. |
+| express-validator               | Easy form validation for Express. |
+| fbgraph                         | Facebook Graph API library. |
+| github-api                      | GitHub API library. |
+| jade                            | Template engine for Express. |
+| lastfm                          | Last.fm API library. |
+| less                            | LESS compiler. Used implicitly by connect-assets. |
+| mongoose                        | MongoDB ODM. |
+| node-foursquare                 | Foursquare API library. |
+| node-linkedin                   | LinkedIn API library. |
+| nodemailer                      | Node.js library for sending emails. |
+| passport                        | Simple and elegant authentication library for node.js |
+| passport-facebook               | Sign-in with Facebook plugin. |
+| passport-github                 | Sign-in with GitHub plugin. |
+| passport-google-oauth           | Sign-in with Google plugin. |
+| passport-twitter                | Sign-in with Twitter plugin. |
+| passport-local                  | Sign-in with Username and Password plugin. |
+| passport-linkedin-oauth2        | Sign-in with LinkedIn plugin. |
+| passport-oauth                  | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies. |
+| request                         | Simplified HTTP request library. |
+| stripe                          | Offical Stripe API library. |
+| tumblr.js                       | Tumblr API library. |
+| twilio                          | Twilio API library. |
+| twit                            | Twitter API library. |
+| underscore                      | Handy JavaScript utlities library. |
+| uglify-js                       | Dependency for connect-assets library to minify JS. |
+| validator                       | Used in conjunction with express-validator in **controllers/api.js**. |
+| mocha                           | Test framework. |
+| chai                            | BDD/TDD assetion library. |
+| supertest                       | HTTP assertions library. |
+| mstring                         | Multi-line strings for generator. |
+| inquirer                        | Interactive command line interface for generator. |
+| colors                          | Pretty output colors for generator. |
 
 Useful Tools
 ------------
