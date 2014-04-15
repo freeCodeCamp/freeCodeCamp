@@ -637,6 +637,14 @@ inquirer.prompt({
       // LinkedIn Authentication //
       /////////////////////////////
 
+      var linkedinRoutes = M(function() {
+        /***
+        app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
+        app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRedirect: '/login' }), function(req, res) {
+          res.redirect(req.session.returnTo || '/');
+        });
+        ***/
+      });
       var linkedinStrategyRequire = "var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;";
       var linkedinStrategy = M(function() {
         /***
@@ -897,83 +905,83 @@ inquirer.prompt({
 
       var instagramRoutes = M(function() {
         /***
-         app.get('/auth/instagram', passport.authenticate('instagram'));
-         app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
-            res.redirect(req.session.returnTo || '/');
-          });
-         ***/
+        app.get('/auth/instagram', passport.authenticate('instagram'));
+        app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
+          res.redirect(req.session.returnTo || '/');
+        });
+        ***/
       });
       var instagramSecrets = M(function() {
         /***
-            instagram: {
-              clientID: process.env.INSTAGRAM_ID || 'Your Client ID',
-              clientSecret: process.env.INSTAGRAM_SECRET || 'Your Client Secret',
-              callbackURL: '/auth/instagram/callback',
-              passReqToCallback: true
-            },
+           instagram: {
+             clientID: process.env.INSTAGRAM_ID || 'Your Client ID',
+             clientSecret: process.env.INSTAGRAM_SECRET || 'Your Client Secret',
+             callbackURL: '/auth/instagram/callback',
+             passReqToCallback: true
+           },
 
          ***/
       });
       var instagramStrategyRequire = "var InstagramStrategy = require('passport-instagram').Strategy;";
       var instagramStrategy = M(function() {
         /***
-         // Sign in with Instagram.
+        // Sign in with Instagram.
 
-         passport.use(new InstagramStrategy(secrets.instagram,function(req, accessToken, refreshToken, profile, done) {
-            if (req.user) {
-              User.findOne({ $or: [{ instagram: profile.id }, { email: profile.email }] }, function(err, existingUser) {
-                if (existingUser) {
-                  req.flash('errors', { msg: 'There is already an Instagram account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-                  done(err);
-                } else {
-                  User.findById(req.user.id, function(err, user) {
-                    user.instagram = profile.id;
-                    user.tokens.push({ kind: 'instagram', accessToken: accessToken });
-                    user.profile.name = user.profile.name || profile.displayName;
-                    user.profile.picture = user.profile.picture || profile._json.data.profile_picture;
-                    user.profile.website = user.profile.website || profile._json.data.website;
-                    user.save(function(err) {
-                      req.flash('info', { msg: 'Instagram account has been linked.' });
-                      done(err, user);
-                    });
+        passport.use(new InstagramStrategy(secrets.instagram,function(req, accessToken, refreshToken, profile, done) {
+          if (req.user) {
+            User.findOne({ $or: [{ instagram: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+              if (existingUser) {
+                req.flash('errors', { msg: 'There is already an Instagram account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                done(err);
+              } else {
+                User.findById(req.user.id, function(err, user) {
+                  user.instagram = profile.id;
+                  user.tokens.push({ kind: 'instagram', accessToken: accessToken });
+                  user.profile.name = user.profile.name || profile.displayName;
+                  user.profile.picture = user.profile.picture || profile._json.data.profile_picture;
+                  user.profile.website = user.profile.website || profile._json.data.website;
+                  user.save(function(err) {
+                    req.flash('info', { msg: 'Instagram account has been linked.' });
+                    done(err, user);
                   });
-                }
-              });
-            } else {
-              User.findOne({ instagram: profile.id }, function(err, existingUser) {
-                if (existingUser) return done(null, existingUser);
-
-                var user = new User();
-                user.instagram = profile.id;
-                user.tokens.push({ kind: 'instagram', accessToken: accessToken });
-                user.profile.name = profile.displayName;
-                user.email = '';
-                user.profile.website = profile._json.data.website;
-                user.profile.picture = profile._json.data.profile_picture;
-                user.save(function(err) {
-                  done(err, user);
                 });
-              });
-            }
-          }));
+              }
+            });
+          } else {
+            User.findOne({ instagram: profile.id }, function(err, existingUser) {
+              if (existingUser) return done(null, existingUser);
 
-         ***/
+              var user = new User();
+              user.instagram = profile.id;
+              user.tokens.push({ kind: 'instagram', accessToken: accessToken });
+              user.profile.name = profile.displayName;
+              user.email = '';
+              user.profile.website = profile._json.data.website;
+              user.profile.picture = profile._json.data.profile_picture;
+              user.save(function(err) {
+                done(err, user);
+              });
+            });
+          }
+        }));
+
+        ***/
       });
 
       var instagramButton = M(function() {
         /***
-         a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
-           i.fa.fa-instagram
-           | Sign in with Instagram
-         ***/
+              a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
+                i.fa.fa-instagram
+                | Sign in with Instagram
+        ***/
       });
       var instagramLinkUnlink = M(function() {
         /***
 
-        if user.instagram
-          p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
-        else
-          p: a(href='/auth/instagram') Link your Instagram account
+          if user.instagram
+            p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
+          else
+            p: a(href='/auth/instagram') Link your Instagram account
         ***/
       });
       var instagramModel = '  instagram: String,';
@@ -1038,6 +1046,16 @@ inquirer.prompt({
         index = profileTemplate.indexOf('  if user.instagram');
         profileTemplate.splice(index - 1, 5);
         fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+
+        // Remove Instagram from app.js
+        index = app.indexOf("app.get('/auth/instagram', passport.authenticate('instagram'));");
+        app.splice(index, 4);
+        fs.writeFileSync(appFile, app.join('\n'));
+
+        // Remove Instagram from secrets.js
+        index = secrets.indexOf('  instagram: {');
+        secrets.splice(index, 7);
+        fs.writeFileSync(secretsFile, secrets.join('\n'));
 
         // Remove Instagram from User.js
         index = userModel.indexOf('  instagram: String,');
