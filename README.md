@@ -1113,6 +1113,7 @@ January 2014 and over a **120** issues and pull requests from **28** contributor
 - Added Venmo API example
 - Added Clockwork SMS example
 - Nicer Facebook API example
+- Grid layout with company logos on API Examples page
 - Added tests (Mocha, Chai, Supertest)
 - Gravatar pictures in Navbar and Profile page
 - Tracks last visited URL before signing in to redirect back to original destination
