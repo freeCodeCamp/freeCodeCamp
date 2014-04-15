@@ -260,7 +260,7 @@ inquirer.prompt({
 
         // views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')");
-        loginTemplate.splice(index, 4);
+        loginTemplate.splice(index, 3);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
         // views/account/profile.jade
@@ -409,7 +409,7 @@ inquirer.prompt({
 
         // views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-github.btn-social(href='/auth/github')");
-        loginTemplate.splice(index, 4);
+        loginTemplate.splice(index, 3);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
         // views/account/profile.jade
@@ -556,7 +556,7 @@ inquirer.prompt({
 
         // Remove Google from views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')");
-        loginTemplate.splice(index, 4);
+        loginTemplate.splice(index, 3);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
         // Remove Google from views/account/profile.jade
@@ -698,7 +698,7 @@ inquirer.prompt({
 
         // Remove Twitter from views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')");
-        loginTemplate.splice(index, 4);
+        loginTemplate.splice(index, 3);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
         // Remove Twitter from views/account/profile.jade
@@ -852,7 +852,7 @@ inquirer.prompt({
 
         // Remove LinkedIn from login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')");
-        loginTemplate.splice(index, 4);
+        loginTemplate.splice(index, 3);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
         // Remove LinkedIn from profile.jade
@@ -1012,7 +1012,7 @@ inquirer.prompt({
 
         // Remove Instagram from login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')");
-        loginTemplate.splice(index, 4);
+        loginTemplate.splice(index, 3);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
         // Remove Instagram from profile.jade
