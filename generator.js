@@ -109,7 +109,6 @@ inquirer.prompt({
         { name: 'GitHub', checked: true },
         { name: 'Google', checked: true },
         { name: 'Twitter', checked: true },
-        { name: 'Local', checked: true },
         { name: 'LinkedIn', checked: true },
         { name: 'Instagram' },
         new inquirer.Separator('Press ctrl+c to cancel'.warn)
@@ -787,128 +786,6 @@ inquirer.prompt({
         console.log('✗ LinkedIn authentication has been removed.'.error);
       }
 
-      if (_.contains(answer.auth, 'Local')) {
-        var localStrategyRequire = "var LocalStrategy = require('passport-local').Strategy;";
-        var localStrategy = M(function() {
-          /***
-          // Sign in using Email and Password.
-
-          passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, password, done) {
-            User.findOne({ email: email }, function(err, user) {
-              if (!user) return done(null, false, { message: 'Email ' + email + ' not found'});
-              user.comparePassword(password, function(err, isMatch) {
-                if (isMatch) {
-                  return done(null, user);
-                } else {
-                  return done(null, false, { message: 'Invalid email or password.' });
-                }
-              });
-            });
-          }));
-          ***/
-        });
-
-        var localLoginForm = M(function() {
-          /***
-            form(method='POST')
-              legend Sign In
-              input(type='hidden', name='_csrf', value=_csrf)
-              .col-sm-8.col-sm-offset-2
-                .form-group
-                  label.control-label(for='email') Email
-                  input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
-                .form-group
-                  label.control-label(for='password') Password
-                  input.form-control(type='password', name='password', id='password', placeholder='Password')
-                .form-group
-                  button.btn.btn-primary(type='submit')
-                    i.fa.fa-unlock-alt
-                    | Login
-                  a.btn.btn-link(href='/forgot') Forgot your password?
-                hr
-          ***/
-        });
-
-        var localChangePassword = M(function() {
-          /***
-            .page-header
-              h3 Change Password
-
-            form.form-horizontal(action='/account/password', method='POST')
-              input(type='hidden', name='_csrf', value=_csrf)
-              .form-group
-                label.col-sm-3.control-label(for='password') New Password
-                .col-sm-4
-                  input.form-control(type='password', name='password', id='password')
-              .form-group
-                label.col-sm-3.control-label(for='confirmPassword') Confirm Password
-                .col-sm-4
-                  input.form-control(type='password', name='confirmPassword', id='confirmPassword')
-              .form-group
-                .col-sm-offset-3.col-sm-4
-              button.btn.btn.btn-primary(type='submit')
-                i.fa.fa-keyboard-o
-                | Change Password
-           ***/
-        });
-
-        var localModel = '  password: String,';
-
-        if (passportConfig.indexOf(localStrategyRequire) < 0) {
-
-          // config/passport.js (+)
-          index = passportConfig.indexOf("var passport = require('passport');");
-          passportConfig.splice(index + 1, 0, localStrategyRequire);
-          index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
-          passportConfig.splice(index + 6, 0, localStrategy);
-          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
-
-          // views/account/login.jade (+)
-          index = profileTemplate.indexOf('block content');
-          profileTemplate.splice(index + 1, 0, localLoginForm);
-          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
-
-          // views/account/profile.jade (+)
-          index = profileTemplate.indexOf('          | Update Profile');
-          profileTemplate.splice(index + 1, 0, localChangePassword);
-          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
-
-          // models/User.js (+)
-          index = userModel.indexOf('email: { type: String, unique: true, lowercase: true },');
-          userModel.splice(index, 0, localModel);
-          fs.writeFileSync(userModelFile, userModel.join('\n'));
-
-          console.log('✓ Local authentication has been added.'.info);
-        } else {
-          console.log('✓ Local authentication is already active.'.data);
-        }
-      } else {
-
-        // config/passport.js (-)
-        index = passportConfig.indexOf(localStrategyRequire);
-        passportConfig.splice(index, 1);
-        index = passportConfig.indexOf('// Sign in using Email and Password.');
-        passportConfig.splice(index, 15);
-        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
-
-        // views/account/login.jade (-)
-        index = loginTemplate.indexOf("  form(method='POST')");
-        loginTemplate.splice(index, 15);
-        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
-
-        // views/account/profile.jade (-)
-        index = profileTemplate.indexOf('    h3 Change Password');
-        profileTemplate.splice(index - 1, 19);
-        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
-
-        // models/User.js (-)
-        index = userModel.indexOf('  password: String,');
-        userModel.splice(index, 1);
-        fs.writeFileSync(userModelFile, userModel.join('\n'));
-
-        console.log('✗ Local authentication has been removed.'.error);
-      }
-
       //////////////////////////////
       // Instagram Authentication //
       //////////////////////////////
@@ -997,7 +874,6 @@ inquirer.prompt({
       var instagramModel = '  instagram: String,';
 
       if (_.contains(answer.auth, 'Instagram')) {
-
 
         if (passportConfig.indexOf(instagramStrategyRequire) < 0) {
 
