@@ -432,79 +432,111 @@ where 1st parameter is an array, and a 2nd parameter is an object to search for.
 FAQ
 ---
 
-### Why do I get `403 Error: Forbidden` when submitting a POST form?
-You need to add this hidden input element to your form. This has been added in the
-pull request [#40](https://github.com/sahat/hackathon-starter/pull/40).
+### Why do I get `403 Error: Forbidden` when submitting a form?
+You need to add the following hidden input element to your form. This has been
+added in the [pull request #40](https://github.com/sahat/hackathon-starter/pull/40)
+as part of CSRF protection.
 
 ```
 input(type='hidden', name='_csrf', value=_csrf)
 ```
-You can read more about [CSRF protection middleware](http://expressjs.com/api.html#csrf) at the Express API Reference.
+You can read more about [CSRF protection middleware](http://expressjs.com/3x/api.html#csrf) at the Express API Reference.
 
 
-### What is `cluster_app.js`?
+### What is cluster_app.js?
 From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_it_works):
 > A single instance of Node runs in a single thread. To take advantage of multi-core systems
 > the user will sometimes want to launch a cluster of Node processes to handle the load.
 > The cluster module allows you to easily create child processes that all share server ports.
 
-`cluster_app.js` allows you to take advantage of this feature by forking a process of `app.js`
-for each CPU detected. For the majority of applications serving HTTP requests,
-this is a resounding boon. However, the cluster module is still in experimental stage, therefore it should only be used after understanding its purpose and behavior. To use it, simply run `node cluster_app.js`. **Its use is entirely optional and `app.js` is not tied in any way to it**. As a reminder, if you plan to use `cluster_app.js` instead of `app.js`, be sure to indicate that in `package.json` when you are ready to deploy your app.
+Running `cluster_app.js` allows you to take advantage of this feature by forking
+a process of `app.js` for each detected CPU. For the majority of applications
+serving HTTP requests, this is a nice benefit. However, the cluster module is
+still in experimental stage, therefore it should only be used after understanding
+its purpose and behavior. To use it, simply run `node cluster_app.js`.
+**Its use is entirely optional and `app.js` is not tied in any way to it**.
+As a reminder, if you plan to use `cluster_app.js` instead of `app.js`,
+be sure to indicate that in `package.json` when you are ready to deploy your app.
 
-### What is this Rails 3.1-style asset pipeline that you mentioned in Features?
-This is how you typically define static files inside HTML, Jade or any template for that matter:
+### What is this Rails 3.1-style asset pipeline that you mentioned under Features?
+This is how you typically define static files inside HTML, Jade or any template
+for that matter:
+
 ```jade
 link(href='/css/styles.css', rel='stylesheet')
 script(src='/js/lib/jquery-2.1.0.min.js')
 script(src='/js/lib/bootstrap.min.js')
 script(src='/js/main.js')
 ```
-Simple enough right? But wouldn't it be nice to have it just like that in development mode, but when you deploy
-to production, have it minified and concatenated into a single file automatically without any extra effort on you part?
+
+Simple enough right? But wouldn't it be nice to have it just like that in
+development mode, but when you deploy your app to production, have it minified
+and concatenated into a single file automatically without any extra effort on
+your part?
+
 ```jade
 link(href='/css/styles.css', rel='stylesheet')
 script(src='/js/application.js')
 ```
-As soon as you start bringing in more JavaScript libraries, the benefits of concatenating and minifying
-JavaScript files will be even greater.
-Using **connect-assets** library, it is as as simple as declaring these two lines:
+
+As soon as you start bringing in more JavaScript libraries, the benefits of
+concatenating and minifying JavaScript files will be even greater. Using
+**connect-assets** library, it is  as as simple as declaring these two lines:
 
 ```
 != css('styles')      // expects public/css/styles.less
 != js('application')  // expects public/js/application.js
 ```
 
-:bulb: **Tip:** This works, because in **connect-assets** middleware we specified `helperContext: app.locals`.
+:bulb: **Tip:** We can use `css` and `js` functions in Jade templates because in
+**connect-assets** middleware options we have added this line: `helperContext: app.locals`.
 
-The only thing you need to remember is to define your JavaScript files inside `public/js/application.js` using this
-strange syntax notation (Sprockets-style) borrowed from Rails. I know it's an extra thing to learn
-for someone who has never seen Rails asset pipeline before, but in this case, benefits outweigh the cost.
+The only thing you need to remember is to define your JavaScript files inside
+`public/js/application.js` using this strange syntax notation (Sprockets-style)
+borrowed from Rails. I know it's an extra thing to learn for someone who has
+never seen Rails asset pipeline before, but in this case, I think benefits
+outweigh the cost.
+
 ```js
 //= require lib/jquery-2.1.0.min
 //= require lib/bootstrap.min
 //= require main
 ```
-Using this approach, when working in `development` mode, **connect-assets** will load each file individually,
-without minifying or concatenating anything. When you deploy your app, it will run in `production` mode, and so
-**connect-assets** will automatically serve a single concatenated + minified `application.js`. For more
-information see [Sprockets-style concatenation](https://github.com/adunkman/connect-assets/#sprockets-style-concatenation)
+
+Using this approach, when working in development mode, **connect-assets** will
+load each file individually, without minifying or concatenating anything.
+When you deploy your app, it will run in production mode, and so **connect-assets**
+will automatically serve a single concatenated & minified `application.js`.
+For more information see [Sprockets-style concatenation](https://github.com/adunkman/connect-assets/#sprockets-style-concatenation)
+section.
 
 ### I am getting MongoDB Connection Error, how do I fix it?
-That's a custom error message defined in `app.js` to indicate that there was a connection problem to MongoDB:
+That's a custom error message defined in `app.js` to indicate that there was a
+problem connecting to MongoDB:
+
 ```js
 mongoose.connection.on('error', function() {
   console.error('✗ MongoDB Connection Error. Please make sure MongoDB is running.');
 });
 ```
-As the message says, you need to have a MongoDB server running before launching `app.js`. You can download MongoDB [here](mongodb.org/downloads), or install it via a package manager
-([Homebrew](http://brew.sh/) on Mac, `apt-get` on Ubuntu, `yum` on Fedora, etc.)
+You need to have a MongoDB server running before launching `app.js`. You can
+download MongoDB [here](mongodb.org/downloads), or install it via a package manager.
+<img src="http://dc942d419843af05523b-ff74ae13537a01be6cfec5927837dcfe.r14.cf1.rackcdn.com/wp-content/uploads/windows-8-50x50.jpg" height="17">
+Windows users, read [Install MongoDB on Windows](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/).
+
+:bulb: **Tip:** If you are always connected to the internet, you could just use
+[MongoLab](https://mongolab.com/) or [MongoHQ](https://www.mongohq.com/) instead
+of downloading and installing MongoDB locally. You will only need to update the
+`db` property in `config/secrets.js`.
 
 ### I get an error when I deploy my app, why?
-Chances are you haven't changed the *Dabatase URI* in `secrets.js`. If `db` is set to `localhost`, it will only work
-on your machine as long as MongoDB is running. When you deploy to Heroku, OpenShift or some other provider, you will not have MongoDB
-running on `localhost`. You need to create an account with [MongoLab](http://mongolab.com) or [MongoHQ](http://mongohq.com), then create a free tier database. See [Deployment](#deployment) for more information on how to
-setup an account and a new database step-by-step with MongoLab.
+Chances are you haven't changed the *Dabatase URI* in `secrets.js`. If `db` is
+set to `localhost`, it will only work on your machine as long as MongoDB is
+running. When you deploy to Heroku, OpenShift or some other provider, you will not have MongoDB
+running on `localhost`. You need to create an account with [MongoLab](http://mongolab.com)
+or [MongoHQ](http://mongohq.com), then create a free tier database.
+See [Deployment](#deployment) for more information on how to setup an account
+and a new database step-by-step with MongoLab.
 
 ### Why Jade instead of Handlebars?
 When I first started this project I didn't have any experience with Handlebars. Since then I have worked on Ember.js apps and got myself familiar with the Handlebars syntax. While it is true Handlebars is easier, because it looks like good old HTML, I have no regrets picking Jade over Handlebars. First off, it's the default template engine in Express, so someone who has built Express apps in the past already knows it. Secondly, I find `extends` and `block` to be indispensable, which as far as I know, Handlebars does not have out of the box. And lastly, subjectively speaking, Jade looks much cleaner and shorter than Handlebars, or any non-HAML style for that matter.
@@ -523,30 +555,27 @@ When working solo on small projects I actually prefer to have everything inside 
 REST API server.
 
 ### I don't need a sticky footer, can I delete it?
-Absolutely. But unlike a regular footer there is a bit more work involved. First, delete `#wrap` and `#footer` ID selectors and `html, body { height: 100%; }` from **styles.less**. Next, delete `#wrap` and `#footer` lines from **layout.jade** (By the way, If no element is specified before the class or id, Jade assumes it's a `div` element). Don't forget to indent everything under `#wrap` to the left once, since this project uses two spaces per block indentation.
-
-### Can I use Ember, Angular or Backbone with Hackathon Starter?
-It might be possible, but why would you want to?
-I specifically avoided client-side MV* frameworks in this project to keep things simple.
-There is a big shift in the way you develop apps with Ember, Backbone, Angular
-as opposed to server-side frameworks like Express, Flask, Rails, Django. Not only
-would you need to know how to use Express in this case, but also the client-side framework of your choice,
-which in itself is not a trivial task. And then there is a whole different process
-for authentication with single page applications. If you insist on using
-a client-side framework, it's best if you use a boilerplate of choice for your particular
-client-side framework and just grab the pieces you need from the Hackathon Starter.
+Absolutely. But unlike a regular footer there is a bit more work involved.
+First, delete `#wrap` and `#footer` ID selectors and `html, body { height: 100%; }`
+from **styles.less**. Next, delete `#wrap` and `#footer` lines from **layout.jade**
+(By the way, if no element is specified before class or id, Jade assumes it is
+a `div` element). Don't forget to indent everything under `#wrap` to the left
+once, since this project uses two spaces per block indentation.
 
 ### Why is there no Mozilla Persona as a sign-in option?
-If you would like to use **Persona** authentication strategy, use the [pull request #64](https://github.com/sahat/hackathon-starter/pull/64) as
-a reference guide. I have explained my reasons why it could not be merged into the *Hackathon Starter* in
+If you would like to use **Persona** authentication strategy, use the
+[pull request #64](https://github.com/sahat/hackathon-starter/pull/64) as a
+reference guide. I have explained my reasons why it could not be merged in
 [issue #63](https://github.com/sahat/hackathon-starter/issues/63#issuecomment-34898290).
 
 ### How do I switch SendGrid for another email delivery service?
-Run `node generator.js` and select **Email Service**. This change affects
-only *Contact Form* and and *Password Reset* pages.
+Run `node generator.js` bundled with Hackathon Starter, then select
+**Email Service** option. It will automatically replace appropriate strings in
+your code. Currently there are only two options: SendGrid and Mailgun.
 
 How It Works (mini guides)
 --------------------------
+
 This section is intended for giving you a detailed explanation about
 how a particular functionality works. Maybe you are just curious about
 how it works, or maybe you are lost and confused while reading the code,
