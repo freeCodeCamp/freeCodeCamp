@@ -633,13 +633,16 @@ inquirer.prompt({
         console.log('✗ Twitter authentication has been removed.'.error);
       }
 
-      if (_.contains(answer.auth, 'LinkedIn')) {
-        var linkedinStrategyRequire = "var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;";
-        var linkedinStrategy = M(function() {
-          /***
-          // Sign in with LinkedIn.
+      /////////////////////////////
+      // LinkedIn Authentication //
+      /////////////////////////////
 
-          passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
+      var linkedinStrategyRequire = "var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;";
+      var linkedinStrategy = M(function() {
+        /***
+         // Sign in with LinkedIn.
+
+         passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
             if (req.user) {
               User.findOne({ $or: [
                 { linkedin: profile.id },
@@ -687,156 +690,28 @@ inquirer.prompt({
               });
             }
           }));
-          ***/
-        });
+         ***/
+      });
 
-        var linkedinButton = M(function() {
-          /***
-           a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
-             i.fa.fa-linkedin
-             | Sign in with LinkedIn
-           ***/
-        });
-        var linkedinLinkUnlink = M(function() {
-          /***
-
-           if user.linkedin
-             p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
-           else
-             p: a(href='/auth/linkedin') Link your LinkedIn account
-           ***/
-        });
-        var linkedinModel = '  linkedin: String,';
-
-        if (passportConfig.indexOf(linkedinStrategyRequire) < 0) {
-
-          // config/passport.js (+)
-          index = passportConfig.indexOf("var passport = require('passport');");
-          passportConfig.splice(index + 1, 0, linkedinStrategyRequire);
-          index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
-          passportConfig.splice(index + 6, 0, linkedinStrategy);
-          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
-
-          // views/account/login.jade (+)
-          loginTemplate.push(linkedinButton);
-          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
-
-          // views/account/profile.jade (+)
-          index = profileTemplate.indexOf('    h3 Linked Accounts');
-          profileTemplate.splice(index + 1, 0, linkedinLinkUnlink);
-          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
-
-          // models/User.js (+)
-          index = userModel.indexOf('  tokens: Array,');
-          userModel.splice(index - 1, 0, linkedinModel);
-          fs.writeFileSync(userModelFile, userModel.join('\n'));
-
-          console.log('✓ LinkedIn authentication has been added.'.info);
-        } else {
-          console.log('✓ LinkedIn authentication is already active.'.data);
-        }
-      } else {
-
-        // config/passport.js (-)
-        index = passportConfig.indexOf(linkedinStrategyRequire);
-        passportConfig.splice(index, 1);
-        index = passportConfig.indexOf('// Sign in with LinkedIn.');
-        passportConfig.splice(index, 51);
-        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
-
-        // views/account/login.jade (-)
-        index = loginTemplate.indexOf("      a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')");
-        loginTemplate.splice(index, 4);
-        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
-
-        // views/account/profile.jade (-)
-        index = profileTemplate.indexOf('  if user.linkedin');
-        profileTemplate.splice(index - 1, 5);
-        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
-
-        // models/User.js (-)
-        index = userModel.indexOf('  linkedin: String,');
-        userModel.splice(index, 1);
-        fs.writeFileSync(userModelFile, userModel.join('\n'));
-
-        console.log('✗ LinkedIn authentication has been removed.'.error);
-      }
-
-      if (_.contains(answer.auth, 'LinkedIn')) {
-        var linkedinStrategyRequire = "var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;";
-        var linkedinStrategy = M(function() {
-          /***
-           // Sign in with LinkedIn.
-
-           passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
-            if (req.user) {
-              User.findOne({ $or: [
-                { linkedin: profile.id },
-                { email: profile._json.emailAddress }
-              ] }, function(err, existingUser) {
-                if (existingUser) {
-                  req.flash('errors', { msg: 'There is already a LinkedIn account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-                  done(err);
-                } else {
-                  User.findById(req.user.id, function(err, user) {
-                    user.linkedin = profile.id;
-                    user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
-                    user.profile.name = user.profile.name || profile.displayName;
-                    user.profile.location = user.profile.location || profile._json.location.name;
-                    user.profile.picture = user.profile.picture || profile._json.pictureUrl;
-                    user.profile.website = user.profile.website || profile._json.publicProfileUrl;
-                    user.save(function(err) {
-                      req.flash('info', { msg: 'LinkedIn account has been linked.' });
-                      done(err, user);
-                    });
-                  });
-                }
-              });
-            } else {
-              User.findOne({ linkedin: profile.id }, function(err, existingUser) {
-                if (existingUser) return done(null, existingUser);
-                User.findOne({ email: profile._json.emailAddress }, function(err, existingEmailUser) {
-                  if (existingEmailUser) {
-                    req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with LinkedIn manually from Account Settings.' });
-                    done(err);
-                  } else {
-                    var user = new User();
-                    user.linkedin = profile.id;
-                    user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
-                    user.email = profile._json.emailAddress;
-                    user.profile.name = profile.displayName;
-                    user.profile.location = profile._json.location.name;
-                    user.profile.picture = profile._json.pictureUrl;
-                    user.profile.website = profile._json.publicProfileUrl;
-                    user.save(function(err) {
-                      done(err, user);
-                    });
-                  }
-                });
-              });
-            }
-          }));
-           ***/
-        });
-
-        var linkedinButton = M(function() {
-          /***
-           a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
+      var linkedinButton = M(function() {
+        /***
+         a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
            i.fa.fa-linkedin
            | Sign in with LinkedIn
-           ***/
-        });
-        var linkedinLinkUnlink = M(function() {
-          /***
+         ***/
+      });
+      var linkedinLinkUnlink = M(function() {
+        /***
 
-           if user.linkedin
+         if user.linkedin
            p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
-           else
+         else
            p: a(href='/auth/linkedin') Link your LinkedIn account
-           ***/
-        });
-        var linkedinModel = '  linkedin: String,';
+         ***/
+      });
+      var linkedinModel = '  linkedin: String,';
 
+      if (_.contains(answer.auth, 'LinkedIn')) {
         if (passportConfig.indexOf(linkedinStrategyRequire) < 0) {
 
           // config/passport.js (+)
@@ -866,24 +741,27 @@ inquirer.prompt({
         }
       } else {
 
-        // config/passport.js (-)
+        // Check if we have LinkedIn authentication to begin with.
+        if (passportConfig.indexOf(linkedinStrategyRequire) < 0) return;
+
+        // Removed LinkedIn from config/passport.js
         index = passportConfig.indexOf(linkedinStrategyRequire);
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with LinkedIn.');
         passportConfig.splice(index, 51);
         fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-        // views/account/login.jade (-)
+        // Remove LinkedIn from login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')");
         loginTemplate.splice(index, 4);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-        // views/account/profile.jade (-)
+        // Remove LinkedIn from profile.jade
         index = profileTemplate.indexOf('  if user.linkedin');
         profileTemplate.splice(index - 1, 5);
         fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-        // models/User.js (-)
+        // Remove LinkedIn from User.js
         index = userModel.indexOf('  linkedin: String,');
         userModel.splice(index, 1);
         fs.writeFileSync(userModelFile, userModel.join('\n'));
@@ -1012,18 +890,21 @@ inquirer.prompt({
 
         console.log('✗ Local authentication has been removed.'.error);
       }
+      
+      //////////////////////////////
+      // Instagram Authentication //
+      //////////////////////////////
 
-      if (_.contains(answer.auth, 'Instagram')) {
-        var instagramRoutes = M(function() {
-          /***
-          app.get('/auth/instagram', passport.authenticate('instagram'));
-          app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
+      var instagramRoutes = M(function() {
+        /***
+         app.get('/auth/instagram', passport.authenticate('instagram'));
+         app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
             res.redirect(req.session.returnTo || '/');
           });
-          ***/
-        });
-        var instagramSecrets = M(function() {
-          /***
+         ***/
+      });
+      var instagramSecrets = M(function() {
+        /***
             instagram: {
               clientID: process.env.INSTAGRAM_ID || 'Your Client ID',
               clientSecret: process.env.INSTAGRAM_SECRET || 'Your Client Secret',
@@ -1031,14 +912,14 @@ inquirer.prompt({
               passReqToCallback: true
             },
 
-          ***/
-        });
-        var instagramStrategyRequire = "var InstagramStrategy = require('passport-instagram').Strategy;";
-        var instagramStrategy = M(function() {
-          /***
-          // Sign in with Instagram.
+         ***/
+      });
+      var instagramStrategyRequire = "var InstagramStrategy = require('passport-instagram').Strategy;";
+      var instagramStrategy = M(function() {
+        /***
+         // Sign in with Instagram.
 
-          passport.use(new InstagramStrategy(secrets.instagram,function(req, accessToken, refreshToken, profile, done) {
+         passport.use(new InstagramStrategy(secrets.instagram,function(req, accessToken, refreshToken, profile, done) {
             if (req.user) {
               User.findOne({ $or: [{ instagram: profile.id }, { email: profile.email }] }, function(err, existingUser) {
                 if (existingUser) {
@@ -1076,26 +957,29 @@ inquirer.prompt({
             }
           }));
 
-          ***/
-        });
+         ***/
+      });
 
-        var instagramButton = M(function() {
-          /***
-                a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
-                  i.fa.fa-instagram
-                  | Sign in with Instagram
-          ***/
-        });
-        var instagramLinkUnlink = M(function() {
-          /***
+      var instagramButton = M(function() {
+        /***
+         a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
+           i.fa.fa-instagram
+           | Sign in with Instagram
+         ***/
+      });
+      var instagramLinkUnlink = M(function() {
+        /***
 
-            if user.instagram
-              p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
-            else
-              p: a(href='/auth/linkedin') Link your Instagram account
-          ***/
-        });
-        var instagramModel = '  instagram: String,';
+        if user.instagram
+          p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
+        else
+          p: a(href='/auth/instagram') Link your Instagram account
+        ***/
+      });
+      var instagramModel = '  instagram: String,';
+
+      if (_.contains(answer.auth, 'Instagram')) {
+
 
         if (passportConfig.indexOf(instagramStrategyRequire) < 0) {
 
@@ -1135,6 +1019,8 @@ inquirer.prompt({
           console.log('✓ Instagram authentication is already active.'.data);
         }
       } else {
+
+        if (passportConfig.indexOf(instagramStrategyRequire) < 0) return;
 
         // Remove Instagram from passport.js
         index = passportConfig.indexOf(instagramStrategyRequire);
