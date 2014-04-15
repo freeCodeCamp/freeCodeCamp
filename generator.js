@@ -207,23 +207,23 @@ inquirer.prompt({
 
         if (passportConfig.indexOf(facebookStrategyRequire) < 0) {
 
-          // config/passport.js (+)
+          // config/passport.js
           index = passportConfig.indexOf("var passport = require('passport');");
           passportConfig.splice(index + 1, 0, facebookStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, facebookStrategy);
           fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-          // views/account/login.jade (+)
+          // views/account/login.jade
           loginTemplate.push(facebookButton);
           fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-          // views/account/profile.jade (+)
+          // views/account/profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, facebookLinkUnlink);
           fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-          // models/User.js (+)
+          // models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, facebookModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
@@ -234,24 +234,24 @@ inquirer.prompt({
         }
       } else {
 
-        // config/passport.js (-)
+        // config/passport.js
         index = passportConfig.indexOf(facebookStrategyRequire);
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with Facebook.');
         passportConfig.splice(index, 47);
         fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-        // views/account/login.jade (-)
+        // views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')");
         loginTemplate.splice(index, 4);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-        // views/account/profile.jade (-)
+        // views/account/profile.jade
         index = profileTemplate.indexOf("  if user.facebook");
         profileTemplate.splice(index - 1, 5);
         fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-        // models/User.js (-)
+        // models/User.js
         index = userModel.indexOf('  facebook: String,');
         userModel.splice(index, 1);
         fs.writeFileSync(userModelFile, userModel.join('\n'));
@@ -334,23 +334,23 @@ inquirer.prompt({
 
         if (passportConfig.indexOf(githubStrategyRequire) < 0) {
 
-          // config/passport.js (+)
+          // config/passport.js
           index = passportConfig.indexOf("var passport = require('passport');");
           passportConfig.splice(index + 1, 0, githubStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, githubStrategy);
           fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-          // views/account/login.jade (+)
+          // views/account/login.jade
           loginTemplate.push(githubButton);
           fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-          // views/account/profile.jade (+)
+          // views/account/profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, githubLinkUnlink);
           fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-          // models/User.js (+)
+          // models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, githubModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
@@ -361,24 +361,24 @@ inquirer.prompt({
         }
       } else {
 
-        // config/passport.js (-)
+        // config/passport.js
         index = passportConfig.indexOf(githubStrategyRequire);
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with GitHub.');
         passportConfig.splice(index, 48);
         fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-        // views/account/login.jade (-)
+        // views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-github.btn-social(href='/auth/github')");
         loginTemplate.splice(index, 4);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-        // views/account/profile.jade (-)
+        // views/account/profile.jade
         index = profileTemplate.indexOf('  if user.github');
         profileTemplate.splice(index - 1, 5);
         fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-        // models/User.js (-)
+        // models/User.js
         index = userModel.indexOf('  github: String,');
         userModel.splice(index, 1);
         fs.writeFileSync(userModelFile, userModel.join('\n'));
@@ -386,99 +386,116 @@ inquirer.prompt({
         console.log('✗ GitHub authentication has been removed.'.error);
       }
 
-      if (_.contains(answer.auth, 'Google')) {
-        var googleStrategyRequire = "var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;";
-        var googleStrategy = M(function() {
-          /***
-          // Sign in with Google.
+      ///////////////////////////
+      // Google Authentication //
+      ///////////////////////////
 
-          passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refreshToken, profile, done) {
-            if (req.user) {
-              User.findOne({ $or: [{ google: profile.id }, { email: profile.email }] }, function(err, existingUser) {
-                if (existingUser) {
-                  req.flash('errors', { msg: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+      var googleRoutes = M(function() {
+        /***
+        app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
+        app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), function(req, res) {
+          res.redirect(req.session.returnTo || '/');
+        });
+        ***/
+      });
+      var googleStrategyRequire = "var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;";
+      var googleStrategy = M(function() {
+        /***
+        // Sign in with Google.
+
+        passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refreshToken, profile, done) {
+          if (req.user) {
+            User.findOne({ $or: [{ google: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+              if (existingUser) {
+                req.flash('errors', { msg: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                done(err);
+              } else {
+                User.findById(req.user.id, function(err, user) {
+                  user.google = profile.id;
+                  user.tokens.push({ kind: 'google', accessToken: accessToken });
+                  user.profile.name = user.profile.name || profile.displayName;
+                  user.profile.gender = user.profile.gender || profile._json.gender;
+                  user.profile.picture = user.profile.picture || profile._json.picture;
+                  user.save(function(err) {
+                    req.flash('info', { msg: 'Google account has been linked.' });
+                    done(err, user);
+                  });
+                });
+              }
+            });
+          } else {
+            User.findOne({ google: profile.id }, function(err, existingUser) {
+              if (existingUser) return done(null, existingUser);
+              User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+                if (existingEmailUser) {
+                  req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
                   done(err);
                 } else {
-                  User.findById(req.user.id, function(err, user) {
-                    user.google = profile.id;
-                    user.tokens.push({ kind: 'google', accessToken: accessToken });
-                    user.profile.name = user.profile.name || profile.displayName;
-                    user.profile.gender = user.profile.gender || profile._json.gender;
-                    user.profile.picture = user.profile.picture || profile._json.picture;
-                    user.save(function(err) {
-                      req.flash('info', { msg: 'Google account has been linked.' });
-                      done(err, user);
-                    });
+                  var user = new User();
+                  user.email = profile._json.email;
+                  user.google = profile.id;
+                  user.tokens.push({ kind: 'google', accessToken: accessToken });
+                  user.profile.name = profile.displayName;
+                  user.profile.gender = profile._json.gender;
+                  user.profile.picture = profile._json.picture;
+                  user.save(function(err) {
+                    done(err, user);
                   });
                 }
               });
-            } else {
-              User.findOne({ google: profile.id }, function(err, existingUser) {
-                if (existingUser) return done(null, existingUser);
-                User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
-                  if (existingEmailUser) {
-                    req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
-                    done(err);
-                  } else {
-                    var user = new User();
-                    user.email = profile._json.email;
-                    user.google = profile.id;
-                    user.tokens.push({ kind: 'google', accessToken: accessToken });
-                    user.profile.name = profile.displayName;
-                    user.profile.gender = profile._json.gender;
-                    user.profile.picture = profile._json.picture;
-                    user.save(function(err) {
-                      done(err, user);
-                    });
-                  }
-                });
-              });
-            }
-          }));
+            });
+          }
+         }));
 
-          ***/
-        });
+         ***/
+      });
 
-        var googleButton = M(function() {
-          /***
-           a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')
-             i.fa.fa-google-plus
-             | Sign in with Google
-           ***/
-        });
-        var googleLinkUnlink = M(function() {
-          /***
+      var googleButton = M(function() {
+        /***
+              a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')
+                i.fa.fa-google-plus
+                | Sign in with Google
+        ***/
+      });
+      var googleLinkUnlink = M(function() {
+        /***
 
-           if user.google
-             p: a.text-danger(href='/account/unlink/google') Unlink your Google account
-           else
-             p: a(href='/auth/google') Link your Google account
-           ***/
-        });
-        var googleModel = '  google: String,';
+          if user.google
+            p: a.text-danger(href='/account/unlink/google') Unlink your Google account
+          else
+            p: a(href='/auth/google') Link your Google account
+        ***/
+      });
+      var googleModel = '  google: String,';
 
+      if (_.contains(answer.auth, 'Google')) {
         if (passportConfig.indexOf(googleStrategyRequire) < 0) {
 
-          // config/passport.js (+)
+          // Add Google to config/passport.js
           index = passportConfig.indexOf("var passport = require('passport');");
           passportConfig.splice(index + 1, 0, googleStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, googleStrategy);
           fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-          // views/account/login.jade (+)
+          // Add Google to views/account/login.jade
           loginTemplate.push(googleButton);
           fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-          // views/account/profile.jade (+)
+          // Add Google to views/account/profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, googleLinkUnlink);
           fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-          // models/User.js (+)
+          // Add Google to models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, googleModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+          // Add Google to app.js
+          index = app.indexOf(' * OAuth routes for sign-in.');
+          app.splice(index + 3, 0, googleRoutes);
+          fs.writeFileSync(appFile, app.join('\n'));
 
           console.log('✓ Google authentication has been added.'.info);
         } else {
@@ -486,120 +503,141 @@ inquirer.prompt({
         }
       } else {
 
-        // config/passport.js (-)
+        // Remove Google from config/passport.js
         index = passportConfig.indexOf(googleStrategyRequire);
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with Google.');
         passportConfig.splice(index, 46);
         fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-        // views/account/login.jade (-)
+        // Remove Google from views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')");
         loginTemplate.splice(index, 4);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-        // views/account/profile.jade (-)
+        // Remove Google from views/account/profile.jade
         index = profileTemplate.indexOf('  if user.google');
         profileTemplate.splice(index - 1, 5);
         fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-        // models/User.js (-)
+        // Remove Google from models/User.js
         index = userModel.indexOf('  google: String,');
         userModel.splice(index, 1);
         fs.writeFileSync(userModelFile, userModel.join('\n'));
 
+        // Remove Google from app.js
+        index = app.indexOf("app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));");
+        app.splice(index, 4);
+        fs.writeFileSync(appFile, app.join('\n'));
+
         console.log('✗ Google authentication has been removed.'.error);
       }
 
-      if (_.contains(answer.auth, 'Twitter')) {
-        var twitterStrategyRequire = "var TwitterStrategy = require('passport-twitter').Strategy;";
-        var twitterStrategy = M(function() {
-          /***
-          // Sign in with Twitter.
+      ////////////////////////////
+      // Twitter Authentication //
+      ////////////////////////////
 
-          passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tokenSecret, profile, done) {
-            if (req.user) {
-              User.findOne({ twitter: profile.id }, function(err, existingUser) {
-                if (existingUser) {
-                  req.flash('errors', { msg: 'There is already a Twitter account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-                  done(err);
-                } else {
-                  User.findById(req.user.id, function(err, user) {
-                    user.twitter = profile.id;
-                    user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
-                    user.profile.name = user.profile.name || profile.displayName;
-                    user.profile.location = user.profile.location || profile._json.location;
-                    user.profile.picture = user.profile.picture || profile._json.profile_image_url;
-                    user.save(function(err) {
-                      req.flash('info', { msg: 'Twitter account has been linked.' });
-                      done(err, user);
-                    });
+      var twitterRoutes = M(function() {
+        /***
+        app.get('/auth/twitter', passport.authenticate('twitter'));
+        app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), function(req, res) {
+          res.redirect(req.session.returnTo || '/');
+        });
+        ***/
+      });
+      var twitterStrategyRequire = "var TwitterStrategy = require('passport-twitter').Strategy;";
+      var twitterStrategy = M(function() {
+        /***
+        // Sign in with Twitter.
+
+        passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tokenSecret, profile, done) {
+          if (req.user) {
+            User.findOne({ twitter: profile.id }, function(err, existingUser) {
+              if (existingUser) {
+                req.flash('errors', { msg: 'There is already a Twitter account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                done(err);
+              } else {
+                User.findById(req.user.id, function(err, user) {
+                  user.twitter = profile.id;
+                  user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
+                  user.profile.name = user.profile.name || profile.displayName;
+                  user.profile.location = user.profile.location || profile._json.location;
+                  user.profile.picture = user.profile.picture || profile._json.profile_image_url;
+                  user.save(function(err) {
+                    req.flash('info', { msg: 'Twitter account has been linked.' });
+                    done(err, user);
                   });
-                }
-              });
-
-            } else {
-              User.findOne({ twitter: profile.id }, function(err, existingUser) {
-                if (existingUser) return done(null, existingUser);
-                var user = new User();
-                // Twitter will not provide an email address.  Period.
-                // But a person’s twitter username is guaranteed to be unique
-                // so we can "fake" a twitter email address as follows:
-                user.email = profile.username + "@twitter.com";
-                     user.twitter = profile.id;
-                     user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
-                     user.profile.name = profile.displayName;
-                     user.profile.location = profile._json.location;
-                     user.profile.picture = profile._json.profile_image_url;
-                     user.save(function(err) {
-                  done(err, user);
                 });
+              }
+            });
+          } else {
+            User.findOne({ twitter: profile.id }, function(err, existingUser) {
+              if (existingUser) return done(null, existingUser);
+              var user = new User();
+              // Twitter will not provide an email address.  Period.
+              // But a person’s twitter username is guaranteed to be unique
+              // so we can "fake" a twitter email address as follows:
+              user.email = profile.username + "@twitter.com";
+              user.twitter = profile.id;
+              user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
+              user.profile.name = profile.displayName;
+              user.profile.location = profile._json.location;
+              user.profile.picture = profile._json.profile_image_url;
+              user.save(function(err) {
+                done(err, user);
               });
-            }
-          }));
-          ***/
-        });
+            });
+          }
+        }));
+        ***/
+      });
 
-        var twitterButton = M(function() {
-          /***
-           a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')
-           i.fa.fa-google-plus
-           | Sign in with Google
-           ***/
-        });
-        var twitterLinkUnlink = M(function() {
-          /***
+      var twitterButton = M(function() {
+        /***
+               a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')
+                 i.fa.fa-google-plus
+                 | Sign in with Google
+         ***/
+      });
+      var twitterLinkUnlink = M(function() {
+        /***
 
-           if user.google
-           p: a.text-danger(href='/account/unlink/google') Unlink your Google account
-           else
-           p: a(href='/auth/google') Link your Google account
-           ***/
-        });
-        var twitterModel = '  twitter: String,';
+          if user.google
+            p: a.text-danger(href='/account/unlink/google') Unlink your Google account
+          else
+            p: a(href='/auth/google') Link your Google account
+        ***/
+      });
+      var twitterModel = '  twitter: String,';
 
+      if (_.contains(answer.auth, 'Twitter')) {
         if (passportConfig.indexOf(twitterStrategyRequire) < 0) {
 
-          // config/passport.js (+)
+          // config/passport.js
           index = passportConfig.indexOf("var passport = require('passport');");
           passportConfig.splice(index + 1, 0, twitterStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, twitterStrategy);
           fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-          // views/account/login.jade (+)
+          // views/account/login.jade
           loginTemplate.push(twitterButton);
           fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-          // views/account/profile.jade (+)
+          // views/account/profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, twitterLinkUnlink);
           fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-          // models/User.js (+)
+          // models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, twitterModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+          // Add Twitter to app.js
+          index = app.indexOf(' * OAuth routes for sign-in.');
+          app.splice(index + 3, 0, twitterRoutes);
+          fs.writeFileSync(appFile, app.join('\n'));
 
           console.log('✓ Twitter authentication has been added.'.info);
         } else {
@@ -607,27 +645,32 @@ inquirer.prompt({
         }
       } else {
 
-        // config/passport.js (-)
+        // Remove Twitter from config/passport.js
         index = passportConfig.indexOf(twitterStrategyRequire);
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with Twitter.');
         passportConfig.splice(index, 43);
         fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-        // views/account/login.jade (-)
+        // Remove Twitter from views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')");
         loginTemplate.splice(index, 4);
         fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-        // views/account/profile.jade (-)
+        // Remove Twitter from views/account/profile.jade
         index = profileTemplate.indexOf('  if user.twitter');
         profileTemplate.splice(index - 1, 5);
         fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-        // models/User.js (-)
+        // Remove Twitter from models/User.js
         index = userModel.indexOf('  twitter: String,');
         userModel.splice(index, 1);
         fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+        // Remove Twitter from app.js
+        index = app.indexOf("app.get('/auth/twitter', passport.authenticate('twitter'));");
+        app.splice(index, 4);
+        fs.writeFileSync(appFile, app.join('\n'));
 
         console.log('✗ Twitter authentication has been removed.'.error);
       }
