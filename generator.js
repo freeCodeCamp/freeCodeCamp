@@ -634,18 +634,18 @@ inquirer.prompt({
 
       var twitterButton = M(function() {
         /***
-               a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')
-                 i.fa.fa-google-plus
-                 | Sign in with Google
+               a.btn.btn-block.btn-twitter-plus.btn-social(href='/auth/twitter')
+                 i.fa.fa-twitter
+                 | Sign in with Twitter
          ***/
       });
       var twitterLinkUnlink = M(function() {
         /***
 
-          if user.google
-            p: a.text-danger(href='/account/unlink/google') Unlink your Google account
+          if user.twitter
+            p: a.text-danger(href='/account/unlink/twitter') Unlink your Twitter account
           else
-            p: a(href='/auth/google') Link your Google account
+            p: a(href='/auth/twitter') Link your Twitter account
         ***/
       });
       var twitterModel = '  twitter: String,';
