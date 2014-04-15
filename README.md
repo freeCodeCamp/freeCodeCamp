@@ -45,6 +45,7 @@ Table of Contents
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
+- [Generator](#generator)
 - [Obtaining API Keys](#obtaining-api-keys)
 - [Project Structure](#project-structure)
 - [List of Packages](#list-of-packages)
@@ -125,6 +126,24 @@ server. Once installed, instead of `node app.js` use `nodemon app.js`. It will
 save you a lot of time in the long run, because you won't need to manually
 restart the server each time you make a small change in code. To install, run
 `sudo npm install -g nodemon`.
+
+Generator
+---------
+
+Hackathon Starter Generator is still in alpha stage. It is tighly tied to the
+project code. As soon as you start changing and moving things around, it will
+probably no longer work as expected. That is why it's best to use when you first
+download Hackathon Starter.
+
+:exclamation: **Note:** Generator has a "destructive" behavior, it will physically
+modify your code. *There is no undo action.* To be on a safe side, always commit
+your code to Git, so you could go back and undo the changes.
+
+Currently it supports adding/removing authentication providers and switching
+between SendGrid/Mailgun email services. In the future you'll be able to use
+it to quickly add Socket.io support to your app, add Mozilla Persona sign-in,
+generate new pages (create new routes, templates and controllers for you
+automatically).
 
 Obtaining API Keys
 ------------------
