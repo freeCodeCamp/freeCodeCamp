@@ -48,8 +48,8 @@ Table of Contents
 - [Obtaining API Keys](#obtaining-api-keys)
 - [Project Structure](#project-structure)
 - [List of Packages](#list-of-packages)
-- [Useful Tools](#useful-tools)
-- [Recommended Design](#recommended-design)
+- [Useful Tools and Resources](#useful-tools-and-resources)
+- [Recommended Design Resources](#recommended-design-resources)
 - [Recommended Node.js Libraries](#recommended-nodejs-libraries)
 - [Recommended Client-Side Libraries](#recommended-client-side-libraries)
 - [Pro Tips](#pro-tips)
@@ -57,7 +57,7 @@ Table of Contents
 - [How It Works](#how-it-works-mini-guides)
 - [Mongoose Cheatsheet](#mongoose-cheatsheet)
 - [Deployment](#deployment)
-- [CHANGELOG](#changelog)
+- [Changelog](#changelog)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -69,8 +69,8 @@ Features
 - **OAuth 2.0 Authentication** via Facebook, Google, GitHub, LinkedIn, Instagram
 - Flash notifications with animations by [animate.css](http://daneden.github.io/animate.css/)
 - MVC Project Structure
-- Node.js [clusters](http://nodejs.org/api/cluster.html#cluster_cluster) support
-- Rails 3.1-style asset pipeline by [connect-assets](https://github.com/adunkman/connect-assets) (See FAQ)
+- Node.js clusters support
+- Rails 3.1-style asset pipeline by connect-assets (See FAQ)
 - LESS stylesheets (auto-compiled without any Gulp/Grunt hassle)
 - Bootstrap 3 + Flat UI + iOS7
 - Contact Form (powered by Mailgun or Sendgrid)
@@ -367,8 +367,8 @@ List of Packages
 | inquirer                        | Interactive command line interface for generator. |
 | colors                          | Pretty output colors for generator. |
 
-Useful Tools & Resources
-------------------------
+Useful Tools and Resources
+--------------------------
 
 - [JS Recipes](http://jsrecipes.org) - JavaScript tutorials for backend and frontend development.
 - [Jade Syntax Documentation by Example](http://naltatis.github.io/jade-syntax-docs/#attributes) - Even better than official Jade docs.
@@ -378,6 +378,7 @@ Useful Tools & Resources
 Recommended Design Resources
 ----------------------------
 
+- [Bootsnipp](http://bootsnipp.com/) - Code snippets for Bootstrap.
 - [UIBox](http://www.uibox.in) - Curated HTML, CSS, JS, UI components.
 - [Bootstrap Zero](http://bootstrapzero.com/) - Free Bootstrap templates themes.
 - [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap.
@@ -395,9 +396,9 @@ Recommended Node.js Libraries
 - [Filesize.js](http://filesizejs.com/) - Pretty file sizes, e.g. `filesize(265318); // "265.32 kB"`.
 - [Numeral.js](http://numeraljs.com) - Library for formatting and manipulating numbers.
 - [Node Inspector](https://github.com/node-inspector/node-inspector) - Node.js debugger based on Chrome Developer Tools.
-- [node-taglib](https://github.com/nikhilm/node-taglib) - Library for reading and editing the meta-data of several popular audio formats.
+- [node-taglib](https://github.com/nikhilm/node-taglib) - Library for reading the meta-data of several popular audio formats.
 
-Recommended Client-side Libraries
+Recommended Client-Side Libraries
 ---------------------------------
 
 - [Framework7](http://www.idangero.us/framework7) - Full Featured HTML Framework For Building iOS7 Apps.
@@ -421,14 +422,16 @@ Pro Tips
 added to `package.json` as well. For example, `npm install --save moment`.
 - Use [async.parallel()](https://github.com/caolan/async#parallel) when you need to run multiple
 asynchronous tasks, and then render a page, but only when all tasks are completed. For example, you might
-want to scrape 3 different websites for some data (async operation) and render the results in a template  after all 3 websites have been scraped.
-- Need to find a specific object inside an Array? Use [_.findWhere](http://underscorejs.org/#findWhere) function from Underscore.js. For example, this is how you would retrieve a Twitter token from database: `var token = _.findWhere(req.user.tokens, { kind: 'twitter' });`, where `req.user.tokens` is an Array, and a second parameter is an object with a given key/value.
-- If you right click and select **View Page Source**, notice how *Express*
-minified HTML for you. If you would like to see non-minified markup,
-add `app.locals.pretty = true;` to **app.js** with the rest of the Express configuration.
+want to scrape 3 different websites for some data and render the results in a template
+after all 3 websites have been scraped.
+- Need to find a specific object inside an Array? Use [_.findWhere](http://underscorejs.org/#findWhere)
+function from Underscore.js. For example, this is how you would retrieve a
+Twitter token from database: `var token = _.findWhere(req.user.tokens, { kind: 'twitter' });`,
+where 1st parameter is an array, and a 2nd parameter is an object to search for.
 
 FAQ
 ---
+
 ### Why do I get `403 Error: Forbidden` when submitting a POST form?
 You need to add this hidden input element to your form. This has been added in the
 pull request [#40](https://github.com/sahat/hackathon-starter/pull/40).
@@ -936,6 +939,7 @@ The second step involves resetting a password. After clicking on a reset link, i
 
 Mongoose Cheatsheet
 -------------------
+
 #### Find all users:
 ```js
 User.find(function(err, users) {
@@ -1063,8 +1067,9 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
  - **Note:** *You will be prompted for the password you created earlier*
 - On **Deployments** tab of your Windows Azure Web Site, you will see the deployment history
 
-CHANGELOG
+Changelog
 ---------
+
 ## 2.0.0 (April 14, 2014)
 New Features
 
@@ -1077,10 +1082,18 @@ Bug Fixes
 
 Contributing
 ------------
-If something is unclear, confusing, or needs to be refactored, please let me know. Pull requests are always welcome, but due to the opinionated nature of this project, I cannot accept every pull request. Please open an issue before submitting a pull request. This project uses [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with a few minor exceptions. If you are submitting a pull request that involves Jade templates, please make sure you are using *spaces*, not tabs.
+
+If something is unclear, confusing, or needs to be refactored, please let me know.
+Pull requests are always welcome, but due to the opinionated nature of this
+project, I cannot accept every pull request. Please open an issue before
+submitting a pull request. This project uses
+[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with a
+few minor exceptions. If you are submitting a pull request that involves
+Jade templates, please make sure you are using *spaces*, not tabs.
 
 License
 -------
+
 The MIT License (MIT)
 
 Copyright (c) 2014 Sahat Yalkabov
