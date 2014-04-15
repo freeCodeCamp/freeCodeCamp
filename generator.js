@@ -134,99 +134,116 @@ inquirer.prompt({
       var app = fs.readFileSync(appFile).toString().split('\n');
       var secrets = fs.readFileSync(secretsFile).toString().split('\n');
 
-      if (_.contains(answer.auth, 'Facebook')) {
-        var facebookStrategyRequire = "var FacebookStrategy = require('passport-facebook').Strategy;";
-        var facebookStrategy = M(function() {
-          /***
-          // Sign in with Facebook.
+      /////////////////////////////
+      // Facebook Authentication //
+      /////////////////////////////
 
-          passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, refreshToken, profile, done) {
-            if (req.user) {
-              User.findOne({ $or: [{ facebook: profile.id }, { email: profile.email }] }, function(err, existingUser) {
-                if (existingUser) {
-                  req.flash('errors', { msg: 'There is already a Facebook account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+      var facebookRoutes = M(function() {
+        /***
+        app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
+        app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res) {
+          res.redirect(req.session.returnTo || '/');
+        });
+        ***/
+      });
+      var facebookStrategyRequire = "var FacebookStrategy = require('passport-facebook').Strategy;";
+      var facebookStrategy = M(function() {
+        /***
+        // Sign in with Facebook.
+
+        passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, refreshToken, profile, done) {
+          if (req.user) {
+            User.findOne({ $or: [{ facebook: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+              if (existingUser) {
+                req.flash('errors', { msg: 'There is already a Facebook account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                done(err);
+              } else {
+                User.findById(req.user.id, function(err, user) {
+                  user.facebook = profile.id;
+                  user.tokens.push({ kind: 'facebook', accessToken: accessToken });
+                  user.profile.name = user.profile.name || profile.displayName;
+                  user.profile.gender = user.profile.gender || profile._json.gender;
+                  user.profile.picture = user.profile.picture || 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
+                  user.save(function(err) {
+                    req.flash('info', { msg: 'Facebook account has been linked.' });
+                    done(err, user);
+                  });
+                });
+              }
+            });
+          } else {
+            User.findOne({ facebook: profile.id }, function(err, existingUser) {
+              if (existingUser) return done(null, existingUser);
+              User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+                if (existingEmailUser) {
+                  req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Facebook manually from Account Settings.' });
                   done(err);
                 } else {
-                  User.findById(req.user.id, function(err, user) {
-                    user.facebook = profile.id;
-                    user.tokens.push({ kind: 'facebook', accessToken: accessToken });
-                    user.profile.name = user.profile.name || profile.displayName;
-                    user.profile.gender = user.profile.gender || profile._json.gender;
-                    user.profile.picture = user.profile.picture || 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
-                    user.save(function(err) {
-                      req.flash('info', { msg: 'Facebook account has been linked.' });
-                      done(err, user);
-                    });
+                  var user = new User();
+                  user.email = profile._json.email;
+                  user.facebook = profile.id;
+                  user.tokens.push({ kind: 'facebook', accessToken: accessToken });
+                  user.profile.name = profile.displayName;
+                  user.profile.gender = profile._json.gender;
+                  user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
+                  user.profile.location = (profile._json.location) ? profile._json.location.name : '';
+                  user.save(function(err) {
+                    done(err, user);
                   });
                 }
               });
-            } else {
-              User.findOne({ facebook: profile.id }, function(err, existingUser) {
-                if (existingUser) return done(null, existingUser);
-                User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
-                  if (existingEmailUser) {
-                    req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Facebook manually from Account Settings.' });
-                    done(err);
-                  } else {
-                    var user = new User();
-                    user.email = profile._json.email;
-                    user.facebook = profile.id;
-                    user.tokens.push({ kind: 'facebook', accessToken: accessToken });
-                    user.profile.name = profile.displayName;
-                    user.profile.gender = profile._json.gender;
-                    user.profile.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
-                    user.profile.location = (profile._json.location) ? profile._json.location.name : '';
-                    user.save(function(err) {
-                      done(err, user);
-                    });
-                  }
-                });
-              });
-            }
-          }));
+            });
+          }
+        }));
 
-          ***/
-        });
-        var facebookButton = M(function() {
-          /***
-           a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
-             i.fa.fa-facebook
-             | Sign in with Facebook
-           ***/
-        });
-        var facebookLinkUnlink = M(function() {
-          /***
+        ***/
+      });
+      var facebookButton = M(function() {
+        /***
+              a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+                i.fa.fa-facebook
+                | Sign in with Facebook
+        ***/
+      });
+      var facebookLinkUnlink = M(function() {
+        /***
 
-           if user.facebook
-             p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
-           else
-             p: a(href='/auth/facebook') Link your Facebook account
-           ***/
-        });
-        var facebookModel = '  facebook: String,';
+          if user.facebook
+            p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
+          else
+            p: a(href='/auth/facebook') Link your Facebook account
+        ***/
+      });
+      var facebookModel = '  facebook: String,';
 
+      if (_.contains(answer.auth, 'Facebook')) {
         if (passportConfig.indexOf(facebookStrategyRequire) < 0) {
 
-          // config/passport.js
+          // Add Facebook to config/passport.js
           index = passportConfig.indexOf("var passport = require('passport');");
           passportConfig.splice(index + 1, 0, facebookStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, facebookStrategy);
           fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
 
-          // views/account/login.jade
+          // Add Facebook to views/account/login.jade
           loginTemplate.push(facebookButton);
           fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
 
-          // views/account/profile.jade
+          // Add Facebook to views/account/profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, facebookLinkUnlink);
           fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
 
-          // models/User.js
+          // Add Facebook to models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, facebookModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+          // Add Facebook to app.js
+          index = app.indexOf(' * OAuth routes for sign-in.');
+          app.splice(index + 3, 0, facebookRoutes);
+          fs.writeFileSync(appFile, app.join('\n'));
 
           console.log('✓ Facebook authentication has been added.'.info);
         } else {
@@ -256,82 +273,99 @@ inquirer.prompt({
         userModel.splice(index, 1);
         fs.writeFileSync(userModelFile, userModel.join('\n'));
 
+        // Remove Facebook from app.js
+        index = app.indexOf("app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));");
+        app.splice(index, 4);
+        fs.writeFileSync(appFile, app.join('\n'));
+
         console.log('✗ Facebook authentication has been removed.'.error);
       }
 
-      if (_.contains(answer.auth, 'GitHub')) {
-        var githubStrategyRequire = "var GitHubStrategy = require('passport-github').Strategy;";
-        var githubStrategy = M(function() {
-          /***
-          // Sign in with GitHub.
+      ///////////////////////////
+      // GitHub Authentication //
+      ///////////////////////////
 
-          passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refreshToken, profile, done) {
-            if (req.user) {
-              User.findOne({ $or: [{ github: profile.id }, { email: profile.email }] }, function(err, existingUser) {
-                if (existingUser) {
-                  req.flash('errors', { msg: 'There is already a GitHub account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+      var githubRoutes = M(function() {
+        /***
+        app.get('/auth/github', passport.authenticate('github'));
+        app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }), function(req, res) {
+          res.redirect(req.session.returnTo || '/');
+        });
+        ***/
+      });
+      var githubStrategyRequire = "var GitHubStrategy = require('passport-github').Strategy;";
+      var githubStrategy = M(function() {
+        /***
+        // Sign in with GitHub.
+
+        passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refreshToken, profile, done) {
+          if (req.user) {
+            User.findOne({ $or: [{ github: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+              if (existingUser) {
+                req.flash('errors', { msg: 'There is already a GitHub account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                done(err);
+              } else {
+                User.findById(req.user.id, function(err, user) {
+                  user.github = profile.id;
+                  user.tokens.push({ kind: 'github', accessToken: accessToken });
+                  user.profile.name = user.profile.name || profile.displayName;
+                  user.profile.picture = user.profile.picture || profile._json.avatar_url;
+                  user.profile.location = user.profile.location || profile._json.location;
+                  user.profile.website = user.profile.website || profile._json.blog;
+                  user.save(function(err) {
+                    req.flash('info', { msg: 'GitHub account has been linked.' });
+                    done(err, user);
+                  });
+                });
+              }
+            });
+          } else {
+            User.findOne({ github: profile.id }, function(err, existingUser) {
+              if (existingUser) return done(null, existingUser);
+              User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+                if (existingEmailUser) {
+                  req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with GitHub manually from Account Settings.' });
                   done(err);
                 } else {
-                  User.findById(req.user.id, function(err, user) {
-                    user.github = profile.id;
-                    user.tokens.push({ kind: 'github', accessToken: accessToken });
-                    user.profile.name = user.profile.name || profile.displayName;
-                    user.profile.picture = user.profile.picture || profile._json.avatar_url;
-                    user.profile.location = user.profile.location || profile._json.location;
-                    user.profile.website = user.profile.website || profile._json.blog;
-                    user.save(function(err) {
-                      req.flash('info', { msg: 'GitHub account has been linked.' });
-                      done(err, user);
-                    });
+                  var user = new User();
+                  user.email = profile._json.email;
+                  user.github = profile.id;
+                  user.tokens.push({ kind: 'github', accessToken: accessToken });
+                  user.profile.name = profile.displayName;
+                  user.profile.picture = profile._json.avatar_url;
+                  user.profile.location = profile._json.location;
+                  user.profile.website = profile._json.blog;
+                  user.save(function(err) {
+                    done(err, user);
                   });
                 }
               });
-            } else {
-              User.findOne({ github: profile.id }, function(err, existingUser) {
-                if (existingUser) return done(null, existingUser);
-                User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
-                  if (existingEmailUser) {
-                    req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with GitHub manually from Account Settings.' });
-                    done(err);
-                  } else {
-                    var user = new User();
-                    user.email = profile._json.email;
-                    user.github = profile.id;
-                    user.tokens.push({ kind: 'github', accessToken: accessToken });
-                    user.profile.name = profile.displayName;
-                    user.profile.picture = profile._json.avatar_url;
-                    user.profile.location = profile._json.location;
-                    user.profile.website = profile._json.blog;
-                    user.save(function(err) {
-                      done(err, user);
-                    });
-                  }
-                });
-              });
-            }
-          }));
+            });
+          }
+        }));
 
-          ***/
-        });
+        ***/
+      });
 
-        var githubButton = M(function() {
-          /***
-           a.btn.btn-block.btn-github.btn-social(href='/auth/github')
-             i.fa.fa-github
-             | Sign in with GitHub
-           ***/
-        });
-        var githubLinkUnlink = M(function() {
-          /***
+      var githubButton = M(function() {
+        /***
+              a.btn.btn-block.btn-github.btn-social(href='/auth/github')
+                i.fa.fa-github
+                | Sign in with GitHub
+        ***/
+      });
+      var githubLinkUnlink = M(function() {
+        /***
 
-           if user.github
-             p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
-           else
-             p: a(href='/auth/github') Link your GitHub account
-           ***/
-        });
-        var githubModel = '  github: String,';
+          if user.github
+            p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
+          else
+            p: a(href='/auth/github') Link your GitHub account
+        ***/
+      });
+      var githubModel = '  github: String,';
 
+      if (_.contains(answer.auth, 'GitHub')) {
         if (passportConfig.indexOf(githubStrategyRequire) < 0) {
 
           // config/passport.js
@@ -354,6 +388,11 @@ inquirer.prompt({
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, githubModel);
           fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+          // Add GitHub to app.js
+          index = app.indexOf(' * OAuth routes for sign-in.');
+          app.splice(index + 3, 0, githubRoutes);
+          fs.writeFileSync(appFile, app.join('\n'));
 
           console.log('✓ GitHub authentication has been added.'.info);
         } else {
@@ -382,6 +421,11 @@ inquirer.prompt({
         index = userModel.indexOf('  github: String,');
         userModel.splice(index, 1);
         fs.writeFileSync(userModelFile, userModel.join('\n'));
+
+        // Remove GitHub from app.js
+        index = app.indexOf("app.get('/auth/github', passport.authenticate('github'));");
+        app.splice(index, 4);
+        fs.writeFileSync(appFile, app.join('\n'));
 
         console.log('✗ GitHub authentication has been removed.'.error);
       }
