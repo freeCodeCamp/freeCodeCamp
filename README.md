@@ -367,35 +367,39 @@ List of Packages
 | inquirer                        | Interactive command line interface for generator. |
 | colors                          | Pretty output colors for generator. |
 
-Useful Tools
-------------
+Useful Tools & Resources
+------------------------
+
+- [JS Recipes](http://jsrecipes.org) - JavaScript tutorials for backend and frontend development.
 - [Jade Syntax Documentation by Example](http://naltatis.github.io/jade-syntax-docs/#attributes) - Even better than official Jade docs.
 - [HTML to Jade converter](http://html2jade.aaron-powell.com) - Extremely valuable when you need to quickly copy and paste HTML snippets from the web.
 - [JavascriptOO](http://www.javascriptoo.com/) - A directory of JavaScript libraries with examples, CDN links, statistics, and videos.
 
-Recommended Design
-------------------
+Recommended Design Resources
+----------------------------
+
 - [UIBox](http://www.uibox.in) - Curated HTML, CSS, JS, UI components.
 - [Bootstrap Zero](http://bootstrapzero.com/) - Free Bootstrap templates themes.
 - [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap.
-- [Bootflat](http://bootflat.github.io) - Open Source Flat UI Kit based on Twitter Bootstrap 3.
 - [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/icons/) - It's already part of the Hackathon Starter, so use this page as a reference.
-- [Colors](http://clrs.cc) - a nicer color palette for the web.
-- [SpinKit](http://tobiasahlin.com/spinkit/) - 8 awesome looking spinning loaders in CSS.
+- [Colors](http://clrs.cc) - A nicer color palette for the web.
 - [Creative Button Styles](http://tympanus.net/Development/CreativeButtons/) - awesome button styles.
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.
 - [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.
 
 Recommended Node.js Libraries
 -----------------------------
-- [nodemon](https://github.com/remy/nodemon) - Automatically restart Node.js server on code changes.
-- [geoip-lite](https://github.com/bluesmoon/node-geoip) - Geolocation coordinates from IP address.
-- [filesize.js](http://filesizejs.com/) - Pretty file sizes, e.g. `filesize(265318); // "265.32 kB"`.
-- [Numeral.js](http://numeraljs.com) - JavaScript library for formatting and manipulating numbers.
-- [Node Inspector](https://github.com/node-inspector/node-inspector) - Node.js debugger based on Chrome Developer Tools.
 
-Recommended Client-Side libraries
+- [Nodemon](https://github.com/remy/nodemon) - Automatically restart Node.js server on code changes.
+- [geoip-lite](https://github.com/bluesmoon/node-geoip) - Geolocation coordinates from IP address.
+- [Filesize.js](http://filesizejs.com/) - Pretty file sizes, e.g. `filesize(265318); // "265.32 kB"`.
+- [Numeral.js](http://numeraljs.com) - Library for formatting and manipulating numbers.
+- [Node Inspector](https://github.com/node-inspector/node-inspector) - Node.js debugger based on Chrome Developer Tools.
+- [node-taglib](https://github.com/nikhilm/node-taglib) - Library for reading and editing the meta-data of several popular audio formats.
+
+Recommended Client-side Libraries
 ---------------------------------
+
 - [Framework7](http://www.idangero.us/framework7) - Full Featured HTML Framework For Building iOS7 Apps.
 - [InstantClick](http://instantclick.io) - Makes your pages load instantly by pre-loading them on mouse hover.
 - [NProgress.js](https://github.com/rstacruz/nprogress) - Slim progress bars like on YouTube and Medium.
@@ -412,6 +416,7 @@ Recommended Client-Side libraries
 
 Pro Tips
 --------
+
 - When installing an NPM package, add a *--save* flag, and it will be automatially
 added to `package.json` as well. For example, `npm install --save moment`.
 - Use [async.parallel()](https://github.com/caolan/async#parallel) when you need to run multiple
