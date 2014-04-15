@@ -51,7 +51,7 @@ Table of Contents
 - [Useful Tools and Resources](#useful-tools-and-resources)
 - [Recommended Design Resources](#recommended-design-resources)
 - [Recommended Node.js Libraries](#recommended-nodejs-libraries)
-- [Recommended Client-Side Libraries](#recommended-client-side-libraries)
+- [Recommended Client-side Libraries](#recommended-client-side-libraries)
 - [Pro Tips](#pro-tips)
 - [FAQ](#faq)
 - [How It Works](#how-it-works-mini-guides)
@@ -398,7 +398,7 @@ Recommended Node.js Libraries
 - [Node Inspector](https://github.com/node-inspector/node-inspector) - Node.js debugger based on Chrome Developer Tools.
 - [node-taglib](https://github.com/nikhilm/node-taglib) - Library for reading the meta-data of several popular audio formats.
 
-Recommended Client-Side Libraries
+Recommended Client-side Libraries
 ---------------------------------
 
 - [Framework7](http://www.idangero.us/framework7) - Full Featured HTML Framework For Building iOS7 Apps.
@@ -1099,15 +1099,33 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 Changelog
 ---------
 
-## 2.0.0 (April 14, 2014)
-New Features
+### 2.0.0 (April 15, 2014)
+There are have been over **500+** commits since the initial announcement in
+January 2014 and over a **120** issues and pull requests from **28** contributors.
 
-Bug Fixes
-
-
-- x
-- y
-- z
+- Documention grew **8x** in size since the announcement on Hacker News
+- Upgraded to Express 4.0
+- Generator for adding/removing authentication providers
+- New Instagram authentication that can be added via generator
+- Forgot password and password reset for Local authentication
+- Added LinkedIn authentication and API example
+- Added Stipe API example
+- Added Venmo API example
+- Added Clockwork SMS example
+- Nicer Facebook API example
+- Added tests (Mocha, Chai, Supertest)
+- Gravatar pictures in Navbar and Profile page
+- Tracks last visited URL before signing in to redirect back to original destination
+- CSRF protection
+- Gzip compression and static assets caching
+- Client-side JavaScript is automatically minified+concatenated in production
+- Navbar, flash messages, footer refactored into partial templates
+- Support for Node.js clusters
+- Support for Mailgun email service
+- Support for environment variables in secrets.js
+- Switched from less-middleware to connect-assets
+- Bug fixes related to multi-authentication login and account linking
+- Other small fixes and changes that are too many to list
 
 Contributing
 ------------
