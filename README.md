@@ -95,7 +95,7 @@ Prerequisites
  - <img src="http://i1-news.softpedia-static.com/images/extra/LINUX/small/slw218news1.png" height="17">&nbsp;**Fedora**: `sudo yum groupinstall "Development Tools"`
  - <img src="https://en.opensuse.org/images/b/be/Logo-geeko_head.png" height="17">&nbsp;**OpenSUSE**: `sudo zypper install --type pattern devel_basis`
 
-:exclamation: **Note**: If you are new to Node or Express, I recommend to watch
+:exclamation: **Note:** If you are new to Node or Express, I recommend to watch
 [Node.js and Express 101](http://www.youtube.com/watch?v=BN0JlMZCtNU)
 screencast by Alex Ford that teaches Node and Express from scratch. Alternatively,
 here is another great tutorial for complete beginners - [Getting Started With Node.js, Express, MongoDB](http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/).
@@ -117,26 +117,24 @@ npm install
 node app.js
 ```
 
-:exclamation: **Note**: I strongly recommend installing nodemon `sudo npm install -g nodemon`.
-It will monitor for any changes in your node.js
-application and automatically restart the server. Once installed, instead of `node app.js` use `nodemon app.js`.
-It will save you a lot of time in the long run, because you won't need to manually restart the server each time you make a change.
-
-Next, if you want to use any of the included APIs or OAuth authentication methods, you will need to obtain
-appropriate credentials: Client ID, Client Secret, API Key, or Username & Password. You will
-need to go through each provider to generate new credentials.
+:exclamation: **Note:** I highly recommend installing [Nodemon](https://github.com/remy/nodemon).
+It watches for any changes in your  node.js app and automatically restarts the
+server. Once installed, instead of `node app.js` use `nodemon app.js`. It will
+save you a lot of time in the long run, because you won't need to manually
+restart the server each time you make a small change in code. To install, run
+`sudo npm install -g nodemon`.
 
 Obtaining API Keys
 ------------------
 
-:pushpin: You could support all 5 authentication methods by setting up OAuth keys, but you don't have to. If you would only like to have **Facebook sign-in** and **Local sign-in** with email and password, in **secrets.js** set `googleAuth: false`, `twitterOauth: false`, `githubAuth: false`. By doing so, *Google, Twitter and Github* buttons will not show up on the *Login* page. If you set `localAuth: false`, users will not be able to login/create an account with email and password or change password in the *Account Management* page.
+To use any of the included APIs or OAuth authentication methods, you will need
+to obtain appropriate credentials: Client ID, Client Secret, API Key, or
+Username & Password. You will need to go through each provider to generate new
+credentials.
 
-:bulb: Alternatively, if you would like to completely remove authentication methods that you do not plan on using, you will need to manually delete the code yourself. Let's say you want to keep only **Local authentication**. Start by deleting *FacebookStrategy, TwitterStrategy, GitHubStrategy, GoogleStrategy* `require` lines and their corresponding defined strategies in **passport.js**. Then in **login.jade** template delete the entire `.btn-group`, leaving only the form with Email and Password.
-Update **User.js** model by deleting the following fields: `facebook`, `github`, `google`, `twitter`. In your **profile.jade** template delete the entire code starting with **h3 Linked Accounts**. And finally delete the corresponding routes that have **/auth/provider** and **/auth/provider/callback**, for example:
-```js
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/login' }));
-```
+**Hackathon Starter 2.0 Update:** I have included dummy keys and passwords for
+all API examples to get you up and running even faster. But don't forget to update
+them with *your credentials* when you are ready to deploy an app.
 
 <img src="http://images.google.com/intl/en_ALL/images/srpr/logo6w.png" width="200">
 - Visit [Google Cloud Console](https://cloud.google.com/console/project)
@@ -149,7 +147,11 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
  - **Authorized redirect URI**: http://localhost:3000/auth/google/callback
 - Copy and paste *Client ID* and *Client secret* keys into `config/secrets.js`
 
-:exclamation: **Note**: When you ready to deploy to production don't forget to add your new url to *Authorized Javascript origins* and *Authorized redirect URI*, e.g. `http://my-awesome-app.herokuapp.com` and `http://my-awesome-app.herokuapp.com/auth/google/callback` respectively. The same goes for other providers.
+:exclamation: **Note:** When you ready to deploy to production don't forget to
+add your new url to *Authorized Javascript origins* and *Authorized redirect URI*,
+e.g. `http://my-awesome-app.herokuapp.com` and
+`http://my-awesome-app.herokuapp.com/auth/google/callback` respectively.
+The same goes for other providers.
 
 <hr>
 
@@ -163,7 +165,7 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRe
 - Select **Website**
 - Enter `http://localhost:3000` for *Site URL*
 
-:exclamation: **Note**: After a successful sign in with Facebook, a user will be redirected back to home page with appended hash `#_=_` in the URL. It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
+:exclamation: **Note:** After a successful sign in with Facebook, a user will be redirected back to home page with appended hash `#_=_` in the URL. It is *not* a bug. See this [Stack Overflow](https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url) discussion for ways to handle it.
 
 <hr>
 
@@ -533,7 +535,7 @@ Trying to use both CSS files at the same time will likely result in undesired ef
 Let's start from the beginning. For this example I will use [Escape Velocity](http://html5up.net/escape-velocity/) template:
 ![Alt](http://html5up.net/uploads/previews/6330653905846315.jpg)
 
-**Note**: For the sake of simplicity I will only consider `index.html`, and skip `left-sidebar.html`,
+**Note:** For the sake of simplicity I will only consider `index.html`, and skip `left-sidebar.html`,
 `no-sidebar.html`, `right-sidebar.html`.
 
 Move all javascript files from `html5up-escape-velocity/js` to `public/js`. Then move all css files from `html5up-escape-velocity/css` to `public/css`. And finally, move all images from `html5up-escape-velocity/images` to `public/images` (You could move it to the existing **img** folder, but then you would have to manually change every `img` reference). Grab the contents of `index.html` and paste it into [HTML To Jade](http://html2jade.aaron-powell.com/).
@@ -857,7 +859,7 @@ script.
     });
 ```
 
-**Note**: Notice the path of the `socket.io.js`, you don't actually
+**Note:** Notice the path of the `socket.io.js`, you don't actually
 have to have `socket.io.js` file anywhere in your project; it will be generated automatically
 at runtime.
 
@@ -967,7 +969,7 @@ experience, **Heroku** is the easiest to get started with, it will automatically
 - Finally, in `secrets.js` instead of `db: 'localhost'`, use the following URI with your credentials:
  - `db: 'mongodb://USERNAME:PASSWORD@ds027479.mongolab.com:27479/DATABASE_NAME'`
 
-> **:exclamation:Note**: As an alternative to MongoLab, there is also [MongoHQ](http://www.mongohq.com/home).
+> **:exclamation:Note:** As an alternative to MongoLab, there is also [MongoHQ](http://www.mongohq.com/home).
 
 <img src="http://blog.exadel.com/wp-content/uploads/2013/10/heroku-Logo-1.jpg" width="200">
 - Download and install [Heroku Toolbelt](https://toolbelt.heroku.com/osx)
@@ -979,7 +981,7 @@ experience, **Heroku** is the easiest to get started with, it will automatically
 - First, install this Ruby gem: `sudo gem install rhc` :gem:
 - Run `rhc login` and enter your OpenShift credentials
 - From *your app* directory run `rhc app create MyApp nodejs-0.10`
- - **Note**: *MyApp* is what you want to name your app (no spaces)
+ - **Note:** *MyApp* is what you want to name your app (no spaces)
 - Once that is done, you will be provided with **URL**, **SSH** and **Git Remote** links
 - Visit that **URL** and you should see *Welcome to your Node.js application on OpenShift* page
 - Copy **Git Remote** and paste it into `git remote add openshift your_git_remote`
@@ -1007,7 +1009,7 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 ```
 
 - Finally, now you can push your code to OpenShift by running `git push -f openshift master`
- - **Note**: The first time you run this command, you have to pass `-f` (force) flag because OpenShift creates a dummy server with the welcome page when you create a new Node.js app. Passing `-f` flag will override everything with your *Hackathon Starter* project repository. Please **do not** do `git pull` as it will create unnecessary merge conflicts.
+ - **Note:** The first time you run this command, you have to pass `-f` (force) flag because OpenShift creates a dummy server with the welcome page when you create a new Node.js app. Passing `-f` flag will override everything with your *Hackathon Starter* project repository. Please **do not** do `git pull` as it will create unnecessary merge conflicts.
 - And you are done! (Not quite as simple as Heroku, huh?)
 
 <img src="http://www.joyent.com/content/08-company/05-customers/13-nodejitsu/header.png" width="200">
