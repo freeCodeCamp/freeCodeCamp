@@ -3,6 +3,7 @@ var colors = require('colors');
 var fs = require('fs');
 var inquirer = require('inquirer');
 var M = require('mstring');
+var os = require('os');
 
 colors.setTheme({
   silly: 'rainbow',
@@ -37,8 +38,8 @@ inquirer.prompt({
       var contactControllerFile = 'controllers/contact.js';
       var userControllerFile = 'controllers/user.js';
 
-      var contactController = fs.readFileSync(contactControllerFile).toString().split('\n');
-      var userController = fs.readFileSync(userControllerFile).toString().split('\n');
+      var contactController = fs.readFileSync(contactControllerFile).toString().split(os.EOL);
+      var userController = fs.readFileSync(userControllerFile).toString().split(os.EOL);
 
       if (answer.email.match('SendGrid')) {
 
@@ -47,7 +48,7 @@ inquirer.prompt({
         contactController.splice(index + 1, 1, '  service: \'SendGrid\',');
         contactController.splice(index + 3, 1, '       user: secrets.sendgrid.user,');
         contactController.splice(index + 4, 1, '       pass: secrets.sendgrid.password');
-        fs.writeFileSync(contactControllerFile, contactController.join('\n'));
+        fs.writeFileSync(contactControllerFile, contactController.join(os.EOL));
 
         // Change SMPT Transport to SendGrid in controllers/user.js
         index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
@@ -58,7 +59,7 @@ inquirer.prompt({
         userController.splice(index + 1, 1, '        service: \'SendGrid\',');
         userController.splice(index + 3, 1, '          user: secrets.sendgrid.user,');
         userController.splice(index + 4, 1, '          pass: secrets.sendgrid.password');
-        fs.writeFileSync(userControllerFile, userController.join('\n'));
+        fs.writeFileSync(userControllerFile, userController.join(os.EOL));
 
         console.log('✓ Email Delivery Service has been switched to'.info, 'SendGrid'.help);
       }
@@ -70,7 +71,7 @@ inquirer.prompt({
         contactController.splice(index + 1, 1, '  service: \'Mailgun\',');
         contactController.splice(index + 3, 1, '       user: secrets.mailgun.login,');
         contactController.splice(index + 4, 1, '       pass: secrets.mailgun.password');
-        fs.writeFileSync(contactControllerFile, contactController.join('\n'));
+        fs.writeFileSync(contactControllerFile, contactController.join(os.EOL));
 
         // Change SMPT Transport to Mailgun in controllers/user.js
         index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
@@ -81,7 +82,7 @@ inquirer.prompt({
         userController.splice(index + 1, 1, '        service: \'Mailgun\',');
         userController.splice(index + 3, 1, '          user: secrets.mailgun.login,');
         userController.splice(index + 4, 1, '          pass: secrets.mailgun.password');
-        fs.writeFileSync(userControllerFile, userController.join('\n'));
+        fs.writeFileSync(userControllerFile, userController.join(os.EOL));
 
         console.log('✓ Email Delivery Service has been switched to'.info, '@'.error + 'mail'.data + 'gun'.error);
       }
@@ -123,12 +124,12 @@ inquirer.prompt({
       var profileTemplateFile = 'views/account/profile.jade';
       var loginTemplateFile = 'views/account/login.jade';
 
-      var passportConfig = fs.readFileSync(passportConfigFile).toString().split('\n');
-      var loginTemplate = fs.readFileSync(loginTemplateFile).toString().split('\n');
-      var profileTemplate = fs.readFileSync(profileTemplateFile).toString().split('\n');
-      var userModel = fs.readFileSync(userModelFile).toString().split('\n');
-      var app = fs.readFileSync(appFile).toString().split('\n');
-      var secrets = fs.readFileSync(secretsFile).toString().split('\n');
+      var passportConfig = fs.readFileSync(passportConfigFile).toString().split(os.EOL);
+      var loginTemplate = fs.readFileSync(loginTemplateFile).toString().split(os.EOL);
+      var profileTemplate = fs.readFileSync(profileTemplateFile).toString().split(os.EOL);
+      var userModel = fs.readFileSync(userModelFile).toString().split(os.EOL);
+      var app = fs.readFileSync(appFile).toString().split(os.EOL);
+      var secrets = fs.readFileSync(secretsFile).toString().split(os.EOL);
 
       /////////////////////////////
       // Facebook Authentication //
@@ -220,26 +221,26 @@ inquirer.prompt({
           passportConfig.splice(index + 1, 0, facebookStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, facebookStrategy);
-          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+          fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
           // Add Facebook to views/account/login.jade
           loginTemplate.push(facebookButton);
-          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
           // Add Facebook to views/account/profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, facebookLinkUnlink);
-          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
           // Add Facebook to models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, facebookModel);
-          fs.writeFileSync(userModelFile, userModel.join('\n'));
+          fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
           // Add Facebook to app.js
           index = app.indexOf(' * OAuth routes for sign-in.');
           app.splice(index + 3, 0, facebookRoutes);
-          fs.writeFileSync(appFile, app.join('\n'));
+          fs.writeFileSync(appFile, app.join(os.EOL));
 
           console.log('✓ Facebook authentication has been added.'.info);
         } else {
@@ -252,27 +253,27 @@ inquirer.prompt({
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with Facebook.');
         passportConfig.splice(index, 47);
-        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+        fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
         // views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')");
         loginTemplate.splice(index, 3);
-        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
         // views/account/profile.jade
         index = profileTemplate.indexOf("  if user.facebook");
         profileTemplate.splice(index - 1, 5);
-        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
         // models/User.js
         index = userModel.indexOf('  facebook: String,');
         userModel.splice(index, 1);
-        fs.writeFileSync(userModelFile, userModel.join('\n'));
+        fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
         // Remove Facebook from app.js
         index = app.indexOf("app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));");
         app.splice(index, 4);
-        fs.writeFileSync(appFile, app.join('\n'));
+        fs.writeFileSync(appFile, app.join(os.EOL));
 
         console.log('✗ Facebook authentication has been removed.'.error);
       }
@@ -369,26 +370,26 @@ inquirer.prompt({
           passportConfig.splice(index + 1, 0, githubStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, githubStrategy);
-          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+          fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
           // views/account/login.jade
           loginTemplate.push(githubButton);
-          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
           // views/account/profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, githubLinkUnlink);
-          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
           // models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, githubModel);
-          fs.writeFileSync(userModelFile, userModel.join('\n'));
+          fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
           // Add GitHub to app.js
           index = app.indexOf(' * OAuth routes for sign-in.');
           app.splice(index + 3, 0, githubRoutes);
-          fs.writeFileSync(appFile, app.join('\n'));
+          fs.writeFileSync(appFile, app.join(os.EOL));
 
           console.log('✓ GitHub authentication has been added.'.info);
         } else {
@@ -401,27 +402,27 @@ inquirer.prompt({
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with GitHub.');
         passportConfig.splice(index, 48);
-        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+        fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
         // views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-github.btn-social(href='/auth/github')");
         loginTemplate.splice(index, 3);
-        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
         // views/account/profile.jade
         index = profileTemplate.indexOf('  if user.github');
         profileTemplate.splice(index - 1, 5);
-        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
         // models/User.js
         index = userModel.indexOf('  github: String,');
         userModel.splice(index, 1);
-        fs.writeFileSync(userModelFile, userModel.join('\n'));
+        fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
         // Remove GitHub from app.js
         index = app.indexOf("app.get('/auth/github', passport.authenticate('github'));");
         app.splice(index, 4);
-        fs.writeFileSync(appFile, app.join('\n'));
+        fs.writeFileSync(appFile, app.join(os.EOL));
 
         console.log('✗ GitHub authentication has been removed.'.error);
       }
@@ -516,26 +517,26 @@ inquirer.prompt({
           passportConfig.splice(index + 1, 0, googleStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, googleStrategy);
-          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+          fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
           // Add Google to views/account/login.jade
           loginTemplate.push(googleButton);
-          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
           // Add Google to views/account/profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, googleLinkUnlink);
-          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
           // Add Google to models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, googleModel);
-          fs.writeFileSync(userModelFile, userModel.join('\n'));
+          fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
           // Add Google to app.js
           index = app.indexOf(' * OAuth routes for sign-in.');
           app.splice(index + 3, 0, googleRoutes);
-          fs.writeFileSync(appFile, app.join('\n'));
+          fs.writeFileSync(appFile, app.join(os.EOL));
 
           console.log('✓ Google authentication has been added.'.info);
         } else {
@@ -548,27 +549,27 @@ inquirer.prompt({
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with Google.');
         passportConfig.splice(index, 46);
-        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+        fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
         // Remove Google from views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')");
         loginTemplate.splice(index, 3);
-        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
         // Remove Google from views/account/profile.jade
         index = profileTemplate.indexOf('  if user.google');
         profileTemplate.splice(index - 1, 5);
-        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
         // Remove Google from models/User.js
         index = userModel.indexOf('  google: String,');
         userModel.splice(index, 1);
-        fs.writeFileSync(userModelFile, userModel.join('\n'));
+        fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
         // Remove Google from app.js
         index = app.indexOf("app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));");
         app.splice(index, 4);
-        fs.writeFileSync(appFile, app.join('\n'));
+        fs.writeFileSync(appFile, app.join(os.EOL));
 
         console.log('✗ Google authentication has been removed.'.error);
       }
@@ -658,26 +659,26 @@ inquirer.prompt({
           passportConfig.splice(index + 1, 0, twitterStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, twitterStrategy);
-          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+          fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
           // views/account/login.jade
           loginTemplate.push(twitterButton);
-          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
           // views/account/profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, twitterLinkUnlink);
-          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
           // models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, twitterModel);
-          fs.writeFileSync(userModelFile, userModel.join('\n'));
+          fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
           // Add Twitter to app.js
           index = app.indexOf(' * OAuth routes for sign-in.');
           app.splice(index + 3, 0, twitterRoutes);
-          fs.writeFileSync(appFile, app.join('\n'));
+          fs.writeFileSync(appFile, app.join(os.EOL));
 
           console.log('✓ Twitter authentication has been added.'.info);
         } else {
@@ -690,27 +691,27 @@ inquirer.prompt({
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with Twitter.');
         passportConfig.splice(index, 43);
-        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+        fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
         // Remove Twitter from views/account/login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')");
         loginTemplate.splice(index, 3);
-        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
         // Remove Twitter from views/account/profile.jade
         index = profileTemplate.indexOf('  if user.twitter');
         profileTemplate.splice(index - 1, 5);
-        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
         // Remove Twitter from models/User.js
         index = userModel.indexOf('  twitter: String,');
         userModel.splice(index, 1);
-        fs.writeFileSync(userModelFile, userModel.join('\n'));
+        fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
         // Remove Twitter from app.js
         index = app.indexOf("app.get('/auth/twitter', passport.authenticate('twitter'));");
         app.splice(index, 4);
-        fs.writeFileSync(appFile, app.join('\n'));
+        fs.writeFileSync(appFile, app.join(os.EOL));
 
         console.log('✗ Twitter authentication has been removed.'.error);
       }
@@ -809,26 +810,26 @@ inquirer.prompt({
           passportConfig.splice(index + 1, 0, linkedinStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, linkedinStrategy);
-          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+          fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
           // Add LinkedIn to login.jade
           loginTemplate.push(linkedinButton);
-          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
           // Add LinkedIn to profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, linkedinLinkUnlink);
-          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
           // Add LinkedIn to models/User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, linkedinModel);
-          fs.writeFileSync(userModelFile, userModel.join('\n'));
+          fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
           // Add LinkedIn to app.js
           index = app.indexOf(' * OAuth routes for sign-in.');
           app.splice(index + 3, 0, linkedinRoutes);
-          fs.writeFileSync(appFile, app.join('\n'));
+          fs.writeFileSync(appFile, app.join(os.EOL));
 
           console.log('✓ LinkedIn authentication has been added.'.info);
         } else {
@@ -844,27 +845,27 @@ inquirer.prompt({
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with LinkedIn.');
         passportConfig.splice(index, 51);
-        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+        fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
         // Remove LinkedIn from login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')");
         loginTemplate.splice(index, 3);
-        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
         // Remove LinkedIn from profile.jade
         index = profileTemplate.indexOf('  if user.linkedin');
         profileTemplate.splice(index - 1, 5);
-        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
         // Remove LinkedIn from app.js
         index = app.indexOf("app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));");
         app.splice(index, 4);
-        fs.writeFileSync(appFile, app.join('\n'));
+        fs.writeFileSync(appFile, app.join(os.EOL));
 
         // Remove LinkedIn from User.js
         index = userModel.indexOf('  linkedin: String,');
         userModel.splice(index, 1);
-        fs.writeFileSync(userModelFile, userModel.join('\n'));
+        fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
         console.log('✗ LinkedIn authentication has been removed.'.error);
       }
@@ -965,31 +966,31 @@ inquirer.prompt({
           passportConfig.splice(index + 1, 0, instagramStrategyRequire);
           index = passportConfig.indexOf('passport.deserializeUser(function(id, done) {');
           passportConfig.splice(index + 6, 0, instagramStrategy);
-          fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+          fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
           // Add Instagram to login.jade
           loginTemplate.push(instagramButton);
-          fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+          fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
           // Add Instagram to profile.jade
           index = profileTemplate.indexOf('    h3 Linked Accounts');
           profileTemplate.splice(index + 1, 0, instagramLinkUnlink);
-          fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+          fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
           // Add Instagram to User.js
           index = userModel.indexOf('  tokens: Array,');
           userModel.splice(index - 1, 0, instagramModel);
-          fs.writeFileSync(userModelFile, userModel.join('\n'));
+          fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
           // Add Instagram to app.js
           index = app.indexOf(' * OAuth routes for sign-in.');
           app.splice(index + 3, 0, instagramRoutes);
-          fs.writeFileSync(appFile, app.join('\n'));
+          fs.writeFileSync(appFile, app.join(os.EOL));
 
           // Add Instagram to secrets.js
           index = secrets.indexOf('module.exports = {');
           secrets.splice(index + 1, 0, instagramSecrets);
-          fs.writeFileSync(secretsFile, secrets.join('\n'));
+          fs.writeFileSync(secretsFile, secrets.join(os.EOL));
 
           console.log('✓ Instagram authentication has been added.'.info);
         } else {
@@ -1004,32 +1005,32 @@ inquirer.prompt({
         passportConfig.splice(index, 1);
         index = passportConfig.indexOf('// Sign in with Instagram.');
         passportConfig.splice(index, 40);
-        fs.writeFileSync(passportConfigFile, passportConfig.join('\n'));
+        fs.writeFileSync(passportConfigFile, passportConfig.join(os.EOL));
 
         // Remove Instagram from login.jade
         index = loginTemplate.indexOf("      a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')");
         loginTemplate.splice(index, 3);
-        fs.writeFileSync(loginTemplateFile, loginTemplate.join('\n'));
+        fs.writeFileSync(loginTemplateFile, loginTemplate.join(os.EOL));
 
         // Remove Instagram from profile.jade
         index = profileTemplate.indexOf('  if user.instagram');
         profileTemplate.splice(index - 1, 5);
-        fs.writeFileSync(profileTemplateFile, profileTemplate.join('\n'));
+        fs.writeFileSync(profileTemplateFile, profileTemplate.join(os.EOL));
 
         // Remove Instagram from app.js
         index = app.indexOf("app.get('/auth/instagram', passport.authenticate('instagram'));");
         app.splice(index, 4);
-        fs.writeFileSync(appFile, app.join('\n'));
+        fs.writeFileSync(appFile, app.join(os.EOL));
 
         // Remove Instagram from secrets.js
         index = secrets.indexOf('  instagram: {');
         secrets.splice(index, 7);
-        fs.writeFileSync(secretsFile, secrets.join('\n'));
+        fs.writeFileSync(secretsFile, secrets.join(os.EOL));
 
         // Remove Instagram from User.js
         index = userModel.indexOf('  instagram: String,');
         userModel.splice(index, 1);
-        fs.writeFileSync(userModelFile, userModel.join('\n'));
+        fs.writeFileSync(userModelFile, userModel.join(os.EOL));
 
         console.log('✗ Instagram authentication has been removed.'.error);
       }
