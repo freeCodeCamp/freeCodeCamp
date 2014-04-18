@@ -348,7 +348,6 @@ List of Packages
 | static-favicon                  | Express 4.0 middleware. |
 | express-session                 | Express 4.0 middleware. |
 | morgan                          | Express 4.0 middleware. |
-| csurf                           | Express 4.0 middleware. |
 | compression                     | Express 4.0 middleware. |
 | errorhandler                    | Express 4.0 middleware. |
 | method-override                 | Express 4.0 middleware. |
@@ -359,6 +358,7 @@ List of Packages
 | jade                            | Template engine for Express. |
 | lastfm                          | Last.fm API library. |
 | less                            | LESS compiler. Used implicitly by connect-assets. |
+| lusca                           | CSRF middleware.        |
 | mongoose                        | MongoDB ODM. |
 | node-foursquare                 | Foursquare API library. |
 | node-linkedin                   | LinkedIn API library. |

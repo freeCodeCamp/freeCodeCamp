@@ -62,7 +62,7 @@ var day = hour * 24;
 var week = day * 7;
 
 var csrfWhitelist = [
-  '/signup'
+  '/this-url-will-bypass-csrf'
 ];
 
 app.set('port', process.env.PORT || 3000);
@@ -96,7 +96,6 @@ app.use(function(req, res, next) {
 });
 app.use(function(req, res, next) {
   res.locals.user = req.user;
-  res.locals.secrets = secrets;
   next();
 });
 app.use(flash());
@@ -196,13 +195,19 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
 });
 
 
-// 404 error handler
+/**
+ * 404 Error Handler
+ */
+
 app.use(function(req, res) {
   res.status(404);
   res.render('404');
 });
 
-// 500 error handler
+/**
+ * 500 Error Handler.
+ */
+
 app.use(errorHandler());
 
 /**
