@@ -459,8 +459,9 @@ as part of CSRF protection.
 ```
 input(type='hidden', name='_csrf', value=_csrf)
 ```
-You can read more about [CSRF protection middleware](http://expressjs.com/3x/api.html#csrf) at the Express API Reference.
 
+**Note:** It is now possible to whitelist certain URLs. In other words you can
+specify a list of routes that should bypass CSRF verification check.
 
 ### What is cluster_app.js?
 From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_it_works):
