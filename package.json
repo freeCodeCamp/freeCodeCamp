@@ -53,7 +53,8 @@
     "twit": "^1.1.13",
     "underscore": "^1.6.0",
     "uglify-js": "^2.4.12",
-    "validator": "^3.9.0"
+    "validator": "^3.9.0",
+    "lusca": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "^1.18.2",

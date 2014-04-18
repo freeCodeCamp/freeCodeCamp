@@ -2,6 +2,7 @@
  * Module dependencies.
  */
 
+var _ = require('underscore');
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var compress = require('compression');
@@ -10,7 +11,7 @@ var bodyParser = require('body-parser');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var errorHandler = require('errorhandler');
-var csrf = require('csurf');
+var csrf = require('lusca').csrf();
 var methodOverride = require('method-override');
 
 var MongoStore = require('connect-mongo')({ session: session });
@@ -60,6 +61,10 @@ var hour = 3600000;
 var day = hour * 24;
 var week = day * 7;
 
+var csrfWhitelist = [
+  '/signup'
+];
+
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -82,19 +87,23 @@ app.use(session({
     auto_reconnect: true
   })
 }));
-app.use(csrf());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
+  // Conditional CSRF.
+  if (_.contains(csrfWhitelist, req.path)) next();
+  else csrf(req, res, next);
+});
+app.use(function(req, res, next) {
   res.locals.user = req.user;
-  res.locals._csrf = req.csrfToken();
   res.locals.secrets = secrets;
   next();
 });
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 app.use(function(req, res, next) {
-  // Keep track of previous URL
+  // Keep track of previous URL to redirect back to
+  // original destination after a successful login.
   if (req.method !== 'GET') return next();
   var path = req.path.split('/')[1];
   if (/(auth|login|logout|signup)$/i.test(path)) return next();
