@@ -1119,7 +1119,7 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 Changelog
 ---------
 
-### 2.0.1 (April 17, 2014)
+### 2.0.1 (April 18, 2014)
 - Conditional CSRF support using [lusca](https://github.com/krakenjs/lusca)
 - Fixed EOL problem in `generator.js` for Windows users
 - Fixed outdated csrf token string on profile.jade
