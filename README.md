@@ -1138,7 +1138,7 @@ January 2014 and over a **120** issues and pull requests from **28** contributor
 - New Instagram authentication that can be added via generator
 - Forgot password and password reset for Local authentication
 - Added LinkedIn authentication and API example
-- Added Stipe API example
+- Added Stripe API example
 - Added Venmo API example
 - Added Clockwork SMS example
 - Nicer Facebook API example
