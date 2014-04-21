@@ -194,18 +194,9 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
   res.redirect('/api/venmo');
 });
 
-
-/**
- * 404 Error Handler
- */
-
-app.use(function(req, res) {
-  res.status(404);
-  res.render('404');
-});
-
 /**
  * 500 Error Handler.
+ * As of Express 4.0 it must be placed at the end of all routes.
  */
 
 app.use(errorHandler());
