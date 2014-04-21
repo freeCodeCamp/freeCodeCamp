@@ -345,7 +345,6 @@ List of Packages
 | express                         | Node.js web framework. |
 | body-parser                     | Express 4.0 middleware. |
 | cookie-parser                   | Express 4.0 middleware. |
-| static-favicon                  | Express 4.0 middleware. |
 | express-session                 | Express 4.0 middleware. |
 | morgan                          | Express 4.0 middleware. |
 | compression                     | Express 4.0 middleware. |
