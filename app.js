@@ -89,8 +89,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(function(req, res, next) {
   // Conditional CSRF.
-  if (_.contains(csrfWhitelist, req.path)) next();
-  else csrf(req, res, next);
+  if (_.contains(csrfWhitelist, req.path)) return next();
+  csrf(req, res, next);
 });
 app.use(function(req, res, next) {
   res.locals.user = req.user;
