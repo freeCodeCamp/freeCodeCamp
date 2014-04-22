@@ -16,6 +16,7 @@ var stripe =  require('stripe')(secrets.stripe.apiKey);
 var twilio = require('twilio')(secrets.twilio.sid, secrets.twilio.token);
 var Linkedin = require('node-linkedin')(secrets.linkedin.clientID, secrets.linkedin.clientSecret, secrets.linkedin.callbackURL);
 var clockwork = require('clockwork')({key: secrets.clockwork.apiKey});
+var ig = require('instagram-node').instagram();
 
 /**
  * GET /api
@@ -499,4 +500,57 @@ exports.getLinkedin = function(req, res, next) {
       profile: $in
     });
   });
+};
+
+/**
+ * GET /api/instagram
+ * Instagram API example.
+ */
+
+exports.getInstagram = function(req, res, next) {
+  var token = _.findWhere(req.user.tokens, { kind: 'instagram' });
+
+  ig.use({ access_token: token });
+  ig.use({ client_id: secrets.instagram.clientID, client_secret: secrets.instagram.clientSecret });
+
+  async.parallel({
+    searchByUsername: function(done) {
+      ig.user_search('lisa_veronica', function(err, users, limit) {
+        done(err, users);
+      });
+    },
+    searchByUserId: function(done) {
+      ig.user('175948269', function(err, user) {
+        console.log(user);
+        done(err, user);
+      });
+    },
+    popularImages: function(done) {
+      ig.media_popular(function(err, medias) {
+        done(err, medias);
+      });
+    }
+  },
+  function(err, results) {
+    res.render('api/instagram', {
+      title: 'Instagram API',
+      usernames: results.searchByUsername,
+      userById: results.searchByUserId,
+      popularImages: results.popularImages
+    });
+  });
+};
+
+exports.postInstagram = function(req, res, next) {
+  var token = _.findWhere(req.user.tokens, { kind: 'instagram' });
+
+  ig.use({ access_token: token });
+  ig.use({ client_id: secrets.instagram.clientID, client_secret: secrets.instagram.clientSecret });
+
+
+
+  ig.user_search('13reasons', function(err, users, limit) {
+    console.log(users);
+  });
+
 };
