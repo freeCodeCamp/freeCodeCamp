@@ -29,7 +29,7 @@ you still have to manually remove API examples that you don't need.
 
 <h4 align="center">Flatly Bootstrap Theme</h3>
 
-![](https://lh6.googleusercontent.com/-hcbsNx9tagc/U0xhUuAAPSI/AAAAAAAAEAg/kppd76NPORs/w1210-h952-no/Screenshot+2014-04-14+18.28.02.png)
+![](https://lh5.googleusercontent.com/-oJ-7bSYisRY/U1a-WhK_LoI/AAAAAAAAECM/a04fVYgefzw/w1474-h1098-no/Screen+Shot+2014-04-22+at+3.08.33+PM.png)
 
 <h4 align="center">Default Theme</h3>
 
