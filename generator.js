@@ -926,7 +926,10 @@ inquirer.prompt({
               user.instagram = profile.id;
               user.tokens.push({ kind: 'instagram', accessToken: accessToken });
               user.profile.name = profile.displayName;
-              user.email = '';
+              // Similar to Twitter API, assigns a temporary e-mail address
+              // to get on with the registration process. It can be changed later
+              // to a valid e-mail address in Profile Management.
+              profile.username + "@instagram.com";
               user.profile.website = profile._json.data.website;
               user.profile.picture = profile._json.data.profile_picture;
               user.save(function(err) {
