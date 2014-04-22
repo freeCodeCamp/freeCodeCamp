@@ -73,6 +73,11 @@ block content
   .page-header
     h3 Linked Accounts
 
+  if user.instagram
+    p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
+  else
+    p: a(href='/auth/instagram') Link your Instagram account
+
   if user.google
     p: a.text-danger(href='/account/unlink/google') Unlink your Google account
   else

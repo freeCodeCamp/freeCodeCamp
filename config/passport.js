@@ -1,5 +1,6 @@
 var _ = require('underscore');
 var passport = require('passport');
+var InstagramStrategy = require('passport-instagram').Strategy;
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
@@ -20,6 +21,49 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
+
+// Sign in with Instagram.
+
+passport.use(new InstagramStrategy(secrets.instagram,function(req, accessToken, refreshToken, profile, done) {
+  if (req.user) {
+    User.findOne({ $or: [{ instagram: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+      if (existingUser) {
+        req.flash('errors', { msg: 'There is already an Instagram account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+        done(err);
+      } else {
+        User.findById(req.user.id, function(err, user) {
+          user.instagram = profile.id;
+          user.tokens.push({ kind: 'instagram', accessToken: accessToken });
+          user.profile.name = user.profile.name || profile.displayName;
+          user.profile.picture = user.profile.picture || profile._json.data.profile_picture;
+          user.profile.website = user.profile.website || profile._json.data.website;
+          user.save(function(err) {
+            req.flash('info', { msg: 'Instagram account has been linked.' });
+            done(err, user);
+          });
+        });
+      }
+    });
+  } else {
+    User.findOne({ instagram: profile.id }, function(err, existingUser) {
+      if (existingUser) return done(null, existingUser);
+
+      var user = new User();
+      user.instagram = profile.id;
+      user.tokens.push({ kind: 'instagram', accessToken: accessToken });
+      user.profile.name = profile.displayName;
+      // Similar to Twitter API, assigns a temporary e-mail address
+      // to get on with the registration process. It can be changed later
+      // to a valid e-mail address in Profile Management.
+      profile.username + "@instagram.com";
+      user.profile.website = profile._json.data.website;
+      user.profile.picture = profile._json.data.profile_picture;
+      user.save(function(err) {
+        done(err, user);
+      });
+    });
+  }
+}));
 
 // Sign in using Email and Password.
 

@@ -149,11 +149,17 @@ app.get('/api/twitter', passportConf.isAuthenticated, passportConf.isAuthorized,
 app.get('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getVenmo);
 app.post('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postVenmo);
 app.get('/api/linkedin', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getLinkedin);
+app.get('/api/instagram', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getInstagram);
+app.post('/api/instagram', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postInstagram);
 
 /**
  * OAuth routes for sign-in.
  */
 
+app.get('/auth/instagram', passport.authenticate('instagram'));
+app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
+  res.redirect(req.session.returnTo || '/');
+});
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res) {
   res.redirect(req.session.returnTo || '/');
