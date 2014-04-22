@@ -291,6 +291,13 @@ The same goes for other providers.
 
 <hr>
 
+<img src="http://iandouglas.com/presentations/pyconca2012/logos/sendgrid_logo.png" width="200">
+- Go to https://sendgrid.com/user/signup
+- Sign up and **confirm** your your account via the *activation email*
+- Then enter your SendGrid *Username* and *Password* into `config/secrets.js`
+
+<hr>
+
 <img src="https://raw.github.com/mailgun/media/master/Mailgun_Primary.png" width="200">
 - Go to http://www.mailgun.com
 - Sign up and add your *Domain Name*
