@@ -111,7 +111,7 @@ inquirer.prompt({
         { name: 'Google', checked: true },
         { name: 'Twitter', checked: true },
         { name: 'LinkedIn', checked: true },
-        { name: 'Instagram' },
+        { name: 'Instagram', checked: true },
         new inquirer.Separator('Press ctrl+c to cancel'.warn)
       ]
     }, function(answer) {
