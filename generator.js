@@ -30,7 +30,7 @@ inquirer.prompt({
       type: 'list',
       name: 'email',
       message: 'Choose Email Delivery Service:',
-      choices: ['SendGrid', 'Mailgun', 'Cancel']
+      choices: ['SendGrid', 'Mailgun', 'Mandrill', 'Cancel']
     }, function(answer) {
 
       var index;
@@ -85,6 +85,29 @@ inquirer.prompt({
         fs.writeFileSync(userControllerFile, userController.join(os.EOL));
 
         console.log('✓ Email Delivery Service has been switched to'.info, '@'.error + 'mail'.data + 'gun'.error);
+      }
+
+      if (answer.email.match('Mandrill')) {
+
+        // Change SMPT Transport to Mailgun in controllers/contact.js
+        index = contactController.indexOf('var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+        contactController.splice(index + 1, 1, '  service: \'Mandrill\',');
+        contactController.splice(index + 3, 1, '       user: secrets.mandrill.login,');
+        contactController.splice(index + 4, 1, '       pass: secrets.mandrill.password');
+        fs.writeFileSync(contactControllerFile, contactController.join(os.EOL));
+
+        // Change SMPT Transport to Mailgun in controllers/user.js
+        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+        userController.splice(index + 1, 1, '        service: \'Mandrill\',');
+        userController.splice(index + 3, 1, '          user: secrets.mandrill.login,');
+        userController.splice(index + 4, 1, '          pass: secrets.mandrill.password');
+        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', 1);
+        userController.splice(index + 1, 1, '        service: \'Mandrill\',');
+        userController.splice(index + 3, 1, '          user: secrets.mandrill.login,');
+        userController.splice(index + 4, 1, '          pass: secrets.mandrill.password');
+        fs.writeFileSync(userControllerFile, userController.join(os.EOL));
+
+        console.log('✓ Email Delivery Service has been switched to'.info, 'Mandrill'.help);
       }
     });
   }
