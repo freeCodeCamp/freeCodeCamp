@@ -55,7 +55,7 @@ inquirer.prompt({
         userController.splice(index + 1, 1, '        service: \'SendGrid\',');
         userController.splice(index + 3, 1, '          user: secrets.sendgrid.user,');
         userController.splice(index + 4, 1, '          pass: secrets.sendgrid.password');
-        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', 1);
+        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', (index + 1));
         userController.splice(index + 1, 1, '        service: \'SendGrid\',');
         userController.splice(index + 3, 1, '          user: secrets.sendgrid.user,');
         userController.splice(index + 4, 1, '          pass: secrets.sendgrid.password');
@@ -78,7 +78,7 @@ inquirer.prompt({
         userController.splice(index + 1, 1, '        service: \'Mailgun\',');
         userController.splice(index + 3, 1, '          user: secrets.mailgun.login,');
         userController.splice(index + 4, 1, '          pass: secrets.mailgun.password');
-        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', 1);
+        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', (index + 1));
         userController.splice(index + 1, 1, '        service: \'Mailgun\',');
         userController.splice(index + 3, 1, '          user: secrets.mailgun.login,');
         userController.splice(index + 4, 1, '          pass: secrets.mailgun.password');
@@ -101,7 +101,7 @@ inquirer.prompt({
         userController.splice(index + 1, 1, '        service: \'Mandrill\',');
         userController.splice(index + 3, 1, '          user: secrets.mandrill.login,');
         userController.splice(index + 4, 1, '          pass: secrets.mandrill.password');
-        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', 1);
+        index = userController.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', (index + 1));
         userController.splice(index + 1, 1, '        service: \'Mandrill\',');
         userController.splice(index + 3, 1, '          user: secrets.mandrill.login,');
         userController.splice(index + 4, 1, '          pass: secrets.mandrill.password');
