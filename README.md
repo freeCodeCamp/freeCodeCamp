@@ -308,7 +308,7 @@ The same goes for other providers.
 <img src="http://cdn.appstorm.net/web.appstorm.net/web/files/2013/12/mandrill-logo.png" width="100">
 - Go to http://mandrill.com
 - Sign up and add your *Domain Name*
-- From the dashboard, click on *Get SMTP credentials 
+- From the dashboard, click on *Get SMTP credentials
 - Copy and paste the default SMTP *Login* and *Password* into `config/secrets.js`
 
 
@@ -372,6 +372,7 @@ List of Packages
 | github-api                      | GitHub API library. |
 | jade                            | Template engine for Express. |
 | lastfm                          | Last.fm API library. |
+| instagram-node                  | Instagram API library. |
 | less                            | LESS compiler. Used implicitly by connect-assets. |
 | lusca                           | CSRF middleware.        |
 | mongoose                        | MongoDB ODM. |
@@ -383,6 +384,7 @@ List of Packages
 | passport-github                 | Sign-in with GitHub plugin. |
 | passport-google-oauth           | Sign-in with Google plugin. |
 | passport-twitter                | Sign-in with Twitter plugin. |
+| passport-instagram              | Sign-in with Instagram plugin. |
 | passport-local                  | Sign-in with Username and Password plugin. |
 | passport-linkedin-oauth2        | Sign-in with LinkedIn plugin. |
 | passport-oauth                  | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies. |
