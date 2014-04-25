@@ -96,16 +96,17 @@ exports.postSignup = function(req, res, next) {
     password: req.body.password
   });
 
-  user.save(function(err) {
-    if (err) {
-      if (err.code === 11000) {
-        req.flash('errors', { msg: 'User with that email already exists.' });
-      }
+  User.findOne({ email: req.body.email }, function(err, existingUser) {
+    if (existingUser) {
+      req.flash('errors', { msg: 'Account with that email address already exists.' });
       return res.redirect('/signup');
     }
-    req.logIn(user, function(err) {
+    user.save(function(err) {
       if (err) return next(err);
-      res.redirect('/');
+      req.logIn(user, function(err) {
+        if (err) return next(err);
+        res.redirect('/');
+      });
     });
   });
 };
