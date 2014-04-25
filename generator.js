@@ -150,7 +150,7 @@ inquirer.prompt({
 
         passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, refreshToken, profile, done) {
           if (req.user) {
-            User.findOne({ $or: [{ facebook: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+            User.findOne({ facebook: profile.id }, function(err, existingUser) {
               if (existingUser) {
                 req.flash('errors', { msg: 'There is already a Facebook account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
                 done(err);
@@ -297,7 +297,7 @@ inquirer.prompt({
 
         passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refreshToken, profile, done) {
           if (req.user) {
-            User.findOne({ $or: [{ github: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+            User.findOne({ github: profile.id }, function(err, existingUser) {
               if (existingUser) {
                 req.flash('errors', { msg: 'There is already a GitHub account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
                 done(err);
@@ -446,7 +446,7 @@ inquirer.prompt({
 
         passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refreshToken, profile, done) {
           if (req.user) {
-            User.findOne({ $or: [{ google: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+            User.findOne({ google: profile.id }, function(err, existingUser) {
               if (existingUser) {
                 req.flash('errors', { msg: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
                 done(err);
@@ -735,10 +735,7 @@ inquirer.prompt({
 
         passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
           if (req.user) {
-            User.findOne({ $or: [
-              { linkedin: profile.id },
-              { email: profile._json.emailAddress }
-            ] }, function(err, existingUser) {
+            User.findOne({ linkedin: profile.id }, function(err, existingUser) {
               if (existingUser) {
                 req.flash('errors', { msg: 'There is already a LinkedIn account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
                 done(err);
@@ -900,7 +897,7 @@ inquirer.prompt({
 
         passport.use(new InstagramStrategy(secrets.instagram,function(req, accessToken, refreshToken, profile, done) {
           if (req.user) {
-            User.findOne({ $or: [{ instagram: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+            User.findOne({ instagram: profile.id }, function(err, existingUser) {
               if (existingUser) {
                 req.flash('errors', { msg: 'There is already an Instagram account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
                 done(err);
