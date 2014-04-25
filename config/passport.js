@@ -26,7 +26,7 @@ passport.deserializeUser(function(id, done) {
 
 passport.use(new InstagramStrategy(secrets.instagram,function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findOne({ $or: [{ instagram: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+    User.findOne({ instagram: profile.id }, function(err, existingUser) {
       if (existingUser) {
         req.flash('errors', { msg: 'There is already an Instagram account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
         done(err);
@@ -84,7 +84,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, passw
  * OAuth Strategy Overview
  *
  * - User is already logged in.
- *   - Check if there is an existing account with a provider id or email.
+ *   - Check if there is an existing account with a <provider> id.
  *     - If there is, return an error message. (Account merging not supported)
  *     - Else link new OAuth account with currently logged-in user.
  * - User is not logged in.
@@ -99,7 +99,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, passw
 
 passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findOne({ $or: [{ facebook: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+    User.findOne({ facebook: profile.id }, function(err, existingUser) {
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a Facebook account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
         done(err);
@@ -146,7 +146,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
 
 passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findOne({ $or: [{ github: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+    User.findOne({ github: profile.id }, function(err, existingUser) {
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a GitHub account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
         done(err);
@@ -237,7 +237,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
 
 passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findOne({ $or: [{ google: profile.id }, { email: profile.email }] }, function(err, existingUser) {
+    User.findOne({ google: profile.id }, function(err, existingUser) {
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
         done(err);
@@ -283,10 +283,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
 
 passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
-    User.findOne({ $or: [
-      { linkedin: profile.id },
-      { email: profile._json.emailAddress }
-    ] }, function(err, existingUser) {
+    User.findOne({ linkedin: profile.id }, function(err, existingUser) {
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a LinkedIn account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
         done(err);
