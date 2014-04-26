@@ -303,6 +303,15 @@ The same goes for other providers.
 - Sign up and add your *Domain Name*
 - From the domain overview, copy and paste the default SMTP *Login* and *Password* into `config/secrets.js`
 
+<hr>
+
+<img src="http://cdn.appstorm.net/web.appstorm.net/web/files/2013/12/mandrill-logo.png" width="100">
+- Go to http://mandrill.com
+- Sign up and add your *Domain Name*
+- From the dashboard, click on *Get SMTP credentials
+- Copy and paste the default SMTP *Login* and *Password* into `config/secrets.js`
+
+
 Project Structure
 -----------------
 
@@ -602,7 +611,7 @@ reference guide. I have explained my reasons why it could not be merged in
 ### How do I switch SendGrid for another email delivery service?
 Run `node generator.js` bundled with Hackathon Starter, then select
 **Email Service** option. It will automatically replace appropriate strings in
-your code. Currently there are only two options: SendGrid and Mailgun.
+your code. Currently there are three options: SendGrid, Mandrill, and Mailgun.
 
 How It Works (mini guides)
 --------------------------
