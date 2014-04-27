@@ -308,7 +308,7 @@ The same goes for other providers.
 <img src="http://cdn.appstorm.net/web.appstorm.net/web/files/2013/12/mandrill-logo.png" width="100">
 - Go to http://mandrill.com
 - Sign up and add your *Domain Name*
-- From the dashboard, click on *Get SMTP credentials
+- From the dashboard, click on *Get SMTP credentials*
 - Copy and paste the default SMTP *Login* and *Password* into `config/secrets.js`
 
 
