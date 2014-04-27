@@ -1118,9 +1118,10 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 - To push your changes simply run `git push azure master`
  - **Note:** *You will be prompted for the password you created earlier*
 - On **Deployments** tab of your Windows Azure Web Site, you will see the deployment history
-Add
+
 Changelog
 ---------
+
 ### 2.0.4 (April 26, 2014)
 - Added Mandrill e-mail service (via generator)
 
