@@ -613,6 +613,27 @@ Run `node generator.js` bundled with Hackathon Starter, then select
 **Email Service** option. It will automatically replace appropriate strings in
 your code. Currently there are three options: SendGrid, Mandrill, and Mailgun.
 
+### Can I use Sass instead of LESS stylesheets?
+Yes you can! Although you will have to manually convert all existing stylesheets
+to Sass, which shouldn't be too hard considering how similar Sass and LESS are.
+Simply rename `styles.less` to `styles.scss` and **connect-assets** will
+automatically use Sass preprocessor.
+
+Your are not limited to just Sass *or* LESS, you could use both if you want to.
+In **layout.jade** simply specify LESS and Sass stylesheets separately:
+```jade
+!= css('styles') # public/css/styles.less
+!= css('my_sass_styles') # public/css/my_sass_styles.scss
+```
+
+And as I already mentioned you do not need to specify the file extension,
+**connect-assets** will automatically figure out which CSS preprocessor to use
+based on the filetype.
+
+**Note:** I did not include `node-sass` module in *package.json*, so you will
+have to install it yourself by running `npm install --save node-sass`.
+
+
 How It Works (mini guides)
 --------------------------
 
