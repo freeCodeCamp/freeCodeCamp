@@ -510,8 +510,8 @@ exports.getLinkedin = function(req, res, next) {
 exports.getInstagram = function(req, res, next) {
   var token = _.findWhere(req.user.tokens, { kind: 'instagram' });
 
-  ig.use({ access_token: token });
   ig.use({ client_id: secrets.instagram.clientID, client_secret: secrets.instagram.clientSecret });
+  ig.use({ access_token: token.accessToken });
 
   async.parallel({
     searchByUsername: function(done) {
@@ -531,7 +531,6 @@ exports.getInstagram = function(req, res, next) {
     },
     myRecentMedia: function(done) {
       ig.user_self_media_recent(function(err, medias, pagination, limit) {
-        console.log(medias)
         done(err, medias);
       });
     }
