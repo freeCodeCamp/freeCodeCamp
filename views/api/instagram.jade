@@ -60,3 +60,16 @@ block content
           i.fa.fa-heart
           |  #{image.likes.count}
 
+
+  hr
+  p.lead
+    | My Recent
+    strong  Media
+  .row
+    for image in myRecentMedia
+      .col-xs-3
+        a.thumbnail(href='#{image.link}')
+          img(src='#{image.images.standard_resolution.url}', height='320px')
+        div.facebook-caption
+          i.fa.fa-heart
+          | #{image.likes.count}
