@@ -521,7 +521,6 @@ exports.getInstagram = function(req, res, next) {
     },
     searchByUserId: function(done) {
       ig.user('175948269', function(err, user) {
-        console.log(user);
         done(err, user);
       });
     },
@@ -529,14 +528,21 @@ exports.getInstagram = function(req, res, next) {
       ig.media_popular(function(err, medias) {
         done(err, medias);
       });
+    },
+    myRecentMedia: function(done) {
+      ig.user_self_media_recent(function(err, medias, pagination, limit) {
+        console.log(medias)
+        done(err, medias);
+      });
     }
-  },
-  function(err, results) {
+  }, function(err, results) {
+    if (err) return next(err);
     res.render('api/instagram', {
       title: 'Instagram API',
       usernames: results.searchByUsername,
       userById: results.searchByUserId,
-      popularImages: results.popularImages
+      popularImages: results.popularImages,
+      myRecentMedia: results.myRecentMedia
     });
   });
 };
