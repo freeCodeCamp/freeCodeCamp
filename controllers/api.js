@@ -540,17 +540,3 @@ exports.getInstagram = function(req, res, next) {
     });
   });
 };
-
-exports.postInstagram = function(req, res, next) {
-  var token = _.findWhere(req.user.tokens, { kind: 'instagram' });
-
-  ig.use({ access_token: token });
-  ig.use({ client_id: secrets.instagram.clientID, client_secret: secrets.instagram.clientSecret });
-
-
-
-  ig.user_search('13reasons', function(err, users, limit) {
-    console.log(users);
-  });
-
-};
