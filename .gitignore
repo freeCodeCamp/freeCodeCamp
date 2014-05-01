@@ -19,7 +19,3 @@ node_modules
 *.iml
 .DS_Store
 Thumbs.db
-
-public/css/styles.css
-
-builtAssets
