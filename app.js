@@ -2,7 +2,6 @@
  * Module dependencies.
  */
 
-var _ = require('underscore');
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var compress = require('compression');
@@ -200,7 +199,7 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
 
 /**
  * 500 Error Handler.
- * As of Express 4.0 it must be placed at the end of all routes.
+ * As of Express 4.0 it must be placed at the end, after all routes.
  */
 
 app.use(errorHandler());
