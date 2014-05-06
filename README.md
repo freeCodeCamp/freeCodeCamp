@@ -477,7 +477,7 @@ added in the [pull request #40](https://github.com/sahat/hackathon-starter/pull/
 as part of CSRF protection.
 
 ```
-input(type='hidden', name='_csrf')
+input(type='hidden', name='_csrf', value='_csrf')
 ```
 
 **Note:** It is now possible to whitelist certain URLs. In other words you can
