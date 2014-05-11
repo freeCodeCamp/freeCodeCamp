@@ -21,6 +21,22 @@ var home = blessed.list({
   ]
 });
 
+var inner = blessed.box({
+  parent: home,
+  top: 'center',
+  left: 'center',
+  width: '50%',
+  height: '50%',
+  border: {
+    type: 'line',
+    fg: 'white',
+    bg: 'red'
+  },
+  fg: 'white',
+  bg: 'red'
+});
+
+
 var authentication = blessed.form({
   mouse: true,
   keys: true,
@@ -132,6 +148,85 @@ var authCancel = blessed.button({
   }
 });
 
+var email = blessed.form({
+  mouse: true,
+  keys: true,
+  fg: 'whiqte',
+  bg: 'blue',
+  padding: { left: 1, right: 1 }
+});
+
+var emailText = blessed.text({
+  parent: email,
+  content: 'Select one of the following email service providers for {underline}contact form{/underline} and {underline}password reset{/underline}.',
+  padding: 1,
+  bg: 'red',
+  fg: 'white',
+  tags: true
+});
+
+var sendgridRadio = blessed.radiobutton({
+  parent: email,
+  top: 5,
+  mouse: true,
+  fg: 'white',
+  bg: 'blue',
+  content: 'SendGrid'
+});
+
+var mailgunRadio = blessed.radiobutton({
+  parent: email,
+  top: 6,
+  mouse: true,
+  fg: 'white',
+  bg: 'blue',
+  content: 'Mailgun'
+});
+
+var mandrillRadio = blessed.radiobutton({
+  parent: email,
+  top: 7,
+  mouse: true,
+  fg: 'white',
+  bg: 'blue',
+  content: 'Mandrill'
+});
+
+var emailOk = blessed.button({
+  parent: email,
+  top: 9,
+  mouse: true,
+  shrink: true,
+  name: 'ok',
+  content: ' SUBMIT ',
+  style: {
+    fg: 'blue',
+    bg: 'white',
+    focus: {
+      fg: 'white',
+      bg: 'red'
+    }
+  }
+});
+
+var emailCancel = blessed.button({
+  parent: email,
+  top: 9,
+  left: 9,
+  mouse: true,
+  shrink: true,
+  name: 'cancel',
+  content: ' CANCEL ',
+  style: {
+    fg: 'blue',
+    bg: 'white',
+    focus: {
+      fg: 'white',
+      bg: 'red'
+    }
+  }
+});
+
 var title = blessed.text({
   parent: screen,
   align: 'center',
@@ -155,7 +250,8 @@ home.on('select', function(child, index) {
       authentication.focus();
       break;
     case 1:
-      console.log('doh');
+      home.append(email);
+      email.focus();
       break;
     case 2:
       console.log('doh');
