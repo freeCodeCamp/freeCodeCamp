@@ -22,11 +22,10 @@ var home = blessed.list({
 });
 
 var inner = blessed.box({
-  parent: home,
   top: 'center',
   left: 'center',
-  width: '50%',
-  height: '50%',
+  width: 33,
+  height: 10,
   border: {
     type: 'line',
     fg: 'white',
@@ -36,6 +35,90 @@ var inner = blessed.box({
   bg: 'red'
 });
 
+var socketText = blessed.text({
+  top: 'top',
+  bg: 'red',
+  fg: 'white',
+  tags: true,
+  content: 'Add real-time support to your application with Socket.IO.'
+});
+
+var clusterText = blessed.text({
+  top: 'top',
+  bg: 'red',
+  fg: 'white',
+  tags: true,
+  content: 'Take advantage of multi-core systems using built-in {underline}cluster{/underline} module.'
+});
+
+
+var enable = blessed.button({
+  parent: inner,
+  bottom: 0,
+  mouse: true,
+  shrink: true,
+  name: 'enable',
+  content: ' ENABLE ',
+  border: {
+    type: 'line',
+    fg: 'white',
+    bg: 'red'
+  },
+  style: {
+    fg: 'white',
+    bg: 'red',
+    focus: {
+      fg: 'white',
+      bg: 'red'
+    }
+  }
+});
+
+var disable = blessed.button({
+  parent: inner,
+  bottom: 0,
+  left: 10,
+  mouse: true,
+  shrink: true,
+  name: 'disable',
+  content: ' DISABLE ',
+  border: {
+    type: 'line',
+    fg: 'white',
+    bg: 'red'
+  },
+  style: {
+    fg: 'white',
+    bg: 'red',
+    focus: {
+      fg: 'white',
+      bg: 'red'
+    }
+  }
+});
+
+var cancel = blessed.button({
+  parent: inner,
+  bottom: 0,
+  left: 21,
+  mouse: true,
+  shrink: true,
+  name: 'cancel',
+  content: ' CANCEL ',
+  border: {
+    type: 'line',
+    fg: 'white',
+    bg: 'red'
+  },
+  style: {
+    fg: 'white',
+    bg: 'red',
+    focus: {
+      fg: 'white',
+      bg: 'red'
+    }
+  }
+});
 
 var authentication = blessed.form({
   mouse: true,
@@ -254,11 +337,16 @@ home.on('select', function(child, index) {
       email.focus();
       break;
     case 2:
-      console.log('doh');
+      home.append(inner);
+      inner.append(socketText);
+      inner.focus();
+      screen.render();
       break;
     case 3:
-
-      console.log('doh');
+      home.append(inner);
+      inner.append(clusterText);
+      inner.focus();
+      screen.render();
       break;
     default:
       process.exit(0);
