@@ -68,7 +68,7 @@ Features
 - **Local Authentication** using Email and Password
 - **OAuth 1.0a Authentication** via Twitter
 - **OAuth 2.0 Authentication** via Facebook, Google, GitHub, LinkedIn, Instagram
-- Flash notifications with animations by [animate.css](http://daneden.github.io/animate.css/)
+- Flash notifications
 - MVC Project Structure
 - Node.js clusters support
 - Rails 3.1-style asset pipeline by connect-assets (See FAQ)
@@ -707,7 +707,7 @@ Flash messages have a two-step process. You use `req.flash('errors', { msg: 'Err
 to create a flash message in your controllers, and then display them in your views:
 ```jade
 if messages.errors
-  .alert.alert-danger.animated.fadeIn
+  .alert.alert-danger.fade.in
     for error in messages.errors
       div= error.msg
 ```
@@ -742,17 +742,13 @@ req.flash('warning', { msg: 'You have exceeded 90% of your data usage' });
 **User Account Page (Example)**
 ```jade
 if messages.warning
-  .alert.alert-warning.animated.fadeIn
+  .alert.alert-warning.fade.in
     for warning in messages.warning
       div= warning.msg
 ```
 
 `partials/flash.jade` is a partial template that contains how flash messages
-are formatted. If you don't like the *fadeIn* animation, try something like
-*flipInX* (refer to [animate.css](http://daneden.github.io/animate.css/)), or just
-delete `.animated.fadeIn` from alerts if you don't want any animations. Or if you
-want to customize your flash messages by displaying ✔ on success flash and ✗ on error
-flash, this is the place where you would do all those customizations. Previously, flash
+are formatted. Previously, flash
 messages were scattered throughout each view that used flash messages
 (contact, login, signup, profile), but now, thankfully it is uses a *DRY* approach.
 
