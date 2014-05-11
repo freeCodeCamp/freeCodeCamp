@@ -1,6 +1,5 @@
 @import "lib/bootstrap/bootstrap";
 @import "themes/default";
-@import (less) "lib/animate.css";
 @import (less) "lib/font-awesome.min.css";
 @import (less) "lib/bootstrap-social.css";
 
@@ -27,33 +26,30 @@ footer {
 // Navbar
 // -------------------------
 
-.navbar-nav .profile-image {
+.navbar-nav img {
   width: 30px;
   height: 30px;
-  margin: -15px 15px -15px 0;
+  margin: -15px 15px -15px;
 }
 
 .navbar-brand {
-  background-image: url(../img/npm.png);
-  background-repeat: no-repeat;
+  background: url(../img/npm.png) no-repeat left center;
   background-size: 40px;
-  background-position: left center;
   padding-left: 50px;
   margin-left: 15px;
 }
 
-// Social Buttons
+// Alerts
 // -------------------------
 
-.btn-social {
-  border-radius: 2px;
+.alert {
+  margin-top: 20px;
 }
 
 // Font Awesome
 // -------------------------
 
-[class^="fa-"],
-[class*="fa-"] {
+.fa {
   margin-right: 5px;
 }
 
