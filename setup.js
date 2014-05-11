@@ -1,4 +1,7 @@
-var blessed = require('blessed')
+var fs = require('fs');
+var blessed = require('blessed');
+var multiline = require('multiline');
+
 var screen = blessed.screen({
   autoPadding: true
 });
@@ -13,17 +16,19 @@ var home = blessed.list({
   selectedFg: 'blue',
   selectedBg: 'white',
   items: [
-    '» Authentication',
-    '» Email Service',
-    '» Socket.IO',
-    '» Node.js Cluster',
-    '» Exit'
+    '» REMOVE AUTHENTICATION',
+    '» CHANGE EMAIL SERVICE',
+    '» ENABLE SOCKET.IO',
+    '» ADD NODE.JS CLUSTER SUPPORT',
+    '» EXIT'
   ]
 });
 
-var inner = blessed.box({
+var inner = blessed.form({
   top: 'center',
   left: 'center',
+  mouse: true,
+  keys: true,
   width: 33,
   height: 10,
   border: {
@@ -33,6 +38,29 @@ var inner = blessed.box({
   },
   fg: 'white',
   bg: 'red'
+});
+
+var success = blessed.box({
+  top: 'center',
+  left: 'center',
+  mouse: true,
+  keys: true,
+  tags: true,
+  width: '50%',
+  height: '40%',
+  border: {
+    type: 'line',
+    fg: 'white',
+    bg: 'green'
+  },
+  fg: 'white',
+  bg: 'green',
+  padding: 1
+});
+
+success.on('keypress', function() {
+  home.focus();
+  home.remove(success);
 });
 
 var socketText = blessed.text({
@@ -68,11 +96,12 @@ var enable = blessed.button({
     fg: 'white',
     bg: 'red',
     focus: {
-      fg: 'white',
-      bg: 'red'
+      fg: 'red',
+      bg: 'white'
     }
   }
 });
+
 
 var disable = blessed.button({
   parent: inner,
@@ -91,8 +120,8 @@ var disable = blessed.button({
     fg: 'white',
     bg: 'red',
     focus: {
-      fg: 'white',
-      bg: 'red'
+      fg: 'red',
+      bg: 'white'
     }
   }
 });
@@ -114,13 +143,20 @@ var cancel = blessed.button({
     fg: 'white',
     bg: 'red',
     focus: {
-      fg: 'white',
-      bg: 'red'
+      fg: 'red',
+      bg: 'white'
     }
   }
 });
 
-var authentication = blessed.form({
+cancel.on('press', function() {
+  home.focus();
+  home.remove(inner);
+  screen.render();
+
+});
+
+var auth = blessed.form({
   mouse: true,
   keys: true,
   fg: 'white',
@@ -129,7 +165,7 @@ var authentication = blessed.form({
 });
 
 var authText = blessed.text({
-  parent: authentication,
+  parent: auth,
   content: 'Selecting a checkbox adds an authentication provider. Unselecting a checkbox removes it. If authentication provider is already present, no action will be taken.',
   padding: 1,
   bg: 'magenta',
@@ -137,7 +173,7 @@ var authText = blessed.text({
 });
 
 var facebookCheckbox = blessed.checkbox({
-  parent: authentication,
+  parent: auth,
   top: 6,
   checked: true,
   mouse: true,
@@ -147,7 +183,7 @@ var facebookCheckbox = blessed.checkbox({
 });
 
 var githubCheckbox = blessed.checkbox({
-  parent: authentication,
+  parent: auth,
   top: 7,
   checked: true,
   mouse: true,
@@ -157,7 +193,7 @@ var githubCheckbox = blessed.checkbox({
 });
 
 var googleCheckbox = blessed.checkbox({
-  parent: authentication,
+  parent: auth,
   top: 8,
   checked: true,
   mouse: true,
@@ -167,7 +203,7 @@ var googleCheckbox = blessed.checkbox({
 });
 
 var twitterCheckbox = blessed.checkbox({
-  parent: authentication,
+  parent: auth,
   top: 9,
   checked: true,
   mouse: true,
@@ -177,7 +213,7 @@ var twitterCheckbox = blessed.checkbox({
 });
 
 var linkedinCheckbox = blessed.checkbox({
-  parent: authentication,
+  parent: auth,
   top: 10,
   checked: true,
   mouse: true,
@@ -187,7 +223,7 @@ var linkedinCheckbox = blessed.checkbox({
 });
 
 var instagramCheckbox = blessed.checkbox({
-  parent: authentication,
+  parent: auth,
   top: 11,
   checked: true,
   mouse: true,
@@ -196,12 +232,12 @@ var instagramCheckbox = blessed.checkbox({
   content: 'Instagram'
 });
 
-var authOk = blessed.button({
-  parent: authentication,
+var authSubmit = blessed.button({
+  parent: auth,
   top: 13,
   mouse: true,
   shrink: true,
-  name: 'ok',
+  name: 'submit',
   content: ' SUBMIT ',
   style: {
     fg: 'blue',
@@ -214,7 +250,7 @@ var authOk = blessed.button({
 });
 
 var authCancel = blessed.button({
-  parent: authentication,
+  parent: auth,
   top: 13,
   left: 9,
   mouse: true,
@@ -231,13 +267,20 @@ var authCancel = blessed.button({
   }
 });
 
+authCancel.on('press', function() {
+  home.focus();
+  home.remove(auth);
+  screen.render();
+});
+
 var email = blessed.form({
   mouse: true,
   keys: true,
-  fg: 'whiqte',
+  fg: 'white',
   bg: 'blue',
   padding: { left: 1, right: 1 }
 });
+
 
 var emailText = blessed.text({
   parent: email,
@@ -310,6 +353,13 @@ var emailCancel = blessed.button({
   }
 });
 
+emailCancel.on('press', function() {
+  home.focus();
+  home.remove(email);
+  screen.render();
+
+});
+
 var title = blessed.text({
   parent: screen,
   align: 'center',
@@ -323,14 +373,16 @@ var footer = blessed.text({
   bottom: 0,
   fg: 'white',
   bg: 'blue',
-  content: ' <Up/Down> moves | <Enter> selects | <q> exits'
+  tags: true,
+  content: ' {cyan-fg}<Up/Down>{/cyan-fg} moves | {cyan-fg}<Enter>{/cyan-fg} selects | {cyan-fg}<q>{/cyan-fg} exits'
 });
 
 home.on('select', function(child, index) {
   switch (index) {
     case 0:
-      home.append(authentication);
-      authentication.focus();
+      home.append(auth);
+      auth.focus();
+      screen.render();
       break;
     case 1:
       home.append(email);
@@ -343,10 +395,13 @@ home.on('select', function(child, index) {
       screen.render();
       break;
     case 3:
-      home.append(inner);
-      inner.append(clusterText);
-      inner.focus();
+      // Cluster
+      addClusterSupport();
+      home.append(success);
+      success.setContent('New file {underline}cluster_app.js{/underline} has been created. Your app is now able to use more than 1 CPU by running node {underline}cluster_app.js{/underline}, which in turn spawns multiple instances of {underline}app.js{/underline}');
+      success.focus();
       screen.render();
+
       break;
     default:
       process.exit(0);
@@ -354,11 +409,35 @@ home.on('select', function(child, index) {
 });
 
 
-
-
 screen.key('q', function() {
   process.exit(0);
 });
 
 screen.render();
+
+
+function addClusterSupport() {
+
+  var fileContents = multiline(function() {
+/*
+var os = require('os');
+var cluster = require('cluster');
+
+cluster.setupMaster({
+  exec: 'app.js'
+});
+
+cluster.on('exit', function(worker) {
+  console.log('worker ' + worker.id + ' died');
+  cluster.fork();
+});
+
+for (var i = 0; i < os.cpus().length; i++) {
+  cluster.fork();
+}
+*/
+  });
+
+  fs.writeFileSync('cluster_app.js', fileContents);
+}
 
