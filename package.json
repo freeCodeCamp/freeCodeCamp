@@ -60,9 +60,8 @@
     "blessed": "0.0.29",
     "chai": "^1.9.1",
     "colors": "^0.6.2",
-    "inquirer": "^0.4.1",
     "mocha": "^1.18.2",
-    "mstring": "^0.1.2",
+    "multiline": "^0.3.4",
     "supertest": "^0.11.0"
   }
 }
