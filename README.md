@@ -473,7 +473,7 @@ added in the [pull request #40](https://github.com/sahat/hackathon-starter/pull/
 as part of CSRF protection.
 
 ```
-input(type='hidden', name='_csrf', value='_csrf')
+input(type='hidden', name='_csrf', value=_csrf)
 ```
 
 **Note:** It is now possible to whitelist certain URLs. In other words you can
@@ -965,7 +965,7 @@ If you want to stick all your JavaScript inside templates, then in `layout.jade`
 your main template file, add this to `head` block.
 
 ```jade
-script(src='/socket.io/socket.io.js?v=#{cacheBuster}')
+script(src='/socket.io/socket.io.js')
 script.
     var socket = io.connect(window.location.href);
     socket.on('greet', function (data) {
