@@ -55,6 +55,7 @@
     "uglify-js": "^2.4.13",
     "underscore": "^1.6.0",
     "validator": "^3.11.0",
+    "yui": "^3.17.0-rc-1"
   },
   "devDependencies": {
     "chai": "^1.9.1",
