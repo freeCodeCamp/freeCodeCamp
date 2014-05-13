@@ -6,6 +6,10 @@ var screen = blessed.screen({
   autoPadding: true
 });
 
+screen.key('q', function() {
+  process.exit(0);
+});
+
 var home = blessed.list({
   parent: screen,
   padding: { top: 2 },
@@ -389,19 +393,19 @@ home.on('select', function(child, index) {
       email.focus();
       break;
     case 2:
-      home.append(inner);
-      inner.append(socketText);
-      inner.focus();
+      enableSocketIo();
+      home.append(success);
+      success.setContent('Socket.IO events have been added at the bottom of {underline}app.js{/underline}. To see a working example take a look at /dashboard. Be sure to run npm install socket.io');
+      success.focus();
       screen.render();
       break;
     case 3:
       // Cluster
       addClusterSupport();
       home.append(success);
-      success.setContent('New file {underline}cluster_app.js{/underline} has been created. Your app is now able to use more than 1 CPU by running node {underline}cluster_app.js{/underline}, which in turn spawns multiple instances of {underline}app.js{/underline}');
+      success.setContent('New file {underline}cluster_app.js{/underline} has been created. Your app is now able to use more than 1 CPU by running {underline}node cluster_app.js{/underline}, which in turn spawns multiple instances of {underline}app.js{/underline}');
       success.focus();
       screen.render();
-
       break;
     default:
       process.exit(0);
@@ -409,9 +413,7 @@ home.on('select', function(child, index) {
 });
 
 
-screen.key('q', function() {
-  process.exit(0);
-});
+
 
 screen.render();
 
@@ -441,3 +443,11 @@ for (var i = 0; i < os.cpus().length; i++) {
   fs.writeFileSync('cluster_app.js', fileContents);
 }
 
+function enableSocketIo() {
+  var fileContents = multiline(function() {
+    /*
+
+
+     */
+  });
+}

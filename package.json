@@ -48,6 +48,7 @@
     "passport-oauth": "^1.0.0",
     "passport-twitter": "^1.0.2",
     "request": "^2.34.0",
+    "socket.io": "^0.9.16",
     "stripe": "^2.5.5",
     "tumblr.js": "^0.0.4",
     "twilio": "^1.6.0",
