@@ -169,7 +169,7 @@ var authForm = blessed.form({
   padding: { left: 1, right: 1 }
 });
 
-authForm.on('submit', function(data) {
+authForm.on('submit', function() {
   var passportConfig = fs.readFileSync('config/passport.js').toString().split(os.EOL);
   var loginTemplate = fs.readFileSync('views/account/login.jade').toString().split(os.EOL);
   var profileTemplate = fs.readFileSync('views/account/profile.jade').toString().split(os.EOL);
@@ -177,8 +177,8 @@ authForm.on('submit', function(data) {
   var app = fs.readFileSync('app.js').toString().split(os.EOL);
   var secrets = fs.readFileSync('config/secrets.js').toString().split(os.EOL);
 
-  if (facebookCheckbox.checked) {
-    var index = passportConfig.indexOf("var FacebookStrategy = require('passport-facebook').Strategy;");
+  var index = passportConfig.indexOf("var FacebookStrategy = require('passport-facebook').Strategy;");
+  if (facebookCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with Facebook.');
     passportConfig.splice(index, 47);
@@ -201,9 +201,128 @@ authForm.on('submit', function(data) {
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
+  index = "var GitHubStrategy = require('passport-github').Strategy;";;
+  if (githubCheckbox.checked && index !== -1) {
+    passportConfig.splice(index, 1);
+    index = passportConfig.indexOf('// Sign in with GitHub.');
+    passportConfig.splice(index, 48);
+    fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
+
+    index = loginTemplate.indexOf("      a.btn.btn-block.btn-github.btn-social(href='/auth/github')");
+    loginTemplate.splice(index, 3);
+    fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
+
+    index = profileTemplate.indexOf('  if user.github');
+    profileTemplate.splice(index - 1, 5);
+    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+
+    index = userModel.indexOf('  github: String,');
+    userModel.splice(index, 1);
+    fs.writeFileSync('models/User.js', userModel.join(os.EOL));
+
+    index = app.indexOf("app.get('/auth/github', passport.authenticate('github'));");
+    app.splice(index, 4);
+    fs.writeFileSync('app.js', app.join(os.EOL));
+  }
+
+  index = "var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;";
+  if (googleCheckbox.checked && index !== -1) {
+    passportConfig.splice(index, 1);
+    index = passportConfig.indexOf('// Sign in with Google.');
+    passportConfig.splice(index, 46);
+    fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
+
+    index = loginTemplate.indexOf("      a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')");
+    loginTemplate.splice(index, 3);
+    fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
+
+    index = profileTemplate.indexOf('  if user.google');
+    profileTemplate.splice(index - 1, 5);
+    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+
+    index = userModel.indexOf('  google: String,');
+    userModel.splice(index, 1);
+    fs.writeFileSync('models/User.js', userModel.join(os.EOL));
+
+    index = app.indexOf("app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));");
+    app.splice(index, 4);
+    fs.writeFileSync('app.js', app.join(os.EOL));
+  }
+
+  index = "var TwitterStrategy = require('passport-twitter').Strategy;";
+  if (twitterCheckbox.checked && index !== -1) {
+    passportConfig.splice(index, 1);
+    index = passportConfig.indexOf('// Sign in with Twitter.');
+    passportConfig.splice(index, 43);
+    fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
+
+    index = loginTemplate.indexOf("      a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')");
+    loginTemplate.splice(index, 3);
+    fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
+
+    index = profileTemplate.indexOf('  if user.twitter');
+    profileTemplate.splice(index - 1, 5);
+    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+
+    index = userModel.indexOf('  twitter: String,');
+    userModel.splice(index, 1);
+    fs.writeFileSync('models/User.js', userModel.join(os.EOL));
+
+    index = app.indexOf("app.get('/auth/twitter', passport.authenticate('twitter'));");
+    app.splice(index, 4);
+    fs.writeFileSync('app.js', app.join(os.EOL));
+  }
+
+  index = "var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;";
+  if (linkedinCheckbox.checked && index !== -1) {
+    passportConfig.splice(index, 1);
+    index = passportConfig.indexOf('// Sign in with LinkedIn.');
+    passportConfig.splice(index, 51);
+    fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
+
+    index = loginTemplate.indexOf("      a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')");
+    loginTemplate.splice(index, 3);
+    fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
+
+    index = profileTemplate.indexOf('  if user.linkedin');
+    profileTemplate.splice(index - 1, 5);
+    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+
+    index = userModel.indexOf('  linkedin: String,');
+    userModel.splice(index, 1);
+    fs.writeFileSync('models/User.js', userModel.join(os.EOL));
+
+    index = app.indexOf("app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));");
+    app.splice(index, 4);
+    fs.writeFileSync('app.js', app.join(os.EOL));
+  }
+
+  index = "var InstagramStrategy = require('passport-instagram').Strategy;";
+  if (instagramCheckbox.checked && index !== -1) {
+    passportConfig.splice(index, 1);
+    index = passportConfig.indexOf('// Sign in with Instagram.');
+    passportConfig.splice(index, 40);
+    fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
+
+    index = loginTemplate.indexOf("      a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')");
+    loginTemplate.splice(index, 3);
+    fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
+
+    index = profileTemplate.indexOf('  if user.instagram');
+    profileTemplate.splice(index - 1, 5);
+    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+
+    index = app.indexOf("app.get('/auth/instagram', passport.authenticate('instagram'));");
+    app.splice(index, 4);
+    fs.writeFileSync('app.js', app.join(os.EOL));
+
+    userModel.splice(index, 1);
+    fs.writeFileSync('models/User.js', userModel.join(os.EOL));
+  }
+
   home.remove(authForm);
   home.append(success);
-  success.setContent('Selected authentication providers have been removed from passportConfig.js, User.js, secrets.js, app.js, login.jade and profile.jade!');
+  success.setContent('Selected authentication providers have been removed from passportConfig.js, User.js, app.js, login.jade and profile.jade!');
   success.focus();
   screen.render();
 });
@@ -219,7 +338,6 @@ var authText = blessed.text({
 var facebookCheckbox = blessed.checkbox({
   parent: authForm,
   top: 6,
-  checked: true,
   mouse: true,
   fg: 'white',
   bg: 'blue',
@@ -229,7 +347,6 @@ var facebookCheckbox = blessed.checkbox({
 var githubCheckbox = blessed.checkbox({
   parent: authForm,
   top: 7,
-  checked: true,
   mouse: true,
   fg: 'white',
   bg: 'blue',
@@ -239,7 +356,6 @@ var githubCheckbox = blessed.checkbox({
 var googleCheckbox = blessed.checkbox({
   parent: authForm,
   top: 8,
-  checked: true,
   mouse: true,
   fg: 'white',
   bg: 'blue',
@@ -249,7 +365,6 @@ var googleCheckbox = blessed.checkbox({
 var twitterCheckbox = blessed.checkbox({
   parent: authForm,
   top: 9,
-  checked: true,
   mouse: true,
   fg: 'white',
   bg: 'blue',
@@ -259,7 +374,6 @@ var twitterCheckbox = blessed.checkbox({
 var linkedinCheckbox = blessed.checkbox({
   parent: authForm,
   top: 10,
-  checked: true,
   mouse: true,
   fg: 'white',
   bg: 'blue',
@@ -269,7 +383,6 @@ var linkedinCheckbox = blessed.checkbox({
 var instagramCheckbox = blessed.checkbox({
   parent: authForm,
   top: 11,
-  checked: true,
   mouse: true,
   fg: 'white',
   bg: 'blue',
@@ -329,7 +442,7 @@ var emailForm = blessed.form({
   padding: { left: 1, right: 1 }
 });
 
-emailForm.on('submit', function(data) {
+emailForm.on('submit', function() {
   var contactCtrl = fs.readFileSync('controllers/contact.js').toString().split(os.EOL);
   var userCtrl = fs.readFileSync('controllers/user.js').toString().split(os.EOL);
   var choice = null;
