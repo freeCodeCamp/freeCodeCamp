@@ -23,10 +23,26 @@ var home = blessed.list({
   items: [
     '» REMOVE AUTHENTICATION PROVIDER',
     '» CHANGE EMAIL SERVICE',
-    '» ENABLE SOCKET.IO',
     '» ADD NODE.JS CLUSTER SUPPORT',
     '» EXIT'
   ]
+});
+
+var homeTitle = blessed.text({
+  parent: screen,
+  align: 'center',
+  fg: 'blue',
+  bg: 'white',
+  content: 'Hackathon Starter (c) 2014'
+});
+
+var footer = blessed.text({
+  parent: screen,
+  bottom: 0,
+  fg: 'white',
+  bg: 'blue',
+  tags: true,
+  content: ' {cyan-fg}<Up/Down>{/cyan-fg} moves | {cyan-fg}<Enter>{/cyan-fg} selects | {cyan-fg}<q>{/cyan-fg} exits'
 });
 
 var inner = blessed.form({
@@ -66,14 +82,6 @@ var success = blessed.box({
 success.on('keypress', function() {
   home.focus();
   home.remove(success);
-});
-
-var socketText = blessed.text({
-  top: 'top',
-  bg: 'red',
-  fg: 'white',
-  tags: true,
-  content: 'Add real-time support to your application with Socket.IO.'
 });
 
 var clusterText = blessed.text({
@@ -555,30 +563,11 @@ var emailCancel = blessed.button({
   }
 });
 
-
-
 emailCancel.on('press', function() {
   home.focus();
   home.remove(emailForm);
   screen.render();
 
-});
-
-var homeTitle = blessed.text({
-  parent: screen,
-  align: 'center',
-  fg: 'blue',
-  bg: 'white',
-  content: 'Hackathon Starter (c) 2014'
-});
-
-var footer = blessed.text({
-  parent: screen,
-  bottom: 0,
-  fg: 'white',
-  bg: 'blue',
-  tags: true,
-  content: ' {cyan-fg}<Up/Down>{/cyan-fg} moves | {cyan-fg}<Enter>{/cyan-fg} selects | {cyan-fg}<q>{/cyan-fg} exits'
 });
 
 home.on('select', function(child, index) {
@@ -593,13 +582,6 @@ home.on('select', function(child, index) {
       emailForm.focus();
       break;
     case 2:
-      enableSocketIo();
-      home.append(success);
-      success.setContent('Socket.IO events have been added at the bottom of {underline}app.js{/underline}. To see a working example take a look at /dashboard. Be sure to run npm install socket.io');
-      success.focus();
-      screen.render();
-      break;
-    case 3:
       addClusterSupport();
       home.append(success);
       success.setContent('New file {underline}cluster_app.js{/underline} has been created. Your app is now able to use more than 1 CPU by running {underline}node cluster_app.js{/underline}, which in turn spawns multiple instances of {underline}app.js{/underline}');
@@ -610,9 +592,6 @@ home.on('select', function(child, index) {
       process.exit(0);
   }
 });
-
-
-
 
 screen.render();
 
@@ -640,13 +619,4 @@ for (var i = 0; i < os.cpus().length; i++) {
   });
 
   fs.writeFileSync('cluster_app.js', fileContents);
-}
-
-function enableSocketIo() {
-  var fileContents = multiline(function() {
-    /*
-
-
-     */
-  });
 }
