@@ -21,7 +21,7 @@ var home = blessed.list({
   selectedFg: 'blue',
   selectedBg: 'white',
   items: [
-    '» REMOVE AUTHENTICATION',
+    '» REMOVE AUTHENTICATION PROVIDER',
     '» CHANGE EMAIL SERVICE',
     '» ENABLE SOCKET.IO',
     '» ADD NODE.JS CLUSTER SUPPORT',
@@ -161,7 +161,7 @@ cancel.on('press', function() {
 
 });
 
-var auth = blessed.form({
+var authForm = blessed.form({
   mouse: true,
   keys: true,
   fg: 'white',
@@ -169,8 +169,47 @@ var auth = blessed.form({
   padding: { left: 1, right: 1 }
 });
 
+authForm.on('submit', function(data) {
+  var passportConfig = fs.readFileSync('config/passport.js').toString().split(os.EOL);
+  var loginTemplate = fs.readFileSync('views/account/login.jade').toString().split(os.EOL);
+  var profileTemplate = fs.readFileSync('views/account/profile.jade').toString().split(os.EOL);
+  var userModel = fs.readFileSync('models/User.js').toString().split(os.EOL);
+  var app = fs.readFileSync('app.js').toString().split(os.EOL);
+  var secrets = fs.readFileSync('config/secrets.js').toString().split(os.EOL);
+
+  if (facebookCheckbox.checked) {
+    var index = passportConfig.indexOf("var FacebookStrategy = require('passport-facebook').Strategy;");
+    passportConfig.splice(index, 1);
+    index = passportConfig.indexOf('// Sign in with Facebook.');
+    passportConfig.splice(index, 47);
+    fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
+
+    index = loginTemplate.indexOf("      a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')");
+    loginTemplate.splice(index, 3);
+    fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
+
+    index = profileTemplate.indexOf("  if user.facebook");
+    profileTemplate.splice(index - 1, 5);
+    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+
+    index = userModel.indexOf('  facebook: String,');
+    userModel.splice(index, 1);
+    fs.writeFileSync('models/User.js', userModel.join(os.EOL));
+
+    index = app.indexOf("app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));");
+    app.splice(index, 4);
+    fs.writeFileSync('app.js', app.join(os.EOL));
+  }
+
+  home.remove(authForm);
+  home.append(success);
+  success.setContent('Selected authentication providers have been removed from passportConfig.js, User.js, secrets.js, app.js, login.jade and profile.jade!');
+  success.focus();
+  screen.render();
+});
+
 var authText = blessed.text({
-  parent: auth,
+  parent: authForm,
   content: 'Selecting a checkbox adds an authentication provider. Unselecting a checkbox removes it. If authentication provider is already present, no action will be taken.',
   padding: 1,
   bg: 'magenta',
@@ -178,7 +217,7 @@ var authText = blessed.text({
 });
 
 var facebookCheckbox = blessed.checkbox({
-  parent: auth,
+  parent: authForm,
   top: 6,
   checked: true,
   mouse: true,
@@ -188,7 +227,7 @@ var facebookCheckbox = blessed.checkbox({
 });
 
 var githubCheckbox = blessed.checkbox({
-  parent: auth,
+  parent: authForm,
   top: 7,
   checked: true,
   mouse: true,
@@ -198,7 +237,7 @@ var githubCheckbox = blessed.checkbox({
 });
 
 var googleCheckbox = blessed.checkbox({
-  parent: auth,
+  parent: authForm,
   top: 8,
   checked: true,
   mouse: true,
@@ -208,7 +247,7 @@ var googleCheckbox = blessed.checkbox({
 });
 
 var twitterCheckbox = blessed.checkbox({
-  parent: auth,
+  parent: authForm,
   top: 9,
   checked: true,
   mouse: true,
@@ -218,7 +257,7 @@ var twitterCheckbox = blessed.checkbox({
 });
 
 var linkedinCheckbox = blessed.checkbox({
-  parent: auth,
+  parent: authForm,
   top: 10,
   checked: true,
   mouse: true,
@@ -228,7 +267,7 @@ var linkedinCheckbox = blessed.checkbox({
 });
 
 var instagramCheckbox = blessed.checkbox({
-  parent: auth,
+  parent: authForm,
   top: 11,
   checked: true,
   mouse: true,
@@ -238,7 +277,7 @@ var instagramCheckbox = blessed.checkbox({
 });
 
 var authSubmit = blessed.button({
-  parent: auth,
+  parent: authForm,
   top: 13,
   mouse: true,
   shrink: true,
@@ -254,8 +293,12 @@ var authSubmit = blessed.button({
   }
 });
 
+authSubmit.on('press', function() {
+  authForm.submit();
+});
+
 var authCancel = blessed.button({
-  parent: auth,
+  parent: authForm,
   top: 13,
   left: 9,
   mouse: true,
@@ -274,7 +317,7 @@ var authCancel = blessed.button({
 
 authCancel.on('press', function() {
   home.focus();
-  home.remove(auth);
+  home.remove(authForm);
   screen.render();
 });
 
@@ -407,7 +450,7 @@ emailCancel.on('press', function() {
 
 });
 
-var title = blessed.text({
+var homeTitle = blessed.text({
   parent: screen,
   align: 'center',
   fg: 'blue',
@@ -427,8 +470,8 @@ var footer = blessed.text({
 home.on('select', function(child, index) {
   switch (index) {
     case 0:
-      home.append(auth);
-      auth.focus();
+      home.append(authForm);
+      authForm.focus();
       screen.render();
       break;
     case 1:
