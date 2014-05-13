@@ -1,4 +1,5 @@
 var fs = require('fs');
+var os = require('os');
 var blessed = require('blessed');
 var multiline = require('multiline');
 
@@ -277,7 +278,7 @@ authCancel.on('press', function() {
   screen.render();
 });
 
-var email = blessed.form({
+var emailForm = blessed.form({
   mouse: true,
   keys: true,
   fg: 'white',
@@ -285,9 +286,44 @@ var email = blessed.form({
   padding: { left: 1, right: 1 }
 });
 
+emailForm.on('submit', function(data) {
+  var contactCtrl = fs.readFileSync('controllers/contact.js').toString().split(os.EOL);
+  var userCtrl = fs.readFileSync('controllers/user.js').toString().split(os.EOL);
+  var choice = null;
+
+  if (sendgridRadio.checked) {
+    choice = 'SendGrid';
+  } else if (mailgunRadio.checked) {
+    choice = 'Mailgun';
+  } else if (mandrillRadio.checked) {
+    choice = 'Mandrill';
+  }
+
+  var index = contactCtrl.indexOf('var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+  contactCtrl.splice(index + 1, 1, "  service: '" + choice + "',");
+  contactCtrl.splice(index + 3, 1, '       user: secrets.' + choice.toLowerCase() +'.user,');
+  contactCtrl.splice(index + 4, 1, '       pass: secrets.' + choice.toLowerCase() + '.password');
+  fs.writeFileSync('controllers/contact.js', contactCtrl.join(os.EOL));
+
+  index = userCtrl.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+  userCtrl.splice(index + 1, 1, "        service: '" + choice + "',");
+  userCtrl.splice(index + 3, 1, '          user: secrets.' + choice.toLowerCase() + '.user,');
+  userCtrl.splice(index + 4, 1, '          pass: secrets.' + choice.toLowerCase() + '.password');
+  index = userCtrl.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', (index + 1));
+  userCtrl.splice(index + 1, 1, "        service: '" + choice + "',");
+  userCtrl.splice(index + 3, 1, '          user: secrets.' + choice.toLowerCase() + '.user,');
+  userCtrl.splice(index + 4, 1, '          pass: secrets.' + choice.toLowerCase() + '.password');
+  fs.writeFileSync('controllers/user.js', userCtrl.join(os.EOL));
+
+  home.remove(emailForm);
+  home.append(success);
+  success.setContent('Email Service has been switched to ' + choice);
+  success.focus();
+  screen.render();
+});
 
 var emailText = blessed.text({
-  parent: email,
+  parent: emailForm,
   content: 'Select one of the following email service providers for {underline}contact form{/underline} and {underline}password reset{/underline}.',
   padding: 1,
   bg: 'red',
@@ -296,8 +332,9 @@ var emailText = blessed.text({
 });
 
 var sendgridRadio = blessed.radiobutton({
-  parent: email,
+  parent: emailForm,
   top: 5,
+  checked: true,
   mouse: true,
   fg: 'white',
   bg: 'blue',
@@ -305,7 +342,7 @@ var sendgridRadio = blessed.radiobutton({
 });
 
 var mailgunRadio = blessed.radiobutton({
-  parent: email,
+  parent: emailForm,
   top: 6,
   mouse: true,
   fg: 'white',
@@ -314,7 +351,7 @@ var mailgunRadio = blessed.radiobutton({
 });
 
 var mandrillRadio = blessed.radiobutton({
-  parent: email,
+  parent: emailForm,
   top: 7,
   mouse: true,
   fg: 'white',
@@ -322,12 +359,12 @@ var mandrillRadio = blessed.radiobutton({
   content: 'Mandrill'
 });
 
-var emailOk = blessed.button({
-  parent: email,
+var emailSubmit = blessed.button({
+  parent: emailForm,
   top: 9,
   mouse: true,
   shrink: true,
-  name: 'ok',
+  name: 'submit',
   content: ' SUBMIT ',
   style: {
     fg: 'blue',
@@ -339,8 +376,12 @@ var emailOk = blessed.button({
   }
 });
 
+emailSubmit.on('press', function() {
+  emailForm.submit();
+});
+
 var emailCancel = blessed.button({
-  parent: email,
+  parent: emailForm,
   top: 9,
   left: 9,
   mouse: true,
@@ -357,9 +398,11 @@ var emailCancel = blessed.button({
   }
 });
 
+
+
 emailCancel.on('press', function() {
   home.focus();
-  home.remove(email);
+  home.remove(emailForm);
   screen.render();
 
 });
@@ -389,8 +432,8 @@ home.on('select', function(child, index) {
       screen.render();
       break;
     case 1:
-      home.append(email);
-      email.focus();
+      home.append(emailForm);
+      emailForm.focus();
       break;
     case 2:
       enableSocketIo();
@@ -400,7 +443,6 @@ home.on('select', function(child, index) {
       screen.render();
       break;
     case 3:
-      // Cluster
       addClusterSupport();
       home.append(success);
       success.setContent('New file {underline}cluster_app.js{/underline} has been created. Your app is now able to use more than 1 CPU by running {underline}node cluster_app.js{/underline}, which in turn spawns multiple instances of {underline}app.js{/underline}');
