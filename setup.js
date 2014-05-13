@@ -201,8 +201,9 @@ authForm.on('submit', function() {
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = "var GitHubStrategy = require('passport-github').Strategy;";;
+  index = passportConfig.indexOf("var GitHubStrategy = require('passport-github').Strategy;");
   if (githubCheckbox.checked && index !== -1) {
+    console.log(index);
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with GitHub.');
     passportConfig.splice(index, 48);
@@ -225,7 +226,7 @@ authForm.on('submit', function() {
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = "var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;";
+  index = passportConfig.indexOf("var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;");
   if (googleCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with Google.');
@@ -249,7 +250,7 @@ authForm.on('submit', function() {
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = "var TwitterStrategy = require('passport-twitter').Strategy;";
+  index = passportConfig.indexOf("var TwitterStrategy = require('passport-twitter').Strategy;");
   if (twitterCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with Twitter.');
@@ -273,11 +274,11 @@ authForm.on('submit', function() {
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = "var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;";
+  index = passportConfig.indexOf("var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;");
   if (linkedinCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with LinkedIn.');
-    passportConfig.splice(index, 51);
+    passportConfig.splice(index, 47);
     fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
 
     index = loginTemplate.indexOf("      a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')");
@@ -297,7 +298,7 @@ authForm.on('submit', function() {
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = "var InstagramStrategy = require('passport-instagram').Strategy;";
+  index = passportConfig.indexOf("var InstagramStrategy = require('passport-instagram').Strategy;");
   if (instagramCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with Instagram.');
