@@ -1,6 +1,6 @@
 {
   "name": "hackathon-starter",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/sahat/hackathon-starter.git"
@@ -60,7 +60,6 @@
   "devDependencies": {
     "blessed": "0.0.29",
     "chai": "^1.9.1",
-    "colors": "^0.6.2",
     "mocha": "^1.18.2",
     "multiline": "^0.3.4",
     "supertest": "^0.11.0"

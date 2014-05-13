@@ -1,5 +1,5 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
-Hackathon Starter 2.0.4 [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.svg?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter) [![Build Status](https://travis-ci.org/sahat/hackathon-starter.svg?branch=master)](https://travis-ci.org/sahat/hackathon-starter) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
+Hackathon Starter 2.1 [![Dependency Status](https://david-dm.org/sahat/hackathon-starter.svg?theme=shields.io)](https://david-dm.org/sahat/hackathon-starter) [![Build Status](https://travis-ci.org/sahat/hackathon-starter.svg?branch=master)](https://travis-ci.org/sahat/hackathon-starter) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
 =======================
 
 <a href="https://github.com/sahat/hackathon-starter/zipball/master">
@@ -8,7 +8,7 @@ Hackathon Starter 2.0.4 [![Dependency Status](https://david-dm.org/sahat/hackath
   <img src="https://lh4.googleusercontent.com/-NXCLKSnPU60/U0xzuGt37_I/AAAAAAAAEBY/QjWLUHowgzY/w792-h272-no/Screenshot+2014-04-14+19.47.22.png" height="68">
 </a>
 
-Jump to [What's new in 2.0.4?](#changelog)
+Jump to [What's new in 2.1?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -23,9 +23,8 @@ I also tried to make it as **generic** and **reusable** as possible to cover mos
 without being too specific. In the worst case you can use this as a learning guide for your projects,
 if for example you are only interested in **Sign in with Google** authentication and nothing else.
 
-Chances are you do not need all authentication methods or API examples. As of **Hackathon Starter 2.0**
-it is possible to selectively check which authentication methods you need by running `generator.js`. For now
-you still have to manually remove API examples that you don't need.
+Chances are you do not need all authentication methods or API examples. As of **Hackathon Starter 2.1**
+it is possible to selectively check which authentication methods you need by running `node setup.js`.
 
 <h4 align="center">Flatly Bootstrap Theme</h3>
 
@@ -33,11 +32,11 @@ you still have to manually remove API examples that you don't need.
 
 <h4 align="center">Default Theme</h3>
 
-![](https://lh5.googleusercontent.com/-KmlaMLKGCqg/UuWt4MrXzeI/AAAAAAAAD6o/KUucObo33zU/w1170-h860-no/Screenshot+2014-01-26+19.52.03.png)
+![](https://lh4.googleusercontent.com/-jafa0PM2qPg/U3Kim3XTlpI/AAAAAAAAEDo/5o97O7KliaI/w1290-h974-no/Screenshot+2014-05-13+18.53.33.png)
 
 <h4 align="center">Hackathon Starter Generator</h3>
 
-![](https://lh6.googleusercontent.com/-61huCORb8w0/U0wq1xj3IiI/AAAAAAAAD_8/tnkfKnwOpGM/w1370-h962-no/Screenshot+2014-04-14+14.33.06.png)
+![](https://lh4.googleusercontent.com/-ncBLUzq6czE/U3KkYE0UXsI/AAAAAAAAEEM/YsZeIqOlZg8/w1288-h874-no/Screenshot+2014-05-13+19.01.15.png)
 
 Table of Contents
 -----------------
@@ -130,20 +129,18 @@ restart the server each time you make a small change in code. To install, run
 Generator
 ---------
 
-Hackathon Starter Generator is still in alpha stage. It is tighly tied to the
-project code. As soon as you start changing and moving things around, it will
-probably no longer work as expected. That is why it's best to use when you first
-download Hackathon Starter.
+Hackathon Starter Generator is currently in the experimental stage. It is tighly
+tied to the project code. As soon as you start changing and moving things around,
+it will robably no longer work as expected. That is why it's best to use when
+you first download the project.
 
 :exclamation: **Note:** Generator has a "destructive" behavior, it will physically
 modify your code. *There is no undo action.* To be on a safe side, always commit
-your code to Git, so you could go back and undo the changes.
+your code to Git, so you could go back and revert the changes.
 
-Currently it supports adding/removing authentication providers and switching
-between SendGrid/Mailgun email services. In the future you'll be able to use
-it to quickly add Socket.io support to your app, add Mozilla Persona sign-in,
-generate new pages (create new routes, templates and controllers for you
-automatically).
+Currently it supports removing authentication providers, switching
+between SendGrid, Mailgun and Mandrill email services and adding a Node.js
+cluster support.
 
 Obtaining API Keys
 ------------------
@@ -337,8 +334,7 @@ Project Structure
 | **views**/layout.jade              | Base template.                                              |
 | **views**/home.jade                | Home page template.                                         |
 | app.js                             | Main application file.                                      |
-| cluster_app.js                     | Runs multiple instances of `app.js` Node.js clusters.       |
-| generator.js                       | Tool for adding/removing authentications and other things.  |
+| generator.js                       | Tool for removing authentication providers and other things.|
 
 :exclamation: **Note:** There is no preference how you name or structure your views.
 You could place all your templates in a top-level `views` directory without
@@ -399,9 +395,9 @@ List of Packages
 | mocha                           | Test framework. |
 | chai                            | BDD/TDD assetion library. |
 | supertest                       | HTTP assertions library. |
-| mstring                         | Multi-line strings for generator. |
-| inquirer                        | Interactive command line interface for generator. |
-| colors                          | Pretty output colors for generator. |
+| multiline                       | Multi-line strings for generator. |
+| blessed                         | Interactive command line interface for generator. |
+| yui                             | Used by the Yahoo API example. |
 
 Useful Tools and Resources
 --------------------------
@@ -484,6 +480,9 @@ input(type='hidden', name='_csrf', value='_csrf')
 specify a list of routes that should bypass CSRF verification check.
 
 ### What is cluster_app.js?
+
+**Note**: It is now part of the generator as of **v2.1**.
+
 From the [Node.js Documentation](http://nodejs.org/api/cluster.html#cluster_how_it_works):
 > A single instance of Node runs in a single thread. To take advantage of multi-core systems
 > the user will sometimes want to launch a cluster of Node processes to handle the load.
@@ -1138,6 +1137,13 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 
 Changelog
 ---------
+
+### 2.1 (May 13, 2014)
+- New and improved generator - **setup.js**
+- Added Yahoo API
+- CSS and templates cleanup
+- Minor improvement to the default theme
+- `cluster_app.js` has been moved into **setup.js**
 
 ### 2.0.4 (April 26, 2014)
 - Added Mandrill e-mail service (via generator)
