@@ -970,7 +970,7 @@ If you want to stick all your JavaScript inside templates, then in `layout.jade`
 your main template file, add this to `head` block.
 
 ```jade
-script(src='/socket.io/socket.io.js?v=#{cacheBuster}')
+script(src='/socket.io/socket.io.js')
 script.
     var socket = io.connect(window.location.href);
     socket.on('greet', function (data) {
