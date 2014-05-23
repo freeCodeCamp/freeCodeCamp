@@ -131,7 +131,7 @@ Generator
 
 Hackathon Starter Generator is currently in the experimental stage. It is tighly
 tied to the project code. As soon as you start changing and moving things around,
-it will robably no longer work as expected. That is why it's best to use when
+it will probably no longer work as expected. That is why it's best to use when
 you first download the project.
 
 :exclamation: **Note:** Generator has a "destructive" behavior, it will physically
