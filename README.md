@@ -1,5 +1,5 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
-Hackathon Starter 2.1 [![Dependency Status](http://img.shields.io/gemnasium/sahat/hackathon-starter.svg?style=flat)](https://gemnasium.com/sahat/hackathon-starter) [![Build Status](http://img.shields.io/travis/sahat/hackathon-starter.svg?style=flat)](https://travis-ci.org/sahat/hackathon-starter) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
+Hackathon Starter 2.1.1 [![Dependency Status](http://img.shields.io/gemnasium/sahat/hackathon-starter.svg?style=flat)](https://gemnasium.com/sahat/hackathon-starter) [![Build Status](http://img.shields.io/travis/sahat/hackathon-starter.svg?style=flat)](https://travis-ci.org/sahat/hackathon-starter) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
 =======================
 
 <a href="https://github.com/sahat/hackathon-starter/zipball/master">
@@ -8,7 +8,7 @@ Hackathon Starter 2.1 [![Dependency Status](http://img.shields.io/gemnasium/saha
   <img src="https://lh4.googleusercontent.com/-NXCLKSnPU60/U0xzuGt37_I/AAAAAAAAEBY/QjWLUHowgzY/w792-h272-no/Screenshot+2014-04-14+19.47.22.png" height="68">
 </a>
 
-Jump to [What's new in 2.1?](#changelog)
+Jump to [What's new in 2.1.1?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -1137,6 +1137,11 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 
 Changelog
 ---------
+
+### 2.1.1 (May 29, 2014)
+- Added **Compose new Tweet** to Twitter API example
+- Fixed email service indentation
+- Fixed Mailgun and Mandrill secret.js properties (`user` instead of `login`)
 
 ### 2.1 (May 13, 2014)
 - New and improved generator - **setup.js**
