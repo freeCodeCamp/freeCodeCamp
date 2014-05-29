@@ -401,7 +401,7 @@ List of Packages
 
 Useful Tools and Resources
 --------------------------
-
+- [JSDB.io](http://www.jsdb.io) - The Database of JavaScript Libraries
 - [JS Recipes](http://jsrecipes.org) - JavaScript tutorials for backend and frontend development.
 - [Jade Syntax Documentation by Example](http://naltatis.github.io/jade-syntax-docs/#attributes) - Even better than official Jade docs.
 - [HTML to Jade converter](http://html2jade.aaron-powell.com) - Extremely valuable when you need to quickly copy and paste HTML snippets from the web.
