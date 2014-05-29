@@ -1,12 +1,8 @@
 ![Alt](https://lh4.googleusercontent.com/-PVw-ZUM9vV8/UuWeH51os0I/AAAAAAAAD6M/0Ikg7viJftQ/w1286-h566-no/hackathon-starter-logo.jpg)
-Hackathon Starter 2.1.1 [![Dependency Status](http://img.shields.io/gemnasium/sahat/hackathon-starter.svg?style=flat)](https://gemnasium.com/sahat/hackathon-starter) [![Build Status](http://img.shields.io/travis/sahat/hackathon-starter.svg?style=flat)](https://travis-ci.org/sahat/hackathon-starter) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
+Hackathon Starter [![Dependency Status](http://img.shields.io/gemnasium/sahat/hackathon-starter.svg?style=flat)](https://gemnasium.com/sahat/hackathon-starter) [![Build Status](http://img.shields.io/travis/sahat/hackathon-starter.svg?style=flat)](https://travis-ci.org/sahat/hackathon-starter) [![Analytics](https://ga-beacon.appspot.com/UA-47447818-2/hackathon-starter?pixel)](https://github.com/igrigorik/ga-beacon)
 =======================
 
-<a href="https://github.com/sahat/hackathon-starter/zipball/master">
-  <img src="https://lh5.googleusercontent.com/-QYRVFFig8fI/U0xzuHnAWbI/AAAAAAAAEBM/qU5rHrPvpOI/w840-h272-no/Screenshot+2014-04-14+19.46.12.png" height="68">
-</a> <a href="http://hackathonstarter.herokuapp.com" target="_blank">
-  <img src="https://lh4.googleusercontent.com/-NXCLKSnPU60/U0xzuGt37_I/AAAAAAAAEBY/QjWLUHowgzY/w792-h272-no/Screenshot+2014-04-14+19.47.22.png" height="68">
-</a>
+:octocat: &nbsp;**Live Demo**: http://hackathonstarter.herokuapp.com 
 
 Jump to [What's new in 2.1.1?](#changelog)
 
