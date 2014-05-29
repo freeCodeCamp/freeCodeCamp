@@ -466,8 +466,8 @@ emailForm.on('submit', function() {
 
   var index = contactCtrl.indexOf('var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
   contactCtrl.splice(index + 1, 1, "  service: '" + choice + "',");
-  contactCtrl.splice(index + 3, 1, '       user: secrets.' + choice.toLowerCase() +'.user,');
-  contactCtrl.splice(index + 4, 1, '       pass: secrets.' + choice.toLowerCase() + '.password');
+  contactCtrl.splice(index + 3, 1, '    user: secrets.' + choice.toLowerCase() +'.user,');
+  contactCtrl.splice(index + 4, 1, '    pass: secrets.' + choice.toLowerCase() + '.password');
   fs.writeFileSync('controllers/contact.js', contactCtrl.join(os.EOL));
 
   index = userCtrl.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
