@@ -18,18 +18,15 @@ block content
       | API Endpoints
 
   br
-  .lead Latest 50 Tweets containing "Hackathon" in NYC within 5 miles
+  .lead Latest #{tweets.length} Tweets containing the term "nodejs" in NYC within 5 miles radius
 
-  ul.list-unstyled
+  ul.media-list
     for tweet in tweets
-      li
-        .panel.panel-default
-          .panel-body
-            .clearfix
-              - var image = tweet.user.profile_image_url.replace('_normal', '');
-              img.pull-left(src='#{image}', width=50, height=50, style='margin-right: 10px')
-
-              =tweet.user.name
-              small.text-muted  @#{tweet.user.screen_name}
-              br
-              small #{tweet.text}
+      li.media
+        a.pull-left(href='#')
+          - var image = tweet.user.profile_image_url.replace('_normal', '');
+          img.media-object(src='#{image}', style='width: 64px; height: 64px;')
+        .media-body
+          strong.media-heading #{tweet.user.name}
+          span.text-muted  @#{tweet.user.screen_name}
+          p= tweet.text

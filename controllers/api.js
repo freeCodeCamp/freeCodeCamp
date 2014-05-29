@@ -253,7 +253,7 @@ exports.getTwitter = function(req, res, next) {
     access_token: token.accessToken,
     access_token_secret: token.tokenSecret
   });
-  T.get('search/tweets', { q: 'hackathon since:2013-01-01', geocode: '40.71448,-74.00598,5mi', count: 50 }, function(err, reply) {
+  T.get('search/tweets', { q: 'nodejs since:2013-01-01', geocode: '40.71448,-74.00598,5mi', count: 10 }, function(err, reply) {
     if (err) return next(err);
     res.render('api/twitter', {
       title: 'Twitter API',
