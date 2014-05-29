@@ -18,7 +18,27 @@ block content
       | API Endpoints
 
   br
-  .lead Latest #{tweets.length} Tweets containing the term "nodejs" in NYC within 5 miles radius
+
+  .well
+    h4 Compose new Tweet
+    form(role='form', method='POST')
+      input(type='hidden', name='_csrf', value=_csrf)
+      .form-group
+        input.form-control(type='text', name='tweet', autofocus)
+        p.help-block This new Tweet will be posted on your Twitter profile.
+      button.btn.btn-primary(type='submit')
+        i.fa.fa-twitter
+        |  Tweet
+
+  br
+
+  .lead Latest
+    strong  #{tweets.length}
+    |  Tweets containing the term
+    strong  nodejs
+    |  in NYC within
+    strong  5
+    |  miles radius
 
   ul.media-list
     for tweet in tweets
