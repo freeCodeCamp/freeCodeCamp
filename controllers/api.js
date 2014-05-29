@@ -262,6 +262,11 @@ exports.getTwitter = function(req, res, next) {
   });
 };
 
+/**
+ * POST /api/twitter
+ * @param tweet
+ */
+
 exports.postTwitter = function(req, res, next) {
   req.assert('tweet', 'Tweet cannot be empty.').notEmpty();
 
