@@ -48,7 +48,7 @@ var app = express();
 
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
-  console.error('✗ MongoDB Connection Error. Please make sure MongoDB is running.');
+  console.error('MongoDB Connection Error. Make sure MongoDB is running.');
 });
 
 var hour = 3600000;
@@ -56,7 +56,7 @@ var day = hour * 24;
 var week = day * 7;
 
 /**
- * CSRF Whitelist
+ * CSRF whitelist.
  */
 
 var whitelist = ['/url1', '/url2'];
@@ -88,25 +88,27 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 app.use(function(req, res, next) {
+  // CSRF
   if (whitelist.indexOf(req.path) !== -1) next();
   else csrf(req, res, next);
 });
 app.use(function(req, res, next) {
+  // Make current user available in templates
   res.locals.user = req.user;
   next();
 });
-app.use(flash());
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 app.use(function(req, res, next) {
-  // Keep track of previous URL to redirect back to
-  // original destination after a successful login.
+  // Keep track of the previous URL so a user can redirect
+  // back to the original destination after a successful login.
   if (req.method !== 'GET') return next();
   var path = req.path.split('/')[1];
   if (/(auth|login|logout|signup)$/i.test(path)) return next();
   req.session.returnTo = req.path;
   next();
 });
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 
 /**
  * Application routes.
@@ -212,7 +214,7 @@ app.use(errorHandler());
  */
 
 app.listen(app.get('port'), function() {
-  console.log("✔ Express server listening on port %d in %s mode", app.get('port'), app.get('env'));
+  console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
 
 module.exports = app;
