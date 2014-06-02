@@ -1137,7 +1137,8 @@ Changelog
 ### 2.1.1 (May 29, 2014)
 - Added **Compose new Tweet** to Twitter API example
 - Fixed email service indentation
-- Fixed Mailgun and Mandrill secret.js properties (`user` instead of `login`)
+- Fixed Mailgun and Mandrill secret.js properties
+- Renamed `navigation.jade` to `navbar.jade`
 
 ### 2.1 (May 13, 2014)
 - New and improved generator - **setup.js**
