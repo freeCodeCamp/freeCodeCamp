@@ -3,7 +3,7 @@ extends ../layout
 block content
   .page-header
     h2
-      i.fa.fa-phone
+      i.fa.fa-phone(style='color: #f00')
       | Twilio API
 
   .btn-group.btn-group-justified
@@ -17,13 +17,18 @@ block content
       i.fa.fa-code-fork
       | REST API
 
-  h4 Send a text message
+  br
+
   .row
     .col-sm-6
       form(role='form', method='POST')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
-          .input-group
-            input.form-control(type='text', name='telephone', placeholder='Phone Number')
-            span.input-group-btn
-              button.btn.btn-success(type='submit') Send
+          label.control-label Number to text
+          input.form-control(type='text', name='number', autofocus)
+        .form-group
+          label.control-label Message
+          input.form-control(type='text', name='message')
+        button.btn.btn-default(type='submit')
+          i.fa.fa-location-arrow
+          | Send

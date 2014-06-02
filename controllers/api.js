@@ -378,7 +378,7 @@ exports.postStripe = function(req, res, next) {
  * Twilio API example.
  */
 
-exports.getTwilio = function(req, res, next) {
+exports.getTwilio = function(req, res) {
   res.render('api/twilio', {
     title: 'Twilio API'
   });
@@ -387,14 +387,25 @@ exports.getTwilio = function(req, res, next) {
 /**
  * POST /api/twilio
  * Twilio API example.
- * @param telephone
+ * @param number
+ * @param message
  */
 
 exports.postTwilio = function(req, res, next) {
+  req.assert('number', 'Phone number is required.').notEmpty();
+  req.assert('message', 'Message cannot be blank.').notEmpty();
+
+  var errors = req.validationErrors();
+
+  if (errors) {
+    req.flash('errors', errors);
+    return res.redirect('/api/twilio');
+  }
+
   var message = {
-    to: req.body.telephone,
+    to: req.body.number,
     from: '+13472235148',
-    body: 'Hello from the Hackathon Starter'
+    body: req.body.message
   };
   twilio.sendMessage(message, function(err, responseData) {
     if (err) return next(err.message);
