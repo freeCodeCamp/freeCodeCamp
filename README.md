@@ -4,7 +4,7 @@ Hackathon Starter [![Dependency Status](http://img.shields.io/gemnasium/sahat/ha
 
 :octocat: &nbsp;**Live Demo**: http://hackathonstarter.herokuapp.com 
 
-Jump to [What's new in 2.1.1?](#changelog)
+Jump to [What's new in 2.1.2?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -1133,6 +1133,10 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 
 Changelog
 ---------
+
+### 2.1.2 (June 2, 2014)
+- Improved Twilio API example
+- Updated dependencies
 
 ### 2.1.1 (May 29, 2014)
 - Added **Compose new Tweet** to Twitter API example
