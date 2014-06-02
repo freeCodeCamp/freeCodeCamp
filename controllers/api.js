@@ -407,6 +407,7 @@ exports.postTwilio = function(req, res, next) {
     from: '+13472235148',
     body: req.body.message
   };
+
   twilio.sendMessage(message, function(err, responseData) {
     if (err) return next(err.message);
     req.flash('success', { msg: 'Text sent to ' + responseData.to + '.'});
