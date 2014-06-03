@@ -4,7 +4,7 @@ Hackathon Starter [![Dependency Status](http://img.shields.io/gemnasium/sahat/ha
 
 :octocat: &nbsp;**Live Demo**: http://hackathonstarter.herokuapp.com 
 
-Jump to [What's new in 2.1.2?](#changelog)
+Jump to [What's new in 2.1.3?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -1133,6 +1133,11 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 
 Changelog
 ---------
+
+### 2.1.2 (June 2, 2014)
+- Font Awesome 4.1
+- Updated icons on some API examples
+- Use LESS files for *bootstrap-social* and *font-awesome*
 
 ### 2.1.2 (June 2, 2014)
 - Improved Twilio API example
