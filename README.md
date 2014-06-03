@@ -104,10 +104,10 @@ Getting Started
 The easiest way to get started is to clone the repository:
 
 ```bash
-# Fetch only the latest commits
-git clone --depth=1 git@github.com:sahat/hackathon-starter.git my-project
+# Get the latest snapshot
+git clone --depth=1 git@github.com:sahat/hackathon-starter.git myproject
 
-cd my-project
+cd myproject
 
 # Install NPM dependencies
 npm install
@@ -1134,7 +1134,7 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 Changelog
 ---------
 
-### 2.1.2 (June 2, 2014)
+### 2.1.3 (June 3, 2014)
 - Font Awesome 4.1
 - Updated icons on some API examples
 - Use LESS files for *bootstrap-social* and *font-awesome*
