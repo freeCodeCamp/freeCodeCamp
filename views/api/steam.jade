@@ -5,7 +5,6 @@ block content
     h2
       i.fa.fa-steam-square
       | Steam Web API
-
   .btn-group.btn-group-justified
     a.btn.btn-primary(href='https://developer.valvesoftware.com/wiki/Steam_Web_API', target='_blank')
       i.fa.fa-check-square-o
@@ -14,8 +13,8 @@ block content
   br
 
   .alert.alert-info
-    strong Steam ID
-    p Displaying public information for Steam ID #{playerSummary.steamid}.
+    h4 Steam ID
+    p Displaying public information for Steam ID: #{playerSummary.steamid}.
 
   h3 Profile Information
   .row
@@ -38,9 +37,7 @@ block content
         li.text-success= achievement.name
 
   h3 Owned Games
-  ul.list-unstyled.list-inline
-    for game in ownedGames
-      li.thumb
-        a(href='http://store.steampowered.com/app/#{game.appid}/')
-          img(src='http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_logo_url}.jpg' width="92")
+  for game in ownedGames
+    a(href='http://store.steampowered.com/app/#{game.appid}/')
+      img.thumbnail(src='http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_logo_url}.jpg' width=92)
 
