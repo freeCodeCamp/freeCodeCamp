@@ -130,13 +130,15 @@ tied to the project code. As soon as you start changing and moving things around
 it will probably no longer work as expected. That is why it's best to use when
 you first download the project.
 
-:exclamation: **Note:** Generator has a "destructive" behavior, it will physically
-modify your code. *There is no undo action.* To be on a safe side, always commit
-your code to Git, so you could go back and revert the changes.
-
 Currently it supports removing authentication providers, switching
 between SendGrid, Mailgun and Mandrill email services and adding a Node.js
 cluster support.
+
+To get started, run: `node setup.js`.
+
+:exclamation: **Note:** Generator has a "destructive" behavior, it will physically
+modify your code. *There is no undo action.* To be on a safe side, always commit
+your code to Git, so you could go back and revert the changes.
 
 Obtaining API Keys
 ------------------
@@ -330,7 +332,7 @@ Project Structure
 | **views**/layout.jade              | Base template.                                              |
 | **views**/home.jade                | Home page template.                                         |
 | app.js                             | Main application file.                                      |
-| generator.js                       | Tool for removing authentication providers and other things.|
+| setup.js                       | Tool for removing authentication providers and other things.|
 
 :exclamation: **Note:** There is no preference how you name or structure your views.
 You could place all your templates in a top-level `views` directory without
@@ -391,8 +393,8 @@ List of Packages
 | mocha                           | Test framework. |
 | chai                            | BDD/TDD assetion library. |
 | supertest                       | HTTP assertions library. |
-| multiline                       | Multi-line strings for generator. |
-| blessed                         | Interactive command line interface for generator. |
+| multiline                       | Multi-line strings for the generator. |
+| blessed                         | Interactive command line interface for the generator. |
 | yui                             | Used by the Yahoo API example. |
 
 Useful Tools and Resources
