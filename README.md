@@ -4,7 +4,7 @@ Hackathon Starter [![Dependency Status](http://img.shields.io/gemnasium/sahat/ha
 
 :octocat: &nbsp;**Live Demo**: http://hackathonstarter.herokuapp.com 
 
-Jump to [What's new in 2.1.3?](#changelog)
+Jump to [What's new in 2.1.4?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -1133,6 +1133,10 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 
 Changelog
 ---------
+
+### 2.1.4 (June 5, 2014)
+- Fixed a bug related to `returnTo` url (#155)
+
 
 ### 2.1.3 (June 3, 2014)
 - Font Awesome 4.1

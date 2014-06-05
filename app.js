@@ -90,21 +90,21 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(function(req, res, next) {
-  // CSRF
+  // CSRF protection.
   if (whitelist.indexOf(req.path) !== -1) next();
   else csrf(req, res, next);
 });
 app.use(function(req, res, next) {
-  // Make current user available in templates
+  // Make user object available in templates.
   res.locals.user = req.user;
   next();
 });
 app.use(function(req, res, next) {
-  // Keep track of the previous URL so a user can redirect
-  // back to the original destination after a successful login.
-  if (req.method !== 'GET') return next();
+  // Remember original destination before login.
   var path = req.path.split('/')[1];
-  if (/(auth|login|logout|signup)$/i.test(path)) return next();
+  if (/auth|login|logout|signup|img|fonts|favicon/i.test(path)) {
+    return next();
+  }
   req.session.returnTo = req.path;
   next();
 });
