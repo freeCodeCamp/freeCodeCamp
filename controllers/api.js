@@ -192,8 +192,8 @@ exports.getLastfm = function(req, res, next) {
   var lastfm = new LastFmNode(secrets.lastfm);
   async.parallel({
     artistInfo: function(done) {
-      lastfm.request("artist.getInfo", {
-        artist: 'Epica',
+      lastfm.request('artist.getInfo', {
+        artist: 'Sirenia',
         handlers: {
           success: function(data) {
             done(null, data);
@@ -204,9 +204,26 @@ exports.getLastfm = function(req, res, next) {
         }
       });
     },
+    artistTopTracks: function(done) {
+      lastfm.request('artist.getTopTracks', {
+        artist: 'Sirenia',
+        handlers: {
+          success: function(data) {
+            var tracks = [];
+            _.each(data.toptracks.track, function(track) {
+              tracks.push(track);
+            });
+            done(null, tracks.slice(0,10));
+          },
+          error: function(err) {
+            done(err);
+          }
+        }
+      });
+    },
     artistTopAlbums: function(done) {
-      lastfm.request("artist.getTopAlbums", {
-        artist: 'Epica',
+      lastfm.request('artist.getTopAlbums', {
+        artist: 'Sirenia',
         handlers: {
           success: function(data) {
             var albums = [];
@@ -231,7 +248,8 @@ exports.getLastfm = function(req, res, next) {
       bio: results.artistInfo.artist.bio.summary,
       stats: results.artistInfo.artist.stats,
       similar: results.artistInfo.artist.similar.artist,
-      topAlbums: results.artistTopAlbums
+      topAlbums: results.artistTopAlbums,
+      topTracks: results.artistTopTracks
     };
     res.render('api/lastfm', {
       title: 'Last.fm API',
@@ -556,7 +574,7 @@ exports.getInstagram = function(req, res, next) {
 
   async.parallel({
     searchByUsername: function(done) {
-      ig.user_search('lisa_veronica', function(err, users, limit) {
+      ig.user_search('richellemead', function(err, users, limit) {
         done(err, users);
       });
     },

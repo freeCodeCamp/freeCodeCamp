@@ -3,9 +3,8 @@ extends ../layout
 block content
   .page-header
     h2
-      i.fa.fa-music
+      i.fa.fa-play-circle-o(style='color: #db1302')
       | Last.fm API
-
   .btn-group.btn-group-justified
     a.btn.btn-primary(href='https://github.com/jammus/lastfm-node#lastfm-node', target='_blank')
       i.fa.fa-check-square-o
@@ -17,41 +16,32 @@ block content
       i.fa.fa-code-fork
       | API Endpoints
 
-  h3.text-primary Artist Information
+  h3= artist.name
+  img.thumbnail(src='#{artist.image}')
 
-  h4= artist.name
-  ul.list-inline
-    li
-      small.text-primary
-        i.fa.fa-users
-        | Listeners: #{artist.stats.listeners}
-    li
-      small.text-primary
-        i.fa.fa-headphones
-        | Scrobbles: #{artist.stats.playcount}
+  h3 Tags
+  for tag in artist.tags
+    span.label.label-primary
+      i.fa.fa-tag
+      | #{tag.name}
+    |&nbsp;
 
-  p
-    img(src='#{artist.image}')
+  h3 Biography
+  p!= artist.bio
 
-  p
-    for tag in artist.tags
-      span.label.label-primary
-        i.fa.fa-tag
-        | #{tag.name}
-      |&nbsp;
-
-  .panel.panel-primary
-    .panel-heading Biography
-    .panel-body
-      != artist.bio
-
-  h4 Top Albums
+  h3 Top Albums
   for album in artist.topAlbums
     img(src='#{album}', width=150, height=150)
     |&nbsp;
 
-  h4 Similar Artists
-  ul.list-unstyled
+  h3 Top Tracks
+  ol
+    for track in artist.topTracks
+      li
+        a(href='#{track.url}') #{track.name}
+
+  h3 Similar Artists
+  ul.list-unstyled.list-inline
     for similarArtist in artist.similar
       li
-        a.lead(href='#{similarArtist.url}') #{similarArtist.name}
+        a(href='#{similarArtist.url}') #{similarArtist.name}
