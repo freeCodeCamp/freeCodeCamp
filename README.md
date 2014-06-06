@@ -4,7 +4,7 @@ Hackathon Starter [![Dependency Status](http://img.shields.io/gemnasium/sahat/ha
 
 :octocat: &nbsp;**Live Demo**: http://hackathonstarter.herokuapp.com 
 
-Jump to [What's new in 2.1.4?](#changelog)
+Jump to [What's new in 2.2?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -1139,9 +1139,23 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 Changelog
 ---------
 
+### 2.2 (June 6, 2014)
+- Use Lodash instead of Underscore.js
+- Replaced all occurences of `_.findWhere` with `_.find`
+- Added a flash message when user deletes an account
+- Updated and clarified some comments
+- Updated the Remove Auth message in `setup.js`
+- Redesigned API Examples page
+- Updated Last.fm API example
+- Updated Steam API example
+- Updated Instagram API example
+- Updated Facebook API example
+- Updated jQuery to 2.1.1
+- Fixed a bug that didn't remove Instagram Auth properly
+- Fixed Foursquare secret token
+
 ### 2.1.4 (June 5, 2014)
 - Fixed a bug related to `returnTo` url (#155)
-
 
 ### 2.1.3 (June 3, 2014)
 - Font Awesome 4.1
