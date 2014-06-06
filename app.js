@@ -21,7 +21,7 @@ var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
 /**
- * Load controllers.
+ * Controllers (route handlers).
  */
 
 var homeController = require('./controllers/home');
@@ -30,7 +30,7 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
 /**
- * API keys + Passport configuration.
+ * API keys and Passport configuration.
  */
 
 var secrets = require('./config/secrets');
@@ -43,7 +43,7 @@ var passportConf = require('./config/passport');
 var app = express();
 
 /**
- * Mongoose configuration.
+ * Connect to MongoDB.
  */
 
 mongoose.connect(secrets.db);
@@ -68,11 +68,11 @@ var whitelist = ['/url1', '/url2'];
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(compress());
 app.use(connectAssets({
   paths: ['public/css', 'public/js'],
   helperContext: app.locals
 }));
-app.use(compress());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -111,7 +111,7 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 
 /**
- * Application routes.
+ * Main routes.
  */
 
 app.get('/', homeController.index);
@@ -131,6 +131,10 @@ app.post('/account/profile', passportConf.isAuthenticated, userController.postUp
 app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
+
+/**
+ * API examples routes.
+ */
 
 app.get('/api', apiController.getApi);
 app.get('/api/lastfm', apiController.getLastfm);
@@ -157,7 +161,7 @@ app.get('/api/instagram', passportConf.isAuthenticated, passportConf.isAuthorize
 app.get('/api/yahoo', apiController.getYahoo);
 
 /**
- * OAuth routes for sign-in.
+ * OAuth sign-in routes.
  */
 
 app.get('/auth/instagram', passport.authenticate('instagram'));
@@ -186,7 +190,7 @@ app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRe
 });
 
 /**
- * OAuth routes for API examples that require authorization.
+ * OAuth authorization routes for API examples.
  */
 
 app.get('/auth/foursquare', passport.authorize('foursquare'));
@@ -204,7 +208,6 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
 
 /**
  * 500 Error Handler.
- * As of Express 4.0 it must be placed at the end, after all routes.
  */
 
 app.use(errorHandler());
