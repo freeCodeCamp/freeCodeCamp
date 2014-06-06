@@ -457,9 +457,9 @@ added to `package.json` as well. For example, `npm install --save moment`.
 asynchronous tasks, and then render a page, but only when all tasks are completed. For example, you might
 want to scrape 3 different websites for some data and render the results in a template
 after all 3 websites have been scraped.
-- Need to find a specific object inside an Array? Use [_.findWhere](http://underscorejs.org/#findWhere)
-function from Underscore.js (or Lodash). For example, this is how you would retrieve a
-Twitter token from database: `var token = _.findWhere(req.user.tokens, { kind: 'twitter' });`,
+- Need to find a specific object inside an Array? Use [_.find](http://lodash.com/docs#find)
+function from Lodash. For example, this is how you would retrieve a
+Twitter token from database: `var token = _.find(req.user.tokens, { kind: 'twitter' });`,
 where 1st parameter is an array, and a 2nd parameter is an object to search for.
 
 FAQ
@@ -468,7 +468,7 @@ FAQ
 ### Why do I get `403 Error: Forbidden` when submitting a form?
 You need to add the following hidden input element to your form. This has been
 added in the [pull request #40](https://github.com/sahat/hackathon-starter/pull/40)
-as part of CSRF protection.
+as part of the CSRF protection.
 
 ```
 input(type='hidden', name='_csrf', value=_csrf)
@@ -476,6 +476,9 @@ input(type='hidden', name='_csrf', value=_csrf)
 
 **Note:** It is now possible to whitelist certain URLs. In other words you can
 specify a list of routes that should bypass CSRF verification check.
+
+**Note 2:** To whitelist dynamic URLs use regular expression tests inside the
+CSRF middleware to see if `req.originalUrl` matches your desired pattern.
 
 ### What is cluster_app.js?
 
