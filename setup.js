@@ -338,7 +338,7 @@ authForm.on('submit', function() {
 
 var authText = blessed.text({
   parent: authForm,
-  content: 'Selecting a checkbox adds an authentication provider. Unselecting a checkbox removes it. If authentication provider is already present, no action will be taken.',
+  content: 'Selecting a checkbox removes an authentication provider. If authentication provider is already removed, no action will be taken.',
   padding: 1,
   bg: 'magenta',
   fg: 'white'
