@@ -12,6 +12,7 @@ var errorHandler = require('errorhandler');
 var csrf = require('lusca').csrf();
 var methodOverride = require('method-override');
 
+var _ = require('lodash');
 var MongoStore = require('connect-mongo')({ session: session });
 var flash = require('express-flash');
 var path = require('path');
@@ -59,7 +60,7 @@ var week = day * 7;
  * CSRF whitelist.
  */
 
-var whitelist = ['/url1', '/url2'];
+var csrfExclude = ['/url1', '/url2'];
 
 /**
  * Express configuration.
@@ -91,8 +92,8 @@ app.use(passport.session());
 app.use(flash());
 app.use(function(req, res, next) {
   // CSRF protection.
-  if (whitelist.indexOf(req.path) !== -1) next();
-  else csrf(req, res, next);
+  if (_.contains(csrfExclude, req.path)) return next();
+  csrf(req, res, next);
 });
 app.use(function(req, res, next) {
   // Make user object available in templates.
