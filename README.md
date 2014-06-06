@@ -28,7 +28,7 @@ it is possible to selectively check which authentication methods you need by run
 
 <h4 align="center">Default Theme</h3>
 
-![](https://lh4.googleusercontent.com/-jafa0PM2qPg/U3Kim3XTlpI/AAAAAAAAEDo/5o97O7KliaI/w1290-h974-no/Screenshot+2014-05-13+18.53.33.png)
+![](https://lh6.googleusercontent.com/-J4_ttNHnWZo/U5IivU_0-XI/AAAAAAAAEIg/XikKjaSdReU/w1320-h986-no/Screenshot+2014-06-06+16.20.41.png)
 
 <h4 align="center">Hackathon Starter Generator</h3>
 
