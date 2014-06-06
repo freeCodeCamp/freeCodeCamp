@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var _ = require('lodash');
 var passport = require('passport');
 var InstagramStrategy = require('passport-instagram').Strategy;
 var LocalStrategy = require('passport-local').Strategy;

@@ -387,7 +387,7 @@ List of Packages
 | tumblr.js                       | Tumblr API library. |
 | twilio                          | Twilio API library. |
 | twit                            | Twitter API library. |
-| underscore                      | Handy JavaScript utlities library. |
+| lodash                          | Handy JavaScript utlities library. |
 | uglify-js                       | Dependency for connect-assets library to minify JS. |
 | validator                       | Used in conjunction with express-validator in **controllers/api.js**. |
 | mocha                           | Test framework. |
@@ -458,7 +458,7 @@ asynchronous tasks, and then render a page, but only when all tasks are complete
 want to scrape 3 different websites for some data and render the results in a template
 after all 3 websites have been scraped.
 - Need to find a specific object inside an Array? Use [_.findWhere](http://underscorejs.org/#findWhere)
-function from Underscore.js. For example, this is how you would retrieve a
+function from Underscore.js (or Lodash). For example, this is how you would retrieve a
 Twitter token from database: `var token = _.findWhere(req.user.tokens, { kind: 'twitter' });`,
 where 1st parameter is an array, and a 2nd parameter is an object to search for.
 

@@ -17,7 +17,7 @@ var Linkedin = require('node-linkedin')(secrets.linkedin.clientID, secrets.linke
 var clockwork = require('clockwork')({key: secrets.clockwork.apiKey});
 var ig = require('instagram-node').instagram();
 var Y = require('yui/yql');
-var _ = require('underscore');
+var _ = require('lodash');
 
 /**
  * GET /api
