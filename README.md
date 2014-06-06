@@ -105,7 +105,7 @@ The easiest way to get started is to clone the repository:
 
 ```bash
 # Get the latest snapshot
-git clone --depth=1 git@github.com:sahat/hackathon-starter.git myproject
+git clone --depth=1 https://github.com/sahat/hackathon-starter.git myproject
 
 cd myproject
 
@@ -391,8 +391,8 @@ List of Packages
 | uglify-js                       | Dependency for connect-assets library to minify JS. |
 | validator                       | Used in conjunction with express-validator in **controllers/api.js**. |
 | mocha                           | Test framework. |
-| chai                            | BDD/TDD assetion library. |
-| supertest                       | HTTP assertions library. |
+| chai                            | BDD/TDD assertion library. |
+| supertest                       | HTTP assertion library. |
 | multiline                       | Multi-line strings for the generator. |
 | blessed                         | Interactive command line interface for the generator. |
 | yui                             | Used by the Yahoo API example. |
