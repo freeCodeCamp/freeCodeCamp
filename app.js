@@ -114,47 +114,134 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
  * Application routes.
  */
 
-app.get('/', homeController.index);
-app.get('/login', userController.getLogin);
-app.post('/login', userController.postLogin);
-app.get('/logout', userController.logout);
-app.get('/forgot', userController.getForgot);
-app.post('/forgot', userController.postForgot);
-app.get('/reset/:token', userController.getReset);
-app.post('/reset/:token', userController.postReset);
-app.get('/signup', userController.getSignup);
-app.post('/signup', userController.postSignup);
-app.get('/contact', contactController.getContact);
-app.post('/contact', contactController.postContact);
-app.get('/account', passportConf.isAuthenticated, userController.getAccount);
-app.post('/account/profile', passportConf.isAuthenticated, userController.postUpdateProfile);
-app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
-app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
-app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
+app.route('/')
+  .get(homeController.index);
 
-app.get('/api', apiController.getApi);
-app.get('/api/lastfm', apiController.getLastfm);
-app.get('/api/nyt', apiController.getNewYorkTimes);
-app.get('/api/aviary', apiController.getAviary);
-app.get('/api/steam', apiController.getSteam);
-app.get('/api/stripe', apiController.getStripe);
-app.post('/api/stripe', apiController.postStripe);
-app.get('/api/scraping', apiController.getScraping);
-app.get('/api/twilio', apiController.getTwilio);
-app.post('/api/twilio', apiController.postTwilio);
-app.get('/api/clockwork', apiController.getClockwork);
-app.post('/api/clockwork', apiController.postClockwork);
-app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFoursquare);
-app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getTumblr);
-app.get('/api/facebook', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFacebook);
-app.get('/api/github', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getGithub);
-app.get('/api/twitter', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getTwitter);
-app.post('/api/twitter', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postTwitter);
-app.get('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getVenmo);
-app.post('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postVenmo);
-app.get('/api/linkedin', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getLinkedin);
-app.get('/api/instagram', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getInstagram);
-app.get('/api/yahoo', apiController.getYahoo);
+app.route('/login')
+  .get(userController.getLogin)
+  .post(userController.postLogin);
+
+app.route('/logout')
+  .get(userController.logout);
+
+app.route('/forgot')
+  .get(userController.getForgot)
+  .post(userController.postForgot);
+
+app.route('/reset/:token')
+  .get(userController.getReset)
+  .post(userController.postReset);
+
+app.route('/signup')
+  .get(userController.getSignup)
+  .post(userController.postSignup);
+
+app.route('/contact')
+  .get(contactController.getContact)
+  .post(contactController.postContact);
+
+app.route('/account')
+  .all(passportConf.isAuthenticated)
+  .get(userController.getAccount);
+
+app.route('/account/profile')
+  .all(passportConf.isAuthenticated)
+  .post(userController.postUpdateProfile);
+
+app.route('/account/password')
+  .all(passportConf.isAuthenticated)
+  .post(userController.postUpdatePassword);
+
+app.route('/account/delete')
+  .all(passportConf.isAuthenticated)
+  .post(userController.postDeleteAccount);
+
+app.route('/account/unlink/:provider')
+  .all(passportConf.isAuthenticated)
+  .get(userController.getOauthUnlink);
+
+app.route('/api')
+  .get(apiController.getApi);
+
+app.route('/api/lastfm')
+  .get(apiController.getLastfm);
+
+app.route('/api/nyt')
+  .get(apiController.getNewYorkTimes);
+
+app.route('/api/aviary')
+  .get(apiController.getAviary);
+
+app.route('/api/steam')
+  .get(apiController.getSteam);
+
+app.route('/api/aviary')
+  .get(apiController.getAviary);
+
+app.route('/api/scraping')
+  .get(apiController.getScraping);
+
+app.route('/api/yahoo')
+  .get(apiController.getYahoo)
+
+app.route('/api/stripe')
+  .get(apiController.getStripe)
+  .post(apiController.postStripe);
+
+app.route('/api/twilio')
+  .get(apiController.getTwilio)
+  .post(apiController.postTwilio);
+
+app.route('/api/clockwork')
+  .get(apiController.getClockwork)
+  .post(apiController.postClockwork);
+
+app.route('/api/foursquare')
+  .all(passportConf.isAuthenticated)
+  .all(passportConf.isAuthorized)
+  .get(apiController.getFoursquare);
+
+app.route('/api/tumblr')
+  .all(passportConf.isAuthenticated)
+  .all(passportConf.isAuthorized)
+  .get(apiController.getTumblr);
+
+app.route('/api/foursquare')
+  .all(passportConf.isAuthenticated)
+  .all(passportConf.isAuthorized)
+  .get(apiController.getFoursquare);
+
+app.route('/api/facebook')
+  .all(passportConf.isAuthenticated)
+  .all(passportConf.isAuthorized)
+  .get(apiController.getFacebook);
+
+app.route('/api/github')
+  .all(passportConf.isAuthenticated)
+  .all(passportConf.isAuthorized)
+  .get(apiController.getGithub);
+
+app.route('/api/twitter')
+  .all(passportConf.isAuthenticated)
+  .all(passportConf.isAuthorized)
+  .get(apiController.getTwitter)
+  .post(apiController.postTwitter);
+
+app.route('/api/venmo')
+  .all(passportConf.isAuthenticated)
+  .all(passportConf.isAuthorized)
+  .get(apiController.getVenmo)
+  .post(apiController.postVenmo);
+
+app.route('/api/linkedin')
+  .all(passportConf.isAuthenticated)
+  .all(passportConf.isAuthorized)
+  .get(apiController.getLinkedin)
+
+app.route('/api/instagram')
+  .all(passportConf.isAuthenticated)
+  .all(passportConf.isAuthorized)
+  .get(apiController.getInstagram)
 
 /**
  * OAuth routes for sign-in.
