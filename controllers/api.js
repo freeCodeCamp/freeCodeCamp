@@ -36,7 +36,8 @@ exports.getApi = function(req, res) {
  */
 
 exports.getFoursquare = function(req, res, next) {
-  var token = _.findWhere(req.user.tokens, { kind: 'foursquare' });
+  var token = _.find(req.user.tokens, { kind: 'foursquare' });
+  console.log(token);
   async.parallel({
     trendingVenues: function(callback) {
       foursquare.Venues.getTrending('40.7222756', '-74.0022724', { limit: 50 }, token.accessToken, function(err, results) {
@@ -71,7 +72,7 @@ exports.getFoursquare = function(req, res, next) {
  */
 
 exports.getTumblr = function(req, res) {
-  var token = _.findWhere(req.user.tokens, { kind: 'tumblr' });
+  var token = _.find(req.user.tokens, { kind: 'tumblr' });
   var client = tumblr.createClient({
     consumer_key: secrets.tumblr.consumerKey,
     consumer_secret: secrets.tumblr.consumerSecret,
@@ -93,7 +94,7 @@ exports.getTumblr = function(req, res) {
  */
 
 exports.getFacebook = function(req, res, next) {
-  var token = _.findWhere(req.user.tokens, { kind: 'facebook' });
+  var token = _.find(req.user.tokens, { kind: 'facebook' });
   graph.setAccessToken(token.accessToken);
   async.parallel({
     getMe: function(done) {
@@ -142,7 +143,7 @@ exports.getScraping = function(req, res, next) {
  * GitHub API Example.
  */
 exports.getGithub = function(req, res) {
-  var token = _.findWhere(req.user.tokens, { kind: 'github' });
+  var token = _.find(req.user.tokens, { kind: 'github' });
   var github = new Github({ token: token.accessToken });
   var repo = github.getRepo('sahat', 'requirejs-library');
   repo.show(function(err, repo) {
@@ -264,7 +265,7 @@ exports.getLastfm = function(req, res, next) {
  */
 
 exports.getTwitter = function(req, res, next) {
-  var token = _.findWhere(req.user.tokens, { kind: 'twitter' });
+  var token = _.find(req.user.tokens, { kind: 'twitter' });
   var T = new Twit({
     consumer_key: secrets.twitter.consumerKey,
     consumer_secret: secrets.twitter.consumerSecret,
@@ -295,7 +296,7 @@ exports.postTwitter = function(req, res, next) {
     return res.redirect('/api/twitter');
   }
 
-  var token = _.findWhere(req.user.tokens, { kind: 'twitter' });
+  var token = _.find(req.user.tokens, { kind: 'twitter' });
   var T = new Twit({
     consumer_key: secrets.twitter.consumerKey,
     consumer_secret: secrets.twitter.consumerSecret,
@@ -469,7 +470,7 @@ exports.postClockwork = function(req, res, next) {
  */
 
 exports.getVenmo = function(req, res, next) {
-  var token = _.findWhere(req.user.tokens, { kind: 'venmo' });
+  var token = _.find(req.user.tokens, { kind: 'venmo' });
   var query = querystring.stringify({ access_token: token.accessToken });
 
   async.parallel({
@@ -515,7 +516,7 @@ exports.postVenmo = function(req, res, next) {
     return res.redirect('/api/venmo');
   }
 
-  var token = _.findWhere(req.user.tokens, { kind: 'venmo' });
+  var token = _.find(req.user.tokens, { kind: 'venmo' });
 
   var formData = {
     access_token: token.accessToken,
@@ -549,7 +550,7 @@ exports.postVenmo = function(req, res, next) {
  */
 
 exports.getLinkedin = function(req, res, next) {
-  var token = _.findWhere(req.user.tokens, { kind: 'linkedin' });
+  var token = _.find(req.user.tokens, { kind: 'linkedin' });
   var linkedin = Linkedin.init(token.accessToken);
 
   linkedin.people.me(function(err, $in) {
@@ -567,7 +568,7 @@ exports.getLinkedin = function(req, res, next) {
  */
 
 exports.getInstagram = function(req, res, next) {
-  var token = _.findWhere(req.user.tokens, { kind: 'instagram' });
+  var token = _.find(req.user.tokens, { kind: 'instagram' });
 
   ig.use({ client_id: secrets.instagram.clientID, client_secret: secrets.instagram.clientSecret });
   ig.use({ access_token: token.accessToken });
