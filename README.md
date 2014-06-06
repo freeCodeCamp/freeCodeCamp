@@ -1172,6 +1172,7 @@ Changelog
 - Added a flash message when user deletes an account
 - Updated and clarified some comments
 - Updated the Remove Auth message in `setup.js`
+- Cleaned up `styles.less`
 - Redesigned API Examples page
 - Updated Last.fm API example
 - Updated Steam API example
