@@ -177,7 +177,6 @@ exports.postUpdatePassword = function(req, res, next) {
 /**
  * POST /account/delete
  * Delete user account.
- * @param id - User ObjectId
  */
 
 exports.postDeleteAccount = function(req, res, next) {
@@ -191,9 +190,8 @@ exports.postDeleteAccount = function(req, res, next) {
 
 /**
  * GET /account/unlink/:provider
- * Unlink OAuth2 provider from the current user.
+ * Unlink OAuth provider.
  * @param provider
- * @param id - User ObjectId
  */
 
 exports.getOauthUnlink = function(req, res, next) {
@@ -221,7 +219,6 @@ exports.getReset = function(req, res) {
   if (req.isAuthenticated()) {
     return res.redirect('/');
   }
-
   User
     .findOne({ resetPasswordToken: req.params.token })
     .where('resetPasswordExpires').gt(Date.now())
@@ -239,6 +236,7 @@ exports.getReset = function(req, res) {
 /**
  * POST /reset/:token
  * Process the reset password request.
+ * @param token
  */
 
 exports.postReset = function(req, res, next) {
