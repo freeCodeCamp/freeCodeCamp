@@ -310,7 +310,7 @@ authForm.on('submit', function() {
   if (instagramCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with Instagram.');
-    passportConfig.splice(index, 40);
+    passportConfig.splice(index, 43);
     fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
 
     index = loginTemplate.indexOf("      a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')");
