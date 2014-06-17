@@ -654,9 +654,9 @@ Trying to use both CSS files at the same time will likely result in undesired ef
 :exclamation: **Note:** Using the custom templates approach, you should understand that you cannot reuse any of the views I have created: layout, home page, api browser, login, signup, account management, contact. Those views were built using Bootstrap grid and styles. You will have to manually update the grid using a different syntax provided in the template. **Having said that, you can mix and match if you want to do so: Use Bootstrap for main app interface, and a custom template for a landing page.**
 
 Let's start from the beginning. For this example I will use [Escape Velocity](http://html5up.net/escape-velocity/) template:
-![Alt](http://html5up.net/uploads/previews/6330653905846315.jpg)
+![Alt](http://html5up.net/uploads/images/escape-velocity.jpg)
 
-**Note:** For the sake of simplicity I will only consider `index.html`, and skip `left-sidebar.html`,
+**Note:** For the sake of simplicity I will ``only consider `index.html`, and skip `left-sidebar.html`,
 `no-sidebar.html`, `right-sidebar.html`.
 
 Move all javascript files from `html5up-escape-velocity/js` to `public/js`. Then move all css files from `html5up-escape-velocity/css` to `public/css`. And finally, move all images from `html5up-escape-velocity/images` to `public/images` (You could move it to the existing **img** folder, but then you would have to manually change every `img` reference). Grab the contents of `index.html` and paste it into [HTML To Jade](http://html2jade.aaron-powell.com/).
@@ -1164,7 +1164,7 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
  - **Note:** *You will be prompted for the password you created earlier*
 - On **Deployments** tab of your Windows Azure Web Site, you will see the deployment history
 
-<img src="https://www.ibm.com/developerworks/community/blogs/millarde/resource/BLOGS_UPLOADED_IMAGES/bm1.png" width="200">
+<img src="http://www.comparethecloud.net/wp-content/uploads/2014/06/ibm-bluemix_pr-030514.jpg" width="200">
 
 - You'll need an IBM ID registered at Bluemix. You can sign up at http://bluemix.net.
 - Get the Cloud Foundry command line client here: https://github.com/cloudfoundry/cli
