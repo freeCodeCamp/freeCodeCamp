@@ -1164,6 +1164,21 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
  - **Note:** *You will be prompted for the password you created earlier*
 - On **Deployments** tab of your Windows Azure Web Site, you will see the deployment history
 
+<img src="https://www.ibm.com/developerworks/community/blogs/millarde/resource/BLOGS_UPLOADED_IMAGES/bm1.png" width="200">
+
+- You'll need an IBM ID registered at Bluemix. You can sign up at http://bluemix.net.
+- Get the Cloud Foundry command line client here: https://github.com/cloudfoundry/cli
+- Go to your hackathon-starter directory and use `cf push [your-app-name] -m 512m` to push the application (it won't work yet, but you need to create the application so that you can associate a MongoDB instance with it). You can use any *[your-app-name]* that is unique at bluemix.net.
+- Use `cf create-service mongodb 100 [your-service-name]` to create a MongoDB service for your app. Again, you can just make up *[your-service-name]*.
+- Use `cf bind-service [your-app-name] [your-service-name]` to associate them.
+- Use `cf files [your-app-name] logs/env.log` to see the environment variables created for your db.
+- Copy out the url attribute in its entirety, something like *mongodb://68638358-a3c6-42a1-bae9-645b607d55e8:46fb97e6-5ce7-4146-9a5d-d623c64ff1fe@192.155.243.23:10123/db*
+- Set this environment variable for your application with `cf set-env [your-app-name] MONGODB [your-url-value]`
+- Use `cf restart [your-app-name]` to cause it to pickup your changes. If that doesn't seem to work, just push it again.
+- Visit your starter app at *[your-app-name].ng.bluemix.net*!
+
+Alternative directions including how to setup the project with a DevOps pipeline are available at http://ibm.biz/hackstart, a longer version of these instructions with screen shots at http://ibm.biz/hackstart2. If you prefer video: https://www.youtube.com/watch?v=twvyqRnutss
+
 Changelog
 ---------
 
