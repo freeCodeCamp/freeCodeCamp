@@ -4,7 +4,7 @@ Hackathon Starter [![Dependency Status](http://img.shields.io/gemnasium/sahat/ha
 
 :octocat: &nbsp;**Live Demo**: http://hackathonstarter.herokuapp.com 
 
-Jump to [What's new in 2.2?](#changelog)
+Jump to [What's new in 2.2.1?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -1185,6 +1185,9 @@ Also, be sure to check out the [Jump-start your hackathon efforts with DevOps Se
 
 Changelog
 ---------
+
+### 2.2.1 (June 17, 2014)
+- Added IBM Codename: BlueMix deployment instructions
 
 ### 2.2 (June 6, 2014)
 - Use Lodash instead of Underscore.js
