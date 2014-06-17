@@ -1166,18 +1166,22 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 
 <img src="http://www.comparethecloud.net/wp-content/uploads/2014/06/ibm-bluemix_pr-030514.jpg" width="200">
 
-- You'll need an IBM ID registered at Bluemix. You can sign up at http://bluemix.net.
-- Get the Cloud Foundry command line client here: https://github.com/cloudfoundry/cli
-- Go to your hackathon-starter directory and use `cf push [your-app-name] -m 512m` to push the application (it won't work yet, but you need to create the application so that you can associate a MongoDB instance with it). You can use any *[your-app-name]* that is unique at bluemix.net.
-- Use `cf create-service mongodb 100 [your-service-name]` to create a MongoDB service for your app. Again, you can just make up *[your-service-name]*.
-- Use `cf bind-service [your-app-name] [your-service-name]` to associate them.
-- Use `cf files [your-app-name] logs/env.log` to see the environment variables created for your db.
-- Copy out the url attribute in its entirety, something like *mongodb://68638358-a3c6-42a1-bae9-645b607d55e8:46fb97e6-5ce7-4146-9a5d-d623c64ff1fe@192.155.243.23:10123/db*
-- Set this environment variable for your application with `cf set-env [your-app-name] MONGODB [your-url-value]`
-- Use `cf restart [your-app-name]` to cause it to pickup your changes. If that doesn't seem to work, just push it again.
-- Visit your starter app at *[your-app-name].ng.bluemix.net*!
+- Go to [Codename: Bluemix](http://bluemix.net) to signup for the free beta, or login with your *IBM id*
+- Install [Cloud Foundry CLI](https://github.com/cloudfoundry/cli)
+- Navigate to your **hackathon-starter** directory and then run `cf push [your-app-name] -m 512m` command to deploy the application
+ - **Note:** You must specify a unique application name in place of `[your-app-name]`
+- Run `cf create-service mongodb 100 [your-service-name]` to create a [MongoDB service](https://www.ng.bluemix.net/docs/#services/MongoDB/index.html#MongoDB)
+- Run `cf bind-service [your-app-name] [your-service-name]` to associate your application with a service created above
+- Run `cf files [your-app-name] logs/env.log` to see the *environment variables created for MongoDB.
+- Copy the **MongoDB URI** that should look something like the following: `mongodb://68638358-a3c6-42a1-bae9-645b607d55e8:46fb97e6-5ce7-4146-9a5d-d623c64ff1fe@192.155.243.23:10123/db`
+- Then set it as an environment variable for your application by running `cf set-env [your-app-name] MONGODB [your-mongodb-uri]`
+- Run `cf restart [your-app-name]` for the changes to take effect.
+- Visit your starter app at **http://[your-app-name].ng.bluemix.net**
+- Done!
 
-Alternative directions including how to setup the project with a DevOps pipeline are available at http://ibm.biz/hackstart, a longer version of these instructions with screen shots at http://ibm.biz/hackstart2. If you prefer video: https://www.youtube.com/watch?v=twvyqRnutss
+**Note:** Alternative directions, including how to setup the project with a DevOps pipeline are available at [http://ibm.biz/hackstart](http://ibm.biz/hackstart).
+A longer version of these instructions with screenshots is available at [http://ibm.biz/hackstart2](http://ibm.biz/hackstart2).
+Also, be sure to check out the [Jump-start your hackathon efforts with DevOps Services and Bluemix](https://www.youtube.com/watch?v=twvyqRnutss) video.
 
 Changelog
 ---------
