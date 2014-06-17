@@ -1147,7 +1147,7 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
  - This will create a new application snapshot, generate and/or update project metadata
 - Done!
 
-<img src="http://upload.wikimedia.org/wikipedia/en/f/ff/Windows_Azure_logo.png" width="200">
+<img src="http://upload.wikimedia.org/wikipedia/commons/f/ff/Windows_Azure_logo.png" width="200">
 
 - Login to [Windows Azure Management Portal](http://manage.windowsazure.com/)
 - Click the **+ NEW** button on the bottom left of the portal
