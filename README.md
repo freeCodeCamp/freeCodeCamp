@@ -408,6 +408,7 @@ Useful Tools and Resources
 Recommended Design Resources
 ----------------------------
 
+- [CSS Guidelines](https://github.com/csswizardry/CSS-Guidelines) - read it, memorize it and use it.
 - [Bootsnipp](http://bootsnipp.com/) - Code snippets for Bootstrap.
 - [UIBox](http://www.uibox.in) - Curated HTML, CSS, JS, UI components.
 - [Bootstrap Zero](http://bootstrapzero.com/) - Free Bootstrap templates themes.
