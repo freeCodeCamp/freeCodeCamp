@@ -1,0 +1,143 @@
+// Colors
+// -------------------------
+
+@gray-lighter: #f0f0f0;
+@gray-light: #e0e0e0;
+@gray: #737373;
+@gray-dark: #404040;
+
+@brand-primary: #3372df;
+@brand-success: #0f9d58;
+@brand-warning: #f4b400;
+@brand-danger: #cb4437;
+@brand-info: #5bc0dd;
+
+// Typography
+// -------------------------
+
+@text-color: @gray-dark;
+@headings-font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
+@text-muted: @gray;
+@link-color: @brand-primary;
+
+// Buttons
+// -------------------------
+
+
+@btn-default-border: #e6e6e6;
+@btn-default-color: #3372df;
+@btn-primary-border: darken(@brand-primary, 8%);
+@btn-success-border: darken(@brand-success, 8%);
+@btn-warning-border: darken(@brand-warning, 8%);
+@btn-danger-border: darken(@brand-danger, 8%);
+@btn-info-border: darken(@brand-info, 8%);
+
+.btn {
+  font-size: 16px;
+  border-radius: 0;
+  padding: 12px 32px;
+
+  &:focus {
+    outline: none;
+  }
+
+
+}
+
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-warning,
+.btn-danger,
+.btn-info {
+  &:hover {
+    color: #fff;
+    background-color: #4d4d4d;
+  }
+}
+
+.btn-social {
+  padding: 12px 64px;
+
+  :first-child {
+    width: 48px;
+    line-height: 48px;
+  }
+}
+
+.btn-link {
+  text-decoration: underline;
+
+  &:hover {
+    color: #3372df;
+    text-decoration: none;
+  }
+}
+
+
+// Forms
+// -------------------------
+
+@input-border-radius: 0;
+@input-border-focus: #2598f9;
+
+.form-control:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+// Form states and alerts
+// -------------------------
+
+@state-success-text: #569845;
+@state-success-bg: #dbf5d3;
+@state-success-border: #aed3a5;
+
+@state-info-text: #3a87ad;
+@state-info-bg: #d9edf7;
+@state-info-border: #98cce7;
+
+@state-warning-text: #bf9853;
+@state-warning-bg: #fdf8e2;
+@state-warning-border: #f2daab;
+
+@state-danger-text: #b94a48;
+@state-danger-bg: #f2dede;
+@state-danger-border: #e0b1b8;
+
+// Alerts
+// -------------------------
+
+.alert {
+  border-radius: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+}
+
+// Navbar
+// -------------------------
+
+@navbar-default-bg: #4285f4;
+@navbar-default-link-color: #fff;
+@navbar-default-link-hover-color: #fff;
+@navbar-default-link-active-color: #fff;
+@navbar-default-link-hover-bg: rgba(255,255,255,0.2);
+@navbar-default-link-active-bg: rgba(255,255,255,0.2);
+@navbar-default-color: #fff;
+@navbar-default-brand-hover-color: #fff;
+@navbar-default-toggle-icon-bar-bg: #fff;
+@navbar-default-toggle-hover-bg: rgba(255,255,255,0.2);
+
+.navbar-default {
+  border: 0;
+
+  .navbar-brand {
+    font-weight: 300;
+  }
+
+  .navbar-nav {
+    > li > a {
+      font-size: 16px;
+      font-weight: 300;
+      transition: background-color 0.2s ease-out;
+    }
+  }
+}
