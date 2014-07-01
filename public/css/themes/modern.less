@@ -13,7 +13,7 @@
 @brand-primary: #2ac5ee;
 @brand-success: #0f9d58;
 @brand-warning: #f4b400;
-@brand-danger: #cb4437;
+@brand-danger: #d80017;
 @brand-info: #5bc0dd;
 
 ::selection {
@@ -36,6 +36,14 @@ a {
 
   &:hover {
     text-decoration: none;
+  }
+
+  &.text-danger {
+    color: @brand-danger;
+
+    &:hover {
+      color: @gray-darker;
+    }
   }
 }
 
@@ -100,26 +108,23 @@ p {
 // Form states and alerts
 // -------------------------
 
-@state-success-text: #569845;
-@state-success-bg: #dbf5d3;
-@state-success-border: #aed3a5;
+@state-success-text: #fff;
+@state-success-bg: @brand-success;
 
-@state-info-text: #3a87ad;
-@state-info-bg: #d9edf7;
-@state-info-border: #98cce7;
+@state-info-text: #fff;
+@state-info-bg: @brand-primary;
 
-@state-warning-text: #bf9853;
-@state-warning-bg: #fdf8e2;
-@state-warning-border: #f2daab;
+@state-warning-text: #fff;
+@state-warning-bg: @brand-warning;
 
-@state-danger-text: #b94a48;
-@state-danger-bg: #f2dede;
-@state-danger-border: #e0b1b8;
+@state-danger-text: #fff;
+@state-danger-bg: @brand-danger;
 
 // Alerts
 // -------------------------
 
 .alert {
+  font-family: 'Raleway', sans-serif;
   border-radius: 0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
 }
