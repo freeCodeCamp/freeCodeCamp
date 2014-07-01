@@ -38,7 +38,7 @@ block content
     .form-group
       .col-sm-offset-2.col-sm-4
         button.btn.btn.btn-primary(type='submit')
-          i.fa.fa-magnet
+          span.ion-person
           | Update Profile
 
   .page-header
@@ -57,7 +57,7 @@ block content
     .form-group
       .col-sm-offset-3.col-sm-4
         button.btn.btn.btn-primary(type='submit')
-          i.fa.fa-keyboard-o
+          span.ion-locked
           | Change Password
 
   .page-header
@@ -67,7 +67,7 @@ block content
   form(action='/account/delete', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     button.btn.btn-danger(type='submit')
-      i.fa.fa-trash-o
+      span.ion-trash-b
       | Delete my account
 
   .page-header
