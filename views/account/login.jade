@@ -12,7 +12,9 @@ block content
         label.control-label(for='password') Password
         input.form-control(type='password', name='password', id='password', placeholder='Password')
       .form-group
-        button.btn.btn-primary(type='submit') Login
+        button.btn.btn-primary(type='submit')
+          span.ion-log-in
+          | Login
         a.btn.btn-link(href='/forgot') Forgot your password?
       hr
       a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
