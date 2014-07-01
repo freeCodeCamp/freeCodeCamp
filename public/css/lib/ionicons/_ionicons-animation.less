@@ -1,0 +1,85 @@
+// Animation Icons
+// --------------------------
+
+.spin() {
+  -webkit-animation: spin 1s infinite linear;
+  -moz-animation: spin 1s infinite linear;
+  -o-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+
+.@{ionicons-prefix}loading-a,
+.@{ionicons-prefix}loading-b,
+.@{ionicons-prefix}loading-c,
+.@{ionicons-prefix}loading-d,
+.@{ionicons-prefix}looping,
+.@{ionicons-prefix}refreshing,
+.@{ionicons-prefix}ios7-reloading {
+  &:extend(.ion);
+}
+
+.@{ionicons-prefix}spin,
+.@{ionicons-prefix}loading-a,
+.@{ionicons-prefix}loading-b,
+.@{ionicons-prefix}loading-c,
+.@{ionicons-prefix}loading-d,
+.@{ionicons-prefix}looping,
+.@{ionicons-prefix}refreshing,
+.@{ionicons-prefix}ios7-reloading {
+  .spin()
+}
+
+@-moz-keyframes spin {
+  0% { -moz-transform: rotate(0deg); }
+  100% { -moz-transform: rotate(359deg); }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(359deg); }
+}
+@-o-keyframes spin {
+  0% { -o-transform: rotate(0deg); }
+  100% { -o-transform: rotate(359deg); }
+}
+@-ms-keyframes spin {
+  0% { -ms-transform: rotate(0deg); }
+  100% { -ms-transform: rotate(359deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
+.@{ionicons-prefix}loading-a {
+  -webkit-animation-timing-function: steps(8, start);
+  -moz-animation-timing-function: steps(8, start);
+  animation-timing-function: steps(8, start);
+}
+
+.@{ionicons-prefix}loading-a:before { 
+  &:extend(.@{ionicons-prefix}load-a:before);
+}
+
+.@{ionicons-prefix}loading-b:before { 
+  &:extend(.@{ionicons-prefix}load-b:before);
+}
+
+.@{ionicons-prefix}loading-c:before { 
+  &:extend(.@{ionicons-prefix}load-c:before);
+}
+
+.@{ionicons-prefix}loading-d:before { 
+  &:extend(.@{ionicons-prefix}load-d:before);
+}
+
+.@{ionicons-prefix}looping:before { 
+  &:extend(.@{ionicons-prefix}loop:before);
+}
+
+.@{ionicons-prefix}refreshing:before { 
+  &:extend(.@{ionicons-prefix}refresh:before);
+}
+
+.@{ionicons-prefix}ios7-reloading:before { 
+  &:extend(.@{ionicons-prefix}ios7-reload:before);
+}
