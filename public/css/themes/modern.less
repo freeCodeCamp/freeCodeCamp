@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
 
 // Colors
 // -------------------------
@@ -15,21 +16,33 @@
 @brand-danger: #cb4437;
 @brand-info: #5bc0dd;
 
+::selection {
+  background: @brand-primary;
+}
+
 // Typography
 // -------------------------
 
 @font-size-base: 13px;
 @font-family-base: 'Montserrat', sans-serif;
-@text-color: @gray-dark;
-@text-muted: @gray;
+@headings-font-family: 'Montserrat', sans-serif;
+@headings-font-weight: 700;
+@text-color: @gray-darker;
 @link-color: @brand-primary;
 @link-hover-color: @gray-darker;
+
 a {
   transition: all .4s cubic-bezier(.24,.45,.46,.92);
 
   &:hover {
     text-decoration: none;
   }
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 // Buttons
@@ -52,17 +65,6 @@ a {
   &:hover {
     color: #fff;
     background-color: @gray-darker;
-  }
-}
-.btn-default,
-.btn-primary,
-.btn-success,
-.btn-warning,
-.btn-danger,
-.btn-info {
-  &:hover {
-    color: #fff;
-    background-color: #4d4d4d;
   }
 }
 
