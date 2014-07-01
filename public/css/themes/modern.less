@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 // Colors
 // -------------------------
 
@@ -5,8 +7,9 @@
 @gray-light: #e0e0e0;
 @gray: #737373;
 @gray-dark: #404040;
+@gray-darker: #121212;
 
-@brand-primary: #3372df;
+@brand-primary: #2ac5ee;
 @brand-success: #0f9d58;
 @brand-warning: #f4b400;
 @brand-danger: #cb4437;
@@ -15,14 +18,22 @@
 // Typography
 // -------------------------
 
+@font-size-base: 13px;
+@font-family-base: 'Montserrat', sans-serif;
 @text-color: @gray-dark;
-@headings-font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
 @text-muted: @gray;
 @link-color: @brand-primary;
+@link-hover-color: @gray-darker;
+a {
+  transition: all .4s cubic-bezier(.24,.45,.46,.92);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 // Buttons
 // -------------------------
-
 
 @btn-default-border: #e6e6e6;
 @btn-default-color: #3372df;
@@ -33,17 +44,16 @@
 @btn-info-border: darken(@brand-info, 8%);
 
 .btn {
-  font-size: 16px;
-  border-radius: 0;
-  padding: 12px 32px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 3px;
+  transition: all .4s cubic-bezier(.24,.45,.46,.92);
 
-  &:focus {
-    outline: none;
+  &:hover {
+    color: #fff;
+    background-color: @gray-darker;
   }
-
-
 }
-
 .btn-default,
 .btn-primary,
 .btn-success,
@@ -57,20 +67,20 @@
 }
 
 .btn-social {
-  padding: 12px 64px;
+  padding: 10px 50px;
 
   :first-child {
-    width: 48px;
-    line-height: 48px;
+    width: 38px;
+    line-height: 38px;
   }
 }
 
 .btn-link {
-  text-decoration: underline;
 
   &:hover {
-    color: #3372df;
     text-decoration: none;
+    background-color: transparent;
+    color: @gray-darker;
   }
 }
 
@@ -78,12 +88,12 @@
 // Forms
 // -------------------------
 
-@input-border-radius: 0;
-@input-border-focus: #2598f9;
-
-.form-control:focus {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
-}
+@input-border-radius: 2px;
+@input-border-focus: #999;
+@input-border: #f0f0f0;
+@input-color: #444;
+@input-color-placeholder: #999;
+@input-height-base: 48px;
 
 // Form states and alerts
 // -------------------------
@@ -115,19 +125,19 @@
 // Navbar
 // -------------------------
 
-@navbar-default-bg: #4285f4;
-@navbar-default-link-color: #fff;
-@navbar-default-link-hover-color: #fff;
-@navbar-default-link-active-color: #fff;
-@navbar-default-link-hover-bg: rgba(255,255,255,0.2);
-@navbar-default-link-active-bg: rgba(255,255,255,0.2);
-@navbar-default-color: #fff;
-@navbar-default-brand-hover-color: #fff;
-@navbar-default-toggle-icon-bar-bg: #fff;
-@navbar-default-toggle-hover-bg: rgba(255,255,255,0.2);
+@navbar-height: 60px;
+@navbar-default-bg: rgba(255,255,255,0.95);
+@navbar-default-link-color: @gray-darker;
+@navbar-default-link-active-color: @brand-primary;
+@navbar-default-link-active-bg: transparent;
+@navbar-default-link-hover-color: @brand-primary;
+@navbar-default-link-hover-bg: transparent;
+@navbar-default-brand-color: @gray-darker;
+@navbar-default-brand-hover-color: @brand-primary;
 
 .navbar-default {
   border: 0;
+  box-shadow: 0 1px 5px rgba(0,0,0,.15);
 
   .navbar-brand {
     font-weight: 300;
@@ -135,9 +145,7 @@
 
   .navbar-nav {
     > li > a {
-      font-size: 16px;
-      font-weight: 300;
-      transition: background-color 0.2s ease-out;
+      transition: color .4s cubic-bezier(.24,.45,.46,.92);
     }
   }
 }
