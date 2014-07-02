@@ -4,7 +4,7 @@ Hackathon Starter [![Dependency Status](http://img.shields.io/gemnasium/sahat/ha
 
 :octocat: &nbsp;**Live Demo**: http://hackathonstarter.herokuapp.com 
 
-Jump to [What's new in 2.2.1?](#changelog)
+Jump to [What's new in 2.3?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -1186,6 +1186,15 @@ Also, be sure to check out the [Jump-start your hackathon efforts with DevOps Se
 
 Changelog
 ---------
+
+### 2.3 (July 2, 2014)
+- Bootstrap 3.2
+- New default theme
+- Ionicons fonts
+- Fixed bodyParser deprecation warning
+- Minor visual updates
+- CSS cleanup via RECESS
+- Replaced `navbar-brand` image with a font icon
 
 ### 2.2.1 (June 17, 2014)
 - Added IBM Codename: BlueMix deployment instructions
