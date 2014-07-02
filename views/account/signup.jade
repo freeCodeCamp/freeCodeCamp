@@ -1,9 +1,10 @@
 extends ../layout
 
 block content
+  .page-header
+    h3 Sign up
   form.form-horizontal(id='signup-form', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
-    legend Signup
     .form-group
       label.col-sm-3.control-label(for='email') Email
       .col-sm-7

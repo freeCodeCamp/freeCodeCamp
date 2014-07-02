@@ -1,8 +1,9 @@
 extends ../layout
 
 block content
+  .page-header
+    h3 Sign in
   form(method='POST')
-    legend Sign In
     input(type='hidden', name='_csrf', value=_csrf)
     .col-sm-8.col-sm-offset-2
       .form-group
@@ -13,7 +14,7 @@ block content
         input.form-control(type='password', name='password', id='password', placeholder='Password')
       .form-group
         button.btn.btn-primary(type='submit')
-          span.ion-log-in
+          span.ion-android-hand
           | Login
         a.btn.btn-link(href='/forgot') Forgot your password?
       hr
