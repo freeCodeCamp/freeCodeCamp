@@ -31,6 +31,12 @@
               | #{user.profile.name || user.email || user.id}&nbsp;
               i.caret
             ul.dropdown-menu
-              li: a(href='/account') My Account
+              li
+                a(href='/account')
+                  span.ion-person
+                  | My Account
               li.divider
-              li: a(href='/logout') Logout
+              li
+                a(href='/logout')
+                  span.ion-log-out
+                  |  Logout
