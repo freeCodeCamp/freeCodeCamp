@@ -22,15 +22,19 @@ if for example you are only interested in **Sign in with Google** authentication
 Chances are you do not need all authentication methods or API examples. As of **Hackathon Starter 2.1**
 it is possible to selectively check which authentication methods you need by running `node setup.js`.
 
-<h4 align="center">Flatly Bootstrap Theme</h3>
+<h4 align="center">Modern Theme</h4>
+
+![](https://lh6.googleusercontent.com/-KQTmCFNK6MM/U7OZpznjDuI/AAAAAAAAERc/h3jR27Uy1lE/w1366-h1006-no/Screenshot+2014-07-02+01.32.22.png)
+
+<h4 align="center">Flatly Bootstrap Theme</h4>
 
 ![](https://lh5.googleusercontent.com/-oJ-7bSYisRY/U1a-WhK_LoI/AAAAAAAAECM/a04fVYgefzw/w1474-h1098-no/Screen+Shot+2014-04-22+at+3.08.33+PM.png)
 
-<h4 align="center">Default Theme</h3>
+<h4 align="center">Default Theme</h4>
 
 ![](https://lh6.googleusercontent.com/-J4_ttNHnWZo/U5IivU_0-XI/AAAAAAAAEIg/XikKjaSdReU/w1320-h986-no/Screenshot+2014-06-06+16.20.41.png)
 
-<h4 align="center">Hackathon Starter Generator</h3>
+<h4 align="center">Hackathon Starter Generator</h4>
 
 ![](https://lh4.googleusercontent.com/-ncBLUzq6czE/U3KkYE0UXsI/AAAAAAAAEEM/YsZeIqOlZg8/w1288-h874-no/Screenshot+2014-05-13+19.01.15.png)
 
