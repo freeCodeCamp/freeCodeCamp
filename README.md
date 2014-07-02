@@ -657,7 +657,7 @@ Trying to use both CSS files at the same time will likely result in undesired ef
 Let's start from the beginning. For this example I will use [Escape Velocity](http://html5up.net/escape-velocity/) template:
 ![Alt](http://html5up.net/uploads/images/escape-velocity.jpg)
 
-**Note:** For the sake of simplicity I will ``only consider `index.html`, and skip `left-sidebar.html`,
+**Note:** For the sake of simplicity I will only consider `index.html`, and skip `left-sidebar.html`,
 `no-sidebar.html`, `right-sidebar.html`.
 
 Move all javascript files from `html5up-escape-velocity/js` to `public/js`. Then move all css files from `html5up-escape-velocity/css` to `public/css`. And finally, move all images from `html5up-escape-velocity/images` to `public/images` (You could move it to the existing **img** folder, but then you would have to manually change every `img` reference). Grab the contents of `index.html` and paste it into [HTML To Jade](http://html2jade.aaron-powell.com/).
