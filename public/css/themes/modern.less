@@ -20,8 +20,8 @@
 // -------------------------
 
 footer {
-  background-color: @gray-darker;
   color: #fff;
+  background-color: @gray-darker;
 
   a:hover {
     color: #fff;
@@ -45,14 +45,6 @@ a {
   &:hover {
     text-decoration: none;
   }
-
-  &.text-danger {
-    color: @brand-danger;
-
-    &:hover {
-      color: @gray-darker;
-    }
-  }
 }
 
 ul,
@@ -60,6 +52,10 @@ p {
   font-family: 'Raleway', sans-serif;
   font-size: 14px;
   font-weight: 300;
+}
+
+.text-danger {
+  color: @brand-danger;
 }
 
 // Dropdowns
@@ -101,9 +97,9 @@ p {
 .btn-link {
 
   &:hover {
+    color: @gray-darker;
     text-decoration: none;
     background-color: transparent;
-    color: @gray-darker;
   }
 }
 
@@ -126,8 +122,8 @@ p {
 @state-danger-bg: @brand-danger;
 
 .alert {
-  color: #fff;
   font-family: 'Raleway', sans-serif;
+  color: #fff;
 }
 
 // Navbar
