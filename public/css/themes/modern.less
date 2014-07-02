@@ -16,8 +16,16 @@
 @brand-danger: #d80017;
 @brand-info: #5bc0dd;
 
-::selection {
-  background: @brand-primary;
+// Footer
+// -------------------------
+
+footer {
+  background-color: @gray-darker;
+  color: #fff;
+
+  a:hover {
+    color: #fff;
+  }
 }
 
 // Typography
@@ -135,11 +143,4 @@ p {
       transition: color .4s cubic-bezier(.24,.45,.46,.92);
     }
   }
-}
-
-// Footer
-// -------------------------
-
-footer {
-  background-color: @gray-lighter;
 }
