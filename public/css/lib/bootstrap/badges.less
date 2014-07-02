@@ -3,7 +3,7 @@
 // --------------------------------------------------
 
 
-// Base classes
+// Base class
 .badge {
   display: inline-block;
   min-width: 10px;
@@ -32,24 +32,24 @@
     top: 0;
     padding: 1px 5px;
   }
-}
 
-// Hover state, but only for links
-a.badge {
-  &:hover,
-  &:focus {
-    color: @badge-link-hover-color;
-    text-decoration: none;
-    cursor: pointer;
+  // Hover state, but only for links
+  a& {
+    &:hover,
+    &:focus {
+      color: @badge-link-hover-color;
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
-}
 
-// Account for counters in navs
-a.list-group-item.active > .badge,
-.nav-pills > .active > a > .badge {
-  color: @badge-active-color;
-  background-color: @badge-active-bg;
-}
-.nav-pills > li > a > .badge {
-  margin-left: 3px;
+  // Account for badges in navs
+  a.list-group-item.active > &,
+  .nav-pills > .active > a > & {
+    color: @badge-active-color;
+    background-color: @badge-active-bg;
+  }
+  .nav-pills > li > a > & {
+    margin-left: 3px;
+  }
 }

@@ -2,6 +2,7 @@
 // Navbars
 // --------------------------------------------------
 
+
 // Wrapper and base class
 //
 // Provide a static navbar from which we expand to create full-width, fixed, and
@@ -14,13 +15,13 @@
   border: 1px solid transparent;
 
   // Prevent floats from breaking the navbar
-  &:extend(.clearfix all)
-;
+  &:extend(.clearfix all);
 
   @media (min-width: @grid-float-breakpoint) {
     border-radius: @navbar-border-radius;
   }
 }
+
 
 // Navbar heading
 //
@@ -28,13 +29,13 @@
 // styling of responsive aspects.
 
 .navbar-header {
-  &:extend(.clearfix all)
-;
+  &:extend(.clearfix all);
 
   @media (min-width: @grid-float-breakpoint) {
     float: left;
   }
 }
+
 
 // Navbar collapse (body)
 //
@@ -47,14 +48,12 @@
 // content for the user's viewport.
 
 .navbar-collapse {
-  max-height: @navbar-collapse-max-height;
   overflow-x: visible;
   padding-right: @navbar-padding-horizontal;
-  padding-left: @navbar-padding-horizontal;
+  padding-left:  @navbar-padding-horizontal;
   border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
-  &:extend(.clearfix all)
-;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+  &:extend(.clearfix all);
   -webkit-overflow-scrolling: touch;
 
   &.in {
@@ -88,6 +87,18 @@
   }
 }
 
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  .navbar-collapse {
+    max-height: @navbar-collapse-max-height;
+
+    @media (max-width: @screen-xs-min) and (orientation: landscape) {
+      max-height: 200px;
+    }
+  }
+}
+
+
 // Both navbar header and collapse
 //
 // When a container is present, change the behavior of the header and collapse.
@@ -97,14 +108,15 @@
   > .navbar-header,
   > .navbar-collapse {
     margin-right: -@navbar-padding-horizontal;
-    margin-left: -@navbar-padding-horizontal;
+    margin-left:  -@navbar-padding-horizontal;
 
     @media (min-width: @grid-float-breakpoint) {
       margin-right: 0;
-      margin-left: 0;
+      margin-left:  0;
     }
   }
 }
+
 
 //
 // Navbar alignment options
@@ -129,23 +141,23 @@
   right: 0;
   left: 0;
   z-index: @zindex-navbar-fixed;
+  .translate3d(0, 0, 0);
 
   // Undo the rounded corners
   @media (min-width: @grid-float-breakpoint) {
     border-radius: 0;
   }
 }
-
 .navbar-fixed-top {
   top: 0;
   border-width: 0 0 1px;
 }
-
 .navbar-fixed-bottom {
   bottom: 0;
   margin-bottom: 0; // override .navbar defaults
   border-width: 1px 0 0;
 }
+
 
 // Brand/project name
 
@@ -169,6 +181,7 @@
   }
 }
 
+
 // Navbar toggle
 //
 // Custom button for toggling the `.navbar-collapse`, powered by the collapse
@@ -188,7 +201,7 @@
   // We remove the `outline` here, but later compensate by attaching `:hover`
   // styles to `:focus`.
   &:focus {
-    outline: none;
+    outline: 0;
   }
 
   // Bars
@@ -207,6 +220,7 @@
   }
 }
 
+
 // Navbar nav links
 //
 // Builds on top of the `.nav` components with its own modifier class to make
@@ -216,7 +230,7 @@
   margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
 
   > li > a {
-    padding-top: 10px;
+    padding-top:    10px;
     padding-bottom: 10px;
     line-height: @line-height-computed;
   }
@@ -253,7 +267,7 @@
     > li {
       float: left;
       > a {
-        padding-top: @navbar-padding-vertical;
+        padding-top:    @navbar-padding-vertical;
         padding-bottom: @navbar-padding-vertical;
       }
     }
@@ -264,6 +278,7 @@
   }
 }
 
+
 // Component alignment
 //
 // Repurpose the pull utilities as their own navbar utilities to avoid specificity
@@ -271,14 +286,10 @@
 // though so that navbar contents properly stack and align in mobile.
 
 @media (min-width: @grid-float-breakpoint) {
-  .navbar-left {
-    .pull-left();
-  }
-
-  .navbar-right {
-    .pull-right();
-  }
+  .navbar-left  { .pull-left(); }
+  .navbar-right { .pull-right(); }
 }
+
 
 // Navbar form
 //
@@ -291,7 +302,7 @@
   padding: 10px @navbar-padding-horizontal;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  @shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
+  @shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
   .box-shadow(@shadow);
 
   // Mixin behavior for optimum display
@@ -323,6 +334,7 @@
   }
 }
 
+
 // Dropdown menus
 
 // Menu position and menu carets
@@ -330,11 +342,11 @@
   margin-top: 0;
   .border-top-radius(0);
 }
-
 // Menu position and menu caret support for dropups via extra dropup class
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
   .border-bottom-radius(0);
 }
+
 
 // Buttons in navbars
 //
@@ -350,6 +362,7 @@
     .navbar-vertical-align(22);
   }
 }
+
 
 // Text in navbars
 //
@@ -478,6 +491,7 @@
     }
   }
 
+
   // Links in navbars
   //
   // Add a class to ensure links outside the navbar nav are colored correctly.
@@ -489,6 +503,20 @@
     }
   }
 
+  .btn-link {
+    color: @navbar-default-link-color;
+    &:hover,
+    &:focus {
+      color: @navbar-default-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: @navbar-default-link-disabled-color;
+      }
+    }
+  }
 }
 
 // Inverse navbar
@@ -610,4 +638,18 @@
     }
   }
 
+  .btn-link {
+    color: @navbar-inverse-link-color;
+    &:hover,
+    &:focus {
+      color: @navbar-inverse-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: @navbar-inverse-link-disabled-color;
+      }
+    }
+  }
 }

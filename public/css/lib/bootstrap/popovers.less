@@ -2,6 +2,7 @@
 // Popovers
 // --------------------------------------------------
 
+
 .popover {
   position: absolute;
   top: 0;
@@ -16,24 +17,16 @@
   border: 1px solid @popover-fallback-border-color;
   border: 1px solid @popover-border-color;
   border-radius: @border-radius-large;
-  .box-shadow(0 5px 10px rgba(0, 0, 0, .2));
+  .box-shadow(0 5px 10px rgba(0,0,0,.2));
 
   // Overrides for proper insertion
   white-space: normal;
 
   // Offset the popover to account for the popover arrow
-  &.top {
-    margin-top: -@popover-arrow-width;
-  }
-  &.right {
-    margin-left: @popover-arrow-width;
-  }
-  &.bottom {
-    margin-top: @popover-arrow-width;
-  }
-  &.left {
-    margin-left: -@popover-arrow-width;
-  }
+  &.top     { margin-top: -@popover-arrow-width; }
+  &.right   { margin-left: @popover-arrow-width; }
+  &.bottom  { margin-top: @popover-arrow-width; }
+  &.left    { margin-left: -@popover-arrow-width; }
 }
 
 .popover-title {
@@ -44,7 +37,7 @@
   line-height: 18px;
   background-color: @popover-title-bg;
   border-bottom: 1px solid darken(@popover-title-bg, 5%);
-  border-radius: 5px 5px 0 0;
+  border-radius: (@border-radius-large - 1) (@border-radius-large - 1) 0 0;
 }
 
 .popover-content {
@@ -66,11 +59,9 @@
     border-style: solid;
   }
 }
-
 .popover > .arrow {
   border-width: @popover-arrow-outer-width;
 }
-
 .popover > .arrow:after {
   border-width: @popover-arrow-width;
   content: "";

@@ -2,6 +2,7 @@
 // Forms
 // --------------------------------------------------
 
+
 // Normalize non-controls
 //
 // Restyle and baseline non-control form elements.
@@ -10,7 +11,7 @@ fieldset {
   padding: 0;
   margin: 0;
   border: 0;
-  // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
+  // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
   // so we reset that to ensure it behaves more like a standard block element.
   // See https://github.com/twbs/bootstrap/issues/12359.
   min-width: 0;
@@ -30,9 +31,11 @@ legend {
 
 label {
   display: inline-block;
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px;
   font-weight: bold;
 }
+
 
 // Normalize form controls
 //
@@ -49,7 +52,7 @@ input[type="search"] {
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
-  margin-top: 1px \9; /* IE8-9 */
+  margin-top: 1px \9; // IE8-9
   line-height: normal;
 }
 
@@ -86,6 +89,7 @@ output {
   color: @input-color;
 }
 
+
 // Common form controls
 //
 // Shared size and type resets for form controls. Apply `.form-control` to any
@@ -120,7 +124,7 @@ output {
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid @input-border;
   border-radius: @input-border-radius;
-  .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
 
   // Customize the `:focus` state to imitate native WebKit styles.
@@ -148,6 +152,7 @@ output {
   }
 }
 
+
 // Search inputs in iOS
 //
 // This overrides the extra rounded corners on search inputs in iOS so that our
@@ -159,14 +164,31 @@ input[type="search"] {
   -webkit-appearance: none;
 }
 
-// Special styles for iOS date input
-//
-// In Mobile Safari, date inputs require a pixel line-height that matches the
-// given height of the input.
 
-input[type="date"] {
+// Special styles for iOS temporal inputs
+//
+// In Mobile Safari, setting `display: block` on temporal inputs causes the
+// text within the input to become vertically misaligned.
+// As a workaround, we set a pixel line-height that matches the
+// given height of the input. Since this fucks up everything else, we have to
+// appropriately reset it for Internet Explorer and the size variations.
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
   line-height: @input-height-base;
+  // IE8+ misaligns the text within date inputs, so we reset
+  line-height: @line-height-base ~"\0";
+
+  &.input-sm {
+    line-height: @input-height-small;
+  }
+  &.input-lg {
+    line-height: @input-height-large;
+  }
 }
+
 
 // Form groups
 //
@@ -177,30 +199,33 @@ input[type="date"] {
   margin-bottom: 15px;
 }
 
+
 // Checkboxes and radios
 //
 // Indent the labels to position radios/checkboxes as hanging controls.
 
 .radio,
 .checkbox {
+  position: relative;
   display: block;
   min-height: @line-height-computed; // clear the floating input if there is no label text
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-left: 20px;
+
   label {
-    display: inline;
+    padding-left: 20px;
+    margin-bottom: 0;
     font-weight: normal;
     cursor: pointer;
   }
 }
-
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
 .checkbox-inline input[type="checkbox"] {
-  float: left;
+  position: absolute;
   margin-left: -20px;
+  margin-top: 4px \9;
 }
 
 .radio + .radio,
@@ -218,7 +243,6 @@ input[type="date"] {
   font-weight: normal;
   cursor: pointer;
 }
-
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
@@ -226,19 +250,56 @@ input[type="date"] {
 }
 
 // Apply same disabled cursor tweak as for inputs
+// Some special care is needed because <label>s don't inherit their parent's `cursor`.
 //
 // Note: Neither radios nor checkboxes can be readonly.
 input[type="radio"],
-input[type="checkbox"],
-.radio,
-.radio-inline,
-.checkbox,
-.checkbox-inline {
+input[type="checkbox"] {
   &[disabled],
+  &.disabled,
   fieldset[disabled] & {
     cursor: not-allowed;
   }
 }
+// These classes are used directly on <label>s
+.radio-inline,
+.checkbox-inline {
+  &.disabled,
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
+// These classes are used on elements with <label> descendants
+.radio,
+.checkbox {
+  &.disabled,
+  fieldset[disabled] & {
+    label {
+      cursor: not-allowed;
+    }
+  }
+}
+
+
+// Static form control text
+//
+// Apply class to a `p` element to make any string of text align with labels in
+// a horizontal form layout.
+
+.form-control-static {
+  // Size it appropriately next to real form controls
+  padding-top: (@padding-base-vertical + 1);
+  padding-bottom: (@padding-base-vertical + 1);
+  // Remove default margin from `p`
+  margin-bottom: 0;
+
+  &.input-lg,
+  &.input-sm {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 
 // Form control sizing
 //
@@ -253,6 +314,7 @@ input[type="checkbox"],
   .input-size(@input-height-large; @padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
 }
 
+
 // Form control feedback states
 //
 // Apply contextual and semantic states to individual form controls.
@@ -265,41 +327,47 @@ input[type="checkbox"],
   .form-control {
     padding-right: (@input-height-base * 1.25);
   }
-
-  // Feedback icon (requires .glyphicon classes)
-  .form-control-feedback {
-    position: absolute;
-    top: (@line-height-computed + 5); // Height of the `label` and its margin
-    right: 0;
-    display: block;
-    width: @input-height-base;
-    height: @input-height-base;
-    line-height: @input-height-base;
-    text-align: center;
-  }
+}
+// Feedback icon (requires .glyphicon classes)
+.form-control-feedback {
+  position: absolute;
+  top: (@line-height-computed + 5); // Height of the `label` and its margin
+  right: 0;
+  z-index: 2; // Ensure icon is above input groups
+  display: block;
+  width: @input-height-base;
+  height: @input-height-base;
+  line-height: @input-height-base;
+  text-align: center;
+}
+.input-lg + .form-control-feedback {
+  width: @input-height-large;
+  height: @input-height-large;
+  line-height: @input-height-large;
+}
+.input-sm + .form-control-feedback {
+  width: @input-height-small;
+  height: @input-height-small;
+  line-height: @input-height-small;
 }
 
 // Feedback states
 .has-success {
   .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
 }
-
 .has-warning {
   .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
 }
-
 .has-error {
   .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
 }
 
-// Static form control text
-//
-// Apply class to a `p` element to make any string of text align with labels in
-// a horizontal form layout.
 
-.form-control-static {
-  margin-bottom: 0; // Remove default margin from `p`
+// Reposition feedback icon if label is hidden with "screenreader only" state
+.has-feedback label.sr-only ~ .form-control-feedback {
+  top: 0;
 }
+
 
 // Help text
 //
@@ -312,6 +380,8 @@ input[type="checkbox"],
   margin-bottom: 10px;
   color: lighten(@text-color, 25%); // lighten the text some for contrast
 }
+
+
 
 // Inline forms
 //
@@ -342,6 +412,17 @@ input[type="checkbox"],
       vertical-align: middle;
     }
 
+    .input-group {
+      display: inline-table;
+      vertical-align: middle;
+
+      .input-group-addon,
+      .input-group-btn,
+      .form-control {
+        width: auto;
+      }
+    }
+
     // Input groups need that 100% width though
     .input-group > .form-control {
       width: 100%;
@@ -360,13 +441,15 @@ input[type="checkbox"],
       display: inline-block;
       margin-top: 0;
       margin-bottom: 0;
-      padding-left: 0;
       vertical-align: middle;
-    }
 
+      label {
+        padding-left: 0;
+      }
+    }
     .radio input[type="radio"],
     .checkbox input[type="checkbox"] {
-      float: none;
+      position: relative;
       margin-left: 0;
     }
 
@@ -380,6 +463,7 @@ input[type="checkbox"],
   }
 }
 
+
 // Horizontal forms
 //
 // Horizontal forms are built on grid classes and allow you to create forms with
@@ -387,8 +471,9 @@ input[type="checkbox"],
 
 .form-horizontal {
 
-  // Consistent vertical alignment of labels, radios, and checkboxes
-  .control-label,
+  // Consistent vertical alignment of radios and checkboxes
+  //
+  // Labels also get some reset styles, but that is scoped to a media query below.
   .radio,
   .checkbox,
   .radio-inline,
@@ -409,14 +494,13 @@ input[type="checkbox"],
     .make-row();
   }
 
-  .form-control-static {
-    padding-top: (@padding-base-vertical + 1);
-  }
-
-  // Only right align form labels here when the columns stop stacking
+  // Reset spacing and right align labels, but scope to media queries so that
+  // labels on narrow viewports stack the same as a default form example.
   @media (min-width: @screen-sm-min) {
     .control-label {
       text-align: right;
+      margin-bottom: 0;
+      padding-top: (@padding-base-vertical + 1); // Default padding plus a border
     }
   }
 
@@ -427,5 +511,30 @@ input[type="checkbox"],
   .has-feedback .form-control-feedback {
     top: 0;
     right: (@grid-gutter-width / 2);
+  }
+
+  // Form group sizes
+  //
+  // Quick utility class for applying `.input-lg` and `.input-sm` styles to the
+  // inputs and labels within a `.form-group`.
+  .form-group-lg {
+    @media (min-width: @screen-sm-min) {
+      .control-label {
+        padding-top: ((@padding-large-vertical * @line-height-large) + 1);
+      }
+    }
+    .form-control {
+      &:extend(.input-lg);
+    }
+  }
+  .form-group-sm {
+    @media (min-width: @screen-sm-min) {
+      .control-label {
+        padding-top: (@padding-small-vertical + 1);
+      }
+    }
+    .form-control {
+      &:extend(.input-sm);
+    }
   }
 }

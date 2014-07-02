@@ -4,7 +4,6 @@
 
 
 table {
-  max-width: 100%;
   background-color: @table-bg;
 }
 th {
@@ -16,6 +15,7 @@ th {
 
 .table {
   width: 100%;
+  max-width: 100%;
   margin-bottom: @line-height-computed;
   // Cells
   > thead,
@@ -168,12 +168,12 @@ table {
 // by enabling horizontal scrolling. Only applies <768px. Everything above that
 // will display normally.
 
-@media (max-width: @screen-xs-max) {
-  .table-responsive {
+.table-responsive {
+  @media screen and (max-width: @screen-xs-max) {
     width: 100%;
     margin-bottom: (@line-height-computed * 0.75);
     overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 1px solid @table-border-color;
     -webkit-overflow-scrolling: touch;

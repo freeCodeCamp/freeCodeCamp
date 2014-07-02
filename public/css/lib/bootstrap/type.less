@@ -2,6 +2,7 @@
 // Typography
 // --------------------------------------------------
 
+
 // Headings
 // -------------------------
 
@@ -31,7 +32,6 @@ h3, .h3 {
     font-size: 65%;
   }
 }
-
 h4, .h4,
 h5, .h5,
 h6, .h6 {
@@ -44,29 +44,13 @@ h6, .h6 {
   }
 }
 
-h1, .h1 {
-  font-size: @font-size-h1;
-}
+h1, .h1 { font-size: @font-size-h1; }
+h2, .h2 { font-size: @font-size-h2; }
+h3, .h3 { font-size: @font-size-h3; }
+h4, .h4 { font-size: @font-size-h4; }
+h5, .h5 { font-size: @font-size-h5; }
+h6, .h6 { font-size: @font-size-h6; }
 
-h2, .h2 {
-  font-size: @font-size-h2;
-}
-
-h3, .h3 {
-  font-size: @font-size-h3;
-}
-
-h4, .h4 {
-  font-size: @font-size-h4;
-}
-
-h5, .h5 {
-  font-size: @font-size-h5;
-}
-
-h6, .h6 {
-  font-size: @font-size-h6;
-}
 
 // Body text
 // -------------------------
@@ -78,7 +62,7 @@ p {
 .lead {
   margin-bottom: @line-height-computed;
   font-size: floor((@font-size-base * 1.15));
-  font-weight: 200;
+  font-weight: 300;
   line-height: 1.4;
 
   @media (min-width: @screen-sm-min) {
@@ -86,13 +70,14 @@ p {
   }
 }
 
+
 // Emphasis & misc
 // -------------------------
 
-// Ex: 14px base font * 85% = about 12px
+// Ex: (12px small font / 14px base font) * 100% = about 85%
 small,
 .small {
-  font-size: 85%;
+  font-size: floor((100% * @font-size-small / @font-size-base));
 }
 
 // Undo browser default styling
@@ -100,44 +85,40 @@ cite {
   font-style: normal;
 }
 
+mark,
+.mark {
+  background-color: @state-warning-bg;
+  padding: .2em;
+}
+
 // Alignment
-.text-left {
-  text-align: left;
-}
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
 
-.text-right {
-  text-align: right;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-justify {
-  text-align: justify;
-}
+// Transformation
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
 
 // Contextual colors
 .text-muted {
   color: @text-muted;
 }
-
 .text-primary {
   .text-emphasis-variant(@brand-primary);
 }
-
 .text-success {
   .text-emphasis-variant(@state-success-text);
 }
-
 .text-info {
   .text-emphasis-variant(@state-info-text);
 }
-
 .text-warning {
   .text-emphasis-variant(@state-warning-text);
 }
-
 .text-danger {
   .text-emphasis-variant(@state-danger-text);
 }
@@ -151,22 +132,19 @@ cite {
   color: #fff;
   .bg-variant(@brand-primary);
 }
-
 .bg-success {
   .bg-variant(@state-success-bg);
 }
-
 .bg-info {
   .bg-variant(@state-info-bg);
 }
-
 .bg-warning {
   .bg-variant(@state-warning-bg);
 }
-
 .bg-danger {
   .bg-variant(@state-danger-bg);
 }
+
 
 // Page header
 // -------------------------
@@ -177,8 +155,9 @@ cite {
   border-bottom: 1px solid @page-header-border-color;
 }
 
+
 // Lists
-// --------------------------------------------------
+// -------------------------
 
 // Unordered and Ordered lists
 ul,
@@ -216,16 +195,13 @@ dl {
   margin-top: 0; // Remove browser default
   margin-bottom: @line-height-computed;
 }
-
 dt,
 dd {
   line-height: @line-height-base;
 }
-
 dt {
   font-weight: bold;
 }
-
 dd {
   margin-left: 0; // Undo browser default
 }
@@ -235,34 +211,36 @@ dd {
 // Defaults to being stacked without any of the below styles applied, until the
 // grid breakpoint is reached (default of ~768px).
 
-@media (min-width: @grid-float-breakpoint) {
-  .dl-horizontal {
+.dl-horizontal {
+  dd {
+    &:extend(.clearfix all); // Clear the floated `dt` if an empty `dd` is present
+  }
+
+  @media (min-width: @grid-float-breakpoint) {
     dt {
       float: left;
-      width: (@component-offset-horizontal - 20);
+      width: (@dl-horizontal-offset - 20);
       clear: left;
       text-align: right;
       .text-overflow();
     }
     dd {
-      margin-left: @component-offset-horizontal;
-      &:extend(.clearfix all)
-    ; // Clear the floated `dt` if an empty `dd` is present
+      margin-left: @dl-horizontal-offset;
     }
   }
 }
 
-// MISC
-// ----
+
+// Misc
+// -------------------------
 
 // Abbreviations and acronyms
 abbr[title],
-  // Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
+// Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted @abbr-border-color;
 }
-
 .initialism {
   font-size: 90%;
   text-transform: uppercase;
@@ -314,9 +292,7 @@ blockquote.pull-right {
   footer,
   small,
   .small {
-    &:before {
-      content: '';
-    }
+    &:before { content: ''; }
     &:after {
       content: '\00A0 \2014'; // nbsp, em dash
     }
