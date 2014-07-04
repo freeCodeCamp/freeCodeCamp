@@ -1171,7 +1171,7 @@ Add this to `package.json`, after *name* and *version*. This is necessary becaus
 
 <img src="http://www.comparethecloud.net/wp-content/uploads/2014/06/ibm-bluemix_pr-030514.jpg" width="200">
 
-- Go to [Codename: Bluemix](http://bluemix.net) to signup for the free beta, or login with your *IBM id*
+- Go to [Codename: Bluemix](http://bluemix.net) to signup for the free trial, or login with your *IBM id*
 - Install [Cloud Foundry CLI](https://github.com/cloudfoundry/cli)
 - Navigate to your **hackathon-starter** directory and then run `cf push [your-app-name] -m 512m` command to deploy the application
  - **Note:** You must specify a unique application name in place of `[your-app-name]`
