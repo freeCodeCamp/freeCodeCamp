@@ -464,17 +464,17 @@ emailForm.on('submit', function() {
     choice = 'Mandrill';
   }
 
-  var index = contactCtrl.indexOf('var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+  var index = contactCtrl.indexOf('var transporter = nodemailer.createTransport({');
   contactCtrl.splice(index + 1, 1, "  service: '" + choice + "',");
   contactCtrl.splice(index + 3, 1, '    user: secrets.' + choice.toLowerCase() +'.user,');
   contactCtrl.splice(index + 4, 1, '    pass: secrets.' + choice.toLowerCase() + '.password');
   fs.writeFileSync('controllers/contact.js', contactCtrl.join(os.EOL));
 
-  index = userCtrl.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {');
+  index = userCtrl.indexOf('      var transporter = nodemailer.createTransport({');
   userCtrl.splice(index + 1, 1, "        service: '" + choice + "',");
   userCtrl.splice(index + 3, 1, '          user: secrets.' + choice.toLowerCase() + '.user,');
   userCtrl.splice(index + 4, 1, '          pass: secrets.' + choice.toLowerCase() + '.password');
-  index = userCtrl.indexOf('      var smtpTransport = nodemailer.createTransport(\'SMTP\', {', (index + 1));
+  index = userCtrl.indexOf('      var transporter = nodemailer.createTransport({', (index + 1));
   userCtrl.splice(index + 1, 1, "        service: '" + choice + "',");
   userCtrl.splice(index + 3, 1, '          user: secrets.' + choice.toLowerCase() + '.user,');
   userCtrl.splice(index + 4, 1, '          pass: secrets.' + choice.toLowerCase() + '.password');
