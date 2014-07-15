@@ -4,7 +4,7 @@ Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-sta
 
 :octocat: &nbsp;**Live Demo**: http://hackathonstarter.herokuapp.com 
 
-Jump to [What's new in 2.3?](#changelog)
+Jump to [What's new in 2.3.1?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -1190,6 +1190,9 @@ Also, be sure to check out the [Jump-start your hackathon efforts with DevOps Se
 
 Changelog
 ---------
+
+### 2.3.1 (July 15, 2014)
+- Migrated to Nodemailer 1.0
 
 ### 2.3 (July 2, 2014)
 - Bootstrap 3.2
