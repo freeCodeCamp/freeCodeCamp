@@ -274,7 +274,7 @@ exports.postReset = function(req, res, next) {
         });
     },
     function(user, done) {
-      var smtpTransport = nodemailer.createTransport('SMTP', {
+      var transporter = nodemailer.createTransport({
         service: 'SendGrid',
         auth: {
           user: secrets.sendgrid.user,
@@ -288,7 +288,7 @@ exports.postReset = function(req, res, next) {
         text: 'Hello,\n\n' +
           'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
       };
-      smtpTransport.sendMail(mailOptions, function(err) {
+      transporter.sendMail(mailOptions, function(err) {
         req.flash('success', { msg: 'Success! Your password has been changed.' });
         done(err);
       });
@@ -352,7 +352,7 @@ exports.postForgot = function(req, res, next) {
       });
     },
     function(token, user, done) {
-      var smtpTransport = nodemailer.createTransport('SMTP', {
+      var transporter = nodemailer.createTransport({
         service: 'SendGrid',
         auth: {
           user: secrets.sendgrid.user,
@@ -368,7 +368,7 @@ exports.postForgot = function(req, res, next) {
           'http://' + req.headers.host + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
-      smtpTransport.sendMail(mailOptions, function(err) {
+      transporter.sendMail(mailOptions, function(err) {
         req.flash('info', { msg: 'An e-mail has been sent to ' + user.email + ' with further instructions.' });
         done(err, 'done');
       });
