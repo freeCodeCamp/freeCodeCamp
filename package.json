@@ -38,7 +38,7 @@
     "morgan": "^1.1.1",
     "node-foursquare": "^0.2.1",
     "node-linkedin": "^0.2.0",
-    "nodemailer": "^0.7.0",
+    "nodemailer": "^1.0.1",
     "passport": "^0.2.0",
     "passport-facebook": "^1.0.3",
     "passport-github": "^0.1.5",
@@ -58,7 +58,7 @@
     "yui": "^3.17.1"
   },
   "devDependencies": {
-    "blessed": "0.0.33",
+    "blessed": "^0.0.37",
     "chai": "^1.9.1",
     "mocha": "^1.20.1",
     "multiline": "^0.3.4",
