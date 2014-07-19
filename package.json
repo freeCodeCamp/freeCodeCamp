@@ -16,7 +16,7 @@
     "cheerio": "^0.17.0",
     "clockwork": "^0.1.1",
     "compression": "^1.0.8",
-    "connect-assets": "^3.0.2",
+    "connect-assets": "^4.0.1",
     "connect-mongo": "^0.4.1",
     "cookie-parser": "^1.3.2",
     "csso": "^1.3.11",
