@@ -615,7 +615,7 @@ reference guide. I have explained my reasons why it could not be merged in
 [issue #63](https://github.com/sahat/hackathon-starter/issues/63#issuecomment-34898290).
 
 ### How do I switch SendGrid for another email delivery service?
-Run `node generator.js` bundled with Hackathon Starter, then select
+Run `node setup.js` bundled with Hackathon Starter, then select
 **Email Service** option. It will automatically replace appropriate strings in
 your code. Currently there are three options: SendGrid, Mandrill, and Mailgun.
 
