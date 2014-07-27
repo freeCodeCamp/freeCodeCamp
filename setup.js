@@ -3,6 +3,14 @@ var os = require('os');
 var blessed = require('blessed');
 var multiline = require('multiline');
 
+if (os.platform() === 'win32') {
+  console.log('*************************************************************');
+  console.log('Hackthon Starter Generator has been disalbed on Windows until');
+  console.log('https://github.com/chjj/blessed is fixed or until I find a');
+  console.log('better CLI module.');
+  console.log('*************************************************************');
+  process.exit();
+}
 var screen = blessed.screen({
   autoPadding: true
 });
