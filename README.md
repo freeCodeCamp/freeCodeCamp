@@ -945,9 +945,8 @@ Replace `var app = express();` with the following code:
 
 ```js
 var app = express();
-var http = require('http');
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 ```
 
 I like to have the following code organization in `app.js` (from top to bottom): module dependencies,
@@ -957,12 +956,8 @@ start the server, socket.io stuff. That way I always know where to look for thin
 Add the following code at the end of `app.js`:
 
 ```js
-io.configure(function() {
-  io.set('transports', ['websocket']);
-});
-
-io.sockets.on('connection', function(socket) {
-  socket.emit('greet', { hello: 'Hey, Mr.Client!' });
+io.on('connection', function(socket) {
+  socket.emit('greet', { hello: 'Hey there browser!' });
   socket.on('respond', function(data) {
     console.log(data);
   });
@@ -1004,7 +999,7 @@ script.
     var socket = io.connect(window.location.href);
     socket.on('greet', function (data) {
       console.log(data);
-      socket.emit('respond', { message: 'Hello to you too, Mr.Server!' });
+      socket.emit('respond', { message: 'Hey there, server!' });
     });
 ```
 
