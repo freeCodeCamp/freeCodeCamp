@@ -650,7 +650,6 @@ I hope it provides some guidance to you.
 
 ###:rose: Custom HTML and CSS Design 101
 [HTML5 UP](http://html5up.net/) has many beautiful templates that you can download for free.
-![Alt](http://html5up.net/uploads/previews/6742121165068310.jpg)
 
 When you download the ZIP file, it will come with *index.html*, *images*, *css* and *js* folders. So, how do you
 integrate it with Hackathon Starter? Hackathon Starter uses Bootstrap CSS framework, but these templates do not.
@@ -667,7 +666,7 @@ Let's start from the beginning. For this example I will use [Escape Velocity](ht
 Move all javascript files from `html5up-escape-velocity/js` to `public/js`. Then move all css files from `html5up-escape-velocity/css` to `public/css`. And finally, move all images from `html5up-escape-velocity/images` to `public/images` (You could move it to the existing **img** folder, but then you would have to manually change every `img` reference). Grab the contents of `index.html` and paste it into [HTML To Jade](http://html2jade.aaron-powell.com/).
 
 Create a new file `escape-velocity.jade` and paste the Jade markup there. Change `!!! 5` to `doctype html`. It's a fairly recent
-change in **Jade** language, but http://html2jade.aaron-powell.com hasn't caught up to this change yet.
+change in **Jade** language, but [HTML To Jade](http://html2jade.aaron-powell.com/) hasn't caught up to this change yet.
 
 Let's see how it looks. Create a new controller **escapeVelocity** inside `controllers/home.js`:
 
