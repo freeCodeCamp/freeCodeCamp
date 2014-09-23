@@ -201,8 +201,7 @@ The same goes for other providers.
 <hr>
 
 <img src="https://g.twimg.com/Twitter_logo_blue.png" width="90">
-- Sign in at [https://dev.twitter.com](https://dev.twitter.com/)
-- From the profile picture dropdown menu select **My Applications**
+- Sign in at [https://apps.twitter.com/](https://apps.twitter.com/)
 - Click **Create a new application**
 - Enter your application name, website and description
 - For **Callback URL**: http://127.0.0.1:3000/auth/twitter/callback
