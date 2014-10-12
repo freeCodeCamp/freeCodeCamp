@@ -73,32 +73,7 @@ block content
   .page-header
     h3 Linked Accounts
 
-  if user.instagram
-    p: a.text-danger(href='/account/unlink/instagram') Unlink your Instagram account
-  else
-    p: a(href='/auth/instagram') Link your Instagram account
-
-  if user.google
-    p: a.text-danger(href='/account/unlink/google') Unlink your Google account
-  else
-    p: a(href='/auth/google') Link your Google account
-
-  if user.facebook
-    p: a.text-danger(href='/account/unlink/facebook') Unlink your Facebook account
-  else
-    p: a(href='/auth/facebook') Link your Facebook account
-
   if user.twitter
     p: a.text-danger(href='/account/unlink/twitter') Unlink your Twitter account
   else
     p: a(href='/auth/twitter') Link your Twitter account
-
-  if user.github
-    p: a.text-danger(href='/account/unlink/github') Unlink your GitHub account
-  else
-    p: a(href='/auth/github') Link your GitHub account
-
-  if user.linkedin
-    p: a.text-danger(href='/account/unlink/linkedin') Unlink your LinkedIn account
-  else
-    p: a(href='/auth/linkedin') Link your LinkedIn account
