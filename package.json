@@ -21,7 +21,7 @@
     "cookie-parser": "^1.3.3",
     "csso": "^1.3.11",
     "errorhandler": "^1.2.0",
-    "express": "^4.9.5",
+    "express": "^4.9.7",
     "express-flash": "^0.0.2",
     "express-session": "^1.8.2",
     "express-validator": "^2.6.0",
@@ -60,7 +60,7 @@
   "devDependencies": {
     "blessed": "^0.0.37",
     "chai": "^1.9.1",
-    "mocha": "^1.21.4",
+    "mocha": "^1.21.5",
     "multiline": "^0.3.4",
     "supertest": "^0.13.0"
   }
