@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<staff>
+ <employee>
+  <employeeId>EMP0001</employeeId>
+  <name>Margaret Martin</name>
+  <position>Accountant</position>           
+  <salary>56,000</salary>
+  <gender>Female</gender>
+  <address domestic="Yes">1230 North Ave. Dallas, Texas 98551</address>
+ </employee>
+</staff>

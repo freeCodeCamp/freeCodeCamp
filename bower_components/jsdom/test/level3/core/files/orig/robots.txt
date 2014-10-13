@@ -1,0 +1,67 @@
+#
+# robots.txt for http://www.w3.org/
+#
+# $Id: robots.txt,v 1.60 2010/05/28 07:27:43 dom Exp $
+#
+
+# For use by search.w3.org
+User-agent: W3C-gsa
+Disallow: /Out-Of-Date
+
+User-agent: W3T_SE
+Disallow: /Out-Of-Date
+
+User-agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT; MS Search 4.0 Robot)
+Disallow: /
+
+# W3C Link checker
+User-agent: W3C-checklink
+Disallow:
+
+# exclude some access-controlled areas
+User-agent: *
+Disallow: /2004/ontaria/basic
+Disallow: /Team/
+Disallow: /Project
+Disallow: /Web
+Disallow: /Systems
+Disallow: /History
+Disallow: /Out-Of-Date
+Disallow: /2002/02/mid
+Disallow: /mid/
+Disallow: /2005/06/blog/
+Disallow: /2004/08/W3CTalks
+Disallow: /2007/11/Talks/search
+Disallow: /People/all/
+Disallow: /RDF/Validator/ARPServlet
+Disallow: /2003/03/Translations/byLanguage
+Disallow: /2003/03/Translations/byTechnology
+Disallow: /2005/11/Translations/Query
+#Disallow: /2003/glossary/subglossary/
+#Disallow: /2001/07/pubrules-checker
+#shouldnt get transparent proxies but will ml links of things like pubrules
+Disallow: /2000/06/webdata/xslt
+Disallow: /2000/09/webdata/xslt
+Disallow: /2005/08/online_xslt/xslt
+Disallow: /Bugs/
+Disallow: /Search/Mail/Public/
+Disallow: /2006/02/chartergen
+Disallow: /2004/01/pp-impl
+Disallow: /Consortium/supporters
+Disallow: /2007/08/pyRdfa/
+
+# exclude some wikis that are full of spam
+User-agent: *
+Disallow: /2001/sw/sweo/group/wiki/
+Disallow: /2005/Incubator/geo/Wiki/
+Disallow: /2005/Incubator/mmsem/wiki/
+Disallow: /2005/Incubator/urw3/wiki/
+Disallow: /2005/MWI/BPWG/techs/
+Disallow: /2005/MWI/Steer/wiki/
+Disallow: /2006/appformats/group/
+Disallow: /2006/tsdtf/
+Disallow: /2006/ubiweb-wiki/
+Disallow: /2006/webapi/group/
+Disallow: /2007/xmlsec/wiki/
+Disallow: /MarkUp/Forms/Group/wiki/
+

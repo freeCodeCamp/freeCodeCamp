@@ -1,0 +1,11 @@
+<div data-toggle='firechat-contextmenu' class='contextmenu' data-message-id='<%- id %>'>
+  <ul>
+    <li><a href='#!' data-event='firechat-user-warn'>Warn User</a></li>
+    <% if (allowKick) { %>
+      <li><a href='#!' data-event='firechat-user-kick'>Kick User</a></li>
+    <% } %>
+    <li><a href='#!' data-event='firechat-user-suspend-hour'>Suspend User (1 Hour)</a></li>
+    <li><a href='#!' data-event='firechat-user-suspend-day'>Suspend User (1 Day)</a></li>
+    <li><a href='#!' data-event='firechat-message-delete'>Delete Message</a></li>
+  </ul>
+</div>

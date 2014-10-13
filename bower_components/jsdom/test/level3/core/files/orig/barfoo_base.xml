@@ -1,0 +1,29 @@
+<!DOCTYPE html [
+<!ENTITY ent1 'foo'>
+<!ENTITY ent2 'foo<br/>'>
+<!ELEMENT html (head, body)>
+<!ATTLIST html 
+    xmlns CDATA #IMPLIED
+    xml:base CDATA #IMPLIED>
+<!ELEMENT head (title,script*)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT script (#PCDATA)>
+<!ATTLIST script 
+     src CDATA #IMPLIED
+     type CDATA #IMPLIED
+     charset CDATA #IMPLIED>
+<!ELEMENT body (p)>
+<!ATTLIST body xml:base CDATA #IMPLIED
+               id ID #IMPLIED
+               onload CDATA #IMPLIED>
+<!ELEMENT p (#PCDATA|br)*>
+<!ELEMENT br EMPTY>
+]>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:base="http://www.w3.org/DOM/L3Test">
+<head>
+<title>XML Base sample</title>
+</head>
+<body xml:base="http://www.w3.org/DOM/EmployeeID" id="body"> 
+<p>bar</p><!-- keep comment adjacent to p  -->
+</body>
+</html>

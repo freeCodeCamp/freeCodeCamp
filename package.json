@@ -60,6 +60,8 @@
   "devDependencies": {
     "blessed": "^0.0.37",
     "chai": "^1.9.1",
+    "gulp": "^3.8.8",
+    "gulp-inject": "^1.0.2",
     "mocha": "^1.21.4",
     "multiline": "^0.3.4",
     "supertest": "^0.13.0"

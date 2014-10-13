@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=utf-8">
+<TITLE>NIST DOM HTML Test - INPUT</TITLE>
+</HEAD>
+<BODY onload="parent.loadComplete()">
+<TABLE CELLPADDING="15"  BORDER="BORDER" SUMMARY="Table 1">
+<TR ALIGN="center">
+<TD VAlign="top">Under a FORM control
+<FORM ID="form1" ACTION="./files/getData.pl" METHOD="post">
+<TABLE BORDER="15" SUMMARY="Table 2">
+<TR>
+<TD>
+<LABEL ACCESSKEY="b" FOR="input1">Enter Your Password:</LABEL>
+</TD>
+<TD>
+<INPUT DIR="LTR" ID="input1" TABINDEX="8" VALUE="Password" TYPE="password" NAME="Password" SIZE="25" MAXLENGTH="5" ALT="Password entry" READONLY="READONLY"/>
+</TD>
+</TR>
+<TR>
+<TD>
+<INPUT TYPE="RADIO" NAME="Radio1" ACCESSKEY="c" VALUE="ReHire"/>ReHire
+</TD>
+</TR>
+<TR>
+<TD>
+<INPUT TYPE="RADIO" NAME="Radio2" VALUE="NewHire" TABINDEX="9" CHECKED="CHECKED"/>NewHire
+</TD>
+</TR>
+<TR>
+<TD>Hours available to work</TD>
+<TD>
+<INPUT TYPE="CHECKBOX" NAME="Check1" ALIGN="bottom" TABINDEX="10" VALUE="EarlyMornings" CHECKED="CHECKED"/>EarlyMornings
+<BR/>
+<INPUT ID="input5" TYPE="CHECKBOX" NAME="Check2" TABINDEX="11" VALUE="AfterNoon" ONCLICK="newId(this)"/>Afternoon
+<BR/>
+<INPUT TYPE="CHECKBOX" NAME="Check3" TABINDEX="12" VALUE="Evenings"/>Evenings
+<BR/>
+<INPUT TYPE="CHECKBOX" NAME="Check4" TABINDEX="13" VALUE="Closing" DISABLED="DISABLED"/>Closing
+<BR/>
+</TD>
+</TR>
+<TR>
+<TD COLSPAN="2">
+<INPUT TYPE="IMAGE" TABINDEX="14" NAME="SubmitImage" USEMAP="#submit-map" SRC="./pix/submit.gif"/>
+</TD>
+</TR>
+<TR>
+<TD COLSPAN="2">
+<INPUT TITLE="old_title" TYPE="FILE" NAME="FileControl" TABINDEX="15" ACCEPT="GIF,JPEG" ONSELECT="newTitle(this)"/>
+</TD>
+</TR>
+</TABLE>
+</FORM>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

@@ -1,0 +1,80 @@
+<!-- Special characters for XHTML -->
+
+<!-- Character entity set. Typical invocation:
+     <!ENTITY % HTMLspecial PUBLIC
+        "-//W3C//ENTITIES Special for XHTML//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml-special.ent">
+     %HTMLspecial;
+-->
+
+<!-- Portions (C) International Organization for Standardization 1986:
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+<!-- Relevant ISO entity set is given unless names are newly introduced.
+     New names (i.e., not in ISO 8879 list) do not clash with any
+     existing ISO 8879 entity names. ISO 10646 character numbers
+     are given for each character, in hex. values are decimal
+     conversions of the ISO 10646 values and refer to the document
+     character set. Names are Unicode names. 
+-->
+
+<!-- C0 Controls and Basic Latin -->
+<!ENTITY quot    "&#34;"> <!--  quotation mark, U+0022 ISOnum -->
+<!ENTITY amp     "&#38;#38;"> <!--  ampersand, U+0026 ISOnum -->
+<!ENTITY lt      "&#38;#60;"> <!--  less-than sign, U+003C ISOnum -->
+<!ENTITY gt      "&#62;"> <!--  greater-than sign, U+003E ISOnum -->
+<!ENTITY apos	 "&#39;"> <!--  apostrophe = APL quote, U+0027 ISOnum -->
+
+<!-- Latin Extended-A -->
+<!ENTITY OElig   "&#338;"> <!--  latin capital ligature OE,
+                                    U+0152 ISOlat2 -->
+<!ENTITY oelig   "&#339;"> <!--  latin small ligature oe, U+0153 ISOlat2 -->
+<!-- ligature is a misnomer, this is a separate character in some languages -->
+<!ENTITY Scaron  "&#352;"> <!--  latin capital letter S with caron,
+                                    U+0160 ISOlat2 -->
+<!ENTITY scaron  "&#353;"> <!--  latin small letter s with caron,
+                                    U+0161 ISOlat2 -->
+<!ENTITY Yuml    "&#376;"> <!--  latin capital letter Y with diaeresis,
+                                    U+0178 ISOlat2 -->
+
+<!-- Spacing Modifier Letters -->
+<!ENTITY circ    "&#710;"> <!--  modifier letter circumflex accent,
+                                    U+02C6 ISOpub -->
+<!ENTITY tilde   "&#732;"> <!--  small tilde, U+02DC ISOdia -->
+
+<!-- General Punctuation -->
+<!ENTITY ensp    "&#8194;"> <!-- en space, U+2002 ISOpub -->
+<!ENTITY emsp    "&#8195;"> <!-- em space, U+2003 ISOpub -->
+<!ENTITY thinsp  "&#8201;"> <!-- thin space, U+2009 ISOpub -->
+<!ENTITY zwnj    "&#8204;"> <!-- zero width non-joiner,
+                                    U+200C NEW RFC 2070 -->
+<!ENTITY zwj     "&#8205;"> <!-- zero width joiner, U+200D NEW RFC 2070 -->
+<!ENTITY lrm     "&#8206;"> <!-- left-to-right mark, U+200E NEW RFC 2070 -->
+<!ENTITY rlm     "&#8207;"> <!-- right-to-left mark, U+200F NEW RFC 2070 -->
+<!ENTITY ndash   "&#8211;"> <!-- en dash, U+2013 ISOpub -->
+<!ENTITY mdash   "&#8212;"> <!-- em dash, U+2014 ISOpub -->
+<!ENTITY lsquo   "&#8216;"> <!-- left single quotation mark,
+                                    U+2018 ISOnum -->
+<!ENTITY rsquo   "&#8217;"> <!-- right single quotation mark,
+                                    U+2019 ISOnum -->
+<!ENTITY sbquo   "&#8218;"> <!-- single low-9 quotation mark, U+201A NEW -->
+<!ENTITY ldquo   "&#8220;"> <!-- left double quotation mark,
+                                    U+201C ISOnum -->
+<!ENTITY rdquo   "&#8221;"> <!-- right double quotation mark,
+                                    U+201D ISOnum -->
+<!ENTITY bdquo   "&#8222;"> <!-- double low-9 quotation mark, U+201E NEW -->
+<!ENTITY dagger  "&#8224;"> <!-- dagger, U+2020 ISOpub -->
+<!ENTITY Dagger  "&#8225;"> <!-- double dagger, U+2021 ISOpub -->
+<!ENTITY permil  "&#8240;"> <!-- per mille sign, U+2030 ISOtech -->
+<!ENTITY lsaquo  "&#8249;"> <!-- single left-pointing angle quotation mark,
+                                    U+2039 ISO proposed -->
+<!-- lsaquo is proposed but not yet ISO standardized -->
+<!ENTITY rsaquo  "&#8250;"> <!-- single right-pointing angle quotation mark,
+                                    U+203A ISO proposed -->
+<!-- rsaquo is proposed but not yet ISO standardized -->
+
+<!-- Currency Symbols -->
+<!ENTITY euro   "&#8364;"> <!--  euro sign, U+20AC NEW -->

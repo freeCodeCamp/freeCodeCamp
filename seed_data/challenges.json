@@ -1,0 +1,44 @@
+[
+  {
+    "name": "The 100 Door Challenge",
+    "type": "",
+    "source": "rosettacode.org",
+    "difficulty": 1,
+    "directions_1": "You have 100 doors in a row that are all initially closed. You make 100 passes by the doors. The first time through, you visit every door and toggle the door (if the door is closed, you open it; if it is open, you close it). The second time you only visit every 2nd door (door #2, #4, #6, ...). The third time, every 3rd door (door #3, #6, #9, ...), etc, until you only visit the 100th door.",
+    "directions_2": "What state are the doors in after the last pass? Which are open, which are closed?",
+    "directions_3": "Answer with an array containing only the numbers of doors that are still open after your final pass.",
+    "image": "http://www.intotheabyss.net/wp-content/uploads/2012/12/matrix_back_doors_by_drenemy-d4mioe7.jpg",
+    "hint_1": "",
+    "hint_2": "",
+    "solution": "[1,4,9,16,25,36,49,64,81,100]",
+    "skills_required": ["JavaScript"]
+  },
+  {
+    "name": "Anagrams",
+    "type": "",
+    "source": "",
+    "difficulty": 1,
+    "directions_1": "An anagram is where you can rearrange the letters in a word to form another word. Using this scrabble dictionary: https://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt, find the word that has the most anagrams for other words on the list.",
+    "directions_2": "Answer with that single word from the list",
+    "directions_3": "",
+    "image": "",
+    "hint_1": "",
+    "hint_2": "",
+    "solution": "?",
+    "skills_required": ["JavaScript"]
+  },
+  {
+    "name": "Which comes first after C - I or E?",
+    "type": "http://media-cache-ec0.pinimg.com/236x/6a/6a/40/6a6a4038f6119bb8c55478f7fdc5f243.jpg",
+    "source": "",
+    "difficulty": 1,
+    "directions_1": "You've probably heard the spelling tip 'I before E, except after C'. Let's find out whether it's actually true.",
+    "directions_2": "Go through this Scrabble dictionary: https://scrabblehelper.googlecode.com/svn-history/r20/trunk/ScrabbleHelper/src/dictionaries/sowpods.txt and find out.",
+    "directions_3": "Your answer should be an array of two numbers: the number of times ie directly follows c, and the number of times ei directly follows c.",
+    "image": "",
+    "hint_1": "",
+    "hint_2": "",
+    "solution": "[?, ?]",
+    "skills_required": ["JavaScript"]
+  }
+]

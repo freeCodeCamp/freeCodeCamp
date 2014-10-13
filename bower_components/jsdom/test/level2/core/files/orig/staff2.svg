@@ -1,0 +1,13 @@
+<?xml version="1.0"?><?TEST-STYLE PIDATA?>
+<!DOCTYPE svg SYSTEM "staff2.dtd" []>
+<!-- This is comment number 1.-->
+<svg xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="100" height="100"/><script type="text/ecmascript">&svgtest;&svgunit;</script>
+ <employee xmlns="http://www.example.com">
+  <employeeId>EMP0001</employeeId>
+  <name>Margaret Martin</name>
+  <position>Accountant</position>           
+  <salary>56,000</salary>
+  <gender>Female</gender>
+  <address>1230 North Ave. Dallas, Texas 98551</address>
+ </employee>
+ </svg>

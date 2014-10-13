@@ -1,0 +1,28 @@
+<!--
+
+Copyright (c) 2001-2004 World Wide Web Consortium, 
+(Massachusetts Institute of Technology, Institut National de
+Recherche en Informatique et en Automatique, Keio University).  All 
+Rights Reserved.  This program is distributed under the W3C's Software
+Intellectual Property License.  This program is distributed in the 
+hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+PURPOSE.  
+
+See W3C License http://www.w3.org/Consortium/Legal/ for more details.
+
+-->
+
+<!--
+
+xsi:noNamespaceSchemaLocation="Yes" appears in hc_staff.xml
+but it was not anticipated that "Yes" would be resolved since
+there were no elements without a namespace.  However, since
+at least one processor does attempt to load "Yes", this file
+is here to satisfy that request.
+
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="bogus" type="xsd:string"/>
+</xsd:schema>

@@ -1,0 +1,13 @@
+<!DOCTYPE html [
+<!ATTLIST div id ID #IMPLIED>
+<!ATTLIST div class NMTOKENS #IMPLIED>
+]>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>canonicalform04</title></head><body onload="parent.loadComplete()">
+   <em>First line&#x0d;&#10;Second line</em>
+   <acronym>&#x32;</acronym>
+   <code><![CDATA[value>"0" && value<"10" ?"valid":"error"]]></code>
+   <code title='value>"0" &amp;&amp; value&lt;"10" ?"valid":"error"'>valid</code>
+   <div title=' &apos;   &#x20;&#13;&#xa;&#9;   &apos; '/>
+   <div class='   A   &#x20;&#13;&#xa;&#9;   B   '/>
+   <div id=' &apos;   &#x20;&#13;&#xa;&#9;   &apos; '/>
+</body></html>

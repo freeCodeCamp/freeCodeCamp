@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Fake project for Fake Person",
+        "category": 0,
+        "skills_required": ["NodeJS", "AngularJS", "MongoDB", "JavaScript", "CSS and HTML"],
+        "description": "Fake Person needs a custom Customer Resource Management (CRM) system for tracking her donors. It will be used purely for back office stuff, so it doesn't need to be particularly pretty. It needs to be secure and mobile responsive.",
+        "contact_name": "Fake Person",
+        "contact_email": "fake@email.com"
+    }
+]

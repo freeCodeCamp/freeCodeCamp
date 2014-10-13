@@ -1,0 +1,45 @@
+<!ELEMENT staff (employee+,emp:employee,employee) >
+<!ELEMENT employee (employeeId,name,position,salary,gender,address) >
+<!ATTLIST employee xmlns CDATA #IMPLIED>
+<!ATTLIST employee xmlns:dmstc CDATA #IMPLIED>
+<!ATTLIST employee xmlns:emp2 CDATA #IMPLIED>
+
+<!ELEMENT employeeId (#PCDATA) >
+
+<!ELEMENT name (#PCDATA) >
+
+<!ELEMENT position (#PCDATA) >
+
+<!ELEMENT salary (#PCDATA) >
+
+<!ELEMENT entElement1 (#PCDATA) >
+<!ELEMENT gender (#PCDATA | entElement1)* >
+<!ATTLIST entElement1 xmlns:local1 CDATA #IMPLIED >
+
+<!ELEMENT address (#PCDATA) >
+<!ATTLIST address dmstc:domestic CDATA #IMPLIED>
+<!ATTLIST address street CDATA #IMPLIED>
+<!ATTLIST address domestic CDATA #IMPLIED>
+<!ATTLIST address xmlns CDATA #IMPLIED>
+
+<!ELEMENT emp:employee (emp:employeeId,nm:name,emp:position,emp:salary,emp:gender,emp:address) >
+<!ATTLIST emp:employee xmlns:emp CDATA #IMPLIED>
+<!ATTLIST emp:employee xmlns:nm CDATA #IMPLIED>
+<!ATTLIST emp:employee defaultAttr CDATA 'defaultVal'>
+
+<!ELEMENT emp:employeeId (#PCDATA) >
+
+<!ELEMENT nm:name (#PCDATA) >
+
+<!ELEMENT emp:position (#PCDATA) >
+
+<!ELEMENT emp:salary (#PCDATA) >
+
+<!ELEMENT emp:gender (#PCDATA) >
+
+<!ELEMENT emp:address (#PCDATA) >
+<!ATTLIST emp:address emp:domestic CDATA #IMPLIED>
+<!ATTLIST emp:address street CDATA #IMPLIED>
+<!ATTLIST emp:address emp:zone ID #IMPLIED>
+<!ATTLIST emp:address emp:district CDATA 'DISTRICT'>
+<!ATTLIST emp:address emp:local1 CDATA 'FALSE'>

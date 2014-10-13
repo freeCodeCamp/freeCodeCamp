@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg [
+<!ENTITY ent1 'foo'>
+<!ENTITY ent2 'foo<br/>'>
+<!ELEMENT svg (rect,body)>
+<!ATTLIST svg xmlns CDATA #IMPLIED>
+<!ELEMENT rect EMPTY>
+<!ATTLIST rect
+   x CDATA #REQUIRED
+   y CDATA #REQUIRED
+   width CDATA #REQUIRED
+   height CDATA #REQUIRED
+   fill CDATA #REQUIRED>
+<!ELEMENT p (#PCDATA|br)*>
+<!ELEMENT body (p)>
+<!ATTLIST body xmlns CDATA #IMPLIED>
+<!ELEMENT br EMPTY>
+]>
+<svg xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="100" height="100" fill="blue"/>
+<body xmlns='http://www.w3.org/1999/xhtml'>
+<p>bar</p>
+</body>
+</svg>

@@ -1,0 +1,26 @@
+<!DOCTYPE html:html [
+<!ENTITY ent1 'foo'>
+<!ENTITY ent2 'foo<br/>'>
+<!ELEMENT html:html (html:head, html:body)>
+<!ATTLIST html:html xmlns:html CDATA #IMPLIED>
+<!ELEMENT html:head (html:title,script*)>
+<!ATTLIST html:head xmlns CDATA #IMPLIED>
+<!ELEMENT script (#PCDATA)>
+<!ATTLIST script 
+     src CDATA #IMPLIED
+     type CDATA #IMPLIED
+     charset CDATA #IMPLIED>
+<!ELEMENT html:title (#PCDATA)>
+<!ELEMENT html:body (html:p)>
+<!ELEMENT html:p (#PCDATA|html:br)*>
+<!ATTLIST html:p class CDATA #IMPLIED>
+<!ELEMENT html:br EMPTY>
+]>
+<html:html xmlns:html='http://www.w3.org/1999/xhtml'>
+<html:head xmlns='http://www.w3.org/1999/xhtml'>
+<html:title>test file</html:title>
+</html:head>
+<html:body> 
+<html:p class="visible:false">bar</html:p>
+</html:body>
+</html:html>

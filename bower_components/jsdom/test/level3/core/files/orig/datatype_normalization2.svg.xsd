@@ -1,0 +1,60 @@
+<!--
+
+Copyright (c) 2001-2004 World Wide Web Consortium, 
+(Massachusetts Institute of Technology, Institut National de
+Recherche en Informatique et en Automatique, Keio University).  All 
+Rights Reserved.  This program is distributed under the W3C's Software
+Intellectual Property License.  This program is distributed in the 
+hope that it will be useful, but WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+PURPOSE.  
+
+See W3C License http://www.w3.org/Consortium/Legal/ for more details.
+
+-->
+
+<!--
+
+This schema is attempts to use every construct that could
+be interrogated by DOM Level 3 and is no way intended to
+be a general purpose schema for SVG  
+
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.w3.org/2000/svg"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <xsd:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="datatype_normalization2.xsd"/>
+
+  <xsd:element name="svg">
+  	 <xsd:complexType>
+  	 	<xsd:sequence>
+  	 		<xsd:element ref="rect"/>
+  	 		<xsd:element ref="script"/>
+  	 		<xsd:element ref="xhtml:body"/>
+  	 	</xsd:sequence>
+  	 </xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="rect">
+  	<xsd:complexType>
+  		<xsd:attribute name="x" type="xsd:double" use="required"/>
+  		<xsd:attribute name="y" type="xsd:double" use="required"/>
+  		<xsd:attribute name="height" type="xsd:double" use="required"/>
+  		<xsd:attribute name="width" type="xsd:double" use="required"/>
+  	</xsd:complexType>
+  </xsd:element>
+  
+  <xsd:element name="script">
+  	<xsd:complexType>
+  		<xsd:simpleContent>
+  			<xsd:extension base="xsd:string">
+  				<xsd:attribute name="type" type="xsd:string" use="required"/>
+  			</xsd:extension>
+  		</xsd:simpleContent>
+  	</xsd:complexType>
+  </xsd:element>
+  			
+</xsd:schema>

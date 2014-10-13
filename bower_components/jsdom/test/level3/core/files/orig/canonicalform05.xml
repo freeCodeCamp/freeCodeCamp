@@ -1,0 +1,13 @@
+<!DOCTYPE html [
+<!ATTLIST p attrExtEnt ENTITY #IMPLIED>
+<!ENTITY ent1 "Hello">
+<!ENTITY ent2 SYSTEM "world.txt">
+<!ENTITY entExt SYSTEM "earth.gif" NDATA gif>
+<!NOTATION gif SYSTEM "viewgif.exe">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>canonicalform05</title></head><body onload="parent.loadComplete()">
+<p attrExtEnt="entExt">
+   &ent1;, &ent2;!
+</p></body></html>
+
+<!-- Let world.txt contain "world" (excluding the quotes) -->

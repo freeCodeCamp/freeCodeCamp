@@ -1,92 +1,37 @@
 extends layout
 block content
-    html.
-        <!-- Firebase -->
-        <script src='https://cdn.firebase.com/js/client/1.0.21/firebase.js'></script>
-        <script src='https://cdn.firebase.com/js/simple-login/1.6.3/firebase-simple-login.js'></script>
+    .text-center.jumbotron
+        h1 Become a Software Engineer
+        h2 Our free online coding bootcamp will help you land your first coding job!
+        .row
+            .col-xs-12.col-sm-12.col-md-4
+                h3 Technical Mastery
+                img.img-center.three-by-three.img-responsive(src="images/tools.svg")
+                p Pair program your way through our courses and coding challenges.
+            .col-xs-12.col-sm-12.col-md-4
+                h3 Unique Portfolio Projects
+                img.img-center.three-by-three.img-responsive(src="images/portfolio.svg")
+                p Contribute to Open Source Software. Work closely with non-profits and solve their problems with code.
+            .col-xs-12.col-sm-12.col-md-4
+                h3 Glowing References
+                img.img-center.three-by-three.img-responsive(src="images/references.svg")
+                p Gain the esteem of your peers and the people you help.
+        a.btn.btn-cta.btn-primary(href="/login") Sign in now to get started (it's free)
+        br
+        br
+        a.btn.btn-primary(href="/nonprofit") I'm with a non-profit and want help from a Software Engineer
 
-        <!-- CodeMirror and its JavaScript mode file -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/mode/javascript/javascript.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.css" />
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js'></script>
-        <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.0.0/firepad.css" />
-
-        <!-- Firepad -->
-        <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.0.0/firepad.css" />
-        <script src="https://cdn.firebase.com/libs/firepad/1.0.0/firepad.min.js"></script>
-
-        <style>
-            html { height: 50%; }
-            body { margin: 0; height: 100%; position: relative; }
-                /* Height / width / positioning can be customized for your use case.
-                   For demo purposes, we make firepad fill the entire browser. */
-            #firepad-container {
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-        </head>
-
-        <body>
-        <div id="firepad-container"></div>
-
-        <script>
-            function init() {
-                //// Initialize Firebase.
-                var firepadRef = getExampleRef();
-                // TODO: Replace above line with:
-                // var ref = new Firebase('scorching-heat-2873.firebaseIO.com');
-
-                //// Create CodeMirror (with line numbers and the JavaScript mode).
-                var codeMirror = CodeMirror(document.getElementById('firepad-container'), {
-                    lineNumbers: true,
-                    mode: 'javascript'
-                });
-
-                //// Create Firepad.
-                var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
-                    defaultText: '// JavaScript Editing with Firepad!\nfunction go() {\n  var message = "Hello, world.";\n  console.log(message);\n}'
-                });
-            }
-
-            // Helper to get hash from end of URL or generate a random one.
-            function getExampleRef() {
-                var ref = new Firebase('https://firepad.firebaseio-demo.com');
-                var hash = window.location.hash.replace(/#/g, '');
-                if (hash) {
-                    ref = ref.child(hash);
-                } else {
-                    ref = ref.push(); // generate unique location.
-                    window.location = window.location + '#' + ref.name(); // add it as a hash to the URL.
-                }
-                if (typeof console !== 'undefined')
-                    console.log('Firebase data: ', ref.toString());
-                return ref;
-            }
-
-            init();
-        </script>
-    html.
-          <head>
-
-                <!-- Download from https://github.com/firebase/firechat -->
-                <link rel='stylesheet' href='css/firechat-default.css' />
-                <script src='js/firechat-default.js'></script>
-          </head>
-          <body>
-                <script type='text/javascript'>
-                      // Create a new Firebase reference, and a new instance of the Login client
-                      var chatRef = new Firebase('https://scorching-heat-2873.firebaseio.com/chat');
-                      var auth = new FirebaseSimpleLogin(chatRef, function(err, user) {
-                    // Once authenticated, instantiate Firechat with our user id and user name
-                    if (user) {
-                      var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
-                      chat.setUser(user.uid, user.displayName);
-                    }
-                  });
-                </script>
-                <div id='firechat-wrapper'>
-                  <a href='#' onclick='auth.login("twitter");'>Login</a>
-                </div>
-          </body>
+//    script(src='https://cdn.firebase.com/js/client/1.0.21/firebase.js')
+//    script(src='https://cdn.firebase.com/js/simple-login/1.6.3/firebase-simple-login.js')
+//    script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.js')
+//    script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/mode/javascript/javascript.js')
+//    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.css')
+//    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js')
+//    link(rel='stylesheet', href='https://cdn.firebase.com/libs/firepad/1.0.0/firepad.css')
+//    link(rel='stylesheet', href='https://cdn.firebase.com/libs/firepad/1.0.0/firepad.css')
+//    script(src='https://cdn.firebase.com/libs/firepad/1.0.0/firepad.min.js')
+//    link(rel='stylesheet', href='css/firechat-default.css')
+//    script(src='js/firechat-default.js')
+//    #firepad-container
+//    #firechat-wrapper
+//      a(href='#', onclick='auth.login("twitter");') Login

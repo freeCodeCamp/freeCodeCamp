@@ -1,0 +1,104 @@
+{
+  // Firechat sample security rules
+  "rules": {
+    // By default, make all data private unless specified otherwise.
+    ".read": false,
+    ".write": false,
+    "room-metadata": {
+      ".read": true,
+      "$roomId": {
+        // Append-only by anyone, and admins can add official rooms, and edit or remove rooms as well.
+        ".write": "(auth != null) && (!data.exists() || root.child('moderators').hasChild(auth.id) || data.child('createdByUserId').val() === auth.id)",
+        ".validate": "newData.hasChildren(['name','type'])",
+        "id": {
+          ".validate": "(newData.val() === $roomId)"
+        },
+        "createdByUserId": {
+          ".validate": "(auth.id === newData.val())"
+        },
+        "numUsers": {
+          ".validate": "(newData.isNumber())"
+        },
+        "type": {
+          ".validate": "('public' === newData.val()) || 'private' === newData.val() || ('official' === newData.val() && (root.child('moderators').hasChild(auth.id)))"
+        },
+        // A list of users that may read messages from this room.
+        "authorizedUsers": {
+          ".write": "(auth != null) && (!data.exists() || root.child('moderators').hasChild(auth.id) || data.hasChild(auth.id))"
+        }
+      }
+    },
+    "room-messages": {
+      "$roomId": {
+        // A list of messages by room, viewable by anyone for public rooms, or authorized users for private rooms.
+        ".read": "(root.child('room-metadata').child($roomId).child('type').val() != 'private' || root.child('room-metadata').child($roomId).child('authorizedUsers').hasChild(auth.id))",
+        "$msgId": {
+          // Allow anyone to append to this list and allow admins to edit or remove.
+          ".write": "(auth != null) && (data.val() === null || root.child('moderators').hasChild(auth.id)) && (root.child('room-metadata').child($roomId).child('type').val() != 'private' || root.child('room-metadata').child($roomId).child('authorizedUsers').hasChild(auth.id)) && (!root.child('suspensions').hasChild(auth.id) || root.child('suspensions').child(auth.id).val() < now)",
+          ".validate": "(newData.hasChildren(['userId','name','message','timestamp']))"
+        }
+      }
+    },
+    "room-users": {
+      "$roomId": {
+        ".read": "(root.child('room-metadata').child($roomId).child('type').val() != 'private' || root.child('room-metadata').child($roomId).child('authorizedUsers').hasChild(auth.id))",
+        "$userId": {
+          // A list of users by room, viewable by anyone for public rooms, or authorized users for private rooms.
+          ".write": "(auth != null) && ($userId === auth.id || root.child('moderators').hasChild(auth.id))",
+          "$sessionId": {
+            ".validate": "(!newData.exists() || newData.hasChildren(['id','name']))"
+          }
+        }
+      }
+    },
+    "users": {
+      // A list of users and their associated metadata, which can be updated by the single user or a moderator.
+      "$userId": {
+        ".write": "(auth != null) && (auth.id === $userId || (root.child('moderators').hasChild(auth.id)))",
+        ".read": "(auth != null) && (auth.id === $userId || (root.child('moderators').hasChild(auth.id)))",
+        ".validate": "($userId === newData.child('id').val())",
+        "invites": {
+          // A list of chat invitations from other users, append-only by anyone.
+          "$inviteId": {
+            // Allow the user who created the invitation to read the status of the invitation.
+            ".read": "(auth != null) && (auth.id === data.child('fromUserId').val())",
+            ".write": "(auth != null) && (!data.exists() || $userId === auth.id || data.child('fromUserId').val() === auth.id)",
+            ".validate": "newData.hasChildren(['fromUserId','fromUserName','roomId']) && (newData.child('id').val() === $inviteId)"
+          }
+        },
+        "notifications": {
+          // A list of notifications, which can only be appended to by moderators.
+          "$notificationId": {
+            ".write": "(auth != null) && (data.val() === null) && (root.child('moderators').hasChild(auth.id))",
+            ".validate": "newData.hasChildren(['fromUserId','timestamp','notificationType'])",
+            "fromUserId": {
+              ".validate": "newData.val() === auth.id"
+            }
+          }
+        }
+      }
+    },
+    "user-names-online": {
+      // A mapping of active, online lowercase usernames to sessions and user ids.
+      ".read": true,
+      "$username": {
+        "$sessionId": {
+          ".write": "(auth != null) && (!data.exists() || !newData.exists() || data.child('id').val() === auth.id)",
+          "id": {
+            ".validate": "(newData.val() === auth.id)" 
+          },
+          "name": {
+            ".validate": "(newData.isString())"
+          }
+        }
+      }
+    },
+    "moderators": {
+      ".read": "(auth != null)"
+    },
+    "suspensions": {
+      ".write": "(auth != null) && (root.child('moderators').hasChild(auth.id))",
+      ".read": "(auth != null) && (root.child('moderators').hasChild(auth.id))"
+    }
+  }
+}

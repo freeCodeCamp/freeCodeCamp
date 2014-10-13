@@ -1,0 +1,73 @@
+<?xml version="1.0"?><?TEST-STYLE PIDATA?>
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "xhtml1-strict.dtd" [
+   <!ENTITY alpha "&#945;">
+   <!ENTITY beta "&#946;">
+   <!ENTITY gamma "&#947;">
+   <!ENTITY delta "&#948;">
+   <!ENTITY epsilon "&#949;">
+   <!ENTITY alpha "&#950;">
+   <!NOTATION notation1 PUBLIC "notation1File">
+   <!NOTATION notation2 SYSTEM "notation2File">
+   <!ATTLIST p
+        dir CDATA 'rtl'
+        xmlns:dmstc CDATA #IMPLIED
+        xmlns:nm CDATA #IMPLIED
+        xmlns:emp2 CDATA #IMPLIED>
+   <!ATTLIST html
+                   xmlns:xsi CDATA #IMPLIED
+                   xsi:schemaLocation CDATA #IMPLIED>
+   <!ATTLIST acronym xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+   <!ENTITY ent4 "<span xmlns='http://www.w3.org/1999/xhtml'>Element data</span><?PItarget PIdata?>">
+   <!ATTLIST span xmlns CDATA #IMPLIED>
+]>
+<!-- This is comment number 1.-->
+<html xmlns='http://www.w3.org/1999/xhtml'
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.w3.org/1999/xhtml hc_staff.xsd"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>hc_staff</title><script type="text/javascript" src="svgunit.js"/><script charset="UTF-8" type="text/javascript" src="svgtest.js"/><script type='text/javascript'>function loadComplete() { startTest(); }</script></head><body onload="parent.loadComplete()">
+ <p xmlns:dmstc="http://www.usa.com">
+  <em>EMP0001</em>
+  <strong>Margaret Martin</strong>
+  <code>Accountant</code>
+  <sup>56,000</sup>
+  <var>Female</var>
+  <acronym title="Yes" xsi:noNamespaceSchemaLocation="Yes">1230 North Ave. Dallas, Texas 98551</acronym>
+ </p>
+ <p xmlns:dmstc="http://www.usa.com">
+  <em>EMP0002</em>
+  <strong>Martha Raynolds
+<![CDATA[This is a CDATASection with EntityReference number 2 &ent2;]]>
+<![CDATA[This is an adjacent CDATASection with a reference to a tab &tab;]]></strong>
+  <code>Secretary</code>
+  <sup>35,000</sup>
+  <var>Female</var>
+  <acronym title="Yes" class="Yes" xsi:noNamespaceSchemaLocation="Yes">&beta; Dallas, &gamma;
+ 98554</acronym>
+ </p>
+ <p xmlns:dmstc="http://www.netzero.com">
+  <em>EMP0003</em>
+  <strong>Roger
+ Jones</strong>
+  <code>Department Manager</code>
+  <sup>100,000</sup>
+  <var>&ent4;</var>
+  <acronym title="Yes" class="No" id="_98553" xsi:noNamespaceSchemaLocation="Yes">PO Box 27 Irving, texas 98553</acronym>
+ </p>
+ <p xmlns:nm="http://www.altavista.com">
+  <em>EMP0004</em>
+  <strong>Jeny Oconnor</strong>
+  <code>Personnel Director</code>
+  <sup>95,000</sup>
+  <var>Female</var>
+  <acronym title="Yes" class="Y&alpha;" id="_98556" xsi:noNamespaceSchemaLocation="Yes">27 South Road. Dallas, Texas 98556</acronym>
+ </p>
+ <p xmlns:emp2="http://www.nist.gov">
+  <em>EMP0005</em>
+  <strong>Robert Myers</strong>
+  <code>Computer Specialist</code>
+  <sup>90,000</sup>
+  <var>male</var>
+  <acronym title="Yes" class="Yes" xsi:noNamespaceSchemaLocation="Yes">1821 Nordic. Road, Irving Texas 98558</acronym>
+ </p>
+</body></html>

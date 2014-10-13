@@ -1,0 +1,56 @@
+<div id='<%- id %>' data-room-id='<%- id %>' class='tab-pane'>
+  <div class='tab-pane-menu clearfix'>
+
+    <div class='firechat-dropdown twofifth'>
+      <a data-event='firechat-user-room-list-btn' class='full btn firechat-dropdown-toggle' data-toggle="firechat-dropdown" href='#' data-target='firechat-room-user-list-<%- id %>'>
+        <span class='icon user-group'></span>
+        In Room
+        <span class='caret'></span>
+      </a>
+      <div class='firechat-dropdown-menu' role='menu'>
+        <ul id='firechat-room-user-list-<%- id %>' class='full'></ul>
+      </div>
+    </div>
+
+    <div class='firechat-dropdown twofifth'>
+      <a data-event='firechat-user-search-btn' class='full btn firechat-dropdown-toggle' data-toggle="firechat-dropdown" href='#'>
+        <span class='icon plus'>+</span>
+        Invite
+        <span class='caret'></span>
+      </a>
+
+      <div class='firechat-dropdown-menu' role='menu'>
+        <div class='firechat-dropdown-header aligncenter clearfix'>
+          <div class='search-wrapper'>
+            <span class='icon search'></span>
+            <input type='text' data-event='firechat-user-search' data-template='templates/room-user-search-list-item.html' data-target='firechat-room-user-search-<%- id %>' data-controls='firechat-room-user-search-controls-<%- id %>' class='center fivesixth'>
+          </div>
+        </div>
+        <ul id='firechat-room-user-search-<%- id %>'></ul>
+
+        <div class='firechat-dropdown-footer aligncenter clearfix'>
+          <div id='firechat-room-user-search-controls-<%- id %>' class='clearfix'>
+
+            <span class="quarter"></span>
+            <!--
+            <button type='button' class='btn third disabled' data-event='firechat-user-search' data-template='templates/room-user-search-list-item.html' data-target='firechat-room-user-search-<%- id %>' data-controls='firechat-room-user-search-controls-<%- id %>' data-toggle='firechat-pagination-prev' disabled=disabled>Prev</button>
+            -->
+            <button type='button' class='btn half disabled' data-event='firechat-user-search' data-template='templates/room-user-search-list-item.html' data-target='firechat-room-user-search-<%- id %>' data-controls='firechat-room-user-search-controls-<%- id %>' data-toggle='firechat-pagination-next'  disabled=disabled>Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href='#!' data-event='firechat-close-tab' class='icon close right' style='15px 5px' title='Leave Room'></a>
+
+  </div>
+
+  <div class='clearfix'>
+    <div id='firechat-messages<%- id %>' class='chat'></div>
+  </div>
+
+  <div class='clearfix'>
+    <label>Your message:</label>
+    <textarea id='textarea<%- id %>' placeholder='Type your message here...'></textarea>
+  </div>
+</div>

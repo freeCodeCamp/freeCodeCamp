@@ -1,0 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; CHARSET=utf-8">
+<title>JSDom Document.write Regression Test</title>
+</head>
+<body onload="parent.loadComplete()">
+<script TYPE="text/javascript">document.write('<p id="inlinetest">Test</p>');</script>
+<p id="existingtag">Hello World</p>
+</body>
+</html>
+

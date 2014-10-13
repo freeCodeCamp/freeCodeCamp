@@ -1,0 +1,57 @@
+<div id='firechat' class='full'>
+  <div id='firechat-header' class='clearfix'>
+    <div class='clearfix'>
+
+      <div class='half firechat-dropdown' style=''>
+        <a id='firechat-btn-rooms' class='firechat-dropdown-toggle btn full' data-toggle="firechat-dropdown" href='#'>
+          <span class='icon user-chat'></span>
+          Chat Rooms
+          <span class='caret'></span>
+        </a>
+        <div class='firechat-dropdown-menu full' role='menu'>
+
+          <ul id='firechat-room-list'></ul>
+
+          <div class='firechat-dropdown-footer aligncenter'>
+            <button type='button' class='btn twothird center' id='firechat-btn-create-room-prompt'>Create Room</button>
+          </div>
+
+        </div>
+
+      </div>
+      <div class='half firechat-dropdown' style=''>
+        <a data-event='firechat-user-search-btn' class='btn full firechat-dropdown-toggle' data-toggle="firechat-dropdown" href='#'>
+          <span class='icon user-group'></span>
+          Visitors
+          <span class='caret'></span>
+        </a>
+        <div class='firechat-dropdown-menu' role='menu'>
+          <div class='firechat-dropdown-header aligncenter clearfix'>
+            <div class='search-wrapper'>
+              <span class='icon search'></span>
+              <input type='text' data-event='firechat-user-search' data-template='templates/user-search-list-item.html' data-target='firechat-user-search' data-controls='firechat-user-search-controls' class='center fivesixth'>
+            </div>
+          </div>
+          <ul id='firechat-user-search'></ul>
+
+          <div class='firechat-dropdown-footer aligncenter clearfix'>
+            <div id='firechat-user-search-controls' class='clearfix'>
+              <span class="quarter"></span>
+              <button type='button' class='btn half' data-event='firechat-user-search' data-toggle='firechat-pagination-next' data-template='templates/user-search-list-item.html' data-target='firechat-user-search' data-controls='firechat-user-search-controls' disabled=disabled>Next</button>
+            </div>
+
+            <label class='center full'>
+              <small>Use "+ Invite" button within chat rooms for regular invites.</small>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id='firechat-tabs' class='clearfix'>
+    <ul id='firechat-tab-list' class='nav nav-tabs clearfix'></ul>
+    <div id='firechat-tab-content' class='tab-content'></div>
+  </div>
+
+  <div id='firechat-footer' class='clearfix'></div>
+</div>

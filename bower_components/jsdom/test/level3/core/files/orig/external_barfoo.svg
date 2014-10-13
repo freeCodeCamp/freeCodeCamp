@@ -1,0 +1,31 @@
+<!DOCTYPE svg [
+<!ENTITY ent1 SYSTEM 'external_foo.ent'>
+<!ENTITY ent2 SYSTEM 'external_foobr.ent'>
+<!ENTITY ent3 SYSTEM 'external_widget.ent'>
+<!ENTITY ent5 PUBLIC "entityURI" "entityFile" NDATA notation1>
+<!ELEMENT svg (rect,script,p*)>
+<!ATTLIST svg xmlns CDATA #IMPLIED>
+<!ELEMENT rect EMPTY>
+<!ATTLIST rect
+   x CDATA #REQUIRED
+   y CDATA #REQUIRED
+   width CDATA #REQUIRED
+   height CDATA #REQUIRED
+   fill CDATA #REQUIRED>
+<!ELEMENT p (#PCDATA|br)*>
+<!ATTLIST p xmlns CDATA #IMPLIED
+          xml:base CDATA #IMPLIED>
+<!ELEMENT br EMPTY>
+<!ELEMENT script (#PCDATA)>
+<!ATTLIST script type CDATA #IMPLIED>      
+<!ENTITY svgunit SYSTEM "svgunit.js">
+<!ENTITY svgtest SYSTEM "svgtest.js">
+<!NOTATION notation1 PUBLIC "notation1File">
+]>
+<svg xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="100" height="100" fill="blue"/>
+<script type="text/ecmascript">&svgtest;&svgunit;</script>
+<p xmlns='http://www.w3.org/1999/xhtml'>bar&ent2;&ent1;</p>
+<p xmlns='http://www.w3.org/1999/xhtml' xml:base="http://www.example.com/bogus_base">bar&ent2;&ent1;</p>
+&ent3;
+</svg>

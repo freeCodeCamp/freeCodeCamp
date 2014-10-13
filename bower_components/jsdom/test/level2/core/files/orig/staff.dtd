@@ -1,0 +1,17 @@
+<!ELEMENT employeeId (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT position (#PCDATA)>
+<!ELEMENT salary (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT entElement ( #PCDATA ) >
+<!ELEMENT gender ( #PCDATA | entElement )* >
+<!ELEMENT employee (employeeId, name, position, salary, gender, address) >
+<!ELEMENT staff (employee)+>
+<!ATTLIST entElement 
+          attr1 CDATA "Attr">
+<!ATTLIST address
+          domestic CDATA #IMPLIED 
+          street CDATA "Yes">
+<!ATTLIST entElement 
+          domestic CDATA "MALE" >
+

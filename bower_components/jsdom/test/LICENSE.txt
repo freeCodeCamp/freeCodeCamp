@@ -1,0 +1,4 @@
+all level1,level2,level3 test cases were written by the w3c
+see: http://www.w3.org/Consortium/Legal/2008/04-testsuite-copyright.html for licensing
+
+all other folders in this directory follow the same license as ../LICENSE.txt

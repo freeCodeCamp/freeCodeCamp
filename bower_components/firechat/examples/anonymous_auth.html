@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+  <!-- Download from https://github.com/firebase/Firechat -->
+  <link rel="stylesheet" href="../dist/0.1.5/firechat-default.min.css" />
+  <script src="../dist/0.1.5/firechat-default.min.js"></script>
+  <style>
+    #firechat-wrapper {
+      height: 475px;
+      max-width: 325px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      margin: 50px auto;
+      text-align: center;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 5px 25px #666;
+      -moz-box-shadow: 0 5px 25px #666;
+      box-shadow: 0 5px 25px #666;
+    }
+  </style>
+</head>
+
+<!--
+  Example: Anonymous Authentication
+
+  This example uses Firebase Simple Login to create 'anonymous' user sessions in Firebase,
+  meaning that user credentials are not required, though a user has a valid Firebase
+  authentication token and security rules still apply.
+
+  Requirements: in order to use this example with your own Firebase, you'll need to do the following:
+    1. Apply the security rules at https://github.com/firebase/firechat/blob/master/rules.json
+    2. Enable the 'Anonymous' authentication provider in Forge
+    3. Update the URL below to reference your Firebase
+    4. Update the room id for auto-entry with a public room you have created
+ -->
+<body>
+  <div id="firechat-wrapper"></div>
+  <script type='text/javascript'>
+    var chatRef = new Firebase('https://firechat-demo.firebaseio.com');
+    var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+    var simpleLogin = new FirebaseSimpleLogin(chatRef, function(err, user) {
+      if (user) {
+        chat.setUser(user.id, 'Anonymous' + user.id.substr(0, 8));
+        setTimeout(function() {
+          chat._chat.enterRoom('-Iy1N3xs4kN8iALHV0QA');
+        }, 500);
+      } else {
+        simpleLogin.login('anonymous');    
+      }
+    });
+  </script>
+</body>
+</html>

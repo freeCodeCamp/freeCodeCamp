@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg
+   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "xhtml1-strict.dtd" [
+   <!ENTITY svgunit SYSTEM "svgunit.js">
+   <!ENTITY svgtest SYSTEM "svgtest.js">
+   <!ELEMENT svg (rect, script, body)>
+   <!ATTLIST svg 
+       xmlns CDATA #IMPLIED
+       xmlns:xsi CDATA #IMPLIED
+       xsi:schemaLocation CDATA #IMPLIED>
+   <!ELEMENT rect EMPTY>
+   <!ATTLIST rect
+      x CDATA #REQUIRED
+      y CDATA #REQUIRED
+      width CDATA #REQUIRED
+      height CDATA #REQUIRED>
+   <!ATTLIST body xmlns CDATA #IMPLIED>
+]>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.w3.org/2000/svg datatype_normalization2.svg.xsd">
+<rect x="0" y="0" width="100" height="100"/><script type="text/ecmascript">&svgtest;&svgunit;</script><body xmlns="http://www.w3.org/1999/xhtml">
+ <p>
+  <!--  preserve, string default  -->
+  <em>    EMP  0001   </em>
+  <!--   explicit preserve  -->
+  <acronym>    EMP  0001   </acronym>
+   <!--   explicit collapse  -->
+  <code>
+    EMP  0001   
+</code>
+  <code>EMP  0001</code>
+  <code>EMP 0001</code>
+  <!--    explicit replace   -->
+  <sup>
+    EMP  0001   
+</sup>
+  <sup>EMP  0001</sup>
+  <sup>EMP 0001</sup>
+  <sup>EMP
+0001</sup>
+  </p>
+</body>
+</svg>  
