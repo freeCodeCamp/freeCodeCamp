@@ -3,13 +3,26 @@ extends ../layout
 block content
     .page-header
         h3 Your Curriculum
-    .col-xs-12.col-sm-12.col-md-12
-        ul.pages
-        li.chat.page
-            div.chatArea
-                ul.messages
-            input.inputMessage(placeholder='Type here...')
-        li.login.page
-            div.form
-                h3.title What's your nickname?
-                input.usernameInput(type='text', maxlength='14')
+    ul.pages
+    li.chat.page
+        div.chatArea
+            ul.messages
+        input.inputMessage(placeholder='Type here...')
+    li.login.page
+        div.form
+            h3.title What's your nickname?
+            input.usernameInput(type='text', maxlength='14')
+
+
+//    .row
+//    .col-sm-6
+//        h3 Your Curriculum
+//    .col-sm-6
+//        .chat
+//            .chat-messages
+//            .chat-input.row
+//                .col-sm-3
+//                    input.usernameInput(placeholder='Nickanem', type='text', maxlength='14')
+//                .col-sm-9
+//                    input.inputMessage(placeholder='Type here...')
+//
