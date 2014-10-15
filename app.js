@@ -3,6 +3,8 @@
  */
 
 var express = require('express');
+var dotenv = require('dotenv');
+dotenv.load();
 var cookieParser = require('cookie-parser');
 var compress = require('compression');
 var session = require('express-session');
@@ -31,6 +33,7 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
+
 /**
  * API keys and Passport configuration.
  */
@@ -51,7 +54,9 @@ var server = http.createServer(app);
 
 server.listen(2999, function()  {
     console.log('server started on %d', 2999);
+//    console.log(process.env)
 });
+
 
 var io = socket.listen(server);
 
