@@ -5,7 +5,7 @@
         "link": "http://www.freecodecamp.com/first_website",
         "image": "http://startbootstrap.com/assets/img/templates/landing-page.jpg",
         "time": 1,
-        "directions": ["In the next 5 minutes, you'll create a website and deploy it to the internet!"]"
+        "directions": ["In the next 5 minutes, you'll create a website and deploy it to the internet!"]
     },
     {
         "name": "Start Your First Pair Programming Session",
@@ -13,7 +13,7 @@
         "link": "http://www.freecodecamp.com/first_pair_programming_session",
         "image": "https://screenhero.com/img/anim-collaboration.gif",
         "time": 1,
-        "directions": ["What's all this Pair Programming stuff about? Let's find out! We'll use a popular pair programming tool called Screen Hero."]"
+        "directions": ["What's all this Pair Programming stuff about? Let's find out! We'll use a popular pair programming tool called Screen Hero."]
     },
     {
         "name": "Make Your Static Page Dynamic Using POWR.io",
@@ -21,7 +21,7 @@
         "link": "http://www.freecodecamp.com/first_dynamic_website",
         "image": "https://s3-us-west-1.amazonaws.com/powr/images/powr_showcase_bg_1.jpg",
         "time": 1,
-        "directions": ["The website you created earlier is cool, but it's not very interactive. Let's "]"
+        "directions": ["The website you created earlier is cool, but it's not very interactive. Let's "]
     },
     {
         "name": "Create your first CodePen",
@@ -29,7 +29,7 @@
         "link": "http://www.freecodecamp.com/first_codepen",
         "image": "https://s3-us-west-1.amazonaws.com/powr/images/powr_showcase_bg_1.jpg",
         "time": 1,
-        "directions": ["Let's put those HTML and CSS skills to work!","You'll create your own databaseless webpage. We'll show you how."]"
+        "directions": ["Let's put those HTML and CSS skills to work!","You'll create your own databaseless webpage. We'll show you how."]
     },
     {
         "source": "Project Euler",
@@ -37,7 +37,7 @@
             "A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.",
             "For example,",
             "44 → 32 → 13 → 10 → 1 → 185 → 89 → 145 → 42 → 20 → 4 → 16 → 37 → 58 → 89",
-            "Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.",
+            "Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazng is that EVERY starting number will eventually arrive at 1 or 89.",
             "How many starting numbers below ten million will arrive at 89?"
         ],
         "solution": "518408346",
@@ -140,7 +140,7 @@
         "link": "http://www.freecodecamp.com/first_dynamic_site",
         "image": "https://octodex.github.com/images/codercat.jpg",
         "time": 2,
-        "directions": ["Now let's use your jQuery, Linux and Git skills to build and deploy something!","We're going to grab a nice template, modify it, and publish it to the internet. Don't worry, we'll walk you through this.","We'll use a free template: http://html5up.net/, modify it and deploy it here: https://www.bitballoon.com/"]"
+        "directions": ["Now let's use your jQuery, Linux and Git skills to build and deploy something!","We're going to grab a nice template, modify it, and publish it to the internet. Don't worry, we'll walk you through this.","We'll use a free template: http://html5up.net/, modify it and deploy it here: https://www.bitballoon.com/"]
     },
     {
         "name": "Build Your First Full-stack Web Application",
@@ -148,7 +148,7 @@
         "link": "http://www.freecodecamp.com/first_webapp",
         "image": "http://i.kinja-img.com/gawker-media/image/upload/s--bVoJow3Z--/c_fit,fl_progressive,q_80,w_636/17ozohjbt9569jpg.jpg",
         "time": 20,
-        "directions": ["You now have the skills you need to build complicated web apps. This is where the real fun begins. But as with painting, it's best to start out immitating the masters.","First, you'll want to choose a popular web app to clone. Do you like Pintrest? Twitter? Kickstarter? While these sites have hundreds of tiny features, their main functionality is quite simple: performing basic sorting and searching, writing user input to the database, and rendering content in a browser. You can build this!","Once you're done, you can even deploy your app to the internet. Create a cloud-based MEAN Stack instance using Digital Ocean here: https://www.digitalocean.com/community/tutorials/how-to-use-the-mean-one-click-install-image. You can get $10 in credits (about two months worth of free service) by using a promo code here: http://www.newcoupons.info/digitalocean-coupon-codes/"]"
+        "directions": ["You now have the skills you need to build complicated web apps. This is where the real fun begins. But as with painting, it's best to start out immitating the masters.","First, you'll want to choose a popular web app to clone. Do you like Pintrest? Twitter? Kickstarter? While these sites have hundreds of tiny features, their main functionality is quite simple: performing basic sorting and searching, writing user input to the database, and rendering content in a browser. You can build this!","Once you're done, you can even deploy your app to the internet. Create a cloud-based MEAN Stack instance using Digital Ocean here: https://www.digitalocean.com/community/tutorials/how-to-use-the-mean-one-click-install-image. You can get $10 in credits (about two months worth of free service) by using a promo code here: http://www.newcoupons.info/digitalocean-coupon-codes/"]
     },
     {
         "source": "Project Euler",
