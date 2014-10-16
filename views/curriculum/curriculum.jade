@@ -3,18 +3,20 @@ extends ../layout
 block content
     .page-header
         h3 Your Curriculum
-    ul.pages
-    li.chat.page
-        div.chatArea
-            ul.messages
-        input.inputMessage(placeholder='Type here...')
-    li.login.page
-        div.form
-            h3.title What's your nickname?
-            input.usernameInput(type='text', maxlength='14')
     h1= title
+    ul
+        each course in courses
+            li= course.name
 
-
+//ul.pages
+//    li.chat.page
+//        div.chatArea
+//            ul.messages
+//        input.inputMessage(placeholder='Type here...')
+//    li.login.page
+//        div.form
+//            h3.title What's your nickname?
+//            input.usernameInput(type='text', maxlength='14')
 
 
 //    for course in courses
@@ -31,3 +33,4 @@ block content
 //                .col-sm-9
 //                    input.inputMessage(placeholder='Type here...')
 //
+
