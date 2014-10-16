@@ -2,24 +2,36 @@ extends layout
 
 block content
   .page-header
-    h3 Contact Form
-
+    h1 We love non-profits!
+  h2 We want to help you get things done faster and better!
+  h3 Our students will help you build that donor tracking system, community message board, or whatever your organization needs, at no cost. In exchange, we ask only that you:
+      h4
+          ul
+              li &#8226 meet with them regularly in person. If that's not possible, you can teleconference with them. This way, you can collaboratively establish and review milestones.
+              br
+              li &#8226 clearly communicate your goals for the project: what will this project solve, and for whom?
+              br
+              li &#8226 know that they will use cutting edge JavaScript frameworks to build your project. Please don't expect them to use Wordpress or other proprietary or old-school technologies.
+              br
+              li &#8226 don't lower your expectiations. Their goal is to produce work that's up to your standards.
+  h3 If you're OK with all this, great! We can help you!
+  h4 Fill this out and we'll get right back to you.
   form.form-horizontal(role='form', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
     .form-group
-      label(class='col-sm-2 control-label', for='name') Name
+      label(class='col-sm-2 control-label', for='name') Your name
       .col-sm-8
         input.form-control(type='text', name='name', id='name', autofocus=true)
     .form-group
-      label(class='col-sm-2 control-label', for='email') Email
+      label(class='col-sm-2 control-label', for='email') Your email
       .col-sm-8
         input.form-control(type='text', name='email', id='email')
     .form-group
-      label(class='col-sm-2 control-label', for='message') Body
+      label(class='col-sm-2 control-label', for='message') Briefly describe what problem you need to solve, and for whom.
       .col-sm-8
         textarea.form-control(type='text', name='message', id='message', rows='7')
     .form-group
       .col-sm-offset-2.col-sm-8
         button.btn.btn-primary(type='submit')
           span.ion-paper-airplane
-          | Send
+          | Submit

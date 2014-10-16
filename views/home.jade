@@ -1,37 +1,66 @@
 extends layout
 block content
-    .text-center.jumbotron
-        h1 Become a Software Engineer
-        h2 Our free online coding bootcamp will help you land your first coding job!
-        .row
-            .col-xs-12.col-sm-12.col-md-4
-                h3 Technical Mastery
-                img.img-center.three-by-three.img-responsive(src="images/tools.svg")
-                p Pair program your way through our courses and coding challenges.
-            .col-xs-12.col-sm-12.col-md-4
-                h3 Unique Portfolio Projects
-                img.img-center.three-by-three.img-responsive(src="images/portfolio.svg")
-                p Contribute to Open Source Software. Work closely with non-profits and solve their problems with code.
-            .col-xs-12.col-sm-12.col-md-4
-                h3 Glowing References
-                img.img-center.three-by-three.img-responsive(src="images/references.svg")
-                p Gain the esteem of your peers and the people you help.
-        a.btn.btn-cta.btn-primary(href="/login") Sign in now to get started (it's free)
-        br
-        br
-        a.btn.btn-primary(href="/nonprofit") I'm with a non-profit and want help from a Software Engineer
+    .jumbotron
+        .text-center
+            h1 Become a Software Engineer
+            h2 Our free online coding bootcamp will help you land your first coding job!
+            .row
+                .col-xs-12.col-sm-12.col-md-4
+                    h3 Technical Mastery
+                    img.img-center.three-by-three.img-responsive(src="images/tools.svg")
+                    p Pair program your way through our courses and coding challenges.
+                .col-xs-12.col-sm-12.col-md-4
+                    h3 Unique Portfolio Projects
+                    img.img-center.three-by-three.img-responsive(src="images/portfolio.svg")
+                    p Contribute to Open Source Software. Work closely with non-profits and solve their problems with code.
+                .col-xs-12.col-sm-12.col-md-4
+                    h3 Glowing References
+                    img.img-center.three-by-three.img-responsive(src="images/references.svg")
+                    p Gain the esteem of your peers and the people you help.
+            a.btn.btn-cta.btn-primary(href="/login") Sign in now to get started (it's free)
+            br
+            br
+            a.btn.btn-success(href="/contact") I'm with a non-profit and want free help from a Software Engineer
+        .text-left
+            br
+            h2 How long does this take?
+            p It takes about 1,000 hours to master the skills you need to get an entry level software engineering job, or roughly one year if you code for 20 hours per week.
+            h2 What will I learn, and in what sequence?
+            ol
+                h3 In the first 100 hours, you'll learn basic web design tools like:
+                    h4
+                        ul
+                            li &#8226 HTML5
+                            li &#8226 CSS3
+                            li &#8226 Bootstrap
+                            li &#8226 jQuery
+                h3 Then you'll spend about 400 hours learning programming and computer science:
+                    h4
+                        ul
+                            li &#8226 JavaScript
+                            li &#8226 Linux
+                            li &#8226 Git
+                            li &#8226 Relational Databases
+                            li &#8226 Algorithms
+                h3 You'll spend the final 500 hours using Agile Methodologies and Full Stack JavaScript to build projects for non-profits:
+                    h4
+                        ul
+                            li &#8226 MongoDB
+                            li &#8226 AngularJS
+                            li &#8226 ExpressJS
+                            li &#8226 NodeJS
+            h2 How will I learn all this?
+                h3 By pair programming with other Free Code Camp students on our exercises. Don't think of programming as a lonely art - it's a collaborative process, and programmers learn better together. We've also built an optional curriculum of the best free courses on the web. Some people prefer working through the courses. Some people prefer to googling around for documentation and Stack Overflow posts when they get stuck. Most people do a little of both.
+            h2 Will I really be able to job afterward?
+                h3 At the end of Free Code Camp, you will have pair programmed around 1,000 hours with dozens of other students, built a portfolio of projects that people are actively using, and a roster of glowing references from non-profits you've helped. 75% of bootcamp graduates get software engineering jobs, and make an average annual salary of $76,000.
+                    a(href='https://www.coursereport.com/2014-graduate-survey.pdf', target='_blank') &nbsp; (Source)
 
-//    script(src='https://cdn.firebase.com/js/client/1.0.21/firebase.js')
-//    script(src='https://cdn.firebase.com/js/simple-login/1.6.3/firebase-simple-login.js')
-//    script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.js')
-//    script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/mode/javascript/javascript.js')
-//    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.5.0/codemirror.css')
-//    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js')
-//    link(rel='stylesheet', href='https://cdn.firebase.com/libs/firepad/1.0.0/firepad.css')
-//    link(rel='stylesheet', href='https://cdn.firebase.com/libs/firepad/1.0.0/firepad.css')
-//    script(src='https://cdn.firebase.com/libs/firepad/1.0.0/firepad.min.js')
-//    link(rel='stylesheet', href='css/firechat-default.css')
-//    script(src='js/firechat-default.js')
-//    #firepad-container
-//    #firechat-wrapper
-//      a(href='#', onclick='auth.login("twitter");') Login
+            h2 Do you have job placement services?
+                h3 Yes. We work with reputable technical recruitment firms and can help you find a good job.
+            h2 Is this really free? Do you claim part of my first year's salary like some bootcamps do?
+                h3 Our name is Free Code Camp. We are a free code camp. If you had to pay us  (or sign over future earnings), we'd have to change our name. And we are not going to do that.
+            h2 Does Free Code Camp have an application process?
+                h3 Unlike most bootcamps, anyone can study at Free Code Camp. We're not going to tell you that you can't become a software engineer. We believe the only person who should be able to tell you that is you. If you perservere, and keep working through our challenges and non-profits' projects, you will become an employable software engineer.
+        br
+        .text-center
+            a.btn.btn-cta.btn-primary(href="/login") Sign in now to get started (it's free)

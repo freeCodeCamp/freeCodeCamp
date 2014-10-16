@@ -39,7 +39,7 @@ $(document).ready(function() {
 
     // Sets the client's username
     function setUsername () {
-        username = cleanInput($usernameInput.val().trim());
+        username = auth.username;
 
         // If the username is valid
         if (username) {
