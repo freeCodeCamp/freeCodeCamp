@@ -4,14 +4,12 @@ var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
 var challenges = require('../seed_data/challenges.json');
 
-console.log(challenges);
-
 var challengeSchema = new mongoose.Schema({
     name: { type: String, unique: true },
     source: String,
     solution: String,
     link: String,
-    image: String, default: "http://modernweb.com/wp-content/uploads/2013/12/keep-calm-and-learn-javascript.jpg?e6778f",
+    image: String,
     time: Number,
     directions: Array
 });

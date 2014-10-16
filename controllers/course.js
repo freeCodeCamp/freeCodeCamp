@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res) {
-    res.render('curriculum/curriculum', {
+    res.render('course/course', {
         title: 'Curriculum',
     });
 };
