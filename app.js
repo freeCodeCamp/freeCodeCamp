@@ -252,6 +252,8 @@ module.exports = app;
  * Chat
  */
 
+
+
 var usernames = {};
 var numUsers = 0;
 
