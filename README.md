@@ -1072,10 +1072,25 @@ User.aggregate({ $group: { _id: null, total: { $sum: '$votes' } } }, function(er
 Deployment
 ----------
 
-Once you are ready to deploy your app, you will need to create an account with a cloud platform to host it. These are not
-the only choices, but they are my top picks. Create an account with **MongoLab** and then pick one of the 4 providers
-below. Once again, there are plenty of other choices and you are not limited to just the ones listed below. From my
-experience, **Heroku** is the easiest to get started with, it will automatically restart your node.js process when it crashes, custom domain support on free accounts and zero-downtime deployments.
+Once you are ready to deploy your app, you will need to create an account with
+a cloud platform to host it. These are not the only choices, but they are my top
+picks. From my experience, **Heroku** is the easiest to get started with, it will
+automatically restart your Node.js process when it crashes, zero-downtime
+deployments and custom domain support on free accounts. Additionally, you can
+create an account with **MongoLab** and then pick one of the 3 providers below.
+Again, there are plenty of other choices and you are not limited to just the ones
+listed below.
+
+### 1-Step Deployment with Heroku
+
+<img src="http://blog.exadel.com/wp-content/uploads/2013/10/heroku-Logo-1.jpg" width="200">
+- Download and install [Heroku Toolbelt](https://toolbelt.heroku.com/)
+- In terminal, run `heroku login` and enter your Heroku credentials
+- From *your app* directory run `heroku create`
+- Run `heroku addons:add mongolab` to set up Mongo and configure your environment variables
+- Lastly, do `git push heroku master`.  Done!
+
+---
 
 <img src="http://i.imgur.com/7KnCa5a.png" width="200">
 - Open [mongolab.com](https://mongolab.com) website
@@ -1097,11 +1112,6 @@ experience, **Heroku** is the easiest to get started with, it will automatically
 
 > **:exclamation:Note:** As an alternative to MongoLab, there is also [MongoHQ](http://www.mongohq.com/home).
 
-<img src="http://blog.exadel.com/wp-content/uploads/2013/10/heroku-Logo-1.jpg" width="200">
-- Download and install [Heroku Toolbelt](https://toolbelt.heroku.com/osx)
-- In terminal, run `heroku login` and enter your Heroku credentials
-- From *your app* directory run `heroku create`, followed by `git push heroku master`
-- Done!
 
 <img src="http://www.opencloudconf.com/images/openshift_logo.png" width="200">
 - First, install this Ruby gem: `sudo gem install rhc` :gem:
