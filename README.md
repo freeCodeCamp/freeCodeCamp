@@ -1077,7 +1077,7 @@ a cloud platform to host it. These are not the only choices, but they are my top
 picks. From my experience, **Heroku** is the easiest to get started with, it will
 automatically restart your Node.js process when it crashes, zero-downtime
 deployments and custom domain support on free accounts. Additionally, you can
-create an account with **MongoLab** and then pick one of the 3 providers below.
+create an account with **MongoLab** and then pick one of the *4* providers below.
 Again, there are plenty of other choices and you are not limited to just the ones
 listed below.
 
