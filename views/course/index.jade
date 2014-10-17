@@ -1,0 +1,5 @@
+extends ../layout
+block content
+    each course in courses
+        li
+            a(href="/courses/#{course._id}") #{course.name}
