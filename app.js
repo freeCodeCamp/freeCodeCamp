@@ -126,10 +126,10 @@ app.get('/courses/:id', courseController.view);
 app.get('/courses', courseController.index);
 app.get('/challenges/:id', challengeController.view);
 app.get('/challenges', challengeController.index);
-app.get('/challenges/first_website', challengeController.firstWebsite)
+//app.get('/challenges/first_website', challengeController.firstWebsite)
 app.get('/challenges/first_pair_programming_session', challengeController.firstPairProgrammingSession)
-app.get('/challenges/first_dynamic_website', challengeController.firstDynamicWebsite)
-app.get('/challenges/first_codepen', challengeController.firstCodePen)
+//app.get('/challenges/first_dynamic_website', challengeController.firstDynamicWebsite)
+//app.get('/challenges/first_codepen', challengeController.firstCodePen)
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
