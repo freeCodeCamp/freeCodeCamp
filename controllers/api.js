@@ -11,7 +11,7 @@ var tumblr = require('tumblr.js');
 var foursquare = require('node-foursquare')({ secrets: secrets.foursquare });
 var Github = require('github-api');
 var Twit = require('twit');
-var stripe =  require('stripe')(secrets.stripe.apiKey);
+var stripe =  require('stripe')(secrets.stripe.secretKey);
 var twilio = require('twilio')(secrets.twilio.sid, secrets.twilio.token);
 var Linkedin = require('node-linkedin')(secrets.linkedin.clientID, secrets.linkedin.clientSecret, secrets.linkedin.callbackURL);
 var clockwork = require('clockwork')({key: secrets.clockwork.apiKey});
@@ -363,7 +363,8 @@ exports.getSteam = function(req, res, next) {
 
 exports.getStripe = function(req, res) {
   res.render('api/stripe', {
-    title: 'Stripe API'
+    title: 'Stripe API',
+    publishableKey: secrets.stripe.publishableKey
   });
 };
 
