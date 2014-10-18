@@ -3,8 +3,6 @@
  */
 
 var express = require('express');
-var dotenv = require('dotenv');
-dotenv.load();
 var cookieParser = require('cookie-parser');
 var compress = require('compression');
 var session = require('express-session');
@@ -34,7 +32,6 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
-
 /**
  * API keys and Passport configuration.
  */
@@ -46,22 +43,7 @@ var passportConf = require('./config/passport');
  * Create Express server.
  */
 
-var socket = require('socket.io');
-var express = require('express');
-var http = require('http');
-
 var app = express();
-var server = http.createServer(app);
-
-server.listen(2999, function()  {
-    console.log('server started on %d', 2999);
-//    console.log(process.env)
-});
-
-
-var io = socket.listen(server);
-
-//console.log('Express server started on port %s', server.address().port);
 
 /**
  * Connect to MongoDB.
@@ -69,7 +51,7 @@ var io = socket.listen(server);
 
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
-  console.error('MongoDB Connection Error. Make sure MongoDB is running.');
+    console.error('MongoDB Connection Error. Make sure MongoDB is running.');
 });
 
 var hour = 3600000;
@@ -91,8 +73,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
 app.use(connectAssets({
-  paths: [path.join(__dirname, 'public/css'), path.join(__dirname, 'public/js')],
-  helperContext: app.locals
+    paths: [path.join(__dirname, 'public/css'), path.join(__dirname, 'public/js')],
+    helperContext: app.locals
 }));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -101,35 +83,35 @@ app.use(expressValidator());
 app.use(methodOverride());
 app.use(cookieParser());
 app.use(session({
-  resave: true,
-  saveUninitialized: true,
-  secret: secrets.sessionSecret,
-  store: new MongoStore({
-    url: secrets.db,
-    auto_reconnect: true
-  })
+    resave: true,
+    saveUninitialized: true,
+    secret: secrets.sessionSecret,
+    store: new MongoStore({
+        url: secrets.db,
+        auto_reconnect: true
+    })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(function(req, res, next) {
-  // CSRF protection.
-  if (_.contains(csrfExclude, req.path)) return next();
-  csrf(req, res, next);
+    // CSRF protection.
+    if (_.contains(csrfExclude, req.path)) return next();
+    csrf(req, res, next);
 });
 app.use(function(req, res, next) {
-  // Make user object available in templates.
-  res.locals.user = req.user;
-  next();
+    // Make user object available in templates.
+    res.locals.user = req.user;
+    next();
 });
 app.use(function(req, res, next) {
-  // Remember original destination before login.
-  var path = req.path.split('/')[1];
-  if (/auth|login|logout|signup|fonts|favicon/i.test(path)) {
-    return next();
-  }
-  req.session.returnTo = req.path;
-  next();
+    // Remember original destination before login.
+    var path = req.path.split('/')[1];
+    if (/auth|login|logout|signup|fonts|favicon/i.test(path)) {
+        return next();
+    }
+    req.session.returnTo = req.path;
+    next();
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 
@@ -157,7 +139,6 @@ app.post('/account/profile', passportConf.isAuthenticated, userController.postUp
 app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
-
 /**
  * API examples routes.
  */
@@ -190,10 +171,6 @@ app.get('/api/yahoo', apiController.getYahoo);
  * OAuth sign-in routes.
  */
 
-app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), function(req, res) {
-  res.redirect(req.session.returnTo || '/');
-});
 app.get('/auth/instagram', passport.authenticate('instagram'));
 app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
@@ -210,6 +187,10 @@ app.get('/auth/google', passport.authenticate('google', { scope: 'profile email'
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
+app.get('/auth/twitter', passport.authenticate('twitter'));
+app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), function(req, res) {
+    res.redirect(req.session.returnTo || '/');
+});
 app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
 app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
@@ -221,15 +202,15 @@ app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRe
 
 app.get('/auth/foursquare', passport.authorize('foursquare'));
 app.get('/auth/foursquare/callback', passport.authorize('foursquare', { failureRedirect: '/api' }), function(req, res) {
-  res.redirect('/api/foursquare');
+    res.redirect('/api/foursquare');
 });
 app.get('/auth/tumblr', passport.authorize('tumblr'));
 app.get('/auth/tumblr/callback', passport.authorize('tumblr', { failureRedirect: '/api' }), function(req, res) {
-  res.redirect('/api/tumblr');
+    res.redirect('/api/tumblr');
 });
 app.get('/auth/venmo', passport.authorize('venmo', { scope: 'make_payments access_profile access_balance access_email access_phone' }));
 app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '/api' }), function(req, res) {
-  res.redirect('/api/venmo');
+    res.redirect('/api/venmo');
 });
 
 /**
@@ -243,7 +224,7 @@ app.use(errorHandler());
  */
 
 app.listen(app.get('port'), function() {
-  console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
+    console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
 });
 
 module.exports = app;
