@@ -1090,6 +1090,8 @@ listed below.
 - Run `heroku addons:add mongolab` to set up Mongo and configure your environment variables
 - Lastly, do `git push heroku master`.  Done!
 
+**:exclamation:Note:** To install Heroku add-ons your account must be verified.
+
 ---
 
 <img src="http://i.imgur.com/7KnCa5a.png" width="200">
@@ -1110,7 +1112,7 @@ listed below.
 - Finally, in `secrets.js` instead of `db: 'localhost'`, use the following URI with your credentials:
  - `db: 'mongodb://USERNAME:PASSWORD@ds027479.mongolab.com:27479/DATABASE_NAME'`
 
-> **:exclamation:Note:** As an alternative to MongoLab, there is also [MongoHQ](http://www.mongohq.com/home).
+**:exclamation:Note:** As an alternative to MongoLab, there is also [MongoHQ](http://www.mongohq.com/home).
 
 
 <img src="http://www.opencloudconf.com/images/openshift_logo.png" width="200">
