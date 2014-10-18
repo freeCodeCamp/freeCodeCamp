@@ -1,0 +1,5 @@
+extends ../layout
+block content
+    each challenge in challenges
+        li
+            a(href="/challenges/#{challenge._id}") #{challenge.name}

@@ -13,6 +13,7 @@ var userSchema = new mongoose.Schema({
   google: String,
   instagram: String,
   tokens: Array,
+  challenges_completed: Array,
 
   profile: {
     name: { type: String, default: '' },
