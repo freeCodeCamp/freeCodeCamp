@@ -124,6 +124,16 @@ app.get('/', homeController.index);
 app.get('/curriculum', curriculumController.index);
 app.get('/course/:id', courseController.view);
 app.get('/courses', courseController.index);
+app.get('/course/codecademy-html-and-css-track', courseController.codecademyHtmlAndCssTrack)
+app.get('/course/code-school-discover-devtools-course', courseController.codeSchoolDiscoverDevtoolsCourse)
+app.get('/course/code-school-try-jquery-course', courseController.codeSchoolTryJqueryCourse)
+app.get('/course/codecademy-javascript-track', courseController.codecademyJavascriptTrack)
+app.get('/course/harvard-introduction-to-computer-science-cs50-course', courseController.harvardIntroductionToComputerScienceCs50Course)
+app.get('/course/linux-command-line-tutorial', courseController.linuxCommandLineTutorial)
+app.get('/course/code-school-try-git-course', courseController.codeSchoolTryGitCourse)
+app.get('/course/code-school-real-time-with-node-js-course', courseController.codeSchoolRealTimeWithNodeJsCourse)
+app.get('/course/code-school-shaping-up-with-angular-js-course', courseController.codeSchoolShapingUpWithAngularJsCourse)
+app.get('/course/m101js-mongodb-for-node-js-developers-course', courseController.m101jsMongoDBForNodeJsDevelopersCourse)
 //app.get('/challenges/:id', challengeController.view);
 //app.get('/challenges', challengeController.index);
 app.get('/challenges/create-and-deploy-a-website', challengeController.createAndDeployAWebsite)

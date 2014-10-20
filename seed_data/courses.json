@@ -20,6 +20,27 @@
         ]
     },
     {
+        "name": "Code School's Discover DevTools",
+        "link": "http://discover-devtools.codeschool.com/",
+        "image": "https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/197/completed-discover-devtools-b769c8b681384be3ad04cdf813b4a62c.png",
+        "time": 4,
+        "directions": [
+            "Did you know you can change the HTML and CSS on this page? You can even inject JavaScript. In fact, you can do this on any webpage!",
+            "Chrome has a built in DevTools that allow you to debug web pages, right in your browser. This is a super handy tool when you're building web applications.",
+            "This course will walk you through using these tools, and test your new skills with 75 exercises."
+        ]
+    },
+    {
+        "name": "Codecademy JavaScript Track",
+        "link": "http://www.codecademy.com/tracks/javascript",
+        "image": "https://d13yacurqjgara.cloudfront.net/users/98247/screenshots/1673756/codecademy_design.png",
+        "time": 10,
+        "directions": [
+            "All right, now let's start coding!",
+            "Codecademy's popular JavaScript track will teach you some basic syntax and common programming data structures in just a few hours."
+        ]
+    },
+    {
         "name": "Linux Command Line Tutorial",
         "link": "https://www.udemy.com/linux-command-line-volume1/",
         "image": "https://udemyimages-a.akamaihd.net/course/200_H/95246_69f4_7.jpg",
@@ -41,16 +62,6 @@
         ]
     },
     {
-        "name": "Codecademy JavaScript Track",
-        "link": "http://www.codecademy.com/tracks/javascript",
-        "image": "https://d13yacurqjgara.cloudfront.net/users/98247/screenshots/1673756/codecademy_design.png",
-        "time": 10,
-        "directions": [
-            "All right, now let's start coding!",
-            "Codecademy's popular JavaScript track will teach you some basic syntax and common programming data structures in just a few hours."
-        ]
-    },
-    {
         "name": "Introduction to Computer Science",
         "link": "https://www.edx.org/course/harvardx/harvardx-cs50x-introduction-computer-1022#.VDWSfSldWpQ",
         "image": "http://content.sportslogos.net/logos/31/695/full/k7ahkuime41f6elmq8qx.png",
@@ -59,28 +70,6 @@
             "Harvard's CS50 course is one of the most popular online courses of all time. It will give you a solid programming foundation.",
             "This course will introduce you to algorithms, databases, data structures, and a ton of theory.",
             "It's a long course, so be sure to mix it up with frequent pair programming sessions on FreeCodeCamp challenges."
-        ]
-    },
-    {
-        "name": "Code School's Discover DevTools",
-        "link": "http://discover-devtools.codeschool.com/",
-        "image": "https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/197/completed-discover-devtools-b769c8b681384be3ad04cdf813b4a62c.png",
-        "time": 4,
-        "directions": [
-            "Did you know you can change the HTML and CSS on this page? You can even inject JavaScript. In fact, you can do this on any webpage!",
-            "Chrome has a built in DevTools that allow you to debug web pages, right in your browser. This is a super handy tool when you're building web applications.",
-            "This course will walk you through using these tools, and test your new skills with 75 exercises."
-        ]
-    },
-    {
-        "name": "Code Your First API Integration",
-        "source": "Free Code Camp",
-        "link": "http://www.freecodecamp.com/",
-        "image": "http://status.twilio.com/images/logo.png",
-        "time": 10,
-        "directions": [
-            "Now it's time to flex your JavaScript skills and string together an array of data structures (puns intended).",
-            "And what better way than a to build a simple text messaging app?"
         ]
     },
     {

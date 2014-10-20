@@ -41,6 +41,17 @@
         ]
     },
     {
+        "name": "Code Your First API Integration",
+        "source": "Free Code Camp",
+        "link": "http://www.freecodecamp.com/",
+        "image": "http://status.twilio.com/images/logo.png",
+        "time": 2,
+        "directions": [
+            "Now it's time to flex your JavaScript skills and string together an array of data structures (puns intended).",
+            "And what better way than a to build a simple text messaging app?"
+        ]
+    },
+    {
         "source": "Project Euler",
         "directions": [
             "If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.",
