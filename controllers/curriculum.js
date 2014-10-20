@@ -9,8 +9,7 @@ exports.index = function(req, res) {
     Course.find(function(err, courses){
         res.render('curriculum/curriculum', {
             title: 'Curriculum',
-            courses: courses,
-            username: req.user.profile.username
+            courses: courses
         });
     });
 };

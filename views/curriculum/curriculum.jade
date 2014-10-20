@@ -1,5 +1,12 @@
 extends ../layout
 
 block content
-    h1= Your Courses
+    .page-header
+        h3 Your Curriculum
+    h1= title
+    ul
+        each course in courses
+            a(href="/courses/#{course.id}")
+                =course.name
+            br
 
