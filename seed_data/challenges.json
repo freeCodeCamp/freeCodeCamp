@@ -1,8 +1,8 @@
 [
     {
-        "name": "Build and Deploy Your First Website",
+        "name": "Create and Deploy a Website",
         "source": "Free Code Camp",
-        "link": "http://www.freecodecamp.com/first_website",
+        "link": "http://www.freecodecamp.com/create-and-deploy-a-website",
         "image": "http://startbootstrap.com/assets/img/templates/landing-page.jpg",
         "time": 1,
         "directions": [

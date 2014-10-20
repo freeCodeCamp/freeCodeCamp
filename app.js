@@ -122,14 +122,14 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 
 app.get('/', homeController.index);
 app.get('/curriculum', curriculumController.index);
-app.get('/courses/:id', courseController.view);
+app.get('/course/:id', courseController.view);
 app.get('/courses', courseController.index);
-app.get('/challenges/:id', challengeController.view);
-app.get('/challenges', challengeController.index);
-//app.get('/challenges/first_website', challengeController.firstWebsite)
-app.get('/challenges/first_pair_programming_session', challengeController.firstPairProgrammingSession)
-//app.get('/challenges/first_dynamic_website', challengeController.firstDynamicWebsite)
-//app.get('/challenges/first_codepen', challengeController.firstCodePen)
+//app.get('/challenges/:id', challengeController.view);
+//app.get('/challenges', challengeController.index);
+app.get('/challenges/create-and-deploy-a-website', challengeController.createAndDeployAWebsite)
+app.get('/challenges/challenges/add-dynamic-content-to-your-website', challengeController.experimentWithHtmlAndCssInCodepen)
+app.get('/challenges/experiment-with-html-and-css-in-codepen', challengeController.addDynamicContentToYourWebsite)
+app.get('/challenges/start-a-pair-programming-session', challengeController.startAPairProgrammingSession)
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -179,27 +179,27 @@ app.get('/api/yahoo', apiController.getYahoo);
  */
 
 app.get('/auth/instagram', passport.authenticate('instagram'));
-app.get('/auth/instagram/callback', passport.authenticate('instagram', { failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/instagram/callback', passport.authenticate('instagram', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/github', passport.authenticate('github'));
-app.get('/auth/github/callback', passport.authenticate('github', { failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/github/callback', passport.authenticate('github', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
-app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
-app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 
