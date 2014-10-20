@@ -4,27 +4,27 @@
         "source": "Free Code Camp",
         "link": "http://www.freecodecamp.com/create-and-deploy-a-website",
         "image": "http://startbootstrap.com/assets/img/templates/landing-page.jpg",
-        "time": 1,
         "directions": [
             "In the next 5 minutes, you'll create a website and deploy it to the internet!"
-        ]
+        ],
+        "links": ["http://startbootstrap.com/template-overviews/freelancer/", "http://bitballoon.com", "http://atom.io"]
     },
     {
         "name": "Start Your First Pair Programming Session",
         "source": "Free Code Camp",
         "link": "http://www.freecodecamp.com/first_pair_programming_session",
         "image": "https://screenhero.com/img/anim-collaboration.gif",
-        "time": 1,
         "directions": [
             "What's all this Pair Programming stuff about? Let's find out! We'll use a popular pair programming tool called Screen Hero."
-        ]
+        ],
+        "links": ["https://screenhero.com/download.html"]
+
     },
     {
         "name": "Make Your Static Page Dynamic Using POWR.io",
         "source": "Free Code Camp",
         "link": "http://www.freecodecamp.com/first_dynamic_website",
         "image": "https://s3-us-west-1.amazonaws.com/powr/images/powr_showcase_bg_1.jpg",
-        "time": 1,
         "directions": [
             "The website you created earlier is cool, but it's not very interactive. Let's "
         ]
@@ -34,7 +34,6 @@
         "source": "Free Code Camp",
         "link": "http://www.freecodecamp.com/first_codepen",
         "image": "https://s3-us-west-1.amazonaws.com/powr/images/powr_showcase_bg_1.jpg",
-        "time": 1,
         "directions": [
             "Let's put those HTML and CSS skills to work!",
             "You'll create your own databaseless webpage. We'll show you how."

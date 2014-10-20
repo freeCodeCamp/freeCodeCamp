@@ -27,8 +27,8 @@ var connectAssets = require('connect-assets');
 
 var homeController = require('./controllers/home');
 var curriculumController = require('./controllers/curriculum');
-var courseController = require('./controllers/course')
-var challengeController = require('./controllers/challenge')
+var coursesController = require('./controllers/courses')
+var challengesController = require('./controllers/challenges')
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
@@ -122,24 +122,24 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
 
 app.get('/', homeController.index);
 app.get('/curriculum', curriculumController.index);
-app.get('/course/:id', courseController.view);
-app.get('/courses', courseController.index);
-app.get('/course/codecademy-html-and-css-track', courseController.codecademyHtmlAndCssTrack)
-app.get('/course/code-school-discover-devtools-course', courseController.codeSchoolDiscoverDevtoolsCourse)
-app.get('/course/code-school-try-jquery-course', courseController.codeSchoolTryJqueryCourse)
-app.get('/course/codecademy-javascript-track', courseController.codecademyJavascriptTrack)
-app.get('/course/harvard-introduction-to-computer-science-cs50-course', courseController.harvardIntroductionToComputerScienceCs50Course)
-app.get('/course/linux-command-line-tutorial', courseController.linuxCommandLineTutorial)
-app.get('/course/code-school-try-git-course', courseController.codeSchoolTryGitCourse)
-app.get('/course/code-school-real-time-with-node-js-course', courseController.codeSchoolRealTimeWithNodeJsCourse)
-app.get('/course/code-school-shaping-up-with-angular-js-course', courseController.codeSchoolShapingUpWithAngularJsCourse)
-app.get('/course/m101js-mongodb-for-node-js-developers-course', courseController.m101jsMongoDBForNodeJsDevelopersCourse)
-//app.get('/challenges/:id', challengeController.view);
-//app.get('/challenges', challengeController.index);
-app.get('/challenges/create-and-deploy-a-website', challengeController.createAndDeployAWebsite)
-app.get('/challenges/challenges/add-dynamic-content-to-your-website', challengeController.experimentWithHtmlAndCssInCodepen)
-app.get('/challenges/experiment-with-html-and-css-in-codepen', challengeController.addDynamicContentToYourWebsite)
-app.get('/challenges/start-a-pair-programming-session', challengeController.startAPairProgrammingSession)
+app.get('/course/:id', coursesController.view);
+app.get('/courses', coursesController.index);
+app.get('/courses/codecademy-html-and-css-track', coursesController.codecademyHtmlAndCssTrack)
+app.get('/courses/code-school-discover-devtools-course', coursesController.codeSchoolDiscoverDevtoolsCourse)
+app.get('/courses/code-school-try-jquery-course', coursesController.codeSchoolTryJqueryCourse)
+app.get('/courses/codecademy-javascript-track', coursesController.codecademyJavascriptTrack)
+app.get('/courses/harvard-introduction-to-computer-science-cs50-course', coursesController.harvardIntroductionToComputerScienceCs50Course)
+app.get('/courses/linux-command-line-tutorial', coursesController.linuxCommandLineTutorial)
+app.get('/courses/code-school-try-git-course', coursesController.codeSchoolTryGitCourse)
+app.get('/courses/code-school-real-time-with-node-js-course', coursesController.codeSchoolRealTimeWithNodeJsCourse)
+app.get('/courses/code-school-shaping-up-with-angular-js-course', coursesController.codeSchoolShapingUpWithAngularJsCourse)
+app.get('/courses/m101js-mongodb-for-node-js-developers-course', coursesController.m101jsMongoDBForNodeJsDevelopersCourse)
+//app.get('/challenges/:id', challengesController.view);
+//app.get('/challenges', challengesController.index);
+app.get('/challenges/create-and-deploy-a-website', challengesController.createAndDeployAWebsite)
+app.get('/challenges/challenges/add-dynamic-content-to-your-website', challengesController.experimentWithHtmlAndCssInCodepen)
+app.get('/challenges/experiment-with-html-and-css-in-codepen', challengesController.addDynamicContentToYourWebsite)
+app.get('/challenges/start-a-pair-programming-session', challengesController.startAPairProgrammingSession)
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);

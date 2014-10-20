@@ -1,0 +1,21 @@
+.panel.panel-info
+    .panel-heading Challenge: #{name}
+    .panel.panel-body
+        img.img-center.img-responsive(src=image)
+        br
+        .visible-xs
+            iframe(src='//player.vimeo.com/video/109134466', width='300', height='187', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+        .hidden-xs
+            iframe(src='//player.vimeo.com/video/109134466', width='600', height='375', style="display:block;", frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+        h3 Instructions:
+        for direction in directions
+            p= direction
+
+        h3 Relevant Links (these open up in a new tab):
+        ol
+            for link in links
+                li
+                    a(href=link, target="blank")= link
+        br
+
+        a.btn.btn-primary.btn-large.btn-block(href='/curriculum') I've completed this challenge

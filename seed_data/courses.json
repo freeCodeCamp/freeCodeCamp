@@ -5,8 +5,19 @@
         "image": "https://d13yacurqjgara.cloudfront.net/users/98247/screenshots/1673756/codecademy_design.png",
         "time": 7,
         "directions": [
-            "Let's learn will learn HTML and CSS! Then we'll understand the structure (HTML) and the style (CSS) that underlies all webpages.",
-            "More than 5 million people have worked their way through this short, interactive course. Once you finish it, you'll be able create your own database-less webpages."
+            "Let's learn HTML and CSS! Then we'll understand the structure (HTML) and the style (CSS) that underlies all webpages.",
+            "More than 5 million people have worked their way through this short, interactive course. Once you finish it, you'll be able create your own webpages from scratch."
+        ]
+    },
+    {
+        "name": "Code School's Discover DevTools",
+        "link": "http://discover-devtools.codeschool.com/",
+        "image": "https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/197/completed-discover-devtools-b769c8b681384be3ad04cdf813b4a62c.png",
+        "time": 4,
+        "directions": [
+            "Did you know you can change the HTML and CSS on this page? You can even inject JavaScript. In fact, you can do this on any webpage!",
+            "Chrome has built in DevTools that allow you to debug web pages, right in your browser. This is a super handy tool when you're building web applications.",
+            "This course will walk you through using these tools, and test your new skills with 75 exercises."
         ]
     },
     {
@@ -20,17 +31,6 @@
         ]
     },
     {
-        "name": "Code School's Discover DevTools",
-        "link": "http://discover-devtools.codeschool.com/",
-        "image": "https://d1ffx7ull4987f.cloudfront.net/images/achievements/large_badge/197/completed-discover-devtools-b769c8b681384be3ad04cdf813b4a62c.png",
-        "time": 4,
-        "directions": [
-            "Did you know you can change the HTML and CSS on this page? You can even inject JavaScript. In fact, you can do this on any webpage!",
-            "Chrome has a built in DevTools that allow you to debug web pages, right in your browser. This is a super handy tool when you're building web applications.",
-            "This course will walk you through using these tools, and test your new skills with 75 exercises."
-        ]
-    },
-    {
         "name": "Codecademy JavaScript Track",
         "link": "http://www.codecademy.com/tracks/javascript",
         "image": "https://d13yacurqjgara.cloudfront.net/users/98247/screenshots/1673756/codecademy_design.png",
@@ -38,6 +38,17 @@
         "directions": [
             "All right, now let's start coding!",
             "Codecademy's popular JavaScript track will teach you some basic syntax and common programming data structures in just a few hours."
+        ]
+    },
+    {
+        "name": "Introduction to Computer Science",
+        "link": "https://www.edx.org/course/harvardx/harvardx-cs50x-introduction-computer-1022#.VDWSfSldWpQ",
+        "image": "http://content.sportslogos.net/logos/31/695/full/k7ahkuime41f6elmq8qx.png",
+        "time": 150,
+        "directions": [
+            "Harvard's CS50 course is one of the most popular online courses of all time. It will give you a solid programming foundation.",
+            "This course will introduce you to algorithms, databases, data structures, and a ton of theory.",
+            "It's a long course, so be sure to mix it up with frequent pair programming sessions on FreeCodeCamp challenges."
         ]
     },
     {
@@ -59,17 +70,6 @@
             "Have you ever accidentally deleted something? With Git, you will never have that problem again.",
             "Git is a Version Control System. It will track all changes to your files. That way you don't have to worry about your code breaking. You can just rewind time to back when your code worked right.",
             "This short course will help you install git and learn how it works."
-        ]
-    },
-    {
-        "name": "Introduction to Computer Science",
-        "link": "https://www.edx.org/course/harvardx/harvardx-cs50x-introduction-computer-1022#.VDWSfSldWpQ",
-        "image": "http://content.sportslogos.net/logos/31/695/full/k7ahkuime41f6elmq8qx.png",
-        "time": 150,
-        "directions": [
-            "Harvard's CS50 course is one of the most popular online courses of all time. It will give you a solid programming foundation.",
-            "This course will introduce you to algorithms, databases, data structures, and a ton of theory.",
-            "It's a long course, so be sure to mix it up with frequent pair programming sessions on FreeCodeCamp challenges."
         ]
     },
     {

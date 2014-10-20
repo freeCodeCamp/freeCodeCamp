@@ -1,0 +1,10 @@
+.panel.panel-info
+    .panel-heading Course: #{name}
+    .panel.panel-body
+        img.img-center.img-responsive(src=image)
+        h3 Takes about #{time} hours to complete
+
+        for direction in directions
+            p= direction
+
+        a.btn.btn-primary.btn-large.btn-block(href=link, target="blank") Go to course
