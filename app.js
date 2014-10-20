@@ -137,8 +137,8 @@ app.get('/courses/m101js-mongodb-for-node-js-developers-course', coursesControll
 //app.get('/challenges/:id', challengesController.view);
 //app.get('/challenges', challengesController.index);
 app.get('/challenges/create-and-deploy-a-website', challengesController.createAndDeployAWebsite)
-app.get('/challenges/challenges/add-dynamic-content-to-your-website', challengesController.experimentWithHtmlAndCssInCodepen)
-app.get('/challenges/experiment-with-html-and-css-in-codepen', challengesController.addDynamicContentToYourWebsite)
+app.get('/challenges/add-dynamic-content-to-your-website', challengesController.addDynamicContentToYourWebsite)
+app.get('/challenges/experiment-with-html-and-css-in-codepen', challengesController.experimentWithHtmlAndCssInCodepen)
 app.get('/challenges/start-a-pair-programming-session', challengesController.startAPairProgrammingSession)
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);

@@ -24,9 +24,22 @@ exports.createAndDeployAWebsite = function(req, res) {
     res.render('challenges/create-and-deploy-a-website', {
         name: 'Create and Deploy a Website',
         image: 'http://startbootstrap.com/assets/img/templates/landing-page.jpg',
-        video: "",
+        video: "109134466",
         directions: ["In the next 5 minutes, you'll create a website and deploy it to the internet!"],
-        links: ["http://startbootstrap.com/template-overviews/freelancer/", "http://bitballoon.com", "http://atom.io"]
+        links: ["http://startbootstrap.com", "http://bitballoon.com", "http://atom.io"]
+    });
+};
+
+exports.startAPairProgrammingSession = function(req, res) {
+    res.render('challenges/start-a-pair-programming-session', {
+        name: "Start Your First Pair Programming Session",
+        source: "Free Code Camp",
+        video: "",
+        image: "https://screenhero.com/img/anim-collaboration.gif",
+        directions: [
+            "What's all this Pair Programming stuff about? Let's find out!", "We'll use a popular pair programming tool called Screen Hero. We'll also visit the Free Code Camp chat room.", "We'll show you how to launch pair programming sessions right inside the chat room."
+        ],
+        links: ["https://screenhero.com/download.html", "https://www.hipchat.com/invite/178107/cc2f6ea4dfac9e48b9a88b305adae48a"]
     });
 };
 
@@ -39,7 +52,7 @@ exports.addDynamicContentToYourWebsite = function(req, res) {
         directions: [
             "The website you created earlier is cool, but it's not very interactive.", "Let's make it dynamic with POWr.io's drag-and-drop form and database tools!"
         ],
-        links: ["http://startbootstrap.com/template-overviews/freelancer/", "http://www.powr.io/", "http://bitballoon.com"]
+        links: ["http://startbootstrap.com", "http://www.powr.io", "http://bitballoon.com"]
     });
 };
 
@@ -54,18 +67,5 @@ exports.experimentWithHtmlAndCssInCodepen = function(req, res) {
             "You'll create your own databaseless webpage. We'll show you how."
         ],
         links: ["http://getbootstrap.com/", "http://www.usatoday.com/", "http://codepen.io/"]
-    });
-};
-
-exports.startAPairProgrammingSession = function(req, res) {
-    res.render('challenges/start-a-pair-programming-session', {
-        name: "Start Your First Pair Programming Session",
-        source: "Free Code Camp",
-        video: "",
-        image: "https://screenhero.com/img/anim-collaboration.gif",
-        directions: [
-            "What's all this Pair Programming stuff about? Let's find out!", "We'll use a popular pair programming tool called Screen Hero. We'll also visit the Free Code Camp chat room.", "We'll show you how to launch pair programming sessions right inside the chat room."
-        ],
-        links: ["https://screenhero.com/download.html", "https://www.hipchat.com/invite/178107/cc2f6ea4dfac9e48b9a88b305adae48a"]
     });
 };
