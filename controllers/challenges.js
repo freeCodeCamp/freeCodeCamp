@@ -67,7 +67,7 @@ exports.experimentWithHtmlAndCssInCodepen = function(req, res) {
         image: "http://www.designtrending.com/wp-content/uploads/2013/02/codepen_split.png",
         directions: [
             "Let's put those HTML and CSS skills to work!",
-            "You'll create your own databaseless webpage. We'll show you how."
+            "You'll learn bootstrap and see how you can build websites right in your browser with CodePen."
         ],
         links: ["http://getbootstrap.com/", "http://www.usatoday.com/", "http://codepen.io/"],
         challenges: ["Load the USAToday.com page in CodePen.", "Find some cat pictures online, copy their image URLs, and change the USAToday.com page to use these cat pictures instead of its normal images.", "USATODAY.com uses a multi-column bootstrap layout. See if you can change the layout to be a single-column layout, even at full width. Hint: the \"row\" and \"col-\" classes control this. Check the Bootstrap documentation linked to above if you get stuck."]
