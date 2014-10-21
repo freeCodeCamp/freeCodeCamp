@@ -35,7 +35,7 @@ exports.startAPairProgrammingSession = function(req, res) {
     res.render('challenges/start-a-pair-programming-session', {
         name: "Start Your First Pair Programming Session",
         source: "Free Code Camp",
-        video: "",
+        video: "109547811",
         image: "https://screenhero.com/img/anim-collaboration.gif",
         directions: [
             "What's all this Pair Programming stuff about? Let's find out!", "We'll use a popular pair programming tool called Screen Hero. We'll also visit the Free Code Camp chat room.", "We'll show you how to launch pair programming sessions right inside the chat room.", "Once you've \"paired\" with someone, they become your \"pair\". Show your new pair the website your website."
@@ -49,7 +49,7 @@ exports.addDynamicContentToYourWebsite = function(req, res) {
     res.render('challenges/add-dynamic-content-to-your-website', {
         name: "Add Dynamic Content to your Website with POWr.io",
         source: "Free Code Camp",
-        video: "",
+        video: "109599487",
         image: "https://s3-us-west-1.amazonaws.com/powr/images/powr_showcase_bg_1.jpg",
         directions: [
             "The website you created earlier is cool, but it's not very interactive.", "Let's make it dynamic with POWr.io's drag-and-drop form and database tools!"
@@ -63,13 +63,13 @@ exports.experimentWithHtmlAndCssInCodepen = function(req, res) {
     res.render('challenges/experiment-with-html-and-css-in-codepen', {
         name: "Create your first CodePen",
         source: "Free Code Camp",
-        video: "",
+        video: "109611164",
         image: "http://www.designtrending.com/wp-content/uploads/2013/02/codepen_split.png",
         directions: [
             "Let's put those HTML and CSS skills to work!",
             "You'll learn bootstrap and see how you can build websites right in your browser with CodePen."
         ],
         links: ["http://getbootstrap.com/", "http://www.usatoday.com/", "http://codepen.io/"],
-        challenges: ["Load the USAToday.com page in CodePen.", "Find some cat pictures online, copy their image URLs, and change the USAToday.com page to use these cat pictures instead of its normal images.", "USATODAY.com uses a multi-column bootstrap layout. See if you can change the layout to be a single-column layout, even at full width. Hint: the \"row\" and \"col-\" classes control this. Check the Bootstrap documentation linked to above if you get stuck."]
+        challenges: ["Load the HealthCare.gov page in CodePen.", "Find some cat pictures online, copy their image URLs, and change the HealthCare.gov page to use these cat pictures instead of its normal images.", "HealthCare.gov uses a multi-column bootstrap layout. See if you can change the layout to be a single-column layout at all widths, not just mobile width. Hint: the \"row\" and \"col-\" classes control this. Check the Bootstrap documentation linked to above if you get stuck."]
     });
 };
