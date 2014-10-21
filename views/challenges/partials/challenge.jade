@@ -17,4 +17,8 @@
                 li
                     a(href=link, target="blank")= link
         br
+        h3 Challenges:
+        ol
+            for challenge in challenges
+                li= challenge
         a.btn.btn-primary.btn-large.btn-block(href='/curriculum') I've completed this challenge

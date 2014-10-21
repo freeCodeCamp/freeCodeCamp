@@ -26,7 +26,8 @@ exports.createAndDeployAWebsite = function(req, res) {
         image: 'http://startbootstrap.com/assets/img/templates/landing-page.jpg',
         video: "109134466",
         directions: ["In the next 5 minutes, you'll create a website and deploy it to the internet!"],
-        links: ["http://startbootstrap.com", "http://bitballoon.com", "http://atom.io"]
+        links: ["http://startbootstrap.com", "http://bitballoon.com", "http://atom.io"],
+        challenges: ["Now that you have Atom installed, open up the index page of the template you downloaded. Go through the index page and change all the text to be about cats.", "The images used on a website are stored in the \"images\" directory. Browse the web for cat pictures, save them to the \"images\" directory.", "Change the image href's so that your cat pictures show up in the template."]
     });
 };
 
@@ -37,9 +38,10 @@ exports.startAPairProgrammingSession = function(req, res) {
         video: "",
         image: "https://screenhero.com/img/anim-collaboration.gif",
         directions: [
-            "What's all this Pair Programming stuff about? Let's find out!", "We'll use a popular pair programming tool called Screen Hero. We'll also visit the Free Code Camp chat room.", "We'll show you how to launch pair programming sessions right inside the chat room."
+            "What's all this Pair Programming stuff about? Let's find out!", "We'll use a popular pair programming tool called Screen Hero. We'll also visit the Free Code Camp chat room.", "We'll show you how to launch pair programming sessions right inside the chat room.", "Once you've \"paired\" with someone, they become your \"pair\". Show your new pair the website your website."
         ],
-        links: ["https://screenhero.com/download.html", "https://www.hipchat.com/invite/178107/cc2f6ea4dfac9e48b9a88b305adae48a"]
+        links: ["https://screenhero.com/download.html", "https://www.hipchat.com/invite/178107/cc2f6ea4dfac9e48b9a88b305adae48a"],
+        challenges: ["Show your new pair the website you created.", "Open up Atom and let them change some of the cat-related text on your website."]
     });
 };
 
@@ -52,7 +54,8 @@ exports.addDynamicContentToYourWebsite = function(req, res) {
         directions: [
             "The website you created earlier is cool, but it's not very interactive.", "Let's make it dynamic with POWr.io's drag-and-drop form and database tools!"
         ],
-        links: ["http://startbootstrap.com", "http://www.powr.io", "http://bitballoon.com"]
+        links: ["http://startbootstrap.com", "http://www.powr.io", "http://bitballoon.com"],
+        challenges: ["Add a POWr Twitter Feed widget to your website.", "Redeploy your website with BitBalloon and customize it to display tweets from a cat-related twitter account, like @TheDaiIyKitten"]
     });
 };
 
@@ -66,6 +69,7 @@ exports.experimentWithHtmlAndCssInCodepen = function(req, res) {
             "Let's put those HTML and CSS skills to work!",
             "You'll create your own databaseless webpage. We'll show you how."
         ],
-        links: ["http://getbootstrap.com/", "http://www.usatoday.com/", "http://codepen.io/"]
+        links: ["http://getbootstrap.com/", "http://www.usatoday.com/", "http://codepen.io/"],
+        challenges: ["Load the USAToday.com page in CodePen.", "Find some cat pictures online, copy their image URLs, and change the USAToday.com page to use these cat pictures instead of its normal images.", "USATODAY.com uses a multi-column bootstrap layout. See if you can change the layout to be a single-column layout, even at full width. Hint: the \"row\" and \"col-\" classes control this. Check the Bootstrap documentation linked to above if you get stuck."]
     });
 };
