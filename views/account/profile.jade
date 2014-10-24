@@ -29,8 +29,30 @@ block content
           | Update Profile
 
   p You can delete your account, but keep in mind this action is irreversible.
-  form(action='/account/delete', method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    button.btn.btn-danger(type='submit')
-      span.ion-trash-b
-      | Delete my account
+  button.btn.btn-danger.confirm-deletion
+    span.ion-trash-b
+    | Delete my account
+  script.
+      $('.confirm-deletion').on("click", function() {
+        $('#modal-dialog').modal('show');
+      });
+  #modal-dialog.modal.animated.bounceInLeft
+      .modal-dialog
+          .modal-content
+              .modal-header
+                  a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                  h3 Are you really leaving us?
+              .modal-body
+                  p Pro Tip: If you tweet feedback to&nbsp;
+                      a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
+                      | ,&nbsp;we will respond!
+              .modal-footer
+                  a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                      span.ion-happy
+                      | Nevermind, I'll stick around
+                  br
+                  form(action='/account/delete', method='POST')
+                      input(type='hidden', name='_csrf', value=_csrf)
+                      button.btn.btn-danger.btn-block(type='submit')
+                          span.ion-trash-b
+                          | Yes, Delete my account
