@@ -3,21 +3,22 @@
     .panel.panel-body
         .responsive-container.animated.zoomIn.delay-1
             iframe(src='//player.vimeo.com/video/#{video}', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
-        h3 Instructions:
-        for direction in directions
-            p= direction
+        .animated.fadeIn.delay-2
+            h3 Instructions:
+            for direction in directions
+                p= direction
 
-        h3 Relevant Links (these open up in a new tab):
-        ol
-            for link in links
-                li
-                    a(href=link, target="blank")= link
-        br
-        h3 Challenges:
-        ol
-            for challenge in challenges
-                li= challenge
-        .btn.btn-primary.btn-large.btn-block.completed-challenge I've completed this challenge
+            h3 Relevant Links (these open up in a new tab):
+            ol
+                for link in links
+                    li
+                        a(href=link, target="blank")= link
+            br
+            h3 Challenges:
+            ol
+                for challenge in challenges
+                    li= challenge
+            .btn.btn-primary.btn-large.btn-block.completed-challenge I've completed this challenge
     script.
         $('.completed-challenge').on("click", function() {
             $('#modal-dialog').modal('show');
