@@ -1,7 +1,7 @@
 .panel.panel-primary
     .panel-heading Challenge: #{name}
     .panel.panel-body
-        .responsive-container
+        .responsive-container.animated.zoomIn.delay-1
             iframe(src='//player.vimeo.com/video/#{video}', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
         h3 Instructions:
         for direction in directions
@@ -17,4 +17,18 @@
         ol
             for challenge in challenges
                 li= challenge
-        a.btn.btn-primary.btn-large.btn-block(href='/curriculum') I've completed this challenge
+        .btn.btn-primary.btn-large.btn-block.completed-challenge I've completed this challenge
+    script.
+        $('.completed-challenge').on("click", function() {
+            $('#modal-dialog').modal('show');
+        });
+    #modal-dialog.modal
+        .modal-dialog.animated.zoomIn.fast-animation
+            .modal-content
+                .modal-header
+                    a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                    .text-center
+                        h1.animated.zoomInDown Nicely done!
+                        .animated.zoomInUp.delay-1
+                            span.landing-icon.ion-checkmark-circled.text-success
+                    a.animated.fadeIn.delay-2.btn.btn-primary.btn-block(href='/curriculum', aria-hidden='true') Take me back to my curriculum

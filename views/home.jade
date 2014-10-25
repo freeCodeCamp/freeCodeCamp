@@ -2,31 +2,33 @@ extends layout
 block content
     .jumbotron
         .text-center
-            h1 Become a Software Engineer
+            .animated.pulse
+                h1 Become a Software Engineer
             h2 Learn to code by collaborating on projects for non-profits
-            .row
-                .col-xs-12.col-sm-12.col-md-4
-                    h3 Technical Mastery
-                    .negative-10
-                    span.landing-icon.ion-settings.text-primary
-                    .negative-10
-                    p You'll learn to code by pair programming (where two people code together on one computer) through our coding challenges.
-                .col-xs-12.col-sm-12.col-md-4
-                    h3 Unique Portfolio Projects
-                    .negative-10
-                    span.landing-icon.ion-social-github.text-primary
-                    .negative-10
-                    p You'll use your new coding skills to build software solutions for non-profits. Your portfolio projects will have grateful users.
-                .col-xs-12.col-sm-12.col-md-4
-                    h3 Glowing References
-                    .negative-10
-                    span.landing-icon.ion-thumbsup.text-primary
-                    .negative-10
-                    p You'll gain the respect of your peers and the non-profits you help. These types of connections are critical to your job search.
-            a.btn.btn-cta.btn-primary(href="/login") Sign in now to get started (it's free)
-            br
-            br
-            a.btn.btn-primary(href="/contact") I'm with a non-profit and want free help from a Software Engineer
+            .delay-2.animated.fadeIn
+                .row
+                    .col-xs-12.col-sm-12.col-md-4
+                        h3 Technical Mastery
+                        .negative-10
+                        span.landing-icon.ion-settings.text-primary
+                        .negative-10
+                        p You'll learn to code by pair programming (where two people code together on one computer) through our coding challenges.
+                    .col-xs-12.col-sm-12.col-md-4
+                        h3 Unique Portfolio Projects
+                        .negative-10
+                        span.landing-icon.ion-social-github.text-primary
+                        .negative-10
+                        p You'll use your new coding skills to build software solutions for non-profits. Your portfolio projects will have grateful users.
+                    .col-xs-12.col-sm-12.col-md-4
+                        h3 Glowing References
+                        .negative-10
+                        span.landing-icon.ion-thumbsup.text-primary
+                        .negative-10
+                        p You'll gain the respect of your peers and the non-profits you help. These types of connections are critical to your job search.
+                a.btn.btn-cta.btn-primary(href="/login") Sign in now to start coding (it's free)
+                br
+                br
+                a.btn.non-profit-cta.btn-success(href="/contact") I'm with a non-profit and want free help coding something
     br
     .panel.panel-primary
         .panel-heading.landing-panel-heading Frequently Asked Questions
@@ -101,4 +103,4 @@ block content
                     p Unlike most bootcamps, anyone can study at Free Code Camp. We're not going to tell you that you can't become a software engineer. We believe the only person who should be able to tell you that is you. If you perservere, and keep working through our challenges and non-profits' projects, you will become an employable software engineer.
     br
     .text-center
-        a.btn.btn-cta.btn-primary(href="/login") Sign in now to get started (it's free)
+        a.btn.btn-cta.btn-primary(href="/login") Sign in now to start coding (it's free)

@@ -1,42 +1,41 @@
 extends ../layout
 
 block content
-  .page-header
-    h3 Profile Information
+  h1 Update your profile here:
+  .animated.flipInX
+      form.form-horizontal(action='/account/profile', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          label.col-sm-2.control-label(for='email') Email
+          .col-sm-4
+            input.form-control(type='email', name='email', id='email', value='#{user.email}')
+        .form-group
+          label.col-sm-2.control-label(for='name') Name
+          .col-sm-4
+            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+        .form-group
+          label.col-sm-2.control-label(for='location') Location
+          .col-sm-4
+            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+        .form-group
+          label.col-sm-2.control-label(for='website') Website
+          .col-sm-4
+            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+        .form-group
+          .col-sm-offset-2.col-sm-4
+            button.btn.btn.btn-primary(type='submit')
+              span.ion-edit
+              | Update my profile
 
-  form.form-horizontal(action='/account/profile', method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label.col-sm-2.control-label(for='email') Email
-      .col-sm-4
-        input.form-control(type='email', name='email', id='email', value='#{user.email}')
-    .form-group
-      label.col-sm-2.control-label(for='name') Name
-      .col-sm-4
-        input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-    .form-group
-      label.col-sm-2.control-label(for='location') Location
-      .col-sm-4
-        input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-    .form-group
-      label.col-sm-2.control-label(for='website') Website
-      .col-sm-4
-        input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-    .form-group
-      .col-sm-offset-2.col-sm-4
-        button.btn.btn.btn-primary(type='submit')
-          span.ion-edit
-          | Update Profile
-
-  p You can delete your account, but keep in mind this action is irreversible.
+  h3 Danger Zone
   button.btn.btn-danger.confirm-deletion
     span.ion-trash-b
-    | Delete my account
+    | I want to delete my account
   script.
       $('.confirm-deletion').on("click", function() {
         $('#modal-dialog').modal('show');
       });
-  #modal-dialog.modal.animated.bounceInLeft
+  #modal-dialog.modal.animated.wobble
       .modal-dialog
           .modal-content
               .modal-header
@@ -45,7 +44,7 @@ block content
               .modal-body
                   p Pro Tip: If you tweet feedback to&nbsp;
                       a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
-                      | ,&nbsp;we will respond!
+                      | ,&nbsp;we'll act quickly on it!
               .modal-footer
                   a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
                       span.ion-happy
