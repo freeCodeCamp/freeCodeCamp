@@ -36,7 +36,7 @@ exports.postContact = function(req, res) {
 
   if (errors) {
     req.flash('errors', errors);
-    return res.redirect('/non-profits');
+    return res.redirect('/nonprofits');
   }
 
   var from = req.body.email;
@@ -55,9 +55,9 @@ exports.postContact = function(req, res) {
   transporter.sendMail(mailOptions, function(err) {
     if (err) {
       req.flash('errors', { msg: err.message });
-      return res.redirect('/non-profits');
+      return res.redirect('/nonprofits');
     }
     req.flash('success', { msg: 'Email has been sent successfully!' });
-    res.redirect('/non-profits');
+    res.redirect('/nonprofits');
   });
 };
