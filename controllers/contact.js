@@ -36,13 +36,13 @@ exports.postContact = function(req, res) {
 
   if (errors) {
     req.flash('errors', errors);
-    return res.redirect('/contact');
+    return res.redirect('/non-profits');
   }
 
   var from = req.body.email;
   var name = req.body.name;
   var body = req.body.message;
-  var to = 'quincy@courseforward.com';
+  var to = 'michaelqlarson@gmail.com';
   var subject = 'Free Code Camp';
 
   var mailOptions = {
@@ -55,9 +55,9 @@ exports.postContact = function(req, res) {
   transporter.sendMail(mailOptions, function(err) {
     if (err) {
       req.flash('errors', { msg: err.message });
-      return res.redirect('/contact');
+      return res.redirect('/non-profits');
     }
     req.flash('success', { msg: 'Email has been sent successfully!' });
-    res.redirect('/contact');
+    res.redirect('/non-profits');
   });
 };
