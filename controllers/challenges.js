@@ -38,10 +38,10 @@ exports.startAPairProgrammingSession = function(req, res) {
         video: "109547811",
         image: "https://screenhero.com/img/anim-collaboration.gif",
         directions: [
-            "What's all this Pair Programming stuff about? Let's find out!", "We'll use a popular pair programming tool called Screen Hero. We'll also visit the Free Code Camp chat room.", "We'll show you how to launch pair programming sessions right inside the chat room.", "Once you've \"paired\" with someone, they become your \"pair\". Show your new pair the website your website."
+            "What's all this Pair Programming stuff about? Let's find out!", "We'll use a popular pair programming tool called Screen Hero. We'll also visit the Free Code Camp chat room.", "We'll show you how to launch pair programming sessions right inside the chat room.", "Once you've \"paired\" with someone, they become your \"pair\". Show your new pair the website your just created."
         ],
         links: ["https://screenhero.com/download.html", "https://www.hipchat.com/invite/178107/cc2f6ea4dfac9e48b9a88b305adae48a"],
-        challenges: ["Show your new pair the website you created.", "Open up Atom and let them change some of the cat-related text on your website."]
+        challenges: ["Show your new pair the website you just created.", "Open up Atom and let them change some of the cat-related text on your website."]
     });
 };
 
