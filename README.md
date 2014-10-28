@@ -1197,12 +1197,12 @@ Changelog
 ---------
 
 ### 2.3.4 (October 27, 2014)
-- Font Awesome 4.2.0 01e7bd5c09926911ca856fe4990e6067d9148694
-- Code cleanup in `app.js` and `controllers/api.js`. 8ce48f767c0146062296685cc101acf3d5d224d9 cdbb9d1888a96bbba92d4d14deec99a8acba2618
-- Updated Stripe API example. afef373cd57b6a44bf856eb093e8f2801fc2dbe2
-- Added 1-step deployment process with Heroku and MongoLab add-on. c5def7b7b3b98462e9a2e7896dc11aaec1a48b3f
-- Updated Twitter apps dashboard url. e378fbbc24e269de69494d326bc20fcb641c0697
-- Fixed dead links in the README. 78fac5489c596e8bcef0ab11a96e654335573bb4
+- Font Awesome 4.2.0 [01e7bd5c09926911ca856fe4990e6067d9148694](https://github.com/sahat/hackathon-starter/commit/01e7bd5c09926911ca856fe4990e6067d9148694)
+- Code cleanup in `app.js` and `controllers/api.js`. [8ce48f767c0146062296685cc101acf3d5d224d9](https://github.com/sahat/hackathon-starter/commit/8ce48f767c0146062296685cc101acf3d5d224d9) [cdbb9d1888a96bbba92d4d14deec99a8acba2618](https://github.com/sahat/hackathon-starter/commit/cdbb9d1888a96bbba92d4d14deec99a8acba2618)
+- Updated Stripe API example. [afef373cd57b6a44bf856eb093e8f2801fc2dbe2](https://github.com/sahat/hackathon-starter/commit/afef373cd57b6a44bf856eb093e8f2801fc2dbe2)
+- Added 1-step deployment process with Heroku and MongoLab add-on. [c5def7b7b3b98462e9a2e7896dc11aaec1a48b3f](https://github.com/sahat/hackathon-starter/commit/c5def7b7b3b98462e9a2e7896dc11aaec1a48b3f)
+- Updated Twitter apps dashboard url. [e378fbbc24e269de69494d326bc20fcb641c0697](https://github.com/sahat/hackathon-starter/commit/e378fbbc24e269de69494d326bc20fcb641c0697)
+- Fixed dead links in the README. [78fac5489c596e8bcef0ab11a96e654335573bb4](https://github.com/sahat/hackathon-starter/commit/78fac5489c596e8bcef0ab11a96e654335573bb4)
 
 ### 2.3.3 (September 1, 2014)
 - Use *https* (instead of http) profile image URL with Twitter authentication
