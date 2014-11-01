@@ -19,11 +19,15 @@
                 for challenge in challenges
                     li= challenge
             .btn.btn-primary.btn-large.btn-block.completed-challenge I've completed this challenge
+            .btn.btn-primary.btn-large.btn-block.skip-challenge I want to skip this challenge
     script.
         $('.completed-challenge').on("click", function() {
-            $('#modal-dialog').modal('show');
+            $('#complete-dialog').modal('show');
         });
-    #modal-dialog.modal
+        $('.skip-challenge').on("click", function() {
+            $('#skip-dialog').modal('show');
+        });
+    #complete-dialog.modal
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
                 .modal-header
@@ -32,4 +36,14 @@
                         h1.animated.zoomInDown Nicely done!
                         .animated.zoomInUp.delay-1
                             span.landing-icon.ion-checkmark-circled.text-success
-                    a.animated.fadeIn.delay-2.btn.btn-primary.btn-block(href='/curriculum', aria-hidden='true') Take me back to my curriculum
+                    a.animated.fadeIn.delay-2.btn.btn-primary.btn-block(href='/curriculum', aria-hidden='true') Take me to my next challenge
+    #skip-dialog.modal
+        .modal-dialog.animated.zoomIn.fast-animation
+            .modal-content
+                .modal-header
+                    a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                    .text-center
+                        h1.animated.zoomInDown You can retry this challenge any time.
+                        .animated.zoomInUp.delay-1
+                            span.landing-icon.ion-skip-forward.text-warning
+                    a.animated.fadeIn.delay-2.btn.btn-primary.btn-block(href='/curriculum', aria-hidden='true') Take me to my next challenge
