@@ -4,26 +4,19 @@
 */
 var Challenge = require('./../models/Challenge')
 
-exports.index = function(req, res) {
-    Challenge.find(function(err, challenges){
-        res.render('challenges/index', {
-            title: 'Challenges',
-            challenges: challenges
-        });
-    });
-};
-exports.view = function(req, res) {
-    Challenge.findById(req.param.id, function(err, challenge){
-        res.render('challenges/view', {
-            title: 'Challenge',
-            challenge: challenge
-        });
+exports.aOneMinuteIntroToFreeCodeCamp = function(req, res) {
+    res.render('challenges/a-one-minute-introduction-to-free-code-camp', {
+        name: 'A one-minute introduction to Free Code Camp',
+        video: "109134466",
+        time: "5 minutes",
+        directions: ["Link up with the Free Code Camp community in our HipChat chat room."],
+        links: ["https://www.hipchat.com/invite/178107/cc2f6ea4dfac9e48b9a88b305adae48a"]
     });
 };
 
 exports.enterTheFreeCodeCampChatRoom = function(req, res) {
     res.render('challenges/enter-the-free-code-camp-chat-room', {
-        name: 'Enter the Fre Code Camp Chat Room',
+        name: 'Enter the Free Code Camp Chat Room',
         video: "109134466",
         time: "5 minutes",
         directions: ["Link up with the Free Code Camp community in our HipChat chat room."],
@@ -43,7 +36,7 @@ exports.installGithubAtomTextEditor = function(req, res) {
 
 exports.createAndDeployAWebsite = function(req, res) {
     res.render('challenges/create-and-deploy-a-website', {
-        name: 'Create and Deploy a Website',
+        name: 'Create a Website and Deploy it to the Internet',
         video: "109134466",
         time: "5 minutes",
         directions: ["In the next 5 minutes, you'll create a website and deploy it to the internet!"],
@@ -66,7 +59,7 @@ exports.startAPairProgrammingSession = function(req, res) {
 
 exports.addDynamicContentToYourWebsite = function(req, res) {
     res.render('challenges/add-dynamic-content-to-your-website', {
-        name: "Add Dynamic Content to your Website with POWr.io",
+        name: "Add Dynamic Content to your Website",
         source: "Free Code Camp",
         video: "109599487",
         time: "10 minutes",
@@ -79,7 +72,7 @@ exports.addDynamicContentToYourWebsite = function(req, res) {
 
 exports.codecademyHtmlAndCssTrack = function(req, res) {
     res.render('challenges/codecademy-html-and-css-track', {
-        name: "Codecademy HTML & CSS Track",
+        name: "Codecademy's HTML & CSS Track",
         links: ["http://www.codecademy.com/tracks/web"],
         time: "7 hours",
         directions: [
@@ -91,7 +84,7 @@ exports.codecademyHtmlAndCssTrack = function(req, res) {
 
 exports.experimentWithHtmlAndCssInCodepen = function(req, res) {
     res.render('challenges/experiment-with-html-and-css-in-codepen', {
-        name: "Create your first CodePen",
+        name: "Experiment with HTML and CSS in CodePen",
         source: "Free Code Camp",
         video: "109611164",
         time: "30 minutes",
@@ -181,9 +174,9 @@ exports.getHelpTheHackerWayWithRsap = function(req, res) {
     });
 };
 
-exports.completeTheEasyAlgorithmScriptingChallengesOnCoderbyte = function(req, res) {
-    res.render('challenges/complete-the-easy-algorthim-scripting-challenges-on-coderbyte', {
-        name: "Complete the Easy Algorithm Scripting Challenges on Coderbyte",
+exports.easyAlgorithmScriptingChallengesOnCoderbyte = function(req, res) {
+    res.render('challenges/easy-algorthim-scripting-challenges-on-coderbyte', {
+        name: "Easy Algorithm Scripting Challenges on Coderbyte",
         links: [""],
         time: "15 hours",
         directions: [
@@ -204,9 +197,9 @@ exports.harvardIntroductionToComputerScienceCs50Course = function(req, res) {
     });
 };
 
-exports.completeTheMediumAlgorithmScriptingChallengesOnCoderbyte = function(req, res) {
-    res.render('challenges/complete-the-medium-algorthim-scripting-challenges-on-coderbyte', {
-        name: "Complete the Medium Algorithm Scripting Challenges on Coderbyte",
+exports.mediumAlgorithmScriptingChallengesOnCoderbyte = function(req, res) {
+    res.render('challenges/medium-algorthim-scripting-challenges-on-coderbyte', {
+        name: "Medium Algorithm Scripting Challenges on Coderbyte",
         links: [""],
         time: "15 hours",
         directions: [
@@ -244,9 +237,9 @@ exports.buildATextBasedAdventure = function(req, res) {
     });
 };
 
-exports.completeTheHardAlgorithmScriptingChallengesOnCoderbyte = function(req, res) {
-    res.render('challenges/complete-the-hard-algorthim-scripting-challenges-on-coderbyte', {
-        name: "Complete the Hard Algorithm Scripting Challenges on Coderbyte",
+exports.hardAlgorithmScriptingChallengesOnCoderbyte = function(req, res) {
+    res.render('challenges/hard-algorthim-scripting-challenges-on-coderbyte', {
+        name: "Hard Algorithm Scripting Challenges on Coderbyte",
         links: [""],
         time: "15 hours",
         directions: [

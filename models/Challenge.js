@@ -4,10 +4,9 @@ var secrets = require('../config/secrets');
 var challengeSchema = new mongoose.Schema({
     name: { type: String, unique: true },
     source: String,
-    solution: String,
-    link: String,
-    image: String,
-    time: Number,
+    time: String,
+    links: Array,
+    video: String,
     directions: Array
 });
 

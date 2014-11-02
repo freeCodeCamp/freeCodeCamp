@@ -119,18 +119,46 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
  */
 
 app.get('/', homeController.index);
+app.get('challenges/a-one-minute-introduction-to-free-code-camp', challengesController.aOneMinuteIntroToFreeCodeCamp);
+app.get('/challenges/enter-the-free-code-camp-chat-room', challengesController.enterTheFreeCodeCampChatRoom);
+app.get('/challenges/install-github-atom-text-editor', challengesController.installGithubAtomTextEditor);
+app.get('/challenges/create-and-deploy-a-website', challengesController.createAndDeployAWebsite);
+app.get('/challenges/start-a-pair-programming-session', challengesController.startAPairProgrammingSession);
+app.get('/challenges/add-dynamic-content-to-your-website', challengesController.addDynamicContentToYourWebsite);
 app.get('/challenges/codecademy-html-and-css-track', challengesController.codecademyHtmlAndCssTrack)
-app.get('/challenges/code-school-discover-devtools-course', challengesController.codeSchoolDiscoverDevtoolsCourse)
-app.get('/challenges/code-school-try-jquery-course', challengesController.codeSchoolTryJqueryCourse)
-app.get('/challenges/codecademy-javascript-track', challengesController.codecademyJavascriptTrack)
-app.get('/challenges/harvard-introduction-to-computer-science-cs50-course', challengesController.harvardIntroductionToComputerScienceCs50Course)
-app.get('/challenges/code-school-try-git-course', challengesController.codeSchoolTryGitCourse)
-app.get('/challenges/code-school-real-time-with-node-js-course', challengesController.codeSchoolRealTimeWithNodeJsCourse)
-app.get('/challenges/code-school-shaping-up-with-angular-js-course', challengesController.codeSchoolShapingUpWithAngularJsCourse)
-app.get('/challenges/create-and-deploy-a-website', challengesController.createAndDeployAWebsite)
-app.get('/challenges/add-dynamic-content-to-your-website', challengesController.addDynamicContentToYourWebsite)
 app.get('/challenges/experiment-with-html-and-css-in-codepen', challengesController.experimentWithHtmlAndCssInCodepen)
-app.get('/challenges/start-a-pair-programming-session', challengesController.startAPairProgrammingSession)
+app.get('/challenges/code-school-try-jquery-course', challengesController.codeSchoolTryJqueryCourse)
+app.get('/challenges/complete-jquery-exercises', challengesController.completeJqueryExercises);
+app.get('/challenges/code-school-discover-devtools-course', challengesController.codeSchoolDiscoverDevtoolsCourse)
+app.get('/challenges/customize-bootstrap-with-bootswatch', challengesController.customizeBootstrapWithBootswatch);
+app.get('/challenges/inject-life-with-css-transformations', challengesController.injectLifeWithCssTransformations);
+app.get('/challenges/codecademy-javascript-track', challengesController.codecademyJavascriptTrack)
+app.get('/challenges/get-help-the-hacker-way-with-rsap', challengesController.getHelpTheHackerWayWithRsap);
+app.get('/challenges/easy-algorthim-scripting-challenges-on-coderbyte', challengesController.easyAlgorithmScriptingChallengesOnCoderbyte);
+app.get('/challenges/harvard-introduction-to-computer-science-cs50-course', challengesController.harvardIntroductionToComputerScienceCs50Course)
+app.get('/challenges/medium-algorthim-scripting-challenges-on-coderbyte', challengesController.mediumAlgorithmScriptingChallengesOnCoderbyte);
+app.get('/challenges/stanfords-relational-databases-mini-course', challengesController.stanfordsRelationalDatabasesMiniCourse);
+app.get('/challenges/stanfords-json-mini-course', challengesController.stanfordsJsonMiniCourse);
+app.get('/challenges/build-a-text-based-adventure', challengesController.buildATextBasedAdventure);
+app.get('/challenges/hard-algorthim-scripting-challenges-on-coderbyte', challengesController.hardAlgorithmScriptingChallengesOnCoderbyte);
+app.get('/challenges/stanfords-sql-mini-course', challengesController.stanfordsSqlMiniCourse);
+app.get('/challenges/build-an-interview-question-machine', challengesController.buildAnInterviewQuestionMachine);
+app.get('/challenges/code-school-try-git-course', challengesController.codeSchoolTryGitCourse)
+app.get('/challenges/install-node-js', challengesController.installNodeJs);
+app.get('/challenges/clone-a-github-repo', challengesController.cloneAGithubRepo);
+app.get('/challenges/deploy-an-app-to-heroku', challengesController.deployAnAppToHeroku);
+app.get('/challenges/code-school-real-time-with-node-js-course', challengesController.codeSchoolRealTimeWithNodeJsCourse)
+app.get('/challenges/try-mongodb', challengesController.tryMongoDb);
+app.get('/challenges/explore-your-network-with-the-linkedin-api', challengesController.exploreYourNetworkWithTheLinkedInApi);
+app.get('/challenges/build-your-first-api', challengesController.buildYourFirstApi);
+app.get('/challenges/aggregate-data-with-chron-jobs-and-screen-scraping', challengesController.aggregateDataWithChronJobsAndScreenScraping);
+app.get('/challenges/code-school-shaping-up-with-angular-js-course', challengesController.codeSchoolShapingUpWithAngularJsCourse);
+app.get('/challenges/reverse-engineer-snapchat', challengesController.reverseEngineerSnapchat);
+app.get('/challenges/reverse-engineer-reddit', challengesController.reverseEngineerReddit);
+app.get('/challenges/reverse-engineer-pintrest', challengesController.reverseEngineerPintrest);
+app.get('/challenges/help-a-nonprofit-team-project', challengesController.helpANonprofitTeamProject);
+app.get('/challenges/help-a-nonprofit-solo-project', challengesController.helpANonprofitSoloProject);
+app.get('/challenges/crack-the-coding-interview', challengesController.crackTheCodingInterview);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -180,27 +208,27 @@ app.get('/api/yahoo', apiController.getYahoo);
  */
 
 app.get('/auth/instagram', passport.authenticate('instagram'));
-app.get('/auth/instagram/callback', passport.authenticate('instagram', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/instagram/callback', passport.authenticate('instagram', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/github', passport.authenticate('github'));
-app.get('/auth/github/callback', passport.authenticate('github', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/github/callback', passport.authenticate('github', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
-app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
-app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { successRedirect: '/curriculum',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 
