@@ -1,8 +1,7 @@
 $(document).ready(function() {
     $('.start-challenge').on("click", function() {
-        $(this).addClass('animated zoomOut');
-        $('.completed-challenge').removeClass('hidden-element').addClass('animated zoomIn delay-1');
-        $('.skip-challenge').removeClass('hidden-element').addClass('animated zoomIn delay-1');
+        $(this).parent().remove();
+        $('.challenge-content').removeClass('hidden-element').addClass('animated fadeInDown');
     });
     $('.completed-challenge').on("click", function() {
         $('#complete-dialog').modal('show');

@@ -1,27 +1,26 @@
 .panel.panel-primary
     .panel-heading Challenge: #{name}
     .panel.panel-body
-        .responsive-container.animated.zoomIn.delay-1
-            iframe(src='//player.vimeo.com/video/#{video}?autoplay=1', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
-        .animated.fadeIn.delay-2
-            h3 Instructions:
-            for direction in directions
-                p= direction
-
-            h3 Links You'll need:
+        .challenge-brief
+            h3.text-center
+                span.ion-android-clock
+                span Takes about #{time}
+            .btn.btn-primary.btn-large.btn-block.start-challenge Start the challenge
+        .challenge-content.hidden-element
+            .responsive-container
+                iframe(src='//player.vimeo.com/video/#{video}', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+            h3 Steps:
             ol
-                for link in links
-                    li
-                        a(href=link, target="blank")= link
-            .button-container
-                .btn.btn-primary.btn-large.btn-block.start-challenge Start my challenge and open these links in new tabs
-                .btn.btn-success.btn-large.btn-block.completed-challenge.hidden-element I've completed this challenge
-                .ten-pixel-break
-                .btn.btn-primary.btn-large.btn-block.skip-challenge.hidden-element I want to skip this challenge
+                for step in steps
+                    li!= step
+            .btn.btn-success.btn-large.btn-block.completed-challenge I've completed this challenge
+            .ten-pixel-break
+            .text-center
+                a.skip-challenge(href="#") I want to skip this challenge for now
     .panel-footer.text-center
         span Need a break? &nbsp;
         a(href="http://blog.freecodecamp.com", target="_blank") Check out our blog
-        | &nbsp; and &nbsp;
+        | &ensp; and &ensp;
         a(href="https://twitter.com/freecodecamp", target="_blank") our recent tweets
         | .
 

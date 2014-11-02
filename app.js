@@ -119,10 +119,11 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
  */
 
 app.get('/', homeController.index);
-app.get('challenges/a-one-minute-introduction-to-free-code-camp', challengesController.aOneMinuteIntroToFreeCodeCamp);
+app.get('/challenges/a-one-minute-introduction-to-free-code-camp', challengesController.aOneMinuteIntroToFreeCodeCamp);
 app.get('/challenges/enter-the-free-code-camp-chat-room', challengesController.enterTheFreeCodeCampChatRoom);
-app.get('/challenges/install-github-atom-text-editor', challengesController.installGithubAtomTextEditor);
 app.get('/challenges/create-and-deploy-a-website', challengesController.createAndDeployAWebsite);
+app.get('/challenges/install-github-atom-text-editor', challengesController.installGithubAtomTextEditor);
+app.get('/challenges/modify-and-redeploy-your-website', challengesController.modifyAndRedeployYourWebsite);
 app.get('/challenges/start-a-pair-programming-session', challengesController.startAPairProgrammingSession);
 app.get('/challenges/add-dynamic-content-to-your-website', challengesController.addDynamicContentToYourWebsite);
 app.get('/challenges/codecademy-html-and-css-track', challengesController.codecademyHtmlAndCssTrack)
