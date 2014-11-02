@@ -13,20 +13,11 @@
                 for link in links
                     li
                         a(href=link, target="blank")= link
-            br
-            h3 Challenges:
-            ol
-                for challenge in challenges
-                    li= challenge
-            .btn.btn-primary.btn-large.btn-block.completed-challenge I've completed this challenge
-            .btn.btn-primary.btn-large.btn-block.skip-challenge I want to skip this challenge
-    script.
-        $('.completed-challenge').on("click", function() {
-            $('#complete-dialog').modal('show');
-        });
-        $('.skip-challenge').on("click", function() {
-            $('#skip-dialog').modal('show');
-        });
+            .button-container
+                .btn.btn-primary.btn-large.btn-block.start-challenge Start my challenge and open these links in new tabs
+                .btn.btn-success.btn-large.btn-block.completed-challenge.hidden-element I've completed this challenge
+                .ten-pixel-break
+                .btn.btn-primary.btn-large.btn-block.skip-challenge.hidden-element I want to skip this challenge
     #complete-dialog.modal
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
@@ -43,7 +34,8 @@
                 .modal-header
                     a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
                     .text-center
-                        h1.animated.zoomInDown You can retry this challenge any time.
+                        h1.animated.zoomInDown No problem.
+                        h2.animated.zoomInDown You can retry this challenge any time.
                         .animated.zoomInUp.delay-1
-                            span.landing-icon.ion-skip-forward.text-warning
+                            span.landing-icon.ion-skip-forward.text-primary
                     a.animated.fadeIn.delay-2.btn.btn-primary.btn-block(href='/curriculum', aria-hidden='true') Take me to my next challenge
