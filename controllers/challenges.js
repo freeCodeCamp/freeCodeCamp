@@ -26,8 +26,8 @@ exports.enterTheFreeCodeCampChatRoom = function(req, res) {
         name: 'Enter the Fre Code Camp Chat Room',
         video: "109134466",
         time: "5 minutes",
-        directions: ["Link up with the Free Code Camp community in our HipChat chat room.", "Just follow this link"],
-        links: ["https://www.hipchat.com/invite/178107/cc2f6ea4dfac9e48b9a88b305adae48a"],
+        directions: ["Link up with the Free Code Camp community in our HipChat chat room."],
+        links: ["https://www.hipchat.com/invite/178107/cc2f6ea4dfac9e48b9a88b305adae48a"]
     });
 };
 
@@ -100,7 +100,7 @@ exports.experimentWithHtmlAndCssInCodepen = function(req, res) {
             "You'll learn bootstrap and see how you can build websites right in your browser with CodePen.",
             "Load the HealthCare.gov page in CodePen.", "Find some cat pictures online, copy their image URLs, and change the HealthCare.gov page to use these cat pictures instead of its normal images.", "HealthCare.gov uses a multi-column bootstrap layout. See if you can change the layout to be a single-column layout at all widths, not just mobile width. Hint: the \"row\" and \"col-\" classes control this. Check the Bootstrap documentation linked to above if you get stuck."
         ],
-        links: ["http://getbootstrap.com/", "http://www.usatoday.com/", "http://codepen.io/"],
+        links: ["http://getbootstrap.com/", "http://www.usatoday.com/", "http://codepen.io/"]
     });
 };
 
@@ -122,7 +122,7 @@ exports.completeJqueryExercises = function(req, res) {
         links: ["http://jqexercise.droppages.com/"],
         time: "3 hours",
         directions: [
-            "jQuery gives you an easy way to modify your HTML and CSS without reloading your page.",
+            "jQuery gives you an easy way to modify your HTML and CSS without reloading your page."
         ]
     });
 };
@@ -172,8 +172,8 @@ exports.codecademyJavascriptTrack = function(req, res) {
 };
 
 exports.getHelpTheHackerWayWithRsap = function(req, res) {
-    res.render('challenges/get-help-the-hacker-way-with-rsap', {
-        name: "Get Help the Hacker Way with RSAP',
+    res.render("challenges/get-help-the-hacker-way-with-rsap", {
+        name: "Get Help the Hacker Way with RSAP",
         links: ["http://webchat.freenode.net/", "http://stackoverflow.com/"],
         time: "30 minutes",
         directions: [
@@ -183,7 +183,7 @@ exports.getHelpTheHackerWayWithRsap = function(req, res) {
 
 exports.completeTheEasyAlgorithmScriptingChallengesOnCoderbyte = function(req, res) {
     res.render('challenges/complete-the-easy-algorthim-scripting-challenges-on-coderbyte', {
-        name: "Complete the Easy Algorithm Scripting Challenges on Coderbyte',
+        name: "Complete the Easy Algorithm Scripting Challenges on Coderbyte",
         links: [""],
         time: "15 hours",
         directions: [
@@ -206,7 +206,7 @@ exports.harvardIntroductionToComputerScienceCs50Course = function(req, res) {
 
 exports.completeTheMediumAlgorithmScriptingChallengesOnCoderbyte = function(req, res) {
     res.render('challenges/complete-the-medium-algorthim-scripting-challenges-on-coderbyte', {
-        name: "Complete the Medium Algorithm Scripting Challenges on Coderbyte',
+        name: "Complete the Medium Algorithm Scripting Challenges on Coderbyte",
         links: [""],
         time: "15 hours",
         directions: [
@@ -216,7 +216,7 @@ exports.completeTheMediumAlgorithmScriptingChallengesOnCoderbyte = function(req,
 
 exports.stanfordsRelationalDatabasesMiniCourse = function(req, res) {
     res.render('challenges/stanfords-relational-databases-mini-course', {
-        name: "Stanford's Relational Databases Mini-course',
+        name: "Stanford's Relational Databases Mini-course",
         links: [""],
         time: "10 hours",
         directions: [
@@ -226,7 +226,7 @@ exports.stanfordsRelationalDatabasesMiniCourse = function(req, res) {
 
 exports.stanfordsJsonMiniCourse = function(req, res) {
     res.render('challenges/stanfords-json-mini-course', {
-        name: "Stanford's JSON Mini-course',
+        name: "Stanford's JSON Mini-course",
         links: [""],
         time: "2 hours",
         directions: [
@@ -236,7 +236,7 @@ exports.stanfordsJsonMiniCourse = function(req, res) {
 
 exports.buildATextBasedAdventure = function(req, res) {
     res.render('challenges/build-a-text-based-adventure', {
-        name: "Build a Text-based Adventure',
+        name: "Build a Text-based Adventure",
         links: [""],
         time: "5 hours",
         directions: [
@@ -246,7 +246,7 @@ exports.buildATextBasedAdventure = function(req, res) {
 
 exports.completeTheHardAlgorithmScriptingChallengesOnCoderbyte = function(req, res) {
     res.render('challenges/complete-the-hard-algorthim-scripting-challenges-on-coderbyte', {
-        name: "Complete the Hard Algorithm Scripting Challenges on Coderbyte',
+        name: "Complete the Hard Algorithm Scripting Challenges on Coderbyte",
         links: [""],
         time: "15 hours",
         directions: [
@@ -256,7 +256,7 @@ exports.completeTheHardAlgorithmScriptingChallengesOnCoderbyte = function(req, r
 
 exports.stanfordsSqlMiniCourse = function(req, res) {
     res.render('challenges/stanfords-sql-mini-course', {
-        name: "Stanford's SQL Mini-course',
+        name: "Stanford's SQL Mini-course",
         links: [""],
         time: "10 hours",
         directions: [
@@ -266,7 +266,7 @@ exports.stanfordsSqlMiniCourse = function(req, res) {
 
 exports.buildAnInterviewQuestionMachine = function(req, res) {
     res.render('challenges/build-an-interview-question-machine', {
-        name: "Build an Interview Question Machine',
+        name: "Build an Interview Question Machine",
         links: [""],
         time: "5 hours",
         directions: [
@@ -384,7 +384,7 @@ exports.codeSchoolShapingUpWithAngularJsCourse = function(req, res) {
 };
 
 exports.reverseEngineerSnapchat = function(req, res) {
-    res.render('challenges/reverseEngineerSnapchat', {
+    res.render('challenges/reverse-engineer-snapchat', {
         name: "Reverse Engineer Snapchat",
         links: [""],
         time: "50 hours",
@@ -394,7 +394,7 @@ exports.reverseEngineerSnapchat = function(req, res) {
 };
 
 exports.reverseEngineerReddit = function(req, res) {
-    res.render('challenges/reverseEngineerReddit', {
+    res.render('challenges/reverse-engineer-reddit', {
         name: "Reverse Engineer Reddit",
         links: [""],
         time: "50 hours",
@@ -404,7 +404,7 @@ exports.reverseEngineerReddit = function(req, res) {
 };
 
 exports.reverseEngineerPintrest = function(req, res) {
-    res.render('challenges/reverseEngineerPintrest', {
+    res.render('challenges/reverse-engineer-pintrest', {
         name: "Reverse Engineer Pintrest",
         links: [""],
         time: "50 hours",

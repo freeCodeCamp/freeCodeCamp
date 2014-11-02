@@ -26,8 +26,6 @@ var connectAssets = require('connect-assets');
  */
 
 var homeController = require('./controllers/home');
-var curriculumController = require('./controllers/curriculum');
-var coursesController = require('./controllers/courses')
 var challengesController = require('./controllers/challenges')
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
@@ -121,21 +119,14 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
  */
 
 app.get('/', homeController.index);
-app.get('/curriculum', curriculumController.index);
-app.get('/course/:id', coursesController.view);
-app.get('/courses', coursesController.index);
-app.get('/courses/codecademy-html-and-css-track', coursesController.codecademyHtmlAndCssTrack)
-app.get('/courses/code-school-discover-devtools-course', coursesController.codeSchoolDiscoverDevtoolsCourse)
-app.get('/courses/code-school-try-jquery-course', coursesController.codeSchoolTryJqueryCourse)
-app.get('/courses/codecademy-javascript-track', coursesController.codecademyJavascriptTrack)
-app.get('/courses/harvard-introduction-to-computer-science-cs50-course', coursesController.harvardIntroductionToComputerScienceCs50Course)
-app.get('/courses/linux-command-line-tutorial', coursesController.linuxCommandLineTutorial)
-app.get('/courses/code-school-try-git-course', coursesController.codeSchoolTryGitCourse)
-app.get('/courses/code-school-real-time-with-node-js-course', coursesController.codeSchoolRealTimeWithNodeJsCourse)
-app.get('/courses/code-school-shaping-up-with-angular-js-course', coursesController.codeSchoolShapingUpWithAngularJsCourse)
-app.get('/courses/m101js-mongodb-for-node-js-developers-course', coursesController.m101jsMongoDBForNodeJsDevelopersCourse)
-//app.get('/challenges/:id', challengesController.view);
-//app.get('/challenges', challengesController.index);
+app.get('/challenges/codecademy-html-and-css-track', challengesController.codecademyHtmlAndCssTrack)
+app.get('/challenges/code-school-discover-devtools-course', challengesController.codeSchoolDiscoverDevtoolsCourse)
+app.get('/challenges/code-school-try-jquery-course', challengesController.codeSchoolTryJqueryCourse)
+app.get('/challenges/codecademy-javascript-track', challengesController.codecademyJavascriptTrack)
+app.get('/challenges/harvard-introduction-to-computer-science-cs50-course', challengesController.harvardIntroductionToComputerScienceCs50Course)
+app.get('/challenges/code-school-try-git-course', challengesController.codeSchoolTryGitCourse)
+app.get('/challenges/code-school-real-time-with-node-js-course', challengesController.codeSchoolRealTimeWithNodeJsCourse)
+app.get('/challenges/code-school-shaping-up-with-angular-js-course', challengesController.codeSchoolShapingUpWithAngularJsCourse)
 app.get('/challenges/create-and-deploy-a-website', challengesController.createAndDeployAWebsite)
 app.get('/challenges/add-dynamic-content-to-your-website', challengesController.addDynamicContentToYourWebsite)
 app.get('/challenges/experiment-with-html-and-css-in-codepen', challengesController.experimentWithHtmlAndCssInCodepen)
