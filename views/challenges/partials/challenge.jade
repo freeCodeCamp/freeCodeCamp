@@ -2,13 +2,13 @@
     .panel-heading Challenge: #{name}
     .panel.panel-body
         .responsive-container.animated.zoomIn.delay-1
-            iframe(src='//player.vimeo.com/video/#{video}', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
+            iframe(src='//player.vimeo.com/video/#{video}?autoplay=1', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
         .animated.fadeIn.delay-2
             h3 Instructions:
             for direction in directions
                 p= direction
 
-            h3 Relevant Links (these open up in a new tab):
+            h3 Links You'll need:
             ol
                 for link in links
                     li
@@ -18,24 +18,30 @@
                 .btn.btn-success.btn-large.btn-block.completed-challenge.hidden-element I've completed this challenge
                 .ten-pixel-break
                 .btn.btn-primary.btn-large.btn-block.skip-challenge.hidden-element I want to skip this challenge
-    #complete-dialog.modal
-        .modal-dialog.animated.zoomIn.fast-animation
-            .modal-content
-                .modal-header
-                    a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                    .text-center
-                        h1.animated.zoomInDown Nicely done!
-                        .animated.zoomInUp.delay-1
-                            span.landing-icon.ion-checkmark-circled.text-success
-                    a.animated.fadeIn.delay-2.btn.btn-primary.btn-block(href='/curriculum', aria-hidden='true') Take me to my next challenge
-    #skip-dialog.modal
-        .modal-dialog.animated.zoomIn.fast-animation
-            .modal-content
-                .modal-header
-                    a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                    .text-center
-                        h1.animated.zoomInDown No problem.
-                        h2.animated.zoomInDown You can retry this challenge any time.
-                        .animated.zoomInUp.delay-1
-                            span.landing-icon.ion-skip-forward.text-primary
-                    a.animated.fadeIn.delay-2.btn.btn-primary.btn-block(href='/curriculum', aria-hidden='true') Take me to my next challenge
+.container
+    .row
+        .col-xs-12.col-sm-12.col-md-8
+            a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") Tweet us links to your projects.
+            a(href="http://blog.freecodecamp.com", target="_blank") Read our blog.
+
+#complete-dialog.modal
+    .modal-dialog.animated.zoomIn.fast-animation
+        .modal-content
+            .modal-header
+                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .text-center
+                    h1.animated.zoomInDown Nicely done!
+                    .animated.zoomInUp.delay-1
+                        span.landing-icon.ion-checkmark-circled.text-success
+                a.animated.fadeIn.delay-2.btn.btn-primary.btn-block(href='/curriculum', aria-hidden='true') Take me to my next challenge
+#skip-dialog.modal
+    .modal-dialog.animated.zoomIn.fast-animation
+        .modal-content
+            .modal-header
+                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .text-center
+                    h1.animated.zoomInDown No problem.
+                    h2.animated.zoomInDown You can retry this challenge any time.
+                    .animated.zoomInUp.delay-1
+                        span.landing-icon.ion-skip-forward.text-primary
+                a.animated.fadeIn.delay-2.btn.btn-primary.btn-block(href='/curriculum', aria-hidden='true') Take me to my next challenge
