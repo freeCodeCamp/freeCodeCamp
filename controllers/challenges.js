@@ -37,7 +37,7 @@ exports.createAndDeployAWebsite = function(req, res) {
 exports.installGithubAtomTextEditor = function(req, res) {
     res.render('challenges/install-github-atom-text-editor', {
         name: "Install Github's Atom Text Editor",
-        video: "",
+        video: "110753792",
         time: "5 minutes",
         next: '/challenges/modify-and-redeploy-your-website',
         steps: ["Download the Atom editor at <a href='http://atom.io' target='_blank'>http://atom.io</a>", "Unzip it and install Atom.", "Open up Atom.", "Now you have a dedicated text editor!"]
@@ -69,7 +69,7 @@ exports.startAPairProgrammingSession = function(req, res) {
 exports.addDynamicContentToYourWebsite = function(req, res) {
     res.render('challenges/add-dynamic-content-to-your-website', {
         name: "Add Dynamic Content to your Website",
-        video: "",
+        video: "110753641",
         time: "10 minutes",
         next: '/challenges/codecademy-html-and-css-track',
         steps: ["Go to <a href='http://www.powr.io' target='_blank'>http://www.powr.io</a>", "From the dropdown menus, choose 'Contact Form' and 'HTML'", "Find the template you downloaded from <a href='http://startbootstrap.com' target='_blank'>http://startbootstrap.com</a> in your file manager (Finder on Mac and Windows Explorer on Windows).", "Drag the file to Atom", "Copy the lines of HTML from the POWr tutorial to your index.html file, being careful to put them where they belong.", "Drag the entire template directory onto BitBalloon to deploy it", "Go to <a href='http://bitballoon.com' target='_blank'>http://bitballoon.com</a>", "Verify that the form works by filling it out and submitting it. You can then go back to POWr.io and view the new database record that the form created.", "Now add a the POWr.io Twitter feed to your portfolio website, then redeploy it to BitBalloon."]
@@ -162,7 +162,7 @@ exports.codecademyJavascriptTrack = function(req, res) {
     res.render('challenges/codecademy-javascript-track', {
         name: "Codecademy JavaScript Track",
         time: "10 hours",
-        next: 'challenges/get-help-the-hacker-way-with-rsap',
+        next: '/challenges/get-help-the-hacker-way-with-rsap',
         video: "110795564",
         steps: [
             "Go to <a href='http://www.codecademy.com/en/tracks/javascript-combined' target='_blank'>http://www.codecademy.com/en/tracks/javascript-combined</a> and complete the course."
