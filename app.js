@@ -129,7 +129,7 @@ app.get('/challenges/add-dynamic-content-to-your-website', challengesController.
 app.get('/challenges/codecademy-html-and-css-track', challengesController.codecademyHtmlAndCssTrack)
 app.get('/challenges/experiment-with-html-and-css-in-codepen', challengesController.experimentWithHtmlAndCssInCodepen)
 app.get('/challenges/code-school-try-jquery-course', challengesController.codeSchoolTryJqueryCourse)
-app.get('/challenges/complete-jquery-exercises', challengesController.completeJqueryExercises);
+app.get('/challenges/jquery-exercises', challengesController.jqueryExercises);
 app.get('/challenges/code-school-discover-devtools-course', challengesController.codeSchoolDiscoverDevtoolsCourse)
 app.get('/challenges/customize-bootstrap-with-bootswatch', challengesController.customizeBootstrapWithBootswatch);
 app.get('/challenges/inject-life-with-css-transformations', challengesController.injectLifeWithCssTransformations);
