@@ -4,6 +4,7 @@ $(document).ready(function() {
         $('.challenge-content').removeClass('hidden-element').addClass('animated fadeInDown');
     });
     $('.completed-challenge').on("click", function() {
+//        user.completedChallenges.push()
         $('#complete-dialog').modal('show');
     });
     $('.skip-challenge').on("click", function() {

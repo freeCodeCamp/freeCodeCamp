@@ -123,6 +123,34 @@ exports.getAccount = function(req, res) {
 };
 
 /**
+ * POST /update-progress
+ * Update profile information.
+ */
+
+exports.updateProgress = function(req, res) {
+    User.findById(req.user.id, function(err, user) {
+        if (err) return next(err);
+        user.email = req.body.email || '';
+        user.profile.name = req.body.name || '';
+        user.profile.gender = req.body.gender || '';
+        user.profile.location = req.body.location || '';
+        user.profile.website = req.body.website || '';
+
+        user.save(function(err) {
+            if (err) return next(err);
+            req.flash('success', { msg: 'Profile information updated.' });
+            res.redirect('/account');
+        });
+    });
+//    challenge = req.params.challengeNumber;
+//    user.challengesCompleted
+};
+
+
+
+
+
+/**
  * POST /account/profile
  * Update profile information.
  */
