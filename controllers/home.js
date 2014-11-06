@@ -4,7 +4,11 @@
  */
 
 exports.index = function(req, res) {
-  res.render('home', {
-    title: 'Home'
-  });
+  if (req.user) {
+      res.redirect('challenges/a-one-minute-introduction-to-free-code-camp');
+  } else {
+      res.render('home', {
+        title: 'Home'
+      });
+  }
 };
