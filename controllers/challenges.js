@@ -63,10 +63,25 @@ exports.startAPairProgrammingSession = function(req, res) {
     res.render('challenges/start-a-pair-programming-session', {
         name: "Start Your First Pair Programming Session",
         challengeNumber: 5,
-        video: "110753642",
-        time: "5 minutes",
+        video: "111077664",
+        time: "20 minutes",
         next: '/challenges/add-dynamic-content-to-your-website',
-        steps: ["Download Screen Hero, the popular pair programming tool, here: <a href='https://screenhero.com/download.html' target='_blank'>https://screenhero.com/download.html</a>", "Register your account with the same email address you used when you registered for the Free Code Camp chat room.", "Go to the Free Code Camp chat room.", "Say hi to somebody, and ask if they can pair program with you real quick.", "Type '/hero @' and their name to start a Screen Hero session with them.", "Once you've \"paired\" with someone, they become your \"pair\". Show your new pair the website your just created."]
+        steps: ["Go to <a href='http://www.teamviewer.com/en/index.aspx' target='_blank'>http://www.teamviewer.com/en/index.aspx</a> and download Team Viewer",
+            "Install it and launch it",
+            "Go to the chat room and ask if anyone wants to pair program with you on your current challenge.",
+            "If someone is interested, they will be your \"pair\" - the person you pair programming with.",
+            "<strong>First, you will pair program on your computer.</strong> Copy your Team Viewer ID and paste it into the private chat, so that your pair can use it to connect with you.",
+            "You will need to share your randomly generated password with your pair as well.",
+            "Once your pair connects, you will see a Team Viewer side menu. ",
+            "Click the audio button that drops down.",
+            "Click the headset icon and choose Voice over IP",
+            "Click the microphone button to unmute your microphone. Once your pair does the same, you two will have an open voice channel.",
+            "When you are finished pair programming, click the X to end the session.",
+            "<strong>Next, you will pair program on your pair's computer.</strong> Ask your pair for his or her Team Viewer ID and password",
+            "Enter it to start the session.",
+            "Once the Team Viewer session starts, look at the the top of the screen, you will see 6 buttons. If you hover your cursor over audio/video.",
+            "When you are finished pair programming, click the X to end the session."
+        ]
     });
 };
 

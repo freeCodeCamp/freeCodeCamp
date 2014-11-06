@@ -10,9 +10,10 @@
             .responsive-container
                 iframe(src='//player.vimeo.com/video/#{video}', frameborder='0', webkitallowfullscreen='', mozallowfullscreen='', allowfullscreen='')
             h3 Steps:
-            ol
-                for step in steps
-                    li!= step
+            h4
+                ol
+                    for step in steps
+                        li!= step
             .btn.btn-success.btn-large.btn-block.completed-challenge I've completed this challenge
             .ten-pixel-break
             .btn.btn-primary.btn-large.btn-block.completed-challenge.skip-challenge I want to skip this challenge for now
