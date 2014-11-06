@@ -5,13 +5,14 @@
 var Challenge = require('./../models/Challenge')
 
 exports.aOneMinuteIntroToFreeCodeCamp = function(req, res) {
-    res.render('challenges/a-one-minute-introduction-to-free-code-camp', {
-        c = Challenge.where({"challengeNumber": 0});
-        name: c.name,
-        challengeNumber: c.challengeNumber,
-        video: c.video,
-        time: c.time,
-        steps: c.steps
+    Challenge.findOne({challengeNumber:0}).exec().then(function(c) {
+        res.render('challenges/' + c.link, {
+            name: c.name,
+            challengeNumber: c.challengeNumber,
+            video: c.video,
+            time: c.time,
+            steps: c.steps
+        });
     });
 };
 
