@@ -3,11 +3,10 @@ var secrets = require('../config/secrets');
 
 var challengeSchema = new mongoose.Schema({
     name: { type: String, unique: true },
-    source: String,
     time: String,
-    links: Array,
+    challengeNumber: Number,
     video: String,
-    directions: Array
+    steps: Array
 });
 
 var Challenge = module.exports = mongoose.model('Challenge', challengeSchema);

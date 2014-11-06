@@ -6,12 +6,12 @@ var Challenge = require('./../models/Challenge')
 
 exports.aOneMinuteIntroToFreeCodeCamp = function(req, res) {
     res.render('challenges/a-one-minute-introduction-to-free-code-camp', {
-        name: 'A one-minute introduction to Free Code Camp',
-        challengeNumber: 0,
-        video: "110729062",
-        time: "1 minute",
-        next: '/challenges/enter-the-free-code-camp-chat-room',
-        steps: ["Watch this video.", "When you're done, click the \"I've completed this challenge\" button to move on to your next challenge."]
+        c = Challenge.where({"challengeNumber": 0});
+        name: c.name,
+        challengeNumber: c.challengeNumber,
+        video: c.video,
+        time: c.time,
+        steps: c.steps
     });
 };
 
