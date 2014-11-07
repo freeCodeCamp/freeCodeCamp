@@ -1,57 +1,61 @@
 extends ../layout
 
 block content
-  h1 Update your profile here:
-  .animated.flipInX
-      form.form-horizontal(action='/account/profile', method='POST')
-        input(type='hidden', name='_csrf', value=_csrf)
-        .form-group
-          label.col-sm-2.control-label(for='email') Email
-          .col-sm-4
-            input.form-control(type='email', name='email', id='email', value='#{user.email}')
-        .form-group
-          label.col-sm-2.control-label(for='name') Name
-          .col-sm-4
-            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-        .form-group
-          label.col-sm-2.control-label(for='location') Location
-          .col-sm-4
-            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-        .form-group
-          label.col-sm-2.control-label(for='website') Website
-          .col-sm-4
-            input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-        .form-group
-          .col-sm-offset-2.col-sm-4
-            button.btn.btn.btn-primary(type='submit')
-              span.ion-edit
-              | Update my profile
+    .panel
+        .container
+          h1 Update your profile here:
+          .animated.flipInX
+              form.form-horizontal(action='/account/profile', method='POST')
+                input(type='hidden', name='_csrf', value=_csrf)
+                .form-group
+                  label.col-sm-2.control-label(for='email') Email
+                  .col-sm-4
+                    input.form-control(type='email', name='email', id='email', value='#{user.email}')
+                .form-group
+                  label.col-sm-2.control-label(for='name') Name
+                  .col-sm-4
+                    input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+                .form-group
+                  label.col-sm-2.control-label(for='location') Location
+                  .col-sm-4
+                    input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+                .form-group
+                  label.col-sm-2.control-label(for='website') Website
+                  .col-sm-4
+                    input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
+                .form-group
+                  .col-sm-offset-2.col-sm-4
+                    button.btn.btn.btn-primary(type='submit')
+                      span.ion-edit
+                      | Update my profile
 
-  h3 Danger Zone
-  button.btn.btn-danger.confirm-deletion
-    span.ion-trash-b
-    | I want to delete my account
-  script.
-      $('.confirm-deletion').on("click", function() {
-        $('#modal-dialog').modal('show');
-      });
-  #modal-dialog.modal.animated.wobble
-      .modal-dialog
-          .modal-content
-              .modal-header
-                  a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                  h3 Are you really leaving us?
-              .modal-body
-                  p Pro Tip: If you tweet feedback to&nbsp;
-                      a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
-                      | ,&nbsp;we'll act quickly on it!
-              .modal-footer
-                  a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                      span.ion-happy
-                      | Nevermind, I'll stick around
-                  br
-                  form(action='/account/delete', method='POST')
-                      input(type='hidden', name='_csrf', value=_csrf)
-                      button.btn.btn-danger.btn-block(type='submit')
-                          span.ion-trash-b
-                          | Yes, Delete my account
+          h3 Danger Zone
+          button.btn.btn-danger.confirm-deletion
+            span.ion-trash-b
+            | I want to delete my account
+          script.
+              $('.confirm-deletion').on("click", function() {
+                $('#modal-dialog').modal('show');
+              });
+          #modal-dialog.modal.animated.wobble
+              .modal-dialog
+                  .modal-content
+                      .modal-header
+                          a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                          h3 Are you really leaving us?
+                      .modal-body
+                          p Pro Tip: If you tweet feedback to&nbsp;
+                              a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
+                              | ,&nbsp;we'll act quickly on it!
+                      .modal-footer
+                          a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                              span.ion-happy
+                              | Nevermind, I'll stick around
+                          br
+                          form(action='/account/delete', method='POST')
+                              input(type='hidden', name='_csrf', value=_csrf)
+                              button.btn.btn-danger.btn-block(type='submit')
+                                  span.ion-trash-b
+                                  | Yes, Delete my account
+          br
+          br

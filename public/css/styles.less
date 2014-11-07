@@ -4,9 +4,16 @@
 @import "lib/bootstrap-social";
 @import "lib/animate.min.less";
 
-// Scaffolding
-// -------------------------
+@font-face {
+  font-family: 'Lato Light';
+  src: url('Lato-Light.ttf') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
+h1,html,body,div,span,a,li,td,th {
+  font-family: 'Lato Light', sans-serif;
+}
 
 html {
   position: relative;
@@ -243,4 +250,15 @@ ul {
 
 .btn-social {
   width: 250px;
+}
+
+.navbar {
+  background-color: #502D16;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  &:hover {
+    color: #ddd;
+  }
 }
