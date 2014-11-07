@@ -142,8 +142,6 @@ exports.updateProgress = function(req, res) {
             res.redirect('/account');
         });
     });
-//    challenge = req.params.challengeNumber;
-//    user.challengesCompleted
 };
 
 

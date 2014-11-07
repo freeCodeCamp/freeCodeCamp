@@ -165,6 +165,10 @@ app.post('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, 
 app.get('/api/linkedin', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getLinkedin);
 app.get('/api/instagram', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getInstagram);
 app.get('/api/yahoo', apiController.getYahoo);
+app.post('/completed_challenge', function(req, res){
+    req.user.challengesCompleted.push(req)
+    console.log("pushed #{req} to user");
+});
 
 /**
  * OAuth sign-in routes.
@@ -212,9 +216,6 @@ app.get('/auth/venmo/callback', passport.authorize('venmo', { failureRedirect: '
     res.redirect('/api/venmo');
 });
 
-
-
-
 /**
  * 500 Error Handler.
  */
@@ -230,3 +231,4 @@ app.listen(app.get('port'), function() {
 });
 
 module.exports = app;
+
