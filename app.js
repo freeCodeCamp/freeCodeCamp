@@ -166,8 +166,8 @@ app.get('/api/linkedin', passportConf.isAuthenticated, passportConf.isAuthorized
 app.get('/api/instagram', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getInstagram);
 app.get('/api/yahoo', apiController.getYahoo);
 app.post('/completed_challenge', function(req, res){
-    req.user.challengesCompleted.push(req)
-    console.log("pushed #{req} to user");
+    req.user.challengesCompleted.push(parseInt(req.body.cn));
+    req.user.save();
 });
 
 /**
