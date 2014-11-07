@@ -36,7 +36,7 @@ block content
                                     h1.animated.zoomInDown Nicely done!
                                     .animated.zoomInUp.delay-1
                                         span.landing-icon.ion-checkmark-circled.text-success
-                                a.animated.fadeIn.delay-2.btn.btn-primary.btn-block.complete-button(name='_csrf', value=_csrf, aria-hidden='true') Take me to my next challenge
+                                a.animated.fadeIn.delay-2.btn.btn-primary.btn-block.next-button(name='_csrf', value=_csrf, aria-hidden='true') Take me to my next challenge
                 #skip-dialog.modal
                     .modal-dialog.animated.zoomIn.fast-animation
                         .modal-content
@@ -47,6 +47,6 @@ block content
                                     h2.animated.zoomInDown You can retry this challenge any time.
                                     .animated.zoomInUp.delay-1
                                         span.landing-icon.ion-skip-forward.text-primary
-                                a.animated.fadeIn.delay-2.btn.btn-primary.btn-block.skip-button(aria-hidden='true') Take me to my next challenge
+                                a.animated.fadeIn.delay-2.btn.btn-primary.btn-block.next-button(aria-hidden='true') Take me to my next challenge
         .col-sm-12.col-md-4.col-xs-12
             include ../partials/challenges

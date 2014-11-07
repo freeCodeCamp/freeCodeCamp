@@ -18,13 +18,6 @@ $(document).ready(function() {
 
     $('.completed-challenge').on("click", function() {
         $('#complete-dialog').modal('show');
-    });
-
-    $('.skip-challenge').on("click", function() {
-        $('#skip-dialog').modal('show');
-    });
-
-    $('.complete-button').on("click", function() {
         l = location.pathname.split('/');
         cn = l[l.length - 1]
         $.ajax({
@@ -36,10 +29,13 @@ $(document).ready(function() {
                 console.log(JSON.stringify(data));
             }
         });
-        window.location = "/challenges/" + (parseInt(l[l.length-1]) + 1)
     });
 
-    $('.skip-button').on("click", function() {
+    $('.skip-challenge').on("click", function() {
+        $('#skip-dialog').modal('show');
+    });
+
+    $('.next-button').on("click", function() {
         l = location.pathname.split('/');
         window.location = "/challenges/" + (parseInt(l[l.length-1]) + 1)
     });

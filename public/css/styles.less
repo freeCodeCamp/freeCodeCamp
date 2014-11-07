@@ -2,7 +2,6 @@
 @import "lib/font-awesome/font-awesome";
 @import "lib/ionicons/ionicons";
 @import "lib/bootstrap-social";
-@import "themes/variables";
 @import "lib/animate.min.less";
 
 // Scaffolding
@@ -215,6 +214,25 @@ ul {
   height: 120px;
 }
 
+.nav-logo {
+  height: 40px;
+  margin-top: -10px;
+  @media (max-width: 365px) {
+    height: 30px;
+    margin-top: -5px;
+  }
+}
+
+.navbar {
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .strikethrough {
   text-decoration: line-through;
+}
+
+.dropdown-toggle {
+  margin-top: -5px;
 }
