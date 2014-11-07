@@ -175,27 +175,27 @@ app.post('/completed_challenge', function(req, res){
  */
 
 app.get('/auth/instagram', passport.authenticate('instagram'));
-app.get('/auth/instagram/callback', passport.authenticate('instagram', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/instagram/callback', passport.authenticate('instagram', { successRedirect: '/',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/github', passport.authenticate('github'));
-app.get('/auth/github/callback', passport.authenticate('github', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/github/callback', passport.authenticate('github', { successRedirect: '/',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
-app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/twitter/callback', passport.authenticate('twitter', { successRedirect: '/',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));
-app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { successRedirect: '/challenges/a-one-minute-introduction-to-free-code-camp',failureRedirect: '/login' }), function(req, res) {
+app.get('/auth/linkedin/callback', passport.authenticate('linkedin', { successRedirect: '/',failureRedirect: '/login' }), function(req, res) {
     res.redirect(req.session.returnTo || '/');
 });
 
