@@ -20,7 +20,7 @@
                 img(src='#{user.profile.picture}')
               else
                 img(src='#{user.gravatar(60)}')
-              | #{user.profile.name || user.email || user.id}&nbsp;
+              | #{user.profile.name || user.email || user.id}&nbsp;[&nbsp;#{user.challengesCompleted.length}&nbsp;]&nbsp;
               i.caret
             ul.dropdown-menu
               li
