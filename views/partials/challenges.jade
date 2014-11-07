@@ -1,9 +1,10 @@
 .panel.panel-primary
     .panel-heading Challenges
     .panel-body
+        = cc
         ol(start='0')
             li
-                a(href="/challenges/0") A One-minute Introduction to Free Code Camp
+                a(href="/challenges/0", class="#{ cc === 3 ? 'strikethrough' : '' }") A One-minute Introduction to Free Code Camp
             li
                 a(href="/challenges/1") Enter the Free Code Camp Chat Room
             li
