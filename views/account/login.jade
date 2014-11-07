@@ -1,14 +1,17 @@
 extends ../layout
-
 block content
-  .page-header
-    h3 Sign in to Free Code Camp with any of these social network accounts:
-    a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
-        i.fa.fa-linkedin
-        | Sign in with LinkedIn
-    a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')
-        i.fa.fa-twitter
-        | Sign in with Twitter
-//    a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
-//        i.fa.fa-facebook
-//        | Sign in with Facebook
+  .panel
+      .text-center
+        h3 Sign in to Free Code Camp with any of these social network accounts:
+        a.btn.btn-lg.btn-linkedin.btn-social(href='/auth/linkedin')
+            i.fa.fa-linkedin
+            | Sign in with LinkedIn
+        .ten-pixel-break
+        a.btn.btn-lg.btn-twitter.btn-social(href='/auth/twitter')
+            i.fa.fa-twitter
+            | Sign in with Twitter
+      br
+      br
+    //    a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+    //        i.fa.fa-facebook
+    //        | Sign in with Facebook
