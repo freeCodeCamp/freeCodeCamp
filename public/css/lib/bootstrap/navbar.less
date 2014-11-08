@@ -67,6 +67,7 @@
 
     &.collapse {
       display: block !important;
+      visibility: visible !important;
       height: auto !important;
       padding-bottom: 0; // Override default setting
       overflow: visible !important;
@@ -92,7 +93,7 @@
   .navbar-collapse {
     max-height: @navbar-collapse-max-height;
 
-    @media (max-width: @screen-xs-min) and (orientation: landscape) {
+    @media (max-device-width: @screen-xs-min) and (orientation: landscape) {
       max-height: 200px;
     }
   }
@@ -141,7 +142,6 @@
   right: 0;
   left: 0;
   z-index: @zindex-navbar-fixed;
-  .translate3d(0, 0, 0);
 
   // Undo the rounded corners
   @media (min-width: @grid-float-breakpoint) {
@@ -171,6 +171,10 @@
   &:hover,
   &:focus {
     text-decoration: none;
+  }
+
+  > img {
+    display: block;
   }
 
   @media (min-width: @grid-float-breakpoint) {
@@ -271,23 +275,7 @@
         padding-bottom: @navbar-padding-vertical;
       }
     }
-
-    &.navbar-right:last-child {
-      margin-right: -@navbar-padding-horizontal;
-    }
   }
-}
-
-
-// Component alignment
-//
-// Repurpose the pull utilities as their own navbar utilities to avoid specificity
-// issues with parents and chaining. Only do this when the navbar is uncollapsed
-// though so that navbar contents properly stack and align in mobile.
-
-@media (min-width: @grid-float-breakpoint) {
-  .navbar-left  { .pull-left(); }
-  .navbar-right { .pull-right(); }
 }
 
 
@@ -311,6 +299,10 @@
   .form-group {
     @media (max-width: @grid-float-breakpoint-max) {
       margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -326,11 +318,6 @@
     padding-top: 0;
     padding-bottom: 0;
     .box-shadow(none);
-
-    // Outdent the form if last child to line up with content down the page
-    &.navbar-right:last-child {
-      margin-right: -@navbar-padding-horizontal;
-    }
   }
 }
 
@@ -375,13 +362,30 @@
     float: left;
     margin-left: @navbar-padding-horizontal;
     margin-right: @navbar-padding-horizontal;
+  }
+}
 
-    // Outdent the form if last child to line up with content down the page
-    &.navbar-right:last-child {
+
+// Component alignment
+//
+// Repurpose the pull utilities as their own navbar utilities to avoid specificity
+// issues with parents and chaining. Only do this when the navbar is uncollapsed
+// though so that navbar contents properly stack and align in mobile.
+//
+// Declared after the navbar components to ensure more specificity on the margins.
+
+@media (min-width: @grid-float-breakpoint) {
+  .navbar-left  { .pull-left(); }
+  .navbar-right {
+    .pull-right();
+    margin-right: -@navbar-padding-horizontal;
+
+    ~ .navbar-right {
       margin-right: 0;
     }
   }
 }
+
 
 // Alternate navbars
 // --------------------------------------------------
