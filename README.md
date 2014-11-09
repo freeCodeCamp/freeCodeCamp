@@ -4,7 +4,7 @@ Hackathon Starter [![Dependency Status](https://david-dm.org/sahat/hackathon-sta
 
 :octocat: &nbsp;**Live Demo**: http://hackathonstarter.herokuapp.com 
 
-Jump to [What's new in 2.3.4?](#changelog)
+Jump to [What's new in 2.4.0?](#changelog)
 
 A boilerplate for **Node.js** web applications.
 
@@ -1195,6 +1195,12 @@ Also, be sure to check out the [Jump-start your hackathon efforts with DevOps Se
 
 Changelog
 ---------
+
+### 2.4.0 (November 8, 2014)
+- Bootstrap 3.3.0.
+- Flatly 3.3.0 theme.
+- User model cleanup.
+- Removed `helperContext` from connect-assets middleware.
 
 ### 2.3.4 (October 27, 2014)
 - Font Awesome 4.2.0 [01e7bd5c09926911ca856fe4990e6067d9148694](https://github.com/sahat/hackathon-starter/commit/01e7bd5c09926911ca856fe4990e6067d9148694)
