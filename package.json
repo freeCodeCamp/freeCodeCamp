@@ -30,7 +30,7 @@
     "instagram-node": "^0.5.1",
     "jade": "^1.7.0",
     "lastfm": "^0.9.2",
-    "less": "^2.0.0",
+    "less": "^1.7.5",
     "lodash": "^2.4.1",
     "lusca": "^1.0.2",
     "method-override": "^2.3.0",
