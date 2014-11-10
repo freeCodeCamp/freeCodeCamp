@@ -1,6 +1,6 @@
 /**
  * GET /
- * Home page.
+ * Challenges.
  */
 var Challenge = require('./../models/Challenge')
 
@@ -13,6 +13,12 @@ exports.returnChallenge = function(req, res) {
             time: c.time,
             steps: c.steps,
             cc: req.user.challengesCompleted
+        }, function(err, html) {
+            if(err) {
+                res.redirect('/');
+            } else {
+                res.end(html);
+            } 
         });
     });
 };
