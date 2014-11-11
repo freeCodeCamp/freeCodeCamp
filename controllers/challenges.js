@@ -12,13 +12,7 @@ exports.returnChallenge = function(req, res) {
             video: c.video,
             time: c.time,
             steps: c.steps,
-            cc: req.user.challengesCompleted
-        }, function(err, html) {
-            if(err) {
-                res.redirect('/');
-            } else {
-                res.end(html);
-            }
+            cc: req.user.challengesCompleted || []
         });
     });
 };
