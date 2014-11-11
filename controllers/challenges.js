@@ -18,7 +18,7 @@ exports.returnChallenge = function(req, res) {
                 res.redirect('/');
             } else {
                 res.end(html);
-            } 
+            }
         });
     });
 };
