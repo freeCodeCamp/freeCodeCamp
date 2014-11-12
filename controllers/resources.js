@@ -3,6 +3,11 @@
  * Resources.
  */
 
+exports.learnToCode = function(req, res) {
+    res.render('learn-to-code');
+    title: 'Learn to Code'
+}
+
 exports.interviewQuestions = function(req, res) {
     res.json([
         {

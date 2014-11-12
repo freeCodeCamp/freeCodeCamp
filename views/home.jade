@@ -30,77 +30,8 @@ block content
             br
             a.btn.nonprofit-cta.btn-success(href="/nonprofits") I'm with a nonprofit and want help coding something
     br
-    .panel.panel-primary
-        .panel-heading.landing-panel-heading Frequently Asked Questions
-        .panel-body
-            .text-left.landing-panel-body
-                h2 What will I learn, and in what sequence?
-                ul
-                    p First, you'll learn basic web design tools like:
-                        ul
-                            li &#8226 HTML - the structure of web pages
-                            li &#8226 CSS - the visual style of web pages
-                            li &#8226 Bootstrap - a "responsive design" tool that helps your websites look great on tablets and phones
-                            li &#8226 jQuery - an easy tool for controlling content in the browser
-                            li &#8226 Chrome DevTools - a tool for understanding and debuging websites, right in your browser
-                    p Then you'll learn computer science and the art of programming:
-                        ul
-                            li &#8226 JavaScript - the one programming language that all web browsers use
-                            li &#8226 Git - a version control system for saving and sharing your projects
-                            li &#8226 SQL - a popular language for pulling data out of spreadsheet-like relational databases
-                            li &#8226 Algorithms - step-by-step recipies for getting things done
-                    p You'll spend the last half of Free Code Camp using Agile Methodologies and Full Stack JavaScript to build projects for nonprofits:
-                        ul
-                            li &#8226 Agile - a set of software development principles that focus the design and production of a project on the needs of its users
-                            li &#8226 MongoDB - a popular non-relational database
-                            li &#8226 AngularJS - a tool for making exciting web interfaces
-                            li &#8226 ExpressJS - a powerful web development framework
-                            li &#8226 NodeJS - a JavaScript-based web server
-                h2 How will I learn all this?
-                ul
-                    p By pair programming with other Free Code Camp students on our coding challenges. Eventually, you'll work with people at nonprofits to build real-life software solutions.
-                h2 What is 'pair programming', and what's so special about it?
-                ul
-                    p Pair programming is where two people code together on one computer. You discuss different approaches to solving problems, and keep each other motivated. The result is better code than either of you could have written by yourselves. Because of its benefits, many engineers pair program full time. And it's the best way to learn coding. Thanks to tools that allow two people to share mouse and keyboard inputs, you can pair program with a friend without needing to be in the same room.
-                h2 How long does Free Code Camp take?
-                ul
-                    p It takes about 1,000 hours of coding to develop the skills you'll need to get an entry level software engineering job. Many in-person coding bootcamps jam all this into 12 weeks of intensive study. Free Code Camp is fully-online, and there will always be other people at your skill level that you can pair program with, so you can learn at your own pace. Here are some example coding schedules:
-                    table.table
-                        th Time budgeted
-                        th Hours per week
-                        th Weeks to complete
-                        tr.info
-                            td Weekends
-                            td 10 hours/week
-                            td 100 weeks (2 years)
-                        tr.success
-                            td Nights and Weekends
-                            td 20 hours/week
-                            td 50 weeks (1 year)
-                        tr.warning
-                            td Full time
-                            td 40 hours/week
-                            td 25 weeks (6 months)
-                        tr.danger
-                            td Traditional Bootcamp Pacing
-                            td 80 hours/week
-                            td 12 weeks (3 months)
-                h2 Why does Free Code Camp use JavaScript instead of Ruby or Python?
-                ul
-                    p We love Python and Ruby. But even if you learn them, you'll still need to learn JavaScript. JavaScript is the most important language of all - it's the language of web browsers. It's also the most popular language.
-                br
-                img.img-center.img-responsive(src="http://dberkholz-media.redmonk.com/dberkholz/files/2014/04/github_new_repos-custom.png", style="max-height: 300px;")
-                h2 Will I be ready to get a software engineer job after this?
-                ul
-                    p At the end of Free Code Camp, you will have pair programmed around 1,000 hours with dozens of other students, built a portfolio of projects that people are actively using, and a roster of glowing references from nonprofits you've helped. On average, 75% of bootcamp graduates get software engineering jobs within 6 months, and earn an average annual salary of $76,000.
-                img.img-center.img-responsive(src="https://www.evernote.com/shard/s116/sh/4bb05639-d86c-4c15-b3a8-e4a43fa22d89/7cf00ed01124fac6e6741b97f8fb9e6f/deep/0/https---www.coursereport.com-2014-graduate-survey.pdf.png")
-                h2 Is this really free? Do you claim part of my first year's salary like some bootcamps do?
-                ul
-                    p Our name is Free Code Camp. We are a free code camp. If you had to pay us (or sign over future earnings), we'd have to change our name. And we are not going to do that.
-                h2 Does Free Code Camp have an application process?
-                ul
-                    p Unlike most bootcamps, anyone can study at Free Code Camp. We're not going to tell you that you can't become a software engineer. We believe the only person who should be able to tell you that is you. If you perservere, and keep working through our challenges and nonprofits' projects, you will become an employable software engineer.
-                br
-                .text-center
-                    a.btn.btn-cta.btn-primary(href="/login") Sign in now to start coding (it's free)
-                br
+    include partials/faq
+    br
+    .text-center
+        a.btn.btn-cta.btn-primary(href="/login") Sign in now to start coding (it's free)
+    br
