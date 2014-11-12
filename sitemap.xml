@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.freecodecamp.com/</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.freecodecamp.com/login</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.freecodecamp.com/nonprofits</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.freecodecamp.com/learn-to-code</loc>
+  <changefreq>daily</changefreq>
+</url>
+</urlset>
