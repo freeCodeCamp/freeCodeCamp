@@ -243,7 +243,7 @@ The same goes for other providers.
 <hr>
 
 <img src="https://stripe.com/img/about/logos/logos/black@2x.png" width="200">
-- [Sign up](http://stripe.com) or log into your your [dashboard](https://manage.stripe.com)
+- [Sign up](http://stripe.com) or log into your [dashboard](https://manage.stripe.com)
 - Click on your profile and click on Account Settings
 - Then click on [API Keys](https://manage.stripe.com/account/apikeys)
 - Copy the **Secret Key**. and add this into `config/secrets.js`
@@ -291,7 +291,7 @@ The same goes for other providers.
 
 <img src="http://iandouglas.com/presentations/pyconca2012/logos/sendgrid_logo.png" width="200">
 - Go to https://sendgrid.com/user/signup
-- Sign up and **confirm** your your account via the *activation email*
+- Sign up and **confirm** your account via the *activation email*
 - Then enter your SendGrid *Username* and *Password* into `config/secrets.js`
 
 <hr>
