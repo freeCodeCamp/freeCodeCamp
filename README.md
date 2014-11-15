@@ -271,7 +271,7 @@ The same goes for other providers.
 
 <hr>
 
-<img src="http://www.athgo.org/ablog/wp-content/uploads/2013/02/tumblr_logo.png" width="200">
+<img src="http://img4.wikia.nocookie.net/__cb20130520163346/logopedia/images/8/8d/Tumblr_logo_by_x_1337_x-d5ikwpp.png" width="200">
 - Go to http://www.tumblr.com/oauth/apps
 - Once signed in, click **+Register application**
 - Fill in all the details
@@ -281,7 +281,7 @@ The same goes for other providers.
 
 <hr>
 
-<img src="http://www.outofoursystem.com/wp-content/uploads/2012/06/steam-logo-white.jpg" width="200">
+<img src="http://www.technologytell.com/gaming/files/2012/01/steam_logo.jpg" width="200">
 - Go to http://steamcommunity.com/dev/apikey
 - Sign in with your existing Steam account
 - Enter your *Domain Name*, then and click **Register**
