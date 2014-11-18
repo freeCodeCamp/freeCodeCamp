@@ -24,7 +24,7 @@
     "express": "^4.10.2",
     "express-flash": "^0.0.2",
     "express-session": "^1.9.1",
-    "express-validator": "^2.6.0",
+    "express-validator": "^2.7.0",
     "fbgraph": "^0.3.0",
     "github-api": "^0.7.0",
     "instagram-node": "^0.5.1",
@@ -48,10 +48,10 @@
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
     "passport-twitter": "^1.0.2",
-    "request": "^2.47.0",
+    "request": "^2.48.0",
     "stripe": "^2.9.0",
     "tumblr.js": "^0.0.4",
-    "twilio": "^1.7.0",
+    "twilio": "^1.8.0",
     "twit": "^1.1.18",
     "uglify-js": "^2.4.15",
     "validator": "^3.22.1",
@@ -59,9 +59,9 @@
   },
   "devDependencies": {
     "blessed": "^0.0.37",
-    "chai": "^1.9.2",
+    "chai": "^1.10.0",
     "mocha": "^2.0.1",
     "multiline": "^1.0.1",
-    "supertest": "^0.14.0"
+    "supertest": "^0.15.0"
   }
 }
