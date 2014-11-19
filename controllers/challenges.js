@@ -7,7 +7,8 @@ var _ = require('lodash');
 
 exports.returnChallenge = function(req, res, next) {
     var challengeNumber = parseInt(req.params.challengeNumber) || 0;
-    Challenge.findOne({challengeNumber: challengeNumber}, function(err, c){
+    if (challengeNumber > 41) { challengeNumber = 0; }
+    Challenge.findOne({challengeNumber: challengeNumber}, function (err, c) {
         if (err) {
             console.error('Challenge err: ', err);
             next(err);

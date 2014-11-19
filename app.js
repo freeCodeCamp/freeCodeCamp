@@ -142,22 +142,21 @@ app.get('/nonprofits', contactController.getContact);
 app.post('/nonprofits', contactController.postContact);
 
 // # Protected routes, user must be logged in.
+app.post(
+    '/update-progress',
+    passportConf.isAuthenticated,
+    userController.updateProgress);
+
+app.get(
+    '/challenges/:challengeNumber',
+    passportConf.isAuthenticated,
+    challengesController.returnChallenge);
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
-
-app.post(
-  '/update-progress',
-  passportConf.isAuthenticated,
-  userController.updateProgress);
-
-app.get(
-  '/challenges/:challengeNumber',
-  passportConf.isAuthenticated,
-  challengesController.returnChallenge);
 
 /**
  * API examples routes.
