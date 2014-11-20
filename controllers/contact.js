@@ -42,7 +42,7 @@ exports.postContact = function(req, res) {
   var from = req.body.email;
   var name = req.body.name;
   var body = req.body.message;
-  var to = 'michaelqlarson@gmail.com';
+  var to = 'team@freecodecamp.com';
   var subject = "CodeNonprofit Project Idea from " + name;
 
   var mailOptions = {
