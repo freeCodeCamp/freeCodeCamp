@@ -4,8 +4,15 @@
  */
 
 exports.learnToCode = function(req, res) {
-    res.render('learn-to-code');
-    title: 'Learn to Code'
+    res.render('learn-to-code',  {
+        title: 'Learn to Code'
+    });
+}
+
+exports.about = function(req, res) {
+    res.render('about', {
+        title: 'Who We Are'
+    });
 }
 
 exports.interviewQuestions = function(req, res) {
@@ -19,7 +26,7 @@ exports.interviewQuestions = function(req, res) {
             answer: "O(1)"
         },
         {
-            question: "Time Complexity of Pushing and Poping on Stack",
+            question: "Time Complexity of Pushing and Popping on Stack",
             answer: "O(1)"
         },
         {

@@ -15,7 +15,7 @@ var transporter = nodemailer.createTransport({
 
 exports.getContact = function(req, res) {
   res.render('contact', {
-    title: 'Contact'
+    title: 'Free Code Work for Nonprofits Project Submission Page'
   });
 };
 

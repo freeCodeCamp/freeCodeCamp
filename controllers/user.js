@@ -14,7 +14,7 @@ var secrets = require('../config/secrets');
 exports.getLogin = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('account/login', {
-    title: 'Login'
+    title: 'Free Code Camp Login'
   });
 };
 
@@ -68,7 +68,7 @@ exports.logout = function(req, res) {
 exports.getSignup = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('account/signup', {
-    title: 'Create Account'
+    title: 'Create Your Free Code Camp Account'
   });
 };
 
@@ -118,7 +118,7 @@ exports.postSignup = function(req, res, next) {
 
 exports.getAccount = function(req, res) {
   res.render('account/profile', {
-    title: 'Account Management'
+    title: 'Manage your Free Code Camp Account'
   });
 };
 

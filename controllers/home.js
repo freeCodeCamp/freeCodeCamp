@@ -13,7 +13,7 @@ exports.index = function(req, res) {
       }
   } else {
       res.render('home', {
-        title: 'Home'
+        title: 'Learn to Code and Become a Software Engineer'
       });
   }
 };

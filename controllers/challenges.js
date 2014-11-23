@@ -14,7 +14,7 @@ exports.returnChallenge = function(req, res, next) {
             next(err);
         }
         res.render('challenges/show', {
-            title: 'Challenge',
+            title: 'Challenge: ' + c.name,
             name: c.name,
             video: c.video,
             time: c.time,
