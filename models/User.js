@@ -14,6 +14,7 @@ var userSchema = new mongoose.Schema({
   instagram: String,
   tokens: Array,
   challengesCompleted: { type: Array, default: [] },
+  challengesHash: { type: Object, default: {} },
 
   profile: {
     name: { type: String, default: '' },
