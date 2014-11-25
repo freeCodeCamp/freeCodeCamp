@@ -34,6 +34,10 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
 /**
+ * User model
+ */
+var User = require('./models/User');
+/**
  * API keys and Passport configuration.
  */
 
@@ -163,9 +167,25 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
  * API examples routes.
  */
 app.post('/completed_challenge', function(req, res) {
-  req.user.challengesHash[req.body.cn] = Math.round(+new Date()/1000);
-  req.user.save();
-  console.log(req.user.challengesHash);
+    console.log(req.user);
+
+  User.findById(req.user.id, function (err, user) {
+      if (err) {
+          console.log(err);
+          res.status(500);
+          return res.send('something went wrong');
+      }
+      user.challengesHash[parseInt(req.body.cn)] = Math.round(+new Date()/1000);
+      user.save(function(err, newDats) {
+          if (err) {
+              console.log(err);
+              res.status(500);
+              return res.send('something went wrong');
+          }
+          console.log('Suer', user);
+          res.status(200).send('saved');
+      });
+  });
 });
 
 /**
