@@ -168,24 +168,19 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
  */
 app.post('/completed_challenge', function(req, res) {
     console.log(req.user);
-
-  User.findById(req.user.id, function (err, user) {
-      if (err) {
-          console.log(err);
-          res.status(500);
-          return res.send('something went wrong');
-      }
-      user.challengesHash[parseInt(req.body.cn)] = Math.round(+new Date()/1000);
-      user.save(function(err, newDats) {
-          if (err) {
-              console.log(err);
-              res.status(500);
-              return res.send('something went wrong');
-          }
-          console.log('Suer', user);
-          res.status(200).send('saved');
-      });
-  });
+    req.user.challengesHash[parseInt(req.body.cn)] = Math.round(+new Date() / 1000);
+    req.user.challengesCompleted = function() {
+        var completed = [];
+        for (i = 0; i < h.length; i++) {
+            if (h[i] > 0) {
+                completed.push(i);
+            }
+        return completed;
+        }
+    }
+    req.user.save();
+    console.log(req.user.challengesHash);
+    console.log(req.user.challengesCompleted);
 });
 
 /**
