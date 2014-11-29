@@ -1,0 +1,204 @@
+extends layout
+block content
+    script.
+        $(document).ready(function() {
+            var directions = {
+                0: "To get started, open your Chrome DevTools. The #next-exercise button is disabled below. Try using jQuery's .attr() method to turn the disabled attribute to false.",
+                1: "Move the .target element from #location1 to #location2.",
+                2: "Change the background color of .target to red.",
+                3: "Change the background color of the even-numbered targets to red (all targets are children of #location1).",
+                4: "Change the background color of the target4 to red.",
+                5: "Clone the target2 in #location1 so that it also exists in #location2.",
+                6: "Remove the target3 from element from #location1.",
+                7: "Check the following checkboxes using jQuery.",
+                8: "Make the text input field read-only.",
+                9: "Select the target2 option in the select box.",
+                10: "Add the following css classes to .target: 'animated' and 'hinge'",
+                11: "Use jQuery to read the data of .target",
+                12: "Use 'length' to count the number of child elements in #location1, then display that value in #location2",
+                13: "There's an element hidden in #location1. Show it using jQuery, and then click on it"
+            };
+            var hint = {
+                0: "$('#next-exercise').attr('disabled', false)",
+                1: "$('#location1').children().appendTo('#location2');",
+                2: "$('.target').css('background', 'red');",
+                3: "$('#location1').children('.target:even').css('background', 'red')",
+                4: "$('#location1').find('div:nth-child(4)').css('background', 'red')",
+                5: "$('#location1').find('div:nth-child(2)').clone().appendTo('#location2')",
+                6: "$('#location1').find('div:nth-child(3)').remove();",
+                7: "$('#location1 input').attr('checked', 'true')",
+                8: "$('#location1 input').attr('readonly', 'true')",
+                9: "$('#location1 select').val('target2');",
+                10: "$('#location1 div').addClass('animated hinge')",
+                11: "$('#location1').children().data()",
+                12: "$('#location2').text($('#location1').children().length)",
+                13: "$('#location1').children().show();"
+            };
+            var elements = {
+                0: "",
+                1: "<div class='btn btn-default target'>.target</div>",
+                2: "<div class='btn btn-default target'>.target</div>",
+                3: "<div class='btn btn-default target'>target0</div><div class='btn btn-default target'>target1</div><div class='btn btn-default target'>target2</div><div class='btn btn-default target'>target3</div><div class='btn btn-default target'>target4</div>",
+                4: "<div class='btn btn-default target'>target1</div><div class='btn btn-default target'>target2</div><div class='btn btn-default target'>target3</div><div class='btn btn-default target'>target4</div><div class='btn btn-default target'>target5</div>",
+                5: "<div class='btn btn-default target'>target1</div><div class='btn btn-default target'>target2</div><div class='btn btn-default target'>target3</div><div class='btn btn-default target'>target4</div><div class='btn btn-default target'>target5</div>",
+                6: "<div class='btn btn-default target'>target1</div><div class='btn btn-default target'>target2</div><div class='btn btn-default target'>target3</div><div class='btn btn-default target'>target4</div><div class='btn btn-default target'>target5</div>",
+                7: "<input type='checkbox'>checkbox1</input><br><input type='checkbox'>checkbox2</input>",
+                8: "<input type='text' value='target'>",
+                9: "<select><option value='target0'>target0</option><option value='target1'>target1</option><option value='target2'>target2</option><option value='target3'>target3</option></select>",
+                10: "<div class='btn btn-default target'>.target</div>",
+                11: "<div class='btn btn-default target' data-lookAtMe='This is some super secret data hidden in the DOM!'>.target</div>",
+                12: "<div class='btn btn-default target'>target1</div><div class='btn btn-default target'>target2</div><div class='btn btn-default target'>target3</div><div class='btn btn-default target'>target4</div><div class='btn btn-default target'>target5</div>",
+                13: "<div class='btn btn-default target' id='finished-button'>Finish!</div>"
+            };
+            function refreshEverything() {
+                $('#directions').text("Exercise " + currentExercise + ": " + directions[currentExercise]);
+                $('#location1').html(elements[currentExercise]);
+                $('#hint').text(hint[currentExercise]);
+                handleExerciseTransition();
+            }
+            $('#exercise-directory').on('click', 'li', event, function () {
+                currentExercise = $(this).index();
+                event.preventDefault();
+                refreshEverything(event);
+            });
+            $('#next-exercise').on('click', event, function () {
+                ++currentExercise;
+                event.preventDefault();
+                refreshEverything(event);
+            });
+            $('#solution-button').on('click', function () {
+                $('#hint-modal').modal({backdrop: "static"});
+            });
+            $('#location1').on('click', '#finished-button', function () {
+                $('#finished-modal').modal({backdrop: "static"});
+            });
+            function handleExerciseTransition() {
+                if (currentExercise === 0) {
+                    $('#next-exercise').attr('disabled', true);
+                } else {
+                    $('#next-exercise').attr('disabled', false);
+                }
+                if (currentExercise === 2 || currentExercise === 6) {
+                    $('#location2 .target').remove();
+                }
+                if (currentExercise === 13) {
+                    $('#location2').text('');
+                    $('#finished-button').hide();
+                    $('#next-exercise').attr('disabled', true);
+                }
+            }
+            var currentExercise = 0;
+            refreshEverything(currentExercise);
+        });
+    style.
+        #directions {
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .well {
+            text-align: left;
+            height: 200px;
+        }
+
+        #exercise-directory {
+            font-size: 20px;
+        }
+
+        #current-exercise {
+            text-size: 250px;
+        }
+
+    html.
+        <div class="container">
+            <div class="row">
+                <div class=" col-xs-12 col-sm-8">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <img src="http://3.bp.blogspot.com/-vgd3mMqeBzk/VGzEmodGqmI/AAAAAAAAAZY/OCcbFvYKzF0/s780/logo4.0LG.png" alt="free code learning at freecodecamp.com" class="img-responsive">
+
+                                <h1>jQuery Exercises</h1>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="text-primary" id="directions">
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-6">#location1</div>
+                            <div class="col-xs-6">#location2</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 well" id="location1"></div>
+                            <div class="col-xs-6 well" id="location2"></div>
+                        </div>
+                        <div class="btn btn-primary btn-lg btn-block" id="next-exercise">
+                            #next-exercise
+                        </div>
+                        <br>
+                        <button class="btn btn-block btn-lg btn-info" id="solution-button">
+                            #solution-button
+                        </button>
+                        </br>
+                        <div class="text-center">
+                            Created for <a href="http://www.FreeCodeCamp.com">Free Code Camp</a><br/>by <a href="https://twitter.com/ossia">Quincy Larson</a>,
+                            <a href="https://www.twitter.com/terakilobyte">Nathan Leniz</a>, <a href="https://twitter.com/iheartkode"> Mark Howard</a> and <a href="https://twitter.com/ryanmalm">Ryan Malm</a>. Please <a href="http://codepen.io/ossia/pen/raVEgN">fork this.</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4" id="exercise-directory">
+                    <div class="panel panel-primary">
+                        <div class="panel panel-heading">List of Exercises</div>
+                        <div class="panel-body">
+                            <ol start="0">
+                                <li> <a href='#'>Re-enable an element</a></li>
+                                <li> <a href='#'>Change an element's parent</a></li>
+                                <li> <a href='#'>Change an element's CSS</a></li>
+                                <li> <a href='#'>Use jQuery filters to modify even elements</a></li>
+                                <li> <a href='#'>Change nth child</a></li>
+                                <li> <a href='#'>Clone an element</a></li>
+                                <li> <a href='#'>Remove an element</a></li>
+                                <li> <a href='#'>Check checkboxes</a></li>
+                                <li> <a href='#'>Make text read-only</a></li>
+                                <li> <a href='#'>Select an option in a select box</a></li>
+                                <li> <a href='#'>Add a CSS class to an element</a></li>
+                                <li> <a href='#'>Lookup an element's data attribute</a></li>
+                                <li> <a href='#'>Count child elements</a></li>
+                                <li> <a href='#'>Show an element and click on it</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="hint-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Your hint</h4>
+                    </div>
+                        <div class="modal-body">
+                            <div id="hint">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="finished-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Congratulations! You've finished our jQuery exercises! Go back to Free Code Camp and mark this challenge complete.</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="hint"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
