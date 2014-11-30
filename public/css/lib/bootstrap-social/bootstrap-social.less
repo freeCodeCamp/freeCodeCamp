@@ -14,12 +14,12 @@
 
 .btn-social {
   position: relative;
-  padding-left: @bs-height-base + @padding-base-horizontal;
+  padding-left: (@bs-height-base + @padding-base-horizontal);
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  :first-child {
+  > :first-child {
     position: absolute;
     left: 0;
     top: 0;
@@ -31,7 +31,7 @@
     border-right: 1px solid rgba(0, 0, 0, 0.2);
   }
   &.btn-lg {
-    padding-left: @bs-height-lg + @padding-large-horizontal;
+    padding-left: (@bs-height-lg + @padding-large-horizontal);
     :first-child {
       line-height: @bs-height-lg;
       width: @bs-height-lg;
@@ -39,7 +39,7 @@
     }
   }
   &.btn-sm {
-    padding-left: @bs-height-sm + @padding-small-horizontal;
+    padding-left: (@bs-height-sm + @padding-small-horizontal);
     :first-child {
       line-height: @bs-height-sm;
       width: @bs-height-sm;
@@ -47,7 +47,7 @@
     }
   }
   &.btn-xs {
-    padding-left: @bs-height-xs + @padding-small-horizontal;
+    padding-left: (@bs-height-xs + @padding-small-horizontal);
     :first-child {
       line-height: @bs-height-xs;
       width: @bs-height-xs;
@@ -97,13 +97,14 @@
 .btn-dropbox       { .btn-social(#1087dd); }
 .btn-facebook      { .btn-social(#3b5998); }
 .btn-flickr        { .btn-social(#ff0084); }
-.btn-foursquare    { .btn-social(#0072b1); }
+.btn-foursquare    { .btn-social(#f94877); }
 .btn-github        { .btn-social(#444444); }
 .btn-google-plus   { .btn-social(#dd4b39); }
 .btn-instagram     { .btn-social(#3f729b); }
 .btn-linkedin      { .btn-social(#007bb6); }
 .btn-microsoft     { .btn-social(#2672ec); }
 .btn-openid        { .btn-social(#f7931e); }
+.btn-pinterest     { .btn-social(#cb2027); }
 .btn-reddit        { .btn-social(#eff7ff, #000); }
 .btn-soundcloud    { .btn-social(#ff5500); }
 .btn-tumblr        { .btn-social(#2c4762); }

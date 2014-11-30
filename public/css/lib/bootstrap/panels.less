@@ -56,7 +56,8 @@
 // any kind of custom content between the two.
 
 .panel {
-  > .list-group {
+  > .list-group,
+  > .panel-collapse > .list-group {
     margin-bottom: 0;
 
     .list-group-item {
@@ -100,6 +101,11 @@
   > .table-responsive > .table,
   > .panel-collapse > .table {
     margin-bottom: 0;
+
+    caption {
+      padding-left: @panel-body-padding;
+      padding-right: @panel-body-padding;
+    }
   }
   // Add border top radius for first one
   > .table:first-child,
@@ -109,6 +115,9 @@
     > thead:first-child,
     > tbody:first-child {
       > tr:first-child {
+        border-top-left-radius: (@panel-border-radius - 1);
+        border-top-right-radius: (@panel-border-radius - 1);
+
         td:first-child,
         th:first-child {
           border-top-left-radius: (@panel-border-radius - 1);
@@ -128,6 +137,9 @@
     > tbody:last-child,
     > tfoot:last-child {
       > tr:last-child {
+        border-bottom-left-radius: (@panel-border-radius - 1);
+        border-bottom-right-radius: (@panel-border-radius - 1);
+
         td:first-child,
         th:first-child {
           border-bottom-left-radius: (@panel-border-radius - 1);
@@ -140,7 +152,9 @@
     }
   }
   > .panel-body + .table,
-  > .panel-body + .table-responsive {
+  > .panel-body + .table-responsive,
+  > .table + .panel-body,
+  > .table-responsive + .panel-body {
     border-top: 1px solid @table-border-color;
   }
   > .table > tbody:first-child > tr:first-child th,
@@ -202,6 +216,7 @@
   .panel {
     margin-bottom: 0;
     border-radius: @panel-border-radius;
+
     + .panel {
       margin-top: 5px;
     }
@@ -209,10 +224,13 @@
 
   .panel-heading {
     border-bottom: 0;
-    + .panel-collapse > .panel-body {
+
+    + .panel-collapse > .panel-body,
+    + .panel-collapse > .list-group {
       border-top: 1px solid @panel-inner-border;
     }
   }
+
   .panel-footer {
     border-top: 0;
     + .panel-collapse .panel-body {

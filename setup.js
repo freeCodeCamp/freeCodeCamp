@@ -4,11 +4,11 @@ var blessed = require('blessed');
 var multiline = require('multiline');
 
 if (os.platform() === 'win32') {
-  console.log('*************************************************************');
-  console.log('Hackthon Starter Generator has been disabled on Windows until');
+  console.log('**************************************************************');
+  console.log('Hackathon Starter Generator has been disabled on Windows until');
   console.log('https://github.com/chjj/blessed is fixed or until I find a');
   console.log('better CLI module.');
-  console.log('*************************************************************');
+  console.log('**************************************************************');
   process.exit();
 }
 var screen = blessed.screen({

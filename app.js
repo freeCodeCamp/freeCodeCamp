@@ -14,7 +14,7 @@ var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 
 var _ = require('lodash');
-var MongoStore = require('connect-mongo')({ session: session });
+var MongoStore = require('connect-mongo')(session);
 var flash = require('express-flash');
 var path = require('path');
 var mongoose = require('mongoose');
@@ -52,12 +52,8 @@ var app = express();
 
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
-    console.error('MongoDB Connection Error. Make sure MongoDB is running.');
+  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
 });
-
-var hour = 3600000;
-var day = hour * 24;
-var week = day * 7;
 
 /**
  * CSRF whitelist.
@@ -118,7 +114,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: week }));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 /**
  * Main routes.
