@@ -19,40 +19,35 @@ block content
           | Sign in with Twitter
         hr
         h2 Sign up with an email address here:
-        form.form-horizontal(id='signup-form', method='POST')
+        form.form-horizontal(id='signup-form', action='signup', method='POST')
             input(type='hidden', name='_csrf', value=_csrf)
             .form-group
-                //label.col-sm-3.control-label(for='email') Email
                 .col-sm-6.col-sm-offset-3
-                    input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus)
+                    input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
             .form-group
-                //label.col-sm-3.control-label(for='password') Password
                 .col-sm-6.col-sm-offset-3
                     input.form-control(type='password', name='password', id='password', placeholder='Password')
             .form-group
-                //label.col-sm-3.control-label(for='confirmPassword') Confirm Password
                 .col-sm-6.col-sm-offset-3
                     input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
             .form-group
                 .col-sm-offset-3.col-sm-6
                     button.btn.btn-success(type='submit')
                         span.ion-person-add
-                        | Signup
+                        | Sign up
         hr
         h2 Sign in with an email address here:
-        form(method='POST')
+        form(action='login', method='POST')
           input(type='hidden', name='_csrf', value=_csrf)
           .col-sm-6.col-sm-offset-3
             .form-group
-              //label.control-label(for='email') Email
-              input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
+              input.form-control(type='email', name='email', id='email', placeholder='Email')
             .form-group
-              //label.control-label(for='password') Password
               input.form-control(type='password', name='password', id='password', placeholder='Password')
             .form-group
               button.btn.btn-primary(type='submit')
                 span.ion-android-hand
-                | Login
+                | Sign in
               span &nbsp;&nbsp;
               a.btn.btn-info(href='/forgot') Forgot your password?
         br
