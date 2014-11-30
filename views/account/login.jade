@@ -1,8 +1,23 @@
 extends ../layout
 block content
-  .panel
-      .text-center
-        h3 Sign in to Free Code Camp with your email/password or any of these social network accounts:
+    .jumbotron.text-center
+        h2 Use any of these accounts to Sign up or Sign in to Free Code Camp:
+        a.btn.btn-lg.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+          i.fa.fa-facebook
+          | Sign in with Facebook
+        a.btn.btn-lg.btn-block.btn-twitter.btn-social(href='/auth/twitter')
+          i.fa.fa-twitter
+          | Sign in with Twitter
+        a.btn.btn-lg.btn-block.btn-google-plus.btn-social(href='/auth/google')
+          i.fa.fa-google-plus
+          | Sign in with Google
+        a.btn.btn-lg.btn-block.btn-github.btn-social(href='/auth/github')
+          i.fa.fa-github
+          | Sign in with GitHub
+        a.btn.btn-lg.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
+          i.fa.fa-linkedin
+          | Sign in with LinkedIn
+        h2 ... or Sign In or Sign up with an email and password:
         form(method='POST')
           input(type='hidden', name='_csrf', value=_csrf)
           .col-sm-8.col-sm-offset-2
@@ -17,22 +32,12 @@ block content
                 span.ion-android-hand
                 | Login
               a.btn.btn-link(href='/forgot') Forgot your password?
-            hr
-            a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
-              i.fa.fa-facebook
-              | Sign in with Facebook
-            a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')
-              i.fa.fa-twitter
-              | Sign in with Twitter
-            a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')
-              i.fa.fa-google-plus
-              | Sign in with Google
-            a.btn.btn-block.btn-github.btn-social(href='/auth/github')
-              i.fa.fa-github
-              | Sign in with GitHub
-            a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
-              i.fa.fa-linkedin
-              | Sign in with LinkedIn
-            a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')
-              i.fa.fa-instagram
-              | Sign in with Instagram
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
