@@ -310,9 +310,9 @@ exports.postReset = function(req, res, next) {
       var mailOptions = {
         to: user.email,
         from: 'hackathon@starter.com',
-        subject: 'Your Hackathon Starter password has been changed',
+        subject: 'Your Free Code Camp password has been changed',
         text: 'Hello,\n\n' +
-          'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
+          'This email is confirming that you requested to reset your password for your Free Code Camp account. This is your email: ' + user.email + '\n'
       };
       transporter.sendMail(mailOptions, function(err) {
         req.flash('success', { msg: 'Success! Your password has been changed.' });
@@ -387,9 +387,9 @@ exports.postForgot = function(req, res, next) {
       });
       var mailOptions = {
         to: user.email,
-        from: 'hackathon@starter.com',
-        subject: 'Reset your password on Hackathon Starter',
-        text: 'You are receiving this email because you (or someone else) have requested the reset of the password for your account.\n\n' +
+        from: 'team@freecodecamp.com',
+        subject: 'Reset your Free Code Camp password',
+        text: "You are receiving this email because you (or someone else) requested we reset your Free Code Camp account's password.\n\n" +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           'http://' + req.headers.host + '/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
