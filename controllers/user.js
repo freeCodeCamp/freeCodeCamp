@@ -309,7 +309,7 @@ exports.postReset = function(req, res, next) {
       });
       var mailOptions = {
         to: user.email,
-        from: 'hackathon@starter.com',
+        from: 'Team@freecodecamp.com',
         subject: 'Your Free Code Camp password has been changed',
         text: 'Hello,\n\n' +
           'This email is confirming that you requested to reset your password for your Free Code Camp account. This is your email: ' + user.email + '\n'
@@ -387,7 +387,7 @@ exports.postForgot = function(req, res, next) {
       });
       var mailOptions = {
         to: user.email,
-        from: 'team@freecodecamp.com',
+        from: 'Team@freecodecamp.com',
         subject: 'Reset your Free Code Camp password',
         text: "You are receiving this email because you (or someone else) requested we reset your Free Code Camp account's password.\n\n" +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
