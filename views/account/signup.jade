@@ -1,24 +1,66 @@
 extends ../layout
-
 block content
-  .page-header
-    h3 Sign up
-  form.form-horizontal(id='signup-form', method='POST')
-    input(type='hidden', name='_csrf', value=_csrf)
-    .form-group
-      label.col-sm-3.control-label(for='email') Email
-      .col-sm-7
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus)
-    .form-group
-      label.col-sm-3.control-label(for='password') Password
-      .col-sm-7
-        input.form-control(type='password', name='password', id='password', placeholder='Password')
-    .form-group
-      label.col-sm-3.control-label(for='confirmPassword') Confirm Password
-      .col-sm-7
-        input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
-    .form-group
-      .col-sm-offset-3.col-sm-7
-        button.btn.btn-success(type='submit')
-          span.ion-person-add
-          | Signup
+  .jumbotron.text-center
+    h2 Use any of these accounts to Sign up or Sign in to Free Code Camp:
+    a.btn.btn-lg.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+      i.fa.fa-facebook
+      | Sign in with Facebook
+    a.btn.btn-lg.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
+      i.fa.fa-linkedin
+      | Sign in with LinkedIn
+    a.btn.btn-lg.btn-block.btn-google-plus.btn-social(href='/auth/google')
+      i.fa.fa-google-plus
+      | Sign in with Google
+    a.btn.btn-lg.btn-block.btn-github.btn-social(href='/auth/github')
+      i.fa.fa-github
+      | Sign in with GitHub
+    a.btn.btn-lg.btn-block.btn-twitter.btn-social(href='/auth/twitter')
+      i.fa.fa-twitter
+      | Sign in with Twitter
+    hr
+    h2 Sign up with an email address here:
+    form.form-horizontal(id='signup-form', method='POST')
+      input(type='hidden', name='_csrf', value=_csrf)
+      .form-group
+        //label.col-sm-3.control-label(for='email') Email
+        .col-sm-6.col-sm-offset-3
+          input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus)
+      .form-group
+        //label.col-sm-3.control-label(for='password') Password
+        .col-sm-6.col-sm-offset-3
+          input.form-control(type='password', name='password', id='password', placeholder='Password')
+      .form-group
+        //label.col-sm-3.control-label(for='confirmPassword') Confirm Password
+        .col-sm-6.col-sm-offset-3
+          input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
+      .form-group
+        .col-sm-offset-3.col-sm-6
+          button.btn.btn-success(type='submit')
+            span.ion-person-add
+            | Signup
+    hr
+    h2 Sign in with an email address here:
+    form(method='POST')
+      input(type='hidden', name='_csrf', value=_csrf)
+      .col-sm-6.col-sm-offset-3
+        .form-group
+          //label.control-label(for='email') Email
+          input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
+        .form-group
+          //label.control-label(for='password') Password
+          input.form-control(type='password', name='password', id='password', placeholder='Password')
+        .form-group
+          button.btn.btn-primary(type='submit')
+            span.ion-android-hand
+            | Login
+          span &nbsp;&nbsp;
+          a.btn.btn-info(href='/forgot') Forgot your password?
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
