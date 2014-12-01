@@ -2,9 +2,9 @@
     .panel-heading.landing-panel-heading.text-center We are Free Code Camp
     .panel-body
         .text-left.landing-panel-body
-            //.col-xs-12
-              .embed-responsive.embed-responsive-4by3
-                iframe.embed-responsive-item(src='https://gitter.im/FreeCodeCamp/FreeCodeCamp')
+            .col-xs-12
+                .embed-responsive.embed-responsive-4by3
+                    iframe(style="display: none;" onload="this.style.display='block';" src="https://gitter.im/FreeCodeCamp/FreeCodeCamp")
             .col-xs-12.col-md-6
                 blockquote.twitter-tweet(lang='en')
                     p
@@ -114,3 +114,4 @@
                     | &mdash; Deb Simon-Heinfeld (@debBlufftonAGS)
                     a(href='https://twitter.com/debBlufftonAGS/status/532198725129867265') November 11, 2014
                 script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
+iframe#chatbox-iframe.embed-responsive-item(onload="this.style.position='static'; this.style.visibility='visible';" src='https://gitter.im/FreeCodeCamp/FreeCodeCamp')
