@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-    $('#chatbox').attr('src','https://gitter.im/FreeCodeCamp/FreeCodeCamp').on('load', function() {
-        $('html, body').removeClass('scroll-lock')
-        $(this).show();
-    });
+    //$('#chatbox').attr('src','https://gitter.im/FreeCodeCamp/FreeCodeCamp').on('load', function() {
+    //    $('html, body').removeClass('scroll-lock')
+    //    $(this).show();
+    //});
 
     var CSRF_HEADER = 'X-CSRF-Token';
 
