@@ -6,33 +6,33 @@ block content
                 0: "To get started, open your Chrome DevTools. The #next-exercise button is disabled below. Try using jQuery's .attr() method to turn the disabled attribute to false.",
                 1: "Move the .target element from #location1 to #location2.",
                 2: "Change the background color of .target to red.",
-                3: "Change the background color of the even-numbered targets to red (all targets are children of #location1).",
+                3: "Change the background color of the even-numbered targets to red.",
                 4: "Change the background color of the target4 to red.",
                 5: "Clone the target2 in #location1 so that it also exists in #location2.",
                 6: "Remove the target3 from element from #location1.",
                 7: "Check the following checkboxes using jQuery.",
                 8: "Make the text input field read-only.",
                 9: "Select the target2 option in the select box.",
-                10: "Add the following css classes to .target: 'animated' and 'hinge'",
-                11: "Use jQuery to read the data of .target",
-                12: "Use 'length' to count the number of child elements in #location1, then display that value in #location2",
-                13: "There's an element hidden in #location1. Show it using jQuery, and then click on it"
+                10: "Add the following css classes to .target: 'animated' and 'hinge'.",
+                11: "Use jQuery to read the data of .target.",
+                12: "Use 'length' to count the number of child elements in #location1, then display that value in #location2.",
+                13: "There's an element hidden in #location1. Show it using jQuery, and then click on it."
             };
             var hint = {
                 0: "$('#next-exercise').attr('disabled', false)",
-                1: "$('#location1').children().appendTo('#location2');",
+                1: "$('.target').appendTo('#location2');",
                 2: "$('.target').css('background', 'red');",
-                3: "$('#location1').children('.target:even').css('background', 'red')",
-                4: "$('#location1').find('div:nth-child(4)').css('background', 'red')",
-                5: "$('#location1').find('div:nth-child(2)').clone().appendTo('#location2')",
-                6: "$('#location1').find('div:nth-child(3)').remove();",
+                3: "$('.target:even').css('background', 'red');",
+                4: "$('.target:nth-child(4)').css('background', 'red');",
+                5: "$('.target:nth-child(2)').clone().appendTo($('#location2'));",
+                6: "$('.target:nth-child(3)').remove();",
                 7: "$('#location1 input').attr('checked', 'true')",
                 8: "$('#location1 input').attr('readonly', 'true')",
                 9: "$('#location1 select').val('target2');",
-                10: "$('#location1 div').addClass('animated hinge')",
-                11: "$('#location1').children().data()",
+                10: "$('.target').addClass('animated hinge');",
+                11: "$('.target').data();",
                 12: "$('#location2').text($('#location1').children().length)",
-                13: "$('#location1').children().show();"
+                13: "$('#finished-button').show().click();"
             };
             var elements = {
                 0: "",
