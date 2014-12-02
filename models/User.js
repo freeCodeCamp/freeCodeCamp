@@ -3,7 +3,8 @@ var crypto = require('crypto');
 var mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
-  email: { type: String, unique: true, lowercase: true, match: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/ },
+  //email: { type: String, unique: true, lowercase: true, match: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/ },
+  email: String,
   password: String,
 
   facebook: String,
@@ -20,8 +21,8 @@ var userSchema = new mongoose.Schema({
     gender: { type: String, default: '' },
     location: { type: String, default: '' },
     website: { type: String, default: '' },
-    picture: { type: String, default: '' },
-    username: { type: String, default: '', unique: true, match: /^[a-zA-Z0-9_]+$/ }
+    picture: { type: String, default: '' }
+    //username: { type: String, default: '', unique: true, match: /^[a-zA-Z0-9_]+$/ }
   },
 
   resetPasswordToken: String,
