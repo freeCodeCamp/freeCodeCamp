@@ -41,10 +41,10 @@ passport.deserializeUser(function(id, done) {
 passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tokenSecret, profile, done) {
     if (req.user) {
         User.findOne({ twitter: profile.id }, function(err, existingUser) {
-            //if (existingUser) {
-            //    req.flash('errors', { msg: 'There is already a Twitter account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-            //    done(err);
-            //} else {
+            if (existingUser) {
+                req.flash('errors', { msg: 'There is already a Twitter account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                done(err);
+            } else {
                 User.findById(req.user.id, function(err, user) {
                     user.twitter = profile.id;
                     user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
@@ -57,25 +57,30 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
                         done(err, user);
                     });
                 });
-            //}
+            }
         });
 
     } else {
         User.findOne({ twitter: profile.id }, function(err, existingUser) {
-            if (existingUser) return done(null, existingUser);
-            var user = new User();
+            //if (existingUser) return done(null, existingUser);
             // Twitter will not provide an email address.  Period.
             // But a person’s twitter username is guaranteed to be unique
             // so we can "fake" a twitter email address as follows:
             //user.email = profile.username + "@twitter.com";
+            var user = existingUser || new User;
             user.twitter = profile.id;
+            user.email = user.email || '';
             user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
-            user.profile.name = profile.displayName;
-            user.profile.location = profile._json.location;
-            user.profile.picture = profile._json.profile_image_url_https;
+            user.profile.name = user.profile.name || profile.displayName;
+            user.profile.location = user.profile.location || profile._json.location;
+            user.profile.picture = user.profile.picture || profile._json.profile_image_url_https;
             user.save(function(err) {
                 done(err, user);
             });
+            if (!user.email) {
+                res.redirect('/account');
+                req.flash('errors', { msg: 'OK, you are signed in. Please add your email address to your profile.' });
+            }
         });
     }
 }));
@@ -109,7 +114,7 @@ passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, r
                 var user = existingEmailUser || new User;
                 user.linkedin = profile.id;
                 user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
-                user.email = profile._json.emailAddress;
+                user.email = user.email || profile._json.emailAddress;
                 user.profile.name = user.profile.name || profile.displayName;
                 user.profile.location = user.profile.location || profile._json.location.name;
                 user.profile.picture = user.profile.picture || profile._json.pictureUrl;
@@ -209,7 +214,7 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
             if (existingUser) return done(null, existingUser);
             User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
                 var user = existingEmailUser || new User;
-                user.email = profile._json.email;
+                user.email = user.email || profile._json.email;
                 user.github = profile.id;
                 user.tokens.push({ kind: 'github', accessToken: accessToken });
                 user.profile.name = user.profile.name || profile.displayName;
@@ -251,7 +256,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
             if (existingUser) return done(null, existingUser);
             User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
                 var user = existingEmailUser || new User;
-                user.email = profile._json.email;
+                user.email = user.email || profile._json.email;
                 user.google = profile.id;
                 user.tokens.push({ kind: 'google', accessToken: accessToken });
                 user.profile.name = user.profile.name || profile.displayName;
