@@ -11,7 +11,11 @@
   display: none;
   max-width: @popover-max-width;
   padding: 1px;
-  text-align: left; // Reset given new insertion method
+  // Reset font and text propertes given new insertion method
+  font-size: @font-size-base;
+  font-weight: normal;
+  line-height: @line-height-base;
+  text-align: left;
   background-color: @popover-bg;
   background-clip: padding-box;
   border: 1px solid @popover-fallback-border-color;
@@ -33,8 +37,6 @@
   margin: 0; // reset heading margin
   padding: 8px 14px;
   font-size: @font-size-base;
-  font-weight: normal;
-  line-height: 18px;
   background-color: @popover-title-bg;
   border-bottom: 1px solid darken(@popover-title-bg, 5%);
   border-radius: (@border-radius-large - 1) (@border-radius-large - 1) 0 0;
@@ -129,5 +131,4 @@
       bottom: -@popover-arrow-width;
     }
   }
-
 }

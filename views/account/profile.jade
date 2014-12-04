@@ -8,13 +8,17 @@ block content
               form.form-horizontal(action='/account/profile', method='POST')
                 input(type='hidden', name='_csrf', value=_csrf)
                 .form-group
-                  label.col-sm-2.control-label(for='email') Email
-                  .col-sm-4
-                    input.form-control(type='email', name='email', id='email', value='#{user.email}')
-                .form-group
                   label.col-sm-2.control-label(for='name') Name
                   .col-sm-4
                     input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+                //.form-group
+                  label.col-sm-2.control-label(for='username') Username
+                  .col-sm-4
+                    input.form-control(type='text', name='username', id='username', value='#{user.profile.username}')
+                .form-group
+                  label.col-sm-2.control-label(for='email') Email
+                  .col-sm-4
+                    input.form-control(type='email', name='email', id='email', value='#{user.email}')
                 .form-group
                   label.col-sm-2.control-label(for='location') Location
                   .col-sm-4

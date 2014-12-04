@@ -1,0 +1,151 @@
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("http://fonts.googleapis.com/css?family=Raleway:400,300");
+
+// Colors
+// -------------------------
+
+@gray-lighter: #f5f5f5;
+@gray-light: #e0e0e0;
+@gray: #737373;
+@gray-dark: #404040;
+@gray-darker: #121212;
+
+@brand-primary: #2ac5ee;
+@brand-success: #0f9d58;
+@brand-warning: #f4b400;
+@brand-danger: #d80017;
+@brand-info: #5bc0dd;
+
+// Footer
+// -------------------------
+
+footer {
+  color: #fff;
+  background-color: @gray-darker;
+
+  a:hover {
+    color: #fff;
+  }
+}
+
+// Typography
+// -------------------------
+
+@font-size-base: 13px;
+@font-family-base: 'Montserrat', sans-serif;
+@headings-font-family: 'Montserrat', sans-serif;
+@headings-font-weight: 700;
+@text-color: @gray-darker;
+@link-color: @brand-primary;
+@link-hover-color: @gray-darker;
+
+a {
+  transition: all .4s cubic-bezier(.24,.45,.46,.92);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul,
+p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.text-danger {
+  color: @brand-danger;
+}
+
+// Dropdowns
+// -------------------------
+
+@dropdown-link-color: @gray-darker;
+
+.dropdown-menu > li > a {
+  font-weight: 300;
+}
+
+// Buttons
+// -------------------------
+
+@btn-default-bg: @gray-lighter;
+@btn-default-color: @gray-darker;
+
+.btn {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 3px;
+  transition: all .4s cubic-bezier(.24,.45,.46,.92);
+
+  &:hover {
+    color: #fff;
+    background-color: @gray-darker;
+  }
+}
+
+.btn-social {
+  padding: 10px 50px;
+
+  :first-child {
+    width: 38px;
+    line-height: 38px;
+  }
+}
+
+.btn-link {
+
+  &:hover {
+    color: @gray-darker;
+    text-decoration: none;
+    background-color: transparent;
+  }
+}
+
+// Forms
+// -------------------------
+
+@input-border-radius: 2px;
+@input-border-focus: #999;
+@input-border: #f0f0f0;
+@input-color: #444;
+@input-color-placeholder: #999;
+@input-height-base: 44px;
+
+// Form states and alerts
+// -------------------------
+
+@state-success-bg: @brand-success;
+@state-info-bg: @brand-primary;
+@state-warning-bg: @brand-warning;
+@state-danger-bg: @brand-danger;
+
+.alert {
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+// Navbar
+// -------------------------
+
+@navbar-height: 50px;
+@navbar-default-bg: rgba(255,255,255,0.95);
+@navbar-default-link-color: @gray-darker;
+@navbar-default-link-active-color: @brand-primary;
+@navbar-default-link-active-bg: transparent;
+@navbar-default-link-hover-color: @brand-primary;
+@navbar-default-link-hover-bg: transparent;
+@navbar-default-brand-color: @gray-darker;
+@navbar-default-brand-hover-color: @brand-primary;
+
+.navbar-default {
+  border: 0;
+  box-shadow: 0 1px 5px rgba(0,0,0,.15);
+
+  .navbar-nav {
+    > li > a {
+      transition: color .4s cubic-bezier(.24,.45,.46,.92);
+    }
+  }
+}

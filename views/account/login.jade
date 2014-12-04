@@ -1,17 +1,66 @@
 extends ../layout
 block content
-  .panel
-      .text-center
-        h3 Sign in to Free Code Camp with any of these social network accounts:
-        a.btn.btn-lg.btn-linkedin.btn-social(href='/auth/linkedin')
-            i.fa.fa-linkedin
-            | Sign in with LinkedIn
-        .ten-pixel-break
-        a.btn.btn-lg.btn-twitter.btn-social(href='/auth/twitter')
-            i.fa.fa-twitter
-            | Sign in with Twitter
-      br
-      br
-    //    a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
-    //        i.fa.fa-facebook
-    //        | Sign in with Facebook
+    .jumbotron.text-center
+        h2 Sign in with one of these options:
+        a.btn.btn-lg.btn-block.btn-google-plus.btn-social(href='/auth/google')
+          i.fa.fa-google-plus
+          | Sign in with Google
+        a.btn.btn-lg.btn-block.btn-github.btn-social(href='/auth/github')
+          i.fa.fa-github
+          | Sign in with GitHub
+        a.btn.btn-lg.btn-block.btn-facebook.btn-social(href='/auth/facebook')
+          i.fa.fa-facebook
+          | Sign in with Facebook
+        a.btn.btn-lg.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')
+          i.fa.fa-linkedin
+          | Sign in with LinkedIn
+        a.btn.btn-lg.btn-block.btn-twitter.btn-social(href='/auth/twitter')
+          i.fa.fa-twitter
+          | Sign in with Twitter
+        hr
+        h2 Or you can use an email address:
+        form.form-horizontal(id='signup-form', action='signup', method='POST')
+            input(type='hidden', name='_csrf', value=_csrf)
+            .form-group
+                .col-sm-6.col-sm-offset-3
+                    input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
+            .form-group
+                .col-sm-6.col-sm-offset-3
+                    input.form-control(type='password', name='password', id='password', placeholder='Password')
+            .form-group
+                .col-sm-6.col-sm-offset-3
+                    input.form-control(type='password', name='confirmPassword', id='confirmPassword', placeholder='Confirm Password')
+            .form-group
+                .col-sm-offset-3.col-sm-6
+                    button.btn.btn-success(type='submit')
+                        span.ion-person-add
+                        | Sign up
+        hr
+        h2 If you previously signed up with your email address, sign in here:
+        form(action='login', method='POST')
+          input(type='hidden', name='_csrf', value=_csrf)
+          .col-sm-6.col-sm-offset-3
+            .form-group
+              input.form-control(type='email', name='email', id='email', placeholder='Email')
+            .form-group
+              input.form-control(type='password', name='password', id='password', placeholder='Password')
+            .form-group
+              button.btn.btn-primary(type='submit')
+                span.ion-android-hand
+                | Sign in
+              span &nbsp;&nbsp;
+              a.btn.btn-info(href='/forgot') Forgot your password?
+        .col-sm-12
+            h2 You can trust us with your&nbsp;
+              a(href="http://www.freecodecamp.com/privacy") privacy
+              | .
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+

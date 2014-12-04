@@ -19,7 +19,6 @@
 }
 
 
-
 // Bar itself
 // -------------------------
 
@@ -29,7 +28,7 @@
   height: @line-height-computed;
   margin-bottom: @line-height-computed;
   background-color: @progress-bg;
-  border-radius: @border-radius-base;
+  border-radius: @progress-border-radius;
   .box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
 }
 
@@ -66,23 +65,6 @@
 .progress-bar.active {
   .animation(progress-bar-stripes 2s linear infinite);
 }
-
-// Account for lower percentages
-.progress-bar {
-  &[aria-valuenow="1"],
-  &[aria-valuenow="2"] {
-    min-width: 30px;
-  }
-
-  &[aria-valuenow="0"] {
-    color: @gray-light;
-    min-width: 30px;
-    background-color: transparent;
-    background-image: none;
-    box-shadow: none;
-  }
-}
-
 
 
 // Variations

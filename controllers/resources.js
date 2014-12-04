@@ -9,6 +9,18 @@ exports.learnToCode = function(req, res) {
     });
 }
 
+exports.privacy = function(req, res) {
+    res.render('privacy',  {
+        title: 'Privacy'
+    });
+}
+
+exports.jqueryExercises = function(req, res) {
+    res.render('jquery-exercises',  {
+        title: 'jQuery Exercises'
+    });
+}
+
 exports.about = function(req, res) {
     res.render('about', {
         title: 'Who We Are'

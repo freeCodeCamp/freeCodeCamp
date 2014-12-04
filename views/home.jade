@@ -3,32 +3,41 @@ block content
     .jumbotron
         .text-center
             .animated.pulse
-                h2.big-text Learn to Code
+                h1.hug-top Code with Us
             .delay-1.animated.pulse.slow-animation
-                h2 Become an Employable Software Engineer by Collaborating on Projects for Nonprofits
+                h2 Let's learn to code by building projects for nonprofits
             .row
-                .col-xs-12.col-sm-12.col-md-4
-                    h3.delay-3.animated.pulse Technical Mastery
+                .col-xs-12.col-sm-12.col-md-3
+                    h3.delay-3.animated.pulse Get Connected
+                    .negative-10
+                    span.landing-icon.ion-network.text-primary(title='Get great references and connections to help you get a job')
+                    .negative-10
+                    p.landing-p Join a community of motivated professionals learning to code.
+                .col-xs-12.col-sm-12.col-md-3
+                    h3.delay-4.animated.pulse Learn JavaScript
                     .negative-10
                     span.landing-icon.ion-settings.text-primary(title='Learn to code')
                     .negative-10
-                    p You'll learn to code by pair programming (where two people code together on one computer) through our coding challenges.
-                .col-xs-12.col-sm-12.col-md-4
-                    h3.delay-4.animated.pulse Unique Portfolio Projects
+                    p.landing-p Work together on Full Stack JavaScript coding challenges.
+                .col-xs-12.col-sm-12.col-md-3
+                    h3.delay-5.animated.pulse Build your Portfolio
                     .negative-10
                     span.landing-icon.ion-social-github.text-primary(title='Build a portfolio of apps for nonprofits')
                     .negative-10
-                    p You'll use your new coding skills to build software solutions for nonprofits. Your portfolio projects will have grateful users.
-                .col-xs-12.col-sm-12.col-md-4
-                    h3.delay-5.animated.pulse Glowing References
+                    p.landing-p Build apps that solve real problems for real people.
+                .col-xs-12.col-sm-12.col-md-3
+                    h3.delay-6.animated.pulse Help Nonprofits
                     .negative-10
-                    span.landing-icon.ion-thumbsup.text-primary(title='Get great references and connections to help you get a job')
+                    span.landing-icon.ion-ios7-people.text-primary(title='Help nonprofits')
                     .negative-10
-                    p You'll gain the respect of your peers and the nonprofits you help. These types of connections are critical to your job search.
+                    p.landing-p Give nonprofits a boost by empowering them with code.
             a.btn.btn-cta.btn-primary(href="/login") Sign in now to start coding (it's free)
             br
             br
             a.btn.nonprofit-cta.btn-success(href="/nonprofits") I'm with a nonprofit and want help coding something
+
+    br
+    include partials/about-us
     br
     include partials/faq
     br
