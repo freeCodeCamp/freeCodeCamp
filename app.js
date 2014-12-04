@@ -165,20 +165,20 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
  * API examples routes.
  */
 app.post('/completed_challenge', function(req, res) {
-    console.log(req.user);
     req.user.challengesHash[parseInt(req.body.cn)] = Math.round(+new Date() / 1000);
     req.user.challengesCompleted = function() {
         var completed = [];
+        var h = req.user.challengesHash;
         for (i = 0; i < h.length; i++) {
+            console.log(h[i] > 0)
             if (h[i] > 0) {
+                console.log(h[i]);
                 completed.push(i);
             }
         return completed;
         }
     }
     req.user.save();
-    console.log(req.user.challengesHash);
-    console.log(req.user.challengesCompleted);
 });
 
 /**

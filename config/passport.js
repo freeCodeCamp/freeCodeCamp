@@ -77,10 +77,10 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
             user.save(function(err) {
                 done(err, user);
             });
-            if (!user.email) {
-                res.redirect('/account');
-                req.flash('errors', { msg: 'OK, you are signed in. Please add your email address to your profile.' });
-            }
+            //if (!user.email) {
+            //    res.redirect('/account');
+            //    req.flash('errors', { msg: 'OK, you are signed in. Please add your email address to your profile.' });
+            //}
         });
     }
 }));

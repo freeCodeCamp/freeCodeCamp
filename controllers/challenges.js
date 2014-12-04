@@ -19,7 +19,8 @@ exports.returnChallenge = function(req, res, next) {
             video: c.video,
             time: c.time,
             steps: c.steps,
-            cc: req.user.challengesHash
+            cc: req.user.challengesCompleted,
+            ch: req.user.challengesHash
         });
     });
 };
