@@ -78,7 +78,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
                 done(err, user);
             });
             if (!user.email) {
-                res.redirect('/account');
+                req.redirect('/account');
                 req.flash('errors', { msg: 'OK, you are signed in. Please add your email address to your profile.' });
             }
         });
