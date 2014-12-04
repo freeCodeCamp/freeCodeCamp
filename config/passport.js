@@ -106,33 +106,18 @@ passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, r
         User.findOne({ linkedin: profile.id }, function(err, existingUser) {
             if (existingUser) return done(null, existingUser);
             User.findOne({ email: profile._json.emailAddress }, function(err, existingEmailUser) {
-                if (existingEmailUser) {
-                //    req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with LinkedIn manually from Account Settings.' });
-                //    done(err);
-                    var user = existingEmailUser;
-                    user.linkedin = profile.id;
-                    user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
-                    user.email = profile._json.emailAddress;
-                    user.profile.name = profile.displayName;
-                    user.profile.location = profile._json.location.name;
-                    user.profile.picture = profile._json.pictureUrl;
-                    user.profile.website = profile._json.publicProfileUrl;
-                    user.save(function(err) {
-                        done(err, user);
-                    });
-                } else {
-                    var user = new User();
-                    user.linkedin = profile.id;
-                    user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
-                    user.email = profile._json.emailAddress;
-                    user.profile.name = profile.displayName;
-                    user.profile.location = profile._json.location.name;
-                    user.profile.picture = profile._json.pictureUrl;
-                    user.profile.website = profile._json.publicProfileUrl;
-                    user.save(function(err) {
-                        done(err, user);
-                    });
-                }
+                var user = existingEmailUser || new User;
+                user.linkedin = profile.id;
+                user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
+                user.email = profile._json.emailAddress;
+                user.profile.name = user.profile.name || profile.displayName;
+                user.profile.location = user.profile.location || profile._json.location.name;
+                user.profile.picture = user.profile.picture || profile._json.pictureUrl;
+                user.profile.website = user.profile.website || profile._json.publicProfileUrl;
+                user.challengesComplete = user.challengesCompleted || [];
+                user.save(function(err) {
+                    done(err, user);
+                });
             });
         });
     }
@@ -201,10 +186,10 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
 passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refreshToken, profile, done) {
     if (req.user) {
         User.findOne({ github: profile.id }, function(err, existingUser) {
-            //if (existingUser) {
-            //    req.flash('errors', { msg: 'There is already a GitHub account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-            //    done(err);
-            //} else {
+            if (existingUser) {
+                req.flash('errors', { msg: 'There is already a GitHub account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                done(err);
+            } else {
                 User.findById(req.user.id, function(err, user) {
                     user.github = profile.id;
                     user.tokens.push({ kind: 'github', accessToken: accessToken });
@@ -217,54 +202,37 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
                         done(err, user);
                     });
                 });
-            //}
+            }
         });
     } else {
         User.findOne({ github: profile.id }, function(err, existingUser) {
             if (existingUser) return done(null, existingUser);
             User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
-                if (existingEmailUser) {
-                    //req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with GitHub manually from Account Settings.' });
-                    //done(err);
-                    var user = existingEmailUser;
-                    user.email = profile._json.email;
-                    user.github = profile.id;
-                    user.tokens.push({ kind: 'github', accessToken: accessToken });
-                    user.profile.name = profile.displayName;
-                    user.profile.picture = profile._json.avatar_url;
-                    user.profile.location = profile._json.location;
-                    user.profile.website = profile._json.blog;
-                    user.save(function(err) {
-                        done(err, user);
-                    });
-                } else {
-                    var user = new User();
-                    user.email = profile._json.email;
-                    user.github = profile.id;
-                    user.tokens.push({ kind: 'github', accessToken: accessToken });
-                    user.profile.name = profile.displayName;
-                    user.profile.picture = profile._json.avatar_url;
-                    user.profile.location = profile._json.location;
-                    user.profile.website = profile._json.blog;
-                    user.save(function(err) {
-                        done(err, user);
-                    });
-                }
+                var user = existingEmailUser || new User;
+                user.email = profile._json.email;
+                user.github = profile.id;
+                user.tokens.push({ kind: 'github', accessToken: accessToken });
+                user.profile.name = user.profile.name || profile.displayName;
+                user.profile.picture = user.profile.picture || profile._json.avatar_url;
+                user.profile.location = user.profile.location || profile._json.location;
+                user.profile.website = user.profile.website || profile._json.blog;
+                user.save(function(err) {
+                    done(err, user);
+                });
             });
         });
     }
 }));
-
 
 // Sign in with Google.
 
 passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refreshToken, profile, done) {
     if (req.user) {
         User.findOne({ google: profile.id }, function(err, existingUser) {
-            //if (existingUser) {
-            //    req.flash('errors', { msg: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-            //    done(err);
-            //} else {
+            if (existingUser) {
+                req.flash('errors', { msg: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
+                done(err);
+            } else {
                 User.findById(req.user.id, function(err, user) {
                     user.google = profile.id;
                     user.tokens.push({ kind: 'google', accessToken: accessToken });
@@ -276,42 +244,26 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
                         done(err, user);
                     });
                 });
-            //}
+            }
         });
     } else {
         User.findOne({ google: profile.id }, function(err, existingUser) {
             if (existingUser) return done(null, existingUser);
             User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
-                if (existingEmailUser) {
-                    //req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
-                    //done(err);
-                    var user = existingEmailUser;
-                    user.email = profile._json.email;
-                    user.google = profile.id;
-                    user.tokens.push({ kind: 'google', accessToken: accessToken });
-                    user.profile.name = profile.displayName;
-                    user.profile.gender = profile._json.gender;
-                    user.profile.picture = profile._json.picture;
-                    user.save(function(err) {
-                        done(err, user);
-                    });
-                } else {
-                    var user = new User();
-                    user.email = profile._json.email;
-                    user.google = profile.id;
-                    user.tokens.push({ kind: 'google', accessToken: accessToken });
-                    user.profile.name = profile.displayName;
-                    user.profile.gender = profile._json.gender;
-                    user.profile.picture = profile._json.picture;
-                    user.save(function(err) {
-                        done(err, user);
-                    });
-                }
+                var user = existingEmailUser || new User;
+                user.email = profile._json.email;
+                user.google = profile.id;
+                user.tokens.push({ kind: 'google', accessToken: accessToken });
+                user.profile.name = user.profile.name || profile.displayName;
+                user.profile.gender = user.profile.gender || profile._json.gender;
+                user.profile.picture = user.profile.picture || profile._json.picture;
+                user.save(function(err) {
+                    done(err, user);
+                });
             });
         });
     }
 }));
-
 
 // Login Required middleware.
 
