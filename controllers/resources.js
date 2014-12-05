@@ -15,6 +15,12 @@ exports.privacy = function(req, res) {
     });
 }
 
+exports.firelane = function(req, res) {
+    res.render('firelane',  {
+        title: "I got a ticket for parking in a fire lane. It wasn't a fire lane when I parked there"
+    });
+}
+
 exports.jqueryExercises = function(req, res) {
     res.render('jquery-exercises',  {
         title: 'jQuery Exercises'
