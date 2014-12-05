@@ -124,9 +124,6 @@ app.get('/', homeController.index);
 app.get(
   '/resources/interview-questions',
   resourcesController.interviewQuestions);
-app.get(
-    '/resources/firelane',
-    resourcesController.firelane);
 app.get('/learn-to-code', resourcesController.learnToCode);
 app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
