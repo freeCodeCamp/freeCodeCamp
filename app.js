@@ -163,21 +163,18 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
 
 /**
  * API examples routes.
+ * accepts a post request. the challenge id req.body.challengeNumber
+ * and updates user.challengesHash & user.challengesCompleted
+ *
  */
 app.post('/completed_challenge', function(req, res) {
-    req.user.challengesHash[parseInt(req.body.cn)] = Math.round(+new Date() / 1000);
-    req.user.challengesCompleted = function() {
-        var completed = [];
-        var h = req.user.challengesHash;
-        for (i = 0; i < h.length; i++) {
-            console.log(h[i] > 0)
-            if (h[i] > 0) {
-                console.log(h[i]);
-                completed.push(i);
-            }
-        return completed;
-        }
+    req.user.challengesHash[parseInt(req.body.challengeNumber)] = Math.round(+new Date() / 1000);
+    var ch = req.user.challengesHash;
+    var p = 0;
+    for (k in ch) {
+        if (ch[k] > 0) { p += 1}
     }
+    req.user.points = p;
     req.user.save();
 });
 

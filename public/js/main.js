@@ -20,14 +20,11 @@ $(document).ready(function() {
         $('#complete-dialog').modal('show');
         l = location.pathname.split('/');
         cn = l[l.length - 1]
+        console.log(cn);
         $.ajax({
             type: 'POST',
-            data: {cn: cn},
-            url: '/completed_challenge/',
-            success: function(data) {
-                console.log('success');
-                console.log(JSON.stringify(data));
-            }
+            data: {challengeNumber: cn},
+            url: '/completed_challenge/'
         });
     });
 
