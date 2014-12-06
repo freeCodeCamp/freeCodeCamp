@@ -5,6 +5,7 @@ var nodemailer = require('nodemailer');
 var passport = require('passport');
 var User = require('../models/User');
 var secrets = require('../config/secrets');
+var moment = require('moment');
 
 /**
  * GET /login
@@ -118,7 +119,9 @@ exports.postSignup = function(req, res, next) {
 
 exports.getAccount = function(req, res) {
   res.render('account/profile', {
-    title: 'Manage your Free Code Camp Account'
+    title: 'Manage your Free Code Camp Account',
+    cc: req.user.challengesHash,
+    moment: moment
   });
 };
 
