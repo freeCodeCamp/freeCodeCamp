@@ -22,7 +22,7 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
-function sendWelcomeEmail(new_user) {
+function sendWelcomeEmail(u) {
     var transporter = nodemailer.createTransport({
         service: 'Mandrill',
         auth: {
@@ -31,9 +31,9 @@ function sendWelcomeEmail(new_user) {
         }
     });
     var mailOptions = {
-        to: new_user.email,
+        to: u.email,
         from: 'Team@freecodecamp.com',
-        subject: 'Welcome to Free Code Camp!',
+        subject: 'Welcome to Free Code Camp ' + u.name + '!',
         text: 'Hello,\n\n' +
         'Welcome to Free Code Camp!'
     };
@@ -279,12 +279,12 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
                 user.profile.name = user.profile.name || profile.displayName;
                 user.profile.gender = user.profile.gender || profile._json.gender;
                 user.profile.picture = user.profile.picture || profile._json.picture;
-                user.save(function(err) {
-                    done(err, user);
-                });
                 if (!existingEmailUser) {
                     sendWelcomeEmail(user);
                 }
+                user.save(function(err) {
+                    done(err, user);
+                });
             });
         });
     }
