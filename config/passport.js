@@ -22,6 +22,23 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
+function sendWelcomeEmail(user) {
+    var transporter = nodemailer.createTransport({
+        service: 'Mandrill',
+        auth: {
+            user: secrets.mandrill.user,
+            pass: secrets.mandrill.password
+        }
+    });
+    var mailOptions = {
+        to: user.email,
+        from: 'Team@freecodecamp.com',
+        subject: 'Welcome to Free Code Camp ' + user.name + '!',
+        text: 'Hello,\n\n' +
+        'Welcome to Free Code Camp!'
+    };
+}
+
 /**
  * OAuth Strategy Overview
  *
@@ -265,6 +282,9 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
                 user.save(function(err) {
                     done(err, user);
                 });
+                if (!existingEmailUser) {
+                    sendWelcomeEmail(user);
+                }
             });
         });
     }

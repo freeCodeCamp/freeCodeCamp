@@ -68,7 +68,7 @@ exports.logout = function(req, res) {
 exports.getEmailSignin = function(req, res) {
   if (req.user) return res.redirect('/');
   res.render('account/email-signup', {
-    title: 'Create Your Free Code Camp Account'
+    title: 'Sign in to your Free Code Camp Account'
   });
 };
 
