@@ -22,22 +22,22 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
-function sendWelcomeEmail(u) {
-    var transporter = nodemailer.createTransport({
-        service: 'Mandrill',
-        auth: {
-            user: secrets.mandrill.user,
-            pass: secrets.mandrill.password
-        }
-    });
-    var mailOptions = {
-        to: u.email,
-        from: 'Team@freecodecamp.com',
-        subject: 'Welcome to Free Code Camp ' + u.name + '!',
-        text: 'Hello,\n\n' +
-        'Welcome to Free Code Camp!'
-    };
-}
+//function sendWelcomeEmail(u) {
+//    var transporter = nodemailer.createTransport({
+//        service: 'Mandrill',
+//        auth: {
+//            user: secrets.mandrill.user,
+//            pass: secrets.mandrill.password
+//        }
+//    });
+//    var mailOptions = {
+//        to: u.email,
+//        from: 'Team@freecodecamp.com',
+//        subject: 'Welcome to Free Code Camp ' + u.name + '!',
+//        text: 'Hello,\n\n' +
+//        'Welcome to Free Code Camp!'
+//    };
+//}
 
 /**
  * OAuth Strategy Overview
@@ -279,9 +279,9 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
                 user.profile.name = user.profile.name || profile.displayName;
                 user.profile.gender = user.profile.gender || profile._json.gender;
                 user.profile.picture = user.profile.picture || profile._json.picture;
-                if (!existingEmailUser) {
-                    sendWelcomeEmail(user);
-                }
+                //if (!existingEmailUser) {
+                //    sendWelcomeEmail(user);
+                //}
                 user.save(function(err) {
                     done(err, user);
                 });
