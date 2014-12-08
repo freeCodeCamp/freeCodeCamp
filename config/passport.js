@@ -23,20 +23,21 @@ passport.deserializeUser(function(id, done) {
 });
 
 function sendWelcomeEmail(user) {
-    var transporter = nodemailer.createTransport({
-        service: 'Mandrill',
-        auth: {
-            user: secrets.mandrill.user,
-            pass: secrets.mandrill.password
-        }
-    });
-    var mailOptions = {
-        to: user.email,
-        from: 'Team@freecodecamp.com',
-        subject: 'Welcome to Free Code Camp ' + user.name + '!',
-        text: 'Hello,\n\n' +
-        'Welcome to Free Code Camp!'
-    };
+    console.log('=================================================================================CALL===============================');
+    //var transporter = nodemailer.createTransport({
+    //    service: 'Mandrill',
+    //    auth: {
+    //        user: secrets.mandrill.user,
+    //        pass: secrets.mandrill.password
+    //    }
+    //});
+    //var mailOptions = {
+    //    to: user.email,
+    //    from: 'Team@freecodecamp.com',
+    //    subject: 'Welcome to Free Code Camp ' + user.name + '!',
+    //    text: 'Hello,\n\n' +
+    //    'Welcome to Free Code Camp!'
+    //};
 }
 
 /**
@@ -272,6 +273,9 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
         User.findOne({ google: profile.id }, function(err, existingUser) {
             if (existingUser) return done(null, existingUser);
             User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+                console.log('debug');
+                console.log(existingEmailUser);
+                console.log('debug');
                 var user = existingEmailUser || new User;
                 user.email = user.email || profile._json.email;
                 user.google = profile.id;
