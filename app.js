@@ -135,8 +135,10 @@ app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
 app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
-app.get('/signup', userController.getSignup);
-app.post('/signup', userController.postSignup);
+app.get('/email-signup', userController.getEmailSignup);
+app.get('/email-signin', userController.getEmailSignin);
+app.post('/email-signup', userController.postEmailSignup);
+app.post('/email-signin', userController.postLogin);
 app.get('/nonprofits', contactController.getContact);
 app.post('/nonprofits', contactController.postContact);
 

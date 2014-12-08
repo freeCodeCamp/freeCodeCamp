@@ -61,25 +61,37 @@ exports.logout = function(req, res) {
 };
 
 /**
- * GET /signup
+ * GET /email-signup
  * Signup page.
  */
 
-exports.getSignup = function(req, res) {
+exports.getEmailSignin = function(req, res) {
   if (req.user) return res.redirect('/');
-  res.render('account/signup', {
+  res.render('account/email-signup', {
     title: 'Create Your Free Code Camp Account'
   });
 };
 
 /**
- * POST /signup
+ * GET /email-signin
+ * Signup page.
+ */
+
+exports.getEmailSignup = function(req, res) {
+  if (req.user) return res.redirect('/');
+  res.render('account/email-signin', {
+    title: 'Create Your Free Code Camp Account'
+  });
+};
+
+/**
+ * POST /email-signup
  * Create a new local account.
  * @param email
  * @param password
  */
 
-exports.postSignup = function(req, res, next) {
+exports.postEmailSignup = function(req, res, next) {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password must be at least 4 characters long').len(4);
   req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
@@ -88,7 +100,7 @@ exports.postSignup = function(req, res, next) {
 
   if (errors) {
     req.flash('errors', errors);
-    return res.redirect('/signup');
+    return res.redirect('/email-signup');
   }
 
   var user = new User({
@@ -99,13 +111,13 @@ exports.postSignup = function(req, res, next) {
   User.findOne({ email: req.body.email }, function(err, existingUser) {
     if (existingUser) {
       req.flash('errors', { msg: 'Account with that email address already exists.' });
-      return res.redirect('/signup');
+      return res.redirect('/email-signup');
     }
     user.save(function(err) {
       if (err) return next(err);
       req.logIn(user, function(err) {
         if (err) return next(err);
-        res.redirect('/');
+        res.redirect('/email-signup');
       });
     });
   });
