@@ -129,7 +129,6 @@ app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
 app.get('/text-based-adventure-tutorial-app', resourcesController.textBasedAdventureTutorial);
 app.get('/programmer-interview-questions-app', resourcesController.programmerInterviewQuestionsApp);
-app.get('/statistics', resourcesController.statistics);
 app.get('/about', resourcesController.about);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
