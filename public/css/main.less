@@ -137,6 +137,10 @@ ul {
   height: 10px;
 }
 
+.fifteen-pixel-break {
+  height: 15px;
+}
+
 .nav-height {
   height: 50px;
 }
@@ -148,9 +152,13 @@ ul {
 .responsive-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; }
 .responsive-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-.negative-10 {
+.negative-45 {
   margin-top: -45px;
   margin-bottom: -45px;
+}
+
+.negative-10 {
+  margin-top: -10px;
 }
 
 .landing-p {
@@ -295,4 +303,33 @@ ul {
   background-color: #f2a330;
   background-image: none;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.team-member {
+  height: 420px;
+}
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.masonry-row {
+  -moz-column-width: 18em;
+  -webkit-column-width: 18em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap:1em;
+}
+
+.masonry-block {
+  display: inline-block;
+  padding:  .25rem;
+  width:  100%;
+}
+
+.masonry-relative {
+  position:relative;
+  display: block;
 }

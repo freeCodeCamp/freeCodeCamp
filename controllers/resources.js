@@ -21,6 +21,18 @@ exports.jqueryExercises = function(req, res) {
     });
 }
 
+exports.programmerInterviewQuestionsApp = function(req, res) {
+    res.render('programmer-interview-questions-app',  {
+        title: 'programmer-interview-questions-app'
+    });
+}
+
+exports.textBasedAdventureTutorial = function(req, res) {
+    res.render('text-based-adventure-tutorial-app',  {
+        title: 'text-based-adventure-tutorial-app'
+    });
+}
+
 exports.about = function(req, res) {
     res.render('about', {
         title: 'Who We Are'
