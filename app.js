@@ -9,9 +9,9 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var errorHandler = require('errorhandler');
-var csrf = require('lusca').csrf();
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
+var helmet = require('helmet');
 
 var _ = require('lodash');
 var MongoStore = require('connect-mongo')(session);
@@ -56,12 +56,6 @@ mongoose.connection.on('error', function() {
 });
 
 /**
- * CSRF whitelist.
- */
-
-var csrfExclude = ['/url1', '/url2'];
-
-/**
  * Express configuration.
  */
 
@@ -91,12 +85,23 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-
-app.use(function(req, res, next) {
-    // CSRF protection.
-    if (_.contains(csrfExclude, req.path)) { return next(); }
-    csrf(req, res, next);
-});
+app.disable('x-powered-by');
+app.use(helmet.xssFilter());
+app.use(helmet.xframe());
+app.use(helmet.contentSecurityPolicy({
+    defaultSrc: ["'self'", 'freecodecamp.com'],
+    scriptSrc: ['*.google-analytics.com', '*.optimizely.com', '*.googleapis.com', '*.twitter.com'],
+    styleSrc: ["'self'", '*.twitter.com'],
+    imgSrc: ["'self'", '*.amazonaws.com', '*.twitter.com', '*.twimg.com'],
+    fontSrc: ["'self", '*.googleapis.com', '*.twitter.com'],
+    mediaSrc: ['*.amazonaws.com', '*.twitter'],
+    frameSrc: ['*.gitter.im', '*.vimeo.com'],
+//    sandbox: ['allow-forms', 'allow-scripts'],
+//    reportUri: '/report-violation',
+    reportOnly: false, // set to true if you only want to report errors
+    setAllHeaders: false, // set to true if you want to set all headers
+    safari5: false // set to true if you want to force buggy CSP in Safari 5
+}));
 
 app.use(function(req, res, next) {
     // Make user object available in templates.

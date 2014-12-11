@@ -1,3 +1,12 @@
+
+var User = require('../models/User');
+
+var totalUsers = User.count({}, function( err, count){
+    count;
+});
+
+//var usersOverTenChallenges = User.where: "this.challengesCompleted && this.challengesCompleted.length >= 10"
+
 /**
  * GET /
  * Resources.
@@ -12,6 +21,14 @@ exports.learnToCode = function(req, res) {
 exports.privacy = function(req, res) {
     res.render('privacy',  {
         title: 'Privacy'
+    });
+}
+
+exports.statistics = function(req, res) {
+    res.render('statistics',  {
+        title: 'Code Camper Statistics',
+        totalUsers: totalUsers,
+        //usersOverTenChallenges: usersOverTenChallenges
     });
 }
 
