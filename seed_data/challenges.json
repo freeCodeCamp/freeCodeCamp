@@ -101,7 +101,7 @@
         "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
         "It's also extremely popular with employers, so we're going to learn it well.",
         "Code School has an excellent free course that will walk us through the basics of jQuery.",
-        "Go to <a href='http://try.jquery.com/levels/1/challenges/1' target='_blank'>http://try.jquery.com/levels/1/challenges/1</a> and complete the section."
+        "Go to <a href='http://try.jquery.com/levels/1/challenges/1' target='_blank'>http://try.jquery.com/levels/1/challenges/1</a> and complete the first section."
     ]
   },
   {
@@ -111,7 +111,7 @@
     "challengeNumber": 10,
     "instructions": [
         "Now let's learn more about DOM traversal - that is, moving from one HTML element to the next.",
-        "Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section.",
+        "Go to <a href='http://try.jquery.com/levels/2/challenges/1' target='_blank'>http://try.jquery.com/levels/2/challenges/1</a> and complete the second section."
     ]
   },
   {
@@ -121,7 +121,7 @@
     "challengeNumber": 11,
     "instructions": [
         "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
-        "Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."
+        "Go to <a href='http://try.jquery.com/levels/3/challenges/1' target='_blank'>http://try.jquery.com/levels/3/challenges/1</a> and complete the third section."
     ]
   },
   {
@@ -129,56 +129,99 @@
     "time": 30,
     "video": "",
     "challengeNumber": 12,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Now let's learn how to use jQuery Listeners. These will \"listen\" for something to happen, and then trigger a subsequent event",
+        "Go to <a href='http://try.jquery.com/levels/4/challenges/1' target='_blank'>http://try.jquery.com/levels/4/challenges/1</a> and complete the fourth section."
+    ]
   },
   {
     "name": "Use jQuery for Styling",
     "time": 30,
     "video": "",
     "challengeNumber": 13,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Finally, let's use jQuery to manipulate the way websites look, by changing the CSS of elements.",
+        "Go to <a href='http://try.jquery.com/levels/5/challenges/1' target='_blank'>http://try.jquery.com/levels/5/challenges/1</a> and complete the fifth section."
+    ]
   },
   {
     "name": "Build a MadLibs Game",
     "time": 60,
     "video": "",
     "challengeNumber": 14,
-    "instructions": ["Go to <a href='https://dash.generalassemb.ly/projects/mad-libs-1' target='_blank'>https://dash.generalassemb.ly/projects/mad-libs-1</a> and complete the section."]
+    "instructions": [
+        "Now that we've built a foundation in jQuery, let's go back to Dash and do it's last challenge.",
+        "If you aren't familiar with Mad Libs, they basically involve inserting random nouns, adjectives and verbs in to stories. The stories that result are often hilarious.",
+        "Go to <a href='https://dash.generalassemb.ly/projects/mad-libs-1' target='_blank'>httpsng://dash.generalassemb.ly/projects/mad-libs-1</a> and complete the fifth project."
+    ]
   },
   {
     "name": "Discover Chrome's DevTools",
     "time": 90,
     "video": "",
     "challengeNumber": 15,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "It's time to learn the most powerful tool your browser has - the Development Tools!",
+        "If you aren't already using Chrome, you'll want to download it here. While it's true that Firefox has a tool called Firebug that is very similar to Chrome's DevTools, we will use Chrome for this challenge.",
+        "Note that this course, jointly produced by Google and Code School, is technologically impressive, but occasionally buggy. If you encounter a bug, just ignore it and keep going.",
+        "Go to <a href='http://discover-devtools.codeschool.com' target='_blank'>http://discover-devtools.codeschool.com</a> and complete this short course."]
   },
   {
     "name": "Tackle jQuery Exercises",
     "time": 60,
     "video": "",
     "challengeNumber": 16,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "We've built some special jQuery challenges to help you reinforce your knowledge of this fundamental skill.",
+        "There are many correct ways to solve each of these exercises. After you complete the challenge, you can compare your solution with our solution by pressing the \"#solution-button\" button.",
+        "Go to <a href='http://freecodecamp.com/jquery-exercises' target='_blank'>http://freecodecamp.com/jquery-exercises</a> and complete the exercises."
+      ]
   },
   {
     "name": "Customize Bootstrap with Bootswatch",
     "time": 10,
     "video": "",
     "challengeNumber": 17,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Go to <a href='http://getbootstrap.com/components/' target='_blank'>http://getbootstrap.com/components/</a>",
+        "Right-click an area of the page that doesn't have any HTML elements on it, then choose 'view page source'.",
+        "Select all the text, then copy it.",
+        "Go to <a href='http://codepen.io/pen/' target='_blank'>http://codepen.io/pen/</a>",
+        "Paste the HTML you copied from GetBootStrap.com into the HTML field of Codepen.",
+        "Go to <a href='http://bootswatch.com/' target='_blank'>http://bootswatch.com/</a>",
+        "Decide which theme you want to use.",
+        "Click the down arrow next to the download button and choose 'bootstrap.css'",
+        "Select all the text, then copy it.",
+        "Go back to CodePen and paste the CSS you copied from Bootswatch.com into the CSS field of Codepen.",
+        "Your Bootswatch CSS should now be applied to the HTML from the GetBootStrap page.",
+        "This page is currently using a two-column layout, with the main content on the left and additional navigation on the right. See if you can make it a one-column layout."
+      ]
   },
   {
     "name": "Inject Life with CSS Transformations",
     "time": 15,
     "video": "",
     "challengeNumber": 18,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Go to <a href='http://daneden.github.io/animate.css/' target='_blank'>http://daneden.github.io/animate.css/</a> and try out some of the CSS animations.",
+        "Go to <a href='http://codepen.io/ossia/pen/bGegt' target='_blank'>http://codepen.io/ossia/pen/bGegt</a>.",
+        "Press the \"Fork\" button. This will fork, meaning create a copy of, the CodePen.",
+        "Click the gear in the CSS column.",
+        "Click \"Add another resource\" and start typing \"animate.css\". Click on the dropdown results to autocomplete it.",
+        "Now that you have Animate.css enabled, use jQuery and the \"toggleClass\" method to add an animated class to all h1 elements when you click the \"Press Me\" button."
+    ]
   },
   {
-    "name": "Learn Computer Graphics from Stanford",
+    "name": "Learn Basic Computer Science Concepts from Stanford",
     "time": 120,
     "video": "",
     "challengeNumber": 19,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Stanford has an excellent free online Computer Science curriculum. This interactive course uses a modified version of JavaScript. It will cover a lot of concepts quickly.",
+        "Note that Harvard also has an excellent introduction to computer science course called CS50, but it takes more than 100 hours to complete, and doesn't use JavaScript.",
+        "Despite being completely self-paced, Stanford's CS101 course is broken up into weeks. Each of the following challenges will address one of those weeks.",
+        "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/</a> and complete the first week's course work."
+    ]
   },
   {
     "name": "Learn Loops from Stanford",
@@ -188,14 +231,14 @@
     "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
   },
   {
-    "name": "Learn Computer Hardware from Stanford",
+    "name": "Learn Computer Hardware Concepts from Stanford",
     "time": 120,
     "video": "",
     "challengeNumber": 21,
     "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
   },
   {
-    "name": "Learn Computer Networking from Stanford",
+    "name": "Learn Computer Networking Concepts from Stanford",
     "time": 120,
     "video": "",
     "challengeNumber": 22,
@@ -209,7 +252,7 @@
     "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
   },
   {
-    "name": "Learn Computer Security from Stanford",
+    "name": "Learn Computer Security Concepts from Stanford",
     "time": 120,
     "video": "",
     "challengeNumber": 24,
@@ -262,21 +305,55 @@
     "time": 30,
     "video": "",
     "challengeNumber": 31,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Watch the video to learn the RSAP (Read, Search, Ask, Post) methodology for getting help.",
+        "Try an intelligent Google query that involves JavaScript and filters for this year (since JavaScript changes)",
+        "Go to <a href='http://stackoverflow.com/' target='_blank'>http://stackoverflow.com/</a> and view the recent questions.",
+        "Go to <a href='http://webchat.freenode.net/' target='_blank'>http://webchat.freenode.net/</a> and create an IRC account.",
+        "Join the #JavaScript chat room and introduce yourself as a Free Code Camp student.",
+        "Now you have several ways of getting help when you're stuck."
+    ]
   },
   {
     "name": "Learn Regular Expressions",
     "time": 60,
     "video": "",
     "challengeNumber": 32,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
+        "Check out <a href='http://www.regexr.com' target='_blank'>http://www.regexr.com</a>. It's a Regular Expression Sandbox.",
+        "Now go to <a href='http://www.regexone.com' target='_blank'>http://www.regexone.com</a> and complete the tutorial and exercises 1 - 6.",
+        "Note that you can click \"continue\" to move on to the next step as soon as all the tasks have green checkmarks beside them. You can often do this just by using the wildcard \"dot\" operator, but try to use the techniques that each lesson recommends."
+    ]
   },
   {
     "name": "Start Pair Programming on Coderbyte problems",
     "time": 30,
     "video": "",
     "challengeNumber": 33,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Go to <a href='http://www.teamviewer.com/en/index.aspx' target='_blank'>http://www.teamviewer.com/en/index.aspx</a> and download Team Viewer. Be sure not to download the beta version, which isn't compatible with the current stable version everyone else will be using.",
+        "Install it and launch it",
+        "Go to the chat room and ask if anyone wants to pair program with you on your current challenge.",
+        "If someone is interested, they will be your \"pair\" - the person you pair programming with.",
+        "<strong>First, you will pair program on your computer.</strong> Copy your Team Viewer ID and paste it into the private chat, so that your pair can use it to connect with you.",
+        "You will need to share your randomly generated password with your pair as well.",
+        "Once your pair connects, you will see a Team Viewer side menu. ",
+        "Click the audio button that drops down.",
+        "Click the headset icon and choose Voice over IP",
+        "Click the microphone button to unmute your microphone. Once your pair does the same, you two will have an open voice channel.",
+        "Now open up Atom and let them add their name somewhere to your bootstrap template in a place that will be visible in the browser, then redeploy it via BitBalloon.",
+        "When you are finished pair programming, click the X to end the session.",
+        "<strong>Next, you will pair program on your pair's computer.</strong> Ask your pair for his or her Team Viewer ID and password.",
+        "Enter this id, and then password, to start the session.",
+        "Once the Team Viewer session starts, look at the the top of the screen. You will see 6 buttons. If you hover your cursor over the buttons, they will slide down so that you can read them. Click the audio/video button. This will allow you to turn on Voice Over IP and unmute your microphone, opening up your voice channel.",
+        "Now ask them to open up Atom so you can add your name to their bootstrap template in a place that will be visible in the browser. Then they can redeploy it via BitBalloon.",
+        "When you are finished pair programming, click the X to end the session.",
+        "Congratulations! You have completed your first pair programming session. Now you can pair program through any of the remaining challenges. The more, the better!",
+        "Create a CoderByte account at <a href='http://coderbyte.com/sl/' target='_blank'>http://coderbyte.com/sl/</a>",
+        "Now go to <a href='http://coderbyte.com/CodingArea/Challenges/#easyChals' target='_blank'>http://coderbyte.com/CodingArea/Challenges/#easyChals</a> and start working through Coderbyte's easy algorithm scripting challenges using JavaScript.",
+        "Be sure to pair programming on these challenges, and remember to apply the RSAP methodology."
+    ]
   },
   {
     "name": "Learn Relational Databases from Stanford",
@@ -297,7 +374,10 @@
     "time": 60,
     "video": "",
     "challengeNumber": 36,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Go to <a href='https://class.stanford.edu/courses/DB/SQL/SelfPaced/about' target='_blank'>https://class.stanford.edu/courses/DB/SQL/SelfPaced/about</a> and register for this course.",
+        "Be sure to watch the videos, in addition to doing the exercises, because they have embedded challenges."
+    ]
   },
   {
     "name": "Pair program on SQL Social Network Modification",
@@ -311,21 +391,28 @@
     "time": 60,
     "video": "",
     "challengeNumber": 38,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Go to <a href='https://class.stanford.edu/courses/DB/JSON/SelfPaced/about' target='_blank'>https://class.stanford.edu/courses/DB/JSON/SelfPaced/about</a> and register for this course.",
+        "Be sure to watch the videos, in addition to doing the exercises, because they have embedded challenges."
+    ]
   },
   {
     "name": "Try Source Code Version Control with Git",
     "time": 30,
     "video": "",
     "challengeNumber": 39,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Go to <a href='https://www.codeschool.com/courses/try-git' target='_blank'>https://www.codeschool.com/courses/try-git</a> and complete this short interactive course."
+      ]
   },
   {
     "name": "Get started with Node.JS",
     "time": 45,
     "video": "",
     "challengeNumber": 40,
-    "instructions": ["Go to <a href='http://www.codecademy.com/tracks/web' target='_blank'>http://www.codecademy.com/tracks/web</a> and complete the section."]
+    "instructions": [
+        "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
+      ]
   },
   {
     "name": "Try Node.js Events",
