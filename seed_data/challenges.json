@@ -1,11 +1,11 @@
 [
   {
-    "name": "A One-minute Introduction to Free Code Camp",
-    "time": 1,
-    "video": "",
+    "name": "A 3 Minute Introduction to Free Code Camp",
+    "time": 3,
+    "video": "114444711",
     "challengeNumber": 0,
     "steps": [
-        "Watch this 1-minute video, or simply read this summary:",
+        "Watch this 3-minute video, or simply read this summary:",
         "Our goal is to help you become an employable software engineer.",
         "We're going to do this by pair programming on projects for nonprofits.",
         "Pair programming is where two people code together on the same computer.",
@@ -17,7 +17,7 @@
   {
     "name": "Join the Free Code Camp Chat Room",
     "time": 5,
-    "video": "",
+    "video": "114444711",
     "challengeNumber": 1,
     "steps": [
         "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another Code Camper who's on the same challenge as you and wants to pair program.",
@@ -31,7 +31,7 @@
   {
     "name": "Join the Free Code Camp Subreddit",
     "time": 5,
-    "video": "",
+    "video": "114444711",
     "challengeNumber": 2,
     "steps": [
         "Go to the Free Code Camp Subreddit: <a href='https://www.reddit.com/r/freecodecamp' target='_blank'>https://www.reddit.com/r/freecodecamp</a>. You can come here to share and discuss additional coding resources, or ask questions to our entire community.",
@@ -43,7 +43,7 @@
   {
     "name": "Build a Personal Website",
     "time": 60,
-    "video": "",
+    "video": "114444711",
     "challengeNumber": 3,
     "steps": [
         "There are tons of interactive HTML and CSS tutorials out there, but Nathan Bashaw's Dash tutorials, which he built for General Assembly, are our favorite.",
@@ -52,7 +52,7 @@
   {
     "name": "Build a Responsive Blog Theme",
     "time": 60,
-    "video": "",
+    "video": "114444711",
     "challengeNumber": 4,
     "steps": [
         "Next, let's learn about Responsive web design and continue learning about HTML and CSS.",
@@ -62,7 +62,7 @@
   {
     "name": "Build a Small Business Website",
     "time": 60,
-    "video": "",
+    "video": "114444711",
     "challengeNumber": 5,
     "steps": ["Ready for some more HTML and CSS fundamentals?",
         "Go to <a href='https://dash.generalassemb.ly/projects/eshas-restaurant-1' target='_blank'>https://dash.generalassemb.ly/projects/eshas-restaurant-1</a> and complete the third project."]
@@ -70,7 +70,7 @@
   {
     "name": "Tweak HTML and CSS in CodePen",
     "time": 10,
-    "video": "",
+    "video": "114444711",
     "challengeNumber": 6,
     "steps": [
         "Now we're going to learn how to use a tool called CodePen, which lets you experiment with HTML and CSS, and even create single-page web applications, right in your browser!",
@@ -86,7 +86,7 @@
   {
     "name": "Build a CSS Robot",
     "time": 60,
-    "video": "",
+    "video": "114444711",
     "challengeNumber": 7,
     "steps": ["Now let's learn some more CSS, and a small amount of a JavaScript-based tool called jQuery.",
         "Go to <a href='https://dash.generalassemb.ly/projects/cotbots-1' target='_blank'>https://dash.generalassemb.ly/projects/cotbots-1</a> and complete the fourth project."]
@@ -94,8 +94,8 @@
   {
     "name": "Meet jQuery",
     "time": 30,
-    "video": "",
-    "challengeNumber": 9,
+    "video": "114444711",
+    "challengeNumber": 8,
     "steps": [
         "jQuery is a powerful tool for manipulating HTML elements.",
         "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
@@ -107,8 +107,8 @@
   {
     "name": "Traverse the DOM",
     "time": 30,
-    "video": "",
-    "challengeNumber": 10,
+    "video": "114444711",
+    "challengeNumber": 9,
     "steps": [
         "Now let's learn more about DOM traversal - that is, moving from one HTML element to the next.",
         "Go to <a href='http://try.jquery.com/levels/2/challenges/1' target='_blank'>http://try.jquery.com/levels/2/challenges/1</a> and complete the second section."
@@ -117,8 +117,8 @@
   {
     "name": "Work with the DOM",
     "time": 30,
-    "video": "",
-    "challengeNumber": 11,
+    "video": "114444711",
+    "challengeNumber": 10,
     "steps": [
         "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
         "Go to <a href='http://try.jquery.com/levels/3/challenges/1' target='_blank'>http://try.jquery.com/levels/3/challenges/1</a> and complete the third section."
@@ -127,8 +127,8 @@
   {
     "name": "Listen for DOM Elements",
     "time": 30,
-    "video": "",
-    "challengeNumber": 12,
+    "video": "114444711",
+    "challengeNumber": 11,
     "steps": [
         "Now let's learn how to use jQuery Listeners. These will \"listen\" for something to happen, and then trigger a subsequent event",
         "Go to <a href='http://try.jquery.com/levels/4/challenges/1' target='_blank'>http://try.jquery.com/levels/4/challenges/1</a> and complete the fourth section."
@@ -137,8 +137,8 @@
   {
     "name": "Use jQuery for Styling",
     "time": 30,
-    "video": "",
-    "challengeNumber": 13,
+    "video": "114444711",
+    "challengeNumber": 12,
     "steps": [
         "Finally, let's use jQuery to manipulate the way websites look, by changing the CSS of elements.",
         "Go to <a href='http://try.jquery.com/levels/5/challenges/1' target='_blank'>http://try.jquery.com/levels/5/challenges/1</a> and complete the fifth section."
@@ -147,8 +147,8 @@
   {
     "name": "Build a MadLibs Game",
     "time": 60,
-    "video": "",
-    "challengeNumber": 14,
+    "video": "114444711",
+    "challengeNumber": 13,
     "steps": [
         "Now that we've built a foundation in jQuery, let's go back to Dash and do it's last challenge.",
         "If you aren't familiar with Mad Libs, they basically involve inserting random nouns, adjectives and verbs in to stories. The stories that result are often hilarious.",
@@ -158,8 +158,8 @@
   {
     "name": "Discover Chrome's DevTools",
     "time": 90,
-    "video": "",
-    "challengeNumber": 15,
+    "video": "114444711",
+    "challengeNumber": 14,
     "steps": [
         "It's time to learn the most powerful tool your browser has - the Development Tools!",
         "If you aren't already using Chrome, you'll want to download it here. While it's true that Firefox has a tool called Firebug that is very similar to Chrome's DevTools, we will use Chrome for this challenge.",
@@ -170,8 +170,8 @@
   {
     "name": "Tackle jQuery Exercises",
     "time": 60,
-    "video": "",
-    "challengeNumber": 16,
+    "video": "114444711",
+    "challengeNumber": 15,
     "steps": [
         "We've built some special jQuery challenges to help you reinforce your knowledge of this fundamental skill.",
         "There are many correct ways to solve each of these exercises. After you complete the challenge, you can compare your solution with our solution by pressing the \"#solution-button\" button.",
@@ -181,8 +181,8 @@
   {
     "name": "Customize Bootstrap with Bootswatch",
     "time": 10,
-    "video": "",
-    "challengeNumber": 17,
+    "video": "114444711",
+    "challengeNumber": 16,
     "steps": [
         "Let's learn a little more about Twitter's responsive CSS framework, Bootstrap, and how we can add some custom themes to it.",
         "Go to <a href='http://getbootstrap.com/components/' target='_blank'>http://getbootstrap.com/components/</a>",
@@ -202,8 +202,8 @@
   {
     "name": "Inject Life with CSS Transformations",
     "time": 15,
-    "video": "",
-    "challengeNumber": 18,
+    "video": "114444711",
+    "challengeNumber": 17,
     "steps": [
         "You may have noticed some sites have cool animations. Actually, animating DOM elements is pretty straightforward if you use a CSS library called Animate.css.",
         "Go to <a href='http://daneden.github.io/animate.css/' target='_blank'>http://daneden.github.io/animate.css/</a> and try out some of the CSS animations.",
@@ -217,8 +217,8 @@
   {
     "name": "Learn Basic Computer Science Concepts from Stanford",
     "time": 120,
-    "video": "",
-    "challengeNumber": 19,
+    "video": "114444711",
+    "challengeNumber": 18,
     "steps": [
         "Stanford has an excellent free online Computer Science curriculum. This interactive course uses a modified version of JavaScript. It will cover a lot of concepts quickly.",
         "Note that Harvard also has an excellent introduction to computer science course called CS50, but it takes more than 100 hours to complete, and doesn't use JavaScript.",
@@ -229,37 +229,37 @@
   {
     "name": "Learn Loops from Stanford",
     "time": 120,
-    "video": "",
-    "challengeNumber": 20,
+    "video": "114444711",
+    "challengeNumber": 19,
     "steps": ["Now let's tackle week 2 of Stanford's Intro to Computer Science course.",
       "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/</a> and complete Week 2."]
   },
   {
     "name": "Learn Computer Hardware Concepts from Stanford",
     "time": 120,
-    "video": "",
-    "challengeNumber": 21,
+    "video": "114444711",
+    "challengeNumber": 20,
     "steps": ["Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/</a> and complete Week 3."]
   },
   {
     "name": "Learn Computer Networking Concepts from Stanford",
     "time": 120,
-    "video": "",
-    "challengeNumber": 22,
+    "video": "114444711",
+    "challengeNumber": 21,
     "steps": ["Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/</a> and complete Week 4."]
   },
   {
     "name": "Learn Boolean Logic from Stanford",
     "time": 120,
-    "video": "",
-    "challengeNumber": 23,
+    "video": "114444711",
+    "challengeNumber": 22,
     "steps": ["Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/</a> and complete Week 5."]
   },
   {
     "name": "Learn Computer Security Concepts from Stanford",
     "time": 120,
-    "video": "",
-    "challengeNumber": 24,
+    "video": "114444711",
+    "challengeNumber": 23,
     "steps": [
       "We're almost done with Stanford's Introduction to Computer Science course!",
       "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/</a> and complete Week 6, the final week of the course."]
@@ -267,8 +267,8 @@
   {
     "name": "Build a Choose Your Own Adventure Game",
     "time": 60,
-    "video": "",
-    "challengeNumber": 25,
+    "video": "114444711",
+    "challengeNumber": 24,
     "steps": [
       "Now that you understand some Computer Science fundamentals, let's focus on programming JavaScript!",
       "We're going to work through Codecademy's famous interactive JavaScript course.",
@@ -278,8 +278,8 @@
   {
     "name": "Build Rock Paper Scissors",
     "time": 60,
-    "video": "",
-    "challengeNumber": 26,
+    "video": "114444711",
+    "challengeNumber": 25,
     "steps": [
       "Now we'll learn how JavaScript functions work, and use them to build a simple Rock Paper Scissors game.",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1</a> and complete the section."]
@@ -287,8 +287,8 @@
   {
     "name": "Learn JavaScript For and While Loops",
     "time": 60,
-    "video": "",
-    "challengeNumber": 27,
+    "video": "114444711",
+    "challengeNumber": 26,
     "steps": [
       "Let's learn more about the loops that make virtually all programs possible - the \"For Loop\" and \"While Loop\".",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1web</a> and complete both the both For and While loop section."
@@ -297,8 +297,8 @@
   {
     "name": "Learn If and Then Statements",
     "time": 60,
-    "video": "",
-    "challengeNumber": 28,
+    "video": "114444711",
+    "challengeNumber": 27,
     "steps": [
       "Most human thought can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If-Then-Else Statements\".",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1</a> and complete the section."]
@@ -306,8 +306,8 @@
   {
     "name": "Learn Control Flow",
     "time": 60,
-    "video": "",
-    "challengeNumber": 29,
+    "video": "114444711",
+    "challengeNumber": 28,
     "steps": [
       "Now we're going to learn some advanced \"Control Flow\" principals, such as ways we can exit loops early.",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1</a> and complete the section."]
@@ -315,7 +315,7 @@
   {
     "name": "Build a Contact List",
     "time": 60,
-    "video": "",
+    "video": "114444711",
     "challengeNumber": 29,
     "steps": [
       "Up to this point, you've been working mostly with strings and numbers. Now we're going to learn more complicated data structures, like \"Arrays\" and \"Objects\".",
@@ -324,8 +324,8 @@
   {
     "name": "Build an Address Book",
     "time": 60,
-    "video": "",
-    "challengeNumber": 29,
+    "video": "114444711",
+    "challengeNumber": 30,
     "steps": [
       "Let's learn more about objects.",
       "Go to <a href='http://www.codecademy.com/courses/spencer-sandbox/0/1' target='_blank'>http://www.codecademy.com/courses/spencer-sandbox/0/1</a> and complete the section."]
@@ -333,8 +333,8 @@
   {
     "name": "Build a Cash Register",
     "time": 60,
-    "video": "",
-    "challengeNumber": 30,
+    "video": "114444711",
+    "challengeNumber": 31,
     "steps": [
       "In this final CodeCademy section, we'll learn even more about JavaScript objects.",
       "Go to <a href='http://www.codecademy.com/courses/objects-ii/0/1' target='_blank'>http://www.codecademy.com/courses/objects-ii/0/1</a> and complete this final section."]
@@ -342,8 +342,8 @@
   {
     "name": "Get Help The Hacker Way with RSAP",
     "time": 30,
-    "video": "",
-    "challengeNumber": 31,
+    "video": "114444711",
+    "challengeNumber": 32,
     "steps": [
         "Watch the video to learn the RSAP (Read, Search, Ask, Post) methodology for getting help.",
         "Try an intelligent Google query that involves JavaScript and filters for this year (since JavaScript changes)",
@@ -356,8 +356,8 @@
   {
     "name": "Learn Regular Expressions",
     "time": 60,
-    "video": "",
-    "challengeNumber": 32,
+    "video": "114444711",
+    "challengeNumber": 33,
     "steps": [
         "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
         "Check out <a href='http://www.regexr.com' target='_blank'>http://www.regexr.com</a>. It's a Regular Expression Sandbox.",
@@ -368,8 +368,8 @@
   {
     "name": "Start Pair Programming on Coderbyte problems",
     "time": 30,
-    "video": "",
-    "challengeNumber": 33,
+    "video": "114444711",
+    "challengeNumber": 34,
     "steps": [
       "OK, we're finally ready to start pair programming!",
       "Many people use Skype or Google Hangouts to pair program, but if you talk with professional software engineers, they will tell you that it's not really pair programming unless both people have the ability to use the keyboard and mouse.",
@@ -380,16 +380,18 @@
       "Install it and launch it",
       "Go to the chat room and ask if anyone wants to pair program with you on a CoderByte challenge.",
       "If someone is interested, they will be your \"pair\" - the person you pair programming with.",
-      "<strong>First, you will pair program on your computer.</strong> Copy your Team Viewer ID and paste it into the private chat, so that your pair can use it to connect with you.",
+      "<strong>First, you will pair program on your pair's computer.</strong> Ask your pair for his or her Team Viewer ID and password.",
+      "Enter this id, and then password, to start the session.",
+      "Once the Team Viewer session starts, look at the the top of the screen. You will see 6 buttons. If you hover your cursor over the buttons, they will slide down so that you can read them. Click the audio/video button. This will allow you to turn on Voice Over IP and unmute your microphone, opening up your voice channel.",
+      "Note that you can now control your pair's keyboard and mouse, enabling you to step in and code yourself on your pair's computer when desired",
+      "Now you can click the X to end the pair programming session.",
+      "<strong>Next, you will pair program on your computer.</strong> Copy your Team Viewer ID and paste it into the private chat, so that your pair can use it to connect with you.",
       "You will need to share your randomly generated password with your pair as well.",
       "Once your pair connects, you will see a Team Viewer side menu. ",
       "Click the audio button that drops down.",
       "Click the headset icon and choose Voice over IP",
       "Click the microphone button to unmute your microphone. Once your pair does the same, you two will have an open voice channel.",
       "Now you can click the X to end the pair programming session.",
-      "<strong>Next, you will pair program on your pair's computer.</strong> Ask your pair for his or her Team Viewer ID and password.",
-      "Enter this id, and then password, to start the session.",
-      "Once the Team Viewer session starts, look at the the top of the screen. You will see 6 buttons. If you hover your cursor over the buttons, they will slide down so that you can read them. Click the audio/video button. This will allow you to turn on Voice Over IP and unmute your microphone, opening up your voice channel.",
       "Now it's time to tackle CoderByte.",
       "Create a CoderByte account at <a href='http://coderbyte.com/sl/' target='_blank'>http://coderbyte.com/sl/</a>",
       "Now go to <a href='http://coderbyte.com/CodingArea/Challenges/#easyChals' target='_blank'>http://coderbyte.com/CodingArea/Challenges/#easyChals</a> and start working through Coderbyte's easy algorithm scripting challenges using JavaScript.",
@@ -404,8 +406,8 @@
   {
     "name": "Learn Relational Databases from Stanford",
     "time": 30,
-    "video": "",
-    "challengeNumber": 34,
+    "video": "114444711",
+    "challengeNumber": 35,
     "steps": [
       "Before we learn SQL - and ultimately MongoDB - we need to establish a foundational knowledge of relational database theory. Stanford's Jennifer Widom has put together a short lecture series that does this.",
       "Note that these lectures are  non-interactive. Don't worry if you don't understand them very well - you will understand these concepts much better once you apply them in the SQL challenge.",
@@ -414,8 +416,8 @@
   {
     "name": "Pair program on SQL Movie Rating Queries",
     "time": 90,
-    "video": "",
-    "challengeNumber": 35,
+    "video": "114444711",
+    "challengeNumber": 36,
     "steps": [
       "With Stanford's SQL course, you can do SQL queries, right in your browser.",
       "Go to <a href='https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_movie_query_core/' target='_blank'>https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_movie_query_core/</a> and all nine of these queries.",
@@ -426,8 +428,8 @@
   {
     "name": "Pair program on SQL Social Network Queries",
     "time": 60,
-    "video": "",
-    "challengeNumber": 36,
+    "video": "114444711",
+    "challengeNumber": 37,
     "steps": [
       "Now let's do some additional SQL queries to further cement these concepts in your mind.",
       "Go to <a href='https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_social_query_core/' target='_blank'>https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_social_query_core/</a> and answer all 9 of the SQL query questions.",
@@ -438,8 +440,8 @@
   {
     "name": "Pair program on SQL Movie-Rating Modification",
     "time": 90,
-    "video": "",
-    "challengeNumber": 37,
+    "video": "114444711",
+    "challengeNumber": 38,
     "steps": [
       "Now that you're able to use SQL to query a database, it's time to practice using SQL to modify the database itself.",
       "Go to <a href='https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_movie_mod/' target='_blank'>https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_movie_mod/web</a> and answer all 4 of the SQL modification questions.",
@@ -450,8 +452,8 @@
   {
     "name": "Pair program on SQL Social Network Modification",
     "time": 30,
-    "video": "",
-    "challengeNumber": 37,
+    "video": "114444711",
+    "challengeNumber": 39,
     "steps": [
       "Let's answer a couple more SQL modification questions to further practice these concepts.",
       "Go to <a href='https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_social_mod/' target='_blank'>https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_social_mod/</a> and answer the first 2 SQL modification questions. You can optionally try to answer the third one, but even Jennifer Widom admitted that it is quite difficult.",
@@ -462,8 +464,8 @@
   {
     "name": "Learn JSON from Stanford",
     "time": 60,
-    "video": "",
-    "challengeNumber": 38,
+    "video": "114444711",
+    "challengeNumber": 40,
     "steps": [
       "Now that you know a little about how databases store data, let's learn how computers usually share data back and forth over the web. Most modern Application Programming Interfaces (APIs) on the web use JavaScript Object Notation, or JSON.",
       "JSON is simple and easy to read. And hey, it's literally how you'd write an object in JavaScript!",
@@ -474,8 +476,8 @@
   {
     "name": "Try Git, the popular Source Code Revision Control System",
     "time": 30,
-    "video": "",
-    "challengeNumber": 39,
+    "video": "114444711",
+    "challengeNumber": 41,
     "steps": [
         "Revision Control Systems like Git ensure that, no matter how you experiment with your code, you can always roll back your app to a stable previous state.",
         "Git is also a great way to share and contribute to open source software.",
@@ -485,8 +487,8 @@
   {
     "name": "Get started with Node.JS",
     "time": 45,
-    "video": "",
-    "challengeNumber": 40,
+    "video": "114444711",
+    "challengeNumber": 42,
     "steps": [
       "Now that we understand some Computer Science, JavaScript programming, and how Databases work, you're ready to move on to Full-stack JavaScript!",
       "The first step is to familiarize ourselves Node.js, the JavaScript-based web server that most full-stack JavaScript apps use.",
@@ -497,90 +499,129 @@
   {
     "name": "Try Node.js Events",
     "time": 45,
-    "video": "",
-    "challengeNumber": 41,
+    "video": "114444711",
+    "challengeNumber": 43,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1</a> and complete the section."]
   },
   {
     "name": "Try Node.js Streams",
     "time": 45,
-    "video": "",
-    "challengeNumber": 42,
+    "video": "114444711",
+    "challengeNumber": 44,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1</a> and complete the section."]
   },
   {
     "name": "See how Node.js Modules work",
     "time": 45,
-    "video": "",
-    "challengeNumber": 43,
+    "video": "114444711",
+    "challengeNumber": 45,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1</a> and complete the section."]
   },
   {
     "name": "Start an Express.js Server",
     "time": 45,
-    "video": "",
-    "challengeNumber": 44,
+    "video": "114444711",
+    "challengeNumber": 46,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."]
   },
   {
     "name": "Use Socket.io",
     "time": 45,
-    "video": "",
-    "challengeNumber": 45,
+    "video": "114444711",
+    "challengeNumber": 47,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."]
   },
   {
     "name": "Use Redis to persist data",
     "time": 45,
-    "video": "",
-    "challengeNumber": 46,
+    "video": "114444711",
+    "challengeNumber": 48,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1</a> and complete the section."]
   },
   {
-    "name": "Install Express.js",
+    "name": "Dive Deeper into Express.js",
     "time": 45,
-    "video": "",
-    "challengeNumber": 48,
+    "video": "114444711",
+    "challengeNumber": 49,
     "steps": [
       "Code School has one of the first comprehensive courses on Express.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. If you've already used your Code School two-day membership, go to the Free Code Camp main chat room and ask how you can get some extra time to work through this course. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1</a> and complete the section."]
   },
   {
+  
     "name": "Setup Express.js Middleware",
     "time": 45,
-    "video": "",
-    "challengeNumber": 49,
+    "video": "114444711",
+    "challengeNumber": 50,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1</a> and complete the section."]
   },
   {
     "name": "Take advantage of Parameters",
     "time": 45,
-    "video": "",
-    "challengeNumber": 50,
+    "video": "114444711",
+    "challengeNumber": 51,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1</a> and complete the section."]
   },
   {
     "name": "Add the Body Parser",
     "time": 45,
-    "video": "",
-    "challengeNumber": 51,
+    "video": "114444711",
+    "challengeNumber": 52,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1</a> and complete the section."]
   },
   {
     "name": "Configure Routes in Express.js",
     "time": 45,
-    "video": "",
-    "challengeNumber": 52,
+    "video": "114444711",
+    "challengeNumber": 53,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."]
   },
   {
     "name": "Try MongoDB",
     "time": 30,
-    "video": "",
-    "challengeNumber": 47,
+    "video": "114444711",
+    "challengeNumber": 54,
     "steps": [
       "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
       "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
     ]
+  },
+  {
+    "name": " Angular.js",
+    "time": 45,
+    "video": "114444711",
+    "challengeNumber": 55,
+    "steps": [
+      "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
+      "In this course, we'll build a virtual shop entirely in Angular.js.",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."]
+  },
+  {
+    "name": "Apply Angular.js Directives",
+    "time": 45,
+    "video": "114444711",
+    "challengeNumber": 56,
+    "steps": ["Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."]
+  },
+  {
+    "name": "Power Forms with Angular.js",
+    "time": 45,
+    "video": "114444711",
+    "challengeNumber": 57,
+    "steps": ["Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."]
+  },
+  {
+    "name": "Customize Angular.js Directives",
+    "time": 45,
+    "video": "114444711",
+    "challengeNumber": 58,
+    "steps": ["Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."]
+  },
+  {
+    "name": "Create Angular.js Services",
+    "time": 45,
+    "video": "114444711",
+    "challengeNumber": 59,
+    "steps": ["Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."]
   }
 ]
