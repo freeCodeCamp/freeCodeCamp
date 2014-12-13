@@ -1,6 +1,6 @@
 extends layout
 block content
-    .jumbotron
+    .jumbotron.negative-15
         .text-center
             h1.hug-top Code with Us
             h2 Let's learn to code by building projects for nonprofits
@@ -38,10 +38,3 @@ block content
     include partials/about-us
     br
     include partials/faq
-    br
-    .jumbotron
-        .text-center
-            a.btn.btn-cta.signup-btn.cta.btn-primary(href="/login") Start learning to code (it's free)
-            br
-            br
-            a.btn.nonprofit-cta.btn-success(href="/nonprofits") I'm with a nonprofit and want help coding something

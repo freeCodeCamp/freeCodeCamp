@@ -15,6 +15,12 @@ exports.privacy = function(req, res) {
     });
 }
 
+exports.chromebook = function(req, res) {
+    res.render('chromebook',  {
+        title: 'Win a Chromebook'
+    });
+}
+
 exports.jqueryExercises = function(req, res) {
     res.render('jquery-exercises',  {
         title: 'jQuery Exercises'
