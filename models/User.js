@@ -66,7 +66,17 @@ var userSchema = new mongoose.Schema({
     46: { type: Number, default: 0 },
     47: { type: Number, default: 0 },
     48: { type: Number, default: 0 },
-    49: { type: Number, default: 0 }
+    49: { type: Number, default: 0 },
+    50: { type: Number, default: 0 },
+    51: { type: Number, default: 0 },
+    52: { type: Number, default: 0 },
+    53: { type: Number, default: 0 },
+    54: { type: Number, default: 0 },
+    55: { type: Number, default: 0 },
+    56: { type: Number, default: 0 },
+    57: { type: Number, default: 0 },
+    58: { type: Number, default: 0 },
+    59: { type: Number, default: 0 }
   },
   profile: {
     name: { type: String, default: '' },

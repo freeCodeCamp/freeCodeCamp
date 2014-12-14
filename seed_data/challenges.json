@@ -1,11 +1,11 @@
 [
   {
-    "name": "A 3 Minute Introduction to Free Code Camp",
-    "time": 3,
+    "name": "Learn how Free Code Camp Works",
+    "time": 1,
     "video": "114447214",
     "challengeNumber": 0,
     "steps": [
-        "Watch this 3-minute video, or simply read this summary:",
+        "Watch this 1-minute video, or simply read this summary:",
         "Our goal is to help you become an employable software engineer.",
         "We're going to do this by pair programming on projects for nonprofits.",
         "Pair programming is where two people code together on the same computer.",
@@ -15,7 +15,7 @@
     ]
   },
   {
-    "name": "Join the Free Code Camp Chat Room",
+    "name": "Join Our Chat Room",
     "time": 5,
     "video": "114447214",
     "challengeNumber": 1,
@@ -29,7 +29,7 @@
     ]
   },
   {
-    "name": "Join the Free Code Camp Subreddit",
+    "name": "Subscribe to Our Subreddit",
     "time": 5,
     "video": "114447214",
     "challengeNumber": 2,
@@ -92,7 +92,7 @@
         "Go to <a href='https://dash.generalassemb.ly/projects/cotbots-1' target='_blank'>https://dash.generalassemb.ly/projects/cotbots-1</a> and complete the fourth project."]
   },
   {
-    "name": "Meet jQuery",
+    "name": "Get Started with jQuery",
     "time": 30,
     "video": "114447214",
     "challengeNumber": 8,
@@ -200,7 +200,7 @@
       ]
   },
   {
-    "name": "Inject Life with CSS Transformations",
+    "name": "Inject Animation into CSS",
     "time": 15,
     "video": "114447214",
     "challengeNumber": 17,
@@ -215,7 +215,7 @@
     ]
   },
   {
-    "name": "Learn Basic Computer Science Concepts from Stanford",
+    "name": "Learn Basic Computer Science",
     "time": 120,
     "video": "114447214",
     "challengeNumber": 18,
@@ -227,7 +227,7 @@
     ]
   },
   {
-    "name": "Learn Loops from Stanford",
+    "name": "Learn Loops",
     "time": 120,
     "video": "114447214",
     "challengeNumber": 19,
@@ -235,28 +235,28 @@
       "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/</a> and complete Week 2."]
   },
   {
-    "name": "Learn Computer Hardware Concepts from Stanford",
+    "name": "Learn Computer Hardware",
     "time": 120,
     "video": "114447214",
     "challengeNumber": 20,
     "steps": ["Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/</a> and complete Week 3."]
   },
   {
-    "name": "Learn Computer Networking Concepts from Stanford",
+    "name": "Learn Computer Networking",
     "time": 120,
     "video": "114447214",
     "challengeNumber": 21,
     "steps": ["Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/</a> and complete Week 4."]
   },
   {
-    "name": "Learn Boolean Logic from Stanford",
+    "name": "Learn Boolean Logic",
     "time": 120,
     "video": "114447214",
     "challengeNumber": 22,
     "steps": ["Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/</a> and complete Week 5."]
   },
   {
-    "name": "Learn Computer Security Concepts from Stanford",
+    "name": "Learn Computer Security",
     "time": 120,
     "video": "114447214",
     "challengeNumber": 23,
@@ -265,7 +265,7 @@
       "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/</a> and complete Week 6, the final week of the course."]
   },
   {
-    "name": "Build a Choose Your Own Adventure Game",
+    "name": "Build an Adventure Game",
     "time": 60,
     "video": "114447214",
     "challengeNumber": 24,
@@ -340,7 +340,7 @@
       "Go to <a href='http://www.codecademy.com/courses/objects-ii/0/1' target='_blank'>http://www.codecademy.com/courses/objects-ii/0/1</a> and complete this final section."]
   },
   {
-    "name": "Get Help The Hacker Way with RSAP",
+    "name": "Get Help The Hacker Way",
     "time": 30,
     "video": "114447214",
     "challengeNumber": 32,
@@ -366,8 +366,8 @@
     ]
   },
   {
-    "name": "Start Pair Programming on Coderbyte problems",
-    "time": 30,
+    "name": "Pair Program on Coderbyte",
+    "time": 60,
     "video": "114447214",
     "challengeNumber": 34,
     "steps": [
@@ -414,7 +414,7 @@
       "Go to <a href='https://class.stanford.edu/courses/DB/RDB/SelfPaced/courseware/ch-introduction/seq-vid-introduction/' target='_blank'>https://class.stanford.edu/courses/DB/RDB/SelfPaced/courseware/ch-introduction/seq-vid-introduction/</a> and watch the videos."]
   },
   {
-    "name": "Pair program on SQL Movie Rating Queries",
+    "name": "Pair Program to Query SQL 1",
     "time": 90,
     "video": "114447214",
     "challengeNumber": 36,
@@ -426,7 +426,7 @@
     ]
   },
   {
-    "name": "Pair program on SQL Social Network Queries",
+    "name": "Pair Program to Query SQL 2",
     "time": 60,
     "video": "114447214",
     "challengeNumber": 37,
@@ -438,7 +438,7 @@
     ]
   },
   {
-    "name": "Pair program on SQL Movie-Rating Modification",
+    "name": "Pair Program to Modify SQL 1",
     "time": 90,
     "video": "114447214",
     "challengeNumber": 38,
@@ -450,7 +450,7 @@
     ]
   },
   {
-    "name": "Pair program on SQL Social Network Modification",
+    "name": "Pair Program to Modify SQL 2",
     "time": 30,
     "video": "114447214",
     "challengeNumber": 39,
@@ -474,7 +474,7 @@
     ]
   },
   {
-    "name": "Try Git, the popular Source Code Revision Control System",
+    "name": "Manage Source Code with Git",
     "time": 30,
     "video": "114447214",
     "challengeNumber": 41,
@@ -485,7 +485,7 @@
       ]
   },
   {
-    "name": "Get started with Node.JS",
+    "name": "Get Started with Node.js",
     "time": 45,
     "video": "114447214",
     "challengeNumber": 42,
@@ -511,7 +511,7 @@
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1</a> and complete the section."]
   },
   {
-    "name": "See how Node.js Modules work",
+    "name": "Learn how Node.js Modules Work",
     "time": 45,
     "video": "114447214",
     "challengeNumber": 45,
@@ -532,7 +532,7 @@
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."]
   },
   {
-    "name": "Use Redis to persist data",
+    "name": "Use Redis to Persist Data",
     "time": 45,
     "video": "114447214",
     "challengeNumber": 48,
@@ -556,7 +556,7 @@
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1</a> and complete the section."]
   },
   {
-    "name": "Take advantage of Parameters",
+    "name": "Take Advantage of Parameters",
     "time": 45,
     "video": "114447214",
     "challengeNumber": 51,
@@ -587,7 +587,7 @@
     ]
   },
   {
-    "name": " Angular.js",
+    "name": "Get Started with Angular.js",
     "time": 45,
     "video": "114447214",
     "challengeNumber": 55,
