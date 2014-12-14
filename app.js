@@ -34,6 +34,10 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
 /**
+ * User model
+ */
+var User = require('./models/User');
+/**
  * API keys and Passport configuration.
  */
 
@@ -164,10 +168,19 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
 
 /**
  * API examples routes.
+ * accepts a post request. the challenge id req.body.challengeNumber
+ * and updates user.challengesHash & user.challengesCompleted
+ *
  */
 app.post('/completed_challenge', function(req, res) {
-  req.user.challengesCompleted.push(parseInt(req.body.cn));
-  req.user.save();
+    req.user.challengesHash[parseInt(req.body.challengeNumber)] = Math.round(+new Date() / 1000);
+    var ch = req.user.challengesHash;
+    var p = 0;
+    for (k in ch) {
+        if (ch[k] > 0) { p += 1}
+    }
+    req.user.points = p;
+    req.user.save();
 });
 
 /**
