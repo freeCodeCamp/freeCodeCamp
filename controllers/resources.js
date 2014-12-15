@@ -27,6 +27,18 @@ exports.jqueryExercises = function(req, res) {
     });
 }
 
+exports.livePairProgramming = function(req, res) {
+    res.render('live-pair-programming',  {
+        title: 'Live Pair Programming'
+    });
+}
+
+exports.javaScriptInYourInbox = function(req, res) {
+    res.render('javascript-in-your-inbox',  {
+        title: 'JavaScript in your Inbox'
+    });
+}
+
 exports.programmerInterviewQuestionsApp = function(req, res) {
     res.render('programmer-interview-questions-app',  {
         title: 'programmer-interview-questions-app'

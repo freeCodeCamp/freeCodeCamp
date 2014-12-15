@@ -127,6 +127,8 @@ app.get(
 app.get('/learn-to-code', resourcesController.learnToCode);
 app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
+app.get('/live-pair-programming', resourcesController.livePairProgramming);
+app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
 app.get('/text-based-adventure-tutorial-app', resourcesController.textBasedAdventureTutorial);
 app.get('/chromebook', resourcesController.chromebook);
 app.get('/programmer-interview-questions-app', resourcesController.programmerInterviewQuestionsApp);
