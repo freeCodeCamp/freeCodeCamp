@@ -58,6 +58,9 @@
     "challengeNumber": 4,
     "steps": [
         "Next, let's learn about Responsive web design and continue learning about HTML and CSS.",
+        "A responsive website will automatically adapt to changes in your browser's width. This means that you can make one version of a website that will look good on desktop, tablet and phone.",
+        "Later, we'll use Twitter's Bootstrap CSS framework to build responsive websites.",
+        "You can check it out here: <a href='http://getbootstrap.com/' target='_blank'>http://getbootstrap.com/</a>.",
         "Go to <a href='https://dash.generalassemb.ly/projects/jeffs-blog-1' target='_blank'>https://dash.generalassemb.ly/projects/jeffs-blog-1</a> and complete the second project."
     ]
   },
@@ -127,7 +130,7 @@
     ]
   },
   {
-    "name": "Listen for DOM Elements",
+    "name": "Listen for DOM Events",
     "time": 30,
     "video": "114486344",
     "challengeNumber": 11,
@@ -154,7 +157,7 @@
     "steps": [
         "Now that we've built a foundation in jQuery, let's go back to Dash and do it's last challenge.",
         "If you aren't familiar with Mad Libs, they basically involve inserting random nouns, adjectives and verbs in to stories. The stories that result are often hilarious.",
-        "Go to <a href='https://dash.generalassemb.ly/projects/mad-libs-1' target='_blank'>httpsng://dash.generalassemb.ly/projects/mad-libs-1</a> and complete the fifth project."
+        "Go to <a href='https://dash.generalassemb.ly/projects/mad-libs-1' target='_blank'>https://dash.generalassemb.ly/projects/mad-libs-1</a> and complete the fifth project."
     ]
   },
   {
@@ -275,7 +278,9 @@
       "Now that you understand some Computer Science fundamentals, let's focus on programming JavaScript!",
       "We're going to work through Codecademy's famous interactive JavaScript course.",
       "This course will teach us some JavaScript fundamentals while guiding us through the process of building interesting web apps, all within Codecademy's learner-friendly environment!",
-      "Go to <a href='http://www.codecademy.com/courses/getting-started-v2/0/1' target='_blank'>http://www.codecademy.com/courses/getting-started-v2/0/1</a> and complete the section."]
+      "Go to <a href='http://www.codecademy.com/courses/getting-started-v2/0/1' target='_blank'>http://www.codecademy.com/courses/getting-started-v2/0/1</a> and complete the section.",
+      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-x9DnD/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-x9DnD/0/1</a>."
+    ]
   },
   {
     "name": "Build Rock Paper Scissors",
@@ -284,26 +289,31 @@
     "challengeNumber": 25,
     "steps": [
       "Now we'll learn how JavaScript functions work, and use them to build a simple Rock Paper Scissors game.",
-      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1</a> and complete the section."]
+      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1</a> and complete the section.",
+      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-Bthev-mskY8/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-Bthev-mskY8/0/1</a>."
+    ]
   },
   {
-    "name": "Learn JavaScript For and While Loops",
+    "name": "Learn JavaScript For Loops",
     "time": 60,
     "video": "114486344",
     "challengeNumber": 26,
     "steps": [
-      "Let's learn more about the loops that make virtually all programs possible - the \"For Loop\" and \"While Loop\".",
-      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1web</a> and complete both the both For and While loop section."
+      "Let's learn more about the loops that make virtually all programs possible - the \"For Loop\" and \"While Loop\". First, we'll learn the For Loop.",
+      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1web</a> and complete both the both For and While loop section.",
+      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-XEDZA/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-XEDZA/0/1</a>."
     ]
   },
   {
-    "name": "Learn If and Then Statements",
+    "name": "Learn While Loops",
     "time": 60,
     "video": "114486344",
     "challengeNumber": 27,
     "steps": [
-      "Most human thought can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If-Then-Else Statements\".",
-      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1</a> and complete the section."]
+
+      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1</a> and complete the section.",
+      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1</a>."
+    ]
   },
   {
     "name": "Learn Control Flow",
@@ -311,8 +321,11 @@
     "video": "114486344",
     "challengeNumber": 28,
     "steps": [
-      "Now we're going to learn some advanced \"Control Flow\" principals, such as ways we can exit loops early.",
-      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1</a> and complete the section."]
+      "Much of human reasoning can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If-Then-Else Statements\".",
+      "We'll also learn some advanced \"Control Flow\" principals, such as ways we can exit loops early.",
+      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1</a> and complete the section.",
+      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-ZA2rb/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ZA2rb/0/1</a>."
+    ]
   },
   {
     "name": "Build a Contact List",
@@ -321,7 +334,9 @@
     "challengeNumber": 29,
     "steps": [
       "Up to this point, you've been working mostly with strings and numbers. Now we're going to learn more complicated data structures, like \"Arrays\" and \"Objects\".",
-      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1</a> and complete the section."]
+      "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1</a> and complete the section.",
+      "Be sure to also complete this section: <a href='' target='_blank'></a>."
+    ]
   },
   {
     "name": "Build an Address Book",
@@ -330,7 +345,9 @@
     "challengeNumber": 30,
     "steps": [
       "Let's learn more about objects.",
-      "Go to <a href='http://www.codecademy.com/courses/spencer-sandbox/0/1' target='_blank'>http://www.codecademy.com/courses/spencer-sandbox/0/1</a> and complete the section."]
+      "Go to <a href='http://www.codecademy.com/courses/spencer-sandbox/0/1' target='_blank'>http://www.codecademy.com/courses/spencer-sandbox/0/1</a> and complete the section.",
+      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1</a>."
+    ]
   },
   {
     "name": "Build a Cash Register",
@@ -339,7 +356,9 @@
     "challengeNumber": 31,
     "steps": [
       "In this final CodeCademy section, we'll learn even more about JavaScript objects.",
-      "Go to <a href='http://www.codecademy.com/courses/objects-ii/0/1' target='_blank'>http://www.codecademy.com/courses/objects-ii/0/1</a> and complete this final section."]
+      "Go to <a href='http://www.codecademy.com/courses/objects-ii/0/1' target='_blank'>http://www.codecademy.com/courses/objects-ii/0/1</a> and complete this section.",
+      "Be sure to also complete the final section: <a href='http://www.codecademy.com/courses/close-the-super-makert/0/1' target='_blank'>http://www.codecademy.com/courses/close-the-super-makert/0/1</a>."
+    ]
   },
   {
     "name": "Get Help The Hacker Way",
