@@ -1,0 +1,27 @@
+extends ./layout
+block content
+    .row
+        .col-sm-12.col-md-8.col-xs-12
+            .panel.panel-primary
+                .panel-heading #{name} (takes #{time} minutes)
+                .panel.panel-body
+                    //.embed-responsive.embed-responsive-16by9
+                    //    iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
+                    h3 Steps:
+                    h4
+                        ol
+                        for step in steps
+                            li!= step
+                    a.btn.btn-primary.btn-big.btn-block.completed-challenge(href='/challenges/34') Take me back to the Pair Programming Challenge
+                .panel-footer.text-center
+                    span Need a break? Check out our:&nbsp;
+                    a(href="https://gitter.im/FreeCodeCamp/FreeCodeCamp", target="_blank") Chat Room
+                    | &nbsp;,&nbsp;
+                    a(href="http://blog.freecodecamp.com", target="_blank") Blog
+                    | &nbsp;,&nbsp;
+                    a(href="https://twitter.com/freecodecamp", target="_blank") Twitter Feed
+                    | &nbsp;,&nbsp;or&nbsp;
+                    a(href="https://reddit.com/r/freecodecamp", target="_blank") Subreddit
+                    | .
+        .col-sm-12.col-md-4.col-xs-12
+            include ./partials/challenges
