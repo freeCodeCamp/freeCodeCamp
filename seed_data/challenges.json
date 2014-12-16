@@ -58,7 +58,7 @@
   {
     "name": "Build a Responsive Blog Theme",
     "time": 60,
-    "video": "114486344",
+    "video": "114578441",
     "challengeNumber": 4,
     "steps": [
         "Next, let's learn about Responsive web design and continue learning about HTML and CSS.",
@@ -322,7 +322,7 @@
   {
     "name": "Learn Control Flow",
     "time": 60,
-    "video": "114486344",
+    "video": "114612888",
     "challengeNumber": 28,
     "steps": [
       "Much of human reasoning can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If Statements\" and \"Else Statements\".",
@@ -513,7 +513,7 @@
   {
     "name": "Try Node.js Events",
     "time": 45,
-    "video": "114486344",
+    "video": "114684206",
     "challengeNumber": 43,
     "steps": [
       "One of the reasons Node.js is so fast is that it is \"evented\" - it processes events in an asynchronous manner.",
