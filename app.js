@@ -131,6 +131,8 @@ app.get(
 app.get('/learn-to-code', resourcesController.learnToCode);
 app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
+app.get('/live-pair-programming', resourcesController.livePairProgramming);
+app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
 app.get('/chromebook', resourcesController.chromebook);
 app.get('/pair-program-with-team-viewer', resourcesController.pairProgramWithTeamViewer);
 app.get('/done-with-first-100-hours', resourcesController.doneWithFirst100Hours);
