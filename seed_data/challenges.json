@@ -6,12 +6,16 @@
     "challengeNumber": 0,
     "steps": [
         "Watch this 1-minute video, or simply read this summary:",
-        "Our goal is to help you become an employable software engineer.",
-        "We're going to do this by pair programming on projects for nonprofits.",
-        "Pair programming is where two people code together on the same computer.",
-        "We're going to develop JavaScript skills, build portfolio projects, and meet a lot of people who can serve as useful connections during your job search.",
-        "We'll do this by coding fearlessly, by collaborating on projects, and - most importantly - by not giving up.",
-        "Click the \"I've completed this challenge\" button to move on to your next challenge."
+        "Welcome to Free Code Camp. We're a community of busy people learning to code.",
+        "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And the best way to stay motivated is to code with friends.",
+        "To maximize accessibility, all our challenges are self-paced, browser-based, and free.",
+        "All of us start with the same 100 hours of interactive coding challenges. These cover everything from Computer Science to SQL. They also cover in-demand JavaScript tools like jQuery, Node.js and MongoDB.",
+        "Once we have a basic understanding of web development, we'll spend another 900 hours putting that theory into practice. We'll build full stack solutions for nonprofits.",
+        "By the end of this process, we'll be good at coding. We'll have a portfolio of apps with happy users to prove it. We'll also have an alumni network of fellow coders and nonprofits ready to serve as references.",
+        "If you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
+        "Also, for every pure coding job, there are at least 5 additional jobs that require some coding skills. So even if you decide not to pursue coding as a career, you'll still walk away with a valuable job skill.",
+        "There are 3 keys to succeeding in our community: do the challenges, make friends, and find a routine.",
+        "Now it's time to join our chatroom. Click the \"I've completed this challenge\" button to move on to your next challenge."
     ]
   },
   {
@@ -387,15 +391,15 @@
     ]
   },
   {
-    "name": "Pair Program on Coderbyte",
+    "name": "Pair Program on CoderByte",
     "time": 60,
-    "video": "",
+    "video": "112547802",
     "challengeNumber": 34,
     "steps": [
       "OK, we're finally ready to start pair programming!",
       "Many people use Skype or Google Hangouts to pair program, but if you talk with professional software engineers, they will tell you that it's not really pair programming unless both people have the ability to use the keyboard and mouse.",
-      "The most popular tool for pair programming is Screen Hero. Both programmers get their own mouse cursor. Note that Screen Hero isn't free, and isn't yet available for Linux. Screen Hero does come with a 14 day free trial, is free for students, and you can also use it for free if your pair has a 14-day trial or a paid subscription to it. Download Scree Hero here: <a href='https://screenhero.com/download.html' target='_blank'>https://screenhero.com/download.html</a>.",
-      "If you are using Linux, or if your 14 day free trial for Screen Hero has expired and you don't want to pay $10 per month for it, go to <a href='https://www.freecodecamp.com/pair-program-with-team-viewer.html' target='_blank'>https://www.freecodecamp.com/pair-program-with-team-viewer.html</a> to learn how to use an alternative (but inferior) tool called Team Viewer.",
+      "The most popular tool for pair programming is Screen Hero. Both programmers get their own mouse cursor. Note that Screen Hero isn't free, and isn't yet available for Linux. Screen Hero does come with a 14 day free trial, is free for students, and you can also use it for free if your pair has a 14-day trial or a paid subscription to it. Download Screen Hero here: <a href='https://screenhero.com/download.html' target='_blank'>https://screenhero.com/download.html</a>.",
+      "If you are using Linux, or if your 14 day free trial for Screen Hero has expired and you don't want to pay $10 per month for it, go to <a href='http://www.freecodecamp.com/pair-program-with-team-viewer.html' target='_blank'>https://www.freecodecamp.com/pair-program-with-team-viewer.html</a> to learn how to use an alternative (but inferior) tool called Team Viewer.",
       "Go to the chat room and ask if anyone wants to pair program with you on a CoderByte challenge.",
       "If someone is interested, they will be your \"pair\" - the person you pair programming with.",
       "Private message your pair and ask for the email address he or she used to register Screen Hero.",
