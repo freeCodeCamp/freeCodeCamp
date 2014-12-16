@@ -490,7 +490,7 @@
   {
     "name": "Manage Source Code with Git",
     "time": 30,
-    "video": "114486344",
+    "video": "114635309",
     "challengeNumber": 41,
     "steps": [
         "Revision Control Systems like Git ensure that, no matter how you experiment with your code, you can always roll back your app to a stable previous state.",
@@ -501,7 +501,7 @@
   {
     "name": "Get Started with Node.js",
     "time": 45,
-    "video": "114486344",
+    "video": "114686471",
     "challengeNumber": 42,
     "steps": [
       "Now that we understand some Computer Science, JavaScript programming, and how Databases work, you're ready to move on to Full-stack JavaScript!",
@@ -525,7 +525,7 @@
   {
     "name": "Try Node.js Streams",
     "time": 45,
-    "video": "114486344",
+    "video": "114684209",
     "challengeNumber": 44,
     "steps": [
       "In this Code School lesson, we'll learn about streaming data back and forth between the client to the server.",
@@ -536,7 +536,7 @@
   {
     "name": "Learn how Node.js Modules Work",
     "time": 45,
-    "video": "114486344",
+    "video": "114684213",
     "challengeNumber": 45,
     "steps": [
       "One of the most exciting features of Node.js is NPM - Node Package Manager",
@@ -547,23 +547,23 @@
   {
     "name": "Start an Express.js Server",
     "time": 45,
-    "video": "114486344",
+    "video": "114684247",
     "challengeNumber": 46,
     "steps": [
       "We'll complete Code School's Express.js course shortly after completing this course, but this challenge will give you a quick tour of the Express.js framework.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."]
   },
   {
-    "name": "Use Socket.io",
+    "name": "Use Socket.IO",
     "time": 45,
-    "video": "114486344",
+    "video": "114684530",
     "challengeNumber": 47,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."]
   },
   {
     "name": "Use Redis to Persist Data",
     "time": 45,
-    "video": "114486344",
+    "video": "114684532",
     "challengeNumber": 48,
     "steps": [
       "Redis is a key-value store, which is a type of non-relational database. It's one of the fastest and easiest ways to persist data.",
@@ -573,7 +573,7 @@
   {
     "name": "Dive Deeper into Express.js",
     "time": 45,
-    "video": "114486344",
+    "video": "114684533",
     "challengeNumber": 49,
     "steps": [
       "Code School has one of the first comprehensive courses on Express.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. If you've already used your Code School two-day membership, go to the Free Code Camp main chat room and ask how you can get some extra time to work through this course. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
@@ -583,7 +583,7 @@
   
     "name": "Setup Express.js Middleware",
     "time": 45,
-    "video": "114486344",
+    "video": "114684535",
     "challengeNumber": 50,
     "steps": [
       "Express.js makes extensive use of middleware - a stack of functions that run sequentially in response to a specific event.",
@@ -594,7 +594,7 @@
   {
     "name": "Take Advantage of Parameters",
     "time": 45,
-    "video": "114486344",
+    "video": "114684537",
     "challengeNumber": 51,
     "steps": [
       "Have you've ever noticed a question mark in your browser's address bar, followed by a series of string? Those are parameters. Parameters are an efficient way to pass information to the server between page loads.",
@@ -605,7 +605,7 @@
   {
     "name": "Add the Body Parser",
     "time": 45,
-    "video": "114486344",
+    "video": "114684720",
     "challengeNumber": 52,
     "steps": [
       "Now we'll add the Body Parser module to Express.js. Body Parser is a powerful middleware that helps with routing.",
@@ -616,7 +616,7 @@
   {
     "name": "Configure Routes in Express.js",
     "time": 45,
-    "video": "114486344",
+    "video": "114684724",
     "challengeNumber": 53,
     "steps": [
       "For this last Code School Express.js challenge, we'll refactor our routes.",
@@ -627,7 +627,7 @@
   {
     "name": "Try MongoDB",
     "time": 30,
-    "video": "114486344",
+    "video": "114685061",
     "challengeNumber": 54,
     "steps": [
       "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
@@ -637,7 +637,7 @@
   {
     "name": "Get Started with Angular.js",
     "time": 45,
-    "video": "114486344",
+    "video": "114684726",
     "challengeNumber": 55,
     "steps": [
       "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
@@ -647,7 +647,7 @@
   {
     "name": "Apply Angular.js Directives",
     "time": 45,
-    "video": "114486344",
+    "video": "114684727",
     "challengeNumber": 56,
     "steps": [
       "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will can alter the behavior of DOM elements based on the directives you've used.",
@@ -658,7 +658,7 @@
   {
     "name": "Power Forms with Angular.js",
     "time": 45,
-    "video": "114486344",
+    "video": "114684729",
     "challengeNumber": 57,
     "steps": [
       "One area where Angular.js really shines is its powerful web forms.",
@@ -668,7 +668,7 @@
   {
     "name": "Customize Angular.js Directives",
     "time": 45,
-    "video": "114486344",
+    "video": "114685062",
     "challengeNumber": 58,
     "steps": [
       "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
@@ -677,7 +677,7 @@
   {
     "name": "Create Angular.js Services",
     "time": 45,
-    "video": "114486344",
+    "video": "114685060",
     "challengeNumber": 59,
     "steps": [
       "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",
