@@ -515,42 +515,60 @@
     "time": 45,
     "video": "114486344",
     "challengeNumber": 43,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1</a> and complete the section."]
+    "steps": [
+      "One of the reasons Node.js is so fast is that it is \"evented\" - it processes events in an asynchronous manner.",
+      "As a result, Node.js relies on asynchronous callbacks.",
+      "We'll learn more about how events and callbacks work in this exciting Code School lesson.",
+      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Try Node.js Streams",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 44,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1</a> and complete the section."]
+    "steps": [
+      "In this Code School lesson, we'll learn about streaming data back and forth between the client to the server.",
+      "We'll also learn about FS, or File System, an important Node.js module for streaming data.",
+      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Learn how Node.js Modules Work",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 45,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1</a> and complete the section."]
+    "steps": [
+      "One of the most exciting features of Node.js is NPM - Node Package Manager",
+      "With NPM, you quickly install any of thousands of Node.js modules into your app, and it will automatically handle the other modules that each module dependends upon downstream.",
+      "In this lesson, we'll learn how to include these modules in our Node.js app by requiring them as variables.",
+      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1</a> and complete the section."]
   },
   {
     "name": "Start an Express.js Server",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 46,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."]
+    "steps": [
+      "We'll complete Code School's Express.js course shortly after completing this course, but this challenge will give you a quick tour of the Express.js framework.",
+      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."]
   },
   {
     "name": "Use Socket.io",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 47,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."]
+    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."]
   },
   {
     "name": "Use Redis to Persist Data",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 48,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1</a> and complete the section."]
+    "steps": [
+      "Redis is a key-value store, which is a type of non-relational database. It's one of the fastest and easiest ways to persist data.",
+      "Even though we'll ultimately use MongoDB and other technologies to persist data, Redis is quite easy to learn and is still worth learning.",
+      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1</a> and complete the section."]
   },
   {
     "name": "Dive Deeper into Express.js",
@@ -559,7 +577,7 @@
     "challengeNumber": 49,
     "steps": [
       "Code School has one of the first comprehensive courses on Express.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. If you've already used your Code School two-day membership, go to the Free Code Camp main chat room and ask how you can get some extra time to work through this course. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
-      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1</a> and complete the section."]
+      "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1</a> and complete the section."]
   },
   {
   
@@ -567,28 +585,44 @@
     "time": 45,
     "video": "114486344",
     "challengeNumber": 50,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1</a> and complete the section."]
+    "steps": [
+      "Express.js makes extensive use of middleware - a stack of functions that run sequentially in response to a specific event.",
+      "Let's learn how to incorporate modules and middleware into our Express.js app.",
+      "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/2/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Take Advantage of Parameters",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 51,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1</a> and complete the section."]
+    "steps": [
+      "Have you've ever noticed a question mark in your browser's address bar, followed by a series of string? Those are parameters. Parameters are an efficient way to pass information to the server between page loads.",
+      "We'll learn about parameters, along with a powerful Express.js feature called Dynamic Routing, in this exciting Code School lesson.",
+      "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/3/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Add the Body Parser",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 52,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1</a> and complete the section."]
+    "steps": [
+      "Now we'll add the Body Parser module to Express.js. Body Parser is a powerful middleware that helps with routing.",
+      "We'll also learn more about HTTP Requests, such as Post and Delete.",
+      "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/4/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/4/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Configure Routes in Express.js",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 53,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."]
+    "steps": [
+      "For this last Code School Express.js challenge, we'll refactor our routes.",
+      "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1</a> and complete the section."
+
+    ]
   },
   {
     "name": "Try MongoDB",
@@ -615,27 +649,39 @@
     "time": 45,
     "video": "114486344",
     "challengeNumber": 56,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."]
+    "steps": [
+      "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will can alter the behavior of DOM elements based on the directives you've used.",
+      "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Power Forms with Angular.js",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 57,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."]
+    "steps": [
+      "One area where Angular.js really shines is its powerful web forms.",
+      "Learn how to create reactive Angular.js forms, including real-time form validation.",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."]
   },
   {
     "name": "Customize Angular.js Directives",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 58,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."]
+    "steps": [
+      "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."]
   },
   {
     "name": "Create Angular.js Services",
     "time": 45,
     "video": "114486344",
     "challengeNumber": 59,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."]
+    "steps": [
+      "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",
+      "We'll learn how to use services in this final Code School Angular.js challenge.",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."]
   }
 ]
