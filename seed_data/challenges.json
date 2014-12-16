@@ -17,7 +17,7 @@
   {
     "name": "Join Our Chat Room",
     "time": 5,
-    "video": "114486344",
+    "video": "114627322",
     "challengeNumber": 1,
     "steps": [
         "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another Code Camper who's on the same challenge as you and wants to pair program.",
@@ -31,7 +31,7 @@
   {
     "name": "Subscribe to Our Subreddit",
     "time": 5,
-    "video": "114486344",
+    "video": "114578442",
     "challengeNumber": 2,
     "steps": [
         "Go to the Free Code Camp Subreddit: <a href='https://www.reddit.com/r/freecodecamp' target='_blank'>https://www.reddit.com/r/freecodecamp</a>. You can come here to share and discuss additional coding resources, or ask questions to our entire community. Our chatroom is great for realtime discussions, but our subreddit is ideal for longer-term discussions and open-ended questions.",
@@ -45,7 +45,7 @@
   {
     "name": "Build a Personal Website",
     "time": 60,
-    "video": "114486344",
+    "video": "114627406",
     "challengeNumber": 3,
     "steps": [
         "There are tons of interactive HTML and CSS tutorials out there, but Nathan Bashaw's Dash tutorials, which he built for General Assembly, are our favorite.",
@@ -67,7 +67,7 @@
   {
     "name": "Build a Small Business Website",
     "time": 60,
-    "video": "114486344",
+    "video": "114578438",
     "challengeNumber": 5,
     "steps": ["Ready for some more HTML and CSS fundamentals?",
         "Go to <a href='https://dash.generalassemb.ly/projects/eshas-restaurant-1' target='_blank'>https://dash.generalassemb.ly/projects/eshas-restaurant-1</a> and complete the third project."]
@@ -75,7 +75,7 @@
   {
     "name": "Tweak HTML and CSS in CodePen",
     "time": 10,
-    "video": "114486344",
+    "video": "110752744",
     "challengeNumber": 6,
     "steps": [
         "Now we're going to learn how to use a tool called CodePen, which lets you experiment with HTML and CSS, and even create single-page web applications, right in your browser!",
@@ -91,7 +91,7 @@
   {
     "name": "Build a CSS Robot",
     "time": 60,
-    "video": "114486344",
+    "video": "114578436",
     "challengeNumber": 7,
     "steps": ["Now let's learn some more CSS, and a small amount of a JavaScript-based tool called jQuery.",
         "Go to <a href='https://dash.generalassemb.ly/projects/cotbots-1' target='_blank'>https://dash.generalassemb.ly/projects/cotbots-1</a> and complete the fourth project."]
@@ -99,7 +99,7 @@
   {
     "name": "Get Started with jQuery",
     "time": 30,
-    "video": "114486344",
+    "video": "114578435",
     "challengeNumber": 8,
     "steps": [
         "jQuery is a powerful tool for manipulating HTML elements.",
@@ -112,7 +112,7 @@
   {
     "name": "Traverse the DOM",
     "time": 30,
-    "video": "114486344",
+    "video": "114591805",
     "challengeNumber": 9,
     "steps": [
         "Now let's learn more about DOM traversal - that is, moving from one HTML element to the next.",
@@ -122,7 +122,7 @@
   {
     "name": "Work with the DOM",
     "time": 30,
-    "video": "114486344",
+    "video": "114591804",
     "challengeNumber": 10,
     "steps": [
         "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
@@ -132,7 +132,7 @@
   {
     "name": "Listen for DOM Events",
     "time": 30,
-    "video": "114486344",
+    "video": "114591802",
     "challengeNumber": 11,
     "steps": [
         "Now let's learn how to use jQuery Listeners. These will \"listen\" for something to happen, and then trigger a subsequent event",
@@ -142,7 +142,7 @@
   {
     "name": "Use jQuery for Styling",
     "time": 30,
-    "video": "114486344",
+    "video": "114591801",
     "challengeNumber": 12,
     "steps": [
         "Finally, let's use jQuery to manipulate the way websites look, by changing the CSS of elements.",
@@ -152,7 +152,7 @@
   {
     "name": "Build a MadLibs Game",
     "time": 60,
-    "video": "114486344",
+    "video": "114591799",
     "challengeNumber": 13,
     "steps": [
         "Now that we've built a foundation in jQuery, let's go back to Dash and do it's last challenge.",
@@ -163,7 +163,7 @@
   {
     "name": "Discover Chrome's DevTools",
     "time": 90,
-    "video": "114486344",
+    "video": "110752743",
     "challengeNumber": 14,
     "steps": [
         "It's time to learn the most powerful tool your browser has - the Development Tools!",
@@ -175,7 +175,7 @@
   {
     "name": "Tackle jQuery Exercises",
     "time": 60,
-    "video": "114486344",
+    "video": "113173612",
     "challengeNumber": 15,
     "steps": [
         "We've built some special jQuery challenges to help you reinforce your knowledge of this fundamental skill.",
@@ -186,7 +186,7 @@
   {
     "name": "Customize Bootstrap with Bootswatch",
     "time": 10,
-    "video": "114486344",
+    "video": "110752741",
     "challengeNumber": 16,
     "steps": [
         "Let's learn a little more about Twitter's responsive CSS framework, Bootstrap, and how we can add some custom themes to it.",
@@ -207,7 +207,7 @@
   {
     "name": "Inject Animation into CSS",
     "time": 15,
-    "video": "114486344",
+    "video": "110752740",
     "challengeNumber": 17,
     "steps": [
         "You may have noticed some sites have cool animations. Actually, animating DOM elements is pretty straightforward if you use a CSS library called Animate.css.",
@@ -222,7 +222,7 @@
   {
     "name": "Learn Basic Computer Science",
     "time": 120,
-    "video": "114486344",
+    "video": "114628241",
     "challengeNumber": 18,
     "steps": [
         "Stanford has an excellent free online Computer Science curriculum. This interactive course uses a modified version of JavaScript. It will cover a lot of concepts quickly.",
@@ -234,7 +234,7 @@
   {
     "name": "Learn Loops",
     "time": 120,
-    "video": "114486344",
+    "video": "114597348",
     "challengeNumber": 19,
     "steps": ["Now let's tackle week 2 of Stanford's Intro to Computer Science course.",
       "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/</a> and complete Week 2."]
@@ -242,28 +242,28 @@
   {
     "name": "Learn Computer Hardware",
     "time": 120,
-    "video": "114486344",
+    "video": "114597347",
     "challengeNumber": 20,
     "steps": ["Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/</a> and complete Week 3."]
   },
   {
     "name": "Learn Computer Networking",
     "time": 120,
-    "video": "114486344",
+    "video": "114604811",
     "challengeNumber": 21,
     "steps": ["Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/</a> and complete Week 4."]
   },
   {
     "name": "Learn Boolean Logic",
     "time": 120,
-    "video": "114486344",
+    "video": "114604812",
     "challengeNumber": 22,
     "steps": ["Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/</a> and complete Week 5."]
   },
   {
     "name": "Learn Computer Security",
     "time": 120,
-    "video": "114486344",
+    "video": "114604813",
     "challengeNumber": 23,
     "steps": [
       "We're almost done with Stanford's Introduction to Computer Science course!",
@@ -272,7 +272,7 @@
   {
     "name": "Build an Adventure Game",
     "time": 60,
-    "video": "114486344",
+    "video": "114604814",
     "challengeNumber": 24,
     "steps": [
       "Now that you understand some Computer Science fundamentals, let's focus on programming JavaScript!",
@@ -285,7 +285,7 @@
   {
     "name": "Build Rock Paper Scissors",
     "time": 60,
-    "video": "114486344",
+    "video": "114604815",
     "challengeNumber": 25,
     "steps": [
       "Now we'll learn how JavaScript functions work, and use them to build a simple Rock Paper Scissors game.",
@@ -296,7 +296,7 @@
   {
     "name": "Learn JavaScript For Loops",
     "time": 60,
-    "video": "114486344",
+    "video": "114614220",
     "challengeNumber": 26,
     "steps": [
       "Let's learn more about the loops that make virtually all programs possible - the \"For Loop\" and \"While Loop\". First, we'll learn the For Loop.",
@@ -305,14 +305,14 @@
     ]
   },
   {
-    "name": "Learn While Loops",
+    "name": "Learn JavaScript While Loops",
     "time": 60,
-    "video": "114486344",
+    "video": "114612889",
     "challengeNumber": 27,
     "steps": [
 
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1</a> and complete the section.",
-      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1</a>."
+      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1</a>."
     ]
   },
   {
@@ -321,7 +321,7 @@
     "video": "114486344",
     "challengeNumber": 28,
     "steps": [
-      "Much of human reasoning can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If-Then-Else Statements\".",
+      "Much of human reasoning can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If Statements\" and \"Else Statements\".",
       "We'll also learn some advanced \"Control Flow\" principals, such as ways we can exit loops early.",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1</a> and complete the section.",
       "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-ZA2rb/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ZA2rb/0/1</a>."
@@ -330,7 +330,7 @@
   {
     "name": "Build a Contact List",
     "time": 60,
-    "video": "114486344",
+    "video": "114612887",
     "challengeNumber": 29,
     "steps": [
       "Up to this point, you've been working mostly with strings and numbers. Now we're going to learn more complicated data structures, like \"Arrays\" and \"Objects\".",
@@ -341,7 +341,7 @@
   {
     "name": "Build an Address Book",
     "time": 60,
-    "video": "114486344",
+    "video": "114612885",
     "challengeNumber": 30,
     "steps": [
       "Let's learn more about objects.",
@@ -352,7 +352,7 @@
   {
     "name": "Build a Cash Register",
     "time": 60,
-    "video": "114486344",
+    "video": "114612882",
     "challengeNumber": 31,
     "steps": [
       "In this final CodeCademy section, we'll learn even more about JavaScript objects.",
@@ -363,7 +363,7 @@
   {
     "name": "Get Help The Hacker Way",
     "time": 30,
-    "video": "114486344",
+    "video": "111500801",
     "challengeNumber": 32,
     "steps": [
         "Watch the video to learn the RSAP (Read, Search, Ask, Post) methodology for getting help.",
@@ -377,7 +377,7 @@
   {
     "name": "Learn Regular Expressions",
     "time": 60,
-    "video": "114486344",
+    "video": "112547802",
     "challengeNumber": 33,
     "steps": [
         "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
@@ -389,7 +389,7 @@
   {
     "name": "Pair Program on Coderbyte",
     "time": 60,
-    "video": "114486344",
+    "video": "",
     "challengeNumber": 34,
     "steps": [
       "OK, we're finally ready to start pair programming!",
@@ -425,9 +425,9 @@
     ]
   },
   {
-    "name": "Learn Relational Databases from Stanford",
+    "name": "Learn Relational Database Theory",
     "time": 30,
-    "video": "114486344",
+    "video": "114629033",
     "challengeNumber": 35,
     "steps": [
       "Before we learn SQL - and ultimately MongoDB - we need to establish a foundational knowledge of relational database theory. Stanford's Jennifer Widom has put together a short lecture series that does this.",
@@ -435,9 +435,9 @@
       "Go to <a href='https://class.stanford.edu/courses/DB/RDB/SelfPaced/courseware/ch-introduction/seq-vid-introduction/' target='_blank'>https://class.stanford.edu/courses/DB/RDB/SelfPaced/courseware/ch-introduction/seq-vid-introduction/</a> and watch the videos."]
   },
   {
-    "name": "Pair Program to Query SQL 1",
+    "name": "Pair Program to Query SQL pt 1",
     "time": 90,
-    "video": "114486344",
+    "video": "114621182",
     "challengeNumber": 36,
     "steps": [
       "With Stanford's SQL course, you can do SQL queries, right in your browser.",
@@ -447,9 +447,9 @@
     ]
   },
   {
-    "name": "Pair Program to Query SQL 2",
+    "name": "Pair Program to Query SQL pt 2",
     "time": 60,
-    "video": "114486344",
+    "video": "114621180",
     "challengeNumber": 37,
     "steps": [
       "Now let's do some additional SQL queries to further cement these concepts in your mind.",
@@ -459,9 +459,9 @@
     ]
   },
   {
-    "name": "Pair Program to Modify SQL 1",
+    "name": "Pair Program to Modify SQL pt 1",
     "time": 90,
-    "video": "114486344",
+    "video": "114621179",
     "challengeNumber": 38,
     "steps": [
       "Now that you're able to use SQL to query a database, it's time to practice using SQL to modify the database itself.",
@@ -471,9 +471,9 @@
     ]
   },
   {
-    "name": "Pair Program to Modify SQL 2",
-    "time": 30,
-    "video": "114486344",
+    "name": "Pair Program to Modify SQL pt 2",
+    "time": 60,
+    "video": "114621178",
     "challengeNumber": 39,
     "steps": [
       "Let's answer a couple more SQL modification questions to further practice these concepts.",
@@ -483,9 +483,9 @@
     ]
   },
   {
-    "name": "Learn JSON from Stanford",
-    "time": 60,
-    "video": "114486344",
+    "name": "Learn JSON",
+    "time": 30,
+    "video": "114621177",
     "challengeNumber": 40,
     "steps": [
       "Now that you know a little about how databases store data, let's learn how computers usually share data back and forth over the web. Most modern Application Programming Interfaces (APIs) on the web use JavaScript Object Notation, or JSON.",
