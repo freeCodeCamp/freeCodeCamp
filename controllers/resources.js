@@ -66,12 +66,17 @@ exports.pairProgramWithTeamViewer = function(req, res) {
         "Be sure to pair program on these challenges, and remember to apply the RSAP methodology.",
         "Click the button below to return to the Pair Programming challenge, then mark it complete."],
         cc: req.user.challengesHash
-
     });
 }
 exports.about = function(req, res) {
     res.render('about', {
-        title: 'Who We Are'
+        title: 'About Free Code Camp and Our Team of Volunteers'
+    });
+}
+
+exports.doneWithFirst100Hours = function(req, res) {
+    res.render('done-with-first-100-hours', {
+        title: 'Congratulations on finishing the first 100 hours of Free Code Camp!'
     });
 }
 

@@ -5,9 +5,13 @@
 
 exports.index = function(req, res) {
   if (req.user) {
-      if (req.user.challengesCompleted.length > 0) {
-        nextChallenge = Math.max.apply(Math, req.user.challengesHash) + 1;
-        res.redirect("challenges/" + nextChallenge);
+      ch = req.user.challengesHash;
+      if (req.user.challengesHash[0] > 0) {
+          var max = Object.keys(ch).reduce(function(max,key){
+              return (max === undefined || ch[key] > ch[max]) ? +key : max;
+          });
+          nextChallenge = max + 1;
+          res.redirect("challenges/" + nextChallenge);
       } else {
         res.redirect("challenges/0");
       }
