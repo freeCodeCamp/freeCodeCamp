@@ -4,8 +4,12 @@ var secrets = require('../config/secrets');
 var challenges = require('./challenges.json');
 
 mongoose.connect(secrets.db);
-Challenge.create(challenges, function(err, data) {
+Challenge.remove({}, function(err, data){
     if (err) console.log(err);
-    else console.log('Saved ', data );
-    process.exit(0);
+    else console.log('Deleted ', data );
+    Challenge.create(challenges, function(err, data) {
+        if (err) console.log(err);
+        else console.log('Saved ', data );
+        process.exit(0);
+    });
 });
