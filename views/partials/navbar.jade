@@ -25,8 +25,18 @@
             ul.dropdown-menu.text-right
               li.hamburger
                 a(href='/')
-                    span.ion-map
-                    | My Challenges
+                  span.ion-map
+                  | My Challenges
+              - if (cc[1] > 0)
+                li.hamburger
+                  a(href='https://gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank')
+                    span.ion-coffee
+                    | Chat Room
+              - if (cc[2] > 0)
+                li.hamburger
+                  a(href='http://forum.freecodecamp.com/', target='_blank')
+                    span.ion-planet
+                    | Forum
               li.hamburger
                 a(href='/account')
                   span.ion-person
