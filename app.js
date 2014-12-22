@@ -3,6 +3,7 @@
  */
 require('newrelic');
 var express = require('express');
+var debug = require('debug')('freecc:server');
 var cookieParser = require('cookie-parser');
 var compress = require('compression');
 var session = require('express-session');
@@ -105,13 +106,24 @@ var trusted = [
     "'unsafe-eval'",
     "'unsafe-inline'"
 ];
+//var connectSrc;
+//if (process.env.NODE_ENV === 'development') {
+//    debug('Pushing');
+//    connectSrc = ['"self"', 'ws://localhost:3001/'];
+//} else {
+//    debug('Not');
+//    connectSrc = [];
+//}
+
+debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
     scriptSrc: ['*.optimizely.com'].concat(trusted),
+    'connect-src': process.env.NODE_ENV === 'development' ? ['ws://localhost:3001/', 'http://localhost:3001/'] : [],
     styleSrc: trusted,
     imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:"].concat(trusted),
     fontSrc: ["'self", '*.googleapis.com'].concat(trusted),
-    mediaSrc: ['*.amazonaws.com', '*.twitter'],
+    mediaSrc: ['*.amazonaws.com', '*.twitter.com'],
     frameSrc: ['*.gitter.im', '*.vimeo.com', '*.twitter.com'],
 //    sandbox: ['allow-forms', 'allow-scripts'],
 //    reportUri: '/report-violation',
