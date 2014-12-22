@@ -105,9 +105,7 @@ var trusted = [
     "*.githubusercontent.com",
     "'unsafe-eval'",
     "'unsafe-inline'",
-    "*.rafflecopter.com",
-    "ws://api.rafflecopter.com",
-    "ws://www.freecodecamp.com"
+    "*.rafflecopter.com"
 ];
 //var connectSrc;
 //if (process.env.NODE_ENV === 'development') {
@@ -122,7 +120,7 @@ debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
     scriptSrc: ['*.optimizely.com'].concat(trusted),
-    'connect-src': process.env.NODE_ENV === 'development' ? ['ws://localhost:3001/', 'http://localhost:3001/'] : [],
+    'connect-src': process.env.NODE_ENV === 'development' ? ['ws://localhost:3001/', 'http://localhost:3001/'] : ["ws://api.rafflecopter.com", "ws://www.freecodecamp.com"],
     styleSrc: trusted,
     imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:", '*.licdn.com'].concat(trusted),
     fontSrc: ["'self", '*.googleapis.com'].concat(trusted),
