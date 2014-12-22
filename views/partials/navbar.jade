@@ -27,26 +27,26 @@
                 a(href='/')
                   span.ion-map
                   | My Challenges
-              - if (cc[1] > 0)
-                li.hamburger
-                  a(href='https://gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank')
-                    span.ion-coffee
-                    | Chat Room
-              - else
+              - if (cc && cc[1] < 1)
                 li.hamburger.disabled
                   a(href='https://gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank')
                     span.ion-coffee
                     | Chat Room (do Challenge 1 first)
-              - if (cc[2] > 0)
-                li.hamburger
-                  a(href='http://forum.freecodecamp.com/', target='_blank')
-                    span.ion-planet
-                    | Forum
               - else
+                li.hamburger
+                  a(href='https://gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank')
+                    span.ion-coffee
+                    | Chat Room
+              - if (cc && cc[2] < 1)
                 li.hamburger.disabled
                   a(href='http://forum.freecodecamp.com/', target='_blank')
                     span.ion-planet
                     | Forum (do Challenge 2 first)
+              - else
+                li.hamburger
+                  a(href='http://forum.freecodecamp.com/', target='_blank')
+                    span.ion-planet
+                    | Forum
               li.hamburger
                 a(href='/account')
                   span.ion-person
