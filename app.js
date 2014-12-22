@@ -121,7 +121,7 @@ app.use(helmet.contentSecurityPolicy({
     scriptSrc: ['*.optimizely.com'].concat(trusted),
     'connect-src': process.env.NODE_ENV === 'development' ? ['ws://localhost:3001/', 'http://localhost:3001/'] : [],
     styleSrc: trusted,
-    imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:"].concat(trusted),
+    imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:", '*.licdn.com'].concat(trusted),
     fontSrc: ["'self", '*.googleapis.com'].concat(trusted),
     mediaSrc: ['*.amazonaws.com', '*.twitter.com'],
     frameSrc: ['*.gitter.im', '*.vimeo.com', '*.twitter.com'],
