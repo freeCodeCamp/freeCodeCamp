@@ -29,21 +29,25 @@
         "Be sure to update your biographical information and upload an image. A picture of your face works best. This is how people will see you in the chat room, so put your best foot forward.",
         "Now enter the chat room by going to <a href='https://gitter.im/FreeCodeCamp/FreeCodeCamp' target='_blank'>https://gitter.im/FreeCodeCamp/FreeCodeCamp</a> and clicking the \"sign in with GitHub\" button.",
         "Introduce yourself to our chat room by typing: \"hello world!\".",
-        "Tell your fellow Code Campers how you found Free Code Camp. Also tell them why you want to learn to code."
+        "Tell your fellow Code Campers how you found Free Code Camp. Also tell us why you want to learn to code.",
+        "Keep the chat room open while you work through the other challenges. That way you ask for help If you get stuck on a challenge. You can also socialize when you feel like taking a break."
     ]
   },
   {
-    "name": "Subscribe to Our Subreddit",
+    "name": "Join our Forum",
     "time": 5,
     "video": "114578442",
     "challengeNumber": 2,
     "steps": [
-        "Go to the Free Code Camp Subreddit: <a href='https://www.reddit.com/r/freecodecamp' target='_blank'>https://www.reddit.com/r/freecodecamp</a>. You can come here to share and discuss additional coding resources, or ask questions to our entire community. Our chatroom is great for realtime discussions, but our subreddit is ideal for longer-term discussions and open-ended questions.",
-        "If you don't already have a Reddit account, create one by clicking the \"login or register\" button in the upper right hand corner.",
+        "Go to Free Code Camp's forum: <a href='http://forum.freecodecamp.com' target='_blank'>http://forum.freecodecamp.com</a>.",
+        "You can come here to share and discuss coding resources, ask questions to our entire community, and coordinate local Free Code Camp events.",
+        "Our chat room is great for realtime discussions, but our forum is ideal for longer-term discussions and open-ended questions.",
+        "Sign in with the Github account you created during Challenge 1.",
         "Click on the \"Introduce yourself here\" discussion.",
         "Here you can read through other Free Code Camp community members' self introductions.",
         "Go ahead and type a brief self introduction of your own.",
-        "Subscribe to the Free Code Camp subreddit by clicking \"Subscribe\". You might want to subscribe to these subreddits as well: <a href='http://www.reddit.com/r/learnprogramming/' target='_blank'>http://www.reddit.com/r/learnprogramming/</a> and <a href='http://www.reddit.com/r/learnjavascript' target='_blank'>http://www.reddit.com/r/learnjavascript</a>."
+        "Click on the \"Categories\" drop-down menu. You should see a category called \"Local Chapters\". Click that. If your city isn't already on the list, you can create a topic for it. Otherwise, you can also introduce yourself to the other Code Campers from your city.",
+        "Come back here daily to ask questions, engage in discussions, and share links to helpful coding tools."
     ]
   },
   {
