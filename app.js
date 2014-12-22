@@ -104,7 +104,8 @@ var trusted = [
     '*.twimg.com',
     "*.githubusercontent.com",
     "'unsafe-eval'",
-    "'unsafe-inline'"
+    "'unsafe-inline'",
+    "*.rafflecopter.com"
 ];
 //var connectSrc;
 //if (process.env.NODE_ENV === 'development') {
