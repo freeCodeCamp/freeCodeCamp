@@ -92,14 +92,27 @@ app.use(flash());
 app.disable('x-powered-by');
 app.use(helmet.xssFilter());
 app.use(helmet.xframe());
+var trusted = [
+    "'self'",
+    '*.freecodecamp.com',
+    "*.google-analytics.com",
+    "*.googleapis.com",
+    "*.gstatic.com",
+    "*.doubleclick.net",
+    "*.twitter.com",
+    '*.twimg.com',
+    "*.githubusercontent.com",
+    "'unsafe-eval'",
+    "'unsafe-inline'"
+];
 app.use(helmet.contentSecurityPolicy({
-    defaultSrc: ["'self'", 'freecodecamp.com'],
-    scriptSrc: ['*.google-analytics.com', '*.optimizely.com', '*.googleapis.com', '*.twitter.com'],
-    styleSrc: ["'self'", '*.twitter.com'],
-    imgSrc: ["'self'", '*.amazonaws.com', '*.twitter.com', '*.twimg.com'],
-    fontSrc: ["'self", '*.googleapis.com', '*.twitter.com'],
+    defaultSrc: trusted,
+    scriptSrc: ['*.optimizely.com'].concat(trusted),
+    styleSrc: trusted,
+    imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:"].concat(trusted),
+    fontSrc: ["'self", '*.googleapis.com'].concat(trusted),
     mediaSrc: ['*.amazonaws.com', '*.twitter'],
-    frameSrc: ['*.gitter.im', '*.vimeo.com'],
+    frameSrc: ['*.gitter.im', '*.vimeo.com', '*.twitter.com'],
 //    sandbox: ['allow-forms', 'allow-scripts'],
 //    reportUri: '/report-violation',
     reportOnly: false, // set to true if you only want to report errors
