@@ -34,6 +34,10 @@ var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
 /**
+ * User model
+ */
+var User = require('./models/User');
+/**
  * API keys and Passport configuration.
  */
 
@@ -132,8 +136,13 @@ app.get(
 app.get('/learn-to-code', resourcesController.learnToCode);
 app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
-app.get('/text-based-adventure-tutorial-app', resourcesController.textBasedAdventureTutorial);
+app.get('/live-pair-programming', resourcesController.livePairProgramming);
+app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
+app.get('/chromebook', resourcesController.chromebook);
+app.get('/pair-program-with-team-viewer', resourcesController.pairProgramWithTeamViewer);
+app.get('/done-with-first-100-hours', resourcesController.doneWithFirst100Hours);
 app.get('/programmer-interview-questions-app', resourcesController.programmerInterviewQuestionsApp);
+
 app.get('/about', resourcesController.about);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
@@ -168,10 +177,19 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
 
 /**
  * API examples routes.
+ * accepts a post request. the challenge id req.body.challengeNumber
+ * and updates user.challengesHash & user.challengesCompleted
+ *
  */
 app.post('/completed_challenge', function(req, res) {
-  req.user.challengesCompleted.push(parseInt(req.body.cn));
-  req.user.save();
+    req.user.challengesHash[parseInt(req.body.challengeNumber)] = Math.round(+new Date() / 1000);
+    var ch = req.user.challengesHash;
+    var p = 0;
+    for (k in ch) {
+        if (ch[k] > 0) { p += 1}
+    }
+    req.user.points = p;
+    req.user.save();
 });
 
 /**
@@ -235,27 +253,3 @@ app.listen(app.get('port'), function() {
 });
 
 module.exports = app;
-
-//app.get('/api', apiController.getApi);
-//app.get('/api/lastfm', apiController.getLastfm);
-//app.get('/api/nyt', apiController.getNewYorkTimes);
-//app.get('/api/aviary', apiController.getAviary);
-//app.get('/api/steam', apiController.getSteam);
-//app.get('/api/stripe', apiController.getStripe);
-//app.post('/api/stripe', apiController.postStripe);
-//app.get('/api/scraping', apiController.getScraping);
-//app.get('/api/twilio', apiController.getTwilio);
-//app.post('/api/twilio', apiController.postTwilio);
-//app.get('/api/clockwork', apiController.getClockwork);
-//app.post('/api/clockwork', apiController.postClockwork);
-//app.get('/api/foursquare', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFoursquare);
-//app.get('/api/tumblr', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getTumblr);
-//app.get('/api/facebook', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getFacebook);
-//app.get('/api/github', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getGithub);
-//app.get('/api/twitter', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getTwitter);
-//app.post('/api/twitter', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postTwitter);
-//app.get('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getVenmo);
-//app.post('/api/venmo', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.postVenmo);
-//app.get('/api/linkedin', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getLinkedin);
-//app.get('/api/instagram', passportConf.isAuthenticated, passportConf.isAuthorized, apiController.getInstagram);
-//app.get('/api/yahoo', apiController.getYahoo);

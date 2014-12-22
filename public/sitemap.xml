@@ -6,20 +6,44 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-<url>
-  <loc>http://www.freecodecamp.com/</loc>
-  <changefreq>daily</changefreq>
-</url>
-<url>
-  <loc>http://www.freecodecamp.com/login</loc>
-  <changefreq>daily</changefreq>
-</url>
-<url>
-  <loc>http://www.freecodecamp.com/nonprofits</loc>
-  <changefreq>daily</changefreq>
-</url>
-<url>
-  <loc>http://www.freecodecamp.com/learn-to-code</loc>
-  <changefreq>daily</changefreq>
-</url>
+  <url>
+    <loc>http://www.freecodecamp.com/</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/login</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/nonprofits</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/learn-to-code</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/about</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/chromebook</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/live-pair-programming</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/privacy</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/jquery-exercises</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/javascript-in-your-inbox</loc>
+    <changefreq>daily</changefreq>
+  </url>
 </urlset>

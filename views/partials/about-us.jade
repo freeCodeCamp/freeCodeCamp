@@ -1,99 +1,30 @@
 .panel.panel-primary
-    .panel-heading.landing-panel-heading.text-center We are Free Code Camp
+    .panel-heading.landing-panel-heading.text-center What Our Code Campers are Saying
     .panel-body
         .landing-panel-body.text-center
             .col-xs-12
-                h2.text-center Our team
-                .fifteen-pixel-break
-            script.
-                $(function () {
-                    var parent = $("#shuffle");
-                    var divs = parent.children();
-                    while (divs.length) {
-                        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
-                    }
-                });
-            #shuffle
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Nique Devereaux
-                    h4.negative-10.text-nowrap Alliance Builder
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/nique-devereaux.jpg' alt="Nique Devereaux's picture")
-                    h4.text-nowrap Tempe, Arizona
-                    p.negative-10 "Gamer ever since Pong. Coder ever since I discovered how much I enjoy telling machines what to do."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Berkeley Martinez
-                    h4.negative-10.text-nowrap JavaScript Engineer
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/berkeley-martinez.jpg' alt="Berkeley Martinez's picture")
-                    h4.text-nowrap San Francisco, California
-                    p.negative-10 "Former mechanical engineer. Coding is pure creation. I can fly, but only once."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Mychael Zuniga
-                    h4.negative-10.text-nowrap JavaScript Engineer
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/mychael-zuniga.jpg' alt="Mychael Zuniga's picture")
-                    h4.text-nowrap San Diego, California
-                    p.negative-10 "I'm a college student who turned to code as an avenue for creative expression. I love political science and economics."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Brian Ball
-                    h4.negative-10.text-nowrap Product Manager
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/brian-ball.jpg' alt="Brian Ball's picture")
-                    h4.text-nowrap San Francisco, California
-                    p.negative-10 "I build products people use. I'm fascinated by how fast the internet is changing the world."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Darryl Dixon
-                    h4.negative-10.text-nowrap Community Builder
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/darryl-dixon.jpg' alt="Darryl Dixon's picture")
-                    h4.text-nowrap Newport News, Virginia
-                    p.negative-10 "I'm a self-taught graphic designer. I'm learning web development here and want you to learn with me."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Kathy O'Driscoll
-                    h4.negative-10.text-nowrap Community Builder
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/kathy-odriscoll.jpg' alt="Kathy O'Driscoll's picture")
-                    h4.text-nowrap Los Angeles, California
-                    p.negative-10 "Mother and grandmother. All my life I've dabbled in getting machines to do my bidding. Now it's becoming my career."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Ryan Malm
-                    h4.negative-10.text-nowrap Visual Designer
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/ryan-malm.jpg' alt="Ryan Malm's picture")
-                    h4.text-nowrap Omaha, Nebraska
-                    p.negative-10 "I love origami, piano, and playing minecraft with my kids. My JavaScript grows stronger every day."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Charles Watson
-                    h4.negative-10.text-nowrap iOS Engineer
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/charles-watson.jpg' alt="Charles Watson's picture")
-                    h4.text-nowrap Minneapolis, Minnesota
-                    p.negative-10 "I skipped college. I build iOS apps. I love the obstacles and puzzles that coding presents me."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Quincy Larson
-                    h4.negative-10.text-nowrap Instructional Designer
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/quincy-larson.jpg' alt="Quincy Larson's picture")
-                    h4.text-nowrap San Francisco, California
-                    p.negative-10 "I worked as a school director in China before learning to code. It's clear that everyone can - and should - learn to code."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Mark Howard
-                    h4.negative-10.text-nowrap Digital Marketer
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/mark-howard.jpg' alt="Mark Howard's picture")
-                    h4.text-nowrap San Diego, California
-                    p.negative-10 "I enjoy helping people, at scale. Code is the best way to do that."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Nathan Leniz
-                    h4.negative-10.text-nowrap Community Builder
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/nathan-leniz.jpg' alt="Nathan Leniz's picture")
-                    h4.text-nowrap Seoul, South Korea
-                    p.negative-10 "I learned to code for the games, and stayed for the algorithms."
-                .col-xs-12.col-sm-4.col-md-3.team-member
-                    h3.negative-10.text-nowrap Jason Rueckert
-                    h4.negative-10.text-nowrap Live Content Manager
-                    img.profile-image(src='https://s3.amazonaws.com/freecodecamp/jason-rueckert.jpg' alt="Jason Rueckert's picture")
-                    h4.text-nowrap Seattle, Washington
-                    p.negative-10 "My high school job was testing basketball shoes for Nike. I learned code to work smarter, not harder. I have no thyroid."
-            .col-xs-12
-                h2.text-center Our chat room
-                .embed-responsive.embed-responsive-4by3
-                    iframe(style="display: none;" onload="this.style.display='block';" src="https://gitter.im/FreeCodeCamp/FreeCodeCamp")
-            .col-xs-12
-                h2.text-center What our students are saying
-            .col-xs-12
                 .masonry-row
+                    .masonry-block
+                        .masonry-relative
+                            blockquote.twitter-tweet(lang='en')
+                                p
+                                    | My boss was impressed by the troubleshooting I learned through
+                                    a(href='https://twitter.com/FreeCodeCamp') @FreeCodeCamp
+                                    |  and I just got a raise! Sweet!
+                                    a(href='http://t.co/om7DqQoyAr') http://t.co/om7DqQoyAr
+                                | &mdash; Alec Hansen (@AlecMHansen)
+                                a(href='https://twitter.com/AlecMHansen/status/544975882771648512') December 16, 2014
+                                script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
+                    .masonry-block
+                        .masonry-relative
+                            blockquote.twitter-tweet(lang='en')
+                                p
+                                    a(href='https://twitter.com/DrivenByTatiana') @DrivenByTatiana
+                                    a(href='https://twitter.com/FreeCodeCamp') @FreeCodeCamp
+                                    |  - Cool. I&apos;m currently working thru it to improve my JavaScript. The community is very welcoming! &#x1F604;
+                                | &mdash; a touch of curar&eacute; (@cynthialanel)
+                                a(href='https://twitter.com/cynthialanel/status/544768565467807744') December 16, 2014
+                                script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
                     .masonry-block
                         .masonry-relative
                             blockquote.twitter-tweet(lang='en')
@@ -224,21 +155,6 @@
                         .masonry-relative
                             blockquote.twitter-tweet(lang='en')
                                 p
-                                    | no school today: with
-                                    a(href='https://twitter.com/BlueninjaSF') @blueninjaSF
-                                    |  at
-                                    a(href='https://twitter.com/AWSloft') @awsloft
-                                    |  working on
-                                    a(href='https://twitter.com/FreeCodeCamp') @freecodecamp
-                                    |  - first website. check!
-                                    a(href='http://t.co/yJ8ycEti9B') pic.twitter.com/yJ8ycEti9B
-                                | &mdash; brian ball (@brianball)
-                                a(href='https://twitter.com/brianball/status/532243325290827777') November 11, 2014
-                            script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
-                    .masonry-block
-                        .masonry-relative
-                            blockquote.twitter-tweet(lang='en')
-                                p
                                     | I agree,
                                     a(href='https://twitter.com/LeifPixel') @LeifPixel
                                     |  ...
@@ -250,3 +166,91 @@
                                 | &mdash; Deb Simon-Heinfeld (@debBlufftonAGS)
                                 a(href='https://twitter.com/debBlufftonAGS/status/532198725129867265') November 11, 2014
                             script(async='', src='//platform.twitter.com/widgets.js', charset='utf-8')
+
+
+.panel.panel-primary
+    .panel-heading.landing-panel-heading.text-center Our Team of Volunteers
+    .panel-body
+        .landing-panel-body.text-center
+            .col-xs-12
+                script.
+                    $(function () {
+                        var parent = $("#shuffle");
+                        var divs = parent.children();
+                        while (divs.length) {
+                            parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+                        }
+                    });
+                #shuffle
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Nique Devereaux
+                        h4.negative-10.text-nowrap Alliance Builder
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/nique-devereaux.jpg' alt="Nique Devereaux's picture")
+                        h4.text-nowrap Tempe, Arizona
+                        p.negative-10 "Gamer ever since Pong. Coder ever since I discovered how much I enjoy telling machines what to do."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Berkeley Martinez
+                        h4.negative-10.text-nowrap JavaScript Engineer
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/berkeley-martinez.jpg' alt="Berkeley Martinez's picture")
+                        h4.text-nowrap San Francisco, California
+                        p.negative-10 "Former mechanical engineer. Coding is pure creation. I can fly, but only once."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Mychael Zuniga
+                        h4.negative-10.text-nowrap JavaScript Engineer
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/mychael-zuniga.jpg' alt="Mychael Zuniga's picture")
+                        h4.text-nowrap San Diego, California
+                        p.negative-10 "I'm a college student who turned to code as an avenue for creative expression. I love political science and economics."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Brian Ball
+                        h4.negative-10.text-nowrap Product Manager
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/brian-ball.jpg' alt="Brian Ball's picture")
+                        h4.text-nowrap San Francisco, California
+                        p.negative-10 "I build products people use. I'm fascinated by how fast the internet is changing the world."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Darryl Dixon
+                        h4.negative-10.text-nowrap Community Builder
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/darryl-dixon.jpg' alt="Darryl Dixon's picture")
+                        h4.text-nowrap Newport News, Virginia
+                        p.negative-10 "I'm a self-taught graphic designer. I'm learning web development here and want you to learn with me."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Kathy O'Driscoll
+                        h4.negative-10.text-nowrap Community Builder
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/kathy-odriscoll.jpg' alt="Kathy O'Driscoll's picture")
+                        h4.text-nowrap Los Angeles, California
+                        p.negative-10 "Mother and grandmother. All my life I've dabbled in getting machines to do my bidding. Now it's becoming my career."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Ryan Malm
+                        h4.negative-10.text-nowrap Visual Designer
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/ryan-malm.jpg' alt="Ryan Malm's picture")
+                        h4.text-nowrap Omaha, Nebraska
+                        p.negative-10 "I love origami, piano, and playing minecraft with my kids. My JavaScript grows stronger every day."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Charles Watson
+                        h4.negative-10.text-nowrap iOS Engineer
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/charles-watson.jpg' alt="Charles Watson's picture")
+                        h4.text-nowrap Minneapolis, Minnesota
+                        p.negative-10 "I skipped college. I build iOS apps. I love the obstacles and puzzles that coding presents me."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Quincy Larson
+                        h4.negative-10.text-nowrap Instructional Designer
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/quincy-larson.jpg' alt="Quincy Larson's picture")
+                        h4.text-nowrap San Francisco, California
+                        p.negative-10 "I worked as a school director in China before learning to code. It's clear that everyone can - and should - learn to code."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Mark Howard
+                        h4.negative-10.text-nowrap Digital Marketer
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/mark-howard.jpg' alt="Mark Howard's picture")
+                        h4.text-nowrap San Diego, California
+                        p.negative-10 "I enjoy helping people, at scale. Code is the best way to do that."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Nathan Leniz
+                        h4.negative-10.text-nowrap Community Builder
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/nathan-leniz.jpg' alt="Nathan Leniz's picture")
+                        h4.text-nowrap Seoul, South Korea
+                        p.negative-10 "I learned to code for the games, and stayed for the algorithms."
+                    .col-xs-12.col-sm-4.col-md-3.team-member
+                        h3.negative-10.text-nowrap Jason Rueckert
+                        h4.negative-10.text-nowrap Live Content Manager
+                        img.profile-image(src='https://s3.amazonaws.com/freecodecamp/jason-rueckert.jpg' alt="Jason Rueckert's picture")
+                        h4.text-nowrap Seattle, Washington
+                        p.negative-10 "My high school job was testing basketball shoes for Nike. I learned code to work smarter, not harder. I have no thyroid."

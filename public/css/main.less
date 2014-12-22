@@ -6,12 +6,21 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300);
 @import url(http://fonts.googleapis.com/css?family=Lato:400);
-@import url(http://fonts.googleapis.com/css?family=Lato:500);
-
 
 html,body,div,span,a,li,td,th {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+}
+
+li {
+  white-space: pre;           /* CSS 2.0 */
+  white-space: pre-wrap;      /* CSS 2.1 */
+  white-space: pre-line;      /* CSS 3.0 */
+  white-space: -pre-wrap;     /* Opera 4-6 */
+  white-space: -o-pre-wrap;   /* Opera 7 */
+  white-space: -moz-pre-wrap; /* Mozilla */
+  white-space: -hp-pre-wrap;  /* HP Printers */
+  word-wrap: break-word;      /* IE 5+ */
 }
 
 html {
@@ -37,7 +46,7 @@ h1, h2 {
 }
 
 .btn {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6, p, li {
@@ -154,6 +163,7 @@ ul {
 
 .nav-height {
   height: 50px;
+  border: none;
 }
 
 .landing-icon {
@@ -172,17 +182,16 @@ ul {
   margin-top: -10px;
 }
 
+.negative-15 {
+  margin-top: -15px;
+}
+
 .landing-p {
   font-size: 18px !important;
 }
 
 .text-success {
   color: @brand-success;
-}
-
-.delay-half {
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
 }
 
 .delay-1 {
@@ -195,34 +204,14 @@ ul {
   animation-delay: 2s;
 }
 
-.delay-3 {
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-}
-
-.delay-4 {
-  -webkit-animation-delay: 4s;
-  animation-delay: 4s;
-}
-
-.delay-5 {
-  -webkit-animation-delay: 5s;
-  animation-delay: 5s;
-}
-
-.delay-6 {
-  -webkit-animation-delay: 6s;
-  animation-delay: 6s;
+.delay-10 {
+  -webkit-animation-delay: 10s;
+  animation-delay: 10s;
 }
 
 .fast-animation {
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-}
-
-.slow-animation {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
 }
 
 .disabled {
@@ -271,7 +260,7 @@ ul {
 }
 
 .navbar {
-  background-color: #502D16;
+  background-color: #4a2b0f;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -282,7 +271,7 @@ ul {
 }
 
 .hug-top {
-  margin-top: -40px;
+  margin-top: -35px;
   margin-bottom: -10px;
 }
 
@@ -316,9 +305,11 @@ ul {
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .profile-image {
+  border-radius: 10px;
   width: 200px;
   height: 200px;
-  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .team-member {
@@ -343,4 +334,26 @@ ul {
 .masonry-relative {
   position:relative;
   display: block;
+}
+
+.btn-big {
+  font-size: 30px;
+}
+
+.table {
+  margin-left: -16px;
+}
+
+thead {
+  font-size: 150%;
+}
+
+.hamburger {
+  background-color: #ddd;
+  text-align: left;
+  font-size: 20px;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
