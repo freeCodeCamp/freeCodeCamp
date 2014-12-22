@@ -105,7 +105,8 @@ var trusted = [
     "*.githubusercontent.com",
     "'unsafe-eval'",
     "'unsafe-inline'",
-    "*.rafflecopter.com"
+    "*.rafflecopter.com",
+    "wss://*.rafflecopter.com"
 ];
 //var connectSrc;
 //if (process.env.NODE_ENV === 'development') {
