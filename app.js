@@ -120,7 +120,8 @@ debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
     scriptSrc: ['*.optimizely.com'].concat(trusted),
-    'connect-src': process.env.NODE_ENV === 'development' ? ['ws://localhost:3001/', 'http://localhost:3001/'] : ["ws://api.rafflecopter.com", "ws://www.freecodecamp.com"],
+    'connect-src': process.env.NODE_ENV === 'development' ? ['ws://localhost:3001/', 'http://localhost:3001/'] : [],
+    connectSources: ["ws://api.rafflecopter.com", "ws://www.freecodecamp.com"],
     styleSrc: trusted,
     imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:", '*.licdn.com'].concat(trusted),
     fontSrc: ["'self", '*.googleapis.com'].concat(trusted),
