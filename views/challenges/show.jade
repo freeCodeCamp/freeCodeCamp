@@ -15,14 +15,15 @@ block content
                     .btn.btn-primary.btn-big.btn-block.completed-challenge I've completed this challenge
                     .ten-pixel-break
                     .btn.btn-success.btn-large.btn-block.skip-challenge I want to skip this challenge for now
-                .panel-footer.text-center
-                    span Need a break? Check out our:&nbsp;
-                    a(href="https://gitter.im/FreeCodeCamp/FreeCodeCamp", target="_blank") Chat Room
-                    | &nbsp;,&nbsp;
-                    a(href="http://blog.freecodecamp.com", target="_blank") Blog
-                    | &nbsp;,&nbsp;or&nbsp;
-                    a(href="http://forum.freecodecamp.com", target="_blank") Forum
-                    | .
+                - if (cc[2] > 0)
+                    .panel-footer.text-center
+                        span Need a break? Check out our:&nbsp;
+                        a(href="https://gitter.im/FreeCodeCamp/FreeCodeCamp", target="_blank") Chat Room
+                        | &nbsp;,&nbsp;
+                        a(href="http://blog.freecodecamp.com", target="_blank") Blog
+                        | &nbsp;,&nbsp;or&nbsp;
+                        a(href="http://forum.freecodecamp.com", target="_blank") Forum
+                        | .
                 #complete-dialog.modal
                     .modal-dialog.animated.zoomIn.fast-animation
                         .modal-content
