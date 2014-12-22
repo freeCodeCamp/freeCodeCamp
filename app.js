@@ -106,7 +106,7 @@ var trusted = [
     "'unsafe-eval'",
     "'unsafe-inline'",
     "*.rafflecopter.com",
-    "ws://api.rafflecopter.com"
+    "wss://api.rafflecopter.com"
 ];
 //var connectSrc;
 //if (process.env.NODE_ENV === 'development') {
