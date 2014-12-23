@@ -195,7 +195,6 @@ app.post(
 
 app.get(
     '/challenges/:challengeNumber',
-    passportConf.isAuthenticated,
     challengesController.returnChallenge);
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account', userController.getAccount);
