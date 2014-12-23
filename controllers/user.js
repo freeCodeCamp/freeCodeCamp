@@ -6,6 +6,7 @@ var passport = require('passport');
 var User = require('../models/User');
 var secrets = require('../config/secrets');
 var moment = require('moment');
+var Challenge = require('./../models/Challenge');
 
 //TODO(Berks): Refactor to use module.exports = {} pattern.
 /**
@@ -133,10 +134,17 @@ exports.postEmailSignup = function(req, res, next) {
  */
 
 exports.getAccount = function(req, res) {
-  res.render('account/profile', {
-    title: 'Manage your Free Code Camp Account',
-    cc: req.user.challengesHash,
-    moment: moment
+  Challenge.find({}, function (err, c) {
+    if (err) {
+      console.error('Challenge err: ', err);
+      next(err);
+    }
+    res.render('account/profile', {
+      title: 'Manage your Free Code Camp Account',
+      cc: c,
+      ch: req.user.challengesHash,
+      moment: moment
+    });
   });
 };
 

@@ -1,19 +1,19 @@
 require('newrelic');
+require('dotenv').load();
 /**
  * Module dependencies.
  */
+
 var express = require('express'),
     debug = require('debug')('freecc:server'),
     cookieParser = require('cookie-parser'),
     compress = require('compression'),
     session = require('express-session'),
-    bodyParser = require('body-parser'),
     logger = require('morgan'),
     errorHandler = require('errorhandler'),
     methodOverride = require('method-override'),
     bodyParser = require('body-parser'),
     helmet = require('helmet'),
-
     _ = require('lodash'),
     MongoStore = require('connect-mongo')(session),
     flash = require('express-flash'),
@@ -99,15 +99,19 @@ app.use(helmet.xframe());
 var trusted = [
     '"self"',
     '*.freecodecamp.com',
-    '*.google-analytics.com',
-    '*.googleapis.com',
     '*.gstatic.com',
-    '*.doubleclick.net',
-    '*.twitter.com',
+    "*.google-analytics.com",
+    "*.googleapis.com",
+    "*.google.com",
+    "*.gstatic.com",
+    "*.doubleclick.net",
+    "*.twitter.com",
     '*.twimg.com',
-    '*.githubusercontent.com',
-    '"unsafe-eval"',
-    '"unsafe-inline"'
+    "*.githubusercontent.com",
+    "'unsafe-eval'",
+    "'unsafe-inline'",
+    "*.rafflecopter.com",
+    "localhost:3001"
 ];
 //TODO(Berks): conditionally add localhost domains to csp;
 /*var connectSrc;
@@ -123,14 +127,12 @@ debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
     scriptSrc: ['*.optimizely.com'].concat(trusted),
-    'connect-src': ['ws://localhost:3001/', 'http://localhost:3001/'],
+    'connect-src': ['ws://*.rafflecopter.com', 'wss://*.rafflecopter.com','https://*.rafflecopter.com', 'ws://www.freecodecamp.com', 'ws://localhost:3001/', 'http://localhost:3001', 'http://www.freecodecamp.com'],
     styleSrc: trusted,
-    imgSrc: ['*.evernote.com', '*.amazonaws.com', 'data:'].concat(trusted),
-    fontSrc: ['"self"', '*.googleapis.com'].concat(trusted),
+    imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:", '*.licdn.com', '*.gravatar.com', '*.youtube.com'].concat(trusted),
+    fontSrc: ["'self", '*.googleapis.com'].concat(trusted),
     mediaSrc: ['*.amazonaws.com', '*.twitter.com'],
-    frameSrc: ['*.gitter.im', '*.vimeo.com', '*.twitter.com'],
-//    sandbox: ['allow-forms', 'allow-scripts'],
-//    reportUri: '/report-violation',
+    frameSrc: ['*.gitter.im', '*.vimeo.com', '*.twitter.com', '*.rafflecopter.com'],
     reportOnly: false, // set to true if you only want to report errors
     setAllHeaders: false, // set to true if you want to set all headers
     safari5: false // set to true if you want to force buggy CSP in Safari 5
@@ -207,11 +209,9 @@ app.post(
 );
 
 app.get(
-  '/challenges/:challengeNumber',
-  passportConf.isAuthenticated,
-  challengesController.returnChallenge
+    '/challenges/:challengeNumber',
+    challengesController.returnChallenge
 );
-
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);
