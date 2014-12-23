@@ -134,7 +134,7 @@ exports.postEmailSignup = function(req, res, next) {
  */
 
 exports.getAccount = function(req, res) {
-  Challenge.find({}, function (err, c) {
+  Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
     if (err) {
       console.error('Challenge err: ', err);
       next(err);

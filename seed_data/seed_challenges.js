@@ -1,3 +1,4 @@
+require('dotenv').load();
 var Challenge = require('../models/Challenge.js'),
     mongoose = require('mongoose'),
     secrets = require('../config/secrets'),

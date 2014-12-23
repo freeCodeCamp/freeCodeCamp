@@ -97,7 +97,7 @@ app.use(helmet.xssFilter());
 app.use(helmet.xframe());
 
 var trusted = [
-    '"self"',
+    "'self'",
     '*.freecodecamp.com',
     '*.gstatic.com',
     "*.google-analytics.com",
@@ -113,15 +113,6 @@ var trusted = [
     "*.rafflecopter.com",
     "localhost:3001"
 ];
-//TODO(Berks): conditionally add localhost domains to csp;
-/*var connectSrc;
-if (process.env.NODE_ENV === 'development') {
-    debug('Pushing');
-    connectSrc = [''self'', 'ws://localhost:3001/'];
-} else {
-    debug('Not');
-    connectSrc = [];
-}*/
 
 debug(trusted);
 app.use(helmet.contentSecurityPolicy({

@@ -34,7 +34,7 @@ exports.returnChallenge = function(req, res, next) {
         "Prove to mom that computers aren't just for games"
     ];
     if (challengeNumber > 59) { challengeNumber = 0; }
-    Challenge.find({}, function (err, c) {
+    Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
         if (err) {
             debug('Challenge err: ', err);
             next(err);
@@ -52,4 +52,5 @@ exports.returnChallenge = function(req, res, next) {
             challenges: c
         });
     });
+
 };
