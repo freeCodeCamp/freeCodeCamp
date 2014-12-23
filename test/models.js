@@ -11,7 +11,7 @@ describe('User Model', function() {
     user.save(function(err) {
       if (err) return done(err);
       done();
-    })
+    });
   });
 
   it('should not create a user with the unique email', function(done) {

@@ -9,8 +9,9 @@ var gulp = require('gulp'),
 
 var paths = {
     server: './app.js',
-    serverIgnore: [],
-}
+    serverIgnore: []
+};
+
 gulp.task('inject', function() {
   gulp.src('views/home.jade')
     .pipe(inject(gulp.src(bower()), {
@@ -51,15 +52,12 @@ gulp.task('serve', function(cb) {
 
 gulp.task('sync', ['serve'], function() {
     sync.init(null, {
-        proxy: 'http://localhost:3000',
-        logLeval: 'debug',
-        files: [
-            'public/**/*',
-        ],
-        port: 3001,
-        open: true,
-        browser: ['safari', 'google chrome'],
-        reloadDelay: reloadDelay
+      proxy: 'http://localhost:3000',
+      logLeval: 'debug',
+      files: ['public/**/*'],
+      port: 3001,
+      open: true,
+      reloadDelay: reloadDelay
     });
 });
 

@@ -1,5 +1,7 @@
-var secrets = require('../config/secrets');
-var nodemailer = require("nodemailer");
+var nodemailer = require('nodemailer'),
+    debug = require('debug')('freecc:cntr:contact'),
+    secrets = require('../config/secrets');
+
 var transporter = nodemailer.createTransport({
   service: 'Mandrill',
   auth: {
@@ -22,9 +24,6 @@ exports.getContact = function(req, res) {
 /**
  * POST /contact
  * Send a contact form via Nodemailer.
- * @param email
- * @param name
- * @param message
  */
 
 exports.postContact = function(req, res) {
@@ -32,24 +31,17 @@ exports.postContact = function(req, res) {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('message', 'Message cannot be blank').notEmpty();
 
-  var errors = req.validationErrors();
-
-  if (errors) {
+  if (req.validationErrors()) {
     req.flash('errors', errors);
     return res.redirect('/nonprofits');
   }
 
-  var from = req.body.email;
-  var name = req.body.name;
-  var body = req.body.message;
-  var to = 'team@freecodecamp.com';
-  var subject = "CodeNonprofit Project Idea from " + name;
-
   var mailOptions = {
-    to: to,
-    from: from,
-    subject: subject,
-    text: body
+    to: 'team@freecodecamp.com',
+    name: req.body.name,
+    from: req.body.email,
+    subject: 'CodeNonprofit Project Idea from ' + name,
+    text: req.body.message
   };
 
   transporter.sendMail(mailOptions, function(err) {

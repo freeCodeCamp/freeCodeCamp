@@ -1,271 +1,98 @@
+var User = require('../models/User'),
+    resources = require('./resources.json'),
+    questions = resources.questions,
+    steps = resources.steps;
 
-var User = require('../models/User');
-
-var totalUsers = User.count({}, function( err, count){
-    count;
+//NOTE(BERKS): Async, total users may not available before it is used.
+var totalUsers = 0;
+User.count({}, function(err, count) {
+  totalUsers = count;
 });
-
-//var usersOverTenChallenges = User.where: "this.challengesCompleted && this.challengesCompleted.length >= 10"
 
 /**
  * GET /
  * Resources.
  */
-
-exports.learnToCode = function(req, res) {
-    res.render('learn-to-code',  {
-        title: 'Learn to Code'
+//TODO: Stats view
+module.exports = {
+  learnToCode: function(req, res) {
+    res.render('learn-to-code', {
+      title: 'Learn to Code'
     });
-}
+  },
 
-exports.privacy = function(req, res) {
-    res.render('privacy',  {
-        title: 'Privacy'
+  privacy: function privacy(req, res) {
+    res.render('privacy', {
+      title: 'Privacy'
     });
-}
+  },
 
-exports.statistics = function(req, res) {
-    res.render('statistics',  {
-        title: 'Code Camper Statistics',
-        //totalUsers: totalUsers,
-        //usersOverTenChallenges: usersOverTenChallenges
+  statistics: function statistics(req, res) {
+    res.render('statistics', {
+      title: 'Code Camper Statistics'
+      //totalUsers: totalUsers,
+      //usersOverTenChallenges: usersOverTenChallenges
     });
-}
+  },
 
-exports.chromebook = function(req, res) {
-    res.render('chromebook',  {
-        title: 'Win a Chromebook'
+  chromebook: function chromebook(req, res) {
+    res.render('chromebook', {
+      title: 'Win a Chromebook'
     });
-}
+  },
 
-exports.jqueryExercises = function(req, res) {
-    res.render('jquery-exercises',  {
-        title: 'jQuery Exercises'
+  jqueryExercises: function jqueryExercises(req, res) {
+    res.render('jquery-exercises', {
+      title: 'jQuery Exercises'
     });
-}
+  },
 
-exports.livePairProgramming = function(req, res) {
-    res.render('live-pair-programming',  {
-        title: 'Live Pair Programming'
+  livePairProgramming: function(req, res) {
+    res.render('live-pair-programming', {
+      title: 'Live Pair Programming'
     });
-}
+  },
 
-exports.javaScriptInYourInbox = function(req, res) {
-    res.render('javascript-in-your-inbox',  {
-        title: 'JavaScript in your Inbox'
+  javaScriptInYourInbox: function(req, res) {
+    res.render('javascript-in-your-inbox', {
+      title: 'JavaScript in your Inbox'
     });
-}
+  },
 
-exports.programmerInterviewQuestionsApp = function(req, res) {
-    res.render('programmer-interview-questions-app',  {
-        title: 'Programmer Interview Questions App'
+  programmerInterviewQuestionsApp: function(req, res) {
+    res.render('programmer-interview-questions-app', {
+      title: 'Programmer Interview Questions App'
     });
-}
+  },
 
-exports.pairProgramWithTeamViewer = function(req, res) {
+  pairProgramWithTeamViewer: function(req, res) {
     res.render('pair-program-with-team-viewer', {
-        title: 'Challenge: Pair Program with Team Viewer',
-        name: "Pair Program with Team Viewer",
-        video: '',
-        time: 30,
-        steps: ["In the spirit of keeping Free Code Camp 100% free, we've created directions for using a totally free pair programming tool called Team Viewer. It's not as user-friendly as Screen Hero, but it gets the job done (and works on Linux!).",
-        "Go to <a href='http://www.teamviewer.com/en/index.aspx' target='_blank'>http://www.teamviewer.com/en/index.aspx</a> and download Team Viewer. Be sure not to download the beta version, which isn't compatible with the current stable version everyone else will be using.",
-        "Install it and launch it",
-        "Go to the chat room and ask if anyone wants to pair program with you on a CoderByte challenge.",
-        "If someone is interested, they will be your \"pair\" - the person you pair programming with.",
-        "<strong>First, you will pair program on your pair's computer.</strong> Ask your pair for his or her Team Viewer ID and password.",
-        "Enter this id, and then password, to start the session.",
-        "Once the Team Viewer session starts, look at the the top of the screen. You will see 6 buttons. If you hover your cursor over the buttons, they will slide down so that you can read them. Click the audio/video button. This will allow you to turn on Voice Over IP and unmute your microphone, opening up your voice channel.",
-        "Note that you can now control your pair's keyboard and mouse, enabling you to step in and code yourself on your pair's computer when desired",
-        "Now you can click the X to end the pair programming session.",
-        "<strong>Next, you will pair program on your computer.</strong> Copy your Team Viewer ID and paste it into the private chat, so that your pair can use it to connect with you.",
-        "You will need to share your randomly generated password with your pair as well.",
-        "Once your pair connects, you will see a Team Viewer side menu. ",
-        "Click the audio button that drops down.",
-        "Click the headset icon and choose Voice over IP",
-        "Click the microphone button to unmute your microphone. Once your pair does the same, you two will have an open voice channel.",
-        "Now you can click the X to end the pair programming session.",
-        "Now it's time to tackle CoderByte.",
-        "Create a CoderByte account at <a href='http://coderbyte.com/sl/' target='_blank'>http://coderbyte.com/sl/</a>",
-        "Now go to <a href='http://coderbyte.com/CodingArea/Challenges/#easyChals' target='_blank'>http://coderbyte.com/CodingArea/Challenges/#easyChals</a> and start working through Coderbyte's easy algorithm scripting challenges using JavaScript.",
-        "When you are finished pair programming, click the X to end the session.",
-        "Congratulations! You have completed your first pair programming session.",
-        "You should pair program with different Code Campers until you've completed all the Easy, Medium and Hard CoderByte challenges. This is a big time investment, but the JavaScript practice you'll get, along with the scripting and algorithm experience, are well worth it!",
-        "You can complete CoderByte problems while you continue to work through Free Code Camp's challenges.",
-        "Be sure to pair program on these challenges, and remember to apply the RSAP methodology.",
-        "Click the button below to return to the Pair Programming challenge, then mark it complete."],
-        cc: req.user.challengesHash
+      title: 'Challenge: Pair Program with Team Viewer',
+      name: 'Pair Program with Team Viewer',
+      video: '',
+      time: 30,
+      steps: steps,
+      cc: req.user.challengesHash
     });
-}
-exports.about = function(req, res) {
+  },
+
+  about: function(req, res) {
     res.render('about', {
-        title: 'About Free Code Camp and Our Team of Volunteers'
+      title: 'About Free Code Camp and Our Team of Volunteers'
     });
-}
+  },
 
-exports.doneWithFirst100Hours = function(req, res) {
+  doneWithFirst100Hours: function(req, res) {
     res.render('done-with-first-100-hours', {
-        title: 'Congratulations on finishing the first 100 hours of Free Code Camp!'
+      title:
+        'Congratulations on finishing the first 100 hours of Free Code Camp!'
     });
-}
+  },
 
-exports.interviewQuestions = function(req, res) {
-    res.json([
-        {
-            question: "Time Complexity of Accessing Array Index (int a = ARR[5];)",
-            answer: "O(1)"
-        },
-        {
-            question: "Time Complexity of Inserting a node in Linked List",
-            answer: "O(1)"
-        },
-        {
-            question: "Time Complexity of Pushing and Popping on Stack",
-            answer: "O(1)"
-        },
-        {
-            question: "Time Complexity of Insertion and Removal from Queue",
-            answer: "O(1)"
-        },
-        {
-            question: "Time Complexity of Finding out the parent or left/right child of a node in a tree stored in Array",
-            answer: "O(1)"
-        },
-        {
-            question: "Time Complexity of Jumping to Next/Previous element in Doubly Linked List",
-            answer: "O(1)"
-        },
-        {
-            question: "Time Complexity of Traversing an array",
-            answer: "O(n)"
-        },
-        {
-            question: "Time Complexity of Traversing a linked list",
-            answer: "O(n)"
-        },
-        {
-            question: "Time Complexity of Linear Search",
-            answer: "O(n)"
-        },
-        {
-            question: "Time Complexity of Deletion of a specific element in a Linked List (Not sorted)",
-            answer: "O(n)"
-        },
-        {
-            question: "Time Complexity of Comparing two strings",
-            answer: "O(n)"
-        },
-        {
-            question: "Time Complexity of Checking for Palindrome",
-            answer: "O(n)"
-        },
-        {
-            question: "Time Complexity of Counting/Bucket Sort",
-            answer: "O(n)"
-        },
-        {
-            question: "Time Complexity of Binary Search",
-            answer: "O(log n)"
-        },
-        {
-            question: "Time Complexity of Finding largest/smallest number in a binary search tree",
-            answer: "O(log n)"
-        },
-        {
-            question: "Time Complexity of Certain Divide and Conquer Algorithms based on Linear functionality",
-            answer: "O(log n)"
-        },
-        {
-            question: "Time Complexity of Calculating Fibonacci Numbers - Best Method",
-            answer: "O(log n)"
-        },
-        {
-            question: "Time Complexity of Merge Sort",
-            answer: "O(nlogn)"
-        },
-        {
-            question: "Time Complexity of Heap Sort",
-            answer: "O(nlogn)"
-        },
-        {
-            question: "Time Complexity of Quick Sort",
-            answer: "O(nlogn)"
-        },
-        {
-            question: "Time Complexity of Certain Divide and Conquer Algorithms based on optimizing O(n^2) algorithms",
-            answer: "O(nlogn)"
-        },
-        {
-            question: "Time Complexity of Bubble Sort",
-            answer: "O(n^2)"
-        },
-        {
-            question: "Time Complexity of Insertion Sort",
-            answer: "O(n^2)"
-        },
-        {
-            question: "Time Complexity of Selection Sort",
-            answer: "O(n^2)"
-        },
-        {
-            question: "Time Complexity of Traversing a simple 2D array",
-            answer: "O(n^2)"
-        },
-        {
-            question: "Latency of L1 cache reference",
-            answer: "0.5 nanoseconds"
-        },
-        {
-            question: "Latency of Branch mispredict",
-            answer: "5 nanoseconds"
-        },
-        {
-            question: "Latency of L2 cache reference",
-            answer: "7 nanoseconds"
-        },
-        {
-            question: "Latency of Mutex lock/unlock",
-            answer: "25 nanoseconds"
-        },
-        {
-            question: "Latency of Main memory reference",
-            answer: "100 nanoseconds"
-        },
-        {
-            question: "Latency of Compressing 1K bytes with Zippy",
-            answer: "3,000 nanoseconds"
-        },
-        {
-            question: "Latency of Sending 1K bytes over a 1 Gbps network",
-            answer: "10,000 nanoseconds"
-        },
-        {
-            question: "Latency of Reading 4K randomly from SSD",
-            answer: "150,000 nanoseconds"
-        },
-        {
-            question: "Latency of Reading 1 MB sequentially from memory",
-            answer: "250,000 nanoseconds"
-        },
-        {
-            question: "Latency of a Round trip within the same datacenter",
-            answer: "500,000 nanoseconds"
-        },
-        {
-            question: "Latency of Reading 1 MB sequentially from SSD",
-            answer: "1,000,000 nanoseconds"
-        },
-        {
-            question: "Latency of Disk seek",
-            answer: "10,000,000 nanoseconds"
-        },
-        {
-            question: "Latency of Reading 1 MB sequentially from disk",
-            answer: "20,000,000 nanoseconds"
-        },
-        {
-            question: "Latency of Sending a packet from California to the Netherlands and back",
-            answer: "150,000,000 nanoseconds"
-        }
-    ]);
+  interviewQuestions: function(req, res) {
+    res.json(questions);
+  }
 };
+
+
+

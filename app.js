@@ -1,63 +1,61 @@
+require('newrelic');
 /**
  * Module dependencies.
  */
-require('newrelic');
-var express = require('express');
-var debug = require('debug')('freecc:server');
-var cookieParser = require('cookie-parser');
-var compress = require('compression');
-var session = require('express-session');
-var bodyParser = require('body-parser');
-var logger = require('morgan');
-var errorHandler = require('errorhandler');
-var methodOverride = require('method-override');
-var bodyParser = require('body-parser');
-var helmet = require('helmet');
+var express = require('express'),
+    debug = require('debug')('freecc:server'),
+    cookieParser = require('cookie-parser'),
+    compress = require('compression'),
+    session = require('express-session'),
+    bodyParser = require('body-parser'),
+    logger = require('morgan'),
+    errorHandler = require('errorhandler'),
+    methodOverride = require('method-override'),
+    bodyParser = require('body-parser'),
+    helmet = require('helmet'),
 
-var _ = require('lodash');
-var MongoStore = require('connect-mongo')(session);
-var flash = require('express-flash');
-var path = require('path');
-var mongoose = require('mongoose');
-var passport = require('passport');
-var expressValidator = require('express-validator');
-var connectAssets = require('connect-assets');
+    _ = require('lodash'),
+    MongoStore = require('connect-mongo')(session),
+    flash = require('express-flash'),
+    path = require('path'),
+    mongoose = require('mongoose'),
+    passport = require('passport'),
+    expressValidator = require('express-validator'),
+    connectAssets = require('connect-assets'),
 
-/**
- * Controllers (route handlers).
- */
+    /**
+    * Controllers (route handlers).
+    */
+    homeController = require('./controllers/home'),
+    challengesController = require('./controllers/challenges'),
+    resourcesController = require('./controllers/resources'),
+    userController = require('./controllers/user'),
+    contactController = require('./controllers/contact'),
 
-var homeController = require('./controllers/home');
-var challengesController = require('./controllers/challenges');
-var resourcesController = require('./controllers/resources');
-var userController = require('./controllers/user');
-var apiController = require('./controllers/api');
-var contactController = require('./controllers/contact');
+    /**
+    * User model
+    */
+    User = require('./models/User'),
 
-/**
- * User model
- */
-var User = require('./models/User');
-/**
- * API keys and Passport configuration.
- */
-
-var secrets = require('./config/secrets');
-var passportConf = require('./config/passport');
+    /**
+    * API keys and Passport configuration.
+    */
+    secrets = require('./config/secrets'),
+    passportConf = require('./config/passport');
 
 /**
  * Create Express server.
  */
-
 var app = express();
 
 /**
  * Connect to MongoDB.
  */
-
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function() {
-  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
+  console.error(
+    'MongoDB Connection Error. Please make sure that MongoDB is running.'
+  );
 });
 
 /**
@@ -69,7 +67,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
 app.use(connectAssets({
-    paths: [path.join(__dirname, 'public/css'), path.join(__dirname, 'public/js')],
+    paths: [
+      path.join(__dirname, 'public/css'),
+      path.join(__dirname, 'public/js')
+    ],
     helperContext: app.locals
 }));
 app.use(logger('dev'));
@@ -91,38 +92,41 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.disable('x-powered-by');
+
 app.use(helmet.xssFilter());
 app.use(helmet.xframe());
+
 var trusted = [
-    "'self'",
+    '"self"',
     '*.freecodecamp.com',
-    "*.google-analytics.com",
-    "*.googleapis.com",
-    "*.gstatic.com",
-    "*.doubleclick.net",
-    "*.twitter.com",
+    '*.google-analytics.com',
+    '*.googleapis.com',
+    '*.gstatic.com',
+    '*.doubleclick.net',
+    '*.twitter.com',
     '*.twimg.com',
-    "*.githubusercontent.com",
-    "'unsafe-eval'",
-    "'unsafe-inline'"
+    '*.githubusercontent.com',
+    '"unsafe-eval"',
+    '"unsafe-inline"'
 ];
-//var connectSrc;
-//if (process.env.NODE_ENV === 'development') {
-//    debug('Pushing');
-//    connectSrc = ['"self"', 'ws://localhost:3001/'];
-//} else {
-//    debug('Not');
-//    connectSrc = [];
-//}
+//TODO(Berks): conditionally add localhost domains to csp;
+/*var connectSrc;
+if (process.env.NODE_ENV === 'development') {
+    debug('Pushing');
+    connectSrc = [''self'', 'ws://localhost:3001/'];
+} else {
+    debug('Not');
+    connectSrc = [];
+}*/
 
 debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
     scriptSrc: ['*.optimizely.com'].concat(trusted),
-    'connect-src': process.env.NODE_ENV === 'development' ? ['ws://localhost:3001/', 'http://localhost:3001/'] : [],
+    'connect-src': ['ws://localhost:3001/', 'http://localhost:3001/'],
     styleSrc: trusted,
-    imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:"].concat(trusted),
-    fontSrc: ["'self", '*.googleapis.com'].concat(trusted),
+    imgSrc: ['*.evernote.com', '*.amazonaws.com', 'data:'].concat(trusted),
+    fontSrc: ['"self"', '*.googleapis.com'].concat(trusted),
     mediaSrc: ['*.amazonaws.com', '*.twitter.com'],
     frameSrc: ['*.gitter.im', '*.vimeo.com', '*.twitter.com'],
 //    sandbox: ['allow-forms', 'allow-scripts'],
@@ -148,7 +152,9 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+app.use(
+  express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 })
+);
 
 /**
  * Main routes.
@@ -164,9 +170,19 @@ app.get('/jquery-exercises', resourcesController.jqueryExercises);
 app.get('/live-pair-programming', resourcesController.livePairProgramming);
 app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
 app.get('/chromebook', resourcesController.chromebook);
-app.get('/pair-program-with-team-viewer', resourcesController.pairProgramWithTeamViewer);
-app.get('/done-with-first-100-hours', resourcesController.doneWithFirst100Hours);
-app.get('/programmer-interview-questions-app', resourcesController.programmerInterviewQuestionsApp);
+
+app.get(
+  '/pair-program-with-team-viewer',
+  resourcesController.pairProgramWithTeamViewer
+);
+app.get(
+  '/done-with-first-100-hours',
+  resourcesController.doneWithFirst100Hours
+);
+app.get(
+  '/programmer-interview-questions-app',
+  resourcesController.programmerInterviewQuestionsApp
+);
 
 app.get('/about', resourcesController.about);
 app.get('/login', userController.getLogin);
@@ -185,14 +201,17 @@ app.post('/nonprofits', contactController.postContact);
 
 // # Protected routes, user must be logged in.
 app.post(
-    '/update-progress',
-    passportConf.isAuthenticated,
-    userController.updateProgress);
+  '/update-progress',
+  passportConf.isAuthenticated,
+  userController.updateProgress
+);
 
 app.get(
-    '/challenges/:challengeNumber',
-    passportConf.isAuthenticated,
-    challengesController.returnChallenge);
+  '/challenges/:challengeNumber',
+  passportConf.isAuthenticated,
+  challengesController.returnChallenge
+);
+
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);
@@ -207,11 +226,12 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
  *
  */
 app.post('/completed_challenge', function(req, res) {
-    req.user.challengesHash[parseInt(req.body.challengeNumber)] = Math.round(+new Date() / 1000);
+    req.user.challengesHash[parseInt(req.body.challengeNumber)] =
+      Math.round(+ new Date() / 1000);
     var ch = req.user.challengesHash;
     var p = 0;
-    for (k in ch) {
-        if (ch[k] > 0) { p += 1}
+    for (var k in ch) {
+      if (ch[k] > 0) { p += 1; }
     }
     req.user.points = p;
     req.user.save();
@@ -220,7 +240,6 @@ app.post('/completed_challenge', function(req, res) {
 /**
  * OAuth sign-in routes.
  */
-
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get(
   '/auth/twitter/callback',
@@ -246,20 +265,40 @@ app.get(
     res.redirect(req.session.returnTo || '/');
 });
 
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/',failureRedirect: '/login' }), function(req, res) {
+app.get(
+  '/auth/facebook',
+  passport.authenticate('facebook', { scope: ['email', 'user_location'] })
+);
+
+var passportOptions = {
+  successRedirect: '/',
+  failureRedirect: '/login'
+};
+app.get(
+  '/auth/facebook/callback',
+  passport.authenticate('facebook', passportOptions), function(req, res) {
     res.redirect(req.session.returnTo || '/');
-});
+  }
+);
 
 app.get('/auth/github', passport.authenticate('github'));
-app.get('/auth/github/callback', passport.authenticate('github', { successRedirect: '/',failureRedirect: '/login' }), function(req, res) {
+app.get(
+  '/auth/github/callback',
+  passport.authenticate('github', passportOptions), function(req, res) {
     res.redirect(req.session.returnTo || '/');
-});
+  }
+);
 
-app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
-app.get('/auth/google/callback', passport.authenticate('google', { successRedirect: '/',failureRedirect: '/login' }), function(req, res) {
+app.get(
+  '/auth/google',
+  passport.authenticate('google', { scope: 'profile email' })
+);
+app.get(
+  '/auth/google/callback',
+  passport.authenticate('google', passportOptions), function(req, res) {
     res.redirect(req.session.returnTo || '/');
-});
+  }
+);
 
 /**
  * 500 Error Handler.

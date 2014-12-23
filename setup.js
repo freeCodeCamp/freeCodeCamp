@@ -50,7 +50,8 @@ var footer = blessed.text({
   fg: 'white',
   bg: 'blue',
   tags: true,
-  content: ' {cyan-fg}<Up/Down>{/cyan-fg} moves | {cyan-fg}<Enter>{/cyan-fg} selects | {cyan-fg}<q>{/cyan-fg} exits'
+  content: ' {cyan-fg}<Up/Down>{/cyan-fg} moves |' +
+    ' {cyan-fg}<Enter>{/cyan-fg} selects | {cyan-fg}<q>{/cyan-fg} exits'
 });
 
 var inner = blessed.form({
@@ -97,7 +98,8 @@ var clusterText = blessed.text({
   bg: 'red',
   fg: 'white',
   tags: true,
-  content: 'Take advantage of multi-core systems using built-in {underline}cluster{/underline} module.'
+  content: 'Take advantage of multi-core systems' +
+    ' using built-in {underline}cluster{/underline} module.'
 });
 
 
@@ -186,38 +188,54 @@ var authForm = blessed.form({
 });
 
 authForm.on('submit', function() {
-  var passportConfig = fs.readFileSync('config/passport.js').toString().split(os.EOL);
-  var loginTemplate = fs.readFileSync('views/account/login.jade').toString().split(os.EOL);
-  var profileTemplate = fs.readFileSync('views/account/profile.jade').toString().split(os.EOL);
+  var passportConfig = fs.readFileSync('config/passport.js')
+    .toString().split(os.EOL);
+  var loginTemplate = fs.readFileSync('views/account/login.jade')
+    .toString().split(os.EOL);
+  var profileTemplate = fs.readFileSync('views/account/profile.jade')
+    .toString().split(os.EOL);
   var userModel = fs.readFileSync('models/User.js').toString().split(os.EOL);
   var app = fs.readFileSync('app.js').toString().split(os.EOL);
   var secrets = fs.readFileSync('config/secrets.js').toString().split(os.EOL);
 
-  var index = passportConfig.indexOf("var FacebookStrategy = require('passport-facebook').Strategy;");
+  var index = passportConfig
+    .indexOf('var FacebookStrategy = require("passport-facebook").Strategy;');
   if (facebookCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with Facebook.');
     passportConfig.splice(index, 47);
     fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
 
-    index = loginTemplate.indexOf("      a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')");
+    index = loginTemplate.indexOf(
+      '      a.btn.btn-block.btn-facebook.btn-social(href="/auth/facebook")'
+    );
     loginTemplate.splice(index, 3);
     fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
 
-    index = profileTemplate.indexOf("  if user.facebook");
+    index = profileTemplate.indexOf('  if user.facebook');
     profileTemplate.splice(index - 1, 5);
-    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+    fs.writeFileSync(
+      'views/account/profile.jade',
+      profileTemplate.join(os.EOL)
+    );
 
     index = userModel.indexOf('  facebook: String,');
     userModel.splice(index, 1);
     fs.writeFileSync('models/User.js', userModel.join(os.EOL));
 
-    index = app.indexOf("app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));");
+    index = app.indexOf([
+      'app.get("/auth/facebook"',
+      'passport.authenticate("facebook",',
+      ' { scope: ["email", "user_location"] }));'
+    ].join(' '));
+
     app.splice(index, 4);
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = passportConfig.indexOf("var GitHubStrategy = require('passport-github').Strategy;");
+  index = passportConfig.indexOf(
+    "var GitHubStrategy = require('passport-github').Strategy;"
+  );
   if (githubCheckbox.checked && index !== -1) {
     console.log(index);
     passportConfig.splice(index, 1);
@@ -225,111 +243,162 @@ authForm.on('submit', function() {
     passportConfig.splice(index, 48);
     fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
 
-    index = loginTemplate.indexOf("      a.btn.btn-block.btn-github.btn-social(href='/auth/github')");
+    index = loginTemplate.indexOf(
+      "      a.btn.btn-block.btn-github.btn-social(href='/auth/github')"
+    );
     loginTemplate.splice(index, 3);
     fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
 
     index = profileTemplate.indexOf('  if user.github');
     profileTemplate.splice(index - 1, 5);
-    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+    fs.writeFileSync(
+      'views/account/profile.jade',
+      profileTemplate.join(os.EOL)
+    );
 
     index = userModel.indexOf('  github: String,');
     userModel.splice(index, 1);
     fs.writeFileSync('models/User.js', userModel.join(os.EOL));
 
-    index = app.indexOf("app.get('/auth/github', passport.authenticate('github'));");
+    index = app.indexOf(
+      'app.get("/auth/github", passport.authenticate("github"));'
+    );
     app.splice(index, 4);
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = passportConfig.indexOf("var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;");
+  index = passportConfig.indexOf(
+    'var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;'
+  );
   if (googleCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with Google.');
     passportConfig.splice(index, 46);
     fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
 
-    index = loginTemplate.indexOf("      a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')");
+    index = loginTemplate.indexOf(
+      "      a.btn.btn-block.btn-google-plus.btn-social(href='/auth/google')"
+    );
     loginTemplate.splice(index, 3);
     fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
 
     index = profileTemplate.indexOf('  if user.google');
     profileTemplate.splice(index - 1, 5);
-    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+    fs.writeFileSync(
+      'views/account/profile.jade',
+      profileTemplate.join(os.EOL)
+    );
 
     index = userModel.indexOf('  google: String,');
     userModel.splice(index, 1);
     fs.writeFileSync('models/User.js', userModel.join(os.EOL));
 
-    index = app.indexOf("app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));");
+    index = app.indexOf(
+      'app.get("/auth/google",' +
+      ' passport.authenticate("google", { scope: "profile email" }));'
+    );
     app.splice(index, 4);
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = passportConfig.indexOf("var TwitterStrategy = require('passport-twitter').Strategy;");
+  index = passportConfig.indexOf(
+    'var TwitterStrategy = require("passport-twitter").Strategy;'
+  );
   if (twitterCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with Twitter.');
     passportConfig.splice(index, 43);
     fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
 
-    index = loginTemplate.indexOf("      a.btn.btn-block.btn-twitter.btn-social(href='/auth/twitter')");
+    index = loginTemplate.indexOf(
+      '      a.btn.btn-block.btn-twitter.btn-social(href="/auth/twitter")'
+    );
     loginTemplate.splice(index, 3);
     fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
 
     index = profileTemplate.indexOf('  if user.twitter');
     profileTemplate.splice(index - 1, 5);
-    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+    fs.writeFileSync(
+      'views/account/profile.jade', profileTemplate.join(os.EOL)
+    );
 
     index = userModel.indexOf('  twitter: String,');
     userModel.splice(index, 1);
     fs.writeFileSync('models/User.js', userModel.join(os.EOL));
 
-    index = app.indexOf("app.get('/auth/twitter', passport.authenticate('twitter'));");
+    index = app.indexOf(
+      "app.get('/auth/twitter', passport.authenticate('twitter'));"
+    );
     app.splice(index, 4);
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = passportConfig.indexOf("var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;");
+  index = passportConfig.indexOf(
+    'var LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;'
+  );
   if (linkedinCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with LinkedIn.');
     passportConfig.splice(index, 47);
     fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
 
-    index = loginTemplate.indexOf("      a.btn.btn-block.btn-linkedin.btn-social(href='/auth/linkedin')");
+    index = loginTemplate.indexOf(
+      '      a.btn.btn-block.btn-linkedin.btn-social(href="/auth/linkedin")'
+    );
     loginTemplate.splice(index, 3);
     fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
 
     index = profileTemplate.indexOf('  if user.linkedin');
     profileTemplate.splice(index - 1, 5);
-    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+    fs.writeFileSync(
+      'views/account/profile.jade',
+      profileTemplate.join(os.EOL)
+    );
 
     index = userModel.indexOf('  linkedin: String,');
     userModel.splice(index, 1);
     fs.writeFileSync('models/User.js', userModel.join(os.EOL));
 
-    index = app.indexOf("app.get('/auth/linkedin', passport.authenticate('linkedin', { state: 'SOME STATE' }));");
+    index = app.indexOf(
+      'app.get("/auth/linkedin",',
+      ' passport.authenticate("linkedin", { state: "SOME STATE" }));'
+    );
     app.splice(index, 4);
     fs.writeFileSync('app.js', app.join(os.EOL));
   }
 
-  index = passportConfig.indexOf("var InstagramStrategy = require('passport-instagram').Strategy;");
+  index = passportConfig.indexOf(
+    'var InstagramStrategy = require("passport-instagram").Strategy;'
+  );
   if (instagramCheckbox.checked && index !== -1) {
     passportConfig.splice(index, 1);
     index = passportConfig.indexOf('// Sign in with Instagram.');
     passportConfig.splice(index, 43);
-    fs.writeFileSync('config/passport.js', passportConfig.join(os.EOL));
+    fs.writeFileSync(
+      'config/passport.js',
+      passportConfig.join(os.EOL)
+    );
 
-    index = loginTemplate.indexOf("      a.btn.btn-block.btn-instagram.btn-social(href='/auth/instagram')");
+    index = loginTemplate.indexOf(
+      '      a.btn.btn-block.btn-instagram.btn-social(href="/auth/instagram")'
+    );
     loginTemplate.splice(index, 3);
-    fs.writeFileSync('views/account/login.jade', loginTemplate.join(os.EOL));
+
+    fs.writeFileSync(
+      'views/account/login.jade',
+      loginTemplate.join(os.EOL)
+    );
 
     index = profileTemplate.indexOf('  if user.instagram');
     profileTemplate.splice(index - 1, 5);
-    fs.writeFileSync('views/account/profile.jade', profileTemplate.join(os.EOL));
+    fs.writeFileSync(
+      'views/account/profile.jade',
+      profileTemplate.join(os.EOL)
+    );
 
-    index = app.indexOf("app.get('/auth/instagram', passport.authenticate('instagram'));");
+    index = app.indexOf(
+      'app.get("/auth/instagram", passport.authenticate("instagram"));'
+    );
     app.splice(index, 4);
     fs.writeFileSync('app.js', app.join(os.EOL));
 
@@ -339,14 +408,18 @@ authForm.on('submit', function() {
 
   home.remove(authForm);
   home.append(success);
-  success.setContent('Selected authentication providers have been removed from passportConfig.js, User.js, app.js, login.jade and profile.jade!');
+  success.setContent(
+    'Selected authentication providers have been removed' +
+    'from passportConfig.js, User.js, app.js, login.jade and profile.jade!'
+  );
   success.focus();
   screen.render();
 });
 
 var authText = blessed.text({
   parent: authForm,
-  content: 'Selecting a checkbox removes an authentication provider. If authentication provider is already removed, no action will be taken.',
+  content: 'Selecting a checkbox removes an authentication provider.' +
+    ' If authentication provider is already removed, no action will be taken.',
   padding: 1,
   bg: 'magenta',
   fg: 'white'
@@ -460,8 +533,10 @@ var emailForm = blessed.form({
 });
 
 emailForm.on('submit', function() {
-  var contactCtrl = fs.readFileSync('controllers/contact.js').toString().split(os.EOL);
-  var userCtrl = fs.readFileSync('controllers/user.js').toString().split(os.EOL);
+  var contactCtrl = fs.readFileSync('controllers/contact.js')
+    .toString().split(os.EOL);
+  var userCtrl = fs.readFileSync('controllers/user.js')
+    .toString().split(os.EOL);
   var choice = null;
 
   if (sendgridRadio.checked) {
@@ -472,20 +547,57 @@ emailForm.on('submit', function() {
     choice = 'Mandrill';
   }
 
-  var index = contactCtrl.indexOf('var transporter = nodemailer.createTransport({');
+  var index = contactCtrl.indexOf(
+    'var transporter = nodemailer.createTransport({'
+  );
   contactCtrl.splice(index + 1, 1, "  service: '" + choice + "',");
-  contactCtrl.splice(index + 3, 1, '    user: secrets.' + choice.toLowerCase() +'.user,');
-  contactCtrl.splice(index + 4, 1, '    pass: secrets.' + choice.toLowerCase() + '.password');
+  contactCtrl.splice(
+    index + 3,
+    1,
+    '    user: secrets.' + choice.toLowerCase() + '.user,'
+  );
+  contactCtrl.splice(
+    index + 4,
+    1,
+    '    pass: secrets.' + choice.toLowerCase() + '.password'
+  );
   fs.writeFileSync('controllers/contact.js', contactCtrl.join(os.EOL));
 
-  index = userCtrl.indexOf('      var transporter = nodemailer.createTransport({');
+  index = userCtrl.indexOf(
+    '      var transporter = nodemailer.createTransport({'
+  );
   userCtrl.splice(index + 1, 1, "        service: '" + choice + "',");
-  userCtrl.splice(index + 3, 1, '          user: secrets.' + choice.toLowerCase() + '.user,');
-  userCtrl.splice(index + 4, 1, '          pass: secrets.' + choice.toLowerCase() + '.password');
-  index = userCtrl.indexOf('      var transporter = nodemailer.createTransport({', (index + 1));
-  userCtrl.splice(index + 1, 1, "        service: '" + choice + "',");
-  userCtrl.splice(index + 3, 1, '          user: secrets.' + choice.toLowerCase() + '.user,');
-  userCtrl.splice(index + 4, 1, '          pass: secrets.' + choice.toLowerCase() + '.password');
+  userCtrl.splice(
+    index + 3,
+    1,
+    '          user: secrets.' + choice.toLowerCase() + '.user,'
+  );
+  userCtrl.splice(
+    index + 4,
+    1,
+    '          pass: secrets.' + choice.toLowerCase() + '.password'
+  );
+
+  index = userCtrl.indexOf(
+    '      var transporter = nodemailer.createTransport({',
+    (index + 1)
+  );
+  userCtrl.splice(
+    index + 1,
+    1,
+    '        service: "' + choice + '",'
+  );
+
+  userCtrl.splice(
+    index + 3,
+    1,
+    '          user: secrets.' + choice.toLowerCase() + '.user,'
+  );
+  userCtrl.splice(
+    index + 4,
+    1,
+    '          pass: secrets.' + choice.toLowerCase() + '.password'
+  );
   fs.writeFileSync('controllers/user.js', userCtrl.join(os.EOL));
 
   home.remove(emailForm);
@@ -497,7 +609,9 @@ emailForm.on('submit', function() {
 
 var emailText = blessed.text({
   parent: emailForm,
-  content: 'Select one of the following email service providers for {underline}contact form{/underline} and {underline}password reset{/underline}.',
+  content: 'Select one of the following email service providers ' +
+    'for {underline}contact form{/underline}' +
+    ' and {underline}password reset{/underline}.',
   padding: 1,
   bg: 'red',
   fg: 'white',
@@ -592,7 +706,12 @@ home.on('select', function(child, index) {
     case 2:
       addClusterSupport();
       home.append(success);
-      success.setContent('New file {underline}cluster_app.js{/underline} has been created. Your app is now able to use more than 1 CPU by running {underline}node cluster_app.js{/underline}, which in turn spawns multiple instances of {underline}app.js{/underline}');
+      success.setContent([
+        'New file {underline}cluster_app.js{/underline} has been created.',
+        'Your app is now able to use more than 1 CPU by running',
+        '{underline}node cluster_app.js{/underline}, which in turn',
+        'spawns multiple instances of {underline}app.js{/underline}'
+      ].join(' '));
       success.focus();
       screen.render();
       break;

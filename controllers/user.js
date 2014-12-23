@@ -7,6 +7,7 @@ var User = require('../models/User');
 var secrets = require('../config/secrets');
 var moment = require('moment');
 
+//TODO(Berks): Refactor to use module.exports = {} pattern.
 /**
  * GET /login
  * Login page.
@@ -22,8 +23,6 @@ exports.getLogin = function(req, res) {
 /**
  * POST /login
  * Sign in using email and password.
- * @param email
- * @param password
  */
 
 exports.postLogin = function(req, res, next) {
@@ -88,14 +87,13 @@ exports.getEmailSignup = function(req, res) {
 /**
  * POST /email-signup
  * Create a new local account.
- * @param email
- * @param password
  */
 
 exports.postEmailSignup = function(req, res, next) {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password must be at least 4 characters long').len(4);
-  req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
+  req.assert('confirmPassword', 'Passwords do not match')
+    .equals(req.body.password);
 
   var errors = req.validationErrors();
 
@@ -110,14 +108,19 @@ exports.postEmailSignup = function(req, res, next) {
   });
 
   User.findOne({ email: req.body.email }, function(err, existingUser) {
+    if (err) { return next(err); }
+
     if (existingUser) {
-      req.flash('errors', { msg: 'Account with that email address already exists.' });
+      req.flash('errors', {
+        msg: 'Account with that email address already exists.'
+      });
       return res.redirect('/email-signup');
     }
     user.save(function(err) {
-      if (err) return next(err);
+      if (err) { return next(err); }
+
       req.logIn(user, function(err) {
-        if (err) return next(err);
+        if (err) { return next(err); }
         res.redirect('/email-signup');
       });
     });
@@ -188,12 +191,12 @@ exports.postUpdateProfile = function(req, res, next) {
 /**
  * POST /account/password
  * Update current password.
- * @param password
  */
 
 exports.postUpdatePassword = function(req, res, next) {
   req.assert('password', 'Password must be at least 4 characters long').len(4);
-  req.assert('confirmPassword', 'Passwords do not match').equals(req.body.password);
+  req.assert('confirmPassword', 'Passwords do not match')
+    .equals(req.body.password);
 
   var errors = req.validationErrors();
 
@@ -203,12 +206,13 @@ exports.postUpdatePassword = function(req, res, next) {
   }
 
   User.findById(req.user.id, function(err, user) {
-    if (err) return next(err);
+    if (err) { return next(err); }
 
     user.password = req.body.password;
 
     user.save(function(err) {
-      if (err) return next(err);
+      if (err) { return next(err); }
+
       req.flash('success', { msg: 'Password has been changed.' });
       res.redirect('/account');
     });
@@ -222,7 +226,7 @@ exports.postUpdatePassword = function(req, res, next) {
 
 exports.postDeleteAccount = function(req, res, next) {
   User.remove({ _id: req.user.id }, function(err) {
-    if (err) return next(err);
+    if (err) { return next(err); }
     req.logout();
     req.flash('info', { msg: 'Your account has been deleted.' });
     res.redirect('/');
@@ -232,19 +236,21 @@ exports.postDeleteAccount = function(req, res, next) {
 /**
  * GET /account/unlink/:provider
  * Unlink OAuth provider.
- * @param provider
  */
 
 exports.getOauthUnlink = function(req, res, next) {
   var provider = req.params.provider;
   User.findById(req.user.id, function(err, user) {
-    if (err) return next(err);
+    if (err) { return next(err); }
 
     user[provider] = undefined;
-    user.tokens = _.reject(user.tokens, function(token) { return token.kind === provider; });
+    user.tokens =
+      _.reject(user.tokens, function(token) {
+      return token.kind === provider;
+    });
 
     user.save(function(err) {
-      if (err) return next(err);
+      if (err) { return next(err); }
       req.flash('info', { msg: provider + ' account has been unlinked.' });
       res.redirect('/account');
     });
@@ -264,8 +270,11 @@ exports.getReset = function(req, res) {
     .findOne({ resetPasswordToken: req.params.token })
     .where('resetPasswordExpires').gt(Date.now())
     .exec(function(err, user) {
+      if (err) { return next(err); }
       if (!user) {
-        req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
+        req.flash('errors', {
+          msg: 'Password reset token is invalid or has expired.'
+        });
         return res.redirect('/forgot');
       }
       res.render('account/reset', {
@@ -277,7 +286,6 @@ exports.getReset = function(req, res) {
 /**
  * POST /reset/:token
  * Process the reset password request.
- * @param token
  */
 
 exports.postReset = function(req, res, next) {
@@ -297,8 +305,11 @@ exports.postReset = function(req, res, next) {
         .findOne({ resetPasswordToken: req.params.token })
         .where('resetPasswordExpires').gt(Date.now())
         .exec(function(err, user) {
+          if (err) { return next(err); }
           if (!user) {
-            req.flash('errors', { msg: 'Password reset token is invalid or has expired.' });
+            req.flash('errors', {
+              msg: 'Password reset token is invalid or has expired.'
+            });
             return res.redirect('back');
           }
 
@@ -307,7 +318,7 @@ exports.postReset = function(req, res, next) {
           user.resetPasswordExpires = undefined;
 
           user.save(function(err) {
-            if (err) return next(err);
+            if (err) { return done(err); }
             req.logIn(user, function(err) {
               done(err, user);
             });
@@ -326,16 +337,25 @@ exports.postReset = function(req, res, next) {
         to: user.email,
         from: 'Team@freecodecamp.com',
         subject: 'Your Free Code Camp password has been changed',
-        text: 'Hello,\n\n' +
-          'This email is confirming that you requested to reset your password for your Free Code Camp account. This is your email: ' + user.email + '\n'
+        text: [
+          'Hello,\n\n',
+          'This email is confirming that you requested to',
+          'reset your password for your Free Code Camp account.',
+          'This is your email:',
+          user.email,
+          '\n'
+        ].join(' ')
       };
       transporter.sendMail(mailOptions, function(err) {
-        req.flash('success', { msg: 'Success! Your password has been changed.' });
-        done(err);
+        if (err) { return done(err); }
+        req.flash('success', {
+          msg: 'Success! Your password has been changed.'
+        });
+        done();
       });
     }
   ], function(err) {
-    if (err) return next(err);
+    if (err) { return next(err); }
     res.redirect('/');
   });
 };
@@ -357,7 +377,6 @@ exports.getForgot = function(req, res) {
 /**
  * POST /forgot
  * Create a random token, then the send user an email with a reset link.
- * @param email
  */
 
 exports.postForgot = function(req, res, next) {
@@ -373,14 +392,20 @@ exports.postForgot = function(req, res, next) {
   async.waterfall([
     function(done) {
       crypto.randomBytes(16, function(err, buf) {
+        if (err) { return done(err); }
         var token = buf.toString('hex');
-        done(err, token);
+        done(null, token);
       });
     },
     function(token, done) {
-      User.findOne({ email: req.body.email.toLowerCase() }, function(err, user) {
+      User.findOne({
+        email: req.body.email.toLowerCase()
+      }, function(err, user) {
+        if (err) { return done(err); }
         if (!user) {
-          req.flash('errors', { msg: 'No account with that email address exists.' });
+          req.flash('errors', {
+            msg: 'No account with that email address exists.'
+          });
           return res.redirect('/forgot');
         }
 
@@ -388,7 +413,8 @@ exports.postForgot = function(req, res, next) {
         user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
 
         user.save(function(err) {
-          done(err, token, user);
+          if (err) { return done(err); }
+          done(null, token, user);
         });
       });
     },
@@ -404,18 +430,32 @@ exports.postForgot = function(req, res, next) {
         to: user.email,
         from: 'Team@freecodecamp.com',
         subject: 'Reset your Free Code Camp password',
-        text: "You are receiving this email because you (or someone else) requested we reset your Free Code Camp account's password.\n\n" +
-          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
-          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+        text: [
+          'You are receiving this email because you (or someone else)',
+          'requested we reset your Free Code Camp account\'s password.\n\n',
+          'Please click on the following link, or paste this into your',
+          'browser to complete the process:\n\n',
+          'http://',
+          req.headers.host,
+          '/reset/',
+          token,
+          '\n\n',
+          'If you did not request this, please ignore this email and',
+          'your password will remain unchanged.\n'
+        ].join(' ')
       };
       transporter.sendMail(mailOptions, function(err) {
-        req.flash('info', { msg: 'An e-mail has been sent to ' + user.email + ' with further instructions.' });
-        done(err, 'done');
+        if (err) { return done(err); }
+        req.flash('info', {
+          msg: 'An e-mail has been sent to ' +
+            user.email +
+            ' with further instructions.'
+        });
+        done(null, 'done');
       });
     }
   ], function(err) {
-    if (err) return next(err);
+    if (err) { return next(err); }
     res.redirect('/forgot');
   });
 };
