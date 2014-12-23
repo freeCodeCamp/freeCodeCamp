@@ -36,7 +36,7 @@
   {
     "name": "Join our Forum",
     "time": 5,
-    "video": "114578442",
+    "video": "115275066",
     "challengeNumber": 2,
     "steps": [
         "Go to Free Code Camp's forum: <a href='http://forum.freecodecamp.com' target='_blank'>http://forum.freecodecamp.com</a>.",
@@ -46,7 +46,7 @@
         "Click on the \"Introduce yourself here\" discussion.",
         "Here you can read through other Free Code Camp community members' self introductions.",
         "Go ahead and type a brief self introduction of your own.",
-        "Click on the \"Categories\" drop-down menu. You should see a category called \"Local Chapters\". Click that. If your city isn't already on the list, you can create a topic for it. Otherwise, you can also introduce yourself to the other Code Campers from your city.",
+        "Click on the \"Categories\" drop-down menu. You should see a category called \"Local Chapters\". Click that. If your city isn't already on the list, create a topic for it. Otherwise, introduce yourself to the other Code Campers from your city.",
         "Come back here daily to ask questions, engage in discussions, and share links to helpful coding tools."
     ]
   },
