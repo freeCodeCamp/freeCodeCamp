@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     sync = require('browser-sync'),
     reload = sync.reload,
     inject = require('gulp-inject'),
-    reloadDelay = 7000;
+    reloadDelay = 3000;
 
 var paths = {
     server: './app.js',
