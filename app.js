@@ -118,12 +118,35 @@ debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
     scriptSrc: ['*.optimizely.com'].concat(trusted),
-    'connect-src': ['ws://*.rafflecopter.com', 'wss://*.rafflecopter.com','https://*.rafflecopter.com', 'ws://www.freecodecamp.com', 'ws://localhost:3001/', 'http://localhost:3001', 'http://www.freecodecamp.com'],
+    'connect-src': [
+      'ws://*.rafflecopter.com',
+      'wss://*.rafflecopter.com',
+      'https://*.rafflecopter.com',
+      'ws://www.freecodecamp.com',
+      'ws://localhost:3001/',
+      'http://localhost:3001',
+      'http://www.freecodecamp.com'
+    ],
     styleSrc: trusted,
-    imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:", '*.licdn.com', '*.gravatar.com', '*.youtube.com'].concat(trusted),
-    fontSrc: ["'self", '*.googleapis.com'].concat(trusted),
-    mediaSrc: ['*.amazonaws.com', '*.twitter.com'],
-    frameSrc: ['*.gitter.im', '*.vimeo.com', '*.twitter.com', '*.rafflecopter.com'],
+    imgSrc: [
+      '*.evernote.com',
+      '*.amazonaws.com',
+      'data:',
+      '*.licdn.com',
+      '*.gravatar.com',
+      '*.youtube.com'
+    ].concat(trusted),
+    fontSrc: ['*.googleapis.com'].concat(trusted),
+    mediaSrc: [
+      '*.amazonaws.com',
+      '*.twitter.com'
+    ],
+    frameSrc: [
+      '*.gitter.im',
+      '*.vimeo.com',
+      '*.twitter.com',
+      '*.rafflecopter.com'
+    ],
     reportOnly: false, // set to true if you only want to report errors
     setAllHeaders: false, // set to true if you want to set all headers
     safari5: false // set to true if you want to force buggy CSP in Safari 5
@@ -231,40 +254,41 @@ app.post('/completed_challenge', function(req, res) {
 /**
  * OAuth sign-in routes.
  */
+
+var passportOptions = {
+  successRedirect: '/',
+  failureRedirect: '/login'
+};
+
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get(
   '/auth/twitter/callback',
   passport.authenticate('twitter', {
     successRedirect: '/',
-    failureRedirect: '/login'
-  }), function(req, res) {
-    res.redirect(req.session.returnTo || '/');
+    failureRedirect: '/auth/twitter/middle'
+  })
+);
+
+app.get('/auth/twitter/middle', function(req, res, next) {
 });
 
 app.get(
   '/auth/linkedin',
   passport.authenticate('linkedin', {
     state: 'SOME STATE'
-  }));
+  })
+);
 
 app.get(
   '/auth/linkedin/callback',
-  passport.authenticate('linkedin', {
-    successRedirect: '/',
-    failureRedirect: '/login'
-  }), function(req, res) {
-    res.redirect(req.session.returnTo || '/');
-});
+  passport.authenticate('linkedin', passportOptions)
+);
 
 app.get(
   '/auth/facebook',
   passport.authenticate('facebook', { scope: ['email', 'user_location'] })
 );
 
-var passportOptions = {
-  successRedirect: '/',
-  failureRedirect: '/login'
-};
 app.get(
   '/auth/facebook/callback',
   passport.authenticate('facebook', passportOptions), function(req, res) {
