@@ -58,7 +58,6 @@ gulp.task('sync', ['serve'], function() {
         ],
         port: 3001,
         open: true,
-        browser: ['safari', 'google chrome'],
         reloadDelay: reloadDelay
     });
 });

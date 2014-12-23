@@ -2,6 +2,7 @@
  * Module dependencies.
  */
 require('newrelic');
+require('dotenv').load();
 var express = require('express');
 var debug = require('debug')('freecc:server');
 var cookieParser = require('cookie-parser');
@@ -98,6 +99,7 @@ var trusted = [
     '*.freecodecamp.com',
     "*.google-analytics.com",
     "*.googleapis.com",
+    "*.google.com",
     "*.gstatic.com",
     "*.doubleclick.net",
     "*.twitter.com",
@@ -120,13 +122,12 @@ debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
     scriptSrc: ['*.optimizely.com'].concat(trusted),
-    'connect-src': process.env.NODE_ENV === 'development' ? ['ws://localhost:3001/', 'http://localhost:3001/'] : [],
-    connectSources: ["ws://api.rafflecopter.com", "wss://api.rafflecopter.com", "ws://www.freecodecamp.com"].concat(trusted),
+    'connect-src': ["ws://*.rafflecopter.com", "wss://*.rafflecopter.com", "ws://www.freecodecamp.com", 'ws://localhost:3001/', 'http://localhost:3001/'],
     styleSrc: trusted,
-    imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:", '*.licdn.com'].concat(trusted),
+    imgSrc: ['*.evernote.com', '*.amazonaws.com', "data:", '*.licdn.com', '*.gravatar.com', '*.youtube.com'].concat(trusted),
     fontSrc: ["'self", '*.googleapis.com'].concat(trusted),
     mediaSrc: ['*.amazonaws.com', '*.twitter.com'],
-    frameSrc: ['*.gitter.im', '*.vimeo.com', '*.twitter.com'],
+    frameSrc: ['*.gitter.im', '*.vimeo.com', '*.twitter.com', '*.rafflecopter.com'],
 //    sandbox: ['allow-forms', 'allow-scripts'],
 //    reportUri: '/report-violation',
     reportOnly: false, // set to true if you only want to report errors
