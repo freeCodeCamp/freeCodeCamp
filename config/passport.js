@@ -89,6 +89,7 @@ passport.use(
                 tokenSecret: tokenSecret
               });
               user.profile.name = user.profile.name || profile.displayName;
+              user.profile.username = user.profile.username || profile.username;
 
               user.profile.location =
                 user.profile.location || profile._json.location;
@@ -117,6 +118,7 @@ passport.use(
             tokenSecret: tokenSecret
           });
           user.profile.name = user.profile.name || profile.displayName;
+          user.profile.username = user.profile.username || profile.username;
 
           user.profile.location =
             user.profile.location || profile._json.location;

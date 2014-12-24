@@ -2,29 +2,29 @@ extends ../layout
 
 block content
     .panel
-        .container
+        .container.text-center
           h1 Update your profile here:
           .animated.flipInX
               form.form-horizontal(action='/account/profile', method='POST')
                 input(type='hidden', name='_csrf', value=_csrf)
                 .form-group
-                  label.col-sm-2.control-label(for='name') Name
+                  label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
                   .col-sm-4
                     input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
                 .form-group
-                  label.col-sm-2.control-label(for='username') Username (no spaces)
+                  label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (use letters, numbers, underscore) *
                   .col-sm-4
                     input.form-control(type='text', name='username', id='username', value='#{user.profile.username}')
                 .form-group
-                  label.col-sm-2.control-label(for='email') Email
+                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Email *
                   .col-sm-4
                     input.form-control(type='email', name='email', id='email', value='#{user.email}')
                 .form-group
-                  label.col-sm-2.control-label(for='location') Location
+                  label.col-sm-3.col-sm-offset-2.control-label(for='location') Location
                   .col-sm-4
                     input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
                 .form-group
-                  label.col-sm-2.control-label(for='website') Website
+                  label.col-sm-3.col-sm-offset-2.control-label(for='website') Website
                   .col-sm-4
                     input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
                 .form-group
@@ -32,9 +32,13 @@ block content
                     button.btn.btn.btn-primary(type='submit')
                       span.ion-edit
                       | Update my profile
+    .panel
+        .container.text-center
+            a.btn.btn-cta.signup-btn.big-break(href='/') Take me to my current challenge
+
     - if (!user.google || !user.facebook || !user.github || !user.linkedin || !user.twitter)
         .panel
-            .container
+            .container.text-center
                 h1 Link other services to your account:
                 - if (!user.google)
                     .col-xs-12

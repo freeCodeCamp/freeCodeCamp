@@ -181,8 +181,8 @@ exports.postUpdateProfile = function(req, res, next) {
 
     req.assert('email', 'Email is required').notEmpty();
     req.assert('email', 'Please enter a valid email address.').isEmail();
-    req.assert('username', 'Your username must be between 3 and 20 characters').len(3, 20);
-    req.assert('username', 'Your username can only use letters, numbers or underscores').matchRegex(/[A-Za-z0-9_]+/);
+    req.assert('username', 'Your username cannot be longer than 20 characters').len(1, 20);
+    req.assert('username', 'Your username can only use letters, numbers or underscores').matchRegex(/^[A-z0-9_]+$/);
     var errors = req.validationErrors();
     if (errors) {
       req.flash('errors', errors);
@@ -208,8 +208,6 @@ exports.postUpdateProfile = function(req, res, next) {
         if (existingUsername && existingUsername.profile.username != user.profile.username) {
           console.log(user.profile.username)
           console.log(existingUsername.username)
-          console.log(existingUsername.profile.username)
-          console.log(user.profile.username)
           req.flash('errors', {
             msg: 'An account with that username already exists.'
           });
