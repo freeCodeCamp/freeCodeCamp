@@ -11,8 +11,8 @@ block content
                   label.col-sm-2.control-label(for='name') Name
                   .col-sm-4
                     input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-                //.form-group
-                  label.col-sm-2.control-label(for='username') Username
+                .form-group
+                  label.col-sm-2.control-label(for='username') Username (no spaces)
                   .col-sm-4
                     input.form-control(type='text', name='username', id='username', value='#{user.profile.username}')
                 .form-group
@@ -32,47 +32,81 @@ block content
                     button.btn.btn.btn-primary(type='submit')
                       span.ion-edit
                       | Update my profile
-
-          h1 Completed Challenges
-          .col-xs-12
-            table.table.table-striped
-              thead
-                tr
-                  th Challenge
-                  th Date Finished
-              for challenge in cc
-                if ch[challenge.challengeNumber] > 0
-                  tr
-                    td= cc[challenge.challengeNumber].name
-                    td= moment(ch[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
-
+    - if (!user.google || !user.facebook || !user.github || !user.linkedin || !user.twitter)
+        .panel
+            .container
+                h1 Link other services to your account:
+                - if (!user.google)
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/auth/google')
+                            i.fa.fa-google-plus
+                            | Link Google with your account
+                - if (!user.facebook)
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/auth/facebook')
+                            i.fa.fa-facebook
+                            | Link Facebook with your account
+                - if (!user.github)
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
+                            i.fa.fa-github
+                            | Link GitHub with your account
+                - if (!user.linkedin)
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/auth/linkedin')
+                            i.fa.fa-linkedin
+                            | Link LinkedIn with your account
+                - if (!user.twitter)
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/auth/twitter')
+                            i.fa.fa-twitter
+                            | Link Twitter with your account
+            br
+    - if (ch[0] > 0)
+        .panel
+            .container
+                h1 Completed Challenges
+                .col-xs-12
+                  table.table.table-striped
+                    thead
+                      tr
+                        th Challenge
+                        th Date Finished
+                    for challenge in cc
+                      if ch[challenge.challengeNumber] > 0
+                        tr
+                          td= cc[challenge.challengeNumber].name
+                          td= moment(ch[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
+            br
+    .panel
+        .container
           h3 Danger Zone
           button.btn.btn-danger.confirm-deletion
             span.ion-trash-b
             | I want to delete my account
+          br
           script.
               $('.confirm-deletion').on("click", function() {
                 $('#modal-dialog').modal('show');
               });
-          #modal-dialog.modal.animated.wobble
-              .modal-dialog
-                  .modal-content
-                      .modal-header
-                          a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                          h3 Are you really leaving us?
-                      .modal-body
-                          p Pro Tip: If you tweet feedback to&nbsp;
-                              a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
-                              | ,&nbsp;we'll act quickly on it!
-                      .modal-footer
-                          a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                              span.ion-happy
-                              | Nevermind, I'll stick around
-                          br
-                          form(action='/account/delete', method='POST')
-                              input(type='hidden', name='_csrf', value=_csrf)
-                              button.btn.btn-danger.btn-block(type='submit')
-                                  span.ion-trash-b
-                                  | Yes, Delete my account
-          br
-          br
+        br
+#modal-dialog.modal.animated.wobble
+  .modal-dialog
+      .modal-content
+          .modal-header
+              a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+              h3 Are you really leaving us?
+          .modal-body
+              p Pro Tip: If you tweet feedback to&nbsp;
+                  a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
+                  | ,&nbsp;we'll act quickly on it!
+          .modal-footer
+              a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                  span.ion-happy
+                  | Nevermind, I'll stick around
+              br
+              form(action='/account/delete', method='POST')
+                  input(type='hidden', name='_csrf', value=_csrf)
+                  button.btn.btn-danger.btn-block(type='submit')
+                      span.ion-trash-b
+                      | Yes, Delete my account

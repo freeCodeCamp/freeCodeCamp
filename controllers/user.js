@@ -170,10 +170,6 @@ exports.updateProgress = function(req, res) {
     });
 };
 
-
-
-
-
 /**
  * POST /account/profile
  * Update profile information.
@@ -182,16 +178,56 @@ exports.updateProgress = function(req, res) {
 exports.postUpdateProfile = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
-    user.email = req.body.email || '';
-    user.profile.name = req.body.name || '';
-    user.profile.username = req.body.username || '';
-    user.profile.location = req.body.location || '';
-    user.profile.website = req.body.website || '';
 
-    user.save(function(err) {
-      if (err) return next(err);
-      req.flash('success', { msg: 'Profile information updated.' });
-      res.redirect('/account');
+    req.assert('email', 'Email is required').notEmpty();
+    req.assert('email', 'Please enter a valid email address.').isEmail();
+    req.assert('username', 'Your username must be between 3 and 20 characters').len(3, 20);
+    req.assert('username', 'Your username can only use letters, numbers or underscores').matchRegex(/[A-Za-z0-9_]+/);
+    var errors = req.validationErrors();
+    if (errors) {
+      req.flash('errors', errors);
+      return res.redirect('/account');
+    }
+
+    User.findOne({ email: req.body.email }, function(err, existingEmail) {
+      if (err) {
+        return next(err);
+      }
+      var user = req.user;
+      if (existingEmail && existingEmail.email != user.email) {
+        console.log(user.email);
+        console.log(existingEmail.email)
+        req.flash('errors', {
+          msg: "An account with that email address already exists."
+        });
+        return res.redirect('/account');
+      }
+      User.findOne({ username: req.body.username }, function(err, existingUsername) {
+        if (err) {
+          return next(err);
+        }
+        var user = req.user;
+        if (existingUsername && existingUsername.profile.username != user.profile.username) {
+          console.log(existingUsername.profile.username)
+          console.log(user.profile.username)
+          req.flash('errors', {
+            msg: 'An account with that username already exists.'
+          });
+          return res.redirect('/account');
+        }
+        var user = req.user;
+        user.email = req.body.email || '';
+        user.profile.name = req.body.name || '';
+        user.profile.username = req.body.username || '';
+        user.profile.location = req.body.location || '';
+        user.profile.website = req.body.website || '';
+
+        user.save(function (err) {
+          if (err) return next(err);
+          req.flash('success', {msg: 'Profile information updated.'});
+          res.redirect('/account');
+        });
+      });
     });
   });
 };

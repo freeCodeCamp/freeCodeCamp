@@ -76,7 +76,13 @@ app.use(connectAssets({
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(expressValidator());
+app.use(expressValidator({
+    customValidators: {
+        matchRegex: function(param, regex) {
+            return regex.test(param);
+        }
+    }
+}));
 app.use(methodOverride());
 app.use(cookieParser());
 app.use(session({
@@ -264,13 +270,12 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get(
   '/auth/twitter/callback',
   passport.authenticate('twitter', {
-    successRedirect: '/',
-    failureRedirect: '/auth/twitter/middle'
+    successRedirect: '/auth/twitter/middle',
+    failureRedirect: '/login'
   })
 );
 
-app.get('/auth/twitter/middle', function(req, res, next) {
-});
+app.get('/auth/twitter/middle', passportConf.hasEmail);
 
 app.get(
   '/auth/linkedin',

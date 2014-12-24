@@ -14,7 +14,8 @@ var _ = require('lodash'),
 // Login Required middleware.
 module.exports = {
   isAuthenticated: isAuthenticated,
-  isAuthorized: isAuthorized
+  isAuthorized: isAuthorized,
+  hasEmail: hasEmail
 };
 
 passport.serializeUser(function(user, done) {
@@ -107,12 +108,6 @@ passport.use(
       } else {
         User.findOne({ twitter: profile.id }, function(err, existingUser) {
           if (err) { return done(err); }
-
-          //if (existingUser) return done(null, existingUser);
-          // Twitter will not provide an email address.  Period.
-          // But a person’s twitter username is guaranteed to be unique
-          // so we can "fake" a twitter email address as follows:
-          //user.email = profile.username + "@twitter.com";
           var user = existingUser || new User();
           user.twitter = profile.id;
           user.email = user.email || '';
@@ -132,15 +127,6 @@ passport.use(
             if (err) { return done(err); }
             done(null, user);
           });
-          //TODO: Twitter redirect to capture user email.
-          //if (!user.email) {
-          //    req.redirect('/account');
-          //    req.flash('errors', {
-          //      msg:
-          //        'OK, you are signed in. ' +
-          //        'Please add your email address to your profile.'
-          //    });
-          //}
         });
       }
     })
@@ -511,6 +497,21 @@ passport.use(
 function isAuthenticated(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/login');
+}
+
+function hasEmail(req, res) {
+  if (req.user) {
+      console.log('started');
+      if (req.user.email) {
+        res.redirect('/');
+      } else {
+        console.log('hit');
+        req.flash('info', {
+          msg: 'Please add your email address before starting our challenges.'
+        });
+        res.redirect('/account');
+      }
+  }
 }
 
 // Authorization Required middleware.

@@ -27,7 +27,7 @@
     "express": "^4.10.4",
     "express-flash": "^0.0.2",
     "express-session": "^1.9.2",
-    "express-validator": "^2.7.0",
+    "express-validator": "^2.8.0",
     "fbgraph": "^0.3.0",
     "github-api": "^0.7.0",
     "helmet": "^0.5.3",
