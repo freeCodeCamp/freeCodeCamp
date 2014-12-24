@@ -195,8 +195,6 @@ exports.postUpdateProfile = function(req, res, next) {
       }
       var user = req.user;
       if (existingEmail && existingEmail.email != user.email) {
-        console.log(user.email);
-        console.log(existingEmail.email)
         req.flash('errors', {
           msg: "An account with that email address already exists."
         });
@@ -208,6 +206,8 @@ exports.postUpdateProfile = function(req, res, next) {
         }
         var user = req.user;
         if (existingUsername && existingUsername.profile.username != user.profile.username) {
+          console.log(user.profile.username)
+          console.log(existingUsername.username)
           console.log(existingUsername.profile.username)
           console.log(user.profile.username)
           req.flash('errors', {
