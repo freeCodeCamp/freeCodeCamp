@@ -15,7 +15,7 @@ block content
                     .btn.btn-primary.btn-big.btn-block.completed-challenge I've completed this challenge
                     .ten-pixel-break
                     .btn.btn-success.btn-large.btn-block.skip-challenge I want to skip this challenge for now
-                - if (cc && cc[2] > 0)
+                - if (points && points > 2 || !cc)
                     .panel-footer.text-center
                         span Need a break? Check out our:&nbsp;
                         a(href="https://gitter.im/FreeCodeCamp/FreeCodeCamp", target="_blank") Chat Room
@@ -33,12 +33,14 @@ block content
                                     h1.animated.zoomInDown Nicely done!
                                     .animated.zoomInUp.delay-1
                                         span.landing-icon.ion-checkmark-circled.text-primary
-                                a.animated.fadeIn.delay-2.btn.btn-lg.btn-primary.btn-block.next-button(name='_csrf', value=_csrf, aria-hidden='true') Take me to my next challenge
-                                if (cc && cc[2] > 0)
-                                    a.animated.fadeIn.delay-2.btn-twitter.btn.btn-lg.btn-info.btn-block(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20Free%20Code%20Camp%20Challenge%20%23#{number}:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{number}&hashtags=learntocode, javascript")
-                                      i.fa.fa-twitter &nbsp;
-                                        = phrase
-
+                                - if (cc)
+                                    a.animated.fadeIn.delay-2.btn.btn-lg.btn-primary.btn-block.next-button(name='_csrf', value=_csrf, aria-hidden='true') Take me to my next challenge
+                                    - if (points && points > 2)
+                                        a.animated.fadeIn.delay-2.btn-twitter.btn.btn-lg.btn-info.btn-block(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20Free%20Code%20Camp%20Challenge%20%23#{number}:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{number}&hashtags=learntocode, javascript")
+                                          i.fa.fa-twitter &nbsp;
+                                            = phrase
+                                - else
+                                    a.animated.fadeIn.delay-2.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                 #skip-dialog.modal
                     .modal-dialog.animated.zoomIn.fast-animation
                         .modal-content

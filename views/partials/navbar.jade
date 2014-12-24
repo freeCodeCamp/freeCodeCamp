@@ -12,7 +12,7 @@
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         if !user
-          a.btn.btn-primary.btn-nav.btn-sm(href='/login') Sign in
+          a.btn.signup-btn.btn-nav.btn-sm(href='/login') Sign in
         else
           li.dropdown(class=title=='Account Management'?'active':undefined)
             a.dropdown-toggle.text-center(href='#', data-toggle='dropdown')

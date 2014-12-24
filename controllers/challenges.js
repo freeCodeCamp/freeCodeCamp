@@ -47,6 +47,7 @@ exports.returnChallenge = function(req, res, next) {
             steps: c[challengeNumber].steps,
             number: challengeNumber,
             cc: req.user ? req.user.challengesHash : undefined,
+            points: req.user ? req.user.points : undefined,
             verb: verbs[Math.floor(Math.random() * verbs.length)],
             phrase: phrases[Math.floor(Math.random() * phrases.length)],
             challenges: c
