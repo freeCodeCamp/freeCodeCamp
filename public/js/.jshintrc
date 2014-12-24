@@ -4,8 +4,11 @@
     * =================
     */
 
-    // Define globals exposed by Node.js.
-    "node": true,
+    // Define globals exposed by modern browsers.
+    "browser": true,
+
+    // Define globals exposed by jQuery.
+    "jquery": true,
 
     /*
     * ENFORCING OPTIONS
@@ -44,5 +47,8 @@
     "unused": true,
 
     // Enforce line length to 80 characters
-    "maxlen": 80
+    "maxlen": 80,
+
+    // Enforce placing 'use strict' at the top function scope
+      "strict": true'
 }
