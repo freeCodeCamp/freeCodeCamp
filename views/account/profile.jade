@@ -89,28 +89,28 @@ block content
             span.ion-trash-b
             | I want to delete my account
           br
+          br
           script.
               $('.confirm-deletion').on("click", function() {
                 $('#modal-dialog').modal('show');
               });
-        br
-#modal-dialog.modal.animated.wobble
-  .modal-dialog
-      .modal-content
-          .modal-header
-              a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-              h3 Are you really leaving us?
-          .modal-body
-              p Pro Tip: If you tweet feedback to&nbsp;
-                  a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
-                  | ,&nbsp;we'll act quickly on it!
-          .modal-footer
-              a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                  span.ion-happy
-                  | Nevermind, I'll stick around
-              br
-              form(action='/account/delete', method='POST')
-                  input(type='hidden', name='_csrf', value=_csrf)
-                  button.btn.btn-danger.btn-block(type='submit')
-                      span.ion-trash-b
-                      | Yes, Delete my account
+          #modal-dialog.modal.animated.wobble
+              .modal-dialog
+                  .modal-content
+                      .modal-header
+                          a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                          h3 Are you really leaving us?
+                      .modal-body
+                          p Pro Tip: If you tweet feedback to&nbsp;
+                              a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
+                              | ,&nbsp;we'll act quickly on it!
+                      .modal-footer
+                          a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                              span.ion-happy
+                              | Nevermind, I'll stick around
+                          br
+                          form(action='/account/delete', method='POST')
+                              input(type='hidden', name='_csrf', value=_csrf)
+                              button.btn.btn-danger.btn-block(type='submit')
+                                  span.ion-trash-b
+                                  | Yes, Delete my account
