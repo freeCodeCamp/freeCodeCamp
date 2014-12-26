@@ -2,10 +2,10 @@ var User = require('../models/User'),
     resources = require('./resources.json'),
     questions = resources.questions,
     steps = resources.steps,
-    secrets = require('./../config/secrets')
-
-var Client = require('node-rest-client').Client;
-client = new Client();
+    secrets = require('./../config/secrets'),
+    Challenge = require('./../models/Challenge'),
+    Client = require('node-rest-client').Client,
+    client = new Client();
 
 /**
  * GET /
@@ -115,13 +115,21 @@ module.exports = {
   },
 
   pairProgramWithTeamViewer: function(req, res) {
-    res.render('resources/pair-program-with-team-viewer', {
-      title: 'Challenge: Pair Program with Team Viewer',
-      name: 'Pair Program with Team Viewer',
-      video: '',
-      time: 30,
-      steps: steps,
-      cc: req.user.challengesHash
+    Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
+      if (err) {
+        debug('Challenge err: ', err);
+        next(err);
+      }
+      res.render('resources/pair-program-with-team-viewer', {
+        title: 'Challenge: Pair Program with Team Viewer',
+        name: 'Pair Program with Team Viewer',
+        video: '',
+        time: 30,
+        steps: steps,
+        cc: req.user ? req.user.challengesHash : undefined,
+        points: req.user ? req.user.points : undefined,
+        challenges: c
+      });
     });
   },
 
