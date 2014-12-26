@@ -11,6 +11,30 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>http://www.freecodecamp.com/challenges/1</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/stats</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/deploy-a-website</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/control-shortcuts</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/pair-program-with-team-viewer</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>http://www.freecodecamp.com/login</loc>
     <changefreq>daily</changefreq>
   </url>
