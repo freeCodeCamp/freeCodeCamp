@@ -4,6 +4,11 @@ module.exports = {
 
   sessionSecret: process.env.SESSION_SECRET,
 
+  trello: {
+    key: process.env.TRELLO_KEY,
+    secret: process.env.TRELLO_SECRET
+  },
+
   mandrill: {
     user: process.env.MANDRILL_USER,
     password: process.env.MANDRILL_PASSWORD

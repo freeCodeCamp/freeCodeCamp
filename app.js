@@ -192,6 +192,11 @@ app.get('/jquery-exercises', resourcesController.jqueryExercises);
 app.get('/live-pair-programming', resourcesController.livePairProgramming);
 app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
 app.get('/chromebook', resourcesController.chromebook);
+app.get('/deploy-a-website', resourcesController.deployAWebsite);
+app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
+app.get('/control-shortcuts', resourcesController.controlShortcuts);
+app.get('/control-shortcuts', resourcesController.deployAWebsite);
+app.get('/stats', resourcesController.stats);
 
 app.get(
   '/pair-program-with-team-viewer',
