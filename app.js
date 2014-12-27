@@ -66,6 +66,8 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
+var oneYear = 31557600000;
+app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
 app.use(connectAssets({
     paths: [
       path.join(__dirname, 'public/css'),
