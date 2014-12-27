@@ -39,10 +39,6 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://www.freecodecamp.com/challenges/6/loc>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>http://www.freecodecamp.com/challenges/7</loc>
     <changefreq>daily</changefreq>
   </url>
@@ -56,6 +52,10 @@
   </url>
   <url>
     <loc>http://www.freecodecamp.com/challenges/10</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://www.freecodecamp.com/challenges/11</loc>
     <changefreq>daily</changefreq>
   </url>
   <url>
