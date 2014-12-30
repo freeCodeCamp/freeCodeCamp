@@ -225,7 +225,6 @@ ul {
 }
 
 .navbar {
-  height: 40px;
   white-space: nowrap;
 }
 
@@ -235,10 +234,6 @@ ul {
 
 .strikethrough {
   text-decoration: line-through;
-}
-
-.dropdown-toggle {
-  margin-top: -5px;
 }
 
 .btn-social {
@@ -282,7 +277,7 @@ ul {
   background-image: linear-gradient(#ffcc4d, #ffac33);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#ffac33,  GradientType=0)";
   border-color: #f1a02a;
-  color: #292f33;
+  color: #292f33 !important;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 .signup-btn:hover, .signup-btn:focus {
@@ -290,7 +285,7 @@ ul {
   background-image: linear-gradient(#ffcc4d, #e99110);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#e99110,  GradientType=0)";
   border-color: #ec8b11;
-  color: #292f33;
+  color: #292f33 !important;
 }
 .signup-btn:active {
   background-color: #f2a330;
@@ -359,7 +354,19 @@ thead {
   color: #eee;
   font-size: 20px;
   margin-top: -5px;
+  margin-bottom: -5px;
 }
 .navbar-toggle {
   color: #eee;
+}
+
+.navbar-right {
+  background-color: #4a2b0f;
+  text-align: center;
+}
+
+.signup-btn-nav {
+  margin-top:-2px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
