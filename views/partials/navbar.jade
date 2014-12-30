@@ -12,20 +12,20 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
       ul.nav.navbar-nav.navbar-right
         li
           a(href='/') Challenges
-        - if (cc && cc[1] < 1)
+        - if (!cc || (cc && cc[1]) < 1)
           li
             a(href='/challenges/1') Chat
         - else
           li
-            a(href='http://chat.freecodecamp.com') Chat
-        - if (cc && cc[2] < 1)
+            a(href='http://chat.freecodecamp.com' target='_blank') Chat
+        - if (!cc || (cc && cc[2]) < 1)
           li
             a(href='/challenges/2') Forum
         - else
           li
-            a(href='http://forum.freecodecamp.com') Forum
+            a(href='http://forum.freecodecamp.com' target='_blank') Forum
         li
-          a(href='/learn-to-code') About
+          a(href='/about') About
         if !user
           li
             a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
