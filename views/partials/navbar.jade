@@ -20,15 +20,16 @@ nav.navbar.navbar-fixed-top
             li
               a(href='http://forum.freecodecamp.com') Forum
           li
-            a(href='/learn-to-code') Buzz
-          li
-            a(href='/account') Account
+            a(href='/learn-to-code') About
+          if user
+            li
+             a(href='/profile') [&nbsp;#{user.points}&nbsp;]
           if !user
             a.btn.signup-btn.btn-nav.btn-sm(href='/login') Sign in
           else
             if user.profile.picture
-              img.profile-picture.float-right(src='#{user.profile.picture}')
-              | [&nbsp;#{user.points}&nbsp;]
+              a(href='/profile')
+                img.profile-picture.float-right(src='#{user.profile.picture}')
             else
-              img.profile-picture.float-right(src='#{user.gravatar(60)}')
-              | [&nbsp;#{user.points}&nbsp;]
+              a(href='/profile')
+                img.profile-picture.float-right(src='#{user.gravatar(60)}')
