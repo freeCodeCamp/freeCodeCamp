@@ -153,7 +153,8 @@ app.use(helmet.contentSecurityPolicy({
       '*.gitter.im',
       '*.vimeo.com',
       '*.twitter.com',
-      '*.rafflecopter.com'
+      '*.rafflecopter.com',
+      '*.youtube.com'
     ],
     reportOnly: false, // set to true if you only want to report errors
     setAllHeaders: false, // set to true if you want to set all headers
