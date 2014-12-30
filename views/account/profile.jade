@@ -33,8 +33,13 @@ block content
                       span.ion-edit
                       | Update my profile
     .panel
+        .big-break
         .container.text-center
-            a.btn.btn-cta.signup-btn.big-break(href='/') Take me to my current challenge
+            a.btn.btn-cta.signup-btn(href='/') Take me to my current challenge
+        .big-break
+        .container.text-center
+            a.btn.btn-default.btn-big(href='/logout') Sign out
+        .big-break
 
     - if (!user.google || !user.facebook || !user.github || !user.linkedin || !user.twitter)
         .panel

@@ -1,57 +1,34 @@
-.navbar.navbar-default.navbar-fixed-top.nav-height
-  .container
-    .navbar-header
-      if user
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-      a.navbar-brand(href='/')
-        img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg')
-    .collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-right
-        if !user
-          a.btn.signup-btn.btn-nav.btn-sm(href='/login') Sign in
-        else
-          li.dropdown(class=title=='Account Management'?'active':undefined)
-            a.dropdown-toggle.text-center(href='#', data-toggle='dropdown')
-              if user.profile.picture
-                img(src='#{user.profile.picture}')
-              else
-                img(src='#{user.gravatar(60)}')
-              | #{user.profile.name || user.email || user.id}&nbsp;[&nbsp;#{user.points}&nbsp;]
-              i.caret
-            ul.dropdown-menu.text-right
-              li.hamburger
-                a(href='/')
-                  span.ion-map
-                  | My Challenges
-              - if (cc && cc[1] < 1)
-                li.hamburger.disabled
-                  a(href='https://gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank')
-                    span.ion-coffee
-                    | Chat Room (do Challenge 1 first)
-              - else
-                li.hamburger
-                  a(href='https://gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank')
-                    span.ion-coffee
-                    | Chat Room
-              - if (cc && cc[2] < 1)
-                li.hamburger.disabled
-                  a(href='http://forum.freecodecamp.com/', target='_blank')
-                    span.ion-planet
-                    | Forum (do Challenge 2 first)
-              - else
-                li.hamburger
-                  a(href='http://forum.freecodecamp.com/', target='_blank')
-                    span.ion-planet
-                    | Forum
-              li.hamburger
-                a(href='/account')
-                  span.ion-person
-                  | My Account
-              li.hamburger
-                a(href='/logout')
-                  span.ion-log-out
-                  | Logout
+nav.navbar.navbar-fixed-top
+    .container
+      .navbar-header
+        a.navbar-brand(href='/')
+          img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg')
+      #navbar
+        ul.nav.navbar-nav.navbar-right.visible-md.visible-lg
+          li
+            a(href='/') Challenges
+          - if (cc && cc[1] < 1)
+            li
+              a(href='/challenges/1') Chat
+          - else
+            li
+              a(href='http://chat.freecodecamp.com') Chat
+          - if (cc && cc[2] < 1)
+            li
+              a(href='/challenges/2') Forum
+          - else
+            li
+              a(href='http://forum.freecodecamp.com') Forum
+          li
+            a(href='/learn-to-code') Buzz
+          li
+            a(href='/account') Account
+          if !user
+            a.btn.signup-btn.btn-nav.btn-sm(href='/login') Sign in
+          else
+            if user.profile.picture
+              img.profile-picture.float-right(src='#{user.profile.picture}')
+              | [&nbsp;#{user.points}&nbsp;]
+            else
+              img.profile-picture.float-right(src='#{user.gravatar(60)}')
+              | [&nbsp;#{user.points}&nbsp;]
