@@ -1,35 +1,43 @@
-nav.navbar.navbar-fixed-top
-    .container
-      .navbar-header
-        a.navbar-brand(href='/')
-          img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg')
-      #navbar
-        ul.nav.navbar-nav.navbar-right.visible-md.visible-lg
+nav.navbar.navbar-default.navbar-fixed-top.nav-height
+  .container
+    .navbar-header
+      if user
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      a.navbar-brand(href='/')
+        img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg')
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        if !user
+          a.btn.btn-primary.btn-nav.btn-sm(href='/login') Sign in
+        li
+          a(href='/') Challenges
+        - if (cc && cc[1] < 1)
           li
-            a(href='/') Challenges
-          - if (cc && cc[1] < 1)
-            li
-              a(href='/challenges/1') Chat
-          - else
-            li
-              a(href='http://chat.freecodecamp.com') Chat
-          - if (cc && cc[2] < 1)
-            li
-              a(href='/challenges/2') Forum
-          - else
-            li
-              a(href='http://forum.freecodecamp.com') Forum
+            a(href='/challenges/1') Chat
+        - else
           li
-            a(href='/learn-to-code') About
-          if user
-            li
-             a(href='/profile') [&nbsp;#{user.points}&nbsp;]
-          if !user
-            a.btn.signup-btn.btn-nav.btn-sm(href='/login') Sign in
+            a(href='http://chat.freecodecamp.com') Chat
+        - if (cc && cc[2] < 1)
+          li
+            a(href='/challenges/2') Forum
+        - else
+          li
+            a(href='http://forum.freecodecamp.com') Forum
+        li
+          a(href='/learn-to-code') About
+        if user
+          li
+           a(href='/profile') [&nbsp;#{user.points}&nbsp;]
+        if !user
+          a.btn.signup-btn.btn-nav.btn-sm(href='/login') Sign in
+        else
+          if user.profile.picture
+            a(href='/profile')
+              img.profile-picture.float-right(src='#{user.profile.picture}')
           else
-            if user.profile.picture
-              a(href='/profile')
-                img.profile-picture.float-right(src='#{user.profile.picture}')
-            else
-              a(href='/profile')
-                img.profile-picture.float-right(src='#{user.gravatar(60)}')
+            a(href='/profile')
+              img.profile-picture.float-right(src='#{user.gravatar(60)}')
