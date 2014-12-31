@@ -33,12 +33,13 @@ body {
   margin-bottom: 75px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
+.footer {
   width: 100%;
-  height: 45px;
-  line-height: 45px;
+  margin-bottom: 0px;
+  text-align: center;
+  padding:0px;
+  height: 200px;
+  background-color: #4a2b0f;
 }
 
 h1, h2 {
@@ -52,15 +53,6 @@ h1, h2 {
 h1, h2, h3, h4, h5, h6, p, li {
   padding-top: 5px;
   padding-bottom: 5px;
-}
-
-// Navbar
-// -------------------------
-
-.navbar-nav img {
-  width: 30px;
-  height: 30px;
-  margin: -15px 15px -15px;
 }
 
 // Alerts
@@ -93,11 +85,6 @@ h1, h2, h3, h4, h5, h6, p, li {
 
 .three-by-three {
   height: 100px;
-}
-
-.navbar-icon {
-  height: 40px;
-  margin-top: -10px;
 }
 
 /**/
@@ -237,8 +224,18 @@ ul {
   }
 }
 
+.navbar-right {
+  @media (min-width: 767px) {
+    padding-right: 50px;
+  }
+  @media (max-width: 991px) and (min-width: 767px) {
+    position: absolute;
+    right:0;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+}
 .navbar {
-  height: 40px;
   white-space: nowrap;
 }
 
@@ -248,10 +245,6 @@ ul {
 
 .strikethrough {
   text-decoration: line-through;
-}
-
-.dropdown-toggle {
-  margin-top: -5px;
 }
 
 .btn-social {
@@ -269,10 +262,10 @@ ul {
   background-color: #4a2b0f;
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: #fff;
+.navbar-nav > li > a {
+  color: #eee;
   &:hover {
-    color: #ddd;
+    color: #4a2b0f;
   }
 }
 
@@ -295,7 +288,7 @@ ul {
   background-image: linear-gradient(#ffcc4d, #ffac33);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#ffac33,  GradientType=0)";
   border-color: #f1a02a;
-  color: #292f33;
+  color: #292f33 !important;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 .signup-btn:hover, .signup-btn:focus {
@@ -303,7 +296,7 @@ ul {
   background-image: linear-gradient(#ffcc4d, #e99110);
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#e99110,  GradientType=0)";
   border-color: #ec8b11;
-  color: #292f33;
+  color: #292f33 !important;
 }
 .signup-btn:active {
   background-color: #f2a330;
@@ -354,12 +347,6 @@ thead {
   font-size: 150%;
 }
 
-.hamburger {
-  background-color: #ddd;
-  text-align: left;
-  font-size: 20px;
-}
-
 .nowrap {
   white-space: nowrap;
 }
@@ -367,4 +354,30 @@ thead {
 .big-break {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.profile-picture {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar-nav a {
+  color: #eee;
+  font-size: 20px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+.navbar-toggle {
+  color: #eee;
+}
+
+.navbar-right {
+  background-color: #4a2b0f;
+  text-align: center;
+}
+
+.signup-btn-nav {
+  margin-top:-2px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
