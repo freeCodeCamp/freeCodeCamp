@@ -141,8 +141,8 @@ exports.getAccount = function(req, res) {
     }
     res.render('account/profile', {
       title: 'Manage your Free Code Camp Account',
-      cc: c,
-      ch: req.user.challengesHash,
+      c: c,
+      cc: req.user.challengesHash,
       moment: moment
     });
   });
