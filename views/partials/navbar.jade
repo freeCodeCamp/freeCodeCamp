@@ -32,7 +32,7 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
         else
           li
              a(href='/account') [&nbsp;#{user.points}&nbsp;]
-            .visible-md.visible-sm
+            .hidden-xs
               if user.profile.picture
                 a(href='/account')
                   img.profile-picture.float-right(src='#{user.profile.picture}')
