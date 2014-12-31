@@ -6,17 +6,9 @@ var _ = require('lodash'),
     GitHubStrategy = require('passport-github').Strategy,
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     LinkedInStrategy = require('passport-linkedin-oauth2').Strategy,
-    OAuthStrategy = require('passport-oauth').OAuthStrategy,
-    OAuth2Strategy = require('passport-oauth').OAuth2Strategy,
     User = require('../models/User'),
     secrets = require('./secrets');
 
-// Login Required middleware.
-module.exports = {
-  isAuthenticated: isAuthenticated,
-  isAuthorized: isAuthorized,
-  hasEmail: hasEmail
-};
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -28,6 +20,44 @@ passport.deserializeUser(function(id, done) {
     done(null, user);
   });
 });
+
+function isAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect('/login');
+}
+
+function hasEmail(req, res) {
+  if (req.user) {
+      console.log('started');
+      if (req.user.email) {
+        res.redirect('/');
+      } else {
+        console.log('hit');
+        req.flash('info', {
+          msg: 'Please add your email address before starting our challenges.'
+        });
+        res.redirect('/account');
+      }
+  }
+}
+
+// Authorization Required middleware.
+function isAuthorized(req, res, next) {
+  var provider = req.path.split('/').slice(-1)[0];
+
+  if (_.find(req.user.tokens, { kind: provider })) {
+    next();
+  } else {
+    res.redirect('/auth/' + provider);
+  }
+}
+
+// Login Required middleware.
+module.exports = {
+  isAuthenticated: isAuthenticated,
+  isAuthorized: isAuthorized,
+  hasEmail: hasEmail
+};
 
 //function sendWelcomeEmail(u) {
 //    var transporter = nodemailer.createTransport({
@@ -94,11 +124,15 @@ passport.use(
               user.profile.location =
                 user.profile.location || profile._json.location;
 
+              /* jshint ignore:start */
               user.profile.picture =
                 user.profile.picture || profile._json.profile_image_url_https;
+              /* jshint ignore:end */
 
               user.profile.username = profile.username;
               user.save(function(err) {
+                if (err) { return done(err); }
+
                 req.flash('info', { msg: 'Twitter account has been linked.' });
                 done(null, user);
               });
@@ -122,8 +156,11 @@ passport.use(
 
           user.profile.location =
             user.profile.location || profile._json.location;
+
+          /* jshint ignore:start */
           user.profile.picture =
             user.profile.picture || profile._json.profile_image_url_https;
+          /* jshint ignore:end */
 
           user.save(function(err) {
             if (err) { return done(err); }
@@ -171,7 +208,7 @@ passport.use(
               user.profile.website =
                 user.profile.website || profile._json.publicProfileUrl;
 
-              user.save(function(err, _user) {
+              user.save(function(err) {
                 if (err) { return done(err); }
                 req.flash(
                   'info', { msg: 'LinkedIn account has been linked.' }
@@ -358,8 +395,10 @@ passport.use(
               user.tokens.push({ kind: 'github', accessToken: accessToken });
               user.profile.name = user.profile.name || profile.displayName;
 
+              /* jshint ignore:start */
               user.profile.picture =
                 user.profile.picture || profile._json.avatar_url;
+              /* jshint ignore:end */
 
               user.profile.location =
                 user.profile.location || profile._json.location;
@@ -394,8 +433,10 @@ passport.use(
               });
               user.profile.name = user.profile.name || profile.displayName;
 
+              /* jshint ignore:start */
               user.profile.picture =
                 user.profile.picture || profile._json.avatar_url;
+              /* jshint ignore:end */
 
               user.profile.location =
                 user.profile.location || profile._json.location;
@@ -494,35 +535,3 @@ passport.use(
         });
       }
 }));
-
-
-function isAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) return next();
-  res.redirect('/login');
-}
-
-function hasEmail(req, res) {
-  if (req.user) {
-      console.log('started');
-      if (req.user.email) {
-        res.redirect('/');
-      } else {
-        console.log('hit');
-        req.flash('info', {
-          msg: 'Please add your email address before starting our challenges.'
-        });
-        res.redirect('/account');
-      }
-  }
-}
-
-// Authorization Required middleware.
-function isAuthorized(req, res, next) {
-  var provider = req.path.split('/').slice(-1)[0];
-
-  if (_.find(req.user.tokens, { kind: provider })) {
-    next();
-  } else {
-    res.redirect('/auth/' + provider);
-  }
-}
