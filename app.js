@@ -66,6 +66,8 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
+var oneYear = 31557600000;
+app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
 app.use(connectAssets({
     paths: [
       path.join(__dirname, 'public/css'),
@@ -151,7 +153,8 @@ app.use(helmet.contentSecurityPolicy({
       '*.gitter.im',
       '*.vimeo.com',
       '*.twitter.com',
-      '*.rafflecopter.com'
+      '*.rafflecopter.com',
+      '*.youtube.com'
     ],
     reportOnly: false, // set to true if you only want to report errors
     setAllHeaders: false, // set to true if you want to set all headers
