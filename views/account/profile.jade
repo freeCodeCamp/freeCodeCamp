@@ -71,7 +71,7 @@ block content
                             i.fa.fa-twitter
                             | Link Twitter with your account
             br
-    - if (cc[0] > 0)
+    - if (ch[0] > 0)
         .panel
             .container
                 h1 Completed Challenges
@@ -81,11 +81,11 @@ block content
                       tr
                         th Challenge
                         th Date Finished
-                    for challenge in c
-                      if cc[challenge.challengeNumber] > 0
+                    for challenge in challenges
+                      if ch[challenge.challengeNumber] > 0
                         tr
-                          td= c[challenge.challengeNumber].name
-                          td= moment(cc[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
+                          td= challenges[challenge.challengeNumber].name
+                          td= moment(ch[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
             br
     .panel
         .container
