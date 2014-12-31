@@ -34,7 +34,7 @@
     ]
   },
   {
-    "name": "Join our Forum",
+    "name": "Join Our Forum",
     "time": 5,
     "video": "115275066",
     "challengeNumber": 2,
@@ -357,7 +357,7 @@
     "steps": [
       "Up to this point, you've been working mostly with strings and numbers. Now we're going to learn more complicated data structures, like \"Arrays\" and \"Objects\".",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1</a> and complete the section.",
-      "Be sure to also complete this section: <a href='' target='_blank'></a>."
+      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1</a>."
     ]
   },
   {
@@ -405,7 +405,7 @@
         "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
         "Check out <a href='http://www.regexr.com' target='_blank'>http://www.regexr.com</a>. It's a Regular Expression Sandbox.",
         "Now go to <a href='http://www.regexone.com' target='_blank'>http://www.regexone.com</a> and complete the tutorial and exercises 1 - 6.",
-        "Note that you can click \"continue\" to move on to the next step as soon as all the tasks have green checkmarks beside them. You can often do this just by using the wildcard \"dot\" operator, but try to use the techniques that each lesson recommends."
+        "Note that you can click \"continue\" to move on to the next step as soon as all the tasks have green check marks beside them. You can often do this just by using the wildcard \"dot\" operator, but try to use the techniques that each lesson recommends."
     ]
   },
   {
@@ -415,11 +415,12 @@
     "challengeNumber": 34,
     "steps": [
       "OK, we're finally ready to start pair programming!",
+      "Pair Programming is where two people code together on the same computer. It is an efficient way to collaborate, and widely practiced at software companies. Pair Programming is one of the core concepts of \"Agile\" Software Development, which you will hear more about later.",
       "Many people use Skype or Google Hangouts to pair program, but if you talk with professional software engineers, they will tell you that it's not really pair programming unless both people have the ability to use the keyboard and mouse.",
-      "The most popular tool for pair programming is Screen Hero. Both programmers get their own mouse cursor. Note that Screen Hero isn't free, and isn't yet available for Linux. Screen Hero does come with a 14 day free trial, is free for students, and you can also use it for free if your pair has a 14-day trial or a paid subscription to it. Download Screen Hero here: <a href='https://screenhero.com/download.html' target='_blank'>https://screenhero.com/download.html</a>.",
+      "The most popular tool for pair programming is Screen Hero. Note that Screen Hero isn't free, and isn't yet available for Linux. Screen Hero does come with a 14 day free trial, is free for students, and you can also use it for free if your pair has a 14-day trial or a paid subscription to it. Download Screen Hero here: <a href='https://screenhero.com/download.html' target='_blank'>https://screenhero.com/download.html</a>.",
       "If you are using Linux, or if your 14 day free trial for Screen Hero has expired and you don't want to pay $10 per month for it, go to <a href='http://www.freecodecamp.com/pair-program-with-team-viewer.html' target='_blank'>https://www.freecodecamp.com/pair-program-with-team-viewer.html</a> to learn how to use an alternative (but inferior) tool called Team Viewer.",
-      "Go to the chat room and ask if anyone wants to pair program with you on a CoderByte challenge.",
-      "If someone is interested, they will be your \"pair\" - the person you pair programming with.",
+      "We have a special chat room for people ready to pair program. Go to <a href='https://gitter.im/FreeCodeCamp/LetsPair' target='_blank'>https://gitter.im/FreeCodeCamp/LetsPair</a> and type \"Hello Pair Programmers!\"",
+      "If someone is available, they will be your \"pair\" - the person you pair programming with.",
       "Private message your pair and ask for the email address he or she used to register Screen Hero.",
       "Add them as a new contact in Screen Hero, then click the monitor-looking button to attempt to share your screen with them.",
       "Once the Screen Hero session starts, your screen's margins will glow orange. You are now sharing your screen.",
@@ -436,80 +437,10 @@
     ]
   },
   {
-    "name": "Learn Relational Database Theory",
-    "time": 30,
-    "video": "114629033",
-    "challengeNumber": 35,
-    "steps": [
-      "Before we learn SQL - and ultimately MongoDB - we need to establish a foundational knowledge of relational database theory. Stanford's Jennifer Widom has put together a short lecture series that does this.",
-      "Note that these lectures are  non-interactive. Don't worry if you don't understand them very well - you will understand these concepts much better once you apply them in the SQL challenge.",
-      "Go to <a href='https://class.stanford.edu/courses/DB/RDB/SelfPaced/courseware/ch-introduction/seq-vid-introduction/' target='_blank'>https://class.stanford.edu/courses/DB/RDB/SelfPaced/courseware/ch-introduction/seq-vid-introduction/</a> and watch the videos."]
-  },
-  {
-    "name": "Pair Program to Query SQL pt 1",
-    "time": 90,
-    "video": "114621182",
-    "challengeNumber": 36,
-    "steps": [
-      "With Stanford's SQL course, you can do SQL queries, right in your browser.",
-      "Go to <a href='https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_movie_query_core/' target='_blank'>https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_movie_query_core/</a> and all nine of these queries.",
-      "You may find it helpful to watch the lectures or read the annotated slides.",
-      "If possible, you should pair program on these."
-    ]
-  },
-  {
-    "name": "Pair Program to Query SQL pt 2",
-    "time": 60,
-    "video": "114621180",
-    "challengeNumber": 37,
-    "steps": [
-      "Now let's do some additional SQL queries to further cement these concepts in your mind.",
-      "Go to <a href='https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_social_query_core/' target='_blank'>https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_social_query_core/</a> and answer all 9 of the SQL query questions.",
-      "You may find it helpful to watch the lectures or read the annotated slides.",
-      "If possible, you should pair program on these."
-    ]
-  },
-  {
-    "name": "Pair Program to Modify SQL pt 1",
-    "time": 90,
-    "video": "114621179",
-    "challengeNumber": 38,
-    "steps": [
-      "Now that you're able to use SQL to query a database, it's time to practice using SQL to modify the database itself.",
-      "Go to <a href='https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_movie_mod/' target='_blank'>https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_movie_mod/web</a> and answer all 4 of the SQL modification questions.",
-      "You may find it helpful to watch the lectures or read the annotated slides.",
-      "If possible, you should pair program on these."
-    ]
-  },
-  {
-    "name": "Pair Program to Modify SQL pt 2",
-    "time": 60,
-    "video": "114621178",
-    "challengeNumber": 39,
-    "steps": [
-      "Let's answer a couple more SQL modification questions to further practice these concepts.",
-      "Go to <a href='https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_social_mod/' target='_blank'>https://class.stanford.edu/courses/DB/SQL/SelfPaced/courseware/ch-sql/seq-exercise-sql_social_mod/</a> and answer the first 2 SQL modification questions. You can optionally try to answer the third one, but even Jennifer Widom admitted that it is quite difficult.",
-      "You may find it helpful to watch the lectures or read the annotated slides.",
-      "If possible, you should pair program on these."
-    ]
-  },
-  {
-    "name": "Learn JSON",
-    "time": 30,
-    "video": "114621177",
-    "challengeNumber": 40,
-    "steps": [
-      "Now that you know a little about how databases store data, let's learn how computers usually share data back and forth over the web. Most modern Application Programming Interfaces (APIs) on the web use JavaScript Object Notation, or JSON.",
-      "JSON is simple and easy to read. And hey, it's literally how you'd write an object in JavaScript!",
-      "Go to <a href='https://class.stanford.edu/courses/DB/JSON/SelfPaced/courseware/ch-json_data/seq-quiz-json/' target='_blank'>https://class.stanford.edu/courses/DB/JSON/SelfPaced/courseware/ch-json_data/seq-quiz-json/</a> and er for this course.",
-      "You may find it helpful to watch the lectures or read the annotated slides."
-    ]
-  },
-  {
     "name": "Manage Source Code with Git",
     "time": 30,
     "video": "114635309",
-    "challengeNumber": 41,
+    "challengeNumber": 35,
     "steps": [
         "Revision Control Systems like Git ensure that, no matter how you experiment with your code, you can always roll back your app to a stable previous state.",
         "Git is also a great way to share and contribute to open source software.",
@@ -520,7 +451,7 @@
     "name": "Get Started with Node.js",
     "time": 45,
     "video": "114686471",
-    "challengeNumber": 42,
+    "challengeNumber": 36,
     "steps": [
       "Now that we understand some Computer Science, JavaScript programming, and how Databases work, you're ready to move on to Full-stack JavaScript!",
       "The first step is to familiarize ourselves Node.js, the JavaScript-based web server that most full-stack JavaScript apps use.",
@@ -532,7 +463,7 @@
     "name": "Try Node.js Events",
     "time": 45,
     "video": "114684206",
-    "challengeNumber": 43,
+    "challengeNumber": 37,
     "steps": [
       "One of the reasons Node.js is so fast is that it is \"evented\" - it processes events in an asynchronous manner.",
       "As a result, Node.js relies on asynchronous callbacks.",
@@ -544,7 +475,7 @@
     "name": "Try Node.js Streams",
     "time": 45,
     "video": "114684209",
-    "challengeNumber": 44,
+    "challengeNumber": 38,
     "steps": [
       "In this Code School lesson, we'll learn about streaming data back and forth between the client to the server.",
       "We'll also learn about FS, or File System, an important Node.js module for streaming data.",
@@ -555,7 +486,7 @@
     "name": "Learn how Node.js Modules Work",
     "time": 45,
     "video": "114684213",
-    "challengeNumber": 45,
+    "challengeNumber": 39,
     "steps": [
       "One of the most exciting features of Node.js is NPM - Node Package Manager",
       "With NPM, you quickly install any of thousands of Node.js modules into your app, and it will automatically handle the other modules that each module dependends upon downstream.",
@@ -566,7 +497,7 @@
     "name": "Start an Express.js Server",
     "time": 45,
     "video": "114684247",
-    "challengeNumber": 46,
+    "challengeNumber": 40,
     "steps": [
       "We'll complete Code School's Express.js course shortly after completing this course, but this challenge will give you a quick tour of the Express.js framework.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."]
@@ -575,14 +506,14 @@
     "name": "Use Socket.IO",
     "time": 45,
     "video": "114684530",
-    "challengeNumber": 47,
+    "challengeNumber": 41,
     "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."]
   },
   {
     "name": "Use Redis to Persist Data",
     "time": 45,
     "video": "114684532",
-    "challengeNumber": 48,
+    "challengeNumber": 42,
     "steps": [
       "Redis is a key-value store, which is a type of non-relational database. It's one of the fastest and easiest ways to persist data.",
       "Even though we'll ultimately use MongoDB and other technologies to persist data, Redis is quite easy to learn and is still worth learning.",
@@ -592,7 +523,7 @@
     "name": "Dive Deeper into Express.js",
     "time": 45,
     "video": "114684533",
-    "challengeNumber": 49,
+    "challengeNumber": 43,
     "steps": [
       "Code School has one of the first comprehensive courses on Express.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. If you've already used your Code School two-day membership, go to the Free Code Camp main chat room and ask how you can get some extra time to work through this course. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1</a> and complete the section."]
@@ -602,7 +533,7 @@
     "name": "Setup Express.js Middleware",
     "time": 45,
     "video": "114684535",
-    "challengeNumber": 50,
+    "challengeNumber": 44,
     "steps": [
       "Express.js makes extensive use of middleware - a stack of functions that run sequentially in response to a specific event.",
       "Let's learn how to incorporate modules and middleware into our Express.js app.",
@@ -613,7 +544,7 @@
     "name": "Take Advantage of Parameters",
     "time": 45,
     "video": "114684537",
-    "challengeNumber": 51,
+    "challengeNumber": 45,
     "steps": [
       "Have you've ever noticed a question mark in your browser's address bar, followed by a series of string? Those are parameters. Parameters are an efficient way to pass information to the server between page loads.",
       "We'll learn about parameters, along with a powerful Express.js feature called Dynamic Routing, in this exciting Code School lesson.",
@@ -624,7 +555,7 @@
     "name": "Add the Body Parser",
     "time": 45,
     "video": "114684720",
-    "challengeNumber": 52,
+    "challengeNumber": 46,
     "steps": [
       "Now we'll add the Body Parser module to Express.js. Body Parser is a powerful middleware that helps with routing.",
       "We'll also learn more about HTTP Requests, such as Post and Delete.",
@@ -635,7 +566,7 @@
     "name": "Configure Routes in Express.js",
     "time": 45,
     "video": "114684724",
-    "challengeNumber": 53,
+    "challengeNumber": 47,
     "steps": [
       "For this last Code School Express.js challenge, we'll refactor our routes.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1</a> and complete the section."
@@ -646,7 +577,7 @@
     "name": "Try MongoDB",
     "time": 30,
     "video": "114685061",
-    "challengeNumber": 54,
+    "challengeNumber": 48,
     "steps": [
       "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
       "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
@@ -656,7 +587,7 @@
     "name": "Get Started with Angular.js",
     "time": 45,
     "video": "114684726",
-    "challengeNumber": 55,
+    "challengeNumber": 49,
     "steps": [
       "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
       "In this course, we'll build a virtual shop entirely in Angular.js.",
@@ -666,7 +597,7 @@
     "name": "Apply Angular.js Directives",
     "time": 45,
     "video": "114684727",
-    "challengeNumber": 56,
+    "challengeNumber": 50,
     "steps": [
       "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will can alter the behavior of DOM elements based on the directives you've used.",
       "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
@@ -677,7 +608,7 @@
     "name": "Power Forms with Angular.js",
     "time": 45,
     "video": "114684729",
-    "challengeNumber": 57,
+    "challengeNumber": 51,
     "steps": [
       "One area where Angular.js really shines is its powerful web forms.",
       "Learn how to create reactive Angular.js forms, including real-time form validation.",
@@ -687,7 +618,7 @@
     "name": "Customize Angular.js Directives",
     "time": 45,
     "video": "114685062",
-    "challengeNumber": 58,
+    "challengeNumber": 52,
     "steps": [
       "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
       "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."]
@@ -696,7 +627,7 @@
     "name": "Create Angular.js Services",
     "time": 45,
     "video": "114685060",
-    "challengeNumber": 59,
+    "challengeNumber": 53,
     "steps": [
       "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",
       "We'll learn how to use services in this final Code School Angular.js challenge.",

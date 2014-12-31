@@ -33,7 +33,7 @@ exports.returnChallenge = function(req, res, next) {
         "Establish your alibi for the past two hours",
         "Prove to mom that computers aren't just for games"
     ];
-    if (challengeNumber > 59) { challengeNumber = 0; }
+    if (challengeNumber > 53) { challengeNumber = 0; }
     Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
         if (err) {
             debug('Challenge err: ', err);

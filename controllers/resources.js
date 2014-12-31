@@ -38,23 +38,20 @@ module.exports = {
             User.count({'points': {'$gt': 19}}, function(err, c19) { if (err) { debug('User err: ', err); next(err); }
               User.count({'points': {'$gt': 29}}, function(err, c29) { if (err) { debug('User err: ', err); next(err); }
                 User.count({'points': {'$gt': 39}}, function(err, c39) { if (err) { debug('User err: ', err); next(err); }
-                  User.count({'points': {'$gt': 49}}, function(err, c49) { if (err) { debug('User err: ', err); next(err); }
-                    User.count({'points': {'$gt': 59}}, function(err, c59) { if (err) { debug('User err: ', err); next(err); }
-                      res.render('resources/stats', {
-                        title: 'Free Code Camp Stats:',
-                        daysRunning: daysRunning,
-                        users: users,
-                        nonprofitProjects: nonprofitProjects, /* can't yet get this to work. Async issue?
-                        Hardcoded value for now and created a Trello card */
-                        c2: c2,
-                        c4: c4,
-                        c9: c9,
-                        c19: c19,
-                        c29: c29,
-                        c39: c39,
-                        c49: c49,
-                        c59: c59
-                      });
+                  User.count({'points': {'$gt': 53}}, function(err, all) { if (err) { debug('User err: ', err); next(err); }
+                    res.render('resources/stats', {
+                      title: 'Free Code Camp Stats:',
+                      daysRunning: daysRunning,
+                      users: users,
+                      nonprofitProjects: nonprofitProjects, /* can't yet get this to work. Async issue?
+                      Hardcoded value for now and created a Trello card */
+                      c2: c2,
+                      c4: c4,
+                      c9: c9,
+                      c19: c19,
+                      c29: c29,
+                      c39: c39,
+                      all: all
                     });
                   });
                 });
