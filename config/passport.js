@@ -109,32 +109,26 @@ passport.use(
       } else {
         User.findOne({ twitter: profile.id }, function(err, existingUser) {
           if (err) { return done(err); }
-          if (!existingUser || (existingUser && existingUser.twitter == profile.id)) {
-            var user = existingUser || new User();
-            user.twitter = profile.id;
-            user.email = user.email || '';
-            user.tokens.push({
-              kind: 'twitter',
-              accessToken: accessToken,
-              tokenSecret: tokenSecret
-            });
-            user.profile.name = user.profile.name || profile.displayName;
-            user.profile.username = user.profile.username || profile.username;
+          var user = existingUser || new User();
+          user.twitter = profile.id;
+          user.email = user.email || '';
+          user.tokens.push({
+            kind: 'twitter',
+            accessToken: accessToken,
+            tokenSecret: tokenSecret
+          });
+          user.profile.name = user.profile.name || profile.displayName;
+          user.profile.username = user.profile.username || profile.username;
 
-            user.profile.location =
-                user.profile.location || profile._json.location;
-            user.profile.picture =
-                user.profile.picture || profile._json.profile_image_url_https;
+          user.profile.location =
+            user.profile.location || profile._json.location;
+          user.profile.picture =
+            user.profile.picture || profile._json.profile_image_url_https;
 
-            user.save(function (err) {
-              if (err) {
-                return done(err);
-              }
-              done(null, user);
-            });
-          } else {
-            return done("Sorry, we experienced an error. This has been reported. Try logging in with a different authentication method.");
-          }
+          user.save(function(err) {
+            if (err) { return done(err); }
+            done(null, user);
+          });
         });
       }
     })
