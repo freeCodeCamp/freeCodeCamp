@@ -116,6 +116,7 @@ var trusted = [
     "*.twitter.com",
     '*.twimg.com',
     "*.githubusercontent.com",
+    "*.googleusercontent.com",
     "'unsafe-eval'",
     "'unsafe-inline'",
     "*.rafflecopter.com",
