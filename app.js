@@ -115,8 +115,6 @@ var trusted = [
     "*.doubleclick.net",
     "*.twitter.com",
     '*.twimg.com',
-    "*.githubusercontent.com",
-    "*.googleusercontent.com",
     "'unsafe-eval'",
     "'unsafe-inline'",
     "*.rafflecopter.com",
@@ -139,11 +137,14 @@ app.use(helmet.contentSecurityPolicy({
     styleSrc: trusted,
     imgSrc: [
       '*.evernote.com',
+      '*.facebook.com',
       '*.amazonaws.com',
       'data:',
       '*.licdn.com',
       '*.gravatar.com',
-      '*.youtube.com'
+      '*.youtube.com',
+      '*.githubusercontent.com',
+      '*.googleusercontent.com',
     ].concat(trusted),
     fontSrc: ['*.googleapis.com'].concat(trusted),
     mediaSrc: [
