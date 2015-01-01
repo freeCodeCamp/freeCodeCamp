@@ -284,7 +284,7 @@ var userSchema = new mongoose.Schema({
     username: {
       type: String,
       default: '',
-      unique: true,
+      //unique: true,
       lowercase: true,
       trim: true
     }
