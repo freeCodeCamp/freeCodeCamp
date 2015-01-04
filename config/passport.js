@@ -26,7 +26,6 @@ passport.deserializeUser(function(id, done) {
   User.findOne({
     _id: id
   }, '-password', function(err, user) {
-    console.log(user);
     done(err, user);
   });
 });
@@ -480,11 +479,9 @@ function isAuthenticated(req, res, next) {
 
 function hasEmail(req, res) {
   if (req.user) {
-      console.log('started');
       if (req.user.email) {
         res.redirect('/');
       } else {
-        console.log('hit');
         req.flash('info', {
           msg: 'Please add your email address before starting our challenges.'
         });

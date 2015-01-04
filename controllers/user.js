@@ -206,8 +206,6 @@ exports.postUpdateProfile = function(req, res, next) {
         }
         var user = req.user;
         if (existingUsername && existingUsername.profile.username != user.profile.username) {
-          console.log(user.profile.username)
-          console.log(existingUsername.username)
           req.flash('errors', {
             msg: 'An account with that username already exists.'
           });
