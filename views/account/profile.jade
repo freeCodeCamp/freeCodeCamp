@@ -3,12 +3,16 @@ block content
     .panel(ng-controller="profileValidationController")
       .container.text-center
         h1 Update your profile here:
-      form.form-horizontal(action='/account/profile', method='POST', novalidate='novalidate')
+      form.form-horizontal(action='/account/profile', method='POST', novalidate='novalidate', name='profileForm')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
           .col-sm-4
               input.form-control(type='text', placeholder='Name', name='name', ng-model='user.profile.name', ng-minlength='3', ng-maxlength='20', required='required', ng-focus='ng-focus', id='name', value='{{user.profile.name}}')
+          .col-sm-4.col-sm-offset-5(ng-show="profileForm.name.$invalid && !profileForm.name.$pristine")
+              alert(type='danger')
+                span.ion-settings
+                | Your name is required.
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (use letters, numbers, underscore) *
           .col-sm-4
@@ -79,7 +83,7 @@ block content
                 input.form-control(type='text', name='website3Image', id='website3Image', ng-model='user.profile.website3Image', value='{{user.profile.website3Image}}')
         .form-group
           .col-sm-offset-2.col-sm-4
-            button.btn.btn.btn-primary(type='submit')
+            button.btn.btn.btn-primary(type='submit', ng-disabled='profileForm.$invalid')
               span.ion-edit
               | Update my profile
     .panel
