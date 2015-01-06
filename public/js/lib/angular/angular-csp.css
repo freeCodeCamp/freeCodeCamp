@@ -1,0 +1,24 @@
+/* Include this file in your html if you are using the CSP mode. */
+
+@charset "UTF-8";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.ng-animate-block-transitions {
+  transition:0s all!important;
+  -webkit-transition:0s all!important;
+}
+
+/* show the element during a show/hide animation when the
+ * animation is ongoing, but the .ng-hide class is active */
+.ng-hide-add-active, .ng-hide-remove {
+  display: block!important;
+}

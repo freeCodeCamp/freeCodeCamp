@@ -145,11 +145,27 @@ exports.getAccount = function(req, res) {
       title: 'Manage your Free Code Camp Account',
       challenges: c,
       ch: req.user.challengesHash,
-      moment: moment,
+      moment: moment
+    });
+  });
+};
+
+/**
+ * Angular API Call
+ */
+
+ exports.getAccountAngular = function(req, res) {
+  Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
+    if (err) {
+      console.error('Challenge err: ', err);
+      next(err);
+    }
+    res.json({
       user: req.user
     });
   });
 };
+
 
 /**
  * GET /users/:username

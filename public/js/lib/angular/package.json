@@ -1,0 +1,25 @@
+{
+  "name": "angular",
+  "version": "1.2.28",
+  "description": "HTML enhanced for web apps",
+  "main": "angular.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angular/angular.js.git"
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "client-side"
+  ],
+  "author": "Angular Core Team <angular-core+npm@google.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "homepage": "http://angularjs.org"
+}

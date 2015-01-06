@@ -249,6 +249,7 @@ app.get(
     userController.returnUser
 );
 app.all('/account', passportConf.isAuthenticated);
+app.get('/account/api', userController.getAccountAngular);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);
