@@ -250,6 +250,7 @@ app.get(
 );
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account', userController.getAccount);
+app.get('/account/api', userController.getAccountAngular);
 app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);

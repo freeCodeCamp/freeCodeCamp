@@ -45,12 +45,9 @@ $(document).ready(function() {
 var profileValidation = angular.module('profileValidation',[]);
 profileValidation.controller('profileValidationController', ['$scope', '$http',
     function($scope, $http) {
-        $http.get('/account').success(function(data) {
-            console.log('============');
-            console.log(data);
-            console.log('============');
+        $http.get('/account/api').success(function(data) {
             $scope.user = data.user;
+            console.log($scope.user);
         });
-        //$scope.user = user;
     }
 ]);
