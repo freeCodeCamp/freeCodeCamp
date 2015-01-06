@@ -3,7 +3,7 @@ block content
     .panel(ng-controller="profileValidationController")
       .container.text-center
         h1 Update your profile here:
-      form.form-horizontal(action='/account/profile', method='POST')
+      form.form-horizontal(action='/account/profile', method='POST', novalidate='novalidate')
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
@@ -20,65 +20,63 @@ block content
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='location') Location
           .col-sm-4
-            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+            input.form-control(type='text', name='location', id='location', ng-model='user.profile.location')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='email') Twitter Handle
           .col-sm-4
-            input.form-control(type='text', name='twitterHandle', id='twitterHandle', ng-model="user.profile.twitterHandle" value='#{user.profile.twitterHandle}')
-            span
-                {{user.profile.twitterHandle}}
+            input.form-control(type='text', name='twitterHandle', id='twitterHandle', ng-model='user.profile.twitterHandle', value='{{ user.profile.twitterHandle')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='email') Github Profile Link
           .col-sm-4
-            input.form-control(type='text', name='githubProfile', id='githubProfile', value='#{user.profile.githubProfile}')
+            input.form-control(type='text', name='githubProfile', id='githubProfile', ng-model='user.profile.githubProfile', value='{{user.profile.githubProfile}}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='email') CodePen Profile Link
           .col-sm-4
-            input.form-control(type='text', name='codepenProfile', id='codepenProfile', value='#{user.profile.codepenProfile}')
+            input.form-control(type='text', name='codepenProfile', id='codepenProfile', ng-model='user.profile.codepenProfile', value='{{user.profile.codepenProfile}}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='email') CoderByte Profile Link
           .col-sm-4
-            input.form-control(type='text', name='coderbyteProfile', id='coderbyteProfile', value='#{user.profile.coderbyteProfile}')
+            input.form-control(type='text', name='coderbyteProfile', id='coderbyteProfile', ng-model='user.profile.coderbyteProfile', value='{{user.profile.coderbyteProfile}}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='email') LinkedIn Profile Link
           .col-sm-4
-            input.form-control(type='text', name='linkedinProfile', id='linkedinProfile', value='#{user.profile.linkedinProfile}')
+            input.form-control(type='text', name='linkedinProfile', id='linkedinProfile', ng-model='user.profile.linkedinProfile', value='{{user.profile.linkedinProfile}}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='website1Title') 1st Portfolio Website Title
           .col-sm-4
-            input.form-control(type='text', name='website1Title', id='website1Title', value='#{user.portfolio.website1Title}')
+            input.form-control(type='text', name='website1Title', id='website1Title', ng-model='user.profile.website1Title', value='{{user.profile.website1Title}}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='website1Link') 1st Portfolio Website Link
           .col-sm-4
-             input.form-control(type='text', name='website1Link', id='website1Link', value='#{user.portfolio.website1Link}')
+             input.form-control(type='text', name='website1Link', id='website1Link', ng-model='user.profile.website1Link', value='{{user.profile.website1Link}}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='website1Image') 1st Portfolio Website Image Link
           .col-sm-4
-            input.form-control(type='text', name='website1Image', id='website1Image', value='#{user.portfolio.website1Image}')
+            input.form-control(type='text', name='website1Image', id='website1Image', ng-model='website1Image', value='{{user.profile.website1Image}}')
         .form-group
             label.col-sm-3.col-sm-offset-2.control-label(for='website2Title') 2nd Portfolio Website Title
             .col-sm-4
-                input.form-control(type='text', name='website2Title', id='website2Title', value='#{user.portfolio.website2Title}')
+                input.form-control(type='text', name='website2Title', id='website2Title', ng-model='user.profile.website2Title', value='{{user.profile.website2Title}}')
         .form-group
             label.col-sm-3.col-sm-offset-2.control-label(for='website2Link') 2nd Portfolio Website Link
             .col-sm-4
-                input.form-control(type='text', name='website2Link', id='website2Link', value='#{user.portfolio.website2Link}')
+                input.form-control(type='text', name='website2Link', id='website2Link', ng-model='user.profile.website2Link', value='{{user.profile.website2Link}}')
         .form-group
             label.col-sm-3.col-sm-offset-2.control-label(for='website2Image') 2nd Portfolio Website Image Link
             .col-sm-4
-                input.form-control(type='text', name='website2Image', id='website2Image', value='#{user.portfolio.website2Image}')
+                input.form-control(type='text', name='website2Image', id='website2Image', ng-model='user.profile.website2Image', value='{{user.profile.website2Image}}')
         .form-group
             label.col-sm-3.col-sm-offset-2.control-label(for='website3Title') 3rd Portfolio Website Title
             .col-sm-4
-                input.form-control(type='text', name='website3Title', id='website3Title', value='#{user.portfolio.website3Title}')
+                input.form-control(type='text', name='website3Title', id='website3Title', ng-model='user.profile.website3Title', value='{{user.profile.website3Title}}')
         .form-group
             label.col-sm-3.col-sm-offset-2.control-label(for='website3Link') 3rd Portfolio Website Link
             .col-sm-4
-                input.form-control(type='text', name='website3Link', id='website3Link', value='#{user.portfolio.website3Link}')
+                input.form-control(type='text', name='website3Link', id='website3Link', ng-model='user.profile.website3Link', value='{{user.profile.website3Link}}')
         .form-group
             label.col-sm-3.col-sm-offset-2.control-label(for='website3Image') 3rd Portfolio Website Image Link
             .col-sm-4
-                input.form-control(type='text', name='website3Image', id='website3Image', value='#{user.portfolio.website3Image}')
+                input.form-control(type='text', name='website3Image', id='website3Image', ng-model='user.profile.website3Image', value='{{user.profile.website3Image}}')
         .form-group
           .col-sm-offset-2.col-sm-4
             button.btn.btn.btn-primary(type='submit')
