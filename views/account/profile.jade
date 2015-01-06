@@ -4,11 +4,11 @@ block content
       .container.text-center
         h1 Update your profile here:
       form.form-horizontal(action='/account/profile', method='POST')
-        //input(type='hidden', name='_csrf', value=_csrf)
-        //.form-group
-        //  label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
-        //  .col-sm-4
-        //    input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
+          .col-sm-4
+            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
           .col-sm-4
@@ -28,9 +28,9 @@ block content
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='email') Twitter Handle
           .col-sm-4
-            input.form-control(type='text', name='twitterHandle', id='twitterHandle', ng-model="twitterHandle" value='#{user.profile.twitterHandle}')
+            input.form-control(type='text', name='twitterHandle', id='twitterHandle', ng-model="user.twitterHandle" value='#{user.profile.twitterHandle}')
             span
-                {{twitterHandle}}
+                {{user.twitterHandle}}
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='email') Github Profile Link
           .col-sm-4
