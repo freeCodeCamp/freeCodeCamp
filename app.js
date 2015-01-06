@@ -118,8 +118,11 @@ var trusted = [
     "'unsafe-eval'",
     "'unsafe-inline'",
     '*.rafflecopter.com',
+    '*.bootstrapcdn.com',
     '*.cloudflare.com',
-    'localhost:3001'
+    'localhost:3001',
+    'localhost:3000'
+
 ];
 
 debug(trusted);
