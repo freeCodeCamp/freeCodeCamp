@@ -2,36 +2,70 @@ extends ../layout
 
 block content
     .panel
-        .container.text-center
-          h1 Update your profile here:
-          .animated.flipInX
-              form.form-horizontal(action='/account/profile', method='POST')
-                input(type='hidden', name='_csrf', value=_csrf)
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
-                  .col-sm-4
-                    input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (use letters, numbers, underscore) *
-                  .col-sm-4
-                    input.form-control(type='text', name='username', id='username', value='#{user.profile.username}')
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Email *
-                  .col-sm-4
-                    input.form-control(type='email', name='email', id='email', value='#{user.email}')
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='location') Location
-                  .col-sm-4
-                    input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='website') Website
-                  .col-sm-4
-                    input.form-control(type='text', name='website', id='website', value='#{user.profile.website}')
-                .form-group
-                  .col-sm-offset-2.col-sm-4
-                    button.btn.btn.btn-primary(type='submit')
-                      span.ion-edit
-                      | Update my profile
+      .container.text-center
+        h1 Update your profile here:
+      form.form-horizontal(action='/account/profile', method='POST')
+        input(type='hidden', name='_csrf', value=_csrf)
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
+          .col-sm-4
+            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (use letters, numbers, underscore) *
+          .col-sm-4
+            input.form-control(type='text', name='username', id='username', value='#{user.profile.username}')
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='email') Email *
+          .col-sm-4
+            input.form-control(type='email', name='email', id='email', value='#{user.email}')
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='location') Location
+          .col-sm-4
+            input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
+
+
+
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='website1Title') 1st Portfolio Website Title
+          .col-sm-4
+            input.form-control(type='text', name='website1Title', id='website1Title', value='#{user.portfolio.website1Title}')
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='website1Link') 1st Portfolio Website Link
+          .col-sm-4
+             input.form-control(type='text', name='website1Link', id='website1Link', value='#{user.portfolio.website1Link}')
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='website1Image') 1st Portfolio Website Image Link
+          .col-sm-4
+            input.form-control(type='text', name='website1Image', id='website1Image', value='#{user.portfolio.website1Image}')
+        .form-group
+            label.col-sm-3.col-sm-offset-2.control-label(for='website2Title') 2nd Portfolio Website Title
+            .col-sm-4
+                input.form-control(type='text', name='website2Title', id='website2Title', value='#{user.portfolio.website2Title}')
+        .form-group
+            label.col-sm-3.col-sm-offset-2.control-label(for='website2Link') 2nd Portfolio Website Link
+            .col-sm-4
+                input.form-control(type='text', name='website2Link', id='website2Link', value='#{user.portfolio.website2Link}')
+        .form-group
+            label.col-sm-3.col-sm-offset-2.control-label(for='website2Image') 2nd Portfolio Website Image Link
+            .col-sm-4
+                input.form-control(type='text', name='website2Image', id='website2Image', value='#{user.portfolio.website2Image}')
+        .form-group
+            label.col-sm-3.col-sm-offset-2.control-label(for='website3Title') 3rd Portfolio Website Title
+            .col-sm-4
+                input.form-control(type='text', name='website3Title', id='website3Title', value='#{user.portfolio.website3Title}')
+        .form-group
+            label.col-sm-3.col-sm-offset-2.control-label(for='website3Link') 3rd Portfolio Website Link
+            .col-sm-4
+                input.form-control(type='text', name='website3Link', id='website3Link', value='#{user.portfolio.website3Link}')
+        .form-group
+            label.col-sm-3.col-sm-offset-2.control-label(for='website3Image') 3rd Portfolio Website Image Link
+            .col-sm-4
+                input.form-control(type='text', name='website3Image', id='website3Image', value='#{user.portfolio.website3Image}')
+        .form-group
+          .col-sm-offset-2.col-sm-4
+            button.btn.btn.btn-primary(type='submit')
+              span.ion-edit
+              | Update my profile
     .panel
         .big-break
         .container.text-center

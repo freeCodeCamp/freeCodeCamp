@@ -243,6 +243,10 @@ app.get(
     '/challenges/:challengeNumber',
     challengesController.returnChallenge
 );
+app.get(
+    '/users/:username',
+    userController.returnUser
+);
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);

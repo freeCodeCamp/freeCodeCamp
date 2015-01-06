@@ -1,0 +1,32 @@
+extends ../layout
+block content
+    .panel.panel-primary
+        .panel-heading.text-center @#{username}
+        .panel-body
+            .row
+                .col-xs-2.col-sm-1.col-md-1
+                    img(src="#{picture}")
+                .col-xs-4.col-sm-2.col-md-2
+                    h2.nameline
+                        = "[ " + user.points + " ]"
+                .col-xs-6.col-sm-9.col-md-9
+                    h2.nameline
+                        = name
+            h4= location
+            a(href="#{coderbyteProfile")
+            | Coderbyte Profile
+            - if (ch[0] > 0)
+                .container
+                    h1 Completed Challenges
+                    .col-xs-12
+                        table.table.table-striped
+                            thead
+                                tr
+                                    th Challenge
+                                    th Date Finished
+                    for challenge in challenges
+                        if ch[challenge.challengeNumber] > 0
+                            tr
+                                td= challenges[challenge.challengeNumber].name
+                                td= moment(ch[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
+                    br
