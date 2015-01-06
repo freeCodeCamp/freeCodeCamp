@@ -5,7 +5,7 @@ block content
         .panel-body
             .row
                 .col-xs-2.col-sm-1.col-md-1
-                    img(src="#{picture}")
+                    img(src="#{user.picture}")
                 .col-xs-4.col-sm-2.col-md-2
                     h2.nameline
                         = "[ " + user.points + " ]"
@@ -13,8 +13,15 @@ block content
                     h2.nameline
                         = name
             h4= location
-            a(href="#{coderbyteProfile")
+            a(href="http://twitter.com/#{user.profile.twitterHandle}")
+            |= "@#{twitterHandle} on Twitter"
+            a(href="#{user.profile.coderbyteProfile")
             | Coderbyte Profile
+            a(href="#{user.profile.linkedin")
+            | LinkedIn Profile
+            a(href="#{user.profile.codepen")
+            | Codepen Portfolio
+            a(href=linkedin)
             - if (ch[0] > 0)
                 .container
                     h1 Completed Challenges

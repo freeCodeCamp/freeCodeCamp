@@ -42,3 +42,10 @@ $(document).ready(function() {
   });
 });
 
+var profileValidation = angular.module('profileValidation',[]);
+profileValidation.controller('profileValidationController', ['$scope',
+    function($scope) {
+        $scope.twitterHandle = '@yournamehere';
+        $scope.user.name = req.user.name;
+    }
+]);

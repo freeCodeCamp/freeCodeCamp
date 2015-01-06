@@ -1,23 +1,18 @@
 extends ../layout
-script.
-    var freecodecamp = angular.module('freecodecamp',[]);
-    freecodecamp.controller('freecodecampController', ['$scope',
-        function($scope) {
-            $scope.twitterHandle = '@yournamehere'
-        }
-    ]);
-
-
 block content
-    .panel(ng-controller="freecodecampController")
+    .panel(ng-controller="profileValidationController")
       .container.text-center
         h1 Update your profile here:
       form.form-horizontal(action='/account/profile', method='POST')
-        input(type='hidden', name='_csrf', value=_csrf)
+        //input(type='hidden', name='_csrf', value=_csrf)
+        //.form-group
+        //  label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
+        //  .col-sm-4
+        //    input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='name') Name
           .col-sm-4
-            input.form-control(type='text', name='name', id='name', value='#{user.profile.name}')
+              input.form-control(type='text', placeholder='Name', name='name', ng-model='user.name', ng-minlength='3', ng-maxlength='20', required='required', ng-focus='ng-focus', id='name', value='{{user.name}}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (use letters, numbers, underscore) *
           .col-sm-4
