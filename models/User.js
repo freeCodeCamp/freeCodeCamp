@@ -293,6 +293,14 @@ var userSchema = new mongoose.Schema({
     coderbyteProfile: {
       type: String,
       default: ''
+    },
+    codepenProfile: {
+      type: String,
+      default: ''
+    },
+    twitterHandle: {
+      type: String,
+      default: ''
     }
   },
   portfolio: {

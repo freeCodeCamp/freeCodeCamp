@@ -169,6 +169,8 @@ exports.returnUser = function(req, res, next) {
           coderbyteProfile: user.profile.linkedinProfile,
           githubProfile: user.profile.githubProfile,
           linkedinProfile: user.profile.linkedinProfile,
+          codepenProfile: user.codepenProfile,
+          twitterHandle: user.twitterHandle,
           website1: user.portfolio.website1Link,
           website1Title: user.portfolio.website1Title,
           website1Image: user.portfolio.website1Image,
@@ -229,6 +231,7 @@ exports.postUpdateProfile = function(req, res, next) {
     req.assert('email', 'Please enter a valid email address.').isEmail();
     req.assert('username', 'Your username cannot be longer than 20 characters').len(1, 20);
     req.assert('username', 'Your username can only use letters, numbers or underscores').matchRegex(/^[A-z0-9_]+$/);
+    req.assert('githubProfile', 'Please enter a valid URL (www.example.com)').matchRegex(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/);
     var errors = req.validationErrors();
     if (errors) {
       req.flash('errors', errors);
@@ -262,7 +265,11 @@ exports.postUpdateProfile = function(req, res, next) {
         user.profile.name = req.body.name || '';
         user.profile.username = req.body.username || '';
         user.profile.location = req.body.location || '';
-        user.profile.website = req.body.website || '';
+        user.profile.githubProfile = req.body.githubProfile || '';
+        user.profile.coderbyteProfile = req.body.coderbyteProfile || '';
+        user.profile.linkedinProfile = req.body.linkedinProfile || '';
+        user.profile.codepenProfile = req.body.codepenProfile || '';
+        user.profile.twitterHandle = req.body.twitterHandle || '';
         user.portfolio.website1Title = req.body.website1Title || '';
         user.portfolio.website1Link = req.body.website1Link || '';
         user.portfolio.website1Image = req.body.website1Image || '';

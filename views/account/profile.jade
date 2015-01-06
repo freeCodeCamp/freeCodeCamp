@@ -1,7 +1,15 @@
 extends ../layout
+script.
+    var freecodecamp = angular.module('freecodecamp',[]);
+    freecodecamp.controller('freecodecampController', ['$scope',
+        function($scope) {
+            $scope.twitterHandle = '@yournamehere'
+        }
+    ]);
+
 
 block content
-    .panel
+    .panel(ng-controller="freecodecampController")
       .container.text-center
         h1 Update your profile here:
       form.form-horizontal(action='/account/profile', method='POST')
@@ -22,9 +30,28 @@ block content
           label.col-sm-3.col-sm-offset-2.control-label(for='location') Location
           .col-sm-4
             input.form-control(type='text', name='location', id='location', value='#{user.profile.location}')
-
-
-
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='email') Twitter Handle
+          .col-sm-4
+            input.form-control(type='text', name='twitterHandle', id='twitterHandle', ng-model="twitterHandle" value='#{user.profile.twitterHandle}')
+            span
+                {{twitterHandle}}
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='email') Github Profile Link
+          .col-sm-4
+            input.form-control(type='text', name='githubProfile', id='githubProfile', value='#{user.profile.githubProfile}')
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='email') CodePen Profile Link
+          .col-sm-4
+            input.form-control(type='text', name='codepenProfile', id='codepenProfile', value='#{user.profile.codepenProfile}')
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='email') CoderByte Profile Link
+          .col-sm-4
+            input.form-control(type='text', name='coderbyteProfile', id='coderbyteProfile', value='#{user.profile.coderbyteProfile}')
+        .form-group
+          label.col-sm-3.col-sm-offset-2.control-label(for='email') LinkedIn Profile Link
+          .col-sm-4
+            input.form-control(type='text', name='linkedinProfile', id='linkedinProfile', value='#{user.profile.linkedinProfile}')
         .form-group
           label.col-sm-3.col-sm-offset-2.control-label(for='website1Title') 1st Portfolio Website Title
           .col-sm-4
@@ -153,3 +180,4 @@ block content
                               button.btn.btn-danger.btn-block(type='submit')
                                   span.ion-trash-b
                                   | Yes, Delete my account
+

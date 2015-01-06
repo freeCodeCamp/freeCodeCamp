@@ -108,17 +108,18 @@ var trusted = [
     "'self'",
     '*.freecodecamp.com',
     '*.gstatic.com',
-    "*.google-analytics.com",
-    "*.googleapis.com",
-    "*.google.com",
-    "*.gstatic.com",
-    "*.doubleclick.net",
-    "*.twitter.com",
+    '*.google-analytics.com',
+    '*.googleapis.com',
+    '*.google.com',
+    '*.gstatic.com',
+    '*.doubleclick.net',
+    '*.twitter.com',
     '*.twimg.com',
     "'unsafe-eval'",
     "'unsafe-inline'",
-    "*.rafflecopter.com",
-    "localhost:3001"
+    '*.rafflecopter.com',
+    '*.cloudflare.com',
+    'localhost:3001'
 ];
 
 debug(trusted);
