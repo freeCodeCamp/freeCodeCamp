@@ -32,30 +32,18 @@ module.exports = {
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
     client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, response) {
       var nonprofitProjects = (trello && trello.length) || 15;
-      User.count({}, function(err, users) { if (err) { debug('User err: ', err); next(err); }
-        User.count({'points': {'$gt': 2}}, function(err, c2) { if (err) { debug('User err: ', err); next(err); }
-          User.count({'points': {'$gt': 4}}, function(err, c4) { if (err) { debug('User err: ', err); next(err); }
-            User.count({'points': {'$gt': 9}}, function(err, c9) { if (err) { debug('User err: ', err); next(err); }
-              User.count({'points': {'$gt': 19}}, function(err, c19) { if (err) { debug('User err: ', err); next(err); }
-                User.count({'points': {'$gt': 29}}, function(err, c29) { if (err) { debug('User err: ', err); next(err); }
-                  User.count({'points': {'$gt': 39}}, function(err, c39) { if (err) { debug('User err: ', err); next(err); }
-                    User.count({'points': {'$gt': 53}}, function(err, all) { if (err) { debug('User err: ', err); next(err); }
-                      res.render('resources/stats', {
-                        title: 'Free Code Camp Stats:',
-                        daysRunning: daysRunning,
-                        users: users,
-                        nonprofitProjects: nonprofitProjects,
-                        c2: c2,
-                        c4: c4,
-                        c9: c9,
-                        c19: c19,
-                        c29: c29,
-                        c39: c39,
-                        all: all
-                      });
-                    });
-                  });
-                });
+      User.count({'points': {'$gt': 2}}, function(err, c3) { if (err) { debug('User err: ', err); next(err); }
+        User.count({'points': {'$gt': 9}}, function(err, c10) { if (err) { debug('User err: ', err); next(err); }
+          User.count({'points': {'$gt': 29}}, function(err, c30) { if (err) { debug('User err: ', err); next(err); }
+            User.count({'points': {'$gt': 53}}, function(err, all) { if (err) { debug('User err: ', err); next(err); }
+              res.render('resources/stats', {
+                title: 'Free Code Camp Stats:',
+                daysRunning: daysRunning,
+                nonprofitProjects: nonprofitProjects,
+                c3: c3,
+                c10: c10,
+                c30: c30,
+                all: all
               });
             });
           });
@@ -138,30 +126,18 @@ module.exports = {
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
     client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, response) {
       var nonprofitProjects = trello.length || 15;
-      User.count({}, function(err, users) { if (err) { debug('User err: ', err); next(err); }
-        User.count({'points': {'$gt': 2}}, function(err, c2) { if (err) { debug('User err: ', err); next(err); }
-          User.count({'points': {'$gt': 4}}, function(err, c4) { if (err) { debug('User err: ', err); next(err); }
-            User.count({'points': {'$gt': 9}}, function(err, c9) { if (err) { debug('User err: ', err); next(err); }
-              User.count({'points': {'$gt': 19}}, function(err, c19) { if (err) { debug('User err: ', err); next(err); }
-                User.count({'points': {'$gt': 29}}, function(err, c29) { if (err) { debug('User err: ', err); next(err); }
-                  User.count({'points': {'$gt': 39}}, function(err, c39) { if (err) { debug('User err: ', err); next(err); }
-                    User.count({'points': {'$gt': 53}}, function(err, all) { if (err) { debug('User err: ', err); next(err); }
-                      res.render('resources/about', {
-                        title: 'About Free Code Camp and Our Team of Volunteers',
-                        daysRunning: daysRunning,
-                        users: users,
-                        nonprofitProjects: nonprofitProjects,
-                        c2: c2,
-                        c4: c4,
-                        c9: c9,
-                        c19: c19,
-                        c29: c29,
-                        c39: c39,
-                        all: all
-                      });
-                    });
-                  });
-                });
+      User.count({'points': {'$gt': 2}}, function(err, c3) { if (err) { debug('User err: ', err); next(err); }
+        User.count({'points': {'$gt': 9}}, function(err, c10) { if (err) { debug('User err: ', err); next(err); }
+          User.count({'points': {'$gt': 29}}, function(err, c30) { if (err) { debug('User err: ', err); next(err); }
+            User.count({'points': {'$gt': 53}}, function(err, all) { if (err) { debug('User err: ', err); next(err); }
+              res.render('resources/about', {
+                title: 'About Free Code Camp and Our Team of Volunteers',
+                daysRunning: daysRunning,
+                nonprofitProjects: nonprofitProjects,
+                c3: c3,
+                c10: c10,
+                c30: c30,
+                all: all
               });
             });
           });
