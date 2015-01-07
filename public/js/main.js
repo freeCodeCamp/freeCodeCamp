@@ -50,16 +50,4 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
         });
     }
 ]);
-profileValidation.filter('anyInvalidDirtyFields', function () {
-  return function(form) {
-    for(var prop in form) {
-      if(form.hasOwnProperty(prop)) {
-        if(form[prop].$invalid && form[prop].$dirty) {
-          return true; 
-        }
-      }
-    }
-    return false;
-  };
-});
 
