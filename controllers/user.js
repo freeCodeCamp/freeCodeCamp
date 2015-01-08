@@ -243,12 +243,6 @@ exports.updateProgress = function(req, res) {
 exports.postUpdateProfile = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
-
-    req.assert('email', 'Email is required').notEmpty();
-    req.assert('email', 'Please enter a valid email address.').isEmail();
-    req.assert('username', 'Your username cannot be longer than 20 characters').len(1, 20);
-    req.assert('username', 'Your username can only use letters, numbers or underscores').matchRegex(/^[A-z0-9_]+$/);
-    req.assert('githubProfile', 'Please enter a valid URL (www.example.com)').matchRegex(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/);
     var errors = req.validationErrors();
     if (errors) {
       req.flash('errors', errors);
