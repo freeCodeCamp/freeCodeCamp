@@ -272,23 +272,28 @@ var userSchema = new mongoose.Schema({
       trim: true
     },
     name: {
-      type: String, default: ''
+      type: String,
+      default: ''
     },
     gender: {
-      type: String, default: ''
+      type: String,
+      default: ''
     },
     location: {
-      type: String, default: ''
+      type: String,
+      default: ''
     },
     picture: {
       type: String,
       default: ''
     },
     linkedinProfile: {
-      type: String, default: ''
+      type: String,
+      default: ''
     },
     githubProfile: {
-      type: String, default: ''
+      type: String,
+      default: ''
     },
     coderbyteProfile: {
       type: String,
