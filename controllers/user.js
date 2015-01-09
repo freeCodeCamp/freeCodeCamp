@@ -186,8 +186,9 @@ exports.returnUser = function(req, res, next) {
           coderbyteProfile: user.profile.linkedinProfile,
           githubProfile: user.profile.githubProfile,
           linkedinProfile: user.profile.linkedinProfile,
-          codepenProfile: user.codepenProfile,
-          twitterHandle: user.twitterHandle,
+          codepenProfile: user.profile.codepenProfile,
+          twitterHandle: user.profile.twitterHandle,
+          bio: user.profile.bio,
           website1: user.portfolio.website1Link,
           website1Title: user.portfolio.website1Title,
           website1Image: user.portfolio.website1Image,
@@ -281,6 +282,7 @@ exports.postUpdateProfile = function(req, res, next) {
         user.profile.linkedinProfile = req.body.linkedinProfile || '';
         user.profile.codepenProfile = req.body.codepenProfile || '';
         user.profile.twitterHandle = req.body.twitterHandle || '';
+        user.profile.bio = req.body.bio || '';
         user.portfolio.website1Title = req.body.website1Title || '';
         user.portfolio.website1Link = req.body.website1Link || '';
         user.portfolio.website1Image = req.body.website1Image || '';

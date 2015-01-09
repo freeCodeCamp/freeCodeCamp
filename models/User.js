@@ -271,6 +271,10 @@ var userSchema = new mongoose.Schema({
       lowercase: true,
       trim: true
     },
+    bio: {
+      type: String,
+      defaults: ''
+    },
     name: {
       type: String,
       default: ''
