@@ -2,39 +2,101 @@ extends ../layout
 block content
     .row
         .col-sm-12.col-md-8.col-xs-12
-            .panel.panel-primary
+            .panel.panel-primary.min650
                 .panel-heading.text-center @#{username}'s Portfolio:
                 .panel-body
+                    if (website1Title && website1Link && website1Image)
+                        .row
+                            .col-xs-12.col-md-4
+                                img.img-responsive.portfolio-image.img-center(src=website1Image, alt="@#{username}'s #{website1Title")
+                            .col-xs-12.col-md-8
+                                h3.text-center.wrappable.flat-top= website1Title
+                                a.btn.btn-lg.btn-block.btn-info(href=website1Link, target='_blank')
+                                    i.fa.icon-beaker
+                                    | Try it out
+                        br
+                    if (website1Title && website1Link && !website1Image)
+                        .col-xs-12.col-md-12
+                            h3.text-center.wrappable.flat-top= website1Title
+                            a.btn.btn-lg.btn-block.btn-info(href=website1Link, target='_blank')
+                                i.fa.icon-beaker
+                                | Try it out
+                            br
+                    if (website2Title && website2Link && website2Image)
+                        .row
+                            .col-xs-12.col-md-4
+                                img.img-responsive.portfolio-image.img-center(src=website2Image, alt="@#{username}'s #{website2Title")
+                            .col-xs-12.col-md-8
+                                h3.text-center.wrappable.flat-top= website2Title
+                                a.btn.btn-lg.btn-block.btn-info(href=website2Link, target='_blank')
+                                    i.fa.icon-beaker
+                                    | Try it out
+                        br
+                    if (website2Title && website2Link && !website2Image)
+                        .col-xs-12.col-md-12
+                            h3.text-center.wrappable.flat-top= website2Title
+                            a.btn.btn-lg.btn-block.btn-info(href=website2Link, target='_blank')
+                                i.fa.icon-beaker
+                                | Try it out
+                            br
+                    if (website3Title && website3Link && website3Image)
+                        .row
+                            .col-xs-12.col-md-4
+                                img.img-responsive.portfolio-image.img-center(src=website3Image, alt="@#{username}'s #{website1Title")
+                            .col-xs-12.col-md-8
+                                h3.text-center.wrappable.flat-top= website3Title
+                                a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
+                                    i.fa.icon-beaker
+                                    | Try it out
+                    if (website3Title && website3Link && !website3Image)
+                        .col-xs-12.col-md-12
+                            h3.text-center.wrappable.flat-top= website3Title
+                            a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
+                                i.fa.icon-beaker
+                                | Try it out
         .col-sm-12.col-md-4.col-xs-12
-            .panel.panel-primary
+            .panel.panel-primary.min650
                 .panel-heading.text-center About @#{username}:
                 .panel-body
                     .col-xs-12
-                        img.img-center.img-responsive.public-profile-img(src=picture)
+                        if picture
+                            img.img-center.img-responsive.public-profile-img(src=picture)
+                        else
+                            img.img-center.img-responsive.public-profile-img(src='#{user.gravatar(200)}')
                     .row
-                        .col-xs-4
-                            h1.text-center
+                        .col-xs-4.text-right
+                            h1
                                 = "[ " + user.points + " ]"
-                        .col-xs-8
+                        .col-xs-8.text-left
                             h1
                                 - if (twitterHandle)
                                     a.ion-social-twitter.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}")
-                                a.ion-social-github.text-primary(title="@#{username}'s GitHub Profile", href=githubProfile)
-                                a.ion-social-linkedin.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedinProfile)
-                                a.ion-social-codepen.text-primary(title="@#{username}'s CodePen Profile", href=codepenProfile)
-                                a.ion-social-javascript.text-primary(title="@#{username}'s CoderByte Profile", href=coderbyteProfile)
-                    .col-xs-12
-                        h2= name
-                        h3= location
-                        - if (ch[0] > 0)
-                            .container
-                                h1 Completed Challenges
-                                .col-xs-12
-                                    table.table.table-striped
-                                        thead
-                                            tr
-                                                th Challenge
-                                                th Date Finished
+                                - if (githubProfile)
+                                    a.ion-social-github.text-primary(title="@#{username}'s GitHub Profile", href=githubProfile)
+                                - if (linkedinProfile)
+                                    a.ion-social-linkedin.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedinProfile)
+                                - if (codepenProfile)
+                                    a.ion-social-codepen.text-primary(title="@#{username}'s CodePen Profile", href=codepenProfile)
+                                - if (coderbyteProfile)
+                                    a.ion-social-javascript.text-primary(title="@#{username}'s CoderByte Profile", href=coderbyteProfile)
+                        .col-xs-12.text-center
+                            h1.flat-top.wrappable= name
+                            h3.flat-top.bolded.wrappable= location
+                            h4.flat-top.wrappable= bio
+                            br
+
+    - if (ch[0] > 0)
+        .row
+            .col-sm-12
+                .panel.panel-primary
+                    .panel-heading.text-center @#{username}'s Completed Challenges:
+                    .panel-body
+                        .col-sm-12
+                            table.table.table-striped
+                                thead
+                                    tr
+                                        th Challenge
+                                        th Date Finished
                                 for challenge in challenges
                                     if ch[challenge.challengeNumber] > 0
                                         tr

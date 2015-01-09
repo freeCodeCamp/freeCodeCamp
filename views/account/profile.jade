@@ -63,6 +63,15 @@ block content
                     input.form-control(type='text', name='location', id='location', ng-model='user.profile.location')
 
                 .form-group
+                    label.col-sm-3.col-sm-offset-2.control-label(for='email') Link to Profile Photo
+                    .col-sm-4
+                        input.form-control(type='url', name='picture', id='picture', ng-model='user.profile.picture', placeholder='http://')
+                    .col-sm-4.col-sm-offset-5(ng-show="profileForm.picture.$error.url && !profileForm.picture.$pristine")
+                        alert(type='danger')
+                            span.ion-close-circled
+                            | Please enter a valid URL format (http://www.example.com).
+
+                .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='bio') Bio (140 characters)
                   .col-sm-4
                     input.form-control(type='text', name='bio', ng-model='user.profile.bio', ng-maxlength='140', id='bio')
@@ -202,19 +211,18 @@ block content
                             span.ion-edit
                             | Update my Portfolio
                         br
-    .panel
-        .big-break
-        .container.text-center
-            a.btn.btn-cta.signup-btn(href='/') Take me to my current challenge
-        .big-break
-        .container.text-center
-            a.btn.btn-default.btn-big(href='/logout') Sign out
-        .big-break
-
+    .panel.panel-primary
+        .panel-heading.text-center Actions
+        .panel-body
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/campers/#{user.profile.username}') Check out my Public Profile
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/') Take me to my current challenge
+                a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout') Sign out
+            br
     - if (!user.google || !user.facebook || !user.github || !user.linkedin || !user.twitter)
-        .panel
-            .container.text-center
-                h1 Link other services to your account:
+        .panel.panel-primary
+            .panel-heading.text-center Link other services to your account:
+            .panel-body
                 - if (!user.google)
                     .col-xs-12
                         a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/auth/google')
@@ -242,9 +250,9 @@ block content
                             | Link Twitter with your account
             br
     - if (ch[0] > 0)
-        .panel
-            .container
-                h1 Completed Challenges
+        .panel.panel-primary
+            .panel-heading.text-center Completed Challenges:
+            .panel-body
                 .col-xs-12
                   table.table.table-striped
                     thead
@@ -257,38 +265,39 @@ block content
                           td= challenges[challenge.challengeNumber].name
                           td= moment(ch[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
             br
-    .panel
-        .container
-          h3 Danger Zone
-          button.btn.btn-danger.confirm-deletion
-            span.ion-trash-b
-            | I want to delete my account
-          br
-          br
-          script.
-              $('.confirm-deletion').on("click", function() {
-                $('#modal-dialog').modal('show');
-              });
-          #modal-dialog.modal.animated.wobble
-              .modal-dialog
-                  .modal-content
-                      .modal-header
-                          a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                          h3 Are you really leaving us?
-                      .modal-body
-                          p Pro Tip: If you tweet feedback to&nbsp;
-                              a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
-                              | ,&nbsp;we'll act quickly on it!
-                      .modal-footer
-                          a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                              span.ion-happy
-                              | Nevermind, I'll stick around
-                          br
-                          form(action='/account/delete', method='POST')
-                              input(type='hidden', name='_csrf', value=_csrf)
-                              button.btn.btn-danger.btn-block(type='submit')
-                                  span.ion-trash-b
-                                  | Yes, Delete my account
+    .panel.panel-danger
+        .panel-heading.text-center Danger Zone:
+        .panel-body
+            .col-xs-12.text-center
+              button.btn.btn-danger.btn-small.confirm-deletion
+                  span.ion-trash-b
+                  | I want to delete my account
+              br
+              br
+              script.
+                  $('.confirm-deletion').on("click", function() {
+                    $('#modal-dialog').modal('show');
+                  });
+              #modal-dialog.modal.animated.wobble
+                  .modal-dialog
+                      .modal-content
+                          .modal-header
+                              a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                              h3 Are you really leaving us?
+                          .modal-body
+                              p Pro Tip: If you tweet feedback to&nbsp;
+                                  a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
+                                  | ,&nbsp;we'll act quickly on it!
+                          .modal-footer
+                              a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                                  span.ion-happy
+                                  | Nevermind, I'll stick around
+                              br
+                              form(action='/account/delete', method='POST')
+                                  input(type='hidden', name='_csrf', value=_csrf)
+                                  button.btn.btn-danger.btn-block(type='submit')
+                                      span.ion-trash-b
+                                      | Yes, Delete my account
 
 
 

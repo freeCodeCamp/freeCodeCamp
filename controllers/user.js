@@ -168,7 +168,7 @@ exports.getAccount = function(req, res) {
 
 
 /**
- * GET /users/:username
+ * GET /campers/:username
  * Public Profile page.
  */
 
@@ -189,16 +189,16 @@ exports.returnUser = function(req, res, next) {
           codepenProfile: user.profile.codepenProfile,
           twitterHandle: user.profile.twitterHandle,
           bio: user.profile.bio,
-          website1: user.portfolio.website1Link,
+          picture: user.profile.picture,
+          website1Link: user.portfolio.website1Link,
           website1Title: user.portfolio.website1Title,
           website1Image: user.portfolio.website1Image,
-          website2: user.portfolio.website2Link,
+          website2Link: user.portfolio.website2Link,
           website2Title: user.portfolio.website2Title,
           website2Image: user.portfolio.website2Image,
-          website3: user.portfolio.website3Link,
+          website3Link: user.portfolio.website3Link,
           website3Title: user.portfolio.website3Title,
           website3Image: user.portfolio.website3Image,
-          picture: user.profile.picture,
           challenges: c,
           ch: user.challengesHash,
           moment: moment
@@ -283,6 +283,7 @@ exports.postUpdateProfile = function(req, res, next) {
         user.profile.codepenProfile = req.body.codepenProfile || '';
         user.profile.twitterHandle = req.body.twitterHandle || '';
         user.profile.bio = req.body.bio || '';
+        user.profile.picture = req.body.picture || '';
         user.portfolio.website1Title = req.body.website1Title || '';
         user.portfolio.website1Link = req.body.website1Link || '';
         user.portfolio.website1Image = req.body.website1Image || '';

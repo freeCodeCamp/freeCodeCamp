@@ -150,6 +150,7 @@ app.use(helmet.contentSecurityPolicy({
       'graph.facebook.com',
       '*.githubusercontent.com',
       '*.googleusercontent.com',
+      '*'
     ].concat(trusted),
     fontSrc: ['*.googleapis.com'].concat(trusted),
     mediaSrc: [
@@ -248,7 +249,7 @@ app.get(
     challengesController.returnChallenge
 );
 app.get(
-    '/users/:username',
+    '/campers/:username',
     userController.returnUser
 );
 app.all('/account', passportConf.isAuthenticated);
