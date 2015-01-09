@@ -12,20 +12,13 @@ var _ = require('lodash'),
     nodemailer = require('nodemailer'),
     secrets = require('./secrets');
 
-// Login Required middleware.
-module.exports = {
-  isAuthenticated: isAuthenticated,
-  isAuthorized: isAuthorized
-};
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findOne({
-    _id: id
-  }, '-password', function(err, user) {
+  User.findById(id, function(err, user) {
     done(err, user);
   });
 });
@@ -381,12 +374,16 @@ passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, r
   }
 }));
 
-function isAuthenticated(req, res, next) {
+// Login Required middleware.
+
+exports.isAuthenticated = function(req, res, next) {
   if (req.isAuthenticated()) return next();
   res.redirect('/login');
-}
+};
 
-function isAuthorized(req, res, next) {
+// Authorization Required middleware.
+
+exports.isAuthorized = function(req, res, next) {
   var provider = req.path.split('/').slice(-1)[0];
 
   if (_.find(req.user.tokens, { kind: provider })) {
@@ -394,4 +391,4 @@ function isAuthorized(req, res, next) {
   } else {
     res.redirect('/auth/' + provider);
   }
-}
+};
