@@ -127,7 +127,8 @@ var trusted = [
     'localhost:3000',
     'ws://localhost:3000/',
     'http://localhost:3000',
-    '*.ionicframework.com'
+    '*.ionicframework.com',
+    'https://syndication.twitter.com'
 ];
 
 debug(trusted);
