@@ -121,8 +121,11 @@ var trusted = [
     '*.bootstrapcdn.com',
     '*.cloudflare.com',
     'localhost:3001',
-    'localhost:3000'
-
+    'ws://localhost:3001/',
+    'http://localhost:3001',
+    'localhost:3000',
+    'ws://localhost:3000/',
+    'http://localhost:3000'
 ];
 
 debug(trusted);
@@ -134,10 +137,8 @@ app.use(helmet.contentSecurityPolicy({
       'wss://*.rafflecopter.com',
       'https://*.rafflecopter.com',
       'ws://www.freecodecamp.com',
-      'ws://localhost:3001/',
-      'http://localhost:3001',
       'http://www.freecodecamp.com'
-    ],
+    ].concat(trusted),
     styleSrc: trusted,
     imgSrc: [
       '*.evernote.com',
@@ -150,20 +151,20 @@ app.use(helmet.contentSecurityPolicy({
       'graph.facebook.com',
       '*.githubusercontent.com',
       '*.googleusercontent.com',
-      '*'
+      '*' /* allow all input since we have user submitted images for public profile*/
     ].concat(trusted),
     fontSrc: ['*.googleapis.com'].concat(trusted),
     mediaSrc: [
       '*.amazonaws.com',
       '*.twitter.com'
-    ],
+    ].concat(trusted),
     frameSrc: [
       '*.gitter.im',
       '*.vimeo.com',
       '*.twitter.com',
       '*.rafflecopter.com',
       '*.youtube.com'
-    ],
+    ].concat(trusted),
     reportOnly: false, // set to true if you only want to report errors
     setAllHeaders: false, // set to true if you want to set all headers
     safari5: false // set to true if you want to force buggy CSP in Safari 5

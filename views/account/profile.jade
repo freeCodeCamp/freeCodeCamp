@@ -224,7 +224,8 @@ block content
         .panel-heading.text-center Actions
         .panel-body
             .col-xs-12
-                a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/campers/#{user.profile.username}') Check out my Public Profile
+                if (user.profile.username)
+                    a.btn.btn-lg.btn-block.btn-info.btn-link-social(href='/campers/#{user.profile.username}') Check out my Public Profile
                 a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/') Take me to my current challenge
                 a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout') Sign out
             br
