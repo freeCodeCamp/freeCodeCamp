@@ -209,6 +209,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
           user.profile.name = user.profile.name || profile.displayName;
           user.profile.location = user.profile.location || profile._json.location;
           user.profile.picture = user.profile.picture || profile._json.profile_image_url_https.replace('_normal', '');
+          user.profile.twitterHandle = user.profile.twitterHandle || profile.username;
           user.save(function(err) {
             req.flash('info', { msg: 'Twitter account has been linked.' });
             done(err, user);
@@ -227,6 +228,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
       user.profile.name = profile.displayName;
       user.profile.location = profile._json.location;
       user.profile.picture = profile._json.profile_image_url_https.replace('_normal', '');
+      user.profile.twitterHandle = user.profile.twitterHandle || profile.username;
       user.save(function(err) {
         done(err, user);
       });
