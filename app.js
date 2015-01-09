@@ -293,12 +293,10 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get(
   '/auth/twitter/callback',
   passport.authenticate('twitter', {
-    successRedirect: '/auth/twitter/middle',
+    successRedirect: '/',
     failureRedirect: '/login'
   })
 );
-
-app.get('/auth/twitter/middle', passportConf.hasEmail);
 
 app.get(
   '/auth/linkedin',

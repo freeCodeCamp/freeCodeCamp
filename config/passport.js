@@ -15,7 +15,6 @@ var _ = require('lodash'),
 module.exports = {
   isAuthenticated: isAuthenticated,
   isAuthorized: isAuthorized,
-  hasEmail: hasEmail
 };
 
 passport.serializeUser(function(user, done) {
@@ -59,7 +58,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
           user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
           user.profile.name = user.profile.name || profile.displayName;
           user.profile.location = user.profile.location || profile._json.location;
-          user.profile.picture = user.profile.picture || profile._json.profile_image_url_https;
+          user.profile.picture = user.profile.picture || profile._json.profile_image_url_https.replace('_normal', '');
           user.save(function(err) {
             req.flash('info', { msg: 'Twitter account has been linked.' });
             done(err, user);
@@ -75,13 +74,13 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
       // Twitter will not provide an email address.  Period.
       // But a person’s twitter username is guaranteed to be unique
       // so we can "fake" a twitter email address as follows:
-      user.email = profile.username + "@please_add_your_email_here.com";
+      user.email = '';
       user.profile.username = profile.username;
       user.twitter = profile.id;
       user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
       user.profile.name = profile.displayName;
       user.profile.location = profile._json.location;
-      user.profile.picture = profile._json.profile_image_url_https;
+      user.profile.picture = profile._json.profile_image_url_https.replace('_normal', '');
       user.save(function(err) {
         done(err, user);
       });
@@ -477,20 +476,6 @@ function isAuthenticated(req, res, next) {
   res.redirect('/login');
 }
 
-function hasEmail(req, res) {
-  if (req.user) {
-      if (req.user.email) {
-        res.redirect('/');
-      } else {
-        req.flash('info', {
-          msg: 'Please add your email address before starting our challenges.'
-        });
-        res.redirect('/account');
-      }
-  }
-}
-
-// Authorization Required middleware.
 function isAuthorized(req, res, next) {
   var provider = req.path.split('/').slice(-1)[0];
 
