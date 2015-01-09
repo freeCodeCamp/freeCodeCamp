@@ -102,6 +102,7 @@ app.use(flash());
 app.disable('x-powered-by');
 
 app.use(helmet.xssFilter());
+app.use(helmet.noSniff());
 app.use(helmet.xframe());
 
 var trusted = [

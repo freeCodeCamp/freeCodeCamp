@@ -47,6 +47,9 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
     function($scope, $http) {
         $http.get('/account/api').success(function(data) {
             $scope.user = data.user;
+            $scope.user.profile.username = $scope.user.profile.username.toLowerCase();
+            $scope.user.email = $scope.user.email.toLowerCase();
+            $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle.toLowerCase();
         });
     }
 ]);
