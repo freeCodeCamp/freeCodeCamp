@@ -42,3 +42,12 @@ $(document).ready(function() {
   });
 });
 
+var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
+profileValidation.controller('profileValidationController', ['$scope', '$http',
+    function($scope, $http) {
+        $http.get('/account/api').success(function(data) {
+            $scope.user = data.user;
+        });
+    }
+]);
+

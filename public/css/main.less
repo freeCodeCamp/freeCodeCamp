@@ -1,6 +1,5 @@
 @import "lib/bootstrap/bootstrap";
 @import "lib/bootstrap-social/bootstrap-social";
-@import "lib/font-awesome/font-awesome";
 @import "lib/ionicons/ionicons";
 @import "lib/animate.min.less";
 
@@ -12,7 +11,7 @@ html,body,div,span,a,li,td,th {
   font-weight: 300;
 }
 
-li {
+li, .wrappable {
   white-space: pre;           /* CSS 2.0 */
   white-space: pre-wrap;      /* CSS 2.1 */
   white-space: pre-line;      /* CSS 3.0 */
@@ -29,7 +28,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 80px;
   margin-bottom: 75px;
 }
 
@@ -380,4 +379,40 @@ thead {
   margin-top:-2px !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
+}
+
+.nameline {
+  margin-top: -5px;
+  font-size: 40px;
+}
+
+.public-profile-img {
+  height: 200px;
+  width: 200px;
+}
+
+.ng-invalid.ng-dirty {
+  border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}
+
+.desktop-narrow {
+  @media (min-width: 767px) {
+    marign: 0 auto;
+    width: 80%;
+  }
+}
+
+.min650 {
+  min-height: 630px;
+}
+
+.portfolio-image {
+  max-height: 164px;
+}
+
+.flat-top {
+  margin-top: -5px;
 }

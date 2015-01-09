@@ -9,7 +9,7 @@
         "Welcome to Free Code Camp. We're a community of busy people learning to code.",
         "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And the best way to stay motivated is to code with friends.",
         "To maximize accessibility, all our challenges are self-paced, browser-based, and free.",
-        "All of us start with the same 100 hours of interactive coding challenges. These cover everything from Computer Science to SQL. They also cover in-demand JavaScript tools like jQuery, Node.js and MongoDB.",
+        "All of us start with the same 100 hours of interactive coding challenges. These cover Computer Science and databases. They also cover in-demand JavaScript tools like jQuery, Node.js and MongoDB.",
         "Once we have a basic understanding of web development, we'll spend another 900 hours putting that theory into practice. We'll build full stack solutions for nonprofits.",
         "By the end of this process, we'll be good at coding. We'll have a portfolio of apps with happy users to prove it. We'll also have an alumni network of fellow coders and nonprofits ready to serve as references.",
         "If you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
@@ -58,7 +58,7 @@
     "video": "114627406",
     "challengeNumber": 3,
     "steps": [
-        "There are tons of interactive HTML and CSS tutorials out there, but Nathan Bashaw's Dash tutorials, which he built for General Assembly, are our favorite.",
+        "There are tons of interactive HTML and CSS tutorials out there, but Nathan Bashaw and Christine Bower's Dash tutorials - which they built for General Assembly - are our favorite.",
         "Go to <a href='https://dash.generalassemb.ly/projects/annas-website-1' target='_blank'>https://dash.generalassemb.ly/projects/annas-website-1</a> and get started with your first project."]
   },
   {
@@ -456,7 +456,7 @@
     "video": "114686471",
     "challengeNumber": 36,
     "steps": [
-      "Now that we understand some Computer Science, JavaScript programming, and how Databases work, you're ready to move on to Full-stack JavaScript!",
+      "Now that we understand some Computer Science and JavaScript programming, you're ready to move on to Full-stack JavaScript!",
       "The first step is to familiarize ourselves Node.js, the JavaScript-based web server that most full-stack JavaScript apps use.",
       "Code School has an excellent course on Node.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. The challenges immediately following these Node.js challenges also require a Code School course, so you may want to try to complete all these challenges in one two-day period. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
       "When you're ready, go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1</a> and complete the first chapter."

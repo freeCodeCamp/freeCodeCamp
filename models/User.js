@@ -6,6 +6,7 @@ var userSchema = new mongoose.Schema({
   email: {
     type: String,
     lowercase: true,
+    unique: true,
     trim: true
   },
   password: String,
@@ -13,7 +14,6 @@ var userSchema = new mongoose.Schema({
   twitter: String,
   google: String,
   github: String,
-  instagram: String,
   linkedin: String,
   tokens: Array,
   points: {
@@ -264,16 +264,26 @@ var userSchema = new mongoose.Schema({
     }
   },
   profile: {
+    username: {
+      type: String,
+      default: '',
+      unique: true,
+      lowercase: true,
+      trim: true
+    },
+    bio: {
+      type: String,
+      defaults: ''
+    },
     name: {
-      type: String, default: ''
+      type: String,
+      default: ''
     },
     gender: {
-      type: String, default: ''
+      type: String,
+      default: ''
     },
     location: {
-      type: String, default: ''
-    },
-    website: {
       type: String,
       default: ''
     },
@@ -281,15 +291,65 @@ var userSchema = new mongoose.Schema({
       type: String,
       default: ''
     },
-    username: {
+    linkedinProfile: {
       type: String,
-      default: '',
-      //unique: true,
-      lowercase: true,
-      trim: true
+      default: ''
+    },
+    githubProfile: {
+      type: String,
+      default: ''
+    },
+    coderbyteProfile: {
+      type: String,
+      default: ''
+    },
+    codepenProfile: {
+      type: String,
+      default: ''
+    },
+    twitterHandle: {
+      type: String,
+      default: ''
     }
   },
-
+  portfolio: {
+    website1Link: {
+      type: String,
+      default: ''
+    },
+    website1Title: {
+      type: String,
+      default: ''
+    },
+    website1Image: {
+      type: String,
+      default: ''
+    },
+    website2Link: {
+      type: String,
+      default: ''
+    },
+    website2Title: {
+      type: String,
+      default: ''
+    },
+    website2Image: {
+      type: String,
+      default: ''
+    },
+    website3Link: {
+      type: String,
+      default: ''
+    },
+    website3Title: {
+      type: String,
+      default: ''
+    },
+    website3Image: {
+      type: String,
+      default: ''
+    }
+  },
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });

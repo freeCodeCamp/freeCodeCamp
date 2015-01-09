@@ -1,8 +1,12 @@
 doctype html
-html
+html(ng-app='profileValidation')
   head
-    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js")
     link(rel='shortcut icon', href='https://s3.amazonaws.com/freecodecamp/favicon.ico')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    //link(rel='stylesheet', href='http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css')
     include partials/meta
     title #{title} | Free Code Camp
     meta(charset='utf-8')

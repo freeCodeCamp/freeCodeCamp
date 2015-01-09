@@ -1,14 +1,16 @@
-var _ = require('lodash');
-var async = require('async');
-var crypto = require('crypto');
-var nodemailer = require('nodemailer');
-var passport = require('passport');
-var User = require('../models/User');
-var secrets = require('../config/secrets');
-var moment = require('moment');
-var Challenge = require('./../models/Challenge');
+var _ = require('lodash'),
+    async = require('async'),
+    crypto = require('crypto'),
+    nodemailer = require('nodemailer'),
+    passport = require('passport'),
+    User = require('../models/User'),
+    secrets = require('../config/secrets'),
+    moment = require('moment'),
+    Challenge = require('./../models/Challenge'),
+    debug = require('debug')('freecc:cntr:challenges');
 
 //TODO(Berks): Refactor to use module.exports = {} pattern.
+
 /**
  * GET /login
  * Login page.
@@ -149,6 +151,70 @@ exports.getAccount = function(req, res) {
 };
 
 /**
+ * Angular API Call
+ */
+
+ exports.getAccountAngular = function(req, res) {
+  Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
+    if (err) {
+      console.error('Challenge err: ', err);
+      next(err);
+    }
+    res.json({
+      user: req.user
+    });
+  });
+};
+
+
+/**
+ * GET /campers/:username
+ * Public Profile page.
+ */
+
+exports.returnUser = function(req, res, next) {
+  User.find({'profile.username': req.params.username}, function(err, user) {
+    if (err) { debug('Username err: ', err); next(err); }
+    if (user[0]) {
+      var user = user[0];
+      Challenge.find({}, null, {sort: {challengeNumber: 1}}, function (err, c) {
+        res.render('account/show', {
+          title: 'Code Camper: ',
+          username: user.profile.username,
+          name: user.profile.name,
+          location: user.profile.location,
+          coderbyteProfile: user.profile.linkedinProfile,
+          githubProfile: user.profile.githubProfile,
+          linkedinProfile: user.profile.linkedinProfile,
+          codepenProfile: user.profile.codepenProfile,
+          twitterHandle: user.profile.twitterHandle,
+          bio: user.profile.bio,
+          picture: user.profile.picture,
+          website1Link: user.portfolio.website1Link,
+          website1Title: user.portfolio.website1Title,
+          website1Image: user.portfolio.website1Image,
+          website2Link: user.portfolio.website2Link,
+          website2Title: user.portfolio.website2Title,
+          website2Image: user.portfolio.website2Image,
+          website3Link: user.portfolio.website3Link,
+          website3Title: user.portfolio.website3Title,
+          website3Image: user.portfolio.website3Image,
+          challenges: c,
+          ch: user.challengesHash,
+          moment: moment
+        });
+      });
+    } else {
+      req.flash('errors', {
+        msg: "We couldn't find a Code Camper with that username."
+      });
+      return res.redirect('/');
+    }
+  });
+};
+
+
+/**
  * POST /update-progress
  * Update profile information.
  */
@@ -178,11 +244,6 @@ exports.updateProgress = function(req, res) {
 exports.postUpdateProfile = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
-
-    req.assert('email', 'Email is required').notEmpty();
-    req.assert('email', 'Please enter a valid email address.').isEmail();
-    req.assert('username', 'Your username cannot be longer than 20 characters').len(1, 20);
-    req.assert('username', 'Your username can only use letters, numbers or underscores').matchRegex(/^[A-z0-9_]+$/);
     var errors = req.validationErrors();
     if (errors) {
       req.flash('errors', errors);
@@ -206,8 +267,6 @@ exports.postUpdateProfile = function(req, res, next) {
         }
         var user = req.user;
         if (existingUsername && existingUsername.profile.username != user.profile.username) {
-          console.log(user.profile.username)
-          console.log(existingUsername.username)
           req.flash('errors', {
             msg: 'An account with that username already exists.'
           });
@@ -218,7 +277,23 @@ exports.postUpdateProfile = function(req, res, next) {
         user.profile.name = req.body.name || '';
         user.profile.username = req.body.username || '';
         user.profile.location = req.body.location || '';
-        user.profile.website = req.body.website || '';
+        user.profile.githubProfile = req.body.githubProfile || '';
+        user.profile.coderbyteProfile = req.body.coderbyteProfile || '';
+        user.profile.linkedinProfile = req.body.linkedinProfile || '';
+        user.profile.codepenProfile = req.body.codepenProfile || '';
+        user.profile.twitterHandle = req.body.twitterHandle || '';
+        user.profile.bio = req.body.bio || '';
+        user.profile.picture = req.body.picture || '';
+        user.portfolio.website1Title = req.body.website1Title || '';
+        user.portfolio.website1Link = req.body.website1Link || '';
+        user.portfolio.website1Image = req.body.website1Image || '';
+        user.portfolio.website2Title = req.body.website2Title || '';
+        user.portfolio.website2Link = req.body.website2Link || '';
+        user.portfolio.website2Image = req.body.website2Image || '';
+        user.portfolio.website3Title = req.body.website3Title || '';
+        user.portfolio.website3Link = req.body.website3Link || '';
+        user.portfolio.website3Image = req.body.website3Image || '';
+
 
         user.save(function (err) {
           if (err) return next(err);

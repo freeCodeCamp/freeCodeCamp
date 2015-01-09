@@ -108,17 +108,21 @@ var trusted = [
     "'self'",
     '*.freecodecamp.com',
     '*.gstatic.com',
-    "*.google-analytics.com",
-    "*.googleapis.com",
-    "*.google.com",
-    "*.gstatic.com",
-    "*.doubleclick.net",
-    "*.twitter.com",
+    '*.google-analytics.com',
+    '*.googleapis.com',
+    '*.google.com',
+    '*.gstatic.com',
+    '*.doubleclick.net',
+    '*.twitter.com',
     '*.twimg.com',
     "'unsafe-eval'",
     "'unsafe-inline'",
-    "*.rafflecopter.com",
-    "localhost:3001"
+    '*.rafflecopter.com',
+    '*.bootstrapcdn.com',
+    '*.cloudflare.com',
+    'localhost:3001',
+    'localhost:3000'
+
 ];
 
 debug(trusted);
@@ -146,6 +150,7 @@ app.use(helmet.contentSecurityPolicy({
       'graph.facebook.com',
       '*.githubusercontent.com',
       '*.googleusercontent.com',
+      '*'
     ].concat(trusted),
     fontSrc: ['*.googleapis.com'].concat(trusted),
     mediaSrc: [
@@ -243,7 +248,12 @@ app.get(
     '/challenges/:challengeNumber',
     challengesController.returnChallenge
 );
+app.get(
+    '/campers/:username',
+    userController.returnUser
+);
 app.all('/account', passportConf.isAuthenticated);
+app.get('/account/api', userController.getAccountAngular);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);
