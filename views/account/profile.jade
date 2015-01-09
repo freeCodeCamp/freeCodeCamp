@@ -63,7 +63,7 @@ block content
                     input.form-control(type='text', name='location', id='location', ng-model='user.profile.location')
 
                 .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='email') Link to Profile Photo
+                    label.col-sm-3.col-sm-offset-2.control-label(for='email') Link to Profile Photo (1:1 ratio)
                     .col-sm-4
                         input.form-control(type='url', name='picture', id='picture', ng-model='user.profile.picture', placeholder='http://')
                     .col-sm-4.col-sm-offset-5(ng-show="profileForm.picture.$error.url && !profileForm.picture.$pristine")
@@ -87,10 +87,10 @@ block content
                           | Update my Bio
 
                 .col-sm-4.col-sm-offset-5
-                    h2 Social
+                    h2 Social Profiles
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Twitter Handle
+                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Twitter
                   .col-sm-4
                     .input-group.twitter-input
                         span.input-group-addon @
@@ -104,7 +104,7 @@ block content
                         span.ion-close-circled
                         |  Your name must be fewer than 15 characters.
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Github Profile Link
+                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Github
                   .col-sm-4
                     input.form-control(type='url', name='githubProfile', id='githubProfile', ng-model='user.profile.githubProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.githubProfile.$error.url && !profileForm.githubProfile.$pristine")
@@ -113,7 +113,7 @@ block content
                       | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') CodePen Profile Link
+                  label.col-sm-3.col-sm-offset-2.control-label(for='email') CodePen
                   .col-sm-4
                     input.form-control(type='url', name='codepenProfile', id='codepenProfile', ng-model='user.profile.codepenProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.codepenProfile.$error.url && !profileForm.codepenProfile.$pristine")
@@ -122,7 +122,7 @@ block content
                       | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') CoderByte Profile Link
+                  label.col-sm-3.col-sm-offset-2.control-label(for='email') CoderByte
                   .col-sm-4
                     input.form-control(type='url', name='coderbyteProfile', id='coderbyteProfile', ng-model='user.profile.coderbyteProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.coderbyteProfile.$error.url && !profileForm.coderbyteProfile.$pristine")
@@ -131,7 +131,7 @@ block content
                       | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') LinkedIn Profile Link
+                  label.col-sm-3.col-sm-offset-2.control-label(for='email') LinkedIn
                   .col-sm-4
                     input.form-control(type='url', name='linkedinProfile', id='linkedinProfile', ng-model='user.profile.linkedinProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.linkedinProfile.$error.url && !profileForm.linkedinProfile.$pristine")
@@ -145,11 +145,14 @@ block content
                           span.ion-edit
                           | Update my Social Links
 
-                .col-sm-4.col-sm-offset-5
+                .col-sm-4.col-sm-offset-5.negative-bottom
                     h2 Portfolio
 
+                .col-sm-4.col-sm-offset-5.flat-top
+                    h3 First Portfolio Project
+
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='website1Title') 1st Portfolio Website Title
+                  label.col-sm-3.col-sm-offset-2.control-label(for='website1Title') Title
                   .col-sm-4
                     input.form-control(type='text', name='website1Title', id='website1Title', ng-model='user.portfolio.website1Title', ng-maxlength='140')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.website1Title.$error.maxlength && !profileForm.website1Title.$pristine")
@@ -158,17 +161,20 @@ block content
                         | Portfolio project title must be fewer than 140 characters.
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='website1Link') 1st Portfolio Website Link
+                  label.col-sm-3.col-sm-offset-2.control-label(for='website1Link') Link
                   .col-sm-4
                      input.form-control(type='text', name='website1Link', id='website1Link', ng-model='user.portfolio.website1Link', placeholder='http://')
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='website1Image') 1st Portfolio Website Image Link
+                  label.col-sm-3.col-sm-offset-2.control-label(for='website1Image') Image Link (3:4 ratio)
                   .col-sm-4
                     input.form-control(type='text', name='website1Image', id='website1Image', ng-model='user.portfolio.website1Image', placeholder='http://')
 
+                .col-sm-4.col-sm-offset-5.flat-top
+                    h3 Second Portfolio Project
+
                 .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website2Title') 2nd Portfolio Website Title
+                    label.col-sm-3.col-sm-offset-2.control-label(for='website2Title') Title
                     .col-sm-4
                         input.form-control(type='text', name='website2Title', id='website2Title', ng-model='user.portfolio.website2Title', ng-maxlength='140')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.website2Title.$error.maxlength && !profileForm.website2Title.$pristine")
@@ -177,17 +183,20 @@ block content
                         | Portfolio project title must be fewer than 140 characters.
 
                 .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website2Link') 2nd Portfolio Website Link
+                    label.col-sm-3.col-sm-offset-2.control-label(for='website2Link') Link
                     .col-sm-4
                         input.form-control(type='text', name='website2Link', id='website2Link', ng-model='user.portfolio.website2Link', placeholder='http://')
 
                 .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website2Image') 2nd Portfolio Website Image Link
+                    label.col-sm-3.col-sm-offset-2.control-label(for='website2Image') Image Link (3:4 ratio)
                     .col-sm-4
                         input.form-control(type='text', name='website2Image', id='website2Image', ng-model='user.portfolio.website2Image', placeholder='http://')
 
+                .col-sm-4.col-sm-offset-5.flat-top
+                    h3 Third Portfolio Project
+
                 .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website3Title') 3rd Portfolio Website Title
+                    label.col-sm-3.col-sm-offset-2.control-label(for='website3Title') Title
                     .col-sm-4
                         input.form-control(type='text', name='website3Title', id='website3Title', ng-model='user.portfolio.website3Title', ng-maxlength='140')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.website3Title.$error.maxlength && !profileForm.website3Title.$pristine")
@@ -196,12 +205,12 @@ block content
                         | Portfolio project title must be fewer than 140 characters.
 
                 .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website3Link') 3rd Portfolio Website Link
+                    label.col-sm-3.col-sm-offset-2.control-label(for='website3Link') Link
                     .col-sm-4
                         input.form-control(type='text', name='website3Link', id='website3Link', ng-model='user.portfolio.website3Link', placeholder='http://')
 
                 .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website3Image') 3rd Portfolio Website Image Link
+                    label.col-sm-3.col-sm-offset-2.control-label(for='website3Image') Image Link (3:4 ratio)
                     .col-sm-4
                         input.form-control(type='text', name='website3Image', id='website3Image', ng-model='user.portfolio.website3Image', placeholder='http://')
 
