@@ -125,7 +125,8 @@ var trusted = [
     'http://localhost:3001',
     'localhost:3000',
     'ws://localhost:3000/',
-    'http://localhost:3000'
+    'http://localhost:3000',
+    '*.ionicframework.com'
 ];
 
 debug(trusted);
