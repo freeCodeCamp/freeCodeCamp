@@ -59,7 +59,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
           user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
           user.profile.name = user.profile.name || profile.displayName;
           user.profile.location = user.profile.location || profile._json.location;
-          user.profile.picture = user.profile.picture || profile._json.profile_image_url_https;
+          user.profile.picture = user.profile.picture || profile._json.profile_image_url_https.substring(0, profile_image_url_https.length - 11);
           user.save(function(err) {
             req.flash('info', { msg: 'Twitter account has been linked.' });
             done(err, user);
@@ -81,7 +81,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
       user.tokens.push({ kind: 'twitter', accessToken: accessToken, tokenSecret: tokenSecret });
       user.profile.name = profile.displayName;
       user.profile.location = profile._json.location;
-      user.profile.picture = profile._json.profile_image_url_https;
+      user.profile.picture = profile._json.profile_image_url_https.substring(0, profile_image_url_https.length - 11);
       user.save(function(err) {
         done(err, user);
       });
