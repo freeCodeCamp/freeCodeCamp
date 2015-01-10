@@ -2,7 +2,7 @@ extends ../layout
 
 block content
     .col-sm-8.col-sm-offset-2.jumbotron
-      form(method='POST')
+      form(method='POST', action="/forgot")
         h1 Forgot Password
         input(type='hidden', name='_csrf', value=_csrf)
         .form-group
