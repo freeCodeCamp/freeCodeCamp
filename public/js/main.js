@@ -24,7 +24,6 @@ $(document).ready(function() {
 
       l = location.pathname.split('/');
       cn = l[l.length - 1];
-      console.log(cn);
       $.ajax({
           type: 'POST',
           data: {challengeNumber: cn},
@@ -47,7 +46,65 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
     function($scope, $http) {
         $http.get('/account/api').success(function(data) {
             $scope.user = data.user;
+            $scope.user.profile.username = $scope.user.profile.username.toLowerCase();
+            $scope.storedUsername = data.user.profile.username;
+            $scope.storedEmail = data.user.email;
+            $scope.user.email = $scope.user.email.toLowerCase();
+            $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle.toLowerCase();
         });
     }
 ]);
 
+profileValidation.controller('emailSignUpController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
+profileValidation.controller('emailSignInController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
+profileValidation.directive('uniqueUsername', function($http) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
+            element.bind("keyup", function (event) {
+                ngModel.$setValidity('unique', true);
+                if (element.val()) {
+                    $http.get("/api/checkUniqueUsername/" + element.val()).success(function (data) {
+                        if (element.val() == scope.storedUsername) {
+                            ngModel.$setValidity('unique', true);
+                        } else if (data) {
+                            ngModel.$setValidity('unique', false);
+                        }
+                    });
+                }
+            });
+        }
+    }
+});
+
+profileValidation.directive('uniqueEmail', function($http) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
+            element.bind("keyup", function (event) {
+                ngModel.$setValidity('unique', true);
+                if (element.val()) {
+                    $http.get("/api/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
+                        if (element.val() == scope.storedEmail) {
+                            ngModel.$setValidity('unique', true);
+                        } else if (data) {
+                            ngModel.$setValidity('unique', false);
+                        }
+                    });
+                };
+            });
+        }
+    }
+});

@@ -13,10 +13,10 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='name') Name *
                   .col-sm-4
-                      input.form-control(type='text', placeholder='Name', name='name', ng-model='user.profile.name', ng-minlength='3', ng-maxlength='50', required='required', id='name')
-                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.name.$invalid && !profileForm.name.$pristine && profileForm.name.$error.required")
+                      input.form-control(type='text', placeholder='Name', name='name', autocomplete="off", ng-model='user.profile.name', ng-minlength='3', ng-maxlength='50', required='required', id='name')
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.name.$invalid && profileForm.name.$error.required")
                       alert(type='danger')
-                        span.ion-close-circled
+                        span.ion-close-circled(id='#name-error')
                         |  Your name is required.
                   .col-sm-4.col-sm-offset-5(ng-show='profileForm.name.$error.minlength && !profileForm.name.$pristine')
                       alert(type='danger')
@@ -30,11 +30,15 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (path to public profile) *
                   .col-sm-4
-                    input.form-control(type='text', placeholder='username' name='username', id='username', ng-model='user.profile.username', required='required', ng-minlength='5', ng-maxlength='20')
-                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.required && !profileForm.username.$pristine")
+                    input.form-control(type='text', placeholder='username' name='username', autocomplete="off", id='username', ng-model='user.profile.username', required='required', ng-minlength='5', ng-maxlength='20', ng-keypress='', unique-username='', ng-pattern="/^[A-z0-9_]+$/")
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.pattern")
                     alert(type='danger')
                       span.ion-close-circled
-                      | Please enter a username.
+                      | Your username should only contain letters, numbers and underscores (az10_).
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.required")
+                    alert(type='danger')
+                      span.ion-close-circled
+                      | Your username is required.
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.minlength && !profileForm.username.$pristine")
                     alert(type='danger')
                       span.ion-close-circled
@@ -43,24 +47,32 @@ block content
                     alert(type='danger')
                       span.ion-close-circled
                       | Your username must be fewer than 15 characters.
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.unique && !profileForm.username.$pristine && $scope.storedUsername !== user.profile.username")
+                    alert(type='danger')
+                      span.ion-close-circled
+                      | That username is already taken.
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') Email *
                   .col-sm-4
-                    input.form-control(type='email', name='email', id='email', ng-model='user.email', required='required')
-                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.email.$error.required && !profileForm.email.$pristine")
+                    input.form-control(type='email', name='email', id='email', autocomplete="off", ng-model='user.email', required='required', ng-keypress='', unique-email='')
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.email.$error.required")
                     alert(type='danger')
                       span.ion-close-circled
-                      | An email address is required.
+                      | Your email address is required.
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.$error.email && !profileForm.email.$pristine")
                     alert(type='danger')
                       span.ion-close-circled
                       | Please enter a valid email format.
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.email.$error.unique && !profileForm.email.$pristine")
+                      alert(type='danger')
+                          span.ion-close-circled
+                          | That email is already taken.
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='location') Location
                   .col-sm-4
-                    input.form-control(type='text', name='location', id='location', ng-model='user.profile.location')
+                    input.form-control(type='text', name='location', autocomplete="off", id='location', ng-model='user.profile.location')
 
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='email') Link to Profile Photo (1:1 ratio)
@@ -74,7 +86,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='bio') Bio (140 characters)
                   .col-sm-4
-                    input.form-control(type='text', name='bio', ng-model='user.profile.bio', ng-maxlength='140', id='bio')
+                    input.form-control(type='text', name='bio', autocomplete="off", ng-model='user.profile.bio', ng-maxlength='140', id='bio')
                   .col-sm-4.col-sm-offset-5(ng-show='profileForm.bio.$error.maxlength && !profileForm.bio.$pristine')
                     alert(type='danger')
                       span.ion-close-circled
@@ -94,11 +106,11 @@ block content
                   .col-sm-4
                     .input-group.twitter-input
                         span.input-group-addon @
-                        input.form-control(type='text', name='twitterHandle', id='twitterHandle', ng-model='user.profile.twitterHandle', ng-maxlength='15', ng-pattern="/^[A-z0-9_]+$/")
+                        input.form-control(type='text', name='twitterHandle', autocomplete="off", id='twitterHandle', ng-model='user.profile.twitterHandle', ng-maxlength='15', ng-pattern="/^[A-z0-9_]+$/")
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.twitterHandle.$error.pattern")
                     alert(type='danger')
                         span.ion-close-circled
-                        | Your Twitter handle should only contain letters, numbers and underscores (@az10_).
+                        | Your Twitter handle should only contain letters, numbers and underscores (az10_).
                   .col-sm-4.col-sm-offset-5(ng-show='profileForm.twitterHandle.$error.maxlength && !profileForm.twitterHandle.$pristine')
                     alert(type='danger')
                         span.ion-close-circled
@@ -106,7 +118,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') Github
                   .col-sm-4
-                    input.form-control(type='url', name='githubProfile', id='githubProfile', ng-model='user.profile.githubProfile', placeholder='http://')
+                    input.form-control(type='url', name='githubProfile', id='githubProfile', autocomplete="off", ng-model='user.profile.githubProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.githubProfile.$error.url && !profileForm.githubProfile.$pristine")
                     alert(type='danger')
                       span.ion-close-circled
@@ -115,7 +127,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') CodePen
                   .col-sm-4
-                    input.form-control(type='url', name='codepenProfile', id='codepenProfile', ng-model='user.profile.codepenProfile', placeholder='http://')
+                    input.form-control(type='url', name='codepenProfile', id='codepenProfile', autocomplete="off", ng-model='user.profile.codepenProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.codepenProfile.$error.url && !profileForm.codepenProfile.$pristine")
                     alert(type='danger')
                       span.ion-close-circled
@@ -124,7 +136,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') CoderByte
                   .col-sm-4
-                    input.form-control(type='url', name='coderbyteProfile', id='coderbyteProfile', ng-model='user.profile.coderbyteProfile', placeholder='http://')
+                    input.form-control(type='url', name='coderbyteProfile', id='coderbyteProfile', autocomplete="off", ng-model='user.profile.coderbyteProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.coderbyteProfile.$error.url && !profileForm.coderbyteProfile.$pristine")
                     alert(type='danger')
                       span.ion-close-circled
@@ -133,7 +145,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') LinkedIn
                   .col-sm-4
-                    input.form-control(type='url', name='linkedinProfile', id='linkedinProfile', ng-model='user.profile.linkedinProfile', placeholder='http://')
+                    input.form-control(type='url', name='linkedinProfile', id='linkedinProfile', autocomplete="off", ng-model='user.profile.linkedinProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.linkedinProfile.$error.url && !profileForm.linkedinProfile.$pristine")
                     alert(type='danger')
                       span.ion-close-circled
@@ -154,7 +166,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='website1Title') Title
                   .col-sm-4
-                    input.form-control(type='text', name='website1Title', id='website1Title', ng-model='user.portfolio.website1Title', ng-maxlength='140')
+                    input.form-control(type='text', name='website1Title', id='website1Title', autocomplete="off", ng-model='user.portfolio.website1Title', ng-maxlength='140')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.website1Title.$error.maxlength && !profileForm.website1Title.$pristine")
                     alert(type='danger')
                         span.ion-close-circled
@@ -163,12 +175,12 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='website1Link') Link
                   .col-sm-4
-                     input.form-control(type='text', name='website1Link', id='website1Link', ng-model='user.portfolio.website1Link', placeholder='http://')
+                     input.form-control(type='text', name='website1Link', id='website1Link', autocomplete="off", ng-model='user.portfolio.website1Link', placeholder='http://')
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='website1Image') Image Link (4:3 ratio)
                   .col-sm-4
-                    input.form-control(type='text', name='website1Image', id='website1Image', ng-model='user.portfolio.website1Image', placeholder='http://')
+                    input.form-control(type='text', name='website1Image', id='website1Image', autocomplete="off", ng-model='user.portfolio.website1Image', placeholder='http://')
 
                 .col-sm-4.col-sm-offset-5.flat-top
                     h3 Second Portfolio Project
@@ -176,7 +188,7 @@ block content
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website2Title') Title
                     .col-sm-4
-                        input.form-control(type='text', name='website2Title', id='website2Title', ng-model='user.portfolio.website2Title', ng-maxlength='140')
+                        input.form-control(type='text', name='website2Title', id='website2Title', autocomplete="off", ng-model='user.portfolio.website2Title', ng-maxlength='140')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.website2Title.$error.maxlength && !profileForm.website2Title.$pristine")
                     alert(type='danger')
                         span.ion-close-circled
@@ -185,12 +197,12 @@ block content
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website2Link') Link
                     .col-sm-4
-                        input.form-control(type='text', name='website2Link', id='website2Link', ng-model='user.portfolio.website2Link', placeholder='http://')
+                        input.form-control(type='text', name='website2Link', id='website2Link', autocomplete="off", ng-model='user.portfolio.website2Link', placeholder='http://')
 
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website2Image') Image Link (4:3 ratio)
                     .col-sm-4
-                        input.form-control(type='text', name='website2Image', id='website2Image', ng-model='user.portfolio.website2Image', placeholder='http://')
+                        input.form-control(type='text', name='website2Image', id='website2Image', autocomplete="off", ng-model='user.portfolio.website2Image', placeholder='http://')
 
                 .col-sm-4.col-sm-offset-5.flat-top
                     h3 Third Portfolio Project
@@ -198,7 +210,7 @@ block content
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website3Title') Title
                     .col-sm-4
-                        input.form-control(type='text', name='website3Title', id='website3Title', ng-model='user.portfolio.website3Title', ng-maxlength='140')
+                        input.form-control(type='text', name='website3Title', id='website3Title', autocomplete="off", ng-model='user.portfolio.website3Title', ng-maxlength='140')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.website3Title.$error.maxlength && !profileForm.website3Title.$pristine")
                     alert(type='danger')
                         span.ion-close-circled
@@ -207,12 +219,12 @@ block content
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website3Link') Link
                     .col-sm-4
-                        input.form-control(type='text', name='website3Link', id='website3Link', ng-model='user.portfolio.website3Link', placeholder='http://')
+                        input.form-control(type='text', name='website3Link', id='website3Link', autocomplete="off", ng-model='user.portfolio.website3Link', placeholder='http://')
 
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website3Image') Image Link (4:3 ratio)
                     .col-sm-4
-                        input.form-control(type='text', name='website3Image', id='website3Image', ng-model='user.portfolio.website3Image', placeholder='http://')
+                        input.form-control(type='text', name='website3Image', id='website3Image', autocomplete="off", ng-model='user.portfolio.website3Image', placeholder='http://')
 
                 .form-group
                     .col-sm-offset-5.col-sm-4
@@ -229,7 +241,7 @@ block content
                 a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/') Take me to my current challenge
                 a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout') Sign out
             br
-    - if (!user.google || !user.facebook || !user.github || !user.linkedin || !user.twitter)
+    - if (!user.google || !user.facebook || /*!user.github ||*/ !user.linkedin || !user.twitter)
         .panel.panel-primary
             .panel-heading.text-center Link other services to your account:
             .panel-body
@@ -308,7 +320,3 @@ block content
                                   button.btn.btn-danger.btn-block(type='submit')
                                       span.ion-trash-b
                                       | Yes, Delete my account
-
-
-
-
