@@ -14,9 +14,9 @@ block content
                   label.col-sm-3.col-sm-offset-2.control-label(for='name') Name *
                   .col-sm-4
                       input.form-control(type='text', placeholder='Name', name='name', autocomplete="off", ng-model='user.profile.name', ng-minlength='3', ng-maxlength='50', required='required', id='name')
-                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.name.$invalid && !profileForm.name.$pristine && profileForm.name.$error.required")
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.name.$invalid && profileForm.name.$error.required")
                       alert(type='danger')
-                        span.ion-close-circled
+                        span.ion-close-circled(id='#name-error')
                         |  Your name is required.
                   .col-sm-4.col-sm-offset-5(ng-show='profileForm.name.$error.minlength && !profileForm.name.$pristine')
                       alert(type='danger')
@@ -30,11 +30,15 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (path to public profile) *
                   .col-sm-4
-                    input.form-control(type='text', placeholder='username' name='username', autocomplete="off", id='username', ng-model='user.profile.username', required='required', ng-minlength='5', ng-maxlength='20', ng-keypress='', unique-username='')
-                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.required && !profileForm.username.$pristine")
+                    input.form-control(type='text', placeholder='username' name='username', autocomplete="off", id='username', ng-model='user.profile.username', required='required', ng-minlength='5', ng-maxlength='20', ng-keypress='', unique-username='', ng-pattern="/^[A-z0-9_]+$/")
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.pattern")
                     alert(type='danger')
                       span.ion-close-circled
-                      | Please enter a username.
+                      | Your username should only contain letters, numbers and underscores (az10_).
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.required")
+                    alert(type='danger')
+                      span.ion-close-circled
+                      | Your username is required.
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.minlength && !profileForm.username.$pristine")
                     alert(type='danger')
                       span.ion-close-circled
@@ -46,16 +50,16 @@ block content
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.unique && !profileForm.username.$pristine && $scope.storedUsername !== user.profile.username")
                     alert(type='danger')
                       span.ion-close-circled
-                      | That username is taken.
+                      | That username is already taken.
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') Email *
                   .col-sm-4
                     input.form-control(type='email', name='email', id='email', autocomplete="off", ng-model='user.email', required='required', ng-keypress='', unique-email='')
-                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.email.$error.required && !profileForm.email.$pristine")
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.email.$error.required")
                     alert(type='danger')
                       span.ion-close-circled
-                      | An email address is required.
+                      | Your email address is required.
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.$error.email && !profileForm.email.$pristine")
                     alert(type='danger')
                       span.ion-close-circled
@@ -63,7 +67,7 @@ block content
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.email.$error.unique && !profileForm.email.$pristine")
                       alert(type='danger')
                           span.ion-close-circled
-                          | That email is taken.
+                          | That email is already taken.
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='location') Location
@@ -106,7 +110,7 @@ block content
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.twitterHandle.$error.pattern")
                     alert(type='danger')
                         span.ion-close-circled
-                        | Your Twitter handle should only contain letters, numbers and underscores (@az10_).
+                        | Your Twitter handle should only contain letters, numbers and underscores (az10_).
                   .col-sm-4.col-sm-offset-5(ng-show='profileForm.twitterHandle.$error.maxlength && !profileForm.twitterHandle.$pristine')
                     alert(type='danger')
                         span.ion-close-circled
@@ -316,7 +320,3 @@ block content
                                   button.btn.btn-danger.btn-block(type='submit')
                                       span.ion-trash-b
                                       | Yes, Delete my account
-
-
-
-

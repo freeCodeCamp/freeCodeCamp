@@ -13,7 +13,11 @@ block content
             |  This email is taken.
       .form-group
         .col-sm-6.col-sm-offset-3
-          input.form-control(type='text', name='username', ng-keypress='', autocomplete="off", id='username', placeholder='username', ng-model='username', unique-username='', required, ng-minlength=5, ng-maxlength=20)
+          input.form-control(type='text', name='username', ng-keypress='', autocomplete="off", id='username', placeholder='username', ng-model='username', unique-username='', required, ng-minlength=5, ng-maxlength=20, ng-pattern="/^[A-z0-9_]+$/")
+        .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.pattern && !signupForm.username.$pristine")
+          alert(type='danger')
+            span.ion-close-circled
+            | Your username should only contain letters, numbers and underscores (az10_).
         .col-sm-6.col-sm-offset-3(ng-show="signupForm.username.$error.unique && !signupForm.username.$pristine")
           alert(type='danger')
             span.ion-close-circled
@@ -21,17 +25,25 @@ block content
         .col-sm-6.col-sm-offset-3(ng-show="signupForm.username.$error.minlength && !signupForm.username.$pristine")
           alert(type='danger')
             span.ion-close-circled
-            |  Usernames must be at least 5 characters.
+            |  Your username must be at least 5 characters long.
         .col-sm-6.col-sm-offset-3(ng-show="signupForm.username.$error.maxlength && !signupForm.username.$pristine")
           alert(type='danger')
             span.ion-close-circled
-            |  Usernames must be 20 characters or less.
+            |  Your usernames must be 20 characters or fewer.
       .form-group
         .col-sm-6.col-sm-offset-3
-          input.form-control(type='password', ng-model='password', name='password', id='password', placeholder='password', required)
+          input.form-control(type='password', ng-model='password', name='password', id='password', placeholder='password', required, ng-minlength=5)
+        .col-sm-6.col-sm-offset-3(ng-show="signupForm.password.$error.minlength && !signupForm.password.$pristine")
+          alert(type='danger')
+            span.ion-close-circled
+            |  Your password must be at least 8 characters long.
       .form-group
         .col-sm-6.col-sm-offset-3
-          input.form-control(type='password', ng-model='confirmPassword', name='confirmPassword', id='confirmPassword', placeholder='confirm password', required)
+          input.form-control(type='password', ng-model='confirmPassword', name='confirmPassword', id='confirmPassword', placeholder='confirm password', required, ng-minlength=5)
+          .col-sm-6.col-sm-offset-3(ng-show="(confirmPassword !== password) && !signupForm.confirmPassword.$pristine")
+            alert(type='danger')
+              span.ion-close-circled
+              |  Passwords must match.
       .form-group
         .col-sm-offset-3.col-sm-6
           button.btn.btn-success(type='submit')
