@@ -60,6 +60,12 @@ profileValidation.controller('emailSignUpController', ['$scope',
     }
 ]);
 
+profileValidation.controller('emailSignInController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
 profileValidation.directive('uniqueUsername', function($http) {
     return {
         restrict: 'A',
@@ -79,10 +85,22 @@ profileValidation.directive('uniqueUsername', function($http) {
     };
 });
 
-
-
-profileValidation.controller('emailSignInController', ['$scope',
-    function($scope) {
-
-    }
-]);
+profileValidation.directive('uniqueEmail', function($http) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
+            element.bind("keyup", function (event) {
+                ngModel.$setValidity('unique', true);
+                if (element.val()) {
+                    console.log(encodeURIComponent(element.val()));
+                    $http.get("/api/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
+                        if (data) {
+                            ngModel.$setValidity('unique', false);
+                        }
+                    });
+                }
+            });
+        }
+    };
+});
