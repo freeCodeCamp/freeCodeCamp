@@ -109,7 +109,10 @@ exports.postEmailSignup = function(req, res, next) {
 
   var user = new User({
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    profile : {
+      username: req.body.username
+    }
   });
 
   User.findOne({ email: req.body.email }, function(err, existingUser) {

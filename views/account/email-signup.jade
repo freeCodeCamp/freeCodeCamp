@@ -6,7 +6,7 @@ block content
       input(type='hidden', name='_csrf', value=_csrf)
       .form-group
         .col-sm-6.col-sm-offset-3
-          input.form-control(type='email', ng-model='email', ng-keypress='', name='email', id='email', placeholder='email', autofocus, required, autocomplete="off")
+          input.form-control(type='email', ng-model='email', ng-keypress='', name='email', id='email', placeholder='email', autofocus, required, autocomplete="off", unique-email='')
         .col-sm-6.col-sm-offset-3(ng-show="signupForm.email.$error.unique && !signupForm.email.$pristine")
           alert(type='danger')
             span.ion-close-circled
