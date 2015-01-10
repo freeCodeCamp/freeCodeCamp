@@ -1,0 +1,179 @@
+<!doctype html>
+
+<title>CodeMirror: ML-like mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel=stylesheet href=../../lib/codemirror.css>
+<script src=../../lib/codemirror.js></script>
+<script src=../../addon/edit/matchbrackets.js></script>
+<script src=mllike.js></script>
+<style type=text/css>
+  .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">ML-like</a>
+  </ul>
+</div>
+
+<article>
+<h2>OCaml mode</h2>
+
+
+<textarea id="ocamlCode">
+(* Summing a list of integers *)
+let rec sum xs =
+  match xs with
+    | []       -&gt; 0
+    | x :: xs' -&gt; x + sum xs'
+
+(* Quicksort *)
+let rec qsort = function
+   | [] -&gt; []
+   | pivot :: rest -&gt;
+       let is_less x = x &lt; pivot in
+       let left, right = List.partition is_less rest in
+       qsort left @ [pivot] @ qsort right
+
+(* Fibonacci Sequence *)
+let rec fib_aux n a b =
+  match n with
+  | 0 -&gt; a
+  | _ -&gt; fib_aux (n - 1) (a + b) a
+let fib n = fib_aux n 0 1
+
+(* Birthday paradox *)
+let year_size = 365.
+
+let rec birthday_paradox prob people =
+    let prob' = (year_size -. float people) /. year_size *. prob  in
+    if prob' &lt; 0.5 then
+        Printf.printf "answer = %d\n" (people+1)
+    else
+        birthday_paradox prob' (people+1) ;;
+
+birthday_paradox 1.0 1
+
+(* Church numerals *)
+let zero f x = x
+let succ n f x = f (n f x)
+let one = succ zero
+let two = succ (succ zero)
+let add n1 n2 f x = n1 f (n2 f x)
+let to_string n = n (fun k -&gt; "S" ^ k) "0"
+let _ = to_string (add (succ two) two)
+
+(* Elementary functions *)
+let square x = x * x;;
+let rec fact x =
+  if x &lt;= 1 then 1 else x * fact (x - 1);;
+
+(* Automatic memory management *)
+let l = 1 :: 2 :: 3 :: [];;
+[1; 2; 3];;
+5 :: l;;
+
+(* Polymorphism: sorting lists *)
+let rec sort = function
+  | [] -&gt; []
+  | x :: l -&gt; insert x (sort l)
+
+and insert elem = function
+  | [] -&gt; [elem]
+  | x :: l -&gt;
+      if elem &lt; x then elem :: x :: l else x :: insert elem l;;
+
+(* Imperative features *)
+let add_polynom p1 p2 =
+  let n1 = Array.length p1
+  and n2 = Array.length p2 in
+  let result = Array.create (max n1 n2) 0 in
+  for i = 0 to n1 - 1 do result.(i) &lt;- p1.(i) done;
+  for i = 0 to n2 - 1 do result.(i) &lt;- result.(i) + p2.(i) done;
+  result;;
+add_polynom [| 1; 2 |] [| 1; 2; 3 |];;
+
+(* We may redefine fact using a reference cell and a for loop *)
+let fact n =
+  let result = ref 1 in
+  for i = 2 to n do
+    result := i * !result
+   done;
+   !result;;
+fact 5;;
+
+(* Triangle (graphics) *)
+let () =
+  ignore( Glut.init Sys.argv );
+  Glut.initDisplayMode ~double_buffer:true ();
+  ignore (Glut.createWindow ~title:"OpenGL Demo");
+  let angle t = 10. *. t *. t in
+  let render () =
+    GlClear.clear [ `color ];
+    GlMat.load_identity ();
+    GlMat.rotate ~angle: (angle (Sys.time ())) ~z:1. ();
+    GlDraw.begins `triangles;
+    List.iter GlDraw.vertex2 [-1., -1.; 0., 1.; 1., -1.];
+    GlDraw.ends ();
+    Glut.swapBuffers () in
+  GlMat.mode `modelview;
+  Glut.displayFunc ~cb:render;
+  Glut.idleFunc ~cb:(Some Glut.postRedisplay);
+  Glut.mainLoop ()
+
+(* A Hundred Lines of Caml - http://caml.inria.fr/about/taste.en.html *)
+(* OCaml page on Wikipedia - http://en.wikipedia.org/wiki/OCaml *)
+</textarea>
+
+<h2>F# mode</h2>
+<textarea id="fsharpCode">
+module CodeMirror.FSharp
+
+let rec fib = function
+    | 0 -> 0
+    | 1 -> 1
+    | n -> fib (n - 1) + fib (n - 2)
+
+type Point =
+    {
+        x : int
+        y : int
+    }
+
+type Color =
+    | Red
+    | Green
+    | Blue
+
+[0 .. 10]
+|> List.map ((+) 2)
+|> List.fold (fun x y -> x + y) 0
+|> printf "%i"
+</textarea>
+
+
+<script>
+  var ocamlEditor = CodeMirror.fromTextArea(document.getElementById('ocamlCode'), {
+    mode: 'text/x-ocaml',
+    lineNumbers: true,
+    matchBrackets: true
+  });
+
+  var fsharpEditor = CodeMirror.fromTextArea(document.getElementById('fsharpCode'), {
+    mode: 'text/x-fsharp',
+    lineNumbers: true,
+    matchBrackets: true
+  });
+</script>
+
+<p><strong>MIME types defined:</strong> <code>text/x-ocaml</code> (OCaml) and <code>text/x-fsharp</code> (F#).</p>
+</article>

@@ -1,0 +1,73 @@
+<!doctype html>
+
+<title>CodeMirror: Haskell mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<link rel="stylesheet" href="../../theme/elegant.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="../../addon/edit/matchbrackets.js"></script>
+<script src="haskell.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Haskell</a>
+  </ul>
+</div>
+
+<article>
+<h2>Haskell mode</h2>
+<form><textarea id="code" name="code">
+module UniquePerms (
+    uniquePerms
+    )
+where
+
+-- | Find all unique permutations of a list where there might be duplicates.
+uniquePerms :: (Eq a) => [a] -> [[a]]
+uniquePerms = permBag . makeBag
+
+-- | An unordered collection where duplicate values are allowed,
+-- but represented with a single value and a count.
+type Bag a = [(a, Int)]
+
+makeBag :: (Eq a) => [a] -> Bag a
+makeBag [] = []
+makeBag (a:as) = mix a $ makeBag as
+  where
+    mix a []                        = [(a,1)]
+    mix a (bn@(b,n):bs) | a == b    = (b,n+1):bs
+                        | otherwise = bn : mix a bs
+
+permBag :: Bag a -> [[a]]
+permBag [] = [[]]
+permBag bs = concatMap (\(f,cs) -> map (f:) $ permBag cs) . oneOfEach $ bs
+  where
+    oneOfEach [] = []
+    oneOfEach (an@(a,n):bs) =
+        let bs' = if n == 1 then bs else (a,n-1):bs
+        in (a,bs') : mapSnd (an:) (oneOfEach bs)
+    
+    apSnd f (a,b) = (a, f b)
+    mapSnd = map . apSnd
+</textarea></form>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        matchBrackets: true,
+        theme: "elegant"
+      });
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-haskell</code>.</p>
+  </article>

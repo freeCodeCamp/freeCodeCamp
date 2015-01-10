@@ -1,0 +1,68 @@
+<!doctype html>
+
+<title>CodeMirror: Gas mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="gas.js"></script>
+<style>.CodeMirror {border: 2px inset #dee;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Gas</a>
+  </ul>
+</div>
+
+<article>
+<h2>Gas mode</h2>
+<form>
+<textarea id="code" name="code">
+.syntax unified
+.global main
+
+/* 
+ *  A
+ *  multi-line
+ *  comment.
+ */
+
+@ A single line comment.
+
+main:
+        push    {sp, lr}
+        ldr     r0, =message
+        bl      puts
+        mov     r0, #0
+        pop     {sp, pc}
+
+message:
+        .asciz "Hello world!<br />"
+</textarea>
+        </form>
+
+        <script>
+            var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+                lineNumbers: true,
+                mode: {name: "gas", architecture: "ARMv6"},
+            });
+        </script>
+
+        <p>Handles AT&amp;T assembler syntax (more specifically this handles
+        the GNU Assembler (gas) syntax.)
+        It takes a single optional configuration parameter:
+        <code>architecture</code>, which can be one of <code>"ARM"</code>,
+        <code>"ARMv6"</code> or <code>"x86"</code>.
+        Including the parameter adds syntax for the registers and special
+        directives for the supplied architecture.
+
+        <p><strong>MIME types defined:</strong> <code>text/x-gas</code></p>
+    </article>

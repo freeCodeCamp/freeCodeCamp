@@ -1,0 +1,24 @@
+extends ../layout
+block content
+    script(src='/js/lib/codemirror/lib/codemirror.js')
+    link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
+    link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
+    script(src='/js/lib/codemirror/mode/javascript/javascript.js')
+
+    .col-sm-12
+      .col-sm-4.panel
+        div
+          |  Challenge text goes here
+      .col-sm-8
+        form.code
+          .form-group.code
+            textarea(id='code')
+
+
+
+    script(type="text/javascript").
+      var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "javascript",
+        theme: 'monokai'
+      });

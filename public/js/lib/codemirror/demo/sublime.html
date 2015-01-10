@@ -1,0 +1,76 @@
+<!doctype html>
+
+<title>CodeMirror: Sublime Text bindings demo</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+
+<link rel="stylesheet" href="../lib/codemirror.css">
+<link rel="stylesheet" href="../addon/fold/foldgutter.css">
+<link rel="stylesheet" href="../addon/dialog/dialog.css">
+<link rel="stylesheet" href="../theme/monokai.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../addon/search/searchcursor.js"></script>
+<script src="../addon/search/search.js"></script>
+<script src="../addon/dialog/dialog.js"></script>
+<script src="../addon/edit/matchbrackets.js"></script>
+<script src="../addon/edit/closebrackets.js"></script>
+<script src="../addon/comment/comment.js"></script>
+<script src="../addon/wrap/hardwrap.js"></script>
+<script src="../addon/fold/foldcode.js"></script>
+<script src="../addon/fold/brace-fold.js"></script>
+<script src="../mode/javascript/javascript.js"></script>
+<script src="../keymap/sublime.js"></script>
+<style type="text/css">
+  .CodeMirror {border-top: 1px solid #eee; border-bottom: 1px solid #eee; line-height: 1.3; height: 500px}
+  .CodeMirror-linenumbers { padding: 0 8px; }
+</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Sublime bindings</a>
+  </ul>
+</div>
+
+<article>
+<h2>Sublime Text bindings demo</h2>
+
+<p>The <code>sublime</code> keymap defines many Sublime Text-specific
+bindings for CodeMirror. See the code below for an overview.</p>
+
+<p>Enable the keymap by
+loading <a href="../keymap/sublime.js"><code>keymap/sublime.js</code></a>
+and setting
+the <a href="../doc/manual.html#option_keyMap"><code>keyMap</code></a>
+option to <code>"sublime"</code>.</p>
+
+<p>(A lot of the search functionality is still missing.)
+
+<script>
+  var value = "// The bindings defined specifically in the Sublime Text mode\nvar bindings = {\n";
+  var map = CodeMirror.keyMap.sublime;
+  for (var key in map) {
+    var val = map[key];
+    if (key != "fallthrough" && val != "..." && (!/find/.test(val) || /findUnder/.test(val)))
+      value += "  \"" + key + "\": \"" + val + "\",\n";
+  }
+  value += "}\n\n// The implementation of joinLines\n";
+  value += CodeMirror.commands.joinLines.toString().replace(/^function\s*\(/, "function joinLines(").replace(/\n  /g, "\n") + "\n";
+  var editor = CodeMirror(document.body.getElementsByTagName("article")[0], {
+    value: value,
+    lineNumbers: true,
+    mode: "javascript",
+    keyMap: "sublime",
+    autoCloseBrackets: true,
+    matchBrackets: true,
+    showCursorWhenSelecting: true,
+    theme: "monokai"
+  });
+</script>
+
+</article>
