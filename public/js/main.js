@@ -24,7 +24,6 @@ $(document).ready(function() {
 
       l = location.pathname.split('/');
       cn = l[l.length - 1];
-      console.log(cn);
       $.ajax({
           type: 'POST',
           data: {challengeNumber: cn},
@@ -48,7 +47,8 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
         $http.get('/account/api').success(function(data) {
             $scope.user = data.user;
             $scope.user.profile.username = $scope.user.profile.username.toLowerCase();
-            $scope.storedUsername = $scope.user.profile.username;
+            $scope.storedUsername = data.user.profile.username;
+            $scope.storedEmail = data.user.email;
             $scope.user.email = $scope.user.email.toLowerCase();
             $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle.toLowerCase();
         });
@@ -76,14 +76,16 @@ profileValidation.directive('uniqueUsername', function($http) {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
                     $http.get("/api/checkUniqueUsername/" + element.val()).success(function (data) {
-                        if (data) {
+                        if (element.val() == scope.storedUsername) {
+                            ngModel.$setValidity('unique', true);
+                        } else if (data) {
                             ngModel.$setValidity('unique', false);
                         }
                     });
                 }
             });
         }
-    };
+    }
 });
 
 profileValidation.directive('uniqueEmail', function($http) {
@@ -95,12 +97,14 @@ profileValidation.directive('uniqueEmail', function($http) {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
                     $http.get("/api/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
-                        if (data) {
+                        if (element.val() == scope.storedEmail) {
+                            ngModel.$setValidity('unique', true);
+                        } else if (data) {
                             ngModel.$setValidity('unique', false);
                         }
                     });
-                }
+                };
             });
         }
-    };
+    }
 });
