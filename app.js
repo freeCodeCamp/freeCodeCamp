@@ -102,6 +102,7 @@ app.use(flash());
 app.disable('x-powered-by');
 
 app.use(helmet.xssFilter());
+app.use(helmet.noSniff());
 app.use(helmet.xframe());
 
 var trusted = [
@@ -126,7 +127,8 @@ var trusted = [
     'localhost:3000',
     'ws://localhost:3000/',
     'http://localhost:3000',
-    '*.ionicframework.com'
+    '*.ionicframework.com',
+    'https://syndication.twitter.com'
 ];
 
 debug(trusted);
@@ -256,6 +258,9 @@ app.get(
 );
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
+// Unique Check API route
+app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
+app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);
@@ -293,12 +298,10 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get(
   '/auth/twitter/callback',
   passport.authenticate('twitter', {
-    successRedirect: '/auth/twitter/middle',
+    successRedirect: '/',
     failureRedirect: '/login'
   })
 );
-
-app.get('/auth/twitter/middle', passportConf.hasEmail);
 
 app.get(
   '/auth/linkedin',
