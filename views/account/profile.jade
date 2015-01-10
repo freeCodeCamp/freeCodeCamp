@@ -13,7 +13,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='name') Name *
                   .col-sm-4
-                      input.form-control(type='text', ng-keyup='keyPress()', placeholder='Name', name='name', ng-model='user.profile.name', ng-minlength='3', ng-maxlength='50', required='required', id='name')
+                      input.form-control(type='text', placeholder='Name', name='name', ng-model='user.profile.name', ng-minlength='3', ng-maxlength='50', required='required', id='name')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.name.$invalid && !profileForm.name.$pristine && profileForm.name.$error.required")
                       alert(type='danger')
                         span.ion-close-circled
@@ -30,7 +30,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (path to public profile) *
                   .col-sm-4
-                    input.form-control(type='text', placeholder='username' name='username', id='username', ng-model='user.profile.username', required='required', ng-minlength='5', ng-maxlength='20')
+                    input.form-control(type='text', placeholder='username' name='username', id='username', ng-model='user.profile.username', required='required', ng-minlength='5', ng-maxlength='20', ng-keypress='', unique-username='')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.required && !profileForm.username.$pristine")
                     alert(type='danger')
                       span.ion-close-circled
@@ -43,6 +43,10 @@ block content
                     alert(type='danger')
                       span.ion-close-circled
                       | Your username must be fewer than 15 characters.
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.username.$error.unique && !profileForm.username.$pristine")
+                    alert(type='danger')
+                      span.ion-close-circled
+                      | This username is taken.
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') Email *

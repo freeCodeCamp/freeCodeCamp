@@ -48,6 +48,7 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
         $http.get('/account/api').success(function(data) {
             $scope.user = data.user;
             $scope.user.profile.username = $scope.user.profile.username.toLowerCase();
+            $scope.storedUsername = $scope.user.profile.username;
             $scope.user.email = $scope.user.email.toLowerCase();
             $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle.toLowerCase();
         });
@@ -93,7 +94,6 @@ profileValidation.directive('uniqueEmail', function($http) {
             element.bind("keyup", function (event) {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
-                    console.log(encodeURIComponent(element.val()));
                     $http.get("/api/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
                         if (data) {
                             ngModel.$setValidity('unique', false);

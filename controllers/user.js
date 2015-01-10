@@ -189,9 +189,7 @@ exports.checkUniqueUsername = function(req, res) {
  */
 
 exports.checkUniqueEmail = function(req, res) {
-  console.log(req.params.email);
   User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
-    console.log(User.findOne({'email': decodeURIComponent(req.params.email)}));
     if (data == 1) {
       return res.send(true);
     } else {
