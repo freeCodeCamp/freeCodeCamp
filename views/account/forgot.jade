@@ -1,8 +1,7 @@
 extends ../layout
 
 block content
-  .jumbotron
-    .col-sm-8.col-sm-offset-2
+    .col-sm-8.col-sm-offset-2.jumbotron
       form(method='POST')
         h1 Forgot Password
         input(type='hidden', name='_csrf', value=_csrf)
@@ -14,3 +13,4 @@ block content
           button.btn.btn-primary(type='submit')
             i.fa.fa-key
             | Reset Password
+
