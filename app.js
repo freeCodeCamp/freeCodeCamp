@@ -258,6 +258,9 @@ app.get(
 );
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
+// Unique Check API route
+app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
+app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);

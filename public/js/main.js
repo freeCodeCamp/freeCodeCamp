@@ -54,3 +54,35 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
     }
 ]);
 
+profileValidation.controller('emailSignUpController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
+profileValidation.directive('uniqueUsername', function($http) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
+            element.bind("keyup", function (event) {
+                ngModel.$setValidity('unique', true);
+                if (element.val()) {
+                    $http.get("/api/checkUniqueUsername/" + element.val()).success(function (data) {
+                        if (data) {
+                            ngModel.$setValidity('unique', false);
+                        }
+                    });
+                }
+            });
+        }
+    };
+});
+
+
+
+profileValidation.controller('emailSignInController', ['$scope',
+    function($scope) {
+
+    }
+]);

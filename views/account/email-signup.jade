@@ -1,26 +1,36 @@
 extends ../layout
 block content
-    .jumbotron.text-center
-        h2 Sign in with an email address here:
-        form(method='POST')
-            input(type='hidden', name='_csrf', value=_csrf)
-            .col-sm-6.col-sm-offset-3
-                .form-group
-                    input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
-                .form-group
-                    input.form-control(type='password', name='password', id='password', placeholder='Password')
-                .form-group
-                    button.btn.btn-primary(type='submit')
-                        span.ion-android-hand
-                        | Login
-                    span &nbsp;&nbsp;
-                    a.btn.btn-info(href='/forgot') Forgot your password?
-        br
-        br
-        br
-        br
-        br
-        br
-        br
-        br
-        br
+  .jumbotron.text-center
+    h2 Sign up with an email address here:
+    form.form-horizontal(method='POST', action='/email-signup', name="signupForm", novalidate="novalidate")
+      input(type='hidden', name='_csrf', value=_csrf)
+      .form-group
+        .col-sm-6.col-sm-offset-3
+          input.form-control(type='email', ng-model='email', name='email', id='email', placeholder='email', autofocus, required)
+      .form-group
+        .col-sm-6.col-sm-offset-3
+          input.form-control(type='text', name='username', ng-keypress='', autocomplete="off", id='username', placeholder='username', ng-model='username', unique-username='', required)
+        .col-sm-6.col-sm-offset-3(ng-show="signupForm.username.$error.unique && !signupForm.username.$pristine")
+          alert(type='danger')
+            span.ion-close-circled
+            |  This username is taken.
+      .form-group
+        .col-sm-6.col-sm-offset-3
+          input.form-control(type='password', ng-model='password', name='password', id='password', placeholder='password', required)
+      .form-group
+        .col-sm-6.col-sm-offset-3
+          input.form-control(type='password', ng-model='confirmPassword', name='confirmPassword', id='confirmPassword', placeholder='confirm password', required)
+      .form-group
+        .col-sm-offset-3.col-sm-6
+          button.btn.btn-success(type='submit')
+            span.ion-person-add
+            | Signup
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br

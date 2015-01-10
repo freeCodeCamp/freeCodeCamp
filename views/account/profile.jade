@@ -13,7 +13,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='name') Name *
                   .col-sm-4
-                      input.form-control(type='text', placeholder='Name', name='name', ng-model='user.profile.name', ng-minlength='3', ng-maxlength='50', required='required', id='name')
+                      input.form-control(type='text', ng-keyup='keyPress()', placeholder='Name', name='name', ng-model='user.profile.name', ng-minlength='3', ng-maxlength='50', required='required', id='name')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.name.$invalid && !profileForm.name.$pristine && profileForm.name.$error.required")
                       alert(type='danger')
                         span.ion-close-circled

@@ -70,7 +70,7 @@ exports.logout = function(req, res) {
 
 exports.getEmailSignin = function(req, res) {
   if (req.user) return res.redirect('/');
-  res.render('account/email-signup', {
+  res.render('account/email-signin', {
     title: 'Sign in to your Free Code Camp Account'
   });
 };
@@ -82,7 +82,7 @@ exports.getEmailSignin = function(req, res) {
 
 exports.getEmailSignup = function(req, res) {
   if (req.user) return res.redirect('/');
-  res.render('account/email-signin', {
+  res.render('account/email-signup', {
     title: 'Create Your Free Code Camp Account'
   });
 };
@@ -93,6 +93,7 @@ exports.getEmailSignup = function(req, res) {
  */
 
 exports.postEmailSignup = function(req, res, next) {
+  console.log('post email signup called');
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password must be at least 4 characters long').len(4);
   req.assert('confirmPassword', 'Passwords do not match')
@@ -103,6 +104,7 @@ exports.postEmailSignup = function(req, res, next) {
   if (errors) {
     req.flash('errors', errors);
     return res.redirect('/email-signup');
+    console.log(errors);
   }
 
   var user = new User({
@@ -163,6 +165,33 @@ exports.getAccount = function(req, res) {
     res.json({
       user: req.user
     });
+  });
+};
+
+/**
+ * Unique username check API Call
+ */
+
+exports.checkUniqueUsername = function(req, res) {
+  User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+    if (data == 1) {
+      return res.send(true);
+    } else {
+      return res.send(false);
+    }
+  });
+};
+/**
+ * Unique email check API Call
+ */
+
+exports.checkUniqueEmail = function(req, res) {
+  User.count({'email': req.params.email.toLowerCase()}, function (err, data) {
+    if (data == 1) {
+      return res.send(true);
+    } else {
+      return res.send(false);
+    }
   });
 };
 
