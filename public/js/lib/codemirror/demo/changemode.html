@@ -1,0 +1,58 @@
+<!doctype html>
+
+<title>CodeMirror: Mode-Changing Demo</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+
+<link rel="stylesheet" href="../lib/codemirror.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../mode/javascript/javascript.js"></script>
+<script src="../mode/scheme/scheme.js"></script>
+<style type="text/css">
+      .CodeMirror {border: 1px solid black;}
+    </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Mode-Changing</a>
+  </ul>
+</div>
+
+<article>
+<h2>Mode-Changing Demo</h2>
+<form><textarea id="code" name="code">
+;; If there is Scheme code in here, the editor will be in Scheme mode.
+;; If you put in JS instead, it'll switch to JS mode.
+
+(define (double x)
+  (* x x))
+</textarea></form>
+
+<p>On changes to the content of the above editor, a (crude) script
+tries to auto-detect the language used, and switches the editor to
+either JavaScript or Scheme mode based on that.</p>
+
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    mode: "scheme",
+    lineNumbers: true
+  });
+  var pending;
+  editor.on("change", function() {
+    clearTimeout(pending);
+    pending = setTimeout(update, 400);
+  });
+  function looksLikeScheme(code) {
+    return !/^\s*\(\s*function\b/.test(code) && /^\s*[;\(]/.test(code);
+  }
+  function update() {
+    editor.setOption("mode", looksLikeScheme(editor.getValue()) ? "scheme" : "javascript");
+  }
+</script>
+  </article>

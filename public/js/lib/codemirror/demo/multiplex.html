@@ -1,0 +1,75 @@
+<!doctype html>
+
+<title>CodeMirror: Multiplexing Parser Demo</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+
+<link rel="stylesheet" href="../lib/codemirror.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../addon/mode/multiplex.js"></script>
+<script src="../mode/xml/xml.js"></script>
+<style type="text/css">
+      .CodeMirror {border: 1px solid black;}
+      .cm-delimit {color: #fa4;}
+    </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Multiplexing Parser</a>
+  </ul>
+</div>
+
+<article>
+<h2>Multiplexing Parser Demo</h2>
+<form><textarea id="code" name="code">
+<html>
+  <body style="<<magic>>">
+    <h1><< this is not <html >></h1>
+    <<
+        multiline
+        not html
+        at all : &amp;amp; <link/>
+    >>
+    <p>this is html again</p>
+  </body>
+</html>
+</textarea></form>
+
+    <script>
+CodeMirror.defineMode("demo", function(config) {
+  return CodeMirror.multiplexingMode(
+    CodeMirror.getMode(config, "text/html"),
+    {open: "<<", close: ">>",
+     mode: CodeMirror.getMode(config, "text/plain"),
+     delimStyle: "delimit"}
+    // .. more multiplexed styles can follow here
+  );
+});
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  mode: "demo",
+  lineNumbers: true,
+  lineWrapping: true
+});
+</script>
+
+    <p>Demonstration of a multiplexing mode, which, at certain
+    boundary strings, switches to one or more inner modes. The out
+    (HTML) mode does not get fed the content of the <code>&lt;&lt;
+    >></code> blocks. See
+    the <a href="../doc/manual.html#addon_multiplex">manual</a> and
+    the <a href="../addon/mode/multiplex.js">source</a> for more
+    information.</p>
+
+    <p>
+      <strong>Parsing/Highlighting Tests:</strong>
+      <a href="../test/index.html#multiplexing_*">normal</a>,
+      <a href="../test/index.html#verbose,multiplexing_*">verbose</a>.
+    </p>
+
+  </article>

@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+// Simple command-line code highlighting tool. Reads code from stdin,
+// spits html to stdout. For example:
+//
+//   echo 'function foo(a) { return a; }' | bin/source-highlight -s javascript
+//   bin/source-highlight -s 
+
+var fs = require("fs");
+
+var CodeMirror = require("../addon/runmode/runmode.node.js");
+require("../mode/meta.js");
+
+var sPos = process.argv.indexOf("-s");
+if (sPos == -1 || sPos == process.argv.length - 1) {
+   console.error("Usage: source-highlight -s language");
+   process.exit(1);
+}
+var lang = process.argv[sPos + 1].toLowerCase(), modeName = lang;
+CodeMirror.modeInfo.forEach(function(info) {
+  if (info.mime == lang) {
+    modeName = info.mode;
+  } else if (info.name.toLowerCase() == lang) {
+    modeName = info.mode;
+    lang = info.mime;
+  }
+});
+
+if (!CodeMirror.modes[modeName])
+  require("../mode/" + modeName + "/" + modeName + ".js");
+
+function esc(str) {
+  return str.replace(/[<&]/g, function(ch) { return ch == "&" ? "&amp;" : "&lt;"; });
+}
+
+var code = fs.readFileSync("/dev/stdin", "utf8");
+var curStyle = null, accum = "";
+function flush() {
+  if (curStyle) process.stdout.write("<span class=\"" + curStyle.replace(/(^|\s+)/g, "$1cm-") + "\">" + esc(accum) + "</span>");
+  else process.stdout.write(esc(accum));
+}
+
+CodeMirror.runMode(code, lang, function(text, style) {
+  if (style != curStyle) {
+    flush();
+    curStyle = style; accum = text;
+  } else {
+    accum += text;
+  }
+});
+flush();

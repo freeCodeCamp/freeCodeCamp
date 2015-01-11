@@ -1,0 +1,75 @@
+<!doctype html>
+
+<title>CodeMirror: Emacs bindings demo</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+
+<link rel="stylesheet" href="../lib/codemirror.css">
+<link rel="stylesheet" href="../addon/dialog/dialog.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../mode/clike/clike.js"></script>
+<script src="../keymap/emacs.js"></script>
+<script src="../addon/edit/matchbrackets.js"></script>
+<script src="../addon/comment/comment.js"></script>
+<script src="../addon/dialog/dialog.js"></script>
+<script src="../addon/search/searchcursor.js"></script>
+<script src="../addon/search/search.js"></script>
+<style type="text/css">
+      .CodeMirror {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+    </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Emacs bindings</a>
+  </ul>
+</div>
+
+<article>
+<h2>Emacs bindings demo</h2>
+<form><textarea id="code" name="code">
+#include "syscalls.h"
+/* getchar:  simple buffered version */
+int getchar(void)
+{
+  static char buf[BUFSIZ];
+  static char *bufp = buf;
+  static int n = 0;
+  if (n == 0) {  /* buffer is empty */
+    n = read(0, buf, sizeof buf);
+    bufp = buf;
+  }
+  return (--n >= 0) ? (unsigned char) *bufp++ : EOF;
+}
+</textarea></form>
+
+<p>The emacs keybindings are enabled by
+including <a href="../keymap/emacs.js">keymap/emacs.js</a> and setting
+the <code>keyMap</code> option to <code>"emacs"</code>. Because
+CodeMirror's internal API is quite different from Emacs, they are only
+a loose approximation of actual emacs bindings, though.</p>
+
+<p>Also note that a lot of browsers disallow certain keys from being
+captured. For example, Chrome blocks both Ctrl-W and Ctrl-N, with the
+result that idiomatic use of Emacs keys will constantly close your tab
+or open a new window.</p>
+
+    <script>
+      CodeMirror.commands.save = function() {
+        var elt = editor.getWrapperElement();
+        elt.style.background = "#def";
+        setTimeout(function() { elt.style.background = ""; }, 300);
+      };
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "text/x-csrc",
+        keyMap: "emacs"
+      });
+    </script>
+
+  </article>

@@ -1,0 +1,99 @@
+<!doctype html>
+
+<title>CodeMirror: Vim bindings demo</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+
+<link rel="stylesheet" href="../lib/codemirror.css">
+<link rel="stylesheet" href="../addon/dialog/dialog.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../addon/dialog/dialog.js"></script>
+<script src="../addon/search/searchcursor.js"></script>
+<script src="../mode/clike/clike.js"></script>
+<script src="../addon/edit/matchbrackets.js"></script>
+<script src="../keymap/vim.js"></script>
+<style type="text/css">
+      .CodeMirror {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+    </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Vim bindings</a>
+  </ul>
+</div>
+
+<article>
+<h2>Vim bindings demo</h2>
+<form><textarea id="code" name="code">
+#include "syscalls.h"
+/* getchar:  simple buffered version */
+int getchar(void)
+{
+  static char buf[BUFSIZ];
+  static char *bufp = buf;
+  static int n = 0;
+  if (n == 0) {  /* buffer is empty */
+    n = read(0, buf, sizeof buf);
+    bufp = buf;
+  }
+  return (--n >= 0) ? (unsigned char) *bufp++ : EOF;
+}
+</textarea></form>
+<div style="font-size: 13px; width: 300px; height: 30px;">Key buffer: <span id="command-display"></span></div>
+
+<p>The vim keybindings are enabled by
+including <a href="../keymap/vim.js">keymap/vim.js</a> and setting
+the <code>vimMode</code> option to <code>true</code>. This will also
+automatically change the <code>keyMap</code> option to <code>"vim"</code>.</p>
+
+<p><strong>Features</strong></p>
+
+<ul>
+  <li>All common motions and operators, including text objects</li>
+  <li>Operator motion orthogonality</li>
+  <li>Visual mode - characterwise, linewise, partial support for blockwise</li>
+  <li>Full macro support (q, @)</li>
+  <li>Incremental highlighted search (/, ?, #, *, g#, g*)</li>
+  <li>Search/replace with confirm (:substitute, :%s)</li>
+  <li>Search history</li>
+  <li>Jump lists (Ctrl-o, Ctrl-i)</li>
+  <li>Key/command mapping with API (:map, :nmap, :vmap)</li>
+  <li>Sort (:sort)</li>
+  <li>Marks (`, ')</li>
+  <li>:global</li>
+  <li>Insert mode behaves identical to base CodeMirror</li>
+  <li>Cross-buffer yank/paste</li>
+</ul>
+
+<p>Note that while the vim mode tries to emulate the most useful features of
+vim as faithfully as possible, it does not strive to become a complete vim
+implementation</p>
+
+    <script>
+      CodeMirror.commands.save = function(){ alert("Saving"); };
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "text/x-csrc",
+        keyMap: "vim",
+        matchBrackets: true,
+        showCursorWhenSelecting: true
+      });
+      var commandDisplay = document.getElementById('command-display');
+      var keys = '';
+      CodeMirror.on(editor, 'vim-keypress', function(key) {
+        keys = keys + key;
+        commandDisplay.innerHTML = keys;
+      });
+      CodeMirror.on(editor, 'vim-command-done', function(e) {
+        keys = '';
+        commandDisplay.innerHTML = keys;
+      });
+    </script>
+
+  </article>

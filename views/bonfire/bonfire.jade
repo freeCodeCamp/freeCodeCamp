@@ -1,0 +1,35 @@
+extends ../layout
+block content
+    script(src='/js/lib/codemirror/lib/codemirror.js')
+    link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
+    link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
+    script(src='/js/lib/codemirror/mode/javascript/javascript.js')
+
+    .col-sm-12
+      .col-sm-4.panel.
+        Challenge text goes here
+      .col-sm-8
+        form.code
+          .form-group.code
+            textarea(id='code')
+      #submitButton.btn.btn-primary
+      .col-sm-4.jumbotron
+        #codeOutput
+
+
+
+    script.
+      var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "javascript",
+        theme: 'monokai',
+        runnable: true
+      });
+      myCodeMirror.setValue('2*2');
+      $('#submitButton').on('click', function() {
+        $('#codeOutput').empty();
+        var js = myCodeMirror.getValue();
+        var s = document.createElement('script');
+        s.textContent = js;
+        $('#codeOutput').append(eval(s.textContent));
+      });

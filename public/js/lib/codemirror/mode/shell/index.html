@@ -1,0 +1,66 @@
+<!doctype html>
+
+<title>CodeMirror: Shell mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel=stylesheet href=../../lib/codemirror.css>
+<script src=../../lib/codemirror.js></script>
+<script src="../../addon/edit/matchbrackets.js"></script>
+<script src=shell.js></script>
+<style type=text/css>
+  .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Shell</a>
+  </ul>
+</div>
+
+<article>
+<h2>Shell mode</h2>
+
+
+<textarea id=code>
+#!/bin/bash
+
+# clone the repository
+git clone http://github.com/garden/tree
+
+# generate HTTPS credentials
+cd tree
+openssl genrsa -aes256 -out https.key 1024
+openssl req -new -nodes -key https.key -out https.csr
+openssl x509 -req -days 365 -in https.csr -signkey https.key -out https.crt
+cp https.key{,.orig}
+openssl rsa -in https.key.orig -out https.key
+
+# start the server in HTTPS mode
+cd web
+sudo node ../server.js 443 'yes' &gt;&gt; ../node.log &amp;
+
+# here is how to stop the server
+for pid in `ps aux | grep 'node ../server.js' | awk '{print $2}'` ; do
+  sudo kill -9 $pid 2&gt; /dev/null
+done
+
+exit 0</textarea>
+
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+    mode: 'shell',
+    lineNumbers: true,
+    matchBrackets: true
+  });
+</script>
+
+<p><strong>MIME types defined:</strong> <code>text/x-sh</code>.</p>
+</article>
