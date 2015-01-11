@@ -129,13 +129,13 @@ var trusted = [
     'ws://localhost:3000/',
     'http://localhost:3000',
     '*.ionicframework.com',
-    'https://syndication.twitter.com'
+    'https://syndication.twitter.com',
 ];
 
 debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
-    scriptSrc: ['*.optimizely.com'].concat(trusted),
+    scriptSrc: ['*.optimizely.com', '*.aspnetcdn.com'].concat(trusted),
     'connect-src': [
       'ws://*.rafflecopter.com',
       'wss://*.rafflecopter.com',
