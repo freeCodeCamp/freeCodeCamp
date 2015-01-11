@@ -5,31 +5,46 @@ block content
     link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
     script(src='/js/lib/codemirror/mode/javascript/javascript.js')
 
-    .col-sm-12
-      .col-sm-4.panel.
-        Challenge text goes here
-      .col-sm-8
-        form.code
-          .form-group.code
-            textarea(id='code')
-      #submitButton.btn.btn-primary
-      .col-sm-4.jumbotron
-        #codeOutput
+    .row
+        .col-sm-12.col-md-8.col-xs-12
+            .panel.panel-primary
+                .panel-heading Title
+                .panel.panel-body
+                    form.code
+                        .form-group.codeMirrorView
+                            textarea#codeEditor
+                    form.code
+                        .form-group.codeMirrorView
+                            textarea#codeOutput(enabled=false)
+                    #submitButton.btn.btn-primary.btn-big.btn-block Run my code
+                    #hintButton.btn.btn-info.btn-big.btn-block Show me hints
+                    script.
+                        var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
+                            lineNumbers: true,
+                            mode: "javascript",
+                            theme: 'monokai',
+                            runnable: true
+                        });
+                        myCodeMirror.setValue('2*2');
+                        myCodeMirror.setSize("100%", 500);
+                        $('#submitButton').on('click', function () {
+                            $('#codeOutput').empty();
+                            var js = myCodeMirror.getValue();
+                            var s = document.createElement('script');
+                            s.textContent = js;
+                            try {
+                                $('#codeOutput').append(eval(s.textContent));
+                            } catch (e) {
+                                $('#codeOutput').append(e);
+                            }
+                        });
 
-
-
-    script.
-      var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code"), {
-        lineNumbers: true,
-        mode: "javascript",
-        theme: 'monokai',
-        runnable: true
-      });
-      myCodeMirror.setValue('2*2');
-      $('#submitButton').on('click', function() {
-        $('#codeOutput').empty();
-        var js = myCodeMirror.getValue();
-        var s = document.createElement('script');
-        s.textContent = js;
-        $('#codeOutput').append(eval(s.textContent));
-      });
+                        var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
+                            lineNumbers: false,
+                            mode: "javascript",
+                            theme: 'monokai',
+                            readOnly: 'nocursor'
+                        });
+                        codeOutput.setSize("100%", 30);
+        .col-sm-12.col-md-4.col-xs-12
+            include ../partials/challenges
