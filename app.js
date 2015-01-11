@@ -31,6 +31,7 @@ var express = require('express'),
     resourcesController = require('./controllers/resources'),
     userController = require('./controllers/user'),
     contactController = require('./controllers/contact'),
+    bonfireController = require('./controllers/bonfire'),
 
     /**
     * User model
@@ -345,6 +346,13 @@ app.get(
     res.redirect(req.session.returnTo || '/');
   }
 );
+
+/**
+ * Bonfire routing
+ */
+app.get('/bonfire', bonfireController.index);
+
+ 
 
 /**
  * 500 Error Handler.
