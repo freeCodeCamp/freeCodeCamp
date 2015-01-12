@@ -7,7 +7,8 @@ var userSchema = new mongoose.Schema({
     type: String,
     lowercase: true,
     unique: true,
-    trim: true
+    trim: true,
+    sparse: true
   },
   password: String,
   facebook: String,
@@ -266,8 +267,8 @@ var userSchema = new mongoose.Schema({
   profile: {
     username: {
       type: String,
-      default: '',
       unique: true,
+      sparse: true,
       lowercase: true,
       trim: true
     },
