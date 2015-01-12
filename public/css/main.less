@@ -168,6 +168,10 @@ ul {
   margin-top: -10px;
 }
 
+.negative-5 {
+  margin-top: -5px;
+}
+
 .negative-15 {
   margin-top: -15px;
 }
@@ -303,7 +307,7 @@ ul {
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .profile-image {
-  border-radius: 10px;
+  border-radius: 5px;
   width: 200px;
   height: 200px;
   padding-left: 5px;
@@ -411,7 +415,9 @@ thead {
 }
 
 .portfolio-image {
-  max-height: 164px;
+  height: 225px;
+  width: 300px;
+  border-radius: 5px;
 }
 
 .flat-top {
@@ -421,3 +427,34 @@ thead {
 .negative-bottom {
   margin-bottom: -20px;
 }
+
+.min-height-1000 {
+  min-height: 1000px;
+}
+
+.points-on-top {
+  color: #eee;
+  font-size: 50px;
+  z-index: 2;
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.background-svg {
+  width: 220px;
+  height: 220px;
+  background-image: url("https://s3.amazonaws.com/freecodecamp/certificate-icon.svg");
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+//uncomment this to see the dimensions of all elements outlined in red
+//* {
+//  border-color: red;
+//  border-width: 1px;
+//  border-style: solid;
+//}

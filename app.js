@@ -252,10 +252,6 @@ app.get(
     '/challenges/:challengeNumber',
     challengesController.returnChallenge
 );
-app.get(
-    '/campers/:username',
-    userController.returnUser
-);
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
 // Unique Check API route
@@ -266,6 +262,14 @@ app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
+
+
+
+//put this route last
+app.get(
+    '/:username',
+    userController.returnUser
+);
 
 /**
  * API examples routes.

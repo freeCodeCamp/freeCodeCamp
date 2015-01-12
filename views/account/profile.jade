@@ -1,10 +1,10 @@
 extends ../layout
 block content
-    .panel.panel-primary(ng-controller="profileValidationController")
+    .panel.panel-primary.min-height-1000(ng-controller="profileValidationController")
         .panel-heading.text-center Update your profile here:
         .panel-body
           .container.text-center
-              form.form-horizontal(action='/account/profile', method='POST', novalidate='novalidate', name='profileForm')
+              form.form-horizontal(action='/account/profile', method='POST', novalidate='novalidate', name='profileForm' ng-show="asyncComplete")
                 input(type='hidden', name='_csrf', value=_csrf)
 
                 .col-sm-4.col-sm-offset-5

@@ -51,6 +51,7 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
             $scope.storedEmail = data.user.email;
             $scope.user.email = $scope.user.email.toLowerCase();
             $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle.toLowerCase();
+            $scope.asyncComplete = true;
         });
     }
 ]);
