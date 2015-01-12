@@ -46,11 +46,11 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
     function($scope, $http) {
         $http.get('/account/api').success(function(data) {
             $scope.user = data.user;
-            $scope.user.profile.username = $scope.user.profile.username.toLowerCase();
+            $scope.user.profile.username = $scope.user.profile.username ? $scope.user.profile.username.toLowerCase() : undefined;
             $scope.storedUsername = data.user.profile.username;
             $scope.storedEmail = data.user.email;
-            $scope.user.email = $scope.user.email.toLowerCase();
-            $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle.toLowerCase();
+            $scope.user.email = $scope.user.email ? $scope.user.email.toLowerCase() : undefined;
+            $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle ? $scope.user.profile.twitterHandle.toLowerCase() : undefined;
             $scope.asyncComplete = true;
         });
     }
