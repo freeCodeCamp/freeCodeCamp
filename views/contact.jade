@@ -14,7 +14,7 @@ block content
                       li &#8226 Understand that they will build your project using JavaScript frameworks (as opposed to older or proprietary tools)
                       li &#8226 Keep your expectations high. Our students' goal is to produce work that's up to your standards
           h3 If you're OK with these terms, great! We'd love to help you! Fill in this form and we'll get right back to you.
-          form.form-horizontal(role='form', method='POST')
+          form.form-horizontal(role='form', action="/nonprofits/", method='POST')
             input(type='hidden', name='_csrf', value=_csrf)
             .form-group
               label(class='col-sm-2 control-label', for='name') Your name
