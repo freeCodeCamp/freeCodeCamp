@@ -428,7 +428,8 @@ exports.getReset = function(req, res) {
         return res.redirect('/forgot');
       }
       res.render('account/reset', {
-        title: 'Password Reset'
+        title: 'Password Reset',
+        token: req.params.token
       });
     });
 };
@@ -590,7 +591,7 @@ exports.postForgot = function(req, res, next) {
           '/reset/',
           token,
           '\n\n',
-          'If you did not request this, please ignore this email and',
+          'If you did not request this, please ignore this email and\n',
           'your password will remain unchanged.\n'
         ].join('')
       };
