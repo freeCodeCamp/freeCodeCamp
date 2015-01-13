@@ -68,6 +68,12 @@ profileValidation.controller('emailSignInController', ['$scope',
     }
 ]);
 
+profileValidation.controller('nonprofitFormController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
 profileValidation.directive('uniqueUsername', function($http) {
     return {
         restrict: 'A',

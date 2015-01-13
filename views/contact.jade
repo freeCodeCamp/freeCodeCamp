@@ -14,22 +14,34 @@ block content
                       li &#8226 Understand that they will build your project using JavaScript frameworks (as opposed to older or proprietary tools)
                       li &#8226 Keep your expectations high. Our students' goal is to produce work that's up to your standards
           h3 If you're OK with these terms, great! We'd love to help you! Fill in this form and we'll get right back to you.
-          form.form-horizontal(role='form', action="/nonprofits/", method='POST')
+          form.form-horizontal(role='form', action="/nonprofits/", method='POST', novalidate='novalidate', name='nonprofitForm')
             input(type='hidden', name='_csrf', value=_csrf)
             .form-group
-              label(class='col-sm-2 control-label', for='name') Your name
+              label(class='col-sm-2 control-label', for='name') Your name *
               .col-sm-8
-                input.form-control(type='text', name='name', id='name')
+                input.form-control(type='text', name='name', id='name', autocomplete="off", ng-model='nonprofitForm.name', required='required')
+              .col-sm-8(ng-show="nonprofitForm.name.$invalid && nonprofitForm.name.$error.required && !nonprofitForm.name.$pristine")
+                alert(type='danger')
+                    span.ion-close-circled(id='#name-error')
+                    |  Your name is required.
             .form-group
-              label(class='col-sm-2 control-label', for='email') Your email
+              label(class='col-sm-2 control-label', for='email') Your email *
               .col-sm-8
-                input.form-control(type='text', name='email', id='email')
+                input.form-control(type='text', name='email', id='email', autocomplete="off", ng-model='nonprofitForm.email', required='required')
+            .col-sm-8(ng-show="nonprofitForm.email.$invalid && nonprofitForm.email.$error.required && !nonprofitForm.email.$pristine")
+                alert(type='danger')
+                    span.ion-close-circled(id='#email-error')
+                    | Your email is required.
             .form-group
-              label(class='col-sm-2 control-label', for='message') Briefly describe what problem you need to solve, and for whom.
+              label(class='col-sm-2 control-label', for='message') Briefly describe what problem you need to solve, and for whom. *
               .col-sm-8
-                textarea.form-control(type='text', name='message', id='message', rows='7')
+                textarea.form-control(type='text', name='message', id='message', rows='7', autocomplete="off", ng-model='nonprofitForm.message', required='required')
+            .col-sm-8(ng-show="nonprofitForm.message.$invalid && nonprofitForm.message.$error.required && !nonprofitForm.message.$pristine")
+                alert(type='danger')
+                    span.ion-close-circled(id='#message-error')
+                    | Your message is required.
             .form-group
               .col-sm-offset-2.col-sm-8
-                button.btn.btn-primary(type='submit')
+                button.btn.btn-primary(type='submit', ng-disabled='nonprofitForm.$invalid')
                   span.ion-paper-airplane
                   | Submit
