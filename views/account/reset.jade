@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   .col-sm-8.col-sm-offset-2
-    form(method='POST')
+    form(action='/post/reset/', method='POST')
       legend Reset Password
       input(type='hidden', name='_csrf', value=_csrf)
       .form-group

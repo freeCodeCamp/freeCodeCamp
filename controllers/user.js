@@ -581,9 +581,9 @@ exports.postForgot = function(req, res, next) {
         from: 'Team@freecodecamp.com',
         subject: 'Reset your Free Code Camp password',
         text: [
-          'You are receiving this email because you (or someone else)',
+          'You are receiving this email because you (or someone else)\n',
           'requested we reset your Free Code Camp account\'s password.\n\n',
-          'Please click on the following link, or paste this into your',
+          'Please click on the following link, or paste this into your\n',
           'browser to complete the process:\n\n',
           'http://',
           req.headers.host,
@@ -592,7 +592,7 @@ exports.postForgot = function(req, res, next) {
           '\n\n',
           'If you did not request this, please ignore this email and',
           'your password will remain unchanged.\n'
-        ].join(' ')
+        ].join('')
       };
       transporter.sendMail(mailOptions, function(err) {
         if (err) { return done(err); }
