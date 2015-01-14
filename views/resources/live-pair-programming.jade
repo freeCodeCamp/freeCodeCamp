@@ -1,16 +1,26 @@
 extends ../layout
 block content
-    .jumbotron.text-center
-        h1.hug-top Live Pair Programming
-        h2 We live pair program every Tuesday from 6 p.m. to 7 p.m. (Pacific Time).
-        h2 Our next session will be January 13th, 2015 at 6 p.m. PST!
-        h2 A live video will appear here at 6 p.m. We'll host a discussion in our 
-            a(href="chat.freecodecamp.com", target="_blank") FreeCodeCamp chat room.
-        h3 Previous Live Pair Programming Sessions:
-        .embed-responsive.embed-responsive-16by9.big-break
-            iframe.embed-responsive-item(src='//www.youtube.com/embed/cBtysq16kqo')
-        .embed-responsive.embed-responsive-16by9.big-break
-            iframe.embed-responsive-item(src='//www.youtube.com/embed/19pP2pvZuBs')
-        h3 Got 3 minutes? Learn to code with us!
-        a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
-        br
+    .panel.panel-primary
+        .panel-heading.landing-panel-heading.text-center Live Pair Programming
+        .panel-body
+            .landing-panel-body.text-center
+                h2 We live pair program every Tuesday from 6 p.m. to 7 p.m. (Pacific Time).
+                h2 Our next session will be January 13th, 2015 at 6 p.m. PST!
+                h2 Join the discussion in our
+                    a(href="chat.freecodecamp.com", target="_blank") FreeCodeCamp chat room.
+                .embed-responsive.embed-responsive-16by9.big-break
+                    iframe.embed-responsive-item(src='//www.youtube.com/embed/vRTd6A7ryNg')
+                br
+    .panel.panel-primary
+        .panel-heading.landing-panel-heading.text-center Previous Live Pair Programming Sessions
+        .panel-body
+            .landing-panel-body.text-center
+                .col-xs-12
+                    .embed-responsive.embed-responsive-16by9.big-break
+                        iframe.embed-responsive-item(src='//www.youtube.com/embed/cBtysq16kqo')
+                    .embed-responsive.embed-responsive-16by9.big-break
+                        iframe.embed-responsive-item(src='//www.youtube.com/embed/19pP2pvZuBs')
+                    h3 Got 3 minutes? Learn to code with us!
+                    a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
+                    br
+                    br
