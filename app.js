@@ -115,6 +115,7 @@ var trusted = [
     '*.gstatic.com',
     '*.doubleclick.net',
     '*.twitter.com',
+    '*.twitch.tv',
     '*.twimg.com',
     "'unsafe-eval'",
     "'unsafe-inline'",
