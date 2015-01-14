@@ -197,8 +197,8 @@ app.use(
 /**
  * Main routes.
  */
-app.get('/', homeController.index);
 
+app.get('/', homeController.index);
 app.get(
   '/resources/interview-questions',
   resourcesController.interviewQuestions);
@@ -213,20 +213,14 @@ app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
 app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
 app.get('/stats', resourcesController.stats);
-
 app.get(
   '/pair-program-with-team-viewer',
   resourcesController.pairProgramWithTeamViewer
 );
 app.get(
-  '/done-with-first-100-hours',
-  resourcesController.doneWithFirst100Hours
-);
-app.get(
   '/programmer-interview-questions-app',
   resourcesController.programmerInterviewQuestionsApp
 );
-
 app.get('/about', resourcesController.about);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
@@ -239,8 +233,16 @@ app.get('/email-signup', userController.getEmailSignup);
 app.get('/email-signin', userController.getEmailSignin);
 app.post('/email-signup', userController.postEmailSignup);
 app.post('/email-signin', userController.postLogin);
-app.get('/nonprofits', contactController.getContact);
-app.post('/nonprofits', contactController.postContact);
+app.get('/nonprofits', contactController.getNonprofitsForm);
+app.post('/nonprofits', contactController.postNonprofitsForm);
+app.get(
+  '/done-with-first-100-hours',
+  contactController.getDoneWithFirst100Hours
+);
+app.post(
+  '/done-with-first-100-hours',
+  contactController.postDoneWithFirst100Hours
+);
 
 // # Protected routes, user must be logged in.
 app.post(
@@ -248,13 +250,13 @@ app.post(
   passportConf.isAuthenticated,
   userController.updateProgress
 );
-
 app.get(
     '/challenges/:challengeNumber',
     challengesController.returnChallenge
 );
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
+
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
 app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
@@ -263,8 +265,6 @@ app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
-
-
 
 //put this route last
 app.get(

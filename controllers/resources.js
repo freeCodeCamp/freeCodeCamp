@@ -175,13 +175,6 @@ module.exports = {
     });
   },
 
-  doneWithFirst100Hours: function(req, res) {
-    res.render('resources/done-with-first-100-hours', {
-      title:
-        'Congratulations on finishing the first 100 hours of Free Code Camp!'
-    });
-  },
-
   interviewQuestions: function(req, res) {
     res.json(questions);
   }

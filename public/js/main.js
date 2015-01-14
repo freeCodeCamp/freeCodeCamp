@@ -74,6 +74,12 @@ profileValidation.controller('nonprofitFormController', ['$scope',
     }
 ]);
 
+profileValidation.controller('doneWithFirst100HoursFormController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
 profileValidation.directive('uniqueUsername', function($http) {
     return {
         restrict: 'A',
