@@ -175,12 +175,20 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='website1Link') Link
                   .col-sm-4
-                     input.form-control(type='text', name='website1Link', id='website1Link', autocomplete="off", ng-model='user.portfolio.website1Link', placeholder='http://')
+                     input.form-control(type='url', name='website1Link', id='website1Link', autocomplete="off", ng-model='user.portfolio.website1Link', placeholder='http://')
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.website1Link.$error.url && !profileForm.website1Link.$pristine")
+                    alert(type='danger')
+                        span.ion-close-circled
+                        | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='website1Image') Image Link (4:3 ratio)
                   .col-sm-4
-                    input.form-control(type='text', name='website1Image', id='website1Image', autocomplete="off", ng-model='user.portfolio.website1Image', placeholder='http://')
+                    input.form-control(type='url', name='website1Image', id='website1Image', autocomplete="off", ng-model='user.portfolio.website1Image', placeholder='http://')
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.website1Image.$error.url && !profileForm.website1Image.$pristine")
+                    alert(type='danger')
+                        span.ion-close-circled
+                        | Please enter a valid URL format (http://www.example.com).
 
                 .col-sm-4.col-sm-offset-5.flat-top
                     h3 Second Portfolio Project
@@ -197,12 +205,19 @@ block content
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website2Link') Link
                     .col-sm-4
-                        input.form-control(type='text', name='website2Link', id='website2Link', autocomplete="off", ng-model='user.portfolio.website2Link', placeholder='http://')
-
+                        input.form-control(type='url', name='website2Link', id='website2Link', autocomplete="off", ng-model='user.portfolio.website2Link', placeholder='http://')
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.website2Link.$error.url && !profileForm.website2Link.$pristine")
+                    alert(type='danger')
+                        span.ion-close-circled
+                        | Please enter a valid URL format (http://www.example.com).
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website2Image') Image Link (4:3 ratio)
                     .col-sm-4
-                        input.form-control(type='text', name='website2Image', id='website2Image', autocomplete="off", ng-model='user.portfolio.website2Image', placeholder='http://')
+                        input.form-control(type='url', name='website2Image', id='website2Image', autocomplete="off", ng-model='user.portfolio.website2Image', placeholder='http://')
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.website2Image.$error.url && !profileForm.website2Image.$pristine")
+                    alert(type='danger')
+                        span.ion-close-circled
+                        | Please enter a valid URL format (http://www.example.com).
 
                 .col-sm-4.col-sm-offset-5.flat-top
                     h3 Third Portfolio Project
@@ -219,12 +234,20 @@ block content
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website3Link') Link
                     .col-sm-4
-                        input.form-control(type='text', name='website3Link', id='website3Link', autocomplete="off", ng-model='user.portfolio.website3Link', placeholder='http://')
+                        input.form-control(type='url', name='website3Link', id='website3Link', autocomplete="off", ng-model='user.portfolio.website3Link', placeholder='http://')
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.website3Link.$error.url && !profileForm.website3Link.$pristine")
+                    alert(type='danger')
+                        span.ion-close-circled
+                        | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website3Image') Image Link (4:3 ratio)
                     .col-sm-4
-                        input.form-control(type='text', name='website3Image', id='website3Image', autocomplete="off", ng-model='user.portfolio.website3Image', placeholder='http://')
+                        input.form-control(type='url', name='website3Image', id='website3Image', autocomplete="off", ng-model='user.portfolio.website3Image', placeholder='http://')
+                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.website3Image.$error.url && !profileForm.website3Image.$pristine")
+                    alert(type='danger')
+                        span.ion-close-circled
+                        | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
                     .col-sm-offset-5.col-sm-4
