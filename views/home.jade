@@ -1,8 +1,5 @@
 extends layout
 block content
-    .hidden-xs
-        a(href='https://github.com/freecodecamp/freecodecamp')
-            img(style='position: absolute; top: 40; right: 0; border: 0; margin-top: -30px;', src='https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67', alt='Fork me on GitHub', data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png')
     .jumbotron
         .text-center
             h1.hug-top Code with Us
@@ -36,6 +33,70 @@ block content
             br
             br
             a.btn.nonprofit-cta.btn-success(href="/nonprofits") I'm with a nonprofit and want help coding something
+            .big-break
+            h2 Campers you'll hang out with
+            .row
+                .col-xs-12.col-sm-12.col-md-4
+                    img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-alec.jpg", alt="@AlecMHansen's testimonial image")
+                    .testimonial-copy  My boss was impressed by the troubleshooting I learned through FreeCodeCamp and I just got a raise! Sweet!
+                    h3 - @AlecMHansen
+                .col-xs-12.col-sm-12.col-md-4
+                    img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-cynthia.jpg", alt="@cynthialanel's testimonial image")
+                    .testimonial-copy  I'm currently working through Free Code Camp to improve my JavaScript. The community is very welcoming!
+                    h3 - @cynthialanel
+                .col-xs-12.col-sm-12.col-md-4
+                    img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-tate.jpg", alt="@TateThurston's testimonial image")
+                    .testimonial-copy Just built my company's website with skills I've learned from Free Code Camp!
+                    h3 - @TateThurston
+            .big-break
+            h2 Skills you'll learn
+            .row
+                .col-sm-6.col-xs-3.text-right
+                    .landing-skill-icon.ion-social-html5
+                .col-sm-6.col-xs-9.text-left
+                    .black-text HTML5
+            .row
+                .col-sm-6.col-xs-3.text-right
+                    .landing-skill-icon.ion-social-css3
+                .col-sm-6.col-xs-9.text-left
+                    .black-text CSS3
+            .row
+                .col-sm-6.col-xs-3.text-right
+                    .landing-skill-icon.ion-social-javascript
+                .col-sm-6.col-xs-9.text-left
+                    .black-text JavaScript
+            .row
+                .col-sm-6.col-xs-3.text-right
+                    i.landing-skill-icon.fa.fa-database(style="margin-top: 10px; margin-left: 10px;")
+                .col-sm-6.col-xs-9.text-left
+                    .black-text Databases
+            .row
+                .col-sm-6.col-xs-3.text-right
+                    .landing-skill-icon.ion-social-chrome
+                .col-sm-6.col-xs-9.text-left
+                    .black-text DevTools
+            .row
+                .col-sm-6.col-xs-3.text-right
+                    .landing-skill-icon.ion-social-nodejs
+                .col-sm-6.col-xs-9.text-left
+                    .black-text Node.js
+            .row
+                .col-sm-6.col-xs-3.text-right
+                    .landing-skill-icon.ion-social-angular
+                .col-sm-6.col-xs-9.text-left
+                    .black-text Angular.js
+            .row
+                .col-sm-6.col-xs-3.text-right
+                    .landing-skill-icon.ion-ios-loop-strong
+                .col-sm-6.col-xs-9.text-left
+                    .black-text Agile
+            .big-break
+            h2 Fast Facts about our Community
+            h3.col-sm-offset-1.col-sm-offset-0
+                ul.text-left
+                    li.ion-code &nbsp; 100% free and open source
+                    li.ion-code &nbsp; 1,000's of professionals actively learning to code
+                    li.ion-code &nbsp; 10's of nonprofit partners
+                    li.ion-code &nbsp; 1 goal: to boost your career with code
 
-    include partials/about
-    include partials/faq
+            a.btn.btn-cta.signup-btn(href="/login") Start learning to code (it's free)
