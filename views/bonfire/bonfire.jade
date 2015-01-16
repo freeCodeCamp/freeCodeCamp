@@ -10,6 +10,8 @@ block content
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
     link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
     script(src='/js/lib/codemirror/mode/javascript/javascript.js')
+    script(src='js/lib/jailed/jailed.js')
+    script(src='/js/lib/bonfire/bonfire.js')
 
     .row
         .col-sm-12.col-md-8.col-xs-12
@@ -24,6 +26,7 @@ block content
                             textarea#codeOutput
                     #submitButton.btn.btn-primary.btn-big.btn-block Run my code
                     #hintButton.btn.btn-info.btn-big.btn-block Show me hints
+
                     script.
                         var widgets = [];
                         var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
@@ -33,22 +36,12 @@ block content
                             runnable: true,
                             autoCloseBrackets: true,
                             gutters: ["CodeMirror-lint-markers"],
-                            onKeyEvent : doLinting()
+                            onKeyEvent : doLinting
                         });
                         var editor = myCodeMirror;
                         myCodeMirror.setValue('2*2');
                         myCodeMirror.setSize("100%", 500);
-                        $('#submitButton').on('click', function () {
-                            $('#codeOutput').empty();
-                            var js = myCodeMirror.getValue();
-                            var s = document.createElement('script');
-                            s.textContent = js;
-                            try {
-                                $('#codeOutput').append(eval(s.textContent));
-                            } catch (e) {
-                                $('#codeOutput').append(e);
-                            }
-                        });
+                        
 
                         var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
                             lineNumbers: false,
@@ -56,7 +49,7 @@ block content
                             theme: 'monokai',
                             readOnly: 'nocursor'
                         });
-                        codeOutput.setSize("100%", 30);
+                        codeOutput.setSize("100%", 100);
 
                         var info = editor.getScrollInfo();
                         var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top;
@@ -66,8 +59,8 @@ block content
                             editor.operation(function () {
                                 for (var i = 0; i < widgets.length; ++i)
                                     editor.removeLineWidget(widgets[i]);
-                                    widgets.length = 0;
-                                    JSHINT(editor.getValue());
+                                widgets.length = 0;
+                                JSHINT(editor.getValue());
                                 for (var i = 0; i < JSHINT.errors.length; ++i) {
                                     var err = JSHINT.errors[i];
                                     if (!err) continue;
@@ -78,12 +71,21 @@ block content
                                     msg.appendChild(document.createTextNode(err.reason));
                                     msg.className = "lint-error";
                                     widgets.push(editor.addLineWidget(err.line - 1, msg, {
-                                    coverGutter: false,
-                                    noHScroll: true
+                                        coverGutter: false,
+                                        noHScroll: true
                                     }));
                                 }
                             });
                         };
+                        $('#submitButton').on('click', function () {
+                            $('#codeOutput').empty();
+                            var js = myCodeMirror.getValue();
+                           submit(js);
+                           console.log('submitted');
+                        });
+
+
+
 
         .col-sm-12.col-md-4.col-xs-12
             include ../partials/challenges
