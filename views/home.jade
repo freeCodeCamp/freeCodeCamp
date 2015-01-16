@@ -1,8 +1,5 @@
 extends layout
 block content
-    .hidden-xs
-        a(href='https://github.com/freecodecamp/freecodecamp')
-            img(style='position: absolute; top: 40; right: 0; border: 0; margin-top: -30px;', src='https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67', alt='Fork me on GitHub', data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png')
     .jumbotron
         .text-center
             h1.hug-top Code with Us
@@ -36,6 +33,56 @@ block content
             br
             br
             a.btn.nonprofit-cta.btn-success(href="/nonprofits") I'm with a nonprofit and want help coding something
-
-    include partials/about
-    include partials/faq
+            .big-break
+            h2 Campers you'll hang out with:
+            .row
+                .col-xs-12.col-sm-12.col-md-4
+                    img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-jen.jpg", alt="@jenthebest's testimonial image")
+                    .testimonial-copy Getting back on track with Free Code Camp and committing to a new career in 2015!
+                    h3 - @jenthebest
+                .col-xs-12.col-sm-12.col-md-4
+                    img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-tate.jpg", alt="@TateThurston's testimonial image")
+                    .testimonial-copy Just built my company's website with skills I've learned from Free Code Camp!
+                    h3 - @TateThurston
+                .col-xs-12.col-sm-12.col-md-4
+                    img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-cynthia.jpg", alt="@cynthialanel's testimonial image")
+                    .testimonial-copy  I'm currently working through Free Code Camp to improve my JavaScript. The community is very welcoming!
+                    h3 - @cynthialanel
+            .big-break
+            h2 Skills you'll learn:
+            .text-center
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-social-html5
+                    .black-text HTML5
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-social-css3
+                    .black-text CSS3
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-social-javascript
+                    .black-text JavaScript
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.fa.fa-database.font-awesome-padding
+                    .black-text Databases
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-social-chrome
+                    .black-text DevTools
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-social-nodejs
+                    .black-text Node.js
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-social-angular
+                    .black-text Angular.js
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-ios-loop-strong
+                    .black-text Agile
+            .big-break
+            h2 &nbsp;
+            h2 Fast facts about our community:
+            h3.col-xs-offset-0.col-sm-offset-1.col-md-offset-2
+                ul.text-left
+                    li.ion-code &nbsp; We're 100% free and open source
+                    li.ion-code &nbsp; We're thousands of professionals who are learning to code
+                    li.ion-code &nbsp; We're building projects for dozens of nonprofits
+                    li.ion-code &nbsp; We share one goal: to boost our careers with code
+            .big-break
+            a.btn.btn-cta.signup-btn(href="/login") Start learning to code (it's free)
