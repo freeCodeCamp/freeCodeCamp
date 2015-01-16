@@ -450,13 +450,18 @@ thead {
 
 .landing-skill-icon {
   color: #215f1e;
-  font-size: 40px;
+  font-size: 100px;
 }
 
 .black-text {
   color: #333;
   font-weight: 400;
   font-size: 40px;
+}
+
+.font-awesome-padding {
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 
 .background-svg {
@@ -467,6 +472,7 @@ thead {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .testimonial-image {
   border-radius: 5px;
   height: 200px;
@@ -476,7 +482,12 @@ thead {
 .testimonial-copy {
   font-size: 20px;
   text-align: center;
-  height: 100px;
+  @media (min-width: 991px) and (max-width: 1199px) {
+    height: 120px;
+  }
+  @media (min-width: 1200px) {
+    height: 90px;
+  }
 }
 
 //uncomment this to see the dimensions of all elements outlined in red
