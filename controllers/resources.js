@@ -13,12 +13,6 @@ var User = require('../models/User'),
  */
 
 module.exports = {
-  learnToCode: function(req, res) {
-    res.render('resources/learn-to-code', {
-      title: 'Learn to Code'
-    });
-  },
-
   privacy: function privacy(req, res) {
     res.render('resources/privacy', {
       title: 'Privacy'

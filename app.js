@@ -202,7 +202,6 @@ app.get('/', homeController.index);
 app.get(
   '/resources/interview-questions',
   resourcesController.interviewQuestions);
-app.get('/learn-to-code', resourcesController.learnToCode);
 app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
 app.get('/live-pair-programming', resourcesController.livePairProgramming);
@@ -221,7 +220,7 @@ app.get(
   '/programmer-interview-questions-app',
   resourcesController.programmerInterviewQuestionsApp
 );
-app.get('/about', resourcesController.about);
+app.get('/learn-to-code', resourcesController.about);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
