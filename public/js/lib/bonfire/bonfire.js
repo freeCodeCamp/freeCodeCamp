@@ -27,7 +27,7 @@ var escape = function(msg) {
 
 // puts the message on the terminal
 var print = function(cls, msg) {
-    codeOutput.setValue(escape(msg));
+    codeOutput.setValue(msg);
 };
 
 
@@ -53,7 +53,7 @@ var api = {
             endLoading();
         }
 
-        print('separator');
+       // print('separator');
         print('input', data.input);
         if (data.error) {
             print('message', data.error);
@@ -84,18 +84,20 @@ var reset = function() {
         // give some time to handle the last responce
         setTimeout( function() {
             endLoading();
-
-            while (el.terminal.hasChildNodes()) {
-                el.terminal.removeChild(el.terminal.childNodes[0]);
-            }
+            codeOutput.setValue('Infinite loop detected!');
 
 
-            print('message', 'Your code took too long to execute. Check for an infinite loop or recursion.');
+            
+
+
+           // print('message', 'Your code took too long to execute. Check for an infinite loop or recursion.');
+//            console.log('infinite loop');
+  //          $('#codeOutput.setValue('Infinite loop detected')')
 
             reset();
         }, 10);
     });
-}
+};
 
 
 // initialize everything

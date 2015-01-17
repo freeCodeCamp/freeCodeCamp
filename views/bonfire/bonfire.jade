@@ -2,6 +2,7 @@ extends ../layout
 block content
     script(src='/js/lib/codemirror/lib/codemirror.js')
     script(src='/js/lib/codemirror/addon/edit/closebrackets.js')
+    script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
     script(src='/js/lib/codemirror/addon/lint/lint.js')
     script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
     script(src='//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js')
@@ -34,6 +35,8 @@ block content
                             mode: "javascript",
                             theme: 'monokai',
                             runnable: true,
+                            lint: true,
+                            matchBrackets: true,
                             autoCloseBrackets: true,
                             gutters: ["CodeMirror-lint-markers"],
                             onKeyEvent : doLinting
@@ -81,7 +84,6 @@ block content
                             $('#codeOutput').empty();
                             var js = myCodeMirror.getValue();
                            submit(js);
-                           console.log('submitted');
                         });
 
 
