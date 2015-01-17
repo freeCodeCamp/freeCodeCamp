@@ -1,21 +1,22 @@
 extends ../layout
 block content
     .row
-        .col-sm-12.col-md-8.col-xs-12
+        .col-sm-12.col-md-12.col-xs-12
             .panel.panel-primary
-                .panel-heading #{name} (takes #{time} minutes)
+                .panel-heading.text-center #{name} (takes #{time} minutes)
                 .panel.panel-body
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
-                    h3 Steps:
-                    h4
-                        ol
-                            for step in steps
-                                li!= step
-                    .btn.btn-primary.btn-big.btn-block.completed-challenge I've completed this challenge
-                    .ten-pixel-break
-                    .btn.btn-success.btn-large.btn-block.skip-challenge I want to skip this challenge for now
-                #complete-dialog.modal
+                    .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+                        h3 Steps:
+                        h4
+                            ol
+                                for step in steps
+                                    li!= step
+                        .btn.btn-primary.btn-big.btn-block.completed-challenge I've completed this challenge
+                        .ten-pixel-break
+                        .btn.btn-success.btn-big.btn-block.all-challenges Show me all the challenges
+                #complete-dialog.modal(tabindex='-1')
                     .modal-dialog.animated.zoomIn.fast-animation
                         .modal-content
                             .modal-header
@@ -32,16 +33,9 @@ block content
                                              = phrase
                                 - else
                                     a.animated.fadeIn.delay-2.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-                #skip-dialog.modal
+                #all-challenges-dialog.modal(tabindex='-1')
                     .modal-dialog.animated.zoomIn.fast-animation
                         .modal-content
                             .modal-header
                                 a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                                .text-center
-                                    h1.animated.zoomInDown No problem.
-                                    h2.animated.zoomInDown You can retry this challenge any time.
-                                    .animated.zoomInUp.delay-1
-                                        span.landing-icon.ion-skip-forward.text-success
-                                a.animated.fadeIn.delay-2.btn.btn-lg.btn-primary.btn-block.next-button(aria-hidden='true') Take me to my next challenge
-        .col-sm-12.col-md-4.col-xs-12
-            include ../partials/challenges
+                                    include ../partials/challenges
