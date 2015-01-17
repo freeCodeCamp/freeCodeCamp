@@ -297,7 +297,7 @@ var passportOptions = {
     failureRedirect: '/login'
 };
 
-app.get('/auth/twitter', passport.authenticate('twitter'));
+app.get('/auth/twitter', passport.authorize('twitter'));
 app.get(
     '/auth/twitter/callback',
     passport.authenticate('twitter', {

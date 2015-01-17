@@ -14,17 +14,6 @@ var submit = function(code) {
     );
 };
 
-// prepares the string to be printed on the terminal
-var escape = function(msg) {
-    return msg.
-        replace(/&/g,'&amp;').
-        replace(/</g,'&lt;').
-        replace(/>/g,'&gt;').
-        replace(/\n/g, '<br/>').
-        replace(/ /g, '&nbsp;');
-};
-
-
 // puts the message on the terminal
 var print = function(cls, msg) {
     codeOutput.setValue(msg);
@@ -49,17 +38,13 @@ var disconnect = function() {
 // interface provided to the plugin
 var api = {
     output: function(data) {
-        if (!--requests) {
-            endLoading();
-        }
-
-       // print('separator');
-        print('input', data.input);
-        if (data.error) {
-            print('message', data.error);
-        } else {
-            print('output', data.output);
-        }
+      endLoading();
+      print('input', data.input);
+      if (data.error) {
+          print('message', data.error);
+      } else {
+          print('output', data.output);
+      }
     }
 };
 
@@ -85,15 +70,6 @@ var reset = function() {
         setTimeout( function() {
             endLoading();
             codeOutput.setValue('Infinite loop detected!');
-
-
-            
-
-
-           // print('message', 'Your code took too long to execute. Check for an infinite loop or recursion.');
-//            console.log('infinite loop');
-  //          $('#codeOutput.setValue('Infinite loop detected')')
-
             reset();
         }, 10);
     });
