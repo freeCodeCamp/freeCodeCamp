@@ -1,0 +1,45 @@
+<!doctype html>
+
+<title>CodeMirror: HTTP mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="http.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">HTTP</a>
+  </ul>
+</div>
+
+<article>
+<h2>HTTP mode</h2>
+
+
+<div><textarea id="code" name="code">
+POST /somewhere HTTP/1.1
+Host: example.com
+If-Modified-Since: Sat, 29 Oct 1994 19:43:31 GMT
+Content-Type: application/x-www-form-urlencoded;
+	charset=utf-8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.11 (KHTML, like Gecko) Ubuntu/12.04 Chromium/20.0.1132.47 Chrome/20.0.1132.47 Safari/536.11
+
+This is the request body!
+</textarea></div>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>message/http</code>.</p>
+  </article>

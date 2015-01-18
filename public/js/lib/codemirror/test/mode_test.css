@@ -1,0 +1,23 @@
+.mt-output .mt-token {
+  border: 1px solid #ddd;
+  white-space: pre;
+  font-family: "Consolas", monospace;
+  text-align: center;
+}
+
+.mt-output .mt-style {
+  font-size: x-small;
+}
+
+.mt-output .mt-state {
+  font-size: x-small;
+  vertical-align: top;
+}
+
+.mt-output .mt-state-row {
+  display: none;
+}
+
+.mt-state-unhide .mt-output .mt-state-row {
+  display: table-row;
+}

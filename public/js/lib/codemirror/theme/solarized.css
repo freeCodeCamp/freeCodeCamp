@@ -1,0 +1,165 @@
+/*
+Solarized theme for code-mirror
+http://ethanschoonover.com/solarized
+*/
+
+/*
+Solarized color pallet
+http://ethanschoonover.com/solarized/img/solarized-palette.png
+*/
+
+.solarized.base03 { color: #002b36; }
+.solarized.base02 { color: #073642; }
+.solarized.base01 { color: #586e75; }
+.solarized.base00 { color: #657b83; }
+.solarized.base0 { color: #839496; }
+.solarized.base1 { color: #93a1a1; }
+.solarized.base2 { color: #eee8d5; }
+.solarized.base3  { color: #fdf6e3; }
+.solarized.solar-yellow  { color: #b58900; }
+.solarized.solar-orange  { color: #cb4b16; }
+.solarized.solar-red { color: #dc322f; }
+.solarized.solar-magenta { color: #d33682; }
+.solarized.solar-violet  { color: #6c71c4; }
+.solarized.solar-blue { color: #268bd2; }
+.solarized.solar-cyan { color: #2aa198; }
+.solarized.solar-green { color: #859900; }
+
+/* Color scheme for code-mirror */
+
+.cm-s-solarized {
+  line-height: 1.45em;
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
+.cm-s-solarized.cm-s-dark {
+  color: #839496;
+  background-color:  #002b36;
+  text-shadow: #002b36 0 1px;
+}
+.cm-s-solarized.cm-s-light {
+  background-color: #fdf6e3;
+  color: #657b83;
+  text-shadow: #eee8d5 0 1px;
+}
+
+.cm-s-solarized .CodeMirror-widget {
+  text-shadow: none;
+}
+
+
+.cm-s-solarized .cm-keyword { color: #cb4b16 }
+.cm-s-solarized .cm-atom { color: #d33682; }
+.cm-s-solarized .cm-number { color: #d33682; }
+.cm-s-solarized .cm-def { color: #2aa198; }
+
+.cm-s-solarized .cm-variable { color: #268bd2; }
+.cm-s-solarized .cm-variable-2 { color: #b58900; }
+.cm-s-solarized .cm-variable-3 { color: #6c71c4; }
+
+.cm-s-solarized .cm-property { color: #2aa198; }
+.cm-s-solarized .cm-operator {color: #6c71c4;}
+
+.cm-s-solarized .cm-comment { color: #586e75; font-style:italic; }
+
+.cm-s-solarized .cm-string { color: #859900; }
+.cm-s-solarized .cm-string-2 { color: #b58900; }
+
+.cm-s-solarized .cm-meta { color: #859900; }
+.cm-s-solarized .cm-qualifier { color: #b58900; }
+.cm-s-solarized .cm-builtin { color: #d33682; }
+.cm-s-solarized .cm-bracket { color: #cb4b16; }
+.cm-s-solarized .CodeMirror-matchingbracket { color: #859900; }
+.cm-s-solarized .CodeMirror-nonmatchingbracket { color: #dc322f; }
+.cm-s-solarized .cm-tag { color: #93a1a1 }
+.cm-s-solarized .cm-attribute {  color: #2aa198; }
+.cm-s-solarized .cm-header { color: #586e75; }
+.cm-s-solarized .cm-quote { color: #93a1a1; }
+.cm-s-solarized .cm-hr {
+  color: transparent;
+  border-top: 1px solid #586e75;
+  display: block;
+}
+.cm-s-solarized .cm-link { color: #93a1a1; cursor: pointer; }
+.cm-s-solarized .cm-special { color: #6c71c4; }
+.cm-s-solarized .cm-em {
+  color: #999;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+.cm-s-solarized .cm-strong { color: #eee; }
+.cm-s-solarized .cm-error,
+.cm-s-solarized .cm-invalidchar {
+  color: #586e75;
+  border-bottom: 1px dotted #dc322f;
+}
+
+.cm-s-solarized.cm-s-dark .CodeMirror-selected {
+  background: #073642;
+}
+
+.cm-s-solarized.cm-s-light .CodeMirror-selected {
+  background: #eee8d5;
+}
+
+/* Editor styling */
+
+
+
+/* Little shadow on the view-port of the buffer view */
+.cm-s-solarized.CodeMirror {
+  -moz-box-shadow: inset 7px 0 12px -6px #000;
+  -webkit-box-shadow: inset 7px 0 12px -6px #000;
+  box-shadow: inset 7px 0 12px -6px #000;
+}
+
+/* Gutter border and some shadow from it  */
+.cm-s-solarized .CodeMirror-gutters {
+  border-right: 1px solid;
+}
+
+/* Gutter colors and line number styling based of color scheme (dark / light) */
+
+/* Dark */
+.cm-s-solarized.cm-s-dark .CodeMirror-gutters {
+  background-color:  #002b36;
+  border-color: #00232c;
+}
+
+.cm-s-solarized.cm-s-dark .CodeMirror-linenumber {
+  text-shadow: #021014 0 -1px;
+}
+
+/* Light */
+.cm-s-solarized.cm-s-light .CodeMirror-gutters {
+  background-color: #fdf6e3;
+  border-color: #eee8d5;
+}
+
+/* Common */
+.cm-s-solarized .CodeMirror-linenumber {
+  color: #586e75;
+  padding: 0 5px;
+}
+.cm-s-solarized .CodeMirror-guttermarker-subtle { color: #586e75; }
+.cm-s-solarized.cm-s-dark .CodeMirror-guttermarker { color: #ddd; }
+.cm-s-solarized.cm-s-light .CodeMirror-guttermarker { color: #cb4b16; }
+
+.cm-s-solarized .CodeMirror-gutter .CodeMirror-gutter-text {
+  color: #586e75;
+}
+
+.cm-s-solarized .CodeMirror-lines .CodeMirror-cursor {
+  border-left: 1px solid #819090;
+}
+
+/*
+Active line. Negative margin compensates left padding of the text in the
+view-port
+*/
+.cm-s-solarized.cm-s-dark .CodeMirror-activeline-background {
+  background: rgba(255, 255, 255, 0.10);
+}
+.cm-s-solarized.cm-s-light .CodeMirror-activeline-background {
+  background: rgba(0, 0, 0, 0.10);
+}

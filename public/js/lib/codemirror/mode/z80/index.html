@@ -1,0 +1,52 @@
+<!doctype html>
+
+<title>CodeMirror: Z80 assembly mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="z80.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Z80 assembly</a>
+  </ul>
+</div>
+
+<article>
+<h2>Z80 assembly mode</h2>
+
+
+<div><textarea id="code" name="code">
+#include    "ti83plus.inc"
+#define     progStart   $9D95
+.org        progStart-2
+.db         $BB,$6D
+    bcall(_ClrLCDFull)
+    ld  HL, 0
+    ld  (PenCol),   HL
+    ld  HL, Message
+    bcall(_PutS) ; Displays the string
+    bcall(_NewLine)
+    ret
+Message:
+.db         "Hello world!",0
+</textarea></div>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true
+      });
+    </script>
+
+    <p><strong>MIME type defined:</strong> <code>text/x-z80</code>.</p>
+  </article>

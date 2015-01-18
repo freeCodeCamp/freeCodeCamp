@@ -1,0 +1,75 @@
+<!doctype html>
+
+<title>CodeMirror: Perl mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="perl.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Perl</a>
+  </ul>
+</div>
+
+<article>
+<h2>Perl mode</h2>
+
+
+<div><textarea id="code" name="code">
+#!/usr/bin/perl
+
+use Something qw(func1 func2);
+
+# strings
+my $s1 = qq'single line';
+our $s2 = q(multi-
+              line);
+
+=item Something
+	Example.
+=cut
+
+my $html=<<'HTML'
+<html>
+<title>hi!</title>
+</html>
+HTML
+
+print "first,".join(',', 'second', qq~third~);
+
+if($s1 =~ m[(?<!\s)(l.ne)\z]o) {
+	$h->{$1}=$$.' predefined variables';
+	$s2 =~ s/\-line//ox;
+	$s1 =~ s[
+		  line ]
+		[
+		  block
+		]ox;
+}
+
+1; # numbers and comments
+
+__END__
+something...
+
+</textarea></div>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true
+      });
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-perl</code>.</p>
+  </article>

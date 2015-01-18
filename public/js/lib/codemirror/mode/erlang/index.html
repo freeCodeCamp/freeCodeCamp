@@ -1,0 +1,76 @@
+<!doctype html>
+
+<title>CodeMirror: Erlang mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<link rel="stylesheet" href="../../theme/erlang-dark.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="../../addon/edit/matchbrackets.js"></script>
+<script src="erlang.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Erlang</a>
+  </ul>
+</div>
+
+<article>
+<h2>Erlang mode</h2>
+<form><textarea id="code" name="code">
+%% -*- mode: erlang; erlang-indent-level: 2 -*-
+%%% Created :  7 May 2012 by mats cronqvist <masse@klarna.com>
+
+%% @doc
+%% Demonstrates how to print a record.
+%% @end
+
+-module('ex').
+-author('mats cronqvist').
+-export([demo/0,
+         rec_info/1]).
+
+-record(demo,{a="One",b="Two",c="Three",d="Four"}).
+
+rec_info(demo) -> record_info(fields,demo).
+
+demo() -> expand_recs(?MODULE,#demo{a="A",b="BB"}).
+
+expand_recs(M,List) when is_list(List) ->
+  [expand_recs(M,L)||L<-List];
+expand_recs(M,Tup) when is_tuple(Tup) ->
+  case tuple_size(Tup) of
+    L when L < 1 -> Tup;
+    L ->
+      try
+        Fields = M:rec_info(element(1,Tup)),
+        L = length(Fields)+1,
+        lists:zip(Fields,expand_recs(M,tl(tuple_to_list(Tup))))
+      catch
+        _:_ -> list_to_tuple(expand_recs(M,tuple_to_list(Tup)))
+      end
+  end;
+expand_recs(_,Term) ->
+  Term.
+</textarea></form>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        matchBrackets: true,
+        extraKeys: {"Tab":  "indentAuto"},
+        theme: "erlang-dark"
+      });
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-erlang</code>.</p>
+  </article>

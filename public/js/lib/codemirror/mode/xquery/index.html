@@ -1,0 +1,210 @@
+<!doctype html>
+
+<title>CodeMirror: XQuery mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<link rel="stylesheet" href="../../theme/xq-dark.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="xquery.js"></script>
+<style type="text/css">
+	.CodeMirror {
+	  border-top: 1px solid black; border-bottom: 1px solid black;
+	  height:400px;
+	}
+    </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">XQuery</a>
+  </ul>
+</div>
+
+<article>
+<h2>XQuery mode</h2>
+ 
+ 
+<div class="cm-s-default"> 
+	<textarea id="code" name="code"> 
+xquery version &quot;1.0-ml&quot;;
+(: this is
+ : a 
+   "comment" :)
+let $let := &lt;x attr=&quot;value&quot;&gt;&quot;test&quot;&lt;func&gt;function() $var {function()} {$var}&lt;/func&gt;&lt;/x&gt;
+let $joe:=1
+return element element {
+	attribute attribute { 1 },
+	element test { &#39;a&#39; }, 
+	attribute foo { &quot;bar&quot; },
+	fn:doc()[ foo/@bar eq $let ],
+	//x }    
+ 
+(: a more 'evil' test :)
+(: Modified Blakeley example (: with nested comment :) ... :)
+declare private function local:declare() {()};
+declare private function local:private() {()};
+declare private function local:function() {()};
+declare private function local:local() {()};
+let $let := &lt;let&gt;let $let := &quot;let&quot;&lt;/let&gt;
+return element element {
+	attribute attribute { try { xdmp:version() } catch($e) { xdmp:log($e) } },
+	attribute fn:doc { &quot;bar&quot; castable as xs:string },
+	element text { text { &quot;text&quot; } },
+	fn:doc()[ child::eq/(@bar | attribute::attribute) eq $let ],
+	//fn:doc
+}
+
+
+
+xquery version &quot;1.0-ml&quot;;
+
+(: Copyright 2006-2010 Mark Logic Corporation. :)
+
+(:
+ : Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ : you may not use this file except in compliance with the License.
+ : You may obtain a copy of the License at
+ :
+ :     http://www.apache.org/licenses/LICENSE-2.0
+ :
+ : Unless required by applicable law or agreed to in writing, software
+ : distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ : WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ : See the License for the specific language governing permissions and
+ : limitations under the License.
+ :)
+
+module namespace json = &quot;http://marklogic.com/json&quot;;
+declare default function namespace &quot;http://www.w3.org/2005/xpath-functions&quot;;
+
+(: Need to backslash escape any double quotes, backslashes, and newlines :)
+declare function json:escape($s as xs:string) as xs:string {
+  let $s := replace($s, &quot;\\&quot;, &quot;\\\\&quot;)
+  let $s := replace($s, &quot;&quot;&quot;&quot;, &quot;\\&quot;&quot;&quot;)
+  let $s := replace($s, codepoints-to-string((13, 10)), &quot;\\n&quot;)
+  let $s := replace($s, codepoints-to-string(13), &quot;\\n&quot;)
+  let $s := replace($s, codepoints-to-string(10), &quot;\\n&quot;)
+  return $s
+};
+
+declare function json:atomize($x as element()) as xs:string {
+  if (count($x/node()) = 0) then 'null'
+  else if ($x/@type = &quot;number&quot;) then
+    let $castable := $x castable as xs:float or
+                     $x castable as xs:double or
+                     $x castable as xs:decimal
+    return
+    if ($castable) then xs:string($x)
+    else error(concat(&quot;Not a number: &quot;, xdmp:describe($x)))
+  else if ($x/@type = &quot;boolean&quot;) then
+    let $castable := $x castable as xs:boolean
+    return
+    if ($castable) then xs:string(xs:boolean($x))
+    else error(concat(&quot;Not a boolean: &quot;, xdmp:describe($x)))
+  else concat('&quot;', json:escape($x), '&quot;')
+};
+
+(: Print the thing that comes after the colon :)
+declare function json:print-value($x as element()) as xs:string {
+  if (count($x/*) = 0) then
+    json:atomize($x)
+  else if ($x/@quote = &quot;true&quot;) then
+    concat('&quot;', json:escape(xdmp:quote($x/node())), '&quot;')
+  else
+    string-join(('{',
+      string-join(for $i in $x/* return json:print-name-value($i), &quot;,&quot;),
+    '}'), &quot;&quot;)
+};
+
+(: Print the name and value both :)
+declare function json:print-name-value($x as element()) as xs:string? {
+  let $name := name($x)
+  let $first-in-array :=
+    count($x/preceding-sibling::*[name(.) = $name]) = 0 and
+    (count($x/following-sibling::*[name(.) = $name]) &gt; 0 or $x/@array = &quot;true&quot;)
+  let $later-in-array := count($x/preceding-sibling::*[name(.) = $name]) &gt; 0
+  return
+
+  if ($later-in-array) then
+    ()  (: I was handled previously :)
+  else if ($first-in-array) then
+    string-join(('&quot;', json:escape($name), '&quot;:[',
+      string-join((for $i in ($x, $x/following-sibling::*[name(.) = $name]) return json:print-value($i)), &quot;,&quot;),
+    ']'), &quot;&quot;)
+   else
+     string-join(('&quot;', json:escape($name), '&quot;:', json:print-value($x)), &quot;&quot;)
+};
+
+(:~
+  Transforms an XML element into a JSON string representation.  See http://json.org.
+  &lt;p/&gt;
+  Sample usage:
+  &lt;pre&gt;
+    xquery version &quot;1.0-ml&quot;;
+    import module namespace json=&quot;http://marklogic.com/json&quot; at &quot;json.xqy&quot;;
+    json:serialize(&amp;lt;foo&amp;gt;&amp;lt;bar&amp;gt;kid&amp;lt;/bar&amp;gt;&amp;lt;/foo&amp;gt;)
+  &lt;/pre&gt;
+  Sample transformations:
+  &lt;pre&gt;
+  &amp;lt;e/&amp;gt; becomes {&quot;e&quot;:null}
+  &amp;lt;e&amp;gt;text&amp;lt;/e&amp;gt; becomes {&quot;e&quot;:&quot;text&quot;}
+  &amp;lt;e&amp;gt;quote &quot; escaping&amp;lt;/e&amp;gt; becomes {&quot;e&quot;:&quot;quote \&quot; escaping&quot;}
+  &amp;lt;e&amp;gt;backslash \ escaping&amp;lt;/e&amp;gt; becomes {&quot;e&quot;:&quot;backslash \\ escaping&quot;}
+  &amp;lt;e&amp;gt;&amp;lt;a&amp;gt;text1&amp;lt;/a&amp;gt;&amp;lt;b&amp;gt;text2&amp;lt;/b&amp;gt;&amp;lt;/e&amp;gt; becomes {&quot;e&quot;:{&quot;a&quot;:&quot;text1&quot;,&quot;b&quot;:&quot;text2&quot;}}
+  &amp;lt;e&amp;gt;&amp;lt;a&amp;gt;text1&amp;lt;/a&amp;gt;&amp;lt;a&amp;gt;text2&amp;lt;/a&amp;gt;&amp;lt;/e&amp;gt; becomes {&quot;e&quot;:{&quot;a&quot;:[&quot;text1&quot;,&quot;text2&quot;]}}
+  &amp;lt;e&amp;gt;&amp;lt;a array=&quot;true&quot;&amp;gt;text1&amp;lt;/a&amp;gt;&amp;lt;/e&amp;gt; becomes {&quot;e&quot;:{&quot;a&quot;:[&quot;text1&quot;]}}
+  &amp;lt;e&amp;gt;&amp;lt;a type=&quot;boolean&quot;&amp;gt;false&amp;lt;/a&amp;gt;&amp;lt;/e&amp;gt; becomes {&quot;e&quot;:{&quot;a&quot;:false}}
+  &amp;lt;e&amp;gt;&amp;lt;a type=&quot;number&quot;&amp;gt;123.5&amp;lt;/a&amp;gt;&amp;lt;/e&amp;gt; becomes {&quot;e&quot;:{&quot;a&quot;:123.5}}
+  &amp;lt;e quote=&quot;true&quot;&amp;gt;&amp;lt;div attrib=&quot;value&quot;/&amp;gt;&amp;lt;/e&amp;gt; becomes {&quot;e&quot;:&quot;&amp;lt;div attrib=\&quot;value\&quot;/&amp;gt;&quot;}
+  &lt;/pre&gt;
+  &lt;p/&gt;
+  Namespace URIs are ignored.  Namespace prefixes are included in the JSON name.
+  &lt;p/&gt;
+  Attributes are ignored, except for the special attribute @array=&quot;true&quot; that
+  indicates the JSON serialization should write the node, even if single, as an
+  array, and the attribute @type that can be set to &quot;boolean&quot; or &quot;number&quot; to
+  dictate the value should be written as that type (unquoted).  There's also
+  an @quote attribute that when set to true writes the inner content as text
+  rather than as structured JSON, useful for sending some XHTML over the
+  wire.
+  &lt;p/&gt;
+  Text nodes within mixed content are ignored.
+
+  @param $x Element node to convert
+  @return String holding JSON serialized representation of $x
+
+  @author Jason Hunter
+  @version 1.0.1
+  
+  Ported to xquery 1.0-ml; double escaped backslashes in json:escape
+:)
+declare function json:serialize($x as element())  as xs:string {
+  string-join(('{', json:print-name-value($x), '}'), &quot;&quot;)
+};
+  </textarea> 
+</div> 
+ 
+    <script> 
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        matchBrackets: true,
+        theme: "xq-dark"
+      });
+    </script> 
+ 
+    <p><strong>MIME types defined:</strong> <code>application/xquery</code>.</p> 
+ 
+    <p>Development of the CodeMirror XQuery mode was sponsored by 
+      <a href="http://marklogic.com">MarkLogic</a> and developed by 
+      <a href="https://twitter.com/mbrevoort">Mike Brevoort</a>.
+    </p>
+ 
+  </article>

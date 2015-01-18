@@ -1,0 +1,154 @@
+<!doctype html>
+
+<title>CodeMirror: Asterisk dialplan mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="asterisk.js"></script>
+<style>
+      .CodeMirror {border: 1px solid #999;}
+      .cm-s-default span.cm-arrow { color: red; }
+    </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Asterisk dialplan</a>
+  </ul>
+</div>
+
+<article>
+<h2>Asterisk dialplan mode</h2>
+<form><textarea id="code" name="code">
+; extensions.conf - the Asterisk dial plan
+;
+
+[general]
+;
+; If static is set to no, or omitted, then the pbx_config will rewrite
+; this file when extensions are modified.  Remember that all comments
+; made in the file will be lost when that happens.
+static=yes
+
+#include "/etc/asterisk/additional_general.conf
+
+[iaxprovider]
+switch => IAX2/user:[key]@myserver/mycontext
+
+[dynamic]
+#exec /usr/bin/dynamic-peers.pl
+
+[trunkint]
+;
+; International long distance through trunk
+;
+exten => _9011.,1,Macro(dundi-e164,${EXTEN:4})
+exten => _9011.,n,Dial(${GLOBAL(TRUNK)}/${FILTER(0-9,${EXTEN:${GLOBAL(TRUNKMSD)}})})
+
+[local]
+;
+; Master context for local, toll-free, and iaxtel calls only
+;
+ignorepat => 9
+include => default
+
+[demo]
+include => stdexten
+;
+; We start with what to do when a call first comes in.
+;
+exten => s,1,Wait(1)			; Wait a second, just for fun
+same  => n,Answer			; Answer the line
+same  => n,Set(TIMEOUT(digit)=5)	; Set Digit Timeout to 5 seconds
+same  => n,Set(TIMEOUT(response)=10)	; Set Response Timeout to 10 seconds
+same  => n(restart),BackGround(demo-congrats)	; Play a congratulatory message
+same  => n(instruct),BackGround(demo-instruct)	; Play some instructions
+same  => n,WaitExten			; Wait for an extension to be dialed.
+
+exten => 2,1,BackGround(demo-moreinfo)	; Give some more information.
+exten => 2,n,Goto(s,instruct)
+
+exten => 3,1,Set(LANGUAGE()=fr)		; Set language to french
+exten => 3,n,Goto(s,restart)		; Start with the congratulations
+
+exten => 1000,1,Goto(default,s,1)
+;
+; We also create an example user, 1234, who is on the console and has
+; voicemail, etc.
+;
+exten => 1234,1,Playback(transfer,skip)		; "Please hold while..."
+					; (but skip if channel is not up)
+exten => 1234,n,Gosub(${EXTEN},stdexten(${GLOBAL(CONSOLE)}))
+exten => 1234,n,Goto(default,s,1)		; exited Voicemail
+
+exten => 1235,1,Voicemail(1234,u)		; Right to voicemail
+
+exten => 1236,1,Dial(Console/dsp)		; Ring forever
+exten => 1236,n,Voicemail(1234,b)		; Unless busy
+
+;
+; # for when they're done with the demo
+;
+exten => #,1,Playback(demo-thanks)	; "Thanks for trying the demo"
+exten => #,n,Hangup			; Hang them up.
+
+;
+; A timeout and "invalid extension rule"
+;
+exten => t,1,Goto(#,1)			; If they take too long, give up
+exten => i,1,Playback(invalid)		; "That's not valid, try again"
+
+;
+; Create an extension, 500, for dialing the
+; Asterisk demo.
+;
+exten => 500,1,Playback(demo-abouttotry); Let them know what's going on
+exten => 500,n,Dial(IAX2/guest@pbx.digium.com/s@default)	; Call the Asterisk demo
+exten => 500,n,Playback(demo-nogo)	; Couldn't connect to the demo site
+exten => 500,n,Goto(s,6)		; Return to the start over message.
+
+;
+; Create an extension, 600, for evaluating echo latency.
+;
+exten => 600,1,Playback(demo-echotest)	; Let them know what's going on
+exten => 600,n,Echo			; Do the echo test
+exten => 600,n,Playback(demo-echodone)	; Let them know it's over
+exten => 600,n,Goto(s,6)		; Start over
+
+;
+;	You can use the Macro Page to intercom a individual user
+exten => 76245,1,Macro(page,SIP/Grandstream1)
+; or if your peernames are the same as extensions
+exten => _7XXX,1,Macro(page,SIP/${EXTEN})
+;
+;
+; System Wide Page at extension 7999
+;
+exten => 7999,1,Set(TIMEOUT(absolute)=60)
+exten => 7999,2,Page(Local/Grandstream1@page&Local/Xlite1@page&Local/1234@page/n,d)
+
+; Give voicemail at extension 8500
+;
+exten => 8500,1,VoicemailMain
+exten => 8500,n,Goto(s,6)
+
+    </textarea></form>
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode: "text/x-asterisk",
+        matchBrackets: true,
+        lineNumber: true
+      });
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-asterisk</code>.</p>
+
+  </article>

@@ -1,0 +1,6 @@
+h3
+    ol(start='0')
+for bonfire in bonfires
+    li
+        a(href="/bonfire/#{bonfire.bonfireNumber}", class="#{ (cc && cc[bonfire.bonfireNumber] > 0) ? 'strikethrough' : '' }") #{bonfire.name}
+        | &nbsp; (#{bonfire.time} mins)

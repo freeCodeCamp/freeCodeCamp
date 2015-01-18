@@ -29,16 +29,7 @@ html {
 
 body {
   padding-top: 80px;
-  margin-bottom: 75px;
-}
-
-.footer {
-  width: 100%;
-  margin-bottom: 0px;
-  text-align: center;
-  padding:0px;
-  height: 200px;
-  background-color: #4a2b0f;
+  margin-bottom: 60px;
 }
 
 h1, h2 {
@@ -237,10 +228,10 @@ ul {
 }
 
 .navbar-right {
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     padding-right: 50px;
   }
-  @media (max-width: 991px) and (min-width: 767px) {
+  @media (max-width: 991px) and (min-width: 768px) {
     position: absolute;
     right:0;
     margin-right: 10px;
@@ -249,6 +240,7 @@ ul {
 }
 .navbar {
   white-space: nowrap;
+  border: none;
 }
 
 .panel-body {
@@ -492,6 +484,49 @@ thead {
   @media (min-width: 1200px) {
     height: 90px;
   }
+}
+
+.hamburger-dropdown {
+  @media (max-width: 768px) {
+    margin-top:  -5px;
+  }
+}
+
+.challenge-list-header {
+  background-color: #215f1e;
+  color: #eee;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: -30px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.closing-x {
+  color: #eee;
+  font-size: 60px;
+  text-align: right;
+}
+
+.fcc-footer {
+  width: 100%;
+  text-align: center;
+  background-color: #4a2b0f;
+  height: 40px;
+  bottom: 0;
+  position: absolute;
+  a {
+    font-size: 28px;
+    color: #eee;
+    &:hover {
+      color: #4a2b0f;
+      background-color: #eee;
+      text-decoration: none;
+    }
+  }
+}
+
+form.code {
+  font-size: 22px;
 }
 
 //uncomment this to see the dimensions of all elements outlined in red
