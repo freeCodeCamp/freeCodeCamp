@@ -237,10 +237,10 @@ ul {
 }
 
 .navbar-right {
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     padding-right: 50px;
   }
-  @media (max-width: 991px) and (min-width: 767px) {
+  @media (max-width: 991px) and (min-width: 768px) {
     position: absolute;
     right:0;
     margin-right: 10px;
@@ -249,6 +249,7 @@ ul {
 }
 .navbar {
   white-space: nowrap;
+  border: none;
 }
 
 .panel-body {
@@ -491,6 +492,12 @@ thead {
   }
   @media (min-width: 1200px) {
     height: 90px;
+  }
+}
+
+.hamburger-dropdown {
+  @media (max-width: 768px) {
+    margin-top:  -5px;
   }
 }
 
