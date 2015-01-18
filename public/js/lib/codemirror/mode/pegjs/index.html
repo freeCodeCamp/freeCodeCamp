@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CodeMirror: PEG.js Mode</title>
+    <meta charset="utf-8"/>
+    <link rel=stylesheet href="../../doc/docs.css">
+
+    <link rel="stylesheet" href="../../lib/codemirror.css">
+    <script src="../../lib/codemirror.js"></script>
+    <script src="../javascript/javascript.js"></script>
+    <script src="pegjs.js"></script>
+    <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+  </head>
+  <body>
+    <div id=nav>
+      <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+      <ul>
+        <li><a href="../../index.html">Home</a>
+        <li><a href="../../doc/manual.html">Manual</a>
+        <li><a href="https://github.com/codemirror/codemirror">Code</a>
+      </ul>
+      <ul>
+        <li><a href="../index.html">Language modes</a>
+        <li><a class=active href="#">PEG.js Mode</a>
+      </ul>
+    </div>
+
+    <article>
+      <h2>PEG.js Mode</h2>
+      <form><textarea id="code" name="code">
+/*
+ * Classic example grammar, which recognizes simple arithmetic expressions like
+ * "2*(3+4)". The parser generated from this grammar then computes their value.
+ */
+
+start
+  = additive
+
+additive
+  = left:multiplicative "+" right:additive { return left + right; }
+  / multiplicative
+
+multiplicative
+  = left:primary "*" right:multiplicative { return left * right; }
+  / primary
+
+primary
+  = integer
+  / "(" additive:additive ")" { return additive; }
+
+integer "integer"
+  = digits:[0-9]+ { return parseInt(digits.join(""), 10); }
+
+letter = [a-z]+</textarea></form>
+      <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+          mode: {name: "pegjs"},
+          lineNumbers: true
+        });
+      </script>
+      <h3>The PEG.js Mode</h3>
+      <p> Created by Forbes Lindesay.</p>
+    </article>
+  </body>
+</html>

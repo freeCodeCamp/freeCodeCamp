@@ -1,0 +1,64 @@
+<!doctype html>
+
+<title>CodeMirror: IDL mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="idl.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">IDL</a>
+  </ul>
+</div>
+
+<article>
+<h2>IDL mode</h2>
+
+    <div><textarea id="code" name="code">
+;; Example IDL code
+FUNCTION mean_and_stddev,array
+  ;; This program reads in an array of numbers
+  ;; and returns a structure containing the
+  ;; average and standard deviation
+
+  ave = 0.0
+  count = 0.0
+
+  for i=0,N_ELEMENTS(array)-1 do begin
+      ave = ave + array[i]
+      count = count + 1
+  endfor
+  
+  ave = ave/count
+
+  std = stddev(array)  
+
+  return, {average:ave,std:std}
+
+END
+
+    </textarea></div>
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode: {name: "idl",
+               version: 1,
+               singleLineStringErrors: false},
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true
+      });
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-idl</code>.</p>
+</article>

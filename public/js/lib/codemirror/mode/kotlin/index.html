@@ -1,0 +1,89 @@
+<!doctype html>
+
+<title>CodeMirror: Kotlin mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="kotlin.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Kotlin</a>
+  </ul>
+</div>
+
+<article>
+<h2>Kotlin mode</h2>
+
+
+<div><textarea id="code" name="code">
+package org.wasabi.http
+
+import java.util.concurrent.Executors
+import java.net.InetSocketAddress
+import org.wasabi.app.AppConfiguration
+import io.netty.bootstrap.ServerBootstrap
+import io.netty.channel.nio.NioEventLoopGroup
+import io.netty.channel.socket.nio.NioServerSocketChannel
+import org.wasabi.app.AppServer
+
+public class HttpServer(private val appServer: AppServer) {
+
+    val bootstrap: ServerBootstrap
+    val primaryGroup: NioEventLoopGroup
+    val workerGroup:  NioEventLoopGroup
+
+    {
+        // Define worker groups
+        primaryGroup = NioEventLoopGroup()
+        workerGroup = NioEventLoopGroup()
+
+        // Initialize bootstrap of server
+        bootstrap = ServerBootstrap()
+
+        bootstrap.group(primaryGroup, workerGroup)
+        bootstrap.channel(javaClass<NioServerSocketChannel>())
+        bootstrap.childHandler(NettyPipelineInitializer(appServer))
+    }
+
+    public fun start(wait: Boolean = true) {
+        val channel = bootstrap.bind(appServer.configuration.port)?.sync()?.channel()
+
+        if (wait) {
+            channel?.closeFuture()?.sync()
+        }
+    }
+
+    public fun stop() {
+        // Shutdown all event loops
+        primaryGroup.shutdownGracefully()
+        workerGroup.shutdownGracefully()
+
+        // Wait till all threads are terminated
+        primaryGroup.terminationFuture().sync()
+        workerGroup.terminationFuture().sync()
+    }
+}
+</textarea></div>
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+            mode: {name: "kotlin"},
+            lineNumbers: true,
+            indentUnit: 4
+        });
+    </script>
+    <h3>Mode for Kotlin (http://kotlin.jetbrains.org/)</h3>
+    <p>Developed by Hadi Hariri (https://github.com/hhariri).</p>
+    <p><strong>MIME type defined:</strong> <code>text/x-kotlin</code>.</p>
+</article>

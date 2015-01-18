@@ -1,54 +1,40 @@
 {
-    /*
-    * ENVIRONMENTS
-    * =================
-    */
-
-    // Define globals exposed by modern browsers.
-    "browser": true,
-
-    // Define globals exposed by jQuery.
-    "jquery": true,
-
-    /*
-    * ENFORCING OPTIONS
-    * =================
-    */
-
-    // Force all variable names to use either camelCase style or UPPER_CASE
-    // with underscores.
-    "camelcase": true,
-
-    // Prohibit use of == and != in favor of === and !==.
-    "eqeqeq": true,
-
-    // Suppress warnings about == null comparisons.
-    "eqnull": true,
-
-    // Enforce tab width of 2 spaces.
-    "indent": 2,
-
-    // Prohibit use of a variable before it is defined.
-    "latedef": true,
-
-    // Require capitalized names for constructor functions.
-    "newcap": true,
-
-    // Enforce use of single quotation marks for strings.
-    "quotmark": "single",
-
-    // Prohibit trailing whitespace.
-    "trailing": true,
-
-    // Prohibit use of explicitly undeclared variables.
-    "undef": true,
-
-    // Warn when variables are defined but never used.
-    "unused": true,
-
-    // Enforce line length to 80 characters
-    "maxlen": 80,
-
-    // Enforce placing 'use strict' at the top function scope
-      "strict": true'
+"node": true, // Enable globals available when code is running inside of the NodeJS runtime environment.
+"browser": true, // Standard browser globals e.g. `window`, `document`.
+"esnext": true, // Allow ES.next specific features such as `const` and `let`.
+"bitwise": false, // Prohibit bitwise operators (&, |, ^, etc.).
+"camelcase": false, // Permit only camelcase for `var` and `object indexes`.
+"curly": false, // Require {} for every new block or scope.
+"eqeqeq": true, // Require triple equals i.e. `===`.
+"immed": true, // Require immediate invocations to be wrapped in parens e.g. `( function(){}() );`
+"latedef": true, // Prohibit variable use before definition.
+"newcap": true, // Require capitalization of all constructor functions e.g. `new F()`.
+"noarg": true, // Prohibit use of `arguments.caller` and `arguments.callee`.
+"regexp": true, // Prohibit `.` and `[^...]` in regular expressions.
+"undef": true, // Require all non-global variables be declared before they are used.
+"unused": false, // Warn unused variables.
+"strict": false, // Require `use strict` pragma in every file.
+"trailing": true, // Prohibit trailing whitespaces.
+"smarttabs": false, // Suppresses warnings about mixed tabs and spaces
+"globals": { // Globals variables.
+"jasmine": true,
+"angular": true,
+"ApplicationConfiguration": true
+},
+"predef": [ // Extra globals.
+"define",
+"require",
+"exports",
+"module",
+"describe",
+"before",
+"beforeEach",
+"after",
+"afterEach",
+"it",
+"inject",
+"expect"
+],
+"devel": true, // Allow development statements e.g. `console.log();`.
+"noempty": true // Prohibit use of empty blocks.
 }

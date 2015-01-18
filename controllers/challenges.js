@@ -53,5 +53,4 @@ exports.returnChallenge = function(req, res, next) {
             challenges: c
         });
     });
-
 };

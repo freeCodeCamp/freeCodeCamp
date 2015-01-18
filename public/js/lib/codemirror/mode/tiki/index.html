@@ -1,0 +1,95 @@
+<!doctype html>
+
+<title>CodeMirror: Tiki wiki mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<link rel="stylesheet" href="tiki.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="tiki.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Tiki wiki</a>
+  </ul>
+</div>
+
+<article>
+<h2>Tiki wiki mode</h2>
+
+
+<div><textarea id="code" name="code">
+Headings
+!Header 1
+!!Header 2
+!!!Header 3
+!!!!Header 4
+!!!!!Header 5
+!!!!!!Header 6
+
+Styling
+-=titlebar=-
+^^ Box on multi
+lines
+of content^^
+__bold__
+''italic''
+===underline===
+::center::
+--Line Through--
+
+Operators
+~np~No parse~/np~
+
+Link
+[link|desc|nocache]
+
+Wiki
+((Wiki))
+((Wiki|desc))
+((Wiki|desc|timeout))
+
+Table
+||row1 col1|row1 col2|row1 col3
+row2 col1|row2 col2|row2 col3
+row3 col1|row3 col2|row3 col3||
+
+Lists:
+*bla
+**bla-1
+++continue-bla-1
+***bla-2
+++continue-bla-1
+*bla
++continue-bla
+#bla
+** tra-la-la
++continue-bla
+#bla
+
+Plugin (standard):
+{PLUGIN(attr="my attr")}
+Plugin Body
+{PLUGIN}
+
+Plugin (inline):
+{plugin attr="my attr"}
+</textarea></div>
+
+<script type="text/javascript">
+	var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode: 'tiki',      
+        lineNumbers: true
+    });
+</script>
+
+</article>

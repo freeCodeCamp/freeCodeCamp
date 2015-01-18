@@ -1,0 +1,124 @@
+<!doctype html>
+
+<title>CodeMirror: Haxe mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="haxe.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Haxe</a>
+  </ul>
+</div>
+
+<article>
+<h2>Haxe mode</h2>
+
+
+<div><p><textarea id="code-haxe" name="code">
+import one.two.Three;
+
+@attr("test")
+class Foo&lt;T&gt; extends Three
+{
+	public function new()
+	{
+		noFoo = 12;
+	}
+	
+	public static inline function doFoo(obj:{k:Int, l:Float}):Int
+	{
+		for(i in 0...10)
+		{
+			obj.k++;
+			trace(i);
+			var var1 = new Array();
+			if(var1.length > 1)
+				throw "Error";
+		}
+		// The following line should not be colored, the variable is scoped out
+		var1;
+		/* Multi line
+		 * Comment test
+		 */
+		return obj.k;
+	}
+	private function bar():Void
+	{
+		#if flash
+		var t1:String = "1.21";
+		#end
+		try {
+			doFoo({k:3, l:1.2});
+		}
+		catch (e : String) {
+			trace(e);
+		}
+		var t2:Float = cast(3.2);
+		var t3:haxe.Timer = new haxe.Timer();
+		var t4 = {k:Std.int(t2), l:Std.parseFloat(t1)};
+		var t5 = ~/123+.*$/i;
+		doFoo(t4);
+		untyped t1 = 4;
+		bob = new Foo&lt;Int&gt;
+	}
+	public var okFoo(default, never):Float;
+	var noFoo(getFoo, null):Int;
+	function getFoo():Int {
+		return noFoo;
+	}
+	
+	public var three:Int;
+}
+enum Color
+{
+	red;
+	green;
+	blue;
+	grey( v : Int );
+	rgb (r:Int,g:Int,b:Int);
+}
+</textarea></p>
+
+<p>Hxml mode:</p>
+
+<p><textarea id="code-hxml">
+-cp test
+-js path/to/file.js
+#-remap nme:flash
+--next
+-D source-map-content
+-cmd 'test'
+-lib lime
+</textarea></p>
+</div>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code-haxe"), {
+      	mode: "haxe",
+        lineNumbers: true,
+        indentUnit: 4,
+        indentWithTabs: true
+      });
+      
+      editor = CodeMirror.fromTextArea(document.getElementById("code-hxml"), {
+      	mode: "hxml",
+        lineNumbers: true,
+        indentUnit: 4,
+        indentWithTabs: true
+      });
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-haxe, text/x-hxml</code>.</p>
+  </article>

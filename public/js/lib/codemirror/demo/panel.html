@@ -1,0 +1,64 @@
+<!doctype html>
+
+<title>CodeMirror: Panel Demo</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+
+<link rel="stylesheet" href="../lib/codemirror.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../mode/javascript/javascript.js"></script>
+<script src="../addon/display/panel.js"></script>
+<style type="text/css">
+  .border {border: 1px solid black; border-bottom: 1px solid black;}
+  .add { background: orange; padding: 1px 3px; color: white !important; border-radius: 4px; }
+  .panel {
+    background-image: linear-gradient(to bottom, #ffffaa, #ffffdd);
+    padding: 3px 7px;
+  }
+  .panel.top { border-bottom: 1px solid #dd6; }
+  .panel.bottom { border-top: 1px solid #dd6; }
+  .panel span { cursor: pointer; }
+</style>
+
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Panel</a>
+  </ul>
+</div>
+
+<article>
+<h2>Panel Demo</h2>
+<form><div class="border"><textarea id="code" name="code"></textarea></div></form>
+
+<script id="localscript">var textarea = document.getElementById("code");
+var script = document.getElementById("localscript");
+textarea.value = (script.textContent ||
+                  script.innerText ||
+                  script.innerHTML);
+editor = CodeMirror.fromTextArea(textarea, {
+  lineNumbers: true
+});
+
+function addPanel(where) {
+  var node = document.createElement("div");
+  node.className = "panel " + where;
+  var close = node.appendChild(document.createElement("span"));
+  close.textContent = "✖ Remove this panel";
+  var widget = editor.addPanel(node, {position: where});
+  CodeMirror.on(close, "click", function() { widget.clear(); });
+}</script>
+
+<p>The <a href="../doc/manual.html#addon_panel"><code>panel</code></a>
+addon allows you to display panels <a class=add
+href="javascript:addPanel('top')">above</a> or <a class=add
+href="javascript:addPanel('bottom')">below</a> an editor. Click the
+links in the previous paragraph to add panels to the editor.</p>
+
+</article>

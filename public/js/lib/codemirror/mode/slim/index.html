@@ -1,0 +1,96 @@
+<!doctype html>
+
+<title>CodeMirror: SLIM mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<link rel="stylesheet" href="../../theme/ambiance.css">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="../xml/xml.js"></script>
+<script src="../htmlembedded/htmlembedded.js"></script>
+<script src="../htmlmixed/htmlmixed.js"></script>
+<script src="../coffeescript/coffeescript.js"></script>
+<script src="../javascript/javascript.js"></script>
+<script src="../ruby/ruby.js"></script>
+<script src="../markdown/markdown.js"></script>
+<script src="slim.js"></script>
+<style>.CodeMirror {background: #f8f8f8;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">SLIM</a>
+  </ul>
+</div>
+
+<article>
+  <h2>SLIM mode</h2>
+  <form><textarea id="code" name="code">
+body
+  table
+    - for user in users
+      td id="user_#{user.id}" class=user.role
+        a href=user_action(user, :edit) Edit #{user.name}
+        a href=(path_to_user user) = user.name
+body
+  h1(id="logo") = page_logo
+  h2[id="tagline" class="small tagline"] = page_tagline
+
+h2[id="tagline"
+   class="small tagline"] = page_tagline
+
+h1 id = "logo" = page_logo
+h2 [ id = "tagline" ] = page_tagline
+
+/ comment
+  second line
+/! html comment
+   second line
+<!-- html comment -->
+<a href="#{'hello' if set}">link</a>
+a.slim href="work" disabled=false running==:atom Text <b>bold</b>
+.clazz data-id="test" == 'hello' unless quark
+ | Text mode #{12}
+   Second line
+= x ||= :ruby_atom
+#menu.left
+  - @env.each do |x|
+    li: a = x
+*@dyntag attr="val"
+.first *{:class => [:second, :third]} Text
+.second class=["text","more"]
+.third class=:text,:symbol
+
+  </textarea></form>
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      lineNumbers: true,
+      theme: "ambiance",
+      mode: "application/x-slim"
+    });
+    $('.CodeMirror').resizable({
+      resize: function() {
+        editor.setSize($(this).width(), $(this).height());
+        //editor.refresh();
+      }
+    });
+  </script>
+
+  <p><strong>MIME types defined:</strong> <code>application/x-slim</code>.</p>
+
+  <p>
+    <strong>Parsing/Highlighting Tests:</strong>
+    <a href="../../test/index.html#slim_*">normal</a>,
+    <a href="../../test/index.html#verbose,slim_*">verbose</a>.
+  </p>
+</article>
