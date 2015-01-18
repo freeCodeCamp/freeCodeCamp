@@ -32,15 +32,6 @@ body {
   margin-bottom: 60px;
 }
 
-.footer {
-  width: 100%;
-  margin-bottom: 0px;
-  text-align: center;
-  padding:0px;
-  height: 200px;
-  background-color: #4a2b0f;
-}
-
 h1, h2 {
   font-weight: 400;
 }
@@ -514,6 +505,24 @@ thead {
   color: #eee;
   font-size: 60px;
   text-align: right;
+}
+
+.fcc-footer {
+  width: 100%;
+  text-align: center;
+  background-color: #4a2b0f;
+  height: 40px;
+  bottom: 0;
+  position: absolute;
+  a {
+    font-size: 28px;
+    color: #eee;
+    &:hover {
+      color: #4a2b0f;
+      background-color: #eee;
+      text-decoration: none;
+    }
+  }
 }
 
 //uncomment this to see the dimensions of all elements outlined in red
