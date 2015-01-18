@@ -1,0 +1,236 @@
+<!doctype html>
+
+<title>CodeMirror: Test Suite</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+
+<link rel="stylesheet" href="../lib/codemirror.css">
+<link rel="stylesheet" href="mode_test.css">
+<script src="../doc/activebookmark.js"></script>
+<script src="../lib/codemirror.js"></script>
+<script src="../addon/mode/overlay.js"></script>
+<script src="../addon/mode/multiplex.js"></script>
+<script src="../addon/search/searchcursor.js"></script>
+<script src="../addon/dialog/dialog.js"></script>
+<script src="../addon/edit/matchbrackets.js"></script>
+<script src="../addon/comment/comment.js"></script>
+<script src="../mode/javascript/javascript.js"></script>
+<script src="../mode/clike/clike.js"></script>
+<script src="../mode/php/php.js"></script>
+<script src="../mode/xml/xml.js"></script>
+<script src="../keymap/vim.js"></script>
+<script src="../keymap/emacs.js"></script>
+<script src="../keymap/sublime.js"></script>
+
+<style type="text/css">
+  .ok {color: #090;}
+  .fail {color: #e00;}
+  .error {color: #c90;}
+  .done {font-weight: bold;}
+  #progress {
+  background: #45d;
+  color: white;
+  text-shadow: 0 0 1px #45d, 0 0 2px #45d, 0 0 3px #45d;
+  font-weight: bold;
+  white-space: pre;
+  }
+  #testground {
+  visibility: hidden;
+  }
+  #testground.offscreen {
+  visibility: visible;
+  position: absolute;
+  left: -10000px;
+  top: -10000px;
+  }
+  .CodeMirror { border: 1px solid black; }
+</style>
+
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Test suite</a>
+  </ul>
+</div>
+
+<article>
+  <h2>Test Suite</h2>
+
+    <p>A limited set of programmatic sanity tests for CodeMirror.</p>
+
+    <div style="border: 1px solid black; padding: 1px; max-width: 700px;">
+      <div style="width: 0px;" id=progress><div style="padding: 3px;">Ran <span id="progress_ran">0</span><span id="progress_total"> of 0</span> tests</div></div>
+    </div>
+    <p id=status>Please enable JavaScript...</p>
+    <div id=output></div>
+
+    <div id=testground></div>
+
+    <script src="driver.js"></script>
+    <script src="test.js"></script>
+    <script src="doc_test.js"></script>
+    <script src="multi_test.js"></script>
+    <script src="scroll_test.js"></script>
+    <script src="comment_test.js"></script>
+    <script src="search_test.js"></script>
+    <script src="mode_test.js"></script>
+    <script src="../mode/javascript/test.js"></script>
+    <script src="../mode/php/test.js"></script>
+    <script src="../mode/css/css.js"></script>
+    <script src="../mode/css/test.js"></script>
+    <script src="../mode/css/scss_test.js"></script>
+    <script src="../mode/css/less_test.js"></script>
+    <script src="../mode/xml/xml.js"></script>
+    <script src="../mode/xml/test.js"></script>
+    <script src="../mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../mode/ruby/ruby.js"></script>
+    <script src="../mode/ruby/test.js"></script>
+    <script src="../mode/haml/haml.js"></script>
+    <script src="../mode/haml/test.js"></script>
+    <script src="../mode/markdown/markdown.js"></script>
+    <script src="../mode/markdown/test.js"></script>
+    <script src="../mode/slim/slim.js"></script>
+    <script src="../mode/slim/test.js"></script>
+    <script src="../mode/gfm/gfm.js"></script>
+    <script src="../mode/gfm/test.js"></script>
+    <script src="../mode/shell/shell.js"></script>
+    <script src="../mode/shell/test.js"></script>
+    <script src="../mode/stex/stex.js"></script>
+    <script src="../mode/stex/test.js"></script>
+    <script src="../mode/textile/textile.js"></script>
+    <script src="../mode/textile/test.js"></script>
+    <script src="../mode/verilog/verilog.js"></script>
+    <script src="../mode/verilog/test.js"></script>
+    <script src="../mode/xquery/xquery.js"></script>
+    <script src="../mode/xquery/test.js"></script>
+    <script src="../addon/mode/multiplex_test.js"></script>
+    <script src="vim_test.js"></script>
+    <script src="emacs_test.js"></script>
+    <script src="sublime_test.js"></script>
+    <script>
+      window.onload = runHarness;
+      CodeMirror.on(window, 'hashchange', runHarness);
+
+      function esc(str) {
+        return str.replace(/[<&]/, function(ch) { return ch == "<" ? "&lt;" : "&amp;"; });
+      }
+
+      var output = document.getElementById("output"),
+          progress = document.getElementById("progress"),
+          progressRan = document.getElementById("progress_ran").childNodes[0],
+          progressTotal = document.getElementById("progress_total").childNodes[0];
+      var count = 0,
+          failed = 0,
+          skipped = 0,
+          bad = "",
+          running = false, // Flag that states tests are running
+          quit = false, // Flag to quit tests ASAP
+          verbose = false; // Adds message for *every* test to output
+
+      function runHarness(){
+        if (running) {
+          quit = true;
+          setStatus("Restarting tests...", '', true);
+          setTimeout(function(){runHarness();}, 500);
+          return;
+        }
+        filters = [];
+        verbose = false;
+        if (window.location.hash.substr(1)){
+          var strings = window.location.hash.substr(1).split(",");
+          while (strings.length) {
+            var s = strings.shift();
+            if (s === "verbose")
+              verbose = true;
+            else
+              filters.push(parseTestFilter(decodeURIComponent(s)));;
+          }
+        }
+        quit = false;
+        running = true;
+        setStatus("Loading tests...");
+        count = 0;
+        failed = 0;
+        skipped = 0;
+        bad = "";
+        totalTests = countTests();
+        progressTotal.nodeValue = " of " + totalTests;
+        progressRan.nodeValue = count;
+        output.innerHTML = '';
+        document.getElementById("testground").innerHTML = "<form>" +
+          "<textarea id=\"code\" name=\"code\"></textarea>" +
+          "<input type=submit value=ok name=submit>" +
+          "</form>";
+        runTests(displayTest);
+      }
+
+      function setStatus(message, className, force){
+        if (quit && !force) return;
+        if (!message) throw("must provide message");
+        var status = document.getElementById("status").childNodes[0];
+        status.nodeValue = message;
+        status.parentNode.className = className;
+      }
+      function addOutput(name, className, code){
+        var newOutput = document.createElement("dl");
+        var newTitle = document.createElement("dt");
+        newTitle.className = className;
+        newTitle.appendChild(document.createTextNode(name));
+        newOutput.appendChild(newTitle);
+        var newMessage = document.createElement("dd");
+        newMessage.innerHTML = code;
+        newOutput.appendChild(newTitle);
+        newOutput.appendChild(newMessage);
+        output.appendChild(newOutput);
+      }
+      function displayTest(type, name, customMessage) {
+        var message = "???";
+        if (type != "done" && type != "skipped") ++count;
+        progress.style.width = (count * (progress.parentNode.clientWidth - 2) / totalTests) + "px";
+        progressRan.nodeValue = count;
+        if (type == "ok") {
+          message = "Test '" + name + "' succeeded";
+          if (!verbose) customMessage = false;
+        } else if (type == "skipped") {
+          message = "Test '" + name + "' skipped";
+          ++skipped;
+          if (!verbose) customMessage = false;
+        } else if (type == "expected") {
+          message = "Test '" + name + "' failed as expected";
+          if (!verbose) customMessage = false;
+        } else if (type == "error" || type == "fail") {
+          ++failed;
+          message = "Test '" + name + "' failed";
+        } else if (type == "done") {
+          if (failed) {
+            type += " fail";
+            message = failed + " failure" + (failed > 1 ? "s" : "");
+          } else if (count < totalTests) {
+            failed = totalTests - count;
+            type += " fail";
+            message = failed + " failure" + (failed > 1 ? "s" : "");
+          } else {
+            type += " ok";
+            message = "All passed";
+            if (skipped) {
+              message += " (" + skipped + " skipped)";
+            }
+          }
+          progressTotal.nodeValue = '';
+          customMessage = true; // Hack to avoid adding to output
+        }
+        if (verbose && !customMessage)  customMessage = message;
+        setStatus(message, type);
+        if (customMessage && customMessage.length > 0) {
+          addOutput(name, type, customMessage);
+        }
+      }
+    </script>
+
+</article>

@@ -1,0 +1,198 @@
+<!doctype html>
+
+<title>CodeMirror: Python mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="../../addon/edit/matchbrackets.js"></script>
+<script src="python.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Python</a>
+  </ul>
+</div>
+
+<article>
+<h2>Python mode</h2>
+
+    <div><textarea id="code" name="code">
+# Literals
+1234
+0.0e101
+.123
+0b01010011100
+0o01234567
+0x0987654321abcdef
+7
+2147483647
+3L
+79228162514264337593543950336L
+0x100000000L
+79228162514264337593543950336
+0xdeadbeef
+3.14j
+10.j
+10j
+.001j
+1e100j
+3.14e-10j
+
+
+# String Literals
+'For\''
+"God\""
+"""so loved
+the world"""
+'''that he gave
+his only begotten\' '''
+'that whosoever believeth \
+in him'
+''
+
+# Identifiers
+__a__
+a.b
+a.b.c
+
+#Unicode identifiers on Python3
+# a = x\ddot
+a⃗ = ẍ
+# a = v\dot
+a⃗ = v̇
+
+#F\vec = m \cdot a\vec
+F⃗ = m•a⃗ 
+
+# Operators
++ - * / % & | ^ ~ < >
+== != <= >= <> << >> // **
+and or not in is
+
+#infix matrix multiplication operator (PEP 465)
+A @ B
+
+# Delimiters
+() [] {} , : ` = ; @ .  # Note that @ and . require the proper context on Python 2.
++= -= *= /= %= &= |= ^=
+//= >>= <<= **=
+
+# Keywords
+as assert break class continue def del elif else except
+finally for from global if import lambda pass raise
+return try while with yield
+
+# Python 2 Keywords (otherwise Identifiers)
+exec print
+
+# Python 3 Keywords (otherwise Identifiers)
+nonlocal
+
+# Types
+bool classmethod complex dict enumerate float frozenset int list object
+property reversed set slice staticmethod str super tuple type
+
+# Python 2 Types (otherwise Identifiers)
+basestring buffer file long unicode xrange
+
+# Python 3 Types (otherwise Identifiers)
+bytearray bytes filter map memoryview open range zip
+
+# Some Example code
+import os
+from package import ParentClass
+
+@nonsenseDecorator
+def doesNothing():
+    pass
+
+class ExampleClass(ParentClass):
+    @staticmethod
+    def example(inputStr):
+        a = list(inputStr)
+        a.reverse()
+        return ''.join(a)
+
+    def __init__(self, mixin = 'Hello'):
+        self.mixin = mixin
+
+</textarea></div>
+
+
+<h2>Cython mode</h2>
+
+<div><textarea id="code-cython" name="code-cython">
+
+import numpy as np
+cimport cython
+from libc.math cimport sqrt
+
+@cython.boundscheck(False)
+@cython.wraparound(False)
+def pairwise_cython(double[:, ::1] X):
+    cdef int M = X.shape[0]
+    cdef int N = X.shape[1]
+    cdef double tmp, d
+    cdef double[:, ::1] D = np.empty((M, M), dtype=np.float64)
+    for i in range(M):
+        for j in range(M):
+            d = 0.0
+            for k in range(N):
+                tmp = X[i, k] - X[j, k]
+                d += tmp * tmp
+            D[i, j] = sqrt(d)
+    return np.asarray(D)
+
+</textarea></div>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode: {name: "python",
+               version: 3,
+               singleLineStringErrors: false},
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true
+    });
+
+    CodeMirror.fromTextArea(document.getElementById("code-cython"), {
+        mode: {name: "text/x-cython",
+               version: 2,
+               singleLineStringErrors: false},
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true
+      });
+    </script>
+    <h2>Configuration Options for Python mode:</h2>
+    <ul>
+      <li>version - 2/3 - The version of Python to recognize.  Default is 2.</li>
+      <li>singleLineStringErrors - true/false - If you have a single-line string that is not terminated at the end of the line, this will show subsequent lines as errors if true, otherwise it will consider the newline as the end of the string. Default is false.</li>
+      <li>hangingIndent - int - If you want to write long arguments to a function starting on a new line, how much that line should be indented. Defaults to one normal indentation unit.</li>
+    </ul>
+    <h2>Advanced Configuration Options:</h2>
+    <p>Usefull for superset of python syntax like Enthought enaml, IPython magics and  questionmark help</p>
+    <ul>
+      <li>singleOperators - RegEx - Regular Expression for single operator matching,  default : <pre>^[\\+\\-\\*/%&amp;|\\^~&lt;&gt;!]</pre> including <pre>@</pre> on Python 3</li>
+      <li>singleDelimiters - RegEx - Regular Expression for single delimiter matching, default :  <pre>^[\\(\\)\\[\\]\\{\\}@,:`=;\\.]</pre></li>
+      <li>doubleOperators - RegEx - Regular Expression for double operators matching, default : <pre>^((==)|(!=)|(&lt;=)|(&gt;=)|(&lt;&gt;)|(&lt;&lt;)|(&gt;&gt;)|(//)|(\\*\\*))</pre></li>
+      <li>doubleDelimiters - RegEx - Regular Expressoin for double delimiters matching, default : <pre>^((\\+=)|(\\-=)|(\\*=)|(%=)|(/=)|(&amp;=)|(\\|=)|(\\^=))</pre></li>
+      <li>tripleDelimiters - RegEx - Regular Expression for triple delimiters matching, default : <pre>^((//=)|(&gt;&gt;=)|(&lt;&lt;=)|(\\*\\*=))</pre></li>
+      <li>identifiers - RegEx - Regular Expression for identifier, default : <pre>^[_A-Za-z][_A-Za-z0-9]*</pre> on Python 2 and <pre>^[_A-Za-z\u00A1-\uFFFF][_A-Za-z0-9\u00A1-\uFFFF]*</pre> on Python 3.</li>
+      <li>extra_keywords - list of string - List of extra words ton consider as keywords</li>
+      <li>extra_builtins - list of string - List of extra words ton consider as builtins</li>
+    </ul>
+
+
+    <p><strong>MIME types defined:</strong> <code>text/x-python</code> and <code>text/x-cython</code>.</p>
+  </article>

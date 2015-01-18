@@ -1,0 +1,67 @@
+<!doctype html>
+
+<title>CodeMirror: Variable Height Demo</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+
+<link rel="stylesheet" href="../lib/codemirror.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../mode/markdown/markdown.js"></script>
+<script src="../mode/xml/xml.js"></script>
+<style type="text/css">
+      .CodeMirror {border: 1px solid silver; border-width: 1px 2px; }
+      .cm-header { font-family: arial; }
+      .cm-header-1 { font-size: 150%; }
+      .cm-header-2 { font-size: 130%; }
+      .cm-header-3 { font-size: 120%; }
+      .cm-header-4 { font-size: 110%; }
+      .cm-header-5 { font-size: 100%; }
+      .cm-header-6 { font-size: 90%; }
+      .cm-strong { font-size: 140%; }
+    </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Variable Height</a>
+  </ul>
+</div>
+
+<article>
+<h2>Variable Height Demo</h2>
+<form><textarea id="code" name="code"># A First Level Header
+
+**Bold** text in a normal-size paragraph.
+
+And a very long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long, wrapped line with a piece of **big** text inside of it.
+
+## A Second Level Header
+
+Now is the time for all good men to come to
+the aid of their country. This is just a
+regular paragraph.
+
+The quick brown fox jumped over the lazy
+dog's back.
+
+### Header 3
+
+> This is a blockquote.
+> 
+> This is the second paragraph in the blockquote.
+>
+> ## This is an H2 in a blockquote       
+</textarea></form>
+    <script id="script">
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        lineWrapping: true,
+        mode: "markdown"
+      });
+    </script>
+  </article>

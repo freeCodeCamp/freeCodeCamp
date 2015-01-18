@@ -1,0 +1,144 @@
+<!doctype html>
+
+<title>CodeMirror: Version 4 upgrade guide</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="docs.css">
+<script src="activebookmark.js"></script>
+
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#upgrade">Upgrade guide</a>
+    <li><a href="#multisel">Multiple selections</a>
+    <li><a href="#beforeSelectionChange">The beforeSelectionChange event</a>
+    <li><a href="#replaceSelection">replaceSelection and collapsing</a>
+    <li><a href="#changeEvent">change event data</a>
+    <li><a href="#showIfHidden">showIfHidden option to line widgets</a>
+    <li><a href="#module">Module loaders</a>
+    <li><a href="#shareddata">Mutating shared data structures</a></li>
+    <li><a href="#deprecated">Deprecated interfaces dropped</a>
+  </ul>
+</div>
+
+<article>
+
+<h2 id=upgrade>Upgrading to version 4</h2>
+
+<p>CodeMirror 4's interface is <em>very</em> close version 3, but it
+does fix a few awkward details in a backwards-incompatible ways. At
+least skim the text below before upgrading.</p>
+
+<section id=multisel><h2>Multiple selections</h2>
+
+<p>The main new feature in version 4 is multiple selections. The
+single-selection variants of methods are still there, but now
+typically act only on the <em>primary</em> selection (usually the last
+one added).</p>
+
+<p>The exception to this
+is <a href="manual.html#getSelection"><strong><code>getSelection</code></strong></a>,
+which will now return the content of <em>all</em> selections
+(separated by newlines, or whatever <code>lineSep</code> parameter you passed
+it).</p>
+
+</section>
+
+<section id=beforeSelectionChange><h2>The beforeSelectionChange event</h2>
+
+<p>This event still exists, but the object it is passed has
+a <a href="manual.html#event_beforeSelectionChange">completely new
+interface</a>, because such changes now concern multiple
+selections.</p>
+
+</section>
+
+<section id=replaceSelection><h2>replaceSelection's collapsing behavior</h2>
+
+<p>By
+default, <a href="manual.html#replaceSelection"><code>replaceSelection</code></a>
+would leave the newly inserted text selected. This is only rarely what
+you want, and also (slightly) more expensive in the new model, so the
+default was changed to <code>"end"</code>, meaning the old behavior
+must be explicitly specified by passing a second argument
+of <code>"around"</code>.</p>
+
+</section>
+
+<section id=changeEvent><h2>change event data</h2>
+
+<p>Rather than forcing client code to follow <code>next</code>
+pointers from one change object to the next, the library will now
+simply fire
+multiple <a href="manual.html#event_change"><code>"change"</code></a>
+events. Existing code will probably continue to work unmodified.</p>
+
+</section>
+
+<section id=showIfHidden><h2>showIfHidden option to line widgets</h2>
+
+<p>This option, which conceptually caused line widgets to be visible
+even if their line was hidden, was never really well-defined, and was
+buggy from the start. It would be a rather expensive feature, both in
+code complexity and run-time performance, to implement properly. It
+has been dropped entirely in 4.0.</p>
+
+</section>
+
+<section id=module><h2>Module loaders</h2>
+
+<p>All modules in the CodeMirror distribution are now wrapped in a
+shim function to make them compatible with both AMD
+(<a href="http://requirejs.org">requirejs</a>) and CommonJS (as used
+by <a href="http://nodejs.org/">node</a>
+and <a href="http://browserify.org/">browserify</a>) module loaders.
+When neither of these is present, they fall back to simply using the
+global <code>CodeMirror</code> variable.</p>
+
+<p>If you have a module loader present in your environment, CodeMirror
+will attempt to use it, and you might need to change the way you load
+CodeMirror modules.</p>
+
+</section>
+
+<section id=shareddata><h2>Mutating shared data structures</h2>
+
+<p>Data structures produced by the library should not be mutated
+unless explicitly allowed, in general. This is slightly more strict in
+4.0 than it was in earlier versions, which copied the position objects
+returned by <a href="manual.html#getCursor"><code>getCursor</code></a>
+for nebulous, historic reasons. In 4.0, mutating these
+objects <em>will</em> corrupt your editor's selection.</p>
+
+</section>
+
+<section id=deprecated><h2>Deprecated interfaces dropped</h2>
+
+<p>A few properties and methods that have been deprecated for a while
+are now gone. Most notably, the <code>onKeyEvent</code>
+and <code>onDragEvent</code> options (use the
+corresponding <a href="manual.html#event_dom">events</a> instead).</p>
+
+<p>Two silly methods, which were mostly there to stay close to the 0.x
+API, <code>setLine</code> and <code>removeLine</code> are now gone.
+Use the more
+flexible <a href="manual.html#replaceRange"><code>replaceRange</code></a>
+method instead.</p>
+
+<p>The long names for folding and completing functions
+(<code>CodeMirror.braceRangeFinder</code>, <code>CodeMirror.javascriptHint</code>,
+etc) are also gone
+(use <code>CodeMirror.fold.brace</code>, <code>CodeMirror.hint.javascript</code>).</p>
+
+<p>The <code>className</code> property in the return value
+of <a href="manual.html#getTokenAt"><code>getTokenAt</code></a>, which
+has been superseded by the <code>type</code> property, is also no
+longer present.</p>
+
+</section>
+</article>

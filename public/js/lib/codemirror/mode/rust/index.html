@@ -1,0 +1,60 @@
+<!doctype html>
+
+<title>CodeMirror: Rust mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="rust.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Rust</a>
+  </ul>
+</div>
+
+<article>
+<h2>Rust mode</h2>
+
+
+<div><textarea id="code" name="code">
+// Demo code.
+
+type foo<T> = int;
+enum bar {
+    some(int, foo<float>),
+    none
+}
+
+fn check_crate(x: int) {
+    let v = 10;
+    alt foo {
+      1 to 3 {
+        print_foo();
+        if x {
+            blah() + 10;
+        }
+      }
+      (x, y) { "bye" }
+      _ { "hi" }
+    }
+}
+</textarea></div>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true
+      });
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-rustsrc</code>.</p>
+  </article>

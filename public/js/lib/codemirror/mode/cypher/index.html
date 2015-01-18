@@ -1,0 +1,63 @@
+<!doctype html>
+
+<title>CodeMirror: Cypher Mode for CodeMirror</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css" />
+<link rel="stylesheet" href="../../theme/neo.css" />
+<script src="../../lib/codemirror.js"></script>
+<script src="cypher.js"></script>
+<style>
+.CodeMirror {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+        </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Cypher Mode for CodeMirror</a>
+  </ul>
+</div>
+
+<article>
+<h2>Cypher Mode for CodeMirror</h2>
+<form>
+            <textarea id="code" name="code">// Cypher Mode for CodeMirror, using the neo theme
+MATCH (joe { name: 'Joe' })-[:knows*2..2]-(friend_of_friend)
+WHERE NOT (joe)-[:knows]-(friend_of_friend)
+RETURN friend_of_friend.name, COUNT(*)
+ORDER BY COUNT(*) DESC , friend_of_friend.name
+</textarea>
+            </form>
+            <p><strong>MIME types defined:</strong> 
+            <code><a href="?mime=application/x-cypher-query">application/x-cypher-query</a></code>
+        </p>
+<script>
+window.onload = function() {
+  var mime = 'application/x-cypher-query';
+  // get mime type
+  if (window.location.href.indexOf('mime=') > -1) {
+    mime = window.location.href.substr(window.location.href.indexOf('mime=') + 5);
+  }
+  window.editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+    mode: mime,
+    indentWithTabs: true,
+    smartIndent: true,
+    lineNumbers: true,
+    matchBrackets : true,
+    autofocus: true,
+    theme: 'neo'
+  });
+};
+</script>
+
+</article>

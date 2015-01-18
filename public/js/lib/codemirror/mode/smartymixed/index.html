@@ -1,0 +1,114 @@
+<!doctype html>
+
+<title>CodeMirror: Smarty mixed mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="../../mode/xml/xml.js"></script>
+<script src="../../mode/javascript/javascript.js"></script>
+<script src="../../mode/css/css.js"></script>
+<script src="../../mode/htmlmixed/htmlmixed.js"></script>
+<script src="../../mode/smarty/smarty.js"></script>
+<script src="../../mode/smartymixed/smartymixed.js"></script>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Smarty mixed</a>
+  </ul>
+</div>
+
+<article>
+<h2>Smarty mixed mode</h2>
+<form><textarea id="code" name="code">
+{**
+* @brief Smarty mixed mode
+* @author Ruslan Osmanov
+* @date 29.06.2013
+*}
+<html>
+<head>
+  <title>{$title|htmlspecialchars|truncate:30}</title>
+</head>
+<body class="{$bodyclass}">
+  {* Multiline smarty
+  * comment, no {$variables} here
+  *}
+  {literal}
+  {literal} is just an HTML text.
+  <script type="text/javascript">//<![CDATA[
+    var a = {$just_a_normal_js_object : "value"};
+    var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code"), {
+      mode           : "smartymixed",
+      tabSize        : 2,
+      indentUnit     : 2,
+      indentWithTabs : false,
+      lineNumbers    : true,
+      smartyVersion  : 3
+    });
+    // ]]>
+  </script>
+  <style>
+    /* CSS content 
+    {$no_smarty} */
+    .some-class { font-weight: bolder; color: "orange"; }
+  </style>
+  {/literal}
+
+  {extends file="parent.tpl"}
+  {include file="template.tpl"}
+
+  {* some example Smarty content *}
+  {if isset($name) && $name == 'Blog'}
+    This is a {$var}.
+    {$integer = 4511}, {$array[] = "a"}, {$stringvar = "string"}
+    {$integer = 4512} {$array[] = "a"} {$stringvar = "string"}
+    {assign var='bob' value=$var.prop}
+  {elseif $name == $foo}
+    {function name=menu level=0}
+    {foreach $data as $entry}
+      {if is_array($entry)}
+      - {$entry@key}
+      {menu data=$entry level=$level+1}
+      {else}
+      {$entry}
+      {* One
+      * Two
+      * Three
+      *}
+      {/if}
+    {/foreach}
+    {/function}
+  {/if}
+  </body>
+  <!-- R.O. -->
+</html>
+</textarea></form>
+
+    <script type="text/javascript">
+      var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("code"), {
+        mode           : "smartymixed",
+        tabSize        : 2,
+        indentUnit     : 2,
+        indentWithTabs : false,
+        lineNumbers    : true,
+        smartyVersion  : 3,
+        matchBrackets  : true,
+      });
+    </script>
+
+    <p>The Smarty mixed mode depends on the Smarty and HTML mixed modes. HTML
+    mixed mode itself depends on XML, JavaScript, and CSS modes.</p>
+
+    <p>It takes the same options, as Smarty and HTML mixed modes.</p>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-smarty</code>.</p>
+  </article>

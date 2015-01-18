@@ -1,0 +1,92 @@
+extends ../layout
+block content
+    script(src='/js/lib/codemirror/lib/codemirror.js')
+    script(src='/js/lib/codemirror/addon/edit/closebrackets.js')
+    script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
+    script(src='/js/lib/codemirror/addon/lint/lint.js')
+    script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
+    script(src='//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js')
+
+    link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
+    link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
+    link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
+    script(src='/js/lib/codemirror/mode/javascript/javascript.js')
+    script(src='js/lib/jailed/jailed.js')
+    script(src='/js/lib/bonfire/bonfire.js')
+
+    .row
+        .col-sm-12.col-md-8.col-xs-12
+            .panel.panel-primary
+                .panel-heading Title
+                .panel.panel-body
+                    form.code
+                        .form-group.codeMirrorView
+                            textarea#codeEditor(autofocus=true)
+                    form.code
+                        .form-group.codeMirrorView
+                            textarea#codeOutput
+                    #submitButton.btn.btn-primary.btn-big.btn-block Run my code
+                    #hintButton.btn.btn-info.btn-big.btn-block Show me hints
+
+                    script.
+                        var widgets = [];
+                        var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
+                            lineNumbers: true,
+                            mode: "javascript",
+                            theme: 'monokai',
+                            runnable: true,
+                            lint: true,
+                            matchBrackets: true,
+                            autoCloseBrackets: true,
+                            gutters: ["CodeMirror-lint-markers"],
+                            onKeyEvent : doLinting
+                        });
+                        var editor = myCodeMirror;
+                        myCodeMirror.setValue('2*2');
+                        myCodeMirror.setSize("100%", 500);
+
+                        var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
+                            lineNumbers: false,
+                            mode: "javascript",
+                            theme: 'monokai',
+                            readOnly: 'nocursor'
+                        });
+                        codeOutput.setSize("100%", 100);
+
+                        var info = editor.getScrollInfo();
+                        var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top;
+                        if (info.top + info.clientHeight < after)
+                            editor.scrollTo(null, after - info.clientHeight + 3);
+                        var doLinting = function() {
+                            editor.operation(function () {
+                                for (var i = 0; i < widgets.length; ++i)
+                                    editor.removeLineWidget(widgets[i]);
+                                widgets.length = 0;
+                                JSHINT(editor.getValue());
+                                for (var i = 0; i < JSHINT.errors.length; ++i) {
+                                    var err = JSHINT.errors[i];
+                                    if (!err) continue;
+                                    var msg = document.createElement("div");
+                                    var icon = msg.appendChild(document.createElement("span"));
+                                    icon.innerHTML = "!!";
+                                    icon.className = "lint-error-icon";
+                                    msg.appendChild(document.createTextNode(err.reason));
+                                    msg.className = "lint-error";
+                                    widgets.push(editor.addLineWidget(err.line - 1, msg, {
+                                        coverGutter: false,
+                                        noHScroll: true
+                                    }));
+                                }
+                            });
+                        };
+                        $('#submitButton').on('click', function () {
+                            $('#codeOutput').empty();
+                            var js = myCodeMirror.getValue();
+                           submit(js);
+                        });
+
+
+
+
+        .col-sm-12.col-md-4.col-xs-12
+            include ../partials/challenges

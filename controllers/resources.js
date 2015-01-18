@@ -88,12 +88,6 @@ module.exports = {
     });
   },
 
-  programmerInterviewQuestionsApp: function(req, res) {
-    res.render('resources/programmer-interview-questions-app', {
-      title: 'Programmer Interview Questions App'
-    });
-  },
-
   pairProgramWithTeamViewer: function(req, res) {
     Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
       if (err) {
@@ -168,10 +162,6 @@ module.exports = {
       });
     });
   },
-
-  interviewQuestions: function(req, res) {
-    res.json(questions);
-  }
 };
 
 
