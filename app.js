@@ -24,22 +24,23 @@ var express = require('express'),
     connectAssets = require('connect-assets'),
 
     /**
-    * Controllers (route handlers).
-    */
+     * Controllers (route handlers).
+     */
     homeController = require('./controllers/home'),
     challengesController = require('./controllers/challenges'),
     resourcesController = require('./controllers/resources'),
     userController = require('./controllers/user'),
     contactController = require('./controllers/contact'),
+    bonfireController = require('./controllers/bonfire'),
 
     /**
-    * User model
-    */
+     * User model
+     */
     User = require('./models/User'),
 
     /**
-    * API keys and Passport configuration.
-    */
+     * API keys and Passport configuration.
+     */
     secrets = require('./config/secrets'),
     passportConf = require('./config/passport');
 
@@ -52,10 +53,10 @@ var app = express();
  * Connect to MongoDB.
  */
 mongoose.connect(secrets.db);
-mongoose.connection.on('error', function() {
-  console.error(
-    'MongoDB Connection Error. Please make sure that MongoDB is running.'
-  );
+mongoose.connection.on('error', function () {
+    console.error(
+        'MongoDB Connection Error. Please make sure that MongoDB is running.'
+    );
 });
 
 /**
@@ -67,20 +68,20 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
 var oneYear = 31557600000;
-app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
+app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
 app.use(connectAssets({
     paths: [
-      path.join(__dirname, 'public/css'),
-      path.join(__dirname, 'public/js')
+        path.join(__dirname, 'public/css'),
+        path.join(__dirname, 'public/js')
     ],
     helperContext: app.locals
 }));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressValidator({
     customValidators: {
-        matchRegex: function(param, regex) {
+        matchRegex: function (param, regex) {
             return regex.test(param);
         }
     }
@@ -129,58 +130,58 @@ var trusted = [
     'ws://localhost:3000/',
     'http://localhost:3000',
     '*.ionicframework.com',
-    'https://syndication.twitter.com'
+    'https://syndication.twitter.com',
 ];
 
 debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
-    scriptSrc: ['*.optimizely.com'].concat(trusted),
+    scriptSrc: ['*.optimizely.com', '*.aspnetcdn.com'].concat(trusted),
     'connect-src': [
-      'ws://*.rafflecopter.com',
-      'wss://*.rafflecopter.com',
-      'https://*.rafflecopter.com',
-      'ws://www.freecodecamp.com',
-      'http://www.freecodecamp.com'
+        'ws://*.rafflecopter.com',
+        'wss://*.rafflecopter.com',
+        'https://*.rafflecopter.com',
+        'ws://www.freecodecamp.com',
+        'http://www.freecodecamp.com'
     ].concat(trusted),
     styleSrc: trusted,
     imgSrc: [
-      '*.evernote.com',
-      '*.amazonaws.com',
-      'data:',
-      '*.licdn.com',
-      '*.gravatar.com',
-      '*.youtube.com',
-      '*.akamaihd.net',
-      'graph.facebook.com',
-      '*.githubusercontent.com',
-      '*.googleusercontent.com',
-      '*' /* allow all input since we have user submitted images for public profile*/
+        '*.evernote.com',
+        '*.amazonaws.com',
+        'data:',
+        '*.licdn.com',
+        '*.gravatar.com',
+        '*.youtube.com',
+        '*.akamaihd.net',
+        'graph.facebook.com',
+        '*.githubusercontent.com',
+        '*.googleusercontent.com',
+        '*' /* allow all input since we have user submitted images for public profile*/
     ].concat(trusted),
     fontSrc: ['*.googleapis.com'].concat(trusted),
     mediaSrc: [
-      '*.amazonaws.com',
-      '*.twitter.com'
+        '*.amazonaws.com',
+        '*.twitter.com'
     ].concat(trusted),
     frameSrc: [
-      '*.gitter.im',
-      '*.vimeo.com',
-      '*.twitter.com',
-      '*.rafflecopter.com',
-      '*.youtube.com'
+        '*.gitter.im',
+        '*.vimeo.com',
+        '*.twitter.com',
+        '*.rafflecopter.com',
+        '*.youtube.com'
     ].concat(trusted),
     reportOnly: false, // set to true if you only want to report errors
     setAllHeaders: false, // set to true if you want to set all headers
     safari5: false // set to true if you want to force buggy CSP in Safari 5
 }));
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     // Make user object available in templates.
     res.locals.user = req.user;
     next();
 });
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     // Remember original destination before login.
     var path = req.path.split('/')[1];
     if (/auth|login|logout|signup|fonts|favicon/i.test(path)) {
@@ -191,7 +192,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(
-  express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 })
+    express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
 );
 
 /**
@@ -199,9 +200,6 @@ app.use(
  */
 
 app.get('/', homeController.index);
-app.get(
-  '/resources/interview-questions',
-  resourcesController.interviewQuestions);
 app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
 app.get('/live-pair-programming', resourcesController.livePairProgramming);
@@ -213,12 +211,8 @@ app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
 app.get('/stats', resourcesController.stats);
 app.get(
-  '/pair-program-with-team-viewer',
-  resourcesController.pairProgramWithTeamViewer
-);
-app.get(
-  '/programmer-interview-questions-app',
-  resourcesController.programmerInterviewQuestionsApp
+    '/pair-program-with-team-viewer',
+    resourcesController.pairProgramWithTeamViewer
 );
 app.get('/learn-to-code', resourcesController.about);
 app.get('/login', userController.getLogin);
@@ -245,9 +239,9 @@ app.post(
 
 // # Protected routes, user must be logged in.
 app.post(
-  '/update-progress',
-  passportConf.isAuthenticated,
-  userController.updateProgress
+    '/update-progress',
+    passportConf.isAuthenticated,
+    userController.updateProgress
 );
 app.get(
     '/challenges/:challengeNumber',
@@ -255,6 +249,11 @@ app.get(
 );
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
+app.get('/bonfire', bonfireController.index);
+//app.get(
+//    '/bonfire/:bonfireNumber',
+//    bonfireController.returnBonfire
+//);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
@@ -265,11 +264,6 @@ app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
 
-//put this route last
-app.get(
-    '/:username',
-    userController.returnUser
-);
 
 /**
  * API examples routes.
@@ -277,13 +271,15 @@ app.get(
  * and updates user.challengesHash & user.challengesCompleted
  *
  */
-app.post('/completed_challenge', function(req, res) {
+app.post('/completed_challenge', function (req, res) {
     req.user.challengesHash[parseInt(req.body.challengeNumber)] =
-      Math.round(+ new Date() / 1000);
+        Math.round(+new Date() / 1000);
     var ch = req.user.challengesHash;
     var p = 0;
     for (var k in ch) {
-      if (ch[k] > 0) { p += 1; }
+        if (ch[k] > 0) {
+            p += 1;
+        }
     }
     req.user.points = p;
     req.user.save();
@@ -294,61 +290,68 @@ app.post('/completed_challenge', function(req, res) {
  */
 
 var passportOptions = {
-  successRedirect: '/',
-  failureRedirect: '/login'
+    successRedirect: '/',
+    failureRedirect: '/login'
 };
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get(
-  '/auth/twitter/callback',
-  passport.authenticate('twitter', {
-    successRedirect: '/',
-    failureRedirect: '/login'
-  })
+    '/auth/twitter/callback',
+    passport.authenticate('twitter', {
+        successRedirect: '/',
+        failureRedirect: '/login'
+    })
 );
 
 app.get(
-  '/auth/linkedin',
-  passport.authenticate('linkedin', {
-    state: 'SOME STATE'
-  })
+    '/auth/linkedin',
+    passport.authenticate('linkedin', {
+        state: 'SOME STATE'
+    })
 );
 
 app.get(
-  '/auth/linkedin/callback',
-  passport.authenticate('linkedin', passportOptions)
+    '/auth/linkedin/callback',
+    passport.authenticate('linkedin', passportOptions)
 );
 
 app.get(
-  '/auth/facebook',
-  passport.authenticate('facebook', { scope: ['email', 'user_location'] })
+    '/auth/facebook',
+    passport.authenticate('facebook', {scope: ['email', 'user_location']})
 );
 
 app.get(
-  '/auth/facebook/callback',
-  passport.authenticate('facebook', passportOptions), function(req, res) {
-    res.redirect(req.session.returnTo || '/');
-  }
+    '/auth/facebook/callback',
+    passport.authenticate('facebook', passportOptions), function (req, res) {
+        res.redirect(req.session.returnTo || '/');
+    }
 );
 
 app.get('/auth/github', passport.authenticate('github'));
 app.get(
-  '/auth/github/callback',
-  passport.authenticate('github', passportOptions), function(req, res) {
-    res.redirect(req.session.returnTo || '/');
-  }
+    '/auth/github/callback',
+    passport.authenticate('github', passportOptions), function (req, res) {
+        res.redirect(req.session.returnTo || '/');
+    }
 );
 
 app.get(
-  '/auth/google',
-  passport.authenticate('google', { scope: 'profile email' })
+    '/auth/google',
+    passport.authenticate('google', {scope: 'profile email'})
 );
 app.get(
-  '/auth/google/callback',
-  passport.authenticate('google', passportOptions), function(req, res) {
-    res.redirect(req.session.returnTo || '/');
-  }
+    '/auth/google/callback',
+    passport.authenticate('google', passportOptions), function (req, res) {
+        res.redirect(req.session.returnTo || '/');
+    }
 );
+
+//put this route last
+app.get(
+    '/:username',
+    userController.returnUser
+);
+
 
 /**
  * 500 Error Handler.
@@ -358,12 +361,12 @@ app.use(errorHandler());
 /**
  * Start Express server.
  */
-app.listen(app.get('port'), function() {
-  console.log(
-    'FreeCodeCamp server listening on port %d in %s mode',
-    app.get('port'),
-    app.get('env')
-  );
+app.listen(app.get('port'), function () {
+    console.log(
+        'FreeCodeCamp server listening on port %d in %s mode',
+        app.get('port'),
+        app.get('env')
+    );
 });
 
 module.exports = app;

@@ -1,47 +1,42 @@
 extends ../layout
 block content
     .row
-        .col-sm-12.col-md-8.col-xs-12
+        .col-sm-12.col-md-12.col-xs-12
             .panel.panel-primary
-                .panel-heading #{name} (takes #{time} minutes)
+                .panel-heading.text-center #{name} (takes #{time} minutes)
                 .panel.panel-body
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
-                    h3 Steps:
-                    h4
-                        ol
-                            for step in steps
-                                li!= step
-                    .btn.btn-primary.btn-big.btn-block.completed-challenge I've completed this challenge
-                    .ten-pixel-break
-                    .btn.btn-success.btn-large.btn-block.skip-challenge I want to skip this challenge for now
-                #complete-dialog.modal
+                    .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+                        h3 Steps:
+                        h4
+                            ol
+                                for step in steps
+                                    li!= step
+                        .btn.btn-primary.btn-big.btn-block.completed-challenge I've completed this challenge
+                        .ten-pixel-break
+                        .btn.btn-success.btn-big.btn-block.all-challenges Show me all the challenges
+                #complete-dialog.modal(tabindex='-1')
                     .modal-dialog.animated.zoomIn.fast-animation
                         .modal-content
-                            .modal-header
-                                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                            .modal-header.challenge-list-header Nicely done!
+                                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                            .modal-body
                                 .text-center
-                                    h1.animated.zoomInDown Nicely done!
-                                    .animated.zoomInUp.delay-1
+                                    .animated.zoomInUp.delay-half
                                         span.landing-icon.ion-checkmark-circled.text-primary
                                 - if (cc)
-                                    a.animated.fadeIn.delay-2.btn.btn-lg.btn-primary.btn-block.next-button(name='_csrf', value=_csrf, aria-hidden='true') Take me to my next challenge
+                                    a.animated.fadeIn.delay-1.btn.btn-lg.btn-primary.btn-block.next-button(name='_csrf', value=_csrf, aria-hidden='true') Take me to my next challenge
                                     - if (points && points > 2)
-                                        a.animated.fadeIn.delay-2.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20Free%20Code%20Camp%20Challenge%20%23#{number}:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{number}&hashtags=learntocode, javascript" target="_blank")
+                                        a.animated.fadeIn.delay-1.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20Free%20Code%20Camp%20Challenge%20%23#{number}:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{number}&hashtags=learntocode, javascript" target="_blank")
                                           i.fa.fa-twitter &nbsp;
                                              = phrase
                                 - else
-                                    a.animated.fadeIn.delay-2.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-                #skip-dialog.modal
-                    .modal-dialog.animated.zoomIn.fast-animation
+                                    a.animated.fadeIn.delay-1.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                #all-challenges-dialog.modal(tabindex='-1')
+                    .modal-dialog.animated.fadeInUp.fast-animation
                         .modal-content
-                            .modal-header
-                                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                                .text-center
-                                    h1.animated.zoomInDown No problem.
-                                    h2.animated.zoomInDown You can retry this challenge any time.
-                                    .animated.zoomInUp.delay-1
-                                        span.landing-icon.ion-skip-forward.text-success
-                                a.animated.fadeIn.delay-2.btn.btn-lg.btn-primary.btn-block.next-button(aria-hidden='true') Take me to my next challenge
-        .col-sm-12.col-md-4.col-xs-12
-            include ../partials/challenges
+                            .modal-header.challenge-list-header Challenges
+                                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                            .modal-body
+                                    include ../partials/challenges

@@ -1,0 +1,88 @@
+<!doctype html>
+
+<title>CodeMirror: Clojure mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="clojure.js"></script>
+<style>.CodeMirror {background: #f8f8f8;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Clojure</a>
+  </ul>
+</div>
+
+<article>
+<h2>Clojure mode</h2>
+<form><textarea id="code" name="code">
+; Conway's Game of Life, based on the work of:
+;; Laurent Petit https://gist.github.com/1200343
+;; Christophe Grand http://clj-me.cgrand.net/2011/08/19/conways-game-of-life
+
+(ns ^{:doc "Conway's Game of Life."}
+ game-of-life)
+
+;; Core game of life's algorithm functions
+
+(defn neighbours
+  "Given a cell's coordinates, returns the coordinates of its neighbours."
+  [[x y]]
+  (for [dx [-1 0 1] dy (if (zero? dx) [-1 1] [-1 0 1])]
+    [(+ dx x) (+ dy y)]))
+
+(defn step
+  "Given a set of living cells, computes the new set of living cells."
+  [cells]
+  (set (for [[cell n] (frequencies (mapcat neighbours cells))
+             :when (or (= n 3) (and (= n 2) (cells cell)))]
+         cell)))
+
+;; Utility methods for displaying game on a text terminal
+
+(defn print-board
+  "Prints a board on *out*, representing a step in the game."
+  [board w h]
+  (doseq [x (range (inc w)) y (range (inc h))]
+    (if (= y 0) (print "\n"))
+    (print (if (board [x y]) "[X]" " . "))))
+
+(defn display-grids
+  "Prints a squence of boards on *out*, representing several steps."
+  [grids w h]
+  (doseq [board grids]
+    (print-board board w h)
+    (print "\n")))
+
+;; Launches an example board
+
+(def
+  ^{:doc "board represents the initial set of living cells"}
+   board #{[2 1] [2 2] [2 3]})
+
+(display-grids (take 3 (iterate step board)) 5 5)
+
+;; Let's play with characters
+(println \1 \a \# \\
+         \" \( \newline
+         \} \" \space
+         \tab \return \backspace
+         \u1000 \uAaAa \u9F9F)
+
+</textarea></form>
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-clojure</code>.</p>
+
+  </article>

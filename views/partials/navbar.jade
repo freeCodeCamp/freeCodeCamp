@@ -9,7 +9,7 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
       a.navbar-brand(href='/')
         img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg')
     .collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right.hamburger-dropdown
         - if (!cc)
           li
             a(href='/challenges/0') Challenges
@@ -29,7 +29,7 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
           li
             a(href='http://forum.freecodecamp.com' target='_blank') Forum
         li
-          a(href='/learn-to-code') About
+          a(href='/bonfire') Bonfire
         if !user
           li
             a.btn.signup-btn.signup-btn-nav(href='/login') Sign in

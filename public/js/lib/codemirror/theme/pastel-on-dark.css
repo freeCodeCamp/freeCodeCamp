@@ -1,0 +1,50 @@
+/**
+ * Pastel On Dark theme ported from ACE editor
+ * @license MIT
+ * @copyright AtomicPages LLC 2014
+ * @author Dennis Thompson, AtomicPages LLC
+ * @version 1.1
+ * @source https://github.com/atomicpages/codemirror-pastel-on-dark-theme
+ */
+
+.cm-s-pastel-on-dark.CodeMirror {
+	background: #2c2827;
+	color: #8F938F;
+	line-height: 1.5;
+	font-size: 14px;
+}
+.cm-s-pastel-on-dark div.CodeMirror-selected { background: rgba(221,240,255,0.2) !important; }
+.cm-s-pastel-on-dark .CodeMirror-gutters {
+	background: #34302f;
+	border-right: 0px;
+	padding: 0 3px;
+}
+.cm-s-pastel-on-dark .CodeMirror-guttermarker { color: white; }
+.cm-s-pastel-on-dark .CodeMirror-guttermarker-subtle { color: #8F938F; }
+.cm-s-pastel-on-dark .CodeMirror-linenumber { color: #8F938F; }
+.cm-s-pastel-on-dark .CodeMirror-cursor { border-left: 1px solid #A7A7A7 !important; }
+.cm-s-pastel-on-dark span.cm-comment { color: #A6C6FF; }
+.cm-s-pastel-on-dark span.cm-atom { color: #DE8E30; }
+.cm-s-pastel-on-dark span.cm-number { color: #CCCCCC; }
+.cm-s-pastel-on-dark span.cm-property { color: #8F938F; }
+.cm-s-pastel-on-dark span.cm-attribute { color: #a6e22e; }
+.cm-s-pastel-on-dark span.cm-keyword { color: #AEB2F8; }
+.cm-s-pastel-on-dark span.cm-string { color: #66A968; }
+.cm-s-pastel-on-dark span.cm-variable { color: #AEB2F8; }
+.cm-s-pastel-on-dark span.cm-variable-2 { color: #BEBF55; }
+.cm-s-pastel-on-dark span.cm-variable-3 { color: #DE8E30; }
+.cm-s-pastel-on-dark span.cm-def { color: #757aD8; }
+.cm-s-pastel-on-dark span.cm-bracket { color: #f8f8f2; }
+.cm-s-pastel-on-dark span.cm-tag { color: #C1C144; }
+.cm-s-pastel-on-dark span.cm-link { color: #ae81ff; }
+.cm-s-pastel-on-dark span.cm-qualifier,.cm-s-pastel-on-dark span.cm-builtin { color: #C1C144; }
+.cm-s-pastel-on-dark span.cm-error {
+	background: #757aD8;
+	color: #f8f8f0;
+}
+.cm-s-pastel-on-dark .CodeMirror-activeline-background { background: rgba(255, 255, 255, 0.031) !important; }
+.cm-s-pastel-on-dark .CodeMirror-matchingbracket {
+	border: 1px solid rgba(255,255,255,0.25);
+	color: #8F938F !important;
+	margin: -1px -1px 0 -1px;
+}

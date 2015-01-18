@@ -1,23 +1,15 @@
-.footer.nav.navbar.navbar-nav.visible-xs.visible-sm
-    ul
-        li
-            a(href='/') Challenges
-        - if (cc && cc[1] < 1)
-            li
-                a(href='/challenges/1') Chat
-        - else
-            li
-                a(href='http://chat.freecodecamp.com') Chat
-        - if (cc && cc[2] < 1)
-            li
-                a(href='/challenges/2') Forum
-        - else
-            li
-                a(href='http://forum.freecodecamp.com') Forum
-        li
-            a(href='/learn-to-code') About
-        if user
-            li
-                a(href='/profile') [&nbsp;#{user.points}&nbsp;]
-        if !user
-            a.btn.signup-btn.btn-nav.btn-sm(href='/login') Sign in
+.fcc-footer
+    .col-xs-12
+        a.ion-speakerphone(href='http://blog.freecodecamp.com', target='_blank')
+        | &nbsp;
+        a.ion-social-github(title="Free Code Camp on GitHub", href="http://github.com/freecodecamp", target='_blank')
+        | &nbsp;
+        a.ion-social-twitter(title="Free Code Camp on Twitter", href="http://twitter.com/freecodecamp", target='_blank')
+        | &nbsp;
+        a.ion-social-facebook(title="Free Code Camp on Facebook", href="http://facebook.com/freecodecamp", target='_blank')
+        | &nbsp;
+        a.ion-social-linkedin(title="Free Code Camp on LinkedIn", href="http://linkedin.com/company/4831032?free-code-camp", target='_blank')
+        | &nbsp;
+        a.ion-ios-information(title="About Free Code Camp", href="/learn-to-code")
+        | &nbsp;
+        a.ion-locked(title="Free Code Camp's Privacy Policy", href="/privacy")

@@ -1,0 +1,78 @@
+<!doctype html>
+
+<title>CodeMirror: Active Line Demo</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../doc/docs.css">
+
+<link rel="stylesheet" href="../lib/codemirror.css">
+<script src="../lib/codemirror.js"></script>
+<script src="../mode/xml/xml.js"></script>
+<script src="../addon/selection/active-line.js"></script>
+<style type="text/css">
+      .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+    </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../index.html">Home</a>
+    <li><a href="../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a class=active href="#">Active Line</a>
+  </ul>
+</div>
+
+<article>
+<h2>Active Line Demo</h2>
+<form><textarea id="code" name="code">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:twitter="http://api.twitter.com">
+  <channel>
+    <title>Twitter / codemirror</title>
+    <link>http://twitter.com/codemirror</link>
+    <atom:link type="application/rss+xml"
+               href="http://twitter.com/statuses/user_timeline/242283288.rss" rel="self"/>
+    <description>Twitter updates from CodeMirror / codemirror.</description>
+    <language>en-us</language>
+    <ttl>40</ttl>
+  <item>
+    <title>codemirror: http://cloud-ide.com &#8212; they're springing up like mushrooms. This one
+      uses CodeMirror as its editor.</title>
+    <description>codemirror: http://cloud-ide.com &#8212; they're springing up like mushrooms. This
+      one uses CodeMirror as its editor.</description>
+    <pubDate>Thu, 17 Mar 2011 23:34:47 +0000</pubDate>
+    <guid>http://twitter.com/codemirror/statuses/48527733722058752</guid>
+    <link>http://twitter.com/codemirror/statuses/48527733722058752</link>
+    <twitter:source>web</twitter:source>
+    <twitter:place/>
+  </item>
+  <item>
+    <title>codemirror: Posted a description of the CodeMirror 2 internals at
+      http://codemirror.net/2/internals.html</title>
+    <description>codemirror: Posted a description of the CodeMirror 2 internals at
+      http://codemirror.net/2/internals.html</description>
+    <pubDate>Wed, 02 Mar 2011 12:15:09 +0000</pubDate>
+    <guid>http://twitter.com/codemirror/statuses/42920879788789760</guid>
+    <link>http://twitter.com/codemirror/statuses/42920879788789760</link>
+    <twitter:source>web</twitter:source>
+    <twitter:place/>
+  </item>
+  </channel>
+</rss></textarea></form>
+
+    <script>
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  mode: "application/xml",
+  styleActiveLine: true,
+  lineNumbers: true,
+  lineWrapping: true
+});
+</script>
+
+    <p>Styling the current cursor line.</p>
+
+  </article>

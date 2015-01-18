@@ -1,0 +1,85 @@
+<!doctype html>
+
+<title>CodeMirror: R mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="r.js"></script>
+<style>
+      .CodeMirror { border-top: 1px solid silver; border-bottom: 1px solid silver; }
+      .cm-s-default span.cm-semi { color: blue; font-weight: bold; }
+      .cm-s-default span.cm-dollar { color: orange; font-weight: bold; }
+      .cm-s-default span.cm-arrow { color: brown; }
+      .cm-s-default span.cm-arg-is { color: brown; }
+    </style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">R</a>
+  </ul>
+</div>
+
+<article>
+<h2>R mode</h2>
+<form><textarea id="code" name="code">
+# Code from http://www.mayin.org/ajayshah/KB/R/
+
+# FIRST LEARN ABOUT LISTS --
+X = list(height=5.4, weight=54)
+print("Use default printing --")
+print(X)
+print("Accessing individual elements --")
+cat("Your height is ", X$height, " and your weight is ", X$weight, "\n")
+
+# FUNCTIONS --
+square <- function(x) {
+  return(x*x)
+}
+cat("The square of 3 is ", square(3), "\n")
+
+                 # default value of the arg is set to 5.
+cube <- function(x=5) {
+  return(x*x*x);
+}
+cat("Calling cube with 2 : ", cube(2), "\n")    # will give 2^3
+cat("Calling cube        : ", cube(), "\n")     # will default to 5^3.
+
+# LEARN ABOUT FUNCTIONS THAT RETURN MULTIPLE OBJECTS --
+powers <- function(x) {
+  parcel = list(x2=x*x, x3=x*x*x, x4=x*x*x*x);
+  return(parcel);
+}
+
+X = powers(3);
+print("Showing powers of 3 --"); print(X);
+
+# WRITING THIS COMPACTLY (4 lines instead of 7)
+
+powerful <- function(x) {
+  return(list(x2=x*x, x3=x*x*x, x4=x*x*x*x));
+}
+print("Showing powers of 3 --"); print(powerful(3));
+
+# In R, the last expression in a function is, by default, what is
+# returned. So you could equally just say:
+powerful <- function(x) {list(x2=x*x, x3=x*x*x, x4=x*x*x*x)}
+</textarea></form>
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {});
+    </script>
+
+    <p><strong>MIME types defined:</strong> <code>text/x-rsrc</code>.</p>
+
+    <p>Development of the CodeMirror R mode was kindly sponsored
+    by <a href="https://twitter.com/ubalo">Ubalo</a>.</p>
+
+  </article>

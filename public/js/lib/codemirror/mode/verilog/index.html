@@ -1,0 +1,120 @@
+<!doctype html>
+
+<title>CodeMirror: Verilog/SystemVerilog mode</title>
+<meta charset="utf-8"/>
+<link rel=stylesheet href="../../doc/docs.css">
+
+<link rel="stylesheet" href="../../lib/codemirror.css">
+<script src="../../lib/codemirror.js"></script>
+<script src="../../addon/edit/matchbrackets.js"></script>
+<script src="verilog.js"></script>
+<style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}</style>
+<div id=nav>
+  <a href="http://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png"></a>
+
+  <ul>
+    <li><a href="../../index.html">Home</a>
+    <li><a href="../../doc/manual.html">Manual</a>
+    <li><a href="https://github.com/codemirror/codemirror">Code</a>
+  </ul>
+  <ul>
+    <li><a href="../index.html">Language modes</a>
+    <li><a class=active href="#">Verilog/SystemVerilog</a>
+  </ul>
+</div>
+
+<article>
+<h2>SystemVerilog mode</h2>
+
+<div><textarea id="code" name="code">
+// Literals
+1'b0
+1'bx
+1'bz
+16'hDC78
+'hdeadbeef
+'b0011xxzz
+1234
+32'd5678
+3.4e6
+-128.7
+
+// Macro definition
+`define BUS_WIDTH = 8;
+
+// Module definition
+module block(
+  input                   clk,
+  input                   rst_n,
+  input  [`BUS_WIDTH-1:0] data_in,
+  output [`BUS_WIDTH-1:0] data_out
+);
+  
+  always @(posedge clk or negedge rst_n) begin
+
+    if (~rst_n) begin
+      data_out <= 8'b0;
+    end else begin
+      data_out <= data_in;
+    end
+    
+    if (~rst_n)
+      data_out <= 8'b0;
+    else
+      data_out <= data_in;
+    
+    if (~rst_n)
+      begin
+        data_out <= 8'b0;
+      end
+    else
+      begin
+        data_out <= data_in;
+      end
+
+  end
+  
+endmodule
+
+// Class definition
+class test;
+
+  /**
+   * Sum two integers
+   */
+  function int sum(int a, int b);
+    int result = a + b;
+    string msg = $sformatf("%d + %d = %d", a, b, result);
+    $display(msg);
+    return result;
+  endfunction
+  
+  task delay(int num_cycles);
+    repeat(num_cycles) #1;
+  endtask
+  
+endclass
+
+</textarea></div>
+
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    matchBrackets: true,
+    mode: {
+      name: "verilog",
+      noIndentKeywords: ["package"]
+    }
+  });
+</script>
+
+<p>
+Syntax highlighting and indentation for the Verilog and SystemVerilog languages (IEEE 1800).
+<h2>Configuration options:</h2>
+  <ul>
+    <li><strong>noIndentKeywords</strong> - List of keywords which should not cause identation to increase. E.g. ["package", "module"]. Default: None</li>
+  </ul>
+</p>
+
+<p><strong>MIME types defined:</strong> <code>text/x-verilog</code> and <code>text/x-systemverilog</code>.</p>
+</article>
