@@ -1,6 +1,6 @@
 var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:bonfires'),
-    bonfire = require('./../models/bonfire');
+    bonfire = require('./../models/Bonfire');
 
 /**
  * Bonfire controller
