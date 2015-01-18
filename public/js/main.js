@@ -21,14 +21,16 @@ $(document).ready(function() {
 
   $('.completed-challenge').on('click', function() {
       $('#complete-dialog').modal('show');
-
-      l = location.pathname.split('/');
-      cn = l[l.length - 1];
-      $.ajax({
-          type: 'POST',
-          data: {challengeNumber: cn},
-          url: '/completed_challenge/'
-      });
+      // Only post to server if there is an authenticated user
+      if ($('.signup-btn-nav').length < 1) {
+          l = location.pathname.split('/');
+          cn = l[l.length - 1];
+          $.ajax({
+              type: 'POST',
+              data: {challengeNumber: cn},
+              url: '/completed-challenge/'
+          });
+      }
   });
 
   $('.all-challenges').on('click', function() {

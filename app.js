@@ -271,7 +271,7 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
  * and updates user.challengesHash & user.challengesCompleted
  *
  */
-app.post('/completed_challenge', function (req, res) {
+app.post('/completed-challenge', function (req, res) {
     req.user.challengesHash[parseInt(req.body.challengeNumber)] =
         Math.round(+new Date() / 1000);
     var ch = req.user.challengesHash;
