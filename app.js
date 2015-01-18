@@ -214,10 +214,6 @@ app.get(
     '/pair-program-with-team-viewer',
     resourcesController.pairProgramWithTeamViewer
 );
-app.get(
-    '/done-with-first-100-hours',
-    resourcesController.doneWithFirst100Hours
-);
 app.get('/learn-to-code', resourcesController.about);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
@@ -253,6 +249,11 @@ app.get(
 );
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
+app.get('/bonfire', bonfireController.index);
+//app.get(
+//    '/bonfire/:bonfireNumber',
+//    bonfireController.returnBonfire
+//);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
@@ -263,11 +264,6 @@ app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
 
-//put this route last
-app.get(
-    '/:username',
-    userController.returnUser
-);
 
 /**
  * API examples routes.
@@ -298,7 +294,7 @@ var passportOptions = {
     failureRedirect: '/login'
 };
 
-app.get('/auth/twitter', passport.authorize('twitter'));
+app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get(
     '/auth/twitter/callback',
     passport.authenticate('twitter', {
@@ -350,10 +346,11 @@ app.get(
     }
 );
 
-/**
- * Bonfire routing
- */
-app.get('/bonfire', bonfireController.index);
+//put this route last
+app.get(
+    '/:username',
+    userController.returnUser
+);
 
 
 /**

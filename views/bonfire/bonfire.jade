@@ -15,9 +15,9 @@ block content
     script(src='/js/lib/bonfire/bonfire.js')
 
     .row
-        .col-sm-12.col-md-8.col-xs-12
+        .col-sm-12.col-md-12.col-xs-12
             .panel.panel-primary
-                .panel-heading Title
+                .panel-heading.text-center Bonfire Playground
                 .panel.panel-body
                     form.code
                         .form-group.codeMirrorView
@@ -26,7 +26,7 @@ block content
                         .form-group.codeMirrorView
                             textarea#codeOutput
                     #submitButton.btn.btn-primary.btn-big.btn-block Run my code
-                    #hintButton.btn.btn-info.btn-big.btn-block Show me hints
+                    //#hintButton.btn.btn-info.btn-big.btn-block Show me hints
 
                     script.
                         var widgets = [];
@@ -38,16 +38,26 @@ block content
                             lint: true,
                             matchBrackets: true,
                             autoCloseBrackets: true,
+                            cursorHeight: 0.85,
+                            lineWrapping: true,
                             gutters: ["CodeMirror-lint-markers"],
                             onKeyEvent : doLinting
                         });
                         var editor = myCodeMirror;
-                        myCodeMirror.setValue('2*2');
+                        myCodeMirror.setValue('/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n'+
+                            'Please feel free to use Bonfire as an in-browser playground and linting tool.*/\n\n\n' +
+
+                            'function test() {\n' +
+                            '  return [1,2,3].map(function(elem) {\n' +
+                            '    return elem * elem;\n' +
+                            '  });\n' +
+                            '}\n\n' +
+                            'test();');
                         myCodeMirror.setSize("100%", 500);
 
                         var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
                             lineNumbers: false,
-                            mode: "javascript",
+                            mode: "text",
                             theme: 'monokai',
                             readOnly: 'nocursor'
                         });
@@ -85,8 +95,3 @@ block content
                            submit(js);
                         });
 
-
-
-
-        .col-sm-12.col-md-4.col-xs-12
-            include ../partials/challenges
