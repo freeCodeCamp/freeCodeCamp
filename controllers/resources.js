@@ -13,12 +13,6 @@ var User = require('../models/User'),
  */
 
 module.exports = {
-  learnToCode: function(req, res) {
-    res.render('resources/learn-to-code', {
-      title: 'Learn to Code'
-    });
-  },
-
   privacy: function privacy(req, res) {
     res.render('resources/privacy', {
       title: 'Privacy'
@@ -91,12 +85,6 @@ module.exports = {
   javaScriptInYourInbox: function(req, res) {
     res.render('resources/javascript-in-your-inbox', {
       title: 'JavaScript in your Inbox'
-    });
-  },
-
-  programmerInterviewQuestionsApp: function(req, res) {
-    res.render('resources/programmer-interview-questions-app', {
-      title: 'Programmer Interview Questions App'
     });
   },
 
@@ -173,10 +161,6 @@ module.exports = {
         });
       });
     });
-  },
-
-  interviewQuestions: function(req, res) {
-    res.json(questions);
   }
 };
 

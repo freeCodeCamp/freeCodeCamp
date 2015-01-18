@@ -1,10 +1,8 @@
-.panel.panel-primary
-    .panel-heading Challenges
-    .panel-body
-        ol(start='0')
-            for challenge in challenges
-                li
-                    a(href="/challenges/#{challenge.challengeNumber}", class="#{ (cc && cc[challenge.challengeNumber] > 0) ? 'strikethrough' : '' }") #{challenge.name}
-                    | &nbsp; (#{challenge.time} mins)
+h3
+    ol(start='0')
+        for challenge in challenges
+            li
+                a(href="/challenges/#{challenge.challengeNumber}", class="#{ (cc && cc[challenge.challengeNumber] > 0) ? 'strikethrough' : '' }") #{challenge.name}
+                | &nbsp; (#{challenge.time} mins)
 
-        a.btn.btn-primary(href="/done-with-first-100-hours", class="#{ ((cc && cc[53] === 0) || (!cc)) ? 'disabled' : '' }") I've finished all Free Code Camp challenges and all the Easy and Medium CoderByte Challenges
+a.btn.btn-lg.btn-primary.btn-block(href="/done-with-first-100-hours", class="#{ ((cc && cc[53] === 0) || (!cc)) ? 'disabled' : '' }") I'm done with all the challenges!

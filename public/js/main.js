@@ -31,8 +31,8 @@ $(document).ready(function() {
       });
   });
 
-  $('.skip-challenge').on('click', function() {
-      $('#skip-dialog').modal('show');
+  $('.all-challenges').on('click', function() {
+      $('#all-challenges-dialog').modal('show');
   });
 
   $('.next-button').on('click', function() {
