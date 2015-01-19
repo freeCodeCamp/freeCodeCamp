@@ -215,6 +215,7 @@ app.get(
     resourcesController.pairProgramWithTeamViewer
 );
 app.get('/learn-to-code', resourcesController.about);
+app.get('/about', resourcesController.about);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
