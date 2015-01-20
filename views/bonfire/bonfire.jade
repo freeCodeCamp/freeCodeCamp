@@ -76,6 +76,7 @@ block content
                         '}\n\n' +
                         'test();');
                         myCodeMirror.setSize("100%", 500);
+
                         var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
                             lineNumbers: false,
                             mode: "text",
@@ -196,8 +197,9 @@ block content
                             var output;
                             $('#testInputs').find('input').each(function () {
                                 if ($(this).val() != null && $(this).val().length !== 0) {
+                                    inputs.push($(this).val());
                                 } else {
-                                    var keepGoing = prompt("You have submitted a test with empty input.  Enter yes to continue.");
+                                    //var keepGoing = prompt("You have submitted a test with empty input.  Enter yes to continue.");
                                     if (/yes/.test(keepGoing.toLowerCase())) {
                                         inputs.push($(this).val());
                                     } else {
@@ -221,7 +223,7 @@ block content
                                     .addClass("glyphicon glyphicon-remove-sign")
                                     .css("float", "right")
                                     .click(function () {
-                                        var input = prompt("This will remove the test permanently.\n If you want to do this, type delete");
+                                        //var input = prompt("This will remove the test permanently.\n If you want to do this, type delete");
                                         if (/delete/.test(input.toLowerCase())) {
                                             $(this).parent().remove();
                                         }

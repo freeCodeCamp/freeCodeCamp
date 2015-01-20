@@ -45,11 +45,6 @@ var api = {
       } else {
           print('output', data.output);
       }
-    },
-    console: {
-        log: function(msg) {
-            console.log(msg);
-        }
     }
 };
 
@@ -69,7 +64,7 @@ var requests;
 // (re)initializes the plugin
 var reset = function() {
     requests = 0;
-    plugin = new jailed.Plugin(path+'plugin.js', api);
+    plugin = new jailed.Plugin(path+'plugin_v0.1.1.js', api);
     plugin.whenDisconnected( function() {
         // give some time to handle the last responce
         setTimeout( function() {
