@@ -27,7 +27,7 @@ myCodeMirror.setValue('/*Welcome to Bonfire, Free Code Camp\'s future CoderByte 
 '  });\n' +
 '}\n\n' +
 'test();');
-myCodeMirror.setSize("100%", 500);
+myCodeMirror.setSize("100%", "100%");
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,
@@ -36,7 +36,11 @@ var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), 
     readOnly: 'nocursor',
     lineWrapping: true
 });
-codeOutput.setSize("100%", 100);
+codeOutput.setValue('/**\n' +
+                    ' * Your output will go here. Console statements\n' +
+                    ' * will appear in your developer console!\n' +
+                    ' */');
+codeOutput.setSize("100%", "100%");
 var info = editor.getScrollInfo();
 var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top;
 if (info.top + info.clientHeight < after)
