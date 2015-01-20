@@ -42,12 +42,7 @@ var runHidden = function(code) {
     var onoffline = null;
     var ononline = null;
     var importScripts = null;
-    var console = {
-        panel: $(parent.document.body).append('<div>'),
-        log: function(m){
-            this.panel.prepend('<div>'+m+'</div>');
-        }
-    };
+    var console = null;
     var application = null;
 
     return eval(code);
