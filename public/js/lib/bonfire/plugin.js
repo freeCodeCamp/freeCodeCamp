@@ -42,8 +42,6 @@ var runHidden = function(code) {
     var onoffline = null;
     var ononline = null;
     var importScripts = null;
-    var console = null;
-    var application = null;
 
     return eval(code);
 }

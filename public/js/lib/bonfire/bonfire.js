@@ -45,6 +45,11 @@ var api = {
       } else {
           print('output', data.output);
       }
+    },
+    console: {
+        log: function(msg) {
+            console.log(msg);
+        }
     }
 };
 

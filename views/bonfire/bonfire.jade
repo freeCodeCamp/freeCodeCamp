@@ -47,29 +47,11 @@ block content
                 .panel-heading Test Suite
                 .panel.panel-body
                     ul#testSuite.list-group
-                        br
-                        #runTests.btn.btn-primary.btn-big.btn-block Run my test suite
+                    br
+
+                    #runTests.btn.btn-primary.btn-big.btn-block Run my test suite
                     textarea#testOutput
-                        //#hintButton.btn.btn-info.btn-big.btn-block Show me hints
                     script.
-                        //Button for moving test window to side
-                        $('#sideBySide').on('click', function () {
-                            var main = $('#mainEditorPanel');
-                            if (main.hasClass('col-md-12')) {
-                                replaceColClz(main, 'md', 12, 6);
-                                replaceColClz(main, 'sm', 12, 6);
-                                $(this).text("Original Layout")
-                            } else {
-                                replaceColClz(main, 'md', 6, 12);
-                                replaceColClz(main, 'sm', 6, 12);
-                                $(this).text("Tests side by side")
-                            }
-                        });
-                        //Replace a bootstrap column number by browser size
-                        var replaceColClz = function (elt, size, oldVal, newVal) {
-                            elt.removeClass('col-' + size + '-' + oldVal);
-                            elt.addClass('col-' + size + '-' + newVal);
-                        };
                         var widgets = [];
                         var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
                             lineNumbers: true,
@@ -133,10 +115,10 @@ block content
                             submit(js);
                         });
                         var assert = chai.assert;
+                        var testResults = [];
                         $('#runTests').on('click', function () {
                             clearTestOutput();
                             var testCaseList = [],
-                                    testResults = [],
                                     jsCode = myCodeMirror.getValue();
                             getTestSuite().each(function () {
                                 testCaseList.push([$(this).data("input"), $(this).data("output"), $(this)]);
@@ -145,44 +127,53 @@ block content
                                 var testCode = jsCode + "\n\n" + input[0] + ";";
                                 //TODO use plugin for this with the rest as a callback?
                                 var output = eval(testCode);
-                                try {
-                                    testEquality(output, input[1]);
-                                    appendTestOutput("\n" + createTestString(input[0], input[1]) + "\nTest passed!\n");
-                                    setTestBackground(input[2], "passed");
-                                    testResults.push(1);
-                                } catch (err) {
-                                    setTestBackground(input[2], "failed");
-                                    appendTestOutput(createTestString(input[0], input[1]));
-                                    appendTestOutput("Test failed: \nOutput was: " + output + "\nType of output was: " + (typeof output));
-                                    testResults.push(0);
-                                }
-                                if (testResults.length === testCaseList.length) {
-                                    var sum = testResults.reduce(function (a, b) {
-                                        return a + b
-                                    });
-                                    prependTestOutput("======Testing========\n" + Math.round(100 * sum / testResults.length) + "% tests passed\n");
-                                }
+                                testEquality(output, input);
                             });
+                            // some timeout here?
+                            if (testResults.length === testCaseList.length) {
+                                var sum = testResults.reduce(function (a, b) {
+                                    return a + b
+                                });
+                                prependTestOutput("======Testing========\n" + Math.round(100 * sum / testResults.length) + "% tests passed\n");
+                            }
                         });
-                        //After looking at chai assert, this is the way to go if you don't know the type
                         var testEquality = function (output, input) {
-                            switch (typeof output) {
-                                case 'object':
-                                    assert.deepEqual(output, input);
-                                    break;
-                                case 'string':
-                                    assert(output.localeCompare(input));
-                                    break
-                                default:
-                                    assert.equal(output, input);
+                            try {
+                                switch (typeof output) {
+                                    case 'object':
+                                        assert.deepEqual(output, input[1]);
+                                        break;
+                                    case 'string':
+                                        assert(output.localeCompare(input[1]));
+                                        break
+                                    default:
+                                        assert.equal(output, input[1]);
+                                }
+                                appendTestOutput("\n" + createTestString(input[0], input[1]) + "\nTest passed!\n");
+                                input[2].css("background-color", "rgba(0,255,0,.2)");
+                                testResults.push(1);
+                            } catch (err) {
+                                input[2].css("background-color", "rgba(255,0,0,.2)");
+                                appendTestOutput(createTestString(input[0], input[1]));
+                                appendTestOutput("Test failed: \nOutput was: " + output + "\nType of output was: " + (typeof output));
+                                testResults.push(0);
                             }
                         };
-                        var setTestBackground = function (elt, result) {
-                            if (result.localeCompare('failed')) {
-                                elt.css("background-color", "rgba(255,0,0,.2)");
+                        $('#sideBySide').on('click', function () {
+                            var main = $('#mainEditorPanel');
+                            if (main.hasClass('col-md-12')) {
+                                replaceColClz(main, 'md', 12, 6);
+                                replaceColClz(main, 'sm', 12, 6);
+                                $(this).text("Original Layout")
                             } else {
-                                elt.css("background-color", "rgba(0,255,0,.2)");
+                                replaceColClz(main, 'md', 6, 12);
+                                replaceColClz(main, 'sm', 6, 12);
+                                $(this).text("Tests side by side")
                             }
+                        });
+                        var replaceColClz = function (elt, size, oldVal, newVal) {
+                            elt.removeClass('col-' + size + '-' + oldVal);
+                            elt.addClass('col-' + size + '-' + newVal);
                         };
                         var getTestSuite = function () {
                             return $('#testSuite').find('li');
@@ -252,7 +243,7 @@ block content
                             var m = re.exec(code);
                             while (m != null) {
                                 var functionName = m[1];
-                                if (functionName !== undefined && currentState.length === 0) {
+                                if (functionName !== undefined) {
                                     var option = document.createElement('option');
                                     $(option)
                                             .html(functionName)
