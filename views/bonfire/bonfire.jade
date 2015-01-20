@@ -14,43 +14,31 @@ block content
     script(src='js/lib/jailed/jailed.js')
     script(src='/js/lib/bonfire/bonfire.js')
     .row
-        #mainEditorPanel.col-sm-12.col-md-12.col-xs-12
-            .panel.panel-primary
+        #mainEditorPanel.col-sm-12.col-md-7.col-xs-12
+            .panel.panel-primary.panel-bonfire
                 .panel-heading.text-center Bonfire Playground
                 .panel.panel-body
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true)
+
+
+        #testCreatePanel.col-sm-12.col-md-5.col-xs-12
+            .panel.panel-primary.panel-bonfire
+                .panel-heading.text-center Output
+                .panel.panel-body
+                    ul#testSuite.list-group
+                        #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+                    form#testCreateForm.form-horizontal
+                    br
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeOutput
-                    #submitButton.btn.btn-primary.btn-big.btn-block Run my code
-                    .hidden-xs
-                        br
-                        #sideBySide.btn.btn-primary.btn-block.btn-big Tests side by side
-        #testCreatePanel.col-sm-6.col-md-6.col-xs-12
-            .panel.panel-primary
-                .panel-heading Test Code
-                .panel.panel-body
-                    form#testCreateForm.form-horizontal
-                        .form-group
-                            label(for='function-select').col-sm-6 Select function
-                            select#testFunctionName.col-sm-6.text-info
-                                option
-                        #testInputs.form-group
-                        #testOutputs.form-group
-                        br
-                        #addTest.btn.text-info Create test
-                    #hideTestCreate.btn.text-info Hide test creation dialogue
-        #testSuitePanel.col-sm-6.col-md-6.col-xs-12
-            .panel.panel-primary
-                .panel-heading Test Suite
-                .panel.panel-body
-                    ul#testSuite.list-group
+
+                    #testInputs.form-group
+                    #testOutputs.form-group
                     br
 
-                    #runTests.btn.btn-primary.btn-big.btn-block Run my test suite
-                    textarea#testOutput
                     script.
                         var widgets = [];
                         var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
@@ -221,7 +209,7 @@ block content
                             var closeSpan = document.createElement('span');
                             $(closeSpan)
                                     .addClass("glyphicon glyphicon-remove-sign")
-                                    .css("float", "right")
+                                    //.css("float", "right")
                                     .click(function () {
                                         //var input = prompt("This will remove the test permanently.\n If you want to do this, type delete");
                                         if (/delete/.test(input.toLowerCase())) {
