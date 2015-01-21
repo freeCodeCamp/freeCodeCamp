@@ -16,7 +16,12 @@ var submit = function(code) {
 
 // puts the message on the terminal
 var print = function(cls, msg) {
-    codeOutput.setValue(msg);
+    if (cls) {
+        codeOutput.setValue(msg);
+    } else {
+        codeOutput.setValue(msg.output);
+        console.log(msg.type);
+    }
 };
 
 
@@ -43,7 +48,7 @@ var api = {
       if (data.error) {
           print('message', data.error);
       } else {
-          print('output', data.output);
+          print(null, data);
       }
     }
 };

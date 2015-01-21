@@ -8,6 +8,7 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     matchBrackets: true,
     autoCloseBrackets: true,
     cursorHeight: 0.85,
+    scrollbarStyle: 'null',
     lineWrapping: true,
     gutters: ["CodeMirror-lint-markers"],
     onKeyEvent: doLinting,
@@ -25,9 +26,9 @@ myCodeMirror.setValue('/*Welcome to Bonfire, Free Code Camp\'s future CoderByte 
 '  return [1,2,3].map(function(elem) {\n' +
 '    return elem * elem;\n' +
 '  });\n' +
-'}\n\n' +
+'}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n' +
 'test();');
-myCodeMirror.setSize("100%", "100%");
+//myCodeMirror.setSize("100%", "100%");
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,
