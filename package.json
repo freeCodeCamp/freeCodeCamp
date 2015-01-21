@@ -5,6 +5,10 @@
     "type": "git",
     "url": "https://github.com/freecodecamp/freecodecamp.git"
   },
+  "engines": {
+    "node": "0.10.35",
+    "npm": "2.3.0"
+  },
   "scripts": {
     "start": "node app.js",
     "test": "mocha"
@@ -42,6 +46,7 @@
     "mongoose": "^3.8.19",
     "morgan": "^1.5.0",
     "newrelic": "^1.13.3",
+    "node": "0.0.0",
     "node-foursquare": "^0.2.1",
     "node-linkedin": "^0.3.4",
     "node-rest-client": "^1.4.3",
