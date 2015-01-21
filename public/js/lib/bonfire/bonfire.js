@@ -43,6 +43,7 @@ var api = {
       //print('input', data.input);
       if (data.error) {
           print('Error', data);
+          reset();
       } else {
           print(null, data);
       }

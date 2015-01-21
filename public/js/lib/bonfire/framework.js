@@ -14,7 +14,7 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     onKeyEvent: doLinting,
     extraKeys : {
         "Ctrl-Enter" : function() {
-            submit(myCodeMirror.getValue());
+            bonfireExecute();
             return false;
         }
     }
@@ -104,6 +104,10 @@ var scrapeTests = function(js) {
 };
 
 $('#submitButton').on('click', function () {
+    bonfireExecute();
+});
+
+function bonfireExecute() {
     tests = undefined;
     $('#codeOutput').empty();
     var js = myCodeMirror.getValue();
@@ -118,7 +122,7 @@ $('#submitButton').on('click', function () {
             runTests(null, message);
         }
     });
-});
+}
 
 var pushed = false;
 var createTestDisplay = function() {

@@ -7,6 +7,7 @@ var _ = require('lodash'),
  */
 exports.index = function(req, res) {
   res.render('bonfire/bonfire.jade', {
+      title: 'Learn to code with Bonfire - Free Code Camp'
   });
   //Bonfire.find({}, null, { sort: { bonfireNumber: 1 } }, function(err, c) {
   //  if (err) {
