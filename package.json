@@ -5,6 +5,10 @@
     "type": "git",
     "url": "https://github.com/freecodecamp/freecodecamp.git"
   },
+  "engines": {
+    "node": "0.10.29",
+    "npm": "1.4.16"
+  },
   "scripts": {
     "start": "node app.js",
     "test": "mocha"
