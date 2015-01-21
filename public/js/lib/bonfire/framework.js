@@ -23,10 +23,13 @@ var editor = myCodeMirror;
 myCodeMirror.setValue('/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
 'Please feel free to use Bonfire as an in-browser playground and linting tool.*/\n\n\n' +
 'function test() {\n' +
+'  assert(2 === 3, "hello");\n' +
 '  return [1,2,3].map(function(elem) {\n' +
 '    return elem * elem;\n' +
 '  });\n' +
-'}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n' +
+'}\n' +
+'expect(test()).to.be.a("array");\n\n' +
+'assert.deepEqual(test(), [1,4,9]);' +
 'test();');
 //myCodeMirror.setSize("100%", "100%");
 
@@ -68,78 +71,116 @@ var doLinting = function () {
         }
     });
 };
-var assert = chai.assert;
+
+var replaceQuotesInTests = function() {
+    tests.forEach(function(elt, ix, arr) {
+        arr[ix].text = arr[ix].text.replace(/\"/g,'\'');
+    });
+};
+
+var tests;
+var testWords = ["expect", "assert"];
+var testSalt = Math.random();
+
+var scrapeTests = function(js) {
+    var counter = 0;
+    for (var i = 0; i < testWords.length; i++) {
+        var regex = new RegExp(testWords[i] + "[^;]+;",'g');
+        var match = regex.exec(js);
+        while (match != null) {
+            var replacement = '//' + counter + testSalt;
+            js = js.substring(0, match.index) 
+                    + replacement 
+                    + js.substring(match.index + match[0].length);
+
+            if (!tests) tests = [];
+            tests.push({"text": match[0], "line": counter, "err": null});
+            counter++;
+            match = regex.exec(js);
+        }
+    }
+    replaceQuotesInTests();
+    return js;
+};
+
 $('#submitButton').on('click', function () {
+    tests = undefined;
     $('#codeOutput').empty();
     var js = myCodeMirror.getValue();
     js = scrapeTests(js);
+    console.log(js);
     submit(js, function(cls, message) {
         if (cls) {
             codeOutput.setValue(message.error);
             runTests('Error', null);
         } else {
             codeOutput.setValue(message.output);
-            runTests(null, message, function() {
-                createTestDisplay();
-            });
+            runTests(null, message);
         }
     });
 });
 
-var tests;
-var testSalt = Math.Random();
-var scrapeTests = function(js) {
-    return js;
-}
-
+var pushed = false;
 var createTestDisplay = function() {
-    tests.forEach(function(test) {
+    if (pushed) {
+        tests.pop();
+    }
+    console.log(tests);
+    for (var i = 0; i < tests.length;i++) {
+        var test = tests[i];
         var testDoc = document.createElement("li");
         $(testDoc)
             .addClass('list-group-item')
-            .addClass('well')
+            .addClass('well img-rounded')
             .addClass('well-sm')
-            .html(test.text);
-        if (failedTests.indexOf(test) > -1) {
+        if (test.err != null) {
             $(testDoc)
+                .html(test.text + "\n" + test.err)
                 .css("background-color", 'rgba(255,0,0,.2)')
                 .prependTo($('#testSuite'));
         } else {
             $(testDoc)
+                .html(test.text)
                 .css('background-color', 'rgba(0,255,0,.2)')
                 .appendTo($('#testSuite'));
         }
-    });
-}
-
-var testWords = ['expect', 'should', 'assert'];
-var failedTests = [];
-
-var runTests = function(err, data, callback) {
-    if (err && tests) {
-        tests = [{text: "No tests were run as the program returned an error"}];
-        createTestDisplay();
-        return;
-    } else if (tests) {
-        $('#testSuite').children().remove();
-        tests.forEach(function(test){
-            var testString = reassembleTest(test, data);
-            try {
-                var output = eval(testString);
-            } catch(err) {
-                failedTests.push(test);
-            }
-        });
-        callback();
-    }
-}
-
-
+    };
+};
+var assert = chai.assert;
+var expect = chai.expect;
 var reassembleTest = function(test, data) {
     var lineNum = test.line;
     var regexp = new RegExp("\/\/" + lineNum + testSalt);
     return data.input.replace(regexp, test.text);
-}
+};
+var runTests = function(err, data) {
+    pushed = false;
+    $('#testSuite').children().remove();
+    if (err && tests) {
+        tests = [{text:"Program Execution Failure", err: "No tests were run."}];
+        createTestDisplay();
+    } else if (tests) {
+        tests.push(false);
+        pushed = true;
+        tests.forEach(function(test, ix, arr){
+            try {
+                if (test) {
+                    var output = eval(reassembleTest(test, data));
+                }
+            } catch(error) {
+                console.log(error);
+                arr[ix].err = error.name + ":" + error.message;
+                console.log(arr);
+           } finally {
+                if (!test) {
+                    //window.setTimeout(function() {createTestDisplay()},2000);
+                    createTestDisplay();
+                }
+            }
+        });
+    }
+};
+
 
 // var assert = chai.assert;
 // var testResults = [];
