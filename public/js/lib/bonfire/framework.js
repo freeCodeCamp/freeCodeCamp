@@ -29,7 +29,7 @@ myCodeMirror.setValue('/*Welcome to Bonfire, Free Code Camp\'s future CoderByte 
 '  });\n' +
 '}\n' +
 'expect(test()).to.be.a("array");\n\n' +
-'assert.deepEqual(test(), [1,4,9]);' +
+'assert.deepEqual(test(), [1,4,9]);\n\n' +
 'test();');
 //myCodeMirror.setSize("100%", "100%");
 
