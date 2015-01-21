@@ -4,11 +4,14 @@ var run = function(code) {
     var result = {
         input: code,
         output: null,
-        error: null
+        error: null,
+        type: null
     };
 
     try {
-        result.output = stringify(runHidden(code));
+        var codeExec = runHidden(code);
+        result.type = typeof codeExec;
+        result.output = stringify(codeExec);
     } catch(e) {
         result.error = e.message;
     }
@@ -42,8 +45,6 @@ var runHidden = function(code) {
     var onoffline = null;
     var ononline = null;
     var importScripts = null;
-    var console = null;
-    var application = null;
 
     return eval(code);
 }

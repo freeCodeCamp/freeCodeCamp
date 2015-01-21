@@ -1,5 +1,5 @@
 var _ = require('lodash'),
-    debug = require('debug')('freecc:cntr:bonfires');
+debug = require('debug')('freecc:cntr:bonfires');
 //    bonfire = require('./../models/Bonfire');
 
 /**
@@ -7,6 +7,7 @@ var _ = require('lodash'),
  */
 exports.index = function(req, res) {
   res.render('bonfire/bonfire.jade', {
+      title: 'Learn to code with Bonfire'
   });
   //Bonfire.find({}, null, { sort: { bonfireNumber: 1 } }, function(err, c) {
   //  if (err) {
