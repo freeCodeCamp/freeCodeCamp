@@ -7,7 +7,7 @@ debug = require('debug')('freecc:cntr:bonfires');
  */
 exports.index = function(req, res) {
   res.render('bonfire/bonfire.jade', {
-      title: 'Learn to code with Bonfire - Free Code Camp'
+      title: 'Learn to code with Bonfire'
   });
   //Bonfire.find({}, null, { sort: { bonfireNumber: 1 } }, function(err, c) {
   //  if (err) {
