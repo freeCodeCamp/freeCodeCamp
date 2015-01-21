@@ -28,16 +28,14 @@ block content
             .panel.panel-primary.panel-bonfire
                 .panel-heading.text-center Output
                 .panel.panel-body
-                    ul#testSuite.list-group
-                        #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                    form#testCreateForm.form-horizontal
+                    #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
                     br
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeOutput
+                    br
+                    ul#testSuite.list-group
 
-                    #testInputs.form-group
-                    #testOutputs.form-group
                     br
 
                     script(src='/js/lib/bonfire/framework.js')

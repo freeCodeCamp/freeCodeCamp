@@ -68,57 +68,124 @@ var doLinting = function () {
         }
     });
 };
+var assert = chai.assert;
 $('#submitButton').on('click', function () {
     $('#codeOutput').empty();
     var js = myCodeMirror.getValue();
-    submit(js);
+    js = scrapeTests(js);
+    submit(js, function(cls, message) {
+        if (cls) {
+            codeOutput.setValue(message.error);
+            runTests('Error', null);
+        } else {
+            codeOutput.setValue(message.output);
+            runTests(null, message, function() {
+                createTestDisplay();
+            });
+        }
+    });
 });
 
-var assert = chai.assert;
-var testResults = [];
-$('#runTests').on('click', function () {
-    clearTestOutput();
-    var testCaseList = [],
-        jsCode = myCodeMirror.getValue();
-    getTestSuite().each(function () {
-        testCaseList.push([$(this).data("input"), $(this).data("output"), $(this)]);
-    });
-    testCaseList.forEach(function (input) {
-        var testCode = jsCode + "\n\n" + input[0] + ";";
-        //TODO use plugin for this with the rest as a callback?
-        var output = eval(testCode);
-        testEquality(output, input);
-    });
-    // some timeout here?
-    if (testResults.length === testCaseList.length) {
-        var sum = testResults.reduce(function (a, b) {
-            return a + b
-        });
-        prependTestOutput("======Testing========\n" + Math.round(100 * sum / testResults.length) + "% tests passed\n");
-    }
-});
-var testEquality = function (output, input) {
-    try {
-        switch (typeof output) {
-            case 'object':
-                assert.deepEqual(output, input[1]);
-                break;
-            case 'string':
-                assert(output.localeCompare(input[1]));
-                break
-            default:
-                assert.equal(output, input[1]);
+var tests;
+var testSalt = Math.Random();
+var scrapeTests = function(js) {
+    return js;
+}
+
+var createTestDisplay = function() {
+    tests.forEach(function(test) {
+        var testDoc = document.createElement("li");
+        $(testDoc)
+            .addClass('list-group-item')
+            .addClass('well')
+            .addClass('well-sm')
+            .html(test.text);
+        if (failedTests.indexOf(test) > -1) {
+            $(testDoc)
+                .css("background-color", 'rgba(255,0,0,.2)')
+                .prependTo($('#testSuite'));
+        } else {
+            $(testDoc)
+                .css('background-color', 'rgba(0,255,0,.2)')
+                .appendTo($('#testSuite'));
         }
-        appendTestOutput("\n" + createTestString(input[0], input[1]) + "\nTest passed!\n");
-        input[2].css("background-color", "rgba(0,255,0,.2)");
-        testResults.push(1);
-    } catch (err) {
-        input[2].css("background-color", "rgba(255,0,0,.2)");
-        appendTestOutput(createTestString(input[0], input[1]));
-        appendTestOutput("Test failed: \nOutput was: " + output + "\nType of output was: " + (typeof output));
-        testResults.push(0);
+    });
+}
+
+var testWords = ['expect', 'should', 'assert'];
+var failedTests = [];
+
+var runTests = function(err, data, callback) {
+    if (err && tests) {
+        tests = [{text: "No tests were run as the program returned an error"}];
+        createTestDisplay();
+        return;
+    } else if (tests) {
+        $('#testSuite').children().remove();
+        tests.forEach(function(test){
+            var testString = reassembleTest(test, data);
+            try {
+                var output = eval(testString);
+            } catch(err) {
+                failedTests.push(test);
+            }
+        });
+        callback();
     }
-};
+}
+
+
+var reassembleTest = function(test, data) {
+    var lineNum = test.line;
+    var regexp = new RegExp("\/\/" + lineNum + testSalt);
+    return data.input.replace(regexp, test.text);
+}
+
+// var assert = chai.assert;
+// var testResults = [];
+// $('#runTests').on('click', function () {
+//     clearTestOutput();
+//     var testCaseList = [],
+//         jsCode = myCodeMirror.getValue();
+//     getTestSuite().each(function () {
+//         testCaseList.push([$(this).data("input"), $(this).data("output"), $(this)]);
+//     });
+//     testCaseList.forEach(function (input) {
+//         var testCode = jsCode + "\n\n" + input[0] + ";";
+//         //TODO use plugin for this with the rest as a callback?
+//         var output = eval(testCode);
+//         testEquality(output, input);
+//     });
+//     // some timeout here?
+//     if (testResults.length === testCaseList.length) {
+//         var sum = testResults.reduce(function (a, b) {
+//             return a + b
+//         });
+//         prependTestOutput("======Testing========\n" + Math.round(100 * sum / testResults.length) + "% tests passed\n");
+//     }
+// });
+// var testEquality = function (output, input) {
+//     try {
+//         switch (typeof output) {
+//             case 'object':
+//                 assert.deepEqual(output, input[1]);
+//                 break;
+//             case 'string':
+//                 assert(output.localeCompare(input[1]));
+//                 break
+//             default:
+//                 assert.equal(output, input[1]);
+//         }
+//         appendTestOutput("\n" + createTestString(input[0], input[1]) + "\nTest passed!\n");
+//         input[2].css("background-color", "rgba(0,255,0,.2)");
+//         testResults.push(1);
+//     } catch (err) {
+//         input[2].css("background-color", "rgba(255,0,0,.2)");
+//         appendTestOutput(createTestString(input[0], input[1]));
+//         appendTestOutput("Test failed: \nOutput was: " + output + "\nType of output was: " + (typeof output));
+//         testResults.push(0);
+//     }
+// };
 //$('#sideBySide').on('click', function () {
 //    var main = $('#mainEditorPanel');
 //    if (main.hasClass('col-md-12')) {
@@ -214,57 +281,57 @@ var writeToTest = function (msg, location) {
 //        m = re.exec(code);
 //    }
 //};
-$('#testFunctionName').on('change', function () {
-    $('#testInputs').children().remove();
-    $('#testOutputs').children().remove();
-    var args = $('#testFunctionName option:selected').data("args");
-    var argArray = args.split(",");
-    argArray.forEach(function (arg) {
-        if (arg.length > 0) {
-            createInputField('#testInputs', arg);
-        }
-    });
-    createInputField('#testOutputs', 'Expected output');
-});
-var createInputField = function (className, arg) {
-    var inputDiv = document.createElement('div');
-    $(inputDiv)
-        .addClass("control-group")
-        .appendTo($(className));
-    var inputLabel = document.createElement('label');
-    $(inputLabel)
-        .attr("for", "inputs")
-        .html(arg)
-        .addClass("col-xs-4 control-label")
-        .appendTo($(inputDiv));
-    var textDiv = document.createElement('div');
-    $(textDiv)
-        .addClass("col-xs-8 controls")
-        .appendTo($(inputDiv));
-    var inputArea = document.createElement('input');
-    $(inputArea)
-        .attr("type", "text")
-        .addClass("form-control")
-        .appendTo($(inputDiv));
-    $(document.createElement("br")).appendTo($(textDiv));
-};
-$('#testFunctionName').on('focus', function () {
-    $('#testFunctionName').children().remove();
-    var blankOpt = document.createElement("option");
-    $(blankOpt).addClass("selected").appendTo($('#testFunctionName'));
-    var re = /function\s+(\w+)\s*\(([\w\s,]*)\)/g;
-    var code = myCodeMirror.getValue();
-    createOptions(re, code);
-    re = /var (\w+)\s*=\s*function\s*\(([\s\w,]*)\)/g;
-    createOptions(re, code);
-});
-$('#hideTestCreate').on('click', function () {
-    var testForm = $("#testCreateForm");
-    if (testForm.is(":visible")) {
-        testForm.hide();
-        $(this).text("Create more tests");
-    } else {
-        testForm.show();
-        $(this).text("Hide test creation dialogue")
-    }
-});
+// $('#testFunctionName').on('change', function () {
+//     $('#testInputs').children().remove();
+//     $('#testOutputs').children().remove();
+//     var args = $('#testFunctionName option:selected').data("args");
+//     var argArray = args.split(",");
+//     argArray.forEach(function (arg) {
+//         if (arg.length > 0) {
+//             createInputField('#testInputs', arg);
+//         }
+//     });
+//     createInputField('#testOutputs', 'Expected output');
+// });
+// var createInputField = function (className, arg) {
+//     var inputDiv = document.createElement('div');
+//     $(inputDiv)
+//         .addClass("control-group")
+//         .appendTo($(className));
+//     var inputLabel = document.createElement('label');
+//     $(inputLabel)
+//         .attr("for", "inputs")
+//         .html(arg)
+//         .addClass("col-xs-4 control-label")
+//         .appendTo($(inputDiv));
+//     var textDiv = document.createElement('div');
+//     $(textDiv)
+//         .addClass("col-xs-8 controls")
+//         .appendTo($(inputDiv));
+//     var inputArea = document.createElement('input');
+//     $(inputArea)
+//         .attr("type", "text")
+//         .addClass("form-control")
+//         .appendTo($(inputDiv));
+//     $(document.createElement("br")).appendTo($(textDiv));
+// };
+// $('#testFunctionName').on('focus', function () {
+//     $('#testFunctionName').children().remove();
+//     var blankOpt = document.createElement("option");
+//     $(blankOpt).addClass("selected").appendTo($('#testFunctionName'));
+//     var re = /function\s+(\w+)\s*\(([\w\s,]*)\)/g;
+//     var code = myCodeMirror.getValue();
+//     createOptions(re, code);
+//     re = /var (\w+)\s*=\s*function\s*\(([\s\w,]*)\)/g;
+//     createOptions(re, code);
+// });
+// $('#hideTestCreate').on('click', function () {
+//     var testForm = $("#testCreateForm");
+//     if (testForm.is(":visible")) {
+//         testForm.hide();
+//         $(this).text("Create more tests");
+//     } else {
+//         testForm.show();
+//         $(this).text("Hide test creation dialogue")
+//     }
+// });

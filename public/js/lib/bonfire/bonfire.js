@@ -1,6 +1,7 @@
-
+var printCallback;
 // sends the input to the plugin for evaluation
-var submit = function(code) {
+var submit = function(code,callback) {
+    printCallback = callback;
     // postpone the evaluation until the plugin is initialized
     plugin.whenConnected(
         function() {
@@ -16,12 +17,7 @@ var submit = function(code) {
 
 // puts the message on the terminal
 var print = function(cls, msg) {
-    if (cls) {
-        codeOutput.setValue(msg);
-    } else {
-        codeOutput.setValue(msg.output);
-        console.log(msg.type);
-    }
+    printCallback(cls,msg);
 };
 
 
@@ -44,9 +40,9 @@ var disconnect = function() {
 var api = {
     output: function(data) {
       endLoading();
-      print('input', data.input);
+      //print('input', data.input);
       if (data.error) {
-          print('message', data.error);
+          print('Error', data);
       } else {
           print(null, data);
       }
