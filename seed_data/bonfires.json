@@ -1,25 +1,28 @@
-{
-  "name": "Palindrome Tester",
-  "difficulty": 1, // should be a range from 1-5
-  "description": [
-    "Your job is to determine if a provided string is a palindrome.",
-    "The definition of a palindrome can be found at http://en.wikipedia.org/wiki/Palindrome.",
-    "Strings will be passed in  with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
-    "Return true if the string is a palindrome, otherwise false"
-  ],
-  "publicTests": [
-    "expect(palindrome(\"eye\")).to.be.a.(\"boolean\");",
-    "assert.deepEqual(palindrome(\"eye\"), true);",
-    "assert.deepEqual(palindrome(\"race car\"), true);",
-    "assert.deepEqual(palindrome(\"not a palindrome\"), false);"
-  ],
-  "privateTests": [
-    "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
-    "assert.deepEqual(palindrome(\"never odd or even\"), true);",
-    "assert.deepEqual(palindrome(\"nope\"), false);"
-  ],
-  "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n"
-}
+[
+  {
+    "name": "Palindrome Tester",
+    "difficulty": 1, // should be a range from 1-5
+    "description": [
+      "Your job is to determine if a provided string is a palindrome.",
+      "The definition of a palindrome can be found at http://en.wikipedia.org/wiki/Palindrome.",
+      "Strings will be passed in  with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
+      "Return true if the string is a palindrome, otherwise false"
+    ],
+    "publicTests": [
+      "expect(palindrome(\"eye\")).to.be.a.(\"boolean\");",
+      "assert.deepEqual(palindrome(\"eye\"), true);",
+      "assert.deepEqual(palindrome(\"race car\"), true);",
+      "assert.deepEqual(palindrome(\"not a palindrome\"), false);"
+    ],
+    "privateTests": [
+      "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
+      "assert.deepEqual(palindrome(\"never odd or even\"), true);",
+      "assert.deepEqual(palindrome(\"nope\"), false);"
+    ],
+    "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n",
+    "bonfireNumber": 1
+  }
+]
 
 /*
 "aaa48de84e1ecc7c742e1124"
