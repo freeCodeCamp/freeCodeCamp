@@ -20,6 +20,7 @@
       "assert.deepEqual(palindrome(\"nope\"), false);"
     ],
     "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n",
+    "challengeEntryPoint": "palindrome(!!!)",
     "bonfireNumber": 1
   }
 ]

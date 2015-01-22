@@ -20,7 +20,7 @@ var bonfireSchema = new mongoose.Schema({
     publicTests: Array,
     privateTests: Array,
     challengeSeed: String,
-    bonfireNumber: Number,
+    bonfireNumber: Number
 });
 
 module.exports = mongoose.model('Bonfire', bonfireSchema);

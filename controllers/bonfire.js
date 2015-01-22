@@ -64,6 +64,7 @@ exports.returnBonfire = function(req, res, next) {
             publicTests:  c[bonfireNumber].publicTests,
             privateTests:  c[bonfireNumber].privateTests,
             challengeSeed:  c[bonfireNumber].challengeSeed,
+            challengeEntryPoint: c[bonfireNumber].challengeEntryPoint,
 
             cc: req.user ? req.user.bonfiresHash : undefined,
             points: req.user ? req.user.points : undefined,
