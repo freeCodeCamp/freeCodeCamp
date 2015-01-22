@@ -51,6 +51,7 @@ exports.returnBonfire = function(req, res, next) {
 
     if (bonfireNumber > highestBonfireNumber) { bonfireNumber = 0; }
     Bonfire.find({}, null, { sort: { bonfireNumber: 1 } }, function(err, bonfire) {
+        debug(bonfire[bonfireNumber].challengeEntryPoint);
         if (err) {
             debug('bonfire err: ', err);
             next(err);
@@ -65,9 +66,7 @@ exports.returnBonfire = function(req, res, next) {
             privateTests:  bonfire[bonfireNumber].privateTests,
             challengeSeed:  bonfire[bonfireNumber].challengeSeed,
             challengeEntryPoint: bonfire[bonfireNumber].challengeEntryPoint,
-            //title: bonfire.name,
-            //name: bonfire.name,
-            //description: bonfire.description,
+            challengeEntryPointNegate: bonfire[bonfireNumber].challengeEntryPointNegate,
 
             //cc: req.user ? req.user.bonfiresHash : undefined,
             //points: req.user ? req.user.points : undefined,

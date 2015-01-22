@@ -18,7 +18,10 @@ var bonfireSchema = new mongoose.Schema({
     publicTests: Array,
     privateTests: Array,
     challengeSeed: String,
-    bonfireNumber: Number
+    bonfireNumber: Number,
+    challengeEntryPoint: String,
+    challengeEntryPointNegate: String
+
 });
 
 module.exports = mongoose.model('Bonfire', bonfireSchema);

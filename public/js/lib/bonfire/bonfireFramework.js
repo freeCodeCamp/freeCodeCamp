@@ -20,19 +20,37 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     }
 });
 var editor = myCodeMirror;
-myCodeMirror.setValue('/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
-'Please feel free to use Bonfire as an in-browser playground and linting tool.\n' +
-'Note that you can also write tests using Chai.js\n' +
-' by using the keywords assert and expect */\n\n' +
-'function test() {\n' +
-'  assert(2 !== 3, "2 is not equal to 3");\n' +
-'  return [1,2,3].map(function(elem) {\n' +
-'    return elem * elem;\n' +
-'  });\n' +
-'}\n' +
-'expect(test()).to.be.a("array");\n\n' +
-'assert.deepEqual(test(), [1,4,9]);\n\n' +
-'test();');
+
+
+// Default value for editor if one isn't provided in (i.e. a challenge)
+var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
+    'Please feel free to use Bonfire as an in-browser playground and linting tool.\n' +
+    'Note that you can also write tests using Chai.js\n' +
+    ' by using the keywords assert and expect */\n\n' +
+    'function test() {\n' +
+    '  assert(2 !== 3, "2 is not equal to 3");\n' +
+    '  return [1,2,3].map(function(elem) {\n' +
+    '    return elem * elem;\n' +
+    '  });\n' +
+    '}\n' +
+    'expect(test()).to.be.a("array");\n\n' +
+    'assert.deepEqual(test(), [1,4,9]);';
+
+// Default seed for editor if one isn't provided
+var nonChallengeSeed = 'test();';
+var editorValue;
+
+
+
+
+if (challengeSeed) {
+    editorValue = challengeSeed;
+} else {
+    editorValue = nonChallengeValue;
+}
+
+
+myCodeMirror.setValue(editorValue);
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,
@@ -83,6 +101,17 @@ var tests;
 var testSalt = Math.random();
 
 var scrapeTests = function(userJavaScript) {
+
+    console.log(challengeEntryPointNegate);
+    var checkIfUserSuppliedEntry = new RegExp(challengeEntryPointNegate, 'g');
+    console.log(checkIfUserSuppliedEntry);
+    console.log(checkIfUserSuppliedEntry.test(userJavaScript));
+    if (!(checkIfUserSuppliedEntry.test(userJavaScript))) {
+        userJavaScript += '\n' + challengeEntryPoint;
+    }
+    for (var i = 0; i < publicTests.length; i++) {
+        userJavaScript += '\n' + publicTests[i];
+    }
     var counter = 0;
     var regex = new RegExp(/(expect(\s+)?\(.*\;)|(assert(\s+)?\(.*\;)|(assert\.\w.*\;)|(.*\.should\..*\;)/);
     var match = regex.exec(userJavaScript);
@@ -97,6 +126,11 @@ var scrapeTests = function(userJavaScript) {
         counter++;
         match = regex.exec(userJavaScript);
     }
+
+    //for (publicTest in publicTests) {
+    //    console.log(publicTest);
+    //    tests.push(publicTest);
+    //}
     if (tests) replaceQuotesInTests();
     return userJavaScript;
 };
@@ -170,7 +204,7 @@ var reassembleTest = function(test, data) {
 var runTests = function(err, data) {
     pushed = false;
     $('#testSuite').children().remove();
-    if (err && tests) {
+    if (err && tests.length > 0) {
         tests = [{text:"Program Execution Failure", err: "No tests were run."}];
         createTestDisplay();
     } else if (tests) {
