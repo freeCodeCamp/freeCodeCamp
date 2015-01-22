@@ -21,9 +21,10 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
 });
 var editor = myCodeMirror;
 myCodeMirror.setValue('/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
-'Please feel free to use Bonfire as an in-browser playground and linting tool.*/\n\n\n' +
+'Please feel free to use Bonfire as an in-browser playground and linting tool.\n' +
+'Note that you can also write tests using Chai.js by using the keywords assert and expect */\n\n' +
 'function test() {\n' +
-'  assert(2 === 3, "hello");\n' +
+'  assert(2 !== 3, "2 is not equal to 3");\n' +
 '  return [1,2,3].map(function(elem) {\n' +
 '    return elem * elem;\n' +
 '  });\n' +
@@ -41,8 +42,8 @@ var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), 
     lineWrapping: true
 });
 codeOutput.setValue('/**\n' +
-                    ' * Your output will go here. Console statements\n' +
-                    ' * will appear in your developer console!\n' +
+                    ' * Your output will go here. Console.log() -type statements\n' +
+                    ' * will appear in your browser\'s javascript console.\n' +
                     ' */');
 codeOutput.setSize("100%", "100%");
 var info = editor.getScrollInfo();
