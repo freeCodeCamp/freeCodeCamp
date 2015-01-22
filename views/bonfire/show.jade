@@ -22,14 +22,14 @@ block content
             .panel.panel-primary.panel-bonfire
                 .panel-heading.text-center #{name} (Level #{difficulty} bonfire)
                 .panel.panel-body
-                    form.code
-                        h3 Details
+                        h4 Details
                         h5
                             ol
                                 for sentence in description
                                     li!= sentence
-                    .form-group.codeMirrorView
-                        textarea#codeEditor(autofocus=true)
+                    form.code
+                        .form-group.codeMirrorView
+                            textarea#codeEditor(autofocus=true)
         #testCreatePanel.col-sm-12.col-md-5.col-xs-12
             .panel.panel-primary.panel-bonfire
                 .panel-heading.text-center Output
