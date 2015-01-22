@@ -80,28 +80,25 @@ var replaceQuotesInTests = function() {
 };
 
 var tests;
-var testWords = ["expect", "assert"];
 var testSalt = Math.random();
 
-var scrapeTests = function(js) {
+var scrapeTests = function(userJavaScript) {
     var counter = 0;
-    for (var i = 0; i < testWords.length; i++) {
-        var regex = new RegExp(testWords[i] + "[^;]+;",'g');
-        var match = regex.exec(js);
-        while (match != null) {
-            var replacement = '//' + counter + testSalt;
-            js = js.substring(0, match.index) 
-                    + replacement 
-                    + js.substring(match.index + match[0].length);
+    var regex = new RegExp(/(expect(\s+)?\(.*\;)|(assert(\s+)?\(.*\;)|(assert\.\w.*\;)/);
+    var match = regex.exec(userJavaScript);
+    while (match != null) {
+        var replacement = '//' + counter + testSalt;
+        userJavaScript = userJavaScript.substring(0, match.index)
+                + replacement
+                + userJavaScript.substring(match.index + match[0].length);
 
-            if (!tests) tests = [];
-            tests.push({"text": match[0], "line": counter, "err": null});
-            counter++;
-            match = regex.exec(js);
-        }
+        if (!tests) tests = [];
+        tests.push({"text": match[0], "line": counter, "err": null});
+        counter++;
+        match = regex.exec(userJavaScript);
     }
     replaceQuotesInTests();
-    return js;
+    return userJavaScript;
 };
 
 $('#submitButton').on('click', function () {
@@ -111,10 +108,9 @@ $('#submitButton').on('click', function () {
 function bonfireExecute() {
     tests = undefined;
     $('#codeOutput').empty();
-    var js = myCodeMirror.getValue();
-    js = scrapeTests(js);
-    console.log(js);
-    submit(js, function(cls, message) {
+    var userJavaScript = myCodeMirror.getValue();
+    userJavaScript = scrapeTests(userJavaScript);
+    submit(userJavaScript, function(cls, message) {
         if (cls) {
             codeOutput.setValue(message.error);
             runTests('Error', null);
@@ -130,7 +126,6 @@ var createTestDisplay = function() {
     if (pushed) {
         tests.pop();
     }
-    console.log(tests);
     for (var i = 0; i < tests.length;i++) {
         var test = tests[i];
         var testDoc = document.createElement("li");
