@@ -48,29 +48,32 @@ exports.returnBonfire = function(req, res, next) {
         "Establish your alibi for the past two hours",
         "Prove to mom that computers aren't just for games"
     ];
+
     if (bonfireNumber > highestBonfireNumber) { bonfireNumber = 0; }
-    Bonfire.find({}, null, { sort: { bonfireNumber: 1 } }, function(err, c) {
+    Bonfire.find({}, null, { sort: { bonfireNumber: 1 } }, function(err, bonfire) {
         if (err) {
             debug('bonfire err: ', err);
             next(err);
         }
+        res.render('bonfire/show', {
+            title: bonfire[bonfireNumber].name,
+            name: bonfire[bonfireNumber].name,
+            number: bonfire[bonfireNumber].bonfireNumber,
+            difficulty: bonfire[bonfireNumber].difficulty,
+            description: bonfire[bonfireNumber].description,
+            publicTests:  bonfire[bonfireNumber].publicTests,
+            privateTests:  bonfire[bonfireNumber].privateTests,
+            challengeSeed:  bonfire[bonfireNumber].challengeSeed,
+            challengeEntryPoint: bonfire[bonfireNumber].challengeEntryPoint,
+            //title: bonfire.name,
+            //name: bonfire.name,
+            //description: bonfire.description,
 
-        res.render('bonfires/show', {
-            title: 'bonfire: ' + c[bonfireNumber].name,
-            name: c[bonfireNumber].name,
-            number: bonfireNumber,
-            difficulty: c[bonfireNumber].difficulty,
-            description: c[bonfireNumber].description,
-            publicTests:  c[bonfireNumber].publicTests,
-            privateTests:  c[bonfireNumber].privateTests,
-            challengeSeed:  c[bonfireNumber].challengeSeed,
-            challengeEntryPoint: c[bonfireNumber].challengeEntryPoint,
-
-            cc: req.user ? req.user.bonfiresHash : undefined,
-            points: req.user ? req.user.points : undefined,
-            verb: verbs[Math.floor(Math.random() * verbs.length)],
-            phrase: phrases[Math.floor(Math.random() * phrases.length)],
-            bonfires: c
+            //cc: req.user ? req.user.bonfiresHash : undefined,
+            //points: req.user ? req.user.points : undefined,
+            //verb: verbs[Math.floor(Math.random() * verbs.length)],
+            //phrase: phrases[Math.floor(Math.random() * phrases.length)],
+            bonfires: bonfire
         });
     });
 };

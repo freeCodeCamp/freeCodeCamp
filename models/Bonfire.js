@@ -6,9 +6,7 @@ var secrets = require('../config/secrets');
  * @type {exports.Schema}
  */
 
-//new Schema({ _id: String })
-//var ObjectId = require('mongoose').Types.ObjectId;
-//var myObjectId = ObjectId.fromString('myhexstring');
+
 var bonfireSchema = new mongoose.Schema({
 
     name: {

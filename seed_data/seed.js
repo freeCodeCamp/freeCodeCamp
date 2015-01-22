@@ -22,6 +22,7 @@ Challenge.remove({}, function(err, data) {
         }
     });
 });
+
 Bonfire.remove({}, function(err, data) {
     if (err) {
         console.error(err);

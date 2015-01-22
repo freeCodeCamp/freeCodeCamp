@@ -251,10 +251,10 @@ app.get(
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
 app.get('/bonfire', bonfireController.index);
-//app.get(
-//    '/bonfire/:bonfireNumber',
-//    bonfireController.returnBonfire
-//);
+app.get(
+    '/bonfire/:bonfireNumber',
+    bonfireController.returnBonfire
+);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
