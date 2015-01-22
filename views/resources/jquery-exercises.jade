@@ -90,115 +90,96 @@ block content
             var currentExercise = 0;
             refreshEverything(currentExercise);
         });
-    style.
-        #directions {
-            text-align: left;
-            font-size: 15px;
-        }
-
-        .well {
-            text-align: left;
-            height: 200px;
-        }
-
-        #exercise-directory {
-            font-size: 20px;
-        }
-
-        #current-exercise {
-            text-size: 250px;
-        }
-
-    html.
-        <div class="container">
-            <div class="row">
-                <div class=" col-xs-12 col-sm-8">
-                    <div class="jumbotron">
-                        <div class="row">
-                            <div class="col-xs-12 text-center">
-                                <img src="https://s3.amazonaws.com/freecodecamp/logo4.0LG.png" alt="learn to code free at freecodecamp.com" class="img-responsive">
-
-                                <h1>jQuery Exercises</h1>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="text-primary" id="directions">
-
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-xs-6">#location1</div>
-                            <div class="col-xs-6">#location2</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-6 well" id="location1"></div>
-                            <div class="col-xs-6 well" id="location2"></div>
-                        </div>
-                        <div class="btn btn-primary btn-lg btn-block" id="next-exercise">
-                            #next-exercise
-                        </div>
-                        <br>
-                        <button class="btn btn-block btn-lg btn-info" id="solution-button">
-                            #solution-button
-                        </button>
-                        </br>
-                        <div class="text-center">
-                            Created for <a href="http://www.FreeCodeCamp.com">Free Code Camp</a><br/>by <a href="https://twitter.com/ossia">Quincy Larson</a>,
-                            <a href="https://www.twitter.com/terakilobyte">Nathan Leniz</a>, <a href="https://twitter.com/iheartkode"> Mark Howard</a> and <a href="https://twitter.com/ryanmalm">Ryan Malm</a>. Please <a href="http://codepen.io/ossia/pen/raVEgN">fork this.</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4" id="exercise-directory">
-                    <div class="panel panel-primary">
-                        <div class="panel panel-heading">List of Exercises</div>
-                        <div class="panel-body">
-                            <ol start="0">
-                                <li> <a href='#'>Re-enable an element</a></li>
-                                <li> <a href='#'>Change an element's parent</a></li>
-                                <li> <a href='#'>Change an element's CSS</a></li>
-                                <li> <a href='#'>Use jQuery filters to modify even elements</a></li>
-                                <li> <a href='#'>Change nth child</a></li>
-                                <li> <a href='#'>Clone an element</a></li>
-                                <li> <a href='#'>Remove an element</a></li>
-                                <li> <a href='#'>Check checkboxes</a></li>
-                                <li> <a href='#'>Make text read-only</a></li>
-                                <li> <a href='#'>Select an option in a select box</a></li>
-                                <li> <a href='#'>Add a CSS class to an element</a></li>
-                                <li> <a href='#'>Lookup an element's data attribute</a></li>
-                                <li> <a href='#'>Count child elements</a></li>
-                                <li> <a href='#'>Show an element and click on it</a></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="hint-modal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Your hint</h4>
-                    </div>
-                        <div class="modal-body">
-                            <div id="hint">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="finished-modal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Congratulations! You've finished our jQuery exercises! <a href="http://www.freecodecamp.com/">Go back to Free Code Camp </a> and mark this challenge complete.</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div id="hint"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    .container
+        .row
+            .col-xs-12.col-sm-8
+                .jumbotron
+                    .row
+                        .col-xs-12.text-center
+                            img.img-responsive(src='https://s3.amazonaws.com/freecodecamp/logo4.0LG.png', alt='learn to code free at freecodecamp.com')
+                            h1 jQuery Exercises
+                    br
+                    #directions.text-primary
+                    br
+                    .row
+                        .col-xs-6 #location1
+                        .col-xs-6 #location2
+                    .row
+                        #location1.col-xs-6.well
+                        #location2.col-xs-6.well
+                    #next-exercise.btn.btn-primary.btn-lg.btn-block
+                        | #next-exercise
+                    br
+                    button#solution-button.btn.btn-block.btn-lg.btn-info
+                        | #solution-button
+                    br
+                    .text-center
+                        | Created for
+                        a(href='http://www.FreeCodeCamp.com') Free Code Camp
+                        br
+                        | by
+                        a(href='https://twitter.com/ossia') Quincy Larson
+                        | ,
+                        a(href='https://www.twitter.com/terakilobyte') Nathan Leniz
+                        | ,
+                        a(href='https://twitter.com/iheartkode')  Mark Howard
+                        | and
+                        a(href='https://twitter.com/ryanmalm') Ryan Malm
+                        | . Please
+                        a(href='http://codepen.io/ossia/pen/raVEgN') fork this.
+            #exercise-directory.col-xs-12.col-sm-4
+                .panel.panel-primary
+                    .panel.panel-heading List of Exercises
+                    .panel-body
+                        ol(start='0')
+                            li
+                                a(href='#') Re-enable an element
+                            li
+                                a(href='#') Change an element&apos;s parent
+                            li
+                                a(href='#') Change an element&apos;s CSS
+                            li
+                                a(href='#') Use jQuery filters to modify even elements
+                            li
+                                a(href='#') Change nth child
+                            li
+                                a(href='#') Clone an element
+                            li
+                                a(href='#') Remove an element
+                            li
+                                a(href='#') Check checkboxes
+                            li
+                                a(href='#') Make text read-only
+                            li
+                                a(href='#') Select an option in a select box
+                            li
+                                a(href='#') Add a CSS class to an element
+                            li
+                                a(href='#') Lookup an element&apos;s data attribute
+                            li
+                                a(href='#') Count child elements
+                            li
+                                a(href='#') Show an element and click on it
+        #hint-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal')
+                            span(aria-hidden='true') &times;
+                            span.sr-only Close
+                        h4#myModalLabel.modal-title Your hint
+                    .modal-body
+                        #hint
+        #finished-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal')
+                            span(aria-hidden='true') &times;
+                            span.sr-only Close
+                        h4#myModalLabel.modal-title
+                            | Congratulations! You&apos;ve finished our jQuery exercises!
+                            a(href='http://www.freecodecamp.com/') Go back to Free Code Camp
+                            | and mark this challenge complete.
+                    .modal-body
+                        #hint
