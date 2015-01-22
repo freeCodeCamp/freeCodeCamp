@@ -1,33 +1,75 @@
-extends ../layout
-block content
-    .panel.panel-primary
-        .panel-heading.landing-panel-heading.text-center Live Pair Programming
-        .panel-body
-            .landing-panel-body.text-center
-                h2 We live pair program every Tuesday from 9 pm to 10 pm EST (Eastern Standard Time).
-                h2 Our next session will be January 27th, 2015 at 9 p.m. EST!
-                h2 Join the discussion in our &nbsp;
-                    a(href="chat.freecodecamp.com", target="_blank") FreeCodeCamp chat room.
-                h2 Watch the live stream below or on our &nbsp;
-                    a(href="http://twitch.tv/freecodecamp", target='_blank') Twitch.tv channel
-                    | .
-                .embed-responsive.embed-responsive-16by9.big-break
-                    iframe(src='http://www.twitch.tv/freecodecamp/embed', frameborder='0', scrolling='no')
-    br
-    .panel.panel-primary
-        .panel-heading.landing-panel-heading.text-center Previous Live Pair Programming Sessions
-        .panel-body
-            .landing-panel-body.text-center
-                .col-xs-12
-                    .embed-responsive.embed-responsive-16by9.big-break
-                        iframe.embed-responsive-item(src='//www.youtube.com/embed/cBtysq16kqo')
-                    h3 link: &nbsp;
-                        a(href="http://www.youtube.com/watch/cBtysq16kqo") http://www.youtube.com/watch/cBtysq16kqo
-                    .embed-responsive.embed-responsive-16by9.big-break
-                        iframe.embed-responsive-item(src='//www.youtube.com/embed/19pP2pvZuBs')
-                    h3 link: &nbsp;
-                        a(href="http://www.youtube.com/watch/19pP2pvZuBs") http://www.youtube.com/watch/19pP2pvZuBs
-                    h3 Got 3 minutes? Learn to code with us!
-                    a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
-                    br
-                    br
+doctype html
+html(ng-app='profileValidation', lang='en')
+    head
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+        script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js")
+        script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js")
+        link(rel='shortcut icon', href='//s3.amazonaws.com/freecodecamp/favicon.ico')
+        link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+        link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='//code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css')
+        include ../partials/meta
+        title #{title} | Free Code Camp
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='csrf-token', content=_csrf)
+    != css('main')
+    body
+        block content
+            include ../partials/navbar
+            .panel.panel-primary
+                .panel-heading.landing-panel-heading.text-center Live Pair Programming
+                .panel-body
+                    .landing-panel-body.text-center
+                        h2 We live pair program every Tuesday from 9 pm to 10 pm EST (Eastern Standard Time).
+                        h2 Our next session will be January 27th, 2015 at 9 p.m. EST!
+                        h2 Join the discussion in our &nbsp;
+                            a(href="chat.freecodecamp.com", target="_blank") FreeCodeCamp chat room.
+                        h2 Watch the live stream below or on our &nbsp;
+                            a(href="http://twitch.tv/freecodecamp", target='_blank') Twitch.tv channel
+                            | .
+                        .row
+                            .col-xs-8
+                                .embed-responsive.embed-responsive-16by9
+                                    iframe(src='http://www.twitch.tv/freecodecamp/embed', frameborder='0', scrolling='no')
+                            .col-xs-4
+                                .embed-responsive.embed-responsive-twitch-chat
+                                    iframe(src='http://www.twitch.tv/freecodecamp/chat?popout=', frameborder='0', scrolling='no')
+
+            br
+            .panel.panel-primary
+                .panel-heading.landing-panel-heading.text-center Previous Live Pair Programming Sessions
+                .panel-body
+                    .landing-panel-body.text-center
+                        .col-xs-12
+                            .embed-responsive.embed-responsive-16by9.big-break
+                                iframe.embed-responsive-item(src='//www.youtube.com/embed/cBtysq16kqo')
+                            h3 link: &nbsp;
+                                a(href="http://www.youtube.com/watch/cBtysq16kqo") http://www.youtube.com/watch/cBtysq16kqo
+                            .embed-responsive.embed-responsive-16by9.big-break
+                                iframe.embed-responsive-item(src='//www.youtube.com/embed/19pP2pvZuBs')
+                            h3 link: &nbsp;
+                                a(href="http://www.youtube.com/watch/19pP2pvZuBs") http://www.youtube.com/watch/19pP2pvZuBs
+                            h3 Got 3 minutes? Learn to code with us!
+                            a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
+                            br
+                            br
+            include ../partials/footer
+            != js('application')
+            script.
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                    a = s.createElement(o),
+                            m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-55446531-1', 'auto');
+                ga('require', 'displayfeatures');
+                ga('send', 'pageview');
+            script(src="//cdn.optimizely.com/js/999692993.js")
