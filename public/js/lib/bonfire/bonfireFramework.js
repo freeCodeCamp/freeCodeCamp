@@ -102,12 +102,15 @@ var testSalt = Math.random();
 
 var scrapeTests = function(userJavaScript) {
 
-    console.log(challengeEntryPointNegate);
+
     var checkIfUserSuppliedEntry = new RegExp(challengeEntryPointNegate, 'g');
-    console.log(checkIfUserSuppliedEntry);
-    console.log(checkIfUserSuppliedEntry.test(userJavaScript));
-    if (!(checkIfUserSuppliedEntry.test(userJavaScript))) {
+
+    var userEntryCheck = checkIfUserSuppliedEntry.test(userJavaScript);
+    if (!userEntryCheck) {
+
         userJavaScript += '\n' + challengeEntryPoint;
+    } else {
+        // do nothing?
     }
     for (var i = 0; i < publicTests.length; i++) {
         userJavaScript += '\n' + publicTests[i];
