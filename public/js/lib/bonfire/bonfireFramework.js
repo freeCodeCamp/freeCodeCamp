@@ -84,7 +84,7 @@ var testSalt = Math.random();
 
 var scrapeTests = function(userJavaScript) {
     var counter = 0;
-    var regex = new RegExp(/(expect(\s+)?\(.*\;)|(assert(\s+)?\(.*\;)|(assert\.\w.*\;)/);
+    var regex = new RegExp(/(expect(\s+)?\(.*\;)|(assert(\s+)?\(.*\;)|(assert\.\w.*\;)|(.*\.should\..*\;)/);
     var match = regex.exec(userJavaScript);
     while (match != null) {
         var replacement = '//' + counter + testSalt;
@@ -107,7 +107,8 @@ function removeComments(userJavaScript) {
 }
 
 function removeLogs(userJavaScript) {
-    return userJavaScript.replace(/(console\.[\w]+\s*\(.*\;)/g, '');
+    //return userJavaScript.replace(/(console\.[\w]+\s*\(.*\;)/g, '');
+    return userJavaScript;
 }
 
 $('#submitButton').on('click', function () {
@@ -159,6 +160,8 @@ var createTestDisplay = function() {
 };
 var assert = chai.assert;
 var expect = chai.expect;
+var should = chai.should();
+console.log(should);
 var reassembleTest = function(test, data) {
     var lineNum = test.line;
     var regexp = new RegExp("\/\/" + lineNum + testSalt);
