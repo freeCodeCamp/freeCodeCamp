@@ -7,7 +7,7 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     lint: true,
     matchBrackets: true,
     autoCloseBrackets: true,
-    cursorHeight: 0.85,
+    cursorHeight: 1,
     scrollbarStyle: 'null',
     lineWrapping: true,
     gutters: ["CodeMirror-lint-markers"],
@@ -22,7 +22,8 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
 var editor = myCodeMirror;
 myCodeMirror.setValue('/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
 'Please feel free to use Bonfire as an in-browser playground and linting tool.\n' +
-'Note that you can also write tests using Chai.js by using the keywords assert and expect */\n\n' +
+'Note that you can also write tests using Chai.js\n' +
+' by using the keywords assert and expect */\n\n' +
 'function test() {\n' +
 '  assert(2 !== 3, "2 is not equal to 3");\n' +
 '  return [1,2,3].map(function(elem) {\n' +
@@ -32,7 +33,6 @@ myCodeMirror.setValue('/*Welcome to Bonfire, Free Code Camp\'s future CoderByte 
 'expect(test()).to.be.a("array");\n\n' +
 'assert.deepEqual(test(), [1,4,9]);\n\n' +
 'test();');
-//myCodeMirror.setSize("100%", "100%");
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,
@@ -50,7 +50,7 @@ var info = editor.getScrollInfo();
 var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top;
 if (info.top + info.clientHeight < after)
     editor.scrollTo(null, after - info.clientHeight + 3);
-var doLinting = function () {
+function doLinting () {
     editor.operation(function () {
         for (var i = 0; i < widgets.length; ++i)
             editor.removeLineWidget(widgets[i]);
@@ -179,12 +179,9 @@ var runTests = function(err, data) {
                     var output = eval(reassembleTest(test, data));
                 }
             } catch(error) {
-                console.log(error);
                 arr[ix].err = error.name + ":" + error.message;
-                console.log(arr);
            } finally {
                 if (!test) {
-                    //window.setTimeout(function() {createTestDisplay()},2000);
                     createTestDisplay();
                 }
             }
