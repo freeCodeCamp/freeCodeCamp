@@ -22,11 +22,10 @@ block content
             .panel.panel-primary.panel-bonfire
                 .panel-heading.text-center #{name} (Level #{difficulty} bonfire)
                 .panel.panel-body
-                        h4 Details
-                        h5
-                            ol
-                                for sentence in description
-                                    li!= sentence
+                    .well
+                        .text-justify.bonfire-instructions
+                            for sentence in description
+                                p.bonfire-instructions!= sentence
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true)

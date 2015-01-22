@@ -44,7 +44,7 @@ var editorValue;
 
 
 if (challengeSeed) {
-    editorValue = challengeSeed;
+    editorValue = challengeSeed + '\n\n' + challengeEntryPoint;
 } else {
     editorValue = nonChallengeValue;
 }
@@ -100,7 +100,9 @@ var replaceQuotesInTests = function() {
 var tests;
 var testSalt = Math.random();
 
+
 var scrapeTests = function(userJavaScript) {
+
 
 
     var checkIfUserSuppliedEntry = new RegExp(challengeEntryPointNegate, 'g');
@@ -115,6 +117,11 @@ var scrapeTests = function(userJavaScript) {
     for (var i = 0; i < publicTests.length; i++) {
         userJavaScript += '\n' + publicTests[i];
     }
+
+    for (var i = 0; i < privateTests.length; i++) {
+        userJavaScript += '\n' + privateTests[i];
+    }
+
     var counter = 0;
     var regex = new RegExp(/(expect(\s+)?\(.*\;)|(assert(\s+)?\(.*\;)|(assert\.\w.*\;)|(.*\.should\..*\;)/);
     var match = regex.exec(userJavaScript);
@@ -130,10 +137,6 @@ var scrapeTests = function(userJavaScript) {
         match = regex.exec(userJavaScript);
     }
 
-    //for (publicTest in publicTests) {
-    //    console.log(publicTest);
-    //    tests.push(publicTest);
-    //}
     if (tests) replaceQuotesInTests();
     return userJavaScript;
 };
@@ -198,7 +201,7 @@ var createTestDisplay = function() {
 var assert = chai.assert;
 var expect = chai.expect;
 var should = chai.should();
-console.log(should);
+
 var reassembleTest = function(test, data) {
     var lineNum = test.line;
     var regexp = new RegExp("\/\/" + lineNum + testSalt);
@@ -219,6 +222,7 @@ var runTests = function(err, data) {
                     var output = eval(reassembleTest(test, data));
                 }
             } catch(error) {
+
                 arr[ix].err = error.name + ":" + error.message;
            } finally {
                 if (!test) {

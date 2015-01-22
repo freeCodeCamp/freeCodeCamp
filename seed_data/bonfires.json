@@ -1,7 +1,7 @@
 [
   {
     "name": "Palindrome Tester",
-    "difficulty": 1, // should be a range from 1-5
+    "difficulty": 1,
     "description": [
       "Your job is to determine if a provided string is a palindrome.",
       "The definition of a palindrome can be found at http://en.wikipedia.org/wiki/Palindrome.",
@@ -20,9 +20,9 @@
       "assert.deepEqual(palindrome(\"nope\"), false);"
     ],
     "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n",
-    "challengeEntryPoint": "palindrome(\"eye\")",
+    "challengeEntryPoint": "palindrome(\"eye\");",
     "bonfireNumber": 1,
-    "challengeEntryPointNegate" : "palindrome\\([^str].*\\;",
+    "challengeEntryPointNegate" : "palindrome\\([^str].*\\;"
   },
   {
     "name": "Validate US Telephone Numbers",
@@ -61,7 +61,7 @@
     "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n",
     "challengeEntryPoint": "telephoneCheck(\"555-555-5555\")",
     "bonfireNumber": 2,
-    "challengeEntryPointNegate" : "palindrome\\([^str].*\\;",
+    "challengeEntryPointNegate" : "palindrome\\([^str].*\\;"
   }
 ]
 
