@@ -1,5 +1,6 @@
 extends ../layout
 block content
+
     script(src='/js/lib/codemirror/lib/codemirror.js')
     script(src='/js/lib/codemirror/addon/edit/closebrackets.js')
     script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
@@ -14,16 +15,20 @@ block content
     script(src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(src='/js/lib/jailed/jailed.js')
     script(src='/js/lib/bonfire/bonfireInit.js')
+
+
     .row
         #mainEditorPanel.col-sm-12.col-md-7.col-xs-12
             .panel.panel-primary.panel-bonfire
-                .panel-heading.text-center Bonfire Playground
+                .panel-heading.text-center #{name} (Level #{difficulty} bonfire)
                 .panel.panel-body
+                    .well
+                        .text-justify.bonfire-instructions
+                            for sentence in description
+                                p.bonfire-instructions!= sentence
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true)
-
-
         #testCreatePanel.col-sm-12.col-md-5.col-xs-12
             .panel.panel-primary.panel-bonfire
                 .panel-heading.text-center Output
@@ -36,4 +41,10 @@ block content
                     br
                     ul#testSuite.list-group
                     br
+                    script(type="text/javascript").
+                        var publicTests = !{JSON.stringify(publicTests)};
+                        var privateTests = !{JSON.stringify(privateTests)};
+                        var challengeSeed = !{JSON.stringify(challengeSeed)};
+                        var challengeEntryPoint = !{JSON.stringify(challengeEntryPoint)};
+                        var challengeEntryPointNegate = !{JSON.stringify(challengeEntryPointNegate)};
                     script(src='/js/lib/bonfire/bonfireFramework.js')

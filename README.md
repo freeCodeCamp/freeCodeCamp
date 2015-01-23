@@ -56,7 +56,7 @@ LINKEDIN_SECRET='LINKEDIN APP SECRET'
 ```bash
 
 # Seed your database with the challenges
-node seed_data/seed_challenges.js                                                                                  
+node seed_data/seed.js
 
 # start the application
 gulp

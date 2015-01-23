@@ -46,6 +46,7 @@ var api = {
           reset();
       } else {
           print(null, data);
+          reset();
       }
     }
 };
@@ -66,16 +67,18 @@ var requests;
 // (re)initializes the plugin
 var reset = function() {
     requests = 0;
-    plugin = new jailed.Plugin(path+'plugin_v0.1.1.js', api);
+    plugin = new jailed.Plugin(path+'plugin_v0.1.2.js', api);
     plugin.whenDisconnected( function() {
         // give some time to handle the last responce
         setTimeout( function() {
             endLoading();
-            codeOutput.setValue('Infinite loop detected!');
+            console.log("resetting on fatal plugin error");
+            codeOutput.setValue('Infinite loop or fatal error!');
             reset();
         }, 10);
     });
 };
+
 
 
 // initialize everything
