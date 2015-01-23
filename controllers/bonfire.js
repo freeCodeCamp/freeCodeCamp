@@ -6,7 +6,7 @@ var _ = require('lodash'),
  * Bonfire controller
  */
 
-var highestBonfireNumber = 10;
+var highestBonfireNumber = 1;
 
 exports.index = function(req, res) {
     res.render('bonfire/bonfire.jade', {

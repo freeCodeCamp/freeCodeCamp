@@ -56,12 +56,12 @@ block content
                 $('#hint').text(hint[currentExercise]);
                 handleExerciseTransition();
             }
-            $('#exercise-directory').on('click', 'li', event, function () {
+            $('#exercise-directory').on('click', 'li', function (event) {
                 currentExercise = $(this).index();
                 event.preventDefault();
                 refreshEverything(event);
             });
-            $('#next-exercise').on('click', event, function () {
+            $('#next-exercise').on('click', function (event) {
                 ++currentExercise;
                 event.preventDefault();
                 refreshEverything(event);
@@ -105,8 +105,8 @@ block content
                         .col-xs-6 #location1
                         .col-xs-6 #location2
                     .row
-                        #location1.col-xs-6.well
-                        #location2.col-xs-6.well
+                        #location1.col-xs-6.well.jquery-exercises-well
+                        #location2.col-xs-6.well.jquery-exercises-well
                     #next-exercise.btn.btn-primary.btn-lg.btn-block
                         | #next-exercise
                     br
