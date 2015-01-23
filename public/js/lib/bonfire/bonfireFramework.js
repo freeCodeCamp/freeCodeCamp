@@ -34,23 +34,8 @@ var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByt
     '  });\n' +
     '}\n' +
     'expect(test()).to.be.a("array");\n\n' +
-    'assert.deepEqual(test(), [1,4,9]);';
-
-// Default seed for editor if one isn't provided
-var nonChallengeSeed = 'test();';
-var editorValue;
-
-
-
-
-if (challengeSeed) {
-    editorValue = challengeSeed + '\n\n' + challengeEntryPoint;
-} else {
-    editorValue = nonChallengeValue;
-}
-
-
-myCodeMirror.setValue(editorValue);
+    'assert.deepEqual(test(), [1,4,9]);\n\n' +
+    'test();';
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,
@@ -68,6 +53,26 @@ var info = editor.getScrollInfo();
 var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top;
 if (info.top + info.clientHeight < after)
     editor.scrollTo(null, after - info.clientHeight + 3);
+
+var editorValue;
+
+
+var challengeSeed = challengeSeed || null;
+var publicTests = publicTests || [];
+var privateTests = privateTests || [];
+var challengeEntryPoint = challengeEntryPoint || null;
+var challengeEntryPointNegate = challengeEntryPointNegate || null;
+
+
+if (challengeSeed !== null) {
+    editorValue = challengeSeed + '\n\n' + challengeEntryPoint;
+} else {
+    editorValue = nonChallengeValue;
+}
+
+
+myCodeMirror.setValue(editorValue);
+
 function doLinting () {
     editor.operation(function () {
         for (var i = 0; i < widgets.length; ++i)
@@ -91,6 +96,28 @@ function doLinting () {
     });
 };
 
+$('#submitButton').on('click', function () {
+    bonfireExecute();
+});
+
+function bonfireExecute() {
+    tests = null;
+    $('#codeOutput').empty();
+    var userJavaScript = myCodeMirror.getValue();
+    userJavaScript = removeComments(userJavaScript);
+    userJavaScript = scrapeTests(userJavaScript);
+    submit(userJavaScript, function(cls, message) {
+        if (cls) {
+            codeOutput.setValue(message.error);
+            runTests('Error', null);
+        } else {
+            codeOutput.setValue(message.output);
+            message.input = removeLogs(message.input);
+            runTests(null, message);
+        }
+    });
+}
+
 var replaceQuotesInTests = function() {
     tests.forEach(function(elt, ix, arr) {
         arr[ix].text = arr[ix].text.replace(/\"/g,'\'');
@@ -103,17 +130,6 @@ var testSalt = Math.random();
 
 var scrapeTests = function(userJavaScript) {
 
-
-
-    var checkIfUserSuppliedEntry = new RegExp(challengeEntryPointNegate, 'g');
-
-    var userEntryCheck = checkIfUserSuppliedEntry.test(userJavaScript);
-    if (!userEntryCheck) {
-
-        userJavaScript += '\n' + challengeEntryPoint;
-    } else {
-        // do nothing?
-    }
     for (var i = 0; i < publicTests.length; i++) {
         userJavaScript += '\n' + publicTests[i];
     }
@@ -147,30 +163,8 @@ function removeComments(userJavaScript) {
 }
 
 function removeLogs(userJavaScript) {
-    //return userJavaScript.replace(/(console\.[\w]+\s*\(.*\;)/g, '');
+    return userJavaScript.replace(/(console\.[\w]+\s*\(.*\;)/g, '');
     return userJavaScript;
-}
-
-$('#submitButton').on('click', function () {
-    bonfireExecute();
-});
-
-function bonfireExecute() {
-    tests = null;
-    $('#codeOutput').empty();
-    var userJavaScript = myCodeMirror.getValue();
-    userJavaScript = removeComments(userJavaScript);
-    userJavaScript = scrapeTests(userJavaScript);
-    submit(userJavaScript, function(cls, message) {
-        if (cls) {
-            codeOutput.setValue(message.error);
-            runTests('Error', null);
-        } else {
-            codeOutput.setValue(message.output);
-            message.input = removeLogs(message.input);
-            runTests(null, message);
-        }
-    });
 }
 
 var pushed = false;

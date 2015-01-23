@@ -28,15 +28,8 @@
     "name": "Validate US Telephone Numbers",
     "difficulty": 3,
     "description": [
-      "You are in charge of a campground's website signup form. Specifically, you have been asked to validate US phone numbers before forms are submitted.",
-      "But consider yourself forewarned: the camp leader is quick to anger. So don't try to pull something like forcing the user to enter a phone number in a predefined format. He can't stand it when coders are lazy. Don't be lazy, or he might throw you in the fire pit.",
-      "The user cmay fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
-      "  555-555-5555",
-      "  (555)555-5555",
-      "  (555) 555-5555",
-      "  555 555 5555",
-      "  5555555555",
-      "  1 555 555 5555",
+      "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
+      "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
       "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false."
     ],
     "publicTests": [
@@ -59,7 +52,7 @@
       "assert.deepEqual(telephoneCheck(\"2(757)622-7382\"), false);"
     ],
     "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n",
-    "challengeEntryPoint": "telephoneCheck(\"555-555-5555\")",
+    "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");",
     "bonfireNumber": 2,
     "challengeEntryPointNegate" : "palindrome\\([^str].*\\;"
   }
