@@ -8,6 +8,19 @@ var Challenge = require('../models/Challenge.js'),
 
 mongoose.connect(secrets.db);
 
+var counter = 0;
+
+var CompletionMonitor = function() {
+    counter++;
+    console.log('call ' + counter);
+
+    if (counter < 2) {
+        return;
+    } else {
+        process.exit(0);
+    }
+}
+
 Challenge.remove({}, function(err, data) {
     if (err) {
       console.error(err);
@@ -20,7 +33,9 @@ Challenge.remove({}, function(err, data) {
         } else {
             console.log('Saved ', data);
         }
+        CompletionMonitor();
     });
+    console.log('challenges');
 });
 
 Bonfire.remove({}, function(err, data) {
@@ -35,5 +50,10 @@ Bonfire.remove({}, function(err, data) {
         } else {
             console.log('Saved ', data);
         }
+        CompletionMonitor();
     });
+    console.log('bonfires');
+
 });
+
+
