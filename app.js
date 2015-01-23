@@ -131,6 +131,7 @@ var trusted = [
     'http://localhost:3000',
     '*.ionicframework.com',
     'https://syndication.twitter.com',
+    '*.youtube.com',
 ];
 
 debug(trusted);
@@ -151,7 +152,6 @@ app.use(helmet.contentSecurityPolicy({
         'data:',
         '*.licdn.com',
         '*.gravatar.com',
-        '*.youtube.com',
         '*.akamaihd.net',
         'graph.facebook.com',
         '*.githubusercontent.com',
@@ -168,7 +168,6 @@ app.use(helmet.contentSecurityPolicy({
         '*.vimeo.com',
         '*.twitter.com',
         '*.rafflecopter.com',
-        '*.youtube.com'
     ].concat(trusted),
     reportOnly: false, // set to true if you only want to report errors
     setAllHeaders: false, // set to true if you want to set all headers
