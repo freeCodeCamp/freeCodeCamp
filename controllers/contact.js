@@ -47,10 +47,15 @@ module.exports = {
   },
 
   getDoneWithFirst100Hours: function(req, res) {
-    res.render('contact/done-with-first-100-hours', {
-      title:
-          'Congratulations on finishing the first 100 hours of Free Code Camp!'
-    });
+    console.log(req.user.points)
+    if (req.user.points >= 53) {
+      res.render('contact/done-with-first-100-hours', {
+        title: 'Congratulations on finishing the first 100 hours of Free Code Camp!'
+      });
+    } else {
+      req.flash('errors', {msg: 'Hm... have you finished all the challenges?'});
+      res.redirect('/');
+    }
   },
 
   postDoneWithFirst100Hours: function(req, res) {
@@ -68,7 +73,7 @@ module.exports = {
         return res.redirect('/done-with-first-100-hours');
       }
       req.flash('success', {msg: 'Email has been sent successfully!'});
-      res.redirect('/');
+      res.redirect('/nonprofit-project-instructions');
     });
   }
 };

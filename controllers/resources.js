@@ -52,6 +52,12 @@ module.exports = {
     });
   },
 
+  nonprofitProjectInstructions: function nonprofitProjectInstructions(req, res) {
+    res.render('resources/nonprofit-project-instructions', {
+      title: 'Nonprofit Project Instructions'
+    });
+  },
+
   gmailShortcuts: function gmailShortcuts(req, res) {
     res.render('resources/gmail-shortcuts', {
       title: 'These Gmail Shortcuts will save you Hours'

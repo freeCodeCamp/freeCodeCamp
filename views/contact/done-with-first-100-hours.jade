@@ -5,7 +5,8 @@ block content
         .animated.fadeIn.delay-2
             h2 You've completed the first 100 hours of Free Code Camp!
         .animated.fadeIn.delay-4
-            h3 Now you're ready to continue your learning by building solutions for nonprofits! If you've completed all the Free Code Camp challenges and the Easy and Medium CoderByte challenges, enter your email below. We'll send you an email with the next steps.
+            h3 Now you're ready to continue your learning by building solutions for nonprofits!
+            h3 First, please enter your email below.
             br
             form.form-horizontal(role='form', action="/done-with-first-100-hours/", method='POST', novalidate='novalidate', name='doneWithFirst100HoursForm')
                 input(type='hidden', name='_csrf', value=_csrf)
