@@ -255,7 +255,7 @@ app.get(
 );
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
-app.get('/bonfire', bonfireController.index);
+app.get('/playground', bonfireController.index);
 app.get(
     '/bonfires/:bonfireNumber',
     bonfireController.returnIndividualBonfire

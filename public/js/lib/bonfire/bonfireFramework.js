@@ -35,6 +35,8 @@ var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByt
     '}\n' +
     'expect(test()).to.be.a("array");\n\n' +
     'assert.deepEqual(test(), [1,4,9]);\n\n' +
+    'var foo = test();\n' +
+    'foo.should.be.a("array");\n\n' +
     'test();';
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
@@ -139,8 +141,8 @@ var scrapeTests = function(userJavaScript) {
     while (match != null) {
         var replacement = '//' + counter + testSalt;
         userJavaScript = userJavaScript.substring(0, match.index)
-            + replacement
-            + userJavaScript.substring(match.index + match[0].length);
+        + replacement
+        + userJavaScript.substring(match.index + match[0].length);
 
         if (!userTests) {
             userTests= [];
