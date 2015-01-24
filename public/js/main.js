@@ -71,7 +71,8 @@ $(document).ready(function() {
     $('.next-bonfire-button').on('click', function() {
         var bonfireSolution = myCodeMirror.getValue();
         var thisBonfireHash = passedBonfireHash || null;
-        var didCompleteWith = $('#completed-with').text() || null;
+        var didCompleteWith = $('#completed-with').val() || null;
+        console.log(didCompleteWith);
         console.log(bonfireSolution, thisBonfireHash);
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
         l = location.pathname.split('/');

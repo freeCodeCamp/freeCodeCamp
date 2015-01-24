@@ -53,10 +53,8 @@ exports.returnBonfire = function(req, res, next) {
     Bonfire.find({}, null, { sort: { bonfireNumber: 1 } }, function(err, bonfire) {
         debug(bonfire[bonfireNumber].challengeEntryPoint);
         if (err) {
-            debug('bonfire err: ', err);
             next(err);
         }
-        debug(bonfire[bonfireNumber]._id);
         res.render('bonfire/show', {
             completedWith: null,
             title: bonfire[bonfireNumber].name,

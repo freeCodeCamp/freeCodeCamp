@@ -310,7 +310,7 @@ app.post('/completed-bonfire/', function (req, res) {
     };
 
     if (isCompletedWith) {
-        User.find({"profile.username": isCompletedWith}, function(err, pairedWith) {
+        User.findOne({"profile.username": isCompletedWith}, function(err, pairedWith) {
             if (err) {
                 return err;
             } else {
