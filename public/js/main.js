@@ -96,7 +96,7 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
 
 profileValidation.controller('pairedWithController', ['$scope',
     function($scope) {
-
+        $scope.existingUser = null;
 
     }
 ]);
@@ -152,16 +152,16 @@ profileValidation.directive('existingUsername', function($http) {
         require: 'ngModel',
         link: function (scope, element, attrs, ngModel) {
             element.bind("keyup", function (event) {
-                ngModel.$setValidity('exists', true);
+                ngModel.$setValidity('exists', false);
                 if (element.val()) {
-                    $http.get("/api/checkExistingUsername/" + element.val()).success(function (data) {
+                    $http.get("/api/checkExistingUsername/" + element.val() + ' ').success(function (data) {
                         console.log('in existing username function');
                         if (element.val() == scope.existingUsername) {
-                            console.log('matches a username');
-                            ngModel.$setValidity('exists', true);
-                        } else if (data) {
-                            console.log("doesn't match a username")
+                            console.log("doesn't match a username");
                             ngModel.$setValidity('exists', false);
+                        } else if (data) {
+                            console.log("matches a username")
+                            ngModel.$setValidity('exists', true);
                         }
                     });
                 }
