@@ -1,5 +1,6 @@
 [
   {
+    "_id" : "aaa48de84e1ecc7c742e1124",
     "name": "Palindrome Tester",
     "difficulty": 1,
     "description": [
@@ -8,13 +9,11 @@
       "Strings will be passed in  with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
       "Return true if the string is a palindrome, otherwise false"
     ],
-    "publicTests": [
+    "tests": [
       "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
       "assert.deepEqual(palindrome(\"eye\"), true);",
       "assert.deepEqual(palindrome(\"race car\"), true);",
-      "assert.deepEqual(palindrome(\"not a palindrome\"), false);"
-    ],
-    "privateTests": [
+      "assert.deepEqual(palindrome(\"not a palindrome\"), false);",
       "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
       "assert.deepEqual(palindrome(\"never odd or even\"), true);",
       "assert.deepEqual(palindrome(\"nope\"), false);"
@@ -25,6 +24,7 @@
     "challengeEntryPointNegate" : "palindrome\\([^str].*\\;"
   },
   {
+    "_id" : "ff0395860f5d3034dc0bfc94",
     "name": "Validate US Telephone Numbers",
     "difficulty": 3,
     "description": [
@@ -32,13 +32,11 @@
       "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
       "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false."
     ],
-    "publicTests": [
+    "tests": [
       "expect(telephoneCheck(\"555-555-5555\")).to.be.a(\"boolean\");",
       "assert.deepEqual(telephoneCheck(\"555-555-5555\"), true);",
       "assert.deepEqual(telephoneCheck(\"1 456 789 4444\"), true);",
-      "assert.deepEqual(telephoneCheck(\"123**&!!asdf#\"), false);"
-    ],
-    "privateTests": [
+      "assert.deepEqual(telephoneCheck(\"123**&!!asdf#\"), false);",
       "assert.deepEqual(telephoneCheck(\"55555555\"), false);",
       "assert.deepEqual(telephoneCheck(\"(6505552368)\"), false);",
       "assert.deepEqual(telephoneCheck(\"2 (757) 622-7382\"), false);",

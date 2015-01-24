@@ -285,6 +285,20 @@ app.post('/completed-challenge', function (req, res) {
     req.user.save();
 });
 
+app.post('/completed-bonfire/', function (req, res) {
+    req.user.challengesHash[parseInt(req.body.challengeNumber)] =
+        Math.round(+new Date() / 1000);
+    var ch = req.user.challengesHash;
+    var p = 0;
+    for (var k in ch) {
+        if (ch[k] > 0) {
+            p += 1;
+        }
+    }
+    req.user.points = p;
+    req.user.save();
+});
+
 /**
  * OAuth sign-in routes.
  */

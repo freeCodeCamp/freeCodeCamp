@@ -1,46 +1,64 @@
 $(document).ready(function() {
 
-  var CSRF_HEADER = 'X-CSRF-Token';
+    var CSRF_HEADER = 'X-CSRF-Token';
 
-  var setCSRFToken = function(securityToken) {
-    jQuery.ajaxPrefilter(function(options, _, xhr) {
-      if (!xhr.crossDomain) {
-        xhr.setRequestHeader(CSRF_HEADER, securityToken);
-      }
+    var setCSRFToken = function(securityToken) {
+        jQuery.ajaxPrefilter(function(options, _, xhr) {
+            if (!xhr.crossDomain) {
+                xhr.setRequestHeader(CSRF_HEADER, securityToken);
+            }
+        });
+    };
+
+    setCSRFToken($('meta[name="csrf-token"]').attr('content'));
+
+    $('.start-challenge').on('click', function() {
+        $(this).parent().remove();
+        $('.challenge-content')
+            .removeClass('hidden-element')
+            .addClass('animated fadeInDown');
     });
-  };
 
-  setCSRFToken($('meta[name="csrf-token"]').attr('content'));
+    $('.completed-challenge').on('click', function() {
+        $('#complete-challenge-dialog').modal('show');
+        // Only post to server if there is an authenticated user
+        if ($('.signup-btn-nav').length < 1) {
+            l = location.pathname.split('/');
+            cn = l[l.length - 1];
+            $.ajax({
+                type: 'POST',
+                data: {challengeNumber: cn},
+                url: '/completed-challenge/'
+            });
+        }
+    });
 
-  $('.start-challenge').on('click', function() {
-      $(this).parent().remove();
-      $('.challenge-content')
-        .removeClass('hidden-element')
-        .addClass('animated fadeInDown');
-  });
+    $('.completed-bonfire').on('click', function() {
+        $('#complete-bonfire-dialog').modal('show');
+        // Only post to server if there is an authenticated user
+        if ($('.signup-btn-nav').length < 1) {
+            l = location.pathname.split('/');
+            cn = l[l.length - 1];
+            $.ajax({
+                type: 'POST',
+                data: {bonfireHash: cn},
+                url: '/completed-bonfire/'
+            });
+        }
+    });
 
-  $('.completed-challenge').on('click', function() {
-      $('#complete-dialog').modal('show');
-      // Only post to server if there is an authenticated user
-      if ($('.signup-btn-nav').length < 1) {
-          l = location.pathname.split('/');
-          cn = l[l.length - 1];
-          $.ajax({
-              type: 'POST',
-              data: {challengeNumber: cn},
-              url: '/completed-challenge/'
-          });
-      }
-  });
+    $('.all-challenges').on('click', function() {
+        $('#all-challenges-dialog').modal('show');
+    });
 
-  $('.all-challenges').on('click', function() {
-      $('#all-challenges-dialog').modal('show');
-  });
+    $('.all-bonfires').on('click', function() {
+        $('#all-bonfires-dialog').modal('show');
+    });
 
-  $('.next-button').on('click', function() {
-      l = location.pathname.split('/');
-      window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
-  });
+    $('.next-button').on('click', function() {
+        l = location.pathname.split('/');
+        window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
+    });
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);

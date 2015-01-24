@@ -62,16 +62,13 @@ exports.returnBonfire = function(req, res, next) {
             number: bonfire[bonfireNumber].bonfireNumber,
             difficulty: bonfire[bonfireNumber].difficulty,
             description: bonfire[bonfireNumber].description,
-            publicTests:  bonfire[bonfireNumber].publicTests,
-            privateTests:  bonfire[bonfireNumber].privateTests,
+            tests:  bonfire[bonfireNumber].tests,
             challengeSeed:  bonfire[bonfireNumber].challengeSeed,
             challengeEntryPoint: bonfire[bonfireNumber].challengeEntryPoint,
-            challengeEntryPointNegate: bonfire[bonfireNumber].challengeEntryPointNegate,
-
-            //cc: req.user ? req.user.bonfiresHash : undefined,
-            //points: req.user ? req.user.points : undefined,
-            //verb: verbs[Math.floor(Math.random() * verbs.length)],
-            //phrase: phrases[Math.floor(Math.random() * phrases.length)],
+            cc: req.user ? req.user.bonfiresHash : undefined,
+            points: req.user ? req.user.points : undefined,
+            verb: verbs[Math.floor(Math.random() * verbs.length)],
+            phrase: phrases[Math.floor(Math.random() * phrases.length)],
             bonfires: bonfire
         });
     });

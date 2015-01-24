@@ -8,15 +8,13 @@ var secrets = require('../config/secrets');
 
 
 var bonfireSchema = new mongoose.Schema({
-
     name: {
         type: String,
         unique: true
     },
     difficulty: Number,
     description: Array,
-    publicTests: Array,
-    privateTests: Array,
+    tests: Array,
     challengeSeed: String,
     bonfireNumber: Number,
     challengeEntryPoint: String,

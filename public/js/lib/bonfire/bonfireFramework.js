@@ -45,9 +45,9 @@ var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), 
     lineWrapping: true
 });
 codeOutput.setValue('/**\n' +
-                    ' * Your output will go here. Console.log() -type statements\n' +
-                    ' * will appear in your browser\'s javascript console.\n' +
-                    ' */');
+' * Your output will go here. Console.log() -type statements\n' +
+' * will appear in your browser\'s javascript console.\n' +
+' */');
 codeOutput.setSize("100%", "100%");
 var info = editor.getScrollInfo();
 var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top;
@@ -58,10 +58,8 @@ var editorValue;
 
 
 var challengeSeed = challengeSeed || null;
-var publicTests = publicTests || [];
-var privateTests = privateTests || [];
+var tests = tests || [];
 var challengeEntryPoint = challengeEntryPoint || null;
-var challengeEntryPointNegate = challengeEntryPointNegate || null;
 
 
 if (challengeSeed !== null) {
@@ -101,7 +99,7 @@ $('#submitButton').on('click', function () {
 });
 
 function bonfireExecute() {
-    tests = null;
+    userTests= null;
     $('#codeOutput').empty();
     var userJavaScript = myCodeMirror.getValue();
     userJavaScript = removeComments(userJavaScript);
@@ -119,23 +117,20 @@ function bonfireExecute() {
 }
 
 var replaceQuotesInTests = function() {
-    tests.forEach(function(elt, ix, arr) {
+    userTests.forEach(function(elt, ix, arr) {
         arr[ix].text = arr[ix].text.replace(/\"/g,'\'');
     });
 };
 
-var tests;
+var userTests;
 var testSalt = Math.random();
 
 
 var scrapeTests = function(userJavaScript) {
 
-    for (var i = 0; i < publicTests.length; i++) {
-        userJavaScript += '\n' + publicTests[i];
-    }
-
-    for (var i = 0; i < privateTests.length; i++) {
-        userJavaScript += '\n' + privateTests[i];
+    // insert tests from mongo
+    for (var i = 0; i < tests.length; i++) {
+        userJavaScript += '\n' + tests[i];
     }
 
     var counter = 0;
@@ -144,16 +139,20 @@ var scrapeTests = function(userJavaScript) {
     while (match != null) {
         var replacement = '//' + counter + testSalt;
         userJavaScript = userJavaScript.substring(0, match.index)
-                + replacement
-                + userJavaScript.substring(match.index + match[0].length);
+            + replacement
+            + userJavaScript.substring(match.index + match[0].length);
 
-        if (!tests) tests = [];
-        tests.push({"text": match[0], "line": counter, "err": null});
+        if (!userTests) {
+            userTests= [];
+        }
+        userTests.push({"text": match[0], "line": counter, "err": null});
         counter++;
         match = regex.exec(userJavaScript);
     }
 
-    if (tests) replaceQuotesInTests();
+    if (userTests)  {
+        replaceQuotesInTests();
+    }
     return userJavaScript;
 };
 
@@ -170,10 +169,10 @@ function removeLogs(userJavaScript) {
 var pushed = false;
 var createTestDisplay = function() {
     if (pushed) {
-        tests.pop();
+        userTests.pop();
     }
-    for (var i = 0; i < tests.length;i++) {
-        var test = tests[i];
+    for (var i = 0; i < userTests.length;i++) {
+        var test = userTests[i];
         var testDoc = document.createElement("li");
         $(testDoc)
             .addClass('list-group-item')
@@ -201,28 +200,40 @@ var reassembleTest = function(test, data) {
     var regexp = new RegExp("\/\/" + lineNum + testSalt);
     return data.input.replace(regexp, test.text);
 };
+
 var runTests = function(err, data) {
+    var allTestsPassed = true;
     pushed = false;
     $('#testSuite').children().remove();
-    if (err && tests.length > 0) {
-        tests = [{text:"Program Execution Failure", err: "No tests were run."}];
+    if (err && userTests.length > 0) {
+        userTests= [{text:"Program Execution Failure", err: "NouserTestswere run."}];
         createTestDisplay();
-    } else if (tests) {
-        tests.push(false);
+    } else if (userTests) {
+
+        userTests.push(false);
         pushed = true;
-        tests.forEach(function(test, ix, arr){
+        userTests.forEach(function(test, ix, arr){
             try {
                 if (test) {
                     var output = eval(reassembleTest(test, data));
                 }
             } catch(error) {
-
+                allTestsPassed = false;
                 arr[ix].err = error.name + ":" + error.message;
-           } finally {
+            } finally {
                 if (!test) {
                     createTestDisplay();
                 }
             }
         });
     }
+    if (allTestsPassed) {
+        allTestsPassed = false;
+        showCompletion();
+    }
+    console.log(allTestsPassed);
 };
+
+function showCompletion() {
+    $('#complete-bonfire-dialog').modal('show');
+}

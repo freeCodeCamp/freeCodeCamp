@@ -23,7 +23,7 @@ block content
                 .panel-heading.text-center #{name} (Level #{difficulty} bonfire)
                 .panel.panel-body
                     .well
-                        .text-justify.bonfire-instructions
+                        .text-left.bonfire-instructions
                             for sentence in description
                                 p.bonfire-instructions!= sentence
                     form.code
@@ -42,9 +42,32 @@ block content
                     ul#testSuite.list-group
                     br
                     script(type="text/javascript").
-                        var publicTests = !{JSON.stringify(publicTests)};
-                        var privateTests = !{JSON.stringify(privateTests)};
+                        var tests = !{JSON.stringify(tests)};
                         var challengeSeed = !{JSON.stringify(challengeSeed)};
                         var challengeEntryPoint = !{JSON.stringify(challengeEntryPoint)};
-                        var challengeEntryPointNegate = !{JSON.stringify(challengeEntryPointNegate)};
                     script(src='/js/lib/bonfire/bonfireFramework.js')
+
+                #complete-bonfire-dialog.modal(tabindex='-1')
+                    .modal-dialog.animated.zoomIn.fast-animation
+                        .modal-content
+                            .modal-header.challenge-list-header Nicely done!
+                                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                            .modal-body
+                                .text-center
+                                    .animated.zoomInDown.delay-half
+                                        span.landing-icon.ion-checkmark-circled.text-primary
+                                - if (cc)
+                                    a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-button(name='_csrf', value=_csrf, aria-hidden='true') Take me to my next challenge
+                                    - if (points && points > 2)
+                                        a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20Free%20Code%20Camp%20Challenge%20%23#{number}:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{number}&hashtags=learntocode, javascript" target="_blank")
+                                        i.fa.fa-twitter &nbsp;
+                                            = phrase
+                                - else
+                                    a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                #all-bonfires-dialog.modal(tabindex='-1')
+                    .modal-dialog.animated.fadeInUp.fast-animation
+                        .modal-content
+                            .modal-header.challenge-list-header Challenges
+                                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                            .modal-body
+                                include ../partials/bonfires
