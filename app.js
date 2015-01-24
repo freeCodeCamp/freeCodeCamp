@@ -258,8 +258,9 @@ app.get('/account/api', userController.getAccountAngular);
 app.get('/bonfire', bonfireController.index);
 app.get(
     '/bonfires/:bonfireNumber',
-    bonfireController.returnBonfire
+    bonfireController.returnIndividualBonfire
 );
+app.get('/bonfires', bonfireController.returnBonfire);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);

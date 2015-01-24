@@ -355,6 +355,7 @@ var userSchema = new mongoose.Schema({
     resetPasswordExpires: Date,
     bonfiresHash: {
         aaa48de84e1ecc7c742e1124: {
+            hash: String,
             completedWith: String,
             completedDate: {
                 type: Number,
@@ -363,6 +364,7 @@ var userSchema = new mongoose.Schema({
             solution: String
         },
         ff0395860f5d3034dc0bfc94: {
+            hash: String,
             completedWith: String,
             completedDate: {
                 type: Number,
