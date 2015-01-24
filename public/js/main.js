@@ -33,7 +33,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.completed-bonfire').on('click', function() {
+    function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
         $('#complete-bonfire-dialog').modal('show');
         // Only post to server if there is an authenticated user
         if ($('.signup-btn-nav').length < 1) {
@@ -41,11 +41,18 @@ $(document).ready(function() {
             cn = l[l.length - 1];
             $.ajax({
                 type: 'POST',
-                data: {bonfireHash: cn},
+                data: {
+                    bonfireInfo: {
+                        completedWith : didCompleteWith,
+                        solution: bonfireSolution,
+                        bonfireHash: thisBonfireHash
+                    }
+                },
                 url: '/completed-bonfire/'
             });
+            console.log(didCompleteWith, bonfireSolution, thisBonfireHash); // TODO: remove debug statement
         }
-    });
+    }
 
     $('.all-challenges').on('click', function() {
         $('#all-challenges-dialog').modal('show');
@@ -55,9 +62,20 @@ $(document).ready(function() {
         $('#all-bonfires-dialog').modal('show');
     });
 
-    $('.next-button').on('click', function() {
+    $('.next-challenge-button').on('click', function() {
         l = location.pathname.split('/');
         window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
+    });
+
+    // TODO: refactor this to create meaningful variable names, what the heck i l?
+    $('.next-bonfire-button').on('click', function() {
+        var bonfireSolution = myCodeMirror.getValue();
+        var thisBonfireHash = passedBonfireHash || null;
+        var didCompleteWith = $('#completed-with').text() || null;
+        console.log(bonfireSolution, thisBonfireHash);
+        completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
+        l = location.pathname.split('/');
+        window.location = '/bonfires/' + (parseInt(l[l.length - 1]) + 1);
     });
 });
 

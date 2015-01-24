@@ -56,7 +56,9 @@ exports.returnBonfire = function(req, res, next) {
             debug('bonfire err: ', err);
             next(err);
         }
+        debug(bonfire[bonfireNumber]._id);
         res.render('bonfire/show', {
+            completedWith: null,
             title: bonfire[bonfireNumber].name,
             name: bonfire[bonfireNumber].name,
             number: bonfire[bonfireNumber].bonfireNumber,
@@ -69,7 +71,8 @@ exports.returnBonfire = function(req, res, next) {
             points: req.user ? req.user.points : undefined,
             verb: verbs[Math.floor(Math.random() * verbs.length)],
             phrase: phrases[Math.floor(Math.random() * phrases.length)],
-            bonfires: bonfire
+            bonfires: bonfire,
+            bonfireHash: bonfire[bonfireNumber]._id
         });
     });
 };

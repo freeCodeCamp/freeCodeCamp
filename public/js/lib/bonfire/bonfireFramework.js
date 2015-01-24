@@ -231,7 +231,6 @@ var runTests = function(err, data) {
         allTestsPassed = false;
         showCompletion();
     }
-    console.log(allTestsPassed);
 };
 
 function showCompletion() {

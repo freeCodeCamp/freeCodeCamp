@@ -251,7 +251,7 @@ app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
 app.get('/bonfire', bonfireController.index);
 app.get(
-    '/bonfire/:bonfireNumber',
+    '/bonfires/:bonfireNumber',
     bonfireController.returnBonfire
 );
 
@@ -274,29 +274,68 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
 app.post('/completed-challenge', function (req, res) {
     req.user.challengesHash[parseInt(req.body.challengeNumber)] =
         Math.round(+new Date() / 1000);
-    var ch = req.user.challengesHash;
-    var p = 0;
-    for (var k in ch) {
-        if (ch[k] > 0) {
-            p += 1;
+    var timestamp = req.user.challengesHash;
+    var points = 0;
+    for (var key in timestamp) {
+        if (timestamp[key] > 0) {
+            points += 1;
         }
     }
-    req.user.points = p;
+    req.user.points = points;
     req.user.save();
 });
 
 app.post('/completed-bonfire/', function (req, res) {
-    req.user.challengesHash[parseInt(req.body.challengeNumber)] =
+    debug(req.body, 'In post method'); // TODO: remove debug statement
+    req.user.bonfiresHash[parseInt(req.body.bonfireNumber)] =
         Math.round(+new Date() / 1000);
-    var ch = req.user.challengesHash;
-    var p = 0;
-    for (var k in ch) {
-        if (ch[k] > 0) {
-            p += 1;
+    var timestamp = req.user.bonfiresHash;
+    var points = 0;
+    for (var key in timestamp) {
+        if (timestamp[key] > 0) {
+            points += 1;
         }
     }
-    req.user.points = p;
-    req.user.save();
+
+    var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
+    var isCompletedDate =  Math.round(+new Date() / 1000);
+    var bonfireHash = req.body.bonfireInfo.bonfireHash;
+    var isSolution = req.body.bonfireInfo.solution;
+    req.user.bonfiresHash[bonfireHash] = {
+        completedWith: isCompletedWith,
+        completedDate: isCompletedDate,
+        solution: isSolution
+    };
+
+    if (isCompletedWith) {
+        User.find({"profile.username": isCompletedWith}, function(err, pairedWith) {
+            if (err) {
+                return err;
+            } else {
+                pairedWith.bonfiresHash[bonfireHash] = {
+                    completedWith: req.user._id,
+                    completedDate: isCompletedDate,
+                    solution: isSolution
+                };
+                req.user.bonfiresHash[bonfireHash] = {
+                    completedWith: pairedWith._id,
+                    completedDate: isCompletedDate,
+                    solution: isSolution
+                };
+
+                req.user.save();
+                pairedWith.save();
+
+            }
+        })
+    } else {
+        req.user.bonfiresHash[bonfireHash] = {
+            completedWith: null,
+            completedDate: isCompletedDate,
+            solution: isSolution
+        };
+        req.user.save();
+    }
 });
 
 /**
