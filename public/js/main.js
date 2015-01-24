@@ -50,7 +50,6 @@ $(document).ready(function() {
                 },
                 url: '/completed-bonfire/'
             });
-            console.log(didCompleteWith, bonfireSolution, thisBonfireHash); // TODO: remove debug statement
         }
     }
 

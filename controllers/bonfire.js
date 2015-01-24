@@ -50,7 +50,7 @@ exports.returnBonfire = function(req, res, next) {
     ];
 
     if (bonfireNumber > highestBonfireNumber) { bonfireNumber = 0; }
-    Bonfire.find({}, null, { sort: { bonfireNumber: 1 } }, function(err, bonfire) {
+    Bonfire.find({}, null, { sort: { difficulty: 1, bonfireNumber: 1 } }, function(err, bonfire) {
         debug(bonfire[bonfireNumber].challengeEntryPoint);
         if (err) {
             next(err);

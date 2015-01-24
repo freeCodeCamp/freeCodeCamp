@@ -310,10 +310,12 @@ app.post('/completed-bonfire/', function (req, res) {
     };
 
     if (isCompletedWith) {
-        User.findOne({"profile.username": isCompletedWith}, function(err, pairedWith) {
+        var paired = User.find({"profile.username": isCompletedWith}).limit(1);
+        paired.exec(function(err, pairedWith) {
             if (err) {
                 return err;
             } else {
+                pairedWith = pairedWith.pop();
                 pairedWith.bonfiresHash[bonfireHash] = {
                     completedWith: req.user._id,
                     completedDate: isCompletedDate,
