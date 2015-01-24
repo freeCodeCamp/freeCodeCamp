@@ -257,6 +257,7 @@ app.get(
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
+app.get('/api/checkExistingUsername/:username', userController.checkExistingUsername);
 app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);
@@ -286,7 +287,8 @@ app.post('/completed-challenge', function (req, res) {
 });
 
 app.post('/completed-bonfire/', function (req, res) {
-    debug(req.body, 'In post method'); // TODO: remove debug statement
+    debug(req.body, 'In post method'
+    ); // TODO: remove debug statement
     req.user.bonfiresHash[parseInt(req.body.bonfireNumber)] =
         Math.round(+new Date() / 1000);
     var timestamp = req.user.bonfiresHash;

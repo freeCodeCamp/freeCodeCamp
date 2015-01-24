@@ -184,6 +184,20 @@ exports.checkUniqueUsername = function(req, res) {
     }
   });
 };
+
+/**
+ * Existing username check
+ */
+exports.checkExistingUsername = function(req, res) {
+    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (data == 1) {
+            return res.send(false);
+        } else {
+            return res.send(true);
+        }
+    });
+};
+
 /**
  * Unique email check API Call
  */

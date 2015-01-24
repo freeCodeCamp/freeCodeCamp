@@ -94,6 +94,13 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
     }
 ]);
 
+profileValidation.controller('pairedWithController', ['$scope',
+    function($scope) {
+
+
+    }
+]);
+
 profileValidation.controller('emailSignUpController', ['$scope',
     function($scope) {
 
@@ -131,6 +138,30 @@ profileValidation.directive('uniqueUsername', function($http) {
                             ngModel.$setValidity('unique', true);
                         } else if (data) {
                             ngModel.$setValidity('unique', false);
+                        }
+                    });
+                }
+            });
+        }
+    }
+});
+// TODO: FIX THIS
+profileValidation.directive('existingUsername', function($http) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
+            element.bind("keyup", function (event) {
+                ngModel.$setValidity('exists', true);
+                if (element.val()) {
+                    $http.get("/api/checkExistingUsername/" + element.val()).success(function (data) {
+                        console.log('in existing username function');
+                        if (element.val() == scope.existingUsername) {
+                            console.log('matches a username');
+                            ngModel.$setValidity('exists', true);
+                        } else if (data) {
+                            console.log("doesn't match a username")
+                            ngModel.$setValidity('exists', false);
                         }
                     });
                 }

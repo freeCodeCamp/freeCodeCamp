@@ -55,13 +55,20 @@ block content
                         .modal-content
                             .modal-header.challenge-list-header Nicely done!
                                 a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                            .modal-body
+                            .modal-body(ng-controller="pairedWithController")
+
                                 .text-center
                                     .animated.zoomInDown.delay-half
                                         span.landing-icon.ion-checkmark-circled.text-primary
                                 - if (cc)
+                                    form.form-horizontal(novalidate='novalidate', name='completedWithForm')
 
-                                    a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, aria-hidden='true') Take me to my next challenge
+                                        input.form-control#completed-with(name="completed-with", placeholder="If you paired with someone, enter their username here", ng-keypress='', existing-username='', ng-model="existingUsername")
+                                        .col-sm-4.col-sm-offset-5(ng-show="completedWithForm.existingUsername.$error.unique && !completedWithForm.existingUsername.$pristine")
+                                            alert(type='danger')
+                                                span.ion-close-circled
+                                                | Username not found
+                                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, aria-hidden='true', ng-disabled='completedWithForm.$invalid') Take me to my next challenge
 
 
                                     - if (points && points > 2)
