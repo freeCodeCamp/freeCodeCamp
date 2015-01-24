@@ -24,6 +24,25 @@ exports.returnChallenge = function(req, res, next) {
         'ANNIHILATED',
         'NUKED'
     ];
+    var compliments = [
+        "You've got the power!",
+        "Nicely done!",
+        "Rock and roll!",
+        "High five!",
+        "Bravo!",
+        "Encore!",
+        "Challenge destroyed!",
+        "Power level 9000!",
+        "Most efficient!",
+        "Party on Wayne!",
+        "You've got the touch!",
+        "You're on fire!",
+        "Don't hurt 'em, Hammer!",
+        "The town is now red",
+        "To the nines!",
+        "Nothing but net!",
+        "Even grumpy cat is impressed"
+    ];
     var phrases = [
         "Shout it from on top of a mountain",
         "Tell everyone and their dogs",

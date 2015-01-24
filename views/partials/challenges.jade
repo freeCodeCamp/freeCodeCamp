@@ -5,4 +5,4 @@ h3
                 a(href="/challenges/#{challenge.challengeNumber}", class="#{ (cc && cc[challenge.challengeNumber] > 0) ? 'strikethrough' : '' }") #{challenge.name}
                 | &nbsp; (#{challenge.time} mins)
 
-a.btn.btn-lg.btn-primary.btn-block(href="/done-with-first-100-hours", class="#{ ((cc && cc[53] === 0) || (!cc)) ? 'disabled' : '' }") I'm done with all the challenges!
+a.btn.btn-lg.btn-primary.btn-block(href="/done-with-first-100-hours", class="#{ ((points && points < 54) || (!points)) ? 'disabled' : '' }") I'm done with all the challenges!

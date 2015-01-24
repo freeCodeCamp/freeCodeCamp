@@ -255,7 +255,7 @@ exports.returnUser = function(req, res, next) {
       });
     } else {
       req.flash('errors', {
-        msg: "We couldn't find a Code Camper with that username."
+        msg: "404: We couldn't find a page with that url. Please double check the link."
       });
       return res.redirect('/');
     }

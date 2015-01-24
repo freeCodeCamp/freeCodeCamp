@@ -228,16 +228,22 @@ app.post('/email-signup', userController.postEmailSignup);
 app.post('/email-signin', userController.postLogin);
 app.get('/nonprofits', contactController.getNonprofitsForm);
 app.post('/nonprofits', contactController.postNonprofitsForm);
+
 app.get(
   '/done-with-first-100-hours',
+  passportConf.isAuthenticated,
   contactController.getDoneWithFirst100Hours
 );
 app.post(
   '/done-with-first-100-hours',
+  passportConf.isAuthenticated,
   contactController.postDoneWithFirst100Hours
 );
-
-// # Protected routes, user must be logged in.
+app.get(
+    '/nonprofit-project-instructions',
+    passportConf.isAuthenticated,
+    resourcesController.nonprofitProjectInstructions
+);
 app.post(
     '/update-progress',
     passportConf.isAuthenticated,
