@@ -167,7 +167,22 @@ module.exports = {
         });
       });
     });
-  }
+  },
+
+    randomPhrase: function() {
+        var phrases = resources.phrases;
+        return phrases[Math.floor(Math.random() * phrases.length)];
+    },
+
+    randomVerb: function() {
+        var verbs = resources.verbs;
+        return verbs[Math.floor(Math.random() * verbs.length)];
+    },
+
+    randomCompliment: function() {
+        var compliments = resources.compliments;
+        return compliments[Math.floor(Math.random() * compliments.length)];
+    }
 };
 
 
