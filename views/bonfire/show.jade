@@ -23,9 +23,23 @@ block content
                 .panel-heading.text-center #{name} (Level #{difficulty} bonfire)
                 .panel.panel-body
                     .well
-                        .text-left.bonfire-instructions
-                            for sentence in description
-                                p.bonfire-instructions!= sentence
+                        .row.text-center
+                            row.text-center
+                                .col-xs-12
+                                    .bonfire-instructions
+                                        = brief
+                                #brief-instructions.col-xs-12
+                                    button#more-info.btn.btn-info
+                                        span.ion-help-circled
+                                        | More information
+                            #long-instructions.row.text-center.hide
+                                .col-xs-12
+                                    .bonfire-instructions
+                                        for sentence in details
+                                            p!= sentence
+                                    button#less-info.btn.btn-info
+                                        span.ion-help-circled
+                                        | Less information
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true)
@@ -70,12 +84,12 @@ block content
                                                     input.form-control(ng-show="false")
                                                     span.input-group-addon @
                                                     input.form-control#completed-with(name="existingUser", placeholder='Otherwise just leave it blank', existing-username='', ng-model="existingUser", autofocus)
-                                            .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine")
+                                            .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
                                                 alert(type='danger')
                                                     span.ion-close-circled
                                                     | Username not found
 
-                                    a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, aria-hidden='true', ng-disabled='completedWithForm.$invalid') Take me to my next challenge
+                                    a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, aria-hidden='true', ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Take me to my next challenge
 
 
                                     - if (points && points > 2)

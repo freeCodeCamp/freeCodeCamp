@@ -77,6 +77,17 @@ $(document).ready(function() {
         l = location.pathname.split('/');
         window.location = '/bonfires/' + (parseInt(l[l.length - 1]) + 1);
     });
+
+    // Bonfire instructions functions
+    $('#more-info').on('click', function() {
+        $('#brief-instructions').hide();
+        $('#long-instructions').show().removeClass('hide');
+
+    });
+    $('#less-info').on('click', function() {
+        $('#brief-instructions').show();
+        $('#long-instructions').hide();
+    });
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
@@ -97,7 +108,6 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
 profileValidation.controller('pairedWithController', ['$scope',
     function($scope) {
         $scope.existingUser = null;
-
     }
 ]);
 
@@ -152,15 +162,16 @@ profileValidation.directive('existingUsername', function($http) {
         require: 'ngModel',
         link: function (scope, element, attrs, ngModel) {
             element.bind("keyup", function (event) {
-                ngModel.$setValidity('exists', false);
+                if (element.val().length > 0) {
+                    ngModel.$setValidity('exists', false);
+                } else {
+                    ngModel.$setPristine();
+                }
                 if (element.val()) {
                     $http.get("/api/checkExistingUsername/" + element.val() + ' ').success(function (data) {
-                        console.log('in existing username function');
                         if (element.val() == scope.existingUsername) {
-                            console.log("doesn't match a username");
                             ngModel.$setValidity('exists', false);
                         } else if (data) {
-                            console.log("matches a username")
                             ngModel.$setValidity('exists', true);
                         }
                     });
