@@ -1,7 +1,11 @@
 var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:bonfires'),
     Bonfire = require('./../models/Bonfire'),
-    User = require('./../models/User');
+    User = require('./../models/User'),
+    resources = require('./resources.json'),
+    phrases = resources.phrases,
+    verbs = resources.verbs,
+    compliments = resources.compliments;
 
 /**
  * Bonfire controller
@@ -24,33 +28,6 @@ exports.index = function(req, res) {
 
 exports.returnBonfire = function(req, res, next) {
     var bonfireNumber = parseInt(req.params.bonfireNumber) || 0;
-    var verbs = [
-        'ACED',
-        'NAILED',
-        'ROCKED',
-        'SCORCHED',
-        'DEVASTATED',
-        'OWNED',
-        'CRUSHED',
-        'CONQUERED',
-        'KILLED',
-        'SHREDDED',
-        'ANNIHILATED',
-        'NUKED'
-    ];
-    var phrases = [
-        "Shout it from on top of a mountain",
-        "Tell everyone and their dogs",
-        "Show them. Show them all!",
-        "Inspire your friends",
-        "Tell the world of your greatness",
-        "Look accomplished on social media",
-        "Share news of your grand endeavor",
-        "Establish your alibi for the past two hours",
-        "Prove to mom that computers aren't just for games"
-    ];
-
-
     // This code is in bad need of refactoring
     var bonfiresToFind = req.user.bonfiresHash;
     var bonfiresArray = _.map(bonfiresToFind, function(value, index) {
@@ -86,6 +63,7 @@ exports.returnBonfire = function(req, res, next) {
             points: req.user ? req.user.points : undefined,
             verb: verbs[Math.floor(Math.random() * verbs.length)],
             phrase: phrases[Math.floor(Math.random() * phrases.length)],
+            compliments: compliments[Math.floor(Math.random() * phrases.length)],
             bonfires: bonfire,
             bonfireHash: bonfire[bonfireNumber]._id
         });
@@ -141,6 +119,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
             points: req.user ? req.user.points : undefined,
             verb: verbs[Math.floor(Math.random() * verbs.length)],
             phrase: phrases[Math.floor(Math.random() * phrases.length)],
+            compliment: compliments[Math.floor(Math.random() * phrases.length)],
             bonfires: bonfire,
             bonfireHash: bonfire[bonfireNumber]._id
         });

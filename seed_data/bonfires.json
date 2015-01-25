@@ -1,13 +1,33 @@
 [
   {
-    "_id" : "aaa48de84e1ecc7c742e1124",
-    "name": "Palindrome Tester",
+    "_id" : "7123c8c441eddfaeb5bdef0d",
+    "name": "Meet Bonfire",
     "difficulty": 1,
     "description": [
-      "Your job is to determine if a provided string is a palindrome.",
-      "The definition of a palindrome can be found at http://en.wikipedia.org/wiki/Palindrome.",
-      "Strings will be passed in  with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
-      "Return true if the string is a palindrome, otherwise false"
+      "Click the button below for further instructions.",
+      "Your goal is to fix the failing test.",
+      "First, run all the tests by clickin \"Run code\" or by pressing Control + Enter",
+      "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire."
+    ],
+    "tests": [
+      "expect(meetBonfire(\"test\")).to.be.a(\"boolean\");",
+      "expect(meetBonfire(\"test\")).to.be.true;"
+    ],
+    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\nreturn false;\n}\n\n",
+    "challengeEntryPoint": "meetBonfire(\"You can do this!\");",
+    "bonfireNumber": 0,
+    "challengeEntryPointNegate" : "meetBonfire(\"You can do this!\");"
+  },
+  {
+    "_id" : "aaa48de84e1ecc7c742e1124",
+    "name": "Check for Palindromes",
+    "difficulty": 1,
+    "description": [
+      "Return 'true' if a given string is a palindrome.",
+      "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation and case.",
+      "You'll need to remove punctuation and turn everything lower case in order to check for palindromes.",
+      "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
+      "Return true if the string is a palindrome. Otherwise, return false."
     ],
     "tests": [
       "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
@@ -28,12 +48,20 @@
     "name": "Validate US Telephone Numbers",
     "difficulty": 3,
     "description": [
+      "Return true if the passed string is a valid US phone number",
       "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
       "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
       "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false."
     ],
     "tests": [
       "expect(telephoneCheck(\"555-555-5555\")).to.be.a(\"boolean\");",
+      "assert.deepEqual(telephoneCheck(\"1 555-555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"1 (555) 555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"5555555555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"555-555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"(555)555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"1(555)555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"1 555 555 5555\"), true);",
       "assert.deepEqual(telephoneCheck(\"555-555-5555\"), true);",
       "assert.deepEqual(telephoneCheck(\"1 456 789 4444\"), true);",
       "assert.deepEqual(telephoneCheck(\"123**&!!asdf#\"), false);",
