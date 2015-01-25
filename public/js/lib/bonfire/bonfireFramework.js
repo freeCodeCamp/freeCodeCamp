@@ -177,18 +177,18 @@ var createTestDisplay = function() {
         var test = userTests[i];
         var testDoc = document.createElement("li");
         $(testDoc)
-            .addClass('list-group-item')
-            .addClass('well img-rounded')
-            .addClass('well-sm')
+            //.addClass('list-group-item')
+            //.addClass('well img-rounded')
+            //.addClass('well-sm')
         if (test.err != null) {
             $(testDoc)
                 .html(test.text + "\n" + test.err)
-                .css("background-color", 'rgba(255,0,0,.2)')
+                .css("text-color", 'rgba(255,0,0,.2)')
                 .prependTo($('#testSuite'));
         } else {
             $(testDoc)
                 .html(test.text)
-                .css('background-color', 'rgba(0,255,0,.2)')
+                .css('text-color', 'rgba(0,255,0,.2)')
                 .appendTo($('#testSuite'));
         }
     };

@@ -18,10 +18,8 @@ html(ng-app='profileValidation', lang='en')
 
   body
     include partials/navbar
-
-    .container
-      include partials/flash
-      block content
+    include partials/flash
+    block content
     include partials/footer
   != js('application')
 script.

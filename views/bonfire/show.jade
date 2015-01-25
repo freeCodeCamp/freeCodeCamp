@@ -18,7 +18,7 @@ block content
 
 
     .row
-        #mainEditorPanel.col-sm-12.col-md-7.col-xs-12
+        #mainEditorPanel.col-xs-12.col-sm-12.col-md-8
             .panel.panel-primary.panel-bonfire
                 .panel-heading.text-center #{name} (Level #{difficulty} bonfire)
                 .panel.panel-body
@@ -43,7 +43,8 @@ block content
                     form.code
                         .form-group.codeMirrorView
                             textarea#codeEditor(autofocus=true)
-        #testCreatePanel.col-sm-12.col-md-5.col-xs-12
+
+        #testCreatePanel.col-xs-12.col-sm-12.col-md-4
             .panel.panel-primary.panel-bonfire
                 .panel-heading.text-center Output
                 .panel.panel-body
@@ -60,47 +61,48 @@ block content
                         var challengeSeed = !{JSON.stringify(challengeSeed)};
                         var challengeEntryPoint = !{JSON.stringify(challengeEntryPoint)};
                         var passedBonfireHash = !{JSON.stringify(bonfireHash)};
-                        console.log(passedBonfireHash);
                     script(src='/js/lib/bonfire/bonfireFramework.js')
 
 
-                #complete-bonfire-dialog.modal(tabindex='-1')
-                    .modal-dialog.animated.zoomIn.fast-animation
-                        .modal-content
-                            .modal-header.challenge-list-header= compliment
-                                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                            .modal-body(ng-controller="pairedWithController")
 
-                                .text-center
-                                    .animated.zoomInDown.delay-half
-                                        span.landing-icon.ion-checkmark-circled.text-primary
-                                - if (cc)
-                                    form.form-horizontal(novalidate='novalidate', name='completedWithForm')
-                                        .form-group.text-center
-                                            .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
-                                                .input-group.twitter-input.animated.fadeIn
-                                                    // extra field to distract password tools like lastpass from injecting css into our username field
-                                                    input.form-control(ng-show="false")
-                                                    span.input-group-addon @
-                                                    input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser", autofocus)
-                                            .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
-                                                alert(type='danger')
-                                                    span.ion-close-circled
-                                                    | Username not found
+    #complete-bonfire-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.zoomIn.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header= compliment
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body(ng-controller="pairedWithController")
 
-                                    a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, aria-hidden='true', ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Take me to my next challenge
+                    .text-center
+                        .animated.zoomInDown.delay-half
+                            span.landing-icon.ion-checkmark-circled.text-primary
+                    - if (cc)
+                        form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                            .form-group.text-center
+                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
+                                    .input-group.twitter-input.animated.fadeIn
+                                        // extra field to distract password tools like lastpass from injecting css into our username field
+                                        input.form-control(ng-show="false")
+                                        span.input-group-addon @
+                                        input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser", autofocus)
+                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
+                                    alert(type='danger')
+                                        span.ion-close-circled
+                                        | Username not found
+
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, aria-hidden='true', ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Take me to my next challenge
 
 
-                                    - if (points && points > 2)
-                                        a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge%20%23#{number}:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{number}&hashtags=learntocode, javascript" target="_blank")
-                                            i.fa.fa-twitter &nbsp;
-                                                = phrase
-                                - else
-                                    a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-                #all-bonfires-dialog.modal(tabindex='-1')
-                    .modal-dialog.animated.fadeInUp.fast-animation
-                        .modal-content
-                            .modal-header.challenge-list-header Bonfires
-                                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                            .modal-body
-                                include ../partials/bonfires
+                        - if (points && points > 2)
+                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge%20%23#{number}:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{number}&hashtags=learntocode, javascript" target="_blank")
+                                i.fa.fa-twitter &nbsp;
+                                    = phrase
+                    - else
+                        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+
+    #all-bonfires-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header Bonfires
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/bonfires
