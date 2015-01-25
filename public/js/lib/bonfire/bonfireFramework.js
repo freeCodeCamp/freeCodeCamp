@@ -175,14 +175,14 @@ var createTestDisplay = function() {
     }
     for (var i = 0; i < userTests.length;i++) {
         var test = userTests[i];
-        var testDoc = document.createElement("li");
+        var testDoc = document.createElement("div");
         if (test.err != null) {
             $(testDoc)
-                .html("<i class='ion-close-circled big-error-icon col-xs-2'></i>" + test.text + "\n" + test.err).addClass('test-output col-xs-10')
+                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-11 test-output wrappable'>" + test.text + "</div><div class='col-xs-11 test-output wrappable'>" + test.err + "</div></div>")
                 .prependTo($('#testSuite'))
         } else {
             $(testDoc)
-                .html("<i class='ion-checkmark-circled big-success-icon col-xs-2'></i><div class='test-vertical-center'>" + test.text + "</div>").addClass('test-output col-xs-10')
+                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-11 test-output test-vertical-center wrappable'>" + test.text + "</div></div>")
                 .appendTo($('#testSuite'));
         }
     };
