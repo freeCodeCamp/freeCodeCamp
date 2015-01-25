@@ -176,19 +176,13 @@ var createTestDisplay = function() {
     for (var i = 0; i < userTests.length;i++) {
         var test = userTests[i];
         var testDoc = document.createElement("li");
-        $(testDoc)
-            //.addClass('list-group-item')
-            //.addClass('well img-rounded')
-            //.addClass('well-sm')
         if (test.err != null) {
             $(testDoc)
-                .html(test.text + "\n" + test.err)
-                .css("text-color", 'rgba(255,0,0,.2)')
-                .prependTo($('#testSuite'));
+                .html("<i class='ion-close-circled big-error-icon col-xs-2'></i>" + test.text + "\n" + test.err).addClass('test-output col-xs-10')
+                .prependTo($('#testSuite'))
         } else {
             $(testDoc)
-                .html(test.text)
-                .css('text-color', 'rgba(0,255,0,.2)')
+                .html("<i class='ion-checkmark-circled big-success-icon col-xs-2'></i><div class='test-vertical-center'>" + test.text + "</div>").addClass('test-output col-xs-10')
                 .appendTo($('#testSuite'));
         }
     };
@@ -208,7 +202,7 @@ var runTests = function(err, data) {
     pushed = false;
     $('#testSuite').children().remove();
     if (err && userTests.length > 0) {
-        userTests= [{text:"Program Execution Failure", err: "NouserTestswere run."}];
+        userTests= [{text:"Program Execution Failure", err: "No user tests were run."}];
         createTestDisplay();
     } else if (userTests) {
 

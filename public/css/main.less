@@ -2,8 +2,9 @@
 @import "lib/bootstrap-social/bootstrap-social";
 @import "lib/ionicons/ionicons";
 @import "lib/animate.min.less";
+@import "lib/bootstrap/variables";
 
-@import url(http://fonts.googleapis.com/css?family=Lato:300);
+//fonts.googleapis.com/css?family=Lato:300);
 @import url(http://fonts.googleapis.com/css?family=Lato:400);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata);
 
@@ -545,6 +546,21 @@ form.code span {
   height: auto;
 }
 
+.big-error-icon {
+  font-size: 32px;
+  color: @brand-danger;
+}
+
+.big-success-icon {
+  font-size: 32px;
+  color: @brand-primary;
+}
+
+.test-output {
+  font-size: 14px;
+  font-family: "Ubuntu Mono";
+}
+
 #mainEditorPanel .panel-body {
   padding-bottom: 0px;
 }
@@ -577,6 +593,10 @@ div.CodeMirror-scroll {
 
 .bonfire-instructions {
   margin-bottom: 5px;
+}
+
+.test-vertical-center {
+  margin: 8px;
 }
 
 //uncomment this to see the dimensions of all elements outlined in red
