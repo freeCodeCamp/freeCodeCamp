@@ -77,6 +77,17 @@ $(document).ready(function() {
         l = location.pathname.split('/');
         window.location = '/bonfires/' + (parseInt(l[l.length - 1]) + 1);
     });
+
+    // Bonfire instructions functions
+    $('#more-info').on('click', function() {
+        $('#brief-instructions').hide();
+        $('#long-instructions').show().removeClass('hide');
+
+    });
+    $('#less-info').on('click', function() {
+        $('#brief-instructions').show();
+        $('#long-instructions').hide();
+    });
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
