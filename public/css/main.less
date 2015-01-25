@@ -30,8 +30,8 @@ html {
 }
 
 body {
-  padding-top: 80px;
-  margin-bottom: 60px;
+  padding-top: 50px;
+//  margin-bottom: 60px;
 }
 
 h1, h2 {
@@ -253,6 +253,10 @@ ul {
 .navbar {
   white-space: nowrap;
   border: none;
+  @media (min-width: 767px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .panel-body {
@@ -571,7 +575,7 @@ thead {
  */
 
 form.code span {
-  font-size: 14px;
+  font-size: 18px;
   font-family: "Ubuntu Mono";
   padding-bottom: 0px;
   margin-bottom: 0px;
@@ -595,6 +599,10 @@ form.code span {
 
 #mainEditorPanel .panel-body {
   padding-bottom: 0px;
+}
+
+.panel-bonfire {
+  height: 100%
 }
 
 div.CodeMirror-scroll {

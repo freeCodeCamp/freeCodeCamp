@@ -17,52 +17,87 @@ block content
     script(src='/js/lib/bonfire/bonfireInit.js')
 
 
-    .row
+    .panel.panel-primary.panel-bonfire
+        .panel.panel-body
+            .row
+                .col-xs-12.col-sm-12.col-md-3
+                    #testCreatePanel
+                            h2.text-center #{name}
+                                Difficulty: &nbsp;
+                                if (difficulty == "0")
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                if (difficulty == "1")
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                if (difficulty == "2")
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                if (difficulty == "3")
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame-outline
+                                    i.ion-ios-flame-outline
+                                if (difficulty == "4")
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame-outline
+                                if (difficulty == "5")
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                                    i.ion-ios-flame
+                            .well
+                                .row.text-center
+                                    row.text-center
+                                        .col-xs-12
+                                            .bonfire-instructions
+                                                = brief
+                                        #brief-instructions.col-xs-12
+                                            button#more-info.btn.btn-info
+                                                span.ion-help-circled
+                                                | More information
+                                    #long-instructions.row.text-center.hide
+                                        .col-xs-12
+                                            .bonfire-instructions
+                                                for sentence in details
+                                                    p!= sentence
+                                            button#less-info.btn.btn-info
+                                                span.ion-help-circled
+                                                | Less information
+                            #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+                            br
+                            form.code
+                                .form-group.codeMirrorView
+                                    textarea#codeOutput
+                            br
+                            #testSuite
+                            br
+                            script(type="text/javascript").
+                                var tests = !{JSON.stringify(tests)};
+                                var challengeSeed = !{JSON.stringify(challengeSeed)};
+                                var challengeEntryPoint = !{JSON.stringify(challengeEntryPoint)};
+                                var passedBonfireHash = !{JSON.stringify(bonfireHash)};
+                .col-xs-12.col-sm-12.col-md-9
+                    #mainEditorPanel
+                        form.code
+                            .form-group.codeMirrorView
+                                textarea#codeEditor(autofocus=true)
+                        script(src='/js/lib/bonfire/bonfireFramework.js')
 
-        #testCreatePanel.col-xs-12.col-sm-12.col-md-4
-            .panel.panel-primary.panel-bonfire
-                .panel-heading.text-center Output
-                .panel.panel-body
-                    .well
-                        .row.text-center
-                            row.text-center
-                                .col-xs-12
-                                    .bonfire-instructions
-                                        = brief
-                                #brief-instructions.col-xs-12
-                                    button#more-info.btn.btn-info
-                                        span.ion-help-circled
-                                        | More information
-                            #long-instructions.row.text-center.hide
-                                .col-xs-12
-                                    .bonfire-instructions
-                                        for sentence in details
-                                            p!= sentence
-                                    button#less-info.btn.btn-info
-                                        span.ion-help-circled
-                                        | Less information
-                    #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                    br
-                    form.code
-                        .form-group.codeMirrorView
-                            textarea#codeOutput
-                    br
-                    #testSuite
-                    br
-                    script(type="text/javascript").
-                        var tests = !{JSON.stringify(tests)};
-                        var challengeSeed = !{JSON.stringify(challengeSeed)};
-                        var challengeEntryPoint = !{JSON.stringify(challengeEntryPoint)};
-                        var passedBonfireHash = !{JSON.stringify(bonfireHash)};
-
-        #mainEditorPanel.col-xs-12.col-sm-12.col-md-8
-            .panel.panel-primary.panel-bonfire
-                .panel-heading.text-center #{name} (Level #{difficulty} bonfire)
-                .panel.panel-body
-                    form.code
-                        .form-group.codeMirrorView
-                            textarea#codeEditor(autofocus=true)
-                    script(src='/js/lib/bonfire/bonfireFramework.js')
 
 
     #complete-bonfire-dialog.modal(tabindex='-1')

@@ -47,8 +47,8 @@ var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), 
     lineWrapping: true
 });
 codeOutput.setValue('/**\n' +
-' * Your output will go here. Console.log() -type statements\n' +
-' * will appear in your browser\'s javascript console.\n' +
+' * Your output will go here.\n' + ' * Console.log() -type statements\n' +
+' * will appear in your browser\'s\n' + ' * DevTools JavaScript console.\n' +
 ' */');
 codeOutput.setSize("100%", "100%");
 var info = editor.getScrollInfo();
@@ -178,11 +178,11 @@ var createTestDisplay = function() {
         var testDoc = document.createElement("div");
         if (test.err != null) {
             $(testDoc)
-                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-11 test-output wrappable'>" + test.text + "</div><div class='col-xs-11 test-output wrappable'>" + test.err + "</div></div>")
+                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-11 test-output wrappable'>" + test.text + "</div><div class='col-xs-11 test-output wrappable'>" + test.err + "</div></div><div class='ten-pixel-break'/>")
                 .prependTo($('#testSuite'))
         } else {
             $(testDoc)
-                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-11 test-output test-vertical-center wrappable'>" + test.text + "</div></div>")
+                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-11 test-output test-vertical-center wrappable'>" + test.text + "</div></div><div class='ten-pixel-break'/>")
                 .appendTo($('#testSuite'));
         }
     };
