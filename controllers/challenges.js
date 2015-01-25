@@ -5,10 +5,7 @@
 var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:challenges'),
     Challenge = require('./../models/Challenge'),
-    resources = require('./resources.json'),
-    phrases = resources.phrases,
-    verbs = resources.verbs,
-    compliments = resources.compliments;
+    resources = require('./resources');
 
 var highestChallengeNumber = 53;
 
@@ -29,9 +26,9 @@ exports.returnChallenge = function(req, res, next) {
             number: challengeNumber,
             cc: req.user ? req.user.challengesHash : undefined,
             points: req.user ? req.user.points : undefined,
-            verb: verbs[Math.floor(Math.random() * verbs.length)],
-            compliment: compliments[Math.floor(Math.random() * compliments.length)],
-            phrase: phrases[Math.floor(Math.random() * phrases.length)],
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
             challenges: c
         });
     });
