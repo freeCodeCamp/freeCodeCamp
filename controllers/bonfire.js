@@ -40,9 +40,12 @@ exports.index = function(req, res) {
 };
 
 exports.returnBonfire = function(req, res, next) {
+    if (!req.user) {
+        req.user = new User();
+    }
     var bonfireNumber = parseInt(req.params.bonfireNumber) || 0;
     // This code is in bad need of refactoring
-    var bonfiresToFind = req.user.bonfiresHash;
+    var bonfiresToFind = req.user ? req.user.bonfiresHash : [];
     var bonfiresArray = _.map(bonfiresToFind, function(value, index) {
         return [index, value];
     });

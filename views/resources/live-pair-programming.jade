@@ -1,14 +1,12 @@
 extends ../layout-wide
 block content
     include ../partials/navbar-wide
-    .panel.panel-primary
-        .panel-heading.landing-panel-heading.text-center Live Pair Programming
+    .panel
         .panel-body
             .landing-panel-body.text-center
+                h1 Live Pair Programming
                 h2 We live pair program every Tuesday from 9 pm to 10 pm EST (Eastern Standard Time).
                 h2 Our next session will be January 27th, 2015 at 9 p.m. EST!
-                h2 Join the discussion in our &nbsp;
-                    a(href="chat.freecodecamp.com", target="_blank") FreeCodeCamp chat room.
                 h2 Watch the live stream below or on our &nbsp;
                     a(href="http://twitch.tv/freecodecamp", target='_blank') Twitch.tv channel
                     | .
@@ -24,11 +22,7 @@ block content
                             .embed-responsive.embed-responsive-twitch-chat
                                 iframe(src='http://www.twitch.tv/freecodecamp/chat?popout=', frameborder='0', scrolling='no')
 
-    br
-    .panel.panel-primary
-        .panel-heading.landing-panel-heading.text-center Previous Live Pair Programming Sessions
-        .panel-body
-            .landing-panel-body.text-center
+                h1 Previous Live Pair Programming Sessions
                 .col-xs-12
                     .embed-responsive.embed-responsive-16by9.big-break
                         iframe.embed-responsive-item(src='//www.youtube.com/embed/_BErpDdmBOw')

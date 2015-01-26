@@ -208,16 +208,26 @@ app.get('/deploy-a-website', resourcesController.deployAWebsite);
 app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
 app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
-app.get('/stats', resourcesController.stats);
+app.get('/stats', function(req, res) {
+    res.redirect(301, '/learn-to-code');
+});
 app.get(
     '/pair-program-with-team-viewer',
     resourcesController.pairProgramWithTeamViewer
 );
 app.get('/learn-to-code', resourcesController.about);
-app.get('/about', resourcesController.about);
-app.get('/login', userController.getLogin);
-app.post('/login', userController.postLogin);
-app.get('/logout', userController.logout);
+app.get('/about', function(req, res) {
+    res.redirect(301, '/learn-to-code');
+});
+app.get('/signin', userController.getSignin);
+app.get('/login', function(req, res) {
+    res.redirect(301, '/signin');
+});
+app.post('/signin', userController.postSignin);
+app.get('/signout', userController.signout);
+app.get('/logout', function(req, res) {
+    res.redirect(301, '/signout');
+});
 app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
 app.get('/reset/:token', userController.getReset);
@@ -225,7 +235,7 @@ app.post('/reset/:token', userController.postReset);
 app.get('/email-signup', userController.getEmailSignup);
 app.get('/email-signin', userController.getEmailSignin);
 app.post('/email-signup', userController.postEmailSignup);
-app.post('/email-signin', userController.postLogin);
+app.post('/email-signin', userController.postSignin);
 app.get('/nonprofits', contactController.getNonprofitsForm);
 app.post('/nonprofits', contactController.postNonprofitsForm);
 

@@ -142,7 +142,7 @@ module.exports = {
                   debug('User err: ', err);
                   next(err);
                 }
-                res.render('resources/about', {
+                res.render('resources/learn-to-code', {
                   title: 'About Free Code Camp and Our Team of Volunteers',
                   daysRunning: daysRunning,
                   nonprofitProjects: nonprofitProjects,
