@@ -108,7 +108,9 @@ function bonfireExecute() {
     userJavaScript = removeComments(userJavaScript);
     userJavaScript = scrapeTests(userJavaScript);
     // simple fix in case the user forgets to invoke their function
-    userJavaScript = challengeEntryPoint + ' ' + userJavaScript;
+    if (challengeEntryPoint) {
+        userJavaScript = challengeEntryPoint + ' ' + userJavaScript;
+    }
     submit(userJavaScript, function(cls, message) {
         if (cls) {
             codeOutput.setValue(message.error);
