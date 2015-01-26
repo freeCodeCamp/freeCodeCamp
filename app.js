@@ -263,6 +263,8 @@ app.get(
 app.get('/bonfires', bonfireController.returnBonfire);
 app.get('/bonfire/generator', bonfireController.returnGenerator);
 app.post('/bonfire/generator', bonfireController.generateChallenge);
+app.get('/bonfire/public-generator', bonfireController.publicGenerator);
+app.post('/bonfire/public-generator', bonfireController.testBonfire)
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);

@@ -216,7 +216,8 @@ var runTests = function(err, data) {
         userTests.forEach(function(test, ix, arr){
             try {
                 if (test) {
-                    var output = eval(reassembleTest(test, data));
+                    var test = JSON.stringify(reassembleTest(test, data));
+                    var output = eval(test);
                 }
             } catch(error) {
                 allTestsPassed = false;
