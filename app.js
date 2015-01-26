@@ -260,6 +260,9 @@ app.get(
     '/bonfires/:bonfireNumber',
     bonfireController.returnIndividualBonfire
 );
+app.get('/bonfire', function(req, res) {
+    res.redirect(301, '/playground');
+});
 app.get('/bonfires', bonfireController.returnBonfire);
 app.get('/bonfire/generator', bonfireController.returnGenerator);
 app.post('/bonfire/generator', bonfireController.generateChallenge);

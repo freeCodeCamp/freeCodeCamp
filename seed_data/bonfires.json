@@ -14,7 +14,7 @@
       "expect(meetBonfire(\"test\")).to.be.true;"
     ],
     "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\nreturn false;\n}\n\n",
-    "challengeEntryPoint": "meetBonfire(\"You can do this!\");",
+    "challengeEntryPoint": "meetBonfire(\"You can do this!\");"
   },
   {
     "_id" : "aaa48de84e1ecc7c742e1124",
@@ -37,7 +37,7 @@
       "assert.deepEqual(palindrome(\"nope\"), false);"
     ],
     "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n",
-    "challengeEntryPoint": "palindrome(\"eye\");",
+    "challengeEntryPoint": "palindrome(\"eye\");"
   },
   {
     "_id" : "ff0395860f5d3034dc0bfc94",
@@ -74,7 +74,7 @@
       "assert.deepEqual(telephoneCheck(\"2(757)622-7382\"), false);"
     ],
     "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n",
-    "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");",
+    "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");"
   },
   {
     "_id": "202eed8fc186c8434cb6d618",
@@ -92,7 +92,7 @@
       "Your result must be a string."
     ],
     "challengeEntryPoint": "reverseString('hello');",
-    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}",
+    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}"
   },
   {
     "_id": "302f7aae1aa3152a5b413bca",

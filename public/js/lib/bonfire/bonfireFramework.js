@@ -123,11 +123,6 @@ function bonfireExecute() {
     });
 }
 
-var replaceQuotesInTests = function() {
-    userTests.forEach(function(elt, ix, arr) {
-        arr[ix].text = arr[ix].text.replace(/\"/g,'\'');
-    });
-};
 
 var userTests;
 var testSalt = Math.random();
@@ -145,9 +140,7 @@ var scrapeTests = function(userJavaScript) {
     var match = regex.exec(userJavaScript);
     while (match != null) {
         var replacement = '//' + counter + testSalt;
-        userJavaScript = userJavaScript.substring(0, match.index)
-        + replacement
-        + userJavaScript.substring(match.index + match[0].length);
+        userJavaScript = userJavaScript.substring(0, match.index) + replacement + userJavaScript.substring(match.index + match[0].length);
 
         if (!userTests) {
             userTests= [];
@@ -157,9 +150,6 @@ var scrapeTests = function(userJavaScript) {
         match = regex.exec(userJavaScript);
     }
 
-    if (userTests)  {
-        replaceQuotesInTests();
-    }
     return userJavaScript;
 };
 
@@ -170,7 +160,6 @@ function removeComments(userJavaScript) {
 
 function removeLogs(userJavaScript) {
     return userJavaScript.replace(/(console\.[\w]+\s*\(.*\;)/g, '');
-    return userJavaScript;
 }
 
 var pushed = false;
@@ -210,14 +199,13 @@ var runTests = function(err, data) {
         userTests= [{text:"Program Execution Failure", err: "No user tests were run."}];
         createTestDisplay();
     } else if (userTests) {
-
         userTests.push(false);
         pushed = true;
         userTests.forEach(function(test, ix, arr){
             try {
                 if (test) {
-                    var test = JSON.stringify(reassembleTest(test, data));
-                    var output = eval(test);
+                    console.log();
+                    var output = eval(reassembleTest(test, data));
                 }
             } catch(error) {
                 allTestsPassed = false;

@@ -12,7 +12,23 @@ var highestBonfireNumber = 2;
 
 exports.index = function(req, res) {
     res.render('bonfire/bonfire.jade', {
-        title: 'Learn to code with Bonfire'
+        title: 'Learn to code with Bonfire',
+        completedWith: null,
+        title: null,
+        difficulty: null,
+        brief: null,
+        details: null,
+        tests:  null,
+        challengeSeed:  null,
+        challengeEntryPoint: null,
+        cc: req.user ? req.user.bonfiresHash : undefined,
+        points: req.user ? req.user.points : undefined,
+        verb: resources.randomVerb(),
+        phrase: resources.randomPhrase(),
+        compliment: resources.randomCompliment(),
+        bonfires: [],
+        bonfireHash: "test"
+
     });
 
     Bonfire.find({}, null, { sort: { difficulty: 1 } }, function(err, c) {
