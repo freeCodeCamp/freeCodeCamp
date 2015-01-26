@@ -29,10 +29,6 @@ block content
                         .col-sm-10
                             textarea#description.form-control(name="description", placeholder="Separate sentences by exactly one space only. Do not add in line breaks.")
                     .form-group
-                        label.col-sm-2.control-label.wrappable(for='tests') tests:
-                        .col-sm-10
-                            textarea#tests.form-control(name="tests", rows=5, placeholder="Separate tests by a newline.")
-                    .form-group
                         label.col-sm-2.control-label.wrappable(for='challengeSeed') challengeSeed:
                         .col-sm-10
                             textarea#challengeSeed.form-control(name="challengeSeed", rows=5)
@@ -40,6 +36,10 @@ block content
                         label.col-sm-2.control-label.wrappable(for='challengeEntryPoint') challenge entrypoint:
                         .col-sm-10
                             textarea#name.form-control(name="challengeEntryPoint", rows=1, type='text', placeholder="palindrome(\"eye\");")
+                    .form-group
+                        label.col-sm-2.control-label.wrappable(for='tests') tests:
+                        .col-sm-10
+                            textarea#tests.form-control(name="tests", rows=5, placeholder="Separate tests by a newline.")
                     .form-group
                         .col-sm-offset-2.col-sm-10
                             input.btn.btn-default(type='submit', value="submit")

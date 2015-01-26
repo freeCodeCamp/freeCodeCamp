@@ -78,6 +78,75 @@
     "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n",
     "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");",
     "bonfireNumber": 2
-  }
+  },
+  {
+    "name": "Reverse a String",
+    "tests": [
+      "expect(reverseString('hello')).to.be.a('String');",
+      "expect(reverseString('hello')).to.equal('olleh');",
+      "expect(reverseString('Howdy')).to.equal('ydwoH');",
+      "expect(reverseString('Greetings from Earth')).to.equal('htraE morf sgniteerG');"
+    ],
+    "difficulty": "1",
+    "description": [
+      "Reverse the provided string. ",
+      "You may need to turn the string into an array before you can reverse it.",
+      "Your result must be a string."
+    ],
+    "challengeEntryPoint": "reverseString('hello');",
+    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}",
+    "bonfireNumber": 0,
+    "_id": "202eed8fc186c8434cb6d618"
+  },
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ]
 
