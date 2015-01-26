@@ -16,11 +16,10 @@ html(ng-app='profileValidation', lang='en')
     meta(name='csrf-token', content=_csrf)
     != css('main')
 
-  body.top-and-bottom-margins
-    include partials/navbar-narrow
-    .container
-      include partials/flash
-      block content
+  body.no-top-and-bottom-margins
+    include partials/navbar-wide
+    include partials/flash
+    block content
     include partials/footer
     != js('application')
 script.
