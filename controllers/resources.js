@@ -4,6 +4,7 @@ var User = require('../models/User'),
     steps = resources.steps,
     secrets = require('./../config/secrets'),
     Challenge = require('./../models/Challenge'),
+    bonfires = require('../seed_data/bonfires.json');
     Client = require('node-rest-client').Client,
     client = new Client();
 
@@ -182,6 +183,10 @@ module.exports = {
     randomCompliment: function() {
         var compliments = resources.compliments;
         return compliments[Math.floor(Math.random() * compliments.length)];
+    },
+
+    numberOfBonfires: function() {
+        return bonfires.length - 1;
     }
 };
 

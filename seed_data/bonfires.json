@@ -1,6 +1,6 @@
 [
   {
-    "_id" : "7123c8c441eddfaeb5bdef0d",
+    "_id" : "ad7123c8c441eddfaeb5bdef",
     "name": "Meet Bonfire",
     "difficulty": "0",
     "description": [
@@ -40,7 +40,7 @@
     "challengeEntryPoint": "palindrome(\"eye\");"
   },
   {
-    "_id" : "ff0395860f5d3034dc0bfc94",
+    "_id" : "aff0395860f5d3034dc0bfc9",
     "name": "Validate US Telephone Numbers",
     "difficulty": "3",
     "description": [
@@ -77,7 +77,7 @@
     "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");"
   },
   {
-    "_id": "202eed8fc186c8434cb6d618",
+    "_id": "a202eed8fc186c8434cb6d61",
     "name": "Reverse a String",
     "difficulty": "1",
     "tests": [
@@ -95,7 +95,7 @@
     "challengeSeed": "function reverseString(str) {\n  return str;\r\n}"
   },
   {
-    "_id": "302f7aae1aa3152a5b413bca",
+    "_id": "a302f7aae1aa3152a5b413bc",
     "name": "Factorialize a Number",
     "tests": [
       "expect(factorialize(5)).to.be.a(\"Number\");",
@@ -132,7 +132,7 @@
     ]
   },
   {
-    "_id": "3566b1109230028080c9345d",
+    "_id": "a3566b1109230028080c9345",
     "name": "Sum All Numbers in a Range",
     "difficulty": "2",
     "description": [
@@ -150,7 +150,7 @@
     ]
   },
   {
-    "_id": "fb6137d4e35944e21037b769",
+    "_id": "ab6137d4e35944e21037b769",
     "name": "Title Case a Sentence",
     "difficulty": "1",
     "description": [

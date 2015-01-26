@@ -354,6 +354,60 @@ var userSchema = new mongoose.Schema({
     resetPasswordToken: String,
     resetPasswordExpires: Date,
     bonfiresHash: {
+        ab6137d4e35944e21037b769: {
+            hash: String,
+            completedWith: String,
+            completedDate: {
+                type: Number,
+                default: 0
+            },
+            solution: String
+        },
+        a3566b1109230028080c9345: {
+            hash: String,
+            completedWith: String,
+            completedDate: {
+                type: Number,
+                default: 0
+            },
+            solution: String
+        },
+        a26cbbe9ad8655a977e1ceb5: {
+            hash: String,
+            completedWith: String,
+            completedDate: {
+                type: Number,
+                default: 0
+            },
+            solution: String
+        },
+        a302f7aae1aa3152a5b413bc: {
+            hash: String,
+            completedWith: String,
+            completedDate: {
+                type: Number,
+                default: 0
+            },
+            solution: String
+        },
+        a202eed8fc186c8434cb6d61: {
+            hash: String,
+            completedWith: String,
+            completedDate: {
+                type: Number,
+                default: 0
+            },
+            solution: String
+        },
+        aff0395860f5d3034dc0bfc9: {
+            hash: String,
+            completedWith: String,
+            completedDate: {
+                type: Number,
+                default: 0
+            },
+            solution: String
+        },
         aaa48de84e1ecc7c742e1124: {
             hash: String,
             completedWith: String,
@@ -363,7 +417,7 @@ var userSchema = new mongoose.Schema({
             },
             solution: String
         },
-        ff0395860f5d3034dc0bfc94: {
+        ad7123c8c441eddfaeb5bdef: {
             hash: String,
             completedWith: String,
             completedDate: {

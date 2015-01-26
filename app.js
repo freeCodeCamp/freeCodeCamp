@@ -267,13 +267,13 @@ app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
 app.get('/playground', bonfireController.index);
 app.get(
-    '/bonfires/:bonfireNumber',
+    '/bonfires/:bonfireName',
     bonfireController.returnIndividualBonfire
 );
 app.get('/bonfire', function(req, res) {
     res.redirect(301, '/playground');
 });
-app.get('/bonfires', bonfireController.returnBonfire);
+app.get('/bonfires', bonfireController.returnNextBonfire);
 app.get('/bonfire/generator', bonfireController.returnGenerator);
 app.post('/bonfire/generator', bonfireController.generateChallenge);
 app.get('/bonfire/public-generator', bonfireController.publicGenerator);
@@ -311,8 +311,6 @@ app.post('/completed-challenge', function (req, res) {
 });
 
 app.post('/completed-bonfire/', function (req, res) {
-    debug(req.body, 'In post method'
-    ); // TODO: remove debug statement
     req.user.bonfiresHash[parseInt(req.body.bonfireNumber)] =
         Math.round(+new Date() / 1000);
     var timestamp = req.user.bonfiresHash;
@@ -364,6 +362,7 @@ app.post('/completed-bonfire/', function (req, res) {
         };
         req.user.save();
     }
+    bonfireController.returnNextBonfire(req, res);
 });
 
 /**

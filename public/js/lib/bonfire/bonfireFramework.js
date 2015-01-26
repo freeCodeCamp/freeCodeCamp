@@ -25,8 +25,7 @@ editor.setSize("100%", "auto");
 // Default value for editor if one isn't provided in (i.e. a challenge)
 var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
     'Please feel free to use Bonfire as an in-browser playground and linting tool.\n' +
-    'Note that you can also write tests using Chai.js\n' +
-    ' by using the keywords assert and expect */\n\n' +
+    'Note that you can also write tests using Chai.js by using the keywords assert and expect */\n\n' +
     'function test() {\n' +
     '  assert(2 !== 3, "2 is not equal to 3");\n' +
     '  return [1,2,3].map(function(elem) {\n' +
@@ -37,8 +36,7 @@ var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByt
     'assert.deepEqual(test(), [1,4,9]);\n\n' +
     'var foo = test();\n' +
     'foo.should.be.a("array");\n\n' +
-    'test();\n' +
-    'function test(str) {\r\n  return str;\r\n}';
+    'test();\n';
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,
