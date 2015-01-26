@@ -7,7 +7,6 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     lint: true,
     matchBrackets: true,
     autoCloseBrackets: true,
-    cursorHeight: 1,
     scrollbarStyle: 'null',
     lineWrapping: true,
     gutters: ["CodeMirror-lint-markers"],
@@ -20,6 +19,7 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     }
 });
 var editor = myCodeMirror;
+editor.setSize("100%", "auto");
 
 
 // Default value for editor if one isn't provided in (i.e. a challenge)
@@ -37,7 +37,8 @@ var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByt
     'assert.deepEqual(test(), [1,4,9]);\n\n' +
     'var foo = test();\n' +
     'foo.should.be.a("array");\n\n' +
-    'test();';
+    'test();\n' +
+    'function test(str) {\r\n  return str;\r\n}';
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,
@@ -106,6 +107,8 @@ function bonfireExecute() {
     var userJavaScript = myCodeMirror.getValue();
     userJavaScript = removeComments(userJavaScript);
     userJavaScript = scrapeTests(userJavaScript);
+    // simple fix in case the user forgets to invoke their function
+    userJavaScript = challengeEntryPoint + ' ' + userJavaScript;
     submit(userJavaScript, function(cls, message) {
         if (cls) {
             codeOutput.setValue(message.error);

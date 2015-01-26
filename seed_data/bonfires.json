@@ -15,8 +15,7 @@
     ],
     "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\nreturn false;\n}\n\n",
     "challengeEntryPoint": "meetBonfire(\"You can do this!\");",
-    "bonfireNumber": 0,
-    "challengeEntryPointNegate" : "meetBonfire(\"You can do this!\");"
+    "bonfireNumber": 0
   },
   {
     "_id" : "aaa48de84e1ecc7c742e1124",
@@ -40,8 +39,7 @@
     ],
     "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n",
     "challengeEntryPoint": "palindrome(\"eye\");",
-    "bonfireNumber": 1,
-    "challengeEntryPointNegate" : "palindrome\\([^str].*\\;"
+    "bonfireNumber": 1
   },
   {
     "_id" : "ff0395860f5d3034dc0bfc94",
@@ -79,8 +77,7 @@
     ],
     "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n",
     "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");",
-    "bonfireNumber": 2,
-    "challengeEntryPointNegate" : "palindrome\\([^str].*\\;"
+    "bonfireNumber": 2
   }
 ]
 

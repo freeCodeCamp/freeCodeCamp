@@ -96,3 +96,95 @@ exports.returnIndividualBonfire = function(req, res, next) {
         });
     });
 };
+
+/**
+ * Bonfire generator
+ */
+exports.returnGenerator = function(req, res) {
+    res.render('bonfire/generator', {
+        title: null,
+        name: null,
+        difficulty: null,
+        brief: null,
+        details: null,
+        tests: null,
+        challengeSeed: null,
+        challengeEntryPoint: null,
+        bonfireHash: randomString()
+    });
+};
+
+/**
+ * Post for bonfire generation
+ */
+
+function randomString() {
+    var chars = "0123456789abcdef";
+    var string_length = 24;
+    var randomstring = '';
+    for (var i=0; i<string_length; i++) {
+        var rnum = Math.floor(Math.random() * chars.length);
+        randomstring += chars.substring(rnum,rnum+1);
+    }
+    return randomstring;
+}
+
+/**
+ *
+ */
+
+exports.testBonfire = function(req, res) {
+    // TODO: Add stuff here to parse posted variables and feed them back to bonfire playground
+    var candidateTitle = req.body.bonfireInfo.title;
+    var candidateName = req.body.bonfireInfo.name;
+    var candidateDifficulty = req.body.bonfireInfo.difficulty;
+    var candidateBrief = req.body.bonfireInfo.brief;
+    var candidateDetails = req.body.bonfireInfo.details;
+    var candidateTests = req.body.bonfireInfo.tests;
+    var candidateChallengeSeed = req.body.bonfireInfo.challengeSeed;
+    var candidateChallengeEntryPoint = req.body.bonfireInfo.challengeSeed;
+    res.render('bonfire/bonfire', {
+        title: candidateTitle,
+        name: candidateName,
+        difficulty: candidateDifficulty,
+        brief: candidateBrief,
+        details: candidateDetails,
+        tests: candidateTests,
+        challengeSeed: candidateChallengeSeed,
+        challengeEntryPoint: candidateChallengeEntryPoint,
+        bonfireHash: bonfire[bonfireNumber]._id
+    });
+};
+
+function getRidOfEmpties(elem) {
+    if (elem.length > 0) {
+        return elem;
+    }
+}
+
+exports.generateChallenge = function(req, res) {
+    var bonfireName = req.body.name,
+        bonfireTests = req.body.tests,
+        bonfireDifficulty = req.body.difficulty,
+        bonfireDescription = req.body.description,
+        bonfireEntryPoint = req.body.challengeEntryPoint,
+        bonfireChallengeSeed = req.body.challengeSeed;
+    bonfireTests = bonfireTests.split('\r\n');
+    bonfireDescription = bonfireDescription.split('\r\n');
+    bonfireTests.filter(getRidOfEmpties);
+    bonfireDescription.filter(getRidOfEmpties);
+    bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
+
+
+    var response = {
+        name: bonfireName,
+        tests: bonfireTests,
+        difficulty: bonfireDifficulty,
+        description: bonfireDescription,
+        challengeEntryPoint: bonfireEntryPoint,
+        challengeSeed: bonfireChallengeSeed,
+        bonfireNumber: 0,
+        _id: randomString()
+    };
+    res.send(response);
+}
