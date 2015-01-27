@@ -75,7 +75,7 @@ $(document).ready(function() {
         var didCompleteWith = $('#completed-with').val() || null;
 
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
-        window.location('/bonfires');
+        window.location = '/bonfires';
 
     });
 
