@@ -326,6 +326,17 @@ app.post('/completed-bonfire/', function (req, res) {
             if (err) {
                 return err;
             } else {
+                var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
+
+                if (index > -1) {
+                    req.user.uncompletedBonfires.splice(index,1)
+                }
+
+                index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
+                if (index > -1) {
+                    pairedWith.uncompletedBonfires.splice(index,1)
+                }
+
                 pairedWith = pairedWith.pop();
                 pairedWith.completedBonfires.push({
                     _id: bonfireHash,
@@ -341,17 +352,8 @@ app.post('/completed-bonfire/', function (req, res) {
                     solution: isSolution
                 })
 
-                var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
 
-                if (index > -1) {
-                    req.user.uncompletedBonfires.splice(index,1)
-                }
-
-                index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
-                if (index > -1) {
-                    req.user.uncompletedBonfires.splice(index,1)
-                }
-
+                debug('saving user with a pair');
                 req.user.save();
                 pairedWith.save();
 
@@ -370,6 +372,7 @@ app.post('/completed-bonfire/', function (req, res) {
         if (index > -1) {
             req.user.uncompletedBonfires.splice(index,1)
         }
+        debug("Saving user without a pair");
         req.user.save();
     }
 });

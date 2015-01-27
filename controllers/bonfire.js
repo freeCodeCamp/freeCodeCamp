@@ -30,25 +30,19 @@ exports.index = function(req, res) {
         bonfireHash: 'test'
 
     });
-
-    Bonfire.find({}, null, { sort: { difficulty: 1 } }, function(err, c) {
-        if (err) {
-            debug('bonfire err: ', err);
-            next(err);
-        }
-    });
 };
 
 exports.returnNextBonfire = function(req, res, next) {
-    var bonfireNumber;
+
     if (!req.user) {
         req.user = new User();
-        //return res.redirect('/bonfires/meet-bonfire');
     }
     var currentTime = parseInt(+new Date() / 1000)
     if (currentTime - req.user.lastContentSync > 86400) {
         req.user.lastContentSync = currentTime;
-        var completed = req.user.completedBonfires;
+        var completed = req.user.completedBonfires.map(function(elem) {
+            return elem._id;
+        });
         // TODO : remove debug statement
         debug(req.user, 'this is the user');
         req.user.uncompletedBonfires = resources.allBonfireIds().filter(function(elem) {
@@ -57,6 +51,8 @@ exports.returnNextBonfire = function(req, res, next) {
            }
         });
     }
+    debug('These are completed bonfires', completed);
+    debug('These are uncompleted bonfires', req.user.uncompletedBonfires);
 
     var uncompletedBonfires = req.user.uncompletedBonfires;
 
@@ -66,7 +62,7 @@ exports.returnNextBonfire = function(req, res, next) {
         if (err) {
             next(err);
         }
-        debug('Finding next bonfire for user', bonfire);
+
         nameString = bonfire[0].name.toLowerCase().replace(/\s/g, '-');
         return res.redirect('/bonfires/' + nameString);
         //res.render('bonfire/show', {

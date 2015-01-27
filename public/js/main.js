@@ -33,12 +33,15 @@ $(document).ready(function() {
         }
     });
 
+
+
     function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
         $('#complete-bonfire-dialog').modal('show');
         // Only post to server if there is an authenticated user
         if ($('.signup-btn-nav').length < 1) {
             l = location.pathname.split('/');
             cn = l[l.length - 1];
+
             $.ajax({
                 type: 'POST',
                 data: {
@@ -49,7 +52,7 @@ $(document).ready(function() {
                     }
                 },
                 url: '/completed-bonfire/'
-            });
+            })
         }
     }
 
@@ -66,15 +69,14 @@ $(document).ready(function() {
         window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
     });
 
-    // TODO: refactor this to create meaningful variable names, what the heck i l?
     $('.next-bonfire-button').on('click', function() {
         var bonfireSolution = myCodeMirror.getValue();
         var thisBonfireHash = passedBonfireHash || null;
         var didCompleteWith = $('#completed-with').val() || null;
-        console.log(didCompleteWith);
-        console.log(bonfireSolution, thisBonfireHash);
+
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
-        window.location = '/bonfires/';
+        window.location('/bonfires');
+
     });
 
     // Bonfire instructions functions
