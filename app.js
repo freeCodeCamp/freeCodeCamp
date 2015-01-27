@@ -352,11 +352,9 @@ app.post('/completed-bonfire/', function (req, res) {
                     solution: isSolution
                 })
 
-
-                debug('saving user with a pair');
                 req.user.save();
                 pairedWith.save();
-
+                res.redirect('/bonfires');
             }
         })
     } else {
@@ -372,9 +370,10 @@ app.post('/completed-bonfire/', function (req, res) {
         if (index > -1) {
             req.user.uncompletedBonfires.splice(index,1)
         }
-        debug("Saving user without a pair");
         req.user.save();
+        res.redirect('/bonfires');
     }
+
 });
 
 /**

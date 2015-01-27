@@ -43,16 +43,15 @@ exports.returnNextBonfire = function(req, res, next) {
         var completed = req.user.completedBonfires.map(function(elem) {
             return elem._id;
         });
-        // TODO : remove debug statement
-        debug(req.user, 'this is the user');
+
         req.user.uncompletedBonfires = resources.allBonfireIds().filter(function(elem) {
            if (completed.indexOf(elem) === -1) {
                return elem;
            }
         });
+        req.user.save();
     }
-    debug('These are completed bonfires', completed);
-    debug('These are uncompleted bonfires', req.user.uncompletedBonfires);
+
 
     var uncompletedBonfires = req.user.uncompletedBonfires;
 

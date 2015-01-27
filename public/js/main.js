@@ -39,9 +39,6 @@ $(document).ready(function() {
         $('#complete-bonfire-dialog').modal('show');
         // Only post to server if there is an authenticated user
         if ($('.signup-btn-nav').length < 1) {
-            l = location.pathname.split('/');
-            cn = l[l.length - 1];
-
             $.ajax({
                 type: 'POST',
                 data: {
@@ -52,7 +49,12 @@ $(document).ready(function() {
                     }
                 },
                 url: '/completed-bonfire/'
-            })
+
+            });
+
+            //$.post( '/completed-bonfire', function( data ) {
+            //    window.location = '/bonfires';
+            //});
         }
     }
 
