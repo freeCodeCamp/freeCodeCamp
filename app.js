@@ -311,25 +311,14 @@ app.post('/completed-challenge', function (req, res) {
 });
 
 app.post('/completed-bonfire/', function (req, res) {
-    req.user.bonfiresHash[parseInt(req.body.bonfireNumber)] =
-        Math.round(+new Date() / 1000);
-    var timestamp = req.user.bonfiresHash;
-    var points = 0;
-    for (var key in timestamp) {
-        if (timestamp[key] > 0) {
-            points += 1;
-        }
-    }
+
+    // TODO: remove debug statement
+    debug(req.body.bonfireInfo, 'This is bonfire info we got from posted');
 
     var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
     var isCompletedDate =  Math.round(+new Date() / 1000);
     var bonfireHash = req.body.bonfireInfo.bonfireHash;
     var isSolution = req.body.bonfireInfo.solution;
-    req.user.bonfiresHash[bonfireHash] = {
-        completedWith: isCompletedWith,
-        completedDate: isCompletedDate,
-        solution: isSolution
-    };
 
     if (isCompletedWith) {
         var paired = User.find({"profile.username": isCompletedWith}).limit(1);
@@ -338,16 +327,30 @@ app.post('/completed-bonfire/', function (req, res) {
                 return err;
             } else {
                 pairedWith = pairedWith.pop();
-                pairedWith.bonfiresHash[bonfireHash] = {
+                pairedWith.completedBonfires.push({
+                    _id: bonfireHash,
                     completedWith: req.user._id,
                     completedDate: isCompletedDate,
                     solution: isSolution
-                };
-                req.user.bonfiresHash[bonfireHash] = {
+                })
+
+                req.user.completedBonfires.push({
+                    _id: bonfireHash,
                     completedWith: pairedWith._id,
                     completedDate: isCompletedDate,
                     solution: isSolution
-                };
+                })
+
+                var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
+
+                if (index > -1) {
+                    req.user.uncompletedBonfires.splice(index,1)
+                }
+
+                index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
+                if (index > -1) {
+                    req.user.uncompletedBonfires.splice(index,1)
+                }
 
                 req.user.save();
                 pairedWith.save();
@@ -355,14 +358,20 @@ app.post('/completed-bonfire/', function (req, res) {
             }
         })
     } else {
-        req.user.bonfiresHash[bonfireHash] = {
+        req.user.completedBonfires.push({
+            _id: bonfireHash,
             completedWith: null,
             completedDate: isCompletedDate,
             solution: isSolution
-        };
+        })
+
+        var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
+
+        if (index > -1) {
+            req.user.uncompletedBonfires.splice(index,1)
+        }
         req.user.save();
     }
-    bonfireController.returnNextBonfire(req, res);
 });
 
 /**

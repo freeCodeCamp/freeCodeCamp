@@ -187,6 +187,12 @@ module.exports = {
 
     numberOfBonfires: function() {
         return bonfires.length - 1;
+    },
+
+    allBonfireIds: function() {
+        return bonfires.map(function(elem) {
+            return elem._id;
+        })
     }
 };
 

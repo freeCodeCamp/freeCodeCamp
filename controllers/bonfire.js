@@ -45,22 +45,23 @@ exports.returnNextBonfire = function(req, res, next) {
         req.user = new User();
         //return res.redirect('/bonfires/meet-bonfire');
     }
-    // This code is in bad need of refactoring
-    var bonfiresToFind = req.user ? req.user.bonfiresHash : [];
-    var bonfiresArray = _.map(bonfiresToFind, function(value, index) {
-        return [index, value];
-    });
-    // Get rid of the first entry, which will be a useless function that causes an error.
-    bonfiresArray.shift();
-    var unsolvedBonfires = [];
-    for (i = 0; i < bonfiresArray.length; i++) {
-        if (bonfiresArray[i][1]["completedDate"] === 0) {
-            unsolvedBonfires.push(bonfiresArray[i][0])
-        }
+    var currentTime = parseInt(+new Date() / 1000)
+    if (currentTime - req.user.lastContentSync > 86400) {
+        req.user.lastContentSync = currentTime;
+        var completed = req.user.completedBonfires;
+        // TODO : remove debug statement
+        debug(req.user, 'this is the user');
+        req.user.uncompletedBonfires = resources.allBonfireIds().filter(function(elem) {
+           if (completed.indexOf(elem) === -1) {
+               return elem;
+           }
+        });
     }
 
+    var uncompletedBonfires = req.user.uncompletedBonfires;
 
-    var displayedBonfires =  Bonfire.find({}).where('_id').in(unsolvedBonfires).sort({ difficulty: 1 });
+
+    var displayedBonfires =  Bonfire.find({'_id': uncompletedBonfires[0]});
     displayedBonfires.exec(function(err, bonfire) {
         if (err) {
             next(err);
@@ -91,13 +92,8 @@ exports.returnNextBonfire = function(req, res, next) {
 
 exports.returnIndividualBonfire = function(req, res, next) {
     var bonfireName = req.params.bonfireName;
-    debug('Getting this as argument for bonfireName', bonfireName);
-    //if (!/[a-z\-]+/i.test(bonfireName)) {
-    //    bonfireName = 'meet bonfire';
-    //}
 
     bonfireName = bonfireName.replace(/\-/g, ' ');
-    debug('Checking sanity of name of bonfire after replacing "-" characters', bonfireName);
     var bonfireNumber = 0;
 
     Bonfire.find({"name" : new RegExp(bonfireName, 'i')}, function(err, bonfire) {
@@ -110,25 +106,27 @@ exports.returnIndividualBonfire = function(req, res, next) {
                 msg: "404: We couldn't find a bonfire with that name. Please double check the name."
             });
             return res.redirect('/bonfires/meet-bonfire')
+        } else {
+            res.render('bonfire/show', {
+                completedWith: null,
+                title: bonfire[bonfireNumber].name,
+                name: bonfire[bonfireNumber].name,
+                difficulty: +bonfire[bonfireNumber].difficulty,
+                brief: bonfire[bonfireNumber].description[0],
+                details: bonfire[bonfireNumber].description.slice(1),
+                tests: bonfire[bonfireNumber].tests,
+                challengeSeed: bonfire[bonfireNumber].challengeSeed,
+                challengeEntryPoint: bonfire[bonfireNumber].challengeEntryPoint,
+                cc: !!req.user,
+                points: req.user ? req.user.points : undefined,
+                verb: resources.randomVerb(),
+                phrase: resources.randomPhrase(),
+                compliment: resources.randomCompliment(),
+                bonfires: bonfire,
+                bonfireHash: bonfire[bonfireNumber]._id
+
+            });
         }
-        res.render('bonfire/show', {
-            completedWith: null,
-            title: bonfire[bonfireNumber].name,
-            name: bonfire[bonfireNumber].name,
-            difficulty: +bonfire[bonfireNumber].difficulty,
-            brief: bonfire[bonfireNumber].description[0],
-            details: bonfire[bonfireNumber].description.slice(1),
-            tests:  bonfire[bonfireNumber].tests,
-            challengeSeed:  bonfire[bonfireNumber].challengeSeed,
-            challengeEntryPoint: bonfire[bonfireNumber].challengeEntryPoint,
-            cc: req.user ? req.user.bonfiresHash : undefined,
-            points: req.user ? req.user.points : undefined,
-            verb: resources.randomVerb(),
-            phrase: resources.randomPhrase(),
-            compliment: resources.randomCompliment(),
-            bonfires: bonfire,
-            bonfireHash: bonfire[bonfireNumber]._id
-        });
     });
 };
 

@@ -74,8 +74,7 @@ $(document).ready(function() {
         console.log(didCompleteWith);
         console.log(bonfireSolution, thisBonfireHash);
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
-        l = location.pathname.split('/');
-        window.location = '/bonfires/' + (parseInt(l[l.length - 1]) + 1);
+        window.location = '/bonfires/';
     });
 
     // Bonfire instructions functions
