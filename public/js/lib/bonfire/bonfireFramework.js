@@ -214,10 +214,12 @@ var runTests = function(err, data) {
                 }
             }
         });
-    }
-    if (allTestsPassed) {
-        allTestsPassed = false;
-        showCompletion();
+
+        if (allTestsPassed) {
+            allTestsPassed = false;
+            showCompletion();
+        }
+
     }
 };
 
