@@ -33,9 +33,12 @@ exports.index = function(req, res) {
 };
 
 exports.returnNextBonfire = function(req, res, next) {
-
+    // TODO
+    //var tempUser = false;
     if (!req.user) {
-        req.user = new User();
+        res.redirect('bonfires/meet-bonfire');
+        //tempUser = true;
+        //req.user = new User();
     }
     var currentTime = parseInt(+new Date() / 1000)
     if (currentTime - req.user.lastContentSync > 86400) {

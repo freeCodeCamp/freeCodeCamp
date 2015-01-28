@@ -288,6 +288,8 @@ app.post('/completed-bonfire/', function (req, res) {
     var isCompletedDate =  Math.round(+new Date() / 1000);
     var bonfireHash = req.body.bonfireInfo.bonfireHash;
     var isSolution = req.body.bonfireInfo.solution;
+    // TODO
+    debug(isCompletedWith, 'Is completed with');
 
     if (isCompletedWith) {
         var paired = User.find({"profile.username": isCompletedWith}).limit(1);
@@ -300,13 +302,15 @@ app.post('/completed-bonfire/', function (req, res) {
                 if (index > -1) {
                     req.user.uncompletedBonfires.splice(index,1)
                 }
+                pairedWith = pairedWith.pop();
 
+                //debug('This is paired with', Object.keys(pairedWith));
+                debug('This is paired with\'s uncompleted bonfires array', pairedWith.uncompletedBonfires);
                 index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
                     pairedWith.uncompletedBonfires.splice(index,1)
                 }
 
-                pairedWith = pairedWith.pop();
                 pairedWith.completedBonfires.push({
                     _id: bonfireHash,
                     completedWith: req.user._id,
