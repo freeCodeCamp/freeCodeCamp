@@ -33,24 +33,20 @@ exports.index = function(req, res) {
 };
 
 exports.returnNextBonfire = function(req, res, next) {
-    // TODO
-    //var tempUser = false;
     if (!req.user) {
-        res.redirect('bonfires/meet-bonfire');
-        //tempUser = true;
-        //req.user = new User();
+        return res.redirect('bonfires/meet-bonfire');
     }
-    var currentTime = parseInt(+new Date() / 1000)
+    var currentTime = parseInt(+new Date() / 1000);
     if (currentTime - req.user.lastContentSync > 86400) {
         req.user.lastContentSync = currentTime;
-        var completed = req.user.completedBonfires.map(function(elem) {
+        var completed = req.user.completedBonfires.map(function (elem) {
             return elem._id;
         });
 
-        req.user.uncompletedBonfires = resources.allBonfireIds().filter(function(elem) {
-           if (completed.indexOf(elem) === -1) {
-               return elem;
-           }
+        req.user.uncompletedBonfires = resources.allBonfireIds().filter(function (elem) {
+            if (completed.indexOf(elem) === -1) {
+                return elem;
+            }
         });
         req.user.save();
     }
@@ -109,7 +105,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
                 completedWith: null,
                 title: bonfire[bonfireNumber].name,
                 name: bonfire[bonfireNumber].name,
-                difficulty: +bonfire[bonfireNumber].difficulty,
+                difficulty: Math.floor(+bonfire[bonfireNumber].difficulty),
                 brief: bonfire[bonfireNumber].description[0],
                 details: bonfire[bonfireNumber].description.slice(1),
                 tests: bonfire[bonfireNumber].tests,
