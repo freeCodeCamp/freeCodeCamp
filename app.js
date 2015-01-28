@@ -304,8 +304,6 @@ app.post('/completed-bonfire/', function (req, res) {
                 }
                 pairedWith = pairedWith.pop();
 
-                //debug('This is paired with', Object.keys(pairedWith));
-                debug('This is paired with\'s uncompleted bonfires array', pairedWith.uncompletedBonfires);
                 index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
                     pairedWith.uncompletedBonfires.splice(index,1)

@@ -179,6 +179,7 @@ exports.testBonfire = function(req, res) {
     res.render('bonfire/show', {
         completedWith: null,
         title: bonfireName,
+        name: bonfireName,
         difficulty: +bonfireDifficulty,
         brief: bonfireDescription[0],
         details: bonfireDescription.slice(1),
