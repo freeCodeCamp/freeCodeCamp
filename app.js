@@ -134,7 +134,6 @@ var trusted = [
     '*.youtube.com',
 ];
 
-debug(trusted);
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
     scriptSrc: ['*.optimizely.com', '*.aspnetcdn.com'].concat(trusted),
@@ -323,9 +322,17 @@ app.post('/completed-bonfire/', function (req, res) {
                     solution: isSolution
                 })
 
-                req.user.save();
-                pairedWith.save();
-                res.redirect('/bonfires');
+                req.user.save(function(err, user) {
+                    pairedWith.save(function(err, paired) {
+                        if (err) {
+                            throw err;
+                        }
+                        if (user && paired) {
+                            res.redirect('/bonfires');
+                        }
+                    })
+                });
+
             }
         })
     } else {
@@ -341,8 +348,15 @@ app.post('/completed-bonfire/', function (req, res) {
         if (index > -1) {
             req.user.uncompletedBonfires.splice(index,1)
         }
-        req.user.save();
-        res.redirect('/bonfires');
+        req.user.save(function(err, user) {
+            if (err) {
+                throw err;
+            }
+            if (user) {
+                res.redirect('/bonfires');
+            }
+        });
+
     }
 
 });
