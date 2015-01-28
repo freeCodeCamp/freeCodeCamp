@@ -17,9 +17,46 @@
     "challengeEntryPoint": "meetBonfire(\"You can do this!\");"
   },
   {
+  "_id": "a202eed8fc186c8434cb6d61",
+  "name": "Reverse a String",
+  "difficulty": "1.01",
+  "tests": [
+    "expect(reverseString('hello')).to.be.a('String');",
+    "expect(reverseString('hello')).to.equal('olleh');",
+    "expect(reverseString('Howdy')).to.equal('ydwoH');",
+    "expect(reverseString('Greetings from Earth')).to.equal('htraE morf sgniteerG');"
+  ],
+  "description": [
+    "Reverse the provided string.",
+    "You may need to turn the string into an array before you can reverse it.",
+    "Your result must be a string."
+  ],
+  "challengeEntryPoint": "reverseString('hello');",
+  "challengeSeed": "function reverseString(str) {\n  return str;\r\n}"
+  },
+  {
+    "_id": "a302f7aae1aa3152a5b413bc",
+    "name": "Factorialize a Number",
+    "tests": [
+      "expect(factorialize(5)).to.be.a(\"Number\");",
+      "expect(factorialize(5)).to.equal(120);",
+      "expect(factorialize(10)).to.equal(3628800);",
+      "expect(factorialize(20)).to.equal(2432902008176640000);"
+    ],
+    "difficulty": "1.02",
+    "description": [
+      "Return the factorial of the provided integer.",
+      "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
+      "Factorials are often represented with the shorthand notation n!",
+      "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f"
+    ],
+    "challengeSeed": "function factorialize(num) {\n  return  num;\r\n}",
+    "challengeEntryPoint": "factorialize(5);"
+  },
+  {
     "_id" : "aaa48de84e1ecc7c742e1124",
     "name": "Check for Palindromes",
-    "difficulty": "1",
+    "difficulty": "1.03",
     "description": [
       "Return 'true' if a given string is a palindrome.",
       "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation and case.",
@@ -40,9 +77,134 @@
     "challengeEntryPoint": "palindrome(\"eye\");"
   },
   {
+    "_id": "a26cbbe9ad8655a977e1ceb5",
+    "name": "Find the Longest Word in a String",
+    "difficulty": "1.04",
+    "description": [
+      "Return the length of the longest word in the provided sentence.",
+      "Your response should be a number."
+    ],
+    "challengeEntryPoint": "findLongestWord('The quick brown fox jumped over the lazy dog');",
+    "challengeSeed": "function findLongestWord(str) {\n  return str.length;\r\n}",
+    "tests": [
+      "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.be.a('Number');",
+      "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.equal(6);",
+      "expect(findLongestWord('May the force be with you')).to.equal(5);",
+      "expect(findLongestWord('Google do a barrel roll')).to.equal(6);",
+      "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);"
+    ]
+  },
+  {
+    "_id": "ab6137d4e35944e21037b769",
+    "name": "Title Case a Sentence",
+    "difficulty": "1.05",
+    "description": [
+      "Return the provided string with the first letter of each word capitalized.",
+      "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'."
+    ],
+    "challengeEntryPoint": "titleCase(\"I'm a little tea pot\")",
+    "challengeSeed": "function titleCase(str) {\n  return str;\r\n}",
+    "tests": [
+      "expect(titleCase(\"I'm a little tea pot\")).to.be.a('String');",
+      "expect(titleCase(\"I'm a little tea pot\")).to.equal(\"I'm A Little Tea Pot\");",
+      "expect(titleCase(\"sHoRt AnD sToUt\")).to.equal(\"Short And Stout\");",
+      "expect(titleCase(\"HERE IS MY  HANDLE HERE IS MY SPOUT\")).to.equal(\"Here Is My  Handle Here Is My Spout\");"
+    ]
+  },
+  {
+    "_id": "a789b3483989747d63b0e427",
+    "name": "Return Largest Numbers in Arrays",
+    "difficulty": "1.06",
+    "description": [
+      "Return an array consisting of the largest numbers in the provided array. The array will contain 4 sub-arrays.",
+      "Remember, you an iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
+      "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays."
+    ],
+    "challengeEntryPoint": "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);",
+    "challengeSeed": "function largestOfFour(arr) {\n  // You can do this!\r\n  return arr;\r\n}",
+    "tests": [
+      "expect(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).to.be.a('array');",
+      "(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.equals([5,27,39,1001]);",
+      "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]) === [9,35,97,1000000]);"
+    ]
+  },
+
+
+
+  {
+    "_id": "a3566b1109230028080c9345",
+    "name": "Sum All Numbers in a Range",
+    "difficulty": "2.00",
+    "description": [
+      "We'll pass you an array of two numbers. Return the sum those two numbers and all numbers between them.",
+      "The lowest number will not always come first."
+    ],
+    "challengeEntryPoint": "sumAll([1, 4]);",
+    "challengeSeed": "function sumAll(arr) {\n  return(1);\r\n}",
+    "tests": [
+      "expect(sumAll([1, 4])).to.be.a('Number');",
+      "expect(sumAll([1, 4])).to.equal(10);",
+      "expect(sumAll([4, 1])).to.equal(10);",
+      "expect(sumAll([5, 10])).to.equal(45);",
+      "expect(sumAll([10, 5])).to.equal(45);"
+    ]
+  },
+
+  {
+    "_id": "a5229172f011153519423690",
+    "name": "Sum All Odd Fibonacci Numbers",
+    "difficulty": "2.01",
+    "description": [
+      "Return the sum of all odd fibonacci numbers up to and including the passed number.",
+      "Starting from 1, the first few numbers of a Fibonacci sequence are 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers."
+    ],
+    "challengeEntryPoint": "sumFibs(1000);",
+    "challengeSeed": "function sumFibs(num) {\n  return num;\r\n}",
+    "tests": [
+      "expect(sumFibs(1)).to.be.a('number');",
+      "expect(sumFibs(1000)).to.equal(3382);",
+      "expect(sumFibs(4000000)).to.equal(10316619);",
+      "expect(sumFibs(4)).to.equal(10);"
+    ]
+  },
+  {
+    "_id": "a3bfc1673c0526e06d3ac698",
+    "name": "Sum All Primes",
+    "difficulty": "2.10",
+    "description": [
+      "Sum all the prime numbers up to and including the provided number.",
+      "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible  by itself.",
+      "The provided number may not be a prime."
+    ],
+    "challengeEntryPoint": "sumPrimes(10);",
+    "challengeSeed": "function sumPrimes(num) {\n  return num;\r\n}",
+    "tests": [
+      "expect(sumPrimes(10)).to.be.a('number');",
+      "expect(sumPrimes(10)).to.equal(27);",
+      "expect(sumPrimes(977)).to.equal(73156);"
+    ]
+  },
+  {
+    "_id": "ae9defd7acaf69703ab432ea",
+    "name": "Smallest Common Multiple",
+    "difficulty": "2.11",
+    "description": [
+      "Find the smallest number that evenly divides all numbers in the provided range.",
+      "The range will be an array of two numbers that will not necessarily be in numerical order."
+    ],
+    "challengeEntryPoint": "smallestCommons([1,5]);",
+    "challengeSeed": "function smallestCommons(arr) {\n  return arr;\r\n}\r\n",
+    "tests": [
+      "expect(smallestCommons([1,5])).to.be.a('number');",
+      "expect(smallestCommons([1,5])).to.equal(60);",
+      "expect(smallestCommons([5,1])).to.equal(60);",
+      "(smallestCommons([1,13])).should.equal(360360);"
+    ]
+  },
+  {
     "_id" : "aff0395860f5d3034dc0bfc9",
     "name": "Validate US Telephone Numbers",
-    "difficulty": "3",
+    "difficulty": "3.10",
     "description": [
       "Return true if the passed string is a valid US phone number",
       "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
@@ -77,93 +239,21 @@
     "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");"
   },
   {
-    "_id": "a202eed8fc186c8434cb6d61",
-    "name": "Reverse a String",
-    "difficulty": "1",
-    "tests": [
-      "expect(reverseString('hello')).to.be.a('String');",
-      "expect(reverseString('hello')).to.equal('olleh');",
-      "expect(reverseString('Howdy')).to.equal('ydwoH');",
-      "expect(reverseString('Greetings from Earth')).to.equal('htraE morf sgniteerG');"
-    ],
+    "_id": "556138aff60341a09ed6c480",
+    "name": "Inventory Update",
+    "difficulty": "3.11",
     "description": [
-      "Reverse the provided string.",
-      "You may need to turn the string into an array before you can reverse it.",
-      "Your result must be a string."
+      "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order."
     ],
-    "challengeEntryPoint": "reverseString('hello');",
-    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}"
-  },
-  {
-    "_id": "a302f7aae1aa3152a5b413bc",
-    "name": "Factorialize a Number",
+    "challengeEntryPoint": "// Example inventory lists\r\nvar curInv = [\r\n    [21, 'Bowling Ball'],\r\n    [2, 'Dirty Sock'],\r\n    [1, 'Hair pin'],\r\n    [5, 'Microphone']\r\n];\r\n\r\nvar newInv = [\r\n    [2, 'Hair Pin'],\r\n    [3, 'Half-Eaten Apple'],\r\n    [67, 'Bowling Ball'],\r\n    [7, 'Toothpaste']\r\n];\r\n\r\ninventory(curInv, newInv);",
+    "challengeSeed": "function inventory(arr1, arr2) {\n    // All inventory must be accounted for or you're fired!\r\n    return arr1;\r\n}",
     "tests": [
-      "expect(factorialize(5)).to.be.a(\"Number\");",
-      "expect(factorialize(5)).to.equal(120);",
-      "expect(factorialize(10)).to.equal(3628800);",
-      "expect(factorialize(20)).to.equal(2432902008176640000);"
-    ],
-    "difficulty": "1",
-    "description": [
-      "Return the factorial of the provided integer.",
-      "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
-      "Factorials are often represented with the shorthand notation n!",
-      "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f"
-    ],
-    "challengeSeed": "function factorialize(num) {\n  return  num;\r\n}",
-    "challengeEntryPoint": "factorialize(5);"
-  },
-  {
-    "_id": "a26cbbe9ad8655a977e1ceb5",
-    "name": "Find the Longest Word in a String",
-    "difficulty": "1",
-    "description": [
-      "Return the length of the longest word in the provided sentence.",
-      "Your response should be a number."
-    ],
-    "challengeEntryPoint": "findLongestWord('The quick brown fox jumped over the lazy dog');",
-    "challengeSeed": "function findLongestWord(str) {\n  return str.length;\r\n}",
-    "tests": [
-      "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.be.a('Number');",
-      "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.equal(6);",
-      "expect(findLongestWord('May the force be with you')).to.equal(5);",
-      "expect(findLongestWord('Google do a barrel roll')).to.equal(6);",
-      "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);"
-    ]
-  },
-  {
-    "_id": "a3566b1109230028080c9345",
-    "name": "Sum All Numbers in a Range",
-    "difficulty": "2",
-    "description": [
-      "We'll pass you an array of two numbers. Return the sum those two numbers and all numbers between them.",
-      "The lowest number will not always come first."
-    ],
-    "challengeEntryPoint": "sumAll([1, 4]);",
-    "challengeSeed": "function sumAll(arr) {\n  return(1);\r\n}",
-    "tests": [
-      "expect(sumAll([1, 4])).to.be.a('Number');",
-      "expect(sumAll([1, 4])).to.equal(10);",
-      "expect(sumAll([4, 1])).to.equal(10);",
-      "expect(sumAll([5, 10])).to.equal(45);",
-      "expect(sumAll([10, 5])).to.equal(45);"
-    ]
-  },
-  {
-    "_id": "ab6137d4e35944e21037b769",
-    "name": "Title Case a Sentence",
-    "difficulty": "1",
-    "description": [
-      "Return the provided string with the first letter of each word capitalized.",
-      "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'."
-    ],
-    "challengeEntryPoint": "titleCase(\"I'm a little tea pot\")",
-    "challengeSeed": "function titleCase(str) {\n  return str;\r\n}",
-    "tests": [
-      "expect(titleCase(\"I'm a little tea pot\")).to.be.a('String');",
-      "expect(titleCase(\"I'm a little tea pot\")).to.equal(\"I'm A Little Tea Pot\");",
-      "expect(titleCase(\"sHoRt AnD sToUt\")).to.equal(\"Short And Stout\");",
-      "expect(titleCase(\"HERE IS MY  HANDLE HERE IS MY SPOUT\")).to.equal(\"Here Is My  Handle Here Is My Spout\");"
+      "expect(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']])).to.be.a('array');",
+      "assert.equal(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]).length, 6);",
+      "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[88, 'Bowling Ball'], [2, 'Dirty Sock'], [3, 'Hair pin'], [3, 'Half-Eaten Apple'], [5, 'Microphone'], [7, 'Toothpaste']]);",
+      "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], []), [[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']]);",
+      "assert.deepEqual(inventory([], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]);",
+      "assert.deepEqual(inventory([[0, 'Bowling Ball'], [0, 'Dirty Sock'], [0, 'Hair pin'], [0, 'Microphone']], [[1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [1, 'Bowling Ball'], [1, 'Toothpaste']]), [[1, 'Bowling Ball'], [1, 'Dirty Sock'], [1, 'Hair pin'], [1, 'Half-Eaten Apple'], [1, 'Microphone'], [1, 'Toothpaste']]);"
     ]
   }
 ]
