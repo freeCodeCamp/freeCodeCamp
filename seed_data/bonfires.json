@@ -1,44 +1,66 @@
 [
   {
-    "name": "Palindrome Tester",
-    "difficulty": 1,
+    "_id" : "ad7123c8c441eddfaeb5bdef",
+    "name": "Meet Bonfire",
+    "difficulty": "0",
     "description": [
-      "Your job is to determine if a provided string is a palindrome.",
-      "The definition of a palindrome can be found at http://en.wikipedia.org/wiki/Palindrome.",
-      "Strings will be passed in  with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
-      "Return true if the string is a palindrome, otherwise false"
+      "Click the button below for further instructions.",
+      "Your goal is to fix the failing test.",
+      "First, run all the tests by clickin \"Run code\" or by pressing Control + Enter",
+      "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire."
     ],
-    "publicTests": [
+    "tests": [
+      "expect(meetBonfire(\"test\")).to.be.a(\"boolean\");",
+      "expect(meetBonfire(\"test\")).to.be.true;"
+    ],
+    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\nreturn false;\n}\n\n",
+    "challengeEntryPoint": "meetBonfire(\"You can do this!\");"
+  },
+  {
+    "_id" : "aaa48de84e1ecc7c742e1124",
+    "name": "Check for Palindromes",
+    "difficulty": "1",
+    "description": [
+      "Return 'true' if a given string is a palindrome.",
+      "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation and case.",
+      "You'll need to remove punctuation and turn everything lower case in order to check for palindromes.",
+      "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
+      "Return true if the string is a palindrome. Otherwise, return false."
+    ],
+    "tests": [
       "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
       "assert.deepEqual(palindrome(\"eye\"), true);",
       "assert.deepEqual(palindrome(\"race car\"), true);",
-      "assert.deepEqual(palindrome(\"not a palindrome\"), false);"
-    ],
-    "privateTests": [
+      "assert.deepEqual(palindrome(\"not a palindrome\"), false);",
       "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
       "assert.deepEqual(palindrome(\"never odd or even\"), true);",
       "assert.deepEqual(palindrome(\"nope\"), false);"
     ],
     "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n",
-    "challengeEntryPoint": "palindrome(\"eye\");",
-    "bonfireNumber": 1,
-    "challengeEntryPointNegate" : "palindrome\\([^str].*\\;"
+    "challengeEntryPoint": "palindrome(\"eye\");"
   },
   {
+    "_id" : "aff0395860f5d3034dc0bfc9",
     "name": "Validate US Telephone Numbers",
-    "difficulty": 3,
+    "difficulty": "3",
     "description": [
+      "Return true if the passed string is a valid US phone number",
       "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
       "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
       "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false."
     ],
-    "publicTests": [
+    "tests": [
       "expect(telephoneCheck(\"555-555-5555\")).to.be.a(\"boolean\");",
+      "assert.deepEqual(telephoneCheck(\"1 555-555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"1 (555) 555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"5555555555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"555-555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"(555)555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"1(555)555-5555\"), true);",
+      "assert.deepEqual(telephoneCheck(\"1 555 555 5555\"), true);",
       "assert.deepEqual(telephoneCheck(\"555-555-5555\"), true);",
       "assert.deepEqual(telephoneCheck(\"1 456 789 4444\"), true);",
-      "assert.deepEqual(telephoneCheck(\"123**&!!asdf#\"), false);"
-    ],
-    "privateTests": [
+      "assert.deepEqual(telephoneCheck(\"123**&!!asdf#\"), false);",
       "assert.deepEqual(telephoneCheck(\"55555555\"), false);",
       "assert.deepEqual(telephoneCheck(\"(6505552368)\"), false);",
       "assert.deepEqual(telephoneCheck(\"2 (757) 622-7382\"), false);",
@@ -52,9 +74,97 @@
       "assert.deepEqual(telephoneCheck(\"2(757)622-7382\"), false);"
     ],
     "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n",
-    "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");",
-    "bonfireNumber": 2,
-    "challengeEntryPointNegate" : "palindrome\\([^str].*\\;"
+    "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");"
+  },
+  {
+    "_id": "a202eed8fc186c8434cb6d61",
+    "name": "Reverse a String",
+    "difficulty": "1",
+    "tests": [
+      "expect(reverseString('hello')).to.be.a('String');",
+      "expect(reverseString('hello')).to.equal('olleh');",
+      "expect(reverseString('Howdy')).to.equal('ydwoH');",
+      "expect(reverseString('Greetings from Earth')).to.equal('htraE morf sgniteerG');"
+    ],
+    "description": [
+      "Reverse the provided string.",
+      "You may need to turn the string into an array before you can reverse it.",
+      "Your result must be a string."
+    ],
+    "challengeEntryPoint": "reverseString('hello');",
+    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}"
+  },
+  {
+    "_id": "a302f7aae1aa3152a5b413bc",
+    "name": "Factorialize a Number",
+    "tests": [
+      "expect(factorialize(5)).to.be.a(\"Number\");",
+      "expect(factorialize(5)).to.equal(120);",
+      "expect(factorialize(10)).to.equal(3628800);",
+      "expect(factorialize(20)).to.equal(2432902008176640000);"
+    ],
+    "difficulty": "1",
+    "description": [
+      "Return the factorial of the provided integer.",
+      "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
+      "Factorials are often represented with the shorthand notation n!",
+      "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f"
+    ],
+    "challengeSeed": "function factorialize(num) {\n  return  num;\r\n}",
+    "challengeEntryPoint": "factorialize(5);"
+  },
+  {
+    "_id": "a26cbbe9ad8655a977e1ceb5",
+    "name": "Find the Longest Word in a String",
+    "difficulty": "1",
+    "description": [
+      "Return the length of the longest word in the provided sentence.",
+      "Your response should be a number."
+    ],
+    "challengeEntryPoint": "findLongestWord('The quick brown fox jumped over the lazy dog');",
+    "challengeSeed": "function findLongestWord(str) {\n  return str.length;\r\n}",
+    "tests": [
+      "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.be.a('Number');",
+      "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.equal(6);",
+      "expect(findLongestWord('May the force be with you')).to.equal(5);",
+      "expect(findLongestWord('Google do a barrel roll')).to.equal(6);",
+      "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);"
+    ]
+  },
+  {
+    "_id": "a3566b1109230028080c9345",
+    "name": "Sum All Numbers in a Range",
+    "difficulty": "2",
+    "description": [
+      "We'll pass you an array of two numbers. Return the sum those two numbers and all numbers between them.",
+      "The lowest number will not always come first."
+    ],
+    "challengeEntryPoint": "sumAll([1, 4]);",
+    "challengeSeed": "function sumAll(arr) {\n  return(1);\r\n}",
+    "tests": [
+      "expect(sumAll([1, 4])).to.be.a('Number');",
+      "expect(sumAll([1, 4])).to.equal(10);",
+      "expect(sumAll([4, 1])).to.equal(10);",
+      "expect(sumAll([5, 10])).to.equal(45);",
+      "expect(sumAll([10, 5])).to.equal(45);"
+    ]
+  },
+  {
+    "_id": "ab6137d4e35944e21037b769",
+    "name": "Title Case a Sentence",
+    "difficulty": "1",
+    "description": [
+      "Return the provided string with the first letter of each word capitalized.",
+      "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'."
+    ],
+    "challengeEntryPoint": "titleCase(\"I'm a little tea pot\")",
+    "challengeSeed": "function titleCase(str) {\n  return str;\r\n}",
+    "tests": [
+      "expect(titleCase(\"I'm a little tea pot\")).to.be.a('String');",
+      "expect(titleCase(\"I'm a little tea pot\")).to.equal(\"I'm A Little Tea Pot\");",
+      "expect(titleCase(\"sHoRt AnD sToUt\")).to.equal(\"Short And Stout\");",
+      "expect(titleCase(\"HERE IS MY  HANDLE HERE IS MY SPOUT\")).to.equal(\"Here Is My  Handle Here Is My Spout\");"
+    ]
   }
 ]
 

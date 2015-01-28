@@ -3,11 +3,8 @@ var secrets = require('../config/secrets');
 
 var bonfireCompletionSchema = new mongoose.Schema({
     dateCompleted: Number,
-    completedWith: String,
-    bonfireNumber: {
-        bonfireNumber: Number,
-        bonfireId: String
-    },
+    completedWith: ObjectId,
+    bonfireHash: ObjectId,
     solution: String
 });
 

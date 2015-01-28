@@ -1,46 +1,96 @@
 $(document).ready(function() {
 
-  var CSRF_HEADER = 'X-CSRF-Token';
+    var CSRF_HEADER = 'X-CSRF-Token';
 
-  var setCSRFToken = function(securityToken) {
-    jQuery.ajaxPrefilter(function(options, _, xhr) {
-      if (!xhr.crossDomain) {
-        xhr.setRequestHeader(CSRF_HEADER, securityToken);
-      }
+    var setCSRFToken = function(securityToken) {
+        jQuery.ajaxPrefilter(function(options, _, xhr) {
+            if (!xhr.crossDomain) {
+                xhr.setRequestHeader(CSRF_HEADER, securityToken);
+            }
+        });
+    };
+
+    setCSRFToken($('meta[name="csrf-token"]').attr('content'));
+
+    $('.start-challenge').on('click', function() {
+        $(this).parent().remove();
+        $('.challenge-content')
+            .removeClass('hidden-element')
+            .addClass('animated fadeInDown');
     });
-  };
 
-  setCSRFToken($('meta[name="csrf-token"]').attr('content'));
+    $('.completed-challenge').on('click', function() {
+        $('#complete-challenge-dialog').modal('show');
+        // Only post to server if there is an authenticated user
+        if ($('.signup-btn-nav').length < 1) {
+            l = location.pathname.split('/');
+            cn = l[l.length - 1];
+            $.ajax({
+                type: 'POST',
+                data: {challengeNumber: cn},
+                url: '/completed-challenge/'
+            });
+        }
+    });
 
-  $('.start-challenge').on('click', function() {
-      $(this).parent().remove();
-      $('.challenge-content')
-        .removeClass('hidden-element')
-        .addClass('animated fadeInDown');
-  });
 
-  $('.completed-challenge').on('click', function() {
-      $('#complete-dialog').modal('show');
-      // Only post to server if there is an authenticated user
-      if ($('.signup-btn-nav').length < 1) {
-          l = location.pathname.split('/');
-          cn = l[l.length - 1];
-          $.ajax({
-              type: 'POST',
-              data: {challengeNumber: cn},
-              url: '/completed-challenge/'
-          });
-      }
-  });
 
-  $('.all-challenges').on('click', function() {
-      $('#all-challenges-dialog').modal('show');
-  });
+    function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
+        $('#complete-bonfire-dialog').modal('show');
+        // Only post to server if there is an authenticated user
+        if ($('.signup-btn-nav').length < 1) {
+            $.ajax({
+                type: 'POST',
+                data: {
+                    bonfireInfo: {
+                        completedWith : didCompleteWith,
+                        solution: bonfireSolution,
+                        bonfireHash: thisBonfireHash
+                    }
+                },
+                url: '/completed-bonfire/'
 
-  $('.next-button').on('click', function() {
-      l = location.pathname.split('/');
-      window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
-  });
+            });
+
+            //$.post( '/completed-bonfire', function( data ) {
+            //    window.location = '/bonfires';
+            //});
+        }
+    }
+
+    $('.all-challenges').on('click', function() {
+        $('#all-challenges-dialog').modal('show');
+    });
+
+    $('.all-bonfires').on('click', function() {
+        $('#all-bonfires-dialog').modal('show');
+    });
+
+    $('.next-challenge-button').on('click', function() {
+        l = location.pathname.split('/');
+        window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
+    });
+
+    $('.next-bonfire-button').on('click', function() {
+        var bonfireSolution = myCodeMirror.getValue();
+        var thisBonfireHash = passedBonfireHash || null;
+        var didCompleteWith = $('#completed-with').val() || null;
+
+        completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
+        window.location = '/bonfires';
+
+    });
+
+    // Bonfire instructions functions
+    $('#more-info').on('click', function() {
+        $('#brief-instructions').hide();
+        $('#long-instructions').show().removeClass('hide');
+
+    });
+    $('#less-info').on('click', function() {
+        $('#brief-instructions').show();
+        $('#long-instructions').hide();
+    });
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
@@ -55,6 +105,12 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
             $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle ? $scope.user.profile.twitterHandle.toLowerCase() : undefined;
             $scope.asyncComplete = true;
         });
+    }
+]);
+
+profileValidation.controller('pairedWithController', ['$scope',
+    function($scope) {
+        $scope.existingUser = null;
     }
 ]);
 
@@ -95,6 +151,31 @@ profileValidation.directive('uniqueUsername', function($http) {
                             ngModel.$setValidity('unique', true);
                         } else if (data) {
                             ngModel.$setValidity('unique', false);
+                        }
+                    });
+                }
+            });
+        }
+    }
+});
+// TODO: FIX THIS
+profileValidation.directive('existingUsername', function($http) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
+            element.bind("keyup", function (event) {
+                if (element.val().length > 0) {
+                    ngModel.$setValidity('exists', false);
+                } else {
+                    ngModel.$setPristine();
+                }
+                if (element.val()) {
+                    $http.get("/api/checkExistingUsername/" + element.val() + ' ').success(function (data) {
+                        if (element.val() == scope.existingUsername) {
+                            ngModel.$setValidity('exists', false);
+                        } else if (data) {
+                            ngModel.$setValidity('exists', true);
                         }
                     });
                 }

@@ -4,56 +4,13 @@
  */
 var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:challenges'),
-    Challenge = require('./../models/Challenge');
+    Challenge = require('./../models/Challenge'),
+    resources = require('./resources');
 
 var highestChallengeNumber = 53;
 
 exports.returnChallenge = function(req, res, next) {
     var challengeNumber = parseInt(req.params.challengeNumber) || 0;
-    var verbs = [
-        'ACED',
-        'NAILED',
-        'ROCKED',
-        'SCORCHED',
-        'DEVASTATED',
-        'OWNED',
-        'CRUSHED',
-        'CONQUERED',
-        'KILLED',
-        'SHREDDED',
-        'ANNIHILATED',
-        'NUKED'
-    ];
-    var compliments = [
-        "You've got the power!",
-        "Nicely done!",
-        "Rock and roll!",
-        "High five!",
-        "Bravo!",
-        "Encore!",
-        "Challenge destroyed!",
-        "Power level 9000!",
-        "Most efficient!",
-        "Party on Wayne!",
-        "You've got the touch!",
-        "You're on fire!",
-        "Don't hurt 'em, Hammer!",
-        "The town is now red",
-        "To the nines!",
-        "Nothing but net!",
-        "Even grumpy cat is impressed"
-    ];
-    var phrases = [
-        "Shout it from on top of a mountain",
-        "Tell everyone and their dogs",
-        "Show them. Show them all!",
-        "Inspire your friends",
-        "Tell the world of your greatness",
-        "Look accomplished on social media",
-        "Share news of your grand endeavor",
-        "Establish your alibi for the past two hours",
-        "Prove to mom that computers aren't just for games"
-    ];
     if (challengeNumber > highestChallengeNumber) { challengeNumber = 0; }
     Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
         if (err) {
@@ -69,8 +26,9 @@ exports.returnChallenge = function(req, res, next) {
             number: challengeNumber,
             cc: req.user ? req.user.challengesHash : undefined,
             points: req.user ? req.user.points : undefined,
-            verb: verbs[Math.floor(Math.random() * verbs.length)],
-            phrase: phrases[Math.floor(Math.random() * phrases.length)],
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
             challenges: c
         });
     });

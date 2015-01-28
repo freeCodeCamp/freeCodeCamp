@@ -208,16 +208,26 @@ app.get('/deploy-a-website', resourcesController.deployAWebsite);
 app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
 app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
-app.get('/stats', resourcesController.stats);
+app.get('/stats', function(req, res) {
+    res.redirect(301, '/learn-to-code');
+});
 app.get(
     '/pair-program-with-team-viewer',
     resourcesController.pairProgramWithTeamViewer
 );
 app.get('/learn-to-code', resourcesController.about);
-app.get('/about', resourcesController.about);
-app.get('/login', userController.getLogin);
-app.post('/login', userController.postLogin);
-app.get('/logout', userController.logout);
+app.get('/about', function(req, res) {
+    res.redirect(301, '/learn-to-code');
+});
+app.get('/signin', userController.getSignin);
+app.get('/login', function(req, res) {
+    res.redirect(301, '/signin');
+});
+app.post('/signin', userController.postSignin);
+app.get('/signout', userController.signout);
+app.get('/logout', function(req, res) {
+    res.redirect(301, '/signout');
+});
 app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
 app.get('/reset/:token', userController.getReset);
@@ -225,7 +235,7 @@ app.post('/reset/:token', userController.postReset);
 app.get('/email-signup', userController.getEmailSignup);
 app.get('/email-signin', userController.getEmailSignin);
 app.post('/email-signup', userController.postEmailSignup);
-app.post('/email-signin', userController.postLogin);
+app.post('/email-signin', userController.postSignin);
 app.get('/nonprofits', contactController.getNonprofitsForm);
 app.post('/nonprofits', contactController.postNonprofitsForm);
 
@@ -255,14 +265,93 @@ app.get(
 );
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
-app.get('/bonfire', bonfireController.index);
+
+/**
+ * Bonfire related routes
+ */
+app.get('/playground', bonfireController.index);
+app.get('/bonfires', bonfireController.returnNextBonfire);
+app.get('/bonfire-json-generator', bonfireController.returnGenerator);
+app.post('/bonfire-json-generator', bonfireController.generateChallenge);
+app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
+app.post('/bonfire-challenge-generator', bonfireController.testBonfire)
 app.get(
-    '/bonfire/:bonfireNumber',
-    bonfireController.returnBonfire
+    '/bonfires/:bonfireName',
+    bonfireController.returnIndividualBonfire
 );
+app.get('/bonfire', function(req, res) {
+    res.redirect(301, '/playground');
+});
+
+app.post('/completed-bonfire/', function (req, res) {
+    var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
+    var isCompletedDate =  Math.round(+new Date() / 1000);
+    var bonfireHash = req.body.bonfireInfo.bonfireHash;
+    var isSolution = req.body.bonfireInfo.solution;
+    // TODO
+    debug(isCompletedWith, 'Is completed with');
+
+    if (isCompletedWith) {
+        var paired = User.find({"profile.username": isCompletedWith}).limit(1);
+        paired.exec(function(err, pairedWith) {
+            if (err) {
+                return err;
+            } else {
+                var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
+
+                if (index > -1) {
+                    req.user.uncompletedBonfires.splice(index,1)
+                }
+                pairedWith = pairedWith.pop();
+
+                //debug('This is paired with', Object.keys(pairedWith));
+                debug('This is paired with\'s uncompleted bonfires array', pairedWith.uncompletedBonfires);
+                index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
+                if (index > -1) {
+                    pairedWith.uncompletedBonfires.splice(index,1)
+                }
+
+                pairedWith.completedBonfires.push({
+                    _id: bonfireHash,
+                    completedWith: req.user._id,
+                    completedDate: isCompletedDate,
+                    solution: isSolution
+                })
+
+                req.user.completedBonfires.push({
+                    _id: bonfireHash,
+                    completedWith: pairedWith._id,
+                    completedDate: isCompletedDate,
+                    solution: isSolution
+                })
+
+                req.user.save();
+                pairedWith.save();
+                res.redirect('/bonfires');
+            }
+        })
+    } else {
+        req.user.completedBonfires.push({
+            _id: bonfireHash,
+            completedWith: null,
+            completedDate: isCompletedDate,
+            solution: isSolution
+        })
+
+        var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
+
+        if (index > -1) {
+            req.user.uncompletedBonfires.splice(index,1)
+        }
+        req.user.save();
+        res.redirect('/bonfires');
+    }
+
+});
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
+app.get('/api/checkExistingUsername/:username', userController.checkExistingUsername);
 app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
 app.get('/account', userController.getAccount);
 app.post('/account/profile', userController.postUpdateProfile);
@@ -280,14 +369,14 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
 app.post('/completed-challenge', function (req, res) {
     req.user.challengesHash[parseInt(req.body.challengeNumber)] =
         Math.round(+new Date() / 1000);
-    var ch = req.user.challengesHash;
-    var p = 0;
-    for (var k in ch) {
-        if (ch[k] > 0) {
-            p += 1;
+    var timestamp = req.user.challengesHash;
+    var points = 0;
+    for (var key in timestamp) {
+        if (timestamp[key] > 0) {
+            points += 1;
         }
     }
-    req.user.points = p;
+    req.user.points = points;
     req.user.save();
 });
 

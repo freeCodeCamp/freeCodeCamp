@@ -8,20 +8,16 @@ var secrets = require('../config/secrets');
 
 
 var bonfireSchema = new mongoose.Schema({
-
     name: {
         type: String,
         unique: true
     },
-    difficulty: Number,
+    difficulty: String,
     description: Array,
-    publicTests: Array,
-    privateTests: Array,
+    tests: Array,
     challengeSeed: String,
-    bonfireNumber: Number,
     challengeEntryPoint: String,
     challengeEntryPointNegate: String
-
 });
 
 module.exports = mongoose.model('Bonfire', bonfireSchema);
