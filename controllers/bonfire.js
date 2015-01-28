@@ -37,7 +37,7 @@ exports.returnNextBonfire = function(req, res, next) {
         return res.redirect('bonfires/meet-bonfire');
     }
     var currentTime = parseInt(+new Date() / 1000);
-    if (currentTime - req.user.lastContentSync > 86400) {
+    if (currentTime - req.user.lastContentSync > 10) {
         req.user.lastContentSync = currentTime;
         var completed = req.user.completedBonfires.map(function (elem) {
             return elem._id;

@@ -39,20 +39,32 @@ $(document).ready(function() {
         $('#complete-bonfire-dialog').modal('show');
         // Only post to server if there is an authenticated user
         if ($('.signup-btn-nav').length < 1) {
-            $.ajax({
-                type: 'POST',
-                data: {
+
+            $.post(
+                '/completed-bonfire',
+                {
                     bonfireInfo: {
                         completedWith : didCompleteWith,
                         solution: bonfireSolution,
                         bonfireHash: thisBonfireHash
                     }
                 },
-                url: '/completed-bonfire/'
-
-            });
+                function(res) {
+                if (res) {
+                    window.location.href = 'http://localhost:3001/bonfires'
+                }
+            })
         }
     }
+
+    $('.next-bonfire-button').on('click', function() {
+        var bonfireSolution = myCodeMirror.getValue();
+        var thisBonfireHash = passedBonfireHash || null;
+        var didCompleteWith = $('#completed-with').val() || null;
+
+        completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
+
+    });
 
     $('.all-challenges').on('click', function() {
         $('#all-challenges-dialog').modal('show');
@@ -68,19 +80,6 @@ $(document).ready(function() {
     });
 
 
-    $('.next-bonfire-button').on('click', function() {
-        var bonfireSolution = myCodeMirror.getValue();
-        var thisBonfireHash = passedBonfireHash || null;
-        var didCompleteWith = $('#completed-with').val() || null;
-
-        completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
-
-        window.setTimeout(function() {
-            // TODO
-            window.location = '/bonfires';
-        }, 100);
-
-    });
 
     // Bonfire instructions functions
     $('#more-info').on('click', function() {

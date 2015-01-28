@@ -287,8 +287,6 @@ app.post('/completed-bonfire/', function (req, res) {
     var isCompletedDate =  Math.round(+new Date() / 1000);
     var bonfireHash = req.body.bonfireInfo.bonfireHash;
     var isSolution = req.body.bonfireInfo.solution;
-    // TODO
-    debug(isCompletedWith, 'Is completed with');
 
     if (isCompletedWith) {
         var paired = User.find({"profile.username": isCompletedWith}).limit(1);
@@ -328,14 +326,14 @@ app.post('/completed-bonfire/', function (req, res) {
                             throw err;
                         }
                         if (user && paired) {
-                            res.redirect('/bonfires');
+                            res.send(true);
                         }
                     })
                 });
-
             }
         })
     } else {
+
         req.user.completedBonfires.push({
             _id: bonfireHash,
             completedWith: null,
@@ -344,21 +342,20 @@ app.post('/completed-bonfire/', function (req, res) {
         })
 
         var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
-
         if (index > -1) {
             req.user.uncompletedBonfires.splice(index,1)
         }
+
         req.user.save(function(err, user) {
             if (err) {
                 throw err;
             }
             if (user) {
-                res.redirect('/bonfires');
+                debug('Saving user');
+                res.send(true)
             }
         });
-
     }
-
 });
 
 // Unique Check API route
