@@ -95,7 +95,6 @@ exports.returnIndividualBonfire = function(req, res, next) {
             next(err);
         }
         if (bonfire.length < 1) {
-            debug('Full Bonfire', bonfire);
             req.flash('errors', {
                 msg: "404: We couldn't find a bonfire with that name. Please double check the name."
             });

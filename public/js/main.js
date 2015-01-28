@@ -51,10 +51,6 @@ $(document).ready(function() {
                 url: '/completed-bonfire/'
 
             });
-
-            //$.post( '/completed-bonfire', function( data ) {
-            //    window.location = '/bonfires';
-            //});
         }
     }
 
@@ -71,13 +67,18 @@ $(document).ready(function() {
         window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
     });
 
+
     $('.next-bonfire-button').on('click', function() {
         var bonfireSolution = myCodeMirror.getValue();
         var thisBonfireHash = passedBonfireHash || null;
         var didCompleteWith = $('#completed-with').val() || null;
 
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
-        window.location = '/bonfires';
+
+        window.setTimeout(function() {
+            // TODO
+            window.location = '/bonfires';
+        }, 100);
 
     });
 
