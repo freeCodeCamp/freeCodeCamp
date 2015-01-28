@@ -1,6 +1,6 @@
 /* Based on Sublime Text's Monokai theme */
 
-.cm-s-monokai.CodeMirror {background: #272822; color: #f8f8f2; border-radius: 5px; height: auto;}
+.cm-s-monokai.CodeMirror {background: #272822; color: #f8f8f2; height: auto;}
 .cm-s-monokai div.CodeMirror-selected {background: #49483E !important;}
 .cm-s-monokai .CodeMirror-gutters {background: #272822; border-right: 0px;}
 .cm-s-monokai .CodeMirror-guttermarker { color: white; }

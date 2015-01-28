@@ -18,78 +18,79 @@ block content
 
 
     .row
-        .col-xs-12.col-sm-12.col-md-3
+        .col-xs-12.col-sm-12.col-md-4.bonfire-top
             #testCreatePanel
-                    h2.text-center #{name}
-                    h2.text-center
-                        if (difficulty == "0")
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                        if (difficulty == "1")
-                            i.ion-ios-flame
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                        if (difficulty == "2")
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                        if (difficulty == "3")
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                        if (difficulty == "4")
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame-outline
-                        if (difficulty == "5")
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                    .well
-                        .row.text-center
-                            row.text-center
-                                .col-xs-12
-                                    .bonfire-instructions
-                                        = brief
-                                #brief-instructions.col-xs-12
-                                    button#more-info.btn.btn-info
-                                        span.ion-help-circled
-                                        | More information
-                            #long-instructions.row.text-center.hide
-                                .col-xs-12
-                                    .bonfire-instructions
-                                        for sentence in details
-                                            p!= sentence
-                                    button#less-info.btn.btn-info
-                                        span.ion-help-circled
-                                        | Less information
-                    #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                    br
-                    form.code
-                        .form-group.codeMirrorView
-                            textarea#codeOutput
-                    br
-                    #testSuite
-                    br
-                    script(type="text/javascript").
-                        var tests = !{JSON.stringify(tests)};
-                        var challengeSeed = !{JSON.stringify(challengeSeed)};
-                        var challengeEntryPoint = !{JSON.stringify(challengeEntryPoint)};
-                        var passedBonfireHash = !{JSON.stringify(bonfireHash)};
-        .col-xs-12.col-sm-12.col-md-9
+
+                h2.text-center= name
+                h2.text-center.bonfire-flames
+                    if (difficulty == "0")
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                    if (difficulty == "1")
+                        i.ion-ios-flame
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                    if (difficulty == "2")
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                    if (difficulty == "3")
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                        i.ion-ios-flame-outline
+                        i.ion-ios-flame-outline
+                    if (difficulty == "4")
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                        i.ion-ios-flame-outline
+                    if (difficulty == "5")
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                        i.ion-ios-flame
+                .well
+                    .row.text-center
+                        row.text-center
+                            .col-xs-12
+                                .bonfire-instructions
+                                    = brief
+                            #brief-instructions.col-xs-12
+                                button#more-info.btn.btn-info
+                                    span.ion-help-circled
+                                    | More information
+                        #long-instructions.row.text-center.hide
+                            .col-xs-12
+                                .bonfire-instructions
+                                    for sentence in details
+                                        p!= sentence
+                                button#less-info.btn.btn-info
+                                    span.ion-help-circled
+                                    | Less information
+                #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+                br
+                form.code
+                    .form-group.codeMirrorView
+                        textarea#codeOutput
+                br
+                #testSuite
+                br
+                script(type="text/javascript").
+                    var tests = !{JSON.stringify(tests)};
+                    var challengeSeed = !{JSON.stringify(challengeSeed)};
+                    var challengeEntryPoint = !{JSON.stringify(challengeEntryPoint)};
+                    var passedBonfireHash = !{JSON.stringify(bonfireHash)};
+        .col-xs-12.col-sm-12.col-md-8
             #mainEditorPanel
                 form.code
                     .form-group.codeMirrorView

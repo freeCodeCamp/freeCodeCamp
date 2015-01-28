@@ -265,7 +265,16 @@ app.get(
 );
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
+
+/**
+ * Bonfire related routes
+ */
 app.get('/playground', bonfireController.index);
+app.get('/bonfires', bonfireController.returnNextBonfire);
+app.get('/bonfire-json-generator', bonfireController.returnGenerator);
+app.post('/bonfire-json-generator', bonfireController.generateChallenge);
+app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
+app.post('/bonfire-challenge-generator', bonfireController.testBonfire)
 app.get(
     '/bonfires/:bonfireName',
     bonfireController.returnIndividualBonfire
@@ -273,48 +282,8 @@ app.get(
 app.get('/bonfire', function(req, res) {
     res.redirect(301, '/playground');
 });
-app.get('/bonfires', bonfireController.returnNextBonfire);
-app.get('/bonfire/generator', bonfireController.returnGenerator);
-app.post('/bonfire/generator', bonfireController.generateChallenge);
-app.get('/bonfire/public-generator', bonfireController.publicGenerator);
-app.post('/bonfire/public-generator', bonfireController.testBonfire)
-
-// Unique Check API route
-app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
-app.get('/api/checkExistingUsername/:username', userController.checkExistingUsername);
-app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
-app.get('/account', userController.getAccount);
-app.post('/account/profile', userController.postUpdateProfile);
-app.post('/account/password', userController.postUpdatePassword);
-app.post('/account/delete', userController.postDeleteAccount);
-app.get('/account/unlink/:provider', userController.getOauthUnlink);
-
-
-/**
- * API examples routes.
- * accepts a post request. the challenge id req.body.challengeNumber
- * and updates user.challengesHash & user.challengesCompleted
- *
- */
-app.post('/completed-challenge', function (req, res) {
-    req.user.challengesHash[parseInt(req.body.challengeNumber)] =
-        Math.round(+new Date() / 1000);
-    var timestamp = req.user.challengesHash;
-    var points = 0;
-    for (var key in timestamp) {
-        if (timestamp[key] > 0) {
-            points += 1;
-        }
-    }
-    req.user.points = points;
-    req.user.save();
-});
 
 app.post('/completed-bonfire/', function (req, res) {
-
-    // TODO: remove debug statement
-    debug(req.body.bonfireInfo, 'This is bonfire info we got from posted');
-
     var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
     var isCompletedDate =  Math.round(+new Date() / 1000);
     var bonfireHash = req.body.bonfireInfo.bonfireHash;
@@ -374,6 +343,37 @@ app.post('/completed-bonfire/', function (req, res) {
         res.redirect('/bonfires');
     }
 
+});
+
+// Unique Check API route
+app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
+app.get('/api/checkExistingUsername/:username', userController.checkExistingUsername);
+app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
+app.get('/account', userController.getAccount);
+app.post('/account/profile', userController.postUpdateProfile);
+app.post('/account/password', userController.postUpdatePassword);
+app.post('/account/delete', userController.postDeleteAccount);
+app.get('/account/unlink/:provider', userController.getOauthUnlink);
+
+
+/**
+ * API examples routes.
+ * accepts a post request. the challenge id req.body.challengeNumber
+ * and updates user.challengesHash & user.challengesCompleted
+ *
+ */
+app.post('/completed-challenge', function (req, res) {
+    req.user.challengesHash[parseInt(req.body.challengeNumber)] =
+        Math.round(+new Date() / 1000);
+    var timestamp = req.user.challengesHash;
+    var points = 0;
+    for (var key in timestamp) {
+        if (timestamp[key] > 0) {
+            points += 1;
+        }
+    }
+    req.user.points = points;
+    req.user.save();
 });
 
 /**
