@@ -51,7 +51,7 @@ $(document).ready(function() {
                 },
                 function(res) {
                 if (res) {
-                    window.location.href = 'http://localhost:3001/bonfires'
+                    window.location.href = '/bonfires'
                 }
             })
         }
