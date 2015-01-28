@@ -12,23 +12,23 @@ var _ = require('lodash'),
 //TODO(Berks): Refactor to use module.exports = {} pattern.
 
 /**
- * GET /login
- * Login page.
+ * GET /signin
+ * Siginin page.
  */
 
-exports.getLogin = function(req, res) {
+exports.getSignin = function(req, res) {
   if (req.user) return res.redirect('/');
-  res.render('account/login', {
+  res.render('account/signin', {
     title: 'Free Code Camp Login'
   });
 };
 
 /**
- * POST /login
+ * POST /signin
  * Sign in using email and password.
  */
 
-exports.postLogin = function(req, res, next) {
+exports.postSignin = function(req, res, next) {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password cannot be blank').notEmpty();
 
@@ -36,14 +36,14 @@ exports.postLogin = function(req, res, next) {
 
   if (errors) {
     req.flash('errors', errors);
-    return res.redirect('/login');
+    return res.redirect('/signin');
   }
 
   passport.authenticate('local', function(err, user, info) {
     if (err) return next(err);
     if (!user) {
       req.flash('errors', { msg: info.message });
-      return res.redirect('/login');
+      return res.redirect('/signin');
     }
     req.logIn(user, function(err) {
       if (err) return next(err);
@@ -54,11 +54,11 @@ exports.postLogin = function(req, res, next) {
 };
 
 /**
- * GET /logout
+ * GET /signout
  * Log out.
  */
 
-exports.logout = function(req, res) {
+exports.signout = function(req, res) {
   req.logout();
   res.redirect('/');
 };
@@ -76,7 +76,7 @@ exports.getEmailSignin = function(req, res) {
 };
 
 /**
- * GET /email-signin
+ * GET /signin
  * Signup page.
  */
 
@@ -146,7 +146,7 @@ exports.getAccount = function(req, res) {
       console.error('Challenge err: ', err);
       next(err);
     }
-    res.render('account/profile', {
+    res.render('account/account', {
       title: 'Manage your Free Code Camp Account',
       challenges: c,
       ch: req.user.challengesHash,
@@ -184,6 +184,22 @@ exports.checkUniqueUsername = function(req, res) {
     }
   });
 };
+
+/**
+ * Existing username check
+ */
+exports.checkExistingUsername = function(req, res) {
+    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (data == 1) {
+            debug('sending false back')
+            return res.send(true);
+        } else {
+            debug('sending true back')
+            return res.send(false);
+        }
+    });
+};
+
 /**
  * Unique email check API Call
  */

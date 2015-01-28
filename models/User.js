@@ -353,7 +353,12 @@ var userSchema = new mongoose.Schema({
     },
     resetPasswordToken: String,
     resetPasswordExpires: Date,
-    bonfires: Array
+    uncompletedBonfires: Array,
+    completedBonfires: Array,
+    lastContentSync: {
+        type: Number,
+        default: 0
+    }
 });
 
 /**

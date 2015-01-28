@@ -2,8 +2,9 @@
 @import "lib/bootstrap-social/bootstrap-social";
 @import "lib/ionicons/ionicons";
 @import "lib/animate.min.less";
+@import "lib/bootstrap/variables";
 
-@import url(http://fonts.googleapis.com/css?family=Lato:300);
+//fonts.googleapis.com/css?family=Lato:300);
 @import url(http://fonts.googleapis.com/css?family=Lato:400);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata);
 
@@ -28,9 +29,17 @@ html {
   min-height: 100%;
 }
 
-body {
+body.full-screen-body-background {
+  background-color: #eeeeee;
+}
+
+body.top-and-bottom-margins {
   padding-top: 80px;
   margin-bottom: 60px;
+}
+
+body.no-top-and-bottom-margins {
+  margin: 70px 20px 50px 20px;
 }
 
 h1, h2 {
@@ -205,6 +214,11 @@ ul {
   animation-duration: 0.5s;
 }
 
+.slow-animation {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
 .disabled {
   pointer-events: none;
   cursor: default;
@@ -247,6 +261,10 @@ ul {
 .navbar {
   white-space: nowrap;
   border: none;
+  @media (min-width: 767px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .panel-body {
@@ -505,6 +523,7 @@ thead {
   text-align: center;
   margin-bottom: -30px;
   border-radius: 5px 5px 0px 0px;
+  padding-left: 50px;
 }
 
 .closing-x {
@@ -519,6 +538,7 @@ thead {
   background-color: #4a2b0f;
   height: 40px;
   bottom: 0;
+  left: 0;
   position: absolute;
   a {
     font-size: 28px;
@@ -529,22 +549,6 @@ thead {
       text-decoration: none;
     }
   }
-}
-
-form.code span {
-  font-size: 14px;
-  font-family: "Ubuntu Mono";
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  height: auto;
-}
-
-#mainEditorPanel .panel-body {
-  padding-bottom: 0px;
-}
-
-div.CodeMirror-scroll {
-  padding-bottom: 100px;
 }
 
 .embed-responsive-twitch-chat {
@@ -569,12 +573,77 @@ div.CodeMirror-scroll {
   text-size: 250px;
 }
 
-.bonfire-instructions p {
-  padding: 0;
-}
 .bonfire-instructions {
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
+
+
+
+/**
+ * Bonfire styling
+ */
+
+form.code span {
+  font-size: 18px;
+  font-family: "Ubuntu Mono";
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  height: 100%;
+}
+
+.CodeMirror-linenumber {
+  font-size: 18px;
+  font-family: "Ubuntu Mono";
+}
+
+#mainEditorPanel {
+  height: 100%;
+}
+
+.big-error-icon {
+  font-size: 40px;
+  color: @brand-danger;
+}
+
+.big-success-icon {
+  font-size: 40px;
+  color: @brand-primary;
+}
+
+.test-output {
+  font-size: 15px;
+  font-family: "Ubuntu Mono";
+}
+
+#mainEditorPanel .panel-body {
+  padding-bottom: 0px;
+}
+
+.panel-bonfire {
+  height: 100%
+}
+
+div.CodeMirror-scroll {
+  padding-bottom: 30px;
+}
+
+.test-vertical-center {
+  margin-top: 15px;
+}
+
+.cm-s-monokai.CodeMirror {
+  border-radius: 5px;
+}
+.bonfire-flames  {
+ margin-top: -20px;
+ margin-bottom: -2px;
+}
+
+.bonfire-top {
+  margin-top: -30px;
+}
+
+
 
 //uncomment this to see the dimensions of all elements outlined in red
 //* {
