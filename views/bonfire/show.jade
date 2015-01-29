@@ -60,23 +60,23 @@ block content
                         i.ion-ios-flame
                         i.ion-ios-flame
                 .well
-                    .row.text-center
-                        row.text-center
-                            .col-xs-12
-                                .bonfire-instructions
-                                    = brief
-                            #brief-instructions.col-xs-12
-                                button#more-info.btn.btn-info
-                                    span.ion-help-circled
-                                    | More information
-                        #long-instructions.row.text-center.hide
-                            .col-xs-12
-                                .bonfire-instructions
-                                    for sentence in details
-                                        p!= sentence
-                                button#less-info.btn.btn-info
-                                    span.ion-help-circled
-                                    | Less information
+                    .row
+                        .col-xs-12
+                            .bonfire-instructions
+                                p= brief
+                                #brief-instructions
+                                    .text-center
+                                        button#more-info.btn.btn-info
+                                            span.ion-help-circled
+                                            | More information
+                                #long-instructions.row.hide
+                                    .col-xs-12
+                                        for sentence in details
+                                            p!= sentence
+                                        .text-center
+                                            button#less-info.btn.btn-info
+                                                span.ion-help-circled
+                                                | Less information
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
                 br
                 form.code
