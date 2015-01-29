@@ -291,6 +291,26 @@
       "assert.deepEqual(search('C O E K F L S K\\nE Y Y C C E D L\\nB N X M E A D A\\nF E C O D S E D\\nQ N O K E L S D\\nJ C W E N L I O\\nP Q C N L C W L', 'NO'), [], 'empty array if provided word is too short');",
       "assert.deepEqual(search('N O T H I N G S\\nE Y Y C C E D L\\nB N X M E A D A\\nF E C O D S E D\\nQ N O K E L S D\\nJ C W E N L I O\\nP Q C N L C W L', 'NOTHINGS'), [], 'empty array if provided word is too long');"
     ]
+  },
+  {
+    "_id": "ca2e6f85cab2ab736c9a9b24",
+    "name": "Cash Register",
+    "difficulty": "3",
+    "description": [
+      "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument. cid is a 2d array listing available currency. Return the string \"Insufficient Funds\" if change due is less than the cash-in-drawer. Return the string \"Closed\" if cash-in-drawer is equal to the change due. Otherwise, return change in coin and bills, sorted in highest to lowest order."
+    ],
+    "challengeEntryPoint": "drawer();",
+    "challengeSeed": "function drawer(price, cash, cid) {\n  var change;\r\n  // Here is your change, ma'am.\r\n  return change;\r\n}\r\n\r\n// Example cash-in-drawer array:\r\n// [['PENNY', 1.01],\r\n// ['NICKEL', 2.05],\r\n// ['DIME', 3.10],\r\n// ['QUARTER', 4.25],\r\n// ['ONE', 90.00],\r\n// ['FIVE', 55.00],\r\n// ['TEN', 20.00],\r\n// ['TWENTY', 60.00],\r\n// ['ONE HUNDRED', 100.00]]",
+    "tests": [
+      "expect(drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]])).to.be.a('array');",
+      "expect(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]])).to.be.a('string');",
+      "expect(drawer(19.50, 20.00, [['PENNY', 0.50], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]])).to.be.a('string');",
+      "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['QUARTER', 0.50]], 'return correct change');",
+      "assert.deepEqual(drawer(3.26, 100.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['TEN', 10.00], ['FIVE', 5], ['ONE', 1], ['QUARTER', 0.50], ['DIME', 0.20], ['PENNY', 0.04] ], 'return correct change with multiple coins and bills');",
+      "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 0.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['QUARTER', 0.25], ['DIME', 0.20], ['NICKEL', 0.05]], 'return correct change when coin is low');",
+      "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), 'Insufficient Funds', 'insufficient funds');",
+      "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.50], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), \"Closed\", 'cash-in-drawer equals change');"
+    ]
   }
 ]
 
