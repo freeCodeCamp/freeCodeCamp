@@ -85,9 +85,9 @@ exports.returnNextBonfire = function(req, res, next) {
 };
 
 exports.returnIndividualBonfire = function(req, res, next) {
-    var bonfireName = req.params.bonfireName;
+    var dashedName = req.params.bonfireName;
 
-    bonfireName = bonfireName.replace(/\-/g, ' ');
+    bonfireName = dashedName.replace(/\-/g, ' ');
     var bonfireNumber = 0;
 
     Bonfire.find({"name" : new RegExp(bonfireName, 'i')}, function(err, bonfire) {
@@ -103,6 +103,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
             res.render('bonfire/show', {
                 completedWith: null,
                 title: bonfire[bonfireNumber].name,
+                dashedName: dashedName,
                 name: bonfire[bonfireNumber].name,
                 difficulty: Math.floor(+bonfire[bonfireNumber].difficulty),
                 brief: bonfire[bonfireNumber].description[0],
