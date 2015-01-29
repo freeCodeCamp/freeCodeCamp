@@ -257,24 +257,24 @@
     ]
   },
   {
-  "_id": "d5de63ebea8dbee56860f4f2",
-  "name": "Diff Two Arrays",
-  "difficulty": "1",
-  "description": [
-      "Compare two arrays and return a new array with any items not found in both of the original arrays."
-   ],
-  "challengeEntryPoint": "diff();",
-  "challengeSeed": "function diff(arr1, arr2) {\n  var newArr;\r\n  // Same, same; but different.\r\n  return newArr;\r\n}",
-  "tests": [
-    "expect(diff()).to.be.a('array');",
-    "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
-    "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['diorite', 'pink wool'], 'arrays with more than one difference');",
-    "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']), [], 'arrays with no difference');",
-    "assert.deepEqual(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'arrays with numbers');",
-    "assert.deepEqual(diff([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), ['piglet', 4], 'arrays with numbers and strings');",
-    "assert.deepEqual(diff([], ['snuffleupagus', 'cookie monster', 'elmo']), ['snuffleupagus', 'cookie monster', 'elmo'], 'empty array');"
-  ]
-},
+    "_id": "d5de63ebea8dbee56860f4f2",
+    "name": "Diff Two Arrays",
+    "difficulty": "1",
+    "description": [
+        "Compare two arrays and return a new array with any items not found in both of the original arrays."
+     ],
+    "challengeEntryPoint": "diff();",
+    "challengeSeed": "function diff(arr1, arr2) {\n  var newArr;\r\n  // Same, same; but different.\r\n  return newArr;\r\n}",
+    "tests": [
+      "expect(diff()).to.be.a('array');",
+      "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
+      "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['diorite', 'pink wool'], 'arrays with more than one difference');",
+      "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']), [], 'arrays with no difference');",
+      "assert.deepEqual(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'arrays with numbers');",
+      "assert.deepEqual(diff([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), ['piglet', 4], 'arrays with numbers and strings');",
+      "assert.deepEqual(diff([], ['snuffleupagus', 'cookie monster', 'elmo']), ['snuffleupagus', 'cookie monster', 'elmo'], 'empty array');"
+    ]
+  },
   {
     "_id": "5fc4fd1af9c4695c19ebca0a",
     "name": "Word Search Puzzle",
