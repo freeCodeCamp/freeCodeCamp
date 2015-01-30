@@ -270,6 +270,7 @@ app.get('/account/api', userController.getAccountAngular);
  */
 app.get('/playground', bonfireController.index);
 app.get('/bonfires', bonfireController.returnNextBonfire);
+app.get('/courseware', bonfireController.courseware);
 app.get('/bonfire-json-generator', bonfireController.returnGenerator);
 app.post('/bonfire-json-generator', bonfireController.generateChallenge);
 app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
