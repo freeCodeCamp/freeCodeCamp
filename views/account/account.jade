@@ -50,7 +50,7 @@ block content
                   .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.username.$error.unique && !profileForm.username.$pristine && $scope.storedUsername !== user.profile.username")
                     alert(type='danger')
                       span.ion-close-circled
-                      | That username is already taken.
+                      | That username is already in use.
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') Email *
@@ -65,9 +65,9 @@ block content
                       span.ion-close-circled
                       | Please enter a valid email format.
                   .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.email.$error.unique && !profileForm.email.$pristine")
-                      alert(type='danger')
-                          span.ion-close-circled
-                          | That email is already taken.
+                    alert(type='danger')
+                      span.ion-close-circled
+                      | That email is already in use.
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='location') Location
