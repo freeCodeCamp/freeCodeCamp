@@ -293,23 +293,7 @@ block content
                         a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/auth/twitter')
                             i.fa.fa-twitter
                             | Link Twitter with your account
-            br
-    - if (ch[0] > 0)
-        .panel.panel-primary
-            .panel-heading.text-center Completed Challenges:
-            .panel-body
-                .col-xs-12
-                  table.table.table-striped
-                    thead
-                      tr
-                        th Challenge
-                        th Date Finished
-                    for challenge in challenges
-                      if ch[challenge.challengeNumber] > 0
-                        tr
-                          td= challenges[challenge.challengeNumber].name
-                          td= moment(ch[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
-            br
+
     .panel.panel-danger
         .panel-heading.text-center Danger Zone:
         .panel-body
