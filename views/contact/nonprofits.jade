@@ -20,7 +20,7 @@ block content
               label(class='col-sm-2 control-label', for='name') Your name *
               .col-sm-8
                 input.form-control(type='text', name='name', id='name', autocomplete="off", ng-model='name', required='required')
-              .col-sm-8.col-sm-offset-2(ng-show="nonprofitForm.name.$invalid && nonprofitForm.name.$error.required && !nonprofitForm.name.$pristine")
+              .col-sm-8.col-sm-offset-2(ng-cloak, ng-show="nonprofitForm.name.$invalid && nonprofitForm.name.$error.required && !nonprofitForm.name.$pristine")
                 alert(type='danger')
                     span.ion-close-circled(id='#name-error')
                     |  Your name is required.
@@ -28,7 +28,7 @@ block content
               label(class='col-sm-2 control-label', for='email') Your email *
               .col-sm-8
                 input.form-control(type='text', name='email', id='email', autocomplete="off", ng-model='email', required='required')
-              .col-sm-8.col-sm-offset-2(ng-show="nonprofitForm.email.$invalid && nonprofitForm.email.$error.required && !nonprofitForm.email.$pristine")
+              .col-sm-8.col-sm-offset-2(ng-cloak, ng-show="nonprofitForm.email.$invalid && nonprofitForm.email.$error.required && !nonprofitForm.email.$pristine")
                 alert(type='danger')
                   span.ion-close-circled(id='#email-error').
                     Your email is required.
@@ -36,7 +36,7 @@ block content
               label(class='col-sm-2 control-label', for='message') Briefly describe what problem you need to solve, and for whom. *
               .col-sm-8
                 textarea.form-control(type='text', name='message', id='message', rows='7', autocomplete="off", ng-model='message', required='required')
-              .col-sm-8.col-sm-offset-2(ng-show="nonprofitForm.message.$invalid && nonprofitForm.message.$error.required && !nonprofitForm.message.$pristine")
+              .col-sm-8.col-sm-offset-2(ng-cloak, ng-show="nonprofitForm.message.$invalid && nonprofitForm.message.$error.required && !nonprofitForm.message.$pristine")
                 alert(type='danger')
                   span.ion-close-circled(id='#message-error')
                   | Your message is required.

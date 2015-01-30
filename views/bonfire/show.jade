@@ -116,7 +116,7 @@ block content
                                     // extra field to distract password tools like lastpass from injecting css into our username field
                                     input.form-control(ng-show="false")
                                     input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser", autofocus)
-                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
+                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
                                     alert(type='danger')
                                         span.ion-close-circled
                                         | Username not found
