@@ -10,249 +10,32 @@ block content
             .col-md-8.col-xs-12
                 .embed-responsive.embed-responsive-16by9
                     iframe(src='http://www.twitch.tv/freecodecamp/embed', frameborder='0', scrolling='no')
-        br
         h1 Previous Live Pair Programming Sessions
-    link(href='http://fonts.googleapis.com/css?family=Raleway:400,800,500,600', rel='stylesheet', type='text/css')
-    style.
-        @font-face {
-            font-weight: normal;
-            font-style: normal;
-            font-family: 'codropsicons';
-            src: url('../fonts/codropsicons/codropsicons.eot');
-            src: url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
-            url('../fonts/codropsicons/codropsicons.woff') format('woff'),
-            url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
-            url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
-        }
-
-        *, *:after, *:before {
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .clearfix:before, .clearfix:after {
-            display: table;
-            content: '';
-        }
-
-        .clearfix:after {
-            clear: both;
-        }
-
-        a {
-            outline: none;
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        a:hover, a:focus {
-            color: #528cb3;
-        }
-
-        section {
-            padding: 1em;
-            text-align: center;
-        }
-
-        .content {
-            margin: 0 auto;
-            /*max-width: 1000px;*/
-        }
-
-        .content > h2 {
-            text-align: center;
-            clear: both;
-            margin: 0;
-            padding: 4em 1% 0;
-            color: #eee;
-            background-color: #215f1e;
-            font-weight: 800;
-            font-size: 1.5em;
-        }
-
-        .content > h2:first-child {
-            padding-top: 0em;
-        }
-
-        @media screen and (max-width: 25em) {
-            .codrops-header {
-                font-size: 75%;
-            }
-
-            .codrops-icon span {
-                display: none;
-            }
-        }
-
-        .grid {
-            position: relative;
-            clear: both;
-            margin: 0 auto;
-            padding: 1em 0 4em;
-            /*max-width: 1000px;*/
-            list-style: none;
-            text-align: center;
-        }
-
-        /* Common style */
-        .grid figure {
-            position: relative;
-            float: left;
-            overflow: hidden;
-            margin: 10px 1%;
-            /*min-width: 320px;*/
-            /*max-width: 480px;*/
-            max-height: 360px;
-            /*width: 48%;*/
-            height: auto;
-            background: #3085a3;
-            text-align: center;
-            cursor: pointer;
-        }
-
-        .grid figure img {
-            position: relative;
-            display: block;
-            min-height: 100%;
-            max-width: 100%;
-            opacity: 0.8;
-        }
-
-        .grid figure figcaption {
-            padding: 2em;
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 1.25em;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
-
-        .grid figure figcaption::before,
-        .grid figure figcaption::after {
-            pointer-events: none;
-        }
-
-        .grid figure figcaption,
-        .grid figure figcaption > a {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Anchor will cover the whole item by default */
-        /* For some effects it will show as a button */
-        .grid figure figcaption > a {
-            z-index: 1000;
-            text-indent: 200%;
-            white-space: nowrap;
-            font-size: 0;
-            opacity: 0;
-        }
-
-        .grid figure h2 {
-            /*word-spacing: -0.15em;*/
-            font-weight: 300;
-        }
-
-        .grid figure h2 span {
-            font-weight: 800;
-        }
-
-        .grid figure h2,
-        .grid figure p {
-            margin: -13px 0 0 0;
-        }
-
-        .grid figure p {
-            /*letter-spacing: 1px;*/
-            font-size: 68.5%;
-        }
-
-        /* Individual effects */
-        /*---------------*/
-        /***** magnify *****/
-        /*---------------*/
-        figure.effect-magnify {
-            background: -webkit-linear-gradient(-45deg, #34495e 0%, #cc6055 100%);
-            background: linear-gradient(-45deg, #34495e 0%, #cc6055 100%);
-        }
-
-        figure.effect-magnify img,
-        figure.effect-magnify p {
-            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-            transition: opacity 0.35s, transform 0.35s;
-        }
-
-        figure.effect-magnify:hover img {
-            opacity: 0.1;
-            -webkit-transform: scale3d(2, 2, 1);
-            transform: scale3d(2, 2, 1);
-        }
-
-        figure.effect-magnify h2 {
-            -webkit-transition: -webkit-transform 0.35s;
-            transition: transform 0.35s;
-            -webkit-transform: scale3d(0.8, 0.8, 1);
-            transform: scale3d(0.8, 0.8, 1);
-            -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
-        }
-
-        figure.effect-magnify p {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            margin: 20px;
-            padding: 30px;
-            border: 2px solid #fff;
-            text-transform: none;
-            font-size: 90%;
-            opacity: 0;
-            -webkit-transform: scale3d(0.8, 0.8, 1);
-            transform: scale3d(0.8, 0.8, 1);
-            -webkit-transform-origin: 50% -100%;
-            transform-origin: 50% -100%;
-        }
-
-        figure.effect-magnify:hover h2,
-        figure.effect-magnify:hover p {
-            opacity: 1;
-            -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
-        }
-
-        /* Media queries */
-        @media screen and (max-width: 50em) {
-            .content {
-                padding: 0 10px;
-                text-align: center;
-            }
-
-            .grid figure {
-                display: inline-block;
-                float: none;
-                margin: 10px auto;
-                width: 100%;
-            }
-        }
-
-    .container
-        .content
-            .grid
-                for youtube in youtubes
-                    figure.effect-magnify
-                        img(src='https://s3.amazonaws.com/freecodecamp/logo-animation-youtube.jpg', alt='fcc-logo')
-                        figcaption
-                            h2= youtube[0]
-                            p= youtube[1]
-                            .modal(tabindex='-1')
-                                .modal-dialog.animated.zoomIn.fast-animation
-                                    .modal-content
-                                        .modal-header.challenge-list-header= youtube[0]
-                                        a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                                        .modal-body
-                                            iframe.embed-responsive-item(src="//www.youtube.com/embed/#{youtube[2]")
-    br
-
+        .col-xs-12
+            .embed-responsive.embed-responsive-16by9.big-break
+                iframe.embed-responsive-item(src='//www.youtube.com/embed/_BErpDdmBOw')
+            h3.wrappable link: &nbsp;
+                a(href="http://www.youtube.com/watch/_BErpDdmBOw") http://www.youtube.com/watch/_BErpDdmBOw
+            .embed-responsive.embed-responsive-16by9.big-break
+                iframe.embed-responsive-item(src='//www.youtube.com/embed/Fn9HMn79KH0')
+            h3.wrappable link: &nbsp;
+                a(href="http://www.youtube.com/watch/Fn9HMn79KH0") http://www.youtube.com/watch/Fn9HMn79KH0
+            .embed-responsive.embed-responsive-16by9.big-break
+                iframe.embed-responsive-item(src='//www.youtube.com/embed/S7iRBZJwOAs')
+            h3.wrappable link: &nbsp;
+                a(href="http://www.youtube.com/watch/S7iRBZJwOAs") http://www.youtube.com/watch/S7iRBZJwOAs
+            .embed-responsive.embed-responsive-16by9.big-break
+                iframe.embed-responsive-item(src='//www.youtube.com/embed/BHNRg39ZblE')
+            h3.wrappable link: &nbsp;
+                a(href="http://www.youtube.com/watch/BHNRg39ZblE") http://www.youtube.com/watch/BHNRg39ZblE
+            .embed-responsive.embed-responsive-16by9.big-break
+                iframe.embed-responsive-item(src='//www.youtube.com/embed/YDfkHlDmehA')
+            h3.wrappable link: &nbsp;
+                a(href="http://www.youtube.com/watch/YDfkHlDmehA") http://www.youtube.com/watch/YDfkHlDmehA
+            h3 Got 3 minutes? Learn to code with us!
+            a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
+            br
+            br
+            br
+            br
+            br
