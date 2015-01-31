@@ -48,12 +48,12 @@ block content
       .form-group
         .col-sm-6.col-sm-offset-3
           input.form-control(type='password', ng-model='confirmPassword', name='confirmPassword', id='confirmPassword', placeholder='confirm password', required, ng-minlength=5)
-          .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="(confirmPassword !== password) && !signupForm.confirmPassword.$pristine")
-            alert(type='danger')
-              span.ion-close-circled
-              |  Passwords must match.
+        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="(confirmPassword !== password) && !signupForm.confirmPassword.$pristine")
+          alert(type='danger')
+            span.ion-close-circled
+            |  Passwords must match.
       .form-group
-        .col-sm-offset-3.col-sm-6
+        .col-sm-6.col-sm-offset-3
           button.btn.btn-success(type='submit', ng-disabled='signupForm.$invalid')
             span.ion-person-add
             | Signup

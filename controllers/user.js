@@ -93,18 +93,12 @@ exports.getEmailSignup = function(req, res) {
  */
 
 exports.postEmailSignup = function(req, res, next) {
-  console.log('post email signup called');
-  req.assert('email', 'Email is not valid').isEmail();
-  req.assert('password', 'Password must be at least 4 characters long').len(4);
-  req.assert('confirmPassword', 'Passwords do not match')
-    .equals(req.body.password);
-
   var errors = req.validationErrors();
 
   if (errors) {
     req.flash('errors', errors);
     return res.redirect('/email-signup');
-    console.log(errors);
+    debug(errors);
   }
 
   var user = new User({
@@ -131,6 +125,29 @@ exports.postEmailSignup = function(req, res, next) {
         if (err) { return next(err); }
         res.redirect('/email-signup');
       });
+    });
+    var transporter = nodemailer.createTransport({
+      service: 'Mandrill',
+      auth: {
+        user: secrets.mandrill.user,
+        pass: secrets.mandrill.password
+      }
+    });
+    var mailOptions = {
+      to: user.email,
+      from: 'Team@freecodecamp.com',
+      subject: 'Welcome to Free Code Camp!',
+      text: [
+        'Greetings from San Francisco!\n\n',
+        'Thank you for joining our community.\n',
+        'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
+        "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+        'Good luck with the challenges!\n\n',
+        '- the Volunteer Camp Counselor Team'
+      ].join('')
+    };
+    transporter.sendMail(mailOptions, function(err) {
+      if (err) { return err; }
     });
   });
 };
@@ -456,9 +473,6 @@ exports.getReset = function(req, res) {
  */
 
 exports.postReset = function(req, res, next) {
-  req.assert('password', 'Password must be at least 4 characters long.').len(4);
-  req.assert('confirm', 'Passwords must match.').equals(req.body.password);
-
   var errors = req.validationErrors();
 
   if (errors) {
@@ -547,8 +561,6 @@ exports.getForgot = function(req, res) {
  */
 
 exports.postForgot = function(req, res, next) {
-  req.assert('email', 'Please enter a valid email address.').isEmail();
-
   var errors = req.validationErrors();
 
   if (errors) {
