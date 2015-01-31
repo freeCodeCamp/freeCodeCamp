@@ -94,6 +94,10 @@ exports.returnIndividualBonfire = function(req, res, next) {
         if (err) {
             next(err);
         }
+        var dashedNameFull = bonfire[bonfireNumber].name.toLowerCase().replace(/\s/g, '-');
+        if (dashedNameFull != dashedName) {
+            return res.redirect('/bonfires/' + dashedNameFull);
+        }
         if (bonfire.length < 1) {
             req.flash('errors', {
                 msg: "404: We couldn't find a bonfire with that name. Please double check the name."
