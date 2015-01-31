@@ -2,6 +2,7 @@ var User = require('../models/User'),
     resources = require('./resources.json'),
     questions = resources.questions,
     steps = resources.steps,
+    youtubes = resources.youtubes,
     secrets = require('./../config/secrets'),
     Challenge = require('./../models/Challenge'),
     bonfires = require('../seed_data/bonfires.json');
@@ -86,7 +87,8 @@ module.exports = {
 
     livePairProgramming: function(req, res) {
         res.render('resources/live-pair-programming', {
-            title: 'Live Pair Programming'
+            title: 'Live Pair Programming',
+            youtubes: youtubes
         });
     },
 
