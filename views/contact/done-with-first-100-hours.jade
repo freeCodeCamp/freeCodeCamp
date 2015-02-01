@@ -14,11 +14,11 @@ block content
                     label(class='col-sm-3 control-label', for='email') Your email *
                     .col-sm-8
                         input.form-control(type='text', name='email', id='email', autocomplete="off", ng-model='email', required='required', ng-keypress='')
-                    .col-sm-8.col-sm-offset-3(ng-show="doneWithFirst100HoursForm.$error.email && !doneWithFirst100HoursForm.email.$pristine")
+                    .col-sm-8.col-sm-offset-3(ng-cloak, ng-show="doneWithFirst100HoursForm.$error.email && !doneWithFirst100HoursForm.email.$pristine")
                         alert(type='danger')
                             span.ion-close-circled
                             | Please enter a valid email format.
-                    .col-sm-8.col-sm-offset-3(ng-show="doneWithFirst100HoursForm.email.$invalid && doneWithFirst100HoursForm.email.$error.required && !doneWithFirst100HoursForm.email.$pristine")
+                    .col-sm-8.col-sm-offset-3(ng-cloak, ng-show="doneWithFirst100HoursForm.email.$invalid && doneWithFirst100HoursForm.email.$error.required && !doneWithFirst100HoursForm.email.$pristine")
                         alert(type='danger')
                             span.ion-close-circled(id='#email-error').
                                 Your email is required.
