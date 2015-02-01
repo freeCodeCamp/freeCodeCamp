@@ -33,6 +33,9 @@ block content
                                 h3.flat-top.bolded.wrappable= location
                                 h4.flat-top.wrappable= bio
                         .col-xs-12.col-sm-12.col-md-3.text-center
+                            if (user && user.profile.username === username)
+                                a.btn.btn-warning(href="/account") Edit my Profile
+
                             .background-svg.img-center
                                 .points-on-top
                                     = "[ " + points + " ]"

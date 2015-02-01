@@ -254,8 +254,7 @@ block content
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website3Image') Image Link (4:3 ratio)
                     .col-sm-4
-<<<<<<< HEAD
-                        input.form-control(type='url', name='website3Image', id='website3Image', autocomplete="off", ng-model='user.portfolio.website3Image', placeholder='http://www.example.com/image.jpg', ng-pattern="/[\.](jpg|png|jpeg|gif)?$/")
+                        input.form-control(type='url', name='website3Image', id='website3Image', autocomplete="off", ng-model='user.portfolio.website3Image', placeholder='http://www.example.com/image.jpg', ng-pattern='/[\.](jpg|png|jpeg|gif)(\s+)?$/')
                     .col-sm-4.col-sm-offset-5(ng-show="profileForm.website3Image.$error.url && !profileForm.website3Image.$pristine")
                         alert(type='danger')
                             span.ion-close-circled
