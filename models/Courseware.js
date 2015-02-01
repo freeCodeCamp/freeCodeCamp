@@ -6,8 +6,7 @@ var secrets = require('../config/secrets');
  * @type {exports.Schema}
  */
 
-
-var bonfireSchema = new mongoose.Schema({
+var coursewareSchema = new mongoose.Schema({
     name: {
         type: String,
         unique: true
@@ -16,7 +15,7 @@ var bonfireSchema = new mongoose.Schema({
     description: Array,
     tests: Array,
     challengeSeed: String,
-    challengeEntryPoint: String,
+    challengeEntryPoint: String
 });
 
-module.exports = mongoose.model('Bonfire', bonfireSchema);
+module.exports = mongoose.model('Courseware', coursewareSchema);

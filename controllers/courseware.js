@@ -1,73 +1,45 @@
 var _ = require('lodash'),
-    debug = require('debug')('freecc:cntr:bonfires'),
-    Bonfire = require('./../models/Bonfire'),
+    debug = require('debug')('freecc:cntr:coursewares'),
+    Courseware = require('./../models/Courseware'),
     User = require('./../models/User'),
     resources = require('./resources');
 
 /**
- * Bonfire controller
+ * Courseware controller
  */
 
-var highestBonfireNumber = resources.numberOfBonfires();
-
-exports.bonfireNames = function(req, res) {
-    res.render('bonfires/showList', {
-        bonfireList: resources.allBonfireNames()
+exports.courseware = function(req, res) {
+    res.render('courseware/show.jade', {
     });
 };
 
-exports.index = function(req, res) {
-    res.render('bonfire/show.jade', {
-        completedWith: null,
-        title: 'Bonfire Playground',
-        name: 'Bonfire Playground',
-        difficulty: 0,
-        brief: 'Feel free to play around!',
-        details: '',
-        tests:  [],
-        challengeSeed:  '',
-        challengeEntryPoint: '',
-        cc: req.user ? req.user.bonfiresHash : undefined,
-        points: req.user ? req.user.points : undefined,
-        verb: resources.randomVerb(),
-        phrase: resources.randomPhrase(),
-        compliments: resources.randomCompliment(),
-        bonfires: [],
-        bonfireHash: 'test'
+var highestCourswareNumber = resources.numberOfCoursewares();
 
-    });
-};
-
-exports.returnNextBonfire = function(req, res, next) {
+exports.returnNextCourseware = function(req, res, next) {
     if (!req.user) {
-        return res.redirect('bonfires/meet-bonfire');
+        return res.redirect('coursewares/welcome-to-courseware');
     }
-    var currentTime = parseInt(+new Date() / 1000);
-    if (currentTime - req.user.lastContentSync > 10) {
-        req.user.lastContentSync = currentTime;
-        var completed = req.user.completedBonfires.map(function (elem) {
-            return elem._id;
-        });
+    var completed = req.user.completedBonfires.map(function (elem) {
+        return elem._id;
+    });
 
-        req.user.uncompletedBonfires = resources.allBonfireIds().filter(function (elem) {
-            if (completed.indexOf(elem) === -1) {
-                return elem;
-            }
-        });
-        req.user.save();
-    }
+    req.user.uncompletedBonfires = resources.allBonfireIds().filter(function (elem) {
+        if (completed.indexOf(elem) === -1) {
+            return elem;
+        }
+    });
+    req.user.save();
 
+    var uncompletedCoursewares = req.user.uncompletedCoursewares;
 
-    var uncompletedBonfires = req.user.uncompletedBonfires;
-
-
-    var displayedBonfires =  Bonfire.find({'_id': uncompletedBonfires[0]});
-    displayedBonfires.exec(function(err, bonfire) {
+    var displayedCoursewares =  Courseware.find({'_id': uncompletedCoursewares[0]});
+    displayedCoursewares.exec(function(err, bonfire) {
         if (err) {
             next(err);
         }
 
-        nameString = bonfire[0].name.toLowerCase().replace(/\s/g, '-');
+        courseware = courseware.pop();
+        nameString = courseware[0].name.toLowerCase().replace(/\s/g, '-');
         return res.redirect('/bonfires/' + nameString);
         //res.render('bonfire/show', {
         //    completedWith: null,

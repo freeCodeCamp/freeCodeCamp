@@ -202,7 +202,21 @@ module.exports = {
         })
         .map(function(elem) {
             return elem._id;
+        });
+    },
+    allBonfireNames: function() {
+        return bonfires.map(function(elem) {
+            return {
+                name: elem.name,
+                difficulty: elem.difficulty
+            }
         })
+        .sort(function(a, b) {
+            return a.difficulty - b.difficulty;
+        })
+        .map(function(elem) {
+            return elem.name;
+        });
     }
 };
 
