@@ -8,11 +8,6 @@ var _ = require('lodash'),
  * Bonfire controller
  */
 
-exports.courseware = function(req, res) {
-    res.render('courseware/show.jade', {
-    });
-};
-
 var highestBonfireNumber = resources.numberOfBonfires();
 
 exports.index = function(req, res) {
