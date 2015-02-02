@@ -255,6 +255,42 @@
       "assert.deepEqual(inventory([], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]);",
       "assert.deepEqual(inventory([[0, 'Bowling Ball'], [0, 'Dirty Sock'], [0, 'Hair pin'], [0, 'Microphone']], [[1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [1, 'Bowling Ball'], [1, 'Toothpaste']]), [[1, 'Bowling Ball'], [1, 'Dirty Sock'], [1, 'Hair pin'], [1, 'Half-Eaten Apple'], [1, 'Microphone'], [1, 'Toothpaste']]);"
     ]
+  },
+  {
+    "_id": "d5de63ebea8dbee56860f4f2",
+    "name": "Diff Two Arrays",
+    "difficulty": "1",
+    "description": [
+        "Compare two arrays and return a new array with any items not found in both of the original arrays."
+     ],
+    "challengeEntryPoint": "diff();",
+    "challengeSeed": "function diff(arr1, arr2) {\n  var newArr;\r\n  // Same, same; but different.\r\n  return newArr;\r\n}",
+    "tests": [
+      "expect(diff()).to.be.a('array');",
+      "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
+      "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['diorite', 'pink wool'], 'arrays with more than one difference');",
+      "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']), [], 'arrays with no difference');",
+      "assert.deepEqual(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'arrays with numbers');",
+      "assert.deepEqual(diff([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), ['piglet', 4], 'arrays with numbers and strings');",
+      "assert.deepEqual(diff([], ['snuffleupagus', 'cookie monster', 'elmo']), ['snuffleupagus', 'cookie monster', 'elmo'], 'empty array');"
+    ]
+  },
+  {
+    "_id": "5fc4fd1af9c4695c19ebca0a",
+    "name": "Word Search Puzzle",
+    "difficulty": "3",
+    "description": [
+      "Write a function that accepts a randomized 8 x 7 capital letter grid in the form of a string with line breaks and one space between each letter column as the first argument and a 3 to 7 letter string as the second argument. The second argument is hidden in horizontal, vertical, or diagonal view somewhere within the grid. Your job is to return the coordinates (Row, Column) of the second argument in an array."
+    ],
+    "challengeEntryPoint": "search();",
+    "challengeSeed": "function search(str1, str2) {\n  var arr;\r\n  // Where is that sneaky word hiding?\r\n  return arr;\r\n}\r\n\r\n// Example grid with the hidden word 'CODE':\r\n// F S E K F L S K\r\n// E Y Y C S E D L\r\n// B N X M E A D A\r\n// F E N D L S E D\r\n// Q N O K E L S D\r\n// J C W E N L I O\r\n// P Q C N L C W L",
+    "tests": [
+      "expect(search()).to.be.a('array');",
+      "assert.deepEqual(search('F S E K F L S K\\nE Y Y C S E D L\\nB N X M E A D A\\nF E N D L S E D\\nQ N O K E L S D\\nJ C W E N L I O\\nP Q C N L C W L', 'CODE'), [[6, 2], [5, 3], [4, 4], [3, 5]], 'proper coordinates');",
+      "assert.deepEqual(search('C O E K F L S K\\nE Y Y C C E D L\\nB N X M E A D A\\nF E C O D S E D\\nQ N O K E L S D\\nJ C W E N L I O\\nP Q C N L C W L', 'CODE'), [[6, 2], [5, 3], [4, 4], [3, 5]], 'success even with multiple occurances of the correct letters');",
+      "assert.deepEqual(search('C O E K F L S K\\nE Y Y C C E D L\\nB N X M E A D A\\nF E C O D S E D\\nQ N O K E L S D\\nJ C W E N L I O\\nP Q C N L C W L', 'NO'), [], 'empty array if provided word is too short');",
+      "assert.deepEqual(search('N O T H I N G S\\nE Y Y C C E D L\\nB N X M E A D A\\nF E C O D S E D\\nQ N O K E L S D\\nJ C W E N L I O\\nP Q C N L C W L', 'NOTHINGS'), [], 'empty array if provided word is too long');"
+    ]
   }
 ]
 
