@@ -6,7 +6,7 @@
     "description": [
       "Click the button below for further instructions.",
       "Your goal is to fix the failing test.",
-      "First, run all the tests by clickin \"Run code\" or by pressing Control + Enter",
+      "First, run all the tests by clicking \"Run code\" or by pressing Control + Enter",
       "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire."
     ],
     "tests": [

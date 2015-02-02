@@ -63,7 +63,7 @@ module.exports = {
       to: 'team@freecodecamp.com',
       name: 'Completionist',
       from: req.body.email,
-      subject: 'Code Camper at ' + req.body.email + ' has completed the first 100 hours',
+      subject: 'Camper at ' + req.body.email + ' has completed the first 100 hours',
       text: ''
     };
 
