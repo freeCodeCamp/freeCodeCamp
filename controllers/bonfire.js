@@ -36,28 +36,22 @@ exports.index = function(req, res) {
     });
 };
 
-exports.returnNextBonfire = function(req, res, next) {
+exports.returnNextBonfire = function(req, res) {
     if (!req.user) {
         return res.redirect('bonfires/meet-bonfire');
     }
-    var currentTime = parseInt(+new Date() / 1000);
-    if (currentTime - req.user.lastContentSync > 10) {
-        req.user.lastContentSync = currentTime;
-        var completed = req.user.completedBonfires.map(function (elem) {
-            return elem._id;
-        });
+    var completed = req.user.completedBonfires.map(function (elem) {
+        return elem._id;
+    });
 
-        req.user.uncompletedBonfires = resources.allBonfireIds().filter(function (elem) {
-            if (completed.indexOf(elem) === -1) {
-                return elem;
-            }
-        });
-        req.user.save();
-    }
-
+    req.user.uncompletedBonfires = resources.allBonfireIds().filter(function (elem) {
+        if (completed.indexOf(elem) === -1) {
+            return elem;
+        }
+    });
+    req.user.save();
 
     var uncompletedBonfires = req.user.uncompletedBonfires;
-
 
     var displayedBonfires =  Bonfire.find({'_id': uncompletedBonfires[0]});
     displayedBonfires.exec(function(err, bonfire) {

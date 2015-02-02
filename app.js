@@ -32,6 +32,7 @@ var express = require('express'),
     userController = require('./controllers/user'),
     contactController = require('./controllers/contact'),
     bonfireController = require('./controllers/bonfire'),
+    coursewareController = require('./controllers/courseware'),
 
     /**
      * User model
@@ -270,7 +271,6 @@ app.get('/account/api', userController.getAccountAngular);
  */
 app.get('/playground', bonfireController.index);
 app.get('/bonfires', bonfireController.returnNextBonfire);
-//app.get('/courseware', bonfireController.courseware);
 app.get('/bonfire-json-generator', bonfireController.returnGenerator);
 app.post('/bonfire-json-generator', bonfireController.generateChallenge);
 app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
@@ -284,6 +284,17 @@ app.get('/bonfire', function(req, res) {
 });
 
 app.post('/completed-bonfire/', bonfireController.completedBonfire);
+
+/**
+ * Courseware related routes
+ */
+
+app.get('/coursewares', coursewareController.returnNextCourseware);
+app.get(
+    '/coursewares/:coursewareName',
+    coursewareController.returnIndividualCourseware
+);
+app.post('/completed-courseware/', coursewareController.completedCourseware);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);

@@ -18,11 +18,11 @@ block content
     script(src='/js/lib/codemirror/mode/css/css.js')
     script(src='/js/lib/codemirror/mode/htmlmixed/htmlmixed.js')
     .row
-        .col-xs-12.col-sm-12.col-md-3.bonfire-top
-            h2.text-center= name
+        .col-xs-12.col-sm-12.col-md-3
             .well
                 .row
                     .col-xs-12
+                        h2.text-center= name
                         .bonfire-instructions
                             p= brief
                             #brief-instructions
@@ -38,9 +38,9 @@ block content
                                     button#less-info.btn.btn-info
                                         span.ion-help-circled
                                         | Less information
-            #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-            br
-            form.code
+            //#submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+            //br
+            //form.code
                 .form-group.codeMirrorView
                     textarea#codeOutput
             br
@@ -49,8 +49,7 @@ block content
             script(type="text/javascript").
                 var tests = !{JSON.stringify(tests)};
                 var challengeSeed = !{JSON.stringify(challengeSeed)};
-                var challengeEntryPoint = !{JSON.stringify(challengeEntryPoint)};
-                var passedBonfireHash = !{JSON.stringify(bonfireHash)};
+                var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
         .col-xs-12.col-sm-12.col-md-5
             #mainEditorPanel
                 form.code

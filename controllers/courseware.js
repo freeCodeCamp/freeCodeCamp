@@ -1,180 +1,113 @@
 var _ = require('lodash'),
-    debug = require('debug')('freecc:cntr:bonfires'),
-    Bonfire = require('./../models/Bonfire'),
+    debug = require('debug')('freecc:cntr:courseware'),
+    Courseware = require('./../models/Courseware'),
     User = require('./../models/User'),
     resources = require('./resources');
 
 /**
- * Bonfire controller
+ * Courseware controller
  */
 
-exports.bonfireNames = function(req, res) {
-    res.render('bonfires/showList', {
-        bonfireList: resources.allBonfireNames()
+exports.coursewareNames = function(req, res) {
+    res.render('coursewares/showList', {
+        coursewareList: resources.allCoursewareNames()
     });
 };
 
-exports.index = function(req, res) {
-    res.render('bonfire/show.jade', {
-        completedWith: null,
-        title: 'Bonfire Playground',
-        name: 'Bonfire Playground',
-        difficulty: 0,
-        brief: 'Feel free to play around!',
-        details: '',
-        tests:  [],
-        challengeSeed:  '',
-        challengeEntryPoint: '',
-        cc: req.user ? req.user.bonfiresHash : undefined,
-        points: req.user ? req.user.points : undefined,
-        verb: resources.randomVerb(),
-        phrase: resources.randomPhrase(),
-        compliments: resources.randomCompliment(),
-        bonfires: [],
-        bonfireHash: 'test'
-
-    });
-};
-
-exports.returnNextBonfire = function(req, res, next) {
+exports.returnNextCourseware = function(req, res) {
     if (!req.user) {
-        return res.redirect('bonfires/meet-bonfire');
+        return res.redirect('coursewares/intro');
     }
-    var currentTime = parseInt(+new Date() / 1000);
-    if (currentTime - req.user.lastContentSync > 10) {
-        req.user.lastContentSync = currentTime;
-        var completed = req.user.completedBonfires.map(function (elem) {
-            return elem._id;
-        });
+    var completed = req.user.completedCoursewares.map(function (elem) {
+        return elem._id;
+    });
 
-        req.user.uncompletedBonfires = resources.allBonfireIds().filter(function (elem) {
-            if (completed.indexOf(elem) === -1) {
-                return elem;
-            }
-        });
-        req.user.save();
-    }
+    req.user.uncompletedCoursewares = resources.allCoursewareIds().filter(function (elem) {
+        if (completed.indexOf(elem) === -1) {
+            return elem;
+        }
+    });
+    req.user.save();
 
+    var uncompletedCoursewares = req.user.uncompletedCoursewares;
 
-    var uncompletedBonfires = req.user.uncompletedBonfires;
-
-
-    var displayedBonfires =  Bonfire.find({'_id': uncompletedBonfires[0]});
-    displayedBonfires.exec(function(err, bonfire) {
+    var displayedCoursewares =  Courseware.find({'_id': uncompletedCoursewares[0]});
+    displayedCoursewares.exec(function(err, courseware) {
         if (err) {
             next(err);
         }
-        bonfire = bonfire.pop();
-        nameString = bonfire.name.toLowerCase().replace(/\s/g, '-');
-        return res.redirect('/bonfires/' + nameString);
+        courseware = courseware.pop();
+        nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
+        return res.redirect('/coursewares/' + nameString);
     });
 };
 
-exports.returnIndividualBonfire = function(req, res, next) {
-    var dashedName = req.params.bonfireName;
+exports.returnIndividualCourseware = function(req, res, next) {
+    var dashedName = req.params.coursewareName;
 
-    bonfireName = dashedName.replace(/\-/g, ' ');
+    coursewareName = dashedName.replace(/\-/g, ' ');
 
-    Bonfire.find({"name" : new RegExp(bonfireName, 'i')}, function(err, bonfire) {
+    Courseware.find({"name" : new RegExp(coursewareName, 'i')}, function(err, courseware) {
         if (err) {
             next(err);
         }
-        if (bonfire.length < 1) {
+        if (courseware.length < 1) {
             req.flash('errors', {
-                msg: "404: We couldn't find a bonfire with that name. Please double check the name."
+                msg: "404: We couldn't find a challenge with that name. Please double check the name."
             });
-            return res.redirect('/bonfires')
+            return res.redirect('/coursewares')
         } else {
-            bonfire = bonfire.pop();
-            res.render('bonfire/show', {
-                completedWith: null,
-                title: bonfire.name,
+            courseware = courseware.pop();
+            res.render('coursewares/show', {
+                title: courseware.name,
                 dashedName: dashedName,
-                name: bonfire.name,
-                difficulty: Math.floor(+bonfire.difficulty),
-                brief: bonfire.description[0],
-                details: bonfire.description.slice(1),
-                tests: bonfire.tests,
-                challengeSeed: bonfire.challengeSeed,
-                challengeEntryPoint: bonfire.challengeEntryPoint,
+                name: courseware.name,
+                brief: courseware.description[0],
+                details: courseware.description.slice(1),
+                tests: courseware.tests,
+                challengeSeed: courseware.challengeSeed,
+                challengeEntryPoint: courseware.challengeEntryPoint,
                 cc: !!req.user,
                 points: req.user ? req.user.points : undefined,
                 verb: resources.randomVerb(),
                 phrase: resources.randomPhrase(),
                 compliment: resources.randomCompliment(),
-                bonfires: bonfire,
-                bonfireHash: bonfire._id
+                coursewareHash: courseware._id
 
             });
         }
     });
 };
 
-/**
- * Bonfire generator
- */
-exports.returnGenerator = function(req, res) {
-    res.render('bonfire/generator', {
-        title: null,
-        name: null,
-        difficulty: null,
-        brief: null,
-        details: null,
-        tests: null,
-        challengeSeed: null,
-        challengeEntryPoint: null,
-        bonfireHash: randomString()
-    });
-};
-
-/**
- * Post for bonfire generation
- */
-
-function randomString() {
-    var chars = "0123456789abcdef";
-    var string_length = 23;
-    var randomstring = 'a';
-    for (var i=0; i<string_length; i++) {
-        var rnum = Math.floor(Math.random() * chars.length);
-        randomstring += chars.substring(rnum,rnum+1);
-    }
-    return randomstring;
-};
-
-/**
- *
- */
-
-exports.testBonfire = function(req, res) {
-    var bonfireName = req.body.name,
-        bonfireTests = req.body.tests,
-        bonfireDifficulty = req.body.difficulty,
-        bonfireDescription = req.body.description,
-        bonfireEntryPoint = req.body.challengeEntryPoint,
-        bonfireChallengeSeed = req.body.challengeSeed;
-    bonfireTests = bonfireTests.split('\r\n');
-    bonfireDescription = bonfireDescription.split('\r\n');
-    bonfireTests.filter(getRidOfEmpties);
-    bonfireDescription.filter(getRidOfEmpties);
-    bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
-    res.render('bonfire/show', {
+exports.testCourseware = function(req, res) {
+    var coursewareName = req.body.name,
+        coursewareTests = req.body.tests,
+        coursewareDifficulty = req.body.difficulty,
+        coursewareDescription = req.body.description,
+        coursewareEntryPoint = req.body.challengeEntryPoint,
+        coursewareChallengeSeed = req.body.challengeSeed;
+    coursewareTests = coursewareTests.split('\r\n');
+    coursewareDescription = coursewareDescription.split('\r\n');
+    coursewareTests.filter(getRidOfEmpties);
+    coursewareDescription.filter(getRidOfEmpties);
+    coursewareChallengeSeed = coursewareChallengeSeed.replace('\r', '');
+    res.render('courseware/show', {
         completedWith: null,
-        title: bonfireName,
-        name: bonfireName,
-        difficulty: +bonfireDifficulty,
-        brief: bonfireDescription[0],
-        details: bonfireDescription.slice(1),
-        tests:  bonfireTests,
-        challengeSeed:  bonfireChallengeSeed,
-        challengeEntryPoint: bonfireEntryPoint,
-        cc: req.user ? req.user.bonfiresHash : undefined,
+        title: coursewareName,
+        name: coursewareName,
+        difficulty: +coursewareDifficulty,
+        brief: coursewareDescription[0],
+        details: coursewareDescription.slice(1),
+        tests:  coursewareTests,
+        challengeSeed:  coursewareChallengeSeed,
+        challengeEntryPoint: coursewareEntryPoint,
+        cc: req.user ? req.user.coursewaresHash : undefined,
         points: req.user ? req.user.points : undefined,
         verb: resources.randomVerb(),
         phrase: resources.randomPhrase(),
         compliment: resources.randomCompliment(),
-        bonfires: [],
-        bonfireHash: "test"
+        coursewares: [],
+        coursewareHash: "test"
     });
 };
 
@@ -185,107 +118,58 @@ function getRidOfEmpties(elem) {
 };
 
 exports.publicGenerator = function(req, res) {
-    res.render('bonfire/public-generator');
+    res.render('courseware/public-generator');
 };
 
 exports.generateChallenge = function(req, res) {
-    var bonfireName = req.body.name,
-        bonfireTests = req.body.tests,
-        bonfireDifficulty = req.body.difficulty,
-        bonfireDescription = req.body.description,
-        bonfireEntryPoint = req.body.challengeEntryPoint,
-        bonfireChallengeSeed = req.body.challengeSeed;
-    bonfireTests = bonfireTests.split('\r\n');
-    bonfireDescription = bonfireDescription.split('\r\n');
-    bonfireTests.filter(getRidOfEmpties);
-    bonfireDescription.filter(getRidOfEmpties);
-    bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
-
+    var coursewareName = req.body.name,
+        coursewareTests = req.body.tests,
+        coursewareDifficulty = req.body.difficulty,
+        coursewareDescription = req.body.description,
+        coursewareEntryPoint = req.body.challengeEntryPoint,
+        coursewareChallengeSeed = req.body.challengeSeed;
+    coursewareTests = coursewareTests.split('\r\n');
+    coursewareDescription = coursewareDescription.split('\r\n');
+    coursewareTests.filter(getRidOfEmpties);
+    coursewareDescription.filter(getRidOfEmpties);
+    coursewareChallengeSeed = coursewareChallengeSeed.replace('\r', '');
 
     var response = {
         _id: randomString(),
-        name: bonfireName,
-        difficulty: bonfireDifficulty,
-        description: bonfireDescription,
-        challengeEntryPoint: bonfireEntryPoint,
-        challengeSeed: bonfireChallengeSeed,
-        tests: bonfireTests
+        name: coursewareName,
+        difficulty: coursewareDifficulty,
+        description: coursewareDescription,
+        challengeEntryPoint: coursewareEntryPoint,
+        challengeSeed: coursewareChallengeSeed,
+        tests: coursewareTests
     };
     res.send(response);
 };
 
-exports.completedBonfire = function (req, res) {
-    var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
+exports.completedCourseware = function (req, res) {
+
     var isCompletedDate = Math.round(+new Date() / 1000);
-    var bonfireHash = req.body.bonfireInfo.bonfireHash;
-    var isSolution = req.body.bonfireInfo.solution;
+    var coursewareHash = req.body.coursewareInfo.coursewareHash;
 
-    if (isCompletedWith) {
-        var paired = User.find({"profile.username": isCompletedWith}).limit(1);
-        paired.exec(function (err, pairedWith) {
-            if (err) {
-                return err;
-            } else {
-                var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
+    req.user.completedCoursewares.push({
+        _id: coursewareHash,
+        completedWith: null,
+        completedDate: isCompletedDate,
+        solution: isSolution
+    });
 
-                if (index > -1) {
-                    req.user.uncompletedBonfires.splice(index, 1)
-                }
-                pairedWith = pairedWith.pop();
-
-                index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
-                if (index > -1) {
-                    pairedWith.uncompletedBonfires.splice(index, 1)
-                }
-
-                pairedWith.completedBonfires.push({
-                    _id: bonfireHash,
-                    completedWith: req.user._id,
-                    completedDate: isCompletedDate,
-                    solution: isSolution
-                })
-
-                req.user.completedBonfires.push({
-                    _id: bonfireHash,
-                    completedWith: pairedWith._id,
-                    completedDate: isCompletedDate,
-                    solution: isSolution
-                })
-
-                req.user.save(function (err, user) {
-                    pairedWith.save(function (err, paired) {
-                        if (err) {
-                            throw err;
-                        }
-                        if (user && paired) {
-                            res.send(true);
-                        }
-                    })
-                });
-            }
-        })
-    } else {
-
-        req.user.completedBonfires.push({
-            _id: bonfireHash,
-            completedWith: null,
-            completedDate: isCompletedDate,
-            solution: isSolution
-        });
-
-        var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
-        if (index > -1) {
-            req.user.uncompletedBonfires.splice(index, 1)
-        }
-
-        req.user.save(function (err, user) {
-            if (err) {
-                throw err;
-            }
-            if (user) {
-                debug('Saving user');
-                res.send(true)
-            }
-        });
+    var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
+    if (index > -1) {
+        req.user.uncompletedCoursewares.splice(index, 1)
     }
+
+    req.user.save(function (err, user) {
+        if (err) {
+            throw err;
+        }
+        if (user) {
+            debug('Saving user');
+            res.send(true)
+        }
+    });
 };
