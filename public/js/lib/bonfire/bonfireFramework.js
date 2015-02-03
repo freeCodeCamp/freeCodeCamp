@@ -116,7 +116,6 @@ function bonfireExecute() {
     if (challengeEntryPoint && challengeSeed) {
         userJavaScript = challengeEntryPoint + ' ' + userJavaScript;
     }
-    console.log(userJavaScript);
     submit(userJavaScript, function(cls, message) {
         if (cls) {
             codeOutput.setValue(message.error);
@@ -210,7 +209,6 @@ var runTests = function(err, data) {
         userTests.forEach(function(test, ix, arr){
             try {
                 if (test) {
-                    console.log();
                     var output = eval(reassembleTest(test, data));
                 }
             } catch(error) {
@@ -232,7 +230,8 @@ var runTests = function(err, data) {
 };
 
 function showCompletion() {
-
-    ga('send', 'event',  'Bonfire', 'solved', bonfireName + ', Time: ' + (Math.floor(Date.now() / 1000) - started) +', Attempts: ' + attempts);
+    var time = Math.floor(Date.now() / 1000) - started;
+    console.log(time);
+    ga('send', 'event',  'Bonfire', 'solved', bonfireName + ', Time: ' + time +', Attempts: ' + attempts);
     $('#complete-bonfire-dialog').modal('show');
 }
