@@ -158,18 +158,9 @@ exports.postEmailSignup = function(req, res, next) {
  */
 
 exports.getAccount = function(req, res) {
-  Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
-    if (err) {
-      console.error('Challenge err: ', err);
-      next(err);
-    }
     res.render('account/account', {
-      title: 'Manage your Free Code Camp Account',
-      challenges: c,
-      ch: req.user.challengesHash,
-      moment: moment
+      title: 'Manage your Free Code Camp Account'
     });
-  });
 };
 
 /**
@@ -177,15 +168,9 @@ exports.getAccount = function(req, res) {
  */
 
  exports.getAccountAngular = function(req, res) {
-  Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
-    if (err) {
-      console.error('Challenge err: ', err);
-      next(err);
-    }
     res.json({
       user: req.user
     });
-  });
 };
 
 /**
