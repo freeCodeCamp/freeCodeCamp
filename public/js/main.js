@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    if (bonfireName !== undefined) {
+    if (bonfireName) {
         ga('send', 'event',  'Bonfire', 'load', bonfireName + ':' + Math.floor(Date.now() / 1000));
     }
 
