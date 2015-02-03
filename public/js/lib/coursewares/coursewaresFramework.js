@@ -25,6 +25,12 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
 var editor = myCodeMirror;
 editor.setSize("100%", "auto");
 
+var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>" +
+"<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js'></script>" +
+"<script src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js'></script>" +
+"<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/>" +
+"<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>"
+
 var delay;
 // Initialize CodeMirror editor with a nice html5 canvas demo.
 editor.on("change", function () {
@@ -35,7 +41,7 @@ function updatePreview() {
     var previewFrame = document.getElementById('preview');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     preview.open();
-    preview.write(editor.getValue());
+    preview.write(libraryIncludes + editor.getValue());
     preview.close();
 }
 setTimeout(updatePreview, 300);
