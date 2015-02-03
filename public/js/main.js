@@ -158,7 +158,7 @@ profileValidation.directive('uniqueUsername', function($http) {
         }
     }
 });
-// TODO: FIX THIS
+
 profileValidation.directive('existingUsername', function($http) {
     return {
         restrict: 'A',
@@ -171,7 +171,7 @@ profileValidation.directive('existingUsername', function($http) {
                     ngModel.$setPristine();
                 }
                 if (element.val()) {
-                    $http.get("/api/checkExistingUsername/" + element.val() + ' ').success(function (data) {
+                    $http.get("/api/checkExistingUsername/" + element.val()).success(function (data) {
                         if (element.val() == scope.existingUsername) {
                             ngModel.$setValidity('exists', false);
                         } else if (data) {
