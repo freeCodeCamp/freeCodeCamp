@@ -93,25 +93,19 @@ exports.getEmailSignup = function(req, res) {
  */
 
 exports.postEmailSignup = function(req, res, next) {
-  console.log('post email signup called');
-  req.assert('email', 'Email is not valid').isEmail();
-  req.assert('password', 'Password must be at least 4 characters long').len(4);
-  req.assert('confirmPassword', 'Passwords do not match')
-    .equals(req.body.password);
-
   var errors = req.validationErrors();
 
   if (errors) {
     req.flash('errors', errors);
     return res.redirect('/email-signup');
-    console.log(errors);
+    debug(errors);
   }
 
   var user = new User({
-    email: req.body.email,
+    email: req.body.email.trim(),
     password: req.body.password,
     profile : {
-      username: req.body.username
+      username: req.body.username.trim()
     }
   });
 
@@ -132,6 +126,29 @@ exports.postEmailSignup = function(req, res, next) {
         res.redirect('/email-signup');
       });
     });
+    var transporter = nodemailer.createTransport({
+      service: 'Mandrill',
+      auth: {
+        user: secrets.mandrill.user,
+        pass: secrets.mandrill.password
+      }
+    });
+    var mailOptions = {
+      to: user.email,
+      from: 'Team@freecodecamp.com',
+      subject: 'Welcome to Free Code Camp!',
+      text: [
+        'Greetings from San Francisco!\n\n',
+        'Thank you for joining our community.\n',
+        'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
+        "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+        'Good luck with the challenges!\n\n',
+        '- the Volunteer Camp Counselor Team'
+      ].join('')
+    };
+    transporter.sendMail(mailOptions, function(err) {
+      if (err) { return err; }
+    });
   });
 };
 
@@ -141,18 +158,9 @@ exports.postEmailSignup = function(req, res, next) {
  */
 
 exports.getAccount = function(req, res) {
-  Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
-    if (err) {
-      console.error('Challenge err: ', err);
-      next(err);
-    }
     res.render('account/account', {
-      title: 'Manage your Free Code Camp Account',
-      challenges: c,
-      ch: req.user.challengesHash,
-      moment: moment
+      title: 'Manage your Free Code Camp Account'
     });
-  });
 };
 
 /**
@@ -160,15 +168,9 @@ exports.getAccount = function(req, res) {
  */
 
  exports.getAccountAngular = function(req, res) {
-  Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
-    if (err) {
-      console.error('Challenge err: ', err);
-      next(err);
-    }
     res.json({
       user: req.user
     });
-  });
 };
 
 /**
@@ -322,26 +324,26 @@ exports.postUpdateProfile = function(req, res, next) {
           return res.redirect('/account');
         }
         var user = req.user;
-        user.email = req.body.email || '';
-        user.profile.name = req.body.name || '';
-        user.profile.username = req.body.username || '';
-        user.profile.location = req.body.location || '';
-        user.profile.githubProfile = req.body.githubProfile || '';
-        user.profile.coderbyteProfile = req.body.coderbyteProfile || '';
-        user.profile.linkedinProfile = req.body.linkedinProfile || '';
-        user.profile.codepenProfile = req.body.codepenProfile || '';
-        user.profile.twitterHandle = req.body.twitterHandle || '';
-        user.profile.bio = req.body.bio || '';
-        user.profile.picture = req.body.picture || '';
-        user.portfolio.website1Title = req.body.website1Title || '';
-        user.portfolio.website1Link = req.body.website1Link || '';
-        user.portfolio.website1Image = req.body.website1Image || '';
-        user.portfolio.website2Title = req.body.website2Title || '';
-        user.portfolio.website2Link = req.body.website2Link || '';
-        user.portfolio.website2Image = req.body.website2Image || '';
-        user.portfolio.website3Title = req.body.website3Title || '';
-        user.portfolio.website3Link = req.body.website3Link || '';
-        user.portfolio.website3Image = req.body.website3Image || '';
+        user.email = req.body.email.trim() || '';
+        user.profile.name = req.body.name.trim() || '';
+        user.profile.username = req.body.username.trim() || '';
+        user.profile.location = req.body.location.trim() || '';
+        user.profile.githubProfile = req.body.githubProfile.trim() || '';
+        user.profile.coderbyteProfile = req.body.coderbyteProfile.trim() || '';
+        user.profile.linkedinProfile = req.body.linkedinProfile.trim() || '';
+        user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
+        user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
+        user.profile.bio = req.body.bio.trim() || '';
+        user.profile.picture = req.body.picture.trim() || '';
+        user.portfolio.website1Title = req.body.website1Title.trim() || '';
+        user.portfolio.website1Link = req.body.website1Link.trim() || '';
+        user.portfolio.website1Image = req.body.website1Image.trim() || '';
+        user.portfolio.website2Title = req.body.website2Title.trim() || '';
+        user.portfolio.website2Link = req.body.website2Link.trim() || '';
+        user.portfolio.website2Image = req.body.website2Image.trim() || '';
+        user.portfolio.website3Title = req.body.website3Title.trim() || '';
+        user.portfolio.website3Link = req.body.website3Link.trim() || '';
+        user.portfolio.website3Image = req.body.website3Image.trim() || '';
 
 
         user.save(function (err) {
@@ -456,9 +458,6 @@ exports.getReset = function(req, res) {
  */
 
 exports.postReset = function(req, res, next) {
-  req.assert('password', 'Password must be at least 4 characters long.').len(4);
-  req.assert('confirm', 'Passwords must match.').equals(req.body.password);
-
   var errors = req.validationErrors();
 
   if (errors) {
@@ -547,8 +546,6 @@ exports.getForgot = function(req, res) {
  */
 
 exports.postForgot = function(req, res, next) {
-  req.assert('email', 'Please enter a valid email address.').isEmail();
-
   var errors = req.validationErrors();
 
   if (errors) {

@@ -37,8 +37,16 @@
                 a(href='/account') [&nbsp;#{user.points}&nbsp;]
             .hidden-xs
                 if user.profile.picture
-                    a(href='/account')
-                        img.profile-picture.float-right(src='#{user.profile.picture}')
+                    if (user.profile.username)
+                        a(href='/' + user.profile.username)
+                            img.profile-picture.float-right(src='#{user.profile.picture}')
+                    else
+                        a(href='/account')
+                            img.profile-picture.float-right(src='#{user.profile.picture}')
                 else
-                    a(href='/account')
-                        img.profile-picture.float-right(src='#{user.gravatar(60)}')
+                    if (user.profile.username)
+                        a(href='/' + user.profile.username)
+                            img.profile-picture.float-right(src='#{user.gravatar(60)}')
+                    else
+                        a(href='/account')
+                            img.profile-picture.float-right(src='#{user.gravatar(60)}')
