@@ -55,7 +55,7 @@ block content
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true)
-                script(src='/js/lib/bonfire/bonfireFramework.js')
+                script(src='/js/lib/coursewares/coursewaresFramework.js')
                     #complete-bonfire-dialog.modal(tabindex='-1')
         .col-xs-12.col-sm-12.col-md-4
             iframe.iphone#preview
@@ -100,21 +100,5 @@ block content
     //script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js")
     //style(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
     script.
-        var delay;
-        // Initialize CodeMirror editor with a nice html5 canvas demo.
-        var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-            mode: 'text/html'
-        });
-        editor.on("change", function () {
-            clearTimeout(delay);
-            delay = setTimeout(updatePreview, 300);
-        });
-        function updatePreview() {
-            var previewFrame = document.getElementById('preview');
-            var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
-            preview.open();
-            preview.write(editor.getValue());
-            preview.close();
-        }
-        setTimeout(updatePreview, 300);
+
                                                                      

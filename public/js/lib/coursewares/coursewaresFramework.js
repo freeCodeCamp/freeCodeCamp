@@ -5,10 +5,10 @@
 var widgets = [];
 var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
     lineNumbers: true,
-    mode: "html-mixed",
+    mode: "text/html",
     theme: 'monokai',
     runnable: true,
-    lint: true,
+    //lint: true,
     matchBrackets: true,
     autoCloseBrackets: true,
     scrollbarStyle: 'null',
@@ -24,6 +24,21 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
 });
 var editor = myCodeMirror;
 editor.setSize("100%", "auto");
+
+var delay;
+// Initialize CodeMirror editor with a nice html5 canvas demo.
+editor.on("change", function () {
+    clearTimeout(delay);
+    delay = setTimeout(updatePreview, 300);
+});
+function updatePreview() {
+    var previewFrame = document.getElementById('preview');
+    var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+    preview.open();
+    preview.write(editor.getValue());
+    preview.close();
+}
+setTimeout(updatePreview, 300);
 
 
 // Default value for editor if one isn't provided in (i.e. a challenge)
