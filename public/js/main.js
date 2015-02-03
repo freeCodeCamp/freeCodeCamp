@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    if (bonfireName !== undefined) {
+        ga('send', 'event',  'Bonfire', 'load', bonfireName + ':' + Math.floor(Date.now() / 1000));
+    }
 
     var CSRF_HEADER = 'X-CSRF-Token';
 
@@ -61,7 +64,6 @@ $(document).ready(function() {
         var bonfireSolution = myCodeMirror.getValue();
         var thisBonfireHash = passedBonfireHash || null;
         var didCompleteWith = $('#completed-with').val() || null;
-
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
 
     });
@@ -83,6 +85,7 @@ $(document).ready(function() {
 
     // Bonfire instructions functions
     $('#more-info').on('click', function() {
+        ga('send', 'event',  'Bonfire', 'more-info', bonfireName);
         $('#brief-instructions').hide();
         $('#long-instructions').show().removeClass('hide');
 

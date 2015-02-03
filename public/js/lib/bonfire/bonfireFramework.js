@@ -22,6 +22,11 @@ var editor = myCodeMirror;
 editor.setSize("100%", "auto");
 
 
+var attempts = 0;
+if (attempts) {
+    attempts = 0;
+}
+
 // Default value for editor if one isn't provided in (i.e. a challenge)
 var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
     'Please feel free to use Bonfire as an in-browser playground and linting tool.\n' +
@@ -100,15 +105,18 @@ $('#submitButton').on('click', function () {
 });
 
 function bonfireExecute() {
+    attempts++;
+    ga('send', 'event',  'Bonfire', 'ran-code', bonfireName);
     userTests= null;
     $('#codeOutput').empty();
     var userJavaScript = myCodeMirror.getValue();
     userJavaScript = removeComments(userJavaScript);
     userJavaScript = scrapeTests(userJavaScript);
     // simple fix in case the user forgets to invoke their function
-    if (challengeEntryPoint) {
+    if (challengeEntryPoint && challengeSeed) {
         userJavaScript = challengeEntryPoint + ' ' + userJavaScript;
     }
+    console.log(userJavaScript);
     submit(userJavaScript, function(cls, message) {
         if (cls) {
             codeOutput.setValue(message.error);
@@ -224,5 +232,7 @@ var runTests = function(err, data) {
 };
 
 function showCompletion() {
+
+    ga('send', 'event',  'Bonfire', 'solved', bonfireName + ', Time: ' + (Math.floor(Date.now() / 1000) - started) +', Attempts: ' + attempts);
     $('#complete-bonfire-dialog').modal('show');
 }
