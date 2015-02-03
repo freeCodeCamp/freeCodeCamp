@@ -94,12 +94,6 @@ $(document).ready(function() {
         $('#brief-instructions').show();
         $('#long-instructions').hide();
     });
-
-    // Bonfire analytics
-    $('#submitButton').on('click', function() {
-        attempts++;
-        ga('send', 'event',  'Bonfire', 'ran-code', bonfireName);
-    })
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
