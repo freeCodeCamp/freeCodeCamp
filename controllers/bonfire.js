@@ -73,7 +73,8 @@ exports.returnIndividualBonfire = function(req, res, next) {
         if (err) {
             next(err);
         }
-        var dashedNameFull = bonfire[bonfireNumber].name.toLowerCase().replace(/\s/g, '-');
+        bonfire = bonfire.pop()
+        var dashedNameFull = bonfire.name.toLowerCase().replace(/\s/g, '-');
         if (dashedNameFull != dashedName) {
             return res.redirect('/bonfires/' + dashedNameFull);
         }
@@ -83,7 +84,6 @@ exports.returnIndividualBonfire = function(req, res, next) {
             });
             return res.redirect('/bonfires')
         } else {
-            bonfire = bonfire.pop();
             res.render('bonfire/show', {
                 completedWith: null,
                 title: bonfire.name,
