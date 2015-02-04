@@ -269,11 +269,14 @@ app.get('/account/api', userController.getAccountAngular);
  * Bonfire related routes
  */
 app.get('/playground', bonfireController.index);
-app.get('/bonfires', bonfireController.returnNextBonfire);
+//app.get('/bonfires/' , function(req, res) {
+//    res.redirect(301, '/bonfires');
+//});
+app.get('/bonfires/', bonfireController.returnNextBonfire);
 app.get('/bonfire-json-generator', bonfireController.returnGenerator);
 app.post('/bonfire-json-generator', bonfireController.generateChallenge);
 app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
-app.post('/bonfire-challenge-generator', bonfireController.testBonfire)
+app.post('/bonfire-challenge-generator', bonfireController.testBonfire);
 app.get(
     '/bonfires/:bonfireName',
     bonfireController.returnIndividualBonfire
