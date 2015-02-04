@@ -149,22 +149,23 @@
       "expect(sumAll([10, 5])).to.equal(45);"
     ]
   },
-
   {
     "_id": "a5229172f011153519423690",
     "name": "Sum All Odd Fibonacci Numbers",
-    "difficulty": "2.01",
     "description": [
-      "Return the sum of all odd fibonacci numbers up to and including the passed number.",
-      "Starting from 1, the first few numbers of a Fibonacci sequence are 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers."
+      "Return the sum of all odd fibonacci numbers up to and including the passed number if it is a fibonacci number.",
+      "The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.",
+      "As an example, passing 4 to the function should return 5 because all the odd fibonacci numbers under 4 are 1, 1, and 3."
     ],
-    "challengeEntryPoint": "sumFibs(1000);",
+    "challengeEntryPoint": "sumFibs(4);",
     "challengeSeed": "function sumFibs(num) {\n  return num;\r\n}",
     "tests": [
       "expect(sumFibs(1)).to.be.a('number');",
-      "expect(sumFibs(1000)).to.equal(3382);",
-      "expect(sumFibs(4000000)).to.equal(10316619);",
-      "expect(sumFibs(4)).to.equal(10);"
+      "expect(sumFibs(1000)).to.equal(1785);",
+      "expect(sumFibs(4000000)).to.equal(4613732);",
+      "expect(sumFibs(4)).to.equal(5);",
+      "expect(sumFibs(75024)).to.equal(60696);",
+      "expect(sumFibs(75025)).to.equal(135721);"
     ]
   },
   {

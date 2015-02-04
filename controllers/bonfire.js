@@ -96,7 +96,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
         }
         var dashedNameFull = bonfire[bonfireNumber].name.toLowerCase().replace(/\s/g, '-');
         if (dashedNameFull != dashedName) {
-            return res.redirect('bonfires/' + dashedNameFull);
+            return res.redirect('../bonfires/' + dashedNameFull);
         }
         if (bonfire.length < 1) {
             req.flash('errors', {
