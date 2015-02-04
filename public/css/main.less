@@ -649,12 +649,19 @@ div.CodeMirror-scroll {
 }
 
 iframe.iphone {
-  width: 280px;
-  height: 500px;
-  position: absolute;
-  top: 70px;
-  right: 25px;
   border: none;
+  @media(min-width: 992px) {
+    width: 280px;
+    height: 500px;
+    position: absolute;
+    top: 70px;
+    right: 25px;
+  }
+  @media(max-width: 991px) {
+    width: 100%;
+    border-radius: 5px;
+    
+  }
 }
 
 // To adjust right margin, negative values bring the image closer to the edge of the screen
