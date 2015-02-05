@@ -225,15 +225,17 @@ exports.completedBonfire = function (req, res) {
                 return err;
             } else {
                 var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
-
                 if (index > -1) {
+                    req.user.points++;
                     req.user.uncompletedBonfires.splice(index, 1)
                 }
                 pairedWith = pairedWith.pop();
 
                 index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
-                    pairedWith.uncompletedBonfires.splice(index, 1)
+                    pairedWith.points++;
+                    pairedWith.uncompletedBonfires.splice(index, 1);
+
                 }
 
                 pairedWith.completedBonfires.push({
@@ -241,7 +243,7 @@ exports.completedBonfire = function (req, res) {
                     completedWith: req.user._id,
                     completedDate: isCompletedDate,
                     solution: isSolution
-                })
+                });
 
                 req.user.completedBonfires.push({
                     _id: bonfireHash,
@@ -273,6 +275,7 @@ exports.completedBonfire = function (req, res) {
 
         var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
         if (index > -1) {
+            req.user.points++;
             req.user.uncompletedBonfires.splice(index, 1)
         }
 

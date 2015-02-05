@@ -161,6 +161,7 @@ exports.completedCourseware = function (req, res) {
 
     var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
     if (index > -1) {
+        req.user.points++;
         req.user.uncompletedCoursewares.splice(index, 1)
     }
 
