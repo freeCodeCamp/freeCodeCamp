@@ -59,8 +59,14 @@ exports.returnNextBonfire = function(req, res) {
             next(err);
         }
         bonfire = bonfire.pop();
+        if (bonfire === undefined) {
+            req.flash('errors', {
+                msg: "It looks like you've completed all the bonfires we have available. Good job!"
+            })
+            return res.redirect('../bonfires/meet-bonfire');
+        }
         nameString = bonfire.name.toLowerCase().replace(/\s/g, '-');
-        return res.redirect('/bonfires/' + nameString);
+        return res.redirect('../bonfires/' + nameString);
     });
 };
 

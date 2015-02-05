@@ -38,10 +38,13 @@ exports.returnNextCourseware = function(req, res) {
         }
         courseware = courseware.pop();
         if (courseware === undefined) {
+            req.flash('errors', {
+                msg: "It looks like you've completed all the courses we have available. Good job!"
+            })
             return res.redirect('../coursewares/intro');
         }
         nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
-        return res.redirect('/coursewares/' + nameString);
+        return res.redirect('../coursewares/' + nameString);
     });
 };
 
@@ -54,13 +57,17 @@ exports.returnIndividualCourseware = function(req, res, next) {
         if (err) {
             next(err);
         }
-        if (courseware.length < 1) {
+        courseware = courseware.pop();
+        var dashedNameFull = courseware.name.toLowerCase().replace(/\s/g, '-');
+        if (dashedNameFull != dashedName) {
+            return res.redirect('../coursewares/' + dashedNameFull);
+        }
+            if (courseware.length < 1) {
             req.flash('errors', {
                 msg: "404: We couldn't find a challenge with that name. Please double check the name."
             });
             return res.redirect('/coursewares')
         } else {
-            courseware = courseware.pop();
             res.render('coursewares/show', {
                 title: courseware.name,
                 dashedName: dashedName,
