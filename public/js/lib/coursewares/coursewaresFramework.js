@@ -31,6 +31,8 @@ var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3
         "<script src='/js/lib/chai/chai-jquery.js'></script>" +
         "<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js'></script>" +
         "<script src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js'></script>" +
+        "<script src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js'></script>" +
+        "<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css'/>" +
         "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/>" +
         "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>" +
         "<style>body { padding: 0px 3px 0px 3px; }</style>";
@@ -55,6 +57,15 @@ editor.on("change", function () {
     delay = setTimeout(updatePreview, 300);
 });
 
+function updatePreview() {
+    var previewFrame = document.getElementById('preview');
+    var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+    preview.open();
+    preview.write(libraryIncludes + editor.getValue() + coursewareTests);
+    preview.close();
+}
+setTimeout(updatePreview, 300);
+
 /**
  * Window postMessage receiving funtionality
  */
@@ -69,16 +80,6 @@ eventer(messageEvent,function(e) {
     }
 },false);
 
-function updatePreview() {
-    var previewFrame = document.getElementById('preview');
-    var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
-    preview.open();
-    preview.write(libraryIncludes + editor.getValue() + coursewareTests);
-    preview.close();
-    var passing = true;
-
-}
-setTimeout(updatePreview, 300);
 
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
@@ -256,7 +257,7 @@ var runTests = function(err, data) {
 };
 
 function showCompletion() {
-    $('#complete-bonfire-dialog').modal('show');
+    $('#complete-courseware-dialog').modal('show');
 }
 
 document.domain = 'localhost';
