@@ -58,6 +58,9 @@ LINKEDIN_SECRET='LINKEDIN APP SECRET'
 # Seed your database with the challenges
 node seed_data/seed.js
 
+# Start the mongo server
+mongod
+
 # start the application
 gulp
 
