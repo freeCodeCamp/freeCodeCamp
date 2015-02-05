@@ -34,7 +34,7 @@ exports.index = function(req, res) {
 
 exports.returnNextBonfire = function(req, res, next) {
     if (!req.user) {
-        return res.redirect('bonfires/meet-bonfire');
+        return res.redirect('../bonfires/meet-bonfire');
     }
     var currentTime = parseInt(+new Date() / 1000);
     if (currentTime - req.user.lastContentSync > 10) {
@@ -96,7 +96,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
         }
         var dashedNameFull = bonfire[bonfireNumber].name.toLowerCase().replace(/\s/g, '-');
         if (dashedNameFull != dashedName) {
-            return res.redirect('/bonfires/' + dashedNameFull);
+            return res.redirect('../bonfires/' + dashedNameFull);
         }
         if (bonfire.length < 1) {
             req.flash('errors', {
