@@ -4,6 +4,8 @@ block content
         .col-sm-12.col-md-12.col-xs-12
             .panel.panel-primary
                 .panel-heading.text-center #{name} (takes #{time} minutes)
+                script.
+                    var bonfireName = null;
                 .panel.panel-body
                     .embed-responsive.embed-responsive-16by9
                         iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')

@@ -38,7 +38,7 @@ exports.index = function(req, res) {
 
 exports.returnNextBonfire = function(req, res) {
     if (!req.user) {
-        return res.redirect('bonfires/meet-bonfire');
+        return res.redirect('../bonfires/meet-bonfire');
     }
     var completed = req.user.completedBonfires.map(function (elem) {
         return elem._id;
@@ -76,7 +76,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
         bonfire = bonfire.pop()
         var dashedNameFull = bonfire.name.toLowerCase().replace(/\s/g, '-');
         if (dashedNameFull != dashedName) {
-            return res.redirect('/bonfires/' + dashedNameFull);
+            return res.redirect('../bonfires/' + dashedNameFull);
         }
         if (bonfire.length < 1) {
             req.flash('errors', {
