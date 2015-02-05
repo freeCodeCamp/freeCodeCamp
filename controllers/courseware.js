@@ -66,7 +66,6 @@ exports.returnIndividualCourseware = function(req, res, next) {
                 details: courseware.description.slice(1),
                 tests: courseware.tests,
                 challengeSeed: courseware.challengeSeed,
-                challengeEntryPoint: courseware.challengeEntryPoint,
                 cc: !!req.user,
                 points: req.user ? req.user.points : undefined,
                 verb: resources.randomVerb(),

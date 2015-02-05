@@ -26,11 +26,27 @@ var editor = myCodeMirror;
 editor.setSize("100%", "auto");
 
 var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>" +
-"<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js'></script>" +
-"<script src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js'></script>" +
-"<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/>" +
-"<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>" +
-"<style>body { padding: 0px 3px 0px 3px; }</style>";
+        "<script>document.domain = 'localhost'</script>" +
+        "<script src='/js/lib/chai/chai.js'></script>" +
+        "<script src='/js/lib/chai/chai-jquery.js'></script>" +
+        "<script src='//ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js'></script>" +
+        "<script src='//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js'></script>" +
+        "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/>" +
+        "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>" +
+        "<style>body { padding: 0px 3px 0px 3px; }</style>";
+
+var coursewareTests = "<script>" +
+        "var allTestsGood = true;" +
+    "var expect = chai.expect; " +
+    "try {" +
+        tests[0] +
+    "} catch (err) {" +
+        "allTestsGood = false;" +
+    "}" +
+    "if (allTestsGood) {" +
+    "console.log('awesomeSauce');" +
+    "parent.postMessage('CompleteAwesomeSauce', 'http://localhost:3001'); }" +
+    "</script>";
 
 var delay;
 // Initialize CodeMirror editor with a nice html5 canvas demo.
@@ -38,31 +54,32 @@ editor.on("change", function () {
     clearTimeout(delay);
     delay = setTimeout(updatePreview, 300);
 });
+
+/**
+ * Window postMessage receiving funtionality
+ */
+var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+var eventer = window[eventMethod];
+var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+
+// Listen to message from child window
+eventer(messageEvent,function(e) {
+    if (e.data === 'CompleteAwesomeSauce') {
+        showCompletion();
+    }
+},false);
+
 function updatePreview() {
     var previewFrame = document.getElementById('preview');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     preview.open();
-    preview.write(libraryIncludes + editor.getValue());
+    preview.write(libraryIncludes + editor.getValue() + coursewareTests);
     preview.close();
+    var passing = true;
+
 }
 setTimeout(updatePreview, 300);
 
-
-// Default value for editor if one isn't provided in (i.e. a challenge)
-var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
-    'Please feel free to use Bonfire as an in-browser playground and linting tool.\n' +
-    'Note that you can also write tests using Chai.js by using the keywords assert and expect */\n\n' +
-    'function test() {\n' +
-    '  assert(2 !== 3, "2 is not equal to 3");\n' +
-    '  return [1,2,3].map(function(elem) {\n' +
-    '    return elem * elem;\n' +
-    '  });\n' +
-    '}\n' +
-    'expect(test()).to.be.a("array");\n\n' +
-    'assert.deepEqual(test(), [1,4,9]);\n\n' +
-    'var foo = test();\n' +
-    'foo.should.be.a("array");\n\n' +
-    'test();\n';
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,
@@ -86,17 +103,9 @@ var editorValue;
 
 var challengeSeed = challengeSeed || null;
 var tests = tests || [];
-var challengeEntryPoint = challengeEntryPoint || null;
 
 
-if (challengeSeed !== null) {
-    editorValue = challengeSeed + '\n\n' + challengeEntryPoint;
-} else {
-    editorValue = nonChallengeValue;
-}
-
-
-myCodeMirror.setValue(editorValue);
+myCodeMirror.setValue(challengeSeed);
 
 function doLinting () {
     editor.operation(function () {
@@ -131,10 +140,7 @@ function bonfireExecute() {
     var userJavaScript = myCodeMirror.getValue();
     userJavaScript = removeComments(userJavaScript);
     userJavaScript = scrapeTests(userJavaScript);
-    // simple fix in case the user forgets to invoke their function
-    if (challengeEntryPoint) {
-        userJavaScript = challengeEntryPoint + ' ' + userJavaScript;
-    }
+
     submit(userJavaScript, function(cls, message) {
         if (cls) {
             codeOutput.setValue(message.error);
@@ -252,3 +258,5 @@ var runTests = function(err, data) {
 function showCompletion() {
     $('#complete-bonfire-dialog').modal('show');
 }
+
+document.domain = 'localhost';

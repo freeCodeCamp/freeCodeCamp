@@ -1,19 +1,17 @@
 [
   {
     "_id" : "bd7123c8c441eddfaeb5bdef",
-    "name": "Meet Bonfire",
+    "name": "Intro",
     "difficulty": "0",
     "description": [
-      "Click the button below for further instructions.",
-      "Your goal is to fix the failing test.",
-      "First, run all the tests by clickin \"Run code\" or by pressing Control + Enter",
-      "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire."
+      "Welcome to the FCC courseware! You can click on the button below for more information",
+      "Courseware comes loaded with Bootstrap, Jquery, and Angular. You can include more libraries by finding a cdn and including them in your html",
+      "We hope you have fun learning!",
+      "To advance to the next exercise, change the h1 tag's text to say hello world"
     ],
     "tests": [
-      "expect(meetBonfire(\"test\")).to.be.a(\"boolean\");",
-      "expect(meetBonfire(\"test\")).to.be.true;"
+      "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\nreturn false;\n}\n\n",
-    "challengeEntryPoint": "meetBonfire(\"You can do this!\");"
+    "challengeSeed": "<h1>hello you</h1>"
   }
 ]

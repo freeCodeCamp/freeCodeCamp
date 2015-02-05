@@ -7,6 +7,7 @@ block content
     script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
     script(src='//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js')
     script(src='/js/lib/chai/chai.js')
+    script(src='/js/lib/chai/chai-jquery.js')
     link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
     link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
@@ -63,46 +64,40 @@ block content
             .hidden-xs.hidden-sm
                 img.iphone-position(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png")
             iframe.iphone#preview
-    //
-        .visible-xs-block.visible-sm-block.text-center
-            iframe.no-phone#preview
-    //
-        //.modal-dialog.animated.zoomIn.fast-animation
-        //    .modal-content
-        //        .modal-header.challenge-list-header= compliment
-        //        a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-        //        .modal-body(ng-controller="pairedWithController")
-        //            .text-center
-        //        .animated.zoomInDown.delay-half
-        //            span.landing-icon.ion-checkmark-circled.text-primary
-        //        - if (cc)
-        //        form.form-horizontal(novalidate='novalidate', name='completedWithForm')
-        //            .form-group.text-center
-        //                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
-        //                    // extra field to distract password tools like lastpass from injecting css into our username field
-        //                    input.form-control(ng-show="false")
-        //                    input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser", autofocus)
-        //                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
-        //                    alert(type='danger')
-        //                        span.ion-close-circled
-        //                        | Username not found
-        //                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, aria-hidden='true', ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Take me to my next challenge
-        //                            - if (points && points > 2)
-        //            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
-        //                i.fa.fa-twitter &nbsp;
-        //            = phrase
-        //        - else
-        //        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-        //            #all-bonfires-dialog.modal(tabindex='-1')
-        //.modal-dialog.animated.fadeInUp.fast-animation
-        //    .modal-content
-        //        .modal-header.challenge-list-header Bonfires
-        //            a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-        //        .modal-body
-        //            include ../partials/bonfires
-        //
-        //script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
-        //script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js")
-        //style(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
+
+
+    #complete-bonfire-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.zoomIn.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header= compliment
+                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body(ng-controller="pairedWithController")
+
+                    .text-center
+                        .animated.zoomInDown.delay-half
+                            span.completion-icon.ion-checkmark-circled.text-primary
+                    - if (cc)
+                        form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                            .form-group.text-center
+                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
+                                    // extra field to distract password tools like lastpass from injecting css into our username field
+                                    input.form-control(ng-show="false")
+                                    input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser", autofocus)
+                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
+                                    alert(type='danger')
+                                        span.ion-close-circled
+                                        | Username not found
+
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, aria-hidden='true', ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Take me to my next challenge
+
+
+                        - if (points && points > 2)
+                        a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
+                            i.fa.fa-twitter &nbsp;
+                                = phrase
+                    - else
+                        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+
+
 
                                                                      
