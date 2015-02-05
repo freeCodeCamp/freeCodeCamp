@@ -77,15 +77,11 @@ block content
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='email') Link to Profile Photo (1:1 ratio)
                     .col-sm-4
-                        input.form-control(type='url', name='picture', id='picture', ng-model='user.profile.picture', placeholder='http://www.example.com/image.jpg', ng-pattern="/[\.](jpg|png|jpeg|gif)\s?$/")
+                        input.form-control(type='url', name='picture', id='picture', ng-model='user.profile.picture', placeholder='http://www.example.com/image.jpg')
                     .col-sm-4.col-sm-offset-5(ng-show="profileForm.picture.$error.url && !profileForm.picture.$pristine")
                         alert(type='danger')
                             span.ion-close-circled
                             | Please enter a valid URL format (http://www.example.com/image.jpg).
-                    .col-sm-4.col-sm-offset-5(ng-show="profileForm.picture.$error.pattern")
-                        alert(type='danger')
-                            span.ion-close-circled
-                            | The image URL must end in .jpg, .png, .jpeg or .gif.
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='bio') Bio (140 characters)
                   .col-sm-4
