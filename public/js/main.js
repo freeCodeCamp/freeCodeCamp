@@ -68,6 +68,23 @@ $(document).ready(function() {
 
     });
 
+    $('.next-courseware-button').on('click', function() {
+        if ($('.signup-btn-nav').length < 1) {
+            $.post(
+                '/completed-courseware',
+                {
+                    coursewareInfo: {
+                        coursewareHash: passedCoursewareHash
+                    }
+                },
+                function(res) {
+                    if (res) {
+                        window.location.href = '/coursewares'
+                    }
+                })
+        }
+    })
+
     $('.all-challenges').on('click', function() {
         $('#all-challenges-dialog').modal('show');
     });

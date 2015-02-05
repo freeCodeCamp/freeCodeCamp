@@ -5,11 +5,25 @@
     "difficulty": "0",
     "description": [
       "Welcome to the FCC courseware! You can click on the button below for more information",
-      "Courseware comes loaded with Bootstrap, Jquery, and Angular. You can include more libraries by finding a cdn and including them in your html",
+      "Courseware comes loaded with Bootstrap, Animate, Lodash, Jquery, and Angular. You can include more libraries by finding a cdn and including them in your html",
       "We hope you have fun learning!",
       "To advance to the next exercise, change the h1 tag's text to say hello world"
     ],
     "tests": [
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello you</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf0887a",
+    "name": "Centering Text",
+    "difficulty" : "0",
+    "description": [
+      "Your job is to center the h1 element using a built in bootstrap class and change the text to hello world.",
+      "If you need help, you can refer to the bootstrap documentation, something you should get in the habit of!"
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
     "challengeSeed": "<h1>hello you</h1>"

@@ -37,6 +37,9 @@ exports.returnNextCourseware = function(req, res) {
             next(err);
         }
         courseware = courseware.pop();
+        if (courseware === undefined) {
+            return res.redirect('../coursewares/intro');
+        }
         nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
         return res.redirect('/coursewares/' + nameString);
     });
@@ -146,15 +149,14 @@ exports.generateChallenge = function(req, res) {
 };
 
 exports.completedCourseware = function (req, res) {
+    debug('In post call with data from req', req);
 
     var isCompletedDate = Math.round(+new Date() / 1000);
     var coursewareHash = req.body.coursewareInfo.coursewareHash;
 
     req.user.completedCoursewares.push({
         _id: coursewareHash,
-        completedWith: null,
-        completedDate: isCompletedDate,
-        solution: isSolution
+        completedDate: isCompletedDate
     });
 
     var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
