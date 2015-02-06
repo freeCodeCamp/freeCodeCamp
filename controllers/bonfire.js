@@ -63,24 +63,6 @@ exports.returnNextBonfire = function(req, res, next) {
 
         nameString = bonfire[0].name.toLowerCase().replace(/\s/g, '-');
         return res.redirect('/bonfires/' + nameString);
-        //res.render('bonfire/show', {
-        //    completedWith: null,
-        //    title: bonfire[bonfireNumber].name,
-        //    name: bonfire[bonfireNumber].name,
-        //    difficulty: +bonfire[bonfireNumber].difficulty,
-        //    brief: bonfire[bonfireNumber].description[0],
-        //    details: bonfire[bonfireNumber].description.slice(1),
-        //    tests:  bonfire[bonfireNumber].tests,
-        //    challengeSeed:  bonfire[bonfireNumber].challengeSeed,
-        //    challengeEntryPoint: bonfire[bonfireNumber].challengeEntryPoint,
-        //    cc: req.user ? req.user.bonfiresHash : undefined,
-        //    points: req.user ? req.user.points : undefined,
-        //    verb: resources.randomVerb(),
-        //    phrase: resources.randomPhrase(),
-        //    compliments: resources.randomCompliment(),
-        //    bonfires: bonfire,
-        //    bonfireHash: bonfire[bonfireNumber]._id
-        //});
     });
 };
 
@@ -94,37 +76,39 @@ exports.returnIndividualBonfire = function(req, res, next) {
         if (err) {
             next(err);
         }
-        var dashedNameFull = bonfire[bonfireNumber].name.toLowerCase().replace(/\s/g, '-');
-        if (dashedNameFull != dashedName) {
-            return res.redirect('../bonfires/' + dashedNameFull);
-        }
         if (bonfire.length < 1) {
             req.flash('errors', {
                 msg: "404: We couldn't find a bonfire with that name. Please double check the name."
             });
-            return res.redirect('/bonfires/meet-bonfire')
-        } else {
-            res.render('bonfire/show', {
-                completedWith: null,
-                title: bonfire[bonfireNumber].name,
-                dashedName: dashedName,
-                name: bonfire[bonfireNumber].name,
-                difficulty: Math.floor(+bonfire[bonfireNumber].difficulty),
-                brief: bonfire[bonfireNumber].description[0],
-                details: bonfire[bonfireNumber].description.slice(1),
-                tests: bonfire[bonfireNumber].tests,
-                challengeSeed: bonfire[bonfireNumber].challengeSeed,
-                challengeEntryPoint: bonfire[bonfireNumber].challengeEntryPoint,
-                cc: !!req.user,
-                points: req.user ? req.user.points : undefined,
-                verb: resources.randomVerb(),
-                phrase: resources.randomPhrase(),
-                compliment: resources.randomCompliment(),
-                bonfires: bonfire,
-                bonfireHash: bonfire[bonfireNumber]._id
-
-            });
+            return res.redirect('/bonfires/meet-bonfire');
         }
+        bonfire = bonfire.pop();
+        var dashedNameFull = bonfire.name.toLowerCase().replace(/\s/g, '-');
+        if (dashedNameFull != dashedName) {
+            return res.redirect('../bonfires/' + dashedNameFull);
+        }
+
+        res.render('bonfire/show', {
+            completedWith: null,
+            title: bonfire.name,
+            dashedName: dashedName,
+            name: bonfire.name,
+            difficulty: Math.floor(+bonfire.difficulty),
+            brief: bonfire.description[0],
+            details: bonfire.description.slice(1),
+            tests: bonfire.tests,
+            challengeSeed: bonfire.challengeSeed,
+            challengeEntryPoint: bonfire.challengeEntryPoint,
+            cc: !!req.user,
+            points: req.user ? req.user.points : undefined,
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
+            bonfires: bonfire,
+            bonfireHash: bonfire._id
+
+        });
+
     });
 };
 
