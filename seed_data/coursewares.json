@@ -1,13 +1,14 @@
 [
   {
     "_id" : "bd7123c8c441eddfaeb5bdef",
-    "name": "Start our challenges",
+    "name": "Start our Challenges",
     "difficulty": "0.00",
     "description": [
       "Welcome to Free Code Camp's first challenge! Click on the button below for further instructions.",
       "Awesome. Now you can read the rest of this challenge's instructions",
-      "See the code to the right that says <code>&#60;h1&#62;hello&#60;/h1&#62;</code>? That's a HyperText Markup Language (HTML) <code>element</code>.",
-      "Most HTML elements have an opening tag and a closing tag. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference is closing tags have a slash after their opening angle bracket.",
+      "You can edit <code>code</code> in <code>text editor</code> we've embedded into this web page.",
+      "See the code in the text editor that says <code>&#60;h1&#62;hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
+      "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference between opening and is that closing tags have a slash after their opening angle bracket.",
       "To advance to the next exercise, change the h1 tag's text to say \"hello world\" instead of \"hello\"."
     ],
     "tests": [
@@ -17,7 +18,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf0887a",
-    "name": "Use the h2 tag",
+    "name": "Use the h2 Element",
     "difficulty" : "0.01",
     "description": [
       "Add an h2 tag that says \"hello HTML\" to create a second HTML element below the \"hello world\" h1 element.",
@@ -33,7 +34,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08801",
-    "name": "Use the p tag",
+    "name": "Use the P Element",
     "difficulty" : "0.02",
     "description": [
       "Create a p - or paragraph - element below the h2 element, and give it the text \"hello paragraph\".",
@@ -78,7 +79,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08803",
-    "name": "Change the color of text",
+    "name": "Change the Color of Text",
     "difficulty" : "0.05",
     "description": [
       "Change the h2 element's color to red.",
@@ -93,7 +94,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08805",
-    "name": "Create a style tag for CSS",
+    "name": "Create a Style Tag for CSS",
     "difficulty" : "0.06",
     "description": [
       "Create a style tag and write the CSS to make all h2 elements blue.",
@@ -110,8 +111,40 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08806",
-    "name": "Change the font size of an element",
+    "name": "Use a CSS Class to Style an Element",
     "difficulty" : "0.07",
+    "description": [
+      "Create a CSS class called \"red-text\" and apply it the the h2 element.",
+      "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
+      "Font size is controlled by the <code >font-size</code> CSS attribute.",
+      "We've already set the font-size attribute for all h2 elements. See if you can figure out how to give all p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for h1."
+    ],
+    "tests": [
+      "expect($('h2')).to.have.css('color', 'red');",
+      "expect($('h2')).to.have.class('red-text');"
+    ],
+    "challengeSeed": "<h1 class=\"red-text\">hello world</h2>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08806",
+    "name": "Use a CSS Classes to Style Multiple Element",
+    "difficulty" : "0.07",
+    "description": [
+      "Create a CSS class called \"red-text\" and apply it the the h2 element.",
+      "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
+      "Font size is controlled by the <code >font-size</code> CSS attribute.",
+      "We've already set the font-size attribute for all h2 elements. See if you can figure out how to give all p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for h1."
+    ],
+    "tests": [
+      "expect($('h2')).to.have.css('color', 'red');",
+      "expect($('h2')).to.have.class('red-text');"
+    ],
+    "challengeSeed": "<h1 class=\"red-text\">hello world</h2>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08806",
+    "name": "Change the Font Size of an Element",
+    "difficulty" : "0.08",
     "description": [
       "Set the font size of all p elements to 16 pixels",
       "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
@@ -126,49 +159,34 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08807",
-    "name": "",
-    "difficulty" : "0.08",
+    "name": "Import a Google Font",
+    "difficulty" : "0.09",
     "description": [
-      "",
-      ""
+      "Apply the font-family of Lobster to all h1 elements.",
+      "The first line of code in your text editor is a <code>call</code> to Google that grabs a font called Lobster and loads it into your HTML.",
+      "You'll notice that we've already applied the <code>font-family</code> of Lobster to all h2 elements. Now you should also apply it to all h1 elements."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('h1')).to.have.css('font-family', 'Lobster');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>\n<style>\n    h2 {\n        color: red;\n        font-size: 24px;\n        font-family: 'Lobster'\n    }\n    p {\n        font-size: 16px;\n    }\n</style>\n\n<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
   },
   {
     "_id" : "bad87fee1348bd9aedf08808",
-    "name": "",
-    "difficulty" : "0.09",
+    "name": "Help Fonts Gracefully Degrade",
+    "difficulty" : "0.10",
     "description": [
-      "",
-      ""
+      "Make all h1 elements gracefully degrade to Serif when the Lobster font isn't available."
     ],
     "tests": [
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": "<style>\n    h2 {\n        color: red;\n        font-size: 24px;\n        font-family: 'Lobster'\n    }\n    p {\n        font-size: 16px;\n    }\n</style>\n\n<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
   },
   {
     "_id" : "bad87fee1348bd9aedf08809",
-    "name": "",
-    "difficulty" : "0.10",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": "<h1>hello world</h1>"
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08810",
-    "name": "",
+    "name": "Using Important to Override Styles",
     "difficulty" : "0.11",
     "description": [
       "",
@@ -181,8 +199,22 @@
     "challengeSeed": "<h1>hello world</h1>"
   },
   {
+    "_id" : "bad87fee1348bd9aedf08810",
+    "name": "Use Hex Codes for Precise Colors",
+    "difficulty" : "0.12",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
     "_id" : "bad87fee1348bd9aedf08811",
-    "name": "",
+    "name": "Use RGB Codes for Precise Colors",
     "difficulty" : "0.12",
     "description": [
       "",
@@ -196,7 +228,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08812",
-    "name": "",
+    "name": "Include images",
     "difficulty" : "0.13",
     "description": [
       "",
@@ -210,7 +242,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08813",
-    "name": "",
+    "name": "Add a Border Around an Element",
     "difficulty" : "0.14",
     "description": [
       "",
@@ -224,7 +256,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08814",
-    "name": "",
+    "name": "Add Rounded Corners with a Border Radius",
     "difficulty" : "0.15",
     "description": [
       "",
@@ -238,7 +270,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08815",
-    "name": "",
+    "name": "Make an Image Circular with a Border Radius",
     "difficulty" : "0.16",
     "description": [
       "",
@@ -252,7 +284,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08816",
-    "name": "",
+    "name": "Create a Link",
     "difficulty" : "0.17",
     "description": [
       "",
@@ -266,7 +298,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08817",
-    "name": "",
+    "name": "Make Dead Links with the Hash Symbol",
     "difficulty" : "0.18",
     "description": [
       "",
@@ -280,7 +312,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08818",
-    "name": "",
+    "name": "Add Alt Text to a Link",
     "difficulty" : "0.19",
     "description": [
       "",
@@ -294,7 +326,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08819",
-    "name": "",
+    "name": "Include Links that Open in a New Browser Tab",
     "difficulty" : "0.20",
     "description": [
       "",
@@ -308,7 +340,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08820",
-    "name": "",
+    "name": "Turn Images into Links",
     "difficulty" : "0.21",
     "description": [
       "",
@@ -322,7 +354,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08821",
-    "name": "",
+    "name": "Add Padding to an Element",
     "difficulty" : "0.22",
     "description": [
       "",
@@ -336,7 +368,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08822",
-    "name": "",
+    "name": "Add a Margin to an Element",
     "difficulty" : "0.23",
     "description": [
       "",
@@ -350,7 +382,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08823",
-    "name": "",
+    "name": "Add a Negative Margin to an Element",
     "difficulty" : "0.24",
     "description": [
       "",
@@ -364,7 +396,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08824",
-    "name": "",
+    "name": "Add Padding Only to the Top and Bottom of an Element",
     "difficulty" : "0.25",
     "description": [
       "",
@@ -378,7 +410,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08825",
-    "name": "",
+    "name": "Add Margin Only to the Left and Right of an Element",
     "difficulty" : "0.26",
     "description": [
       "",
@@ -392,7 +424,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08826",
-    "name": "",
+    "name": "Use Clockwise Padding Notation",
     "difficulty" : "0.27",
     "description": [
       "",
@@ -406,7 +438,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08827",
-    "name": "",
+    "name": "Create an Bulleted Unordered List",
     "difficulty" : "0.28",
     "description": [
       "",
@@ -420,7 +452,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08828",
-    "name": "",
+    "name": "Created a Numbered Ordered List",
     "difficulty" : "0.29",
     "description": [
       "",
@@ -434,7 +466,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08829",
-    "name": "",
+    "name": "Create a Text Field",
     "difficulty" : "0.30",
     "description": [
       "",
@@ -448,7 +480,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08830",
-    "name": "",
+    "name": "Use HTML5 to Make a Field Required",
     "difficulty" : "0.31",
     "description": [
       "",
@@ -462,7 +494,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08831",
-    "name": "",
+    "name": "Use HTML5 to Specify an Input Type",
     "difficulty" : "0.32",
     "description": [
       "",
@@ -476,7 +508,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08832",
-    "name": "",
+    "name": "Create a Text Area",
     "difficulty" : "0.33",
     "description": [
       "",
@@ -490,7 +522,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08833",
-    "name": "",
+    "name": "Use Lorem Ipsum Text as a Placeholder",
     "difficulty" : "0.34",
     "description": [
       "",
@@ -504,7 +536,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08834",
-    "name": "",
+    "name": "Create a Set of Radio Buttons",
     "difficulty" : "0.35",
     "description": [
       "",
@@ -518,7 +550,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08835",
-    "name": "",
+    "name": "Create a Set of Checkboxes",
     "difficulty" : "0.36",
     "description": [
       "",
@@ -532,7 +564,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08836",
-    "name": "",
+    "name": "Create a HTML Form",
     "difficulty" : "0.37",
     "description": [
       "",
@@ -546,7 +578,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08837",
-    "name": "",
+    "name": "Use a Bootstrap Primary Button",
     "difficulty" : "0.38",
     "description": [
       "",
@@ -560,7 +592,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08838",
-    "name": "",
+    "name": "Apply Responsive Design with the Bootstrap Grid",
     "difficulty" : "0.39",
     "description": [
       "",
@@ -574,7 +606,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08839",
-    "name": "",
+    "name": "Create a Half Width Bootstrap Column",
     "difficulty" : "0.40",
     "description": [
       "",
@@ -588,7 +620,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08840",
-    "name": "",
+    "name": "Create a Row of Bootstrap Elements",
     "difficulty" : "0.41",
     "description": [
       "",
@@ -602,7 +634,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08841",
-    "name": "",
+    "name": "Change the background of element",
     "difficulty" : "0.42",
     "description": [
       "",
@@ -616,7 +648,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08842",
-    "name": "",
+    "name": "Make an element translucent",
     "difficulty" : "0.43",
     "description": [
       "",
@@ -630,7 +662,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08843",
-    "name": "",
+    "name": "Center an Image",
     "difficulty" : "0.44",
     "description": [
       "",
@@ -644,7 +676,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08844",
-    "name": "",
+    "name": "Add a Drop Shadow",
     "difficulty" : "0.45",
     "description": [
       "",
@@ -658,7 +690,7 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08845",
-    "name": "",
+    "name": "Make a Navbar",
     "difficulty" : "0.46",
     "description": [
       "",
@@ -671,8 +703,8 @@
     "challengeSeed": "<h1>hello world</h1>"
   },
   {
-    "_id" : "bad87fee1348bd9aedf08846",
-    "name": "",
+    "_id" : "bad87fee1348bd9aedf08847",
+    "name": "Add a Logo to a Navbar",
     "difficulty" : "0.47",
     "description": [
       "",
@@ -685,8 +717,8 @@
     "challengeSeed": "<h1>hello world</h1>"
   },
   {
-    "_id" : "bad87fee1348bd9aedf08847",
-    "name": "",
+    "_id" : "bad87fee1348bd9aedf08848",
+    "name": "Make a Footer",
     "difficulty" : "0.48",
     "description": [
       "",
@@ -697,5 +729,733 @@
       "expect($('h1')).to.have.text('hello world');"
     ],
     "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08849",
+    "name": "Use Icons as Links",
+    "difficulty" : "0.49",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08850",
+    "name": "Add Hover Effects to Icons",
+    "difficulty" : "0.50",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08851",
+    "name": "Add Depth to a Page with a Well",
+    "difficulty" : "0.51",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08852",
+    "name": "Add an ID to a Button",
+    "difficulty" : "0.52",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08853",
+    "name": "Fire a Modal by Clicking a Button",
+    "difficulty" : "0.53",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08854",
+    "name": "Style a Modal with a Header",
+    "difficulty" : "0.54",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08855",
+    "name": "Style a Modal with a Body",
+    "difficulty" : "0.55",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08856",
+    "name": "Make a Modal Dismissable",
+    "difficulty" : "0.56",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08857",
+    "name": "Create an Accordian Menu",
+    "difficulty" : "0.57",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08858",
+    "name": "Add a Bootstrap Info Button",
+    "difficulty" : "0.58",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08859",
+    "name": "Add a Bootstrap Warning Button",
+    "difficulty" : "0.59",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08860",
+    "name": "Add a Bootstrap Danger Button",
+    "difficulty" : "0.60",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08861",
+    "name": "Add a Bootstrap Success Button",
+    "difficulty" : "0.61",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08862",
+    "name": "Use a Block-width Button",
+    "difficulty" : "0.62",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08863",
+    "name": "Add a Gradient to a Button",
+    "difficulty" : "0.63",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08864",
+    "name": "Adjust the Line Height of Text",
+    "difficulty" : "0.64",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08865",
+    "name": "Use Responsive Images to Fit Containing Elements",
+    "difficulty" : "0.65",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08866",
+    "name": "",
+    "difficulty" : "0.66",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08867",
+    "name": "",
+    "difficulty" : "0.67",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08868",
+    "name": "",
+    "difficulty" : "0.68",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08869",
+    "name": "",
+    "difficulty" : "0.69",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08870",
+    "name": "",
+    "difficulty" : "0.70",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08871",
+    "name": "",
+    "difficulty" : "0.71",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08872",
+    "name": "",
+    "difficulty" : "0.72",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08873",
+    "name": "",
+    "difficulty" : "0.73",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08874",
+    "name": "",
+    "difficulty" : "0.74",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08875",
+    "name": "",
+    "difficulty" : "0.75",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08876",
+    "name": "",
+    "difficulty" : "0.76",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08877",
+    "name": "",
+    "difficulty" : "0.77",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08878",
+    "name": "",
+    "difficulty" : "0.78",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08879",
+    "name": "",
+    "difficulty" : "0.79",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08880",
+    "name": "",
+    "difficulty" : "0.80",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08881",
+    "name": "",
+    "difficulty" : "0.81",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08882",
+    "name": "",
+    "difficulty" : "0.82",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08883",
+    "name": "",
+    "difficulty" : "0.83",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08884",
+    "name": "",
+    "difficulty" : "0.84",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08885",
+    "name": "",
+    "difficulty" : "0.85",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08886",
+    "name": "",
+    "difficulty" : "0.86",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08887",
+    "name": "",
+    "difficulty" : "0.87",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08888",
+    "name": "",
+    "difficulty" : "0.88",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08889",
+    "name": "",
+    "difficulty" : "0.89",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08890",
+    "name": "",
+    "difficulty" : "0.90",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08891",
+    "name": "",
+    "difficulty" : "0.91",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08892",
+    "name": "",
+    "difficulty" : "0.92",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08893",
+    "name": "",
+    "difficulty" : "0.93",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08894",
+    "name": "",
+    "difficulty" : "0.94",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08895",
+    "name": "",
+    "difficulty" : "0.95",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08896",
+    "name": "",
+    "difficulty" : "0.96",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08897",
+    "name": "",
+    "difficulty" : "0.97",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08898",
+    "name": "",
+    "difficulty" : "0.98",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08899",
+    "name": "",
+    "difficulty" : "0.99",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08100",
+    "name": "",
+    "difficulty" : "1.00",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
   }
-]  
+]
