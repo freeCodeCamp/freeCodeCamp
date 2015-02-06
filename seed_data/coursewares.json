@@ -88,7 +88,7 @@
       "Here's how you would set the h2 element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;hello html&#60;h2&#62;</code>"
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'red');"
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
     ],
     "challengeSeed": "<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
   },
