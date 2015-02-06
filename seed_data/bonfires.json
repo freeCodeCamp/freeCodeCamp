@@ -136,7 +136,7 @@
     "name": "Sum All Numbers in a Range",
     "difficulty": "2.00",
     "description": [
-      "We'll pass you an array of two numbers. Return the sum those two numbers and all numbers between them.",
+      "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
       "The lowest number will not always come first."
     ],
     "challengeEntryPoint": "sumAll([1, 4]);",
