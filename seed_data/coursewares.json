@@ -14,7 +14,10 @@
     "tests": [
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello</h1>"
+    "challengeSeed": [
+      "<h1>hello</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf0887a",
@@ -30,7 +33,10 @@
       "expect($('h1')).to.have.text('hello world');",
       "expect($('h2')).to.have.text('hello HTML');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08801",
@@ -44,7 +50,11 @@
     "tests": [
       "expect($('p')).to.have.text('hello paragraph');"
     ],
-    "challengeSeed": "<h1>hello world</h1>\n<h2>hello html</h2>"
+    "challengeSeed": [
+      "<h1>hello world</h1>",
+      "<h2>hello html</h2>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08802",
@@ -59,7 +69,15 @@
     "tests": [
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<!--\n<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+    "challengeSeed": [
+      "<!--",
+      "<h1>hello world</h1>",
+      "",
+      "<h2>hello html</h2>",
+      "",
+      "<p>hello paragraph</p>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08804",
@@ -75,7 +93,16 @@
       "expect($('h2')).to.exist;",
       "expect($('p')).to.not.exist;"
     ],
-    "challengeSeed": "\n<h1>hello world</h1>\n\n<h2>hello html</h2>\n\n<p>hello paragraph</p>"
+    "challengeSeed": [
+      "",
+      "<h1>hello world</h1>",
+      "",
+      "<h2>hello html</h2>",
+      "",
+      "<p>hello paragraph</p>",
+      ""
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08803",
@@ -90,7 +117,12 @@
     "tests": [
       "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
     ],
-    "challengeSeed": "<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+    "challengeSeed": [
+      "<h1>hello world</h1>",
+      "<h2>hello html</h2>",
+      "<p>hello paragraph</p>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08805",
@@ -107,7 +139,12 @@
     "tests": [
       "expect($('h2')).to.have.css('color', 'red');"
     ],
-    "challengeSeed": "<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+    "challengeSeed": [
+      "<h1>hello world</h1>", 
+      "<h2>hello html</h2>", 
+      "<p>hello paragraph</p>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08806",
@@ -123,7 +160,12 @@
       "expect($('h2')).to.have.css('color', 'red');",
       "expect($('h2')).to.have.class('red-text');"
     ],
-    "challengeSeed": "<h1 class=\"red-text\">hello world</h2>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+    "challengeSeed": [
+      "<h1 class=\"red-text\">hello world</h2>",
+      "<h2>hello html</h2>",
+      "<p>hello paragraph</p>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08806",
@@ -139,7 +181,12 @@
       "expect($('h2')).to.have.css('color', 'red');",
       "expect($('h2')).to.have.class('red-text');"
     ],
-    "challengeSeed": "<h1 class=\"red-text\">hello world</h2>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+    "challengeSeed": [
+      "<h1 class=\"red-text\">hello world</h2>",
+      "<h2>hello html</h2>", 
+      "<p>hello paragraph</p>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08806",
@@ -155,7 +202,19 @@
       "expect($('p')).to.have.css('color', 'red');",
       "expect($('p')).to.have.css('font-size', '16px;');"
     ],
-    "challengeSeed": "<style>\n    h2 {\n        color: red;\n        font-size: 24px;    }\n</style>\n\n<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+    "challengeSeed": [
+      "<style>",
+      "  h2 {",
+      "    color: red;",
+      "    font-size: 24px;",
+      "  }",
+      "</style>",
+      "",
+      "<h1>hello world</h1>",
+      "<h2>hello html</h2>",
+      "<p>hello paragraph</p>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08807",
@@ -169,7 +228,24 @@
     "tests": [
       "expect($('h1')).to.have.css('font-family', 'Lobster');"
     ],
-    "challengeSeed": "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>\n<style>\n    h2 {\n        color: red;\n        font-size: 24px;\n        font-family: 'Lobster'\n    }\n    p {\n        font-size: 16px;\n    }\n</style>\n\n<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+    "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+      "<style>",
+      "  h2 {",
+      "    color: red;",
+      "    font-size: 24px;",
+      "    font-family: 'Lobster'",
+      "  }",
+      "  p {",
+      "    font-size: 16px;",
+      "  }",
+      "</style>",
+      "",
+      "<h1>hello world</h1>",
+      "<h2>hello html</h2>",
+      "<p>hello paragraph</p>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08808",
@@ -182,7 +258,23 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<style>\n    h2 {\n        color: red;\n        font-size: 24px;\n        font-family: 'Lobster'\n    }\n    p {\n        font-size: 16px;\n    }\n</style>\n\n<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+    "challengeSeed": [
+      "<style>",
+      "  h2 {",
+      "    color: red;",
+      "    font-size: 24px;",
+      "    font-family: 'Lobster'",
+      "  }",
+      "  p {",
+      "    font-size: 16px;",
+      "  }",
+      "</style>",
+      "",
+      "<h1>hello world</h1>",
+      "<h2>hello html</h2>",
+      "<p>hello paragraph</p>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08809",
@@ -196,7 +288,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08810",
@@ -210,7 +305,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08811",
@@ -224,7 +322,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08812",
@@ -238,7 +339,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08813",
@@ -252,7 +356,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08814",
@@ -266,7 +373,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08815",
@@ -280,7 +390,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08816",
@@ -294,7 +407,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08817",
@@ -308,7 +424,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08818",
@@ -322,7 +441,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08819",
@@ -336,7 +458,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08820",
@@ -350,7 +475,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08821",
@@ -364,7 +492,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08822",
@@ -378,7 +509,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08823",
@@ -392,7 +526,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08824",
@@ -406,7 +543,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08825",
@@ -420,7 +560,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08826",
@@ -434,7 +577,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08827",
@@ -448,7 +594,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08828",
@@ -462,7 +611,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08829",
@@ -476,7 +628,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08830",
@@ -490,7 +645,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08831",
@@ -504,7 +662,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08832",
@@ -518,7 +679,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08833",
@@ -532,7 +696,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08834",
@@ -546,7 +713,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08835",
@@ -560,7 +730,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08836",
@@ -574,7 +747,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08837",
@@ -588,7 +764,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08838",
@@ -602,7 +781,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08839",
@@ -616,7 +798,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08840",
@@ -630,7 +815,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08841",
@@ -644,7 +832,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08842",
@@ -658,7 +849,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08843",
@@ -672,7 +866,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08844",
@@ -686,7 +883,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08845",
@@ -700,7 +900,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08847",
@@ -714,7 +917,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08848",
@@ -728,7 +934,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08849",
@@ -742,7 +951,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08850",
@@ -756,7 +968,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08851",
@@ -770,7 +985,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08852",
@@ -784,7 +1002,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08853",
@@ -798,7 +1019,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08854",
@@ -812,7 +1036,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08855",
@@ -826,7 +1053,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08856",
@@ -840,7 +1070,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08857",
@@ -854,7 +1087,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08858",
@@ -868,7 +1104,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08859",
@@ -882,7 +1121,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08860",
@@ -896,7 +1138,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08861",
@@ -910,7 +1155,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08862",
@@ -924,7 +1172,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08863",
@@ -938,7 +1189,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08864",
@@ -952,7 +1206,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08865",
@@ -966,7 +1223,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08866",
@@ -980,7 +1240,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08867",
@@ -994,7 +1257,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08868",
@@ -1008,7 +1274,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08869",
@@ -1022,7 +1291,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08870",
@@ -1036,7 +1308,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08871",
@@ -1050,7 +1325,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08872",
@@ -1064,7 +1342,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08873",
@@ -1078,7 +1359,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08874",
@@ -1092,7 +1376,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08875",
@@ -1106,7 +1393,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08876",
@@ -1120,7 +1410,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08877",
@@ -1134,7 +1427,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08878",
@@ -1148,7 +1444,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08879",
@@ -1162,7 +1461,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08880",
@@ -1176,7 +1478,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08881",
@@ -1190,7 +1495,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08882",
@@ -1204,7 +1512,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08883",
@@ -1218,7 +1529,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08884",
@@ -1232,7 +1546,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08885",
@@ -1246,7 +1563,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08886",
@@ -1260,7 +1580,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08887",
@@ -1274,7 +1597,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08888",
@@ -1288,7 +1614,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08889",
@@ -1302,7 +1631,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08890",
@@ -1316,7 +1648,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08891",
@@ -1330,7 +1665,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08892",
@@ -1344,7 +1682,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08893",
@@ -1358,7 +1699,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08894",
@@ -1372,7 +1716,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08895",
@@ -1386,7 +1733,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08896",
@@ -1400,7 +1750,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08897",
@@ -1414,7 +1767,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08898",
@@ -1428,7 +1784,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08899",
@@ -1442,7 +1801,10 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08100",
@@ -1456,6 +1818,9 @@
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
   }
 ]

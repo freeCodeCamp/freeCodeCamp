@@ -44,6 +44,8 @@ var allTests = '';
     });
 })();
 
+
+
 var coursewareTests = "<script>" +
         "var allTestsGood = true;" +
     "var expect = chai.expect; " +
@@ -111,9 +113,15 @@ var editorValue;
 
 var challengeSeed = challengeSeed || null;
 var tests = tests || [];
+var allSeeds = '';
+(function() {
+    challengeSeed.forEach(function(elem) {
+        allSeeds += elem + '\n';
+    });
+})();
 
 
-myCodeMirror.setValue(challengeSeed);
+myCodeMirror.setValue(allSeeds);
 
 function doLinting () {
     editor.operation(function () {

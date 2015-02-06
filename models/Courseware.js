@@ -14,7 +14,8 @@ var coursewareSchema = new mongoose.Schema({
     difficulty: String,
     description: Array,
     tests: Array,
-    challengeSeed: String
+    challengeSeed: Array,
+    challengeType: Number // 0 = html, 1 = javascript only, 2 = video
 });
 
 module.exports = mongoose.model('Courseware', coursewareSchema);
