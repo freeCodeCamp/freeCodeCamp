@@ -12,7 +12,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "mocha",
-    "prepublish": "node seed_data/seed.js"
+    "postinstall": "node seed_data/seed.js"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -33,6 +33,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.9.2",
     "express-validator": "^2.8.0",
+    "forever": "^0.14.1",
     "github-api": "^0.7.0",
     "helmet": "^0.5.3",
     "jade": "^1.8.0",
