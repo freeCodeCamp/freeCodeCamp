@@ -1,31 +1,694 @@
 [
   {
     "_id" : "bd7123c8c441eddfaeb5bdef",
-    "name": "Intro",
-    "difficulty": "0",
+    "name": "Start our challenges",
+    "difficulty": "0.00",
     "description": [
-      "Welcome to the FCC courseware! You can click on the button below for more information",
-      "Courseware comes loaded with Bootstrap, Animate, Lodash, Jquery, and Angular. You can include more libraries by finding a cdn and including them in your html",
-      "We hope you have fun learning!",
-      "To advance to the next exercise, change the h1 tag's text to say hello world"
+      "Welcome to Free Code Camp's first challenge! Click on the button below for further instructions.",
+      "Awesome. Now you can read the rest of this challenge's instructions",
+      "See the code to the right that says <code>&#60;h1&#62;hello&#60;/h1&#62;</code>? That's an HTML element.",
+      "Most HTML elements have an opening tag and a closing tag. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference is closign tags have a slash after their opening angle bracket.",
+      "To advance to the next exercise, change the h1 tag's text to say \"hello world\" instead of \"hello\"."
     ],
     "tests": [
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello you</h1>"
+    "challengeSeed": "<h1>hello</h1>"
   },
   {
     "_id" : "bad87fee1348bd9aedf0887a",
-    "name": "Centering Text",
-    "difficulty" : "0",
+    "name": "Use the h2 tag",
+    "difficulty" : "0.01",
     "description": [
-      "Your job is to center the h1 element using a built in bootstrap class and change the text to hello world.",
-      "If you need help, you can refer to the bootstrap documentation, something you should get in the habit of!"
+      "Add an h2 tag that says \"hello HTML\" to create a second HTML element below the \"hello world\" h1 element.",
+      "The h2 element you enter will create an h2 element on the website.",
+      "This element tells the browser how to render the text that it contains.",
+      "h2 elements are slightly smaller than h1 elements. There are also an h3, h4, h5 and h6 elements."
+    ],
+    "tests": [
+      "expect($('h1')).to.have.text('hello world');",
+      "expect($('h2')).to.have.text('hello HTML');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08801",
+    "name": "Use the p tag",
+    "difficulty" : "0.02",
+    "description": [
+      "Create a p - or Paragraph - element below the h2 element that says \"hello paragraph\".",
+      "This will create a p element. P elements are the prefered element for normal-sized paragraph text on websites."
+    ],
+    "tests": [
+      "expect($('p')).to.have.text('hello paragraph');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>\n<h2>hello html</h2>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08802",
+    "name": "Uncomment HTML",
+    "difficulty" : "0.03",
+    "description": [
+      "Uncomment the h1, h2 and p elements.",
+      "Commenting is a way that you can leave comments within your code without affecting the code itself.",
+      "Commenting is also a convenient way to make code inactive without having to delete it entirely.",
+      "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>."
+    ],
+    "tests": [
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<!--\n<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08804",
+    "name": "Comment out HTML",
+    "difficulty" : "0.04",
+    "description": [
+      "Comment out the h1 element and the p element, but leave the h2 element uncommented.",
+      "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>.",
+      "Here you'll need to end the comment before the h2 element begins."
+    ],
+    "tests": [
+      "expect($('h1')).to.not.exist;",
+      "expect($('h2')).to.exist;",
+      "expect($('p')).to.not.exist;"
+    ],
+    "challengeSeed": "\n<h1>hello world</h1>\n\n<h2>hello html</h2>\n\n<p>hello paragraph</p>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08803",
+    "name": "Comment HTML",
+    "difficulty" : "0.04",
+    "description": [
+      "",
+      ""
     ],
     "tests": [
       "expect($('h1')).to.have.class('text-center');",
       "expect($('h1')).to.have.text('hello world');"
     ],
-    "challengeSeed": "<h1>hello you</h1>"
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08805",
+    "name": "",
+    "difficulty" : "0.06",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08806",
+    "name": "",
+    "difficulty" : "0.07",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08807",
+    "name": "",
+    "difficulty" : "0.08",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08808",
+    "name": "",
+    "difficulty" : "0.09",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08809",
+    "name": "",
+    "difficulty" : "0.10",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08810",
+    "name": "",
+    "difficulty" : "0.11",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08811",
+    "name": "",
+    "difficulty" : "0.12",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08812",
+    "name": "",
+    "difficulty" : "0.13",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08813",
+    "name": "",
+    "difficulty" : "0.14",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08814",
+    "name": "",
+    "difficulty" : "0.15",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08815",
+    "name": "",
+    "difficulty" : "0.16",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08816",
+    "name": "",
+    "difficulty" : "0.17",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08817",
+    "name": "",
+    "difficulty" : "0.18",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08818",
+    "name": "",
+    "difficulty" : "0.19",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08819",
+    "name": "",
+    "difficulty" : "0.20",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08820",
+    "name": "",
+    "difficulty" : "0.21",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08821",
+    "name": "",
+    "difficulty" : "0.22",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08822",
+    "name": "",
+    "difficulty" : "0.23",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08823",
+    "name": "",
+    "difficulty" : "0.24",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08824",
+    "name": "",
+    "difficulty" : "0.25",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08825",
+    "name": "",
+    "difficulty" : "0.26",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08826",
+    "name": "",
+    "difficulty" : "0.27",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08827",
+    "name": "",
+    "difficulty" : "0.28",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08828",
+    "name": "",
+    "difficulty" : "0.29",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08829",
+    "name": "",
+    "difficulty" : "0.30",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08830",
+    "name": "",
+    "difficulty" : "0.31",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08831",
+    "name": "",
+    "difficulty" : "0.32",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08832",
+    "name": "",
+    "difficulty" : "0.33",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08833",
+    "name": "",
+    "difficulty" : "0.34",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08834",
+    "name": "",
+    "difficulty" : "0.35",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08835",
+    "name": "",
+    "difficulty" : "0.36",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08836",
+    "name": "",
+    "difficulty" : "0.37",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08837",
+    "name": "",
+    "difficulty" : "0.38",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08838",
+    "name": "",
+    "difficulty" : "0.39",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08839",
+    "name": "",
+    "difficulty" : "0.40",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08840",
+    "name": "",
+    "difficulty" : "0.41",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08841",
+    "name": "",
+    "difficulty" : "0.42",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08842",
+    "name": "",
+    "difficulty" : "0.43",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08843",
+    "name": "",
+    "difficulty" : "0.44",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08844",
+    "name": "",
+    "difficulty" : "0.45",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08845",
+    "name": "",
+    "difficulty" : "0.46",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08846",
+    "name": "",
+    "difficulty" : "0.47",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08847",
+    "name": "",
+    "difficulty" : "0.48",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": "<h1>hello world</h1>"
   }
-]
+]  
