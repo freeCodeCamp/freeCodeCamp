@@ -36,6 +36,12 @@ $(document).ready(function() {
         }
     });
 
+    $('#complete-courseware-dialog').keydown(function(e) {
+        if (e.ctrlKey && e.keyCode == 13) {
+            $('.next-courseware-button').click();
+        }
+    });
+
 
 
     function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
