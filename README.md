@@ -55,11 +55,11 @@ LINKEDIN_SECRET='LINKEDIN APP SECRET'
 
 ```bash
 
-# Seed your database with the challenges
-node seed_data/seed.js
-
 # Start the mongo server
 mongod
+
+# Seed your database with the challenges
+node seed_data/seed.js
 
 # start the application
 gulp
