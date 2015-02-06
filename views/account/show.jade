@@ -2,7 +2,8 @@ extends ../layout
 block content
     .col-xs-12.col-sm-12.col-md-12
         .panel.panel-primary
-            .panel-heading.text-center #{username}
+            .panel-heading.text-center
+                h1 #{username}'s portfolio
             .panel-body
                 .row
                     .col-xs-12
@@ -10,7 +11,10 @@ block content
                             if picture
                                 img.img-center.img-responsive.public-profile-img(src=picture)
                             else
-                                img.img-center.img-responsive.public-profile-img(src='#{user.gravatar(200)}')
+                                if (user)
+                                    img.img-center.img-responsive.public-profile-img(src='#{user.gravatar(200)}')
+                                else
+                                    img.img-center.img-responsive.public-profile-img(src='https://gravatar.com/avatar/d704cc72a5cd0bfa482ee71f4d557daa?s=200&d=retro')
                             h1.text-center.negative-5
                                 - if (twitterHandle)
                                     a.ion-social-twitter.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}", target='_blank')

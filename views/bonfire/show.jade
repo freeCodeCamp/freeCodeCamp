@@ -20,8 +20,7 @@ block content
     .row
         .col-xs-12.col-sm-12.col-md-4.bonfire-top
             #testCreatePanel
-
-                h2.text-center= name
+                h1.text-center= name
                 h2.text-center.bonfire-flames
                     if (difficulty == "0")
                         i.ion-ios-flame-outline
@@ -122,7 +121,7 @@ block content
                                         span.ion-close-circled
                                         | Username not found
 
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, aria-hidden='true', ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Take me to my next challenge
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Take me to my next challenge
 
 
                         - if (points && points > 2)
@@ -139,3 +138,4 @@ block content
     //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
     //            .modal-body
     //                include ../partials/bonfires
+

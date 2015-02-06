@@ -57,34 +57,39 @@ exports.returnIndividualCourseware = function(req, res, next) {
         if (err) {
             next(err);
         }
+        // Handle not found
+        if (courseware.length < 1) {
+            req.flash('errors', {
+            msg: "404: We couldn't find a challenge with that name. Please double check the name."
+        });
+            return res.redirect('/coursewares')
+        }
         courseware = courseware.pop();
+
+        // Redirect to full name if the user only entered a partial
         var dashedNameFull = courseware.name.toLowerCase().replace(/\s/g, '-');
         if (dashedNameFull != dashedName) {
             return res.redirect('../coursewares/' + dashedNameFull);
         }
-            if (courseware.length < 1) {
-            req.flash('errors', {
-                msg: "404: We couldn't find a challenge with that name. Please double check the name."
-            });
-            return res.redirect('/coursewares')
-        } else {
-            res.render('coursewares/show', {
-                title: courseware.name,
-                dashedName: dashedName,
-                name: courseware.name,
-                brief: courseware.description[0],
-                details: courseware.description.slice(1),
-                tests: courseware.tests,
-                challengeSeed: courseware.challengeSeed,
-                cc: !!req.user,
-                points: req.user ? req.user.points : undefined,
-                verb: resources.randomVerb(),
-                phrase: resources.randomPhrase(),
-                compliment: resources.randomCompliment(),
-                coursewareHash: courseware._id
 
-            });
-        }
+        // Render the view for the user
+        res.render('coursewares/show', {
+            title: courseware.name,
+            dashedName: dashedName,
+            name: courseware.name,
+            brief: courseware.description[0],
+            details: courseware.description.slice(1),
+            tests: courseware.tests,
+            challengeSeed: courseware.challengeSeed,
+            cc: !!req.user,
+            points: req.user ? req.user.points : undefined,
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
+            coursewareHash: courseware._id
+
+        });
+
     });
 };
 

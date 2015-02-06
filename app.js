@@ -289,7 +289,7 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
  * Courseware related routes
  */
 
-app.get('/coursewares', coursewareController.returnNextCourseware);
+app.get('/coursewares/', coursewareController.returnNextCourseware);
 app.get(
     '/coursewares/:coursewareName',
     coursewareController.returnIndividualCourseware
