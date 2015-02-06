@@ -55,6 +55,9 @@ LINKEDIN_SECRET='LINKEDIN APP SECRET'
 
 ```bash
 
+# Start the mongo server
+mongod
+
 # Seed your database with the challenges
 node seed_data/seed.js
 
