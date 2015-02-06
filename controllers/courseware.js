@@ -57,8 +57,6 @@ exports.returnIndividualCourseware = function(req, res, next) {
         if (err) {
             next(err);
         }
-        courseware = courseware.pop();
-
         // Handle not found
         if (courseware.length < 1) {
             req.flash('errors', {
@@ -66,6 +64,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
         });
             return res.redirect('/coursewares')
         }
+        courseware = courseware.pop();
 
         // Redirect to full name if the user only entered a partial
         var dashedNameFull = courseware.name.toLowerCase().replace(/\s/g, '-');
