@@ -6,8 +6,8 @@
     "description": [
       "Welcome to Free Code Camp's first challenge! Click on the button below for further instructions.",
       "Awesome. Now you can read the rest of this challenge's instructions",
-      "See the code to the right that says <code>&#60;h1&#62;hello&#60;/h1&#62;</code>? That's an HTML element.",
-      "Most HTML elements have an opening tag and a closing tag. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference is closign tags have a slash after their opening angle bracket.",
+      "See the code to the right that says <code>&#60;h1&#62;hello&#60;/h1&#62;</code>? That's a HyperText Markup Language (HTML) <code>element</code>.",
+      "Most HTML elements have an opening tag and a closing tag. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference is closing tags have a slash after their opening angle bracket.",
       "To advance to the next exercise, change the h1 tag's text to say \"hello world\" instead of \"hello\"."
     ],
     "tests": [
@@ -36,8 +36,9 @@
     "name": "Use the p tag",
     "difficulty" : "0.02",
     "description": [
-      "Create a p - or Paragraph - element below the h2 element that says \"hello paragraph\".",
-      "This will create a p element. P elements are the prefered element for normal-sized paragraph text on websites."
+      "Create a p - or paragraph - element below the h2 element, and give it the text \"hello paragraph\".",
+      "P elements are the preferred element for normal-sized paragraph text on websites.",
+      "You can create a p element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
     ],
     "tests": [
       "expect($('p')).to.have.text('hello paragraph');"
@@ -77,45 +78,51 @@
   },
   {
     "_id" : "bad87fee1348bd9aedf08803",
-    "name": "Comment HTML",
-    "difficulty" : "0.04",
+    "name": "Change the color of text",
+    "difficulty" : "0.05",
     "description": [
-      "",
-      ""
+      "Change the h2 element's color to red.",
+      "We can do this by changing the <code>style</code> of the h2 element.",
+      "The style responsible for the color of an element's text is the \"color\" style.",
+      "Here's how you would set the h2 element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;hello html&#60;h2&#62;</code>"
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('h2')).to.have.css('color', 'red');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": "<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
   },
   {
     "_id" : "bad87fee1348bd9aedf08805",
-    "name": "",
+    "name": "Create a style tag for CSS",
     "difficulty" : "0.06",
     "description": [
-      "",
-      ""
+      "Create a style tag and write the CSS to make all h2 elements blue.",
+      "When you entered <code>&#60;h2 style=\"color: red\"&#62;hello html&#60;h2&#62;</code>, you were giving that individual h2 element an <code>inline style</code>",
+      "That's one way to add style to an element, but a better way is by using Cascading Style Sheets (CSS).",
+      "At the top of your code, create a <code>style tag</code> like this: <code>&#60;style&#62;&#60;/style&#62;</code>",
+      "Inside that style element, you can create a <code>global style</code> for all h2 elements. For example, if you wanted all h2 elements to be red, your style element would look like this: <code>&#60;style&#62;h2: {color: red;}&#60;/style&#62;</code>",
+      "Note that it's important to have an <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of the element's styles."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('h2')).to.have.css('color', 'red');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": "<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
   },
   {
     "_id" : "bad87fee1348bd9aedf08806",
-    "name": "",
+    "name": "Change the font size of an element",
     "difficulty" : "0.07",
     "description": [
-      "",
-      ""
+      "Set the font size of all p elements to 16 pixels",
+      "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
+      "Font size is controlled by the <code>font-size</code> CSS attribute.",
+      "We've already set the font-size attribute for all h2 elements. See if you can figure out how to give all p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for h1."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('p')).to.have.css('color', 'red');",
+      "expect($('p')).to.have.css('font-size', '16px;');"
     ],
-    "challengeSeed": "<h1>hello world</h1>"
+    "challengeSeed": "<style>\n    h2 {\n        color: red;\n        font-size: 24px;    }\n</style>\n\n<h1>hello world</h1>\n<h2>hello html</h2>\n<p>hello paragraph</p>"
   },
   {
     "_id" : "bad87fee1348bd9aedf08807",
