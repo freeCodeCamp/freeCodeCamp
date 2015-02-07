@@ -36,14 +36,6 @@ $(document).ready(function() {
         }
     });
 
-    $('#complete-courseware-dialog').keydown(function(e) {
-        if (e.ctrlKey && e.keyCode == 13) {
-            $('.next-courseware-button').click();
-        }
-    });
-
-
-
     function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
         $('#complete-bonfire-dialog').modal('show');
         // Only post to server if there is an authenticated user
@@ -74,6 +66,13 @@ $(document).ready(function() {
 
     });
 
+    $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
+        editor.focus();
+    });
+
+    $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
+        editor.focus();
+    });
     $('.next-courseware-button').on('click', function() {
         if ($('.signup-btn-nav').length < 1) {
             $.post(

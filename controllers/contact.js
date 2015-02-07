@@ -47,7 +47,6 @@ module.exports = {
   },
 
   getDoneWithFirst100Hours: function(req, res) {
-    console.log(req.user.points)
     if (req.user.points >= 53) {
       res.render('contact/done-with-first-100-hours', {
         title: 'Congratulations on finishing the first 100 hours of Free Code Camp!'

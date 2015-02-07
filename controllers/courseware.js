@@ -86,8 +86,8 @@ exports.returnIndividualCourseware = function(req, res, next) {
             verb: resources.randomVerb(),
             phrase: resources.randomPhrase(),
             compliment: resources.randomCompliment(),
-            coursewareHash: courseware._id
-
+            coursewareHash: courseware._id,
+            environment: resources.whichEnvironment()
         });
 
     });

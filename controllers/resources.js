@@ -247,6 +247,9 @@ module.exports = {
             .map(function(elem) {
                 return elem.name;
             });
+    },
+    whichEnvironment: function() {
+        return process.env.NODE_ENV;
     }
 
 };

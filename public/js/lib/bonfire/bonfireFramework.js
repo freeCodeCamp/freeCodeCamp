@@ -10,13 +10,7 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     scrollbarStyle: 'null',
     lineWrapping: true,
     gutters: ["CodeMirror-lint-markers"],
-    onKeyEvent: doLinting,
-    extraKeys : {
-        "Ctrl-Enter" : function() {
-            bonfireExecute();
-            return false;
-        }
-    }
+    onKeyEvent: doLinting
 });
 var editor = myCodeMirror;
 editor.setSize("100%", "auto");
@@ -26,6 +20,10 @@ editor.setOption("extraKeys", {
     Tab: function(cm) {
         var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
         cm.replaceSelection(spaces);
+    },
+    "Ctrl-Enter": function() {
+        bonfireExecute();
+        return false;
     }
 });
 
@@ -59,6 +57,7 @@ var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), 
     readOnly: 'nocursor',
     lineWrapping: true
 });
+
 codeOutput.setValue('/**\n' +
 ' * Your output will go here.\n' + ' * Console.log() -type statements\n' +
 ' * will appear in your browser\'s\n' + ' * DevTools JavaScript console.\n' +
@@ -243,4 +242,9 @@ function showCompletion() {
     console.log(time);
     ga('send', 'event',  'Bonfire', 'solved', bonfireName + ', Time: ' + time +', Attempts: ' + attempts);
     $('#complete-bonfire-dialog').modal('show');
+    $('#complete-bonfire-dialog').keydown(function(e) {
+        if (e.ctrlKey && e.keyCode == 13) {
+            $('.next-bonfire-button').click();
+        }
+    });
 }

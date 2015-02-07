@@ -14,13 +14,7 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     scrollbarStyle: 'null',
     lineWrapping: true,
     gutters: ["CodeMirror-lint-markers"],
-    onKeyEvent: doLinting,
-    extraKeys : {
-        "Ctrl-Enter" : function() {
-            bonfireExecute();
-            return false;
-        }
-    }
+    onKeyEvent: doLinting
 });
 var editor = myCodeMirror;
 
@@ -30,6 +24,10 @@ editor.setOption("extraKeys", {
     Tab: function(cm) {
         var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
         cm.replaceSelection(spaces);
+    },
+    "Ctrl-Enter": function() {
+        bonfireExecute();
+        return false;
     }
 });
 
@@ -52,20 +50,7 @@ var allTests = '';
     });
 })();
 
-
-
-var coursewareTests = "<script>" +
-        "var allTestsGood = true;" +
-    "var expect = chai.expect; " +
-    "try {" +
-        allTests +
-    "} catch (err) {" +
-        "allTestsGood = false;" +
-    "}" +
-    "if (allTestsGood) {" +
-    "console.log('awesomeSauce');" +
-    "parent.postMessage('CompleteAwesomeSauce', 'http://localhost:3001'); }" +
-    "</script>";
+var otherTestsForNow = "<script src='/js/lib/coursewares/iFrameScripts.js'></script>";
 
 var delay;
 // Initialize CodeMirror editor with a nice html5 canvas demo.
@@ -73,12 +58,12 @@ editor.on("change", function () {
     clearTimeout(delay);
     delay = setTimeout(updatePreview, 300);
 });
-
+var nodeEnv = prodOrDev === 'production' ? 'http://www.freecodecamp.com' : 'http://localhost:3001';
 function updatePreview() {
     var previewFrame = document.getElementById('preview');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     preview.open();
-    preview.write(libraryIncludes + editor.getValue() + coursewareTests);
+    preview.write(libraryIncludes + editor.getValue() + otherTestsForNow);
     preview.close();
 }
 setTimeout(updatePreview, 300);
@@ -97,28 +82,6 @@ eventer(messageEvent,function(e) {
     }
 },false);
 
-
-
-var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
-    lineNumbers: false,
-    mode: "text",
-    theme: 'monokai',
-    readOnly: 'nocursor',
-    lineWrapping: true
-});
-codeOutput.setValue('/**\n' +
-' * Your output will go here.\n' + ' * Console.log() -type statements\n' +
-' * will appear in your browser\'s\n' + ' * DevTools JavaScript console.\n' +
-' */');
-codeOutput.setSize("100%", "100%");
-var info = editor.getScrollInfo();
-var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local").top;
-if (info.top + info.clientHeight < after)
-    editor.scrollTo(null, after - info.clientHeight + 3);
-
-var editorValue;
-
-
 var challengeSeed = challengeSeed || null;
 var tests = tests || [];
 var allSeeds = '';
@@ -127,7 +90,6 @@ var allSeeds = '';
         allSeeds += elem + '\n';
     });
 })();
-
 
 myCodeMirror.setValue(allSeeds);
 
@@ -154,133 +116,14 @@ function doLinting () {
     });
 };
 
-$('#submitButton').on('click', function () {
-    bonfireExecute();
-});
-
-function bonfireExecute() {
-    userTests= null;
-    $('#codeOutput').empty();
-    var userJavaScript = myCodeMirror.getValue();
-    userJavaScript = removeComments(userJavaScript);
-    userJavaScript = scrapeTests(userJavaScript);
-
-    submit(userJavaScript, function(cls, message) {
-        if (cls) {
-            codeOutput.setValue(message.error);
-            runTests('Error', null);
-        } else {
-            codeOutput.setValue(message.output);
-            message.input = removeLogs(message.input);
-            runTests(null, message);
-        }
-    });
-}
-
-
-var userTests;
-var testSalt = Math.random();
-
-
-var scrapeTests = function(userJavaScript) {
-
-    // insert tests from mongo
-    for (var i = 0; i < tests.length; i++) {
-        userJavaScript += '\n' + tests[i];
-    }
-
-    var counter = 0;
-    var regex = new RegExp(/(expect(\s+)?\(.*\;)|(assert(\s+)?\(.*\;)|(assert\.\w.*\;)|(.*\.should\..*\;)/);
-    var match = regex.exec(userJavaScript);
-    while (match != null) {
-        var replacement = '//' + counter + testSalt;
-        userJavaScript = userJavaScript.substring(0, match.index) + replacement + userJavaScript.substring(match.index + match[0].length);
-
-        if (!userTests) {
-            userTests= [];
-        }
-        userTests.push({"text": match[0], "line": counter, "err": null});
-        counter++;
-        match = regex.exec(userJavaScript);
-    }
-
-    return userJavaScript;
-};
-
-function removeComments(userJavaScript) {
-    var regex = new RegExp(/(\/\*[^(\*\/)]*\*\/)|\/\/[^\n]*/g);
-    return userJavaScript.replace(regex, '');
-}
-
-function removeLogs(userJavaScript) {
-    return userJavaScript.replace(/(console\.[\w]+\s*\(.*\;)/g, '');
-}
-
-var pushed = false;
-var createTestDisplay = function() {
-    if (pushed) {
-        userTests.pop();
-    }
-    for (var i = 0; i < userTests.length;i++) {
-        var test = userTests[i];
-        var testDoc = document.createElement("div");
-        if (test.err != null) {
-            $(testDoc)
-                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-11 test-output wrappable'>" + test.text + "</div><div class='col-xs-11 test-output wrappable'>" + test.err + "</div></div><div class='ten-pixel-break'/>")
-                .prependTo($('#testSuite'))
-        } else {
-            $(testDoc)
-                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-11 test-output test-vertical-center wrappable'>" + test.text + "</div></div><div class='ten-pixel-break'/>")
-                .appendTo($('#testSuite'));
-        }
-    };
-};
-var assert = chai.assert;
-var expect = chai.expect;
-var should = chai.should();
-
-var reassembleTest = function(test, data) {
-    var lineNum = test.line;
-    var regexp = new RegExp("\/\/" + lineNum + testSalt);
-    return data.input.replace(regexp, test.text);
-};
-
-var runTests = function(err, data) {
-    var allTestsPassed = true;
-    pushed = false;
-    $('#testSuite').children().remove();
-    if (err && userTests.length > 0) {
-        userTests= [{text:"Program Execution Failure", err: "No user tests were run."}];
-        createTestDisplay();
-    } else if (userTests) {
-        userTests.push(false);
-        pushed = true;
-        userTests.forEach(function(test, ix, arr){
-            try {
-                if (test) {
-                    console.log();
-                    var output = eval(reassembleTest(test, data));
-                }
-            } catch(error) {
-                allTestsPassed = false;
-                arr[ix].err = error.name + ":" + error.message;
-            } finally {
-                if (!test) {
-                    createTestDisplay();
-                }
-            }
-        });
-
-        if (allTestsPassed) {
-            allTestsPassed = false;
-            showCompletion();
-        }
-
-    }
-};
 
 function showCompletion() {
     $('#complete-courseware-dialog').modal('show');
+    $('#complete-courseware-dialog').keydown(function(e) {
+        if (e.ctrlKey && e.keyCode == 13) {
+            $('.next-courseware-button').click();
+        }
+    });
 }
 
 document.domain = 'localhost';
