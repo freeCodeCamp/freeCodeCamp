@@ -114,7 +114,7 @@
       "Here are the first 25 words of lorem ipsum text: \"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\""
     ],
     "tests": [
-      "expect($('p')).to.have.text('lorem ipsum');"
+      "expect((/Lorem(\\s)+ipsum(\\s)+dolor/gi).test($('p').text())).to.be.true;"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>",
