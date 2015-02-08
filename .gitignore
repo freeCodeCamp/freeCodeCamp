@@ -7,6 +7,8 @@ lib-cov
 *.pid
 *.gz
 *.swp
+.floo
+.flooignore
 
 *.env
 pids

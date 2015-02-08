@@ -32,6 +32,7 @@ var express = require('express'),
     userController = require('./controllers/user'),
     contactController = require('./controllers/contact'),
     bonfireController = require('./controllers/bonfire'),
+    coursewareController = require('./controllers/courseware'),
 
     /**
      * User model
@@ -282,81 +283,18 @@ app.get('/bonfire', function(req, res) {
     res.redirect(301, '/playground');
 });
 
-app.post('/completed-bonfire/', function (req, res) {
-    var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
-    var isCompletedDate =  Math.round(+new Date() / 1000);
-    var bonfireHash = req.body.bonfireInfo.bonfireHash;
-    var isSolution = req.body.bonfireInfo.solution;
+app.post('/completed-bonfire/', bonfireController.completedBonfire);
 
-    if (isCompletedWith) {
-        var paired = User.find({"profile.username": isCompletedWith}).limit(1);
-        paired.exec(function(err, pairedWith) {
-            if (err) {
-                return err;
-            } else {
-                var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
+/**
+ * Courseware related routes
+ */
 
-                if (index > -1) {
-                    req.user.uncompletedBonfires.splice(index,1)
-                }
-                pairedWith = pairedWith.pop();
-
-                index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
-                if (index > -1) {
-                    pairedWith.uncompletedBonfires.splice(index,1)
-                }
-
-                pairedWith.completedBonfires.push({
-                    _id: bonfireHash,
-                    completedWith: req.user._id,
-                    completedDate: isCompletedDate,
-                    solution: isSolution
-                })
-
-                req.user.completedBonfires.push({
-                    _id: bonfireHash,
-                    completedWith: pairedWith._id,
-                    completedDate: isCompletedDate,
-                    solution: isSolution
-                })
-
-                req.user.save(function(err, user) {
-                    pairedWith.save(function(err, paired) {
-                        if (err) {
-                            throw err;
-                        }
-                        if (user && paired) {
-                            res.send(true);
-                        }
-                    })
-                });
-            }
-        })
-    } else {
-
-        req.user.completedBonfires.push({
-            _id: bonfireHash,
-            completedWith: null,
-            completedDate: isCompletedDate,
-            solution: isSolution
-        })
-
-        var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
-        if (index > -1) {
-            req.user.uncompletedBonfires.splice(index,1)
-        }
-
-        req.user.save(function(err, user) {
-            if (err) {
-                throw err;
-            }
-            if (user) {
-                debug('Saving user');
-                res.send(true)
-            }
-        });
-    }
-});
+app.get('/coursewares/', coursewareController.returnNextCourseware);
+app.get(
+    '/coursewares/:coursewareName',
+    coursewareController.returnIndividualCourseware
+);
+app.post('/completed-courseware/', coursewareController.completedCourseware);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);

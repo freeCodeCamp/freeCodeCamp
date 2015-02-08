@@ -530,7 +530,7 @@ thead {
 .challenge-list-header {
   background-color: #215f1e;
   color: #eee;
-  font-size: 40px;
+  font-size: 36px;
   text-align: center;
   margin-bottom: -30px;
   border-radius: 5px 5px 0px 0px;
@@ -539,7 +539,7 @@ thead {
 
 .closing-x {
   color: #eee;
-  font-size: 60px;
+  font-size: 50px;
   text-align: right;
 }
 
@@ -654,6 +654,35 @@ div.CodeMirror-scroll {
   margin-top: -30px;
 }
 
+iframe.iphone {
+  border: none;
+  @media(min-width: 992px) {
+    width: 280px;
+    height: 500px;
+    position: absolute;
+    top: 70px;
+    right: 25px;
+    overflow-y: scroll;
+  }
+  @media(max-width: 991px) {
+    width: 100%;
+    border-radius: 5px;
+    overflow-y: visible;
+
+  }
+}
+
+// To adjust right margin, negative values bring the image closer to the edge of the screen
+.iphone-position {
+  position: absolute;
+  top: -50px;
+  right: -205px;
+  z-index: -1;
+}
+
+.courseware-height {
+  min-height: 650px;
+}
 
 
 //uncomment this to see the dimensions of all elements outlined in red

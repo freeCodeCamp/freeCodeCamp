@@ -106,7 +106,6 @@ block content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body(ng-controller="pairedWithController")
-
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
@@ -122,7 +121,7 @@ block content
                                         span.ion-close-circled
                                         | Username not found
 
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Take me to my next challenge
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next bonfire (ctrl + enter)
 
 
                         - if (points && points > 2)
@@ -132,11 +131,11 @@ block content
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
 
-    #all-bonfires-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.fadeInUp.fast-animation
-            .modal-content
-                .modal-header.challenge-list-header Bonfires
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    //
-                        include ../partials/bonfires
+    //#all-bonfires-dialog.modal(tabindex='-1')
+    //    .modal-dialog.animated.fadeInUp.fast-animation
+    //        .modal-content
+    //            .modal-header.challenge-list-header Bonfires
+    //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+    //            .modal-body
+    //                include ../partials/bonfires
+

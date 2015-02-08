@@ -5,6 +5,7 @@ var User = require('../models/User'),
     secrets = require('./../config/secrets'),
     Challenge = require('./../models/Challenge'),
     bonfires = require('../seed_data/bonfires.json');
+    coursewares = require('../seed_data/coursewares.json');
     Client = require('node-rest-client').Client,
     client = new Client(),
     debug = require('debug')('freecc:cntr:bonfires');
@@ -202,8 +203,55 @@ module.exports = {
         })
         .map(function(elem) {
             return elem._id;
+        });
+    },
+    allBonfireNames: function() {
+        return bonfires.map(function(elem) {
+            return {
+                name: elem.name,
+                difficulty: elem.difficulty
+            }
         })
+        .sort(function(a, b) {
+            return a.difficulty - b.difficulty;
+        })
+        .map(function(elem) {
+            return elem.name;
+        });
+    },
+
+    allCoursewareIds: function() {
+        return coursewares.map(function(elem) {
+            return {
+                _id: elem._id,
+                difficulty: elem.difficulty
+            }
+        })
+            .sort(function(a, b) {
+                return a.difficulty - b.difficulty;
+            })
+            .map(function(elem) {
+                return elem._id;
+            });
+    },
+    allCoursewareNames: function() {
+        return coursewares.map(function(elem) {
+            return {
+                name: elem.name,
+                difficulty: elem.difficulty
+            }
+        })
+            .sort(function(a, b) {
+                return a.difficulty - b.difficulty;
+            })
+            .map(function(elem) {
+                return elem.name;
+            });
+    },
+    whichEnvironment: function() {
+        return process.env.NODE_ENV;
     }
+
 };
 
 

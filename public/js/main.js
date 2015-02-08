@@ -36,8 +36,6 @@ $(document).ready(function() {
         }
     });
 
-
-
     function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
         $('#complete-bonfire-dialog').modal('show');
         // Only post to server if there is an authenticated user
@@ -67,6 +65,30 @@ $(document).ready(function() {
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
 
     });
+
+    $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
+        editor.focus();
+    });
+
+    $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
+        editor.focus();
+    });
+    $('.next-courseware-button').on('click', function() {
+        if ($('.signup-btn-nav').length < 1) {
+            $.post(
+                '/completed-courseware',
+                {
+                    coursewareInfo: {
+                        coursewareHash: passedCoursewareHash
+                    }
+                },
+                function(res) {
+                    if (res) {
+                        window.location.href = '/coursewares'
+                    }
+                })
+        }
+    })
 
     $('.all-challenges').on('click', function() {
         $('#all-challenges-dialog').modal('show');
@@ -161,7 +183,7 @@ profileValidation.directive('uniqueUsername', function($http) {
         }
     }
 });
-// TODO: FIX THIS
+
 profileValidation.directive('existingUsername', function($http) {
     return {
         restrict: 'A',
@@ -174,7 +196,7 @@ profileValidation.directive('existingUsername', function($http) {
                     ngModel.$setPristine();
                 }
                 if (element.val()) {
-                    $http.get("/api/checkExistingUsername/" + element.val() + ' ').success(function (data) {
+                    $http.get("/api/checkExistingUsername/" + element.val()).success(function (data) {
                         if (element.val() == scope.existingUsername) {
                             ngModel.$setValidity('exists', false);
                         } else if (data) {

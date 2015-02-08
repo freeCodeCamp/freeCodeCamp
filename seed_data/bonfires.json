@@ -6,7 +6,7 @@
     "description": [
       "Click the button below for further instructions.",
       "Your goal is to fix the failing test.",
-      "First, run all the tests by clickin \"Run code\" or by pressing Control + Enter",
+      "First, run all the tests by clicking \"Run code\" or by pressing Control + Enter",
       "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire."
     ],
     "tests": [
@@ -59,7 +59,7 @@
     "difficulty": "1.03",
     "description": [
       "Return 'true' if a given string is a palindrome.",
-      "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation and case.",
+      "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
       "You'll need to remove punctuation and turn everything lower case in order to check for palindromes.",
       "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
       "Return true if the string is a palindrome. Otherwise, return false."

@@ -355,10 +355,8 @@ var userSchema = new mongoose.Schema({
     resetPasswordExpires: Date,
     uncompletedBonfires: Array,
     completedBonfires: Array,
-    lastContentSync: {
-        type: Number,
-        default: 0
-    }
+    uncompletedCoursewares: Array,
+    completedCoursewares: Array
 });
 
 /**

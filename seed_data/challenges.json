@@ -24,12 +24,12 @@
     "video": "114627322",
     "challengeNumber": 1,
     "steps": [
-        "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another Code Camper who's on the same challenge as you and wants to pair program.",
+        "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper who's on the same challenge as you and wants to pair program.",
         "If you don't already have a GitHub account, create one real quick at <a href='https://www.github.com' target='_blank'>https://www.github.com</a>.",
         "Be sure to update your biographical information and upload an image. A picture of your face works best. This is how people will see you in the chat room, so put your best foot forward.",
         "Now enter the chat room by going to <a href='https://gitter.im/FreeCodeCamp/FreeCodeCamp' target='_blank'>https://gitter.im/FreeCodeCamp/FreeCodeCamp</a> and clicking the \"sign in with GitHub\" button.",
         "Introduce yourself to our chat room by typing: \"hello world!\".",
-        "Tell your fellow Code Campers how you found Free Code Camp. Also tell us why you want to learn to code.",
+        "Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
         "Keep the chat room open while you work through the other challenges. That way you ask for help If you get stuck on a challenge. You can also socialize when you feel like taking a break.",
         "Now that you've completed this challenge, you can go directly your most-recently visited chat room by clicking the \"Chat\" button in the navigation bar above."
     ]
@@ -47,7 +47,7 @@
         "Click on the \"Introduce yourself here\" discussion.",
         "Here you can read through other Free Code Camp community members' self introductions.",
         "Go ahead and type a brief self introduction of your own.",
-        "Click on the \"Categories\" drop-down menu. You should see a category called \"Local Chapters\". Click that. If your city isn't already on the list, create a topic for it. Otherwise, introduce yourself to the other Code Campers from your city.",
+        "Click on the \"Categories\" drop-down menu. You should see a category called \"Local Chapters\". Click that. If your city isn't already on the list, create a topic for it. Otherwise, introduce yourself to the other campers from your city.",
         "Come back here daily to ask questions, engage in discussions, and share links to helpful coding tools.",
         "Now that you've completed this challenge, you can go directly to the forum by clicking the \"Forum\" button in the navigation bar above."
     ]
@@ -433,7 +433,7 @@
       "Now go to <a href='http://coderbyte.com/CodingArea/Challenges/#easyChals' target='_blank'>http://coderbyte.com/CodingArea/Challenges/#easyChals</a> and start working through Coderbyte's easy algorithm scripting challenges using JavaScript.",
       "When you are finished pair programming, end the session in Screen Hero session.",
       "Congratulations! You have completed your first pair programming session.",
-      "You should pair program with different Code Campers until you've completed all the Easy, Medium and Hard CoderByte challenges. This is a big time investment, but the JavaScript practice you'll get, along with the scripting and algorithm experience, are well worth it!",
+      "You should pair program with different campers until you've completed all the Easy, Medium and Hard CoderByte challenges. This is a big time investment, but the JavaScript practice you'll get, along with the scripting and algorithm experience, are well worth it!",
       "You can complete CoderByte problems while you continue to work through Free Code Camp's challenges.",
       "Be sure to pair program on these challenges, and remember to apply the RSAP methodology.",
       "Mark this challenge as complete and move on."
