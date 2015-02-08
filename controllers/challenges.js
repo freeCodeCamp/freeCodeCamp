@@ -11,6 +11,7 @@ var highestChallengeNumber = 53;
 
 exports.returnChallenge = function(req, res, next) {
     var challengeNumber = parseInt(req.params.challengeNumber) || 0;
+    debug(challengeNumber);
     if (challengeNumber > highestChallengeNumber) {
         req.flash('errors', {
             msg: "It looks like you've either completed all the challenges we have available or requested a challenge we don't have."
