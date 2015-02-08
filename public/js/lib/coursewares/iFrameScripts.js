@@ -5,7 +5,6 @@
     try {
         eval(parent.allTests);
     } catch (err) {
-        console.log(err);
         allTestsGood = false;
     } finally {
         if (allTestsGood) {

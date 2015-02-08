@@ -52,7 +52,9 @@ block content
                 var tests = !{JSON.stringify(tests)};
                 var challengeSeed = !{JSON.stringify(challengeSeed)};
                 var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
+                var challengeName = !{JSON.stringify(name)};
                 var prodOrDev = !{JSON.stringify(environment)};
+                var started = Math.floor(Date.now() / 1000);
         .col-xs-12.col-sm-12.col-md-5.col-lg-6
             #mainEditorPanel
                 form.code

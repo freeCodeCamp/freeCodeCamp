@@ -161,7 +161,6 @@ exports.generateChallenge = function(req, res) {
 };
 
 exports.completedCourseware = function (req, res) {
-    debug('In post call with data from req', req);
 
     var isCompletedDate = Math.round(+new Date() / 1000);
     var coursewareHash = req.body.coursewareInfo.coursewareHash;
@@ -182,7 +181,6 @@ exports.completedCourseware = function (req, res) {
             throw err;
         }
         if (user) {
-            debug('Saving user');
             res.send(true)
         }
     });

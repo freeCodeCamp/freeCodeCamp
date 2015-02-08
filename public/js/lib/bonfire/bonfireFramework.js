@@ -114,7 +114,7 @@ $('#submitButton').on('click', function () {
 
 function bonfireExecute() {
     attempts++;
-    ga('send', 'event',  'Bonfire', 'ran-code', bonfireName);
+    ga('send', 'event',  'Bonfire', 'ran-code', challengeName);
     userTests= null;
     $('#codeOutput').empty();
     var userJavaScript = myCodeMirror.getValue();
@@ -239,8 +239,7 @@ var runTests = function(err, data) {
 
 function showCompletion() {
     var time = Math.floor(Date.now() / 1000) - started;
-    console.log(time);
-    ga('send', 'event',  'Bonfire', 'solved', bonfireName + ', Time: ' + time +', Attempts: ' + attempts);
+    ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time +', Attempts: ' + attempts);
     $('#complete-bonfire-dialog').modal('show');
     $('#complete-bonfire-dialog').keydown(function(e) {
         if (e.ctrlKey && e.keyCode == 13) {
