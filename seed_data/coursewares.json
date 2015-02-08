@@ -156,7 +156,7 @@
       "Note that it's important to have an <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of the element's styles."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
+      "expect($('h2')).to.have.css('color', 'rgb(0, 0, 255)');"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>", 
