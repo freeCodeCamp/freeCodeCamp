@@ -43,12 +43,6 @@ var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3
         "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>" +
         "<style>body { padding: 0px 3px 0px 3px; }</style>";
 
-var allTests = '';
-(function() {
-    tests.forEach(function(elem) {
-        allTests += elem + ' ';
-    });
-})();
 
 var otherTestsForNow = "<script src='/js/lib/coursewares/iFrameScripts.js'></script>";
 
@@ -125,5 +119,3 @@ function showCompletion() {
         }
     });
 }
-
-document.domain = 'localhost';
