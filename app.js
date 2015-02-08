@@ -319,7 +319,7 @@ app.post('/completed-challenge', function (req, res) {
     var timestamp = req.user.challengesHash;
     var points = 0;
     for (var key in timestamp) {
-        if (timestamp[key] > 0) {
+        if (timestamp[key] > 0 && req.body.challengeNumber < 54) {
             points += 1;
         }
     }

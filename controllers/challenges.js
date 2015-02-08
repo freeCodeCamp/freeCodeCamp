@@ -11,7 +11,12 @@ var highestChallengeNumber = 53;
 
 exports.returnChallenge = function(req, res, next) {
     var challengeNumber = parseInt(req.params.challengeNumber) || 0;
-    if (challengeNumber > highestChallengeNumber) { challengeNumber = 0; }
+    if (challengeNumber > highestChallengeNumber) {
+        req.flash('errors', {
+            msg: "It looks like you've either completed all the challenges we have available or requested a challenge we don't have."
+        });
+        return res.redirect('../challenges/0');
+    }
     Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
         if (err) {
             debug('Challenge err: ', err);
