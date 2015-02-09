@@ -34,7 +34,6 @@ editor.setOption("extraKeys", {
 editor.setSize("100%", "auto");
 
 var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>" +
-        "<script>document.domain = 'localhost'</script>" +
         "<script src='/js/lib/chai/chai.js'></script>" +
         "<script src='/js/lib/chai/chai-jquery.js'></script>" +
         "<script src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js'></script>" +

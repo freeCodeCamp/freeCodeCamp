@@ -16,7 +16,7 @@ exports.coursewareNames = function(req, res) {
 
 exports.returnNextCourseware = function(req, res) {
     if (!req.user) {
-        return res.redirect('coursewares/intro');
+        return res.redirect('coursewares/start-our-challenges');
     }
     var completed = req.user.completedCoursewares.map(function (elem) {
         return elem._id;
@@ -41,7 +41,7 @@ exports.returnNextCourseware = function(req, res) {
             req.flash('errors', {
                 msg: "It looks like you've completed all the courses we have available. Good job!"
             })
-            return res.redirect('../coursewares/intro');
+            return res.redirect('../coursewares/start-our-challenges');
         }
         nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
         return res.redirect('../coursewares/' + nameString);
