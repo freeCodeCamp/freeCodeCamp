@@ -12,7 +12,7 @@
       "To advance to the next exercise, change the h1 tag's text to say \"hello world\" instead of \"hello\"."
     ],
     "tests": [
-      "expect($('h1')).to.have.text('hello world');"
+      "expect((/hello(\\s)+world/gi).test($('h1').text())).to.be.true;"
     ],
     "challengeSeed": [
       "<h1>hello</h1>"
@@ -30,8 +30,8 @@
       "h2 elements are slightly smaller than h1 elements. There are also an h3, h4, h5 and h6 elements."
     ],
     "tests": [
-      "expect($('h1')).to.have.text('hello world');",
-      "expect($('h2')).to.have.text('cat photo app');"
+      "expect((/hello(\\s)+world/gi).test($('h1').text())).to.be.true;",
+      "expect((/cat(\\s)+photo(\\s)+app/gi).test($('h2').text())).to.be.true;"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>"
@@ -48,7 +48,7 @@
       "You can create a p element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
     ],
     "tests": [
-      "expect($('p')).to.have.text('hello paragraph');"
+      "expect((/hello(\\s)+paragraph/gi).test($('p').text())).to.be.true;"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>",
@@ -67,7 +67,7 @@
       "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>."
     ],
     "tests": [
-      "expect($('h1')).to.have.text('hello world');"
+      "expect((/hello(\\s)+world/gi).test($('h1').text())).to.be.true;"
     ],
     "challengeSeed": [
       "<!--",
@@ -128,17 +128,17 @@
     "name": "Change the Color of Text",
     "difficulty" : "0.06",
     "description": [
-      "Change the h2 element's color to red.",
+      "Change the h2 element's style so that its text color is red.",
       "We can do this by changing the <code>style</code> of the h2 element.",
       "The style responsible for the color of an element's text is the \"color\" style.",
-      "Here's how you would set the h2 element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;hello html&#60;h2&#62;</code>"
+      "Here's how you would set the h2 element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;cat photo app&#60;h2&#62;</code>"
     ],
     "tests": [
       "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>",
-      "<h2>hello html</h2>",
+      "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
@@ -149,18 +149,19 @@
     "difficulty" : "0.07",
     "description": [
       "Create a style tag and write the CSS to make all h2 elements blue.",
+      "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
       "When you entered <code>&#60;h2 style=\"color: red\"&#62;hello html&#60;h2&#62;</code>, you were giving that individual h2 element an <code>inline style</code>",
-      "That's one way to add style to an element, but a better way is by using Cascading Style Sheets (CSS).",
+      "That's one way to add style to an element, but a better way is by using <code>Cascading Style Sheets (CSS)</code>.",
       "At the top of your code, create a <code>style tag</code> like this: <code>&#60;style&#62;&#60;/style&#62;</code>",
       "Inside that style element, you can create a <code>global style</code> for all h2 elements. For example, if you wanted all h2 elements to be red, your style element would look like this: <code>&#60;style&#62;h2: {color: red;}&#60;/style&#62;</code>",
       "Note that it's important to have an <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of the element's styles."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
+      "expect($('h2')).to.have.css('color', 'rgb(0, 0, 255)');"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>", 
-      "<h2>hello html</h2>", 
+      "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
@@ -170,8 +171,10 @@
     "name": "Use a CSS Class to Style an Element",
     "difficulty" : "0.08",
     "description": [
-      "Create a CSS class called \"red-text\" and apply it the the h2 element.",
-      "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page."
+      "Create a CSS class called \"red-text\" and apply it to the h2 element.",
+      "Classes are reusable styles that can be added to HTML elements.",
+      "Classes always start with a period. You can see that we've created a CSS class called <code>.blue-text</code> within the <code>&#60;style&#62;</code> tag.",
+      "You can follow that pattern to make a <code>.red-text</code> class, which you can attach to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
     ],
     "tests": [
       "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
@@ -184,7 +187,7 @@
       "  }",
       "</style>",
       "<h1 class=\"red-text\">hello world</h1>",
-      "<h2>hello html</h2>",
+      "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
@@ -194,21 +197,26 @@
     "name": "Use a CSS Classes to Style Multiple Elements",
     "difficulty" : "0.09",
     "description": [
-      "Apply the \"red-text\" class to the h2 element.",
-      "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
-      "Font size is controlled by the <code >font-size</code> CSS attribute.",
-      "We've already set the font-size attribute for all h2 elements. See if you can figure out how to give all p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for h1."
+      "Apply the \"red-text\" class to the h1, h2 and p elements.",
+      "Remember that you can attach classes to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
     ],
     "tests": [
-      "expect($('h2')).to.have.class('red-text');",
       "expect($('h1')).to.have.class('red-text');",
+      "expect($('h2')).to.have.class('red-text');",
+      "expect($('p')).to.have.class('red-text');",
       "expect($('h1')).to.have.css('color', 'rgb(255, 0, 0)');",
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('p')).to.have.css('color', 'rgb(255, 0, 0)');"
     ],
     "challengeSeed": [
-      "<h1 class=\"red-text\">hello world</h2>",
-      "<h2>hello html</h2>", 
-      "<p>hello paragraph</p>"
+      "<style>",
+      "  .red-text {",
+      "    color: red;",
+      "  }",
+      "</style>",
+      "<h1 class=\"red-text\">hello world</h1>",
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
@@ -218,13 +226,11 @@
     "difficulty" : "0.10",
     "description": [
       "Set the font size of all p elements to 16 pixels",
-      "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
       "Font size is controlled by the <code>font-size</code> CSS attribute.",
       "We've already set the font-size attribute for all h2 elements. See if you can figure out how to give all p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for h1."
     ],
     "tests": [
-      "expect($('p')).to.have.css('color', 'red');",
-      "expect($('p')).to.have.css('font-size', '16px;');"
+      "expect($('p')).to.have.css('font-size', '16px');"
     ],
     "challengeSeed": [
       "<style>",
@@ -235,8 +241,8 @@
       "</style>",
       "",
       "<h1>hello world</h1>",
-      "<h2>hello html</h2>",
-      "<p>hello paragraph</p>"
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
@@ -266,37 +272,36 @@
       "</style>",
       "",
       "<h1>hello world</h1>",
-      "<h2>hello html</h2>",
-      "<p>hello paragraph</p>"
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08808",
-    "name": "Help Fonts Gracefully Degrade",
+    "name": "Specify How Fonts Should Degrade",
     "difficulty" : "0.12",
     "description": [
-      "Make all h1 elements gracefully degrade to Serif when the Lobster font isn't available."
+      "Make all h2 elements use Lobster as their font family, but degrade to the Serif font when the Lobster font isn't available.",
+      "We commented out our call to Google Fonts, and now our lobter isn't available.",
+      "You can leave Lobster as the font, and have it <code>degrade</code> to a different font if that font isn't available.",
+      "There are several default fonts that are availble in all browsers. These include Monospace, Serif and Sans-Serif. See if you can set the h2 elements to use Lobster and degrade to monospace."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('h2')).to.have.css('font-family').match(/serif/i);",
+      "expect($('h2')).to.have.css('font-family').match(/lobster/i);"
     ],
     "challengeSeed": [
+      "<!--<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>-->",
       "<style>",
-      "  h2 {",
-      "    color: red;",
-      "    font-size: 24px;",
-      "    font-family: 'Lobster'",
-      "  }",
-      "  p {",
-      "    font-size: 16px;",
+      "  h1 {",
+      "    font-family: \"Lobster\", Monospace",
       "  }",
       "</style>",
       "",
       "<h1>hello world</h1>",
-      "<h2>hello html</h2>",
-      "<p>hello paragraph</p>"
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
@@ -305,15 +310,36 @@
     "name": "Using Important to Override Styles",
     "difficulty" : "0.13",
     "description": [
-      "",
-      ""
+      "Apply both the \"blue-text\" and \"urgently-red\" classes to all h2 elements, but use <code>!important</code> to ensure the element is rendered as being red.",
+      "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
+      "If there's a conflict in the CSS, the browser will use whichever style declaration is closest to the bottom of the CSS document (whichever declaration comes last). Note that in-line style declarations are the final authority in how an HTML element will be rendered.",
+      "There's one way to ensure that an element is rendered with a certain style, regardless of where that declaration is located. That one way is to use <code>!important</code>.",
+      "Look at the example in the editor's style tag to see how you can use !important.",
+      "Now see if you can make sure the h2 element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, or changing the sequence of CSS class declarations."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('h2')).to.have.class('urgently-red');",
+      "expect($('h2')).to.have.class('blue-text');",
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
+      "<style>",
+      "  big-font : {",
+      "    font-size: 50px !important;",
+      "  }",
+      "",
+      "  .urgently-red {",
+      "    color: red;",
+      "  }",
+      "",
+      "  .blue-text {",
+      "    color: blue;",
+      "  }",
+      "</style>",
+      "",
+      "<h1>hello world</h1>",
+      "<h2 class=\"blue-text urgently-red\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
