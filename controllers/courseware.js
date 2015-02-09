@@ -16,7 +16,7 @@ exports.coursewareNames = function(req, res) {
 
 exports.returnNextCourseware = function(req, res) {
     if (!req.user) {
-        return res.redirect('coursewares/start-our-challenges');
+        return res.redirect('../coursewares/start-our-challenges');
     }
     var completed = req.user.completedCoursewares.map(function (elem) {
         return elem._id;
