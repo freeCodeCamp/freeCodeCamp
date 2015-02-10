@@ -17,9 +17,9 @@ html(ng-app='profileValidation', lang='en')
     != css('main')
 
   body.no-top-and-bottom-margins.full-screen-body-background
+    include partials/navbar-wide
     include partials/flash
     block content
-    include partials/navbar-wide
     include partials/footer
     != js('application')
 script.
