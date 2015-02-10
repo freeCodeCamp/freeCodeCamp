@@ -450,21 +450,21 @@
     "name": "Add an Image to your Website",
     "difficulty" : "0.13",
     "description": [
-      "<style>",
-      "  .red-text {",
-      "    color: #ff0000;",
-      "  }",
-      "</style>",
-      "",
-      "Use an img element to add the image <code>http://bit.ly/cutegraycat</code> to the website.",
+      "Use an img element to add the image <code>http://bit.ly/cutegraycat</code> to your website.",
       "You can add images to your website by using the <code>img</code> element.",
-      "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"&#62&#60/img&#62</code>.",
+      "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"/&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
       "Try it with this image: <code>http://bit.ly/cutegraycat</code>."
     ],
     "tests": [
       "expect($('img').attr('src')).to.equal('http://bit.ly/cutegraycat');"
     ],
     "challengeSeed": [
+      "<style>",
+      "  .red-text {",
+      "    color: #ff0000;",
+      "  }",
+      "</style>",
+      "",
       "<h1>hello world</h1>",
       "<h2 class=\"red-text\">cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
@@ -473,8 +473,8 @@
   },
   {
     "_id" : "bad87fee1348bd9acdf08812",
-    "name": "Specify an Image Size",
-    "difficulty" : "0.13",
+    "name": "Specify an Image Size TEST",
+    "difficulty" : "0.131",
     "description": [
       "Create a class called <code>narrow-image</code> and use it to resize the image so that it's only 200 pixels wide",
       "Uh-oh, our image is too big to fit on a mobile phone. As a result, our user will need to scroll horizontally to view the image. But we can fix this by specifying an image size.",
@@ -484,7 +484,6 @@
     "tests": [
       "expect($('img')).to.have.class('narrow-image');",
       "expect($('img')).to.have.css('width', 200px)"
-
     ],
     "challengeSeed": [
       "<style>",
@@ -499,18 +498,46 @@
       "<h1>hello world</h1>",
       "<h2 class=\"red-text\">cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img src=\"http://bit.ly/cutegraycat\"></img>"
+      "<img src=\"http://bit.ly/cutegraycat\"/>"
+    ],
+    "challengeType": 0
+  },
+  {
+    "_id" : "bad87fee1348bd9acde08812",
+    "name": "Use Bootstrap for Responsive Images",
+    "difficulty" : "0.132",
+    "description": [
+      "Add the <code>img-responsive</code> Bootstrap class to the image.",
+      "Specifying a width of 200 pixels on our img element made it fit our phone's screen, but it's not a perfect fit. It would be great if the image could be exactly the width of our phone's screen.",
+      "Fortunately, there's a <code>Responsive CSS Framework</code> called written by Twitter called Bootstrap. You can add Bootstrap to any app just by including it with <code>&#60;link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/&#62;</code> at the top of your HTML, but we've gone ahead and included it for you here.",
+      "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
+      "Now all you need to do is add the <code>img-responsive</code> class to your image."
+    ],
+    "tests": [
+      "expect($('img')).to.have.class('img-responsive');"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .red-text {",
+      "    color: #ff0000;",
+      "  }",
+      "",
+      "</style>",
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img src=\"http://bit.ly/cutegraycat\"/>"
     ],
     "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08813",
-    "name": "Add Alt Text to an Image",
+    "name": "Add Alt Text to an Image TEST",
     "difficulty" : "0.14",
     "description": [
       "Add the alt text \"A picture of a gray cat\" to the image.",
       "<code>Alt text</code> is a useful way to tell people (and web crawlers like Google) what is pictured in a photo. It's extremely important for helping blind or visually impaired people understand the content of your website.",
-      "You can add alt text right in the img element like this: <code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"&#62&#60/img&#62</code>."
+      "You can add alt text right in the img element like this: <code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"/&#62</code>."
     ],
     "tests": [
       "expect((/cat/gi).test($('img').attr('alt')).to.be.true;"
@@ -520,32 +547,44 @@
       "  .red-text {",
       "    color: #ff0000;",
       "  }",
-      "",
-      "  .narrow-image {",
-      "    width: 200px;",
-      "  }",
       "</style>",
       "<h1>hello world</h1>",
       "<h2 class=\"red-text\">cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img class=\"narrow-image\" src=\"http://bit.ly/cutegraycat\"></img>"
+      "<img class=\"img-responsive\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
     "challengeType": 0
   },
   {
-    "_id" : "bad87fee1348bd9aedf08813",
+    "_id" : "bad87fee1348bd9bedf08813",
     "name": "Add a Border Around an Element",
-    "difficulty" : "0.14",
+    "difficulty" : "0.141",
     "description": [
-      "",
-      ""
+      "Create a class called \"thick-green-border\" that puts a 5-pixel-wide black border around your cat photo.",
+      "<code>CSS Borders</code> have attributes like style, color and width.",
+      "We've created an example border around your h1 element. See if you can add a 5-pixel-wide green border around your cat photo."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('img')).to.have.class('thick-black-border');",
+      "expect($('img')).to.have.css('border-color', 'rgb(0,255,0)'));",
+      "expect($('img')).to.have.css('border-width', '5px');"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
+      "<style>",
+      "  .thin-red-border {",
+      "    border-style: solid;",
+      "    border-color: #ff0000;",
+      "    border-width: 2px;",
+      "  }",
+      "  .thick-green-border {",
+      "    border-style: solid",
+      "",
+      "  }",
+      "</style>",
+      "<h1 class=\"thin-red-border\">hello world</h1>",
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"img-responsive thick-green-border\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
     "challengeType": 0
   },
@@ -558,11 +597,26 @@
       ""
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
+      "<style>",
+      "  .thick-red-border {",
+      "    border-style: solid;",
+      "    border-color: #ff0000;",
+      "    border-width: 5px;",
+      "    border-radius: 5px;",
+      "  }",
+      "  .thick-green-border {",
+      "    border-style: solid;",
+      "    border-color: #00ff00;",
+      "    border-width: 5px;",
+      "  }",
+      "</style>",
+      "<h1 class=\"thick-red-border\">hello world</h1>",
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"img-responsive thick-green-border\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
     "challengeType": 0
   },
