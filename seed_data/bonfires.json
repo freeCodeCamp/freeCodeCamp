@@ -201,7 +201,7 @@
     "challengeSeed": "function sumPrimes(num) {\n  return num;\r\n}",
     "tests": [
       "expect(sumPrimes(10)).to.be.a('number');",
-      "expect(sumPrimes(10)).to.equal(27);",
+      "expect(sumPrimes(10)).to.equal(17);",
       "expect(sumPrimes(977)).to.equal(73156);"
     ]
   },
