@@ -57,6 +57,25 @@
     "challengeType": 0
   },
   {
+    "_id" : "bad87fee1348bd9aeaf08801",
+    "name": "Add a Line Break to Visually Separate Elements",
+    "difficulty" : "0.021",
+    "description": [
+      "Add a <code>line break</code> between the <code>&#60;h2&#62</code> and <code>&#60;p&#62</code> elements.",
+      "You can create an line break element with <code>&#60;br&#47&#62</code>.",
+      "Note that <code>&#60;br&#47&#62</code> has no closing tag. It is a <code>self-closing</code> element. See how a forward-slash precedes the closing bracket?"
+    ],
+    "tests": [
+      "expect($('br')).to.exist;"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>",
+      "<h2>hello html</h2>",
+      "<p>hello paragraph</p>"
+    ],
+    "challengeType": 0
+  },
+  {
     "_id" : "bad87fee1348bd9aedf08802",
     "name": "Uncomment HTML",
     "difficulty" : "0.03",
@@ -348,15 +367,53 @@
     "name": "Use Hex Codes for Precise Colors",
     "difficulty" : "0.14",
     "description": [
-      "",
-      ""
+      "Change the hex code in the \"red-text\" class to hex code for the color red.",
+      "<code>Hexadecimal (hex) code</code> is a popular way of specifying color in CSS.",
+      "Hex code is called \"hex\" because each digit has 16 possible values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, and f",
+      "The six hex code correspond to red-red-green-green-blue-blue.",
+      "You can change these six values to make more than 16 million colors!",
+      "The higher the value in a field, the more intense its color. For example, #000000 is black, #ffffff is white, and #00ff00 is bright green. You can also get less intense colors by using values lower than f. For example, #00f000 with the second green digit set to 0 is a light green, and #00f900 is a slightly brighter green",
+      "Now figure out how to make the bright green in the \"red-text\" class into a bright red."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('h2')).to.have.class('red-text');"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
+      "<style>",
+      "  .red-text {",
+      "    color: #00ff00;",
+      "  }",
+      "</style>",
+      "",
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+    ],
+    "challengeType": 0
+  },
+  {
+    "_id" : "bad87fee1348bd9bedf08810",
+    "name": "Use Shortened 3 Digit Hex Codes",
+    "difficulty" : "0.15",
+    "description": [
+      "Change the hex code in the \"red-text\" class to the shortened 3-digit hex code for the color red.",
+      "You can also shorten the 6-digit color hex code to a 3-digit code. For example, <code>#00ff00</code> becomes <code>#0f0</code>. This is less precise, but equally effective."
+    ],
+    "tests": [
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('h2')).to.have.class('red-text');"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .red-text {",
+      "    color: #0f0;",
+      "  }",
+      "</style>",
+      "",
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
@@ -365,32 +422,113 @@
     "name": "Use RGB Codes for Precise Colors",
     "difficulty" : "0.15",
     "description": [
-      "",
-      ""
+      "Change the RGB code to be red.",
+      "Another way to represent color in CSS is with RGB, or red-green-blue notation.",
+      "For each of the three colors, you specify a value between 0 and 256.",
+      "For example, black is <code>rgb(0, 0, 0)</code>, white is <code>rgb(255, 255, 255)</code>, bright green is <code>rgb(0, 255, 0)</code>. You can also get less intense colors by using values lower than 255. For example, light green is <code>rgb(0, 123, 0).",
+      "If you think about it, this is just as precise as using hex code, because 16 times 16 is 256. In practice, most developers use hex code since it's faster to say out loud and to type."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('h2')).to.have.class('red-text');"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
+      "<style>",
+      "  .red-text {",
+      "    color: rgb(0, 255, 0);",
+      "  }",
+      "</style>",
+      "",
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
   {
     "_id" : "bad87fee1348bd9aedf08812",
-    "name": "Include images",
+    "name": "Add an Image to your Website",
     "difficulty" : "0.13",
     "description": [
+      "<style>",
+      "  .red-text {",
+      "    color: #ff0000;",
+      "  }",
+      "</style>",
       "",
-      ""
+      "Use an img element to add the image <code>http://bit.ly/cutegraycat</code> to the website.",
+      "You can add images to your website by using the <code>img</code> element.",
+      "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"&#62&#60/img&#62</code>.",
+      "Try it with this image: <code>http://bit.ly/cutegraycat</code>."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('img').attr('src')).to.equal('http://bit.ly/cutegraycat');"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+    ],
+    "challengeType": 0
+  },
+  {
+    "_id" : "bad87fee1348bd9acdf08812",
+    "name": "Specify an Image Size",
+    "difficulty" : "0.13",
+    "description": [
+      "Create a class called <code>narrow-image</code> and use it to resize the image so that it's only 200 pixels wide",
+      "Uh-oh, our image is too big to fit on a mobile phone. As a result, our user will need to scroll horizontally to view the image. But we can fix this by specifying an image size.",
+      "CSS has an attribute called <code>width</code> that controls an element's width. Just like with fonts, we'll use pixels(px) to specify the images width.",
+      "Create a class called <code>narrow-image</code> and added it to the image element. Change the width to 200 pixels."
+    ],
+    "tests": [
+      "expect($('img')).to.have.class('narrow-image');",
+      "expect($('img')).to.have.css('width', 200px)"
+
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .red-text {",
+      "    color: #ff0000;",
+      "  }",
+      "",
+      "  .wide-image {",
+      "    width: 400px;",
+      "  }",
+      "</style>",
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img src=\"http://bit.ly/cutegraycat\"></img>"
+    ],
+    "challengeType": 0
+  },
+  {
+    "_id" : "bad87fee1348bd9aedf08813",
+    "name": "Add Alt Text to an Image",
+    "difficulty" : "0.14",
+    "description": [
+      "Add the alt text \"A picture of a gray cat\" to the image.",
+      "<code>Alt text</code> is a useful way to tell people (and web crawlers like Google) what is pictured in a photo. It's extremely important for helping blind or visually impaired people understand the content of your website.",
+      "You can add alt text right in the img element like this: <code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"&#62&#60/img&#62</code>."
+    ],
+    "tests": [
+      "expect((/cat/gi).test($('img').attr('alt')).to.be.true;"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .red-text {",
+      "    color: #ff0000;",
+      "  }",
+      "",
+      "  .narrow-image {",
+      "    width: 200px;",
+      "  }",
+      "</style>",
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"narrow-image\" src=\"http://bit.ly/cutegraycat\"></img>"
     ],
     "challengeType": 0
   },
