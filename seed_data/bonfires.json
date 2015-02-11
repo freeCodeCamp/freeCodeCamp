@@ -13,7 +13,7 @@
       "expect(meetBonfire(\"test\")).to.be.a(\"boolean\");",
       "expect(meetBonfire(\"test\")).to.be.true;"
     ],
-    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\nreturn false;\n}\n\n",
+    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return false;\n}\n\n",
     "challengeEntryPoint": "meetBonfire(\"You can do this!\");"
   },
   {
@@ -58,11 +58,10 @@
     "name": "Check for Palindromes",
     "difficulty": "1.03",
     "description": [
-      "Return 'true' if a given string is a palindrome.",
+      "Return true if the given string is a palindrome. Otherwise, return false."
       "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
       "You'll need to remove punctuation and turn everything lower case in order to check for palindromes.",
       "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
-      "Return true if the string is a palindrome. Otherwise, return false."
     ],
     "tests": [
       "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
