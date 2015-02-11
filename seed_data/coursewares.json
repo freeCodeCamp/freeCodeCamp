@@ -19,6 +19,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf0887a",
     "name": "Use the h2 Element",
@@ -38,6 +39,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08801",
     "name": "Use the P Element",
@@ -56,10 +58,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aeaf08801",
     "name": "Add a Line Break to Visually Separate Elements",
-    "difficulty" : "0.021",
+    "difficulty" : "0.03",
     "description": [
       "Add a <code>line break</code> between the <code>&#60;h2&#62</code> and <code>&#60;p&#62</code> elements.",
       "You can create an line break element with <code>&#60;br&#47&#62</code>.",
@@ -75,10 +78,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08802",
     "name": "Uncomment HTML",
-    "difficulty" : "0.03",
+    "difficulty" : "0.04",
     "description": [
       "Uncomment the h1, h2 and p elements.",
       "Commenting is a way that you can leave comments within your code without affecting the code itself.",
@@ -98,10 +102,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08804",
     "name": "Comment out HTML",
-    "difficulty" : "0.04",
+    "difficulty" : "0.05",
     "description": [
       "Comment out the h1 element and the p element, but leave the h2 element uncommented.",
       "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>.",
@@ -122,10 +127,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08833",
     "name": "Use Lorem Ipsum Text as a Placeholder",
-    "difficulty" : "0.05",
+    "difficulty" : "0.06",
     "description": [
       "Change the text in the p element to use the first few words of lorem ipsum text.",
       "Designers use <code>lorem ipsum</code> as placeholder text. It's called lorem ipsum text because it's those are the first two words of a passage by Cicero of Ancient Rome.",
@@ -142,10 +148,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08803",
     "name": "Change the Color of Text",
-    "difficulty" : "0.06",
+    "difficulty" : "0.07",
     "description": [
       "Change the h2 element's style so that its text color is red.",
       "We can do this by changing the <code>style</code> of the h2 element.",
@@ -162,10 +169,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08805",
     "name": "Create a Style Tag for CSS",
-    "difficulty" : "0.07",
+    "difficulty" : "0.08",
     "description": [
       "Create a style tag and write the CSS to make all h2 elements blue.",
       "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
@@ -185,10 +193,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aecf08806",
     "name": "Use a CSS Class to Style an Element",
-    "difficulty" : "0.08",
+    "difficulty" : "0.09",
     "description": [
       "Create a CSS class called \"red-text\" and apply it to the h2 element.",
       "Classes are reusable styles that can be added to HTML elements.",
@@ -211,10 +220,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aeff08806",
     "name": "Use a CSS Classes to Style Multiple Elements",
-    "difficulty" : "0.09",
+    "difficulty" : "0.10",
     "description": [
       "Apply the \"red-text\" class to the h1, h2 and p elements.",
       "Remember that you can attach classes to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
@@ -239,10 +249,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08806",
     "name": "Change the Font Size of an Element",
-    "difficulty" : "0.10",
+    "difficulty" : "0.11",
     "description": [
       "Set the font size of all p elements to 16 pixels",
       "Font size is controlled by the <code>font-size</code> CSS attribute.",
@@ -265,10 +276,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08807",
     "name": "Import a Google Font",
-    "difficulty" : "0.11",
+    "difficulty" : "0.12",
     "description": [
       "Apply the font-family of Lobster to all h1 elements.",
       "The first line of code in your text editor is a <code>call</code> to Google that grabs a font called Lobster and loads it into your HTML.",
@@ -296,10 +308,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08808",
     "name": "Specify How Fonts Should Degrade",
-    "difficulty" : "0.12",
+    "difficulty" : "0.13",
     "description": [
       "Make all h2 elements use Lobster as their font family, but degrade to the Serif font when the Lobster font isn't available.",
       "We commented out our call to Google Fonts, and now our lobter isn't available.",
@@ -324,10 +337,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08809",
     "name": "Using Important to Override Styles",
-    "difficulty" : "0.13",
+    "difficulty" : "0.14",
     "description": [
       "Apply both the \"blue-text\" and \"urgently-red\" classes to all h2 elements, but use <code>!important</code> to ensure the element is rendered as being red.",
       "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
@@ -362,10 +376,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08810",
     "name": "Use Hex Codes for Precise Colors",
-    "difficulty" : "0.14",
+    "difficulty" : "0.15",
     "description": [
       "Change the hex code in the \"red-text\" class to hex code for the color red.",
       "<code>Hexadecimal (hex) code</code> is a popular way of specifying color in CSS.",
@@ -392,10 +407,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9bedf08810",
     "name": "Use Shortened 3 Digit Hex Codes",
-    "difficulty" : "0.15",
+    "difficulty" : "0.16",
     "description": [
       "Change the hex code in the \"red-text\" class to the shortened 3-digit hex code for the color red.",
       "You can also shorten the 6-digit color hex code to a 3-digit code. For example, <code>#00ff00</code> becomes <code>#0f0</code>. This is less precise, but equally effective."
@@ -417,10 +433,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08811",
     "name": "Use RGB Codes for Precise Colors",
-    "difficulty" : "0.15",
+    "difficulty" : "0.17",
     "description": [
       "Change the RGB code to be red.",
       "Another way to represent color in CSS is with RGB, or red-green-blue notation.",
@@ -445,10 +462,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08812",
     "name": "Add an Image to your Website",
-    "difficulty" : "0.13",
+    "difficulty" : "0.18",
     "description": [
       "Use an img element to add the image <code>http://bit.ly/cutegraycat</code> to your website.",
       "You can add images to your website by using the <code>img</code> element.",
@@ -471,10 +489,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9acdf08812",
     "name": "Specify an Image Size TEST",
-    "difficulty" : "0.131",
+    "difficulty" : "0.19",
     "description": [
       "Create a class called <code>narrow-image</code> and use it to resize the image so that it's only 200 pixels wide",
       "Uh-oh, our image is too big to fit on a mobile phone. As a result, our user will need to scroll horizontally to view the image. But we can fix this by specifying an image size.",
@@ -502,10 +521,373 @@
     ],
     "challengeType": 0
   },
+
+  {
+    "_id" : "bad87fee1348bd9bedf08813",
+    "name": "Add a Border Around an Element",
+    "difficulty" : "0.20",
+    "description": [
+      "Create a class called \"thick-green-border\" that puts a 5-pixel-wide black border around your cat photo.",
+      "<code>CSS Borders</code> have attributes like style, color and width.",
+      "We've created an example border around your h1 element. See if you can add a 10-pixel-wide green border around your cat photo."
+    ],
+    "tests": [
+      "expect($('img')).to.have.class('thick-green-border');",
+      "expect($('img')).to.have.css('border-color', 'rgb(0,255,0)'));",
+      "expect($('img')).to.have.css('border-width', '10px');"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .narrow-image {",
+      "    width: 400px;",
+      "  }",
+      "",
+      "  .thin-red-border {",
+      "    border-style: solid;",
+      "    border-color: #ff0000;",
+      "    border-width: 5px;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-style: solid;",
+      "  }",
+      "</style>",
+      "<h1 class=\"thin-red-border\">hello world</h1>",
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"narrow-image thick-green-border\" src=\"http://bit.ly/cutegraycat\"/>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08814",
+    "name": "Add Rounded Corners with a Border Radius",
+    "difficulty" : "0.21",
+    "description": [
+      "Give your cat photo a border radius of 10 pixels.",
+      "Your cat photo currently has sharp corners. We can round out those corners with a CSS attribute called <code>border-radius</code>.",
+      "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this attribute to your <code>thick-green-border</code> class and set it to 10 pixels."
+    ],
+    "tests": [
+      "expect($('img')).to.have.class('thick-green-border');",
+      "expect($('img')).to.have.css('border-radius', '10px');"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .narrow-image {",
+      "    width: 200px;",
+      "  }",
+      "",
+      "  .thin-red-border {",
+      "    border-style: solid;",
+      "    border-color: #ff0000;",
+      "    border-width: 5px;",
+      "    border-radius: 5px;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-style: solid;",
+      "  }",
+      "</style>",
+      "<h1 class=\"thin-red-border\">hello world</h1>",
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08815",
+    "name": "Make an Image Circular with a Border Radius",
+    "difficulty" : "0.22",
+    "description": [
+      "Give your cat photo a <code>border-radius</code> of 50%.",
+      "In addition to pixels, you can also specify a <code>border-radius</code> of a percentage."
+    ],
+    "tests": [
+      "expect($('img')).to.have.css('border-radius', '50%');"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .narrow-image {",
+      "    width: 200px;",
+      "  }",
+      "",
+      "  .thin-red-border {",
+      "    border-style: solid;",
+      "    border-color: #ff0000;",
+      "    border-width: 5px;",
+      "    border-radius: 10%;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-style: solid;",
+      "    border-color: #00ff00;",
+      "    border-width: 10px;",
+      "  }",
+      "</style>",
+      "<h1 class=\"thin-red-border\">hello world</h1>",
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08816",
+    "name": "Use an Anchor Tag to Link to an External Page",
+    "difficulty" : "0.23",
+    "description": [
+      "Create an <code>anchor tag</code> hyperlink that links to freecodecamp.com",
+      ""
+    ],
+    "tests": [
+      "expect((/free(\\s+)?code(\\s+)?camp(\\s+)?/gi).test($('a').text())).to.be.true;",
+      "expect((/free(\\s+)?code(\\s+)?camp(\\s+)?/gi).test($('a').attr('href').text())).to.be.true;"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .narrow-image {",
+      "    width: 200px;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-style: solid;",
+      "    border-color: #00ff00;",
+      "    border-width: 10px;",
+      "    border-radius: 50%;",
+      "  }",
+      "</style>",
+      "<h1>hello world</h1>",
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>",
+      "<a href=\"http://www.google.com\">This is a link to Google</a>",
+      "<br/>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08817",
+    "name": "Make Dead Links with the Hash Symbol",
+    "difficulty" : "0.24",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .narrow-image {",
+      "    width: 200px;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-style: solid;",
+      "    border-color: #00ff00;",
+      "    border-width: 10px;",
+      "    border-radius: 50%;",
+      "  }",
+      "</style>",
+      "<h1>hello world</h1>",
+      "<h2>cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08818",
+    "name": "Add Alt Text to a Link",
+    "difficulty" : "0.25",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08819",
+    "name": "Include Links that Open in a New Browser Tab",
+    "difficulty" : "0.26",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08820",
+    "name": "Turn Images into Links",
+    "difficulty" : "0.27",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad88fee1348bd9aedf08825",
+    "name": "Set the Background Color of an Element",
+    "difficulty" : "0.28",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08821",
+    "name": "Add Padding to an Element",
+    "difficulty" : "0.29",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08822",
+    "name": "Add a Margin to an Element",
+    "difficulty" : "0.30",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08823",
+    "name": "Add a Negative Margin to an Element",
+    "difficulty" : "0.31",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08824",
+    "name": "Add Padding Only to the Top and Bottom of an Element",
+    "difficulty" : "0.32",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08825",
+    "name": "Add Margin Only to the Left and Right of an Element",
+    "difficulty" : "0.33",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08826",
+    "name": "Use Clockwise Padding Notation",
+    "difficulty" : "0.34",
+    "description": [
+      "",
+      ""
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h1')).to.have.text('hello world');"
+    ],
+    "challengeSeed": [
+      "<h1>hello world</h1>"
+    ],
+    "challengeType": 0
+  },
+
   {
     "_id" : "bad87fee1348bd9acde08812",
     "name": "Use Bootstrap for Responsive Images",
-    "difficulty" : "0.132",
+    "difficulty" : "0.35",
     "description": [
       "Add the <code>img-responsive</code> Bootstrap class to the image.",
       "Specifying a width of 200 pixels on our img element made it fit our phone's screen, but it's not a perfect fit. It would be great if the image could be exactly the width of our phone's screen.",
@@ -521,7 +903,6 @@
       "  .red-text {",
       "    color: #ff0000;",
       "  }",
-      "",
       "</style>",
       "<h1>hello world</h1>",
       "<h2 class=\"red-text\">cat photo app</h2>",
@@ -530,10 +911,11 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd8acde08812",
     "name": "Center Text with Bootstrap",
-    "difficulty" : "0.133",
+    "difficulty" : "0.36",
     "description": [
       "Add Bootstrap's <code>text-center</code> class to your h1 and h2 elements.",
       "Now that we're using Bootstrap, we can center our heading elements (h1 and h2) to make them look better. All we need to do is add the class <code>text-center</code> to the h1 and h2 elements.",
@@ -557,10 +939,39 @@
     ],
     "challengeType": 0
   },
+
+  {
+    "_id" : "bad87fee1348cd8acde08812",
+    "name": "Create a Button",
+    "difficulty" : "0.37",
+    "description": [
+      "Create a bootstrap button with the class <code></code>.",
+      "Now that we're using Bootstrap, we can center our heading elements (h1 and h2) to make them look better. All we need to do is add the class <code>text-center</code> to the h1 and h2 elements.",
+      "Note that you can add several classes to the same element by seperating each of them with a space, like this: <code>&#60h2 class=\"text-red text-center\"&#62your text&#60/h2&#62</code>."
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h2')).to.have.class('text-center');"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .red-text {",
+      "    color: #ff0000;",
+      "  }",
+      "",
+      "</style>",
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"img-responsive\" src=\"http://bit.ly/cutegraycat\"/>"
+    ],
+    "challengeType": 0
+  },
+
   {
     "_id" : "bad87fee1348bd9aedf08813",
     "name": "Add Alt Text to an Image TEST",
-    "difficulty" : "0.14",
+    "difficulty" : "0.38",
     "description": [
       "Add the alt text \"A picture of a gray cat\" to the image.",
       "<code>Alt text</code> is a useful way to tell people (and web crawlers like Google) what is pictured in a photo. It's extremely important for helping blind or visually impaired people understand the content of your website.",
@@ -582,279 +993,11 @@
     ],
     "challengeType": 0
   },
-  {
-    "_id" : "bad87fee1348bd9bedf08813",
-    "name": "Add a Border Around an Element",
-    "difficulty" : "0.141",
-    "description": [
-      "Create a class called \"thick-green-border\" that puts a 5-pixel-wide black border around your cat photo.",
-      "<code>CSS Borders</code> have attributes like style, color and width.",
-      "We've created an example border around your h1 element. See if you can add a 5-pixel-wide green border around your cat photo."
-    ],
-    "tests": [
-      "expect($('img')).to.have.class('thick-black-border');",
-      "expect($('img')).to.have.css('border-color', 'rgb(0,255,0)'));",
-      "expect($('img')).to.have.css('border-width', '5px');"
-    ],
-    "challengeSeed": [
-      "<style>",
-      "  .thin-red-border {",
-      "    border-style: solid;",
-      "    border-color: #ff0000;",
-      "    border-width: 2px;",
-      "  }",
-      "  .thick-green-border {",
-      "    border-style: solid",
-      "",
-      "  }",
-      "</style>",
-      "<h1 class=\"thin-red-border\">hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img class=\"img-responsive thick-green-border\" src=\"http://bit.ly/cutegraycat\"/>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08814",
-    "name": "Add Rounded Corners with a Border Radius",
-    "difficulty" : "0.15",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
 
-    ],
-    "challengeSeed": [
-      "<style>",
-      "  .thick-red-border {",
-      "    border-style: solid;",
-      "    border-color: #ff0000;",
-      "    border-width: 5px;",
-      "    border-radius: 5px;",
-      "  }",
-      "  .thick-green-border {",
-      "    border-style: solid;",
-      "    border-color: #00ff00;",
-      "    border-width: 5px;",
-      "  }",
-      "</style>",
-      "<h1 class=\"thick-red-border\">hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img class=\"img-responsive thick-green-border\" src=\"http://bit.ly/cutegraycat\"/>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08815",
-    "name": "Make an Image Circular with a Border Radius",
-    "difficulty" : "0.16",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08816",
-    "name": "Create a Link",
-    "difficulty" : "0.17",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08817",
-    "name": "Make Dead Links with the Hash Symbol",
-    "difficulty" : "0.18",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08818",
-    "name": "Add Alt Text to a Link",
-    "difficulty" : "0.19",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08819",
-    "name": "Include Links that Open in a New Browser Tab",
-    "difficulty" : "0.20",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08820",
-    "name": "Turn Images into Links",
-    "difficulty" : "0.21",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08821",
-    "name": "Add Padding to an Element",
-    "difficulty" : "0.22",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08822",
-    "name": "Add a Margin to an Element",
-    "difficulty" : "0.23",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08823",
-    "name": "Add a Negative Margin to an Element",
-    "difficulty" : "0.24",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08824",
-    "name": "Add Padding Only to the Top and Bottom of an Element",
-    "difficulty" : "0.25",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08825",
-    "name": "Add Margin Only to the Left and Right of an Element",
-    "difficulty" : "0.26",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id" : "bad87fee1348bd9aedf08826",
-    "name": "Use Clockwise Padding Notation",
-    "difficulty" : "0.27",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
   {
     "_id" : "bad87fee1348bd9aedf08827",
     "name": "Create an Bulleted Unordered List",
-    "difficulty" : "0.28",
+    "difficulty" : "0.39",
     "description": [
       "",
       ""
@@ -868,6 +1011,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08828",
     "name": "Created a Numbered Ordered List",
@@ -885,6 +1029,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08829",
     "name": "Create a Text Field",
@@ -902,6 +1047,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08830",
     "name": "Use HTML5 to Make a Field Required",
@@ -919,6 +1065,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08831",
     "name": "Use HTML5 to Specify an Input Type",
@@ -936,6 +1083,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08832",
     "name": "Create a Text Area",
@@ -953,6 +1101,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08834",
     "name": "Create a Set of Radio Buttons",
@@ -970,6 +1119,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08835",
     "name": "Create a Set of Checkboxes",
@@ -987,6 +1137,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08836",
     "name": "Create a HTML Form",
@@ -1004,6 +1155,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08837",
     "name": "Use a Bootstrap Primary Button",
@@ -1021,6 +1173,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08838",
     "name": "Apply Responsive Design with the Bootstrap Grid",
@@ -1038,6 +1191,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08839",
     "name": "Create a Half Width Bootstrap Column",
@@ -1055,6 +1209,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08840",
     "name": "Create a Row of Bootstrap Elements",
@@ -1072,6 +1227,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08841",
     "name": "Change the background of element",
@@ -1089,6 +1245,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08842",
     "name": "Make an element translucent",
@@ -1106,6 +1263,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08843",
     "name": "Center an Image",
@@ -1123,6 +1281,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08844",
     "name": "Add a Drop Shadow",
@@ -1140,6 +1299,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08845",
     "name": "Make a Navbar",
@@ -1157,6 +1317,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08847",
     "name": "Add a Logo to a Navbar",
@@ -1174,6 +1335,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08848",
     "name": "Make a Footer",
@@ -1191,6 +1353,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08849",
     "name": "Use Icons as Links",
@@ -1208,6 +1371,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08850",
     "name": "Add Hover Effects to Icons",
@@ -1225,6 +1389,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08851",
     "name": "Add Depth to a Page with a Well",
@@ -1242,6 +1407,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08852",
     "name": "Add an ID to a Button",
@@ -1259,6 +1425,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08853",
     "name": "Fire a Modal by Clicking a Button",
@@ -1276,6 +1443,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08854",
     "name": "Style a Modal with a Header",
@@ -1293,6 +1461,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08855",
     "name": "Style a Modal with a Body",
@@ -1310,6 +1479,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08856",
     "name": "Make a Modal Dismissable",
@@ -1327,6 +1497,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08857",
     "name": "Create an Accordian Menu",
@@ -1344,6 +1515,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08858",
     "name": "Add a Bootstrap Info Button",
@@ -1361,6 +1533,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08859",
     "name": "Add a Bootstrap Warning Button",
@@ -1378,6 +1551,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08860",
     "name": "Add a Bootstrap Danger Button",
@@ -1395,6 +1569,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08861",
     "name": "Add a Bootstrap Success Button",
@@ -1412,6 +1587,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08862",
     "name": "Use a Block-width Button",
@@ -1429,6 +1605,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08863",
     "name": "Add a Gradient to a Button",
@@ -1446,6 +1623,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08864",
     "name": "Adjust the Line Height of Text",
@@ -1463,6 +1641,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08865",
     "name": "Use Responsive Images to Fit Containing Elements",
@@ -1480,6 +1659,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08866",
     "name": "",
@@ -1497,6 +1677,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08867",
     "name": "",
@@ -1514,6 +1695,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08868",
     "name": "",
@@ -1531,6 +1713,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08869",
     "name": "",
@@ -1548,6 +1731,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08870",
     "name": "",
@@ -1565,6 +1749,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08871",
     "name": "",
@@ -1582,6 +1767,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08872",
     "name": "",
@@ -1599,6 +1785,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08873",
     "name": "",
@@ -1616,6 +1803,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08874",
     "name": "",
@@ -1633,6 +1821,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08875",
     "name": "",
@@ -1650,6 +1839,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08876",
     "name": "",
@@ -1667,6 +1857,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08877",
     "name": "",
@@ -1684,6 +1875,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08878",
     "name": "",
@@ -1701,6 +1893,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08879",
     "name": "",
@@ -1718,6 +1911,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08880",
     "name": "",
@@ -1735,6 +1929,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08881",
     "name": "",
@@ -1752,6 +1947,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08882",
     "name": "",
@@ -1769,6 +1965,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08883",
     "name": "",
@@ -1786,6 +1983,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08884",
     "name": "",
@@ -1803,6 +2001,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08885",
     "name": "",
@@ -1820,6 +2019,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08886",
     "name": "",
@@ -1837,6 +2037,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08887",
     "name": "",
@@ -1854,6 +2055,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08888",
     "name": "",
@@ -1871,6 +2073,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08889",
     "name": "",
@@ -1888,6 +2091,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08890",
     "name": "",
@@ -1905,6 +2109,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08891",
     "name": "",
@@ -1922,6 +2127,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08892",
     "name": "",
@@ -1939,6 +2145,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08893",
     "name": "",
@@ -1956,6 +2163,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08894",
     "name": "",
@@ -1973,6 +2181,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08895",
     "name": "",
@@ -1990,6 +2199,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08896",
     "name": "",
@@ -2007,6 +2217,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08897",
     "name": "",
@@ -2024,6 +2235,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08898",
     "name": "",
@@ -2041,6 +2253,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08899",
     "name": "",
@@ -2058,6 +2271,7 @@
     ],
     "challengeType": 0
   },
+
   {
     "_id" : "bad87fee1348bd9aedf08100",
     "name": "",
