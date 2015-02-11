@@ -646,7 +646,7 @@
     ],
     "tests": [
       "expect((/free(\\s+)?code(\\s+)?camp(\\s+)?/gi).test($('a').text())).to.be.true;",
-      "expect((/free(\\s+)?code(\\s+)?camp(\\s+)?/gi).test($('a').attr('href').text())).to.be.true;"
+      "expect($('a').filter(function(index) { return /freecodecamp\\.com/gi.test($('a')[index]); }).length).to.eql(1);"
     ],
     "challengeSeed": [
       "<style>",
