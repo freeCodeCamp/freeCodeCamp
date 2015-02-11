@@ -13,7 +13,7 @@
       "expect(meetBonfire(\"test\")).to.be.a(\"boolean\");",
       "expect(meetBonfire(\"test\")).to.be.true;"
     ],
-    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\nreturn false;\n}\n\n",
+    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return false;\n}\n\n",
     "challengeEntryPoint": "meetBonfire(\"You can do this!\");"
   },
   {
