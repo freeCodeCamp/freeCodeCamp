@@ -628,8 +628,7 @@
       "    border-width: 10px;",
       "  }",
       "</style>",
-      "<h1 class=\"thin-red-border\">hello world</h1>",
-      "<h2>cat photo app</h2>",
+      "<h2 class=\"thin-red-border\">cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
       "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
@@ -661,10 +660,10 @@
       "    border-radius: 50%;",
       "  }",
       "</style>",
-      "<h1>hello world</h1>",
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
       "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>",
+      "<br/>",
       "<a href=\"http://www.google.com\">This is a link to Google</a>",
       "<br/>"
     ],
@@ -673,15 +672,17 @@
 
   {
     "_id" : "bad87fee1348bd9aedf08817",
-    "name": "Make Dead Links with the Hash Symbol",
+    "name": "Make Named Anchors using the Hash Symbol",
     "difficulty" : "0.24",
     "description": [
-      "",
-      ""
+      "Use the hash symbol(#) to turn the link to the bottom of the page into a <code>named anchor</code>.",
+      "Sometimes you want to add <code>anchor elements</code> to your website before you know where they will link.",
+      "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
+      "Replace the href in the link to freecodecamp.com with a hash symbol to turn it into a <code>named anchor</code>."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect((/this link leads nowhere/gi).test($('a').text())).to.be.true;",
+      "expect($('a').filter(function(index) { return /#/gi.test($('a')[index]); }).length).to.eql(1);"
     ],
     "challengeSeed": [
       "<style>",
@@ -696,9 +697,45 @@
       "    border-radius: 50%;",
       "  }",
       "</style>",
-      "<h1>hello world</h1>",
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>",
+      "<br/>",
+      "<a href=\"http://www.freecodecamp.com\">This named anchor leads nowhere</a>",
+      "<br/>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aedf08820",
+    "name": "Turn an Image into a Link",
+    "difficulty" : "0.27",
+    "description": [
+      "Wrap the gray cat's image with an <code>anchor tag</code> that leads nowhere.",
+      "You can make elements into links by wrapping them in an <code>anchor tag</code>.",
+      "Check out the example snow-colored cat's photo. When you hover over it with your cursor, you'll see the finger pointer you usually see when you hover over a link. The photo is now a link.",
+      "Wrap your gray cat's photo in an <code>anchor tag</code>",
+      "Use the hash symbol as the <code>anchor tag</code>'s <code>href</code>."
+    ],
+    "tests": [
+      "expect($('a').filter(function(index) { return /#/gi.test($('a')[index]); }).length).to.eql(2);"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .narrow-image {",
+      "    width: 200px;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-style: solid;",
+      "    border-color: #00ff00;",
+      "    border-width: 10px;",
+      "    border-radius: 50%;",
+      "  }",
+      "</style>",
+      "<h2>cat photo app</h2>",
+      "<a href=\"#\"><img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutesnowcat\"/></a>",
       "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
     "challengeType": 0
@@ -706,54 +743,31 @@
 
   {
     "_id" : "bad87fee1348bd9aedf08818",
-    "name": "Add Alt Text to a Link",
+    "name": "Add Alt Text to an image",
     "difficulty" : "0.25",
     "description": [
-      "",
+      "Add the alt text \"a photo of a cute gray cat\" to our cat photo",
       ""
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('img').filter(function(){ return /cat/gi.test(this.alt) }).length).to.eql(2);"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08819",
-    "name": "Include Links that Open in a New Browser Tab",
-    "difficulty" : "0.26",
-    "description": [
+      "<style>",
+      "  .narrow-image {",
+      "    width: 200px;",
+      "  }",
       "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08820",
-    "name": "Turn Images into Links",
-    "difficulty" : "0.27",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
+      "  .thick-green-border {",
+      "    border-style: solid;",
+      "    border-color: #00ff00;",
+      "    border-width: 10px;",
+      "    border-radius: 50%;",
+      "  }",
+      "</style>",
+      "<h2>cat photo app</h2>",
+      "<a href=\"#\"><img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutesnowcat\" alt=\"a photo of a cute white cat\"/></a>",
+      "<a href=\"#\"><img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/></a>"
     ],
     "challengeType": 0
   },
