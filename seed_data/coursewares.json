@@ -531,6 +531,33 @@
     "challengeType": 0
   },
   {
+    "_id" : "bad87fee1348bd8acde08812",
+    "name": "Center Text with Bootstrap",
+    "difficulty" : "0.133",
+    "description": [
+      "Add Bootstrap's <code>text-center</code> class to your h1 and h2 elements.",
+      "Now that we're using Bootstrap, we can center our heading elements (h1 and h2) to make them look better. All we need to do is add the class <code>text-center</code> to the h1 and h2 elements.",
+      "Note that you can add several classes to the same element by seperating each of them with a space, like this: <code>&#60h2 class=\"text-red text-center\"&#62your text&#60/h2&#62</code>."
+    ],
+    "tests": [
+      "expect($('h1')).to.have.class('text-center');",
+      "expect($('h2')).to.have.class('text-center');"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .red-text {",
+      "    color: #ff0000;",
+      "  }",
+      "",
+      "</style>",
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<img class=\"img-responsive\" src=\"http://bit.ly/cutegraycat\"/>"
+    ],
+    "challengeType": 0
+  },
+  {
     "_id" : "bad87fee1348bd9aedf08813",
     "name": "Add Alt Text to an Image TEST",
     "difficulty" : "0.14",
