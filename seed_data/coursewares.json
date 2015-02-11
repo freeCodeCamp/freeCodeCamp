@@ -6,9 +6,9 @@
     "description": [
       "Welcome to Free Code Camp's first challenge! Click on the button below for further instructions.",
       "Awesome. Now you can read the rest of this challenge's instructions.",
-      "You can edit <code>code</code> in <code>text editor</code> we've embedded into this web page.",
+      "You can edit <code>code</code> in the <code>text editor</code> we've embedded into this web page.",
       "Do you see the code in the text editor that says <code>&#60;h1&#62;hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
-      "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference between opening and is that closing tags have a slash after their opening angle bracket.",
+      "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference between opening and closing tags is that closing tags have a slash after their opening angle bracket.",
       "To advance to the next exercise, change the h1 tag's text to say \"hello world\" instead of \"hello\"."
     ],
     "tests": [
@@ -223,7 +223,7 @@
 
   {
     "_id" : "bad87fee1348bd9aeff08806",
-    "name": "Use a CSS Classes to Style Multiple Elements",
+    "name": "Use a CSS Class to Style Multiple Elements",
     "difficulty" : "0.10",
     "description": [
       "Apply the \"red-text\" class to the h1, h2 and p elements.",
@@ -295,7 +295,7 @@
       "  h2 {",
       "    color: red;",
       "    font-size: 24px;",
-      "    font-family: 'Lobster'",
+      "    font-family: \"Lobster\"",
       "  }",
       "  p {",
       "    font-size: 16px;",
