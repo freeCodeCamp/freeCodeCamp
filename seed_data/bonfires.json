@@ -116,7 +116,7 @@
     "difficulty": "1.06",
     "description": [
       "Return an array consisting of the largest numbers in the provided array. The array will contain 4 sub-arrays.",
-      "Remember, you an iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
+      "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
       "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays."
     ],
     "challengeEntryPoint": "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);",
@@ -172,9 +172,9 @@
     "name": "Sum All Odd Fibonacci Numbers",
     "difficulty": "2.09",
     "description": [
-      "Return the sum of all odd fibonacci numbers up to and including the passed number if it is a fibonacci number.",
+      "Return the sum of all odd Fibonacci numbers up to and including the passed number if it is a Fibonacci number.",
       "The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.",
-      "As an example, passing 4 to the function should return 5 because all the odd fibonacci numbers under 4 are 1, 1, and 3."
+      "As an example, passing 4 to the function should return 5 because all the odd Fibonacci numbers under 4 are 1, 1, and 3."
     ],
     "challengeEntryPoint": "sumFibs(4);",
     "challengeSeed": "function sumFibs(num) {\n  return num;\r\n}",
@@ -193,7 +193,7 @@
     "difficulty": "2.10",
     "description": [
       "Sum all the prime numbers up to and including the provided number.",
-      "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible  by itself.",
+      "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.",
       "The provided number may not be a prime."
     ],
     "challengeEntryPoint": "sumPrimes(10);",
@@ -229,7 +229,7 @@
       "Fill in the object constructor with the methods specified in the tests.",
       "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(), setLastName(), and setFullName().",
       "These methods must be the only available means for interacting with the object.",
-      "There will be some linting errors on the tests, you may safely ignore them. You should see undefined in the console output."
+      "There will be some linting errors on the tests. You may safely ignore them. You should see undefined in the console output."
     ],
     "challengeEntryPoint": "var bob = new Person('Bob Ross');",
     "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};",
@@ -257,7 +257,7 @@
       "Return true if the passed string is a valid US phone number",
       "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
       "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
-      "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false."
+      "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false."
     ],
     "tests": [
       "expect(telephoneCheck(\"555-555-5555\")).to.be.a(\"boolean\");",
