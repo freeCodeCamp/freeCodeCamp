@@ -710,7 +710,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08820",
     "name": "Turn an Image into a Link",
-    "difficulty" : "0.27",
+    "difficulty" : "0.271",
     "description": [
       "Wrap the gray cat's image with an <code>anchor tag</code> that leads nowhere.",
       "You can make elements into links by wrapping them in an <code>anchor tag</code>.",
@@ -746,8 +746,10 @@
     "name": "Add Alt Text to an image",
     "difficulty" : "0.25",
     "description": [
-      "Add the alt text \"a photo of a cute gray cat\" to our cat photo",
-      ""
+      "Add the <code>alt text</code> \"a photo of a cute gray cat\" to our cat photo",
+      "<code>alt text</code> is what browsers will display if they fail to load the image. <code>alt text</code> is also important for blind or visually impaired users to understand what an image portrays. Search engines also look at <code>alt text</code>.",
+      "In short, every image should have <code>alt text</code>!",
+      "You can add alt text right in the image tag, like we've done here with the \"cute white cat\" image."
     ],
     "tests": [
       "expect($('img').filter(function(){ return /cat/gi.test(this.alt) }).length).to.eql(2);"
@@ -774,18 +776,52 @@
 
   {
     "_id" : "bad88fee1348bd9aedf08825",
-    "name": "Set the Background Color of an Element",
+    "name": "Adjusting the Padding of an Element",
     "difficulty" : "0.28",
     "description": [
-      "",
-      ""
+      "Change the <code>padding</code> of the yellow box to 20 pixels.",
+      "An element's <code>padding</code> controls the amount of space between an element and its <code>border</code>.",
+      "Here, we can see that the green box and the red box and the green box are nested within the blue box.",
+      "When you increase the green box's padding, it will increase the distance between the word \"padding\" and the border around the text."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "expect($('.green-box')).to.have.css('padding', '20px')"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
+      "<style>",
+      "  .injected-text {",
+      "    margin-bottom: -25px;",
+      "    text-align: center;",
+      "  }",
+      "",
+      "  .box {",
+      "    border-style: solid;",
+      "    border-color: black;",
+      "    border-width: 5px;",
+      "    text-align: center;",
+      "  }",
+      "",
+      "  .blue-box {",
+      "    background-color: blue;",
+      "    padding:10px;",
+      "  }",
+      "  ",
+      "  .red-box {",
+      "    background-color:red;",
+      "    padding: 20px;",
+      "  }",
+      "",
+      "  .green-box {",
+      "    background-color: green;",
+      "    padding: 10px;",
+      "  }",
+      "</style>",
+      "<h5 class=\"injected-text\">margin</h5>",
+      "",
+      "<div class=\"box blue-box\">",
+      "  <h5 class=\"box red-box\">padding</h5>",
+      "  <h5 class=\"box green-box\">padding</h5>",
+      "</div>"
     ],
     "challengeType": 0
   },
