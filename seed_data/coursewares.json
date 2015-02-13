@@ -710,7 +710,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08820",
     "name": "Turn an Image into a Link",
-    "difficulty" : "0.271",
+    "difficulty" : "0.25",
     "description": [
       "Wrap the gray cat's image with an <code>anchor tag</code> that leads nowhere.",
       "You can make elements into links by wrapping them in an <code>anchor tag</code>.",
@@ -744,7 +744,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08818",
     "name": "Add Alt Text to an image",
-    "difficulty" : "0.25",
+    "difficulty" : "0.26",
     "description": [
       "Add the <code>alt text</code> \"a photo of a cute gray cat\" to our cat photo",
       "<code>alt text</code> is what browsers will display if they fail to load the image. <code>alt text</code> is also important for blind or visually impaired users to understand what an image portrays. Search engines also look at <code>alt text</code>.",
@@ -777,7 +777,7 @@
   {
     "_id" : "bad88fee1348bd9aedf08825",
     "name": "Adjusting the Padding of an Element",
-    "difficulty" : "0.28",
+    "difficulty" : "0.27",
     "description": [
       "Change the <code>padding</code> of the green box to match that of the red box.",
       "An element's <code>padding</code> controls the amount of space between an element and its <code>border</code>.",
@@ -829,7 +829,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08822",
     "name": "Adjust the Margin of an Element",
-    "difficulty" : "0.30",
+    "difficulty" : "0.28",
     "description": [
       "Change the <code>margin</code> of the green box to match that of the red box.",
       "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -883,7 +883,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08823",
     "name": "Add a Negative Margin to an Element",
-    "difficulty" : "0.31",
+    "difficulty" : "0.29",
     "description": [
       "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the blue box.",
       "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -936,7 +936,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08824",
     "name": "Add Different Padding to Each Side of an Element TEST",
-    "difficulty" : "0.32",
+    "difficulty" : "0.30",
     "description": [
       "Give the green box a padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Sometimes you will want to customize an element so that it has different padding on each of its sides.",
@@ -990,7 +990,7 @@
   {
     "_id" : "bad87fee1248bd9aedf08824",
     "name": "Add Different a Margin to Each Side of an Element TEST",
-    "difficulty" : "0.32",
+    "difficulty" : "0.31",
     "description": [
       "Give the green box a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Sometimes you will want to customize an element so that it has a different margin on each of its sides.",
@@ -1044,7 +1044,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08826",
     "name": "Use Clockwise Notation to Specify an Element's Padding",
-    "difficulty" : "0.34",
+    "difficulty" : "0.32",
     "description": [
       "Use <code>Clockwise Notation</code> to give an element padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
@@ -1095,7 +1095,7 @@
   {
     "_id" : "bad87fee1348bd9acde08812",
     "name": "Use Bootstrap for Responsive Images",
-    "difficulty" : "0.35",
+    "difficulty" : "0.33",
     "description": [
       "Add the <code>img-responsive</code> Bootstrap class to the image.",
       "Specifying a width of 200 pixels on our img element made it fit our phone's screen, but it's not a perfect fit. It would be great if the image could be exactly the width of our phone's screen.",
@@ -1131,7 +1131,7 @@
   {
     "_id" : "bad87fee1348bd8acde08812",
     "name": "Center Text with Bootstrap",
-    "difficulty" : "0.36",
+    "difficulty" : "0.34",
     "description": [
       "Add Bootstrap's <code>text-center</code> class to your h2 element.",
       "Now that we're using Bootstrap, we can center our heading elements (h2) to make them look better. All we need to do is add the class <code>text-center</code> to the h1 and h2 elements.",
@@ -1159,7 +1159,7 @@
   {
     "_id" : "bad87fee1348cd8acde08812",
     "name": "Create a Button",
-    "difficulty" : "0.37",
+    "difficulty" : "0.35",
     "description": [
       "Create a button with the text \"Delete\" using the HTML <code>button</code> element.",
       "HTML has special elements that function like links, but look like buttons. Let's creating a default HTML button."
@@ -1188,7 +1188,7 @@
   {
     "_id" : "bad87fee1348cd8acdf08812",
     "name": "Create a Bootstrap Button",
-    "difficulty" : "0.37",
+    "difficulty" : "0.36",
     "description": [
       "Apply the Bootstrap's <code>btn</code> class to both of your buttons.",
       "Bootstrap has its own button styles, which look much better than the plain HTML ones."
@@ -1249,7 +1249,7 @@
   {
     "_id" : "bad87fee1348cd8acef08812",
     "name": "Color a Bootstrap Button with Button Primary",
-    "difficulty" : "0.37",
+    "difficulty" : "0.38",
     "description": [
       "Add Bootstrap's <code>btn-block</code> class to both of your buttons.",
       "Normally, your buttons are only as wide as the text they contain. By making them <code>block elements</code>, your button will stretch to fill your page's entire horizontal space.",
@@ -1280,7 +1280,7 @@
   {
     "_id" : "bad87fee1348cd8acef08812",
     "name": "Color a Bootstrap Button with Button Primary",
-    "difficulty" : "0.37",
+    "difficulty" : "0.39",
     "description": [
       "Add Bootstrap's <code>btn-primary</code> class to both of your buttons.",
       "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-primary</code> class is the main button color you'll use throughout your app.",
@@ -1311,7 +1311,7 @@
   {
     "_id" : "bad87fee1348ce8acef08812",
     "name": "Warn your Users of a Dangerous Action with the Bootstrap Button Danger Class",
-    "difficulty" : "0.37",
+    "difficulty" : "0.40",
     "description": [
       "Change the \"Delete\" button from <code>btn-primary</code> to <code>btn-danger</code>.",
       "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-danger</code> class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.",
@@ -1342,7 +1342,7 @@
   {
     "_id" : "bad88fee1348ce8acef08812",
     "name": "Use the Bootstrap Grid to Put Two Elements Side By Side",
-    "difficulty" : "0.37",
+    "difficulty" : "0.41",
     "description": [
       "Put the \"Like\" and \"Delete\" buttons side-by-side by wrapping them in both in a <code>&#60;div class=\"row\"&#62;</code> element and each of them in a <code>&#60;div class=\"row\"&#62;</code> element.",
       "Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
@@ -1382,7 +1382,7 @@
   {
     "_id" : "bad89fee1348ce8acef08812",
     "name": "Wrap Side By Side Elements in a Bootstrap Row",
-    "difficulty" : "0.37",
+    "difficulty" : "0.42",
     "description": [
       "Put the \"Like\" and \"Delete\" buttons side-by-side by wrapping them in both in a <code>&#60;div class=\"row\"&#62;</code> element and each of them in a <code>&#60;div class=\"row\"&#62;</code> element.",
       "Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
@@ -1422,7 +1422,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08813",
     "name": "Add Alt Text to an Image TEST",
-    "difficulty" : "0.38",
+    "difficulty" : "0.43",
     "description": [
       "Add the alt text \"A picture of a gray cat\" to the image.",
       "<code>Alt text</code> is a useful way to tell people (and web crawlers like Google) what is pictured in a photo. It's extremely important for helping blind or visually impaired people understand the content of your website.",
@@ -1448,7 +1448,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08827",
     "name": "Create an Bulleted Unordered List",
-    "difficulty" : "0.39",
+    "difficulty" : "0.44",
     "description": [
       "",
       ""
@@ -1466,7 +1466,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08828",
     "name": "Created a Numbered Ordered List",
-    "difficulty" : "0.29",
+    "difficulty" : "0.45",
     "description": [
       "",
       ""
@@ -1484,7 +1484,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08829",
     "name": "Create a Text Field",
-    "difficulty" : "0.30",
+    "difficulty" : "0.46",
     "description": [
       "",
       ""
@@ -1502,7 +1502,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08830",
     "name": "Use HTML5 to Make a Field Required",
-    "difficulty" : "0.31",
+    "difficulty" : "0.47",
     "description": [
       "",
       ""
@@ -1520,7 +1520,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08831",
     "name": "Use HTML5 to Specify an Input Type",
-    "difficulty" : "0.32",
+    "difficulty" : "0.49",
     "description": [
       "",
       ""
@@ -1538,7 +1538,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08832",
     "name": "Create a Text Area",
-    "difficulty" : "0.33",
+    "difficulty" : "0.50",
     "description": [
       "",
       ""
@@ -1556,7 +1556,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08834",
     "name": "Create a Set of Radio Buttons",
-    "difficulty" : "0.35",
+    "difficulty" : "0.51",
     "description": [
       "",
       ""
@@ -1574,7 +1574,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08835",
     "name": "Create a Set of Checkboxes",
-    "difficulty" : "0.36",
+    "difficulty" : "0.52",
     "description": [
       "",
       ""
@@ -1592,79 +1592,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08836",
     "name": "Create a HTML Form",
-    "difficulty" : "0.37",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08837",
-    "name": "Use a Bootstrap Primary Button",
-    "difficulty" : "0.38",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08838",
-    "name": "Apply Responsive Design with the Bootstrap Grid",
-    "difficulty" : "0.39",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08839",
-    "name": "Create a Half Width Bootstrap Column",
-    "difficulty" : "0.40",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08840",
-    "name": "Create a Row of Bootstrap Elements",
-    "difficulty" : "0.41",
+    "difficulty" : "0.53",
     "description": [
       "",
       ""
@@ -1682,7 +1610,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08841",
     "name": "Change the background of element",
-    "difficulty" : "0.42",
+    "difficulty" : "0.54",
     "description": [
       "",
       ""
@@ -1700,25 +1628,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08842",
     "name": "Make an element translucent",
-    "difficulty" : "0.43",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08843",
-    "name": "Center an Image",
-    "difficulty" : "0.44",
+    "difficulty" : "0.55",
     "description": [
       "",
       ""
@@ -1736,7 +1646,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08844",
     "name": "Add a Drop Shadow",
-    "difficulty" : "0.45",
+    "difficulty" : "0.56",
     "description": [
       "",
       ""
@@ -1754,7 +1664,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08845",
     "name": "Make a Navbar",
-    "difficulty" : "0.46",
+    "difficulty" : "0.57",
     "description": [
       "",
       ""
@@ -1772,7 +1682,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08847",
     "name": "Add a Logo to a Navbar",
-    "difficulty" : "0.47",
+    "difficulty" : "0.58",
     "description": [
       "",
       ""
@@ -1790,7 +1700,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08848",
     "name": "Make a Footer",
-    "difficulty" : "0.48",
+    "difficulty" : "0.59",
     "description": [
       "",
       ""
@@ -1808,7 +1718,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08849",
     "name": "Use Icons as Links",
-    "difficulty" : "0.49",
+    "difficulty" : "0.60",
     "description": [
       "",
       ""
@@ -1826,7 +1736,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08850",
     "name": "Add Hover Effects to Icons",
-    "difficulty" : "0.50",
+    "difficulty" : "0.61",
     "description": [
       "",
       ""
@@ -1844,7 +1754,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08851",
     "name": "Add Depth to a Page with a Well",
-    "difficulty" : "0.51",
+    "difficulty" : "0.62",
     "description": [
       "",
       ""
@@ -1880,7 +1790,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08853",
     "name": "Fire a Modal by Clicking a Button",
-    "difficulty" : "0.53",
+    "difficulty" : "0.63",
     "description": [
       "",
       ""
@@ -1898,7 +1808,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08854",
     "name": "Style a Modal with a Header",
-    "difficulty" : "0.54",
+    "difficulty" : "0.64",
     "description": [
       "",
       ""
@@ -1916,7 +1826,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08855",
     "name": "Style a Modal with a Body",
-    "difficulty" : "0.55",
+    "difficulty" : "0.65",
     "description": [
       "",
       ""
@@ -1934,7 +1844,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08856",
     "name": "Make a Modal Dismissable",
-    "difficulty" : "0.56",
+    "difficulty" : "0.66",
     "description": [
       "",
       ""
@@ -1952,97 +1862,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08857",
     "name": "Create an Accordian Menu",
-    "difficulty" : "0.57",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08858",
-    "name": "Add a Bootstrap Info Button",
-    "difficulty" : "0.58",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08859",
-    "name": "Add a Bootstrap Warning Button",
-    "difficulty" : "0.59",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08860",
-    "name": "Add a Bootstrap Danger Button",
-    "difficulty" : "0.60",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08861",
-    "name": "Add a Bootstrap Success Button",
-    "difficulty" : "0.61",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08862",
-    "name": "Use a Block-width Button",
-    "difficulty" : "0.62",
+    "difficulty" : "0.67",
     "description": [
       "",
       ""
@@ -2060,7 +1880,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08863",
     "name": "Add a Gradient to a Button",
-    "difficulty" : "0.63",
+    "difficulty" : "0.68",
     "description": [
       "",
       ""
@@ -2078,25 +1898,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08864",
     "name": "Adjust the Line Height of Text",
-    "difficulty" : "0.64",
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08865",
-    "name": "Use Responsive Images to Fit Containing Elements",
-    "difficulty" : "0.65",
+    "difficulty" : "0.69",
     "description": [
       "",
       ""
@@ -2114,7 +1916,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08866",
     "name": "",
-    "difficulty" : "0.66",
+    "difficulty" : "0.70",
     "description": [
       "",
       ""
@@ -2132,7 +1934,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08867",
     "name": "",
-    "difficulty" : "0.67",
+    "difficulty" : "0.71",
     "description": [
       "",
       ""
@@ -2150,7 +1952,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08868",
     "name": "",
-    "difficulty" : "0.68",
+    "difficulty" : "0.711",
     "description": [
       "",
       ""
@@ -2168,7 +1970,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08869",
     "name": "",
-    "difficulty" : "0.69",
+    "difficulty" : "0.712",
     "description": [
       "",
       ""
@@ -2186,7 +1988,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08870",
     "name": "",
-    "difficulty" : "0.70",
+    "difficulty" : "0.713",
     "description": [
       "",
       ""
@@ -2204,7 +2006,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08871",
     "name": "",
-    "difficulty" : "0.71",
+    "difficulty" : "0.714",
     "description": [
       "",
       ""
