@@ -123,7 +123,7 @@ module.exports = {
         var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
         client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, res2) {
             client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function(blogger, res3) {
-                var nonprofitProjects = trello.length || 15;
+                var nonprofitProjects = (JSON.parse(trello)).length || 27;
                 var blog = JSON.parse(blogger);
                 User.count({'points': {'$gt': 2}}, function (err, c3) {
                     if (err) {
