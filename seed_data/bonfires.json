@@ -506,10 +506,9 @@
     "description": [
       "Fill in the object constructor with the methods specified in the tests.",
       "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(), setLastName(), and setFullName().",
-      "These methods must be the only available means for interacting with the object.",
-      "There will be some linting errors on the tests. You may safely ignore them. You should see undefined in the console output."
+      "These methods must be the only available means for interacting with the object."
     ],
-    "challengeEntryPoint": "var bob = new Person('Bob Ross');",
+    "challengeEntryPoint": "var bob = new Person('Bob Ross');\nbob.getFullName();",
     "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};",
     "tests": [
       "expect(Object.keys(bob).length).to.eql(6);",
@@ -524,7 +523,8 @@
       "bob.setLastName('Trees');",
       "expect(bob.getLastName()).to.eql('Trees');",
       "bob.setFullName('George Carlin');",
-      "expect(bob.getFullName()).to.eql('George Carlin');"
+      "expect(bob.getFullName()).to.eql('George Carlin');",
+      "bob.setFullName('Bob Ross');"
     ]
   },
   {
