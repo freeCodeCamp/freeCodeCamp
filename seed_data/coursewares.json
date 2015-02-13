@@ -17,7 +17,8 @@
     "challengeSeed": [
       "<h1>hello</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -37,7 +38,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -56,7 +58,8 @@
       "<h1>hello world</h1>",
       "<h2>hello html</h2>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -76,7 +79,8 @@
       "<h2>hello html</h2>",
       "<p>hello paragraph</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -100,7 +104,8 @@
       "",
       "<p>hello paragraph</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -125,7 +130,8 @@
       "",
       "<p>hello paragraph</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -146,7 +152,8 @@
       "<h2>cat photo app</h2>",
       "<p>hello paragraph</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -167,7 +174,8 @@
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -191,7 +199,8 @@
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -218,7 +227,8 @@
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -247,7 +257,8 @@
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -274,7 +285,8 @@
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -306,7 +318,8 @@
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -335,7 +348,8 @@
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -374,7 +388,8 @@
       "<h2 class=\"blue-text urgently-red\">cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -405,7 +420,8 @@
       "<h2 class=\"red-text\">cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -431,7 +447,8 @@
       "<h2 class=\"red-text\">cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -460,7 +477,8 @@
       "<h2 class=\"red-text\">cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -487,7 +505,8 @@
       "<h2 class=\"red-text\">cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -519,7 +538,8 @@
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
       "<img src=\"http://bit.ly/cutegraycat\"/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -557,7 +577,8 @@
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
       "<img class=\"narrow-image thick-green-border\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -595,7 +616,8 @@
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
       "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -632,7 +654,8 @@
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
       "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -667,7 +690,8 @@
       "<a href=\"http://www.google.com\">This is a link to Google</a>",
       "<br/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -704,7 +728,8 @@
       "<a href=\"http://www.freecodecamp.com\">This named anchor leads nowhere</a>",
       "<br/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -738,7 +763,8 @@
       "<a href=\"#\"><img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutesnowcat\"/></a>",
       "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -771,7 +797,8 @@
       "<a href=\"#\"><img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutesnowcat\" alt=\"a photo of a cute white cat\"/></a>",
       "<a href=\"#\"><img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/></a>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -823,7 +850,8 @@
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -877,7 +905,8 @@
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -930,7 +959,8 @@
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -984,7 +1014,8 @@
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1038,7 +1069,8 @@
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1089,7 +1121,8 @@
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1125,7 +1158,8 @@
       "<a href=\"http://www.google.com\">This is a link to Google</a>",
       "<br/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1153,7 +1187,8 @@
       "<img class=\"thick-green-border img-responsive\" src=\"http://bit.ly/cutegraycat\"/>",
       "<br/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1182,7 +1217,8 @@
       "<button href=\"#\">Like</button>",
       "<br/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1212,7 +1248,8 @@
       "<br/>",
       "<button href=\"#\">Delete</button>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1243,7 +1280,8 @@
       "<br/>",
       "<button class=\"btn\" href=\"#\">Delete</button>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1274,7 +1312,8 @@
       "<br/>",
       "<button class=\"btn btn-block\" href=\"#\">Delete</button>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1305,7 +1344,8 @@
       "<br/>",
       "<button class=\"btn btn-block\" href=\"#\">Delete</button>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1336,7 +1376,8 @@
       "<br/>",
       "<button class=\"btn btn-block btn-primary\" href=\"#\">Delete</button>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1376,7 +1417,8 @@
       "<br/>",
       "<button class=\"btn btn-block btn-primary\" href=\"#\">Delete</button>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1416,7 +1458,8 @@
       "<br/>",
       "<button class=\"btn btn-block btn-primary\" href=\"#\">Delete</button>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1442,7 +1485,8 @@
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
       "<img class=\"img-responsive\" src=\"http://bit.ly/cutegraycat\"/>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1460,7 +1504,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1478,7 +1523,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1496,7 +1542,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1514,7 +1561,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1532,7 +1580,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1550,7 +1599,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1568,7 +1618,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1586,7 +1637,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1604,7 +1656,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1622,7 +1675,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1640,7 +1694,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1658,7 +1713,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1676,7 +1732,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1694,7 +1751,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1712,7 +1770,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1730,7 +1789,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1748,7 +1808,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1766,7 +1827,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1784,7 +1846,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1802,7 +1865,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1820,7 +1884,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1838,7 +1903,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1856,7 +1922,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1874,7 +1941,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1892,7 +1960,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1910,7 +1979,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1928,7 +1998,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1946,7 +2017,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1964,7 +2036,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -1982,7 +2055,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2000,7 +2074,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2018,7 +2093,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2036,7 +2112,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2054,7 +2131,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2072,7 +2150,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2090,7 +2169,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2108,7 +2188,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2126,7 +2207,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2144,7 +2226,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2162,7 +2245,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2180,7 +2264,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2198,7 +2283,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2216,7 +2302,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2234,7 +2321,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2252,7 +2340,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2270,7 +2359,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2288,7 +2378,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2306,7 +2397,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2324,7 +2416,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2342,7 +2435,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2360,7 +2454,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2378,7 +2473,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2396,7 +2492,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2414,7 +2511,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2432,7 +2530,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2450,7 +2549,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2468,7 +2568,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2486,7 +2587,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2504,7 +2606,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2522,7 +2625,8 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   },
 
   {
@@ -2540,6 +2644,7 @@
     "challengeSeed": [
       "<h1>hello world</h1>"
     ],
-    "challengeType": 0
+    "challengeType": 0,
+    "completionMessage": ""
   }
 ]

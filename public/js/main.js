@@ -74,7 +74,7 @@ $(document).ready(function() {
     $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
         editor.focus();
     });
-    $('.next-courseware-button').on('click', function() {
+    $('#next-courseware-button').on('click', function() {
         if ($('.signup-btn-nav').length < 1) {
             $.post(
                 '/completed-courseware',

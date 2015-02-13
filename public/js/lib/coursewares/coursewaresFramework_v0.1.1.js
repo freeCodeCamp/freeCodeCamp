@@ -26,7 +26,6 @@ editor.setOption("extraKeys", {
         cm.replaceSelection(spaces);
     },
     "Ctrl-Enter": function() {
-        bonfireExecute();
         return false;
     }
 });
@@ -120,10 +119,15 @@ function doLinting () {
 function showCompletion() {
     var time = Math.floor(Date.now() / 1000) - started;
     ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time);
-    $('#complete-courseware-dialog').modal('show');
-    $('#complete-courseware-dialog').keydown(function(e) {
+    $('#next-courseware-button').removeAttr('disabled');
+    $('#next-courseware-button').addClass('animated tada');
+    console.log(!userLoggedIn);
+    if (!userLoggedIn) {
+        $('#complete-courseware-dialog').modal('show');
+    }
+    $('body').keydown(function(e) {
         if (e.ctrlKey && e.keyCode == 13) {
-            $('.next-courseware-button').click();
+            $('#next-courseware-button').click();
         }
     });
 }
