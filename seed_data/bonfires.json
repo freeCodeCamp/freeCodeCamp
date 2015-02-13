@@ -1,6 +1,6 @@
 [
   {
-    "_id" : "ad7123c8c441eddfaeb5bdef",
+    "_id": "ad7123c8c441eddfaeb5bdef",
     "name": "Meet Bonfire",
     "difficulty": "0",
     "description": [
@@ -13,26 +13,24 @@
       "expect(meetBonfire(\"test\")).to.be.a(\"boolean\");",
       "expect(meetBonfire(\"test\")).to.be.true;"
     ],
-    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return false;\n}\n\n",
-    "challengeEntryPoint": "meetBonfire(\"You can do this!\");"
+    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return false;\n}\n\n\n\nmeetBonfire(\"You can do this!\");"
   },
   {
-  "_id": "a202eed8fc186c8434cb6d61",
-  "name": "Reverse a String",
-  "difficulty": "1.01",
-  "tests": [
-    "expect(reverseString('hello')).to.be.a('String');",
-    "expect(reverseString('hello')).to.equal('olleh');",
-    "expect(reverseString('Howdy')).to.equal('ydwoH');",
-    "expect(reverseString('Greetings from Earth')).to.equal('htraE morf sgniteerG');"
-  ],
-  "description": [
-    "Reverse the provided string.",
-    "You may need to turn the string into an array before you can reverse it.",
-    "Your result must be a string."
-  ],
-  "challengeEntryPoint": "reverseString('hello');",
-  "challengeSeed": "function reverseString(str) {\n  return str;\r\n}"
+    "_id": "a202eed8fc186c8434cb6d61",
+    "name": "Reverse a String",
+    "difficulty": "1.01",
+    "tests": [
+      "expect(reverseString('hello')).to.be.a('String');",
+      "expect(reverseString('hello')).to.equal('olleh');",
+      "expect(reverseString('Howdy')).to.equal('ydwoH');",
+      "expect(reverseString('Greetings from Earth')).to.equal('htraE morf sgniteerG');"
+    ],
+    "description": [
+      "Reverse the provided string.",
+      "You may need to turn the string into an array before you can reverse it.",
+      "Your result must be a string."
+    ],
+    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}\n\nreverseString('hello');"
   },
   {
     "_id": "a302f7aae1aa3152a5b413bc",
@@ -50,11 +48,10 @@
       "Factorials are often represented with the shorthand notation n!",
       "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f"
     ],
-    "challengeSeed": "function factorialize(num) {\n  return  num;\r\n}",
-    "challengeEntryPoint": "factorialize(5);"
+    "challengeSeed": "function factorialize(num) {\n  return  num;\r\n}\n\nfactorialize(5);"
   },
   {
-    "_id" : "aaa48de84e1ecc7c742e1124",
+    "_id": "aaa48de84e1ecc7c742e1124",
     "name": "Check for Palindromes",
     "difficulty": "1.03",
     "description": [
@@ -72,8 +69,7 @@
       "assert.deepEqual(palindrome(\"never odd or even\"), true);",
       "assert.deepEqual(palindrome(\"nope\"), false);"
     ],
-    "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n",
-    "challengeEntryPoint": "palindrome(\"eye\");"
+    "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n\n\npalindrome(\"eye\");"
   },
   {
     "_id": "a26cbbe9ad8655a977e1ceb5",
@@ -83,8 +79,7 @@
       "Return the length of the longest word in the provided sentence.",
       "Your response should be a number."
     ],
-    "challengeEntryPoint": "findLongestWord('The quick brown fox jumped over the lazy dog');",
-    "challengeSeed": "function findLongestWord(str) {\n  return str.length;\r\n}",
+    "challengeSeed": "function findLongestWord(str) {\n  return str.length;\r\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');",
     "tests": [
       "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.be.a('Number');",
       "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.equal(6);",
@@ -101,8 +96,7 @@
       "Return the provided string with the first letter of each word capitalized.",
       "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'."
     ],
-    "challengeEntryPoint": "titleCase(\"I'm a little tea pot\");",
-    "challengeSeed": "function titleCase(str) {\n  return str;\r\n}",
+    "challengeSeed": "function titleCase(str) {\n  return str;\r\n}\n\ntitleCase(\"I'm a little tea pot\");",
     "tests": [
       "expect(titleCase(\"I'm a little tea pot\")).to.be.a('String');",
       "expect(titleCase(\"I'm a little tea pot\")).to.equal(\"I'm A Little Tea Pot\");",
@@ -119,56 +113,53 @@
       "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
       "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays."
     ],
-    "challengeEntryPoint": "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);",
-    "challengeSeed": "function largestOfFour(arr) {\n  // You can do this!\r\n  return arr;\r\n}",
+    "challengeSeed": "function largestOfFour(arr) {\n  // You can do this!\r\n  return arr;\r\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);",
     "tests": [
       "expect(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).to.be.a('array');",
       "(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.eql([5,27,39,1001]);",
       "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]).should.eql([9,35,97,1000000]));"
     ]
   },
-
   {
-    "_id":"acda2fb1324d9b0fa741e6b5",
-    "name":"Confirm the Ending",
-    "difficulty":"1.07",
-    "description":[
+    "_id": "acda2fb1324d9b0fa741e6b5",
+    "name": "Confirm the Ending",
+    "difficulty": "1.07",
+    "description": [
       "Check if a string (first argument) ends with the given target string (second argument)."
     ],
-    "challengeEntryPoint":"end('Bastian', 'n');",
-    "challengeSeed":"function end(str, target) {\n  // \"Never give up and good luck will find you.\"\r\n  // -- Falcor\r\n  return str;\r\n}",
-    "tests":[
+
+    "challengeSeed": "function end(str, target) {\n  // \"Never give up and good luck will find you.\"\r\n  // -- Falcor\r\n  return str;\r\n}\n\nend('Bastian', 'n');",
+    "tests": [
       "assert.strictEqual(end('Bastian', 'n'), true, 'should equal true if target equals end of string');",
       "assert.strictEqual(end('He has to give me a new name', 'name'), true, 'should equal true if target equals end of string');",
       "assert.strictEqual(end('If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing', 'mountain'), false, 'should equal false if target does not equal end of string');"
     ]
   },
   {
-    "_id":"afcc8d540bea9ea2669306b6",
-    "name":"Repeat a string repeat a string",
-    "difficulty":"1.08",
-    "description":[
+    "_id": "afcc8d540bea9ea2669306b6",
+    "name": "Repeat a string repeat a string",
+    "difficulty": "1.08",
+    "description": [
       "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number."
     ],
-    "challengeEntryPoint":"repeat('abc', 3);",
-    "challengeSeed":"function repeat(str, num) {\n  // repeat after me\r\n  return str;\r\n}",
-    "tests":[
+    "challengeSeed": "function repeat(str, num) {\n  // repeat after me\r\n  return str;\r\n}\n\nrepeat('abc', 3);",
+    "tests": [
       "assert.strictEqual(repeat('*', 3), '***', 'should repeat a string n times');",
       "assert.strictEqual(repeat('abc', 3), 'abcabcabc', 'should repeat a string n times');",
       "assert.strictEqual(repeat('abc', -2), '', 'should return an empty string for negative numbers');"
     ]
   },
   {
-    "_id":"ac6993d51946422351508a41",
-    "name":"Truncate a string",
-    "difficulty":"1.09",
-    "description":[
+    "_id": "ac6993d51946422351508a41",
+    "name": "Truncate a string",
+    "difficulty": "1.09",
+    "description": [
       "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
       "Note that the three dots at the end add to the string length."
     ],
-    "challengeEntryPoint":"truncate('A-tisket a-tasket A green and yellow basket', 11);",
-    "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunc\r\n  return str;\r\n}",
-    "tests":[
+    "challengeSeed": "function truncate(str, num) {\n  // Clear out that junk in your trunc\r\n  return str;\r\n}",
+    "challengeEntryPoint": "truncate('A-tisket a-tasket A green and yellow basket', 11);",
+    "tests": [
       "var string = 'A-tisket a-tasket A green and yellow basket’;",
       "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 24), 'A-tisket…’, ’should truncate string the given length');",
       "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 'A-tisket a-tasket A green and yellow basket’.length), string, 'should not truncate if string is = length');",
@@ -176,89 +167,83 @@
     ]
   },
   {
-    "_id":"a9bd25c716030ec90084d8a1",
-    "name":"Chunky Monkey",
-    "difficulty":"1.10",
-    "description":[
+    "_id": "a9bd25c716030ec90084d8a1",
+    "name": "Chunky Monkey",
+    "difficulty": "1.10",
+    "description": [
       "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array."
     ],
-    "challengeEntryPoint":"chunk((['a', 'b', 'c', 'd'], 2));",
-    "challengeSeed":"function chunk(arr, size) {\n  // Break it up.\r\n  return arr;\r\n}",
-    "tests":[
+    "challengeSeed": "function chunk(arr, size) {\n  // Break it up.\r\n  return arr;\r\n}\n\nchunk((['a', 'b', 'c', 'd'], 2));",
+    "tests": [
       "assert.deepEqual(chunk(['a', 'b', 'c', 'd'], 2), [['a', 'b'], ['c', 'd']], 'should return chunked arrays');",
       "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'should return chunked arrays');",
       "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'should return cthe last chunk as remaining elements');"
     ]
   },
   {
-    "_id":"ab31c21b530c0dafa9e241ee",
-    "name":"Slasher Flick",
-    "difficulty":"1.11",
-    "description":[
+    "_id": "ab31c21b530c0dafa9e241ee",
+    "name": "Slasher Flick",
+    "difficulty": "1.11",
+    "description": [
       "Return the remaining elements of an array after chopping off n elements from the head."
     ],
-    "challengeEntryPoint":"slasher([1, 2, 3], 2);",
-    "challengeSeed":"function slasher(arr) {\n  // it doesn't allways pay to be first\r\n  return arr;\r\n}",
-    "tests":[
+    "challengeSeed": "function slasher(arr) {\n  // it doesn't allways pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
+    "tests": [
       "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
       "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
       "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array when n >= array.length');"
     ]
   },
   {
-    "_id":"adf08ec01beb4f99fc7a68f2",
-    "name":"Falsey Bouncer",
-    "difficulty":"1.50",
-    "description":[
+    "_id": "adf08ec01beb4f99fc7a68f2",
+    "name": "Falsey Bouncer",
+    "difficulty": "1.50",
+    "description": [
       "Remove all falsey values from an array.",
       "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN."
     ],
-    "challengeEntryPoint":"bouncer([7, 'ate', '', false, 9]);",
-    "challengeSeed":"function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\r\n  return arr;\r\n}",
-    "tests":[
+    "challengeSeed": "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\r\n  return arr;\r\n}\n\nbouncer([7, 'ate', '', false, 9]);",
+    "tests": [
       "assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9], 'should remove falsey values');",
       "assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c'], 'should return full array if no falsey elements');",
       "assert.deepEqual(bouncer([false, null, 0]), [], 'should return empty array if all elements are falsey');"
     ]
   },
   {
-    "_id":"a8e512fbe388ac2f9198f0fa",
-    "name":"Where art thou",
-    "difficulty":"1.55",
-    "description":[
+    "_id": "a8e512fbe388ac2f9198f0fa",
+    "name": "Where art thou",
+    "difficulty": "1.55",
+    "description": [
       "Maketh a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument)."
     ],
-    "challengeEntryPoint":"where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });",
-    "challengeSeed":"function where(collection, source) {\n  var arr = [];\r\n  // What's in a name?\r\n  return arr;\r\n}",
-    "tests":[
+    "challengeSeed": "function where(collection, source) {\n  var arr = [];\r\n  // What's in a name?\r\n  return arr;\r\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });",
+    "tests": [
       "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
       "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1 }], 'should return with multiples');"
     ]
   },
   {
-    "_id":"a39963a4c10bc8b4d4f06d7e",
-    "name":"Seek and Destroy",
-    "difficulty":"1.60",
-    "description":[
+    "_id": "a39963a4c10bc8b4d4f06d7e",
+    "name": "Seek and Destroy",
+    "difficulty": "1.60",
+    "description": [
       "Remove all values (last argument(s)) from an array (first argument) and return as a new array."
     ],
-    "challengeEntryPoint":"destroyer([1, 2, 3, 1, 2, 3], 2, 3);",
-    "challengeSeed":"function destroyer(arr) {\n  // Remove all the values\r\n  return arr;\r\n}",
-    "tests":[
+    "challengeSeed": "function destroyer(arr) {\n  // Remove all the values\r\n  return arr;\r\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);",
+    "tests": [
       "assert.strictEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
       "assert.strictEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
     ]
   },
   {
-    "_id":"a24c1a4622e3c05097f71d67",
-    "name":"Where do I belong?",
-    "difficulty":"1.61",
-    "description":[
+    "_id": "a24c1a4622e3c05097f71d67",
+    "name": "Where do I belong?",
+    "difficulty": "1.61",
+    "description": [
       "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument)."
     ],
-    "challengeEntryPoint":"where([40, 60], 50);",
-    "challengeSeed":"function where(arr, num) {\n  // Find my place in this sorted array.\r\n  return num;\r\n}",
-    "tests":[
+    "challengeSeed": "function where(arr, num) {\n  // Find my place in this sorted array.\r\n  return num;\r\n}\n\nwhere([40, 60], 50);",
+    "tests": [
       "var numbers = [10, 20, 30, 40, 50], num = 35;",
       "var indexForNum = where(numbers, num);",
       "assert.equal(indexForNum, 3, '35 should be inserted at index 3');",
@@ -274,8 +259,7 @@
       "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
       "The lowest number will not always come first."
     ],
-    "challengeEntryPoint": "sumAll([1, 4]);",
-    "challengeSeed": "function sumAll(arr) {\n  return(1);\r\n}",
+    "challengeSeed": "function sumAll(arr) {\n  return(1);\r\n}\n\nsumAll([1, 4]);",
     "tests": [
       "expect(sumAll([1, 4])).to.be.a('Number');",
       "expect(sumAll([1, 4])).to.equal(10);",
@@ -291,8 +275,7 @@
     "description": [
       "Compare two arrays and return a new array with any items not found in both of the original arrays."
     ],
-    "challengeEntryPoint": "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);",
-    "challengeSeed": "function diff(arr1, arr2) {\n  var newArr = [];\r\n  // Same, same; but different.\r\n  return newArr;\r\n}",
+    "challengeSeed": "function diff(arr1, arr2) {\n  var newArr = [];\r\n  // Same, same; but different.\r\n  return newArr;\r\n}\n\ndiff([1, 2, 3, 5], [1, 2, 3, 4, 5]);",
     "tests": [
       "expect(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])).to.be.a('array');",
       "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
@@ -304,16 +287,15 @@
     ]
   },
   {
-    "_id":"a77dbc43c33f39daa4429b4f",
-    "name":"Boo who?",
-    "difficulty":"2.06",
-    "description":[
+    "_id": "a77dbc43c33f39daa4429b4f",
+    "name": "Boo who?",
+    "difficulty": "2.06",
+    "description": [
       "Check if a value is classified as a boolean primitive. Return true or false.",
       "Boolean primitives are true and false."
     ],
-    "challengeEntryPoint":"boo(null);",
-    "challengeSeed":"function boo(boolean) {\n  // What is the new fad diet for ghost developers? The Boolean.\r\n  return boolean;\r\n}",
-    "tests":[
+    "challengeSeed": "function boo(boolean) {\n  // What is the new fad diet for ghost developers? The Boolean.\r\n  return boolean;\r\n}\n\nboo(null);",
+    "tests": [
       "assert.strictEqual(boo(true), true);",
       "assert.strictEqual(boo(false), true);",
       "assert.strictEqual(boo(Object(true)), true);",
@@ -328,43 +310,40 @@
     ]
   },
   {
-    "_id":"a105e963526e7de52b219be9",
-    "name":"Sorted Union",
-    "difficulty":"2.07",
-    "description":[
+    "_id": "a105e963526e7de52b219be9",
+    "name": "Sorted Union",
+    "difficulty": "2.07",
+    "description": [
       "Write a function that takes two or more arrays and returns a new array of unique values sorted in order."
     ],
-    "challengeEntryPoint":"unite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
-    "challengeSeed":"function unite(arr) {\n  return arr;\r\n}",
-    "tests":[
+    "challengeSeed": "function unite(arr) {\n  return arr;\r\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
+    "tests": [
       "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
       "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');"
     ]
   },
   {
-    "_id":"a6b0bb188d873cb2c8729495",
-    "name":"Convert HTML Entities",
-    "difficulty":"2.07",
-    "description":[
+    "_id": "a6b0bb188d873cb2c8729495",
+    "name": "Convert HTML Entities",
+    "difficulty": "2.07",
+    "description": [
       "Convert the characters \"&\", \"<\", \">\", '\"', and \"'\", in a string to their corresponding HTML entities."
     ],
-    "challengeEntryPoint":"convert('Dolce & Gabbana');",
-    "challengeSeed":"function convert(str) {\n  // &colon;&rpar;\r\n  return str;\r\n}",
-    "tests":[
+    "challengeSeed": "function convert(str) {\n  // &colon;&rpar;\r\n  return str;\r\n}\n\nconvert('Dolce & Gabbana');",
+    "tests": [
       "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
       "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
     ]
   },
   {
-    "_id":"a103376db3ba46b2d50db289",
-    "name":"Spinal-Tap-Case",
-    "difficulty":"2.08",
-    "description":[
+    "_id": "a103376db3ba46b2d50db289",
+    "name": "Spinal-Tap-Case",
+    "difficulty": "2.08",
+    "description": [
       "Convert a string to spinal case."
     ],
-    "challengeEntryPoint":"spinalCase('This Is Spinal Tap');",
-    "challengeSeed":"function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\r\n  // --David St. Hubbins\r\n  return str;\r\n}",
-    "tests":[
+    "challengeSeed": "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\r\n  // --David St. Hubbins\r\n  return str;\r\n}\n\nspinalCase('This Is Spinal Tap');",
+    "tests": [
       "assert.strictEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap', 'should return spinal case from string with spaces');",
       "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'should return spinal case from string with camel case');",
       "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'should return spinal case from string with snake case');",
@@ -380,8 +359,7 @@
       "The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.",
       "As an example, passing 4 to the function should return 5 because all the odd Fibonacci numbers under 4 are 1, 1, and 3."
     ],
-    "challengeEntryPoint": "sumFibs(4);",
-    "challengeSeed": "function sumFibs(num) {\n  return num;\r\n}",
+    "challengeSeed": "function sumFibs(num) {\n  return num;\r\n}\n\nsumFibs(4);",
     "tests": [
       "expect(sumFibs(1)).to.be.a('number');",
       "expect(sumFibs(1000)).to.equal(1785);",
@@ -400,8 +378,7 @@
       "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.",
       "The provided number may not be a prime."
     ],
-    "challengeEntryPoint": "sumPrimes(10);",
-    "challengeSeed": "function sumPrimes(num) {\n  return num;\r\n}",
+    "challengeSeed": "function sumPrimes(num) {\n  return num;\r\n}\n\nsumPrimes(10);",
     "tests": [
       "expect(sumPrimes(10)).to.be.a('number');",
       "expect(sumPrimes(10)).to.equal(17);",
@@ -416,8 +393,7 @@
       "Find the smallest number that evenly divides all numbers in the provided range.",
       "The range will be an array of two numbers that will not necessarily be in numerical order."
     ],
-    "challengeEntryPoint": "smallestCommons([1,5]);",
-    "challengeSeed": "function smallestCommons(arr) {\n  return arr;\r\n}\r\n",
+    "challengeSeed": "function smallestCommons(arr) {\n  return arr;\r\n}\r\n\n\nsmallestCommons([1,5]);",
     "tests": [
       "expect(smallestCommons([1,5])).to.be.a('number');",
       "expect(smallestCommons([1,5])).to.equal(60);",
@@ -426,75 +402,70 @@
     ]
   },
   {
-    "_id":"a6e40f1041b06c996f7b2406",
-    "name":"Finders Keepers",
-    "difficulty":"2.12",
-    "description":[
+    "_id": "a6e40f1041b06c996f7b2406",
+    "name": "Finders Keepers",
+    "difficulty": "2.12",
+    "description": [
       "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument)."
     ],
-    "challengeEntryPoint":"find([1, 2, 3, 4], function(num){ return num % 2 === 0; });",
-    "challengeSeed":"function find(arr, func) {\n  var num = 0;\r\n  return num;\r\n}",
-    "tests":[
+    "challengeSeed": "function find(arr, func) {\n  var num = 0;\r\n  return num;\r\n}\n\nfind([1, 2, 3, 4], function(num){ return num % 2 === 0; });",
+    "tests": [
       "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'should return first found value');",
       "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'should return undefined if not found');"
     ]
   },
   {
-    "_id":"a5deed1811a43193f9f1c841",
-    "name":"Drop it like it's hot",
-    "difficulty":"2.13",
-    "description":[
+    "_id": "a5deed1811a43193f9f1c841",
+    "name": "Drop it like it's hot",
+    "difficulty": "2.13",
+    "description": [
       "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true."
     ],
-    "challengeEntryPoint":"drop([1, 2, 3], function(n) {return n < 3; });",
-    "challengeSeed":"function drop(arr, func) {\n  // Drop them elements.\r\n  return arr;\r\n}",
-    "tests":[
+    "challengeSeed": "function drop(arr, func) {\n  // Drop them elements.\r\n  return arr;\r\n}\n\ndrop([1, 2, 3], function(n) {return n < 3; });",
+    "tests": [
       "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n < 3; }), [3, 4], 'should return remaining array');",
       "assert.deepEqual(drop([1, 2, 3], function(n) {return n < 0; }), [1, 2, 3], 'should return complete array if predicate met in first element.');",
       "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n < 5; }), [], 'should return an empty array if predicate does not return true');"
     ]
   },
   {
-    "_id":"ab306dbdcc907c7ddfc30830",
-    "name":"Steamroller",
-    "difficulty":"2.14",
-    "description":[
+    "_id": "ab306dbdcc907c7ddfc30830",
+    "name": "Steamroller",
+    "difficulty": "2.14",
+    "description": [
       "Flatten a nested array. You must account for varying levels of nesting."
     ],
-    "challengeEntryPoint":"steamroller([1, [2], [3, [[4]]]]);",
-    "challengeSeed":"function steamroller(arr) {\n  // I'm a steamroller, baby\r\n  return arr;\r\n}",
-    "tests":[
+    "challengeSeed": "function steamroller(arr) {\n  // I'm a steamroller, baby\r\n  return arr;\r\n}\n\nsteamroller([1, [2], [3, [[4]]]]);",
+    "tests": [
       "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
       "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
       "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');"
     ]
   },
   {
-    "_id":"a3f503de51cf954ede28891d",
-    "name":"Symmetric Difference",
-    "difficulty":"2.20",
-    "description":[
+    "_id": "a3f503de51cf954ede28891d",
+    "name": "Symmetric Difference",
+    "difficulty": "2.20",
+    "description": [
       "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
       "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both."
     ],
-    "challengeEntryPoint":"sym([1, 2, 3], [5, 2, 1, 4]);",
-    "challengeSeed":"function sym(arr) {\n  return arr;\r\n}",
-    "tests":[
+    "challengeSeed": "function sym(arr) {\n  return arr;\r\n}\n\nsym([1, 2, 3], [5, 2, 1, 4]);",
+    "tests": [
       "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
       "assert.deepEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');",
       "assert.deepEqual(sym([1, 1]), [1], 'should return an array of unique values');"
     ]
   },
   {
-    "_id":"a10d2431ad0c6a099a4b8b52",
-    "name":"Everything Be True",
-    "difficulty":"2.21",
-    "description":[
+    "_id": "a10d2431ad0c6a099a4b8b52",
+    "name": "Everything Be True",
+    "difficulty": "2.21",
+    "description": [
       "Check if the predicate (second argument) returns truthy for all elements of a collection (first argument)."
     ],
-    "challengeEntryPoint":"every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');",
-    "challengeSeed":"function every(collection, pre) {\n  // Does everyone have one of these?\r\n  return pre;\r\n}",
-    "tests":[
+    "challengeSeed": "function every(collection, pre) {\n  // Does everyone have one of these?\r\n  return pre;\r\n}\n\nevery([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');",
+    "tests": [
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex', 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
     ]
@@ -509,8 +480,7 @@
       "These methods must be the only available means for interacting with the object.",
       "There will be some linting errors on the tests. You may safely ignore them. You should see undefined in the console output."
     ],
-    "challengeEntryPoint": "var bob = new Person('Bob Ross');",
-    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};",
+    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');",
     "tests": [
       "expect(Object.keys(bob).length).to.eql(6);",
       "expect(bob instanceof Person).to.be.true;",
@@ -528,7 +498,7 @@
     ]
   },
   {
-    "_id" : "aff0395860f5d3034dc0bfc9",
+    "_id": "aff0395860f5d3034dc0bfc9",
     "name": "Validate US Telephone Numbers",
     "difficulty": "4.01",
     "description": [
@@ -561,8 +531,7 @@
       "assert.deepEqual(telephoneCheck(\"2(757)6227382\"), false);",
       "assert.deepEqual(telephoneCheck(\"2(757)622-7382\"), false);"
     ],
-    "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n",
-    "challengeEntryPoint": "telephoneCheck(\"555-555-5555\");"
+    "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n\n\ntelephoneCheck(\"555-555-5555\");"
   },
   {
     "_id": "aa2e6f85cab2ab736c9a9b24",
@@ -571,8 +540,7 @@
     "description": [
       "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument. cid is a 2d array listing available currency. Return the string \"Insufficient Funds\" if change due is less than the cash-in-drawer. Return the string \"Closed\" if cash-in-drawer is equal to the change due. Otherwise, return change in coin and bills, sorted in highest to lowest order."
     ],
-    "challengeEntryPoint": "drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]);",
-    "challengeSeed": "function drawer(price, cash, cid) {\n  var change;\r\n  // Here is your change, ma'am.\r\n  return change;\r\n}\r\n\r\n// Example cash-in-drawer array:\r\n// [['PENNY', 1.01],\r\n// ['NICKEL', 2.05],\r\n// ['DIME', 3.10],\r\n// ['QUARTER', 4.25],\r\n// ['ONE', 90.00],\r\n// ['FIVE', 55.00],\r\n// ['TEN', 20.00],\r\n// ['TWENTY', 60.00],\r\n// ['ONE HUNDRED', 100.00]]",
+    "challengeSeed": "function drawer(price, cash, cid) {\n  var change;\r\n  // Here is your change, ma'am.\r\n  return change;\r\n}\r\n\r\n// Example cash-in-drawer array:\r\n// [['PENNY', 1.01],\r\n// ['NICKEL', 2.05],\r\n// ['DIME', 3.10],\r\n// ['QUARTER', 4.25],\r\n// ['ONE', 90.00],\r\n// ['FIVE', 55.00],\r\n// ['TEN', 20.00],\r\n// ['TWENTY', 60.00],\r\n// ['ONE HUNDRED', 100.00]]\n\ndrawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]);",
     "tests": [
       "expect(drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]])).to.be.a('array');",
       "expect(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]])).to.be.a('string');",
@@ -590,8 +558,7 @@
     "description": [
       "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order."
     ],
-    "challengeEntryPoint": "// Example inventory lists\r\nvar curInv = [\r\n    [21, 'Bowling Ball'],\r\n    [2, 'Dirty Sock'],\r\n    [1, 'Hair pin'],\r\n    [5, 'Microphone']\r\n];\r\n\r\nvar newInv = [\r\n    [2, 'Hair Pin'],\r\n    [3, 'Half-Eaten Apple'],\r\n    [67, 'Bowling Ball'],\r\n    [7, 'Toothpaste']\r\n];\r\n\r\ninventory(curInv, newInv);",
-    "challengeSeed": "function inventory(arr1, arr2) {\n    // All inventory must be accounted for or you're fired!\r\n    return arr1;\r\n}",
+    "challengeSeed": "function inventory(arr1, arr2) {\n    // All inventory must be accounted for or you're fired!\r\n    return arr1;\r\n}\n\n// Example inventory lists\r\nvar curInv = [\r\n    [21, 'Bowling Ball'],\r\n    [2, 'Dirty Sock'],\r\n    [1, 'Hair pin'],\r\n    [5, 'Microphone']\r\n];\r\n\r\nvar newInv = [\r\n    [2, 'Hair Pin'],\r\n    [3, 'Half-Eaten Apple'],\r\n    [67, 'Bowling Ball'],\r\n    [7, 'Toothpaste']\r\n];\r\n\r\ninventory(curInv, newInv);",
     "tests": [
       "expect(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']])).to.be.a('array');",
       "assert.equal(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]).length, 6);",
@@ -602,4 +569,3 @@
     ]
   }
 ]
-
