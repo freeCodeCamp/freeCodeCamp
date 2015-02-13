@@ -168,8 +168,7 @@
     ],
     "challengeEntryPoint":"truncate('A-tisket a-tasket A green and yellow basket', 11);",
     "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunc\r\n  return str;\r\n}",
-    "tests":[
-      "var string = 'A-tisket a-tasket A green and yellow basket’;",
+    "tests": [
       "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 24), 'A-tisket…’, ’should truncate string the given length');",
       "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 'A-tisket a-tasket A green and yellow basket’.length), string, 'should not truncate if string is = length');",
       "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 'A-tisket a-tasket A green and yellow basket’.length + 2), string, 'should not truncate if string is < length');"
