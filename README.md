@@ -130,7 +130,7 @@ List of Packages
 | passport-linkedin-oauth2        | Sign-in with LinkedIn plugin.                                        |
 | passport-oauth                  | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies.   |
 | request                         | Simplified HTTP request library.                                     |
-| lodash                          | Handy JavaScript utlities library.                                   |
+| lodash                          | Handy JavaScript utilities library.                                   |
 | uglify-js                       | Dependency for connect-assets library to minify JS.                  |
 | mocha                           | Test framework.                                                      |
 | chai                            | BDD/TDD assertion library.                                           |
