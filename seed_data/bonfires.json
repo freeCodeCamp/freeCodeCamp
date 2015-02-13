@@ -167,11 +167,11 @@
       "Note that the three dots at the end add to the string length."
     ],
     "challengeEntryPoint":"truncate('A-tisket a-tasket A green and yellow basket', 11);",
-    "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunc\r\n  return str;\r\n}",
+    "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunk\r\n  return str;\r\n}",
     "tests": [
-      "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 24), 'A-tisket…’, ’should truncate string the given length');",
-      "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 'A-tisket a-tasket A green and yellow basket’.length), string, 'should not truncate if string is = length');",
-      "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 'A-tisket a-tasket A green and yellow basket’.length + 2), string, 'should not truncate if string is < length');"
+      "expect(truncate('A-tisket a-tasket A green and yellow basket', 24)).to.eqls('A-tisket…');",
+      "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
+      "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length');"
     ]
   },
   {
