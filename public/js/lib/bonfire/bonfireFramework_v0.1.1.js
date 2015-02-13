@@ -122,7 +122,7 @@ function bonfireExecute() {
     userJavaScript = scrapeTests(userJavaScript);
     // simple fix in case the user forgets to invoke their function
     if (challengeEntryPoint && challengeSeed) {
-        userJavaScript = challengeEntryPoint + ' ' + userJavaScript;
+        //userJavaScript = challengeEntryPoint + ' ' + userJavaScript;
     }
     submit(userJavaScript, function(cls, message) {
         if (cls) {

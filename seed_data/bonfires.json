@@ -157,13 +157,13 @@
       "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
       "Note that the three dots at the end add to the string length."
     ],
-    "challengeSeed": "function truncate(str, num) {\n  // Clear out that junk in your trunc\r\n  return str;\r\n}",
-    "challengeEntryPoint": "truncate('A-tisket a-tasket A green and yellow basket', 11);",
+
+    "challengeEntryPoint":"truncate('A-tisket a-tasket A green and yellow basket', 11);",
+    "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunk\r\n  return str;\r\n}",
     "tests": [
-      "var string = 'A-tisket a-tasket A green and yellow basket’;",
-      "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 24), 'A-tisket…’, ’should truncate string the given length');",
-      "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 'A-tisket a-tasket A green and yellow basket’.length), string, 'should not truncate if string is = length');",
-      "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket’, 'A-tisket a-tasket A green and yellow basket’.length + 2), string, 'should not truncate if string is < length');"
+      "expect(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...');",
+      "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
+      "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length');"
     ]
   },
   {
@@ -477,10 +477,10 @@
     "description": [
       "Fill in the object constructor with the methods specified in the tests.",
       "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(), setLastName(), and setFullName().",
-      "These methods must be the only available means for interacting with the object.",
-      "There will be some linting errors on the tests. You may safely ignore them. You should see undefined in the console output."
+      "These methods must be the only available means for interacting with the object."
     ],
     "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');",
+    "challengeEntryPoint": "var bob = new Person('Bob Ross');\nbob.getFullName();",
     "tests": [
       "expect(Object.keys(bob).length).to.eql(6);",
       "expect(bob instanceof Person).to.be.true;",
@@ -494,7 +494,8 @@
       "bob.setLastName('Trees');",
       "expect(bob.getLastName()).to.eql('Trees');",
       "bob.setFullName('George Carlin');",
-      "expect(bob.getFullName()).to.eql('George Carlin');"
+      "expect(bob.getFullName()).to.eql('George Carlin');",
+      "bob.setFullName('Bob Ross');"
     ]
   },
   {
