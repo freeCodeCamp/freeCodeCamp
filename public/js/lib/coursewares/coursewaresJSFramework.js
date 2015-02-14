@@ -34,21 +34,6 @@ if (attempts) {
     attempts = 0;
 }
 
-// Default value for editor if one isn't provided in (i.e. a challenge)
-var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
-    'Please feel free to use Bonfire as an in-browser playground and linting tool.\n' +
-    'Note that you can also write tests using Chai.js by using the keywords assert and expect */\n\n' +
-    'function test() {\n' +
-    '  assert(2 !== 3, "2 is not equal to 3");\n' +
-    '  return [1,2,3].map(function(elem) {\n' +
-    '    return elem * elem;\n' +
-    '  });\n' +
-    '}\n' +
-    'expect(test()).to.be.a("array");\n\n' +
-    'assert.deepEqual(test(), [1,4,9]);\n\n' +
-    'var foo = test();\n' +
-    'foo.should.be.a("array");\n\n' +
-    'test();\n';
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,
@@ -183,12 +168,13 @@ var createTestDisplay = function() {
         var test = userTests[i];
         var testDoc = document.createElement("div");
         if (test.err != null) {
+            console.log('Should be displaying bad tests');
             $(testDoc)
-                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-11 test-output wrappable'>" + test.text + "</div><div class='col-xs-11 test-output wrappable'>" + test.err + "</div></div><div class='ten-pixel-break'/>")
+                .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable'>" + test.text + "</div><div class='col-xs-10 test-output wrappable'>" + test.err + "</div></div><div class='ten-pixel-break'/>")
                 .prependTo($('#testSuite'))
         } else {
             $(testDoc)
-                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-11 test-output test-vertical-center wrappable'>" + test.text + "</div></div><div class='ten-pixel-break'/>")
+                .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" + test.text + "</div></div><div class='ten-pixel-break'/>")
                 .appendTo($('#testSuite'));
         }
     };
@@ -220,8 +206,11 @@ var runTests = function(err, data) {
                 }
             } catch(error) {
                 allTestsPassed = false;
-                console.log(error);
                 arr[ix].err = error.name + ":" + error.message;
+            } finally {
+                if (!test) {
+                    createTestDisplay();
+                }
             }
         });
 

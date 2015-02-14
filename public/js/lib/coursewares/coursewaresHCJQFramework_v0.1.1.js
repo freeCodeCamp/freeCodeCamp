@@ -59,34 +59,41 @@ editor.on("change", function () {
 });
 var nodeEnv = prodOrDev === 'production' ? 'http://www.freecodecamp.com' : 'http://localhost:3001';
 function updatePreview() {
+    goodTests = 0;
     var previewFrame = document.getElementById('preview');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     preview.open();
-    preview.write(libraryIncludes + editor.getValue());
+    $('#testSuite').empty();
+    preview.write(libraryIncludes + editor.getValue() + otherTestsForNow);
     preview.close();
+
 }
 setTimeout(updatePreview, 300);
 
 /**
- * Window postMessage receiving funtionality
+ * "post" methods
  */
-var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-var eventer = window[eventMethod];
-var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
-// Listen to message from child window
-eventer(messageEvent,function(e) {
-    if (e.data === 'CompleteAwesomeSauce') {
-        showCompletion();
-    }
-},false);
-
-var postError = function(data) {
-    console.log(Object.keys(data));
+var postSuccess = function(data) {
     var testDoc = document.createElement("div");
     $(testDoc)
-        .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-11 test-output wrappable'>" + data + "</div></div><div class='ten-pixel-break'/>")
+        .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>")
+        .appendTo($('#testSuite'));
+    testSuccess();
+};
+
+var postError = function(data) {
+    var testDoc = document.createElement("div");
+    $(testDoc)
+        .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>")
         .prependTo($('#testSuite'))
+};
+var goodTests = 0;
+var testSuccess = function() {
+    goodTests++;
+    if (goodTests === tests.length) {
+        showCompletion();
+    }
 };
 var challengeSeed = challengeSeed || null;
 var tests = tests || [];
@@ -122,13 +129,12 @@ function doLinting () {
     });
 };
 
-
+//$('#testSuite').empty();
 function showCompletion() {
     var time = Math.floor(Date.now() / 1000) - started;
     ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time);
     $('#next-courseware-button').removeAttr('disabled');
     $('#next-courseware-button').addClass('animated tada');
-    console.log(!userLoggedIn);
     if (!userLoggedIn) {
         $('#complete-courseware-dialog').modal('show');
     }
