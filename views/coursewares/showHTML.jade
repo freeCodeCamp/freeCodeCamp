@@ -39,6 +39,10 @@ block content
                                         button#less-info.btn.btn-info
                                             span.ion-help-circled
                                             | Less information
+            br
+            ul#testSuite.list-group
+                br
+                script(src='/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js')
             - if (cc)
                 a.btn.btn-primary.btn-lg.btn-block#next-courseware-button
                     |  Go to my next challenge
@@ -52,13 +56,7 @@ block content
                 script.
                     var userLoggedIn = false;
             div.hidden
-                #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                br
-                form.code
-                    .form-group.codeMirrorView
-                        textarea#codeOutput
-            br
-            #testSuite
+
             br
             script(type="text/javascript").
                 $('#next-courseware-button').attr('disabled', 'disabled');

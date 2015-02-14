@@ -256,7 +256,7 @@
       "    color: blue;",
       "  }",
       "</style>",
-      "<h1 class=\"red-text\">hello world</h1>",
+      "<h1 class=\"blue-text\">hello world</h1>",
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
@@ -534,7 +534,7 @@
 
   {
     "_id" : "bad87fee1348bd9acdf08812",
-    "name": "Specify an Image Size TEST",
+    "name": "Specify an Image Size",
     "difficulty" : "0.19",
     "description": [
       "Create a class called <code>narrow-image</code> and use it to resize the image so that it's only 200 pixels wide",
@@ -544,7 +544,7 @@
     ],
     "tests": [
       "expect($('img')).to.have.class('narrow-image');",
-      "expect($('img')).to.have.css('width', 200px)"
+      "expect($('img')).to.have.css('width', '200px')"
     ],
     "challengeSeed": [
       "<style>",
@@ -575,13 +575,13 @@
     ],
     "tests": [
       "expect($('img')).to.have.class('thick-green-border');",
-      "expect($('img')).to.have.css('border-color', 'rgb(0,255,0)'));",
+      "expect($('img')).to.have.css('border-color', 'rgb(0,255,0)');",
       "expect($('img')).to.have.css('border-width', '10px');"
     ],
     "challengeSeed": [
       "<style>",
       "  .narrow-image {",
-      "    width: 400px;",
+      "    width: 200px;",
       "  }",
       "",
       "  .thin-red-border {",

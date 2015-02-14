@@ -1,14 +1,19 @@
 (function() {
     var allTestsGood = true;
     var expect = chai.expect;
+    var tests = parent.tests;
 
-    try {
-        eval(parent.allTests);
-    } catch (err) {
-        allTestsGood = false;
-    } finally {
-        if (allTestsGood) {
-            parent.postMessage('CompleteAwesomeSauce', parent.nodeEnv);
+    for (var i = 0; i < tests.length; i++) {
+
+        try {
+            eval(tests[i]);
+        } catch (err) {
+            parent.postError(err);
+            allTestsGood = false;
+        } finally {
+            if (allTestsGood) {
+                parent.postMessage('CompleteAwesomeSauce', parent.nodeEnv);
+            }
         }
     }
 })();

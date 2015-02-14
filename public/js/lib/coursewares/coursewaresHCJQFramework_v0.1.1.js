@@ -62,7 +62,7 @@ function updatePreview() {
     var previewFrame = document.getElementById('preview');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     preview.open();
-    preview.write(libraryIncludes + editor.getValue() + otherTestsForNow);
+    preview.write(libraryIncludes + editor.getValue());
     preview.close();
 }
 setTimeout(updatePreview, 300);
@@ -81,6 +81,13 @@ eventer(messageEvent,function(e) {
     }
 },false);
 
+var postError = function(data) {
+    console.log(Object.keys(data));
+    var testDoc = document.createElement("div");
+    $(testDoc)
+        .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-11 test-output wrappable'>" + data + "</div></div><div class='ten-pixel-break'/>")
+        .prependTo($('#testSuite'))
+};
 var challengeSeed = challengeSeed || null;
 var tests = tests || [];
 var allSeeds = '';
