@@ -1,41 +1,49 @@
-
 extends ../layout-wide
 block content
     .row
-        .col-sm-12.col-md-12.col-xs-12
-            .panel.panel-primary
-                .panel-heading.text-center
-                    h1 #{name}
+        .col-xs-12.col-sm-12.col-md-4.bonfire-top
+            h1.text-center= name
+            .well
+                h4
+                    ol
+                        for step in details
+                            li!= step
+        .col-xs-12.col-sm-12.col-md-8
+            .embed-responsive.embed-responsive-16by9
+                iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
+            br
+            - if (cc)
+                a.btn.btn-primary.btn-lg.btn-block#next-courseware-button Go to my next challenge (ctrl + enter)
                 script.
-                    var challengeName = !{JSON.stringify(name)};
+                    var userLoggedIn = true;
+            - else
+                a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                    script.
+                        var userLoggedIn = false;
+                br
+                script(type="text/javascript").
+                    var tests = !{JSON.stringify(tests)};
                     var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
-
-                .panel.panel-body
-                    .embed-responsive.embed-responsive-16by9
-                        iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
-                    .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-                        h3 Steps:
-                        h4
-                            ol
-                                for step in details
-                                    li!= step
-                        .btn.btn-primary.btn-big.btn-block#completed-courseware I've completed this challenge
-                        .ten-pixel-break
-                        .btn.btn-success.btn-big.btn-block.all-challenges Show me all the challenges
-                #complete-courseware-dialog.modal(tabindex='-1')
-                    .modal-dialog.animated.zoomIn.fast-animation
-                        .modal-content
-                            .modal-header.challenge-list-header= compliment
-                            a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                            .modal-body
-                                .text-center
-                                    .animated.zoomInDown.delay-half
-                                        span.completion-icon.ion-checkmark-circled.text-primary
-                                - if (cc)
-                                    a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, aria-hidden='true') Take me to my next challenge
-                                - if (points && points > 2)
-                                    a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge%20%23#{number}:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{number}&hashtags=LearnToCode, JavaScript" target="_blank")
-                                        i.fa.fa-twitter &nbsp;
-                                            = phrase
-                                - else
-                                    a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                    var challengeName = !{JSON.stringify(name)};
+                    var started = Math.floor(Date.now() / 1000);
+    #complete-courseware-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.zoomIn.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header= compliment
+                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body(ng-controller="pairedWithController")
+                    .text-center
+                        .animated.zoomInDown.delay-half
+                            span.completion-icon.ion-checkmark-circled.text-primary
+                        - if (cc)
+                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
+                            - if (points && points > 2)
+                                a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
+                                    i.fa.fa-twitter &nbsp;
+                                    = phrase
+                        - else
+                            a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                                h1 #{name}
+                            script.
+                                var challengeName = !{JSON.stringify(name)};
+                                var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
