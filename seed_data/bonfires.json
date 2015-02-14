@@ -181,7 +181,7 @@
     "description":[
       "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array."
     ],
-    "challengeEntryPoint":"chunk((['a', 'b', 'c', 'd'], 2));",
+    "challengeEntryPoint":"chunk(['a', 'b', 'c', 'd'], 2);",
     "challengeSeed":"function chunk(arr, size) {\n  // Break it up.\r\n  return arr;\r\n}",
     "tests":[
       "assert.deepEqual(chunk(['a', 'b', 'c', 'd'], 2), [['a', 'b'], ['c', 'd']], 'should return chunked arrays');",
