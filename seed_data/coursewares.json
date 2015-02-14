@@ -152,7 +152,7 @@
     "description": [
       "Comment out the <code>h1</code> element and the <code>p</code> element, but leave the <code>h2</code> element uncommented.",
       "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>.",
-      "Here you'll need to end the comment before the h2 element begins."
+      "Here you'll need to end the comment before the <code>h2</code> element begins."
     ],
     "tests": [
       "expect($('h1')).to.not.exist;",
@@ -176,9 +176,9 @@
     "difficulty" : "0.06",
     "description": [
       "Change the text in the <code>p</code> element to use the first few words of <code>lorem ipsum</code> text.",
-      "Designers use <code>lorem ipsum</code> as placeholder text. It's called lorem ipsum text because it's those are the first two words of a passage by Cicero of Ancient Rome.",
-      "Lorem ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
-      "Here are the first 25 words of lorem ipsum text, which you can copy and paste into the right position: \"lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\""
+      "Designers use <code>lorem ipsum</code> as placeholder text. It's called <code>lorem ipsum</code> text because it's those are the first two words of a passage by Cicero of Ancient Rome.",
+      "<code>lorem ipsum</code> text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
+      "Here are the first 25 words of <code>lorem ipsum</code> text, which you can copy and paste into the right position: <code>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</code>"
     ],
     "tests": [
       "expect((/Lorem(\\s)+ipsum(\\s)+dolor/gi).test($('p').text())).to.be.true;"
@@ -198,11 +198,11 @@
     "description": [
       "Change the <code>h2</code> element's style so that its text color is red.",
       "We can do this by changing the <code>style</code> of the <code>h2</code> element.",
-      "The style responsible for the color of an element's text is the \"color\" style.",
+      "The style responsible for the color of an element's text is the <code>color</code> style.",
       "Here's how you would set the <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;cat photo app&#60;h2&#62;</code>"
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
+      "expect($('h2')).to.have.css('color', '#ff0000');"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>",
@@ -217,7 +217,7 @@
     "name": "Create a Style Tag for CSS",
     "difficulty" : "0.08",
     "description": [
-      "Create a style tag and write the CSS to make all <code>h2</code> elements blue.",
+      "Create a <code>style tag</code> and write the CSS to make all <code>h2</code> elements blue.",
       "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
       "When you entered <code>&#60;h2 style=\"color: red\"&#62;hello html&#60;h2&#62;</code>, you were giving that individual h2 element an <code>inline style</code>",
       "That's one way to add style to an element, but a better way is by using <code>Cascading Style Sheets (CSS)</code>.",
@@ -226,7 +226,7 @@
       "Note that it's important to have an <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of the element's styles."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(0, 0, 255)');"
+      "expect($('h2')).to.have.css('color', '#0000ff');"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>", 
@@ -241,13 +241,13 @@
     "name": "Use a CSS Class to Style an Element",
     "difficulty" : "0.09",
     "description": [
-      "Create a CSS class called <code>.red-text</code> and apply it to the <code>h2</code> element.",
-      "Classes are reusable styles that can be added to HTML elements.",
-      "Classes always start with a period. You can see that we've created a CSS class called <code>.blue-text</code> within the <code>&#60;style&#62;</code> tag.",
-      "You can follow that pattern to make a <code>.red-text</code> class, which you can attach to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
+      "Create a CSS <code>class</code> called <code>red-text</code> and apply it to the <code>h2</code> element.",
+      "<code>classes</code> are reusable styles that can be added to HTML elements.",
+      "Classes always start with a period. You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.",
+      "You can follow that pattern to make a <code>red-text</code> class, which you can attach to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('h2')).to.have.css('color', '#ff0000');",
       "expect($('h2')).to.have.class('red-text');"
     ],
     "challengeSeed": [
@@ -275,9 +275,9 @@
       "expect($('h1')).to.have.class('red-text');",
       "expect($('h2')).to.have.class('red-text');",
       "expect($('p')).to.have.class('red-text');",
-      "expect($('h1')).to.have.css('color', 'rgb(255, 0, 0)');",
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
-      "expect($('p')).to.have.css('color', 'rgb(255, 0, 0)');"
+      "expect($('h1')).to.have.css('color', '#ff0000');",
+      "expect($('h2')).to.have.css('color', '#ff0000');",
+      "expect($('p')).to.have.css('color', '#ff0000');"
     ],
     "challengeSeed": [
       "<style>",
@@ -299,7 +299,7 @@
     "description": [
       "Set the font size of all <code>p</code> elements to 16 pixels",
       "Font size is controlled by the <code>font-size</code> CSS attribute.",
-      "We've already set the font-size attribute for all h2 elements. See if you can figure out how to give all p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for h1."
+      "We've already set the font-size attribute for all <code>h2</code> elements. See if you can figure out how to give all p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for <code>h1</code>."
     ],
     "tests": [
       "expect($('p')).to.have.css('font-size', '16px');"
@@ -324,9 +324,9 @@
     "name": "Import a Google Font",
     "difficulty" : "0.12",
     "description": [
-      "Apply the font-family of Lobster to all h1 elements.",
+      "Apply the <code>font-family</code> of Lobster to all <code>h1</code> elements.",
       "The first line of code in your text editor is a <code>call</code> to Google that grabs a font called Lobster and loads it into your HTML.",
-      "You'll notice that we've already applied the <code>font-family</code> of Lobster to all h2 elements. Now you should also apply it to all h1 elements."
+      "You'll notice that we've already applied the <code>font-family</code> of Lobster to all <code>h2 elements. Now you should also apply it to all <code>h1</code> elements."
     ],
     "tests": [
       "expect($('h1')).to.have.css('font-family', 'Lobster');"
@@ -356,13 +356,13 @@
     "name": "Specify How Fonts Should Degrade",
     "difficulty" : "0.13",
     "description": [
-      "Make all h2 elements use Lobster as their font family, but degrade to the Serif font when the Lobster font isn't available.",
+      "Make all <code>h2</code> elements use Lobster as their <code>font family</code>, but degrade to the Serif font when the Lobster font isn't available.",
       "We commented out our call to Google Fonts, and now our lobter isn't available.",
       "You can leave Lobster as the font, and have it <code>degrade</code> to a different font if that font isn't available.",
-      "There are several default fonts that are availble in all browsers. These include Monospace, Serif and Sans-Serif. See if you can set the h2 elements to use Lobster and degrade to monospace."
+      "There are several default fonts that are available in all browsers. These include <code>Monospace</code>, <code>Serif</code> and <code>Sans-Serif</code>. See if you can set the <code>h2</code> elements to use Lobster and degrade to <code>Monospace</code>."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('font-family').match(/serif/i);",
+      "expect($('h2')).to.have.css('font-family').match(/monospace/i);",
       "expect($('h2')).to.have.css('font-family').match(/lobster/i);"
     ],
     "challengeSeed": [
@@ -385,17 +385,17 @@
     "name": "Using Important to Override Styles",
     "difficulty" : "0.14",
     "description": [
-      "Apply both the \"blue-text\" and \"urgently-red\" classes to all h2 elements, but use <code>!important</code> to ensure the element is rendered as being red.",
+      "Apply both the \"blue-text\" and \"urgently-red\" classes to all <code>h2</code> elements, but use <code>!important</code> to ensure the element is rendered as being red.",
       "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
-      "If there's a conflict in the CSS, the browser will use whichever style declaration is closest to the bottom of the CSS document (whichever declaration comes last). Note that in-line style declarations are the final authority in how an HTML element will be rendered.",
+      "If there's a conflict in the CSS, the browser will use whichever style declaration is closest to the bottom of the CSS document (whichever declaration comes last). Note that <code>in-line style declarations</code> are the final authority in how an HTML element will be rendered.",
       "There's one way to ensure that an element is rendered with a certain style, regardless of where that declaration is located. That one way is to use <code>!important</code>.",
       "Look at the example in the editor's style tag to see how you can use !important.",
-      "Now see if you can make sure the h2 element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, or changing the sequence of CSS class declarations."
+      "Now see if you can make sure the <code>h2</code> element is rendered in the color red without removing the <code>blue-text</code> class, doing an in-line styling, or changing the sequence of CSS class declarations."
     ],
     "tests": [
       "expect($('h2')).to.have.class('urgently-red');",
       "expect($('h2')).to.have.class('blue-text');",
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
+      "expect($('h2')).to.have.css('color', '#ff0000');"
     ],
     "challengeSeed": [
       "<style>",
@@ -433,7 +433,7 @@
       "Now figure out how to make the bright green in the \"red-text\" class into a bright red."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('h2')).to.have.css('color', '#ff0000');",
       "expect($('h2')).to.have.class('red-text');"
     ],
     "challengeSeed": [
@@ -459,7 +459,7 @@
       "You can also shorten the 6-digit color hex code to a 3-digit code. For example, <code>#00ff00</code> becomes <code>#0f0</code>. This is less precise, but equally effective."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('h2')).to.have.css('color', '#ff0000');",
       "expect($('h2')).to.have.class('red-text');"
     ],
     "challengeSeed": [
@@ -478,14 +478,15 @@
 
   {
     "_id" : "bad87fee1348bd9aedf08811",
-    "name": "Use RGB Codes for Precise Colors",
+    "name": "Use rgb Codes for Precise Colors",
     "difficulty" : "0.17",
     "description": [
-      "Change the RGB code to be red.",
-      "Another way to represent color in CSS is with RGB, or red-green-blue notation.",
+      "Change the <code>red-text</code> class's color <code>rgb</code> value to be red.",
+      "Another way to represent color in CSS is with <code>rgb</code>, or red-green-blue notation.",
       "For each of the three colors, you specify a value between 0 and 256.",
       "For example, black is <code>rgb(0, 0, 0)</code>, white is <code>rgb(255, 255, 255)</code>, bright green is <code>rgb(0, 255, 0)</code>. You can also get less intense colors by using values lower than 255. For example, light green is <code>rgb(0, 123, 0).",
-      "If you think about it, this is just as precise as using hex code, because 16 times 16 is 256. In practice, most developers use hex code since it's faster to say out loud and to type."
+      "If you think about it, this is just as precise as using <code>hex code</code>, because 16 times 16 is 256. In practice, most developers use <code>hex code</code> since it's faster to say out loud and to type.",
+      "We'll use 6-digit <code>hex code</code> in all our challenges going forward, but it's good to be aware of this <code>rgb</code> notation."
     ],
     "tests": [
       "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
@@ -569,13 +570,13 @@
     "name": "Add a Border Around an Element",
     "difficulty" : "0.20",
     "description": [
-      "Create a class called \"thick-green-border\" that puts a 5-pixel-wide black border around your cat photo.",
+      "Create a class called <code>\"thick-green-border\"</code> that puts a 5-pixel-wide green border around your cat photo.",
       "<code>CSS Borders</code> have attributes like style, color and width.",
-      "We've created an example border around your h1 element. See if you can add a 10-pixel-wide green border around your cat photo."
+      "We've created an example border around your <code>h1</code> element. See if you can add a 10-pixel-wide green border around your cat photo."
     ],
     "tests": [
       "expect($('img')).to.have.class('thick-green-border');",
-      "expect($('img')).to.have.css('border-color', 'rgb(0,255,0)');",
+      "expect($('img')).to.have.css('border-color', '#00ff00');",
       "expect($('img')).to.have.css('border-width', '10px');"
     ],
     "challengeSeed": [
@@ -607,7 +608,7 @@
     "name": "Add Rounded Corners with a Border Radius",
     "difficulty" : "0.21",
     "description": [
-      "Give your cat photo a border radius of 10 pixels.",
+      "Give your cat photo a <code>border-radius</code> of 10 pixels.",
       "Your cat photo currently has sharp corners. We can round out those corners with a CSS attribute called <code>border-radius</code>.",
       "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this attribute to your <code>thick-green-border</code> class and set it to 10 pixels."
     ],
@@ -682,8 +683,11 @@
     "name": "Use an Anchor Tag to Link to an External Page",
     "difficulty" : "0.23",
     "description": [
-      "Create an <code>anchor tag</code> hyperlink that links to freecodecamp.com",
-      ""
+      "Create an <code>anchor tag</code> <code>hyperlink</code> that links to freecodecamp.com",
+      "<code>hyperlinks</code> link your users to other URLs (web addresses).",
+      "All <code>hyperlinks</code> include an <code>href</code> attribute that tells the browser which URL to go to when your user clicks on it.",
+      "<code>hyperlinks</code> are also important for web crawlers (like those used by Google to index the internet), which use links not only in determining which page to crawl next, but also to determine the relative importance of a given website.",
+      "To create a <hyperlink>, use an <code>anchor tag</code>, specify an <code>href</code> and enclose the text you want to appear as the link, like this: <code>&#60;a href=\"http://www.google.com\"&#62;This is a link to Google&#60;/a&#62;"
     ],
     "tests": [
       "expect((/free(\\s+)?code(\\s+)?camp(\\s+)?/gi).test($('a').text())).to.be.true;",
@@ -717,10 +721,10 @@
     "name": "Make Named Anchors using the Hash Symbol",
     "difficulty" : "0.24",
     "description": [
-      "Use the hash symbol(#) to turn the link to the bottom of the page into a <code>named anchor</code>.",
-      "Sometimes you want to add <code>anchor elements</code> to your website before you know where they will link.",
-      "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
-      "Replace the href in the link to freecodecamp.com with a hash symbol to turn it into a <code>named anchor</code>."
+      "Use the hash symbol(#) to turn the link at the bottom of your website into a <code>named anchor</code>.",
+      "Sometimes you'll want to add an <code>anchor element</code> to your website before you know which URL its <code>href</code> will link to.",
+      "This is also handy when you're changing the behavior of your link using <code>jQuery</code>, which we'll learn about later.",
+      "Replace your link to freecodecamp.com's <code>href</code> with a hash symbol to turn it into a <code>named anchor</code>."
     ],
     "tests": [
       "expect((/this link leads nowhere/gi).test($('a').text())).to.be.true;",
@@ -789,9 +793,9 @@
     "difficulty" : "0.26",
     "description": [
       "Add the <code>alt text</code> \"a photo of a cute gray cat\" to our cat photo",
-      "<code>alt text</code> is what browsers will display if they fail to load the image. <code>alt text</code> is also important for blind or visually impaired users to understand what an image portrays. Search engines also look at <code>alt text</code>.",
-      "In short, every image should have <code>alt text</code>!",
-      "You can add alt text right in the image tag, like we've done here with the \"cute white cat\" image."
+      "<code>alt text</code> is what browsers will display if they fail to load the image. <code>alt text</code> also helps your blind or visually impaired users understand what your image portrays. Search engines also look at <code>alt text</code>.",
+      "In short, every image on your website should have <code>alt text</code>!",
+      "You can add <code>alt text</code> right in the image tag, like we've done here with the \"cute white cat\" image."
     ],
     "tests": [
       "expect($('img').filter(function(){ return /cat/gi.test(this.alt) }).length).to.eql(2);"
