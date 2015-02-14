@@ -62,24 +62,18 @@ function updatePreview() {
     var previewFrame = document.getElementById('preview');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     preview.open();
-    preview.write(libraryIncludes + editor.getValue());
+    preview.write(libraryIncludes + editor.getValue() + otherTestsForNow);
     preview.close();
 }
 setTimeout(updatePreview, 300);
 
 /**
- * Window postMessage receiving funtionality
+ * "post" methods
  */
-var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-var eventer = window[eventMethod];
-var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
-// Listen to message from child window
-eventer(messageEvent,function(e) {
-    if (e.data === 'CompleteAwesomeSauce') {
-        showCompletion();
-    }
-},false);
+var postSuccess = function() {
+    showCompletion();
+};
 
 var postError = function(data) {
     console.log(Object.keys(data));
@@ -128,7 +122,6 @@ function showCompletion() {
     ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time);
     $('#next-courseware-button').removeAttr('disabled');
     $('#next-courseware-button').addClass('animated tada');
-    console.log(!userLoggedIn);
     if (!userLoggedIn) {
         $('#complete-courseware-dialog').modal('show');
     }

@@ -8,11 +8,14 @@
         try {
             eval(tests[i]);
         } catch (err) {
-            parent.postError(err);
             allTestsGood = false;
+            console.log('All tests are good?', allTestsGood);
+            parent.postError(err);
+
         } finally {
             if (allTestsGood) {
-                parent.postMessage('CompleteAwesomeSauce', parent.nodeEnv);
+                console.log('You should not be able to see me if there are errors on teh screen!', allTestsGood);
+                parent.postSuccess();
             }
         }
     }
