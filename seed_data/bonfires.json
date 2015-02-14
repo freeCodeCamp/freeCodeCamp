@@ -157,9 +157,7 @@
       "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
       "Note that the three dots at the end add to the string length."
     ],
-
-    "challengeEntryPoint":"truncate('A-tisket a-tasket A green and yellow basket', 11);",
-    "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunk\r\n  return str;\r\n}",
+    "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunk\r\n  return str;\r\n}\n\ntruncate('A-tisket a-tasket A green and yellow basket', 11);",
     "tests": [
       "expect(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...');",
       "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
@@ -210,19 +208,6 @@
     ]
   },
   {
-    "_id": "a8e512fbe388ac2f9198f0fa",
-    "name": "Where art thou",
-    "difficulty": "1.55",
-    "description": [
-      "Maketh a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument)."
-    ],
-    "challengeSeed": "function where(collection, source) {\n  var arr = [];\r\n  // What's in a name?\r\n  return arr;\r\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });",
-    "tests": [
-      "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
-      "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1 }], 'should return with multiples');"
-    ]
-  },
-  {
     "_id": "a39963a4c10bc8b4d4f06d7e",
     "name": "Seek and Destroy",
     "difficulty": "1.60",
@@ -231,13 +216,13 @@
     ],
     "challengeSeed": "function destroyer(arr) {\n  // Remove all the values\r\n  return arr;\r\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);",
     "tests": [
-      "assert.strictEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
-      "assert.strictEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
+      "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
+      "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
     ]
   },
   {
     "_id": "a24c1a4622e3c05097f71d67",
-    "name": "Where do I belong?",
+    "name": "Where do I belong",
     "difficulty": "1.61",
     "description": [
       "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument)."
@@ -479,8 +464,7 @@
       "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(), setLastName(), and setFullName().",
       "These methods must be the only available means for interacting with the object."
     ],
-    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');",
-    "challengeEntryPoint": "var bob = new Person('Bob Ross');\nbob.getFullName();",
+    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();",
     "tests": [
       "expect(Object.keys(bob).length).to.eql(6);",
       "expect(bob instanceof Person).to.be.true;",
