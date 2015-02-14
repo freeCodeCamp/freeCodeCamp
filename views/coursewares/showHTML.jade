@@ -39,10 +39,8 @@ block content
                                         button#less-info.btn.btn-info
                                             span.ion-help-circled
                                             | Less information
-            br
-            ul#testSuite.list-group
                 br
-                script(src='/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js')
+
             - if (cc)
                 a.btn.btn-primary.btn-lg.btn-block#next-courseware-button
                     |  Go to my next challenge
@@ -55,7 +53,8 @@ block content
                 a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                 script.
                     var userLoggedIn = false;
-            div.hidden
+            br
+            ul#testSuite.list-group
 
             br
             script(type="text/javascript").
@@ -88,7 +87,4 @@ block content
                             .animated.zoomInDown.delay-half
                                 span.completion-icon.ion-checkmark-circled.text-primary
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-    script.
-        $(document).ready(function() {
-            script(src='/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js')
-        });
+    script(src="/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js")

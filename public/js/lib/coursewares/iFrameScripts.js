@@ -1,21 +1,18 @@
 (function() {
-    var allTestsGood = true;
     var expect = chai.expect;
     var tests = parent.tests;
 
     for (var i = 0; i < tests.length; i++) {
-
+        var thisTest = true;
         try {
-            eval(tests[i]);
+            eval(parent.tests[i]);
         } catch (err) {
             allTestsGood = false;
-            console.log('All tests are good?', allTestsGood);
-            parent.postError(err);
-
+            thisTest = false;
+            parent.postError(JSON.stringify(tests[i]));
         } finally {
-            if (allTestsGood) {
-                console.log('You should not be able to see me if there are errors on teh screen!', allTestsGood);
-                parent.postSuccess();
+            if (thisTest) {
+                parent.postSuccess(JSON.stringify(tests[i]));
             }
         }
     }

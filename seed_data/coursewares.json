@@ -575,7 +575,7 @@
     ],
     "tests": [
       "expect($('img')).to.have.class('thick-green-border');",
-      "expect($('img')).to.have.css('border-color', 'rgb(0,255,0)');",
+      "expect($('img')).to.have.css('border-color', 'rgb(0, 255, 0)');",
       "expect($('img')).to.have.css('border-width', '10px');"
     ],
     "challengeSeed": [
