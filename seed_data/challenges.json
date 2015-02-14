@@ -30,7 +30,7 @@
         "Now enter the chat room by going to <a href='https://gitter.im/FreeCodeCamp/FreeCodeCamp' target='_blank'>https://gitter.im/FreeCodeCamp/FreeCodeCamp</a> and clicking the \"sign in with GitHub\" button.",
         "Introduce yourself to our chat room by typing: \"hello world!\".",
         "Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
-        "Keep the chat room open while you work through the other challenges. That way you ask for help If you get stuck on a challenge. You can also socialize when you feel like taking a break.",
+        "Keep the chat room open while you work through the other challenges. That way you ask for help if you get stuck on a challenge. You can also socialize when you feel like taking a break.",
         "Now that you've completed this challenge, you can go directly your most-recently visited chat room by clicking the \"Chat\" button in the navigation bar above."
     ]
   },
@@ -67,7 +67,7 @@
     "video": "114578441",
     "challengeNumber": 4,
     "steps": [
-        "Next, let's learn about Responsive web design and continue learning about HTML and CSS.",
+        "Next, let's learn about responsive web design and continue learning about HTML and CSS.",
         "A responsive website will automatically adapt to changes in your browser's width. This means that you can make one version of a website that will look good on desktop, tablet and phone.",
         "Later, we'll use Twitter's Bootstrap CSS framework to build responsive websites.",
         "You can check it out here: <a href='http://getbootstrap.com/' target='_blank'>http://getbootstrap.com/</a>.",
@@ -79,7 +79,8 @@
     "time": 60,
     "video": "114578438",
     "challengeNumber": 5,
-    "steps": ["Ready for some more HTML and CSS fundamentals?",
+    "steps": [
+        "Ready for some more HTML and CSS fundamentals?",
         "Go to <a href='https://dash.generalassemb.ly/projects/eshas-restaurant-1' target='_blank'>https://dash.generalassemb.ly/projects/eshas-restaurant-1</a> and complete the third project."]
   },
   {
@@ -94,7 +95,7 @@
         "Right-click an area of the page that doesn't have any HTML elements on it, then choose 'view page source'.",
         "Select all the text, then copy it.",
         "Go to <a href='http://codepen.io/pen/' target='_blank'>http://codepen.io/pen/</a>",
-        "Paste the HTML you copied from Newsweek.com into the HTML field of Codepen.",
+        "Paste the HTML you copied from Newsweek.com into the HTML field of CodePen.",
         "You now have your own customizable version of the Newsweek.com website. See if you can change some of the text and images."
     ]
   },
@@ -103,7 +104,8 @@
     "time": 60,
     "video": "114578436",
     "challengeNumber": 7,
-    "steps": ["Now let's learn some more CSS, and a small amount of a JavaScript-based tool called jQuery.",
+    "steps": [
+        "Now let's learn some more CSS, and a small amount of a JavaScript-based tool called jQuery.",
         "Go to <a href='https://dash.generalassemb.ly/projects/cotbots-1' target='_blank'>https://dash.generalassemb.ly/projects/cotbots-1</a> and complete the fourth project."]
   },
   {
@@ -155,7 +157,7 @@
     "video": "114591801",
     "challengeNumber": 12,
     "steps": [
-        "Finally, let's use jQuery to manipulate the way websites look, by changing the CSS of elements.",
+        "Finally, let's use jQuery to manipulate the way websites look by changing the CSS of elements.",
         "Go to <a href='http://try.jquery.com/levels/5/challenges/1' target='_blank'>http://try.jquery.com/levels/5/challenges/1</a> and complete the fifth section."
     ]
   },
@@ -166,7 +168,7 @@
     "challengeNumber": 13,
     "steps": [
         "Now that we've built a foundation in jQuery, let's go back to Dash and do its last challenge.",
-        "If you aren't familiar with Mad Libs, they basically involve inserting random nouns, adjectives and verbs in to stories. The stories that result are often hilarious.",
+        "If you aren't familiar with Mad Libs, they basically involve inserting random nouns, adjectives and verbs into stories. The stories that result are often hilarious.",
         "Go to <a href='https://dash.generalassemb.ly/projects/mad-libs-1' target='_blank'>https://dash.generalassemb.ly/projects/mad-libs-1</a> and complete the fifth project."
     ]
   },
@@ -204,12 +206,12 @@
         "Right-click an area of the page that doesn't have any HTML elements on it, then choose 'view page source'.",
         "Select all the text, then copy it.",
         "Go to <a href='http://codepen.io/pen/' target='_blank'>http://codepen.io/pen/</a>",
-        "Paste the HTML you copied from GetBootStrap.com into the HTML field of Codepen.",
+        "Paste the HTML you copied from GetBootStrap.com into the HTML field of CodePen.",
         "Go to <a href='http://bootswatch.com/' target='_blank'>http://bootswatch.com/</a>",
         "Decide which theme you want to use.",
-        "Click the down arrow next to the download button and choose 'bootstrap.css'",
+        "Click the down arrow next to the download button and choose 'bootstrap.css'.",
         "Select all the text, then copy it.",
-        "Go back to CodePen and paste the CSS you copied from Bootswatch.com into the CSS field of Codepen.",
+        "Go back to CodePen and paste the CSS you copied from Bootswatch.com into the CSS field of CodePen.",
         "Your Bootswatch CSS should now be applied to the HTML from the GetBootStrap page.",
         "This page is currently using a two-column layout, with the main content on the left and additional navigation on the right. See if you can make it a one-column layout."
       ]
@@ -249,7 +251,8 @@
     "steps": [
       "Now let's tackle week 2 of Stanford's Intro to Computer Science course.",
       "This will introduce us to loops, a fundamental feature of every programming language.",
-      "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/</a> and complete Week 2."]
+      "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/</a> and complete Week 2."
+    ]
   },
   {
     "name": "Learn Computer Hardware",
@@ -270,7 +273,8 @@
     "steps": [
       "Now that you've learned about computer hardware, it's time to learn about the software that runs on top of it.",
       "Particularly important, you will learn about networks and TCP/IP - the protocol that powers the internet.",
-      "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/</a> and complete Week 4."]
+      "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/</a> and complete Week 4."
+    ]
   },
   {
     "name": "Learn Boolean Logic",
@@ -280,7 +284,8 @@
     "steps": [
       "Now we'll do some more table exercises and learn boolean logic.",
       "We'll also learn the difference between digital data and analog data.",
-      "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/</a> and complete Week 5."]
+      "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/</a> and complete Week 5."
+    ]
   },
   {
     "name": "Learn Computer Security",
@@ -291,7 +296,8 @@
       "We're almost done with Stanford's Introduction to Computer Science course!",
       "We'll learn about one of the most important inventions of the 20th century - spreadsheets.",
       "We'll also learn about Computer Security and some of the more common vulnerabilities software systems have.",
-      "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/</a> and complete Week 6, the final week of the course."]
+      "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/</a> and complete Week 6, the final week of the course."
+    ]
   },
   {
     "name": "Build an Adventure Game",
@@ -379,19 +385,19 @@
     "video": "114612882",
     "challengeNumber": 31,
     "steps": [
-      "In this final CodeCademy section, we'll learn even more about JavaScript objects.",
+      "In this final Codecademy section, we'll learn even more about JavaScript objects.",
       "Go to <a href='http://www.codecademy.com/courses/objects-ii/0/1' target='_blank'>http://www.codecademy.com/courses/objects-ii/0/1</a> and complete this section.",
       "Be sure to also complete the final section: <a href='http://www.codecademy.com/courses/close-the-super-makert/0/1' target='_blank'>http://www.codecademy.com/courses/close-the-super-makert/0/1</a>."
     ]
   },
   {
-    "name": "Get Help The Hacker Way",
+    "name": "Get Help the Hacker Way",
     "time": 30,
     "video": "111500801",
     "challengeNumber": 32,
     "steps": [
         "Watch the video to learn the RSAP (Read, Search, Ask, Post) methodology for getting help.",
-        "Try an intelligent Google query that involves JavaScript and filters for this year (since JavaScript changes)",
+        "Try an intelligent Google query that involves JavaScript and filters for this year (since JavaScript changes).",
         "Go to <a href='http://stackoverflow.com/' target='_blank'>http://stackoverflow.com/</a> and view the recent questions.",
         "Go to <a href='http://webchat.freenode.net/' target='_blank'>http://webchat.freenode.net/</a> and create an IRC account.",
         "Join the #JavaScript chat room and introduce yourself as a Free Code Camp student.",
@@ -427,11 +433,11 @@
       "Private message your pair and ask for the email address he or she used to register Screen Hero.",
       "Add them as a new contact in Screen Hero, then click the monitor-looking button to attempt to share your screen with them.",
       "Once the Screen Hero session starts, your screen's margins will glow orange. You are now sharing your screen.",
-      "Your pair will have his or her own cursor, and will be able to type text on his or her and keyboard.",
+      "Your pair will have his or her own cursor, and will be able to type text on his or her keyboard.",
       "Now it's time to tackle CoderByte.",
-      "Create a CoderByte account at <a href='http://coderbyte.com/sl/' target='_blank'>http://coderbyte.com/sl/</a>",
-      "Now go to <a href='http://coderbyte.com/CodingArea/Challenges/#easyChals' target='_blank'>http://coderbyte.com/CodingArea/Challenges/#easyChals</a> and start working through Coderbyte's easy algorithm scripting challenges using JavaScript.",
-      "When you are finished pair programming, end the session in Screen Hero session.",
+      "Create a CoderByte account at <a href='http://coderbyte.com/sl/' target='_blank'>http://coderbyte.com/sl/</a>.",
+      "Now go to <a href='http://coderbyte.com/CodingArea/Challenges/#easyChals' target='_blank'>http://coderbyte.com/CodingArea/Challenges/#easyChals</a> and start working through CoderByte's easy algorithm scripting challenges using JavaScript.",
+      "When you are finished pair programming, end the session in Screen Hero.",
       "Congratulations! You have completed your first pair programming session.",
       "You should pair program with different campers until you've completed all the Easy, Medium and Hard CoderByte challenges. This is a big time investment, but the JavaScript practice you'll get, along with the scripting and algorithm experience, are well worth it!",
       "You can complete CoderByte problems while you continue to work through Free Code Camp's challenges.",
@@ -468,7 +474,7 @@
     "video": "114684206",
     "challengeNumber": 37,
     "steps": [
-      "One of the reasons Node.js is so fast is that it is \"evented\" - it processes events in an asynchronous manner.",
+      "One of the reasons Node.js is so fast is that it is \"evented.\" It processes events in an asynchronous manner.",
       "As a result, Node.js relies on asynchronous callbacks.",
       "We'll learn more about how events and callbacks work in this exciting Code School lesson.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/2/video/1</a> and complete the section."
@@ -494,7 +500,8 @@
       "One of the most exciting features of Node.js is NPM - Node Package Manager",
       "With NPM, you quickly install any of thousands of Node.js modules into your app, and it will automatically handle the other modules that each module dependends upon downstream.",
       "In this lesson, we'll learn how to include these modules in our Node.js app by requiring them as variables.",
-      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1</a> and complete the section."]
+      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/4/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Start an Express.js Server",
@@ -503,14 +510,17 @@
     "challengeNumber": 40,
     "steps": [
       "We'll complete Code School's Express.js course shortly after completing this course, but this challenge will give you a quick tour of the Express.js framework.",
-      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."]
+      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."
+    ]
   },
   {
-    "name": "Use Socket.IO",
+    "name": "Use Socket.io",
     "time": 45,
     "video": "114684530",
     "challengeNumber": 41,
-    "steps": ["Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."]
+    "steps": [
+      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Use Redis to Persist Data",
@@ -520,7 +530,8 @@
     "steps": [
       "Redis is a key-value store, which is a type of non-relational database. It's one of the fastest and easiest ways to persist data.",
       "Even though we'll ultimately use MongoDB and other technologies to persist data, Redis is quite easy to learn and is still worth learning.",
-      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1</a> and complete the section."]
+      "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Dive Deeper into Express.js",
@@ -529,7 +540,8 @@
     "challengeNumber": 43,
     "steps": [
       "Code School has one of the first comprehensive courses on Express.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. If you've already used your Code School two-day membership, go to the Free Code Camp main chat room and ask how you can get some extra time to work through this course. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
-      "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1</a> and complete the section."]
+      "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1</a> and complete the section."
+    ]
   },
   {
   
@@ -549,7 +561,7 @@
     "video": "114684537",
     "challengeNumber": 45,
     "steps": [
-      "Have you've ever noticed a question mark in your browser's address bar, followed by a series of string? Those are parameters. Parameters are an efficient way to pass information to the server between page loads.",
+      "Have you ever noticed a question mark in your browser's address bar, followed by a series of strings? Those are parameters. Parameters are an efficient way to pass information to the server between page loads.",
       "We'll learn about parameters, along with a powerful Express.js feature called Dynamic Routing, in this exciting Code School lesson.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/3/video/1</a> and complete the section."
     ]
@@ -594,7 +606,8 @@
     "steps": [
       "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
       "In this course, we'll build a virtual shop entirely in Angular.js.",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."]
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Apply Angular.js Directives",
@@ -615,7 +628,8 @@
     "steps": [
       "One area where Angular.js really shines is its powerful web forms.",
       "Learn how to create reactive Angular.js forms, including real-time form validation.",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."]
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Customize Angular.js Directives",
@@ -624,7 +638,8 @@
     "challengeNumber": 52,
     "steps": [
       "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."]
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
+    ]
   },
   {
     "name": "Create Angular.js Services",
@@ -634,6 +649,7 @@
     "steps": [
       "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",
       "We'll learn how to use services in this final Code School Angular.js challenge.",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."]
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."
+    ]
   }
 ]
