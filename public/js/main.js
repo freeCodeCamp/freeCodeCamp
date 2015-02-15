@@ -66,6 +66,9 @@ $(document).ready(function() {
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
 
     });
+    $('#completed-courseware').on('click', function() {
+        $('#complete-courseware-dialog').modal('show');
+    });
 
     $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
         editor.focus();

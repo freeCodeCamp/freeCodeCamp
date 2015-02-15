@@ -211,10 +211,6 @@ app.get('/control-shortcuts', resourcesController.deployAWebsite);
 app.get('/stats', function(req, res) {
     res.redirect(301, '/learn-to-code');
 });
-app.get(
-    '/pair-program-with-team-viewer',
-    resourcesController.pairProgramWithTeamViewer
-);
 app.get('/learn-to-code', resourcesController.about);
 app.get('/about', function(req, res) {
     res.redirect(301, '/learn-to-code');

@@ -39,8 +39,13 @@ block content
                                         button#less-info.btn.btn-info
                                             span.ion-help-circled
                                             | Less information
+                br
+
             - if (cc)
-                a.btn.btn-primary.btn-lg.btn-block#next-courseware-button Go to my next challenge (ctrl + enter)
+                a.btn.btn-primary.btn-lg.btn-block#next-courseware-button
+                    |  Go to my next challenge
+                    br
+                    |  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
 
@@ -48,14 +53,9 @@ block content
                 a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                 script.
                     var userLoggedIn = false;
-            div.hidden
-                #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                br
-                form.code
-                    .form-group.codeMirrorView
-                        textarea#codeOutput
             br
-            #testSuite
+            ul#testSuite.list-group
+
             br
             script(type="text/javascript").
                 $('#next-courseware-button').attr('disabled', 'disabled');
@@ -70,7 +70,6 @@ block content
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true)
-                script(src='/js/lib/coursewares/coursewaresFramework_v0.1.1.js')
         .col-md-4.col-lg-3
             .hidden-xs.hidden-sm
                 img.iphone-position(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png")
@@ -88,3 +87,4 @@ block content
                             .animated.zoomInDown.delay-half
                                 span.completion-icon.ion-checkmark-circled.text-primary
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+    script(src="/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js")

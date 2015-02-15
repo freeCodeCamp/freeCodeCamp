@@ -15,8 +15,7 @@ var bonfireSchema = new mongoose.Schema({
     difficulty: String,
     description: Array,
     tests: Array,
-    challengeSeed: String,
-    challengeEntryPoint: String,
+    challengeSeed: String
 });
 
 module.exports = mongoose.model('Bonfire', bonfireSchema);

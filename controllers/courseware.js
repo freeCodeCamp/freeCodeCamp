@@ -72,23 +72,66 @@ exports.returnIndividualCourseware = function(req, res, next) {
             return res.redirect('../coursewares/' + dashedNameFull);
         }
 
-        // Render the view for the user
-        res.render('coursewares/show', {
-            title: courseware.name,
-            dashedName: dashedName,
-            name: courseware.name,
-            brief: courseware.description[0],
-            details: courseware.description.slice(1),
-            tests: courseware.tests,
-            challengeSeed: courseware.challengeSeed,
-            cc: !!req.user,
-            points: req.user ? req.user.points : undefined,
-            verb: resources.randomVerb(),
-            phrase: resources.randomPhrase(),
-            compliment: resources.randomCompliment(),
-            coursewareHash: courseware._id,
-            environment: resources.whichEnvironment()
-        });
+        var challengeType = {
+            0 : function() {
+                res.render('coursewares/showHTML', {
+                    title: courseware.name,
+                    dashedName: dashedName,
+                    name: courseware.name,
+                    brief: courseware.description[0],
+                    details: courseware.description.slice(1),
+                    tests: courseware.tests,
+                    challengeSeed: courseware.challengeSeed,
+                    cc: !!req.user,
+                    points: req.user ? req.user.points : undefined,
+                    verb: resources.randomVerb(),
+                    phrase: resources.randomPhrase(),
+                    compliment: resources.randomCompliment(),
+                    coursewareHash: courseware._id,
+                    environment: resources.whichEnvironment()
+                });
+            },
+
+            1 : function() {
+                res.render('coursewares/showJS', {
+                    title: courseware.name,
+                    dashedName: dashedName,
+                    name: courseware.name,
+                    brief: courseware.description[0],
+                    details: courseware.description.slice(1),
+                    tests: courseware.tests,
+                    challengeSeed: courseware.challengeSeed,
+                    cc: !!req.user,
+                    points: req.user ? req.user.points : undefined,
+                    verb: resources.randomVerb(),
+                    phrase: resources.randomPhrase(),
+                    compliment: resources.randomCompliment(),
+                    coursewareHash: courseware._id,
+                    environment: resources.whichEnvironment()
+
+                });
+            },
+
+            2: function() {
+                res.render('coursewares/showVideo', {
+                    title: courseware.name,
+                    dashedName: dashedName,
+                    name: courseware.name,
+                    details: courseware.description,
+                    tests: courseware.tests,
+                    video: courseware.challengeSeed[0],
+                    cc: !!req.user,
+                    points: req.user ? req.user.points : undefined,
+                    verb: resources.randomVerb(),
+                    phrase: resources.randomPhrase(),
+                    compliment: resources.randomCompliment(),
+                    coursewareHash: courseware._id,
+                    environment: resources.whichEnvironment()
+                });
+            }
+        };
+
+        return challengeType[courseware.challengeType]();
 
     });
 };

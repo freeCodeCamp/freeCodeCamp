@@ -24,7 +24,6 @@ exports.index = function(req, res) {
         details: '',
         tests:  [],
         challengeSeed:  '',
-        challengeEntryPoint: '',
         cc: req.user ? req.user.bonfiresHash : undefined,
         points: req.user ? req.user.points : undefined,
         verb: resources.randomVerb(),
@@ -105,7 +104,6 @@ exports.returnIndividualBonfire = function(req, res, next) {
             details: bonfire.description.slice(1),
             tests: bonfire.tests,
             challengeSeed: bonfire.challengeSeed,
-            challengeEntryPoint: bonfire.challengeEntryPoint,
             cc: !!req.user,
             points: req.user ? req.user.points : undefined,
             verb: resources.randomVerb(),
@@ -131,7 +129,6 @@ exports.returnGenerator = function(req, res) {
         details: null,
         tests: null,
         challengeSeed: null,
-        challengeEntryPoint: null,
         bonfireHash: randomString()
     });
 };
@@ -160,7 +157,6 @@ exports.testBonfire = function(req, res) {
         bonfireTests = req.body.tests,
         bonfireDifficulty = req.body.difficulty,
         bonfireDescription = req.body.description,
-        bonfireEntryPoint = req.body.challengeEntryPoint,
         bonfireChallengeSeed = req.body.challengeSeed;
     bonfireTests = bonfireTests.split('\r\n');
     bonfireDescription = bonfireDescription.split('\r\n');
@@ -176,7 +172,6 @@ exports.testBonfire = function(req, res) {
         details: bonfireDescription.slice(1),
         tests:  bonfireTests,
         challengeSeed:  bonfireChallengeSeed,
-        challengeEntryPoint: bonfireEntryPoint,
         cc: req.user ? req.user.bonfiresHash : undefined,
         points: req.user ? req.user.points : undefined,
         verb: resources.randomVerb(),
@@ -202,7 +197,6 @@ exports.generateChallenge = function(req, res) {
         bonfireTests = req.body.tests,
         bonfireDifficulty = req.body.difficulty,
         bonfireDescription = req.body.description,
-        bonfireEntryPoint = req.body.challengeEntryPoint,
         bonfireChallengeSeed = req.body.challengeSeed;
     bonfireTests = bonfireTests.split('\r\n');
     bonfireDescription = bonfireDescription.split('\r\n');
@@ -216,7 +210,6 @@ exports.generateChallenge = function(req, res) {
         name: bonfireName,
         difficulty: bonfireDifficulty,
         description: bonfireDescription,
-        challengeEntryPoint: bonfireEntryPoint,
         challengeSeed: bonfireChallengeSeed,
         tests: bonfireTests
     };
