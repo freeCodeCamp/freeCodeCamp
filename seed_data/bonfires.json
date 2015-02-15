@@ -287,7 +287,7 @@
   },
   {
     "_id": "a77dbc43c33f39daa4429b4f",
-    "name": "Boo who?",
+    "name": "Boo who",
     "difficulty": "2.06",
     "description": [
       "Check if a value is classified as a boolean primitive. Return true or false.",
