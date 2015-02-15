@@ -197,7 +197,7 @@ profileValidation.directive('existingUsername', ['$http', function($http) {
                 if (element.val().length > 0) {
                     ngModel.$setValidity('exists', false);
                 } else {
-                    $('#completed-with').removeClass('ng-dirty');
+                    element.removeClass('ng-dirty');
                     ngModel.$setPristine();
                 }
                 if (element.val()) {
