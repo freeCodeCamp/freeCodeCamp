@@ -167,7 +167,7 @@ profileValidation.controller('doneWithFirst100HoursFormController', ['$scope',
     }
 ]);
 
-profileValidation.directive('uniqueUsername', function($http) {
+profileValidation.directive('uniqueUsername',['$scope', '$http',function($http) {
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -186,22 +186,25 @@ profileValidation.directive('uniqueUsername', function($http) {
             });
         }
     }
-});
+}]);
 
-profileValidation.directive('existingUsername', function($http) {
+profileValidation.directive('existingUsername', ['$http', function($http) {
     return {
         restrict: 'A',
         require: 'ngModel',
         link: function (scope, element, attrs, ngModel) {
             element.bind("keyup", function (event) {
-                if (element.val().length > 0) {
+                console.log(element.val());
+                if ($('#completed-with').val().length > 0) {
                     ngModel.$setValidity('exists', false);
                 } else {
                     $('#completed-with').removeClass('ng-dirty');
                     ngModel.$setPristine();
                 }
-                if (element.val()) {
-                    $http.get("/api/checkExistingUsername/" + element.val()).success(function (data) {
+                if ($('#completed-with').val()) {
+                    $http
+                    .get("/api/checkExistingUsername/" + $('#completed-with').val())
+                    .success(function (data) {
                         console.log('Data received from api call is: ', data);
                         ngModel.$setValidity('exists', data);
                     });
@@ -209,13 +212,13 @@ profileValidation.directive('existingUsername', function($http) {
             });
         }
     }
-});
+}]);
 
-profileValidation.directive('uniqueEmail', function($http) {
+profileValidation.directive('uniqueEmail', ['$http', function($http) {
     return {
         restrict: 'A',
         require: 'ngModel',
-        link: function (scope, element, attrs, ngModel) {
+        link: function getUnique (scope, element, attrs, ngModel) {
             element.bind("keyup", function (event) {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
@@ -230,4 +233,4 @@ profileValidation.directive('uniqueEmail', function($http) {
             });
         }
     }
-});
+}]);
