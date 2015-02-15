@@ -2,7 +2,7 @@
   {
     "_id" : "bd7123d8c441eddfaeb5bdef",
     "name": "Learn how Free Code Camp Works",
-    "difficulty": 0.00,
+    "difficulty": 9.99,
     "description": [
       "Watch this 90 second video, or simply read this summary:",
       "Welcome to Free Code Camp. We're a community of busy people learning to code.",
@@ -27,7 +27,7 @@
   {
     "_id": "bd7123c8c441eddfaeb5bdef",
     "name": "Meet Booleans",
-    "difficulty": "0.001",
+    "difficulty": "9.999",
     "description": [
       "Return true"
     ],
@@ -43,7 +43,7 @@
   {
     "_id" : "bd7123c8c441eddfaeb5bdef",
     "name": "Start our Challenges",
-    "difficulty": "0.002",
+    "difficulty": "0.00",
     "description": [
       "Welcome to Free Code Camp's first challenge! Click on the button below for further instructions.",
       "Awesome. Now you can read the rest of this challenge's instructions.",
