@@ -215,8 +215,7 @@
     "description":[
       "Make a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument)."
     ],
-    "challengeEntryPoint":"where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });",
-    "challengeSeed":"function where(collection, source) {\n  var arr = [];\r\n  // What's in a name?\r\n  return arr;\r\n}",
+    "challengeSeed":"function where(collection, source) {\n  var arr = [];\r\n  // What's in a name?\r\n  return arr;\r\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });",
     "tests":[
       "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
       "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');"
