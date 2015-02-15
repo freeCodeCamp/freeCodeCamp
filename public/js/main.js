@@ -202,6 +202,7 @@ profileValidation.directive('existingUsername', function($http) {
                 }
                 if (element.val()) {
                     $http.get("/api/checkExistingUsername/" + element.val()).success(function (data) {
+                        console.log('Data received from api call is: ', data);
                         ngModel.$setValidity('exists', data);
                     });
                 }
