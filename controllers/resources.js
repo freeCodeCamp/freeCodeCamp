@@ -97,25 +97,6 @@ module.exports = {
         });
     },
 
-    pairProgramWithTeamViewer: function(req, res) {
-        Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
-            if (err) {
-                debug('Challenge err: ', err);
-                next(err);
-            }
-            res.render('resources/pair-program-with-team-viewer', {
-                title: 'Challenge: Pair Program with Team Viewer',
-                name: 'Pair Program with Team Viewer',
-                video: '',
-                time: 30,
-                steps: steps,
-                cc: req.user ? req.user.challengesHash : undefined,
-                points: req.user ? req.user.points : undefined,
-                challenges: c
-            });
-        });
-    },
-
     about: function(req, res) {
         var date1 = new Date("10/15/2014");
         var date2 = new Date();

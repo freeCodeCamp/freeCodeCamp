@@ -87,7 +87,6 @@ block content
                 script(type="text/javascript").
                     var tests = !{JSON.stringify(tests)};
                     var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var challengeEntryPoint = !{JSON.stringify(challengeEntryPoint)};
                     var passedBonfireHash = !{JSON.stringify(bonfireHash)};
                     var challengeName = !{JSON.stringify(name)};
                     var started = Math.floor(Date.now() / 1000);
@@ -96,7 +95,7 @@ block content
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true)
-                script(src='/js/lib/bonfire/bonfireFramework_v0.1.1.js')
+                script(src='/js/lib/bonfire/bonfireFramework_v0.1.2.js')
 
 
 
