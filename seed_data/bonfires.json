@@ -293,15 +293,12 @@
       "Check if a value is classified as a boolean primitive. Return true or false.",
       "Boolean primitives are true and false."
     ],
-    "challengeSeed": "function boo(boolean) {\n  // What is the new fad diet for ghost developers? The Boolean.\r\n  return boolean;\r\n}\n\nboo(null);",
+    "challengeSeed": "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\r\n  return bool;\r\n}\n\nboo(null);",
     "tests": [
       "assert.strictEqual(boo(true), true);",
       "assert.strictEqual(boo(false), true);",
-      "assert.strictEqual(boo(Object(true)), true);",
-      "assert.strictEqual(boo(Object(false)), true);",
-      "assert.strictEqual(boo(args), false);",
       "assert.strictEqual(boo([1, 2, 3]), false);",
-      "assert.strictEqual(boo(slice), false);",
+      "assert.strictEqual(boo([].slice), false);",
       "assert.strictEqual(boo({ 'a': 1 }), false);",
       "assert.strictEqual(boo(1), false);",
       "assert.strictEqual(boo(NaN), false);",
