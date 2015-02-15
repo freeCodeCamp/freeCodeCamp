@@ -194,15 +194,12 @@ profileValidation.directive('existingUsername', function($http) {
                 if (element.val().length > 0) {
                     ngModel.$setValidity('exists', false);
                 } else {
+                    $('#completed-with').removeClass('ng-dirty');
                     ngModel.$setPristine();
                 }
                 if (element.val()) {
                     $http.get("/api/checkExistingUsername/" + element.val()).success(function (data) {
-                        if (element.val() == scope.existingUsername) {
-                            ngModel.$setValidity('exists', false);
-                        } else if (data) {
-                            ngModel.$setValidity('exists', true);
-                        }
+                        ngModel.$setValidity('exists', data);
                     });
                 }
             });

@@ -192,11 +192,9 @@ exports.checkUniqueUsername = function(req, res) {
  */
 exports.checkExistingUsername = function(req, res) {
     User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
-        if (data == 1) {
-            debug('sending false back')
+        if (data === 1) {
             return res.send(true);
         } else {
-            debug('sending true back')
             return res.send(false);
         }
     });
