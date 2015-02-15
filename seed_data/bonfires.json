@@ -7,13 +7,14 @@
       "Click the button below for further instructions.",
       "Your goal is to fix the failing test.",
       "First, run all the tests by clicking \"Run code\" or by pressing Control + Enter",
-      "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire."
+      "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire.",
+      "Make this function return true no matter what."
     ],
     "tests": [
-      "expect(meetBonfire(\"test\")).to.be.a(\"boolean\");",
-      "expect(meetBonfire(\"test\")).to.be.true;"
+      "expect(meetBonfire()).to.be.a(\"boolean\");",
+      "expect(meetBonfire()).to.be.true;"
     ],
-    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return false;\n}\n\n",
+    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read console.log statements for debugging purposes in the developer tools\");\n\n  return false;\n}\n\n",
     "challengeEntryPoint": "meetBonfire(\"You can do this!\");"
   },
   {
