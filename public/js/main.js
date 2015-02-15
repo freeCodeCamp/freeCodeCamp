@@ -194,18 +194,16 @@ profileValidation.directive('existingUsername', ['$http', function($http) {
         require: 'ngModel',
         link: function (scope, element, attrs, ngModel) {
             element.bind("keyup", function (event) {
-                console.log(element.val());
-                if ($('#completed-with').val().length > 0) {
+                if (element.val().length > 0) {
                     ngModel.$setValidity('exists', false);
                 } else {
                     $('#completed-with').removeClass('ng-dirty');
                     ngModel.$setPristine();
                 }
-                if ($('#completed-with').val()) {
+                if (element.val()) {
                     $http
-                    .get("/api/checkExistingUsername/" + $('#completed-with').val())
+                    .get("/api/checkExistingUsername/" + element.val())
                     .success(function (data) {
-                        console.log('Data received from api call is: ', data);
                         ngModel.$setValidity('exists', data);
                     });
                 }
