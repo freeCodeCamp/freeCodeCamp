@@ -209,17 +209,10 @@
     ]
   },
   {
-<<<<<<< HEAD
-    "_id": "a39963a4c10bc8b4d4f06d7e",
-    "name": "Seek and Destroy",
-    "difficulty": "1.60",
-    "description": [
-=======
     "_id":"a39963a4c10bc8b4d4f06d7e",
     "name":"Seek and Destroy",
     "difficulty":"1.60",
     "description":[
->>>>>>> master
       "Remove all values (last argument(s)) from an array (first argument) and return as a new array."
     ],
     "challengeSeed": "function destroyer(arr) {\n  // Remove all the values\r\n  return arr;\r\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);",
