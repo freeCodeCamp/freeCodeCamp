@@ -167,7 +167,7 @@ profileValidation.controller('doneWithFirst100HoursFormController', ['$scope',
     }
 ]);
 
-profileValidation.directive('uniqueUsername',['$scope', '$http',function($http) {
+profileValidation.directive('uniqueUsername',['$http',function($http) {
     return {
         restrict: 'A',
         require: 'ngModel',
