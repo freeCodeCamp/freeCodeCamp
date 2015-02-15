@@ -186,7 +186,7 @@
     "description": [
       "Return the remaining elements of an array after chopping off n elements from the head."
     ],
-    "challengeSeed": "function slasher(arr) {\n  // it doesn't allways pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
+    "challengeSeed": "function slasher(arr, howMany) {\n  // it doesn't allways pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
     "tests": [
       "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
       "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
