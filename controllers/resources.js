@@ -104,12 +104,12 @@ module.exports = {
         var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
         var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
         client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, res2) {
-            client.get('https://api.github.com/repos/freecodecamp/freecodecamp/pulls', githubHeaders, function(pulls, res3) {
-                client.get('https://api.github.com/repos/freecodecamp/freecodecamp/issues', githubHeaders, function(issues, res4) {
-                    client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (blogger, res5) {
+            client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (blogger, res5) {
+                client.get('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(pulls, res3) {
+                    pulls = Object.keys(JSON.parse(pulls)).length || "Can't connect to github";
+                    client.get('https://api.github.com/repos/freecodecamp/freecodecamp/issues?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(issues, res4) {
                         var nonprofitProjects = (JSON.parse(trello)).length || 27;
-                        var pulls = pulls ? (JSON.parse(pulls)).length : 0;
-                        var issues = issues ? (JSON.parse(issues)).length : 0;
+                        issues = Object.keys(JSON.parse(issues)).length - pulls || "Can't connect to github";
                         var blog = JSON.parse(blogger);
                         User.count({'points': {'$gt': 2}}, function (err, c3) {
                             if (err) {
