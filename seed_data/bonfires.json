@@ -310,7 +310,9 @@
     "name": "Sorted Union",
     "difficulty": "2.07",
     "description": [
-      "Write a function that takes two or more arrays and returns a new array of unique values sorted in order."
+      "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
+      "The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.",
+      "Check the assertion tests for examples."
     ],
     "challengeSeed": "function unite(arr) {\n  return arr;\r\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
     "tests": [
