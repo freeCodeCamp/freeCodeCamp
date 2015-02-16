@@ -9,7 +9,27 @@ var _ = require('lodash'),
 
 var highestChallengeNumber = 53;
 
-exports.returnChallenge = function(req, res, next) {
+
+exports.returnNextChallenge = function(req, res) {
+    if (req.user) {
+        ch = req.user.challengesHash;
+        if (req.user.challengesHash[0] > 0) {
+            var max = Object.keys(ch).reduce(function(max, key) {
+                return (max === undefined || ch[key] > ch[max]) ? +key : max;
+            });
+            nextChallenge = max + 1;
+            res.redirect('challenges/' + nextChallenge);
+        } else {
+            res.redirect('challenges/0');
+        }
+    } else {
+        res.render('home', {
+            title: 'Learn to Code and Become a Software Engineer',
+        });
+    }
+};
+
+exports.returnChallenge = function(req, res) {
     var challengeNumber = parseInt(req.params.challengeNumber) || 0;
     if (challengeNumber > highestChallengeNumber) {
         req.flash('errors', {

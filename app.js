@@ -168,6 +168,7 @@ app.use(helmet.contentSecurityPolicy({
         '*.vimeo.com',
         '*.twitter.com',
         '*.rafflecopter.com',
+        '*.ghbtns.com'
     ].concat(trusted),
     reportOnly: false, // set to true if you only want to report errors
     setAllHeaders: false, // set to true if you want to set all headers
@@ -255,10 +256,19 @@ app.post(
     passportConf.isAuthenticated,
     userController.updateProgress
 );
+
+/**
+ * Challenge related routes
+ */
+app.get(
+    '/challenges/',
+    challengesController.returnNextChallenge
+);
 app.get(
     '/challenges/:challengeNumber',
     challengesController.returnChallenge
 );
+
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
 

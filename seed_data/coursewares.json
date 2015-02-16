@@ -420,6 +420,36 @@
   },
 
   {
+    "_id" : "bad87fee1348bd9aedf08811",
+    "name": "Use rgb Codes for Precise Colors",
+    "difficulty" : "0.17",
+    "description": [
+      "Change the <code>red-text</code> class's color <code>rgb</code> value to be red.",
+      "Another way to represent color in CSS is with <code>rgb</code>, or red-green-blue notation.",
+      "For each of the three colors, you specify a value between 0 and 256.",
+      "For example, black is <code>rgb(0, 0, 0)</code>, white is <code>rgb(255, 255, 255)</code>, bright green is <code>rgb(0, 255, 0)</code>. You can also get less intense colors by using values lower than 255. For example, light green is <code>rgb(0, 123, 0).",
+      "If you think about it, this is just as precise as using <code>hex code</code>, because 16 times 16 is 256. In practice, most developers use <code>hex code</code> since it's faster to say out loud and to type.",
+      "We'll use 6-digit <code>hex code</code> in all our challenges going forward, but it's good to be aware of this <code>rgb</code> notation."
+    ],
+    "tests": [
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('h2')).to.have.class('red-text');"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .red-text {",
+      "    color: rgb(0, 255, 0);",
+      "  }",
+      "</style>",
+      "",
+      "<h1>hello world</h1>",
+      "<h2 class=\"red-text\">cat photo app</h2>",
+      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+    ],
+    "challengeType": 0
+  },
+
+  {
     "_id" : "bad87fee1348bd9aedf08810",
     "name": "Use Hex Codes for Precise Colors",
     "difficulty" : "0.15",
@@ -478,7 +508,7 @@
 
   {
     "_id" : "bad87fee1348bd9aedf08811",
-    "name": "Use rgb Codes for Precise Colors",
+    "name": "Set the Alpha of a Color with rgba",
     "difficulty" : "0.17",
     "description": [
       "Change the <code>red-text</code> class's color <code>rgb</code> value to be red.",

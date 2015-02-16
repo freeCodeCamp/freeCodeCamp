@@ -102,48 +102,57 @@ module.exports = {
         var date2 = new Date();
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
         var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
         client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, res2) {
-            client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function(blogger, res3) {
-                var nonprofitProjects = (JSON.parse(trello)).length || 27;
-                var blog = JSON.parse(blogger);
-                User.count({'points': {'$gt': 2}}, function (err, c3) {
-                    if (err) {
-                        debug('User err: ', err);
-                        next(err);
-                    }
-                    User.count({'points': {'$gt': 9}}, function (err, c10) {
-                        if (err) {
-                            debug('User err: ', err);
-                            next(err);
-                        }
-                        User.count({'points': {'$gt': 29}}, function (err, c30) {
+            client.get('https://api.github.com/repos/freecodecamp/freecodecamp/pulls', githubHeaders, function(pulls, res3) {
+                client.get('https://api.github.com/repos/freecodecamp/freecodecamp/issues', githubHeaders, function(issues, res4) {
+                    client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (blogger, res5) {
+                        var nonprofitProjects = (JSON.parse(trello)).length || 27;
+                        var pulls = pulls ? (JSON.parse(pulls)).length : 0;
+                        var issues = issues ? (JSON.parse(issues)).length : 0;
+                        var blog = JSON.parse(blogger);
+                        User.count({'points': {'$gt': 2}}, function (err, c3) {
                             if (err) {
                                 debug('User err: ', err);
                                 next(err);
                             }
-                            User.count({'points': {'$gt': 53}}, function (err, all) {
+                            User.count({'points': {'$gt': 9}}, function (err, c10) {
                                 if (err) {
                                     debug('User err: ', err);
                                     next(err);
                                 }
-                                res.render('resources/learn-to-code', {
-                                    title: 'About Free Code Camp and Our Team of Volunteers',
-                                    daysRunning: daysRunning,
-                                    nonprofitProjects: nonprofitProjects,
-                                    c3: c3,
-                                    c10: c10,
-                                    c30: c30,
-                                    all: all,
-                                    blog1Title: blog["items"][0]["title"],
-                                    blog1Link: blog["items"][0]["url"],
-                                    blog2Title: blog["items"][1]["title"],
-                                    blog2Link: blog["items"][1]["url"],
-                                    blog3Title: blog["items"][2]["title"],
-                                    blog3Link: blog["items"][2]["url"],
-                                    blog4Title: blog["items"][3]["title"],
-                                    blog4Link: blog["items"][3]["url"],
-                                    blog5Title: blog["items"][4]["title"],
-                                    blog5Link: blog["items"][4]["url"]
+                                User.count({'points': {'$gt': 29}}, function (err, c30) {
+                                    if (err) {
+                                        debug('User err: ', err);
+                                        next(err);
+                                    }
+                                    User.count({'points': {'$gt': 53}}, function (err, all) {
+                                        if (err) {
+                                            debug('User err: ', err);
+                                            next(err);
+                                        }
+                                        res.render('resources/learn-to-code', {
+                                            title: 'About Free Code Camp and Our Team of Volunteers',
+                                            daysRunning: daysRunning,
+                                            nonprofitProjects: nonprofitProjects,
+                                            pulls: pulls,
+                                            issues: issues,
+                                            c3: c3,
+                                            c10: c10,
+                                            c30: c30,
+                                            all: all,
+                                            blog1Title: blog["items"][0]["title"],
+                                            blog1Link: blog["items"][0]["url"],
+                                            blog2Title: blog["items"][1]["title"],
+                                            blog2Link: blog["items"][1]["url"],
+                                            blog3Title: blog["items"][2]["title"],
+                                            blog3Link: blog["items"][2]["url"],
+                                            blog4Title: blog["items"][3]["title"],
+                                            blog4Link: blog["items"][3]["url"],
+                                            blog5Title: blog["items"][4]["title"],
+                                            blog5Link: blog["items"][4]["url"]
+                                        });
+                                    });
                                 });
                             });
                         });
