@@ -97,25 +97,6 @@ module.exports = {
         });
     },
 
-    pairProgramWithTeamViewer: function(req, res) {
-        Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
-            if (err) {
-                debug('Challenge err: ', err);
-                next(err);
-            }
-            res.render('resources/pair-program-with-team-viewer', {
-                title: 'Challenge: Pair Program with Team Viewer',
-                name: 'Pair Program with Team Viewer',
-                video: '',
-                time: 30,
-                steps: steps,
-                cc: req.user ? req.user.challengesHash : undefined,
-                points: req.user ? req.user.points : undefined,
-                challenges: c
-            });
-        });
-    },
-
     about: function(req, res) {
         var date1 = new Date("10/15/2014");
         var date2 = new Date();
@@ -123,7 +104,7 @@ module.exports = {
         var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
         client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, res2) {
             client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function(blogger, res3) {
-                var nonprofitProjects = trello.length || 15;
+                var nonprofitProjects = (JSON.parse(trello)).length || 27;
                 var blog = JSON.parse(blogger);
                 User.count({'points': {'$gt': 2}}, function (err, c3) {
                     if (err) {

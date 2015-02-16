@@ -73,11 +73,10 @@ var editorValue;
 
 var challengeSeed = challengeSeed || null;
 var tests = tests || [];
-var challengeEntryPoint = challengeEntryPoint || null;
 
 
 if (challengeSeed !== null) {
-    editorValue = challengeSeed + '\n\n' + challengeEntryPoint;
+    editorValue = challengeSeed;
 } else {
     editorValue = nonChallengeValue;
 }
@@ -121,9 +120,7 @@ function bonfireExecute() {
     userJavaScript = removeComments(userJavaScript);
     userJavaScript = scrapeTests(userJavaScript);
     // simple fix in case the user forgets to invoke their function
-    if (challengeEntryPoint && challengeSeed) {
-        userJavaScript = challengeEntryPoint + ' ' + userJavaScript;
-    }
+
     submit(userJavaScript, function(cls, message) {
         if (cls) {
             codeOutput.setValue(message.error);

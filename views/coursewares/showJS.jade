@@ -1,0 +1,76 @@
+extends ../layout-wide
+block content
+    script(src='/js/lib/codemirror/lib/codemirror.js')
+    script(src='/js/lib/codemirror/addon/edit/closebrackets.js')
+    script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
+    script(src='/js/lib/codemirror/addon/lint/lint.js')
+    script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
+    script(src='//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js')
+    script(src='/js/lib/chai/chai.js')
+    link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
+    link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
+    link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
+    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Ubuntu+Mono")
+    script(src='/js/lib/codemirror/mode/javascript/javascript.js')
+    script(src='/js/lib/jailed/jailed.js')
+    script(src='/js/lib/bonfire/bonfireInit.js')
+    .row
+        .col-xs-12.col-sm-12.col-md-4.bonfire-top
+            #testCreatePanel
+                h1.text-center= name
+                .well
+                    .row
+                        .col-xs-12
+                            .bonfire-instructions
+                                p= brief
+                                #brief-instructions
+                                    .text-center
+                                        button#more-info.btn.btn-info
+                                            span.ion-help-circled
+                                            | More information
+                                #long-instructions.row.hide
+                                    .col-xs-12
+                                        for sentence in details
+                                            p!= sentence
+                                        .text-center
+                                            button#less-info.btn.btn-info
+                                                span.ion-help-circled
+                                                | Less information
+                #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+                br
+                form.code
+                    .form-group.codeMirrorView
+                        textarea#codeOutput
+                br
+                #testSuite
+                br
+                script(type="text/javascript").
+                    var tests = !{JSON.stringify(tests)};
+                    var challengeSeed = !{JSON.stringify(challengeSeed)};
+                    var passedBonfireHash = !{JSON.stringify(coursewareHash)};
+                    var challengeName = !{JSON.stringify(name)};
+                    var started = Math.floor(Date.now() / 1000);
+        .col-xs-12.col-sm-12.col-md-8
+            #mainEditorPanel
+                form.code
+                    .form-group.codeMirrorView
+                        textarea#codeEditor(autofocus=true)
+                script(src='/js/lib/coursewares/coursewaresJSFramework.js')
+    #complete-courseware-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.zoomIn.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header= compliment
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body(ng-controller="pairedWithController")
+                    .text-center
+                        .animated.zoomInDown.delay-half
+                            span.completion-icon.ion-checkmark-circled.text-primary
+                    - if (cc)
+
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
+                    - if (points && points > 2)
+                        a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
+                        i.fa.fa-twitter &nbsp;
+                            = phrase
+                    - else
+                        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress

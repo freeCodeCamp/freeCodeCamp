@@ -25,7 +25,7 @@ block content
                     .col-xs-12
                         h2.text-center= name
                         .bonfire-instructions
-                            p= brief
+                            p!= brief
                             #brief-instructions
                                 .text-center
                                     button#more-info.btn.btn-info
@@ -39,16 +39,26 @@ block content
                                         button#less-info.btn.btn-info
                                             span.ion-help-circled
                                             | Less information
-            div.hidden
-                #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
                 br
-                form.code
-                    .form-group.codeMirrorView
-                        textarea#codeOutput
+
+            - if (cc)
+                a.btn.btn-primary.btn-lg.btn-block#next-courseware-button
+                    |  Go to my next challenge
+                    br
+                    |  (ctrl + enter)
+                script.
+                    var userLoggedIn = true;
+
+            - else
+                a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                script.
+                    var userLoggedIn = false;
             br
-            #testSuite
+            ul#testSuite.list-group
+
             br
             script(type="text/javascript").
+                $('#next-courseware-button').attr('disabled', 'disabled');
                 var tests = !{JSON.stringify(tests)};
                 var challengeSeed = !{JSON.stringify(challengeSeed)};
                 var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
@@ -60,7 +70,6 @@ block content
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true)
-                script(src='/js/lib/coursewares/coursewaresFramework_v0.1.0.js')
         .col-md-4.col-lg-3
             .hidden-xs.hidden-sm
                 img.iphone-position(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png")
@@ -77,11 +86,5 @@ block content
                         .text-center
                             .animated.zoomInDown.delay-half
                                 span.completion-icon.ion-checkmark-circled.text-primary
-                        - if (cc)
-                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-courseware-button(name='_csrf', value=_csrf, aria-hidden='true') Go to my next challenge (ctrl + enter)
-                            - if (points && points > 2)
-                                a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge%20%23#{number}:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{number}&hashtags=LearnToCode, JavaScript" target="_blank")
-                                  i.fa.fa-twitter &nbsp;
-                                     = phrase
-                        - else
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+    script(src="/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js")

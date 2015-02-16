@@ -1,8 +1,12 @@
 extends ../layout-wide
 block content
+
     .text-center
         h1 Live Pair Programming
-        h2 Our next session will be February 3rd, 2015 at 9 p.m. EST!
+
+
+        h2#next-session
+
         h2 Watch the live stream below or on our &nbsp;
             a(href="http://twitch.tv/freecodecamp", target='_blank') Twitch.tv channel
             | .
@@ -46,3 +50,7 @@ block content
             br
             br
             br
+        script(src="/js/lib/moment/moment.js")
+        script(src="/js/lib/moment/nextTuesday.js")
+        script.
+            $('#next-session').text(nextSession());

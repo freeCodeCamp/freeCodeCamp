@@ -66,6 +66,9 @@ $(document).ready(function() {
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
 
     });
+    $('#completed-courseware').on('click', function() {
+        $('#complete-courseware-dialog').modal('show');
+    });
 
     $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
         editor.focus();
@@ -74,7 +77,7 @@ $(document).ready(function() {
     $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
         editor.focus();
     });
-    $('.next-courseware-button').on('click', function() {
+    $('#next-courseware-button').on('click', function() {
         if ($('.signup-btn-nav').length < 1) {
             $.post(
                 '/completed-courseware',
@@ -164,7 +167,7 @@ profileValidation.controller('doneWithFirst100HoursFormController', ['$scope',
     }
 ]);
 
-profileValidation.directive('uniqueUsername', function($http) {
+profileValidation.directive('uniqueUsername',['$http',function($http) {
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -183,9 +186,9 @@ profileValidation.directive('uniqueUsername', function($http) {
             });
         }
     }
-});
+}]);
 
-profileValidation.directive('existingUsername', function($http) {
+profileValidation.directive('existingUsername', ['$http', function($http) {
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -194,27 +197,26 @@ profileValidation.directive('existingUsername', function($http) {
                 if (element.val().length > 0) {
                     ngModel.$setValidity('exists', false);
                 } else {
+                    element.removeClass('ng-dirty');
                     ngModel.$setPristine();
                 }
                 if (element.val()) {
-                    $http.get("/api/checkExistingUsername/" + element.val()).success(function (data) {
-                        if (element.val() == scope.existingUsername) {
-                            ngModel.$setValidity('exists', false);
-                        } else if (data) {
-                            ngModel.$setValidity('exists', true);
-                        }
+                    $http
+                    .get("/api/checkExistingUsername/" + element.val())
+                    .success(function (data) {
+                        ngModel.$setValidity('exists', data);
                     });
                 }
             });
         }
     }
-});
+}]);
 
-profileValidation.directive('uniqueEmail', function($http) {
+profileValidation.directive('uniqueEmail', ['$http', function($http) {
     return {
         restrict: 'A',
         require: 'ngModel',
-        link: function (scope, element, attrs, ngModel) {
+        link: function getUnique (scope, element, attrs, ngModel) {
             element.bind("keyup", function (event) {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
@@ -229,4 +231,4 @@ profileValidation.directive('uniqueEmail', function($http) {
             });
         }
     }
-});
+}]);

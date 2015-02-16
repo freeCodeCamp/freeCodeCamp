@@ -26,7 +26,6 @@ editor.setOption("extraKeys", {
         cm.replaceSelection(spaces);
     },
     "Ctrl-Enter": function() {
-        bonfireExecute();
         return false;
     }
 });
@@ -40,7 +39,8 @@ var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3
         "<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css'/>" +
         "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/>" +
         "<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'/>" +
-        "<style>body { padding: 0px 3px 0px 3px; }</style>";
+        "<style>body { padding: 0px 3px 0px 3px; }</style>" +
+        "<script>var expect = chai.expect; var should = chai.should(); var assert = chai.assert;</script>";
 
 var allTests = '';
 (function() {
@@ -59,28 +59,42 @@ editor.on("change", function () {
 });
 var nodeEnv = prodOrDev === 'production' ? 'http://www.freecodecamp.com' : 'http://localhost:3001';
 function updatePreview() {
+    goodTests = 0;
     var previewFrame = document.getElementById('preview');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     preview.open();
+    $('#testSuite').empty();
     preview.write(libraryIncludes + editor.getValue() + otherTestsForNow);
     preview.close();
+
 }
 setTimeout(updatePreview, 300);
 
 /**
- * Window postMessage receiving funtionality
+ * "post" methods
  */
-var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-var eventer = window[eventMethod];
-var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
-// Listen to message from child window
-eventer(messageEvent,function(e) {
-    if (e.data === 'CompleteAwesomeSauce') {
+var postSuccess = function(data) {
+    var testDoc = document.createElement("div");
+    $(testDoc)
+        .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>")
+        .appendTo($('#testSuite'));
+    testSuccess();
+};
+
+var postError = function(data) {
+    var testDoc = document.createElement("div");
+    $(testDoc)
+        .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>")
+        .prependTo($('#testSuite'))
+};
+var goodTests = 0;
+var testSuccess = function() {
+    goodTests++;
+    if (goodTests === tests.length) {
         showCompletion();
     }
-},false);
-
+};
 var challengeSeed = challengeSeed || null;
 var tests = tests || [];
 var allSeeds = '';
@@ -115,14 +129,18 @@ function doLinting () {
     });
 };
 
-
+//$('#testSuite').empty();
 function showCompletion() {
     var time = Math.floor(Date.now() / 1000) - started;
     ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time);
-    $('#complete-courseware-dialog').modal('show');
-    $('#complete-courseware-dialog').keydown(function(e) {
+    $('#next-courseware-button').removeAttr('disabled');
+    $('#next-courseware-button').addClass('animated tada');
+    if (!userLoggedIn) {
+        $('#complete-courseware-dialog').modal('show');
+    }
+    $('body').keydown(function(e) {
         if (e.ctrlKey && e.keyCode == 13) {
-            $('.next-courseware-button').click();
+            $('#next-courseware-button').click();
         }
     });
 }
