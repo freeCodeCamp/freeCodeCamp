@@ -333,7 +333,7 @@
   },
   {
     "_id": "a103376db3ba46b2d50db289",
-    "name": "Spinal-Tap-Case",
+    "name": "Spinal Tap Case",
     "difficulty": "2.08",
     "description": [
       "Convert a string to spinal case."
