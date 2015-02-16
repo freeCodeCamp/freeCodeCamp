@@ -479,7 +479,7 @@
       "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(), setLastName(), and setFullName().",
       "These methods must be the only available means for interacting with the object."
     ],
-    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();",
+    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();",
     "tests": [
       "expect(Object.keys(bob).length).to.eql(6);",
       "expect(bob instanceof Person).to.be.true;",
