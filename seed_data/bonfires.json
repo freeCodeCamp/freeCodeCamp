@@ -314,7 +314,7 @@
       "The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.",
       "Check the assertion tests for examples."
     ],
-    "challengeSeed": "function unite(arr) {\n  return arr;\r\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
+    "challengeSeed": "function unite(arr1, arr2, arr3) {\n  return arr1;\r\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
     "tests": [
       "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
       "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');"
@@ -338,7 +338,7 @@
     "name": "Spinal Tap Case",
     "difficulty": "2.08",
     "description": [
-      "Convert a string to spinal case."
+      "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes."
     ],
     "challengeSeed": "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\r\n  // --David St. Hubbins\r\n  return str;\r\n}\n\nspinalCase('This Is Spinal Tap');",
     "tests": [
@@ -460,12 +460,14 @@
     "name": "Everything Be True",
     "difficulty": "2.21",
     "description": [
-      "Check if the predicate (second argument) returns truthy for all elements of a collection (first argument)."
+      "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
+      "For this, check to see if the property defined in the second argument is present on every element of the collection.",
+      "Remember, you can access object properties through either dot notation or [] notation."
     ],
     "challengeSeed": "function every(collection, pre) {\n  // Does everyone have one of these?\r\n  return pre;\r\n}\n\nevery([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');",
     "tests": [
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
-      "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex', 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
+      "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
     ]
   },
   {
