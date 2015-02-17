@@ -8,6 +8,16 @@ block content
         var challengeName = 'Learn to code'
     .row
         .col-xs-12.col-sm-12.col-md-6
+            .panel.panel-info
+                .panel-heading.landing-panel-heading.text-center Announcements
+                .panel-body
+                    .landing-panel-body.text-center
+                        for announcement in announcements
+                            h2
+                                if (announcement.length > 1)
+                                    a(href=announcement[1])= announcement[0]
+                                else
+                                    = announcement[0]
             include ../partials/faq
         .col-xs-12.col-sm-12.col-md-6
             .panel.panel-info
