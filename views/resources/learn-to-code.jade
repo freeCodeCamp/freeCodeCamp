@@ -2,7 +2,7 @@ extends ../layout-wide
 block content
     img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
     br
-    a.btn.btn-big.btn-block.btn-primary.next-challenge-button(href="/challenges/") Take me to my next challenge
+    a.btn.btn-big.btn-block.btn-primary.next-challenge-button(href="/challenges") Take me to my next challenge
     br
     script.
         var challengeName = 'Learn to code'
@@ -21,7 +21,7 @@ block content
             include ../partials/faq
         .col-xs-12.col-sm-12.col-md-6
             .panel.panel-info
-                .panel-heading.landing-panel-heading.text-center Stats
+                .panel-heading.landing-panel-heading.text-center Statistics
                 .panel-body
                     .landing-panel-body
                         include ../partials/stats
