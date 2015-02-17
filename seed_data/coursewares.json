@@ -1,45 +1,5 @@
 [
-  {
-    "_id" : "bd7123d8c441eddfaeb5bdef",
-    "name": "Learn how Free Code Camp Works",
-    "difficulty": 9.99,
-    "description": [
-      "Watch this 90 second video, or simply read this summary:",
-      "Welcome to Free Code Camp. We're a community of busy people learning to code.",
-      "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And the best way to stay motivated is to code with friends.",
-      "To maximize accessibility, all our challenges are self-paced, browser-based, and free.",
-      "All of us start with the same 100 hours of interactive coding challenges. These cover Computer Science and databases. They also cover in-demand JavaScript tools like jQuery, Node.js and MongoDB.",
-      "Once we have a basic understanding of web development, we'll spend another 900 hours putting that theory into practice. We'll build full stack solutions for nonprofits.",
-      "By the end of this process, we'll be good at coding. We'll have a portfolio of apps with happy users to prove it. We'll also have an alumni network of fellow coders and nonprofits ready to serve as references.",
-      "If you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
-      "Also, for every pure coding job, there are at least 5 additional jobs that require some coding skills. So even if you decide not to pursue coding as a career, you'll still walk away with a valuable job skill.",
-      "There are 3 keys to succeeding in our community: do the challenges, make friends, and find a routine.",
-      "Now it's time to join our chatroom. Click the \"Go to my next challenge\" button to move on to your next challenge."
-    ],
-    "tests": [
-      ""
-    ],
-    "challengeSeed": [
-      "114486344"
-    ],
-    "challengeType" : 2
-  },
-  {
-    "_id": "bd7123c8c441eddfaeb5bdef",
-    "name": "Meet Booleans",
-    "difficulty": "9.999",
-    "description": [
-      "Return true"
-    ],
-    "tests": [
-      "expect(welcomeToBooleans()).to.be.a(\"boolean\");",
-      "expect(welcomeToBooleans()).to.be.true;"
-    ],
-    "challengeSeed": [
-      "function welcomeToBooleans() {\n  // Good luck!\n  return false;\n}\n\nwelcomeToBooleans();"
-      ],
-    "challengeType": 1
-  },
+
   {
     "_id" : "bd7123c8c441eddfaeb5bdef",
     "name": "Start our Challenges",
@@ -1323,7 +1283,7 @@
   },
 
   {
-    "_id" : "bad87fee1348cd8acef08812",
+    "_id" : "bae87fee1348cd8acef08812",
     "name": "Color a Bootstrap Button with Button Primary",
     "difficulty" : "0.38",
     "description": [
@@ -1332,7 +1292,8 @@
       "Note that these buttons still need the <code>btn</code> class."
     ],
     "tests": [
-      "expect($('.btn-block').length).to.eql(2);"
+      "expect($('.btn-block').length).to.eql(2);",
+      "expect($('.btn-primary').length).to.eql(2);"
     ],
     "challengeSeed": [
       "<style>",
@@ -2617,5 +2578,46 @@
       "<h1>hello world</h1>"
     ],
     "challengeType": 0
+  },
+  {
+    "_id" : "bd7123d8c441eddfaeb5bdef",
+    "name": "Learn how Free Code Camp Works",
+    "difficulty": 9.99,
+    "description": [
+      "Watch this 90 second video, or simply read this summary:",
+      "Welcome to Free Code Camp. We're a community of busy people learning to code.",
+      "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And the best way to stay motivated is to code with friends.",
+      "To maximize accessibility, all our challenges are self-paced, browser-based, and free.",
+      "All of us start with the same 100 hours of interactive coding challenges. These cover Computer Science and databases. They also cover in-demand JavaScript tools like jQuery, Node.js and MongoDB.",
+      "Once we have a basic understanding of web development, we'll spend another 900 hours putting that theory into practice. We'll build full stack solutions for nonprofits.",
+      "By the end of this process, we'll be good at coding. We'll have a portfolio of apps with happy users to prove it. We'll also have an alumni network of fellow coders and nonprofits ready to serve as references.",
+      "If you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
+      "Also, for every pure coding job, there are at least 5 additional jobs that require some coding skills. So even if you decide not to pursue coding as a career, you'll still walk away with a valuable job skill.",
+      "There are 3 keys to succeeding in our community: do the challenges, make friends, and find a routine.",
+      "Now it's time to join our chatroom. Click the \"Go to my next challenge\" button to move on to your next challenge."
+    ],
+    "tests": [
+      ""
+    ],
+    "challengeSeed": [
+      "114486344"
+    ],
+    "challengeType" : 2
+  },
+  {
+    "_id": "bd7123c8c441eddfaeb5bdef",
+    "name": "Meet Booleans",
+    "difficulty": "9.98",
+    "description": [
+      "Return true"
+    ],
+    "tests": [
+      "expect(welcomeToBooleans()).to.be.a(\"boolean\");",
+      "expect(welcomeToBooleans()).to.be.true;"
+    ],
+    "challengeSeed": [
+      "function welcomeToBooleans() {\n  // Good luck!\n  return false;\n}\n\nwelcomeToBooleans();"
+    ],
+    "challengeType": 1
   }
 ]
