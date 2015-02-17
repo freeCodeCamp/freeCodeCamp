@@ -121,6 +121,7 @@ module.exports = {
     bloggerCalls: function(req, res) {
         client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (blog, res5) {
             var blog = blog.length > 100 ? JSON.parse(blog) : "";
+            res.type("application/javascript");
             res.send({
                 blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
                 blog1Link: blog ? blog["items"][0]["url"] : "http://blog.freecodecamp.com",

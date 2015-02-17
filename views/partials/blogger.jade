@@ -3,7 +3,9 @@ script.
     (function() {
         $.ajax({
             url: 'http://freecodecamp.com/api/blogger',
-            type: 'GET'
+            type: 'GET',
+            crossDomain: true,
+            dataType: 'jsonp'
         }).done(
             function(data) {
                 var props = Object.keys(data);
