@@ -2,7 +2,7 @@
   "announcements": [
     ["Screen Hero is now free on Windows and Mac! Follow these special instructions to install it.", "http://freecodecamp.com/challenges/34"],
     ["Bonfire is now live with 30+ challenges! If you haven't started CoderByte, do these instead.", "http://freecodecamp.com/bonfires"],
-    ["Once you finish all the challenges, come to our Nonprofit Project Office Hours every Monday and Thursday Night at 9 pm EST", "https://gitter.im/FreeCodeCamp/NonprofitProjects"]
+    ["Once you finish all the challenges, we welcome you to attend our Nonprofit Project Office Hours every Monday and Thursday Night at 9 pm EST.", "https://gitter.im/FreeCodeCamp/NonprofitProjects"]
   ],
   "questions": [{
     "question": "Time Complexity of Accessing Array Index (int a = ARR[5];)",

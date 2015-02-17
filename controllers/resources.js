@@ -112,7 +112,6 @@ module.exports = {
                     client.get('https://api.github.com/repos/freecodecamp/freecodecamp/issues?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(issues, res4) {
                         issues = ((pulls === parseInt(pulls)) && issues) ? Object.keys(JSON.parse(issues)).length - pulls : "Can't connect to GitHub";
                         var announcements = resources.announcements;
-                        debug('here', announcements);
                         User.count({'points': {'$gt': 2}}, function (err, c3) {
                             if (err) {
                                 debug('User err: ', err);
