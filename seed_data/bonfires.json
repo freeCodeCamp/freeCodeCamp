@@ -172,7 +172,7 @@
     "description": [
       "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array."
     ],
-    "challengeSeed": "function chunk(arr, size) {\n  // Break it up.\r\n  return arr;\r\n}\n\nchunk((['a', 'b', 'c', 'd'], 2));",
+    "challengeSeed": "function chunk(arr, size) {\n  // Break it up.\r\n  return arr;\r\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);",
     "tests": [
       "assert.deepEqual(chunk(['a', 'b', 'c', 'd'], 2), [['a', 'b'], ['c', 'd']], 'should return chunked arrays');",
       "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'should return chunked arrays');",
@@ -186,7 +186,7 @@
     "description": [
       "Return the remaining elements of an array after chopping off n elements from the head."
     ],
-    "challengeSeed": "function slasher(arr) {\n  // it doesn't allways pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
+    "challengeSeed": "function slasher(arr, howMany) {\n  // it doesn't allways pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
     "tests": [
       "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
       "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
@@ -208,6 +208,19 @@
       "assert.deepEqual(bouncer([false, null, 0]), [], 'should return empty array if all elements are falsey');"
     ]
   },
+  {
+    "_id":"a8e512fbe388ac2f9198f0fa",
+    "name":"Where art thou",
+    "difficulty":"1.55",
+    "description":[
+      "Make a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument)."
+    ],
+    "challengeSeed":"function where(collection, source) {\n  var arr = [];\r\n  // What's in a name?\r\n  return arr;\r\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });",
+    "tests":[
+      "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
+      "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');"
+    ]
+  },  
   {
     "_id":"a39963a4c10bc8b4d4f06d7e",
     "name":"Seek and Destroy",
@@ -274,21 +287,18 @@
   },
   {
     "_id": "a77dbc43c33f39daa4429b4f",
-    "name": "Boo who?",
+    "name": "Boo who",
     "difficulty": "2.06",
     "description": [
       "Check if a value is classified as a boolean primitive. Return true or false.",
       "Boolean primitives are true and false."
     ],
-    "challengeSeed": "function boo(boolean) {\n  // What is the new fad diet for ghost developers? The Boolean.\r\n  return boolean;\r\n}\n\nboo(null);",
+    "challengeSeed": "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\r\n  return bool;\r\n}\n\nboo(null);",
     "tests": [
       "assert.strictEqual(boo(true), true);",
       "assert.strictEqual(boo(false), true);",
-      "assert.strictEqual(boo(Object(true)), true);",
-      "assert.strictEqual(boo(Object(false)), true);",
-      "assert.strictEqual(boo(args), false);",
       "assert.strictEqual(boo([1, 2, 3]), false);",
-      "assert.strictEqual(boo(slice), false);",
+      "assert.strictEqual(boo([].slice), false);",
       "assert.strictEqual(boo({ 'a': 1 }), false);",
       "assert.strictEqual(boo(1), false);",
       "assert.strictEqual(boo(NaN), false);",
@@ -300,9 +310,11 @@
     "name": "Sorted Union",
     "difficulty": "2.07",
     "description": [
-      "Write a function that takes two or more arrays and returns a new array of unique values sorted in order."
+      "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
+      "The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.",
+      "Check the assertion tests for examples."
     ],
-    "challengeSeed": "function unite(arr) {\n  return arr;\r\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
+    "challengeSeed": "function unite(arr1, arr2, arr3) {\n  return arr1;\r\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
     "tests": [
       "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
       "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');"
@@ -323,10 +335,10 @@
   },
   {
     "_id": "a103376db3ba46b2d50db289",
-    "name": "Spinal-Tap-Case",
+    "name": "Spinal Tap Case",
     "difficulty": "2.08",
     "description": [
-      "Convert a string to spinal case."
+      "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes."
     ],
     "challengeSeed": "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\r\n  // --David St. Hubbins\r\n  return str;\r\n}\n\nspinalCase('This Is Spinal Tap');",
     "tests": [
@@ -448,12 +460,14 @@
     "name": "Everything Be True",
     "difficulty": "2.21",
     "description": [
-      "Check if the predicate (second argument) returns truthy for all elements of a collection (first argument)."
+      "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
+      "For this, check to see if the property defined in the second argument is present on every element of the collection.",
+      "Remember, you can access object properties through either dot notation or [] notation."
     ],
     "challengeSeed": "function every(collection, pre) {\n  // Does everyone have one of these?\r\n  return pre;\r\n}\n\nevery([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');",
     "tests": [
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
-      "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex', 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
+      "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
     ]
   },
   {
@@ -465,7 +479,7 @@
       "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(), setLastName(), and setFullName().",
       "These methods must be the only available means for interacting with the object."
     ],
-    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();",
+    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();",
     "tests": [
       "expect(Object.keys(bob).length).to.eql(6);",
       "expect(bob instanceof Person).to.be.true;",
@@ -532,7 +546,7 @@
       "expect(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]])).to.be.a('string');",
       "expect(drawer(19.50, 20.00, [['PENNY', 0.50], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]])).to.be.a('string');",
       "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['QUARTER', 0.50]], 'return correct change');",
-      "assert.deepEqual(drawer(3.26, 100.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['TWENTY', 80.00], ['TEN', 10.00], ['FIVE', 5], ['ONE', 1], ['QUARTER', 0.50], ['DIME', 0.20], ['PENNY', 0.04] ], 'return correct change with multiple coins and bills');",
+      "assert.deepEqual(drawer(3.26, 100.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['TWENTY', 60.00], ['TEN', 20.00], ['FIVE', 15], ['ONE', 1], ['QUARTER', 0.50], ['DIME', 0.20], ['PENNY', 0.04] ], 'return correct change with multiple coins and bills');",
       "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), 'Insufficient Funds', 'insufficient funds');",
       "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.50], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), \"Closed\", 'cash-in-drawer equals change');"
     ]

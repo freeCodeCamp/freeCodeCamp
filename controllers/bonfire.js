@@ -88,7 +88,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
             return res.redirect('/bonfires');
         }
 
-        bonfire = bonfire.pop()
+        bonfire = bonfire.pop();
         var dashedNameFull = bonfire.name.toLowerCase().replace(/\s/g, '-');
         if (dashedNameFull != dashedName) {
             return res.redirect('../bonfires/' + dashedNameFull);
@@ -113,7 +113,6 @@ exports.returnIndividualBonfire = function(req, res, next) {
             bonfireHash: bonfire._id
 
         });
-
     });
 };
 
