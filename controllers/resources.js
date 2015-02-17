@@ -99,7 +99,7 @@ module.exports = {
     githubCalls: function(req, res) {
         var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
         client.get('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(pulls, res3) {
-            pulls = Object.keys(JSON.parse(pulls)).length || "Can't connect to github";
+            pulls = pulls ? Object.keys(JSON.parse(pulls)).length : "Can't connect to github";
             client.get('https://api.github.com/repos/freecodecamp/freecodecamp/issues?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function (issues, res4) {
                 issues = ((pulls === parseInt(pulls)) && issues) ? Object.keys(JSON.parse(issues)).length - pulls : "Can't connect to GitHub";
                 res.send({"issues": issues, "pulls" : pulls});
