@@ -91,6 +91,12 @@ module.exports = {
         });
     },
 
+    installScreenHero: function(req, res) {
+        res.render('resources/install-screenhero', {
+            title: 'Install ScreenHero'
+        });
+    },
+
     javaScriptInYourInbox: function(req, res) {
         res.render('resources/javascript-in-your-inbox', {
             title: 'JavaScript in your Inbox'

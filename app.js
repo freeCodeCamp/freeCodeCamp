@@ -203,6 +203,7 @@ app.get('/', homeController.index);
 app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
 app.get('/live-pair-programming', resourcesController.livePairProgramming);
+app.get('/install-screenhero', resourcesController.installScreenHero);
 app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
 app.get('/chromebook', resourcesController.chromebook);
 app.get('/deploy-a-website', resourcesController.deployAWebsite);
