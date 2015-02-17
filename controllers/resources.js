@@ -114,26 +114,25 @@ module.exports = {
     },
     trelloCalls: function(req, res) {
         client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, res2) {
-            trello = trello ? (JSON.parse(trello)).length : "Can't connecto to Trello";
+            trello = trello ? (JSON.parse(trello)).length : "Can't connect to to Trello";
             res.send({"trello": trello});
         });
     },
     bloggerCalls: function(req, res) {
         client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (blog, res5) {
             var blog = blog.length > 100 ? JSON.parse(blog) : "";
-            res.type("application/javascript");
-            var blogData = { "blog1Title": blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
-                            "blog1Link": blog ? blog["items"][0]["url"] : "http://blog.freecodecamp.com",
-                            "blog2Title": blog ? blog["items"][1]["title"] : "Can't connect to Blogger",
-                            "blog2Link": blog ? blog["items"][1]["url"] : "http://blog.freecodecamp.com",
-                            "blog3Title": blog ? blog["items"][2]["title"] : "Can't connect to Blogger",
-                            "blog3Link": blog ? blog["items"][2]["url"] : "http://blog.freecodecamp.com",
-                            "blog4Title": blog ? blog["items"][3]["title"] : "Can't connect to Blogger",
-                            "blog4Link": blog ? blog["items"][3]["url"] : "http://blog.freecodecamp.com",
-                            "blog5Title": blog ? blog["items"][4]["title"] : "Can't connect to Blogger",
-                            "blog5Link": blog ? blog["items"][4]["url"] : "http://blog.freecodecamp.com"
-            };
-            res.json(blogData);
+            res.send({
+                blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
+                blog1Link: blog ? blog["items"][0]["url"] : "http://blog.freecodecamp.com",
+                blog2Title: blog ? blog["items"][1]["title"] : "Can't connect to Blogger",
+                blog2Link: blog ? blog["items"][1]["url"] : "http://blog.freecodecamp.com",
+                blog3Title: blog ? blog["items"][2]["title"] : "Can't connect to Blogger",
+                blog3Link: blog ? blog["items"][2]["url"] : "http://blog.freecodecamp.com",
+                blog4Title: blog ? blog["items"][3]["title"] : "Can't connect to Blogger",
+                blog4Link: blog ? blog["items"][3]["url"] : "http://blog.freecodecamp.com",
+                blog5Title: blog ? blog["items"][4]["title"] : "Can't connect to Blogger",
+                blog5Link: blog ? blog["items"][4]["url"] : "http://blog.freecodecamp.com"
+            });
         });
     },
 

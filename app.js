@@ -64,6 +64,7 @@ mongoose.connection.on('error', function () {
  * Express configuration.
  */
 
+
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -106,6 +107,11 @@ app.disable('x-powered-by');
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.xframe());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 var trusted = [
     "'self'",

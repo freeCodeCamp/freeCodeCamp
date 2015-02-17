@@ -2,12 +2,11 @@
 script.
     (function() {
         $.ajax({
-            url: 'http://freecodecamp.com/api/github',
+            url: '/api/github',
             type: 'GET'
         }).done(
                 function(data) {
                     var github = document.createElement('div');
-                    console.log(data);
                     $(github).html('<div class="row"><div class="col-xs-6 text-right">Open Issues:</div><div class="col-xs-6 text-left">' + data.issues + ' <a href="https://github.com/freecodecamp/freecodecamp/issues">(create one)</a></div></div><div class="row"><div class="col-xs-6 text-right">Open Pull Requests:</div><div class="col-xs-6 text-left">' + data.pulls + ' <a href="https://github.com/freecodecamp/freecodecamp/pulls">(create one)</a></div></div>').prependTo($('#github'))
                 }
         );
