@@ -142,29 +142,22 @@ module.exports = {
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
         var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
         var announcements = resources.announcements;
-        User.count({'points': {'$gt': 2}}, function (err, c3) {
+        User.count({}, function (err, c3) {
             if (err) {
                 debug('User err: ', err);
                 next(err);
             }
-            User.count({'points': {'$gt': 9}}, function (err, c10) {
+            User.count({'points': {'$gt': 53}}, function (err, all) {
                 if (err) {
                     debug('User err: ', err);
                     next(err);
                 }
-                User.count({'points': {'$gt': 53}}, function (err, all) {
-                    if (err) {
-                        debug('User err: ', err);
-                        next(err);
-                    }
-                    res.render('resources/learn-to-code', {
-                        title: 'About Free Code Camp and Our Team of Volunteers',
-                        daysRunning: daysRunning,
-                        c3: c3,
-                        c10: c10,
-                        all: all,
-                        announcements: announcements
-                    });
+                res.render('resources/learn-to-code', {
+                    title: 'About Free Code Camp and Our Team of Volunteers',
+                    daysRunning: daysRunning,
+                    c3: c3,
+                    all: all,
+                    announcements: announcements
                 });
             });
         });
