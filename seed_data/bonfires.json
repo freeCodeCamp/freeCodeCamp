@@ -558,14 +558,14 @@
     "description": [
       "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order."
     ],
-    "challengeSeed": "function inventory(arr1, arr2) {\n    // All inventory must be accounted for or you're fired!\r\n    return arr1;\r\n}\n\n// Example inventory lists\r\nvar curInv = [\r\n    [21, 'Bowling Ball'],\r\n    [2, 'Dirty Sock'],\r\n    [1, 'Hair pin'],\r\n    [5, 'Microphone']\r\n];\r\n\r\nvar newInv = [\r\n    [2, 'Hair Pin'],\r\n    [3, 'Half-Eaten Apple'],\r\n    [67, 'Bowling Ball'],\r\n    [7, 'Toothpaste']\r\n];\r\n\r\ninventory(curInv, newInv);",
+    "challengeSeed": "function inventory(arr1, arr2) {\n    // All inventory must be accounted for or you're fired!\r\n    return arr1;\r\n}\n\n// Example inventory lists\r\nvar curInv = [\r\n    [21, 'Bowling Ball'],\r\n    [2, 'Dirty Sock'],\r\n    [1, 'Hair Pin'],\r\n    [5, 'Microphone']\r\n];\r\n\r\nvar newInv = [\r\n    [2, 'Hair Pin'],\r\n    [3, 'Half-Eaten Apple'],\r\n    [67, 'Bowling Ball'],\r\n    [7, 'Toothpaste']\r\n];\r\n\r\ninventory(curInv, newInv);",
     "tests": [
-      "expect(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']])).to.be.a('array');",
-      "assert.equal(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]).length, 6);",
-      "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[88, 'Bowling Ball'], [2, 'Dirty Sock'], [3, 'Hair pin'], [3, 'Half-Eaten Apple'], [5, 'Microphone'], [7, 'Toothpaste']]);",
-      "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']], []), [[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair pin'], [5, 'Microphone']]);",
-      "assert.deepEqual(inventory([], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]);",
-      "assert.deepEqual(inventory([[0, 'Bowling Ball'], [0, 'Dirty Sock'], [0, 'Hair pin'], [0, 'Microphone']], [[1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [1, 'Bowling Ball'], [1, 'Toothpaste']]), [[1, 'Bowling Ball'], [1, 'Dirty Sock'], [1, 'Hair pin'], [1, 'Half-Eaten Apple'], [1, 'Microphone'], [1, 'Toothpaste']]);"
+      "expect(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']])).to.be.a('array');",
+      "assert.equal(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]).length, 6);",
+      "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[88, 'Bowling Ball'], [2, 'Dirty Sock'], [3, 'Hair Pin'], [3, 'Half-Eaten Apple'], [5, 'Microphone'], [7, 'Toothpaste']]);",
+      "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], []), [[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']]);",
+      "assert.deepEqual(inventory([], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[67, 'Bowling Ball'], [2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [7, 'Toothpaste']]);",
+      "assert.deepEqual(inventory([[0, 'Bowling Ball'], [0, 'Dirty Sock'], [0, 'Hair Pin'], [0, 'Microphone']], [[1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [1, 'Bowling Ball'], [1, 'Toothpaste']]), [[1, 'Bowling Ball'], [0, 'Dirty Sock'], [1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [0, 'Microphone'], [1, 'Toothpaste']]);"
     ]
   }
 ]
