@@ -8,24 +8,12 @@
         img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at Free Code Camp logo')
 .collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-right.hamburger-dropdown
-        - if (!cc)
-            li
-                a(href='/challenges/0') Challenges
-        - else
-            li
-                a(href='/challenges') Challenges
-        - if (!cc || (cc && cc[1] < 1))
-            li
-                a(href='/challenges/1') Chat
-        - else
-            li
-                a(href='http://chat.freecodecamp.com' target='_blank') Chat
-        - if (!cc || (cc && cc[2] < 1))
-            li
-                a(href='/challenges/2') Forum
-        - else
-            li
-                a(href='http://forum.freecodecamp.com' target='_blank') Forum
+        li
+            a(href='/challenges') Challenges
+        li
+            a(href='/chat') Chat
+        li
+            a(href='http://forum.freecodecamp.com' target='_blank') Forum
         li
             a(href='/bonfires') Bonfires
         if !user
@@ -34,7 +22,10 @@
                 a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
         else
             li
-                a(href='/account') [&nbsp;#{user.points}&nbsp;]
+                if (user.profile.username)
+                    a(href='/' + user.profile.username) [&nbsp;#{user.points}&nbsp;]
+                else
+                    a(href='/account') [&nbsp;#{user.points}&nbsp;]
             .hidden-xs
                 if user.profile.picture
                     if (user.profile.username)

@@ -55,6 +55,12 @@ module.exports = {
         });
     },
 
+    chat: function chat(req, res) {
+        res.render('resources/chat', {
+            title: "Enter Free Code Camp's Chat Rooms"
+        });
+    },
+
     nonprofitProjectInstructions: function nonprofitProjectInstructions(req, res) {
         res.render('resources/nonprofit-project-instructions', {
             title: 'Nonprofit Project Instructions'

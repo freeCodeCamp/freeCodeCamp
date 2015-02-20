@@ -1,10 +1,15 @@
 extends ../layout
 block content
     .col-xs-12.col-sm-12.col-md-12
-        .panel.panel-primary
+        .panel.panel-info
             .panel-heading.text-center
                 h1 #{username}'s portfolio
             .panel-body
+                if (user && user.profile.username === username)
+                .col-xs-12
+                    .text-center
+                        a.btn.btn-big.btn-primary(href="/account") Update my public portfolio
+                    br
                 .row
                     .col-xs-12
                         .col-xs-12.col-sm-12.col-md-5
@@ -35,9 +40,6 @@ block content
                                 h3.flat-top.bolded.wrappable= location
                                 h4.flat-top.wrappable= bio
                         .col-xs-12.col-sm-12.col-md-3.text-center
-                            if (user && user.profile.username === username)
-                                a.btn.btn-warning(href="/account") Edit my Profile
-
                             .background-svg.img-center
                                 .points-on-top
                                     = "[ " + points + " ]"

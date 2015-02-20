@@ -208,6 +208,7 @@ app.use(
 app.get('/', homeController.index);
 app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
+app.get('/chat', resourcesController.chat);
 app.get('/live-pair-programming', resourcesController.livePairProgramming);
 app.get('/install-screenhero', resourcesController.installScreenHero);
 app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
