@@ -98,15 +98,17 @@ block content
                                     | Try it out
 
                 - if (ch[0] > 0)
-                    .col-sm-12
-                        table.table.table-striped
-                            thead
-                                tr
-                                    th Challenge
-                                    th Date Finished
-                            for challenge in challenges
-                                if ch[challenge.challengeNumber] > 0
-                                    tr
-                                        td= challenges[challenge.challengeNumber].name
-                                        td= moment(ch[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
-                            br
+                    html.
+                        <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+                        <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+                        <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+
+                    .col-xs-12
+                        p= ch
+                        .embed-responsive.embed-responsive-16by9
+                            #cal-heatmap
+                            script.
+                                var cal = new CalHeatMap();
+                                cal.init({
+                                    "domain": "day"
+                                });

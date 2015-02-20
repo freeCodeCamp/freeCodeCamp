@@ -139,11 +139,16 @@ var trusted = [
     '*.ionicframework.com',
     'https://syndication.twitter.com',
     '*.youtube.com',
+    '*.jsdelivr.net'
 ];
 
 app.use(helmet.contentSecurityPolicy({
     defaultSrc: trusted,
-    scriptSrc: ['*.optimizely.com', '*.aspnetcdn.com'].concat(trusted),
+    scriptSrc: [
+        '*.optimizely.com',
+        '*.aspnetcdn.com',
+        '*.d3js.org',
+    ].concat(trusted),
     'connect-src': [
         'ws://*.rafflecopter.com',
         'wss://*.rafflecopter.com',
