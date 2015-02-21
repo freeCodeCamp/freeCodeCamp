@@ -22,6 +22,16 @@ var run = function(code) {
 
 // protects even the worker scope from being accessed
 var runHidden = function(code) {
+
+    var importScript = function(url) {
+        var error = null;
+        try {
+            importScripts(url);
+        } catch (e) {
+            error = e;
+            console.log('Unable to load ramda!');
+        }
+    };
     var indexedDB = null;
     var location = null;
     var navigator = null;
@@ -44,7 +54,9 @@ var runHidden = function(code) {
     var dump = null;
     var onoffline = null;
     var ononline = null;
-    var importScripts = null;
+    importScript("https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js");
+    var _ = R;
+
 
     return eval(code);
 }
