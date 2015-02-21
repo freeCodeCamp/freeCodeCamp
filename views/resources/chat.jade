@@ -1,0 +1,22 @@
+extends ../layout-wide
+block content
+    h3
+        ol.col-md-offset-2
+            li Create a GitHub Account&nbsp;
+                a(href="http://github.com/join", target='_blank') here
+                | .
+            li Download the chat room app on &nbsp;
+                a(href="https://update.gitter.im/osx/latest") Windows
+                | ,&nbsp;
+                a(href="https://update.gitter.im/win/latest") Mac
+                | ,&nbsp;
+                a(href="http://appstore.com/gitter") iPhone
+                | ,&nbsp; or &nbsp;
+                a(href="https://play.google.com/store/apps/details?id=im.gitter.gitter&hl=en_GB") Android
+                | &nbsp;, or go &nbsp;
+                a(href="http://chat.freecodecamp.com") here
+                | .
+            li Keep the chat room open while you code so that you can meet friends and ask for help.
+    .col-xs-12
+        .embed-responsive.embed-responsive-16by9.gitter-imbed
+            iframe(src='http://www.gitter.im/freecodecamp/freecodecamp', frameborder='0', scrolling='no')

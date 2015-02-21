@@ -64,6 +64,7 @@ mongoose.connection.on('error', function () {
  * Express configuration.
  */
 
+
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -106,6 +107,11 @@ app.disable('x-powered-by');
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.xframe());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 var trusted = [
     "'self'",
@@ -169,6 +175,7 @@ app.use(helmet.contentSecurityPolicy({
         '*.vimeo.com',
         '*.twitter.com',
         '*.rafflecopter.com',
+        '*.ghbtns.com'
     ].concat(trusted),
     reportOnly: false, // set to true if you only want to report errors
     setAllHeaders: false, // set to true if you want to set all headers
@@ -202,7 +209,9 @@ app.use(
 app.get('/', homeController.index);
 app.get('/privacy', resourcesController.privacy);
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
+app.get('/chat', resourcesController.chat);
 app.get('/live-pair-programming', resourcesController.livePairProgramming);
+app.get('/install-screenhero', resourcesController.installScreenHero);
 app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
 app.get('/chromebook', resourcesController.chromebook);
 app.get('/deploy-a-website', resourcesController.deployAWebsite);
@@ -256,12 +265,29 @@ app.post(
     passportConf.isAuthenticated,
     userController.updateProgress
 );
+
+/**
+ * Challenge related routes
+ */
+app.get(
+    '/challenges/',
+    challengesController.returnNextChallenge
+);
 app.get(
     '/challenges/:challengeNumber',
     challengesController.returnChallenge
 );
+
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
+
+/**
+ * API routes
+ */
+
+app.get('/api/github', resourcesController.githubCalls);
+app.get('/api/blogger', resourcesController.bloggerCalls);
+app.get('/api/trello', resourcesController.trelloCalls);
 
 /**
  * Bonfire related routes

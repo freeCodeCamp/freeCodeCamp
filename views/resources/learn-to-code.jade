@@ -1,8 +1,86 @@
-extends ../layout
+extends ../layout-wide
 block content
+    img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
+    br
+    .text-center
+        a.btn.btn-cta.signup-btn.next-challenge-button(href="/challenges") Take me to my next challenge
+    br
+    .row
+        .col-xs-12.col-sm-12.col-md-4
+            .panel.panel-info
+                .panel-heading.landing-panel-heading.text-center Get Connected
+                .panel-body
+                    img.img-responsive.img-center(src="https://s3.amazonaws.com/freecodecamp/about-chatroom.jpg")
+                    h3
+                        .row
+                            .col-xs-9.text-right Campers doing challenges:
+                            .col-xs-3.text-left= c3
+                        .row
+                            .col-xs-9.text-right Campers coding for nonprofits:
+                            .col-xs-3.text-left= all
+        .col-xs-12.col-sm-12.col-md-4
+            .panel.panel-info
+                .panel-heading.landing-panel-heading.text-center Learn JavaScript
+                .panel-body
+                    img.img-responsive.img-center(src="https://s3.amazonaws.com/freecodecamp/about-github.jpg")
+                    h3
+                        include ../partials/github
+        .col-xs-12.col-sm-12.col-md-4
+            .panel.panel-info
+                .panel-heading.landing-panel-heading.text-center Help Nonprofits
+                .panel-body
+                    img.img-responsive.img-center(src="https://s3.amazonaws.com/freecodecamp/about-trello.jpg")
+                    h3
+                        .row
+                            .col-xs-6.text-right Days since we launched:
+                            .col-xs-6.text-left= daysRunning
+                        .row
+                            .col-xs-6.text-right Nonprofit Projects:
+                            .col-xs-6.text-left
+                                include ../partials/trello
+
+    br
     script.
         var challengeName = 'Learn to code'
-    include ../partials/stats
-    include ../partials/blog
-    include ../partials/about
-    include ../partials/faq
+    .row
+        .col-xs-12.col-sm-12.col-md-6
+            .panel.panel-info
+                .panel-heading.landing-panel-heading.text-center News
+                .panel-body
+                    .landing-panel-body.text-center
+                        for announcement in announcements
+                            h2
+                                if (announcement.length > 1)
+                                    a(href=announcement[1])= announcement[0]
+                                else
+                                    = announcement[0]
+                        include ../partials/blogger
+                        a.twitter-timeline(data-dnt='true', href='https://twitter.com/FreeCodeCamp', data-widget-id='560847186548621312') Tweets by @FreeCodeCamp
+                        script.
+                            !function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                if (!d.getElementById(id)) {
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.src = p + "://platform.twitter.com/widgets.js";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }
+                            }(document, "script", "twitter-wjs");
+                        h3
+                            .col-xs-12 Follow us on Twitter here:
+                            .col-xs-12.github-and-twitter-button-text
+                                html.
+                                    <a class="twitter-follow-button"
+                                      href="https://twitter.com/freecodecamp"
+                                      data-show-count="true"
+                                      data-lang="en">
+                                    Follow @FreeCodeCamp
+                                    </a>
+                                    <script>window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));</script>
+                            .col-xs-12.github-and-twitter-button-text Star us on GitHub here:
+                            .col-xs-12.github-and-twitter-button-text
+                                html.
+                                    <iframe src="http://ghbtns.com/github-btn.html?user=freecodecamp&repo=freecodecamp&type=watch&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
+            include ../partials/about
+        .col-xs-12.col-sm-12.col-md-6
+            include ../partials/faq
