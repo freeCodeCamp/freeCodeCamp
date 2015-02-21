@@ -1,6 +1,9 @@
 extends ../layout-wide
 block content
-    img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
+    if (Math.random() > 0.98)
+        img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner-dino.png')
+    else
+        img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
     br
     .text-center
         a.btn.btn-cta.signup-btn.next-challenge-button(href="/challenges") Take me to my next challenge
