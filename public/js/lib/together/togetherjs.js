@@ -17,9 +17,9 @@
         // of the hub analytics
         enableAnalytics: false,
         // The code to enable (this is defaulting to a Mozilla code):
-        analyticsCode: "UA-35433268-28",
+        analyticsCode: "UA-55446531-1",
         // The base URL of the hub (gets filled in below):
-        hubBase: null,
+        hubBase: "https://fcctogether.herokuapp.com",
         // A function that will return the name of the user:
         getUserName: null,
         // A function that will return the color of the user:
@@ -70,7 +70,7 @@
         ignoreMessages: ["cursor-update", "keydown", "scroll-update"],
         // Ignores the following forms (will ignore all forms if set to true):
         ignoreForms: [":password"]
-    };
+};
 
     var styleSheet = "/togetherjs/togetherjs.css";
 
@@ -486,13 +486,6 @@
     TogetherJS.toString = function () {
         return "TogetherJS";
     };
-
-    var defaultHubBase = "https://hub.togetherjs.com";
-    if (defaultHubBase == "__" + "hubUrl"+ "__") {
-        // Substitution wasn't made
-        defaultHubBase = "https://hub.togetherjs.mozillalabs.com";
-    }
-    defaultConfiguration.hubBase = defaultHubBase;
 
     TogetherJS._configuration = {};
     TogetherJS._defaultConfiguration = defaultConfiguration;
