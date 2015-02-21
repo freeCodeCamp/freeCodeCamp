@@ -54,7 +54,7 @@ var runHidden = function(code) {
     var dump = null;
     var onoffline = null;
     var ononline = null;
-    importScript("https://cdnjs.cloudflare.com/ajax/libs/ramda/0.8.0/ramda.min.js");
+    importScript("https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js");
     var _ = R;
 
 

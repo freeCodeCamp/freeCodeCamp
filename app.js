@@ -133,6 +133,7 @@ var trusted = [
     '*.ionicframework.com',
     'https://syndication.twitter.com',
     '*.youtube.com',
+    'cdn.jsdelivr.net/'
 ];
 
 app.use(helmet.contentSecurityPolicy({

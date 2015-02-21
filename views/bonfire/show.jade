@@ -15,6 +15,7 @@ block content
     script(src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(src='/js/lib/jailed/jailed.js')
     script(src='/js/lib/bonfire/bonfireInit.js')
+    script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
 
 
     .row
@@ -90,6 +91,7 @@ block content
                     var passedBonfireHash = !{JSON.stringify(bonfireHash)};
                     var challengeName = !{JSON.stringify(name)};
                     var started = Math.floor(Date.now() / 1000);
+                    var _ = R;
         .col-xs-12.col-sm-12.col-md-8
             #mainEditorPanel
                 form.code
