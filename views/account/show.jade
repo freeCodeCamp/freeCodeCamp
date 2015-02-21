@@ -97,18 +97,31 @@ block content
                                     i.fa.icon-beaker
                                     | Try it out
 
-                - if (ch[0] > 0)
                     html.
                         <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
                         <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
                         <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
 
                     .col-xs-12
-                        p= ch
                         .embed-responsive.embed-responsive-16by9
                             #cal-heatmap
                             script.
                                 var cal = new CalHeatMap();
+                                var calendar = !{JSON.stringify(calender)};
+                                console.log(calendar);
                                 cal.init({
-                                    "domain": "day"
+                                    itemSelector: "#cal-heatmap",
+                                    domain: "month",
+                                    subDomain: "day",
+                                    data: calendar,
+                                    dataType: "json",
+                                    range: 10,
+                                    start: new Date(2015, 0),
+                                    itemName: "",
+                                    legend: [5, 10, 15, 20, 25, 30],
+                                    legendColors: {
+                                        empty: "#ededed",
+                                        min: "#40ffd8",
+                                        max: "#f20013"
+                                    }
                                 });

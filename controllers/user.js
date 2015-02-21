@@ -153,6 +153,15 @@ exports.postEmailSignup = function(req, res, next) {
 };
 
 /**
+ * For Calendar display
+ */
+
+exports.getStreak = function(req, res) {
+  var completedStreak = req.user.challengesHash;
+
+}
+
+/**
  * GET /account
  * Profile page.
  */
@@ -226,6 +235,20 @@ exports.returnUser = function(req, res, next) {
     if (user[0]) {
       var user = user[0];
       Challenge.find({}, null, {sort: {challengeNumber: 1}}, function (err, c) {
+        var calendarData = Object.keys(user.challengesHash).map(function(key){return user.challengesHash[key]});
+        calendarData.sort(function(a , b) {
+          return a - b;
+        });
+        calendarData = calendarData.filter(function(elem) {
+          return elem !== 0;
+        });
+        var data = {};
+        calendarData.pop();
+        for (i = 0; i < calendarData.length; i++) {
+          var timestamp = 'timestamp' + i;
+          data[timestamp] = calendarData[i];
+        };
+        data = {timestamp0: new Date(2015, 3, 15)}
         res.render('account/show', {
           title: 'Camper: ',
           username: user.profile.username,
@@ -248,7 +271,7 @@ exports.returnUser = function(req, res, next) {
           website3Title: user.portfolio.website3Title,
           website3Image: user.portfolio.website3Image,
           challenges: c,
-          ch: user.challengesHash,
+          calender: data,
           moment: moment
         });
       });
