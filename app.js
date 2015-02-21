@@ -139,7 +139,12 @@ var trusted = [
     '*.ionicframework.com',
     'https://syndication.twitter.com',
     '*.youtube.com',
-    '*.jsdelivr.net'
+    '*.jsdelivr.net',
+    '*.togetherjs.com',
+    'https://*.togetherjs.com',
+    'wss://hub.togetherjs.com',
+    '*.ytimg.com',
+    'wss://fcctogether.herokuapp.com'
 ];
 
 app.use(helmet.contentSecurityPolicy({
