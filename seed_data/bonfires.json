@@ -239,15 +239,13 @@
     "name": "Where do I belong",
     "difficulty": "1.61",
     "description": [
-      "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument)."
+      "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
+      "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index)."
     ],
     "challengeSeed": "function where(arr, num) {\n  // Find my place in this sorted array.\r\n  return num;\r\n}\n\nwhere([40, 60], 50);",
     "tests": [
-      "var numbers = [10, 20, 30, 40, 50], num = 35;",
-      "var indexForNum = where(numbers, num);",
-      "assert.equal(indexForNum, 3, '35 should be inserted at index 3');",
-      "var indexFor30 = where(numbers, 30);",
-      "assert.equal(indexFor30, 2, '30 should be inserted at index 2');"
+      "expect(where([10, 20, 30, 40, 50], 35)).to.equal(3);",
+      "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);"
     ]
   },
   {
@@ -421,9 +419,9 @@
     ],
     "challengeSeed": "function drop(arr, func) {\n  // Drop them elements.\r\n  return arr;\r\n}\n\ndrop([1, 2, 3], function(n) {return n < 3; });",
     "tests": [
-      "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n < 3; }), [3, 4], 'should return remaining array');",
-      "assert.deepEqual(drop([1, 2, 3], function(n) {return n < 0; }), [1, 2, 3], 'should return complete array if predicate met in first element.');",
-      "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n < 5; }), [], 'should return an empty array if predicate does not return true');"
+      "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
+      "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
+      "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
     ]
   },
   {
@@ -495,6 +493,22 @@
       "bob.setFullName('George Carlin');",
       "expect(bob.getFullName()).to.eql('George Carlin');",
       "bob.setFullName('Bob Ross');"
+    ]
+  },
+  {
+    "_id": "af4afb223120f7348cdfc9fd",
+    "name": "Map the Debris",
+    "difficulty": "3.50",
+    "description": [
+      "Return a new array that transforms the element's average altitude into their orbital periods.",
+      "The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.",
+      "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\">on wikipedia</a>.",
+      "The values should be rounded to the nearest whole number. Assume the body being orbited is Earth."
+    ],
+    "challengeSeed": "function orbitalPeriod(arr) {\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
+    "tests": [
+      "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
     ]
   },
   {

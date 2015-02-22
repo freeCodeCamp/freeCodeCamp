@@ -222,7 +222,7 @@ exports.completedBonfire = function (req, res) {
     var isSolution = req.body.bonfireInfo.solution;
 
     if (isCompletedWith) {
-        var paired = User.find({"profile.username": isCompletedWith}).limit(1);
+        var paired = User.find({"profile.username": isCompletedWith.toLowerCase()}).limit(1);
         paired.exec(function (err, pairedWith) {
             if (err) {
                 return err;
