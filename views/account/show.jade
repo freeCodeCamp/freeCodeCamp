@@ -1,5 +1,7 @@
 extends ../layout
 block content
+    script.
+        var challengeName = 'Profile View';
     .col-xs-12.col-sm-12.col-md-12
         .panel.panel-info
             .panel-heading.text-center
@@ -114,14 +116,8 @@ block content
                                     domain: "month",
                                     subDomain: "day",
                                     data: calendar,
-                                    dataType: "json",
                                     range: 10,
                                     start: new Date(2015, 0),
                                     itemName: "",
-                                    legend: [5, 10, 15, 20, 25, 30],
-                                    legendColors: {
-                                        empty: "#ededed",
-                                        min: "#40ffd8",
-                                        max: "#f20013"
-                                    }
+                                    legend: [5, 10, 15, 20, 25, 30]
                                 });

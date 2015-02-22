@@ -235,20 +235,10 @@ exports.returnUser = function(req, res, next) {
     if (user[0]) {
       var user = user[0];
       Challenge.find({}, null, {sort: {challengeNumber: 1}}, function (err, c) {
-        var calendarData = Object.keys(user.challengesHash).map(function(key){return user.challengesHash[key]});
-        calendarData.sort(function(a , b) {
-          return a - b;
-        });
-        calendarData = calendarData.filter(function(elem) {
-          return elem !== 0;
-        });
-        var data = {};
-        calendarData.pop();
-        for (i = 0; i < calendarData.length; i++) {
-          var timestamp = 'timestamp' + i;
-          data[timestamp] = calendarData[i];
+        data = {
+          "1424569155": 1,
+          "1424519155": 1
         };
-        data = {timestamp0: new Date(2015, 3, 15)}
         res.render('account/show', {
           title: 'Camper: ',
           username: user.profile.username,
