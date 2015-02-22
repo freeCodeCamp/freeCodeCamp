@@ -8,11 +8,19 @@ var _ = require('lodash'),
  * Bonfire controller
  */
 
-exports.bonfireNames = function(req, res) {
-    res.render('bonfires/showList', {
-        bonfireList: resources.allBonfireNames()
+exports.showAllBonfires = function(req, res) {
+    var completedBonfires = req.user.completedBonfires.map(function(elem) {
+        return elem._id;
     });
+    var data = {};
+    data.bonfireList = resources.allBonfireNames();
+    //data.completedList = completedBonfires;
+    res.send(data);
 };
+// FIXME: remove this
+exports.poopRoute = function(req, res) {
+    res.render('partials/bonfires.jade');
+}
 
 exports.index = function(req, res) {
     res.render('bonfire/show.jade', {

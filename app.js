@@ -301,6 +301,8 @@ app.get('/api/trello', resourcesController.trelloCalls);
 /**
  * Bonfire related routes
  */
+app.get('/bonfires/pooproute', bonfireController.poopRoute);
+app.get('/bonfires/getBonfireList', bonfireController.showAllBonfires);
 app.get('/playground', bonfireController.index);
 app.get('/bonfires', bonfireController.returnNextBonfire);
 app.get('/bonfire-json-generator', bonfireController.returnGenerator);
@@ -314,6 +316,8 @@ app.get(
 app.get('/bonfire', function(req, res) {
     res.redirect(301, '/playground');
 });
+
+
 
 app.post('/completed-bonfire/', bonfireController.completedBonfire);
 

@@ -1,7 +1,20 @@
 h3
-    ol(start='0')
-        for bonfire in bonfires
-            li
-                a(href="/bonfires/#{bonfire.bonfireNumber}", class="#{ (cc && cc[bonfire.bonfireNumber] > 0) ? 'strikethrough' : '' }") #{bonfire.name}
-                | &nbsp; (Level #{bonfire.difficulty})
-a.btn.btn-lg.btn-primary.btn-block(href="/done-with-first-100-hours", class="#{ ((cc && cc[53] === 0) || (!cc)) ? 'disabled' : '' }") I'm done with all the challenges!
+    ol#bonfireList
+    script.
+        var getLinkedName = function getLinkedName(name) {
+            return name.toLowerCase().replace(/\s/g, '-');
+        }
+        $.ajax({
+            url: '/bonfires/getBonfireList',
+            type: 'GET'
+        })
+        .success(
+            function(data) {
+                for (var i = 0; i < data.bonfireList.length; i++) {
+                    var li  = document.createElement('li');
+                    var linkedName = getLinkedName(data.bonfireList[i]);
+                    $(li)
+                    .html("<a href='/bonfires/"  + linkedName + "'>" + data.bonfireList[i] + "</a>");
+                    $(li).appendTo($('#bonfireList'));
+                }
+        });
