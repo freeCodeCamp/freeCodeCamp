@@ -301,7 +301,7 @@ app.get('/api/trello', resourcesController.trelloCalls);
 /**
  * Bonfire related routes
  */
-app.get('/bonfires/pooproute', bonfireController.poopRoute);
+
 app.get('/bonfires/getBonfireList', bonfireController.showAllBonfires);
 app.get('/playground', bonfireController.index);
 app.get('/bonfires', bonfireController.returnNextBonfire);
