@@ -2,16 +2,23 @@ var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:courseware'),
     Courseware = require('./../models/Courseware'),
     User = require('./../models/User'),
-    resources = require('./resources');
+    resources = require('./resources'),
+    R = require('ramda');
 
 /**
  * Courseware controller
  */
 
-exports.coursewareNames = function(req, res) {
-    res.render('coursewares/showList', {
-        coursewareList: resources.allCoursewareNames()
+exports.showAllCoursewares = function(req, res) {
+    var completedCoursewares = req.user.completedCoursewares.map(function(elem) {
+        return elem._id;
     });
+
+    var noDuplicatedCoursewares = R.uniq(completedCoursewares);
+    var data = {};
+    data.coursewareList = resources.allCoursewareNames();
+    data.completedList = noDuplicatedCoursewares;
+    res.send(data);
 };
 
 exports.returnNextCourseware = function(req, res) {
@@ -29,13 +36,15 @@ exports.returnNextCourseware = function(req, res) {
     });
     req.user.save();
 
-    var uncompletedCoursewares = req.user.uncompletedCoursewares;
+    var uncompletedCoursewares = req.user.uncompletedCoursewares.shift();
 
-    var displayedCoursewares =  Courseware.find({'_id': uncompletedCoursewares[0]});
+
+    var displayedCoursewares =  Courseware.find({'_id': uncompletedCoursewares});
     displayedCoursewares.exec(function(err, courseware) {
         if (err) {
             next(err);
         }
+        debug('This is the courseware object returned from mongo', courseware);
         courseware = courseware.pop();
         if (courseware === undefined) {
             req.flash('errors', {

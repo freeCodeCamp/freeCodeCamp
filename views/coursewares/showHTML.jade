@@ -18,6 +18,8 @@ block content
     script(src='/js/lib/codemirror/mode/xml/xml.js')
     script(src='/js/lib/codemirror/mode/css/css.js')
     script(src='/js/lib/codemirror/mode/htmlmixed/htmlmixed.js')
+    script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
+
     .row.courseware-height
         .col-xs-12.col-sm-12.col-md-3.col-lg-3
             .well
@@ -40,6 +42,7 @@ block content
                                             span.ion-help-circled
                                             | Less information
                 br
+                .btn.btn-info#showAllCoursewares
 
             - if (cc)
                 a.btn.btn-primary.btn-lg.btn-block#next-courseware-button
@@ -88,3 +91,11 @@ block content
                                 span.completion-icon.ion-checkmark-circled.text-primary
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
     script(src="/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js")
+
+    #all-coursewares-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Challenges
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/coursewares

@@ -78,6 +78,14 @@ $(document).ready(function() {
         editor.focus();
     });
 
+    $('#showAllCoursewares').on('click', function() {
+        $('#all-coursewares-dialog').modal('show');
+    });
+
+    $('#all-coursewares-dialog').on('hidden.bs.modal', function() {
+        editor.focus();
+    });
+
 
     $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
         editor.focus();
@@ -90,12 +98,12 @@ $(document).ready(function() {
                     coursewareInfo: {
                         coursewareHash: passedCoursewareHash
                     }
-                },
-                function(res) {
-                    if (res) {
-                        window.location.href = '/coursewares'
-                    }
-                })
+                }).success(
+                function() {
+                    window.location.href = '/coursewares';
+                }
+            )
+
         }
     });
 

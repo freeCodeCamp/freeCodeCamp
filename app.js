@@ -326,6 +326,7 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
  */
 
 app.get('/coursewares/', coursewareController.returnNextCourseware);
+app.get('/coursewares/getCoursewareList', coursewareController.showAllCoursewares);
 app.get(
     '/coursewares/:coursewareName',
     coursewareController.returnIndividualCourseware

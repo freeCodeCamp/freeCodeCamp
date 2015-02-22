@@ -16,7 +16,7 @@ h3
                     if (R.contains(data.bonfireList[i]._id, data.completedList)) {
                         $(li).addClass('strikethrough');
                     }
-                    $(li).html("<a href='/bonfires/" + linkedName + "'>" + data.bonfireList[i].name + "</a>");
+                    $(li).html("<a href='/bonfires/" + linkedName + "'>" + data.bonfireList[i].name + "</a></li>");
                     $(li).appendTo($('#bonfireList'));
 
                 }
