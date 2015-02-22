@@ -74,6 +74,11 @@ $(document).ready(function() {
         editor.focus();
     });
 
+    $('#all-bonfires-dialog').on('hidden.bs.modal', function() {
+        editor.focus();
+    });
+
+
     $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
         editor.focus();
     });
@@ -92,13 +97,14 @@ $(document).ready(function() {
                     }
                 })
         }
-    })
+    });
+
 
     $('.all-challenges').on('click', function() {
         $('#all-challenges-dialog').modal('show');
     });
 
-    $('.all-bonfires').on('click', function() {
+    $('#showAllButton').on('click', function() {
         $('#all-bonfires-dialog').modal('show');
     });
 
