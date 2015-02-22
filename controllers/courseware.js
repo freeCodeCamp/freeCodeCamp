@@ -44,12 +44,12 @@ exports.returnNextCourseware = function(req, res) {
         if (err) {
             next(err);
         }
-        debug('This is the courseware object returned from mongo', courseware);
+
         courseware = courseware.pop();
         if (courseware === undefined) {
             req.flash('errors', {
                 msg: "It looks like you've completed all the courses we have available. Good job!"
-            })
+            });
             return res.redirect('../coursewares/start-our-challenges');
         }
         nameString = courseware.name.toLowerCase().replace(/\s/g, '-');

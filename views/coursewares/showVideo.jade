@@ -13,7 +13,7 @@ block content
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
             - if (cc)
-                a.btn.btn-primary.btn-lg.btn-block#next-courseware-button Go to my next challenge (ctrl + enter)
+                a.btn.btn-primary.btn-lg.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
             - else
@@ -36,7 +36,7 @@ block content
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
                         - if (cc)
-                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
+                            a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
                             - if (points && points > 2)
                                 a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
                                     i.fa.fa-twitter &nbsp;
@@ -44,6 +44,6 @@ block content
                         - else
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                                 h1 #{name}
-                            script.
-                                var challengeName = !{JSON.stringify(name)};
-                                var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
+        script.
+            var challengeName = !{JSON.stringify(name)};
+            var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
