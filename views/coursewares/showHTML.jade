@@ -68,11 +68,16 @@ block content
                 var challengeName = !{JSON.stringify(name)};
                 var prodOrDev = !{JSON.stringify(environment)};
                 var started = Math.floor(Date.now() / 1000);
+                var url = '';
+                var dashed = !{JSON.stringify(dashedName)};
+                console.log(dashed);
+
         .col-xs-12.col-sm-12.col-md-5.col-lg-6
             #mainEditorPanel
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true)
+                        script(src='/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js')
         .col-md-4.col-lg-3
             .hidden-xs.hidden-sm
                 img.iphone-position(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png")
@@ -82,8 +87,8 @@ block content
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
-                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body(ng-controller="pairedWithController")
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
@@ -91,9 +96,10 @@ block content
 
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
                         - if (points && points > 2)
-                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
+                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
                                 i.fa.fa-twitter &nbsp;
                                     = phrase
+
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
 
@@ -104,3 +110,14 @@ block content
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
                     include ../partials/coursewares
+    script.
+        $.ajax({
+            url: 'https://api-ssl.bitly.com/v3/shorten?access_token=75e7931a19befaafcf108021b6d597e554b2c5c3&longUrl=http%3A%2F%2Ffreecodecamp.com%2Fchallenges%2F' + dashed + '&format=txt'
+        })
+                .success(
+                function(data) {
+                    console.log(data);
+                    url = "https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge:%20#{name}&url=" + data + "&hashtags=LearnToCode, JavaScript";
+                    $('.btn-twitter').attr('href', url);
+                }
+        );
