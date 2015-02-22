@@ -144,7 +144,8 @@ var trusted = [
     'https://*.togetherjs.com',
     'wss://hub.togetherjs.com',
     '*.ytimg.com',
-    'wss://fcctogether.herokuapp.com'
+    'wss://fcctogether.herokuapp.com',
+    '*.bitly.com'
 ];
 
 app.use(helmet.contentSecurityPolicy({
