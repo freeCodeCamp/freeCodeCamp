@@ -65,7 +65,10 @@
     "challengeSeed": "114627406",
     "description" : [
         "There are tons of interactive HTML and CSS tutorials out there, but Nathan Bashaw and Christine Bower's Dash tutorials - which they built for General Assembly - are our favorite.",
-        "Go to <a href='https://dash.generalassemb.ly/projects/annas-website-1' target='_blank'>https://dash.generalassemb.ly/projects/annas-website-1</a> and get started with your first project."]
+        "Go to <a href='https://dash.generalassemb.ly/projects/annas-website-1' target='_blank'>https://dash.generalassemb.ly/projects/annas-website-1</a> and get started with your first project."
+    ],
+    "challengeType": 2,
+    "tests": []
   },
   {
     "_id" : "bd7128d8c441eddfaeb5bdef",
@@ -89,7 +92,10 @@
     "challengeSeed": "114578438",
     "description" : [
         "Ready for some more HTML and CSS fundamentals?",
-        "Go to <a href='https://dash.generalassemb.ly/projects/eshas-restaurant-1' target='_blank'>https://dash.generalassemb.ly/projects/eshas-restaurant-1</a> and complete the third project."]
+        "Go to <a href='https://dash.generalassemb.ly/projects/eshas-restaurant-1' target='_blank'>https://dash.generalassemb.ly/projects/eshas-restaurant-1</a> and complete the third project."
+    ],
+    "challengeType": 2,
+    "tests": []
   },
   {
     "_id" : "bd7110d8c441eddfaeb5bdef",
@@ -116,7 +122,10 @@
     "challengeSeed": "114578436",
     "description" : [
         "Now let's learn some more CSS, and a small amount of a JavaScript-based tool called jQuery.",
-        "Go to <a href='https://dash.generalassemb.ly/projects/cotbots-1' target='_blank'>https://dash.generalassemb.ly/projects/cotbots-1</a> and complete the fourth project."]
+        "Go to <a href='https://dash.generalassemb.ly/projects/cotbots-1' target='_blank'>https://dash.generalassemb.ly/projects/cotbots-1</a> and complete the fourth project."
+    ],
+    "challengeType": 2,
+    "tests": []
   },
   {
     "_id" : "bd7112d8c441eddfaeb5bdef",
@@ -240,7 +249,7 @@
         "Go back to CodePen and paste the CSS you copied from Bootswatch.com into the CSS field of CodePen.",
         "Your Bootswatch CSS should now be applied to the HTML from the GetBootStrap page.",
         "This page is currently using a two-column layout, with the main content on the left and additional navigation on the right. See if you can make it a one-column layout."
-      ],
+    ],
     "challengeType": 2,
     "tests": []
   },  
