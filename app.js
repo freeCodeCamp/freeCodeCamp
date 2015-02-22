@@ -301,6 +301,8 @@ app.get('/api/trello', resourcesController.trelloCalls);
 /**
  * Bonfire related routes
  */
+
+app.get('/bonfires/getBonfireList', bonfireController.showAllBonfires);
 app.get('/playground', bonfireController.index);
 app.get('/bonfires', bonfireController.returnNextBonfire);
 app.get('/bonfire-json-generator', bonfireController.returnGenerator);
@@ -315,6 +317,8 @@ app.get('/bonfire', function(req, res) {
     res.redirect(301, '/playground');
 });
 
+
+
 app.post('/completed-bonfire/', bonfireController.completedBonfire);
 
 /**
@@ -322,6 +326,7 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
  */
 
 app.get('/coursewares/', coursewareController.returnNextCourseware);
+app.get('/coursewares/getCoursewareList', coursewareController.showAllCoursewares);
 app.get(
     '/coursewares/:coursewareName',
     coursewareController.returnIndividualCourseware

@@ -47,7 +47,7 @@ block content
                 script(type="text/javascript").
                     var tests = !{JSON.stringify(tests)};
                     var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var passedBonfireHash = !{JSON.stringify(coursewareHash)};
+                    var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
                     var challengeName = !{JSON.stringify(name)};
                     var started = Math.floor(Date.now() / 1000);
         .col-xs-12.col-sm-12.col-md-8
@@ -67,10 +67,10 @@ block content
                             span.completion-icon.ion-checkmark-circled.text-primary
                     - if (cc)
 
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
                     - if (points && points > 2)
-                        a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
-                        i.fa.fa-twitter &nbsp;
-                            = phrase
+                        a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
+                            i.fa.fa-twitter &nbsp;
+                                = phrase
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress

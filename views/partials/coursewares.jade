@@ -1,0 +1,23 @@
+h3
+    ol#coursewareList
+    script.
+        var getLinkedName = function getLinkedName(name) {
+            return name.toLowerCase().replace(/\s/g, '-');
+        }
+        $.ajax({
+            url: '/coursewares/getCoursewareList',
+            type: 'GET'
+        })
+                .success(
+                function(data) {
+                    for (var i = 0; i < data.coursewareList.length; i++) {
+                        var li  = document.createElement('li');
+                        var linkedName = getLinkedName(data.coursewareList[i].name);
+                        if (R.contains(data.coursewareList[i]._id, data.completedList)) {
+                            $(li).addClass('strikethrough');
+                        }
+                        $(li).html("<a href='/coursewares/" + linkedName + "'>" + data.coursewareList[i].name + "</a></li>");
+                        $(li).appendTo($('#coursewareList'));
+
+                    }
+                });

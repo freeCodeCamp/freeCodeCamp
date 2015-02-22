@@ -206,14 +206,18 @@ module.exports = {
         return bonfires.map(function(elem) {
             return {
                 name: elem.name,
-                difficulty: elem.difficulty
+                difficulty: elem.difficulty,
+                _id: elem._id
             }
         })
         .sort(function(a, b) {
             return a.difficulty - b.difficulty;
         })
-        .map(function(elem) {
-            return elem.name;
+        .map (function(elem) {
+            return {
+                name : elem.name,
+                _id: elem._id
+            }
         });
     },
 
@@ -235,15 +239,19 @@ module.exports = {
         return coursewares.map(function(elem) {
             return {
                 name: elem.name,
-                difficulty: elem.difficulty
+                difficulty: elem.difficulty,
+                _id: elem._id
             }
         })
             .sort(function(a, b) {
                 return a.difficulty - b.difficulty;
             })
-            .map(function(elem) {
-                return elem.name;
-            });
+            .map (function(elem) {
+            return {
+                name : elem.name,
+                _id: elem._id
+            }
+        });
     },
     whichEnvironment: function() {
         return process.env.NODE_ENV;

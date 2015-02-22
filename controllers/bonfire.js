@@ -2,16 +2,23 @@ var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:bonfires'),
     Bonfire = require('./../models/Bonfire'),
     User = require('./../models/User'),
-    resources = require('./resources');
+    resources = require('./resources'),
+    R = require('ramda');
 
 /**
  * Bonfire controller
  */
 
-exports.bonfireNames = function(req, res) {
-    res.render('bonfires/showList', {
-        bonfireList: resources.allBonfireNames()
+exports.showAllBonfires = function(req, res) {
+    var completedBonfires = req.user.completedBonfires.map(function(elem) {
+        return elem._id;
     });
+
+    var noDuplicateBonfires = R.uniq(completedBonfires);
+    var data = {};
+    data.bonfireList = resources.allBonfireNames();
+    data.completedList = noDuplicateBonfires;
+    res.send(data);
 };
 
 exports.index = function(req, res) {

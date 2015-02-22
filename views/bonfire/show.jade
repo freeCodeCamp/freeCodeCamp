@@ -79,6 +79,7 @@ block content
                                                 span.ion-help-circled
                                                 | Less information
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+                #showAllButton.btn.btn-info.btn-big.btn-block Show all coding challenges
                 br
                 form.code
                     .form-group.codeMirrorView
@@ -133,11 +134,11 @@ block content
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
 
-    //#all-bonfires-dialog.modal(tabindex='-1')
-    //    .modal-dialog.animated.fadeInUp.fast-animation
-    //        .modal-content
-    //            .modal-header.challenge-list-header Bonfires
-    //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-    //            .modal-body
-    //                include ../partials/bonfires
+    #all-bonfires-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Bonfires
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/bonfires
 
