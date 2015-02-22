@@ -244,8 +244,8 @@
     ],
     "challengeSeed": "function where(arr, num) {\n  // Find my place in this sorted array.\r\n  return num;\r\n}\n\nwhere([40, 60], 50);",
     "tests": [
-      "expect(where([10, 20, 30, 40, 50], 35)).to.eql(3);",
-      "expect(where([10, 20, 30, 40, 50], 30)).to.eql(2);"
+      "expect(where([10, 20, 30, 40, 50], 35)).to.equal(3);",
+      "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);"
     ]
   },
   {
@@ -419,9 +419,9 @@
     ],
     "challengeSeed": "function drop(arr, func) {\n  // Drop them elements.\r\n  return arr;\r\n}\n\ndrop([1, 2, 3], function(n) {return n < 3; });",
     "tests": [
-      "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n < 3; }), [3, 4], 'should return remaining array');",
-      "assert.deepEqual(drop([1, 2, 3], function(n) {return n < 0; }), [1, 2, 3], 'should return complete array if predicate met in first element.');",
-      "assert.deepEqual(drop([1, 2, 3, 4], function(n) {return n < 5; }), [], 'should return an empty array if predicate does not return true');"
+      "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
+      "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
+      "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
     ]
   },
   {
