@@ -32,7 +32,7 @@ exports.index = function(req, res) {
         tests:  [],
         challengeSeed:  '',
         cc: req.user ? req.user.bonfiresHash : undefined,
-        points: req.user ? req.user.points : undefined,
+        progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
         verb: resources.randomVerb(),
         phrase: resources.randomPhrase(),
         compliments: resources.randomCompliment(),
@@ -112,7 +112,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
             tests: bonfire.tests,
             challengeSeed: bonfire.challengeSeed,
             cc: !!req.user,
-            points: req.user ? req.user.points : undefined,
+            progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
             verb: resources.randomVerb(),
             phrase: resources.randomPhrase(),
             compliment: resources.randomCompliment(),
@@ -179,7 +179,7 @@ exports.testBonfire = function(req, res) {
         tests:  bonfireTests,
         challengeSeed:  bonfireChallengeSeed,
         cc: req.user ? req.user.bonfiresHash : undefined,
-        points: req.user ? req.user.points : undefined,
+        progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
         verb: resources.randomVerb(),
         phrase: resources.randomPhrase(),
         compliment: resources.randomCompliment(),
@@ -236,14 +236,14 @@ exports.completedBonfire = function (req, res) {
             } else {
                 var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
-                    req.user.points++;
+                    req.user.progressTimestamps.push(Date.now() / 1000 | 0);
                     req.user.uncompletedBonfires.splice(index, 1)
                 }
                 pairedWith = pairedWith.pop();
 
                 index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
-                    pairedWith.points++;
+                    pairedWith.progressTimestamps.push(Date.now() / 1000 | 0);
                     pairedWith.uncompletedBonfires.splice(index, 1);
 
                 }
@@ -285,7 +285,7 @@ exports.completedBonfire = function (req, res) {
 
         var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
         if (index > -1) {
-            req.user.points++;
+            req.user.progressTimestamps.push(Date.now() / 1000 | 0);
             req.user.uncompletedBonfires.splice(index, 1)
         }
 

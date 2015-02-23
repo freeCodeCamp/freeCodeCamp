@@ -21,7 +21,9 @@ var userSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    progressTimestamps: { type: Array, default: [] },
     challengesCompleted: { type: Array, default: [] },
+    pointsNeedMigration: { type: Boolean, default: true },
     challengesHash: {
         0: {
             type: Number,

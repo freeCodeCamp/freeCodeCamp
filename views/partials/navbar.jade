@@ -25,7 +25,7 @@
         else
             li
                 if (user.profile.username)
-                    a(href='/' + user.profile.username) [&nbsp;#{user.points}&nbsp;]
+                    a(href='/' + user.profile.username) [&nbsp;#{user.progressTimestamps.length}&nbsp;]
                 else
                     a(href='/account') [&nbsp;#{user.points}&nbsp;]
             .hidden-xs

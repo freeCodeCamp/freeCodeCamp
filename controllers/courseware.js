@@ -92,7 +92,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
                     tests: courseware.tests,
                     challengeSeed: courseware.challengeSeed,
                     cc: !!req.user,
-                    points: req.user ? req.user.points : undefined,
+                    progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
                     verb: resources.randomVerb(),
                     phrase: resources.randomPhrase(),
                     compliment: resources.randomCompliment(),
@@ -111,7 +111,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
                     tests: courseware.tests,
                     challengeSeed: courseware.challengeSeed,
                     cc: !!req.user,
-                    points: req.user ? req.user.points : undefined,
+                    progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
                     verb: resources.randomVerb(),
                     phrase: resources.randomPhrase(),
                     compliment: resources.randomCompliment(),
@@ -130,7 +130,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
                     tests: courseware.tests,
                     video: courseware.challengeSeed[0],
                     cc: !!req.user,
-                    points: req.user ? req.user.points : undefined,
+                    progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
                     verb: resources.randomVerb(),
                     phrase: resources.randomPhrase(),
                     compliment: resources.randomCompliment(),
@@ -168,7 +168,7 @@ exports.testCourseware = function(req, res) {
         challengeSeed:  coursewareChallengeSeed,
         challengeEntryPoint: coursewareEntryPoint,
         cc: req.user ? req.user.coursewaresHash : undefined,
-        points: req.user ? req.user.points : undefined,
+        progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
         verb: resources.randomVerb(),
         phrase: resources.randomPhrase(),
         compliment: resources.randomCompliment(),
@@ -224,7 +224,7 @@ exports.completedCourseware = function (req, res) {
 
     var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
     if (index > -1) {
-        req.user.points++;
+        req.user.progressTimestamps.push(Date.now() / 1000 | 0);
         req.user.uncompletedCoursewares.splice(index, 1)
     }
 

@@ -22,33 +22,6 @@ module.exports = {
         });
     },
 
-    stats: function stats(req, res) {
-        var date1 = new Date("10/15/2014");
-        var date2 = new Date();
-        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-        var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, response) {
-            var nonprofitProjects = (trello && trello.length) || 15;
-            User.count({'points': {'$gt': 2}}, function(err, c3) { if (err) { debug('User err: ', err); next(err); }
-                User.count({'points': {'$gt': 9}}, function(err, c10) { if (err) { debug('User err: ', err); next(err); }
-                    User.count({'points': {'$gt': 29}}, function(err, c30) { if (err) { debug('User err: ', err); next(err); }
-                        User.count({'points': {'$gt': 53}}, function(err, all) { if (err) { debug('User err: ', err); next(err); }
-                            res.render('resources/stats', {
-                                title: 'Free Code Camp Stats:',
-                                daysRunning: daysRunning,
-                                nonprofitProjects: nonprofitProjects,
-                                c3: c3,
-                                c10: c10,
-                                c30: c30,
-                                all: all
-                            });
-                        });
-                    });
-                });
-            });
-        });
-    },
-
     deployAWebsite: function deployAWebsite(req, res) {
         res.render('resources/deploy-a-website', {
             title: 'Deploy a Dynamic Website in 7 Minutes'
@@ -145,6 +118,21 @@ module.exports = {
     about: function(req, res) {
         var date1 = new Date("10/15/2014");
         var date2 = new Date();
+        var progressTimestamps = req.user.progressTimestamps;
+        var now = Date.now() / 1000 | 0;
+        if (req.user.pointsNeedMigration) {
+            var challengesHash = req.user.challengesHash;
+            for(var key in challengesHash) {
+                if (challengesHash[key] > 0) {
+                    req.user.progressTimestamps.push(challengesHash[key]);
+                }
+            }
+            req.user.pointsNeedMigration = false;
+            req.user.save();
+        }
+        if (progressTimestamps[progressTimestamps.length - 1] <= (now - 43200)) {
+            req.user.progressTimestamps.push(now);
+        }
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
         var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
         var announcements = resources.announcements;
