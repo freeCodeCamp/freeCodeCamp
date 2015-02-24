@@ -12,6 +12,7 @@ Prerequisites
 
 - [MongoDB](http://www.mongodb.org/downloads)
 - [Node.js](http://nodejs.org)
+- [Gulp.js](http://gulpjs.com/)
 
 Getting Started
 ---------------
@@ -27,13 +28,32 @@ cd freecodecamp
 # Install NPM dependencies
 npm install
 
-# Create a .env file and populate it with the necessary API keys and secrets:
+# Create a .env file and populate it with the necessary API keys and secrets (Mac OSX users see next step!):
 touch .env
+
+# Mac OSX users can populate the /etc/launchd.conf file instead of a .env with the API keys and secrets:
+# (note: this file might not yet exist)
+# The API keys and secrets will take the following form in this file:
+# setenv MONGOHQ_URL 'mongodb://localhost:27017/freecodecamp'
+# Follow the same pattern for the necessary API keys and secrets shown below (be sure to include all the entries to avoid errors)
+sudo vim /etc/launchd.conf
+
+# Mac OSX users should run this command after modifications to /etc/launchd.conf to avoid a reboot
+# You will still need to restart your terminal after this command
+grep -E "^setenv" /etc/launchd.conf | xargs -t -L 1 launchctl
+
+# Mac OSX users can confirm the env changes by running this command after reopening your terminal
+# Your changes to the launchd.conf file should be echo'd in your terminal after running this command
+env
 
 ```
 
 Edit your .env file with the following API keys accordingly (if you only use email login, only the MONGOHQ_URL, SESSION_SECRET, MANDRILL_USER and MANDRILL_PASSWORD fields are necessary:
 
+If you would like to get a GOOGLE_ID to login with Google authentication, visit the Google Developers Console and create a new project.
+You will then need to click on APIs & Auth and then Credentials. Next, click on the Create New Client ID button. Select Installed application
+for Application Type and then Other for Installed Application Type. A Client ID and Client Secret will be generated and provided for you.
+This information can be used to populate the env variables below should you choose this option.
 ```
 
 MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
@@ -57,6 +77,10 @@ LINKEDIN_SECRET='LINKEDIN APP SECRET'
 
 # Start the mongo server
 mongod
+
+# Select the mongo database for freeocdecamp in a new terminal session; the db will be created if it doesn't exist
+mongo
+use freecodecamp
 
 # Seed your database with the challenges
 node seed_data/seed.js
