@@ -235,23 +235,7 @@ app.get('/learn-to-code', resourcesController.about);
 app.get('/about', function(req, res) {
     res.redirect(301, '/learn-to-code');
 });
-app.get('/signin', userController.getSignin);
-app.get('/login', function(req, res) {
-    res.redirect(301, '/signin');
-});
-app.post('/signin', userController.postSignin);
-app.get('/signout', userController.signout);
-app.get('/logout', function(req, res) {
-    res.redirect(301, '/signout');
-});
-app.get('/forgot', userController.getForgot);
-app.post('/forgot', userController.postForgot);
-app.get('/reset/:token', userController.getReset);
-app.post('/reset/:token', userController.postReset);
-app.get('/email-signup', userController.getEmailSignup);
-app.get('/email-signin', userController.getEmailSignin);
-app.post('/email-signup', userController.postEmailSignup);
-app.post('/email-signin', userController.postSignin);
+
 app.get('/nonprofits', contactController.getNonprofitsForm);
 app.post('/nonprofits', contactController.postNonprofitsForm);
 
@@ -270,11 +254,7 @@ app.get(
     passportConf.isAuthenticated,
     resourcesController.nonprofitProjectInstructions
 );
-app.post(
-    '/update-progress',
-    passportConf.isAuthenticated,
-    userController.updateProgress
-);
+
 
 /**
  * Challenge related routes
@@ -299,50 +279,10 @@ app.get('/api/github', resourcesController.githubCalls);
 app.get('/api/blogger', resourcesController.bloggerCalls);
 app.get('/api/trello', resourcesController.trelloCalls);
 
-/**
- * Bonfire related routes
- */
-
-app.get('/bonfires/getBonfireList', bonfireController.showAllBonfires);
-app.get('/playground', bonfireController.index);
-app.get('/bonfires', bonfireController.returnNextBonfire);
-app.get('/bonfire-json-generator', bonfireController.returnGenerator);
-app.post('/bonfire-json-generator', bonfireController.generateChallenge);
-app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
-app.post('/bonfire-challenge-generator', bonfireController.testBonfire)
-app.get(
-    '/bonfires/:bonfireName',
-    bonfireController.returnIndividualBonfire
-);
-app.get('/bonfire', function(req, res) {
-    res.redirect(301, '/playground');
-});
-
-
-
-app.post('/completed-bonfire/', bonfireController.completedBonfire);
-
-/**
- * Courseware related routes
- */
-
-app.get('/coursewares/', coursewareController.returnNextCourseware);
-app.get('/coursewares/getCoursewareList', coursewareController.showAllCoursewares);
-app.get(
-    '/coursewares/:coursewareName',
-    coursewareController.returnIndividualCourseware
-);
-app.post('/completed-courseware/', coursewareController.completedCourseware);
-
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
 app.get('/api/checkExistingUsername/:username', userController.checkExistingUsername);
 app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
-app.get('/account', userController.getAccount);
-app.post('/account/profile', userController.postUpdateProfile);
-app.post('/account/password', userController.postUpdatePassword);
-app.post('/account/delete', userController.postDeleteAccount);
-app.get('/account/unlink/:provider', userController.getOauthUnlink);
 
 
 /**
@@ -424,12 +364,6 @@ app.get(
     passport.authenticate('google', passportOptions), function (req, res) {
         res.redirect(req.session.returnTo || '/');
     }
-);
-
-//put this route last
-app.get(
-    '/:username',
-    userController.returnUser
 );
 
 

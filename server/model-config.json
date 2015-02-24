@@ -29,5 +29,17 @@
   "bonfire": {
     "dataSource": "db",
     "public": true
+  },
+  "courseware": {
+    "dataSource": "db",
+    "public": true
+  },
+  "bonfirecompletion": {
+    "dataSource": "db",
+    "public": false
+  },
+  "user": {
+    "dataSource": "db",
+    "public": false
   }
 }

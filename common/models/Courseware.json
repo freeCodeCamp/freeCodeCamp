@@ -1,0 +1,19 @@
+{
+  "name": "courseware",
+  "base": "PersistedModel",
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "difficulty": "string",
+    "description": "array",
+    "tests": "array",
+    "challengeSeed": "array",
+    "completionMessage": "string",
+    "challengeType": "number"
+  },
+  "validations": [],
+  "acls": [],
+  "methods": []
+}
