@@ -1,0 +1,19 @@
+{
+  "name": "bonfire",
+  "base": "PersistedModel",
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "difficulty": {
+      "type": "string"
+    },
+    "descriptions": [],
+    "tests": [],
+    "challengeSeed": "string"
+  },
+  "validations": [],
+  "acls": [],
+  "methods": []
+}
