@@ -2605,11 +2605,12 @@
     "challengeType" : 2
   },
   {
-    "_id": "bd7123c8c441eddfaeb5bdef",
+    "_id": "bd7123c9c441eddfaeb5bdef",
     "name": "Meet Booleans",
     "difficulty": "9.98",
     "description": [
-      "Return true"
+      "Return true",
+      "Some additional directions"
     ],
     "tests": [
       "expect(welcomeToBooleans()).to.be.a(\"boolean\");",
