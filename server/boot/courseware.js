@@ -1,13 +1,12 @@
 var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:courseware'),
-    Courseware = require('./../models/Courseware'),
-    User = require('./../models/User'),
-    resources = require('./resources'),
+    resources = require('../../controllers/resources'),
     R = require('ramda');
 
 module.exports = function(app) {
   var router = app.loopback.Router();
-  courseware = app.models.courseware;
+  var Courseware = app.models.courseware;
+  var User = app.models.User;
   router.get('/coursewares/', returnNextCourseware);
   router.get('/coursewares/getCoursewareList', showAllCoursewares);
   router.get('/coursewares/:coursewareName', returnIndividualCourseware);

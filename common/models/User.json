@@ -129,7 +129,7 @@
     "uncompletedBonfires": "array",
     "completedBonfires": "array",
     "uncompletedCoursewares": "array",
-    "completedCoursewares": "array"
+    "completedCoursewares": "array",
     "challengesHash": {
       "0": {
         "type": "number",

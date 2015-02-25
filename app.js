@@ -29,15 +29,7 @@ var express = require('express'),
     homeController = require('./controllers/home'),
     challengesController = require('./controllers/challenges'),
     resourcesController = require('./controllers/resources'),
-    userController = require('./controllers/user'),
     contactController = require('./controllers/contact'),
-    bonfireController = require('./controllers/bonfire'),
-    coursewareController = require('./controllers/courseware'),
-
-    /**
-     * User model
-     */
-    User = require('./models/User'),
 
     /**
      * API keys and Passport configuration.
@@ -210,51 +202,7 @@ app.use(function (req, res, next) {
 
 app.use(
     express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
-);
-
-/**
- * Main routes.
- */
-
-app.get('/', homeController.index);
-app.get('/privacy', resourcesController.privacy);
-app.get('/jquery-exercises', resourcesController.jqueryExercises);
-app.get('/chat', resourcesController.chat);
-app.get('/live-pair-programming', resourcesController.livePairProgramming);
-app.get('/install-screenhero', resourcesController.installScreenHero);
-app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
-app.get('/chromebook', resourcesController.chromebook);
-app.get('/deploy-a-website', resourcesController.deployAWebsite);
-app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
-app.get('/control-shortcuts', resourcesController.controlShortcuts);
-app.get('/control-shortcuts', resourcesController.deployAWebsite);
-app.get('/stats', function(req, res) {
-    res.redirect(301, '/learn-to-code');
-});
-app.get('/learn-to-code', resourcesController.about);
-app.get('/about', function(req, res) {
-    res.redirect(301, '/learn-to-code');
-});
-
-app.get('/nonprofits', contactController.getNonprofitsForm);
-app.post('/nonprofits', contactController.postNonprofitsForm);
-
-app.get(
-  '/done-with-first-100-hours',
-  passportConf.isAuthenticated,
-  contactController.getDoneWithFirst100Hours
-);
-app.post(
-  '/done-with-first-100-hours',
-  passportConf.isAuthenticated,
-  contactController.postDoneWithFirst100Hours
-);
-app.get(
-    '/nonprofit-project-instructions',
-    passportConf.isAuthenticated,
-    resourcesController.nonprofitProjectInstructions
-);
-
+)
 
 /**
  * Challenge related routes
@@ -269,20 +217,6 @@ app.get(
 );
 
 app.all('/account', passportConf.isAuthenticated);
-app.get('/account/api', userController.getAccountAngular);
-
-/**
- * API routes
- */
-
-app.get('/api/github', resourcesController.githubCalls);
-app.get('/api/blogger', resourcesController.bloggerCalls);
-app.get('/api/trello', resourcesController.trelloCalls);
-
-// Unique Check API route
-app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
-app.get('/api/checkExistingUsername/:username', userController.checkExistingUsername);
-app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
 
 
 /**

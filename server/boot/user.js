@@ -3,18 +3,15 @@ var _ = require('lodash'),
     crypto = require('crypto'),
     nodemailer = require('nodemailer'),
     passport = require('passport'),
-    User = require('../models/User'),
-    secrets = require('../config/secrets'),
+    secrets = require('../../config/secrets'),
     moment = require('moment'),
-    Challenge = require('./../models/Challenge'),
     debug = require('debug')('freecc:cntr:challenges');
 
 //TODO(Berks): Refactor to use module.exports = {} pattern.
 
 module.exports = function(app) {
   var router = app.loopback.Router();
-  user = app.models.user;
-  router.get('/bonfires/playground', showAllBonfires);
+  var User = app.models.User;
   router.get('/signin', getSignin);
   router.get('/login', function(req, res) { res.redirect(301, '/signin'); });
   router.post('/signin', postSignin);
@@ -28,13 +25,17 @@ module.exports = function(app) {
   router.get('/email-signin', getEmailSignin);
   router.post('/email-signup', postEmailSignup);
   router.post('/email-signin', postSignin);
-  router.post('/update-progress', passportConf.isAuthenticated, updateProgress);
   router.get('/account', getAccount);
   router.post('/account/profile', postUpdateProfile);
   router.post('/account/password', postUpdatePassword);
   router.post('/account/delete', postDeleteAccount);
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/:username', returnUser);
+  router.get('/api/checkUniqueUsername/:username', checkUniqueUsername);
+  router.get('/api/checkExistingUsername/:username', checkExistingUsername);
+  router.get('/api/checkUniqueEmail/:email', checkUniqueEmail);
+  router.get('/account/api', getAccountAngular);
+  //router.post('/update-progress', passport.isAuthenticated, updateProgress);
 
   /**
    * GET /signin

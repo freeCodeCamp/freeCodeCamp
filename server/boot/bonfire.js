@@ -1,12 +1,12 @@
 var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:bonfires'),
-    User = require('../../models/User'),
     resources = require('../../controllers/resources'),
     R = require('ramda');
 
 module.exports = function(app) {
   var router = app.loopback.Router();
-  bonfire = app.models.bonfire;
+  var Bonfire = app.models.bonfire;
+  var User = app.models.User;
   router.get('/bonfires/getBonfireList', showAllBonfires);
   router.get('/bonfires', returnNextBonfire);
   router.get('/bonfire-json-generator', returnGenerator);

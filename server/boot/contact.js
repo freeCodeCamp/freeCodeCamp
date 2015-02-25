@@ -10,24 +10,39 @@ var transporter = nodemailer.createTransport({
   }
 });
 
-module.exports = {
+module.exports = function(app) {
+  var router = app.loopback.Router();
+
+  router.get(
+    '/done-with-first-100-hours',
+    passportConf.isAuthenticated,
+    getDoneWithFirst100Hours
+  );
+  router.post(
+    '/done-with-first-100-hours',
+    passportConf.isAuthenticated,
+    postDoneWithFirst100Hours
+  );
+  router.get('/nonprofits', getNonprofitsForm);
+  router.post('/nonprofits', postNonprofitsForm);
+
   /**
    * GET /contact
    * Contact form page.
    */
 
-  getNonprofitsForm: function(req, res) {
+  function getNonprofitsForm(req, res) {
     res.render('contact/nonprofits', {
       title: 'Free Code Work for Nonprofits Project Submission Page'
     });
-  },
+  }
 
   /**
    * POST /contact
    * Send a contact form via Nodemailer.
    */
 
-  postNonprofitsForm: function(req, res) {
+  function postNonprofitsForm(req, res) {
     var mailOptions = {
       to: 'team@freecodecamp.com',
       name: req.body.name,
@@ -44,9 +59,9 @@ module.exports = {
       req.flash('success', {msg: 'Email has been sent successfully!'});
       res.redirect('/nonprofits');
     });
-  },
+  }
 
-  getDoneWithFirst100Hours: function(req, res) {
+  function getDoneWithFirst100Hours(req, res) {
     if (req.user.points >= 53) {
       res.render('contact/done-with-first-100-hours', {
         title: 'Congratulations on finishing the first 100 hours of Free Code Camp!'
@@ -55,9 +70,9 @@ module.exports = {
       req.flash('errors', {msg: 'Hm... have you finished all the challenges?'});
       res.redirect('/');
     }
-  },
+  }
 
-  postDoneWithFirst100Hours: function(req, res) {
+  function postDoneWithFirst100Hours(req, res) {
     var mailOptions = {
       to: 'team@freecodecamp.com',
       name: 'Completionist',
@@ -75,4 +90,5 @@ module.exports = {
       res.redirect('/nonprofit-project-instructions');
     });
   }
+  app.use(router);
 };

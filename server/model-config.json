@@ -34,7 +34,7 @@
     "dataSource": "db",
     "public": true
   },
-  "bonfirecompletion": {
+  "bonfireCompletion": {
     "dataSource": "db",
     "public": false
   },
