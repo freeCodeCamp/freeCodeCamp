@@ -1,6 +1,7 @@
-require('newrelic');
+if (process.env.NODE_ENV === 'production') {
+  require('newrelic');
+}
 require('dotenv').load();
-
 var loopback = require('loopback'),
     passport = require('passport'),
     boot = require('loopback-boot'),
