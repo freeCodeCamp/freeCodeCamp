@@ -3,7 +3,9 @@
     "_id" : "bd7124d8c441eddfaeb5bdef",
     "name": "Learn how Free Code Camp Works",
     "difficulty": 0.01,
-    "challengeSeed": "114486344",
+    "challengeSeed": [
+      "114486344"
+    ],
     "description" : [
         "Watch this 1-minute video, or simply read this summary:",
         "Welcome to Free Code Camp. We're a community of busy people learning to code.",
@@ -19,12 +21,14 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
     "_id" : "bd7125d8c441eddfaeb5bdef",
     "name": "Join Our Chat Room",
     "difficulty": 0.02,
-    "challengeSeed": "114627322",
+    "challengeSeed": [
+      "114627322"
+    ],
     "description" : [
         "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper who's on the same challenge as you and wants to pair program.",
         "If you don't already have a GitHub account, create one real quick at <a href='https://www.github.com' target='_blank'>https://www.github.com</a>.",
@@ -37,12 +41,14 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
     "_id" : "bd7126d8c441eddfaeb5bdef",
     "name": "Join Our Forum",
     "difficulty": 0.03,
-    "challengeSeed": "115275066",
+    "challengeSeed": [
+      "115275066"
+    ],
     "description" : [
         "Go to Free Code Camp's forum: <a href='http://forum.freecodecamp.com' target='_blank'>http://forum.freecodecamp.com</a>.",
         "You can come here to share and discuss coding resources, ask questions to our entire community, and coordinate local Free Code Camp events.",
@@ -62,7 +68,9 @@
     "_id" : "bd7127d8c441eddfaeb5bdef",
     "name": "Build a Personal Website",
     "difficulty": 0.04,
-    "challengeSeed": "114627406",
+    "challengeSeed": [
+      "114627406"
+    ],
     "description" : [
         "There are tons of interactive HTML and CSS tutorials out there, but Nathan Bashaw and Christine Bower's Dash tutorials - which they built for General Assembly - are our favorite.",
         "Go to <a href='https://dash.generalassemb.ly/projects/annas-website-1' target='_blank'>https://dash.generalassemb.ly/projects/annas-website-1</a> and get started with your first project."
@@ -74,7 +82,9 @@
     "_id" : "bd7128d8c441eddfaeb5bdef",
     "name": "Build a Responsive Blog Theme",
     "difficulty": 0.05,
-    "challengeSeed": "114578441",
+    "challengeSeed": [
+      "114578441"
+    ],
     "description" : [
         "Next, let's learn about responsive web design and continue learning about HTML and CSS.",
         "A responsive website will automatically adapt to changes in your browser's width. This means that you can make one version of a website that will look good on desktop, tablet and phone.",
@@ -89,7 +99,9 @@
     "_id" : "bd8129d8c441eddfaeb5bdef",
     "name": "Build a Small Business Website",
     "difficulty": 0.06,
-    "challengeSeed": "114578438",
+    "challengeSeed": [
+      "114578438"
+    ],
     "description" : [
         "Ready for some more HTML and CSS fundamentals?",
         "Go to <a href='https://dash.generalassemb.ly/projects/eshas-restaurant-1' target='_blank'>https://dash.generalassemb.ly/projects/eshas-restaurant-1</a> and complete the third project."
@@ -101,7 +113,9 @@
     "_id" : "bd7110d8c441eddfaeb5bdef",
     "name": "Tweak HTML and CSS in CodePen",
     "difficulty": 0.07,
-    "challengeSeed": "110752744",
+    "challengeSeed": [
+      "110752744"
+    ],
     "description" : [
         "Now we're going to learn how to use a tool called CodePen, which lets you experiment with HTML and CSS, and even create single-page web applications, right in your browser!",
         "Go to <a href='http://www.newsweek.com/' target='_blank'>http://www.newsweek.com/</a>",
@@ -119,7 +133,9 @@
     "_id" : "bd7111d8c441eddfaeb5bdef",
     "name": "Build a CSS Robot",
     "difficulty": 0.08,
-    "challengeSeed": "114578436",
+    "challengeSeed": [
+      "114578436"
+    ],
     "description" : [
         "Now let's learn some more CSS, and a small amount of a JavaScript-based tool called jQuery.",
         "Go to <a href='https://dash.generalassemb.ly/projects/cotbots-1' target='_blank'>https://dash.generalassemb.ly/projects/cotbots-1</a> and complete the fourth project."
@@ -131,7 +147,9 @@
     "_id" : "bd7112d8c441eddfaeb5bdef",
     "name": "Get Started with jQuery",
     "difficulty": 0.09,
-    "challengeSeed": "114578435",
+    "challengeSeed": [
+      "114578435"
+    ],
     "description" : [
         "jQuery is a powerful tool for manipulating HTML elements.",
         "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
@@ -146,7 +164,9 @@
     "_id" : "bd7113d8c441eddfaeb5bdef",
     "name": "Traverse the DOM",
     "difficulty": 0.10,
-    "challengeSeed": "114591805",
+    "challengeSeed": [
+      "114591805"
+    ],
     "description" : [
         "Now let's learn more about DOM traversal - that is, moving from one HTML element to the next.",
         "Go to <a href='http://try.jquery.com/levels/2/challenges/1' target='_blank'>http://try.jquery.com/levels/2/challenges/1</a> and complete the second section."
@@ -158,7 +178,9 @@
     "_id" : "bd7114d8c441eddfaeb5bdef",
     "name": "Work with the DOM",
     "difficulty": 0.11,
-    "challengeSeed": "114591804",
+    "challengeSeed": [
+      "114591804"
+    ],
     "description" : [
         "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
         "Go to <a href='http://try.jquery.com/levels/3/challenges/1' target='_blank'>http://try.jquery.com/levels/3/challenges/1</a> and complete the third section."
@@ -170,7 +192,9 @@
     "_id" : "bd7115d8c441eddfaeb5bdef",
     "name": "Listen for DOM Events",
     "difficulty": 0.12,
-    "challengeSeed": "114591802",
+    "challengeSeed": [
+      "114591802"
+    ],
     "description" : [
         "Now let's learn how to use jQuery Listeners. These will \"listen\" for something to happen, and then trigger a subsequent event",
         "Go to <a href='http://try.jquery.com/levels/4/challenges/1' target='_blank'>http://try.jquery.com/levels/4/challenges/1</a> and complete the fourth section."
@@ -182,7 +206,9 @@
     "_id" : "bd7116d8c441eddfaeb5bdef",
     "name": "Use jQuery for Styling",
     "difficulty": 0.13,
-    "challengeSeed": "114591801",
+    "challengeSeed": [
+      "114591801"
+    ],
     "description" : [
         "Finally, let's use jQuery to manipulate the way websites look by changing the CSS of elements.",
         "Go to <a href='http://try.jquery.com/levels/5/challenges/1' target='_blank'>http://try.jquery.com/levels/5/challenges/1</a> and complete the fifth section."
@@ -194,7 +220,9 @@
     "_id" : "bd7117d8c441eddfaeb5bdef",
     "name": "Build a MadLibs Game",
     "difficulty": 0.14,
-    "challengeSeed": "114591799",
+    "challengeSeed": [
+      "114591799"
+    ],
     "description" : [
         "Now that we've built a foundation in jQuery, let's go back to Dash and do its last challenge.",
         "If you aren't familiar with Mad Libs, they basically involve inserting random nouns, adjectives and verbs into stories. The stories that result are often hilarious.",
@@ -207,7 +235,9 @@
     "_id" : "bd7118d8c441eddfaeb5bdef",
     "name": "Discover Chrome's DevTools",
     "difficulty": 0.15,
-    "challengeSeed": "110752743",
+    "challengeSeed": [
+      "110752743"
+    ],
     "description" : [
         "It's time to learn the most powerful tool your browser has - the Development Tools!",
         "If you aren't already using Chrome, you'll want to download it here: <a href='http://www.google.com/chrome/' target='_blank'>http://www.google.com/chrome/</a>. While it's true that Firefox has a tool called Firebug that is very similar to Chrome's DevTools, we will use Chrome for this challenge.",
@@ -221,7 +251,9 @@
     "_id" : "bd7119d8c441eddfaeb5bdef",
     "name": "Tackle jQuery Exercises",
     "difficulty": 0.16,
-    "challengeSeed": "113173612",
+    "challengeSeed": [
+      "113173612"
+    ],
     "description" : [
         "We've built some special jQuery challenges to help you reinforce your knowledge of this fundamental skill.",
         "There are many correct ways to solve each of these exercises. After you complete the challenge, you can compare your solution with our solution by pressing the \"#solution-button\" button.",
@@ -234,7 +266,9 @@
     "_id" : "bd7120d8c441eddfaeb5bdef",
     "name": "Customize Bootstrap",
     "difficulty": 0.17,
-    "challengeSeed": "110752741",
+    "challengeSeed": [
+      "110752741"
+    ],
     "description" : [
         "Let's learn a little more about Twitter's responsive CSS framework, Bootstrap, and how we can add some custom themes to it.",
         "Go to <a href='http://getbootstrap.com/components/' target='_blank'>http://getbootstrap.com/components/</a>",
@@ -257,7 +291,9 @@
     "_id" : "bd7122d8c441eddfaeb5bdef",
     "name": "Inject Animation into CSS",
     "difficulty": 0.18,
-    "challengeSeed": "110752740",
+    "challengeSeed": [
+      "110752740"
+    ],
     "description" : [
         "You may have noticed some sites have cool animations. Actually, animating DOM elements is pretty straightforward if you use a CSS library called Animate.css.",
         "Go to <a href='http://daneden.github.io/animate.css/' target='_blank'>http://daneden.github.io/animate.css/</a> and try out some of the CSS animations.",
@@ -274,7 +310,9 @@
     "_id" : "bd7123d8c441eddfaeb5bdef",
     "name": "Learn Basic Computer Science",
     "difficulty": 0.19,
-    "challengeSeed": "114628241",
+    "challengeSeed": [
+      "114628241"
+    ],
     "description" : [
         "Stanford has an excellent free online Computer Science curriculum. This interactive course uses a modified version of JavaScript. It will cover a lot of concepts quickly.",
         "Note that Harvard also has an excellent introduction to computer science course called CS50, but it takes more than 100 hours to complete, and doesn't use JavaScript.",
@@ -288,7 +326,9 @@
     "_id" : "bd8124d8c441eddfaeb5bdef",
     "name": "Learn Loops",
     "difficulty": 0.20,
-    "challengeSeed": "114597348",
+    "challengeSeed": [
+      "114597348"
+    ],
     "description" : [
       "Now let's tackle week 2 of Stanford's Intro to Computer Science course.",
       "This will introduce us to loops, a fundamental feature of every programming language.",
@@ -301,7 +341,9 @@
     "_id" : "bd8125d8c441eddfaeb5bdef",
     "name": "Learn Computer Hardware",
     "difficulty": 0.21,
-    "challengeSeed": "114597347",
+    "challengeSeed": [
+      "114597347"
+    ],
     "description" : [
       "Week 3 of Stanford's Intro to Computer Science covers computer hardware and explains Moore's law of exponential growth in the price-performance of processors.",
       "This challenge will also give you an understanding of how bits and bytes work.",
@@ -314,7 +356,9 @@
     "_id" : "bd8126d8c441eddfaeb5bdef",
     "name": "Learn Computer Networking",
     "difficulty": 0.22,
-    "challengeSeed": "114604811",
+    "challengeSeed": [
+      "114604811"
+    ],
     "description" : [
       "Now that you've learned about computer hardware, it's time to learn about the software that runs on top of it.",
       "Particularly important, you will learn about networks and TCP/IP - the protocol that powers the internet.",
@@ -327,7 +371,9 @@
     "_id" : "bd8127d8c441eddfaeb5bdef",
     "name": "Learn Boolean Logic",
     "difficulty": 0.23,
-    "challengeSeed": "114604812",
+    "challengeSeed": [
+      "114604812"
+    ],
     "description" : [
       "Now we'll do some more table exercises and learn boolean logic.",
       "We'll also learn the difference between digital data and analog data.",
@@ -340,7 +386,9 @@
     "_id" : "bd8128d8c441eddfaeb5bdef",
     "name": "Learn Computer Security",
     "difficulty": 0.24,
-    "challengeSeed": "114604813",
+    "challengeSeed": [
+      "114604813"
+    ],
     "description" : [
       "We're almost done with Stanford's Introduction to Computer Science course!",
       "We'll learn about one of the most important inventions of the 20th century - spreadsheets.",
@@ -354,7 +402,9 @@
     "_id" : "bd7129d8c441eddfaeb5bdef",
     "name": "Build an Adventure Game",
     "difficulty": 0.25,
-    "challengeSeed": "114604814",
+    "challengeSeed": [
+      "114604814"
+    ],
     "description" : [
       "Now that you understand some Computer Science fundamentals, let's focus on programming JavaScript!",
       "We're going to work through Codecademy's famous interactive JavaScript course.",
@@ -369,7 +419,9 @@
     "_id" : "bd7130d8c441eddfaeb5bdef",
     "name": "Build Rock Paper Scissors",
     "difficulty": 0.26,
-    "challengeSeed": "114604815",
+    "challengeSeed": [
+      "114604815"
+    ],
     "description" : [
       "Now we'll learn how JavaScript functions work, and use them to build a simple Rock Paper Scissors game.",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1</a> and complete the section.",
@@ -382,7 +434,9 @@
     "_id" : "bd7131d8c441eddfaeb5bdef",
     "name": "Learn JavaScript For Loops",
     "difficulty": 0.27,
-    "challengeSeed": "114614220",
+    "challengeSeed": [
+      "114614220"
+    ],
     "description" : [
       "Let's learn more about the loops that make virtually all programs possible - the \"For Loop\" and \"While Loop\". First, we'll learn the For Loop.",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1web</a> and complete both the both For and While loop section.",
@@ -395,7 +449,9 @@
     "_id" : "bd7132d8c441eddfaeb5bdef",
     "name": "Learn JavaScript While Loops",
     "difficulty": 0.28,
-    "challengeSeed": "114612889",
+    "challengeSeed": [
+      "114612889"
+    ],
     "description" : [
 
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1</a> and complete the section.",
@@ -408,7 +464,9 @@
     "_id" : "bd7133d8c441eddfaeb5bdef",
     "name": "Learn Control Flow",
     "difficulty": 0.29,
-    "challengeSeed": "114612888",
+    "challengeSeed": [
+      "114612888"
+    ],
     "description" : [
       "Much of human reasoning can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If Statements\" and \"Else Statements\".",
       "We'll also learn some advanced \"Control Flow\" principals, such as ways we can exit loops early.",
@@ -422,7 +480,9 @@
     "_id" : "bd7134d8c441eddfaeb5bdef",
     "name": "Build a Contact List",
     "difficulty": 0.30,
-    "challengeSeed": "114612887",
+    "challengeSeed": [
+      "114612887"
+    ],
     "description" : [
       "Up to this point, you've been working mostly with strings and numbers. Now we're going to learn more complicated data structures, like \"Arrays\" and \"Objects\".",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1</a> and complete the section.",
@@ -435,7 +495,9 @@
     "_id" : "bd7135d8c441eddfaeb5bdef",
     "name": "Build an Address Book",
     "difficulty": 0.31,
-    "challengeSeed": "114612885",
+    "challengeSeed": [
+      "114612885"
+    ],
     "description" : [
       "Let's learn more about objects.",
       "Go to <a href='http://www.codecademy.com/courses/spencer-sandbox/0/1' target='_blank'>http://www.codecademy.com/courses/spencer-sandbox/0/1</a> and complete the section.",
@@ -448,7 +510,9 @@
     "_id" : "bd7136d8c441eddfaeb5bdef",
     "name": "Build a Cash Register",
     "difficulty": 0.32,
-    "challengeSeed": "114612882",
+    "challengeSeed": [
+      "114612882"
+    ],
     "description" : [
       "In this final Codecademy section, we'll learn even more about JavaScript objects.",
       "Go to <a href='http://www.codecademy.com/courses/objects-ii/0/1' target='_blank'>http://www.codecademy.com/courses/objects-ii/0/1</a> and complete this section.",
@@ -461,7 +525,9 @@
     "_id" : "bd7137d8c441eddfaeb5bdef",
     "name": "Get Help the Hacker Way",
     "difficulty": 0.33,
-    "challengeSeed": "111500801",
+    "challengeSeed": [
+      "111500801"
+    ],
     "description" : [
         "Watch the video to learn the RSAP (Read, Search, Ask, Post) methodology for getting help.",
         "Try an intelligent Google query that involves JavaScript and filters for this year (since JavaScript changes).",
@@ -478,7 +544,9 @@
     "_id" : "bd7138d8c441eddfaeb5bdef",
     "name": "Learn Regular Expressions",
     "difficulty": 0.34,
-    "challengeSeed": "112547802",
+    "challengeSeed": [
+      "112547802"
+    ],
     "description" : [
         "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
         "Check out <a href='http://www.regexr.com' target='_blank'>http://www.regexr.com</a>. It's a Regular Expression Sandbox.",
@@ -492,7 +560,9 @@
     "_id" : "bd7139d8c441eddfaeb5bdef",
     "name": "Pair Program on Bonfires",
     "difficulty": 0.35,
-    "challengeSeed": "119657641",
+    "challengeSeed": [
+      "119657641"
+    ],
     "description" : [
       "OK, we're finally ready to start pair programming!",
       "Pair Programming is where two people code together on the same computer. It is an efficient way to collaborate, and widely practiced at software companies. Pair Programming is one of the core concepts of \"Agile\" Software Development, which you will hear more about later.",
@@ -520,7 +590,9 @@
     "_id" : "bd7140d8c441eddfaeb5bdef",
     "name": "Manage Source Code with Git",
     "difficulty": 0.36,
-    "challengeSeed": "114635309",
+    "challengeSeed": [
+      "114635309"
+    ],
     "description" : [
         "Revision Control Systems like Git ensure that, no matter how you experiment with your code, you can always roll back your app to a stable previous state.",
         "Git is also a great way to share and contribute to open source software.",
@@ -533,7 +605,9 @@
     "_id" : "bd7141d8c441eddfaeb5bdef",
     "name": "Get Started with Node.js",
     "difficulty": 0.37,
-    "challengeSeed": "114686471",
+    "challengeSeed": [
+      "114686471"
+    ],
     "description" : [
       "Now that we understand some Computer Science and JavaScript programming, you're ready to move on to Full-stack JavaScript!",
       "The first step is to familiarize ourselves Node.js, the JavaScript-based web server that most full-stack JavaScript apps use.",
@@ -547,7 +621,9 @@
     "_id" : "bd7142d8c441eddfaeb5bdef",
     "name": "Try Node.js Events",
     "difficulty": 0.38,
-    "challengeSeed": "114684206",
+    "challengeSeed": [
+      "114684206"
+    ],
     "description" : [
       "One of the reasons Node.js is so fast is that it is \"evented.\" It processes events in an asynchronous manner.",
       "As a result, Node.js relies on asynchronous callbacks.",
@@ -561,7 +637,9 @@
     "_id" : "bd7143d8c441eddfaeb5bdef",
     "name": "Try Node.js Streams",
     "difficulty": 0.39,
-    "challengeSeed": "114684209",
+    "challengeSeed": [
+      "114684209"
+    ],
     "description" : [
       "In this Code School lesson, we'll learn about streaming data back and forth between the client to the server.",
       "We'll also learn about FS, or File System, an important Node.js module for streaming data.",
@@ -574,7 +652,9 @@
     "_id" : "bd7144d8c441eddfaeb5bdef",
     "name": "Learn how Node.js Modules Work",
     "difficulty": 0.40,
-    "challengeSeed": "114684213",
+    "challengeSeed": [
+      "114684213"
+    ],
     "description" : [
       "One of the most exciting features of Node.js is NPM - Node Package Manager",
       "With NPM, you quickly install any of thousands of Node.js modules into your app, and it will automatically handle the other modules that each module dependends upon downstream.",
@@ -588,7 +668,9 @@
     "_id" : "bd7145d8c441eddfaeb5bdef",
     "name": "Start an Express.js Server",
     "difficulty": 0.41,
-    "challengeSeed": "114684247",
+    "challengeSeed": [
+      "114684247"
+    ],
     "description" : [
       "We'll complete Code School's Express.js course shortly after completing this course, but this challenge will give you a quick tour of the Express.js framework.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."
@@ -600,7 +682,9 @@
     "_id" : "bd7146d8c441eddfaeb5bdef",
     "name": "Use Socket.io",
     "difficulty": 0.42,
-    "challengeSeed": "114684530",
+    "challengeSeed": [
+      "114684530"
+    ],
     "description" : [
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."
     ],
@@ -611,7 +695,9 @@
     "_id" : "bd7147d8c441eddfaeb5bdef",
     "name": "Use Redis to Persist Data",
     "difficulty": 0.43,
-    "challengeSeed": "114684532",
+    "challengeSeed": [
+      "114684532"
+    ],
     "description" : [
       "Redis is a key-value store, which is a type of non-relational database. It's one of the fastest and easiest ways to persist data.",
       "Even though we'll ultimately use MongoDB and other technologies to persist data, Redis is quite easy to learn and is still worth learning.",
@@ -624,7 +710,9 @@
     "_id" : "bd7148d8c441eddfaeb5bdef",
     "name": "Dive Deeper into Express.js",
     "difficulty": 0.44,
-    "challengeSeed": "114684533",
+    "challengeSeed": [
+      "114684533"
+    ],
     "description" : [
       "Code School has one of the first comprehensive courses on Express.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. If you've already used your Code School two-day membership, go to the Free Code Camp main chat room and ask how you can get some extra time to work through this course. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1</a> and complete the section."
@@ -636,7 +724,9 @@
     "_id" : "bd7149d8c441eddfaeb5bdef",
     "name": "Setup Express.js Middleware",
     "difficulty": 0.45,
-    "challengeSeed": "114684535",
+    "challengeSeed": [
+      "114684535"
+    ],
     "description" : [
       "Express.js makes extensive use of middleware - a stack of functions that run sequentially in response to a specific event.",
       "Let's learn how to incorporate modules and middleware into our Express.js app.",
@@ -649,7 +739,9 @@
     "_id" : "bd7150d8c441eddfaeb5bdef",
     "name": "Take Advantage of Parameters",
     "difficulty": 0.46,
-    "challengeSeed": "114684537",
+    "challengeSeed": [
+      "114684537"
+    ],
     "description" : [
       "Have you ever noticed a question mark in your browser's address bar, followed by a series of strings? Those are parameters. Parameters are an efficient way to pass information to the server between page loads.",
       "We'll learn about parameters, along with a powerful Express.js feature called Dynamic Routing, in this exciting Code School lesson.",
@@ -662,7 +754,9 @@
     "_id" : "bd7151d8c441eddfaeb5bdef",
     "name": "Add the Body Parser",
     "difficulty": 0.47,
-    "challengeSeed": "114684720",
+    "challengeSeed": [
+      "114684720"
+    ],
     "description" : [
       "Now we'll add the Body Parser module to Express.js. Body Parser is a powerful middleware that helps with routing.",
       "We'll also learn more about HTTP Requests, such as Post and Delete.",
@@ -675,7 +769,9 @@
     "_id" : "bd7152d8c441eddfaeb5bdef",
     "name": "Configure Routes in Express.js",
     "difficulty": 0.48,
-    "challengeSeed": "114684724",
+    "challengeSeed": [
+      "114684724"
+    ],
     "description" : [
       "For this last Code School Express.js challenge, we'll refactor our routes.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1</a> and complete the section."
@@ -688,7 +784,9 @@
     "_id" : "bd7153d8c441eddfaeb5bdef",
     "name": "Try MongoDB",
     "difficulty": 0.49,
-    "challengeSeed": "114685061",
+    "challengeSeed": [
+      "114685061"
+    ],
     "description" : [
       "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
       "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
@@ -700,7 +798,9 @@
     "_id" : "bd7154d8c441eddfaeb5bdef",
     "name": "Get Started with Angular.js",
     "difficulty": 0.50,
-    "challengeSeed": "114684726",
+    "challengeSeed": [
+      "114684726"
+    ],
     "description" : [
       "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
       "In this course, we'll build a virtual shop entirely in Angular.js.",
@@ -713,7 +813,9 @@
     "_id" : "bd7155d8c441eddfaeb5bdef",
     "name": "Apply Angular.js Directives",
     "difficulty": 0.51,
-    "challengeSeed": "114684727",
+    "challengeSeed": [
+      "114684727"
+    ],
     "description" : [
       "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will can alter the behavior of DOM elements based on the directives you've used.",
       "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
@@ -726,7 +828,9 @@
     "_id" : "bd7156d8c441eddfaeb5bdef",
     "name": "Power Forms with Angular.js",
     "difficulty": 0.52,
-    "challengeSeed": "114684729",
+    "challengeSeed": [
+      "114684729"
+    ],
     "description" : [
       "One area where Angular.js really shines is its powerful web forms.",
       "Learn how to create reactive Angular.js forms, including real-time form validation.",
@@ -739,7 +843,9 @@
     "_id" : "bd7157d8c441eddfaeb5bdef",
     "name": "Customize Angular.js Directives",
     "difficulty": 0.53,
-    "challengeSeed": "114685062",
+    "challengeSeed": [
+      "114685062"
+    ],
     "description" : [
       "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
       "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
@@ -751,7 +857,9 @@
     "_id" : "bd7158d8c441eddfaeb5bdef",
     "name": "Create Angular.js Services",
     "difficulty": 0.54,
-    "challengeSeed": "114685060",
+    "challengeSeed": [
+      "114685060"
+    ],
     "description" : [
       "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",
       "We'll learn how to use services in this final Code School Angular.js challenge.",
@@ -3303,7 +3411,6 @@
     ],
     "challengeType": 0
   },
-
   {
     "_id" : "bad87fee1348bd9aedf08899",
     "name": "",

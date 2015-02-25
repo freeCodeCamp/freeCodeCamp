@@ -1,10 +1,9 @@
 require('dotenv').load();
-var courseware = require('./courseware.json'),
-    bonfires = require('./bonfires.json'),
-    secrets = require('../config/secrets'),
+var bonfires = require('./bonfires.json'),
     app = require('../server/server'),
-    Bonfire = app.models.bonfire,
-    Courseware = app.models.courseware;
+    Bonfire = app.models.Bonfire,
+    coursewares = require('./coursewares.json'),
+    Courseware = app.models.Courseware;
 
 var counter = 0;
 var offerings = 2;
