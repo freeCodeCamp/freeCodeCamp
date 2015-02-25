@@ -1,34 +1,30 @@
 require('newrelic');
 require('dotenv').load();
 
-var loopback = require('loopback');
-var boot = require('loopback-boot');
-var express = require('express'),
-  debug = require('debug')('freecc:server'),
-  cookieParser = require('cookie-parser'),
-  compress = require('compression'),
-  session = require('express-session'),
-  logger = require('morgan'),
-  errorHandler = require('errorhandler'),
-  methodOverride = require('method-override'),
-  bodyParser = require('body-parser'),
-  helmet = require('helmet'),
-  _ = require('lodash'),
-  MongoStore = require('connect-mongo')(session),
-  flash = require('express-flash'),
-  path = require('path'),
-  mongoose = require('mongoose'),
-  passport = require('passport'),
-  expressValidator = require('express-validator'),
-  connectAssets = require('connect-assets'),
+var loopback = require('loopback'),
+    passport = require('passport'),
+    boot = require('loopback-boot'),
+    cookieParser = require('cookie-parser'),
+    compress = require('compression'),
+    session = require('express-session'),
+    logger = require('morgan'),
+    methodOverride = require('method-override'),
+    bodyParser = require('body-parser'),
+    helmet = require('helmet'),
+    MongoStore = require('connect-mongo')(session),
+    flash = require('express-flash'),
+    path = require('path'),
+    expressValidator = require('express-validator'),
+    connectAssets = require('connect-assets'),
+    serveStatic = require('serve-static'),
 
-  /**
-   * API keys and Passport configuration.
-   */
-  secrets = require('../config/secrets'),
-  passportConf = require('../config/passportConf');
+    /**
+    * API keys and Passport configuration.
+    */
+    secrets = require('../config/secrets'),
+    passportConf = require('../config/passportConf');
 
-var app = module.exports = loopback();
+var app = loopback();
 
 passportConf(app);
 
@@ -37,11 +33,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
 var oneYear = 31557600000;
-app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
+app.use(serveStatic(path.join(__dirname, '../public'), {maxAge: oneYear}));
 app.use(connectAssets({
   paths: [
-    path.join(__dirname, 'public/css'),
-    path.join(__dirname, 'public/js')
+    path.join(__dirname, '../public/css'),
+    path.join(__dirname, '../public/js')
   ],
   helperContext: app.locals
 }));
@@ -63,7 +59,7 @@ app.use(session({
   secret: secrets.sessionSecret,
   store: new MongoStore({
     url: secrets.db,
-    'auto_reconnect': true
+    autoReconnect: true
   })
 }));
 app.use(passport.initialize());
@@ -74,6 +70,12 @@ app.disable('x-powered-by');
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.xframe());
+
+boot(app, {
+  env: process.env.NODE_ENV,
+  appRootDir: __dirname
+});
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -176,11 +178,8 @@ app.use(function (req, res, next) {
 });
 
 app.use(
-  express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
+  serveStatic(path.join(__dirname, 'public'), {maxAge: 31557600000})
 );
-
-
-
 
 app.start = function() {
   // start the web server
@@ -195,3 +194,4 @@ if (require.main === module) {
   app.start();
 }
 
+module.exports = app;
