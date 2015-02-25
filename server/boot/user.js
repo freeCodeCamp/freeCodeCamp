@@ -664,4 +664,5 @@ module.exports = function(app) {
       res.redirect('/forgot');
     });
   }
+  app.use(router);
 };

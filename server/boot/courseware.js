@@ -1,6 +1,6 @@
 var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:courseware'),
-    resources = require('../../controllers/resources'),
+    resources = require('./resources'),
     R = require('ramda');
 
 module.exports = function(app) {
@@ -26,7 +26,7 @@ module.exports = function(app) {
 
   function returnNextCourseware(req, res) {
     if (!req.user) {
-      return res.redirect('../coursewares/start-our-challenges');
+      return res.redirect('/coursewares/start-our-challenges');
     }
     var completed = req.user.completedCoursewares.map(function (elem) {
       return elem._id;
@@ -53,10 +53,10 @@ module.exports = function(app) {
         req.flash('errors', {
           msg: "It looks like you've completed all the courses we have available. Good job!"
         });
-        return res.redirect('../coursewares/start-our-challenges');
+        return res.redirect('./coursewares/start-our-challenges');
       }
       nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
-      return res.redirect('../coursewares/' + nameString);
+      return res.redirect('/coursewares/' + nameString);
     });
   }
 
@@ -74,14 +74,14 @@ module.exports = function(app) {
         req.flash('errors', {
           msg: "404: We couldn't find a challenge with that name. Please double check the name."
         });
-        return res.redirect('/coursewares')
+        return res.redirect('/coursewares/')
       }
       courseware = courseware.pop();
 
       // Redirect to full name if the user only entered a partial
       var dashedNameFull = courseware.name.toLowerCase().replace(/\s/g, '-');
       if (dashedNameFull != dashedName) {
-        return res.redirect('../coursewares/' + dashedNameFull);
+        return res.redirect('/coursewares/' + dashedNameFull);
       }
 
       var challengeType = {
@@ -240,4 +240,5 @@ module.exports = function(app) {
       }
     });
   }
+  app.use(router);
 };

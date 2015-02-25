@@ -1,10 +1,11 @@
-var User = require('../common/models/User'),
+var User = require('../../common/models/User'),
     resources = require('./resources.json'),
     questions = resources.questions,
     steps = resources.steps,
-    secrets = require('./../config/secrets'),
-    bonfires = require('../seed_data/bonfires.json');
-    coursewares = require('../seed_data/coursewares.json');
+    secrets = require('../../config/secrets'),
+    passportConf = require('../../config/passport'),
+    bonfires = require('../../seed_data/bonfires.json'),
+    coursewares = require('../../seed_data/coursewares.json'),
     Client = require('node-rest-client').Client,
     client = new Client(),
     debug = require('debug')('freecc:cntr:bonfires');

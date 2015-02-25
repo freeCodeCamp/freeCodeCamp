@@ -1,6 +1,6 @@
 var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:bonfires'),
-    resources = require('../../controllers/resources'),
+    resources = require('./resources'),
     R = require('ramda');
 
 module.exports = function(app) {

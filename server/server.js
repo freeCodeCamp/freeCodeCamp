@@ -1,3 +1,6 @@
+require('newrelic');
+require('dotenv').load();
+
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 var express = require('express'),
@@ -20,24 +23,13 @@ var express = require('express'),
   connectAssets = require('connect-assets'),
 
   /**
-   * Controllers (route handlers).
-   */
-  homeController = require('../controllers/home'),
-  challengesController = require('../controllers/challenges'),
-  resourcesController = require('../controllers/resources'),
-  contactController = require('../controllers/contact'),
-
-  /**
    * API keys and Passport configuration.
    */
-  secrets = require('./config/secrets'),
-  passportConf = require('./config/passport');
+  secrets = require('../config/secrets'),
+  passportConf = require('../config/passport');
 
 var app = module.exports = loopback();
 
-// Bootstrap the application, configure models, datasources and middleware.
-// Sub-apps like REST API are mounted via boot scripts.
-boot(app, __dirname);
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -188,6 +180,7 @@ app.use(
 
 
 
+
 app.start = function() {
   // start the web server
   return app.listen(function() {
@@ -200,3 +193,4 @@ app.start = function() {
 if (require.main === module) {
   app.start();
 }
+

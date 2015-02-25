@@ -8,20 +8,9 @@ var _ = require('lodash'),
     LinkedInStrategy = require('passport-linkedin-oauth2').Strategy,
     OAuthStrategy = require('passport-oauth').OAuthStrategy,
     OAuth2Strategy = require('passport-oauth').OAuth2Strategy,
-    User = require('../models/User'),
+    User = require('../common/models/User'),
     nodemailer = require('nodemailer'),
     secrets = require('./secrets');
-
-
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
-});
 
 // Sign in using Email and Password.
 

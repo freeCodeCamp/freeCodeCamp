@@ -1,6 +1,7 @@
 var nodemailer = require('nodemailer'),
     debug = require('debug')('freecc:cntr:contact'),
-    secrets = require('../config/secrets');
+    passportConf = require('../../config/passport'),
+    secrets = require('../../config/secrets');
 
 var transporter = nodemailer.createTransport({
   service: 'Mandrill',
