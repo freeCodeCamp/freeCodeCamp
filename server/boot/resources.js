@@ -3,7 +3,7 @@ var User = require('../../common/models/User'),
     questions = resources.questions,
     steps = resources.steps,
     secrets = require('../../config/secrets'),
-    passportConf = require('../../config/passport'),
+    passportUtils = require('../../config/passportUtils'),
     bonfires = require('../../seed_data/bonfires.json'),
     coursewares = require('../../seed_data/coursewares.json'),
     Client = require('node-rest-client').Client,
@@ -40,7 +40,7 @@ module.exports = function(app) {
   router.get('/api/trello', trelloCalls);
   //router.get(
   //  '/nonprofit-project-instructions',
-  //  passportConf.isAuthenticated,
+  //  passportUtils.isAuthenticated,
   //  nonprofitProjectInstructions
   //);
 

@@ -1,6 +1,6 @@
 var nodemailer = require('nodemailer'),
     debug = require('debug')('freecc:cntr:contact'),
-    passportConf = require('../../config/passport'),
+    passportUtils = require('../../config/passportUtils'),
     secrets = require('../../config/secrets');
 
 var transporter = nodemailer.createTransport({
@@ -16,12 +16,12 @@ module.exports = function(app) {
 
   router.get(
     '/done-with-first-100-hours',
-    passportConf.isAuthenticated,
+    passportUtils.isAuthenticated,
     getDoneWithFirst100Hours
   );
   router.post(
     '/done-with-first-100-hours',
-    passportConf.isAuthenticated,
+    passportUtils.isAuthenticated,
     postDoneWithFirst100Hours
   );
   router.get('/nonprofits', getNonprofitsForm);

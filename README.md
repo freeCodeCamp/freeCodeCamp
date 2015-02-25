@@ -3,7 +3,7 @@
 Free Code Camp!
 =======================
 
-We're a community of busy people learning to code by collaborating on projects for nonprofits. We learn, then use, the JavaScript MEAN stack - MongoDB, Express.js, Angular.js and Node.js. 
+We're a community of busy people learning to code by collaborating on projects for nonprofits. We learn, then use, the JavaScript MEAN stack - MongoDB, Express.js, Angular.js and Node.js.
 
 This app is live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com), and we have a [chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp), [blog](http://blog.freecodecamp.com) and [forum](http://forum.freecodecamp.com), too. Join us!
 
@@ -71,7 +71,7 @@ Project Structure
 
 | Name                               | Description                                                 |
 | ---------------------------------- |:-----------------------------------------------------------:|
-| **config**/passport.js             | Passport Local and OAuth strategies, plus login middleware. |
+| **config**/passportConf.js             | Passport Local and OAuth strategies, plus login middleware. |
 | **config**/secrets.js              | Your API keys, tokens, passwords and database URL.          |
 | **controllers**/contact.js         | Controller for contact form.                                |
 | **controllers**/home.js            | Controller for home page (index).                           |

@@ -26,10 +26,11 @@ var express = require('express'),
    * API keys and Passport configuration.
    */
   secrets = require('../config/secrets'),
-  passportConf = require('../config/passport');
+  passportConf = require('../config/passportConf');
 
 var app = module.exports = loopback();
 
+passportConf(app);
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));

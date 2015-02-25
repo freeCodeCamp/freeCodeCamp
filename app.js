@@ -35,7 +35,7 @@ var express = require('express'),
      * API keys and Passport configuration.
      */
     secrets = require('./config/secrets'),
-    passportConf = require('./config/passport');
+    passportUtils = require('./config/passport');
 
 /**
  * Create Express server.
@@ -216,7 +216,7 @@ app.get(
     challengesController.returnChallenge
 );
 
-app.all('/account', passportConf.isAuthenticated);
+app.all('/account', passportUtils.isAuthenticated);
 
 
 /**
