@@ -1,13 +1,13 @@
-var _ = require('lodash'),
+var R = require('ramda'),
     debug = require('debug')('freecc:cntr:bonfires'),
-    resources = require('./resources'),
-    R = require('ramda');
+    randomUtils = require('../utils/random'),
+    bonfireUtils = require('../utils/bonfireUtils');
 
 module.exports = function(app) {
   var router = app.loopback.Router();
   var Bonfire = app.models.bonfire;
   var User = app.models.User;
-  router.get('/bonfires/getBonfireList', showAllBonfires);
+  router.get('/bonfires/getBonfireList', getBonfireList);
   router.get('/bonfires', returnNextBonfire);
   router.get('/bonfire-json-generator', returnGenerator);
   router.get('/bonfire-challenge-generator', publicGenerator);
@@ -31,51 +31,43 @@ module.exports = function(app) {
       challengeSeed: '',
       cc: req.user ? req.user.bonfiresHash : undefined,
       progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-      verb: resources.randomVerb(),
-      phrase: resources.randomPhrase(),
-      compliments: resources.randomCompliment(),
+      verb: randomUtils.randomVerb(),
+      phrase: randomUtils.randomPhrase(),
+      compliments: randomUtils.randomCompliment(),
       bonfires: [],
       bonfireHash: 'test'
     });
   }
 
-  function showAllBonfires(req, res) {
-    var completedBonfires = req.user.completedBonfires.map(function (elem) {
-      return elem._id;
-    });
+  function getBonfireList(req, res) {
+    var data = {};
+    var completedBonfires;
+    if (req.user) {
+      completedBonfires = req.user.completedBonfires.map(function (elem) {
+        return elem._id;
+      });
+    } else {
+      completedBonfires = [];
+    }
     var noDuplicateBonfires = R.uniq(completedBonfires);
-    data.bonfireList = resources.allBonfireNames();
+    data.bonfireList = bonfireUtils.allBonfireNames();
     data.completedList = noDuplicateBonfires;
 
-    debug('started')
-    res.render('bonfire/show.jade', {
-      completedWith: null,
-      title: 'Bonfire Playground',
-      name: 'Bonfire Playground',
-      difficulty: 0,
-      brief: 'Feel free to play around!',
-      details: '',
-      tests: [],
-      challengeSeed: '',
-      //cc: req.user ? req.user.bonfiresHash : undefined,
-      //progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-      verb: resources.randomVerb(),
-      phrase: resources.randomPhrase(),
-      compliments: resources.randomCompliment(),
-      bonfires: [],
-      bonfireHash: 'test'
-    });
+    debug('started');
+    res.json(data);
   }
 
   function returnNextBonfire(req, res) {
+    console.log('user', req.user);
     if (!req.user) {
+      console.log('conditional');
       return res.redirect('../bonfires/meet-bonfire');
     }
     var completed = req.user.completedBonfires.map(function (elem) {
       return elem._id;
     });
 
-    req.user.uncompletedBonfires = resources.allBonfireIds().filter(function (elem) {
+    req.user.uncompletedBonfires = bonfireUtils.allBonfireIds().filter(function (elem) {
       if (completed.indexOf(elem) === -1) {
         return elem;
       }
@@ -104,11 +96,11 @@ module.exports = function(app) {
   function returnIndividualBonfire(req, res, next) {
     var dashedName = req.params.bonfireName;
 
-    bonfireName = dashedName.replace(/\-/g, ' ');
+    var bonfireName = dashedName.replace(/\-/g, ' ');
 
-    Bonfire.find({"name": new RegExp(bonfireName, 'i')}, function (err, bonfire) {
+    Bonfire.find({ where: { "name": new RegExp(bonfireName, 'i') } }, function (err, bonfire) {
       if (err) {
-        next(err);
+        return next(err);
       }
 
 
@@ -126,6 +118,7 @@ module.exports = function(app) {
         return res.redirect('../bonfires/' + dashedNameFull);
       }
 
+      console.log('name', bonfire.name);
       res.render('bonfire/show', {
         completedWith: null,
         title: bonfire.name,
@@ -138,12 +131,11 @@ module.exports = function(app) {
         challengeSeed: bonfire.challengeSeed,
         cc: !!req.user,
         progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-        verb: resources.randomVerb(),
-        phrase: resources.randomPhrase(),
-        compliment: resources.randomCompliment(),
+        verb: randomUtils.randomVerb(),
+        phrase: randomUtils.randomPhrase(),
+        compliment: randomUtils.randomCompliment(),
         bonfires: bonfire,
-        bonfireHash: bonfire._id
-
+        bonfireHash: bonfire.id
       });
     });
   }
@@ -198,9 +190,9 @@ module.exports = function(app) {
       challengeSeed: bonfireChallengeSeed,
       cc: req.user ? req.user.bonfiresHash : undefined,
       progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-      verb: resources.randomVerb(),
-      phrase: resources.randomPhrase(),
-      compliment: resources.randomCompliment(),
+      verb: randomUtils.Verb(),
+      phrase: randomUtils.Phrase(),
+      compliment: randomUtils.Compliment(),
       bonfires: [],
       bonfireHash: "test"
     });
@@ -240,7 +232,7 @@ module.exports = function(app) {
     res.send(response);
   }
 
-  function completedBonfire(req, res) {
+  function completedBonfire(req, res, next) {
     var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
     var isCompletedDate = Math.round(+new Date() / 1000);
     var bonfireHash = req.body.bonfireInfo.bonfireHash;
@@ -250,12 +242,12 @@ module.exports = function(app) {
       var paired = User.find({"profile.username": isCompletedWith.toLowerCase()}).limit(1);
       paired.exec(function (err, pairedWith) {
         if (err) {
-          return err;
+          return next(err);
         } else {
           var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
           if (index > -1) {
             req.user.progressTimestamps.push(Date.now() / 1000 | 0);
-            req.user.uncompletedBonfires.splice(index, 1)
+            req.user.uncompletedBonfires.splice(index, 1);
           }
           pairedWith = pairedWith.pop();
 
@@ -278,9 +270,10 @@ module.exports = function(app) {
             completedWith: pairedWith._id,
             completedDate: isCompletedDate,
             solution: isSolution
-          })
+          });
 
           req.user.save(function (err, user) {
+            if (err) { return next(err); }
             pairedWith.save(function (err, paired) {
               if (err) {
                 throw err;
@@ -288,10 +281,10 @@ module.exports = function(app) {
               if (user && paired) {
                 res.send(true);
               }
-            })
+            });
           });
         }
-      })
+      });
     } else {
 
       req.user.completedBonfires.push({
@@ -304,7 +297,7 @@ module.exports = function(app) {
       var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
       if (index > -1) {
         req.user.progressTimestamps.push(Date.now() / 1000 | 0);
-        req.user.uncompletedBonfires.splice(index, 1)
+        req.user.uncompletedBonfires.splice(index, 1);
       }
 
       req.user.save(function (err, user) {
@@ -313,7 +306,7 @@ module.exports = function(app) {
         }
         if (user) {
           debug('Saving user');
-          res.send(true)
+          res.send(true);
         }
       });
     }

@@ -1,19 +1,10 @@
 var User = require('../../common/models/User'),
-    resources = require('./resources.json'),
-    questions = resources.questions,
-    steps = resources.steps,
+    resources = require('../utils/resources'),
     secrets = require('../../config/secrets'),
     passportUtils = require('../../config/passportUtils'),
-    bonfires = require('../../seed_data/bonfires.json'),
-    coursewares = require('../../seed_data/coursewares.json'),
     Client = require('node-rest-client').Client,
     client = new Client(),
     debug = require('debug')('freecc:cntr:bonfires');
-
-/**
- * GET /
- * Resources.
- */
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -185,97 +176,5 @@ module.exports = function(app) {
       });
   }
 
-  function randomPhrase() {
-      var phrases = resources.phrases;
-      return phrases[Math.floor(Math.random() * phrases.length)];
-  }
-
-  function randomVerb() {
-      var verbs = resources.verbs;
-      return verbs[Math.floor(Math.random() * verbs.length)];
-  }
-
-  function randomCompliment() {
-      var compliments = resources.compliments;
-      return compliments[Math.floor(Math.random() * compliments.length)];
-  }
-
-  function numberOfBonfires() {
-      return bonfires.length - 1;
-  }
-
-  function allBonfireIds() {
-      return bonfires.map(function(elem) {
-          return {
-              _id: elem._id,
-              difficulty: elem.difficulty
-          }
-      })
-      .sort(function(a, b) {
-          return a.difficulty - b.difficulty;
-      })
-      .map(function(elem) {
-          return elem._id;
-      });
-  }
-  function allBonfireNames() {
-      return bonfires.map(function(elem) {
-          return {
-              name: elem.name,
-              difficulty: elem.difficulty,
-              _id: elem._id
-          }
-      })
-      .sort(function(a, b) {
-          return a.difficulty - b.difficulty;
-      })
-      .map (function(elem) {
-          return {
-              name : elem.name,
-              _id: elem._id
-          }
-      });
-  }
-
-  function allCoursewareIds() {
-      return coursewares.map(function(elem) {
-          return {
-              _id: elem._id,
-              difficulty: elem.difficulty
-          }
-      })
-          .sort(function(a, b) {
-              return a.difficulty - b.difficulty;
-          })
-          .map(function(elem) {
-              return elem._id;
-          });
-  }
-
-  function allCoursewareNames() {
-      return coursewares.map(function(elem) {
-          return {
-              name: elem.name,
-              difficulty: elem.difficulty,
-              _id: elem._id
-          }
-      })
-          .sort(function(a, b) {
-              return a.difficulty - b.difficulty;
-          })
-          .map (function(elem) {
-          return {
-              name : elem.name,
-              _id: elem._id
-          }
-      });
-  }
-
-  function whichEnvironment() {
-      return process.env.NODE_ENV;
-  }
   app.use(router);
 };
-
-
-
