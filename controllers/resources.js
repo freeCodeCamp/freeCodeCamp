@@ -148,6 +148,9 @@ module.exports = {
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
         var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
         var announcements = resources.announcements;
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
         User.count({}, function (err, c3) {
             if (err) {
                 debug('User err: ', err);
@@ -158,10 +161,11 @@ module.exports = {
                     debug('User err: ', err);
                     next(err);
                 }
+
                 res.render('resources/learn-to-code', {
                     title: 'About Free Code Camp and Our Team of Volunteers',
                     daysRunning: daysRunning,
-                    c3: c3,
+                    c3: numberWithCommas(c3),
                     all: all,
                     announcements: announcements
                 });

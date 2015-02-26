@@ -12,35 +12,24 @@ block content
         .col-xs-12.col-sm-12.col-md-4
             .panel.panel-info
                 .panel-heading.landing-panel-heading.text-center Get Connected
-                .panel-body
+                .panel-body.text-center.tight-h3
                     img.img-responsive.img-center(src="https://s3.amazonaws.com/freecodecamp/about-chatroom.jpg" alt="A screen shot from Free Code Camp's main chat room")
-                    h3
-                        .row
-                            .col-xs-9.text-right Campers doing challenges:
-                            .col-xs-3.text-left= c3
-                        .row
-                            .col-xs-9.text-right Campers coding for nonprofits:
-                            .col-xs-3.text-left= all
+                    h3.tight-h3 #{c3} campers are doing challenges.
+                    h3.tight-h3 #{all} campers are coding for nonprofits.
         .col-xs-12.col-sm-12.col-md-4
             .panel.panel-info
                 .panel-heading.landing-panel-heading.text-center Learn JavaScript
-                .panel-body
+                .panel-body.text-center.tight-h3
                     img.img-responsive.img-center(src="https://s3.amazonaws.com/freecodecamp/about-github.jpg" alt="A screen shot of a GitHub commit graph showing a streak of 33 consecutive days of contributions")
-                    h3
-                        include ../partials/github
+                    include ../partials/github
         .col-xs-12.col-sm-12.col-md-4
             .panel.panel-info
                 .panel-heading.landing-panel-heading.text-center Help Nonprofits
-                .panel-body
+                .panel-body.text-center
                     img.img-responsive.img-center(src="https://s3.amazonaws.com/freecodecamp/about-trello.jpg" alt="a screen shot of Free Code Camp's nonprofit project Trello board showing several active projects")
-                    h3
-                        .row
-                            .col-xs-6.text-right Days since we launched:
-                            .col-xs-6.text-left= daysRunning
-                        .row
-                            .col-xs-6.text-right Nonprofit Projects:
-                            .col-xs-6.text-left
-                                include ../partials/trello
+                    h3.tight-h3 We launched #{daysRunning} days ago.
+                    include ../partials/trello
+
 
     br
     script.
