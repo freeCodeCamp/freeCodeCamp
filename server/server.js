@@ -2,8 +2,8 @@ if (process.env.NODE_ENV === 'production') {
   require('newrelic');
 }
 require('dotenv').load();
-var loopback = require('loopback'),
-    passport = require('passport'),
+var R = require('ramda'),
+    loopback = require('loopback'),
     boot = require('loopback-boot'),
     cookieParser = require('cookie-parser'),
     compress = require('compression'),
@@ -23,17 +23,20 @@ var loopback = require('loopback'),
     * API keys and Passport configuration.
     */
     secrets = require('../config/secrets'),
-    passportConf = require('../config/passportConf');
+    passportProviders = require('./passport-providers'),
+    oneYear = 31557600000;
 
 var app = loopback();
 
-passportConf(app);
+// # loopback passport
+var PassportConfigurator =
+  require('loopback-component-passport').PassportConfigurator;
+var passportConfigurator = new PassportConfigurator(app);
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(compress());
-var oneYear = 31557600000;
 app.use(serveStatic(path.join(__dirname, '../public'), {maxAge: oneYear}));
 app.use(connectAssets({
   paths: [
@@ -63,19 +66,11 @@ app.use(session({
     autoReconnect: true
   })
 }));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
 app.disable('x-powered-by');
 
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.xframe());
-
-boot(app, {
-  env: process.env.NODE_ENV,
-  appRootDir: __dirname
-});
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -161,6 +156,27 @@ app.use(helmet.contentSecurityPolicy({
   setAllHeaders: false, // set to true if you want to set all headers
   safari5: false // set to true if you want to force buggy CSP in Safari 5
 }));
+
+app.use(flash());
+
+boot(app, {
+  env: process.env.NODE_ENV,
+  appRootDir: __dirname
+});
+
+passportConfigurator.init();
+
+
+passportConfigurator.setupModels({
+  userModel: app.models.user,
+  userIdentityModel: app.models.userIdentity,
+  userCredentialModel: app.models.userCredential
+});
+
+R.keys(passportProviders).map(function(strategy) {
+  var config = passportProviders[strategy];
+  passportConfigurator.configureProvider(strategy, config);
+});
 
 app.use(function (req, res, next) {
   // Make user object available in templates.
