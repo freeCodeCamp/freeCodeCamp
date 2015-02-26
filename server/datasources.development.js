@@ -1,6 +1,6 @@
 module.exports = {
   db: {
     connector: 'mongodb',
-    url: "mongodb://localhost:27017/app30893198"
+    url: process.env.MONGOHQ_URL
   }
-}
+};

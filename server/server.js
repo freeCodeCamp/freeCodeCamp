@@ -159,13 +159,12 @@ app.use(helmet.contentSecurityPolicy({
 
 app.use(flash());
 
+passportConfigurator.init();
+
 boot(app, {
   env: process.env.NODE_ENV,
   appRootDir: __dirname
 });
-
-passportConfigurator.init();
-
 
 passportConfigurator.setupModels({
   userModel: app.models.user,

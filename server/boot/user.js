@@ -108,12 +108,16 @@ module.exports = function(app) {
       }
     });
 
+    var userQuery = {
+      where: { 'email': req.body.email },
+      limit: 1
+    };
     User.find(
-      { where: { 'email': req.body.email } },
-      function(err, existingUser) {
+      userQuery,
+      function(err, users) {
         if (err) { return next(err); }
 
-        if (existingUser) {
+        if (users && users.length > 0) {
           req.flash('errors', {
             msg: 'Account with that email address already exists.'
           });
