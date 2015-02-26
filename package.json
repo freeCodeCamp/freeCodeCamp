@@ -49,6 +49,11 @@
     "loopback-explorer": "^1.1.0"
   },
   "devDependencies": {
+    "bower-main-files": "0.0.4",
+    "browser-sync": "^2.2.1",
+    "gulp": "^3.8.11",
+    "gulp-inject": "^1.2.0",
+    "gulp-nodemon": "^1.0.5",
     "jshint": "^2.5.6"
   },
   "repository": {
