@@ -29,8 +29,8 @@ module.exports = function(app) {
       details: '',
       tests: [],
       challengeSeed: '',
-      cc: req.user ? req.user.bonfiresHash : undefined,
-      progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
+      cc: req.user ? req.user.bonfiresHash : null,
+      progressTimestamps: req.user ? req.user.progressTimestamps : null,
       verb: randomUtils.randomVerb(),
       phrase: randomUtils.randomPhrase(),
       compliments: randomUtils.randomCompliment(),
@@ -57,7 +57,7 @@ module.exports = function(app) {
     res.json(data);
   }
 
-  function returnNextBonfire(req, res) {
+  function returnNextBonfire(req, res, next) {
     console.log('user', req.user);
     if (!req.user) {
       console.log('conditional');
@@ -67,28 +67,28 @@ module.exports = function(app) {
       return elem._id;
     });
 
-    req.user.uncompletedBonfires = bonfireUtils.allBonfireIds().filter(function (elem) {
-      if (completed.indexOf(elem) === -1) {
-        return elem;
-      }
-    });
+    req.user.uncompletedBonfires = bonfireUtils.allBonfireIds()
+      .filter(function (elem) {
+        if (completed.indexOf(elem) === -1) {
+          return elem;
+        }
+      });
     req.user.save();
 
     var uncompletedBonfires = req.user.uncompletedBonfires;
 
     var displayedBonfires = Bonfire.find({'_id': uncompletedBonfires[0]});
     displayedBonfires.exec(function (err, bonfire) {
-      if (err) {
-        next(err);
-      }
+      if (err) { return next(err); }
       bonfire = bonfire.pop();
-      if (bonfire === undefined) {
+      if (!bonfire) {
         req.flash('errors', {
-          msg: "It looks like you've completed all the bonfires we have available. Good job!"
+          msg: 'It looks like you have completed all the bonfires we ' +
+            'have available. Good job!'
         });
         return res.redirect('../bonfires/meet-bonfire');
       }
-      nameString = bonfire.name.toLowerCase().replace(/\s/g, '-');
+      var nameString = bonfire.name.toLowerCase().replace(/\s/g, '-');
       return res.redirect('../bonfires/' + nameString);
     });
   }
@@ -98,46 +98,46 @@ module.exports = function(app) {
 
     var bonfireName = dashedName.replace(/\-/g, ' ');
 
-    Bonfire.find({ where: { "name": new RegExp(bonfireName, 'i') } }, function (err, bonfire) {
-      if (err) {
-        return next(err);
-      }
+    Bonfire.find(
+      { where: { 'name': new RegExp(bonfireName, 'i') } },
+      function (err, bonfire) {
+        if (err) { return next(err); }
 
 
-      if (bonfire.length < 1) {
-        req.flash('errors', {
-          msg: "404: We couldn't find a bonfire with that name. Please double check the name."
+        if (bonfire.length < 1) {
+          req.flash('errors', {
+            msg: '404: We could not find a bonfire with that name. ' +
+              'Please double check the name.'
+          });
+
+          return res.redirect('/bonfires');
+        }
+
+        bonfire = bonfire.pop();
+        var dashedNameFull = bonfire.name.toLowerCase().replace(/\s/g, '-');
+        if (dashedNameFull !== dashedName) {
+          return res.redirect('../bonfires/' + dashedNameFull);
+        }
+
+        res.render('bonfire/show', {
+          completedWith: null,
+          title: bonfire.name,
+          dashedName: dashedName,
+          name: bonfire.name,
+          difficulty: Math.floor(+bonfire.difficulty),
+          brief: bonfire.description[0],
+          details: bonfire.description.slice(1),
+          tests: bonfire.tests,
+          challengeSeed: bonfire.challengeSeed,
+          cc: !!req.user,
+          progressTimestamps: req.user ? req.user.progressTimestamps : null,
+          verb: randomUtils.randomVerb(),
+          phrase: randomUtils.randomPhrase(),
+          compliment: randomUtils.randomCompliment(),
+          bonfires: bonfire,
+          bonfireHash: bonfire.id
         });
-
-        return res.redirect('/bonfires');
-      }
-
-      bonfire = bonfire.pop();
-      var dashedNameFull = bonfire.name.toLowerCase().replace(/\s/g, '-');
-      if (dashedNameFull != dashedName) {
-        return res.redirect('../bonfires/' + dashedNameFull);
-      }
-
-      console.log('name', bonfire.name);
-      res.render('bonfire/show', {
-        completedWith: null,
-        title: bonfire.name,
-        dashedName: dashedName,
-        name: bonfire.name,
-        difficulty: Math.floor(+bonfire.difficulty),
-        brief: bonfire.description[0],
-        details: bonfire.description.slice(1),
-        tests: bonfire.tests,
-        challengeSeed: bonfire.challengeSeed,
-        cc: !!req.user,
-        progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-        verb: randomUtils.randomVerb(),
-        phrase: randomUtils.randomPhrase(),
-        compliment: randomUtils.randomCompliment(),
-        bonfires: bonfire,
-        bonfireHash: bonfire.id
       });
-    });
   }
 
   function returnGenerator(req, res) {
@@ -158,10 +158,10 @@ module.exports = function(app) {
   */
 
   function randomString() {
-    var chars = "0123456789abcdef";
-    var string_length = 23;
+    var chars = '0123456789abcdef';
+    var stringLength = 23;
     var randomstring = 'a';
-    for (var i = 0; i < string_length; i++) {
+    for (var i = 0; i < stringLength; i++) {
       var rnum = Math.floor(Math.random() * chars.length);
       randomstring += chars.substring(rnum, rnum + 1);
     }
@@ -174,11 +174,15 @@ module.exports = function(app) {
       bonfireDifficulty = req.body.difficulty,
       bonfireDescription = req.body.description,
       bonfireChallengeSeed = req.body.challengeSeed;
+
     bonfireTests = bonfireTests.split('\r\n');
-    bonfireDescription = bonfireDescription.split('\r\n');
     bonfireTests.filter(getRidOfEmpties);
+
+    bonfireDescription = bonfireDescription.split('\r\n');
     bonfireDescription.filter(getRidOfEmpties);
+
     bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
+
     res.render('bonfire/show', {
       completedWith: null,
       title: bonfireName,
@@ -188,15 +192,15 @@ module.exports = function(app) {
       details: bonfireDescription.slice(1),
       tests: bonfireTests,
       challengeSeed: bonfireChallengeSeed,
-      cc: req.user ? req.user.bonfiresHash : undefined,
-      progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
+      cc: req.user ? req.user.bonfiresHash : null,
+      progressTimestamps: req.user ? req.user.progressTimestamps : null,
       verb: randomUtils.Verb(),
       phrase: randomUtils.Phrase(),
       compliment: randomUtils.Compliment(),
       bonfires: [],
-      bonfireHash: "test"
+      bonfireHash: 'test'
     });
-  };
+  }
 
   function getRidOfEmpties(elem) {
     if (elem.length > 0) {
@@ -233,7 +237,7 @@ module.exports = function(app) {
   }
 
   function completedBonfire(req, res, next) {
-    var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
+    var isCompletedWith = req.body.bonfireInfo.completedWith || null;
     var isCompletedDate = Math.round(+new Date() / 1000);
     var bonfireHash = req.body.bonfireInfo.bonfireHash;
     var isSolution = req.body.bonfireInfo.solution;
