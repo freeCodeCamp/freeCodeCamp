@@ -257,14 +257,14 @@ module.exports = function(app) {
           } else {
             var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
             if (index > -1) {
-              req.user.progressTimestamps.push(moment().unix());
+              req.user.progressTimestamps.push(moment().unix() / 1000);
               req.user.uncompletedBonfires.splice(index, 1);
             }
             pairedWith = pairedWith.pop();
 
             index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
             if (index > -1) {
-              pairedWith.progressTimestamps.push(moment().unix());
+              pairedWith.progressTimestamps.push(moment().unix() / 1000);
               pairedWith.uncompletedBonfires.splice(index, 1);
 
             }
@@ -308,7 +308,7 @@ module.exports = function(app) {
 
       var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
       if (index > -1) {
-        req.user.progressTimestamps.push(moment().unix());
+        req.user.progressTimestamps.push(moment().unix() / 1000);
         req.user.uncompletedBonfires.splice(index, 1);
       }
 
