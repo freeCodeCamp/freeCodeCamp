@@ -8,7 +8,7 @@ var R = require('ramda'),
 module.exports = function(app) {
   var router = app.loopback.Router();
   var Bonfire = app.models.bonfire;
-  var User = app.models.User;
+  var User = app.models.user;
   router.get('/bonfires/getBonfireList', getBonfireList);
   router.get('/bonfires', returnNextBonfire);
   router.get('/bonfire-json-generator', returnGenerator);

@@ -9,7 +9,7 @@ var _ = require('lodash'),
 
 module.exports = function(app) {
   var router = app.loopback.Router();
-  var User = app.models.User;
+  var User = app.models.user;
   router.get('/signin', getSignin);
   router.get('/login', function(req, res) { res.redirect(301, '/signin'); });
   router.post('/signin', postSignin);

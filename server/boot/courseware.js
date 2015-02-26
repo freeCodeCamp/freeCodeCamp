@@ -6,7 +6,7 @@ var _ = require('lodash'),
 module.exports = function(app) {
   var router = app.loopback.Router();
   var Courseware = app.models.courseware;
-  var User = app.models.User;
+  var User = app.models.user;
   router.get('/coursewares/', returnNextCourseware);
   router.get('/coursewares/getCoursewareList', showAllCoursewares);
   router.get('/coursewares/:coursewareName', returnIndividualCourseware);

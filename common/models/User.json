@@ -1,6 +1,6 @@
 {
   "name": "user",
-  "base": "PersistedModel",
+  "base": "User",
   "properties": {
     "name": {
       "type": "string",
@@ -14,13 +14,6 @@
       "trim": true,
       "sparse": true
     },
-    "password": "string",
-    "facebook": "string",
-    "twitter": "string",
-    "google": "string",
-    "github": "string",
-    "linkedin": "string",
-    "tokens": "array",
     "points": {
       "type": "number",
       "default": 0
