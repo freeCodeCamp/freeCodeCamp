@@ -9,7 +9,7 @@ script.
                 var props = Object.keys(data);
                 for (var i = 0; i < props.length; i+=2) {
                     var blogger = document.createElement('div');
-                    $(blogger).html('<h2><a href=' + data[props[i+1]] + '>' + data[props[i]] + '</a></h2></div>').prependTo($('#blog'))
+                    $(blogger).html('<h2><a href=' + data[props[i+1]] + '>' + data[props[i]] + '</a></h2></div>').appendTo($('#blog'))
                 }
             }
         );

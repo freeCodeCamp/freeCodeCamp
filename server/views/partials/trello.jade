@@ -7,7 +7,7 @@ script.
         }).done(
             function(data) {
                 var trello = document.createElement('div');
-                $(trello).html(data.trello + ' <a href="https://trello.com/b/BA3xVpz9/nonprofit-projects">(view them)</a></h2></div>').prependTo($('#trello'))
+                $(trello).html('<h3 class="tight-h3"> We help ' + data.trello + ' nonprofits. <a href="https://trello.com/b/BA3xVpz9/nonprofit-projects">(view them)</a></h3>').prependTo($('#trello'))
             }
         );
     })();
