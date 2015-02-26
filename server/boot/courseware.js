@@ -42,8 +42,7 @@ module.exports = function(app) {
     var uncompletedCoursewares = req.user.uncompletedCoursewares.shift();
 
 
-    var displayedCoursewares = Courseware.find({'_id': uncompletedCoursewares});
-    displayedCoursewares.exec(function (err, courseware) {
+    Courseware.find({ where: { "id": uncompletedCoursewares} }, function (err, courseware) {
       if (err) {
         next(err);
       }
@@ -65,7 +64,7 @@ module.exports = function(app) {
 
     coursewareName = dashedName.replace(/\-/g, ' ');
 
-    Courseware.find({"name": new RegExp(coursewareName, 'i')}, function (err, courseware) {
+    Courseware.find({ where: { "name": new RegExp(coursewareName, 'i') } }, function (err, courseware) {
       if (err) {
         next(err);
       }

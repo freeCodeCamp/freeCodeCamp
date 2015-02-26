@@ -76,8 +76,7 @@ module.exports = function(app) {
 
     var uncompletedBonfires = req.user.uncompletedBonfires;
 
-    var displayedBonfires = Bonfire.find({'_id': uncompletedBonfires[0]});
-    displayedBonfires.exec(function (err, bonfire) {
+    Bonfire.find({ where: { 'id': uncompletedBonfires[0] } }, function (err, bonfire) {
       if (err) {
         next(err);
       }
@@ -239,8 +238,7 @@ module.exports = function(app) {
     var isSolution = req.body.bonfireInfo.solution;
 
     if (isCompletedWith) {
-      var paired = User.find({"profile.username": isCompletedWith.toLowerCase()}).limit(1);
-      paired.exec(function (err, pairedWith) {
+      User.find({ where: { "profile.username": isCompletedWith.toLowerCase() } }, (function (err, pairedWith) {
         if (err) {
           return next(err);
         } else {
