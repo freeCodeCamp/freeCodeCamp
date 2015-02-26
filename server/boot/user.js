@@ -135,7 +135,7 @@ module.exports = function(app) {
       }
     });
 
-    User.findOne({ email: req.body.email }, function(err, existingUser) {
+    User.find({ where: { "email": req.body.email } }, function(err, existingUser) {
       if (err) { return next(err); }
 
       if (existingUser) {
@@ -256,46 +256,43 @@ module.exports = function(app) {
    */
 
   function returnUser(req, res, next) {
-    User.find({'profile.username': req.params.username.toLowerCase()}, function(err, user) {
+    User.find({ where: {"profile.username": req.params.username.toLowerCase() } }, function(err, user) {
       if (err) { debug('Username err: ', err); next(err); }
       if (user[0]) {
         var user = user[0];
-        Challenge.find({}, null, {sort: {challengeNumber: 1}}, function (err, c) {
-          data = {};
-          progressTimestamps = user.progressTimestamps;
-          // dummy data to experiment with visualizations
-          progressTimestamps = [1417117319, 1384091493, 1367893914, 1411547157, 1366875140, 1382614404, 1374973026, 1363495510, 1372229313, 1389795294, 1393820136, 1395425437, 1383366211, 1402063449, 1368384561, 1413460738, 1390013511, 1408510076, 1395530419, 1391588683, 1410480320, 1360219531, 1367248635, 1408531181, 1374214772, 1424038529, 1387468139, 1381934158, 1409278748, 1390696161, 1415933043, 1389573689, 1395703336, 1401223291, 1375539279, 1371229698, 1371990948, 1422236826, 1363017438, 1359619855, 1364850739, 1401982108, 1381270295, 1420063854, 1406540493, 1409122251, 1360775035, 1367712723, 1395305605, 1382037418, 1378402477, 1377563090, 1398930836, 1417371909, 1377417393, 1423763002, 1357511908, 1377375961, 1388374304, 1406416407, 1399463258, 1422593990, 1383434425, 1420200570, 1379435518, 1414512582, 1416263148, 1398635260, 1381815565, 1369178539, 1378414973, 1394409827, 1398463526, 1379564971, 1385849279, 1392899666, 1367053659, 1417730793, 1400112915, 1379923357, 1417768487, 1415779985, 1416150640, 1399820237, 1370498715, 1374800622, 1363924512, 1402497668, 1400146327, 1362456746, 1394935898, 1414980963, 1413942775, 1367606840, 1387144705, 1407906392, 1417213587, 1422640891, 1414033139, 1365323522, 1424661148];
-          for (i = 0; i < progressTimestamps.length; i++) {
-            data[progressTimestamps[i].toString()] = 1;
-          }
+        data = {};
+        progressTimestamps = user.progressTimestamps;
+        // dummy data to experiment with visualizations
+        progressTimestamps = [1417117319, 1384091493, 1367893914, 1411547157, 1366875140, 1382614404, 1374973026, 1363495510, 1372229313, 1389795294, 1393820136, 1395425437, 1383366211, 1402063449, 1368384561, 1413460738, 1390013511, 1408510076, 1395530419, 1391588683, 1410480320, 1360219531, 1367248635, 1408531181, 1374214772, 1424038529, 1387468139, 1381934158, 1409278748, 1390696161, 1415933043, 1389573689, 1395703336, 1401223291, 1375539279, 1371229698, 1371990948, 1422236826, 1363017438, 1359619855, 1364850739, 1401982108, 1381270295, 1420063854, 1406540493, 1409122251, 1360775035, 1367712723, 1395305605, 1382037418, 1378402477, 1377563090, 1398930836, 1417371909, 1377417393, 1423763002, 1357511908, 1377375961, 1388374304, 1406416407, 1399463258, 1422593990, 1383434425, 1420200570, 1379435518, 1414512582, 1416263148, 1398635260, 1381815565, 1369178539, 1378414973, 1394409827, 1398463526, 1379564971, 1385849279, 1392899666, 1367053659, 1417730793, 1400112915, 1379923357, 1417768487, 1415779985, 1416150640, 1399820237, 1370498715, 1374800622, 1363924512, 1402497668, 1400146327, 1362456746, 1394935898, 1414980963, 1413942775, 1367606840, 1387144705, 1407906392, 1417213587, 1422640891, 1414033139, 1365323522, 1424661148];
+        for (i = 0; i < progressTimestamps.length; i++) {
+          data[progressTimestamps[i].toString()] = 1;
+        }
 
-
-          res.render('account/show', {
-            title: 'Camper: ',
-            username: user.profile.username,
-            name: user.profile.name,
-            location: user.profile.location,
-            githubProfile: user.profile.githubProfile,
-            linkedinProfile: user.profile.linkedinProfile,
-            codepenProfile: user.profile.codepenProfile,
-            twitterHandle: user.profile.twitterHandle,
-            bio: user.profile.bio,
-            picture: user.profile.picture,
-            progressTimestamps: req.user.progressTimestamps,
-            points: user.progressTimestamps,
-            website1Link: user.portfolio.website1Link,
-            website1Title: user.portfolio.website1Title,
-            website1Image: user.portfolio.website1Image,
-            website2Link: user.portfolio.website2Link,
-            website2Title: user.portfolio.website2Title,
-            website2Image: user.portfolio.website2Image,
-            website3Link: user.portfolio.website3Link,
-            website3Title: user.portfolio.website3Title,
-            website3Image: user.portfolio.website3Image,
-            challenges: c,
-            calender: data,
-            moment: moment
-          });
+        res.render('account/show', {
+          title: 'Camper: ',
+          username: user.profile.username,
+          name: user.profile.name,
+          location: user.profile.location,
+          githubProfile: user.profile.githubProfile,
+          linkedinProfile: user.profile.linkedinProfile,
+          codepenProfile: user.profile.codepenProfile,
+          twitterHandle: user.profile.twitterHandle,
+          bio: user.profile.bio,
+          picture: user.profile.picture,
+          progressTimestamps: req.user.progressTimestamps,
+          points: user.progressTimestamps,
+          website1Link: user.portfolio.website1Link,
+          website1Title: user.portfolio.website1Title,
+          website1Image: user.portfolio.website1Image,
+          website2Link: user.portfolio.website2Link,
+          website2Title: user.portfolio.website2Title,
+          website2Image: user.portfolio.website2Image,
+          website3Link: user.portfolio.website3Link,
+          website3Title: user.portfolio.website3Title,
+          website3Image: user.portfolio.website3Image,
+          challenges: c,
+          calender: data,
+          moment: moment
         });
       } else {
         req.flash('errors', {
@@ -343,7 +340,7 @@ module.exports = function(app) {
         return res.redirect('/account');
       }
 
-      User.findOne({ email: req.body.email }, function(err, existingEmail) {
+      User.find({ where: { "email": req.body.email } }, function(err, existingEmail) {
         if (err) {
           return next(err);
         }
@@ -354,7 +351,7 @@ module.exports = function(app) {
           });
           return res.redirect('/account');
         }
-        User.findOne({ username: req.body.username }, function(err, existingUsername) {
+        User.find({ where: { "username": req.body.username } }, function(err, existingUsername) {
           if (err) {
             return next(err);
           }
@@ -476,7 +473,7 @@ module.exports = function(app) {
       return res.redirect('/');
     }
     User
-      .findOne({ resetPasswordToken: req.params.token })
+      .find({ where: { "resetPasswordToken": req.params.token } } )
       .where('resetPasswordExpires').gt(Date.now())
       .exec(function(err, user) {
         if (err) { return next(err); }
@@ -509,9 +506,8 @@ module.exports = function(app) {
     async.waterfall([
       function(done) {
         User
-          .findOne({ resetPasswordToken: req.params.token })
-          .where('resetPasswordExpires').gt(Date.now())
-          .exec(function(err, user) {
+          .find({ where: { "resetPasswordToken": req.params.token,
+            "resetPasswordExpires": { gt: Date.now() } }, limit: 1 }.exec(function(err, user) {
             if (err) { return next(err); }
             if (!user) {
               req.flash('errors', {
@@ -603,9 +599,7 @@ module.exports = function(app) {
         });
       },
       function(token, done) {
-        User.findOne({
-          email: req.body.email.toLowerCase()
-        }, function(err, user) {
+        User.find({ where: { "email": req.body.email.toLowerCase() } }, function(err, user) {
           if (err) { return done(err); }
           if (!user) {
             req.flash('errors', {
