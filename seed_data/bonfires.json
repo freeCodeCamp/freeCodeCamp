@@ -110,7 +110,7 @@
     "name": "Return Largest Numbers in Arrays",
     "difficulty": "1.06",
     "description": [
-      "Return an array consisting of the largest numbers in the provided array. The array will contain 4 sub-arrays.",
+      "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
       "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
       "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays."
     ],
@@ -309,6 +309,7 @@
     "difficulty": "2.07",
     "description": [
       "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
+      "In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.",
       "The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.",
       "Check the assertion tests for examples."
     ],
@@ -439,6 +440,20 @@
     ]
   },
   {
+    "_id": "a8d97bd4c764e91f9d2bda01",
+    "name": "Binary Agents",
+    "difficulty": "2.15",
+    "description": [
+      "Return an English translated sentence of the passed binary string.",
+      "The binary string will be space separated."
+    ],
+    "challengeSeed": "function binaryAgent(str) {\n  return str;\r\n}\n\nbinaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');",
+    "tests": [
+      "expect(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111')).to.equal(\"Aren't bonfires fun!?\");",
+      "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
+      ]
+  },
+  {
     "_id": "a3f503de51cf954ede28891d",
     "name": "Symmetric Difference",
     "difficulty": "2.20",
@@ -505,7 +520,7 @@
       "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\">on wikipedia</a>.",
       "The values should be rounded to the nearest whole number. Assume the body being orbited is Earth."
     ],
-    "challengeSeed": "function orbitalPeriod(arr) {\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
+    "challengeSeed": "function orbitalPeriod(arr) {\n\/\/Use 398600.4418 for GM. Look up any other values on wolfram alpha\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
     "tests": [
       "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
       "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
