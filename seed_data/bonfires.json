@@ -566,9 +566,10 @@
       "Return a new array that transforms the element's average altitude in kilometers into their orbital periods.",
       "The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.",
       "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\">on wikipedia</a>.",
-      "The values should be rounded to the nearest second. Assume the body being orbited is Earth."
+      "The values should be rounded to the nearest second. Assume the body being orbited is Earth.",
+      "You should look up any constants used in your calculation using <a href=\"http://www.wolframalpha.com\">Wolfram Alpha</a>."
     ],
-    "challengeSeed": "function orbitalPeriod(arr) {\n\/\/Use 398600.4418 for GM. Look up any other values on wolfram alpha\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
+    "challengeSeed": "function orbitalPeriod(arr) {\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
     "tests": [
       "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.be.instanceof(Array);",
       "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.have.length(1);",
