@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    challengeName = challengeName || 'Untitled';
+    challengeName = typeof challengeName !== undefined ? challengeName : 'Untitled';
     if (challengeName) {
         ga('send', 'event',  'Challenge', 'load', challengeName);
     }

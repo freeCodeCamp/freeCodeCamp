@@ -7,7 +7,7 @@ script.
         }).done(
                 function(data) {
                     var github = document.createElement('div');
-                    $(github).html('<div class="row"><div class="col-xs-6 text-right">Open GitHub Issues:</div><div class="col-xs-6 text-left">' + data.issues + ' <a href="https://github.com/freecodecamp/freecodecamp/issues">(create one)</a></div></div><div class="row"><div class="col-xs-6 text-right">Open Pull Requests:</div><div class="col-xs-6 text-left">' + data.pulls + ' <a href="https://github.com/freecodecamp/freecodecamp/pulls">(create one)</a></div></div>').prependTo($('#github'))
+                    $(github).html('<h3 class="tight-h3">' + data.issues + ' GitHub issues are open. <a href="https://github.com/freecodecamp/freecodecamp/issues">(create one)</a></h3><h3 class="tight-h3">' + data.pulls + ' pull requests are open. <a href="https://github.com/freecodecamp/freecodecamp/pulls">(create one)</a></div></div>').prependTo($('#github'))
                 }
         );
     })();

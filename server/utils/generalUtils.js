@@ -4,7 +4,8 @@ module.exports = {
   randomPhrase: randomPhrase,
   randomVerb: randomVerb,
   randomCompliment: randomCompliment,
-  whichEnvironment: whichEnvironment
+  whichEnvironment: whichEnvironment,
+  numberWithCommas: numberWithCommas
 };
 
 function randomPhrase() {
@@ -24,4 +25,8 @@ function randomCompliment() {
 
 function whichEnvironment() {
     return process.env.NODE_ENV;
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

@@ -4,6 +4,7 @@ var Client = require('node-rest-client').Client,
     resources = require('../utils/resources'),
     secrets = require('../../config/secrets'),
     passportUtils = require('../../config/passportUtils'),
+    generalUtils = require('../utils/generalUtils'),
     client = new Client();
 
 module.exports = function(app) {
@@ -30,11 +31,11 @@ module.exports = function(app) {
   router.get('/api/github', gitHubCalls);
   router.get('/api/blogger', bloggerCalls);
   router.get('/api/trello', trelloCalls);
-  //router.get(
-  //  '/nonprofit-project-instructions',
-  //  passportUtils.isAuthenticated,
-  //  nonprofitProjectInstructions
-  //);
+  router.get(
+    '/nonprofit-project-instructions',
+    passportUtils.isAuthenticated,
+    nonprofitProjectInstructions
+  );
 
   function privacy(req, res) {
       res.render('resources/privacy', {
@@ -237,7 +238,7 @@ module.exports = function(app) {
         res.render('resources/learn-to-code', {
           title: 'About Free Code Camp and Our Team of Volunteers',
           daysRunning: daysRunning,
-          totalUsers: totalUsers,
+          totalUsers: generalUtils.numberWithCommas(totalUsers),
           challengeGrads: challengeGrads,
           announcements: announcements
         });

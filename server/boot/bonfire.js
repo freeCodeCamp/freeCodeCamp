@@ -1,8 +1,7 @@
 var R = require('ramda'),
     moment = require('moment'),
     debug = require('debug')('freecc:cntr:bonfires'),
-
-    randomUtils = require('../utils/random'),
+    generalUtils = require('../utils/random'),
     bonfireUtils = require('../utils/bonfireUtils');
 
 module.exports = function(app) {
@@ -33,9 +32,9 @@ module.exports = function(app) {
       challengeSeed: '',
       cc: req.user ? req.user.bonfiresHash : null,
       progressTimestamps: req.user ? req.user.progressTimestamps : null,
-      verb: randomUtils.randomVerb(),
-      phrase: randomUtils.randomPhrase(),
-      compliments: randomUtils.randomCompliment(),
+      verb: generalUtils.randomVerb(),
+      phrase: generalUtils.randomPhrase(),
+      compliments: generalUtils.randomCompliment(),
       bonfires: [],
       bonfireHash: 'test'
     });
