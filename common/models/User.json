@@ -113,12 +113,22 @@
         "default": ""
       }
     },
-    "resetPasswordToken": "string",
-    "resetPasswordExpires": "date",
-    "uncompletedBonfires": "array",
-    "completedBonfires": "array",
-    "uncompletedCoursewares": "array",
-    "completedCoursewares": "array"
+    "uncompletedBonfires": {
+      "type": "array",
+      "default": []
+    },
+    "completedBonfires": {
+      "type": "array",
+      "default": []
+    },
+    "uncompletedCoursewares": {
+      "type": "array",
+      "default": []
+    },
+    "completedCoursewares": {
+      "type": "array",
+      "default": []
+    },
   },
   "validations": [],
   "acls": [],
