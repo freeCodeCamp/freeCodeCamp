@@ -18,6 +18,7 @@ var R = require('ramda'),
     expressValidator = require('express-validator'),
     connectAssets = require('connect-assets'),
     serveStatic = require('serve-static'),
+    generalUtils = require('./utils/generalUtils'),
 
     /**
     * API keys and Passport configuration.
@@ -160,6 +161,13 @@ app.use(helmet.contentSecurityPolicy({
 app.use(flash());
 
 passportConfigurator.init();
+
+// Add all global locals here
+app.use(function(req, res, next) {
+  app.locals.user = req.user;
+  app.locals.generateGravatar = generalUtils.generateGravatar;
+  next();
+});
 
 boot(app, {
   env: process.env.NODE_ENV,

@@ -40,7 +40,7 @@
                 else
                     if (user.profile.username)
                         a(href='/' + user.profile.username)
-                            img.profile-picture.float-right(src='#{user.gravatar(60)}')
+                            img.profile-picture.float-right(src='#{generateGravatar(60)}')
                     else
                         a(href='/account')
-                            img.profile-picture.float-right(src='#{user.gravatar(60)}')
+                            img.profile-picture.float-right(src='#{generateGravatar(60)}')

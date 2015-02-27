@@ -10,11 +10,16 @@ module.exports = {
   },
 
   blogger: {
-    key: process.env.BLOGGER_KEY
+    key: process.env.BLOGGER_KEY,
+  },
+
+  github: {
+    clientID: process.env.GITHUB_ID,
+    clientSecret: process.env.GITHUB_SECRET
   },
 
   mandrill: {
     user: process.env.MANDRILL_USER,
     password: process.env.MANDRILL_PASSWORD
-  }
+  },
 };

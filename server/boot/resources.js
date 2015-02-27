@@ -123,10 +123,8 @@ module.exports = function(app) {
       ].join(''),
       githubHeaders,
       function(pulls) {
-
         pulls = pulls ?
           Object.keys(JSON.parse(pulls)).length : 'Cannot connect to github';
-
         client.get(
           [
             'https://api.github.com/repos/freecodecamp/freecodecamp/issues?',
@@ -150,6 +148,7 @@ module.exports = function(app) {
       }
     );
   }
+
   function trelloCalls(req, res) {
     client.get(
       'https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key,

@@ -118,7 +118,7 @@
     "uncompletedBonfires": "array",
     "completedBonfires": "array",
     "uncompletedCoursewares": "array",
-    "completedCoursewares": "array",
+    "completedCoursewares": "array"
   },
   "validations": [],
   "acls": [],

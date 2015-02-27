@@ -5,7 +5,8 @@ module.exports = {
   randomVerb: randomVerb,
   randomCompliment: randomCompliment,
   whichEnvironment: whichEnvironment,
-  numberWithCommas: numberWithCommas
+  numberWithCommas: numberWithCommas,
+  generateGravatar: generateGravatar
 };
 
 function randomPhrase() {
@@ -29,4 +30,12 @@ function whichEnvironment() {
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+function generateGravatar(size) {
+  console.log('hi!')
+  if (!size) size = 200;
+  if (!this.email) return 'https://gravatar.com/avatar/?s=' + size + '&d=retro';
+  var md5 = crypto.createHash('md5').update(this.email).digest('hex');
+  return 'https://gravatar.com/avatar/' + md5 + '?s=' + size + '&d=retro';
 }
