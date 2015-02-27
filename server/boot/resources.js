@@ -229,10 +229,12 @@ module.exports = function(app) {
         debug('User err: ', err);
         return next(err);
       }
-      var howManyChallengeGradsQuery = { where: { points: { gt: 53 } } };
+      // Hack: see
+      // https://github.com/strongloop/loopback-connector-mongodb/issues/105
+      var howManyChallengeGradsQuery = { where: { gt: { points: 53 } } };
       User.count(howManyChallengeGradsQuery, function (err, challengeGrads) {
         if (err) {
-          debug('User err: ', err);
+          debug('challengeGrad query err: ', err);
           return next(err);
         }
         res.render('resources/learn-to-code', {
