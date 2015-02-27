@@ -128,7 +128,7 @@
     "completedCoursewares": {
       "type": "array",
       "default": []
-    },
+    }
   },
   "validations": [],
   "acls": [],
