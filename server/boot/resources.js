@@ -8,7 +8,7 @@ var Client = require('node-rest-client').Client,
     client = new Client();
 
 module.exports = function(app) {
-  var User = app.models.User;
+  var User = app.models.user;
   var router = app.loopback.Router();
   router.get('/privacy', privacy);
   router.get('/jquery-exercises', jqueryExercises);
@@ -224,21 +224,24 @@ module.exports = function(app) {
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
     var announcements = resources.announcements;
 
-    User.count({}, function (err, c3) {
+    User.count(function (err, totalUsers) {
       if (err) {
         debug('User err: ', err);
         return next(err);
       }
-      User.count({ 'points': { '$gt': 53 } }, function (err, all) {
+      // Hack: see
+      // https://github.com/strongloop/loopback-connector-mongodb/issues/105
+      var howManyChallengeGradsQuery = { where: { gt: { points: 53 } } };
+      User.count(howManyChallengeGradsQuery, function (err, challengeGrads) {
         if (err) {
-          debug('User err: ', err);
+          debug('challengeGrad query err: ', err);
           return next(err);
         }
         res.render('resources/learn-to-code', {
           title: 'About Free Code Camp and Our Team of Volunteers',
           daysRunning: daysRunning,
-          c3: generalUtils.numberWithCommas(c3),
-          all: all,
+          totalUsers: generalUtils.numberWithCommas(totalUsers),
+          challengeGrads: challengeGrads,
           announcements: announcements
         });
       });

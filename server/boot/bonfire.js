@@ -1,13 +1,13 @@
 var R = require('ramda'),
     moment = require('moment'),
     debug = require('debug')('freecc:cntr:bonfires'),
-    generalUtils = require('../utils/random'),
+    generalUtils = require('../utils/generalUtils'),
     bonfireUtils = require('../utils/bonfireUtils');
 
 module.exports = function(app) {
   var router = app.loopback.Router();
   var Bonfire = app.models.bonfire;
-  var User = app.models.User;
+  var User = app.models.user;
   router.get('/bonfires/getBonfireList', getBonfireList);
   router.get('/bonfires', returnNextBonfire);
   router.get('/bonfire-json-generator', returnGenerator);
@@ -136,9 +136,9 @@ module.exports = function(app) {
           challengeSeed: bonfire.challengeSeed,
           cc: !!req.user,
           progressTimestamps: req.user ? req.user.progressTimestamps : null,
-          verb: randomUtils.randomVerb(),
-          phrase: randomUtils.randomPhrase(),
-          compliment: randomUtils.randomCompliment(),
+          verb: generalUtils.randomVerb(),
+          phrase: generalUtils.randomPhrase(),
+          compliment: generalUtils.randomCompliment(),
           bonfires: bonfire,
           bonfireHash: bonfire.id
         });
@@ -199,9 +199,9 @@ module.exports = function(app) {
       challengeSeed: bonfireChallengeSeed,
       cc: req.user ? req.user.bonfiresHash : null,
       progressTimestamps: req.user ? req.user.progressTimestamps : null,
-      verb: randomUtils.Verb(),
-      phrase: randomUtils.Phrase(),
-      compliment: randomUtils.Compliment(),
+      verb: generalUtils.Verb(),
+      phrase: generalUtils.Phrase(),
+      compliment: generalUtils.Compliment(),
       bonfires: [],
       bonfireHash: 'test'
     });
@@ -223,6 +223,7 @@ module.exports = function(app) {
       bonfireDifficulty = req.body.difficulty,
       bonfireDescription = req.body.description,
       bonfireChallengeSeed = req.body.challengeSeed;
+
     bonfireTests = bonfireTests.split('\r\n');
     bonfireDescription = bonfireDescription.split('\r\n');
     bonfireTests.filter(getRidOfEmpties);

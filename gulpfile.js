@@ -8,14 +8,14 @@ var gulp = require('gulp'),
     reloadDelay = 1000;
 
 var paths = {
-    server: './app.js',
+    server: './server/server.js',
     serverIgnore: []
 };
 
 gulp.task('inject', function() {
   gulp.src('views/home.jade')
     .pipe(inject(gulp.src(bower()), {
-      //ignorePath: '/public'
+      // ignorePath: '/public'
     }))
     .pipe(gulp.dest('views'));
 });
@@ -27,8 +27,8 @@ gulp.task('serve', function(cb) {
         ext: '.js',
         ignore: paths.serverIgnore,
         env: {
-            'NODE_ENV': 'development',
-            'DEBUG': 'freecc:*'
+          'NODE_ENV': 'development',
+          'DEBUG': 'freecc:*'
         }
     })
         .on('start', function() {

@@ -1,14 +1,9 @@
 {
   "_meta": {
     "sources": [
-      "loopback/common/models",
-      "loopback/server/models",
       "../common/models",
       "./models"
     ]
-  },
-  "User": {
-    "dataSource": "db"
   },
   "AccessToken": {
     "dataSource": "db",
@@ -39,8 +34,7 @@
     "public": false
   },
   "user": {
-    "dataSource": "db",
-    "public": false
+    "dataSource": "db"
   },
   "userCredential": {
     "dataSource": "db",

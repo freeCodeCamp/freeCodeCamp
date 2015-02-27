@@ -1,7 +1,7 @@
-var passport = require('passport');
+// var passport = require('passport');
 
-module.exports = function(app) {
-  var router = app.loopback.Router();
+module.exports = function() {
+  /*var router = app.loopback.Router();
 
   var passportOptions = {
       successRedirect: '/',
@@ -60,5 +60,5 @@ module.exports = function(app) {
       }
   );
 
-  app.use(router);
+  app.use(router);*/
 };
