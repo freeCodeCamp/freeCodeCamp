@@ -228,9 +228,7 @@ module.exports = function(app) {
         debug('User err: ', err);
         return next(err);
       }
-      // Hack: see
-      // https://github.com/strongloop/loopback-connector-mongodb/issues/105
-      var howManyChallengeGradsQuery = { where: { gt: { points: 53 } } };
+      var howManyChallengeGradsQuery = { points: { gt: 53 } };
       User.count(howManyChallengeGradsQuery, function (err, challengeGrads) {
         if (err) {
           debug('challengeGrad query err: ', err);
