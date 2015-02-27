@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/FreeCodeCamp/freecodecamp.png?label=ready&title=Ready)](https://waffle.io/FreeCodeCamp/freecodecamp)
 <img src="https://s3.amazonaws.com/freecodecamp/logo4.0LG.png">
 
 Free Code Camp!
