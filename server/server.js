@@ -182,6 +182,7 @@ passportConfigurator.setupModels({
 
 R.keys(passportProviders).map(function(strategy) {
   var config = passportProviders[strategy];
+  config.session = config.session !== false;
   passportConfigurator.configureProvider(strategy, config);
 });
 
