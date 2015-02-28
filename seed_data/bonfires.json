@@ -198,7 +198,7 @@
     "name": "Mutations",
     "difficulty": "1.12",
     "description": [
-      "Return true if the string in the second element of the array if the string in the first element contains it in any form."
+      "Return true if the string in the first element of the array contains the string in the second element in any form."
     ],
     "challengeSeed": "function mutation(arr) {\n  return arr;\n}\n\nmutation(['hello', 'hey']);",
     "tests": [
