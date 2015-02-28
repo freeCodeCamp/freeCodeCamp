@@ -644,5 +644,24 @@
       "assert.deepEqual(inventory([], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[67, 'Bowling Ball'], [2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [7, 'Toothpaste']]);",
       "assert.deepEqual(inventory([[0, 'Bowling Ball'], [0, 'Dirty Sock'], [0, 'Hair Pin'], [0, 'Microphone']], [[1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [1, 'Bowling Ball'], [1, 'Toothpaste']]), [[1, 'Bowling Ball'], [0, 'Dirty Sock'], [1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [0, 'Microphone'], [1, 'Toothpaste']]);"
     ]
+  },
+  {
+    "_id": "a7bf700cd123b9a54eef01d5",
+    "name": "No repeats please",
+    "difficulty": "4.04",
+    "description": [
+      "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
+      "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating."
+    ],
+    "challengeSeed": "function permAlone(str) {\n  return str;\n}\n\npermAlone('aab');",
+    "tests": [
+      "expect(permAlone('aab')).to.be.a.number;",
+      "expect(permAlone('aab')).to.equal(2);",
+      "expect(permAlone('aaa')).to.equal(0);",
+      "expect(permAlone('aabb')).to.equal(8);",
+      "expect(permAlone('abcdefa')).to.equal(3600);",
+      "expect(permAlone('abfdefa')).to.equal(2640);",
+      "expect(permAlone('zzzzzzzz')).to.equal(0);"
+    ]
   }
 ]
