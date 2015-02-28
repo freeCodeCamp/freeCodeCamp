@@ -195,16 +195,16 @@
   },
   {
     "_id": "af2170cad53daa0770fabdea",
-    "name": "Anagrams",
+    "name": "Mutations",
     "difficulty": "1.12",
     "description": [
       "Return true if the string in the second element of the array if the string in the first element contains it in any form."
     ],
-    "challengeSeed": "function anagram(arr) {\n  return arr;\n}\n\nanagram(['hello', 'hey']);",
+    "challengeSeed": "function mutation(arr) {\n  return arr;\n}\n\nmutation(['hello', 'hey']);",
     "tests": [
-      "expect(anagram(['hello', 'hey'])).to.be.false;",
-      "expect(anagram(['hello', 'Hello'])).to.be.true;",
-      "expect(anagram(['zyxwvutsrqponmlkjihgfedcba', 'qrstu'])).to.be.true;"
+      "expect(mutation(['hello', 'hey'])).to.be.false;",
+      "expect(mutation(['hello', 'Hello'])).to.be.true;",
+      "expect(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu'])).to.be.true;"
     ]
   },
   {
