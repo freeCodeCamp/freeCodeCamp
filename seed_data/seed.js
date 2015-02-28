@@ -3,10 +3,15 @@ var bonfires = require('./bonfires.json'),
     app = require('../server/server'),
     Bonfire = app.models.Bonfire,
     coursewares = require('./coursewares.json'),
+    unfinishedCoursewares = require('./unfinishedCoursewares.json'),
     Courseware = app.models.Courseware;
 
 var counter = 0;
 var offerings = 2;
+
+if (process.env.NODE_ENV !== 'production') {
+  offerings++;
+}
 
 var CompletionMonitor = function() {
     counter++;
@@ -18,7 +23,6 @@ var CompletionMonitor = function() {
         process.exit(0);
     }
 };
-
 
 Bonfire.destroyAll({}, function(err, data) {
     if (err) {
@@ -51,5 +55,16 @@ Courseware.destroyAll({}, function(err, data) {
         }
         CompletionMonitor();
     });
-    console.log('coursewares');
+  if (process.env.NODE_ENV !== 'production') {
+    Courseware.create(unfinishedCoursewares, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Saved ', data);
+      }
+      CompletionMonitor();
+    });
+  }
+  console.log('coursewares');
 });
+

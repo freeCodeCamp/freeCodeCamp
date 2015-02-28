@@ -1,8 +1,10 @@
-var coursewares = require('../../seed_data/coursewares.json');
+var coursewares = require('../../seed_data/coursewares.json'),
+  R = require('ramda');
 
 module.exports = {
   allCoursewareIds: allCoursewareIds,
-  allCoursewareNames: allCoursewareNames
+  allCoursewareNames: allCoursewareNames,
+  firstUncompletedCourseware: firstUncompletedCourseware
 };
 
 function allCoursewareIds() {
@@ -37,4 +39,12 @@ function allCoursewareNames() {
       id: elem.id
     };
   });
+}
+
+function firstUncompletedCourseware(completed) {
+  return R.head(allCoursewareIds().filter(function (elem) {
+    if (completed.indexOf(elem) === -1) {
+      return elem;
+    }
+  }))
 }

@@ -9,6 +9,7 @@ lib-cov
 *.swp
 .floo
 .flooignore
+builtassets
 
 *.env
 pids

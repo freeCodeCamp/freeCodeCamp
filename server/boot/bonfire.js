@@ -54,25 +54,22 @@ module.exports = function(app) {
     data.bonfireList = bonfireUtils.allBonfireNames();
     data.completedList = noDuplicateBonfires;
 
-    debug('started');
     res.json(data);
   }
 
   function returnNextBonfire(req, res, next) {
     if (!req.user) {
-      console.log('conditional');
+
       return res.redirect('../bonfires/meet-bonfire');
     }
-    debug('Poop on screen', req.user.completedBonfires);
+
     var completed = req.user.completedBonfires.map(function (elem) {
       return elem._id;
     }) || [];
-    debug('I think this is the completedArray', completed);
-    var uncompletedBonfire = R.head(bonfireUtils.uncompletedBonfires(completed));
 
-    console.log(uncompletedBonfire);
 
-    Bonfire.findById(uncompletedBonfire,
+
+    Bonfire.findById(bonfireUtils.firstUncompletedBonfire(completed),
       function (err, bonfire) {
         if (err) {
           return next(err);
@@ -84,9 +81,9 @@ module.exports = function(app) {
           });
           return res.redirect('../bonfires/meet-bonfire');
         }
-        debug('Uncompleted', uncompletedBonfire);
+
         var nameString = bonfire.name.toLowerCase().replace(/\s/g, '-');
-        debug('Name String', nameString);
+
         return res.redirect('../bonfires/' + nameString);
       }
     );

@@ -1,10 +1,11 @@
 var bonfires = require('../../seed_data/bonfires.json');
+R = require('ramda');
 
 module.exports = {
   numberOfBonfires: numberOfBonfires,
   allBonfireNames: allBonfireNames,
   allBonfireIds: allBonfireIds,
-  uncompletedBonfires: uncompletedBonfires
+  firstUncompletedBonfire: firstUncompletedBonfire
 };
 
 function numberOfBonfires() {
@@ -43,12 +44,11 @@ function allBonfireNames() {
       };
     });
 }
-function uncompletedBonfires(completed) {
-  return allBonfireIds()
+function firstUncompletedBonfire(completed) {
+  return R.head(allBonfireIds()
     .filter(function (elem) {
       if (completed.indexOf(elem) === -1) {
         return elem;
       }
-    });
+    }))
 }
-

@@ -33,18 +33,11 @@ module.exports = function(app) {
       return elem.id;
     });
 
-    var uncompletedCourseware = coursewareUtils.allCoursewareIds().filter(function (elem) {
-      if (completed.indexOf(elem) === -1) {
-        return elem;
-      }
-    }).shift();
-
-    Courseware.findById(uncompletedCourseware, function (err, courseware) {
+    Courseware.findById(coursewareUtils.firstUncompletedCourseware(completed), function (err, courseware) {
       if (err) {
         next(err);
       }
 
-      courseware = courseware.pop();
       if (courseware === undefined) {
         req.flash('errors', {
           msg: "It looks like you've completed all the courses we have available. Good job!"
