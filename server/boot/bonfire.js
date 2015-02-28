@@ -59,32 +59,24 @@ module.exports = function(app) {
   }
 
   function returnNextBonfire(req, res, next) {
-    console.log('user', req.user);
     if (!req.user) {
       console.log('conditional');
       return res.redirect('../bonfires/meet-bonfire');
     }
+    debug('Poop on screen', req.user.completedBonfires);
     var completed = req.user.completedBonfires.map(function (elem) {
       return elem._id;
-    });
+    }) || [];
+    debug('I think this is the completedArray', completed);
+    var uncompletedBonfire = R.head(bonfireUtils.uncompletedBonfires(completed));
 
-    req.user.uncompletedBonfires = bonfireUtils.allBonfireIds()
-      .filter(function (elem) {
-        if (completed.indexOf(elem) === -1) {
-          return elem;
-        }
-      });
-    req.user.save();
+    console.log(uncompletedBonfire);
 
-    var uncompletedBonfires = req.user.uncompletedBonfires;
-
-    Bonfire.find(
-      { where: { 'id': uncompletedBonfires[0] } },
+    Bonfire.findById(uncompletedBonfire,
       function (err, bonfire) {
         if (err) {
-          next(err);
+          return next(err);
         }
-        bonfire = bonfire.pop();
         if (!bonfire) {
           req.flash('errors', {
             msg: 'It looks like you have completed all the bonfires we ' +
@@ -92,7 +84,9 @@ module.exports = function(app) {
           });
           return res.redirect('../bonfires/meet-bonfire');
         }
+        debug('Uncompleted', uncompletedBonfire);
         var nameString = bonfire.name.toLowerCase().replace(/\s/g, '-');
+        debug('Name String', nameString);
         return res.redirect('../bonfires/' + nameString);
       }
     );

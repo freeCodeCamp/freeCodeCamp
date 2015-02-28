@@ -8,7 +8,7 @@ module.exports = {
 function allCoursewareIds() {
   return coursewares.map(function(elem) {
     return {
-      _id: elem._id,
+      id: elem.id,
       difficulty: elem.difficulty
     };
   })
@@ -16,7 +16,7 @@ function allCoursewareIds() {
       return a.difficulty - b.difficulty;
     })
     .map(function(elem) {
-      return elem._id;
+      return elem.id;
     });
 }
 
@@ -25,7 +25,7 @@ function allCoursewareNames() {
     return {
       name: elem.name,
       difficulty: elem.difficulty,
-      _id: elem._id
+      id: elem.id
     };
   })
     .sort(function(a, b) {
@@ -34,7 +34,7 @@ function allCoursewareNames() {
     .map (function(elem) {
     return {
       name: elem.name,
-      _id: elem._id
+      id: elem.id
     };
   });
 }

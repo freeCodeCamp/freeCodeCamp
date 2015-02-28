@@ -1,6 +1,6 @@
 [
   {
-    "_id" : "bd7124d8c441eddfaeb5bdef",
+    "id" : "bd7124d8c441eddfaeb5bdef",
     "name": "Learn how Free Code Camp Works",
     "difficulty": 0.01,
     "challengeSeed": [
@@ -23,7 +23,7 @@
     "tests": []
   },
   {
-    "_id" : "bd7125d8c441eddfaeb5bdef",
+    "id" : "bd7125d8c441eddfaeb5bdef",
     "name": "Join Our Chat Room",
     "difficulty": 0.02,
     "challengeSeed": [
@@ -43,7 +43,7 @@
     "tests": []
   },
   {
-    "_id" : "bd7126d8c441eddfaeb5bdef",
+    "id" : "bd7126d8c441eddfaeb5bdef",
     "name": "Join Our Forum",
     "difficulty": 0.03,
     "challengeSeed": [
@@ -63,9 +63,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7127d8c441eddfaeb5bdef",
+    "id" : "bd7127d8c441eddfaeb5bdef",
     "name": "Build a Personal Website",
     "difficulty": 0.04,
     "challengeSeed": [
@@ -79,7 +79,7 @@
     "tests": []
   },
   {
-    "_id" : "bd7128d8c441eddfaeb5bdef",
+    "id" : "bd7128d8c441eddfaeb5bdef",
     "name": "Build a Responsive Blog Theme",
     "difficulty": 0.05,
     "challengeSeed": [
@@ -94,9 +94,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8129d8c441eddfaeb5bdef",
+    "id" : "bd8129d8c441eddfaeb5bdef",
     "name": "Build a Small Business Website",
     "difficulty": 0.06,
     "challengeSeed": [
@@ -110,7 +110,7 @@
     "tests": []
   },
   {
-    "_id" : "bd7110d8c441eddfaeb5bdef",
+    "id" : "bd7110d8c441eddfaeb5bdef",
     "name": "Tweak HTML and CSS in CodePen",
     "difficulty": 0.07,
     "challengeSeed": [
@@ -128,9 +128,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7111d8c441eddfaeb5bdef",
+    "id" : "bd7111d8c441eddfaeb5bdef",
     "name": "Build a CSS Robot",
     "difficulty": 0.08,
     "challengeSeed": [
@@ -144,7 +144,7 @@
     "tests": []
   },
   {
-    "_id" : "bd7112d8c441eddfaeb5bdef",
+    "id" : "bd7112d8c441eddfaeb5bdef",
     "name": "Get Started with jQuery",
     "difficulty": 0.09,
     "challengeSeed": [
@@ -159,9 +159,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7113d8c441eddfaeb5bdef",
+    "id" : "bd7113d8c441eddfaeb5bdef",
     "name": "Traverse the DOM",
     "difficulty": 0.10,
     "challengeSeed": [
@@ -173,9 +173,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7114d8c441eddfaeb5bdef",
+    "id" : "bd7114d8c441eddfaeb5bdef",
     "name": "Work with the DOM",
     "difficulty": 0.11,
     "challengeSeed": [
@@ -187,9 +187,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7115d8c441eddfaeb5bdef",
+    "id" : "bd7115d8c441eddfaeb5bdef",
     "name": "Listen for DOM Events",
     "difficulty": 0.12,
     "challengeSeed": [
@@ -201,9 +201,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7116d8c441eddfaeb5bdef",
+    "id" : "bd7116d8c441eddfaeb5bdef",
     "name": "Use jQuery for Styling",
     "difficulty": 0.13,
     "challengeSeed": [
@@ -215,9 +215,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7117d8c441eddfaeb5bdef",
+    "id" : "bd7117d8c441eddfaeb5bdef",
     "name": "Build a MadLibs Game",
     "difficulty": 0.14,
     "challengeSeed": [
@@ -230,9 +230,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7118d8c441eddfaeb5bdef",
+    "id" : "bd7118d8c441eddfaeb5bdef",
     "name": "Discover Chrome's DevTools",
     "difficulty": 0.15,
     "challengeSeed": [
@@ -246,9 +246,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7119d8c441eddfaeb5bdef",
+    "id" : "bd7119d8c441eddfaeb5bdef",
     "name": "Tackle jQuery Exercises",
     "difficulty": 0.16,
     "challengeSeed": [
@@ -261,9 +261,9 @@
       ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7120d8c441eddfaeb5bdef",
+    "id" : "bd7120d8c441eddfaeb5bdef",
     "name": "Customize Bootstrap",
     "difficulty": 0.17,
     "challengeSeed": [
@@ -286,9 +286,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7122d8c441eddfaeb5bdef",
+    "id" : "bd7122d8c441eddfaeb5bdef",
     "name": "Inject Animation into CSS",
     "difficulty": 0.18,
     "challengeSeed": [
@@ -305,9 +305,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7123d8c441eddfaeb5bdef",
+    "id" : "bd7123d8c441eddfaeb5bdef",
     "name": "Learn Basic Computer Science",
     "difficulty": 0.19,
     "challengeSeed": [
@@ -321,9 +321,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8124d8c441eddfaeb5bdef",
+    "id" : "bd8124d8c441eddfaeb5bdef",
     "name": "Learn Loops",
     "difficulty": 0.20,
     "challengeSeed": [
@@ -336,9 +336,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8125d8c441eddfaeb5bdef",
+    "id" : "bd8125d8c441eddfaeb5bdef",
     "name": "Learn Computer Hardware",
     "difficulty": 0.21,
     "challengeSeed": [
@@ -351,9 +351,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8126d8c441eddfaeb5bdef",
+    "id" : "bd8126d8c441eddfaeb5bdef",
     "name": "Learn Computer Networking",
     "difficulty": 0.22,
     "challengeSeed": [
@@ -366,9 +366,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8127d8c441eddfaeb5bdef",
+    "id" : "bd8127d8c441eddfaeb5bdef",
     "name": "Learn Boolean Logic",
     "difficulty": 0.23,
     "challengeSeed": [
@@ -381,9 +381,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8128d8c441eddfaeb5bdef",
+    "id" : "bd8128d8c441eddfaeb5bdef",
     "name": "Learn Computer Security",
     "difficulty": 0.24,
     "challengeSeed": [
@@ -397,9 +397,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7129d8c441eddfaeb5bdef",
+    "id" : "bd7129d8c441eddfaeb5bdef",
     "name": "Build an Adventure Game",
     "difficulty": 0.25,
     "challengeSeed": [
@@ -414,9 +414,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7130d8c441eddfaeb5bdef",
+    "id" : "bd7130d8c441eddfaeb5bdef",
     "name": "Build Rock Paper Scissors",
     "difficulty": 0.26,
     "challengeSeed": [
@@ -429,9 +429,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7131d8c441eddfaeb5bdef",
+    "id" : "bd7131d8c441eddfaeb5bdef",
     "name": "Learn JavaScript For Loops",
     "difficulty": 0.27,
     "challengeSeed": [
@@ -444,9 +444,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7132d8c441eddfaeb5bdef",
+    "id" : "bd7132d8c441eddfaeb5bdef",
     "name": "Learn JavaScript While Loops",
     "difficulty": 0.28,
     "challengeSeed": [
@@ -459,9 +459,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7133d8c441eddfaeb5bdef",
+    "id" : "bd7133d8c441eddfaeb5bdef",
     "name": "Learn Control Flow",
     "difficulty": 0.29,
     "challengeSeed": [
@@ -475,9 +475,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7134d8c441eddfaeb5bdef",
+    "id" : "bd7134d8c441eddfaeb5bdef",
     "name": "Build a Contact List",
     "difficulty": 0.30,
     "challengeSeed": [
@@ -490,9 +490,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7135d8c441eddfaeb5bdef",
+    "id" : "bd7135d8c441eddfaeb5bdef",
     "name": "Build an Address Book",
     "difficulty": 0.31,
     "challengeSeed": [
@@ -501,13 +501,13 @@
     "description" : [
       "Let's learn more about objects.",
       "Go to <a href='http://www.codecademy.com/courses/spencer-sandbox/0/1' target='_blank'>http://www.codecademy.com/courses/spencer-sandbox/0/1</a> and complete the section.",
-      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/building-an-address-book/0/1?curriculum_id=506324b3a7dffd00020bf661' target='_blank'>http://www.codecademy.com/courses/building-an-address-book/0/1?curriculum_id=506324b3a7dffd00020bf661</a>."
+      "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/building-an-address-book/0/1?curriculumid=506324b3a7dffd00020bf661' target='_blank'>http://www.codecademy.com/courses/building-an-address-book/0/1?curriculumid=506324b3a7dffd00020bf661</a>."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7136d8c441eddfaeb5bdef",
+    "id" : "bd7136d8c441eddfaeb5bdef",
     "name": "Build a Cash Register",
     "difficulty": 0.32,
     "challengeSeed": [
@@ -520,9 +520,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7137d8c441eddfaeb5bdef",
+    "id" : "bd7137d8c441eddfaeb5bdef",
     "name": "Get Help the Hacker Way",
     "difficulty": 0.33,
     "challengeSeed": [
@@ -539,9 +539,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7138d8c441eddfaeb5bdef",
+    "id" : "bd7138d8c441eddfaeb5bdef",
     "name": "Learn Regular Expressions",
     "difficulty": 0.34,
     "challengeSeed": [
@@ -555,9 +555,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7139d8c441eddfaeb5bdef",
+    "id" : "bd7139d8c441eddfaeb5bdef",
     "name": "Pair Program on Bonfires",
     "difficulty": 0.35,
     "challengeSeed": [
@@ -585,9 +585,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7140d8c441eddfaeb5bdef",
+    "id" : "bd7140d8c441eddfaeb5bdef",
     "name": "Manage Source Code with Git",
     "difficulty": 0.36,
     "challengeSeed": [
@@ -600,9 +600,9 @@
       ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7141d8c441eddfaeb5bdef",
+    "id" : "bd7141d8c441eddfaeb5bdef",
     "name": "Get Started with Node.js",
     "difficulty": 0.37,
     "challengeSeed": [
@@ -616,9 +616,9 @@
       ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7142d8c441eddfaeb5bdef",
+    "id" : "bd7142d8c441eddfaeb5bdef",
     "name": "Try Node.js Events",
     "difficulty": 0.38,
     "challengeSeed": [
@@ -632,9 +632,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7143d8c441eddfaeb5bdef",
+    "id" : "bd7143d8c441eddfaeb5bdef",
     "name": "Try Node.js Streams",
     "difficulty": 0.39,
     "challengeSeed": [
@@ -647,9 +647,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7144d8c441eddfaeb5bdef",
+    "id" : "bd7144d8c441eddfaeb5bdef",
     "name": "Learn how Node.js Modules Work",
     "difficulty": 0.40,
     "challengeSeed": [
@@ -663,9 +663,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7145d8c441eddfaeb5bdef",
+    "id" : "bd7145d8c441eddfaeb5bdef",
     "name": "Start an Express.js Server",
     "difficulty": 0.41,
     "challengeSeed": [
@@ -677,9 +677,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7146d8c441eddfaeb5bdef",
+    "id" : "bd7146d8c441eddfaeb5bdef",
     "name": "Use Socket.io",
     "difficulty": 0.42,
     "challengeSeed": [
@@ -690,9 +690,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7147d8c441eddfaeb5bdef",
+    "id" : "bd7147d8c441eddfaeb5bdef",
     "name": "Use Redis to Persist Data",
     "difficulty": 0.43,
     "challengeSeed": [
@@ -705,9 +705,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7148d8c441eddfaeb5bdef",
+    "id" : "bd7148d8c441eddfaeb5bdef",
     "name": "Dive Deeper into Express.js",
     "difficulty": 0.44,
     "challengeSeed": [
@@ -719,9 +719,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7149d8c441eddfaeb5bdef",
+    "id" : "bd7149d8c441eddfaeb5bdef",
     "name": "Setup Express.js Middleware",
     "difficulty": 0.45,
     "challengeSeed": [
@@ -734,9 +734,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7150d8c441eddfaeb5bdef",
+    "id" : "bd7150d8c441eddfaeb5bdef",
     "name": "Take Advantage of Parameters",
     "difficulty": 0.46,
     "challengeSeed": [
@@ -749,9 +749,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7151d8c441eddfaeb5bdef",
+    "id" : "bd7151d8c441eddfaeb5bdef",
     "name": "Add the Body Parser",
     "difficulty": 0.47,
     "challengeSeed": [
@@ -764,9 +764,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7152d8c441eddfaeb5bdef",
+    "id" : "bd7152d8c441eddfaeb5bdef",
     "name": "Configure Routes in Express.js",
     "difficulty": 0.48,
     "challengeSeed": [
@@ -779,9 +779,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7153d8c441eddfaeb5bdef",
+    "id" : "bd7153d8c441eddfaeb5bdef",
     "name": "Try MongoDB",
     "difficulty": 0.49,
     "challengeSeed": [
@@ -793,9 +793,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7154d8c441eddfaeb5bdef",
+    "id" : "bd7154d8c441eddfaeb5bdef",
     "name": "Get Started with Angular.js",
     "difficulty": 0.50,
     "challengeSeed": [
@@ -808,9 +808,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7155d8c441eddfaeb5bdef",
+    "id" : "bd7155d8c441eddfaeb5bdef",
     "name": "Apply Angular.js Directives",
     "difficulty": 0.51,
     "challengeSeed": [
@@ -823,9 +823,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7156d8c441eddfaeb5bdef",
+    "id" : "bd7156d8c441eddfaeb5bdef",
     "name": "Power Forms with Angular.js",
     "difficulty": 0.52,
     "challengeSeed": [
@@ -838,9 +838,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7157d8c441eddfaeb5bdef",
+    "id" : "bd7157d8c441eddfaeb5bdef",
     "name": "Customize Angular.js Directives",
     "difficulty": 0.53,
     "challengeSeed": [
@@ -852,9 +852,9 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7158d8c441eddfaeb5bdef",
+    "id" : "bd7158d8c441eddfaeb5bdef",
     "name": "Create Angular.js Services",
     "difficulty": 0.54,
     "challengeSeed": [
@@ -869,7 +869,7 @@
     "tests": []
   },
   {
-    "_id" : "bd7123c8c441eddfaeb5bdef",
+    "id" : "bd7123c8c441eddfaeb5bdef",
     "name": "Start our Challenges",
     "difficulty": "1.00",
     "description": [
@@ -891,7 +891,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf0887a",
+    "id" : "bad87fee1348bd9aedf0887a",
     "name": "Use the h2 Element",
     "difficulty" : "1.01",
     "description": [
@@ -911,7 +911,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08801",
+    "id" : "bad87fee1348bd9aedf08801",
     "name": "Use the P Element",
     "difficulty" : "1.02",
     "description": [
@@ -930,7 +930,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aeaf08801",
+    "id" : "bad87fee1348bd9aeaf08801",
     "name": "Add a Line Break to Visually Separate Elements",
     "difficulty" : "1.03",
     "description": [
@@ -950,7 +950,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08802",
+    "id" : "bad87fee1348bd9aedf08802",
     "name": "Uncomment HTML",
     "difficulty" : "1.04",
     "description": [
@@ -974,7 +974,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08804",
+    "id" : "bad87fee1348bd9aedf08804",
     "name": "Comment out HTML",
     "difficulty" : "1.05",
     "description": [
@@ -999,7 +999,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08833",
+    "id" : "bad87fee1348bd9aedf08833",
     "name": "Use Lorem Ipsum Text as a Placeholder",
     "difficulty" : "1.06",
     "description": [
@@ -1020,7 +1020,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08803",
+    "id" : "bad87fee1348bd9aedf08803",
     "name": "Change the Color of Text",
     "difficulty" : "1.07",
     "description": [
@@ -1041,7 +1041,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08805",
+    "id" : "bad87fee1348bd9aedf08805",
     "name": "Create a Style Tag for CSS",
     "difficulty" : "1.08",
     "description": [
@@ -1057,7 +1057,7 @@
       "expect($('h2')).to.have.css('color', '#0000ff');"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>", 
+      "<h1>hello world</h1>",
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
@@ -1065,7 +1065,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aecf08806",
+    "id" : "bad87fee1348bd9aecf08806",
     "name": "Use a CSS Class to Style an Element",
     "difficulty" : "1.09",
     "description": [
@@ -1092,7 +1092,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aeff08806",
+    "id" : "bad87fee1348bd9aeff08806",
     "name": "Use a CSS Class to Style Multiple Elements",
     "difficulty" : "1.10",
     "description": [
@@ -1121,7 +1121,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08806",
+    "id" : "bad87fee1348bd9aedf08806",
     "name": "Change the Font Size of an Element",
     "difficulty" : "1.11",
     "description": [
@@ -1148,7 +1148,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08807",
+    "id" : "bad87fee1348bd9aedf08807",
     "name": "Import a Google Font",
     "difficulty" : "1.12",
     "description": [
@@ -1180,7 +1180,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08808",
+    "id" : "bad87fee1348bd9aedf08808",
     "name": "Specify How Fonts Should Degrade",
     "difficulty" : "1.13",
     "description": [
@@ -1209,7 +1209,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08809",
+    "id" : "bad87fee1348bd9aedf08809",
     "name": "Using Important to Override Styles",
     "difficulty" : "1.14",
     "description": [
@@ -1248,7 +1248,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08811",
+    "id" : "bad87fee1348bd9aedf08811",
     "name": "Use rgb Codes for Precise Colors",
     "difficulty" : "1.17",
     "description": [
@@ -1278,7 +1278,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08810",
+    "id" : "bad87fee1348bd9aedf08810",
     "name": "Use Hex Codes for Precise Colors",
     "difficulty" : "1.15",
     "description": [
@@ -1309,7 +1309,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9bedf08810",
+    "id" : "bad87fee1348bd9bedf08810",
     "name": "Use Shortened 3 Digit Hex Codes",
     "difficulty" : "1.16",
     "description": [
@@ -1335,7 +1335,7 @@
   },
 
   {
-    "_id" : "bad88fee1348bd9aedf08811",
+    "id" : "bad88fee1348bd9aedf08811",
     "name": "Set the Alpha of a Color with rgba",
     "difficulty" : "1.17",
     "description": [
@@ -1365,7 +1365,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08812",
+    "id" : "bad87fee1348bd9aedf08812",
     "name": "Add an Image to your Website",
     "difficulty" : "1.18",
     "description": [
@@ -1392,7 +1392,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9acdf08812",
+    "id" : "bad87fee1348bd9acdf08812",
     "name": "Specify an Image Size",
     "difficulty" : "1.19",
     "description": [
@@ -1424,7 +1424,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9bedf08813",
+    "id" : "bad87fee1348bd9bedf08813",
     "name": "Add a Border Around an Element",
     "difficulty" : "1.20",
     "description": [
@@ -1462,7 +1462,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08814",
+    "id" : "bad87fee1348bd9aedf08814",
     "name": "Add Rounded Corners with a Border Radius",
     "difficulty" : "1.21",
     "description": [
@@ -1500,7 +1500,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08815",
+    "id" : "bad87fee1348bd9aedf08815",
     "name": "Make an Image Circular with a Border Radius",
     "difficulty" : "1.22",
     "description": [
@@ -1537,7 +1537,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08816",
+    "id" : "bad87fee1348bd9aedf08816",
     "name": "Use an Anchor Tag to Link to an External Page",
     "difficulty" : "1.23",
     "description": [
@@ -1575,7 +1575,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08817",
+    "id" : "bad87fee1348bd9aedf08817",
     "name": "Make Named Anchors using the Hash Symbol",
     "difficulty" : "1.24",
     "description": [
@@ -1612,7 +1612,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08820",
+    "id" : "bad87fee1348bd9aedf08820",
     "name": "Turn an Image into a Link",
     "difficulty" : "1.25",
     "description": [
@@ -1646,7 +1646,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08818",
+    "id" : "bad87fee1348bd9aedf08818",
     "name": "Add Alt Text to an image",
     "difficulty" : "1.26",
     "description": [
@@ -1679,7 +1679,7 @@
   },
 
   {
-    "_id" : "bad88fee1348bd9aedf08825",
+    "id" : "bad88fee1348bd9aedf08825",
     "name": "Adjusting the Padding of an Element",
     "difficulty" : "1.27",
     "description": [
@@ -1731,7 +1731,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08822",
+    "id" : "bad87fee1348bd9aedf08822",
     "name": "Adjust the Margin of an Element",
     "difficulty" : "1.28",
     "description": [
@@ -1785,7 +1785,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08823",
+    "id" : "bad87fee1348bd9aedf08823",
     "name": "Add a Negative Margin to an Element",
     "difficulty" : "1.29",
     "description": [
@@ -1838,7 +1838,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08824",
+    "id" : "bad87fee1348bd9aedf08824",
     "name": "Add Different Padding to Each Side of an Element TEST",
     "difficulty" : "1.30",
     "description": [
@@ -1892,7 +1892,7 @@
   },
 
   {
-    "_id" : "bad87fee1248bd9aedf08824",
+    "id" : "bad87fee1248bd9aedf08824",
     "name": "Add Different a Margin to Each Side of an Element TEST",
     "difficulty" : "1.31",
     "description": [
@@ -1946,7 +1946,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08826",
+    "id" : "bad87fee1348bd9aedf08826",
     "name": "Use Clockwise Notation to Specify an Element's Padding",
     "difficulty" : "1.32",
     "description": [
@@ -1997,7 +1997,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9acde08812",
+    "id" : "bad87fee1348bd9acde08812",
     "name": "Use Bootstrap for Responsive Images",
     "difficulty" : "1.33",
     "description": [
@@ -2033,7 +2033,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd8acde08812",
+    "id" : "bad87fee1348bd8acde08812",
     "name": "Center Text with Bootstrap",
     "difficulty" : "1.34",
     "description": [
@@ -2061,7 +2061,7 @@
   },
 
   {
-    "_id" : "bad87fee1348cd8acde08812",
+    "id" : "bad87fee1348cd8acde08812",
     "name": "Create a Button",
     "difficulty" : "1.35",
     "description": [
@@ -2090,7 +2090,7 @@
   },
 
   {
-    "_id" : "bad87fee1348cd8acdf08812",
+    "id" : "bad87fee1348cd8acdf08812",
     "name": "Create a Bootstrap Button",
     "difficulty" : "1.36",
     "description": [
@@ -2120,7 +2120,7 @@
   },
 
   {
-    "_id" : "bad87fee1348cd8acef08812",
+    "id" : "bad87fee1348cd8acef08812",
     "name": "Create a Block Element Bootstrap Button",
     "difficulty" : "1.37",
     "description": [
@@ -2151,7 +2151,7 @@
   },
 
   {
-    "_id" : "bae87fee1348cd8acef08812",
+    "id" : "bae87fee1348cd8acef08812",
     "name": "Color a Bootstrap Button with Button Primary",
     "difficulty" : "1.38",
     "description": [
@@ -2183,7 +2183,7 @@
   },
 
   {
-    "_id" : "bad88fee1348cd8acef08812",
+    "id" : "bad88fee1348cd8acef08812",
     "name": "Color a Bootstrap Button with Button Primary",
     "difficulty" : "1.39",
     "description": [
@@ -2214,7 +2214,7 @@
   },
 
   {
-    "_id" : "bad87fee1348ce8acef08812",
+    "id" : "bad87fee1348ce8acef08812",
     "name": "Warn your Users of a Dangerous Action with the Bootstrap Button Danger Class",
     "difficulty" : "1.40",
     "description": [
@@ -2245,7 +2245,7 @@
   },
 
   {
-    "_id" : "bad88fee1348ce8acef08812",
+    "id" : "bad88fee1348ce8acef08812",
     "name": "Use the Bootstrap Grid to Put Two Elements Side By Side",
     "difficulty" : "1.41",
     "description": [
@@ -2285,7 +2285,7 @@
   },
 
   {
-    "_id" : "bad89fee1348ce8acef08812",
+    "id" : "bad89fee1348ce8acef08812",
     "name": "Wrap Side By Side Elements in a Bootstrap Row",
     "difficulty" : "1.42",
     "description": [
@@ -2325,7 +2325,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08813",
+    "id" : "bad87fee1348bd9aedf08813",
     "name": "Add Alt Text to an Image TEST",
     "difficulty" : "1.43",
     "description": [
@@ -2351,7 +2351,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08827",
+    "id" : "bad87fee1348bd9aedf08827",
     "name": "Create an Bulleted Unordered List",
     "difficulty" : "1.44",
     "description": [
@@ -2369,7 +2369,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08828",
+    "id" : "bad87fee1348bd9aedf08828",
     "name": "Created a Numbered Ordered List",
     "difficulty" : "1.45",
     "description": [
@@ -2387,7 +2387,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08829",
+    "id" : "bad87fee1348bd9aedf08829",
     "name": "Create a Text Field",
     "difficulty" : "1.46",
     "description": [
@@ -2405,7 +2405,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08830",
+    "id" : "bad87fee1348bd9aedf08830",
     "name": "Use HTML5 to Make a Field Required",
     "difficulty" : "1.47",
     "description": [
@@ -2423,7 +2423,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08831",
+    "id" : "bad87fee1348bd9aedf08831",
     "name": "Use HTML5 to Specify an Input Type",
     "difficulty" : "1.49",
     "description": [
@@ -2441,7 +2441,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08832",
+    "id" : "bad87fee1348bd9aedf08832",
     "name": "Create a Text Area",
     "difficulty" : "1.50",
     "description": [
@@ -2459,7 +2459,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08834",
+    "id" : "bad87fee1348bd9aedf08834",
     "name": "Create a Set of Radio Buttons",
     "difficulty" : "1.51",
     "description": [
@@ -2477,7 +2477,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08835",
+    "id" : "bad87fee1348bd9aedf08835",
     "name": "Create a Set of Checkboxes",
     "difficulty" : "1.52",
     "description": [
@@ -2495,7 +2495,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08836",
+    "id" : "bad87fee1348bd9aedf08836",
     "name": "Create a HTML Form",
     "difficulty" : "1.53",
     "description": [
@@ -2513,7 +2513,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08841",
+    "id" : "bad87fee1348bd9aedf08841",
     "name": "Change the background of element",
     "difficulty" : "1.54",
     "description": [
@@ -2531,7 +2531,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08842",
+    "id" : "bad87fee1348bd9aedf08842",
     "name": "Make an element translucent",
     "difficulty" : "1.55",
     "description": [
@@ -2549,7 +2549,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08844",
+    "id" : "bad87fee1348bd9aedf08844",
     "name": "Add a Drop Shadow",
     "difficulty" : "1.56",
     "description": [
@@ -2567,7 +2567,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08845",
+    "id" : "bad87fee1348bd9aedf08845",
     "name": "Make a Navbar",
     "difficulty" : "1.57",
     "description": [
@@ -2585,7 +2585,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08847",
+    "id" : "bad87fee1348bd9aedf08847",
     "name": "Add a Logo to a Navbar",
     "difficulty" : "1.58",
     "description": [
@@ -2603,7 +2603,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08848",
+    "id" : "bad87fee1348bd9aedf08848",
     "name": "Make a Footer",
     "difficulty" : "1.59",
     "description": [
@@ -2621,7 +2621,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08849",
+    "id" : "bad87fee1348bd9aedf08849",
     "name": "Use Icons as Links",
     "difficulty" : "1.60",
     "description": [
@@ -2639,7 +2639,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08850",
+    "id" : "bad87fee1348bd9aedf08850",
     "name": "Add Hover Effects to Icons",
     "difficulty" : "1.61",
     "description": [
@@ -2657,7 +2657,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08851",
+    "id" : "bad87fee1348bd9aedf08851",
     "name": "Add Depth to a Page with a Well",
     "difficulty" : "1.62",
     "description": [
@@ -2675,7 +2675,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08852",
+    "id" : "bad87fee1348bd9aedf08852",
     "name": "Add an ID to a Button",
     "difficulty" : "1.52",
     "description": [
@@ -2693,7 +2693,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08853",
+    "id" : "bad87fee1348bd9aedf08853",
     "name": "Fire a Modal by Clicking a Button",
     "difficulty" : "1.63",
     "description": [
@@ -2711,7 +2711,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08854",
+    "id" : "bad87fee1348bd9aedf08854",
     "name": "Style a Modal with a Header",
     "difficulty" : "1.64",
     "description": [
@@ -2729,7 +2729,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08855",
+    "id" : "bad87fee1348bd9aedf08855",
     "name": "Style a Modal with a Body",
     "difficulty" : "1.65",
     "description": [
@@ -2747,7 +2747,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08856",
+    "id" : "bad87fee1348bd9aedf08856",
     "name": "Make a Modal Dismissable",
     "difficulty" : "1.66",
     "description": [
@@ -2765,7 +2765,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08857",
+    "id" : "bad87fee1348bd9aedf08857",
     "name": "Create an Accordian Menu",
     "difficulty" : "1.67",
     "description": [
@@ -2783,7 +2783,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08863",
+    "id" : "bad87fee1348bd9aedf08863",
     "name": "Add a Gradient to a Button",
     "difficulty" : "1.68",
     "description": [
@@ -2801,7 +2801,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08864",
+    "id" : "bad87fee1348bd9aedf08864",
     "name": "Adjust the Line Height of Text",
     "difficulty" : "1.69",
     "description": [
@@ -2819,7 +2819,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08866",
+    "id" : "bad87fee1348bd9aedf08866",
     "name": "",
     "difficulty" : "1.70",
     "description": [
@@ -2837,7 +2837,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08867",
+    "id" : "bad87fee1348bd9aedf08867",
     "name": "",
     "difficulty" : "1.71",
     "description": [
@@ -2855,7 +2855,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08868",
+    "id" : "bad87fee1348bd9aedf08868",
     "name": "",
     "difficulty" : "1.711",
     "description": [
@@ -2873,7 +2873,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08869",
+    "id" : "bad87fee1348bd9aedf08869",
     "name": "",
     "difficulty" : "1.712",
     "description": [
@@ -2891,7 +2891,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08870",
+    "id" : "bad87fee1348bd9aedf08870",
     "name": "",
     "difficulty" : "1.713",
     "description": [
@@ -2909,7 +2909,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08871",
+    "id" : "bad87fee1348bd9aedf08871",
     "name": "",
     "difficulty" : "1.714",
     "description": [
@@ -2927,7 +2927,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08872",
+    "id" : "bad87fee1348bd9aedf08872",
     "name": "",
     "difficulty" : "1.72",
     "description": [
@@ -2945,7 +2945,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08873",
+    "id" : "bad87fee1348bd9aedf08873",
     "name": "",
     "difficulty" : "1.73",
     "description": [
@@ -2963,7 +2963,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08874",
+    "id" : "bad87fee1348bd9aedf08874",
     "name": "",
     "difficulty" : "1.74",
     "description": [
@@ -2981,7 +2981,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08875",
+    "id" : "bad87fee1348bd9aedf08875",
     "name": "",
     "difficulty" : "1.75",
     "description": [
@@ -2999,7 +2999,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08876",
+    "id" : "bad87fee1348bd9aedf08876",
     "name": "",
     "difficulty" : "1.76",
     "description": [
@@ -3017,7 +3017,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08877",
+    "id" : "bad87fee1348bd9aedf08877",
     "name": "",
     "difficulty" : "1.77",
     "description": [
@@ -3035,7 +3035,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08878",
+    "id" : "bad87fee1348bd9aedf08878",
     "name": "",
     "difficulty" : "1.78",
     "description": [
@@ -3053,7 +3053,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08879",
+    "id" : "bad87fee1348bd9aedf08879",
     "name": "",
     "difficulty" : "1.79",
     "description": [
@@ -3071,7 +3071,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08880",
+    "id" : "bad87fee1348bd9aedf08880",
     "name": "",
     "difficulty" : "1.80",
     "description": [
@@ -3089,7 +3089,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08881",
+    "id" : "bad87fee1348bd9aedf08881",
     "name": "",
     "difficulty" : "1.81",
     "description": [
@@ -3107,7 +3107,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08882",
+    "id" : "bad87fee1348bd9aedf08882",
     "name": "",
     "difficulty" : "1.82",
     "description": [
@@ -3125,7 +3125,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08883",
+    "id" : "bad87fee1348bd9aedf08883",
     "name": "",
     "difficulty" : "1.83",
     "description": [
@@ -3143,7 +3143,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08884",
+    "id" : "bad87fee1348bd9aedf08884",
     "name": "",
     "difficulty" : "1.84",
     "description": [
@@ -3161,7 +3161,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08885",
+    "id" : "bad87fee1348bd9aedf08885",
     "name": "",
     "difficulty" : "1.85",
     "description": [
@@ -3179,7 +3179,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08886",
+    "id" : "bad87fee1348bd9aedf08886",
     "name": "",
     "difficulty" : "1.86",
     "description": [
@@ -3197,7 +3197,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08887",
+    "id" : "bad87fee1348bd9aedf08887",
     "name": "",
     "difficulty" : "1.87",
     "description": [
@@ -3215,7 +3215,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08888",
+    "id" : "bad87fee1348bd9aedf08888",
     "name": "",
     "difficulty" : "1.88",
     "description": [
@@ -3233,7 +3233,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08889",
+    "id" : "bad87fee1348bd9aedf08889",
     "name": "",
     "difficulty" : "1.89",
     "description": [
@@ -3251,7 +3251,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08890",
+    "id" : "bad87fee1348bd9aedf08890",
     "name": "",
     "difficulty" : "1.90",
     "description": [
@@ -3269,7 +3269,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08891",
+    "id" : "bad87fee1348bd9aedf08891",
     "name": "",
     "difficulty" : "1.91",
     "description": [
@@ -3287,7 +3287,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08892",
+    "id" : "bad87fee1348bd9aedf08892",
     "name": "",
     "difficulty" : "1.92",
     "description": [
@@ -3305,7 +3305,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08893",
+    "id" : "bad87fee1348bd9aedf08893",
     "name": "",
     "difficulty" : "1.93",
     "description": [
@@ -3323,7 +3323,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08894",
+    "id" : "bad87fee1348bd9aedf08894",
     "name": "",
     "difficulty" : "1.94",
     "description": [
@@ -3341,7 +3341,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08895",
+    "id" : "bad87fee1348bd9aedf08895",
     "name": "",
     "difficulty" : "1.95",
     "description": [
@@ -3359,7 +3359,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08896",
+    "id" : "bad87fee1348bd9aedf08896",
     "name": "",
     "difficulty" : "1.96",
     "description": [
@@ -3377,7 +3377,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08897",
+    "id" : "bad87fee1348bd9aedf08897",
     "name": "",
     "difficulty" : "1.97",
     "description": [
@@ -3395,7 +3395,7 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08898",
+    "id" : "bad87fee1348bd9aedf08898",
     "name": "",
     "difficulty" : "1.98",
     "description": [
@@ -3412,7 +3412,7 @@
     "challengeType": 0
   },
   {
-    "_id" : "bad87fee1348bd9aedf08899",
+    "id" : "bad87fee1348bd9aedf08899",
     "name": "",
     "difficulty" : "1.99",
     "description": [
@@ -3429,7 +3429,7 @@
     "challengeType": 0
   },
   {
-    "_id": "bd7123c9c441eddfaeb5bdef",
+    "id": "bd7123c9c441eddfaeb5bdef",
     "name": "Meet Booleans",
     "difficulty": "9.98",
     "description": [

@@ -1,6 +1,7 @@
 var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:courseware'),
-    resources = require('./resources'),
+    coursewareUtils = require('../utils/coursewareUtils'),
+    generalUtils = require('../utils/generalUtils'),
     R = require('ramda');
 
 module.exports = function(app) {
@@ -14,12 +15,12 @@ module.exports = function(app) {
 
   function showAllCoursewares(req, res) {
     var completedCoursewares = req.user.completedCoursewares.map(function (elem) {
-      return elem._id;
+      return elem.id;
     });
 
     var noDuplicatedCoursewares = R.uniq(completedCoursewares);
     var data = {};
-    data.coursewareList = resources.allCoursewareNames();
+    data.coursewareList = coursewareUtils.allCoursewareNames();
     data.completedList = noDuplicatedCoursewares;
     res.send(data);
   }
@@ -29,20 +30,16 @@ module.exports = function(app) {
       return res.redirect('/coursewares/start-our-challenges');
     }
     var completed = req.user.completedCoursewares.map(function (elem) {
-      return elem._id;
+      return elem.id;
     });
 
-    req.user.uncompletedCoursewares = resources.allCoursewareIds().filter(function (elem) {
+    var uncompletedCourseware = coursewareUtils.allCoursewareIds().filter(function (elem) {
       if (completed.indexOf(elem) === -1) {
         return elem;
       }
-    });
-    req.user.save();
+    }).shift();
 
-    var uncompletedCoursewares = req.user.uncompletedCoursewares.shift();
-
-
-    Courseware.find({ where: { "id": uncompletedCoursewares} }, function (err, courseware) {
+    Courseware.findById(uncompletedCourseware, function (err, courseware) {
       if (err) {
         next(err);
       }
@@ -95,11 +92,11 @@ module.exports = function(app) {
             challengeSeed: courseware.challengeSeed,
             cc: !!req.user,
             progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-            verb: resources.randomVerb(),
-            phrase: resources.randomPhrase(),
-            compliment: resources.randomCompliment(),
-            coursewareHash: courseware._id,
-            environment: resources.whichEnvironment()
+            verb: generalUtils.randomVerb(),
+            phrase: generalUtils.randomPhrase(),
+            compliment: generalUtils.randomCompliment(),
+            coursewareHash: courseware.id,
+            environment: generalUtils.whichEnvironment()
           });
         },
 
@@ -114,11 +111,11 @@ module.exports = function(app) {
             challengeSeed: courseware.challengeSeed,
             cc: !!req.user,
             progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-            verb: resources.randomVerb(),
-            phrase: resources.randomPhrase(),
-            compliment: resources.randomCompliment(),
-            coursewareHash: courseware._id,
-            environment: resources.whichEnvironment()
+            verb: generalUtils.randomVerb(),
+            phrase: generalUtils.randomPhrase(),
+            compliment: generalUtils.randomCompliment(),
+            coursewareHash: courseware.id,
+            environment: generalUtils.whichEnvironment()
 
           });
         },
@@ -133,11 +130,11 @@ module.exports = function(app) {
             video: courseware.challengeSeed[0],
             cc: !!req.user,
             progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-            verb: resources.randomVerb(),
-            phrase: resources.randomPhrase(),
-            compliment: resources.randomCompliment(),
-            coursewareHash: courseware._id,
-            environment: resources.whichEnvironment()
+            verb: generalUtils.randomVerb(),
+            phrase: generalUtils.randomPhrase(),
+            compliment: generalUtils.randomCompliment(),
+            coursewareHash: courseware.id,
+            environment: generalUtils.whichEnvironment()
           });
         }
       };
@@ -171,9 +168,9 @@ module.exports = function(app) {
       challengeEntryPoint: coursewareEntryPoint,
       cc: req.user ? req.user.coursewaresHash : undefined,
       progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-      verb: resources.randomVerb(),
-      phrase: resources.randomPhrase(),
-      compliment: resources.randomCompliment(),
+      verb: generalUtils.randomVerb(),
+      phrase: generalUtils.randomPhrase(),
+      compliment: generalUtils.randomCompliment(),
       coursewares: [],
       coursewareHash: "test"
     });
@@ -203,7 +200,7 @@ module.exports = function(app) {
     coursewareChallengeSeed = coursewareChallengeSeed.replace('\r', '');
 
     var response = {
-      _id: randomString(),
+      id: randomString(),
       name: coursewareName,
       difficulty: coursewareDifficulty,
       description: coursewareDescription,
@@ -220,7 +217,7 @@ module.exports = function(app) {
     var coursewareHash = req.body.coursewareInfo.coursewareHash;
 
     req.user.completedCoursewares.push({
-      _id: coursewareHash,
+      id: coursewareHash,
       completedDate: isCompletedDate
     });
 
