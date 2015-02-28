@@ -186,11 +186,25 @@
     "description": [
       "Return the remaining elements of an array after chopping off n elements from the head."
     ],
-    "challengeSeed": "function slasher(arr, howMany) {\n  // it doesn't allways pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
+    "challengeSeed": "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
     "tests": [
       "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
       "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
       "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array when n >= array.length');"
+    ]
+  },
+  {
+    "_id": "af2170cad53daa0770fabdea",
+    "name": "Anagrams",
+    "difficulty": "1.12",
+    "description": [
+      "Return true if the string in the second element of the array if the string in the first element contains it in any form."
+    ],
+    "challengeSeed": "function anagram(arr) {\n  return arr;\n}\n\nanagram(['hello', 'hey']);",
+    "tests": [
+      "expect(anagram(['hello', 'hey'])).to.be.false;",
+      "expect(anagram(['hello', 'Hello'])).to.be.true;",
+      "expect(anagram(['zyxwvutsrqponmlkjihgfedcba', 'qrstu'])).to.be.true;"
     ]
   },
   {
