@@ -1,64 +1,79 @@
-// var passport = require('passport');
+require('dotenv').load();
+var app = require('../server');
 
-module.exports = function() {
-  /*var router = app.loopback.Router();
+module.exports = function(app) {
+  var router = app.loopback.Router();
 
-  var passportOptions = {
-      successRedirect: '/',
-      failureRedirect: '/login'
-  };
+  router.get('/auth/account', function (req, res, next) {
+    res.render('learn-to-code', {
+      user: req.user,
+      url: req.url
+    });
+  });
 
-  router.get('/auth/twitter', passport.authenticate('twitter'));
-  router.get(
-      '/auth/twitter/callback',
-      passport.authenticate('twitter', {
-          successRedirect: '/',
-          failureRedirect: '/login'
-      })
-  );
+  router.get('/link/account', function (req, res, next) {
+    res.render('learn-to-code', {
+      user: req.user,
+      url: req.url
+    });
+  });
 
-  router.get(
-      '/auth/linkedin',
-      passport.authenticate('linkedin', {
-          state: 'SOME STATE'
-      })
-  );
+  router.get('/local', function (req, res, next){
+    res.render('pages/local', {
+      user: req.user,
+      url: req.url
+    });
+  });
 
-  router.get(
-      '/auth/linkedin/callback',
-      passport.authenticate('linkedin', passportOptions)
-  );
+  router.get('/signup', function (req, res, next){
+    res.render('pages/signup', {
+      user: req.user,
+      url: req.url
+    });
+  });
 
-  router.get(
-      '/auth/facebook',
-      passport.authenticate('facebook', {scope: ['email', 'user_location']})
-  );
+  router.post('/signup', function (req, res, next) {
 
-  router.get(
-      '/auth/facebook/callback',
-      passport.authenticate('facebook', passportOptions), function (req, res) {
-          res.redirect(req.session.returnTo || '/');
+    var User = app.models.user;
+
+    var newUser = {};
+    newUser.email = req.body.email.toLowerCase();
+    newUser.username = req.body.username.trim();
+    newUser.password = req.body.password;
+
+    User.create(newUser, function (err, user) {
+      if (err) {
+        req.flash('error', err.message);
+        return res.redirect('back');
+      } else {
+        // Passport exposes a login() function on req (also aliased as logIn())
+        // that can be used to establish a login session. This function is
+        // primarily used when users sign up, during which req.login() can
+        // be invoked to log in the newly registered user.
+        req.login(user, function (err) {
+          if (err) {
+            req.flash('error', err.message);
+            return res.redirect('back');
+          }
+          return res.redirect('/auth/account');
+        });
       }
-  );
+    });
+  });
 
-  router.get('/auth/github', passport.authenticate('github'));
-  router.get(
-      '/auth/github/callback',
-      passport.authenticate('github', passportOptions), function (req, res) {
-          res.redirect(req.session.returnTo || '/');
-      }
-  );
 
-  router.get(
-      '/auth/google',
-      passport.authenticate('google', {scope: 'profile email'})
-  );
-  router.get(
-      '/auth/google/callback',
-      passport.authenticate('google', passportOptions), function (req, res) {
-          res.redirect(req.session.returnTo || '/');
-      }
-  );
+  router.get('/link', function (req, res, next){
+    res.render('pages/link', {
+      user: req.user,
+      url: req.url
+    });
+  });
 
-  app.use(router);*/
+  router.get('/auth/logout', function (req, res, next) {
+    req.logout();
+    res.redirect('/');
+  });
+
+
+  app.use(router);
 };
