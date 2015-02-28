@@ -19,14 +19,14 @@ module.exports = function(app) {
   });
 
   router.get('/local', function (req, res, next){
-    res.render('pages/local', {
+    res.render('learn-to-code', {
       user: req.user,
       url: req.url
     });
   });
 
   router.get('/signup', function (req, res, next){
-    res.render('pages/signup', {
+    res.render('learn-to-code', {
       user: req.user,
       url: req.url
     });
@@ -63,7 +63,7 @@ module.exports = function(app) {
 
 
   router.get('/link', function (req, res, next){
-    res.render('pages/link', {
+    res.render('learn-to-code', {
       user: req.user,
       url: req.url
     });
