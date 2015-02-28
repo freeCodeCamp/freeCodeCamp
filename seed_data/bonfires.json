@@ -298,6 +298,22 @@
     ]
   },
   {
+    "_id": "af7588ade1100bde429baf20",
+    "name" : "Missing letters",
+    "difficulty": "2.05",
+    "description" : [
+      "Find the missing letter in the passed letter range and return it.",
+      "If all letters are present in the range, return undefined."
+    ],
+    "challengeSeed": "function fearNotLetter(str) {\n  return str;\n}\n\nfearNotLetter('abce');",
+    "tests": [
+      "expect(fearNotLetter('abce')).to.equal('d');",
+      "expect(fearNotLetter('bcd')).to.be.undefined;",
+      "expect(fearNotLetter('abcdefghjklmno')).to.equal('i');",
+      "expect(fearNotLetter('yz')).to.be.undefined;"
+    ]
+  },
+  {
     "_id": "a77dbc43c33f39daa4429b4f",
     "name": "Boo who",
     "difficulty": "2.06",
