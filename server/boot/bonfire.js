@@ -59,9 +59,7 @@ module.exports = function(app) {
   }
 
   function returnNextBonfire(req, res, next) {
-    console.log('user', req.user);
     if (!req.user) {
-      console.log('conditional');
       return res.redirect('../bonfires/meet-bonfire');
     }
     var completed = req.user.completedBonfires.map(function (elem) {
@@ -81,9 +79,9 @@ module.exports = function(app) {
     Bonfire.find(
       { where: { 'id': uncompletedBonfires[0] } },
       function (err, bonfire) {
-        if (err) {
-          next(err);
-        }
+        if (err) { return next(err); }
+
+        console.log(bonfire);
         bonfire = bonfire.pop();
         if (!bonfire) {
           req.flash('errors', {
