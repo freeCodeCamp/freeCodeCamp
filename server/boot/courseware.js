@@ -216,7 +216,7 @@ module.exports = function(app) {
     });
 
 
-    req.user.progressTimestamps.push(Math.floor(moment().unix() / 1000));
+    req.user.progressTimestamps.push(moment().unix());
 
 
     req.user.save(function (err, user) {

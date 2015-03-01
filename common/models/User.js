@@ -5,7 +5,7 @@ module.exports = function(User) {
 
   debug('setting up user hooks');
   User.observe('before save', function setUsername(ctx, next) {
-    if (!ctx.instance.username) {
+    if (ctx.instance.username.match(/twitter/g)) {
       debug('setting username', ctx.instance.username);
       ctx.instance.username =
         ctx.instance.username.match(/twitter/g) ?

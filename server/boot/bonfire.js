@@ -242,12 +242,12 @@ module.exports = function(app) {
           if (err) {
             return next(err);
           }
-          req.user.progressTimestamps.push(Math.floor(moment().unix() / 1000));
+          req.user.progressTimestamps.push(moment().unix());
 
           // Paired with logic to credit their completion
           debug('Paired with', pairedWith);
           pairedWith = pairedWith.pop();
-          pairedWith.progressTimestamps.push(Math.floor(moment().unix() / 1000));
+          pairedWith.progressTimestamps.push(moment().unix());
 
 
           pairedWith.completedBonfires.push({
@@ -284,7 +284,7 @@ module.exports = function(app) {
           completedDate: isCompletedDate,
           solution: isSolution
         });
-        req.user.progressTimestamps.push(Math.floor(moment().unix() / 1000));
+        req.user.progressTimestamps.push(moment().unix());
 
         req.user.save(function (err, user) {
           if (err) {
