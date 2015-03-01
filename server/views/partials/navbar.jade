@@ -12,7 +12,7 @@
 .collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-right.hamburger-dropdown
         li
-            a(href='/courseware') Challenges
+            a(href='/coursewares') Challenges
         li
             a(href='/chat') Chat
         li
@@ -25,11 +25,11 @@
                 a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
         else
             li
-              //-
+
                 if (user.username)
-                    a(href='/' + user.username) [&nbsp;#{user.points}&nbsp;]
+                    a(href='/' + user.username) [&nbsp;#{user.progressTimestamps.length}&nbsp;]
                 else
-                    a(href='/account') // [&nbsp;#{user.points}&nbsp;]
+                    a(href='/account') // [&nbsp;#{user.progressTimestamps.length}&nbsp;]
             .hidden-xs
                 if user.picture
                     if (user.username)
@@ -41,7 +41,7 @@
                 else
                     if (user.username)
                         a(href='/' + user.username)
-                            img.profile-picture.float-right(src='#{generateGravatar(60)}')
+                            img.profile-picture.float-right(src='#{generateGravatar(60, user.email)}')
                     else
                         a(href='/account')
-                            img.profile-picture.float-right(src='#{generateGravatar(60)}')
+                            img.profile-picture.float-right(src='#{generateGravatar(60, user.email)}')
