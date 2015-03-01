@@ -250,7 +250,7 @@ module.exports = function(app) {
           codepenProfile: user.codepenProfile,
           twitterHandle: user.twitterHandle,
           bio: user.bio,
-          picture: user.picture,
+          picture: user.profiles[0].profile.photos[0].value,
           progressTimestamps: user.progressTimestamps,
           points: user.progressTimestamps,
           website1Link: user.website1Link,
