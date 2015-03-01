@@ -25,10 +25,11 @@
                 a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
         else
             li
+              //-
                 if (user.username)
                     a(href='/' + user.username) [&nbsp;#{user.points}&nbsp;]
                 else
-                    a(href='/account') [&nbsp;#{user.points}&nbsp;]
+                    a(href='/account') // [&nbsp;#{user.points}&nbsp;]
             .hidden-xs
                 if user.picture
                     if (user.username)
