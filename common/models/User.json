@@ -93,6 +93,10 @@
     "completedCoursewares": {
       "type": "array",
       "default": []
+    },
+    "profilePictureIsSet": {
+      "type": "boolean",
+      "default": false
     }
   },
   "validations": [],

@@ -15,7 +15,11 @@ block content
                 .row
                     .col-xs-12
                         .col-xs-12.col-sm-12.col-md-5
-                            if picture
+                            script.
+                              var picture = !{JSON.stringify(picture)};
+                              console.log('we have a picture', JSON.stringify(picture));
+                            if (picture)
+
                                 img.img-center.img-responsive.public-profile-img(src=picture)
                             else
                                 if (user)
