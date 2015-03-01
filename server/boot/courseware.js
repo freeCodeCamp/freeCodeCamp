@@ -1,8 +1,9 @@
-var _ = require('lodash'),
-    debug = require('debug')('freecc:cntr:courseware'),
-    coursewareUtils = require('../utils/coursewareUtils'),
-    generalUtils = require('../utils/generalUtils'),
-    R = require('ramda');
+var _                 = require('lodash'),
+    debug             = require('debug')('freecc:cntr:courseware'),
+    coursewareUtils   = require('../utils/coursewareUtils'),
+    generalUtils      = require('../utils/generalUtils'),
+    R                 = require('ramda'),
+    moment            = require('moment');
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -214,11 +215,9 @@ module.exports = function(app) {
       completedDate: isCompletedDate
     });
 
-    var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
-    if (index > -1) {
-      req.user.progressTimestamps.push(Date.now() / 1000 | 0);
-      req.user.uncompletedCoursewares.splice(index, 1)
-    }
+
+    req.user.progressTimestamps.push(Math.floor(moment().unix() / 1000));
+
 
     req.user.save(function (err, user) {
       if (err) {

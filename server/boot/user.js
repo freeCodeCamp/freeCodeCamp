@@ -31,9 +31,9 @@ module.exports = function(app) {
   router.post('/account/delete', postDeleteAccount);
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/:username', returnUser);
-  router.get('/api/checkUniqueUsername/:username', checkUniqueUsername);
-  router.get('/api/checkExistingUsername/:username', checkExistingUsername);
-  router.get('/api/checkUniqueEmail/:email', checkUniqueEmail);
+  router.get('/validation/checkUniqueUsername/:username', checkUniqueUsername);
+  router.get('/validation/checkExistingUsername/:username', checkExistingUsername);
+  router.get('/validation/checkUniqueEmail/:email', checkUniqueEmail);
   router.get('/account/api', getAccountAngular);
   // router.post('/update-progress', passport.isAuthenticated, updateProgress);
 
@@ -105,9 +105,7 @@ module.exports = function(app) {
     var user = new User({
       email: req.body.email.trim(),
       password: req.body.password,
-      profile: {
-        username: req.body.username.trim()
-      }
+      username: req.body.username.trim()
     });
 
     var userQuery = {
@@ -180,7 +178,7 @@ module.exports = function(app) {
 
   function checkUniqueUsername(req, res, next) {
     User.count(
-      { 'profile.username': req.params.username.toLowerCase() },
+      { 'username': req.params.username.toLowerCase() },
       function(err, data) {
         if (err) { return next(err); }
         if (data === 1) {
@@ -192,14 +190,19 @@ module.exports = function(app) {
   }
 
   function checkExistingUsername(req, res, next) {
+    debug("I'm alive in here at checkExistingUsername.");
     User.count(
-      { 'profile.username': req.params.username.toLowerCase() },
-      function (err, data) {
-        if (err) { return next(err); }
-        if (data === 1) {
-          return res.send(true);
+      { 'username': req.params.username.toLowerCase() },
+      function (err, exists) {
+        if (err) {
+          debug('Houston we have a problem', err);
+          return next(err);
         }
-        return res.send(false);
+        debug('I think this is the data', exists);
+
+        return res.send(
+          exists ? true : false
+        );
       }
     );
   }
@@ -232,7 +235,6 @@ module.exports = function(app) {
         var data = {};
         var progressTimestamps = user.progressTimestamps;
         var portfolio = user.portfolio || {};
-        var profile = user.profile || {};
         // dummy data to experiment with visualizations
         progressTimestamps = [1417117319, 1384091493, 1367893914, 1411547157, 1366875140, 1382614404, 1374973026, 1363495510, 1372229313, 1389795294, 1393820136, 1395425437, 1383366211, 1402063449, 1368384561, 1413460738, 1390013511, 1408510076, 1395530419, 1391588683, 1410480320, 1360219531, 1367248635, 1408531181, 1374214772, 1424038529, 1387468139, 1381934158, 1409278748, 1390696161, 1415933043, 1389573689, 1395703336, 1401223291, 1375539279, 1371229698, 1371990948, 1422236826, 1363017438, 1359619855, 1364850739, 1401982108, 1381270295, 1420063854, 1406540493, 1409122251, 1360775035, 1367712723, 1395305605, 1382037418, 1378402477, 1377563090, 1398930836, 1417371909, 1377417393, 1423763002, 1357511908, 1377375961, 1388374304, 1406416407, 1399463258, 1422593990, 1383434425, 1420200570, 1379435518, 1414512582, 1416263148, 1398635260, 1381815565, 1369178539, 1378414973, 1394409827, 1398463526, 1379564971, 1385849279, 1392899666, 1367053659, 1417730793, 1400112915, 1379923357, 1417768487, 1415779985, 1416150640, 1399820237, 1370498715, 1374800622, 1363924512, 1402497668, 1400146327, 1362456746, 1394935898, 1414980963, 1413942775, 1367606840, 1387144705, 1407906392, 1417213587, 1422640891, 1414033139, 1365323522, 1424661148];
         for (var i = 0; i < progressTimestamps.length; i++) {
@@ -244,7 +246,7 @@ module.exports = function(app) {
           title: 'Camper: ',
           username: user.username,
           name: user.name,
-          location: profile.location,
+          location: location,
           githubProfile: user.githubProfile,
           linkedinProfile: user.linkedinProfile,
           codepenProfile: user.codepenProfile,

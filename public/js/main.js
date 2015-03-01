@@ -193,7 +193,7 @@ profileValidation.directive('uniqueUsername',['$http',function($http) {
             element.bind("keyup", function (event) {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
-                    $http.get("/api/checkUniqueUsername/" + element.val()).success(function (data) {
+                    $http.get("/validation/checkUniqueUsername/" + element.val()).success(function (data) {
                         if (element.val() == scope.storedUsername) {
                             ngModel.$setValidity('unique', true);
                         } else if (data) {
@@ -220,7 +220,7 @@ profileValidation.directive('existingUsername', ['$http', function($http) {
                 }
                 if (element.val()) {
                     $http
-                    .get("/api/checkExistingUsername/" + element.val())
+                    .get("/validation/checkExistingUsername/" + element.val())
                     .success(function (data) {
                         ngModel.$setValidity('exists', data);
                     });
@@ -238,7 +238,7 @@ profileValidation.directive('uniqueEmail', ['$http', function($http) {
             element.bind("keyup", function (event) {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
-                    $http.get("/api/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
+                    $http.get("/validation/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
                         if (element.val() == scope.storedEmail) {
                             ngModel.$setValidity('unique', true);
                         } else if (data) {

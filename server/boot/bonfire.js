@@ -231,81 +231,68 @@ module.exports = function(app) {
 
   function completedBonfire(req, res, next) {
     var isCompletedWith = req.body.bonfireInfo.completedWith || null;
-    var isCompletedDate = Math.round(+new Date() / 1000);
+    var isCompletedDate = Math.round(moment().unix() / 1000);
     var bonfireHash = req.body.bonfireInfo.bonfireHash;
     var isSolution = req.body.bonfireInfo.solution;
 
     if (isCompletedWith) {
       User.find(
-        { where: { 'profile.username': isCompletedWith.toLowerCase() } },
+        { where: { 'username': isCompletedWith.toLowerCase() } },
         function (err, pairedWith) {
           if (err) {
             return next(err);
-          } else {
-            var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
-            if (index > -1) {
-              req.user.progressTimestamps.push(moment().unix() / 1000);
-              req.user.uncompletedBonfires.splice(index, 1);
-            }
-            pairedWith = pairedWith.pop();
-
-            index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
-            if (index > -1) {
-              pairedWith.progressTimestamps.push(moment().unix() / 1000);
-              pairedWith.uncompletedBonfires.splice(index, 1);
-
-            }
-
-            pairedWith.completedBonfires.push({
-              _id: bonfireHash,
-              completedWith: req.user._id,
-              completedDate: isCompletedDate,
-              solution: isSolution
-            });
-
-            req.user.completedBonfires.push({
-              _id: bonfireHash,
-              completedWith: pairedWith._id,
-              completedDate: isCompletedDate,
-              solution: isSolution
-            });
-
-            req.user.save(function (err, user) {
-              if (err) { return next(err); }
-              pairedWith.save(function (err, paired) {
-                if (err) {
-                  throw err;
-                }
-                if (user && paired) {
-                  res.send(true);
-                }
-              });
-            });
           }
-        }
-      );
-    } else {
+          req.user.progressTimestamps.push(Math.floor(moment().unix() / 1000));
 
-      req.user.completedBonfires.push({
-        _id: bonfireHash,
-        completedWith: null,
-        completedDate: isCompletedDate,
-        solution: isSolution
-      });
+          // Paired with logic to credit their completion
+          debug('Paired with', pairedWith);
+          pairedWith = pairedWith.pop();
+          pairedWith.progressTimestamps.push(Math.floor(moment().unix() / 1000));
 
-      var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
-      if (index > -1) {
-        req.user.progressTimestamps.push(moment().unix() / 1000);
-        req.user.uncompletedBonfires.splice(index, 1);
-      }
 
-      req.user.save(function (err, user) {
-        if (err) {
-          throw err;
-        }
-        if (user) {
-          debug('Saving user');
-          res.send(true);
+          pairedWith.completedBonfires.push({
+            _id: bonfireHash,
+            completedWith: req.user.id,
+            completedDate: isCompletedDate,
+            solution: isSolution
+          });
+
+          req.user.completedBonfires.push({
+            _id: bonfireHash,
+            completedWith: pairedWith.id,
+            completedDate: isCompletedDate,
+            solution: isSolution
+          });
+
+          req.user.save(function (err, user) {
+            if (err) { return next(err); }
+            pairedWith.save(function (err, paired) {
+              if (err) {
+                throw err;
+              }
+              if (user && paired) {
+                res.send(true);
+              }
+            });
+          });
+        });
+      } else {
+
+        req.user.completedBonfires.push({
+          _id: bonfireHash,
+          completedWith: null,
+          completedDate: isCompletedDate,
+          solution: isSolution
+        });
+        req.user.progressTimestamps.push(Math.floor(moment().unix() / 1000));
+
+        req.user.save(function (err, user) {
+          if (err) {
+            throw err;
+          }
+          if (user) {
+            debug('Saving user');
+            res.send(true);
         }
       });
     }
