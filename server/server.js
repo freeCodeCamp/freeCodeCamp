@@ -57,7 +57,7 @@ app.use(expressValidator({
   }
 }));
 app.use(methodOverride());
-app.use(cookieParser());
+app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(session({
   resave: true,
   saveUninitialized: true,
@@ -182,6 +182,7 @@ passportConfigurator.setupModels({
 
 R.keys(passportProviders).map(function(strategy) {
   var config = passportProviders[strategy];
+  config.session = config.session !== false;
   passportConfigurator.configureProvider(strategy, config);
 });
 

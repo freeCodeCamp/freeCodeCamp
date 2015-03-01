@@ -54,7 +54,6 @@ module.exports = function(app) {
     data.bonfireList = bonfireUtils.allBonfireNames();
     data.completedList = noDuplicateBonfires;
 
-    debug('started');
     res.json(data);
   }
 
@@ -62,27 +61,15 @@ module.exports = function(app) {
     if (!req.user) {
       return res.redirect('../bonfires/meet-bonfire');
     }
+
     var completed = req.user.completedBonfires.map(function (elem) {
       return elem._id;
-    });
+    }) || [];
 
-    req.user.uncompletedBonfires = bonfireUtils.allBonfireIds()
-      .filter(function (elem) {
-        if (completed.indexOf(elem) === -1) {
-          return elem;
-        }
-      });
-    req.user.save();
 
-    var uncompletedBonfires = req.user.uncompletedBonfires;
-
-    Bonfire.find(
-      { where: { 'id': uncompletedBonfires[0] } },
+    Bonfire.findById(bonfireUtils.firstUncompletedBonfire(completed),
       function (err, bonfire) {
         if (err) { return next(err); }
-
-        console.log(bonfire);
-        bonfire = bonfire.pop();
         if (!bonfire) {
           req.flash('errors', {
             msg: 'It looks like you have completed all the bonfires we ' +
@@ -90,7 +77,9 @@ module.exports = function(app) {
           });
           return res.redirect('../bonfires/meet-bonfire');
         }
+
         var nameString = bonfire.name.toLowerCase().replace(/\s/g, '-');
+
         return res.redirect('../bonfires/' + nameString);
       }
     );

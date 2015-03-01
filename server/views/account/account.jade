@@ -275,27 +275,22 @@ block content
             .panel-body
                 - if (!user.google)
                     .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/auth/google')
+                        a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/link/google')
                             i.fa.fa-google-plus
                             | Link Google with my account
                 - if (!user.facebook)
                     .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/auth/facebook')
+                        a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/link/facebook')
                             i.fa.fa-facebook
                             | Link Facebook with my account
-                //- if (!user.github)
-                //    .col-xs-12
-                //        a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
-                //            i.fa.fa-github
-                //            | Link GitHub with my account
                 - if (!user.linkedin)
                     .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/auth/linkedin')
+                        a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/link/linkedin')
                             i.fa.fa-linkedin
                             | Link LinkedIn with my account
                 - if (!user.twitter)
                     .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/auth/twitter')
+                        a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/link/twitter')
                             i.fa.fa-twitter
                             | Link Twitter with my account
                 .col-xs-12

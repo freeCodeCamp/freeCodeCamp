@@ -113,15 +113,7 @@
         "default": ""
       }
     },
-    "uncompletedBonfires": {
-      "type": "array",
-      "default": []
-    },
     "completedBonfires": {
-      "type": "array",
-      "default": []
-    },
-    "uncompletedCoursewares": {
       "type": "array",
       "default": []
     },

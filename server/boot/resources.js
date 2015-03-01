@@ -36,6 +36,10 @@ module.exports = function(app) {
     passportUtils.isAuthenticated,
     nonprofitProjectInstructions
   );
+  router.get('/api/checkUniqueEmail/:email', checkUniqueEmail);
+  router.get('/api/checkExistingUsername/:username', checkExistingUsername);
+  router.get('/api/checkUniqueUsername/:username', checkUniqueUsername);
+  router.get('/api/getAccountAngular/', getAccountAngular);
 
   function privacy(req, res) {
       res.render('resources/privacy', {
@@ -228,7 +232,7 @@ module.exports = function(app) {
         debug('User err: ', err);
         return next(err);
       }
-      var howManyChallengeGradsQuery = { points: { gt: 53 } };
+      var howManyChallengeGradsQuery = {points: {gt: 53}};
       User.count(howManyChallengeGradsQuery, function (err, challengeGrads) {
         if (err) {
           debug('challengeGrad query err: ', err);
@@ -242,6 +246,41 @@ module.exports = function(app) {
           announcements: announcements
         });
       });
+    });
+  }
+  function getAccountAngular(req, res) {
+    res.json({
+      user: req.user
+    });
+  }
+
+  function checkUniqueUsername(req, res) {
+    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+      if (data == 1) {
+        return res.send(true);
+      } else {
+        return res.send(false);
+      }
+    });
+  }
+
+  function checkExistingUsername(req, res) {
+    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+      if (data === 1) {
+        return res.send(true);
+      } else {
+        return res.send(false);
+      }
+    });
+  }
+
+  function checkUniqueEmail(req, res) {
+    User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
+      if (data == 1) {
+        return res.send(true);
+      } else {
+        return res.send(false);
+      }
     });
   }
 
