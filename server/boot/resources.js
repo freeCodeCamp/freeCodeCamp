@@ -208,36 +208,18 @@ module.exports = function(app) {
   function about(req, res, next) {
     var date1 = new Date('10/15/2014');
     var date2 = new Date();
-    var progressTimestamps = req.user.progressTimestamps;
-    var now = moment().unix() / 1000;
-    if (req.user.pointsNeedMigration) {
-      var challengesHash = req.user.challengesHash;
-      for (var key in challengesHash) {
-        if (challengesHash[key] > 0) {
-          req.user.progressTimestamps.push(challengesHash[key]);
-        }
-      }
-      req.user.pointsNeedMigration = false;
-      req.user.save();
-    }
-    if (progressTimestamps[progressTimestamps.length - 1] <= (now - 43200)) {
-      req.user.progressTimestamps.push(now);
-    }
+
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
     var announcements = resources.announcements;
 
     User.count(function (err, totalUsers) {
-      if (err) {
-        debug('User err: ', err);
-        return next(err);
-      }
-      var howManyChallengeGradsQuery = {points: {gt: 53}};
+      if (err) { return next(err); }
+
+      var howManyChallengeGradsQuery = { points: { gt: 53 } };
       User.count(howManyChallengeGradsQuery, function (err, challengeGrads) {
-        if (err) {
-          debug('challengeGrad query err: ', err);
-          return next(err);
-        }
+        if (err) { return next(err); }
+
         res.render('resources/learn-to-code', {
           title: 'About Free Code Camp and Our Team of Volunteers',
           daysRunning: daysRunning,
@@ -248,39 +230,39 @@ module.exports = function(app) {
       });
     });
   }
+
   function getAccountAngular(req, res) {
     res.json({
-      user: req.user
+      user: req.user || {}
     });
   }
 
-  function checkUniqueUsername(req, res) {
-    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
-      if (data == 1) {
-        return res.send(true);
-      } else {
-        return res.send(false);
+  function checkUniqueUsername(req, res, next) {
+    User.count(
+      { username: req.params.username.toLowerCase() },
+      function (err, exists) {
+        if (err) { return next(err); }
+        return res.send(exists ? true : false);
       }
-    });
+    );
   }
 
-  function checkExistingUsername(req, res) {
-    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
-      if (data === 1) {
-        return res.send(true);
-      } else {
-        return res.send(false);
+  function checkExistingUsername(req, res, next) {
+    User.count(
+      { username: req.params.username.toLowerCase() },
+      function (err, exists) {
+        if (err) { return next(err); }
+        return res.send(exists ? true : false);
       }
-    });
+    );
   }
 
-  function checkUniqueEmail(req, res) {
-    User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
-      if (data == 1) {
-        return res.send(true);
-      } else {
-        return res.send(false);
-      }
+  function checkUniqueEmail(req, res, next) {
+    User.count(
+      {email: decodeURIComponent(req.params.email).toLowerCase() },
+      function (err, exists) {
+        if (err) { return next(err); }
+        return res.send(exists ? true : false);
     });
   }
 
