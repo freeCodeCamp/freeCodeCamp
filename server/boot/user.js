@@ -305,7 +305,7 @@ module.exports = function(app) {
    */
 
   function postUpdateProfile(req, res, next) {
-    User.findById(req.user.id, function(err) {
+    User.findById(req.user.id, function(err, user) {
       if (err) { return next(err); }
       var errors = req.validationErrors();
       if (errors) {
@@ -313,56 +313,34 @@ module.exports = function(app) {
         return res.redirect('/account');
       }
 
-      User.find({ where: { 'email': req.body.email } }, function(err, existingEmail) {
-        if (err) {
-          return next(err);
-        }
-        var user = req.user;
-        if (existingEmail && existingEmail.email !== user.email) {
-          req.flash('errors', {
-            msg: 'An account with that email address already exists.'
-          });
-          return res.redirect('/account');
-        }
-        User.find({ where: { 'username': req.body.username } }, function(err, existingUsername) {
-          if (err) { return next(err); }
-          user = req.user;
-          if (existingUsername && existingUsername.username !== user.username) {
-            req.flash('errors', {
-              msg: 'An account with that username already exists.'
-            });
-            return res.redirect('/account');
-          }
-          user = req.user;
-          user.email = req.body.email.trim() || '';
-          user.name = req.body.name.trim() || '';
-          user.username = req.body.username.trim() || '';
-          user.location = req.body.location.trim() || '';
-          user.githubProfile = req.body.githubProfile.trim() || '';
-          user.linkedinProfile = req.body.linkedinProfile.trim() || '';
-          user.codepenProfile = req.body.codepenProfile.trim() || '';
-          user.twitterHandle = req.body.twitterHandle.trim() || '';
-          user.bio = req.body.bio.trim() || '';
-          user.picture = req.body.picture.trim() || '';
-          user.portfolio.website1Title = req.body.website1Title.trim() || '';
-          user.portfolio.website1Link = req.body.website1Link.trim() || '';
-          user.portfolio.website1Image = req.body.website1Image.trim() || '';
-          user.portfolio.website2Title = req.body.website2Title.trim() || '';
-          user.portfolio.website2Link = req.body.website2Link.trim() || '';
-          user.portfolio.website2Image = req.body.website2Image.trim() || '';
-          user.portfolio.website3Title = req.body.website3Title.trim() || '';
-          user.portfolio.website3Link = req.body.website3Link.trim() || '';
-          user.portfolio.website3Image = req.body.website3Image.trim() || '';
+      user.email = req.body.email.trim() || '';
+      user.name = req.body.name.trim() || '';
+      user.username = req.body.username.trim() || '';
+      user.location = req.body.location.trim() || '';
+      user.githubProfile = req.body.githubProfile.trim() || '';
+      user.linkedinProfile = req.body.linkedinProfile.trim() || '';
+      user.codepenProfile = req.body.codepenProfile.trim() || '';
+      user.twitterHandle = req.body.twitterHandle.trim() || '';
+      user.bio = req.body.bio.trim() || '';
+      user.picture = req.body.picture.trim() || '';
+      user.website1Title = req.body.website1Title.trim() || '';
+      user.website1Link = req.body.website1Link.trim() || '';
+      user.website1Image = req.body.website1Image.trim() || '';
+      user.website2Title = req.body.website2Title.trim() || '';
+      user.website2Link = req.body.website2Link.trim() || '';
+      user.website2Image = req.body.website2Image.trim() || '';
+      user.website3Title = req.body.website3Title.trim() || '';
+      user.website3Link = req.body.website3Link.trim() || '';
+      user.website3Image = req.body.website3Image.trim() || '';
 
 
-          user.save(function (err) {
-            if (err) { return next(err); }
-            req.flash('success', {msg: 'Profile information updated.'});
-            res.redirect('/account');
-          });
-        });
+      user.save(function (err) {
+        if (err) { return next(err); }
+        req.flash('success', {msg: 'Profile information updated.'});
+        res.redirect('/account');
       });
     });
+
   }
 
   /**

@@ -30,13 +30,13 @@
                 else
                     a(href='/account') [&nbsp;#{user.points}&nbsp;]
             .hidden-xs
-                if user.picture
+                if user.profiles[0].profile.photos[0].value
                     if (user.username)
                         a(href='/' + user.username)
-                            img.profile-picture.float-right(src='#{user.picture}')
+                            img.profile-picture.float-right(src='#{user.profiles[0].profile.photos[0].value}')
                     else
                         a(href='/account')
-                            img.profile-picture.float-right(src='#{user.picture}')
+                            img.profile-picture.float-right(src='#{user.profiles[0].profile.photos[0].value}')
                 else
                     if (user.username)
                         a(href='/' + user.username)
