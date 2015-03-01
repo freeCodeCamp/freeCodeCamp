@@ -14,10 +14,6 @@
       "trim": true,
       "sparse": true
     },
-    "points": {
-      "type": "number",
-      "default": 0
-    },
     "progressTimestamps": {
       "type": "array",
       "default": []
@@ -27,22 +23,11 @@
       "default": true
     },
     "profile": {
-      "username": {
-        "type": "string",
-        "unique": true,
-        "sparse": true,
-        "lowercase": true,
-        "trim": true
-      },
       "bio": {
         "type": "string",
         "default": ""
       },
       "name": {
-        "type": "string",
-        "default": ""
-      },
-      "gender": {
         "type": "string",
         "default": ""
       },
@@ -59,10 +44,6 @@
         "default": ""
       },
       "githubProfile": {
-        "type": "string",
-        "default": ""
-      },
-      "coderbyteProfile": {
         "type": "string",
         "default": ""
       },

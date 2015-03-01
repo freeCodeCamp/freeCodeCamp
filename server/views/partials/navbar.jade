@@ -25,21 +25,21 @@
                 a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
         else
             li
-                if (user.profile.username)
-                    a(href='/' + user.profile.username) [&nbsp;#{user.points}&nbsp;]
+                if (user.username)
+                    a(href='/' + user.username) [&nbsp;#{user.points}&nbsp;]
                 else
                     a(href='/account') [&nbsp;#{user.points}&nbsp;]
             .hidden-xs
-                if user.profile.picture
-                    if (user.profile.username)
-                        a(href='/' + user.profile.username)
-                            img.profile-picture.float-right(src='#{user.profile.picture}')
+                if user.picture
+                    if (user.username)
+                        a(href='/' + user.username)
+                            img.profile-picture.float-right(src='#{user.picture}')
                     else
                         a(href='/account')
-                            img.profile-picture.float-right(src='#{user.profile.picture}')
+                            img.profile-picture.float-right(src='#{user.picture}')
                 else
-                    if (user.profile.username)
-                        a(href='/' + user.profile.username)
+                    if (user.username)
+                        a(href='/' + user.username)
                             img.profile-picture.float-right(src='#{generateGravatar(60)}')
                     else
                         a(href='/account')
