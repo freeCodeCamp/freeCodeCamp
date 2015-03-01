@@ -40,7 +40,7 @@ block content
                                         span.ion-arrow-up-b
                                         | Less information
                 br
-                .btn.btn-info#showAllCoursewares
+
 
             - if (cc)
                 a.btn.btn-primary.btn-lg.btn-block#complete-courseware
@@ -54,6 +54,8 @@ block content
                 a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                 script.
                     var userLoggedIn = false;
+            br
+            .btn.btn-info.btn-lg.btn-block#showAllCoursewares Show me all the challenges
             br
             ul#testSuite.list-group
 
@@ -80,6 +82,7 @@ block content
             .hidden-xs.hidden-sm
                 img.iphone-position(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png")
             iframe.iphone#preview
+
 
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation

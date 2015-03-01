@@ -287,10 +287,7 @@ module.exports = function(app) {
       if (err) { return next(err); }
       user.email = req.body.email || '';
       user.name = req.body.name || '';
-      user.gender = req.body.gender || '';
       user.location = req.body.location || '';
-      //TODO is this vestigial?
-      //user.profile.website = req.body.website || '';
 
       user.save(function(err) {
         if (err) { return next(err); }

@@ -1,5 +1,6 @@
 h3
     ol#bonfireList
+    script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
     script.
         var getLinkedName = function getLinkedName(name) {
             return name.toLowerCase().replace(/\s/g, '-');
@@ -13,7 +14,7 @@ h3
                 for (var i = 0; i < data.bonfireList.length; i++) {
                     var li  = document.createElement('li');
                     var linkedName = getLinkedName(data.bonfireList[i].name);
-                    if (R.contains(data.bonfireList[i]._id, data.completedList)) {
+                    if (R.contains(data.bonfireList[i].id, data.completedList)) {
                         $(li).addClass('strikethrough');
                     }
                     $(li).html("<a href='/bonfires/" + linkedName + "'>" + data.bonfireList[i].name + "</a></li>");

@@ -26,11 +26,13 @@ block content
                 var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
                 var challengeName = !{JSON.stringify(name)};
                 var started = Math.floor(Date.now() / 1000);
+            br
+            a.btn.btn-info.btn-lg.btn-block#showAllCoursewares Show me all the challenges
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
-                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                  a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body(ng-controller="pairedWithController")
                     .text-center
                         .animated.zoomInDown.delay-half
@@ -44,6 +46,13 @@ block content
                         - else
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                                 h1 #{name}
-        script.
-            var challengeName = !{JSON.stringify(name)};
-            var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
+    #all-coursewares-dialog.modal(tabindex='-1')
+      .modal-dialog.animated.fadeInUp.fast-animation
+        .modal-content
+          .modal-header.all-list-header Challenges
+            a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+          .modal-body
+            include ../partials/coursewares
+    script.
+        var challengeName = !{JSON.stringify(name)};
+        var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
