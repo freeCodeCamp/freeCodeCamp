@@ -10,6 +10,8 @@ var _ = require('lodash'),
 module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.user;
+  var UserIdentity = app.models.userIdentity;
+
   router.get('/signin', getSignin);
   router.get('/login', function(req, res) { res.redirect(301, '/signin'); });
   router.post('/signin', postSignin);
@@ -226,6 +228,7 @@ module.exports = function(app) {
       }
       if (users[0]) {
         var user = users[0];
+        debug('user object from mongo', user);
         var data = {};
         var progressTimestamps = user.progressTimestamps;
         var portfolio = user.portfolio || {};
@@ -236,28 +239,29 @@ module.exports = function(app) {
           data[progressTimestamps[i].toString()] = 1;
         }
 
+        debug('Username is', user.username);
         res.render('account/show', {
           title: 'Camper: ',
-          username: profile.username,
-          name: profile.name,
+          username: user.username,
+          name: user.name,
           location: profile.location,
-          githubProfile: profile.githubProfile,
-          linkedinProfile: profile.linkedinProfile,
-          codepenProfile: profile.codepenProfile,
-          twitterHandle: profile.twitterHandle,
-          bio: profile.bio,
-          picture: profile.picture,
+          githubProfile: user.githubProfile,
+          linkedinProfile: user.linkedinProfile,
+          codepenProfile: user.codepenProfile,
+          twitterHandle: user.twitterHandle,
+          bio: user.bio,
+          picture: user.picture,
           progressTimestamps: user.progressTimestamps,
           points: user.progressTimestamps,
-          website1Link: portfolio.website1Link,
-          website1Title: portfolio.website1Title,
-          website1Image: portfolio.website1Image,
-          website2Link: portfolio.website2Link,
-          website2Title: portfolio.website2Title,
-          website2Image: portfolio.website2Image,
-          website3Link: portfolio.website3Link,
-          website3Title: portfolio.website3Title,
-          website3Image: portfolio.website3Image,
+          website1Link: user.website1Link,
+          website1Title: user.website1Title,
+          website1Image: user.website1Image,
+          website2Link: user.website2Link,
+          website2Title: user.website2Title,
+          website2Image: user.website2Image,
+          website3Link: user.website3Link,
+          website3Title: user.website3Title,
+          website3Image: user.website3Image,
           calender: data,
           moment: moment
         });
@@ -398,12 +402,18 @@ module.exports = function(app) {
    */
 
   function postDeleteAccount(req, res, next) {
-    User.remove({ where: { id: req.user.id } }, function(err) {
-      if (err) { return next(err); }
-      req.logout();
-      req.flash('info', { msg: 'Your account has been deleted.' });
-      res.redirect('/');
+    UserIdentity.remove({where: { userId: req.user._id}}, function(err) {
+      if (err) {
+        return next(err);
+      }
+        User.remove({ where: { id: req.user._id } }, function(err) {
+          if (err) { return next(err); }
+          req.logout();
+          req.flash('info', { msg: 'Your account has been deleted.' });
+          res.redirect('/');
+        });
     });
+
   }
 
   /**
