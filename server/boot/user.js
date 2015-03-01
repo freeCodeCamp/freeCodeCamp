@@ -285,10 +285,11 @@ module.exports = function(app) {
     User.findById(req.user.id, function(err, user) {
       if (err) { return next(err); }
       user.email = req.body.email || '';
-      user.profile.name = req.body.name || '';
-      user.profile.gender = req.body.gender || '';
-      user.profile.location = req.body.location || '';
-      user.profile.website = req.body.website || '';
+      user.name = req.body.name || '';
+      user.gender = req.body.gender || '';
+      user.location = req.body.location || '';
+      //TODO is this vestigial?
+      //user.profile.website = req.body.website || '';
 
       user.save(function(err) {
         if (err) { return next(err); }
@@ -326,7 +327,7 @@ module.exports = function(app) {
         User.find({ where: { 'username': req.body.username } }, function(err, existingUsername) {
           if (err) { return next(err); }
           user = req.user;
-          if (existingUsername && existingUsername.profile.username !== user.profile.username) {
+          if (existingUsername && existingUsername.username !== user.username) {
             req.flash('errors', {
               msg: 'An account with that username already exists.'
             });
@@ -334,15 +335,15 @@ module.exports = function(app) {
           }
           user = req.user;
           user.email = req.body.email.trim() || '';
-          user.profile.name = req.body.name.trim() || '';
-          user.profile.username = req.body.username.trim() || '';
-          user.profile.location = req.body.location.trim() || '';
-          user.profile.githubProfile = req.body.githubProfile.trim() || '';
-          user.profile.linkedinProfile = req.body.linkedinProfile.trim() || '';
-          user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
-          user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
-          user.profile.bio = req.body.bio.trim() || '';
-          user.profile.picture = req.body.picture.trim() || '';
+          user.name = req.body.name.trim() || '';
+          user.username = req.body.username.trim() || '';
+          user.location = req.body.location.trim() || '';
+          user.githubProfile = req.body.githubProfile.trim() || '';
+          user.linkedinProfile = req.body.linkedinProfile.trim() || '';
+          user.codepenProfile = req.body.codepenProfile.trim() || '';
+          user.twitterHandle = req.body.twitterHandle.trim() || '';
+          user.bio = req.body.bio.trim() || '';
+          user.picture = req.body.picture.trim() || '';
           user.portfolio.website1Title = req.body.website1Title.trim() || '';
           user.portfolio.website1Link = req.body.website1Link.trim() || '';
           user.portfolio.website1Image = req.body.website1Image.trim() || '';
