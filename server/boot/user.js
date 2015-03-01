@@ -5,7 +5,7 @@ var _ = require('lodash'),
     passport = require('passport'),
     secrets = require('../../config/secrets'),
     moment = require('moment'),
-    debug = require('debug')('freecc:cntr:challenges');
+    debug = require('debug')('freecc:cntr:user');
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -216,8 +216,9 @@ module.exports = function(app) {
   }
 
   function returnUser(req, res, next) {
+    debug('username', req.params.username);
     User.find(
-      { where: { 'profile.username': req.params.username.toLowerCase() } },
+      { where: { 'username': req.params.username.toLowerCase() } },
       function(err, users) {
       if (err) {
         debug('Username err: ', err);

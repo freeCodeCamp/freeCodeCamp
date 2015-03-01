@@ -25,7 +25,7 @@
     "loopback-boot": "^2.4.0",
     "loopback-component-passport": "^1.1.2",
     "loopback-connector-mongodb": "^1.8.0",
-    "loopback-datasource-juggler": "^2.7.0",
+    "loopback-datasource-juggler": "^2.15.0",
     "method-override": "^2.3.1",
     "moment": "^2.9.0",
     "morgan": "^1.5.1",
