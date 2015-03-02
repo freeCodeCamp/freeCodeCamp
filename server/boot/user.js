@@ -3,7 +3,7 @@ var _ = require('lodash'),
     crypto = require('crypto'),
     nodemailer = require('nodemailer'),
     passport = require('passport'),
-    secrets = require('../../config/secrets'),
+    secrets = require('../utils/secrets'),
     moment = require('moment'),
     debug = require('debug')('freecc:cntr:user');
 

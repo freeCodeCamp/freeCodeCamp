@@ -1,13 +1,13 @@
 var Client = require('node-rest-client').Client,
     debug = require('debug')('freecc:cntr:bonfires'),
-    moment = require('moment'),
     resources = require('../utils/resources'),
-    secrets = require('../../config/secrets'),
-    passportUtils = require('../../config/passportUtils'),
+    secrets = require('../utils/secrets'),
+    passportUtils = require('../utils/passportUtils'),
     generalUtils = require('../utils/generalUtils'),
     client = new Client();
 
 module.exports = function(app) {
+  debug('setting up resources routes');
   var User = app.models.user;
   var router = app.loopback.Router();
   router.get('/privacy', privacy);

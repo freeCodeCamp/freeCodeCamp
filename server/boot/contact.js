@@ -1,7 +1,7 @@
 var nodemailer = require('nodemailer'),
     debug = require('debug')('freecc:cntr:contact'),
-    passportUtils = require('../../config/passportUtils'),
-    secrets = require('../../config/secrets');
+    passportUtils = require('../utils/passportUtils'),
+    secrets = require('../utils/secrets');
 
 var transporter = nodemailer.createTransport({
   service: 'Mandrill',
@@ -12,6 +12,7 @@ var transporter = nodemailer.createTransport({
 });
 
 module.exports = function(app) {
+  debug('setting up contact routes');
   var router = app.loopback.Router();
 
   router.get(

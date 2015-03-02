@@ -24,7 +24,6 @@ var R = require('ramda'),
     /**
     * API keys and Passport configuration.
     */
-    secrets = require('../config/secrets'),
     passportProviders = require('./passport-providers'),
     oneYear = 31557600000;
 
@@ -59,15 +58,17 @@ app.use(expressValidator({
 }));
 app.use(methodOverride());
 app.use(cookieParser(process.env.SESSION_SECRET));
+
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: secrets.sessionSecret,
+  secret: process.env.sessionSecret,
   store: new MongoStore({
-    url: secrets.db,
+    url: process.env.MONGODB || process.env.MONGOHQ_URL,
     autoReconnect: true
   })
 }));
+
 app.disable('x-powered-by');
 
 app.use(helmet.xssFilter());
