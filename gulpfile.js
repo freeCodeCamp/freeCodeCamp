@@ -23,8 +23,9 @@ var reloadDelay = 3200;
 var timer;
 
 var paths = {
-    main: './client.js',
-    jsx: './components/**/*.jsx',
+    main: './client/client.js',
+    jsx: './common/components/**/*.jsx',
+    publicJs: './public/js',
     server: './server/server.js',
     serverIgnore: [
       'gulpfile.js',
@@ -45,7 +46,7 @@ gulp.task('jsx', function() {
     .pipe(react({
       harmony: true
     }))
-    .pipe(gulp.dest('./components'));
+    .pipe(gulp.dest('./common/components'));
 });
 
 gulp.task('jsx-watch', function() {
@@ -55,7 +56,7 @@ gulp.task('jsx-watch', function() {
     .pipe(react({
       harmony: true
     }))
-    .pipe(gulp.dest('./components'));
+    .pipe(gulp.dest('./common/components'));
 });
 
 gulp.task('serve', function(cb) {
@@ -106,15 +107,14 @@ gulp.task('bundle', function(cb) {
   browserifyCommon(cb);
 });
 
-gulp.task('default', ['serve', 'sync']);
+gulp.task('default', ['jsx-watch', 'bundle', 'serve', 'sync']);
 
 function browserifyCommon(cb) {
   cb = cb || noop;
-  var config;
   var called = false;
   var _reload = _.debounce(reload, reloadDelay);
 
-  config = {
+  var config = {
     basedir: __dirname,
     debug: true,
     cache: {},
@@ -127,7 +127,6 @@ function browserifyCommon(cb) {
     NODE_ENV: 'development'
   }));
 
-  debug('Watching');
   b = watchify(b);
   b.on('update', function() {
     bundleItUp(b);
