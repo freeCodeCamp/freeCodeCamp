@@ -42,7 +42,7 @@ block content
                 br
 
 
-            - if (cc)
+            - if (user)
                 a.btn.btn-primary.btn-big.btn-block#complete-courseware
                     |  Go to my next challenge
                     br
@@ -61,7 +61,7 @@ block content
 
             br
             script(type="text/javascript").
-                $('#next-courseware-button').attr('disabled', 'disabled');
+                $('#complete-courseware').attr('disabled', 'disabled');
                 var tests = !{JSON.stringify(tests)};
                 var challengeSeed = !{JSON.stringify(challengeSeed)};
                 var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
@@ -93,10 +93,9 @@ block content
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
-                    - if (cc)
-
+                    - if (user)
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
-                        - if (points && points > 2)
+                        - if (user.progressTimestamps.length > 2)
                             a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
                                 i.fa.fa-twitter &nbsp;
                                     = phrase

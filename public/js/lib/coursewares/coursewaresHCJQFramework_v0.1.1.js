@@ -133,8 +133,8 @@ function doLinting () {
 function showCompletion() {
     var time = Math.floor(Date.now() / 1000) - started;
     ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time);
-    $('#next-courseware-button').removeAttr('disabled');
-    $('#next-courseware-button').addClass('animated tada');
+    $('#complete-courseware').removeAttr('disabled');
+    $('#complete-courseware').addClass('animated tada');
     if (!userLoggedIn) {
         $('#complete-courseware-dialog').modal('show');
     }

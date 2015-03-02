@@ -1,5 +1,5 @@
 var _                 = require('lodash'),
-    debug             = require('debug')('freecc:cntr:courseware'),
+    debug             = require('debug')('freevideo:cntr:courseware'),
     coursewareUtils   = require('../utils/coursewareUtils'),
     generalUtils      = require('../utils/generalUtils'),
     R                 = require('ramda'),
@@ -15,9 +15,12 @@ module.exports = function(app) {
   router.post('/completed-courseware/', completedCourseware);
 
   function showAllCoursewares(req, res) {
-    var completedCoursewares = req.user.completedCoursewares.map(function (elem) {
-      return elem.id;
-    });
+    var completedCoursewares = [];
+    if (req.user) {
+      completedCoursewares = req.user.completedCoursewares.map(function (elem) {
+        return elem.id;
+      });
+    }
 
     var noDuplicatedCoursewares = R.uniq(completedCoursewares);
     var data = {};
@@ -84,8 +87,6 @@ module.exports = function(app) {
             details: courseware.description.slice(1),
             tests: courseware.tests,
             challengeSeed: courseware.challengeSeed,
-            cc: !!req.user,
-            progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
             verb: generalUtils.randomVerb(),
             phrase: generalUtils.randomPhrase(),
             compliment: generalUtils.randomCompliment(),
@@ -103,8 +104,6 @@ module.exports = function(app) {
             details: courseware.description.slice(1),
             tests: courseware.tests,
             challengeSeed: courseware.challengeSeed,
-            cc: !!req.user,
-            progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
             verb: generalUtils.randomVerb(),
             phrase: generalUtils.randomPhrase(),
             compliment: generalUtils.randomCompliment(),
@@ -122,8 +121,6 @@ module.exports = function(app) {
             details: courseware.description,
             tests: courseware.tests,
             video: courseware.challengeSeed[0],
-            cc: !!req.user,
-            progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
             verb: generalUtils.randomVerb(),
             phrase: generalUtils.randomPhrase(),
             compliment: generalUtils.randomCompliment(),
@@ -160,8 +157,7 @@ module.exports = function(app) {
       tests: coursewareTests,
       challengeSeed: coursewareChallengeSeed,
       challengeEntryPoint: coursewareEntryPoint,
-      cc: req.user ? req.user.coursewaresHash : undefined,
-      progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
+      user: req.user,
       verb: generalUtils.randomVerb(),
       phrase: generalUtils.randomPhrase(),
       compliment: generalUtils.randomCompliment(),
