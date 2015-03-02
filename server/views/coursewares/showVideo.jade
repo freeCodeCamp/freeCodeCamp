@@ -13,11 +13,11 @@ block content
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
             - if (cc)
-                a.btn.btn-primary.btn-lg.btn-block#complete-courseware I've completed this challenge  (ctrl + enter)
+                a.btn.btn-primary.btn-big.btn-block#complete-courseware I've completed this challenge  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
             - else
-                a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
                 br
@@ -27,7 +27,7 @@ block content
                 var challengeName = !{JSON.stringify(name)};
                 var started = Math.floor(Date.now() / 1000);
             br
-            a.btn.btn-info.btn-lg.btn-block#showAllCoursewares Show me all the challenges
+            a.btn.btn-info.btn-big.btn-block#showAllCoursewares Show me all the challenges
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content

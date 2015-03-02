@@ -43,7 +43,7 @@ block content
 
 
             - if (cc)
-                a.btn.btn-primary.btn-lg.btn-block#complete-courseware
+                a.btn.btn-primary.btn-big.btn-block#complete-courseware
                     |  Go to my next challenge
                     br
                     |  (ctrl + enter)
@@ -51,11 +51,11 @@ block content
                     var userLoggedIn = true;
 
             - else
-                a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                 script.
                     var userLoggedIn = false;
             br
-            .btn.btn-info.btn-lg.btn-block#showAllCoursewares Show me all the challenges
+            .btn.btn-info.btn-big.btn-block#showAllCoursewares Show me all the challenges
             br
             ul#testSuite.list-group
 
