@@ -128,24 +128,27 @@ function browserifyCommon(cb) {
   };
 
   var b = browserify(config);
-  console.log(config);
 
   b.transform(envify({
     NODE_ENV: 'development'
   }));
 
+  b = watchify(b);
+  b.on('update', function() {
+    bundleItUp(b);
+  });
 
   b.on('time', function(time) {
     if (!called) {
       called = true;
       cb();
     }
-    console.log('bundle completed in %s ms', time);
+    debug('bundle completed in %s ms', time);
     _reload();
   });
 
   b.on('error', function(e) {
-    console.log('bundler error', e);
+    debug('bundler error', e);
   });
 
   b.add(paths.main);
@@ -155,13 +158,12 @@ function browserifyCommon(cb) {
 function bundleItUp(b) {
   debug('Bundling');
   // It seems to work with any string
-  return b.bundle('lol what the hell');
-  /**
-   * TODO I've isolated the offending code here
-   *
+  return b.bundle()
+    .on('error', function(e) {
+      console.log(e);
+    })
    .pipe(bundleName('bundle.js'))
    .pipe(gulp.dest(paths.publicJs));
-   */
 }
 
 function noop() { }
