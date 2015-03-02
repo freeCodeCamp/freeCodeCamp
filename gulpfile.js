@@ -4,12 +4,16 @@ var gulp = require('gulp'),
     nodemon = require('gulp-nodemon'),
     sync = require('browser-sync'),
     reload = sync.reload,
-    inject = require('gulp-inject'),
-    reloadDelay = 1000;
+    inject = require('gulp-inject');
+
+var reloadDelay = 3200;
+var timer;
 
 var paths = {
     server: './server/server.js',
-    serverIgnore: []
+    serverIgnore: [
+      'gulpfile.js'
+    ]
 };
 
 gulp.task('inject', function() {
@@ -43,7 +47,10 @@ gulp.task('serve', function(cb) {
             if (files) {
                 debug('Files that changes: ', files);
             }
-            setTimeout(function() {
+            if (timer) {
+              clearTimeout(timer);
+            }
+            timer = setTimeout(function() {
                 debug('Restarting browsers');
                 reload();
             }, reloadDelay);
