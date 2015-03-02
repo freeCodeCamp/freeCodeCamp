@@ -563,15 +563,38 @@
     "name": "Map the Debris",
     "difficulty": "3.50",
     "description": [
-      "Return a new array that transforms the element's average altitude into their orbital periods.",
+      "Return a new array that transforms the element's average altitude in kilometers into their orbital periods.",
       "The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.",
       "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\">on wikipedia</a>.",
-      "The values should be rounded to the nearest whole number. Assume the body being orbited is Earth."
+      "The values should be rounded to the nearest second. Assume the body being orbited is Earth.",
+      "You should look up any constants used in your calculation using <a href=\"http://www.wolframalpha.com\">Wolfram Alpha</a>."
     ],
-    "challengeSeed": "function orbitalPeriod(arr) {\n\/\/Use 398600.4418 for GM. Look up any other values on wolfram alpha\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
+    "challengeSeed": "function orbitalPeriod(arr) {\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
     "tests": [
-      "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
-      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
+      "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.be.instanceof(Array);",
+      "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.have.length(1);",
+      "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])[0]).to.be.an(\"object\");",
+      "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])[0]).to.have.all.keys([\"name\", \"orbitalPeriod\"]);",
+      "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])[0]).to.have.property(\"name\", \"sputkin\");",
+      "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])[0].orbitalPeriod % 1).to.be.equal(0);",
+      "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])[0].orbitalPeriod).to.be.within(86390,86450);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.be.instanceof(Array);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.have.length(3);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[0]).to.be.an(\"object\");",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[0]).to.have.all.keys([\"name\", \"orbitalPeriod\"]);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[0]).to.have.property(\"name\", \"iss\");",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[0].orbitalPeriod % 1).to.be.equal(0);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[0].orbitalPeriod).to.be.within(5540,5570);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[1]).to.be.an(\"object\");",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[1]).to.have.all.keys([\"name\", \"orbitalPeriod\"]);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[1]).to.have.property(\"name\", \"hubble\");",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[1].orbitalPeriod % 1).to.be.equal(0);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[1].orbitalPeriod).to.be.within(5720,5750);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[2]).to.be.an(\"object\");",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[2]).to.have.all.keys([\"name\", \"orbitalPeriod\"]);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[2]).to.have.property(\"name\", \"moon\");",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[2].orbitalPeriod % 1).to.be.equal(0);",
+      "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])[2].orbitalPeriod).to.be.within(2377390,2378200);"
     ]
   },
   {
