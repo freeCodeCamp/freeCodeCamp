@@ -36,10 +36,10 @@ module.exports = function(app) {
     passportUtils.isAuthenticated,
     nonprofitProjectInstructions
   );
-  router.get('/api/checkUniqueEmail/:email', checkUniqueEmail);
-  router.get('/api/checkExistingUsername/:username', checkExistingUsername);
-  router.get('/api/checkUniqueUsername/:username', checkUniqueUsername);
-  router.get('/api/getAccountAngular/', getAccountAngular);
+  router.get('/resources/checkUniqueEmail/:email', checkUniqueEmail);
+  router.get('/resources/checkExistingUsername/:username', checkExistingUsername);
+  router.get('/resources/checkUniqueUsername/:username', checkUniqueUsername);
+  router.get('/resources/getAccountAngular/', getAccountAngular);
 
   function privacy(req, res) {
       res.render('resources/privacy', {

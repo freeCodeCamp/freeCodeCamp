@@ -152,7 +152,7 @@ function browserifyCommon(cb) {
     debug('bundler error', e);
   });
 
-  b.add(bundleName(paths.main));
+  // b.add(bundleName(paths.main));
   bundleItUp(b);
 }
 
