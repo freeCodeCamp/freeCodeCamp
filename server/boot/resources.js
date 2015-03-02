@@ -28,9 +28,9 @@ module.exports = function(app) {
   router.get('/about', function(req, res) {
     res.redirect(301, '/learn-to-code');
   });
-  router.get('/api/github', gitHubCalls);
-  router.get('/api/blogger', bloggerCalls);
-  router.get('/api/trello', trelloCalls);
+  router.get('/resources/github', gitHubCalls);
+  router.get('/resources/blogger', bloggerCalls);
+  router.get('/resources/trello', trelloCalls);
   router.get(
     '/nonprofit-project-instructions',
     passportUtils.isAuthenticated,

@@ -2,6 +2,10 @@ process.env.DEBUG = process.env.DEBUG || 'free:*';
 var _ = require('lodash'),
   gulp = require('gulp'),
 
+// ## debug
+  bundleLogger = require('./gulpUtils/bundleLogger'),
+  handleErrors = require('./gulpUtils/handleErrors'),
+
 // ## bundle
   bundleName = require('vinyl-source-stream'),
   browserify = require('browserify'),
@@ -106,11 +110,7 @@ gulp.task('sync', ['serve'], function() {
 
 gulp.task('bundle', function(cb) {
   console.log('in bundle task');
-  try {
-    browserifyCommon(cb);
-  } catch (e) {
-    console.log('caught error', e);
-  }
+  browserifyCommon(cb);
 });
 
 gulp.task('default', ['jsx-watch', 'bundle', 'serve', 'sync']);
@@ -128,6 +128,7 @@ function browserifyCommon(cb) {
   };
 
   var b = browserify(config);
+  bundleLogger.start('bundle.js');
 
   b.transform(envify({
     NODE_ENV: 'development'
@@ -151,19 +152,16 @@ function browserifyCommon(cb) {
     debug('bundler error', e);
   });
 
-  b.add(paths.main);
+  b.add(bundleName(paths.main));
   bundleItUp(b);
 }
 
 function bundleItUp(b) {
   debug('Bundling');
-  // It seems to work with any string
   return b.bundle()
-    .on('error', function(e) {
-      console.log(e);
-    })
-   .pipe(bundleName('bundle.js'))
-   .pipe(gulp.dest(paths.publicJs));
+    .on('error', handleErrors)
+    .pipe(bundleName('bundle.js'))
+    .pipe(gulp.dest(paths.publicJs));
 }
 
 function noop() { }
