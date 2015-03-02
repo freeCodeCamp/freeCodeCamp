@@ -1,3 +1,4 @@
+process.env.DEBUG = process.env.DEBUG || 'free:*';
 var gulp = require('gulp'),
     debug = require('debug')('freecc:gulp'),
     bower = require('bower-main-files'),
