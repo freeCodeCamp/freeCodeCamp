@@ -1,3 +1,4 @@
+/*eslint-disable no-inline-comments */
 'use strict';
 if (process.env.NODE_ENV === 'production') {
   require('newrelic');
@@ -59,6 +60,8 @@ app.use(connectAssets({
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+// TODO is this used?
 app.use(expressValidator({
   customValidators: {
     matchRegex: function (param, regex) {
@@ -86,8 +89,9 @@ app.use(helmet.noSniff());
 app.use(helmet.xframe());
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers',
+             'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
@@ -151,8 +155,9 @@ app.use(helmet.contentSecurityPolicy({
     'graph.facebook.com',
     '*.githubusercontent.com',
     '*.googleusercontent.com',
-    '*' /* allow all input since we have user submitted images for public profile*/
-  ].concat(trusted),
+    // TODO do we need the above now since we're allowing all images?
+    /* allow all input since we have user submitted images for public profile*/
+    '*'].concat(trusted),
   fontSrc: ['*.googleapis.com'].concat(trusted),
   mediaSrc: [
     '*.amazonaws.com',
@@ -165,9 +170,9 @@ app.use(helmet.contentSecurityPolicy({
     '*.rafflecopter.com',
     '*.ghbtns.com'
   ].concat(trusted),
-  reportOnly: false, // set to true if you only want to report errors
-  setAllHeaders: false, // set to true if you want to set all headers
-  safari5: false // set to true if you want to force buggy CSP in Safari 5
+  reportOnly: false, /* set to true if you only want to report errors */
+  setAllHeaders: false, /* set to true if you want to set all headers */
+  safari5: false /* set to true if you want to force buggy CSP in Safari 5 */
 }));
 
 app.use(flash());

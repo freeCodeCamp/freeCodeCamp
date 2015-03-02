@@ -1,46 +1,47 @@
 process.env.DEBUG = process.env.DEBUG || 'free:*';
 var _ = require('lodash'),
-    gulp = require('gulp'),
+  gulp = require('gulp'),
 
-    // ## bundle
-    bundleName = require('vinyl-source-stream'),
-    browserify = require('browserify'),
-    watchify = require('watchify'),
-    envify = require('envify'),
-    react = require('gulp-react'),
+// ## bundle
+  bundleName = require('vinyl-source-stream'),
+  browserify = require('browserify'),
+  watchify = require('watchify'),
+  envify = require('envify'),
+  react = require('gulp-react'),
 
-    // ## util
-    watch = require('gulp-watch'),
-    plumber = require('gulp-plumber'),
-    debug = require('debug')('freecc:gulp'),
+// ## util
+  watch = require('gulp-watch'),
+  plumber = require('gulp-plumber'),
+  debug = require('debug')('freecc:gulp'),
 
-    // ## serve
-    nodemon = require('gulp-nodemon'),
-    sync = require('browser-sync'),
-    reload = sync.reload;
+// ## serve
+  nodemon = require('gulp-nodemon'),
+  sync = require('browser-sync'),
+  reload = sync.reload;
 
 var reloadDelay = 3200;
 var timer;
 
 var paths = {
-    main: './client/client.js',
-    jsx: './common/components/**/*.jsx',
-    publicJs: './public/js',
-    server: './server/server.js',
-    serverIgnore: [
-      'gulpfile.js',
-      'public/',
-      'components/**/*.styl',
-      'bower_components/',
-      'node_modules/'
-    ],
-    syncWatch: [
-      'public/**/*.*',
-      '!public/js/bundle.js'
-    ]
+  main: './client/client.js',
+  jsx: './common/components/**/*.jsx',
+  publicJs: './public/js',
+  server: './server/server.js',
+  serverIgnore: [
+    'gulpfile.js',
+    'public/',
+    'components/**/*.styl',
+    'bower_components/',
+    'node_modules/'
+  ],
+  syncWatch: [
+    'public/**/*.*',
+    '!public/js/bundle.js'
+  ]
 };
 
 gulp.task('jsx', function() {
+  console.log('in jsx');
   return gulp.src(paths.jsx)
     .pipe(plumber())
     .pipe(react({
@@ -60,51 +61,56 @@ gulp.task('jsx-watch', function() {
 });
 
 gulp.task('serve', function(cb) {
-    var called = false;
-    nodemon({
-        script: paths.server,
-        ext: '.js',
-        ignore: paths.serverIgnore,
-        env: {
-          'NODE_ENV': 'development',
-          'DEBUG': 'freecc:*'
-        }
+  var called = false;
+  nodemon({
+    script: paths.server,
+    ext: '.js',
+    ignore: paths.serverIgnore,
+    env: {
+      'NODE_ENV': 'development',
+      'DEBUG': 'freecc:*'
+    }
+  })
+    .on('start', function() {
+      if (!called) {
+        called = true;
+        setTimeout(function() {
+          cb();
+        }, reloadDelay);
+      }
     })
-        .on('start', function() {
-            if (!called) {
-                called = true;
-                setTimeout(function() {
-                    cb();
-                }, reloadDelay);
-            }
-        })
-        .on('restart', function(files) {
-            if (files) {
-                debug('Files that changes: ', files);
-            }
-            if (timer) {
-              clearTimeout(timer);
-            }
-            timer = setTimeout(function() {
-                debug('Restarting browsers');
-                reload();
-            }, reloadDelay);
-        });
-});
-
-gulp.task('sync', ['serve'], function() {
-    sync.init(null, {
-      proxy: 'http://localhost:3000',
-      logLeval: 'debug',
-      files: paths.syncWatch,
-      port: 3001,
-      open: true,
-      reloadDelay: reloadDelay
+    .on('restart', function(files) {
+      if (files) {
+        debug('Files that changes: ', files);
+      }
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(function() {
+        debug('Restarting browsers');
+        reload();
+      }, reloadDelay);
     });
 });
 
+gulp.task('sync', ['serve'], function() {
+  sync.init(null, {
+    proxy: 'http://localhost:3000',
+    logLeval: 'debug',
+    files: paths.syncWatch,
+    port: 3001,
+    open: true,
+    reloadDelay: reloadDelay
+  });
+});
+
 gulp.task('bundle', function(cb) {
-  browserifyCommon(cb);
+  console.log('in bundle task');
+  try {
+    browserifyCommon(cb);
+  } catch (e) {
+    console.log('caught error', e);
+  }
 });
 
 gulp.task('default', ['jsx-watch', 'bundle', 'serve', 'sync']);
@@ -122,27 +128,24 @@ function browserifyCommon(cb) {
   };
 
   var b = browserify(config);
+  console.log(config);
 
   b.transform(envify({
     NODE_ENV: 'development'
   }));
 
-  b = watchify(b);
-  b.on('update', function() {
-    bundleItUp(b);
-  });
 
   b.on('time', function(time) {
     if (!called) {
       called = true;
       cb();
     }
-    debug('bundle completed in %s ms', time);
+    console.log('bundle completed in %s ms', time);
     _reload();
   });
 
   b.on('error', function(e) {
-    debug('bundler error', e);
+    console.log('bundler error', e);
   });
 
   b.add(paths.main);
@@ -151,9 +154,14 @@ function browserifyCommon(cb) {
 
 function bundleItUp(b) {
   debug('Bundling');
-  return b.bundle()
-    .pipe(bundleName('bundle.js'))
-    .pipe(gulp.dest(paths.publicJs));
+  // It seems to work with any string
+  return b.bundle('lol what the hell');
+  /**
+   * TODO I've isolated the offending code here
+   *
+   .pipe(bundleName('bundle.js'))
+   .pipe(gulp.dest(paths.publicJs));
+   */
 }
 
 function noop() { }
