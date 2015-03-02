@@ -1,12 +1,10 @@
-var R = require('ramda'),
-    debug = require('debug')('freecc:models:user');
+var debug = require('debug')('freecc:models:user');
 
 module.exports = function(User) {
-
   debug('setting up user hooks');
   User.observe('before save', function setUsername(ctx, next) {
+    // set username from twitter
     if (ctx.instance.username.match(/twitter/g)) {
-      debug('setting username', ctx.instance.username);
       ctx.instance.username =
         ctx.instance.username.match(/twitter/g) ?
           ctx.instance.username.split('.').pop().toLowerCase() :

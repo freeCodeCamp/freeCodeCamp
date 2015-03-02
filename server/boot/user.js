@@ -231,21 +231,6 @@ module.exports = function(app) {
         }
         if (users[0]) {
           var user = users[0];
-          if (!user.profilePictureIsSet) {
-            // syncing user picture
-            UserIdentity.find({where: {'userId': req.user.id}}, function (err, identity) {
-
-              if (err) {
-                return next(err);
-              }
-              if (identity.length > 0) {
-                debug('User picture', identity[0].profile.photos[0].value);
-                user.picture = identity[0].profile.photos[0].value;
-                user.profilePictureIsSet = true;
-                user.save();
-              }
-            });
-          }
           var data = {};
           var progressTimestamps = user.progressTimestamps;
           debug('progress time stamps', progressTimestamps);
