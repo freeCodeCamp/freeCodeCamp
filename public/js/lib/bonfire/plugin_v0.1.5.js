@@ -1,4 +1,4 @@
-
+/*eslint-disable block-scoped-var, no-undef, no-unused-vars, no-eval */
 // executes the given code and handles the result
 var run = function(code) {
     var result = {
@@ -54,28 +54,25 @@ var runHidden = function(code) {
     var dump = null;
     var onoffline = null;
     var ononline = null;
-    importScript("https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js");
-    var _ = R;
-
+    importScript('https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js');
 
     return eval(code);
-}
+};
 
 
 // converts the output into a string
 var stringify = function(output) {
     var result;
 
-    if (typeof output == 'undefined') {
+    if (typeof output === 'undefined') {
         result = 'undefined';
     } else if (output === null) {
         result = 'null';
     } else {
         result = JSON.stringify(output) || output.toString();
     }
-
     return result;
-}
+};
 
 
-application.setInterface({run:run});
+application.setInterface({run: run});

@@ -1,11 +1,12 @@
+/*eslint-disable block-scoped-var, no-undef, no-unused-vars, no-eval */
 var printCallback;
 // sends the input to the plugin for evaluation
-var submit = function(code,callback) {
+var submit = function(code, callback) {
     printCallback = callback;
     // postpone the evaluation until the plugin is initialized
     plugin.whenConnected(
         function() {
-            if (requests == 0) {
+            if (requests === 0) {
                 startLoading();
             }
 
@@ -17,7 +18,7 @@ var submit = function(code,callback) {
 
 // puts the message on the terminal
 var print = function(cls, msg) {
-    printCallback(cls,msg);
+    printCallback(cls, msg);
 };
 
 
@@ -40,7 +41,6 @@ var disconnect = function() {
 var api = {
     output: function(data) {
       endLoading();
-      //print('input', data.input);
       if (data.error) {
           print('Error', data);
           reset();
@@ -51,35 +51,30 @@ var api = {
     }
 };
 
-
 // obtaining absolute path of this script
 var scripts = document.getElementsByTagName('script');
-var path = scripts[scripts.length-1].src
+var path = scripts[scripts.length - 1].src
         .split('?')[0]
         .split('/')
         .slice(0, -1)
-        .join('/')+'/';
-
-
+        .join('/') + '/';
 
 var requests;
 
 // (re)initializes the plugin
 var reset = function() {
     requests = 0;
-    plugin = new jailed.Plugin(path+'plugin_v0.1.4.js', api);
+    plugin = new jailed.Plugin(path + 'plugin_v0.1.5.js', api);
     plugin.whenDisconnected( function() {
-        // give some time to handle the last responce
+        // give some time to handle the last response
         setTimeout( function() {
             endLoading();
-            console.log("resetting on fatal plugin error");
+            console.log('resetting on fatal plugin error');
             codeOutput.setValue('Infinite loop or fatal error!');
             reset();
         }, 10);
     });
 };
-
-
 
 // initialize everything
 var plugin = null;
