@@ -17,23 +17,20 @@ h3
                             var linkedName = getLinkedName(data[i].headline);
                             var rank = data[i].rank;
 
-                            $(li).html("<div class='row text-center'>" +
-                                            "<div class='col-xs-3 text-right big-ion-up-arrow'>" +
+                            $(li).html("<div class='row text-left'>" +
+                                            "<div class='col-xs-3 col-sm-1 big-ion-up-arrow'>" +
                                                 "<i class='ion-arrow-up-b'></i>" +
                                             "</div>" +
-                                            "<div class='col-xs-6'>" +
+                                            "<div class='col-xs-9 col-sm-11'>" +
                                                 "<a href='/stories/" + linkedName + "'>"
                                                     + data[i].headline +
                                                 "</a>" +
                                             "</div>" +
-                                            "<div class='col-xs-3'>" +
-                                            "</div>" +
                                         "</div>" +
-                                        "<div class='row text-center'>" +
-                                            "<div class='col-xs-3 text-right'>" + rank + "</div>" +
-                                        "<div class='col-xs-6'>" + data[i].author.username + "</div>" +
-                                        "<div class='col-xs-3'></div>" +
-                                    "</div>" +
+                                        "<div class='row text-left'>" +
+                                            "<div class='col-xs-3 col-sm-1'>" + rank + "</div>" +
+                                            "<div class='col-xs-9 col-sm-11'>" + data[i].author.username + "</div>" +
+                                        "</div>" +
                             "</li>");
                             $(li).appendTo($('#story-list'));
                         }
