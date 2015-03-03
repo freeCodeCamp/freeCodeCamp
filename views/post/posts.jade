@@ -17,7 +17,24 @@ h3
                             var linkedName = getLinkedName(data[i].headline);
                             var rank = data[i].rank;
 
-                            $(li).html("<div class='row text-center'><div class='col-xs-3 text-right'><i class='ion-arrow-up-b'></i></div><div class='col-xs-6'><a href='/stories/" + linkedName + "'>" + data[i].headline + "</a></div><div class='col-xs-3'></div></div><div class='row text-center'><div class='col-xs-3 text-right'>" + rank + "</div><div class='col-xs-6'>" + data[i].author.username + "</div><div class='col-xs-3'></div></div></li>");
+                            $(li).html("<div class='row text-center'>" +
+                                            "<div class='col-xs-3 text-right big-ion-up-arrow'>" +
+                                                "<i class='ion-arrow-up-b'></i>" +
+                                            "</div>" +
+                                            "<div class='col-xs-6'>" +
+                                                "<a href='/stories/" + linkedName + "'>"
+                                                    + data[i].headline +
+                                                "</a>" +
+                                            "</div>" +
+                                            "<div class='col-xs-3'>" +
+                                            "</div>" +
+                                        "</div>" +
+                                        "<div class='row text-center'>" +
+                                            "<div class='col-xs-3 text-right'>" + rank + "</div>" +
+                                        "<div class='col-xs-6'>" + data[i].author.username + "</div>" +
+                                        "<div class='col-xs-3'></div>" +
+                                    "</div>" +
+                            "</li>");
                             $(li).appendTo($('#story-list'));
                         }
                     });
