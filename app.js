@@ -288,6 +288,10 @@ app.get(
     '/stories/index',
     storyController.json
 );
+app.get(
+    '/stories/:storyName',
+    storyController.returnIndividualStory
+);
 
 /**
  * Challenge related routes

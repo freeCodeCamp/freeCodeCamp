@@ -1,0 +1,17 @@
+extends ../layout
+block content
+    h1= title
+    h3= body
+    h5= rank
+
+
+
+
+//
+    title: story.headline,
+            dashedName: story.link,
+            author: story.author,
+            body: story.body,
+            rank: story.rank,
+            upVotes: story.upVotes,
+            comments: story.comments
