@@ -16,6 +16,13 @@ block content
                         i.ion-arrow-up-b
             .col-xs-10.text-center
                 h3= body
+    .row.negative-35
+        h3.col-xs-12.col-md-6.col-lg-5.text-center Comments
+    .row
+        .col-xs-12.col-md-6.col-lg-5
+            textarea#comment-box.form-control(name="comment-box", rows=5)
+    .row
+        include ./comments
 
 
 

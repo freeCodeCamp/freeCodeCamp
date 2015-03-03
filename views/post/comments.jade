@@ -1,0 +1,25 @@
+h6
+    ul#comment-list.comment-list
+
+        script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
+        h1 Super tired folks, going to call it a night
+        //
+            script.
+                var getLinkedName = function getLinkedName(name) {
+                    return name.toLowerCase().replace(/\s/g, '-');
+                }
+                $.ajax({
+                    url: '/stories/index',
+                    type: 'GET'
+                })
+                        .success(
+                        function(data) {
+                            for (var i = 0; i < data.length; i++) {
+                                var li  = document.createElement('li');
+                                var linkedName = getLinkedName(data[i].headline);
+                                var rank = data[i].rank;
+
+                                $(li).html("<div class='row text-center'><div class='col-xs-3 text-right'><i class='ion-arrow-up-b'></i></div><div class='col-xs-6'><a href='/stories/" + linkedName + "'>" + data[i].headline + "</a></div><div class='col-xs-3'></div></div><div class='row text-center'><div class='col-xs-3 text-right'>" + rank + "</div><div class='col-xs-6'>" + data[i].author.username + "</div><div class='col-xs-3'></div></div></li>");
+                                $(li).appendTo($('#story-list'));
+                            }
+                        });
