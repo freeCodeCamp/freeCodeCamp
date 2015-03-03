@@ -1,19 +1,23 @@
 extends ../layout
 block content
     script.
-        var challengeName = 'Story';
+        var challengeName = 'Camper News';
         var storyId = !{JSON.stringify(id)};
+        var comments = !{JSON.stringify(comments)};
+        var upVotes = !{JSON.stringify(upVotes)};
+
     .jumbotron
         .row
             .col-xs-2(style='position: relative; top: 50%; -webkit-transform: translateY(50%); -ms-transform: translateY(50%);transform: translateY(50%);')
-                h3#storyRank= rank
+                h3
+                    a#upvote
+                        i.ion-arrow-up-b
             .col-xs-10.text-center
                 h1= title
         .row
             .col-xs-2
-                h3
-                    a#upvote
-                        i.ion-arrow-up-b
+                h3#storyRank= rank
+
             .col-xs-10.text-center
                 h3= body
     .row.negative-35
@@ -21,8 +25,13 @@ block content
     .row
         .col-xs-12.col-md-6.col-lg-5
             textarea#comment-box.form-control(name="comment-box", rows=5)
+    if (user)
+        script.
+            var user = !{JSON.stringify(user)};
+            $('#upvote').unbind('click');
     .row
-        include ./comments
+        .col-xs-12.col-md-7.col-lg-4.text-left
+            include ./comments
 
 
 

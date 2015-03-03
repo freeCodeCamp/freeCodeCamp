@@ -6,11 +6,15 @@ var commentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    body: {
+        type: String,
+        default: ''
+    },
     rank: {
         type: Number,
         default: -Infinity
     },
-    upVotes: {
+    upvotes: {
         type: Array,
         default: []
     },

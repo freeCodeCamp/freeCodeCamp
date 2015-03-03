@@ -288,12 +288,18 @@ app.get(
     '/stories/index',
     storyController.json
 );
+
+app.get(
+    '/stories/comments/:id',
+    storyController.comments
+);
+
 app.get(
     '/stories/:storyName',
     storyController.returnIndividualStory
 );
 app.post(
-    '/stories/upvote/:id',
+    '/stories/upvote/',
     storyController.upvote
 );
 

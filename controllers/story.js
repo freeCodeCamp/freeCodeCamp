@@ -53,7 +53,7 @@ exports.returnIndividualStory = function(req, res, next) {
         if (dashedNameFull !== dashedName) {
             return res.redirect('../stories/' + dashedNameFull);
         }
-        debug('Story id is', story._id);
+        debug('Story', story);
 
         res.render('post/show', {
             title: story.headline,
@@ -63,20 +63,38 @@ exports.returnIndividualStory = function(req, res, next) {
             rank: story.rank,
             upVotes: story.upVotes,
             comments: story.comments,
-            id: story._id
+            id: story._id,
+            user: req.user
         });
     });
 };
 
 exports.upvote = function(req, res, next) {
-    var data = req.params.id;
-    Story.find({'_id': data}, function(err, story) {
+    var data = req.body.data;
+    Story.find({'_id': data.id}, function(err, story) {
         if (err) {
             throw err;
         }
         story = story.pop();
         story.rank++;
+        story.upVotes.push(
+            {
+                upVotedBy: data.upVoter._id,
+                upVotedByUsername: data.upVoter.profile.username
+            }
+        );
         story.save();
         return res.send(story);
+    });
+};
+
+exports.comments = function(req, res, next) {
+    var data = req.params.id;
+    Comment.find({'_id': data}, function(err, comment) {
+        if (err) {
+            throw err;
+        }
+        comment = comment.pop();
+        return res.send(comment);
     });
 };

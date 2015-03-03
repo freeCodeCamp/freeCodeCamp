@@ -9,12 +9,13 @@ var Challenge = require('../models/Challenge.js'),
     challenges = require('./challenges.json'),
     coursewares = require('./coursewares.json'),
     stories = require('./stories.json'),
-    bonfires = require('./bonfires.json');
+    bonfires = require('./bonfires.json'),
+    comments = require('./comments.json');
 
 mongoose.connect(secrets.db);
 
 var counter = 0;
-var offerings = 4;
+var offerings = 5;
 
 var CompletionMonitor = function() {
     counter++;
@@ -85,6 +86,23 @@ Story.remove({}, function(err, data) {
         console.log('Deleted ', data);
     }
     Story.create(stories, function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Saved ', data);
+        }
+        CompletionMonitor();
+    });
+    console.log('stories');
+});
+
+Comment.remove({}, function(err, data) {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log('Deleted ', data);
+    }
+    Comment.create(comments, function(err, data) {
         if (err) {
             console.log(err);
         } else {

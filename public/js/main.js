@@ -107,8 +107,6 @@ $(document).ready(function() {
         window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
     });
 
-
-
     // Bonfire instructions functions
     $('#more-info').on('click', function() {
         ga('send', 'event',  'Challenge', 'more-info', challengeName);
@@ -123,22 +121,29 @@ $(document).ready(function() {
 
     var upvoteHandler = function () {
         var _id = storyId;
-
-        $.ajax({
-            type: 'POST',
-            url: '/stories/upvote/' + _id,
-            beforeSend: function() {
-                $('#upvote').unbind('click');
-            },
-            error: function(xhr, textStatus, errorThrown) {
-                console.log('got error');
-                $('#upvote').bind('click', upvoteHandler);
-            },
-            success: function (data, textStatus, xhr) {
-                console.log(data);
-                $('#storyRank').text(data.rank);
+        $('#upvote').unbind('click');
+        var alreadyUpvoted = false;
+        for (var i = 0; i < upVotes.length; i++) {
+            if (upVotes[i].upVotedBy === user._id) {
+                alreadyUpvoted = true;
+                break;
             }
-        });
+        }
+        if (!alreadyUpvoted) {
+            $.post('/stories/upvote',
+                {
+                    data: {
+                        id: _id,
+                        upVoter: user
+                    }
+                })
+                .fail(function (xhr, textStatus, errorThrown) {
+                    $('#upvote').bind('click', upvoteHandler);
+                })
+                .done(function (data, textStatus, xhr) {
+                    $('#storyRank').text(data.rank);
+                });
+        }
     };
     $('#upvote').on('click', upvoteHandler);
 });
