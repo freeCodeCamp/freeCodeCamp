@@ -1,3 +1,4 @@
+/*eslint-disable no-unused-vars, no-undef, block-scoped-var, no-eval */
 (function() {
     var expect = chai.expect;
     var tests = parent.tests;
