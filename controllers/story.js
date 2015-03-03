@@ -1,6 +1,6 @@
 var R = require('ramda'),
     debug = require('debug')('freecc:cntr:post'),
-    Post = require('./../models/Post'),
+    Story = require('./../models/Story'),
     Comment = require('./../models/Comment'),
     User = require('./../models/User'),
     resources = require('./resources');
@@ -9,12 +9,22 @@ var R = require('ramda'),
  *  Post Controller
  */
 
-exports.index = function(req, res, next) {
-    var posts = Post.find({}).sort({'rank': -1});
-    posts.exec(function(err, listings) {
+exports.json = function(req, res, next) {
+    var story = Story.find({}).sort({'rank': -1});
+    story.exec(function(err, stories) {
         if (err) {
             throw err;
         }
-        res.json(listing);
+        res.json(stories);
+    });
+};
+
+exports.index = function(req, res, next) {
+    var story = Story.find({}).sort({'rank': -1});
+    story.exec(function(err, stories) {
+        if (err) {
+            throw err;
+        }
+        res.render('post/index');
     });
 };

@@ -84,7 +84,7 @@ Story.remove({}, function(err, data) {
     } else {
         console.log('Deleted ', data);
     }
-    Story.create(coursewares, function(err, data) {
+    Story.create(stories, function(err, data) {
         if (err) {
             console.log(err);
         } else {

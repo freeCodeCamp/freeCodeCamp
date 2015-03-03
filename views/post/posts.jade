@@ -1,24 +1,22 @@
-h3
-    ol#bonfireList Test!
+h2
+    ul#story-list Top Stories
+        h3
+            script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
+            script.
+                var getLinkedName = function getLinkedName(name) {
+                    return name.toLowerCase().replace(/\s/g, '-');
+                }
+                $.ajax({
+                    url: '/stories/index',
+                    type: 'GET'
+                })
+                        .success(
+                        function(data) {
+                            for (var i = 0; i < data.length; i++) {
+                                var li  = document.createElement('li');
+                                var linkedName = getLinkedName(data[i].headline);
 
-    //script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
-    //script.
-    //    var getLinkedName = function getLinkedName(name) {
-    //        return name.toLowerCase().replace(/\s/g, '-');
-    //    }
-    //    $.ajax({
-    //        url: '/bonfires/getBonfireList',
-    //        type: 'GET'
-    //    })
-    //            .success(
-    //            function(data) {
-    //                for (var i = 0; i < data.bonfireList.length; i++) {
-    //                    var li  = document.createElement('li');
-    //                    var linkedName = getLinkedName(data.bonfireList[i].name);
-    //                    if (R.contains(data.bonfireList[i].id, data.completedList)) {
-    //                        $(li).addClass('strikethrough');
-    //                    }
-    //                    $(li).html("<a href='/bonfires/" + linkedName + "'>" + data.bonfireList[i].name + "</a></li>");
-    //                    $(li).appendTo($('#bonfireList'));
-    //                }
-    //            });
+                                $(li).html("<a href='/stories/" + linkedName + "'>" + data[i].headline + "</a></li>");
+                                $(li).appendTo($('#story-list'));
+                            }
+                        });

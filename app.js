@@ -35,6 +35,11 @@ var express = require('express'),
     coursewareController = require('./controllers/courseware'),
 
     /**
+     *  Stories
+     */
+    storyController = require('./controllers/story');
+
+    /**
      * User model
      */
     User = require('./models/User'),
@@ -270,6 +275,18 @@ app.post(
     '/update-progress',
     passportConf.isAuthenticated,
     userController.updateProgress
+);
+
+/**
+ * Main routes.
+ */
+app.get(
+    '/stories/',
+    storyController.index
+);
+app.get(
+    '/stories/index',
+    storyController.json
 );
 
 /**
