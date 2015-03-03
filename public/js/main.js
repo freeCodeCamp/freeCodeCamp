@@ -120,6 +120,27 @@ $(document).ready(function() {
         $('#brief-instructions').show();
         $('#long-instructions').hide();
     });
+
+    var upvoteHandler = function () {
+        var _id = storyId;
+
+        $.ajax({
+            type: 'POST',
+            url: '/stories/upvote/' + _id,
+            beforeSend: function() {
+                $('#upvote').unbind('click');
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.log('got error');
+                $('#upvote').bind('click', upvoteHandler);
+            },
+            success: function (data, textStatus, xhr) {
+                console.log(data);
+                $('#storyRank').text(data.rank);
+            }
+        });
+    };
+    $('#upvote').on('click', upvoteHandler);
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);

@@ -50,9 +50,10 @@ exports.returnIndividualStory = function(req, res, next) {
 
         story = story.pop();
         var dashedNameFull = story.headline.toLowerCase().replace(/\s/g, '-');
-        if (dashedNameFull != dashedName) {
+        if (dashedNameFull !== dashedName) {
             return res.redirect('../stories/' + dashedNameFull);
         }
+        debug('Story id is', story._id);
 
         res.render('post/show', {
             title: story.headline,
@@ -61,7 +62,21 @@ exports.returnIndividualStory = function(req, res, next) {
             body: story.body,
             rank: story.rank,
             upVotes: story.upVotes,
-            comments: story.comments
+            comments: story.comments,
+            id: story._id
         });
+    });
+};
+
+exports.upvote = function(req, res, next) {
+    var data = req.params.id;
+    Story.find({'_id': data}, function(err, story) {
+        if (err) {
+            throw err;
+        }
+        story = story.pop();
+        story.rank++;
+        story.save();
+        return res.send(story);
     });
 };

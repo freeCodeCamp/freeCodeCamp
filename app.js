@@ -292,6 +292,10 @@ app.get(
     '/stories/:storyName',
     storyController.returnIndividualStory
 );
+app.post(
+    '/stories/upvote/:id',
+    storyController.upvote
+);
 
 /**
  * Challenge related routes

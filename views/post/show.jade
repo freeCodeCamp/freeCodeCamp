@@ -1,8 +1,22 @@
 extends ../layout
 block content
-    h1= title
-    h3= body
-    h5= rank
+    script.
+        var challengeName = 'Story';
+        var storyId = !{JSON.stringify(id)};
+    .jumbotron
+        .row
+            .col-xs-2(style='position: relative; top: 50%; -webkit-transform: translateY(50%); -ms-transform: translateY(50%);transform: translateY(50%);')
+                h3#storyRank= rank
+            .col-xs-10.text-center
+                h1= title
+        .row
+            .col-xs-2
+                h3
+                    a#upvote
+                        i.ion-arrow-up-b
+            .col-xs-10.text-center
+                h3= body
+
 
 
 
