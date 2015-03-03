@@ -139,7 +139,7 @@ $(document).ready(function() {
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
 profileValidation.controller('profileValidationController', ['$scope', '$http',
     function($scope, $http) {
-        $http.get('/account/api').success(function(data) {
+        $http.get('/resources/getAccountAngular').success(function(data) {
             $scope.user = data.user;
             $scope.user.username = $scope.user.username ? $scope.user.username.toLowerCase() : undefined;
             $scope.storedUsername = data.user.username;
@@ -193,7 +193,7 @@ profileValidation.directive('uniqueUsername', ['$http', function($http) {
             element.bind("keyup", function (event) {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
-                    $http.get("/validation/checkUniqueUsername/" + element.val()).success(function (data) {
+                    $http.get("/resources/checkUniqueUsername/" + element.val()).success(function (data) {
                         if (element.val() == scope.storedUsername) {
                             ngModel.$setValidity('unique', true);
                         } else if (data) {
@@ -220,7 +220,7 @@ profileValidation.directive('existingUsername', ['$http', function($http) {
                 }
                 if (element.val()) {
                     $http
-                    .get("/validation/checkExistingUsername/" + element.val())
+                    .get("/resources/checkExistingUsername/" + element.val())
                     .success(function (data) {
                         ngModel.$setValidity('exists', data);
                     });
@@ -238,7 +238,7 @@ profileValidation.directive('uniqueEmail', ['$http', function($http) {
             element.bind("keyup", function (event) {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
-                    $http.get("/validation/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
+                    $http.get("/resources/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
                         if (element.val() == scope.storedEmail) {
                             ngModel.$setValidity('unique', true);
                         } else if (data) {

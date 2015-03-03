@@ -31,10 +31,6 @@ module.exports = function(app) {
   router.post('/account/delete', postDeleteAccount);
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/:username', returnUser);
-  router.get('/validation/checkUniqueUsername/:username', checkUniqueUsername);
-  router.get('/validation/checkExistingUsername/:username', checkExistingUsername);
-  router.get('/validation/checkUniqueEmail/:email', checkUniqueEmail);
-  router.get('/account/api', getAccountAngular);
   // router.post('/update-progress', passport.isAuthenticated, updateProgress);
 
   function getSignin(req, res) {
@@ -168,56 +164,6 @@ module.exports = function(app) {
       res.render('account/account', {
         title: 'Manage your Free Code Camp Account'
       });
-  }
-
-  function getAccountAngular(req, res) {
-    res.json({
-      user: req.user
-    });
-  }
-
-  function checkUniqueUsername(req, res, next) {
-    User.count(
-      { 'username': req.params.username.toLowerCase() },
-      function(err, data) {
-        if (err) { return next(err); }
-        if (data === 1) {
-          return res.send(true);
-        }
-        return res.send(false);
-      }
-    );
-  }
-
-  function checkExistingUsername(req, res, next) {
-    debug("I'm alive in here at checkExistingUsername.");
-    User.count(
-      { 'username': req.params.username.toLowerCase() },
-      function (err, exists) {
-        if (err) {
-          debug('Houston we have a problem', err);
-          return next(err);
-        }
-        debug('I think this is the data', exists);
-
-        return res.send(
-          exists ? true : false
-        );
-      }
-    );
-  }
-
-  function checkUniqueEmail(req, res, next) {
-    User.count(
-      {'email': decodeURIComponent(req.params.email).toLowerCase()},
-      function (err, data) {
-        if (err) { return next(err); }
-        if (data === 1) {
-          return res.send(true);
-        }
-        return res.send(false);
-      }
-    );
   }
 
   function returnUser(req, res, next) {
