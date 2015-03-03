@@ -1,7 +1,8 @@
+/*eslint-disable block-scoped-var, no-undef, no-undefined */
 $(document).ready(function() {
-    challengeName = typeof challengeName !== undefined ? challengeName : 'Untitled';
+    var challengeName = typeof challengeName !== 'undefined' ? challengeName : 'Untitled';
     if (challengeName) {
-        ga('send', 'event',  'Challenge', 'load', challengeName);
+        ga('send', 'event', 'Challenge', 'load', challengeName);
     }
 
     var CSRF_HEADER = 'X-CSRF-Token';
@@ -27,8 +28,8 @@ $(document).ready(function() {
         $('#complete-challenge-dialog').modal('show');
         // Only post to server if there is an authenticated user
         if ($('.signup-btn-nav').length < 1) {
-            l = location.pathname.split('/');
-            cn = l[l.length - 1];
+            var l = location.pathname.split('/');
+            var cn = l[l.length - 1];
             $.ajax({
                 type: 'POST',
                 data: {challengeNumber: cn},
@@ -46,16 +47,16 @@ $(document).ready(function() {
                 '/completed-bonfire',
                 {
                     bonfireInfo: {
-                        completedWith : didCompleteWith,
+                        completedWith: didCompleteWith,
                         solution: bonfireSolution,
                         bonfireHash: thisBonfireHash
                     }
                 },
                 function(res) {
                 if (res) {
-                    window.location.href = '/bonfires'
+                    window.location.href = '/bonfires';
                 }
-            })
+            });
         }
     }
 
@@ -102,7 +103,7 @@ $(document).ready(function() {
                 function() {
                     window.location.href = '/coursewares';
                 }
-            )
+            );
 
         }
     });
@@ -118,14 +119,11 @@ $(document).ready(function() {
 
     $('.next-challenge-button').on('click', function() {
         l = location.pathname.split('/');
-        window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
+        window.location = '/challenges/' + (parseInt(l[l.length - 1], 10) + 1);
     });
-
-
-
     // Bonfire instructions functions
     $('#more-info').on('click', function() {
-        ga('send', 'event',  'Challenge', 'more-info', challengeName);
+        ga('send', 'event', 'Challenge', 'more-info', challengeName);
         $('#brief-instructions').hide();
         $('#long-instructions').show().removeClass('hide');
 
@@ -136,7 +134,7 @@ $(document).ready(function() {
     });
 });
 
-var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
+var profileValidation = angular.module('profileValidation', ['ui.bootstrap']);
 profileValidation.controller('profileValidationController', ['$scope', '$http',
     function($scope, $http) {
         $http.get('/resources/getAccountAngular').success(function(data) {
@@ -161,40 +159,16 @@ profileValidation.controller('pairedWithController', ['$scope',
     }
 ]);
 
-profileValidation.controller('emailSignUpController', ['$scope',
-    function($scope) {
-
-    }
-]);
-
-profileValidation.controller('emailSignInController', ['$scope',
-    function($scope) {
-
-    }
-]);
-
-profileValidation.controller('nonprofitFormController', ['$scope',
-    function($scope) {
-
-    }
-]);
-
-profileValidation.controller('doneWithFirst100HoursFormController', ['$scope',
-    function($scope) {
-
-    }
-]);
-
 profileValidation.directive('uniqueUsername', ['$http', function($http) {
     return {
         restrict: 'A',
         require: 'ngModel',
         link: function (scope, element, attrs, ngModel) {
-            element.bind("keyup", function (event) {
+            element.bind('keyup', function () {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
-                    $http.get("/resources/checkUniqueUsername/" + element.val()).success(function (data) {
-                        if (element.val() == scope.storedUsername) {
+                    $http.get('/resources/checkUniqueUsername/' + element.val()).success(function (data) {
+                        if (element.val() === scope.storedUsername) {
                             ngModel.$setValidity('unique', true);
                         } else if (data) {
                             ngModel.$setValidity('unique', false);
@@ -203,7 +177,7 @@ profileValidation.directive('uniqueUsername', ['$http', function($http) {
                 }
             });
         }
-    }
+    };
 }]);
 
 profileValidation.directive('existingUsername', ['$http', function($http) {
@@ -211,7 +185,7 @@ profileValidation.directive('existingUsername', ['$http', function($http) {
         restrict: 'A',
         require: 'ngModel',
         link: function (scope, element, attrs, ngModel) {
-            element.bind("keyup", function (event) {
+            element.bind('keyup', function () {
                 if (element.val().length > 0) {
                     ngModel.$setValidity('exists', false);
                 } else {
@@ -220,14 +194,14 @@ profileValidation.directive('existingUsername', ['$http', function($http) {
                 }
                 if (element.val()) {
                     $http
-                    .get("/resources/checkExistingUsername/" + element.val())
+                    .get('/resources/checkExistingUsername/' + element.val())
                     .success(function (data) {
                         ngModel.$setValidity('exists', data);
                     });
                 }
             });
         }
-    }
+    };
 }]);
 
 profileValidation.directive('uniqueEmail', ['$http', function($http) {
@@ -235,18 +209,18 @@ profileValidation.directive('uniqueEmail', ['$http', function($http) {
         restrict: 'A',
         require: 'ngModel',
         link: function getUnique (scope, element, attrs, ngModel) {
-            element.bind("keyup", function (event) {
+            element.bind('keyup', function () {
                 ngModel.$setValidity('unique', true);
                 if (element.val()) {
-                    $http.get("/resources/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
-                        if (element.val() == scope.storedEmail) {
+                    $http.get('/resources/checkUniqueEmail/' + encodeURIComponent(element.val())).success(function (data) {
+                        if (element.val() === scope.storedEmail) {
                             ngModel.$setValidity('unique', true);
                         } else if (data) {
                             ngModel.$setValidity('unique', false);
                         }
                     });
-                };
+                }
             });
         }
-    }
+    };
 }]);

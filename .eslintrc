@@ -8,7 +8,10 @@
     "node": true
   },
   "globals": {
-    "window": true
+    "window": true,
+    "$": true,
+    "ga": true,
+    "jQuery": true
   },
   "rules": {
     "no-comma-dangle": 2,
