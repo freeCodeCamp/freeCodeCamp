@@ -569,7 +569,7 @@
     "difficulty": "3.50",
     "description": [
       "Return a new array that transforms the element's average altitude into their orbital periods.",
-      "The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.",
+      "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
       "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\">on wikipedia</a>.",
       "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
       "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418"
