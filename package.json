@@ -67,7 +67,7 @@
     "gulp-inject": "^1.2.0",
     "gulp-nodemon": "^1.0.5",
     "gulp-plumber": "^0.6.6",
-    "gulp-react": "^2.1.0",
+    "gulp-react": "^3.0.0",
     "gulp-watch": "^4.1.1",
     "jshint": "^2.5.6",
     "plumber": "^0.4.8",

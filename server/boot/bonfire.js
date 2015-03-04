@@ -1,11 +1,56 @@
-var R = require('ramda'),
-    moment = require('moment'),
+var React = require('react'),
+    // moment = require('moment'),
     debug = require('debug')('freecc:cntr:bonfires'),
-    generalUtils = require('../utils/generalUtils'),
-    bonfireUtils = require('../utils/bonfireUtils');
+    // generalUtils = require('../utils/generalUtils'),
+    // bonfireUtils = require('../utils/bonfireUtils'),
+
+    // ## React/Flux
+    Router = require('../../common/components/Router'),
+    ContextStore = require('../../common/components/context/Store'),
+    ContextActions = require('../../common/components/context/Actions');
 
 module.exports = function(app) {
-  var router = app.loopback.Router();
+
+  app.get('/bonfires/:bonfireName?', function(req, res, next) {
+    debug('path req', decodeURI(req.path));
+    Router(decodeURI(req.path))
+      .run(function(Handler, state) {
+        Handler = React.createFactory(Handler);
+
+        debug('Route found, %s ', state.path);
+        var ctx = {
+          req: req,
+          res: res,
+          next: next,
+          Handler: Handler,
+          state: state,
+          userId: req.session ? req.session.userId : null
+        };
+
+        debug('context action');
+        ContextActions.setContext(ctx);
+      });
+  });
+
+  ContextStore
+    .filter(function(ctx) {
+      return !!ctx.Handler;
+    })
+    .subscribe(function(ctx) {
+
+      debug('rendering %s to string', ctx.state.path);
+      var html = React.renderToString(ctx.Handler());
+
+      debug('rendering jade');
+      ctx.res.render('react-layout', { html: html }, function(err, markup) {
+        if (err) { return ctx.next(err); }
+        debug('jade template rendered');
+
+        debug('Sending %s to user', ctx.state.path);
+        return ctx.res.send(markup);
+      });
+    });
+  /* var router = app.loopback.Router();
   var Bonfire = app.models.bonfire;
   var User = app.models.user;
   router.get('/bonfires/getBonfireList', getBonfireList);
@@ -140,10 +185,6 @@ module.exports = function(app) {
       bonfireHash: randomString()
     });
   }
-
-  /**
-  * Post for bonfire generation
-  */
 
   function randomString() {
     var chars = '0123456789abcdef';
@@ -291,5 +332,5 @@ module.exports = function(app) {
       });
     }
   }
-  app.use(router);
+  app.use(router); */
 };

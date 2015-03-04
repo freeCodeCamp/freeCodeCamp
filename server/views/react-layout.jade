@@ -1,0 +1,13 @@
+doctype html
+html(ng-app='profileValidation', lang='en')
+  base(href='/', target='_blank')
+  head
+    include partials/universal-head
+
+  body.top-and-bottom-margins
+    .container
+      //- rendered app attached at html
+      //- app context are attached to state
+      #app!= html
+    //- script!= context
+    script(src='js/bundle.js')

@@ -5,7 +5,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 require('dotenv').load();
 var R = require('ramda'),
-    React = require('react'),
     loopback = require('loopback'),
     boot = require('loopback-boot'),
 
@@ -24,17 +23,11 @@ var R = require('ramda'),
     serveStatic = require('serve-static'),
 
     // ## utils
-    debug = require('debug')('freecc:server'),
     path = require('path'),
     generalUtils = require('./utils/generalUtils'),
 
     // ## config
-    passportProviders = require('./passport-providers'),
-
-    // ## React/Flux
-    Router = require('../common/components/Router'),
-    ContextStore = require('../common/components/context/Store'),
-    ContextActions = require('../common/components/context/Actions');
+    passportProviders = require('./passport-providers');
 
 
 var oneYear = 31557600000;
@@ -222,46 +215,6 @@ app.use(function (req, res, next) {
 app.use(
   serveStatic(path.join(__dirname, 'public'), {maxAge: 31557600000})
 );
-
-app.get('/*', function(req, res, next) {
-  debug('path req', decodeURI(req.path));
-  Router(decodeURI(req.path))
-    .run(function(Handler, state) {
-      Handler = React.createFactory(Handler);
-
-      debug('Route found, %s ', state.path);
-      var ctx = {
-        req: req,
-        res: res,
-        next: next,
-        Handler: Handler,
-        state: state,
-        userId: req.session ? req.session.userId : null
-      };
-
-      debug('context action');
-      ContextActions.setContext(ctx);
-    });
-});
-
-ContextStore
-  .filter(function(ctx) {
-    return !!ctx.Handler;
-  })
-  .subscribe(function(ctx) {
-
-    debug('rendering %s to string', ctx.state.path);
-    var html = React.renderToString(ctx.Handler());
-
-    debug('rendering jade');
-    ctx.res.render('layout', { html: html }, function(err, markup) {
-      if (err) { return ctx.next(err); }
-      debug('jade template rendered');
-
-      debug('Sending %s to user', ctx.state.path);
-      return ctx.res.send(markup);
-    });
-  });
 
 app.start = function() {
   // start the web server

@@ -9,7 +9,7 @@ var React = require('react'),
 
     // # Components
     App = require('./App'),
-    Bonfire = require('./bonfire'),
+    Bonfires = require('./bonfires'),
     Nav = require('./nav');
 
 var routes = (
@@ -18,9 +18,13 @@ var routes = (
     path: "/", 
     handler:  App }, 
 
+    React.createElement(Route, {
+      name: "bonfires", 
+      path: "/bonfires/?:bonfires?", 
+      handler:  Bonfires }), 
+
     React.createElement(DefaultRoute, {
-      name: "bonfire", 
-      handler:  Bonfire })
+      handler:  Bonfires })
   )
 );
 
