@@ -25,3 +25,4 @@ node_modules
 Thumbs.db
 bower_components
 public/js/bundle.js
+common/components/common*

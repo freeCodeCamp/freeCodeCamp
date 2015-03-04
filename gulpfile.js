@@ -177,8 +177,4 @@ function bundleItUp(b) {
     .pipe(gulp.dest(paths.publicJs));
 }
 
-var iForgotASemicolon = function lol() {
-  // stuff
-}
-
 function noop() { }
