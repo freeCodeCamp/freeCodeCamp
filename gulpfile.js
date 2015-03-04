@@ -57,15 +57,17 @@ gulp.task('jsx', function() {
 
 gulp.task('jsx-watch', function() {
   debug('in jsx watch');
-  return gulp.src(paths.jsx)
-    .pipe(watch(paths.jsx, function(file) {
-      debug('jsx file changed', file.path);
+  return gulp.src(paths.jsx, { base: './common' })
+    .pipe(watch(paths.jsx, {
+      verbose: true,
+      base: './common',
+      name: 'jsx'
     }))
     .pipe(plumber())
     .pipe(react({
       harmony: true
     }))
-    .pipe(gulp.dest('./common/components'));
+    .pipe(gulp.dest('./common'));
 });
 
 gulp.task('serve', function(cb) {
@@ -94,10 +96,14 @@ gulp.task('serve', function(cb) {
       if (timer) {
         clearTimeout(timer);
       }
+      var componentsChanged = files.reduce(function(bool, file) {
+        return file.indexOf('components') !== -1 ? true : false || bool;
+      }, false);
+      var timerDelay = componentsChanged ? bundleReloadDelay : reloadDelay;
       timer = setTimeout(function() {
         debug('Restarting browsers');
         reload();
-      }, reloadDelay);
+      }, timerDelay);
     });
 });
 
@@ -139,10 +145,6 @@ function browserifyCommon(cb) {
   }));
 
   b = watchify(b);
-  b.on('update', function() {
-    debug('update found');
-    bundleItUp(b);
-  });
 
   b.on('time', function(time) {
     if (!called) {
@@ -151,6 +153,11 @@ function browserifyCommon(cb) {
     }
     debug('bundle completed in %s ms', time);
     _reload();
+  });
+
+  b.on('update', function(ids) {
+    debug('update found', ids);
+    bundleItUp(b);
   });
 
   b.add(paths.main);

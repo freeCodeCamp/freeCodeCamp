@@ -9,8 +9,7 @@ var React = require('react'),
 
     // # Components
     App = require('./App'),
-    Bonfires = require('./bonfires'),
-    Nav = require('./nav');
+    Bonfires = require('./bonfires');
 
 var routes = (
   React.createElement(Route, {
