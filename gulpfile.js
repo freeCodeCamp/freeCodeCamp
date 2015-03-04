@@ -10,7 +10,7 @@ var _ = require('lodash'),
   bundleName = require('vinyl-source-stream'),
   browserify = require('browserify'),
   watchify = require('watchify'),
-  envify = require('envify'),
+  envify = require('envify/custom'),
   react = require('gulp-react'),
 
   // ## util
@@ -113,6 +113,11 @@ gulp.task('bundle', function(cb) {
   browserifyCommon(cb);
 });
 
+gulp.task('debug', function() {
+  return gulp.src([])
+    .pipe(nodeInspector());
+});
+
 gulp.task('default', ['jsx-watch', 'bundle', 'serve', 'sync']);
 
 function browserifyCommon(cb) {
@@ -146,10 +151,6 @@ function browserifyCommon(cb) {
     }
     debug('bundle completed in %s ms', time);
     _reload();
-  });
-
-  b.on('error', function(e) {
-    debug('bundler error', e);
   });
 
   b.add(paths.main);
