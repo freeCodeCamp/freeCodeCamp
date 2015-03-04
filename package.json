@@ -20,6 +20,7 @@
     "express-flash": "0.0.2",
     "express-session": "^1.10.3",
     "express-validator": "^2.8.0",
+    "gulp-babel": "^4.0.0",
     "gulp-notify": "^2.2.0",
     "gulp-util": "^3.0.4",
     "helmet": "^0.6.1",

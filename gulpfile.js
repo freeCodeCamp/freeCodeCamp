@@ -12,6 +12,8 @@ var _ = require('lodash'),
   watchify = require('watchify'),
   envify = require('envify/custom'),
   react = require('gulp-react'),
+  babel = require('gulp-babel'),
+  babelify = require('babelify'),
 
   // ## util
   watch = require('gulp-watch'),
@@ -143,11 +145,11 @@ function browserifyCommon(cb) {
   var b = browserify(config);
   bundleLogger.start('bundle.js');
 
-  b.transform(envify({
-    NODE_ENV: 'development'
-  }));
+
 
   b = watchify(b);
+
+  b.transform(babelify);
 
   b.on('time', function(time) {
     if (!called) {
@@ -173,6 +175,10 @@ function bundleItUp(b) {
     .on('error', handleErrors)
     .pipe(bundleName('bundle.js'))
     .pipe(gulp.dest(paths.publicJs));
+}
+
+var iForgotASemicolon = function lol() {
+  // stuff
 }
 
 function noop() { }
