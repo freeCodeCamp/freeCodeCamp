@@ -1,57 +1,81 @@
-var React = require('react');
+var React = require('react'),
+    bootStrap = require('react-bootstrap'),
+    Navbar = bootStrap.Navbar,
+    Nav = bootStrap.Nav,
+    NavItem = bootStrap.NavItem,
+    NavItemFCC = require('./NavItem');
 
-var NavBar = React.createClass({displayName: "NavBar",
-  render: function() {
+var NavBarComp = React.createClass({displayName: "NavBarComp",
+
+  propTypes: { signedIn: React.PropTypes.bool },
+
+  getDefaultProps: function() {
+    return { signedIn: false };
+  },
+
+  _renderBrand: function() {
     var fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
     return (
-      React.createElement("nav", {className: "navbar navbar-default navbar-fixed-top nav-height"}, 
-        React.createElement("div", {className: "container"}, 
-          React.createElement("div", {className: "navbar-header"}, 
-            React.createElement("button", {
-              type: "button", 
-              "data-toggle": "collapse", 
-              "data-target": ".navbar-collapse", 
-              className: "hamburger navbar-toggle"}, 
-              React.createElement("div", {className: "col-xs-6"}, 
-                React.createElement("span", {className: "hamburger-text"}, "Menu")
-              ), 
-              React.createElement("div", {className: "col-xs-6"}, 
-                React.createElement("span", {className: "sr-only"}, "Toggle navigation"), 
-                React.createElement("span", {className: "icon-bar"}), 
-                React.createElement("span", {className: "icon-bar"}), 
-                React.createElement("span", {className: "icon-bar"})
-              )
-            ), 
-            React.createElement("a", {
-              href: "/", 
-              className: "navbar-brand"}, 
-              React.createElement("img", {
-                src:  fCClogo, 
-                alt: "learn to code javascript at Free Code Camp logo", 
-                className: "img-responsive nav-logo"})
-            )
+      React.createElement("a", {href: "/"}, 
+        React.createElement("img", {
+          src:  fCClogo, 
+          alt: "learn to code javascript at Free Code Camp logo", 
+          className: "img-responsive nav-logo"})
+      )
+    );
+  },
+
+  _renderSignin: function() {
+    if (this.props.signedIn) {
+      return (
+        React.createElement(NavItem, {
+          eventKey:  2 }, 
+          "Show Picture"
+        )
+      );
+    } else {
+      return (
+        React.createElement(NavItemFCC, {
+          eventKey:  2, 
+          href: "/login", 
+          aClassName: "btn signup-btn signup-btn-nav"}, 
+            "Sign In"
+        )
+      );
+    }
+  },
+
+  render: function() {
+
+    return (
+      React.createElement(Navbar, {
+        brand:  this._renderBrand(), 
+        fixedTop:  true, 
+        toggleNavKey:  0, 
+        className: "nav-height"}, 
+        React.createElement(Nav, {
+          right:  true, 
+          eventKey:  0, 
+          className: "hamburger-dropdown"}, 
+          React.createElement(NavItem, {
+            eventKey:  1, 
+            href: "/Challenges"}, 
+            "Challenges"
           ), 
-          React.createElement("div", {className: "collapse navbar-collapse"}, 
-            React.createElement("ul", {className: "nav navbar-nav navbar-right hamburger-dropdown"}, 
-              React.createElement("li", null, React.createElement("a", {href: "/coursewares"}, "Challenges")), 
-              React.createElement("li", null, React.createElement("a", {href: "/chat"}, "Chat")), 
-              React.createElement("li", null, 
-                React.createElement("a", {
-                  href: "http://forum.freecodecamp.com", 
-                  target: "_blank"}, "Forum")
-              ), 
-              React.createElement("li", null, React.createElement("a", {href: "/bonfires"}, "Bonfires")), 
-              React.createElement("li", null, "     "), 
-              React.createElement("li", null, 
-                React.createElement("a", {href: "/login", className: "btn signup-btn signup-btn-nav"}, 
-                  "Sign in"
-                )
-              )
-            )
-          )
+          React.createElement(NavItem, {
+            eventKey:  1, 
+            href: "Chat"}, 
+            "Chat"
+          ), 
+          React.createElement(NavItem, {
+            eventKey:  2, 
+            href: "/bonfires"}, 
+            "Bonfires"
+          ), 
+           this._renderSignin() 
         )
       )
     );
   }
 });
-module.exports = NavBar;
+module.exports = NavBarComp;

@@ -24,7 +24,6 @@ var _ = require('lodash'),
   reload = sync.reload;
 
 var reloadDelay = 3200;
-var bundleReloadDelay = 40000;
 var timer;
 
 var paths = {
@@ -90,20 +89,24 @@ gulp.task('serve', function(cb) {
       }
     })
     .on('restart', function(files) {
+      var componentsChanged = false;
       if (files) {
         debug('Files that changes: ', files);
+        componentsChanged = files.reduce(function(bool, file) {
+          return file.indexOf('components') !== -1 ? true : false || bool;
+        }, false);
       }
       if (timer) {
         clearTimeout(timer);
       }
-      var componentsChanged = files.reduce(function(bool, file) {
-        return file.indexOf('components') !== -1 ? true : false || bool;
-      }, false);
-      var timerDelay = componentsChanged ? bundleReloadDelay : reloadDelay;
-      timer = setTimeout(function() {
-        debug('Restarting browsers');
-        reload();
-      }, timerDelay);
+      if (!componentsChanged) {
+        timer = setTimeout(function() {
+          debug('Restarting browsers');
+          reload();
+        }, reloadDelay);
+      } else {
+        debug('component changed, not reloading server until bundle complete');
+      }
     });
 });
 
@@ -128,7 +131,7 @@ gulp.task('default', ['jsx-watch', 'bundle', 'serve', 'sync']);
 function browserifyCommon(cb) {
   cb = cb || noop;
   var called = false;
-  var _reload = _.debounce(reload, bundleReloadDelay);
+  var _reload = _.debounce(reload, reloadDelay);
 
   var config = {
     basedir: __dirname,
