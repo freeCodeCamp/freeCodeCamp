@@ -1,4 +1,4 @@
-process.env.DEBUG = process.env.DEBUG || 'free:*';
+process.env.DEBUG = process.env.DEBUG || 'freecc:*';
 var _ = require('lodash'),
   gulp = require('gulp'),
 
