@@ -2,23 +2,23 @@ process.env.DEBUG = process.env.DEBUG || 'free:*';
 var _ = require('lodash'),
   gulp = require('gulp'),
 
-// ## debug
+  // ## debug
   bundleLogger = require('./gulpUtils/bundleLogger'),
   handleErrors = require('./gulpUtils/handleErrors'),
 
-// ## bundle
+  // ## bundle
   bundleName = require('vinyl-source-stream'),
   browserify = require('browserify'),
   watchify = require('watchify'),
   envify = require('envify'),
   react = require('gulp-react'),
 
-// ## util
+  // ## util
   watch = require('gulp-watch'),
   plumber = require('gulp-plumber'),
   debug = require('debug')('freecc:gulp'),
 
-// ## serve
+  // ## serve
   nodemon = require('gulp-nodemon'),
   sync = require('browser-sync'),
   reload = sync.reload;
@@ -152,7 +152,7 @@ function browserifyCommon(cb) {
     debug('bundler error', e);
   });
 
-  // b.add(paths.main);
+  b.add(paths.main);
   bundleItUp(b);
 }
 
