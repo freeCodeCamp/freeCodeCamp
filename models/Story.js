@@ -6,6 +6,10 @@ var storySchema = new mongoose.Schema({
         type: String,
         unique: false
     },
+    timePosted: {
+        type: Number,
+        default: 0
+    },
     link: {
         type: String,
         unique: false

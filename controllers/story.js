@@ -1,13 +1,10 @@
 var R = require('ramda'),
-    debug = require('debug')('freecc:cntr:post'),
+    debug = require('debug')('freecc:cntr:story'),
     Story = require('./../models/Story'),
     Comment = require('./../models/Comment'),
     User = require('./../models/User'),
+    moment = require('../public/js/lib/moment/moment.js'),
     resources = require('./resources');
-
-/**
- *  Post Controller
- */
 
 exports.json = function(req, res, next) {
     var story = Story.find({}).sort({'rank': -1});
@@ -25,7 +22,7 @@ exports.index = function(req, res, next) {
         if (err) {
             throw err;
         }
-        res.render('post/index');
+        res.render('stories/index');
     });
 };
 
@@ -55,16 +52,17 @@ exports.returnIndividualStory = function(req, res, next) {
         }
         debug('Story', story);
 
-        res.render('post/show', {
+        res.render('stories/show', {
             title: story.headline,
-            dashedName: story.link,
+            link: story.link,
             author: story.author,
             body: story.body,
             rank: story.rank,
             upVotes: story.upVotes,
             comments: story.comments,
             id: story._id,
-            user: req.user
+            user: req.user,
+            timeAgo: moment(story.timePosted).fromNow()
         });
     });
 };
