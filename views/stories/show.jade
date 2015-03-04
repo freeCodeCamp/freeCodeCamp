@@ -9,9 +9,9 @@ block content
     .panel.panel-info
         .panel-heading.text-center Camper News
         .panel-body
-            h3.row.text-left
+            h3.row.text-left.negative-10
                 .col-xs-3.col-sm-1
-                    .row
+                    .row.negative-5
                         .col-xs-12.big-ion-up-arrow
                             i.ion-arrow-up-b
                         h3.story-up-votes
@@ -19,15 +19,14 @@ block content
                 .col-xs-2.col-sm-1
                     img(src="#{author.picture}", class='img-responsive')
                 .col-xs-7.col-sm-10
-                    .row
-                        .col-xs-12
-                            a(href="#{link}")
-                                h3= title
-                        .col-xs-12
-                            span Posted #{timeAgo}
-                            span &nbsp;by&nbsp;
-                                a(href="/" + author.username)
-                                    @#{author.username}
+                    .col-xs-12.negative-28
+                        a(href="#{link}")
+                            h3= title
+                    .col-xs-12.negative-15
+                        span Posted #{timeAgo}
+                        span &nbsp;by&nbsp;
+                            a(href="/" + author.username)
+                                @#{author.username}
 
 
 
