@@ -46,7 +46,7 @@ var paths = {
 };
 
 gulp.task('jsx', function() {
-  console.log('in jsx');
+  debug('in jsx');
   return gulp.src(paths.jsx)
     .pipe(plumber())
     .pipe(react({
@@ -56,8 +56,11 @@ gulp.task('jsx', function() {
 });
 
 gulp.task('jsx-watch', function() {
+  debug('in jsx watch');
   return gulp.src(paths.jsx)
-    .pipe(watch(paths.jsx))
+    .pipe(watch(paths.jsx, function(file) {
+      debug('jsx file changed', file.path);
+    }))
     .pipe(plumber())
     .pipe(react({
       harmony: true
@@ -110,7 +113,7 @@ gulp.task('sync', ['serve'], function() {
 });
 
 gulp.task('bundle', function(cb) {
-  console.log('in bundle task');
+  debug('in bundle task');
   browserifyCommon(cb);
 });
 
@@ -137,6 +140,7 @@ function browserifyCommon(cb) {
 
   b = watchify(b);
   b.on('update', function() {
+    debug('update found');
     bundleItUp(b);
   });
 
