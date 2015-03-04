@@ -1,11 +1,11 @@
 'use strict';
 var React = require('react'),
-    Router = require('common/components/Router'),
+    Router = require('../common/components/Router'),
     debug = require('debug')('freecc:client'),
     HistoryLocation = require('react-router').HistoryLocation,
 
-    ContextStore = require('common/components/context/Store'),
-    ContextActions = require('common/components/context/Actions');
+    ContextStore = require('../common/components/context/Store'),
+    ContextActions = require('../common/components/context/Actions');
 
 var mountNode = document.getElementById('app');
 
