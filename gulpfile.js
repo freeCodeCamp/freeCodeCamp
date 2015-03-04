@@ -24,6 +24,7 @@ var _ = require('lodash'),
   reload = sync.reload;
 
 var reloadDelay = 3200;
+var bundleReloadDelay = 40000;
 var timer;
 
 var paths = {
@@ -113,17 +114,12 @@ gulp.task('bundle', function(cb) {
   browserifyCommon(cb);
 });
 
-gulp.task('debug', function() {
-  return gulp.src([])
-    .pipe(nodeInspector());
-});
-
 gulp.task('default', ['jsx-watch', 'bundle', 'serve', 'sync']);
 
 function browserifyCommon(cb) {
   cb = cb || noop;
   var called = false;
-  var _reload = _.debounce(reload, reloadDelay);
+  var _reload = _.debounce(reload, bundleReloadDelay);
 
   var config = {
     basedir: __dirname,
