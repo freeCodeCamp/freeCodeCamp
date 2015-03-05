@@ -2,8 +2,9 @@ extends ../layout
 block content
     script.
         var challengeName = 'Camper News';
+        var user = !{JSON.stringify(user)};
     .panel.panel-info
         .panel-heading.text-center Camper News
-        .panel-body.hug-top
-            include ./stories
+        .panel-body
             include ./submit
+            include ./stories

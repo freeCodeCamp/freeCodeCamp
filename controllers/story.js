@@ -56,13 +56,14 @@ exports.returnIndividualStory = function(req, res, next) {
             title: story.headline,
             link: story.link,
             author: story.author,
-            body: story.body,
+            description: story.description,
             rank: story.rank,
             upVotes: story.upVotes,
             comments: story.comments,
             id: story._id,
             user: req.user,
-            timeAgo: moment(story.timePosted).fromNow()
+            timeAgo: moment(story.timePosted).fromNow(),
+            image: story.image
         });
     });
 };
@@ -95,4 +96,49 @@ exports.comments = function(req, res, next) {
         comment = comment.pop();
         return res.send(comment);
     });
+};
+
+/*
+
+ author: {},
+ comments: {
+ type: Array,
+ default: []
+ },
+ image:
+ */
+
+exports.storySubmission = function(req, res, next) {
+    var data = req.body.data;
+    var storyLink = data.headline
+        .replace(/\'/g, '')
+        .replace(/\"/g, '')
+        .replace(/,/g, '')
+        .replace(/[^a-z0-9]/gi, ' ')
+        .replace(/\s+/g, ' ')
+        .toLowerCase();
+    var story = new Story({
+        headline: data.headline,
+        timePosted: Date.now(),
+        link: data.link,
+        description: data.description,
+        rank: 0,
+        upVotes: 0,
+        author: data.author,
+        comments: [],
+        image: data.image,
+        storyLink: storyLink
+    });
+
+    debug('this is a story', story);
+
+    story.save(function(err, data) {
+        if (err) {
+            throw err;
+        }
+        res.send(JSON.stringify({
+            storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
+        }));
+    });
+
 };
