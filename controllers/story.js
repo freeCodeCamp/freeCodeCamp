@@ -6,7 +6,7 @@ var R = require('ramda'),
     moment = require('../public/js/lib/moment/moment.js'),
     resources = require('./resources');
 
-exports.json = function(req, res, next) {
+exports.hotJSON = function(req, res, next) {
     var story = Story.find({}).sort({'rank': -1});
     story.exec(function(err, stories) {
         if (err) {
@@ -16,13 +16,44 @@ exports.json = function(req, res, next) {
     });
 };
 
-exports.index = function(req, res, next) {
-    var story = Story.find({}).sort({'rank': -1});
+exports.recentJSON = function(req, res, next) {
+    var story = Story.find({}).sort({'timePosted': -1});
     story.exec(function(err, stories) {
         if (err) {
             throw err;
         }
-        res.render('stories/index');
+        res.json(stories);
+    });
+};
+
+exports.hot = function(req, res, next) {
+    res.render('stories/index', {
+        page: 'hot'
+    });
+};
+
+exports.submitNew = function(req,res, next) {
+    res.render('stories/submit-story', {
+        page: 'submit'
+    });
+};
+
+exports.search = function(req, res, next) {
+    res.render('stories/search-stories', {
+        page: 'search'
+    });
+};
+
+exports.recent = function(req, res, next) {
+    res.render('stories/index', {
+        page: 'recent'
+    });
+};
+
+exports.specificView = function(req, res, next) {
+    var whichView = req.params.type;
+    res.render('stories/index', {
+        page: whichView
     });
 };
 

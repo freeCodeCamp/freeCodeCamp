@@ -1,15 +1,21 @@
 .col-xs-12
     .btn-group.input-group.btn-group-justified(data-toggle='buttons')
-        label.btn.btn-primary.btn-big
-            input#option1(type='radio', name='options')
+        label.btn.btn-primary.btn-big(class="#{ page === 'hot' ? 'active' : '' }")
+            input#option1(href='/stories/hot', type='radio', name='options')
             | Hot
-        label.btn.btn-primary.active.btn-big
-            input#option2(type='radio', name='options')
+        label.btn.btn-primary.btn-big(class="#{ page === 'recent' ? 'active' : '' }")
+            input#option2(href='/stories/recent', type='radio', name='options')
             | New
-        label.btn.btn-primary.btn-big
-            input#option3(type='radio', name='options')
+        label.btn.btn-primary.btn-big(class="#{ page === 'submit' ? 'active' : '' }")
+            input#option3(href='/stories/submit', type='radio', name='options')
             | Submit
-        label.btn.btn-primary.btn-big
-            input#option3(type='radio', name='options')
+        label.btn.btn-primary.btn-big(class="#{ page === 'search' ? 'active' : '' }")
+            input#option4(href='/stories/search', type='radio', name='options')
             | Search
-    .spacer
+    script.
+        $('label').on('click', function() {
+            console.log('clicked');
+            window.location = ($(this).children('input').attr('href'));
+        });
+
+.spacer

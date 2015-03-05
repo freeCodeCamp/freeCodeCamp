@@ -281,17 +281,20 @@ app.post(
  * Main routes.
  */
 app.get(
-    '/stories/',
-    storyController.index
-);
-app.get(
-    '/stories/index',
-    storyController.json
+    '/stories/hotStories',
+    storyController.hotJSON
 );
 
-app.post(
-    '/stories/comment/submit',
-    storyController.commentSubmit
+app.get(
+    '/stories/recentStories',
+    storyController.recentJSON
+);
+
+app.get(
+    '/stories/',
+    function(req, res) {
+        res.redirect(302, '/stories/hot');
+    }
 );
 
 app.get(
@@ -300,14 +303,42 @@ app.get(
 );
 
 app.post(
+    '/stories/comment/submit',
+    storyController.commentSubmit
+);
+
+app.get(
+    '/stories/submit',
+    storyController.submitNew
+);
+
+app.post(
     '/stories/submit',
     storyController.storySubmission
+);
+
+
+app.get(
+    '/stories/hot',
+    storyController.hot
+);
+
+app.get(
+    '/stories/recent',
+    storyController.recent
+);
+
+
+app.get(
+    '/stories/search',
+    storyController.search
 );
 
 app.get(
     '/stories/:storyName',
     storyController.returnIndividualStory
 );
+
 app.post(
     '/stories/upvote/',
     storyController.upvote

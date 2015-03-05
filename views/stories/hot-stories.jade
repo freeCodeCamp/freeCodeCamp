@@ -7,7 +7,7 @@ h3
                 return name.toLowerCase().replace(/\s/g, '-');
             }
             $.ajax({
-                url: '/stories/index',
+                url: '/stories/hotStories',
                 type: 'GET'
             })
                     .success(
