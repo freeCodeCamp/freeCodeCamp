@@ -183,6 +183,33 @@ $(document).ready(function() {
     };
 
     $('#story-submit').on('click', storySubmitButtonHandler);
+
+    var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
+        var data = $('#comment-box').val();
+
+        $('#comment-button').unbind('click');
+        $.post('/stories/comment/submit',
+            {
+                data: {
+                    associatedPost: storyId,
+                    body: data,
+                    author: {
+                        picture: user.profile.picture,
+                        userId: user._id,
+                        username: user.profile.username
+                    }
+                }
+            })
+            .fail(function (xhr, textStatus, errorThrown) {
+                $('#comment-button').bind('click', commentSubmitButtonHandler);
+            })
+            .done(function (data, textStatus, xhr) {
+                //window.location = '/stories/' + JSON.parse(data).storyLink;
+            });
+
+    };
+
+    $('#comment-button').on('click', commentSubmitButtonHandler);
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);

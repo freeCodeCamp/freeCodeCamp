@@ -100,16 +100,6 @@ exports.comments = function(req, res, next) {
     });
 };
 
-/*
-
- author: {},
- comments: {
- type: Array,
- default: []
- },
- image:
- */
-
 exports.storySubmission = function(req, res, next) {
     var data = req.body.data;
     var storyLink = data.headline
@@ -145,5 +135,39 @@ exports.storySubmission = function(req, res, next) {
         res.send(JSON.stringify({
             storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
         }));
+    });
+};
+
+exports.commentSubmit = function(req, res, next) {
+    var data = req.body.data;
+    var comment = new Comment({
+        associatedPost: data.associatedPost,
+        body: data.body,
+        rank: 0,
+        upvotes: 0,
+        author: data.author,
+        comments: []
+    });
+
+    comment.save(function(err, data) {
+        if (err) {
+            return res.status(500);
+        }
+        debug('this is data from save', data);
+        Story.find({'_id': comment.associatedPost}, function(err, associatedStory) {
+            if (err) {
+                return res.status(500);
+            }
+            associatedStory = associatedStory.pop();
+            if (associatedStory) {
+                associatedStory.comments.push(data._id);
+                associatedStory.save(function(err, data) {
+                    if (err) {
+                        res.status(500);
+                    }
+                    res.send(true);
+                });
+            }
+        });
     });
 };
