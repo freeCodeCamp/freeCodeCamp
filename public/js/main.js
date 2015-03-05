@@ -55,7 +55,7 @@ $(document).ready(function() {
                 if (res) {
                     window.location.href = '/bonfires'
                 }
-            })
+            });
         }
     }
 
@@ -148,6 +148,41 @@ $(document).ready(function() {
         }
     };
     $('#upvote').on('click', upvoteHandler);
+
+    var storySubmitButtonHandler = function storySubmitButtonHandler() {
+        var data = $('#story-submission-form :input');
+        var link = $(data[0]).val();
+        var headline = $(data[1]).val();
+        $('#story-submit').unbind('click');
+        $.post('/stories/submit',
+            {
+                data: {
+                    link: link,
+                    headline: headline,
+                    timePosted: Date.now(),
+                    description: 'TODO',
+
+                    rank: 0,
+                    upVotes: 0,
+                    author: {
+                        picture: user.profile.picture,
+                        userId: user._id,
+                        username: user.profile.username
+                    },
+                    comments: [],
+                    image: 'http://rossmounce.co.uk/wp-content/uploads/2014/11/grumpy-cat-no-1.jpg'
+                }
+            })
+            .fail(function (xhr, textStatus, errorThrown) {
+                $('#story-submit').bind('click', storySubmitButtonHandler);
+            })
+            .done(function (data, textStatus, xhr) {
+                window.location = '/stories/' + JSON.parse(data).storyLink;
+            });
+
+    };
+
+    $('#story-submit').on('click', storySubmitButtonHandler);
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);

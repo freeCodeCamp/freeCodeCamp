@@ -14,7 +14,7 @@ var storySchema = new mongoose.Schema({
         type: String,
         unique: false
     },
-    body: {
+    description: {
         type: String,
         unique: false
     },
@@ -30,6 +30,14 @@ var storySchema = new mongoose.Schema({
     comments: {
         type: Array,
         default: []
+    },
+    image: {
+        type: String,
+        default: ''
+    },
+    storyLink: {
+        type: String,
+        default: ''
     }
 });
 

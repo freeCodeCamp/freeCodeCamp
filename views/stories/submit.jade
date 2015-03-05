@@ -1,11 +1,18 @@
 .col-xs-12
-    form.form-horizontal
-        .form-group.col-xs-12.text-left
-            .col-xs-1.col-xs-offset-2
-                label.control-label(for='name') Link
-            .col-xs-9
-                input.form-control(placeholder='Paste your link here', name='Link')
-        .form-group
-            label.col-xs-1.col-xs-offset-2.control-label(for='name') Title
-            .col-xs-9
-                input.form-control(placeholder='Type a headline for your link here', name='Title')
+    form.form-horizontal.control-label-story-submission#story-submission-form
+        .col-xs-2.img-story-post
+            img.img-responsive(src='#{user.profile.picture}')
+        .col-xs-10
+            .form-group
+                .col-xs-1
+                    label.control-label.control-label-story-submission(for='name') Link
+                .col-xs-11
+                    input.form-control(placeholder='Paste your link here', name='Link')
+            .form-group
+                .col-xs-1
+                    label.control-label.control-label-story-submission(for='name') Title
+                .col-xs-11
+                    input.form-control(placeholder='Type a headline for your link here', name='Title')
+            .form-group
+                .btn.btn-large.btn-block.btn-primary#story-submit Submit
+.spacer

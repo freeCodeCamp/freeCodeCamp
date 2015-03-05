@@ -294,6 +294,11 @@ app.get(
     storyController.comments
 );
 
+app.post(
+    '/stories/submit',
+    storyController.storySubmission
+);
+
 app.get(
     '/stories/:storyName',
     storyController.returnIndividualStory
