@@ -1,12 +1,17 @@
 var React = require('react');
-var TestFire = require('./TestFire');
+var SidePanel = require('./SidePanel');
+
+// structure of components
+// SidePanel
+// -codemirror console
+// -testOutput
+// CodeMirror
 
 var Bonfire = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Hello Bonfire</h1>
-        <TestFire />
+        <SidePanel />
       </div>
     );
   }
