@@ -35,37 +35,10 @@ var SidePanel = React.createClass({
     };
   },
 
-  _handleClick: function() {
+  _toggleMoreInfo: function() {
     this.setState({
-      isMoreInfoOpen: !this.state.dropDownIsOpen
+      isMoreInfoOpen: !this.state.isMoreInfoOpen
     });
-  },
-
-  _renderDropdown: function () {
-    return (
-      <div style={{ background: '#ccc' }}>
-      </div>
-    );
-  },
-
-  _renderHover: function() {
-    return (
-      <Row className='hide'>
-        <Col xs={ 12 }>
-          <p>Your goal is to fix the failing test.</p>
-          <p>First, run all the tests by clicking 'Run code' or by pressing Control + Enter</p>
-          <p>The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire.</p>
-          <p>Make this function return true no matter what.</p>
-          <Button
-            bsStyle='primary'
-            block={ true }
-            className='btn-primary-ghost'>
-            <span className='ion-arrow-up-b'></span>
-            Less information
-          </Button>
-        </Col>
-      </Row>
-    );
   },
 
   _renderFlames: function() {
@@ -84,8 +57,22 @@ var SidePanel = React.createClass({
     });
   },
 
+  _renderMoreInfo: function() {
+    var details = this.props.details.map((sentance, index) => {
+      return <p key={ index }>{ sentance }</p>;
+    });
+
+    return (
+      <Row>
+        <Col xs={ 12 }>
+          { details }
+        </Col>
+      </Row>
+    );
+  },
+
   render: function() {
-    var dropdown = this.state.isMoreInfoOpen ? this._renderInfo() : null;
+    var isMoreInfoOpen = this.state.isMoreInfoOpen;
 
     return (
       <Grid>
@@ -100,10 +87,11 @@ var SidePanel = React.createClass({
           <Row>
             <Col xs={ 12 }>
               <div className='bonfire-instructions'>
-                <p>Click the button below for further instructions.</p>
+                <p>{ this.props.brief }</p>
                 <div>
-                  { dropdown }
+                  { isMoreInfoOpen ? this._renderMoreInfo() : null }
                   <Button
+                    onClick={ this._toggleMoreInfo }
                     bsStyle='primary'
                     block={ true }
                     className='btn-primary-ghost'>

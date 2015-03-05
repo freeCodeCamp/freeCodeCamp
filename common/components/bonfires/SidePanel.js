@@ -35,37 +35,10 @@ var SidePanel = React.createClass({displayName: "SidePanel",
     };
   },
 
-  _handleClick: function() {
+  _toggleMoreInfo: function() {
     this.setState({
-      isMoreInfoOpen: !this.state.dropDownIsOpen
+      isMoreInfoOpen: !this.state.isMoreInfoOpen
     });
-  },
-
-  _renderDropdown: function () {
-    return (
-      React.createElement("div", {style: { background: '#ccc'}}
-      )
-    );
-  },
-
-  _renderHover: function() {
-    return (
-      React.createElement(Row, {className: "hide"}, 
-        React.createElement(Col, {xs:  12 }, 
-          React.createElement("p", null, "Your goal is to fix the failing test."), 
-          React.createElement("p", null, "First, run all the tests by clicking 'Run code' or by pressing Control + Enter"), 
-          React.createElement("p", null, "The failing test is in red. Fix the code so that all tests pass. Then you can move on to the next Bonfire."), 
-          React.createElement("p", null, "Make this function return true no matter what."), 
-          React.createElement(Button, {
-            bsStyle: "primary", 
-            block:  true, 
-            className: "btn-primary-ghost"}, 
-            React.createElement("span", {className: "ion-arrow-up-b"}), 
-            "Less information"
-          )
-        )
-      )
-    );
   },
 
   _renderFlames: function() {
@@ -84,8 +57,22 @@ var SidePanel = React.createClass({displayName: "SidePanel",
     });
   },
 
+  _renderMoreInfo: function() {
+    var details = this.props.details.map(function(sentance, index)  {
+      return React.createElement("p", {key:  index },  sentance );
+    });
+
+    return (
+      React.createElement(Row, null, 
+        React.createElement(Col, {xs:  12 }, 
+           details 
+        )
+      )
+    );
+  },
+
   render: function() {
-    var dropdown = this.state.isMoreInfoOpen ? this._renderInfo() : null;
+    var isMoreInfoOpen = this.state.isMoreInfoOpen;
 
     return (
       React.createElement(Grid, null, 
@@ -100,10 +87,11 @@ var SidePanel = React.createClass({displayName: "SidePanel",
           React.createElement(Row, null, 
             React.createElement(Col, {xs:  12 }, 
               React.createElement("div", {className: "bonfire-instructions"}, 
-                React.createElement("p", null, "Click the button below for further instructions."), 
+                React.createElement("p", null,  this.props.brief), 
                 React.createElement("div", null, 
-                   dropdown, 
+                   isMoreInfoOpen ? this._renderMoreInfo() : null, 
                   React.createElement(Button, {
+                    onClick:  this._toggleMoreInfo, 
                     bsStyle: "primary", 
                     block:  true, 
                     className: "btn-primary-ghost"}, 
