@@ -29,9 +29,11 @@ exports.index = function(req, res, next) {
 exports.returnIndividualStory = function(req, res, next) {
     var dashedName = req.params.storyName;
 
-    storyName = dashedName.replace(/\-/g, ' ');
+    var storyName = dashedName.replace(/\-/g, ' ');
 
-    Story.find({'headline' : new RegExp(storyName, 'i')}, function(err, story) {
+    debug('looking for %s', storyName);
+
+    Story.find({'storyLink' : new RegExp(storyName, 'i')}, function(err, story) {
         if (err) {
             next(err);
         }
@@ -134,11 +136,10 @@ exports.storySubmission = function(req, res, next) {
 
     story.save(function(err, data) {
         if (err) {
-            throw err;
+            return res.status(500);
         }
         res.send(JSON.stringify({
             storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
         }));
     });
-
 };

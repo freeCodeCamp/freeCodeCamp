@@ -177,9 +177,7 @@ $(document).ready(function() {
                 $('#story-submit').bind('click', storySubmitButtonHandler);
             })
             .done(function (data, textStatus, xhr) {
-                window.dataReturn = data;
-                console.log(data);
-                window.location = '/stories/' + data.storyLink;
+                window.location = '/stories/' + JSON.parse(data).storyLink;
             });
 
     };
