@@ -289,6 +289,11 @@ app.get(
     storyController.json
 );
 
+app.post(
+    '/stories/comment/submit',
+    storyController.commentSubmit
+);
+
 app.get(
     '/stories/comments/:id',
     storyController.comments
