@@ -33,13 +33,13 @@ exports.hot = function(req, res, next) {
 };
 
 exports.submitNew = function(req,res, next) {
-    res.render('stories/submit-story', {
+    res.render('stories/index', {
         page: 'submit'
     });
 };
 
 exports.search = function(req, res, next) {
-    res.render('stories/search-stories', {
+    res.render('stories/index', {
         page: 'search'
     });
 };

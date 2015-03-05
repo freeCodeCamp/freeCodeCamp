@@ -1,4 +1,5 @@
-#story-submit.col-xs-12
+.spacer
+.col-xs-12
     form.form-horizontal.control-label-story-submission#story-submission-form
         .col-xs-2.img-story-post
             img.img-responsive(src='#{user.profile.picture}')
@@ -13,6 +14,6 @@
                     label.control-label.control-label-story-submission(for='name') Title
                 .col-xs-11
                     input.form-control(placeholder='Type a headline for your link here', name='Title')
+            .spacer
             .form-group
-                .btn.btn-large.btn-block.btn-primary#story-submit Submit
-.spacer
+                .btn.btn-big.btn-block.btn-primary#story-submit Submit
