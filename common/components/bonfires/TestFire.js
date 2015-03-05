@@ -1,48 +1,56 @@
 var React = require('react');
 
 var TestFire = React.createClass({displayName: "TestFire",
-  getInitialState : function() {
+
+  getInitialState: function() {
     return {
       dropDownIsOpen : false,
       hoverIsShown: false
     };
   },
-  handleClick : function() {
+
+  _handleClick: function() {
     this.setState({
       dropDownIsOpen : !this.state.dropDownIsOpen
     });
   },
-  handleHover: function() {
+
+  _handleHover: function() {
     this.setState({
       hoverIsShown: !this.state.hoverIsShown
     });
   },
-  renderDropdown: function () {
+
+  _renderDropdown: function () {
     return (
-      React.createElement("div", {style: { background: "#ccc"}}, 
+      React.createElement("div", {style: { background: '#ccc'}}, 
       [1,2,3].map(function(elem)  {return elem * elem;}), ";" + ' ' +
         "I am a dropdown!"
       )
     );
   },
-  renderHover: function() {
+
+  _renderHover: function() {
     return (
-      React.createElement("div", {style: { background: "#aca"}}, 
+      React.createElement("div", {style: { background: '#aca'}}, 
         "I'm a hover!"
       )
     );
   },
-  render : function() {
-    var dropdown = this.state.dropDownIsOpen ? this.renderDropdown() : null;
-    var hover = this.state.hoverIsShown ? this.renderHover() : null;
+
+  render: function() {
+    var dropdown = this.state.dropDownIsOpen ? this._renderDropdown() : null;
+    var hover = this.state.hoverIsShown ? this._renderHover() : null;
 
     return (
-      React.createElement("div", {onClick: this.handleClick, onMouseEnter: this.handleHover, onMouseLeave: this.handleHover}, 
+      React.createElement("div", {
+        onClick: this._handleClick, 
+        onMouseEnter: this._handleHover, 
+        onMouseLeave: this._handleHover}, 
         "Click me!", 
-                        dropdown, 
-                        hover
+        dropdown, 
+        hover
       )
-
     );
   }
 });
