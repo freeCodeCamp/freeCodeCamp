@@ -1,6 +1,6 @@
 {
   "ecmaFeatures": {
-    "arrowFunction": true,
+    "arrowFunctions": true,
     "blockBindings": true,
     "destructuring": true,
     "superInFunctions": true,
