@@ -1,8 +1,8 @@
-h6
-    ul#comment-list.comment-list
+h3.text-left
+    div#comment-list.comment-list
 
         script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
-
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js")
         script.
             var commentDetails;
             R.forEach(function displayComments(comment) {
@@ -20,11 +20,40 @@ h6
                     success: function (data, textStatus, xhr) {
                         console.log(data);
                         commentDetails = data;
-                        var li = document.createElement('li');
-                        $(li)
-                                .html("<div class='row text-left'><div class='col-xs-3 text-right'><i class='ion-arrow-up-b'></i></div><div class='col-xs-6'>" + commentDetails.body +
-                                "</div><div class='col-xs-3'></div></div><div class='row text-left'><div class='col-xs-3 text-right'>" + commentDetails.rank + "</div><div class='col-xs-6'>"
-                                + commentDetails.author.username + "</div><div class='col-xs-3'></div></div></li>")
+                        var div = document.createElement('div');
+                        $(div)
+                                .html("" +
+                                    "<div class='row'>" +
+                                        "<div class='col-xs-3 col-sm-1 text-center'>" +
+                                            "<div class='row'>" +
+                                                "<div class='col-xs-12 big-ion-up-arrow'>" +
+                                                    "<i class='ion-arrow-up-b'></i>" +
+                                                "</div>" +
+                                            "</div>" +
+                                            "<div class='row'>" +
+                                                "<div class='col-xs-12'>" +
+                                                    commentDetails.rank +
+                                                "</div>" +
+                                            "</div>" +
+                                        "</div>" +
+                                        "<div class='col-xs-2 col-sm-1'>" +
+                                            "<img class='img-responsive' src=" + commentDetails.author.picture + "></img>" +
+                                        "</div>" +
+                                        "<div class='col-xs-7 col-sm-10'>" +
+                                            "<div class='row'>" +
+                                                "<div class='col-xs-12'>" +
+                                                    commentDetails.body +
+                                                "</div>" +
+                                            "</div>" +
+                                            "<div class='row'>" +
+                                                "<div class='col-xs-12'>" +
+                                                    "commented " + moment(commentDetails.commentedOn).fromNow() + " by " +
+                                                    "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a>" +
+                                                "</div>" +
+                                            "</div>" +
+                                        "</div>" +
+                                    "</div>" +
+                                "</div>")
                                 .appendTo($('#comment-list'));
                     }
 

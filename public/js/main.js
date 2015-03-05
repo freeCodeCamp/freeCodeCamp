@@ -143,6 +143,8 @@ $(document).ready(function() {
                 .done(function (data, textStatus, xhr) {
                     $('#storyRank').text(data.rank);
                 });
+        } else {
+            console.log('Can\'t upvote because you\'ve already upvoted');
         }
     };
     $('#upvote').on('click', upvoteHandler);

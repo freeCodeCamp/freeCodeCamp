@@ -10,12 +10,13 @@ block content
         .panel-heading.text-center Camper News
         .panel-body
             h3.row.text-left.negative-10
-                .col-xs-3.col-sm-1
+                .col-xs-3.col-sm-1.text-center
                     .row.negative-5
                         .col-xs-12.big-ion-up-arrow
-                            i.ion-arrow-up-b
+                            a#upvote
+                                i.ion-arrow-up-b
                         h3.story-up-votes
-                            span= rank
+                            span#storyRank= rank
                 .col-xs-2.col-sm-1
                     img(src="#{author.picture}", class='img-responsive')
                 .col-xs-7.col-sm-10
@@ -29,39 +30,15 @@ block content
                                 @#{author.username}
 
 
+            .col-xs-12
+                h3.row
+                    .col-xs-12
+                        textarea#comment-box.form-control(name="comment-box", rows=5)
+                h3.row.btn-nav.text-center
+                    .col-xs-6.col-xs-offset-3
+                        .btn.btn-block.btn-primary#comment-button Comment
 
-
-
-
-
-
-
-
-
-    //        .col-xs-2(style='position: relative; top: 50%; -webkit-transform: translateY(50%); -ms-transform: translateY(50%);transform: translateY(50%);')
-    //            h3
-    //                a#upvote
-    //                    i.ion-arrow-up-b
-    //        .col-xs-10.text-center
-    //            h1= title
-    //    .row
-    //        .col-xs-2
-    //            h3#storyRank= rank
-    //
-    //        .col-xs-10.text-center
-    //            h3= body
-    //.row.negative-35
-    //    h3.col-xs-12.col-md-6.col-lg-5.text-center Comments
-    //.row
-    //    .col-xs-12.col-md-6.col-lg-5
-    //        textarea#comment-box.form-control(name="comment-box", rows=5)
-    //if (user)
-    //    script.
-    //        var user = !{JSON.stringify(user)};
-    //        $('#upvote').unbind('click');
-    //.row
-    //    .col-xs-12.col-md-7.col-lg-4.text-left
-    //        include ./comments
+            include ./comments
 
 //
     title: story.headline,
