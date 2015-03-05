@@ -119,10 +119,14 @@ exports.storySubmission = function(req, res, next) {
         .replace(/[^a-z0-9]/gi, ' ')
         .replace(/\s+/g, ' ')
         .toLowerCase();
+    var link = data.link;
+    if (link.search(/^https?:\/\//g) === -1) {
+        link = 'http://' + link;
+    }
     var story = new Story({
         headline: data.headline,
         timePosted: Date.now(),
-        link: data.link,
+        link: link,
         description: data.description,
         rank: 0,
         upVotes: 0,
