@@ -6,5 +6,12 @@ block content
     .panel.panel-info
         .panel-heading.text-center Camper News
         .panel-body
-            include ./submit
-            include ./stories
+            include ./news-nav
+            if (page === 'hot')
+                include ./hot-stories
+            if (page === 'new')
+                include ./new-stories
+            if (page === 'submit')
+                include ./submit-story
+            if (page === 'search')
+                include ./search-stories
