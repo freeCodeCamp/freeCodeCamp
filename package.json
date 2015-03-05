@@ -65,6 +65,7 @@
     "bower-main-files": "0.0.4",
     "browser-sync": "^2.2.1",
     "envify": "^3.2.0",
+    "eslint-plugin-react": "^1.4.1",
     "gulp": "^3.8.11",
     "gulp-inject": "^1.2.0",
     "gulp-nodemon": "^1.0.5",

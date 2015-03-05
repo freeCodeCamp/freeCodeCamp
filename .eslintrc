@@ -1,5 +1,10 @@
 {
   "ecmaFeatures": {
+    "arrowFunction": true,
+    "blockBindings": true,
+    "destructuring": true,
+    "superInFunctions": true,
+    "templateStrings": true,
     "jsx": true
   },
   "env": {
@@ -215,6 +220,16 @@
     "max-params": 0,
     "max-statements": 0,
     "no-bitwise": 1,
-    "no-plusplus": 0
+    "no-plusplus": 0,
+
+    "react/no-multi-comp": 2,
+    "react/prop-types": 2,
+    "react/display-name": 0,
+    "react/wrap-multilines": 1,
+    "react/self-closing-comp": 1,
+    "react/no-did-mount-set-state": 1,
+    "react/no-did-update-set-state": 1,
+    "react/jsx-uses-react": 1,
+    "react/react-in-jsx-scope": 1
   }
 }
