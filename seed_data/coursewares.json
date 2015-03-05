@@ -2620,5 +2620,27 @@
       "function welcomeToBooleans() {\n  // Good luck!\n  return false;\n}\n\nwelcomeToBooleans();"
     ],
     "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c441eddfaeb5bdef",
+    "name": "Meet Booleans",
+    "difficulty": "9.98",
+    "description": [
+      "Return true",
+      "Some additional directions"
+    ],
+    "tests": [
+      "expect(welcomeToBooleans()).to.be.a(\"boolean\");",
+      "expect(welcomeToBooleans()).to.be.true;"
+    ],
+    "challengeSeed": [
+      "function welcomeToBooleans() {",
+      "// Good luck!",
+      "return false;",
+      "}",
+      "",
+      "welcomeToBooleans();"
+    ],
+    "challengeType": 1
   }
 ]
