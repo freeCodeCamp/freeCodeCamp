@@ -100,7 +100,7 @@ exports.returnIndividualStory = function(req, res, next) {
 
 exports.getStories = function(req, res, next) {
     MongoClient.connect(secrets.db, function(err, database) {
-        db = database;
+        var db = database;
         debug('this is data', req.body.data.searchValue);
         db.collection('stories').find({
             "$text": {
@@ -127,19 +127,13 @@ exports.getStories = function(req, res, next) {
                 }
             }
         }).toArray(function(err, items) {
-            debug('items', items);
-            return res.json(items);
+            if (items.length !== 0) {
+                debug('items found with full text', items);
+                return res.json(items);
+            }
+            return res.status(404);
         });
     });
-        //Story.find({'headline': new RegExp(req.body.data.searchValue, 'i')}, function (err, results) {
-        //    if (err) {
-        //        res.status(500);
-        //    }
-        //    debug('results are', results);
-        //
-        //    res.json(results);
-        //});
-    //}a);
 };
 
 exports.upvote = function(req, res, next) {
