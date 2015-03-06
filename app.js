@@ -349,6 +349,11 @@ app.post(
     storyController.upvote
 );
 
+app.post(
+    '/stories/getURLMetaData',
+    resourcesController.getMetaData
+);
+
 /**
  * Challenge related routes
  */

@@ -43,6 +43,7 @@
     "method-override": "^2.3.0",
     "moment": "^2.8.4",
     "mongoose": "^3.8.19",
+    "mongoose-text-search": "0.0.2",
     "morgan": "^1.5.0",
     "newrelic": "^1.13.3",
     "node": "0.0.0",

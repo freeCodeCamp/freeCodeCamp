@@ -8,7 +8,8 @@ var User = require('../models/User'),
     coursewares = require('../seed_data/coursewares.json');
     Client = require('node-rest-client').Client,
     client = new Client(),
-    debug = require('debug')('freecc:cntr:bonfires');
+    debug = require('debug')('freecc:cntr:bonfires'),
+    cheerio = require('cheerio');
 
 /**
  * GET /
@@ -119,13 +120,13 @@ module.exports = {
         });
     },
     trelloCalls: function(req, res) {
-        client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, res2) {
+        client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello) {
             trello = trello ? (JSON.parse(trello)).length : "Can't connect to to Trello";
             res.send({"trello": trello});
         });
     },
     bloggerCalls: function(req, res) {
-        client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (blog, res5) {
+        client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (blog) {
             var blog = blog.length > 100 ? JSON.parse(blog) : "";
             res.send({
                 blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
@@ -251,8 +252,30 @@ module.exports = {
     },
     whichEnvironment: function() {
         return process.env.NODE_ENV;
-    }
+    },
+    getMetaData: function(req, res, next) {
+        var url = req.body.data.url;
+        var result = {};
 
+        client.get(url, function(siteInfo) {
+            var $ = cheerio.load(siteInfo);
+
+            var meta = $('meta');
+            $(meta, this).each(function () {
+                var prop = $(this).attr("property"), key, value;
+                if (prop && prop.substring(0, ns.length) === ns) {
+                    key = prop.substring(ns.length);
+                    value = $(this).attr("content");
+                    console.log("Found OGP data %s=%s", key, value);
+                    result[key] = result[key] || [];
+                    result[key].push(value);
+                }
+            });
+
+            res.json(JSON.stringify(result));
+
+        });
+    }
 };
 
 
