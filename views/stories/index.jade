@@ -1,8 +1,10 @@
 extends ../layout
 block content
+    script(src='/js/lib/moment/moment.js')
     script.
         var challengeName = 'Camper News';
         var user = !{JSON.stringify(user)};
+        var page = !{JSON.stringify(page)};
     .panel.panel-info
         .panel-heading.text-center Camper News
         .panel-body
