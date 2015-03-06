@@ -1,11 +1,13 @@
 var User = require('../models/User'),
+    Challenge = require('./../models/Challenge'),
+    Bonfire = require('./../models/Bonfire'),
     resources = require('./resources.json'),
     questions = resources.questions,
     steps = resources.steps,
     secrets = require('./../config/secrets'),
-    Challenge = require('./../models/Challenge'),
-    bonfires = require('../seed_data/bonfires.json');
-    coursewares = require('../seed_data/coursewares.json');
+    bonfires = require('../seed_data/bonfires.json'),
+    coursewares = require('../seed_data/coursewares.json'),
+    moment = require('moment'),
     Client = require('node-rest-client').Client,
     client = new Client(),
     debug = require('debug')('freecc:cntr:bonfires');
@@ -43,6 +45,40 @@ module.exports = {
                                 all: all
                             });
                         });
+                    });
+                });
+            });
+        });
+    },
+
+    sitemap: function sitemap(req, res, next) {
+        var appUrl = 'http://www.freecodecamp.com';
+        var now = moment(new Date).format('YYYY-MM-DD');
+
+        errors = {};
+        User.find({'profile.username': {'$ne': '' }}, function(err, users) {
+            if (err) {
+                debug('User err: ', err);
+                next(err);
+            }
+            console.log('user count', users.length);
+            Challenge.find({}, function (err, challenges) {
+                if (err) {
+                    debug('User err: ', err);
+                    next(err);
+                }
+                Bonfire.find({}, function (err, bonfires) {
+                    if (err) {
+                        debug('User err: ', err);
+                        next(err);
+                    }
+                    res.header('Content-Type', 'application/xml');
+                    res.render('resources/sitemap', {
+                        appUrl: appUrl,
+                        now: now,
+                        users: users,
+                        challenges: challenges,
+                        bonfires: bonfires
                     });
                 });
             });

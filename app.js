@@ -334,7 +334,7 @@ app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
-
+app.get('/sitemap', resourcesController.sitemap);
 
 /**
  * API examples routes.
