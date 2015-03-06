@@ -208,7 +208,7 @@ $(document).ready(function() {
                 $('#comment-button').bind('click', commentSubmitButtonHandler);
             })
             .done(function (data, textStatus, xhr) {
-                //window.location = '/stories/' + JSON.parse(data).storyLink;
+                window.location.reload();
             });
 
     };
