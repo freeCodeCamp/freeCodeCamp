@@ -4,7 +4,10 @@ var R = require('ramda'),
     Comment = require('./../models/Comment'),
     User = require('./../models/User'),
     moment = require('../public/js/lib/moment/moment.js'),
-    resources = require('./resources');
+    resources = require('./resources'),
+    mongodb = require('mongodb'),
+    MongoClient = mongodb.MongoClient,
+    secrets = require('../config/secrets');
 
 exports.hotJSON = function(req, res, next) {
     var story = Story.find({}).sort({'rank': -1});
@@ -96,15 +99,47 @@ exports.returnIndividualStory = function(req, res, next) {
 };
 
 exports.getStories = function(req, res, next) {
-    debug('this is data', req.body.data.searchValue);
-  Story.find({'headline': new RegExp(req.body.data.searchValue, 'i')}, function(err, results) {
-      if (err) {
-          res.status(500);
-      }
-      debug('results are', results);
-
-      res.json(results);
-  });
+    MongoClient.connect(secrets.db, function(err, database) {
+        db = database;
+        debug('this is data', req.body.data.searchValue);
+        db.collection('stories').find({
+            "$text": {
+                "$search": req.body.data.searchValue
+            }
+        }, {
+            headline: 1,
+            timePosted: 1,
+            link: 1,
+            description: 1,
+            rank: 1,
+            upVotes: 1,
+            author: 1,
+            comments: 1,
+            image: 1,
+            storyLink: 1,
+            textScore: {
+                $meta: "textScore"
+            }
+        }, {
+            sort: {
+                textScore: {
+                    $meta: "textScore"
+                }
+            }
+        }).toArray(function(err, items) {
+            debug('items', items);
+            return res.json(items);
+        });
+    });
+        //Story.find({'headline': new RegExp(req.body.data.searchValue, 'i')}, function (err, results) {
+        //    if (err) {
+        //        res.status(500);
+        //    }
+        //    debug('results are', results);
+        //
+        //    res.json(results);
+        //});
+    //}a);
 };
 
 exports.upvote = function(req, res, next) {

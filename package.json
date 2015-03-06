@@ -42,6 +42,7 @@
     "lusca": "^1.0.2",
     "method-override": "^2.3.0",
     "moment": "^2.8.4",
+    "mongodb": "^1.4.33",
     "mongoose": "^3.8.19",
     "mongoose-text-search": "0.0.2",
     "morgan": "^1.5.0",
