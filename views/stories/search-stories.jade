@@ -1,0 +1,58 @@
+input#searchArea(type=text)
+button#searchbutton
+#story-list
+    ul#stories
+script.
+    $('#searchbutton').on('click', function() {
+        $('#stories').empty();
+        var searchTerm = $('#searchArea').val();
+        var getLinkedName = function getLinkedName(name) {
+            return name.toLowerCase().replace(/\s/g, '-');
+        }
+        $.post('/stories/search',
+                {
+                    data: {
+                        searchValue: searchTerm
+                        }
+                })
+                .fail(function (xhr, textStatus, errorThrown) {
+                    console.log('failure');
+                    //$('#comment-button').bind('click', commentSubmitButtonHandler);
+                })
+                .done(function (data, textStatus, xhr) {
+                    console.log(data);
+                    for (var i = 0; i < data.length; i++) {
+                        var li = document.createElement('li');
+                        var linkedName = getLinkedName(data[i].storyLink);
+                        var rank = data[i].rank;
+
+                        $(li).html(
+                                "<div class='row text-left'>" +
+                                "<div class='col-xs-3 col-sm-1'>" +
+                                "<div class='story-up-votes'>" +
+                                "<span>" + rank + "</span>" +
+                                "</div>" +
+                                "</div>" +
+                                "<div class='col-xs-2 col-sm-1'>" +
+                                "<img src='" + data[i].author.picture + "' class='img-responsive'/>" +
+                                "</div>" +
+                                "<div class='col-xs-7 col-sm-10'>" +
+                                "<div class='row'>" +
+                                "<div class='col-xs-12'>" +
+                                "<a href='/stories/" + linkedName + "'>"
+                                + data[i].storyLink +
+                                "</a>" +
+                                "</div>" +
+                                "<div class='col-xs-12'>" +
+                                "<span>Posted " +
+                                moment(data[i].timePosted).fromNow() +
+                                " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +
+                                "</div>" +
+                                "</div>" +
+                                "</div>" +
+                                "</div>" +
+                                "</li>");
+                        $(li).appendTo($('#stories'));
+                    }
+                });
+    });

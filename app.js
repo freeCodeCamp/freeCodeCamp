@@ -334,6 +334,11 @@ app.get(
     storyController.search
 );
 
+app.post(
+    '/stories/search',
+    storyController.getStories
+);
+
 app.get(
     '/stories/:storyName',
     storyController.returnIndividualStory

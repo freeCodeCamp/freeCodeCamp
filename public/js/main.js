@@ -153,6 +153,10 @@ $(document).ready(function() {
         var data = $('#story-submission-form :input');
         var link = $(data[0]).val();
         var headline = $(data[1]).val();
+        var userDataForUpvote = {
+            upVotedBy: user._id,
+            upVotedByUsername: user.profile.username
+        };
         $('#story-submit').unbind('click');
         $.post('/stories/submit',
             {
@@ -162,8 +166,8 @@ $(document).ready(function() {
                     timePosted: Date.now(),
                     description: 'TODO',
 
-                    rank: 0,
-                    upVotes: 0,
+                    rank: 1,
+                    upVotes: [userDataForUpvote],
                     author: {
                         picture: user.profile.picture,
                         userId: user._id,

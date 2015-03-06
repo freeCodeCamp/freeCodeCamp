@@ -50,12 +50,6 @@ exports.recent = function(req, res, next) {
     });
 };
 
-exports.specificView = function(req, res, next) {
-    var whichView = req.params.type;
-    res.render('stories/index', {
-        page: whichView
-    });
-};
 
 exports.returnIndividualStory = function(req, res, next) {
     var dashedName = req.params.storyName;
@@ -90,7 +84,7 @@ exports.returnIndividualStory = function(req, res, next) {
             link: story.link,
             author: story.author,
             description: story.description,
-            rank: story.rank,
+            rank: story.upVotes.length,
             upVotes: story.upVotes,
             comments: story.comments,
             id: story._id,
@@ -99,6 +93,18 @@ exports.returnIndividualStory = function(req, res, next) {
             image: story.image
         });
     });
+};
+
+exports.getStories = function(req, res, next) {
+    debug('this is data', req.body.data.searchValue);
+  Story.find({'headline': new RegExp(req.body.data.searchValue, 'i')}, function(err, results) {
+      if (err) {
+          res.status(500);
+      }
+      debug('results are', results);
+
+      res.json(results);
+  });
 };
 
 exports.upvote = function(req, res, next) {
@@ -149,8 +155,8 @@ exports.storySubmission = function(req, res, next) {
         timePosted: Date.now(),
         link: link,
         description: data.description,
-        rank: 0,
-        upVotes: 0,
+        rank: 1,
+        upVotes: data.upVotes,
         author: data.author,
         comments: [],
         image: data.image,
