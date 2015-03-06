@@ -76,7 +76,7 @@ exports.returnIndividualStory = function(req, res, next) {
         }
 
         story = story.pop();
-        var dashedNameFull = story.headline.toLowerCase().replace(/\s/g, '-');
+        var dashedNameFull = story.storyLink.toLowerCase().replace(/\s/g, '-');
         if (dashedNameFull !== dashedName) {
             return res.redirect('../stories/' + dashedNameFull);
         }

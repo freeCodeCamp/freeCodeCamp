@@ -4,7 +4,7 @@ h3
         script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
         script.
             var getLinkedName = function getLinkedName(name) {
-                return name.toLowerCase().replace(/\s/g, '-');
+                return name.trim().toLowerCase().replace(/\s/g, '-');
             }
             $.ajax({
                 url: '/stories/hotStories',
