@@ -1,85 +1,124 @@
-p.text-left
+.text-left
     div#comment-list.comment-list
 
         script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js")
         script.
             var sentinel = 0;
-            var commentDetails;
-            R.forEach(function displayComments(comment) {
-                console.log('this is the comment id', comment);
-                $.ajax({
-                    type: 'GET',
-                    url: '/stories/comments/' + comment,
-                    error: function(xhr, textStatus, errorThrown) {
-                        console.log('got error');
-                        commentDetails = {
-                            error: true,
-                            body: 'There seems to be a problem fetching this comment.'
+            var renderComments = function renderComments(comments, containerSelector, level) {
+                var commentDetails;
+                var offSetClass = level ? 'col-xs-offset-' + level : '';
+                var rowClass = level ? 'col-xs-' + (12 - level) : 'col-xs-12';
+                R.forEach(function displayComments(comment) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/stories/comments/' + comment,
+                        error: function (xhr, textStatus, errorThrown) {
+                            console.log('got error');
+                            commentDetails = {
+                                error: true,
+                                body: 'There seems to be a problem fetching this comment.'
+                            }
+                        },
+                        success: function (data, textStatus, xhr) {
+                            commentDetails = data;
+                            var div = document.createElement('div');
+                            $(div)
+                                    .html(
+                                    "<div class='col-xs-2 text-center'>" +
+                                    "<div class='row'>" +
+                                    "<div class='col-xs-12'>" +
+                                    "<h3 class='negative-5'>" +
+                                    commentDetails.rank +
+                                    "</h3>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "<div class='col-xs-1'>" +
+                                    "<img class='img-responsive' src=" + commentDetails.author.picture + "></img>" +
+                                    "</div>" +
+                                    "<div class='col-xs-8'>" +
+                                    "<div class='row'>" +
+                                    "<div class='col-xs-12'>" +
+                                    commentDetails.body +
+                                    "</div>" +
+                                    "</div>" +
+                                    "<div class='row'>" +
+                                    "<h6>" +
+                                    "<div class='col-xs-12 negative-15'>" +
+                                    "commented " + moment(commentDetails.commentedOn).fromNow() + " by " +
+                                    "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a>" +
+                                    "</div>" +
+                                    "</h6>" +
+                                    "</div>" +
+                                    "<div class='row'>" +
+                                    "<div class='col-xs-6 comment-a-comment'>" +
+                                    "<button id='" + commentDetails._id + "'>This is the world's best button</button>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "</div>"
+                            )
+                                    .addClass('comment row ' + offSetClass + ' ' + rowClass + ' comment_' + commentDetails._id)
+                                    .appendTo($(containerSelector));
+
+                            sentinel += commentDetails.comments.length;
+
+                            renderComments(commentDetails.comments, '.comment_' + commentDetails._id, ++level);
+
+                        },
+                        complete: function () {
+                            sentinel--;
+                            if (!sentinel) {
+                                console.log('Binding click handler');
+                                $('.comment-a-comment').on('click', 'button', function () {
+                                    $(this).attr('disabled', 'disabled');
+                                    console.log('Unbinding click handler');
+
+                                    var div = document.createElement('div');
+                                    var commentId = $(this).attr('id');
+                                    $(div).html(
+                                            "<textarea id='comment-to-comment-textarea'></textarea>" +
+                                            "<button id='submit-comment-to-comment'>Submit it sucka</button>"
+                                    )
+                                            .addClass('col-xs-6 col-xs-offset-3')
+                                            .appendTo($(this).closest('.comment'));
+                                    var submitCommentToCommentHandler = function submitCommentToCommentHandler() {
+                                        $('#submit-comment-to-comment').unbind('click');
+                                        $.post('/stories/comment/' + commentId + '/comment',
+                                                {
+                                                    data: {
+                                                        associatedPost: commentId,
+                                                        body: $('#comment-to-comment-textarea').val(),
+                                                        author: {
+                                                            picture: user.profile.picture,
+                                                            userId: user._id,
+                                                            username: user.profile.username
+                                                        }
+                                                    }
+                                                })
+                                                .fail(function (xhr, textStatus, errorThrown) {
+                                                    $('#submit-comment-to-comment').bind('click', submitCommentToCommentHandler);
+                                                })
+                                                .done(function (data, textStatus, xhr) {
+                                                    //window.location = '/stories/' + JSON.parse(data).storyLink;
+                                                });
+
+                                    };
+
+                                    $('#submit-comment-to-comment').on('click', submitCommentToCommentHandler);
+                                });//
+                            }
                         }
-                    },
-                    success: function (data, textStatus, xhr) {
-                        console.log(data);
-                        commentDetails = data;
-                        var div = document.createElement('div');
-                        $(div)
-                                .html("<p>" +
-                                        "<div class='row col-xs-12'>" +
-                                            "<div class='col-xs-2 text-center'>" +
-                                                "<div class='row'>" +
-                                                    "<div class='col-xs-12'>" +
-                                                        "<h3 class='negative-5'>" +
-                                                            commentDetails.rank +
-                                                        "</h3>" +
-                                                    "</div>" +
-                                                "</div>" +
-                                            "</div>" +
-                                            "<div class='col-xs-1'>" +
-                                                "<img class='img-responsive' src=" + commentDetails.author.picture + "></img>" +
-                                            "</div>" +
-                                            "<div class='col-xs-8'>" +
-                                                "<div class='row'>" +
-                                                    "<div class='col-xs-12'>" +
-                                                        commentDetails.body +
-                                                    "</div>" +
-                                                "</div>" +
-                                                "<div class='row'>" +
-                                                    "<h6>" +
-                                                    "<div class='col-xs-12 negative-15'>" +
-                                                        "commented " + moment(commentDetails.commentedOn).fromNow() + " by " +
-                                                        "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a>" +
-                                                    "</div>" +
-                                                    "</h6>" +
-                                                "</div>" +
-                                                "<div class='row'>" +
-                                                    "<div class='col-xs-6 comment-a-comment'>" +
-                                                        "<button id='" + commentDetails._id +"'>This is the world's best button</button>" +
-                                                    "</div>" +
-                                                "</div>" +
-                                            "</div>" +
-                                        "</div>" +
-                                    "</p>" +
-                                "</div>")
-                                .appendTo($('#comment-list'));
-
-                    },
-                    complete: function() {
-                        sentinel++;
-                        console.log(sentinel, comments.length);
-                        if (sentinel < comments.length) {
-                            return;
-                        }
-                        $('.comment-a-comment').on('click', 'button', function() {
-                            console.log('clicked');
-                            console.log($(this));
-                        });
-                    }
+                    })
 
 
-                })
+                }, comments);
+            }
+            sentinel += comments.length;
+
+            renderComments(comments, $('#comment-list'), 0);
 
 
-            }, comments);
 
 
 

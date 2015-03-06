@@ -183,28 +183,53 @@ exports.commentSubmit = function(req, res, next) {
         rank: 0,
         upvotes: 0,
         author: data.author,
-        comments: []
+        comments: [],
+        topLevel: true
     });
+    commentSave(comment, Story, res);
+};
 
+exports.commentOnCommentSubmit = function(req, res, next) {
+    var idToFind = req.params.id;
+    debug('idToFind', idToFind);
+    var data = req.body.data;
+    var comment = new Comment({
+        associatedPost: data.associatedPost,
+        body: data.body,
+        rank: 0,
+        upvotes: 0,
+        author: data.author,
+        comments: [],
+        topLevel: false
+    });
+    commentSave(comment, Comment, res);
+};
+
+function commentSave(comment, Context, res) {
     comment.save(function(err, data) {
         if (err) {
             return res.status(500);
         }
         debug('this is data from save', data);
-        Story.find({'_id': comment.associatedPost}, function(err, associatedStory) {
-            if (err) {
-                return res.status(500);
-            }
-            associatedStory = associatedStory.pop();
-            if (associatedStory) {
-                associatedStory.comments.push(data._id);
-                associatedStory.save(function(err, data) {
-                    if (err) {
-                        res.status(500);
-                    }
-                    res.send(true);
-                });
-            }
-        });
+        try {
+            Context.find({'_id': comment.associatedPost}, function (err, associatedStory) {
+                if (err) {
+                    return res.status(500);
+                }
+                associatedStory = associatedStory.pop();
+                if (associatedStory) {
+                    associatedStory.comments.push(data._id);
+                    associatedStory.save(function (err, data) {
+                        if (err) {
+                            res.status(500);
+                        }
+                        res.send(true);
+                    });
+                }
+            });
+        } catch (e) {
+            // delete comment
+            return res.status(500);
+        }
     });
-};
+}

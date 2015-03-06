@@ -303,8 +303,13 @@ app.get(
 );
 
 app.post(
-    '/stories/comment/submit',
+    '/stories/comment/',
     storyController.commentSubmit
+);
+
+app.post(
+    '/stories/comment/:id/comment',
+    storyController.commentOnCommentSubmit
 );
 
 app.get(
@@ -313,7 +318,7 @@ app.get(
 );
 
 app.post(
-    '/stories/submit',
+    '/stories/',
     storyController.storySubmission
 );
 

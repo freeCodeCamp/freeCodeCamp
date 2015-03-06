@@ -22,6 +22,10 @@ var commentSchema = new mongoose.Schema({
     comments: {
         type: Array,
         default: []
+    },
+    toplevel: {
+        type: Boolean,
+        default: false
     }
 });
 

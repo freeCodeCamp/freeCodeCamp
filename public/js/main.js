@@ -158,7 +158,7 @@ $(document).ready(function() {
             upVotedByUsername: user.profile.username
         };
         $('#story-submit').unbind('click');
-        $.post('/stories/submit',
+        $.post('/stories/',
             {
                 data: {
                     link: link,
@@ -192,7 +192,7 @@ $(document).ready(function() {
         var data = $('#comment-box').val();
 
         $('#comment-button').unbind('click');
-        $.post('/stories/comment/submit',
+        $.post('/stories/comment/',
             {
                 data: {
                     associatedPost: storyId,
