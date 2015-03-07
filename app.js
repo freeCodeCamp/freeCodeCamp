@@ -99,16 +99,6 @@ app.use(session({
         'auto_reconnect': true
     })
 }));
-
-var cloudfront = require('cloudfront');
-
-var cf = cloudfront.createClient('access key id', 'access key secret');
-
-cf.listDistributions(function(err, list, info) {
-    console.log('Is truncated?', info.isTruncated ? 'yes' : 'no');
-    console.log(list);
-});
-
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
