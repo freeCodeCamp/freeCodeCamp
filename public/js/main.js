@@ -191,9 +191,11 @@ $(document).ready(function() {
     $('#story-submit').on('click', storySubmitButtonHandler);
 
     var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
+        $('comment-button').unbind('click');
         var data = $('#comment-box').val();
+        console.log('comment clicked');
 
-        $('#comment-button').unbind('click');
+        $('#comment-button').attr('disabled', 'disabled');
         $.post('/stories/comment/',
             {
                 data: {
@@ -207,7 +209,7 @@ $(document).ready(function() {
                 }
             })
             .fail(function (xhr, textStatus, errorThrown) {
-                $('#comment-button').bind('click', commentSubmitButtonHandler);
+                $('#comment-button').attr('disabled', false);
             })
             .done(function (data, textStatus, xhr) {
                 window.location.reload();

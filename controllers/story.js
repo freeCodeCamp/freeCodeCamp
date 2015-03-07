@@ -54,13 +54,11 @@ exports.recent = function(req, res, next) {
 };
 
 exports.preSubmit = function(req, res, next) {
-    debug('req params is', req.params);
     var data = req.params.newStory;
 
     data = data.replace(/url=/gi, '').replace(/&title=/gi, ',').split(',');
     var url = data[0];
     var title = data[1];
-    debug('result of really ugly string manipulation', url, title);
     res.render('stories/index', {
         page: 'storySubmission',
         storyURL: url,
@@ -73,8 +71,6 @@ exports.returnIndividualStory = function(req, res, next) {
     var dashedName = req.params.storyName;
 
     var storyName = dashedName.replace(/\-/g, ' ');
-
-    debug('looking for %s', storyName);
 
     Story.find({'storyLink' : new RegExp(storyName, 'i')}, function(err, story) {
         if (err) {
@@ -95,7 +91,6 @@ exports.returnIndividualStory = function(req, res, next) {
         if (dashedNameFull !== dashedName) {
             return res.redirect('../stories/' + dashedNameFull);
         }
-        debug('Story', story);
 
         res.render('stories/index', {
             title: story.headline,
@@ -117,7 +112,6 @@ exports.returnIndividualStory = function(req, res, next) {
 exports.getStories = function(req, res, next) {
     MongoClient.connect(secrets.db, function(err, database) {
         var db = database;
-        debug('this is data', req.body.data.searchValue);
         db.collection('stories').find({
             "$text": {
                 "$search": req.body.data.searchValue
@@ -144,7 +138,6 @@ exports.getStories = function(req, res, next) {
             }
         }).toArray(function(err, items) {
             if (items.length !== 0) {
-                debug('items found with full text', items);
                 return res.json(items);
             }
             return res.status(404);
@@ -184,7 +177,6 @@ exports.comments = function(req, res, next) {
 
 exports.newStory = function(req, res, next) {
     var url = req.body.data.url;
-    debug('Got new story submission, calling resources with', url);
     resources.getURLTitle(url, processResponse);
     function processResponse(err, storyTitle) {
         if (err) {
@@ -228,8 +220,6 @@ exports.storySubmission = function(req, res, next) {
         storyLink: storyLink
     });
 
-    debug('this is a story', story);
-
     story.save(function(err, data) {
         if (err) {
             return res.status(500);
@@ -241,6 +231,7 @@ exports.storySubmission = function(req, res, next) {
 };
 
 exports.commentSubmit = function(req, res, next) {
+    debug('comment submit fired');
     var data = req.body.data;
     var comment = new Comment({
         associatedPost: data.associatedPost,
@@ -255,8 +246,8 @@ exports.commentSubmit = function(req, res, next) {
 };
 
 exports.commentOnCommentSubmit = function(req, res, next) {
+    debug('comment on comment submit');
     var idToFind = req.params.id;
-    debug('idToFind', idToFind);
     var data = req.body.data;
     var comment = new Comment({
         associatedPost: data.associatedPost,
@@ -275,8 +266,7 @@ function commentSave(comment, Context, res) {
         if (err) {
             return res.status(500);
         }
-        debug('this is data from save', data);
-        try {
+            try {
             Context.find({'_id': comment.associatedPost}, function (err, associatedStory) {
                 if (err) {
                     return res.status(500);

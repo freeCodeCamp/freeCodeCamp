@@ -291,14 +291,11 @@ module.exports = {
         return process.env.NODE_ENV;
     },
     getURLTitle: function(url, callback) {
-        debug('getURL called initialled');
 
         (function () {
             var result = {title: ''};
             request(url, function (error, response, body) {
-                debug('request fired');
                 if (!error && response.statusCode === 200) {
-                    debug('fetching data');
                     var $ = cheerio.load(body);
                     var title = $('title').text();
                     result.title = title;

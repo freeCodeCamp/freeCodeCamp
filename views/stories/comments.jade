@@ -26,38 +26,39 @@
                             $(div)
                                     .html(
                                     "<div class='comment row col-xs-12'>" +
-                                    "<div class='col-xs-2 text-center'>" +
-                                    "<div class='row'>" +
-                                    "<div class='col-xs-12'>" +
-                                    "<h3 class='negative-5'>" +
-                                    commentDetails.rank +
-                                    "</h3>" +
-                                    "</div>" +
-                                    "</div>" +
-                                    "</div>" +
+                                        "<div class='col-xs-1 text-center'>" +
+                                            "<div class='row'>" +
+                                                "<div class='col-xs-12'>" +
+                                                    "<h3 class='negative-5'>" +
+                                                        commentDetails.rank +
+                                                    "</h3>" +
+                                                "</div>" +
+                                            "</div>" +
+                                        "</div>" +
                                     "<div class='col-xs-1'>" +
-                                    "<img class='img-responsive' src=" + commentDetails.author.picture + "></img>" +
+                                        "<img class='img-responsive' src=" + commentDetails.author.picture + "></img>" +
                                     "</div>" +
-                                    "<div class='col-xs-8'>" +
-                                    "<div class='row'>" +
-                                    "<div class='col-xs-12'>" +
-                                    commentDetails.body +
-                                    "</div>" +
-                                    "</div>" +
-                                    "<div class='row'>" +
-                                    "<h6>" +
-                                    "<div class='col-xs-12 negative-15'>" +
-                                    "commented " + moment(commentDetails.commentedOn).fromNow() + " by " +
-                                    "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a>" +
-                                    "</div>" +
-                                    "</h6>" +
-                                    "</div>" +
-                                    "<div class='row'>" +
-                                    "<div class='col-xs-6 comment-a-comment'>" +
-                                    "<button id='" + commentDetails._id + "'>This is the world's best button</button>" +
-                                    "</div>" +
-                                    "</div>" +
-                                    "</div>" +
+                                    "<div class='col-xs-10'>" +
+                                        "<div class='row'>" +
+                                            "<div class='col-xs-12'>" +
+                                                commentDetails.body +
+                                            "</div>" +
+                                        "</div>" +
+                                        "<div class='row'>" +
+                                            "<h6>" +
+                                                "<div class='col-xs-12 negative-15'>" +
+                                                    "commented " + moment(commentDetails.commentedOn).fromNow() + " by " +
+                                                    "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a>" +
+                                                "</div>" +
+                                            "</h6>" +
+                                        "</div>" +
+                                        "<div class='row negative-15'>" +
+                                            "<div class='col-xs-6 comment-a-comment'>" +
+                                                "<h6>" +
+                                                    "<a id='" + commentDetails._id + "'>Reply</a>" +
+                                                "</h6>" +
+                                            "</div>" +
+                                        "</div>" +
                                     "</div>"
                             )
                                     .addClass(offSetClass + ' row ' + rowClass + ' comment_' + commentDetails._id)
@@ -71,39 +72,38 @@
                         complete: function () {
                             sentinel--;
                             if (!sentinel) {
-                                console.log('Binding click handler');
-                                $('.comment-a-comment').on('click', 'button', function () {
-                                    $(this).attr('disabled', 'disabled');
-                                    console.log('Unbinding click handler');
-
+                                $('.comment-a-comment').on('click', 'a', function () {
+                                    $(this).unbind('click');
                                     var div = document.createElement('div');
                                     var commentId = $(this).attr('id');
                                     $(div).html(
-                                            "<textarea id='comment-to-comment-textarea'></textarea>" +
-                                            "<button id='submit-comment-to-comment'>Submit it sucka</button>"
+                                            "<div class='formgroup'>" +
+                                                "<textarea class='form-control' id='comment-to-comment-textarea'></textarea>" +
+                                                "<button class='btn btn-small btn-primary' id='submit-comment-to-comment'>Submit</button>" +
+                                            "</div>"
                                     )
                                             .addClass('col-xs-6 col-xs-offset-3')
                                             .appendTo($(this).closest('.comment'));
                                     var submitCommentToCommentHandler = function submitCommentToCommentHandler() {
                                         $('#submit-comment-to-comment').unbind('click');
                                         $.post('/stories/comment/' + commentId + '/comment',
-                                                {
-                                                    data: {
-                                                        associatedPost: commentId,
-                                                        body: $('#comment-to-comment-textarea').val(),
-                                                        author: {
-                                                            picture: user.profile.picture,
-                                                            userId: user._id,
-                                                            username: user.profile.username
-                                                        }
-                                                    }
-                                                })
-                                                .fail(function (xhr, textStatus, errorThrown) {
-                                                    $('#submit-comment-to-comment').bind('click', submitCommentToCommentHandler);
-                                                })
-                                                .done(function (data, textStatus, xhr) {
-                                                    window.location.reload();
-                                                });
+                                        {
+                                            data: {
+                                                associatedPost: commentId,
+                                                body: $('#comment-to-comment-textarea').val(),
+                                                author: {
+                                                    picture: user.profile.picture,
+                                                    userId: user._id,
+                                                    username: user.profile.username
+                                                }
+                                            }
+                                        })
+                                        .fail(function (xhr, textStatus, errorThrown) {
+                                            $('#submit-comment-to-comment').bind('click', submitCommentToCommentHandler);
+                                        })
+                                        .done(function (data, textStatus, xhr) {
+                                            window.location.reload();
+                                        });
 
                                     };
 

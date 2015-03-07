@@ -1,5 +1,4 @@
-extends ../layout
-block content
+.spacer
     script.
         var challengeName = 'Camper News';
         var storyId = !{JSON.stringify(id)};
@@ -32,21 +31,13 @@ block content
             .col-xs-10.col-xs-offset-1
                 p= description
 
-
-            .col-xs-12
+    form.form-horizontal.control-label-story-submission
+        .col-xs-12
+            .form-group
                 h3.row.col-xs-12
                     textarea#comment-box.form-control(name="comment-box", rows=5)
-                h3.row.btn-nav.text-center
+                h3.row.text-center
                     .col-xs-6.col-xs-offset-3
-                        .btn.btn-block.btn-primary#comment-button Comment
+                        button.btn.btn-block.btn-primary#comment-button Comment
 
-            include ./comments
-
-//
-    title: story.headline,
-            dashedName: story.link,
-            author: story.author,
-            body: story.body,
-            rank: story.rank,
-            upVotes: story.upVotes,
-            comments: story.comments
+    include ./comments
