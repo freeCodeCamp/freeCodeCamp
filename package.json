@@ -20,6 +20,7 @@
     "body-parser": "^1.9.3",
     "cheerio": "^0.18.0",
     "clockwork": "^0.1.1",
+    "cloudfront": "^0.3.3",
     "compression": "^1.2.1",
     "connect-assets": "^4.3.3",
     "connect-mongo": "^0.4.1",
