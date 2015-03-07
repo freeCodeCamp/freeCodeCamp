@@ -23,9 +23,7 @@ exports.returnNextChallenge = function(req, res) {
             res.redirect('challenges/0');
         }
     } else {
-        res.render('home', {
-            title: 'Learn to Code and Become a Software Engineer',
-        });
+        return res.redirect('../challenges/0');
     }
 };
 
