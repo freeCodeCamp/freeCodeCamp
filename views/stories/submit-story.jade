@@ -17,6 +17,12 @@
                     label.control-label.control-label-story-submission(for='name') Title
                 .col-xs-11
                     input#story-title.form-control(placeholder='Type a headline for your link here', name='Title')
+            .form-group
+                .col-xs-1
+                    label.control-label.control-label-story-submission(for='name')
+                .col-xs-11
+                    textarea#description-box.form-control(name="comment-box", rows=5, placeholder="Start off the discussion with a description of your post")
+
             .spacer
             .form-group
                 .btn.btn-big.btn-block.btn-primary#story-submit Submit

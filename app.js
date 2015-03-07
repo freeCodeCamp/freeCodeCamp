@@ -327,6 +327,11 @@ app.post(
     storyController.newStory
 );
 
+app.post(
+    '/stories/',
+    storyController.storySubmission
+);
+
 app.get(
     '/stories/hot',
     storyController.hot

@@ -6,35 +6,36 @@ block content
         var comments = !{JSON.stringify(comments)};
         var upVotes = !{JSON.stringify(upVotes)};
         var user = !{JSON.stringify(user)};
+    .spacer
 
-    .panel.panel-info
-        .panel-heading.text-center Camper News
-        .panel-body
-            h3.row.text-left.negative-10
-                .col-xs-3.col-sm-1.text-center
-                    .row.negative-5
-                        .col-xs-12.big-ion-up-arrow
-                            a#upvote
-                                i.ion-arrow-up-b
-                        h3.story-up-votes
-                            span#storyRank= rank
-                .col-xs-2.col-sm-1
-                    img(src="#{author.picture}", class='img-responsive')
-                .col-xs-7.col-sm-10
-                    .col-xs-12.negative-28
-                        a(href="#{link}")
-                            h3= title
+    .row.col-xs-12
+        h3.row.text-left.negative-10
+            .col-xs-3.col-sm-1.text-center
+                .row.negative-5
+                    .col-xs-12.big-ion-up-arrow
+                        a#upvote
+                            i.ion-arrow-up-b
+                    h3.story-up-votes
+                        span#storyRank= rank
+            .col-xs-2.col-sm-1
+                img(src="#{author.picture}", class='img-responsive')
+            .col-xs-7.col-sm-10
+                .col-xs-12.negative-28
+                    a(href="#{link}")
+                        h3= title
+                h6
                     .col-xs-12.negative-15
                         span Posted #{timeAgo}
                         span &nbsp;by&nbsp;
                             a(href="/" + author.username)
                                 @#{author.username}
+            .col-xs-10.col-xs-offset-1
+                p= description
 
 
             .col-xs-12
-                h3.row
-                    .col-xs-12
-                        textarea#comment-box.form-control(name="comment-box", rows=5)
+                h3.row.col-xs-12
+                    textarea#comment-box.form-control(name="comment-box", rows=5)
                 h3.row.btn-nav.text-center
                     .col-xs-6.col-xs-offset-3
                         .btn.btn-block.btn-primary#comment-button Comment

@@ -6,12 +6,13 @@
         label.btn.btn-primary.btn-big(class="#{ page === 'recent' ? 'active' : '' }")
             input#option2(href='/stories/recent', type='radio', name='options')
             | New
-        label.btn.btn-primary.btn-big(class="#{ page === 'submit' ? 'active' : '' }")
+        label.btn.btn-primary.btn-big(class="#{ page === 'submit'  ? 'active' : page === 'storySubmission' ? 'active' : '' }")
             input#option3(href='/stories/submit', type='radio', name='options')
             | Submit
         label.btn.btn-primary.btn-big(class="#{ page === 'search' ? 'active' : '' }")
             input#option4(href='/stories/search', type='radio', name='options')
             | Search
+
     script.
         $('label').on('click', function() {
             window.location = ($(this).children('input').attr('href'));

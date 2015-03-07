@@ -150,9 +150,11 @@ $(document).ready(function() {
     $('#upvote').on('click', upvoteHandler);
 
     var storySubmitButtonHandler = function storySubmitButtonHandler() {
-        var data = $('#story-submission-form :input');
-        var link = $(data[0]).val();
-        var headline = $(data[1]).val();
+
+        var link = $('#story-url').val();
+        var headline = $('#story-title').val();
+        var description = $('#description-box').val();
+        console.log(link, headline, description);
         var userDataForUpvote = {
             upVotedBy: user._id,
             upVotedByUsername: user.profile.username
@@ -164,7 +166,7 @@ $(document).ready(function() {
                     link: link,
                     headline: headline,
                     timePosted: Date.now(),
-                    description: 'TODO',
+                    description: description,
 
                     rank: 1,
                     upVotes: [userDataForUpvote],
@@ -174,7 +176,7 @@ $(document).ready(function() {
                         username: user.profile.username
                     },
                     comments: [],
-                    image: 'http://rossmounce.co.uk/wp-content/uploads/2014/11/grumpy-cat-no-1.jpg'
+                    image: ''
                 }
             })
             .fail(function (xhr, textStatus, errorThrown) {

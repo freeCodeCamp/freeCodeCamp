@@ -54,12 +54,17 @@ exports.recent = function(req, res, next) {
 };
 
 exports.preSubmit = function(req, res, next) {
+    debug('req params is', req.params);
     var data = req.params.newStory;
-    debug('got presubmission with info', data.url, data.title);
+
+    data = data.replace(/url=/gi, '').replace(/&title=/gi, ',').split(',');
+    var url = data[0];
+    var title = data[1];
+    debug('result of really ugly string manipulation', url, title);
     res.render('stories/index', {
         page: 'storySubmission',
-        storyURL: data.url,
-        storyTitle: data.title
+        storyURL: url,
+        storyTitle: title
     });
 };
 
@@ -92,7 +97,7 @@ exports.returnIndividualStory = function(req, res, next) {
         }
         debug('Story', story);
 
-        res.render('stories/show', {
+        res.render('stories/index', {
             title: story.headline,
             link: story.link,
             author: story.author,
@@ -103,7 +108,8 @@ exports.returnIndividualStory = function(req, res, next) {
             id: story._id,
             user: req.user,
             timeAgo: moment(story.timePosted).fromNow(),
-            image: story.image
+            image: story.image,
+            page: 'show'
         });
     });
 };
