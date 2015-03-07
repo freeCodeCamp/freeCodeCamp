@@ -1,5 +1,8 @@
 .spacer
 .col-xs-12
+    script.
+        var storyURL = !{JSON.stringify(storyURL)};
+        var storyTitle = !{JSON.stringify(storyTitle)};
     form.form-horizontal.control-label-story-submission#story-submission-form
         .col-xs-2.img-story-post
             img.img-responsive(src='#{user.profile.picture}')
@@ -8,12 +11,15 @@
                 .col-xs-1
                     label.control-label.control-label-story-submission(for='name') Link
                 .col-xs-11
-                    input.form-control(placeholder='Paste your link here', name='Link')
+                    input#story-url.form-control(placeholder='Paste your link here', name='Link')
             .form-group
                 .col-xs-1
                     label.control-label.control-label-story-submission(for='name') Title
                 .col-xs-11
-                    input.form-control(placeholder='Type a headline for your link here', name='Title')
+                    input#story-title.form-control(placeholder='Type a headline for your link here', name='Title')
             .spacer
             .form-group
                 .btn.btn-big.btn-block.btn-primary#story-submit Submit
+    script.
+        $('#story-url').val(storyURL).attr('disabled', 'disabled');
+        $('#story-title').val(storyTitle);

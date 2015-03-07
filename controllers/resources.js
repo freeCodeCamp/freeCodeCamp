@@ -264,7 +264,7 @@ module.exports = {
             return {
                 _id: elem._id,
                 difficulty: elem.difficulty
-            }
+            };
         })
             .sort(function(a, b) {
                 return a.difficulty - b.difficulty;
@@ -278,7 +278,7 @@ module.exports = {
             return {
                 name: elem.name,
                 difficulty: elem.difficulty
-            }
+            };
         })
             .sort(function(a, b) {
                 return a.difficulty - b.difficulty;
@@ -290,19 +290,25 @@ module.exports = {
     whichEnvironment: function() {
         return process.env.NODE_ENV;
     },
-    getURLTitle: function(req, res, next) {
-        var url = req.body.data.url;
+    getURLTitle: function(url, callback) {
+        debug('getURL called initialled');
 
-        var result = {title: ''};
-        request(url, function (error, response, body) {
-            if (!error && response.statusCode === 200) {
-                var $ = cheerio.load(body);
-                var title = $('title').text();
-                result.title = title;
-                debug(result);
-                res.json(result);
-            }
-        });
+        (function () {
+            var result = {title: ''};
+            request(url, function (error, response, body) {
+                debug('request fired');
+                if (!error && response.statusCode === 200) {
+                    debug('fetching data');
+                    var $ = cheerio.load(body);
+                    var title = $('title').text();
+                    result.title = title;
+                    debug('calling callback with', result);
+                    callback(null, result);
+                } else {
+                    callback('failed');
+                }
+            });
+        })();
     }
 };
 

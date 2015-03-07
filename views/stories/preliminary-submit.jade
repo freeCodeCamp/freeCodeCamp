@@ -1,0 +1,37 @@
+.spacer
+.col-xs-12
+    form.form-horizontal.control-label-story-submission#story-submission-form
+        .col-xs-2.img-story-post
+            img.img-responsive(src='#{user.profile.picture}')
+        .col-xs-10
+            .form-group
+                .col-xs-1
+                    label.control-label.control-label-story-submission(for='name') Link
+                .col-xs-11
+                    input#story-url.form-control(placeholder='Paste your link here', name='Link')
+            .spacer
+            .form-group
+                .btn.btn-big.btn-block.btn-primary#preliminary-story-submit Submit
+    script.
+        var preliminaryStorySubmit = function preliminaryStorySubmit() {
+
+            var storyURL = $('#story-url').val();
+            console.log(storyURL);
+            $('#preliminary-story-submit').attr('disabled', 'disabled');
+
+            $.post('/stories/preliminary',
+            {
+                data: {
+                    url: storyURL
+                }
+            })
+            .fail(function (xhr, textStatus, errorThrown) {
+                $('#preliminary-story-submit').attr('disabled', false);
+            })
+            .done(function (data, textStatus, xhr) {
+                window.location = '/stories/submit/url=' +
+                encodeURIComponent(data.storyURL) +
+                '&title=' + encodeURIComponent(data.storyTitle);
+            });
+        }
+        $('#preliminary-story-submit').on('click', preliminaryStorySubmit);

@@ -53,6 +53,16 @@ exports.recent = function(req, res, next) {
     });
 };
 
+exports.preSubmit = function(req, res, next) {
+    var data = req.params.newStory;
+    debug('got presubmission with info', data.url, data.title);
+    res.render('stories/index', {
+        page: 'storySubmission',
+        storyURL: data.url,
+        storyTitle: data.title
+    });
+};
+
 
 exports.returnIndividualStory = function(req, res, next) {
     var dashedName = req.params.storyName;
@@ -164,6 +174,26 @@ exports.comments = function(req, res, next) {
         comment = comment.pop();
         return res.send(comment);
     });
+};
+
+exports.newStory = function(req, res, next) {
+    var url = req.body.data.url;
+    debug('Got new story submission, calling resources with', url);
+    resources.getURLTitle(url, processResponse);
+    function processResponse(err, storyTitle) {
+        if (err) {
+            res.json({
+                storyURL: url,
+                storyTitle: ''
+            });
+        } else {
+            storyTitle = storyTitle ? storyTitle : '';
+            res.json({
+                storyURL: url,
+                storyTitle: storyTitle.title
+            });
+        }
+    }
 };
 
 exports.storySubmission = function(req, res, next) {

@@ -317,11 +317,15 @@ app.get(
     storyController.submitNew
 );
 
-app.post(
-    '/stories/',
-    storyController.storySubmission
+app.get(
+    '/stories/submit/:newStory',
+    storyController.preSubmit
 );
 
+app.post(
+    '/stories/preliminary',
+    storyController.newStory
+);
 
 app.get(
     '/stories/hot',
@@ -352,11 +356,6 @@ app.get(
 app.post(
     '/stories/upvote/',
     storyController.upvote
-);
-
-app.post(
-    '/stories/getURLMetaData',
-    resourcesController.getMetaData
 );
 
 /**
