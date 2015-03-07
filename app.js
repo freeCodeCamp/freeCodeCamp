@@ -208,6 +208,8 @@ app.use(
     express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
 );
 
+app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
+
 /**
  * Main routes.
  */
