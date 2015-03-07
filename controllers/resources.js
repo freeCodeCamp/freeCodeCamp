@@ -10,8 +10,9 @@ var User = require('../models/User'),
     moment = require('moment'),
     Client = require('node-rest-client').Client,
     client = new Client(),
-    debug = require('debug')('freecc:cntr:bonfires'),
-    cheerio = require('cheerio');
+    debug = require('debug')('freecc:cntr:resources'),
+    cheerio = require('cheerio'),
+    request = require('request');
 
 /**
  * GET /
@@ -289,27 +290,18 @@ module.exports = {
     whichEnvironment: function() {
         return process.env.NODE_ENV;
     },
-    getMetaData: function(req, res, next) {
+    getURLTitle: function(req, res, next) {
         var url = req.body.data.url;
-        var result = {};
 
-        client.get(url, function(siteInfo) {
-            var $ = cheerio.load(siteInfo);
-
-            var meta = $('meta');
-            $(meta, this).each(function () {
-                var prop = $(this).attr("property"), key, value;
-                if (prop && prop.substring(0, ns.length) === ns) {
-                    key = prop.substring(ns.length);
-                    value = $(this).attr("content");
-                    console.log("Found OGP data %s=%s", key, value);
-                    result[key] = result[key] || [];
-                    result[key].push(value);
-                }
-            });
-
-            res.json(JSON.stringify(result));
-
+        var result = {title: ''};
+        request(url, function (error, response, body) {
+            if (!error && response.statusCode === 200) {
+                var $ = cheerio.load(body);
+                var title = $('title').text();
+                result.title = title;
+                debug(result);
+                res.json(result);
+            }
         });
     }
 };
