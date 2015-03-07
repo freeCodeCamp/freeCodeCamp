@@ -8,8 +8,7 @@ var User = require('../models/User'),
     bonfires = require('../seed_data/bonfires.json'),
     coursewares = require('../seed_data/coursewares.json'),
     moment = require('moment'),
-    Client = require('node-rest-client').Client,
-    client = new Client(),
+    https = require('https'),
     debug = require('debug')('freecc:cntr:resources'),
     cheerio = require('cheerio'),
     request = require('request');
@@ -23,33 +22,6 @@ module.exports = {
     privacy: function privacy(req, res) {
         res.render('resources/privacy', {
             title: 'Privacy'
-        });
-    },
-
-    stats: function stats(req, res) {
-        var date1 = new Date("10/15/2014");
-        var date2 = new Date();
-        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-        var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, response) {
-            var nonprofitProjects = (trello && trello.length) || 15;
-            User.count({'points': {'$gt': 2}}, function(err, c3) { if (err) { debug('User err: ', err); next(err); }
-                User.count({'points': {'$gt': 9}}, function(err, c10) { if (err) { debug('User err: ', err); next(err); }
-                    User.count({'points': {'$gt': 29}}, function(err, c30) { if (err) { debug('User err: ', err); next(err); }
-                        User.count({'points': {'$gt': 53}}, function(err, all) { if (err) { debug('User err: ', err); next(err); }
-                            res.render('resources/stats', {
-                                title: 'Free Code Camp Stats:',
-                                daysRunning: daysRunning,
-                                nonprofitProjects: nonprofitProjects,
-                                c3: c3,
-                                c10: c10,
-                                c30: c30,
-                                all: all
-                            });
-                        });
-                    });
-                });
-            });
         });
     },
 
@@ -148,22 +120,27 @@ module.exports = {
     },
     githubCalls: function(req, res) {
         var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
-        client.get('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(pulls, res3) {
+        request('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(err, status1, pulls) {
             pulls = pulls ? Object.keys(JSON.parse(pulls)).length : "Can't connect to github";
-            client.get('https://api.github.com/repos/freecodecamp/freecodecamp/issues?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function (issues, res4) {
+            debug('pulls', pulls);
+            request('https://api.github.com/repos/freecodecamp/freecodecamp/issues?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function (err, status2, issues) {
+                debug('issues', issues);
                 issues = ((pulls === parseInt(pulls)) && issues) ? Object.keys(JSON.parse(issues)).length - pulls : "Can't connect to GitHub";
                 res.send({"issues": issues, "pulls" : pulls});
             });
         });
     },
+
+
+
     trelloCalls: function(req, res) {
-        client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello) {
+        request('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(err, status, trello) {
             trello = trello ? (JSON.parse(trello)).length : "Can't connect to to Trello";
             res.send({"trello": trello});
         });
     },
     bloggerCalls: function(req, res) {
-        client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (blog) {
+        request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
             var blog = blog.length > 100 ? JSON.parse(blog) : "";
             res.send({
                 blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
