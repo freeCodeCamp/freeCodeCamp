@@ -2,9 +2,9 @@ doctype html
 html(ng-app='profileValidation', lang='en')
   head
     include partials/universal-head
+    != css('main')
 
   body.no-top-and-bottom-margins.full-screen-body-background
-    != css('main')
     include partials/css-cdns
     include partials/navbar-wide
     include partials/flash
