@@ -26,8 +26,7 @@
                     .col-xs-12.negative-15
                         span Posted #{timeAgo}
                         span &nbsp;by&nbsp;
-                            a(href="/" + author.username)
-                                @#{author.username}
+                            a(href="/" + author.username) @#{author.username}
             .col-xs-10.col-xs-offset-1
                 p= description
 

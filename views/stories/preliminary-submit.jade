@@ -42,6 +42,9 @@
                     $('#preliminary-story-submit').attr('disabled', false);
                 })
                 .done(function (data, textStatus, xhr) {
+                    if (data.alreadyPosted) {
+                        window.location = '/stories/' + data.storyURL;
+                    }
                     window.location = '/stories/submit/url=' +
                     encodeURIComponent(data.storyURL) +
                     '&title=' + encodeURIComponent(data.storyTitle);

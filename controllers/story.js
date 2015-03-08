@@ -54,7 +54,9 @@ exports.recent = function(req, res, next) {
 };
 
 exports.preSubmit = function(req, res, next) {
+
     var data = req.params.newStory;
+
 
     data = data.replace(/url=/gi, '').replace(/&title=/gi, ',').split(',');
     var url = data[0];
@@ -177,16 +179,38 @@ exports.comments = function(req, res, next) {
 
 exports.newStory = function(req, res, next) {
     var url = req.body.data.url;
+    debug('In pre submit with a url', url);
+
+    Story.find({'link': url}, function(err, story) {
+        debug('Attempting to find a story');
+        if (err) {
+            debug('oops');
+            return res.status(500);
+        }
+        if (story.length) {
+            debug('Found a story already, here\'s the return from find', story);
+            req.flash('errors', {
+                msg: "Someone's already posted that link. Here's the discussion."
+            });
+            debug('Redirecting the user with', story[0].storyLink);
+            res.json({
+                alreadyPosted: true,
+                storyURL: story.pop().storyLink
+            });
+        }
+    });
     resources.getURLTitle(url, processResponse);
     function processResponse(err, storyTitle) {
         if (err) {
             res.json({
+                alreadyPosted: false,
                 storyURL: url,
                 storyTitle: ''
             });
         } else {
             storyTitle = storyTitle ? storyTitle : '';
             res.json({
+                alreadyPosted: false,
                 storyURL: url,
                 storyTitle: storyTitle.title
             });
