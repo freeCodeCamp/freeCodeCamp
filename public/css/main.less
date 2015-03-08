@@ -27,6 +27,8 @@ li, .wrappable {
 html {
   position: relative;
   min-height: 100%;
+  // hack to prevent horizontal overflow problem on showHTML view
+  overflow-x: hidden;
 }
 
 body.full-screen-body-background {
