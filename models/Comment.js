@@ -23,9 +23,9 @@ var commentSchema = new mongoose.Schema({
         type: Array,
         default: []
     },
-    toplevel: {
-        type: Boolean,
-        default: false
+    commentOn: {
+        type: Number,
+        default: Date.now()
     }
 });
 

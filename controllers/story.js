@@ -269,7 +269,8 @@ exports.commentSubmit = function(req, res, next) {
         upvotes: 0,
         author: data.author,
         comments: [],
-        topLevel: true
+        topLevel: true,
+        commentOn: Date.now()
     });
     commentSave(comment, Story, res);
 };
@@ -285,7 +286,8 @@ exports.commentOnCommentSubmit = function(req, res, next) {
         upvotes: 0,
         author: data.author,
         comments: [],
-        topLevel: false
+        topLevel: false,
+        commentOn: Date.now()
     });
     commentSave(comment, Comment, res);
 };

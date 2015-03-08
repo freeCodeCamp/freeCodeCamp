@@ -1,5 +1,5 @@
 .text-left
-    div#comment-list.comment-list
+    div#comment-list
 
         script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js")
@@ -7,9 +7,9 @@
             var sentinel = 0;
             var renderComments = function renderComments(comments, containerSelector, level) {
                 var commentDetails;
-                var offSetClass = level ? 'col-xs-offset-' + level : '';
-                var rowClass = level ? 'col-xs-' + (12 - level) : 'col-xs-12';
+                var backgroundColorForCommentNestingLevel = level % 2 !== 0 ? '#e5e5e5' : '#e7e7e7imit T';
                 R.forEach(function displayComments(comment) {
+
                     $.ajax({
                         type: 'GET',
                         url: '/stories/comments/' + comment,
@@ -22,32 +22,27 @@
                         },
                         success: function (data, textStatus, xhr) {
                             commentDetails = data;
+                            console.log(commentDetails.commentOn);
                             var div = document.createElement('div');
                             $(div)
                                     .html(
-                                        "<div class='comment row col-xs-12'>" +
-                                            "<div class='col-xs-1'>" +
-                                                "<img class='img-news' src=" + commentDetails.author.picture + "></img>" +
-                                            "</div>" +
-                                            "<div class='col-xs-10'>" +
-                                                "<div class='row'>" +
-                                                    "<div class='col-xs-12'>" +
-                                                        commentDetails.body +
-                                                    "</div>" +
-                                                "</div>" +
-                                                "<div>" +
-                                                    "<h6>" +
-                                                        "<div class='col-xs-12 negative-15 comment-a-comment'>" +
-                                                            "commented " + moment(commentDetails.commentedOn).fromNow() + " by " +
-                                                            "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a> · " +
-                                                            "<a id='" + commentDetails._id + "'>Reply</a>" +
-                                                        "</div>" +
-                                                    "</h6>" +
-                                                "</div>" +
-                                            "</div>" +
-                                        "</div>"
+                                        '<div class="media">' +
+                                            '<div class="media-left">' +
+                                                '<img class="media-object img-news" src="' + commentDetails.author.picture +'" alt="' + commentDetails.author.username + '">' +
+                                            '</div>' +
+                                            '<div class="media-body comment_' + commentDetails._id + '">' +
+                                                '<div class="media-body-wrapper">' +
+                                                    '<p>' + commentDetails.body + '</p>' +
+                                                    '<div class="clearfix comment-a-comment negative-15">' +
+                                                        "commented " + moment(commentDetails.commentOn).fromNow() + " by " +
+                                                        "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a> · " +
+                                                        "<a id='" + commentDetails._id + "'>Reply</a>" +
+                                                    '</div>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>'
                                     )
-                                    .addClass('comment-wrapper comment_' + commentDetails._id)
+                                    .addClass('comment-wrapper positive-10')
                                     .appendTo($(containerSelector));
 
                             sentinel += commentDetails.comments.length;
@@ -68,8 +63,8 @@
                                                 "<button class='btn btn-small btn-primary' id='submit-comment-to-comment'>Submit</button>" +
                                             "</div>"
                                     )
-                                            .addClass('col-xs-6 col-xs-offset-3')
-                                            .appendTo($(this).closest('.comment'));
+                                            .addClass('row')
+                                            .appendTo($(this).closest('.media-body-wrapper'));
                                     var submitCommentToCommentHandler = function submitCommentToCommentHandler() {
                                         $('#submit-comment-to-comment').unbind('click');
                                         $.post('/stories/comment/' + commentId + '/comment',
