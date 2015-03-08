@@ -6,9 +6,7 @@ var Challenge = require('../models/Challenge.js'),
     secrets = require('../config/secrets'),
     challenges = require('./challenges.json'),
     coursewares = require('./coursewares.json'),
-    stories = require('./stories.json'),
-    bonfires = require('./bonfires.json'),
-    comments = require('./comments.json');
+    bonfires = require('./bonfires.json');
 
 mongoose.connect(secrets.db);
 

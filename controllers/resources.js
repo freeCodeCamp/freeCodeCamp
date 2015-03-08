@@ -165,19 +165,13 @@ module.exports = {
 
     about: function(req, res) {
         if (req.user) {
-            if (!req.user.picture) {
-                User.find({'_id': req.user._id}, function (err, user) {
-                    if (err) {
-                        debug('Err:', err);
-                    }
-                    user = user.pop();
-                    user.picture = "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png";
-                    user.markModifed('user.picture');
-                    user.save();
-                    updateUserStoryPictures(user._id.toString(), "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png");
-                });
+        if (!req.user.picture) {
+
+                req.user.picture = "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png";
+                req.user.save();
             }
         }
+
 
         var date1 = new Date("10/15/2014");
         var date2 = new Date();
