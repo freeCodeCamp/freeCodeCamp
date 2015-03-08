@@ -83,6 +83,12 @@ module.exports = {
         });
     },
 
+    guideToOurNonprofitProjects: function guideToOurNonprofitProjects(req, res) {
+        res.render('resources/guide-to-our-nonprofit-projects', {
+            title: 'A guide to our Nonprofit Projects'
+        });
+    },
+
     controlShortcuts: function controlShortcuts(req, res) {
         res.render('resources/control-shortcuts', {
             title: 'These Control Shortcuts will save you Hours'
