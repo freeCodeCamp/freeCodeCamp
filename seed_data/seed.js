@@ -1,8 +1,6 @@
 require('dotenv').load();
 var Challenge = require('../models/Challenge.js'),
     Bonfire = require('../models/Bonfire.js'),
-    Comment = require('../models/Comment.js'),
-    Story = require('../models/Story.js'),
     Courseware = require('../models/Courseware.js'),
     mongoose = require('mongoose'),
     secrets = require('../config/secrets'),
@@ -15,7 +13,7 @@ var Challenge = require('../models/Challenge.js'),
 mongoose.connect(secrets.db);
 
 var counter = 0;
-var offerings = 5;
+var offerings = 3;
 
 var CompletionMonitor = function() {
     counter++;
@@ -77,38 +75,4 @@ Courseware.remove({}, function(err, data) {
         CompletionMonitor();
     });
     console.log('coursewares');
-});
-
-Story.remove({}, function(err, data) {
-    if (err) {
-        console.error(err);
-    } else {
-        console.log('Deleted ', data);
-    }
-    Story.create(stories, function(err, data) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log('Saved ', data);
-        }
-        CompletionMonitor();
-    });
-    console.log('stories');
-});
-
-Comment.remove({}, function(err, data) {
-    if (err) {
-        console.error(err);
-    } else {
-        console.log('Deleted ', data);
-    }
-    Comment.create(comments, function(err, data) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log('Saved ', data);
-        }
-        CompletionMonitor();
-    });
-    console.log('stories');
 });

@@ -106,7 +106,8 @@ exports.postEmailSignup = function(req, res, next) {
     email: req.body.email.trim(),
     password: req.body.password,
     profile : {
-      username: req.body.username.trim()
+      username: req.body.username.trim(),
+        picture: 'https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png'
     }
   });
 
