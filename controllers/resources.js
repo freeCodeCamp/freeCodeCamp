@@ -38,7 +38,6 @@ module.exports = {
                 debug('User err: ', err);
                 next(err);
             }
-            console.log('user count', users.length);
             Challenge.find({}, function (err, challenges) {
                 if (err) {
                     debug('User err: ', err);

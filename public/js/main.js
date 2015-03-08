@@ -143,8 +143,6 @@ $(document).ready(function() {
                 .done(function (data, textStatus, xhr) {
                     $('#storyRank').text(data.rank);
                 });
-        } else {
-            console.log('Can\'t upvote because you\'ve already upvoted');
         }
     };
     $('#upvote').on('click', upvoteHandler);
@@ -154,7 +152,6 @@ $(document).ready(function() {
         var link = $('#story-url').val();
         var headline = $('#story-title').val();
         var description = $('#description-box').val();
-        console.log(link, headline, description);
         var userDataForUpvote = {
             upVotedBy: user._id,
             upVotedByUsername: user.profile.username
@@ -193,7 +190,6 @@ $(document).ready(function() {
     var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
         $('comment-button').unbind('click');
         var data = $('#comment-box').val();
-        console.log('comment clicked');
 
         $('#comment-button').attr('disabled', 'disabled');
         $.post('/stories/comment/',

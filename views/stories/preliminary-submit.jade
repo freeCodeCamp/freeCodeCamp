@@ -15,14 +15,12 @@
     script.
             $('#story-url').on('keypress', function(e) {
                 if (e.which === 13 || e === 13) {
-                    console.log('enter pressed');
                     $('#preliminary-story-submit').click();
                 }
             });
             var preliminaryStorySubmit = function preliminaryStorySubmit() {
 
                 var storyURL = $('#story-url').val();
-                console.log(storyURL);
                 $('#preliminary-story-submit').attr('disabled', 'disabled');
 
                 $.post('/stories/preliminary',
