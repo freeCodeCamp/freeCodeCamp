@@ -7,7 +7,8 @@ var _ = require('lodash'),
     secrets = require('../config/secrets'),
     moment = require('moment'),
     Challenge = require('./../models/Challenge'),
-    debug = require('debug')('freecc:cntr:challenges');
+    debug = require('debug')('freecc:cntr:challenges')
+    resources = require('./resources');
 
 //TODO(Berks): Refactor to use module.exports = {} pattern.
 
@@ -314,7 +315,7 @@ exports.postUpdateProfile = function(req, res, next) {
           return next(err);
         }
         var user = req.user;
-        if (existingUsername && existingUsername.profile.username != user.profile.username) {
+        if (existingUsername && existingUsername.profile.username !== user.profile.username) {
           req.flash('errors', {
             msg: 'An account with that username already exists.'
           });
@@ -343,9 +344,12 @@ exports.postUpdateProfile = function(req, res, next) {
 
 
         user.save(function (err) {
-          if (err) return next(err);
-          req.flash('success', {msg: 'Profile information updated.'});
-          res.redirect('/account');
+            if (err) {
+                return next(err);
+            }
+            req.flash('success', {msg: 'Profile information updated.'});
+            res.redirect('/account');
+            resources.updateUserStoryPictures(user._id.toString(), user.profile.picture);
         });
       });
     });

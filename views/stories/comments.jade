@@ -1,0 +1,124 @@
+.text-left
+    div#comment-list
+
+        script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js")
+        script.
+            var sentinel = 0;
+            var renderComments = function renderComments(comments, containerSelector, level) {
+                var commentDetails;
+                var backgroundColorForCommentNestingLevel = level % 2 !== 0 ? 'odd' : 'even';
+                R.forEach(function displayComments(comment) {
+
+                    $.ajax({
+                        type: 'GET',
+                        url: '/stories/comments/' + comment,
+                        error: function (xhr, textStatus, errorThrown) {
+                            console.log('got error');
+                            commentDetails = {
+                                error: true,
+                                body: 'There seems to be a problem fetching this comment.'
+                            }
+                        },
+                        success: function (data, textStatus, xhr) {
+                            commentDetails = data;
+                            console.log(commentDetails.commentOn);
+                            var div = document.createElement('div');
+                            $(div)
+                                    .html(
+                                        '<div class="media ' + backgroundColorForCommentNestingLevel + ' media-news">' +
+                                            '<div class="media-left">' +
+                                                "<a href='/" + commentDetails.author.username + "'>" +
+                                                    '<img class="media-object img-news" src="' + commentDetails.author.picture +'" alt="' + commentDetails.author.username + '">' +
+                                                '</a>' +
+                                            '</div>' +
+                                            '<div class="media-body comment_' + commentDetails._id + '">' +
+                                                '<div class="media-body-wrapper">' +
+                                                    '<p>' + commentDetails.body + '</p>' +
+                                                        '<h6>' +
+                                                            '<div class="clearfix comment-a-comment negative-15">' +
+                                                                "commented " + moment(commentDetails.commentOn).fromNow() + " by " +
+                                                                "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a> · " +
+                                                                "<a id='" + commentDetails._id + "'>Reply</a>" +
+                                                            '</div>' +
+                                                        '</h6>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>'
+                                    )
+                                    .addClass('comment-wrapper positive-10')
+                                    .appendTo($(containerSelector));
+
+                            sentinel += commentDetails.comments.length;
+
+                            renderComments(commentDetails.comments, '.comment_' + commentDetails._id, ++level);
+
+                        },
+                        complete: function () {
+                            sentinel--;
+                            if (!sentinel) {
+                                $('.comment-a-comment').on('click', 'a', function () {
+                                    $(this).unbind('click');
+                                    $('.comment-to-comment-formgroup').empty();
+                                    var div = document.createElement('div');
+                                    var commentId = $(this).attr('id');
+                                    $(div).html(
+                                            "<div class='formgroup comment-to-comment-formgroup'>" +
+                                                "<textarea class='form-control' id='comment-to-comment-textarea' maxlength='140' autofocus></textarea>" +
+                                                    '<div class="clearfix">' +
+                                                        '<span class="pull-left" id="textarea_feedback"></span>' +
+                                                        "<button class='btn btn-small btn-primary pull-right' id='submit-comment-to-comment'>Submit</button>" +
+                                                    '</div>' +
+
+                                            "</div>"
+                                    )
+                                            .addClass('row')
+                                            .appendTo($(this).closest('.media-body-wrapper'));
+                                    var text_max = 140;
+                                    $('#textarea_feedback').html(text_max + ' characters remaining');
+                                    $('#comment-to-comment-textarea').keyup(function () {
+                                        var text_length = $('#comment-to-comment-textarea').val().length;
+                                        var text_remaining = text_max - text_length;
+                                        $('#textarea_feedback').html(text_remaining + ' characters remaining');
+                                    });
+                                    var submitCommentToCommentHandler = function submitCommentToCommentHandler() {
+                                        $('#submit-comment-to-comment').unbind('click');
+                                        $.post('/stories/comment/' + commentId + '/comment',
+                                        {
+                                            data: {
+                                                associatedPost: commentId,
+                                                body: $('#comment-to-comment-textarea').val(),
+                                                author: {
+                                                    picture: user.profile.picture,
+                                                    userId: user._id,
+                                                    username: user.profile.username
+                                                }
+                                            }
+                                        })
+                                        .fail(function (xhr, textStatus, errorThrown) {
+                                            $('#submit-comment-to-comment').bind('click', submitCommentToCommentHandler);
+                                        })
+                                        .done(function (data, textStatus, xhr) {
+                                            window.location.reload();
+                                        });
+
+                                    };
+
+                                    $('#submit-comment-to-comment').on('click', submitCommentToCommentHandler);
+                                });//
+                            }
+                        }
+                    })
+
+
+                }, comments);
+            }
+            sentinel += comments.length;
+
+
+            renderComments(comments, $('#comment-list'), 0);
+
+
+
+
+

@@ -1,0 +1,40 @@
+.col-xs-12
+    .visible-xs.visible-sm
+        .btn-group.input-group.btn-group-justified(data-toggle='buttons')
+            label.btn.btn-primary.btn-big(class="#{ page === 'hot' ? 'active' : '' }")
+                input#option1(href='/stories/hot', type='radio', name='options')
+                i.ion-ios-pulse-strong
+            label.btn.btn-primary.btn-big(class="#{ page === 'recent' ? 'active' : '' }")
+                input#option2(href='/stories/recent', type='radio', name='options')
+                i.ion-ios-clock
+            label.btn.btn-primary.btn-big(class="#{ page === 'submit'  ? 'active' : page === 'storySubmission' ? 'active' : '' }")
+                input#option3(href='/stories/submit', type='radio', name='options')
+                i.ion-plus-circled
+            label.btn.btn-primary.btn-big(class="#{ page === 'search' ? 'active' : '' }")
+                input#option4(href='/stories/search', type='radio', name='options')
+                i.ion-search
+    .visible-md.visible-lg
+        .btn-group.input-group.btn-group-justified(data-toggle='buttons')
+            label.btn.btn-primary.btn-big(class="#{ page === 'hot' ? 'active' : '' }")
+                input#option1(href='/stories/hot', type='radio', name='options')
+                i.ion-ios-pulse-strong &thinsp;
+                | Hot
+            label.btn.btn-primary.btn-big(class="#{ page === 'recent' ? 'active' : '' }")
+                input#option2(href='/stories/recent', type='radio', name='options')
+                i.ion-ios-clock &thinsp;
+                | New
+            label.btn.btn-primary.btn-big(class="#{ page === 'submit'  ? 'active' : page === 'storySubmission' ? 'active' : '' }")
+                input#option3(href='/stories/submit', type='radio', name='options')
+                i.ion-plus-circled &thinsp;
+                | Submit
+            label.btn.btn-primary.btn-big(class="#{ page === 'search' ? 'active' : '' }")
+                input#option4(href='/stories/search', type='radio', name='options')
+                i.ion-search &thinsp;
+                | Search
+
+    script.
+        $('label').on('click', function() {
+            window.location = ($(this).children('input').attr('href'));
+        });
+
+.spacer
