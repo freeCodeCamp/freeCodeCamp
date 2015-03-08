@@ -130,9 +130,7 @@ module.exports = {
         var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
         request('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(err, status1, pulls) {
             pulls = pulls ? Object.keys(JSON.parse(pulls)).length : "Can't connect to github";
-            debug('pulls', pulls);
             request('https://api.github.com/repos/freecodecamp/freecodecamp/issues?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function (err, status2, issues) {
-                debug('issues', issues);
                 issues = ((pulls === parseInt(pulls)) && issues) ? Object.keys(JSON.parse(issues)).length - pulls : "Can't connect to GitHub";
                 res.send({"issues": issues, "pulls" : pulls});
             });
@@ -168,8 +166,16 @@ module.exports = {
     about: function(req, res) {
         if (req.user) {
             if (!req.user.picture) {
-                req.user.picture = "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png"
-                req.user.save();
+                User.find({'_id': req.user._id}, function (err, user) {
+                    if (err) {
+                        debug('Err:', err);
+                    }
+                    user = user.pop();
+                    user.picture = "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png";
+                    user.markModifed('user.picture');
+                    user.save();
+                    updateUserStoryPictures(user._id.toString(), "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png");
+                });
             }
         }
 
@@ -291,7 +297,6 @@ module.exports = {
                     var $ = cheerio.load(body);
                     var title = $('title').text();
                     result.title = title;
-                    debug('calling callback with', result);
                     callback(null, result);
                 } else {
                     callback('failed');
@@ -334,8 +339,6 @@ module.exports = {
 
             R.forEach(function(story) {
                 story.author.picture = picture;
-                debug('This is a story', story);
-                debug(story.author.picture);
                 story.markModified('author');
                 story.save();
             }, foundStories);
