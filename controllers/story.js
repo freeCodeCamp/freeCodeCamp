@@ -10,7 +10,7 @@ var R = require('ramda'),
     secrets = require('../config/secrets');
 
 exports.hotJSON = function(req, res, next) {
-    var story = Story.find({}).sort({'rank': -1});
+    var story = Story.find({}).sort({'rank': -1, 'timePosted': -1});
     story.exec(function(err, stories) {
         if (err) {
             throw err;

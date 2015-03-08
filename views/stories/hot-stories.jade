@@ -1,5 +1,5 @@
-h3
-    ul#story-list.story-list
+.col-xs-12
+    ol#story-list.story-list
 
         script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
         script.
@@ -17,31 +17,30 @@ h3
                             var linkedName = getLinkedName(data[i].storyLink);
                             var rank = data[i].rank;
 
-                            $(li).html("<div class='row text-left'>" +
-                                            "<div class='col-xs-3 col-sm-1'>" +
-                                                "<div class='positive-5'>" +
-                                                    "<span>" + rank + "</span>" +
-                                                "</div>" +
+                            $(li)
+                            .html(
+                                "<div class='col-xs-12 text-left'>" +
+                                    "<div class='col-xs-2 col-sm-1'>" +
+                                        "<img src='" + data[i].author.picture + "' class='img-news'/>" +
+                                    "</div>" +
+                                    "<div class='col-xs-10 col-sm-11'>" +
+                                        "<div class='row'>" +
+                                            "<div class='col-xs-12'>" +
+                                                "<a href='/stories/" + linkedName + "'>"
+                                                    + data[i].storyLink +
+                                                "</a>" +
                                             "</div>" +
-                                            "<div class='col-xs-2 col-sm-1'>" +
-                                                "<img src='" + data[i].author.picture + "' class='img-responsive'/>" +
-                                            "</div>" +
-                                            "<div class='col-xs-7 col-sm-10'>" +
-                                                "<div class='row'>" +
-                                                    "<div class='col-xs-12'>" +
-                                                        "<a href='/stories/" + linkedName + "'>"
-                                                            + data[i].storyLink +
-                                                        "</a>" +
-                                                    "</div>" +
-                                                    "<div class='col-xs-12'>" +
-                                                        "<span>Posted " +
-                                                        moment(data[i].timePosted).fromNow() +
-                                                        " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +
-                                                    "</div>" +
-                                                "</div>" +
+                                            "<div class='col-xs-12'>" +
+                                                "<span>" +
+                                                    rank + " points, posted " +
+                                                    moment(data[i].timePosted).fromNow() +
+                                                    " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +
+                                                "</span>" +
                                             "</div>" +
                                         "</div>" +
-                            "</li>");
+                                    "</div>" +
+                                "</div>"
+                            );
                             $(li).appendTo($('#story-list'));
                         }
                     });
