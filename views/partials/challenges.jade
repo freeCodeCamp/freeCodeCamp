@@ -3,6 +3,6 @@ h3
         for challenge in challenges
             li
                 a(href="/challenges/#{challenge.challengeNumber}", class="#{ (cc && cc[challenge.challengeNumber] > 0) ? 'strikethrough' : '' }") #{challenge.name}
-                | &nbsp; (#{challenge.time} mins)
+                | &thinsp; (#{challenge.time} mins)
 
 a.btn.btn-lg.btn-primary.btn-block(href="/done-with-first-100-hours", class="#{ ((points && points < 54) || (!points)) ? 'disabled' : '' }") I'm done with all the challenges!

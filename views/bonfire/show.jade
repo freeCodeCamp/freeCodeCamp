@@ -23,7 +23,7 @@ block content
             #testCreatePanel
                 h1.text-center= name
                 h2.text-center
-                    .bonfire-flames Difficulty:&nbsp;
+                    .bonfire-flames Difficulty:&thinsp;
                         if (difficulty == "0")
                             i.ion-ios-flame-outline
                             i.ion-ios-flame-outline
@@ -127,7 +127,7 @@ block content
 
                         - if (points && points > 2)
                             a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
-                                i.fa.fa-twitter &nbsp;
+                                i.fa.fa-twitter &thinsp;
                                     = phrase
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
