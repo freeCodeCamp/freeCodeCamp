@@ -7,7 +7,8 @@ var _ = require('lodash'),
     secrets = require('../config/secrets'),
     moment = require('moment'),
     Challenge = require('./../models/Challenge'),
-    debug = require('debug')('freecc:cntr:challenges');
+    debug = require('debug')('freecc:cntr:challenges')
+    resources = require('./resources');
 
 //TODO(Berks): Refactor to use module.exports = {} pattern.
 
@@ -314,7 +315,7 @@ exports.postUpdateProfile = function(req, res, next) {
           return next(err);
         }
         var user = req.user;
-        if (existingUsername && existingUsername.profile.username != user.profile.username) {
+        if (existingUsername && existingUsername.profile.username !== user.profile.username) {
           req.flash('errors', {
             msg: 'An account with that username already exists.'
           });
@@ -330,7 +331,7 @@ exports.postUpdateProfile = function(req, res, next) {
         user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
         user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
         user.profile.bio = req.body.bio.trim() || '';
-        user.profile.picture = req.body.picture.trim() || '';
+        user.profile.picture = req.body.picture.trim() || 'https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png';
         user.portfolio.website1Title = req.body.website1Title.trim() || '';
         user.portfolio.website1Link = req.body.website1Link.trim() || '';
         user.portfolio.website1Image = req.body.website1Image.trim() || '';
@@ -343,9 +344,12 @@ exports.postUpdateProfile = function(req, res, next) {
 
 
         user.save(function (err) {
-          if (err) return next(err);
-          req.flash('success', {msg: 'Profile information updated.'});
-          res.redirect('/account');
+            if (err) {
+                return next(err);
+            }
+            req.flash('success', {msg: 'Profile information updated.'});
+            res.redirect('/account');
+            resources.updateUserStoryPictures(user._id.toString(), user.profile.picture);
         });
       });
     });

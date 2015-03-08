@@ -55,7 +55,7 @@ $(document).ready(function() {
                 if (res) {
                     window.location.href = '/bonfires'
                 }
-            })
+            });
         }
     }
 
@@ -107,8 +107,6 @@ $(document).ready(function() {
         window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
     });
 
-
-
     // Bonfire instructions functions
     $('#more-info').on('click', function() {
         ga('send', 'event',  'Challenge', 'more-info', challengeName);
@@ -120,6 +118,106 @@ $(document).ready(function() {
         $('#brief-instructions').show();
         $('#long-instructions').hide();
     });
+
+    var upvoteHandler = function () {
+        var _id = storyId;
+        $('#upvote').unbind('click');
+        var alreadyUpvoted = false;
+        for (var i = 0; i < upVotes.length; i++) {
+            if (upVotes[i].upVotedBy === user._id) {
+                alreadyUpvoted = true;
+                break;
+            }
+        }
+        if (!alreadyUpvoted) {
+            $.post('/stories/upvote',
+                {
+                    data: {
+                        id: _id,
+                        upVoter: user
+                    }
+                })
+                .fail(function (xhr, textStatus, errorThrown) {
+                    $('#upvote').bind('click', upvoteHandler);
+                })
+                .done(function (data, textStatus, xhr) {
+                    $('#storyRank').text(data.rank);
+                });
+        } else {
+            console.log('Can\'t upvote because you\'ve already upvoted');
+        }
+    };
+    $('#upvote').on('click', upvoteHandler);
+
+    var storySubmitButtonHandler = function storySubmitButtonHandler() {
+
+        var link = $('#story-url').val();
+        var headline = $('#story-title').val();
+        var description = $('#description-box').val();
+        console.log(link, headline, description);
+        var userDataForUpvote = {
+            upVotedBy: user._id,
+            upVotedByUsername: user.profile.username
+        };
+        $('#story-submit').unbind('click');
+        $.post('/stories/',
+            {
+                data: {
+                    link: link,
+                    headline: headline,
+                    timePosted: Date.now(),
+                    description: description,
+
+                    rank: 1,
+                    upVotes: [userDataForUpvote],
+                    author: {
+                        picture: user.profile.picture,
+                        userId: user._id,
+                        username: user.profile.username
+                    },
+                    comments: [],
+                    image: ''
+                }
+            })
+            .fail(function (xhr, textStatus, errorThrown) {
+                $('#story-submit').bind('click', storySubmitButtonHandler);
+            })
+            .done(function (data, textStatus, xhr) {
+                window.location = '/stories/' + JSON.parse(data).storyLink;
+            });
+
+    };
+
+    $('#story-submit').on('click', storySubmitButtonHandler);
+
+    var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
+        $('comment-button').unbind('click');
+        var data = $('#comment-box').val();
+        console.log('comment clicked');
+
+        $('#comment-button').attr('disabled', 'disabled');
+        $.post('/stories/comment/',
+            {
+                data: {
+                    associatedPost: storyId,
+                    body: data,
+                    author: {
+                        picture: user.profile.picture,
+                        userId: user._id,
+                        username: user.profile.username
+                    }
+                }
+            })
+            .fail(function (xhr, textStatus, errorThrown) {
+                $('#comment-button').attr('disabled', false);
+            })
+            .done(function (data, textStatus, xhr) {
+                window.location.reload();
+            });
+
+    };
+
+    $('#comment-button').on('click', commentSubmitButtonHandler);
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
@@ -150,6 +248,12 @@ profileValidation.controller('emailSignUpController', ['$scope',
 ]);
 
 profileValidation.controller('emailSignInController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
+profileValidation.controller('URLSubmitController', ['$scope',
     function($scope) {
 
     }

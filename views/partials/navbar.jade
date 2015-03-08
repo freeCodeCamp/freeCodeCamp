@@ -16,17 +16,19 @@
         li
             a(href='/chat') Chat
         li
+            a(href='/stories/hot') News
+        li
             a(href='/bonfires') Bonfires
         if !user
-            li &nbsp; &nbsp; &nbsp;
+            li &thinsp; &thinsp; &thinsp;
             li
                 a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
         else
             li
                 if (user.profile.username)
-                    a(href='/' + user.profile.username) [&nbsp;#{user.points}&nbsp;]
+                    a(href='/' + user.profile.username) [&thinsp;#{user.points}&thinsp;]
                 else
-                    a(href='/account') [&nbsp;#{user.points}&nbsp;]
+                    a(href='/account') [&thinsp;#{user.points}&thinsp;]
             .hidden-xs
                 if user.profile.picture
                     if (user.profile.username)

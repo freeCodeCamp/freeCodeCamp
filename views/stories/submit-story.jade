@@ -1,0 +1,29 @@
+.spacer
+.col-xs-12
+    script.
+        var storyURL = !{JSON.stringify(storyURL)};
+        var storyTitle = !{JSON.stringify(storyTitle)};
+    form.form-horizontal.control-label-story-submission#story-submission-form
+        .col-xs-12
+            .form-group
+                .col-xs-12.col-md-1
+                    label.control-label.control-label-story-submission(for='name') Link
+                .col-xs-12.col-md-11
+                    input#story-url.form-control(placeholder='Paste your link here', name='Link')
+            .form-group
+                .col-xs-12.col-md-1
+                    label.control-label.control-label-story-submission(for='name') Title
+                .col-xs-12.col-md-11
+                    input#story-title.form-control(placeholder='Type a headline for your link here', name='Title', autofocus)
+            .form-group
+                .col-xs-12.col-md-1
+                    label.control-label.control-label-story-submission(for='name') Description
+                .col-xs-12.col-md-11
+                    textarea#description-box.form-control(name="comment-box", rows=5, placeholder="Start off the discussion with a description of your post")
+
+            .spacer
+            .form-group
+                button.btn.btn-big.btn-block.btn-primary#story-submit Submit
+    script.
+        $('#story-url').val(storyURL).attr('disabled', 'disabled');
+        $('#story-title').val(storyTitle);

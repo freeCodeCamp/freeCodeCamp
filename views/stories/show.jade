@@ -1,0 +1,55 @@
+.spacer
+    script.
+        var challengeName = 'Camper News';
+        var storyId = !{JSON.stringify(id)};
+        var comments = !{JSON.stringify(comments)};
+        var upVotes = !{JSON.stringify(upVotes)};
+        var user = !{JSON.stringify(user)};
+    .spacer
+
+    h3.row.col-xs-12
+        .row.text-left.negative-10
+            .col-xs-3.col-sm-1.text-center
+                .row.negative-5
+                    .col-xs-12.big-ion-up-arrow
+                        a#upvote
+                            i.ion-arrow-up-b
+                    h3.story-up-votes
+                        span#storyRank= rank
+            .col-xs-2.col-sm-1
+                a(href="/" + author.username)
+                    img(src="#{author.picture}", class='img-news')
+            .col-xs-7.col-sm-10
+
+                .col-xs-12.negative-28
+                    a(href="#{link}")
+                        h3= title
+                h6
+                    .col-xs-12.negative-28
+                        h4= description
+                        .negative-5
+                            span Posted #{timeAgo}
+                            span &thinsp;by&thinsp;
+                                a(href="/" + author.username)@#{author.username}
+                                |  &nbsp;·&nbsp;
+                                a#reply-to-main-post Reply
+    .col-xs-12#reply-area
+
+
+
+    .hidden-element#initial-comment-submit
+        form.form-horizontal.control-label-story-submission
+        .col-xs-12
+            .form-group
+                h3.row
+                    textarea#comment-box.form-control(name="comment-box", rows=5)
+                h3.row.text-center
+                    .col-xs-6.col-xs-offset-3
+                        button.btn.btn-block.btn-primary#comment-button Comment
+
+    script.
+        $('#reply-to-main-post').on('click', function() {
+            $('#initial-comment-submit').removeClass('hidden-element');
+            $(this).unbind('click');
+        });
+    include ./comments

@@ -1,6 +1,8 @@
 var User = require('../models/User'),
     Challenge = require('./../models/Challenge'),
     Bonfire = require('./../models/Bonfire'),
+    Story = require('./../models/Story'),
+    Comment = require('./../models/Comment'),
     resources = require('./resources.json'),
     questions = resources.questions,
     steps = resources.steps,
@@ -8,9 +10,11 @@ var User = require('../models/User'),
     bonfires = require('../seed_data/bonfires.json'),
     coursewares = require('../seed_data/coursewares.json'),
     moment = require('moment'),
-    Client = require('node-rest-client').Client,
-    client = new Client(),
-    debug = require('debug')('freecc:cntr:bonfires');
+    https = require('https'),
+    debug = require('debug')('freecc:cntr:resources'),
+    cheerio = require('cheerio'),
+    request = require('request'),
+    R = require('ramda');
 
 /**
  * GET /
@@ -21,33 +25,6 @@ module.exports = {
     privacy: function privacy(req, res) {
         res.render('resources/privacy', {
             title: 'Privacy'
-        });
-    },
-
-    stats: function stats(req, res) {
-        var date1 = new Date("10/15/2014");
-        var date2 = new Date();
-        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-        var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, response) {
-            var nonprofitProjects = (trello && trello.length) || 15;
-            User.count({'points': {'$gt': 2}}, function(err, c3) { if (err) { debug('User err: ', err); next(err); }
-                User.count({'points': {'$gt': 9}}, function(err, c10) { if (err) { debug('User err: ', err); next(err); }
-                    User.count({'points': {'$gt': 29}}, function(err, c30) { if (err) { debug('User err: ', err); next(err); }
-                        User.count({'points': {'$gt': 53}}, function(err, all) { if (err) { debug('User err: ', err); next(err); }
-                            res.render('resources/stats', {
-                                title: 'Free Code Camp Stats:',
-                                daysRunning: daysRunning,
-                                nonprofitProjects: nonprofitProjects,
-                                c3: c3,
-                                c10: c10,
-                                c30: c30,
-                                all: all
-                            });
-                        });
-                    });
-                });
-            });
         });
     },
 
@@ -109,6 +86,12 @@ module.exports = {
         });
     },
 
+    guideToOurNonprofitProjects: function guideToOurNonprofitProjects(req, res) {
+        res.render('resources/guide-to-our-nonprofit-projects', {
+            title: 'A guide to our Nonprofit Projects'
+        });
+    },
+
     controlShortcuts: function controlShortcuts(req, res) {
         res.render('resources/control-shortcuts', {
             title: 'These Control Shortcuts will save you Hours'
@@ -146,22 +129,27 @@ module.exports = {
     },
     githubCalls: function(req, res) {
         var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
-        client.get('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(pulls, res3) {
+        request('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(err, status1, pulls) {
             pulls = pulls ? Object.keys(JSON.parse(pulls)).length : "Can't connect to github";
-            client.get('https://api.github.com/repos/freecodecamp/freecodecamp/issues?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function (issues, res4) {
+            debug('pulls', pulls);
+            request('https://api.github.com/repos/freecodecamp/freecodecamp/issues?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function (err, status2, issues) {
+                debug('issues', issues);
                 issues = ((pulls === parseInt(pulls)) && issues) ? Object.keys(JSON.parse(issues)).length - pulls : "Can't connect to GitHub";
                 res.send({"issues": issues, "pulls" : pulls});
             });
         });
     },
+
+
+
     trelloCalls: function(req, res) {
-        client.get('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(trello, res2) {
+        request('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(err, status, trello) {
             trello = trello ? (JSON.parse(trello)).length : "Can't connect to to Trello";
             res.send({"trello": trello});
         });
     },
     bloggerCalls: function(req, res) {
-        client.get('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (blog, res5) {
+        request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
             var blog = blog.length > 100 ? JSON.parse(blog) : "";
             res.send({
                 blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
@@ -262,7 +250,7 @@ module.exports = {
             return {
                 _id: elem._id,
                 difficulty: elem.difficulty
-            }
+            };
         })
             .sort(function(a, b) {
                 return a.difficulty - b.difficulty;
@@ -276,7 +264,7 @@ module.exports = {
             return {
                 name: elem.name,
                 difficulty: elem.difficulty
-            }
+            };
         })
             .sort(function(a, b) {
                 return a.difficulty - b.difficulty;
@@ -287,9 +275,64 @@ module.exports = {
     },
     whichEnvironment: function() {
         return process.env.NODE_ENV;
+    },
+    getURLTitle: function(url, callback) {
+
+        (function () {
+            var result = {title: ''};
+            request(url, function (error, response, body) {
+                if (!error && response.statusCode === 200) {
+                    var $ = cheerio.load(body);
+                    var title = $('title').text();
+                    result.title = title;
+                    debug('calling callback with', result);
+                    callback(null, result);
+                } else {
+                    callback('failed');
+                }
+            });
+        })();
+    },
+    updateUserStoryPictures: function(userId, picture) {
+
+        var counter = 0,
+            foundStories,
+            foundComments;
+
+        Story.find({'author.userId': userId}, function(err, stories) {
+            if (err) {
+                throw err;
+            }
+            foundStories = stories;
+            counter++;
+            saveStoriesAndComments();
+        });
+        Comment.find({'author.userId': userId}, function(err, comments) {
+            if (err) {
+                throw err;
+            }
+            foundComments = comments;
+            counter++;
+            saveStoriesAndComments();
+        });
+
+        function saveStoriesAndComments() {
+            if (counter !== 2) {
+                return;
+            }
+            R.forEach(function(comment) {
+                comment.author.picture = picture;
+                comment.markModified('author');
+                comment.save();
+            }, foundComments);
+
+            R.forEach(function(story) {
+                story.author.picture = picture;
+                debug('This is a story', story);
+                debug(story.author.picture);
+                story.markModified('author');
+                story.save();
+            }, foundStories);
+        }
     }
-
 };
-
-
-

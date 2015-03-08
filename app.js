@@ -35,6 +35,11 @@ var express = require('express'),
     coursewareController = require('./controllers/courseware'),
 
     /**
+     *  Stories
+     */
+    storyController = require('./controllers/story');
+
+    /**
      * User model
      */
     User = require('./models/User'),
@@ -219,6 +224,7 @@ app.get('/chat', resourcesController.chat);
 app.get('/live-pair-programming', resourcesController.livePairProgramming);
 app.get('/install-screenhero', resourcesController.installScreenHero);
 app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
+app.get('/guide-to-our-nonprofit-projects', resourcesController.guideToOurNonprofitProjects);
 app.get('/chromebook', resourcesController.chromebook);
 app.get('/deploy-a-website', resourcesController.deployAWebsite);
 app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
@@ -270,6 +276,92 @@ app.post(
     '/update-progress',
     passportConf.isAuthenticated,
     userController.updateProgress
+);
+
+/**
+ * Main routes.
+ */
+app.get(
+    '/stories/hotStories',
+    storyController.hotJSON
+);
+
+app.get(
+    '/stories/recentStories',
+    storyController.recentJSON
+);
+
+app.get(
+    '/stories/',
+    function(req, res) {
+        res.redirect(302, '/stories/hot');
+    }
+);
+
+app.get(
+    '/stories/comments/:id',
+    storyController.comments
+);
+
+app.post(
+    '/stories/comment/',
+    storyController.commentSubmit
+);
+
+app.post(
+    '/stories/comment/:id/comment',
+    storyController.commentOnCommentSubmit
+);
+
+app.get(
+    '/stories/submit',
+    storyController.submitNew
+);
+
+app.get(
+    '/stories/submit/:newStory',
+    storyController.preSubmit
+);
+
+app.post(
+    '/stories/preliminary',
+    storyController.newStory
+);
+
+app.post(
+    '/stories/',
+    storyController.storySubmission
+);
+
+app.get(
+    '/stories/hot',
+    storyController.hot
+);
+
+app.get(
+    '/stories/recent',
+    storyController.recent
+);
+
+
+app.get(
+    '/stories/search',
+    storyController.search
+);
+
+app.post(
+    '/stories/search',
+    storyController.getStories
+);
+
+app.get(
+    '/stories/:storyName',
+    storyController.returnIndividualStory
+);
+
+app.post(
+    '/stories/upvote/',
+    storyController.upvote
 );
 
 /**
