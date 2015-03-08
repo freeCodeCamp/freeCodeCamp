@@ -10,13 +10,38 @@ var R = require('ramda'),
     secrets = require('../config/secrets'),
     User = require('./../models/User');
 
+function hotRank(timeValue, rank, headline) {
+    /*
+     * Hotness ranking algorithm: http://amix.dk/blog/post/19588
+     * tMS = postedOnDate - foundationTime;
+     * Ranking...
+     * f(ts, 1, rank) = log(10)z + (ts)/45000;
+     */
+    var hotness;
+    var z = Math.log(rank) / Math.log(10);
+    hotness = z + (timeValue / 45000000);
+    return hotness;
+
+}
+
 exports.hotJSON = function(req, res, next) {
-    var story = Story.find({}).sort({'rank': -1, 'timePosted': -1}).limit(100);
+    var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
     story.exec(function(err, stories) {
         if (err) {
             throw err;
         }
-        res.json(stories);
+
+        var foundationDate = 1413298800000;
+
+        var sliceVal = stories.length >= 100 ? 100 : stories.length;
+        var rankedStories = stories;
+        return res.json(rankedStories.map(function(elem) {
+            return elem;
+        }).sort(function(a, b) {
+            debug('a rank and b rank', hotRank(a.timePosted - foundationDate, a.rank, a.headline), hotRank(b.timePosted - foundationDate, b.rank, b.headline));
+            return hotRank(b.timePosted - foundationDate, b.rank, b.headline) - hotRank(a.timePosted - foundationDate, a.rank, a.headline);
+        }).slice(0, sliceVal));
+
     });
 };
 
@@ -140,7 +165,7 @@ exports.getStories = function(req, res, next) {
                 }
             }
         }).toArray(function(err, items) {
-            if (items.length !== 0) {
+            if (items !== null && items.length !== 0) {
                 return res.json(items);
             }
             return res.status(404);
@@ -162,6 +187,7 @@ exports.upvote = function(req, res, next) {
                 upVotedByUsername: data.upVoter.profile.username
             }
         );
+        story.markModified('rank');
         story.save();
         return res.send(story);
     });
