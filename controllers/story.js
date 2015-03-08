@@ -11,7 +11,7 @@ var R = require('ramda'),
     User = require('./../models/User');
 
 exports.hotJSON = function(req, res, next) {
-    var story = Story.find({}).sort({'rank': -1, 'timePosted': -1});
+    var story = Story.find({}).sort({'rank': -1, 'timePosted': -1}).limit(100);
     story.exec(function(err, stories) {
         if (err) {
             throw err;
@@ -21,7 +21,7 @@ exports.hotJSON = function(req, res, next) {
 };
 
 exports.recentJSON = function(req, res, next) {
-    var story = Story.find({}).sort({'timePosted': -1});
+    var story = Story.find({}).sort({'timePosted': -1}).limit(100);
     story.exec(function(err, stories) {
         if (err) {
             throw err;
