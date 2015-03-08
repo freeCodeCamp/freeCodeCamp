@@ -21,7 +21,6 @@ script.
     });
     function executeSearch() {
         $('#stories').empty();
-        console.log('clicked or enter button');
         var searchTerm = $('#searchArea').val();
         var getLinkedName = function getLinkedName(name) {
             return name.toLowerCase().replace(/\s/g, '-');
@@ -33,7 +32,6 @@ script.
                         }
                 })
                 .fail(function (xhr, textStatus, errorThrown) {
-                    console.log('failure');
                 })
                 .done(function (data, textStatus, xhr) {
                     for (var i = 0; i < data.length; i++) {
