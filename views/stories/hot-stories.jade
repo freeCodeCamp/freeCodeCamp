@@ -1,8 +1,9 @@
 .col-xs-12
-    ol#story-list.story-list
+    #story-list.story-list
 
         script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
         script.
+
             var getLinkedName = function getLinkedName(name) {
                 return name.trim().toLowerCase().replace(/\s/g, '-');
             }
@@ -13,17 +14,20 @@
                     .success(
                     function(data) {
                         for (var i = 0; i < data.length; i++) {
-                            var li  = document.createElement('li');
+                            var div  = document.createElement('div');
                             var linkedName = getLinkedName(data[i].storyLink);
                             var rank = data[i].rank;
 
-                            $(li)
+                            $(div)
                             .html(
                                 "<div class='col-xs-12 text-left'>" +
+                                    "<div class='col-xs-1 col-sm-1 positive-5'>" +
+                                        (i + 1) +
+                                    "</div>" +
                                     "<div class='col-xs-2 col-sm-1'>" +
                                         "<img src='" + data[i].author.picture + "' class='img-news'/>" +
                                     "</div>" +
-                                    "<div class='col-xs-10 col-sm-11'>" +
+                                    "<div class='col-xs-9 col-sm-10'>" +
                                         "<div class='row'>" +
                                             "<div class='col-xs-12'>" +
                                                 "<a href='/stories/" + linkedName + "'>"
@@ -41,6 +45,7 @@
                                     "</div>" +
                                 "</div>"
                             );
-                            $(li).appendTo($('#story-list'));
+                            $(div).addClass('story-list')
+                            $(div).appendTo($('#story-list'));
                         }
                     });
