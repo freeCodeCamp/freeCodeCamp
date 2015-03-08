@@ -1,24 +1,17 @@
 .col-xs-12
     .spacer
-    .input-group
-        input#story-url.big-text-field.form-control(placeholder='Paste your link here', name='Link', autofocus)
-        span.input-group-btn
-            button#preliminary-story-submit.btn.btn-big.btn-primary(type='button') Submit
+    div(ng-controller="URLSubmitController")
+
+        form.input-group(name='URLSubmit')
+                input#story-url.big-text-field.form-control(placeholder='Paste your link here', name='link', type='url', ng-model='possibleURL' autofocus)
+                span.input-group-btn
+                    button#preliminary-story-submit.btn.btn-big.btn-primary(type='button', ng-disabled='URLSubmit.link.$invalid') Submit
+        div(ng-show="URLSubmit.link.$error.url && !URLsubmit.link.$pristine")
+            alert(type='danger')
+                span.ion-close-circled
+                | Please enter a valid URL format (http://www.example.com/).
     .spacer
 
-
-    //
-        .col-xs-12
-            form.form-horizontal.control-label-story-submission#story-submission-form
-                .col-xs-2.img-story-post
-                    img.img-responsive(src='#{user.profile.picture}')
-                .col-xs-10
-                    .form-group
-                        .col-xs-11
-                            input#story-url.form-control(placeholder='Paste your link here', name='Link')
-                    .spacer
-                    .form-group
-                        button.btn.btn-big.btn-block.btn-primary Submit
     script.
             $('#story-url').on('keypress', function(e) {
                 if (e.which === 13 || e === 13) {
@@ -44,10 +37,11 @@
                 .done(function (data, textStatus, xhr) {
                     if (data.alreadyPosted) {
                         window.location = '/stories/' + data.storyURL;
+                    } else {
+                        window.location = '/stories/submit/url=' +
+                        encodeURIComponent(data.storyURL) +
+                        '&title=' + encodeURIComponent(data.storyTitle);
                     }
-                    window.location = '/stories/submit/url=' +
-                    encodeURIComponent(data.storyURL) +
-                    '&title=' + encodeURIComponent(data.storyTitle);
                 });
             }
             $('#preliminary-story-submit').on('click', preliminaryStorySubmit);

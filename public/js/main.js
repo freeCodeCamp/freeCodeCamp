@@ -253,6 +253,12 @@ profileValidation.controller('emailSignInController', ['$scope',
     }
 ]);
 
+profileValidation.controller('URLSubmitController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
 profileValidation.controller('nonprofitFormController', ['$scope',
     function($scope) {
 

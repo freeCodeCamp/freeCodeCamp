@@ -179,6 +179,9 @@ exports.comments = function(req, res, next) {
 
 exports.newStory = function(req, res, next) {
     var url = req.body.data.url;
+    if (url.search(/^https?:\/\//g) === -1) {
+        url = 'http://' + url;
+    }
     debug('In pre submit with a url', url);
 
     Story.find({'link': url}, function(err, story) {
@@ -193,13 +196,14 @@ exports.newStory = function(req, res, next) {
                 msg: "Someone's already posted that link. Here's the discussion."
             });
             debug('Redirecting the user with', story[0].storyLink);
-            res.json({
+            return res.json({
                 alreadyPosted: true,
                 storyURL: story.pop().storyLink
             });
         }
+        resources.getURLTitle(url, processResponse);
     });
-    resources.getURLTitle(url, processResponse);
+
     function processResponse(err, storyTitle) {
         if (err) {
             res.json({
