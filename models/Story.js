@@ -41,5 +41,18 @@ var storySchema = new mongoose.Schema({
     }
 });
 
+storySchema.pre('save', function(next) {
+    console.log('pre save test');
+    next();
+});
+
 module.exports = mongoose.model('Story', storySchema);
 
+/*
+ author: {
+ userId: {
+ type: mongoose.Schema.Types.ObjectId,
+ ref: 'User'
+ }
+ },
+ */

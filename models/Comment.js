@@ -30,3 +30,10 @@ var commentSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Comment', commentSchema);
+
+/*
+ author: {
+ type: mongoose.Schema.Types.ObjectId,
+ ref: 'User'
+ },
+ */

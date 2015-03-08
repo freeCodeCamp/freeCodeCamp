@@ -1,6 +1,8 @@
 var User = require('../models/User'),
     Challenge = require('./../models/Challenge'),
     Bonfire = require('./../models/Bonfire'),
+    Story = require('./../models/Story'),
+    Comment = require('./../models/Comment'),
     resources = require('./resources.json'),
     questions = resources.questions,
     steps = resources.steps,
@@ -11,7 +13,8 @@ var User = require('../models/User'),
     https = require('https'),
     debug = require('debug')('freecc:cntr:resources'),
     cheerio = require('cheerio'),
-    request = require('request');
+    request = require('request'),
+    R = require('ramda');
 
 /**
  * GET /
@@ -283,8 +286,47 @@ module.exports = {
                 }
             });
         })();
+    },
+    updateUserStoryPictures: function(userId, picture) {
+
+        var counter = 0,
+            foundStories,
+            foundComments;
+
+        Story.find({'author.userId': userId}, function(err, stories) {
+            if (err) {
+                throw err;
+            }
+            foundStories = stories;
+            counter++;
+            saveStoriesAndComments();
+        });
+        Comment.find({'author.userId': userId}, function(err, comments) {
+            if (err) {
+                throw err;
+            }
+            foundComments = comments;
+            counter++;
+            saveStoriesAndComments();
+        });
+
+        function saveStoriesAndComments() {
+            if (counter !== 2) {
+                return;
+            }
+            R.forEach(function(comment) {
+                comment.author.picture = picture;
+                comment.markModified('author');
+                comment.save();
+            }, foundComments);
+
+            R.forEach(function(story) {
+                story.author.picture = picture;
+                debug('This is a story', story);
+                debug(story.author.picture);
+                story.markModified('author');
+                story.save();
+            }, foundStories);
+        }
     }
 };
-
-
-

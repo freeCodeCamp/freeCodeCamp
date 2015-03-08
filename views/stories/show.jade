@@ -17,7 +17,7 @@
                     h3.story-up-votes
                         span#storyRank= rank
             .col-xs-2.col-sm-1
-                img(src="#{author.picture}", class='img-responsive')
+                img(src="#{author.picture}", class='img-news')
             .col-xs-7.col-sm-10
                 .col-xs-12.negative-28
                     a(href="#{link}")
@@ -26,17 +26,29 @@
                     .col-xs-12.negative-15
                         span Posted #{timeAgo}
                         span &nbsp;by&nbsp;
-                            a(href="/" + author.username) @#{author.username}
+                            a(href="/" + author.username)
+                            |  @#{author.username}
+                            |  &nbsp;·&nbsp;
+                            a#reply-to-main-post Reply
             .col-xs-10.col-xs-offset-1
                 p= description
+    .col-xs-12#reply-area
 
-    form.form-horizontal.control-label-story-submission
+
+
+    .hidden-element#initial-comment-submit
+        form.form-horizontal.control-label-story-submission
         .col-xs-12
             .form-group
-                h3.row.col-xs-12
+                h3.row
                     textarea#comment-box.form-control(name="comment-box", rows=5)
                 h3.row.text-center
                     .col-xs-6.col-xs-offset-3
                         button.btn.btn-block.btn-primary#comment-button Comment
 
+    script.
+        $('#reply-to-main-post').on('click', function() {
+            $('#initial-comment-submit').removeClass('hidden-element');
+            $(this).unbind('click');
+        });
     include ./comments

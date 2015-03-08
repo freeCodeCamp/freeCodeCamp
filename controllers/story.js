@@ -7,7 +7,8 @@ var R = require('ramda'),
     resources = require('./resources'),
     mongodb = require('mongodb'),
     MongoClient = mongodb.MongoClient,
-    secrets = require('../config/secrets');
+    secrets = require('../config/secrets'),
+    User = require('./../models/User');
 
 exports.hotJSON = function(req, res, next) {
     var story = Story.find({}).sort({'rank': -1, 'timePosted': -1});
