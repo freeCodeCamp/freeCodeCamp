@@ -4,6 +4,7 @@
         var storyURL = !{JSON.stringify(storyURL)};
         var storyTitle = !{JSON.stringify(storyTitle)};
         var storyImage = !{JSON.stringify(storyImage)};
+        var storyMetaDescription = !{JSON.stringify(storyMetaDescription)};
     form.form-horizontal.control-label-story-submission#story-submission-form
         .col-xs-12
             .form-group
@@ -25,9 +26,14 @@
                 .col-xs-12.col-md-offset-1
                     span.pull-left#textarea_feedback
             .form-group
-                .col-xs-12.col-md-offset-1
+                .col-xs-11.col-md-offset-1
                     .hidden-element#image-display
-                        img.url-preview(src="#{storyImage}")
+                        .media
+                            .media-left
+                                img.url-preview.media-object(src="#{storyImage}", alt="#{storyMetaDescription}")
+                            .media-body
+                                .col-xs-12
+                                    p= storyMetaDescription
             .spacer
             .row
                 .form-group
