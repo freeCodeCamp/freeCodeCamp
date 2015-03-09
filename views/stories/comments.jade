@@ -77,8 +77,10 @@
                                             .appendTo($(this).closest('.media-body-wrapper'));
                                     var text_max = 140;
                                     $('#textarea-comment-feedback').html(text_max + ' characters remaining');
-                                    $('#comment-to-comment-textinput').keyup(function () {
-                                        console.log('I should be showing characters remaining');
+                                    $('#comment-to-comment-textinput').keyup(function (e) {
+                                        if (e.which === 13 || e === 13) {
+                                            $('#submit-comment-to-comment').click();
+                                        }
                                         var text_length = $('#comment-to-comment-textinput').val().length;
                                         var text_remaining = text_max - text_length;
                                         $('#textarea-comment-feedback').html(text_remaining + ' characters remaining');
@@ -89,7 +91,7 @@
                                         {
                                             data: {
                                                 associatedPost: commentId,
-                                                body: $('#comment-to-comment-textarea').val(),
+                                                body: $('#comment-to-comment-textinput').val(),
                                                 author: {
                                                     picture: user.profile.picture,
                                                     userId: user._id,
