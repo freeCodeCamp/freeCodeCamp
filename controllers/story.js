@@ -8,9 +8,9 @@ var R = require('ramda'),
     mongodb = require('mongodb'),
     MongoClient = mongodb.MongoClient,
     secrets = require('../config/secrets'),
-    User = require('./../models/User');
+    sanitizeHtml = require('sanitize-html');
 
-function hotRank(timeValue, rank, headline) {
+function hotRank(timeValue, rank) {
     /*
      * Hotness ranking algorithm: http://amix.dk/blog/post/19588
      * tMS = postedOnDate - foundationTime;
@@ -24,7 +24,7 @@ function hotRank(timeValue, rank, headline) {
 
 }
 
-exports.hotJSON = function(req, res, next) {
+exports.hotJSON = function(req, res) {
     var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
     story.exec(function(err, stories) {
         if (err) {
@@ -34,18 +34,16 @@ exports.hotJSON = function(req, res, next) {
         var foundationDate = 1413298800000;
 
         var sliceVal = stories.length >= 100 ? 100 : stories.length;
-        var rankedStories = stories;
-        return res.json(rankedStories.map(function(elem) {
+        return res.json(stories.map(function(elem) {
             return elem;
         }).sort(function(a, b) {
-            debug('a rank and b rank', hotRank(a.timePosted - foundationDate, a.rank, a.headline), hotRank(b.timePosted - foundationDate, b.rank, b.headline));
             return hotRank(b.timePosted - foundationDate, b.rank, b.headline) - hotRank(a.timePosted - foundationDate, a.rank, a.headline);
         }).slice(0, sliceVal));
 
     });
 };
 
-exports.recentJSON = function(req, res, next) {
+exports.recentJSON = function(req, res) {
     var story = Story.find({}).sort({'timePosted': -1}).limit(100);
     story.exec(function(err, stories) {
         if (err) {
@@ -55,47 +53,54 @@ exports.recentJSON = function(req, res, next) {
     });
 };
 
-exports.hot = function(req, res, next) {
+exports.hot = function(req, res) {
     res.render('stories/index', {
         page: 'hot'
     });
 };
 
-exports.submitNew = function(req,res, next) {
+exports.submitNew = function(req, res) {
     res.render('stories/index', {
         page: 'submit'
     });
 };
 
-exports.search = function(req, res, next) {
+exports.search = function(req, res) {
     res.render('stories/index', {
         page: 'search'
     });
 };
 
-exports.recent = function(req, res, next) {
+exports.recent = function(req, res) {
     res.render('stories/index', {
         page: 'recent'
     });
 };
 
-exports.preSubmit = function(req, res, next) {
+exports.preSubmit = function(req, res) {
 
-    var data = req.params.newStory;
+    var data = req.query;
+    var cleanData = sanitizeHtml(data.url);
+    if (data.url.replace(/&/g, '&amp;') !== cleanData) {
 
+        debug('data and cleandata', data, cleanData, data.url === cleanData);
+        req.flash('errors', {
+            msg: 'The data for this post is malformed'
+        });
+        return res.render('stories/index', {
+            page: 'stories/submit'
+        });
+    }
 
-    data = data.replace(/url=/gi, ',').replace(/&title=/gi, ',').replace(/&image=/gi, ',').split(',');
-    // get rid of first blank element from shift
-    data.shift();
-    debug('data to send after splitting', data);
-    var url = data[0];
-    var title = data[1];
-    var image = data[2];
-    res.render('stories/index', {
+    var title = data.title || '';
+    var image = data.image || '';
+    var description = data.description || '';
+    return res.render('stories/index', {
         page: 'storySubmission',
-        storyURL: url,
+        storyURL: data.url,
         storyTitle: title,
-        storyImage: image
+        storyImage: image,
+        storyMetaDescription: description
     });
 };
 
@@ -137,15 +142,15 @@ exports.returnIndividualStory = function(req, res, next) {
             user: req.user,
             timeAgo: moment(story.timePosted).fromNow(),
             image: story.image,
-            page: 'show'
+            page: 'show',
+            storyMetaDescription: story.metaDescription
         });
     });
 };
 
-exports.getStories = function(req, res, next) {
+exports.getStories = function(req, res) {
     MongoClient.connect(secrets.db, function(err, database) {
-        var db = database;
-        db.collection('stories').find({
+        database.collection('stories').find({
             "$text": {
                 "$search": req.body.data.searchValue
             }
@@ -160,6 +165,7 @@ exports.getStories = function(req, res, next) {
             comments: 1,
             image: 1,
             storyLink: 1,
+            metaDescription: 1,
             textScore: {
                 $meta: "textScore"
             }
@@ -178,7 +184,7 @@ exports.getStories = function(req, res, next) {
     });
 };
 
-exports.upvote = function(req, res, next) {
+exports.upvote = function(req, res) {
     var data = req.body.data;
     Story.find({'_id': data.id}, function(err, story) {
         if (err) {
@@ -198,7 +204,7 @@ exports.upvote = function(req, res, next) {
     });
 };
 
-exports.comments = function(req, res, next) {
+exports.comments = function(req, res) {
     var data = req.params.id;
     Comment.find({'_id': data}, function(err, comment) {
         if (err) {
@@ -209,26 +215,33 @@ exports.comments = function(req, res, next) {
     });
 };
 
-exports.newStory = function(req, res, next) {
+exports.newStory = function(req, res) {
     var url = req.body.data.url;
-    debug('this is the url', url);
+    var cleanURL = sanitizeHtml(url);
+    if (cleanURL !== url) {
+        req.flash('errors', {
+            msg: "The URL you submitted doesn't appear valid"
+        });
+        return res.json({
+            alreadyPosted: true,
+            storyURL: '/stories/submit'
+        });
+
+    }
     if (url.search(/^https?:\/\//g) === -1) {
         url = 'http://' + url;
     }
     Story.find({'link': url}, function(err, story) {
         if (err) {
-            debug('oops');
             return res.status(500);
         }
         if (story.length) {
-            debug('Found a story already, here\'s the return from find', story);
             req.flash('errors', {
                 msg: "Someone's already posted that link. Here's the discussion."
             });
-            debug('Redirecting the user with', story[0].storyLink);
             return res.json({
                 alreadyPosted: true,
-                storyURL: story.pop().storyLink
+                storyURL: '/stories/' + story.pop().storyLink
             });
         }
         resources.getURLTitle(url, processResponse);
@@ -240,20 +253,22 @@ exports.newStory = function(req, res, next) {
                 alreadyPosted: false,
                 storyURL: url,
                 storyTitle: '',
-                storyImage: ''
+                storyImage: '',
+                storyMetaDescription: ''
             });
         } else {
             res.json({
                 alreadyPosted: false,
                 storyURL: url,
                 storyTitle: story.title,
-                storyImage: story.image
+                storyImage: story.image,
+                storyMetaDescription: story.description
             });
         }
     }
 };
 
-exports.storySubmission = function(req, res, next) {
+exports.storySubmission = function(req, res) {
     var data = req.body.data;
     var storyLink = data.headline
         .replace(/\'/g, '')
@@ -267,19 +282,20 @@ exports.storySubmission = function(req, res, next) {
         link = 'http://' + link;
     }
     var story = new Story({
-        headline: data.headline,
+        headline: sanitizeHtml(data.headline),
         timePosted: Date.now(),
         link: link,
-        description: data.description,
+        description: sanitizeHtml(data.description),
         rank: 1,
         upVotes: data.upVotes,
         author: data.author,
         comments: [],
         image: data.image,
-        storyLink: storyLink
+        storyLink: storyLink,
+        metaDescription: data.storyMetaDescription
     });
 
-    story.save(function(err, data) {
+    story.save(function(err) {
         if (err) {
             return res.status(500);
         }
@@ -289,12 +305,22 @@ exports.storySubmission = function(req, res, next) {
     });
 };
 
-exports.commentSubmit = function(req, res, next) {
-    debug('comment submit fired');
+exports.commentSubmit = function(req, res) {
     var data = req.body.data;
+    var sanitizedBody = sanitizeHtml(data.body,
+        {
+            allowedTags: [],
+            allowedAttributes: []
+        });
+    if (data.body !== sanitizedBody) {
+        req.flash('errors', {
+            msg: 'HTML is not allowed'
+        });
+        return res.send(true);
+    }
     var comment = new Comment({
         associatedPost: data.associatedPost,
-        body: data.body,
+        body: sanitizedBody,
         rank: 0,
         upvotes: 0,
         author: data.author,
@@ -305,13 +331,22 @@ exports.commentSubmit = function(req, res, next) {
     commentSave(comment, Story, res);
 };
 
-exports.commentOnCommentSubmit = function(req, res, next) {
-    debug('comment on comment submit');
-    var idToFind = req.params.id;
+exports.commentOnCommentSubmit = function(req, res) {
     var data = req.body.data;
+    var sanitizedBody = sanitizeHtml(data.body,
+        {
+            allowedTags: [],
+            allowedAttributes: []
+        });
+    if (data.body !== sanitizedBody) {
+        req.flash('errors', {
+            msg: 'HTML is not allowed'
+        });
+        return res.send(true);
+    }
     var comment = new Comment({
         associatedPost: data.associatedPost,
-        body: data.body,
+        body: sanitizedBody,
         rank: 0,
         upvotes: 0,
         author: data.author,
@@ -335,7 +370,7 @@ function commentSave(comment, Context, res) {
                 associatedStory = associatedStory.pop();
                 if (associatedStory) {
                     associatedStory.comments.push(data._id);
-                    associatedStory.save(function (err, data) {
+                    associatedStory.save(function (err) {
                         if (err) {
                             res.status(500);
                         }
