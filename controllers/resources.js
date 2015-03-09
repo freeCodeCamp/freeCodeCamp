@@ -298,7 +298,7 @@ module.exports = {
             });
         })();
     },
-    updateUserStoryPictures: function(userId, picture) {
+    updateUserStoryPictures: function(userId, picture, username) {
 
         var counter = 0,
             foundStories,
@@ -327,12 +327,14 @@ module.exports = {
             }
             R.forEach(function(comment) {
                 comment.author.picture = picture;
+                comment.author.username = username;
                 comment.markModified('author');
                 comment.save();
             }, foundComments);
 
             R.forEach(function(story) {
                 story.author.picture = picture;
+                story.author.username = username;
                 story.markModified('author');
                 story.save();
             }, foundStories);
