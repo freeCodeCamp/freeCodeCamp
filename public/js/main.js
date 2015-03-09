@@ -173,7 +173,7 @@ $(document).ready(function() {
                         username: user.profile.username
                     },
                     comments: [],
-                    image: ''
+                    image: storyImage
                 }
             })
             .fail(function (xhr, textStatus, errorThrown) {

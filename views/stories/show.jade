@@ -5,6 +5,7 @@
         var comments = !{JSON.stringify(comments)};
         var upVotes = !{JSON.stringify(upVotes)};
         var user = !{JSON.stringify(user)};
+        var image = !{JSON.stringify(image)};
     .spacer
 
     h3.row.col-xs-12
@@ -33,6 +34,8 @@
                                 a(href="/" + author.username)@#{author.username}
                                 |  &nbsp;·&nbsp;
                                 a#reply-to-main-post Reply
+                    .col-xs-12.positive-15.hidden-element#image-display
+                        img.url-preview(src="#{image}")
     .col-xs-12#reply-area
     .hidden-element#initial-comment-submit
         form.form-horizontal.control-label-story-submission
@@ -44,6 +47,9 @@
                 span.spacer.pull-left#textarea_feedback
 
     script.
+        if (image) {
+            $('#image-display').removeClass('hidden-element')
+        }
         $('#reply-to-main-post').on('click', function() {
             $('#initial-comment-submit').removeClass('hidden-element');
             $(this).unbind('click');

@@ -21,17 +21,24 @@
                     label.control-label.control-label-story-submission(for='name') Description
                 .col-xs-12.col-md-11
                     input#description-box.form-control(name="comment-box", placeholder="Start off the discussion with a description of your post" maxlength='140')
+            .form-group
+                .col-xs-12.col-md-offset-1
                     span.pull-left#textarea_feedback
-            .row
-                img.img-center.img-responsive(src="#{storyImage}", style="max-width: 250px; max-height: 250px")
+            .form-group
+                .col-xs-12.col-md-offset-1
+                    .hidden-element#image-display
+                        img.url-preview(src="#{storyImage}")
             .spacer
             .row
                 .form-group
+
                     button.btn.btn-big.btn-block.btn-primary#story-submit Submit
     script.
         $('#story-url').val(storyURL).attr('disabled', 'disabled');
         $('#story-title').val(storyTitle);
-        console.log(storyImage);
+        if (storyImage) {
+            $('#image-display').removeClass('hidden-element');
+        }
         var text_max = 140;
         $('#textarea_feedback').html(text_max + ' characters remaining');
         $('#description-box').keyup(function () {
