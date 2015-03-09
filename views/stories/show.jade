@@ -41,10 +41,18 @@
                     input#comment-box.big-text-field.field-responsive.form-control(type='text', placeholder='Enter your reply', autofocus)
                     span.input-group-btn
                         button#comment-button.btn.btn-big.btn-primary.btn-responsive(type='button') Send
-
+                span.pull-left#textarea_feedback
     script.
         $('#reply-to-main-post').on('click', function() {
             $('#initial-comment-submit').removeClass('hidden-element');
             $(this).unbind('click');
+            $('.comment-to-comment-formgroup').empty();
+        });
+        var text_max = 140;
+        $('#textarea_feedback').html(text_max + ' characters remaining');
+        $('#comment-box').keyup(function () {
+            var text_length = $('#comment-box').val().length;
+            var text_remaining = text_max - text_length;
+            $('#textarea_feedback').html(text_remaining + ' characters remaining');
         });
     include ./comments

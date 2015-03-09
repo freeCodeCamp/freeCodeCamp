@@ -7,7 +7,6 @@
             var sentinel = 0;
             var renderComments = function renderComments(comments, containerSelector, level) {
                 var commentDetails;
-                var backgroundColorForCommentNestingLevel = level % 2 !== 0 ? 'odd' : 'even';
                 R.forEach(function displayComments(comment) {
 
                     $.ajax({
@@ -61,13 +60,17 @@
                                     var div = document.createElement('div');
                                     var commentId = $(this).attr('id');
                                     $(div).html(
-                                            "<div class='formgroup comment-to-comment-formgroup'>" +
-                                                "<text class='form-control' id='comment-to-comment-textarea' maxlength='140' autofocus></textarea>" +
-                                                '<span class="pull-left" id="textarea_feedback"></span>' +
-                                                "<button class='btn btn-small btn-primary pull-right' id='submit-comment-to-comment'>Submit</button>" +
-                                                    '</div>' +
-
-                                            "</div>"
+                                        "<div class='formgroup comment-to-comment-formgroup'>" +
+                                            "<div class=col-xs-12" +
+                                                "<div class='input-group'>" +
+                                                    "<input class='form-control' id='comment-to-comment-textarea' type='text' maxlength='140' autofocus />" +
+                                                "</div>" +
+                                            "</div>" +
+                                            "<span class='input-group-btn'>" +
+                                                "<button id='submit-comment-to-comment' class='btn btn-big btn-primary btn-responsive' type='button'>Send</button>" +
+                                            "</span>" +
+                                            "<span class='pull-left' id='textarea_feedback'></span>" +
+                                        "</div>"
                                     )
                                             .addClass('row')
                                             .appendTo($(this).closest('.media-body-wrapper'));
