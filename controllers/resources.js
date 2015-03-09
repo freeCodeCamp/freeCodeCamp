@@ -4,7 +4,6 @@ var User = require('../models/User'),
     Story = require('./../models/Story'),
     Comment = require('./../models/Comment'),
     resources = require('./resources.json'),
-    questions = resources.questions,
     steps = resources.steps,
     secrets = require('./../config/secrets'),
     bonfires = require('../seed_data/bonfires.json'),
@@ -154,7 +153,7 @@ module.exports = {
     },
     bloggerCalls: function(req, res) {
         request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
-            var blog = blog.length > 100 ? JSON.parse(blog) : "";
+            blog = blog.length > 100 ? JSON.parse(blog) : '';
             res.send({
                 blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
                 blog1Link: blog ? blog["items"][0]["url"] : "http://blog.freecodecamp.com",
@@ -225,10 +224,6 @@ module.exports = {
         return compliments[Math.floor(Math.random() * compliments.length)];
     },
 
-    numberOfBonfires: function() {
-        return bonfires.length - 1;
-    },
-
     allBonfireIds: function() {
         return bonfires.map(function(elem) {
             return {
@@ -290,14 +285,19 @@ module.exports = {
         return process.env.NODE_ENV;
     },
     getURLTitle: function(url, callback) {
-
+        debug('got url in meta scraping function', url);
         (function () {
-            var result = {title: ''};
+            var result = {title: '', image: '', url: '', description: ''};
             request(url, function (error, response, body) {
                 if (!error && response.statusCode === 200) {
                     var $ = cheerio.load(body);
-                    var title = $('title').text();
-                    result.title = title;
+                    var metaDescription = $("meta[name='description']");
+                    var metaImage =  $("meta[property='og:image']");
+                    var urlImage = metaImage.attr('content') ? metaImage.attr('content') : '';
+                    var description = metaDescription.attr('content') ? metaDescription.attr('content') : '';
+                    result.title = $('title').text();
+                    result.image = urlImage;
+                    result.description = description;
                     callback(null, result);
                 } else {
                     callback('failed');

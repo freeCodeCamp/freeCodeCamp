@@ -34,11 +34,13 @@
                 })
                 .done(function (data, textStatus, xhr) {
                     if (data.alreadyPosted) {
-                        window.location = '/stories/' + data.storyURL;
+                        window.location = data.storyURL;
                     } else {
-                        window.location = '/stories/submit/url=' +
+                        window.location = '/stories/submit/new-story?url=' +
                         encodeURIComponent(data.storyURL) +
-                        '&title=' + encodeURIComponent(data.storyTitle);
+                        '&title=' + encodeURIComponent(data.storyTitle) +
+                        '&image=' + encodeURIComponent(data.storyImage) +
+                        '&description=' + encodeURIComponent(data.storyMetaDescription);
                     }
                 });
             }
