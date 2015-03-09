@@ -164,7 +164,7 @@ $(document).ready(function() {
                     headline: headline,
                     timePosted: Date.now(),
                     description: description,
-
+                    storyMetaDescription: storyMetaDescription,
                     rank: 1,
                     upVotes: [userDataForUpvote],
                     author: {
