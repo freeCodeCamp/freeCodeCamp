@@ -321,7 +321,7 @@ app.get(
 );
 
 app.get(
-    '/stories/submit/:newStory',
+    '/stories/submit/new-story',
     storyController.preSubmit
 );
 
