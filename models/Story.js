@@ -42,12 +42,3 @@ var storySchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Story', storySchema);
-
-/*
- author: {
- userId: {
- type: mongoose.Schema.Types.ObjectId,
- ref: 'User'
- }
- },
- */
