@@ -26,7 +26,14 @@
                     a(href="#{link}")
                         h3= title
                 h6
-                    .col-xs-12.negative-28
+                    .col-xs-12.positive-15.hidden-element#image-display
+                        .media
+                            .media-left
+                                img.url-preview.media-object(src="#{image}", alt="#{storyMetaDescription}")
+                            .media-body
+                                .col-xs-12.col-sm-12.col-md-6
+                                    h4= storyMetaDescription
+                    .col-xs-12
                         h4= description
                         .negative-5
                             span Posted #{timeAgo}
@@ -34,8 +41,6 @@
                                 a(href="/" + author.username)@#{author.username}
                                 |  &nbsp;·&nbsp;
                                 a#reply-to-main-post Reply
-                    .col-xs-12.positive-15.hidden-element#image-display
-                        img.url-preview(src="#{image}")
     .col-xs-12#reply-area
     .hidden-element#initial-comment-submit
         form.form-horizontal.control-label-story-submission
