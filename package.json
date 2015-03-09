@@ -61,6 +61,7 @@
     "passport-twitter": "^1.0.2",
     "ramda": "^0.10.0",
     "request": "^2.53.0",
+    "sanitize-html": "^1.6.1",
     "sitemap": "^0.7.4",
     "uglify-js": "^2.4.15",
     "validator": "^3.22.1",
