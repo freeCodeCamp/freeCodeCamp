@@ -28,7 +28,8 @@ exports.hotJSON = function(req, res) {
     var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
     story.exec(function(err, stories) {
         if (err) {
-            throw err;
+            res.send(500);
+            return next(err);
         }
 
         var foundationDate = 1413298800000;
@@ -47,7 +48,8 @@ exports.recentJSON = function(req, res) {
     var story = Story.find({}).sort({'timePosted': -1}).limit(100);
     story.exec(function(err, stories) {
         if (err) {
-            throw err;
+            res.status(500);
+            return next(err);
         }
         res.json(stories);
     });
@@ -184,11 +186,12 @@ exports.getStories = function(req, res) {
     });
 };
 
-exports.upvote = function(req, res) {
+exports.upvote = function(req, res, next) {
     var data = req.body.data;
     Story.find({'_id': data.id}, function(err, story) {
         if (err) {
-            throw err;
+            res.status(500);
+            return next(err);
         }
         story = story.pop();
         story.rank++;
@@ -204,11 +207,12 @@ exports.upvote = function(req, res) {
     });
 };
 
-exports.comments = function(req, res) {
+exports.comments = function(req, res, next) {
     var data = req.params.id;
     Comment.find({'_id': data}, function(err, comment) {
         if (err) {
-            throw err;
+            res.status(500);
+            return next(err);
         }
         comment = comment.pop();
         return res.send(comment);
