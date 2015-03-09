@@ -44,7 +44,7 @@ exports.hotJSON = function(req, res) {
     });
 };
 
-exports.recentJSON = function(req, res) {
+exports.recentJSON = function(req, res, next) {
     var story = Story.find({}).sort({'timePosted': -1}).limit(100);
     story.exec(function(err, stories) {
         if (err) {
