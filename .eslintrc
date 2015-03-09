@@ -18,6 +18,9 @@
     "ga": true,
     "jQuery": true
   },
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "no-comma-dangle": 2,
     "no-cond-assign": 2,

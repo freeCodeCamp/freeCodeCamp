@@ -75,28 +75,32 @@ var SidePanel = React.createClass({displayName: "SidePanel",
     var isMoreInfoOpen = this.state.isMoreInfoOpen;
 
     return (
-      React.createElement(Grid, null, 
-        React.createElement("h1", {classNameName: "text-center"}, "Meet Bonfire"), 
-        React.createElement("h2", {classNameName: "text-center"}, 
-          React.createElement("div", {classNameName: "bonfire-flames"}, 
-            "Difficulty: ", 
-             this._renderFlames() 
-          )
-        ), 
-        React.createElement(Well, null, 
-          React.createElement(Row, null, 
-            React.createElement(Col, {xs:  12 }, 
-              React.createElement("div", {className: "bonfire-instructions"}, 
-                React.createElement("p", null,  this.props.brief), 
-                React.createElement("div", null, 
-                   isMoreInfoOpen ? this._renderMoreInfo() : null, 
-                  React.createElement(Button, {
-                    onClick:  this._toggleMoreInfo, 
-                    bsStyle: "primary", 
-                    block:  true, 
-                    className: "btn-primary-ghost"}, 
-                    React.createElement("span", {className: "ion-arrow-down-b"}), 
-                    "More information"
+      React.createElement(Col, {
+        xs:  12, 
+        md:  4 }, 
+        React.createElement("div", null, 
+          React.createElement("h1", {classNameName: "text-center"}, "Meet Bonfire"), 
+          React.createElement("h2", {classNameName: "text-center"}, 
+            React.createElement("div", {classNameName: "bonfire-flames"}, 
+              "Difficulty: ", 
+               this._renderFlames() 
+            )
+          ), 
+          React.createElement(Well, null, 
+            React.createElement(Row, null, 
+              React.createElement(Col, {xs:  12 }, 
+                React.createElement("div", {className: "bonfire-instructions"}, 
+                  React.createElement("p", null,  this.props.brief), 
+                  React.createElement("div", null, 
+                     isMoreInfoOpen ? this._renderMoreInfo() : null, 
+                    React.createElement(Button, {
+                      onClick:  this._toggleMoreInfo, 
+                      bsStyle: "primary", 
+                      block:  true, 
+                      className: "btn-primary-ghost"}, 
+                      React.createElement("span", {className: "ion-arrow-down-b"}), 
+                      "More information"
+                    )
                   )
                 )
               )

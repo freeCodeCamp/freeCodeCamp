@@ -3,6 +3,10 @@ html(ng-app='profileValidation', lang='en')
   base(href='/', target='_blank')
   head
     include partials/universal-head
+    link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
+    link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
+    link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
+    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Ubuntu+Mono")
 
   body.top-and-bottom-margins
     .container
@@ -10,4 +14,16 @@ html(ng-app='profileValidation', lang='en')
       //- app context are attached to state
       #app!= html
     //- script!= context
+    //-
+      script(src='/js/lib/codemirror/lib/codemirror.js')
+      script(src='/js/lib/codemirror/addon/edit/closebrackets.js')
+      script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
+      script(src='/js/lib/codemirror/addon/lint/lint.js')
+      script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
+      script(src='//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js')
+      script(src='/js/lib/codemirror/mode/javascript/javascript.js')
+      script(src='/js/lib/jailed/jailed.js')
+      script(src='/js/lib/bonfire/bonfireInit.js')
+      script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
+    script(src='/js/lib/chai/chai.js')
     script(src='js/bundle.js')

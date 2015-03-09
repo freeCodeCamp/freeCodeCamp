@@ -75,35 +75,39 @@ var SidePanel = React.createClass({
     var isMoreInfoOpen = this.state.isMoreInfoOpen;
 
     return (
-      <Grid>
-        <h1 classNameName='text-center'>Meet Bonfire</h1>
-        <h2 classNameName='text-center'>
-          <div classNameName='bonfire-flames'>
-            Difficulty:&nbsp;
-            { this._renderFlames() }
-          </div>
-        </h2>
-        <Well>
-          <Row>
-            <Col xs={ 12 }>
-              <div className='bonfire-instructions'>
-                <p>{ this.props.brief }</p>
-                <div>
-                  { isMoreInfoOpen ? this._renderMoreInfo() : null }
-                  <Button
-                    onClick={ this._toggleMoreInfo }
-                    bsStyle='primary'
-                    block={ true }
-                    className='btn-primary-ghost'>
-                    <span className='ion-arrow-down-b'></span>
-                    More information
-                  </Button>
+      <Col
+        xs={ 12 }
+        md={ 4 }>
+        <div>
+          <h1 classNameName='text-center'>Meet Bonfire</h1>
+          <h2 classNameName='text-center'>
+            <div classNameName='bonfire-flames'>
+              Difficulty:&nbsp;
+              { this._renderFlames() }
+            </div>
+          </h2>
+          <Well>
+            <Row>
+              <Col xs={ 12 }>
+                <div className='bonfire-instructions'>
+                  <p>{ this.props.brief }</p>
+                  <div>
+                    { isMoreInfoOpen ? this._renderMoreInfo() : null }
+                    <Button
+                      onClick={ this._toggleMoreInfo }
+                      bsStyle='primary'
+                      block={ true }
+                      className='btn-primary-ghost'>
+                      <span className='ion-arrow-down-b'></span>
+                      More information
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </Well>
-      </Grid>
+              </Col>
+            </Row>
+          </Well>
+        </div>
+      </Col>
     );
   }
 });

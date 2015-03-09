@@ -15,6 +15,7 @@ actions
   })
   .subscribe(function(ctx) {
     debug('set ctx');
+    // store updating
     actions.renderToUser(ctx);
   });
 

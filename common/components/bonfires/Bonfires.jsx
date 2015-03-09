@@ -1,18 +1,27 @@
-var React = require('react');
-var SidePanel = require('./SidePanel');
-
-// structure of components
-// SidePanel
-// -codemirror console
-// -testOutput
-// CodeMirror
+var React = require('react'),
+    SidePanel = require('./SidePanel'),
+    Editor = require('../editor'),
+    {
+      Grid,
+      Row,
+      Col,
+    } = require('react-bootstrap');
 
 var Bonfire = React.createClass({
+
   render: function() {
+
     return (
-      <div>
-        <SidePanel />
-      </div>
+      <Grid>
+        <Row>
+          <SidePanel />
+          <Col
+            xs={ 12 }
+            md={ 8 }>
+            <Editor value='This is code console.log(x)'/>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 });
