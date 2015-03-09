@@ -283,14 +283,16 @@ module.exports = {
         return process.env.NODE_ENV;
     },
     getURLTitle: function(url, callback) {
-
+        debug('got url in meta scraping function', url);
         (function () {
-            var result = {title: ''};
+            var result = {title: '', image: '', url: ''};
             request(url, function (error, response, body) {
                 if (!error && response.statusCode === 200) {
                     var $ = cheerio.load(body);
+                    var urlImage = $("meta[property='og:image']").attr('content') ? $("meta[property='og:image']").attr('content') : '';
                     var title = $('title').text();
                     result.title = title;
+                    result.image = urlImage;
                     callback(null, result);
                 } else {
                     callback('failed');

@@ -84,13 +84,18 @@ exports.preSubmit = function(req, res, next) {
     var data = req.params.newStory;
 
 
-    data = data.replace(/url=/gi, '').replace(/&title=/gi, ',').split(',');
+    data = data.replace(/url=/gi, ',').replace(/&title=/gi, ',').replace(/&image=/gi, ',').split(',');
+    // get rid of first blank element from shift
+    data.shift();
+    debug('data to send after splitting', data);
     var url = data[0];
     var title = data[1];
+    var image = data[2];
     res.render('stories/index', {
         page: 'storySubmission',
         storyURL: url,
-        storyTitle: title
+        storyTitle: title,
+        storyImage: image
     });
 };
 
@@ -206,13 +211,11 @@ exports.comments = function(req, res, next) {
 
 exports.newStory = function(req, res, next) {
     var url = req.body.data.url;
+    debug('this is the url', url);
     if (url.search(/^https?:\/\//g) === -1) {
         url = 'http://' + url;
     }
-    debug('In pre submit with a url', url);
-
     Story.find({'link': url}, function(err, story) {
-        debug('Attempting to find a story');
         if (err) {
             debug('oops');
             return res.status(500);
@@ -231,19 +234,20 @@ exports.newStory = function(req, res, next) {
         resources.getURLTitle(url, processResponse);
     });
 
-    function processResponse(err, storyTitle) {
+    function processResponse(err, story) {
         if (err) {
             res.json({
                 alreadyPosted: false,
                 storyURL: url,
-                storyTitle: ''
+                storyTitle: '',
+                storyImage: ''
             });
         } else {
-            storyTitle = storyTitle ? storyTitle : '';
             res.json({
                 alreadyPosted: false,
                 storyURL: url,
-                storyTitle: storyTitle.title
+                storyTitle: story.title,
+                storyImage: story.image
             });
         }
     }

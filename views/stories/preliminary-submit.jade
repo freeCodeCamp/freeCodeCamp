@@ -38,7 +38,8 @@
                     } else {
                         window.location = '/stories/submit/url=' +
                         encodeURIComponent(data.storyURL) +
-                        '&title=' + encodeURIComponent(data.storyTitle);
+                        '&title=' + encodeURIComponent(data.storyTitle) +
+                        '&image=' + encodeURIComponent(data.storyImage)
                     }
                 });
             }
