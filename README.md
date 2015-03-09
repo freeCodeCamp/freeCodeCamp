@@ -8,7 +8,7 @@ Free Code Camp!
 
 We're a community of busy people learning to code by collaborating on projects for nonprofits. We learn, then use, the JavaScript MEAN stack - MongoDB, Express.js, Angular.js and Node.js. 
 
-This app is live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com), and we have a [chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp), [blog](http://blog.freecodecamp.com) and [forum](http://forum.freecodecamp.com), too. Join us!
+This app is live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com), and we have a [chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp) and [blog](http://blog.freecodecamp.com), too. Join us!
 
 Prerequisites
 -------------
