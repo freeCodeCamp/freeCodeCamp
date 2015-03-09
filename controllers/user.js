@@ -103,14 +103,14 @@ exports.postEmailSignup = function(req, res, next) {
 
     var possibleUserData = req.body;
 
-    if (possibleUserData.password.length < 5) {
+    if (possibleUserData.password.length < 8) {
         req.flash('errors', {
             msg: 'Your password is too short'
         });
         return res.redirect('email-signup');
     }
 
-    if (possibleUserData.username.length < 8 || possibleUserData.length > 20) {
+    if (possibleUserData.username.length < 5 || possibleUserData.length > 20) {
         req.flash('errors', {
             msg: 'Your username must be between 5 and 20 characters'
         });
