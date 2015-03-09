@@ -110,3 +110,19 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
       lastmod= now
       changefreq weekly
       priority= 0.5
+
+  //- Stories
+  each story in stories
+    url
+      loc #{appUrl}/#{story.storyLink}
+      lastmod= now
+      changefreq daily
+      priority= 0.9
+
+//- Nonprofit
+  each nonprofit in nonprofits
+    url
+        loc #{appUrl}/#{nonprofit.nonprofitLink}
+        lastmod= now
+        changefreq daily
+        priority= 0.9

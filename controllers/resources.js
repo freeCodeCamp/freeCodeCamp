@@ -48,13 +48,20 @@ module.exports = {
                         debug('User err: ', err);
                         next(err);
                     }
-                    res.header('Content-Type', 'application/xml');
-                    res.render('resources/sitemap', {
-                        appUrl: appUrl,
-                        now: now,
-                        users: users,
-                        challenges: challenges,
-                        bonfires: bonfires
+                    Story.find({}, function (err, stories) {
+                        if (err) {
+                            debug('User err: ', err);
+                            next(err);
+                        }
+                        res.header('Content-Type', 'application/xml');
+                        res.render('resources/sitemap', {
+                            appUrl: appUrl,
+                            now: now,
+                            users: users,
+                            challenges: challenges,
+                            bonfires: bonfires,
+                            stories: stories
+                        });
                     });
                 });
             });
