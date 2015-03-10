@@ -155,7 +155,7 @@ Contributing
 ------------
 
 We welcome pull requests from Free Code Camp "campers" (our students) and seasoned JavaScript developers alike!
-1) Check our [public Trello Board](https://trello.com/b/CW5AFr0v/free-code-camp-development)
+1) Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp)
 2) If your issue or feature isn't on the board, either open an issue on this GitHub repo or message Quincy Larson to request to be added to the Trello board.
 3) Once your code is ready, submit the pull request. We'll do a quick code review and give you feedback, and iterate from there.
 
