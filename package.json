@@ -4,10 +4,22 @@
   "main": "server/server.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint"
+    "test": "npm run lint",
+    "prepublish": "browserify -t babelify -g envify -t uglifyify client/client.js -o public/js/bundle.js"
+  },
+  "engines": {
+    "iojs": "1.5.x"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      "envify"
+    ]
   },
   "dependencies": {
     "async": "^0.9.0",
+    "babel": "^4.7.4",
+    "babelify": "^5.0.4",
     "body-parser": "^1.12.0",
     "browserify": "^9.0.3",
     "compression": "^1.0.3",
@@ -15,14 +27,13 @@
     "connect-mongo": "^0.7.0",
     "cookie-parser": "^1.3.4",
     "debug": "^2.1.1",
+    "envify": "^3.2.0",
     "errorhandler": "^1.1.1",
     "eslint": "^0.15.1",
+    "eslint-plugin-react": "^1.4.1",
     "express-flash": "0.0.2",
     "express-session": "^1.10.3",
     "express-validator": "^2.8.0",
-    "gulp-babel": "^4.0.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-util": "^3.0.4",
     "helmet": "^0.6.1",
     "jade": "^1.9.2",
     "jshint": "^2.6.3",
@@ -58,7 +69,8 @@
     "rx": "^2.4.1",
     "rx-flux": "git://github.com/r3dm/rx-flux.git",
     "serve-favicon": "^2.0.1",
-    "serve-static": "^1.9.1"
+    "serve-static": "^1.9.1",
+    "uglifyify": "^3.0.1"
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.1.0"
@@ -66,15 +78,13 @@
   "devDependencies": {
     "bower-main-files": "0.0.4",
     "browser-sync": "^2.2.1",
-    "envify": "^3.2.0",
-    "eslint-plugin-react": "^1.4.1",
     "gulp": "^3.8.11",
     "gulp-inject": "^1.2.0",
     "gulp-nodemon": "^1.0.5",
+    "gulp-notify": "^2.2.0",
     "gulp-plumber": "^0.6.6",
-    "gulp-react": "^3.0.0",
+    "gulp-util": "^3.0.4",
     "gulp-watch": "^4.1.1",
-    "jshint": "^2.5.6",
     "plumber": "^0.4.8",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.4.0"

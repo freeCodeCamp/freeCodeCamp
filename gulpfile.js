@@ -11,13 +11,11 @@ var _ = require('lodash'),
   browserify = require('browserify'),
   watchify = require('watchify'),
   envify = require('envify/custom'),
-  react = require('gulp-react'),
-  // babel = require('gulp-babel'),
-  // babelify = require('babelify'),
+  babelify = require('babelify'),
 
   // ## util
-  watch = require('gulp-watch'),
-  plumber = require('gulp-plumber'),
+  // watch = require('gulp-watch'),
+  // plumber = require('gulp-plumber'),
   debug = require('debug')('freecc:gulp'),
 
   // ## serve
@@ -45,31 +43,6 @@ var paths = {
     '!public/js/bundle.js'
   ]
 };
-
-gulp.task('jsx', function() {
-  debug('in jsx');
-  return gulp.src(paths.jsx)
-    .pipe(plumber())
-    .pipe(react({
-      harmony: true
-    }))
-    .pipe(gulp.dest('./common/components'));
-});
-
-gulp.task('jsx-watch', function() {
-  debug('in jsx watch');
-  return gulp.src(paths.jsx, { base: './common' })
-    .pipe(watch(paths.jsx, {
-      verbose: true,
-      base: './common',
-      name: 'jsx'
-    }))
-    .pipe(plumber())
-    .pipe(react({
-      harmony: true
-    }))
-    .pipe(gulp.dest('./common'));
-});
 
 gulp.task('serve', function(cb) {
   var called = false;
@@ -128,7 +101,7 @@ gulp.task('bundle', function(cb) {
   browserifyCommon(cb);
 });
 
-gulp.task('default', ['jsx-watch', 'bundle', 'serve', 'sync']);
+gulp.task('default', ['bundle', 'serve', 'sync']);
 
 function browserifyCommon(cb) {
   cb = cb || noop;
@@ -139,17 +112,23 @@ function browserifyCommon(cb) {
     basedir: __dirname,
     debug: true,
     cache: {},
-    packageCache: {}
+    packageCache: {},
+    fullPaths: false
   };
 
   var b = browserify(config);
 
   bundleLogger.start('bundle.js');
-  b.transform(envify({
-     NODE_ENV: 'development'
+
+  // transform es6/jsx into js
+  b.transform(babelify.configure({
+    sourceMapRelative: __dirname
   }));
 
-  // b.transform(babelify);
+  // sub process.env for proper strings
+  b.transform(envify({
+    NODE_ENV: 'development'
+  }));
 
   b = watchify(b);
 
@@ -180,3 +159,29 @@ function bundleItUp(b) {
 }
 
 function noop() { }
+
+// old compile code
+/*gulp.task('jsx', function() {
+  debug('in jsx');
+  return gulp.src(paths.jsx)
+    .pipe(plumber())
+    .pipe(react({
+      harmony: true
+    }))
+    .pipe(gulp.dest('./common/components'));
+});
+
+gulp.task('jsx-watch', function() {
+  debug('in jsx watch');
+  return gulp.src(paths.jsx, { base: './common' })
+    .pipe(watch(paths.jsx, {
+      verbose: true,
+      base: './common',
+      name: 'jsx'
+    }))
+    .pipe(plumber())
+    .pipe(react({
+      harmony: true
+    }))
+    .pipe(gulp.dest('./common'));
+});*/

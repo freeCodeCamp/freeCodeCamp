@@ -1,5 +1,5 @@
 var React = require('react'),
-    SidePanel = require('./SidePanel'),
+    SidePanel = require('./SidePanel.jsx'),
     Editor = require('../editor'),
     {
       Grid,

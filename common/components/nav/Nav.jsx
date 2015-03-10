@@ -3,7 +3,7 @@ var React = require('react'),
     Navbar = bootStrap.Navbar,
     Nav = bootStrap.Nav,
     NavItem = bootStrap.NavItem,
-    NavItemFCC = require('./NavItem');
+    NavItemFCC = require('./NavItem.jsx');
 
 var NavBarComp = React.createClass({
 

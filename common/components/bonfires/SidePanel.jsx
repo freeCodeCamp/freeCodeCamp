@@ -1,7 +1,6 @@
 var React = require('react'),
     {
       Well,
-      Grid,
       Row,
       Col,
       Button,
@@ -14,6 +13,7 @@ var SidePanel = React.createClass({
   // details - long description array of sentences
   propTypes: {
     difficulty: React.PropTypes.number,
+    details: React.PropTypes.array,
     brief: React.PropTypes.string,
     detauls: React.PropTypes.array
   },
@@ -44,7 +44,7 @@ var SidePanel = React.createClass({
   _renderFlames: function() {
     var difficulty = this.props.difficulty;
 
-    return [1,2,3,4,5].map(num => {
+    return [1, 2, 3, 4, 5].map(num => {
       var className = 'ion-ios-flame';
       if (num > difficulty) {
         className += '-outline';

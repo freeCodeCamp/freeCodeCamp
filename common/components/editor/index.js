@@ -1,1 +1,1 @@
-module.exports = require('./Editor');
+module.exports = require('./Editor.jsx');

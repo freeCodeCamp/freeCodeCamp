@@ -24,13 +24,14 @@ var NavItem = React.createClass({
 
   render: function () {
     var {
-        disabled,
-        active,
-        href,
-        title,
-        target,
-        children,
-        ...props } = this.props,
+          disabled,
+          active,
+          href,
+          title,
+          target,
+          children,
+        } = this.props,
+        props = this.props,
         classes = {
           'active': active,
           'disabled': disabled

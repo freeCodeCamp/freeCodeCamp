@@ -1,1 +1,1 @@
-module.exports = require('./Bonfires');
+module.exports = require('./Bonfires.jsx');

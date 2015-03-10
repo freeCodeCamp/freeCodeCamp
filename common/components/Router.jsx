@@ -8,7 +8,7 @@ var React = require('react'),
     DefaultRoute = Router.DefaultRoute,
 
     // # Components
-    App = require('./App'),
+    App = require('./App.jsx'),
     Bonfires = require('./bonfires');
 
 var routes = (

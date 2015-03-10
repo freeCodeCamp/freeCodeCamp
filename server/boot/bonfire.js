@@ -5,7 +5,7 @@ var React = require('react'),
     // bonfireUtils = require('../utils/bonfireUtils'),
 
     // ## React/Flux
-    Router = require('../../common/components/Router'),
+    Router = require('../../common/components/Router.jsx'),
     ContextStore = require('../../common/components/context/Store'),
     ContextActions = require('../../common/components/context/Actions');
 

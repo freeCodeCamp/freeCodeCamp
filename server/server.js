@@ -1,8 +1,15 @@
 /*eslint-disable no-inline-comments */
 'use strict';
 if (process.env.NODE_ENV === 'production') {
+  // Logging and uptime tracking for app in production
   require('newrelic');
 }
+// allows directly require jsx files which are compiled on-the-fly
+require('babel/register')({
+  // only babelify jsx files. IO.js will handle all else
+  extensions: ['.jsx']
+});
+// Loads .env file and adds declared variables onto process.env object
 require('dotenv').load();
 var R = require('ramda'),
     loopback = require('loopback'),
