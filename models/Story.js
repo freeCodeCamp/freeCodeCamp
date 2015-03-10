@@ -14,6 +14,11 @@ var storySchema = new mongoose.Schema({
         type: String,
         unique: false
     },
+    metaDescription: {
+        type: String,
+        default: '',
+        unique: false
+    },
     description: {
         type: String,
         unique: false
