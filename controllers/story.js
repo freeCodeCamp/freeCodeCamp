@@ -57,24 +57,28 @@ exports.recentJSON = function(req, res, next) {
 
 exports.hot = function(req, res) {
     res.render('stories/index', {
+        title: 'Hot stories currently trending on Camper News',
         page: 'hot'
     });
 };
 
 exports.submitNew = function(req, res) {
     res.render('stories/index', {
+        title: 'Submit a new story to Camper News',
         page: 'submit'
     });
 };
 
 exports.search = function(req, res) {
     res.render('stories/index', {
+        title: 'Search the archives of Camper News',
         page: 'search'
     });
 };
 
 exports.recent = function(req, res) {
     res.render('stories/index', {
+        title: 'Recently submitted stories on Camper News',
         page: 'recent'
     });
 };
@@ -98,6 +102,7 @@ exports.preSubmit = function(req, res) {
     var image = data.image || '';
     var description = data.description || '';
     return res.render('stories/index', {
+        title: "Confirm your Camper News story submission",
         page: 'storySubmission',
         storyURL: data.url,
         storyTitle: title,

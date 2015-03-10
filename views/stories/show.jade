@@ -36,11 +36,13 @@
                     .col-xs-12
                         h4= description
                         .negative-5
+                            a#reply-to-main-post.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Reply
+                            |  &thinsp;·&thinsp;
                             span Posted #{timeAgo}
                             span &thinsp;by&thinsp;
                                 a(href="/" + author.username) @#{author.username}
-                                |  &nbsp;·&nbsp;
-                                a#reply-to-main-post Reply
+
+
     .col-xs-12#reply-area
     .hidden-element#initial-comment-submit
         form.form-horizontal.control-label-story-submission
