@@ -295,7 +295,7 @@ module.exports = {
                     var metaImage =  $("meta[property='og:image']");
                     var urlImage = metaImage.attr('content') ? metaImage.attr('content') : '';
                     var description = metaDescription.attr('content') ? metaDescription.attr('content') : '';
-                    result.title = $('title').text();
+                    result.title = $('title').text().length < 141 ? $('title').text() : $('title').text().slice(0, 137) + " ...";
                     result.image = urlImage;
                     result.description = description;
                     callback(null, result);
