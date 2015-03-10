@@ -183,6 +183,7 @@ app.use(helmet.contentSecurityPolicy({
     ].concat(trusted),
     frameSrc: [
         '*.gitter.im',
+        '*.gitter.im https:',
         '*.vimeo.com',
         '*.twitter.com',
         '*.rafflecopter.com',
