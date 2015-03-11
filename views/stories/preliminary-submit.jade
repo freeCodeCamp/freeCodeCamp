@@ -15,14 +15,12 @@
     script.
             $('#story-url').on('keypress', function(e) {
                 if (e.which === 13 || e === 13) {
-                    console.log('enter pressed');
                     $('#preliminary-story-submit').click();
                 }
             });
             var preliminaryStorySubmit = function preliminaryStorySubmit() {
 
                 var storyURL = $('#story-url').val();
-                console.log(storyURL);
                 $('#preliminary-story-submit').attr('disabled', 'disabled');
 
                 $.post('/stories/preliminary',
@@ -36,11 +34,13 @@
                 })
                 .done(function (data, textStatus, xhr) {
                     if (data.alreadyPosted) {
-                        window.location = '/stories/' + data.storyURL;
+                        window.location = data.storyURL;
                     } else {
-                        window.location = '/stories/submit/url=' +
+                        window.location = '/stories/submit/new-story?url=' +
                         encodeURIComponent(data.storyURL) +
-                        '&title=' + encodeURIComponent(data.storyTitle);
+                        '&title=' + encodeURIComponent(data.storyTitle) +
+                        '&image=' + encodeURIComponent(data.storyImage) +
+                        '&description=' + encodeURIComponent(data.storyMetaDescription);
                     }
                 });
             }

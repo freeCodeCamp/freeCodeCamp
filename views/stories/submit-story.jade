@@ -3,6 +3,8 @@
     script.
         var storyURL = !{JSON.stringify(storyURL)};
         var storyTitle = !{JSON.stringify(storyTitle)};
+        var storyImage = !{JSON.stringify(storyImage)};
+        var storyMetaDescription = !{JSON.stringify(storyMetaDescription)};
     form.form-horizontal.control-label-story-submission#story-submission-form
         .col-xs-12
             .form-group
@@ -14,16 +16,39 @@
                 .col-xs-12.col-md-1
                     label.control-label.control-label-story-submission(for='name') Title
                 .col-xs-12.col-md-11
-                    input#story-title.form-control(placeholder='Type a headline for your link here', name='Title', autofocus)
+                    input#story-title.form-control(placeholder='Type a headline for your link here', name='Title', maxlength='90' autofocus)
             .form-group
                 .col-xs-12.col-md-1
                     label.control-label.control-label-story-submission(for='name') Description
                 .col-xs-12.col-md-11
-                    textarea#description-box.form-control(name="comment-box", rows=5, placeholder="Start off the discussion with a description of your post")
-
-            .spacer
+                    input#description-box.form-control(name="comment-box", placeholder="Start off the discussion with a description of your post" maxlength='140')
             .form-group
-                button.btn.btn-big.btn-block.btn-primary#story-submit Submit
+                .col-xs-12.col-md-offset-1
+                    span.pull-left#textarea_feedback
+            .form-group
+                .col-xs-11.col-md-offset-1
+                    .hidden-element#image-display
+                        .media
+                            .media-left
+                                img.url-preview.media-object(src="#{storyImage}", alt="#{storyMetaDescription}")
+                            .media-body
+                                .col-xs-12
+                                    p= storyMetaDescription
+            .spacer
+            .row
+                .form-group
+
+                    button.btn.btn-big.btn-block.btn-primary#story-submit Submit
     script.
         $('#story-url').val(storyURL).attr('disabled', 'disabled');
         $('#story-title').val(storyTitle);
+        if (storyImage) {
+            $('#image-display').removeClass('hidden-element');
+        }
+        var text_max = 140;
+        $('#textarea_feedback').html(text_max + ' characters remaining');
+        $('#description-box').keyup(function () {
+            var text_length = $('#description-box').val().length;
+            var text_remaining = text_max - text_length;
+            $('#textarea_feedback').html(text_remaining + ' characters remaining');
+        });

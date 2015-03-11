@@ -38,7 +38,7 @@ block content
                 br
                 form.code
                     .form-group.codeMirrorView
-                        textarea#codeOutput
+                        textarea#codeOutput(style='display: none;')
                 br
                 #testSuite
                 br
@@ -52,7 +52,7 @@ block content
             #mainEditorPanel
                 form.code
                     .form-group.codeMirrorView
-                        textarea#codeEditor(autofocus=true)
+                        textarea#codeEditor(autofocus=true, style='display: none;')
                 script(src='/js/lib/coursewares/coursewaresJSFramework.js')
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation

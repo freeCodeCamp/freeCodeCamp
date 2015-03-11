@@ -22,24 +22,27 @@
                             $(div)
                             .html(
                                 "<div class='col-xs-12 text-left'>" +
-                                    "<div class='col-xs-1 col-sm-1 positive-5'>" +
+                                    "<h2 class='col-xs-1 col-sm-1 positive-5'>" +
                                         (i + 1) +
-                                    "</div>" +
+                                    "</h2>" +
                                     "<div class='col-xs-2 col-sm-1'>" +
-                                        "<img src='" + data[i].author.picture + "' class='img-news'/>" +
+                                        "<a href='/" + data[i].author.username + "'>" +
+                                            "<img src='" + data[i].author.picture + "' class='img-news'/>" +
+                                        "</a>" +
                                     "</div>" +
                                     "<div class='col-xs-9 col-sm-10'>" +
                                         "<div class='row'>" +
-                                            "<div class='col-xs-12'>" +
-                                                "<a href='/stories/" + linkedName + "'>"
-                                                    + data[i].storyLink +
+                                            "<div class='story-headline col-xs-12'>" +
+                                                "<a href='" + data[i].link + "' target='_blank'>" +
+                                                    data[i].headline +
                                                 "</a>" +
                                             "</div>" +
                                             "<div class='col-xs-12'>" +
                                                 "<span>" +
-                                                    rank + " points, posted " +
+                                                    "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' href='/stories/" + linkedName + "'>discuss</a> · " +
+                                                    rank + (rank > 1 ? " points" : " point") + " · posted " +
                                                     moment(data[i].timePosted).fromNow() +
-                                                    " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +
+                                                    " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +"</a> " +
                                                 "</span>" +
                                             "</div>" +
                                         "</div>" +

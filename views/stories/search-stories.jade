@@ -1,9 +1,10 @@
 .col-xs-12
     .spacer
+    h1.text-center Search is coming soon
     .input-group
         input#searchArea.big-text-field.field-responsive.form-control(type='text', placeholder='Search our stories', autofocus)
         span.input-group-btn
-            button#searchbutton.btn.btn-big.btn-primary.btn-responsive(type='button') Search
+            button.disabled#searchbutton.btn.btn-big.btn-primary.btn-responsive(type='button') Search
     .spacer
 
 #story-list
@@ -21,7 +22,6 @@ script.
     });
     function executeSearch() {
         $('#stories').empty();
-        console.log('clicked or enter button');
         var searchTerm = $('#searchArea').val();
         var getLinkedName = function getLinkedName(name) {
             return name.toLowerCase().replace(/\s/g, '-');
@@ -33,7 +33,6 @@ script.
                         }
                 })
                 .fail(function (xhr, textStatus, errorThrown) {
-                    console.log('failure');
                 })
                 .done(function (data, textStatus, xhr) {
                     for (var i = 0; i < data.length; i++) {

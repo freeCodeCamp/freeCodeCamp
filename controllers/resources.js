@@ -4,7 +4,6 @@ var User = require('../models/User'),
     Story = require('./../models/Story'),
     Comment = require('./../models/Comment'),
     resources = require('./resources.json'),
-    questions = resources.questions,
     steps = resources.steps,
     secrets = require('./../config/secrets'),
     bonfires = require('../seed_data/bonfires.json'),
@@ -38,7 +37,6 @@ module.exports = {
                 debug('User err: ', err);
                 next(err);
             }
-            console.log('user count', users.length);
             Challenge.find({}, function (err, challenges) {
                 if (err) {
                     debug('User err: ', err);
@@ -49,13 +47,20 @@ module.exports = {
                         debug('User err: ', err);
                         next(err);
                     }
-                    res.header('Content-Type', 'application/xml');
-                    res.render('resources/sitemap', {
-                        appUrl: appUrl,
-                        now: now,
-                        users: users,
-                        challenges: challenges,
-                        bonfires: bonfires
+                    Story.find({}, function (err, stories) {
+                        if (err) {
+                            debug('User err: ', err);
+                            next(err);
+                        }
+                        res.header('Content-Type', 'application/xml');
+                        res.render('resources/sitemap', {
+                            appUrl: appUrl,
+                            now: now,
+                            users: users,
+                            challenges: challenges,
+                            bonfires: bonfires,
+                            stories: stories
+                        });
                     });
                 });
             });
@@ -131,9 +136,7 @@ module.exports = {
         var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
         request('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(err, status1, pulls) {
             pulls = pulls ? Object.keys(JSON.parse(pulls)).length : "Can't connect to github";
-            debug('pulls', pulls);
             request('https://api.github.com/repos/freecodecamp/freecodecamp/issues?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function (err, status2, issues) {
-                debug('issues', issues);
                 issues = ((pulls === parseInt(pulls)) && issues) ? Object.keys(JSON.parse(issues)).length - pulls : "Can't connect to GitHub";
                 res.send({"issues": issues, "pulls" : pulls});
             });
@@ -150,7 +153,7 @@ module.exports = {
     },
     bloggerCalls: function(req, res) {
         request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
-            var blog = blog.length > 100 ? JSON.parse(blog) : "";
+            blog = blog.length > 100 ? JSON.parse(blog) : '';
             res.send({
                 blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
                 blog1Link: blog ? blog["items"][0]["url"] : "http://blog.freecodecamp.com",
@@ -167,6 +170,15 @@ module.exports = {
     },
 
     about: function(req, res) {
+        if (req.user) {
+        if (!req.user.picture) {
+
+                req.user.picture = "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png";
+                req.user.save();
+            }
+        }
+
+
         var date1 = new Date("10/15/2014");
         var date2 = new Date();
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
@@ -210,10 +222,6 @@ module.exports = {
     randomCompliment: function() {
         var compliments = resources.compliments;
         return compliments[Math.floor(Math.random() * compliments.length)];
-    },
-
-    numberOfBonfires: function() {
-        return bonfires.length - 1;
     },
 
     allBonfireIds: function() {
@@ -277,15 +285,19 @@ module.exports = {
         return process.env.NODE_ENV;
     },
     getURLTitle: function(url, callback) {
-
+        debug('got url in meta scraping function', url);
         (function () {
-            var result = {title: ''};
+            var result = {title: '', image: '', url: '', description: ''};
             request(url, function (error, response, body) {
                 if (!error && response.statusCode === 200) {
                     var $ = cheerio.load(body);
-                    var title = $('title').text();
-                    result.title = title;
-                    debug('calling callback with', result);
+                    var metaDescription = $("meta[name='description']");
+                    var metaImage =  $("meta[property='og:image']");
+                    var urlImage = metaImage.attr('content') ? metaImage.attr('content') : '';
+                    var description = metaDescription.attr('content') ? metaDescription.attr('content') : '';
+                    result.title = $('title').text().length < 141 ? $('title').text() : $('title').text().slice(0, 137) + " ...";
+                    result.image = urlImage;
+                    result.description = description;
                     callback(null, result);
                 } else {
                     callback('failed');
@@ -293,7 +305,7 @@ module.exports = {
             });
         })();
     },
-    updateUserStoryPictures: function(userId, picture) {
+    updateUserStoryPictures: function(userId, picture, username) {
 
         var counter = 0,
             foundStories,
@@ -322,14 +334,14 @@ module.exports = {
             }
             R.forEach(function(comment) {
                 comment.author.picture = picture;
+                comment.author.username = username;
                 comment.markModified('author');
                 comment.save();
             }, foundComments);
 
             R.forEach(function(story) {
                 story.author.picture = picture;
-                debug('This is a story', story);
-                debug(story.author.picture);
+                story.author.username = username;
                 story.markModified('author');
                 story.save();
             }, foundStories);

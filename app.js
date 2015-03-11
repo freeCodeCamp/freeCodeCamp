@@ -213,6 +213,8 @@ app.use(
     express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
 );
 
+app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
+
 /**
  * Main routes.
  */
@@ -232,6 +234,9 @@ app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
 app.get('/stats', function(req, res) {
     res.redirect(301, '/learn-to-code');
+});
+app.get('/news', function(req, res) {
+    res.redirect(301, '/stories/hot');
 });
 app.get('/learn-to-code', resourcesController.about);
 app.get('/about', function(req, res) {
@@ -319,7 +324,7 @@ app.get(
 );
 
 app.get(
-    '/stories/submit/:newStory',
+    '/stories/submit/new-story',
     storyController.preSubmit
 );
 

@@ -14,6 +14,11 @@ var storySchema = new mongoose.Schema({
         type: String,
         unique: false
     },
+    metaDescription: {
+        type: String,
+        default: '',
+        unique: false
+    },
     description: {
         type: String,
         unique: false
@@ -41,18 +46,4 @@ var storySchema = new mongoose.Schema({
     }
 });
 
-storySchema.pre('save', function(next) {
-    console.log('pre save test');
-    next();
-});
-
 module.exports = mongoose.model('Story', storySchema);
-
-/*
- author: {
- userId: {
- type: mongoose.Schema.Types.ObjectId,
- ref: 'User'
- }
- },
- */

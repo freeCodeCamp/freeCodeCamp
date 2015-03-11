@@ -4,10 +4,6 @@
 @import "lib/animate.min.less";
 @import "lib/bootstrap/variables";
 
-//fonts.googleapis.com/css?family=Lato:300);
-@import url(http://fonts.googleapis.com/css?family=Lato:400);
-@import url(http://fonts.googleapis.com/css?family=Inconsolata);
-
 html,body,div,span,a,li,td,th {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -521,9 +517,9 @@ thead {
 
 .points-on-top {
   color: #eee;
-  font-size: 50px;
+  font-size: 35px;
   z-index: 2;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   position: relative;
   top: 50%;
@@ -755,7 +751,7 @@ iframe.iphone {
   margin-bottom: 50px;
 }
 
-.btn-primary-ghost{
+.btn-primary-ghost {
   background: transparent;
   color: @brand-primary;
 
@@ -801,6 +797,10 @@ iframe.iphone {
   text-align: center;
 }
 
+.big-ion-up-arrow  #upvote, #reply-to-main-post {
+    cursor: pointer;
+}
+
 .story-up-votes {
   padding-top: 0px;
   margin-left: -5px;
@@ -825,6 +825,11 @@ iframe.iphone {
   height: 50px;
 }
 
+.url-preview {
+  max-width: 250px;
+  max-height: 250px;
+}
+
 //.media ~ .media .media-body-wrapper:nth-child(odd) {
 //  background-color: #e5e5e5;
 //}
@@ -833,11 +838,19 @@ iframe.iphone {
   width: 100%;
 }
 
-.comment-to-comment-formgroup {
-  width: 50%;
-  height: 35px;
+.story-headline {
+  font-size: 20px;
 }
 
+#reply-to-main-post, #upvote {
+  cursor: pointer;
+}
+
+.btn-no-shadow {
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow:    0px 0px 0px rgba(0, 0, 0, 0);
+  box-shadow:         0px 0px 0px rgba(0, 0, 0, 0);
+}
 
 //uncomment this to see the dimensions of all elements outlined in red
 //* {
