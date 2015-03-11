@@ -70,6 +70,12 @@ $(document).ready(function() {
         $('#complete-courseware-dialog').modal('show');
     });
 
+    $('#complete-courseware-dialog').on('keypress', function(e) {
+      if (e.which === 13 || e === 13) {
+        $('#next-courseware-button').click();
+      }
+    });
+
     $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
         editor.focus();
     });
