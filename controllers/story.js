@@ -86,10 +86,12 @@ exports.recent = function(req, res) {
 exports.preSubmit = function(req, res) {
 
     var data = req.query;
-    var cleanData = sanitizeHtml(data.url);
+    var cleanData = sanitizeHtml(data.url, {
+                      allowedTags: [],
+                      allowedAttributes: []
+                    }).replace(/&quot;;/g, '"');
     if (data.url.replace(/&/g, '&amp;') !== cleanData) {
 
-        debug('data and cleandata', data, cleanData, data.url === cleanData);
         req.flash('errors', {
             msg: 'The data for this post is malformed'
         });
@@ -226,7 +228,10 @@ exports.comments = function(req, res, next) {
 
 exports.newStory = function(req, res) {
     var url = req.body.data.url;
-    var cleanURL = sanitizeHtml(url);
+    var cleanURL = sanitizeHtml(url, {
+      allowedTags: [],
+      allowedAttributes: []
+    }).replace(/&quot;/g, '"');
     if (cleanURL !== url) {
         req.flash('errors', {
             msg: "The URL you submitted doesn't appear valid"
@@ -291,10 +296,16 @@ exports.storySubmission = function(req, res) {
         link = 'http://' + link;
     }
     var story = new Story({
-        headline: sanitizeHtml(data.headline),
+        headline: sanitizeHtml(data.headline, {
+                    allowedTags: [],
+                    allowedAttributes: []
+                  }).replace(/&quot;/g, '"'),
         timePosted: Date.now(),
         link: link,
-        description: sanitizeHtml(data.description),
+        description: sanitizeHtml(data.description, {
+                        allowedTags: [],
+                        allowedAttributes: []
+                    }).replace(/&quot;/g, '"'),
         rank: 1,
         upVotes: data.upVotes,
         author: data.author,
@@ -320,7 +331,7 @@ exports.commentSubmit = function(req, res) {
         {
             allowedTags: [],
             allowedAttributes: []
-        });
+        }).replace(/&quot;/g, '"');
     if (data.body !== sanitizedBody) {
         req.flash('errors', {
             msg: 'HTML is not allowed'
@@ -346,7 +357,7 @@ exports.commentOnCommentSubmit = function(req, res) {
         {
             allowedTags: [],
             allowedAttributes: []
-        });
+        }).replace(/&quot;/g, '"');
     if (data.body !== sanitizedBody) {
         req.flash('errors', {
             msg: 'HTML is not allowed'
