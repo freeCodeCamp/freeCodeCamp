@@ -1427,7 +1427,7 @@
     ],
     "tests": [
       "expect($('.row').length).to.eql(2);",
-      "expect($('.col-xs-12').length).to.eql(4);"
+      "expect($('.col-xs-6').length).to.eql(4);"
     ],
     "challengeSeed": [
       "<style>",
