@@ -171,14 +171,11 @@ module.exports = {
 
     about: function(req, res) {
         if (req.user) {
-        if (!req.user.picture) {
-
-                req.user.picture = "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png";
+            if (!req.user.profile.picture || req.user.profile.picture === "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png") {
+                req.user.profile.picture = "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png";
                 req.user.save();
             }
         }
-
-
         var date1 = new Date("10/15/2014");
         var date2 = new Date();
         var timeDiff = Math.abs(date2.getTime() - date1.getTime());
