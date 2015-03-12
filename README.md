@@ -156,12 +156,8 @@ Contributing
 
 We welcome pull requests from Free Code Camp "campers" (our students) and seasoned JavaScript developers alike!
 1) Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp)
-2) If your issue or feature isn't on the board, either open an issue on this GitHub repo or message Quincy Larson to request to be added to the Trello board.
+2) If your issue or feature isn't on the board, open an issue and if you think you can fix it yourself, start working on it.
 3) Once your code is ready, submit the pull request. We'll do a quick code review and give you feedback, and iterate from there.
-
-This project uses [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with a
-few minor exceptions. If you are submitting a pull request that involves
-Jade templates, please make sure you are using *spaces*, not tabs.
 
 License
 -------
