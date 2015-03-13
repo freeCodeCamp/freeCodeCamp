@@ -1,0 +1,17 @@
+{
+  "_meta": {
+    "sources": [
+      "../common/models",
+      "./models"
+    ]
+  },
+  "user": {
+    "dataSource": "remote"
+  },
+  "bonfire": {
+    "dataSource": "remote"
+  },
+  "courseware": {
+    "dataSource": "remote"
+  }
+}

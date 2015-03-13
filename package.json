@@ -43,6 +43,7 @@
     "loopback-boot": "^2.4.0",
     "loopback-component-passport": "^1.1.2",
     "loopback-connector-mongodb": "^1.8.0",
+    "loopback-connector-remote": "^1.0.3",
     "loopback-datasource-juggler": "^2.15.0",
     "method-override": "^2.3.1",
     "moment": "^2.9.0",
@@ -70,6 +71,7 @@
     "rx-flux": "git://github.com/r3dm/rx-flux.git",
     "serve-favicon": "^2.0.1",
     "serve-static": "^1.9.1",
+    "thundercats": "^1.1.0",
     "uglifyify": "^3.0.1"
   },
   "optionalDependencies": {

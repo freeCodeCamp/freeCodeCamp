@@ -1,0 +1,8 @@
+{
+  "remote": {
+    "connector": "remote"
+  },
+  "local": {
+    "connector": "memory"
+  }
+}

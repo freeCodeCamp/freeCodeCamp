@@ -12,10 +12,12 @@ var _ = require('lodash'),
   watchify = require('watchify'),
   envify = require('envify/custom'),
   babelify = require('babelify'),
+  boot = require('loopback-boot'),
 
   // ## util
   // watch = require('gulp-watch'),
   // plumber = require('gulp-plumber'),
+  path = require('path'),
   debug = require('debug')('freecc:gulp'),
 
   // ## serve
@@ -28,6 +30,8 @@ var timer;
 
 var paths = {
   main: './client/client.js',
+  loopbackClient: './client/loopbackClient',
+  loopbackRoot: path.join(__dirname, 'client/'),
   jsx: './common/components/**/*.jsx',
   publicJs: './public/js',
   server: './server/server.js',
@@ -118,6 +122,11 @@ function browserifyCommon(cb) {
 
   var b = browserify(config);
 
+  // compile loopback for the client
+  b.require(paths.loopbackClient, { expose: 'lb' });
+
+  boot.compileToBrowserify(paths.loopbackRoot, b);
+
   bundleLogger.start('bundle.js');
 
   // transform es6/jsx into js
@@ -159,29 +168,3 @@ function bundleItUp(b) {
 }
 
 function noop() { }
-
-// old compile code
-/*gulp.task('jsx', function() {
-  debug('in jsx');
-  return gulp.src(paths.jsx)
-    .pipe(plumber())
-    .pipe(react({
-      harmony: true
-    }))
-    .pipe(gulp.dest('./common/components'));
-});
-
-gulp.task('jsx-watch', function() {
-  debug('in jsx watch');
-  return gulp.src(paths.jsx, { base: './common' })
-    .pipe(watch(paths.jsx, {
-      verbose: true,
-      base: './common',
-      name: 'jsx'
-    }))
-    .pipe(plumber())
-    .pipe(react({
-      harmony: true
-    }))
-    .pipe(gulp.dest('./common'));
-});*/
