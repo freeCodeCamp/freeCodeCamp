@@ -1,0 +1,17 @@
+{
+  "name": "freecodecamp",
+  "version": "1.0.0",
+  "homepage": "https://github.com/freecodecamp/freecodecamp",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.12.0"
+  }
+}
