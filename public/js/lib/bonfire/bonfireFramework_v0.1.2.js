@@ -21,10 +21,9 @@ editor.setOption("extraKeys", {
 	if (cm.somethingSelected()){
 		cm.indentSelection("add");
 	} else {
-        var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
-
-        cm.replaceSelection(spaces);
-}
+        	var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+		m.replaceSelection(spaces);
+	}
     },
     "Ctrl-Enter": function() {
         bonfireExecute();
