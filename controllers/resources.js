@@ -147,13 +147,13 @@ module.exports = {
 
     trelloCalls: function(req, res) {
         request('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(err, status, trello) {
-            trello = trello ? (JSON.parse(trello)).length : "Can't connect to to Trello";
+            trello = (status && status.statusCode == 200) ? (JSON.parse(trello)).length : "Can't connect to to Trello";
             res.send({"trello": trello});
         });
     },
     bloggerCalls: function(req, res) {
         request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
-            blog = blog.length > 100 ? JSON.parse(blog) : '';
+            blog = (status && status.statusCode == 200) ? JSON.parse(blog) : '';
             res.send({
                 blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
                 blog1Link: blog ? blog["items"][0]["url"] : "http://blog.freecodecamp.com",
