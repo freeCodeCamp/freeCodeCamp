@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res) {
-if (reg.user && process.env.NODE_ENV !== 'development'){ //added !== dev because crash
+if (reg.user && process.env.NODE_ENV !== 'production'){ //added !== dev because crash
 	res.redirect('/learn-to-code')
 } else {
     res.render('home', {
