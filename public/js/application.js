@@ -13,7 +13,6 @@
  * scripts down below using //= filename.js notation.
  */
 
-//= require lib/jquery-2.1.1.min
-//= require lib/bootstrap.min
-//= require lib/together/togetherjs
+//= require components/jquery/dist/jquery.min
+//= require components/bootstrap/dist/js/bootstrap.min
 //= require main
