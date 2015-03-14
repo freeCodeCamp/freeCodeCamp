@@ -22,7 +22,7 @@ editor.setOption("extraKeys", {
 		cm.indentSelection("add");
 	} else {
         	var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
-		m.replaceSelection(spaces);
+		cm.replaceSelection(spaces);
 	}
     },
     "Ctrl-Enter": function() {
