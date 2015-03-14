@@ -12,6 +12,14 @@
     "tests"
   ],
   "dependencies": {
-    "angular-bootstrap": "~0.12.0"
+    "angular-bootstrap": "~0.12.0",
+    "bootstrap": "~3.3.2",
+    "ramda": "~0.11.0",
+    "moment": "~2.9.0",
+    "codemirror": "~5.0.0",
+    "chai": "~2.1.1",
+    "jailed": "asvd/jailed#~0.2.0",
+    "jquery": "~2.1.3",
+    "codemirror-accessible": "bgrins/codemirror-accessible"
   }
 }
