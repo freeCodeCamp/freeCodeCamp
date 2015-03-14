@@ -441,17 +441,14 @@ app.get('/sitemap.xml', resourcesController.sitemap);
  *
  */
 app.post('/completed-challenge', function (req, res) {
-    req.user.challengesHash[parseInt(req.body.challengeNumber)] =
-        Math.round(+new Date() / 1000);
-    var timestamp = req.user.challengesHash;
-    var points = 0;
-    for (var key in timestamp) {
-        if (timestamp[key] > 0 && req.body.challengeNumber < 54) {
-            points += 1;
-        }
+    var challengeNumber = parseInt(req.body.challengeNumber);
+    var timestamp = Math.round(+new Date() / 1000);
+    if (challengeNumber < 54 && req.user.challengesCompleted[challengeNumber] == 0) {
+        req.user.challengesHash[challengeNumber] = timestamp;
+        req.user.challengesCompleted[challengeNumber] = timestamp;
+        req.user.points++;
+        req.user.save();
     }
-    req.user.points = points;
-    req.user.save();
 });
 
 /**
