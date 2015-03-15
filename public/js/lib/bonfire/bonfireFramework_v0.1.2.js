@@ -17,10 +17,13 @@ editor.setSize("100%", "auto");
 
 // Hijack tab key to enter two spaces intead
 editor.setOption("extraKeys", {
-    Tab: function(cm) {
-        var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
-        cm.replaceSelection(spaces);
+    Tab: function(mc) {
+        var spaces = Array(mc.getOption("indentUnit") + 1).join(" ");
+        mc.replaceSelection(spaces);
     },
+
+
+
     "Ctrl-Enter": function() {
         bonfireExecute();
         return false;
