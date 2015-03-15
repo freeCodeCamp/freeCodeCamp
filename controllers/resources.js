@@ -145,14 +145,16 @@ module.exports = {
 
 
 
-    trelloCalls: function(req, res) {
+    trelloCalls: function(req, res, next) {
         request('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(err, status, trello) {
+            if (err) { return next(err); }
             trello = (status && status.statusCode == 200) ? (JSON.parse(trello)).length : "Can't connect to to Trello";
             res.send({"trello": trello});
         });
     },
-    bloggerCalls: function(req, res) {
+    bloggerCalls: function(req, res, next) {
         request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
+            if (err) { return next(err); }
             blog = (status && status.statusCode == 200) ? JSON.parse(blog) : '';
             res.send({
                 blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
