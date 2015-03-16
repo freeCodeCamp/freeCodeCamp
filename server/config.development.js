@@ -1,4 +1,5 @@
 module.exports = {
+  host: '127.0.0.1',
   sessionSecret: process.env.SESSION_SECRET,
 
   trello: {
