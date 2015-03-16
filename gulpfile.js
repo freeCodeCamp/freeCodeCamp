@@ -129,6 +129,8 @@ function browserifyCommon(cb) {
 
   bundleLogger.start('bundle.js');
 
+  b.ignore('../../server/server.js');
+
   // transform es6/jsx into js
   b.transform(babelify.configure({
     sourceMapRelative: __dirname

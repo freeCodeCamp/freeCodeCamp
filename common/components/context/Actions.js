@@ -1,9 +1,10 @@
 var debug = require('debug')('freecc:context'),
+    Action = require('thundercats').Action,
+    waitFor = require('../../utils/waitFor'),
+    BonfireActions = require('../bonfires/Actions'),
+    BonfireStore = require('../bonfires/Store');
 
-    // # util
-    createActions = require('../../utils/createActions');
-
-var actions = createActions([
+var actions = Action.createActions([
   'setContext',
   'renderToUser'
 ]);
@@ -15,8 +16,11 @@ actions
   })
   .subscribe(function(ctx) {
     debug('set ctx');
-    // store updating
-    actions.renderToUser(ctx);
+    BonfireActions.getNextBonfire(ctx.state.params);
+    waitFor(BonfireStore)
+      .subscribe(function() {
+        actions.renderToUser(ctx);
+      });
   });
 
 module.exports = actions;

@@ -18,7 +18,7 @@ var routes = (
 
     <Route
       name='bonfires'
-      path='/bonfires/?:bonfires?'
+      path='/bonfires/?:bonfireName?'
       handler={ Bonfires } />
 
     <DefaultRoute

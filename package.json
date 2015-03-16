@@ -4,11 +4,13 @@
   "main": "server/server.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint",
-    "prepublish": "browserify -t babelify -g envify -t uglifyify client/client.js -o public/js/bundle.js"
+    "test": "npm run lint"
   },
   "engines": {
     "iojs": "1.5.x"
+  },
+  "browser": {
+    "../../server/server.js": false
   },
   "browserify": {
     "transform": [
@@ -71,7 +73,7 @@
     "rx-flux": "git://github.com/r3dm/rx-flux.git",
     "serve-favicon": "^2.0.1",
     "serve-static": "^1.9.1",
-    "thundercats": "^1.1.0",
+    "thundercats": "^1.2.2",
     "uglifyify": "^3.0.1"
   },
   "optionalDependencies": {

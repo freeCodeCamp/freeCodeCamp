@@ -7,22 +7,18 @@ var React = require('react'),
     } = require('react-bootstrap');
 
 var SidePanel = React.createClass({
-  // props
-  // difficulty - number of flames
-  // brief - description
-  // details - long description array of sentences
+
   propTypes: {
-    difficulty: React.PropTypes.number,
-    details: React.PropTypes.array,
     brief: React.PropTypes.string,
-    detauls: React.PropTypes.array
+    description: React.PropTypes.array,
+    difficulty: React.PropTypes.number
   },
 
   getDefaultProps: function() {
     return {
       difficulty: 2,
       brief: 'This is a brief description',
-      details: [
+      description: [
         'a sentence',
         'another'
       ]
@@ -58,14 +54,14 @@ var SidePanel = React.createClass({
   },
 
   _renderMoreInfo: function() {
-    var details = this.props.details.map((sentance, index) => {
+    var description = this.props.description.map((sentance, index) => {
       return <p key={ index }>{ sentance }</p>;
     });
 
     return (
       <Row>
         <Col xs={ 12 }>
-          { details }
+          { description }
         </Col>
       </Row>
     );
