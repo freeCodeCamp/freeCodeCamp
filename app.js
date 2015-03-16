@@ -232,6 +232,9 @@ app.get('/deploy-a-website', resourcesController.deployAWebsite);
 app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
 app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
+
+app.get('/pair-coding', resourcesController.pairCoding);
+
 app.get('/stats', function(req, res) {
     res.redirect(301, '/learn-to-code');
 });
