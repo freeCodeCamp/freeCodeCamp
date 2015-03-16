@@ -1,10 +1,9 @@
-/* eslint no-unused-vars: 0 */
 var React = require('react'),
 
     // react router
     Router = require('react-router'),
     Route = Router.Route,
-    NotFound = Router.NotFoundRoute,
+    // NotFound = Router.NotFoundRoute,
     DefaultRoute = Router.DefaultRoute,
 
     // # Components
