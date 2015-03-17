@@ -258,7 +258,7 @@ exports.returnUser = function(req, res, next) {
             var user = user[0];
             Challenge.find({}, null, {sort: {challengeNumber: 1}}, function (err, c) {
                 res.render('account/show', {
-                    title: 'Camper: ',
+                    title: 'Camper ' + user.profile.username + '\'s portfolio',
                     username: user.profile.username,
                     name: user.profile.name,
                     location: user.profile.location,
