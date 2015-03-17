@@ -243,4 +243,4 @@ function showCompletion() {
             $('.next-bonfire-button').click();
         }
     });
-
+}
