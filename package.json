@@ -73,7 +73,7 @@
     "rx-flux": "git://github.com/r3dm/rx-flux.git",
     "serve-favicon": "^2.0.1",
     "serve-static": "^1.9.1",
-    "thundercats": "^1.2.2",
+    "thundercats": "^1.3.1",
     "uglifyify": "^3.0.1"
   },
   "optionalDependencies": {
