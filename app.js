@@ -33,6 +33,7 @@ var express = require('express'),
     contactController = require('./controllers/contact'),
     bonfireController = require('./controllers/bonfire'),
     coursewareController = require('./controllers/courseware'),
+	pairCodingController = require('./controllers/pairCoding'),
 
     /**
      *  Stories
@@ -233,7 +234,9 @@ app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
 app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
 
-app.get('/pair-coding', resourcesController.pairCoding);
+app.get('/pair-coding', pairCodingController.index);
+app.get('/pair-coding/online', pairCodingController.online);
+
 app.post('pair-coding', function(req, res) {
 	res.send('test-post');
 });

@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+		script.
+			var user = !{JSON.stringify(user)};
+		.jumbotron.text-center
+			h1 Find a coding partner
+			.panel_body
+			#online-user.online-users
+				script.
+					$.ajax({
+						url: '/pair-coding/online',
+						type: 'GET'
+					}).success(
+							function(data){
+								for (var i=0; i < data.length; i++) {
+									$(div)
+									.html(
+										"<a href='#'>" + data[i] + "</a>"
+									);
+								}
+								$(div).addClass('online-users')
+								$(div).appendTo($('#online-users'));		
+							}
+						)
+
