@@ -1,16 +1,19 @@
 var User = require('./../models/User'),
 	mongodb = require('mongodb'),
-	pairUser = require('./../models/pairUser');
+	PairUser = require('./../models/pairUser');
 
 exports.index = function(req, res){
-	res.render('paircode/index.jade', {
-		title: "Team up and Pair code",
-		page: "pair-coding"	
-	});
-};
 
-exports.online = function (req, res){
-	res.json(['User1', 'User2', 'SpiderMan', 'UncleBen', 'MaryJane']);
+	PairUser.find().populate('user', 'email profile').exec(function(err, pairUsers) {
+		res.render('paircode/index.jade', {
+			title: "Team up and Pair code",
+			page: "pair-coding",
+			onlineUsers: pairUsers
+		});
+	});
+
+
+		
 };
 
 exports.setOnline = function(req, res) {
@@ -19,7 +22,7 @@ exports.setOnline = function(req, res) {
 	req.user.pair.timeOnline = Date.now();
 
 	// create a new online paircode instance
-	var pairCode = new pairUser({});
+	var pairCode = new PairUser({});
 	pairCode.user = req.user._id;
 	pairCode.save(function(err) {
 		if (err) {
@@ -32,22 +35,23 @@ exports.setOnline = function(req, res) {
 
 };
 
-exports.getOnline = function(req, res) {
+function getOnline(req, res) {
+	/*
 	// poll the db for online users and return them
+	var working = "";
 	pairUser.find(function(err, pairUsers) {
-		if (err) {
-			res.status(404);
-		} 
-		if (!pairUsers) {
-			// show user a page that says nobody is online.
-			res.json({"No users are online right now."});
-		} else {
-			res.render('paircode/index.jade', {
-				pairUsers: pairUsers,
-				page: 'online'
-			});
-		}
+		console.log("1# getonline function: " + pairUsers);
+		working = pairUsers;
+	});
+	return working;*/
+
+	var online = PairUser.find({});
+	var working = online.exec(function(err, users){
+		return users;
 	})
+	console.log("getonlinefunction: " + working);
+
+	return working[0];
 };
 
 exports.getSingle

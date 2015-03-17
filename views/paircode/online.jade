@@ -1,0 +1,15 @@
+script.
+	var userOnline = !{JSON.stringify(onlineUsers)};
+	var div = document.createElement('div');
+	for (var i=0; i < userOnline.length; i++) {
+		$(div).html(
+			"<a href='#'>" + userOnline[i].user.profile.username + "</a><br>" +
+			"<a href='#'>" + userOnline[i].user.email + "</a><br>" +
+			"<a href='#'>" + userOnline[i].tags + "</a><br>" +
+			"<a href='#'>" + userOnline[i].comment + "</a><br>" +
+			"<a href='#'>" + Object.keys(userOnline[i]) + "</a><br>" +
+			"<img src='" + userOnline[i].user.profile.picture + "'>"
+
+		);
+	}
+	$(div).appendTo($('.panel_body'));
