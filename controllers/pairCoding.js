@@ -1,5 +1,6 @@
 var User = require('./../models/User'),
-	mongodb = require('mongodb');
+	mongodb = require('mongodb'),
+	pairUser = require('./../models/pairUser');
 
 exports.index = function(req, res){
 	res.render('paircode/pair-coding.jade', {
@@ -12,10 +13,26 @@ exports.online = function (req, res){
 	res.json(['User1', 'User2', 'SpiderMan', 'UncleBen', 'MaryJane']);
 };
 
-function setCurrentUserOnline(req, res){
+exports.setOnline = function(req, res) {
+	// set the online status to true
+	req.user.pair.onlineStatus = true;
+	req.user.pair.timeOnline = Date.now();
+
+	// create a new online paircode instance
+	var pairCode = new pairUser({});
+	pairCode.user = req.user._id;
+	pairCode.save(function(err) {
+		if (err) {
+			return res.status(400);
+		} 
+		else {
+			console.log("Paircode saved.");
+		}
+	});
 
 };
 
-function setCurrentUserOffline(req, res){
+exports.getOnline = function(req, res) {
+	// poll the db for online users and return them
+}
 
-};

@@ -235,7 +235,7 @@ app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
 
 app.get('/pair-coding', pairCodingController.index);
-app.get('/pair-coding/online', pairCodingController.online);
+app.get('/pair-coding/setOnline', pairCodingController.setOnline);
 
 app.post('pair-coding', function(req, res) {
 	res.send('test-post');
