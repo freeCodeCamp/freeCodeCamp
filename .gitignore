@@ -24,5 +24,6 @@ node_modules
 .DS_Store
 Thumbs.db
 bower_components
+public/js/components
 public/js/bundle.js
 common/components/common*
