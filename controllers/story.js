@@ -148,7 +148,7 @@ exports.returnIndividualStory = function(req, res, next) {
             upVotes: story.upVotes,
             comments: story.comments,
             id: story._id,
-            user: req.user,
+            user: req.user || null,
             timeAgo: moment(story.timePosted).fromNow(),
             image: story.image,
             page: 'show',
@@ -227,6 +227,9 @@ exports.comments = function(req, res, next) {
 };
 
 exports.newStory = function(req, res) {
+    if (!req.user) {
+      res.status(500);
+    }
     var url = req.body.data.url;
     var cleanURL = sanitizeHtml(url, {
       allowedTags: [],
@@ -284,6 +287,9 @@ exports.newStory = function(req, res) {
 
 exports.storySubmission = function(req, res) {
     var data = req.body.data;
+    if (!req.user && !data.author) {
+      res.status(500);
+    }
     var storyLink = data.headline
         .replace(/\'/g, '')
         .replace(/\"/g, '')
@@ -327,6 +333,9 @@ exports.storySubmission = function(req, res) {
 
 exports.commentSubmit = function(req, res) {
     var data = req.body.data;
+    if (!req.user && !data.author) {
+      res.status(500);
+    }
     var sanitizedBody = sanitizeHtml(data.body,
         {
             allowedTags: [],
@@ -353,6 +362,9 @@ exports.commentSubmit = function(req, res) {
 
 exports.commentOnCommentSubmit = function(req, res) {
     var data = req.body.data;
+    if (!req.user && !data.author) {
+      res.status(500);
+    }
     var sanitizedBody = sanitizeHtml(data.body,
         {
             allowedTags: [],
