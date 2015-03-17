@@ -148,7 +148,7 @@ exports.returnIndividualStory = function(req, res, next) {
         } catch(err){
             userVoted = false;
         }
-		res.render('stories/index', {
+	res.render('stories/index', {
             title: story.headline,
             link: story.link,
             author: story.author,
