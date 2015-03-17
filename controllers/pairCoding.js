@@ -3,7 +3,7 @@ var User = require('./../models/User'),
 	pairUser = require('./../models/pairUser');
 
 exports.index = function(req, res){
-	res.render('paircode/pair-coding.jade', {
+	res.render('paircode/index.jade', {
 		title: "Team up and Pair code",
 		page: "pair-coding"	
 	});
@@ -42,10 +42,13 @@ exports.getOnline = function(req, res) {
 			// show user a page that says nobody is online.
 			res.json({"No users are online right now."});
 		} else {
-			res.render('paircode/pair-coding.jade', {
-				pairUsers: pairUsers
+			res.render('paircode/index.jade', {
+				pairUsers: pairUsers,
+				page: 'online'
 			});
 		}
 	})
-}
+};
+
+exports.getSingle
 

@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+		script.
+			var user = !{JSON.stringify(user)};
+			var page = !{JSON.stringify(page)};
+		.jumbotron.text-center
+			h1 Find a coding partner
+			.panel_body
+			if (page === 'pairUser')
+				include ./single-view
+			else 
+				include ./online
