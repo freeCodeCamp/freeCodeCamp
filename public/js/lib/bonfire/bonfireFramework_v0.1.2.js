@@ -33,6 +33,9 @@ editor.setOption("extraKeys", {
             cm.replaceSelection(spaces);
         }
     },
+
+
+
     "Ctrl-Enter": function() {
         bonfireExecute();
         return false;

@@ -42,22 +42,23 @@
                             span &thinsp;by&thinsp;
                                 a(href="/" + author.username) @#{author.username}
 
-
-    .col-xs-12#reply-area
-    .hidden-element#initial-comment-submit
-        form.form-horizontal.control-label-story-submission
-            .col-xs-12
-                .input-group
-                    input#comment-box.big-text-field.field-responsive.form-control(type='text', placeholder='Enter your reply', autofocus)
-                    span.input-group-btn
-                        button#comment-button.btn.btn-big.btn-primary.btn-responsive(type='button') Send
-                span.spacer.pull-left#textarea_feedback
+    if (user !== null)
+        .col-xs-12#reply-area
+        .hidden-element#initial-comment-submit
+            form.form-horizontal.control-label-story-submission
+                .col-xs-12
+                    .input-group
+                        input#comment-box.big-text-field.field-responsive.form-control(type='text', placeholder='Enter your reply', autofocus)
+                        span.input-group-btn
+                            button#comment-button.btn.btn-big.btn-primary.btn-responsive(type='button') Send
+                    span.spacer.pull-left#textarea_feedback
 
     script.
         if (image) {
             $('#image-display').removeClass('hidden-element')
         }
         $('#reply-to-main-post').on('click', function() {
+            if (!user) return;
             $('#initial-comment-submit').removeClass('hidden-element');
             $(this).unbind('click');
             $('.comment-to-comment-formgroup').empty();
