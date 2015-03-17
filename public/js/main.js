@@ -121,7 +121,7 @@ $(document).ready(function() {
 
     var upvoteHandler = function () {
         $(".ion-arrow-up-b").hide();
-		var _id = storyId;
+        var _id = storyId;
         $('#upvote').unbind('click');
         var alreadyUpvoted = false;
         for (var i = 0; i < upVotes.length; i++) {
