@@ -228,7 +228,7 @@ exports.comments = function(req, res, next) {
 
 exports.newStory = function(req, res) {
     if (!req.user) {
-      res.status(500);
+      return res.status(500);
     }
     var url = req.body.data.url;
     var cleanURL = sanitizeHtml(url, {
@@ -287,8 +287,8 @@ exports.newStory = function(req, res) {
 
 exports.storySubmission = function(req, res) {
     var data = req.body.data;
-    if (!req.user && !data.author) {
-      res.status(500);
+    if (req.user._id.toString() !== data.author.userId.toString()) {
+        return res.status(500);
     }
     var storyLink = data.headline
         .replace(/\'/g, '')
@@ -333,8 +333,8 @@ exports.storySubmission = function(req, res) {
 
 exports.commentSubmit = function(req, res) {
     var data = req.body.data;
-    if (!req.user && !data.author) {
-      res.status(500);
+    if (req.user._id.toString() !== data.author.userId.toString()) {
+        return res.status(500);
     }
     var sanitizedBody = sanitizeHtml(data.body,
         {
@@ -362,9 +362,11 @@ exports.commentSubmit = function(req, res) {
 
 exports.commentOnCommentSubmit = function(req, res) {
     var data = req.body.data;
-    if (!req.user && !data.author) {
-      res.status(500);
+
+    if (req.user._id.toString() !== data.author.userId.toString()) {
+        return res.status(500);
     }
+
     var sanitizedBody = sanitizeHtml(data.body,
         {
             allowedTags: [],
