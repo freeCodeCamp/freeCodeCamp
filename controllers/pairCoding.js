@@ -34,5 +34,18 @@ exports.setOnline = function(req, res) {
 
 exports.getOnline = function(req, res) {
 	// poll the db for online users and return them
+	pairUser.find(function(err, pairUsers) {
+		if (err) {
+			res.status(404);
+		} 
+		if (!pairUsers) {
+			// show user a page that says nobody is online.
+			res.json({"No users are online right now."});
+		} else {
+			res.render('paircode/pair-coding.jade', {
+				pairUsers: pairUsers
+			});
+		}
+	})
 }
 
