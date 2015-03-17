@@ -322,7 +322,6 @@ exports.updateProgress = function(req, res) {
 
 exports.postUpdateProfile = function(req, res, next) {
 
-    // What does this do?
     User.findById(req.user.id, function(err, user) {
         if (err) return next(err);
         var errors = req.validationErrors();
@@ -342,7 +341,7 @@ exports.postUpdateProfile = function(req, res, next) {
                 });
                 return res.redirect('/account');
             }
-            User.findOne({ username: req.body.username }, function(err, existingUsername) {
+            User.findOne({ 'profile.username': req.body.username }, function(err, existingUsername) {
                 if (err) {
                     return next(err);
                 }
