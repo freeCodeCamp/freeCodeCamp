@@ -1,7 +1,7 @@
 script.
 	var userOnline = !{JSON.stringify(onlineUsers)};
-	var div = document.createElement('div');
 	for (var i=0; i < userOnline.length; i++) {
+		var div = document.createElement('div');
 		$(div).html(
 			"<a href='#'>" + userOnline[i].user.profile.username + "</a><br>" +
 			"<a href='#'>" + userOnline[i].user.email + "</a><br>" +
@@ -11,5 +11,5 @@ script.
 			"<img src='" + userOnline[i].user.profile.picture + "'>"
 
 		);
+		$(div).appendTo($('.panel_body'));
 	}
-	$(div).appendTo($('.panel_body'));
