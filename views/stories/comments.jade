@@ -21,6 +21,7 @@
                         success: function (data, textStatus, xhr) {
                             commentDetails = data;
                             var div = document.createElement('div');
+
                             $(div)
                                     .html(
                                         '<div class="media media-news">' +
@@ -55,6 +56,9 @@
                             sentinel--;
                             if (!sentinel) {
                                 $('.comment-a-comment').on('click', 'a', function () {
+                                    if (!user) {
+                                        return;
+                                    }
                                     $(this).unbind('click');
                                     $('.comment-to-comment-formgroup').empty();
                                     $('#initial-comment-submit').addClass('hidden-element');
