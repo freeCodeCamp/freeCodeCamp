@@ -12,15 +12,15 @@ block content
 						url: '/pair-coding/online',
 						type: 'GET'
 					}).success(
-							function(data){
-								for (var i=0; i < data.length; i++) {
-									$(div)
-									.html(
-										"<a href='#'>" + data[i] + "</a>"
-									);
-								}
-								$(div).addClass('online-users')
-								$(div).appendTo($('#online-users'));		
-							}
-						)
+					function(data){
+						for (var i=0; i < data.length; i++) {
+							var div  = document.createElement('div');
+							$(div)
+							.html(
+								"<a href='#'>" + data[i] + "</a>"
+							);
+						 	$(div).appendTo($('.panel_body'));
+						}
+					}
+					);
 
