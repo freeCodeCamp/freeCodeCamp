@@ -137,15 +137,18 @@ exports.returnIndividualStory = function(req, res, next) {
             return res.redirect('../stories/' + dashedNameFull);
         }
 
-        
-		var votedObj = story.upVotes.filter(function(a){
-			return a['upVotedByUsername'] === req.user['profile']['username'];
-		})
 		var userVoted = false;
-		if (votedObj.length > 0){
-			userVoted = true;
-		}
+        try {
+			var votedObj = story.upVotes.filter(function(a){
+				return a['upVotedByUsername'] === req.user['profile']['username'];
+			})
 		
+			if (votedObj.length > 0){
+				userVoted = true;
+			}
+		} catch(err){
+			userVoted = false;
+		}
 		res.render('stories/index', {
             title: story.headline,
             link: story.link,
