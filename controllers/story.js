@@ -137,7 +137,16 @@ exports.returnIndividualStory = function(req, res, next) {
             return res.redirect('../stories/' + dashedNameFull);
         }
 
-        res.render('stories/index', {
+        
+		var votedObj = story.upVotes.filter(function(a){
+			return a['upVotedByUsername'] === req.user['profile']['username'];
+		})
+		var userVoted = false;
+		if (votedObj.length > 0){
+			userVoted = true;
+		}
+		
+		res.render('stories/index', {
             title: story.headline,
             link: story.link,
             author: story.author,
@@ -150,7 +159,8 @@ exports.returnIndividualStory = function(req, res, next) {
             timeAgo: moment(story.timePosted).fromNow(),
             image: story.image,
             page: 'show',
-            storyMetaDescription: story.metaDescription
+            storyMetaDescription: story.metaDescription,
+			hasUserVoted: userVoted
         });
     });
 };
