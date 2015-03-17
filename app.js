@@ -234,6 +234,9 @@ app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
 
 app.get('/pair-coding', resourcesController.pairCoding);
+app.post('pair-coding', function(req, res) {
+	res.send('test-post');
+});
 
 app.get('/stats', function(req, res) {
     res.redirect(301, '/learn-to-code');
