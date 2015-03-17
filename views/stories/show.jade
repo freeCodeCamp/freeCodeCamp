@@ -6,6 +6,7 @@
         var upVotes = !{JSON.stringify(upVotes)};
         var user = !{JSON.stringify(user)};
         var image = !{JSON.stringify(image)};
+        var hasUserVoted = !{JSON.stringify(hasUserVoted)};
     .spacer
 
     h3.row
@@ -13,8 +14,9 @@
             .col-xs-3.col-sm-1.text-center
                 .row.negative-5
                     .col-xs-12.big-ion-up-arrow
-                        a#upvote
-                            i.ion-arrow-up-b
+                        if !hasUserVoted
+                            a#upvote
+                                i.ion-arrow-up-b
                     h3.story-up-votes
                         span#storyRank= rank
             .col-xs-2.col-sm-1
