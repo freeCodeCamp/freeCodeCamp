@@ -102,7 +102,7 @@ app.use(session({
     store: new MongoStore({
         url: secrets.db,
         'auto_reconnect': true
-    }, function(ms) {
+        }, function(ms) {
         /**
          * Start Express server.
          */
