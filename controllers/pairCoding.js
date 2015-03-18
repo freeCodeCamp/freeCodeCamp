@@ -56,7 +56,7 @@ exports.setOnline = function(req, res) {
 
 //Used to check for expire online users
 exports.removeOldOnlinePost = function () {
-	var timeForExpired = 20; //Minutes
+	var timeForExpired = 30; //Minutes
 
 	var online = PairUser.find({});
 	var working = online.exec(function(err, users){
