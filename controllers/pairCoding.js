@@ -53,6 +53,7 @@ exports.setOnline = function(req, res) {
 			}
 		});
 	} else {
+		// this shouldn't show, as the user should be able to check if they're online via the template.
 		console.log("already online");
 	}
 };
