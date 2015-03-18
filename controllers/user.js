@@ -94,8 +94,10 @@ exports.getEmailSignup = function(req, res) {
  */
 
 exports.postEmailSignup = function(req, res, next) {
-    var errors = req.validationErrors();
 
+    req.assert('email', 'valid email required').isEmail();
+    var errors = req.validationErrors();
+    
     if (errors) {
         req.flash('errors', errors);
         return res.redirect('/email-signup');
