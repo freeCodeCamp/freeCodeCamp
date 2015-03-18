@@ -22,7 +22,7 @@
     "clockwork": "^0.1.1",
     "compression": "^1.2.1",
     "connect-assets": "^4.3.3",
-    "connect-mongo": "^0.4.1",
+    "connect-mongo": "^0.7.0",
     "cookie-parser": "^1.3.3",
     "csso": "^1.3.11",
     "dateformat": "^1.0.11",
