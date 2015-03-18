@@ -102,6 +102,17 @@ app.use(session({
     store: new MongoStore({
         url: secrets.db,
         'auto_reconnect': true
+    }, function(ms) {
+        /**
+         * Start Express server.
+         */
+        app.listen(app.get('port'), function () {
+            console.log(
+                'FreeCodeCamp server listening on port %d in %s mode',
+                app.get('port'),
+                app.get('env')
+            );
+        });
     })
 }));
 app.use(passport.initialize());
@@ -530,16 +541,5 @@ app.get(
  * 500 Error Handler.
  */
 app.use(errorHandler());
-
-/**
- * Start Express server.
- */
-app.listen(app.get('port'), function () {
-    console.log(
-        'FreeCodeCamp server listening on port %d in %s mode',
-        app.get('port'),
-        app.get('env')
-    );
-});
 
 module.exports = app;
