@@ -9,9 +9,10 @@ block content
 			.panel_body
 				.spacer
 					.col-xs-12
-						#story-list.story-list
-				if (page === 'pairUser')
-					include ./single-view
-				else 
-					include ./online
+					include ./add-paircode.jade
+					#story-list.story-list
+			if (page === 'pairUser')
+				include ./single-view
+			else 
+				include ./online
 

@@ -234,7 +234,7 @@ app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
 
 app.get('/pair-coding', pairCodingController.index);
-app.get('/pair-coding/setOnline', pairCodingController.setOnline);
+app.post('/pair-coding/setOnline', pairCodingController.setOnline);
 app.get('/pair-coding/setOffline', pairCodingController.setOffline);
 
 app.get('/stats', function(req, res) {

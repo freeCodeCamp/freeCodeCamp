@@ -40,12 +40,16 @@ exports.setOnline = function(req, res) {
 		var pairCode = new PairUser({});
 		pairCode.user = req.user._id;
 		pairCode.timeOnline = new Date();
+		// save the comments from the form
+		pairCode.comment = req.body.comment;
+
+
 		pairCode.save(function(err) {
 			if (err) {
 				return res.status(400);
 			} 
 			else {
-				console.log("Paircode saved.");
+				res.redirect('/pair-coding');
 			}
 		});
 	} else {
@@ -105,16 +109,7 @@ exports.setOffline = function(req, res){
 	});
 };
 
-function getOnline(req, res) {
 
-	var online = PairUser.find({});
-	var working = online.exec(function(err, users){
-		return users;
-	})
-	console.log("getonlinefunction: " + working);
-
-	return working[0];
-};
 
 
 exports.getSingle
