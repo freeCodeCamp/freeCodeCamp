@@ -3,7 +3,7 @@ script.
 	for (var i=0; i < userOnline.length; i++) {
 		var wentOnline = new Date(userOnline[i].timeOnline).getTime();
 		var onlineForMinutes = Math.round((new Date().getTime() - wentOnline)/60000);
-		var minutesText = (onlineForMinutes===1)? "":"s";
+		var minutesText = (onlineForMinutes<=1)? "":"s";
 		var div = document.createElement('div');
 			$(div)
 			.html(

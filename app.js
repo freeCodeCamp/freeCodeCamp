@@ -65,7 +65,6 @@ mongoose.connection.on('error', function () {
         'MongoDB Connection Error. Please make sure that MongoDB is running.'
     );
 });
-
 /**
  * Express configuration.
  */
@@ -543,4 +542,16 @@ app.listen(app.get('port'), function () {
     );
 });
 
+/**
+ * Check the db every n minutes and remove users from /pair-coding
+*/
+
+var pairCodingIntervalMinutes = 20;
+var pairCodingIntervalMiliSeconds = pairCodingIntervalMinutes * 60 * 1000;
+var pC = require('./controllers/pairCoding.js');
+
+var pairCodingInterval = setInterval(function(){
+    pC.removeOldOnlinePost();
+}, pairCodingIntervalMiliSeconds);
+ 
 module.exports = app;

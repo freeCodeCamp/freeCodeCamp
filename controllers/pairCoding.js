@@ -54,31 +54,58 @@ exports.setOnline = function(req, res) {
 };
 
 
+//Used to check for expire online users
+exports.removeOldOnlinePost = function () {
+	var timeForExpired = 20; //Minutes
+
+	var online = PairUser.find({});
+	var working = online.exec(function(err, users){
+		var now = new Date().getTime();
+
+		for (var x=0; x<users.length; x++){
+			var wentOnline = new Date(users[x]['timeOnline']);
+			var onlineForMinutes = Math.round((now - wentOnline)/60000);
+			if (onlineForMinutes >= timeForExpired){
+				User.findById(users[x].user, function(err, user) {
+					if (err) {
+						console.log("ERROR: Could not find user, METHOD: removeOldOnlinePost");
+					} 
+					user.pair.onlineStatus = false;
+					user.pair.timeOnline = new Date();
+					user.save(function(err) {
+						if (err) {
+							console.log("ERROR: Could not save user, METHOD: removeOldOnlinePost: " + err);
+						}
+					});
+				});
+
+				users[x].remove(function(err, ele){
+					if (err){
+						console.log("ERROR: Could not remove user, METHOD: removeOldOnlinePost: " + err);
+					}
+				});
+			}
+		}
+		return users;
+	})
+};
+
 exports.setOffline = function(req, res){
 	User.findById(req.user._id, function(err, user) {
 		if (err) {
-			console.log("there was an error finding the user");
+			console.log("ERROR: Could not find user, METHOD: setOffline: " + err);
 		} 
 		user.pair.onlineStatus = false;
 		user.pair.timeOnline = new Date();
 		user.save(function(err) {
 			if (err) {
-				console.log("there was an error saving the user: " + err);
+				console.log("ERROR: Could not save user, METHOD: setOffline: " + err);
 			}
 		});
 	});
-	console.log("you are now offline");
-}
+};
 
 function getOnline(req, res) {
-	/*
-	// poll the db for online users and return them
-	var working = "";
-	pairUser.find(function(err, pairUsers) {
-		console.log("1# getonline function: " + pairUsers);
-		working = pairUsers;
-	});
-	return working;*/
 
 	var online = PairUser.find({});
 	var working = online.exec(function(err, users){
@@ -88,7 +115,6 @@ function getOnline(req, res) {
 
 	return working[0];
 };
-
 
 
 exports.getSingle
