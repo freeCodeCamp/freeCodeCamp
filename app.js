@@ -198,8 +198,8 @@ app.use(helmet.contentSecurityPolicy({
 
 app.use(function (req, res, next) {
     // Make user object available in templates.
-    fullUser = req.user;
-    delete fullUser.password;
+    fullUser = req.user ? req.user : null;
+    if (fullUser) fullUser.password = null;
     res.locals.user = fullUser;
     next();
 });
