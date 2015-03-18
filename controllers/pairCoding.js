@@ -115,6 +115,7 @@ exports.removeOldOnlinePost = function () {
 };
 
 exports.setOffline = function(req, res){
+	// change the user's online status
 	User.findById(req.user._id, function(err, user) {
 		if (err) {
 			console.log("ERROR: Could not find user, METHOD: setOffline: " + err);
@@ -124,6 +125,17 @@ exports.setOffline = function(req, res){
 		user.save(function(err) {
 			if (err) {
 				console.log("ERROR: Could not save user, METHOD: setOffline: " + err);
+			}
+		});
+	});
+	// remove the pair requests from that user
+	PairUser.findOne({user: req.user._id}, function(err, pair) {
+		if (err) {
+			console.log("Error finding offline users.");
+		} 
+		pair.remove(function(err) {
+			if (err) {
+				console.log("error removing old posts.");
 			}
 		});
 	});
