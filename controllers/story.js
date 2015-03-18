@@ -159,7 +159,6 @@ exports.returnIndividualStory = function(req, res, next) {
             upVotes: story.upVotes,
             comments: story.comments,
             id: story._id,
-            user: req.user || null,
             timeAgo: moment(story.timePosted).fromNow(),
             image: story.image,
             page: 'show',
