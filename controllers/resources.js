@@ -29,28 +29,27 @@ module.exports = {
 
     sitemap: function sitemap(req, res, next) {
         var appUrl = 'http://www.freecodecamp.com';
-        var now = moment(new Date).format('YYYY-MM-DD');
+        var now = moment(new Date()).format('YYYY-MM-DD');
 
-        errors = {};
         User.find({'profile.username': {'$ne': '' }}, function(err, users) {
             if (err) {
                 debug('User err: ', err);
-                next(err);
+                return next(err);
             }
             Challenge.find({}, function (err, challenges) {
                 if (err) {
                     debug('User err: ', err);
-                    next(err);
+                    return next(err);
                 }
                 Bonfire.find({}, function (err, bonfires) {
                     if (err) {
                         debug('User err: ', err);
-                        next(err);
+                        return next(err);
                     }
                     Story.find({}, function (err, stories) {
                         if (err) {
                             debug('User err: ', err);
-                            next(err);
+                            return next(err);
                         }
                         res.header('Content-Type', 'application/xml');
                         res.render('resources/sitemap', {
@@ -189,12 +188,12 @@ module.exports = {
         User.count({}, function (err, c3) {
             if (err) {
                 debug('User err: ', err);
-                next(err);
+                return next(err);
             }
             User.count({'points': {'$gt': 53}}, function (err, all) {
                 if (err) {
                     debug('User err: ', err);
-                    next(err);
+                    return next(err);
                 }
 
                 res.render('resources/learn-to-code', {
