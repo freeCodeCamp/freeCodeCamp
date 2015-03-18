@@ -7,12 +7,12 @@ block content
 		.panel.panel-info
 			.panel-heading.text-center Find a Coding Partner
 			.panel_body
-				.spacer
-					.col-xs-12
-					include ./add-paircode.jade
-					#story-list.story-list
-			if (page === 'pairUser')
-				include ./single-view
-			else 
-				include ./online
+				.col-xs-12
+				include ./add-paircode.jade
+				#story-list.story-list
+					.spacer
+						if (page === 'pairUser')
+							include ./single-view
+						else 
+							include ./online
 
