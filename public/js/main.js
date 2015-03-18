@@ -126,13 +126,7 @@ $(document).ready(function() {
         $('#long-instructions').hide();
     });
 
-    $('#upvote').on('click', upvoteHandler);
-
-    var upvoteHandler = function (event) {
-        event.preventDefault();
-        var $this = $(this);
-        $this.addClass('disabled');
-        $this.text('Upvoted!');
+    var upvoteHandler = function () {
         var _id = storyId;
         $('#upvote').unbind('click');
         var alreadyUpvoted = false;
@@ -154,10 +148,14 @@ $(document).ready(function() {
                     $('#upvote').bind('click', upvoteHandler);
                 })
                 .done(function (data, textStatus, xhr) {
-                    $('#storyRank').text(data.rank);
+                    $('#upvote').text('Upvoted!').addClass('disabled');
+
+                    $('#storyRank').text(data.rank + " points");
                 });
         }
     };
+    $('#upvote').on('click', upvoteHandler);
+
 
     var storySubmitButtonHandler = function storySubmitButtonHandler() {
 
@@ -274,6 +272,12 @@ profileValidation.controller('nonprofitFormController', ['$scope',
 ]);
 
 profileValidation.controller('doneWithFirst100HoursFormController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
+profileValidation.controller('submitStoryController', ['$scope',
     function($scope) {
 
     }
