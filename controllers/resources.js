@@ -1,4 +1,5 @@
-var User = require('../models/User'),
+var async = require('async'),
+    User = require('../models/User'),
     Challenge = require('./../models/Challenge'),
     Bonfire = require('./../models/Bonfire'),
     Story = require('./../models/Story'),
@@ -303,7 +304,7 @@ module.exports = {
             });
         })();
     },
-    updateUserStoryPictures: function(userId, picture, username) {
+    updateUserStoryPictures: function(userId, picture, username, cb) {
 
         var counter = 0,
             foundStories,
@@ -311,7 +312,7 @@ module.exports = {
 
         Story.find({'author.userId': userId}, function(err, stories) {
             if (err) {
-                throw err;
+                return cb(err);
             }
             foundStories = stories;
             counter++;
@@ -319,7 +320,7 @@ module.exports = {
         });
         Comment.find({'author.userId': userId}, function(err, comments) {
             if (err) {
-                throw err;
+                return cb(err);
             }
             foundComments = comments;
             counter++;
@@ -330,19 +331,28 @@ module.exports = {
             if (counter !== 2) {
                 return;
             }
+            var tasks = [];
             R.forEach(function(comment) {
-                comment.author.picture = picture;
-                comment.author.username = username;
-                comment.markModified('author');
-                comment.save();
+              comment.author.picture = picture;
+              comment.author.username = username;
+              comment.markModified('author');
+              tasks.push(function(cb) {
+                comment.save(cb);
+              });
             }, foundComments);
 
             R.forEach(function(story) {
-                story.author.picture = picture;
-                story.author.username = username;
-                story.markModified('author');
-                story.save();
+              story.author.picture = picture;
+              story.author.username = username;
+              story.markModified('author');
+              tasks.push(function(cb) {
+                story.save(cb);
+              });
             }, foundStories);
+            async.parallel(tasks, function(err) {
+              if (err) { return cb(err); }
+              cb();
+            });
         }
     }
 };

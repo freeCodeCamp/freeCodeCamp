@@ -377,9 +377,18 @@ exports.postUpdateProfile = function(req, res, next) {
                     if (err) {
                         return next(err);
                     }
-                    req.flash('success', {msg: 'Profile information updated.'});
-                    res.redirect('/account');
-                    resources.updateUserStoryPictures(user._id.toString(), user.profile.picture, user.profile.username);
+                    resources.updateUserStoryPictures(
+                      user._id.toString(),
+                      user.profile.picture,
+                      user.profile.username,
+                      function(err) {
+                        if (err) { return next(err); }
+                        req.flash('success', {
+                          msg: 'Profile information updated.'
+                        });
+                        res.redirect('/account');
+                      }
+                    );
                 });
             });
         });
