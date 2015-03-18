@@ -113,6 +113,7 @@ $(document).ready(function() {
         window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
     });
 
+
     // Bonfire instructions functions
     $('#more-info').on('click', function() {
         ga('send', 'event',  'Challenge', 'more-info', challengeName);
@@ -125,8 +126,13 @@ $(document).ready(function() {
         $('#long-instructions').hide();
     });
 
-    var upvoteHandler = function () {
-        $(".ion-arrow-up-b").hide();
+    $('#upvote').on('click', upvoteHandler);
+
+    var upvoteHandler = function (event) {
+        event.preventDefault();
+        var $this = $(this);
+        $this.addClass('disabled');
+        $this.text('Upvoted!');
         var _id = storyId;
         $('#upvote').unbind('click');
         var alreadyUpvoted = false;
@@ -152,7 +158,6 @@ $(document).ready(function() {
                 });
         }
     };
-    $('#upvote').on('click', upvoteHandler);
 
     var storySubmitButtonHandler = function storySubmitButtonHandler() {
 

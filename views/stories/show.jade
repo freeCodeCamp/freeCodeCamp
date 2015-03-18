@@ -10,39 +10,37 @@
     .spacer
 
     h3.row
-        .row.text-left.negative-10
-            .col-xs-3.col-sm-1.text-center
-                .row.negative-5
-                    .col-xs-12.big-ion-up-arrow
+        .col-xs-2.col-sm-1
+            a(href="/" + author.username)
+                img(src="#{author.picture}", class='img-news')
+        .col-xs-10.col-sm-10
+            .col-xs-12.negative-28
+                a(href="#{link}", target="_blank")
+                    h3= title
+            h6
+                .col-xs-12.positive-15.hidden-element#image-display
+                    .media
+                        .media-left
+                            img.url-preview.media-object(src="#{image}", alt="#{storyMetaDescription}")
+                        .media-body
+                            .col-xs-12.col-sm-12.col-md-6
+                                h4= storyMetaDescription
+                .col-xs-12
+                    h4= description
+                    .negative-5
+                        a#reply-to-main-post.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Reply
+                        |  &thinsp;·&thinsp;
                         if !hasUserVoted
-                            a#upvote
-                                i.ion-arrow-up-b
-                    h3.story-up-votes
-                        span#storyRank= rank
-            .col-xs-2.col-sm-1
-                a(href="/" + author.username)
-                    img(src="#{author.picture}", class='img-news')
-            .col-xs-7.col-sm-10
-
-                .col-xs-12.negative-28
-                    a(href="#{link}", target="_blank")
-                        h3= title
-                h6
-                    .col-xs-12.positive-15.hidden-element#image-display
-                        .media
-                            .media-left
-                                img.url-preview.media-object(src="#{image}", alt="#{storyMetaDescription}")
-                            .media-body
-                                .col-xs-12.col-sm-12.col-md-6
-                                    h4= storyMetaDescription
-                    .col-xs-12
-                        h4= description
-                        .negative-5
-                            a#reply-to-main-post.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Reply
+                            a#upvote.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost
                             |  &thinsp;·&thinsp;
-                            span Posted #{timeAgo}
-                            span &thinsp;by&thinsp;
-                                a(href="/" + author.username) @#{author.username}
+                        else
+                            a#upvote.btn.disabled.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvoted!
+                            |  &thinsp;·&thinsp;
+                        span#storyRank= rank + (rank > 1 ? " points" : " point")
+                        |  &thinsp;·&thinsp;
+                        span Posted #{timeAgo}
+                        span &thinsp;by&thinsp;
+                            a(href="/" + author.username) @#{author.username}
 
     if (user !== null)
         .col-xs-12#reply-area
