@@ -5,7 +5,7 @@ var User = require('./../models/User'),
 exports.index = function(req, res){
 
 	PairUser.find().populate('user', 'email profile').exec(function(err, pairUsers) {
-		console.log(pairUsers);
+		//console.log(pairUsers);
 		res.render('paircode/index.jade', {
 			title: "Team up and Pair code",
 			page: "pair-coding",
@@ -28,9 +28,10 @@ exports.setOnline = function(req, res) {
 				console.log("there was an error finding the user");
 			} 
 			user.pair.onlineStatus = true;
+			user.pair.timeOnline = new Date();
 			user.save(function(err) {
 				if (err) {
-					console.log("there was an error saving the user");
+					console.log("there was an error saving the user: " + err);
 				}
 			});
 		});
@@ -38,6 +39,7 @@ exports.setOnline = function(req, res) {
 		// if not online, create a new online paircode instance
 		var pairCode = new PairUser({});
 		pairCode.user = req.user._id;
+		pairCode.timeOnline = new Date();
 		pairCode.save(function(err) {
 			if (err) {
 				return res.status(400);
@@ -50,6 +52,23 @@ exports.setOnline = function(req, res) {
 		console.log("already online");
 	}
 };
+
+
+exports.setOffline = function(req, res){
+	User.findById(req.user._id, function(err, user) {
+		if (err) {
+			console.log("there was an error finding the user");
+		} 
+		user.pair.onlineStatus = false;
+		user.pair.timeOnline = new Date();
+		user.save(function(err) {
+			if (err) {
+				console.log("there was an error saving the user: " + err);
+			}
+		});
+	});
+	console.log("you are now offline");
+}
 
 function getOnline(req, res) {
 	/*
@@ -69,6 +88,8 @@ function getOnline(req, res) {
 
 	return working[0];
 };
+
+
 
 exports.getSingle
 

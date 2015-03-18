@@ -4,10 +4,14 @@ block content
 		script.
 			var user = !{JSON.stringify(user)};
 			var page = !{JSON.stringify(page)};
-		.jumbotron.text-center
-			h1 Find a coding partner
+		.panel.panel-info
+			.panel-heading.text-center Find a Coding Partner
 			.panel_body
-			if (page === 'pairUser')
-				include ./single-view
-			else 
-				include ./online
+				.spacer
+					.col-xs-12
+						#story-list.story-list
+				if (page === 'pairUser')
+					include ./single-view
+				else 
+					include ./online
+

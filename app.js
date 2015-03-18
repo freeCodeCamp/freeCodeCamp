@@ -236,7 +236,7 @@ app.get('/control-shortcuts', resourcesController.deployAWebsite);
 
 app.get('/pair-coding', pairCodingController.index);
 app.get('/pair-coding/setOnline', pairCodingController.setOnline);
-//app.get('pair-coding/getOnline', pairCodingController.getOnline);
+app.get('/pair-coding/setOffline', pairCodingController.setOffline);
 
 app.get('/stats', function(req, res) {
     res.redirect(301, '/learn-to-code');

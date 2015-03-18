@@ -10,7 +10,8 @@ var PairUserSchema = new mongoose.Schema({
         ref: 'User' 
     },
     comment: {type: String, default: "Come pair with me."},
-    tags: {type:[String], default: []}
+    tags: {type:[String], default: []},
+    timeOnline: {type:Date, default: null}
 
     
 });

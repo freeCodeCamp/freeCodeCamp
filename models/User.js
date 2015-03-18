@@ -359,7 +359,7 @@ var userSchema = new mongoose.Schema({
     completedCoursewares: Array,
     pair: {
         onlineStatus: {type:Boolean, default: false},
-        timeOnline: Date
+        timeOnline: {type:Date, default: new Date()}
     }
 });
 
