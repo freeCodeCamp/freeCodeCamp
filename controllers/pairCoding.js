@@ -58,6 +58,25 @@ exports.setOnline = function(req, res) {
 	}
 };
 
+exports.editPairRequest = function(req, res) {
+	// search for the user's pair request
+	PairUser.findOne({user: req.user._id}, function(err, pairuser) {
+		if (err) {
+			console.log("There was an error finding the user.");
+		}
+		pairuser.comment = req.body.comment;
+		pairuser.timeOnline = new Date();
+		pairuser.save(function(err) {
+			if (err) {
+				console.log("There was an error saving the pairuser.");
+			}
+			else {
+				res.redirect('/pair-coding');
+			}
+		});
+	});
+};
+
 
 //Used to check for expire online users
 exports.removeOldOnlinePost = function () {

@@ -6,4 +6,13 @@
 				span.input-group-btn
 					button#paircode-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
 		else
-			You are already online
+			h2 You are already online. 
+			h6#edit-pair-request Would you like to edit your pair request?
+			form#edit-comment.input-group.hidden(method="POST", action="/pair-coding/edit-request", name="paircode-edit")
+				input#comment.big-text-field.field-responsive.form-control(placeholder='What do you want to pair program?', name='comment', type='text' autofocus)
+				span.input-group-btn
+					button#edit-paircode-submit.btn.btn-big.btn-primary.btn-responsive(type="submit") Edit
+script.
+	$('#edit-pair-request').on('click', function () {
+		$('form#edit-comment').toggleClass('hidden');
+	});
