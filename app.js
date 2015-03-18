@@ -1,11 +1,12 @@
-require('newrelic');
+if (process.env.NODE_ENV !== 'development') {
+  require('newrelic');
+}
 require('dotenv').load();
 /**
  * Module dependencies.
  */
 
 var express = require('express'),
-    debug = require('debug')('freecc:server'),
     cookieParser = require('cookie-parser'),
     compress = require('compression'),
     session = require('express-session'),
@@ -14,7 +15,6 @@ var express = require('express'),
     methodOverride = require('method-override'),
     bodyParser = require('body-parser'),
     helmet = require('helmet'),
-    _ = require('lodash'),
     MongoStore = require('connect-mongo')(session),
     flash = require('express-flash'),
     path = require('path'),
@@ -38,11 +38,6 @@ var express = require('express'),
      *  Stories
      */
     storyController = require('./controllers/story');
-
-    /**
-     * User model
-     */
-    User = require('./models/User'),
 
     /**
      * API keys and Passport configuration.
