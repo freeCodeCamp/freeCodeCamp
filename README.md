@@ -1,12 +1,10 @@
-[![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
+Adding the feature to /pair-coding to allow users to collabarate and pair program.
 
-[![Stories in Ready](https://badge.waffle.io/FreeCodeCamp/freecodecamp.png?label=ready&title=Ready)](https://waffle.io/FreeCodeCamp/freecodecamp)
-<img src="https://s3.amazonaws.com/freecodecamp/logo4.0LG.png">
+When someone is free and want to pair up to dual code they could go 'online'. They could either A)list what they were working on with 'tags' such as 'node', 'express', 'mongo', 'bonfires', etc so other people could see them or B) search/browse other people.
 
-Free Code Camp!
-=======================
+I feel like this would help stimulate the community and provide a catalyst for learning
 
-We're a community of busy people learning to code by collaborating on projects for nonprofits. We learn, then use, the JavaScript MEAN stack - MongoDB, Express.js, Angular.js and Node.js. 
+https://github.com/FreeCodeCamp/freecodecamp/issues/207
 
 This app is live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com), and we have a [chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp) and [blog](http://blog.freecodecamp.com), too. Join us!
 
@@ -172,3 +170,45 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+=======
+
+
+TODO:
+
+	Intial Database Setup
+	Query for online users
+		get screenhero username
+		get time started for being online
+
+	Tags for 
+	Apax call to pair-code/online/:username to put user online
+
+
+
+API
+	pair-coding/getOnline 
+		- return Object of online users
+	
+	pair-coding/setOnline 
+		- set current user 
+		- set (send Array of) tags 
+		- set time online 
+		- user comment (title / description of what they are working on in addition to tags)
+	
+	pair-coding/setOffline
+		- remove user - DELETE or POST to pair-code/online
+	
+	pair-coding/getTags
+		- return Array of usable tags
+
+	pair-coding/setPair
+		- set Pair is active
+
+
+
+Main Path - /pair-coding
+API Path - /pair-coding/APIHERE
+
+Global variable names
+	??
+	??

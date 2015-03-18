@@ -356,7 +356,11 @@ var userSchema = new mongoose.Schema({
     uncompletedBonfires: Array,
     completedBonfires: Array,
     uncompletedCoursewares: Array,
-    completedCoursewares: Array
+    completedCoursewares: Array,
+    pair: {
+        onlineStatus: {type:Boolean, default: false},
+        timeOnline: {type:Date, default: new Date()}
+    }
 });
 
 /**
