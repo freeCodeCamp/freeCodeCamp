@@ -3,7 +3,7 @@ var User = require('./../models/User'),
 	PairUser = require('./../models/pairUser');
 
 exports.index = function(req, res){
-
+	// could run the expires script here ...
 	PairUser.find().populate('user', 'email profile').exec(function(err, pairUsers) {
 		//console.log(pairUsers);
 		res.render('paircode/index.jade', {
@@ -127,10 +127,9 @@ exports.setOffline = function(req, res){
 			}
 		});
 	});
+	res.redirect('/pair-coding');
 };
 
 
 
-
-exports.getSingle
 
