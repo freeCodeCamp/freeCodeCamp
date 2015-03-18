@@ -170,7 +170,7 @@ module.exports = {
         });
     },
 
-    about: function(req, res) {
+    about: function(req, res, next) {
         if (req.user) {
             if (!req.user.profile.picture || req.user.profile.picture === "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png") {
                 req.user.profile.picture = "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png";
