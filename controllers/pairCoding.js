@@ -161,7 +161,7 @@ exports.returnPairInfo = function(req, res){
 		// get comment information to port to template
 		var comment = pair.comment;
 			res.render('paircode/index.jade', {
-				title: "ENTER TEXT HERE FOR COMMENT NAME",
+				title: "Chat with "+usernameToPair+" about "+comment,
 				page: "pairWithUser",
 				pairWithUser: pair.username,		
 				comment: comment
