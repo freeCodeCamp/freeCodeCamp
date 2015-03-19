@@ -19,8 +19,9 @@ var BonfiresStore = Store.create({
 
     return [
       setBonfire
-        .map(function({ description, difficulty}) {
+        .map(function({ name, description, difficulty}) {
           return {
+            name,
             description,
             difficulty
           };

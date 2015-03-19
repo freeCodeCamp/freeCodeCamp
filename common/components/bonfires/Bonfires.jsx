@@ -19,10 +19,11 @@ var Bonfire = React.createClass({
 
   render: function() {
     var {
+      name,
       difficulty,
       description
     } = this.state;
-    var brief = description.shift();
+    var brief = description.slice(0, 1).pop();
 
     // convert bonfire difficulty from floating point string
     // to integer.
@@ -32,9 +33,10 @@ var Bonfire = React.createClass({
       <Grid>
         <Row>
           <SidePanel
-            difficulty={ difficulty }
+            name={ name }
             brief={ brief }
-            description={ description }/>
+            difficulty={ difficulty }
+            description={ description.length > 1 ? description : [] }/>
           <Col
             xs={ 12 }
             md={ 8 }>

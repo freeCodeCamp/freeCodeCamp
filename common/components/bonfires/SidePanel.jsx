@@ -9,6 +9,7 @@ var React = require('react'),
 var SidePanel = React.createClass({
 
   propTypes: {
+    name: React.PropTypes.string,
     brief: React.PropTypes.string,
     description: React.PropTypes.array,
     difficulty: React.PropTypes.number
@@ -48,7 +49,7 @@ var SidePanel = React.createClass({
       return (
         <i
           key={ num }
-          className={ className } />
+          className={ className }/>
       );
     });
   },
@@ -75,7 +76,7 @@ var SidePanel = React.createClass({
         xs={ 12 }
         md={ 4 }>
         <div>
-          <h1 classNameName='text-center'>Meet Bonfire</h1>
+          <h1 classNameName='text-center'>{ this.props.name }</h1>
           <h2 classNameName='text-center'>
             <div classNameName='bonfire-flames'>
               Difficulty:&nbsp;
