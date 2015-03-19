@@ -7,25 +7,19 @@ var React = require('react'),
     } = require('react-bootstrap');
 
 var SidePanel = React.createClass({
-  // props
-  // difficulty - number of flames
-  // brief - description
-  // details - long description array of sentences
+
   propTypes: {
-    difficulty: React.PropTypes.number,
-    details: React.PropTypes.array,
+    name: React.PropTypes.string,
     brief: React.PropTypes.string,
-    detauls: React.PropTypes.array
+    description: React.PropTypes.array,
+    difficulty: React.PropTypes.number
   },
 
   getDefaultProps: function() {
     return {
-      difficulty: 2,
-      brief: 'This is a brief description',
-      details: [
-        'a sentence',
-        'another'
-      ]
+      name: 'Welcome to Bonfires!',
+      difficulty: 5,
+      brief: 'This is a brief description'
     };
   },
 
@@ -52,34 +46,55 @@ var SidePanel = React.createClass({
       return (
         <i
           key={ num }
-          className={ className } />
+          className={ className }/>
       );
     });
   },
 
-  _renderMoreInfo: function() {
-    var details = this.props.details.map((sentance, index) => {
+  _renderMoreInfo: function(isDescription) {
+    var description = this.props.description.map((sentance, index) => {
       return <p key={ index }>{ sentance }</p>;
     });
 
-    return (
-      <Row>
-        <Col xs={ 12 }>
-          { details }
-        </Col>
-      </Row>
-    );
+    if (isDescription) {
+      return (
+        <Row>
+          <Col xs={ 12 }>
+            { description }
+          </Col>
+        </Row>
+      );
+    }
+    return null;
+  },
+
+  _renderMoreInfoButton: function(isDescription) {
+    if (isDescription) {
+      return (
+        <Button
+          onClick={ this._toggleMoreInfo }
+          bsStyle='primary'
+          block={ true }
+          className='btn-primary-ghost'>
+          <span className='ion-arrow-down-b'></span>
+          More information
+        </Button>
+      );
+    }
+    return null;
   },
 
   render: function() {
     var isMoreInfoOpen = this.state.isMoreInfoOpen;
+    var isDescription = this.props.description &&
+      this.props.description.length > 1;
 
     return (
       <Col
         xs={ 12 }
         md={ 4 }>
         <div>
-          <h1 classNameName='text-center'>Meet Bonfire</h1>
+          <h1 classNameName='text-center'>{ this.props.name }</h1>
           <h2 classNameName='text-center'>
             <div classNameName='bonfire-flames'>
               Difficulty:&nbsp;
@@ -92,15 +107,12 @@ var SidePanel = React.createClass({
                 <div className='bonfire-instructions'>
                   <p>{ this.props.brief }</p>
                   <div>
-                    { isMoreInfoOpen ? this._renderMoreInfo() : null }
-                    <Button
-                      onClick={ this._toggleMoreInfo }
-                      bsStyle='primary'
-                      block={ true }
-                      className='btn-primary-ghost'>
-                      <span className='ion-arrow-down-b'></span>
-                      More information
-                    </Button>
+                    {
+                      isMoreInfoOpen ?
+                      this._renderMoreInfo(isDescription) :
+                      null
+                    }
+                    { this._renderMoreInfoButton(isDescription) }
                   </div>
                 </div>
               </Col>
