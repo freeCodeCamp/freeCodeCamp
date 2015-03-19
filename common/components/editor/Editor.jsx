@@ -1,6 +1,7 @@
 var React = require('react'),
-    jshint = require('jshint').JSHINT,
-    CodeMirror = require('react-code-mirror');
+  debug = require('debug')('freecc:comp:editor'),
+  jshint = require('jshint').JSHINT,
+  CodeMirror = require('react-code-mirror');
 
 var Editor = React.createClass({
 
@@ -43,12 +44,27 @@ var Editor = React.createClass({
     var config = {
       setSize: ['100%', 'auto'],
       extraKeys: {
-        Tab: function() {
-          console.log('tab');
-          return false;
+        Tab: function(cm) {
+          debug('tab pressed');
+          if (cm.somethingSelected()) {
+            cm.indentSelection('add');
+          } else {
+            var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+            cm.replaceSelection(spaces);
+          }
+        },
+        'Shift-Tab': function(cm) {
+          debug('shift-tab pressed');
+          if (cm.somethingSelected()) {
+            cm.indentSelection('subtract');
+          } else {
+            var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+            cm.replaceSelection(spaces);
+          }
         },
         'Ctrl-Enter': function() {
-          console.log('ctrl enter');
+          debug('C-enter pressed');
+          // execute bonfire action
           return false;
         }
       }
