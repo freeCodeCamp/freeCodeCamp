@@ -80,6 +80,7 @@
     "loopback-explorer": "^1.1.0"
   },
   "devDependencies": {
+    "babel-eslint": "^2.0.2",
     "bower-main-files": "0.0.4",
     "browser-sync": "^2.2.1",
     "gulp": "^3.8.11",

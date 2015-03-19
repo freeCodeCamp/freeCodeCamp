@@ -1,5 +1,5 @@
 {
-  "name": "bonfire",
+  "name": "bonfires",
   "base": "PersistedModel",
   "properties": {
     "name": {
@@ -9,7 +9,7 @@
     "difficulty": {
       "type": "string"
     },
-    "descriptions": [],
+    "description": [],
     "tests": [],
     "challengeSeed": "string"
   },

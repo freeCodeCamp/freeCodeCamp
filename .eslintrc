@@ -20,7 +20,8 @@
     "jQuery": true
   },
   "plugins": [
-    "react"
+    "react",
+    "babel-eslint"
   ],
   "rules": {
     "no-comma-dangle": 2,
