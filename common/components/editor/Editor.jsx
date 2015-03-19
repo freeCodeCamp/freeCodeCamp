@@ -22,18 +22,19 @@ var Editor = React.createClass({
 
   render: function() {
     var options = {
-      lineNumbers: true,
-      mode: 'javascript',
-      theme: 'monokai',
-      runnable: true,
+      autoCloseBrackets: true,
+      gutters: ['CodeMirror-lint-markers'],
       lint: true,
       linter: jshint,
-      value: this.state.CodeMirrorValue,
-      matchBrackets: true,
-      autoCloseBrackets: true,
-      scrollbarStyle: 'null',
+      lineNumbers: true,
       lineWrapping: true,
-      gutters: ['CodeMirror-lint-markers'],
+      mode: 'javascript',
+      matchBrackets: true,
+      runnable: true,
+      scrollbarStyle: 'null',
+      theme: 'monokai',
+      textAreaClassName: 'hide-textarea',
+      value: this.state.CodeMirrorValue,
       onChange: e => {
         this.setState({ CodeMirrorValue: e.target.value});
       }
@@ -58,8 +59,8 @@ var Editor = React.createClass({
         <form className='code'>
           <div className='form-group codeMirrorView'>
             <CodeMirror
-              config={ config }
-              { ...options }/>
+              { ...options }
+              config={ config }/>
           </div>
         </form>
       </div>

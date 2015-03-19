@@ -9,7 +9,7 @@
     "difficulty": {
       "type": "string"
     },
-    "descriptions": [],
+    "description": [],
     "tests": [],
     "challengeSeed": "string"
   },
