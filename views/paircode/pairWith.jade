@@ -1,0 +1,10 @@
+
+.embed-responsive.embed-responsive-16by9.gitter-imbed
+	script.
+		var pairWith = !{JSON.stringify(pairWithUser)}
+		var div = document.createElement('div');
+				$(div).html(
+					"<iframe frameborder='0' scrolling='no' src='https://www.gitter.im/" + pairWith + "'>"
+				);
+			$(div).addClass('story-list')
+			$(div).appendTo($('#story-list'));

@@ -148,6 +148,18 @@ exports.setOffline = function(req, res){
 	res.redirect('/pair-coding');
 };
 
-
+exports.returnPairInfo = function(req, res){
+	var usernameToPair = req.params.onlinePostuserName;
+	
+	//
+	// DO DB QUERY HERE FOR COMMENT THING INFO
+	//
+	
+	res.render('paircode/index.jade', {
+		title: "ENTER TEXT HERE FOR COMMENT NAME",
+		page: "pairWithUser",
+		pairWithUser: usernameToPair
+	});
+};
 
 
