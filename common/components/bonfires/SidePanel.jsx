@@ -17,12 +17,9 @@ var SidePanel = React.createClass({
 
   getDefaultProps: function() {
     return {
-      difficulty: 2,
-      brief: 'This is a brief description',
-      description: [
-        'a sentence',
-        'another'
-      ]
+      name: 'Welcome to Bonfires!',
+      difficulty: 5,
+      brief: 'This is a brief description'
     };
   },
 
@@ -54,22 +51,43 @@ var SidePanel = React.createClass({
     });
   },
 
-  _renderMoreInfo: function() {
+  _renderMoreInfo: function(isDescription) {
     var description = this.props.description.map((sentance, index) => {
       return <p key={ index }>{ sentance }</p>;
     });
 
-    return (
-      <Row>
-        <Col xs={ 12 }>
-          { description }
-        </Col>
-      </Row>
-    );
+    if (isDescription) {
+      return (
+        <Row>
+          <Col xs={ 12 }>
+            { description }
+          </Col>
+        </Row>
+      );
+    }
+    return null;
+  },
+
+  _renderMoreInfoButton: function(isDescription) {
+    if (isDescription) {
+      return (
+        <Button
+          onClick={ this._toggleMoreInfo }
+          bsStyle='primary'
+          block={ true }
+          className='btn-primary-ghost'>
+          <span className='ion-arrow-down-b'></span>
+          More information
+        </Button>
+      );
+    }
+    return null;
   },
 
   render: function() {
     var isMoreInfoOpen = this.state.isMoreInfoOpen;
+    var isDescription = this.props.description &&
+      this.props.description.length > 1;
 
     return (
       <Col
@@ -89,15 +107,12 @@ var SidePanel = React.createClass({
                 <div className='bonfire-instructions'>
                   <p>{ this.props.brief }</p>
                   <div>
-                    { isMoreInfoOpen ? this._renderMoreInfo() : null }
-                    <Button
-                      onClick={ this._toggleMoreInfo }
-                      bsStyle='primary'
-                      block={ true }
-                      className='btn-primary-ghost'>
-                      <span className='ion-arrow-down-b'></span>
-                      More information
-                    </Button>
+                    {
+                      isMoreInfoOpen ?
+                      this._renderMoreInfo(isDescription) :
+                      null
+                    }
+                    { this._renderMoreInfoButton(isDescription) }
                   </div>
                 </div>
               </Col>

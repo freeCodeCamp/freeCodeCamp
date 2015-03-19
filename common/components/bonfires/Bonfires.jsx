@@ -32,7 +32,7 @@ var Bonfire = React.createClass({
     // create proper URI from react-router
     var path = this.context.makePath('bonfires', { bonfireName: bonfireName });
 
-    // is html5 push state exists, update URI
+    // if html5 push state exists, update URI
     // else we are using hash location and should just cause a re render
     if (his) {
       his.replaceState({ path: path }, '', path);
