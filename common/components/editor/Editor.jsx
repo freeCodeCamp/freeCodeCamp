@@ -49,7 +49,7 @@ var Editor = React.createClass({
           if (cm.somethingSelected()) {
             cm.indentSelection('add');
           } else {
-            var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+            var spaces = new Array(cm.getOption('indentUnit') + 1).join(' ');
             cm.replaceSelection(spaces);
           }
         },
@@ -58,7 +58,7 @@ var Editor = React.createClass({
           if (cm.somethingSelected()) {
             cm.indentSelection('subtract');
           } else {
-            var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+            var spaces = new Array(cm.getOption('indentUnit') + 1).join(' ');
             cm.replaceSelection(spaces);
           }
         },
