@@ -5,6 +5,7 @@ var BonfiresStore = Store.create({
 
   getInitialValue: function() {
     return {
+      challengeSeed: 'initial seed',
       difficulty: 0,
       description: [
         'default state'
@@ -19,9 +20,10 @@ var BonfiresStore = Store.create({
 
     return [
       setBonfire
-        .map(function({ name, description, difficulty}) {
+        .map(function({ name, challengeSeed, description, difficulty}) {
           return {
             name,
+            challengeSeed,
             description,
             difficulty
           };

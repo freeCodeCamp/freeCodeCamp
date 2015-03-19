@@ -11,13 +11,13 @@ var Editor = React.createClass({
 
   getDefaultProps: function() {
     return {
-      value: 'console.log(\'awesome\')'
+      value: 'console.log(\'freeCodeCamp is awesome\')'
     };
   },
 
   getInitialState: function() {
     return {
-      CodeMirrorValue: ''
+      CodeMirrorValue: this.props.value
     };
   },
 

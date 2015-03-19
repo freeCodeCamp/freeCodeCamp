@@ -44,6 +44,7 @@ var Bonfire = React.createClass({
   render: function() {
     var {
       name,
+      challengeSeed,
       difficulty,
       description
     } = this.state;
@@ -64,7 +65,7 @@ var Bonfire = React.createClass({
           <Col
             xs={ 12 }
             md={ 8 }>
-            <Editor value='This is code console.log(x)'/>
+            <Editor value={ challengeSeed }/>
           </Col>
         </Row>
       </Grid>
