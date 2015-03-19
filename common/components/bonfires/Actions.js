@@ -13,12 +13,13 @@ var BonfireActions = Action.createActions([
 BonfireActions
   .getNextBonfire
   .subscribe(function(params) {
-    var Bonfire = getModel('bonfire');
+    var Bonfire = getModel('bonfires');
     var bonfireName = params.bonfireName ?
       params.bonfireName.replace(/\-/g, ' ') :
       'meet bonfire';
     debug('getting bonfire for: ', bonfireName);
     var regQuery = { name: { like: bonfireName, options: 'i' } };
+    debug('Count of all bonfires, are we looking in the right collection?', Bonfire.count());
     Bonfire.find(
       { where: regQuery },
       function(err, bonfire) {
