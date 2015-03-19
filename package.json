@@ -67,7 +67,7 @@
     "ramda": "^0.10.0",
     "react": "^0.12.2",
     "react-bootstrap": "^0.16.1",
-    "react-code-mirror": "git://github.com/r3dm/react-code-mirror#freecodecamp",
+    "tailspin": "^1.0.2",
     "react-router": "^0.12.4",
     "rx": "^2.4.1",
     "rx-flux": "git://github.com/r3dm/rx-flux.git",

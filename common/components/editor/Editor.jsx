@@ -1,7 +1,7 @@
 var React = require('react'),
   debug = require('debug')('freecc:comp:editor'),
   jshint = require('jshint').JSHINT,
-  CodeMirror = require('react-code-mirror');
+  Tailspin = require('tailspin');
 
 var Editor = React.createClass({
 
@@ -74,7 +74,7 @@ var Editor = React.createClass({
       <div id='mainEditorPanel'>
         <form className='code'>
           <div className='form-group codeMirrorView'>
-            <CodeMirror
+            <Tailspin
               { ...options }
               config={ config }/>
           </div>
