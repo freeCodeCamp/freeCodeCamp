@@ -3,7 +3,11 @@ var User = require('./../models/User'),
 	PairUser = require('./../models/pairUser');
 
 exports.index = function(req, res){
-
+	if (!!!req.user){
+		res.render('account/signin', {
+			title: "Login",
+			page: "Login"});
+	}
 	PairUser.find().populate('user', 'email profile').exec(function(err, pairUsers) {
 		//console.log(pairUsers);
 		res.render('paircode/index.jade', {
@@ -18,9 +22,8 @@ exports.index = function(req, res){
 };
 
 exports.setOnline = function(req, res) {
+	console.log("github:" + req.user.profile.githubProfile);
 	req.user.pair.timeOnline = Date.now();
-	console.log(req.user.pair.onlineStatus);
-	
 	if (!req.user.pair.onlineStatus) {
 		// set the online status to true
 		User.findById(req.user._id, function(err, user) {
@@ -40,17 +43,42 @@ exports.setOnline = function(req, res) {
 		var pairCode = new PairUser({});
 		pairCode.user = req.user._id;
 		pairCode.timeOnline = new Date();
+		// save the comments from the form
+		pairCode.comment = req.body.comment;
+
+
 		pairCode.save(function(err) {
 			if (err) {
 				return res.status(400);
 			} 
 			else {
-				console.log("Paircode saved.");
+				res.redirect('/pair-coding');
 			}
 		});
 	} else {
-		console.log("already online");
+		// this shouldn't show, as the user should be able to check if they're online via the template.
+		console.log("ERROR: User attempted to go 'online' for pairing. User is already online");
+		res.redirect('/pair-coding');
 	}
+};
+
+exports.editPairRequest = function(req, res) {
+	// search for the user's pair request
+	PairUser.findOne({user: req.user._id}, function(err, pairuser) {
+		if (err) {
+			console.log("There was an error finding the user.");
+		}
+		pairuser.comment = req.body.comment;
+		pairuser.timeOnline = new Date();
+		pairuser.save(function(err) {
+			if (err) {
+				console.log("There was an error saving the pairuser.");
+			}
+			else {
+				res.redirect('/pair-coding');
+			}
+		});
+	});
 };
 
 
@@ -68,7 +96,7 @@ exports.removeOldOnlinePost = function () {
 			if (onlineForMinutes >= timeForExpired){
 				User.findById(users[x].user, function(err, user) {
 					if (err) {
-						console.log("ERROR: Could not find user, METHOD: removeOldOnlinePost");
+						console.log("ERROR: Could not find user, METHOD: removeOldOnlinePost" + err);
 					} 
 					user.pair.onlineStatus = false;
 					user.pair.timeOnline = new Date();
@@ -91,6 +119,7 @@ exports.removeOldOnlinePost = function () {
 };
 
 exports.setOffline = function(req, res){
+	// change the user's online status
 	User.findById(req.user._id, function(err, user) {
 		if (err) {
 			console.log("ERROR: Could not find user, METHOD: setOffline: " + err);
@@ -103,19 +132,34 @@ exports.setOffline = function(req, res){
 			}
 		});
 	});
+	// remove the pair requests from that user
+	PairUser.findOne({user: req.user._id}, function(err, pair) {
+		if (err) {
+			console.log("Error finding offline users.");
+		} 
+		if (pair !== null){
+			pair.remove(function(err) {
+				if (err) {
+					console.log("error removing old posts.");
+				}
+			});
+		}
+	});
+	res.redirect('/pair-coding');
 };
 
-function getOnline(req, res) {
-
-	var online = PairUser.find({});
-	var working = online.exec(function(err, users){
-		return users;
-	})
-	console.log("getonlinefunction: " + working);
-
-	return working[0];
+exports.returnPairInfo = function(req, res){
+	var usernameToPair = req.params.onlinePostuserName;
+	
+	//
+	// DO DB QUERY HERE FOR COMMENT THING INFO
+	//
+	
+	res.render('paircode/index.jade', {
+		title: "ENTER TEXT HERE FOR COMMENT NAME",
+		page: "pairWithUser",
+		pairWithUser: usernameToPair
+	});
 };
 
-
-exports.getSingle
 

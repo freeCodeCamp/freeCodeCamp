@@ -10,7 +10,7 @@ script.
 		for (var i=0; i < userOnline.length; i++) {
 			var wentOnline = new Date(userOnline[i].timeOnline).getTime();
 			var onlineForMinutes = Math.round((new Date().getTime() - wentOnline)/60000);
-			var minutesText = (onlineForMinutes<=1)? "":"s";
+			var minutesText = (onlineForMinutes===1)? "":"s";
 			var div = document.createElement('div');
 				$(div)
 				.html(
@@ -26,7 +26,7 @@ script.
 					"<div class='col-xs-9 col-sm-10'>" +
 						"<div class='row'>" +
 							"<div class='story-headline col-xs-12'>" +
-								"<a href='#' target='_blank'>" +
+								"<a href='/pair-coding/" + userOnline[i].user.profile.username + "'>" +
 									userOnline[i].comment +
 								"</a>" +
 							"</div>" +
@@ -43,3 +43,4 @@ script.
 			$(div).appendTo($('#story-list'));
 		}
 	}
+ 
