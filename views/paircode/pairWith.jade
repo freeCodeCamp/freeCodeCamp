@@ -1,7 +1,8 @@
 script.
 	var pairWithUser = !{JSON.stringify(pairWithUser)}
+	var comment = !{JSON.stringify(comment)}
 
 .spacer
-	h2 Chatting with #{pairWithUser}
+	h2 Chatting with #{pairWithUser} about #{comment}
 .embed-responsive.embed-responsive-16by9.gitter-imbed
 	iframe(src="https://www.gitter.im/#{pairWithUser}", frameborder='0', scrolling='no')

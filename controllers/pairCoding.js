@@ -42,6 +42,7 @@ exports.setOnline = function(req, res) {
 		// if not online, create a new online paircode instance
 		var pairCode = new PairUser({});
 		pairCode.user = req.user._id;
+		pairCode.username = req.user.profile.username;
 		pairCode.timeOnline = new Date();
 		// save the comments from the form
 		pairCode.comment = req.body.comment;
@@ -151,15 +152,21 @@ exports.setOffline = function(req, res){
 exports.returnPairInfo = function(req, res){
 	var usernameToPair = req.params.onlinePostuserName;
 	
-	//
-	// DO DB QUERY HERE FOR COMMENT THING INFO
-	//
-	
-	res.render('paircode/index.jade', {
-		title: "ENTER TEXT HERE FOR COMMENT NAME",
-		page: "pairWithUser",
-		pairWithUser: usernameToPair
-	});
+
+	PairUser.findOne({username: usernameToPair}, function(err, pair) {
+		if (err) {
+			console.log("Error finding the pair user.");
+		}
+
+		// get comment information to port to template
+		var comment = pair.comment;
+			res.render('paircode/index.jade', {
+				title: "ENTER TEXT HERE FOR COMMENT NAME",
+				page: "pairWithUser",
+				pairWithUser: pair.username,		
+				comment: comment
+			});
+		});
 };
 
 
