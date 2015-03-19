@@ -1,0 +1,26 @@
+if (!user.pair.onlineStatus)
+	form.input-group(name='pairSubmit', method="POST", action="/pair-coding/setOnline")
+		input#comment.big-text-field.field-responsive.form-control(placeholder='What would you like to grok today?', name='comment', type='text', autofocus)
+		span.input-group-btn
+			button#pair-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
+else
+	h2 You are online.
+	button#edit-pair-request Edit request
+	button#go-offline Go offline
+	.spacer
+	#edit-comment.collapse
+		form.input-group(method="POST", action="/pair-coding/edit-request", name="paircode-edit")
+			input#comment.big-text-field.field-responsive.form-control(placeholder='What do you want to grok now?', name='comment', type='text' autofocus)
+			span.input-group-btn
+				button#edit-paircode-submit.btn.btn-big.btn-primary.btn-responsive(type="submit") Edit
+script.
+	$('#edit-pair-request').on('click', function () {
+		$('div#edit-comment').toggleClass('collapse');
+	});
+	$('#go-offline').on('click', function() {
+		$.ajax({
+			url: '/pair-coding/setOffline'
+		}).done(function(){
+		window.location.reload(true);
+		});
+	});

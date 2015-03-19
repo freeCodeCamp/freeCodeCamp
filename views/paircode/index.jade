@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+		script.
+			var user = !{JSON.stringify(user)};
+			var page = !{JSON.stringify(page)};
+		.panel.panel-info
+			.panel-heading.text-center Find a Coding Partner
+			.panel_body
+				.col-xs-12
+				include ./add-paircode.jade
+				#story-list.story-list
+					.spacer
+						if (page === 'pairUser')
+							include ./single-view
+						else 
+							include ./online
+
