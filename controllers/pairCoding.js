@@ -3,7 +3,11 @@ var User = require('./../models/User'),
 	PairUser = require('./../models/pairUser');
 
 exports.index = function(req, res){
-	// could run the expires script here ...
+	if (!!!req.user){
+		res.render('account/signin', {
+			title: "Login",
+			page: "Login"});
+	}
 	PairUser.find().populate('user', 'email profile').exec(function(err, pairUsers) {
 		//console.log(pairUsers);
 		res.render('paircode/index.jade', {
@@ -18,9 +22,8 @@ exports.index = function(req, res){
 };
 
 exports.setOnline = function(req, res) {
+	console.log("github:" + req.user.profile.githubProfile);
 	req.user.pair.timeOnline = Date.now();
-	console.log(req.user.pair.onlineStatus);
-	
 	if (!req.user.pair.onlineStatus) {
 		// set the online status to true
 		User.findById(req.user._id, function(err, user) {
@@ -54,7 +57,8 @@ exports.setOnline = function(req, res) {
 		});
 	} else {
 		// this shouldn't show, as the user should be able to check if they're online via the template.
-		console.log("already online");
+		console.log("ERROR: User attempted to go 'online' for pairing. User is already online");
+		res.redirect('/pair-coding');
 	}
 };
 
@@ -92,7 +96,7 @@ exports.removeOldOnlinePost = function () {
 			if (onlineForMinutes >= timeForExpired){
 				User.findById(users[x].user, function(err, user) {
 					if (err) {
-						console.log("ERROR: Could not find user, METHOD: removeOldOnlinePost");
+						console.log("ERROR: Could not find user, METHOD: removeOldOnlinePost" + err);
 					} 
 					user.pair.onlineStatus = false;
 					user.pair.timeOnline = new Date();
@@ -133,11 +137,13 @@ exports.setOffline = function(req, res){
 		if (err) {
 			console.log("Error finding offline users.");
 		} 
-		pair.remove(function(err) {
-			if (err) {
-				console.log("error removing old posts.");
-			}
-		});
+		if (pair !== null){
+			pair.remove(function(err) {
+				if (err) {
+					console.log("error removing old posts.");
+				}
+			});
+		}
 	});
 	res.redirect('/pair-coding');
 };

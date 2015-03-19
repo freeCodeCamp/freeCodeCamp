@@ -8,11 +8,18 @@ block content
 			.panel-heading.text-center Find a Coding Partner
 			.panel_body
 				.col-xs-12
-				include ./add-paircode.jade
-				#story-list.story-list
-					.spacer
-						if (page === 'pairUser')
-							include ./single-view
-						else 
-							include ./online
-
+				.text-center
+					#story-list.story-list(style="margin:10px")
+						if (user.profile.githubProfile !== '')
+							.spacer
+								include ./add-paircode.jade
+								if (page === 'pairUser')
+									include ./single-view
+								else 
+									include ./online
+						else
+							.spacer
+								.spacer
+									.spacer
+										a(href="/account")
+											button.btn.btn-big.btn-primary.btn-responsive(type="button") You need to update your Github link in your profile. Click here to update now
