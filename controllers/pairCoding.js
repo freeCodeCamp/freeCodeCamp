@@ -59,23 +59,6 @@ exports.setOnline = function(req, res) {
 		});
 		
 		newPairRequest(req.user._id, req.user.profile.username, req.body.comment);
-		// if not online, create a new online paircode instance
-		/*var pairCode = new PairUser({});
-		pairCode.user = req.user._id;
-		pairCode.username = req.user.profile.username;
-		pairCode.timeOnline = new Date();
-		// save the comments from the form
-		pairCode.comment = req.body.comment;
-
-
-		pairCode.save(function(err) {
-			if (err) {
-				return res.status(400);
-			} 
-			else {
-				res.redirect('/pair-coding');
-			}
-		});*/
 	} 
 	res.redirect('/pair-coding');
 };
@@ -121,11 +104,9 @@ exports.editPairRequest = function(req, res) {
 //Used to check for expire online users
 exports.removeOldOnlinePost = function () {
 	var timeForExpired = 30; //Minutes
-	console.log("Running remove old online post test");
 	var online = PairUser.find({});
 	var working = online.exec(function(err, users){
 		var now = new Date().getTime();
-		console.log("query executed");
 		for (var x=0; x<users.length; x++){
 			var wentOnline = new Date(users[x]['timeOnline']);
 			var onlineForMinutes = Math.round((now - wentOnline)/60000);
