@@ -4,6 +4,13 @@ $(document).ready(function() {
         ga('send', 'event',  'Challenge', 'load', challengeName);
     }
 
+    // When introducing a new announcement, change the localStorage attribute
+    // and the HTML located in the footer
+    if (!localStorage || !localStorage.nodeSchoolAnnouncement) {
+        $('#announcementModal').modal('show');
+        localStorage.fccShowAnnouncement = "true";
+    }
+
     var CSRF_HEADER = 'X-CSRF-Token';
 
     var setCSRFToken = function(securityToken) {
@@ -36,6 +43,7 @@ $(document).ready(function() {
             });
         }
     });
+
 
     function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
         $('#complete-bonfire-dialog').modal('show');

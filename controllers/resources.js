@@ -132,6 +132,13 @@ module.exports = {
             title: 'JavaScript in your Inbox'
         });
     },
+
+    nodeSchoolChallenges: function(req, res) {
+        res.render('resources/nodeschool-challenges', {
+            title: 'NodeSchool Challenges'
+        });
+    },
+
     githubCalls: function(req, res) {
         var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
         request('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(err, status1, pulls) {
