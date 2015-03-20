@@ -460,9 +460,9 @@
     "video": "114686471",
     "challengeNumber": 36,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "Now that we understand some Computer Science and JavaScript programming, you're ready to move on to Full-stack JavaScript!",
       "The first step is to familiarize ourselves Node.js, the JavaScript-based web server that most full-stack JavaScript apps use.",
-      "Code School has an excellent course on Node.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. The challenges immediately following these Node.js challenges also require a Code School course, so you may want to try to complete all these challenges in one two-day period. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
       "When you're ready, go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1</a> and complete the first chapter."
       ]
   },
@@ -472,6 +472,7 @@
     "video": "114684206",
     "challengeNumber": 37,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "One of the reasons Node.js is so fast is that it is \"evented.\" It processes events in an asynchronous manner.",
       "As a result, Node.js relies on asynchronous callbacks.",
       "We'll learn more about how events and callbacks work in this exciting Code School lesson.",
@@ -484,6 +485,7 @@
     "video": "114684209",
     "challengeNumber": 38,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "In this Code School lesson, we'll learn about streaming data back and forth between the client to the server.",
       "We'll also learn about FS, or File System, an important Node.js module for streaming data.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1</a> and complete the section."
@@ -495,6 +497,7 @@
     "video": "114684213",
     "challengeNumber": 39,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "One of the most exciting features of Node.js is NPM - Node Package Manager",
       "With NPM, you quickly install any of thousands of Node.js modules into your app, and it will automatically handle the other modules that each module dependends upon downstream.",
       "In this lesson, we'll learn how to include these modules in our Node.js app by requiring them as variables.",
@@ -507,6 +510,7 @@
     "video": "114684247",
     "challengeNumber": 40,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "We'll complete Code School's Express.js course shortly after completing this course, but this challenge will give you a quick tour of the Express.js framework.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."
     ]
@@ -517,6 +521,7 @@
     "video": "114684530",
     "challengeNumber": 41,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."
     ]
   },
@@ -526,6 +531,7 @@
     "video": "114684532",
     "challengeNumber": 42,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "Redis is a key-value store, which is a type of non-relational database. It's one of the fastest and easiest ways to persist data.",
       "Even though we'll ultimately use MongoDB and other technologies to persist data, Redis is quite easy to learn and is still worth learning.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1</a> and complete the section."
@@ -537,7 +543,7 @@
     "video": "114684533",
     "challengeNumber": 43,
     "steps": [
-      "Code School has one of the first comprehensive courses on Express.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. If you've already used your Code School two-day membership, go to the Free Code Camp main chat room and ask how you can get some extra time to work through this course. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1</a> and complete the section."
     ]
   },
@@ -548,6 +554,7 @@
     "video": "114684535",
     "challengeNumber": 44,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "Express.js makes extensive use of middleware - a stack of functions that run sequentially in response to a specific event.",
       "Let's learn how to incorporate modules and middleware into our Express.js app.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/2/video/1</a> and complete the section."
@@ -559,6 +566,7 @@
     "video": "114684537",
     "challengeNumber": 45,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "Have you ever noticed a question mark in your browser's address bar, followed by a series of strings? Those are parameters. Parameters are an efficient way to pass information to the server between page loads.",
       "We'll learn about parameters, along with a powerful Express.js feature called Dynamic Routing, in this exciting Code School lesson.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/3/video/1</a> and complete the section."
@@ -570,6 +578,7 @@
     "video": "114684720",
     "challengeNumber": 46,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "Now we'll add the Body Parser module to Express.js. Body Parser is a powerful middleware that helps with routing.",
       "We'll also learn more about HTTP Requests, such as Post and Delete.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/4/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/4/video/1</a> and complete the section."
@@ -581,6 +590,7 @@
     "video": "114684724",
     "challengeNumber": 47,
     "steps": [
+      "Note that this Code School course is no longer free. We have free alternatives to this course <a href='/nodeschool-challenges' target='_blank'>here</a>.",
       "For this last Code School Express.js challenge, we'll refactor our routes.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1</a> and complete the section."
 
