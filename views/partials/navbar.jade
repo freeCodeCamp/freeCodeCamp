@@ -12,7 +12,7 @@
 .collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-right.hamburger-dropdown
         li
-            a(href='/challenges') Challenges
+            a(href='/courseware') Challenges
         li
             a(href='/chat') Chat
         li
@@ -26,6 +26,7 @@
         else
             li
                 if (user.profile.username)
+
                     a(href='/' + user.profile.username) [&nbsp;#{user.progressTimestamps.length}&nbsp;]
 
                 else
