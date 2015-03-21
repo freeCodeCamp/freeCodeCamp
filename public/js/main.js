@@ -74,7 +74,7 @@ $(document).ready(function() {
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
 
     });
-    $('#complete-courseware').on('click', function() {
+    $('#completed-courseware').on('click', function() {
         $('#complete-courseware-dialog').modal('show');
     });
 
