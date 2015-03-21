@@ -177,13 +177,13 @@ module.exports = {
                 req.user.save();
             }
         }
-        var date1 = new Date("10/15/2014");
+        var date1 = new Date('10/15/2014');
         var date2 = new Date();
         var progressTimestamps = req.user.progressTimestamps;
         var now = Date.now() / 1000 | 0;
         if (req.user.pointsNeedMigration) {
             var challengesHash = req.user.challengesHash;
-            for(var key in challengesHash) {
+            for (var key in challengesHash) {
                 if (challengesHash[key] > 0) {
                     req.user.progressTimestamps.push(challengesHash[key]);
                 }
@@ -268,6 +268,11 @@ module.exports = {
                 _id: elem._id
             }
         });
+    },
+
+    getAllCourses: function() {
+      "use strict";
+      return coursewares;
     },
 
     allCoursewareIds: function() {

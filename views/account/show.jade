@@ -41,7 +41,7 @@ block content
                         .col-xs-12.col-sm-12.col-md-3.text-center
                             .background-svg.img-center
                                 .points-on-top
-                                    = "[ " + progressTimestamps.length + " ]"
+                                    = "[ " + points + " ]"
 
 
                 .row
@@ -95,14 +95,17 @@ block content
                                 a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
                                     i.fa.icon-beaker
                                     | Try it out
-
-                    html.
-                        <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
-                        <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
-                        <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+                    //
+                        html.
+                            <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+                            <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+                            <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
 
                     .col-xs-12
                         #cal-heatmap
+                            script(src="//d3js.org/d3.v3.min.js")
+                            script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
+                            link(rel="stylesheet", href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css")
                             script.
                                 var cal = new CalHeatMap();
                                 var calendar = !{JSON.stringify(calender)};
