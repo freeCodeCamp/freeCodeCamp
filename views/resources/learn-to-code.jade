@@ -79,3 +79,19 @@ block content
             include ../partials/about
         .col-xs-12.col-sm-12.col-md-6
             include ../partials/faq
+    #announcementModal.modal(tabindex='-1')
+        .modal-dialog
+            .modal-content
+                .modal-header.challenge-list-header New NodeSchool Challenges
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    h3.text-left Some of Code School's courses are no longer free. We're switching to NodeSchool.io for our Node.js and Express.js challenges.
+                    a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='/nodeschool-challenges') Take me to these new challenges
+                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up!
+    script.
+        $(document).ready(function() {
+            if (!localStorage || !localStorage.nodeSchoolAnnouncement) {
+                $('#announcementModal').modal('show');
+                localStorage.nodeSchoolAnnouncement = "true";
+            }
+        });
