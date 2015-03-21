@@ -240,30 +240,6 @@ var userSchema = new mongoose.Schema({
         53: {
             type: Number,
             default: 0
-        },
-        54: {
-            type: Number,
-            default: 0
-        },
-        55: {
-            type: Number,
-            default: 0
-        },
-        56: {
-            type: Number,
-            default: 0
-        },
-        57: {
-            type: Number,
-            default: 0
-        },
-        58: {
-            type: Number,
-            default: 0
-        },
-        59: {
-            type: Number,
-            default: 0
         }
     },
     profile: {

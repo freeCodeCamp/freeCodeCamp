@@ -23,14 +23,15 @@ exports.returnNextChallenge = function(req, res) {
             res.redirect('challenges/0');
         }
     } else {
-        res.render('home', {
-            title: 'Learn to Code and Become a Software Engineer',
-        });
+        return res.redirect('../challenges/0');
     }
 };
 
 exports.returnChallenge = function(req, res) {
     var challengeNumber = parseInt(req.params.challengeNumber) || 0;
+    if (challengeNumber === 2) {
+        return res.redirect('../challenges/3');
+    }
     if (challengeNumber > highestChallengeNumber) {
         req.flash('errors', {
             msg: "It looks like you've either completed all the challenges we have available or requested a challenge we don't have."

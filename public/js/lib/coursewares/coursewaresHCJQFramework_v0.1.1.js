@@ -3,12 +3,11 @@
  */
 
 var widgets = [];
-var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
+var editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
     lineNumbers: true,
     mode: "text/html",
     theme: 'monokai',
     runnable: true,
-    //lint: true,
     matchBrackets: true,
     autoCloseBrackets: true,
     scrollbarStyle: 'null',
@@ -16,17 +15,25 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     gutters: ["CodeMirror-lint-markers"],
     onKeyEvent: doLinting
 });
-var editor = myCodeMirror;
 
 
 // Hijack tab key to insert two spaces instead
 editor.setOption("extraKeys", {
     Tab: function(cm) {
-        var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
-        cm.replaceSelection(spaces);
+        if (cm.somethingSelected()){
+            cm.indentSelection("add");
+        } else {
+            var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+            cm.replaceSelection(spaces);
+        }
     },
-    "Ctrl-Enter": function() {
-        return false;
+    "Shift-Tab": function(cm) {
+        if (cm.somethingSelected()){
+            cm.indentSelection("subtract");
+        } else {
+            var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+            cm.replaceSelection(spaces);
+        }
     }
 });
 
@@ -104,7 +111,7 @@ var allSeeds = '';
     });
 })();
 
-myCodeMirror.setValue(allSeeds);
+editor.setValue(allSeeds);
 
 function doLinting () {
     editor.operation(function () {

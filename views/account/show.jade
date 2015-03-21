@@ -8,20 +8,17 @@ block content
                 h1 #{username}'s portfolio
             .panel-body
                 if (user && user.profile.username === username)
-                .col-xs-12
-                    .text-center
-                        a.btn.btn-big.btn-primary(href="/account") Update my public portfolio
-                    br
+                    .col-xs-12
+                        .text-center
+                            a.btn.btn-big.btn-primary(href="/account") Update my public portfolio or manage my account
+                        br
                 .row
                     .col-xs-12
                         .col-xs-12.col-sm-12.col-md-5
                             if picture
                                 img.img-center.img-responsive.public-profile-img(src=picture)
                             else
-                                if (user)
-                                    img.img-center.img-responsive.public-profile-img(src='#{user.gravatar(200)}')
-                                else
-                                    img.img-center.img-responsive.public-profile-img(src='https://gravatar.com/avatar/d704cc72a5cd0bfa482ee71f4d557daa?s=200&d=retro')
+                                img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
                             h1.text-center.negative-5
                                 - if (twitterHandle)
                                     a.ion-social-twitter.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}", target='_blank')
@@ -44,7 +41,7 @@ block content
                         .col-xs-12.col-sm-12.col-md-3.text-center
                             .background-svg.img-center
                                 .points-on-top
-                                    = "[ " + progressTimestamps.length + " ]"
+                                    = "[ " + user.progressTimestamps.length + " ]"
 
 
                 .row
@@ -99,13 +96,11 @@ block content
                                     i.fa.icon-beaker
                                     | Try it out
 
-                    html.
-                        <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
-                        <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
-                        <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
-
-                    .col-xs-12
-                        #cal-heatmap
+                    .hidden-xs.col-sm-12
+                        #cal-heatmap.img-center
+                            script(src="//d3js.org/d3.v3.min.js")
+                            script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
+                            link(rel="stylesheet", href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css")
                             script.
                                 var cal = new CalHeatMap();
                                 var calendar = !{JSON.stringify(calender)};
@@ -115,6 +110,7 @@ block content
                                     subDomain: "day",
                                     data: calendar,
                                     cellSize: 15,
+                                    align: 'center',
                                     cellRadius: 3,
                                     cellPadding: 2,
                                     tooltip: true,

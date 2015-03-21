@@ -110,7 +110,7 @@
     "name": "Return Largest Numbers in Arrays",
     "difficulty": "1.06",
     "description": [
-      "Return an array consisting of the largest numbers in the provided array. The array will contain 4 sub-arrays.",
+      "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
       "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
       "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays."
     ],
@@ -186,11 +186,30 @@
     "description": [
       "Return the remaining elements of an array after chopping off n elements from the head."
     ],
-    "challengeSeed": "function slasher(arr, howMany) {\n  // it doesn't allways pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
+    "challengeSeed": "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
     "tests": [
       "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
       "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
       "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array when n >= array.length');"
+    ]
+  },
+  {
+    "_id": "af2170cad53daa0770fabdea",
+    "name": "Mutations",
+    "difficulty": "1.12",
+    "description": [
+      "Return true if the string in the first element of the array contains the letters of the string in the second element of the array.",
+      "For example, ['hello', 'Hello'], should return true because all of the letters in the second string are present in the first, ignoring case.",
+      "The arguments ['hello', 'hey'] should return false because the string 'hello' does not contain a 'y'.",
+      "Another example, ['Alien', 'line'], should return true because all of the letters in 'line' are present in 'Alien'."
+    ],
+    "challengeSeed": "function mutation(arr) {\n  return arr;\n}\n\nmutation(['hello', 'hey']);",
+    "tests": [
+      "expect(mutation(['hello', 'hey'])).to.be.false;",
+      "expect(mutation(['hello', 'Hello'])).to.be.true;",
+      "expect(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu'])).to.be.true;",
+      "expect(mutation(['Mary', 'Army'])).to.be.true;",
+      "expect(mutation(['Alien', 'line'])).to.be.true;"
     ]
   },
   {
@@ -284,6 +303,22 @@
     ]
   },
   {
+    "_id": "af7588ade1100bde429baf20",
+    "name" : "Missing letters",
+    "difficulty": "2.05",
+    "description" : [
+      "Find the missing letter in the passed letter range and return it.",
+      "If all letters are present in the range, return undefined."
+    ],
+    "challengeSeed": "function fearNotLetter(str) {\n  return str;\n}\n\nfearNotLetter('abce');",
+    "tests": [
+      "expect(fearNotLetter('abce')).to.equal('d');",
+      "expect(fearNotLetter('bcd')).to.be.undefined;",
+      "expect(fearNotLetter('abcdefghjklmno')).to.equal('i');",
+      "expect(fearNotLetter('yz')).to.be.undefined;"
+    ]
+  },
+  {
     "_id": "a77dbc43c33f39daa4429b4f",
     "name": "Boo who",
     "difficulty": "2.06",
@@ -309,6 +344,7 @@
     "difficulty": "2.07",
     "description": [
       "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
+      "In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.",
       "The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.",
       "Check the assertion tests for examples."
     ],
@@ -439,6 +475,38 @@
     ]
   },
   {
+    "_id": "a8d97bd4c764e91f9d2bda01",
+    "name": "Binary Agents",
+    "difficulty": "2.15",
+    "description": [
+      "Return an English translated sentence of the passed binary string.",
+      "The binary string will be space separated."
+    ],
+    "challengeSeed": "function binaryAgent(str) {\n  return str;\r\n}\n\nbinaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');",
+    "tests": [
+      "expect(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111')).to.equal(\"Aren't bonfires fun!?\");",
+      "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
+      ]
+  },
+  {
+    "_id" : "a3f503de51cfab748ff001aa",
+    "name": "Pairwise",
+    "difficulty": "2.16",
+    "description": [
+      "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
+      "For example, pairwise([1, 4, 2, 3, 0, 5], 5) should return 15 because every element can be paired with another element to equal 5.",
+      "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!"
+    ],
+    "challengeSeed": "function pairwise(arr, arg) {\n  return arg;\n}\n\npairwise([1,4,2,3,0,5], 5);",
+    "tests": [
+      "expect(pairwise([1, 4, 2, 3, 0, 5], 5)).to.equal(15);",
+      "expect(pairwise([1, 3, 2, 4], 4)).to.equal(1);",
+      "expect(pairwise([1,1,1], 2)).to.equal(1);",
+      "expect(pairwise([0, 0, 0, 0, 1, 1], 1)).to.equal(10);",
+      "expect(pairwise([], 100)).to.equal(0);"
+    ]
+  },
+  {
     "_id": "a3f503de51cf954ede28891d",
     "name": "Symmetric Difference",
     "difficulty": "2.20",
@@ -501,11 +569,12 @@
     "difficulty": "3.50",
     "description": [
       "Return a new array that transforms the element's average altitude into their orbital periods.",
-      "The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.",
+      "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
       "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\">on wikipedia</a>.",
-      "The values should be rounded to the nearest whole number. Assume the body being orbited is Earth."
+      "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
+      "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418"
     ],
-    "challengeSeed": "function orbitalPeriod(arr) {\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
+    "challengeSeed": "function orbitalPeriod(arr) {\n  var GM = 398600.4418;\n  var earthRadius = 6367.4447;\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
     "tests": [
       "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
       "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
@@ -552,7 +621,7 @@
     "name": "Cash Register",
     "difficulty": "4.02",
     "description": [
-      "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument. cid is a 2d array listing available currency. Return the string \"Insufficient Funds\" if change due is less than the cash-in-drawer. Return the string \"Closed\" if cash-in-drawer is equal to the change due. Otherwise, return change in coin and bills, sorted in highest to lowest order."
+      "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.", "cid is a 2d array listing available currency.", "Return the string \"Insufficient Funds\" if cash-in-drawer is less than the change due. Return the string \"Closed\" if cash-in-drawer is equal to the change due.", "Otherwise, return change in coin and bills, sorted in highest to lowest order."
     ],
     "challengeSeed": "function drawer(price, cash, cid) {\n  var change;\r\n  // Here is your change, ma'am.\r\n  return change;\r\n}\r\n\r\n// Example cash-in-drawer array:\r\n// [['PENNY', 1.01],\r\n// ['NICKEL', 2.05],\r\n// ['DIME', 3.10],\r\n// ['QUARTER', 4.25],\r\n// ['ONE', 90.00],\r\n// ['FIVE', 55.00],\r\n// ['TEN', 20.00],\r\n// ['TWENTY', 60.00],\r\n// ['ONE HUNDRED', 100.00]]\n\ndrawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]);",
     "tests": [
@@ -580,6 +649,25 @@
       "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], []), [[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']]);",
       "assert.deepEqual(inventory([], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[67, 'Bowling Ball'], [2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [7, 'Toothpaste']]);",
       "assert.deepEqual(inventory([[0, 'Bowling Ball'], [0, 'Dirty Sock'], [0, 'Hair Pin'], [0, 'Microphone']], [[1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [1, 'Bowling Ball'], [1, 'Toothpaste']]), [[1, 'Bowling Ball'], [0, 'Dirty Sock'], [1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [0, 'Microphone'], [1, 'Toothpaste']]);"
+    ]
+  },
+  {
+    "_id": "a7bf700cd123b9a54eef01d5",
+    "name": "No repeats please",
+    "difficulty": "4.04",
+    "description": [
+      "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
+      "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating."
+    ],
+    "challengeSeed": "function permAlone(str) {\n  return str;\n}\n\npermAlone('aab');",
+    "tests": [
+      "expect(permAlone('aab')).to.be.a.number;",
+      "expect(permAlone('aab')).to.equal(2);",
+      "expect(permAlone('aaa')).to.equal(0);",
+      "expect(permAlone('aabb')).to.equal(8);",
+      "expect(permAlone('abcdefa')).to.equal(3600);",
+      "expect(permAlone('abfdefa')).to.equal(2640);",
+      "expect(permAlone('zzzzzzzz')).to.equal(0);"
     ]
   }
 ]

@@ -40,7 +40,7 @@ block content
             |  Your usernames must be 20 characters or fewer.
       .form-group
         .col-sm-6.col-sm-offset-3
-          input.form-control(type='password', ng-model='password', name='password', id='password', placeholder='password', required, ng-minlength=5)
+          input.form-control(type='password', ng-model='password', name='password', id='password', placeholder='password', required, ng-minlength=8)
         .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="signupForm.password.$error.minlength && !signupForm.password.$pristine")
           alert(type='danger')
             span.ion-close-circled
@@ -66,3 +66,5 @@ block content
     br
     br
     br
+    script.
+        var challengeName = 'Email Signup'

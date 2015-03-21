@@ -1,11 +1,12 @@
-require('newrelic');
+if (process.env.NODE_ENV !== 'development') {
+  require('newrelic');
+}
 require('dotenv').load();
 /**
  * Module dependencies.
  */
 
 var express = require('express'),
-    debug = require('debug')('freecc:server'),
     cookieParser = require('cookie-parser'),
     compress = require('compression'),
     session = require('express-session'),
@@ -14,7 +15,6 @@ var express = require('express'),
     methodOverride = require('method-override'),
     bodyParser = require('body-parser'),
     helmet = require('helmet'),
-    _ = require('lodash'),
     MongoStore = require('connect-mongo')(session),
     flash = require('express-flash'),
     path = require('path'),
@@ -35,9 +35,9 @@ var express = require('express'),
     coursewareController = require('./controllers/courseware'),
 
     /**
-     * User model
+     *  Stories
      */
-    User = require('./models/User'),
+    storyController = require('./controllers/story');
 
     /**
      * API keys and Passport configuration.
@@ -130,6 +130,7 @@ var trusted = [
     '*.rafflecopter.com',
     '*.bootstrapcdn.com',
     '*.cloudflare.com',
+    'https://*.cloudflare.com',
     'localhost:3001',
     'ws://localhost:3001/',
     'http://localhost:3001',
@@ -140,6 +141,7 @@ var trusted = [
     'https://syndication.twitter.com',
     '*.youtube.com',
     '*.jsdelivr.net',
+    'https://*.jsdelivr.net',
     '*.togetherjs.com',
     'https://*.togetherjs.com',
     'wss://hub.togetherjs.com',
@@ -182,6 +184,7 @@ app.use(helmet.contentSecurityPolicy({
     ].concat(trusted),
     frameSrc: [
         '*.gitter.im',
+        '*.gitter.im https:',
         '*.vimeo.com',
         '*.twitter.com',
         '*.rafflecopter.com',
@@ -212,6 +215,8 @@ app.use(
     express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
 );
 
+app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
+
 /**
  * Main routes.
  */
@@ -223,13 +228,18 @@ app.get('/chat', resourcesController.chat);
 app.get('/live-pair-programming', resourcesController.livePairProgramming);
 app.get('/install-screenhero', resourcesController.installScreenHero);
 app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
+app.get('/guide-to-our-nonprofit-projects', resourcesController.guideToOurNonprofitProjects);
 app.get('/chromebook', resourcesController.chromebook);
 app.get('/deploy-a-website', resourcesController.deployAWebsite);
 app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
 app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
+app.get('/nodeschool-challenges', resourcesController.nodeSchoolChallenges);
 app.get('/stats', function(req, res) {
     res.redirect(301, '/learn-to-code');
+});
+app.get('/news', function(req, res) {
+    res.redirect(301, '/stories/hot');
 });
 app.get('/learn-to-code', resourcesController.about);
 app.get('/about', function(req, res) {
@@ -277,15 +287,89 @@ app.post(
 );
 
 /**
- * Challenge related routes
+ * Main routes.
  */
 app.get(
-    '/challenges/',
-    challengesController.returnNextChallenge
+    '/stories/hotStories',
+    storyController.hotJSON
 );
+
 app.get(
-    '/challenges/:challengeNumber',
-    challengesController.returnChallenge
+    '/stories/recentStories',
+    storyController.recentJSON
+);
+
+app.get(
+    '/stories/',
+    function(req, res) {
+        res.redirect(302, '/stories/hot');
+    }
+);
+
+app.get(
+    '/stories/comments/:id',
+    storyController.comments
+);
+
+app.post(
+    '/stories/comment/',
+    storyController.commentSubmit
+);
+
+app.post(
+    '/stories/comment/:id/comment',
+    storyController.commentOnCommentSubmit
+);
+
+app.get(
+    '/stories/submit',
+    storyController.submitNew
+);
+
+app.get(
+    '/stories/submit/new-story',
+    storyController.preSubmit
+);
+
+app.post(
+    '/stories/preliminary',
+    storyController.newStory
+);
+
+app.post(
+    '/stories/',
+    storyController.storySubmission
+);
+
+app.get(
+    '/stories/hot',
+    storyController.hot
+);
+
+app.get(
+    '/stories/recent',
+    storyController.recent
+);
+
+
+app.get(
+    '/stories/search',
+    storyController.search
+);
+
+app.post(
+    '/stories/search',
+    storyController.getStories
+);
+
+app.get(
+    '/stories/:storyName',
+    storyController.returnIndividualStory
+);
+
+app.post(
+    '/stories/upvote/',
+    storyController.upvote
 );
 
 app.all('/account', passportConf.isAuthenticated);
@@ -326,10 +410,10 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
  * Courseware related routes
  */
 
-app.get('/coursewares/', coursewareController.returnNextCourseware);
-app.get('/coursewares/getCoursewareList', coursewareController.showAllCoursewares);
+app.get('/challenges/', coursewareController.returnNextCourseware);
+app.get('/challenges/getCoursewareList', coursewareController.showAllCoursewares);
 app.get(
-    '/coursewares/:coursewareName',
+    '/challenges/:coursewareName',
     coursewareController.returnIndividualCourseware
 );
 app.post('/completed-courseware/', coursewareController.completedCourseware);
@@ -343,27 +427,9 @@ app.post('/account/profile', userController.postUpdateProfile);
 app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
+app.get('/sitemap.xml', resourcesController.sitemap);
 
 
-/**
- * API examples routes.
- * accepts a post request. the challenge id req.body.challengeNumber
- * and updates user.challengesHash & user.challengesCompleted
- *
- */
-app.post('/completed-challenge', function (req, res) {
-    req.user.challengesHash[parseInt(req.body.challengeNumber)] =
-        Math.round(+new Date() / 1000);
-    var timestamp = req.user.challengesHash;
-    var points = 0;
-    for (var key in timestamp) {
-        if (timestamp[key] > 0 && req.body.challengeNumber < 54) {
-            points += 1;
-        }
-    }
-    req.user.points = points;
-    req.user.save();
-});
 
 /**
  * OAuth sign-in routes.

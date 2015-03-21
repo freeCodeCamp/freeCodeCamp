@@ -1,3 +1,6 @@
+[![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
+
+[![Stories in Ready](https://badge.waffle.io/FreeCodeCamp/freecodecamp.png?label=ready&title=Ready)](https://waffle.io/FreeCodeCamp/freecodecamp)
 <img src="https://s3.amazonaws.com/freecodecamp/logo4.0LG.png">
 
 Free Code Camp!
@@ -5,7 +8,7 @@ Free Code Camp!
 
 We're a community of busy people learning to code by collaborating on projects for nonprofits. We learn, then use, the JavaScript MEAN stack - MongoDB, Express.js, Angular.js and Node.js. 
 
-This app is live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com), and we have a [chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp), [blog](http://blog.freecodecamp.com) and [forum](http://forum.freecodecamp.com), too. Join us!
+This app is live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com), and we have a [chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp) and [blog](http://blog.freecodecamp.com), too. Join us!
 
 Prerequisites
 -------------
@@ -152,13 +155,9 @@ Contributing
 ------------
 
 We welcome pull requests from Free Code Camp "campers" (our students) and seasoned JavaScript developers alike!
-1) Check our [public Trello Board](https://trello.com/b/CW5AFr0v/free-code-camp-development)
-2) If your issue or feature isn't on the board, either open an issue on this GitHub repo or message Quincy Larson to request to be added to the Trello board.
+1) Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp)
+2) If your issue or feature isn't on the board, open an issue and if you think you can fix it yourself, start working on it.
 3) Once your code is ready, submit the pull request. We'll do a quick code review and give you feedback, and iterate from there.
-
-This project uses [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) with a
-few minor exceptions. If you are submitting a pull request that involves
-Jade templates, please make sure you are using *spaces*, not tabs.
 
 License
 -------
