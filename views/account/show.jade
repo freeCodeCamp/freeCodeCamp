@@ -8,20 +8,17 @@ block content
                 h1 #{username}'s portfolio
             .panel-body
                 if (user && user.profile.username === username)
-                .col-xs-12
-                    .text-center
-                        a.btn.btn-big.btn-primary(href="/account") Update my public portfolio
-                    br
+                    .col-xs-12
+                        .text-center
+                            a.btn.btn-big.btn-primary(href="/account") Update my public portfolio or manage my account
+                        br
                 .row
                     .col-xs-12
                         .col-xs-12.col-sm-12.col-md-5
                             if picture
                                 img.img-center.img-responsive.public-profile-img(src=picture)
                             else
-                                if (user)
-                                    img.img-center.img-responsive.public-profile-img(src='#{user.gravatar(200)}')
-                                else
-                                    img.img-center.img-responsive.public-profile-img(src='https://gravatar.com/avatar/d704cc72a5cd0bfa482ee71f4d557daa?s=200&d=retro')
+                                img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
                             h1.text-center.negative-5
                                 - if (twitterHandle)
                                     a.ion-social-twitter.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}", target='_blank')
@@ -123,3 +120,18 @@ block content
                                     legendColors: ["#cccccc", "#215f1e"],
                                     legend: [1, 2, 3]
                                 });
+
+                - if (ch[0] > 0)
+                    .col-sm-12
+                        table.table.table-striped
+                            thead
+                                tr
+                                    th Challenge
+                                    th Date Finished
+                            for challenge in challenges
+                                if ch[challenge.challengeNumber] > 0
+                                    tr
+                                        td= challenges[challenge.challengeNumber].name
+                                        td= moment(ch[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
+                            br
+

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    challengeName = challengeName || 'Untitled';
+    var challengeName = typeof challengeName !== undefined ? challengeName : 'Untitled';
     if (challengeName) {
         ga('send', 'event',  'Challenge', 'load', challengeName);
     }
@@ -55,7 +55,7 @@ $(document).ready(function() {
                 if (res) {
                     window.location.href = '/bonfires'
                 }
-            })
+            });
         }
     }
 
@@ -68,6 +68,12 @@ $(document).ready(function() {
     });
     $('#complete-courseware').on('click', function() {
         $('#complete-courseware-dialog').modal('show');
+    });
+
+    $('#complete-courseware-dialog').on('keypress', function(e) {
+      if (e.which === 13 || e === 13) {
+        $('#next-courseware-button').click();
+      }
     });
 
     $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
@@ -122,7 +128,6 @@ $(document).ready(function() {
     });
 
 
-
     // Bonfire instructions functions
     $('#more-info').on('click', function() {
         ga('send', 'event',  'Challenge', 'more-info', challengeName);
@@ -134,6 +139,105 @@ $(document).ready(function() {
         $('#brief-instructions').show();
         $('#long-instructions').hide();
     });
+
+    var upvoteHandler = function () {
+        var _id = storyId;
+        $('#upvote').unbind('click');
+        var alreadyUpvoted = false;
+        for (var i = 0; i < upVotes.length; i++) {
+            if (upVotes[i].upVotedBy === user._id) {
+                alreadyUpvoted = true;
+                break;
+            }
+        }
+        if (!alreadyUpvoted) {
+            $.post('/stories/upvote',
+                {
+                    data: {
+                        id: _id,
+                        upVoter: user
+                    }
+                })
+                .fail(function (xhr, textStatus, errorThrown) {
+                    $('#upvote').bind('click', upvoteHandler);
+                })
+                .done(function (data, textStatus, xhr) {
+                    $('#upvote').text('Upvoted!').addClass('disabled');
+
+                    $('#storyRank').text(data.rank + " points");
+                });
+        }
+    };
+    $('#upvote').on('click', upvoteHandler);
+
+
+    var storySubmitButtonHandler = function storySubmitButtonHandler() {
+
+        var link = $('#story-url').val();
+        var headline = $('#story-title').val();
+        var description = $('#description-box').val();
+        var userDataForUpvote = {
+            upVotedBy: user._id,
+            upVotedByUsername: user.profile.username
+        };
+        $('#story-submit').unbind('click');
+        $.post('/stories/',
+            {
+                data: {
+                    link: link,
+                    headline: headline,
+                    timePosted: Date.now(),
+                    description: description,
+                    storyMetaDescription: storyMetaDescription,
+                    rank: 1,
+                    upVotes: [userDataForUpvote],
+                    author: {
+                        picture: user.profile.picture,
+                        userId: user._id,
+                        username: user.profile.username
+                    },
+                    comments: [],
+                    image: storyImage
+                }
+            })
+            .fail(function (xhr, textStatus, errorThrown) {
+                $('#story-submit').bind('click', storySubmitButtonHandler);
+            })
+            .done(function (data, textStatus, xhr) {
+                window.location = '/stories/' + JSON.parse(data).storyLink;
+            });
+
+    };
+
+    $('#story-submit').on('click', storySubmitButtonHandler);
+
+    var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
+        $('comment-button').unbind('click');
+        var data = $('#comment-box').val();
+
+        $('#comment-button').attr('disabled', 'disabled');
+        $.post('/stories/comment/',
+            {
+                data: {
+                    associatedPost: storyId,
+                    body: data,
+                    author: {
+                        picture: user.profile.picture,
+                        userId: user._id,
+                        username: user.profile.username
+                    }
+                }
+            })
+            .fail(function (xhr, textStatus, errorThrown) {
+                $('#comment-button').attr('disabled', false);
+            })
+            .done(function (data, textStatus, xhr) {
+                window.location.reload();
+            });
+
+    };
+
+    $('#comment-button').on('click', commentSubmitButtonHandler);
 });
 
 var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
@@ -169,6 +273,12 @@ profileValidation.controller('emailSignInController', ['$scope',
     }
 ]);
 
+profileValidation.controller('URLSubmitController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
 profileValidation.controller('nonprofitFormController', ['$scope',
     function($scope) {
 
@@ -176,6 +286,12 @@ profileValidation.controller('nonprofitFormController', ['$scope',
 ]);
 
 profileValidation.controller('doneWithFirst100HoursFormController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
+profileValidation.controller('submitStoryController', ['$scope',
     function($scope) {
 
     }

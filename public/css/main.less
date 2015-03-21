@@ -4,10 +4,6 @@
 @import "lib/animate.min.less";
 @import "lib/bootstrap/variables";
 
-//fonts.googleapis.com/css?family=Lato:300);
-@import url(http://fonts.googleapis.com/css?family=Lato:400);
-@import url(http://fonts.googleapis.com/css?family=Inconsolata);
-
 html,body,div,span,a,li,td,th {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -27,6 +23,8 @@ li, .wrappable {
 html {
   position: relative;
   min-height: 100%;
+  // hack to prevent horizontal overflow problem on showHTML view
+  overflow-x: hidden;
 }
 
 body.full-screen-body-background {
@@ -171,6 +169,18 @@ ul {
 .responsive-container { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; }
 .responsive-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
+.positive-5 {
+  margin-top: 5px;
+}
+
+.positive-10 {
+  padding-top: 10px;
+}
+
+.positive-15 {
+  margin-top: 15px;
+}
+
 .negative-45 {
   margin-top: -45px;
   margin-bottom: -45px;
@@ -180,8 +190,16 @@ ul {
   margin-top: -10px;
 }
 
+.negative-28 {
+  margin-top: -28px;
+}
+
 .negative-35 {
   margin-top: -35px;
+}
+
+.negative-30 {
+  margin-top: -30px;
 }
 
 .negative-5 {
@@ -190,6 +208,10 @@ ul {
 
 .negative-15 {
   margin-top: -15px;
+}
+
+.negative-20 {
+  margin-top: -20px;
 }
 
 .landing-p {
@@ -247,7 +269,7 @@ ul {
 .nav-logo {
   height: 40px;
   margin-top: -10px;
-  @media (max-width: 365px) {
+  @media (max-width: 381px) {
     height: 30px;
     margin-top: -5px;
   }
@@ -383,6 +405,26 @@ ul {
   font-size: 30px;
 }
 
+.big-text-field {
+  font-size: 30px;
+  height: 57px;
+}
+
+.btn-responsive {
+  @media (max-width: 768px) {
+    font-size: 15px;
+    height: 26.5px;
+    padding-top: 1px;
+  }
+}
+
+.field-responsive {
+  @media (max-width: 768px) {
+    font-size: 15px;
+    height: 26.5px;
+  }
+}
+
 .table {
   margin-left: -16px;
 }
@@ -475,9 +517,9 @@ thead {
 
 .points-on-top {
   color: #eee;
-  font-size: 50px;
+  font-size: 35px;
   z-index: 2;
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   position: relative;
   top: 50%;
@@ -720,8 +762,7 @@ iframe.iphone {
   margin-bottom: 50px;
 }
 
-.btn-primary-ghost{
-
+.btn-primary-ghost {
   background: transparent;
   color: @brand-primary;
 
@@ -731,7 +772,95 @@ iframe.iphone {
   -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
   -o-transition: background .2s ease-in-out, border .2s ease-in-out;
   transition: background .2s ease-in-out, border .2s ease-in-out;
+}
 
+.hamburger {
+  width: 80px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 2px;
+  text-align:left;
+  font-size: 10px;
+}
+
+.hamburger-text {
+  line-height: 0.75em;
+  margin-top: 10px;
+  font-size: 16px;
+  margin-left: -5px;
+}
+
+.tight-h3 {
+  margin-top: -4px;
+  margin-bottom: -4px;
+}
+
+.story-list {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.big-ion-up-arrow {
+  font-size: 45px;
+  margin-top: -10px;
+  margin-bottom: -15px;
+  text-align: center;
+}
+
+.big-ion-up-arrow  #upvote, #reply-to-main-post {
+    cursor: pointer;
+}
+
+.story-up-votes {
+  padding-top: 0px;
+  margin-left: -5px;
+  text-align: center;
+}
+
+.control-label .control-label-story-submission {
+  telt-align: left;
+}
+
+.img-story-post {
+  max-width: 110px;
+  max-height: 110px;
+}
+
+.spacer {
+  padding: 15px 0 15px 0;
+}
+
+.img-news {
+  width: 50px;
+  height: 50px;
+}
+
+.url-preview {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+//.media ~ .media .media-body-wrapper:nth-child(odd) {
+//  background-color: #e5e5e5;
+//}
+
+.media-news {
+  width: 100%;
+}
+
+.story-headline {
+  font-size: 20px;
+}
+
+#reply-to-main-post, #upvote {
+  cursor: pointer;
+}
+
+.btn-no-shadow {
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow:    0px 0px 0px rgba(0, 0, 0, 0);
+  box-shadow:         0px 0px 0px rgba(0, 0, 0, 0);
 }
 
 #cal-heatmap {
