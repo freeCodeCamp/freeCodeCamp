@@ -21,6 +21,17 @@ var async = require('async'),
  * Resources.
  */
 
+Array.zip = function(left, right, combinerFunction) {
+  var counter,
+    results = [];
+
+  for (counter = 0; counter < Math.min(left.length, right.length); counter++) {
+    results.push(combinerFunction(left[counter],right[counter]));
+  }
+
+  return results;
+};
+
 module.exports = {
     privacy: function privacy(req, res) {
         res.render('resources/privacy', {
@@ -195,6 +206,25 @@ module.exports = {
                     req.user.progressTimestamps.push(challengesHash[key]);
                 }
             }
+
+            var timeStamps = [];
+            R.keys(req.user.challengesHash).forEach(function(key) {
+              "use strict";
+              timeStamps.push({timeStamp: challengesHash[key]});
+            });
+
+            req.user.completedCoursewares = Array.zip(timeStamps, coursewares,
+            function(left, right) {
+              "use strict";
+              return ({
+                completedDate: left.timeStamp,
+                _id: right._id,
+                name: right.name
+              });
+            }).filter(function(elem) {
+                "use strict";
+                return elem.completedDate !== 0;
+              });
             req.user.pointsNeedMigration = false;
             req.user.save();
         }

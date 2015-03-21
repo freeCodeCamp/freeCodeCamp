@@ -3,12 +3,11 @@
  */
 
 var widgets = [];
-var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
+var editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
     lineNumbers: true,
     mode: "text/html",
     theme: 'monokai',
     runnable: true,
-    //lint: true,
     matchBrackets: true,
     autoCloseBrackets: true,
     scrollbarStyle: 'null',
@@ -16,7 +15,6 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     gutters: ["CodeMirror-lint-markers"],
     onKeyEvent: doLinting
 });
-var editor = myCodeMirror;
 
 
 // Hijack tab key to insert two spaces instead
@@ -117,7 +115,7 @@ var allSeeds = '';
     });
 })();
 
-myCodeMirror.setValue(allSeeds);
+editor.setValue('test');
 
 function doLinting () {
     editor.operation(function () {
