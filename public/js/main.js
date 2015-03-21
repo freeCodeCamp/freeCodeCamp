@@ -75,6 +75,7 @@ $(document).ready(function() {
 
     });
     $('#completed-courseware').on('click', function() {
+      console.log('trying to show modal');
         $('#complete-courseware-dialog').modal('show');
     });
 
@@ -111,7 +112,8 @@ $(document).ready(function() {
                 '/completed-courseware/',
                 {
                     coursewareInfo: {
-                        coursewareHash: passedCoursewareHash
+                        coursewareHash: passedCoursewareHash,
+                        coursewareName: passedCoursewareName
                     }
                 }).success(
                 function(res) {

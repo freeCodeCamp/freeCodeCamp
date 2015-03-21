@@ -294,7 +294,7 @@ exports.returnUser = function(req, res, next) {
         website3Link: user.portfolio.website3Link,
         website3Title: user.portfolio.website3Title,
         website3Image: user.portfolio.website3Image,
-        challenges: resources.getAllCourses(),
+        challenges: user.completedCoursewares,
         ch: user.challengesHash,
         calender: data,
         moment: moment

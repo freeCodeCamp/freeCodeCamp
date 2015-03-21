@@ -216,11 +216,13 @@ exports.completedCourseware = function (req, res) {
 
     var isCompletedDate = Math.round(+new Date() / 1000);
     var coursewareHash = req.body.coursewareInfo.coursewareHash;
+
     debug('this is the coursewarehash we got', coursewareHash);
 
     req.user.completedCoursewares.push({
         _id: coursewareHash,
-        completedDate: isCompletedDate
+        completedDate: isCompletedDate,
+        name: req.body.coursewareInfo.coursewareName
     });
 
     var index = req.user.completedCoursewares.indexOf(coursewareHash);
