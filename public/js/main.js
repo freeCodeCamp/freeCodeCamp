@@ -118,7 +118,7 @@ $(document).ready(function() {
                 }).success(
                 function(res) {
                   if (res) {
-                    window.location.href = '/coursewares';
+                    window.location.href = '/challenges';
                   }
                 }
             );

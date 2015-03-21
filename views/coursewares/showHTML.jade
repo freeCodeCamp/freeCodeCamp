@@ -18,8 +18,6 @@ block content
     script(src='/js/lib/codemirror/mode/xml/xml.js')
     script(src='/js/lib/codemirror/mode/css/css.js')
     script(src='/js/lib/codemirror/mode/htmlmixed/htmlmixed.js')
-    script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
-
     .row.courseware-height
         .col-xs-12.col-sm-12.col-md-3.col-lg-3
             .well
@@ -40,23 +38,19 @@ block content
                                         span.ion-arrow-up-b
                                         | Less information
                 br
-                .btn.btn-info#showAllCoursewares
-
             - if (cc)
-                a.btn.btn-primary.btn-lg.btn-block#complete-courseware
+                a.btn.btn-primary.btn-lg.btn-block#next-courseware-button
                     |  Go to my next challenge
                     br
                     |  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
-
             - else
                 a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-                script.
-                    var userLoggedIn = false;
+                    script.
+                        var userLoggedIn = false;
             br
             ul#testSuite.list-group
-
             br
             script(type="text/javascript").
                 $('#next-courseware-button').attr('disabled', 'disabled');
@@ -64,60 +58,27 @@ block content
                 var challengeSeed = !{JSON.stringify(challengeSeed)};
                 var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
                 var challengeName = !{JSON.stringify(name)};
+                var passedCoursewareName = challengeName;
                 var prodOrDev = !{JSON.stringify(environment)};
                 var started = Math.floor(Date.now() / 1000);
-                var url = '';
-                var dashed = !{JSON.stringify(dashedName)};
-                console.log(dashed);
-
         .col-xs-12.col-sm-12.col-md-5.col-lg-6
             #mainEditorPanel
                 form.code
                     .form-group.codeMirrorView
-
-                        script(src='/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js')
                         textarea#codeEditor(autofocus=true, style='display: none;')
-
         .col-md-4.col-lg-3
             .hidden-xs.hidden-sm
                 img.iphone-position(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png")
             iframe.iphone#preview
-
-    #complete-courseware-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.zoomIn.fast-animation
-            .modal-content
-                .modal-header.challenge-list-header= compliment
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    .text-center
-                        .animated.zoomInDown.delay-half
-                            span.completion-icon.ion-checkmark-circled.text-primary
-                    - if (cc)
-
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
-                        - if (points && points > 2)
-                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
-                                i.fa.fa-twitter &nbsp;
-                                    = phrase
-
-                    - else
-                        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-
-    #all-coursewares-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.fadeInUp.fast-animation
-            .modal-content
-                .modal-header.all-list-header Challenges
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    include ../partials/coursewares
-    script.
-        $.ajax({
-            url: 'https://api-ssl.bitly.com/v3/shorten?access_token=75e7931a19befaafcf108021b6d597e554b2c5c3&longUrl=http%3A%2F%2Ffreecodecamp.com%2Fchallenges%2F' + dashed + '&format=txt'
-        })
-                .success(
-                function(data) {
-                    console.log(data);
-                    url = "https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge:%20#{name}&url=" + data + "&hashtags=LearnToCode, JavaScript";
-                    $('.btn-twitter').attr('href', url);
-                }
-        );
+        #complete-courseware-dialog.modal(tabindex='-1')
+            .modal-dialog.animated.zoomIn.fast-animation
+                .modal-content
+                    .modal-header.challenge-list-header
+                        = compliment
+                        a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                    .modal-body
+                        .text-center
+                            .animated.zoomInDown.delay-half
+                                span.completion-icon.ion-checkmark-circled.text-primary
+                            a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+    script(src="/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js")

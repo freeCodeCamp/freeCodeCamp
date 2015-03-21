@@ -34,10 +34,6 @@ editor.setOption("extraKeys", {
             var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
             cm.replaceSelection(spaces);
         }
-    },
-    "Ctrl-Enter": function() {
-        bonfireExecute();
-        return false;
     }
 });
 
@@ -115,7 +111,7 @@ var allSeeds = '';
     });
 })();
 
-editor.setValue('test');
+editor.setValue(allSeeds);
 
 function doLinting () {
     editor.operation(function () {
