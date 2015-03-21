@@ -23,7 +23,7 @@ exports.showAllCoursewares = function(req, res) {
 
 exports.returnNextCourseware = function(req, res) {
     if (!req.user) {
-        return res.redirect('../coursewares/start-our-challenges');
+        return res.redirect('../challenges/learn-how-free-code-camp-works');
     }
     var completed = req.user.completedCoursewares.map(function (elem) {
         return elem._id;
@@ -50,10 +50,10 @@ exports.returnNextCourseware = function(req, res) {
             req.flash('errors', {
                 msg: "It looks like you've completed all the courses we have available. Good job!"
             });
-            return res.redirect('../coursewares/start-our-challenges');
+            return res.redirect('../challenges/learn-how-free-code-camp-works');
         }
         nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
-        return res.redirect('../coursewares/' + nameString);
+        return res.redirect('../challenges/' + nameString);
     });
 };
 
@@ -71,14 +71,14 @@ exports.returnIndividualCourseware = function(req, res, next) {
             req.flash('errors', {
             msg: "404: We couldn't find a challenge with that name. Please double check the name."
         });
-            return res.redirect('/coursewares')
+            return res.redirect('/challenges');
         }
         courseware = courseware.pop();
 
         // Redirect to full name if the user only entered a partial
         var dashedNameFull = courseware.name.toLowerCase().replace(/\s/g, '-');
         if (dashedNameFull != dashedName) {
-            return res.redirect('../coursewares/' + dashedNameFull);
+            return res.redirect('../challenges/' + dashedNameFull);
         }
 
         var challengeType = {
@@ -217,15 +217,19 @@ exports.completedCourseware = function (req, res) {
     var isCompletedDate = Math.round(+new Date() / 1000);
     var coursewareHash = req.body.coursewareInfo.coursewareHash;
 
+    debug('this is the coursewarehash we got', coursewareHash);
+
     req.user.completedCoursewares.push({
         _id: coursewareHash,
-        completedDate: isCompletedDate
+        completedDate: isCompletedDate,
+        name: req.body.coursewareInfo.coursewareName
     });
 
-    var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
-    if (index > -1) {
+    var index = req.user.completedCoursewares.indexOf(coursewareHash);
+    debug('this is the index of the found courseware', index);
+    if (index === -1) {
         req.user.progressTimestamps.push(Date.now() / 1000 | 0);
-        req.user.uncompletedCoursewares.splice(index, 1)
+        req.user.uncompletedCoursewares.splice(index, 1);
     }
 
     req.user.save(function (err, user) {
@@ -233,7 +237,7 @@ exports.completedCourseware = function (req, res) {
             throw err;
         }
         if (user) {
-            res.send(true)
+            res.send(true);
         }
     });
 };

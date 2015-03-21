@@ -21,6 +21,17 @@ var async = require('async'),
  * Resources.
  */
 
+Array.zip = function(left, right, combinerFunction) {
+  var counter,
+    results = [];
+
+  for (counter = 0; counter < Math.min(left.length, right.length); counter++) {
+    results.push(combinerFunction(left[counter],right[counter]));
+  }
+
+  return results;
+};
+
 module.exports = {
     privacy: function privacy(req, res) {
         res.render('resources/privacy', {
@@ -185,17 +196,36 @@ module.exports = {
                 req.user.save();
             }
         }
-        var date1 = new Date("10/15/2014");
+        var date1 = new Date('10/15/2014');
         var date2 = new Date();
         var progressTimestamps = req.user.progressTimestamps;
         var now = Date.now() / 1000 | 0;
         if (req.user.pointsNeedMigration) {
             var challengesHash = req.user.challengesHash;
-            for(var key in challengesHash) {
+            for (var key in challengesHash) {
                 if (challengesHash[key] > 0) {
                     req.user.progressTimestamps.push(challengesHash[key]);
                 }
             }
+
+            var timeStamps = [];
+            R.keys(req.user.challengesHash).forEach(function(key) {
+              "use strict";
+              timeStamps.push({timeStamp: challengesHash[key]});
+            });
+
+            req.user.completedCoursewares = Array.zip(timeStamps, coursewares,
+            function(left, right) {
+              "use strict";
+              return ({
+                completedDate: left.timeStamp,
+                _id: right._id,
+                name: right.name
+              });
+            }).filter(function(elem) {
+                "use strict";
+                return elem.completedDate !== 0;
+              });
             req.user.pointsNeedMigration = false;
             req.user.save();
         }
@@ -278,6 +308,11 @@ module.exports = {
         });
     },
 
+    getAllCourses: function() {
+      "use strict";
+      return coursewares;
+    },
+
     allCoursewareIds: function() {
         return coursewares.map(function(elem) {
             return {
@@ -298,16 +333,16 @@ module.exports = {
                 name: elem.name,
                 difficulty: elem.difficulty,
                 _id: elem._id
-            }
+            };
         })
-            .sort(function(a, b) {
-                return a.difficulty - b.difficulty;
-            })
-            .map (function(elem) {
+        .sort(function(a, b) {
+            return a.difficulty - b.difficulty;
+        })
+        .map (function(elem) {
             return {
-                name : elem.name,
+                name: elem.name,
                 _id: elem._id
-            }
+            };
         });
     },
     whichEnvironment: function() {

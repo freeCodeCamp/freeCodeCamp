@@ -30,19 +30,19 @@ $(document).ready(function() {
             .addClass('animated fadeInDown');
     });
 
-    $('.completed-challenge').on('click', function() {
-        $('#complete-challenge-dialog').modal('show');
-        // Only post to server if there is an authenticated user
-        if ($('.signup-btn-nav').length < 1) {
-            l = location.pathname.split('/');
-            cn = l[l.length - 1];
-            $.ajax({
-                type: 'POST',
-                data: {challengeNumber: cn},
-                url: '/completed-challenge/'
-            });
-        }
-    });
+    //$('.completed-challenge').on('click', function() {
+    //    $('#complete-challenge-dialog').modal('show');
+    //    // Only post to server if there is an authenticated user
+    //    if ($('.signup-btn-nav').length < 1) {
+    //        l = location.pathname.split('/');
+    //        cn = l[l.length - 1];
+    //        $.ajax({
+    //            type: 'POST',
+    //            data: {challengeNumber: cn},
+    //            url: '/completed-challenge/'
+    //        });
+    //    }
+    //});
 
 
     function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
@@ -74,7 +74,8 @@ $(document).ready(function() {
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
 
     });
-    $('#complete-courseware').on('click', function() {
+    $('#completed-courseware').on('click', function() {
+      console.log('trying to show modal');
         $('#complete-courseware-dialog').modal('show');
     });
 
@@ -105,18 +106,22 @@ $(document).ready(function() {
         editor.focus();
     });
     $('#next-courseware-button').on('click', function() {
+      console.log(passedCoursewareHash);
         if ($('.signup-btn-nav').length < 1) {
             $.post(
-                '/completed-courseware',
+                '/completed-courseware/',
                 {
                     coursewareInfo: {
-                        coursewareHash: passedCoursewareHash
+                        coursewareHash: passedCoursewareHash,
+                        coursewareName: passedCoursewareName
                     }
                 }).success(
-                function() {
-                    window.location.href = '/coursewares';
+                function(res) {
+                  if (res) {
+                    window.location.href = '/challenges';
+                  }
                 }
-            )
+            );
 
         }
     });

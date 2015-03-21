@@ -372,18 +372,6 @@ app.post(
     storyController.upvote
 );
 
-/**
- * Challenge related routes
- */
-app.get(
-    '/challenges/',
-    challengesController.returnNextChallenge
-);
-app.get(
-    '/challenges/:challengeNumber',
-    challengesController.returnChallenge
-);
-
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
 
@@ -422,10 +410,10 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
  * Courseware related routes
  */
 
-app.get('/coursewares/', coursewareController.returnNextCourseware);
-app.get('/coursewares/getCoursewareList', coursewareController.showAllCoursewares);
+app.get('/challenges/', coursewareController.returnNextCourseware);
+app.get('/challenges/getCoursewareList', coursewareController.showAllCoursewares);
 app.get(
-    '/coursewares/:coursewareName',
+    '/challenges/:coursewareName',
     coursewareController.returnIndividualCourseware
 );
 app.post('/completed-courseware/', coursewareController.completedCourseware);
@@ -441,25 +429,7 @@ app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
 app.get('/sitemap.xml', resourcesController.sitemap);
 
-/**
- * API examples routes.
- * accepts a post request. the challenge id req.body.challengeNumber
- * and updates user.challengesHash & user.challengesCompleted
- *
- */
-app.post('/completed-challenge', function (req, res) {
-    req.user.challengesHash[parseInt(req.body.challengeNumber)] =
-        Math.round(+new Date() / 1000);
-    var timestamp = req.user.challengesHash;
-    var points = 0;
-    for (var key in timestamp) {
-        if (timestamp[key] > 0 && req.body.challengeNumber < 54) {
-            points += 1;
-        }
-    }
-    req.user.points = points;
-    req.user.save();
-});
+
 
 /**
  * OAuth sign-in routes.
