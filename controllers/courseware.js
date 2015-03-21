@@ -216,16 +216,18 @@ exports.completedCourseware = function (req, res) {
 
     var isCompletedDate = Math.round(+new Date() / 1000);
     var coursewareHash = req.body.coursewareInfo.coursewareHash;
+    debug('this is the coursewarehash we got', coursewareHash);
 
     req.user.completedCoursewares.push({
         _id: coursewareHash,
         completedDate: isCompletedDate
     });
 
-    var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
-    if (index > -1) {
+    var index = req.user.completedCoursewares.indexOf(coursewareHash);
+    debug('this is the index of the found courseware', index);
+    if (index === -1) {
         req.user.progressTimestamps.push(Date.now() / 1000 | 0);
-        req.user.uncompletedCoursewares.splice(index, 1)
+        req.user.uncompletedCoursewares.splice(index, 1);
     }
 
     req.user.save(function (err, user) {
@@ -233,7 +235,7 @@ exports.completedCourseware = function (req, res) {
             throw err;
         }
         if (user) {
-            res.send(true)
+            res.send(true);
         }
     });
 };

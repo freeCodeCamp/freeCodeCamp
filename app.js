@@ -447,19 +447,7 @@ app.get('/sitemap.xml', resourcesController.sitemap);
  * and updates user.challengesHash & user.challengesCompleted
  *
  */
-app.post('/completed-challenge', function (req, res) {
-    req.user.challengesHash[parseInt(req.body.challengeNumber)] =
-        Math.round(+new Date() / 1000);
-    var timestamp = req.user.challengesHash;
-    var points = 0;
-    for (var key in timestamp) {
-        if (timestamp[key] > 0 && req.body.challengeNumber < 54) {
-            points += 1;
-        }
-    }
-    req.user.points = points;
-    req.user.save();
-});
+
 
 /**
  * OAuth sign-in routes.
