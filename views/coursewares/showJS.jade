@@ -38,7 +38,7 @@ block content
                 br
                 form.code
                     .form-group.codeMirrorView
-                        textarea#codeOutput
+                        textarea#codeOutput(style='display: none;')
                 br
                 #testSuite
                 br
@@ -52,7 +52,7 @@ block content
             #mainEditorPanel
                 form.code
                     .form-group.codeMirrorView
-                        textarea#codeEditor(autofocus=true)
+                        textarea#codeEditor(autofocus=true, style='display: none;')
                 script(src='/js/lib/coursewares/coursewaresJSFramework.js')
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
@@ -64,7 +64,6 @@ block content
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
                     - if (cc)
-
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
                     - if (points && points > 2)
                         a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")

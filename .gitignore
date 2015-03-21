@@ -23,3 +23,6 @@ node_modules
 .DS_Store
 Thumbs.db
 bower_components
+.eslintignore
+.eslintrc
+public/js/bundle.js

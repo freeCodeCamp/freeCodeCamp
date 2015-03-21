@@ -1,11 +1,14 @@
 .navbar-header
-    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
+    button.hamburger.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        .col-xs-6
+            span.hamburger-text Menu
+        .col-xs-6
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
     a.navbar-brand(href='/')
-        img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at Free Code Camp logo')
+        img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz', alt='learn to code javascript at Free Code Camp logo')
 .collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-right.hamburger-dropdown
         li
@@ -13,21 +16,19 @@
         li
             a(href='/chat') Chat
         li
-            a(href='http://forum.freecodecamp.com' target='_blank') Forum
+            a(href='/stories/hot') News
         li
             a(href='/bonfires') Bonfires
-        //li
-        //    a(href="#" onclick="TogetherJS(this); return false;") Pair
         if !user
-            li &nbsp; &nbsp; &nbsp;
+            li &thinsp; &thinsp; &thinsp;
             li
                 a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
         else
             li
                 if (user.profile.username)
-                    a(href='/' + user.profile.username) [&nbsp;#{user.points}&nbsp;]
+                    a(href='/' + user.profile.username) [&thinsp;#{user.points}&thinsp;]
                 else
-                    a(href='/account') [&nbsp;#{user.points}&nbsp;]
+                    a(href='/account') [&thinsp;#{user.points}&thinsp;]
             .hidden-xs
                 if user.profile.picture
                     if (user.profile.username)
