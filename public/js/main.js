@@ -74,14 +74,14 @@ $(document).ready(function() {
         completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
 
     });
+
     $('#completed-courseware').on('click', function() {
-      console.log('trying to show modal');
         $('#complete-courseware-dialog').modal('show');
     });
 
     $('#complete-courseware-dialog').on('keypress', function(e) {
-      if (e.which === 13 || e === 13) {
-        $('#next-courseware-button').click();
+        if (e.ctrlKey && e.keyCode == 13) {
+            $('#next-courseware-button').click();
       }
     });
 

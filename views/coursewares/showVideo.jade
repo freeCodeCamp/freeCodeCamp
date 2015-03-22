@@ -48,3 +48,8 @@ block content
         script.
             var challengeName = !{JSON.stringify(name)};
             var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
+            $('body').on('keypress', function(e) {
+                if (e.ctrlKey && e.keyCode == 13) {
+                    $('#complete-courseware-dialog').modal('show');
+                }
+            });
