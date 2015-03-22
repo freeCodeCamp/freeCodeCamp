@@ -240,7 +240,7 @@ function showCompletion() {
     $('#complete-courseware-dialog').modal('show');
     $('#complete-courseware-dialog').keydown(function(e) {
         if (e.ctrlKey && e.keyCode == 13) {
-            $('.next-bonfire-button').click();
+            $('#next-courseware-button').click();
         }
     });
 }
