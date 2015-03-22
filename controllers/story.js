@@ -19,7 +19,7 @@ function hotRank(timeValue, rank) {
      */
     var hotness;
     var z = Math.log(rank) / Math.log(10);
-    hotness = z + (timeValue / 115200000);
+    hotness = z + (timeValue / 172800000);
     return hotness;
 
 }
@@ -38,7 +38,8 @@ exports.hotJSON = function(req, res) {
         return res.json(stories.map(function(elem) {
             return elem;
         }).sort(function(a, b) {
-            return hotRank(b.timePosted - foundationDate, b.rank, b.headline) - hotRank(a.timePosted - foundationDate, a.rank, a.headline);
+            return hotRank(b.timePosted - foundationDate, b.rank, b.headline)
+              - hotRank(a.timePosted - foundationDate, a.rank, a.headline);
         }).slice(0, sliceVal));
 
     });
@@ -221,6 +222,17 @@ exports.upvote = function(req, res, next) {
         );
         story.markModified('rank');
         story.save();
+        User.find({'_id': story.author.userId}, function(err, user) {
+          'use strict';
+          if (err) {
+            return next(err);
+          }
+          // todo debug
+          debug('This is the user in upvote', user);
+          user = user.pop();
+          user.progressTimestamps.push(Date.now());
+          user.save();
+        });
         return res.send(story);
     });
 };
@@ -331,6 +343,9 @@ exports.storySubmission = function(req, res) {
         storyLink: storyLink,
         metaDescription: data.storyMetaDescription
     });
+
+    req.user.progressTimestamps.push(Date.now());
+    req.user.save();
 
     story.save(function(err) {
         if (err) {
