@@ -1,9 +1,14 @@
 extends ../layout
 block content
     script(src='/js/lib/moment/moment.js')
+    if (user)
+        script.
+            var user = !{JSON.stringify(user)};
+    else
+        script.
+            var user = undefined;
     script.
         var challengeName = 'Camper News';
-        var user = !{JSON.stringify(user)};
         var page = !{JSON.stringify(page)};
     .panel.panel-info
         .panel-heading.text-center Camper News
