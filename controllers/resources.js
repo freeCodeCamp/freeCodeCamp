@@ -349,7 +349,6 @@ module.exports = {
         return process.env.NODE_ENV;
     },
     getURLTitle: function(url, callback) {
-        debug('got url in meta scraping function', url);
         (function () {
             var result = {title: '', image: '', url: '', description: ''};
             request(url, function (error, response, body) {
