@@ -12,35 +12,64 @@ script.
 			var onlineForMinutes = Math.round((new Date().getTime() - wentOnline)/60000);
 			var minutesText = (onlineForMinutes===1)? "":"s";
 			var div = document.createElement('div');
-				$(div)
-				.html(
-				"<div class='col-xs-12 text-left'>" +
-					"<h2 class='col-xs-1 col-sm-1 positive-5'>" +
-						(i + 1) +
-					"</h2>" +
-					"<div class='col-xs-2 col-sm-1'>" +
-						"<a href='/" + userOnline[i].user.email + "'>" +
-							"<img src='" + userOnline[i].user.profile.picture + "' class='img-news'/>" +
-						"</a>" +
-					"</div>" +
-					"<div class='col-xs-9 col-sm-10'>" +
-						"<div class='row'>" +
-							"<div class='story-headline col-xs-12'>" +
-								"<a href='/pair-coding/" + userOnline[i].user.profile.username + "'>" +
-									userOnline[i].comment +
-								"</a>" +
-							"</div>" +
-							"<div class='col-xs-12'>" +
-								"<span>" +
-									"posted " + onlineForMinutes + " minute" + minutesText + " ago by <a href='/" + userOnline[i].user.profile.username + "'>" + userOnline[i].user.profile.username + "</a> " +
-								"</span>" +
-							"</div>" +
+			var pairPost = "<div class='col-xs-12 text-left'>" +
+				"<h2 class='col-xs-1 col-sm-1 positive-5'>" +
+					(i + 1) +
+				"</h2>" +
+				"<div class='col-xs-2 col-sm-1'>" +
+					"<a href='/" + userOnline[i].user.email + "'>" +
+						"<img src='" + userOnline[i].user.profile.picture + "' class='img-news'/>" +
+					"</a>" +
+				"</div>" +
+				"<div class='col-xs-8 col-sm-9'>" +
+					"<div class='row'>" +
+						"<div class='story-headline col-xs-12'>" +
+							"<a href='/pair-coding/" + userOnline[i].user.profile.username + "'>" +
+								userOnline[i].comment +
+							"</a>" +
+						"</div>" +
+						"<div class='col-xs-12'>" +
+							"<span>" +
+								"posted " + onlineForMinutes + " minute" + minutesText + " ago by <a href='/" + userOnline[i].user.profile.username + "'>" + userOnline[i].user.profile.username + "</a> " +
+							"</span>" +
 						"</div>" +
 					"</div>" +
-				"</div>"
-			);
+				"</div>";
+			var withoutEdit = "</div>";
+			var withEdit = "<div class='col-xs-1 col-sm-1'>" +
+								"<button id='edit-pair-request'>EDIT</button>" +
+							"</div></div>";
+			if (user.profile.username === userOnline[i].username){
+				$(div).html(pairPost+withEdit);
+			} else {
+				$(div).html(pairPost+withoutEdit);
+			}
+			if(userOnline[i].username===user.profile.username){
+				var commentDiv = document.createElement('div');
+				commentDiv.id = "edit-comment";
+				$(commentDiv).html(
+				"<form method='POST' action='/pair-coding/edit-request' class='input-group ng-pristine ng-valid'>"+
+					"<input id='comment' placeholder='What do you want to grok now?' name='comment' type='text' autofocus class='big-text-field field-responsive form-control'></input>"+
+					"<span class='input-group-btn'>" +
+						"<button type='submit' id='edit-paircode-submit' class='btn btn-big btn-primary btn-responsive'>Edit</button>" +
+					"</span>" +
+				"</form>"
+				);
+				$(commentDiv).addClass('collapse').appendTo($(div));
+			}
 			$(div).addClass('story-list')
 			$(div).appendTo($('#story-list'));
 		}
 	}
+	$('#edit-pair-request').on('click', function () {
+		$('div#edit-comment').toggleClass('collapse');
+	});
+	$('#go-offline').on('click', function() {
+		$.ajax({
+			url: '/pair-coding/setOffline'
+		}).done(function(){
+		window.location.reload(true);
+		});
+	});
+
  
