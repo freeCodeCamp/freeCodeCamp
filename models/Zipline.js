@@ -7,15 +7,16 @@ var secrets = require('../config/secrets');
  */
 
 
-var zipLineSchema = new mongoose.Schema({
+var ziplineSchema = new mongoose.Schema({
     name: {
         type: String,
         unique: true
     },
     picture: String,
+    video: String,
     gitHubLink: String,
     demoLink: String,
-    description: Array,
+    details: Array
 });
 
-module.exports = mongoose.model('Zipline', zipLineSchema);
+module.exports = mongoose.model('Zipline', ziplineSchema);
