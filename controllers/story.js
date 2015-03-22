@@ -19,7 +19,7 @@ function hotRank(timeValue, rank) {
      */
     var hotness;
     var z = Math.log(rank) / Math.log(10);
-    hotness = z + (timeValue / 172800000);
+    hotness = z + (timeValue / 115200000);
     return hotness;
 
 }
@@ -227,8 +227,6 @@ exports.upvote = function(req, res, next) {
           if (err) {
             return next(err);
           }
-          // todo debug
-          debug('This is the user in upvote', user);
           user = user.pop();
           user.progressTimestamps.push(Date.now());
           user.save();
