@@ -9,28 +9,29 @@ exports.index = function(req, res){
 		res.render('account/signin', {
 			title: "Login",
 			page: "Login"});
-	}
-	PairUser.find().populate('user', 'email profile').exec(function(err, pairUsers) {
-
-		res.render('paircode/index.jade', {
-			title: "Team up and Pair code",
-			page: "pair-coding",
-			onlineUsers: pairUsers || []
+	} else {
+		PairUser.find().populate('user', 'email profile').exec(function(err, pairUsers) {
+			res.render('paircode/index.jade', {
+				title: "Team up and Pair code",
+				page: "pair-coding",
+				onlineUsers: pairUsers || []
+			});
 		});
-	});
-
-
-		
+	}	
 };
 
-var newPairRequest = function(userid, username, comment) {
+var newPairRequest = function(userid, username, comment, git) {
 	var pairCode = new PairUser({});
 		pairCode.user = userid;
 		pairCode.username = username;
 		pairCode.timeOnline = new Date();
 		// save the comments from the form
-		pairCode.comment = comment;
-
+		if (comment === ""){
+				pairCode.comment = "Pair with me";
+			} else {
+				pairCode.comment = comment;
+			}
+		pairCode.userGit = git;
 
 		pairCode.save(function(err) {
 			if (err) {
@@ -41,7 +42,6 @@ var newPairRequest = function(userid, username, comment) {
 };
 
 exports.setOnline = function(req, res) {
-	console.log("github:" + req.user.profile.githubProfile);
 	req.user.pair.timeOnline = Date.now();
 	if (!req.user.pair.onlineStatus) {
 		// set the online status to true
@@ -57,8 +57,10 @@ exports.setOnline = function(req, res) {
 				}
 			});
 		});
-		
-		newPairRequest(req.user._id, req.user.profile.username, req.body.comment);
+		var gitSplit = req.user.profile.githubProfile.split("/");
+		var gitUser = gitSplit[gitSplit.length-1];
+
+		newPairRequest(req.user._id, req.user.profile.username, req.body.comment, gitUser);
 	} 
 	res.redirect('/pair-coding');
 };
@@ -86,7 +88,11 @@ exports.editPairRequest = function(req, res) {
 			console.log("No pair requests found, add a new one.");
 			res.redirect('/pair-coding');
 		} else {
-			pairuser.comment = req.body.comment;
+			if (req.body.comment === ""){
+				pairuser.comment = "Pair with me";
+			} else {
+				pairuser.comment = req.body.comment;
+			}
 			pairuser.timeOnline = new Date();
 			pairuser.save(function(err) {
 				if (err) {
@@ -222,7 +228,8 @@ exports.returnPairInfo = function(req, res){
 				title: "Chat with "+usernameToPair+" about "+comment,
 				page: "pairWithUser",
 				pairWithUser: pair.username,		
-				comment: comment
+				comment: comment,
+				userGit: pair.userGit
 			});
 		}
 		});
