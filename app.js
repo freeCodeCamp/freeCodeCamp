@@ -2,9 +2,17 @@ if (process.env.NODE_ENV !== 'development') {
   require('newrelic');
 }
 require('dotenv').load();
-/**
- * Module dependencies.
- */
+// handle uncaught exceptions. Forever will restart process on shutdown
+process.on('uncaughtException', function (err) {
+  console.error(
+    (new Date()).toUTCString() + ' uncaughtException:',
+    err.message
+  );
+  console.error(err.stack);
+  /* eslint-disable no-process-exit */
+  process.exit(1);
+  /* eslint-enable no-process-exit */
+});
 
 var express = require('express'),
     cookieParser = require('cookie-parser'),

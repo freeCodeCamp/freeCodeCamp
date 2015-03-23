@@ -27,6 +27,7 @@ passport.deserializeUser(function(id, done) {
 
 passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, password, done) {
   User.findOne({ email: email }, function(err, user) {
+    if (err) { return done(err); }
     if (!user) return done(null, false, { message: 'Email ' + email + ' not found'});
     user.comparePassword(password, function(err, isMatch) {
       if (err) { return done(err); }
@@ -62,17 +63,19 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
       if (err) { return done(err); }
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a Facebook account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-        done(err);
+        done();
       } else {
         User.findById(req.user.id, function(err, user) {
+          if (err) { return done(err); }
           user.facebook = profile.id;
           user.tokens.push({ kind: 'facebook', accessToken: accessToken });
           user.profile.name = user.profile.name || profile.displayName;
           user.profile.gender = user.profile.gender || profile._json.gender;
           user.profile.picture = user.profile.picture || 'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png';
           user.save(function(err) {
+            if (err) { return done(err); }
             req.flash('info', { msg: 'Facebook account has been linked.' });
-            done(err, user);
+            done(null, user);
           });
         });
       }
@@ -85,7 +88,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
         if (err) { return done(err); }
         if (existingEmailUser) {
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Facebook manually from Account Settings.' });
-          done(err);
+          done();
         } else {
           var user = new User();
           user.email = profile._json.email;
@@ -133,9 +136,10 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
 passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
     User.findOne({ github: profile.id }, function(err, existingUser) {
+      if (err) { return done(err); }
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a GitHub account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-        done(err);
+        done();
       } else {
         User.findById(req.user.id, function(err, user) {
           user.github = profile.id;
@@ -145,19 +149,22 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
           user.profile.location = user.profile.location || profile._json.location;
           user.profile.website = user.profile.website || profile._json.blog;
           user.save(function(err) {
+            if (err) { return done(err); }
             req.flash('info', { msg: 'GitHub account has been linked.' });
-            done(err, user);
+            done(null, user);
           });
         });
       }
     });
   } else {
     User.findOne({ github: profile.id }, function(err, existingUser) {
+      if (err) { return done(err); }
       if (existingUser) return done(null, existingUser);
       User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+        if (err) { return done(err); }
         if (existingEmailUser) {
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with GitHub manually from Account Settings.' });
-          done(err);
+          done(null);
         } else {
           var user = new User();
           user.email = profile._json.email;
@@ -168,30 +175,31 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
           user.profile.location = profile._json.location;
           user.profile.website = profile._json.blog;
           user.save(function(err) {
-            done(err, user);
-          });
-          var transporter = nodemailer.createTransport({
-            service: 'Mandrill',
-            auth: {
-              user: secrets.mandrill.user,
-              pass: secrets.mandrill.password
-            }
-          });
-          var mailOptions = {
-            to: user.email,
-            from: 'Team@freecodecamp.com',
-            subject: 'Welcome to Free Code Camp!',
-            text: [
-              'Greetings from San Francisco!\n\n',
-              'Thank you for joining our community.\n',
-              'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
-              "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
-              'Good luck with the challenges!\n\n',
-              '- the Volunteer Camp Counselor Team'
-            ].join('')
-          };
-          transporter.sendMail(mailOptions, function(err) {
-            if (err) { return err; }
+            if (err) { return done(err); }
+            var transporter = nodemailer.createTransport({
+              service: 'Mandrill',
+              auth: {
+                user: secrets.mandrill.user,
+                pass: secrets.mandrill.password
+              }
+            });
+            var mailOptions = {
+              to: user.email,
+              from: 'Team@freecodecamp.com',
+              subject: 'Welcome to Free Code Camp!',
+              text: [
+                'Greetings from San Francisco!\n\n',
+                'Thank you for joining our community.\n',
+                'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
+                "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+                'Good luck with the challenges!\n\n',
+                '- the Volunteer Camp Counselor Team'
+              ].join('')
+            };
+            transporter.sendMail(mailOptions, function(err) {
+              if (err) { return done(err); }
+              done(null, user);
+            });
           });
         }
       });
@@ -204,9 +212,10 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
 passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tokenSecret, profile, done) {
   if (req.user) {
     User.findOne({ twitter: profile.id }, function(err, existingUser) {
+      if (err) { return done(err); }
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a Twitter account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-        done(err);
+        done();
       } else {
         User.findById(req.user.id, function(err, user) {
           user.twitter = profile.id;
@@ -217,8 +226,9 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
           user.profile.picture = user.profile.picture || profile._json.profile_image_url_https.replace('_normal', '');
           user.profile.twitterHandle = user.profile.twitterHandle || profile.username.toLowerCase();
           user.save(function(err) {
+            if (err) { return done(err); }
             req.flash('info', { msg: 'Twitter account has been linked.' });
-            done(err, user);
+            done(null, user);
           });
         });
       }
@@ -226,6 +236,7 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
 
   } else {
     User.findOne({ twitter: profile.id }, function(err, existingUser) {
+      if (err) { return done(err); }
       if (existingUser) return done(null, existingUser);
       var user = new User();
       user.profile.username = profile.username.toLowerCase();
@@ -236,7 +247,8 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
       user.profile.picture = profile._json.profile_image_url_https.replace('_normal', '');
       user.profile.twitterHandle = user.profile.twitterHandle || profile.username.toLowerCase();
       user.save(function(err) {
-        done(err, user);
+        if (err) { return done(err); }
+        done(null, user);
       });
     });
   }
@@ -247,30 +259,35 @@ passport.use(new TwitterStrategy(secrets.twitter, function(req, accessToken, tok
 passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
     User.findOne({ google: profile.id }, function(err, existingUser) {
+      if (err) { return done(err); }
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-        done(err);
+        done();
       } else {
         User.findById(req.user.id, function(err, user) {
+          if (err) { return done(err); }
           user.google = profile.id;
           user.tokens.push({ kind: 'google', accessToken: accessToken });
           user.profile.name = user.profile.name || profile.displayName;
           user.profile.gender = user.profile.gender || profile._json.gender;
           user.profile.picture = user.profile.picture || profile._json.picture;
           user.save(function(err) {
+            if (err) { return done(err); }
             req.flash('info', { msg: 'Google account has been linked.' });
-            done(err, user);
+            done(null, user);
           });
         });
       }
     });
   } else {
     User.findOne({ google: profile.id }, function(err, existingUser) {
+      if (err) { return done(err); }
       if (existingUser) return done(null, existingUser);
       User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+        if (err) { return done(err); }
         if (existingEmailUser) {
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Google manually from Account Settings.' });
-          done(err);
+          done();
         } else {
           var user = new User();
           user.email = profile._json.email;
@@ -280,30 +297,31 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
           user.profile.gender = profile._json.gender;
           user.profile.picture = profile._json.picture;
           user.save(function(err) {
-            done(err, user);
-          });
-          var transporter = nodemailer.createTransport({
-            service: 'Mandrill',
-            auth: {
-              user: secrets.mandrill.user,
-              pass: secrets.mandrill.password
-            }
-          });
-          var mailOptions = {
-            to: user.email,
-            from: 'Team@freecodecamp.com',
-            subject: 'Welcome to Free Code Camp!',
-            text: [
-              'Greetings from San Francisco!\n\n',
-              'Thank you for joining our community.\n',
-              'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
-              "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
-              'Good luck with the challenges!\n\n',
-              '- the Volunteer Camp Counselor Team'
-            ].join('')
-          };
-          transporter.sendMail(mailOptions, function(err) {
-            if (err) { return err; }
+            if (err) { return done(err); }
+            var transporter = nodemailer.createTransport({
+              service: 'Mandrill',
+              auth: {
+                user: secrets.mandrill.user,
+                pass: secrets.mandrill.password
+              }
+            });
+            var mailOptions = {
+              to: user.email,
+              from: 'Team@freecodecamp.com',
+              subject: 'Welcome to Free Code Camp!',
+              text: [
+                'Greetings from San Francisco!\n\n',
+                'Thank you for joining our community.\n',
+                'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
+                "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+                'Good luck with the challenges!\n\n',
+                '- the Volunteer Camp Counselor Team'
+              ].join('')
+            };
+            transporter.sendMail(mailOptions, function(err) {
+              if (err) { return err; }
+              done(null, user);
+            });
           });
         }
       });
@@ -316,11 +334,13 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
 passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, refreshToken, profile, done) {
   if (req.user) {
     User.findOne({ linkedin: profile.id }, function(err, existingUser) {
+      if (err) { return done(err); }
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a LinkedIn account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
-        done(err);
+        done();
       } else {
         User.findById(req.user.id, function(err, user) {
+          if (err) { return done(err); }
           user.linkedin = profile.id;
           user.tokens.push({ kind: 'linkedin', accessToken: accessToken });
           user.profile.name = user.profile.name || profile.displayName;
@@ -328,8 +348,9 @@ passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, r
           user.profile.picture = user.profile.picture || profile._json.pictureUrl;
           user.profile.website = user.profile.website || profile._json.publicProfileUrl;
           user.save(function(err) {
+            if (err) { return done(err); }
             req.flash('info', { msg: 'LinkedIn account has been linked.' });
-            done(err, user);
+            done(null, user);
           });
         });
       }
@@ -338,9 +359,10 @@ passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, r
     User.findOne({ linkedin: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
       User.findOne({ email: profile._json.emailAddress }, function(err, existingEmailUser) {
+        if (err) { return done(err); }
         if (existingEmailUser) {
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with LinkedIn manually from Account Settings.' });
-          done(err);
+          done();
         } else {
           var user = new User();
           user.linkedin = profile.id;
@@ -351,30 +373,31 @@ passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, r
           user.profile.picture = profile._json.pictureUrl;
           user.profile.website = profile._json.publicProfileUrl;
           user.save(function(err) {
-            done(err, user);
-          });
-          var transporter = nodemailer.createTransport({
-            service: 'Mandrill',
-            auth: {
-              user: secrets.mandrill.user,
-              pass: secrets.mandrill.password
-            }
-          });
-          var mailOptions = {
-            to: user.email,
-            from: 'Team@freecodecamp.com',
-            subject: 'Welcome to Free Code Camp!',
-            text: [
-              'Greetings from San Francisco!\n\n',
-              'Thank you for joining our community.\n',
-              'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
-              "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
-              'Good luck with the challenges!\n\n',
-              '- the Volunteer Camp Counselor Team'
-            ].join('')
-          };
-          transporter.sendMail(mailOptions, function(err) {
-            if (err) { return err; }
+            if (err) { return done(err); }
+            var transporter = nodemailer.createTransport({
+              service: 'Mandrill',
+              auth: {
+                user: secrets.mandrill.user,
+                pass: secrets.mandrill.password
+              }
+            });
+            var mailOptions = {
+              to: user.email,
+              from: 'Team@freecodecamp.com',
+              subject: 'Welcome to Free Code Camp!',
+              text: [
+                'Greetings from San Francisco!\n\n',
+                'Thank you for joining our community.\n',
+                'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
+                "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+                'Good luck with the challenges!\n\n',
+                '- the Volunteer Camp Counselor Team'
+              ].join('')
+            };
+            transporter.sendMail(mailOptions, function(err) {
+              if (err) { return err; }
+              done(null, user);
+            });
           });
         }
       });
@@ -385,7 +408,7 @@ passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, r
 // Login Required middleware.
 
 exports.isAuthenticated = function(req, res, next) {
-  if (req.isAuthenticated()) return next();
+  if (req.isAuthenticated()) { return next(); }
   res.redirect('/login');
 };
 
