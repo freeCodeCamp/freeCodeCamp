@@ -112,6 +112,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
             compliment: resources.randomCompliment(),
             bonfires: bonfire,
             bonfireHash: bonfire._id,
+            MDNkeys: bonfire.MDNlinks,
             MDNlinks: getMDNlinks(bonfire.MDNlinks)
 
         });
