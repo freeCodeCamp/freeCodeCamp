@@ -149,5 +149,9 @@ block content
                     $('.btn-twitter').attr('href', url);
                 }
         );
+        var MDNlinks = !{JSON.stringify(MDNlinks)};
+        if (!MDNlinks.length) {
+            $('#MDN-links').addClass('collapse');
+        }
 
 
