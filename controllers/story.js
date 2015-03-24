@@ -49,7 +49,6 @@ exports.recentJSON = function(req, res, next) {
   var story = Story.find({}).sort({'timePosted': -1}).limit(100);
   story.exec(function(err, stories) {
     if (err) {
-      res.sendStatus(500);
       return next(err);
     }
     return res.json(stories);
@@ -215,7 +214,6 @@ exports.upvote = function(req, res, next) {
   var data = req.body.data;
   Story.find({'_id': data.id}, function(err, story) {
     if (err) {
-      res.sendStatus(500);
       return next(err);
     }
     story = story.pop();
@@ -245,7 +243,6 @@ exports.comments = function(req, res, next) {
   var data = req.params.id;
   Comment.find({'_id': data}, function(err, comment) {
     if (err) {
-      res.sendStatus(500);
       return next(err);
     }
     comment = comment.pop();
