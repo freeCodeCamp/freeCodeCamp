@@ -1,3 +1,4 @@
+/* eslint-disable no-catch-shadow, no-unused-vars */
 var R = require('ramda'),
   debug = require('debug')('freecc:cntr:story'),
   Story = require('./../models/Story'),
@@ -28,7 +29,7 @@ exports.hotJSON = function(req, res) {
   var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
   story.exec(function(err, stories) {
     if (err) {
-      return res.status(500);
+      return res.sendStatus(500);
     }
 
     var foundationDate = 1413298800000;
@@ -48,36 +49,36 @@ exports.recentJSON = function(req, res, next) {
   var story = Story.find({}).sort({'timePosted': -1}).limit(100);
   story.exec(function(err, stories) {
     if (err) {
-      res.status(500);
+      res.sendStatus(500);
       return next(err);
     }
-    res.json(stories);
+    return res.json(stories);
   });
 };
 
 exports.hot = function(req, res) {
-  res.render('stories/index', {
+ return res.render('stories/index', {
     title: 'Hot stories currently trending on Camper News',
     page: 'hot'
   });
 };
 
 exports.submitNew = function(req, res) {
-  res.render('stories/index', {
+  return res.render('stories/index', {
     title: 'Submit a new story to Camper News',
     page: 'submit'
   });
 };
 
 exports.search = function(req, res) {
-  res.render('stories/index', {
+  return res.render('stories/index', {
     title: 'Search the archives of Camper News',
     page: 'search'
   });
 };
 
 exports.recent = function(req, res) {
-  res.render('stories/index', {
+  return res.render('stories/index', {
     title: 'Recently submitted stories on Camper News',
     page: 'recent'
   });
@@ -121,7 +122,7 @@ exports.returnIndividualStory = function(req, res, next) {
 
   Story.find({'storyLink': new RegExp(storyName, 'i')}, function(err, story) {
     if (err) {
-      next(err);
+      return next(err);
     }
 
 
@@ -171,7 +172,7 @@ exports.returnIndividualStory = function(req, res, next) {
 exports.getStories = function(req, res) {
   MongoClient.connect(secrets.db, function(err, database) {
     if (err) {
-      return res.status(500);
+      return res.sendStatus(500);
     }
     database.collection('stories').find({
       '$text': {
@@ -200,12 +201,12 @@ exports.getStories = function(req, res) {
       }
     }).toArray(function(err, items) {
       if (err) {
-        return res.status(500);
+        return res.sendStatus(500);
       }
       if (items !== null && items.length !== 0) {
         return res.json(items);
       }
-      return res.status(404);
+      return res.sendStatus(404);
     });
   });
 };
@@ -214,7 +215,7 @@ exports.upvote = function(req, res, next) {
   var data = req.body.data;
   Story.find({'_id': data.id}, function(err, story) {
     if (err) {
-      res.status(500);
+      res.sendStatus(500);
       return next(err);
     }
     story = story.pop();
@@ -244,7 +245,7 @@ exports.comments = function(req, res, next) {
   var data = req.params.id;
   Comment.find({'_id': data}, function(err, comment) {
     if (err) {
-      res.status(500);
+      res.sendStatus(500);
       return next(err);
     }
     comment = comment.pop();
@@ -254,7 +255,7 @@ exports.comments = function(req, res, next) {
 
 exports.newStory = function(req, res) {
   if (!req.user) {
-    return res.status(500);
+    return res.sendStatus(500);
   }
   var url = req.body.data.url;
   var cleanURL = sanitizeHtml(url, {
@@ -276,7 +277,7 @@ exports.newStory = function(req, res) {
   }
   Story.find({'link': url}, function(err, story) {
     if (err) {
-      return res.status(500);
+      return res.sendStatus(500);
     }
     if (story.length) {
       req.flash('errors', {
@@ -314,7 +315,7 @@ exports.newStory = function(req, res) {
 exports.storySubmission = function(req, res) {
   var data = req.body.data;
   if (req.user._id.toString() !== data.author.userId.toString()) {
-    return res.status(500);
+    return res.sendStatus(500);
   }
   var storyLink = data.headline
     .replace(/\'/g, '')
@@ -352,7 +353,7 @@ exports.storySubmission = function(req, res) {
 
   story.save(function(err) {
     if (err) {
-      return res.status(500);
+      return res.sendStatus(500);
     }
     res.send(JSON.stringify({
       storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
@@ -363,7 +364,7 @@ exports.storySubmission = function(req, res) {
 exports.commentSubmit = function(req, res) {
   var data = req.body.data;
   if (req.user._id.toString() !== data.author.userId.toString()) {
-    return res.status(500);
+    return res.sendStatus(500);
   }
   var sanitizedBody = sanitizeHtml(data.body,
     {
@@ -393,7 +394,7 @@ exports.commentOnCommentSubmit = function(req, res) {
   var data = req.body.data;
 
   if (req.user._id.toString() !== data.author.userId.toString()) {
-    return res.status(500);
+    return res.sendStatus(500);
   }
 
   var sanitizedBody = sanitizeHtml(data.body,
@@ -423,19 +424,19 @@ exports.commentOnCommentSubmit = function(req, res) {
 function commentSave(comment, Context, res) {
   comment.save(function(err, data) {
     if (err) {
-      return res.status(500);
+      return res.sendStatus(500);
     }
     try {
       Context.find({'_id': comment.associatedPost}, function (err, associatedStory) {
         if (err) {
-          return res.status(500);
+          return res.sendStatus(500);
         }
         associatedStory = associatedStory.pop();
         if (associatedStory) {
           associatedStory.comments.push(data._id);
           associatedStory.save(function (err) {
             if (err) {
-              res.status(500);
+              return res.sendStatus(500);
             }
             res.send(true);
           });
@@ -443,7 +444,7 @@ function commentSave(comment, Context, res) {
       });
     } catch (e) {
       // delete comment
-      return res.status(500);
+      return res.sendStatus(500);
     }
   });
 }
