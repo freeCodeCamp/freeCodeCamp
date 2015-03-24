@@ -446,7 +446,7 @@ app.get('/sitemap.xml', resourcesController.sitemap);
  * and updates user.challengesHash & user.challengesCompleted
  *
  */
-app.post('/completed-challenge', function (req, res) {
+app.post('/completed-challenge', function (req, res, done) {
     req.user.challengesHash[parseInt(req.body.challengeNumber)] =
         Math.round(+new Date() / 1000);
     var timestamp = req.user.challengesHash;
@@ -457,7 +457,10 @@ app.post('/completed-challenge', function (req, res) {
         }
     }
     req.user.points = points;
-    req.user.save();
+    req.user.save(function(err) {
+      if (err) { return done(err); }
+      res.status(200).send({ msg: 'progress saved' });
+    });
 });
 
 /**
