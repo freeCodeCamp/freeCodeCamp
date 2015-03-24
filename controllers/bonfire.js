@@ -2,7 +2,8 @@ var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:bonfires'),
     Bonfire = require('./../models/Bonfire'),
     User = require('./../models/User'),
-    resources = require('./resources');
+    resources = require('./resources')
+    MDNlinks = require('./../seed_data/bonfireMDNlinks');
 
 /**
  * Bonfire controller
@@ -110,7 +111,8 @@ exports.returnIndividualBonfire = function(req, res, next) {
             phrase: resources.randomPhrase(),
             compliment: resources.randomCompliment(),
             bonfires: bonfire,
-            bonfireHash: bonfire._id
+            bonfireHash: bonfire._id,
+            MDNlinks: getMDNlinks(bonfire.MDNlinks)
 
         });
     });
@@ -145,6 +147,23 @@ function randomString() {
         randomstring += chars.substring(rnum,rnum+1);
     }
     return randomstring;
+};
+
+/**
+ * Helper function to populate the MDN links array.
+*/
+
+function getMDNlinks(links) {
+    // takes in an array of links, which are strings
+    var populatedLinks = [];
+
+    // for each key value, push the corresponding link from the MDNlinks object into a new array
+    links.forEach(function(value, index) {
+        populatedLinks.push(MDNlinks[value]);
+    });
+
+    return populatedLinks;
+
 };
 
 /**

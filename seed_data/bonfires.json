@@ -31,7 +31,8 @@
       "You may need to turn the string into an array before you can reverse it.",
       "Your result must be a string."
     ],
-    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}\n\nreverseString('hello');"
+    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}\n\nreverseString('hello');",
+    "links" : ["String-global", "string-methods.split"]
   },
   {
     "_id": "a302f7aae1aa3152a5b413bc",
