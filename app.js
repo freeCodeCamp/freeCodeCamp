@@ -269,7 +269,7 @@ app.post('/nonprofits', contactController.postNonprofitsForm);
 app.get('/nonprofits/home', nonprofitController.nonprofitsHome);
 app.get('/nonprofits/are-you-with-a-registered-nonprofit', nonprofitController.areYouWithARegisteredNonprofit);
 app.get('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYou);
-app.get('/nonprofits/are-there-people-already-benefiting-from-your-services', nonprofitController.areTherePeopleAlreadyBenefitingFromYourServices);
+app.get('/nonprofits/are-there-people-that-are-already-benefiting-from-your-services', nonprofitController.areTherePeopleThatAreAlreadyBenefitingFromYourServices);
 app.get('/nonprofits/in-exchange-we-ask', nonprofitController.inExchangeWeAsk);
 app.get('/nonprofits/ok-with-javascript', nonprofitController.okWithJavaScript);
 app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);

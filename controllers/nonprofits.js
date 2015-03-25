@@ -38,8 +38,8 @@ exports.otherSolutions = function(req, res) {
     });
 };
 
-exports.areTherePeopleAlreadyBenefitingFromYourServices = function(req, res) {
-    res.render('nonprofits/are-there-people-already-benefiting-from-your-services', {
+exports.areTherePeopleThatAreAlreadyBenefitingFromYourServices = function(req, res) {
+    res.render('nonprofits/are-there-people-that-are-already-benefiting-from-your-services', {
         title: 'Are there people already benefiting from your services'
     });
 };
