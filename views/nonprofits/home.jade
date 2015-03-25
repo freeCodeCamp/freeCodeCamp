@@ -1,30 +1,10 @@
-extends layout
+extends ../layout
 block content
     .jumbotron
         .text-center
-            h1.hug-top We code for a cause
-            h2 We'll code software solutions for your nonprofit, for free!
-            .row
-                .col-xs-12.col-sm-12.col-md-3
-                    h3.nowrap Get Connected
-                    img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_connect.svg.gz', title='Get great references and connections to help you get a job')
-                    p.landing-p Join a community of busy, motivated professionals.
-                .col-xs-12.col-sm-12.col-md-3
-                    h3.nowrap Learn JavaScript
-                    img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_learn.svg.gz', title='Learn to code')
-                    p.landing-p Work together on Full Stack JavaScript coding challenges.
-                .col-xs-12.col-sm-12.col-md-3
-                    h3.nowrap Build your Portfolio
-                    img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_portfolio.svg.gz', title='Build a portfolio of apps for nonprofits')
-                    p.landing-p Build apps that solve real problems for real people.
-                .col-xs-12.col-sm-12.col-md-3
-                    h3.nowrap Help Nonprofits
-                    img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_nonprofits.svg.gz', title='Help nonprofits')
-                    p.landing-p Give nonprofits a boost by empowering them with code.
+            h2.nonprofit-landing.hug-top We'll code for your nonprofit, pro bono
             .big-break
-            a.btn.btn-cta.signup-btn(href="/with-a-nonprofit") I'm with a nonprofit and want help coding something
-            .big-break
-            h2 Nonprofits we've helped
+            h2 Some of our success stories
             .row
                 .col-xs-12.col-sm-12.col-md-4
                     img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-jen.jpg", alt="@jenthebest's testimonial image")
@@ -38,6 +18,23 @@ block content
                     img.img-responsive.testimonial-image.img-center(src="https://s3.amazonaws.com/freecodecamp/testimonial-cynthia.jpg", alt="@cynthialanel's testimonial image")
                     .testimonial-copy  I'm currently working through Free Code Camp to improve my JavaScript. The community is very welcoming!
                     h3 - @cynthialanel
+            .big-break
+            a.btn.btn-cta.signup-btn(href="/with-a-nonprofit") Get pro bono help for my nonprofit
+            .big-break
+            h2 Our process
+            .row
+                .col-xs-12.col-sm-12.col-md-4
+                    h3.nowrap Your idea
+                    img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_portfolio.svg.gz', title='Get great references and connections to help you get a job')
+                    p.landing-p You tell us how we can help you.
+                .col-xs-12.col-sm-12.col-md-4
+                    h3.nowrap Our team
+                    img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_nonprofits.svg.gz', title='Build a portfolio of apps for nonprofits')
+                    p.landing-p We'll hand pick developers and a project manager.
+                .col-xs-12.col-sm-12.col-md-4
+                    h3.nowrap Your solution
+                    img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_connect.svg.gz', title='Help nonprofits')
+                    p.landing-p Together we'll set milestones and complete your project.
             .big-break
             h2 Solutions we can help you build:
             .text-center.negative-35
