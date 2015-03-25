@@ -25,11 +25,11 @@ function hotRank(timeValue, rank) {
 
 }
 
-exports.hotJSON = function(req, res) {
+exports.hotJSON = function(req, res, next) {
   var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
   story.exec(function(err, stories) {
     if (err) {
-      return res.sendStatus(500);
+      return next(err);
     }
 
     var foundationDate = 1413298800000;
@@ -168,10 +168,10 @@ exports.returnIndividualStory = function(req, res, next) {
   });
 };
 
-exports.getStories = function(req, res) {
+exports.getStories = function(req, res, next) {
   MongoClient.connect(secrets.db, function(err, database) {
     if (err) {
-      return res.sendStatus(500);
+      return next(err);
     }
     database.collection('stories').find({
       '$text': {
@@ -200,7 +200,7 @@ exports.getStories = function(req, res) {
       }
     }).toArray(function(err, items) {
       if (err) {
-        return res.sendStatus(500);
+        return next(err);
       }
       if (items !== null && items.length !== 0) {
         return res.json(items);
@@ -250,9 +250,9 @@ exports.comments = function(req, res, next) {
   });
 };
 
-exports.newStory = function(req, res) {
+exports.newStory = function(req, res, next) {
   if (!req.user) {
-    return res.sendStatus(500);
+    return next(new Error('Must be logged in'));
   }
   var url = req.body.data.url;
   var cleanURL = sanitizeHtml(url, {
@@ -274,7 +274,7 @@ exports.newStory = function(req, res) {
   }
   Story.find({'link': url}, function(err, story) {
     if (err) {
-      return res.sendStatus(500);
+      return next(err);
     }
     if (story.length) {
       req.flash('errors', {
@@ -309,10 +309,10 @@ exports.newStory = function(req, res) {
   }
 };
 
-exports.storySubmission = function(req, res) {
+exports.storySubmission = function(req, res, next) {
   var data = req.body.data;
   if (req.user._id.toString() !== data.author.userId.toString()) {
-    return res.sendStatus(500);
+    return next(new Error('Not authorized'));
   }
   var storyLink = data.headline
     .replace(/\'/g, '')
@@ -350,7 +350,7 @@ exports.storySubmission = function(req, res) {
 
   story.save(function(err) {
     if (err) {
-      return res.sendStatus(500);
+      return next(err);
     }
     res.send(JSON.stringify({
       storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
@@ -358,10 +358,10 @@ exports.storySubmission = function(req, res) {
   });
 };
 
-exports.commentSubmit = function(req, res) {
+exports.commentSubmit = function(req, res, next) {
   var data = req.body.data;
   if (req.user._id.toString() !== data.author.userId.toString()) {
-    return res.sendStatus(500);
+    return next(new Error('Not authorized'));
   }
   var sanitizedBody = sanitizeHtml(data.body,
     {
@@ -384,14 +384,14 @@ exports.commentSubmit = function(req, res) {
     topLevel: true,
     commentOn: Date.now()
   });
-  commentSave(comment, Story, res);
+  commentSave(comment, Story, res, next);
 };
 
-exports.commentOnCommentSubmit = function(req, res) {
+exports.commentOnCommentSubmit = function(req, res, next) {
   var data = req.body.data;
 
   if (req.user._id.toString() !== data.author.userId.toString()) {
-    return res.sendStatus(500);
+    return next(new Error('Not authorized'));
   }
 
   var sanitizedBody = sanitizeHtml(data.body,
@@ -415,25 +415,25 @@ exports.commentOnCommentSubmit = function(req, res) {
     topLevel: false,
     commentOn: Date.now()
   });
-  commentSave(comment, Comment, res);
+  commentSave(comment, Comment, res, next);
 };
 
-function commentSave(comment, Context, res) {
+function commentSave(comment, Context, res, next) {
   comment.save(function(err, data) {
     if (err) {
-      return res.sendStatus(500);
+      return next(err);
     }
     try {
       Context.find({'_id': comment.associatedPost}, function (err, associatedStory) {
         if (err) {
-          return res.sendStatus(500);
+          return next(err);
         }
         associatedStory = associatedStory.pop();
         if (associatedStory) {
           associatedStory.comments.push(data._id);
           associatedStory.save(function (err) {
             if (err) {
-              return res.sendStatus(500);
+              return next(err);
             }
             res.send(true);
           });
@@ -441,7 +441,7 @@ function commentSave(comment, Context, res) {
       });
     } catch (e) {
       // delete comment
-      return res.sendStatus(500);
+      return next(err);
     }
   });
 }
