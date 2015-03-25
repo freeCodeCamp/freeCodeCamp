@@ -1,4 +1,6 @@
-.jumbotron.text-center
-    h1.hug-top Nonprofit Sign Up
-    .spacer
-    h2 Thank you for reaching out to us. We’ll get back with you before N of next week.
+extends ../layout
+block content
+    .jumbotron.text-center
+        h1.hug-top Nonprofit Sign Up
+        include ../partials/nonprofit-application-progress-bar
+        h2 Thank you for reaching out to us. We’ll get back with you before N of next week.

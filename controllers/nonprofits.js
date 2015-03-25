@@ -22,60 +22,76 @@ exports.nonprofitsHome = function(req, res) {
 
 exports.areYouWithARegisteredNonprofit = function(req, res) {
     res.render('nonprofits/are-you-with-a-registered-nonprofit', {
-        title: 'Are you with a with a registered nonprofit'
+        title: 'Are you with a with a registered nonprofit',
+        step: 1
     });
 };
 
 exports.howCanFreeCodeCampHelpYou = function(req, res) {
     res.render('nonprofits/how-can-free-code-camp-help-you', {
-        title: 'Are you with a with a registered nonprofit'
+        title: 'Are you with a with a registered nonprofit',
+        step: 2
     });
 };
 
-exports.otherSolutions = function(req, res) {
-    res.render('nonprofits/other-solutions', {
-        title: 'Here are some other possible solutions for you'
-    });
-};
 
 exports.areTherePeopleThatAreAlreadyBenefitingFromYourServices = function(req, res) {
     res.render('nonprofits/are-there-people-that-are-already-benefiting-from-your-services', {
-        title: 'Are there people already benefiting from your services'
-    });
-};
-
-exports.inExchangeWeAsk = function(req, res) {
-    res.render('nonprofits/in-exchange-we-ask', {
-        title: 'In exchange we ask that you ...'
+        title: 'Are there people already benefiting from your services',
+        step: 3
     });
 };
 
 exports.okWithJavaScript = function(req, res) {
     res.render('nonprofits/ok-with-javascript', {
-        title: 'Are you OK with us using JavaScript'
+        title: 'Are you OK with us using JavaScript',
+        step: 4
+    });
+};
+
+exports.inExchangeWeAsk = function(req, res) {
+    res.render('nonprofits/in-exchange-we-ask', {
+        title: 'In exchange we ask that you ...',
+        step: 5
     });
 };
 
 exports.whatDoesYourNonprofitDo = function(req, res) {
     res.render('nonprofits/what-does-your-nonprofit-do', {
-        title: 'What does your nonprofit do?'
+        title: 'What does your nonprofit do?',
+        step: 6
     });
 };
 
 exports.linkUsToYourWebsite = function(req, res) {
     res.render('nonprofits/link-us-to-your-website', {
-        title: 'Link us to your website'
+        title: 'Link us to your website',
+        step: 7
     });
 };
 
-exports.tellUsYourNameAndEmail = function(req, res) {
-    res.render('nonprofits/tell-us-your-name-and-email', {
-        title: 'Tell us your name and email address'
+exports.tellUsYourEmail = function(req, res) {
+    res.render('nonprofits/tell-us-your-email', {
+        title: 'Tell us your name',
+        step: 8
+    });
+};
+
+exports.tellUsYourName = function(req, res) {
+    res.render('nonprofits/tell-us-your-name', {
+        title: 'Tell us your name',
+        step: 9
     });
 };
 
 exports.yourNonprofitProjectApplicationHasBeenSubmitted = function(req, res) {
     res.render('nonprofits/your-nonprofit-project-application-has-been-submitted', {
         title: 'Your Nonprofit Project application has been submitted!'
+    });
+};
+
+exports.otherSolutions = function(req, res) {
+    res.render('nonprofits/other-solutions', {
+        title: 'Here are some other possible solutions for you'
     });
 };

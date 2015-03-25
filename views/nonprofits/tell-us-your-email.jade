@@ -1,0 +1,12 @@
+extends ../layout
+block content
+    .jumbotron.text-center
+        h1.hug-top Nonprofit Sign Up
+        include ../partials/nonprofit-application-progress-bar
+        h2 Please tell us your email
+        .spacer
+        .formgroup
+            .input-group
+                input.form-control.big-text-field.field-responsive(type='text', maxlength='140', autofocus='')
+                span.input-group-btn
+                    button.btn.btn-big.btn-primary.btn-responsive(href='/nonprofits/your-nonprofit-project-application-has-been-submitted') Submit

@@ -1,0 +1,6 @@
+.spacer
+.progress
+    .progress-bar(role='progressbar', aria-valuenow= (step * 10), aria-valuemin='0', aria-valuemax='100', style="width: #{step * 10}%;")
+        span.sr-only= step * 10
+            | % Complete
+h3.gray-text.text-center Step #{step} of 9

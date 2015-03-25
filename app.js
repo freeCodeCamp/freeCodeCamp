@@ -15,7 +15,7 @@ process.on('uncaughtException', function (err) {
 });
 
 var express = require('express'),
-    accepts = require('accepts'),
+    //accepts = require('accepts'),
     cookieParser = require('cookie-parser'),
     compress = require('compression'),
     session = require('express-session'),
@@ -284,7 +284,8 @@ app.get('/nonprofits/ok-with-javascript', nonprofitController.okWithJavaScript);
 app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
 app.get('/nonprofits/what-does-your-nonprofit-do', nonprofitController.whatDoesYourNonprofitDo);
 app.get('/nonprofits/link-us-to-your-website', nonprofitController.linkUsToYourWebsite);
-app.get('/nonprofits/tell-us-your-name-and-email', nonprofitController.tellUsYourNameAndEmail);
+app.get('/nonprofits/tell-us-your-name', nonprofitController.tellUsYourName);
+app.get('/nonprofits/tell-us-your-email', nonprofitController.tellUsYourEmail);
 app.get('/nonprofits/your-nonprofit-project-application-has-been-submitted', nonprofitController.yourNonprofitProjectApplicationHasBeenSubmitted);
 
 app.get(
