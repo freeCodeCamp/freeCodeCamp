@@ -15,9 +15,11 @@
     "postinstall": "node seed_data/seed.js"
   },
   "dependencies": {
+    "accepts": "^1.2.5",
     "async": "^0.9.0",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.9.3",
+    "chai-jquery": "^2.0.0",
     "cheerio": "^0.18.0",
     "clockwork": "^0.1.1",
     "compression": "^1.2.1",

@@ -17,6 +17,7 @@ var run = function(code) {
     }
 
     application.remote.output(result);
+    self.close();
 };
 
 
