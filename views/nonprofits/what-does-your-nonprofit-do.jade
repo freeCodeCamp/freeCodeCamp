@@ -1,0 +1,23 @@
+extends ../layout
+block content
+    .jumbotron.text-center
+        h1.hug-top Nonprofit Sign Up
+        .spacer
+        h2 In 140 characters or less, what does your nonprofit do? For whom?
+        .spacer
+        .input-group
+            input.form-control.big-text-field.field-responsive(type='text', maxlength='140', autofocus='')
+            span.input-group-btn
+                button.btn.btn-big.btn-primary.btn-responsive Submit
+            #textarea-comment-feedback
+script.
+    var text_max = 140;
+    $('#textarea-comment-feedback').html(text_max + ' characters remaining');
+    $('#comment-to-comment-textinput').keyup(function (e) {
+        if (e.which === 13 || e === 13) {
+            $('#submit-comment-to-comment').click();
+        }
+        var text_length = $('#comment-to-comment-textinput').val().length;
+        var text_remaining = text_max - text_length;
+        $('#textarea-comment-feedback').html(text_remaining + ' characters remaining');
+    });

@@ -1,0 +1,42 @@
+extends ../layout
+block content
+    .jumbotron.text-center
+        h1.hug-top Nonprofit Sign Up
+        .spacer
+        h2 How can Free Code Camp help you?
+            .spacer
+            .row.text-center.negative-35
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-android-globe
+                    label.black-text.nonprofit-help-select-text-height Websites
+                    input#websites-help.checkbox(type='checkbox')
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-card
+                    h2.black-text.nonprofit-help-select-text-height Donation Systems
+                    input#websites-help.checkbox(type='checkbox')
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-android-calendar
+                    h2.black-text.nonprofit-help-select-text-height Volunteer Systems
+                    input#websites-help.inline.checkbox(type='checkbox')
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-ios-box
+                    h2.black-text.nonprofit-help-select-text-height Inventory Systems
+                    input#websites-help.inline.checkbox(type='checkbox')
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-university
+                    h2.black-text.nonprofit-help-select-text-height E-learning Platforms
+                    input#websites-help.inline.checkbox(type='checkbox')
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-ios-list
+                    h2.black-text.nonprofit-help-select-text-height Web Forms
+                    input#websites-help.inline.checkbox(type='checkbox')
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-ios-people
+                    h2.black-text.nonprofit-help-select-text-height Community Tools
+                    input#websites-help.inline.checkbox(type='checkbox')
+                .col-xs-12.col-sm-12.col-md-3
+                    .landing-skill-icon.ion-settings
+                    h2.black-text.nonprofit-help-select-text-height ...and other tools
+                    input#websites-help.inline.checkbox(type='checkbox')
+        .spacer
+        a.btn.btn-primary.btn-big.btn-block(href='/nonprofits/') I've selected all that apply and am ready to move on

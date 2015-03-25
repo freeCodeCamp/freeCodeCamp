@@ -98,7 +98,7 @@ app.use(session({
     secret: secrets.sessionSecret,
     store: new MongoStore({
         url: secrets.db,
-        'auto_reconnect': true
+        'autoReconnect': true
     })
 }));
 app.use(passport.initialize());
@@ -267,6 +267,16 @@ app.post('/email-signin', userController.postSignin);
 app.get('/nonprofits', contactController.getNonprofitsForm);
 app.post('/nonprofits', contactController.postNonprofitsForm);
 app.get('/nonprofits/home', nonprofitController.nonprofitsHome);
+app.get('/nonprofits/are-you-with-a-registered-nonprofit', nonprofitController.areYouWithARegisteredNonprofit);
+app.get('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYou);
+app.get('/nonprofits/are-there-people-already-benefiting-from-your-services', nonprofitController.areTherePeopleAlreadyBenefitingFromYourServices);
+app.get('/nonprofits/in-exchange-we-ask', nonprofitController.inExchangeWeAsk);
+app.get('/nonprofits/ok-with-javascript', nonprofitController.okWithJavaScript);
+app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
+app.get('/nonprofits/what-does-your-nonprofit-do', nonprofitController.whatDoesYourNonprofitDo);
+app.get('/nonprofits/link-us-to-your-website', nonprofitController.linkUsToYourWebsite);
+app.get('/nonprofits/tell-us-your-name-and-email', nonprofitController.tellUsYourNameAndEmail);
+app.get('/nonprofits/your-nonprofit-project-application-has-been-submitted', nonprofitController.yourNonprofitProjectApplicationHasBeenSubmitted);
 
 app.get(
   '/done-with-first-100-hours',
