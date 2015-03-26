@@ -35,7 +35,7 @@ exports.index = function(req, res) {
     });
 };
 
-exports.returnNextBonfire = function(req, res) {
+exports.returnNextBonfire = function(req, res, next) {
     if (!req.user) {
         return res.redirect('../bonfires/meet-bonfire');
     }
@@ -48,24 +48,24 @@ exports.returnNextBonfire = function(req, res) {
             return elem;
         }
     });
-    req.user.save();
-
-    var uncompletedBonfires = req.user.uncompletedBonfires;
-
-    var displayedBonfires =  Bonfire.find({'_id': uncompletedBonfires[0]});
-    displayedBonfires.exec(function(err, bonfire) {
-        if (err) {
-            next(err);
-        }
-        bonfire = bonfire.pop();
-        if (bonfire === undefined) {
-            req.flash('errors', {
-                msg: "It looks like you've completed all the bonfires we have available. Good job!"
-            });
-            return res.redirect('../bonfires/meet-bonfire');
-        }
-        nameString = bonfire.name.toLowerCase().replace(/\s/g, '-');
-        return res.redirect('../bonfires/' + nameString);
+    req.user.save(function(err) {
+        if (err) return next(err);
+        var uncompletedBonfires = req.user.uncompletedBonfires;
+        var displayedBonfires =  Bonfire.find({'_id': uncompletedBonfires[0]});
+        displayedBonfires.exec(function(err, bonfire) {
+            if (err) {
+                return next(err);
+            }
+            bonfire = bonfire.pop();
+            if (bonfire === undefined) {
+                req.flash('errors', {
+                    msg: "It looks like you've completed all the bonfires we have available. Good job!"
+                });
+                return res.redirect('../bonfires/meet-bonfire');
+            }
+            nameString = bonfire.name.toLowerCase().replace(/\s/g, '-');
+            return res.redirect('../bonfires/' + nameString);
+        });
     });
 };
 
@@ -76,7 +76,7 @@ exports.returnIndividualBonfire = function(req, res, next) {
 
     Bonfire.find({"name" : new RegExp(bonfireName, 'i')}, function(err, bonfire) {
         if (err) {
-            next(err);
+            return next(err);
         }
 
 
@@ -215,7 +215,7 @@ exports.generateChallenge = function(req, res) {
     res.send(response);
 };
 
-exports.completedBonfire = function (req, res) {
+exports.completedBonfire = function (req, res, next) {
     var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
     var isCompletedDate = Math.round(+new Date() / 1000);
     var bonfireHash = req.body.bonfireInfo.bonfireHash;
@@ -225,7 +225,7 @@ exports.completedBonfire = function (req, res) {
         var paired = User.find({"profile.username": isCompletedWith.toLowerCase()}).limit(1);
         paired.exec(function (err, pairedWith) {
             if (err) {
-                return err;
+                return next(err);
             } else {
                 var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
@@ -256,9 +256,12 @@ exports.completedBonfire = function (req, res) {
                 })
 
                 req.user.save(function (err, user) {
+                    if (err) {
+                        return next(err);
+                    }
                     pairedWith.save(function (err, paired) {
                         if (err) {
-                            throw err;
+                            return next(err);
                         }
                         if (user && paired) {
                             res.send(true);
@@ -284,7 +287,7 @@ exports.completedBonfire = function (req, res) {
 
         req.user.save(function (err, user) {
             if (err) {
-                throw err;
+                return next(err);
             }
             if (user) {
                 debug('Saving user');
