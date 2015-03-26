@@ -2,7 +2,7 @@ var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:bonfires'),
     Bonfire = require('./../models/Bonfire'),
     User = require('./../models/User'),
-    resources = require('./resources')
+    resources = require('./resources'),
     MDNlinks = require('./../seed_data/bonfireMDNlinks');
 
 /**
