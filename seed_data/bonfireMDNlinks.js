@@ -13,10 +13,12 @@ var links =
 	"Global Object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
 	"Global String Object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
 	"Boolean Objects" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+	"RegExp" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+	"Arguments object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments",
 
 	// =========  PROPERTIES/MISC
 	"String.length" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length",
-	"Arguments object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments",
+	
 
 	// ========== OBJECT METHODS
 	"Object.getOwnPropertyNames()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames",
@@ -29,6 +31,7 @@ var links =
 	"String.charCodeAt()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt",
 	"String.concat()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat",
 	"String.indexOf()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf",
+	"String.fromCharCode()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode",
 	"String.lastIndexOf()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf",
 	"String.match()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match",
 	"String.replace()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace",
@@ -45,6 +48,7 @@ var links =
 	"Array.filter()": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter",
 	"Array.forEach()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach",
 	"Array.indexOf()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf",
+	"Array.isArray()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray",
 	"Array.join()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join",
 	"Array.lastIndexOf()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf",
 	"Array.map()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map",
@@ -52,11 +56,17 @@ var links =
 	"Array.push()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push",
 	"Array.reduce()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce",
 	"Array.reverse()": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse",
+	"Array.shift()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift",
 	"Array.slice()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice",
 	"Array.some()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some",
 	"Array.sort()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort",
 	"Array.splice()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice",
 	"Array.toString()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString",
+
+	// ======== MATH METHODS
+	"Math.max()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max",
+	"Math.min()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min",
+	"Remainder" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_(.25)",
 	
 	// ======== GENERAL JAVASCRIPT REFERENCES
 	"Arithmetic Operators" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators",
