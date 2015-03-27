@@ -4,39 +4,31 @@ block content
         h1.hug-top Nonprofit Sign Up
         include ../partials/nonprofit-application-progress-bar
         h2 How can Free Code Camp help you?
-            .spacer
-            .row.text-center.negative-35
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-android-globe
-                    label.black-text.nonprofit-help-select-text-height Websites
-                    input#websites-help.checkbox(type='checkbox')
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-card
-                    h2.black-text.nonprofit-help-select-text-height Donation Systems
-                    input#websites-help.checkbox(type='checkbox')
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-android-calendar
-                    h2.black-text.nonprofit-help-select-text-height Volunteer Systems
-                    input#websites-help.inline.checkbox(type='checkbox')
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-ios-box
-                    h2.black-text.nonprofit-help-select-text-height Inventory Systems
-                    input#websites-help.inline.checkbox(type='checkbox')
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-university
-                    h2.black-text.nonprofit-help-select-text-height E-learning Platforms
-                    input#websites-help.inline.checkbox(type='checkbox')
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-ios-list
-                    h2.black-text.nonprofit-help-select-text-height Web Forms
-                    input#websites-help.inline.checkbox(type='checkbox')
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-ios-people
-                    h2.black-text.nonprofit-help-select-text-height Community Tools
-                    input#websites-help.inline.checkbox(type='checkbox')
-                .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-settings
-                    h2.black-text.nonprofit-help-select-text-height ...and other tools
-                    input#websites-help.inline.checkbox(type='checkbox')
-        .spacer
-        a.btn.btn-primary.btn-big.btn-block(href='/nonprofits/are-there-people-that-are-already-benefiting-from-your-services') I've selected all that apply and am ready to move on
+        form.text-left.form-inline(role='form', method='POST', action="/nonprofits/how-can-free-code-camp-help-you/")
+            input(type='hidden', name='_csrf', value=_csrf)
+            h3.col-xs-12.col-sm-offset-5.checkbox-table
+                .col-xs-12
+                    input.checkbox(type='checkbox', name='websites')
+                    label.ion-android-globe &nbsp; Websites
+                .col-xs-12
+                    input.checkbox(type='checkbox', name='donation-systems')
+                    label.ion-card &nbsp; Donation Systems
+                .col-xs-12
+                    input.checkbox(type='checkbox', name='volunteer-systems')
+                    label.ion-android-calendar &nbsp; Volunteer Systems
+                .col-xs-12
+                    input.checkbox(type='checkbox', name='inventory-systems')
+                    label.ion-ios-box &nbsp; Inventory Systems
+                .col-xs-12
+                    input.checkbox(type='checkbox', name='e-learning-platforms')
+                    label.ion-university &nbsp; E-learning Platforms
+                .col-xs-12
+                    input.checkbox(type='checkbox', name='web-forms')
+                    label.ion-ios-list &nbsp; Web Forms
+                .col-xs-12
+                    input.checkbox(type='checkbox', name='community-tools')
+                    label.ion-ios-people &nbsp; Community Tools
+                .col-xs-12
+                    input.checkbox(type='checkbox', name='other-tools')
+                    label.ion-settings &nbsp; Other tools
+            button.btn.btn-primary.btn-big.btn-block(type='submit') I've selected all that apply and am ready to move on

@@ -277,16 +277,17 @@ app.get('/nonprofits', contactController.getNonprofitsForm);
 app.post('/nonprofits', contactController.postNonprofitsForm);
 app.get('/nonprofits/home', nonprofitController.nonprofitsHome);
 app.get('/nonprofits/are-you-with-a-registered-nonprofit', nonprofitController.areYouWithARegisteredNonprofit);
-app.get('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYou);
 app.get('/nonprofits/are-there-people-that-are-already-benefiting-from-your-services', nonprofitController.areTherePeopleThatAreAlreadyBenefitingFromYourServices);
 app.get('/nonprofits/in-exchange-we-ask', nonprofitController.inExchangeWeAsk);
 app.get('/nonprofits/ok-with-javascript', nonprofitController.okWithJavaScript);
-app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
+app.get('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYou);
+app.post('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYouPost);
 app.get('/nonprofits/what-does-your-nonprofit-do', nonprofitController.whatDoesYourNonprofitDo);
 app.get('/nonprofits/link-us-to-your-website', nonprofitController.linkUsToYourWebsite);
 app.get('/nonprofits/tell-us-your-name', nonprofitController.tellUsYourName);
 app.get('/nonprofits/tell-us-your-email', nonprofitController.tellUsYourEmail);
 app.get('/nonprofits/your-nonprofit-project-application-has-been-submitted', nonprofitController.yourNonprofitProjectApplicationHasBeenSubmitted);
+app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
 
 app.get(
   '/done-with-first-100-hours',
