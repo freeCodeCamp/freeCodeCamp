@@ -404,8 +404,6 @@ app.get('/account/api', userController.getAccountAngular);
  */
 
 app.get('/api/github', resourcesController.githubCalls);
-app.get('/api/blogger', resourcesController.bloggerCalls);
-app.get('/api/trello', resourcesController.trelloCalls);
 
 /**
  * Bonfire related routes
