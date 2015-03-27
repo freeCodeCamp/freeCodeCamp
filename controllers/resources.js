@@ -150,34 +150,6 @@ module.exports = {
         });
     },
 
-
-
-    trelloCalls: function(req, res, next) {
-        request('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(err, status, trello) {
-            if (err) { return next(err); }
-            trello = (status && status.statusCode == 200) ? (JSON.parse(trello)).length : "Can't connect to to Trello";
-            res.send({"trello": trello});
-        });
-    },
-    bloggerCalls: function(req, res, next) {
-        request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
-            if (err) { return next(err); }
-            blog = (status && status.statusCode == 200) ? JSON.parse(blog) : '';
-            res.send({
-                blog1Title: blog ? blog["items"][0]["title"] : "Can't connect to Blogger",
-                blog1Link: blog ? blog["items"][0]["url"] : "http://blog.freecodecamp.com",
-                blog2Title: blog ? blog["items"][1]["title"] : "Can't connect to Blogger",
-                blog2Link: blog ? blog["items"][1]["url"] : "http://blog.freecodecamp.com",
-                blog3Title: blog ? blog["items"][2]["title"] : "Can't connect to Blogger",
-                blog3Link: blog ? blog["items"][2]["url"] : "http://blog.freecodecamp.com",
-                blog4Title: blog ? blog["items"][3]["title"] : "Can't connect to Blogger",
-                blog4Link: blog ? blog["items"][3]["url"] : "http://blog.freecodecamp.com",
-                blog5Title: blog ? blog["items"][4]["title"] : "Can't connect to Blogger",
-                blog5Link: blog ? blog["items"][4]["url"] : "http://blog.freecodecamp.com"
-            });
-        });
-    },
-
     about: function(req, res, next) {
         if (req.user) {
             if (!req.user.profile.picture || req.user.profile.picture === "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png") {
