@@ -199,7 +199,7 @@ module.exports = {
         var date1 = new Date('10/15/2014');
         var date2 = new Date();
         var progressTimestamps = req.user.progressTimestamps;
-        var now = Date.now() / 1000 | 0;
+        var now = Date.now() || 0;
         if (req.user.pointsNeedMigration) {
             var challengesHash = req.user.challengesHash;
             for (var key in challengesHash) {
@@ -211,7 +211,8 @@ module.exports = {
             var timeStamps = [];
             R.keys(req.user.challengesHash).forEach(function(key) {
               "use strict";
-              timeStamps.push({timeStamp: challengesHash[key]});
+                var timeStamp = parseInt(challengesHash[key], 10);
+              timeStamps.push({timeStamp: timeStamp.length !== 13 ? (+timeStamp) : (+timeStamp * 1000)});
             });
 
             req.user.completedCoursewares = Array.zip(timeStamps, coursewares,
