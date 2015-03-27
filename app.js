@@ -15,6 +15,7 @@ process.on('uncaughtException', function (err) {
 });
 
 var express = require('express'),
+    accepts = require('accepts'),
     cookieParser = require('cookie-parser'),
     compress = require('compression'),
     session = require('express-session'),
@@ -444,7 +445,7 @@ app.get('/sitemap.xml', resourcesController.sitemap);
  * and updates user.challengesHash & user.challengesCompleted
  *
  */
-app.post('/completed-challenge', function (req, res) {
+app.post('/completed-challenge', function (req, res, done) {
     req.user.challengesHash[parseInt(req.body.challengeNumber)] =
         Math.round(+new Date() / 1000);
     var timestamp = req.user.challengesHash;
@@ -455,7 +456,10 @@ app.post('/completed-challenge', function (req, res) {
         }
     }
     req.user.points = points;
-    req.user.save();
+    req.user.save(function(err) {
+      if (err) { return done(err); }
+      res.status(200).send({ msg: 'progress saved' });
+    });
 });
 
 /**
@@ -519,17 +523,54 @@ app.get(
     }
 );
 
-//put this route last
+app.get('/induce-vomiting', function(req, res, next) {
+  next(new Error('vomiting induced'));
+});
+
+// put this route last
 app.get(
     '/:username',
     userController.returnUser
 );
 
-
 /**
  * 500 Error Handler.
  */
-app.use(errorHandler());
+if (process.env.NODE_ENV === 'development') {
+  app.use(errorHandler({ log: true }));
+} else {
+  // error handling in production
+  app.use(function(err, req, res, next) {
+
+    // respect err.status
+    if (err.status) {
+      res.statusCode = err.status;
+    }
+
+    // default status code to 500
+    if (res.statusCode < 400) {
+      res.statusCode = 500;
+    }
+
+    // parse res type
+    var accept = accepts(req);
+    var type = accept.type('html', 'json', 'text');
+
+    var message = 'opps! Something went wrong. Please try again later';
+    if (type === 'html') {
+      req.flash('errors', { msg: message });
+      return res.redirect('/');
+    // json
+    } else if (type === 'json') {
+      res.setHeader('Content-Type', 'application/json');
+      return res.send({ message: message });
+    // plain text
+    } else {
+      res.setHeader('Content-Type', 'text/plain');
+      return res.send(message);
+    }
+  });
+}
 
 /**
  * Start Express server.
