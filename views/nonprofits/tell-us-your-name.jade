@@ -5,9 +5,9 @@ block content
         include ../partials/nonprofit-application-progress-bar
         h2 Please tell us your name
         .spacer
-        form(role='form', action="/nonprofits/tell-us-your-name-post", method='POST', novalidate='novalidate', name='nonprofitForm')
+        form(role='form', method='POST', novalidate='novalidate', name='nonprofitForm', action="/nonprofits/finish-application/")
             .formgroup
                 .input-group
-                    input.form-control.big-text-field.field-responsive(type='text', maxlength='140', autofocus='')
+                    input.form-control.big-text-field.field-responsive(type='text', name='name', autocomplete='off', maxlength='140', autofocus='')
                     span.input-group-btn
                         button.btn.btn-big.btn-primary.btn-responsive Submit

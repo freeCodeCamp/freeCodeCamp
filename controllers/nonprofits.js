@@ -55,28 +55,12 @@ exports.howCanFreeCodeCampHelpYou = function(req, res) {
     });
 };
 
-exports.howCanFreeCodeCampHelpYouPost = function(req, res) {
-    var queryString = '';
-    if (req.body.websites) { queryString += 'websites&'}
-    if (req.body.websites) { queryString += 'websites&'}
-    if (req.body.websites) { queryString += 'websites&'}
-    if (req.body.websites) { queryString += 'websites&'}
-    if (req.body.websites) { queryString += 'websites&'}
-    if (req.body.websites) { queryString += 'websites&'}
-    if (req.body.websites) { queryString += 'websites&'}
-    if (req.body.websites) { queryString += 'websites&'}
-    res.redirect('/nonprofits/tell-us-your-name?' + encodeURIComponent(queryString));
-};
-
 exports.whatDoesYourNonprofitDo = function(req, res) {
     res.render('nonprofits/what-does-your-nonprofit-do', {
+        existingParams: req.params,
         title: 'What does your nonprofit do?',
         step: 6
     });
-};
-
-exports.whatDoesYourNonprofitDoPost = function(req, res) {
-    res.redirect('nonprofits/link-us-to-your-website?' + req.params);
 };
 
 exports.linkUsToYourWebsite = function(req, res) {
@@ -86,19 +70,11 @@ exports.linkUsToYourWebsite = function(req, res) {
     });
 };
 
-exports.linkUsToYourWebsitePost = function(req, res) {
-    res.redirect('nonprofits/tell-us-your-email?' + req.params);
-};
-
 exports.tellUsYourEmail = function(req, res) {
     res.render('nonprofits/tell-us-your-email', {
         title: 'Tell us your name',
         step: 8
     });
-};
-
-exports.tellUsYourEmailPost = function(req, res) {
-    res.redirect('nonprofits/tell-us-your-name?' + req.params);
 };
 
 exports.tellUsYourName = function(req, res) {
@@ -108,9 +84,9 @@ exports.tellUsYourName = function(req, res) {
     });
 };
 
-exports.tellUsYourNamePost = function(req, res) {
-};
+exports.finishApplication = function(req, res) {
 
+};
 
 exports.yourNonprofitProjectApplicationHasBeenSubmitted = function(req, res) {
     res.render('nonprofits/your-nonprofit-project-application-has-been-submitted', {

@@ -281,7 +281,6 @@ app.get('/nonprofits/are-there-people-that-are-already-benefiting-from-your-serv
 app.get('/nonprofits/in-exchange-we-ask', nonprofitController.inExchangeWeAsk);
 app.get('/nonprofits/ok-with-javascript', nonprofitController.okWithJavaScript);
 app.get('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYou);
-app.post('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYouPost);
 app.get('/nonprofits/what-does-your-nonprofit-do', nonprofitController.whatDoesYourNonprofitDo);
 app.get('/nonprofits/link-us-to-your-website', nonprofitController.linkUsToYourWebsite);
 app.get('/nonprofits/tell-us-your-name', nonprofitController.tellUsYourName);
