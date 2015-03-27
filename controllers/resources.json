@@ -1,8 +1,8 @@
 {
   "announcements": [
+    ["We'll live-stream our Camp-wide Meeting Saturday, March 27 at Noon EST. We'll show some of Free Code Camp's new features, and campers will show what they're building.", "http://twitch.tv/freecodecamp"],
     ["Some of Code School's courses are no longer free. We're switching to NodeSchool.io for our Node.js and Express.js challenges.", "http://freecodecamp.com/nodeschool-challenges"],
-    ["Screen Hero is now free on Windows and Mac! Follow these special instructions to install it.", "http://freecodecamp.com/install-screenhero"],
-    ["Once you finish all the challenges, we welcome you to attend our Nonprofit Project Office Hours every Monday and Thursday Night at 9 pm EST.", "https://gitter.im/FreeCodeCamp/NonprofitProjects"]
+    ["Screen Hero is now free on Windows and Mac! Follow these special instructions to install it.", "http://freecodecamp.com/install-screenhero"]
   ],
   "questions": [{
     "question": "Time Complexity of Accessing Array Index (int a = ARR[5];)",
