@@ -1,7 +1,4 @@
-var bcrypt = require('bcrypt-nodejs');
-var crypto = require('crypto');
 var mongoose = require('mongoose');
-var secrets = require('../config/secrets');
 var Schema = mongoose.Schema;
 
 var PairUserSchema = new mongoose.Schema({
@@ -11,7 +8,8 @@ var PairUserSchema = new mongoose.Schema({
     },
     username: String,
     comment: {type: String, default: "Come pair with me."},
-    tags: {type:[String], default: []},
+    // Tags are a feature we might add later.
+    // tags: {type:[String], default: []},
     timeOnline: {type:Date, default: null},
     userGit: String
     
