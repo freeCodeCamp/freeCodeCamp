@@ -28,33 +28,31 @@ exports.returnNextCourseware = function(req, res, next) {
         }
     });
 
-    // *****CALLBACK
     req.user.save(function(err) {
         if (err) {
             return next(err);
         }
-        else {
-            return;
-        }
+
+        var uncompletedCoursewares = req.user.uncompletedCoursewares;
+
+        var displayedCoursewares =  Courseware.find({'_id': uncompletedCoursewares[0]});
+        displayedCoursewares.exec(function(err, courseware) {
+            if (err) {
+                return next(err);
+            }
+            courseware = courseware.pop();
+            if (courseware === undefined) {
+                req.flash('errors', {
+                    msg: "It looks like you've completed all the courses we have available. Good job!"
+                })
+                return res.redirect('../coursewares/start-our-challenges');
+            }
+            nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
+            return res.redirect('../coursewares/' + nameString);
+        });
     });
 
-    var uncompletedCoursewares = req.user.uncompletedCoursewares;
-
-    var displayedCoursewares =  Courseware.find({'_id': uncompletedCoursewares[0]});
-    displayedCoursewares.exec(function(err, courseware) {
-        if (err) {
-            return next(err);
-        }
-        courseware = courseware.pop();
-        if (courseware === undefined) {
-            req.flash('errors', {
-                msg: "It looks like you've completed all the courses we have available. Good job!"
-            })
-            return res.redirect('../coursewares/start-our-challenges');
-        }
-        nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
-        return res.redirect('../coursewares/' + nameString);
-    });
+    
 };
 
 exports.returnIndividualCourseware = function(req, res, next) {
