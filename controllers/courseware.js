@@ -91,8 +91,6 @@ exports.returnIndividualCourseware = function(req, res, next) {
                     details: courseware.description.slice(1),
                     tests: courseware.tests,
                     challengeSeed: courseware.challengeSeed,
-                    cc: !!req.user,
-                    progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
                     verb: resources.randomVerb(),
                     phrase: resources.randomPhrase(),
                     compliment: resources.randomCompliment(),
@@ -110,13 +108,10 @@ exports.returnIndividualCourseware = function(req, res, next) {
                     details: courseware.description.slice(1),
                     tests: courseware.tests,
                     challengeSeed: courseware.challengeSeed,
-                    cc: !!req.user,
-                    progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
                     verb: resources.randomVerb(),
                     phrase: resources.randomPhrase(),
                     compliment: resources.randomCompliment(),
                     coursewareHash: courseware._id,
-                    environment: resources.whichEnvironment()
 
                 });
             },
@@ -129,13 +124,43 @@ exports.returnIndividualCourseware = function(req, res, next) {
                     details: courseware.description,
                     tests: courseware.tests,
                     video: courseware.challengeSeed[0],
-                    cc: !!req.user,
-                    progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
                     verb: resources.randomVerb(),
                     phrase: resources.randomPhrase(),
                     compliment: resources.randomCompliment(),
                     coursewareHash: courseware._id,
-                    environment: resources.whichEnvironment()
+                    challengeType: 'video'
+                });
+            },
+
+            3: function() {
+                res.render('coursewares/showVideo', {
+                    title: courseware.name,
+                    dashedName: dashedName,
+                    name: courseware.name,
+                    details: courseware.description,
+                    tests: courseware.tests,
+                    video: courseware.challengeSeed[0],
+                    verb: resources.randomVerb(),
+                    phrase: resources.randomPhrase(),
+                    compliment: resources.randomCompliment(),
+                    coursewareHash: courseware._id,
+                    challengeType: 'zipline'
+                });
+            },
+
+            4: function() {
+                res.render('coursewares/showVideo', {
+                    title: courseware.name,
+                    dashedName: dashedName,
+                    name: courseware.name,
+                    details: courseware.description,
+                    tests: courseware.tests,
+                    video: courseware.challengeSeed[0],
+                    verb: resources.randomVerb(),
+                    phrase: resources.randomPhrase(),
+                    compliment: resources.randomCompliment(),
+                    coursewareHash: courseware._id,
+                    challengeType: 'basejump'
                 });
             }
         };
@@ -212,9 +237,9 @@ exports.generateChallenge = function(req, res) {
     res.send(response);
 };
 
-exports.completedCourseware = function (req, res) {
+exports.completedCourseware = function (req, res, next) {
 
-    var isCompletedDate = Math.round(+new Date() / 1000);
+    var isCompletedDate = Math.round(+new Date());
     var coursewareHash = req.body.coursewareInfo.coursewareHash;
 
     debug('this is the coursewarehash we got', coursewareHash);
@@ -226,18 +251,100 @@ exports.completedCourseware = function (req, res) {
     });
 
     var index = req.user.completedCoursewares.indexOf(coursewareHash);
-    debug('this is the index of the found courseware', index);
+
     if (index === -1) {
-        req.user.progressTimestamps.push(Date.now() / 1000 | 0);
+        req.user.progressTimestamps.push(Date.now() || 0);
         req.user.uncompletedCoursewares.splice(index, 1);
     }
 
     req.user.save(function (err, user) {
         if (err) {
-            throw err;
+            return next(err);
         }
         if (user) {
             res.send(true);
         }
     });
+};
+
+exports.completedBasejump = function (req, res, next) {
+    var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
+    var isCompletedDate = Math.round(+new Date());
+    var coursewareHash = req.body.coursewareInfo.coursewareHash;
+    var solutionLink = req.body.coursewareInfo.solutionLink;
+    if(!solutionLink) {
+        // flash error and redirect
+    }
+
+    if (isCompletedWith) {
+        var paired = User.find({"profile.username": isCompletedWith.toLowerCase()}).limit(1);
+        paired.exec(function (err, pairedWith) {
+            if (err) {
+                return err;
+            } else {
+                var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
+                if (index > -1) {
+                    req.user.progressTimestamps.push(Date.now() || 0);
+                    req.user.uncompletedBonfires.splice(index, 1)
+                }
+                pairedWith = pairedWith.pop();
+
+                index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
+                if (index > -1) {
+                    pairedWith.progressTimestamps.push(Date.now() || 0);
+                    pairedWith.uncompletedBonfires.splice(index, 1);
+
+                }
+
+                pairedWith.completedBonfires.push({
+                    _id: bonfireHash,
+                    completedWith: req.user._id,
+                    completedDate: isCompletedDate,
+                    solution: isSolution
+                });
+
+                req.user.completedBonfires.push({
+                    _id: bonfireHash,
+                    completedWith: pairedWith._id,
+                    completedDate: isCompletedDate,
+                    solution: isSolution
+                });
+
+                req.user.save(function (err, user) {
+                    pairedWith.save(function (err, paired) {
+                        if (err) {
+                            throw err;
+                        }
+                        if (user && paired) {
+                            res.send(true);
+                        }
+                    })
+                });
+            }
+        })
+    } else {
+
+        req.user.completedBonfires.push({
+            _id: bonfireHash,
+            completedWith: null,
+            completedDate: isCompletedDate,
+            solution: isSolution
+        });
+
+        var index = req.user.uncompletedCourse.indexOf(bonfireHash);
+        if (index > -1) {
+            req.user.progressTimestamps.push(Date.now() || 0);
+            req.user.uncompletedBonfires.splice(index, 1)
+        }
+
+        req.user.save(function (err, user) {
+            if (err) {
+                throw err;
+            }
+            if (user) {
+                debug('Saving user');
+                res.send(true)
+            }
+        });
+    }
 };
