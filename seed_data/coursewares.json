@@ -761,6 +761,40 @@
     "tests": []
   },
   {
+    "_id" : "bd7158d8c442eddfaeb5bdef",
+    "name": "Zipline Trello API Integration",
+    "difficulty": 0.55,
+    "challengeSeed": "123488494",
+    "description" : [
+      "Go to CodePen <a href='http://codepen.io/FreeCodeCamp/pen/gbEmJr'>http://codepen.io/FreeCodeCamp/pen/gbEmJr</a> and click the \"fork\" button. This will create a \"fork\", or copy of the file, which you can then edit yourself.",
+      "In the JavaScript box, scroll down to the comment that reads \"//Changeable code be made here\". This CodePen is already pulling in the relevant JSON from our API. This JSON is from one of our Trello boards. You can view the actual Trello board here: <a href='https://trello.com/b/BA3xVpz9/nonprofit-projects'>https://trello.com/b/BA3xVpz9/nonprofit-projects</a>.",
+      "You can view the JSON output here: <a href='http://www.freecodecamp.com/api/trello'>http://www.freecodecamp.com/api/trello</a>.",
+      "In addition to each Trello card's description,(which is currently shown), you will also want to show it's name and labels.",
+      "Hint: you will need to write a jQuery loop that which dynamically inserts <code>&#60;li&#62;</code> elements. You will do this using jQuery's each function, described here: <a href='https://api.jquery.com/each/'>https://api.jquery.com/each/</a>.",
+      "Style the output to make it look visually appealing. Give it a custom font, color scheme, and a clear visual separation between data elements.",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your Codepen. If you pair programmed, you should also include the Free Code Camp username of your pair. We will take a look at your code and eventually give you feedback. In the meantime, please move on to your next challenge."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id" : "bd7158d8c443eddfaeb5bdef",
+    "name": "Basejump Hello World in Cloud 9",
+    "difficulty": 0.56,
+    "challengeSeed": "123488494",
+    "description" : [
+      "Go to MEAN.js <a href='http://meanjs.org'>http://meanjs.org</a> and click the 'view on GitHub' button. This will take you to MEAN.js's GitHub repository.",
+      "Copy the link from the SSH clone URL on the lower right.",
+      "Go to Cloud 9 IDE at <a href='http://c9.io'>http://c9.io</a> and log in with GitHub.",
+      "Click the \"Create New Workspace\" button, then the \"Clone from URL\" option. Paste in the link you copied from GitHub'",
+      "Look under \"My projects\" on the right and wait until it's no longer grayed out. Click on it, then click the \"Start Editing\" button.",
+      "Once it has loaded, install all of MEAN.js's packages by clicking into Cloud 9's terminal at the bottom and running <code>npm install</code>.",
+      "Once that command has finished, set up MongoDB and start it by copying and pasting this code into Cloud 9's terminal: <code>mkdir data && echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest \"$@\"' > mongod && chmod a+x mongod && ./mongod</code>. You don't worry if you don't understand what that means. From now on, you'll just need to run this command to start MongoDB: <code>./mongod</code>."
+    ],
+    "challengeType": 4,
+    "tests": []
+  },
+  {
     "_id" : "bd7123c8c441eddfaeb5bdef",
     "name": "Start our Challenges",
     "difficulty": "1.00",

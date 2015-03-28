@@ -196,10 +196,6 @@ exports.postEmailSignup = function(req, res, next) {
   });
 };
 
-/**
- * GET /account
- * Profile page.
- */
 
 exports.getAccount = function(req, res) {
   res.render('account/account', {
