@@ -6,7 +6,6 @@ var _ = require('lodash'),
   User = require('../models/User'),
   secrets = require('../config/secrets'),
   moment = require('moment'),
-  Challenge = require('./../models/Challenge'),
   debug = require('debug')('freecc:cntr:challenges'),
   resources = require('./resources');
 
@@ -18,7 +17,9 @@ var _ = require('lodash'),
  */
 
 exports.getSignin = function(req, res) {
-  if (req.user) return res.redirect('/');
+  if (req.user) {
+    return res.redirect('/');
+  }
   res.render('account/signin', {
     title: 'Free Code Camp Login'
   });
@@ -41,13 +42,17 @@ exports.postSignin = function(req, res, next) {
   }
 
   passport.authenticate('local', function(err, user, info) {
-    if (err) return next(err);
+    if (err) {
+      return next(err);
+    }
     if (!user) {
       req.flash('errors', { msg: info.message });
       return res.redirect('/signin');
     }
     req.logIn(user, function(err) {
-      if (err) return next(err);
+      if (err) {
+        return next(err);
+      }
       req.flash('success', { msg: 'Success! You are logged in.' });
       res.redirect(req.session.returnTo || '/');
     });
@@ -70,7 +75,9 @@ exports.signout = function(req, res) {
  */
 
 exports.getEmailSignin = function(req, res) {
-  if (req.user) return res.redirect('/');
+  if (req.user) {
+    return res.redirect('/');
+  }
   res.render('account/email-signin', {
     title: 'Sign in to your Free Code Camp Account'
   });
@@ -82,7 +89,9 @@ exports.getEmailSignin = function(req, res) {
  */
 
 exports.getEmailSignup = function(req, res) {
-  if (req.user) return res.redirect('/');
+  if (req.user) {
+    return res.redirect('/');
+  }
   res.render('account/email-signup', {
     title: 'Create Your Free Code Camp Account'
   });
@@ -98,7 +107,7 @@ exports.postEmailSignup = function(req, res, next) {
 
     req.assert('email', 'valid email required').isEmail();
     var errors = req.validationErrors();
-    
+
     if (errors) {
         req.flash('errors', errors);
         return res.redirect('/email-signup');
@@ -124,7 +133,7 @@ exports.postEmailSignup = function(req, res, next) {
   var user = new User({
     email: req.body.email.trim(),
     password: req.body.password,
-    profile : {
+    profile: {
       username: req.body.username.trim(),
       picture: 'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png'
     }
@@ -174,7 +183,7 @@ exports.postEmailSignup = function(req, res, next) {
           'Greetings from San Francisco!\n\n',
           'Thank you for joining our community.\n',
           'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
-          "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+          'And if you have a moment, check out our blog: blog.freecodecamp.com.\n',
           'Good luck with the challenges!\n\n',
           '- the Volunteer Camp Counselor Team'
         ].join('')
@@ -191,9 +200,54 @@ exports.postEmailSignup = function(req, res, next) {
  */
 
 exports.getStreak = function(req, res) {
-  var completedStreak = req.user.challengesHash;
 
-}
+  Array.prototype.timeReduce = function(combiner, initialValue) {
+    var counter,
+      accumulatedValue;
+
+    // If the array is empty, do nothing
+    if (this.length === 0) {
+      return this;
+    } else {
+      // If the user didn't pass an initial value, use the first item.
+      if (arguments.length === 1) {
+        counter = 1;
+        accumulatedValue = this[0];
+      }
+      else if (arguments.length >= 2) {
+        counter = 0;
+        accumulatedValue = initialValue;
+      }
+      else {
+        throw "Invalid arguments.";
+      }
+
+      // Loop through the array, feeding the current value and the result of
+      // the previous computation back into the combiner function until
+      // we've exhausted the entire array and are left with only one function.
+      while (counter < this.length) {
+        accumulatedValue = combiner(accumulatedValue, this[counter]);
+        counter++;
+      }
+
+      return [accumulatedValue];
+    }
+  };
+
+  var timeObject = req.user.progressTimestamps.timeReduce(function(accumulatedTime, timeStamp) {
+
+      var copyOfAccumulatedTime = Object.create(accumulatedTime);
+
+      copyOfAccumulatedTime[moment(timeStamp)
+        .format('MMMM Do YYYY')] = timeStamp;
+
+      return copyOfAccumulatedTime;
+    },
+    {});
+
+  debug('TimeObject is', timeObject);
+  return res.send(timeObject);
+};
 
 /**
  * GET /account

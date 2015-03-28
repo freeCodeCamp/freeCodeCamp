@@ -384,6 +384,8 @@ app.post(
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
 
+app.get('/user/streak', userController.getStreak);
+
 /**
  * API routes
  */
