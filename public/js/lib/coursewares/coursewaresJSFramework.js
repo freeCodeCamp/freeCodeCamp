@@ -235,7 +235,7 @@ var runTests = function(err, data) {
 };
 
 function showCompletion() {
-    var time = Math.floor(Date.now() / 1000) - started;
+    var time = Math.floor(Date.now()) - started;
     ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time +', Attempts: ' + attempts);
     $('#complete-courseware-dialog').modal('show');
     $('#complete-courseware-dialog').keydown(function(e) {

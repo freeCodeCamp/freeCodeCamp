@@ -224,26 +224,26 @@ exports.generateChallenge = function(req, res) {
 
 exports.completedBonfire = function (req, res) {
     var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
-    var isCompletedDate = Math.round(+new Date() / 1000);
+    var isCompletedDate = Math.round(+new Date());
     var bonfireHash = req.body.bonfireInfo.bonfireHash;
     var isSolution = req.body.bonfireInfo.solution;
 
     if (isCompletedWith) {
-        var paired = User.find({"profile.username": isCompletedWith.toLowerCase()}).limit(1);
+        var paired = User.find({"profile.username": isCompletedbWith.toLowerCase()}).limit(1);
         paired.exec(function (err, pairedWith) {
             if (err) {
                 return err;
             } else {
                 var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
-                    req.user.progressTimestamps.push(Date.now() / 1000 | 0);
+                    req.user.progressTimestamps.push(Date.now() || 0);
                     req.user.uncompletedBonfires.splice(index, 1)
                 }
                 pairedWith = pairedWith.pop();
 
                 index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
-                    pairedWith.progressTimestamps.push(Date.now() / 1000 | 0);
+                    pairedWith.progressTimestamps.push(Date.now() || 0);
                     pairedWith.uncompletedBonfires.splice(index, 1);
 
                 }
@@ -260,7 +260,7 @@ exports.completedBonfire = function (req, res) {
                     completedWith: pairedWith._id,
                     completedDate: isCompletedDate,
                     solution: isSolution
-                })
+                });
 
                 req.user.save(function (err, user) {
                     pairedWith.save(function (err, paired) {
@@ -285,7 +285,7 @@ exports.completedBonfire = function (req, res) {
 
         var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
         if (index > -1) {
-            req.user.progressTimestamps.push(Date.now() / 1000 | 0);
+            req.user.progressTimestamps.push(Date.now() || 0);
             req.user.uncompletedBonfires.splice(index, 1)
         }
 

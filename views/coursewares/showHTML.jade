@@ -38,7 +38,7 @@ block content
                                         span.ion-arrow-up-b
                                         | Less information
                 br
-            - if (cc)
+            - if (user)
                 a.btn.btn-primary.btn-lg.btn-block#next-courseware-button
                     |  Go to my next challenge
                     br
@@ -60,7 +60,7 @@ block content
                 var challengeName = !{JSON.stringify(name)};
                 var passedCoursewareName = challengeName;
                 var prodOrDev = !{JSON.stringify(environment)};
-                var started = Math.floor(Date.now() / 1000);
+                var started = Math.floor(Date.now());
         .col-xs-12.col-sm-12.col-md-5.col-lg-6
             #mainEditorPanel
                 form.code

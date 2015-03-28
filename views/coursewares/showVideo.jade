@@ -12,7 +12,7 @@ block content
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
-            - if (cc)
+            - if (user)
                 a.btn.btn-primary.btn-lg.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
@@ -26,7 +26,7 @@ block content
                 var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
                 var challengeName = !{JSON.stringify(name)};
                 var passedCoursewareName = challengeName;
-                var started = Math.floor(Date.now() / 1000);
+                var started = Math.floor(Date.now());
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
@@ -36,9 +36,9 @@ block content
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
-                        - if (cc)
+                        - if (user)
                             a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge (ctrl + enter)
-                            - if (points && points > 2)
+                            - if (user.progressTimestamps.length > 2)
                                 a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
                                     i.fa.fa-twitter &thinsp;
                                     = phrase

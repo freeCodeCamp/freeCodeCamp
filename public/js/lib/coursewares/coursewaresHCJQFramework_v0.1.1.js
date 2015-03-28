@@ -138,7 +138,7 @@ function doLinting () {
 
 //$('#testSuite').empty();
 function showCompletion() {
-    var time = Math.floor(Date.now() / 1000) - started;
+    var time = Math.floor(Date.now()) - started;
     ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time);
     $('#next-courseware-button').removeAttr('disabled');
     $('#next-courseware-button').addClass('animated tada');

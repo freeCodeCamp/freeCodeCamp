@@ -250,7 +250,7 @@ var runTests = function(err, data) {
 };
 
 function showCompletion() {
-    var time = Math.floor(Date.now() / 1000) - started;
+    var time = Math.floor(Date.now()) - started;
     ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time +', Attempts: ' + attempts);
     $('#complete-bonfire-dialog').modal('show');
     $('#complete-bonfire-dialog').keydown(function(e) {
