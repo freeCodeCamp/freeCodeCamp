@@ -29,7 +29,14 @@ exports.returnNextCourseware = function(req, res, next) {
     });
 
     // *****CALLBACK
-    req.user.save();
+    req.user.save(function(err) {
+        if (err) {
+            return next(err);
+        }
+        else {
+            return;
+        }
+    });
 
     var uncompletedCoursewares = req.user.uncompletedCoursewares;
 
