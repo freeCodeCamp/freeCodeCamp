@@ -267,7 +267,7 @@ exports.completedCourseware = function (req, res, next) {
     });
 };
 
-exports.completedZiplineOrBasejump = function (req, res, next) {
+exports.completedBasejump = function (req, res, next) {
     var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
     var isCompletedDate = Math.round(+new Date());
     var coursewareHash = req.body.coursewareInfo.coursewareHash;
