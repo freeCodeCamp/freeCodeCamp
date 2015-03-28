@@ -1,0 +1,33 @@
+extends ../layout
+block content
+    .jumbotron.text-center
+        h1.hug-top Nonprofit Sign Up
+        include ../partials/nonprofit-application-progress-bar
+        h2 How can Free Code Camp help you?
+        .text-left.form-inline
+            h3.col-xs-12.col-sm-offset-5.checkbox-table
+                .col-xs-12
+                    input.checkbox(type='checkbox', id='websites')
+                    label.ion-android-globe &nbsp; Websites
+                .col-xs-12
+                    input.checkbox(type='checkbox', id='donationSystems')
+                    label.ion-card &nbsp; Donation Systems
+                .col-xs-12
+                    input.checkbox(type='checkbox', id='volunteerSystems')
+                    label.ion-android-calendar &nbsp; Volunteer Systems
+                .col-xs-12
+                    input.checkbox(type='checkbox', id='inventorySystems')
+                    label.ion-ios-box &nbsp; Inventory Systems
+                .col-xs-12
+                    input.checkbox(type='checkbox', id='eLearningPlatforms')
+                    label.ion-university &nbsp; E-learning Platforms
+                .col-xs-12
+                    input.checkbox(type='checkbox', id='webForms')
+                    label.ion-ios-list &nbsp; Web Forms
+                .col-xs-12
+                    input.checkbox(type='checkbox', id='communityTools')
+                    label.ion-ios-people &nbsp; Community Tools
+                .col-xs-12
+                    input.checkbox(type='checkbox', id='otherTools')
+                    label.ion-settings &nbsp; Other tools
+            button#next-step.btn.btn-primary.btn-big.btn-block(type='submit') I've selected all that apply and am ready to move on
