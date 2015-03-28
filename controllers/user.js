@@ -231,7 +231,7 @@ exports.getStreak = function(req, res, next) {
       return next(err);
     }
   });
-s
+
   var payload = {
     longest: req.user.longestStreak,
     timeObject: timeObject
