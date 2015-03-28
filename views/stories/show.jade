@@ -56,7 +56,10 @@
             $('#image-display').removeClass('hidden-element')
         }
         $('#reply-to-main-post').on('click', function() {
-            if (!user) return;
+            if (typeof user == "undefined" || !user) {
+                window.location.href = '/signin';
+                return;
+            }
             $('#initial-comment-submit').removeClass('hidden-element');
             $(this).unbind('click');
             $('.comment-to-comment-formgroup').empty();
