@@ -253,11 +253,12 @@ exports.completedCourseware = function (req, res, next) {
     var index = req.user.completedCoursewares.indexOf(coursewareHash);
 
     if (index === -1) {
+
         req.user.progressTimestamps.push(Date.now() || 0);
         req.user.uncompletedCoursewares.splice(index, 1);
     }
 
-    req.user.save(function (err, user) {
+    req.user.save(function (err, user, next) {
         if (err) {
             return next(err);
         }

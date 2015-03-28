@@ -236,6 +236,7 @@ exports.completedBonfire = function (req, res) {
             } else {
                 var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
+
                     req.user.progressTimestamps.push(Date.now() || 0);
                     req.user.uncompletedBonfires.splice(index, 1)
                 }
@@ -243,6 +244,7 @@ exports.completedBonfire = function (req, res) {
 
                 index = pairedWith.uncompletedBonfires.indexOf(bonfireHash);
                 if (index > -1) {
+
                     pairedWith.progressTimestamps.push(Date.now() || 0);
                     pairedWith.uncompletedBonfires.splice(index, 1);
 
@@ -285,6 +287,7 @@ exports.completedBonfire = function (req, res) {
 
         var index = req.user.uncompletedBonfires.indexOf(bonfireHash);
         if (index > -1) {
+
             req.user.progressTimestamps.push(Date.now() || 0);
             req.user.uncompletedBonfires.splice(index, 1)
         }

@@ -172,6 +172,7 @@ module.exports = {
         var date2 = new Date();
         var progressTimestamps = req.user.progressTimestamps;
         var now = Date.now() || 0;
+
         if (req.user.pointsNeedMigration) {
             var challengesHash = req.user.challengesHash;
             for (var key in challengesHash) {
