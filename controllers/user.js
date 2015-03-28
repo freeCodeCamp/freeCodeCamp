@@ -7,7 +7,8 @@ var _ = require('lodash'),
   secrets = require('../config/secrets'),
   moment = require('moment'),
   debug = require('debug')('freecc:cntr:challenges'),
-  resources = require('./resources');
+  resources = require('./resources'),
+  R = require('ramda');
 
 
 
@@ -199,54 +200,44 @@ exports.postEmailSignup = function(req, res, next) {
  * For Calendar display
  */
 
-exports.getStreak = function(req, res) {
+exports.getStreak = function(req, res, next) {
 
-  Array.prototype.timeReduce = function(combiner, initialValue) {
-    var counter,
-      accumulatedValue;
+  req.user.progressTimestamps = req.user.progressTimestamps.sort(function(a, b) {
+    return a - b;
+  });
 
-    // If the array is empty, do nothing
-    if (this.length === 0) {
-      return this;
-    } else {
-      // If the user didn't pass an initial value, use the first item.
-      if (arguments.length === 1) {
-        counter = 1;
-        accumulatedValue = this[0];
-      }
-      else if (arguments.length >= 2) {
-        counter = 0;
-        accumulatedValue = initialValue;
-      }
-      else {
-        throw "Invalid arguments.";
-      }
+  var timeObject = Object.create(null);
+  R.forEach(function(time) {
+    timeObject[moment(time).format('YYYY-MM-DD')] = time;
+  }, req.user.progressTimestamps);
 
-      // Loop through the array, feeding the current value and the result of
-      // the previous computation back into the combiner function until
-      // we've exhausted the entire array and are left with only one function.
-      while (counter < this.length) {
-        accumulatedValue = combiner(accumulatedValue, this[counter]);
-        counter++;
+  var tmpLongest = 1;
+  var timeKeys = R.keys(timeObject);
+  for (var i = 1; i <= timeKeys.length; i++) {
+    if (moment(timeKeys[i - 1]).add(1, 'd').toString()
+      === moment(timeKeys[i]).toString()) {
+      tmpLongest++;
+      if (tmpLongest >  req.user.currentStreak) {
+         req.user.currentStreak = tmpLongest;
       }
-
-      return [accumulatedValue];
+      if ( req.user.currentStreak > req.user.longestStreak) {
+        req.user.longestStreak = req.user.currentStreak;
+      }
     }
+  }
+
+  req.user.save(function(err) {
+    if (err) {
+      return next(err);
+    }
+  });
+s
+  var payload = {
+    longest: req.user.longestStreak,
+    timeObject: timeObject
   };
 
-  var timeObject = req.user.progressTimestamps.timeReduce(function(accumulatedTime, timeStamp) {
-
-      var copyOfAccumulatedTime = Object.create(accumulatedTime);
-
-      copyOfAccumulatedTime[moment(timeStamp)
-        .format('MMMM Do YYYY')] = timeStamp;
-
-      return copyOfAccumulatedTime;
-    },
-    {});
-
-  debug('TimeObject is', timeObject);
-  return res.send(timeObject);
+  return res.send(payload);
 };
 
 /**
@@ -326,7 +317,7 @@ exports.returnUser = function(req, res, next) {
       var data = {};
       var progressTimestamps = user.progressTimestamps;
       for (var i = 0; i < progressTimestamps.length; i++) {
-        data[progressTimestamps[i].toString()] = 1;
+        data[(progressTimestamps[i] / 1000).toString()] = 1;
       }
 
       res.render('account/show', {
