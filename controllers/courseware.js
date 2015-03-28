@@ -259,14 +259,18 @@ exports.completedCourseware = function (req, res, next) {
     req.user.uncompletedCoursewares.splice(index, 1);
   }
 
-  req.user.save(function (err, user, next) {
-    if (err) {
-      return next(err);
+exports.completedBasejump = function (req, res, next) {
+    var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
+    var isCompletedDate = Math.round(+new Date());
+    var coursewareHash = req.body.coursewareInfo.coursewareHash;
+    var solutionLink = req.body.coursewareInfo.solutionLink;
+    if(!solutionLink) {
+        // flash error and redirect
     }
     if (user) {
       res.send(true);
     }
-  });
+  };
 };
 
 exports.completedZiplineOrBasejump = function (req, res, next) {
