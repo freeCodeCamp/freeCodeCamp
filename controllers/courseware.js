@@ -138,34 +138,17 @@ exports.returnIndividualCourseware = function(req, res, next) {
       },
 
       3: function() {
-        res.render('coursewares/showZipline', {
+        res.render('coursewares/showZiplineOrBasejump', {
           title: courseware.name,
           dashedName: dashedName,
           name: courseware.name,
           details: courseware.description,
-          tests: courseware.tests,
           video: courseware.challengeSeed[0],
           verb: resources.randomVerb(),
           phrase: resources.randomPhrase(),
           compliment: resources.randomCompliment(),
           coursewareHash: courseware._id,
-          challengeType: 'zipline'
-        });
-      },
-
-      4: function() {
-        res.render('coursewares/showBasejump', {
-          title: courseware.name,
-          dashedName: dashedName,
-          name: courseware.name,
-          details: courseware.description,
-          tests: courseware.tests,
-          video: courseware.challengeSeed[0],
-          verb: resources.randomVerb(),
-          phrase: resources.randomPhrase(),
-          compliment: resources.randomCompliment(),
-          coursewareHash: courseware._id,
-          challengeType: 'basejump'
+          challengeType: courseware.challengeType
         });
       }
     };

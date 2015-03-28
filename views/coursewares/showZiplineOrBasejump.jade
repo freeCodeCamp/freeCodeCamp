@@ -1,0 +1,73 @@
+extends ../layout-wide
+block content
+    .row
+        .col-xs-12.col-sm-12.col-md-4.bonfire-top
+            h1.text-center= name
+            .well
+                h4
+                    ol
+                        for step in details
+                            li!= step
+        .col-xs-12.col-sm-12.col-md-8
+            .embed-responsive.embed-responsive-16by9
+                iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
+            br
+            - if (user)
+                a.btn.btn-primary.btn-lg.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
+                script.
+                    var userLoggedIn = true;
+            - else
+                a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                    script.
+                        var userLoggedIn = false;
+                br
+            script(type="text/javascript").
+                var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
+                var challengeName = !{JSON.stringify(name)};
+                var passedCoursewareName = challengeName;
+                var started = Math.floor(Date.now());
+    #complete-zipline-or-basejump-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.zoomIn.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header= compliment
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body(ng-controller="pairedWithController")
+                    .text-center
+                        .animated.zoomInDown.delay-half
+                            span.completion-icon.ion-checkmark-circled.text-primary
+                    - if (user)
+                        form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                            .form-group.text-center
+                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
+
+                                // extra field to distract password tools like lastpass from injecting css into our username field
+                                input.form-control(ng-show="false")
+                                if (challengeType === 'zipline')
+                                    input.form-control#public-url(name="codepenUrl", placeholder="http://codepen.io/your-pen-here", autofocus)
+                                else
+                                    input.form-control#public-url(name="depoloymentUrl", placeholder="http://yourapp.com", autofocus)
+                                    input.form-control#github-url(name="githubUrl", placeholder="http://github.com/camper/project")
+
+                                input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser")
+                            .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
+                                alert(type='danger')
+                                    span.ion-close-circled
+                                    | Username not found
+
+                    a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next bonfire (ctrl + enter)
+
+
+                    - if (user.progressTimestamps.length > 2)
+                        a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
+                            i.fa.fa-twitter &thinsp;
+                                = phrase
+                    - else
+                        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+        script.
+            var challengeName = !{JSON.stringify(name)};
+            var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
+            $('body').on('keypress', function(e) {
+                if (e.ctrlKey && e.keyCode == 13) {
+                    $('#complete-courseware-dialog').modal('show');
+                }
+            });
