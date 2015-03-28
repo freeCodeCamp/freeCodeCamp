@@ -197,50 +197,6 @@ exports.postEmailSignup = function(req, res, next) {
 };
 
 /**
- * For Calendar display
- */
-
-exports.getStreak = function(req, res, next) {
-
-  req.user.progressTimestamps = req.user.progressTimestamps.sort(function(a, b) {
-    return a - b;
-  });
-
-  var timeObject = Object.create(null);
-  R.forEach(function(time) {
-    timeObject[moment(time).format('YYYY-MM-DD')] = time;
-  }, req.user.progressTimestamps);
-
-  var tmpLongest = 1;
-  var timeKeys = R.keys(timeObject);
-  for (var i = 1; i <= timeKeys.length; i++) {
-    if (moment(timeKeys[i - 1]).add(1, 'd').toString()
-      === moment(timeKeys[i]).toString()) {
-      tmpLongest++;
-      if (tmpLongest >  req.user.currentStreak) {
-         req.user.currentStreak = tmpLongest;
-      }
-      if ( req.user.currentStreak > req.user.longestStreak) {
-        req.user.longestStreak = req.user.currentStreak;
-      }
-    }
-  }
-
-  req.user.save(function(err) {
-    if (err) {
-      return next(err);
-    }
-  });
-s
-  var payload = {
-    longest: req.user.longestStreak,
-    timeObject: timeObject
-  };
-
-  return res.send(payload);
-};
-
-/**
  * GET /account
  * Profile page.
  */
@@ -314,6 +270,36 @@ exports.returnUser = function(req, res, next) {
     if (user[0]) {
       var user = user[0];
 
+      user.progressTimestamps = user.progressTimestamps.sort(function(a, b) {
+        return a - b;
+      });
+
+      var timeObject = Object.create(null);
+      R.forEach(function(time) {
+        timeObject[moment(time).format('YYYY-MM-DD')] = time;
+      }, user.progressTimestamps);
+
+      var tmpLongest = 1;
+      var timeKeys = R.keys(timeObject);
+      for (var i = 1; i <= timeKeys.length; i++) {
+        if (moment(timeKeys[i - 1]).add(1, 'd').toString()
+          === moment(timeKeys[i]).toString()) {
+          tmpLongest++;
+          if (tmpLongest >  user.currentStreak) {
+            user.currentStreak = tmpLongest;
+          }
+          if ( user.currentStreak > user.longestStreak) {
+            user.longestStreak = user.currentStreak;
+          }
+        }
+      }
+
+      user.save(function(err) {
+        if (err) {
+          return next(err);
+        }
+      });
+
       var data = {};
       var progressTimestamps = user.progressTimestamps;
       for (var i = 0; i < progressTimestamps.length; i++) {
@@ -344,7 +330,9 @@ exports.returnUser = function(req, res, next) {
         website3Image: user.portfolio.website3Image,
         ch: user.challengesHash,
         calender: data,
-        moment: moment
+        moment: moment,
+        longestStreak: user.longestStreak,
+        currentStreak: user.currentStreak
       });
 
     } else {

@@ -48,6 +48,7 @@
     "moment": "^2.8.4",
     "mongodb": "^1.4.33",
     "mongoose": "^4.0.0",
+    "mongoose-long": "0.0.2",
     "morgan": "^1.5.0",
     "newrelic": "^1.13.3",
     "nodemailer": "^1.3.0",

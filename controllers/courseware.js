@@ -1,10 +1,10 @@
 var _ = require('lodash'),
-  debug = require('debug')('freecc:cntr:courseware'),
-  Courseware = require('./../models/Courseware'),
-  User = require('./../models/User'),
-  resources = require('./resources'),
-  R = require('ramda'),
-  moment = require('moment');
+    debug = require('debug')('freecc:cntr:courseware'),
+    Courseware = require('./../models/Courseware'),
+    User = require('./../models/User'),
+    resources = require('./resources'),
+    R = require('ramda'),
+    moment = require('moment');
 
 /**
  * Courseware controller
@@ -22,7 +22,7 @@ exports.showAllCoursewares = function(req, res) {
   res.send(data);
 };
 
-exports.returnNextCourseware = function(req, res) {
+exports.returnNextCourseware = function(req, res, next) {
   if (!req.user) {
     return res.redirect('../challenges/learn-how-free-code-camp-works');
   }
@@ -30,7 +30,8 @@ exports.returnNextCourseware = function(req, res) {
     return elem._id;
   });
 
-  req.user.uncompletedCoursewares = resources.allCoursewareIds().filter(function (elem) {
+  req.user.uncompletedCoursewares = resources.allCoursewareIds()
+    .filter(function (elem) {
     if (completed.indexOf(elem) === -1) {
       return elem;
     }
@@ -40,16 +41,17 @@ exports.returnNextCourseware = function(req, res) {
   var uncompletedCoursewares = req.user.uncompletedCoursewares.shift();
 
 
-  var displayedCoursewares =  Courseware.find({'_id': uncompletedCoursewares});
+  var displayedCoursewares = Courseware.find({'_id': uncompletedCoursewares});
   displayedCoursewares.exec(function(err, courseware) {
     if (err) {
-      next(err);
+      return next(err);
     }
 
     courseware = courseware.pop();
     if (courseware === undefined) {
       req.flash('errors', {
-        msg: "It looks like you've completed all the courses we have available. Good job!"
+        msg: "It looks like you've completed all the courses we have " +
+        "available. Good job!"
       });
       return res.redirect('../challenges/learn-how-free-code-camp-works');
     }
@@ -61,16 +63,18 @@ exports.returnNextCourseware = function(req, res) {
 exports.returnIndividualCourseware = function(req, res, next) {
   var dashedName = req.params.coursewareName;
 
-  coursewareName = dashedName.replace(/\-/g, ' ');
+  var coursewareName = dashedName.replace(/\-/g, ' ');
 
-  Courseware.find({"name" : new RegExp(coursewareName, 'i')}, function(err, courseware) {
+  Courseware.find({'name': new RegExp(coursewareName, 'i')},
+    function(err, courseware) {
     if (err) {
       next(err);
     }
     // Handle not found
     if (courseware.length < 1) {
       req.flash('errors', {
-        msg: "404: We couldn't find a challenge with that name. Please double check the name."
+        msg: "404: We couldn't find a challenge with that name. " +
+        "Please double check the name."
       });
       return res.redirect('/challenges');
     }
@@ -83,7 +87,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
     }
 
     var challengeType = {
-      0 : function() {
+      0: function() {
         res.render('coursewares/showHTML', {
           title: courseware.name,
           dashedName: dashedName,
@@ -100,7 +104,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
         });
       },
 
-      1 : function() {
+      1: function() {
         res.render('coursewares/showJS', {
           title: courseware.name,
           dashedName: dashedName,
@@ -134,7 +138,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
       },
 
       3: function() {
-        res.render('coursewares/showVideo', {
+        res.render('coursewares/showZipline', {
           title: courseware.name,
           dashedName: dashedName,
           name: courseware.name,
@@ -150,7 +154,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
       },
 
       4: function() {
-        res.render('coursewares/showVideo', {
+        res.render('coursewares/showBasejump', {
           title: courseware.name,
           dashedName: dashedName,
           name: courseware.name,
@@ -173,11 +177,11 @@ exports.returnIndividualCourseware = function(req, res, next) {
 
 exports.testCourseware = function(req, res) {
   var coursewareName = req.body.name,
-    coursewareTests = req.body.tests,
-    coursewareDifficulty = req.body.difficulty,
-    coursewareDescription = req.body.description,
-    coursewareEntryPoint = req.body.challengeEntryPoint,
-    coursewareChallengeSeed = req.body.challengeSeed;
+  coursewareTests = req.body.tests,
+  coursewareDifficulty = req.body.difficulty,
+  coursewareDescription = req.body.description,
+  coursewareEntryPoint = req.body.challengeEntryPoint,
+  coursewareChallengeSeed = req.body.challengeSeed;
   coursewareTests = coursewareTests.split('\r\n');
   coursewareDescription = coursewareDescription.split('\r\n');
   coursewareTests.filter(getRidOfEmpties);
@@ -190,8 +194,8 @@ exports.testCourseware = function(req, res) {
     difficulty: +coursewareDifficulty,
     brief: coursewareDescription[0],
     details: coursewareDescription.slice(1),
-    tests:  coursewareTests,
-    challengeSeed:  coursewareChallengeSeed,
+    tests: coursewareTests,
+    challengeSeed: coursewareChallengeSeed,
     challengeEntryPoint: coursewareEntryPoint,
     cc: req.user ? req.user.coursewaresHash : undefined,
     progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
@@ -199,7 +203,7 @@ exports.testCourseware = function(req, res) {
     phrase: resources.randomPhrase(),
     compliment: resources.randomCompliment(),
     coursewares: [],
-    coursewareHash: "test"
+    coursewareHash: 'test'
   });
 };
 
@@ -207,7 +211,7 @@ function getRidOfEmpties(elem) {
   if (elem.length > 0) {
     return elem;
   }
-};
+}
 
 exports.publicGenerator = function(req, res) {
   res.render('courseware/public-generator');
@@ -215,11 +219,11 @@ exports.publicGenerator = function(req, res) {
 
 exports.generateChallenge = function(req, res) {
   var coursewareName = req.body.name,
-    coursewareTests = req.body.tests,
-    coursewareDifficulty = req.body.difficulty,
-    coursewareDescription = req.body.description,
-    coursewareEntryPoint = req.body.challengeEntryPoint,
-    coursewareChallengeSeed = req.body.challengeSeed;
+  coursewareTests = req.body.tests,
+  coursewareDifficulty = req.body.difficulty,
+  coursewareDescription = req.body.description,
+  coursewareEntryPoint = req.body.challengeEntryPoint,
+  coursewareChallengeSeed = req.body.challengeSeed;
   coursewareTests = coursewareTests.split('\r\n');
   coursewareDescription = coursewareDescription.split('\r\n');
   coursewareTests.filter(getRidOfEmpties);
@@ -243,34 +247,26 @@ exports.completedCourseware = function (req, res, next) {
   var isCompletedDate = Math.round(+new Date());
   var coursewareHash = req.body.coursewareInfo.coursewareHash;
 
-  debug('this is the coursewarehash we got', coursewareHash);
-
   req.user.completedCoursewares.push({
     _id: coursewareHash,
     completedDate: isCompletedDate,
     name: req.body.coursewareInfo.coursewareName
   });
-
   var index = req.user.completedCoursewares.indexOf(coursewareHash);
 
   if (index === -1) {
-
     req.user.progressTimestamps.push(Date.now() || 0);
     req.user.uncompletedCoursewares.splice(index, 1);
   }
 
-exports.completedBasejump = function (req, res, next) {
-    var isCompletedWith = req.body.bonfireInfo.completedWith || undefined;
-    var isCompletedDate = Math.round(+new Date());
-    var coursewareHash = req.body.coursewareInfo.coursewareHash;
-    var solutionLink = req.body.coursewareInfo.solutionLink;
-    if(!solutionLink) {
-        // flash error and redirect
+  req.user.save(function (err, user) {
+    if (err) {
+      return next(err);
     }
     if (user) {
       res.send(true);
     }
-  };
+  });
 };
 
 exports.completedZiplineOrBasejump = function (req, res, next) {

@@ -39,8 +39,6 @@ var express = require('express'),
     resourcesController = require('./controllers/resources'),
     userController = require('./controllers/user'),
     contactController = require('./controllers/contact'),
-    ziplineController = require('./controllers/ziplines'),
-    basejumpController = require('./controllers/basejumps'),
     nonprofitController = require('./controllers/nonprofits'),
     bonfireController = require('./controllers/bonfire'),
     coursewareController = require('./controllers/courseware'),
@@ -48,7 +46,7 @@ var express = require('express'),
     /**
      *  Stories
      */
-    storyController = require('./controllers/story');
+    storyController = require('./controllers/story'),
 
     /**
      * API keys and Passport configuration.
@@ -397,8 +395,6 @@ app.post(
 
 app.all('/account', passportConf.isAuthenticated);
 app.get('/account/api', userController.getAccountAngular);
-
-app.get('/user/streak', userController.getStreak);
 
 /**
  * API routes
