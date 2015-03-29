@@ -3,6 +3,7 @@ var _ = require('lodash'),
   Bonfire = require('./../models/Bonfire'),
   User = require('./../models/User'),
   resources = require('./resources'),
+  MDNlinks = require('./../seed_data/bonfireMDNlinks'),
   R = require('ramda');
   MDNlinks = require('./../seed_data/bonfireMDNlinks');
 
@@ -161,18 +162,18 @@ function randomString() {
 
 /**
  * Helper function to populate the MDN links array.
-*/
+ */
 
 function getMDNlinks(links) {
-    // takes in an array of links, which are strings
-    var populatedLinks = [];
+  // takes in an array of links, which are strings
+  var populatedLinks = [];
 
-    // for each key value, push the corresponding link from the MDNlinks object into a new array
-    links.forEach(function(value, index) {
-        populatedLinks.push(MDNlinks[value]);
-    });
+  // for each key value, push the corresponding link from the MDNlinks object into a new array
+  links.forEach(function(value, index) {
+    populatedLinks.push(MDNlinks[value]);
+  });
 
-    return populatedLinks;
+  return populatedLinks;
 
 };
 
@@ -182,15 +183,15 @@ function getMDNlinks(links) {
 
 exports.testBonfire = function(req, res) {
   var bonfireName = req.body.name,
-      bonfireTests = req.body.tests,
-      bonfireDifficulty = req.body.difficulty,
-      bonfireDescription = req.body.description,
-      bonfireChallengeSeed = req.body.challengeSeed;
-      bonfireTests = bonfireTests.split('\r\n');
-      bonfireDescription = bonfireDescription.split('\r\n');
-      bonfireTests.filter(getRidOfEmpties);
-      bonfireDescription.filter(getRidOfEmpties);
-      bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
+    bonfireTests = req.body.tests,
+    bonfireDifficulty = req.body.difficulty,
+    bonfireDescription = req.body.description,
+    bonfireChallengeSeed = req.body.challengeSeed;
+  bonfireTests = bonfireTests.split('\r\n');
+  bonfireDescription = bonfireDescription.split('\r\n');
+  bonfireTests.filter(getRidOfEmpties);
+  bonfireDescription.filter(getRidOfEmpties);
+  bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
 
   res.render('bonfire/show', {
     completedWith: null,
@@ -223,15 +224,15 @@ exports.publicGenerator = function(req, res) {
 
 exports.generateChallenge = function(req, res) {
   var bonfireName = req.body.name,
-      bonfireTests = req.body.tests,
-      bonfireDifficulty = req.body.difficulty,
-      bonfireDescription = req.body.description,
-      bonfireChallengeSeed = req.body.challengeSeed;
-      bonfireTests = bonfireTests.split('\r\n');
-      bonfireDescription = bonfireDescription.split('\r\n');
-      bonfireTests.filter(getRidOfEmpties);
-      bonfireDescription.filter(getRidOfEmpties);
-      bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
+    bonfireTests = req.body.tests,
+    bonfireDifficulty = req.body.difficulty,
+    bonfireDescription = req.body.description,
+    bonfireChallengeSeed = req.body.challengeSeed;
+  bonfireTests = bonfireTests.split('\r\n');
+  bonfireDescription = bonfireDescription.split('\r\n');
+  bonfireTests.filter(getRidOfEmpties);
+  bonfireDescription.filter(getRidOfEmpties);
+  bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
 
 
   var response = {
