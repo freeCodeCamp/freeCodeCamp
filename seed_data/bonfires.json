@@ -50,7 +50,7 @@
       "Factorials are often represented with the shorthand notation n!",
       "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f"
     ],
-    "challengeSeed": "function factorialize(num) {\n  return  num;\r\n}\n\nfactorialize(5);",
+    "challengeSeed": "function factorialize(num) {\n  return num;\r\n}\n\nfactorialize(5);",
     "MDNlinks" : ["Arithmetic Operators"]
   },
   {
@@ -253,7 +253,7 @@
       "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');"
     ],
     "MDNlinks" : ["Global Object", "Object.hasOwnProperty()", "Object.keys()"]
-  },  
+  },
   {
     "_id":"a39963a4c10bc8b4d4f06d7e",
     "name":"Seek and Destroy",

@@ -347,7 +347,10 @@ var userSchema = new mongoose.Schema({
       {
         completedDate: Long,
         _id: String,
-        name: String
+        name: String,
+        completedWith: String,
+        solution: String,
+        githubLink: String
       }
     ],
   currentStreak: {

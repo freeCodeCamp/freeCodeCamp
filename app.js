@@ -440,6 +440,8 @@ app.get(
     coursewareController.returnIndividualCourseware
 );
 app.post('/completed-courseware/', coursewareController.completedCourseware);
+app.post('/completed-zipline-or-basejump',
+  coursewareController.completedZiplineOrBasejump);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);

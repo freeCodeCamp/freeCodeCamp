@@ -27,6 +27,7 @@ block content
                 var challengeName = !{JSON.stringify(name)};
                 var passedCoursewareName = challengeName;
                 var started = Math.floor(Date.now());
+                var challengeType = !{JSON.stringify(challengeType)};
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
@@ -46,8 +47,6 @@ block content
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                                 h1 #{name}
         script.
-            var challengeName = !{JSON.stringify(name)};
-            var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
             $('body').on('keypress', function(e) {
                 if (e.ctrlKey && e.keyCode == 13) {
                     $('#complete-courseware-dialog').modal('show');
