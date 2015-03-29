@@ -161,6 +161,21 @@ module.exports = {
     });
   },
 
+  trelloCalls: function(req, res, next) {
+    request('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(err, status, trello) {
+      if (err) { return next(err); }
+      trello = (status && status.statusCode === 200) ? (JSON.parse(trello)) : "Can't connect to to Trello";
+      res.end(JSON.stringify(trello));
+    });
+  },
+  bloggerCalls: function(req, res, next) {
+    request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
+      if (err) { return next(err); }
+      blog = (status && status.statusCode === 200) ? JSON.parse(blog) : "Can't connect to Blogger";
+      res.end(JSON.stringify(blog));
+    });
+  },
+
   about: function(req, res, next) {
     if (req.user) {
       if (!req.user.profile.picture || req.user.profile.picture === "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png") {
@@ -168,54 +183,8 @@ module.exports = {
         req.user.save();
       }
     }
-    var date1 = new Date('10/15/2014');
+    var date1 = new Date("10/15/2014");
     var date2 = new Date();
-    var progressTimestamps = req.user.progressTimestamps;
-    var now = Date.now() || 0;
-
-    if (req.user.pointsNeedMigration) {
-      var challengesHash = req.user.challengesHash;
-      for (var key in challengesHash) {
-        if (challengesHash[key] > 0) {
-          req.user.progressTimestamps.push(challengesHash[key]);
-        }
-      }
-
-      var oldChallengeKeys = R.keys(req.user.challengesHash);
-
-      var updatedTimesFromOldChallenges = oldChallengeKeys.map(function(timeStamp) {
-        if (timeStamp.toString().length !== 13) {
-          timeStamp *= 1000;
-        }
-        return timeStamp;
-      });
-
-      var newTimeStamps = R.map(function(timeStamp) {
-        if (timeStamp.toString().length !== 13) {
-          timeStamp *= 1000;
-        }
-        return timeStamp;
-      }, req.user.progressTimestamps);
-
-      req.user.progressTimestamps = newTimeStamps;
-
-
-      req.user.completedCoursewares = Array.zip(updatedTimesFromOldChallenges, coursewares,
-        function(left, right) {
-          return ({
-            completedDate: left.timeStamp,
-            _id: right._id,
-            name: right.name
-          });
-        }).filter(function(elem) {
-          return elem.completedDate !== 0;
-        });
-      req.user.pointsNeedMigration = false;
-      req.user.save();
-    }
-    if (progressTimestamps[progressTimestamps.length - 1] <= (now - 43200)) {
-      req.user.progressTimestamps.push(now);
-    }
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
     var announcements = resources.announcements;
@@ -243,6 +212,7 @@ module.exports = {
       });
     });
   },
+
 
   randomPhrase: function() {
     var phrases = resources.phrases;
