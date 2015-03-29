@@ -1,17 +1,9 @@
 var _ = require('lodash'),
-<<<<<<< HEAD
   debug = require('debug')('freecc:cntr:bonfires'),
   Bonfire = require('./../models/Bonfire'),
   User = require('./../models/User'),
   resources = require('./resources'),
-  R = require('ramda');
-=======
-    debug = require('debug')('freecc:cntr:bonfires'),
-    Bonfire = require('./../models/Bonfire'),
-    User = require('./../models/User'),
-    resources = require('./resources'),
-    MDNlinks = require('./../seed_data/bonfireMDNlinks');
->>>>>>> upstream/master
+  MDNlinks = require('./../seed_data/bonfireMDNlinks');
 
 /**
  * Bonfire controller
@@ -103,34 +95,11 @@ exports.returnIndividualBonfire = function(req, res, next) {
       return res.redirect('/bonfires');
     }
 
-<<<<<<< HEAD
     bonfire = bonfire.pop();
     var dashedNameFull = bonfire.name.toLowerCase().replace(/\s/g, '-');
     if (dashedNameFull != dashedName) {
       return res.redirect('../bonfires/' + dashedNameFull);
     }
-=======
-        res.render('bonfire/show', {
-            completedWith: null,
-            title: bonfire.name,
-            dashedName: dashedName,
-            name: bonfire.name,
-            difficulty: Math.floor(+bonfire.difficulty),
-            brief: bonfire.description[0],
-            details: bonfire.description.slice(1),
-            tests: bonfire.tests,
-            challengeSeed: bonfire.challengeSeed,
-            cc: !!req.user,
-            points: req.user ? req.user.points : undefined,
-            verb: resources.randomVerb(),
-            phrase: resources.randomPhrase(),
-            compliment: resources.randomCompliment(),
-            bonfires: bonfire,
-            bonfireHash: bonfire._id,
-            MDNkeys: bonfire.MDNlinks,
-            MDNlinks: getMDNlinks(bonfire.MDNlinks)
->>>>>>> upstream/master
-
     res.render('bonfire/show', {
       completedWith: null,
       title: bonfire.name,
@@ -142,12 +111,14 @@ exports.returnIndividualBonfire = function(req, res, next) {
       tests: bonfire.tests,
       challengeSeed: bonfire.challengeSeed,
       cc: !!req.user,
-      progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
+      points: req.user ? req.user.points : undefined,
       verb: resources.randomVerb(),
       phrase: resources.randomPhrase(),
       compliment: resources.randomCompliment(),
       bonfires: bonfire,
-      bonfireHash: bonfire._id
+      bonfireHash: bonfire._id,
+      MDNkeys: bonfire.MDNlinks,
+      MDNlinks: getMDNlinks(bonfire.MDNlinks)
     });
   });
 };
@@ -189,18 +160,18 @@ function randomString() {
 
 /**
  * Helper function to populate the MDN links array.
-*/
+ */
 
 function getMDNlinks(links) {
-    // takes in an array of links, which are strings
-    var populatedLinks = [];
+  // takes in an array of links, which are strings
+  var populatedLinks = [];
 
-    // for each key value, push the corresponding link from the MDNlinks object into a new array
-    links.forEach(function(value, index) {
-        populatedLinks.push(MDNlinks[value]);
-    });
+  // for each key value, push the corresponding link from the MDNlinks object into a new array
+  links.forEach(function(value, index) {
+    populatedLinks.push(MDNlinks[value]);
+  });
 
-    return populatedLinks;
+  return populatedLinks;
 
 };
 
@@ -210,15 +181,15 @@ function getMDNlinks(links) {
 
 exports.testBonfire = function(req, res) {
   var bonfireName = req.body.name,
-      bonfireTests = req.body.tests,
-      bonfireDifficulty = req.body.difficulty,
-      bonfireDescription = req.body.description,
-      bonfireChallengeSeed = req.body.challengeSeed;
-      bonfireTests = bonfireTests.split('\r\n');
-      bonfireDescription = bonfireDescription.split('\r\n');
-      bonfireTests.filter(getRidOfEmpties);
-      bonfireDescription.filter(getRidOfEmpties);
-      bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
+    bonfireTests = req.body.tests,
+    bonfireDifficulty = req.body.difficulty,
+    bonfireDescription = req.body.description,
+    bonfireChallengeSeed = req.body.challengeSeed;
+  bonfireTests = bonfireTests.split('\r\n');
+  bonfireDescription = bonfireDescription.split('\r\n');
+  bonfireTests.filter(getRidOfEmpties);
+  bonfireDescription.filter(getRidOfEmpties);
+  bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
 
   res.render('bonfire/show', {
     completedWith: null,
@@ -251,15 +222,15 @@ exports.publicGenerator = function(req, res) {
 
 exports.generateChallenge = function(req, res) {
   var bonfireName = req.body.name,
-      bonfireTests = req.body.tests,
-      bonfireDifficulty = req.body.difficulty,
-      bonfireDescription = req.body.description,
-      bonfireChallengeSeed = req.body.challengeSeed;
-      bonfireTests = bonfireTests.split('\r\n');
-      bonfireDescription = bonfireDescription.split('\r\n');
-      bonfireTests.filter(getRidOfEmpties);
-      bonfireDescription.filter(getRidOfEmpties);
-      bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
+    bonfireTests = req.body.tests,
+    bonfireDifficulty = req.body.difficulty,
+    bonfireDescription = req.body.description,
+    bonfireChallengeSeed = req.body.challengeSeed;
+  bonfireTests = bonfireTests.split('\r\n');
+  bonfireDescription = bonfireDescription.split('\r\n');
+  bonfireTests.filter(getRidOfEmpties);
+  bonfireDescription.filter(getRidOfEmpties);
+  bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
 
 
   var response = {

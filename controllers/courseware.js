@@ -100,7 +100,8 @@ exports.returnIndividualCourseware = function(req, res, next) {
           phrase: resources.randomPhrase(),
           compliment: resources.randomCompliment(),
           coursewareHash: courseware._id,
-          environment: resources.whichEnvironment()
+          environment: resources.whichEnvironment(),
+          challengeType: courseware.challengeType
         });
       },
 
@@ -117,7 +118,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
           phrase: resources.randomPhrase(),
           compliment: resources.randomCompliment(),
           coursewareHash: courseware._id,
-
+          challengeType: courseware.challengeType
         });
       },
 
@@ -133,7 +134,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
           phrase: resources.randomPhrase(),
           compliment: resources.randomCompliment(),
           coursewareHash: courseware._id,
-          challengeType: 'video'
+          challengeType: courseware.challengeType
         });
       },
 
@@ -160,16 +161,16 @@ exports.returnIndividualCourseware = function(req, res, next) {
 
 exports.testCourseware = function(req, res) {
   var coursewareName = req.body.name,
-  coursewareTests = req.body.tests,
-  coursewareDifficulty = req.body.difficulty,
-  coursewareDescription = req.body.description,
-  coursewareEntryPoint = req.body.challengeEntryPoint,
-  coursewareChallengeSeed = req.body.challengeSeed;
-  coursewareTests = coursewareTests.split('\r\n');
-  coursewareDescription = coursewareDescription.split('\r\n');
-  coursewareTests.filter(getRidOfEmpties);
-  coursewareDescription.filter(getRidOfEmpties);
-  coursewareChallengeSeed = coursewareChallengeSeed.replace('\r', '');
+      coursewareTests = req.body.tests,
+      coursewareDifficulty = req.body.difficulty,
+      coursewareDescription = req.body.description,
+      coursewareEntryPoint = req.body.challengeEntryPoint,
+      coursewareChallengeSeed = req.body.challengeSeed;
+      coursewareTests = coursewareTests.split('\r\n');
+      coursewareDescription = coursewareDescription.split('\r\n');
+      coursewareTests.filter(getRidOfEmpties);
+      coursewareDescription.filter(getRidOfEmpties);
+      coursewareChallengeSeed = coursewareChallengeSeed.replace('\r', '');
   res.render('courseware/show', {
     completedWith: null,
     title: coursewareName,
@@ -233,7 +234,9 @@ exports.completedCourseware = function (req, res, next) {
   req.user.completedCoursewares.push({
     _id: coursewareHash,
     completedDate: isCompletedDate,
-    name: req.body.coursewareInfo.coursewareName
+    name: req.body.coursewareInfo.coursewareName,
+    solution: null,
+    githubLink: null
   });
   var index = req.user.completedCoursewares.indexOf(coursewareHash);
 
@@ -247,19 +250,26 @@ exports.completedCourseware = function (req, res, next) {
       return next(err);
     }
     if (user) {
-      res.send(true);
+      res.sendStatus(200);
     }
   });
 };
 
 exports.completedZiplineOrBasejump = function (req, res, next) {
-  var isCompletedWith = req.body.bonfireInfo.completedWith || false;
+  debug('Inside controller for completed zipline or basejump with data %s',
+    req.body.coursewareInfo);
+  var isCompletedWith = req.body.coursewareInfo.completedWith || false;
   var isCompletedDate = Math.round(+new Date());
   var coursewareHash = req.body.coursewareInfo.coursewareHash;
-  var solutionLink = req.body.coursewareInfo.solutionLink;
-  if (!solutionLink) {
-    // flash error and redirect
-    return next(new Error('No solution provided'));
+  var solutionLink = req.body.coursewareInfo.publicURL;
+  var githubLink = req.body.coursewareInfo.challengeType === 4
+  ? req.body.coursewareInfo.githubURL : true;
+  if (!solutionLink || !githubLink) {
+    req.flash('errors', {
+      msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
+      'your work.'
+    });
+    return res.sendStatus(403);
   }
 
   if (isCompletedWith) {
@@ -286,14 +296,16 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
           _id: coursewareHash,
           completedWith: req.user._id,
           completedDate: isCompletedDate,
-          solution: solutionLink
+          solution: solutionLink,
+          githubLink: githubLink
         });
 
         req.user.completedCoursewares.push({
           _id: coursewareHash,
           completedWith: pairedWith._id,
           completedDate: isCompletedDate,
-          solution: solutionLink
+          solution: solutionLink,
+          githubLink: githubLink
         });
 
         req.user.save(function (err, user) {
@@ -305,7 +317,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
               return next(err);
             }
             if (user && paired) {
-              return res.send(true);
+              return res.sendStatus(200);
             }
           });
         });
@@ -317,10 +329,11 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
       _id: coursewareHash,
       completedWith: null,
       completedDate: isCompletedDate,
-      solution: solutionLink
+      solution: solutionLink,
+      githubLink: githubLink
     });
 
-    var index = req.user.uncompletedCourse.indexOf(coursewareHash);
+    var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
     if (index > -1) {
       req.user.progressTimestamps.push(Date.now() || 0);
       req.user.uncompletedCoursewares.splice(index, 1);
@@ -331,8 +344,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
         return next(err);
       }
       if (user) {
-        debug('Saving user');
-        return res.send(true);
+        return res.sendStatus(200);
       }
     });
   }
