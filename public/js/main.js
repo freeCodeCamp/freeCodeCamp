@@ -154,6 +154,10 @@ $(document).ready(function() {
     });
 
     var upvoteHandler = function () {
+        if (typeof user == "undefined" || !user) {
+            window.location.href = '/signin';
+            return;
+        }
         var _id = storyId;
         $('#upvote').unbind('click');
         var alreadyUpvoted = false;
