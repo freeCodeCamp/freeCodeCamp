@@ -14,7 +14,7 @@ exports.coursewareNames = function(req, res) {
     });
 };
 
-exports.returnNextCourseware = function(req, res) {
+exports.returnNextCourseware = function(req, res, next) {
     if (!req.user) {
         return res.redirect('../coursewares/start-our-challenges');
     }
@@ -27,25 +27,32 @@ exports.returnNextCourseware = function(req, res) {
             return elem;
         }
     });
-    req.user.save();
 
-    var uncompletedCoursewares = req.user.uncompletedCoursewares;
-
-    var displayedCoursewares =  Courseware.find({'_id': uncompletedCoursewares[0]});
-    displayedCoursewares.exec(function(err, courseware) {
+    req.user.save(function(err) {
         if (err) {
-            next(err);
+            return next(err);
         }
-        courseware = courseware.pop();
-        if (courseware === undefined) {
-            req.flash('errors', {
-                msg: "It looks like you've completed all the courses we have available. Good job!"
-            })
-            return res.redirect('../coursewares/start-our-challenges');
-        }
-        nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
-        return res.redirect('../coursewares/' + nameString);
+
+        var uncompletedCoursewares = req.user.uncompletedCoursewares;
+
+        var displayedCoursewares =  Courseware.find({'_id': uncompletedCoursewares[0]});
+        displayedCoursewares.exec(function(err, courseware) {
+            if (err) {
+                return next(err);
+            }
+            courseware = courseware.pop();
+            if (courseware === undefined) {
+                req.flash('errors', {
+                    msg: "It looks like you've completed all the courses we have available. Good job!"
+                })
+                return res.redirect('../coursewares/start-our-challenges');
+            }
+            nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
+            return res.redirect('../coursewares/' + nameString);
+        });
     });
+
+    
 };
 
 exports.returnIndividualCourseware = function(req, res, next) {
@@ -55,7 +62,7 @@ exports.returnIndividualCourseware = function(req, res, next) {
 
     Courseware.find({"name" : new RegExp(coursewareName, 'i')}, function(err, courseware) {
         if (err) {
-            next(err);
+            return next(err);
         }
         // Handle not found
         if (courseware.length < 1) {
@@ -203,7 +210,7 @@ exports.generateChallenge = function(req, res) {
     res.send(response);
 };
 
-exports.completedCourseware = function (req, res) {
+exports.completedCourseware = function (req, res, next) {
 
     var isCompletedDate = Math.round(+new Date() / 1000);
     var coursewareHash = req.body.coursewareInfo.coursewareHash;
@@ -221,7 +228,7 @@ exports.completedCourseware = function (req, res) {
 
     req.user.save(function (err, user) {
         if (err) {
-            throw err;
+            return next(err);
         }
         if (user) {
             res.send(true)
