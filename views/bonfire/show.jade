@@ -73,9 +73,14 @@ block content
                                     .col-xs-12
                                         for sentence in details
                                             p!= sentence
+                                        #MDN-links
+                                            h4 Here are some helpful links.
+                                            for link, index in MDNlinks
+                                                ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
                                         #less-info.btn.btn-primary.btn-block.btn-primary-ghost
                                             span.ion-arrow-up-b
                                             | Less information
+                                
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
                 br
                 form.code
@@ -92,6 +97,7 @@ block content
                     var started = Math.floor(Date.now() / 1000);
                     var _ = R;
                     var dashed = !{JSON.stringify(dashedName)};
+
         .col-xs-12.col-sm-12.col-md-8
             #mainEditorPanel
                 form.code
@@ -143,5 +149,9 @@ block content
                     $('.btn-twitter').attr('href', url);
                 }
         );
+        var MDNlinks = !{JSON.stringify(MDNlinks)};
+        if (!MDNlinks.length) {
+            $('#MDN-links').addClass('collapse');
+        }
 
 
