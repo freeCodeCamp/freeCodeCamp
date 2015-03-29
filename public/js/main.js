@@ -164,7 +164,7 @@ $(document).ready(function() {
                 coursewareHash: passedCoursewareHash,
                 coursewareName: passedCoursewareName,
                 completedWith: didCompleteWith,
-                publicURL: publicURl,
+                publicURL: publicURL,
                 githubURL: githubURL,
                 challengeType: challengeType
               }

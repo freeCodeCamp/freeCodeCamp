@@ -285,20 +285,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
         }
         pairedWith = pairedWith.pop();
 
-        index = pairedWith.uncompletedCoursewares.indexOf(coursewareHash);
-        if (index > -1) {
-          pairedWith.progressTimestamps.push(Date.now() || 0);
-          pairedWith.uncompletedCoursewares.splice(index, 1);
 
-        }
-
-        pairedWith.completedCoursewares.push({
-          _id: coursewareHash,
-          completedWith: req.user._id,
-          completedDate: isCompletedDate,
-          solution: solutionLink,
-          githubLink: githubLink
-        });
 
         req.user.completedCoursewares.push({
           _id: coursewareHash,
@@ -312,6 +299,27 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
           if (err) {
             return next(err);
           }
+          debug('this is the user object returned %s,' +
+          ' this is the req.user._id %s, ' +
+          'this is the pairedWith._id %s', user, req.user._id, pairedWith._id);
+          debug(req.user._id.toString() === pairedWith._id.toString());
+          if (req.user._id.toString() === pairedWith._id.toString()) {
+            return res.sendStatus(200);
+          }
+          index = pairedWith.uncompletedCoursewares.indexOf(coursewareHash);
+          if (index > -1) {
+            pairedWith.progressTimestamps.push(Date.now() || 0);
+            pairedWith.uncompletedCoursewares.splice(index, 1);
+
+          }
+
+          pairedWith.completedCoursewares.push({
+            _id: coursewareHash,
+            completedWith: req.user._id,
+            completedDate: isCompletedDate,
+            solution: solutionLink,
+            githubLink: githubLink
+          });
           pairedWith.save(function (err, paired) {
             if (err) {
               return next(err);
