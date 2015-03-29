@@ -3592,5 +3592,26 @@
       "returnValue(secondToLastLetterOfLastName);"
     ],
     "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c453eddfaeb5bdef",
+    "name": "Add two numbers",
+    "difficulty": "9.9814",
+    "description": [
+      "Set the variable <code>sum2</code> to equal 5 plus 3.",
+      "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+      "In order to get the last letter of a string, you can subtract one from the string's length.",
+      "For example, if <code>var firstName = \"Julie\"</code>, you can get the value of the third-to-last letter of the string by using <code>firstName[firstName.length - 3]</code>.",
+      "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+    ],
+    "tests": [
+      "expect(sum2).to.equal(8);"
+    ],
+    "challengeSeed": [
+      "var sum1 = 3 + 3;",
+      "",
+      "var sum2 = 0;"
+    ],
+    "challengeType": 1
   }
 ]
