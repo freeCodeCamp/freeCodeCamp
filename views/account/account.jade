@@ -135,15 +135,6 @@ block content
                       | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') CoderByte
-                  .col-sm-4
-                    input.form-control(type='url', name='coderbyteProfile', id='coderbyteProfile', autocomplete="off", ng-model='user.profile.coderbyteProfile', placeholder='http://')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.coderbyteProfile.$error.url && !profileForm.coderbyteProfile.$pristine")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | Please enter a valid URL format (http://www.example.com).
-
-                .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') LinkedIn
                   .col-sm-4
                     input.form-control(type='url', name='linkedinProfile', id='linkedinProfile', autocomplete="off", ng-model='user.profile.linkedinProfile', placeholder='http://')

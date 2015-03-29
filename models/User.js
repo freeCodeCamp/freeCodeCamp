@@ -300,10 +300,6 @@ var userSchema = new mongoose.Schema({
             type: String,
             default: ''
         },
-        coderbyteProfile: {
-            type: String,
-            default: ''
-        },
         codepenProfile: {
             type: String,
             default: ''
