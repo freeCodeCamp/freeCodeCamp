@@ -4,6 +4,7 @@ var _ = require('lodash'),
   User = require('./../models/User'),
   resources = require('./resources'),
   R = require('ramda');
+  MDNlinks = require('./../seed_data/bonfireMDNlinks');
 
 /**
  * Bonfire controller
@@ -100,24 +101,25 @@ exports.returnIndividualBonfire = function(req, res, next) {
     if (dashedNameFull != dashedName) {
       return res.redirect('../bonfires/' + dashedNameFull);
     }
-
     res.render('bonfire/show', {
-      completedWith: null,
-      title: bonfire.name,
-      dashedName: dashedName,
-      name: bonfire.name,
-      difficulty: Math.floor(+bonfire.difficulty),
-      brief: bonfire.description[0],
-      details: bonfire.description.slice(1),
-      tests: bonfire.tests,
-      challengeSeed: bonfire.challengeSeed,
-      cc: !!req.user,
-      progressTimestamps: req.user ? req.user.progressTimestamps : undefined,
-      verb: resources.randomVerb(),
-      phrase: resources.randomPhrase(),
-      compliment: resources.randomCompliment(),
-      bonfires: bonfire,
-      bonfireHash: bonfire._id
+        completedWith: null,
+        title: bonfire.name,
+        dashedName: dashedName,
+        name: bonfire.name,
+        difficulty: Math.floor(+bonfire.difficulty),
+        brief: bonfire.description[0],
+        details: bonfire.description.slice(1),
+        tests: bonfire.tests,
+        challengeSeed: bonfire.challengeSeed,
+        cc: !!req.user,
+        points: req.user ? req.user.points : undefined,
+        verb: resources.randomVerb(),
+        phrase: resources.randomPhrase(),
+        compliment: resources.randomCompliment(),
+        bonfires: bonfire,
+        bonfireHash: bonfire._id,
+        MDNkeys: bonfire.MDNlinks,
+        MDNlinks: getMDNlinks(bonfire.MDNlinks)
     });
   });
 };
@@ -156,6 +158,23 @@ function randomString() {
   }
   return randomstring;
 }
+
+/**
+ * Helper function to populate the MDN links array.
+*/
+
+function getMDNlinks(links) {
+    // takes in an array of links, which are strings
+    var populatedLinks = [];
+
+    // for each key value, push the corresponding link from the MDNlinks object into a new array
+    links.forEach(function(value, index) {
+        populatedLinks.push(MDNlinks[value]);
+    });
+
+    return populatedLinks;
+
+};
 
 /**
  *

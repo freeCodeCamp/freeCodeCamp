@@ -150,6 +150,21 @@ module.exports = {
     });
   },
 
+  trelloCalls: function(req, res, next) {
+      request('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(err, status, trello) {
+          if (err) { return next(err); }
+          trello = (status && status.statusCode == 200) ? (JSON.parse(trello)) : "Can't connect to to Trello";
+          res.end(JSON.stringify(trello));
+      });
+  },
+  bloggerCalls: function(req, res, next) {
+      request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
+          if (err) { return next(err); }
+          blog = (status && status.statusCode == 200) ? JSON.parse(blog) : "Can't connect to Blogger";
+          res.end(JSON.stringify(blog));
+      });
+  },
+
   githubCalls: function(req, res) {
     var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
     request('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(err, status1, pulls) {

@@ -73,9 +73,14 @@ block content
                                     .col-xs-12
                                         for sentence in details
                                             p!= sentence
+                                        #MDN-links
+                                            h4 Here are some helpful links.
+                                            for link, index in MDNlinks
+                                                ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
                                         #less-info.btn.btn-primary.btn-block.btn-primary-ghost
                                             span.ion-arrow-up-b
                                             | Less information
+                                
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
                 #showAllButton.btn.btn-info.btn-big.btn-block Show all bonfires
                 br
@@ -93,6 +98,7 @@ block content
                     var started = Math.floor(Date.now());
                     var _ = R;
                     var dashed = !{JSON.stringify(dashedName)};
+
         .col-xs-12.col-sm-12.col-md-8
             #mainEditorPanel
                 form.code
@@ -140,3 +146,18 @@ block content
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
                     include ../partials/bonfires
+    script.
+        $.ajax({
+            url: 'https://api-ssl.bitly.com/v3/shorten?access_token=75e7931a19befaafcf108021b6d597e554b2c5c3&longUrl=http%3A%2F%2Ffreecodecamp.com%2Fbonfires%2F' + dashed + '&format=txt'
+        })
+                .success(
+                function (data) {
+                    console.log(data);
+                    url = "https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=" + data + "&hashtags=LearnToCode, JavaScript";
+                    $('.btn-twitter').attr('href', url);
+                }
+        );
+        var MDNlinks = !{JSON.stringify(MDNlinks)};
+        if (!MDNlinks.length) {
+            $('#MDN-links').addClass('collapse');
+        }
