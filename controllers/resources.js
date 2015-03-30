@@ -108,12 +108,6 @@ module.exports = {
     });
   },
 
-  controlShortcuts: function controlShortcuts(req, res) {
-    res.render('resources/control-shortcuts', {
-      title: 'These Control Shortcuts will save you Hours'
-    });
-  },
-
   chromebook: function chromebook(req, res) {
     res.render('resources/chromebook', {
       title: 'Win a Chromebook'

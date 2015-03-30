@@ -3,7 +3,6 @@ var _ = require('lodash'),
   Bonfire = require('./../models/Bonfire'),
   User = require('./../models/User'),
   resources = require('./resources'),
-  MDNlinks = require('./../seed_data/bonfireMDNlinks'),
   R = require('ramda');
   MDNlinks = require('./../seed_data/bonfireMDNlinks');
 

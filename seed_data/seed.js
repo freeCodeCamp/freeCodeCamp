@@ -1,15 +1,17 @@
 require('dotenv').load();
 var Bonfire = require('../models/Bonfire.js'),
     Courseware = require('../models/Courseware.js'),
+    Wiki = require('../models/Wiki.js'),
     mongoose = require('mongoose'),
     secrets = require('../config/secrets'),
     coursewares = require('./coursewares.json'),
+    wikis = require('./wikis.json')
     bonfires = require('./bonfires.json');
 
 mongoose.connect(secrets.db);
 
 var counter = 0;
-var offerings = 2;
+var offerings = 3;
 
 var CompletionMonitor = function() {
     counter++;
@@ -55,4 +57,21 @@ Courseware.remove({}, function(err, data) {
         CompletionMonitor();
     });
     console.log('coursewares');
+});
+
+Wiki.remove({}, function(err, data) {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log('Deleted ', data);
+    }
+    Wiki.create(wikis, function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Saved ', data);
+        }
+        CompletionMonitor();
+    });
+    console.log('wikis');
 });

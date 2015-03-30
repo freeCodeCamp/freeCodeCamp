@@ -42,6 +42,7 @@ var express = require('express'),
     nonprofitController = require('./controllers/nonprofits'),
     bonfireController = require('./controllers/bonfire'),
     coursewareController = require('./controllers/courseware'),
+    wikiController = require('./controllers/wiki'),
 
     /**
      *  Stories
@@ -243,8 +244,6 @@ app.get('/guide-to-our-nonprofit-projects', resourcesController.guideToOurNonpro
 app.get('/chromebook', resourcesController.chromebook);
 app.get('/deploy-a-website', resourcesController.deployAWebsite);
 app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
-app.get('/control-shortcuts', resourcesController.controlShortcuts);
-app.get('/control-shortcuts', resourcesController.deployAWebsite);
 app.get('/nodeschool-challenges', resourcesController.nodeSchoolChallenges);
 app.get('/stats', function(req, res) {
     res.redirect(301, '/learn-to-code');
@@ -425,7 +424,19 @@ app.get('/bonfire', function(req, res) {
     res.redirect(301, '/playground');
 });
 
+/**
+ * Wiki related routes
+ */
 
+app.get(
+    '/wiki/:wikiName',
+    wikiController.returnIndividualWiki
+);
+
+app.get(
+    '/wiki',
+    wikiController.showAllWikis
+);
 
 app.post('/completed-bonfire/', bonfireController.completedBonfire);
 
