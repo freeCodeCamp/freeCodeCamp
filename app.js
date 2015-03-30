@@ -473,6 +473,8 @@ app.get('/api/trello', resourcesController.trelloCalls);
 
 app.get('/bonfires/getBonfireList', bonfireController.showAllBonfires);
 
+app.get('/wiki/getWikiList', wikiController.showAllWikis);
+
 app.get('/playground', bonfireController.index);
 
 app.get('/bonfires', bonfireController.returnNextBonfire);
@@ -483,7 +485,7 @@ app.post('/bonfire-json-generator', bonfireController.generateChallenge);
 
 app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
 
-app.post('/bonfire-challenge-generator', bonfireController.testBonfire)
+app.post('/bonfire-challenge-generator', bonfireController.testBonfire);
 
 app.get(
     '/bonfires/:bonfireName',

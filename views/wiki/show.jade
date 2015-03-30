@@ -8,9 +8,19 @@ block content
                 h1= title
             .panel-body
                 div!= description
+                .spacer
+                .text-center
+                    #showAllButton.btn.btn-info.btn-big Show all Wiki Articles
+                .spacer
                 .row
                     .col-xs-12.text-center
                         if !user
-                            h3 Got 3 minutes? Learn to code with us!
                             a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
             .spacer
+    #all-challenges-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Wiki Articles
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/wikis

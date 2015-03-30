@@ -3,12 +3,14 @@ var async = require('async'),
   Challenge = require('./../models/Challenge'),
   Bonfire = require('./../models/Bonfire'),
   Story = require('./../models/Story'),
+  Wiki = require('./../models/Wiki'),
   Comment = require('./../models/Comment'),
   resources = require('./resources.json'),
   steps = resources.steps,
   secrets = require('./../config/secrets'),
   bonfires = require('../seed_data/bonfires.json'),
   coursewares = require('../seed_data/coursewares.json'),
+  wikis = require('../seed_data/wikis.json'),
   moment = require('moment'),
   https = require('https'),
   debug = require('debug')('freecc:cntr:resources'),
@@ -251,23 +253,12 @@ module.exports = {
     });
   },
 
-  allBonfireNames: function() {
-    return bonfires.map(function(elem) {
+  allWikiNames: function() {
+    return wikis.map(function(elem) {
       return {
-        name: elem.name,
-        difficulty: elem.difficulty,
-        _id: elem._id
+        name: elem.name
       }
     })
-    .sort(function(a, b) {
-      return a.difficulty - b.difficulty;
-    })
-    .map (function(elem) {
-      return {
-        name : elem.name,
-        _id: elem._id
-      }
-    });
   },
 
   getAllCourses: function() {

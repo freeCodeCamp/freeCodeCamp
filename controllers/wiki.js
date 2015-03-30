@@ -35,6 +35,7 @@ exports.returnIndividualWiki = function(req, res, next) {
 };
 
 exports.showAllWikis = function(req, res) {
+    var data = {};
     data.wikiList = resources.allWikiNames();
     res.send(data);
 };

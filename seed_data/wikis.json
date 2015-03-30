@@ -3,7 +3,8 @@
     "_id": "bd7158d9c442eddfaeb5bdef",
     "name": "Global Control Shortcuts for Mac",
     "description": [
-      "<h2>These Global Control Shortcuts for Mac will save you hours by speeding up your typing</h2>",
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h2 class='text-center'>These Global Control Shortcuts for Mac will save you hours by speeding up your typing</h2>",
       "<div class=\"embed-responsive embed-responsive-16by9\"><iframe src=\"//player.vimeo.com/video/107073108\" class=\"embed-responsive-item\"></iframe></div>",
       "<div class=\"text-left\">",
       "  <h3>These global shortcuts work everywhere on a Mac:",
@@ -18,8 +19,7 @@
       "      <li>Control + E = End of Line</li>",
       "      <li>Control + K = Kill line</li>",
       "    </ul>",
-      "  </h3>",
-      "</div><a href=\"/login\" class=\"btn btn-cta signup-btn btn-primary\">Start learning to code (it's free)<br/></a>"
+      "</div>"
     ]
   },
   {
