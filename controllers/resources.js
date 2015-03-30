@@ -109,6 +109,12 @@ module.exports = {
         });
     },
 
+    styleguide: function styleguide(req, res) {
+        res.render('resources/styleguide', {
+            title: 'A Styleguide for Contributing to our Bonfires'
+        });
+    },
+
     jqueryExercises: function jqueryExercises(req, res) {
         res.render('resources/jquery-exercises', {
             title: 'jQuery Exercises'
