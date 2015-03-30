@@ -1,8 +1,28 @@
 h3
-    ol(start='0')
-        for challenge in challenges
-            li
-                a(href="/challenges/#{challenge.challengeNumber}", class="#{ (cc && cc[challenge.challengeNumber] > 0) ? 'strikethrough' : '' }") #{challenge.name}
-                | &thinsp; (#{challenge.time} mins)
+    ol#coursewareList
+    script(src='/js/lib/ramda/ramda.min.js')
+    script.
+        var getLinkedName = function getLinkedName(name) {
+            return name.toLowerCase().replace(/\s/g, '-');
+        }
+        $.ajax({
+            url: '/challenges/getCoursewareList',
+            type: 'GET'
+        })
+                .success(
+                function(data) {
+                    var docfrag = document.createDocumentFragment();
+                    for (var i = 0; i < data.coursewareList.length; i++) {
+                        var li = document.createElement("li");
+                        var linkedName = getLinkedName(data.coursewareList[i].name);
+                        if (data.completedList.length > 0 && R.contains(data.coursewareList[i]._id, data.completedList)) {
+                            $(li).html("<span class='sr-only'>completed</span><a href='/challenges/" + linkedName + "'>" + data.coursewareList[i].name + "</a></li>");
+                            $(li).addClass('strikethrough');
+                        } else {
+                            $(li).html("<a href='/challenges/" + linkedName + "'>" + data.coursewareList[i].name + "</a></li>");
+                        }
 
-a.btn.btn-lg.btn-primary.btn-block(href="/done-with-first-100-hours", class="#{ ((points && points < 54) || (!points)) ? 'disabled' : '' }") I'm done with all the challenges!
+                        docfrag.appendChild(li);
+                    };
+                    $('#coursewareList').append(docfrag);
+                });

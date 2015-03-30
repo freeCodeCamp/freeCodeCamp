@@ -11,6 +11,7 @@ var _ = require('lodash'),
  */
 
 exports.showAllCoursewares = function(req, res) {
+    console.log('i made it!');
   var completedCoursewares = req.user.completedCoursewares.map(function(elem) {
     return elem._id;
   });

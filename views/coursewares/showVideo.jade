@@ -13,15 +13,17 @@ block content
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
             - if (user)
-                a.btn.btn-primary.btn-lg.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
+                a.btn.btn-primary.btn-big.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
             - else
-                a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
                 br
-            script(type="text/javascript").
+            .button-spacer
+            #showAllButton.btn.btn-info.btn-big.btn-block Show all challenges
+        script(type="text/javascript").
                 var tests = !{JSON.stringify(tests)};
                 var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
                 var challengeName = !{JSON.stringify(name)};
@@ -52,3 +54,10 @@ block content
                     $('#complete-courseware-dialog').modal('show');
                 }
             });
+    #all-challenges-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Challenges
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/challenges

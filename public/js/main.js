@@ -179,7 +179,7 @@ $(document).ready(function() {
   });
 
   $('#showAllButton').on('click', function() {
-    $('#all-bonfires-dialog').modal('show');
+    $('#all-challenges-dialog').modal('show');
   });
 
   $('.next-challenge-button').on('click', function() {

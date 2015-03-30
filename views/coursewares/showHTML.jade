@@ -39,7 +39,7 @@ block content
                                         | Less information
                 br
             - if (user)
-                a.btn.btn-primary.btn-lg.btn-block#next-courseware-button
+                a.btn.btn-primary.btn-big.btn-block#next-courseware-button
                     |  Go to my next challenge
                     br
                     |  (ctrl + enter)
@@ -49,6 +49,8 @@ block content
                 a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
+            .button-spacer
+            #showAllButton.btn.btn-info.btn-big.btn-block Show all challenges
             br
             ul#testSuite.list-group
             br
@@ -83,3 +85,10 @@ block content
                                 span.completion-icon.ion-checkmark-circled.text-primary
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
     script(src="/js/lib/coursewares/coursewaresHCJQFramework_v0.1.1.js")
+    #all-challenges-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Challenges
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/challenges

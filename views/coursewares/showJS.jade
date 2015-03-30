@@ -35,6 +35,7 @@ block content
                                             span.ion-arrow-up-b
                                             | Less information
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+                #showAllButton.btn.btn-info.btn-big.btn-block Show all challenges
                 br
                 form.code
                     .form-group.codeMirrorView
@@ -74,3 +75,10 @@ block content
                                     = phrase
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+    #all-challenges-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Challenges
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/challenges
