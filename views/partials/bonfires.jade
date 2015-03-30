@@ -3,6 +3,8 @@ h3
     script(src='/js/lib/ramda/ramda.min.js')
     script.
         var getLinkedName = function getLinkedName(name) {
+            // ensure name is a string
+            name = name + '';
             return name.toLowerCase().replace(/\s/g, '-');
         }
         $.ajax({

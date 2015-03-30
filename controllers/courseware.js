@@ -11,9 +11,12 @@ var _ = require('lodash'),
  */
 
 exports.showAllCoursewares = function(req, res) {
-   var completedCoursewares = req.user.completedCoursewares.map(function(elem) {
-    return elem._id;
-  });
+  var completedList = [];
+  if(req.user) {
+    completedList = req.user.completedList.map(function (elem) {
+      return elem._id;
+    });
+  }
 
   var noDuplicatedCoursewares = R.uniq(completedCoursewares);
   var data = {};

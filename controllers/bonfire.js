@@ -12,12 +12,11 @@ var _ = require('lodash'),
  */
 
 exports.showAllBonfires = function(req, res) {
+  var completedBonfires = [];
   if(req.user) {
-      var completedBonfires = req.user.completedBonfires.map(function (elem) {
+      completedBonfires = req.user.completedBonfires.map(function (elem) {
           return elem._id;
       });
-  } else {
-      completedBonfires = [];
   }
   var noDuplicateBonfires = R.uniq(completedBonfires);
   var data = {};
