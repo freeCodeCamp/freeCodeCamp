@@ -3,6 +3,8 @@ h3
     script(src='/js/lib/ramda/ramda.min.js')
     script.
         var getLinkedName = function getLinkedName(name) {
+            // ensure name is a string
+            name = name + '';
             return name.toLowerCase().replace(/\s/g, '-');
         }
         $.ajax({
@@ -11,14 +13,18 @@ h3
         })
         .success(
             function(data) {
+                var docfrag = document.createDocumentFragment();
                 for (var i = 0; i < data.bonfireList.length; i++) {
-                    var li  = document.createElement('li');
+                    var li = document.createElement("li");
                     var linkedName = getLinkedName(data.bonfireList[i].name);
-                    if (R.contains(data.bonfireList[i]._id, data.completedList)) {
+                    if (data.completedList.length > 0 && R.contains(data.bonfireList[i]._id, data.completedList)) {
+                        $(li).html("<span class='sr-only'>completed</span><a href='/bonfires/" + linkedName + "'>" + data.bonfireList[i].name + "</a></li>");
                         $(li).addClass('strikethrough');
+                    } else {
+                        $(li).html("<a href='/bonfires/" + linkedName + "'>" + data.bonfireList[i].name + "</a></li>");
                     }
-                    $(li).html("<a href='/bonfires/" + linkedName + "'>" + data.bonfireList[i].name + "</a></li>");
-                    $(li).appendTo($('#bonfireList'));
 
-                }
+                    docfrag.appendChild(li);
+                };
+            $('#bonfireList').append(docfrag);
         });
