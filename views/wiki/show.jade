@@ -7,4 +7,10 @@ block content
             .panel-heading.text-center
                 h1= title
             .panel-body
-                h1!= description
+                div!= description
+                .row
+                    .col-xs-12.text-center
+                        if !user
+                            h3 Got 3 minutes? Learn to code with us!
+                            a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
+            .spacer
