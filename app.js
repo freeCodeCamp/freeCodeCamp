@@ -235,6 +235,7 @@ app.get('/install-screenhero', resourcesController.installScreenHero);
 app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
 app.get('/guide-to-our-nonprofit-projects', resourcesController.guideToOurNonprofitProjects);
 app.get('/chromebook', resourcesController.chromebook);
+app.get('/styleguide', resourcesController.styleguide);
 app.get('/deploy-a-website', resourcesController.deployAWebsite);
 app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
 app.get('/control-shortcuts', resourcesController.controlShortcuts);
