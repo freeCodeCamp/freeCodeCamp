@@ -789,7 +789,7 @@
       "Once it has loaded, install all of MEAN.js's packages by clicking into Cloud 9's terminal at the bottom and running <code>npm install</code>.",
       "Once that command has finished, set up MongoDB and start it by copying and pasting this code into Cloud 9's terminal: <code>mkdir data && echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest \"$@\"' > mongod && chmod a+x mongod && ./mongod</code>. You don't worry if you don't understand what that means. From now on, you'll just need to run this command to start MongoDB: <code>./mongod</code>."
     ],
-    "challengeType": 3,
+    "challengeType": 4,
     "tests": []
   },
   {

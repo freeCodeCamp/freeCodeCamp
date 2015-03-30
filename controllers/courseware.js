@@ -151,7 +151,22 @@ exports.returnIndividualCourseware = function(req, res, next) {
           coursewareHash: courseware._id,
           challengeType: courseware.challengeType
         });
-      }
+      },
+
+      4: function() {
+          res.render('coursewares/showZiplineOrBasejump', {
+              title: courseware.name,
+              dashedName: dashedName,
+              name: courseware.name,
+              details: courseware.description,
+              video: courseware.challengeSeed[0],
+              verb: resources.randomVerb(),
+              phrase: resources.randomPhrase(),
+              compliment: resources.randomCompliment(),
+              coursewareHash: courseware._id,
+              challengeType: courseware.challengeType
+          });
+        }
     };
 
     return challengeType[courseware.challengeType]();
@@ -262,7 +277,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
   var isCompletedDate = Math.round(+new Date());
   var coursewareHash = req.body.coursewareInfo.coursewareHash;
   var solutionLink = req.body.coursewareInfo.publicURL;
-  var githubLink = req.body.coursewareInfo.challengeType === 4
+  var githubLink = req.body.coursewareInfo.challengeType === '4'
   ? req.body.coursewareInfo.githubURL : true;
   if (!solutionLink || !githubLink) {
     req.flash('errors', {
@@ -284,8 +299,6 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
           req.user.uncompletedCoursewares.splice(index, 1);
         }
         pairedWith = pairedWith.pop();
-
-
 
         req.user.completedCoursewares.push({
           _id: coursewareHash,
