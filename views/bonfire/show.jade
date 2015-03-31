@@ -74,7 +74,7 @@ block content
                                         for sentence in details
                                             p!= sentence
                                         #MDN-links
-                                            h4 Here are some helpful links.
+                                            p Here are some helpful links:
                                             for link, index in MDNlinks
                                                 ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
                                         #less-info.btn.btn-primary.btn-block.btn-primary-ghost

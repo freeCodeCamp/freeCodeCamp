@@ -114,7 +114,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
               'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
               "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
               'Good luck with the challenges!\n\n',
-              '- the Volunteer Camp Counselor Team'
+              '- Our All-Volunteer Team'
             ].join('')
           };
           transporter.sendMail(mailOptions, function(err) {
