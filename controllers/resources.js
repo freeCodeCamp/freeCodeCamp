@@ -4,11 +4,13 @@ var async = require('async'),
   Bonfire = require('./../models/Bonfire'),
   Story = require('./../models/Story'),
   Wiki = require('./../models/Wiki'),
+  Nonprofit = require('./../models/Nonprofit'),
   Comment = require('./../models/Comment'),
   resources = require('./resources.json'),
   steps = resources.steps,
   secrets = require('./../config/secrets'),
   bonfires = require('../seed_data/bonfires.json'),
+  nonprofits = require('../seed_data/nonprofits.json'),
   coursewares = require('../seed_data/coursewares.json'),
   wikis = require('../seed_data/wikis.json'),
   moment = require('moment'),
@@ -255,6 +257,14 @@ module.exports = {
 
   allWikiNames: function() {
     return wikis.map(function(elem) {
+      return {
+        name: elem.name
+      }
+    })
+  },
+
+  allNonprofitNames: function() {
+    return nonprofits.map(function(elem) {
       return {
         name: elem.name
       }

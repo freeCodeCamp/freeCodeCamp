@@ -9,11 +9,7 @@ var secrets = require('../config/secrets');
 
 var nonprofitSchema = new mongoose.Schema({
     name: String,
-    registeredNonprofit: true,
     requestedDeliverables: Array,
-    existingUserbase: true,
-    acceptJavascript: true,
-    agreeToTerms: true,
     whatDoesNonprofitDo: String,
     websiteLink: String,
     stakeholderName: String,
@@ -23,8 +19,6 @@ var nonprofitSchema = new mongoose.Schema({
     projectDescription: String,
     logoUrl: String,
     imageUrl: String,
-    interestedCampers: Array,
-    confirmedCampers: Array,
     estimatedHours: String
 });
 

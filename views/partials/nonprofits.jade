@@ -8,7 +8,7 @@ h3
             return name.toLowerCase().replace(/\s/g, '-');
         }
         $.ajax({
-            url: '/wiki/getNonprofitsList',
+            url: '/nonprofits/getNonprofitsList',
             type: 'GET'
         })
                 .success(
@@ -17,7 +17,7 @@ h3
                     for (var i = 0; i < data.nonprofitsList.length; i++) {
                         var li = document.createElement("li");
                         var linkedName = getLinkedName(data.nonprofitsList[i].name);
-                        $(li).html("<a href='/nonprofits/" + linkedName + "'>" + data.wikiList[i].name + "</a></li>");
+                        $(li).html("<a href='/nonprofits/" + linkedName + "'>" + data.nonprofitsList[i].name + "</a></li>");
                         docfrag.appendChild(li);
                     };
                     $('#nonprofitsList').append(docfrag);

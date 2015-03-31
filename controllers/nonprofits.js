@@ -1,4 +1,5 @@
 var async = require('async'),
+    Nonprofit = require('./../models/Nonprofit'),
     resources = require('./resources.json'),
     secrets = require('./../config/secrets'),
     moment = require('moment'),
@@ -116,13 +117,19 @@ exports.returnIndividualNonprofit = function(req, res, next) {
         }
         res.render('nonprofits/show', {
             title: nonprofit.name,
-            description: nonprofit.description.join('')
+            logoUrl: nonprofit.logoUrl,
+            projectDescription: nonprofit.projectDescription,
+            approvedDeliverables: nonprofit.approvedDeliverables,
+            websiteLink: nonprofit.websiteLink,
+            imageUrl: nonprofit.imageUrl,
+            whatDoesNonprofitDo: nonprofit.whatDoesNonprofitDo
         });
     });
 };
 
 exports.showAllNonprofits = function(req, res) {
     var data = {};
-    data.nonprofitList = resources.allNonprofitNames();
+    data.nonprofitsList = resources.allNonprofitNames();
+    console.log('here I am rock you like a hurricane', data);
     res.send(data);
 };

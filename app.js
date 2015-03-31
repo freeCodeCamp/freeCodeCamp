@@ -361,6 +361,8 @@ app.get(
     nonprofitController.showAllNonprofits
 );
 
+app.get('/nonprofits/getNonprofitsList', nonprofitController.showAllNonprofits);
+
 app.get(
   '/done-with-first-100-hours',
   passportConf.isAuthenticated,

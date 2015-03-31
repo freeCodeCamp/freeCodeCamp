@@ -7,7 +7,17 @@ block content
             .panel-heading.text-center
                 h1= title
             .panel-body
-                div!= description
+                h3= whatDoesNonprofitDo
+                for deliverable in approvedDeliverables
+                    p= deliverable
+                p Website:
+                    a(href=websiteLink)= websiteLink
+                p Project Description:
+                    = projectDescription
+                p Estimated Hours Per Camper
+                    = estimatedHours
+                img.img-responsive(src=imageUrl)
+                img.img-responsive(src=logoUrl)
                 .spacer
                 .text-center
                     #showAllButton.btn.btn-info.btn-big Show all Nonprofits Projects
