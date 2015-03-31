@@ -175,7 +175,9 @@ module.exports = {
         if (req.user) {
             if (!req.user.profile.picture || req.user.profile.picture === "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png") {
                 req.user.profile.picture = "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png";
-                req.user.save();
+                req.user.save(function(err) {
+                    if (err) return next(err);
+                });
             }
         }
         var date1 = new Date("10/15/2014");

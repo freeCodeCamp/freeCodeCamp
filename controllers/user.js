@@ -179,7 +179,7 @@ exports.postEmailSignup = function(req, res, next) {
                 ].join('')
             };
             transporter.sendMail(mailOptions, function(err) {
-                if (err) { return err; }
+                if (err) { return next(err); }
             });
         });
     });
@@ -210,8 +210,9 @@ exports.getAccountAngular = function(req, res) {
  * Unique username check API Call
  */
 
-exports.checkUniqueUsername = function(req, res) {
+exports.checkUniqueUsername = function(req, res, next) {
     User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
         if (data == 1) {
             return res.send(true);
         } else {
@@ -223,8 +224,9 @@ exports.checkUniqueUsername = function(req, res) {
 /**
  * Existing username check
  */
-exports.checkExistingUsername = function(req, res) {
+exports.checkExistingUsername = function(req, res, next) {
     User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
         if (data === 1) {
             return res.send(true);
         } else {
@@ -237,8 +239,9 @@ exports.checkExistingUsername = function(req, res) {
  * Unique email check API Call
  */
 
-exports.checkUniqueEmail = function(req, res) {
+exports.checkUniqueEmail = function(req, res, next) {
     User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
         if (data == 1) {
             return res.send(true);
         } else {
@@ -255,10 +258,11 @@ exports.checkUniqueEmail = function(req, res) {
 
 exports.returnUser = function(req, res, next) {
     User.find({'profile.username': req.params.username.toLowerCase()}, function(err, user) {
-        if (err) { debug('Username err: ', err); next(err); }
+        if (err) { debug('Username err: ', err); return next(err); }
         if (user[0]) {
             var user = user[0];
             Challenge.find({}, null, {sort: {challengeNumber: 1}}, function (err, c) {
+                if (err) { return next(err); }
                 res.render('account/show', {
                     title: 'Camper ' + user.profile.username + '\'s portfolio',
                     username: user.profile.username,
@@ -300,7 +304,7 @@ exports.returnUser = function(req, res, next) {
  * Update profile information.
  */
 
-exports.updateProgress = function(req, res) {
+exports.updateProgress = function(req, res, next) {
     User.findById(req.user.id, function(err, user) {
         if (err) return next(err);
         user.email = req.body.email || '';
@@ -471,7 +475,7 @@ exports.getOauthUnlink = function(req, res, next) {
  * Reset Password page.
  */
 
-exports.getReset = function(req, res) {
+exports.getReset = function(req, res, next) {
     if (req.isAuthenticated()) {
         return res.redirect('/');
     }
