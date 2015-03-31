@@ -767,7 +767,8 @@
       "Go to CodePen <a href='http://codepen.io/FreeCodeCamp/pen/gbEmJr'>http://codepen.io/FreeCodeCamp/pen/gbEmJr</a> and click the \"fork\" button. This will create a \"fork\", or copy of the file, which you can then edit yourself.",
       "In the JavaScript box, scroll down to the comment that reads \"//Changeable code be made here\". This CodePen is already pulling in the relevant JSON from our API. This JSON is from one of our Trello boards. You can view the actual Trello board here: <a href='https://trello.com/b/BA3xVpz9/nonprofit-projects'>https://trello.com/b/BA3xVpz9/nonprofit-projects</a>.",
       "You can view the JSON output here: <a href='http://www.freecodecamp.com/api/trello'>http://www.freecodecamp.com/api/trello</a>.",
-      "In addition to each Trello card's description,(which is currently shown), you will also want to show it's name and labels.",
+      "In addition to each Trello card's description,(which is currently shown), you will also want to show it's name.",
+      "You'll also want to render each card's labels. Render each label with the card's <code>name</code> as the label's text and each label's <code>color</code> as the label's color.",
       "Hint: you will need to write a jQuery loop that which dynamically inserts <code>&#60;li&#62;</code> elements. You will do this using jQuery's each function, described here: <a href='https://api.jquery.com/each/'>https://api.jquery.com/each/</a>.",
       "Style the output to make it look visually appealing. Give it a custom font, color scheme, and a clear visual separation between data elements.",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your Codepen. If you pair programmed, you should also include the Free Code Camp username of your pair. We will take a look at your code and eventually give you feedback. In the meantime, please move on to your next challenge."
