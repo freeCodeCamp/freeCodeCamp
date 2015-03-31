@@ -308,7 +308,9 @@ exports.storySubmission = function(req, res) {
         .replace(/\s+/g, ' ')
         .toLowerCase();
 
-    Story.count({'storyLink': storyLink}, function(err, storyCount) {
+    // regex to find Stories that starts wtih same headline
+    // and optionally end with space and number(s) to find previous stories
+    Story.count({'storyLink': new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i')}, function(err, storyCount) {
         if (err) {
             return res.status(500);
         }
