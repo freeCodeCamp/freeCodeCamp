@@ -27,7 +27,7 @@ exports.returnNextChallenge = function(req, res) {
     }
 };
 
-exports.returnChallenge = function(req, res) {
+exports.returnChallenge = function(req, res, next) {
     var challengeNumber = parseInt(req.params.challengeNumber) || 0;
     if (challengeNumber === 2) {
         req.user.challengesHash[challengeNumber] = Math.round(+new Date() / 1000);
@@ -55,7 +55,7 @@ exports.returnChallenge = function(req, res) {
     Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
         if (err) {
             debug('Challenge err: ', err);
-            next(err);
+            return next(err);
         }
         res.render('challenges/show', {
             title: 'Challenge: ' + c[challengeNumber].name,

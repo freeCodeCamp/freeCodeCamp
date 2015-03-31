@@ -52,7 +52,7 @@ exports.returnNextCourseware = function(req, res, next) {
         });
     });
 
-    
+
 };
 
 exports.returnIndividualCourseware = function(req, res, next) {
