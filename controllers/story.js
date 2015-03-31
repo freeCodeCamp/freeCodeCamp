@@ -142,7 +142,7 @@ exports.returnIndividualStory = function(req, res, next) {
         try {
             var votedObj = story.upVotes.filter(function(a){
                 return a['upVotedByUsername'] === req.user['profile']['username'];
-            })
+            });
             if (votedObj.length > 0){
                 userVoted = true;
             }
@@ -314,7 +314,7 @@ exports.storySubmission = function(req, res) {
         }
 
         // if duplicate storyLink add unique number
-        storyLink = (storyCount == 0) ? storyLink : storyLink + ' ' + storyCount;
+        storyLink = (storyCount === 0) ? storyLink : storyLink + ' ' + storyCount;
 
         var link = data.link;
         if (link.search(/^https?:\/\//g) === -1) {

@@ -153,33 +153,33 @@ exports.postEmailSignup = function(req, res, next) {
 
             user.save(function(err) {
                 if (err) { return next(err); }
+                var transporter = nodemailer.createTransport({
+                    service: 'Mandrill',
+                    auth: {
+                        user: secrets.mandrill.user,
+                        pass: secrets.mandrill.password
+                    }
+                });
+                var mailOptions = {
+                    to: user.email,
+                    from: 'Team@freecodecamp.com',
+                    subject: 'Welcome to Free Code Camp!',
+                    text: [
+                        'Greetings from San Francisco!\n\n',
+                        'Thank you for joining our community.\n',
+                        'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
+                        "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+                        'Good luck with the challenges!\n\n',
+                        '- Our All-Volunteer Team'
+                    ].join('')
+                };
+                transporter.sendMail(mailOptions, function(err) {
+                    if (err) { return err; }
+                });
                 req.logIn(user, function(err) {
                     if (err) { return next(err); }
                     res.redirect('/email-signup');
                 });
-            });
-            var transporter = nodemailer.createTransport({
-                service: 'Mandrill',
-                auth: {
-                    user: secrets.mandrill.user,
-                    pass: secrets.mandrill.password
-                }
-            });
-            var mailOptions = {
-                to: user.email,
-                from: 'Team@freecodecamp.com',
-                subject: 'Welcome to Free Code Camp!',
-                text: [
-                    'Greetings from San Francisco!\n\n',
-                    'Thank you for joining our community.\n',
-                    'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
-                    "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
-                    'Good luck with the challenges!\n\n',
-                    '- the Volunteer Camp Counselor Team'
-                ].join('')
-            };
-            transporter.sendMail(mailOptions, function(err) {
-                if (err) { return err; }
             });
         });
     });

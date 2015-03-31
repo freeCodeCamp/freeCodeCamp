@@ -82,6 +82,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
     User.findOne({ facebook: profile.id }, function(err, existingUser) {
       if (existingUser) return done(null, existingUser);
       User.findOne({ email: profile._json.email }, function(err, existingEmailUser) {
+        if (err) { return done(err); }
         if (existingEmailUser) {
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Facebook manually from Account Settings.' });
           done();
@@ -96,29 +97,29 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
           user.profile.location = (profile._json.location) ? profile._json.location.name : '';
           user.save(function(err) {
             done(err, user);
-          });
-          var transporter = nodemailer.createTransport({
-            service: 'Mandrill',
-            auth: {
-              user: secrets.mandrill.user,
-              pass: secrets.mandrill.password
-            }
-          });
-          var mailOptions = {
-            to: user.email,
-            from: 'Team@freecodecamp.com',
-            subject: 'Welcome to Free Code Camp!',
-            text: [
-              'Greetings from San Francisco!\n\n',
-              'Thank you for joining our community.\n',
-              'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
-              "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
-              'Good luck with the challenges!\n\n',
-              '- Our All-Volunteer Team'
-            ].join('')
-          };
-          transporter.sendMail(mailOptions, function(err) {
-            if (err) { return err; }
+            var transporter = nodemailer.createTransport({
+              service: 'Mandrill',
+              auth: {
+                user: secrets.mandrill.user,
+                pass: secrets.mandrill.password
+              }
+            });
+            var mailOptions = {
+              to: user.email,
+              from: 'Team@freecodecamp.com',
+              subject: 'Welcome to Free Code Camp!',
+              text: [
+                'Greetings from San Francisco!\n\n',
+                'Thank you for joining our community.\n',
+                'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
+                "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+                'Good luck with the challenges!\n\n',
+                '- Our All-Volunteer Team'
+              ].join('')
+            };
+            transporter.sendMail(mailOptions, function(err) {
+              if (err) { return err; }
+            });
           });
         }
       });
