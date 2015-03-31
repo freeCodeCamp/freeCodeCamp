@@ -1,17 +1,8 @@
 var async = require('async'),
-    User = require('../models/User'),
-    Challenge = require('./../models/Challenge'),
-    Bonfire = require('./../models/Bonfire'),
-    Story = require('./../models/Story'),
-    Comment = require('./../models/Comment'),
     resources = require('./resources.json'),
-    steps = resources.steps,
     secrets = require('./../config/secrets'),
     moment = require('moment'),
-    https = require('https'),
     debug = require('debug')('freecc:cntr:resources'),
-    cheerio = require('cheerio'),
-    request = require('request'),
     R = require('ramda');
 
 exports.nonprofitsHome = function(req, res) {
@@ -98,4 +89,40 @@ exports.otherSolutions = function(req, res) {
     res.render('nonprofits/other-solutions', {
         title: 'Here are some other possible solutions for you'
     });
+};
+
+exports.returnIndividualNonprofit = function(req, res, next) {
+    var dashedName = req.params.nonprofitName;
+
+    var nonprofitName = dashedName.replace(/\-/g, ' ');
+
+    Nonprofit.find({'name': new RegExp(nonprofitName, 'i')}, function(err, nonprofit) {
+        if (err) {
+            next(err);
+        }
+
+        if (nonprofit.length < 1) {
+            req.flash('errors', {
+                msg: "404: We couldn't find a nonprofit with that name. Please double check the name."
+            });
+
+            return res.redirect('/nonprofits');
+        }
+
+        nonprofit = nonprofit.pop();
+        var dashedNameFull = nonprofit.name.toLowerCase().replace(/\s/g, '-');
+        if (dashedNameFull != dashedName) {
+            return res.redirect('../nonprofit/' + dashedNameFull);
+        }
+        res.render('nonprofits/show', {
+            title: nonprofit.name,
+            description: nonprofit.description.join('')
+        });
+    });
+};
+
+exports.showAllNonprofits = function(req, res) {
+    var data = {};
+    data.nonprofitList = resources.allNonprofitNames();
+    res.send(data);
 };

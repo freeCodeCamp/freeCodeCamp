@@ -352,6 +352,16 @@ app.get('/nonprofits/your-nonprofit-project-application-has-been-submitted', non
 app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
 
 app.get(
+    '/nonprofits/:nonprofitName',
+    nonprofitController.returnIndividualNonprofit
+);
+
+app.get(
+    '/nonprofits',
+    nonprofitController.showAllNonprofits
+);
+
+app.get(
   '/done-with-first-100-hours',
   passportConf.isAuthenticated,
   contactController.getDoneWithFirst100Hours
@@ -496,6 +506,8 @@ app.get('/bonfire', function(req, res) {
     res.redirect(301, '/playground');
 });
 
+app.post('/completed-bonfire/', bonfireController.completedBonfire);
+
 /**
  * Wiki related routes
  */
@@ -507,10 +519,9 @@ app.get(
 
 app.get(
     '/wiki',
-    wikiController.showAllWikis
+    wikiController.returnHomeWiki
 );
 
-app.post('/completed-bonfire/', bonfireController.completedBonfire);
 
 /**
  * Courseware related routes
@@ -548,6 +559,7 @@ app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
 
 app.get('/sitemap.xml', resourcesController.sitemap);
+
 /**
  * OAuth sign-in routes.
  */

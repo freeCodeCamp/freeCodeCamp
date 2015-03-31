@@ -1,11 +1,11 @@
 h3
-    ol#bonfireList
+    ol#wikiList
     script(src='/js/lib/ramda/ramda.min.js')
     script.
         var getLinkedName = function getLinkedName(name) {
             // ensure name is a string
             name = name + '';
-            return name.toLowerCase().replace(/\s/g, '-');
+            return name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
         }
         $.ajax({
             url: '/wiki/getWikiList',
@@ -20,5 +20,5 @@ h3
                         $(li).html("<a href='/wiki/" + linkedName + "'>" + data.wikiList[i].name + "</a></li>");
                     docfrag.appendChild(li);
                 };
-            $('#bonfireList').append(docfrag);
+            $('#wikiList').append(docfrag);
         });
