@@ -7,21 +7,46 @@ block content
             .panel-heading.text-center
                 h1= title
             .panel-body
-                h3= whatDoesNonprofitDo
-                for deliverable in approvedDeliverables
-                    p= deliverable
-                p Website:
-                    a(href=websiteLink)= websiteLink
-                p Project Description:
-                    = projectDescription
-                p Estimated Hours Per Camper
-                    = estimatedHours
-                img.img-responsive(src=imageUrl)
-                img.img-responsive(src=logoUrl)
+                .col-xs-12.col-sm-10.col-sm-offset-1
+                    .row
+                        .col-xs-12
+                            img.img-center.img-responsive(src=imageUrl)
+                    .spacer
+                    .row
+                        .col-xs-12.col-sm-4
+                            img.img-responsive(src=logoUrl)
+                        .col-xs-12.col-sm-8
+                            h4= whatDoesNonprofitDo
+                            h4
+                                a(href=websiteLink)= websiteLink
+                .col-xs-12.col-sm-10.col-sm-offset-1
+                    .row
+                        h4 #{projectDescription} (About #{estimatedHours} hours per camper)
+                .col-xs-12.col-sm-10.col-sm-offset-1
+                    .row.text-center
+                        h3 This project involves building:
+                            if (approvedWebsite)
+                                .ion-android-globe &nbsp; Website
+                            if (approvedDonor)
+                                .ion-card &nbsp; Donor Management System
+                            if (approvedInventory)
+                                .ion-ios-box &nbsp; Inventory Management System
+                            if (approvedVolunteer)
+                                .ion-android-calendar &nbsp; Volunteer Management System
+                            if (approvedForm)
+                                .ion-ios-list &nbsp; Webform
+                            if (approvedCommunity)
+                                .ion-ios-people &nbsp; Community Management System
+                            if (approvedELearning)
+                                .ion-university &nbsp; E-learning Platform
+                            if (approvedOther)
+                                .ion-settings &nbsp; Other tools
+
                 .spacer
-                .text-center
-                    #showAllButton.btn.btn-info.btn-big Show all Nonprofits Projects
-                .spacer
+                .col-xs-12.col-sm-8.col-sm-offset-2
+                    .text-center
+                        #interestedInProject.btn.btn-primary.btn-big.btn-block I'm interested in building this project
+                        #showAllButton.btn.btn-info.btn-big.btn-block Show all Nonprofits Projects
                 .row
                     .col-xs-12.text-center
                         if !user

@@ -1,6 +1,6 @@
 var async = require('async'),
     Nonprofit = require('./../models/Nonprofit'),
-    resources = require('./resources.json'),
+    resources = require('./resources'),
     secrets = require('./../config/secrets'),
     moment = require('moment'),
     debug = require('debug')('freecc:cntr:resources'),
@@ -118,8 +118,16 @@ exports.returnIndividualNonprofit = function(req, res, next) {
         res.render('nonprofits/show', {
             title: nonprofit.name,
             logoUrl: nonprofit.logoUrl,
+            estimatedHours: nonprofit.estimatedHours,
             projectDescription: nonprofit.projectDescription,
-            approvedDeliverables: nonprofit.approvedDeliverables,
+            approvedOther: nonprofit.approvedDeliverables.indexOf('other') > -1,
+            approvedWebsite: nonprofit.approvedDeliverables.indexOf('website') > -1,
+            approvedDonor: nonprofit.approvedDeliverables.indexOf('donor') > -1,
+            approvedInventory: nonprofit.approvedDeliverables.indexOf('inventory') > -1,
+            approvedVolunteer: nonprofit.approvedDeliverables.indexOf('volunteer') > -1,
+            approvedForm: nonprofit.approvedDeliverables.indexOf('form') > -1,
+            approvedCommunity: nonprofit.approvedDeliverables.indexOf('community') > -1,
+            approvedELearning: nonprofit.approvedDeliverables.indexOf('eLearning') > -1,
             websiteLink: nonprofit.websiteLink,
             imageUrl: nonprofit.imageUrl,
             whatDoesNonprofitDo: nonprofit.whatDoesNonprofitDo
@@ -130,6 +138,5 @@ exports.returnIndividualNonprofit = function(req, res, next) {
 exports.showAllNonprofits = function(req, res) {
     var data = {};
     data.nonprofitsList = resources.allNonprofitNames();
-    console.log('here I am rock you like a hurricane', data);
     res.send(data);
 };

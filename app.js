@@ -323,9 +323,9 @@ app.post('/email-signin', userController.postSignin);
  * Nonprofit Project routes.
  */
 
-app.get('/nonprofits', contactController.getNonprofitsForm);
-
-app.post('/nonprofits', contactController.postNonprofitsForm);
+//app.get('/nonprofits', contactController.getNonprofitsForm);
+//
+//app.post('/nonprofits', contactController.postNonprofitsForm);
 
 app.get('/nonprofits/home', nonprofitController.nonprofitsHome);
 
@@ -351,17 +351,12 @@ app.get('/nonprofits/your-nonprofit-project-application-has-been-submitted', non
 
 app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
 
+app.get('/nonprofits/getNonprofitList', nonprofitController.showAllNonprofits);
+
 app.get(
     '/nonprofits/:nonprofitName',
     nonprofitController.returnIndividualNonprofit
 );
-
-app.get(
-    '/nonprofits',
-    nonprofitController.showAllNonprofits
-);
-
-app.get('/nonprofits/getNonprofitsList', nonprofitController.showAllNonprofits);
 
 app.get(
   '/done-with-first-100-hours',
