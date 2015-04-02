@@ -118,8 +118,7 @@ $(document).ready(function() {
             {
               coursewareInfo: {
                 coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName,
-                verified: true
+                coursewareName: passedCoursewareName
               }
             }).success(
             function(res) {
@@ -140,8 +139,7 @@ $(document).ready(function() {
                 coursewareName: passedCoursewareName,
                 completedWith: didCompleteWith,
                 publicURL: publicURL,
-                challengeType: challengeType,
-                verified: false
+                challengeType: challengeType
               }
             }).success(
             function() {

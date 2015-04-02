@@ -253,7 +253,8 @@ exports.completedCourseware = function (req, res, next) {
     completedDate: isCompletedDate,
     name: req.body.coursewareInfo.coursewareName,
     solution: null,
-    githubLink: null
+    githubLink: null,
+    verified: true
   });
   var index = req.user.completedCoursewares.indexOf(coursewareHash);
 
@@ -307,7 +308,8 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
           completedWith: pairedWith._id,
           completedDate: isCompletedDate,
           solution: solutionLink,
-          githubLink: githubLink
+          githubLink: githubLink,
+          verified: false
         });
 
         req.user.save(function (err, user) {
@@ -333,7 +335,8 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
             completedWith: req.user._id,
             completedDate: isCompletedDate,
             solution: solutionLink,
-            githubLink: githubLink
+            githubLink: githubLink,
+            verified: false
           });
           pairedWith.save(function (err, paired) {
             if (err) {
@@ -353,7 +356,8 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
       completedWith: null,
       completedDate: isCompletedDate,
       solution: solutionLink,
-      githubLink: githubLink
+      githubLink: githubLink,
+      verified: false
     });
 
     var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);

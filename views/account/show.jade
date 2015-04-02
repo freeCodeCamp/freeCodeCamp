@@ -97,7 +97,7 @@ block content
                                     | Try it out
 
                     .hidden-xs.col-sm-12
-                        #cal-heatmap.img-center.hidden
+                        #cal-heatmap.img-center
                             script(src="//d3js.org/d3.v3.min.js")
                             script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
                             link(rel="stylesheet", href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css")
@@ -119,16 +119,8 @@ block content
                                     legendColors: ["#cccccc", "#215f1e"],
                                     legend: [1, 2, 3]
                                 });
-                    .row
-                        .hidden-xs.col-sm-12.text-center
-                            .row
-                                h3.col-sm-6.text-center
-                                    .center-block.
-                                        #{longestStreak}
-                                    .center-block.
-                                        Longest Streak
-                                h3.col-sm-6.text-center
-                                    .center-block.
-                                        #{currentStreak}
-                                    .center-block.
-                                        Current Streak
+                        .row
+                            .hidden-xs.col-sm-12.text-center
+                                .row
+                                    h3.col-sm-6.text-right Longest Streak: #{longestStreak}
+                                    h3.col-sm-6.text-left Current Streak #{currentStreak}
