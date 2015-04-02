@@ -302,6 +302,9 @@ exports.returnUser = function(req, res, next) {
         data[(progressTimestamps[i] / 1000).toString()] = 1;
       }
 
+      user.currentStreak = user.currentStreak || 1;
+      user.longestStreak = user.longestStreak || 1;
+
       res.render('account/show', {
         title: 'Camper ' + user.profile.username + '\'s portfolio',
         username: user.profile.username,
@@ -327,8 +330,8 @@ exports.returnUser = function(req, res, next) {
         ch: user.challengesHash,
         calender: data,
         moment: moment,
-        longestStreak: user.longestStreak,
-        currentStreak: user.currentStreak
+        longestStreak: user.longestStreak + (user.longestStreak === 1 ? " day" : " days"),
+        currentStreak: user.currentStreak + (user.currentStreak === 1 ? " day" : " days")
       });
 
     } else {
