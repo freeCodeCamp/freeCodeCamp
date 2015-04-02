@@ -353,6 +353,8 @@ app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
 
 app.get('/nonprofits/getNonprofitList', nonprofitController.showAllNonprofits);
 
+app.get('/nonprofits/interested-in-nonprofit/:nonprofitName', nonprofitController.interestedInNonprofit);
+
 app.get(
     '/nonprofits/:nonprofitName',
     nonprofitController.returnIndividualNonprofit

@@ -116,6 +116,7 @@ exports.returnIndividualNonprofit = function(req, res, next) {
             return res.redirect('../nonprofit/' + dashedNameFull);
         }
         res.render('nonprofits/show', {
+            dashedName: dashedNameFull,
             title: nonprofit.name,
             logoUrl: nonprofit.logoUrl,
             estimatedHours: nonprofit.estimatedHours,
@@ -130,7 +131,8 @@ exports.returnIndividualNonprofit = function(req, res, next) {
             approvedELearning: nonprofit.approvedDeliverables.indexOf('eLearning') > -1,
             websiteLink: nonprofit.websiteLink,
             imageUrl: nonprofit.imageUrl,
-            whatDoesNonprofitDo: nonprofit.whatDoesNonprofitDo
+            whatDoesNonprofitDo: nonprofit.whatDoesNonprofitDo,
+            interestedCampers: nonprofit.interestedCampers
         });
     });
 };
@@ -139,4 +141,16 @@ exports.showAllNonprofits = function(req, res) {
     var data = {};
     data.nonprofitsList = resources.allNonprofitNames();
     res.send(data);
+};
+
+exports.interestedInNonprofit = function(req, res) {
+
+  if (req.user.uncompletedBonfires !== [] && req.user.uncompletedCoursewares !== []) {
+    Nonprofit.find({name: req.params.nonprofitName.replace(/-/, ' ')}, function(err, nonprofit) {
+      if (err) { return next(err); }
+      nonprofit.interestedCampers.push({"name": req.user.username, "picture": req.user.picture, "timeOfInterest": Date.now()});
+      req.flash('success', { msg: 'Thanks for expressing interest in this nonprofit project!' });
+    });
+  }
+  res.redirect('back');
 };

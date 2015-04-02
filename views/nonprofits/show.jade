@@ -7,45 +7,52 @@ block content
             .panel-heading.text-center
                 h1= title
             .panel-body
-                .col-xs-12.col-sm-10.col-sm-offset-1
-                    .row
-                        .col-xs-12
-                            img.img-center.img-responsive(src=imageUrl)
-                    .spacer
-                    .row
-                        .col-xs-12.col-sm-4
-                            img.img-responsive(src=logoUrl)
-                        .col-xs-12.col-sm-8
-                            h4= whatDoesNonprofitDo
-                            h4
-                                a(href=websiteLink)= websiteLink
-                .col-xs-12.col-sm-10.col-sm-offset-1
-                    .row
-                        h4 #{projectDescription} (About #{estimatedHours} hours per camper)
-                .col-xs-12.col-sm-10.col-sm-offset-1
-                    .row.text-center
-                        h3 This project involves building:
-                            if (approvedWebsite)
-                                .ion-android-globe &nbsp; Website
-                            if (approvedDonor)
-                                .ion-card &nbsp; Donor Management System
-                            if (approvedInventory)
-                                .ion-ios-box &nbsp; Inventory Management System
-                            if (approvedVolunteer)
-                                .ion-android-calendar &nbsp; Volunteer Management System
-                            if (approvedForm)
-                                .ion-ios-list &nbsp; Webform
-                            if (approvedCommunity)
-                                .ion-ios-people &nbsp; Community Management System
-                            if (approvedELearning)
-                                .ion-university &nbsp; E-learning Platform
-                            if (approvedOther)
-                                .ion-settings &nbsp; Other tools
-
+                .row
+                    .col-xs-12.col-sm-10.col-sm-offset-1
+                        .row
+                            .col-xs-12
+                                img.img-center.img-responsive(src=imageUrl)
+                        .spacer
+                        .row
+                            .col-xs-12.col-sm-4
+                                img.img-responsive(src=logoUrl)
+                            .col-xs-12.col-sm-8
+                                .col-xs-12
+                                    h4= whatDoesNonprofitDo
+                                    h4
+                                        a(href=websiteLink)= websiteLink
+                                h3 Project Description:
+                                .col-xs-12
+                                    h4 #{projectDescription} (About #{estimatedHours} hours per camper)
+                                h3 This project involves building:
+                                    .col-xs-12
+                                        if (approvedWebsite)
+                                            .ion-android-globe &nbsp; Website
+                                        if (approvedDonor)
+                                            .ion-card &nbsp; Donor Management System
+                                        if (approvedInventory)
+                                            .ion-ios-box &nbsp; Inventory Management System
+                                        if (approvedVolunteer)
+                                            .ion-android-calendar &nbsp; Volunteer Management System
+                                        if (approvedForm)
+                                            .ion-ios-list &nbsp; Webform
+                                        if (approvedCommunity)
+                                            .ion-ios-people &nbsp; Community Management System
+                                        if (approvedELearning)
+                                            .ion-university &nbsp; E-learning Platform
+                                        if (approvedOther)
+                                            .ion-settings &nbsp; Other tools
                 .spacer
+                .col-xs-12.text-center
+                    h3 Interested campers:
+                    for interestedCamper in interestedCampers
+                        a(href='/' + interestedCamper.username class="interested-camper-image")
+                            img.profile-picture.float-right(src=interestedUser.profile.picture)
+                .col-xs-12.text-center
+                    h3 Assigned campers:
                 .col-xs-12.col-sm-8.col-sm-offset-2
                     .text-center
-                        #interestedInProject.btn.btn-primary.btn-big.btn-block I'm interested in building this project
+                        a.btn.btn-primary.btn-big.btn-block(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project
                         #showAllButton.btn.btn-info.btn-big.btn-block Show all Nonprofits Projects
                 .row
                     .col-xs-12.text-center
