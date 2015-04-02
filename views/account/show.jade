@@ -100,7 +100,6 @@ block content
                         #cal-heatmap.img-center
                             script(src="//d3js.org/d3.v3.min.js")
                             script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
-                            link(rel="stylesheet", href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css")
                             script.
                                 var cal = new CalHeatMap();
                                 var calendar = !{JSON.stringify(calender)};
@@ -121,6 +120,6 @@ block content
                                 });
                         .row
                             .hidden-xs.col-sm-12.text-center
-                                .row
-                                    h3.col-sm-6.text-right Longest Streak: #{longestStreak}
-                                    h3.col-sm-6.text-left Current Streak: #{currentStreak}
+                                .row.text-primary
+                                    h4.col-sm-6.text-right Longest Streak: #{longestStreak}
+                                    h4.col-sm-6.text-left Current Streak: #{currentStreak}
