@@ -75,6 +75,10 @@ $(document).ready(function() {
 
   });
 
+  $("img").error(function () {
+    $(this).unbind("error").attr("src", "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png");
+  });
+
   $('#completed-courseware').on('click', function() {
     $('#complete-courseware-dialog').modal('show');
   });
@@ -114,7 +118,8 @@ $(document).ready(function() {
             {
               coursewareInfo: {
                 coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName
+                coursewareName: passedCoursewareName,
+                verified: true
               }
             }).success(
             function(res) {
@@ -135,7 +140,8 @@ $(document).ready(function() {
                 coursewareName: passedCoursewareName,
                 completedWith: didCompleteWith,
                 publicURL: publicURL,
-                challengeType: challengeType
+                challengeType: challengeType,
+                verified: false
               }
             }).success(
             function() {
@@ -158,7 +164,8 @@ $(document).ready(function() {
                 completedWith: didCompleteWith,
                 publicURL: publicURL,
                 githubURL: githubURL,
-                challengeType: challengeType
+                challengeType: challengeType,
+                verified: false
               }
             }).success(function() {
               window.location.href = '/challenges';

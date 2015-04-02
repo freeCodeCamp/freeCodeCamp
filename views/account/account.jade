@@ -176,15 +176,11 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='website1Image') Image Link (4:3 ratio)
                   .col-sm-4
-                    input.form-control(type='url', name='website1Image', id='website1Image', autocomplete="off", ng-model='user.portfolio.website1Image', placeholder='http://www.example.com/image.jpg', ng-pattern="/[\.](jpg|png|jpeg|gif)\s?$/")
+                    input.form-control(type='url', name='website1Image', id='website1Image', autocomplete="off", ng-model='user.portfolio.website1Image', placeholder='http://www.example.com/image.jpg')
                   .col-sm-4.col-sm-offset-5(ng-show="profileForm.website1Image.$error.url && !profileForm.website1Image.$pristine")
                       alert(type='danger')
                           span.ion-close-circled
                           | Please enter a valid URL format (http://www.example.com/image.jpg).
-                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.website1Image.$error.pattern")
-                      alert(type='danger')
-                          span.ion-close-circled
-                          | The image URL must end in .jpg, .png, .jpeg or .gif.
 
                 .col-sm-4.col-sm-offset-5.flat-top
                     h3 Second Portfolio Project
@@ -209,15 +205,11 @@ block content
                 .form-group
                     label.col-sm-3.col-sm-offset-2.control-label(for='website2Image') Image Link (4:3 ratio)
                     .col-sm-4
-                        input.form-control(type='url', name='website2Image', id='website2Image', autocomplete="off", ng-model='user.portfolio.website2Image', placeholder='http://www.example.com/image.jpg', ng-pattern="/[\.](jpg|png|jpeg|gif)\s?$/")
+                        input.form-control(type='url', name='website2Image', id='website2Image', autocomplete="off", ng-model='user.portfolio.website2Image', placeholder='http://www.example.com/image.jpg')
                     .col-sm-4.col-sm-offset-5(ng-show="profileForm.website2Image.$error.url && !profileForm.website2Image.$pristine")
                         alert(type='danger')
                             span.ion-close-circled
                             | Please enter a valid URL format (http://www.example.com/image.jpg).
-                    .col-sm-4.col-sm-offset-5(ng-show="profileForm.website2Image.$error.pattern")
-                        alert(type='danger')
-                            span.ion-close-circled
-                            | The image URL must end in .jpg, .png, .jpeg or .gif.
 
                 .col-sm-4.col-sm-offset-5.flat-top
                     h3 Third Portfolio Project
@@ -248,10 +240,6 @@ block content
                         alert(type='danger')
                             span.ion-close-circled
                             | Please enter a valid URL format (http://www.example.com/image.jpg).
-                    .col-sm-4.col-sm-offset-5(ng-show="profileForm.website3Image.$error.pattern")
-                        alert(type='danger')
-                            span.ion-close-circled
-                            | The image URL must end in .jpg, .png, .jpeg or .gif.
 
                 .form-group
                     .col-sm-offset-5.col-sm-4

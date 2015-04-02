@@ -49,7 +49,7 @@ block content
                         if (website1Title && website1Link && website1Image)
                             .row
                                 .col-xs-12.col-md-5
-                                    img.img-center.img-responsive.portfolio-image(src=website1Image, alt="@#{username}'s #{website1Title")
+                                    img.img-center.img-responsive.portfolio-image(src=website1Image, alt="@#{username}'s #{website1Title}")
                                 .col-xs-12.col-md-7
                                     h3.text-center.wrappable.flat-top= website1Title
                                     a.btn.btn-lg.btn-block.btn-info(href=website1Link, target='_blank')
@@ -66,7 +66,7 @@ block content
                         if (website2Title && website2Link && website2Image)
                             .row
                                 .col-xs-12.col-md-5
-                                    img.img-responsive.portfolio-image.img-center(src=website2Image, alt="@#{username}'s #{website2Title")
+                                    img.img-responsive.portfolio-image.img-center(src=website2Image, alt="@#{username}'s #{website2Title}")
                                 .col-xs-12.col-md-7
                                     h3.text-center.wrappable.flat-top= website2Title
                                     a.btn.btn-lg.btn-block.btn-info(href=website2Link, target='_blank')
@@ -83,7 +83,7 @@ block content
                         if (website3Title && website3Link && website3Image)
                             .row
                                 .col-xs-12.col-md-5
-                                    img.img-responsive.portfolio-image.img-center(src=website3Image, alt="@#{username}'s #{website1Title")
+                                    img.img-responsive.portfolio-image.img-center(src=website3Image, alt="@#{username}'s #{website1Title}")
                                 .col-xs-12.col-md-7
                                     h3.text-center.wrappable.flat-top= website3Title
                                     a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
@@ -97,7 +97,7 @@ block content
                                     | Try it out
 
                     .hidden-xs.col-sm-12
-                        #cal-heatmap.img-center
+                        #cal-heatmap.img-center.hidden
                             script(src="//d3js.org/d3.v3.min.js")
                             script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
                             link(rel="stylesheet", href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css")

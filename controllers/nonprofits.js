@@ -3,7 +3,7 @@ var async = require('async'),
     resources = require('./resources'),
     secrets = require('./../config/secrets'),
     moment = require('moment'),
-    debug = require('debug')('freecc:cntr:resources'),
+    debug = require('debug')('freecc:cntr:nonprofits'),
     R = require('ramda');
 
 exports.nonprofitsHome = function(req, res) {
