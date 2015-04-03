@@ -21,11 +21,13 @@ block content
                                     h4= whatDoesNonprofitDo
                                     h4
                                         a(href=websiteLink)= websiteLink
+                                .spacer
                                 h3 Project Description:
                                 .col-xs-12
                                     h4.negative-15 #{projectDescription} (About #{estimatedHours} hours per camper)
+                                .spacer
                                 h3 This project involves building:
-                                    .col-xs-12
+                                    h4.negative-15.col-xs-12
                                         if (approvedWebsite)
                                             .ion-android-globe &nbsp; Website
                                         if (approvedDonor)
@@ -42,18 +44,30 @@ block content
                                             .ion-university &nbsp; E-learning Platform
                                         if (approvedOther)
                                             .ion-settings &nbsp; Other tools
+                                if (interestedCampers && interestedCampers.length > 0)
+                                    h3 Interested campers:
+                                    .col-xs-12.text-left
+                                        for interestedCamper in interestedCampers
+                                            a(href='/' + interestedCamper.username class="interested-camper-image")
+                                                img.profile-picture.float-right(src=interestedCamper.picture)
+                                if (assignedCampers && assignedCampers.length > 0)
+                                    h3 Assigned campers:
+                                    .col-xs-12.text-left
+                                    for assignedCamper in assignedCampers
+                                        a(href='/' + assignedCamper.username class="interested-camper-image")
+                                            img.profile-picture.float-right(src=assignedCamper.picture)
                 .spacer
-                .col-xs-12.text-center
-                    h3 Interested campers:
-                    for interestedCamper in interestedCampers
-                        a(href='/' + interestedCamper.username class="interested-camper-image")
-                            img.profile-picture.float-right(src=interestedUser.profile.picture)
-                .col-xs-12.text-center
-                    h3 Assigned campers:
-                .col-xs-12.col-sm-8.col-sm-offset-2
-                    .text-center
-                        a.btn.btn-primary.btn-big.btn-block(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project
-                        #showAllButton.btn.btn-info.btn-big.btn-block Show all Nonprofits Projects
+                if (!buttonActive)
+                    .col-xs-12.col-sm-8.col-sm-offset-2
+                        .text-center
+                            a.btn.btn-primary.btn-big.btn-block.disabled(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project *
+                            p * Complete all our Bonfires, 10 Ziplines, and 3 Basejumps to unlock this.
+                            #showAllButton.btn.btn-info.btn-big.btn-block Show all Nonprofits Projects
+                if (buttonActive)
+                    .col-xs-12.col-sm-8.col-sm-offset-2
+                        .text-center
+                            a.btn.btn-primary.btn-big.btn-block(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project
+                            #showAllButton.btn.btn-info.btn-big.btn-block Show all Nonprofits Projects
                 .row
                     .col-xs-12.text-center
                         if !user

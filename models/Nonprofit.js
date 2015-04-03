@@ -6,7 +6,7 @@ var secrets = require('../config/secrets');
  * @type {exports.Schema}
  */
 
-
+var Long = mongoose.Types.Long;
 var nonprofitSchema = new mongoose.Schema({
     name: String,
     requestedDeliverables: Array,

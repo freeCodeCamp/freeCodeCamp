@@ -115,6 +115,20 @@ exports.returnIndividualNonprofit = function(req, res, next) {
         if (dashedNameFull != dashedName) {
             return res.redirect('../nonprofit/' + dashedNameFull);
         }
+        var buttonActive = false;
+        if (req.user) {
+          if (req.user.uncompletedBonfires.length === 0) {
+            if (req.user.completedCoursewares.length > 63) {
+              var hasShownInterest = nonprofit.interestedCampers.filter(function ( obj ) {
+                return obj.username === req.user.profile.username;
+              });
+              console.log(hasShownInterest);
+              if (hasShownInterest.length === 0) {
+                buttonActive = true;
+              }
+            }
+          }
+        }
         res.render('nonprofits/show', {
             dashedName: dashedNameFull,
             title: nonprofit.name,
@@ -132,7 +146,9 @@ exports.returnIndividualNonprofit = function(req, res, next) {
             websiteLink: nonprofit.websiteLink,
             imageUrl: nonprofit.imageUrl,
             whatDoesNonprofitDo: nonprofit.whatDoesNonprofitDo,
-            interestedCampers: nonprofit.interestedCampers
+            interestedCampers: nonprofit.interestedCampers,
+            assignedCampers: nonprofit.assignedCampers,
+            buttonActive: buttonActive
         });
     });
 };
@@ -144,13 +160,18 @@ exports.showAllNonprofits = function(req, res) {
 };
 
 exports.interestedInNonprofit = function(req, res) {
-
-  if (req.user.uncompletedBonfires !== [] && req.user.uncompletedCoursewares !== []) {
-    Nonprofit.find({name: req.params.nonprofitName.replace(/-/, ' ')}, function(err, nonprofit) {
+  if (req.user) {
+    Nonprofit.findOne({name: new RegExp(req.params.nonprofitName.replace(/-/, ' '), 'i')}, function(err, nonprofit) {
       if (err) { return next(err); }
-      nonprofit.interestedCampers.push({"name": req.user.username, "picture": req.user.picture, "timeOfInterest": Date.now()});
-      req.flash('success', { msg: 'Thanks for expressing interest in this nonprofit project!' });
+      nonprofit.interestedCampers.push({"username": req.user.profile.username,
+        "picture": req.user.profile.picture,
+        "timeOfInterest": Date.now()
+      });
+      nonprofit.save(function(err) {
+        if (err) { return done(err); }
+        req.flash('success', { msg: "Thanks for expressing interest in this nonprofit project! We've added you to this project as an interested camper!" });
+        res.redirect('back');
+      });
     });
   }
-  res.redirect('back');
 };
