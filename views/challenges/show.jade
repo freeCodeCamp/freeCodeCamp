@@ -50,7 +50,7 @@ block content
                 .success(
                 function (data) {
                     console.log(data);
-                    url = "https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=" + data + "&hashtags=LearnToCode, JavaScript";
+                    url = "https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge:%20#{name}&url=" + data + "&hashtags=LearnToCode, JavaScript";
                     $('.btn-twitter').attr('href', url);
                 }
         );
