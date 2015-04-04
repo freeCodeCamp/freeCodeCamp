@@ -6,9 +6,9 @@ var _ = require('lodash'),
   User = require('../models/User'),
   secrets = require('../config/secrets'),
   moment = require('moment'),
-  Challenge = require('./../models/Challenge'),
   debug = require('debug')('freecc:cntr:challenges'),
-  resources = require('./resources');
+  resources = require('./resources'),
+  R = require('ramda');
 
 
 
@@ -18,7 +18,9 @@ var _ = require('lodash'),
  */
 
 exports.getSignin = function(req, res) {
-  if (req.user) return res.redirect('/');
+  if (req.user) {
+    return res.redirect('/');
+  }
   res.render('account/signin', {
     title: 'Free Code Camp Login'
   });
@@ -41,13 +43,17 @@ exports.postSignin = function(req, res, next) {
   }
 
   passport.authenticate('local', function(err, user, info) {
-    if (err) return next(err);
+    if (err) {
+      return next(err);
+    }
     if (!user) {
       req.flash('errors', { msg: info.message });
       return res.redirect('/signin');
     }
     req.logIn(user, function(err) {
-      if (err) return next(err);
+      if (err) {
+        return next(err);
+      }
       req.flash('success', { msg: 'Success! You are logged in.' });
       res.redirect(req.session.returnTo || '/');
     });
@@ -70,7 +76,9 @@ exports.signout = function(req, res) {
  */
 
 exports.getEmailSignin = function(req, res) {
-  if (req.user) return res.redirect('/');
+  if (req.user) {
+    return res.redirect('/');
+  }
   res.render('account/email-signin', {
     title: 'Sign in to your Free Code Camp Account'
   });
@@ -82,7 +90,9 @@ exports.getEmailSignin = function(req, res) {
  */
 
 exports.getEmailSignup = function(req, res) {
-  if (req.user) return res.redirect('/');
+  if (req.user) {
+    return res.redirect('/');
+  }
   res.render('account/email-signup', {
     title: 'Create Your Free Code Camp Account'
   });
@@ -98,7 +108,7 @@ exports.postEmailSignup = function(req, res, next) {
 
     req.assert('email', 'valid email required').isEmail();
     var errors = req.validationErrors();
-    
+
     if (errors) {
         req.flash('errors', errors);
         return res.redirect('/email-signup');
@@ -124,7 +134,7 @@ exports.postEmailSignup = function(req, res, next) {
   var user = new User({
     email: req.body.email.trim(),
     password: req.body.password,
-    profile : {
+    profile: {
       username: req.body.username.trim(),
       picture: 'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png'
     }
@@ -174,7 +184,7 @@ exports.postEmailSignup = function(req, res, next) {
           'Greetings from San Francisco!\n\n',
           'Thank you for joining our community.\n',
           'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
-          "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+          'And if you have a moment, check out our blog: blog.freecodecamp.com.\n',
           'Good luck with the challenges!\n\n',
           '- the Volunteer Camp Counselor Team'
         ].join('')
@@ -186,19 +196,6 @@ exports.postEmailSignup = function(req, res, next) {
   });
 };
 
-/**
- * For Calendar display
- */
-
-exports.getStreak = function(req, res) {
-  var completedStreak = req.user.challengesHash;
-
-}
-
-/**
- * GET /account
- * Profile page.
- */
 
 exports.getAccount = function(req, res) {
   res.render('account/account', {
@@ -269,10 +266,40 @@ exports.returnUser = function(req, res, next) {
     if (user[0]) {
       var user = user[0];
 
+      user.progressTimestamps = user.progressTimestamps.sort(function(a, b) {
+        return a - b;
+      });
+
+      var timeObject = Object.create(null);
+      R.forEach(function(time) {
+        timeObject[moment(time).format('YYYY-MM-DD')] = time;
+      }, user.progressTimestamps);
+
+      var tmpLongest = 1;
+      var timeKeys = R.keys(timeObject);
+      for (var i = 1; i <= timeKeys.length; i++) {
+        if (moment(timeKeys[i - 1]).add(1, 'd').toString()
+          === moment(timeKeys[i]).toString()) {
+          tmpLongest++;
+          if (tmpLongest >  user.currentStreak) {
+            user.currentStreak = tmpLongest;
+          }
+          if ( user.currentStreak > user.longestStreak) {
+            user.longestStreak = user.currentStreak;
+          }
+        }
+      }
+
+      user.save(function(err) {
+        if (err) {
+          return next(err);
+        }
+      });
+
       var data = {};
       var progressTimestamps = user.progressTimestamps;
       for (var i = 0; i < progressTimestamps.length; i++) {
-        data[progressTimestamps[i].toString()] = 1;
+        data[(progressTimestamps[i] / 1000).toString()] = 1;
       }
 
       res.render('account/show', {
@@ -299,7 +326,9 @@ exports.returnUser = function(req, res, next) {
         website3Image: user.portfolio.website3Image,
         ch: user.challengesHash,
         calender: data,
-        moment: moment
+        moment: moment,
+        longestStreak: user.longestStreak,
+        currentStreak: user.currentStreak
       });
 
     } else {

@@ -1,0 +1,12 @@
+extends ../layout
+block content
+    .jumbotron.text-center
+        h1.hug-top Nonprofit Sign Up
+        include ../partials/nonprofit-application-progress-bar
+        h2 Our campers are learning to code using modern full stack JavaScript technologies like Node.js. We do not build or maintain Wordpress, Drupal, or other non-JavaScript based frameworks.
+        .spacer
+        .row
+            .col-xs-6
+                a.btn.btn-primary.btn-big.btn-block(href='/nonprofits/in-exchange-we-ask') Sounds good!
+            .col-xs-6
+                a.btn.btn-warning.btn-big.btn-block(href='/nonprofits/other-solutions') This might not be for us.

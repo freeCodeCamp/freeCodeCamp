@@ -12,21 +12,24 @@ block content
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
-            - if (cc)
-                a.btn.btn-primary.btn-lg.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
+            - if (user)
+                a.btn.btn-primary.btn-big.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
             - else
-                a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+                a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
                 br
-            script(type="text/javascript").
+            .button-spacer
+            #showAllButton.btn.btn-info.btn-big.btn-block Show all challenges
+        script(type="text/javascript").
                 var tests = !{JSON.stringify(tests)};
                 var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
                 var challengeName = !{JSON.stringify(name)};
                 var passedCoursewareName = challengeName;
-                var started = Math.floor(Date.now() / 1000);
+                var started = Math.floor(Date.now());
+                var challengeType = !{JSON.stringify(challengeType)};
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
@@ -36,9 +39,9 @@ block content
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
-                        - if (cc)
+                        - if (user)
                             a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge (ctrl + enter)
-                            - if (points && points > 2)
+                            - if (user.progressTimestamps.length > 2)
                                 a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
                                     i.fa.fa-twitter &thinsp;
                                     = phrase
@@ -46,10 +49,15 @@ block content
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                                 h1 #{name}
         script.
-            var challengeName = !{JSON.stringify(name)};
-            var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
             $('body').on('keypress', function(e) {
                 if (e.ctrlKey && e.keyCode == 13) {
                     $('#complete-courseware-dialog').modal('show');
                 }
             });
+    #all-challenges-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Challenges
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/challenges

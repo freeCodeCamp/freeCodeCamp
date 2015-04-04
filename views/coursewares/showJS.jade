@@ -35,6 +35,7 @@ block content
                                             span.ion-arrow-up-b
                                             | Less information
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+                #showAllButton.btn.btn-info.btn-big.btn-block Show all challenges
                 br
                 form.code
                     .form-group.codeMirrorView
@@ -47,8 +48,10 @@ block content
                     var challengeSeed = !{JSON.stringify(challengeSeed)};
                     var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
                     var challengeName = !{JSON.stringify(name)};
+                    var challengeType = !{JSON.stringify(challengeType)};
                     var passedCoursewareName = challengeName;
-                    var started = Math.floor(Date.now() / 1000);
+                    var started = Math.floor(Date.now());
+
         .col-xs-12.col-sm-12.col-md-8
             #mainEditorPanel
                 form.code
@@ -64,7 +67,7 @@ block content
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
-                    - if (cc)
+                    - if (user)
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
                         - if (points && points > 2)
                             a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
@@ -72,3 +75,10 @@ block content
                                     = phrase
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+    #all-challenges-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Challenges
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/challenges

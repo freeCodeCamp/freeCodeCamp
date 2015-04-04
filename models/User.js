@@ -1,7 +1,9 @@
 var bcrypt = require('bcrypt-nodejs');
 var crypto = require('crypto');
 var mongoose = require('mongoose');
+require('mongoose-long')(mongoose);
 
+var Long = mongoose.Types.Long;
 var userSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -21,7 +23,7 @@ var userSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    progressTimestamps: { type: Array, default: [] },
+    progressTimestamps: [],
     challengesCompleted: { type: Array, default: [] },
     pointsNeedMigration: { type: Boolean, default: true },
     challengesHash: {
@@ -332,9 +334,33 @@ var userSchema = new mongoose.Schema({
     resetPasswordToken: String,
     resetPasswordExpires: Date,
     uncompletedBonfires: Array,
-    completedBonfires: Array,
+    completedBonfires: [
+      {
+        _id: String,
+        completedWith: String,
+        completedDate: Long,
+        solution: String
+      }
+    ],
     uncompletedCoursewares: Array,
-    completedCoursewares: Array
+    completedCoursewares: [
+      {
+        completedDate: Long,
+        _id: String,
+        name: String,
+        completedWith: String,
+        solution: String,
+        githubLink: String
+      }
+    ],
+  currentStreak: {
+    type: Number,
+    default: 0
+  },
+  longestStreak: {
+    type: Number,
+    default: 0
+  }
 });
 
 /**

@@ -2,11 +2,20 @@ if (process.env.NODE_ENV !== 'development') {
   require('newrelic');
 }
 require('dotenv').load();
-/**
- * Module dependencies.
- */
+// handle uncaught exceptions. Forever will restart process on shutdown
+process.on('uncaughtException', function (err) {
+  console.error(
+    (new Date()).toUTCString() + ' uncaughtException:',
+    err.message
+  );
+  console.error(err.stack);
+  /* eslint-disable no-process-exit */
+  process.exit(1);
+  /* eslint-enable no-process-exit */
+});
 
 var express = require('express'),
+    //accepts = require('accepts'),
     cookieParser = require('cookie-parser'),
     compress = require('compression'),
     session = require('express-session'),
@@ -27,17 +36,17 @@ var express = require('express'),
      * Controllers (route handlers).
      */
     homeController = require('./controllers/home'),
-    challengesController = require('./controllers/challenges'),
     resourcesController = require('./controllers/resources'),
     userController = require('./controllers/user'),
     contactController = require('./controllers/contact'),
+    nonprofitController = require('./controllers/nonprofits'),
     bonfireController = require('./controllers/bonfire'),
     coursewareController = require('./controllers/courseware'),
 
     /**
      *  Stories
      */
-    storyController = require('./controllers/story');
+    storyController = require('./controllers/story'),
 
     /**
      * API keys and Passport configuration.
@@ -96,7 +105,7 @@ app.use(session({
     secret: secrets.sessionSecret,
     store: new MongoStore({
         url: secrets.db,
-        'auto_reconnect': true
+        'autoReconnect': true
     })
 }));
 app.use(passport.initialize());
@@ -204,7 +213,9 @@ app.use(function (req, res, next) {
 app.use(function (req, res, next) {
     // Remember original destination before login.
     var path = req.path.split('/')[1];
-    if (/auth|login|logout|signup|fonts|favicon/i.test(path)) {
+    if (/auth|login|logout|signin|signup|fonts|favicon/i.test(path)) {
+        return next();
+    } else if (/\/stories\/comments\/\w+/i.test(req.path)) {
         return next();
     }
     req.session.returnTo = req.path;
@@ -264,6 +275,18 @@ app.post('/email-signup', userController.postEmailSignup);
 app.post('/email-signin', userController.postSignin);
 app.get('/nonprofits', contactController.getNonprofitsForm);
 app.post('/nonprofits', contactController.postNonprofitsForm);
+app.get('/nonprofits/home', nonprofitController.nonprofitsHome);
+app.get('/nonprofits/are-you-with-a-registered-nonprofit', nonprofitController.areYouWithARegisteredNonprofit);
+app.get('/nonprofits/are-there-people-that-are-already-benefiting-from-your-services', nonprofitController.areTherePeopleThatAreAlreadyBenefitingFromYourServices);
+app.get('/nonprofits/in-exchange-we-ask', nonprofitController.inExchangeWeAsk);
+app.get('/nonprofits/ok-with-javascript', nonprofitController.okWithJavaScript);
+app.get('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYou);
+app.get('/nonprofits/what-does-your-nonprofit-do', nonprofitController.whatDoesYourNonprofitDo);
+app.get('/nonprofits/link-us-to-your-website', nonprofitController.linkUsToYourWebsite);
+app.get('/nonprofits/tell-us-your-name', nonprofitController.tellUsYourName);
+app.get('/nonprofits/tell-us-your-email', nonprofitController.tellUsYourEmail);
+app.get('/nonprofits/your-nonprofit-project-application-has-been-submitted', nonprofitController.yourNonprofitProjectApplicationHasBeenSubmitted);
+app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
 
 app.get(
   '/done-with-first-100-hours',
@@ -417,6 +440,8 @@ app.get(
     coursewareController.returnIndividualCourseware
 );
 app.post('/completed-courseware/', coursewareController.completedCourseware);
+app.post('/completed-zipline-or-basejump',
+  coursewareController.completedZiplineOrBasejump);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
@@ -428,9 +453,6 @@ app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
 app.get('/sitemap.xml', resourcesController.sitemap);
-
-
-
 /**
  * OAuth sign-in routes.
  */
@@ -492,17 +514,54 @@ app.get(
     }
 );
 
-//put this route last
+app.get('/induce-vomiting', function(req, res, next) {
+  next(new Error('vomiting induced'));
+});
+
+// put this route last
 app.get(
     '/:username',
     userController.returnUser
 );
 
-
 /**
  * 500 Error Handler.
  */
-app.use(errorHandler());
+if (process.env.NODE_ENV === 'development') {
+  app.use(errorHandler({ log: true }));
+} else {
+  // error handling in production
+  app.use(function(err, req, res, next) {
+
+    // respect err.status
+    if (err.status) {
+      res.statusCode = err.status;
+    }
+
+    // default status code to 500
+    if (res.statusCode < 400) {
+      res.statusCode = 500;
+    }
+
+    // parse res type
+    var accept = accepts(req);
+    var type = accept.type('html', 'json', 'text');
+
+    var message = 'opps! Something went wrong. Please try again later';
+    if (type === 'html') {
+      req.flash('errors', { msg: message });
+      return res.redirect('/');
+    // json
+    } else if (type === 'json') {
+      res.setHeader('Content-Type', 'application/json');
+      return res.send({ message: message });
+    // plain text
+    } else {
+      res.setHeader('Content-Type', 'text/plain');
+      return res.send(message);
+    }
+  });
+}
 
 /**
  * Start Express server.

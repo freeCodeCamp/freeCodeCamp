@@ -45,3 +45,11 @@
                 });
             }
             $('#preliminary-story-submit').on('click', preliminaryStorySubmit);
+
+
+            arr = $( "h3 input:checked" )
+                .map(function() {
+                return this.id;
+            })
+            .get()
+            .join('&');

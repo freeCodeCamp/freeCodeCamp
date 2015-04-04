@@ -1,347 +1,347 @@
 [
   {
-    "_id" : "bd7124d8c441eddfaeb5bdef",
+    "_id": "bd7124d8c441eddfaeb5bdef",
     "name": "Learn how Free Code Camp Works",
     "difficulty": 0.01,
     "challengeSeed": "114486344",
-    "description" : [
-        "Watch this 1-minute video, or simply read this summary:",
-        "Welcome to Free Code Camp. We're a community of busy people learning to code.",
-        "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And the best way to stay motivated is to code with friends.",
-        "To maximize accessibility, all our challenges are self-paced, browser-based, and free.",
-        "All of us start with the same 100 hours of interactive coding challenges. These cover Computer Science and databases. They also cover in-demand JavaScript tools like jQuery, Node.js and MongoDB.",
-        "Once we have a basic understanding of web development, we'll spend another 900 hours putting that theory into practice. We'll build full stack solutions for nonprofits.",
-        "By the end of this process, we'll be good at coding. We'll have a portfolio of apps with happy users to prove it. We'll also have an alumni network of fellow coders and nonprofits ready to serve as references.",
-        "If you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
-        "Also, for every pure coding job, there are at least 5 additional jobs that require some coding skills. So even if you decide not to pursue coding as a career, you'll still walk away with a valuable job skill.",
-        "There are 3 keys to succeeding in our community: do the challenges, make friends, and find a routine.",
-        "Now it's time to join our chatroom. Click the \"I've completed this challenge\" button to move on to your next challenge."
+    "description": [
+      "Watch this 1-minute video, or simply read this summary:",
+      "Welcome to Free Code Camp. We're a community of busy people learning to code.",
+      "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And the best way to stay motivated is to code with friends.",
+      "To maximize accessibility, all our challenges are self-paced, browser-based, and free.",
+      "All of us start with the same 100 hours of interactive coding challenges. These cover Computer Science and databases. They also cover in-demand JavaScript tools like jQuery, Node.js and MongoDB.",
+      "Once we have a basic understanding of web development, we'll spend another 900 hours putting that theory into practice. We'll build full stack solutions for nonprofits.",
+      "By the end of this process, we'll be good at coding. We'll have a portfolio of apps with happy users to prove it. We'll also have an alumni network of fellow coders and nonprofits ready to serve as references.",
+      "If you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
+      "Also, for every pure coding job, there are at least 5 additional jobs that require some coding skills. So even if you decide not to pursue coding as a career, you'll still walk away with a valuable job skill.",
+      "There are 3 keys to succeeding in our community: do the challenges, make friends, and find a routine.",
+      "Now it's time to join our chatroom. Click the \"I've completed this challenge\" button to move on to your next challenge."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7125d8c441eddfaeb5bdef",
+    "_id": "bd7125d8c441eddfaeb5bdef",
     "name": "Join Our Chat Room",
     "difficulty": 0.02,
     "challengeSeed": "114627322",
-    "description" : [
-        "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper who's on the same challenge as you and wants to pair program.",
-        "If you don't already have a GitHub account, create one real quick at <a href='https://www.github.com' target='_blank'>https://www.github.com</a>.",
-        "Be sure to update your biographical information and upload an image. A picture of your face works best. This is how people will see you in the chat room, so put your best foot forward.",
-        "Now enter the chat room by going to <a href='https://gitter.im/FreeCodeCamp/FreeCodeCamp' target='_blank'>https://gitter.im/FreeCodeCamp/FreeCodeCamp</a> and clicking the \"sign in with GitHub\" button.",
-        "Introduce yourself to our chat room by typing: \"hello world!\".",
-        "Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
-        "Keep the chat room open while you work through the other challenges. That way you ask for help if you get stuck on a challenge. You can also socialize when you feel like taking a break.",
-        "Now that you've completed this challenge, you can go directly your most-recently visited chat room by clicking the \"Chat\" button in the navigation bar above."
+    "description": [
+      "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper who's on the same challenge as you and wants to pair program.",
+      "If you don't already have a GitHub account, create one real quick at <a href='https://www.github.com' target='_blank'>https://www.github.com</a>.",
+      "Be sure to update your biographical information and upload an image. A picture of your face works best. This is how people will see you in the chat room, so put your best foot forward.",
+      "Now enter the chat room by going to <a href='https://gitter.im/FreeCodeCamp/FreeCodeCamp' target='_blank'>https://gitter.im/FreeCodeCamp/FreeCodeCamp</a> and clicking the \"sign in with GitHub\" button.",
+      "Introduce yourself to our chat room by typing: \"hello world!\".",
+      "Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
+      "Keep the chat room open while you work through the other challenges. That way you ask for help if you get stuck on a challenge. You can also socialize when you feel like taking a break.",
+      "Now that you've completed this challenge, you can go directly your most-recently visited chat room by clicking the \"Chat\" button in the navigation bar above."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7126d8c441eddfaeb5bdef",
+    "_id": "bd7126d8c441eddfaeb5bdef",
     "name": "Join Our Forum",
     "difficulty": 0.03,
     "challengeSeed": "115275066",
-    "description" : [
-        "Go to Free Code Camp's forum: <a href='http://forum.freecodecamp.com' target='_blank'>http://forum.freecodecamp.com</a>.",
-        "You can come here to share and discuss coding resources, ask questions to our entire community, and coordinate local Free Code Camp events.",
-        "Our chat room is great for realtime discussions, but our forum is ideal for longer-term discussions and open-ended questions.",
-        "Sign in with the Github account you created during Challenge 1.",
-        "Click on the \"Introduce yourself here\" discussion.",
-        "Here you can read through other Free Code Camp community members' self introductions.",
-        "Go ahead and type a brief self introduction of your own.",
-        "Click on the \"Categories\" drop-down menu. You should see a category called \"Local Chapters\". Click that. If your city isn't already on the list, create a topic for it. Otherwise, introduce yourself to the other campers from your city.",
-        "Come back here daily to ask questions, engage in discussions, and share links to helpful coding tools.",
-        "Now that you've completed this challenge, you can go directly to the forum by clicking the \"Forum\" button in the navigation bar above."
+    "description": [
+      "Go to Free Code Camp's forum: <a href='http://forum.freecodecamp.com' target='_blank'>http://forum.freecodecamp.com</a>.",
+      "You can come here to share and discuss coding resources, ask questions to our entire community, and coordinate local Free Code Camp events.",
+      "Our chat room is great for realtime discussions, but our forum is ideal for longer-term discussions and open-ended questions.",
+      "Sign in with the Github account you created during Challenge 1.",
+      "Click on the \"Introduce yourself here\" discussion.",
+      "Here you can read through other Free Code Camp community members' self introductions.",
+      "Go ahead and type a brief self introduction of your own.",
+      "Click on the \"Categories\" drop-down menu. You should see a category called \"Local Chapters\". Click that. If your city isn't already on the list, create a topic for it. Otherwise, introduce yourself to the other campers from your city.",
+      "Come back here daily to ask questions, engage in discussions, and share links to helpful coding tools.",
+      "Now that you've completed this challenge, you can go directly to the forum by clicking the \"Forum\" button in the navigation bar above."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7127d8c441eddfaeb5bdef",
+    "_id": "bd7127d8c441eddfaeb5bdef",
     "name": "Build a Personal Website",
     "difficulty": 0.04,
     "challengeSeed": "114627406",
-    "description" : [
-        "There are tons of interactive HTML and CSS tutorials out there, but Nathan Bashaw and Christine Bower's Dash tutorials - which they built for General Assembly - are our favorite.",
-        "Go to <a href='https://dash.generalassemb.ly/projects/annas-website-1' target='_blank'>https://dash.generalassemb.ly/projects/annas-website-1</a> and get started with your first project."
+    "description": [
+      "There are tons of interactive HTML and CSS tutorials out there, but Nathan Bashaw and Christine Bower's Dash tutorials - which they built for General Assembly - are our favorite.",
+      "Go to <a href='https://dash.generalassemb.ly/projects/annas-website-1' target='_blank'>https://dash.generalassemb.ly/projects/annas-website-1</a> and get started with your first project."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
-    "_id" : "bd7128d8c441eddfaeb5bdef",
+    "_id": "bd7128d8c441eddfaeb5bdef",
     "name": "Build a Responsive Blog Theme",
     "difficulty": 0.05,
     "challengeSeed": "114578441",
-    "description" : [
-        "Next, let's learn about responsive web design and continue learning about HTML and CSS.",
-        "A responsive website will automatically adapt to changes in your browser's width. This means that you can make one version of a website that will look good on desktop, tablet and phone.",
-        "Later, we'll use Twitter's Bootstrap CSS framework to build responsive websites.",
-        "You can check it out here: <a href='http://getbootstrap.com/' target='_blank'>http://getbootstrap.com/</a>.",
-        "Go to <a href='https://dash.generalassemb.ly/projects/jeffs-blog-1' target='_blank'>https://dash.generalassemb.ly/projects/jeffs-blog-1</a> and complete the second project."
+    "description": [
+      "Next, let's learn about responsive web design and continue learning about HTML and CSS.",
+      "A responsive website will automatically adapt to changes in your browser's width. This means that you can make one version of a website that will look good on desktop, tablet and phone.",
+      "Later, we'll use Twitter's Bootstrap CSS framework to build responsive websites.",
+      "You can check it out here: <a href='http://getbootstrap.com/' target='_blank'>http://getbootstrap.com/</a>.",
+      "Go to <a href='https://dash.generalassemb.ly/projects/jeffs-blog-1' target='_blank'>https://dash.generalassemb.ly/projects/jeffs-blog-1</a> and complete the second project."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8129d8c441eddfaeb5bdef",
+    "_id": "bd8129d8c441eddfaeb5bdef",
     "name": "Build a Small Business Website",
     "difficulty": 0.06,
     "challengeSeed": "114578438",
-    "description" : [
-        "Ready for some more HTML and CSS fundamentals?",
-        "Go to <a href='https://dash.generalassemb.ly/projects/eshas-restaurant-1' target='_blank'>https://dash.generalassemb.ly/projects/eshas-restaurant-1</a> and complete the third project."
+    "description": [
+      "Ready for some more HTML and CSS fundamentals?",
+      "Go to <a href='https://dash.generalassemb.ly/projects/eshas-restaurant-1' target='_blank'>https://dash.generalassemb.ly/projects/eshas-restaurant-1</a> and complete the third project."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
-    "_id" : "bd7110d8c441eddfaeb5bdef",
+    "_id": "bd7110d8c441eddfaeb5bdef",
     "name": "Tweak HTML and CSS in CodePen",
     "difficulty": 0.07,
     "challengeSeed": "110752744",
-    "description" : [
-        "Now we're going to learn how to use a tool called CodePen, which lets you experiment with HTML and CSS, and even create single-page web applications, right in your browser!",
-        "Go to <a href='http://www.newsweek.com/' target='_blank'>http://www.newsweek.com/</a>",
-        "Change the window size. Note that Newsweek.com is using <strong>Responsive Design</strong>.",
-        "Right-click an area of the page that doesn't have any HTML elements on it, then choose 'view page source'.",
-        "Select all the text, then copy it.",
-        "Go to <a href='http://codepen.io/pen/' target='_blank'>http://codepen.io/pen/</a>",
-        "Paste the HTML you copied from Newsweek.com into the HTML field of CodePen.",
-        "You now have your own customizable version of the Newsweek.com website. See if you can change some of the text and images."
-    ],
-    "challengeType": 2,
-    "tests": []
-  },  
-  {
-    "_id" : "bd7111d8c441eddfaeb5bdef",
-    "name": "Build a CSS Robot",
-    "difficulty": 0.08,
-    "challengeSeed": "114578436",
-    "description" : [
-        "Now let's learn some more CSS, and a small amount of a JavaScript-based tool called jQuery.",
-        "Go to <a href='https://dash.generalassemb.ly/projects/cotbots-1' target='_blank'>https://dash.generalassemb.ly/projects/cotbots-1</a> and complete the fourth project."
+    "description": [
+      "Now we're going to learn how to use a tool called CodePen, which lets you experiment with HTML and CSS, and even create single-page web applications, right in your browser!",
+      "Go to <a href='http://www.newsweek.com/' target='_blank'>http://www.newsweek.com/</a>",
+      "Change the window size. Note that Newsweek.com is using <strong>Responsive Design</strong>.",
+      "Right-click an area of the page that doesn't have any HTML elements on it, then choose 'view page source'.",
+      "Select all the text, then copy it.",
+      "Go to <a href='http://codepen.io/pen/' target='_blank'>http://codepen.io/pen/</a>",
+      "Paste the HTML you copied from Newsweek.com into the HTML field of CodePen.",
+      "You now have your own customizable version of the Newsweek.com website. See if you can change some of the text and images."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
-    "_id" : "bd7112d8c441eddfaeb5bdef",
+    "_id": "bd7111d8c441eddfaeb5bdef",
+    "name": "Build a CSS Robot",
+    "difficulty": 0.08,
+    "challengeSeed": "114578436",
+    "description": [
+      "Now let's learn some more CSS, and a small amount of a JavaScript-based tool called jQuery.",
+      "Go to <a href='https://dash.generalassemb.ly/projects/cotbots-1' target='_blank'>https://dash.generalassemb.ly/projects/cotbots-1</a> and complete the fourth project."
+    ],
+    "challengeType": 2,
+    "tests": []
+  },
+  {
+    "_id": "bd7112d8c441eddfaeb5bdef",
     "name": "Get Started with jQuery",
     "difficulty": 0.09,
     "challengeSeed": "114578435",
-    "description" : [
-        "jQuery is a powerful tool for manipulating HTML elements.",
-        "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
-        "It's also extremely popular with employers, so we're going to learn it well.",
-        "Code School has an excellent free course that will walk us through the basics of jQuery.",
-        "Go to <a href='http://try.jquery.com/levels/1/challenges/1' target='_blank'>http://try.jquery.com/levels/1/challenges/1</a> and complete the first section."
+    "description": [
+      "jQuery is a powerful tool for manipulating HTML elements.",
+      "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
+      "It's also extremely popular with employers, so we're going to learn it well.",
+      "Code School has an excellent free course that will walk us through the basics of jQuery.",
+      "Go to <a href='http://try.jquery.com/levels/1/challenges/1' target='_blank'>http://try.jquery.com/levels/1/challenges/1</a> and complete the first section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7113d8c441eddfaeb5bdef",
+    "_id": "bd7113d8c441eddfaeb5bdef",
     "name": "Traverse the DOM",
     "difficulty": 0.10,
     "challengeSeed": "114591805",
-    "description" : [
-        "Now let's learn more about DOM traversal - that is, moving from one HTML element to the next.",
-        "Go to <a href='http://try.jquery.com/levels/2/challenges/1' target='_blank'>http://try.jquery.com/levels/2/challenges/1</a> and complete the second section."
+    "description": [
+      "Now let's learn more about DOM traversal - that is, moving from one HTML element to the next.",
+      "Go to <a href='http://try.jquery.com/levels/2/challenges/1' target='_blank'>http://try.jquery.com/levels/2/challenges/1</a> and complete the second section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7114d8c441eddfaeb5bdef",
+    "_id": "bd7114d8c441eddfaeb5bdef",
     "name": "Work with the DOM",
     "difficulty": 0.11,
     "challengeSeed": "114591804",
-    "description" : [
-        "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
-        "Go to <a href='http://try.jquery.com/levels/3/challenges/1' target='_blank'>http://try.jquery.com/levels/3/challenges/1</a> and complete the third section."
+    "description": [
+      "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
+      "Go to <a href='http://try.jquery.com/levels/3/challenges/1' target='_blank'>http://try.jquery.com/levels/3/challenges/1</a> and complete the third section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7115d8c441eddfaeb5bdef",
+    "_id": "bd7115d8c441eddfaeb5bdef",
     "name": "Listen for DOM Events",
     "difficulty": 0.12,
     "challengeSeed": "114591802",
-    "description" : [
-        "Now let's learn how to use jQuery Listeners. These will \"listen\" for something to happen, and then trigger a subsequent event",
-        "Go to <a href='http://try.jquery.com/levels/4/challenges/1' target='_blank'>http://try.jquery.com/levels/4/challenges/1</a> and complete the fourth section."
+    "description": [
+      "Now let's learn how to use jQuery Listeners. These will \"listen\" for something to happen, and then trigger a subsequent event",
+      "Go to <a href='http://try.jquery.com/levels/4/challenges/1' target='_blank'>http://try.jquery.com/levels/4/challenges/1</a> and complete the fourth section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7116d8c441eddfaeb5bdef",
+    "_id": "bd7116d8c441eddfaeb5bdef",
     "name": "Use jQuery for Styling",
     "difficulty": 0.13,
     "challengeSeed": "114591801",
-    "description" : [
-        "Finally, let's use jQuery to manipulate the way websites look by changing the CSS of elements.",
-        "Go to <a href='http://try.jquery.com/levels/5/challenges/1' target='_blank'>http://try.jquery.com/levels/5/challenges/1</a> and complete the fifth section."
+    "description": [
+      "Finally, let's use jQuery to manipulate the way websites look by changing the CSS of elements.",
+      "Go to <a href='http://try.jquery.com/levels/5/challenges/1' target='_blank'>http://try.jquery.com/levels/5/challenges/1</a> and complete the fifth section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7117d8c441eddfaeb5bdef",
+    "_id": "bd7117d8c441eddfaeb5bdef",
     "name": "Build a MadLibs Game",
     "difficulty": 0.14,
     "challengeSeed": "114591799",
-    "description" : [
-        "Now that we've built a foundation in jQuery, let's go back to Dash and do its last challenge.",
-        "If you aren't familiar with Mad Libs, they basically involve inserting random nouns, adjectives and verbs into stories. The stories that result are often hilarious.",
-        "Go to <a href='https://dash.generalassemb.ly/projects/mad-libs-1' target='_blank'>https://dash.generalassemb.ly/projects/mad-libs-1</a> and complete the fifth project."
+    "description": [
+      "Now that we've built a foundation in jQuery, let's go back to Dash and do its last challenge.",
+      "If you aren't familiar with Mad Libs, they basically involve inserting random nouns, adjectives and verbs into stories. The stories that result are often hilarious.",
+      "Go to <a href='https://dash.generalassemb.ly/projects/mad-libs-1' target='_blank'>https://dash.generalassemb.ly/projects/mad-libs-1</a> and complete the fifth project."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7118d8c441eddfaeb5bdef",
+    "_id": "bd7118d8c441eddfaeb5bdef",
     "name": "Discover Chrome's DevTools",
     "difficulty": 0.15,
     "challengeSeed": "110752743",
-    "description" : [
-        "It's time to learn the most powerful tool your browser has - the Development Tools!",
-        "If you aren't already using Chrome, you'll want to download it here: <a href='http://www.google.com/chrome/' target='_blank'>http://www.google.com/chrome/</a>. While it's true that Firefox has a tool called Firebug that is very similar to Chrome's DevTools, we will use Chrome for this challenge.",
-        "Note that this course, jointly produced by Google and Code School, is technologically impressive, but occasionally buggy. If you encounter a bug, just ignore it and keep going.",
-        "Go to <a href='http://discover-devtools.codeschool.com' target='_blank'>http://discover-devtools.codeschool.com</a> and complete this short course."
+    "description": [
+      "It's time to learn the most powerful tool your browser has - the Development Tools!",
+      "If you aren't already using Chrome, you'll want to download it here: <a href='http://www.google.com/chrome/' target='_blank'>http://www.google.com/chrome/</a>. While it's true that Firefox has a tool called Firebug that is very similar to Chrome's DevTools, we will use Chrome for this challenge.",
+      "Note that this course, jointly produced by Google and Code School, is technologically impressive, but occasionally buggy. If you encounter a bug, just ignore it and keep going.",
+      "Go to <a href='http://discover-devtools.codeschool.com' target='_blank'>http://discover-devtools.codeschool.com</a> and complete this short course."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7119d8c441eddfaeb5bdef",
+    "_id": "bd7119d8c441eddfaeb5bdef",
     "name": "Tackle jQuery Exercises",
     "difficulty": 0.16,
     "challengeSeed": "113173612",
-    "description" : [
-        "We've built some special jQuery challenges to help you reinforce your knowledge of this fundamental skill.",
-        "There are many correct ways to solve each of these exercises. After you complete the challenge, you can compare your solution with our solution by pressing the \"#solution-button\" button.",
-        "Go to <a href='http://freecodecamp.com/jquery-exercises' target='_blank'>http://freecodecamp.com/jquery-exercises</a> and complete the exercises."
-      ],
+    "description": [
+      "We've built some special jQuery challenges to help you reinforce your knowledge of this fundamental skill.",
+      "There are many correct ways to solve each of these exercises. After you complete the challenge, you can compare your solution with our solution by pressing the \"#solution-button\" button.",
+      "Go to <a href='http://freecodecamp.com/jquery-exercises' target='_blank'>http://freecodecamp.com/jquery-exercises</a> and complete the exercises."
+    ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7120d8c441eddfaeb5bdef",
+    "_id": "bd7120d8c441eddfaeb5bdef",
     "name": "Customize Bootstrap",
     "difficulty": 0.17,
     "challengeSeed": "110752741",
-    "description" : [
-        "Let's learn a little more about Twitter's responsive CSS framework, Bootstrap, and how we can add some custom themes to it.",
-        "Go to <a href='http://getbootstrap.com/components/' target='_blank'>http://getbootstrap.com/components/</a>",
-        "Right-click an area of the page that doesn't have any HTML elements on it, then choose 'view page source'.",
-        "Select all the text, then copy it.",
-        "Go to <a href='http://codepen.io/pen/' target='_blank'>http://codepen.io/pen/</a>",
-        "Paste the HTML you copied from GetBootStrap.com into the HTML field of CodePen.",
-        "Go to <a href='http://bootswatch.com/' target='_blank'>http://bootswatch.com/</a>",
-        "Decide which theme you want to use.",
-        "Click the down arrow next to the download button and choose 'bootstrap.css'.",
-        "Select all the text, then copy it.",
-        "Go back to CodePen and paste the CSS you copied from Bootswatch.com into the CSS field of CodePen.",
-        "Your Bootswatch CSS should now be applied to the HTML from the GetBootStrap page.",
-        "This page is currently using a two-column layout, with the main content on the left and additional navigation on the right. See if you can make it a one-column layout."
+    "description": [
+      "Let's learn a little more about Twitter's responsive CSS framework, Bootstrap, and how we can add some custom themes to it.",
+      "Go to <a href='http://getbootstrap.com/components/' target='_blank'>http://getbootstrap.com/components/</a>",
+      "Right-click an area of the page that doesn't have any HTML elements on it, then choose 'view page source'.",
+      "Select all the text, then copy it.",
+      "Go to <a href='http://codepen.io/pen/' target='_blank'>http://codepen.io/pen/</a>",
+      "Paste the HTML you copied from GetBootStrap.com into the HTML field of CodePen.",
+      "Go to <a href='http://bootswatch.com/' target='_blank'>http://bootswatch.com/</a>",
+      "Decide which theme you want to use.",
+      "Click the down arrow next to the download button and choose 'bootstrap.css'.",
+      "Select all the text, then copy it.",
+      "Go back to CodePen and paste the CSS you copied from Bootswatch.com into the CSS field of CodePen.",
+      "Your Bootswatch CSS should now be applied to the HTML from the GetBootStrap page.",
+      "This page is currently using a two-column layout, with the main content on the left and additional navigation on the right. See if you can make it a one-column layout."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7122d8c441eddfaeb5bdef",
+    "_id": "bd7122d8c441eddfaeb5bdef",
     "name": "Inject Animation into CSS",
     "difficulty": 0.18,
     "challengeSeed": "110752740",
-    "description" : [
-        "You may have noticed some sites have cool animations. Actually, animating DOM elements is pretty straightforward if you use a CSS library called Animate.css.",
-        "Go to <a href='http://daneden.github.io/animate.css/' target='_blank'>http://daneden.github.io/animate.css/</a> and try out some of the CSS animations.",
-        "Go to <a href='http://codepen.io/ossia/pen/bGegt' target='_blank'>http://codepen.io/ossia/pen/bGegt</a>.",
-        "Press the \"Fork\" button. This will fork, meaning create a copy of, the CodePen.",
-        "Click the gear in the CSS column.",
-        "Click \"Add another resource\" and start typing \"animate.css\". Click on the dropdown results to autocomplete it.",
-        "Now that you have Animate.css enabled, use jQuery and the \"toggleClass\" method to add an animated class to all h1 elements when you click the \"Press Me\" button."
+    "description": [
+      "You may have noticed some sites have cool animations. Actually, animating DOM elements is pretty straightforward if you use a CSS library called Animate.css.",
+      "Go to <a href='http://daneden.github.io/animate.css/' target='_blank'>http://daneden.github.io/animate.css/</a> and try out some of the CSS animations.",
+      "Go to <a href='http://codepen.io/ossia/pen/bGegt' target='_blank'>http://codepen.io/ossia/pen/bGegt</a>.",
+      "Press the \"Fork\" button. This will fork, meaning create a copy of, the CodePen.",
+      "Click the gear in the CSS column.",
+      "Click \"Add another resource\" and start typing \"animate.css\". Click on the dropdown results to autocomplete it.",
+      "Now that you have Animate.css enabled, use jQuery and the \"toggleClass\" method to add an animated class to all h1 elements when you click the \"Press Me\" button."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7123d8c441eddfaeb5bdef",
+    "_id": "bd7123d8c441eddfaeb5bdef",
     "name": "Learn Basic Computer Science",
     "difficulty": 0.19,
     "challengeSeed": "114628241",
-    "description" : [
-        "Stanford has an excellent free online Computer Science curriculum. This interactive course uses a modified version of JavaScript. It will cover a lot of concepts quickly.",
-        "Note that Harvard also has an excellent introduction to computer science course called CS50, but it takes more than 100 hours to complete, and doesn't use JavaScript.",
-        "Despite being completely self-paced, Stanford's CS101 course is broken up into weeks. Each of the following challenges will address one of those weeks.",
-        "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/</a> and complete the first week's course work."
+    "description": [
+      "Stanford has an excellent free online Computer Science curriculum. This interactive course uses a modified version of JavaScript. It will cover a lot of concepts quickly.",
+      "Note that Harvard also has an excellent introduction to computer science course called CS50, but it takes more than 100 hours to complete, and doesn't use JavaScript.",
+      "Despite being completely self-paced, Stanford's CS101 course is broken up into weeks. Each of the following challenges will address one of those weeks.",
+      "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/</a> and complete the first week's course work."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8124d8c441eddfaeb5bdef",
+    "_id": "bd8124d8c441eddfaeb5bdef",
     "name": "Learn Loops",
     "difficulty": 0.20,
     "challengeSeed": "114597348",
-    "description" : [
+    "description": [
       "Now let's tackle week 2 of Stanford's Intro to Computer Science course.",
       "This will introduce us to loops, a fundamental feature of every programming language.",
       "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/</a> and complete Week 2."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8125d8c441eddfaeb5bdef",
+    "_id": "bd8125d8c441eddfaeb5bdef",
     "name": "Learn Computer Hardware",
     "difficulty": 0.21,
     "challengeSeed": "114597347",
-    "description" : [
+    "description": [
       "Week 3 of Stanford's Intro to Computer Science covers computer hardware and explains Moore's law of exponential growth in the price-performance of processors.",
       "This challenge will also give you an understanding of how bits and bytes work.",
       "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/</a> and complete Week 3."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8126d8c441eddfaeb5bdef",
+    "_id": "bd8126d8c441eddfaeb5bdef",
     "name": "Learn Computer Networking",
     "difficulty": 0.22,
     "challengeSeed": "114604811",
-    "description" : [
+    "description": [
       "Now that you've learned about computer hardware, it's time to learn about the software that runs on top of it.",
       "Particularly important, you will learn about networks and TCP/IP - the protocol that powers the internet.",
       "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/</a> and complete Week 4."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8127d8c441eddfaeb5bdef",
+    "_id": "bd8127d8c441eddfaeb5bdef",
     "name": "Learn Boolean Logic",
     "difficulty": 0.23,
     "challengeSeed": "114604812",
-    "description" : [
+    "description": [
       "Now we'll do some more table exercises and learn boolean logic.",
       "We'll also learn the difference between digital data and analog data.",
       "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/</a> and complete Week 5."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd8128d8c441eddfaeb5bdef",
+    "_id": "bd8128d8c441eddfaeb5bdef",
     "name": "Learn Computer Security",
     "difficulty": 0.24,
     "challengeSeed": "114604813",
-    "description" : [
+    "description": [
       "We're almost done with Stanford's Introduction to Computer Science course!",
       "We'll learn about one of the most important inventions of the 20th century - spreadsheets.",
       "We'll also learn about Computer Security and some of the more common vulnerabilities software systems have.",
@@ -349,13 +349,13 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7129d8c441eddfaeb5bdef",
+    "_id": "bd7129d8c441eddfaeb5bdef",
     "name": "Build an Adventure Game",
     "difficulty": 0.25,
     "challengeSeed": "114604814",
-    "description" : [
+    "description": [
       "Now that you understand some Computer Science fundamentals, let's focus on programming JavaScript!",
       "We're going to work through Codecademy's famous interactive JavaScript course.",
       "This course will teach us some JavaScript fundamentals while guiding us through the process of building interesting web apps, all within Codecademy's learner-friendly environment!",
@@ -364,52 +364,51 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7130d8c441eddfaeb5bdef",
+    "_id": "bd7130d8c441eddfaeb5bdef",
     "name": "Build Rock Paper Scissors",
     "difficulty": 0.26,
     "challengeSeed": "114604815",
-    "description" : [
+    "description": [
       "Now we'll learn how JavaScript functions work, and use them to build a simple Rock Paper Scissors game.",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1</a> and complete the section.",
       "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-Bthev-mskY8/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-Bthev-mskY8/0/1</a>."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7131d8c441eddfaeb5bdef",
+    "_id": "bd7131d8c441eddfaeb5bdef",
     "name": "Learn JavaScript For Loops",
     "difficulty": 0.27,
     "challengeSeed": "114614220",
-    "description" : [
+    "description": [
       "Let's learn more about the loops that make virtually all programs possible - the \"For Loop\" and \"While Loop\". First, we'll learn the For Loop.",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1web</a> and complete both the both For and While loop section.",
       "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-XEDZA/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-XEDZA/0/1</a>."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7132d8c441eddfaeb5bdef",
+    "_id": "bd7132d8c441eddfaeb5bdef",
     "name": "Learn JavaScript While Loops",
     "difficulty": 0.28,
     "challengeSeed": "114612889",
-    "description" : [
-
+    "description": [
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1</a> and complete the section.",
       "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1</a>."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7133d8c441eddfaeb5bdef",
+    "_id": "bd7133d8c441eddfaeb5bdef",
     "name": "Learn Control Flow",
     "difficulty": 0.29,
     "challengeSeed": "114612888",
-    "description" : [
+    "description": [
       "Much of human reasoning can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If Statements\" and \"Else Statements\".",
       "We'll also learn some advanced \"Control Flow\" principals, such as ways we can exit loops early.",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-qDwp0/0/1</a> and complete the section.",
@@ -417,83 +416,83 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7134d8c441eddfaeb5bdef",
+    "_id": "bd7134d8c441eddfaeb5bdef",
     "name": "Build a Contact List",
     "difficulty": 0.30,
     "challengeSeed": "114612887",
-    "description" : [
+    "description": [
       "Up to this point, you've been working mostly with strings and numbers. Now we're going to learn more complicated data structures, like \"Arrays\" and \"Objects\".",
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1</a> and complete the section.",
       "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1</a>."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7135d8c441eddfaeb5bdef",
+    "_id": "bd7135d8c441eddfaeb5bdef",
     "name": "Build an Address Book",
     "difficulty": 0.31,
     "challengeSeed": "114612885",
-    "description" : [
+    "description": [
       "Let's learn more about objects.",
       "Go to <a href='http://www.codecademy.com/courses/spencer-sandbox/0/1' target='_blank'>http://www.codecademy.com/courses/spencer-sandbox/0/1</a> and complete the section.",
       "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/building-an-address-book/0/1?curriculum_id=506324b3a7dffd00020bf661' target='_blank'>http://www.codecademy.com/courses/building-an-address-book/0/1?curriculum_id=506324b3a7dffd00020bf661</a>."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7136d8c441eddfaeb5bdef",
+    "_id": "bd7136d8c441eddfaeb5bdef",
     "name": "Build a Cash Register",
     "difficulty": 0.32,
     "challengeSeed": "114612882",
-    "description" : [
+    "description": [
       "In this final Codecademy section, we'll learn even more about JavaScript objects.",
       "Go to <a href='http://www.codecademy.com/courses/objects-ii/0/1' target='_blank'>http://www.codecademy.com/courses/objects-ii/0/1</a> and complete this section.",
       "Be sure to also complete the final section: <a href='http://www.codecademy.com/courses/close-the-super-makert/0/1' target='_blank'>http://www.codecademy.com/courses/close-the-super-makert/0/1</a>."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7137d8c441eddfaeb5bdef",
+    "_id": "bd7137d8c441eddfaeb5bdef",
     "name": "Get Help the Hacker Way",
     "difficulty": 0.33,
     "challengeSeed": "111500801",
-    "description" : [
-        "Watch the video to learn the RSAP (Read, Search, Ask, Post) methodology for getting help.",
-        "Try an intelligent Google query that involves JavaScript and filters for this year (since JavaScript changes).",
-        "Go to <a href='http://stackoverflow.com/' target='_blank'>http://stackoverflow.com/</a> and view the recent questions.",
-        "Go to <a href='http://webchat.freenode.net/' target='_blank'>http://webchat.freenode.net/</a> and create an IRC account.",
-        "Join the #LearnJavaScript chat room and introduce yourself as a Free Code Camp student.",
-        "Finally, we have a special chat room specifically for getting help with tools you learn through Free Code Camp Challenges. Go to <a href='https://gitter.im/FreeCodeCamp/Help' target='_blank'>https://gitter.im/FreeCodeCamp/Help</a>. Keep this chat open while you work on the remaining challenges.",
-        "Now you have several ways of getting help when you're stuck."
+    "description": [
+      "Watch the video to learn the RSAP (Read, Search, Ask, Post) methodology for getting help.",
+      "Try an intelligent Google query that involves JavaScript and filters for this year (since JavaScript changes).",
+      "Go to <a href='http://stackoverflow.com/' target='_blank'>http://stackoverflow.com/</a> and view the recent questions.",
+      "Go to <a href='http://webchat.freenode.net/' target='_blank'>http://webchat.freenode.net/</a> and create an IRC account.",
+      "Join the #LearnJavaScript chat room and introduce yourself as a Free Code Camp student.",
+      "Finally, we have a special chat room specifically for getting help with tools you learn through Free Code Camp Challenges. Go to <a href='https://gitter.im/FreeCodeCamp/Help' target='_blank'>https://gitter.im/FreeCodeCamp/Help</a>. Keep this chat open while you work on the remaining challenges.",
+      "Now you have several ways of getting help when you're stuck."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7138d8c441eddfaeb5bdef",
+    "_id": "bd7138d8c441eddfaeb5bdef",
     "name": "Learn Regular Expressions",
     "difficulty": 0.34,
     "challengeSeed": "112547802",
-    "description" : [
-        "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
-        "Check out <a href='http://www.regexr.com' target='_blank'>http://www.regexr.com</a>. It's a Regular Expression Sandbox.",
-        "Now go to <a href='http://www.regexone.com' target='_blank'>http://www.regexone.com</a> and complete the tutorial and exercises 1 - 6.",
-        "Note that you can click \"continue\" to move on to the next step as soon as all the tasks have green check marks beside them. You can often do this just by using the wildcard \"dot\" operator, but try to use the techniques that each lesson recommends."
+    "description": [
+      "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
+      "Check out <a href='http://www.regexr.com' target='_blank'>http://www.regexr.com</a>. It's a Regular Expression Sandbox.",
+      "Now go to <a href='http://www.regexone.com' target='_blank'>http://www.regexone.com</a> and complete the tutorial and exercises 1 - 6.",
+      "Note that you can click \"continue\" to move on to the next step as soon as all the tasks have green check marks beside them. You can often do this just by using the wildcard \"dot\" operator, but try to use the techniques that each lesson recommends."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7139d8c441eddfaeb5bdef",
+    "_id": "bd7139d8c441eddfaeb5bdef",
     "name": "Pair Program on Bonfires",
     "difficulty": 0.35,
     "challengeSeed": "119657641",
-    "description" : [
+    "description": [
       "OK, we're finally ready to start pair programming!",
       "Pair Programming is where two people code together on the same computer. It is an efficient way to collaborate, and widely practiced at software companies. Pair Programming is one of the core concepts of \"Agile\" Software Development, which you will hear more about later.",
       "Many people use Skype or Google Hangouts to pair program, but if you talk with professional software engineers, they will tell you that it's not really pair programming unless both people have the ability to use the keyboard and mouse.",
@@ -515,40 +514,40 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7140d8c441eddfaeb5bdef",
+    "_id": "bd7140d8c441eddfaeb5bdef",
     "name": "Manage Source Code with Git",
     "difficulty": 0.36,
     "challengeSeed": "114635309",
-    "description" : [
-        "Revision Control Systems like Git ensure that, no matter how you experiment with your code, you can always roll back your app to a stable previous state.",
-        "Git is also a great way to share and contribute to open source software.",
-        "Go to <a href='https://www.codeschool.com/courses/try-git' target='_blank'>https://www.codeschool.com/courses/try-git</a> and complete this short interactive course."
-      ],
+    "description": [
+      "Revision Control Systems like Git ensure that, no matter how you experiment with your code, you can always roll back your app to a stable previous state.",
+      "Git is also a great way to share and contribute to open source software.",
+      "Go to <a href='https://www.codeschool.com/courses/try-git' target='_blank'>https://www.codeschool.com/courses/try-git</a> and complete this short interactive course."
+    ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7141d8c441eddfaeb5bdef",
+    "_id": "bd7141d8c441eddfaeb5bdef",
     "name": "Get Started with Node.js",
     "difficulty": 0.37,
     "challengeSeed": "114686471",
-    "description" : [
+    "description": [
       "Now that we understand some Computer Science and JavaScript programming, you're ready to move on to Full-stack JavaScript!",
       "The first step is to familiarize ourselves Node.js, the JavaScript-based web server that most full-stack JavaScript apps use.",
       "Code School has an excellent course on Node.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. The challenges immediately following these Node.js challenges also require a Code School course, so you may want to try to complete all these challenges in one two-day period. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
       "When you're ready, go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/1/video/1</a> and complete the first chapter."
-      ],
+    ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7142d8c441eddfaeb5bdef",
+    "_id": "bd7142d8c441eddfaeb5bdef",
     "name": "Try Node.js Events",
     "difficulty": 0.38,
     "challengeSeed": "114684206",
-    "description" : [
+    "description": [
       "One of the reasons Node.js is so fast is that it is \"evented.\" It processes events in an asynchronous manner.",
       "As a result, Node.js relies on asynchronous callbacks.",
       "We'll learn more about how events and callbacks work in this exciting Code School lesson.",
@@ -556,26 +555,26 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7143d8c441eddfaeb5bdef",
+    "_id": "bd7143d8c441eddfaeb5bdef",
     "name": "Try Node.js Streams",
     "difficulty": 0.39,
     "challengeSeed": "114684209",
-    "description" : [
+    "description": [
       "In this Code School lesson, we'll learn about streaming data back and forth between the client to the server.",
       "We'll also learn about FS, or File System, an important Node.js module for streaming data.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/3/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7144d8c441eddfaeb5bdef",
+    "_id": "bd7144d8c441eddfaeb5bdef",
     "name": "Learn how Node.js Modules Work",
     "difficulty": 0.40,
     "challengeSeed": "114684213",
-    "description" : [
+    "description": [
       "One of the most exciting features of Node.js is NPM - Node Package Manager",
       "With NPM, you quickly install any of thousands of Node.js modules into your app, and it will automatically handle the other modules that each module dependends upon downstream.",
       "In this lesson, we'll learn how to include these modules in our Node.js app by requiring them as variables.",
@@ -583,176 +582,175 @@
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7145d8c441eddfaeb5bdef",
+    "_id": "bd7145d8c441eddfaeb5bdef",
     "name": "Start an Express.js Server",
     "difficulty": 0.41,
     "challengeSeed": "114684247",
-    "description" : [
+    "description": [
       "We'll complete Code School's Express.js course shortly after completing this course, but this challenge will give you a quick tour of the Express.js framework.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/5/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7146d8c441eddfaeb5bdef",
+    "_id": "bd7146d8c441eddfaeb5bdef",
     "name": "Use Socket.io",
     "difficulty": 0.42,
     "challengeSeed": "114684530",
-    "description" : [
+    "description": [
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/6/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7147d8c441eddfaeb5bdef",
+    "_id": "bd7147d8c441eddfaeb5bdef",
     "name": "Use Redis to Persist Data",
     "difficulty": 0.43,
     "challengeSeed": "114684532",
-    "description" : [
+    "description": [
       "Redis is a key-value store, which is a type of non-relational database. It's one of the fastest and easiest ways to persist data.",
       "Even though we'll ultimately use MongoDB and other technologies to persist data, Redis is quite easy to learn and is still worth learning.",
       "Go to <a href='http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1' target='_blank'>http://campus.codeschool.com/courses/real-time-web-with-node-js/level/7/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7148d8c441eddfaeb5bdef",
+    "_id": "bd7148d8c441eddfaeb5bdef",
     "name": "Dive Deeper into Express.js",
     "difficulty": 0.44,
     "challengeSeed": "114684533",
-    "description" : [
+    "description": [
       "Code School has one of the first comprehensive courses on Express.js. Note that this course requires a Code School subscription, but that you can get a free two-day membership to Code School by going to <a href='https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared' target='_blank'>https://www.codeschool.com/hall_passes/213f3fedb6b9/claim_shared</a>. If you've already used your Code School two-day membership, go to the Free Code Camp main chat room and ask how you can get some extra time to work through this course. Alternatively, you could subscribe to Code School for one month, then take your time in completing these challenges.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7149d8c441eddfaeb5bdef",
+    "_id": "bd7149d8c441eddfaeb5bdef",
     "name": "Setup Express.js Middleware",
     "difficulty": 0.45,
     "challengeSeed": "114684535",
-    "description" : [
+    "description": [
       "Express.js makes extensive use of middleware - a stack of functions that run sequentially in response to a specific event.",
       "Let's learn how to incorporate modules and middleware into our Express.js app.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/2/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/2/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7150d8c441eddfaeb5bdef",
+    "_id": "bd7150d8c441eddfaeb5bdef",
     "name": "Take Advantage of Parameters",
     "difficulty": 0.46,
     "challengeSeed": "114684537",
-    "description" : [
+    "description": [
       "Have you ever noticed a question mark in your browser's address bar, followed by a series of strings? Those are parameters. Parameters are an efficient way to pass information to the server between page loads.",
       "We'll learn about parameters, along with a powerful Express.js feature called Dynamic Routing, in this exciting Code School lesson.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/3/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/3/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7151d8c441eddfaeb5bdef",
+    "_id": "bd7151d8c441eddfaeb5bdef",
     "name": "Add the Body Parser",
     "difficulty": 0.47,
     "challengeSeed": "114684720",
-    "description" : [
+    "description": [
       "Now we'll add the Body Parser module to Express.js. Body Parser is a powerful middleware that helps with routing.",
       "We'll also learn more about HTTP Requests, such as Post and Delete.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/4/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/4/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7152d8c441eddfaeb5bdef",
+    "_id": "bd7152d8c441eddfaeb5bdef",
     "name": "Configure Routes in Express.js",
     "difficulty": 0.48,
     "challengeSeed": "114684724",
-    "description" : [
+    "description": [
       "For this last Code School Express.js challenge, we'll refactor our routes.",
       "Go to <a href='http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1' target='_blank'>http://campus.codeschool.com/courses/building-blocks-of-express-js/level/5/video/1</a> and complete the section."
-
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7153d8c441eddfaeb5bdef",
+    "_id": "bd7153d8c441eddfaeb5bdef",
     "name": "Try MongoDB",
     "difficulty": 0.49,
     "challengeSeed": "114685061",
-    "description" : [
+    "description": [
       "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
       "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7154d8c441eddfaeb5bdef",
+    "_id": "bd7154d8c441eddfaeb5bdef",
     "name": "Get Started with Angular.js",
     "difficulty": 0.50,
     "challengeSeed": "114684726",
-    "description" : [
+    "description": [
       "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
       "In this course, we'll build a virtual shop entirely in Angular.js.",
       "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7155d8c441eddfaeb5bdef",
+    "_id": "bd7155d8c441eddfaeb5bdef",
     "name": "Apply Angular.js Directives",
     "difficulty": 0.51,
     "challengeSeed": "114684727",
-    "description" : [
+    "description": [
       "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will can alter the behavior of DOM elements based on the directives you've used.",
       "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
       "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7156d8c441eddfaeb5bdef",
+    "_id": "bd7156d8c441eddfaeb5bdef",
     "name": "Power Forms with Angular.js",
     "difficulty": 0.52,
     "challengeSeed": "114684729",
-    "description" : [
+    "description": [
       "One area where Angular.js really shines is its powerful web forms.",
       "Learn how to create reactive Angular.js forms, including real-time form validation.",
       "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7157d8c441eddfaeb5bdef",
+    "_id": "bd7157d8c441eddfaeb5bdef",
     "name": "Customize Angular.js Directives",
     "difficulty": 0.53,
     "challengeSeed": "114685062",
-    "description" : [
+    "description": [
       "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
       "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
-  },  
+  },
   {
-    "_id" : "bd7158d8c441eddfaeb5bdef",
+    "_id": "bd7158d8c441eddfaeb5bdef",
     "name": "Create Angular.js Services",
     "difficulty": 0.54,
     "challengeSeed": "114685060",
-    "description" : [
+    "description": [
       "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",
       "We'll learn how to use services in this final Code School Angular.js challenge.",
       "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."
@@ -761,7 +759,41 @@
     "tests": []
   },
   {
-    "_id" : "bd7123c8c441eddfaeb5bdef",
+    "_id": "bd7158d8c442eddfaeb5bdef",
+    "name": "Zipline Trello API Integration",
+    "difficulty": 0.55,
+    "challengeSeed": "123488494",
+    "description": [
+      "Go to CodePen <a href='http://codepen.io/FreeCodeCamp/pen/gbEmJr'>http://codepen.io/FreeCodeCamp/pen/gbEmJr</a> and click the \"fork\" button. This will create a \"fork\", or copy of the file, which you can then edit yourself.",
+      "In the JavaScript box, scroll down to the comment that reads \"//Changeable code be made here\". This CodePen is already pulling in the relevant JSON from our API. This JSON is from one of our Trello boards. You can view the actual Trello board here: <a href='https://trello.com/b/BA3xVpz9/nonprofit-projects'>https://trello.com/b/BA3xVpz9/nonprofit-projects</a>.",
+      "You can view the JSON output here: <a href='http://www.freecodecamp.com/api/trello'>http://www.freecodecamp.com/api/trello</a>.",
+      "In addition to each Trello card's description,(which is currently shown), you will also want to show it's name and labels.",
+      "Hint: you will need to write a jQuery loop that which dynamically inserts <code>&#60;li&#62;</code> elements. You will do this using jQuery's each function, described here: <a href='https://api.jquery.com/each/'>https://api.jquery.com/each/</a>.",
+      "Style the output to make it look visually appealing. Give it a custom font, color scheme, and a clear visual separation between data elements.",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your Codepen. If you pair programmed, you should also include the Free Code Camp username of your pair. We will take a look at your code and eventually give you feedback. In the meantime, please move on to your next challenge."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c443eddfaeb5bdef",
+    "name": "Basejump Hello World in Cloud 9",
+    "difficulty": 0.56,
+    "challengeSeed": "123488494",
+    "description": [
+      "Go to MEAN.js <a href='http://meanjs.org'>http://meanjs.org</a> and click the 'view on GitHub' button. This will take you to MEAN.js's GitHub repository.",
+      "Copy the link from the SSH clone URL on the lower right.",
+      "Go to Cloud 9 IDE at <a href='http://c9.io'>http://c9.io</a> and log in with GitHub.",
+      "Click the \"Create New Workspace\" button, then the \"Clone from URL\" option. Paste in the link you copied from GitHub'",
+      "Look under \"My projects\" on the right and wait until it's no longer grayed out. Click on it, then click the \"Start Editing\" button.",
+      "Once it has loaded, install all of MEAN.js's packages by clicking into Cloud 9's terminal at the bottom and running <code>npm install</code>.",
+      "Once that command has finished, set up MongoDB and start it by copying and pasting this code into Cloud 9's terminal: <code>mkdir data && echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest \"$@\"' > mongod && chmod a+x mongod && ./mongod</code>. You don't worry if you don't understand what that means. From now on, you'll just need to run this command to start MongoDB: <code>./mongod</code>."
+    ],
+    "challengeType": 4,
+    "tests": []
+  },
+  {
+    "_id": "bd7123c8c441eddfaeb5bdef",
     "name": "Start our Challenges",
     "difficulty": "1.00",
     "description": [
@@ -781,11 +813,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf0887a",
+    "_id": "bad87fee1348bd9aedf0887a",
     "name": "Use the h2 Element",
-    "difficulty" : "1.01",
+    "difficulty": "1.01",
     "description": [
       "Add an <code>h2</code> tag that says \"cat photo app\" to make a second HTML <code>element</code> below the \"hello world\" <code>h1</code> element.",
       "The h2 element you enter will create an h2 element on the website.",
@@ -801,11 +832,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08801",
+    "_id": "bad87fee1348bd9aedf08801",
     "name": "Use the P Element",
-    "difficulty" : "1.02",
+    "difficulty": "1.02",
     "description": [
       "Create a <code>p</code> element below the h2 element, and give it the text \"hello paragraph\".",
       "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites.",
@@ -820,11 +850,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aeaf08801",
+    "_id": "bad87fee1348bd9aeaf08801",
     "name": "Add a Line Break to Visually Separate Elements",
-    "difficulty" : "1.03",
+    "difficulty": "1.03",
     "description": [
       "Add a <code>line break</code> between the <code>&#60;h2&#62</code> and <code>&#60;p&#62</code> elements.",
       "You can create an line break element with <code>&#60;br&#47&#62</code>.",
@@ -840,11 +869,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08802",
+    "_id": "bad87fee1348bd9aedf08802",
     "name": "Uncomment HTML",
-    "difficulty" : "1.04",
+    "difficulty": "1.04",
     "description": [
       "Uncomment the <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
       "Commenting is a way that you can leave comments within your code without affecting the code itself.",
@@ -864,11 +892,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08804",
+    "_id": "bad87fee1348bd9aedf08804",
     "name": "Comment out HTML",
-    "difficulty" : "1.05",
+    "difficulty": "1.05",
     "description": [
       "Comment out the <code>h1</code> element and the <code>p</code> element, but leave the <code>h2</code> element uncommented.",
       "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>.",
@@ -889,11 +916,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08833",
+    "_id": "bad87fee1348bd9aedf08833",
     "name": "Use Lorem Ipsum Text as a Placeholder",
-    "difficulty" : "1.06",
+    "difficulty": "1.06",
     "description": [
       "Change the text in the <code>p</code> element to use the first few words of <code>lorem ipsum</code> text.",
       "Designers use <code>lorem ipsum</code> as placeholder text. It's called <code>lorem ipsum</code> text because it's those are the first two words of a passage by Cicero of Ancient Rome.",
@@ -910,11 +936,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08803",
+    "_id": "bad87fee1348bd9aedf08803",
     "name": "Change the Color of Text",
-    "difficulty" : "1.07",
+    "difficulty": "1.07",
     "description": [
       "Change the <code>h2</code> element's style so that its text color is red.",
       "We can do this by changing the <code>style</code> of the <code>h2</code> element.",
@@ -931,11 +956,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08805",
+    "_id": "bad87fee1348bd9aedf08805",
     "name": "Create a Style Tag for CSS",
-    "difficulty" : "1.08",
+    "difficulty": "1.08",
     "description": [
       "Create a <code>style tag</code> and write the CSS to make all <code>h2</code> elements blue.",
       "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
@@ -949,17 +973,16 @@
       "expect($('h2')).to.have.css('color', '#0000ff');"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>", 
+      "<h1>hello world</h1>",
       "<h2>cat photo app</h2>",
       "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aecf08806",
+    "_id": "bad87fee1348bd9aecf08806",
     "name": "Use a CSS Class to Style an Element",
-    "difficulty" : "1.09",
+    "difficulty": "1.09",
     "description": [
       "Create a CSS <code>class</code> called <code>red-text</code> and apply it to the <code>h2</code> element.",
       "<code>classes</code> are reusable styles that can be added to HTML elements.",
@@ -982,11 +1005,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aeff08806",
+    "_id": "bad87fee1348bd9aeff08806",
     "name": "Use a CSS Class to Style Multiple Elements",
-    "difficulty" : "1.10",
+    "difficulty": "1.10",
     "description": [
       "Apply the \"red-text\" class to the <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
       "Remember that you can attach classes to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
@@ -1011,11 +1033,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08806",
+    "_id": "bad87fee1348bd9aedf08806",
     "name": "Change the Font Size of an Element",
-    "difficulty" : "1.11",
+    "difficulty": "1.11",
     "description": [
       "Set the font size of all <code>p</code> elements to 16 pixels",
       "Font size is controlled by the <code>font-size</code> CSS attribute.",
@@ -1038,11 +1059,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08807",
+    "_id": "bad87fee1348bd9aedf08807",
     "name": "Import a Google Font",
-    "difficulty" : "1.12",
+    "difficulty": "1.12",
     "description": [
       "Apply the <code>font-family</code> of Lobster to all <code>h1</code> elements.",
       "The first line of code in your text editor is a <code>call</code> to Google that grabs a font called Lobster and loads it into your HTML.",
@@ -1070,11 +1090,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08808",
+    "_id": "bad87fee1348bd9aedf08808",
     "name": "Specify How Fonts Should Degrade",
-    "difficulty" : "1.13",
+    "difficulty": "1.13",
     "description": [
       "Make all <code>h2</code> elements use Lobster as their <code>font family</code>, but degrade to the Serif font when the Lobster font isn't available.",
       "We commented out our call to Google Fonts, and now our lobter isn't available.",
@@ -1099,11 +1118,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08809",
+    "_id": "bad87fee1348bd9aedf08809",
     "name": "Using Important to Override Styles",
-    "difficulty" : "1.14",
+    "difficulty": "1.14",
     "description": [
       "Apply both the \"blue-text\" and \"urgently-red\" classes to all <code>h2</code> elements, but use <code>!important</code> to ensure the element is rendered as being red.",
       "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
@@ -1138,11 +1156,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08811",
+    "_id": "bad87fee1348bd9aedf08811",
     "name": "Use rgb Codes for Precise Colors",
-    "difficulty" : "1.17",
+    "difficulty": "1.17",
     "description": [
       "Change the <code>red-text</code> class's color <code>rgb</code> value to be red.",
       "Another way to represent color in CSS is with <code>rgb</code>, or red-green-blue notation.",
@@ -1168,11 +1185,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08810",
+    "_id": "bad87fee1348bd9aedf08810",
     "name": "Use Hex Codes for Precise Colors",
-    "difficulty" : "1.15",
+    "difficulty": "1.15",
     "description": [
       "Change the hex code in the \"red-text\" class to hex code for the color red.",
       "<code>Hexadecimal (hex) code</code> is a popular way of specifying color in CSS.",
@@ -1199,11 +1215,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9bedf08810",
+    "_id": "bad87fee1348bd9bedf08810",
     "name": "Use Shortened 3 Digit Hex Codes",
-    "difficulty" : "1.16",
+    "difficulty": "1.16",
     "description": [
       "Change the hex code in the \"red-text\" class to the shortened 3-digit hex code for the color red.",
       "You can also shorten the 6-digit color hex code to a 3-digit code. For example, <code>#00ff00</code> becomes <code>#0f0</code>. This is less precise, but equally effective."
@@ -1225,11 +1240,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad88fee1348bd9aedf08811",
+    "_id": "bad88fee1348bd9aedf08811",
     "name": "Set the Alpha of a Color with rgba",
-    "difficulty" : "1.17",
+    "difficulty": "1.17",
     "description": [
       "Change the <code>red-text</code> class's color <code>rgb</code> value to be red.",
       "Another way to represent color in CSS is with <code>rgb</code>, or red-green-blue notation.",
@@ -1255,11 +1269,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08812",
+    "_id": "bad87fee1348bd9aedf08812",
     "name": "Add an Image to your Website",
-    "difficulty" : "1.18",
+    "difficulty": "1.18",
     "description": [
       "Use an img element to add the image <code>http://bit.ly/cutegraycat</code> to your website.",
       "You can add images to your website by using the <code>img</code> element.",
@@ -1282,11 +1295,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9acdf08812",
+    "_id": "bad87fee1348bd9acdf08812",
     "name": "Specify an Image Size",
-    "difficulty" : "1.19",
+    "difficulty": "1.19",
     "description": [
       "Create a class called <code>narrow-image</code> and use it to resize the image so that it's only 200 pixels wide",
       "Uh-oh, our image is too big to fit on a mobile phone. As a result, our user will need to scroll horizontally to view the image. But we can fix this by specifying an image size.",
@@ -1314,11 +1326,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9bedf08813",
+    "_id": "bad87fee1348bd9bedf08813",
     "name": "Add a Border Around an Element",
-    "difficulty" : "1.20",
+    "difficulty": "1.20",
     "description": [
       "Create a class called <code>\"thick-green-border\"</code> that puts a 5-pixel-wide green border around your cat photo.",
       "<code>CSS Borders</code> have attributes like style, color and width.",
@@ -1352,11 +1363,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08814",
+    "_id": "bad87fee1348bd9aedf08814",
     "name": "Add Rounded Corners with a Border Radius",
-    "difficulty" : "1.21",
+    "difficulty": "1.21",
     "description": [
       "Give your cat photo a <code>border-radius</code> of 10 pixels.",
       "Your cat photo currently has sharp corners. We can round out those corners with a CSS attribute called <code>border-radius</code>.",
@@ -1390,11 +1400,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08815",
+    "_id": "bad87fee1348bd9aedf08815",
     "name": "Make an Image Circular with a Border Radius",
-    "difficulty" : "1.22",
+    "difficulty": "1.22",
     "description": [
       "Give your cat photo a <code>border-radius</code> of 50%.",
       "In addition to pixels, you can also specify a <code>border-radius</code> of a percentage."
@@ -1427,11 +1436,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08816",
+    "_id": "bad87fee1348bd9aedf08816",
     "name": "Use an Anchor Tag to Link to an External Page",
-    "difficulty" : "1.23",
+    "difficulty": "1.23",
     "description": [
       "Create an <code>anchor tag</code> <code>hyperlink</code> that links to freecodecamp.com",
       "<code>hyperlinks</code> link your users to other URLs (web addresses).",
@@ -1465,11 +1473,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08817",
+    "_id": "bad87fee1348bd9aedf08817",
     "name": "Make Named Anchors using the Hash Symbol",
-    "difficulty" : "1.24",
+    "difficulty": "1.24",
     "description": [
       "Use the hash symbol(#) to turn the link at the bottom of your website into a <code>named anchor</code>.",
       "Sometimes you'll want to add an <code>anchor element</code> to your website before you know which URL its <code>href</code> will link to.",
@@ -1502,11 +1509,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08820",
+    "_id": "bad87fee1348bd9aedf08820",
     "name": "Turn an Image into a Link",
-    "difficulty" : "1.25",
+    "difficulty": "1.25",
     "description": [
       "Wrap the gray cat's image with an <code>anchor tag</code> that leads nowhere.",
       "You can make elements into links by wrapping them in an <code>anchor tag</code>.",
@@ -1536,11 +1542,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08818",
+    "_id": "bad87fee1348bd9aedf08818",
     "name": "Add Alt Text to an image",
-    "difficulty" : "1.26",
+    "difficulty": "1.26",
     "description": [
       "Add the <code>alt text</code> \"a photo of a cute gray cat\" to our cat photo",
       "<code>alt text</code> is what browsers will display if they fail to load the image. <code>alt text</code> also helps your blind or visually impaired users understand what your image portrays. Search engines also look at <code>alt text</code>.",
@@ -1569,11 +1574,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad88fee1348bd9aedf08825",
+    "_id": "bad88fee1348bd9aedf08825",
     "name": "Adjusting the Padding of an Element",
-    "difficulty" : "1.27",
+    "difficulty": "1.27",
     "description": [
       "Change the <code>padding</code> of the green box to match that of the red box.",
       "An element's <code>padding</code> controls the amount of space between an element and its <code>border</code>.",
@@ -1621,11 +1625,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08822",
+    "_id": "bad87fee1348bd9aedf08822",
     "name": "Adjust the Margin of an Element",
-    "difficulty" : "1.28",
+    "difficulty": "1.28",
     "description": [
       "Change the <code>margin</code> of the green box to match that of the red box.",
       "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -1675,11 +1678,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08823",
+    "_id": "bad87fee1348bd9aedf08823",
     "name": "Add a Negative Margin to an Element",
-    "difficulty" : "1.29",
+    "difficulty": "1.29",
     "description": [
       "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the blue box.",
       "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -1728,11 +1730,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08824",
+    "_id": "bad87fee1348bd9aedf08824",
     "name": "Add Different Padding to Each Side of an Element TEST",
-    "difficulty" : "1.30",
+    "difficulty": "1.30",
     "description": [
       "Give the green box a padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Sometimes you will want to customize an element so that it has different padding on each of its sides.",
@@ -1782,11 +1783,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1248bd9aedf08824",
+    "_id": "bad87fee1248bd9aedf08824",
     "name": "Add Different a Margin to Each Side of an Element TEST",
-    "difficulty" : "1.31",
+    "difficulty": "1.31",
     "description": [
       "Give the green box a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Sometimes you will want to customize an element so that it has a different margin on each of its sides.",
@@ -1836,11 +1836,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08826",
+    "_id": "bad87fee1348bd9aedf08826",
     "name": "Use Clockwise Notation to Specify an Element's Padding",
-    "difficulty" : "1.32",
+    "difficulty": "1.32",
     "description": [
       "Use <code>Clockwise Notation</code> to give an element padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
@@ -1887,11 +1886,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9acde08812",
+    "_id": "bad87fee1348bd9acde08812",
     "name": "Use Bootstrap for Responsive Images",
-    "difficulty" : "1.33",
+    "difficulty": "1.33",
     "description": [
       "Add the <code>img-responsive</code> Bootstrap class to the image.",
       "Specifying a width of 200 pixels on our img element made it fit our phone's screen, but it's not a perfect fit. It would be great if the image could be exactly the width of our phone's screen.",
@@ -1923,11 +1921,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd8acde08812",
+    "_id": "bad87fee1348bd8acde08812",
     "name": "Center Text with Bootstrap",
-    "difficulty" : "1.34",
+    "difficulty": "1.34",
     "description": [
       "Add Bootstrap's <code>text-center</code> class to your h2 element.",
       "Now that we're using Bootstrap, we can center our heading elements (h2) to make them look better. All we need to do is add the class <code>text-center</code> to the h1 and h2 elements.",
@@ -1951,11 +1948,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348cd8acde08812",
+    "_id": "bad87fee1348cd8acde08812",
     "name": "Create a Button",
-    "difficulty" : "1.35",
+    "difficulty": "1.35",
     "description": [
       "Create a button with the text \"Delete\" using the HTML <code>button</code> element.",
       "HTML has special elements that function like links, but look like buttons. Let's creating a default HTML button."
@@ -1980,11 +1976,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348cd8acdf08812",
+    "_id": "bad87fee1348cd8acdf08812",
     "name": "Create a Bootstrap Button",
-    "difficulty" : "1.36",
+    "difficulty": "1.36",
     "description": [
       "Apply the Bootstrap's <code>btn</code> class to both of your buttons.",
       "Bootstrap has its own button styles, which look much better than the plain HTML ones."
@@ -2010,11 +2005,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348cd8acef08812",
+    "_id": "bad87fee1348cd8acef08812",
     "name": "Create a Block Element Bootstrap Button",
-    "difficulty" : "1.37",
+    "difficulty": "1.37",
     "description": [
       "Add Bootstrap's <code>btn-block</code> class to both of your buttons.",
       "Normally, your buttons are only as wide as the text they contain. By making them <code>block elements</code>, your button will stretch to fill your page's entire horizontal space.",
@@ -2041,11 +2035,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bae87fee1348cd8acef08812",
+    "_id": "bae87fee1348cd8acef08812",
     "name": "Color a Bootstrap Button with Button Primary",
-    "difficulty" : "1.38",
+    "difficulty": "1.38",
     "description": [
       "Add Bootstrap's <code>btn-block</code> class to both of your buttons.",
       "Normally, your buttons are only as wide as the text they contain. By making them <code>block elements</code>, your button will stretch to fill your page's entire horizontal space.",
@@ -2073,11 +2066,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad88fee1348cd8acef08812",
+    "_id": "bad88fee1348cd8acef08812",
     "name": "Color a Bootstrap Button with Button Primary",
-    "difficulty" : "1.39",
+    "difficulty": "1.39",
     "description": [
       "Add Bootstrap's <code>btn-primary</code> class to both of your buttons.",
       "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-primary</code> class is the main button color you'll use throughout your app.",
@@ -2104,11 +2096,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348ce8acef08812",
+    "_id": "bad87fee1348ce8acef08812",
     "name": "Warn your Users of a Dangerous Action with the Bootstrap Button Danger Class",
-    "difficulty" : "1.40",
+    "difficulty": "1.40",
     "description": [
       "Change the \"Delete\" button from <code>btn-primary</code> to <code>btn-danger</code>.",
       "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-danger</code> class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.",
@@ -2135,11 +2126,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad88fee1348ce8acef08812",
+    "_id": "bad88fee1348ce8acef08812",
     "name": "Use the Bootstrap Grid to Put Two Elements Side By Side",
-    "difficulty" : "1.41",
+    "difficulty": "1.41",
     "description": [
       "Put the \"Like\" and \"Delete\" buttons side-by-side by wrapping them in both in a <code>&#60;div class=\"row\"&#62;</code> element and each of them in a <code>&#60;div class=\"row\"&#62;</code> element.",
       "Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
@@ -2175,11 +2165,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad89fee1348ce8acef08812",
+    "_id": "bad89fee1348ce8acef08812",
     "name": "Wrap Side By Side Elements in a Bootstrap Row",
-    "difficulty" : "1.42",
+    "difficulty": "1.42",
     "description": [
       "Put the \"Like\" and \"Delete\" buttons side-by-side by wrapping them in both in a <code>&#60;div class=\"row\"&#62;</code> element and each of them in a <code>&#60;div class=\"row\"&#62;</code> element.",
       "Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
@@ -2215,11 +2204,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08813",
+    "_id": "bad87fee1348bd9aedf08813",
     "name": "Add Alt Text to an Image TEST",
-    "difficulty" : "1.43",
+    "difficulty": "1.43",
     "description": [
       "Add the alt text \"A picture of a gray cat\" to the image.",
       "<code>Alt text</code> is a useful way to tell people (and web crawlers like Google) what is pictured in a photo. It's extremely important for helping blind or visually impaired people understand the content of your website.",
@@ -2241,11 +2229,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08827",
+    "_id": "bad87fee1348bd9aedf08827",
     "name": "Create an Bulleted Unordered List",
-    "difficulty" : "1.44",
+    "difficulty": "1.44",
     "description": [
       "",
       ""
@@ -2259,11 +2246,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08828",
+    "_id": "bad87fee1348bd9aedf08828",
     "name": "Created a Numbered Ordered List",
-    "difficulty" : "1.45",
+    "difficulty": "1.45",
     "description": [
       "",
       ""
@@ -2277,11 +2263,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08829",
+    "_id": "bad87fee1348bd9aedf08829",
     "name": "Create a Text Field",
-    "difficulty" : "1.46",
+    "difficulty": "1.46",
     "description": [
       "",
       ""
@@ -2295,11 +2280,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08830",
+    "_id": "bad87fee1348bd9aedf08830",
     "name": "Use HTML5 to Make a Field Required",
-    "difficulty" : "1.47",
+    "difficulty": "1.47",
     "description": [
       "",
       ""
@@ -2313,11 +2297,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08831",
+    "_id": "bad87fee1348bd9aedf08831",
     "name": "Use HTML5 to Specify an Input Type",
-    "difficulty" : "1.49",
+    "difficulty": "1.49",
     "description": [
       "",
       ""
@@ -2331,11 +2314,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08832",
+    "_id": "bad87fee1348bd9aedf08832",
     "name": "Create a Text Area",
-    "difficulty" : "1.50",
+    "difficulty": "1.50",
     "description": [
       "",
       ""
@@ -2349,11 +2331,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08834",
+    "_id": "bad87fee1348bd9aedf08834",
     "name": "Create a Set of Radio Buttons",
-    "difficulty" : "1.51",
+    "difficulty": "1.51",
     "description": [
       "",
       ""
@@ -2367,11 +2348,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08835",
+    "_id": "bad87fee1348bd9aedf08835",
     "name": "Create a Set of Checkboxes",
-    "difficulty" : "1.52",
+    "difficulty": "1.52",
     "description": [
       "",
       ""
@@ -2385,11 +2365,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08836",
+    "_id": "bad87fee1348bd9aedf08836",
     "name": "Create a HTML Form",
-    "difficulty" : "1.53",
+    "difficulty": "1.53",
     "description": [
       "",
       ""
@@ -2403,11 +2382,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08841",
+    "_id": "bad87fee1348bd9aedf08841",
     "name": "Change the background of element",
-    "difficulty" : "1.54",
+    "difficulty": "1.54",
     "description": [
       "",
       ""
@@ -2421,11 +2399,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08842",
+    "_id": "bad87fee1348bd9aedf08842",
     "name": "Make an element translucent",
-    "difficulty" : "1.55",
+    "difficulty": "1.55",
     "description": [
       "",
       ""
@@ -2439,11 +2416,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08844",
+    "_id": "bad87fee1348bd9aedf08844",
     "name": "Add a Drop Shadow",
-    "difficulty" : "1.56",
+    "difficulty": "1.56",
     "description": [
       "",
       ""
@@ -2457,11 +2433,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08845",
+    "_id": "bad87fee1348bd9aedf08845",
     "name": "Make a Navbar",
-    "difficulty" : "1.57",
+    "difficulty": "1.57",
     "description": [
       "",
       ""
@@ -2475,11 +2450,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08847",
+    "_id": "bad87fee1348bd9aedf08847",
     "name": "Add a Logo to a Navbar",
-    "difficulty" : "1.58",
+    "difficulty": "1.58",
     "description": [
       "",
       ""
@@ -2493,11 +2467,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08848",
+    "_id": "bad87fee1348bd9aedf08848",
     "name": "Make a Footer",
-    "difficulty" : "1.59",
+    "difficulty": "1.59",
     "description": [
       "",
       ""
@@ -2511,11 +2484,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08849",
+    "_id": "bad87fee1348bd9aedf08849",
     "name": "Use Icons as Links",
-    "difficulty" : "1.60",
+    "difficulty": "1.60",
     "description": [
       "",
       ""
@@ -2529,11 +2501,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08850",
+    "_id": "bad87fee1348bd9aedf08850",
     "name": "Add Hover Effects to Icons",
-    "difficulty" : "1.61",
+    "difficulty": "1.61",
     "description": [
       "",
       ""
@@ -2547,11 +2518,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08851",
+    "_id": "bad87fee1348bd9aedf08851",
     "name": "Add Depth to a Page with a Well",
-    "difficulty" : "1.62",
+    "difficulty": "1.62",
     "description": [
       "",
       ""
@@ -2565,11 +2535,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08852",
+    "_id": "bad87fee1348bd9aedf08852",
     "name": "Add an ID to a Button",
-    "difficulty" : "1.52",
+    "difficulty": "1.52",
     "description": [
       "",
       ""
@@ -2583,11 +2552,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08853",
+    "_id": "bad87fee1348bd9aedf08853",
     "name": "Fire a Modal by Clicking a Button",
-    "difficulty" : "1.63",
+    "difficulty": "1.63",
     "description": [
       "",
       ""
@@ -2601,11 +2569,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08854",
+    "_id": "bad87fee1348bd9aedf08854",
     "name": "Style a Modal with a Header",
-    "difficulty" : "1.64",
+    "difficulty": "1.64",
     "description": [
       "",
       ""
@@ -2619,11 +2586,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08855",
+    "_id": "bad87fee1348bd9aedf08855",
     "name": "Style a Modal with a Body",
-    "difficulty" : "1.65",
+    "difficulty": "1.65",
     "description": [
       "",
       ""
@@ -2637,11 +2603,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08856",
+    "_id": "bad87fee1348bd9aedf08856",
     "name": "Make a Modal Dismissable",
-    "difficulty" : "1.66",
+    "difficulty": "1.66",
     "description": [
       "",
       ""
@@ -2655,11 +2620,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08857",
+    "_id": "bad87fee1348bd9aedf08857",
     "name": "Create an Accordian Menu",
-    "difficulty" : "1.67",
+    "difficulty": "1.67",
     "description": [
       "",
       ""
@@ -2673,11 +2637,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08863",
+    "_id": "bad87fee1348bd9aedf08863",
     "name": "Add a Gradient to a Button",
-    "difficulty" : "1.68",
+    "difficulty": "1.68",
     "description": [
       "",
       ""
@@ -2691,11 +2654,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08864",
+    "_id": "bad87fee1348bd9aedf08864",
     "name": "Adjust the Line Height of Text",
-    "difficulty" : "1.69",
+    "difficulty": "1.69",
     "description": [
       "",
       ""
@@ -2709,11 +2671,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08866",
+    "_id": "bad87fee1348bd9aedf08866",
     "name": "",
-    "difficulty" : "1.70",
+    "difficulty": "1.70",
     "description": [
       "",
       ""
@@ -2727,11 +2688,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08867",
+    "_id": "bad87fee1348bd9aedf08867",
     "name": "",
-    "difficulty" : "1.71",
+    "difficulty": "1.71",
     "description": [
       "",
       ""
@@ -2745,11 +2705,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08868",
+    "_id": "bad87fee1348bd9aedf08868",
     "name": "",
-    "difficulty" : "1.711",
+    "difficulty": "1.711",
     "description": [
       "",
       ""
@@ -2763,11 +2722,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08869",
+    "_id": "bad87fee1348bd9aedf08869",
     "name": "",
-    "difficulty" : "1.712",
+    "difficulty": "1.712",
     "description": [
       "",
       ""
@@ -2781,11 +2739,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08870",
+    "_id": "bad87fee1348bd9aedf08870",
     "name": "",
-    "difficulty" : "1.713",
+    "difficulty": "1.713",
     "description": [
       "",
       ""
@@ -2799,11 +2756,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08871",
+    "_id": "bad87fee1348bd9aedf08871",
     "name": "",
-    "difficulty" : "1.714",
+    "difficulty": "1.714",
     "description": [
       "",
       ""
@@ -2817,11 +2773,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08872",
+    "_id": "bad87fee1348bd9aedf08872",
     "name": "",
-    "difficulty" : "1.72",
+    "difficulty": "1.72",
     "description": [
       "",
       ""
@@ -2835,11 +2790,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08873",
+    "_id": "bad87fee1348bd9aedf08873",
     "name": "",
-    "difficulty" : "1.73",
+    "difficulty": "1.73",
     "description": [
       "",
       ""
@@ -2853,11 +2807,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08874",
+    "_id": "bad87fee1348bd9aedf08874",
     "name": "",
-    "difficulty" : "1.74",
+    "difficulty": "1.74",
     "description": [
       "",
       ""
@@ -2871,11 +2824,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08875",
+    "_id": "bad87fee1348bd9aedf08875",
     "name": "",
-    "difficulty" : "1.75",
+    "difficulty": "1.75",
     "description": [
       "",
       ""
@@ -2889,11 +2841,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08876",
+    "_id": "bad87fee1348bd9aedf08876",
     "name": "",
-    "difficulty" : "1.76",
+    "difficulty": "1.76",
     "description": [
       "",
       ""
@@ -2907,11 +2858,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08877",
+    "_id": "bad87fee1348bd9aedf08877",
     "name": "",
-    "difficulty" : "1.77",
+    "difficulty": "1.77",
     "description": [
       "",
       ""
@@ -2925,11 +2875,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08878",
+    "_id": "bad87fee1348bd9aedf08878",
     "name": "",
-    "difficulty" : "1.78",
+    "difficulty": "1.78",
     "description": [
       "",
       ""
@@ -2943,11 +2892,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08879",
+    "_id": "bad87fee1348bd9aedf08879",
     "name": "",
-    "difficulty" : "1.79",
+    "difficulty": "1.79",
     "description": [
       "",
       ""
@@ -2961,11 +2909,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08880",
+    "_id": "bad87fee1348bd9aedf08880",
     "name": "",
-    "difficulty" : "1.80",
+    "difficulty": "1.80",
     "description": [
       "",
       ""
@@ -2979,11 +2926,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08881",
+    "_id": "bad87fee1348bd9aedf08881",
     "name": "",
-    "difficulty" : "1.81",
+    "difficulty": "1.81",
     "description": [
       "",
       ""
@@ -2997,11 +2943,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08882",
+    "_id": "bad87fee1348bd9aedf08882",
     "name": "",
-    "difficulty" : "1.82",
+    "difficulty": "1.82",
     "description": [
       "",
       ""
@@ -3015,11 +2960,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08883",
+    "_id": "bad87fee1348bd9aedf08883",
     "name": "",
-    "difficulty" : "1.83",
+    "difficulty": "1.83",
     "description": [
       "",
       ""
@@ -3033,11 +2977,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08884",
+    "_id": "bad87fee1348bd9aedf08884",
     "name": "",
-    "difficulty" : "1.84",
+    "difficulty": "1.84",
     "description": [
       "",
       ""
@@ -3051,11 +2994,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08885",
+    "_id": "bad87fee1348bd9aedf08885",
     "name": "",
-    "difficulty" : "1.85",
+    "difficulty": "1.85",
     "description": [
       "",
       ""
@@ -3069,11 +3011,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08886",
+    "_id": "bad87fee1348bd9aedf08886",
     "name": "",
-    "difficulty" : "1.86",
+    "difficulty": "1.86",
     "description": [
       "",
       ""
@@ -3087,11 +3028,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08887",
+    "_id": "bad87fee1348bd9aedf08887",
     "name": "",
-    "difficulty" : "1.87",
+    "difficulty": "1.87",
     "description": [
       "",
       ""
@@ -3105,11 +3045,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08888",
+    "_id": "bad87fee1348bd9aedf08888",
     "name": "",
-    "difficulty" : "1.88",
+    "difficulty": "1.88",
     "description": [
       "",
       ""
@@ -3123,11 +3062,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08889",
+    "_id": "bad87fee1348bd9aedf08889",
     "name": "",
-    "difficulty" : "1.89",
+    "difficulty": "1.89",
     "description": [
       "",
       ""
@@ -3141,11 +3079,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08890",
+    "_id": "bad87fee1348bd9aedf08890",
     "name": "",
-    "difficulty" : "1.90",
+    "difficulty": "1.90",
     "description": [
       "",
       ""
@@ -3159,11 +3096,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08891",
+    "_id": "bad87fee1348bd9aedf08891",
     "name": "",
-    "difficulty" : "1.91",
+    "difficulty": "1.91",
     "description": [
       "",
       ""
@@ -3177,11 +3113,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08892",
+    "_id": "bad87fee1348bd9aedf08892",
     "name": "",
-    "difficulty" : "1.92",
+    "difficulty": "1.92",
     "description": [
       "",
       ""
@@ -3195,11 +3130,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08893",
+    "_id": "bad87fee1348bd9aedf08893",
     "name": "",
-    "difficulty" : "1.93",
+    "difficulty": "1.93",
     "description": [
       "",
       ""
@@ -3213,11 +3147,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08894",
+    "_id": "bad87fee1348bd9aedf08894",
     "name": "",
-    "difficulty" : "1.94",
+    "difficulty": "1.94",
     "description": [
       "",
       ""
@@ -3231,11 +3164,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08895",
+    "_id": "bad87fee1348bd9aedf08895",
     "name": "",
-    "difficulty" : "1.95",
+    "difficulty": "1.95",
     "description": [
       "",
       ""
@@ -3249,11 +3181,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08896",
+    "_id": "bad87fee1348bd9aedf08896",
     "name": "",
-    "difficulty" : "1.96",
+    "difficulty": "1.96",
     "description": [
       "",
       ""
@@ -3267,11 +3198,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08897",
+    "_id": "bad87fee1348bd9aedf08897",
     "name": "",
-    "difficulty" : "1.97",
+    "difficulty": "1.97",
     "description": [
       "",
       ""
@@ -3285,11 +3215,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08898",
+    "_id": "bad87fee1348bd9aedf08898",
     "name": "",
-    "difficulty" : "1.98",
+    "difficulty": "1.98",
     "description": [
       "",
       ""
@@ -3303,11 +3232,10 @@
     ],
     "challengeType": 0
   },
-
   {
-    "_id" : "bad87fee1348bd9aedf08899",
+    "_id": "bad87fee1348bd9aedf08899",
     "name": "",
-    "difficulty" : "1.99",
+    "difficulty": "1.99",
     "description": [
       "",
       ""
@@ -3357,6 +3285,332 @@
       "}",
       "",
       "welcomeToBooleans();"
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c442eddfaeb5bdef",
+    "name": "Define Your Name",
+    "difficulty": "9.9801",
+    "description": [
+      "Set the value of <code>myName</code> to your name by typing your name in quotes.",
+      "Currently <code>myName</code> is empty. Type in your name and hit the submit button.",
+      "Look at the <code>ourName</code> example if you get stuck."
+    ],
+    "tests": [
+      "expect(myName).to.be.a(\"string\");",
+      "expect(myName).length.not.to.be(0);"
+    ],
+    "challengeSeed": [
+      "// ourName = \"Free Code Camp\";",
+      "myName = \"\";"
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c443eddfaeb5bdef",
+    "name": "Start Using Variables",
+    "difficulty": "9.9802",
+    "description": [
+      "Now, use the <code>var</code> keyword to create a <code>variable</code> called <code>myName</code>. Set its value to your name.",
+      "<code>Variables</code> are used to store values.",
+      "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
+      "Look at the <code>ourName</code> example if you get stuck."
+    ],
+    "tests": [
+      "expect(myName).to.be.a(\"string\");",
+      "expect(myName).length.not.to.be(0);"
+    ],
+    "challengeSeed": [
+      "// var ourName = \"Free Code Camp\";",
+      ""
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c444eddfaeb5bdef",
+    "name": "Define Your First and Last Name",
+    "difficulty": "9.9803",
+    "description": [
+      "Now, use the <code>var</code> keyword to create a <code>variable</code> called <code>myFirstName</code> and set its value to your first name. Then set a variable called <code>myLastName</code> to your last name.",
+      "<code>Variables</code> are used to store values.",
+      "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>lower camel case</code>. An example of lower camel case is: lowerCamelCase.",
+      "Look at the <code>ourFirstName</code> and <code>ourLastName</code> examples if you get stuck."
+    ],
+    "tests": [
+      "expect(myFirstName).to.be.a(\"string\");",
+      "expect(myFirstName).length.not.to.be(0);",
+      "expect(myLastName).to.be.a(\"string\");",
+      "expect(myLastName).length.not.to.be(0);"
+    ],
+    "challengeSeed": [
+      "// var ourFirstName = \"Free\";",
+      "// var ourLastName = \"Code Camp\";",
+      "",
+      ""
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c445eddfaeb5bdef",
+    "name": "Combine Two Strings into One String",
+    "difficulty": "9.9804",
+    "description": [
+      "Make a variable called <code>myName</code> by adding the string of your first name to the string of your last name.",
+      "Strings can be combined in a process called <code>concatenation</code>.",
+      "Be sure to include a space at the end of your first string. Otherwise the two strings will not have a space between them.",
+      "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>lower camel case</code>. An example of lower camel case is: lowerCamelCase.",
+      "Look at the <code>ourName</code> example if you get stuck."
+    ],
+    "tests": [
+      "expect(myName).to.be.a(\"string\");",
+      "expect(myName).length.not.to.be(0);",
+      "expect((/\\s+/).test(myName)).to.be.true;"
+    ],
+    "challengeSeed": [
+      "// var ourName = \"Free \" + \"Code Camp\";",
+      "",
+      ""
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c446eddfaeb5bdef",
+    "name": "Combine Two Variables into One Variable",
+    "difficulty": "9.9805",
+    "description": [
+      "Make the variables <code>myFirstName</code>, <code>myLastName</code>, and <code>myFullName</code>. Concatenate my <code>myFirstName</code> to <code>myLastName</code> to create <code>myFullName</code>.",
+      "Strings can be combined in a process called <code>concatenation</code>.",
+      "Be sure to include a space at the end of <code>myFirstName</code>. Otherwise <code>myFullName</code> will not contain a space between your first and last names.",
+      "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>lower camel case</code>. An example of lower camel case is: lowerCamelCase.",
+      "Look at the <code>ourFullName</code> example if you get stuck."
+    ],
+    "tests": [
+      "expect(myFirstName).to.be.a(\"string\");",
+      "expect(myLastName).to.be.a(\"string\");",
+      "expect(myFullName).to.be.a(\"string\");",
+      "expect(myFullName).length.not.to.be(0);",
+      "expect((/\\s+/).test(myFullName)).to.be.true;"
+    ],
+    "challengeSeed": [
+      "// var ourFirstName = \"Free \";",
+      "// var ourLastName = \"Code Camp\";",
+      "// var ourFullName = ourFirstName + ourLastName;",
+      ""
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c447eddfaeb5bdef",
+    "name": "Concatenate Both Variables and Strings into the Same Variable",
+    "difficulty": "9.9806",
+    "description": [
+      "Make the variables <code>myFirstName</code>, <code>myLastName</code>, and <code>myFullName</code>. Concatenate my <code>myFirstName</code> to <code>myLastName</code> to create <code>myFullName</code>, but this time add the space as a separate string, not as part of <code>myFirstName</code> or <code>myLastName</code>.",
+      "Strings can be combined in a process called <code>concatenation</code>.",
+      "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>lower camel case</code>. An example of lower camel case is: lowerCamelCase.",
+      "Look at the <code>ourFullName</code> example if you get stuck."
+    ],
+    "tests": [
+      "expect(myFirstName).to.be.a(\"string\");",
+      "expect(myLastName).to.be.a(\"string\");",
+      "expect(myFullName).to.be.a(\"string\");",
+      "expect(myFullName).length.not.to.be(0);",
+      "expect((/\\s+/).test(myFullName)).to.be.true;"
+    ],
+    "challengeSeed": [
+      "// var ourFirstName = \"Free\";",
+      "// var ourLastName = \"Code Camp\";",
+      "// var ourFullName = ourFirstName + \" \" + ourLastName;",
+      ""
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c448eddfaeb5bdef",
+    "name": "Check the Length Property of a String Variable",
+    "difficulty": "9.9809",
+    "description": [
+      "Use the <code>.length</code> property to count the number of characters in the <code>lastNameLength</code> variable.",
+      "For example, if we created a variable <code>var firstName = \"Julie\"</code>, we could find out how long the string \"Julie\" is by using the <code>firstName.length</code> property."
+    ],
+    "tests": [
+      "expect(lastNameLength).to.equal(4);"
+    ],
+    "challengeSeed": [
+      "var firstName = \"Madeline\";",
+      "",
+      "var firstNameLength = firstName.length;",
+      "",
+      "var lastName = \"Chen\";",
+      "",
+      "var lastNameLength = lastName;",
+      "",
+      "",
+      "",
+      "// You can ignore this.",
+      "// We use this to show you the value of your variable in your output box.",
+      "// We'll learn about functions soon.",
+      "function returnValue(lastNameLength) {",
+      "  return lastNameLength;",
+      "}",
+      "returnValue(lastNameLength);"
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c549eddfaeb5bdef",
+    "name": "Use Bracket Notation to Find the First Character in a String",
+    "difficulty": "9.9810",
+    "description": [
+      "Use <code>bracket notation</code> to find the first character in a the <code>firstLetterOfLastName</code> variable.",
+      "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
+      "Computers don't start counting at 1 like humans do. They start at 0.",
+      "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+      "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
+    ],
+    "tests": [
+      "expect(firstLetterOfLastName).to.equal('C');"
+    ],
+    "challengeSeed": [
+      "var firstName = \"Madeline\";",
+      "",
+      "var firstLetterOfFirstName = firstName[0];",
+      "",
+      "var lastName = \"Chen\";",
+      "",
+      "var firstLetterOfLastName = lastName;",
+      "",
+      "",
+      "// You can ignore this.",
+      "// We use this to show you the value of your variable in your output box.",
+      "// We'll learn about functions soon.",
+      "function returnValue(firstLetterOfLastName) {",
+      "  return firstLetterOfLastName;",
+      "}",
+      "returnValue(firstLetterOfLastName);"
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c450eddfaeb5bdef",
+    "name": "Use Bracket Notation to Find the Nth Character in a String",
+    "difficulty": "9.9811",
+    "description": [
+      "Use <code>bracket notation</code> to find the 3rd character in the <code>lastName</code> variable.",
+      "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
+      "Computers don't start counting at 1 like humans do. They start at 0.",
+      "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+      "Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
+    ],
+    "tests": [
+      "expect(thirdLetterOfLastName).to.equal('e');"
+    ],
+    "challengeSeed": [
+      "var firstName = \"Madeline\";",
+      "",
+      "var secondLetterOfFirstName = firstName[1];",
+      "",
+      "var lastName = \"Chen\";",
+      "",
+      "var thirdLetterOfLastName = lastName;",
+      "",
+      "",
+      "// You can ignore this.",
+      "// We use this to show you the value of your variable in your output box.",
+      "// We'll learn about functions soon.",
+      "function returnValue(thirdLetterOfLastName) {",
+      "  return thirdLetterOfLastName;",
+      "}",
+      "returnValue(thirdLetterOfLastName);"
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c451eddfaeb5bdef",
+    "name": "Use Bracket Notation to Find the Last Character in a String",
+    "difficulty": "9.9812",
+    "description": [
+      "Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
+      "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+      "In order to get the last letter of a string, you can subtract one from the string's length.",
+      "For example, if <code>var firstName = \"Julie\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
+      "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+    ],
+    "tests": [
+      "expect(lastLetterOfLastName).to.equal('n');"
+    ],
+    "challengeSeed": [
+      "var firstName = \"Madeline\";",
+      "",
+      "var lastLetterOfFirstName = firstName[firstName.length - 1];",
+      "",
+      "var lastName = \"Chen\";",
+      "",
+      "var lastLetterOfLastName = lastName;",
+      "",
+      "",
+      "// You can ignore this.",
+      "// We use this to show you the value of your variable in your output box.",
+      "// We'll learn about functions soon.",
+      "function returnValue(lastLetterOfLastName) {",
+      "  return lastLetterOfLastName;",
+      "}",
+      "returnValue(lastLetterOfLastName);"
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c452eddfaeb5bdef",
+    "name": "Use Bracket Notation to Find the Nth to Last Character in a String",
+    "difficulty": "9.9813",
+    "description": [
+      "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> variable.",
+      "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+      "In order to get the last letter of a string, you can subtract one from the string's length.",
+      "For example, if <code>var firstName = \"Julie\"</code>, you can get the value of the third-to-last letter of the string by using <code>firstName[firstName.length - 3]</code>.",
+      "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+    ],
+    "tests": [
+      "expect(secondToLastLetterOfLastName).to.equal('e');"
+    ],
+    "challengeSeed": [
+      "var firstName = \"Madeline\";",
+      "",
+      "var thirdToLastLetterOfFirstName = firstName[firstName.length - 2];",
+      "",
+      "var lastName = \"Chen\";",
+      "",
+      "var secondToLastLetterOfLastName = lastName;",
+      "",
+      "",
+      "// You can ignore this.",
+      "// We use this to show you the value of your variable in your output box.",
+      "// We'll learn about functions soon.",
+      "function returnValue(secondToLastLetterOfLastName) {",
+      "  return secondToLastLetterOfLastName;",
+      "}",
+      "returnValue(secondToLastLetterOfLastName);"
+    ],
+    "challengeType": 1
+  },
+  {
+    "_id": "bd7123c9c453eddfaeb5bdef",
+    "name": "Add two numbers",
+    "difficulty": "9.9814",
+    "description": [
+      "Set the variable <code>sum2</code> to equal 5 plus 3.",
+      "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+      "In order to get the last letter of a string, you can subtract one from the string's length.",
+      "For example, if <code>var firstName = \"Julie\"</code>, you can get the value of the third-to-last letter of the string by using <code>firstName[firstName.length - 3]</code>.",
+      "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+    ],
+    "tests": [
+      "expect(sum2).to.equal(8);"
+    ],
+    "challengeSeed": [
+      "var sum1 = 3 + 3;",
+      "",
+      "var sum2 = 0;"
     ],
     "challengeType": 1
   }

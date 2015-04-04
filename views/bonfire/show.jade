@@ -15,7 +15,7 @@ block content
     script(src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(src='/js/lib/jailed/jailed.js')
     script(src='/js/lib/bonfire/bonfireInit.js')
-    script(src="https://cdn.jsdelivr.net/ramda/0.10.0/ramda.min.js")
+    script(src='/js/lib/ramda/ramda.min.js')
 
 
     .row
@@ -73,9 +73,14 @@ block content
                                     .col-xs-12
                                         for sentence in details
                                             p!= sentence
+                                        #MDN-links
+                                            h4 Here are some helpful links.
+                                            for link, index in MDNlinks
+                                                ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
                                         #less-info.btn.btn-primary.btn-block.btn-primary-ghost
                                             span.ion-arrow-up-b
                                             | Less information
+
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
                 #showAllButton.btn.btn-info.btn-big.btn-block Show all bonfires
                 br
@@ -90,9 +95,10 @@ block content
                     var challengeSeed = !{JSON.stringify(challengeSeed)};
                     var passedBonfireHash = !{JSON.stringify(bonfireHash)};
                     var challengeName = !{JSON.stringify(name)};
-                    var started = Math.floor(Date.now() / 1000);
+                    var started = Math.floor(Date.now());
                     var _ = R;
                     var dashed = !{JSON.stringify(dashedName)};
+
         .col-xs-12.col-sm-12.col-md-8
             #mainEditorPanel
                 form.code
@@ -111,7 +117,7 @@ block content
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
-                    - if (cc)
+                    - if (user)
                         form.form-horizontal(novalidate='novalidate', name='completedWithForm')
                             .form-group.text-center
                                 .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
@@ -126,14 +132,14 @@ block content
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next bonfire (ctrl + enter)
 
 
-                        - if (points && points > 2)
+                        - if (user.progressTimestamps.length > 2)
                             a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
                                 i.fa.fa-twitter &thinsp;
                                     = phrase
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
 
-    #all-bonfires-dialog.modal(tabindex='-1')
+    #all-challenges-dialog.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
             .modal-content
                 .modal-header.all-list-header Bonfires
@@ -141,14 +147,7 @@ block content
                 .modal-body
                     include ../partials/bonfires
     script.
-        $.ajax({
-            url: 'https://api-ssl.bitly.com/v3/shorten?access_token=75e7931a19befaafcf108021b6d597e554b2c5c3&longUrl=http%3A%2F%2Ffreecodecamp.com%2Fbonfires%2F' + dashed + '&format=txt'
-        })
-                .success(
-                function (data) {
-                    console.log(data);
-                    url = "https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=" + data + "&hashtags=LearnToCode, JavaScript";
-                    $('.btn-twitter').attr('href', url);
-                }
-        );
-
+        var MDNlinks = !{JSON.stringify(MDNlinks)};
+        if (!MDNlinks.length) {
+            $('#MDN-links').addClass('collapse');
+        }
