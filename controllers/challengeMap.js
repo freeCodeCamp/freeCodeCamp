@@ -53,8 +53,6 @@ module.exports = {
     basejumps = coursewareList.filter(function(challenge) {
       if (challenge.challengeType === 4) { return challenge }
     });
-    console.log('completed', completedCoursewareList);
-    console.log('waypoints', waypoints);
 
     res.render('challengeMap/show', {
       title: "A map of all Free Code Camp's Challenges",
