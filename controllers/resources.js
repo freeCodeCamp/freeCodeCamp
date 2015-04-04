@@ -134,46 +134,45 @@ module.exports = {
     var progressTimestamps = req.user.progressTimestamps;
     var now = Date.now() || 0;
 
-    if (req.user.pointsNeedMigration) {
-      var challengesHash = req.user.challengesHash;
-      for (var key in challengesHash) {
-        if (challengesHash[key] > 0) {
-          req.user.progressTimestamps.push(challengesHash[key]);
-        }
-      }
-
-      var oldChallengeKeys = R.keys(req.user.challengesHash);
-
-      var updatedTimesFromOldChallenges = oldChallengeKeys.map(function(timeStamp) {
-        if (timeStamp.toString().length !== 13) {
-          timeStamp *= 1000;
-        }
-        return timeStamp;
-      });
-
-      var newTimeStamps = R.map(function(timeStamp) {
-        if (timeStamp.toString().length !== 13) {
-          timeStamp *= 1000;
-        }
-        return timeStamp;
-      }, req.user.progressTimestamps);
-
-      req.user.progressTimestamps = newTimeStamps;
-
-
-      req.user.completedCoursewares = Array.zip(updatedTimesFromOldChallenges, coursewares,
-        function(left, right) {
-          return ({
-            completedDate: left.timeStamp,
-            _id: right._id,
-            name: right.name
-          });
-        }).filter(function(elem) {
-          return elem.completedDate !== 0;
-        });
-      req.user.pointsNeedMigration = false;
-      req.user.save();
-    }
+    //if (req.user.pointsNeedMigration) {
+    //  var challengesHash = req.user.challengesHash;
+    //  for (var key in challengesHash) {
+    //    if (challengesHash[key] > 0) {
+    //      req.user.progressTimestamps.push(challengesHash[key]);
+    //    }
+    //  }
+    //
+    //  var oldChallengeKeys = R.keys(req.user.challengesHash);
+    //
+    //  var updatedTimesFromOldChallenges = oldChallengeKeys.map(function(timeStamp) {
+    //    if (timeStamp.toString().length !== 13) {
+    //      timeStamp *= 1000;
+    //    }
+    //    return timeStamp;
+    //  });
+    //
+    //  var newTimeStamps = R.map(function(timeStamp) {
+    //    if (timeStamp.toString().length !== 13) {
+    //      timeStamp *= 1000;
+    //    }
+    //    return timeStamp;
+    //  }, req.user.progressTimestamps);
+    //
+    //  req.user.progressTimestamps = newTimeStamps;
+    //
+    //  req.user.completedCoursewares = Array.zip(updatedTimesFromOldChallenges, coursewares,
+    //    function(left, right) {
+    //      return ({
+    //        completedDate: left.timeStamp,
+    //        _id: right._id,
+    //        name: right.name
+    //      });
+    //    }).filter(function(elem) {
+    //      return elem.completedDate !== 0;
+    //    });
+    //  req.user.pointsNeedMigration = false;
+    //  req.user.save();
+    //}
     if (progressTimestamps[progressTimestamps.length - 1] <= (now - 43200)) {
       req.user.progressTimestamps.push(now);
     }
@@ -196,7 +195,7 @@ module.exports = {
         }
 
         res.render('resources/learn-to-code', {
-          title: 'About Free Code Camp and Our Team of Volunteers',
+          title: 'About Free Code Camp',
           daysRunning: daysRunning,
           c3: numberWithCommas(c3),
           all: all,
@@ -296,6 +295,7 @@ module.exports = {
       return {
         name: elem.name,
         difficulty: elem.difficulty,
+        challengeType: elem.challengeType,
         _id: elem._id
       };
     })
@@ -305,6 +305,7 @@ module.exports = {
       .map (function(elem) {
       return {
         name: elem.name,
+        challengeType: elem.challengeType,
         _id: elem._id
       };
     });

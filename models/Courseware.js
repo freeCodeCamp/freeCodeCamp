@@ -16,7 +16,7 @@ var coursewareSchema = new mongoose.Schema({
     tests: Array,
     challengeSeed: Array,
     completionMessage: String, // Congratulations! You've finished our HTML and CSS track!
-    challengeType: Number // 0 = html, 1 = javascript only, 2 = video, 3 = bonfire, 4 = zipline, 5 = basejump
+    challengeType: Number // 0 = html, 1 = javascript only, 2 = video, 3 = zipline, 4 = basejump
 });
 
 module.exports = mongoose.model('Courseware', coursewareSchema);

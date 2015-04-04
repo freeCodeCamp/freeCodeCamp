@@ -43,8 +43,10 @@ var express = require('express'),
     bonfireController = require('./controllers/bonfire'),
     coursewareController = require('./controllers/courseware'),
     wikiController = require('./controllers/wiki'),
+    challengeMapController = require('./controllers/challengeMap'),
 
-    /**
+
+  /**
      *  Stories
      */
     storyController = require('./controllers/story'),
@@ -246,6 +248,8 @@ app.get('/nonprofit-project-instructions', function(req, res) {
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
 
 app.get('/chat', resourcesController.chat);
+
+app.get('/challenge-map', challengeMapController.challengeMap);
 
 app.get('/live-pair-programming', function(req, res) {
     res.redirect(301, '/wiki/live-stream-pair-programming-on-twitch.tv');

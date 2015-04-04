@@ -1,0 +1,43 @@
+extends ../layout
+block content
+    .col-xs-12.col-sm-12.col-md-12
+        .panel.panel-info
+            .panel-heading.text-center
+                h1 Challenge Map
+            .panel-body
+                h3 Waypoints
+                ol.col-md-offset-2
+                    for waypoint in waypoints
+                        if completedCoursewareList.indexOf(waypoint._id) > -1
+                            li.strikethrough
+                                a(href="/challenges/#{waypoint.name}")= waypoint.name
+                        else
+                            li
+                                a(href="/challenges/#{waypoint.name}")= waypoint.name
+                h3 Bonfires
+                ol.col-md-offset-2
+                    for bonfire in bonfires
+                        if completedBonfireList.indexOf(bonfire._id) > -1
+                            li.strikethrough
+                                a(href="/bonfires/#{bonfire.name}")= bonfire.name
+                        else
+                            li
+                                a(href="/bonfires/#{bonfire.name}")= bonfire.name
+                h3 Ziplines
+                ol.col-md-offset-2
+                    for zipline in ziplines
+                        if completedCoursewareList.indexOf(zipline._id) > -1
+                            li.strikethrough
+                                a(href="/challenges/#{zipline.name}")= zipline.name
+                        else
+                            li
+                                a(href="/challenges/#{zipline.name}")= zipline.name
+                h3 Basejumps
+                ol.col-md-offset-2
+                    for basejump in basejumps
+                        if completedCoursewareList.indexOf(basejump._id) > -1
+                            li.strikethrough
+                                a(href="/challenges/#{basejump.name}")= basejump.name
+                        else
+                            li
+                                a(href="/challenges/#{basejump.name}")= basejump.name
