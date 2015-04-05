@@ -515,15 +515,12 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
  * Wiki related routes
  */
 
-app.get(
-    '/wiki/:wikiName',
-    wikiController.returnIndividualWiki
-);
 
-app.get(
-    '/wiki',
-    wikiController.returnHomeWiki
-);
+app.get('/wiki/:wikiName', wikiController.returnIndividualWiki);
+
+app.get('/wiki', wikiController.returnNextWiki);
+
+app.post('/completed-wiki/', wikiController.completedWiki);
 
 
 /**

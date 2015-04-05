@@ -52,6 +52,23 @@ $(document).ready(function() {
     }
   }
 
+  function completedWiki(wikiId) {
+    if ($('.signup-btn-nav').length < 1) {
+      $.post(
+        '/completed-wiki',
+        {
+          wikiInfo: {
+            wikiId: wikiId
+          }
+        },
+        function(res) {
+          if (res) {
+            window.location.href = '/wiki'
+          }
+        });
+    }
+  }
+
   $('.next-bonfire-button').on('click', function() {
     var bonfireSolution = myCodeMirror.getValue();
     var thisBonfireHash = passedBonfireHash || null;
@@ -59,6 +76,11 @@ $(document).ready(function() {
     var didCompleteWith = $('#completed-with').val() || null;
     completedBonfire(didCompleteWith, bonfireName, bonfireSolution, thisBonfireHash);
 
+  });
+
+  $('.next-wiki-button').on('click', function() {
+    var wikiId = $('#wikiId').text();
+    completedWiki(wikiId);
   });
 
   $("img").error(function () {

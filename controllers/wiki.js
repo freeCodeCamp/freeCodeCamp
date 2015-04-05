@@ -29,6 +29,7 @@ exports.returnIndividualWiki = function(req, res, next) {
         }
         res.render('wiki/show', {
             title: wiki.name,
+            wikiId: wiki._id,
             description: wiki.description.join('')
         });
     });
@@ -40,30 +41,57 @@ exports.showAllWikis = function(req, res) {
     res.send(data);
 };
 
-exports.returnHomeWiki = function(req, res) {
-    var dashedName = req.params.wikiName;
+exports.returnNextWiki = function(req, res, next) {
+  if (!req.user) {
+    return res.redirect('../wiki/a-guide-to-our-wiki');
+  }
 
-    Wiki.find({'name': 'A Guide to our Wiki'}, function(err, wiki) {
-        if (err) {
-            next(err);
-        }
+  var completed = req.user.completedWikis;
 
-        if (wiki.length < 1) {
-            req.flash('errors', {
-                msg: "404: We couldn't find a wiki entry with that name. Please double check the name."
-            });
+  req.user.uncompletedWikis = resources.allWikiIds().filter(function (elem) {
+    if (completed.indexOf(elem) === -1) {
+      return elem;
+    }
+  });
+  req.user.save();
 
-            return res.redirect('/wiki');
-        }
+  var uncompletedWikis = req.user.uncompletedWikis;
 
-        wiki = wiki.pop();
-        var dashedNameFull = wiki.name.toLowerCase().replace(/\s/g, '-');
-        if (dashedNameFull != dashedName) {
-            return res.redirect('../wiki/' + dashedNameFull);
-        }
-        res.render('wiki/show', {
-            title: wiki.name,
-            description: wiki.description.join('')
-        });
-    });
+  var displayedWikis =  Wiki.find({'_id': uncompletedWikis[0]});
+  displayedWikis.exec(function(err, wiki) {
+    if (err) {
+      return next(err);
+    }
+    wiki = wiki.pop();
+    if (wiki === undefined) {
+      req.flash('errors', {
+        msg: "It looks like you've read all our current Wiki entries. Let us know if you'd like to contribute to our wiki!"
+      });
+      return res.redirect('../wiki/a-guide-to-our-wiki');
+    }
+    var nameString = wiki.name.toLowerCase().replace(/\s/g, '-');
+    return res.redirect('../wiki/' + nameString);
+  });
+};
+
+exports.completedWiki = function (req, res, next) {
+  debug('params in completedWiki', req.params);
+  var wikiId = req.body.wikiInfo.wikiId;
+
+  req.user.completedWikis.push(wikiId);
+
+  var index = req.user.uncompletedWikis.indexOf(wikiId);
+  if (index > -1) {
+    req.user.progressTimestamps.push(Date.now() || 0);
+    req.user.uncompletedWikis.splice(index, 1);
+  }
+
+  req.user.save(function (err, user) {
+    if (err) {
+      return next(err);
+    }
+    if (user) {
+      res.send(true);
+    }
+  });
 };

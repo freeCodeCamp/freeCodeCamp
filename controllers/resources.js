@@ -239,6 +239,17 @@ module.exports = {
       });
   },
 
+  allWikiIds: function() {
+    return wikis.map(function(elem) {
+      return {
+        _id: elem._id,
+      }
+    })
+    .map(function(elem) {
+      return elem._id;
+    });
+  },
+
   allBonfireNames: function() {
     return bonfires.map(function(elem) {
       return {

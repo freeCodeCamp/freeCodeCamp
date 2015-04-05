@@ -10,7 +10,9 @@ block content
                 div!= description
                 .spacer
                 .text-center
-                    #showAllButton.btn.btn-info.btn-big Show all Wiki Articles
+                    .next-wiki-button.btn.btn-primary.btn-big Take me to the next article
+                    .ten-pixel-break
+                    #showAllButton.btn.btn-info.btn-big Show all wiki articles
                 .spacer
                 .row
                     .col-xs-12.text-center
@@ -24,3 +26,4 @@ block content
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
                     include ../partials/wikis
+    #wikiId.hidden= wikiId
