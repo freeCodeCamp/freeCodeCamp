@@ -83,9 +83,13 @@ module.exports = {
   },
 
   chat: function chat(req, res) {
-    res.render('resources/chat', {
-      title: "Enter Free Code Camp's Chat Rooms"
-    });
+    if (req.user && req.user.progressTimestamps.length > 5) {
+      res.redirect('http://gitter.im/freecodecamp/freecodecamp');
+    } else {
+      res.render('resources/chat', {
+        title: "Enter Free Code Camp's Chat Rooms"
+      });
+    }
   },
 
   jqueryExercises: function jqueryExercises(req, res) {
