@@ -30,31 +30,16 @@ $(document).ready(function() {
       .addClass('animated fadeInDown');
   });
 
-  //$('.completed-challenge').on('click', function() {
-  //    $('#complete-challenge-dialog').modal('show');
-  //    // Only post to server if there is an authenticated user
-  //    if ($('.signup-btn-nav').length < 1) {
-  //        l = location.pathname.split('/');
-  //        cn = l[l.length - 1];
-  //        $.ajax({
-  //            type: 'POST',
-  //            data: {challengeNumber: cn},
-  //            url: '/completed-challenge/'
-  //        });
-  //    }
-  //});
-
-
   function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
     $('#complete-bonfire-dialog').modal('show');
     // Only post to server if there is an authenticated user
     if ($('.signup-btn-nav').length < 1) {
-
       $.post(
         '/completed-bonfire',
         {
           bonfireInfo: {
-            completedWith : didCompleteWith,
+            bonfireName: title,
+            completedWith: didCompleteWith,
             solution: bonfireSolution,
             bonfireHash: thisBonfireHash
           }
@@ -70,8 +55,9 @@ $(document).ready(function() {
   $('.next-bonfire-button').on('click', function() {
     var bonfireSolution = myCodeMirror.getValue();
     var thisBonfireHash = passedBonfireHash || null;
+    var bonfireName = title;
     var didCompleteWith = $('#completed-with').val() || null;
-    completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash);
+    completedBonfire(didCompleteWith, bonfireName, bonfireSolution, thisBonfireHash);
 
   });
 

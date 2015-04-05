@@ -304,7 +304,9 @@ exports.returnUser = function(req, res, next) {
 
       user.currentStreak = user.currentStreak || 1;
       user.longestStreak = user.longestStreak || 1;
-
+      challenges = user.completedCoursewares.filter(function ( obj ) {
+        return !!obj.solution;
+      });
       res.render('account/show', {
         title: 'Camper ' + user.profile.username + '\'s portfolio',
         username: user.profile.username,
@@ -327,7 +329,8 @@ exports.returnUser = function(req, res, next) {
         website3Link: user.portfolio.website3Link,
         website3Title: user.portfolio.website3Title,
         website3Image: user.portfolio.website3Image,
-        ch: user.challengesHash,
+        challenges: challenges,
+        bonfires: user.completedBonfires,
         calender: data,
         moment: moment,
         longestStreak: user.longestStreak + (user.longestStreak === 1 ? " day" : " days"),

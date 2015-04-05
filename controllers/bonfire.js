@@ -113,7 +113,6 @@ exports.returnIndividualBonfire = function(req, res, next) {
         details: bonfire.description.slice(1),
         tests: bonfire.tests,
         challengeSeed: bonfire.challengeSeed,
-        cc: !!req.user,
         points: req.user ? req.user.points : undefined,
         verb: resources.randomVerb(),
         phrase: resources.randomPhrase(),
@@ -252,6 +251,7 @@ exports.completedBonfire = function (req, res, next) {
   var isCompletedDate = Math.round(+new Date());
   var bonfireHash = req.body.bonfireInfo.bonfireHash;
   var isSolution = req.body.bonfireInfo.solution;
+  var bonfireName = req.body.bonfireInfo.bonfireName;
 
   if (isCompletedWith) {
     var paired = User.find({'profile.username': isCompletedWith
@@ -276,6 +276,7 @@ exports.completedBonfire = function (req, res, next) {
 
         pairedWith.completedBonfires.push({
           _id: bonfireHash,
+          name: bonfireName,
           completedWith: req.user._id,
           completedDate: isCompletedDate,
           solution: isSolution
@@ -283,6 +284,7 @@ exports.completedBonfire = function (req, res, next) {
 
         req.user.completedBonfires.push({
           _id: bonfireHash,
+          name: bonfireName,
           completedWith: pairedWith._id,
           completedDate: isCompletedDate,
           solution: isSolution
@@ -304,8 +306,10 @@ exports.completedBonfire = function (req, res, next) {
       }
     });
   } else {
+    console.log('look here!', bonfireName);
     req.user.completedBonfires.push({
       _id: bonfireHash,
+      name: bonfireName,
       completedWith: null,
       completedDate: isCompletedDate,
       solution: isSolution

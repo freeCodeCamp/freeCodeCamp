@@ -125,3 +125,34 @@ block content
                                 .row.text-primary
                                     h4.col-sm-6.text-right Longest Streak: #{longestStreak}
                                     h4.col-sm-6.text-left Current Streak: #{currentStreak}
+
+                        - if (challenges.length > 0)
+                            .col-sm-12
+                                table.table.table-striped
+                                    thead
+                                        tr
+                                            th Challenge
+                                            th Date Completed
+                                            th Link
+                                    for challenge in challenges
+                                        tr
+                                            td= challenge.name
+                                            td= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td
+                                                a(href=challenge.solution) View my solution
+
+                                    br
+                        - if (bonfires.length > 0)
+                            .col-sm-12
+                                table.table.table-striped
+                                    thead
+                                        tr
+                                            th Bonfire
+                                            th Date Completed
+                                            th Link
+                                    for bonfire in bonfires
+                                        tr
+                                            td= bonfire.name
+                                            td= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                            td= bonfire.solution
+                                    br

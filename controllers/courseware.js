@@ -305,6 +305,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
 
         req.user.completedCoursewares.push({
           _id: coursewareHash,
+          name: req.body.coursewareInfo.coursewareName,
           completedWith: pairedWith._id,
           completedDate: isCompletedDate,
           solution: solutionLink,
@@ -332,6 +333,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
 
           pairedWith.completedCoursewares.push({
             _id: coursewareHash,
+            name: req.body.coursewareInfo.coursewareName,
             completedWith: req.user._id,
             completedDate: isCompletedDate,
             solution: solutionLink,
@@ -353,6 +355,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
 
     req.user.completedCoursewares.push({
       _id: coursewareHash,
+      name: req.body.coursewareInfo.coursewareName,
       completedWith: null,
       completedDate: isCompletedDate,
       solution: solutionLink,
