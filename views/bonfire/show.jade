@@ -21,7 +21,7 @@ block content
     .row
         .col-xs-12.col-sm-12.col-md-4.bonfire-top
             #testCreatePanel
-                h1.text-center= name
+                h1#bonfire-name.text-center= name
                 h2.text-center
                     .bonfire-flames Difficulty:&thinsp;
                         if (difficulty == "0")
@@ -82,7 +82,6 @@ block content
                                             | Less information
 
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                #showAllButton.btn.btn-info.btn-big.btn-block Show all bonfires
                 br
                 form.code
                     .form-group.codeMirrorView
@@ -139,13 +138,6 @@ block content
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
 
-    #all-challenges-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.fadeInUp.fast-animation
-            .modal-content
-                .modal-header.all-list-header Bonfires
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    include ../partials/bonfires
     script.
         var MDNlinks = !{JSON.stringify(MDNlinks)};
         if (!MDNlinks.length) {

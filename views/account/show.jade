@@ -97,6 +97,7 @@ block content
                                     | Try it out
 
                     .hidden-xs.col-sm-12
+                        script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
                         #cal-heatmap.img-center
                             script.
                                 $(document).ready(function() {
@@ -129,14 +130,14 @@ block content
                                 table.table.table-striped
                                     thead
                                         tr
-                                            th Challenge
-                                            th Date Completed
-                                            th Link
+                                            th.col-xs-4 Challenge
+                                            th.col-xs-2 Completed
+                                            th.col-xs-6 Link
                                     for challenge in challenges
                                         tr
-                                            td= challenge.name
-                                            td= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
-                                            td
+                                            td.col-xs-4= challenge.name
+                                            td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6
                                                 a(href=challenge.solution) View my solution
 
                                     br
@@ -145,12 +146,12 @@ block content
                                 table.table.table-striped
                                     thead
                                         tr
-                                            th Bonfire
-                                            th Date Completed
-                                            th Link
+                                            th.col-xs-4 Bonfire
+                                            th.col-xs-2 Completed
+                                            th.col-xs-6 Solution
                                     for bonfire in bonfires
                                         tr
-                                            td= bonfire.name
-                                            td= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
-                                            td= bonfire.solution
+                                            td.col-xs-4= bonfire.name
+                                            td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6= bonfire.solution
                                     br

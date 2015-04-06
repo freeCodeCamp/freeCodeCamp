@@ -30,7 +30,7 @@ $(document).ready(function() {
       .addClass('animated fadeInDown');
   });
 
-  function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
+  function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash, bonfireName) {
     $('#complete-bonfire-dialog').modal('show');
     // Only post to server if there is an authenticated user
     if ($('.signup-btn-nav').length < 1) {
@@ -38,10 +38,10 @@ $(document).ready(function() {
         '/completed-bonfire',
         {
           bonfireInfo: {
-            bonfireName: title,
             completedWith: didCompleteWith,
             solution: bonfireSolution,
-            bonfireHash: thisBonfireHash
+            bonfireHash: thisBonfireHash,
+            bonfireName: bonfireName
           }
         },
         function(res) {
@@ -72,9 +72,9 @@ $(document).ready(function() {
   $('.next-bonfire-button').on('click', function() {
     var bonfireSolution = myCodeMirror.getValue();
     var thisBonfireHash = passedBonfireHash || null;
-    var bonfireName = title;
+    var bonfireName = $('#bonfire-name').text();
     var didCompleteWith = $('#completed-with').val() || null;
-    completedBonfire(didCompleteWith, bonfireName, bonfireSolution, thisBonfireHash);
+    completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash, bonfireName);
 
   });
 
@@ -96,18 +96,6 @@ $(document).ready(function() {
   });
 
   $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
-    editor.focus();
-  });
-
-  $('#all-bonfires-dialog').on('hidden.bs.modal', function() {
-    editor.focus();
-  });
-
-  $('#showAllCoursewares').on('click', function() {
-    $('#all-coursewares-dialog').modal('show');
-  });
-
-  $('#all-coursewares-dialog').on('hidden.bs.modal', function() {
     editor.focus();
   });
 
@@ -188,11 +176,11 @@ $(document).ready(function() {
 
 
   $('.all-challenges').on('click', function() {
-    $('#all-challenges-dialog').modal('show');
+    $('#show-all-dialog').modal('show');
   });
 
   $('#showAllButton').on('click', function() {
-    $('#all-challenges-dialog').modal('show');
+    $('#show-all-dialog').modal('show');
   });
 
   $('.next-challenge-button').on('click', function() {

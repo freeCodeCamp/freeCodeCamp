@@ -249,7 +249,7 @@ app.get('/jquery-exercises', resourcesController.jqueryExercises);
 
 app.get('/chat', resourcesController.chat);
 
-app.get('/challenge-map', challengeMapController.challengeMap);
+app.get('/map', challengeMapController.challengeMap);
 
 app.get('/live-pair-programming', function(req, res) {
     res.redirect(301, '/wiki/live-stream-pair-programming-on-twitch.tv');
@@ -484,8 +484,6 @@ app.get('/api/trello', resourcesController.trelloCalls);
  * Bonfire related routes
  */
 
-app.get('/bonfires/getBonfireList', bonfireController.showAllBonfires);
-
 app.get('/wiki/getWikiList', wikiController.showAllWikis);
 
 app.get('/playground', bonfireController.index);
@@ -528,8 +526,6 @@ app.post('/completed-wiki/', wikiController.completedWiki);
  */
 
 app.get('/challenges/', coursewareController.returnNextCourseware);
-
-app.get('/challenges/getCoursewareList', coursewareController.showAllCoursewares);
 
 app.get(
     '/challenges/:coursewareName',
