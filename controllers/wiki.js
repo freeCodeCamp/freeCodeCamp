@@ -64,8 +64,8 @@ exports.returnNextWiki = function(req, res, next) {
     }
     wiki = wiki.pop();
     if (wiki === undefined) {
-      req.flash('errors', {
-        msg: "It looks like you've read all our current Wiki entries. Let us know if you'd like to contribute to our wiki!"
+      req.flash('success', {
+        msg: "You've read all our current Wiki entries. You can contribute to our Wiki <a href='https://github.com/FreeCodeCamp/freecodecamp/blob/nonprofit-show/seed_data/wikis.json'>here</a>."
       });
       return res.redirect('../wiki/a-guide-to-our-wiki');
     }
