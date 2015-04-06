@@ -7,12 +7,17 @@ block content
             .panel-heading.text-center
                 h1= title
             .panel-body
-                div!= description
+                .row
+                    .col-xs-12
+                        div!= description
                 .spacer
-                .text-center
-                    .next-wiki-button.btn.btn-primary.btn-big Take me to the next article
-                    .ten-pixel-break
-                    #showAllButton.btn.btn-info.btn-big Show all wiki articles
+                .spacer
+                .spacer
+                .col-xs-12.col-sm-6.col-sm-offset-3
+                    .text-center
+                        .next-wiki-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
+                        .ten-pixel-break
+                        #showAllButton.btn.btn-info.btn-big.btn-block Show me all wiki articles
                 .spacer
                 .row
                     .col-xs-12.text-center
@@ -27,3 +32,11 @@ block content
                 .modal-body
                     include ../partials/wikis
     #wikiId.hidden= wikiId
+    script.
+        $(document).ready(function() {
+            $('body').keydown(function(e) {
+                if (e.ctrlKey && e.keyCode == 13) {
+                    $('.next-wiki-button').click();
+                }
+            });
+        });
