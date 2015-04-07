@@ -8,7 +8,7 @@ if (!user.pair.onlineStatus)
 			button#pair-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
 else
 	h2 You are online.
-	button#go-offline Go offline
+	button.btn.bt-big.btn-primary.btn-responsive(type="button")#go-offline Go Offline
 	.spacer
 	.collapse
 		form.input-group(method="POST", action="/pair-coding/edit-request", name="paircode-edit")

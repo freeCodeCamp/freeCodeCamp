@@ -106,46 +106,7 @@ exports.editPairRequest = function(req, res) {
 	});
 };
 
-
-//Used to check for expire online users
-exports.removeOldOnlinePost = function () {
-	var timeForExpired = 30; //Minutes
-	var online = PairUser.find({});
-	var working = online.exec(function(err, users){
-		var now = new Date().getTime();
-		for (var x=0; x<users.length; x++){
-			var wentOnline = new Date(users[x]['timeOnline']);
-			var onlineForMinutes = Math.round((now - wentOnline)/60000);
-			if (onlineForMinutes >= timeForExpired){
-				User.findById(users[x].user, function(err, user) {
-					if (err) {
-						console.log("ERROR: Could not find user, METHOD: removeOldOnlinePost" + err);
-					} 
-					user.pair.onlineStatus = false;
-					user.pair.timeOnline = new Date();
-					user.save(function(err) {
-						if (err) {
-							console.log("ERROR: Could not save user, METHOD: removeOldOnlinePost: " + err);
-						} else {
-							console.log("User saved.");
-						}
-					});
-				});
-
-				users[x].remove(function(err, ele){
-					if (err){
-						console.log("ERROR: Could not remove user, METHOD: removeOldOnlinePost: " + err);
-					}
-				});
-			}
-		}
-		return users;
-	})
-};
-
-// TESTING 
-
-exports.removeOldPostsTest = function() {
+exports.removeOldPosts = function() {
 	// this is the oldest possible time to keep
 	var cutoff = Date.now() - 1800000;	// 30 minutes
 	//var cutoff = Date.now()-(120000/4);		// test value, 2 minutes

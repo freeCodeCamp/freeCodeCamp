@@ -553,7 +553,7 @@ var pairCodingIntervalMiliSeconds = pairCodingIntervalMinutes * 60 * 1000;
 var pC = require('./controllers/pairCoding.js');
 
 var pairCodingInterval = setInterval(function(){
-    pC.removeOldPostsTest();
+    pC.removeOldPosts();
 }, pairCodingIntervalMiliSeconds);
  
 module.exports = app;
