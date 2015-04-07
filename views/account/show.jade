@@ -21,13 +21,13 @@ block content
                                 img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
                             h1.text-center.negative-5
                                 - if (twitterHandle)
-                                a.ion-social-twitter.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}", target='_blank')
+                                    a.ion-social-twitter.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}", target='_blank')
                                 - if (githubProfile)
-                                a.ion-social-github.text-primary(title="@#{username}'s GitHub Profile", href=githubProfile, target='_blank')
+                                    a.ion-social-github.text-primary(title="@#{username}'s GitHub Profile", href=githubProfile, target='_blank')
                                 - if (linkedinProfile)
-                                a.ion-social-linkedin.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedinProfile, target='_blank')
+                                    a.ion-social-linkedin.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedinProfile, target='_blank')
                                 - if (codepenProfile)
-                                a.ion-social-codepen.text-primary(title="@#{username}'s CodePen Profile", href=codepenProfile, target='_blank')
+                                    a.ion-social-codepen.text-primary(title="@#{username}'s CodePen Profile", href=codepenProfile, target='_blank')
                         .visible-md.visible-lg
                             .col-xs-12.col-sm-12.col-md-4.text-justify
                                 h1.flat-top.wrappable= name

@@ -364,6 +364,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
     });
 
     var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
+    console.log('index here', index)
     if (index > -1) {
       req.user.progressTimestamps.push(Date.now() || 0);
       req.user.uncompletedCoursewares.splice(index, 1);

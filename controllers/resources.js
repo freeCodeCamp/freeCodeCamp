@@ -87,7 +87,7 @@ module.exports = {
       res.redirect('http://gitter.im/freecodecamp/freecodecamp');
     } else {
       res.render('resources/chat', {
-        title: "Enter Free Code Camp's Chat Rooms"
+        title: "Watch us code live on Twitch.tv"
       });
     }
   },
@@ -95,6 +95,12 @@ module.exports = {
   jqueryExercises: function jqueryExercises(req, res) {
     res.render('resources/jquery-exercises', {
       title: 'jQuery Exercises'
+    });
+  },
+
+  twitch: function twitch(req, res) {
+    res.render('resources/twitch', {
+      title: "Enter Free Code Camp's Chat Rooms"
     });
   },
 

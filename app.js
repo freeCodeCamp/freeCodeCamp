@@ -249,6 +249,8 @@ app.get('/jquery-exercises', resourcesController.jqueryExercises);
 
 app.get('/chat', resourcesController.chat);
 
+app.get('/twitch', resourcesController.twitch);
+
 app.get('/map', challengeMapController.challengeMap);
 
 app.get('/live-pair-programming', function(req, res) {

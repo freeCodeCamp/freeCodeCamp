@@ -113,24 +113,6 @@
     "tests": []
   },
   {
-    "_id": "bd7110d8c441eddfaeb5bdef",
-    "name": "Tweak HTML and CSS in CodePen",
-    "difficulty": 0.08,
-    "challengeSeed": "110752744",
-    "description": [
-      "Now we're going to learn how to use a tool called CodePen, which lets you experiment with HTML and CSS, and even create single-page web applications, right in your browser!",
-      "Go to <a href='http://www.newsweek.com/' target='_blank'>http://www.newsweek.com/</a>",
-      "Change the window size. Note that Newsweek.com is using <strong>Responsive Design</strong>.",
-      "Right-click an area of the page that doesn't have any HTML elements on it, then choose 'view page source'.",
-      "Select all the text, then copy it.",
-      "Go to <a href='http://codepen.io/pen/' target='_blank'>http://codepen.io/pen/</a>",
-      "Paste the HTML you copied from Newsweek.com into the HTML field of CodePen.",
-      "You now have your own customizable version of the Newsweek.com website. See if you can change some of the text and images."
-    ],
-    "challengeType": 2,
-    "tests": []
-  },
-  {
     "_id": "bd7111d8c441eddfaeb5bdef",
     "name": "Build a CSS Robot",
     "difficulty": 0.09,

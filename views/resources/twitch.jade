@@ -1,0 +1,59 @@
+extends ../layout
+block content
+    .col-xs-12
+        .panel.panel-info
+            .panel-heading.text-center Watch us code on our Twitch.tv channel
+            .panel-body.text-center
+                h2 Watch the live stream below or on our &thinsp;
+                    a(href="http://twitch.tv/freecodecamp", target='_blank') Twitch.tv channel
+                    | .
+                .spacer
+                .row
+                    .col-md-8.col-xs-12
+                        .embed-responsive.embed-responsive-16by9
+                            iframe(src='http://www.twitch.tv/freecodecamp/embed', frameborder='0', scrolling='no')
+                    .col-md-4.col-xs-12
+                        .visible-sm.visible-xs
+                            .embed-responsive.embed-responsive-16by9
+                                iframe(src='http://www.twitch.tv/freecodecamp/chat?popout=', frameborder='0', scrolling='no')
+                        .visible-md.visible-lg
+                            .embed-responsive.embed-responsive-twitch-chat
+                                iframe(src='http://www.twitch.tv/freecodecamp/chat?popout=', frameborder='0', scrolling='no')
+                .row
+                    .col-xs-12
+                        h2 Check out our scheduled shows. You can add them to your calendar.
+                        .embed-responsive.embed-responsive-16by9
+                            iframe.embed-responsive-item(src="https://www.google.com/calendar/embed?src=freecodecamp.com_r06116ile3o6ucpif7s0g281tc%40group.calendar.google.com&ctz=America/New_York&mode=AGENDA" style="border: 0" width="800" height="600" frameborder="0" scrolling="no")
+                .row
+                    .col-xs-12
+                        h2 Here are some of our previous shows (you can full-screen them)
+                        .row
+                            .col-xs-12.col-sm-12.col-md-6
+                                .embed-responsive.embed-responsive-16by9.big-break
+                                    iframe.embed-responsive-item(src='//www.youtube.com/embed/_BErpDdmBOw')
+                                p.wrappable.negative-45 link: &thinsp;
+                                    a(href="http://www.youtube.com/watch/_BErpDdmBOw") http://www.youtube.com/watch/_BErpDdmBOw
+                            .col-xs-12.col-sm-12.col-md-6
+                                .embed-responsive.embed-responsive-16by9.big-break
+                                    iframe.embed-responsive-item(src='//www.youtube.com/embed/Fn9HMn79KH0')
+                                p.wrappable.negative-45 link: &thinsp;
+                                    a(href="http://www.youtube.com/watch/Fn9HMn79KH0") http://www.youtube.com/watch/Fn9HMn79KH0
+                            .col-xs-12.col-sm-12.col-md-6
+                                .embed-responsive.embed-responsive-16by9.big-break
+                                    iframe.embed-responsive-item(src='//www.youtube.com/embed/S7iRBZJwOAs')
+                                p.wrappable.negative-45 link: &thinsp;
+                                    a(href="http://www.youtube.com/watch/S7iRBZJwOAs") http://www.youtube.com/watch/S7iRBZJwOAs
+                            .col-xs-12.col-sm-12.col-md-6
+                                .embed-responsive.embed-responsive-16by9.big-break
+                                    iframe.embed-responsive-item(src='//www.youtube.com/embed/BHNRg39ZblE')
+                                p.wrappable.negative-45 link: &thinsp;
+                                    a(href="http://www.youtube.com/watch/BHNRg39ZblE") http://www.youtube.com/watch/BHNRg39ZblE
+                            .col-xs-12.col-sm-12.col-md-6
+                                .embed-responsive.embed-responsive-16by9.big-break
+                                    iframe.embed-responsive-item(src='//www.youtube.com/embed/YDfkHlDmehA')
+                                p.wrappable.negative-45 link: &thinsp;
+                                    a(href="http://www.youtube.com/watch/YDfkHlDmehA") http://www.youtube.com/watch/YDfkHlDmehA
+            .row
+                .col-xs-12.text-center
+                    if !user
+                        a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
