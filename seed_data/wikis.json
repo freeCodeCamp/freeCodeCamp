@@ -1,11 +1,32 @@
 [
   {
     "_id": "bd7158d9c441eddfaeb5bdef",
-    "name": "A Guide to our Wiki",
+    "name": "How do I use this guide?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h2 class='text-center'>We have a variety of resources to answer your many questions.</h2>",
-      "<h3 class='text-center'>Click the \"Show all Wiki Articles\" button below and browse the topics we cover</h3>"
+      "<h2 class='text-left'>This guide will answer your questions about learning to code and getting a coding job.</h2>",
+      "<h3 class='text-left'>You can click </h3>",
+      "<h3 class='text-center'>Click the \"Show all Articles\" button below and browse the topics we cover</h3>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c541eddfaeb5bdef",
+    "name": "Will I be able to get a job after this?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h2 class='text-left'>This guide will answer your questions about learning to code and getting a coding job.</h2>",
+      "<h3 class='text-left'>You can click </h3>",
+      "<h3 class='text-center'>Click the \"Show all Articles\" button below and browse the topics we cover</h3>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c542eddfaeb5bdef",
+    "name": "How do I use this guide?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h2 class='text-left'>This guide will answer your questions about learning to code and getting a coding job.</h2>",
+      "<h3 class='text-left'>You can click </h3>",
+      "<h3 class='text-center'>Click the \"Show all Articles\" button below and browse the topics we cover</h3>"
     ]
   },
   {
@@ -44,7 +65,7 @@
   },
   {
     "_id": "bd7158d9c439eddfaeb5bdef",
-    "name": "Will I be ready to get a software engineer job after this?",
+    "name": "Will I be ready to get a coding job after this?",
     "description": [
       "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
       "    <p class=\"landing-p\">At the end of Free Code Camp, you will have pair programmed around 1,000 hours with dozens of other students, built a portfolio of projects that people are actively using, and a roster of glowing references from nonprofits you've helped. This is more coding than most coding bootcamps provide, and on average, 75% of bootcamp graduates get software engineering jobs within 6 months, and earn an average annual salary of $76,000.</p>",
