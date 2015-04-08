@@ -92,6 +92,7 @@
                                     });
                                     var submitCommentToCommentHandler = function submitCommentToCommentHandler() {
                                         $('#submit-comment-to-comment').unbind('click');
+                                        console.log('in comments.jade', originalStoryAuthorEmail);
                                         $.post('/stories/comment/' + commentId + '/comment',
                                         {
                                             data: {
