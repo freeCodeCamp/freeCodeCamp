@@ -291,11 +291,6 @@ module.exports = {
     })
   },
 
-  getAllCourses: function() {
-    "use strict";
-    return coursewares;
-  },
-
   allCoursewareIds: function() {
     return coursewares.map(function(elem) {
       return {

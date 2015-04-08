@@ -281,6 +281,7 @@ $(document).ready(function() {
       {
         data: {
           associatedPost: storyId,
+          originalStoryLink: originalStoryLink,
           body: data,
           author: {
             picture: user.profile.picture,
@@ -295,7 +296,6 @@ $(document).ready(function() {
       .done(function (data, textStatus, xhr) {
         window.location.reload();
       });
-
   };
 
   $('#comment-button').on('click', commentSubmitButtonHandler);

@@ -6,6 +6,10 @@ var commentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    originalStoryLink: {
+      type: String,
+      default: ''
+    },
     body: {
         type: String,
         default: ''

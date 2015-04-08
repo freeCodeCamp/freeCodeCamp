@@ -154,6 +154,7 @@ exports.returnIndividualStory = function(req, res, next) {
     res.render('stories/index', {
       title: story.headline,
       link: story.link,
+      originalStoryLink: dashedName,
       author: story.author,
       description: story.description,
       rank: story.upVotes.length,
@@ -377,6 +378,7 @@ exports.commentSubmit = function(req, res, next) {
   }
   var comment = new Comment({
     associatedPost: data.associatedPost,
+    originalStoryLink: originalStoryLink,
     body: sanitizedBody,
     rank: 0,
     upvotes: 0,
@@ -391,7 +393,6 @@ exports.commentSubmit = function(req, res, next) {
 
 exports.commentOnCommentSubmit = function(req, res, next) {
   var data = req.body.data;
-
   if (req.user._id.toString() !== data.author.userId.toString()) {
     return next(new Error('Not authorized'));
   }
@@ -412,6 +413,7 @@ exports.commentOnCommentSubmit = function(req, res, next) {
     body: sanitizedBody,
     rank: 0,
     upvotes: 0,
+    originalStoryLink: data.originalStoryLink,
     author: data.author,
     comments: [],
     topLevel: false,
@@ -444,65 +446,24 @@ function commentSave(comment, Context, res, next) {
           if (err) {
             return next(err);
           }
-          Comment.findById(associatedStory._id, function(err, originalStory) {
-            if (err) {
-              return next(err);
+          var transporter = nodemailer.createTransport({
+            service: 'Mandrill',
+            auth: {
+              user: secrets.mandrill.user,
+              pass: secrets.mandrill.password
             }
-            debug('is it a comment?', originalStory);
-            if (!originalStory) {
-              Story.findById(associatedStory.associatedPost, function(err, originalStory) {
-                debug('is it a story?', originalStory);
-                if (err) {
-                  return next(err);
-                }
-                var transporter = nodemailer.createTransport({
-                  service: 'Mandrill',
-                  auth: {
-                    user: secrets.mandrill.user,
-                    pass: secrets.mandrill.password
-                  }
-                });
-                console.log('1!');
-                var mailOptions = {
-                  to: recipient.email,
-                  from: 'Team@freecodecamp.com',
-                  subject: originalStory.author.username + " replied to you on Camper News!",
-                  text: [
-                    "<a href='http://freecodecamp.com/stories/" + originalStory.storyLink + "'>Here.</a>",
-                    '- the Volunteer Camp Counselor Team'
-                  ].join('')
-                };
-                console.log('2!');
-                transporter.sendMail(mailOptions, function(err) {
-                  if (err) { return err; }
-                  done(null, null);
-                });
-              });
-            } else {
-              console.log('definitely a comment');
-              var transporter = nodemailer.createTransport({
-                service: 'Mandrill',
-                auth: {
-                  user: secrets.mandrill.user,
-                  pass: secrets.mandrill.password
-                }
-              });
-              console.log('1!');
-              var mailOptions = {
-                to: recipient.email,
-                from: 'Team@freecodecamp.com',
-                subject: originalStory.author.username + " replied to you on Camper News!",
-                text: [
-                  "<a href='http://freecodecamp.com/stories/" + originalStory.storyLink + "'>Here.</a>",
-                  '- the Volunteer Camp Counselor Team'
-                ].join('')
-              };
-              console.log('2!');
-              transporter.sendMail(mailOptions, function(err) {
-                if (err) { return err; }
-                done(null, null);
-              });
-            }
+          });
+          var mailOptions = {
+            to: recipient.email,
+            from: 'Team@freecodecamp.com',
+            subject: associatedStory.author.username + " replied to you on Camper News!",
+            text: [
+              "<a href='http://freecodecamp.com/stories/" + comment.originalStoryLink + "'>Here.</a>",
+              '- the Volunteer Camp Counselor Team'
+            ].join('')
+          };
+          transporter.sendMail(mailOptions, function(err) {
+            if (err) { return err; }
           });
         });
       });

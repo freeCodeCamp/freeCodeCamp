@@ -16,6 +16,7 @@ h3
                 var docfrag = document.createDocumentFragment();
                 for (var i = 0; i < data.wikiList.length; i++) {
                     var li = document.createElement("li");
+                    // strike through wikis previously read
                     var linkedName = getLinkedName(data.wikiList[i].name);
                     if (data.completedWikis.indexOf(data.wikiIds[i]) > -1) {
                         $(li).html("<a class='strikethrough' href='/wiki/" + linkedName + "'>" + data.wikiList[i].name + "</a></li>");
