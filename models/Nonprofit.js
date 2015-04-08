@@ -22,7 +22,7 @@ var nonprofitSchema = new mongoose.Schema({
     estimatedHours: 0,
     interestedCampers: [],
     confirmedCampers: [],
-    status: "evaluating" //"evaluating", "confirmed", "started", "completed", "aborted"
+    currentStatus: String // "confirmed", "started", "completed", "aborted"
 });
 
 module.exports = mongoose.model('Nonprofit', nonprofitSchema);

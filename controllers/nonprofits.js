@@ -88,16 +88,11 @@ exports.tellUsYourName = function(req, res) {
     });
 };
 
-exports.finishApplication = function(req, res) {
-  res.render('nonprofits/you-have-finished-your-application', {
-      title: "You have finished your application",
-      step: 10
-  });
-};
-
 exports.yourNonprofitProjectApplicationHasBeenSubmitted = function(req, res) {
     res.render('nonprofits/your-nonprofit-project-application-has-been-submitted', {
-        title: 'Your Nonprofit Project application has been submitted!'
+        title: 'Your Nonprofit Project application has been submitted!',
+        step: 10,
+        getBackDay: moment().weekday(5).format('dddd')
     });
 };
 
@@ -163,7 +158,8 @@ exports.returnIndividualNonprofit = function(req, res, next) {
             whatDoesNonprofitDo: nonprofit.whatDoesNonprofitDo,
             interestedCampers: nonprofit.interestedCampers,
             assignedCampers: nonprofit.assignedCampers,
-            buttonActive: buttonActive
+            buttonActive: buttonActive,
+            currentStatus: nonprofit.currentStatus
         });
     });
 };

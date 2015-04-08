@@ -43,6 +43,7 @@ block content
                                             .ion-university &nbsp; E-learning Platform
                                         if (approvedOther)
                                             .ion-settings &nbsp; Other tools
+                                h3 Project Status: #{currentStatus}
                                 if (interestedCampers && interestedCampers.length > 0)
                                     h3 Interested campers:
                                     .col-xs-12.text-left
@@ -60,7 +61,7 @@ block content
                     .col-xs-12.col-sm-8.col-sm-offset-2
                         .text-center
                             a.btn.btn-primary.btn-big.btn-block.disabled(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project *
-                            p * Complete all our Bonfires, 10 Ziplines, and 3 Basejumps to unlock this.
+                            p * Complete all our Bonfires, Ziplines, and Basejumps to unlock this.
                             #showAllButton.btn.btn-info.btn-big.btn-block Show all Nonprofits Projects
                 if (buttonActive)
                     .col-xs-12.col-sm-8.col-sm-offset-2
