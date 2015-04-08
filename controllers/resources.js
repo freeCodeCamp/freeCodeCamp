@@ -52,7 +52,7 @@ module.exports = {
         debug('User err: ', err);
         return next(err);
       }
-      Challenge.find({}, function (err, challenges) {
+      Courseware.find({}, function (err, challenges) {
         if (err) {
           debug('User err: ', err);
           return next(err);
@@ -67,14 +67,28 @@ module.exports = {
               debug('User err: ', err);
               return next(err);
             }
-            res.header('Content-Type', 'application/xml');
-            res.render('resources/sitemap', {
-              appUrl: appUrl,
-              now: now,
-              users: users,
-              challenges: challenges,
-              bonfires: bonfires,
-              stories: stories
+            Nonprofit.find({}, function (err, nonprofits) {
+              if (err) {
+                debug('User err: ', err);
+                return next(err);
+              }
+              FieldGuide.find({}, function (err, fieldGuides) {
+                if (err) {
+                  debug('User err: ', err);
+                  return next(err);
+                }
+                res.header('Content-Type', 'application/xml');
+                res.render('resources/sitemap', {
+                  appUrl: appUrl,
+                  now: now,
+                  users: users,
+                  challenges: challenges,
+                  bonfires: bonfires,
+                  stories: stories,
+                  nonprofits: nonprofits,
+                  fieldGuides: fieldGuides
+                });
+              });
             });
           });
         });

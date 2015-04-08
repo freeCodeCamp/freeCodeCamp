@@ -105,7 +105,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Products
   each bonfire in bonfires
     url
-      loc #{appUrl}/#{bonfire.name.replace(/\s/, '-')}
+      loc #{appUrl}/bonfires/#{bonfire.name.replace(/\s/, '-')}
       lastmod= now
       changefreq weekly
       priority= 0.5
@@ -113,7 +113,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Challenges
   each challenge in challenges
     url
-      loc #{appUrl}/#{challenge.challengeNumber}
+      loc #{appUrl}/challenges/#{challenge.name.replace(/\s/, '-')}
       lastmod= now
       changefreq weekly
       priority= 0.5
@@ -121,15 +121,23 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Stories
   each story in stories
     url
-      loc #{appUrl}/#{story.storyLink}
+      loc #{appUrl}/stories/#{story.storyLink.name.replace(/\s/, '-')}
       lastmod= now
       changefreq daily
       priority= 0.9
 
-//- Nonprofit
+  //- Nonprofit
   each nonprofit in nonprofits
     url
-        loc #{appUrl}/#{nonprofit.nonprofitLink}
-        lastmod= now
-        changefreq daily
-        priority= 0.9
+      loc #{appUrl}/nonprofits/#{nonprofit.name.replace(/\s/, '-')}
+      lastmod= now
+      changefreq daily
+      priority= 0.9
+
+  //- Nonprofit
+  each fieldGuide in fieldGuides
+    url
+      loc #{appUrl}/field-guide/#{fieldGuide.name.replace(/\s/, '-')}
+      lastmod= now
+      changefreq daily
+      priority= 0.9
