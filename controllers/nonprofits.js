@@ -12,6 +12,18 @@ exports.nonprofitsHome = function(req, res) {
     });
 };
 
+exports.nonprofitsDirectory = function(req, res) {
+  Nonprofit.find({estimatedHours: { $gt: 0 } }, function(err, nonprofits) {
+    if (err) {
+      next(err);
+    }
+    res.render('nonprofits/directory', {
+      title: 'Nonprofits we help',
+      nonprofits: nonprofits
+    });
+  });
+};
+
 exports.areYouWithARegisteredNonprofit = function(req, res) {
     res.render('nonprofits/are-you-with-a-registered-nonprofit', {
         title: 'Are you with a with a registered nonprofit',
@@ -64,7 +76,7 @@ exports.linkUsToYourWebsite = function(req, res) {
 
 exports.tellUsYourEmail = function(req, res) {
     res.render('nonprofits/tell-us-your-email', {
-        title: 'Tell us your name',
+        title: 'Tell us your email',
         step: 8
     });
 };
@@ -77,7 +89,10 @@ exports.tellUsYourName = function(req, res) {
 };
 
 exports.finishApplication = function(req, res) {
-
+  res.render('nonprofits/you-have-finished-your-application', {
+      title: "You have finished your application",
+      step: 10
+  });
 };
 
 exports.yourNonprofitProjectApplicationHasBeenSubmitted = function(req, res) {
