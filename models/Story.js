@@ -23,6 +23,10 @@ var storySchema = new mongoose.Schema({
         type: String,
         unique: false
     },
+    originalStoryAuthorEmail: {
+      type: String,
+      default: ''
+    },
     rank: {
         type: Number,
         default: -Infinity

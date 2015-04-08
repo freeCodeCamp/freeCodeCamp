@@ -250,10 +250,12 @@ $(document).ready(function() {
           timePosted: Date.now(),
           description: description,
           storyMetaDescription: storyMetaDescription,
+          originalStoryAuthorEmail: user.email,
           rank: 1,
           upVotes: [userDataForUpvote],
           author: {
             picture: user.profile.picture,
+            email: user.email,
             userId: user._id,
             username: user.profile.username
           },
@@ -282,11 +284,13 @@ $(document).ready(function() {
         data: {
           associatedPost: storyId,
           originalStoryLink: originalStoryLink,
+          originalStoryAuthorEmail: originalStoryAuthorEmail,
           body: data,
           author: {
             picture: user.profile.picture,
             userId: user._id,
-            username: user.profile.username
+            username: user.profile.username,
+            email: user.email
           }
         }
       })

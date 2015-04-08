@@ -97,11 +97,13 @@
                                             data: {
                                                 associatedPost: commentId,
                                                 originalStoryLink: originalStoryLink,
+                                                originalStoryAuthorEmail: originalStoryAuthorEmail,
                                                 body: $('#comment-to-comment-textinput').val(),
                                                 author: {
                                                     picture: user.profile.picture,
                                                     userId: user._id,
-                                                    username: user.profile.username
+                                                    username: user.profile.username,
+                                                    email: user.email
                                                 }
                                             }
                                         })

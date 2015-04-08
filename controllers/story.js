@@ -155,6 +155,7 @@ exports.returnIndividualStory = function(req, res, next) {
       title: story.headline,
       link: story.link,
       originalStoryLink: dashedName,
+      originalStoryAuthorEmail: story.author.email,
       author: story.author,
       description: story.description,
       rank: story.upVotes.length,
@@ -378,7 +379,8 @@ exports.commentSubmit = function(req, res, next) {
   }
   var comment = new Comment({
     associatedPost: data.associatedPost,
-    originalStoryLink: originalStoryLink,
+    originalStoryLink: data.originalStoryLink,
+    originalStoryAuthorEmail: data.originalStoryAuthorEmail,
     body: sanitizedBody,
     rank: 0,
     upvotes: 0,
@@ -414,6 +416,7 @@ exports.commentOnCommentSubmit = function(req, res, next) {
     rank: 0,
     upvotes: 0,
     originalStoryLink: data.originalStoryLink,
+    originalStoryAuthorEmail: data.originalStoryAuthorEmail,
     author: data.author,
     comments: [],
     topLevel: false,
@@ -446,6 +449,30 @@ function commentSave(comment, Context, res, next) {
           if (err) {
             return next(err);
           }
+          if (data.originalStoryAuthorEmail !== recipient.email) {
+            console.log("in mailer", data);
+            var transporter = nodemailer.createTransport({
+              service: 'Mandrill',
+              auth: {
+                user: secrets.mandrill.user,
+                pass: secrets.mandrill.password
+              }
+            });
+            var mailOptions = {
+              to: data.originalStoryAuthorEmail,
+              from: 'Team@freecodecamp.com',
+              subject: associatedStory.author.username + " replied to your post on Camper News",
+              text: [
+                "Just a quick heads-up: " + associatedStory.author.username + " replied to you on Camper News.",
+                "You can keep this conversation going.",
+                "Just head back to the discussion here: http://freecodecamp.com/stories/"+ comment.originalStoryLink,
+                '- the Free Code Camp Volunteer Team'
+              ].join('\n')
+            };
+            transporter.sendMail(mailOptions, function(err) {
+              if (err) { return err; }
+            });
+          }
           var transporter = nodemailer.createTransport({
             service: 'Mandrill',
             auth: {
@@ -456,11 +483,13 @@ function commentSave(comment, Context, res, next) {
           var mailOptions = {
             to: recipient.email,
             from: 'Team@freecodecamp.com',
-            subject: associatedStory.author.username + " replied to you on Camper News!",
+            subject: associatedStory.author.username + " replied to your post on Camper News",
             text: [
-              "<a href='http://freecodecamp.com/stories/" + comment.originalStoryLink + "'>Here.</a>",
-              '- the Volunteer Camp Counselor Team'
-            ].join('')
+              "Just a quick heads-up: " + associatedStory.author.username + " replied to you on Camper News.",
+              "You can keep this conversation going.",
+              "Just head back to the discussion here: http://freecodecamp.com/stories/"+ comment.originalStoryLink,
+              '- the Free Code Camp Volunteer Team'
+            ].join('\n')
           };
           transporter.sendMail(mailOptions, function(err) {
             if (err) { return err; }
@@ -468,7 +497,6 @@ function commentSave(comment, Context, res, next) {
         });
       });
     } catch (e) {
-      debug('hey there\'s error');
       // delete comment
       return next(err);
     }
