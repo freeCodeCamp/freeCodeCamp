@@ -10,7 +10,7 @@ block content
                 if (user && user.profile.username === username)
                     .col-xs-12
                         .text-center
-                            a.btn.btn-big.btn-primary(href="/account") Update my public portfolio or manage my account
+                            a.btn.btn-big.btn-primary(href="/account") Update my portfolio page or manage my account
                         br
                 .row
                     .col-xs-12
@@ -97,27 +97,30 @@ block content
                                     | Try it out
 
                     .hidden-xs.col-sm-12
+                        script(src="//d3js.org/d3.v3.min.js")
                         script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
                         #cal-heatmap.img-center
                             script.
                                 $(document).ready(function() {
-                                    var cal = new CalHeatMap();
-                                    var calendar = !{JSON.stringify(calender)};
-                                    cal.init({
-                                        itemSelector: "#cal-heatmap",
-                                        domain: "month",
-                                        subDomain: "day",
-                                        data: calendar,
-                                        cellSize: 15,
-                                        align: 'center',
-                                        cellRadius: 3,
-                                        cellPadding: 2,
-                                        tooltip: true,
-                                        range: 4,
-                                        start: new Date().setDate(new Date().getDate() - 90),
-                                        legendColors: ["#cccccc", "#215f1e"],
-                                        legend: [1, 2, 3]
-                                    });
+                                    setTimeout(function() {
+                                        var cal = new CalHeatMap();
+                                        var calendar = !{JSON.stringify(calender)};
+                                        cal.init({
+                                            itemSelector: "#cal-heatmap",
+                                            domain: "month",
+                                            subDomain: "day",
+                                            data: calendar,
+                                            cellSize: 15,
+                                            align: 'center',
+                                            cellRadius: 3,
+                                            cellPadding: 2,
+                                            tooltip: true,
+                                            range: 4,
+                                            start: new Date().setDate(new Date().getDate() - 90),
+                                            legendColors: ["#cccccc", "#215f1e"],
+                                            legend: [1, 2, 3]
+                                        });
+                                    }, 300);
                                 });
                         .row
                             .hidden-xs.col-sm-12.text-center

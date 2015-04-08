@@ -4,29 +4,94 @@
     "name": "How do I use this guide?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h2 class='text-left'>This guide will answer your questions about learning to code and getting a coding job.</h2>",
-      "<h3 class='text-left'>You can click </h3>",
-      "<h3 class='text-center'>Click the \"Show all Articles\" button below and browse the topics we cover</h3>"
+      "<h2 class='text-left'>This guide will answer many of your questions about learning to code and getting a coding job.</h2>",
+      "<h3 class='text-left'>You can click the \"Next article\" button to go to your next article.</h3>",
+      "<h3 class='text-left'>You can also click the \"Show me all articles\" button to browse all the questions we answer.</h3>",
+      "</div>"
     ]
   },
   {
-    "_id": "bd7158d9c541eddfaeb5bdef",
-    "name": "Will I be able to get a job after this?",
+    "_id": "bd7158d9c441eddfaeb5bdff",
+    "name": "What is Free Code Camp?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h2 class='text-left'>This guide will answer your questions about learning to code and getting a coding job.</h2>",
-      "<h3 class='text-left'>You can click </h3>",
-      "<h3 class='text-center'>Click the \"Show all Articles\" button below and browse the topics we cover</h3>"
+      "<h2 class='text-left'>We're a community of busy adults who learn to code by building projects for nonprofits.</h2>",
+      "<h3 class='text-left'>We help our campers (students):</h3>",
+      "<h3>",
+      "  <ol>",
+      "    <li>Learn full stack JavaScript</li>",
+      "    <li>Build a portfolio of real apps that real people are using</li>",
+      "    <li>Get a coding job</li>",
+      "  </ol>",
+      "</h3>",
+      "</div>"
     ]
   },
   {
-    "_id": "bd7158d9c542eddfaeb5bdef",
-    "name": "How do I use this guide?",
+    "_id": "bd7158d9c441eddfaeb5bd1f",
+    "name": "Why do I need Free Code Camp?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h2 class='text-left'>This guide will answer your questions about learning to code and getting a coding job.</h2>",
-      "<h3 class='text-left'>You can click </h3>",
-      "<h3 class='text-center'>Click the \"Show all Articles\" button below and browse the topics we cover</h3>"
+      "<h2 class='text-left'>Learning to code is hard.</h2>",
+      "<h3 class='text-left'>Most people who successfully learn to code:</h3>",
+      "<h3>",
+      "  <ol>",
+      "    <li>Code every day</li>",
+      "    <li>Have lots of friends who code</li>",
+      "  </ol>",
+      "</h3>",
+      "<h3>We give you the structure and the community you need so you can successfully learn to code.</h3>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c441eddfaeb5bd2f",
+    "name": "How does Free Code Camp work?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<img class='img-center img-responsive' alt='First you'll do about 100 hours of lessons.' src='https://s3.amazonaws.com/freecodecamp/100-hours-of-lessons.jpg'/>",
+      "<div class='spacer'></div>",
+      "<img class='img-center img-responsive' alt='Next you'll write algorithms and build practice projects for 100 hours.' src='https://s3.amazonaws.com/freecodecamp/100-hours-of-practice.jpg'/>",
+      "<div class='spacer'></div>",
+      "<img class='img-center img-responsive' alt='Finally you build full stack JavaScript apps for nonprofits for 800 hours.' src='https://s3.amazonaws.com/freecodecamp/800-hours-of-nonprofit-projects.jpg'/>",
+      "<div class='spacer'></div>",
+      "<img class='img-center img-responsive' alt='This gives you a total of 1,000 hours of coding experience.' src='https://s3.amazonaws.com/freecodecamp/1000-hours-of-coding.jpg'/>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c441eddfaeb5bd3f",
+    "name": "What are the advantages of Free Code Camp?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h3>",
+      "  <ul>",
+      "    <li>&bull; We're free</li>",
+      "    <li>&bull; We're self-paced</li>",
+      "    <li>&bull; We're browser-based</li>",
+      "    <li>&bull; You'll code the entire time</li>",
+      "  </ol>",
+      "</h3>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c441eddfaeb5bd4f",
+    "name": "Will I really be able to get a job after Free Code Camp?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h2 class='text-left'>If you complete this program, you <b>will</b> be able to get a coding job.</h2>",
+      "<img class='img-center img-responsive' src=\"https://www.evernote.com/shard/s116/sh/55c128c7-5d99-41cc-b03d-b3de22611c8d/b43e467b3889f646fec34bb4c161e2a2/deep/0/What's-wrong-with-this-picture----Code.org.png\"/>",
+      "<h3>Here are the facts:</h3>",
+      "<h3>",
+      "  <ul>",
+      "    <li>&bull; There are hundreds of thousands of unfilled coding jobs.</li>",
+      "    <li>&bull; Employers and the US government have joined together to promote nontraditional coding programs like Free Code Camp.</li>",
+      "    <li>&bull; Full stack JavaScript is one of best paying skill sets, and has a ton of job openings.</li>",
+      "    <li>&bull; The best proof that you're an employable developer is a portfolio filled with real apps that real people are using.</li>",
+      "  </ul>",
+      "</h3>",
+      "</div>"
     ]
   },
   {
@@ -50,7 +115,7 @@
       "        <li class=\"landing-p\">&#8226 Automated Testing - write tests to test the limits of your code</li>",
       "      </ul>",
       "    </p>",
-      "    <p class=\"landing-p\">You'll spend the last half of Free Code Camp using Agile Methodologies and Full Stack JavaScript to build projects for nonprofits:",
+      "    <p class=\"landing-p\">Finally you'll learn Agile Methodologies and Full Stack JavaScript to build projects for nonprofits:",
       "      <ul>",
       "        <li class=\"landing-p\">&#8226 Agile - a set of software development principles that focus the design and production of a project on the needs of its users</li>",
       "        <li class=\"landing-p\">&#8226 Git - a version control system for saving and sharing your projects</li>",
@@ -60,17 +125,6 @@
       "        <li class=\"landing-p\">&#8226 Node.js - a JavaScript-based web server</li>",
       "      </ul>",
       "    </p>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c439eddfaeb5bdef",
-    "name": "Will I be ready to get a coding job after this?",
-    "description": [
-      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
-      "    <p class=\"landing-p\">At the end of Free Code Camp, you will have pair programmed around 1,000 hours with dozens of other students, built a portfolio of projects that people are actively using, and a roster of glowing references from nonprofits you've helped. This is more coding than most coding bootcamps provide, and on average, 75% of bootcamp graduates get software engineering jobs within 6 months, and earn an average annual salary of $76,000.</p>",
-      "  <img src=\"https://s3.amazonaws.com/freecodecamp/table-of-earnings.png\" alt=\"A chart showing the average earnings of coding bootcamp graduates\" class=\"img-center img-responsive\"/>",
-      "</br>",
       "</div>"
     ]
   },
@@ -175,14 +229,6 @@
       "      <li>Control + K = Kill line</li>",
       "    </ul>",
       "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c443eddfaeb5bdef",
-    "name": "Win a Chromebook for Christmas",
-    "description": [
-      "<h2 class=\"text-center\">Thanks to everyone who participated in our Chromebook giveaway.</h2>",
-      "<script src=\"//widget-prime.rafflecopter.com/launch.js\"></script><a id=\"rcwidget_a7khonhd\" href=\"http://www.rafflecopter.com/rafl/display/d70901b10/\" rel=\"nofollow\" data-raflid=\"d70901b10\" data-theme=\"classic\" data-template=\"\" class=\"rcptr\">a Rafflecopter giveaway</a>"
     ]
   },
   {

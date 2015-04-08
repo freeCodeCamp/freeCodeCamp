@@ -38,12 +38,14 @@ exports.returnIndividualWiki = function(req, res, next) {
 exports.showAllWikis = function(req, res) {
     var data = {};
     data.wikiList = resources.allWikiNames();
+    data.wikiIds = resources.allWikiIds();
+    data.completedWikis = req.user.completedWikis;
     res.send(data);
 };
 
 exports.returnNextWiki = function(req, res, next) {
   if (!req.user) {
-    return res.redirect('../wiki/a-guide-to-our-wiki');
+    return res.redirect('../wiki/how-do-i-use-this-guide?');
   }
 
   var completed = req.user.completedWikis;
@@ -67,7 +69,7 @@ exports.returnNextWiki = function(req, res, next) {
       req.flash('success', {
         msg: "You've read all our current Wiki entries. You can contribute to our Wiki <a href='https://github.com/FreeCodeCamp/freecodecamp/blob/nonprofit-show/seed_data/wikis.json'>here</a>."
       });
-      return res.redirect('../wiki/a-guide-to-our-wiki');
+      return res.redirect('../wiki/how-do-i-use-this-guide?');
     }
     var nameString = wiki.name.toLowerCase().replace(/\s/g, '-');
     return res.redirect('../wiki/' + nameString);
