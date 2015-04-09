@@ -74,14 +74,13 @@ module.exports = {
     },
 
     chat: function chat(req, res) {
-        if (req.user) {
-          if (req.user.sentSlackInvite) {
+        if (req.user && req.user.sentSlackInvite) {
             res.redirect('https://freecode.slack.com/messages/general/');
-          }
+        } else {
+            res.render('resources/chat', {
+                title: "Join our chat room"
+            });
         }
-        res.render('resources/chat', {
-            title: "Enter Free Code Camp's Chat Rooms"
-        });
     },
 
     nonprofitProjectInstructions: function nonprofitProjectInstructions(req, res) {
