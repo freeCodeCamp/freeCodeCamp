@@ -2,14 +2,15 @@ extends ../layout-wide
 block content
     img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
     br
-    .text-center
-        if (user)
-            if (!user.sentSlackInvite)
-                a.btn.btn-primary.btn-cta.next-challenge-button(href="/api/slack") Join our Slack Chat Room
-                .spacer
-            a.btn.btn-cta.signup-btn.next-challenge-button(href="/challenges") Take me to my next challenge
-        else
-            a.btn.btn-cta.signup-btn.next-challenge-button(href="/signin") Start learning to code (it's free)
+    .row.text-center
+        .col-xs-12.col-md-6.col-md-offset-3
+            if (user)
+                if (!user.sentSlackInvite)
+                    a.btn.btn-cta.signup-btn.next-challenge-button.btn-block(href="/challenges") Take me to my next challenge
+                    .spacer
+                    a.btn.btn-primary.btn-cta.next-challenge-button.btn-block(href="/api/slack") Join our Slack Chat Room
+            else
+                a.btn.btn-cta.signup-btn.next-challenge-button.btn-block(href="/signin") Start learning to code (it's free)
     br
     .row
         .col-xs-12.col-sm-12.col-md-4

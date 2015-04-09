@@ -5,7 +5,7 @@
     "video": "114486344",
     "challengeNumber": 0,
     "steps": [
-        "Watch this 1-minute video, or simply read this summary:",
+        "Watch this 1-minute video, or simply read this summary.",
         "Welcome to Free Code Camp. We're a community of busy people learning to code.",
         "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And the best way to stay motivated is to code with friends.",
         "To maximize accessibility, all our challenges are self-paced, browser-based, and free.",
@@ -21,35 +21,34 @@
   {
     "name": "Join Our Chat Room",
     "time": 5,
-    "video": "114627322",
+    "video": "124555254",
     "challengeNumber": 1,
     "steps": [
-        "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper who's on the same challenge as you and wants to pair program.",
-        "If you don't already have a GitHub account, create one real quick at <a href='https://www.github.com' target='_blank'>https://www.github.com</a>.",
-        "Be sure to update your biographical information and upload an image. A picture of your face works best. This is how people will see you in the chat room, so put your best foot forward.",
-        "Now enter the chat room by going to <a href='https://gitter.im/FreeCodeCamp/FreeCodeCamp' target='_blank'>https://gitter.im/FreeCodeCamp/FreeCodeCamp</a> and clicking the \"sign in with GitHub\" button.",
-        "Introduce yourself to our chat room by typing: \"hello world!\".",
-        "Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
-        "Keep the chat room open while you work through the other challenges. That way you ask for help if you get stuck on a challenge. You can also socialize when you feel like taking a break.",
-        "Now that you've completed this challenge, you can go directly your most-recently visited chat room by clicking the \"Chat\" button in the navigation bar above."
+        "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper to pair program with.",
+        "Make sure your Free Code Camp account includes your email address. You can do this here: <a href='/account' target='_blank'>http://freecodecamp.com/account</a>.",
+        "Click this link, which will email you an invite to Free Code Camp's Slack chat room: <a href='/api/slack' target='_blank'>http://freecodecamp.com/api/slack</a>.",
+        "Now check your email and click the link in the email from Slack",
+        "Complete the sign up process, then update your biographical information and upload an image. A picture of your face works best. This is how people will see you in the chat room, so put your best foot forward.",
+      "Now enter the general chat room and introduce yourself to our chat room by typing: \"hello world!\".",
+      "Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
+      "Keep the chat room open while you work through the other challenges. That way you ask for help if you get stuck on a challenge. You can also socialize when you feel like taking a break.",
+      "You can also access this chat room by clicking the \"Chat\" button in the upper right hand corner."
     ]
   },
   {
-    "name": "Join Our Forum (currently disabled)",
+    "name": "Check out Camper News",
     "time": 5,
-    "video": "115275066",
+    "video": "124553410",
     "challengeNumber": 2,
     "steps": [
-        "Go to Free Code Camp's forum: <a href='http://forum.freecodecamp.com' target='_blank'>http://forum.freecodecamp.com</a>.",
-        "You can come here to share and discuss coding resources, ask questions to our entire community, and coordinate local Free Code Camp events.",
-        "Our chat room is great for realtime discussions, but our forum is ideal for longer-term discussions and open-ended questions.",
-        "Sign in with the Github account you created during Challenge 1.",
-        "Click on the \"Introduce yourself here\" discussion.",
-        "Here you can read through other Free Code Camp community members' self introductions.",
-        "Go ahead and type a brief self introduction of your own.",
-        "Click on the \"Categories\" drop-down menu. You should see a category called \"Local Chapters\". Click that. If your city isn't already on the list, create a topic for it. Otherwise, introduce yourself to the other campers from your city.",
-        "Come back here daily to ask questions, engage in discussions, and share links to helpful coding tools.",
-        "Now that you've completed this challenge, you can go directly to the forum by clicking the \"Forum\" button in the navigation bar above."
+      "Camper News is the best place for our campers to share and discuss helpful links.",
+      "Click \"News\" in the upper right hand corner.",
+      "You'll see a variety of links that have been submitted. Click on the \"Discuss\" button under one of them.",
+      "You can upvote links. This will push the link up the rankings of hot links.",
+      "You an also comment on a link. If someone responds to your comment, you'll get an email notification so you can come back and respond to them.",
+      "You can also submit links. You can modify the link's headline and also leave an initial comment about the link.",
+      "You can view the portfolio pages of any camper who has posted links or comments on Camper News. Just click on their photo.",
+      "When you submit a link, you'll get a point. You will also get a point each time someone upvotes your link."
     ]
   },
   {
