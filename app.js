@@ -31,6 +31,7 @@ var express = require('express'),
     passport = require('passport'),
     expressValidator = require('express-validator'),
     connectAssets = require('connect-assets'),
+    request = require('request'),
 
     /**
      * Controllers (route handlers).
@@ -46,7 +47,7 @@ var express = require('express'),
     /**
      *  Stories
      */
-    storyController = require('./controllers/story');
+    storyController = require('./controllers/story'),
 
     /**
      * API keys and Passport configuration.
@@ -291,6 +292,60 @@ app.post(
     passportConf.isAuthenticated,
     userController.updateProgress
 );
+
+app.get('/api/slack', function(req, res) {
+  if (req.user) {
+    if (req.user.email) {
+      var invite = {
+        'email': req.user.email,
+        'token': process.env.SLACK_KEY,
+        'set_active': true
+      };
+
+      var headers = {
+        'User-Agent': 'Node Browser/0.0.1',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      };
+
+      var options = {
+        url: 'https://freecode.slack.com/api/users.admin.invite',
+        method: 'POST',
+        headers: headers,
+        form: invite
+      };
+
+      request(options, function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+          req.flash('success', {
+            msg: "We've successfully requested an invite for you. Please check your email and follow the instructions from Slack."
+          });
+          req.user.sentSlackInvite = true;
+          req.user.save(function(err, user) {
+            if (err) {
+              next(err);
+            }
+            return res.redirect('back');
+          });
+        } else {
+          req.flash('errors', {
+            msg: "The invitation email did not go through for some reason. Please try again or <a href='mailto:team@freecodecamp.com?subject=slack%20invite%20failed%20to%20send>email us</a>."
+          });
+          return res.redirect('back');
+        }
+      })
+    } else {
+      req.flash('notice', {
+        msg: "Before we can send your Slack invite, we need your email address. Please update your profile information here."
+      });
+      return res.redirect('/account');
+    }
+  } else {
+    req.flash('notice', {
+      msg: "You need to sign in to Free Code Camp before we can send you a Slack invite."
+    });
+    return res.redirect('/account');
+  }
+});
 
 /**
  * Main routes.

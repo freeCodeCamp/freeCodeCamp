@@ -4,6 +4,9 @@ block content
     br
     .text-center
         if (user)
+            if (!user.sentSlackInvite)
+                a.btn.btn-primary.signup-btn.next-challenge-button(href="/api/slack") Join our Slack Chat Room
+                .spacer
             a.btn.btn-cta.signup-btn.next-challenge-button(href="/challenges") Take me to my next challenge
         else
             a.btn.btn-cta.signup-btn.next-challenge-button(href="/signin") Start learning to code (it's free)
