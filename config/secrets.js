@@ -10,7 +10,11 @@ module.exports = {
   },
 
   blogger: {
-    key: process.env.BLOGGER_KEY,
+    key: process.env.BLOGGER_KEY
+  },
+
+  slack: {
+    key: process.env.SLACK_KEY
   },
 
   mandrill: {
