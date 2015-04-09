@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var secrets = require('../config/secrets');
 
-var wikiSchema = new mongoose.Schema({
+var fieldGuideSchema = new mongoose.Schema({
     name: {
         type: String,
         unique: false
@@ -12,4 +12,4 @@ var wikiSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Wiki', wikiSchema);
+module.exports = mongoose.model('FieldGuide', fieldGuideSchema);

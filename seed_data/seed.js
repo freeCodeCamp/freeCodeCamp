@@ -1,12 +1,12 @@
 require('dotenv').load();
 var Bonfire = require('../models/Bonfire.js'),
     Courseware = require('../models/Courseware.js'),
-    Wiki = require('../models/Wiki.js'),
+    FieldGuide = require('../models/FieldGuide.js'),
     Nonprofit = require('../models/Nonprofit.js'),
     mongoose = require('mongoose'),
     secrets = require('../config/secrets'),
     coursewares = require('./coursewares.json'),
-    wikis = require('./wikis.json'),
+    fieldGuides = require('./field-guides.json'),
     nonprofits = require('./nonprofits.json'),
     bonfires = require('./bonfires.json');
 
@@ -61,13 +61,13 @@ Courseware.remove({}, function(err, data) {
     console.log('coursewares');
 });
 
-Wiki.remove({}, function(err, data) {
+FieldGuide.remove({}, function(err, data) {
     if (err) {
         console.error(err);
     } else {
         console.log('Deleted ', data);
     }
-    Wiki.create(wikis, function(err, data) {
+    FieldGuide.create(fieldGuides, function(err, data) {
         if (err) {
             console.log(err);
         } else {
@@ -75,7 +75,7 @@ Wiki.remove({}, function(err, data) {
         }
         CompletionMonitor();
     });
-    console.log('wikis');
+    console.log('field guides');
 });
 
 Nonprofit.remove({}, function(err, data) {

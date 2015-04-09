@@ -42,7 +42,7 @@ var express = require('express'),
     nonprofitController = require('./controllers/nonprofits'),
     bonfireController = require('./controllers/bonfire'),
     coursewareController = require('./controllers/courseware'),
-    wikiController = require('./controllers/wiki'),
+    fieldGuideController = require('./controllers/fieldGuide'),
     challengeMapController = require('./controllers/challengeMap'),
 
 
@@ -238,11 +238,11 @@ app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 app.get('/', homeController.index);
 
 app.get('/privacy', function(req, res) {
-    res.redirect(301, "/wiki/free-code-camp's-privacy-policy");
+    res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
 });
 
 app.get('/nonprofit-project-instructions', function(req, res) {
-    res.redirect(301, "/wiki/free-code-camp's-privacy-policy");
+    res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
 });
 
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
@@ -254,31 +254,31 @@ app.get('/twitch', resourcesController.twitch);
 app.get('/map', challengeMapController.challengeMap);
 
 app.get('/live-pair-programming', function(req, res) {
-    res.redirect(301, '/wiki/live-stream-pair-programming-on-twitch.tv');
+    res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
 });
 
 app.get('/install-screenhero', function(req, res) {
-    res.redirect(301, '/wiki/install-screenhero');
+    res.redirect(301, '/field-guide/install-screenhero');
 });
 
 app.get('/guide-to-our-nonprofit-projects', function(req, res) {
-    res.redirect(301, '/wiki/a-guide-to-our-nonprofit-projects');
+    res.redirect(301, '/field-guide/a-guide-to-our-nonprofit-projects');
 });
 
 app.get('/chromebook', function(req, res) {
-    res.redirect(301, '/wiki/chromebook');
+    res.redirect(301, '/field-guide/chromebook');
 });
 
 app.get('/deploy-a-website', function(req, res) {
-    res.redirect(301, '/wiki/deploy-a-website');
+    res.redirect(301, '/field-guide/deploy-a-website');
 });
 
 app.get('/gmail-shortcuts', function(req, res) {
-    res.redirect(301, '/wiki/gmail-shortcuts');
+    res.redirect(301, '/field-guide/gmail-shortcuts');
 });
 
 app.get('/nodeschool-challenges', function(req, res) {
-    res.redirect(301, '/wiki/nodeschool-challenges');
+    res.redirect(301, '/field-guide/nodeschool-challenges');
 });
 
 app.get('/stats', function(req, res) {
@@ -484,7 +484,7 @@ app.get('/api/trello', resourcesController.trelloCalls);
  * Bonfire related routes
  */
 
-app.get('/wiki/getWikiList', wikiController.showAllWikis);
+app.get('/field-guide/getFieldGuideList', fieldGuideController.showAllFieldGuides);
 
 app.get('/playground', bonfireController.index);
 
@@ -510,15 +510,15 @@ app.get('/bonfire', function(req, res) {
 app.post('/completed-bonfire/', bonfireController.completedBonfire);
 
 /**
- * Wiki related routes
+ * Field Guide related routes
  */
 
 
-app.get('/wiki/:wikiName', wikiController.returnIndividualWiki);
+app.get('/field-guide/:fieldGuideName', fieldGuideController.returnIndividualFieldGuide);
 
-app.get('/wiki', wikiController.returnNextWiki);
+app.get('/field-guide', fieldGuideController.returnNextFieldGuide);
 
-app.post('/completed-wiki/', wikiController.completedWiki);
+app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
 
 
 /**

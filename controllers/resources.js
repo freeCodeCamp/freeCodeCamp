@@ -3,7 +3,7 @@ var async = require('async'),
   Challenge = require('./../models/Challenge'),
   Bonfire = require('./../models/Bonfire'),
   Story = require('./../models/Story'),
-  Wiki = require('./../models/Wiki'),
+  FieldGuide = require('./../models/FieldGuide'),
   Nonprofit = require('./../models/Nonprofit'),
   Comment = require('./../models/Comment'),
   resources = require('./resources.json'),
@@ -12,7 +12,7 @@ var async = require('async'),
   bonfires = require('../seed_data/bonfires.json'),
   nonprofits = require('../seed_data/nonprofits.json'),
   coursewares = require('../seed_data/coursewares.json'),
-  wikis = require('../seed_data/wikis.json'),
+  fieldGuides = require('../seed_data/field-guides.json'),
   moment = require('moment'),
   https = require('https'),
   debug = require('debug')('freecc:cntr:resources'),
@@ -259,8 +259,8 @@ module.exports = {
       });
   },
 
-  allWikiIds: function() {
-    return wikis.map(function(elem) {
+  allFieldGuideIds: function() {
+    return fieldGuides.map(function(elem) {
       return {
         _id: elem._id,
       }
@@ -289,8 +289,8 @@ module.exports = {
     });
   },
 
-  allWikiNames: function() {
-    return wikis.map(function(elem) {
+  allFieldGuideNames: function() {
+    return fieldGuides.map(function(elem) {
       return {
         name: elem.name
       }

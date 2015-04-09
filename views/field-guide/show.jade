@@ -1,7 +1,7 @@
 extends ../layout
 block content
     script.
-        var challengeName = 'Wiki View';
+        var challengeName = 'Field Guide View';
     .col-xs-12.col-sm-12.col-md-12
         .panel.panel-info
             .panel-heading.text-center
@@ -15,7 +15,7 @@ block content
                 .spacer
                 .col-xs-12.col-sm-6.col-sm-offset-3
                     .text-center
-                        .next-wiki-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
+                        .next-fieldGuide-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
                         .ten-pixel-break
                         #showAllButton.btn.btn-info.btn-big.btn-block Show me all articles
                 .spacer
@@ -30,13 +30,13 @@ block content
                 .modal-header.all-list-header Wiki Articles
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
-                    include ../partials/wikis
-    #wikiId.hidden= wikiId
+                    include ../partials/field-guide
+    #fieldGuideId.hidden= fieldGuideId
     script.
         $(document).ready(function() {
             $('body').keydown(function(e) {
                 if (e.ctrlKey && e.keyCode == 13) {
-                    $('.next-wiki-button').click();
+                    $('.next-field-guide-button').click();
                 }
             });
         });

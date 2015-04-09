@@ -52,18 +52,18 @@ $(document).ready(function() {
     }
   }
 
-  function completedWiki(wikiId) {
+  function completedFieldGuide(fieldGuideId) {
     if ($('.signup-btn-nav').length < 1) {
       $.post(
-        '/completed-wiki',
+        '/completed-field-guide',
         {
-          wikiInfo: {
-            wikiId: wikiId
+          fieldGuideInfo: {
+            fieldGuideId: fieldGuideId
           }
         },
         function(res) {
           if (res) {
-            window.location.href = '/wiki'
+            window.location.href = '/field-guide'
           }
         });
     }
@@ -78,9 +78,10 @@ $(document).ready(function() {
 
   });
 
-  $('.next-wiki-button').on('click', function() {
-    var wikiId = $('#wikiId').text();
-    completedWiki(wikiId);
+  $('.next-field-guide-button').on('click', function() {
+    console.log('click');
+    var fieldGuideId = $('#fieldGuideId').text();
+    completedFieldGuide(fieldGuideId);
   });
 
   $("img").error(function () {

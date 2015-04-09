@@ -127,8 +127,8 @@ var userSchema = new mongoose.Schema({
         verified: Boolean
       }
     ],
-    completedWikis: [],
-    uncompletedWikis: [],
+    completedFieldGuides: [],
+    uncompletedFieldGuides: [],
   currentStreak: {
     type: Number,
     default: 0
