@@ -450,7 +450,12 @@ function commentSave(comment, Context, res, next) {
           if (err) {
             return next(err);
           }
+          var recipients = '';
           if (data.originalStoryAuthorEmail && (data.originalStoryAuthorEmail !== recipient.email)) {
+             recipients = data.originalStoryAuthorEmail + ',' + recipient.email;
+           } else {
+             recipients = recipient.email;
+           }
             var transporter = nodemailer.createTransport({
               service: 'Mandrill',
               auth: {
@@ -459,7 +464,7 @@ function commentSave(comment, Context, res, next) {
               }
             });
             var mailOptions = {
-              to: data.originalStoryAuthorEmail + ',' + recipient.email,
+              to: recipients,
               from: 'Team@freecodecamp.com',
               subject: associatedStory.author.username + " replied to your post on Camper News",
               text: [
@@ -474,31 +479,6 @@ function commentSave(comment, Context, res, next) {
                 return err;
               }
             });
-            } else {
-              var transporter = nodemailer.createTransport({
-                service: 'Mandrill',
-                auth: {
-                  user: secrets.mandrill.user,
-                  pass: secrets.mandrill.password
-                }
-              });
-              var mailOptions = {
-                to: recipient.email,
-                from: 'Team@freecodecamp.com',
-                subject: associatedStory.author.username + " replied to your post on Camper News",
-                text: [
-                  "Just a quick heads-up: " + associatedStory.author.username + " replied to you on Camper News.",
-                  "You can keep this conversation going.",
-                  "Just head back to the discussion here: http://freecodecamp.com/stories/" + comment.originalStoryLink,
-                  '- the Free Code Camp Volunteer Team'
-                ].join('\n')
-              };
-              transporter.sendMail(mailOptions, function (err) {
-                if (err) {
-                  return err;
-                }
-              });
-            }
         });
       });
     } catch (e) {
