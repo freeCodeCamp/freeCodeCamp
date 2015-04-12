@@ -1,7 +1,7 @@
 // MDN Links
 
 /* These links are for Bonfires. Each key/value pair is used to render a Bonfire with approrpiate links.
-	
+
 
 	The text of the key is what the link text will be, e.g. <a href="https://developer ...">Global Array Object</a>
 	General convention is to use the page title of the MDN reference page.
@@ -13,6 +13,10 @@ var links =
 	"Global Object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
 	"Global String Object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
 	"Boolean Objects" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+
+	// ========= GLOBAL OBJECT METHODS
+	"parseInt()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt",
+
 
 	// =========  PROPERTIES/MISC
 	"String.length" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length",
@@ -57,7 +61,7 @@ var links =
 	"Array.sort()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort",
 	"Array.splice()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice",
 	"Array.toString()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString",
-	
+
 	// ======== GENERAL JAVASCRIPT REFERENCES
 	"Arithmetic Operators" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators",
 	"Comparison Operators" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators"
