@@ -7,7 +7,11 @@ block content
                 h4
                     ol
                         for step in details
-                            li!= step
+                                .row
+                                    li
+                                        .col-xs-2
+                                            input(type='checkbox' class='challenge-list-checkbox')
+                                        .col-xs-10.step-text!= step
         .col-xs-12.col-sm-12.col-md-8
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
