@@ -65,7 +65,7 @@ var userSchema = new mongoose.Schema({
             default: ''
         }
     },
-
+    challengesHash: {},
     portfolio: {
         website1Link: {
             type: String,
@@ -137,7 +137,8 @@ var userSchema = new mongoose.Schema({
   longestStreak: {
     type: Number,
     default: 0
-  }
+  },
+  needsMigration: { type: Boolean, default: true }
 });
 
 /**
