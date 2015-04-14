@@ -650,7 +650,7 @@
     "difficulty": 2.01,
     "challengeSeed": "123488494",
     "description": [
-      "This Basejump is a great opportunity to pair program with a friend.",
+      "For this Basejump challenge, you'll build a fully functional voting app. By the time you've finished, your app will function similarly to this: <a href='http://voteplex.herokuapp.com/'>http://voteplex.herokuapp.com/</a>. This Basejump is a great opportunity to pair program with a friend.",
       "We'll build this Basejump on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
       "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io'>http://c9.io</a>.",
       "Now let's get your development environment ready for a new Angular-Fullstack application provided by Yeoman.",
