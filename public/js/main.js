@@ -30,6 +30,15 @@ $(document).ready(function() {
       .addClass('animated fadeInDown');
   });
 
+  $('.challenge-list-checkbox').on('change', function() {
+    if ($(this).is(":checked")) {
+      $(this).parent().parent().children('.step-text').addClass('strikethrough text-primary');
+    }
+    if (!$(this).is(":checked")) {
+      $(this).parent().parent().children('.step-text').removeClass('strikethrough text-primary');
+    }
+  });
+
   function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash, bonfireName) {
     $('#complete-bonfire-dialog').modal('show');
     // Only post to server if there is an authenticated user
