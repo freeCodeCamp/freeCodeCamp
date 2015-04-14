@@ -32,7 +32,6 @@ var express = require('express'),
   expressValidator = require('express-validator'),
   connectAssets = require('connect-assets'),
   request = require('request'),
-  debug = require('debug')('freecc:app');
 
 
   /**
@@ -617,7 +616,7 @@ if (process.env.NODE_ENV === 'development') {
     var type = accept.type('html', 'json', 'text');
 
     var message = 'oops! Something went wrong. Please try again later.';
-    debug('ERROR!!', err);
+    console.log('ERROR!!', err);
     if (type === 'html') {
       req.flash('errors', { msg: message });
       return res.redirect('/');
