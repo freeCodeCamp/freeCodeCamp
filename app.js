@@ -615,7 +615,10 @@ if (process.env.NODE_ENV === 'development') {
     var accept = accepts(req);
     var type = accept.type('html', 'json', 'text');
 
-    var message = 'oops! Something went wrong. Please try again later.';
+    var message = 'oops! Something went wrong. Please try again later.' +
+      ' Twitter authentication is currently unavailable for FreeCodeCamp.' +
+      ' We are working with Twitter to restore functionality' +
+      ' as soon as possible.';
     console.log('ERROR!!', err);
     if (type === 'html') {
       req.flash('errors', { msg: message });
