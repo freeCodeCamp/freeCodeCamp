@@ -9,7 +9,22 @@ var mongodb = require('mongodb'),
 mongoose.connect(secrets.db);
 
 var i = 1;
-var stream = User.find({}).skip(0).limit(0).batchSize(1000).stream();
+var stream = User.find({}).skip(0).limit(0).stream();
+
+stream.on('data', function(user) {
+  console.log(i++);
+  user.save()
+})
+.on('error', function (err) {
+  console.log(err);
+}).on('close', function () {
+    console.log('done with set');
+    stream.destroy();
+});
+
+i = 1;
+
+var stream = User.find({'user.needsMigration': true}).skip(0).limit(0).stream();
 
 stream.on('data', function (user) {
   if (user.challengesHash) {
