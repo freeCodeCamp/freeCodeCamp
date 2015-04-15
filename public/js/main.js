@@ -112,6 +112,7 @@ $(document).ready(function() {
   $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
     editor.focus();
   });
+
   $('#next-courseware-button').on('click', function() {
     console.log(passedCoursewareHash);
     if ($('.signup-btn-nav').length < 1) {
@@ -184,7 +185,6 @@ $(document).ready(function() {
     }
   });
 
-
   $('.all-challenges').on('click', function() {
     $('#show-all-dialog').modal('show');
   });
@@ -197,7 +197,6 @@ $(document).ready(function() {
     l = location.pathname.split('/');
     window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
   });
-
 
 // Bonfire instructions functions
   $('#more-info').on('click', function() {
@@ -240,7 +239,6 @@ $(document).ready(function() {
     }
   };
   $('#upvote').on('click', upvoteHandler);
-
 
   var storySubmitButtonHandler = function storySubmitButtonHandler() {
 
