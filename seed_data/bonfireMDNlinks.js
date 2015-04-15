@@ -1,7 +1,7 @@
 // MDN Links
 
 /* These links are for Bonfires. Each key/value pair is used to render a Bonfire with approrpiate links.
-	
+
 
 	The text of the key is what the link text will be, e.g. <a href="https://developer ...">Global Array Object</a>
 	General convention is to use the page title of the MDN reference page.
@@ -16,9 +16,13 @@ var links =
 	"RegExp" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
 	"Arguments object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments",
 
+	// ========= GLOBAL OBJECT METHODS
+	"parseInt()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt",
+
+
 	// =========  PROPERTIES/MISC
 	"String.length" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length",
-	
+
 
 	// ========== OBJECT METHODS
 	"Object.getOwnPropertyNames()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames",
@@ -62,13 +66,13 @@ var links =
 	"Array.sort()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort",
 	"Array.splice()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice",
 	"Array.toString()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString",
-
+    
 	// ======== MATH METHODS
 	"Math.max()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max",
 	"Math.min()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min",
 	"Math.pow()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow",
 	"Remainder" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_(.25)",
-	
+
 	// ======== GENERAL JAVASCRIPT REFERENCES
 	"Arithmetic Operators" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators",
 	"Comparison Operators" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators",
