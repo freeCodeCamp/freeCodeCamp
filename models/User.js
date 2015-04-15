@@ -8,7 +8,6 @@ var userSchema = new mongoose.Schema({
     email: {
         type: String,
         lowercase: true,
-        unique: true,
         trim: true,
         sparse: true
     },
@@ -23,7 +22,6 @@ var userSchema = new mongoose.Schema({
     profile: {
         username: {
             type: String,
-            unique: true,
             sparse: true,
             lowercase: true,
             trim: true
