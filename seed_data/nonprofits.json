@@ -48,26 +48,6 @@
     "currentStatus": "completed"
   },
   {
-    "id": "bd6274d8c464cbafaeb4bdef",
-    "requestedDeliverables": [
-      "other"
-    ],
-    "whatDoesNonprofitDo": "No More Craptions seeks to improve upon automatic captioning on YouTube videos, by allowing users to edit captions to videos, even if they do not own the content.",
-    "websiteLink": "http://nomorecraptions.com/",
-    "stakeholderName": "Michael Lockrey",
-    "stakeholderEmail": "michael.lockrey@gmail.com",
-    "name": "No More Craptions",
-    "endUser": "Hearing impaired users, and those who want to correct poor captions.",
-    "approvedDeliverables": [
-      "other"
-    ],
-    "projectDescription": "Campers will create a full stack JavaScript solution to allow users to edit captions from YouTube videos.",
-    "logoUrl": "https://trello-attachments.s3.amazonaws.com/54c1da1ba1fe2e325df5fc34/54c1dd31226b8111794d132f/x/b0402135d9ecce6d4ab45c4b5e5aeaa0/Turning-online-horse-manure-into-strawberry-jam---since-2009.png",
-    "imageUrl": "",
-    "estimatedHours": 200,
-    "currentStatus": "completed"
-  },
-  {
     "id": "bd1326d9c245cbafaeb4bdef",
     "requestedDeliverables": [
       "website"
