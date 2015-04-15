@@ -677,7 +677,7 @@
       "Would you like to include additional oAuth strategies? Twitter",
       "Would you like to use socket.io? No",
       "May bower anonymously report usage statistics to improve the tool over time? (Y/n)  Y",
-      "You may get an error similar to <code> ERR! EEXIST, open ‘/home/ubuntu/.npm</code>. This is caused when Cloud9 runs out of memory and kills an install. If you get this, simply rerun yo angular-fullstack. You will then be asked a few questions regarding the re-install. Answer them as follows:",
+      "You may get an error similar to <code> ERR! EEXIST, open ‘/home/ubuntu/.npm</code>. This is caused when Cloud9 runs out of memory and kills an install. If you get this, simply re-run this process with the command <code>yo angular-fullstack</code>. You will then be asked a few questions regarding the re-install. Answer them as follows:",
       "Existing .yo-rc configuration found, would you like to use it? (Y/n) Y",
       "Overwrite client/favicon.ico? (Ynaxdh) Y",
       "To finish the installation run the commands: <code>bower install && npm install</code>",
