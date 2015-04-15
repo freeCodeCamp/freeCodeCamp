@@ -3,12 +3,14 @@ var async = require('async'),
   Challenge = require('./../models/Challenge'),
   Bonfire = require('./../models/Bonfire'),
   Story = require('./../models/Story'),
+  Wiki = require('./../models/Wiki'),
   Comment = require('./../models/Comment'),
   resources = require('./resources.json'),
   steps = resources.steps,
   secrets = require('./../config/secrets'),
   bonfires = require('../seed_data/bonfires.json'),
   coursewares = require('../seed_data/coursewares.json'),
+  wikis = require('../seed_data/wikis.json'),
   moment = require('moment'),
   https = require('https'),
   debug = require('debug')('freecc:cntr:resources'),
@@ -78,45 +80,9 @@ module.exports = {
     });
   },
 
-  deployAWebsite: function deployAWebsite(req, res) {
-    res.render('resources/deploy-a-website', {
-      title: 'Deploy a Dynamic Website in 7 Minutes'
-    });
-  },
-
   chat: function chat(req, res) {
     res.render('resources/chat', {
       title: "Enter Free Code Camp's Chat Rooms"
-    });
-  },
-
-  nonprofitProjectInstructions: function nonprofitProjectInstructions(req, res) {
-    res.render('resources/nonprofit-project-instructions', {
-      title: 'Nonprofit Project Instructions'
-    });
-  },
-
-  gmailShortcuts: function gmailShortcuts(req, res) {
-    res.render('resources/gmail-shortcuts', {
-      title: 'These Gmail Shortcuts will save you Hours'
-    });
-  },
-
-  guideToOurNonprofitProjects: function guideToOurNonprofitProjects(req, res) {
-    res.render('resources/guide-to-our-nonprofit-projects', {
-      title: 'A guide to our Nonprofit Projects'
-    });
-  },
-
-  controlShortcuts: function controlShortcuts(req, res) {
-    res.render('resources/control-shortcuts', {
-      title: 'These Control Shortcuts will save you Hours'
-    });
-  },
-
-  chromebook: function chromebook(req, res) {
-    res.render('resources/chromebook', {
-      title: 'Win a Chromebook'
     });
   },
 
@@ -124,45 +90,6 @@ module.exports = {
     res.render('resources/jquery-exercises', {
       title: 'jQuery Exercises'
     });
-  },
-
-  livePairProgramming: function(req, res) {
-    res.render('resources/live-pair-programming', {
-      title: 'Live Pair Programming'
-    });
-  },
-
-  installScreenHero: function(req, res) {
-    res.render('resources/install-screenhero', {
-      title: 'Install ScreenHero'
-    });
-  },
-
-  javaScriptInYourInbox: function(req, res) {
-    res.render('resources/javascript-in-your-inbox', {
-      title: 'JavaScript in your Inbox'
-    });
-  },
-
-  nodeSchoolChallenges: function(req, res) {
-    res.render('resources/nodeschool-challenges', {
-      title: 'NodeSchool Challenges'
-    });
-  },
-
-  trelloCalls: function(req, res, next) {
-      request('https://trello.com/1/boards/BA3xVpz9/cards?key=' + secrets.trello.key, function(err, status, trello) {
-          if (err) { return next(err); }
-          trello = (status && status.statusCode == 200) ? (JSON.parse(trello)) : "Can't connect to to Trello";
-          res.end(JSON.stringify(trello));
-      });
-  },
-  bloggerCalls: function(req, res, next) {
-      request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
-          if (err) { return next(err); }
-          blog = (status && status.statusCode == 200) ? JSON.parse(blog) : "Can't connect to Blogger";
-          res.end(JSON.stringify(blog));
-      });
   },
 
   githubCalls: function(req, res) {
@@ -183,6 +110,7 @@ module.exports = {
       res.end(JSON.stringify(trello));
     });
   },
+
   bloggerCalls: function(req, res, next) {
     request('https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/posts?key=' + secrets.blogger.key, function (err, status, blog) {
       if (err) { return next(err); }
@@ -276,7 +204,6 @@ module.exports = {
     });
   },
 
-
   randomPhrase: function() {
     var phrases = resources.phrases;
     return phrases[Math.floor(Math.random() * phrases.length)];
@@ -306,6 +233,7 @@ module.exports = {
         return elem._id;
       });
   },
+
   allBonfireNames: function() {
     return bonfires.map(function(elem) {
       return {
@@ -323,6 +251,14 @@ module.exports = {
         _id: elem._id
       }
     });
+  },
+
+  allWikiNames: function() {
+    return wikis.map(function(elem) {
+      return {
+        name: elem.name
+      }
+    })
   },
 
   getAllCourses: function() {
@@ -344,6 +280,7 @@ module.exports = {
         return elem._id;
       });
   },
+
   allCoursewareNames: function() {
     return coursewares.map(function(elem) {
       return {
@@ -362,9 +299,11 @@ module.exports = {
       };
     });
   },
+
   whichEnvironment: function() {
     return process.env.NODE_ENV;
   },
+
   getURLTitle: function(url, callback) {
     (function () {
       var result = {title: '', image: '', url: '', description: ''};
@@ -385,6 +324,7 @@ module.exports = {
       });
     })();
   },
+
   updateUserStoryPictures: function(userId, picture, username, cb) {
 
     var counter = 0,

@@ -1,0 +1,26 @@
+extends ../layout
+block content
+    script.
+        var challengeName = 'Wiki View';
+    .col-xs-12.col-sm-12.col-md-12
+        .panel.panel-info
+            .panel-heading.text-center
+                h1= title
+            .panel-body
+                div!= description
+                .spacer
+                .text-center
+                    #showAllButton.btn.btn-info.btn-big Show all Wiki Articles
+                .spacer
+                .row
+                    .col-xs-12.text-center
+                        if !user
+                            a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
+            .spacer
+    #all-challenges-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Wiki Articles
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/wikis

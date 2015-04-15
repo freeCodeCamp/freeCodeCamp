@@ -42,6 +42,7 @@ var express = require('express'),
     nonprofitController = require('./controllers/nonprofits'),
     bonfireController = require('./controllers/bonfire'),
     coursewareController = require('./controllers/courseware'),
+    wikiController = require('./controllers/wiki'),
 
     /**
      *  Stories
@@ -233,59 +234,121 @@ app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
  */
 
 app.get('/', homeController.index);
-app.get('/privacy', resourcesController.privacy);
+
+app.get('/privacy', function(req, res) {
+    res.redirect(301, "/wiki/free-code-camp's-privacy-policy");
+});
+
+app.get('/nonprofit-project-instructions', function(req, res) {
+    res.redirect(301, "/wiki/free-code-camp's-privacy-policy");
+});
+
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
+
 app.get('/chat', resourcesController.chat);
-app.get('/live-pair-programming', resourcesController.livePairProgramming);
-app.get('/install-screenhero', resourcesController.installScreenHero);
-app.get('/javascript-in-your-inbox', resourcesController.javaScriptInYourInbox);
-app.get('/guide-to-our-nonprofit-projects', resourcesController.guideToOurNonprofitProjects);
-app.get('/chromebook', resourcesController.chromebook);
-app.get('/deploy-a-website', resourcesController.deployAWebsite);
-app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
-app.get('/control-shortcuts', resourcesController.controlShortcuts);
-app.get('/control-shortcuts', resourcesController.deployAWebsite);
-app.get('/nodeschool-challenges', resourcesController.nodeSchoolChallenges);
+
+app.get('/live-pair-programming', function(req, res) {
+    res.redirect(301, '/wiki/live-stream-pair-programming-on-twitch.tv');
+});
+
+app.get('/install-screenhero', function(req, res) {
+    res.redirect(301, '/wiki/install-screenhero');
+});
+
+app.get('/guide-to-our-nonprofit-projects', function(req, res) {
+    res.redirect(301, '/wiki/a-guide-to-our-nonprofit-projects');
+});
+
+app.get('/chromebook', function(req, res) {
+    res.redirect(301, '/wiki/chromebook');
+});
+
+app.get('/deploy-a-website', function(req, res) {
+    res.redirect(301, '/wiki/deploy-a-website');
+});
+
+app.get('/gmail-shortcuts', function(req, res) {
+    res.redirect(301, '/wiki/gmail-shortcuts');
+});
+
+app.get('/nodeschool-challenges', function(req, res) {
+    res.redirect(301, '/wiki/nodeschool-challenges');
+});
+
 app.get('/stats', function(req, res) {
     res.redirect(301, '/learn-to-code');
 });
-app.get('/news', function(req, res) {
-    res.redirect(301, '/stories/hot');
-});
-app.get('/learn-to-code', resourcesController.about);
+
 app.get('/about', function(req, res) {
     res.redirect(301, '/learn-to-code');
 });
+
+app.get('/learn-to-code', resourcesController.about);
+
+app.get('/news', function(req, res) {
+    res.redirect(301, '/stories/hot');
+});
+
 app.get('/signin', userController.getSignin);
+
 app.get('/login', function(req, res) {
     res.redirect(301, '/signin');
 });
+
 app.post('/signin', userController.postSignin);
+
 app.get('/signout', userController.signout);
+
 app.get('/logout', function(req, res) {
     res.redirect(301, '/signout');
 });
+
 app.get('/forgot', userController.getForgot);
+
 app.post('/forgot', userController.postForgot);
+
 app.get('/reset/:token', userController.getReset);
+
 app.post('/reset/:token', userController.postReset);
+
 app.get('/email-signup', userController.getEmailSignup);
+
 app.get('/email-signin', userController.getEmailSignin);
+
 app.post('/email-signup', userController.postEmailSignup);
+
 app.post('/email-signin', userController.postSignin);
+
+/**
+ * Nonprofit Project routes.
+ */
+
 app.get('/nonprofits', contactController.getNonprofitsForm);
+
 app.post('/nonprofits', contactController.postNonprofitsForm);
+
 app.get('/nonprofits/home', nonprofitController.nonprofitsHome);
+
 app.get('/nonprofits/are-you-with-a-registered-nonprofit', nonprofitController.areYouWithARegisteredNonprofit);
+
 app.get('/nonprofits/are-there-people-that-are-already-benefiting-from-your-services', nonprofitController.areTherePeopleThatAreAlreadyBenefitingFromYourServices);
+
 app.get('/nonprofits/in-exchange-we-ask', nonprofitController.inExchangeWeAsk);
+
 app.get('/nonprofits/ok-with-javascript', nonprofitController.okWithJavaScript);
+
 app.get('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYou);
+
 app.get('/nonprofits/what-does-your-nonprofit-do', nonprofitController.whatDoesYourNonprofitDo);
+
 app.get('/nonprofits/link-us-to-your-website', nonprofitController.linkUsToYourWebsite);
+
 app.get('/nonprofits/tell-us-your-name', nonprofitController.tellUsYourName);
+
 app.get('/nonprofits/tell-us-your-email', nonprofitController.tellUsYourEmail);
+
 app.get('/nonprofits/your-nonprofit-project-application-has-been-submitted', nonprofitController.yourNonprofitProjectApplicationHasBeenSubmitted);
+
 app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
 
 app.get(
@@ -298,11 +361,6 @@ app.post(
   passportConf.isAuthenticated,
   contactController.postDoneWithFirst100Hours
 );
-app.get(
-    '/nonprofit-project-instructions',
-    passportConf.isAuthenticated,
-    resourcesController.nonprofitProjectInstructions
-);
 app.post(
     '/update-progress',
     passportConf.isAuthenticated,
@@ -310,7 +368,7 @@ app.post(
 );
 
 /**
- * Main routes.
+ * Camper News routes.
  */
 app.get(
     '/stories/hotStories',
@@ -396,6 +454,7 @@ app.post(
 );
 
 app.all('/account', passportConf.isAuthenticated);
+
 app.get('/account/api', userController.getAccountAngular);
 
 /**
@@ -403,7 +462,9 @@ app.get('/account/api', userController.getAccountAngular);
  */
 
 app.get('/api/github', resourcesController.githubCalls);
+
 app.get('/api/blogger', resourcesController.bloggerCalls);
+
 app.get('/api/trello', resourcesController.trelloCalls);
 
 /**
@@ -411,21 +472,43 @@ app.get('/api/trello', resourcesController.trelloCalls);
  */
 
 app.get('/bonfires/getBonfireList', bonfireController.showAllBonfires);
+
+app.get('/wiki/getWikiList', wikiController.showAllWikis);
+
 app.get('/playground', bonfireController.index);
+
 app.get('/bonfires', bonfireController.returnNextBonfire);
+
 app.get('/bonfire-json-generator', bonfireController.returnGenerator);
+
 app.post('/bonfire-json-generator', bonfireController.generateChallenge);
+
 app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
-app.post('/bonfire-challenge-generator', bonfireController.testBonfire)
+
+app.post('/bonfire-challenge-generator', bonfireController.testBonfire);
+
 app.get(
     '/bonfires/:bonfireName',
     bonfireController.returnIndividualBonfire
 );
+
 app.get('/bonfire', function(req, res) {
     res.redirect(301, '/playground');
 });
 
+/**
+ * Wiki related routes
+ */
 
+app.get(
+    '/wiki/:wikiName',
+    wikiController.returnIndividualWiki
+);
+
+app.get(
+    '/wiki',
+    wikiController.showAllWikis
+);
 
 app.post('/completed-bonfire/', bonfireController.completedBonfire);
 
@@ -434,24 +517,36 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
  */
 
 app.get('/challenges/', coursewareController.returnNextCourseware);
+
 app.get('/challenges/getCoursewareList', coursewareController.showAllCoursewares);
+
 app.get(
     '/challenges/:coursewareName',
     coursewareController.returnIndividualCourseware
 );
+
 app.post('/completed-courseware/', coursewareController.completedCourseware);
+
 app.post('/completed-zipline-or-basejump',
   coursewareController.completedZiplineOrBasejump);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
+
 app.get('/api/checkExistingUsername/:username', userController.checkExistingUsername);
+
 app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
+
 app.get('/account', userController.getAccount);
+
 app.post('/account/profile', userController.postUpdateProfile);
+
 app.post('/account/password', userController.postUpdatePassword);
+
 app.post('/account/delete', userController.postDeleteAccount);
+
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
+
 app.get('/sitemap.xml', resourcesController.sitemap);
 /**
  * OAuth sign-in routes.
@@ -463,6 +558,7 @@ var passportOptions = {
 };
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
+
 app.get(
     '/auth/twitter/callback',
     passport.authenticate('twitter', {
@@ -496,6 +592,7 @@ app.get(
 );
 
 app.get('/auth/github', passport.authenticate('github'));
+
 app.get(
     '/auth/github/callback',
     passport.authenticate('github', passportOptions), function (req, res) {
@@ -507,16 +604,13 @@ app.get(
     '/auth/google',
     passport.authenticate('google', {scope: 'profile email'})
 );
+
 app.get(
     '/auth/google/callback',
     passport.authenticate('google', passportOptions), function (req, res) {
         res.redirect(req.session.returnTo || '/');
     }
 );
-
-app.get('/induce-vomiting', function(req, res, next) {
-  next(new Error('vomiting induced'));
-});
 
 // put this route last
 app.get(
