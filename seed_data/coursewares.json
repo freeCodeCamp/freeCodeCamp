@@ -162,7 +162,7 @@
       "Here's how you would set the <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;cat photo app&#60;h2&#62;</code>"
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', '#ff0000');"
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>",
@@ -186,7 +186,7 @@
       "Note that it's important to have an <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of the element's styles."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', '#0000ff');"
+      "expect($('h2')).to.have.css('color', 'rgb(0, 0, 255)');"
     ],
     "challengeSeed": [
       "<h1>hello world</h1>", 
@@ -207,7 +207,7 @@
       "You can follow that pattern to make a <code>red-text</code> class, which you can attach to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', '#ff0000');",
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
       "expect($('h2')).to.have.class('red-text');"
     ],
     "challengeSeed": [
@@ -235,9 +235,9 @@
       "expect($('h1')).to.have.class('red-text');",
       "expect($('h2')).to.have.class('red-text');",
       "expect($('p')).to.have.class('red-text');",
-      "expect($('h1')).to.have.css('color', '#ff0000');",
-      "expect($('h2')).to.have.css('color', '#ff0000');",
-      "expect($('p')).to.have.css('color', '#ff0000');"
+      "expect($('h1')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
+      "expect($('p')).to.have.css('color', 'rgb(255, 0, 0)');"
     ],
     "challengeSeed": [
       "<style>",
@@ -322,7 +322,7 @@
       "There are several default fonts that are available in all browsers. These include <code>Monospace</code>, <code>Serif</code> and <code>Sans-Serif</code>. See if you can set the <code>h2</code> elements to use Lobster and degrade to <code>Monospace</code>."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('font-family').match(/monospace/i);",
+      "expect($('h2')).to.have.css('font-family').match(/Serif/i);",
       "expect($('h2')).to.have.css('font-family').match(/lobster/i);"
     ],
     "challengeSeed": [
@@ -355,7 +355,7 @@
     "tests": [
       "expect($('h2')).to.have.class('urgently-red');",
       "expect($('h2')).to.have.class('blue-text');",
-      "expect($('h2')).to.have.css('color', '#ff0000');"
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
     ],
     "challengeSeed": [
       "<style>",
@@ -423,7 +423,7 @@
       "Now figure out how to make the bright green in the \"red-text\" class into a bright red."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', '#ff0000');",
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
       "expect($('h2')).to.have.class('red-text');"
     ],
     "challengeSeed": [
@@ -449,7 +449,7 @@
       "You can also shorten the 6-digit color hex code to a 3-digit code. For example, <code>#00ff00</code> becomes <code>#0f0</code>. This is less precise, but equally effective."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', '#ff0000');",
+      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
       "expect($('h2')).to.have.class('red-text');"
     ],
     "challengeSeed": [
@@ -566,7 +566,7 @@
     ],
     "tests": [
       "expect($('img')).to.have.class('thick-green-border');",
-      "expect($('img')).to.have.css('border-color', '#00ff00');",
+      "expect($('img')).to.have.css('border-color', 'rgb(0, 255, 0)');",
       "expect($('img')).to.have.css('border-width', '10px');"
     ],
     "challengeSeed": [
