@@ -1,7 +1,7 @@
 // MDN Links
 
 /* These links are for Bonfires. Each key/value pair is used to render a Bonfire with approrpiate links.
-	
+
 
 	The text of the key is what the link text will be, e.g. <a href="https://developer ...">Global Array Object</a>
 	General convention is to use the page title of the MDN reference page.
@@ -14,11 +14,12 @@ var links =
 	"Global String Object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
 	"Boolean Objects" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
 	"RegExp" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+	"Global Function Object": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
 	"Arguments object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments",
 
 	// =========  PROPERTIES/MISC
 	"String.length" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length",
-	
+
 
 	// ========== OBJECT METHODS
 	"Object.getOwnPropertyNames()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames",
@@ -68,7 +69,7 @@ var links =
 	"Math.min()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min",
 	"Math.pow()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow",
 	"Remainder" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_(.25)",
-	
+
 	// ======== GENERAL JAVASCRIPT REFERENCES
 	"Arithmetic Operators" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators",
 	"Comparison Operators" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators",

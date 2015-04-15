@@ -563,6 +563,23 @@
     "MDNlinks" : ["Object.hasOwnProperty()", "Object.getOwnPropertyNames()"]
   },
   {
+    "_id": "a97fd23d9b809dac9921074f",
+    "name": "Arguments Optional",
+    "difficulty": "2.22",
+    "description": [
+      "Create a function that sums two arguments together. If only one argument is provided, return a function that expects one additional argument and will return the sum.",
+      "For example, add(2, 3) should return 5, and add(2) should return a function that is waiting for an argument so that <code>var sum2And = add(2); return sum2And(3); // 5</code>",
+      "If either argument isn't a valid numbers, return undefined"
+    ],
+    "challengeSeed": "function add() {\n  return false;\n}\n\nadd(2,3);",
+    "tests": [
+      "expect(add(2, 3)).to.equal(5);",
+      "expect(add(2)(3)).to.equal(5);",
+      "expect(add('http://bit.ly/IqT6zt')).to.be.undefined;"
+    ],
+    "MDNlinks": ["Global Function Object", "Arguments object"]
+  },
+  {
     "_id": "a2f1d72d9b908d0bd72bb9f6",
     "name": "Make a Person",
     "difficulty": "3.12",
