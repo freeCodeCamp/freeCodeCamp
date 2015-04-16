@@ -131,6 +131,13 @@ module.exports = {
         });
     },
 
+	pairCoding: function(req, res) {
+		res.render('resources/pair-coding', {
+			title: 'Code Together'
+		});
+	},
+	
+
     installScreenHero: function(req, res) {
         res.render('resources/install-screenhero', {
             title: 'Install ScreenHero'

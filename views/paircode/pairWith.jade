@@ -1,0 +1,9 @@
+script.
+	var pairWithUser = !{JSON.stringify(pairWithUser)}
+	var comment = !{JSON.stringify(comment)}
+	var userGit = !{JSON.stringify(userGit)}
+
+.spacer
+	h2 Chatting with #{pairWithUser} about #{comment}
+.embed-responsive.embed-responsive-16by9.gitter-imbed
+	iframe(src="https://www.gitter.im/#{userGit}", frameborder='0', scrolling='no')

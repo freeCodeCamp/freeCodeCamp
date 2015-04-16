@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+		script.
+			var user = !{JSON.stringify(user)};
+			var page = !{JSON.stringify(page)};
+		.panel.panel-info
+			.panel-heading.text-center Find a Coding Partner
+			.panel_body
+				.col-xs-12
+				.text-center
+					#story-list.story-list(style="margin:10px")
+						if (user.profile.githubProfile !== '')
+								if (page === 'pairUser')
+									include ./add-paircode.jade
+									include ./single-view
+									
+								else if (page === 'pairWithUser')
+									include ./pairWith
+								else 
+									include ./add-paircode.jade
+									include ./online
+						else
+							.spacer
+								.spacer
+									.spacer
+										a(href="/account")
+											button.btn.btn-big.btn-primary.btn-responsive(type="button") You need to update your Github link in your profile. Click here to update now
