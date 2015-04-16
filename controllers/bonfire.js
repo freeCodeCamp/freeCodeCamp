@@ -12,7 +12,7 @@ var _ = require('lodash'),
 
 exports.showAllBonfires = function(req, res) {
   var completedBonfires = [];
-  if(req.user) {
+  if (req.user) {
       completedBonfires = req.user.completedBonfires.map(function (elem) {
           return elem._id;
       });
@@ -56,6 +56,7 @@ exports.returnNextBonfire = function(req, res, next) {
   req.user.uncompletedBonfires = resources.allBonfireIds().filter(function (elem) {
     if (completed.indexOf(elem) === -1) {
       return elem;
+
     }
   });
   req.user.save();
@@ -81,7 +82,6 @@ exports.returnNextBonfire = function(req, res, next) {
 
 exports.returnIndividualBonfire = function(req, res, next) {
   var dashedName = req.params.bonfireName;
-
   var bonfireName = dashedName.replace(/\-/g, ' ');
 
   Bonfire.find({'name': new RegExp(bonfireName, 'i')}, function(err, bonfire) {
@@ -271,7 +271,6 @@ exports.completedBonfire = function (req, res, next) {
         if (index > -1) {
           pairedWith.progressTimestamps.push(Date.now() || 0);
           pairedWith.uncompletedBonfires.splice(index, 1);
-
         }
 
         pairedWith.completedBonfires.push({
@@ -321,7 +320,6 @@ exports.completedBonfire = function (req, res, next) {
       req.user.progressTimestamps.push(Date.now() || 0);
       req.user.uncompletedBonfires.splice(index, 1);
     }
-
     req.user.save(function (err, user) {
       if (err) {
         return next(err);

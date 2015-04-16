@@ -57,7 +57,7 @@ exports.recentJSON = function(req, res, next) {
 };
 
 exports.hot = function(req, res) {
- return res.render('stories/index', {
+  return res.render('stories/index', {
     title: 'Hot stories currently trending on Camper News',
     page: 'hot'
   });
@@ -125,12 +125,10 @@ exports.returnIndividualStory = function(req, res, next) {
       return next(err);
     }
 
-
     if (story.length < 1) {
       req.flash('errors', {
         msg: "404: We couldn't find a story with that name. Please double check the name."
       });
-
       return res.redirect('/stories/');
     }
 
@@ -452,33 +450,33 @@ function commentSave(comment, Context, res, next) {
           }
           var recipients = '';
           if (data.originalStoryAuthorEmail && (data.originalStoryAuthorEmail !== recipient.email)) {
-             recipients = data.originalStoryAuthorEmail + ',' + recipient.email;
-           } else {
-             recipients = recipient.email;
-           }
-            var transporter = nodemailer.createTransport({
-              service: 'Mandrill',
-              auth: {
-                user: secrets.mandrill.user,
-                pass: secrets.mandrill.password
-              }
-            });
-            var mailOptions = {
-              to: recipients,
-              from: 'Team@freecodecamp.com',
-              subject: associatedStory.author.username + " replied to your post on Camper News",
-              text: [
-                "Just a quick heads-up: " + associatedStory.author.username + " replied to you on Camper News.",
-                "You can keep this conversation going.",
-                "Just head back to the discussion here: http://freecodecamp.com/stories/" + comment.originalStoryLink,
-                '- the Free Code Camp Volunteer Team'
-              ].join('\n')
-            };
-            transporter.sendMail(mailOptions, function (err) {
-              if (err) {
-                return err;
-              }
-            });
+            recipients = data.originalStoryAuthorEmail + ',' + recipient.email;
+          } else {
+            recipients = recipient.email;
+          }
+          var transporter = nodemailer.createTransport({
+            service: 'Mandrill',
+            auth: {
+              user: secrets.mandrill.user,
+              pass: secrets.mandrill.password
+            }
+          });
+          var mailOptions = {
+            to: recipients,
+            from: 'Team@freecodecamp.com',
+            subject: associatedStory.author.username + " replied to your post on Camper News",
+            text: [
+              "Just a quick heads-up: " + associatedStory.author.username + " replied to you on Camper News.",
+              "You can keep this conversation going.",
+              "Just head back to the discussion here: http://freecodecamp.com/stories/" + comment.originalStoryLink,
+              '- the Free Code Camp Volunteer Team'
+            ].join('\n')
+          };
+          transporter.sendMail(mailOptions, function (err) {
+            if (err) {
+              return err;
+            }
+          });
         });
       });
     } catch (e) {

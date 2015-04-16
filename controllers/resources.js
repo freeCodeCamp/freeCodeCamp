@@ -106,11 +106,23 @@ module.exports = {
     }
   },
 
+<<<<<<< HEAD
   jqueryExercises: function jqueryExercises(req, res) {
     res.render('resources/jquery-exercises', {
       title: 'jQuery Exercises'
     });
   },
+=======
+    chat: function chat(req, res) {
+        if (req.user && req.user.sentSlackInvite) {
+            res.redirect('https://freecode.slack.com/messages/general/');
+        } else {
+            res.render('resources/chat', {
+                title: "Join our chat room"
+            });
+        }
+    },
+>>>>>>> upstream/master
 
   twitch: function twitch(req, res) {
     res.render('resources/twitch', {
@@ -155,8 +167,22 @@ module.exports = {
     var date1 = new Date("10/15/2014");
     var date2 = new Date();
 
+<<<<<<< HEAD
     var progressTimestamps = req.user.progressTimestamps;
     var now = Date.now() || 0;
+=======
+    styleguide: function styleguide(req, res) {
+        res.render('resources/styleguide', {
+            title: 'A Styleguide for Contributing to our Bonfires'
+        });
+    },
+
+    jqueryExercises: function jqueryExercises(req, res) {
+        res.render('resources/jquery-exercises', {
+            title: 'jQuery Exercises'
+        });
+    },
+>>>>>>> upstream/master
 
     //if (req.user.pointsNeedMigration) {
     //  var challengesHash = req.user.challengesHash;
@@ -239,6 +265,7 @@ module.exports = {
     return verbs[Math.floor(Math.random() * verbs.length)];
   },
 
+<<<<<<< HEAD
   randomCompliment: function() {
     var compliments = resources.compliments;
     return compliments[Math.floor(Math.random() * compliments.length)];
@@ -361,6 +388,24 @@ module.exports = {
           callback(null, result);
         } else {
           callback('failed');
+=======
+    about: function(req, res, next) {
+        if (req.user) {
+            if (!req.user.profile.picture || req.user.profile.picture === "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png") {
+                req.user.profile.picture = "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png";
+                req.user.save(function(err) {
+                    if (err) return next(err);
+                });
+            }
+        }
+        var date1 = new Date("10/15/2014");
+        var date2 = new Date();
+        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+        var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        var announcements = resources.announcements;
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+>>>>>>> upstream/master
         }
       });
     })();

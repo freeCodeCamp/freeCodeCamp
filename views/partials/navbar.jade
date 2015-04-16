@@ -12,9 +12,13 @@
 .collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-right.hamburger-dropdown
         li
-            a(href='/map') Map
-        li
-            a(href='/chat' target='_blank') Chat
+            a(href='/challenges') Challenges
+        if (user && user.sentSlackInvite)
+            li
+                a(href='/chat', target='_blank') Chat
+        else
+            li
+                a(href='/challenges/01') Chat
         li
             a(href='/stories/hot') News
         li

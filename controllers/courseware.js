@@ -48,7 +48,6 @@ exports.returnNextCourseware = function(req, res, next) {
     if (err) {
       return next(err);
     }
-
     courseware = courseware.pop();
     if (courseware === undefined) {
       req.flash('errors', {

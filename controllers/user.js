@@ -162,11 +162,44 @@ exports.postEmailSignup = function(req, res, next) {
         return res.redirect('/email-signup');
       }
 
+<<<<<<< HEAD
       user.save(function(err) {
         if (err) { return next(err); }
         req.logIn(user, function(err) {
           if (err) { return next(err); }
           res.redirect('/email-signup');
+=======
+            user.save(function(err) {
+                if (err) { return next(err); }
+                var transporter = nodemailer.createTransport({
+                    service: 'Mandrill',
+                    auth: {
+                        user: secrets.mandrill.user,
+                        pass: secrets.mandrill.password
+                    }
+                });
+                var mailOptions = {
+                    to: user.email,
+                    from: 'Team@freecodecamp.com',
+                    subject: 'Welcome to Free Code Camp!',
+                    text: [
+                        'Greetings from San Francisco!\n\n',
+                        'Thank you for joining our community.\n',
+                        'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
+                        "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+                        'Good luck with the challenges!\n\n',
+                        '- Our All-Volunteer Team'
+                    ].join('')
+                };
+                transporter.sendMail(mailOptions, function(err) {
+                    if (err) { return next(err); }
+                });
+                req.logIn(user, function(err) {
+                    if (err) { return next(err); }
+                    res.redirect('/email-signup');
+                });
+            });
+>>>>>>> upstream/master
         });
       });
       var transporter = nodemailer.createTransport({
@@ -217,6 +250,7 @@ exports.getAccountAngular = function(req, res) {
  * Unique username check API Call
  */
 
+<<<<<<< HEAD
 exports.checkUniqueUsername = function(req, res) {
   User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
     if (data == 1) {
@@ -225,11 +259,23 @@ exports.checkUniqueUsername = function(req, res) {
       return res.send(false);
     }
   });
+=======
+exports.checkUniqueUsername = function(req, res, next) {
+    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
+        if (data == 1) {
+            return res.send(true);
+        } else {
+            return res.send(false);
+        }
+    });
+>>>>>>> upstream/master
 };
 
 /**
  * Existing username check
  */
+<<<<<<< HEAD
 exports.checkExistingUsername = function(req, res) {
   User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
     if (data === 1) {
@@ -238,12 +284,24 @@ exports.checkExistingUsername = function(req, res) {
       return res.send(false);
     }
   });
+=======
+exports.checkExistingUsername = function(req, res, next) {
+    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
+        if (data === 1) {
+            return res.send(true);
+        } else {
+            return res.send(false);
+        }
+    });
+>>>>>>> upstream/master
 };
 
 /**
  * Unique email check API Call
  */
 
+<<<<<<< HEAD
 exports.checkUniqueEmail = function(req, res) {
   User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
     if (data === 1) {
@@ -252,6 +310,17 @@ exports.checkUniqueEmail = function(req, res) {
       return res.send(false);
     }
   });
+=======
+exports.checkUniqueEmail = function(req, res, next) {
+    User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
+        if (data == 1) {
+            return res.send(true);
+        } else {
+            return res.send(false);
+        }
+    });
+>>>>>>> upstream/master
 };
 
 
@@ -261,6 +330,7 @@ exports.checkUniqueEmail = function(req, res) {
  */
 
 exports.returnUser = function(req, res, next) {
+<<<<<<< HEAD
   User.find({'profile.username': req.params.username.toLowerCase()}, function(err, user) {
     if (err) { debug('Username err: ', err); next(err); }
     if (user[0]) {
@@ -287,6 +357,45 @@ exports.returnUser = function(req, res, next) {
           if ( user.currentStreak > user.longestStreak) {
             user.longestStreak = user.currentStreak;
           }
+=======
+    User.find({'profile.username': req.params.username.toLowerCase()}, function(err, user) {
+        if (err) { debug('Username err: ', err); return next(err); }
+        if (user[0]) {
+            var user = user[0];
+            Challenge.find({}, null, {sort: {challengeNumber: 1}}, function (err, c) {
+                if (err) { return next(err); }
+                res.render('account/show', {
+                    title: 'Camper ' + user.profile.username + '\'s portfolio',
+                    username: user.profile.username,
+                    name: user.profile.name,
+                    location: user.profile.location,
+                    githubProfile: user.profile.githubProfile,
+                    linkedinProfile: user.profile.linkedinProfile,
+                    codepenProfile: user.profile.codepenProfile,
+                    twitterHandle: user.profile.twitterHandle,
+                    bio: user.profile.bio,
+                    picture: user.profile.picture,
+                    points: user.points,
+                    website1Link: user.portfolio.website1Link,
+                    website1Title: user.portfolio.website1Title,
+                    website1Image: user.portfolio.website1Image,
+                    website2Link: user.portfolio.website2Link,
+                    website2Title: user.portfolio.website2Title,
+                    website2Image: user.portfolio.website2Image,
+                    website3Link: user.portfolio.website3Link,
+                    website3Title: user.portfolio.website3Title,
+                    website3Image: user.portfolio.website3Image,
+                    challenges: c,
+                    ch: user.challengesHash,
+                    moment: moment
+                });
+            });
+        } else {
+            req.flash('errors', {
+                msg: "404: We couldn't find a page with that url. Please double check the link."
+            });
+            return res.redirect('/');
+>>>>>>> upstream/master
         }
       }
 
@@ -352,6 +461,7 @@ exports.returnUser = function(req, res, next) {
  * Update profile information.
  */
 
+<<<<<<< HEAD
 exports.updateProgress = function(req, res) {
   User.findById(req.user.id, function(err, user) {
     if (err) return next(err);
@@ -365,6 +475,22 @@ exports.updateProgress = function(req, res) {
       if (err) return next(err);
       req.flash('success', { msg: 'Profile information updated.' });
       res.redirect('/account');
+=======
+exports.updateProgress = function(req, res, next) {
+    User.findById(req.user.id, function(err, user) {
+        if (err) return next(err);
+        user.email = req.body.email || '';
+        user.profile.name = req.body.name || '';
+        user.profile.gender = req.body.gender || '';
+        user.profile.location = req.body.location || '';
+        user.profile.website = req.body.website || '';
+
+        user.save(function(err) {
+            if (err) return next(err);
+            req.flash('success', { msg: 'Profile information updated.' });
+            res.redirect('/account');
+        });
+>>>>>>> upstream/master
     });
   });
 };
@@ -523,6 +649,7 @@ exports.getOauthUnlink = function(req, res, next) {
  * Reset Password page.
  */
 
+<<<<<<< HEAD
 exports.getReset = function(req, res) {
   if (req.isAuthenticated()) {
     return res.redirect('/');
@@ -535,6 +662,27 @@ exports.getReset = function(req, res) {
       if (!user) {
         req.flash('errors', {
           msg: 'Password reset token is invalid or has expired.'
+=======
+exports.getReset = function(req, res, next) {
+    if (req.isAuthenticated()) {
+        return res.redirect('/');
+    }
+    User
+        .findOne({ resetPasswordToken: req.params.token })
+        .where('resetPasswordExpires').gt(Date.now())
+        .exec(function(err, user) {
+            if (err) { return next(err); }
+            if (!user) {
+                req.flash('errors', {
+                    msg: 'Password reset token is invalid or has expired.'
+                });
+                return res.redirect('/forgot');
+            }
+            res.render('account/reset', {
+                title: 'Password Reset',
+                token: req.params.token
+            });
+>>>>>>> upstream/master
         });
         return res.redirect('/forgot');
       }
