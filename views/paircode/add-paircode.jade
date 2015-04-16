@@ -2,11 +2,11 @@ if (!user.pair.onlineStatus)
 	h2 You are not online. 
 	h4 Make a new pair request to let others know you are available.
 	h4 You will stay online for approximately 30 minutes
-	form.input-group(name='pairSubmit', method="POST", action="/pair-coding/setOnline")
+	form.input-group.col-md-12.col-sm-12.col-xs-12(name='pairSubmit', method="POST", action="/pair-coding/setOnline")
 		input#comment.big-text-field.field-responsive.form-control(placeholder='What would you like to grok today?', name='comment', type='text', autofocus)
-		span.input-group-btn
-			button#pair-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
-		input#userSlack.big-text-field.field-responsive.form-control(placeholder='your Slack usernmae', name='slackUser', type='text', required)
+		input#userSlack.big-text-field.field-responsive.form-control(placeholder='your Slack handle', name='slackUser', type='text', required)
+	span.input-group-btn
+		button#pair-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
 else
 	h2 You are online.
 	button.btn.bt-big.btn-primary.btn-responsive(type="button")#go-offline Go Offline
