@@ -1,10 +1,10 @@
 var _ = require('lodash'),
-    debug = require('debug')('freecc:cntr:courseware'),
-    Courseware = require('./../models/Courseware'),
-    User = require('./../models/User'),
-    resources = require('./resources'),
-    R = require('ramda'),
-    moment = require('moment');
+  debug = require('debug')('freecc:cntr:courseware'),
+  Courseware = require('./../models/Courseware'),
+  User = require('./../models/User'),
+  resources = require('./resources'),
+  R = require('ramda'),
+  moment = require('moment');
 
 /**
  * Courseware controller
@@ -34,10 +34,10 @@ exports.returnNextCourseware = function(req, res, next) {
 
   req.user.uncompletedCoursewares = resources.allCoursewareIds()
     .filter(function (elem) {
-    if (completed.indexOf(elem) === -1) {
-      return elem;
-    }
-  });
+      if (completed.indexOf(elem) === -1) {
+        return elem;
+      }
+    });
   req.user.save();
 
   var uncompletedCoursewares = req.user.uncompletedCoursewares.shift();
@@ -68,125 +68,125 @@ exports.returnIndividualCourseware = function(req, res, next) {
 
   Courseware.find({'name': new RegExp(coursewareName, 'i')},
     function(err, courseware) {
-    if (err) {
-      next(err);
-    }
-    // Handle not found
-    if (courseware.length < 1) {
-      req.flash('errors', {
-        msg: "404: We couldn't find a challenge with that name. " +
-        "Please double check the name."
-      });
-      return res.redirect('/challenges');
-    }
-    courseware = courseware.pop();
-
-    // Redirect to full name if the user only entered a partial
-    var dashedNameFull = courseware.name.toLowerCase().replace(/\s/g, '-');
-    if (dashedNameFull != dashedName) {
-      return res.redirect('../challenges/' + dashedNameFull);
-    }
-
-    var challengeType = {
-      0: function() {
-        res.render('coursewares/showHTML', {
-          title: courseware.name,
-          dashedName: dashedName,
-          name: courseware.name,
-          brief: courseware.description[0],
-          details: courseware.description.slice(1),
-          tests: courseware.tests,
-          challengeSeed: courseware.challengeSeed,
-          verb: resources.randomVerb(),
-          phrase: resources.randomPhrase(),
-          compliment: resources.randomCompliment(),
-          coursewareHash: courseware._id,
-          environment: resources.whichEnvironment(),
-          challengeType: courseware.challengeType
+      if (err) {
+        next(err);
+      }
+      // Handle not found
+      if (courseware.length < 1) {
+        req.flash('errors', {
+          msg: "404: We couldn't find a challenge with that name. " +
+          "Please double check the name."
         });
-      },
+        return res.redirect('/challenges');
+      }
+      courseware = courseware.pop();
 
-      1: function() {
-        res.render('coursewares/showJS', {
-          title: courseware.name,
-          dashedName: dashedName,
-          name: courseware.name,
-          brief: courseware.description[0],
-          details: courseware.description.slice(1),
-          tests: courseware.tests,
-          challengeSeed: courseware.challengeSeed,
-          verb: resources.randomVerb(),
-          phrase: resources.randomPhrase(),
-          compliment: resources.randomCompliment(),
-          coursewareHash: courseware._id,
-          challengeType: courseware.challengeType
-        });
-      },
+      // Redirect to full name if the user only entered a partial
+      var dashedNameFull = courseware.name.toLowerCase().replace(/\s/g, '-');
+      if (dashedNameFull != dashedName) {
+        return res.redirect('../challenges/' + dashedNameFull);
+      }
 
-      2: function() {
-        res.render('coursewares/showVideo', {
-          title: courseware.name,
-          dashedName: dashedName,
-          name: courseware.name,
-          details: courseware.description,
-          tests: courseware.tests,
-          video: courseware.challengeSeed[0],
-          verb: resources.randomVerb(),
-          phrase: resources.randomPhrase(),
-          compliment: resources.randomCompliment(),
-          coursewareHash: courseware._id,
-          challengeType: courseware.challengeType
-        });
-      },
+      var challengeType = {
+        0: function() {
+          res.render('coursewares/showHTML', {
+            title: courseware.name,
+            dashedName: dashedName,
+            name: courseware.name,
+            brief: courseware.description[0],
+            details: courseware.description.slice(1),
+            tests: courseware.tests,
+            challengeSeed: courseware.challengeSeed,
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
+            coursewareHash: courseware._id,
+            environment: resources.whichEnvironment(),
+            challengeType: courseware.challengeType
+          });
+        },
 
-      3: function() {
-        res.render('coursewares/showZiplineOrBasejump', {
-          title: courseware.name,
-          dashedName: dashedName,
-          name: courseware.name,
-          details: courseware.description,
-          video: courseware.challengeSeed[0],
-          verb: resources.randomVerb(),
-          phrase: resources.randomPhrase(),
-          compliment: resources.randomCompliment(),
-          coursewareHash: courseware._id,
-          challengeType: courseware.challengeType
-        });
-      },
+        1: function() {
+          res.render('coursewares/showJS', {
+            title: courseware.name,
+            dashedName: dashedName,
+            name: courseware.name,
+            brief: courseware.description[0],
+            details: courseware.description.slice(1),
+            tests: courseware.tests,
+            challengeSeed: courseware.challengeSeed,
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
+            coursewareHash: courseware._id,
+            challengeType: courseware.challengeType
+          });
+        },
 
-      4: function() {
+        2: function() {
+          res.render('coursewares/showVideo', {
+            title: courseware.name,
+            dashedName: dashedName,
+            name: courseware.name,
+            details: courseware.description,
+            tests: courseware.tests,
+            video: courseware.challengeSeed[0],
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
+            coursewareHash: courseware._id,
+            challengeType: courseware.challengeType
+          });
+        },
+
+        3: function() {
           res.render('coursewares/showZiplineOrBasejump', {
-              title: courseware.name,
-              dashedName: dashedName,
-              name: courseware.name,
-              details: courseware.description,
-              video: courseware.challengeSeed[0],
-              verb: resources.randomVerb(),
-              phrase: resources.randomPhrase(),
-              compliment: resources.randomCompliment(),
-              coursewareHash: courseware._id,
-              challengeType: courseware.challengeType
+            title: courseware.name,
+            dashedName: dashedName,
+            name: courseware.name,
+            details: courseware.description,
+            video: courseware.challengeSeed[0],
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
+            coursewareHash: courseware._id,
+            challengeType: courseware.challengeType
+          });
+        },
+
+        4: function() {
+          res.render('coursewares/showZiplineOrBasejump', {
+            title: courseware.name,
+            dashedName: dashedName,
+            name: courseware.name,
+            details: courseware.description,
+            video: courseware.challengeSeed[0],
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
+            coursewareHash: courseware._id,
+            challengeType: courseware.challengeType
           });
         }
-    };
+      };
 
-    return challengeType[courseware.challengeType]();
+      return challengeType[courseware.challengeType]();
 
-  });
+    });
 };
 
 exports.testCourseware = function(req, res) {
   var coursewareName = req.body.name,
-      coursewareTests = req.body.tests,
-      coursewareDifficulty = req.body.difficulty,
-      coursewareDescription = req.body.description,
-      coursewareEntryPoint = req.body.challengeEntryPoint,
-      coursewareChallengeSeed = req.body.challengeSeed;
-      coursewareTests = coursewareTests.split('\r\n');
-      coursewareDescription = coursewareDescription.split('\r\n');
-      coursewareTests.filter(getRidOfEmpties);
-      coursewareDescription.filter(getRidOfEmpties);
-      coursewareChallengeSeed = coursewareChallengeSeed.replace('\r', '');
+    coursewareTests = req.body.tests,
+    coursewareDifficulty = req.body.difficulty,
+    coursewareDescription = req.body.description,
+    coursewareEntryPoint = req.body.challengeEntryPoint,
+    coursewareChallengeSeed = req.body.challengeSeed;
+  coursewareTests = coursewareTests.split('\r\n');
+  coursewareDescription = coursewareDescription.split('\r\n');
+  coursewareTests.filter(getRidOfEmpties);
+  coursewareDescription.filter(getRidOfEmpties);
+  coursewareChallengeSeed = coursewareChallengeSeed.replace('\r', '');
   res.render('courseware/show', {
     completedWith: null,
     title: coursewareName,
@@ -219,11 +219,11 @@ exports.publicGenerator = function(req, res) {
 
 exports.generateChallenge = function(req, res) {
   var coursewareName = req.body.name,
-  coursewareTests = req.body.tests,
-  coursewareDifficulty = req.body.difficulty,
-  coursewareDescription = req.body.description,
-  coursewareEntryPoint = req.body.challengeEntryPoint,
-  coursewareChallengeSeed = req.body.challengeSeed;
+    coursewareTests = req.body.tests,
+    coursewareDifficulty = req.body.difficulty,
+    coursewareDescription = req.body.description,
+    coursewareEntryPoint = req.body.challengeEntryPoint,
+    coursewareChallengeSeed = req.body.challengeSeed;
   coursewareTests = coursewareTests.split('\r\n');
   coursewareDescription = coursewareDescription.split('\r\n');
   coursewareTests.filter(getRidOfEmpties);
@@ -280,7 +280,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
   var coursewareHash = req.body.coursewareInfo.coursewareHash;
   var solutionLink = req.body.coursewareInfo.publicURL;
   var githubLink = req.body.coursewareInfo.challengeType === '4'
-  ? req.body.coursewareInfo.githubURL : true;
+    ? req.body.coursewareInfo.githubURL : true;
   if (!solutionLink || !githubLink) {
     req.flash('errors', {
       msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +

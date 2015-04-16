@@ -1,145 +1,145 @@
 extends ../layout-wide
 block content
 
-    script(src='/js/lib/codemirror/lib/codemirror.js')
-    script(src='/js/lib/codemirror/addon/edit/closebrackets.js')
-    script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
-    script(src='/js/lib/codemirror/addon/lint/lint.js')
-    script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
-    script(src='//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js')
-    script(src='/js/lib/chai/chai.js')
-    link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
-    link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
-    link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
-    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Ubuntu+Mono")
-    script(src='/js/lib/codemirror/mode/javascript/javascript.js')
-    script(src='/js/lib/jailed/jailed.js')
-    script(src='/js/lib/bonfire/bonfireInit.js')
-    script(src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.13.0/ramda.min.js")
+  script(src='/js/lib/codemirror/lib/codemirror.js')
+  script(src='/js/lib/codemirror/addon/edit/closebrackets.js')
+  script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
+  script(src='/js/lib/codemirror/addon/lint/lint.js')
+  script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
+  script(src='//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js')
+  script(src='/js/lib/chai/chai.js')
+  link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
+  link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
+  link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
+  link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Ubuntu+Mono")
+  script(src='/js/lib/codemirror/mode/javascript/javascript.js')
+  script(src='/js/lib/jailed/jailed.js')
+  script(src='/js/lib/bonfire/bonfireInit.js')
+  script(src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.13.0/ramda.min.js")
 
 
-    .row
-        .col-xs-12.col-sm-12.col-md-4.bonfire-top
-            #testCreatePanel
-                h1#bonfire-name.text-center= name
-                h2.text-center
-                    .bonfire-flames Difficulty:&thinsp;
-                        if (difficulty == "0")
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                        if (difficulty == "1")
-                            i.ion-ios-flame
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                        if (difficulty == "2")
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                        if (difficulty == "3")
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame-outline
-                            i.ion-ios-flame-outline
-                        if (difficulty == "4")
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame-outline
-                        if (difficulty == "5")
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                            i.ion-ios-flame
-                .well
-                    .row
-                        .col-xs-12
-                            .bonfire-instructions
-                                p= brief
-                                #brief-instructions
-                                    #more-info.btn.btn-primary.btn-block.btn-primary-ghost
-                                        span.ion-arrow-down-b
-                                        | More information
-                                #long-instructions.row.hide
-                                    .col-xs-12
-                                        for sentence in details
-                                            p!= sentence
-                                        #MDN-links
-                                            p Here are some helpful links:
-                                            for link, index in MDNlinks
-                                                ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
-                                        #less-info.btn.btn-primary.btn-block.btn-primary-ghost
-                                            span.ion-arrow-up-b
-                                            | Less information
+  .row
+    .col-xs-12.col-sm-12.col-md-4.bonfire-top
+      #testCreatePanel
+        h1#bonfire-name.text-center= name
+        h2.text-center
+          .bonfire-flames Difficulty:&thinsp;
+            if (difficulty == "0")
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+            if (difficulty == "1")
+              i.ion-ios-flame
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+            if (difficulty == "2")
+              i.ion-ios-flame
+              i.ion-ios-flame
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+            if (difficulty == "3")
+              i.ion-ios-flame
+              i.ion-ios-flame
+              i.ion-ios-flame
+              i.ion-ios-flame-outline
+              i.ion-ios-flame-outline
+            if (difficulty == "4")
+              i.ion-ios-flame
+              i.ion-ios-flame
+              i.ion-ios-flame
+              i.ion-ios-flame
+              i.ion-ios-flame-outline
+            if (difficulty == "5")
+              i.ion-ios-flame
+              i.ion-ios-flame
+              i.ion-ios-flame
+              i.ion-ios-flame
+              i.ion-ios-flame
+        .well
+          .row
+            .col-xs-12
+              .bonfire-instructions
+                p= brief
+                #brief-instructions
+                  #more-info.btn.btn-primary.btn-block.btn-primary-ghost
+                    span.ion-arrow-down-b
+                    | More information
+                #long-instructions.row.hide
+                  .col-xs-12
+                    for sentence in details
+                      p!= sentence
+                    #MDN-links
+                      p Here are some helpful links:
+                      for link, index in MDNlinks
+                        ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
+                    #less-info.btn.btn-primary.btn-block.btn-primary-ghost
+                      span.ion-arrow-up-b
+                      | Less information
 
-                #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                br
-                form.code
-                    .form-group.codeMirrorView
-                        textarea#codeOutput(style='display: none;')
-                br
-                #testSuite
-                br
-                script(type="text/javascript").
-                    var tests = !{JSON.stringify(tests)};
-                    var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var passedBonfireHash = !{JSON.stringify(bonfireHash)};
-                    var challengeName = !{JSON.stringify(name)};
-                    var started = Math.floor(Date.now());
-                    var _ = R;
-                    var dashed = !{JSON.stringify(dashedName)};
+        #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+        br
+        form.code
+          .form-group.codeMirrorView
+            textarea#codeOutput(style='display: none;')
+        br
+        #testSuite
+        br
+        script(type="text/javascript").
+          var tests = !{JSON.stringify(tests)};
+          var challengeSeed = !{JSON.stringify(challengeSeed)};
+          var passedBonfireHash = !{JSON.stringify(bonfireHash)};
+          var challengeName = !{JSON.stringify(name)};
+          var started = Math.floor(Date.now());
+          var _ = R;
+          var dashed = !{JSON.stringify(dashedName)};
 
-        .col-xs-12.col-sm-12.col-md-8
-            #mainEditorPanel
-                form.code
-                    .form-group.codeMirrorView
-                        textarea#codeEditor(autofocus=true, style='display: none;')
-                script(src='/js/lib/bonfire/bonfireFramework_v0.1.2.js')
-
-
-
-    #complete-bonfire-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.zoomIn.fast-animation
-            .modal-content
-                .modal-header.challenge-list-header= compliment
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body(ng-controller="pairedWithController")
-                    .text-center
-                        .animated.zoomInDown.delay-half
-                            span.completion-icon.ion-checkmark-circled.text-primary
-                    - if (user)
-                        form.form-horizontal(novalidate='novalidate', name='completedWithForm')
-                            .form-group.text-center
-                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
-                                    // extra field to distract password tools like lastpass from injecting css into our username field
-                                    input.form-control(ng-show="false")
-                                    input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser", autofocus)
-                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
-                                    alert(type='danger')
-                                        span.ion-close-circled
-                                        | Username not found
-
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next bonfire (ctrl + enter)
+    .col-xs-12.col-sm-12.col-md-8
+      #mainEditorPanel
+        form.code
+          .form-group.codeMirrorView
+            textarea#codeEditor(autofocus=true, style='display: none;')
+        script(src='/js/lib/bonfire/bonfireFramework_v0.1.2.js')
 
 
-                        - if (user.progressTimestamps.length > 2)
-                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
-                                i.fa.fa-twitter &thinsp;
-                                    = phrase
-                    - else
-                        a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
 
-    script.
-        var MDNlinks = !{JSON.stringify(MDNlinks)};
-        if (!MDNlinks.length) {
-            $('#MDN-links').addClass('collapse');
-        }
+  #complete-bonfire-dialog.modal(tabindex='-1')
+    .modal-dialog.animated.zoomIn.fast-animation
+      .modal-content
+        .modal-header.challenge-list-header= compliment
+        a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+        .modal-body(ng-controller="pairedWithController")
+          .text-center
+            .animated.zoomInDown.delay-half
+              span.completion-icon.ion-checkmark-circled.text-primary
+          - if (user)
+          form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+            .form-group.text-center
+              .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
+                // extra field to distract password tools like lastpass from injecting css into our username field
+                input.form-control(ng-show="false")
+                input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser", autofocus)
+              .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
+                alert(type='danger')
+                  span.ion-close-circled
+                  | Username not found
+
+          a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next bonfire (ctrl + enter)
+
+
+          - if (user.progressTimestamps.length > 2)
+          a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
+            i.fa.fa-twitter &thinsp;
+              = phrase
+          - else
+          a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+
+  script.
+    var MDNlinks = !{JSON.stringify(MDNlinks)};
+    if (!MDNlinks.length) {
+      $('#MDN-links').addClass('collapse');
+    }
