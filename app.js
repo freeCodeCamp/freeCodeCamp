@@ -44,6 +44,7 @@ var express = require('express'),
   contactController = require('./controllers/contact'),
   bonfireController = require('./controllers/bonfire'),
   coursewareController = require('./controllers/courseware'),
+  pairCodingController = require('./controllers/pairCoding.js'),
 
   /**
    *  Stories
@@ -243,9 +244,7 @@ app.get('/deploy-a-website', resourcesController.deployAWebsite);
 app.get('/gmail-shortcuts', resourcesController.gmailShortcuts);
 app.get('/control-shortcuts', resourcesController.controlShortcuts);
 app.get('/control-shortcuts', resourcesController.deployAWebsite);
-<<<<<<< HEAD
 app.get('/nodeschool-challenges', resourcesController.nodeSchoolChallenges);
-=======
 
 app.get('/pair-coding', pairCodingController.index);
 app.post('/pair-coding/setOnline', pairCodingController.setOnline);
@@ -253,7 +252,6 @@ app.get('/pair-coding/setOffline', pairCodingController.setOffline);
 app.post('/pair-coding/edit-request', pairCodingController.editPairRequest);
 app.get('/pair-coding/:onlinePostuserName', pairCodingController.returnPairInfo);
 
->>>>>>> mrrenter/paircode
 app.get('/stats', function(req, res) {
   res.redirect(301, '/learn-to-code');
 });
@@ -663,10 +661,10 @@ app.listen(app.get('port'), function () {
 
 var pairCodingIntervalMinutes = 20;
 var pairCodingIntervalMiliSeconds = pairCodingIntervalMinutes * 60 * 1000;
-var pC = require('./controllers/pairCoding.js');
+
 
 var pairCodingInterval = setInterval(function(){
-    pC.removeOldPosts();
+    pairCodingController.removeOldPosts();
 }, pairCodingIntervalMiliSeconds);
  
 module.exports = app;

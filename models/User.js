@@ -300,6 +300,10 @@ var userSchema = new mongoose.Schema({
 			type: String,
 			default: ''
 		},
+		slackHandle: {
+			type: String,
+			default: ''
+		},
 		codepenProfile: {
 			type: String,
 			default: ''

@@ -366,6 +366,7 @@ exports.postUpdateProfile = function(req, res, next) {
                 user.profile.linkedinProfile = req.body.linkedinProfile.trim() || '';
                 user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
                 user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
+                user.profile.slackHandle = req.body.slackHandle.trim() || '';
                 user.profile.bio = req.body.bio.trim() || '';
                 user.profile.picture = req.body.picture.trim() || 'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png';
                 user.portfolio.website1Title = req.body.website1Title.trim() || '';
