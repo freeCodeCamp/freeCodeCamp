@@ -35,25 +35,25 @@ var newPairRequest = function(userid, username, comment, slack) {
 
 		pairCode.save(function(err) {
 			if (err) {
-				return res.status(400);
+				return res.sendStatus(400);
 			} 
 		});
 
 };
 
-exports.setOnline = function(req, res) {
+exports.setOnline = function(req, res, next) {
 	req.user.pair.timeOnline = Date.now();
 	if (!req.user.pair.onlineStatus) {
 		// set the online status to true
 		User.findById(req.user._id, function(err, user) {
 			if (err) {
-				console.log("there was an error finding the user");
+				return next(err);
 			} 
 			user.pair.onlineStatus = true;
 			user.pair.timeOnline = new Date();
 			user.save(function(err) {
 				if (err) {
-					console.log("there was an error saving the user: " + err);
+					return next(err);
 				}
 			});
 		});
@@ -68,11 +68,11 @@ exports.setOnline = function(req, res) {
 
 
 
-exports.editPairRequest = function(req, res) {
+exports.editPairRequest = function(req, res, next) {
 	// search for the user's pair request
 	PairUser.findOne({user: req.user._id}, function(err, pairuser) {
 		if (err) {
-			console.log("There was an error finding the pair request.");
+			return next(err);
 		}
 		if (!pairuser) {
 			// set their online status to false
@@ -80,7 +80,7 @@ exports.editPairRequest = function(req, res) {
 				user.pair.onlineStatus = false;
 				user.save(function(err) {
 					if (err) {
-						console.log("Error saving user's online status.");
+						return next(err);
 					}
 				});
 			});
@@ -97,7 +97,7 @@ exports.editPairRequest = function(req, res) {
 			pairuser.timeOnline = new Date();
 			pairuser.save(function(err) {
 				if (err) {
-					console.log("There was an error saving the pairuser.");
+					return next(err);
 				}
 				else {
 					res.redirect('/pair-coding');
@@ -107,10 +107,10 @@ exports.editPairRequest = function(req, res) {
 	});
 };
 
-exports.removeOldPosts = function() {
+exports.removeStalePosts = function() {
+
 	// this is the oldest possible time to keep
 	var cutoff = Date.now() - 1800000;	// 30 minutes
-	//var cutoff = Date.now()-(120000/4);		// test value, 2 minutes
 
 	// get all old pairusers and remove them.
 	PairUser.find().where('timeOnline').lt(cutoff).exec(function(err, pairs) {
@@ -124,7 +124,7 @@ exports.removeOldPosts = function() {
 				user.pair.onlineStatus = false;
 				user.save(function(err) {
 					if (err) {
-						console.log("error saving user with new online stauts.");
+						console.log("error saving user with new online status.");
 					}
 				});
 			});
@@ -143,29 +143,29 @@ exports.removeOldPosts = function() {
 };
 
 
-exports.setOffline = function(req, res){
+exports.setOffline = function(req, res, next){
 	// change the user's online status
 	User.findById(req.user._id, function(err, user) {
 		if (err) {
-			console.log("ERROR: Could not find user, METHOD: setOffline: " + err);
+			return next(err);
 		} 
 		user.pair.onlineStatus = false;
 		user.pair.timeOnline = new Date();
 		user.save(function(err) {
 			if (err) {
-				console.log("ERROR: Could not save user, METHOD: setOffline: " + err);
+				return next(err);
 			}
 		});
 	});
 	// remove the pair requests from that user
 	PairUser.findOne({user: req.user._id}, function(err, pair) {
 		if (err) {
-			console.log("Error finding offline users.");
+			return next(err);
 		} 
 		if (pair !== null){
 			pair.remove(function(err) {
 				if (err) {
-					console.log("error removing old posts.");
+					return next(err);
 				}
 			});
 		}
@@ -173,15 +173,14 @@ exports.setOffline = function(req, res){
 	res.redirect('/pair-coding');
 };
 
-exports.returnPairInfo = function(req, res){
+exports.returnPairInfo = function(req, res, next){
 	var usernameToPair = req.params.onlinePostuserName;
 	
 	PairUser.findOne({username: usernameToPair}, function(err, pair) {
 		if (err) {
-			console.log("Error finding the pair user.");
+			return next(err);
 		}
 		if (!pair) {
-			console.log("Expired");
 			res.redirect('/pair-coding');
 		} else {
 		// get comment information to port to template

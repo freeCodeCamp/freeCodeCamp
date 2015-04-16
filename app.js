@@ -659,12 +659,12 @@ app.listen(app.get('port'), function () {
  * Check the db every n minutes and remove users from /pair-coding
 */
 
-var pairCodingIntervalMinutes = 20;
-var pairCodingIntervalMiliSeconds = pairCodingIntervalMinutes * 60 * 1000;
 
+var pairCodingIntervalMinutes = 30;
+var pairCodingIntervalMilliSeconds = pairCodingIntervalMinutes * 60 * 1000;
 
 var pairCodingInterval = setInterval(function(){
-    pairCodingController.removeOldPosts();
-}, pairCodingIntervalMiliSeconds);
+    pairCodingController.removeStalePosts();
+}, pairCodingIntervalMilliSeconds);
  
 module.exports = app;

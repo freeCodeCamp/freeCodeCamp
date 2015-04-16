@@ -1,7 +1,4 @@
-var bcrypt = require('bcrypt-nodejs');
-var crypto = require('crypto');
 var mongoose = require('mongoose');
-var secrets = require('../config/secrets');
 var Schema = mongoose.Schema;
 
 var PairUserSchema = new mongoose.Schema({
