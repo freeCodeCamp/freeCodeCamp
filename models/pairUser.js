@@ -13,7 +13,7 @@ var PairUserSchema = new mongoose.Schema({
 	comment: {type: String, default: "Come pair with me."},
 	tags: {type:[String], default: []},
 	timeOnline: {type:Date, default: null},
-	userGit: String
+	userSlack: String
 	
 });
 

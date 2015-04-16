@@ -20,7 +20,7 @@ exports.index = function(req, res){
 	}	
 };
 
-var newPairRequest = function(userid, username, comment, git) {
+var newPairRequest = function(userid, username, comment, slack) {
 	var pairCode = new PairUser({});
 		pairCode.user = userid;
 		pairCode.username = username;
@@ -31,7 +31,7 @@ var newPairRequest = function(userid, username, comment, git) {
 			} else {
 				pairCode.comment = comment;
 			}
-		pairCode.userGit = git;
+		pairCode.userSlack = slack;
 
 		pairCode.save(function(err) {
 			if (err) {
@@ -57,10 +57,11 @@ exports.setOnline = function(req, res) {
 				}
 			});
 		});
-		var gitSplit = req.user.profile.githubProfile.split("/");
-		var gitUser = gitSplit[gitSplit.length-1];
+		//var gitSplit = req.user.profile.githubProfile.split("/");
+		//var gitUser = gitSplit[gitSplit.length-1];
+		var slackUser = req.user.profile.slackHandle;
 
-		newPairRequest(req.user._id, req.user.profile.username, req.body.comment, gitUser);
+		newPairRequest(req.user._id, req.user.profile.username, req.body.comment, slackUser);
 	} 
 	res.redirect('/pair-coding');
 };
@@ -190,7 +191,7 @@ exports.returnPairInfo = function(req, res){
 				page: "pairWithUser",
 				pairWithUser: pair.username,		
 				comment: comment,
-				userGit: pair.userGit
+				userSlack: pair.userSlack
 			});
 		}
 		});
