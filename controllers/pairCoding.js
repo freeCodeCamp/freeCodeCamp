@@ -1,5 +1,5 @@
 var User = require('./../models/User'),
-	mongodb = require('mongodb'),
+  mongodb = require('mongodb'),
 	User = require('./../models/User');
 	PairUser = require('./../models/pairUser');
 
