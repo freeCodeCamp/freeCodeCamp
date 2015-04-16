@@ -44,16 +44,16 @@ var express = require('express'),
   contactController = require('./controllers/contact'),
   bonfireController = require('./controllers/bonfire'),
   coursewareController = require('./controllers/courseware'),
-  nonprofitController = require('./controllers/nonprofits')
+  nonprofitController = require('./controllers/nonprofits'),
 
-  /**
-   *  Stories
-   */
+/**
+ *  Stories
+ */
   storyController = require('./controllers/story'),
 
-  /**
-   * API keys and Passport configuration.
-   */
+/**
+ * API keys and Passport configuration.
+ */
   secrets = require('./config/secrets'),
   passportConf = require('./config/passport');
 
@@ -213,15 +213,15 @@ app.use(function (req, res, next) {
 });
 
 app.use(function (req, res, next) {
-    // Remember original destination before login.
-    var path = req.path.split('/')[1];
-    if (/auth|login|logout|signin|signup|fonts|favicon/i.test(path)) {
-        return next();
-    } else if (/\/stories\/comments\/\w+/i.test(req.path)) {
-        return next();
-    }
-    req.session.returnTo = req.path;
-    next();
+  // Remember original destination before login.
+  var path = req.path.split('/')[1];
+  if (/auth|login|logout|signin|signup|fonts|favicon/i.test(path)) {
+    return next();
+  } else if (/\/stories\/comments\/\w+/i.test(req.path)) {
+    return next();
+  }
+  req.session.returnTo = req.path;
+  next();
 });
 
 app.use(
@@ -237,11 +237,11 @@ app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 app.get('/', homeController.index);
 
 app.get('/privacy', function(req, res) {
-    res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
+  res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
 });
 
 app.get('/nonprofit-project-instructions', function(req, res) {
-    res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
+  res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
 });
 
 app.get('/jquery-exercises', resourcesController.jqueryExercises);
@@ -253,31 +253,31 @@ app.get('/twitch', resourcesController.twitch);
 app.get('/map', challengeMapController.challengeMap);
 
 app.get('/live-pair-programming', function(req, res) {
-    res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
+  res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
 });
 
 app.get('/install-screenhero', function(req, res) {
-    res.redirect(301, '/field-guide/install-screenhero');
+  res.redirect(301, '/field-guide/install-screenhero');
 });
 
 app.get('/guide-to-our-nonprofit-projects', function(req, res) {
-    res.redirect(301, '/field-guide/a-guide-to-our-nonprofit-projects');
+  res.redirect(301, '/field-guide/a-guide-to-our-nonprofit-projects');
 });
 
 app.get('/chromebook', function(req, res) {
-    res.redirect(301, '/field-guide/chromebook');
+  res.redirect(301, '/field-guide/chromebook');
 });
 
 app.get('/deploy-a-website', function(req, res) {
-    res.redirect(301, '/field-guide/deploy-a-website');
+  res.redirect(301, '/field-guide/deploy-a-website');
 });
 
 app.get('/gmail-shortcuts', function(req, res) {
-    res.redirect(301, '/field-guide/gmail-shortcuts');
+  res.redirect(301, '/field-guide/gmail-shortcuts');
 });
 
 app.get('/nodeschool-challenges', function(req, res) {
-    res.redirect(301, '/field-guide/nodeschool-challenges');
+  res.redirect(301, '/field-guide/nodeschool-challenges');
 });
 
 
@@ -363,8 +363,8 @@ app.get('/nonprofits/getNonprofitList', nonprofitController.showAllNonprofits);
 app.get('/nonprofits/interested-in-nonprofit/:nonprofitName', nonprofitController.interestedInNonprofit);
 
 app.get(
-    '/nonprofits/:nonprofitName',
-    nonprofitController.returnIndividualNonprofit
+  '/nonprofits/:nonprofitName',
+  nonprofitController.returnIndividualNonprofit
 );
 
 app.get(
@@ -411,13 +411,13 @@ app.get('/api/slack', function(req, res) {
         form: invite
       };
 
-      request(options, function (error, response, body) {
+      request(options, function (error, response) {
         if (!error && response.statusCode === 200) {
           req.flash('success', {
             msg: "We've successfully requested an invite for you. Please check your email and follow the instructions from Slack."
           });
           req.user.sentSlackInvite = true;
-          req.user.save(function(err, user) {
+          req.user.save(function(err) {
             if (err) {
               next(err);
             }
