@@ -22,10 +22,23 @@ var editor = myCodeMirror;
 // Hijack tab key to insert two spaces instead
 editor.setOption("extraKeys", {
     Tab: function(cm) {
-        var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
-        cm.replaceSelection(spaces);
+        if (cm.somethingSelected()){
+            cm.indentSelection("add");
+        } else {
+            var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+            cm.replaceSelection(spaces);
+        }
+    },
+    "Shift-Tab": function(cm) {
+        if (cm.somethingSelected()){
+            cm.indentSelection("subtract");
+        } else {
+            var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+            cm.replaceSelection(spaces);
+        }
     },
     "Ctrl-Enter": function() {
+        bonfireExecute();
         return false;
     }
 });

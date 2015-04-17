@@ -27,11 +27,9 @@ exports.returnNextChallenge = function(req, res) {
     }
 };
 
-exports.returnChallenge = function(req, res) {
+exports.returnChallenge = function(req, res, next) {
     var challengeNumber = parseInt(req.params.challengeNumber) || 0;
-    if (challengeNumber === 2) {
-        return res.redirect('../challenges/3');
-    }
+
     if (challengeNumber > highestChallengeNumber) {
         req.flash('errors', {
             msg: "It looks like you've either completed all the challenges we have available or requested a challenge we don't have."
@@ -41,7 +39,7 @@ exports.returnChallenge = function(req, res) {
     Challenge.find({}, null, { sort: { challengeNumber: 1 } }, function(err, c) {
         if (err) {
             debug('Challenge err: ', err);
-            next(err);
+            return next(err);
         }
         res.render('challenges/show', {
             title: 'Challenge: ' + c[challengeNumber].name,

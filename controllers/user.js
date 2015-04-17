@@ -94,8 +94,10 @@ exports.getEmailSignup = function(req, res) {
  */
 
 exports.postEmailSignup = function(req, res, next) {
-    var errors = req.validationErrors();
 
+    req.assert('email', 'valid email required').isEmail();
+    var errors = req.validationErrors();
+    
     if (errors) {
         req.flash('errors', errors);
         return res.redirect('/email-signup');
@@ -123,7 +125,7 @@ exports.postEmailSignup = function(req, res, next) {
         password: req.body.password,
         profile : {
             username: req.body.username.trim(),
-            picture: 'https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png'
+            picture: 'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png'
         }
     });
 
@@ -151,33 +153,33 @@ exports.postEmailSignup = function(req, res, next) {
 
             user.save(function(err) {
                 if (err) { return next(err); }
+                var transporter = nodemailer.createTransport({
+                    service: 'Mandrill',
+                    auth: {
+                        user: secrets.mandrill.user,
+                        pass: secrets.mandrill.password
+                    }
+                });
+                var mailOptions = {
+                    to: user.email,
+                    from: 'Team@freecodecamp.com',
+                    subject: 'Welcome to Free Code Camp!',
+                    text: [
+                        'Greetings from San Francisco!\n\n',
+                        'Thank you for joining our community.\n',
+                        'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
+                        "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
+                        'Good luck with the challenges!\n\n',
+                        '- Our All-Volunteer Team'
+                    ].join('')
+                };
+                transporter.sendMail(mailOptions, function(err) {
+                    if (err) { return next(err); }
+                });
                 req.logIn(user, function(err) {
                     if (err) { return next(err); }
                     res.redirect('/email-signup');
                 });
-            });
-            var transporter = nodemailer.createTransport({
-                service: 'Mandrill',
-                auth: {
-                    user: secrets.mandrill.user,
-                    pass: secrets.mandrill.password
-                }
-            });
-            var mailOptions = {
-                to: user.email,
-                from: 'Team@freecodecamp.com',
-                subject: 'Welcome to Free Code Camp!',
-                text: [
-                    'Greetings from San Francisco!\n\n',
-                    'Thank you for joining our community.\n',
-                    'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
-                    "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
-                    'Good luck with the challenges!\n\n',
-                    '- the Volunteer Camp Counselor Team'
-                ].join('')
-            };
-            transporter.sendMail(mailOptions, function(err) {
-                if (err) { return err; }
             });
         });
     });
@@ -208,8 +210,9 @@ exports.getAccountAngular = function(req, res) {
  * Unique username check API Call
  */
 
-exports.checkUniqueUsername = function(req, res) {
+exports.checkUniqueUsername = function(req, res, next) {
     User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
         if (data == 1) {
             return res.send(true);
         } else {
@@ -221,8 +224,9 @@ exports.checkUniqueUsername = function(req, res) {
 /**
  * Existing username check
  */
-exports.checkExistingUsername = function(req, res) {
+exports.checkExistingUsername = function(req, res, next) {
     User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
         if (data === 1) {
             return res.send(true);
         } else {
@@ -235,8 +239,9 @@ exports.checkExistingUsername = function(req, res) {
  * Unique email check API Call
  */
 
-exports.checkUniqueEmail = function(req, res) {
+exports.checkUniqueEmail = function(req, res, next) {
     User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
         if (data == 1) {
             return res.send(true);
         } else {
@@ -253,12 +258,13 @@ exports.checkUniqueEmail = function(req, res) {
 
 exports.returnUser = function(req, res, next) {
     User.find({'profile.username': req.params.username.toLowerCase()}, function(err, user) {
-        if (err) { debug('Username err: ', err); next(err); }
+        if (err) { debug('Username err: ', err); return next(err); }
         if (user[0]) {
             var user = user[0];
             Challenge.find({}, null, {sort: {challengeNumber: 1}}, function (err, c) {
+                if (err) { return next(err); }
                 res.render('account/show', {
-                    title: 'Camper: ',
+                    title: 'Camper ' + user.profile.username + '\'s portfolio',
                     username: user.profile.username,
                     name: user.profile.name,
                     location: user.profile.location,
@@ -298,7 +304,7 @@ exports.returnUser = function(req, res, next) {
  * Update profile information.
  */
 
-exports.updateProgress = function(req, res) {
+exports.updateProgress = function(req, res, next) {
     User.findById(req.user.id, function(err, user) {
         if (err) return next(err);
         user.email = req.body.email || '';
@@ -322,7 +328,6 @@ exports.updateProgress = function(req, res) {
 
 exports.postUpdateProfile = function(req, res, next) {
 
-    // What does this do?
     User.findById(req.user.id, function(err, user) {
         if (err) return next(err);
         var errors = req.validationErrors();
@@ -342,7 +347,7 @@ exports.postUpdateProfile = function(req, res, next) {
                 });
                 return res.redirect('/account');
             }
-            User.findOne({ username: req.body.username }, function(err, existingUsername) {
+            User.findOne({ 'profile.username': req.body.username }, function(err, existingUsername) {
                 if (err) {
                     return next(err);
                 }
@@ -361,8 +366,9 @@ exports.postUpdateProfile = function(req, res, next) {
                 user.profile.linkedinProfile = req.body.linkedinProfile.trim() || '';
                 user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
                 user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
+                user.profile.slackHandle = req.body.slackHandle.trim() || '';
                 user.profile.bio = req.body.bio.trim() || '';
-                user.profile.picture = req.body.picture.trim() || 'https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png';
+                user.profile.picture = req.body.picture.trim() || 'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png';
                 user.portfolio.website1Title = req.body.website1Title.trim() || '';
                 user.portfolio.website1Link = req.body.website1Link.trim() || '';
                 user.portfolio.website1Image = req.body.website1Image.trim() || '';
@@ -378,9 +384,18 @@ exports.postUpdateProfile = function(req, res, next) {
                     if (err) {
                         return next(err);
                     }
-                    req.flash('success', {msg: 'Profile information updated.'});
-                    res.redirect('/account');
-                    resources.updateUserStoryPictures(user._id.toString(), user.profile.picture, user.profile.username);
+                    resources.updateUserStoryPictures(
+                      user._id.toString(),
+                      user.profile.picture,
+                      user.profile.username,
+                      function(err) {
+                        if (err) { return next(err); }
+                        req.flash('success', {
+                          msg: 'Profile information updated.'
+                        });
+                        res.redirect('/account');
+                      }
+                    );
                 });
             });
         });
@@ -461,7 +476,7 @@ exports.getOauthUnlink = function(req, res, next) {
  * Reset Password page.
  */
 
-exports.getReset = function(req, res) {
+exports.getReset = function(req, res, next) {
     if (req.isAuthenticated()) {
         return res.redirect('/');
     }

@@ -29,9 +29,10 @@
 									userOnline[i].comment +
 								"</a>" +
 							"</div>" +
-							"<div class='col-xs-12'>" +
-								"<span>" +
-									"posted " + onlineForMinutes + " minute" + minutesText + " ago by <a href='/" + userOnline[i].user.profile.username + "'>" + userOnline[i].user.profile.username + "</a> " +
+							"<div class='col-xs-12'>" + 
+								"<span class='col-xs-6'>Find them on Slack: @" + userOnline[i].userSlack+ "</span>" + 
+								"<span class='col-xs-6' style='text-align: right;'>" +
+									 onlineForMinutes + " minute" + minutesText + " ago by <a href='/" + userOnline[i].user.profile.username + "'>" + userOnline[i].user.profile.username + "</a> " +
 								"</span>" +
 							"</div>" +
 						"</div>" +

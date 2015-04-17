@@ -10,10 +10,9 @@ block content
 				.col-xs-12
 				.text-center
 					#story-list.story-list(style="margin:10px")
-						if (user.profile.githubProfile !== '')
+						if (user.profile.userSlack !== '')
 								if (page === 'pairUser')
 									include ./add-paircode.jade
-									include ./single-view
 									
 								else if (page === 'pairWithUser')
 									include ./pairWith
@@ -25,4 +24,4 @@ block content
 								.spacer
 									.spacer
 										a(href="/account")
-											button.btn.btn-big.btn-primary.btn-responsive(type="button") You need to update your Github link in your profile. Click here to update now
+											button.btn.btn-big.btn-primary.btn-responsive(type="button") You need to update your Slack handle in your profile. Click here to update now

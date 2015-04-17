@@ -31,7 +31,8 @@
       "You may need to turn the string into an array before you can reverse it.",
       "Your result must be a string."
     ],
-    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}\n\nreverseString('hello');"
+    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}\n\nreverseString('hello');",
+    "MDNlinks" : ["Global String Object", "String.split()", "Array.reverse()", "Array.join()"]
   },
   {
     "_id": "a302f7aae1aa3152a5b413bc",
@@ -49,7 +50,8 @@
       "Factorials are often represented with the shorthand notation n!",
       "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f"
     ],
-    "challengeSeed": "function factorialize(num) {\n  return  num;\r\n}\n\nfactorialize(5);"
+    "challengeSeed": "function factorialize(num) {\n  return  num;\r\n}\n\nfactorialize(5);",
+    "MDNlinks" : ["Arithmetic Operators"]
   },
   {
     "_id": "aaa48de84e1ecc7c742e1124",
@@ -70,7 +72,8 @@
       "assert.deepEqual(palindrome(\"never odd or even\"), true);",
       "assert.deepEqual(palindrome(\"nope\"), false);"
     ],
-    "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n\n\npalindrome(\"eye\");"
+    "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n\n\npalindrome(\"eye\");",
+    "MDNlinks" : ["String.replace()", "String.toLowerCase()"]
   },
   {
     "_id": "a26cbbe9ad8655a977e1ceb5",
@@ -87,7 +90,8 @@
       "expect(findLongestWord('May the force be with you')).to.equal(5);",
       "expect(findLongestWord('Google do a barrel roll')).to.equal(6);",
       "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);"
-    ]
+    ],
+    "MDNlinks" : ["String.split()", "String.length"]
   },
   {
     "_id": "ab6137d4e35944e21037b769",
@@ -103,7 +107,8 @@
       "expect(titleCase(\"I'm a little tea pot\")).to.equal(\"I'm A Little Tea Pot\");",
       "expect(titleCase(\"sHoRt AnD sToUt\")).to.equal(\"Short And Stout\");",
       "expect(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")).to.equal(\"Here Is My Handle Here Is My Spout\");"
-    ]
+    ],
+    "MDNlinks" : ["String.charAt()"]
   },
   {
     "_id": "a789b3483989747d63b0e427",
@@ -119,7 +124,8 @@
       "expect(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).to.be.a('array');",
       "(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.eql([5,27,39,1001]);",
       "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]).should.eql([9,35,97,1000000]));"
-    ]
+    ],
+    "MDNlinks" : ["Comparison Operators"]
   },
   {
     "_id": "acda2fb1324d9b0fa741e6b5",
@@ -134,7 +140,8 @@
       "assert.strictEqual(end('Bastian', 'n'), true, 'should equal true if target equals end of string');",
       "assert.strictEqual(end('He has to give me a new name', 'name'), true, 'should equal true if target equals end of string');",
       "assert.strictEqual(end('If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing', 'mountain'), false, 'should equal false if target does not equal end of string');"
-    ]
+    ],
+    "MDNlinks" : ["String.substr()"]
   },
   {
     "_id": "afcc8d540bea9ea2669306b6",
@@ -148,7 +155,8 @@
       "assert.strictEqual(repeat('*', 3), '***', 'should repeat a string n times');",
       "assert.strictEqual(repeat('abc', 3), 'abcabcabc', 'should repeat a string n times');",
       "assert.strictEqual(repeat('abc', -2), '', 'should return an empty string for negative numbers');"
-    ]
+    ],
+    "MDNlinks" : ["Global String Object"]
   },
   {
     "_id": "ac6993d51946422351508a41",
@@ -163,7 +171,8 @@
       "expect(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...');",
       "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
       "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length');"
-    ]
+    ],
+    "MDNlinks" : ["String.slice()"]
   },
   {
     "_id": "a9bd25c716030ec90084d8a1",
@@ -176,8 +185,9 @@
     "tests": [
       "assert.deepEqual(chunk(['a', 'b', 'c', 'd'], 2), [['a', 'b'], ['c', 'd']], 'should return chunked arrays');",
       "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'should return chunked arrays');",
-      "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'should return cthe last chunk as remaining elements');"
-    ]
+      "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'should return the last chunk as remaining elements');"
+    ],
+    "MDNlinks" : ["Array.push()"]
   },
   {
     "_id": "ab31c21b530c0dafa9e241ee",
@@ -191,7 +201,8 @@
       "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
       "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
       "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array when n >= array.length');"
-    ]
+    ],
+    "MDNlinks" : ["Array.slice()", "Array.splice()"]
   },
   {
     "_id": "af2170cad53daa0770fabdea",
@@ -210,7 +221,8 @@
       "expect(mutation(['zyxwvutsrqponmlkjihgfedcba', 'qrstu'])).to.be.true;",
       "expect(mutation(['Mary', 'Army'])).to.be.true;",
       "expect(mutation(['Alien', 'line'])).to.be.true;"
-    ]
+    ],
+    "MDNlinks" : ["Array.sort()"]
   },
   {
     "_id": "adf08ec01beb4f99fc7a68f2",
@@ -225,7 +237,8 @@
       "assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9], 'should remove falsey values');",
       "assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c'], 'should return full array if no falsey elements');",
       "assert.deepEqual(bouncer([false, null, 0]), [], 'should return empty array if all elements are falsey');"
-    ]
+    ],
+    "MDNlinks" : ["Boolean Objects", "Array.filter()"]
   },
   {
     "_id":"a8e512fbe388ac2f9198f0fa",
@@ -238,7 +251,8 @@
     "tests":[
       "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
       "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');"
-    ]
+    ],
+    "MDNlinks" : ["Global Object", "Object.hasOwnProperty()", "Object.keys()"]
   },  
   {
     "_id":"a39963a4c10bc8b4d4f06d7e",
@@ -251,7 +265,8 @@
     "tests": [
       "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
       "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
-    ]
+    ],
+    "MDNlinks" : ["Array.filter()"]
   },
   {
     "_id": "a24c1a4622e3c05097f71d67",
@@ -282,7 +297,8 @@
       "expect(sumAll([4, 1])).to.equal(10);",
       "expect(sumAll([5, 10])).to.equal(45);",
       "expect(sumAll([10, 5])).to.equal(45);"
-    ]
+    ],
+    "MDNlinks" : ["Math.max()", "Math.min()", "Array.reduce()"]
   },
   {
     "_id": "a5de63ebea8dbee56860f4f2",
@@ -316,7 +332,8 @@
       "expect(fearNotLetter('bcd')).to.be.undefined;",
       "expect(fearNotLetter('abcdefghjklmno')).to.equal('i');",
       "expect(fearNotLetter('yz')).to.be.undefined;"
-    ]
+    ],
+    "MDNlinks" : ["String.charCodeAt()"]
   },
   {
     "_id": "a77dbc43c33f39daa4429b4f",
@@ -336,7 +353,8 @@
       "assert.strictEqual(boo(1), false);",
       "assert.strictEqual(boo(NaN), false);",
       "assert.strictEqual(boo('a'), false);"
-    ]
+    ],
+    "MDNlinks" : ["Boolean Objects"]
   },
   {
     "_id": "a105e963526e7de52b219be9",
@@ -365,7 +383,8 @@
     "tests": [
       "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
       "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
-    ]
+    ],
+    "MDNlinks" : ["RegExp"]
   },
   {
     "_id": "a103376db3ba46b2d50db289",
@@ -380,7 +399,8 @@
       "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'should return spinal case from string with camel case');",
       "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'should return spinal case from string with snake case');",
       "assert.strictEqual(spinalCase('Teletubbies say Eh-oh'), 'teletubbies-say-eh-oh', 'should return spinal case from string with spaces and hyphens');"
-    ]
+    ],
+    "MDNlinks" : ["RegExp", "String.replace()"]
   },
   {
     "_id": "a5229172f011153519423690",
@@ -399,7 +419,8 @@
       "expect(sumFibs(4)).to.equal(5);",
       "expect(sumFibs(75024)).to.equal(60696);",
       "expect(sumFibs(75025)).to.equal(135721);"
-    ]
+    ],
+    "MDNlinks" : ["Remainder"]
   },
   {
     "_id": "a3bfc1673c0526e06d3ac698",
@@ -444,7 +465,8 @@
     "tests": [
       "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'should return first found value');",
       "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'should return undefined if not found');"
-    ]
+    ],
+    "MDNlinks" : ["Array.some()"]
   },
   {
     "_id": "a5deed1811a43193f9f1c841",
@@ -458,7 +480,8 @@
       "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
       "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
       "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
-    ]
+    ],
+    "MDNlinks" : ["Arguments object", "Array.shift()"]
   },
   {
     "_id": "ab306dbdcc907c7ddfc30830",
@@ -472,7 +495,8 @@
       "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
       "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
       "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');"
-    ]
+    ], 
+    "MDNlinks" : ["Array.isArray()"]
   },
   {
     "_id": "a8d97bd4c764e91f9d2bda01",
@@ -486,7 +510,8 @@
     "tests": [
       "expect(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111')).to.equal(\"Aren't bonfires fun!?\");",
       "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
-      ]
+      ],
+      "MDNlinks" : ["String.charCodeAt()", "String.fromCharCode()"]
   },
   {
     "_id" : "a3f503de51cfab748ff001aa",
@@ -534,7 +559,25 @@
     "tests": [
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
-    ]
+    ],
+    "MDNlinks" : ["Object.hasOwnProperty()", "Object.getOwnPropertyNames()"]
+  },
+  {
+    "_id": "a97fd23d9b809dac9921074f",
+    "name": "Arguments Optional",
+    "difficulty": "2.22",
+    "description": [
+      "Create a function that sums two arguments together. If only one argument is provided, return a function that expects one additional argument and will return the sum.",
+      "For example, add(2, 3) should return 5, and add(2) should return a function that is waiting for an argument so that <code>var sum2And = add(2); return sum2And(3); // 5</code>",
+      "If either argument isn't a valid numbers, return undefined"
+    ],
+    "challengeSeed": "function add() {\n  return false;\n}\n\nadd(2,3);",
+    "tests": [
+      "expect(add(2, 3)).to.equal(5);",
+      "expect(add(2)(3)).to.equal(5);",
+      "expect(add('http://bit.ly/IqT6zt')).to.be.undefined;"
+    ],
+    "MDNlinks": ["Global Function Object", "Arguments object"]
   },
   {
     "_id": "a2f1d72d9b908d0bd72bb9f6",
@@ -561,7 +604,8 @@
       "bob.setFullName('George Carlin');",
       "expect(bob.getFullName()).to.eql('George Carlin');",
       "bob.setFullName('Bob Ross');"
-    ]
+    ],
+    "MDNlinks" : ["Closures", "Details of the Object Model"]
   },
   {
     "_id": "af4afb223120f7348cdfc9fd",
@@ -578,7 +622,8 @@
     "tests": [
       "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
       "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
-    ]
+    ],
+    "MDNlinks" : ["Math.pow()"]
   },
   {
     "_id": "aff0395860f5d3034dc0bfc9",

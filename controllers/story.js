@@ -19,7 +19,7 @@ function hotRank(timeValue, rank) {
      */
     var hotness;
     var z = Math.log(rank) / Math.log(10);
-    hotness = z + (timeValue / 45000000);
+    hotness = z + (timeValue / 115200000);
     return hotness;
 
 }
@@ -86,10 +86,12 @@ exports.recent = function(req, res) {
 exports.preSubmit = function(req, res) {
 
     var data = req.query;
-    var cleanData = sanitizeHtml(data.url);
+    var cleanData = sanitizeHtml(data.url, {
+                      allowedTags: [],
+                      allowedAttributes: []
+                    }).replace(/&quot;;/g, '"');
     if (data.url.replace(/&/g, '&amp;') !== cleanData) {
 
-        debug('data and cleandata', data, cleanData, data.url === cleanData);
         req.flash('errors', {
             msg: 'The data for this post is malformed'
         });
@@ -117,13 +119,13 @@ exports.returnIndividualStory = function(req, res, next) {
 
     var storyName = dashedName.replace(/\-/g, ' ');
 
-    Story.find({'storyLink' : new RegExp(storyName, 'i')}, function(err, story) {
+    Story.findOne({'storyLink' : new RegExp(storyName, 'i')}, function(err, story) {
         if (err) {
             next(err);
         }
 
 
-        if (story.length < 1) {
+        if (story == null) {
             req.flash('errors', {
                 msg: "404: We couldn't find a story with that name. Please double check the name."
             });
@@ -131,12 +133,22 @@ exports.returnIndividualStory = function(req, res, next) {
             return res.redirect('/stories/');
         }
 
-        story = story.pop();
         var dashedNameFull = story.storyLink.toLowerCase().replace(/\s/g, '-');
         if (dashedNameFull !== dashedName) {
             return res.redirect('../stories/' + dashedNameFull);
         }
 
+        var userVoted = false;
+        try {
+            var votedObj = story.upVotes.filter(function(a){
+                return a['upVotedByUsername'] === req.user['profile']['username'];
+            });
+            if (votedObj.length > 0){
+                userVoted = true;
+            }
+        } catch(err){
+            userVoted = false;
+        }
         res.render('stories/index', {
             title: story.headline,
             link: story.link,
@@ -146,11 +158,11 @@ exports.returnIndividualStory = function(req, res, next) {
             upVotes: story.upVotes,
             comments: story.comments,
             id: story._id,
-            user: req.user,
             timeAgo: moment(story.timePosted).fromNow(),
             image: story.image,
             page: 'show',
-            storyMetaDescription: story.metaDescription
+            storyMetaDescription: story.metaDescription,
+            hasUserVoted: userVoted
         });
     });
 };
@@ -225,8 +237,14 @@ exports.comments = function(req, res, next) {
 };
 
 exports.newStory = function(req, res) {
+    if (!req.user) {
+      return res.status(500);
+    }
     var url = req.body.data.url;
-    var cleanURL = sanitizeHtml(url);
+    var cleanURL = sanitizeHtml(url, {
+      allowedTags: [],
+      allowedAttributes: []
+    }).replace(/&quot;/g, '"');
     if (cleanURL !== url) {
         req.flash('errors', {
             msg: "The URL you submitted doesn't appear valid"
@@ -279,6 +297,9 @@ exports.newStory = function(req, res) {
 
 exports.storySubmission = function(req, res) {
     var data = req.body.data;
+    if (req.user._id.toString() !== data.author.userId.toString()) {
+        return res.status(500);
+    }
     var storyLink = data.headline
         .replace(/\'/g, '')
         .replace(/\"/g, '')
@@ -286,41 +307,60 @@ exports.storySubmission = function(req, res) {
         .replace(/[^a-z0-9]/gi, ' ')
         .replace(/\s+/g, ' ')
         .toLowerCase();
-    var link = data.link;
-    if (link.search(/^https?:\/\//g) === -1) {
-        link = 'http://' + link;
-    }
-    var story = new Story({
-        headline: sanitizeHtml(data.headline),
-        timePosted: Date.now(),
-        link: link,
-        description: sanitizeHtml(data.description),
-        rank: 1,
-        upVotes: data.upVotes,
-        author: data.author,
-        comments: [],
-        image: data.image,
-        storyLink: storyLink,
-        metaDescription: data.storyMetaDescription
-    });
 
-    story.save(function(err) {
+    Story.count({'storyLink': storyLink}, function(err, storyCount) {
         if (err) {
             return res.status(500);
         }
-        res.send(JSON.stringify({
-            storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
-        }));
+
+        // if duplicate storyLink add unique number
+        storyLink = (storyCount === 0) ? storyLink : storyLink + ' ' + storyCount;
+
+        var link = data.link;
+        if (link.search(/^https?:\/\//g) === -1) {
+            link = 'http://' + link;
+        }
+        var story = new Story({
+            headline: sanitizeHtml(data.headline, {
+                        allowedTags: [],
+                        allowedAttributes: []
+                      }).replace(/&quot;/g, '"'),
+            timePosted: Date.now(),
+            link: link,
+            description: sanitizeHtml(data.description, {
+                            allowedTags: [],
+                            allowedAttributes: []
+                        }).replace(/&quot;/g, '"'),
+            rank: 1,
+            upVotes: data.upVotes,
+            author: data.author,
+            comments: [],
+            image: data.image,
+            storyLink: storyLink,
+            metaDescription: data.storyMetaDescription
+        });
+
+        story.save(function(err) {
+            if (err) {
+                return res.status(500);
+            }
+            res.send(JSON.stringify({
+                storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
+            }));
+        });
     });
 };
 
 exports.commentSubmit = function(req, res) {
     var data = req.body.data;
+    if (req.user._id.toString() !== data.author.userId.toString()) {
+        return res.status(500);
+    }
     var sanitizedBody = sanitizeHtml(data.body,
         {
             allowedTags: [],
             allowedAttributes: []
-        });
+        }).replace(/&quot;/g, '"');
     if (data.body !== sanitizedBody) {
         req.flash('errors', {
             msg: 'HTML is not allowed'
@@ -342,11 +382,16 @@ exports.commentSubmit = function(req, res) {
 
 exports.commentOnCommentSubmit = function(req, res) {
     var data = req.body.data;
+
+    if (req.user._id.toString() !== data.author.userId.toString()) {
+        return res.status(500);
+    }
+
     var sanitizedBody = sanitizeHtml(data.body,
         {
             allowedTags: [],
             allowedAttributes: []
-        });
+        }).replace(/&quot;/g, '"');
     if (data.body !== sanitizedBody) {
         req.flash('errors', {
             msg: 'HTML is not allowed'

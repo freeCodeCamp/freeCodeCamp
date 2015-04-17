@@ -4,6 +4,13 @@ $(document).ready(function() {
         ga('send', 'event',  'Challenge', 'load', challengeName);
     }
 
+    // When introducing a new announcement, change the localStorage attribute
+    // and the HTML located in the footer
+    if (!localStorage || !localStorage.nodeSchoolAnnouncement) {
+        $('#announcementModal').modal('show');
+        localStorage.fccShowAnnouncement = "true";
+    }
+
     var CSRF_HEADER = 'X-CSRF-Token';
 
     var setCSRFToken = function(securityToken) {
@@ -37,6 +44,7 @@ $(document).ready(function() {
         }
     });
 
+
     function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash) {
         $('#complete-bonfire-dialog').modal('show');
         // Only post to server if there is an authenticated user
@@ -68,6 +76,12 @@ $(document).ready(function() {
     });
     $('#completed-courseware').on('click', function() {
         $('#complete-courseware-dialog').modal('show');
+    });
+
+    $('#complete-courseware-dialog').on('keypress', function(e) {
+      if (e.which === 13 || e === 13) {
+        $('#next-courseware-button').click();
+      }
     });
 
     $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
@@ -107,6 +121,7 @@ $(document).ready(function() {
         window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
     });
 
+
     // Bonfire instructions functions
     $('#more-info').on('click', function() {
         ga('send', 'event',  'Challenge', 'more-info', challengeName);
@@ -141,11 +156,14 @@ $(document).ready(function() {
                     $('#upvote').bind('click', upvoteHandler);
                 })
                 .done(function (data, textStatus, xhr) {
-                    $('#storyRank').text(data.rank);
+                    $('#upvote').text('Upvoted!').addClass('disabled');
+
+                    $('#storyRank').text(data.rank + " points");
                 });
         }
     };
     $('#upvote').on('click', upvoteHandler);
+
 
     var storySubmitButtonHandler = function storySubmitButtonHandler() {
 
@@ -262,6 +280,12 @@ profileValidation.controller('nonprofitFormController', ['$scope',
 ]);
 
 profileValidation.controller('doneWithFirst100HoursFormController', ['$scope',
+    function($scope) {
+
+    }
+]);
+
+profileValidation.controller('submitStoryController', ['$scope',
     function($scope) {
 
     }
