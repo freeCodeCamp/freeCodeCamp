@@ -370,11 +370,11 @@ app.post(
   passportConf.isAuthenticated,
   contactController.postDoneWithFirst100Hours
 );
-app.get(
-  '/nonprofit-project-instructions',
-  passportConf.isAuthenticated,
-  resourcesController.nonprofitProjectInstructions
-);
+//app.get(
+//  '/nonprofit-project-instructions',
+//  passportConf.isAuthenticated,
+//  resourcesController.nonprofitProjectInstructions
+//);
 app.post(
   '/update-progress',
   passportConf.isAuthenticated,
@@ -519,18 +519,6 @@ app.get(
 app.post(
   '/stories/upvote/',
   storyController.upvote
-);
-
-/**
- * Challenge related routes
- */
-app.get(
-  '/challenges/',
-  challengesController.returnNextChallenge
-);
-app.get(
-  '/challenges/:challengeNumber',
-  challengesController.returnChallenge
 );
 
 app.all('/account', passportConf.isAuthenticated);

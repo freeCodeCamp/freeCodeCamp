@@ -149,13 +149,6 @@ module.exports = {
     var date1 = new Date("10/15/2014");
     var date2 = new Date();
 
-
-    livePairProgramming: function(req, res) {
-        res.render('resources/live-pair-programming', {
-            title: 'Live Pair Programming'
-        });
-    },
-
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
     var announcements = resources.announcements;

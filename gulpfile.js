@@ -68,4 +68,4 @@ gulp.task('lint', function() {
   .pipe(eslint.format());
 });
 
-gulp.task('default', ['lint', 'serve', 'sync']);
+gulp.task('default', ['serve', 'sync']);

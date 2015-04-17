@@ -359,16 +359,6 @@ exports.storySubmission = function(req, res, next) {
     });
 };
 
-  story.save(function(err) {
-    if (err) {
-      return next(err);
-    }
-    res.send(JSON.stringify({
-      storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
-    }));
-  });
-};
-
 exports.commentSubmit = function(req, res, next) {
   var data = req.body.data;
   if (req.user._id.toString() !== data.author.userId.toString()) {
