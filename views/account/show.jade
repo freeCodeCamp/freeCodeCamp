@@ -1,5 +1,7 @@
 extends ../layout
 block content
+    script.
+        var challengeName = 'Profile View';
     .col-xs-12.col-sm-12.col-md-12
         .panel.panel-info
             .panel-heading.text-center
@@ -8,7 +10,7 @@ block content
                 if (user && user.profile.username === username)
                     .col-xs-12
                         .text-center
-                            a.btn.btn-big.btn-primary(href="/account") Update my public portfolio or manage my account
+                            a.btn.btn-big.btn-primary(href="/account") Update my portfolio page or manage my account
                         br
                 .row
                     .col-xs-12
@@ -39,7 +41,7 @@ block content
                         .col-xs-12.col-sm-12.col-md-3.text-center
                             .background-svg.img-center
                                 .points-on-top
-                                    = "[ " + points + " ]"
+                                    = "[ " + (user ? user.progressTimestamps.length : 0) + " ]"
 
 
                 .row
@@ -47,7 +49,7 @@ block content
                         if (website1Title && website1Link && website1Image)
                             .row
                                 .col-xs-12.col-md-5
-                                    img.img-center.img-responsive.portfolio-image(src=website1Image, alt="@#{username}'s #{website1Title")
+                                    img.img-center.img-responsive.portfolio-image(src=website1Image, alt="@#{username}'s #{website1Title}")
                                 .col-xs-12.col-md-7
                                     h3.text-center.wrappable.flat-top= website1Title
                                     a.btn.btn-lg.btn-block.btn-info(href=website1Link, target='_blank')
@@ -64,7 +66,7 @@ block content
                         if (website2Title && website2Link && website2Image)
                             .row
                                 .col-xs-12.col-md-5
-                                    img.img-responsive.portfolio-image.img-center(src=website2Image, alt="@#{username}'s #{website2Title")
+                                    img.img-responsive.portfolio-image.img-center(src=website2Image, alt="@#{username}'s #{website2Title}")
                                 .col-xs-12.col-md-7
                                     h3.text-center.wrappable.flat-top= website2Title
                                     a.btn.btn-lg.btn-block.btn-info(href=website2Link, target='_blank')
@@ -81,7 +83,7 @@ block content
                         if (website3Title && website3Link && website3Image)
                             .row
                                 .col-xs-12.col-md-5
-                                    img.img-responsive.portfolio-image.img-center(src=website3Image, alt="@#{username}'s #{website1Title")
+                                    img.img-responsive.portfolio-image.img-center(src=website3Image, alt="@#{username}'s #{website1Title}")
                                 .col-xs-12.col-md-7
                                     h3.text-center.wrappable.flat-top= website3Title
                                     a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
@@ -94,16 +96,65 @@ block content
                                     i.fa.icon-beaker
                                     | Try it out
 
-                - if (ch[0] > 0)
-                    .col-sm-12
-                        table.table.table-striped
-                            thead
-                                tr
-                                    th Challenge
-                                    th Date Finished
-                            for challenge in challenges
-                                if ch[challenge.challengeNumber] > 0
-                                    tr
-                                        td= challenges[challenge.challengeNumber].name
-                                        td= moment(ch[challenge.challengeNumber], 'X').format("MMM DD, YYYY")
-                            br
+                    .hidden-xs.col-sm-12
+                        script(src="//d3js.org/d3.v3.min.js")
+                        script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
+                        #cal-heatmap.img-center
+                            script.
+                                $(document).ready(function() {
+                                    setTimeout(function() {
+                                        var cal = new CalHeatMap();
+                                        var calendar = !{JSON.stringify(calender)};
+                                        cal.init({
+                                            itemSelector: "#cal-heatmap",
+                                            domain: "month",
+                                            subDomain: "day",
+                                            data: calendar,
+                                            cellSize: 15,
+                                            align: 'center',
+                                            cellRadius: 3,
+                                            cellPadding: 2,
+                                            tooltip: true,
+                                            range: 4,
+                                            start: new Date().setDate(new Date().getDate() - 90),
+                                            legendColors: ["#cccccc", "#215f1e"],
+                                            legend: [1, 2, 3]
+                                        });
+                                    }, 300);
+                                });
+                        .row
+                            .hidden-xs.col-sm-12.text-center
+                                .row.text-primary
+                                    h4.col-sm-6.text-right Longest Streak: #{longestStreak}
+                                    h4.col-sm-6.text-left Current Streak: #{currentStreak}
+
+                        - if (challenges.length > 0)
+                            .col-sm-12
+                                table.table.table-striped
+                                    thead
+                                        tr
+                                            th.col-xs-4 Challenge
+                                            th.col-xs-2 Completed
+                                            th.col-xs-6 Link
+                                    for challenge in challenges
+                                        tr
+                                            td.col-xs-4= challenge.name
+                                            td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6
+                                                a(href=challenge.solution) View my solution
+
+                                    br
+                        - if (bonfires.length > 0)
+                            .col-sm-12
+                                table.table.table-striped
+                                    thead
+                                        tr
+                                            th.col-xs-4 Bonfire
+                                            th.col-xs-2 Completed
+                                            th.col-xs-6 Solution
+                                    for bonfire in bonfires
+                                        tr
+                                            td.col-xs-4= bonfire.name
+                                            td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                            td.col-xs-6= bonfire.solution
+                                    br

@@ -1,6 +1,8 @@
 .spacer
     script.
         var storyId = !{JSON.stringify(id)};
+        var originalStoryLink = !{JSON.stringify(originalStoryLink)};
+        var originalStoryAuthorEmail = !{JSON.stringify(originalStoryAuthorEmail)};
         var comments = !{JSON.stringify(comments)};
         var upVotes = !{JSON.stringify(upVotes)};
         var image = !{JSON.stringify(image)};
@@ -56,7 +58,10 @@
             $('#image-display').removeClass('hidden-element')
         }
         $('#reply-to-main-post').on('click', function() {
-            if (!user) return;
+            if (typeof user == "undefined" || !user) {
+                window.location.href = '/signin';
+                return;
+            }
             $('#initial-comment-submit').removeClass('hidden-element');
             $(this).unbind('click');
             $('.comment-to-comment-formgroup').empty();

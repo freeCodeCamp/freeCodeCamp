@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     sync = require('browser-sync'),
     reload = sync.reload,
     inject = require('gulp-inject'),
-    reloadDelay = 1000;
+    reloadDelay = 1000,
+    eslint = require('gulp-eslint');
 
 var paths = {
     server: './app.js',
@@ -54,11 +55,17 @@ gulp.task('sync', ['serve'], function() {
     sync.init(null, {
       proxy: 'http://localhost:3000',
       logLeval: 'debug',
-      files: ['public/**/*'],
+      files: ['public/js/lib/*/*.{js, jsx}'],
       port: 3001,
       open: true,
       reloadDelay: reloadDelay
     });
+});
+
+gulp.task('lint', function() {
+  return gulp.src(['public/js/lib/**/*'])
+  .pipe(eslint())
+  .pipe(eslint.format());
 });
 
 gulp.task('default', ['serve', 'sync']);

@@ -17,6 +17,10 @@ var links =
 	"Global Function Object": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
 	"Arguments object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments",
 
+	// ========= GLOBAL OBJECT METHODS
+	"parseInt()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt",
+
+
 	// =========  PROPERTIES/MISC
 	"String.length" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length",
 
@@ -63,7 +67,7 @@ var links =
 	"Array.sort()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort",
 	"Array.splice()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice",
 	"Array.toString()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toString",
-
+    
 	// ======== MATH METHODS
 	"Math.max()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max",
 	"Math.min()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min",

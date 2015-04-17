@@ -1,0 +1,29 @@
+h3
+    ol#fieldGuideList
+    script(src='/js/lib/ramda/ramda.min.js')
+    script.
+        var getLinkedName = function getLinkedName(name) {
+            // ensure name is a string
+            name = name + '';
+            return name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
+        }
+        $.ajax({
+            url: '/field-guide/getFieldGuideList',
+            type: 'GET'
+        })
+        .success(
+            function(data) {
+                var docfrag = document.createDocumentFragment();
+                for (var i = 0; i < data.fieldGuideList.length; i++) {
+                    var li = document.createElement("li");
+                    // strike through field guides previously read
+                    var linkedName = getLinkedName(data.fieldGuideList[i].name);
+                    if (data.completedFieldGuides.indexOf(data.fieldGuideIds[i]) > -1) {
+                        $(li).html("<a class='strikethrough' href='/field-guide/" + linkedName + "'>" + data.fieldGuideList[i].name + "</a></li>");
+                    } else {
+                        $(li).html("<a href='/field-guide/" + linkedName + "'>" + data.fieldGuideList[i].name + "</a></li>");
+                    }
+                    docfrag.appendChild(li);
+                };
+            $('#fieldGuideList').append(docfrag);
+        });

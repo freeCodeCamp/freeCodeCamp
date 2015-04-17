@@ -1,7 +1,0 @@
-h3
-    ol(start='0')
-        for bonfire in bonfires
-            li
-                a(href="/bonfires/#{bonfire.bonfireNumber}", class="#{ (cc && cc[bonfire.bonfireNumber] > 0) ? 'strikethrough' : '' }") #{bonfire.name}
-                | &thinsp; (Level #{bonfire.difficulty})
-a.btn.btn-lg.btn-primary.btn-block(href="/done-with-first-100-hours", class="#{ ((cc && cc[53] === 0) || (!cc)) ? 'disabled' : '' }") I'm done with all the challenges!

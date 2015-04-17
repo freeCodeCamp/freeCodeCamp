@@ -21,7 +21,7 @@ block content
     .row
         .col-xs-12.col-sm-12.col-md-4.bonfire-top
             #testCreatePanel
-                h1.text-center= name
+                h1#bonfire-name.text-center= name
                 h2.text-center
                     .bonfire-flames Difficulty:&thinsp;
                         if (difficulty == "0")
@@ -80,7 +80,7 @@ block content
                                         #less-info.btn.btn-primary.btn-block.btn-primary-ghost
                                             span.ion-arrow-up-b
                                             | Less information
-                                
+
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
                 br
                 form.code
@@ -94,7 +94,7 @@ block content
                     var challengeSeed = !{JSON.stringify(challengeSeed)};
                     var passedBonfireHash = !{JSON.stringify(bonfireHash)};
                     var challengeName = !{JSON.stringify(name)};
-                    var started = Math.floor(Date.now() / 1000);
+                    var started = Math.floor(Date.now());
                     var _ = R;
                     var dashed = !{JSON.stringify(dashedName)};
 
@@ -116,7 +116,7 @@ block content
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
-                    - if (cc)
+                    - if (user)
                         form.form-horizontal(novalidate='novalidate', name='completedWithForm')
                             .form-group.text-center
                                 .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
@@ -131,7 +131,7 @@ block content
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next bonfire (ctrl + enter)
 
 
-                        - if (points && points > 2)
+                        - if (user.progressTimestamps.length > 2)
                             a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
                                 i.fa.fa-twitter &thinsp;
                                     = phrase
@@ -139,19 +139,7 @@ block content
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
 
     script.
-        $.ajax({
-            url: 'https://api-ssl.bitly.com/v3/shorten?access_token=75e7931a19befaafcf108021b6d597e554b2c5c3&longUrl=http%3A%2F%2Ffreecodecamp.com%2Fbonfires%2F' + dashed + '&format=txt'
-        })
-                .success(
-                function (data) {
-                    console.log(data);
-                    url = "https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=" + data + "&hashtags=LearnToCode, JavaScript";
-                    $('.btn-twitter').attr('href', url);
-                }
-        );
         var MDNlinks = !{JSON.stringify(MDNlinks)};
         if (!MDNlinks.length) {
             $('#MDN-links').addClass('collapse');
         }
-
-

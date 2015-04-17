@@ -36,13 +36,7 @@ block content
                                              = phrase
                                 - else
                                     a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-                #all-challenges-dialog.modal(tabindex='-1')
-                    .modal-dialog.animated.fadeInUp.fast-animation
-                        .modal-content
-                            .modal-header.challenge-list-header Challenges
-                                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                            .modal-body
-                                    include ../partials/challenges
+
     script.
         $.ajax({
             url: 'https://api-ssl.bitly.com/v3/shorten?access_token=75e7931a19befaafcf108021b6d597e554b2c5c3&longUrl=http%3A%2F%2Ffreecodecamp.com%2Fchallenges%2F' + !{JSON.stringify(number)} + '&format=txt'

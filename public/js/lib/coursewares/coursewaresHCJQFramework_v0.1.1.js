@@ -3,12 +3,11 @@
  */
 
 var widgets = [];
-var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
+var editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
     lineNumbers: true,
     mode: "text/html",
     theme: 'monokai',
     runnable: true,
-    //lint: true,
     matchBrackets: true,
     autoCloseBrackets: true,
     scrollbarStyle: 'null',
@@ -16,7 +15,6 @@ var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor")
     gutters: ["CodeMirror-lint-markers"],
     onKeyEvent: doLinting
 });
-var editor = myCodeMirror;
 
 
 // Hijack tab key to insert two spaces instead
@@ -36,10 +34,6 @@ editor.setOption("extraKeys", {
             var spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
             cm.replaceSelection(spaces);
         }
-    },
-    "Ctrl-Enter": function() {
-        bonfireExecute();
-        return false;
     }
 });
 
@@ -117,7 +111,7 @@ var allSeeds = '';
     });
 })();
 
-myCodeMirror.setValue(allSeeds);
+editor.setValue(allSeeds);
 
 function doLinting () {
     editor.operation(function () {
@@ -144,7 +138,7 @@ function doLinting () {
 
 //$('#testSuite').empty();
 function showCompletion() {
-    var time = Math.floor(Date.now() / 1000) - started;
+    var time = Math.floor(Date.now()) - started;
     ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time);
     $('#next-courseware-button').removeAttr('disabled');
     $('#next-courseware-button').addClass('animated tada');

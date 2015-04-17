@@ -38,22 +38,19 @@ block content
                                         span.ion-arrow-up-b
                                         | Less information
                 br
-
-            - if (cc)
-                a.btn.btn-primary.btn-lg.btn-block#next-courseware-button
+            - if (user)
+                a.btn.btn-primary.btn-big.btn-block#next-courseware-button
                     |  Go to my next challenge
                     br
                     |  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
-
             - else
                 a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-                script.
-                    var userLoggedIn = false;
-            br
+                    script.
+                        var userLoggedIn = false;
+            .button-spacer
             ul#testSuite.list-group
-
             br
             script(type="text/javascript").
                 $('#next-courseware-button').attr('disabled', 'disabled');
@@ -61,8 +58,10 @@ block content
                 var challengeSeed = !{JSON.stringify(challengeSeed)};
                 var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
                 var challengeName = !{JSON.stringify(name)};
+                var passedCoursewareName = challengeName;
                 var prodOrDev = !{JSON.stringify(environment)};
-                var started = Math.floor(Date.now() / 1000);
+                var challengeType = !{JSON.stringify(challengeType)};
+                var started = Math.floor(Date.now());
         .col-xs-12.col-sm-12.col-md-5.col-lg-6
             #mainEditorPanel
                 form.code
@@ -72,8 +71,6 @@ block content
             .hidden-xs.hidden-sm
                 img.iphone-position(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png")
             iframe.iphone#preview
-
-
         #complete-courseware-dialog.modal(tabindex='-1')
             .modal-dialog.animated.zoomIn.fast-animation
                 .modal-content

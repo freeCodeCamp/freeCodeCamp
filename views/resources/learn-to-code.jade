@@ -1,6 +1,9 @@
 extends ../layout-wide
 block content
-    img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
+    if (Math.random() > 0.98)
+        img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner-dino.png')
+    else
+        img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
     br
     .row.text-center
         .col-xs-12.col-md-6.col-md-offset-3
@@ -40,7 +43,7 @@ block content
     script.
         var challengeName = 'Learn to code'
     .row
-        .col-xs-12.col-sm-12.col-md-6
+        .col-xs-12
             .panel.panel-info
                 .panel-heading.landing-panel-heading.text-center Announcements
                 .panel-body
@@ -77,23 +80,21 @@ block content
                             .col-xs-12.github-and-twitter-button-text
                                 html.
                                     <iframe src="http://ghbtns.com/github-btn.html?user=freecodecamp&repo=freecodecamp&type=watch&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe>
-        .col-xs-12.col-sm-12.col-md-6
-            include ../partials/faq
-    //#announcementModal.modal(tabindex='-1')
-    //    .modal-dialog
-    //        .modal-content
-    //            .modal-header.challenge-list-header Camp-wide Meeting on Saturday at Noon EST
-    //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-    //            .modal-body
-    //                h3.text-left We'll live-stream some of Free Code Camp's new features, and campers will show what they're building. Live Saturday, March 28 at Noon EST on our &thinsp;
-    //                    a(href='http://twitch.tv/freecodecamp', target='_blank') Twitch.tv channel
-    //                    | .
-    //                a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='http://twitch.tv/freecodecamp', target='_blank') Take me to Twitch so I can follow Free Code Camp
-    //                a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up!
-    //script.
-    //    $(document).ready(function() {
-    //        if (!localStorage || !localStorage.campWideMeeting) {
-    //            $('#announcementModal').modal('show');
-    //            localStorage.campWideMeeting = "true";
-    //        }
-    //    });
+    #announcementModal.modal(tabindex='-1')
+        .modal-dialog
+            .modal-content
+                .modal-header.challenge-list-header Camp-wide Meeting on Saturday at Noon EST
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    h3.text-left We'll live-stream some of Free Code Camp's new features, and campers will show what they're building. Live Saturday, March 28 at Noon EST on our &thinsp;
+                        a(href='http://twitch.tv/freecodecamp', target='_blank') Twitch.tv channel
+                        | .
+                    a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='http://twitch.tv/freecodecamp', target='_blank') Take me to Twitch so I can follow Free Code Camp
+                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up!
+    script.
+        $(document).ready(function() {
+            if (!localStorage || !localStorage.campWideMeeting) {
+                $('#announcementModal').modal('show');
+                localStorage.campWideMeeting = "true";
+            }
+        });

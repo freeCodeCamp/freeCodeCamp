@@ -1,0 +1,170 @@
+[
+  {
+    "id": "bd7157d8c441cbafaeb5bdef",
+    "requestedDeliverables": [
+      "website",
+      "donor",
+      "inventory",
+      "volunteer",
+      "form"
+    ],
+    "whatDoesNonprofitDo": "We help the many less-fortunate Jewish families in our community, by providing them with nutritious food and energy to grow, learn, work, and give them hope for a better and brighter future.",
+    "websiteLink": "http://chasdeikaduri.org/",
+    "stakeholderName": "Jonathan Tebeka",
+    "stakeholderEmail": "jonathan@chasdeikaduri.org",
+    "name": "Chasdei Kaduri",
+    "endUser": "Clients, donors, and admin.",
+    "approvedDeliverables": [
+      "website",
+      "donor",
+      "inventory",
+      "volunteer",
+      "form"
+    ],
+    "projectDescription": "Campers will create a system will integrate the food inventory, donor and delivery driver management systems as well as replace the current application system with a custom form solution. System will include a more streamlined operations management, with user printable lists of inventory, drivers, and deliveries.",
+    "logoUrl": "https://trello-attachments.s3.amazonaws.com/54c7e02f2c173c37015b2f36/604x309/00580a0567a4b3afda29d52b09e7e829/rQQ6zwq31Uya8ie9QHC-MlvfXxqftm9UPPe524JUhmwSEaZjQ7oL7U1tVoHLUj-gVUwM-7uzBGFsAXD_A_cx_JyAZP4Td-GMBJ-AebJNRAQP0m0v253eKMkURp63aG4%3Ds0-d-e1-ft.png",
+    "imageUrl": "http://chasdeikaduri.org/images/523455_516325865106850_1885515210_n.jpg",
+    "estimatedHours": 200,
+    "currentStatus": "started"
+  },
+  {
+    "id": "bd7158d8c464cbafaeb4bdef",
+    "requestedDeliverables": [
+      "other"
+    ],
+    "whatDoesNonprofitDo": "We connect simple technology with last mile communities to reduce poverty.",
+    "websiteLink": "http://kopernik.info/",
+    "stakeholderName": "Amber Gregory",
+    "stakeholderEmail": "amber.gregory@kopernik.info",
+    "name": "Kopernik",
+    "endUser": "Women in rural Indonesia.",
+    "approvedDeliverables": [
+      "other"
+    ],
+    "projectDescription": "Campers will create a Chrome browser extension to preserve sales data from a form, and upload in batches as the internet connection allows.",
+    "logoUrl": "https://trello-attachments.s3.amazonaws.com/54d29f1e4c726fd765fa87ef/54d29f6388812dd367a243ab/x/018d9d3be5439870c56cccba5b3aa8bf/kopernik-logo-global.png",
+    "imageUrl": "http://kopernik.info/sites/default/files/updates/Presenting_the_low_carbon_t.jpg",
+    "estimatedHours": 100,
+    "currentStatus": "completed"
+  },
+  {
+    "id": "bd1326d9c245cbafaeb4bdef",
+    "requestedDeliverables": [
+      "website"
+    ],
+    "whatDoesNonprofitDo": "We distribute biodegradable toothbrushes globally to children in need.",
+    "websiteLink": "http://www.operationbrush.org/",
+    "stakeholderName": "Dane Jonas",
+    "stakeholderEmail": "DaneJonas@operationbrush.org",
+    "name": "Operation Brush",
+    "endUser": "Donors",
+    "approvedDeliverables": [
+      "website"
+    ],
+    "projectDescription": "Campers will create a mobile responsive website for the organization, with donation capabilities.",
+    "logoUrl": "https://trello-attachments.s3.amazonaws.com/54d9810307b159a4d9027aa2/54d981bfe5eb145560fbb769/x/cf7f318bfe4aee631b0d0eeef272225c/logo.png",
+    "imageUrl": "http://www.operationbrush.org/images/temp/hands1.png",
+    "estimatedHours": 100,
+    "currentStatus": "started"
+  },
+  {
+    "id": "bd1325d8c464cbafaeb5bdef",
+    "requestedDeliverables": [
+      "community"
+    ],
+    "whatDoesNonprofitDo": "We are the largest roller derby league in the world with around 250 adults and 150 junior skater members plus 500+ volunteers.",
+    "websiteLink": "http://www.rosecityrollers.com/about/our-charities/",
+    "stakeholderName": "Charity Kuahiwinui",
+    "stakeholderEmail": "insurance@rosecityrollers.com",
+    "name": "Rose City Rollers",
+    "endUser": "Administrators, Coaches, and Volunteers",
+    "approvedDeliverables": [
+      "community"
+    ],
+    "projectDescription": "Campers will create a volunteer management system with multi-user access and reporting capabilities.",
+    "logoUrl": "https://trello-attachments.s3.amazonaws.com/54c1daf2d72d8eb868910b60/54c1dd4ecffcb09fc52b68a1/x/a8148f08769b449217e433bab8f39ddd/RCR-color.jpg",
+    "imageUrl": "http://www.rosecityrollers.com/wp-content/uploads/2015/01/BZ7_5923-X3-675x375.jpg",
+    "estimatedHours": 200,
+    "currentStatus": "started"
+  },
+  {
+    "id": "bd1325d8c464cbafaeb6bdef",
+    "requestedDeliverables": [
+      "website"
+    ],
+    "whatDoesNonprofitDo": "Save a Child's Heart provides urgently needed pediatric heart surgery and follow-up care for indigent children from developing countries",
+    "websiteLink": "http://www.saveachildsheart.com/global/young-leadership-program/",
+    "stakeholderName": "Shier Ziser",
+    "stakeholderEmail": "Shier_z@hotmail.com",
+    "name": "Save a Child's Heart",
+    "endUser": "Donors",
+    "approvedDeliverables": [
+      "website"
+    ],
+    "projectDescription": "Campers will create a single page fundraising website. In exchange for a donation, a user can customize a graphical 'heart' in someone's name or anonymously. The page will display all of the hearts on a 'wall of hearts.'",
+    "logoUrl": "https://trello-attachments.s3.amazonaws.com/548b36629137780091a973cc/666x666/6c7a366ffb659649f6377d4a431687cd/country-logos-1-300dpi.jpg",
+    "imageUrl": "http://www.saveachildsheart.com/wp-content/uploads/2013/10/7.2.5_Internation_Photograohy_Exhibition.jpg",
+    "estimatedHours": 100,
+    "currentStatus": "completed"
+  },
+  {
+    "id": "bd1325d8c464cbafaeb4bdef",
+    "requestedDeliverables": [
+      "website"
+    ],
+    "whatDoesNonprofitDo": "Savvy Cyber Kids enables youth to be empowered with technology by providing age appropriate resources and education.",
+    "websiteLink": "http://savvycyberkids.org/",
+    "stakeholderName": "Ben Halpert",
+    "stakeholderEmail": "info@savvycyberkids.org ",
+    "name": "Savvy Cyber Kids",
+    "endUser": "Donors",
+    "approvedDeliverables": [
+      "website"
+    ],
+    "projectDescription": "Campers will create a website where potential donors can view which schools already have the Savvy Cyber Kids books, and donate books to those schools that do not.",
+    "logoUrl": "https://trello-attachments.s3.amazonaws.com/54ee3c7bf205562680177b59/218x190/1dc460de4edc9fdd4b481b24e93cfb23/logo.png",
+    "imageUrl": "http://www.privatewifi.com/wp-content/uploads/2014/10/Halpert.jpg",
+    "estimatedHours": 200,
+    "currentStatus": "started"
+  },
+  {
+    "id": "bd1325d8c464cbafaeb7bdef",
+    "requestedDeliverables": [
+      "other"
+    ],
+    "whatDoesNonprofitDo": "Transcendent Pathways",
+    "websiteLink": "http://transcendentpathways.org/",
+    "stakeholderName": "Mark Ackerley",
+    "stakeholderEmail": "mackerley.music@gmail.com",
+    "name": "Transcendent Pathways",
+    "endUser": "Medical Facilities, Musicians",
+    "approvedDeliverables": [
+      "other"
+    ],
+    "projectDescription": "Campers will build a website where medical facilities can list music therapy time slots, and musicians can sign up to fill these slots.",
+    "logoUrl": "http://static1.squarespace.com/static/521b8957e4b024f66a58b214/t/521b8e9de4b093a8696eb9b8/1398718364447/?format=750w",
+    "imageUrl": "https://trello-attachments.s3.amazonaws.com/54fdb0328917ca64e9e8a79f/54fdc3b710f67caf6da14719/x/49fbe0012179bf254928f3f2a44810b4/Screen_2BShot_2B2013-08-26_2Bat_2B1.32.35_2BPM.png",
+    "estimatedHours": 200,
+    "currentStatus": "started"
+  },
+  {
+    "id": "bd1325d8c464cbafaeb8bdef",
+    "requestedDeliverables": [
+      "other"
+    ],
+    "whatDoesNonprofitDo": "Timeraiser is a volunteer matching fair, a silent art auction, and a night out on the town. The big Timeraiser twist is rather than bid money on artwork, participants bid volunteer hours. ",
+    "websiteLink": "http://www.timeraiser.ca/",
+    "stakeholderName": "Stephanie McAllister",
+    "stakeholderEmail": "stephanie@timeraiser.ca",
+    "name": "Timeraiser",
+    "endUser": "Eventgoers",
+    "approvedDeliverables": [
+      "other"
+    ],
+    "projectDescription": "Campers will build a mobile responsive web form to allow Timeraiser eventgoers to select which nonprofit organizations they're interested in volunteering with. System will have Salesforce integration and reporting capabilities.",
+    "logoUrl": "http://www.timeraiser.ca/uploads/5/6/1/4/5614163/1277176.png?480",
+    "imageUrl": "http://www.timeraiser.ca/uploads/5/6/1/4/5614163/______________4571248_orig.png",
+    "estimatedHours": 100,
+    "currentStatus": "started"
+  }
+]

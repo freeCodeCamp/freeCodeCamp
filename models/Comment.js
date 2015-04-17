@@ -6,6 +6,14 @@ var commentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    originalStoryLink: {
+      type: String,
+      default: ''
+    },
+    originalStoryAuthorEmail: {
+      type: String,
+      default: ''
+    },
     body: {
         type: String,
         default: ''
