@@ -22,11 +22,12 @@ block content
                     img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_nonprofits.svg.gz', title='Help nonprofits')
                     p.landing-p Give nonprofits a boost by empowering them with code.
             .big-break
-            a.btn.btn-cta.signup-btn(href="/login") Start learning to code (it's free)
-            br
-            br
-            a.btn.nonprofit-cta.btn-success(href="/nonprofits") Get pro bono help for my nonprofit
-            .big-break
+            .row
+                .col-xs-12.col-sm-8.col-sm-offset-2
+                    a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+                    .spacer
+                    a.btn.btn-cta.btn-success.btn-block(href="/nonprofits") My nonprofit needs coding help
+                    .big-break
             h2 Campers you'll hang out with:
             .row
                 .col-xs-12.col-sm-12.col-md-4
@@ -84,6 +85,8 @@ block content
                     li.ion-code &thinsp; You can get help in real time from our community chat rooms and forum
                     li.ion-code &thinsp; We all share one common goal: to boost our careers with code
             .big-break
-            a.btn.btn-cta.signup-btn(href="/login") Learn to code today (it's free)
+            .row
+                .col-xs-12.col-sm-8.col-sm-offset-2
+                    a.btn.btn-cta.signup-btn.btn-block(href="/login") Learn to code today (it's free)
             script.
                 challengeName = 'Home'

@@ -15,7 +15,7 @@ block content
     script(src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(src='/js/lib/jailed/jailed.js')
     script(src='/js/lib/bonfire/bonfireInit.js')
-    script(src='/js/lib/ramda/ramda.min.js')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/ramda/0.13.0/ramda.min.js")
 
 
     .row
@@ -74,7 +74,7 @@ block content
                                         for sentence in details
                                             p!= sentence
                                         #MDN-links
-                                            h4 Here are some helpful links.
+                                            p Here are some helpful links:
                                             for link, index in MDNlinks
                                                 ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
                                         #less-info.btn.btn-primary.btn-block.btn-primary-ghost

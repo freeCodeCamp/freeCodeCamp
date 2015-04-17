@@ -103,6 +103,7 @@ var userSchema = new mongoose.Schema({
         }
     },
     resetPasswordToken: String,
+    sentSlackInvite: false,
     resetPasswordExpires: Date,
     uncompletedBonfires: Array,
     completedBonfires: [
