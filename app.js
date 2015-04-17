@@ -675,10 +675,6 @@ app.get(
   }
 );
 
-app.get('/induce-vomiting', function(req, res, next) {
-  next(new Error('vomiting induced'));
-});
-
 // put this route last
 app.get(
   '/:username',
