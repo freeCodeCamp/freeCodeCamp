@@ -33,29 +33,29 @@ var express = require('express'),
   connectAssets = require('connect-assets'),
   request = require('request'),
 
+    /**
+     * Controllers (route handlers).
+     */
+    homeController = require('./controllers/home'),
+    resourcesController = require('./controllers/resources'),
+    userController = require('./controllers/user'),
+    contactController = require('./controllers/contact'),
+    nonprofitController = require('./controllers/nonprofits'),
+    bonfireController = require('./controllers/bonfire'),
+    coursewareController = require('./controllers/courseware'),
+    fieldGuideController = require('./controllers/fieldGuide'),
+    challengeMapController = require('./controllers/challengeMap'),
 
-  /**
-   * Controllers (route handlers).
-   */
-  homeController = require('./controllers/home'),
-  challengesController = require('./controllers/challenges'),
-  resourcesController = require('./controllers/resources'),
-  userController = require('./controllers/user'),
-  contactController = require('./controllers/contact'),
-  bonfireController = require('./controllers/bonfire'),
-  coursewareController = require('./controllers/courseware'),
-  nonprofitController = require('./controllers/nonprofits'),
+    /**
+     *  Stories
+     */
+    storyController = require('./controllers/story');
 
-/**
- *  Stories
- */
-  storyController = require('./controllers/story'),
-
-/**
- * API keys and Passport configuration.
- */
-  secrets = require('./config/secrets'),
-  passportConf = require('./config/passport');
+    /**
+     * API keys and Passport configuration.
+     */
+    secrets = require('./config/secrets'),
+    passportConf = require('./config/passport');
 
 /**
  * Create Express server.
@@ -165,45 +165,48 @@ var trusted = [
 ];
 
 app.use(helmet.contentSecurityPolicy({
-  defaultSrc: trusted,
-  scriptSrc: ['*.optimizely.com', '*.aspnetcdn.com'].concat(trusted),
-  'connect-src': [
-    'ws://*.rafflecopter.com',
-    'wss://*.rafflecopter.com',
-    'https://*.rafflecopter.com',
-    'ws://www.freecodecamp.com',
-    'http://www.freecodecamp.com'
-  ].concat(trusted),
-  styleSrc: trusted,
-  imgSrc: [
-    '*.evernote.com',
-    '*.amazonaws.com',
-    'data:',
-    '*.licdn.com',
-    '*.gravatar.com',
-    '*.akamaihd.net',
-    'graph.facebook.com',
-    '*.githubusercontent.com',
-    '*.googleusercontent.com',
-    '*' /* allow all input since we have user submitted images for public profile*/
-  ].concat(trusted),
-  fontSrc: ['*.googleapis.com'].concat(trusted),
-  mediaSrc: [
-    '*.amazonaws.com',
-    '*.twitter.com'
-  ].concat(trusted),
-  frameSrc: [
-    '*.gitter.im',
-    '*.gitter.im https:',
-    '*.vimeo.com',
-    '*.twitter.com',
-    '*.rafflecopter.com',
-    '*.ghbtns.com'
-  ].concat(trusted),
-  reportOnly: false, // set to true if you only want to report errors
-  setAllHeaders: false, // set to true if you want to set all headers
-  safari5: false // set to true if you want to force buggy CSP in Safari 5
-
+    defaultSrc: trusted,
+    scriptSrc: [
+        '*.optimizely.com',
+        '*.aspnetcdn.com',
+        '*.d3js.org',
+    ].concat(trusted),
+    'connect-src': [
+        'ws://*.rafflecopter.com',
+        'wss://*.rafflecopter.com',
+        'https://*.rafflecopter.com',
+        'ws://www.freecodecamp.com',
+        'http://www.freecodecamp.com'
+    ].concat(trusted),
+    styleSrc: trusted,
+    imgSrc: [
+        '*.evernote.com',
+        '*.amazonaws.com',
+        'data:',
+        '*.licdn.com',
+        '*.gravatar.com',
+        '*.akamaihd.net',
+        'graph.facebook.com',
+        '*.githubusercontent.com',
+        '*.googleusercontent.com',
+        '*' /* allow all input since we have user submitted images for public profile*/
+    ].concat(trusted),
+    fontSrc: ['*.googleapis.com'].concat(trusted),
+    mediaSrc: [
+        '*.amazonaws.com',
+        '*.twitter.com'
+    ].concat(trusted),
+    frameSrc: [
+        '*.gitter.im',
+        '*.gitter.im https:',
+        '*.vimeo.com',
+        '*.twitter.com',
+        '*.rafflecopter.com',
+        '*.ghbtns.com'
+    ].concat(trusted),
+    reportOnly: false, // set to true if you only want to report errors
+    setAllHeaders: false, // set to true if you want to set all headers
+    safari5: false // set to true if you want to force buggy CSP in Safari 5
 }));
 
 app.use(function (req, res, next) {
@@ -237,14 +240,12 @@ app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 app.get('/', homeController.index);
 
 app.get('/privacy', function(req, res) {
-  res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
+  res.redirect(301, "/field-guide/free-code-camps-privacy-policy");
 });
 
 app.get('/nonprofit-project-instructions', function(req, res) {
-  res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
+  res.redirect(301, "/field-guide/free-code-camps-privacy-policy");
 });
-
-app.get('/jquery-exercises', resourcesController.jqueryExercises);
 
 app.get('/chat', resourcesController.chat);
 
@@ -281,10 +282,6 @@ app.get('/nodeschool-challenges', function(req, res) {
 });
 
 
-app.get('/stats', function(req, res) {
-  res.redirect(301, '/learn-to-code');
-});
-
 app.get('/news', function(req, res) {
   res.redirect(301, '/stories/hot');
 });
@@ -293,7 +290,6 @@ app.get('/learn-to-code', resourcesController.about);
 app.get('/about', function(req, res) {
   res.redirect(301, '/learn-to-code');
 });
-
 
 app.get('/signin', userController.getSignin);
 
@@ -324,6 +320,8 @@ app.get('/email-signin', userController.getEmailSignin);
 app.post('/email-signup', userController.postEmailSignup);
 
 app.post('/email-signin', userController.postSignin);
+app.get('/nonprofits', contactController.getNonprofitsForm);
+app.post('/nonprofits', contactController.postNonprofitsForm);
 
 /**
  * Nonprofit Project routes.
@@ -530,19 +528,6 @@ app.post(
   storyController.upvote
 );
 
-
-/**
- * Challenge related routes
- */
-app.get(
-  '/challenges/',
-  challengesController.returnNextChallenge
-);
-app.get(
-  '/challenges/:challengeNumber',
-  challengesController.returnChallenge
-);
-
 app.all('/account', passportConf.isAuthenticated);
 
 app.get('/account/api', userController.getAccountAngular);
@@ -630,7 +615,6 @@ app.post('/account/password', userController.postUpdatePassword);
 app.post('/account/delete', userController.postDeleteAccount);
 
 app.get('/account/unlink/:provider', userController.getOauthUnlink);
-
 
 app.get('/sitemap.xml', resourcesController.sitemap);
 
@@ -727,11 +711,7 @@ if (process.env.NODE_ENV === 'development') {
     var accept = accepts(req);
     var type = accept.type('html', 'json', 'text');
 
-    var message = 'oops! Something went wrong. Please try again later.' +
-      ' Twitter authentication is currently unavailable for FreeCodeCamp.' +
-      ' We are working with Twitter to restore functionality' +
-      ' as soon as possible.';
-    console.log('ERROR!!', err);
+    var message = 'opps! Something went wrong. Please try again later';
     if (type === 'html') {
       req.flash('errors', { msg: message });
       return res.redirect('/');

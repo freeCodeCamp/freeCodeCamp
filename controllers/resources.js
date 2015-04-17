@@ -106,24 +106,6 @@ module.exports = {
     }
   },
 
-<<<<<<< HEAD
-  jqueryExercises: function jqueryExercises(req, res) {
-    res.render('resources/jquery-exercises', {
-      title: 'jQuery Exercises'
-    });
-  },
-=======
-    chat: function chat(req, res) {
-        if (req.user && req.user.sentSlackInvite) {
-            res.redirect('https://freecode.slack.com/messages/general/');
-        } else {
-            res.render('resources/chat', {
-                title: "Join our chat room"
-            });
-        }
-    },
->>>>>>> upstream/master
-
   twitch: function twitch(req, res) {
     res.render('resources/twitch', {
       title: "Enter Free Code Camp's Chat Rooms"
@@ -167,66 +149,6 @@ module.exports = {
     var date1 = new Date("10/15/2014");
     var date2 = new Date();
 
-<<<<<<< HEAD
-    var progressTimestamps = req.user.progressTimestamps;
-    var now = Date.now() || 0;
-=======
-    styleguide: function styleguide(req, res) {
-        res.render('resources/styleguide', {
-            title: 'A Styleguide for Contributing to our Bonfires'
-        });
-    },
-
-    jqueryExercises: function jqueryExercises(req, res) {
-        res.render('resources/jquery-exercises', {
-            title: 'jQuery Exercises'
-        });
-    },
->>>>>>> upstream/master
-
-    //if (req.user.pointsNeedMigration) {
-    //  var challengesHash = req.user.challengesHash;
-    //  for (var key in challengesHash) {
-    //    if (challengesHash[key] > 0) {
-    //      req.user.progressTimestamps.push(challengesHash[key]);
-    //    }
-    //  }
-    //
-    //  var oldChallengeKeys = R.keys(req.user.challengesHash);
-    //
-    //  var updatedTimesFromOldChallenges = oldChallengeKeys.map(function(timeStamp) {
-    //    if (timeStamp.toString().length !== 13) {
-    //      timeStamp *= 1000;
-    //    }
-    //    return timeStamp;
-    //  });
-    //
-    //  var newTimeStamps = R.map(function(timeStamp) {
-    //    if (timeStamp.toString().length !== 13) {
-    //      timeStamp *= 1000;
-    //    }
-    //    return timeStamp;
-    //  }, req.user.progressTimestamps);
-    //
-    //  req.user.progressTimestamps = newTimeStamps;
-    //
-    //  req.user.completedCoursewares = Array.zip(updatedTimesFromOldChallenges, coursewares,
-    //    function(left, right) {
-    //      return ({
-    //        completedDate: left.timeStamp,
-    //        _id: right._id,
-    //        name: right.name
-    //      });
-    //    }).filter(function(elem) {
-    //      return elem.completedDate !== 0;
-    //    });
-    //  req.user.pointsNeedMigration = false;
-    //  req.user.save();
-    //}
-    if (progressTimestamps[progressTimestamps.length - 1] <= (now - 43200)) {
-      req.user.progressTimestamps.push(now);
-    }
-
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
     var announcements = resources.announcements;
@@ -248,10 +170,15 @@ module.exports = {
           title: 'About Free Code Camp',
           daysRunning: daysRunning,
           c3: numberWithCommas(c3),
-          all: all,
           announcements: announcements
         });
       });
+    });
+  },
+
+  livePairProgramming: function livePair(req, res) {
+    res.render('resources/live-pair-programming', {
+      title: 'Live Pair Programming'
     });
   },
 
@@ -265,7 +192,6 @@ module.exports = {
     return verbs[Math.floor(Math.random() * verbs.length)];
   },
 
-<<<<<<< HEAD
   randomCompliment: function() {
     var compliments = resources.compliments;
     return compliments[Math.floor(Math.random() * compliments.length)];
@@ -276,9 +202,8 @@ module.exports = {
       return {
         _id: elem._id,
         difficulty: elem.difficulty
-      }
-    })
-      .sort(function(a, b) {
+      };
+    }).sort(function(a, b) {
         return a.difficulty - b.difficulty;
       })
       .map(function(elem) {
@@ -289,12 +214,11 @@ module.exports = {
   allFieldGuideIds: function() {
     return fieldGuides.map(function(elem) {
       return {
-        _id: elem._id,
-      }
-    })
-    .map(function(elem) {
-      return elem._id;
-    });
+        _id: elem._id
+      };
+    }).map(function(elem) {
+        return elem._id;
+      });
   },
 
   allBonfireNames: function() {
@@ -303,16 +227,14 @@ module.exports = {
         name: elem.name,
         difficulty: elem.difficulty,
         _id: elem._id
-      }
-    })
-      .sort(function(a, b) {
+      };
+    }).sort(function(a, b) {
         return a.difficulty - b.difficulty;
-      })
-      .map (function(elem) {
+    }).map(function(elem) {
       return {
-        name : elem.name,
+        name: elem.name,
         _id: elem._id
-      }
+      };
     });
   },
 
@@ -320,16 +242,16 @@ module.exports = {
     return fieldGuides.map(function(elem) {
       return {
         name: elem.name
-      }
-    })
+      };
+    });
   },
 
   allNonprofitNames: function() {
     return nonprofits.map(function(elem) {
       return {
         name: elem.name
-      }
-    })
+      };
+    });
   },
 
   allCoursewareIds: function() {
@@ -338,13 +260,11 @@ module.exports = {
         _id: elem._id,
         difficulty: elem.difficulty
       };
-    })
-      .sort(function(a, b) {
+    }).sort(function(a, b) {
         return a.difficulty - b.difficulty;
-      })
-      .map(function(elem) {
-        return elem._id;
-      });
+    }).map(function(elem) {
+      return elem._id;
+    });
   },
 
   allCoursewareNames: function() {
@@ -388,24 +308,6 @@ module.exports = {
           callback(null, result);
         } else {
           callback('failed');
-=======
-    about: function(req, res, next) {
-        if (req.user) {
-            if (!req.user.profile.picture || req.user.profile.picture === "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png") {
-                req.user.profile.picture = "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png";
-                req.user.save(function(err) {
-                    if (err) return next(err);
-                });
-            }
-        }
-        var date1 = new Date("10/15/2014");
-        var date2 = new Date();
-        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-        var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
-        var announcements = resources.announcements;
-        function numberWithCommas(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
->>>>>>> upstream/master
         }
       });
     })();
