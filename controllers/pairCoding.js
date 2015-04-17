@@ -20,10 +20,11 @@ exports.index = function(req, res){
 	}	
 };
 
-var newPairRequest = function(userid, username, comment, slack) {
+var newPairRequest = function(userid, username, comment, slack, details) {
 	var pairCode = new PairUser({});
 		pairCode.user = userid;
 		pairCode.username = username;
+		pairCode.details = details;
 		pairCode.timeOnline = new Date();
 		// save the comments from the form
 		if (comment === ""){
@@ -59,9 +60,9 @@ exports.setOnline = function(req, res, next) {
 		});
 		//var gitSplit = req.user.profile.githubProfile.split("/");
 		//var gitUser = gitSplit[gitSplit.length-1];
-		var slackUser = req.user.profile.slackHandle;
+		//var slackUser = req.user.profile.slackHandle;
 
-		newPairRequest(req.user._id, req.user.profile.username, req.body.comment, slackUser);
+		newPairRequest(req.user._id, req.user.profile.username, req.body.comment, req.body.slackUser, req.body.details);
 	} 
 	res.redirect('/pair-coding');
 };
@@ -93,6 +94,7 @@ exports.editPairRequest = function(req, res, next) {
 				pairuser.comment = "Pair with me";
 			} else {
 				pairuser.comment = req.body.comment;
+				pairuser.details = req.body.details;
 			}
 			pairuser.timeOnline = new Date();
 			pairuser.save(function(err) {
@@ -190,6 +192,7 @@ exports.returnPairInfo = function(req, res, next){
 				page: "pairWithUser",
 				pairWithUser: pair.username,		
 				comment: comment,
+				details: pair.details,
 				userSlack: pair.userSlack
 			});
 		}

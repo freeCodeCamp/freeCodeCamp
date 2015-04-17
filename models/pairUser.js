@@ -9,6 +9,7 @@ var PairUserSchema = new mongoose.Schema({
 	username: String,
 	comment: {type: String, default: "Come pair with me."},
 	tags: {type:[String], default: []},
+	details: {type: String, default: ""},
 	timeOnline: {type:Date, default: null},
 	userSlack: String
 	

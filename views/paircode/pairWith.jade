@@ -4,5 +4,6 @@ script.
 	var userSlack = !{JSON.stringify(userSlack)}
 
 .spacer
-	h2 Chatting with #{pairWithUser} about #{comment}
-	p You can find them on Slack using the handle #{userSlack}
+	h2 #{pairWithUser}: #{comment}
+	p You can find them on Slack using the handle @#{userSlack}
+	p #{JSON.stringify(details)}
