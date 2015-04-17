@@ -175,7 +175,7 @@ function getMDNlinks(links) {
 
   return populatedLinks;
 
-};
+}
 
 /**
  *
@@ -187,11 +187,11 @@ exports.testBonfire = function(req, res) {
     bonfireDifficulty = req.body.difficulty,
     bonfireDescription = req.body.description,
     bonfireChallengeSeed = req.body.challengeSeed;
-  bonfireTests = bonfireTests.split('\r\n');
-  bonfireDescription = bonfireDescription.split('\r\n');
-  bonfireTests.filter(getRidOfEmpties);
-  bonfireDescription.filter(getRidOfEmpties);
-  bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
+    bonfireTests = bonfireTests.split('\r\n');
+    bonfireDescription = bonfireDescription.split('\r\n');
+    bonfireTests.filter(getRidOfEmpties);
+    bonfireDescription.filter(getRidOfEmpties);
+    bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
 
   res.render('bonfire/show', {
     completedWith: null,
@@ -228,11 +228,11 @@ exports.generateChallenge = function(req, res) {
     bonfireDifficulty = req.body.difficulty,
     bonfireDescription = req.body.description,
     bonfireChallengeSeed = req.body.challengeSeed;
-  bonfireTests = bonfireTests.split('\r\n');
-  bonfireDescription = bonfireDescription.split('\r\n');
-  bonfireTests.filter(getRidOfEmpties);
-  bonfireDescription.filter(getRidOfEmpties);
-  bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
+    bonfireTests = bonfireTests.split('\r\n');
+    bonfireDescription = bonfireDescription.split('\r\n');
+    bonfireTests.filter(getRidOfEmpties);
+    bonfireDescription.filter(getRidOfEmpties);
+    bonfireChallengeSeed = bonfireChallengeSeed.replace('\r', '');
 
 
   var response = {
@@ -306,7 +306,6 @@ exports.completedBonfire = function (req, res, next) {
       }
     });
   } else {
-    console.log('look here!', bonfireName);
     req.user.completedBonfires.push({
       _id: bonfireHash,
       name: bonfireName,

@@ -196,6 +196,10 @@ exports.postEmailSignup = function(req, res, next) {
   });
 };
 
+/**
+ * GET /account
+ * Profile page.
+ */
 
 exports.getAccount = function(req, res) {
   res.render('account/account', {
@@ -217,41 +221,44 @@ exports.getAccountAngular = function(req, res) {
  * Unique username check API Call
  */
 
-exports.checkUniqueUsername = function(req, res) {
-  User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
-    if (data == 1) {
-      return res.send(true);
-    } else {
-      return res.send(false);
-    }
-  });
+exports.checkUniqueUsername = function(req, res, next) {
+    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
+        if (data == 1) {
+            return res.send(true);
+        } else {
+            return res.send(false);
+        }
+    });
 };
 
 /**
  * Existing username check
  */
-exports.checkExistingUsername = function(req, res) {
-  User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
-    if (data === 1) {
-      return res.send(true);
-    } else {
-      return res.send(false);
-    }
-  });
+exports.checkExistingUsername = function(req, res, next) {
+    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
+        if (data === 1) {
+            return res.send(true);
+        } else {
+            return res.send(false);
+        }
+    });
 };
 
 /**
  * Unique email check API Call
  */
 
-exports.checkUniqueEmail = function(req, res) {
-  User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
-    if (data === 1) {
-      return res.send(true);
-    } else {
-      return res.send(false);
-    }
-  });
+exports.checkUniqueEmail = function(req, res, next) {
+    User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
+        if (err) { return next(err); }
+        if (data == 1) {
+            return res.send(true);
+        } else {
+            return res.send(false);
+        }
+    });
 };
 
 

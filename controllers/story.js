@@ -349,8 +349,15 @@ exports.storySubmission = function(req, res, next) {
     originalStoryAuthorEmail: req.user.email
   });
 
-  req.user.progressTimestamps.push(Date.now());
-  req.user.save();
+    story.save(function(err) {
+        if (err) {
+            return res.status(500);
+        }
+        res.send(JSON.stringify({
+            storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
+        }));
+    });
+};
 
   story.save(function(err) {
     if (err) {

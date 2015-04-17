@@ -14,6 +14,7 @@ var links =
 	"Global String Object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
 	"Boolean Objects" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
 	"RegExp" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+	"Global Function Object": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
 	"Arguments object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments",
 
 	// ========= GLOBAL OBJECT METHODS

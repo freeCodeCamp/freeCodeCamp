@@ -15,22 +15,23 @@ process.on('uncaughtException', function (err) {
 });
 
 var express = require('express'),
-    //accepts = require('accepts'),
-    cookieParser = require('cookie-parser'),
-    compress = require('compression'),
-    session = require('express-session'),
-    logger = require('morgan'),
-    errorHandler = require('errorhandler'),
-    methodOverride = require('method-override'),
-    bodyParser = require('body-parser'),
-    helmet = require('helmet'),
-    MongoStore = require('connect-mongo')(session),
-    flash = require('express-flash'),
-    path = require('path'),
-    mongoose = require('mongoose'),
-    passport = require('passport'),
-    expressValidator = require('express-validator'),
-    connectAssets = require('connect-assets'),
+  accepts = require('accepts'),
+  cookieParser = require('cookie-parser'),
+  compress = require('compression'),
+  session = require('express-session'),
+  logger = require('morgan'),
+  errorHandler = require('errorhandler'),
+  methodOverride = require('method-override'),
+  bodyParser = require('body-parser'),
+  helmet = require('helmet'),
+  MongoStore = require('connect-mongo')(session),
+  flash = require('express-flash'),
+  path = require('path'),
+  mongoose = require('mongoose'),
+  passport = require('passport'),
+  expressValidator = require('express-validator'),
+  connectAssets = require('connect-assets'),
+  request = require('request'),
 
     /**
      * Controllers (route handlers).
@@ -45,11 +46,10 @@ var express = require('express'),
     fieldGuideController = require('./controllers/fieldGuide'),
     challengeMapController = require('./controllers/challengeMap'),
 
-
-  /**
+    /**
      *  Stories
      */
-    storyController = require('./controllers/story'),
+    storyController = require('./controllers/story');
 
     /**
      * API keys and Passport configuration.
@@ -103,13 +103,13 @@ app.use(expressValidator({
 app.use(methodOverride());
 app.use(cookieParser());
 app.use(session({
-    resave: true,
-    saveUninitialized: true,
-    secret: secrets.sessionSecret,
-    store: new MongoStore({
-        url: secrets.db,
-        'autoReconnect': true
-    })
+  resave: true,
+  saveUninitialized: true,
+  secret: secrets.sessionSecret,
+  store: new MongoStore({
+    url: secrets.db,
+    'auto_reconnect': true
+  })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -126,40 +126,42 @@ app.use(function(req, res, next) {
 });
 
 var trusted = [
-    "'self'",
-    '*.freecodecamp.com',
-    '*.gstatic.com',
-    '*.google-analytics.com',
-    '*.googleapis.com',
-    '*.google.com',
-    '*.gstatic.com',
-    '*.doubleclick.net',
-    '*.twitter.com',
-    '*.twitch.tv',
-    '*.twimg.com',
-    "'unsafe-eval'",
-    "'unsafe-inline'",
-    '*.rafflecopter.com',
-    '*.bootstrapcdn.com',
-    '*.cloudflare.com',
-    'https://*.cloudflare.com',
-    'localhost:3001',
-    'ws://localhost:3001/',
-    'http://localhost:3001',
-    'localhost:3000',
-    'ws://localhost:3000/',
-    'http://localhost:3000',
-    '*.ionicframework.com',
-    'https://syndication.twitter.com',
-    '*.youtube.com',
-    '*.jsdelivr.net',
-    'https://*.jsdelivr.net',
-    '*.togetherjs.com',
-    'https://*.togetherjs.com',
-    'wss://hub.togetherjs.com',
-    '*.ytimg.com',
-    'wss://fcctogether.herokuapp.com',
-    '*.bitly.com'
+  "'self'",
+  '*.freecodecamp.com',
+  '*.gstatic.com',
+  '*.google-analytics.com',
+  '*.googleapis.com',
+  '*.google.com',
+  '*.gstatic.com',
+  '*.doubleclick.net',
+  '*.twitter.com',
+  '*.twitch.tv',
+  '*.twimg.com',
+  "'unsafe-eval'",
+  "'unsafe-inline'",
+  '*.rafflecopter.com',
+  '*.bootstrapcdn.com',
+  '*.cloudflare.com',
+  'https://*.cloudflare.com',
+  'localhost:3001',
+  'ws://localhost:3001/',
+  'http://localhost:3001',
+  'localhost:3000',
+  'ws://localhost:3000/',
+  'http://localhost:3000',
+  '*.ionicframework.com',
+  'https://syndication.twitter.com',
+  '*.youtube.com',
+  '*.jsdelivr.net',
+  'https://*.jsdelivr.net',
+  '*.togetherjs.com',
+  'https://*.togetherjs.com',
+  'wss://hub.togetherjs.com',
+  '*.ytimg.com',
+  'wss://fcctogether.herokuapp.com',
+  '*.bitly.com',
+  'http://cdn.inspectlet.com/',
+  'http://hn.inspectlet.com/'
 ];
 
 app.use(helmet.contentSecurityPolicy({
@@ -208,9 +210,9 @@ app.use(helmet.contentSecurityPolicy({
 }));
 
 app.use(function (req, res, next) {
-    // Make user object available in templates.
-    res.locals.user = req.user;
-    next();
+  // Make user object available in templates.
+  res.locals.user = req.user;
+  next();
 });
 
 app.use(function (req, res, next) {
@@ -226,7 +228,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(
-    express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
+  express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
 );
 
 app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
@@ -244,8 +246,6 @@ app.get('/privacy', function(req, res) {
 app.get('/nonprofit-project-instructions', function(req, res) {
     res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
 });
-
-app.get('/jquery-exercises', resourcesController.jqueryExercises);
 
 app.get('/chat', resourcesController.chat);
 
@@ -281,24 +281,18 @@ app.get('/nodeschool-challenges', function(req, res) {
     res.redirect(301, '/field-guide/nodeschool-challenges');
 });
 
-app.get('/stats', function(req, res) {
-    res.redirect(301, '/learn-to-code');
-});
-
-app.get('/about', function(req, res) {
-    res.redirect(301, '/learn-to-code');
-});
-
-app.get('/learn-to-code', resourcesController.about);
 
 app.get('/news', function(req, res) {
-    res.redirect(301, '/stories/hot');
+  res.redirect(301, '/stories/hot');
 });
-
+app.get('/learn-to-code', resourcesController.about);
+app.get('/about', function(req, res) {
+  res.redirect(301, '/learn-to-code');
+});
 app.get('/signin', userController.getSignin);
 
 app.get('/login', function(req, res) {
-    res.redirect(301, '/signin');
+  res.redirect(301, '/signin');
 });
 
 app.post('/signin', userController.postSignin);
@@ -306,7 +300,7 @@ app.post('/signin', userController.postSignin);
 app.get('/signout', userController.signout);
 
 app.get('/logout', function(req, res) {
-    res.redirect(301, '/signout');
+  res.redirect(301, '/signout');
 });
 
 app.get('/forgot', userController.getForgot);
@@ -324,6 +318,8 @@ app.get('/email-signin', userController.getEmailSignin);
 app.post('/email-signup', userController.postEmailSignup);
 
 app.post('/email-signin', userController.postSignin);
+app.get('/nonprofits', contactController.getNonprofitsForm);
+app.post('/nonprofits', contactController.postNonprofitsForm);
 
 /**
  * Nonprofit Project routes.
@@ -374,96 +370,167 @@ app.post(
   passportConf.isAuthenticated,
   contactController.postDoneWithFirst100Hours
 );
-app.post(
-    '/update-progress',
-    passportConf.isAuthenticated,
-    userController.updateProgress
+app.get(
+  '/nonprofit-project-instructions',
+  passportConf.isAuthenticated,
+  resourcesController.nonprofitProjectInstructions
 );
+app.post(
+  '/update-progress',
+  passportConf.isAuthenticated,
+  userController.updateProgress
+);
+
+app.get('/api/slack', function(req, res) {
+  if (req.user) {
+    if (req.user.email) {
+      var invite = {
+        'email': req.user.email,
+        'token': process.env.SLACK_KEY,
+        'set_active': true
+      };
+
+      var headers = {
+        'User-Agent': 'Node Browser/0.0.1',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      };
+
+      var options = {
+        url: 'https://freecode.slack.com/api/users.admin.invite',
+        method: 'POST',
+        headers: headers,
+        form: invite
+      };
+
+      request(options, function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+          req.flash('success', {
+            msg: "We've successfully requested an invite for you. Please check your email and follow the instructions from Slack."
+          });
+          req.user.sentSlackInvite = true;
+          req.user.save(function(err, user) {
+            if (err) {
+              next(err);
+            }
+            return res.redirect('back');
+          });
+        } else {
+          req.flash('errors', {
+            msg: "The invitation email did not go through for some reason. Please try again or <a href='mailto:team@freecodecamp.com?subject=slack%20invite%20failed%20to%20send>email us</a>."
+          });
+          return res.redirect('back');
+        }
+      })
+    } else {
+      req.flash('notice', {
+        msg: "Before we can send your Slack invite, we need your email address. Please update your profile information here."
+      });
+      return res.redirect('/account');
+    }
+  } else {
+    req.flash('notice', {
+      msg: "You need to sign in to Free Code Camp before we can send you a Slack invite."
+    });
+    return res.redirect('/account');
+  }
+});
 
 /**
  * Camper News routes.
  */
 app.get(
-    '/stories/hotStories',
-    storyController.hotJSON
+  '/stories/hotStories',
+  storyController.hotJSON
 );
 
 app.get(
-    '/stories/recentStories',
-    storyController.recentJSON
+  '/stories/recentStories',
+  storyController.recentJSON
 );
 
 app.get(
-    '/stories/',
-    function(req, res) {
-        res.redirect(302, '/stories/hot');
-    }
+  '/stories/',
+  function(req, res) {
+    res.redirect(302, '/stories/hot');
+  }
 );
 
 app.get(
-    '/stories/comments/:id',
-    storyController.comments
+  '/stories/comments/:id',
+  storyController.comments
 );
 
 app.post(
-    '/stories/comment/',
-    storyController.commentSubmit
+  '/stories/comment/',
+  storyController.commentSubmit
 );
 
 app.post(
-    '/stories/comment/:id/comment',
-    storyController.commentOnCommentSubmit
+  '/stories/comment/:id/comment',
+  storyController.commentOnCommentSubmit
 );
 
 app.get(
-    '/stories/submit',
-    storyController.submitNew
+  '/stories/submit',
+  storyController.submitNew
 );
 
 app.get(
-    '/stories/submit/new-story',
-    storyController.preSubmit
+  '/stories/submit/new-story',
+  storyController.preSubmit
 );
 
 app.post(
-    '/stories/preliminary',
-    storyController.newStory
+  '/stories/preliminary',
+  storyController.newStory
 );
 
 app.post(
-    '/stories/',
-    storyController.storySubmission
+  '/stories/',
+  storyController.storySubmission
 );
 
 app.get(
-    '/stories/hot',
-    storyController.hot
+  '/stories/hot',
+  storyController.hot
 );
 
 app.get(
-    '/stories/recent',
-    storyController.recent
+  '/stories/recent',
+  storyController.recent
 );
 
 
 app.get(
-    '/stories/search',
-    storyController.search
+  '/stories/search',
+  storyController.search
 );
 
 app.post(
-    '/stories/search',
-    storyController.getStories
+  '/stories/search',
+  storyController.getStories
 );
 
 app.get(
-    '/stories/:storyName',
-    storyController.returnIndividualStory
+  '/stories/:storyName',
+  storyController.returnIndividualStory
 );
 
 app.post(
-    '/stories/upvote/',
-    storyController.upvote
+  '/stories/upvote/',
+  storyController.upvote
+);
+
+/**
+ * Challenge related routes
+ */
+app.get(
+  '/challenges/',
+  challengesController.returnNextChallenge
+);
+app.get(
+  '/challenges/:challengeNumber',
+  challengesController.returnChallenge
 );
 
 app.all('/account', passportConf.isAuthenticated);
@@ -499,12 +566,12 @@ app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
 app.post('/bonfire-challenge-generator', bonfireController.testBonfire);
 
 app.get(
-    '/bonfires/:bonfireName',
-    bonfireController.returnIndividualBonfire
+  '/bonfires/:bonfireName',
+  bonfireController.returnIndividualBonfire
 );
 
 app.get('/bonfire', function(req, res) {
-    res.redirect(301, '/playground');
+  res.redirect(301, '/playground');
 });
 
 app.post('/completed-bonfire/', bonfireController.completedBonfire);
@@ -561,69 +628,73 @@ app.get('/sitemap.xml', resourcesController.sitemap);
  */
 
 var passportOptions = {
-    successRedirect: '/',
-    failureRedirect: '/login'
+  successRedirect: '/',
+  failureRedirect: '/login'
 };
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 
 app.get(
-    '/auth/twitter/callback',
-    passport.authenticate('twitter', {
-        successRedirect: '/',
-        failureRedirect: '/login'
-    })
+  '/auth/twitter/callback',
+  passport.authenticate('twitter', {
+    successRedirect: '/',
+    failureRedirect: '/login'
+  })
 );
 
 app.get(
-    '/auth/linkedin',
-    passport.authenticate('linkedin', {
-        state: 'SOME STATE'
-    })
+  '/auth/linkedin',
+  passport.authenticate('linkedin', {
+    state: 'SOME STATE'
+  })
 );
 
 app.get(
-    '/auth/linkedin/callback',
-    passport.authenticate('linkedin', passportOptions)
+  '/auth/linkedin/callback',
+  passport.authenticate('linkedin', passportOptions)
 );
 
 app.get(
-    '/auth/facebook',
-    passport.authenticate('facebook', {scope: ['email', 'user_location']})
+  '/auth/facebook',
+  passport.authenticate('facebook', {scope: ['email', 'user_location']})
 );
 
 app.get(
-    '/auth/facebook/callback',
-    passport.authenticate('facebook', passportOptions), function (req, res) {
-        res.redirect(req.session.returnTo || '/');
-    }
+  '/auth/facebook/callback',
+  passport.authenticate('facebook', passportOptions), function (req, res) {
+    res.redirect(req.session.returnTo || '/');
+  }
 );
 
 app.get('/auth/github', passport.authenticate('github'));
 
 app.get(
-    '/auth/github/callback',
-    passport.authenticate('github', passportOptions), function (req, res) {
-        res.redirect(req.session.returnTo || '/');
-    }
+  '/auth/github/callback',
+  passport.authenticate('github', passportOptions), function (req, res) {
+    res.redirect(req.session.returnTo || '/');
+  }
 );
 
 app.get(
-    '/auth/google',
-    passport.authenticate('google', {scope: 'profile email'})
+  '/auth/google',
+  passport.authenticate('google', {scope: 'profile email'})
 );
 
 app.get(
-    '/auth/google/callback',
-    passport.authenticate('google', passportOptions), function (req, res) {
-        res.redirect(req.session.returnTo || '/');
-    }
+  '/auth/google/callback',
+  passport.authenticate('google', passportOptions), function (req, res) {
+    res.redirect(req.session.returnTo || '/');
+  }
 );
+
+app.get('/induce-vomiting', function(req, res, next) {
+  next(new Error('vomiting induced'));
+});
 
 // put this route last
 app.get(
-    '/:username',
-    userController.returnUser
+  '/:username',
+  userController.returnUser
 );
 
 /**
@@ -653,11 +724,11 @@ if (process.env.NODE_ENV === 'development') {
     if (type === 'html') {
       req.flash('errors', { msg: message });
       return res.redirect('/');
-    // json
+      // json
     } else if (type === 'json') {
       res.setHeader('Content-Type', 'application/json');
       return res.send({ message: message });
-    // plain text
+      // plain text
     } else {
       res.setHeader('Content-Type', 'text/plain');
       return res.send(message);
@@ -669,11 +740,11 @@ if (process.env.NODE_ENV === 'development') {
  * Start Express server.
  */
 app.listen(app.get('port'), function () {
-    console.log(
-        'FreeCodeCamp server listening on port %d in %s mode',
-        app.get('port'),
-        app.get('env')
-    );
+  console.log(
+    'FreeCodeCamp server listening on port %d in %s mode',
+    app.get('port'),
+    app.get('env')
+  );
 });
 
 module.exports = app;

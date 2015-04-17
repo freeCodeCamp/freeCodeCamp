@@ -106,12 +106,6 @@ module.exports = {
     }
   },
 
-  jqueryExercises: function jqueryExercises(req, res) {
-    res.render('resources/jquery-exercises', {
-      title: 'jQuery Exercises'
-    });
-  },
-
   twitch: function twitch(req, res) {
     res.render('resources/twitch', {
       title: "Enter Free Code Camp's Chat Rooms"
@@ -155,51 +149,12 @@ module.exports = {
     var date1 = new Date("10/15/2014");
     var date2 = new Date();
 
-    var progressTimestamps = req.user.progressTimestamps;
-    var now = Date.now() || 0;
 
-    //if (req.user.pointsNeedMigration) {
-    //  var challengesHash = req.user.challengesHash;
-    //  for (var key in challengesHash) {
-    //    if (challengesHash[key] > 0) {
-    //      req.user.progressTimestamps.push(challengesHash[key]);
-    //    }
-    //  }
-    //
-    //  var oldChallengeKeys = R.keys(req.user.challengesHash);
-    //
-    //  var updatedTimesFromOldChallenges = oldChallengeKeys.map(function(timeStamp) {
-    //    if (timeStamp.toString().length !== 13) {
-    //      timeStamp *= 1000;
-    //    }
-    //    return timeStamp;
-    //  });
-    //
-    //  var newTimeStamps = R.map(function(timeStamp) {
-    //    if (timeStamp.toString().length !== 13) {
-    //      timeStamp *= 1000;
-    //    }
-    //    return timeStamp;
-    //  }, req.user.progressTimestamps);
-    //
-    //  req.user.progressTimestamps = newTimeStamps;
-    //
-    //  req.user.completedCoursewares = Array.zip(updatedTimesFromOldChallenges, coursewares,
-    //    function(left, right) {
-    //      return ({
-    //        completedDate: left.timeStamp,
-    //        _id: right._id,
-    //        name: right.name
-    //      });
-    //    }).filter(function(elem) {
-    //      return elem.completedDate !== 0;
-    //    });
-    //  req.user.pointsNeedMigration = false;
-    //  req.user.save();
-    //}
-    if (progressTimestamps[progressTimestamps.length - 1] <= (now - 43200)) {
-      req.user.progressTimestamps.push(now);
-    }
+    livePairProgramming: function(req, res) {
+        res.render('resources/live-pair-programming', {
+            title: 'Live Pair Programming'
+        });
+    },
 
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
@@ -222,7 +177,6 @@ module.exports = {
           title: 'About Free Code Camp',
           daysRunning: daysRunning,
           c3: numberWithCommas(c3),
-          all: all,
           announcements: announcements
         });
       });
