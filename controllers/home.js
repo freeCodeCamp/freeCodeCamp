@@ -8,7 +8,7 @@ exports.index = function(req, res) {
     res.redirect('/challenges/')
   } else {
     res.render('home', {
-      title: 'Learn to Code and Become a Software Engineer'
+      title: 'Learn to Code JavaScript and get a Coding Job by Helping Nonprofits'
     });
   }
 };

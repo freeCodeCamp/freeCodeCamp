@@ -606,13 +606,37 @@
     "tests": []
   },
   {
-    "_id": "bd7158d8c442eddfaeb5bdff",
-    "name": "Zipline: Integrate with Twitch's API",
+    "_id": "bd7158d8c442eddfaeb5bd1f",
+    "name": "Zipline: Use the Twitch.tv JSON API",
     "difficulty": 1.01,
     "challengeSeed": "123488494",
     "description": [
-      "Go to CodePen <a href='http://codepen.io/FreeCodeCamp/pen/gbEmJr'>http://codepen.io/FreeCodeCamp/pen/gbEmJr</a> and click the \"fork\" button. This will create a \"fork\", or copy of the file, which you can then edit yourself.",
+      "Build a Twitch integration on CodePen.io using this as a reference: <a href='http://codepen.io/FreeCodeCamp/full/gbEmJr/'  target='_blank'>http://codepen.io/FreeCodeCamp/full/gbEmJr/</a>.",
+      "Here are the rules: <ol><li>Don't look at the example's code. Figure it out for yourself.</li><li>You may use whichever libraries or APIs you need.</li><li>Reproduce the example project's functionality, and also feel free to personalize it.</li></ul>",
+      "Here's an example call to Twitch.tv's JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
+      "The relevant documentation is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your Codepen. If you pair programmed, you should also include the Free Code Camp username of your pair. We will take a look at your code and eventually give you feedback. In the meantime, please move on to your next challenge."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd10",
+    "name": "Zipline: Customize a Twitter Stream",
+    "difficulty": 1.06,
+    "challengeSeed": "123488494",
+    "description": [
+      "Start by forking this: <a href='http://codepen.io/FreeCodeCamp/pen/aOobVX'>http://codepen.io/FreeCodeCamp/pen/aOobVX</a>"
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd18",
+    "name": "Zipline: Integrate with a Weather API",
+    "difficulty": 1.02,
+    "challengeSeed": "123488494",
+    "description": [
     ],
     "challengeType": 3,
     "tests": []
@@ -620,7 +644,7 @@
   {
     "_id": "bd7158d8c442eddfaeb5bd0f",
     "name": "Zipline: Integrate with Trello's API",
-    "difficulty": 1.02,
+    "difficulty": 1.05,
     "challengeSeed": "123488494",
     "description": [
       "Go to CodePen <a href='http://codepen.io/FreeCodeCamp/pen/gbEmJr'>http://codepen.io/FreeCodeCamp/pen/gbEmJr</a> and click the \"fork\" button. This will create a \"fork\", or copy of the file, which you can then edit yourself.",
@@ -636,13 +660,41 @@
     "tests": []
   },
   {
-    "_id": "bd7158d8c442eddfaeb5bd1f",
-    "name": "Zipline: Integrate with a Weather API",
-    "difficulty": 1.03,
+    "_id": "bd7158d8c442eddfaeb5bd17",
+    "name": "Zipline: Build a Random Quote Generator",
+    "difficulty": 1.06,
     "challengeSeed": "123488494",
     "description": [
-      "Go to CodePen <a href='http://codepen.io/FreeCodeCamp/pen/gbEmJr'>http://codepen.io/FreeCodeCamp/pen/gbEmJr</a> and click the \"fork\" button. This will create a \"fork\", or copy of the file, which you can then edit yourself.",
-      "When you are finished, click the \"I've completed this challenge\" button and include a link to your Codepen. If you pair programmed, you should also include the Free Code Camp username of your pair. We will take a look at your code and eventually give you feedback. In the meantime, please move on to your next challenge."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd1c",
+    "name": "Zipline: Build a Camper News Viewer",
+    "difficulty": 1.06,
+    "challengeSeed": "123488494",
+    "description": [
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd1d",
+    "name": "Zipline: Build a JavaScript Calculator",
+    "difficulty": 1.06,
+    "challengeSeed": "123488494",
+    "description": [
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd1e",
+    "name": "Zipline: Create a Tic Tac Toe Game",
+    "difficulty": 1.06,
+    "challengeSeed": "123488494",
+    "description": [
     ],
     "challengeType": 3,
     "tests": []
