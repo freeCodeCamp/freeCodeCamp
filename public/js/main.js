@@ -23,6 +23,16 @@ $(document).ready(function() {
 
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
+  $('.checklist-element').each(function() {
+    if (!!$(this).attr('id')) {
+      var checklistElementId = $('.checklist-element').attr('id');
+      if(localStorage[checklistElementId]) {
+        $(this).children('.step-text').addClass('italic');
+        $(this).children('input').trigger('click');
+      }
+    }
+  });
+
   $('.start-challenge').on('click', function() {
     $(this).parent().remove();
     $('.challenge-content')
@@ -35,11 +45,18 @@ $(document).ready(function() {
   });
 
   $('.challenge-list-checkbox').on('change', function() {
+    var checkboxId = $(this).parent().parent().attr('id');
     if ($(this).is(":checked")) {
       $(this).parent().parent().children('.step-text').addClass('italic');
+      if (!localStorage || !localStorage[checkboxId]) {
+        localStorage[checkboxId] = "true";
+      }
     }
     if (!$(this).is(":checked")) {
       $(this).parent().parent().children('.step-text').removeClass('italic');
+      if (localStorage[checkboxId]) {
+        localStorage[checkboxId] = "false";
+      }
     }
   });
 

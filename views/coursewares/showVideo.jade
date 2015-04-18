@@ -6,9 +6,9 @@ block content
             .well
                 h4
                     ol
-                        for step in details
+                        for step, index in details
                             .row
-                                li
+                                li.checklist-element(id="#{dashedName + index}")
                                     .col-xs-2
                                         input(type='checkbox' class='challenge-list-checkbox')
                                     .col-xs-10.step-text!= step
