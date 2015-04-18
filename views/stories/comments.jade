@@ -24,7 +24,7 @@
                             var editButton = "";
                             if (commentDetails.author.username === user.profile.username){
                               if ((Date.now() - commentDetails.commentOn) < 600000){
-                               editButton = "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' id='test-" + commentDetails._id + "'>Edit</a> · ";
+                               editButton = "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost edit-btn' id='" + commentDetails._id + "'>Edit</a> · ";
                               }
                             }
                             $(div)
@@ -61,7 +61,12 @@
                         complete: function () {
                             sentinel--;
                             if (!sentinel) {
-                                $('.comment-a-comment').on('click', 'a', function () {
+                                $('.comment-a-comment').on('click', 'a', function() {
+                                    alert($(this).hasClass("edit-btn"));
+                                    var editOrComment = 'comment';
+                                    if ($(this).hasClass("edit-btn")){
+                                        editOrComment = 'edit';
+                                    }
                                     if (typeof user == "undefined" || !user) {
                                         window.location.href = '/signin';
                                         return;
@@ -77,7 +82,7 @@
                                                 "<div class='input-group'>" +
                                                     "<input class='form-control big-text-field field-responsive' id='comment-to-comment-textinput' type='text' maxlength='140' autofocus />" +
                                                     "<span class='input-group-btn'>" +
-                                                        "<button id='submit-comment-to-comment' class='btn btn-big btn-primary btn-responsive'>Send</button>" +
+                                                        "<button id='submit-comment-to-" + editOrComment + "' class='btn btn-big btn-primary btn-responsive'>Send</button>" +
                                                     "</span>" +
                                                 "</div>" +
                                             "</div>" +
@@ -122,9 +127,36 @@
                                         });
 
                                     };
+                                    var submitCommentForEditToCommentHandler = function submitCommentForEditToCommentHandler() {
+                                        $('#submit-comment-to-edit').unbind('click');
+                                        console.log('in comments.jade', originalStoryAuthorEmail);
+                                        $.post('/stories/comment/' + commentId + '/edit',
+                                        {
+                                            data: {
+                                                associatedPost: commentId,
+                                                originalStoryLink: originalStoryLink,
+                                                originalStoryAuthorEmail: originalStoryAuthorEmail,
+                                                body: $('#comment-to-comment-textinput').val(),
+                                                author: {
+                                                    picture: user.profile.picture,
+                                                    userId: user._id,
+                                                    username: user.profile.username,
+                                                    email: user.email
+                                                }
+                                            }
+                                        })
+                                        .fail(function (xhr, textStatus, errorThrown) {
+                                            $('#submit-comment-to-edit').bind('click', submitCommentForEditToCommentHandler);
+                                        })
+                                        .done(function (data, textStatus, xhr) {
+                                            window.location.reload();
+                                        });
 
+                                    };
+
+                                    $('#submit-comment-to-edit').on('click', submitCommentForEditToCommentHandler)
                                     $('#submit-comment-to-comment').on('click', submitCommentToCommentHandler);
-                                });//
+                                });
                             }
                         }
                     })
