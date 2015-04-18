@@ -1050,8 +1050,8 @@
     "tests": []
   },
   {
-    "_id": "bd7158d8c443eddfaeb5bdef",
-    "name": "Basejump: Build a Voting App",
+    "_id": "bd7158d8c443eddfaeb5bdee",
+    "name": "Basejump: Build Pintrest Clone",
     "difficulty": 2.05,
     "challengeSeed": "123488494",
     "description": [
