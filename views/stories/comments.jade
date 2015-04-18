@@ -62,7 +62,6 @@
                             sentinel--;
                             if (!sentinel) {
                                 $('.comment-a-comment').on('click', 'a', function() {
-                                    alert($(this).hasClass("edit-btn"));
                                     var editOrComment = 'comment';
                                     if ($(this).hasClass("edit-btn")){
                                         editOrComment = 'edit';

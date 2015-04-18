@@ -445,15 +445,20 @@ exports.commentEdit = function(req, res, next){
       return next(err);
     }
     cmt = cmt.pop();
-    cmt.body = sanitizedBody;
-    cmt.commentOn = Date.now();
-    cmt.save(function (err) {
-      if (err) {
-       return next(err);
-      }
-      res.send(true);
+    var rightNow = Date.now();
+    if ((rightNow - cmt.commentOn) < 600000){
+      cmt.body = sanitizedBody;
+      cmt.commentOn = Date.now();
+      cmt.save(function (err) {
+        if (err) {
+         return next(err);
+        }
+        res.send(true);
+      });
+    }
+    req.flash('errors', {
+      msg: 'Comment is too old to edit'
     });
-    //commentSave(comment, Comment, res, next);
   });
 
 };
