@@ -39,19 +39,19 @@ $(document).ready(function() {
   });
 
   $('.step-text').on('click', function() {
-    $(this).siblings().children('input').trigger('click');
+    $(this).parent().parent().parent().children().children('input').trigger('click');
   });
 
   $('.challenge-list-checkbox').on('change', function() {
     var checkboxId = $(this).parent().parent().attr('id');
     if ($(this).is(":checked")) {
-      $(this).parent().parent().children('.step-text').addClass('faded');
+      $(this).parent().siblings().children().addClass('faded');
       if (!localStorage || !localStorage[checkboxId]) {
         localStorage[checkboxId] = true;
       }
     }
     if (!$(this).is(":checked")) {
-      $(this).parent().parent().children('.step-text').removeClass('faded');
+      $(this).parent().siblings().children().removeClass('faded');
       if (localStorage[checkboxId]) {
         localStorage.removeItem(checkboxId);
       }

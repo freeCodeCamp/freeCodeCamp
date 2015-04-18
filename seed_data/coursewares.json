@@ -172,56 +172,56 @@
       "jQuery is a powerful tool for manipulating HTML elements.",
       "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
       "It's also extremely popular with employers, so we're going to learn it well.",
-      "Code School has an excellent free course that will walk us through the basics of jQuery.",
-      "Go to <a href='http://try.jquery.com/levels/1/challenges/1' target='_blank'>http://try.jquery.com/levels/1/challenges/1</a> and complete the first section."
+      "CodeCademy has an excellent free course that will walk us through the basics of jQuery.",
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-bay3D/0/1' target='_blank'>http://try.jquery.com/levels/1/challenges/1</a> and complete the first section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7113d8c441eddfaeb5bdef",
-    "name": "Traverse the DOM",
+    "name": "Write Functions with jQuery",
     "difficulty": 0.12,
     "challengeSeed": "114591805",
     "description": [
       "Now let's learn more about DOM traversal - that is, moving from one HTML element to the next.",
-      "Go to <a href='http://try.jquery.com/levels/2/challenges/1' target='_blank'>http://try.jquery.com/levels/2/challenges/1</a> and complete the second section."
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-GfjC6/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-GfjC6/0/1</a> and complete the second section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7114d8c441eddfaeb5bdef",
-    "name": "Work with the DOM",
+    "name": "Harness Dynamic HTML",
     "difficulty": 0.13,
     "challengeSeed": "114591804",
     "description": [
       "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
-      "Go to <a href='http://try.jquery.com/levels/3/challenges/1' target='_blank'>http://try.jquery.com/levels/3/challenges/1</a> and complete the third section."
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-v6phg/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-v6phg/0/1</a> and complete the third section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7115d8c441eddfaeb5bdef",
-    "name": "Listen for DOM Events",
+    "name": "Listen for jQuery Events",
     "difficulty": 0.14,
     "challengeSeed": "114591802",
     "description": [
       "Now let's learn how to use jQuery Listeners. These will \"listen\" for something to happen, and then trigger a subsequent event",
-      "Go to <a href='http://try.jquery.com/levels/4/challenges/1' target='_blank'>http://try.jquery.com/levels/4/challenges/1</a> and complete the fourth section."
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1</a> and complete the fourth section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7116d8c441eddfaeb5bdef",
-    "name": "Use jQuery for Styling",
+    "name": "Trigger jQuery Effects",
     "difficulty": 0.15,
     "challengeSeed": "114591801",
     "description": [
       "Finally, let's use jQuery to manipulate the way websites look by changing the CSS of elements.",
-      "Go to <a href='http://try.jquery.com/levels/5/challenges/1' target='_blank'>http://try.jquery.com/levels/5/challenges/1</a> and complete the fifth section."
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1</a> and complete the fifth section."
     ],
     "challengeType": 2,
     "tests": []
@@ -461,7 +461,7 @@
     "description": [
       "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
       "In this course, we'll build a virtual shop entirely in Angular.js.",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
+      "Go to <a href='http://www.codecademy.com/en/learn/learn-angularjs/topics/your-first-app/exercises/your-first-app-hello-angularjs-i' target='_blank'>http://www.codecademy.com/en/learn/learn-angularjs/topics/your-first-app/exercises/your-first-app-hello-angularjs-i</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
