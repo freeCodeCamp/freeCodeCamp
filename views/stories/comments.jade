@@ -21,7 +21,10 @@
                         success: function (data, textStatus, xhr) {
                             commentDetails = data;
                             var div = document.createElement('div');
-
+                            var editButton = "";
+                            if ((Date.now() - commentDetails.commentOn) < 600000){
+                              editButton = "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' id='test-" + commentDetails._id + "'>Edit</a> · ";
+                            }
                             $(div)
                                     .html(
                                         '<div class="media media-news">' +
@@ -36,6 +39,7 @@
                                                         '<h6>' +
                                                             '<div class="clearfix comment-a-comment negative-15">' +
                                                                 "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' id='" + commentDetails._id + "'>Reply</a> · " +
+                                                                editButton +
                                                                 "commented " + moment(commentDetails.commentOn).fromNow() + " by " +
                                                                 "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a>" +
                                                             '</div>' +
