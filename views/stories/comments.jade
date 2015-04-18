@@ -22,8 +22,10 @@
                             commentDetails = data;
                             var div = document.createElement('div');
                             var editButton = "";
-                            if ((Date.now() - commentDetails.commentOn) < 600000){
-                              editButton = "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' id='test-" + commentDetails._id + "'>Edit</a> · ";
+                            if (commentDetails.author.username === user.profile.username){
+                              if ((Date.now() - commentDetails.commentOn) < 600000){
+                               editButton = "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' id='test-" + commentDetails._id + "'>Edit</a> · ";
+                              }
                             }
                             $(div)
                                     .html(
