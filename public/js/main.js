@@ -30,12 +30,16 @@ $(document).ready(function() {
       .addClass('animated fadeInDown');
   });
 
+  $('.step-text').on('click', function() {
+    $(this).siblings().children('input').trigger('click');
+  });
+
   $('.challenge-list-checkbox').on('change', function() {
     if ($(this).is(":checked")) {
-      $(this).parent().parent().children('.step-text').addClass('strikethrough text-primary');
+      $(this).parent().parent().children('.step-text').addClass('italic');
     }
     if (!$(this).is(":checked")) {
-      $(this).parent().parent().children('.step-text').removeClass('strikethrough text-primary');
+      $(this).parent().parent().children('.step-text').removeClass('italic');
     }
   });
 

@@ -650,7 +650,7 @@
     "difficulty": 1.01,
     "challengeSeed": "123488494",
     "description": [
-      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/FreeCodeCamp/full/gbEmJr/' target='_blank'>http://codepen.io/FreeCodeCamp/full/gbEmJr/</a>.",
+      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
       "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
       "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
