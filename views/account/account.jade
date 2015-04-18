@@ -248,10 +248,10 @@ block content
                             | Update my Portfolio
                         br
 
-    - if (!user.google || !user.facebook || /*!user.github ||*/ !user.linkedin || !user.twitter)
-        .panel.panel-info
-            .panel-heading.text-center Manage your account here:
-            .panel-body
+    .panel.panel-info
+        .panel-heading.text-center Manage your account here:
+        .panel-body
+            - if (!user.google || !user.facebook || !user.linkedin || !user.twitter)
                 - if (!user.google)
                     .col-xs-12
                         a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/auth/google')
@@ -277,35 +277,35 @@ block content
                         a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/auth/twitter')
                             i.fa.fa-twitter
                             | Link Twitter with my account
-                .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
-                        span.ion-android-exit
-                        | Sign me out of Free Code Camp
-                .col-xs-12
-                    a.btn.btn-lg.btn-block.btn-danger.confirm-deletion.btn-link-social
-                        span.ion-trash-b
-                        | Delete my Free Code Camp account
-                    script.
-                        $('.confirm-deletion').on("click", function() {
-                          $('#modal-dialog').modal('show');
-                        });
-                    #modal-dialog.modal.animated.wobble
-                        .modal-dialog
-                            .modal-content
-                                .modal-header
-                                    a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                                    h3 Are you really leaving us?
-                                .modal-body
-                                    p Pro Tip: If you tweet feedback to&thinsp;
-                                        a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
-                                        | ,&thinsp;we'll act quickly on it!
-                                .modal-footer
-                                    a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                                        span.ion-happy
-                                        | Nevermind, I'll stick around
-                                    br
-                                    form(action='/account/delete', method='POST')
-                                        input(type='hidden', name='_csrf', value=_csrf)
-                                        button.btn.btn-danger.btn-block(type='submit')
-                                            span.ion-trash-b
-                                            | Yes, Delete my account
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
+                    span.ion-android-exit
+                    | Sign me out of Free Code Camp
+            .col-xs-12
+                a.btn.btn-lg.btn-block.btn-danger.confirm-deletion.btn-link-social
+                    span.ion-trash-b
+                    | Delete my Free Code Camp account
+                script.
+                    $('.confirm-deletion').on("click", function() {
+                      $('#modal-dialog').modal('show');
+                    });
+                #modal-dialog.modal.animated.wobble
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                                h3 Are you really leaving us?
+                            .modal-body
+                                p Pro Tip: If you tweet feedback to&thinsp;
+                                    a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
+                                    | ,&thinsp;we'll act quickly on it!
+                            .modal-footer
+                                a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                                    span.ion-happy
+                                    | Nevermind, I'll stick around
+                                br
+                                form(action='/account/delete', method='POST')
+                                    input(type='hidden', name='_csrf', value=_csrf)
+                                    button.btn.btn-danger.btn-block(type='submit')
+                                        span.ion-trash-b
+                                        | Yes, Delete my account
