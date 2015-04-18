@@ -26,7 +26,7 @@ $(document).ready(function() {
   $('.checklist-element').each(function() {
     var checklistElementId = $(this).attr('id');
     if(!!localStorage[checklistElementId]) {
-      $(this).children('.step-text').addClass('italic');
+      $(this).children('.step-text').addClass('faded');
       $(this).children().children('input').trigger('click');
     }
   });
@@ -45,13 +45,13 @@ $(document).ready(function() {
   $('.challenge-list-checkbox').on('change', function() {
     var checkboxId = $(this).parent().parent().attr('id');
     if ($(this).is(":checked")) {
-      $(this).parent().parent().children('.step-text').addClass('italic');
+      $(this).parent().parent().children('.step-text').addClass('faded');
       if (!localStorage || !localStorage[checkboxId]) {
         localStorage[checkboxId] = true;
       }
     }
     if (!$(this).is(":checked")) {
-      $(this).parent().parent().children('.step-text').removeClass('italic');
+      $(this).parent().parent().children('.step-text').removeClass('faded');
       if (localStorage[checkboxId]) {
         localStorage.removeItem(checkboxId);
       }
