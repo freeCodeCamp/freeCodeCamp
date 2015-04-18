@@ -24,12 +24,10 @@ $(document).ready(function() {
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
   $('.checklist-element').each(function() {
-    if (!!$(this).attr('id')) {
-      var checklistElementId = $('.checklist-element').attr('id');
-      if(localStorage[checklistElementId]) {
-        $(this).children('.step-text').addClass('italic');
-        $(this).children('input').trigger('click');
-      }
+    var checklistElementId = $(this).attr('id');
+    if(!!localStorage[checklistElementId]) {
+      $(this).children('.step-text').addClass('italic');
+      $(this).children().children('input').trigger('click');
     }
   });
 
@@ -49,13 +47,13 @@ $(document).ready(function() {
     if ($(this).is(":checked")) {
       $(this).parent().parent().children('.step-text').addClass('italic');
       if (!localStorage || !localStorage[checkboxId]) {
-        localStorage[checkboxId] = "true";
+        localStorage[checkboxId] = true;
       }
     }
     if (!$(this).is(":checked")) {
       $(this).parent().parent().children('.step-text').removeClass('italic');
       if (localStorage[checkboxId]) {
-        localStorage[checkboxId] = "false";
+        localStorage.removeItem(checkboxId);
       }
     }
   });
