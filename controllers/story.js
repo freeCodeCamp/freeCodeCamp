@@ -424,16 +424,18 @@ exports.commentOnCommentSubmit = function(req, res, next) {
 };
 
 exports.commentEdit = function(req, res, next){
-  if (req.user._id.toString() !== req.body.data.author.userId.toString()) {
+  //console.log(JSON.stringify(req));
+  console.log(JSON.stringify(req.body));
+  if (req.user._id.toString() !== req.body.author.userId.toString()) {
     return next(new Error('Not authorized'));
   }
 
   var data = req.params.id;
-  var sanitizedBody = sanitizeHtml(req.body.data.body,{
+  var sanitizedBody = sanitizeHtml(req.body.body,{
       allowedTags: [],
       allowedAttributes: []
     }).replace(/&quot;/g, '"');
-  if (req.body.data.body !== sanitizedBody) {
+  if (req.body.body !== sanitizedBody) {
     req.flash('errors', {
       msg: 'HTML is not allowed'
     });

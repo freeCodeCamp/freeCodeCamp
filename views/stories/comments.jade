@@ -129,8 +129,10 @@
                                     var submitCommentForEditToCommentHandler = function submitCommentForEditToCommentHandler() {
                                         $('#submit-comment-to-edit').unbind('click');
                                         console.log('in comments.jade', originalStoryAuthorEmail);
-                                        $.post('/stories/comment/' + commentId + '/edit',
-                                        {
+                                        
+                                        $.ajax({
+                                            type: "PUT",
+                                            url: '/stories/comment/' + commentId + '/edit',
                                             data: {
                                                 associatedPost: commentId,
                                                 originalStoryLink: originalStoryLink,
@@ -142,15 +144,15 @@
                                                     username: user.profile.username,
                                                     email: user.email
                                                 }
+                                            },
+                                            dataType: "json",
+                                            success: function (msg) {
+                                                window.location.reload();
+                                            },
+                                            error: function (err){
+                                                $('#submit-comment-to-edit').bind('click', submitCommentForEditToCommentHandler);
                                             }
-                                        })
-                                        .fail(function (xhr, textStatus, errorThrown) {
-                                            $('#submit-comment-to-edit').bind('click', submitCommentForEditToCommentHandler);
-                                        })
-                                        .done(function (data, textStatus, xhr) {
-                                            window.location.reload();
                                         });
-
                                     };
 
                                     $('#submit-comment-to-edit').on('click', submitCommentForEditToCommentHandler)
