@@ -49,13 +49,19 @@
     "name": "How does Free Code Camp work?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<img class='img-center img-responsive' alt='First you'll do about 100 hours of lessons.' src='https://s3.amazonaws.com/freecodecamp/100-hours-of-lessons.jpg'/>",
+      "<h2>Our free, self-paced, browser-based program takes about 1,600 hours to complete.",
       "<div class='spacer'></div>",
-      "<img class='img-center img-responsive' alt='Next you'll write algorithms and build practice projects for 100 hours.' src='https://s3.amazonaws.com/freecodecamp/100-hours-of-practice.jpg'/>",
+      "<img class='img-center img-responsive' alt='First you'll do about 200 hours of lessons. These are our \"Waypoints\".' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-waypoints.jpg'/>",
       "<div class='spacer'></div>",
-      "<img class='img-center img-responsive' alt='Finally you build full stack JavaScript apps for nonprofits for 800 hours.' src='https://s3.amazonaws.com/freecodecamp/800-hours-of-nonprofit-projects.jpg'/>",
+      "<img class='img-center img-responsive' alt='Next you'll write algorithms for 200 hours. These are our \"Bonfires\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-bonfires.jpg'/>",
       "<div class='spacer'></div>",
-      "<img class='img-center img-responsive' alt='This gives you a total of 1,000 hours of coding experience.' src='https://s3.amazonaws.com/freecodecamp/1000-hours-of-coding.jpg'/>",
+      "<img class='img-center img-responsive' alt='Next you'll write algorithms for 200 hours. These are our \"Ziplines\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-ziplines.jpg'/>",
+      "<div class='spacer'></div>",
+      "<img class='img-center img-responsive' alt='Next you'll write algorithms for 200 hours. These are our \"Basejumps\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-basejumps.jpg'/>",
+      "<div class='spacer'></div>",
+      "<img class='img-center img-responsive' alt='Finally you build full stack JavaScript apps for nonprofits for 600 hours. These are our \"Nonprofit Projects\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-nonprofit-projects.jpg'/>",
+      "<div class='spacer'></div>",
+      "<img class='img-center img-responsive' alt='This gives you a total of 1,600 hours of coding experience.' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg'/>",
       "</div>"
     ]
   },
