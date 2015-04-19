@@ -15,15 +15,27 @@ h3
             function(data) {
                 var docfrag = document.createDocumentFragment();
                 for (var i = 0; i < data.fieldGuideList.length; i++) {
-                    var li = document.createElement("li");
+                    var div = document.createElement("div");
                     // strike through field guides previously read
                     var linkedName = getLinkedName(data.fieldGuideList[i].name);
                     if (data.completedFieldGuides.indexOf(data.fieldGuideIds[i]) > -1) {
-                        $(li).html("<a class='strikethrough' href='/field-guide/" + linkedName + "'>" + data.fieldGuideList[i].name + "</a></li>");
+                        $(div).html("<div class='row'>" +
+                             "<div class='hidden-xs col-sm-3 col-md-2 text-primary ion-checkmark-circled padded-ionic-icon text-center'></div>" +
+                                "<div class='col-xs-12 col-sm-9 col-md-10'>" +
+                                    "<li class='faded'><a href='/field-guide/" + linkedName + "'>" + data.fieldGuideList[i].name + "</a></li>" +
+                                "</div>" +
+                            "</div>" +
+                        "</div>");
                     } else {
-                        $(li).html("<a href='/field-guide/" + linkedName + "'>" + data.fieldGuideList[i].name + "</a></li>");
+                        $(div).html("<div class='row'>" +
+                            "<div class='hidden-xs col-sm-3 col-md-2'></div>" +
+                                "<div class='col-xs-12 col-sm-9 col-md-10'>" +
+                                    "<li><a href='/field-guide/" + linkedName + "'>" + data.fieldGuideList[i].name + "</a></li>" +
+                                "</div>" +
+                            "</div>" +
+                        "</div>");
                     }
-                    docfrag.appendChild(li);
+                    docfrag.appendChild(div);
                 };
             $('#fieldGuideList').append(docfrag);
         });
