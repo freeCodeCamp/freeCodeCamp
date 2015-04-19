@@ -15,7 +15,7 @@
     "name": "What is Free Code Camp?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h2 class='text-left'>We're a community of busy adults who learn to code by building projects for nonprofits.</h2>",
+      "<h2 class='text-left'>We're a community of busy people who learn to code by building projects for nonprofits.</h2>",
       "<h3 class='text-left'>We help our campers (students):</h3>",
       "<h3>",
       "  <ol>",
@@ -36,8 +36,8 @@
       "<h3 class='text-left'>Most people who successfully learn to code:</h3>",
       "<h3>",
       "  <ol>",
-      "    <li>Code every day</li>",
-      "    <li>Have lots of friends who code</li>",
+      "    <li>Make friends with people who code</li>",
+      "    <li>Code a little every day</li>",
       "  </ol>",
       "</h3>",
       "<h3>We give you the structure and the community you need so you can successfully learn to code.</h3>",
@@ -46,6 +46,21 @@
   },
   {
     "_id": "bd7158d9c441eddfaeb5bd2f",
+    "name": "What are the advantages of Free Code Camp?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h3>",
+      "  <ul>",
+      "    <li>&bull; Free</li>",
+      "    <li>&bull; Self-paced</li>",
+      "    <li>&bull; Browser-based</li>",
+      "  </ol>",
+      "</h3>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c441eddfaeb5bd3f",
     "name": "How does Free Code Camp work?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
@@ -62,22 +77,6 @@
       "<img class='img-center img-responsive' alt='Finally you build full stack JavaScript apps for nonprofits for 600 hours. These are our \"Nonprofit Projects\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-nonprofit-projects.jpg'/>",
       "<div class='spacer'></div>",
       "<img class='img-center img-responsive' alt='This gives you a total of 1,600 hours of coding experience.' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg'/>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c441eddfaeb5bd3f",
-    "name": "What are the advantages of Free Code Camp?",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h3>",
-      "  <ul>",
-      "    <li>&bull; We're free</li>",
-      "    <li>&bull; We're self-paced</li>",
-      "    <li>&bull; We're browser-based</li>",
-      "    <li>&bull; You'll code the entire time</li>",
-      "  </ol>",
-      "</h3>",
       "</div>"
     ]
   },
@@ -139,7 +138,7 @@
     "name": "How long does Free Code Camp take?",
     "description": [
       "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
-      "    <p class=\"landing-p\">It takes about 1,000 hours of coding to develop the skills you'll need to get an entry level software engineering job. Most coding bootcamps try to jam all this into 12 weeks of intensive study. Free Code Camp is fully online, and there will always be other people at your skill level that you can pair program with, so you can learn at your own pace. Here are some example coding schedules:</p>",
+      "    <p class=\"landing-p\">It takes about 1,600 hours of coding to develop the skills you'll need to get an entry level software engineering job. Most coding bootcamps try to jam all this into 3 or 4 months of intensive study. Free Code Camp is fully online, and there will always be other people at your skill level that you can pair program with, so you can learn at your own pace. Here are some example coding schedules:</p>",
       "    <table class=\"table\">",
       "      <thead>",
       "        <th>Time budgeted</th>",
@@ -149,22 +148,22 @@
       "      <tr class=\"info\">",
       "        <td>Weekends</td>",
       "        <td class=\"hidden-xs\">10 hours/week</td>",
-      "        <td>100 weeks (2 years)</td>",
+      "        <td>160 weeks (36 months)</td>",
       "      </tr>",
       "      <tr class=\"success\">",
       "        <td>Nights and Weekends</td>",
       "        <td class=\"hidden-xs\">20 hours/week</td>",
-      "        <td>50 weeks (1 year)</td>",
+      "        <td>80 weeks (18 months)</td>",
       "      </tr>",
       "      <tr class=\"warning\">",
       "        <td>Full time</td>",
       "        <td class=\"hidden-xs\">40 hours/week</td>",
-      "        <td>25 weeks (6 months)</td>",
+      "        <td>40 weeks (9 months)</td>",
       "      </tr>",
       "      <tr class=\"danger\">",
       "        <td>Traditional Bootcamp Pacing</td>",
       "        <td class=\"hidden-xs\">80 hours/week</td>",
-      "        <td>12 weeks (3 months)</td>",
+      "        <td>20 weeks (5 months)</td>",
       "      </tr>",
       "    </table>",
       "<br>",
@@ -211,6 +210,28 @@
       "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
       "  <p class=\"landing-p\">Unlike coding bootcamps, anyone can study at Free Code Camp. We're not going to tell you that you can't become a software engineer. We believe the only person who should be able to tell you that is you.</p>",
       "  <p class=\"landing-p\">If you persevere, and keep working through our challenges and nonprofit projects, you will become an employable software engineer.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfaeb5bd2f",
+    "name": "How do I get help when I get stuck?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h3>When you get stuck, remember: RSAP.</h3>",
+      "<h3>",
+      "  <ol>",
+      "    <li><span class='text-info'>Read</span> the documentation or error</li>",
+      "    <li><span class='text-info'>Search</span> Google</li>",
+      "    <li><span class='text-info'>Ask</span> your friends for help</li>",
+      "    <li><span class='text-info'>Post</span> on Stack Overflow</li>",
+      "  </ol>",
+      "</h3>",
+      "<h3>This is the most time-efficient way to handle being stuck, and it's the most respectful of other people's time, too.</h3>",
+      "<h3>Most of the time, you'll solve your problem after just one or two steps of this algorithm.</h3>",
+      "<h3>We have a special chat room just for getting help: <a href='https://freecode.slack.com/messages/help/' target='_blank'>https://freecode.slack.com/messages/help/</a></h3>",
+      "<h3>Also, if you need to post on Stack Overflow, be sure to read their guide to asking good questions: <a href='http://stackoverflow.com/help/how-to-ask' target='_blank'>http://stackoverflow.com/help/how-to-ask</a>.</h3>",
+      "<h3>Learning to code is hard. But it's a lot easier if you ask for help when you need it!</h3>",
       "</div>"
     ]
   },
