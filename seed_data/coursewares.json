@@ -130,7 +130,7 @@
     "difficulty": 0.08,
     "challengeSeed": "114627406",
     "description": [
-      "http://www.codecademy.com/en/skills/make-a-website/topics/html-elements"
+      "Go to <a href='http://www.codecademy.com/en/skills/make-a-website/topics/html-elements' target='_blank'>http://www.codecademy.com/en/skills/make-a-website/topics/html-elements</a> and complete the section."
 
     ],
     "challengeType": 2,
@@ -142,7 +142,8 @@
     "difficulty": 0.09,
     "challengeSeed": "114578441",
     "description": [
-      "http://www.codecademy.com/skills/make-a-website/topics/css-properties-text"
+      "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/css-properties-text' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/css-properties-text</a> and complete the section."
+
     ],
     "challengeType": 2,
     "tests": []
@@ -153,7 +154,7 @@
     "difficulty": 0.10,
     "challengeSeed": "114578438",
     "description": [
-      "http://www.codecademy.com/skills/make-a-website/topics/css-properties-box"
+      "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/css-properties-box' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/css-properties-box</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
@@ -164,7 +165,7 @@
     "difficulty": 0.11,
     "challengeSeed": "114578438",
     "description": [
-      "http://www.codecademy.com/skills/make-a-website/topics/css-properties-layout"
+      "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/css-properties-layout' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/css-properties-layout</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
@@ -175,7 +176,7 @@
     "difficulty": 0.12,
     "challengeSeed": "114578438",
     "description": [
-      "http://www.codecademy.com/skills/make-a-website/topics/bootstrap-components"
+      "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/bootstrap-components' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/bootstrap-components</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
@@ -190,7 +191,7 @@
       "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
       "It's also extremely popular with employers, so we're going to learn it well.",
       "Codecademy has an excellent free course that will walk us through the basics of jQuery.",
-      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-bay3D/0/1' target='_blank'>http://try.jquery.com/levels/1/challenges/1</a> and complete the first section."
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-bay3D/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-bay3D/0/1</a> and complete the first section."
     ],
     "challengeType": 2,
     "tests": []
@@ -225,7 +226,6 @@
     "difficulty": 0.16,
     "challengeSeed": "114591802",
     "description": [
-      "Now let's learn how to use jQuery Listeners. These will \"listen\" for something to happen, and then trigger a subsequent event",
       "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1</a> and complete the fourth section."
     ],
     "challengeType": 2,
@@ -237,7 +237,6 @@
     "difficulty": 0.17,
     "challengeSeed": "114591801",
     "description": [
-      "Finally, let's use jQuery to manipulate the way websites look by changing the CSS of elements.",
       "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1</a> and complete the fifth section."
     ],
     "challengeType": 2,
