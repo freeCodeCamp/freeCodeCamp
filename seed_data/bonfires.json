@@ -606,21 +606,6 @@
     ]
   },
   {
-    "_id": "a3f503de51cf954ede28891d",
-    "name": "Symmetric Difference",
-    "difficulty": "2.20",
-    "description": [
-      "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
-      "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both."
-    ],
-    "challengeSeed": "function sym(arr) {\n  return arr;\r\n}\n\nsym([1, 2, 3], [5, 2, 1, 4]);",
-    "tests": [
-      "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
-      "assert.deepEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');",
-      "assert.deepEqual(sym([1, 1]), [1], 'should return an array of unique values');"
-    ]
-  },
-  {
     "_id": "a10d2431ad0c6a099a4b8b52",
     "name": "Everything Be True",
     "difficulty": "2.21",
@@ -736,9 +721,24 @@
     "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n\n\ntelephoneCheck(\"555-555-5555\");"
   },
   {
+    "_id": "a3f503de51cf954ede28891d",
+    "name": "Symmetric Difference",
+    "difficulty": "4.02",
+    "description": [
+      "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
+      "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both."
+    ],
+    "challengeSeed": "function sym(args) {\n  return arr;\r\n}\n\nsym([1, 2, 3], [5, 2, 1, 4]);",
+    "tests": [
+      "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
+      "assert.deepEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');",
+      "assert.deepEqual(sym([1, 1]), [1], 'should return an array of unique values');"
+    ]
+  },
+  {
     "_id": "aa2e6f85cab2ab736c9a9b24",
     "name": "Cash Register",
-    "difficulty": "4.02",
+    "difficulty": "4.03",
     "description": [
       "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.", "cid is a 2d array listing available currency.", "Return the string \"Insufficient Funds\" if cash-in-drawer is less than the change due. Return the string \"Closed\" if cash-in-drawer is equal to the change due.", "Otherwise, return change in coin and bills, sorted in highest to lowest order."
     ],
@@ -756,7 +756,7 @@
   {
     "_id": "a56138aff60341a09ed6c480",
     "name": "Inventory Update",
-    "difficulty": "4.03",
+    "difficulty": "4.04",
     "description": [
       "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order."
     ],
@@ -773,7 +773,7 @@
   {
     "_id": "a7bf700cd123b9a54eef01d5",
     "name": "No repeats please",
-    "difficulty": "4.04",
+    "difficulty": "4.05",
     "description": [
       "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
       "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating."
@@ -792,7 +792,7 @@
   {
     "_id": "a19f0fbe1872186acd434d5a",
     "name": "Friendly Date Ranges",
-    "difficulty": "4.05",
+    "difficulty": "4.06",
     "description": [
       "Implement a way of converting two dates into a more friendly date range that could be presented to a user.",
       "It must not show any redundant information in the date range.",
