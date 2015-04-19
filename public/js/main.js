@@ -26,7 +26,7 @@ $(document).ready(function() {
   $('.checklist-element').each(function() {
     var checklistElementId = $(this).attr('id');
     if(!!localStorage[checklistElementId]) {
-      $(this).children('.step-text').addClass('faded');
+      $(this).children().children('li').addClass('faded');
       $(this).children().children('input').trigger('click');
     }
   });
