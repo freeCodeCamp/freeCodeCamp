@@ -56,8 +56,9 @@
                             sentinel--;
                             if (!sentinel) {
                                 $('.comment-a-comment').on('click', 'a', function () {
-                                    if (typeof user == "undefined" || !user) {
-                                        window.location.href = '/signin';
+                                    if (!isLoggedIn) {
+                                      console.log('not logged in');
+                                        //window.location.href = '/signin';
                                         return;
                                     }
                                     $(this).unbind('click');
@@ -92,20 +93,12 @@
                                     });
                                     var submitCommentToCommentHandler = function submitCommentToCommentHandler() {
                                         $('#submit-comment-to-comment').unbind('click');
-                                        console.log('in comments.jade', originalStoryAuthorEmail);
                                         $.post('/stories/comment/' + commentId + '/comment',
                                         {
                                             data: {
                                                 associatedPost: commentId,
                                                 originalStoryLink: originalStoryLink,
-                                                originalStoryAuthorEmail: originalStoryAuthorEmail,
                                                 body: $('#comment-to-comment-textinput').val(),
-                                                author: {
-                                                    picture: user.profile.picture,
-                                                    userId: user._id,
-                                                    username: user.profile.username,
-                                                    email: user.email
-                                                }
                                             }
                                         })
                                         .fail(function (xhr, textStatus, errorThrown) {
