@@ -149,17 +149,6 @@ List of Packages
 | supertest                       | HTTP assertion library.                                              |
 | multiline                       | Multi-line strings for the generator.                                |
 
-
-Changelog
----------
-
-### 0.1.0 (December 24, 2014)
-- Improved how unique emails and usernames are handled (with Express-validator)
-- Added a tweet button to challenge completion model
-- Refactored all views to get rid of any hard-coded challenge information (to make for a better forking experience)
-- Installed Helmet to maximize security of application
-- Added .env and removed all trace of API keys from git history
-
 License
 -------
 
