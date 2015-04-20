@@ -21,7 +21,13 @@
                         success: function (data, textStatus, xhr) {
                             commentDetails = data;
                             var div = document.createElement('div');
-
+                            var editButton = "";
+                          // todo
+                            if (commentDetails.author.username === DF105CFA89562196E702912B3818C6A5B46E80D262442FDF29976621E5AF0D23) {
+                              if ((Date.now() - commentDetails.commentOn) < 600000){
+                               editButton = "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost edit-btn' id='" + commentDetails._id + "'>Edit</a> · ";
+                              }
+                            }
                             $(div)
                                     .html(
                                         '<div class="media media-news">' +
@@ -36,6 +42,7 @@
                                                         '<h6>' +
                                                             '<div class="clearfix comment-a-comment negative-15">' +
                                                                 "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' id='" + commentDetails._id + "'>Reply</a> · " +
+                                                                editButton +
                                                                 "commented " + moment(commentDetails.commentOn).fromNow() + " by " +
                                                                 "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a>" +
                                                             '</div>' +
@@ -55,10 +62,13 @@
                         complete: function () {
                             sentinel--;
                             if (!sentinel) {
-                                $('.comment-a-comment').on('click', 'a', function () {
+                                $('.comment-a-comment').on('click', 'a', function() {
+                                    var editOrComment = 'comment';
+                                    if ($(this).hasClass("edit-btn")){
+                                        editOrComment = 'edit';
+                                    }
                                     if (!isLoggedIn) {
-                                      console.log('not logged in');
-                                        //window.location.href = '/signin';
+                                        window.location.href = '/signin';
                                         return;
                                     }
                                     $(this).unbind('click');
@@ -72,7 +82,7 @@
                                                 "<div class='input-group'>" +
                                                     "<input class='form-control big-text-field field-responsive' id='comment-to-comment-textinput' type='text' maxlength='140' autofocus />" +
                                                     "<span class='input-group-btn'>" +
-                                                        "<button id='submit-comment-to-comment' class='btn btn-big btn-primary btn-responsive'>Send</button>" +
+                                                        "<button id='submit-comment-to-" + editOrComment + "' class='btn btn-big btn-primary btn-responsive'>Send</button>" +
                                                     "</span>" +
                                                 "</div>" +
                                             "</div>" +
@@ -109,9 +119,31 @@
                                         });
 
                                     };
+                                  // todo
+                                    var submitCommentForEditToCommentHandler = function submitCommentForEditToCommentHandler() {
+                                        $('#submit-comment-to-edit').unbind('click');
 
+                                        $.ajax({
+                                            type: "PUT",
+                                            url: '/stories/comment/' + commentId + '/edit',
+                                            data: {
+                                                associatedPost: commentId,
+                                                originalStoryLink: originalStoryLink,
+                                                body: $('#comment-to-comment-textinput').val()
+                                            },
+                                            dataType: "json",
+                                            success: function (msg) {
+                                                window.location.reload();
+                                            },
+                                            error: function (err){
+                                                $('#submit-comment-to-edit').bind('click', submitCommentForEditToCommentHandler);
+                                            }
+                                        });
+                                    };
+
+                                    $('#submit-comment-to-edit').on('click', submitCommentForEditToCommentHandler)
                                     $('#submit-comment-to-comment').on('click', submitCommentToCommentHandler);
-                                });//
+                                });
                             }
                         }
                     })

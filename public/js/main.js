@@ -298,7 +298,6 @@ $(document).ready(function() {
       {
         data: {
           associatedPost: storyId,
-          originalStoryLink: originalStoryLink,
           body: data
         }
       })
@@ -314,7 +313,7 @@ $(document).ready(function() {
 });
 
 var profileValidation = angular.module('profileValidation',
-  ['ui.bootstrap', 'ngLodash']);
+  ['ui.bootstrap']);
 profileValidation.controller('profileValidationController', ['$scope', '$http',
   function($scope, $http) {
     $http.get('/account/api').success(function(data) {
@@ -393,12 +392,12 @@ profileValidation.directive('uniqueUsername', ['$http', function($http) {
 }]);
 
 profileValidation.directive('existingUsername',
-  ['$http', 'lodash', function($http, lodash) {
+  ['$http', function($http) {
   return {
     restrict: 'A',
     require: 'ngModel',
     link: function (scope, element, attrs, ngModel) {
-      element.bind("keyup", function (event) {
+      element.bind('keyup', function (event) {
         if (element.val().length > 0) {
           ngModel.$setValidity('exists', false);
         } else {
@@ -406,14 +405,11 @@ profileValidation.directive('existingUsername',
           ngModel.$setPristine();
         }
         if (element.val()) {
-          var debo = lodash.debounce(function() {
-            $http
-              .get('/api/checkExistingUsername/' + element.val())
-              .success(function (data) {
-                ngModel.$setValidity('exists', data);
-              });
-          }, 2000);
-          debo();
+          $http
+            .get('/api/checkExistingUsername/' + element.val())
+            .success(function (data) {
+              ngModel.$setValidity('exists', data);
+            });
         }
       });
     }

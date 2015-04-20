@@ -441,6 +441,43 @@ exports.commentOnCommentSubmit = function(req, res, next) {
   commentSave(comment, Comment, res, next);
 };
 
+exports.commentEdit = function(req, res, next) {
+
+  Comment.find({'_id': req.params.id}, function(err, cmt) {
+    if (err) {
+      return next(err);
+    }
+    cmt = cmt.pop();
+
+    if (!req.user && cmt.author.userId !== req.user._id) {
+      return next(new Error('Not authorized'));
+    }
+
+
+    var sanitizedBody = sanitizeHtml(req.body.body, {
+      allowedTags: [],
+      allowedAttributes: []
+    }).replace(/&quot;/g, '"');
+    if (req.body.body !== sanitizedBody) {
+      req.flash('errors', {
+        msg: 'HTML is not allowed'
+      });
+      return res.send(true);
+    }
+
+    cmt.body = sanitizedBody;
+    cmt.commentOn = Date.now();
+    cmt.save(function (err) {
+      if (err) {
+       return next(err);
+      }
+      res.send(true);
+    });
+
+  });
+
+};
+
 function commentSave(comment, Context, res, next) {
   comment.save(function(err, data) {
     if (err) {
