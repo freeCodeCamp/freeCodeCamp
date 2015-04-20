@@ -340,7 +340,10 @@ exports.storySubmission = function(req, res, next) {
       allowedAttributes: []
     }).replace(/&quot;/g, '"'),
     rank: 1,
-    upVotes: data.upVotes,
+    upVotes: [({
+      upVotedBy: req.user._id,
+      upVotedByUsername: req.user.profile.username
+    })],
     author: {
       picture: req.user.profile.picture,
       userId: req.user._id,
