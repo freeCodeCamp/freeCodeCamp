@@ -57,7 +57,7 @@ exports.recentJSON = function(req, res, next) {
 };
 
 exports.hot = function(req, res) {
- return res.render('stories/index', {
+  return res.render('stories/index', {
     title: 'Hot stories currently trending on Camper News',
     page: 'hot'
   });
@@ -120,7 +120,7 @@ exports.returnIndividualStory = function(req, res, next) {
 
   var storyName = dashedName.replace(/\-/g, ' ');
 
-  Story.find({'storyLink': new RegExp(storyName, 'i')}, function(err, story) {
+  Story.find({'storyLink': storyName}, function(err, story) {
     if (err) {
       return next(err);
     }
@@ -328,186 +328,198 @@ exports.storySubmission = function(req, res, next) {
   if (link.search(/^https?:\/\//g) === -1) {
     link = 'http://' + link;
   }
-  var story = new Story({
-    headline: sanitizeHtml(data.headline, {
-      allowedTags: [],
-      allowedAttributes: []
-    }).replace(/&quot;/g, '"'),
-    timePosted: Date.now(),
-    link: link,
-    description: sanitizeHtml(data.description, {
-      allowedTags: [],
-      allowedAttributes: []
-    }).replace(/&quot;/g, '"'),
-    rank: 1,
-    upVotes: [({
-      upVotedBy: req.user._id,
-      upVotedByUsername: req.user.profile.username
-    })],
-    author: {
-      picture: req.user.profile.picture,
-      userId: req.user._id,
-      username: req.user.profile.username,
-      email: req.user.email
-    },
-    comments: [],
-    image: data.image,
-    storyLink: storyLink,
-    metaDescription: data.storyMetaDescription,
-    originalStoryAuthorEmail: req.user.email
-  });
-
-    story.save(function(err) {
-        if (err) {
-            return res.status(500);
-        }
-        res.send(JSON.stringify({
-            storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
-        }));
-    });
-};
-
-exports.commentSubmit = function(req, res, next) {
-  var data = req.body.data;
-  if (!req.user) {
-    return next(new Error('Not authorized'));
-  }
-  var sanitizedBody = sanitizeHtml(data.body,
-    {
-      allowedTags: [],
-      allowedAttributes: []
-    }).replace(/&quot;/g, '"');
-  if (data.body !== sanitizedBody) {
-    req.flash('errors', {
-      msg: 'HTML is not allowed'
-    });
-    return res.send(true);
-  }
-  var comment = new Comment({
-    associatedPost: data.associatedPost,
-    originalStoryLink: data.originalStoryLink,
-    originalStoryAuthorEmail: req.user.email,
-    body: sanitizedBody,
-    rank: 0,
-    upvotes: 0,
-    author: {
-      picture: req.user.profile.picture,
-      userId: req.user._id,
-      username: req.user.profile.username,
-      email: req.user.email
-    },
-    comments: [],
-    topLevel: true,
-    commentOn: Date.now()
-  });
-
-  commentSave(comment, Story, res, next);
-};
-
-exports.commentOnCommentSubmit = function(req, res, next) {
-  var data = req.body.data;
-  if (!req.user) {
-    return next(new Error('Not authorized'));
-  }
-
-  var sanitizedBody = sanitizeHtml(data.body,
-    {
-      allowedTags: [],
-      allowedAttributes: []
-    }).replace(/&quot;/g, '"');
-  if (data.body !== sanitizedBody) {
-    req.flash('errors', {
-      msg: 'HTML is not allowed'
-    });
-    return res.send(true);
-  }
-  var comment = new Comment({
-    associatedPost: data.associatedPost,
-    body: sanitizedBody,
-    rank: 0,
-    upvotes: 0,
-    originalStoryLink: data.originalStoryLink,
-    originalStoryAuthorEmail: data.originalStoryAuthorEmail,
-    author: {
-      picture: req.user.profile.picture,
-      userId: req.user._id,
-      username: req.user.profile.username,
-      email: req.user.email
-    },
-    comments: [],
-    topLevel: false,
-    commentOn: Date.now()
-  });
-  commentSave(comment, Comment, res, next);
-};
-
-exports.commentEdit = function(req, res, next) {
-
-  Comment.find({'_id': req.params.id}, function(err, cmt) {
+  Story.count({'storyLink': new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i')}, function (err, storyCount) {
     if (err) {
-      return next(err);
+      return res.status(500);
     }
-    cmt = cmt.pop();
 
-    if (!req.user && cmt.author.userId !== req.user._id) {
+    // if duplicate storyLink add unique number
+    storyLink = (storyCount == 0) ? storyLink : storyLink + ' ' + storyCount;
+
+    var link = data.link;
+    if (link.search(/^https?:\/\//g) === -1) {
+      link = 'http://' + link;
+    }
+    var story = new Story({
+      headline: sanitizeHtml(data.headline, {
+        allowedTags: [],
+        allowedAttributes: []
+      }).replace(/&quot;/g, '"'),
+      timePosted: Date.now(),
+      link: link,
+      description: sanitizeHtml(data.description, {
+        allowedTags: [],
+        allowedAttributes: []
+      }).replace(/&quot;/g, '"'),
+      rank: 1,
+      upVotes: [({
+        upVotedBy: req.user._id,
+        upVotedByUsername: req.user.profile.username
+      })],
+      author: {
+        picture: req.user.profile.picture,
+        userId: req.user._id,
+        username: req.user.profile.username,
+        email: req.user.email
+      },
+      comments: [],
+      image: data.image,
+      storyLink: storyLink,
+      metaDescription: data.storyMetaDescription,
+      originalStoryAuthorEmail: req.user.email
+    });
+    story.save(function (err) {
+      if (err) {
+        return res.status(500);
+      }
+      res.send(JSON.stringify({
+        storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
+      }));
+    });
+  });
+};
+
+  exports.commentSubmit = function(req, res, next) {
+    var data = req.body.data;
+    if (!req.user) {
       return next(new Error('Not authorized'));
     }
-
-
-    var sanitizedBody = sanitizeHtml(req.body.body, {
-      allowedTags: [],
-      allowedAttributes: []
-    }).replace(/&quot;/g, '"');
-    if (req.body.body !== sanitizedBody) {
+    var sanitizedBody = sanitizeHtml(data.body,
+      {
+        allowedTags: [],
+        allowedAttributes: []
+      }).replace(/&quot;/g, '"');
+    if (data.body !== sanitizedBody) {
       req.flash('errors', {
         msg: 'HTML is not allowed'
       });
       return res.send(true);
     }
-
-    cmt.body = sanitizedBody;
-    cmt.commentOn = Date.now();
-    cmt.save(function (err) {
-      if (err) {
-       return next(err);
-      }
-      res.send(true);
+    var comment = new Comment({
+      associatedPost: data.associatedPost,
+      originalStoryLink: data.originalStoryLink,
+      originalStoryAuthorEmail: req.user.email,
+      body: sanitizedBody,
+      rank: 0,
+      upvotes: 0,
+      author: {
+        picture: req.user.profile.picture,
+        userId: req.user._id,
+        username: req.user.profile.username,
+        email: req.user.email
+      },
+      comments: [],
+      topLevel: true,
+      commentOn: Date.now()
     });
 
-  });
+    commentSave(comment, Story, res, next);
+  };
 
-};
-
-function commentSave(comment, Context, res, next) {
-  comment.save(function(err, data) {
-    if (err) {
-      return next(err);
+  exports.commentOnCommentSubmit = function(req, res, next) {
+    var data = req.body.data;
+    if (!req.user) {
+      return next(new Error('Not authorized'));
     }
-    try {
-      Context.find({'_id': comment.associatedPost}, function (err, associatedStory) {
+
+    var sanitizedBody = sanitizeHtml(data.body,
+      {
+        allowedTags: [],
+        allowedAttributes: []
+      }).replace(/&quot;/g, '"');
+    if (data.body !== sanitizedBody) {
+      req.flash('errors', {
+        msg: 'HTML is not allowed'
+      });
+      return res.send(true);
+    }
+    var comment = new Comment({
+      associatedPost: data.associatedPost,
+      body: sanitizedBody,
+      rank: 0,
+      upvotes: 0,
+      originalStoryLink: data.originalStoryLink,
+      originalStoryAuthorEmail: data.originalStoryAuthorEmail,
+      author: {
+        picture: req.user.profile.picture,
+        userId: req.user._id,
+        username: req.user.profile.username,
+        email: req.user.email
+      },
+      comments: [],
+      topLevel: false,
+      commentOn: Date.now()
+    });
+    commentSave(comment, Comment, res, next);
+  };
+
+  exports.commentEdit = function(req, res, next) {
+
+    Comment.find({'_id': req.params.id}, function(err, cmt) {
+      if (err) {
+        return next(err);
+      }
+      cmt = cmt.pop();
+
+      if (!req.user && cmt.author.userId !== req.user._id) {
+        return next(new Error('Not authorized'));
+      }
+
+
+      var sanitizedBody = sanitizeHtml(req.body.body, {
+        allowedTags: [],
+        allowedAttributes: []
+      }).replace(/&quot;/g, '"');
+      if (req.body.body !== sanitizedBody) {
+        req.flash('errors', {
+          msg: 'HTML is not allowed'
+        });
+        return res.send(true);
+      }
+
+      cmt.body = sanitizedBody;
+      cmt.commentOn = Date.now();
+      cmt.save(function (err) {
         if (err) {
           return next(err);
         }
-        associatedStory = associatedStory.pop();
-        if (associatedStory) {
-          associatedStory.comments.push(data._id);
-          associatedStory.save(function (err) {
-            if (err) {
-              return next(err);
-            }
-            res.send(true);
-          });
-        }
-        User.findOne({'profile.username': associatedStory.author.username}, function(err, recipient) {
+        res.send(true);
+      });
+
+    });
+
+  };
+
+  function commentSave(comment, Context, res, next) {
+    comment.save(function(err, data) {
+      if (err) {
+        return next(err);
+      }
+      try {
+        Context.find({'_id': comment.associatedPost}, function (err, associatedStory) {
           if (err) {
             return next(err);
           }
-          var recipients = '';
-          if (data.originalStoryAuthorEmail && (data.originalStoryAuthorEmail !== recipient.email)) {
-             recipients = data.originalStoryAuthorEmail + ',' + recipient.email;
-           } else {
-             recipients = recipient.email;
-           }
+          associatedStory = associatedStory.pop();
+          if (associatedStory) {
+            associatedStory.comments.push(data._id);
+            associatedStory.save(function (err) {
+              if (err) {
+                return next(err);
+              }
+              res.send(true);
+            });
+          }
+          User.findOne({'profile.username': associatedStory.author.username}, function(err, recipient) {
+            if (err) {
+              return next(err);
+            }
+            var recipients = '';
+            if (data.originalStoryAuthorEmail && (data.originalStoryAuthorEmail !== recipient.email)) {
+              recipients = data.originalStoryAuthorEmail + ',' + recipient.email;
+            } else {
+              recipients = recipient.email;
+            }
             var transporter = nodemailer.createTransport({
               service: 'Mandrill',
               auth: {
@@ -531,11 +543,11 @@ function commentSave(comment, Context, res, next) {
                 return err;
               }
             });
+          });
         });
-      });
-    } catch (e) {
-      // delete comment
-      return next(err);
-    }
-  });
-}
+      } catch (e) {
+        // delete comment
+        return next(err);
+      }
+    });
+  }
