@@ -234,7 +234,7 @@ $(document).ready(function() {
     $('#upvote').unbind('click');
     var alreadyUpvoted = false;
     for (var i = 0; i < upVotes.length; i++) {
-      if (upVotes[i].upVotedBy === user._id) {
+      if (upVotes[i].upVotedBy === B3BA669EC5C1DD70FB478221E067A7E1B686929C569F5E73561B69C8F42129B) {
         alreadyUpvoted = true;
         break;
       }
@@ -243,8 +243,7 @@ $(document).ready(function() {
       $.post('/stories/upvote',
         {
           data: {
-            id: _id,
-            upVoter: user
+            id: _id
           }
         })
         .fail(function (xhr, textStatus, errorThrown) {
@@ -264,10 +263,7 @@ $(document).ready(function() {
     var link = $('#story-url').val();
     var headline = $('#story-title').val();
     var description = $('#description-box').val();
-    var userDataForUpvote = {
-      upVotedBy: user._id,
-      upVotedByUsername: user.profile.username
-    };
+
     $('#story-submit').unbind('click');
     $.post('/stories/',
       {
@@ -277,15 +273,7 @@ $(document).ready(function() {
           timePosted: Date.now(),
           description: description,
           storyMetaDescription: storyMetaDescription,
-          originalStoryAuthorEmail: user.email,
           rank: 1,
-          upVotes: [userDataForUpvote],
-          author: {
-            picture: user.profile.picture,
-            email: user.email,
-            userId: user._id,
-            username: user.profile.username
-          },
           comments: [],
           image: storyImage
         }
@@ -311,14 +299,7 @@ $(document).ready(function() {
         data: {
           associatedPost: storyId,
           originalStoryLink: originalStoryLink,
-          originalStoryAuthorEmail: originalStoryAuthorEmail,
-          body: data,
-          author: {
-            picture: user.profile.picture,
-            userId: user._id,
-            username: user.profile.username,
-            email: user.email
-          }
+          body: data
         }
       })
       .fail(function (xhr, textStatus, errorThrown) {
@@ -332,7 +313,8 @@ $(document).ready(function() {
   $('#comment-button').on('click', commentSubmitButtonHandler);
 });
 
-var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
+var profileValidation = angular.module('profileValidation',
+  ['ui.bootstrap', 'ngLodash']);
 profileValidation.controller('profileValidationController', ['$scope', '$http',
   function($scope, $http) {
     $http.get('/account/api').success(function(data) {
@@ -389,7 +371,7 @@ profileValidation.controller('submitStoryController', ['$scope',
   }
 ]);
 
-profileValidation.directive('uniqueUsername',['$http',function($http) {
+profileValidation.directive('uniqueUsername', ['$http', function($http) {
   return {
     restrict: 'A',
     require: 'ngModel',
@@ -398,7 +380,7 @@ profileValidation.directive('uniqueUsername',['$http',function($http) {
         ngModel.$setValidity('unique', true);
         if (element.val()) {
           $http.get("/api/checkUniqueUsername/" + element.val()).success(function (data) {
-            if (element.val() == scope.storedUsername) {
+            if (element.val() === scope.storedUsername) {
               ngModel.$setValidity('unique', true);
             } else if (data) {
               ngModel.$setValidity('unique', false);
@@ -407,10 +389,11 @@ profileValidation.directive('uniqueUsername',['$http',function($http) {
         }
       });
     }
-  }
+  };
 }]);
 
-profileValidation.directive('existingUsername', ['$http', function($http) {
+profileValidation.directive('existingUsername',
+  ['$http', 'lodash', function($http, lodash) {
   return {
     restrict: 'A',
     require: 'ngModel',
@@ -423,15 +406,18 @@ profileValidation.directive('existingUsername', ['$http', function($http) {
           ngModel.$setPristine();
         }
         if (element.val()) {
-          $http
-            .get("/api/checkExistingUsername/" + element.val())
-            .success(function (data) {
-              ngModel.$setValidity('exists', data);
-            });
+          var debo = lodash.debounce(function() {
+            $http
+              .get('/api/checkExistingUsername/' + element.val())
+              .success(function (data) {
+                ngModel.$setValidity('exists', data);
+              });
+          }, 2000);
+          debo();
         }
       });
     }
-  }
+  };
 }]);
 
 profileValidation.directive('uniqueEmail', ['$http', function($http) {
@@ -443,7 +429,7 @@ profileValidation.directive('uniqueEmail', ['$http', function($http) {
         ngModel.$setValidity('unique', true);
         if (element.val()) {
           $http.get("/api/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
-            if (element.val() == scope.storedEmail) {
+            if (element.val() === scope.storedEmail) {
               ngModel.$setValidity('unique', true);
             } else if (data) {
               ngModel.$setValidity('unique', false);

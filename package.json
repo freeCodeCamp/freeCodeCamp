@@ -11,8 +11,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "test": "mocha",
-    "postinstall": "node seed_data/seed.js"
+    "test": "mocha"
   },
   "dependencies": {
     "accepts": "^1.2.5",

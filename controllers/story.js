@@ -223,8 +223,8 @@ exports.upvote = function(req, res, next) {
     story.rank++;
     story.upVotes.push(
       {
-        upVotedBy: data.upVoter._id,
-        upVotedByUsername: data.upVoter.profile.username
+        upVotedBy: req.user._id,
+        upVotedByUsername: req.user.profile.username
       }
     );
     story.markModified('rank');
@@ -314,7 +314,7 @@ exports.newStory = function(req, res, next) {
 
 exports.storySubmission = function(req, res, next) {
   var data = req.body.data;
-  if (req.user._id.toString() !== data.author.userId.toString()) {
+  if (!req.user) {
     return next(new Error('Not authorized'));
   }
   var storyLink = data.headline
@@ -340,8 +340,16 @@ exports.storySubmission = function(req, res, next) {
       allowedAttributes: []
     }).replace(/&quot;/g, '"'),
     rank: 1,
-    upVotes: data.upVotes,
-    author: data.author,
+    upVotes: [({
+      upVotedBy: req.user._id,
+      upVotedByUsername: req.user.profile.username
+    })],
+    author: {
+      picture: req.user.profile.picture,
+      userId: req.user._id,
+      username: req.user.profile.username,
+      email: req.user.email
+    },
     comments: [],
     image: data.image,
     storyLink: storyLink,
@@ -361,7 +369,7 @@ exports.storySubmission = function(req, res, next) {
 
 exports.commentSubmit = function(req, res, next) {
   var data = req.body.data;
-  if (req.user._id.toString() !== data.author.userId.toString()) {
+  if (!req.user) {
     return next(new Error('Not authorized'));
   }
   var sanitizedBody = sanitizeHtml(data.body,
@@ -378,11 +386,16 @@ exports.commentSubmit = function(req, res, next) {
   var comment = new Comment({
     associatedPost: data.associatedPost,
     originalStoryLink: data.originalStoryLink,
-    originalStoryAuthorEmail: data.originalStoryAuthorEmail,
+    originalStoryAuthorEmail: req.user.email,
     body: sanitizedBody,
     rank: 0,
     upvotes: 0,
-    author: data.author,
+    author: {
+      picture: req.user.profile.picture,
+      userId: req.user._id,
+      username: req.user.profile.username,
+      email: req.user.email
+    },
     comments: [],
     topLevel: true,
     commentOn: Date.now()
@@ -393,7 +406,7 @@ exports.commentSubmit = function(req, res, next) {
 
 exports.commentOnCommentSubmit = function(req, res, next) {
   var data = req.body.data;
-  if (req.user._id.toString() !== data.author.userId.toString()) {
+  if (!req.user) {
     return next(new Error('Not authorized'));
   }
 
@@ -415,7 +428,12 @@ exports.commentOnCommentSubmit = function(req, res, next) {
     upvotes: 0,
     originalStoryLink: data.originalStoryLink,
     originalStoryAuthorEmail: data.originalStoryAuthorEmail,
-    author: data.author,
+    author: {
+      picture: req.user.profile.picture,
+      userId: req.user._id,
+      username: req.user.profile.username,
+      email: req.user.email
+    },
     comments: [],
     topLevel: false,
     commentOn: Date.now()

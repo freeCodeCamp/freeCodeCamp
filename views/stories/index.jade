@@ -2,11 +2,12 @@ extends ../layout
 block content
     script(src='/js/lib/moment/moment.js')
     if (user)
-        script.
-            var user = !{JSON.stringify(user)};
+      script.
+        var isLoggedIn = true;
+        var B3BA669EC5C1DD70FB478221E067A7E1B686929C569F5E73561B69C8F42129B = !{JSON.stringify(user._id)}
     else
-        script.
-            var user = undefined;
+      script.
+        var isLoggedIn = false;
     script.
         var challengeName = 'Camper News';
         var page = !{JSON.stringify(page)};
