@@ -4,7 +4,7 @@
 <img src="https://s3.amazonaws.com/freecodecamp/logo4.0LG.png">
 
 Free Code Camp!
-=======================
+========================
 
 We're a community of busy people learning to code by collaborating on projects for nonprofits. We learn, then use, the JavaScript MEAN stack - MongoDB, Express.js, Angular.js and Node.js. 
 
