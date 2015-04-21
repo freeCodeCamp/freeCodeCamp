@@ -470,6 +470,11 @@ app.post(
   storyController.commentOnCommentSubmit
 );
 
+app.put(
+  '/stories/comment/:id/edit',
+  storyController.commentEdit
+);
+
 app.get(
   '/stories/submit',
   storyController.submitNew
