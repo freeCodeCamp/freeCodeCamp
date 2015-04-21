@@ -183,7 +183,7 @@
   },
   {
     "_id": "bd7158d9c437eddfaeb5bdef",
-    "name": "What's pair programming, and what's so special about it?",
+    "name": "What is pair programming, and why is it special?",
     "description": [
       "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
       "    <p class=\"landing-p\">Pair programming is where two people code together on one computer. You discuss different approaches to solving problems, and keep each other motivated. The result is better code than either of you could have written by yourselves. Because of its benefits, many engineers pair program full time. And it's the best way to learn coding. Thanks to tools that allow two people to share mouse and keyboard inputs, you can pair program with a friend without needing to be in the same room.</p>",
@@ -487,7 +487,7 @@
   },
   {
     "_id": "bd7158d9c451eddfaeb5bdef",
-    "name": "Free Code Camp's Privacy Policy",
+    "name": "The Free Code Camp Privacy Policy",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "<p>Free Code Camp is committed to respecting the privacy of visitors to our web sites and web applications. The guidelines below explain how we protect the privacy of visitors to FreeCodeCamp.com and its features.</p>",

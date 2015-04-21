@@ -588,19 +588,6 @@
     "tests": []
   },
   {
-    "_id": "bd7153d8c441eddfaeb5bd2f",
-    "name": "Manage Data with MongoDB",
-    "difficulty": 0.42,
-    "challengeSeed": "114685061",
-    "description": [
-      "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
-      "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
-    ],
-    "challengeType": 2,
-    "tests": []
-  },
-
-  {
     "_id": "bd7140d8c441eddfaeb5bdef",
     "name": "Manage Source Code with Git",
     "difficulty": 0.43,
