@@ -725,8 +725,9 @@
     "name": "Symmetric Difference",
     "difficulty": "4.02",
     "description": [
-      "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
-      "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both."
+      "Create a function that takes a variable number of arrays as arguments and returns an array of the <a href=\"http://en.wikipedia.org/wiki/Symmetric_difference\">symmetric difference</a> of the provided arrays. Note: symmetric difference is defined not just for any arrays but specifically for sets.",
+      "What does it mean for a binary operation like \"symmetric difference\" to be applied to a variable number of arguments? You can think of it like this: first, apply it to the first two arguments. Remember the result. Apply it again to that result and the third argument. Remember the result. Apply it again... Do that until you're done.
+       Note that if the function is invoked with only one argument it acts as if it is invoked with two arguments where the second argument is empty."
     ],
     "challengeSeed": "function sym(args) {\n  return arguments;\r\n}\n\nsym([1, 2, 3], [5, 2, 1, 4]);",
     "tests": [
