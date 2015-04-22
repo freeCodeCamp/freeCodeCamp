@@ -139,7 +139,8 @@ var userSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  needsMigration: { type: Boolean, default: true }
+  needsMigration: { type: Boolean, default: true },
+  challengesHash: {}
 });
 
 /**
