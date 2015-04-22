@@ -10,7 +10,7 @@
       "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And to stay motivated, you just need to: <ol><li>make friends with people who code</li><li>code a little every day</li><ol>",
       "All our challenges are <ol><li>free</li><li>self-paced</li><li>browser-based</li></ol>",
       "We'll spend <ol><li>200 hours learning tools like HTML, CSS, JavaScript, Node.js and databases</li><li>600 hours building practice projects</li><li>800 hours building full stack solutions for nonprofits</li></ol>",
-      "By the end, we'll <ol><li>be good at coding</li><li>have a portfolio of apps with happy users to prove it</li><li>have references from friends and nonprofit managers</li></ol>",
+      "By the end, we'll <ol><li>be good at coding</li><li>have the portfolio of apps with happy users to prove it</li></ol>",
       "Once you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
       "Now it's time to join our chat room. Click the \"I've completed this challenge\" button to move on to your next challenge."
     ],
@@ -87,7 +87,7 @@
     "_id": "bd7126d8c441eddfaeb5bd3f",
     "name": "Try Camper News",
     "difficulty": 0.06,
-    "challengeSeed": "115275066",
+    "challengeSeed": "124553410",
     "description": [
       "Camper News is the best place for our campers to share and discuss helpful links.",
       "Click \"News\" in the upper right hand corner.",
@@ -124,12 +124,13 @@
     "_id": "bd7127d8c441eddfaeb5bdef",
     "name": "Build a Landing Page with HTML",
     "difficulty": 0.08,
-    "challengeSeed": "114627406",
+    "challengeSeed": "125671867",
     "description": [
-      "Now it's time for us to start our actual coding lessons. We've curated a series of free, self-paced, browser-based lessons from providers like Stanford University, Codecademy,and MongoDB.",
+      "Now it's time for us to start our actual coding lessons. We've curated a series of free, self-paced, browser-based lessons from providers like Codecademy and Stanford University.",
       "These lessons will cover a lot of ground quickly, and will hold your hand throughout the process. Don't try to memorize everything - you'll spend more than a thousand hours practicing these later, and you can always look things up. Just keep moving.",
       "If you've learned HTML and CSS before, these next few Waypoints will be a valuable review. If you haven't learned HTML or CSS before, you're in for a treat!",
       "This Codecademy will quickly cover HTML, CSS and even Responsive Design with Bootstrap.",
+      "If you don't already have a Codecademy account, create one here: <a href='http://www.codecademy.com' target='_blank'>http://www.codecademy.com</a>.",
       "Go to <a href='http://www.codecademy.com/en/skills/make-a-website/topics/html-elements' target='_blank'>http://www.codecademy.com/en/skills/make-a-website/topics/html-elements</a> and complete the section.",
       "Once you're done, mark this Waypoint complete and move on the next Waypoint."
 
@@ -141,9 +142,10 @@
     "_id": "bd7128d8c441eddfaeb5bdef",
     "name": "Style Text with CSS",
     "difficulty": 0.09,
-    "challengeSeed": "114578441",
+    "challengeSeed": "125671735",
     "description": [
-      "Now let's learn about styling text with CSS.",
+      "Cascading Style Sheets (CSS) is what gives HTML it's style.",
+      "Now let's learn how to style HTML elements, such as headlines and body text, using CSS.",
       "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/css-properties-text' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/css-properties-text</a> and complete the section."
     ],
     "challengeType": 2,
@@ -153,7 +155,7 @@
     "_id": "bd8129d8c441ecdfaeb5bdef",
     "name": "Space Out with CSS",
     "difficulty": 0.10,
-    "challengeSeed": "114578438",
+    "challengeSeed": "125671732",
     "description": [
       "There are several ways to control spacing between elements using CSS. Let's learn about padding, margins, and more.",
       "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/css-properties-box' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/css-properties-box</a> and complete the section."
@@ -165,9 +167,10 @@
     "_id": "bd8129d8c441eddfaeb5bdef",
     "name": "Design a Layout with HTML",
     "difficulty": 0.11,
-    "challengeSeed": "114578438",
+    "challengeSeed": "125671731",
     "description": [
       "Now let's apply the HTML and CSS we've learned toward making a proper layout.",
+      "We'll learn the difference between block elements and inline elements. We'll also learn the difference between absolute position and relative positioning.",
       "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/css-properties-layout' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/css-properties-layout</a> and complete the section."
     ],
     "challengeType": 2,
@@ -177,7 +180,7 @@
     "_id": "bd8129d8c441eddfaeb5bdee",
     "name": "Design Responsively with Bootstrap",
     "difficulty": 0.12,
-    "challengeSeed": "114578438",
+    "challengeSeed": "125671730",
     "description": [
       "Responsive Design is the practice of building web applications that look good on any screen size - whether it's a phone or a big screen TV.",
       "Bootstrap is a CSS library that was created by Twitter. It's by far the most popular responsive design framework. It's websites like Newsweek, Free Code Camp, and, of course, Twitter.",
@@ -190,7 +193,7 @@
     "_id": "bd7112d8c441eddfaeb5bded",
     "name": "Get Started with jQuery",
     "difficulty": 0.13,
-    "challengeSeed": "114578435",
+    "challengeSeed": "125671865",
     "description": [
       "jQuery is a powerful tool for manipulating HTML elements.",
       "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
@@ -205,8 +208,11 @@
     "_id": "bd7113d8c441eddfaeb5bdef",
     "name": "Write Functions with jQuery",
     "difficulty": 0.14,
-    "challengeSeed": "114591805",
+    "challengeSeed": "125658029",
     "description": [
+      "Now we're ready to write your first jQuery functions.",
+      "Functions are little sub-programs. You can call a function and ask it to do something. Then it will return an answer.",
+      "First, you'll learn about one of the most important jQuery functions of all: <code>$(document).ready()</code>.",
       "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-GfjC6/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-GfjC6/0/1</a> and complete the second section."
     ],
     "challengeType": 2,
@@ -216,8 +222,9 @@
     "_id": "bd7114d8c441eddfaeb5bdef",
     "name": "Harness Dynamic HTML",
     "difficulty": 0.15,
-    "challengeSeed": "114591804",
+    "challengeSeed": "125658028",
     "description": [
+      "Did you know that you can create HTML elements using jQuery?",
       "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
       "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-v6phg/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-v6phg/0/1</a> and complete the third section."
     ],
@@ -228,8 +235,10 @@
     "_id": "bd7115d8c441eddfaeb5bdef",
     "name": "Listen for jQuery Events",
     "difficulty": 0.16,
-    "challengeSeed": "114591802",
+    "challengeSeed": "125658027",
     "description": [
+      "jQuery can listen for events, such as clicking a button, and respond to them.",
+      "Here we'll learn how to use the jQuery <code>click()</code> function to respond to events in the browser.",
       "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1</a> and complete the fourth section."
     ],
     "challengeType": 2,
@@ -239,8 +248,10 @@
     "_id": "bd7116d8c441eddfaeb5bdef",
     "name": "Trigger jQuery Effects",
     "difficulty": 0.17,
-    "challengeSeed": "114591801",
+    "challengeSeed": "125658025",
     "description": [
+      "We can use jQuery to do all kinds of visual effects and transitions.",
+      "Let's explore some of the fun ways we can manipulate DOM elements with jQuery.",
       "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1</a> and complete the fifth section."
     ],
     "challengeType": 2,
@@ -464,9 +475,11 @@
     "_id": "bd7154d8c441eddfaeb5bdef",
     "name": "Get Started with Angular.js",
     "difficulty": 0.34,
-    "challengeSeed": "114684726",
+    "challengeSeed": "125671736",
     "description": [
-      "Complete Unit 1 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "Angular.js is a popular client-side JavaScript framework. It will help you create buttery smooth browser-based interactions.",
+      "Codecademy has a fun, interactive Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
+      "Complete Unit 1 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
@@ -475,9 +488,9 @@
     "_id": "bd7155d8c441eddfaeb5bdef",
     "name": "Apply Angular.js Directives",
     "difficulty": 0.35,
-    "challengeSeed": "114684727",
+    "challengeSeed": "125671736",
     "description": [
-      "Complete Unit 2 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "Complete Unit 2 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
@@ -486,9 +499,9 @@
     "_id": "bd7156d8c441eddfaeb5bdef",
     "name": "Create Angular.js Services",
     "difficulty": 0.36,
-    "challengeSeed": "114684729",
+    "challengeSeed": "125671736",
     "description": [
-      "Complete Unit 3 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "Complete Unit 3 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
@@ -497,9 +510,9 @@
     "_id": "bd7157d8c441eddfaeb5bdef",
     "name": "Structure Angular.js Routes",
     "difficulty": 0.37,
-    "challengeSeed": "114685062",
+    "challengeSeed": "125671736",
     "description": [
-      "Complete Unit 4 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "Complete Unit 4 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
@@ -508,9 +521,9 @@
     "_id": "bd7158d8c441eddfaeb5bdef",
     "name": "Build a Geolocation Angular App",
     "difficulty": 0.38,
-    "challengeSeed": "114685060",
+    "challengeSeed": "125671736",
     "description": [
-      "Complete Unit 5 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "Complete Unit 5 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
@@ -519,11 +532,11 @@
     "_id": "bd7153d8c441eddfaeb5bdff",
     "name": "Start a Node.js Server",
     "difficulty": 0.39,
-    "challengeSeed": "114685061",
+    "challengeSeed": "",
     "description": [
       "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
-      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io'>http://c9.io</a>.",
-      "Open up <a href='http://c9.io'>http://c9.io</a> and sign in to your account.",
+      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
+      "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
       "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
       "Give your workspace a name.",
       "Choose Node.js in the selection area below the name field",
@@ -543,11 +556,11 @@
     "_id": "bd7153d8c441eddfaeb5bd0f",
     "name": "Manage Packages with NPM",
     "difficulty": 0.40,
-    "challengeSeed": "114685061",
+    "challengeSeed": "",
     "description": [
       "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
-      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io'>http://c9.io</a>.",
-      "Open up <a href='http://c9.io'>http://c9.io</a> and sign in to your account.",
+      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
+      "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
       "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
       "Give your workspace a name.",
       "Choose Node.js in the selection area below the name field",
@@ -567,11 +580,11 @@
     "_id": "bd7153d8c441eddfaeb5bd1f",
     "name": "Build Web Apps with Express.js",
     "difficulty": 0.41,
-    "challengeSeed": "114685061",
+    "challengeSeed": "",
     "description": [
       "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
-      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io'>http://c9.io</a>.",
-      "Open up <a href='http://c9.io'>http://c9.io</a> and sign in to your account.",
+      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
+      "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
       "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
       "Give your workspace a name.",
       "Choose Node.js in the selection area below the name field",
@@ -633,11 +646,11 @@
     "_id": "bd7158d8c442eddfbeb5bd1f",
     "name": "Get Set for Ziplines",
     "difficulty": 1.00,
-    "challengeSeed": "123488494",
+    "challengeSeed": "125658022",
     "description": [
       "Now you're ready to start our Zipline challenges. These front-end development challenges will give you many opportunities to apply the HTML, CSS, jQuery and JavaScript you've learned to build static (database-less) applications.",
       "We'll build these challenges using CodePen, a popular tool for creating, sharing, and discovering static web applications.",
-      "Go to CodePen and create an account.",
+      "Go to <a href='http://codepen.io' target='_blank'>http://codepen.io</a> and create an account.",
       "Click your user image in the top right corner, then click the \"New pen\" button that drops down.",
       "Drag the windows around and press the buttons in the lower-right hand corner to change the orientation to suit your preference.",
       "Click the gear next to CSS. Then in the \"External CSS File or Another Pen\" text field, type \"bootstrap\" and scroll down until you see the latest version of Bootstrap. Click it.",
@@ -653,7 +666,7 @@
     "_id": "bd7158d8c442eddfaeb5bd1f",
     "name": "Zipline: Use the Twitch.tv JSON API",
     "difficulty": 1.01,
-    "challengeSeed": "123488494",
+    "challengeSeed": "125658022",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -677,7 +690,7 @@
     "_id": "bd7158d8c442eddfaeb5bd13",
     "name": "Zipline: Build a Random Quote Machine",
     "difficulty": 1.02,
-    "challengeSeed": "123488494",
+    "challengeSeed": "125658022",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/AdventureBear/full/vEoVMw' target='_blank'>http://codepen.io/AdventureBear/full/vEoVMw</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -696,7 +709,7 @@
     "_id": "bd7158d8c442eddfaeb5bd10",
     "name": "Zipline: Show the Local Weather",
     "difficulty": 1.03,
-    "challengeSeed": "123488494",
+    "challengeSeed": "125658022",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/AdventureBear/full/yNBJRj' target='_blank'>http://codepen.io/AdventureBear/full/yNBJRj</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -719,7 +732,7 @@
     "_id": "bd7158d8c442eddfaeb5bd18",
     "name": "Zipline: Stylize Stories on Camper News",
     "difficulty": 1.04,
-    "challengeSeed": "123488494",
+    "challengeSeed": "125658022",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/Wveezv' target='_blank'>http://codepen.io/GeoffStorbeck/full/Wveezv</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -738,10 +751,31 @@
     "tests": []
   },
   {
+    "_id": "bd7158d8c442eddfaeb5bd19",
+    "name": "Zipline: Wikipedia Viewer",
+    "difficulty": 1.05,
+    "challengeSeed": "125658022",
+    "description": [
+      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/MwgQea' target='_blank'>http://codepen.io/GeoffStorbeck/full/MwgQea</a>.",
+      "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+      "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
+      "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+      "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
+      "<span class='text-info'>User Story:</span> As a user, I can search wikipedia entries with a text box and see the resulting wikipedia entry.",
+      "<span class='text-info'>Bonus User Story:</span>As a user, I can see a random wikipedia entry.",
+      "<span class='text-info'>Bonus User Story:</span>As a user, when I type in the search box, I can see a dropdown with autocomplete options for matching wikipedia entries.",
+      "<span class='text-info'>Hint:</span> Here's an entry on using Wikipedia's API: <code>http://www.mediawiki.org/wiki/API:Main_page</code>.",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
     "_id": "bd7158d8c442eddfaeb5bd0f",
     "name": "Zipline: Build a Pomodoro Clock",
-    "difficulty": 1.05,
-    "challengeSeed": "123488494",
+    "difficulty": 1.06,
+    "challengeSeed": "125658022",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/RPbGxZ/' target='_blank'>http://codepen.io/GeoffStorbeck/full/RPbGxZ/</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -760,8 +794,8 @@
   {
     "_id": "bd7158d8c442eddfaeb5bd17",
     "name": "Zipline: Build a JavaScript Calculator",
-    "difficulty": 1.06,
-    "challengeSeed": "123488494",
+    "difficulty": 1.07,
+    "challengeSeed": "125658022",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/zxgaqw' target='_blank'>http://codepen.io/GeoffStorbeck/full/zxgaqw</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -780,8 +814,8 @@
   {
     "_id": "bd7158d8c442eddfaeb5bd1c",
     "name": "Zipline: Build a Tic Tac Toe Game",
-    "difficulty": 1.07,
-    "challengeSeed": "123488494",
+    "difficulty": 1.08,
+    "challengeSeed": "125658022",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/alex-dixon/full/JogOpQ/' target='_blank'>http://codepen.io/alex-dixon/full/JogOpQ/</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
