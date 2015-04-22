@@ -3,36 +3,16 @@
     "_id": "bd7124d8c441eddfaeb5bdef",
     "name": "Learn how Free Code Camp Works",
     "difficulty": 0.01,
-    "challengeSeed": "114486344",
+    "challengeSeed": "125407438",
     "description": [
       "Watch this 1-minute video, or simply read this summary:",
-      "Welcome to Free Code Camp. We're a community of busy people learning to code.",
-      "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And the best way to stay motivated is to code with friends.",
-      "To maximize accessibility, all our challenges are self-paced, browser-based, and free.",
-      "All of us start with the same 100 hours of interactive coding challenges. These cover Computer Science and databases. They also cover in-demand JavaScript tools like jQuery, Node.js and MongoDB.",
-      "Once we have a basic understanding of web development, we'll spend another 900 hours putting that theory into practice. We'll build full stack solutions for nonprofits.",
-      "By the end of this process, we'll be good at coding. We'll have a portfolio of apps with happy users to prove it. We'll also have an alumni network of fellow coders and nonprofits ready to serve as references.",
-      "If you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
-      "Also, for every pure coding job, there are at least 5 additional jobs that require some coding skills. So even if you decide not to pursue coding as a career, you'll still walk away with a valuable job skill.",
-      "There are 3 keys to succeeding in our community: do the challenges, make friends, and find a routine.",
-      "Now it's time to join our chatroom. Click the \"I've completed this challenge\" button to move on to your next challenge."
-    ],
-    "challengeType": 2,
-    "tests": []
-  },
-  {
-    "_id": "bd7125d8c441eddfaeb5bdff",
-    "name": "Preview our Challenge Map",
-    "difficulty": 0.02,
-    "challengeSeed": "114627322",
-    "description": [
-      "Before you start learning how to code, we'd like to introduce you to a few things.",
-      "In the next 15 minutes, we'll introduce you to our challenges, chat rooms, field guide, portfolios and news site. Then we'll teach you how to get help if you get stuck somewhere.",
-      "First let's look at our Challenge Map. Click on the \"Map\" button in the upper right hand corner. This map shows all the challenges that will teach you how to code.",
-      "You should complete all these challenges in order.",
-      "Once you finish these Waypoint challenges, you'll move on to Bonfires (algorithm practice), then Ziplines (front end development practice) and finally Basejumps (full stack development practice). After that, you'll start building projects for nonprofits.",
-      "All of these challenges can be completed in a single one- or two-hour sitting.",
-      "This challenge map is just for your reference. When you return to FreeCodeCamp.com, we'll automatically redirect you to the next challenge that you should be doing."
+      "Welcome to Free Code Camp. We're a community of busy people learning to code by building projects for nonprofits.",
+      "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And to stay motivated, you just need to: <ol><li>make friends with people who code</li><li>code a little every day</li><ol>",
+      "All our challenges are <ol><li>free</li><li>self-paced</li><li>browser-based</li></ol>",
+      "We'll spend <ol><li>200 hours learning tools like HTML, CSS, JavaScript, Node.js and databases</li><li>600 hours building practice projects</li><li>800 hours building full stack solutions for nonprofits</li></ol>",
+      "By the end, we'll <ol><li>be good at coding</li><li>have a portfolio of apps with happy users to prove it</li><li>have references from friends and nonprofit managers</li></ol>",
+      "Once you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
+      "Now it's time to join our chat room. Click the \"I've completed this challenge\" button to move on to your next challenge."
     ],
     "challengeType": 2,
     "tests": []
@@ -40,7 +20,7 @@
   {
     "_id": "bd7125d8c441eddfaeb5bd0f",
     "name": "Join Our Chat Room",
-    "difficulty": 0.03,
+    "difficulty": 0.02,
     "challengeSeed": "124555254",
     "description": [
       "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper to pair program with.",
@@ -57,15 +37,31 @@
     "tests": []
   },
   {
+    "_id": "bd7125d8c441eddfaeb5bdff",
+    "name": "Preview our Challenge Map",
+    "difficulty": 0.03,
+    "challengeSeed": "125407437",
+    "description": [
+      "Before you start learning how to code, we'd like to introduce you to a few things.",
+      "Let's look at our Challenge Map. Click on the \"Map\" button in the upper right hand corner. This map shows all the challenges that will teach you how to code.",
+      "You should complete all these challenges in order.",
+      "Once you finish these Waypoint challenges, you'll move on to Bonfires (algorithm practice), then Ziplines (front end development practice) and finally Basejumps (full stack development practice). After that, you'll start building projects for nonprofits.",
+      "This challenge map is just for your reference. When you return to FreeCodeCamp.com, we'll automatically redirect you to the next challenge that you should be doing."
+    ],
+    "challengeType": 2,
+    "tests": []
+  },
+  {
     "_id": "bd7125d8c441eddfaeb5bd1f",
     "name": "Browse our Field Guide",
     "difficulty": 0.04,
-    "challengeSeed": "114627322",
+    "challengeSeed": "125407435",
     "description": [
       "Free Code Camp has an up-to-date field guide that will answer your many questions.",
       "Click the \"Field Guide\" button in the upper right hand corner.",
       "You can browse the field guide at your convenience. Most of its articles take less than 1 minute to read.",
-      "When you click the Field Guide button, it will always take you back to whichever article you were last reading"
+      "When you click the Field Guide button, it will always take you back to whichever article you were last reading.",
+      "Read a few field guide articles, then move on to your next challenge."
     ],
     "challengeType": 2,
     "tests": []
@@ -74,14 +70,15 @@
     "_id": "bd7125d8c441eddfaeb5bd2f",
     "name": "Customize your Porfolio Page",
     "difficulty": 0.05,
-    "challengeSeed": "114627322",
+    "challengeSeed": "125407433",
     "description": [
       "You and all your fellow campers have portfolio pages.",
       "To see your portfolio page, click your picture in the upper right hand corner.",
       "Your portfolio page will automatically show off your progress through Free Code Camp.",
       "Click the \"Update my portfolio page or manage my account\" button",
       "You can link to your Github, Twitter and LinkedIn accounts. If you've already built some websites, you can link to them here as well.",
-      "Be sure to click the \"Update my Bio\" or \"Update my Social Links\" button to save this new information to your portfolio page."
+      "Be sure to click the \"Update my Bio\" or \"Update my Social Links\" button to save this new information to your portfolio page.",
+      "Once you're happy with your portfolio page, you can move on to your next challenge."
     ],
     "challengeType": 2,
     "tests": []
@@ -99,7 +96,8 @@
       "You an also comment on a link. If someone responds to your comment, you'll get an email notification so you can come back and respond to them.",
       "You can also submit links. You can modify the link's headline and also leave an initial comment about the link.",
       "You can view the portfolio pages of any camper who has posted links or comments on Camper News. Just click on their photo.",
-      "When you submit a link, you'll get a point. You will also get a point each time someone upvotes your link."
+      "When you submit a link, you'll get a point. You will also get a point each time someone upvotes your link.",
+      "Now that you've learned how to use Camper News, let's move on to your next challenge."
     ],
     "challengeType": 2,
     "tests": []
@@ -108,130 +106,142 @@
     "_id": "bd7137d8c441eddfaeb5bdef",
     "name": "Get Help the Hacker Way with RSAP",
     "difficulty": 0.07,
-    "challengeSeed": "111500801",
+    "challengeSeed": "125407432",
     "description": [
       "Let's cover one last thing before you start working through our lessons: how to get help.",
       "Any time you get stuck or don't know what to do next, follow this simple algorithm (procedure): RSAP (Read, Search, Ask, Post).",
       "First, R - Read the documentation or error message. A key skill that good coders have is the ability to interpret and then follow instructions.",
       "Next, S - Search Google. Good Google queries take a lot of practice. When you search Google, you usually want to include the language or framework you're using. You also want to limit the results to a recent period.",
-      "Then, if you still haven't found an answer to your question, A - Ask your friends. If you have trouble, you can ask your fellow campers. We have a special chat room specifically for getting help with tools you learn through these Free Code Camp Challenges. Go to <a href='https://gitter.im/FreeCodeCamp/Help' target='_blank'>https://gitter.im/FreeCodeCamp/Help</a>. Keep this chat open while you work on the remaining challenges.",
-      "Finally, P - Post on Stack Overflow. Before you attempt to do this, re-read Stack Overflow's guide to asking a good question: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>.",
-      "Now you have a clear algorithm to follow when you need help!"
+      "Then, if you still haven't found an answer to your question, A - Ask your friends. If you have trouble, you can ask your fellow campers. We have a special chat room specifically for getting help with tools you learn through these Free Code Camp Challenges. Go to <a href='https://freecode.slack.com/messages/help/' target='_blank'>https://freecode.slack.com/messages/help/</a>. Keep this chat open while you work on the remaining challenges.",
+      "Finally, P - Post on Stack Overflow. Before you attempt to do this, read Stack Overflow's guide to asking good questions: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>.",
+      "Here's our detailed field guide on getting help: <a href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank'>http://freecodecamp.com/field-guide/how-do-i-get-help-when-i-get-stuck</a>.",
+      "Now you have a clear algorithm to follow when you need help! Let's start coding! Move on to your next challenge."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7127d8c441eddfaeb5bdef",
-    "name": "Build a Personal Website",
+    "name": "Build a Landing Page with HTML",
     "difficulty": 0.08,
     "challengeSeed": "114627406",
     "description": [
-      "There are tons of interactive HTML and CSS tutorials out there, but Nathan Bashaw and Christine Bower's Dash tutorials - which they built for General Assembly - are our favorite.",
-      "Go to <a href='https://dash.generalassemb.ly/projects/annas-website-1' target='_blank'>https://dash.generalassemb.ly/projects/annas-website-1</a> and get started with your first project."
+      "Now it's time for us to start our actual coding lessons. We've curated a series of free, self-paced, browser-based lessons from providers like Stanford University, Codecademy,and MongoDB.",
+      "These lessons will cover a lot of ground quickly, and will hold your hand throughout the process. Don't try to memorize everything - you'll spend more than a thousand hours practicing these later, and you can always look things up. Just keep moving.",
+      "If you've learned HTML and CSS before, these next few Waypoints will be a valuable review. If you haven't learned HTML or CSS before, you're in for a treat!",
+      "This Codecademy will quickly cover HTML, CSS and even Responsive Design with Bootstrap.",
+      "Go to <a href='http://www.codecademy.com/en/skills/make-a-website/topics/html-elements' target='_blank'>http://www.codecademy.com/en/skills/make-a-website/topics/html-elements</a> and complete the section.",
+      "Once you're done, mark this Waypoint complete and move on the next Waypoint."
+
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7128d8c441eddfaeb5bdef",
-    "name": "Build a Responsive Blog Theme",
+    "name": "Style Text with CSS",
     "difficulty": 0.09,
     "challengeSeed": "114578441",
     "description": [
-      "Next, let's learn about responsive web design and continue learning about HTML and CSS.",
-      "A responsive website will automatically adapt to changes in your browser's width. This means that you can make one version of a website that will look good on desktop, tablet and phone.",
-      "Later, we'll use Twitter's Bootstrap CSS framework to build responsive websites.",
-      "You can check it out here: <a href='http://getbootstrap.com/' target='_blank'>http://getbootstrap.com/</a>.",
-      "Go to <a href='https://dash.generalassemb.ly/projects/jeffs-blog-1' target='_blank'>https://dash.generalassemb.ly/projects/jeffs-blog-1</a> and complete the second project."
+      "Now let's learn about styling text with CSS.",
+      "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/css-properties-text' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/css-properties-text</a> and complete the section."
+    ],
+    "challengeType": 2,
+    "tests": []
+  },
+  {
+    "_id": "bd8129d8c441ecdfaeb5bdef",
+    "name": "Space Out with CSS",
+    "difficulty": 0.10,
+    "challengeSeed": "114578438",
+    "description": [
+      "There are several ways to control spacing between elements using CSS. Let's learn about padding, margins, and more.",
+      "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/css-properties-box' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/css-properties-box</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd8129d8c441eddfaeb5bdef",
-    "name": "Build a Small Business Website",
-    "difficulty": 0.10,
+    "name": "Design a Layout with HTML",
+    "difficulty": 0.11,
     "challengeSeed": "114578438",
     "description": [
-      "Ready for some more HTML and CSS fundamentals?",
-      "Go to <a href='https://dash.generalassemb.ly/projects/eshas-restaurant-1' target='_blank'>https://dash.generalassemb.ly/projects/eshas-restaurant-1</a> and complete the third project."
+      "Now let's apply the HTML and CSS we've learned toward making a proper layout.",
+      "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/css-properties-layout' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/css-properties-layout</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
-    "_id": "bd7112d8c441eddfaeb5bdef",
+    "_id": "bd8129d8c441eddfaeb5bdee",
+    "name": "Design Responsively with Bootstrap",
+    "difficulty": 0.12,
+    "challengeSeed": "114578438",
+    "description": [
+      "Responsive Design is the practice of building web applications that look good on any screen size - whether it's a phone or a big screen TV.",
+      "Bootstrap is a CSS library that was created by Twitter. It's by far the most popular responsive design framework. It's websites like Newsweek, Free Code Camp, and, of course, Twitter.",
+      "Go to <a href='http://www.codecademy.com/skills/make-a-website/topics/bootstrap-components' target='_blank'>http://www.codecademy.com/skills/make-a-website/topics/bootstrap-components</a> and complete the section."
+    ],
+    "challengeType": 2,
+    "tests": []
+  },
+  {
+    "_id": "bd7112d8c441eddfaeb5bded",
     "name": "Get Started with jQuery",
-    "difficulty": 0.11,
+    "difficulty": 0.13,
     "challengeSeed": "114578435",
     "description": [
       "jQuery is a powerful tool for manipulating HTML elements.",
       "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
       "It's also extremely popular with employers, so we're going to learn it well.",
-      "Code School has an excellent free course that will walk us through the basics of jQuery.",
-      "Go to <a href='http://try.jquery.com/levels/1/challenges/1' target='_blank'>http://try.jquery.com/levels/1/challenges/1</a> and complete the first section."
+      "Codecademy has an excellent free course that will walk us through the basics of jQuery.",
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-bay3D/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-bay3D/0/1</a> and complete the first section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7113d8c441eddfaeb5bdef",
-    "name": "Traverse the DOM",
-    "difficulty": 0.12,
+    "name": "Write Functions with jQuery",
+    "difficulty": 0.14,
     "challengeSeed": "114591805",
     "description": [
-      "Now let's learn more about DOM traversal - that is, moving from one HTML element to the next.",
-      "Go to <a href='http://try.jquery.com/levels/2/challenges/1' target='_blank'>http://try.jquery.com/levels/2/challenges/1</a> and complete the second section."
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-GfjC6/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-GfjC6/0/1</a> and complete the second section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7114d8c441eddfaeb5bdef",
-    "name": "Work with the DOM",
-    "difficulty": 0.13,
+    "name": "Harness Dynamic HTML",
+    "difficulty": 0.15,
     "challengeSeed": "114591804",
     "description": [
       "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
-      "Go to <a href='http://try.jquery.com/levels/3/challenges/1' target='_blank'>http://try.jquery.com/levels/3/challenges/1</a> and complete the third section."
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-v6phg/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-v6phg/0/1</a> and complete the third section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7115d8c441eddfaeb5bdef",
-    "name": "Listen for DOM Events",
-    "difficulty": 0.14,
+    "name": "Listen for jQuery Events",
+    "difficulty": 0.16,
     "challengeSeed": "114591802",
     "description": [
-      "Now let's learn how to use jQuery Listeners. These will \"listen\" for something to happen, and then trigger a subsequent event",
-      "Go to <a href='http://try.jquery.com/levels/4/challenges/1' target='_blank'>http://try.jquery.com/levels/4/challenges/1</a> and complete the fourth section."
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1</a> and complete the fourth section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7116d8c441eddfaeb5bdef",
-    "name": "Use jQuery for Styling",
-    "difficulty": 0.15,
+    "name": "Trigger jQuery Effects",
+    "difficulty": 0.17,
     "challengeSeed": "114591801",
     "description": [
-      "Finally, let's use jQuery to manipulate the way websites look by changing the CSS of elements.",
-      "Go to <a href='http://try.jquery.com/levels/5/challenges/1' target='_blank'>http://try.jquery.com/levels/5/challenges/1</a> and complete the fifth section."
-    ],
-    "challengeType": 2,
-    "tests": []
-  },
-  {
-    "_id": "bd7117d8c441eddfaeb5bdef",
-    "name": "Build a MadLibs Game",
-    "difficulty": 0.16,
-    "challengeSeed": "114591799",
-    "description": [
-      "Now that we've built a foundation in jQuery, let's go back to Dash and do its last challenge.",
-      "If you aren't familiar with Mad Libs, they basically involve inserting random nouns, adjectives and verbs into stories. The stories that result are often hilarious.",
-      "Go to <a href='https://dash.generalassemb.ly/projects/mad-libs-1' target='_blank'>https://dash.generalassemb.ly/projects/mad-libs-1</a> and complete the fifth project."
+      "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1</a> and complete the fifth section."
     ],
     "challengeType": 2,
     "tests": []
@@ -239,7 +249,7 @@
   {
     "_id": "bd7123d8c441eddfaeb5bdef",
     "name": "Learn Basic Computer Science",
-    "difficulty": 0.17,
+    "difficulty": 0.18,
     "challengeSeed": "114628241",
     "description": [
       "Stanford has an excellent free online Computer Science curriculum. This interactive course uses a modified version of JavaScript. It will cover a lot of concepts quickly.",
@@ -253,7 +263,7 @@
   {
     "_id": "bd8124d8c441eddfaeb5bdef",
     "name": "Learn Loops",
-    "difficulty": 0.18,
+    "difficulty": 0.19,
     "challengeSeed": "114597348",
     "description": [
       "Now let's tackle week 2 of Stanford's Intro to Computer Science course.",
@@ -266,7 +276,7 @@
   {
     "_id": "bd8125d8c441eddfaeb5bdef",
     "name": "Learn Computer Hardware",
-    "difficulty": 0.19,
+    "difficulty": 0.20,
     "challengeSeed": "114597347",
     "description": [
       "Week 3 of Stanford's Intro to Computer Science covers computer hardware and explains Moore's law of exponential growth in the price-performance of processors.",
@@ -279,7 +289,7 @@
   {
     "_id": "bd8126d8c441eddfaeb5bdef",
     "name": "Learn Computer Networking",
-    "difficulty": 0.20,
+    "difficulty": 0.21,
     "challengeSeed": "114604811",
     "description": [
       "Now that you've learned about computer hardware, it's time to learn about the software that runs on top of it.",
@@ -292,7 +302,7 @@
   {
     "_id": "bd8127d8c441eddfaeb5bdef",
     "name": "Learn Boolean Logic",
-    "difficulty": 0.21,
+    "difficulty": 0.22,
     "challengeSeed": "114604812",
     "description": [
       "Now we'll do some more table exercises and learn boolean logic.",
@@ -305,7 +315,7 @@
   {
     "_id": "bd8128d8c441eddfaeb5bdef",
     "name": "Learn Computer Security",
-    "difficulty": 0.22,
+    "difficulty": 0.23,
     "challengeSeed": "114604813",
     "description": [
       "We're almost done with Stanford's Introduction to Computer Science course!",
@@ -319,7 +329,7 @@
   {
     "_id": "bd7129d8c441eddfaeb5bdef",
     "name": "Build an Adventure Game",
-    "difficulty": 0.23,
+    "difficulty": 0.24,
     "challengeSeed": "114604814",
     "description": [
       "Now that you understand some Computer Science fundamentals, let's focus on programming JavaScript!",
@@ -334,7 +344,7 @@
   {
     "_id": "bd7130d8c441eddfaeb5bdef",
     "name": "Build Rock Paper Scissors",
-    "difficulty": 0.24,
+    "difficulty": 0.25,
     "challengeSeed": "114604815",
     "description": [
       "Now we'll learn how JavaScript functions work, and use them to build a simple Rock Paper Scissors game.",
@@ -347,7 +357,7 @@
   {
     "_id": "bd7131d8c441eddfaeb5bdef",
     "name": "Learn JavaScript For Loops",
-    "difficulty": 0.25,
+    "difficulty": 0.26,
     "challengeSeed": "114614220",
     "description": [
       "Let's learn more about the loops that make virtually all programs possible - the \"For Loop\" and \"While Loop\". First, we'll learn the For Loop.",
@@ -360,7 +370,7 @@
   {
     "_id": "bd7132d8c441eddfaeb5bdef",
     "name": "Learn JavaScript While Loops",
-    "difficulty": 0.26,
+    "difficulty": 0.27,
     "challengeSeed": "114612889",
     "description": [
       "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1</a> and complete the section.",
@@ -372,7 +382,7 @@
   {
     "_id": "bd7133d8c441eddfaeb5bdef",
     "name": "Learn Control Flow",
-    "difficulty": 0.27,
+    "difficulty": 0.28,
     "challengeSeed": "114612888",
     "description": [
       "Much of human reasoning can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If Statements\" and \"Else Statements\".",
@@ -386,7 +396,7 @@
   {
     "_id": "bd7134d8c441eddfaeb5bdef",
     "name": "Build a Contact List",
-    "difficulty": 0.28,
+    "difficulty": 0.29,
     "challengeSeed": "114612887",
     "description": [
       "Up to this point, you've been working mostly with strings and numbers. Now we're going to learn more complicated data structures, like \"Arrays\" and \"Objects\".",
@@ -399,7 +409,7 @@
   {
     "_id": "bd7135d8c441eddfaeb5bdef",
     "name": "Build an Address Book",
-    "difficulty": 0.29,
+    "difficulty": 0.30,
     "challengeSeed": "114612885",
     "description": [
       "Let's learn more about objects.",
@@ -412,7 +422,7 @@
   {
     "_id": "bd7136d8c441eddfaeb5bdef",
     "name": "Build a Cash Register",
-    "difficulty": 0.30,
+    "difficulty": 0.31,
     "challengeSeed": "114612882",
     "description": [
       "In this final Codecademy section, we'll learn even more about JavaScript objects.",
@@ -425,7 +435,7 @@
   {
     "_id": "bd7118d8c441eddfaeb5bdef",
     "name": "Discover Chrome's DevTools",
-    "difficulty": 0.31,
+    "difficulty": 0.32,
     "challengeSeed": "110752743",
     "description": [
       "It's time to learn the most powerful tool your browser has - the Development Tools!",
@@ -439,7 +449,7 @@
   {
     "_id": "bd7138d8c441eddfaeb5bdef",
     "name": "Learn Regular Expressions",
-    "difficulty": 0.32,
+    "difficulty": 0.33,
     "challengeSeed": "112547802",
     "description": [
       "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
@@ -453,12 +463,10 @@
   {
     "_id": "bd7154d8c441eddfaeb5bdef",
     "name": "Get Started with Angular.js",
-    "difficulty": 0.33,
+    "difficulty": 0.34,
     "challengeSeed": "114684726",
     "description": [
-      "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
-      "In this course, we'll build a virtual shop entirely in Angular.js.",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
+      "Complete Unit 1 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
@@ -466,50 +474,43 @@
   {
     "_id": "bd7155d8c441eddfaeb5bdef",
     "name": "Apply Angular.js Directives",
-    "difficulty": 0.34,
+    "difficulty": 0.35,
     "challengeSeed": "114684727",
     "description": [
-      "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will can alter the behavior of DOM elements based on the directives you've used.",
-      "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
+      "Complete Unit 2 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7156d8c441eddfaeb5bdef",
-    "name": "Power Forms with Angular.js",
-    "difficulty": 0.35,
+    "name": "Create Angular.js Services",
+    "difficulty": 0.36,
     "challengeSeed": "114684729",
     "description": [
-      "One area where Angular.js really shines is its powerful web forms.",
-      "Learn how to create reactive Angular.js forms, including real-time form validation.",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."
+      "Complete Unit 3 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7157d8c441eddfaeb5bdef",
-    "name": "Customize Angular.js Directives",
-    "difficulty": 0.36,
+    "name": "Structure Angular.js Routes",
+    "difficulty": 0.37,
     "challengeSeed": "114685062",
     "description": [
-      "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
+      "Complete Unit 4 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7158d8c441eddfaeb5bdef",
-    "name": "Create Angular.js Services",
-    "difficulty": 0.37,
+    "name": "Build a Geolocation Angular App",
+    "difficulty": 0.38,
     "challengeSeed": "114685060",
     "description": [
-      "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",
-      "We'll learn how to use services in this final Code School Angular.js challenge.",
-      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."
+      "Complete Unit 5 of <a href='http://www.codecademy.com/learn/learn-angularjs'>http://www.codecademy.com/learn/learn-angularjs</a>"
     ],
     "challengeType": 2,
     "tests": []
@@ -517,11 +518,23 @@
   {
     "_id": "bd7153d8c441eddfaeb5bdff",
     "name": "Start a Node.js Server",
-    "difficulty": 0.38,
+    "difficulty": 0.39,
     "challengeSeed": "114685061",
     "description": [
-      "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
-      "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
+      "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
+      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io'>http://c9.io</a>.",
+      "Open up <a href='http://c9.io'>http://c9.io</a> and sign in to your account.",
+      "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
+      "Give your workspace a name.",
+      "Choose Node.js in the selection area below the name field",
+      "Click the Create button",
+      "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button",
+      "Click the \"Start Editing\" button.",
+      "In the lower right hand corner you should see a terminal window. In this window use the following commands. You don't need to know what these mean at this point.",
+      "Run this command: <code>sudo npm install learnyounode -g</code>",
+      "Now start this tutorial by running <code>learnyounode</code>",
+      "Note that you can resize the c9.io's windows by dragging their borders.",
+      "Follow the directions and work through all of the the tutorial's steps before moving on."
     ],
     "challengeType": 2,
     "tests": []
@@ -529,11 +542,23 @@
   {
     "_id": "bd7153d8c441eddfaeb5bd0f",
     "name": "Manage Packages with NPM",
-    "difficulty": 0.39,
+    "difficulty": 0.40,
     "challengeSeed": "114685061",
     "description": [
-      "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
-      "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
+      "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
+      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io'>http://c9.io</a>.",
+      "Open up <a href='http://c9.io'>http://c9.io</a> and sign in to your account.",
+      "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
+      "Give your workspace a name.",
+      "Choose Node.js in the selection area below the name field",
+      "Click the Create button",
+      "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button",
+      "Click the \"Start Editing\" button.",
+      "In the lower right hand corner you should see a terminal window. In this window use the following commands. You don't need to know what these mean at this point.",
+      "Run this command: <code>sudo npm install how-to-npm -g</code>",
+      "Now start this tutorial by running <code>how-to-npm</code>",
+      "Note that you can resize the c9.io's windows by dragging their borders.",
+      "Follow the directions and work through all of the the tutorial's steps before moving on."
     ],
     "challengeType": 2,
     "tests": []
@@ -541,35 +566,34 @@
   {
     "_id": "bd7153d8c441eddfaeb5bd1f",
     "name": "Build Web Apps with Express.js",
-    "difficulty": 0.40,
-    "challengeSeed": "114685061",
-    "description": [
-      "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
-      "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
-    ],
-    "challengeType": 2,
-    "tests": []
-  },
-  {
-    "_id": "bd7153d8c441eddfaeb5bd2f",
-    "name": "Manage Data with MongoDB",
     "difficulty": 0.41,
     "challengeSeed": "114685061",
     "description": [
-      "MongoDB is a popular NoSQL (Not Only SQL) database used by many JavaScript apps.",
-      "Go to <a href='http://try.mongodb.org/' target='_blank'>http://try.mongodb.org/</a> and work through their interactive MongoDB tutorial."
+      "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
+      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io'>http://c9.io</a>.",
+      "Open up <a href='http://c9.io'>http://c9.io</a> and sign in to your account.",
+      "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
+      "Give your workspace a name.",
+      "Choose Node.js in the selection area below the name field",
+      "Click the Create button",
+      "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button",
+      "Click the \"Start Editing\" button.",
+      "In the lower right hand corner you should see a terminal window. In this window use the following commands. You don't need to know what these mean at this point.",
+      "Run this command: <code>git clone http://github.com/reddock/fcc_express && chmod 744 fcc_express/setup.sh && fcc_express/setup.sh && source ~/.profile</code>",
+      "Now start this tutorial by running <code>expressworks</code>",
+      "Note that you can resize the c9.io's windows by dragging their borders.",
+      "Follow the directions and work through all of the the tutorial's steps before moving on."
     ],
     "challengeType": 2,
     "tests": []
   },
-
   {
     "_id": "bd7140d8c441eddfaeb5bdef",
     "name": "Manage Source Code with Git",
-    "difficulty": 0.42,
+    "difficulty": 0.43,
     "challengeSeed": "114635309",
     "description": [
-      "Revision Control Systems like Git ensure that, no matter how you experiment with your code, you can always roll back your app to a stable previous state.",
+      "Version Control Systems like Git ensure that, no matter how you experiment with your code, you can always roll back your app to a stable previous state.",
       "Git is also a great way to share and contribute to open source software.",
       "Go to <a href='https://www.codeschool.com/courses/try-git' target='_blank'>https://www.codeschool.com/courses/try-git</a> and complete this short interactive course."
     ],
@@ -579,7 +603,7 @@
   {
     "_id": "bd7139d8c441eddfaeb5bdef",
     "name": "Pair Program on Bonfires",
-    "difficulty": 0.43,
+    "difficulty": 0.44,
     "challengeSeed": "119657641",
     "description": [
       "OK, we're finally ready to start pair programming!",
@@ -606,60 +630,187 @@
     "tests": []
   },
   {
-    "_id": "bd7158d8c442eddfaeb5bdff",
-    "name": "Zipline: Integrate with Twitch's API",
-    "difficulty": 1.01,
+    "_id": "bd7158d8c442eddfbeb5bd1f",
+    "name": "Get Set for Ziplines",
+    "difficulty": 1.00,
     "challengeSeed": "123488494",
     "description": [
-      "Go to CodePen <a href='http://codepen.io/FreeCodeCamp/pen/gbEmJr'>http://codepen.io/FreeCodeCamp/pen/gbEmJr</a> and click the \"fork\" button. This will create a \"fork\", or copy of the file, which you can then edit yourself.",
-      "When you are finished, click the \"I've completed this challenge\" button and include a link to your Codepen. If you pair programmed, you should also include the Free Code Camp username of your pair. We will take a look at your code and eventually give you feedback. In the meantime, please move on to your next challenge."
-    ],
-    "challengeType": 3,
-    "tests": []
-  },
-  {
-    "_id": "bd7158d8c442eddfaeb5bd0f",
-    "name": "Zipline: Integrate with Trello's API",
-    "difficulty": 1.02,
-    "challengeSeed": "123488494",
-    "description": [
-      "Go to CodePen <a href='http://codepen.io/FreeCodeCamp/pen/gbEmJr'>http://codepen.io/FreeCodeCamp/pen/gbEmJr</a> and click the \"fork\" button. This will create a \"fork\", or copy of the file, which you can then edit yourself.",
-      "In the JavaScript box, scroll down to the comment that reads \"//Changeable code be made here\". This CodePen is already pulling in the relevant JSON from our API. This JSON is from one of our Trello boards. You can view the actual Trello board here: <a href='https://trello.com/b/BA3xVpz9/nonprofit-projects'>https://trello.com/b/BA3xVpz9/nonprofit-projects</a>.",
-      "You can view the JSON output here: <a href='http://www.freecodecamp.com/api/trello'>http://www.freecodecamp.com/api/trello</a>.",
-      "In addition to each Trello card's description,(which is currently shown), you will also want to show it's name.",
-      "You'll also want to render each card's labels. Render each label with the card's <code>name</code> as the label's text and each label's <code>color</code> as the label's color.",
-      "Hint: you will need to write a jQuery loop that which dynamically inserts <code>&#60;li&#62;</code> elements. You will do this using jQuery's each function, described here: <a href='https://api.jquery.com/each/'>https://api.jquery.com/each/</a>.",
-      "Style the output to make it look visually appealing. Give it a custom font, color scheme, and a clear visual separation between data elements.",
-      "When you are finished, click the \"I've completed this challenge\" button and include a link to your Codepen. If you pair programmed, you should also include the Free Code Camp username of your pair. We will take a look at your code and eventually give you feedback. In the meantime, please move on to your next challenge."
+      "Now you're ready to start our Zipline challenges. These front-end development challenges will give you many opportunities to apply the HTML, CSS, jQuery and JavaScript you've learned to build static (database-less) applications.",
+      "We'll build these challenges using CodePen, a popular tool for creating, sharing, and discovering static web applications.",
+      "Go to CodePen and create an account.",
+      "Click your user image in the top right corner, then click the \"New pen\" button that drops down.",
+      "Drag the windows around and press the buttons in the lower-right hand corner to change the orientation to suit your preference.",
+      "Click the gear next to CSS. Then in the \"External CSS File or Another Pen\" text field, type \"bootstrap\" and scroll down until you see the latest version of Bootstrap. Click it.",
+      "Verify that bootstrap is active by adding the following code to your HTML: <code>&lt;h1 class='text-primary'&gt;Hello CodePen!&lt;/h1&gt;</code>. The text's color should be Bootstrap blue.",
+      "Click the gear next the JavaScript. Click the \"Latest version of...\" select box and choose jQuery.",
+      "Now add the following code to your JavaScript: <code>$(document).ready(function() { $('.text-primary').text('Hi CodePen!') });</code>. Click the \"Save\" button at the top. Your \"Hello CodePen!\" should change to \"Hi CodePen!\". This means that jQuery is working.",
+      "Now you're ready for your first Zipline. Click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair."
     ],
     "challengeType": 3,
     "tests": []
   },
   {
     "_id": "bd7158d8c442eddfaeb5bd1f",
-    "name": "Zipline: Integrate with a Weather API",
-    "difficulty": 1.03,
+    "name": "Zipline: Use the Twitch.tv JSON API",
+    "difficulty": 1.01,
     "challengeSeed": "123488494",
     "description": [
-      "Go to CodePen <a href='http://codepen.io/FreeCodeCamp/pen/gbEmJr'>http://codepen.io/FreeCodeCamp/pen/gbEmJr</a> and click the \"fork\" button. This will create a \"fork\", or copy of the file, which you can then edit yourself.",
-      "When you are finished, click the \"I've completed this challenge\" button and include a link to your Codepen. If you pair programmed, you should also include the Free Code Camp username of your pair. We will take a look at your code and eventually give you feedback. In the meantime, please move on to your next challenge."
+      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
+      "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+      "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
+      "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+      "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
+      "<span class='text-info'>User Story:</span> As a user, I can see the whether Free Code Camp is currently streaming on Twitch.tv.",
+      "<span class='text-info'>User Story:</span> As a user, I can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel.",
+      "<span class='text-info'>User Story:</span> As a user, if Free Code Camp is streaming, I can see additional details about what they are streaming.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can search through the streams listed.",
+      "<span class='text-info'>Hint:</span> Here's an example call to Twitch.tv's JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
+      "<span class='text-info'>Hint:</span> The relevant documentation about this API call is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
+      "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"notmichaelmcdonald\",\"RobotCaleb\",\"comster404\",\"brunofin\",\"thomasballinger\",\"joe_at_underflow\",\"noobs2ninjas\",\"mdwasp\",\"beohoff\",\"xenocomagain\"]</code>",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
     ],
     "challengeType": 3,
     "tests": []
   },
   {
-    "_id": "bd7158d8c443eddfaeb5bdef",
-    "name": "Basejump: Build a Voting App",
-    "difficulty": 2.01,
+    "_id": "bd7158d8c442eddfaeb5bd13",
+    "name": "Zipline: Build a Random Quote Machine",
+    "difficulty": 1.02,
     "challengeSeed": "123488494",
     "description": [
-      "For this Basejump challenge, you'll build a fully functional voting app. By the time you've finished, your app will function similarly to this: <a href='http://voteplex.herokuapp.com/'>http://voteplex.herokuapp.com/</a>. This Basejump is a great opportunity to pair program with a friend.",
-      "We'll build this Basejump on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
+      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/AdventureBear/full/vEoVMw' target='_blank'>http://codepen.io/AdventureBear/full/vEoVMw</a>.",
+      "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+      "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
+      "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+      "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
+      "<span class='text-info'>User Story:</span> As a user, I can click a button to show me a new random quote.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can press a button to tweet out a quote.",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd10",
+    "name": "Zipline: Show the Local Weather",
+    "difficulty": 1.03,
+    "challengeSeed": "123488494",
+    "description": [
+      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/AdventureBear/full/yNBJRj' target='_blank'>http://codepen.io/AdventureBear/full/yNBJRj</a>.",
+      "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+      "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
+      "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+      "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
+      "<span class='text-info'>User Story:</span> As a user, I can see the weather in my current zipcode.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can see an icon depending on the temperature..",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I see a different background image depending on the temperature (e.g. snowy mountain, hot desert).",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can push a button to toggle between Fahrenheit and Celsius.",
+      "<span class='text-info'>Hint:</span> Get a zipcode's weather (in Kelvin) at <code>http://api.openweathermap.org/data/2.5/weather?q=99705</code>.",
+      "<span class='text-info'>Hint:</span> Get your current user's zipcode (based on their IP address) with this line of jQuery: <code>$.get(\"http://ipinfo.io\", function(response) {}, \"jsonp\");</code>",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd18",
+    "name": "Zipline: Stylize Stories on Camper News",
+    "difficulty": 1.04,
+    "challengeSeed": "123488494",
+    "description": [
+      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/Wveezv' target='_blank'>http://codepen.io/GeoffStorbeck/full/Wveezv</a>.",
+      "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+      "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
+      "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+      "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
+      "<span class='text-info'>User Story:</span> As a user, I can see browse recent posts on Camper News.",
+      "<span class='text-info'>User Story:</span> As a user, I can click on a link on that post to be taken to the story's original URL.",
+      "<span class='text-info'>User Story:</span> As a user, I can click on a link on that post and be taken to the post's discussion page.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can see how many upvotes each story has.",
+      "<span class='text-info'>Hint:</span> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/stories/hotStories</code>.",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd0f",
+    "name": "Zipline: Build a Pomodoro Clock",
+    "difficulty": 1.05,
+    "challengeSeed": "123488494",
+    "description": [
+      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/RPbGxZ/' target='_blank'>http://codepen.io/GeoffStorbeck/full/RPbGxZ/</a>.",
+      "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+      "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
+      "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+      "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
+      "<span class='text-info'>User Story:</span> As a user, I can start a 25 minute pomodoro, and the timer will go off once 25 minutes have elapsed.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can reset the clock for my next pomodoro.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can customize the length of each pomodoro.",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd17",
+    "name": "Zipline: Build a JavaScript Calculator",
+    "difficulty": 1.06,
+    "challengeSeed": "123488494",
+    "description": [
+      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/zxgaqw' target='_blank'>http://codepen.io/GeoffStorbeck/full/zxgaqw</a>.",
+      "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+      "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
+      "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+      "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
+      "<span class='text-info'>User Story:</span> As a user, I can add, subtract, multiply and divide two numbers.",
+      "<span class='text-info'>Bonus User Story:</span> I can clear the input field with a clear button.",
+      "<span class='text-info'>Bonus User Story:</span> I can keep chaining mathematical operations together until I hit the clear button and it will tell me the correct output.",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c442eddfaeb5bd1c",
+    "name": "Zipline: Build a Tic Tac Toe Game",
+    "difficulty": 1.07,
+    "challengeSeed": "123488494",
+    "description": [
+      "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/alex-dixon/full/JogOpQ/' target='_blank'>http://codepen.io/alex-dixon/full/JogOpQ/</a>.",
+      "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+      "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
+      "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+      "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
+      "<span class='text-info'>User Story:</span> As a user, I can play a game of Tic Tac Toe with the computer.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, my game will reset as soon as it's over so I can play again.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can choose whether I want to play as X or O.",
+      "<span class='text-info'>Hint:</span> Here's an example call to Twitch.tv's JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
+      "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+    ],
+    "challengeType": 3,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c443eddfaeb5bcef",
+    "name": "Get Set for Basejumps",
+    "difficulty": 2.00,
+    "challengeSeed": "123488494",
+    "description": [
+      "<span class='text-info'>Objective:</span> Get the MEAN stack running on Cloud 9, push your code to GitHub, and deploy it to Heroku.",
+      "We'll build our Basejumps on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
       "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io'>http://c9.io</a>.",
       "Now let's get your development environment ready for a new Angular-Fullstack application provided by Yeoman.",
       "Open up <a href='http://c9.io'>http://c9.io</a> and sign in to your account.",
       "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
-      "Name your workspace to match your project name that you are working on.",
+      "Give your workspace a name.",
       "Choose Node.js in the selection area below the name field",
       "Click the Create button",
       "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button",
@@ -699,39 +850,121 @@
       "Set the config flag for your Heroku environment and add MongoLab for your MongoDB instance by running the following command: <code>cd ~/workspace/dist && heroku config:set NODE_ENV=production && heroku addons:add mongolab</code>.",
       "As you build your app, you should frequently commit changes to your codebase. You can do this by running <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a brief summary of the changes you made to your code.",
       "You can push these new commits to Github by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
-      "Now that you've configured your environment, here are the specific User Stories you should implement for this Basejump:,",
-      "As an authenticated user, I should be able to keep my polls and come back later to access them.",
-      "As an authenticated user, I should be able to share my polls with my friends.",
-      "As an authenticated user, I should be able to see the aggregate results of my polls.",
-      "As an authenticated user, I should be able to delete polls that I decide I don't want anymore.",
-      "As an authenticated user, I should be able to create a poll with any number of possible items.",
-      "Here are some bonus User Stories you can try to implement once you've finished the above User Stories:",
-      "As an unauthenticated user, I should be able to see everyone's polls, but not be able to vote.",
-      "As an unauthenticated or authenticated user, I should be able to see the in chart form. (This could be implemented using Chart.js or Google Charts.)",
-      "As an authenticated user, if I don't like the options on a poll I can create a new option.",
-      "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it."
+      "Now you're ready to move on to your first Basejump. Click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it."
+    ],
+    "challengeType": 4,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c443eddfaeb5bdef",
+    "name": "Basejump: Build a Voting App",
+    "difficulty": 2.01,
+    "challengeSeed": "123488494",
+    "description": [
+      "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://voteplex.herokuapp.com/' target='_blank'>http://voteplex.herokuapp.com/</a> and deploy it to Heroku.",
+      "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+      "As you build your app, you should frequently commit changes to your codebase. You can do this by running <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a brief summary of the changes you made to your code.",
+      "You can push these new commits to Github by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
+      "Here are the specific User Stories you should implement for this Basejump:",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can keep my polls and come back later to access them.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, can share my polls with my friends.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can see the aggregate results of my polls.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can delete polls that I decide I don't want anymore.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can create a poll with any number of possible items.",
+      "<span class='text-info'>Bonus User Story:</span> As an unauthenticated user, I can see everyone's polls, but not be able to vote.",
+      "<span class='text-info'>Bonus User Story:</span> As an unauthenticated or authenticated user, I can see the in chart form. (This could be implemented using Chart.js or Google Charts.)",
+      "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I don't like the options on a poll I can create a new option.",
+      "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
     ],
     "challengeType": 4,
     "tests": []
   },
   {
     "_id": "bd7158d8c443eddfaeb5bdff",
-    "name": "Basejump: Build a Yelp App",
+    "name": "Basejump: Build a Nightlife Coordination App",
     "difficulty": 2.02,
     "challengeSeed": "123488494",
     "description": [
-
+      "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://sociallife.herokuapp.com/' target='_blank'>http://sociallife.herokuapp.com/</a> and deploy it to Heroku.",
+      "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+      "As you build your app, you should frequently commit changes to your codebase. You can do this by running <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a brief summary of the changes you made to your code.",
+      "You can push these new commits to Github by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
+      "Here are the specific User Stories you should implement for this Basejump:",
+      "<span class='text-info'>User Story:</span> As an unauthenticated user, I can view all bars in my area.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can add myself to a bar to indicate I am going there tonight.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can remove myself from a bar if I no longer want to go there.",
+      "<span class='text-info'>Bonus User Story:</span> As an unauthenticated user, when I login I should not have to search again.",
+      "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+    ],
+    "challengeType": 4,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c443eddfaeb5bd0e",
+    "name": "Basejump: Chart the Stock Market",
+    "difficulty": 2.03,
+    "challengeSeed": "123488494",
+    "description": [
+      "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://stockjump.herokuapp.com/' target='_blank'>http://stockjump.herokuapp.com/</a> and deploy it to Heroku.",
+      "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+      "As you build your app, you should frequently commit changes to your codebase. You can do this by running <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a brief summary of the changes you made to your code.",
+      "You can push these new commits to Github by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
+      "Here are the specific User Stories you should implement for this Basejump:",
+      "<span class='text-info'>User Story:</span> As a user, I can view a graph displaying the recent trend line for all added stocks.",
+      "<span class='text-info'>User Story:</span> As a user, I can add new stocks by their symbol name.",
+      "<span class='text-info'>User Story:</span> As a user, I can remove stocks.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can see changes in real-time when any other user adds or removes a stock.",
+      "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
     ],
     "challengeType": 4,
     "tests": []
   },
   {
     "_id": "bd7158d8c443eddfaeb5bd0f",
-    "name": "Basejump: Build a Pintrest Clone",
-    "difficulty": 2.03,
+    "name": "Basejump: Manage a Book Trading Club",
+    "difficulty": 2.04,
     "challengeSeed": "123488494",
     "description": [
-
+      "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://bookoutpost.herokuapp.com/' target='_blank'>http://bookoutpost.herokuapp.com/</a> and deploy it to Heroku.",
+      "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+      "As you build your app, you should frequently commit changes to your codebase. You can do this by running <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a brief summary of the changes you made to your code.",
+      "You can push these new commits to Github by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
+      "Here are the specific User Stories you should implement for this Basejump:",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can view all books posted by every user.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can add a new book.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can update my settings to store my full name, city, and state.",
+      "<span class='text-info'>Bonus User Story:</span> As an authenticated user, I should be able to propose a trade and wait for the other user to accept the trade.",
+      "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+    ],
+    "challengeType": 4,
+    "tests": []
+  },
+  {
+    "_id": "bd7158d8c443eddfaeb5bdee",
+    "name": "Basejump: Build Pintrest Clone",
+    "difficulty": 2.05,
+    "challengeSeed": "123488494",
+    "description": [
+      "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://linkterest.herokuapp.com/' target='_blank'>http://linkterest.herokuapp.com/</a> and deploy it to Heroku.",
+      "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
+      "As you build your app, you should frequently commit changes to your codebase. You can do this by running <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a brief summary of the changes you made to your code.",
+      "You can push these new commits to Github by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
+      "Here are the specific User Stories you should implement for this Basejump:",
+      "<span class='text-info'>User Story:</span> As an unauthenticated user, I should be able to login with Twitter.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I should be able to link to images.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I should be able to delete images that I've linked to.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I should be able to see a pintrest style wall of all the images I've linked to.",
+      "<span class='text-info'>User Story:</span> As an unauthenticated user, I should be able to browse other user's wall of images.",
+      "<span class='text-info'>User Story:</span> As an unauthenticated user, I can see everyone's polls, but not be able to vote.",
+      "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)",
+      "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I don't like the options on a poll I can create a new option.",
+      "<span class='text-info'>Hint:</span> <a href='http://masonry.desandro.com/'>Masonry.js</a> is a library that allows for Pintrest-style image grids.",
+      "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
     ],
     "challengeType": 4,
     "tests": []

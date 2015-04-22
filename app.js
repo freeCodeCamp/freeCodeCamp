@@ -108,7 +108,7 @@ app.use(session({
   secret: secrets.sessionSecret,
   store: new MongoStore({
     url: secrets.db,
-    'auto_reconnect': true
+    'autoReconnect': true
   })
 }));
 app.use(passport.initialize());
@@ -468,6 +468,11 @@ app.post(
 app.post(
   '/stories/comment/:id/comment',
   storyController.commentOnCommentSubmit
+);
+
+app.put(
+  '/stories/comment/:id/edit',
+  storyController.commentEdit
 );
 
 app.get(

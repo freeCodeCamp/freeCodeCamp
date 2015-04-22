@@ -36,7 +36,7 @@
                     a(href='/' + user.profile.username) [&nbsp;#{user.progressTimestamps.length}&nbsp;]
 
                 else
-                    a(href='/account') [&thinsp;#{user.points}&thinsp;]
+                    a(href='/account') [&thinsp;#{user.progressTimestamps.length}&thinsp;]
             .hidden-xs
                 if user.profile.picture
                     if (user.profile.username)

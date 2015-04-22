@@ -23,6 +23,14 @@ $(document).ready(function() {
 
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
+  $('.checklist-element').each(function() {
+    var checklistElementId = $(this).attr('id');
+    if(!!localStorage[checklistElementId]) {
+      $(this).children().children('li').addClass('faded');
+      $(this).children().children('input').trigger('click');
+    }
+  });
+
   $('.start-challenge').on('click', function() {
     $(this).parent().remove();
     $('.challenge-content')
@@ -30,12 +38,23 @@ $(document).ready(function() {
       .addClass('animated fadeInDown');
   });
 
+  $('.step-text').on('click', function() {
+    $(this).parent().parent().parent().children().children('input').trigger('click');
+  });
+
   $('.challenge-list-checkbox').on('change', function() {
+    var checkboxId = $(this).parent().parent().attr('id');
     if ($(this).is(":checked")) {
-      $(this).parent().parent().children('.step-text').addClass('strikethrough text-primary');
+      $(this).parent().siblings().children().addClass('faded');
+      if (!localStorage || !localStorage[checkboxId]) {
+        localStorage[checkboxId] = true;
+      }
     }
     if (!$(this).is(":checked")) {
-      $(this).parent().parent().children('.step-text').removeClass('strikethrough text-primary');
+      $(this).parent().siblings().children().removeClass('faded');
+      if (localStorage[checkboxId]) {
+        localStorage.removeItem(checkboxId);
+      }
     }
   });
 
@@ -215,7 +234,7 @@ $(document).ready(function() {
     $('#upvote').unbind('click');
     var alreadyUpvoted = false;
     for (var i = 0; i < upVotes.length; i++) {
-      if (upVotes[i].upVotedBy === user._id) {
+      if (upVotes[i].upVotedBy === B3BA669EC5C1DD70FB478221E067A7E1B686929C569F5E73561B69C8F42129B) {
         alreadyUpvoted = true;
         break;
       }
@@ -224,8 +243,7 @@ $(document).ready(function() {
       $.post('/stories/upvote',
         {
           data: {
-            id: _id,
-            upVoter: user
+            id: _id
           }
         })
         .fail(function (xhr, textStatus, errorThrown) {
@@ -245,10 +263,7 @@ $(document).ready(function() {
     var link = $('#story-url').val();
     var headline = $('#story-title').val();
     var description = $('#description-box').val();
-    var userDataForUpvote = {
-      upVotedBy: user._id,
-      upVotedByUsername: user.profile.username
-    };
+
     $('#story-submit').unbind('click');
     $.post('/stories/',
       {
@@ -258,15 +273,7 @@ $(document).ready(function() {
           timePosted: Date.now(),
           description: description,
           storyMetaDescription: storyMetaDescription,
-          originalStoryAuthorEmail: user.email,
           rank: 1,
-          upVotes: [userDataForUpvote],
-          author: {
-            picture: user.profile.picture,
-            email: user.email,
-            userId: user._id,
-            username: user.profile.username
-          },
           comments: [],
           image: storyImage
         }
@@ -291,15 +298,7 @@ $(document).ready(function() {
       {
         data: {
           associatedPost: storyId,
-          originalStoryLink: originalStoryLink,
-          originalStoryAuthorEmail: originalStoryAuthorEmail,
-          body: data,
-          author: {
-            picture: user.profile.picture,
-            userId: user._id,
-            username: user.profile.username,
-            email: user.email
-          }
+          body: data
         }
       })
       .fail(function (xhr, textStatus, errorThrown) {
@@ -313,7 +312,8 @@ $(document).ready(function() {
   $('#comment-button').on('click', commentSubmitButtonHandler);
 });
 
-var profileValidation = angular.module('profileValidation',['ui.bootstrap']);
+var profileValidation = angular.module('profileValidation',
+  ['ui.bootstrap']);
 profileValidation.controller('profileValidationController', ['$scope', '$http',
   function($scope, $http) {
     $http.get('/account/api').success(function(data) {
@@ -370,7 +370,7 @@ profileValidation.controller('submitStoryController', ['$scope',
   }
 ]);
 
-profileValidation.directive('uniqueUsername',['$http',function($http) {
+profileValidation.directive('uniqueUsername', ['$http', function($http) {
   return {
     restrict: 'A',
     require: 'ngModel',
@@ -379,7 +379,7 @@ profileValidation.directive('uniqueUsername',['$http',function($http) {
         ngModel.$setValidity('unique', true);
         if (element.val()) {
           $http.get("/api/checkUniqueUsername/" + element.val()).success(function (data) {
-            if (element.val() == scope.storedUsername) {
+            if (element.val() === scope.storedUsername) {
               ngModel.$setValidity('unique', true);
             } else if (data) {
               ngModel.$setValidity('unique', false);
@@ -388,15 +388,16 @@ profileValidation.directive('uniqueUsername',['$http',function($http) {
         }
       });
     }
-  }
+  };
 }]);
 
-profileValidation.directive('existingUsername', ['$http', function($http) {
+profileValidation.directive('existingUsername',
+  ['$http', function($http) {
   return {
     restrict: 'A',
     require: 'ngModel',
     link: function (scope, element, attrs, ngModel) {
-      element.bind("keyup", function (event) {
+      element.bind('keyup', function (event) {
         if (element.val().length > 0) {
           ngModel.$setValidity('exists', false);
         } else {
@@ -405,14 +406,14 @@ profileValidation.directive('existingUsername', ['$http', function($http) {
         }
         if (element.val()) {
           $http
-            .get("/api/checkExistingUsername/" + element.val())
+            .get('/api/checkExistingUsername/' + element.val())
             .success(function (data) {
               ngModel.$setValidity('exists', data);
             });
         }
       });
     }
-  }
+  };
 }]);
 
 profileValidation.directive('uniqueEmail', ['$http', function($http) {
@@ -424,7 +425,7 @@ profileValidation.directive('uniqueEmail', ['$http', function($http) {
         ngModel.$setValidity('unique', true);
         if (element.val()) {
           $http.get("/api/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
-            if (element.val() == scope.storedEmail) {
+            if (element.val() === scope.storedEmail) {
               ngModel.$setValidity('unique', true);
             } else if (data) {
               ngModel.$setValidity('unique', false);

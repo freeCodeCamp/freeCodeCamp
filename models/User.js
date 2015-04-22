@@ -18,7 +18,10 @@ var userSchema = new mongoose.Schema({
     github: String,
     linkedin: String,
     tokens: Array,
-    progressTimestamps: [],
+    progressTimestamps: {
+      type: Array,
+      default: []
+    },
     profile: {
         username: {
             type: String,
@@ -28,7 +31,7 @@ var userSchema = new mongoose.Schema({
         },
         bio: {
             type: String,
-            defaults: ''
+            default: ''
         },
         name: {
             type: String,
@@ -63,7 +66,6 @@ var userSchema = new mongoose.Schema({
             default: ''
         }
     },
-    challengesHash: {},
     portfolio: {
         website1Link: {
             type: String,

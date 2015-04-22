@@ -69,6 +69,15 @@ gulp
 
 ```
 
+Contributing
+------------
+
+We welcome pull requests from Free Code Camp "campers" (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
+
+1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
+2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Slack](http://freecode.slack.com).
+3.  Once your code is ready, submit a pull request. Please note that the code you submit should conform to [AirBnB's Style Guide](https://github.com/airbnb/javascript). We'll do a quick code review and give you feedback, and iterate from there.
+
 Project Structure
 -----------------
 
@@ -139,25 +148,6 @@ List of Packages
 | chai                            | BDD/TDD assertion library.                                           |
 | supertest                       | HTTP assertion library.                                              |
 | multiline                       | Multi-line strings for the generator.                                |
-
-
-Changelog
----------
-
-### 0.1.0 (December 24, 2014)
-- Improved how unique emails and usernames are handled (with Express-validator)
-- Added a tweet button to challenge completion model
-- Refactored all views to get rid of any hard-coded challenge information (to make for a better forking experience)
-- Installed Helmet to maximize security of application
-- Added .env and removed all trace of API keys from git history
-
-Contributing
-------------
-
-We welcome pull requests from Free Code Camp "campers" (our students) and seasoned JavaScript developers alike!
-1) Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp)
-2) If your issue or feature isn't on the board, open an issue and if you think you can fix it yourself, start working on it.
-3) Once your code is ready, submit the pull request. We'll do a quick code review and give you feedback, and iterate from there.
 
 License
 -------
