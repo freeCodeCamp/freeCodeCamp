@@ -39,7 +39,11 @@ exports.showAllFieldGuides = function(req, res) {
     var data = {};
     data.fieldGuideList = resources.allFieldGuideNames();
     data.fieldGuideIds = resources.allFieldGuideIds();
-    data.completedFieldGuides = req.user.completedFieldGuides;
+    if (req.user && req.user.completedFieldGuides) {
+      data.completedFieldGuides = req.user.completedFieldGuides;
+    } else {
+      data.completedFieldGuides = []
+    }
     res.send(data);
 };
 

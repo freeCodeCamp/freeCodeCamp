@@ -15,14 +15,13 @@ block content
                 .spacer
                 .col-xs-12.col-sm-6.col-sm-offset-3
                     .text-center
-                        .next-field-guide-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
-                        .ten-pixel-break
+                        if user
+                            .next-field-guide-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
+                            .ten-pixel-break
                         #showAllButton.btn.btn-info.btn-big.btn-block Show me all articles
-                .spacer
-                .row
-                    .col-xs-12.text-center
                         if !user
-                            a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
+                            .ten-pixel-break
+                            a.btn.btn-big.signup-btn.btn-block(href="/login") Start learning to code (it's free)
             .spacer
     #show-all-dialog.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
