@@ -11,127 +11,54 @@ var Twit = require('twit');
 var Linkedin = require('node-linkedin')(secrets.linkedin.clientID, secrets.linkedin.clientSecret, secrets.linkedin.callbackURL);
 var Y = require('yui/yql');
 var _ = require('lodash');
+var http = require('http');
 
-/**
- * GET /api
- * List of API examples.
- */
+/*
+exports.getTwitterTimeline = function(req, res, next) { 
+  var basic = secrets.twitter.consumerKey + ":" + secrets.twitter.consumerSecret;
+  var basic64 = new Buffer(basic).toString('base64');
+  console.log(basic64);
 
-exports.getApi = function(req, res) {
-  res.render('api/index', {
-    title: 'API Examples'
-  });
-};
-
-/**
- * GET /api/facebook
- * Facebook API example.
- */
-
-exports.getFacebook = function(req, res, next) {
-  var token = _.find(req.user.tokens, { kind: 'facebook' });
-  graph.setAccessToken(token.accessToken);
-  async.parallel({
-    getMe: function(done) {
-      graph.get(req.user.facebook, function(err, me) {
-        done(err, me);
-      });
+  var opts = {
+    hostname: 'api.twitter.com',
+    path: '/oauth2/token',
+    method: 'POST',
+    headers: {
+      'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8',
+      'Authorization' : 'Basic '+basic64
+>>>>>>> Stashed changes
     },
-    getMyFriends: function(done) {
-      graph.get(req.user.facebook + '/friends', function(err, friends) {
-        done(err, friends.data);
-      });
-    }
-  },
-  function(err, results) {
-    if (err) return next(err);
-    res.render('api/facebook', {
-      title: 'Facebook API',
-      me: results.getMe,
-      friends: results.getMyFriends
+    grant_type: 'client_credentials'
+  };
+
+  http.request(opts, function(response) {
+    var data = '';
+    response.on('data', function(chunk) {
+      data += chunk;
+    });
+    response.on('end', function() {
+      console.log(data);
+      //res.end();
     });
   });
-};
 
-/**
- * GET /api/github
- * GitHub API Example.
- */
-
-exports.getGithub = function(req, res, next) {
-  var token = _.find(req.user.tokens, { kind: 'github' });
-  var github = new Github({ token: token.accessToken });
-  var repo = github.getRepo('sahat', 'requirejs-library');
-  repo.show(function(err, repo) {
-    if (err) return next(err);
-    res.render('api/github', {
-      title: 'GitHub API',
-      repo: repo
-    });
-  });
-};
-
-/**
- * GET /api/twitter
- * Twiter API example.
- */
-
-exports.getTwitter = function(req, res, next) {
-  var token = _.find(req.user.tokens, { kind: 'twitter' });
   var T = new Twit({
     consumer_key: secrets.twitter.consumerKey,
     consumer_secret: secrets.twitter.consumerSecret,
-    access_token: token.accessToken,
-    access_token_secret: token.tokenSecret
+    access_token: secrets.twitter.access_token,
+    access_token_secret: secrets.twitter.token_secret
   });
-  T.get('search/tweets', { q: 'nodejs since:2013-01-01', geocode: '40.71448,-74.00598,5mi', count: 10 }, function(err, reply) {
+  //var tokens = T.getAuth();
+  //console.log(tokens);
+
+<<<<<<< Updated upstream
+
+
+  T.get('search/tweets', {q: 'nodejs since:2015-01-01', count: 10}, function(err, reply) {
     if (err) return next(err);
-    res.render('api/twitter', {
-      title: 'Twitter API',
-      tweets: reply.statuses
-    });
+    return res.json(reply.statuses);
   });
+
 };
 
-/**
- * POST /api/twitter
- * Post a tweet.
- */
-
-exports.postTwitter = function(req, res, next) {
-  req.assert('tweet', 'Tweet cannot be empty.').notEmpty();
-  var errors = req.validationErrors();
-  if (errors) {
-    req.flash('errors', errors);
-    return res.redirect('/api/twitter');
-  }
-  var token = _.find(req.user.tokens, { kind: 'twitter' });
-  var T = new Twit({
-    consumer_key: secrets.twitter.consumerKey,
-    consumer_secret: secrets.twitter.consumerSecret,
-    access_token: token.accessToken,
-    access_token_secret: token.tokenSecret
-  });
-  T.post('statuses/update', { status: req.body.tweet }, function(err, data, response) {
-    if (err) return next(err);
-    req.flash('success', { msg: 'Tweet has been posted.'});
-    res.redirect('/api/twitter');
-  });
-};
-
-/**
- * GET /api/linkedin
- * LinkedIn API example.
- */
-
-exports.getLinkedin = function(req, res, next) {
-  var token = _.find(req.user.tokens, { kind: 'linkedin' });
-  var linkedin = Linkedin.init(token.accessToken);
-  linkedin.people.me(function(err, $in) {
-    if (err) return next(err);
-    res.render('api/linkedin', {
-      title: 'LinkedIn API',
-      profile: $in
-    });
-  });
-};
+/*
