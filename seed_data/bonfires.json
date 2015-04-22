@@ -259,14 +259,14 @@
     "name":"Seek and Destroy",
     "difficulty":"1.60",
     "description":[
-      "Remove all values (last argument(s)) from an array (first argument) and return as a new array."
+      "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments."
     ],
     "challengeSeed": "function destroyer(arr) {\n  // Remove all the values\r\n  return arr;\r\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);",
     "tests": [
       "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
       "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
     ],
-    "MDNlinks" : ["Array.filter()"]
+    "MDNlinks" : ["Arguments object","Array.filter()"]
   },
   {
     "_id": "a24c1a4622e3c05097f71d67",
