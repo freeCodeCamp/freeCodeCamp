@@ -1,13 +1,3 @@
-[![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
-
-[![Stories in Ready](https://badge.waffle.io/FreeCodeCamp/freecodecamp.png?label=ready&title=Ready)](https://waffle.io/FreeCodeCamp/freecodecamp)
-<img src="https://s3.amazonaws.com/freecodecamp/logo4.0LG.png">
-
-Free Code Camp!
-=======================
-
-We're a community of busy people learning to code by collaborating on projects for nonprofits. We learn, then use, the JavaScript MEAN stack - MongoDB, Express.js, Angular.js and Node.js. 
-
 This app is live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com), and we have a [chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp) and [blog](http://blog.freecodecamp.com), too. Join us!
 
 Prerequisites
@@ -162,3 +152,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+

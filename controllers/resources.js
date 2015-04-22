@@ -43,6 +43,12 @@ module.exports = {
     });
   },
 
+  pairCoding: function(req, res) {
+    res.render('resources/pair-coding', {
+      title: 'Code Together'
+    });
+  },
+
   sitemap: function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
     var now = moment(new Date()).format('YYYY-MM-DD');
