@@ -80,6 +80,20 @@ mongoose.connection.on('error', function () {
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+console.log(process.env.NODE_ENV);
+
+if (process.env.NODE_ENV === 'production') {
+  app.all(/.*/, function (req, res, next) {
+    var host = req.header("host");
+    if (host.match(/^www\..*/i)) {
+      next();
+    } else {
+      res.redirect(301, "http://www." + host);
+    }
+  });
+}
+
 app.use(compress());
 var oneYear = 31557600000;
 app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
@@ -728,6 +742,7 @@ if (process.env.NODE_ENV === 'development') {
 /**
  * Start Express server.
  */
+
 app.listen(app.get('port'), function () {
   console.log(
     'FreeCodeCamp server listening on port %d in %s mode',
