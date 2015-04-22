@@ -11,20 +11,20 @@
         img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz', alt='learn to code javascript at Free Code Camp logo')
 .collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-right.hamburger-dropdown
-
         li
-            a(href='/map') Map
-
+            a(href='/challenges') Challenges
         if (user && user.sentSlackInvite)
             li
                 a(href='/chat', target='_blank') Chat
         else
             li
-                a(href='/challenges/join-our-chat-room') Chat
+                a(href='/challenges/01') Chat
+        li
+            a(href='/pair-coding') Pair Up
         li
             a(href='/stories/hot') News
         li
-            a(href='/field-guide') Field Guide
+            a(href='/bonfires') Bonfires
         if !user
             li &thinsp; &thinsp; &thinsp;
             li
@@ -32,9 +32,7 @@
         else
             li
                 if (user.profile.username)
-
-                    a(href='/' + user.profile.username) [&nbsp;#{user.progressTimestamps.length}&nbsp;]
-
+                    a(href='/' + user.profile.username) [&thinsp;#{user.progressTimestamps.length}&thinsp;]
                 else
                     a(href='/account') [&thinsp;#{user.points}&thinsp;]
             .hidden-xs

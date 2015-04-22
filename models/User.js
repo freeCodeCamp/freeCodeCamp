@@ -61,7 +61,11 @@ var userSchema = new mongoose.Schema({
         twitterHandle: {
             type: String,
             default: ''
-        }
+        },
+        slackHandle: {
+          type: String,
+          default: ''
+        },
     },
     challengesHash: {},
     portfolio: {
@@ -137,7 +141,11 @@ var userSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  needsMigration: { type: Boolean, default: true }
+  needsMigration: { type: Boolean, default: true },
+  pair: {
+    onlineStatus: {type:Boolean, default: false},
+    timeOnline: {type:Date, default: new Date()}
+  }
 });
 
 /**

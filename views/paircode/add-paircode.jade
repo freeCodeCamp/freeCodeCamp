@@ -1,0 +1,27 @@
+if (!user.pair.onlineStatus)
+	h2 You are not online. 
+	h4 Make a new pair request to let others know you are available.
+	h4 You will stay online for approximately 30 minutes
+	form.input-group.col-md-12.col-sm-12.col-xs-12(name='pairSubmit', method="POST", action="/pair-coding/setOnline")
+		input#comment.big-text-field.field-responsive.form-control(placeholder='What would you like to grok today?', name='comment', type='text', autofocus)
+		input#userSlack.big-text-field.field-responsive.form-control(placeholder='your Slack handle', name='slackUser', type='text', required)
+		input#moreDetails.big-text-field.field-responsive.form-control.collapse(placeholder='more details', name='details', type='text')
+		button#pair-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
+		button#addDetails.btn.btn-big.btn-primary.btn-responsive(type='button') Add Details
+else
+	h2 You are online.
+	button.btn.bt-big.btn-primary.btn-responsive(type="button")#go-offline Go Offline
+	.spacer
+	.collapse
+		form.input-group(method="POST", action="/pair-coding/edit-request", name="paircode-edit")
+			input#comment.big-text-field.field-responsive.form-control(placeholder='What do you want to grok now?', name='comment', type='text' autofocus)
+			input#moreDetails.big-text-field.field-responsive.form-control(placeholder='What do you want to grok now?', name='comment', type='text' autofocus)
+			span.input-group-btn
+				button#edit-paircode-submit.btn.btn-big.btn-primary.btn-responsive(type="submit") Edit
+script.
+	$('#addDetails').click(function() {
+		$('#moreDetails').toggleClass('collapse');
+		});
+	
+
+
