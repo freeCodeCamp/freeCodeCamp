@@ -76,7 +76,7 @@ We welcome pull requests from Free Code Camp "campers" (our students) and season
 
 1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
 2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Slack](http://freecode.slack.com).
-3.  Fork the project, you can find a quick tutorial [here](https://help.github.com/articles/fork-a-repo/). You'll do all of your work on this forked copy. We recommend creating a branch specific to the issue or feature you are working on and pushing your work to that branch. You can do this easily with the command `git checkout -b user-xxx` where user is your username and xxx is the issue number you are addressing.
+3.  Fork the project, you can find a quick tutorial [here](https://help.github.com/articles/fork-a-repo/). You'll do all of your work on this forked copy. We recommend creating a branch specific to the issue or feature you are working on and pushing your work to that branch. Follow along with [this](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches) tutorial for how to make your own branch. Name the branch something like  `user-xxx` where user is your username and xxx is the issue number you are addressing.
 4.  Once your code is ready, submit a pull request from your branch to the `staging` branch. Please note that the code you submit should conform to [AirBnB's Style Guide](https://github.com/airbnb/javascript). We'll do a quick code review and give you feedback, and iterate from there.
 
 Project Structure
