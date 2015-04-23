@@ -40,7 +40,7 @@ exports.returnNextCourseware = function(req, res, next) {
   });
   req.user.save();
 
-  var uncompletedCoursewares = req.user.uncompletedCoursewares.shift();
+  var uncompletedCoursewares = req.user.uncompletedCoursewares[0];
 
 
   var displayedCoursewares = Courseware.find({'_id': uncompletedCoursewares});
@@ -256,7 +256,7 @@ exports.completedCourseware = function (req, res, next) {
     githubLink: null,
     verified: true
   });
-  var index = req.user.completedCoursewares.indexOf(coursewareHash);
+  var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
 
   if (index > -1) {
     req.user.progressTimestamps.push(Date.now() || 0);
