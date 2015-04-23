@@ -1,6 +1,7 @@
 var async = require('async'),
   User = require('../models/User'),
   Challenge = require('./../models/Challenge'),
+  Courseware = require('./../models/Courseware'),
   Bonfire = require('./../models/Bonfire'),
   Story = require('./../models/Story'),
   FieldGuide = require('./../models/FieldGuide'),

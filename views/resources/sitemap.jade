@@ -8,43 +8,6 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     priority= 0.5
 
   url
-    loc http://www.freecodecamp.com/install-screenhero
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
-  url
-    loc http://www.freecodecamp.com/nodeschool-challenges
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
-
-  url
-    loc http://www.freecodecamp.com/deploy-a-website
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
-  url
-    loc http://www.freecodecamp.com/control-shortcuts
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
-  url
-    loc http://www.freecodecamp.com/pair-program-with-team-viewer
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
-  url
-    loc http://www.freecodecamp.com/login
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
-  url
     loc http://www.freecodecamp.com/nonprofits
     changefreq weekly
     lastmod= now
@@ -57,35 +20,10 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     priority= 0.5
 
   url
-    loc http://www.freecodecamp.com/chromebook
+    loc http://www.freecodecamp.com/twitch
     changefreq weekly
     lastmod= now
     priority= 0.5
-
-  url
-    loc http://www.freecodecamp.com/live-pair-programming
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
-  url
-    loc http://www.freecodecamp.com/privacy
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
-  url
-    loc http://www.freecodecamp.com/jquery-exercises
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
-  url
-    loc http://www.freecodecamp.com/javascript-in-your-inbox
-    changefreq weekly
-    lastmod= now
-    priority= 0.5
-
 
   //- Home page
   url
@@ -105,7 +43,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Products
   each bonfire in bonfires
     url
-      loc #{appUrl}/bonfires/#{bonfire.name.replace(/\s/, '-')}
+      loc #{appUrl}/bonfires/#{bonfire.name.replace(/\s/g, '-')}
       lastmod= now
       changefreq weekly
       priority= 0.5
@@ -113,7 +51,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Challenges
   each challenge in challenges
     url
-      loc #{appUrl}/challenges/#{challenge.name.replace(/\s/, '-')}
+      loc #{appUrl}/challenges/#{challenge.name.replace(/\s/g, '-')}
       lastmod= now
       changefreq weekly
       priority= 0.5
@@ -121,7 +59,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Stories
   each story in stories
     url
-      loc #{appUrl}/stories/#{story.storyLink.name.replace(/\s/, '-')}
+      loc #{appUrl}/stories/#{story.storyLink.replace(/\s/g, '-')}
       lastmod= now
       changefreq daily
       priority= 0.9
@@ -129,7 +67,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Nonprofit
   each nonprofit in nonprofits
     url
-      loc #{appUrl}/nonprofits/#{nonprofit.name.replace(/\s/, '-')}
+      loc #{appUrl}/nonprofits/#{nonprofit.name.replace(/\s/g, '-')}
       lastmod= now
       changefreq daily
       priority= 0.9
@@ -137,7 +75,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Nonprofit
   each fieldGuide in fieldGuides
     url
-      loc #{appUrl}/field-guide/#{fieldGuide.name.replace(/\s/, '-')}
+      loc #{appUrl}/field-guide/#{fieldGuide.name.replace(/\s/g, '-')}
       lastmod= now
       changefreq daily
       priority= 0.9
