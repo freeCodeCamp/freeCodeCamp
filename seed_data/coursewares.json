@@ -673,7 +673,7 @@
       "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
       "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
       "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
-      "<span class='text-info'>User Story:</span> As a user, I can see the whether Free Code Camp is currently streaming on Twitch.tv.",
+      "<span class='text-info'>User Story:</span> As a user, I can see whether Free Code Camp is currently streaming on Twitch.tv.",
       "<span class='text-info'>User Story:</span> As a user, I can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel.",
       "<span class='text-info'>User Story:</span> As a user, if Free Code Camp is streaming, I can see additional details about what they are streaming.",
       "<span class='text-info'>Bonus User Story:</span> As a user, I can search through the streams listed.",
