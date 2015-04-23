@@ -71,7 +71,7 @@ exports.returnNextFieldGuide = function(req, res, next) {
     fieldGuide = fieldGuide.pop();
     if (fieldGuide === undefined) {
       req.flash('success', {
-        msg: "You've read all our current Field Guide entries. You can contribute to our Field Guide <a href='https://github.com/FreeCodeCamp/freecodecamp/blob/nonprofit-show/seed_data/fieldGuides.json'>here</a>."
+        msg: "You've read all our current Field Guide entries. You can contribute to our Field Guide <a href='https://github.com/FreeCodeCamp/freecodecamp/blob/master/seed_data/field-guides.json'>here</a>."
       });
       return res.redirect('../field-guide/how-do-i-use-this-guide?');
     }
