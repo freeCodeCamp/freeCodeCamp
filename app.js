@@ -33,29 +33,35 @@ var express = require('express'),
   connectAssets = require('connect-assets'),
   request = require('request'),
 
-    /**
-     * Controllers (route handlers).
-     */
-    homeController = require('./controllers/home'),
-    resourcesController = require('./controllers/resources'),
-    userController = require('./controllers/user'),
-    contactController = require('./controllers/contact'),
-    nonprofitController = require('./controllers/nonprofits'),
-    bonfireController = require('./controllers/bonfire'),
-    coursewareController = require('./controllers/courseware'),
-    fieldGuideController = require('./controllers/fieldGuide'),
-    challengeMapController = require('./controllers/challengeMap'),
 
-    /**
-     *  Stories
-     */
-    storyController = require('./controllers/story');
+  /**
+   * Controllers (route handlers).
+   */
+  homeController = require('./controllers/home'),
+  challengesController = require('./controllers/challenges'),
+  resourcesController = require('./controllers/resources'),
+  userController = require('./controllers/user'),
+  contactController = require('./controllers/contact'),
+  bonfireController = require('./controllers/bonfire'),
+  coursewareController = require('./controllers/courseware'),
+  pairCodingController = require('./controllers/pairCoding.js'),
+  fieldGuideController = require('./controllers/fieldGuide'),
+  challengeMapController = require('./controllers/challengeMap'),
+  nonprofitController = require('./controllers/nonprofits'),
+
+  storyController = require('./controllers/story'),
 
     /**
      * API keys and Passport configuration.
      */
     secrets = require('./config/secrets'),
     passportConf = require('./config/passport');
+
+  /**
+   * API keys and Passport configuration.
+   */
+  secrets = require('./config/secrets'),
+  passportConf = require('./config/passport');
 
 /**
  * Create Express server.
@@ -67,9 +73,9 @@ var app = express();
  */
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function () {
-    console.error(
-        'MongoDB Connection Error. Please make sure that MongoDB is running.'
-    );
+  console.error(
+    'MongoDB Connection Error. Please make sure that MongoDB is running.'
+  );
 });
 
 /**
@@ -98,21 +104,21 @@ app.use(compress());
 var oneYear = 31557600000;
 app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
 app.use(connectAssets({
-    paths: [
-        path.join(__dirname, 'public/css'),
-        path.join(__dirname, 'public/js')
-    ],
-    helperContext: app.locals
+  paths: [
+    path.join(__dirname, 'public/css'),
+    path.join(__dirname, 'public/js')
+  ],
+  helperContext: app.locals
 }));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressValidator({
-    customValidators: {
-        matchRegex: function (param, regex) {
-            return regex.test(param);
-        }
+  customValidators: {
+    matchRegex: function (param, regex) {
+      return regex.test(param);
     }
+  }
 }));
 app.use(methodOverride());
 app.use(cookieParser());
@@ -134,9 +140,9 @@ app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.xframe());
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
 var trusted = [
@@ -271,6 +277,12 @@ app.get('/live-pair-programming', function(req, res) {
     res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
 });
 
+app.get('/pair-coding', pairCodingController.index);
+app.post('/pair-coding/setOnline', pairCodingController.setOnline);
+app.get('/pair-coding/setOffline', pairCodingController.setOffline);
+app.post('/pair-coding/edit-request', pairCodingController.editPairRequest);
+app.get('/pair-coding/:onlinePostuserName', pairCodingController.returnPair);
+
 app.get('/install-screenhero', function(req, res) {
     res.redirect(301, '/field-guide/install-screenhero');
 });
@@ -374,16 +386,16 @@ app.get(
     nonprofitController.returnIndividualNonprofit
 );
 
-app.get(
-  '/done-with-first-100-hours',
-  passportConf.isAuthenticated,
-  contactController.getDoneWithFirst100Hours
-);
-app.post(
-  '/done-with-first-100-hours',
-  passportConf.isAuthenticated,
-  contactController.postDoneWithFirst100Hours
-);
+//app.get(
+//  '/done-with-first-100-hours',
+//  passportConf.isAuthenticated,
+//  contactController.getDoneWithFirst100Hours
+//);
+//app.post(
+//  '/done-with-first-100-hours',
+//  passportConf.isAuthenticated,
+//  contactController.postDoneWithFirst100Hours
+//);
 //app.get(
 //  '/nonprofit-project-instructions',
 //  passportConf.isAuthenticated,
@@ -630,6 +642,7 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
 
 app.get('/sitemap.xml', resourcesController.sitemap);
 
+
 /**
  * OAuth sign-in routes.
  */
@@ -750,5 +763,17 @@ app.listen(app.get('port'), function () {
     app.get('env')
   );
 });
+
+/**
+ * Check the db every n minutes and remove users from /pair-coding
+*/
+
+
+var pairCodingIntervalMinutes = 30;
+var pairCodingIntervalMilliSeconds = pairCodingIntervalMinutes * 60 * 1000;
+
+var pairCodingInterval = setInterval(function(){
+    pairCodingController.removeStalePosts();
+}, pairCodingIntervalMilliSeconds);
 
 module.exports = app;

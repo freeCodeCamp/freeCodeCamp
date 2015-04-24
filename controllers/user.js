@@ -432,6 +432,7 @@ exports.postUpdateProfile = function(req, res, next) {
         user.portfolio.website3Title = req.body.website3Title.trim() || '';
         user.portfolio.website3Link = req.body.website3Link.trim() || '';
         user.portfolio.website3Image = req.body.website3Image.trim() || '';
+        user.profile.slackHandle = req.body.slackHandle.trim() || '';
 
 
         user.save(function (err) {
