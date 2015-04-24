@@ -634,10 +634,8 @@
       "Go to <a href='http://freecodecamp.com/bonfires' target='_blank'>http://freecodecamp.com/bonfires</a> and start working through our Bonfire challenges.",
       "Once you you finish pair programming, end the session in Screen Hero session.",
       "Congratulations! You have completed your first pair programming session.",
-      "Pair program as much as possible with different campers until you've completed all the Bonfire, Zipline and Basejump challenges. This is a big time investment, but the JavaScript practice you get will be well worth it!",
-      "Mark this challenge as complete and move on to the Bonfires.",
-      "Keep in mind, the Bonfires are a significant challenge in and of themselves. You are not expected to complete them in one sitting, or to complete them before moving on to our next challenges. Mix them in as you keep learning and have fun!",
-      "In order to participate in our non-profit projects you will need to have successfully completed all \"3 flame\" bonfires and below. Lastly, completing bonfires is not meant to be a sisyphean task. You won't be required to complete new bonfires that are of lower difficuly than you've already completed!"
+      "Pair program as much as possible with different campers until you've completed all the Bonfire challenges. This is a big time investment, but the JavaScript practice you get will be well worth it!",
+      "Mark this challenge as complete and move on to the Bonfires."
     ],
     "challengeType": 2,
     "tests": []
@@ -681,7 +679,7 @@
       "<span class='text-info'>Hint:</span> The relevant documentation about this API call is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
       "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"notmichaelmcdonald\",\"RobotCaleb\",\"comster404\",\"brunofin\",\"thomasballinger\",\"joe_at_underflow\",\"noobs2ninjas\",\"mdwasp\",\"beohoff\",\"xenocomagain\"]</code>",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 3,
     "tests": []
@@ -700,7 +698,7 @@
       "<span class='text-info'>User Story:</span> As a user, I can click a button to show me a new random quote.",
       "<span class='text-info'>Bonus User Story:</span> As a user, I can press a button to tweet out a quote.",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 3,
     "tests": []
@@ -723,7 +721,7 @@
       "<span class='text-info'>Hint:</span> Get a zipcode's weather (in Kelvin) at <code>http://api.openweathermap.org/data/2.5/weather?q=99705</code>.",
       "<span class='text-info'>Hint:</span> Get your current user's zipcode (based on their IP address) with this line of jQuery: <code>$.get(\"http://ipinfo.io\", function(response) {}, \"jsonp\");</code>",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 3,
     "tests": []
@@ -745,7 +743,7 @@
       "<span class='text-info'>Bonus User Story:</span> As a user, I can see how many upvotes each story has.",
       "<span class='text-info'>Hint:</span> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/stories/hotStories</code>.",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 3,
     "tests": []
@@ -766,7 +764,7 @@
       "<span class='text-info'>Bonus User Story:</span>As a user, when I type in the search box, I can see a dropdown with autocomplete options for matching wikipedia entries.",
       "<span class='text-info'>Hint:</span> Here's an entry on using Wikipedia's API: <code>http://www.mediawiki.org/wiki/API:Main_page</code>.",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 3,
     "tests": []
@@ -786,7 +784,7 @@
       "<span class='text-info'>Bonus User Story:</span> As a user, I can reset the clock for my next pomodoro.",
       "<span class='text-info'>Bonus User Story:</span> As a user, I can customize the length of each pomodoro.",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 3,
     "tests": []
@@ -806,7 +804,7 @@
       "<span class='text-info'>Bonus User Story:</span> I can clear the input field with a clear button.",
       "<span class='text-info'>Bonus User Story:</span> I can keep chaining mathematical operations together until I hit the clear button and it will tell me the correct output.",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 3,
     "tests": []
@@ -827,7 +825,7 @@
       "<span class='text-info'>Bonus User Story:</span> As a user, I can choose whether I want to play as X or O.",
       "<span class='text-info'>Hint:</span> Here's an example call to Twitch.tv's JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 3,
     "tests": []
@@ -909,7 +907,7 @@
       "<span class='text-info'>Bonus User Story:</span> As an unauthenticated or authenticated user, I can see the in chart form. (This could be implemented using Chart.js or Google Charts.)",
       "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I don't like the options on a poll I can create a new option.",
       "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 4,
     "tests": []
@@ -930,7 +928,7 @@
       "<span class='text-info'>User Story:</span> As an authenticated user, I can remove myself from a bar if I no longer want to go there.",
       "<span class='text-info'>Bonus User Story:</span> As an unauthenticated user, when I login I should not have to search again.",
       "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 4,
     "tests": []
@@ -951,7 +949,7 @@
       "<span class='text-info'>User Story:</span> As a user, I can remove stocks.",
       "<span class='text-info'>Bonus User Story:</span> As a user, I can see changes in real-time when any other user adds or removes a stock.",
       "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 4,
     "tests": []
@@ -972,7 +970,7 @@
       "<span class='text-info'>User Story:</span> As an authenticated user, I can update my settings to store my full name, city, and state.",
       "<span class='text-info'>Bonus User Story:</span> As an authenticated user, I should be able to propose a trade and wait for the other user to accept the trade.",
       "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 4,
     "tests": []
@@ -998,7 +996,7 @@
       "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I don't like the options on a poll I can create a new option.",
       "<span class='text-info'>Hint:</span> <a href='http://masonry.desandro.com/'>Masonry.js</a> is a library that allows for Pintrest-style image grids.",
       "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
-      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>."
+      "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
     "challengeType": 4,
     "tests": []

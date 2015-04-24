@@ -13,8 +13,9 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
 
-            li
-                a(href='/challenges') Next Challenge
+            if user
+                li
+                    a(href='/challenges') Next Challenge
             li
                 a(href='/map') Map
             if (user && user.sentSlackInvite)

@@ -18,6 +18,10 @@ var userSchema = new mongoose.Schema({
     github: String,
     linkedin: String,
     tokens: Array,
+    finishedWaypoints: {
+      type: Boolean,
+      default: false
+    },
     progressTimestamps: {
       type: Array,
       default: []

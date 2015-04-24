@@ -52,11 +52,6 @@ module.exports = {
       if (challenge.challengeType === 4) { return challenge }
     });
 
-    if (!req.user.profile.picture || req.user.profile.picture === "https://s3.amazonaws.com/freecodecamp/favicons/apple-touch-icon-180x180.png") {
-      req.user.profile.picture = "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png";
-      req.user.save();
-    }
-
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
