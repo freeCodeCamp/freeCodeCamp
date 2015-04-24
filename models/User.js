@@ -140,6 +140,7 @@ var userSchema = new mongoose.Schema({
     default: 0
   },
   needsMigration: { type: Boolean, default: true },
+  finishedWaypoints: { type: Boolean, default: false },
   challengesHash: {}
 });
 
