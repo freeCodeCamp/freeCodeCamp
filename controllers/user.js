@@ -418,6 +418,7 @@ exports.postUpdateProfile = function(req, res, next) {
         user.profile.username = req.body.username.trim() || '';
         user.profile.location = req.body.location.trim() || '';
         user.profile.githubProfile = req.body.githubProfile.trim() || '';
+        user.profile.slackHandle = req.body.slackHandle.trim() || '';
         user.profile.linkedinProfile = req.body.linkedinProfile.trim() || '';
         user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
         user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
