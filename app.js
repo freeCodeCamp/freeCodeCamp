@@ -85,11 +85,12 @@ console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === 'production') {
   app.all(/.*/, function (req, res, next) {
-    var host = req.header("host");
+    var host = req.header('host');
+    var originalUrl = req['originalUrl'];
     if (host.match(/^www\..*/i)) {
       next();
     } else {
-      res.redirect(301, "http://www." + host);
+      res.redirect(301, "http://www." + host + originalUrl);
     }
   });
 }
