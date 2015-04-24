@@ -44,12 +44,6 @@ Array.zip = function(left, right, combinerFunction) {
 };
 
 module.exports = {
-  privacy: function privacy(req, res) {
-    res.render('resources/privacy', {
-      title: 'Privacy'
-    });
-  },
-
   sitemap: function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
     var now = moment(new Date()).format('YYYY-MM-DD');

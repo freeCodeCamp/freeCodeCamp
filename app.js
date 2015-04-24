@@ -253,12 +253,8 @@ app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 
 app.get('/', homeController.index);
 
-app.get('/privacy', function(req, res) {
-    res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
-});
-
 app.get('/nonprofit-project-instructions', function(req, res) {
-    res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
+    res.redirect(301, '/field-guide/nonprofit-project-instructions');
 });
 
 app.get('/chat', resourcesController.chat);
@@ -384,16 +380,16 @@ app.post(
   passportConf.isAuthenticated,
   contactController.postDoneWithFirst100Hours
 );
-//app.get(
-//  '/nonprofit-project-instructions',
-//  passportConf.isAuthenticated,
-//  resourcesController.nonprofitProjectInstructions
-//);
+
 app.post(
   '/update-progress',
   passportConf.isAuthenticated,
   userController.updateProgress
 );
+
+app.get('/privacy', function(req, res) {
+  res.redirect(301, '/field-guide/the-free-code-camp-privacy-policy');
+});
 
 app.get('/api/slack', function(req, res) {
   if (req.user) {
@@ -590,7 +586,7 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
 
 app.get('/field-guide/:fieldGuideName', fieldGuideController.returnIndividualFieldGuide);
 
-app.get('/field-guide', fieldGuideController.returnNextFieldGuide);
+app.get('/field-guide/', fieldGuideController.returnNextFieldGuide);
 
 app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
 

@@ -9,12 +9,12 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
 
     var fieldGuideName = dashedName.replace(/\-/g, ' ');
 
-    FieldGuide.find({'name': new RegExp(fieldGuideName, 'i')}, function(err, fieldGuide) {
+    FieldGuide.find({'name': new RegExp(fieldGuideName, 'i')}, function(err, fieldGuideFromMongo) {
         if (err) {
             next(err);
         }
 
-        if (fieldGuide.length < 1) {
+        if (fieldGuideFromMongo.length < 1) {
             req.flash('errors', {
                 msg: "404: We couldn't find a field guide entry with that name. Please double check the name."
             });
@@ -22,9 +22,9 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
             return res.redirect('/field-guide');
         }
 
-        fieldGuide = fieldGuide.pop();
+        fieldGuide = fieldGuideFromMongo.pop();
         var dashedNameFull = fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
-        if (dashedNameFull != dashedName) {
+        if (dashedNameFull !== dashedName) {
             return res.redirect('../field-guide/' + dashedNameFull);
         }
         res.render('field-guide/show', {
@@ -69,7 +69,7 @@ exports.returnNextFieldGuide = function(req, res, next) {
       return next(err);
     }
     fieldGuide = fieldGuide.pop();
-    if (fieldGuide === undefined) {
+    if (typeof fieldGuide === 'undefined') {
       req.flash('success', {
         msg: "You've read all our current Field Guide entries. You can contribute to our Field Guide <a href='https://github.com/FreeCodeCamp/freecodecamp/blob/master/seed_data/field-guides.json'>here</a>."
       });
