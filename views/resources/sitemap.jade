@@ -32,14 +32,6 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     changefreq daily
     priority= 0.8
 
-  //- Users
-  each user in users
-    url
-      loc #{appUrl}/#{user.profile.username}
-      lastmod= now
-      changefreq daily
-      priority= 0.9
-
   //- Products
   each bonfire in bonfires
     url

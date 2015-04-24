@@ -22,6 +22,12 @@ var async = require('async'),
   R = require('ramda');
 
 /**
+ * Cached values
+ */
+var allBonfireIds, allBonfireNames, allCoursewareIds, allCoursewareNames,
+  allFieldGuideIds, allFieldGuideNames, allNonprofitNames;
+
+/**
  * GET /
  * Resources.
  */
@@ -48,53 +54,77 @@ module.exports = {
     var appUrl = 'http://www.freecodecamp.com';
     var now = moment(new Date()).format('YYYY-MM-DD');
 
-    User.find({'profile.username': {'$ne': '' }}, function(err, users) {
-      if (err) {
-        debug('User err: ', err);
-        return next(err);
-      }
-      Courseware.find({}, function (err, challenges) {
-        if (err) {
-          debug('User err: ', err);
-          return next(err);
-        }
-        Bonfire.find({}, function (err, bonfires) {
-          if (err) {
-            debug('User err: ', err);
-            return next(err);
-          }
+
+    async.parallel({
+        challenges: function (callback) {
+          Courseware.find({}, function (err, challenges) {
+            if (err) {
+              debug('Courseware err: ', err);
+              callback(err);
+            } else {
+              callback(null, challenges);
+            }
+          });
+        },
+        bonfires: function (callback) {
+          Bonfire.find({}, function (err, bonfires) {
+            if (err) {
+              debug('Bonfire err: ', err);
+              callback(err);
+            } else {
+              callback(null, bonfires);
+            }
+          });
+        },
+        stories: function (callback) {
           Story.find({}, function (err, stories) {
             if (err) {
-              debug('User err: ', err);
-              return next(err);
+              debug('Story err: ', err);
+              callback(err);
+            } else {
+              callback(null, stories);
             }
-            Nonprofit.find({}, function (err, nonprofits) {
-              if (err) {
-                debug('User err: ', err);
-                return next(err);
-              }
-              FieldGuide.find({}, function (err, fieldGuides) {
-                if (err) {
-                  debug('User err: ', err);
-                  return next(err);
-                }
-                res.header('Content-Type', 'application/xml');
-                res.render('resources/sitemap', {
-                  appUrl: appUrl,
-                  now: now,
-                  users: users,
-                  challenges: challenges,
-                  bonfires: bonfires,
-                  stories: stories,
-                  nonprofits: nonprofits,
-                  fieldGuides: fieldGuides
-                });
-              });
-            });
           });
-        });
-      });
-    });
+        },
+        nonprofits: function (callback) {
+          Nonprofit.find({}, function (err, nonprofits) {
+            if (err) {
+              debug('User err: ', err);
+              callback(err);
+            } else {
+              callback(null, nonprofits);
+            }
+          });
+        },
+        fieldGuides: function (callback) {
+          FieldGuide.find({}, function (err, fieldGuides) {
+            if (err) {
+              debug('User err: ', err);
+              callback(err);
+            } else {
+              callback(null, fieldGuides);
+            }
+          });
+        }
+      }, function (err, results) {
+        if (err) {
+          return next(err);
+        } else {
+          setTimeout(function() {
+            res.header('Content-Type', 'application/xml');
+            res.render('resources/sitemap', {
+              appUrl: appUrl,
+              now: now,
+              challenges: results.challenges,
+              bonfires: results.bonfires,
+              stories: results.stories,
+              nonprofits: results.nonprofits,
+              fieldGuides: results.fieldGuides
+            });
+          }, 0);
+        }
+      }
+    );
   },
 
   chat: function chat(req, res) {
@@ -161,6 +191,8 @@ module.exports = {
         debug('User err: ', err);
         return next(err);
       }
+
+      // todo is this necessary anymore?
       User.count({'points': {'$gt': 53}}, function (err, all) {
         if (err) {
           debug('User err: ', err);
@@ -178,115 +210,154 @@ module.exports = {
   },
 
   randomPhrase: function() {
-    var phrases = resources.phrases;
-    return phrases[Math.floor(Math.random() * phrases.length)];
+    return resources.phrases[Math.floor(
+      Math.random() * resources.phrases.length)];
   },
 
   randomVerb: function() {
-    var verbs = resources.verbs;
-    return verbs[Math.floor(Math.random() * verbs.length)];
+    return resources.verbs[Math.floor(
+      Math.random() * resources.verbs.length)];
   },
 
   randomCompliment: function() {
-    var compliments = resources.compliments;
-    return compliments[Math.floor(Math.random() * compliments.length)];
+    return resources.compliments[Math.floor(
+      Math.random() * resources.compliments.length)];
   },
 
   allBonfireIds: function() {
-    return bonfires.map(function(elem) {
-      return {
-        _id: elem._id,
-        difficulty: elem.difficulty
-      }
-    })
-      .sort(function(a, b) {
-        return a.difficulty - b.difficulty;
-      })
-      .map(function(elem) {
-        return elem._id;
-      });
+    if (allBonfireIds) {
+      return allBonfireIds;
+    } else {
+      allBonfireIds = bonfires.
+        map(function (elem) {
+          return {
+            _id: elem._id,
+            difficulty: elem.difficulty
+          };
+        }).
+        sort(function (a, b) {
+          return a.difficulty - b.difficulty;
+        }).
+        map(function (elem) {
+          return elem._id;
+        });
+      return allBonfireIds;
+    }
   },
 
   allFieldGuideIds: function() {
-    return fieldGuides.map(function(elem) {
-      return {
-        _id: elem._id,
-      }
-    })
-    .map(function(elem) {
-      return elem._id;
-    });
+    if (allFieldGuideIds) {
+      return allFieldGuideIds;
+    } else {
+      allFieldGuideIds = fieldGuides.
+        map(function (elem) {
+          return {
+            _id: elem._id
+          };
+        });
+      return allFieldGuideIds;
+    }
   },
 
   allBonfireNames: function() {
-    return bonfires.map(function(elem) {
-      return {
-        name: elem.name,
-        difficulty: elem.difficulty,
-        _id: elem._id
-      }
-    })
-      .sort(function(a, b) {
-        return a.difficulty - b.difficulty;
-      })
-      .map (function(elem) {
-      return {
-        name : elem.name,
-        _id: elem._id
-      }
-    });
+    if (allBonfireNames) {
+      return allBonfireNames;
+    } else {
+      allBonfireNames = bonfires.
+        map(function (elem) {
+          return {
+            name: elem.name,
+            difficulty: elem.difficulty,
+            _id: elem._id
+          };
+        }).
+        sort(function (a, b) {
+          return a.difficulty - b.difficulty;
+        }).
+        map(function (elem) {
+          return {
+            name: elem.name,
+            _id: elem._id
+          };
+        });
+      return allBonfireNames;
+    }
   },
 
   allFieldGuideNames: function() {
-    return fieldGuides.map(function(elem) {
-      return {
-        name: elem.name
-      }
-    })
+    if (allFieldGuideNames) {
+      return allFieldGuideNames;
+    } else {
+      allFieldGuideNames = fieldGuides.
+        map(function (elem) {
+          return {
+            name: elem.name
+          };
+        });
+      return allFieldGuideNames;
+    }
   },
 
   allNonprofitNames: function() {
-    return nonprofits.map(function(elem) {
-      return {
-        name: elem.name
-      }
-    })
+    if (allNonprofitNames) {
+      return allNonprofitNames;
+    } else {
+      allNonprofitNames = nonprofits.
+        map(function (elem) {
+          return {
+            name: elem.name
+          };
+        });
+      return allNonprofitNames;
+    }
   },
 
   allCoursewareIds: function() {
-    return coursewares.map(function(elem) {
-      return {
-        _id: elem._id,
-        difficulty: elem.difficulty
-      };
-    })
-      .sort(function(a, b) {
-        return a.difficulty - b.difficulty;
-      })
-      .map(function(elem) {
-        return elem._id;
-      });
+    if (allCoursewareIds) {
+      return allCoursewareIds;
+    } else {
+      allCoursewareIds = coursewares.
+        map(function (elem) {
+          return {
+            _id: elem._id,
+            difficulty: elem.difficulty
+          };
+        }).
+        sort(function (a, b) {
+          return a.difficulty - b.difficulty;
+        }).
+        map(function (elem) {
+          return elem._id;
+        });
+      return allCoursewareIds;
+    }
   },
 
   allCoursewareNames: function() {
-    return coursewares.map(function(elem) {
-      return {
-        name: elem.name,
-        difficulty: elem.difficulty,
-        challengeType: elem.challengeType,
-        _id: elem._id
-      };
-    })
-      .sort(function(a, b) {
-        return a.difficulty - b.difficulty;
-      })
-      .map (function(elem) {
-      return {
-        name: elem.name,
-        challengeType: elem.challengeType,
-        _id: elem._id
-      };
-    });
+    if (allCoursewareNames) {
+      return allCoursewareNames;
+    } else {
+      allCoursewareNames = coursewares.
+        map(function (elem) {
+          return {
+            name: elem.name,
+            difficulty: elem.difficulty,
+            challengeType: elem.challengeType,
+            _id: elem._id
+          };
+        }).
+        sort(function (a, b) {
+          return a.difficulty - b.difficulty;
+        }).
+        map(function (elem) {
+        return {
+          name: elem.name,
+          challengeType: elem.challengeType,
+          _id: elem._id
+        };
+      });
+      return allCoursewareNames;
+    }
   },
 
   whichEnvironment: function() {
@@ -302,8 +373,9 @@ module.exports = {
           var metaDescription = $("meta[name='description']");
           var metaImage =  $("meta[property='og:image']");
           var urlImage = metaImage.attr('content') ? metaImage.attr('content') : '';
+          var metaTitle = $('title');
           var description = metaDescription.attr('content') ? metaDescription.attr('content') : '';
-          result.title = $('title').text().length < 141 ? $('title').text() : $('title').text().slice(0, 137) + " ...";
+          result.title = metaTitle.text().length < 141 ? metaTitle.text() : metaTitle.text().slice(0, 137) + " ...";
           result.image = urlImage;
           result.description = description;
           callback(null, result);
@@ -314,6 +386,7 @@ module.exports = {
     })();
   },
 
+  // todo analyze this function in detail
   updateUserStoryPictures: function(userId, picture, username, cb) {
 
     var counter = 0,
@@ -360,7 +433,9 @@ module.exports = {
         });
       }, foundStories);
       async.parallel(tasks, function(err) {
-        if (err) { return cb(err); }
+        if (err) {
+          return cb(err);
+        }
         cb();
       });
     }
