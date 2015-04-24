@@ -102,6 +102,8 @@ app.use(connectAssets({
         path.join(__dirname, 'public/css'),
         path.join(__dirname, 'public/js')
     ],
+    build: false,
+    buildDir: false,
     helperContext: app.locals
 }));
 app.use(logger('dev'));
