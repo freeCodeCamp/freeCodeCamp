@@ -32,6 +32,23 @@ block content
                 var passedCoursewareName = challengeName;
                 var started = Math.floor(Date.now());
                 var challengeType = !{JSON.stringify(challengeType)};
+                var controlEnterHandler = function (e) {
+                  $('body').unbind('keypress');
+                  if (e.ctrlKey && e.keyCode == 13) {
+                    $('#complete-courseware-dialog').modal('show');
+                  } else {
+                    $('body').bind('keypress', controlEnterHandler);
+                  }
+                };
+                var modalControlEnterHandler = function (e) {
+                  $('#complete-courseware-dialog').unbind('keypress');
+                  if (e.ctrlKey && e.keyCode == 13) {
+                    $('#next-courseware-button').click();
+                  } else {
+                    $('#complete-zipline-or-basejump-dialog').on('keypress', modalControlEnterHandler);
+                  }
+                };
+
     #complete-zipline-or-basejump-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
@@ -62,6 +79,8 @@ block content
 
                     if (user)
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
+                        script.
+                          $('#complete-zipline-or-basejump-dialog').on('keypress', modalControlEnterHandler);
 
                         - if (user.progressTimestamps.length > 2)
                             a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
@@ -70,8 +89,4 @@ block content
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
         script.
-            $('body').on('keypress', function(e) {
-                if (e.ctrlKey && e.keyCode == 13) {
-                    $('#complete-zipline-or-basejump-dialog').modal('show');
-                }
-            });
+            $('body').on('keypress', controlEnterHandler);
