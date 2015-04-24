@@ -18,10 +18,6 @@ var userSchema = new mongoose.Schema({
     github: String,
     linkedin: String,
     tokens: Array,
-    finishedWaypoints: {
-      type: Boolean,
-      default: false
-    },
     progressTimestamps: {
       type: Array,
       default: []
@@ -144,6 +140,7 @@ var userSchema = new mongoose.Schema({
     default: 0
   },
   needsMigration: { type: Boolean, default: true },
+  finishedWaypoints: { type: Boolean, default: false },
   challengesHash: {}
 });
 
