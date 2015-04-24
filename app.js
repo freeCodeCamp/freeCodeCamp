@@ -85,11 +85,12 @@ console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === 'production') {
   app.all(/.*/, function (req, res, next) {
-    var host = req.header("host");
+    var host = req.header('host');
+    var originalUrl = req['originalUrl'];
     if (host.match(/^www\..*/i)) {
       next();
     } else {
-      res.redirect(301, "http://www." + host);
+      res.redirect(301, "http://www." + host + originalUrl);
     }
   });
 }
@@ -297,9 +298,9 @@ app.get('/nodeschool-challenges', function(req, res) {
 app.get('/news', function(req, res) {
   res.redirect(301, '/stories/hot');
 });
-app.get('/learn-to-code', resourcesController.about);
+app.get('/learn-to-code', challengeMapController.challengeMap);
 app.get('/about', function(req, res) {
-  res.redirect(301, '/learn-to-code');
+  res.redirect(301, '/map');
 });
 app.get('/signin', userController.getSignin);
 

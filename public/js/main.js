@@ -4,13 +4,6 @@ $(document).ready(function() {
     ga('send', 'event',  'Challenge', 'load', challengeName);
   }
 
-  // When introducing a new announcement, change the localStorage attribute
-  // and the HTML located in the footer
-  if (!localStorage || !localStorage.nodeSchoolAnnouncement) {
-    $('#announcementModal').modal('show');
-    localStorage.fccShowAnnouncement = "true";
-  }
-
   var CSRF_HEADER = 'X-CSRF-Token';
 
   var setCSRFToken = function(securityToken) {
@@ -204,10 +197,6 @@ $(document).ready(function() {
     }
   });
 
-  $('.all-challenges').on('click', function() {
-    $('#show-all-dialog').modal('show');
-  });
-
   $('#showAllButton').on('click', function() {
     $('#show-all-dialog').modal('show');
   });
@@ -217,7 +206,7 @@ $(document).ready(function() {
     window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
   });
 
-// Bonfire instructions functions
+  // Bonfire instructions functions
   $('#more-info').on('click', function() {
     ga('send', 'event',  'Challenge', 'more-info', challengeName);
     $('#brief-instructions').hide();

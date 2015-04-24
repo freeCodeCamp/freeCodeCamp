@@ -273,11 +273,6 @@ ul {
     height: 30px;
     margin-top: -5px;
   }
-  @media (min-width: 767px) and (max-width: 890px) {
-    height: 30px;
-    margin-top: -5px;
-  }
-
 }
 
 .navbar-right {
@@ -790,10 +785,52 @@ iframe.iphone {
   transition: background .2s ease-in-out, border .2s ease-in-out;
 }
 
+@media (max-width: 991px) {
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  .navbar-nav {
+    float: none !important;
+    margin: 7.5px -15px;
+  }
+
+  .navbar-nav > li {
+    float: none;
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .navbar-text {
+    float: none;
+    margin: 15px 0;
+  }
+
+  /* since 3.1.0 */
+  .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+
+  .collapsing {
+    overflow: hidden !important;
+  }
+}
+
 .hamburger {
   width: 80px;
   padding-left: 0px;
-  padding-right: 0px;
+  padding-right: 8px;
   margin-left: 0px;
   margin-right: 2px;
   text-align:left;
@@ -804,7 +841,7 @@ iframe.iphone {
   line-height: 0.75em;
   margin-top: 10px;
   font-size: 16px;
-  margin-left: -5px;
+  margin-left: -8px;
 }
 
 .tight-h3 {

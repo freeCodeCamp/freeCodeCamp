@@ -28,6 +28,10 @@ exports.returnNextCourseware = function(req, res, next) {
   if (!req.user) {
     return res.redirect('../challenges/learn-how-free-code-camp-works');
   }
+  if (req.user.finishedWaypoints && req.user.uncompletedBonfires.length > 0) {
+    return res.redirect('../bonfires')
+  }
+
   var completed = req.user.completedCoursewares.map(function (elem) {
     return elem._id;
   });
@@ -247,6 +251,9 @@ exports.completedCourseware = function (req, res, next) {
 
   var isCompletedDate = Math.round(+new Date());
   var coursewareHash = req.body.coursewareInfo.coursewareHash;
+  if (coursewareHash === "bd7139d8c441eddfaeb5bdef") {
+    req.user.finishedWaypoints = true;
+  }
 
   req.user.completedCoursewares.push({
     _id: coursewareHash,
