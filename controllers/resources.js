@@ -8,7 +8,6 @@ var async = require('async'),
   Nonprofit = require('./../models/Nonprofit'),
   Comment = require('./../models/Comment'),
   resources = require('./resources.json'),
-  steps = resources.steps,
   secrets = require('./../config/secrets'),
   bonfires = require('../seed_data/bonfires.json'),
   nonprofits = require('../seed_data/nonprofits.json'),
@@ -20,6 +19,12 @@ var async = require('async'),
   cheerio = require('cheerio'),
   request = require('request'),
   R = require('ramda');
+
+/**
+ * Cached values
+ */
+var allBonfireIds, allBonfireNames, allCoursewareIds, allCoursewareNames,
+  allFieldGuideIds, allFieldGuideNames, allNonprofitNames;
 
 /**
  * GET /
@@ -38,63 +43,106 @@ Array.zip = function(left, right, combinerFunction) {
 };
 
 module.exports = {
-  privacy: function privacy(req, res) {
-    res.render('resources/privacy', {
-      title: 'Privacy'
-    });
-  },
-
   sitemap: function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
     var now = moment(new Date()).format('YYYY-MM-DD');
 
-    User.find({'profile.username': {'$ne': '' }}, function(err, users) {
-      if (err) {
-        debug('User err: ', err);
-        return next(err);
-      }
-      Courseware.find({}, function (err, challenges) {
-        if (err) {
-          debug('User err: ', err);
-          return next(err);
-        }
-        Bonfire.find({}, function (err, bonfires) {
-          if (err) {
-            debug('User err: ', err);
-            return next(err);
-          }
-          Story.find({}, function (err, stories) {
-            if (err) {
-              debug('User err: ', err);
-              return next(err);
-            }
-            Nonprofit.find({}, function (err, nonprofits) {
+
+    async.parallel({
+        users: function(callback) {
+          User.aggregate()
+            .group({_id: 1, usernames: { $addToSet: '$profile.username'}})
+            .match({'profile.username': { $ne: ''}})
+            .exec(function(err, users) {
               if (err) {
                 debug('User err: ', err);
-                return next(err);
+                callback(err);
+              } else {
+                callback(null, users[0].usernames);
               }
-              FieldGuide.find({}, function (err, fieldGuides) {
-                if (err) {
-                  debug('User err: ', err);
-                  return next(err);
-                }
-                res.header('Content-Type', 'application/xml');
-                res.render('resources/sitemap', {
-                  appUrl: appUrl,
-                  now: now,
-                  users: users,
-                  challenges: challenges,
-                  bonfires: bonfires,
-                  stories: stories,
-                  nonprofits: nonprofits,
-                  fieldGuides: fieldGuides
-                });
-              });
             });
+        },
+
+        challenges: function (callback) {
+          Courseware.aggregate()
+            .group({_id: 1, names: { $addToSet: '$name'}})
+            .exec(function (err, challenges) {
+              if (err) {
+                debug('Courseware err: ', err);
+                callback(err);
+              } else {
+                callback(null, challenges[0].names);
+              }
+            });
+        },
+        bonfires: function (callback) {
+          Bonfire.aggregate()
+          .group({_id: 1, names: { $addToSet: '$name'}})
+          .exec(function (err, bonfires) {
+            if (err) {
+              debug('Bonfire err: ', err);
+              callback(err);
+            } else {
+              callback(null, bonfires[0].names);
+            }
           });
-        });
-      });
-    });
+        },
+        stories: function (callback) {
+          Story.aggregate()
+            .group({_id: 1, links: {$addToSet: '$link'}})
+          .exec(function (err, stories) {
+            if (err) {
+              debug('Story err: ', err);
+              callback(err);
+            } else {
+              callback(null, stories[0].links);
+            }
+          });
+        },
+        nonprofits: function (callback) {
+          Nonprofit.aggregate()
+            .group({_id: 1, names: { $addToSet: '$name'}})
+            .exec(function (err, nonprofits) {
+            if (err) {
+              debug('User err: ', err);
+              callback(err);
+            } else {
+              callback(null, nonprofits[0].names);
+            }
+          });
+        },
+        fieldGuides: function (callback) {
+          FieldGuide.aggregate()
+            .group({_id: 1, names: { $addToSet: '$name'}})
+            .exec(function (err, fieldGuides) {
+            if (err) {
+              debug('User err: ', err);
+              callback(err);
+            } else {
+              callback(null, fieldGuides[0].names);
+            }
+          });
+        }
+      }, function (err, results) {
+        if (err) {
+          return next(err);
+        } else {
+          setTimeout(function() {
+            res.header('Content-Type', 'application/xml');
+            res.render('resources/sitemap', {
+              appUrl: appUrl,
+              now: now,
+              users: results.users,
+              challenges: results.challenges,
+              bonfires: results.bonfires,
+              stories: results.stories,
+              nonprofits: results.nonprofits,
+              fieldGuides: results.fieldGuides
+            });
+          }, 0);
+        }
+      }
+    );
   },
 
   chat: function chat(req, res) {
@@ -161,132 +209,165 @@ module.exports = {
         debug('User err: ', err);
         return next(err);
       }
-      User.count({'points': {'$gt': 53}}, function (err, all) {
-        if (err) {
-          debug('User err: ', err);
-          return next(err);
-        }
 
-        res.render('resources/learn-to-code', {
-          title: 'About Free Code Camp',
-          daysRunning: daysRunning,
-          c3: numberWithCommas(c3),
-          announcements: announcements
-        });
+      res.render('resources/learn-to-code', {
+        title: 'About Free Code Camp',
+        daysRunning: daysRunning,
+        c3: numberWithCommas(c3),
+        announcements: announcements
       });
     });
   },
 
   randomPhrase: function() {
-    var phrases = resources.phrases;
-    return phrases[Math.floor(Math.random() * phrases.length)];
+    return resources.phrases[Math.floor(
+      Math.random() * resources.phrases.length)];
   },
 
   randomVerb: function() {
-    var verbs = resources.verbs;
-    return verbs[Math.floor(Math.random() * verbs.length)];
+    return resources.verbs[Math.floor(
+      Math.random() * resources.verbs.length)];
   },
 
   randomCompliment: function() {
-    var compliments = resources.compliments;
-    return compliments[Math.floor(Math.random() * compliments.length)];
+    return resources.compliments[Math.floor(
+      Math.random() * resources.compliments.length)];
   },
 
   allBonfireIds: function() {
-    return bonfires.map(function(elem) {
-      return {
-        _id: elem._id,
-        difficulty: elem.difficulty
-      }
-    })
-      .sort(function(a, b) {
-        return a.difficulty - b.difficulty;
-      })
-      .map(function(elem) {
-        return elem._id;
-      });
+    if (allBonfireIds) {
+      return allBonfireIds;
+    } else {
+      allBonfireIds = bonfires.
+        map(function (elem) {
+          return {
+            _id: elem._id,
+            difficulty: elem.difficulty
+          };
+        }).
+        sort(function (a, b) {
+          return a.difficulty - b.difficulty;
+        }).
+        map(function (elem) {
+          return elem._id;
+        });
+      return allBonfireIds;
+    }
   },
 
   allFieldGuideIds: function() {
-    return fieldGuides.map(function(elem) {
-      return {
-        _id: elem._id,
-      }
-    })
-    .map(function(elem) {
-      return elem._id;
-    });
+    if (allFieldGuideIds) {
+      return allFieldGuideIds;
+    } else {
+      allFieldGuideIds = fieldGuides.
+        map(function (elem) {
+          return {
+            _id: elem._id
+          };
+        });
+      return allFieldGuideIds;
+    }
   },
 
   allBonfireNames: function() {
-    return bonfires.map(function(elem) {
-      return {
-        name: elem.name,
-        difficulty: elem.difficulty,
-        _id: elem._id
-      }
-    })
-      .sort(function(a, b) {
-        return a.difficulty - b.difficulty;
-      })
-      .map (function(elem) {
-      return {
-        name : elem.name,
-        _id: elem._id
-      }
-    });
+    if (allBonfireNames) {
+      return allBonfireNames;
+    } else {
+      allBonfireNames = bonfires.
+        map(function (elem) {
+          return {
+            name: elem.name,
+            difficulty: elem.difficulty,
+            _id: elem._id
+          };
+        }).
+        sort(function (a, b) {
+          return a.difficulty - b.difficulty;
+        }).
+        map(function (elem) {
+          return {
+            name: elem.name,
+            _id: elem._id
+          };
+        });
+      return allBonfireNames;
+    }
   },
 
   allFieldGuideNames: function() {
-    return fieldGuides.map(function(elem) {
-      return {
-        name: elem.name
-      }
-    })
+    if (allFieldGuideNames) {
+      return allFieldGuideNames;
+    } else {
+      allFieldGuideNames = fieldGuides.
+        map(function (elem) {
+          return {
+            name: elem.name
+          };
+        });
+      return allFieldGuideNames;
+    }
   },
 
   allNonprofitNames: function() {
-    return nonprofits.map(function(elem) {
-      return {
-        name: elem.name
-      }
-    })
+    if (allNonprofitNames) {
+      return allNonprofitNames;
+    } else {
+      allNonprofitNames = nonprofits.
+        map(function (elem) {
+          return {
+            name: elem.name
+          };
+        });
+      return allNonprofitNames;
+    }
   },
 
   allCoursewareIds: function() {
-    return coursewares.map(function(elem) {
-      return {
-        _id: elem._id,
-        difficulty: elem.difficulty
-      };
-    })
-      .sort(function(a, b) {
-        return a.difficulty - b.difficulty;
-      })
-      .map(function(elem) {
-        return elem._id;
-      });
+    if (allCoursewareIds) {
+      return allCoursewareIds;
+    } else {
+      allCoursewareIds = coursewares.
+        map(function (elem) {
+          return {
+            _id: elem._id,
+            difficulty: elem.difficulty
+          };
+        }).
+        sort(function (a, b) {
+          return a.difficulty - b.difficulty;
+        }).
+        map(function (elem) {
+          return elem._id;
+        });
+      return allCoursewareIds;
+    }
   },
 
   allCoursewareNames: function() {
-    return coursewares.map(function(elem) {
-      return {
-        name: elem.name,
-        difficulty: elem.difficulty,
-        challengeType: elem.challengeType,
-        _id: elem._id
-      };
-    })
-      .sort(function(a, b) {
-        return a.difficulty - b.difficulty;
-      })
-      .map (function(elem) {
-      return {
-        name: elem.name,
-        challengeType: elem.challengeType,
-        _id: elem._id
-      };
-    });
+    if (allCoursewareNames) {
+      return allCoursewareNames;
+    } else {
+      allCoursewareNames = coursewares.
+        map(function (elem) {
+          return {
+            name: elem.name,
+            difficulty: elem.difficulty,
+            challengeType: elem.challengeType,
+            _id: elem._id
+          };
+        }).
+        sort(function (a, b) {
+          return a.difficulty - b.difficulty;
+        }).
+        map(function (elem) {
+        return {
+          name: elem.name,
+          challengeType: elem.challengeType,
+          _id: elem._id
+        };
+      });
+      return allCoursewareNames;
+    }
   },
 
   whichEnvironment: function() {
@@ -302,8 +383,9 @@ module.exports = {
           var metaDescription = $("meta[name='description']");
           var metaImage =  $("meta[property='og:image']");
           var urlImage = metaImage.attr('content') ? metaImage.attr('content') : '';
+          var metaTitle = $('title');
           var description = metaDescription.attr('content') ? metaDescription.attr('content') : '';
-          result.title = $('title').text().length < 141 ? $('title').text() : $('title').text().slice(0, 137) + " ...";
+          result.title = metaTitle.text().length < 141 ? metaTitle.text() : metaTitle.text().slice(0, 137) + " ...";
           result.image = urlImage;
           result.description = description;
           callback(null, result);
@@ -360,7 +442,9 @@ module.exports = {
         });
       }, foundStories);
       async.parallel(tasks, function(err) {
-        if (err) { return cb(err); }
+        if (err) {
+          return cb(err);
+        }
         cb();
       });
     }
