@@ -50,14 +50,14 @@ exports.returnNextCourseware = function(req, res, next) {
     }
 
     courseware = courseware.pop();
-    if (courseware === undefined) {
+    if (typeof courseware === 'undefined') {
       req.flash('errors', {
         msg: "It looks like you've completed all the courses we have " +
         "available. Good job!"
       });
       return res.redirect('../challenges/learn-how-free-code-camp-works');
     }
-    nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
+    var nameString = courseware.name.toLowerCase().replace(/\s/g, '-');
     return res.redirect('../challenges/' + nameString);
   });
 };
@@ -68,23 +68,23 @@ exports.returnIndividualCourseware = function(req, res, next) {
   var coursewareName = dashedName.replace(/\-/g, ' ');
 
   Courseware.find({'name': new RegExp(coursewareName, 'i')},
-    function(err, courseware) {
+    function(err, coursewareFromMongo) {
     if (err) {
       next(err);
     }
     // Handle not found
-    if (courseware.length < 1) {
+    if (coursewareFromMongo.length < 1) {
       req.flash('errors', {
         msg: "404: We couldn't find a challenge with that name. " +
         "Please double check the name."
       });
       return res.redirect('/challenges');
     }
-    courseware = courseware.pop();
+    var courseware = coursewareFromMongo.pop();
 
     // Redirect to full name if the user only entered a partial
     var dashedNameFull = courseware.name.toLowerCase().replace(/\s/g, '-');
-    if (dashedNameFull != dashedName) {
+    if (dashedNameFull !== dashedName) {
       return res.redirect('../challenges/' + dashedNameFull);
     }
 
@@ -292,7 +292,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
 
   if (isCompletedWith) {
     var paired = User.find({'profile.username': isCompletedWith.toLowerCase()}).limit(1);
-    paired.exec(function (err, pairedWith) {
+    paired.exec(function (err, pairedWithFromMongo) {
       if (err) {
         return next(err);
       } else {
@@ -301,7 +301,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
           req.user.progressTimestamps.push(Date.now() || 0);
           req.user.uncompletedCoursewares.splice(index, 1);
         }
-        pairedWith = pairedWith.pop();
+        var pairedWith = pairedWithFromMongo.pop();
 
         req.user.completedCoursewares.push({
           _id: coursewareHash,

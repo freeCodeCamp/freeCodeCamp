@@ -253,7 +253,7 @@ exports.checkExistingUsername = function(req, res, next) {
 exports.checkUniqueEmail = function(req, res, next) {
     User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
         if (err) { return next(err); }
-        if (data == 1) {
+        if (data === 1) {
             return res.send(true);
         } else {
             return res.send(false);
@@ -271,7 +271,7 @@ exports.returnUser = function(req, res, next) {
   User.find({'profile.username': req.params.username.toLowerCase()}, function(err, user) {
     if (err) { debug('Username err: ', err); next(err); }
     if (user[0]) {
-      var user = user[0];
+      user = user[0];
 
       user.progressTimestamps = user.progressTimestamps.sort(function(a, b) {
         return a - b;
@@ -284,6 +284,7 @@ exports.returnUser = function(req, res, next) {
 
       var tmpLongest = 1;
       var timeKeys = R.keys(timeObject);
+
       for (var i = 1; i <= timeKeys.length; i++) {
         if (moment(timeKeys[i - 1]).add(1, 'd').toString()
           === moment(timeKeys[i]).toString()) {
@@ -305,13 +306,17 @@ exports.returnUser = function(req, res, next) {
 
       var data = {};
       var progressTimestamps = user.progressTimestamps;
-      for (var i = 0; i < progressTimestamps.length; i++) {
-        data[(progressTimestamps[i] / 1000).toString()] = 1;
-      }
+      progressTimestamps.forEach(function(timeStamp) {
+        data[(timeStamp / 1000)] = 1;
+      });
+
+      //for (var i = 0; i < progressTimestamps.length; i++) {
+      //  data[(progressTimestamps[i] / 1000).toString()] = 1;
+      //}
 
       user.currentStreak = user.currentStreak || 1;
       user.longestStreak = user.longestStreak || 1;
-      challenges = user.completedCoursewares.filter(function ( obj ) {
+      var challenges = user.completedCoursewares.filter(function ( obj ) {
         return !!obj.solution;
       });
       res.render('account/show', {
