@@ -120,7 +120,7 @@ block content
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') Slack
                   .col-sm-4
                     .input-group.twitter-input
-                        span.input-group-addon #
+                        span.input-group-addon @
                         input.form-control(type='text', name='slackHandle', autocomplete="off", id='slackHandle', ng-model='user.profile.slackHandle', ng-pattern="/^[A-z0-9_]+$/")
                   .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.slackHandle.$error.pattern")
                     alert(type='danger')
