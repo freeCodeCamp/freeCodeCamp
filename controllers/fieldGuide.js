@@ -22,7 +22,7 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
             return res.redirect('/field-guide');
         }
 
-        fieldGuide = fieldGuideFromMongo.pop();
+        var fieldGuide = fieldGuideFromMongo.pop();
         var dashedNameFull = fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
         if (dashedNameFull !== dashedName) {
             return res.redirect('../field-guide/' + dashedNameFull);
