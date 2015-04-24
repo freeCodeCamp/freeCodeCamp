@@ -299,9 +299,9 @@ app.get('/nodeschool-challenges', function(req, res) {
 app.get('/news', function(req, res) {
   res.redirect(301, '/stories/hot');
 });
-app.get('/learn-to-code', resourcesController.about);
+app.get('/learn-to-code', challengeMapController.challengeMap);
 app.get('/about', function(req, res) {
-  res.redirect(301, '/learn-to-code');
+  res.redirect(301, '/map');
 });
 app.get('/signin', userController.getSignin);
 
