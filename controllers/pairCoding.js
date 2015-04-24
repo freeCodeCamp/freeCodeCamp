@@ -9,9 +9,14 @@ exports.index = function(req, res){
 		res.render('account/signin', {
 			title: "Login",
 			page: "Login"});
-	} else {
+	} else if (!req.user.profile.slackHandle) {
+    res.render('account/account', {
+      noSlackHandle: true
+    });
+  } else {
 		PairUser.find().populate('user', 'email profile').exec(function(err, pairUsers) {
-			res.render('paircode/index.jade', {
+
+      return res.render('paircode/index.jade', {
 				title: "Team up and Pair code",
 				page: "pair-coding",
 				onlineUsers: pairUsers || []
