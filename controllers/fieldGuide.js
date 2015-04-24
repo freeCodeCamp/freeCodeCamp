@@ -42,7 +42,7 @@ exports.showAllFieldGuides = function(req, res) {
     if (req.user && req.user.completedFieldGuides) {
       data.completedFieldGuides = req.user.completedFieldGuides;
     } else {
-      data.completedFieldGuides = []
+      data.completedFieldGuides = [];
     }
     res.send(data);
 };
