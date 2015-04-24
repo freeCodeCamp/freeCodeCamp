@@ -532,7 +532,7 @@
     "_id": "bd7153d8c441eddfaeb5bdff",
     "name": "Start a Node.js Server",
     "difficulty": 0.39,
-    "challengeSeed": "",
+    "challengeSeed": "114685061",
     "description": [
       "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
       "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -556,7 +556,7 @@
     "_id": "bd7153d8c441eddfaeb5bd0f",
     "name": "Manage Packages with NPM",
     "difficulty": 0.40,
-    "challengeSeed": "",
+    "challengeSeed": "114685061",
     "description": [
       "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
       "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -580,7 +580,7 @@
     "_id": "bd7153d8c441eddfaeb5bd1f",
     "name": "Build Web Apps with Express.js",
     "difficulty": 0.41,
-    "challengeSeed": "",
+    "challengeSeed": "114685061",
     "description": [
       "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
       "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
