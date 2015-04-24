@@ -8,7 +8,6 @@ var async = require('async'),
   Nonprofit = require('./../models/Nonprofit'),
   Comment = require('./../models/Comment'),
   resources = require('./resources.json'),
-  steps = resources.steps,
   secrets = require('./../config/secrets'),
   bonfires = require('../seed_data/bonfires.json'),
   nonprofits = require('../seed_data/nonprofits.json'),
@@ -186,19 +185,11 @@ module.exports = {
         return next(err);
       }
 
-      // todo is this necessary anymore?
-      User.count({'points': {'$gt': 53}}, function (err, all) {
-        if (err) {
-          debug('User err: ', err);
-          return next(err);
-        }
-
-        res.render('resources/learn-to-code', {
-          title: 'About Free Code Camp',
-          daysRunning: daysRunning,
-          c3: numberWithCommas(c3),
-          announcements: announcements
-        });
+      res.render('resources/learn-to-code', {
+        title: 'About Free Code Camp',
+        daysRunning: daysRunning,
+        c3: numberWithCommas(c3),
+        announcements: announcements
       });
     });
   },
