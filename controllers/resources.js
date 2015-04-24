@@ -49,53 +49,77 @@ module.exports = {
 
 
     async.parallel({
+        users: function(callback) {
+          User.aggregate()
+            .group({_id: 1, usernames: { $addToSet: '$profile.username'}})
+            .match({'profile.username': { $ne: ''}})
+            .exec(function(err, users) {
+              if (err) {
+                debug('User err: ', err);
+                callback(err);
+              } else {
+                callback(null, users[0].usernames);
+              }
+            });
+        },
+
         challenges: function (callback) {
-          Courseware.find({}, function (err, challenges) {
-            if (err) {
-              debug('Courseware err: ', err);
-              callback(err);
-            } else {
-              callback(null, challenges);
-            }
-          });
+          Courseware.aggregate()
+            .group({_id: 1, names: { $addToSet: '$name'}})
+            .exec(function (err, challenges) {
+              if (err) {
+                debug('Courseware err: ', err);
+                callback(err);
+              } else {
+                callback(null, challenges[0].names);
+              }
+            });
         },
         bonfires: function (callback) {
-          Bonfire.find({}, function (err, bonfires) {
+          Bonfire.aggregate()
+          .group({_id: 1, names: { $addToSet: '$name'}})
+          .exec(function (err, bonfires) {
             if (err) {
               debug('Bonfire err: ', err);
               callback(err);
             } else {
-              callback(null, bonfires);
+              callback(null, bonfires[0].names);
             }
           });
         },
         stories: function (callback) {
-          Story.find({}, function (err, stories) {
+          Story.aggregate()
+            .group({_id: 1, links: {$addToSet: '$link'}})
+          .exec(function (err, stories) {
             if (err) {
               debug('Story err: ', err);
               callback(err);
             } else {
-              callback(null, stories);
+              callback(null, stories[0].links);
             }
           });
         },
         nonprofits: function (callback) {
-          Nonprofit.find({}, function (err, nonprofits) {
+          Nonprofit.aggregate()
+            .group({_id: 1, names: { $addToSet: '$name'}})
+            .exec(function (err, nonprofits) {
             if (err) {
               debug('User err: ', err);
               callback(err);
             } else {
-              callback(null, nonprofits);
+              callback(null, nonprofits[0].names);
             }
           });
         },
         fieldGuides: function (callback) {
-          FieldGuide.find({}, function (err, fieldGuides) {
+          FieldGuide.aggregate()
+            .group({_id: 1, names: { $addToSet: '$name'}})
+            .exec(function (err, fieldGuides) {
             if (err) {
               debug('User err: ', err);
               callback(err);
             } else {
-              callback(null, fieldGuides);
+              callback(null, fieldGuides[0].names);
             }
           });
         }
@@ -108,6 +132,7 @@ module.exports = {
             res.render('resources/sitemap', {
               appUrl: appUrl,
               now: now,
+              users: results.users,
               challenges: results.challenges,
               bonfires: results.bonfires,
               stories: results.stories,
@@ -371,7 +396,6 @@ module.exports = {
     })();
   },
 
-  // todo analyze this function in detail
   updateUserStoryPictures: function(userId, picture, username, cb) {
 
     var counter = 0,
