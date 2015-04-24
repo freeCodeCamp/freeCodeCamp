@@ -3,6 +3,7 @@ html(ng-app='profileValidation', lang='en')
   head
     include partials/universal-head
     != css('main')
+    block extraHead
   body.top-and-bottom-margins
     include partials/css-cdns
     include partials/navbar-narrow
@@ -11,3 +12,4 @@ html(ng-app='profileValidation', lang='en')
       block content
     include partials/footer
     != js('application')
+    block extraScripts

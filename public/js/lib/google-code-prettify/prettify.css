@@ -1,0 +1,85 @@
+/* Pretty printing styles. Used with prettify.js.
+ *
+ * Name:	Stanley Ng
+ * Email: 	stanleyhlng@googlegroups.com
+ *
+ */
+.pln {
+  color: #F1F2F3; }
+
+.str {
+  color: #EC7600; }
+
+.kwd {
+  color: #93C763; }
+
+.com {
+  color: #555555;
+  font-style: italic; }
+
+.typ {
+  color: #678CB1; }
+
+.lit {
+  color: #FACD22; }
+
+.pun {
+  color: #F1F2F3; }
+
+.opn {
+  color: #F1F2F3; }
+
+.clo {
+  color: #F1F2F3; }
+
+.tag {
+  color: #8AC763; }
+
+.atn {
+  color: #E0E2E4; }
+
+.atv {
+  color: #EC7600; }
+
+.dec {
+  color: purple; }
+
+.var {
+  color: #ff9da4; }
+
+.fun {
+  color: #bbdaff; }
+
+/* Put a border around prettyprinted code snippets. */
+pre.prettyprint {
+  background-color: #111111;
+  padding: 10px;
+  border: 1px solid #E1E1E8; }
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  color: #7285b7;
+  margin: 0 0 0 40px; }
+
+ol.linenums li {
+  line-height: 18px;
+  padding-left: 12px; }
+
+ol.linenums li.L0,
+ol.linenums li.L1,
+ol.linenums li.L2,
+ol.linenums li.L3,
+ol.linenums li.L4,
+ol.linenums li.L5,
+ol.linenums li.L6,
+ol.linenums li.L7,
+ol.linenums li.L8,
+ol.linenums li.L9 {
+  color: #555555; }
+
+ol.linenums li.L1,
+ol.linenums li.L3,
+ol.linenums li.L5,
+ol.linenums li.L7,
+ol.linenums li.L9 {
+  background: #111111; }

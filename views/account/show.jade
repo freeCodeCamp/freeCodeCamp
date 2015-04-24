@@ -1,4 +1,6 @@
 extends ../layout
+block extraHead
+    link(href="/assets/lib/google-code-prettify/prettify.css" type="text/css" rel="stylesheet")
 block content
     script.
         var challengeName = 'Profile View';
@@ -156,5 +158,12 @@ block content
                                         tr
                                             td.col-xs-4= bonfire.name
                                             td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6= bonfire.solution
+                                            td.col-xs-6
+                                                pre(class='prettyprint lang-js')
+                                                    = bonfire.solution
                                     br
+
+block extraScripts
+  script(src="/assets/lib/google-code-prettify/prettify.js")
+  script.
+    window.onload = function() {prettyPrint()}
