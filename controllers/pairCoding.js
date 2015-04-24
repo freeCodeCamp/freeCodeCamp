@@ -10,9 +10,11 @@ exports.index = function(req, res){
 			title: "Login",
 			page: "Login"});
 	} else if (!req.user.profile.slackHandle) {
-    res.render('account/account', {
-      noSlackHandle: true
+    console.log(req.user.profile);
+    req.flash('errors', {
+      msg: 'Add a Slack handle to submit a pair request.'
     });
+    return res.redirect('/account');
   } else {
 		PairUser.find().populate('user', 'email profile').exec(function(err, pairUsers) {
 
