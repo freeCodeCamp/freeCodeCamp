@@ -3,12 +3,34 @@
 [![Stories in Ready](https://badge.waffle.io/FreeCodeCamp/freecodecamp.png?label=ready&title=Ready)](https://waffle.io/FreeCodeCamp/freecodecamp)
 <img src="https://s3.amazonaws.com/freecodecamp/logo4.0LG.png">
 
-Free Code Camp!
+Welcome to Free Code Camp's open source codebase!
 =======================
 
-We're a community of busy people learning to code by collaborating on projects for nonprofits. We learn, then use, the JavaScript MEAN stack - MongoDB, Express.js, Angular.js and Node.js. 
+Free Code Camp is an open-source community of busy people who learn to code, then build projects for nonprofits. 
 
-This app is live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com), and we have a [chat room](https://gitter.im/FreeCodeCamp/FreeCodeCamp) and [blog](http://blog.freecodecamp.com), too. Join us!
+Our campers (students) start by working through our free, self-paced, browser-based curriculum. Next, they build several practice projects. Finally, we pair two campers together with a stakeholder from a nonprofit organization, and help them build the solution the nonprofit has requested.
+
+**We help our campers build job-worthy portfolios of real apps used by real people, while helping nonprofits.**
+
+80% of our campers are over 25, and nearly a fifth of our campers are women.
+
+This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Slack](http://freecode.slack.com), a [blog](http://blog.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp). 
+
+[Join our community](http://www.freecodecamp.com/signin)!
+
+Contributing
+------------
+
+We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
+
+1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
+2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Slack](http://freecode.slack.com).
+3.  Fork the project ([Need help with forking a project?](https://help.github.com/articles/fork-a-repo/)). You'll do all of your work on your forked copy. 
+4.  Create a branch specific to the issue or feature you are working on. Push your work to that branch. ([Need help with branching?](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches))
+5.  Name the branch something like  `user-xxx` where user is your username and xxx is the issue number you are addressing.
+6.  You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [AirBnB's JavaScript Style Guide](https://github.com/airbnb/javascript).  Please do not ignore any linting errors, as they are meant to **help** you. Make sure none of your JavaScript is longer than 80 characters per line.
+7.  Once your code is ready, submit a pull request from your branch to Free Code Camp's `staging` branch. We'll do a quick code review and give you feedback, then iterate from there.
+8.  Once we accept one of your pull requests, one of the project owners (currently @quincylarson, @terakilobyte, and @berkeleytrue) will add you to our camper contributor group.
 
 Prerequisites
 -------------
@@ -68,17 +90,6 @@ node seed_data/seed.js
 gulp
 
 ```
-
-Contributing
-------------
-
-We welcome pull requests from Free Code Camp "campers" (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
-
-1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
-2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Slack](http://freecode.slack.com).
-3.  Fork the project, you can find a quick tutorial [here](https://help.github.com/articles/fork-a-repo/). You'll do all of your work on this forked copy. We recommend creating a branch specific to the issue or feature you are working on and pushing your work to that branch. Follow along with [this](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches) tutorial for how to make your own branch. Name the branch something like  `user-xxx` where user is your username and xxx is the issue number you are addressing.
-4.  Once your code is ready, submit a pull request from your branch to Free Code Camp's `staging` branch. Please note that the code you submit should conform to [AirBnB's Style Guide](https://github.com/airbnb/javascript). If you have eslint running it should highlight anything doesn't stylistically conform. Please do not ignore any linting errors as they are meant to **help** you. Though is not specified in the guide, we have a rule for maximum line lengths of 80. We'll do a quick code review and give you feedback, then iterate from there.
-5.  One of the project owners (currently @quincylarson, @terakilobyte, and @berkeleytrue) will add you to a contributor group if your PR is accepted.
 
 
 Project Structure
