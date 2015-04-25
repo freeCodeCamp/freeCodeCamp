@@ -155,7 +155,7 @@ exports.returnIndividualStory = function(req, res, next) {
       title: story.headline,
       link: story.link,
       originalStoryLink: dashedName,
-      originalStoryAuthorEmail: story.author.email || "",
+      originalStoryAuthorEmail: story.author.email || '',
       author: story.author,
       description: story.description,
       rank: story.upVotes.length,
@@ -398,7 +398,7 @@ exports.storySubmission = function(req, res, next) {
     var comment = new Comment({
       associatedPost: data.associatedPost,
       originalStoryLink: data.originalStoryLink,
-      originalStoryAuthorEmail: req.user.email,
+      originalStoryAuthorEmail: data.originalStoryAuthorEmail,
       body: sanitizedBody,
       rank: 0,
       upvotes: 0,
@@ -496,53 +496,54 @@ exports.storySubmission = function(req, res, next) {
         return next(err);
       }
       try {
-        Context.find({'_id': comment.associatedPost}, function (err, associatedStory) {
+        // Based on the context retrieve the parent object of the comment (Story/Comment)
+        Context.find({'_id': data.associatedPost}, function (err, associatedContext) {
           if (err) {
             return next(err);
           }
-          associatedStory = associatedStory.pop();
-          if (associatedStory) {
-            associatedStory.comments.push(data._id);
-            associatedStory.save(function (err) {
+          associatedContext = associatedContext.pop();
+          if (associatedContext) {
+            associatedContext.comments.push(data._id);
+            associatedContext.save(function (err) {
               if (err) {
                 return next(err);
               }
               res.send(true);
             });
           }
-          User.findOne({'profile.username': associatedStory.author.username}, function(err, recipient) {
+          // Find the author of the parent object
+          User.findOne({'profile.username': associatedContext.author.username}, function(err, recipient) {
             if (err) {
               return next(err);
             }
-            var recipients = '';
-            if (data.originalStoryAuthorEmail && (data.originalStoryAuthorEmail !== recipient.email)) {
-              recipients = data.originalStoryAuthorEmail + ',' + recipient.email;
-            } else {
-              recipients = recipient.email;
+            // If the emails of both authors differ, only then proceed with email notification
+            if (data.author.email && (data.author.email !== recipient.email)) {
+              var transporter = nodemailer.createTransport({
+                service: 'Mandrill',
+                auth: {
+                  user: secrets.mandrill.user,
+                  pass: secrets.mandrill.password
+                }
+              });
+
+              var mailOptions = {
+                to: recipient.email,
+                from: 'Team@freecodecamp.com',
+                subject: data.author.username + ' replied to your post on Camper News',
+                text: [
+                  'Just a quick heads-up: ' + data.author.username + ' replied to you on Camper News.',
+                  'You can keep this conversation going.',
+                  'Just head back to the discussion here: http://freecodecamp.com/stories/' + data.originalStoryLink,
+                  '- the Free Code Camp Volunteer Team'
+                ].join('\n')
+              };
+
+              transporter.sendMail(mailOptions, function (err) {
+                if (err) {
+                  return err;
+                }
+              });
             }
-            var transporter = nodemailer.createTransport({
-              service: 'Mandrill',
-              auth: {
-                user: secrets.mandrill.user,
-                pass: secrets.mandrill.password
-              }
-            });
-            var mailOptions = {
-              to: recipients,
-              from: 'Team@freecodecamp.com',
-              subject: associatedStory.author.username + " replied to your post on Camper News",
-              text: [
-                "Just a quick heads-up: " + associatedStory.author.username + " replied to you on Camper News.",
-                "You can keep this conversation going.",
-                "Just head back to the discussion here: http://freecodecamp.com/stories/" + comment.originalStoryLink,
-                '- the Free Code Camp Volunteer Team'
-              ].join('\n')
-            };
-            transporter.sendMail(mailOptions, function (err) {
-              if (err) {
-                return err;
-              }
-            });
           });
         });
       } catch (e) {
