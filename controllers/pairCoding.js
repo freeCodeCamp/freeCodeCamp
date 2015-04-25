@@ -21,6 +21,7 @@ exports.index = function(req, res){
       return res.render('paircode/index.jade', {
 				title: "Team up and Pair code",
 				page: "pair-coding",
+        slackHandle: req.user.profile.slackHandle,
 				onlineUsers: pairUsers || []
 			});
 		});
