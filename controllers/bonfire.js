@@ -326,7 +326,6 @@ exports.completedBonfire = function (req, res, next) {
         return next(err);
       }
       if (user) {
-        debug('Saving user');
         res.send(true);
       }
     });

@@ -118,7 +118,7 @@ exports.preSubmit = function(req, res) {
 exports.returnIndividualStory = function(req, res, next) {
   var dashedName = req.params.storyName;
 
-  var storyName = dashedName.replace(/\-/g, ' ');
+  var storyName = dashedName.replace(/\-/g, ' ').trim();
 
   Story.find({'storyLink': storyName}, function(err, story) {
     if (err) {
@@ -321,9 +321,10 @@ exports.storySubmission = function(req, res, next) {
     .replace(/\'/g, '')
     .replace(/\"/g, '')
     .replace(/,/g, '')
-    .replace(/[^a-z0-9]/gi, ' ')
     .replace(/\s+/g, ' ')
-    .toLowerCase();
+    .replace(/[^a-z0-9\s]/gi, '')
+    .toLowerCase()
+    .trim();
   var link = data.link;
   if (link.search(/^https?:\/\//g) === -1) {
     link = 'http://' + link;
@@ -334,7 +335,7 @@ exports.storySubmission = function(req, res, next) {
     }
 
     // if duplicate storyLink add unique number
-    storyLink = (storyCount == 0) ? storyLink : storyLink + ' ' + storyCount;
+    storyLink = (storyCount === 0) ? storyLink : storyLink + ' ' + storyCount;
 
     var link = data.link;
     if (link.search(/^https?:\/\//g) === -1) {

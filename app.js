@@ -81,7 +81,6 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === 'production') {
   app.all(/.*/, function (req, res, next) {
