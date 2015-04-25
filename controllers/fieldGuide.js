@@ -67,7 +67,6 @@ exports.returnNextFieldGuide = function(req, res, next) {
     if (err) {
       return next(err);
     }
-      fieldGuide, fieldGuide[0]);
     fieldGuide = fieldGuide.pop();
     if (typeof fieldGuide === 'undefined') {
       req.flash('success', {
