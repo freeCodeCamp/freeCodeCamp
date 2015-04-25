@@ -33,7 +33,7 @@ function storyLinkCleanup(cb) {
     }.bind(this));
   })
     .on('error', function (err) {
-      console.log(err);
+      console.error(err);
     }).on('close', function () {
       console.log('done with set');
       stream.destroy();
