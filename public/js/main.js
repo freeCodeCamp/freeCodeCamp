@@ -100,7 +100,6 @@ $(document).ready(function() {
   });
 
   $('.next-field-guide-button').on('click', function() {
-    console.log('click');
     var fieldGuideId = $('#fieldGuideId').text();
     completedFieldGuide(fieldGuideId);
   });
