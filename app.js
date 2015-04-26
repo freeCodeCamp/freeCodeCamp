@@ -713,6 +713,8 @@ app.get(
   userController.returnUser
 );
 
+
+
 /**
  * 500 Error Handler.
  */
@@ -768,12 +770,12 @@ app.listen(app.get('port'), function () {
  * Check the db every n minutes and remove users from /pair-coding
 */
 
-
-var pairCodingIntervalMinutes = 30;
+var pairCodingIntervalMinutes = .2;
 var pairCodingIntervalMilliSeconds = pairCodingIntervalMinutes * 60 * 1000;
 
 var pairCodingInterval = setInterval(function(){
     pairCodingController.removeStalePosts();
+    console.log("removed stale from app.js");
 }, pairCodingIntervalMilliSeconds);
 
 module.exports = app;

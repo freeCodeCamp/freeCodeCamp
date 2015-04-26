@@ -69,6 +69,10 @@ var userSchema = new mongoose.Schema({
           type: String,
           default: ''
         },
+        slackId: {
+          type: String,
+          default: ''
+        }
     },
     portfolio: {
         website1Link: {
