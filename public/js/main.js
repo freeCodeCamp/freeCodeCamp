@@ -277,7 +277,7 @@ $(document).ready(function() {
   $('#story-submit').on('click', storySubmitButtonHandler);
 
   var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
-    $('comment-button').unbind('click');
+    $('#comment-button').unbind('click');
     var data = $('#comment-box').val();
 
     $('#comment-button').attr('disabled', 'disabled');
@@ -292,6 +292,7 @@ $(document).ready(function() {
       })
       .fail(function (xhr, textStatus, errorThrown) {
         $('#comment-button').attr('disabled', false);
+        $('#comment-button').bind('click', commentSubmitButtonHandler);
       })
       .done(function (data, textStatus, xhr) {
         window.location.reload();
