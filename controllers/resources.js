@@ -261,9 +261,7 @@ module.exports = {
     } else {
       allFieldGuideIds = fieldGuides.
         map(function (elem) {
-          return {
-            _id: elem._id
-          };
+          return elem._id;
         });
       return allFieldGuideIds;
     }
