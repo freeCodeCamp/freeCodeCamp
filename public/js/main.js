@@ -285,6 +285,8 @@ $(document).ready(function() {
       {
         data: {
           associatedPost: storyId,
+          originalStoryLink: originalStoryLink,
+          originalStoryAuthorEmail: originalStoryAuthorEmail,
           body: data
         }
       })
