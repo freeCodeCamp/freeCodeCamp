@@ -100,7 +100,6 @@ $(document).ready(function() {
   });
 
   $('.next-field-guide-button').on('click', function() {
-    console.log('click');
     var fieldGuideId = $('#fieldGuideId').text();
     completedFieldGuide(fieldGuideId);
   });
@@ -126,7 +125,6 @@ $(document).ready(function() {
   });
 
   $('#next-courseware-button').on('click', function() {
-    console.log(passedCoursewareHash);
     if ($('.signup-btn-nav').length < 1) {
       switch (challengeType) {
         case 0:

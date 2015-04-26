@@ -132,7 +132,6 @@ exports.returnIndividualNonprofit = function(req, res, next) {
               var hasShownInterest = nonprofit.interestedCampers.filter(function ( obj ) {
                 return obj.username === req.user.profile.username;
               });
-              console.log(hasShownInterest);
               if (hasShownInterest.length === 0) {
                 buttonActive = true;
               }
