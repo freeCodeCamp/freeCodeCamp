@@ -9,12 +9,12 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
 
     var fieldGuideName = dashedName.replace(/\-/g, ' ');
 
-    FieldGuide.find({'name': new RegExp(fieldGuideName, 'i')}, function(err, fieldGuide) {
+    FieldGuide.find({'name': new RegExp(fieldGuideName, 'i')}, function(err, fieldGuideFromMongo) {
         if (err) {
             next(err);
         }
 
-        if (fieldGuide.length < 1) {
+        if (fieldGuideFromMongo.length < 1) {
             req.flash('errors', {
                 msg: "404: We couldn't find a field guide entry with that name. Please double check the name."
             });
@@ -22,9 +22,9 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
             return res.redirect('/field-guide');
         }
 
-        fieldGuide = fieldGuide.pop();
+        var fieldGuide = R.head(fieldGuideFromMongo);
         var dashedNameFull = fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
-        if (dashedNameFull != dashedName) {
+        if (dashedNameFull !== dashedName) {
             return res.redirect('../field-guide/' + dashedNameFull);
         }
         res.render('field-guide/show', {
@@ -42,7 +42,7 @@ exports.showAllFieldGuides = function(req, res) {
     if (req.user && req.user.completedFieldGuides) {
       data.completedFieldGuides = req.user.completedFieldGuides;
     } else {
-      data.completedFieldGuides = []
+      data.completedFieldGuides = [];
     }
     res.send(data);
 };
@@ -54,14 +54,13 @@ exports.returnNextFieldGuide = function(req, res, next) {
 
   var completed = req.user.completedFieldGuides;
 
-  req.user.uncompletedFieldGuides = resources.allFieldGuideIds().filter(function (elem) {
+  var uncompletedFieldGuides = resources.allFieldGuideIds().filter(function (elem) {
     if (completed.indexOf(elem) === -1) {
       return elem;
     }
   });
+  req.user.uncompletedFieldGuides = uncompletedFieldGuides;
   req.user.save();
-
-  var uncompletedFieldGuides = req.user.uncompletedFieldGuides;
 
   var displayedFieldGuides =  FieldGuide.find({'_id': uncompletedFieldGuides[0]});
   displayedFieldGuides.exec(function(err, fieldGuide) {
@@ -69,7 +68,7 @@ exports.returnNextFieldGuide = function(req, res, next) {
       return next(err);
     }
     fieldGuide = fieldGuide.pop();
-    if (fieldGuide === undefined) {
+    if (typeof fieldGuide === 'undefined') {
       req.flash('success', {
         msg: "You've read all our current Field Guide entries. You can contribute to our Field Guide <a href='https://github.com/FreeCodeCamp/freecodecamp/blob/master/seed_data/field-guides.json'>here</a>."
       });
@@ -81,14 +80,13 @@ exports.returnNextFieldGuide = function(req, res, next) {
 };
 
 exports.completedFieldGuide = function (req, res, next) {
-  debug('params in completedFieldGuide', req.params);
   var fieldGuideId = req.body.fieldGuideInfo.fieldGuideId;
 
   req.user.completedFieldGuides.push(fieldGuideId);
 
   var index = req.user.uncompletedFieldGuides.indexOf(fieldGuideId);
   if (index > -1) {
-    req.user.progressTimestamps.push(Date.now() || 0);
+    req.user.progressTimestamps.push(Date.now());
     req.user.uncompletedFieldGuides.splice(index, 1);
   }
 

@@ -4,13 +4,6 @@ $(document).ready(function() {
     ga('send', 'event',  'Challenge', 'load', challengeName);
   }
 
-  // When introducing a new announcement, change the localStorage attribute
-  // and the HTML located in the footer
-  if (!localStorage || !localStorage.nodeSchoolAnnouncement) {
-    $('#announcementModal').modal('show');
-    localStorage.fccShowAnnouncement = "true";
-  }
-
   var CSRF_HEADER = 'X-CSRF-Token';
 
   var setCSRFToken = function(securityToken) {
@@ -107,7 +100,6 @@ $(document).ready(function() {
   });
 
   $('.next-field-guide-button').on('click', function() {
-    console.log('click');
     var fieldGuideId = $('#fieldGuideId').text();
     completedFieldGuide(fieldGuideId);
   });
@@ -133,7 +125,6 @@ $(document).ready(function() {
   });
 
   $('#next-courseware-button').on('click', function() {
-    console.log(passedCoursewareHash);
     if ($('.signup-btn-nav').length < 1) {
       switch (challengeType) {
         case 0:
@@ -204,10 +195,6 @@ $(document).ready(function() {
     }
   });
 
-  $('.all-challenges').on('click', function() {
-    $('#show-all-dialog').modal('show');
-  });
-
   $('#showAllButton').on('click', function() {
     $('#show-all-dialog').modal('show');
   });
@@ -217,7 +204,7 @@ $(document).ready(function() {
     window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
   });
 
-// Bonfire instructions functions
+  // Bonfire instructions functions
   $('#more-info').on('click', function() {
     ga('send', 'event',  'Challenge', 'more-info', challengeName);
     $('#brief-instructions').hide();
@@ -290,7 +277,7 @@ $(document).ready(function() {
   $('#story-submit').on('click', storySubmitButtonHandler);
 
   var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
-    $('comment-button').unbind('click');
+    $('#comment-button').unbind('click');
     var data = $('#comment-box').val();
 
     $('#comment-button').attr('disabled', 'disabled');
@@ -298,11 +285,14 @@ $(document).ready(function() {
       {
         data: {
           associatedPost: storyId,
+          originalStoryLink: originalStoryLink,
+          originalStoryAuthorEmail: originalStoryAuthorEmail,
           body: data
         }
       })
       .fail(function (xhr, textStatus, errorThrown) {
         $('#comment-button').attr('disabled', false);
+        $('#comment-button').bind('click', commentSubmitButtonHandler);
       })
       .done(function (data, textStatus, xhr) {
         window.location.reload();

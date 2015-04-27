@@ -63,12 +63,12 @@ exports.returnNextBonfire = function(req, res, next) {
   var uncompletedBonfires = req.user.uncompletedBonfires;
 
   var displayedBonfires =  Bonfire.find({'_id': uncompletedBonfires[0]});
-  displayedBonfires.exec(function(err, bonfire) {
+  displayedBonfires.exec(function(err, bonfireFromMongo) {
     if (err) {
       return next(err);
     }
-    bonfire = bonfire.pop();
-    if (bonfire === undefined) {
+    var bonfire = bonfireFromMongo.pop();
+    if (typeof bonfire === 'undefined') {
       req.flash('errors', {
         msg: "It looks like you've completed all the bonfires we have available. Good job!"
       });
@@ -84,13 +84,13 @@ exports.returnIndividualBonfire = function(req, res, next) {
 
   var bonfireName = dashedName.replace(/\-/g, ' ');
 
-  Bonfire.find({'name': new RegExp(bonfireName, 'i')}, function(err, bonfire) {
+  Bonfire.find({'name': new RegExp(bonfireName, 'i')}, function(err, bonfireFromMongo) {
     if (err) {
       next(err);
     }
 
 
-    if (bonfire.length < 1) {
+    if (bonfireFromMongo.length < 1) {
       req.flash('errors', {
         msg: "404: We couldn't find a bonfire with that name. Please double check the name."
       });
@@ -98,9 +98,9 @@ exports.returnIndividualBonfire = function(req, res, next) {
       return res.redirect('/bonfires');
     }
 
-    bonfire = bonfire.pop();
+    var bonfire = bonfireFromMongo.pop();
     var dashedNameFull = bonfire.name.toLowerCase().replace(/\s/g, '-');
-    if (dashedNameFull != dashedName) {
+    if (dashedNameFull !== dashedName) {
       return res.redirect('../bonfires/' + dashedNameFull);
     }
     res.render('bonfire/show', {
@@ -326,7 +326,6 @@ exports.completedBonfire = function (req, res, next) {
         return next(err);
       }
       if (user) {
-        debug('Saving user');
         res.send(true);
       }
     });

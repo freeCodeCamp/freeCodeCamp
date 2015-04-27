@@ -32,18 +32,19 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     changefreq daily
     priority= 0.8
 
-  //- Users
+  //- User
   each user in users
     url
-      loc #{appUrl}/#{user.profile.username}
+      loc #{appUrl}/#{user}
       lastmod= now
       changefreq daily
       priority= 0.9
 
+
   //- Products
   each bonfire in bonfires
     url
-      loc #{appUrl}/bonfires/#{bonfire.name.replace(/\s/g, '-')}
+      loc #{appUrl}/bonfires/#{bonfire.replace(/\s/g, '-')}
       lastmod= now
       changefreq weekly
       priority= 0.5
@@ -51,7 +52,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Challenges
   each challenge in challenges
     url
-      loc #{appUrl}/challenges/#{challenge.name.replace(/\s/g, '-')}
+      loc #{appUrl}/challenges/#{challenge.replace(/\s/g, '-')}
       lastmod= now
       changefreq weekly
       priority= 0.5
@@ -59,7 +60,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Stories
   each story in stories
     url
-      loc #{appUrl}/stories/#{story.storyLink.replace(/\s/g, '-')}
+      loc #{appUrl}/stories/#{story.replace(/\s/g, '-')}
       lastmod= now
       changefreq daily
       priority= 0.9
@@ -67,7 +68,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Nonprofit
   each nonprofit in nonprofits
     url
-      loc #{appUrl}/nonprofits/#{nonprofit.name.replace(/\s/g, '-')}
+      loc #{appUrl}/nonprofits/#{nonprofit.replace(/\s/g, '-')}
       lastmod= now
       changefreq daily
       priority= 0.9
@@ -75,7 +76,7 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
   //- Nonprofit
   each fieldGuide in fieldGuides
     url
-      loc #{appUrl}/field-guide/#{fieldGuide.name.replace(/\s/g, '-')}
+      loc #{appUrl}/field-guide/#{fieldGuide.replace(/\s/g, '-')}
       lastmod= now
       changefreq daily
       priority= 0.9

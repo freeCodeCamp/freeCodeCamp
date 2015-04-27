@@ -81,15 +81,15 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-console.log(process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === 'production') {
   app.all(/.*/, function (req, res, next) {
-    var host = req.header("host");
+    var host = req.header('host');
+    var originalUrl = req['originalUrl'];
     if (host.match(/^www\..*/i)) {
       next();
     } else {
-      res.redirect(301, "http://www." + host);
+      res.redirect(301, "http://www." + host + originalUrl);
     }
   });
 }
@@ -102,6 +102,8 @@ app.use(connectAssets({
         path.join(__dirname, 'public/css'),
         path.join(__dirname, 'public/js')
     ],
+    build: false,
+    buildDir: false,
     helperContext: app.locals
 }));
 app.use(logger('dev'));
@@ -253,12 +255,8 @@ app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 
 app.get('/', homeController.index);
 
-app.get('/privacy', function(req, res) {
-    res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
-});
-
 app.get('/nonprofit-project-instructions', function(req, res) {
-    res.redirect(301, "/field-guide/free-code-camp's-privacy-policy");
+    res.redirect(301, '/field-guide/nonprofit-project-instructions');
 });
 
 app.get('/chat', resourcesController.chat);
@@ -299,9 +297,9 @@ app.get('/nodeschool-challenges', function(req, res) {
 app.get('/news', function(req, res) {
   res.redirect(301, '/stories/hot');
 });
-app.get('/learn-to-code', resourcesController.about);
+app.get('/learn-to-code', challengeMapController.challengeMap);
 app.get('/about', function(req, res) {
-  res.redirect(301, '/learn-to-code');
+  res.redirect(301, '/map');
 });
 app.get('/signin', userController.getSignin);
 
@@ -384,16 +382,16 @@ app.post(
   passportConf.isAuthenticated,
   contactController.postDoneWithFirst100Hours
 );
-//app.get(
-//  '/nonprofit-project-instructions',
-//  passportConf.isAuthenticated,
-//  resourcesController.nonprofitProjectInstructions
-//);
+
 app.post(
   '/update-progress',
   passportConf.isAuthenticated,
   userController.updateProgress
 );
+
+app.get('/privacy', function(req, res) {
+  res.redirect(301, '/field-guide/the-free-code-camp-privacy-policy');
+});
 
 app.get('/api/slack', function(req, res) {
   if (req.user) {
@@ -590,7 +588,7 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
 
 app.get('/field-guide/:fieldGuideName', fieldGuideController.returnIndividualFieldGuide);
 
-app.get('/field-guide', fieldGuideController.returnNextFieldGuide);
+app.get('/field-guide/', fieldGuideController.returnNextFieldGuide);
 
 app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
 
