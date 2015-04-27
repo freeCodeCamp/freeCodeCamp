@@ -36,4 +36,3 @@ function getOnlineSlackUsers() {
 };
 
 var users = getOnlineSlackUsers();
-console.log(typeof users);
