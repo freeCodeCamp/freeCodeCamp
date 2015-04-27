@@ -775,6 +775,8 @@ var pairCodingIntervalMilliSeconds = pairCodingIntervalMinutes * 60 * 1000;
 
 var pairCodingInterval = setInterval(function(){
     pairCodingController.removeStalePosts();
+
+    pairCodingController.removeStaleSlackUsers();
     console.log("removed stale from app.js");
 }, pairCodingIntervalMilliSeconds);
 

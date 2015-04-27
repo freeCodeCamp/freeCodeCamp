@@ -12,7 +12,6 @@ exports.index = function(req, res){
       title: "Login",
       page: "Login"});
   } else if (!req.user.profile.slackHandle) {
-    console.log(req.user.profile);
     req.flash('errors', {
       msg: 'Add a Slack handle to submit a pair request.'
     });
@@ -127,7 +126,7 @@ exports.removeStalePosts = function() {
   // get all old pairusers and remove them.
   PairUser.find().where('timeOnline').lt(cutoff).exec(function(err, pairs) {
     if (err) {
-      console.log("There was an error finding pair requests: "+err);
+      res.sendStatus(500);
     }
     // remove all of the pairs
     pairs.forEach(function(pair, index) {
@@ -151,22 +150,14 @@ exports.removeStalePosts = function() {
 
     });
     console.log("about to remove stale slack users");
-    removeStaleSlackUsers();
   });
 
 
 
 
-
-  // now check the remaining users and if they're idle in slack, take them out
-  // get list of Slack users
-  
-  // if each person is not in the list, take them offline
-
-
 };
 
-function removeStaleSlackUsers() {
+exports.removeStaleSlackUsers = function() {
   https.get('https://slack.com/api/users.list?token='+secrets.slack.token, function(res) {
     res.setEncoding('utf-8');
     var obj = '';
@@ -230,12 +221,6 @@ function removeStaleSlackUsers() {
 
         });
       }
-
-      // go through the list of pair users and get their presence
-      //   if they have an ID, use that
-      // if not, go through the array returned from the server, get their ID nad then save it to their profile
-      // if they are away/offline, take them offline
-
 
 
     });

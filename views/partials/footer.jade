@@ -19,3 +19,14 @@
             span.sr-only About Free Code Camp
         a.ion-locked(href="/privacy")
             span.sr-only Free Code Camp's Privacy Policy
+  #complete-bonfire-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.zoomIn.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header= "Your pair code request is about to expire."
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body(ng-controller="pairedWithController")
+                    .text-center
+                        .animated.zoomInDown.delay-half
+                            span.completion-icon.ion-checkmark-circled.text-primary
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next bonfire (ctrl + enter)
+
