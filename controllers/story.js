@@ -517,33 +517,35 @@ exports.storySubmission = function(req, res, next) {
             if (err) {
               return next(err);
             }
-            // If the emails of both authors differ, only then proceed with email notification
-            if (data.author.email && (data.author.email !== recipient.email)) {
-              var transporter = nodemailer.createTransport({
-                service: 'Mandrill',
-                auth: {
-                  user: secrets.mandrill.user,
-                  pass: secrets.mandrill.password
-                }
-              });
+            if (recipient && recipient.email) {
+              // If the emails of both authors differ, only then proceed with email notification
+              if (data.author.email && (data.author.email !== recipient.email)) {
+                var transporter = nodemailer.createTransport({
+                  service: 'Mandrill',
+                  auth: {
+                    user: secrets.mandrill.user,
+                    pass: secrets.mandrill.password
+                  }
+                });
 
-              var mailOptions = {
-                to: recipient.email,
-                from: 'Team@freecodecamp.com',
-                subject: data.author.username + ' replied to your post on Camper News',
-                text: [
-                  'Just a quick heads-up: ' + data.author.username + ' replied to you on Camper News.',
-                  'You can keep this conversation going.',
-                  'Just head back to the discussion here: http://freecodecamp.com/stories/' + data.originalStoryLink,
-                  '- the Free Code Camp Volunteer Team'
-                ].join('\n')
-              };
+                var mailOptions = {
+                  to: recipient.email,
+                  from: 'Team@freecodecamp.com',
+                  subject: data.author.username + ' replied to your post on Camper News',
+                  text: [
+                    'Just a quick heads-up: ' + data.author.username + ' replied to you on Camper News.',
+                    'You can keep this conversation going.',
+                    'Just head back to the discussion here: http://freecodecamp.com/stories/' + data.originalStoryLink,
+                    '- the Free Code Camp Volunteer Team'
+                  ].join('\n')
+                };
 
-              transporter.sendMail(mailOptions, function (err) {
-                if (err) {
-                  return err;
-                }
-              });
+                transporter.sendMail(mailOptions, function (err) {
+                  if (err) {
+                    return err;
+                  }
+                });
+              }
             }
           });
         });
