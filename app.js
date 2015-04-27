@@ -39,7 +39,6 @@ var express = require('express'),
     homeController = require('./controllers/home'),
     resourcesController = require('./controllers/resources'),
     userController = require('./controllers/user'),
-    contactController = require('./controllers/contact'),
     nonprofitController = require('./controllers/nonprofits'),
     bonfireController = require('./controllers/bonfire'),
     coursewareController = require('./controllers/courseware'),
@@ -263,6 +262,24 @@ app.get('/chat', resourcesController.chat);
 
 app.get('/twitch', resourcesController.twitch);
 
+// Agile Project Manager Onboarding
+
+app.get('/pmi-acp-agile-project-managers', resourcesController.agileProjectManagers);
+
+app.get('/agile', function(req, res) {
+  res.redirect(301, '/pmi-acp-agile-project-managers');
+});
+
+app.get('/pmi-acp-agile-project-managers-form', resourcesController.agileProjectManagersForm);
+
+// Nonprofit Onboarding
+
+app.get('/nonprofits', resourcesController.nonprofits);
+
+app.get('/nonprofits-form', resourcesController.nonprofitsForm);
+
+
+
 app.get('/map', challengeMapController.challengeMap);
 
 app.get('/live-pair-programming', function(req, res) {
@@ -330,57 +347,16 @@ app.get('/email-signin', userController.getEmailSignin);
 app.post('/email-signup', userController.postEmailSignup);
 
 app.post('/email-signin', userController.postSignin);
-app.get('/nonprofits', contactController.getNonprofitsForm);
-app.post('/nonprofits', contactController.postNonprofitsForm);
 
 /**
  * Nonprofit Project routes.
  */
 
-app.get('/nonprofits', nonprofitController.nonprofitsHome);
-
 app.get('/nonprofits/directory', nonprofitController.nonprofitsDirectory);
-
-app.get('/nonprofits/are-you-with-a-registered-nonprofit', nonprofitController.areYouWithARegisteredNonprofit);
-
-app.get('/nonprofits/are-there-people-that-are-already-benefiting-from-your-services', nonprofitController.areTherePeopleThatAreAlreadyBenefitingFromYourServices);
-
-app.get('/nonprofits/in-exchange-we-ask', nonprofitController.inExchangeWeAsk);
-
-app.get('/nonprofits/ok-with-javascript', nonprofitController.okWithJavaScript);
-
-app.get('/nonprofits/how-can-free-code-camp-help-you', nonprofitController.howCanFreeCodeCampHelpYou);
-
-app.get('/nonprofits/what-does-your-nonprofit-do', nonprofitController.whatDoesYourNonprofitDo);
-
-app.get('/nonprofits/link-us-to-your-website', nonprofitController.linkUsToYourWebsite);
-
-app.get('/nonprofits/tell-us-your-name', nonprofitController.tellUsYourName);
-
-app.get('/nonprofits/tell-us-your-email', nonprofitController.tellUsYourEmail);
-
-app.get('/nonprofits/your-nonprofit-project-application-has-been-submitted', nonprofitController.yourNonprofitProjectApplicationHasBeenSubmitted);
-
-app.get('/nonprofits/other-solutions', nonprofitController.otherSolutions);
-
-app.get('/nonprofits/getNonprofitList', nonprofitController.showAllNonprofits);
-
-app.get('/nonprofits/interested-in-nonprofit/:nonprofitName', nonprofitController.interestedInNonprofit);
 
 app.get(
     '/nonprofits/:nonprofitName',
     nonprofitController.returnIndividualNonprofit
-);
-
-app.get(
-  '/done-with-first-100-hours',
-  passportConf.isAuthenticated,
-  contactController.getDoneWithFirst100Hours
-);
-app.post(
-  '/done-with-first-100-hours',
-  passportConf.isAuthenticated,
-  contactController.postDoneWithFirst100Hours
 );
 
 app.post(

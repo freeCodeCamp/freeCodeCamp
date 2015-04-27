@@ -6,12 +6,6 @@ var async = require('async'),
     debug = require('debug')('freecc:cntr:nonprofits'),
     R = require('ramda');
 
-exports.nonprofitsHome = function(req, res) {
-    res.render('nonprofits/home', {
-        title: 'A guide to our Nonprofit Projects'
-    });
-};
-
 exports.nonprofitsDirectory = function(req, res) {
   Nonprofit.find({estimatedHours: { $gt: 0 } }, function(err, nonprofits) {
     if (err) {
