@@ -155,6 +155,30 @@ module.exports = {
     }
   },
 
+  nonprofits: function nonprofits(req, res) {
+    res.render('resources/nonprofits', {
+      title: 'A guide to our Nonprofit Projects'
+    });
+  },
+
+  nonprofitsForm: function nonprofitsForm(req, res) {
+    res.render('resources/nonprofits-form', {
+      title: 'A guide to our Nonprofit Projects'
+    });
+  },
+
+  agileProjectManagers: function agileProjectManagers(req, res) {
+    res.render('resources/pmi-acp-agile-project-managers', {
+      title: 'Get Agile Project Management Experience for the PMI-ACP'
+    });
+  },
+
+  agileProjectManagersForm: function agileProjectManagersForm(req, res) {
+    res.render('resources/pmi-acp-agile-project-managers-form', {
+      title: 'Get Agile Project Management Experience for the PMI-ACP'
+    });
+  },
+
   twitch: function twitch(req, res) {
     res.render('resources/twitch', {
       title: "Enter Free Code Camp's Chat Rooms"
