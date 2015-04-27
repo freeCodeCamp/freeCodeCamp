@@ -31,10 +31,6 @@ $(document).ready(function() {
       .addClass('animated fadeInDown');
   });
 
-  $('.step-text').on('click', function() {
-    $(this).parent().parent().parent().children().children('input').trigger('click');
-  });
-
   $('.challenge-list-checkbox').on('change', function() {
     var checkboxId = $(this).parent().parent().attr('id');
     if ($(this).is(":checked")) {

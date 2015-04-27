@@ -117,7 +117,6 @@
       "      <ul>",
       "        <li class=\"landing-p\">&#8226 JavaScript - the one programming language that all web browsers use</li>",
       "        <li class=\"landing-p\">&#8226 Algorithms - step-by-step recipes for getting things done</li>",
-      "        <li class=\"landing-p\">&#8226 Automated Testing - write tests to test the limits of your code</li>",
       "      </ul>",
       "    </p>",
       "    <p class=\"landing-p\">Finally you'll learn Agile Methodologies and Full Stack JavaScript to build projects for nonprofits:",
@@ -192,28 +191,6 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bdef",
-    "name": "If Free Code Camp is free, how does it make money?",
-    "description": [
-      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
-      "  <p class=\"landing-p\"> We are completely free for both students and for nonprofits.</p>",
-      "  <p class=\"landing-p\">Our name is Free Code Camp. We are a free code camp. If you had to pay us (or sign over future earnings), we'd have to change our name. And we are not going to do that.</p>",
-      "  <p class=\"landing-p\"> We don't make any money at all. Everyone working on our community and our open source projects is a volunteer.</p>",
-      "  <p class=\"landing-p\"> We plan to eventually cover our operational costs by earning job placement bonuses from companies who hire our graduates. Note that we will not actually garnish any wages from our graduates - employers are already paying recruiters thousands of dollars to find successful candidates. Employers will simply pay the recruitment bonus to Free Code Camp instead of paying a recruiter.</p>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c435eddfaeb5bdef",
-    "name": "Does Free Code Camp have an application process?",
-    "description": [
-      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
-      "  <p class=\"landing-p\">Unlike coding bootcamps, anyone can study at Free Code Camp. We're not going to tell you that you can't become a software engineer. We believe the only person who should be able to tell you that is you.</p>",
-      "  <p class=\"landing-p\">If you persevere, and keep working through our challenges and nonprofit projects, you will become an employable software engineer.</p>",
-      "</div>"
-    ]
-  },
-  {
     "_id": "bd7158d9c436eddfaeb5bd2f",
     "name": "How do I get help when I get stuck?",
     "description": [
@@ -236,11 +213,67 @@
     ]
   },
   {
+    "_id": "bd7158d9c436eddfaeb5bd3f",
+    "name": "Can I jump around in this Field Guide?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h3>This Field Guide was designed as a reference for you. You shouldn't try to read it all today.</h3>",
+      "<h3>Feel free to come back any time and jump around, reading any articles that seem interesting to you at the time.</h3>",
+      "<h3>If you're currently doing our \"Browse our Field Guide\" Waypoint, go ahead and mark that challenge complete and move on to your next Waypoint.</h3>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfaeb5bdef",
+    "name": "If Free Code Camp is free, how does it make money?",
+    "description": [
+      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
+      "  <p class=\"landing-p\"> We are completely free for both students and for nonprofits.</p>",
+      "  <p class=\"landing-p\">Our name is Free Code Camp. We are a free code camp. If you had to pay us (or sign over future earnings), we'd have to change our name. And we are not going to do that.</p>",
+      "  <p class=\"landing-p\"> We don't make any money at all. Everyone working on our community and our open source projects is a volunteer.</p>",
+      "  <p class=\"landing-p\"> We plan to eventually cover our operational costs by earning job placement bonuses from companies who hire our graduates. Note that we will not actually garnish any wages from our graduates - employers are already paying recruiters thousands of dollars to find successful candidates. Employers will simply pay the recruitment bonus to Free Code Camp instead of paying a recruiter.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c435eddfaeb5bdef",
+    "name": "Does Free Code Camp have an application process?",
+    "description": [
+      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
+      "  <p class=\"landing-p\">Unlike coding bootcamps, anyone can study at Free Code Camp. We're not going to tell you that you can't become a software engineer. We believe the only person who should be able to tell you that is you.</p>",
+      "  <p class=\"landing-p\">If you persevere, and keep working through our challenges and nonprofit projects, you will become an employable software engineer.</p>",
+      "</div>"
+    ]
+  },
+  {
     "_id": "bd7158d9c442eddfaeb5bdef",
     "name": "Global Control Shortcuts for Mac",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
       "<h2 class='text-center'>These Global Control Shortcuts for Mac will save you hours by speeding up your typing</h2>",
+      "<div class=\"embed-responsive embed-responsive-16by9\"><iframe src=\"//player.vimeo.com/video/107073108\" class=\"embed-responsive-item\"></iframe></div>",
+      "<div class=\"text-left\">",
+      "  <h3>These global shortcuts work everywhere on a Mac:",
+      "    <ul>",
+      "      <li>Control + F = Forward</li>",
+      "      <li>Control + B = Backward</li>",
+      "      <li>Control + N = Next Line</li>",
+      "      <li>Control + P = Previous Line</li>",
+      "      <li>Control + H = Backspace</li>",
+      "      <li>Control + D = Delete</li>",
+      "      <li>Control + A = Beginning of Line</li>",
+      "      <li>Control + E = End of Line</li>",
+      "      <li>Control + K = Kill line</li>",
+      "    </ul>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7159d9c442eddfaeb5bdef",
+    "name": "What does Register mean?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h2 class='text-center'></h2>",
       "<div class=\"embed-responsive embed-responsive-16by9\"><iframe src=\"//player.vimeo.com/video/107073108\" class=\"embed-responsive-item\"></iframe></div>",
       "<div class=\"text-left\">",
       "  <h3>These global shortcuts work everywhere on a Mac:",
@@ -364,106 +397,7 @@
       "<div class='text-center'>",
       "<h2><a href=\"http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjowLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLnppcD9zb3VyY2U9d2ViIn0=\">Download for Mac</a></h2>",
       "<h2><a href=\"http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjoxLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLXNldHVwLmV4ZSJ9\"> Download for Windows</a></h2>",
-      "<p>You can learn more about using Screen Hero by taking &thinsp;<a href=\"http://www.freecodecamp.com/challenges/34\">Challenge 34.</a></p>",
-      "<p>Screen Hero was recently acquired by a collaboration tool called Slack.</p>",
-      "It's still available and free, but will go away in the indefinite future. We'll replace it.</p>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c448eddfaeb5bdef",
-    "name": "Live Stream Pair Programming on Twitch.tv",
-    "description": [
-      "<div class=\"text-center\">",
-      "  <h1>Live Pair Programming</h1>",
-      "  <h2 id=\"next-session\"></h2>",
-      "  <h2>Watch the live stream below or on our &thinsp;<a href=\"http://twitch.tv/freecodecamp\" target=\"_blank\">Twitch.tv channel</a>.</h2>",
-      "  <div class=\"row\">",
-      "    <div class=\"col-md-8 col-xs-12\">",
-      "      <div class=\"embed-responsive embed-responsive-16by9\">",
-      "        <iframe src=\"http://www.twitch.tv/freecodecamp/embed\" frameborder=\"0\" scrolling=\"no\"></iframe>",
-      "      </div>",
-      "    </div>",
-      "    <div class=\"col-md-4 col-xs-12\">",
-      "      <div class=\"visible-sm visible-xs\">",
-      "        <div class=\"embed-responsive embed-responsive-16by9\">",
-      "          <iframe src=\"http://www.twitch.tv/freecodecamp/chat?popout=\" frameborder=\"0\" scrolling=\"no\"></iframe>",
-      "        </div>",
-      "      </div>",
-      "      <div class=\"visible-md visible-lg\">",
-      "        <div class=\"embed-responsive embed-responsive-twitch-chat\">",
-      "          <iframe src=\"http://www.twitch.tv/freecodecamp/chat?popout=\" frameborder=\"0\" scrolling=\"no\"></iframe>",
-      "        </div>",
-      "      </div>",
-      "    </div>",
-      "  </div>",
-      "  <h1>Previous Live Pair Programming Sessions</h1>",
-      "  <div class=\"col-xs-12\">",
-      "    <div class=\"embed-responsive embed-responsive-16by9 big-break\">",
-      "      <iframe src=\"//www.youtube.com/embed/_BErpDdmBOw\" class=\"embed-responsive-item\"></iframe>",
-      "    </div>",
-      "    <h3 class=\"wrappable\">link: &thinsp;<a href=\"http://www.youtube.com/watch/_BErpDdmBOw\">http://www.youtube.com/watch/_BErpDdmBOw</a></h3>",
-      "    <div class=\"embed-responsive embed-responsive-16by9 big-break\">",
-      "      <iframe src=\"//www.youtube.com/embed/Fn9HMn79KH0\" class=\"embed-responsive-item\"></iframe>",
-      "    </div>",
-      "    <h3 class=\"wrappable\">link: &thinsp;<a href=\"http://www.youtube.com/watch/Fn9HMn79KH0\">http://www.youtube.com/watch/Fn9HMn79KH0</a></h3>",
-      "    <div class=\"embed-responsive embed-responsive-16by9 big-break\">",
-      "      <iframe src=\"//www.youtube.com/embed/S7iRBZJwOAs\" class=\"embed-responsive-item\"></iframe>",
-      "    </div>",
-      "    <h3 class=\"wrappable\">link: &thinsp;<a href=\"http://www.youtube.com/watch/S7iRBZJwOAs\">http://www.youtube.com/watch/S7iRBZJwOAs</a></h3>",
-      "    <div class=\"embed-responsive embed-responsive-16by9 big-break\">",
-      "      <iframe src=\"//www.youtube.com/embed/BHNRg39ZblE\" class=\"embed-responsive-item\"></iframe>",
-      "    </div>",
-      "    <h3 class=\"wrappable\">link: &thinsp;<a href=\"http://www.youtube.com/watch/BHNRg39ZblE\">http://www.youtube.com/watch/BHNRg39ZblE</a></h3>",
-      "    <div class=\"embed-responsive embed-responsive-16by9 big-break\">",
-      "      <iframe src=\"//www.youtube.com/embed/YDfkHlDmehA\" class=\"embed-responsive-item\"></iframe>",
-      "    </div>",
-      "    <h3 class=\"wrappable\">link: &thinsp;<a href=\"http://www.youtube.com/watch/YDfkHlDmehA\">http://www.youtube.com/watch/YDfkHlDmehA</a></h3>",
-      "  </div>",
-      "  <script src=\"/js/lib/moment/moment.js\"></script>",
-      "  <script src=\"/js/lib/moment/nextTuesday.js\"></script>",
-      "  <script>$('#next-session').text(nextSession());</script>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c449eddfaeb5bdef",
-    "name": "Nodeschool Challenges",
-    "description": [
-      "<h2 class='text-center'>Learn Node.js, NPM, Express.js, and advanced JavaScript like Functional Programming and Promises</h2><br/>",
-      "<div class=\"embed-responsive embed-responsive-16by9\">",
-      "  <iframe src=\"//player.vimeo.com/video/122719685\" class=\"embed-responsive-item\"></iframe>",
-      "</div>",
-      "<div class=\"text-left col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "  <h3>Here are the NodeSchool courses you should complete:",
-      "    <ol>",
-      "      <li><a href=\"http://runnable.com/VQuO_Y4BbkhaOOsV/nodeschool-io-s-learnyounode-course-available-in-your-browser-for-node-js-and-freecodecamp\" target=\"_blank\">NodeSchool.io's LearnYouNode course</a></li>",
-      "      <li><a href=\"http://runnable.com/VQt7deuMe6RZ3Gcl/nodeschool-io-s-learn-to-npm-course-running-in-your-browser-for-node-js-and-hello-world\" target=\"_blank\">NodeSchool.io's Learn-to-NPM course</a></li>",
-      "      <li><a href=\"http://runnable.com/VQufnaRAlaNc9JuM/nodeschool-io-s-express-js-course-available-in-your-browser-for-node-js-and-freecodecamp\" target=\"_blank\">NodeSchool.io's Express.js course</a></li>",
-      "      <li><a href=\"http://runnable.com/VQuZjvia8Gxcqkpy/nodeschool-io-s-functional-programming-in-javascript-course-available-in-your-browser-for-node-js-and-freecodecamp\" target=\"_blank\">NodeSchool.io's Functional Programming in JavaScript course</a></li>",
-      "      <li><a href=\"http://runnable.com/VQunH26qdytcbLBg/nodeschool-io-s-promise-it-won-t-hurt-promises-course-available-in-your-browser-for-node-js-javascript-and-freecodecamp\" target=\"_blank\">NodeSchool.io's Promise It Won't Hurt Promises course</a></li>",
-      "    </ol>",
-      "  </h3>",
-      "</div><br/>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c450eddfaeb5bdef",
-    "name": "Nonprofit Project Instructions",
-    "description": [
-      "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
-      "<h3>It's time to apply what you've learned here at Free Code Camp.</h3>",
-      "<h3>By the end of this process, you'll have a portfolio of live apps being used by real people.</h3>",
-      "<h3>Please do the following immediately:</h3>",
-      "<h4>",
-      "  <ol>",
-      "    <li>Complete this form: &thinsp;<a href=\"http://goo.gl/forms/f61dLt67t8\" target=\"_blank\">http://goo.gl/forms/f61dLt67t8</a>.</li>",
-      "    <li>Read this document, which will answer many questions you may have about our nonprofit projects: &thinsp;<a href=\"/field-guide/guide-to-our-nonprofit-projects\" target=\"_blank\">http://freecodecamp.com/field-guide/guide-to-our-nonprofit-projects</a>.</li>",
-      "    <li>We'll send you an invite to our Nonprofit Projects Trello board. Once we do, go there and add yourself to at least 3 nonprofit projects that interest you.</li>",
-      "    <li>Finish any unfinished Bonfire challenges. These challenges serve as the Free Code Camp \"exit test\". You must complete these before you can start working on nonprofit projects. If you completed CoderByte or CodeWars challenges instead of Bonfire, email us and we'll take a look:&thinsp;<a href=\"mailto:team@freecodecamp.com\">team@freecodecamp.com</a>.</li>",
-      "  </ol>",
-      "  <h4>Please email us if you have further questions: &thinsp;<a href=\"mailto:team@freecodecamp.com\">team@freecodecamp.com</a>.</h4>",
-      "</h4>",
+      "<h2>You'll use Screen Hero in <a href='/challenges/pair-program-on-bonfires'>http://freecodecamp.com/challenges/pair-program-on-bonfires</a></h2>",
       "</div>"
     ]
   },
