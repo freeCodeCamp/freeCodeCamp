@@ -117,7 +117,6 @@
       "      <ul>",
       "        <li class=\"landing-p\">&#8226 JavaScript - the one programming language that all web browsers use</li>",
       "        <li class=\"landing-p\">&#8226 Algorithms - step-by-step recipes for getting things done</li>",
-      "        <li class=\"landing-p\">&#8226 Automated Testing - write tests to test the limits of your code</li>",
       "      </ul>",
       "    </p>",
       "    <p class=\"landing-p\">Finally you'll learn Agile Methodologies and Full Stack JavaScript to build projects for nonprofits:",
@@ -192,28 +191,6 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bdef",
-    "name": "If Free Code Camp is free, how does it make money?",
-    "description": [
-      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
-      "  <p class=\"landing-p\"> We are completely free for both students and for nonprofits.</p>",
-      "  <p class=\"landing-p\">Our name is Free Code Camp. We are a free code camp. If you had to pay us (or sign over future earnings), we'd have to change our name. And we are not going to do that.</p>",
-      "  <p class=\"landing-p\"> We don't make any money at all. Everyone working on our community and our open source projects is a volunteer.</p>",
-      "  <p class=\"landing-p\"> We plan to eventually cover our operational costs by earning job placement bonuses from companies who hire our graduates. Note that we will not actually garnish any wages from our graduates - employers are already paying recruiters thousands of dollars to find successful candidates. Employers will simply pay the recruitment bonus to Free Code Camp instead of paying a recruiter.</p>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c435eddfaeb5bdef",
-    "name": "Does Free Code Camp have an application process?",
-    "description": [
-      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
-      "  <p class=\"landing-p\">Unlike coding bootcamps, anyone can study at Free Code Camp. We're not going to tell you that you can't become a software engineer. We believe the only person who should be able to tell you that is you.</p>",
-      "  <p class=\"landing-p\">If you persevere, and keep working through our challenges and nonprofit projects, you will become an employable software engineer.</p>",
-      "</div>"
-    ]
-  },
-  {
     "_id": "bd7158d9c436eddfaeb5bd2f",
     "name": "How do I get help when I get stuck?",
     "description": [
@@ -232,6 +209,39 @@
       "<h3>We have a special chat room just for getting help: <a href='https://freecode.slack.com/messages/help/' target='_blank'>https://freecode.slack.com/messages/help/</a></h3>",
       "<h3>Also, if you need to post on Stack Overflow, be sure to read their guide to asking good questions: <a href='http://stackoverflow.com/help/how-to-ask' target='_blank'>http://stackoverflow.com/help/how-to-ask</a>.</h3>",
       "<h3>Learning to code is hard. But it's a lot easier if you ask for help when you need it!</h3>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfaeb5bd3f",
+    "name": "Can I jump around in this Field Guide?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h3>This Field Guide was designed as a reference for you. You shouldn't try to read it all today.</h3>",
+      "<h3>Feel free to come back any time and jump around, reading any articles that seem interesting to you at the time.</h3>",
+      "<h3>If you're currently doing our \"Browse our Field Guide\" Waypoint, go ahead and mark that challenge complete and move on to your next Waypoint.</h3>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfaeb5bdef",
+    "name": "If Free Code Camp is free, how does it make money?",
+    "description": [
+      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
+      "  <p class=\"landing-p\"> We are completely free for both students and for nonprofits.</p>",
+      "  <p class=\"landing-p\">Our name is Free Code Camp. We are a free code camp. If you had to pay us (or sign over future earnings), we'd have to change our name. And we are not going to do that.</p>",
+      "  <p class=\"landing-p\"> We don't make any money at all. Everyone working on our community and our open source projects is a volunteer.</p>",
+      "  <p class=\"landing-p\"> We plan to eventually cover our operational costs by earning job placement bonuses from companies who hire our graduates. Note that we will not actually garnish any wages from our graduates - employers are already paying recruiters thousands of dollars to find successful candidates. Employers will simply pay the recruitment bonus to Free Code Camp instead of paying a recruiter.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c435eddfaeb5bdef",
+    "name": "Does Free Code Camp have an application process?",
+    "description": [
+      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
+      "  <p class=\"landing-p\">Unlike coding bootcamps, anyone can study at Free Code Camp. We're not going to tell you that you can't become a software engineer. We believe the only person who should be able to tell you that is you.</p>",
+      "  <p class=\"landing-p\">If you persevere, and keep working through our challenges and nonprofit projects, you will become an employable software engineer.</p>",
       "</div>"
     ]
   },
@@ -387,9 +397,7 @@
       "<div class='text-center'>",
       "<h2><a href=\"http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjowLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLnppcD9zb3VyY2U9d2ViIn0=\">Download for Mac</a></h2>",
       "<h2><a href=\"http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjoxLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLXNldHVwLmV4ZSJ9\"> Download for Windows</a></h2>",
-      "<p>You can learn more about using Screen Hero by taking &thinsp;<a href=\"http://www.freecodecamp.com/challenges/34\">Challenge 34.</a></p>",
-      "<p>Screen Hero was recently acquired by a collaboration tool called Slack.</p>",
-      "It's still available and free, but will go away in the indefinite future. We'll replace it.</p>",
+      "<h2>You'll use Screen Hero in <a href='/challenges/pair-program-on-bonfires'>http://freecodecamp.com/challenges/pair-program-on-bonfires</a></h2>",
       "</div>"
     ]
   },
