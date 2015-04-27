@@ -125,7 +125,6 @@ $(document).ready(function() {
   });
 
   $('#next-courseware-button').on('click', function() {
-    console.log(passedCoursewareHash);
     if ($('.signup-btn-nav').length < 1) {
       switch (challengeType) {
         case 0:
@@ -278,7 +277,7 @@ $(document).ready(function() {
   $('#story-submit').on('click', storySubmitButtonHandler);
 
   var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
-    $('comment-button').unbind('click');
+    $('#comment-button').unbind('click');
     var data = $('#comment-box').val();
 
     $('#comment-button').attr('disabled', 'disabled');
@@ -286,11 +285,14 @@ $(document).ready(function() {
       {
         data: {
           associatedPost: storyId,
+          originalStoryLink: originalStoryLink,
+          originalStoryAuthorEmail: originalStoryAuthorEmail,
           body: data
         }
       })
       .fail(function (xhr, textStatus, errorThrown) {
         $('#comment-button').attr('disabled', false);
+        $('#comment-button').bind('click', commentSubmitButtonHandler);
       })
       .done(function (data, textStatus, xhr) {
         window.location.reload();

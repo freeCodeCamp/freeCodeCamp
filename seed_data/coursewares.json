@@ -821,9 +821,9 @@
       "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
       "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
       "<span class='text-info'>User Story:</span> As a user, I can play a game of Tic Tac Toe with the computer.",
+      "<span class='text-info'>Bonus User Story:</span> As a user, I can never actually win against the computer - at best I can tie.",
       "<span class='text-info'>Bonus User Story:</span> As a user, my game will reset as soon as it's over so I can play again.",
       "<span class='text-info'>Bonus User Story:</span> As a user, I can choose whether I want to play as X or O.",
-      "<span class='text-info'>Hint:</span> Here's an example call to Twitch.tv's JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
       "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
