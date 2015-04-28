@@ -96,6 +96,78 @@ $(document).ready(function() {
         });
     }
   }
+  // Pair Code Module - 
+  // starts a timer internally in the browser whenever a user makes a pair request.
+
+
+  window.PairCodeTimer = {
+    setup: function() {
+      if (typeof this.firstPairTimer == 'number') {
+        window.clearTimeout(this.firstPairTimer);
+        delete this.firstPairTimer;
+      }
+      var self=this;
+      this.firstPairTimer = window.setTimeout(function() {self.warnUser()}, 5000);
+      // prints to DevTools.
+      return "You have 60 minutes before your pair programming request expires. You can always renew it by going to PairUp, or cancel by taking yourself offline.";
+    },
+    warnUser: function() {
+      $('#expired-paircode-request').addClass('show');
+      // delete the inital timer as its use is complete
+      window.clearTimeout(this.firstPairTimer);
+      delete this.firstPairTimer;
+      this.finalCountdown();
+    },
+    finalCountdown: function() {
+      // this is the final count dowwwnnnnn
+      // gives the user two options: renew or ignore
+      var self = this;
+      this.finalPairCountdown = window.setTimeout(function() {self.pairReqExpired()}, 5000);
+
+    },
+    renewRequest: function() {
+      // renew the request
+    },
+    pairReqExpired: function() {
+      // makes a post to take offline/delete
+      alert("test");
+
+    }
+
+  };
+
+  function refreshPairRequest() {
+    // gets current challenge/bonfire, as the user might have worked on more
+
+    // edits the pair request, which refreshes the time on the server
+
+    // reset the hour timer here in app 
+    //    kill the timeout function
+    //    then start the pair Timeout again
+  };
+
+  function startPairTimeout() {
+    // timer is for 55 minutes
+    // this attaches the timer to the global namespace
+    // when expired, run 'pairrequestexpiressoon'
+
+  };
+
+  function pairRequestExpiresSoon() {
+    // show the 'about to expire' modal
+
+    // start a timer for 5 minutes
+
+    // if they don't click anything, the timer runs out
+    // then they are taken offline (post to set online)
+    // then show them another modal saying they're offline.
+
+    // if they click 'refresh'
+    // refresh the time on their pair request
+    //    this automatically restarts the hour timer
+    // kill the 5 min timer
+
+  };
 
   $('.next-bonfire-button').on('click', function() {
     var bonfireSolution = myCodeMirror.getValue();
