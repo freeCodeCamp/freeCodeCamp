@@ -518,7 +518,7 @@ exports.storySubmission = function(req, res, next) {
               return next(err);
             }
             // If the emails of both authors differ, only then proceed with email notification
-            if (data.author.email && (data.author.email !== recipient.email)) {
+            if (typeof data.author !== 'undefined' && data.author.email && typeof recipient !== 'undefined' && recipient.email && (data.author.email !== recipient.email)) {
               var transporter = nodemailer.createTransport({
                 service: 'Mandrill',
                 auth: {
