@@ -112,15 +112,22 @@ $(document).ready(function() {
         this.cancel(this.firstPairTimer);
       }
       var self=this;
-      this.firstPairTimer = window.setTimeout(function() {self.warnUser()}, 15000);
+      self.Started = true;
+      self.startTime = new Date();
+      console.log(self.startTime);
+      self.targetTime = new Date(self.startTime + 5000);
+      //this.firstPairTimer = window.setTimeout(function() {self.warnUser()}, 15000);
       // prints to DevTools.
       return "You have 60 minutes before your pair programming request expires. You can always renew it by going to PairUp, or cancel by taking yourself offline.";
     },
     warnUser: function() {
-      $('#expired-paircode-request').modal('show');
-      // delete the inital timer as its use is complete
-      this.cancel(this.firstPairTimer);
-      this.finalCountdown();
+      
+        // do the stuff 
+        console.log("it timed out");
+        $('#expired-paircode-request').modal('show');
+        // delete the inital timer as its use is complete
+        //this.cancel(this.firstPairTimer);
+        this.finalCountdown();
     },
     finalCountdown: function() {
       // this is the final count dowwwnnnnn!!
@@ -152,6 +159,13 @@ $(document).ready(function() {
     }
 
   };
+
+  console.log("timer started?", PairCodeTimer.started);
+  console.log("");
+
+  if ((PairCodeTimer.started) && (PairCodeTimer.targetTime-PairCodeTimer.startTime)) {
+    PairCodeTimer.warnUser();
+  }
 
   $('.next-bonfire-button').on('click', function() {
     var bonfireSolution = myCodeMirror.getValue();
