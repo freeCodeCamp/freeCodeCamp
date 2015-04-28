@@ -265,6 +265,7 @@ exports.removeStaleSlackUsers = function() {
 
 exports.setOffline = function(req, res, next){
   // change the user's online status
+
   User.findById(req.user._id, function(err, user) {
     if (err) {
       return next(err);
@@ -290,7 +291,12 @@ exports.setOffline = function(req, res, next){
       });
     }
   });
-  res.redirect('/pair-coding');
+
+  req.flash('success', {
+    msg: 'Successfully taken offline.'
+  });
+  return res.redirect('/pair-coding');
+
 };
 
 exports.returnPair = function(req, res, next){

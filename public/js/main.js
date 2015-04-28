@@ -102,7 +102,6 @@ $(document).ready(function() {
 
   window.PairCodeTimer = {
     cancel: function(timer) {
-      console.log(timer);
       if (typeof timer == 'number') {
         window.clearTimeout(timer);
         delete timer;
@@ -113,8 +112,7 @@ $(document).ready(function() {
         this.cancel(this.firstPairTimer);
       }
       var self=this;
-      console.log("this is :",this);
-      this.firstPairTimer = window.setTimeout(function() {self.warnUser()}, 5000);
+      this.firstPairTimer = window.setTimeout(function() {self.warnUser()}, 15000);
       // prints to DevTools.
       return "You have 60 minutes before your pair programming request expires. You can always renew it by going to PairUp, or cancel by taking yourself offline.";
     },
@@ -128,7 +126,7 @@ $(document).ready(function() {
       // this is the final count dowwwnnnnn!!
       // gives the user two options: renew or ignore
       var self = this;
-      this.finalPairCountdown = window.setTimeout(function() {self.pairReqExpired()}, 5000);
+      this.finalPairCountdown = window.setTimeout(function() {self.pairReqExpired()}, 10000);
     },
     renewRequest: function() {
       // make sure to get their current bonfire/courseware
@@ -148,8 +146,9 @@ $(document).ready(function() {
     },
     pairReqExpired: function() {
       // makes a post to take offline/delete
-      console.log("Your pair request has been deleted.");
-
+      $.get('/pair-coding/setOffline').success(function() {
+        console.log("Pair request was automatically deleted.");
+      });
     }
 
   };
