@@ -101,71 +101,56 @@ $(document).ready(function() {
 
 
   window.PairCodeTimer = {
+    cancel: function(timer) {
+      console.log(timer);
+      if (typeof timer == 'number') {
+        window.clearTimeout(timer);
+        delete timer;
+      }
+    },
     setup: function() {
-      if (typeof this.firstPairTimer == 'number') {
-        window.clearTimeout(this.firstPairTimer);
-        delete this.firstPairTimer;
+      if (this.firstPairTimer) {
+        this.cancel(this.firstPairTimer);
       }
       var self=this;
+      console.log("this is :",this);
       this.firstPairTimer = window.setTimeout(function() {self.warnUser()}, 5000);
       // prints to DevTools.
       return "You have 60 minutes before your pair programming request expires. You can always renew it by going to PairUp, or cancel by taking yourself offline.";
     },
     warnUser: function() {
-      $('#expired-paircode-request').addClass('show');
+      $('#expired-paircode-request').modal('show');
       // delete the inital timer as its use is complete
-      window.clearTimeout(this.firstPairTimer);
-      delete this.firstPairTimer;
+      this.cancel(this.firstPairTimer);
       this.finalCountdown();
     },
     finalCountdown: function() {
-      // this is the final count dowwwnnnnn
+      // this is the final count dowwwnnnnn!!
       // gives the user two options: renew or ignore
       var self = this;
       this.finalPairCountdown = window.setTimeout(function() {self.pairReqExpired()}, 5000);
-
     },
     renewRequest: function() {
-      // renew the request
+      // make sure to get their current bonfire/courseware
+      // kill the 5 min timeout function
+      this.cancel(this.finalPairCountdown);
+
+      $('#expired-paircode-request').modal('hide');
+      
+      // start a new one for 55
+      this.setup();
+
+      // renew the request on the server
+      $.get('/pair-coding/refresh').success(function() {
+        console.log("server response good");
+      });
+      
     },
     pairReqExpired: function() {
       // makes a post to take offline/delete
-      alert("test");
+      console.log("Your pair request has been deleted.");
 
     }
-
-  };
-
-  function refreshPairRequest() {
-    // gets current challenge/bonfire, as the user might have worked on more
-
-    // edits the pair request, which refreshes the time on the server
-
-    // reset the hour timer here in app 
-    //    kill the timeout function
-    //    then start the pair Timeout again
-  };
-
-  function startPairTimeout() {
-    // timer is for 55 minutes
-    // this attaches the timer to the global namespace
-    // when expired, run 'pairrequestexpiressoon'
-
-  };
-
-  function pairRequestExpiresSoon() {
-    // show the 'about to expire' modal
-
-    // start a timer for 5 minutes
-
-    // if they don't click anything, the timer runs out
-    // then they are taken offline (post to set online)
-    // then show them another modal saying they're offline.
-
-    // if they click 'refresh'
-    // refresh the time on their pair request
-    //    this automatically restarts the hour timer
-    // kill the 5 min timer
 
   };
 

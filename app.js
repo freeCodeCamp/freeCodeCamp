@@ -280,6 +280,7 @@ app.get('/live-pair-programming', function(req, res) {
 app.get('/pair-coding', pairCodingController.index);
 app.post('/pair-coding/setOnline', pairCodingController.setOnline);
 app.get('/pair-coding/setOffline', pairCodingController.setOffline);
+app.get('/pair-coding/refresh', pairCodingController.refreshPairRequest);
 app.post('/pair-coding/edit-request', pairCodingController.editPairRequest);
 app.get('/pair-coding/:onlinePostuserName', pairCodingController.returnPair);
 
@@ -770,7 +771,7 @@ app.listen(app.get('port'), function () {
  * Check the db every n minutes and remove users from /pair-coding
 */
 
-var pairCodingIntervalMinutes = .2;
+var pairCodingIntervalMinutes = 30;
 var pairCodingIntervalMilliSeconds = pairCodingIntervalMinutes * 60 * 1000;
 
 var pairCodingInterval = setInterval(function(){

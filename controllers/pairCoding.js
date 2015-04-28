@@ -76,6 +76,39 @@ exports.setOnline = function(req, res, next) {
   res.redirect('/pair-coding');
 };
 
+// Refresh pair request function - API endpoint for popup modal
+exports.refreshPairRequest = function(req, res, next) {
+  // edits a pair request by resetting the date
+  // find the request
+  PairUser.findOne({user: req.user._id}, function(err, pairuser) {
+    if (err) {
+      return next(err);
+    }
+    if (!pairuser) {
+      // already expired
+      console.log("Couldn't find a pair request for you.");
+      req.flash('errors', {
+        msg: 'Your request expired; you can make a new one.'
+      });
+      return res.redirect('/pair-coding');
+    } else {
+      // edit the request timeOnline
+      pairuser.timeOnline = new Date();
+      pairuser.save(function(err) {
+        if (err) {
+          return next(err);
+        } else {
+          // acts as middleware to keep the user on the page.
+          console.log("Your request was successfully refreshed.");
+          return next();
+        }
+
+      });
+    }
+  });
+}
+
+
 
 
 exports.editPairRequest = function(req, res, next) {
@@ -121,7 +154,7 @@ exports.editPairRequest = function(req, res, next) {
 exports.removeStalePosts = function() {
 
   // this is the oldest possible time to keep
-  var cutoff = Date.now() - 10000;  // 30 minutes
+  var cutoff = Date.now() - 60000;  // one hour
 
   // get all old pairusers and remove them.
   PairUser.find().where('timeOnline').lt(cutoff).exec(function(err, pairs) {

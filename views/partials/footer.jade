@@ -22,12 +22,20 @@
   #expired-paircode-request.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
-                .modal-header.challenge-list-header= "Your pair code request is about to expire."
+                .modal-header.challenge-list-header= "Renew pair programming request?"
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
                     .text-center
                         .animated.zoomInDown.delay-half
-                            span.completion-icon.ion-checkmark-circled.text-primary
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf) Renew my request
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf) That's fine
+                            span= "Your pair req"
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='renew', id='renewPairRequest') Renew my request
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='ignore', id='ignorePairExpire', data-dismiss="modal") No, thanks
+  script.
+    $('#renewPairRequest').on('click', function() {
+      console.log("request renew button clicked");
+      PairCodeTimer.renewRequest();
+    });
+    $('#ignorePairExpire').on('click', function() {
+      console.log("OK, your request will be deleted in five minutes.");
+    });
 
