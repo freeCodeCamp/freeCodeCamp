@@ -46,10 +46,10 @@
   },
   {
     "_id": "bd7158d9c441eddfaeb5bd2f",
-    "name": "What are the advantages of Free Code Camp?",
+    "name": "What are the main advantages of Free Code Camp?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h3>",
+      "<h3>Our main advantage is that we're accessible to busy adults who want to change careers. Specifically, we're:",
       "  <ul>",
       "    <li>&bull; Free</li>",
       "    <li>&bull; Self-paced</li>",
@@ -247,7 +247,7 @@
   },
   {
     "_id": "bd7158d9c442eddfaeb5bdef",
-    "name": "Global Control Shortcuts for Mac",
+    "name": "How do I best use the Global Control Shortcuts for Mac?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
       "<h2 class='text-center'>These Global Control Shortcuts for Mac will save you hours by speeding up your typing</h2>",
@@ -269,32 +269,8 @@
     ]
   },
   {
-    "_id": "bd7159d9c442eddfaeb5bdef",
-    "name": "What does Register mean?",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h2 class='text-center'></h2>",
-      "<div class=\"embed-responsive embed-responsive-16by9\"><iframe src=\"//player.vimeo.com/video/107073108\" class=\"embed-responsive-item\"></iframe></div>",
-      "<div class=\"text-left\">",
-      "  <h3>These global shortcuts work everywhere on a Mac:",
-      "    <ul>",
-      "      <li>Control + F = Forward</li>",
-      "      <li>Control + B = Backward</li>",
-      "      <li>Control + N = Next Line</li>",
-      "      <li>Control + P = Previous Line</li>",
-      "      <li>Control + H = Backspace</li>",
-      "      <li>Control + D = Delete</li>",
-      "      <li>Control + A = Beginning of Line</li>",
-      "      <li>Control + E = End of Line</li>",
-      "      <li>Control + K = Kill line</li>",
-      "    </ul>",
-      "  </h3>",
-      "</div>"
-    ]
-  },
-  {
     "_id": "bd7158d9c445eddfaeb5bdef",
-    "name": "Gmail Zero Inbox Shortcuts",
+    "name": "How can I get to Inbox Zero with Gmail Shortcuts?",
     "description": [
       "<h2 class='text-center'>These Gmail Shortcuts will save you hours and help you get to Zero Inbox</h2><br/>",
       "<div class=\"embed-responsive embed-responsive-16by9\">",
@@ -321,7 +297,7 @@
   },
   {
     "_id": "bd7158d9c446eddfaeb5bdef",
-    "name": "A Guide to our Nonprofit Projects",
+    "name": "How do Free Code Camp's Nonprofit Projects work?",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "<p>Building nonprofit projects is the main way that our campers learn full stack JavaScript and agile software development. Once you complete the Free Code Camp challenges and Bonfire challenges, you'll begin this process.</p>",
@@ -393,7 +369,7 @@
   },
   {
     "_id": "bd7158d9c447eddfaeb5bdef",
-    "name": "Install Screenhero",
+    "name": "How do I install Screenhero?",
     "description": [
       "<div class='text-center'>",
       "<h2><a href=\"http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjowLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLnppcD9zb3VyY2U9d2ViIn0=\">Download for Mac</a></h2>",
@@ -404,7 +380,7 @@
   },
   {
     "_id": "bd7158d9c451eddfaeb5bded",
-    "name": "Bonfire Style Guide",
+    "name": "What is the style guide for Bonfires?",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "<h3>Writing Bonfire challenges is a great way to exercise your own problem solving and testing abilities. Follow this process closely to maximize the chances of us accepting your bonfire.</h3>",
@@ -439,7 +415,7 @@
   },
   {
     "_id": "bd7158d9c451eddfaeb5bdef",
-    "name": "The Free Code Camp Privacy Policy",
+    "name": "What is Free Code Camp Privacy Policy?",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "<p>Free Code Camp is committed to respecting the privacy of visitors to our web sites and web applications. The guidelines below explain how we protect the privacy of visitors to FreeCodeCamp.com and its features.</p>",
