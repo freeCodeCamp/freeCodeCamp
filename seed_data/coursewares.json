@@ -529,33 +529,9 @@
     "tests": []
   },
   {
-    "_id": "bd7153d8c441eddfaeb5bdff",
-    "name": "Start a Node.js Server",
-    "difficulty": 0.39,
-    "challengeSeed": "114685061",
-    "description": [
-      "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
-      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
-      "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
-      "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
-      "Give your workspace a name.",
-      "Choose Node.js in the selection area below the name field",
-      "Click the Create button",
-      "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button",
-      "Click the \"Start Editing\" button.",
-      "In the lower right hand corner you should see a terminal window. In this window use the following commands. You don't need to know what these mean at this point.",
-      "Run this command: <code>sudo npm install learnyounode -g</code>",
-      "Now start this tutorial by running <code>learnyounode</code>",
-      "Note that you can resize the c9.io's windows by dragging their borders.",
-      "Follow the directions and work through all of the the tutorial's steps before moving on."
-    ],
-    "challengeType": 2,
-    "tests": []
-  },
-  {
     "_id": "bd7153d8c441eddfaeb5bd0f",
     "name": "Manage Packages with NPM",
-    "difficulty": 0.40,
+    "difficulty": 0.39,
     "challengeSeed": "114685061",
     "description": [
       "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
@@ -577,10 +553,34 @@
     "tests": []
   },
   {
+    "_id": "bd7153d8c441eddfaeb5bdff",
+    "name": "Start a Node.js Server",
+    "difficulty": 0.40,
+    "challengeSeed": "126411561",
+    "description": [
+      "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
+      "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
+      "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
+      "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
+      "Give your workspace a name.",
+      "Choose Node.js in the selection area below the name field",
+      "Click the Create button",
+      "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button",
+      "Click the \"Start Editing\" button.",
+      "In the lower right hand corner you should see a terminal window. In this window use the following commands. You don't need to know what these mean at this point.",
+      "Run this command: <code>sudo npm install learnyounode -g</code>",
+      "Now start this tutorial by running <code>learnyounode</code>",
+      "Note that you can resize the c9.io's windows by dragging their borders.",
+      "Follow the directions and work through all of the the tutorial's steps before moving on."
+    ],
+    "challengeType": 2,
+    "tests": []
+  },
+  {
     "_id": "bd7153d8c441eddfaeb5bd1f",
     "name": "Build Web Apps with Express.js",
     "difficulty": 0.41,
-    "challengeSeed": "114685061",
+    "challengeSeed": "126411559",
     "description": [
       "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
       "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -664,7 +664,7 @@
     "_id": "bd7158d8c442eddfaeb5bd1f",
     "name": "Zipline: Use the Twitch.tv JSON API",
     "difficulty": 1.01,
-    "challengeSeed": "125658022",
+    "challengeSeed": "126411564",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -688,7 +688,7 @@
     "_id": "bd7158d8c442eddfaeb5bd13",
     "name": "Zipline: Build a Random Quote Machine",
     "difficulty": 1.02,
-    "challengeSeed": "125658022",
+    "challengeSeed": "126415122",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/AdventureBear/full/vEoVMw' target='_blank'>http://codepen.io/AdventureBear/full/vEoVMw</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -707,7 +707,7 @@
     "_id": "bd7158d8c442eddfaeb5bd10",
     "name": "Zipline: Show the Local Weather",
     "difficulty": 1.03,
-    "challengeSeed": "125658022",
+    "challengeSeed": "126415127",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/AdventureBear/full/yNBJRj' target='_blank'>http://codepen.io/AdventureBear/full/yNBJRj</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -728,7 +728,7 @@
     "_id": "bd7158d8c442eddfaeb5bd18",
     "name": "Zipline: Stylize Stories on Camper News",
     "difficulty": 1.04,
-    "challengeSeed": "125658022",
+    "challengeSeed": "126415129",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/Wveezv' target='_blank'>http://codepen.io/GeoffStorbeck/full/Wveezv</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -750,7 +750,7 @@
     "_id": "bd7158d8c442eddfaeb5bd19",
     "name": "Zipline: Wikipedia Viewer",
     "difficulty": 1.05,
-    "challengeSeed": "125658022",
+    "challengeSeed": "126415131",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/MwgQea' target='_blank'>http://codepen.io/GeoffStorbeck/full/MwgQea</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -771,7 +771,7 @@
     "_id": "bd7158d8c442eddfaeb5bd0f",
     "name": "Zipline: Build a Pomodoro Clock",
     "difficulty": 1.06,
-    "challengeSeed": "125658022",
+    "challengeSeed": "126411567",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/RPbGxZ/' target='_blank'>http://codepen.io/GeoffStorbeck/full/RPbGxZ/</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -791,7 +791,7 @@
     "_id": "bd7158d8c442eddfaeb5bd17",
     "name": "Zipline: Build a JavaScript Calculator",
     "difficulty": 1.07,
-    "challengeSeed": "125658022",
+    "challengeSeed": "126411565",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/zxgaqw' target='_blank'>http://codepen.io/GeoffStorbeck/full/zxgaqw</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
@@ -811,7 +811,7 @@
     "_id": "bd7158d8c442eddfaeb5bd1c",
     "name": "Zipline: Build a Tic Tac Toe Game",
     "difficulty": 1.08,
-    "challengeSeed": "125658022",
+    "challengeSeed": "126415123",
     "description": [
       "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/alex-dixon/full/JogOpQ/' target='_blank'>http://codepen.io/alex-dixon/full/JogOpQ/</a>.",
       "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
