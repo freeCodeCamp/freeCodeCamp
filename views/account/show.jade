@@ -2,162 +2,161 @@ extends ../layout
 block content
     script.
         var challengeName = 'Profile View';
-    .col-xs-12.col-sm-12.col-md-12
-        .panel.panel-info
-            .panel-heading.text-center
-                h1 #{username}'s portfolio
-            .panel-body
-                if (user && user.profile.username === username)
-                    .row.text-center
-                        .col-xs-12.col-sm-10.col-sm-offset-1
-                            a.btn.btn-big.btn-primary.btn-block(href="/account") Update my portfolio page or manage my account
-                            .spacer
-                        .col-xs-12.col-sm-10.col-sm-offset-1
-                            a.btn.btn-big.btn-success.btn-block(href="/signout") Sign out of Free Code Camp
-                            .spacer
-                .row
-                    .col-xs-12
-                        .col-xs-12.col-sm-12.col-md-5
-                            if picture
-                                img.img-center.img-responsive.public-profile-img(src=picture)
-                            else
-                                img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
-                            h1.text-center.negative-5
-                                - if (twitterHandle)
-                                    a.ion-social-twitter.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}", target='_blank')
-                                - if (githubProfile)
-                                    a.ion-social-github.text-primary(title="@#{username}'s GitHub Profile", href=githubProfile, target='_blank')
-                                - if (linkedinProfile)
-                                    a.ion-social-linkedin.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedinProfile, target='_blank')
-                                - if (codepenProfile)
-                                    a.ion-social-codepen.text-primary(title="@#{username}'s CodePen Profile", href=codepenProfile, target='_blank')
-                        .visible-md.visible-lg
-                            .col-xs-12.col-sm-12.col-md-4.text-justify
-                                h1.flat-top.wrappable= name
-                                h3.flat-top.bolded.wrappable= location
-                                h4.flat-top.wrappable= bio
-                        .visible-xs.visible-sm
-                            .col-xs-12.col-sm-12.col-md-4.text-center
-                                h1.flat-top.wrappable= name
-                                h3.flat-top.bolded.wrappable= location
-                                h4.flat-top.wrappable= bio
-                        .col-xs-12.col-sm-12.col-md-3.text-center
-                            .background-svg.img-center
-                                .points-on-top
-                                    = "[ " + (user ? user.progressTimestamps.length : 0) + " ]"
+    .panel.panel-info
+        .panel-heading.text-center
+            h1 #{username}'s portfolio
+        .panel-body
+            if (user && user.profile.username === username)
+                .row.text-center
+                    .col-xs-12.col-sm-10.col-sm-offset-1
+                        a.btn.btn-big.btn-primary.btn-block(href="/account") Update my portfolio page or manage my account
+                        .spacer
+                    .col-xs-12.col-sm-10.col-sm-offset-1
+                        a.btn.btn-big.btn-success.btn-block(href="/signout") Sign out of Free Code Camp
+                        .spacer
+            .row
+                .col-xs-12
+                    .col-xs-12.col-sm-12.col-md-5
+                        if picture
+                            img.img-center.img-responsive.public-profile-img(src=picture)
+                        else
+                            img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
+                        h1.text-center.negative-5
+                            - if (twitterHandle)
+                                a.ion-social-twitter.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}", target='_blank')
+                            - if (githubProfile)
+                                a.ion-social-github.text-primary(title="@#{username}'s GitHub Profile", href=githubProfile, target='_blank')
+                            - if (linkedinProfile)
+                                a.ion-social-linkedin.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedinProfile, target='_blank')
+                            - if (codepenProfile)
+                                a.ion-social-codepen.text-primary(title="@#{username}'s CodePen Profile", href=codepenProfile, target='_blank')
+                    .visible-md.visible-lg
+                        .col-xs-12.col-sm-12.col-md-4.text-justify
+                            h1.flat-top.wrappable= name
+                            h3.flat-top.bolded.wrappable= location
+                            h4.flat-top.wrappable= bio
+                    .visible-xs.visible-sm
+                        .col-xs-12.col-sm-12.col-md-4.text-center
+                            h1.flat-top.wrappable= name
+                            h3.flat-top.bolded.wrappable= location
+                            h4.flat-top.wrappable= bio
+                    .col-xs-12.col-sm-12.col-md-3.text-center
+                        .background-svg.img-center
+                            .points-on-top
+                                = "[ " + (user ? user.progressTimestamps.length : 0) + " ]"
 
 
-                .row
-                    .col-xs-12
-                        if (website1Title && website1Link && website1Image)
-                            .row
-                                .col-xs-12.col-md-5
-                                    img.img-center.img-responsive.portfolio-image(src=website1Image, alt="@#{username}'s #{website1Title}")
-                                .col-xs-12.col-md-7
-                                    h3.text-center.wrappable.flat-top= website1Title
-                                    a.btn.btn-lg.btn-block.btn-info(href=website1Link, target='_blank')
-                                        i.fa.icon-beaker
-                                        | Try it out
-                            br
-                        if (website1Title && website1Link && !website1Image)
-                            .col-xs-12.col-md-12
+            .row
+                .col-xs-12
+                    if (website1Title && website1Link && website1Image)
+                        .row
+                            .col-xs-12.col-md-5
+                                img.img-center.img-responsive.portfolio-image(src=website1Image, alt="@#{username}'s #{website1Title}")
+                            .col-xs-12.col-md-7
                                 h3.text-center.wrappable.flat-top= website1Title
                                 a.btn.btn-lg.btn-block.btn-info(href=website1Link, target='_blank')
                                     i.fa.icon-beaker
                                     | Try it out
-                                br
-                        if (website2Title && website2Link && website2Image)
-                            .row
-                                .col-xs-12.col-md-5
-                                    img.img-responsive.portfolio-image.img-center(src=website2Image, alt="@#{username}'s #{website2Title}")
-                                .col-xs-12.col-md-7
-                                    h3.text-center.wrappable.flat-top= website2Title
-                                    a.btn.btn-lg.btn-block.btn-info(href=website2Link, target='_blank')
-                                        i.fa.icon-beaker
-                                        | Try it out
+                        br
+                    if (website1Title && website1Link && !website1Image)
+                        .col-xs-12.col-md-12
+                            h3.text-center.wrappable.flat-top= website1Title
+                            a.btn.btn-lg.btn-block.btn-info(href=website1Link, target='_blank')
+                                i.fa.icon-beaker
+                                | Try it out
                             br
-                        if (website2Title && website2Link && !website2Image)
-                            .col-xs-12.col-md-12
+                    if (website2Title && website2Link && website2Image)
+                        .row
+                            .col-xs-12.col-md-5
+                                img.img-responsive.portfolio-image.img-center(src=website2Image, alt="@#{username}'s #{website2Title}")
+                            .col-xs-12.col-md-7
                                 h3.text-center.wrappable.flat-top= website2Title
                                 a.btn.btn-lg.btn-block.btn-info(href=website2Link, target='_blank')
                                     i.fa.icon-beaker
                                     | Try it out
-                                br
-                        if (website3Title && website3Link && website3Image)
-                            .row
-                                .col-xs-12.col-md-5
-                                    img.img-responsive.portfolio-image.img-center(src=website3Image, alt="@#{username}'s #{website1Title}")
-                                .col-xs-12.col-md-7
-                                    h3.text-center.wrappable.flat-top= website3Title
-                                    a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
-                                        i.fa.icon-beaker
-                                        | Try it out
-                        if (website3Title && website3Link && !website3Image)
-                            .col-xs-12.col-md-12
+                        br
+                    if (website2Title && website2Link && !website2Image)
+                        .col-xs-12.col-md-12
+                            h3.text-center.wrappable.flat-top= website2Title
+                            a.btn.btn-lg.btn-block.btn-info(href=website2Link, target='_blank')
+                                i.fa.icon-beaker
+                                | Try it out
+                            br
+                    if (website3Title && website3Link && website3Image)
+                        .row
+                            .col-xs-12.col-md-5
+                                img.img-responsive.portfolio-image.img-center(src=website3Image, alt="@#{username}'s #{website1Title}")
+                            .col-xs-12.col-md-7
                                 h3.text-center.wrappable.flat-top= website3Title
                                 a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
                                     i.fa.icon-beaker
                                     | Try it out
+                    if (website3Title && website3Link && !website3Image)
+                        .col-xs-12.col-md-12
+                            h3.text-center.wrappable.flat-top= website3Title
+                            a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
+                                i.fa.icon-beaker
+                                | Try it out
 
-                    .hidden-xs.col-sm-12
-                        script(src="//d3js.org/d3.v3.min.js")
-                        script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
-                        #cal-heatmap.img-center
-                            script.
-                                $(document).ready(function() {
-                                    setTimeout(function() {
-                                        var cal = new CalHeatMap();
-                                        var calendar = !{JSON.stringify(calender)};
-                                        cal.init({
-                                            itemSelector: "#cal-heatmap",
-                                            domain: "month",
-                                            subDomain: "day",
-                                            data: calendar,
-                                            cellSize: 15,
-                                            align: 'center',
-                                            cellRadius: 3,
-                                            cellPadding: 2,
-                                            tooltip: true,
-                                            range: 4,
-                                            start: new Date().setDate(new Date().getDate() - 90),
-                                            legendColors: ["#cccccc", "#215f1e"],
-                                            legend: [1, 2, 3]
-                                        });
-                                    }, 300);
-                                });
-                        .row
-                            .hidden-xs.col-sm-12.text-center
-                                .row.text-primary
-                                    h4.col-sm-6.text-right Longest Streak: #{longestStreak}
-                                    h4.col-sm-6.text-left Current Streak: #{currentStreak}
+                .hidden-xs.col-sm-12
+                    script(src="//d3js.org/d3.v3.min.js")
+                    script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
+                    #cal-heatmap.img-center
+                        script.
+                            $(document).ready(function() {
+                                setTimeout(function() {
+                                    var cal = new CalHeatMap();
+                                    var calendar = !{JSON.stringify(calender)};
+                                    cal.init({
+                                        itemSelector: "#cal-heatmap",
+                                        domain: "month",
+                                        subDomain: "day",
+                                        data: calendar,
+                                        cellSize: 15,
+                                        align: 'center',
+                                        cellRadius: 3,
+                                        cellPadding: 2,
+                                        tooltip: true,
+                                        range: 4,
+                                        start: new Date().setDate(new Date().getDate() - 90),
+                                        legendColors: ["#cccccc", "#215f1e"],
+                                        legend: [1, 2, 3]
+                                    });
+                                }, 300);
+                            });
+                    .row
+                        .hidden-xs.col-sm-12.text-center
+                            .row.text-primary
+                                h4.col-sm-6.text-right Longest Streak: #{longestStreak}
+                                h4.col-sm-6.text-left Current Streak: #{currentStreak}
 
-                        - if (challenges.length > 0)
-                            .col-sm-12
-                                table.table.table-striped
-                                    thead
-                                        tr
-                                            th.col-xs-4 Challenge
-                                            th.col-xs-2 Completed
-                                            th.col-xs-6 Link
-                                    for challenge in challenges
-                                        tr
-                                            td.col-xs-4= challenge.name
-                                            td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6
-                                                a(href=challenge.solution) View my solution
+                    - if (challenges.length > 0)
+                        .col-sm-12
+                            table.table.table-striped
+                                thead
+                                    tr
+                                        th.col-xs-4 Challenge
+                                        th.col-xs-2 Completed
+                                        th.col-xs-6 Link
+                                for challenge in challenges
+                                    tr
+                                        td.col-xs-4= challenge.name
+                                        td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                        td.col-xs-6
+                                            a(href=challenge.solution) View my solution
 
-                                    br
-                        - if (bonfires.length > 0)
-                            .col-sm-12
-                                table.table.table-striped
-                                    thead
-                                        tr
-                                            th.col-xs-4 Bonfire
-                                            th.col-xs-2 Completed
-                                            th.col-xs-6 Solution
-                                    for bonfire in bonfires
-                                        tr
-                                            td.col-xs-4= bonfire.name
-                                            td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
-                                            td.col-xs-6= bonfire.solution
-                                    br
+                                br
+                    - if (bonfires.length > 0)
+                        .col-sm-12
+                            table.table.table-striped
+                                thead
+                                    tr
+                                        th.col-xs-4 Bonfire
+                                        th.col-xs-2 Completed
+                                        th.col-xs-6 Solution
+                                for bonfire in bonfires
+                                    tr
+                                        td.col-xs-4= bonfire.name
+                                        td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                        td.col-xs-6= bonfire.solution
+                                br
