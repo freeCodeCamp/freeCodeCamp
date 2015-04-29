@@ -528,6 +528,8 @@ app.get('/api/blogger', resourcesController.bloggerCalls);
 
 app.get('/api/trello', resourcesController.trelloCalls);
 
+app.get('/api/codepen/twitter', resourcesController.codepenResources.twitter);
+
 /**
  * Bonfire related routes
  */

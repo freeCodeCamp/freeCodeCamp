@@ -14,6 +14,7 @@ var async = require('async'),
   coursewares = require('../seed_data/coursewares.json'),
   fieldGuides = require('../seed_data/field-guides.json'),
   moment = require('moment'),
+  Twit = require('twit'),
   https = require('https'),
   debug = require('debug')('freecc:cntr:resources'),
   cheerio = require('cheerio'),
@@ -469,6 +470,30 @@ module.exports = {
         }
         cb();
       });
+    }
+  },
+  codepenResources: {
+    twitter: function(req, res) {
+      // sends out random tweets about javascript
+      var T = new Twit({
+        consumer_key:         secrets.twitter.consumerKey,
+        consumer_secret:      secrets.twitter.consumerSecret,
+        access_token:         secrets.twitter.token,
+        access_token_secret:  secrets.twitter.tokenSecret
+      });
+
+      T.get('search/tweets', {q: 'javascript', count:10}, function(err, data, response) {
+        return res.json(data);
+      });
+    },
+    twitterFCCStream: function() {
+      // sends out a tweet stream from FCC's account
+    },
+    twitch: function() {
+      // exports information from the twitch account
+    },
+    slack: function() {
+
     }
   }
 };
