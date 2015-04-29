@@ -48,7 +48,7 @@ var express = require('express'),
     /**
      *  Stories
      */
-    storyController = require('./controllers/story');
+    storyController = require('./controllers/story'),
 
     /**
      * API keys and Passport configuration.
@@ -88,13 +88,15 @@ if (process.env.NODE_ENV === 'production') {
     if (host.match(/^www\..*/i)) {
       next();
     } else {
-      res.redirect(301, "http://www." + host + originalUrl);
+      res.redirect(301, 'http://www.' + host + originalUrl);
     }
   });
 }
 
 app.use(compress());
 var oneYear = 31557600000;
+// todo
+// another app.use(express.static...) call
 app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
 app.use(connectAssets({
     paths: [
@@ -135,8 +137,10 @@ app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.xframe());
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers',
+               'Origin, X-Requested-With, Content-Type, Accept'
+              );
     next();
 });
 
@@ -184,7 +188,7 @@ app.use(helmet.contentSecurityPolicy({
     scriptSrc: [
         '*.optimizely.com',
         '*.aspnetcdn.com',
-        '*.d3js.org',
+        '*.d3js.org'
     ].concat(trusted),
     'connect-src': [
         'ws://*.rafflecopter.com',
@@ -204,7 +208,8 @@ app.use(helmet.contentSecurityPolicy({
         'graph.facebook.com',
         '*.githubusercontent.com',
         '*.googleusercontent.com',
-        '*' /* allow all input since we have user submitted images for public profile*/
+    /* allow all input since we have user submitted images for public profile*/
+        '*'
     ].concat(trusted),
     fontSrc: ['*.googleapis.com'].concat(trusted),
     mediaSrc: [
@@ -245,7 +250,8 @@ app.use(function (req, res, next) {
 app.use(
   express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
 );
-
+// todo
+// why are there two express.static declarations?
 app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 
 /**
@@ -264,21 +270,21 @@ app.get('/twitch', resourcesController.twitch);
 
 // Agile Project Manager Onboarding
 
-app.get('/pmi-acp-agile-project-managers', resourcesController.agileProjectManagers);
+app.get('/pmi-acp-agile-project-managers',
+        resourcesController.agileProjectManagers);
 
 app.get('/agile', function(req, res) {
   res.redirect(301, '/pmi-acp-agile-project-managers');
 });
 
-app.get('/pmi-acp-agile-project-managers-form', resourcesController.agileProjectManagersForm);
+app.get('/pmi-acp-agile-project-managers-form',
+        resourcesController.agileProjectManagersForm);
 
 // Nonprofit Onboarding
 
 app.get('/nonprofits', resourcesController.nonprofits);
 
 app.get('/nonprofits-form', resourcesController.nonprofitsForm);
-
-
 
 app.get('/map', challengeMapController.challengeMap);
 
@@ -532,7 +538,9 @@ app.get('/api/trello', resourcesController.trelloCalls);
  * Bonfire related routes
  */
 
-app.get('/field-guide/getFieldGuideList', fieldGuideController.showAllFieldGuides);
+app.get('/field-guide/getFieldGuideList',
+        fieldGuideController.showAllFieldGuides
+       );
 
 app.get('/playground', bonfireController.index);
 
@@ -562,7 +570,9 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
  */
 
 
-app.get('/field-guide/:fieldGuideName', fieldGuideController.returnIndividualFieldGuide);
+app.get('/field-guide/:fieldGuideName',
+        fieldGuideController.returnIndividualFieldGuide
+       );
 
 app.get('/field-guide/', fieldGuideController.returnNextFieldGuide);
 
@@ -586,9 +596,13 @@ app.post('/completed-zipline-or-basejump',
   coursewareController.completedZiplineOrBasejump);
 
 // Unique Check API route
-app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
+app.get('/api/checkUniqueUsername/:username',
+        userController.checkUniqueUsername
+       );
 
-app.get('/api/checkExistingUsername/:username', userController.checkExistingUsername);
+app.get('/api/checkExistingUsername/:username',
+        userController.checkExistingUsername
+       );
 
 app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
 
