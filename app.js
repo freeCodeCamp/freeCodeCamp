@@ -310,9 +310,6 @@ app.get('/nodeschool-challenges', function(req, res) {
 });
 
 
-app.get('/news', function(req, res) {
-  res.redirect(301, '/stories/');
-});
 app.get('/learn-to-code', challengeMapController.challengeMap);
 app.get('/about', function(req, res) {
   res.redirect(301, '/map');
@@ -476,7 +473,7 @@ app.post(
 );
 
 app.get(
-  '/stories/',
+  '/news/',
   storyController.hot
 );
 
@@ -486,7 +483,7 @@ app.post(
 );
 
 app.get(
-  '/stories/:storyName',
+  '/news/:storyName',
   storyController.returnIndividualStory
 );
 

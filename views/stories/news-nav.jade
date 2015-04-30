@@ -1,18 +1,20 @@
 
 
-.row
-    .col-xs-12.col-sm-9
-        .input-group
-            input#searchArea.big-text-field.field-responsive.form-control(type='text', placeholder='Search our links', autofocus)
-            span.input-group-btn
-                button#searchbutton.btn.btn-big.btn-primary.btn-responsive(type='button') Search
-        .visible-xs
-            .button-spacer
-    .col-xs-12.col-sm-3
-        span
-            a.btn.btn-primary.btn-big.btn-block.btn-responsive(href='/stories/submit' class="#{ page === 'hot' ? '' : 'hidden' }") Submit
-        span
-            a.btn.btn-success.btn-big.btn-block.btn-responsive(href='/stories/' class="#{ (page !== 'hot') ? '' : 'hidden' }") All
+.panel.shadow
+    .panel-body
+        .col-xs-12.col-sm-9
+            .input-group
+                input#searchArea.big-text-field.field-responsive.form-control(type='text', placeholder='Search our links')
+                span.input-group-btn
+                    button#searchbutton.btn.btn-big.btn-primary.btn-responsive(type='button') Search
+            .visible-xs
+                .button-spacer
+        .col-xs-12.col-sm-3
+            span
+                a.btn.btn-primary.btn-big.btn-block.btn-responsive(href='/stories/submit' class="#{ page === 'hot' ? '' : 'hidden' }") Submit
+            span
+                a.btn.btn-success.btn-big.btn-block.btn-responsive(href='/news/' class="#{ (page !== 'hot') ? '' : 'hidden' }") All
+
 .spacer
 #search-results
 .spacer
