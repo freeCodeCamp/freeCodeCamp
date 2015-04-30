@@ -974,7 +974,7 @@
   },
   {
     "_id": "bd7158d8c443eddfaeb5bdee",
-    "name": "Basejump: Build a Pintrest Clone",
+    "name": "Basejump: Build a Pinterest Clone",
     "difficulty": 2.05,
     "challengeSeed": "123488494",
     "description": [
@@ -986,11 +986,11 @@
       "<span class='text-info'>User Story:</span> As an unauthenticated user, I can login with Twitter.",
       "<span class='text-info'>User Story:</span> As an authenticated user, I can link to images.",
       "<span class='text-info'>User Story:</span> As an authenticated user, I can delete images that I've linked to.",
-      "<span class='text-info'>User Story:</span> As an authenticated user, I can see a Pintrest-style wall of all the images I've linked to.",
+      "<span class='text-info'>User Story:</span> As an authenticated user, I can see a Pinterest-style wall of all the images I've linked to.",
       "<span class='text-info'>User Story:</span> As an unauthenticated user, I can browse other users' walls of images.",
       "<span class='text-info'>User Story:</span> As an unauthenticated user, I can see everyone's polls, but not be able to vote.",
       "<span class='text-info'>Bonus User Story:</span> As an authenticated user, if I upload an image that is broken, it will be replaced by a placeholder image. (can use jQuery broken image detection)",
-      "<span class='text-info'>Hint:</span> <a href='http://masonry.desandro.com/' target='_blank'>Masonry.js</a> is a library that allows for Pintrest-style image grids.",
+      "<span class='text-info'>Hint:</span> <a href='http://masonry.desandro.com/' target='_blank'>Masonry.js</a> is a library that allows for Pinterest-style image grids.",
       "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your Github repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
       "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
