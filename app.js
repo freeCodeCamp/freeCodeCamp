@@ -414,7 +414,7 @@ app.get('/api/slack', function(req, res) {
           });
           return res.redirect('back');
         }
-      })
+      });
     } else {
       req.flash('notice', {
         msg: "Before we can send your Slack invite, we need your email address. Please update your profile information here."
