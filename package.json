@@ -63,6 +63,7 @@
     "request": "^2.53.0",
     "sanitize-html": "^1.6.1",
     "sitemap": "^0.7.4",
+    "twit": "^1.1.20",
     "uglify-js": "^2.4.15",
     "validator": "^3.22.1",
     "yui": "^3.18.1"
