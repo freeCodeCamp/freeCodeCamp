@@ -150,6 +150,8 @@ var userSchema = new mongoose.Schema({
   needsMigration: { type: Boolean, default: true },
   pair: {
     onlineStatus: {type:Boolean, default: false},
+    // used to let middleware know if the user needs notification
+    expireStatus: {type:String, default: 'norequest'}, // 'norequest', 'online', 'notify'
     timeOnline: {type:Date, default: new Date()}
   }
 });

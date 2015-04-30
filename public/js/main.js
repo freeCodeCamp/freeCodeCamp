@@ -107,19 +107,6 @@ $(document).ready(function() {
         delete timer;
       }
     },
-    setup: function() {
-      if (this.firstPairTimer) {
-        this.cancel(this.firstPairTimer);
-      }
-      var self=this;
-      self.Started = true;
-      self.startTime = new Date();
-      console.log(self.startTime);
-      self.targetTime = new Date(self.startTime + 5000);
-      //this.firstPairTimer = window.setTimeout(function() {self.warnUser()}, 15000);
-      // prints to DevTools.
-      return "You have 60 minutes before your pair programming request expires. You can always renew it by going to PairUp, or cancel by taking yourself offline.";
-    },
     warnUser: function() {
       
         // do the stuff 
@@ -141,9 +128,6 @@ $(document).ready(function() {
       this.cancel(this.finalPairCountdown);
 
       $('#expired-paircode-request').modal('hide');
-      
-      // start a new one for 55
-      this.setup();
 
       // renew the request on the server
       $.get('/pair-coding/refresh').success(function() {
@@ -161,10 +145,15 @@ $(document).ready(function() {
   };
 
   console.log("timer started?", PairCodeTimer.started);
-  console.log("");
+  console.log("find the user time online", user.pair.timeOnline);
 
-  if ((PairCodeTimer.started) && (PairCodeTimer.targetTime-PairCodeTimer.startTime)) {
+  // testing value of 5 seconds
+  var elapsed = (Date.now() - new Date(user.pair.timeOnline));
+  console.log("Looking for 5000, time elapsed: ", elapsed);
+  if (user.pair.expireStatus !== 'norequest' && elapsed > 5000) {
     PairCodeTimer.warnUser();
+  } else if (user.pair.expireStatus !== 'norequest' && elapsed > 10000) {
+    PairCodeTimer.pairReqExpired();
   }
 
   $('.next-bonfire-button').on('click', function() {

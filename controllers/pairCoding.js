@@ -100,12 +100,25 @@ exports.refreshPairRequest = function(req, res, next) {
         } else {
           // acts as middleware to keep the user on the page.
           console.log("Your request was successfully refreshed.");
-          return next();
+          return;
         }
 
       });
     }
   });
+
+  User.findById(req.user.id, function(err, user) {
+    if (err) {
+      return next(err);
+    } else if (!user) {
+      req.flash('errors', {
+        msg: "Could not find your user information."
+      });
+      return res.redirect('/pair-coding');
+    } else {
+      return next();
+    }
+  })
 }
 
 
@@ -166,6 +179,8 @@ exports.removeStalePosts = function() {
       // set that user to be offline
       User.findById(pair.user, function(err, user) {
         user.pair.onlineStatus = false;
+        user.pair.timeOnline = null;
+        user.pair.expireStatus = 'notify';
         user.save(function(err) {
           if (err) {
             console.log("error saving user with new online status.");
@@ -243,6 +258,7 @@ exports.removeStaleSlackUsers = function() {
                         }
                         
                       });
+
                     }
 
                   });
@@ -262,35 +278,40 @@ exports.removeStaleSlackUsers = function() {
   });
 };
 
-
-exports.setOffline = function(req, res, next){
-  // change the user's online status
-
-  User.findById(req.user._id, function(err, user) {
+function takeUserOffline(user) {
+  User.findById(user._id, function(err, user) {
     if (err) {
-      return next(err);
+      return err;
     }
     user.pair.onlineStatus = false;
-    user.pair.timeOnline = new Date();
+    user.pair.timeOnline = null;
+    user.pair.expireStatus = 'notify';
     user.save(function(err) {
       if (err) {
-        return next(err);
+        return err;
       }
     });
   });
   // remove the pair requests from that user
-  PairUser.findOne({user: req.user._id}, function(err, pair) {
+  PairUser.findOne({user: user._id}, function(err, pair) {
     if (err) {
-      return next(err);
+      return err;
     }
     if (pair !== null){
       pair.remove(function(err) {
         if (err) {
-          return next(err);
+          return err;
         }
       });
     }
   });
+};
+
+
+exports.setOffline = function(req, res, next){
+  // change the user's online status
+
+  takeUserOffline(req.user);
 
   req.flash('success', {
     msg: 'Successfully taken offline.'

@@ -236,6 +236,19 @@ app.use(function (req, res, next) {
 });
 
 app.use(function (req, res, next) {
+  if (req.user.pair.expireStatus === 'notify') {
+    req.flash('errors', {
+      msg: "Your pair request was removed and you are listed as being offline."
+    });
+    req.user.pair.expireStatus = 'norequest';
+    console.log("expire status", req.user.pair.expireStatus);
+    next();
+  } else {
+    next();
+  }
+});
+
+app.use(function (req, res, next) {
     // Remember original destination before login.
     var path = req.path.split('/')[1];
     if (/auth|login|logout|signin|signup|fonts|favicon/i.test(path)) {
