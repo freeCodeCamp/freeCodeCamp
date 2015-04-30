@@ -532,7 +532,7 @@
     "_id": "bd7153d8c441eddfaeb5bd0f",
     "name": "Manage Packages with NPM",
     "difficulty": 0.39,
-    "challengeSeed": "114685061",
+    "challengeSeed": "126433450",
     "description": [
       "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
       "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -832,7 +832,7 @@
     "_id": "bd7158d8c443eddfaeb5bcef",
     "name": "Get Set for Basejumps",
     "difficulty": 2.00,
-    "challengeSeed": "123488494",
+    "challengeSeed": "126433451",
     "description": [
       "<span class='text-info'>Objective:</span> Get the MEAN stack running on Cloud 9, push your code to GitHub, and deploy it to Heroku.",
       "We'll build our Basejumps on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
