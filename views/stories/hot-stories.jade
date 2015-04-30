@@ -21,46 +21,45 @@
 
                         $(div)
                         .html(
-                            "<div class='row'>" +
-                                "<div class='hidden-xs col-sm-2 col-md-1 positive-5 news-number'>" +
-                                    (i + 1) +
-                                "</div>" +
-                                "<div class='visible-xs col-sm-2 col-md-1'>" +
+                            "<div class='visible-xs row'>" +
+                                "<div class='visible-xs col-sm-1 col-md-1'>" +
                                     "<a href='" + data[i].link + "'>" +
                                         "<img class='mobile-story-image img-responsive' src='" + (!!data[i].image ? data[i].image : data[i].author.picture) + "'/>" +
                                     "</a>" +
                                 "</div>" +
-                                "<div class='hidden-xs col-sm-2 col-md-1'>" +
-                                    "<a href='/" + data[i].author.username + "'>" +
-                                        "<img class='img-responsive ' src='" + data[i].author.picture + "'/>" +
-                                    "</a>" +
+                                "<div class='visible-xs'>" +
+                                    "<div class='col-xs-12 text-center'>" +
+                                        rank + (rank > 1 ? " points" : " point") + " · posted " +
+                                        moment(data[i].timePosted).fromNow() +
+                                        " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +
+                                    "</div>" +
+                                    "<div class='col-xs-12'>" +
+                                        "<br><a class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost' href='/stories/" + linkedName + "'>discuss</a>" +
+                                    "</div>" +
                                 "</div>" +
-                                "<div class='col-xs-12 col-sm-8 col-md-10'>" +
-                                    "<div class='row'>" +
-                                        "<div class='story-headline col-xs-12 wrappable'>" +
-                                            "<a href='" + data[i].link + "' target='_blank'>" +
-                                                data[i].headline +
-                                            "</a>" +
-                                        "</div>" +
-                                        "<div class='hidden-xs'>" +
-                                            "<span>" +
+                            "</div>" +
+                            "<div class='hidden-xs row media-stories'>" +
+                                "<div class='media'>" +
+                                    "<div class='media-left'>" +
+                                        "<a href='/'" + data[i].author.username + "'>" +
+                                            "<img class='img-news' src='" + data[i].author.picture + "'/>" +
+                                        "</a>" +
+                                    "</div>" +
+                                    "<h2 class='media-body'>" +
+                                        "<div class='media-body-wrapper'>" +
+                                            "<div class='story-headline'>" +
+                                                "<a href='" + data[i].link + "' target='_blank'>" +
+                                                    data[i].headline +
+                                                "</a>" +
+                                            "</div>" +
+                                            "<div class='story-byline col-xs-12 wrappable'>" +
                                                 "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' href='/stories/" + linkedName + "'>discuss</a> · " +
                                                 rank + (rank > 1 ? " points" : " point") + " · posted " +
                                                 moment(data[i].timePosted).fromNow() +
                                                 " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +
-                                            "</span>" +
-                                        "</div>" +
-                                        "<div class='visible-xs'>" +
-                                            "<div class='col-xs-12 text-center'>" +
-                                                rank + (rank > 1 ? " points" : " point") + " · posted " +
-                                                moment(data[i].timePosted).fromNow() +
-                                                " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +
-                                            "</div>" +
-                                            "<div class='col-xs-12'>" +
-                                                "<br><a class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost' href='/stories/" + linkedName + "'>discuss</a>" +
                                             "</div>" +
                                         "</div>" +
-                                    "</div>" +
+                                    "</h2>" +
                                 "</div>" +
                             "</div>"
                         );

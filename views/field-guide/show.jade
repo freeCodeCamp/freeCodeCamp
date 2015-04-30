@@ -20,19 +20,19 @@ block content
                         .ten-pixel-break
                         a.btn.btn-big.signup-btn.btn-block(href="/login") Start learning to code (it's free)
         .spacer
-#show-all-dialog.modal(tabindex='-1')
-    .modal-dialog.animated.fadeInUp.fast-animation
-        .modal-content
-            .modal-header.all-list-header Field Guide Articles
-                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-            .modal-body
-                include ../partials/field-guide
-#fieldGuideId.hidden= fieldGuideId
-script.
-    $(document).ready(function() {
-        $('body').keydown(function(e) {
-            if (e.ctrlKey && e.keyCode == 13) {
-                $('.next-field-guide-button').click();
-            }
+    #show-all-dialog.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.all-list-header Field Guide Articles
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    include ../partials/field-guide
+    #fieldGuideId.hidden= fieldGuideId
+    script.
+        $(document).ready(function() {
+            $('body').keydown(function(e) {
+                if (e.ctrlKey && e.keyCode == 13) {
+                    $('.next-field-guide-button').click();
+                }
+            });
         });
-    });
