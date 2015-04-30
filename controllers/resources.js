@@ -482,7 +482,15 @@ module.exports = {
         access_token_secret:  secrets.twitter.tokenSecret
       });
 
-      T.get('search/tweets', {q: 'javascript', count:10}, function(err, data, response) {
+      console.log(req.params);
+
+      if (req.params.screenName) {
+        screenName = req.params.screenName;
+      } else {
+        screenName = 'freecodecamp';
+      }
+
+      T.get('statuses/user_timeline', {screen_name: screenName, count:10}, function(err, data, response) {
         return res.json(data);
       });
     },
