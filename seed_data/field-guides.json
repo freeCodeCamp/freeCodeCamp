@@ -236,29 +236,6 @@
     ]
   },
   {
-    "_id": "bd7158d9c442eddfaeb5bdef",
-    "name": "Global Control Shortcuts for Mac",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h2 class='text-center'>These Global Control Shortcuts for Mac will save you hours by speeding up your typing</h2>",
-      "<div class=\"embed-responsive embed-responsive-16by9\"><iframe src=\"//player.vimeo.com/video/107073108\" class=\"embed-responsive-item\"></iframe></div>",
-      "<div class=\"text-left\">",
-      "  <h3>These global shortcuts work everywhere on a Mac:",
-      "    <ul>",
-      "      <li>Control + F = Forward</li>",
-      "      <li>Control + B = Backward</li>",
-      "      <li>Control + N = Next Line</li>",
-      "      <li>Control + P = Previous Line</li>",
-      "      <li>Control + H = Backspace</li>",
-      "      <li>Control + D = Delete</li>",
-      "      <li>Control + A = Beginning of Line</li>",
-      "      <li>Control + E = End of Line</li>",
-      "      <li>Control + K = Kill line</li>",
-      "    </ul>",
-      "</div>"
-    ]
-  },
-  {
     "_id": "bd7159d9c442eddfaeb5bdef",
     "name": "Global Mac Keyboard Shortcuts",
     "description": [
