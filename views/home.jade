@@ -24,7 +24,10 @@ block content
             .big-break
             .row
                 .col-xs-12.col-sm-8.col-sm-offset-2
-                    a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+                    if (user)
+                        a.btn.btn-cta.signup-btn.btn-block(href="/challenges") Go to my next challenge
+                    else
+                        a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
                     .spacer
                     a.btn.btn-cta.btn-success.btn-block(href="/nonprofits") My nonprofit needs coding help
                     .big-break
@@ -82,7 +85,7 @@ block content
                     li.ion-code &thinsp; You'll work through our focused, interactive courses and tutorials
                     li.ion-code &thinsp; You'll learn to code at your own pace, in your browser or on your phone
                     li.ion-code &thinsp; You'll become qualified for thousands of jobs currently going unfilled
-                    li.ion-code &thinsp; You can get help in real time from our community chat rooms and forum
+                    li.ion-code &thinsp; You can get help in real time from our community chat rooms
                     li.ion-code &thinsp; We all share one common goal: to boost our careers with code
             .big-break
             .row
