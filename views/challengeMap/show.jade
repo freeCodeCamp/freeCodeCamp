@@ -112,21 +112,21 @@ block content
                                                 a(href="/nonprofits/directory") Browse our nonprofit projects
                         p * Complete all Waypoints, Bonfires, Ziplines and Basejumps to be assigned your first nonprofit project
 
-    //#announcementModal.modal(tabindex='-1')
-    //    .modal-dialog
-    //        .modal-content
-    //            .modal-header.challenge-list-header We've updated our curriculum
-    //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-    //            .modal-body
-    //                h3.text-left We now have a 1,600 hour curriculum and tons of new challenges. Read more about it
-    //                    a(href='http://blog.freecodecamp.com', target='_blank') here
-    //                    | .
-    //                a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='http://blog.freecodecamp.com/', target='_blank') Take me to the blog post.
-    //                a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up!
-    //script.
-    //    $(document).ready(function () {
-    //        if (!localStorage || !localStorage.newCurriculum) {
-    //            $('#announcementModal').modal('show');
-    //            localStorage.campWideMeeting = "true";
-    //        }
-    //    });
+    #announcementModal.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header Join our Saturday Summit!
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    h3.text-left Saturday at Noon EDT: We'll live-stream our Saturday Summit on Twitch.tv. Join us as our community turns 200 days old. We'll have Nonprofit Project demos from 6 of our campers. &thinsp;
+                        a(href='http://www.freecodecamp.com/twitch', target='_blank') Add it to your calendar here
+                        | .
+                    a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='http://twitch.tv/freecodecamp', target='_blank') Follow us on Twitch.tv
+                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up!
+    script.
+        $(document).ready(function () {
+            if (!localStorage || !localStorage.day200) {
+                $('#announcementModal').modal('show');
+                localStorage.day200 = "true";
+            }
+        });

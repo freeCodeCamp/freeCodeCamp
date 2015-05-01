@@ -141,6 +141,7 @@ var userSchema = new mongoose.Schema({
   },
   needsMigration: { type: Boolean, default: true },
   finishedWaypoints: { type: Boolean, default: false },
+  sendMonthlyEmail: { type: Boolean, default: true },
   challengesHash: {}
 });
 
