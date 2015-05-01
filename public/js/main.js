@@ -265,7 +265,7 @@ $(document).ready(function() {
         $('#story-submit').bind('click', storySubmitButtonHandler);
       })
       .done(function (data, textStatus, xhr) {
-        window.location = '/stories/' + JSON.parse(data).storyLink;
+        window.location = '/news/' + JSON.parse(data).storyLink;
       });
 
   };

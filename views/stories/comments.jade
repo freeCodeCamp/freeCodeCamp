@@ -96,6 +96,7 @@
                                     $('#comment-to-comment-textinput').keyup(function (e) {
                                         if (e.which === 13 || e === 13) {
                                             $('#submit-comment-to-comment').click();
+                                            $('#submit-comment-to-edit').click();
                                         }
                                         var text_length = $('#comment-to-comment-textinput').val().length;
                                         var text_remaining = text_max - text_length;

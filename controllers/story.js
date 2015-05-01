@@ -131,13 +131,13 @@ exports.returnIndividualStory = function(req, res, next) {
         msg: "404: We couldn't find a story with that name. Please double check the name."
       });
 
-      return res.redirect('/stories/');
+      return res.redirect('/news/');
     }
 
     story = story.pop();
     var dashedNameFull = story.storyLink.toLowerCase().replace(/\s/g, '-');
     if (dashedNameFull !== dashedName) {
-      return res.redirect('../stories/' + dashedNameFull);
+      return res.redirect('../news/' + dashedNameFull);
     }
 
     var userVoted = false;
@@ -285,7 +285,7 @@ exports.newStory = function(req, res, next) {
       });
       return res.json({
         alreadyPosted: true,
-        storyURL: '/stories/' + story.pop().storyLink
+        storyURL: '/news/' + story.pop().storyLink
       });
     }
     resources.getURLTitle(url, processResponse);
@@ -535,7 +535,7 @@ exports.storySubmission = function(req, res, next) {
                   text: [
                     'Just a quick heads-up: ' + data.author.username + ' replied to you on Camper News.',
                     'You can keep this conversation going.',
-                    'Just head back to the discussion here: http://freecodecamp.com/stories/' + data.originalStoryLink,
+                    'Just head back to the discussion here: http://freecodecamp.com/news/' + data.originalStoryLink,
                     '- the Free Code Camp Volunteer Team'
                   ].join('\n')
                 };
