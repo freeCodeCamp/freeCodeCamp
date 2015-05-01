@@ -32,6 +32,7 @@ var express = require('express'),
   expressValidator = require('express-validator'),
   connectAssets = require('connect-assets'),
   request = require('request'),
+  forceDomain = require('forcedomain'),
 
     /**
      * Controllers (route handlers).
@@ -82,15 +83,9 @@ app.set('view engine', 'jade');
 
 
 if (process.env.NODE_ENV === 'production') {
-  app.all(/.*/, function (req, res, next) {
-    var host = req.header('host');
-    var originalUrl = req['originalUrl'];
-    if (host.match(/^www\..*/i)) {
-      next();
-    } else {
-      res.redirect(301, 'http://www.' + host + originalUrl);
-    }
-  });
+  app.use(forceDomain({
+    hostname: 'www.freecodecamp.com'
+  }));
 }
 
 app.use(compress());
