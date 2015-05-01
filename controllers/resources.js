@@ -187,10 +187,6 @@ module.exports = {
 
   unsubscribe: function unsubscribe(req, res) {
     User.findOne({email: req.params.email}, function(err, user) {
-      console.log('---------');
-      console.log(req.params);
-      console.log('---------');
-      console.log(user);
       if (user) {
         if (err) {
           return next(err);
