@@ -185,6 +185,31 @@ module.exports = {
     });
   },
 
+  unsubscribe: function unsubscribe(req, res) {
+    User.findOne({email: req.params.email}, function(err, user) {
+      if (user) {
+        if (err) {
+          return next(err);
+        }
+        user.sendMonthlyEmail = false;
+        user.save(function () {
+          if (err) {
+            return next(err);
+          }
+          res.redirect('/unsubscribed');
+        });
+      } else {
+        res.redirect('/unsubscribed');
+      }
+    });
+  },
+
+  unsubscribed: function unsubscribed(req, res) {
+    res.render('resources/unsubscribed', {
+      title: "You have been unsubscribed"
+    });
+  },
+
   githubCalls: function(req, res) {
     var githubHeaders = {headers: {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1521.3 Safari/537.36'}, port:80 };
     request('https://api.github.com/repos/freecodecamp/freecodecamp/pulls?client_id=' + secrets.github.clientID + '&client_secret=' + secrets.github.clientSecret, githubHeaders, function(err, status1, pulls) {
