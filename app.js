@@ -514,6 +514,16 @@ app.post(
   storyController.upvote
 );
 
+app.get(
+  '/unsubscribe/:email',
+  resourcesController.unsubscribe
+);
+
+app.get(
+  '/unsubscribed',
+  resourcesController.unsubscribed
+);
+
 app.all('/account', passportConf.isAuthenticated);
 
 app.get('/account/api', userController.getAccountAngular);
