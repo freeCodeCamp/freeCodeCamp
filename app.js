@@ -275,9 +275,9 @@ app.get('/pmi-acp-agile-project-managers-form', resourcesController.agileProject
 
 app.get('/nonprofits', resourcesController.nonprofits);
 
+app.get('/nonprofits/getNonprofitList', nonprofitController.showAllNonprofits);
+
 app.get('/nonprofits-form', resourcesController.nonprofitsForm);
-
-
 
 app.get('/map', challengeMapController.challengeMap);
 
