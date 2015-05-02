@@ -8,9 +8,9 @@ block content
                     ol
                         for step, index in details
                             .row.checklist-element(id="#{dashedName + index}")
-                                .col-xs-2.col-sm-1.col-md-2.padded-ionic-icon.text-center
+                                .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
                                     input(type='checkbox' class='challenge-list-checkbox')
-                                .col-xs-10.col-sm-11.col-md-10
+                                .col-xs-9.col-sm-11.col-md-10
                                     li
                                         .step-text!= step
         .col-xs-12.col-sm-12.col-md-8
@@ -35,13 +35,13 @@ block content
                 var controlEnterHandler = function (e) {
                   $('body').unbind('keypress');
                   if (e.ctrlKey && e.keyCode == 13) {
-                    $('#complete-courseware-dialog').modal('show');
+                    $('#complete-zipline-or-basejump-dialog').modal('show');
                   } else {
                     $('body').bind('keypress', controlEnterHandler);
                   }
                 };
                 var modalControlEnterHandler = function (e) {
-                  $('#complete-courseware-dialog').unbind('keypress');
+                  $('#complete-zipline-or-basejump-dialog').unbind('keypress');
                   if (e.ctrlKey && e.keyCode == 13) {
                     $('#next-courseware-button').click();
                   } else {
@@ -83,6 +83,7 @@ block content
                           $('#complete-zipline-or-basejump-dialog').on('keypress', modalControlEnterHandler);
 
                         - if (user.progressTimestamps.length > 2)
+                            .button-spacer
                             a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
                                 i.fa.fa-twitter &thinsp;
                                     = phrase

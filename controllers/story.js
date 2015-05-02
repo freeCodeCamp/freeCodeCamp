@@ -131,13 +131,13 @@ exports.returnIndividualStory = function(req, res, next) {
         msg: "404: We couldn't find a story with that name. Please double check the name."
       });
 
-      return res.redirect('/stories/');
+      return res.redirect('/news/');
     }
 
     story = story.pop();
     var dashedNameFull = story.storyLink.toLowerCase().replace(/\s/g, '-');
     if (dashedNameFull !== dashedName) {
-      return res.redirect('../stories/' + dashedNameFull);
+      return res.redirect('../news/' + dashedNameFull);
     }
 
     var userVoted = false;
@@ -285,7 +285,7 @@ exports.newStory = function(req, res, next) {
       });
       return res.json({
         alreadyPosted: true,
-        storyURL: '/stories/' + story.pop().storyLink
+        storyURL: '/news/' + story.pop().storyLink
       });
     }
     resources.getURLTitle(url, processResponse);

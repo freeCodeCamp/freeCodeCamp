@@ -27,9 +27,20 @@ html {
   overflow-x: hidden;
 }
 
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  padding: 10px;
+}
+
 body.full-screen-body-background {
   background-color: #eeeeee;
 }
+
 
 body.top-and-bottom-margins {
   padding-top: 80px;
@@ -85,6 +96,10 @@ h1, h2, h3, h4, h5, h6, p, li {
   height: 100px;
 }
 
+.darker-background {
+  background-color: #dedede;
+}
+
 /**/
 
 .btn-cta {
@@ -95,7 +110,14 @@ h1, h2, h3, h4, h5, h6, p, li {
   font-size: 28px;
 }
 
-.btn {
+.btn, .shadow {
+  white-space: normal;
+  -webkit-box-shadow: 2px 4px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow:    2px 4px 1px rgba(0, 0, 0, 0.3);
+  box-shadow:         2px 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn, .shadow {
   white-space: normal;
   -webkit-box-shadow: 2px 4px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow:    2px 4px 1px rgba(0, 0, 0, 0.3);
@@ -902,12 +924,46 @@ iframe.iphone {
 //  background-color: #e5e5e5;
 //}
 
-.media-news {
-  width: 100%;
+.news-box {
+  @media (min-width: 768px) {
+    margin-top: -40px;
+  }
+  @media (max-width: 767px) {
+    padding: 5px;
+    border-color: @brand-info;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    width: 100%;
+    float: left;
+  }
 }
 
 .story-headline {
   font-size: 20px;
+  margin-left: 14px;
+  margin-top: -5px;
+}
+
+.story-byline {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.media-stories {
+  margin-left: 20px;
+}
+
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: @gray;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
 }
 
 #reply-to-main-post, #upvote {
@@ -943,6 +999,19 @@ iframe.iphone {
   height: 40px;
 }
 
+.news-number {
+  font-size: 30px;
+  text-align: center;
+}
+
+.mobile-story-image {
+  border-radius: 5px;
+  width: 100%;
+  @media (max-width: 768px) {
+    margin-right: 5px;
+  }
+}
+
 .alert a {
   text-decoration: underline;
 }
@@ -969,6 +1038,9 @@ iframe.iphone {
     margin-right: -20px;
 }
 
+.border-radius-5 {
+  border-radius: 5px;
+}
 
 //uncomment this to see the dimensions of all elements outlined in red
 //* {
