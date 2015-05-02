@@ -32,6 +32,7 @@ var express = require('express'),
   expressValidator = require('express-validator'),
   connectAssets = require('connect-assets'),
   request = require('request'),
+  forceDomain = require('forcedomain'),
 
     /**
      * Controllers (route handlers).
@@ -48,7 +49,7 @@ var express = require('express'),
     /**
      *  Stories
      */
-    storyController = require('./controllers/story');
+    storyController = require('./controllers/story'),
 
     /**
      * API keys and Passport configuration.
@@ -81,19 +82,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 if (process.env.NODE_ENV === 'production') {
-  app.all(/.*/, function (req, res, next) {
-    var host = req.header('host');
-    var originalUrl = req['originalUrl'];
-    if (host.match(/^www\..*/i)) {
-      next();
-    } else {
-      res.redirect(301, "http://www." + host + originalUrl);
-    }
-  });
+  app.use(forceDomain({
+    hostname: 'www.freecodecamp.com'
+  }));
 }
 
 app.use(compress());
 var oneYear = 31557600000;
+// todo
+// another app.use(express.static...) call
 app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
 app.use(connectAssets({
     paths: [
@@ -134,8 +131,10 @@ app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.xframe());
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers',
+               'Origin, X-Requested-With, Content-Type, Accept'
+              );
     next();
 });
 
@@ -183,7 +182,7 @@ app.use(helmet.contentSecurityPolicy({
     scriptSrc: [
         '*.optimizely.com',
         '*.aspnetcdn.com',
-        '*.d3js.org',
+        '*.d3js.org'
     ].concat(trusted),
     'connect-src': [
         'ws://*.rafflecopter.com',
@@ -203,7 +202,8 @@ app.use(helmet.contentSecurityPolicy({
         'graph.facebook.com',
         '*.githubusercontent.com',
         '*.googleusercontent.com',
-        '*' /* allow all input since we have user submitted images for public profile*/
+    /* allow all input since we have user submitted images for public profile*/
+        '*'
     ].concat(trusted),
     fontSrc: ['*.googleapis.com'].concat(trusted),
     mediaSrc: [
@@ -244,7 +244,8 @@ app.use(function (req, res, next) {
 app.use(
   express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
 );
-
+// todo
+// why are there two express.static declarations?
 app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
 
 /**
@@ -263,13 +264,15 @@ app.get('/twitch', resourcesController.twitch);
 
 // Agile Project Manager Onboarding
 
-app.get('/pmi-acp-agile-project-managers', resourcesController.agileProjectManagers);
+app.get('/pmi-acp-agile-project-managers',
+        resourcesController.agileProjectManagers);
 
 app.get('/agile', function(req, res) {
   res.redirect(301, '/pmi-acp-agile-project-managers');
 });
 
-app.get('/pmi-acp-agile-project-managers-form', resourcesController.agileProjectManagersForm);
+app.get('/pmi-acp-agile-project-managers-form',
+        resourcesController.agileProjectManagersForm);
 
 // Nonprofit Onboarding
 
@@ -404,7 +407,7 @@ app.get('/api/slack', function(req, res) {
           });
           return res.redirect('back');
         }
-      })
+      });
     } else {
       req.flash('notice', {
         msg: "Before we can send your Slack invite, we need your email address. Please update your profile information here."
@@ -550,7 +553,9 @@ app.post('/completed-bonfire/', bonfireController.completedBonfire);
  */
 
 
-app.get('/field-guide/:fieldGuideName', fieldGuideController.returnIndividualFieldGuide);
+app.get('/field-guide/:fieldGuideName',
+        fieldGuideController.returnIndividualFieldGuide
+       );
 
 app.get('/field-guide/', fieldGuideController.returnNextFieldGuide);
 
@@ -574,9 +579,13 @@ app.post('/completed-zipline-or-basejump',
   coursewareController.completedZiplineOrBasejump);
 
 // Unique Check API route
-app.get('/api/checkUniqueUsername/:username', userController.checkUniqueUsername);
+app.get('/api/checkUniqueUsername/:username',
+        userController.checkUniqueUsername
+       );
 
-app.get('/api/checkExistingUsername/:username', userController.checkExistingUsername);
+app.get('/api/checkExistingUsername/:username',
+        userController.checkExistingUsername
+       );
 
 app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
 

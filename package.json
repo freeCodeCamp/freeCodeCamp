@@ -35,6 +35,7 @@
     "express-session": "^1.9.2",
     "express-validator": "^2.8.0",
     "font-awesome": "^4.3.0",
+    "forcedomain": "^0.4.0",
     "forever": "^0.14.1",
     "github-api": "^0.7.0",
     "gulp-minify-css": "^0.5.1",
