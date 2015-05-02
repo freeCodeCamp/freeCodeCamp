@@ -939,6 +939,21 @@ iframe.iphone {
   }
 }
 
+.news-box-search {
+  @media (min-width: 768px) {
+    margin-top: -50px;
+  }
+  @media (max-width: 767px) {
+    padding: 5px;
+    border-color: @brand-info;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    width: 100%;
+    float: left;
+  }
+}
+
 .story-headline {
   font-size: 20px;
   margin-left: 14px;
@@ -974,6 +989,10 @@ hr {
   -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   -moz-box-shadow:    0px 0px 0px rgba(0, 0, 0, 0);
   box-shadow:         0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.dotted-underline {
+  border-bottom: dashed 1px @brand-success;
 }
 
 #cal-heatmap {
