@@ -80,7 +80,6 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-
 if (process.env.NODE_ENV === 'production') {
   app.all(/.*/, function (req, res, next) {
     var host = req.header('host');
@@ -311,9 +310,6 @@ app.get('/nodeschool-challenges', function(req, res) {
 });
 
 
-app.get('/news', function(req, res) {
-  res.redirect(301, '/stories/hot');
-});
 app.get('/learn-to-code', challengeMapController.challengeMap);
 app.get('/about', function(req, res) {
   res.redirect(301, '/map');
@@ -437,13 +433,6 @@ app.get(
 );
 
 app.get(
-  '/stories/',
-  function(req, res) {
-    res.redirect(302, '/stories/hot');
-  }
-);
-
-app.get(
   '/stories/comments/:id',
   storyController.comments
 );
@@ -484,19 +473,8 @@ app.post(
 );
 
 app.get(
-  '/stories/hot',
+  '/news/',
   storyController.hot
-);
-
-app.get(
-  '/stories/recent',
-  storyController.recent
-);
-
-
-app.get(
-  '/stories/search',
-  storyController.search
 );
 
 app.post(
@@ -505,7 +483,7 @@ app.post(
 );
 
 app.get(
-  '/stories/:storyName',
+  '/news/:storyName',
   storyController.returnIndividualStory
 );
 

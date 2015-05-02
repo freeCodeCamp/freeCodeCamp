@@ -2,27 +2,24 @@ extends ../layout
 block content
     script.
         var challengeName = 'Field Guide View';
-    .col-xs-12.col-sm-12.col-md-12
-        .panel.panel-info
-            .panel-heading.text-center
-                h1= title
-            .panel-body
-                .row
-                    .col-xs-12
-                        div!= description
-                .spacer
-                .spacer
-                .spacer
-                .col-xs-12.col-sm-6.col-sm-offset-3
-                    .text-center
-                        if user
-                            .next-field-guide-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
-                            .ten-pixel-break
-                        #showAllButton.btn.btn-info.btn-big.btn-block Show me all articles
-                        if !user
-                            .ten-pixel-break
-                            a.btn.btn-big.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+    .panel.panel-info.no-padding
+        .panel-heading.text-center
+            h1= title
+        .panel-body
+            div!= description
             .spacer
+            .spacer
+            .spacer
+            .col-xs-12.col-sm-6.col-sm-offset-3
+                .text-center
+                    if user
+                        .next-field-guide-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
+                        .ten-pixel-break
+                    #showAllButton.btn.btn-info.btn-big.btn-block Show me all articles
+                    if !user
+                        .ten-pixel-break
+                        a.btn.btn-big.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+        .spacer
     #show-all-dialog.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
             .modal-content

@@ -46,10 +46,10 @@
   },
   {
     "_id": "bd7158d9c441eddfaeb5bd2f",
-    "name": "What are the advantages of Free Code Camp?",
+    "name": "What are the main advantages of Free Code Camp?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h3>",
+      "<h3>Our main advantage is that we're accessible to busy adults who want to change careers. Specifically, we're:",
       "  <ul>",
       "    <li>&bull; Free</li>",
       "    <li>&bull; Self-paced</li>",
@@ -66,17 +66,17 @@
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
       "<h2>Our free, self-paced, browser-based program takes about 1,600 hours to complete.",
       "<div class='spacer'></div>",
-      "<img class='img-center img-responsive' alt='First you'll do about 200 hours of lessons. These are our \"Waypoints\".' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-waypoints.jpg'/>",
+      "<img class='img-center img-responsive' alt='An image of a table showing the different segments of Free Code Camp's curriculum. This one shows that first you'll do about 200 hours of lessons. These are our \"Waypoints\".' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-waypoints.jpg'/>",
       "<div class='spacer'></div>",
-      "<img class='img-center img-responsive' alt='Next you'll write algorithms for 200 hours. These are our \"Bonfires\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-bonfires.jpg'/>",
+      "<img class='img-center img-responsive' alt='An image of a table showing the different segments of Free Code Camp's curriculum. This one shows that next you'll write algorithms for 200 hours. These are our \"Bonfires\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-bonfires.jpg'/>",
       "<div class='spacer'></div>",
-      "<img class='img-center img-responsive' alt='Next you'll write algorithms for 200 hours. These are our \"Ziplines\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-ziplines.jpg'/>",
+      "<img class='img-center img-responsive' alt='An image of a table showing the different segments of Free Code Camp's curriculum. This one shows that next you'll write algorithms for 200 hours. These are our \"Ziplines\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-ziplines.jpg'/>",
       "<div class='spacer'></div>",
-      "<img class='img-center img-responsive' alt='Next you'll write algorithms for 200 hours. These are our \"Basejumps\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-basejumps.jpg'/>",
+      "<img class='img-center img-responsive' alt='An image of a table showing the different segments of Free Code Camp's curriculum. This one shows that next you'll write algorithms for 200 hours. These are our \"Basejumps\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-basejumps.jpg'/>",
       "<div class='spacer'></div>",
-      "<img class='img-center img-responsive' alt='Finally you build full stack JavaScript apps for nonprofits for 600 hours. These are our \"Nonprofit Projects\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-nonprofit-projects.jpg'/>",
+      "<img class='img-center img-responsive' alt='An image of a table showing the different segments of Free Code Camp's curriculum. This one shows that finally you build full stack JavaScript apps for nonprofits for 600 hours. These are our \"Nonprofit Projects\"' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-nonprofit-projects.jpg'/>",
       "<div class='spacer'></div>",
-      "<img class='img-center img-responsive' alt='This gives you a total of 1,600 hours of coding experience.' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg'/>",
+      "<img class='img-center img-responsive' alt='An image of a table showing the different segments of Free Code Camp's curriculum. This one shows that all of these sections summed up for a total of 1,600 hours of coding experience.' src='https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg'/>",
       "</div>"
     ]
   },
@@ -117,7 +117,6 @@
       "      <ul>",
       "        <li class=\"landing-p\">&#8226 JavaScript - the one programming language that all web browsers use</li>",
       "        <li class=\"landing-p\">&#8226 Algorithms - step-by-step recipes for getting things done</li>",
-      "        <li class=\"landing-p\">&#8226 Automated Testing - write tests to test the limits of your code</li>",
       "      </ul>",
       "    </p>",
       "    <p class=\"landing-p\">Finally you'll learn Agile Methodologies and Full Stack JavaScript to build projects for nonprofits:",
@@ -192,6 +191,39 @@
     ]
   },
   {
+    "_id": "bd7158d9c436eddfaeb5bd2f",
+    "name": "How do I get help when I get stuck?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h3>When you get stuck, remember: RSAP.</h3>",
+      "<p>",
+      "  <ol>",
+      "    <li><span class='text-info'>Read</span> the documentation or error</li>",
+      "    <li><span class='text-info'>Search</span> Google</li>",
+      "    <li><span class='text-info'>Ask</span> your friends for help</li>",
+      "    <li><span class='text-info'>Post</span> on Stack Overflow</li>",
+      "  </ol>",
+      "</p>",
+      "<p>This is the most time-efficient way to handle being stuck, and it's the most respectful of other people's time, too.</p>",
+      "<p>Most of the time, you'll solve your problem after just one or two steps of this algorithm.</p>",
+      "<p>We have a special chat room just for getting help: <a href='https://freecode.slack.com/messages/help/' target='_blank'>https://freecode.slack.com/messages/help/</a></p>",
+      "<p>Also, if you need to post on Stack Overflow, be sure to read their guide to asking good questions: <a href='http://stackoverflow.com/help/how-to-ask' target='_blank'>http://stackoverflow.com/help/how-to-ask</a>.</p>",
+      "<p>Learning to code is hard. But it's a lot easier if you ask for help when you need it!</p>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfaeb5bd3f",
+    "name": "Can I jump around in this Field Guide?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "<h3>This Field Guide was designed as a reference for you. You shouldn't try to read it all today.</h3>",
+      "<h3>Feel free to come back any time and jump around, reading any articles that seem interesting to you at the time.</h3>",
+      "<h3>If you're currently doing our \"Browse our Field Guide\" Waypoint, go ahead and mark that challenge complete and move on to your next Waypoint.</h3>",
+      "</div>"
+    ]
+  },
+  {
     "_id": "bd7158d9c436eddfaeb5bdef",
     "name": "If Free Code Camp is free, how does it make money?",
     "description": [
@@ -214,59 +246,14 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd2f",
-    "name": "How do I get help when I get stuck?",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h3>When you get stuck, remember: RSAP.</h3>",
-      "<h3>",
-      "  <ol>",
-      "    <li><span class='text-info'>Read</span> the documentation or error</li>",
-      "    <li><span class='text-info'>Search</span> Google</li>",
-      "    <li><span class='text-info'>Ask</span> your friends for help</li>",
-      "    <li><span class='text-info'>Post</span> on Stack Overflow</li>",
-      "  </ol>",
-      "</h3>",
-      "<h3>This is the most time-efficient way to handle being stuck, and it's the most respectful of other people's time, too.</h3>",
-      "<h3>Most of the time, you'll solve your problem after just one or two steps of this algorithm.</h3>",
-      "<h3>We have a special chat room just for getting help: <a href='https://freecode.slack.com/messages/help/' target='_blank'>https://freecode.slack.com/messages/help/</a></h3>",
-      "<h3>Also, if you need to post on Stack Overflow, be sure to read their guide to asking good questions: <a href='http://stackoverflow.com/help/how-to-ask' target='_blank'>http://stackoverflow.com/help/how-to-ask</a>.</h3>",
-      "<h3>Learning to code is hard. But it's a lot easier if you ask for help when you need it!</h3>",
-      "</div>"
-    ]
-  },
-  {
     "_id": "bd7158d9c442eddfaeb5bdef",
-    "name": "Global Control Shortcuts for Mac",
+    "name": "How do I best use the Global Control Shortcuts for Mac?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h2 class='text-center'>These Global Control Shortcuts for Mac will save you hours by speeding up your typing</h2>",
+      "<h2 class='text-center'>These Global Control Shortcuts for Mac will save you hours by speeding up your typing</h2><br>",
       "<div class=\"embed-responsive embed-responsive-16by9\"><iframe src=\"//player.vimeo.com/video/107073108\" class=\"embed-responsive-item\"></iframe></div>",
       "<div class=\"text-left\">",
-      "  <h3>These global shortcuts work everywhere on a Mac:",
-      "    <ul>",
-      "      <li>Control + F = Forward</li>",
-      "      <li>Control + B = Backward</li>",
-      "      <li>Control + N = Next Line</li>",
-      "      <li>Control + P = Previous Line</li>",
-      "      <li>Control + H = Backspace</li>",
-      "      <li>Control + D = Delete</li>",
-      "      <li>Control + A = Beginning of Line</li>",
-      "      <li>Control + E = End of Line</li>",
-      "      <li>Control + K = Kill line</li>",
-      "    </ul>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7159d9c442eddfaeb5bdef",
-    "name": "Global Mac Keyboard Shortcuts",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h2 class='text-center'></h2>",
-      "<div class=\"embed-responsive embed-responsive-16by9\"><iframe src=\"//player.vimeo.com/video/107073108\" class=\"embed-responsive-item\"></iframe></div>",
-      "<div class=\"text-left\">",
-      "  <h3>These global shortcuts work everywhere on a Mac:",
+      "  <h3>These global shortcuts work everywhere on a Mac:</h3>",
       "    <ul>",
       "      <li>Control + F = Forward</li>",
       "      <li>Control + B = Backward</li>",
@@ -283,9 +270,9 @@
   },
   {
     "_id": "bd7158d9c445eddfaeb5bdef",
-    "name": "Gmail Zero Inbox Shortcuts",
+    "name": "How can I get to Inbox Zero with Gmail Shortcuts?",
     "description": [
-      "<h2 class='text-center'>These Gmail Shortcuts will save you hours and help you get to Zero Inbox</h2><br/>",
+      "<h2 class='text-center'>These Gmail Shortcuts will save you hours and help you get to Zero Inbox.</h2><br/>",
       "<div class=\"embed-responsive embed-responsive-16by9\">",
       "  <iframe src=\"//player.vimeo.com/video/115194016\" class=\"embed-responsive-item\"></iframe>",
       "</div>",
@@ -310,10 +297,10 @@
   },
   {
     "_id": "bd7158d9c446eddfaeb5bdef",
-    "name": "A Guide to our Nonprofit Projects",
+    "name": "How do Free Code Camp's Nonprofit Projects work?",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
-      "<h2>Building nonprofit projects is the main way that our campers learn full stack JavaScript and agile software development. Once you complete the Free Code Camp challenges and Bonfire challenges, you'll begin this process.</p>",
+      "<p>Building nonprofit projects is the main way that our campers learn full stack JavaScript and agile software development. Once you complete the Free Code Camp challenges and Bonfire challenges, you'll begin this process.</p>",
       "<p>Once you've finished all the challenges, click the \"I'm done with all the challenges\" button, which will become enabled. We will prompt you for your email address, then give you further instructions on our &thinsp;<a href=\"http://www.freecodecamp.com/nonprofit-project-instructions\">Nonprofit Projects Instructions page</a>.</p>",
       "<p>We will add you to our &thinsp;<a href=\"https://trello.com/b/BA3xVpz9/nonprofit-projects\">Nonprofit Project Trello board</a>.</p>",
       "<h2>Starting with the end in mind</h2>",
@@ -321,7 +308,7 @@
       "<p>You'll continue to work on nonprofit projects until you've built a sufficiently impressive portfolio and references to start your job search. Your portfolio will ultimately have three to five nonprofit projects. We estimate that the 900 hours of nonprofit projects you're going to complete, in addition to the 100 hours of challenges you've already completed, will be enough to qualify you for your first coding job. This will produce a much broader portfolio than a traditional coding bootcamp, which generally only has one or two capstone projects.</p>",
       "<h2>Choosing your first Nonprofit Project</h2>",
       "<p>We've categorized all the nonprofit projects by estimated time investment per camper: 100 hours, 200 hours, and 300 hours. These are only rough estimates.</p>",
-      "<p>Example: if you and the camper you're paired up with (your pair) each stated you could work 20 hours per week (on the &thinsp;<a href=\"http://goo.gl/forms/f61dLt67t8\">form you filled out</a>). If the project is a 100 hour per camper project, you should be able to complete it in about 5 weeks.</p>",
+      "<p>Example: if you and the camper you're paired up with (your pair) each stated you could work 20 hours per week. If the project is a 100 hour per camper project, you should be able to complete it in about 5 weeks.</p>",
       "<p>Our team of nonprofit project camp counselors will match you and your pair based on:",
       "  <ol>",
       "    <li>Your estimated time commitment (10, 20 or 40 hours per week)</li>",
@@ -382,20 +369,18 @@
   },
   {
     "_id": "bd7158d9c447eddfaeb5bdef",
-    "name": "Install Screenhero",
+    "name": "How do I install Screenhero?",
     "description": [
       "<div class='text-center'>",
       "<h2><a href=\"http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjowLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLnppcD9zb3VyY2U9d2ViIn0=\">Download for Mac</a></h2>",
       "<h2><a href=\"http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjoxLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLXNldHVwLmV4ZSJ9\"> Download for Windows</a></h2>",
-      "<p>You can learn more about using Screen Hero by taking &thinsp;<a href=\"http://www.freecodecamp.com/challenges/34\">Challenge 34.</a></p>",
-      "<p>Screen Hero was recently acquired by a collaboration tool called Slack.</p>",
-      "It's still available and free, but will go away in the indefinite future. We'll replace it.</p>",
+      "<h2>You'll use Screen Hero in <a href='/challenges/pair-program-on-bonfires'>http://freecodecamp.com/challenges/pair-program-on-bonfires</a></h2>",
       "</div>"
     ]
   },
   {
     "_id": "bd7158d9c451eddfaeb5bded",
-    "name": "Bonfire Style Guide",
+    "name": "What is the style guide for Bonfires?",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "<h3>Writing Bonfire challenges is a great way to exercise your own problem solving and testing abilities. Follow this process closely to maximize the chances of us accepting your bonfire.</h3>",
@@ -430,7 +415,7 @@
   },
   {
     "_id": "bd7158d9c451eddfaeb5bdef",
-    "name": "The Free Code Camp Privacy Policy",
+    "name": "What is Free Code Camp Privacy Policy?",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "<p>Free Code Camp is committed to respecting the privacy of visitors to our web sites and web applications. The guidelines below explain how we protect the privacy of visitors to FreeCodeCamp.com and its features.</p>",

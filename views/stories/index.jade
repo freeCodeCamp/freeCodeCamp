@@ -19,8 +19,6 @@ block content
             .spacer
             if (page === 'hot')
                 include ./hot-stories
-            if (page === 'recent')
-                include ./new-stories
             if (page === 'submit')
                 if (user)
                     include ./preliminary-submit
@@ -29,8 +27,6 @@ block content
                     .text-center
                         a.btn.btn-cta.signup-btn.btn-primary(href="/login") Sign in to post your story (it's free)
                     .spacer
-            if (page === 'search')
-                include ./search-stories
             if (page === 'storySubmission')
                 include ./submit-story
             if (page === 'show')
