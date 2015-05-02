@@ -1,116 +1,114 @@
 extends ../layout
 block content
-    .col-xs-12.col-sm-12.col-md-12
-        .panel.panel-info
-            .panel-heading.text-center
-                h1 Challenge Map
-            .panel-body
-                .col-xs-12
-                    if (Math.random() > 0.99)
-                        img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner-dino.png')
-                    else
-                        img.img-responsive.img-center(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
-                    .col-xs-12.col-md-8.col-md-offset-2
-                        h2.text-center
-                            span.text-primary #{camperCount} &thinsp;
-                            | campers have joined our community
-                            br
-                            | since we launched &thinsp;
-                            span.text-primary #{daysRunning} &thinsp;
-                            | days ago.
-                        h2
-                            span.fa.fa-flag
-                            | &nbsp; Waypoints (200 hours of lessons)
+    .panel.panel-info
+        .panel-heading.text-center
+            h1 Challenge Map
+        .panel-body
+            if (Math.random() > 0.99)
+                img.img-responsive.img-center.border-radius-5(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner-dino.png')
+            else
+                img.img-responsive.img-center.border-radius-5(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
+            .col-xs-12.col-md-8.col-md-offset-2
+                h2.text-center
+                    span.text-primary #{camperCount} &thinsp;
+                    | campers have joined our community
+                    br
+                    | since we launched &thinsp;
+                    span.text-primary #{daysRunning} &thinsp;
+                    | days ago.
+                h2
+                    span.fa.fa-flag
+                    | &nbsp; Waypoints (200 hours of lessons)
 
-                        .col-xs-12
-                            h3.negative-15
-                                ol
-                                    for waypoint in waypoints
-                                        if completedCoursewareList.indexOf(waypoint._id) > -1
-                                            .row
-                                                .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
-                                                .col-xs-12.col-sm-9.col-md-10
-                                                    li.faded
-                                                        a(href="/challenges/#{waypoint.name}")= waypoint.name
+                .col-xs-12.no-right-padding
+                    h3.negative-15
+                        ol
+                            for waypoint in waypoints
+                                if completedCoursewareList.indexOf(waypoint._id) > -1
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li.faded
+                                                a(href="/challenges/#{waypoint.name}")= waypoint.name
 
-                                        else
-                                            .row
-                                                .hidden-xs.col-sm-3.col-md-2
-                                                    span
-                                                .col-xs-12.col-sm-9.col-md-10
-                                                    li
-                                                        a(href="/challenges/#{waypoint.name}")= waypoint.name
-                        h2
-                            span.ion-bonfire
-                            | &nbsp; Bonfires (200 hours of JavaScript algorithm practice)
-                        .col-xs-12
-                            h3.negative-15
-                                ol
-                                    for bonfire in bonfires
-                                        if completedBonfireList.indexOf(bonfire._id) > -1
-                                            .row
-                                                .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
-                                                .col-xs-12.col-sm-9.col-md-10
-                                                    li.faded
-                                                        a(href="/bonfires/#{bonfire.name}")= bonfire.name
-                                        else
-                                            .row
-                                                .hidden-xs.col-sm-3.col-md-2
-                                                    span
-                                                .col-xs-12.col-sm-9.col-md-10
-                                                    li
-                                                        a(href="/bonfires/#{bonfire.name}")= bonfire.name
-                        h2
-                            span.fa.fa-angle-double-right
-                            | &nbsp; Ziplines (200 hours of front end development)
-                        .col-xs-12
-                            h3.negative-15
-                                ol
-                                    for zipline in ziplines
-                                        if completedCoursewareList.indexOf(zipline._id) > -1
-                                            .row
-                                                .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
-                                                .col-xs-12.col-sm-9.col-md-10
-                                                    li.faded
-                                                        a(href="/challenges/#{zipline.name}")= zipline.name
-                                        else
-                                            .row
-                                                .hidden-xs.col-sm-3.col-md-2
-                                                    span
-                                                .col-xs-12.col-sm-9.col-md-10
-                                                    li
-                                                        a(href="/challenges/#{zipline.name}")= zipline.name
-                        h2
-                            span.fa.fa-level-down
-                            | &nbsp; Basejumps (200 hours of full stack development)
-                        .col-xs-12
-                            h3.negative-15
-                                ol
-                                    for basejump in basejumps
-                                        if completedCoursewareList.indexOf(basejump._id) > -1
-                                            .row
-                                                .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
-                                                .col-xs-12.col-sm-9.col-md-10
-                                                    li.faded
-                                                        a(href="/challenges/#{basejump.name}")= basejump.name
-                                        else
-                                            .row
-                                                .hidden-xs.col-sm-3.col-md-2
-                                                    span
-                                                .col-xs-12.col-sm-9.col-md-10
-                                                    li
-                                                        a(href="/challenges/#{basejump.name}")= basejump.name
-                        h2
-                            span.ion-ios-heart &nbsp; Nonprofit Projects (800 hours of real-world experience)*
-                            h3.negative-15
-                                ul
+                                else
                                     .row
                                         .hidden-xs.col-sm-3.col-md-2
                                             span
                                         .col-xs-12.col-sm-9.col-md-10
                                             li
-                                                a(href="/nonprofits/directory") Browse our nonprofit projects
-                        p * Complete all Waypoints, Bonfires, Ziplines and Basejumps to be assigned your first nonprofit project
+                                                a(href="/challenges/#{waypoint.name}")= waypoint.name
+                h2
+                    span.ion-bonfire
+                    | &nbsp; Bonfires (200 hours of JavaScript algorithm practice)
+                .col-xs-12
+                    h3.negative-15
+                        ol
+                            for bonfire in bonfires
+                                if completedBonfireList.indexOf(bonfire._id) > -1
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li.faded
+                                                a(href="/bonfires/#{bonfire.name}")= bonfire.name
+                                else
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2
+                                            span
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li
+                                                a(href="/bonfires/#{bonfire.name}")= bonfire.name
+                h2
+                    span.fa.fa-angle-double-right
+                    | &nbsp; Ziplines (200 hours of front end development)
+                .col-xs-12
+                    h3.negative-15
+                        ol
+                            for zipline in ziplines
+                                if completedCoursewareList.indexOf(zipline._id) > -1
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li.faded
+                                                a(href="/challenges/#{zipline.name}")= zipline.name
+                                else
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2
+                                            span
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li
+                                                a(href="/challenges/#{zipline.name}")= zipline.name
+                h2
+                    span.fa.fa-level-down
+                    | &nbsp; Basejumps (200 hours of full stack development)
+                .col-xs-12
+                    h3.negative-15
+                        ol
+                            for basejump in basejumps
+                                if completedCoursewareList.indexOf(basejump._id) > -1
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li.faded
+                                                a(href="/challenges/#{basejump.name}")= basejump.name
+                                else
+                                    .row
+                                        .hidden-xs.col-sm-3.col-md-2
+                                            span
+                                        .col-xs-12.col-sm-9.col-md-10
+                                            li
+                                                a(href="/challenges/#{basejump.name}")= basejump.name
+                h2
+                    span.ion-ios-heart &nbsp; Nonprofit Projects (800 hours of real-world experience)*
+                    h3.negative-15
+                        ul
+                            .row
+                                .hidden-xs.col-sm-3.col-md-2
+                                    span
+                                .col-xs-12.col-sm-9.col-md-10
+                                    li
+                                        a(href="/nonprofits/directory") Browse our nonprofit projects
+                p * Complete all Waypoints, Bonfires, Ziplines and Basejumps to be assigned your first nonprofit project
 
     #announcementModal.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
@@ -118,7 +116,11 @@ block content
                 .modal-header.challenge-list-header Join our Saturday Summit!
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
+<<<<<<< HEAD
                     h3.text-left Saturday at Noon EDT: We'll live-stream our Saturday Summit on Twitch.tv. Join us as our community turns 200 days old. We'll have Nonprofit Project demos from 6 of our campers. &thinsp;
+=======
+                    h3.text-left Saturday at Noon EDT: We'll live-stream our Saturday Summit on Twitch.tv Join us as our community turns 200 days old. We'll have Nonprofit Project demos from 6 of our campers. &thinsp;
+>>>>>>> f17d8abf015930ec01d9a701c5f8241966344432
                         a(href='http://www.freecodecamp.com/twitch', target='_blank') Add it to your calendar here
                         | .
                     a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='http://twitch.tv/freecodecamp', target='_blank') Follow us on Twitch.tv

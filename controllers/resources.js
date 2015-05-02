@@ -432,7 +432,7 @@ module.exports = {
           var urlImage = metaImage.attr('content') ? metaImage.attr('content') : '';
           var metaTitle = $('title');
           var description = metaDescription.attr('content') ? metaDescription.attr('content') : '';
-          result.title = metaTitle.text().length < 141 ? metaTitle.text() : metaTitle.text().slice(0, 137) + " ...";
+          result.title = metaTitle.text().length < 90 ? metaTitle.text() : metaTitle.text().slice(0, 87) + "...";
           result.image = urlImage;
           result.description = description;
           callback(null, result);

@@ -8,9 +8,9 @@ block content
                     ol
                         for step, index in details
                             .row.checklist-element(id="#{dashedName + index}")
-                                .col-xs-2.col-sm-1.col-md-2.padded-ionic-icon.text-center
+                                .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
                                     input(type='checkbox' class='challenge-list-checkbox')
-                                .col-xs-10.col-sm-11.col-md-10
+                                .col-xs-9.col-sm-11.col-md-10
                                     li
                                         .step-text!= step
         .col-xs-12.col-sm-12.col-md-8
@@ -67,6 +67,7 @@ block content
                               $('#complete-courseware-dialog').bind('keypress', modalControlEnterHandler);
 
                             - if (user.progressTimestamps.length > 2)
+                                .button-spacer
                                 a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
                                     i.fa.fa-twitter &thinsp;
                                     = phrase
