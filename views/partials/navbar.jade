@@ -41,17 +41,9 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                     else
                         a(href='/account') [&thinsp;#{user.progressTimestamps.length}&thinsp;]
                 .hidden-xs.hidden-sm
-                    if user.profile.picture
-                        if (user.profile.username)
-                            a(href='/' + user.profile.username)
-                                img.profile-picture.float-right(src='#{user.profile.picture}')
-                        else
-                            a(href='/account')
-                                img.profile-picture.float-right(src='#{user.profile.picture}')
+                    if (user.profile.username)
+                        a(href='/' + user.profile.username)
+                            img.profile-picture.float-right(src='#{user.profile.picture}')
                     else
-                        if (user.profile.username)
-                            a(href='/' + user.profile.username)
-                                img.profile-picture.float-right(src='#{user.gravatar(60)}')
-                        else
-                            a(href='/account')
-                                img.profile-picture.float-right(src='#{user.gravatar(60)}')
+                        a(href='/account')
+                            img.profile-picture.float-right(src='#{user.profile.picture}')
