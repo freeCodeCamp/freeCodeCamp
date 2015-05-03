@@ -10,7 +10,7 @@ block content
                 .row.text-center
                     .col-xs-12.col-sm-10.col-sm-offset-1
                         a.btn.btn-big.btn-primary.btn-block(href="/account") Update my portfolio page or manage my account
-                        .spacer
+                        .button-spacer
                     .col-xs-12.col-sm-10.col-sm-offset-1
                         a.btn.btn-big.btn-success.btn-block(href="/signout") Sign out of Free Code Camp
                         .spacer
@@ -98,65 +98,73 @@ block content
                                 i.fa.icon-beaker
                                 | Try it out
 
-                .hidden-xs.col-sm-12
-                    script(src="//d3js.org/d3.v3.min.js")
-                    script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
-                    #cal-heatmap.img-center
-                        script.
-                            $(document).ready(function() {
-                                setTimeout(function() {
-                                    var cal = new CalHeatMap();
-                                    var calendar = !{JSON.stringify(calender)};
-                                    cal.init({
-                                        itemSelector: "#cal-heatmap",
-                                        domain: "month",
-                                        subDomain: "day",
-                                        data: calendar,
-                                        cellSize: 15,
-                                        align: 'center',
-                                        cellRadius: 3,
-                                        cellPadding: 2,
-                                        tooltip: true,
-                                        range: 4,
-                                        start: new Date().setDate(new Date().getDate() - 90),
-                                        legendColors: ["#cccccc", "#215f1e"],
-                                        legend: [1, 2, 3]
-                                    });
-                                }, 300);
-                            });
-                    .row
-                        .hidden-xs.col-sm-12.text-center
-                            .row.text-primary
-                                h4.col-sm-6.text-right Longest Streak: #{longestStreak}
-                                h4.col-sm-6.text-left Current Streak: #{currentStreak}
 
-                    - if (challenges.length > 0)
-                        .col-sm-12
-                            table.table.table-striped
-                                thead
-                                    tr
-                                        th.col-xs-4 Challenge
-                                        th.col-xs-2 Completed
-                                        th.col-xs-6 Link
-                                for challenge in challenges
-                                    tr
-                                        td.col-xs-4= challenge.name
-                                        td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
-                                        td.col-xs-6
-                                            a(href=challenge.solution) View my solution
+            .spacer
+            .hidden-xs.hidden-sm.col-md-12
+                script(src="//d3js.org/d3.v3.min.js")
+                script(src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js")
+                #cal-heatmap.d3-centered
+                    script.
+                        $(document).ready(function() {
+                            setTimeout(function() {
+                                var cal = new CalHeatMap();
+                                var calendar = !{JSON.stringify(calender)};
+                                cal.init({
+                                    itemSelector: "#cal-heatmap",
+                                    domain: "month",
+                                    subDomain: "x_day",
+                                    domainGutter: 10,
+                                    data: calendar,
+                                    cellSize: 15,
+                                    align: 'center',
+                                    cellRadius: 3,
+                                    cellPadding: 2,
+                                    tooltip: true,
+                                    range: 6,
+                                    start: new Date().setDate(new Date().getDate() - 150),
+                                    legendColors: ["#cccccc", "#215f1e"],
+                                    legend: [1, 2, 3],
+                                    label: {
+                                       position: "top"
+                                    }
+                                });
+                            }, 300);
+                        });
+                .row
+                    .hidden-xs.col-sm-12.text-center
+                        .row.text-primary
+                            h4.col-sm-6.text-right Longest Streak: #{longestStreak}
+                            h4.col-sm-6.text-left Current Streak: #{currentStreak}
 
-                                br
-                    - if (bonfires.length > 0)
-                        .col-sm-12
-                            table.table.table-striped
-                                thead
-                                    tr
-                                        th.col-xs-4 Bonfire
-                                        th.col-xs-2 Completed
-                                        th.col-xs-6 Solution
-                                for bonfire in bonfires
-                                    tr
-                                        td.col-xs-4= bonfire.name
-                                        td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
-                                        td.col-xs-6= bonfire.solution
-                                br
+            - if (challenges.length > 0)
+                .col-sm-12
+                    table.table.table-striped
+                        thead
+                            tr
+                                th.col-xs-4 Challenge
+                                th.col-xs-2 Completed
+                                th.col-xs-6 Link
+                        for challenge in challenges
+                            tr
+                                td.col-xs-4
+                                    a(href='/challenges/' + challenge.name)= challenge.name
+                                td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
+                                td.col-xs-6
+                                    a(href=challenge.solution) View my solution
+
+                        br
+            - if (bonfires.length > 0)
+                .col-sm-12
+                    table.table.table-striped
+                        thead
+                            tr
+                                th.col-xs-4 Bonfire
+                                th.col-xs-2 Completed
+                                th.col-xs-6 Solution
+                        for bonfire in bonfires
+                            tr
+                                td.col-xs-4
+                                     a(href='/bonfires/'+ bonfire.name)= bonfire.name
+                                td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
+                                td.col-xs-6= bonfire.solution
+                        br
