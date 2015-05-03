@@ -2,7 +2,6 @@ doctype html
 html(ng-app='profileValidation', lang='en')
   head
     include partials/universal-head
-    != css('main')
   body.top-and-bottom-margins
     include partials/css-cdns
     include partials/navbar
@@ -10,4 +9,3 @@ html(ng-app='profileValidation', lang='en')
       include partials/flash
       block content
     include partials/footer
-    != js('application')
