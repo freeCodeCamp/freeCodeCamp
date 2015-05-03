@@ -60,6 +60,11 @@ script.
                                         "<img class='mobile-story-image img-responsive' src='" + (!!data[i].image ? data[i].image : data[i].author.picture) + "'/>" +
                                     "</a>" +
                                 "</div>" +
+                                "<div class='col-xs-12 mobile-story-headline text-center'>" +
+                                    "<a href='" + data[i].link + "' target='_blank'>" +
+                                        data[i].headline +
+                                    "</a>" +
+                                "</div>" +
                                 "<div class='visible-xs'>" +
                                     "<div class='col-xs-12 text-center'>" +
                                         rank + (rank > 1 ? " points" : " point") + " · posted " +
