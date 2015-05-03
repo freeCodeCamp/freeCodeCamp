@@ -92,6 +92,7 @@ var oneYear = 31557600000;
 // todo
 // another app.use(express.static...) call
 app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
+app.use("/template", express.static(__dirname + "/public/bower_components/angular-ui-bootstrap/template"));
 app.use(connectAssets({
     paths: [
         path.join(__dirname, 'public/css'),
