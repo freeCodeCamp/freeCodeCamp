@@ -95,7 +95,8 @@ app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
 app.use(connectAssets({
     paths: [
         path.join(__dirname, 'public/css'),
-        path.join(__dirname, 'public/js')
+        path.join(__dirname, 'public/js'),
+        path.join(__dirname, '/bower_components')
     ],
     build: false,
     buildDir: false,
