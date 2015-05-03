@@ -45,7 +45,7 @@
     "lodash": "^2.4.1",
     "lusca": "^1.0.2",
     "method-override": "^2.3.0",
-    "moment": "^2.8.4",
+    "moment": "^2.10.2",
     "mongodb": "^1.4.33",
     "mongoose": "^4.0.1",
     "mongoose-long": "0.0.2",
