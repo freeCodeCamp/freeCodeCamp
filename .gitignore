@@ -27,3 +27,4 @@ bower_components
 .eslintignore
 .eslintrc
 main.css
+bundle.js
