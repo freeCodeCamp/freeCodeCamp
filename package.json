@@ -50,7 +50,6 @@
     "mongoose": "~4.0.1",
     "mongoose-long": "0.0.2",
     "morgan": "~1.5.0",
-    "newrelic": "~1.13.3",
     "nodemailer": "~1.3.0",
     "passport": "~0.2.1",
     "passport-facebook": "~1.0.3",

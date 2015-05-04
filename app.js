@@ -1,6 +1,3 @@
-if (process.env.NODE_ENV !== 'development') {
-  require('newrelic');
-}
 require('dotenv').load();
 // handle uncaught exceptions. Forever will restart process on shutdown
 process.on('uncaughtException', function (err) {
