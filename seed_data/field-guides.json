@@ -12,7 +12,7 @@
   },
   {
     "_id": "bd7158d9c441eddfaeb5bdff",
-    "name": "What is Free Code Camp?",
+    "name": "What exactly is Free Code Camp?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
       "<h2 class='text-left'>We're a community of busy people who learn to code by building projects for nonprofits.</h2>",
@@ -246,7 +246,6 @@
     ]
   },
   {
-<<<<<<< HEAD
     "_id": "bd7158d9c436eddfaeb5bd2f",
     "name": "How do I get help when I get stuck?",
     "description": [
@@ -269,12 +268,8 @@
     ]
   },
   {
-    "_id": "bd7159d9c442eddfaeb5bdef",
-    "name": "Global Mac Keyboard Shortcuts",
-=======
     "_id": "bd7158d9c442eddfaeb5bdef",
     "name": "How do I best use the Global Control Shortcuts for Mac?",
->>>>>>> f17d8abf015930ec01d9a701c5f8241966344432
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
       "<h2 class='text-center'>These Global Control Shortcuts for Mac will save you hours by speeding up your typing</h2><br>",

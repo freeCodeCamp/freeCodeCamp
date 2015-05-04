@@ -30,9 +30,9 @@ var express = require('express'),
   mongoose = require('mongoose'),
   passport = require('passport'),
   expressValidator = require('express-validator'),
-  connectAssets = require('connect-assets'),
   request = require('request'),
   forceDomain = require('forcedomain'),
+  lessMiddleware = require('less-middleware'),
 
     /**
      * Controllers (route handlers).
@@ -88,19 +88,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use(compress());
-var oneYear = 31557600000;
-// todo
-// another app.use(express.static...) call
-app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
-app.use(connectAssets({
-    paths: [
-        path.join(__dirname, 'public/css'),
-        path.join(__dirname, 'public/js')
-    ],
-    build: false,
-    buildDir: false,
-    helperContext: app.locals
-}));
+app.use(lessMiddleware(__dirname + '/public'));
+app.use(express.static(__dirname + '/public', {maxAge: 86400000 }));
+app.use("/template", express.static(__dirname + "/public/bower_components/angular-ui-bootstrap/template"));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -241,13 +231,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use(
-  express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
-);
-// todo
-// why are there two express.static declarations?
-app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
-
 /**
  * Main routes.
  */
@@ -277,6 +260,8 @@ app.get('/pmi-acp-agile-project-managers-form',
 // Nonprofit Onboarding
 
 app.get('/nonprofits', resourcesController.nonprofits);
+
+app.get('/nonprofits/getNonprofitList', nonprofitController.showAllNonprofits);
 
 app.get('/nonprofits-form', resourcesController.nonprofitsForm);
 
@@ -521,9 +506,7 @@ app.get('/api/trello', resourcesController.trelloCalls);
  * Bonfire related routes
  */
 
-app.get('/field-guide/getFieldGuideList',
-        fieldGuideController.showAllFieldGuides
-       );
+app.get('/field-guide/getFieldGuideList', fieldGuideController.showAllFieldGuides);
 
 app.get('/playground', bonfireController.index);
 
