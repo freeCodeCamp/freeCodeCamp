@@ -86,8 +86,6 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(compress());
 app.use(lessMiddleware(__dirname + '/public'));
-app.use(express.static(__dirname + '/public', {maxAge: 86400000 }));
-app.use("/template", express.static(__dirname + "/public/bower_components/angular-ui-bootstrap/template"));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -227,6 +225,9 @@ app.use(function (req, res, next) {
     req.session.returnTo = req.path;
     next();
 });
+app.use(express.static(__dirname + '/public', {maxAge: 86400000 }));
+app.use('/template', express.static(__dirname +
+  '/public/bower_components/angular-ui-bootstrap/template'));
 
 /**
  * Main routes.
