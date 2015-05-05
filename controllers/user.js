@@ -289,14 +289,25 @@ exports.returnUser = function(req, res, next) {
         if (moment(timeKeys[i - 1]).add(1, 'd').toString()
           === moment(timeKeys[i]).toString()) {
           tmpLongest++;
-          if (tmpLongest >  user.currentStreak) {
-            user.currentStreak = tmpLongest;
-          }
-          if ( user.currentStreak > user.longestStreak) {
-            user.longestStreak = user.currentStreak;
+          user.longestStreak = tmpLongest;
+        } else {
+          tmpLongest = 1;
+        }
+      }
+
+      timeKeys = timeKeys.reverse();
+      var today = moment(Date.now()), currStreak = 1;
+      if (moment(timeKeys[0]).add(1, 'd').toString === today.toString()) {
+        for (var i = 2; i <= timeKeys.length; i++) {
+          if (moment(timeKeys[i-1]).add(1, 'd').toString()
+          === moment(timeKeys[i]).toString()) {
+            currStreak++;
+          } else {
+            break;
           }
         }
       }
+      user.currentStreak = currStreak;
 
       user.save(function(err) {
         if (err) {
