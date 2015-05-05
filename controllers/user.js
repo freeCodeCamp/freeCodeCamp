@@ -331,7 +331,6 @@ exports.returnUser = function(req, res, next) {
         bio: user.profile.bio,
         picture: user.profile.picture,
         progressTimestamps: user.progressTimestamps,
-        points: user.progressTimestamps.length,
         website1Link: user.portfolio.website1Link,
         website1Title: user.portfolio.website1Title,
         website1Image: user.portfolio.website1Image,
