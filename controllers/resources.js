@@ -507,8 +507,6 @@ module.exports = {
         access_token_secret:  secrets.twitter.tokenSecret
       });
 
-      console.log(req.params);
-
       if (req.params.screenName) {
         screenName = req.params.screenName;
       } else {
