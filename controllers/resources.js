@@ -25,7 +25,8 @@ var async = require('async'),
  * Cached values
  */
 var allBonfireIds, allBonfireNames, allCoursewareIds, allCoursewareNames,
-  allFieldGuideIds, allFieldGuideNames, allNonprofitNames;
+  allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
+  allBonfireIndexesAndNames;
 
 /**
  * GET /
@@ -303,6 +304,31 @@ module.exports = {
         });
       return allBonfireIds;
     }
+  },
+
+  bonfiresIndexesAndNames: function() {
+    if (allBonfireIndexesAndNames) {
+      return allBonfireIndexesAndNames
+    } else {
+      var obj = {};
+      bonfires.forEach(function(elem) {
+        obj[elem._id] = elem.name;
+      });
+      allBonfireIndexesAndNames = obj;
+      return allBonfireIndexesAndNames;
+    }
+  },
+
+  ensureBonfireNames: function(completedBonfires) {
+    return completedBonfires.map(function(elem) {
+      return ({
+        name: this.bonfiresIndexesAndNames()[elem._id],
+        _id: elem.id,
+        completedDate: elem.completedDate,
+        completedWith: elem.completedWith,
+        solution: elem.solution
+      });
+    }.bind(this));
   },
 
   allFieldGuideIds: function() {

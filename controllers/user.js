@@ -299,7 +299,7 @@ exports.returnUser = function(req, res, next) {
       var today = moment(Date.now()), currStreak = 1;
       if (moment(timeKeys[0]).add(1, 'd').toString === today.toString()) {
         for (var i = 2; i <= timeKeys.length; i++) {
-          if (moment(timeKeys[i-1]).add(1, 'd').toString()
+          if (moment(timeKeys[i - 1]).add(1, 'd').toString()
           === moment(timeKeys[i]).toString()) {
             currStreak++;
           } else {
@@ -321,9 +321,17 @@ exports.returnUser = function(req, res, next) {
         data[(timeStamp / 1000)] = 1;
       });
 
-      //for (var i = 0; i < progressTimestamps.length; i++) {
-      //  data[(progressTimestamps[i] / 1000).toString()] = 1;
-      //}
+      if (!user.needsMigration) {
+        var currentlySolvedBonfires = user.completedBonfires;
+        user.completedBonfires =
+          resources.ensureBonfireNames(currentlySolvedBonfires);
+        user.needsMigration = true;
+        user.save(function(err) {
+          if (err) {
+            return next(err);
+          }
+        });
+      }
 
       user.currentStreak = user.currentStreak || 1;
       user.longestStreak = user.longestStreak || 1;
