@@ -52,6 +52,9 @@ cd freecodecamp
 # Install NPM dependencies
 npm install
 
+# Install Bower dependencies
+bower install
+
 # Create a .env file and populate it with the necessary API keys and secrets:
 touch .env
 

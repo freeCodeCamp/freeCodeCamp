@@ -26,14 +26,18 @@ h3.row
             .col-xs-12
                 h4= description
                 .negative-5
-                    a#reply-to-main-post.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Reply
-                    |  &thinsp;·&thinsp;&thinsp;
-                    if !hasUserVoted
-                        a#upvote.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvote
+                    if !user
+                        a#upvote.btn.signup-btn.btn-xs(href='/signin') Sign in to reply or upvote
                         |  &thinsp;·&thinsp;
                     else
-                        a#upvote.btn.disabled.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvoted!
-                        |  &thinsp;·&thinsp;
+                        a#reply-to-main-post.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Reply
+                        |  &thinsp;·&thinsp;&thinsp;
+                        if !hasUserVoted
+                            a#upvote.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvote
+                            |  &thinsp;·&thinsp;
+                        else
+                            a#upvote.btn.disabled.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvoted!
+                            |  &thinsp;·&thinsp;
                     span#storyRank= rank + (rank > 1 ? " points" : " point")
                     |  &thinsp;·&thinsp;
                     span Posted #{timeAgo}
@@ -56,10 +60,6 @@ script.
         $('#image-display').removeClass('hidden-element')
     }
     $('#reply-to-main-post').on('click', function() {
-        if (!isLoggedIn) {
-            window.location.href = '/signin';
-            return;
-        }
         $('#initial-comment-submit').removeClass('hidden-element');
         $(this).unbind('click');
         $('.comment-to-comment-formgroup').empty();

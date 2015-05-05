@@ -4,7 +4,7 @@ var R = require('ramda'),
   Story = require('./../models/Story'),
   Comment = require('./../models/Comment'),
   User = require('./../models/User'),
-  moment = require('../public/js/lib/moment/moment.js'),
+  moment = require('moment'),
   resources = require('./resources'),
   mongodb = require('mongodb'),
   MongoClient = mongodb.MongoClient,
@@ -534,7 +534,7 @@ exports.storySubmission = function(req, res, next) {
                 text: [
                   'Just a quick heads-up: ' + data.author.username + ' replied to you on Camper News.',
                   'You can keep this conversation going.',
-                  'Just head back to the discussion here: http://freecodecamp.com/stories/' + data.originalStoryLink,
+                  'Just head back to the discussion here: http://freecodecamp.com/news/' + data.originalStoryLink,
                   '- the Free Code Camp Volunteer Team'
                 ].join('\n')
               };

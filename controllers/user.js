@@ -289,14 +289,25 @@ exports.returnUser = function(req, res, next) {
         if (moment(timeKeys[i - 1]).add(1, 'd').toString()
           === moment(timeKeys[i]).toString()) {
           tmpLongest++;
-          if (tmpLongest >  user.currentStreak) {
-            user.currentStreak = tmpLongest;
-          }
-          if ( user.currentStreak > user.longestStreak) {
-            user.longestStreak = user.currentStreak;
+          user.longestStreak = tmpLongest;
+        } else {
+          tmpLongest = 1;
+        }
+      }
+
+      timeKeys = timeKeys.reverse();
+      var today = moment(Date.now()), currStreak = 1;
+      if (moment(timeKeys[0]).add(1, 'd').toString === today.toString()) {
+        for (var i = 2; i <= timeKeys.length; i++) {
+          if (moment(timeKeys[i - 1]).add(1, 'd').toString()
+          === moment(timeKeys[i]).toString()) {
+            currStreak++;
+          } else {
+            break;
           }
         }
       }
+      user.currentStreak = currStreak;
 
       user.save(function(err) {
         if (err) {
@@ -310,9 +321,17 @@ exports.returnUser = function(req, res, next) {
         data[(timeStamp / 1000)] = 1;
       });
 
-      //for (var i = 0; i < progressTimestamps.length; i++) {
-      //  data[(progressTimestamps[i] / 1000).toString()] = 1;
-      //}
+      if (!user.needsMigration) {
+        var currentlySolvedBonfires = user.completedBonfires;
+        user.completedBonfires =
+          resources.ensureBonfireNames(currentlySolvedBonfires);
+        user.needsMigration = true;
+        user.save(function(err) {
+          if (err) {
+            return next(err);
+          }
+        });
+      }
 
       user.currentStreak = user.currentStreak || 1;
       user.longestStreak = user.longestStreak || 1;
@@ -331,7 +350,6 @@ exports.returnUser = function(req, res, next) {
         bio: user.profile.bio,
         picture: user.profile.picture,
         progressTimestamps: user.progressTimestamps,
-        points: user.progressTimestamps.length,
         website1Link: user.portfolio.website1Link,
         website1Title: user.portfolio.website1Title,
         website1Image: user.portfolio.website1Image,

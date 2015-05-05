@@ -26,4 +26,5 @@ Thumbs.db
 bower_components
 .eslintignore
 .eslintrc
-public/js/bundle.js
+main.css
+bundle.js

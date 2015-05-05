@@ -1,6 +1,3 @@
-if (process.env.NODE_ENV !== 'development') {
-  require('newrelic');
-}
 require('dotenv').load();
 // handle uncaught exceptions. Forever will restart process on shutdown
 process.on('uncaughtException', function (err) {
@@ -30,9 +27,9 @@ var express = require('express'),
   mongoose = require('mongoose'),
   passport = require('passport'),
   expressValidator = require('express-validator'),
-  connectAssets = require('connect-assets'),
   request = require('request'),
   forceDomain = require('forcedomain'),
+  lessMiddleware = require('less-middleware'),
 
     /**
      * Controllers (route handlers).
@@ -88,19 +85,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use(compress());
-var oneYear = 31557600000;
-// todo
-// another app.use(express.static...) call
-app.use(express.static(__dirname + '/public', {maxAge: oneYear}));
-app.use(connectAssets({
-    paths: [
-        path.join(__dirname, 'public/css'),
-        path.join(__dirname, 'public/js')
-    ],
-    build: false,
-    buildDir: false,
-    helperContext: app.locals
-}));
+app.use(lessMiddleware(__dirname + '/public'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -240,13 +225,9 @@ app.use(function (req, res, next) {
     req.session.returnTo = req.path;
     next();
 });
-
-app.use(
-  express.static(path.join(__dirname, 'public'), {maxAge: 31557600000})
-);
-// todo
-// why are there two express.static declarations?
-app.use(express.static(__dirname + '/public', { maxAge: 86400000 }));
+app.use(express.static(__dirname + '/public', {maxAge: 86400000 }));
+app.use('/template', express.static(__dirname +
+  '/public/bower_components/angular-ui-bootstrap/template'));
 
 /**
  * Main routes.
@@ -518,6 +499,8 @@ app.get('/api/github', resourcesController.githubCalls);
 app.get('/api/blogger', resourcesController.bloggerCalls);
 
 app.get('/api/trello', resourcesController.trelloCalls);
+
+app.get('/api/codepen/twitter/:screenName', resourcesController.codepenResources.twitter);
 
 /**
  * Bonfire related routes
