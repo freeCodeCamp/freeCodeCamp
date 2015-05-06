@@ -161,7 +161,8 @@ block content
                                         th.col-xs-6 Solution
                                 for bonfire in bonfires
                                     tr
-                                        td.col-xs-4= bonfire.name
+                                        td.col-xs-4
+                                            a(href='/bonfires/' + bonfire.name)= bonfire.name
                                         td.col-xs-2= moment(bonfire.completedDate, 'x').format("MMM DD, YYYY")
                                         td.col-xs-6
                                             pre.wrappable= bonfire.solution
