@@ -127,6 +127,7 @@ app.use(function(req, res, next) {
 
 var trusted = [
   "'self'",
+  'blob:',
   '*.freecodecamp.com',
   '*.gstatic.com',
   '*.google-analytics.com',
@@ -139,7 +140,6 @@ var trusted = [
   '*.twimg.com',
   "'unsafe-eval'",
   "'unsafe-inline'",
-  '*.rafflecopter.com',
   '*.bootstrapcdn.com',
   '*.cloudflare.com',
   'https://*.cloudflare.com',
@@ -154,11 +154,7 @@ var trusted = [
   '*.youtube.com',
   '*.jsdelivr.net',
   'https://*.jsdelivr.net',
-  '*.togetherjs.com',
-  'https://*.togetherjs.com',
-  'wss://hub.togetherjs.com',
   '*.ytimg.com',
-  'wss://fcctogether.herokuapp.com',
   '*.bitly.com',
   'http://cdn.inspectlet.com/',
   'http://hn.inspectlet.com/'
@@ -169,28 +165,14 @@ app.use(helmet.contentSecurityPolicy({
     scriptSrc: [
         '*.optimizely.com',
         '*.aspnetcdn.com',
-        '*.d3js.org',
-        "* 'unsafe-inline'"
+        '*.d3js.org'
     ].concat(trusted),
     'connect-src': [
-        'ws://*.rafflecopter.com',
-        'wss://*.rafflecopter.com',
-        'https://*.rafflecopter.com',
-        'ws://www.freecodecamp.com',
-        'http://www.freecodecamp.com'
+        'ws://www.freecodecamp.com'
     ].concat(trusted),
     styleSrc: trusted,
     imgSrc: [
-        '*.evernote.com',
-        '*.amazonaws.com',
-        'data:',
-        '*.licdn.com',
-        '*.gravatar.com',
-        '*.akamaihd.net',
-        'graph.facebook.com',
-        '*.githubusercontent.com',
-        '*.googleusercontent.com',
-    /* allow all input since we have user submitted images for public profile*/
+          /* allow all input since we have user submitted images for public profile*/
         '*'
     ].concat(trusted),
     fontSrc: ['*.googleapis.com'].concat(trusted),
@@ -203,7 +185,6 @@ app.use(helmet.contentSecurityPolicy({
         '*.gitter.im https:',
         '*.vimeo.com',
         '*.twitter.com',
-        '*.rafflecopter.com',
         '*.ghbtns.com'
     ].concat(trusted),
     reportOnly: false, // set to true if you only want to report errors
