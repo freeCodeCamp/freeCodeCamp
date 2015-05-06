@@ -301,6 +301,7 @@ exports.returnUser = function(req, res, next) {
       timeKeys = timeKeys.reverse();
       tmpLongest = 1;
 
+      user.currentStreak = 1;
       var today = moment(Date.now()).format('YYYY-MM-DD');
 
       if (moment(today).toString() === moment(timeKeys[0]).toString() ||
