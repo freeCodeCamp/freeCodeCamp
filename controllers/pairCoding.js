@@ -60,6 +60,7 @@ exports.setOnline = function(req, res, next) {
         return next(err);
       }
       user.pair.onlineStatus = true;
+      user.pair.expireStatus = 'online';
       user.pair.timeOnline = new Date();
       user.save(function(err) {
         if (err) {
@@ -67,9 +68,6 @@ exports.setOnline = function(req, res, next) {
         }
       });
     });
-    //var gitSplit = req.user.profile.githubProfile.split("/");
-    //var gitUser = gitSplit[gitSplit.length-1];
-    //var slackUser = req.user.profile.slackHandle;
 
     newPairRequest(req.user._id, req.user.profile.username, req.body.comment, req.body.slackUser, req.body.details);
   }
@@ -319,6 +317,7 @@ exports.setOffline = function(req, res, next){
   return res.redirect('/pair-coding');
 
 };
+
 
 exports.returnPair = function(req, res, next){
   var usernameToPair = req.params.onlinePostuserName;

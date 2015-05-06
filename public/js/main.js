@@ -144,17 +144,34 @@ $(document).ready(function() {
 
   };
 
-  console.log("timer started?", PairCodeTimer.started);
-  console.log("find the user time online", user.pair.timeOnline);
+  var pairUserTimeOnline, pairRequestExpireStatus;
+  // get the current user's information
+  $.get('/account/api').success(function(data) {
+    // returns the user object
+    console.log("Got the user information", data.user);
+    var user = data.user;
+    
+    if (user.pair) {
 
-  // testing value of 5 seconds
-  var elapsed = (Date.now() - new Date(user.pair.timeOnline));
-  console.log("Looking for 5000, time elapsed: ", elapsed);
-  if (user.pair.expireStatus !== 'norequest' && elapsed > 5000) {
-    PairCodeTimer.warnUser();
-  } else if (user.pair.expireStatus !== 'norequest' && elapsed > 10000) {
-    PairCodeTimer.pairReqExpired();
-  }
+      pairUserTimeOnline = user.pair.timeOnline;
+      pairRequestExpireStatus = user.pair.expireStatus;
+
+            //console.log("can you see the user?", user.pair);
+      console.log("find the user time online", pairUserTimeOnline);
+
+
+      // testing value of 5 seconds
+      var elapsed = (Date.now() - new Date(pairUserTimeOnline));
+      console.log("Looking for 5000, time elapsed: ", elapsed);
+      if (pairRequestExpireStatus !== 'norequest' && elapsed > 5000) {
+        PairCodeTimer.warnUser();
+      } else if (pairRequestExpireStatus !== 'norequest' && elapsed > 10000) {
+        PairCodeTimer.pairReqExpired();
+      }
+    }
+  });
+
+
 
   $('.next-bonfire-button').on('click', function() {
     var bonfireSolution = myCodeMirror.getValue();
