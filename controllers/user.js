@@ -10,8 +10,6 @@ var _ = require('lodash'),
   resources = require('./resources'),
   R = require('ramda');
 
-
-
 /**
  * GET /signin
  * Siginin page.
