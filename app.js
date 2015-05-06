@@ -21,6 +21,8 @@ var express = require('express'),
   methodOverride = require('method-override'),
   bodyParser = require('body-parser'),
   helmet = require('helmet'),
+  frameguard = require('frameguard'),
+  csp = require('helmet-csp'),
   MongoStore = require('connect-mongo')(session),
   flash = require('express-flash'),
   path = require('path'),
@@ -114,7 +116,7 @@ app.disable('x-powered-by');
 
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
-app.use(helmet.xframe());
+app.use(helmet.frameguard());
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers',
@@ -127,6 +129,9 @@ var trusted = [
   "'self'",
   'blob:',
   '*.freecodecamp.com',
+  'http://www.freecodecamp.com',
+  'ws://freecodecamp.com/',
+  'ws://www.freecodecamp.com/',
   '*.gstatic.com',
   '*.google-analytics.com',
   '*.googleapis.com',
@@ -158,7 +163,7 @@ var trusted = [
   'http://hn.inspectlet.com/'
 ];
 
-app.use(helmet.contentSecurityPolicy({
+app.use(helmet.csp({
     defaultSrc: trusted,
     scriptSrc: [
         '*.optimizely.com',
@@ -166,7 +171,6 @@ app.use(helmet.contentSecurityPolicy({
         '*.d3js.org'
     ].concat(trusted),
     'connect-src': [
-        'ws://www.freecodecamp.com'
     ].concat(trusted),
     styleSrc: trusted,
     imgSrc: [
@@ -179,6 +183,7 @@ app.use(helmet.contentSecurityPolicy({
         '*.twitter.com'
     ].concat(trusted),
     frameSrc: [
+        
         '*.gitter.im',
         '*.gitter.im https:',
         '*.vimeo.com',
