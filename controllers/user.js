@@ -285,6 +285,7 @@ exports.returnUser = function(req, res, next) {
       var tmpLongest = 1;
       var timeKeys = R.keys(timeObject);
 
+      user.longestStreak = 0;
       for (var i = 1; i <= timeKeys.length; i++) {
         if (moment(timeKeys[i - 1]).add(1, 'd').toString()
           === moment(timeKeys[i]).toString()) {
@@ -298,18 +299,28 @@ exports.returnUser = function(req, res, next) {
       }
 
       timeKeys = timeKeys.reverse();
-      var today = moment(Date.now()), currStreak = 1;
-      if (moment(timeKeys[0]).add(1, 'd').toString === today.toString()) {
-        for (var i = 2; i <= timeKeys.length; i++) {
-          if (moment(timeKeys[i - 1]).add(1, 'd').toString()
-          === moment(timeKeys[i]).toString()) {
-            currStreak++;
+      tmpLongest = 1;
+
+      var today = moment(Date.now()).format('YYYY-MM-DD');
+
+      if (moment(today).toString() === moment(timeKeys[0]).toString() ||
+          moment(today).subtract(1, 'd').toString() ===
+          moment(timeKeys[0]).toString()) {
+        for (var i = 1; i <= timeKeys.length; i++) {
+          if (moment(timeKeys[i - 1]).subtract(1, 'd').toString()
+            === moment(timeKeys[i]).toString()) {
+            debug(timeKeys[i - 1], timeKeys[i]);
+            tmpLongest++;
+            if (tmpLongest > user.currentStreak) {
+              user.currentStreak = tmpLongest;
+            }
           } else {
             break;
           }
         }
+      } else {
+        user.currentStreak = 1;
       }
-      user.currentStreak = currStreak;
 
       user.save(function(err) {
         if (err) {
