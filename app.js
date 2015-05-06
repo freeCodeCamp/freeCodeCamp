@@ -115,6 +115,7 @@ app.disable('x-powered-by');
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.xframe());
+/*
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers',
@@ -122,6 +123,7 @@ app.use(function(req, res, next) {
               );
     next();
 });
+*/
 
 var trusted = [
   "'self'",
@@ -167,7 +169,8 @@ app.use(helmet.contentSecurityPolicy({
     scriptSrc: [
         '*.optimizely.com',
         '*.aspnetcdn.com',
-        '*.d3js.org'
+        '*.d3js.org',
+        "* 'unsafe-inline'"
     ].concat(trusted),
     'connect-src': [
         'ws://*.rafflecopter.com',
