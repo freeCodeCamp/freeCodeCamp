@@ -237,11 +237,13 @@ app.use(function (req, res, next) {
 
 app.use(function (req, res, next) {
   if (req.user && req.user.pair.expireStatus === 'notify') {
+    req.user.pair.expireStatus = 'norequest';
+    console.log(req.flash());
+
     req.flash('errors', {
       msg: "Your pair request was removed and you are listed as being offline."
     });
-    req.user.pair.expireStatus = 'norequest';
-    console.log("expire status", req.user.pair.expireStatus);
+    
     next();
   } else {
     next();

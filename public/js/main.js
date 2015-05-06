@@ -108,30 +108,32 @@ $(document).ready(function() {
       }
     },
     warnUser: function() {
-      
-        // do the stuff 
-        console.log("it timed out");
+  
         $('#expired-paircode-request').modal('show');
-        // delete the inital timer as its use is complete
-        //this.cancel(this.firstPairTimer);
+
+        
         this.finalCountdown();
     },
     finalCountdown: function() {
       // this is the final count dowwwnnnnn!!
       // gives the user two options: renew or ignore
       var self = this;
-      this.finalPairCountdown = window.setTimeout(function() {self.pairReqExpired()}, 10000);
+      self.finalPairCountdown = window.setTimeout(function() {
+        self.pairReqExpired()
+      }, 10000);
     },
     renewRequest: function() {
       // make sure to get their current bonfire/courseware
       // kill the 5 min timeout function
-      this.cancel(this.finalPairCountdown);
+      this.cancel(self.finalPairCountdown);
+
+      console.log(self.finalPairCountdown + "was cancelled");
 
       $('#expired-paircode-request').modal('hide');
 
       // renew the request on the server
       $.get('/pair-coding/refresh').success(function() {
-        console.log("server response good");
+        console.log("Your request was successfully renewed.");
       });
       
     },
@@ -146,9 +148,11 @@ $(document).ready(function() {
 
   var pairUserTimeOnline, pairRequestExpireStatus;
   // get the current user's information
-  $.get('/account/api').success(function(data) {
+  function checkPairRequestValidity() {
+
+    $.get('/account/api').success(function(data) {
     // returns the user object
-    console.log("Got the user information", data.user);
+    console.log("did the check");
     var user = data.user;
     
     if (user.pair) {
@@ -162,14 +166,21 @@ $(document).ready(function() {
 
       // testing value of 5 seconds
       var elapsed = (Date.now() - new Date(pairUserTimeOnline));
+
       console.log("Looking for 5000, time elapsed: ", elapsed);
-      if (pairRequestExpireStatus !== 'norequest' && elapsed > 5000) {
+
+      if (pairRequestExpireStatus === 'online' && elapsed > 5000) {
         PairCodeTimer.warnUser();
-      } else if (pairRequestExpireStatus !== 'norequest' && elapsed > 10000) {
+
+      } else if (pairRequestExpireStatus !== 'norequest' && elapsed > 100000) {
         PairCodeTimer.pairReqExpired();
+        clearInterval(PairCodeTimer.interval);
       }
     }
-  });
+    });
+  }
+  checkPairRequestValidity();
+  PairCodeTimer.interval = setInterval(checkPairRequestValidity(), 300000);
 
 
 

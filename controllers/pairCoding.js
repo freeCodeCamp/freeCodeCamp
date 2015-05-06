@@ -114,15 +114,27 @@ exports.refreshPairRequest = function(req, res, next) {
       });
       return res.redirect('/pair-coding');
     } else {
-      return next();
+      user.pair.timeOnline = new Date();
+      user.save(function(err) {
+        if (err) {
+          return next(err);
+        } else {
+          return;
+        }
+      });
+
+      
     }
-  })
+  });
 }
 
 
 
 
 exports.editPairRequest = function(req, res, next) {
+  req.user.pair.timeOnline = new Date();
+  req.user.pair.expireStatus = 'online';
+
   // search for the user's pair request
   PairUser.findOne({user: req.user._id}, function(err, pairuser) {
     if (err) {
@@ -139,8 +151,9 @@ exports.editPairRequest = function(req, res, next) {
         });
       });
       // redirect to the index page
-
-      console.log("No pair requests found, add a new one.");
+      req.flash('error', {
+        msg: 'No matching pair requests found.'
+      });
       res.redirect('/pair-coding');
     } else {
       if (req.body.comment === ""){
@@ -314,7 +327,7 @@ exports.setOffline = function(req, res, next){
   req.flash('success', {
     msg: 'Successfully taken offline.'
   });
-  return res.redirect('/pair-coding');
+  return;
 
 };
 
