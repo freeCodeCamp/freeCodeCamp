@@ -214,6 +214,8 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(express.static(__dirname + '/public', {maxAge: 86400000 }));
+
 app.use(function (req, res, next) {
     // Remember original destination before login.
     var path = req.path.split('/')[1];
@@ -225,9 +227,6 @@ app.use(function (req, res, next) {
     req.session.returnTo = req.path;
     next();
 });
-app.use(express.static(__dirname + '/public', {maxAge: 86400000 }));
-app.use('/template', express.static(__dirname +
-  '/public/bower_components/angular-ui-bootstrap/template'));
 
 /**
  * Main routes.
