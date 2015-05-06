@@ -126,7 +126,6 @@ app.use(function(req, res, next) {
 var trusted = [
   "'self'",
   '*.freecodecamp.com',
-  'http://www.freecodecamp.com/*',
   '*.gstatic.com',
   '*.google-analytics.com',
   '*.googleapis.com',
@@ -168,8 +167,7 @@ app.use(helmet.contentSecurityPolicy({
     scriptSrc: [
         '*.optimizely.com',
         '*.aspnetcdn.com',
-        '*.d3js.org',
-        '*.freecodecamp.com'
+        '*.d3js.org'
     ].concat(trusted),
     'connect-src': [
         'ws://*.rafflecopter.com',
