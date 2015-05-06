@@ -346,7 +346,7 @@ app.post(
 );
 
 app.get('/privacy', function(req, res) {
-  res.redirect(301, '/field-guide/the-free-code-camp-privacy-policy');
+  res.redirect(301, '/field-guide/what-is-free-code-camp\'s-privacy-policy');
 });
 
 app.get('/api/slack', function(req, res) {

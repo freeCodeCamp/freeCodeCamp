@@ -246,28 +246,6 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd2f",
-    "name": "How do I get help when I get stuck?",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "<h3>When you get stuck, remember: RSAP.</h3>",
-      "<h3>",
-      "  <ol>",
-      "    <li><span class='text-info'>Read</span> the documentation or error</li>",
-      "    <li><span class='text-info'>Search</span> Google</li>",
-      "    <li><span class='text-info'>Ask</span> your friends for help</li>",
-      "    <li><span class='text-info'>Post</span> on Stack Overflow</li>",
-      "  </ol>",
-      "</h3>",
-      "<h3>This is the most time-efficient way to handle being stuck, and it's the most respectful of other people's time, too.</h3>",
-      "<h3>Most of the time, you'll solve your problem after just one or two steps of this algorithm.</h3>",
-      "<h3>We have a special chat room just for getting help: <a href='https://freecode.slack.com/messages/help/' target='_blank'>https://freecode.slack.com/messages/help/</a></h3>",
-      "<h3>Also, if you need to post on Stack Overflow, be sure to read their guide to asking good questions: <a href='http://stackoverflow.com/help/how-to-ask' target='_blank'>http://stackoverflow.com/help/how-to-ask</a>.</h3>",
-      "<h3>Learning to code is hard. But it's a lot easier if you ask for help when you need it!</h3>",
-      "</div>"
-    ]
-  },
-  {
     "_id": "bd7158d9c442eddfaeb5bdef",
     "name": "How do I best use the Global Control Shortcuts for Mac?",
     "description": [
@@ -458,7 +436,7 @@
   },
   {
     "_id": "bd7158d9c451eddfaeb5bdef",
-    "name": "What is Free Code Camp Privacy Policy?",
+    "name": "What is Free Code Camp's Privacy Policy?",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "<p>Free Code Camp is committed to respecting the privacy of visitors to our web sites and web applications. The guidelines below explain how we protect the privacy of visitors to FreeCodeCamp.com and its features.</p>",
