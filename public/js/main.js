@@ -98,57 +98,52 @@ $(document).ready(function() {
   }
   // Pair Code Module - 
   // starts a timer internally in the browser whenever a user makes a pair request.
+  window.renewPairRequest = function renewPairRequest() {
+    // make sure to get their current bonfire/courseware
+    // kill the 5 min timeout function
+    console.log(finalPairCountdown + "ctd being cancelled");
+    clearTimeout(finalPairCountdown);
+    delete finalPairCountdown;
+
+    $('#expired-paircode-request').modal('hide');
+
+    // renew the request on the server
+    $.get('/pair-coding/refresh').success(function() {
+      console.log("Your request was successfully renewed.");
+    });
+    
+  };
+
+  var pairUserTimeOnline, pairRequestExpireStatus, finalPairCountdown;
+  // get the current user's information
+  function checkPairRequestValidity() {
 
 
-  window.PairCodeTimer = {
-    cancel: function(timer) {
+    function cancel (timer) {
       if (typeof timer == 'number') {
         window.clearTimeout(timer);
         delete timer;
       }
-    },
-    warnUser: function() {
-  
+    };
+    function warnUser() {
         $('#expired-paircode-request').modal('show');
-
-        
-        this.finalCountdown();
-    },
-    finalCountdown: function() {
+        finalCountdown();
+    };
+    function finalCountdown() {
       // this is the final count dowwwnnnnn!!
       // gives the user two options: renew or ignore
-      var self = this;
-      self.finalPairCountdown = window.setTimeout(function() {
-        self.pairReqExpired()
-      }, 10000);
-    },
-    renewRequest: function() {
-      // make sure to get their current bonfire/courseware
-      // kill the 5 min timeout function
-      this.cancel(self.finalPairCountdown);
-
-      console.log(self.finalPairCountdown + "was cancelled");
-
-      $('#expired-paircode-request').modal('hide');
-
-      // renew the request on the server
-      $.get('/pair-coding/refresh').success(function() {
-        console.log("Your request was successfully renewed.");
-      });
       
-    },
-    pairReqExpired: function() {
+      finalPairCountdown = window.setTimeout(function() {
+        pairReqExpired()
+      }, 10000);
+    };
+
+    function pairReqExpired() {
       // makes a post to take offline/delete
       $.get('/pair-coding/setOffline').success(function() {
         console.log("Pair request was automatically deleted.");
       });
-    }
-
-  };
-
-  var pairUserTimeOnline, pairRequestExpireStatus;
-  // get the current user's information
-  function checkPairRequestValidity() {
+    };
 
     $.get('/account/api').success(function(data) {
     // returns the user object
@@ -175,19 +170,22 @@ $(document).ready(function() {
       console.log("Looking for 5000, time elapsed: ", elapsed);
 
       if (pairRequestExpireStatus === 'online' && elapsed > 5000) {
-        PairCodeTimer.warnUser();
+        warnUser();
 
       } else if (pairRequestExpireStatus !== 'norequest' && elapsed > 100000) {
         console.log("this removal courtesy of the page by page check");
         console.log("this is the time they had, ", elapsed);
-        PairCodeTimer.pairReqExpired();
-        clearInterval(PairCodeTimer.interval);
+        pairReqExpired();
+        clearInterval(PairCodeTimerInterval);
       }
     }
     });
   }
+
+
+
   checkPairRequestValidity();
-  PairCodeTimer.interval = setInterval(checkPairRequestValidity(), 300000);
+  PairCodeTimerInterval = setInterval(checkPairRequestValidity(), 300000);
 
 
 
