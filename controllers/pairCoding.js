@@ -324,10 +324,7 @@ exports.setOffline = function(req, res, next){
 
   takeUserOffline(req.user);
 
-  req.flash('success', {
-    msg: 'Successfully taken offline.'
-  });
-  return;
+  return res.redirect('/pair-coding');
 
 };
 

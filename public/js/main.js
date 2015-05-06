@@ -154,13 +154,18 @@ $(document).ready(function() {
     // returns the user object
     console.log("did the check");
     var user = data.user;
+
+    if (!user) {
+      console.log("no user found");
+      return;
+    }
+    
     
     if (user.pair) {
 
       pairUserTimeOnline = user.pair.timeOnline;
       pairRequestExpireStatus = user.pair.expireStatus;
 
-            //console.log("can you see the user?", user.pair);
       console.log("find the user time online", pairUserTimeOnline);
 
 
@@ -173,6 +178,8 @@ $(document).ready(function() {
         PairCodeTimer.warnUser();
 
       } else if (pairRequestExpireStatus !== 'norequest' && elapsed > 100000) {
+        console.log("this removal courtesy of the page by page check");
+        console.log("this is the time they had, ", elapsed);
         PairCodeTimer.pairReqExpired();
         clearInterval(PairCodeTimer.interval);
       }
