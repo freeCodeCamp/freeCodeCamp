@@ -289,7 +289,9 @@ exports.returnUser = function(req, res, next) {
         if (moment(timeKeys[i - 1]).add(1, 'd').toString()
           === moment(timeKeys[i]).toString()) {
           tmpLongest++;
-          user.longestStreak = tmpLongest;
+          if (tmpLongest > user.longestStreak) {
+            user.longestStreak = tmpLongest;
+          }
         } else {
           tmpLongest = 1;
         }
