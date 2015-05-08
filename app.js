@@ -236,7 +236,7 @@ app.use('/template', express.static(__dirname +
 app.get('/', homeController.index);
 
 app.get('/nonprofit-project-instructions', function(req, res) {
-    res.redirect(301, '/field-guide/nonprofit-project-instructions');
+    res.redirect(301, '/field-guide/how-do-free-code-camp\'s-nonprofit-projects-work');
 });
 
 app.get('/chat', resourcesController.chat);
