@@ -517,7 +517,7 @@
     "name": "Smallest Common Multiple",
     "difficulty": "2.11",
     "description": [
-      "Find the smallest number that evenly divides all numbers in the provided range.",
+      "Find the smallest number that is evenly divisible by all numbers in the provided range.",
       "The range will be an array of two numbers that will not necessarily be in numerical order."
     ],
     "challengeSeed": "function smallestCommons(arr) {\n  return arr;\r\n}\r\n\n\nsmallestCommons([1,5]);",
