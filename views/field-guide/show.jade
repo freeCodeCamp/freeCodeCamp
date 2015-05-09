@@ -12,7 +12,7 @@ block content
             .spacer
             .col-xs-12.col-sm-6.col-sm-offset-3
                 .text-center
-                    if user
+                    if user && user.uncompletedFieldGuides.length > 0
                         .next-field-guide-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
                         .ten-pixel-break
                     #showAllButton.btn.btn-info.btn-big.btn-block Show me all articles
