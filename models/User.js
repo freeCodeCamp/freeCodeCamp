@@ -64,6 +64,10 @@ var userSchema = new mongoose.Schema({
         twitterHandle: {
             type: String,
             default: ''
+        },
+        facebookProfile: {
+          type: String,
+          default: ''
         }
     },
     portfolio: {

@@ -235,8 +235,18 @@ exports.upvote = function(req, res, next) {
         return next(err);
       }
       user = user.pop();
-      user.progressTimestamps.push(Date.now());
-      user.save();
+      user.progressTimestamps.push(Date.now() || 0);
+      user.save(function (err, user) {
+        req.user.save(function (err, user) {
+          if (err) {
+            return next(err);
+          }
+        });
+        req.user.progressTimestamps.push(Date.now() || 0);
+        if (err) {
+          return next(err);
+        }
+      });
     });
     return res.send(story);
   });

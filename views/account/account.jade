@@ -144,6 +144,15 @@ block content
                       | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
+                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Facebook
+                  .col-sm-4
+                    input.form-control(type='url', name='facebookProfile', id='facebookProfile', autocomplete="off", ng-model='user.profile.facebookProfile', placeholder='http://')
+                    .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.facebookProfile.$error.url && !profileForm.facebookProfile.$pristine")
+                      alert(type='danger')
+                        span.ion-close-circled
+                        | Please enter a valid URL format (http://www.example.com).
+
+                .form-group
                   .col-sm-offset-5.col-sm-4
                       button.btn.btn-primary.btn-block(type='submit', ng-disabled='profileForm.$invalid')
                           span.ion-edit
