@@ -68,7 +68,7 @@
   },
   {
     "_id": "bd7125d8c441eddfaeb5bd2f",
-    "name": "Customize your Porfolio Page",
+    "name": "Customize your Portfolio Page",
     "difficulty": 0.05,
     "challengeSeed": "125407433",
     "description": [
@@ -98,6 +98,24 @@
       "You can view the portfolio pages of any camper who has posted links or comments on Camper News. Just click on their photo.",
       "When you submit a link, you'll get a point. You will also get a point each time someone upvotes your link.",
       "Now that you've learned how to use Camper News, let's move on to your next challenge."
+    ],
+    "challengeType": 2,
+    "tests": []
+  },
+  {
+    "_id": "bd7126d8c441eddfaeb5bd3e",
+    "name": "Meet Other Campers in your City",
+    "difficulty": 0.065,
+    "challengeSeed": "127358841",
+    "description": [
+      "One of the best ways to stay motivated when learning to code is to hang out with other campers.",
+      "Slack and Camper News are great ways to communicate with other campers, but there's no substitute for meeting people in-person.",
+      "The easiest way to meet other campers in your city is to join your city's Facebook Group. Click <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city' target='_blank'>here</a> to view our growing list of local groups.",
+      "Click the link to your city, then, once Facebook loads, click \"Join group\".",
+      "Our local groups are new, so if you don't see your city on this list, you should follow the directions to create a Facebook group for your city.",
+      "If you don't have a Facebook account, we strongly recommend you create one, even if it's just for the purpose of coordinating with campers in your city through this group.",
+      "Our groups allow you to create events, coordinate those events, and share photos from the events afterward.",
+      "Whether you're hosting a study group, pair programming at your local library, or going to a weekend hackathon, your city's group will help you make it happen."
     ],
     "challengeType": 2,
     "tests": []
