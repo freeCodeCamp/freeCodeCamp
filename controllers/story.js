@@ -373,6 +373,12 @@ exports.storySubmission = function(req, res, next) {
       if (err) {
         return res.status(500);
       }
+      req.user.progressTimestamps.push(Date.now() || 0);
+      req.user.save(function (err, user) {
+        if (err) {
+          return next(err);
+        }
+      });
       res.send(JSON.stringify({
         storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
       }));
