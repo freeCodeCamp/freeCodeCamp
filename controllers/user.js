@@ -358,6 +358,7 @@ exports.returnUser = function(req, res, next) {
         githubProfile: user.profile.githubProfile,
         linkedinProfile: user.profile.linkedinProfile,
         codepenProfile: user.profile.codepenProfile,
+        facebookProfile: user.profile.facebookProfile,
         twitterHandle: user.profile.twitterHandle,
         bio: user.profile.bio,
         picture: user.profile.picture,
@@ -453,6 +454,7 @@ exports.postUpdateProfile = function(req, res, next) {
         user.profile.username = req.body.username.trim() || '';
         user.profile.location = req.body.location.trim() || '';
         user.profile.githubProfile = req.body.githubProfile.trim() || '';
+        user.profile.facebookProfile = req.body.facebookProfile.trim() || '';
         user.profile.linkedinProfile = req.body.linkedinProfile.trim() || '';
         user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
         user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
