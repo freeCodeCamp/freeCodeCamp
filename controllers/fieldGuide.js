@@ -9,15 +9,17 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
 
     var fieldGuideName = dashedName.replace(/\-/g, ' ');
 
-    var completed = req.user.completedFieldGuides;
+    if (req.user) {
+      var completed = req.user.completedFieldGuides;
 
-    var uncompletedFieldGuides = resources.allFieldGuideIds().filter(function (elem) {
-      if (completed.indexOf(elem) === -1) {
-        return elem;
-      }
-    });
-    req.user.uncompletedFieldGuides = uncompletedFieldGuides;
-    req.user.save();
+      var uncompletedFieldGuides = resources.allFieldGuideIds().filter(function (elem) {
+        if (completed.indexOf(elem) === -1) {
+          return elem;
+        }
+      });
+      req.user.uncompletedFieldGuides = uncompletedFieldGuides;
+      req.user.save();
+    }
 
     FieldGuide.find({'name': new RegExp(fieldGuideName, 'i')}, function(err, fieldGuideFromMongo) {
         if (err) {
@@ -59,7 +61,7 @@ exports.showAllFieldGuides = function(req, res) {
 
 exports.returnNextFieldGuide = function(req, res, next) {
   if (!req.user) {
-    return res.redirect('../field-guide/how-do-i-use-this-guide?');
+    return res.redirect('/field-guide/how-do-i-use-this-guide?');
   }
 
   var displayedFieldGuides =  FieldGuide.find({'_id': req.user.uncompletedFieldGuides[0]});
