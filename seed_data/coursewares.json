@@ -213,7 +213,7 @@
     "difficulty": 0.13,
     "challengeSeed": "125671865",
     "description": [
-      "jQuery is a powerful tool for manipulating HTML elements.",
+      "jQuery is a powerful library built in JavaScript for manipulating HTML elements.",
       "It's a lot easier to use than JavaScript itself, so we'll learn it first.",
       "It's also extremely popular with employers, so we're going to learn it well.",
       "Codecademy has an excellent free course that will walk us through the basics of jQuery.",
