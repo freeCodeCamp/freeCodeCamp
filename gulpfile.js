@@ -57,7 +57,7 @@ gulp.task('sync', ['serve'], function() {
       logLeval: 'debug',
       files: ['public/js/lib/*/*.{js, jsx}'],
       port: 3001,
-      open: true,
+      open: false,
       reloadDelay: reloadDelay
     });
 });
