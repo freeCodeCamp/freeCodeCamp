@@ -333,11 +333,11 @@
       "Here's how you would set the <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;cat photo app&#60;h2&#62;</code>"
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
+      "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>",
-      "<h2>cat photo app</h2>",
+      "<h2>Cat Photo App</h2>",
+      "",
       "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
