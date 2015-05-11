@@ -347,21 +347,22 @@
     "name": "Create a Style Tag for CSS",
     "difficulty": 0.018,
     "description": [
-      "Create a style tag and write the CSS to make all <code>h2</code> elements blue.",
+      "Create remove your <code>h2</code> element's <code>style</code> tag and write the CSS to make all <code>h2</code> elements blue.",
       "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
-      "When you entered <code>&#60;h2 style=\"color: red\"&#62;hello html&#60;h2&#62;</code>, you were giving that individual h2 element an <code>inline style</code>",
+      "When you entered <code>&#60;h2 style=\"color: red\"&#62;Cat Photo App&#60;h2&#62;</code>, you were giving that individual h2 element an <code>inline style</code>",
       "That's one way to add style to an element, but a better way is by using <code>Cascading Style Sheets (CSS)</code>.",
       "At the top of your code, create a <code>style tag</code> like this: <code>&#60;style&#62;&#60;/style&#62;</code>",
       "Inside that style element, you can create a <code>global style</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this: <code>&#60;style&#62;h2: {color: red;}&#60;/style&#62;</code>",
       "Note that it's important to have an <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of the element's styles."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(0, 0, 255)');"
+      "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your h2 element should be blue.')",
+      "assert(!$('h2').attr('style'), 'You should remove the style attribute from your h2 element.')"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      "<h2 style='color: red'>Cat Photo App</h2>",
+      "",
+      "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
