@@ -43,7 +43,7 @@ module.exports = {
     coursewareList = resources.allCoursewareNames();
     completedCoursewareList = noDuplicatedCoursewares;
     waypoints = coursewareList.filter(function(challenge) {
-      if (challenge.challengeType === 2) { return challenge }
+      if (challenge.challengeType === 2 || challenge.challengeType === 0) { return challenge }
     });
     ziplines = coursewareList.filter(function(challenge) {
       if (challenge.challengeType === 3) { return challenge }
