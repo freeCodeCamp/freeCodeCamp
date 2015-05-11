@@ -201,7 +201,7 @@ var createTestDisplay = function() {
                 .prependTo($('#testSuite'))
         } else {
             $(testDoc)
-                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-11 test-output test-vertical-center wrappable grayed-out-test-output'>" + test.text + "</div></div><div class='ten-pixel-break'/>")
+                .html("<div class='row'><div class='col-xs-1 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-11 test-output test-vertical-center wrappable '>" + test.text + "</div></div><div class='ten-pixel-break'/>")
                 .appendTo($('#testSuite'));
         }
     };

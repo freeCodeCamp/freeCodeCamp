@@ -182,7 +182,7 @@ var createTestDisplay = function() {
         if (test.err != null) {
             console.log('Should be displaying bad tests');
             $(testDoc)
-                .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable  grayed-out-test-output'>" + test.text + "</div><div class='col-xs-10 test-output wrappable'>" + test.err + "</div></div><div class='ten-pixel-break'/>")
+                .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable test-vertical-center grayed-out-test-output'>" + test.text + "</div><div class='col-xs-10 test-output wrappable'>" + test.err + "</div></div><div class='ten-pixel-break'/>")
                 .prependTo($('#testSuite'))
         } else {
             $(testDoc)
