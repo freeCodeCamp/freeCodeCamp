@@ -182,11 +182,11 @@ var createTestDisplay = function() {
         if (test.err != null) {
             console.log('Should be displaying bad tests');
             $(testDoc)
-                .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable'>" + test.text + "</div><div class='col-xs-10 test-output wrappable'>" + test.err + "</div></div><div class='ten-pixel-break'/>")
+                .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable  grayed-out-test-output'>" + test.text + "</div><div class='col-xs-10 test-output wrappable'>" + test.err + "</div></div><div class='ten-pixel-break'/>")
                 .prependTo($('#testSuite'))
         } else {
             $(testDoc)
-                .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" + test.text + "</div></div><div class='ten-pixel-break'/>")
+                .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable grayed-out-test-output'>" + test.text + "</div></div><div class='ten-pixel-break'/>")
                 .appendTo($('#testSuite'));
         }
     };
@@ -218,7 +218,7 @@ var runTests = function(err, data) {
                 }
             } catch(error) {
                 allTestsPassed = false;
-                arr[ix].err = error.name + ":" + error.message;
+                arr[ix].err = error.message;
             } finally {
                 if (!test) {
                     createTestDisplay();

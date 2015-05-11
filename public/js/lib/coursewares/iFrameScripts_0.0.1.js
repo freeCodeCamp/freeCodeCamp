@@ -9,7 +9,7 @@
         } catch (err) {
             allTestsGood = false;
             thisTest = false;
-            parent.postError(JSON.stringify(tests[i]));
+            parent.postError(JSON.stringify(tests[i].message));
         } finally {
             if (thisTest) {
                 parent.postSuccess(JSON.stringify(tests[i]));
