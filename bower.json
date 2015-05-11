@@ -24,6 +24,7 @@
     "bootstrap": "~3.3.4",
     "font-awesome": "~4.3.0",
     "moment": "~2.10.2",
-    "angular-bootstrap": "~0.13.0"
+    "angular-bootstrap": "~0.13.0",
+    "ramda": "~0.13.0"
   }
 }

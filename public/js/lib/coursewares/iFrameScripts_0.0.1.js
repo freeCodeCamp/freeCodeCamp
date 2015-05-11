@@ -9,10 +9,10 @@
         } catch (err) {
             allTestsGood = false;
             thisTest = false;
-            parent.postError(JSON.stringify(tests[i]));
+            parent.postError(JSON.stringify(err.message.split(':').shift()));
         } finally {
             if (thisTest) {
-                parent.postSuccess(JSON.stringify(tests[i]));
+                parent.postSuccess(JSON.stringify(tests[i].split(',').pop().replace(/\'/g, '').replace(/\)/, '')));
             }
         }
     }

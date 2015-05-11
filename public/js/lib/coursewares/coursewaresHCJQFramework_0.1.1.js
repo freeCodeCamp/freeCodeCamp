@@ -56,7 +56,7 @@ var allTests = '';
     });
 })();
 
-var otherTestsForNow = "<script src='/js/lib/coursewares/iFrameScripts.js'></script>";
+var otherTestsForNow = "<script src='/js/lib/coursewares/iFrameScripts_0.0.1.js'></script>";
 
 var delay;
 // Initialize CodeMirror editor with a nice html5 canvas demo.
@@ -92,7 +92,7 @@ var postSuccess = function(data) {
 var postError = function(data) {
     var testDoc = document.createElement("div");
     $(testDoc)
-        .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>")
+        .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-vertical-center test-output wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>")
         .prependTo($('#testSuite'))
 };
 var goodTests = 0;
