@@ -345,7 +345,7 @@
   },
   {
     "_id": "bad87fee1348bd9aedf08805",
-    "name": "Create a Style Tag for CSS",
+    "name": "Use CSS Selectors to Style Elements",
     "difficulty": 0.018,
     "description": [
       "Create remove your <code>h2</code> element's <code>style</code> tag and write the CSS to make all <code>h2</code> elements blue.",
@@ -353,7 +353,7 @@
       "When you entered <code>&#60;h2 style=\"color: red\"&#62;Cat Photo App&#60;h2&#62;</code>, you were giving that individual h2 element an <code>inline style</code>",
       "That's one way to add style to an element, but a better way is by using <code>Cascading Style Sheets (CSS)</code>.",
       "At the top of your code, create a <code>style tag</code> like this: <code>&#60;style&#62;&#60;/style&#62;</code>",
-      "Inside that style element, you can create a <code>global style</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
+      "Inside that style element, you can create a <code>css selector</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
       "Note that it's important to have an <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of the element's styles."
     ],
     "tests": [
@@ -408,8 +408,8 @@
     "tests": [
       "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
       "assert($('h2').hasClass('red-text'), 'You h2 element should have the class \"red-text\".')",
-      "assert($('p').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
-      "assert($('p').hasClass('red-text'), 'You h2 element should have the class \"red-text\".')"
+      "assert($('p').css('color') === 'rgb(255, 0, 0)', 'Your p element should be red.')",
+      "assert($('p').hasClass('red-text'), 'You p element should have the class \"red-text\".')"
     ],
     "challengeSeed": [
       "<style>",
@@ -461,7 +461,7 @@
       "For example, if you wanted to set your h2 element's font \"San-serif\", you would use the following CSS: <code>h2 { font-family: 'San-serif'; }</code>"
     ],
     "tests": [
-      "assert($('p').css('font-family').match(/monospace/i, 'Your p elements should use the font \"Monospace\".')"
+      "assert($('p').css('font-family').match(/monospace/i), 'Your p elements should use the font \"Monospace\".')"
     ],
     "challengeSeed": [
       "<style>",
@@ -493,7 +493,7 @@
       "Now you can set \"Lobster\" as a font-family attribute."
     ],
     "tests": [
-      "assert($('h2').css('font-family').match(/lobster/i', 'Your h2 element should use the font \"Lobster\".')"
+      "assert($('h2').css('font-family').match(/lobster/i), 'Your h2 element should use the font \"Lobster\".')"
     ],
     "challengeSeed": [
       "<style>",
@@ -522,7 +522,7 @@
       "Make all h2 elements use \"Lobster\" as their font family, but degrade to the \"Monospace\" font when the Lobster font isn't available.",
       "Commented out your call to Google Fonts, so that our \"Lobter\" isn't available.",
       "You can leave Lobster as the font, and have it <code>degrade</code> to a different font if that font isn't available.",
-      "For example, if you prefer \"Helvetica\", but want to degrade to \"Sans-Serif\" when Helvetica isn't available, you can do use this style: <code>&#60;p { font-family: \"Helvetica\", \"Sans-Serif\"; } &#62;</code>",
+      "For example, if you prefer \"Helvetica\", but want to degrade to \"Sans-Serif\" when Helvetica isn't available, you can do use this style: <code>p { font-family: \"Helvetica\", \"Sans-Serif\"; }</code>",
       "There are several default fonts that are available in all browsers. These include \"Monospace\", \"Serif\" and \"Sans-Serif\". See if you can set the h2 elements to use \"Lobster\" and degrade to \"Monospace\"."
     ],
     "tests": [
@@ -537,7 +537,7 @@
       "  }",
       "",
       "  h2 {",
-      "    font-family: Lobster",
+      "    font-family: Lobster;",
       "  }",
       "",
       "  p {",
@@ -558,36 +558,40 @@
     "name": "Using Important to Override Styles",
     "difficulty": 0.023,
     "description": [
-      "Apply both the \"blue-text\" and \"urgently-red\" classes to all h2 elements, but use <code>!important</code> to ensure the element is rendered as being red.",
+      "Create a \"blue-text\" class that gives an element the font-color of blue. Also create a \"urgently-red\" class that give an element the font-color of red, but use <code>!important</code> to ensure the element is rendered as being red. Apply both classes to your <code>h2</code> element.",
       "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
       "If there's a conflict in the CSS, the browser will use whichever style declaration is closest to the bottom of the CSS document (whichever declaration comes last). Note that in-line style declarations are the final authority in how an HTML element will be rendered.",
       "There's one way to ensure that an element is rendered with a certain style, regardless of where that declaration is located. That one way is to use <code>!important</code>.",
+      "In case you're curious, this is the priority hierarchy for element styles: !important > inline style > css class selector > css selector. That is, !important trumps all other styles, and inline styles trump style tag declarations.",
       "Look at the example in the editor's style tag to see how you can use !important.",
       "Now see if you can make sure the h2 element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, or changing the sequence of CSS class declarations."
     ],
     "tests": [
-      "expect($('h2')).to.have.class('urgently-red');",
-      "expect($('h2')).to.have.class('blue-text');",
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');"
+      "assert($('h2').hasClass('blue-text'), 'You h2 element should have the class \"blue-text\".')",
+      "assert($('h2').hasClass('urgently-red'), 'You h2 element should have the class \"urgently-red\".')",
+      "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
     ],
     "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
-      "  big-font : {",
-      "    font-size: 50px !important;",
-      "  }",
-      "",
-      "  .urgently-red {",
+      "  .red-text {",
       "    color: red;",
       "  }",
       "",
-      "  .blue-text {",
-      "    color: blue;",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
       "  }",
       "</style>",
       "",
-      "<h1>hello world</h1>",
-      "<h2 class=\"blue-text urgently-red\">cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
