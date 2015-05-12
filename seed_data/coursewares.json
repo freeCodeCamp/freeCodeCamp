@@ -277,13 +277,14 @@
     "name": "Use Lorem Ipsum Text as a Placeholder",
     "difficulty": 0.015,
     "description": [
-      "Change the text in the <code>p</code> element to use the first few words of <code>lorem ipsum</code> text.",
-      "Web developers use <code>lorem ipsum</code> as placeholder text. It's called lorem ipsum text because it's those are the first two words of a passage by Cicero of Ancient Rome.",
-      "Lorem ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
-      "Here are the first 25 words of Lorem Ipsum text, which you can copy and paste into the right position: <code>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</code>"
+      "Change the text in the <code>p</code> element to use the first few words of <code>Kitty Ipsum</code> text.",
+      "Web developers traditionally use <code>Lorem Ipsum</code> as placeholder text. It's called Lorem Ipsum text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
+      "Lorem Ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
+      "Well, 5 centuries is long enough. Since we're building a cat photo app, let's use something called <a href='http://kittyipsum.com/'>Kitty Ipsum</a>!",
+      "Here are the first few words of Kitty Ipsum text, which you can copy and paste into the right position: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
     ],
     "tests": [
-      "assert.isTrue((/Lorem(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your p element should contain the first few words of the famous Lorem Ipsum text.')"
+      "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your p element should contain the first few words of the famous Kitty Ipsum text.')"
     ],
     "challengeSeed": [
       "<h1>Hello World</h1>",
@@ -352,7 +353,7 @@
       "When you entered <code>&#60;h2 style=\"color: red\"&#62;Cat Photo App&#60;h2&#62;</code>, you were giving that individual h2 element an <code>inline style</code>",
       "That's one way to add style to an element, but a better way is by using <code>Cascading Style Sheets (CSS)</code>.",
       "At the top of your code, create a <code>style tag</code> like this: <code>&#60;style&#62;&#60;/style&#62;</code>",
-      "Inside that style element, you can create a <code>global style</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this: <code>&#60;style&#62;h2: {color: red;}&#60;/style&#62;</code>",
+      "Inside that style element, you can create a <code>global style</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
       "Note that it's important to have an <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of the element's styles."
     ],
     "tests": [
@@ -373,40 +374,42 @@
     "description": [
       "Create a CSS class called <code>.red-text</code> and apply it to the <code>h2</code> element.",
       "Classes are reusable styles that can be added to HTML elements.",
+      "Here's the anatomy of a CSS class:",
+      "<img class='img-responsive' src='https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png'/>",
       "Classes always start with a period. You can see that we've created a CSS class called <code>.blue-text</code> within the <code>&#60;style&#62;</code> tag.",
-      "You can follow that pattern to make a <code>.red-text</code> class, which you can attach to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
+      "You can apply a class to an element like this: <code>&#60;h2 class=\"blue-text\"&#62;Cat Photo App&#60;h2&#62;</code>",
+      "Instead of creating a new Style tag, try removing the h2 style declaration from the existing style element, and replace it with the class declaration for \".red-text\"."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
-      "expect($('h2')).to.have.class('red-text');"
+      "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
+      "assert($('h2').hasClass('red-text'), 'You h2 element should have the class \"red-text\".')"
     ],
     "challengeSeed": [
       "<style>",
-      "  .blue-text {",
+      "  h2 {",
       "    color: blue;",
       "  }",
       "</style>",
-      "<h1 class=\"red-text\">hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      "",
+      "<h2>Cat Photo App</h2>",
+      "",
+      "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
   {
-    "_id": "bad87fee1348bd9aeff08806",
+    "_id": "bad87fee1348bd9aefe08806",
     "name": "Use a CSS Class to Style Multiple Elements",
     "difficulty": 0.019,
     "description": [
-      "Apply the \"red-text\" class to the <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
+      "Apply the \"red-text\" class to the <code>h2</code> and <code>p</code> elements.",
       "Remember that you can attach classes to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('red-text');",
-      "expect($('h2')).to.have.class('red-text');",
-      "expect($('p')).to.have.class('red-text');",
-      "expect($('h1')).to.have.css('color', 'rgb(255, 0, 0)');",
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
-      "expect($('p')).to.have.css('color', 'rgb(255, 0, 0)');"
+      "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
+      "assert($('h2').hasClass('red-text'), 'You h2 element should have the class \"red-text\".')",
+      "assert($('p').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
+      "assert($('p').hasClass('red-text'), 'You h2 element should have the class \"red-text\".')"
     ],
     "challengeSeed": [
       "<style>",
@@ -414,9 +417,10 @@
       "    color: red;",
       "  }",
       "</style>",
-      "<h1 class=\"red-text\">hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
     ],
     "challengeType": 0
   },
@@ -426,23 +430,54 @@
     "difficulty": 0.020,
     "description": [
       "Set the font size of all <code>p</code> elements to 16 pixels",
-      "Font size is controlled by the <code>font-size</code> CSS attribute.",
-      "We've already set the font-size attribute for all h2 elements. See if you can figure out how to give all p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for h1."
+      "Font size is controlled by the <code>font-size</code> CSS attribute, like this: <code>h1 { font-size: 30px; }</code>.",
+      "First, create a second p element with the following Kitty Ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+      "See if you can figure out how to give both of your p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your <code>.red-text</code> class."
     ],
     "tests": [
-      "expect($('p')).to.have.css('font-size', '16px');"
+      "assert($('p').length > 1, 'You need 2 p elements with Kitty Ipsum text.')",
+      "assert($('p').css('font-size') === '16px', 'Your p elements should have be 16px font.')"
     ],
     "challengeSeed": [
       "<style>",
-      "  h2 {",
+      "  .red-text {",
       "    color: red;",
-      "    font-size: 24px;",
       "  }",
       "</style>",
       "",
-      "<h1>hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+    ],
+    "challengeType": 0
+  },
+  {
+    "_id": "bad87fee1348bd9aede08807",
+    "name": "Set the Font of an Element",
+    "difficulty": 0.0205,
+    "description": [
+      "Make all p elements use the \"Monospace\" font.",
+      "You can set an element's font by using the <code>font-family</code> attribute.",
+      "For example, if you wanted to set your h2 element's font \"San-serif\", you would use the following CSS: <code>h2 { font-family: 'San-serif'; }</code>"
+    ],
+    "tests": [
+      "assert($('p').css('font-family').match(/monospace/i, 'Your p elements should use the font \"Monospace\".')"
+    ],
+    "challengeSeed": [
+      "<style>",
+      "  .red-text {",
+      "    color: red;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "  }",
+      "</style>",
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
@@ -451,29 +486,31 @@
     "name": "Import a Google Font",
     "difficulty": 0.021,
     "description": [
-      "Apply the font-family of Lobster to all h1 elements.",
-      "The first line of code in your text editor is a <code>call</code> to Google that grabs a font called Lobster and loads it into your HTML.",
-      "You'll notice that we've already applied the <code>font-family</code> of Lobster to all h2 elements. Now you should also apply it to all h1 elements."
+      "Apply the font-family of Lobster to your h2 element.",
+      "First, you'll need to make a <code>call</code> to Google to grab the \"Lobster\" font and loads it into your HTML.",
+      "Copy and paste this into your code editor above your <code>style</code> element:",
+      "<code>&#60;link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'&#62;</code>",
+      "Now you can set \"Lobster\" as a font-family attribute."
     ],
     "tests": [
-      "expect($('h1')).to.have.css('font-family', 'Lobster');"
+      "assert($('h2').css('font-family').match(/lobster/i', 'Your h2 element should use the font \"Lobster\".')"
     ],
     "challengeSeed": [
-      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
-      "  h2 {",
+      "  .red-text {",
       "    color: red;",
-      "    font-size: 24px;",
-      "    font-family: \"Lobster\"",
       "  }",
+      "",
       "  p {",
       "    font-size: 16px;",
+      "    font-family: Monospace;",
       "  }",
       "</style>",
       "",
-      "<h1>hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
@@ -482,26 +519,37 @@
     "name": "Specify How Fonts Should Degrade",
     "difficulty": 0.022,
     "description": [
-      "Make all h2 elements use Lobster as their font family, but degrade to the Serif font when the Lobster font isn't available.",
-      "We commented out our call to Google Fonts, and now our lobter isn't available.",
+      "Make all h2 elements use \"Lobster\" as their font family, but degrade to the \"Monospace\" font when the Lobster font isn't available.",
+      "Commented out your call to Google Fonts, so that our \"Lobter\" isn't available.",
       "You can leave Lobster as the font, and have it <code>degrade</code> to a different font if that font isn't available.",
-      "There are several default fonts that are availble in all browsers. These include Monospace, Serif and Sans-Serif. See if you can set the h2 elements to use Lobster and degrade to monospace."
+      "For example, if you prefer \"Helvetica\", but want to degrade to \"Sans-Serif\" when Helvetica isn't available, you can do use this style: <code>&#60;p { font-family: \"Helvetica\", \"Sans-Serif\"; } &#62;</code>",
+      "There are several default fonts that are available in all browsers. These include \"Monospace\", \"Serif\" and \"Sans-Serif\". See if you can set the h2 elements to use \"Lobster\" and degrade to \"Monospace\"."
     ],
     "tests": [
-      "expect($('h2')).to.have.css('font-family').match(/serif/i);",
-      "expect($('h2')).to.have.css('font-family').match(/lobster/i);"
+      "assert($('h2').css('font-family').match(/lobster/i), 'Your h2 element should use the font \"Lobster\".')",
+      "assert($('h2').css('font-family').match(/monospace/i), 'Your h2 element should degrade to the font \"Monospace\" when \"Lobster\" is not available.')"
     ],
     "challengeSeed": [
-      "<!--<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>-->",
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
-      "  h1 {",
-      "    font-family: \"Lobster\", Monospace",
+      "  .red-text {",
+      "    color: red;",
+      "  }",
+      "",
+      "  h2 {",
+      "    font-family: Lobster",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
       "  }",
       "</style>",
       "",
-      "<h1>hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
