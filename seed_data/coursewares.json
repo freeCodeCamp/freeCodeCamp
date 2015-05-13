@@ -181,15 +181,15 @@
   },
   {
     "_id": "bad87fee1348bd9aedf08801",
-    "name": "Use the P Element",
+    "name": "Use the Paragraph Element",
     "difficulty": 0.011,
     "description": [
-      "Create a <code>p</code> element below the h2 element, and give it the text \"Hello Paragraph\".",
-      "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites.",
-      "You can create a p element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
+      "Create a paragraph element below the h2 element, and give it the text \"Hello Paragraph\".",
+      "Paragraph elements are the preferred element for normal-sized paragraph text on websites.",
+      "You can create a paragraph element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
     ],
     "tests": [
-      "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your p element should have the text \"Hello Paragraph\"')"
+      "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your paragraph element should have the text \"Hello Paragraph\"')"
     ],
     "challengeSeed": [
       "<h1>Hello World</h1>",
@@ -208,7 +208,7 @@
       "You'll encounter other <code>self-closing</code> element tags soon."
     ],
     "tests": [
-      "assert(($('br').length > 0), 'You should have a br element between your h2 and p elements.')"
+      "assert(($('br').length > 0), 'You should have a br element between your h2 and paragraph elements.')"
     ],
     "challengeSeed": [
       "<h1>Hello World</h1>",
@@ -230,7 +230,7 @@
     "tests": [
       "assert(($('h1').length > 0), 'The h1 element should not commented. It should be visible in the browser.')",
       "assert(($('h2').length > 0), 'The h2 element should not commented. It should be visible in the browser.')",
-      "assert(($('p').length > 0), 'The p element should not commented. It should be visible in the browser.')"
+      "assert(($('p').length > 0), 'The paragraph element should not commented. It should be visible in the browser.')"
     ],
     "challengeSeed": [
       "<!--",
@@ -257,7 +257,7 @@
     "tests": [
       "assert(($('h1').length == 0), 'The h1 element should be commented. It should not be visible in the browser.')",
       "assert(($('h2').length > 0), 'The h2 element should not commented. It should be visible in the browser.')",
-      "assert(($('p').length == 0), 'The p element should be commented. It should not be visible in the browser.')"
+      "assert(($('p').length == 0), 'The paragraph element should be commented. It should not be visible in the browser.')"
     ],
     "challengeSeed": [
       "<!--",
@@ -284,7 +284,7 @@
       "Here are the first few words of Kitty Ipsum text, which you can copy and paste into the right position: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
     ],
     "tests": [
-      "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your p element should contain the first few words of the famous Kitty Ipsum text.')"
+      "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your paragraph element should contain the first few words of the famous Kitty Ipsum text.')"
     ],
     "challengeSeed": [
       "<h1>Hello World</h1>",
@@ -310,7 +310,7 @@
       "assert(($('h1').length == 0), 'Delete the h1 element.')",
       "assert(($('h2').length > 0), 'Leave the h2 element on the page.')",
       "assert(($('br').length == 0), 'Delete the br element.')",
-      "assert(($('p').length > 0), 'Leave the p element on the page.')"
+      "assert(($('p').length > 0), 'Leave the paragraph element on the page.')"
     ],
     "challengeSeed": [
       "<h1>Hello World</h1>",
@@ -408,8 +408,8 @@
     "tests": [
       "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
       "assert($('h2').hasClass('red-text'), 'You h2 element should have the class \"red-text\".')",
-      "assert($('p').css('color') === 'rgb(255, 0, 0)', 'Your p element should be red.')",
-      "assert($('p').hasClass('red-text'), 'You p element should have the class \"red-text\".')"
+      "assert($('p').css('color') === 'rgb(255, 0, 0)', 'Your paragraph element should be red.')",
+      "assert($('p').hasClass('red-text'), 'You paragraph element should have the class \"red-text\".')"
     ],
     "challengeSeed": [
       "<style>",
@@ -431,12 +431,12 @@
     "description": [
       "Set the font size of all <code>p</code> elements to 16 pixels",
       "Font size is controlled by the <code>font-size</code> CSS attribute, like this: <code>h1 { font-size: 30px; }</code>.",
-      "First, create a second p element with the following Kitty Ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
-      "See if you can figure out how to give both of your p elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your <code>.red-text</code> class."
+      "First, create a second paragraph element with the following Kitty Ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+      "See if you can figure out how to give both of your paragraph elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your <code>.red-text</code> class."
     ],
     "tests": [
-      "assert($('p').length > 1, 'You need 2 p elements with Kitty Ipsum text.')",
-      "assert($('p').css('font-size') === '16px', 'Your p elements should have be 16px font.')"
+      "assert($('p').length > 1, 'You need 2 paragraph elements with Kitty Ipsum text.')",
+      "assert($('p').css('font-size') === '16px', 'Your paragraph elements should have be 16px font.')"
     ],
     "challengeSeed": [
       "<style>",
@@ -456,12 +456,12 @@
     "name": "Set the Font of an Element",
     "difficulty": 0.0205,
     "description": [
-      "Make all p elements use the \"Monospace\" font.",
+      "Make all paragraph elements use the \"Monospace\" font.",
       "You can set an element's font by using the <code>font-family</code> attribute.",
       "For example, if you wanted to set your h2 element's font \"San-serif\", you would use the following CSS: <code>h2 { font-family: 'San-serif'; }</code>"
     ],
     "tests": [
-      "assert($('p').css('font-family').match(/monospace/i), 'Your p elements should use the font \"Monospace\".')"
+      "assert($('p').css('font-family').match(/monospace/i), 'Your paragraph elements should use the font \"Monospace\".')"
     ],
     "challengeSeed": [
       "<style>",
@@ -773,33 +773,45 @@
     "difficulty": 0.031,
     "description": [
       "Give your cat photo a <code>border-radius</code> of 50%.",
-      "In addition to pixels, you can also specify a <code>border-radius</code> of a percentage."
+      "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage."
     ],
     "tests": [
-      "expect($('img')).to.have.css('border-radius', '50%');"
+      "assert(parseInt($('img').css('border-top-left-radius')) > 48, 'Your image should have a border radius of 50%, making it perfectly circular.')"
     ],
     "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
-      "  .narrow-image {",
-      "    width: 200px;",
+      "  .red-text {",
+      "    color: red;",
       "  }",
       "",
-      "  .thin-red-border {",
-      "    border-style: solid;",
-      "    border-color: #ff0000;",
-      "    border-width: 5px;",
-      "    border-radius: 10%;",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
       "  }",
       "",
       "  .thick-green-border {",
-      "    border-style: solid;",
-      "    border-color: #00ff00;",
+      "    border-color: green;",
       "    border-width: 10px;",
+      "    border-style: solid;",
+      "    border-radius: 10px;",
+      "  }",
+      "",
+      "  .smaller-image {",
+      "    width: 100px;",
       "  }",
       "</style>",
-      "<h2 class=\"thin-red-border\">cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
@@ -808,68 +820,155 @@
     "name": "Use an Anchor Tag to Link to an External Page",
     "difficulty": 0.033,
     "description": [
-      "Create an <code>anchor tag</code> hyperlink that links to freecodecamp.com",
-      ""
+      "Create an <code>anchor tag</code> hyperlink that links to http://catphotoapp.com and has the anchor text \"cat photos\".",
+      "Here's a diagram of an <code>anchor tag</code>. In this case, it's used in the middle of a paragraph element, which means a link will appear in the middle of the sentence.",
+      "<img class='img-responsive' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>"
+
     ],
     "tests": [
-      "expect((/free(\\s+)?code(\\s+)?camp(\\s+)?/gi).test($('a').text())).to.be.true;",
-      "expect($('a').filter(function(index) { return /freecodecamp\\.com/gi.test($('a')[index]); }).length).to.eql(1);"
+      "assert((/photo/gi).test($('a').text()), 'You need an <code>anchor</code> element that links to \"catphotoapp.com\".')",
+      "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')"
     ],
     "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
-      "  .narrow-image {",
-      "    width: 200px;",
+      "  .red-text {",
+      "    color: red;",
+      "  }",
+      "",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
       "  }",
       "",
       "  .thick-green-border {",
-      "    border-style: solid;",
-      "    border-color: #00ff00;",
+      "    border-color: green;",
       "    border-width: 10px;",
+      "    border-style: solid;",
       "    border-radius: 50%;",
       "  }",
+      "",
+      "  .smaller-image {",
+      "    width: 100px;",
+      "  }",
       "</style>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>",
-      "<br/>",
-      "<a href=\"http://www.google.com\">This is a link to Google</a>",
-      "<br/>"
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
   {
-    "_id": "bad87fee1348bd9aedf08817",
-    "name": "Make Named Anchors using the Hash Symbol",
-    "difficulty": 0.034,
+    "_id": "bad87fee1348bd9aede08817",
+    "name": "Wrap an Anchor Element in a Paragraph",
+    "difficulty": 0.0335,
     "description": [
-      "Use the hash symbol(#) to turn the link to the bottom of the page into a <code>named anchor</code>.",
-      "Sometimes you want to add <code>anchor elements</code> to your website before you know where they will link.",
-      "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
-      "Replace the href in the link to freecodecamp.com with a hash symbol to turn it into a <code>named anchor</code>."
+      "Now nest your anchor element inside a <code>paragraph</code> element. For example, \"click here for cat photos\", where only \"cat photos\" is a link.",
+      "Again, here's a diagram of an <code>anchor tag</code> for your reference:",
+      "<img class='img-responsive' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>"
     ],
     "tests": [
-      "expect((/this link leads nowhere/gi).test($('a').text())).to.be.true;",
-      "expect($('a').filter(function(index) { return /#/gi.test($('a')[index]); }).length).to.eql(1);"
+      "assert((/photo/gi).test($('a').text()), 'You need an <code>anchor</code> element that links to \"catphotoapp.com\".')",
+      "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
+      "assert($('a').parent().is('p'), 'Your anchor element should be nested in a paragraph element.')"
     ],
     "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
-      "  .narrow-image {",
-      "    width: 200px;",
+      "  .red-text {",
+      "    color: red;",
+      "  }",
+      "",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
       "  }",
       "",
       "  .thick-green-border {",
-      "    border-style: solid;",
-      "    border-color: #00ff00;",
+      "    border-color: green;",
       "    border-width: 10px;",
+      "    border-style: solid;",
       "    border-radius: 50%;",
       "  }",
+      "",
+      "  .smaller-image {",
+      "    width: 100px;",
+      "  }",
       "</style>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>",
-      "<br/>",
-      "<a href=\"http://www.freecodecamp.com\">This named anchor leads nowhere</a>",
-      "<br/>"
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<a href='http://www.catphotoapp.com'>cat photos</a>",
+      "",
+      "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aedf08817",
+    "name": "Make Dead Links using the Hash Symbol",
+    "difficulty": 0.034,
+    "description": [
+      "Use the hash symbol(#) to turn your <code>anchor</code> element's link into a dead link.",
+      "Sometimes you want to add <code>anchor</code> elements to your website before you know where they will link.",
+      "This is also handy when you're changing the behavior of a link using <code>jQuery</code>, which we'll learn about later.",
+      "Replace your <code>anchor</code> element's <code>href</code> attribute with a hash symbol to turn it into a dead link."
+    ],
+    "tests": [
+      "assert($('a').attr('href') === '#', 'Your <code>anchor</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')"
+    ],
+    "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+      "<style>",
+      "  .red-text {",
+      "    color: red;",
+      "  }",
+      "",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-color: green;",
+      "    border-width: 10px;",
+      "    border-style: solid;",
+      "    border-radius: 50%;",
+      "  }",
+      "",
+      "  .smaller-image {",
+      "    width: 100px;",
+      "  }",
+      "</style>",
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p>Click here for <a href='http://www.catphotoapp.com'>cat photos</a>.</p>",
+      "",
+      "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
