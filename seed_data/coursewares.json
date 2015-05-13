@@ -567,8 +567,8 @@
       "Now see if you can make sure the h2 element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, or changing the sequence of CSS class declarations."
     ],
     "tests": [
-      "assert($('h2').hasClass('blue-text'), 'You h2 element should have the class \"blue-text\".')",
-      "assert($('h2').hasClass('urgently-red'), 'You h2 element should have the class \"urgently-red\".')",
+      "assert($('h2').hasClass('blue-text'), 'Your h2 element should have the class \"blue-text\".')",
+      "assert($('h2').hasClass('urgently-red'), 'Your h2 element should have the class \"urgently-red\".')",
       "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
     ],
     "challengeSeed": [
@@ -595,143 +595,81 @@
     ],
     "challengeType": 0
   },
-  {
-    "_id": "bad87fee1348bd9aedf08810",
-    "name": "Use Hex Codes for Precise Colors",
-    "difficulty": 0.024,
-    "description": [
-      "Change the hex code in the \"red-text\" class to hex code for the color red.",
-      "<code>Hexadecimal (hex) code</code> is a popular way of specifying color in CSS.",
-      "Hex code is called \"hex\" because each digit has 16 possible values: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, and f",
-      "The six hex code correspond to red-red-green-green-blue-blue.",
-      "You can change these six values to make more than 16 million colors!",
-      "The higher the value in a field, the more intense its color. For example, #000000 is black, #ffffff is white, and #00ff00 is bright green. You can also get less intense colors by using values lower than f. For example, #00f000 with the second green digit set to 0 is a light green, and #00f900 is a slightly brighter green",
-      "Now figure out how to make the bright green in the \"red-text\" class into a bright red."
-    ],
-    "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
-      "expect($('h2')).to.have.class('red-text');"
-    ],
-    "challengeSeed": [
-      "<style>",
-      "  .red-text {",
-      "    color: #00ff00;",
-      "  }",
-      "</style>",
-      "",
-      "<h1>hello world</h1>",
-      "<h2 class=\"red-text\">cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id": "bad87fee1348bd9bedf08810",
-    "name": "Use Shortened 3 Digit Hex Codes",
-    "difficulty": 0.025,
-    "description": [
-      "Change the hex code in the \"red-text\" class to the shortened 3-digit hex code for the color red.",
-      "You can also shorten the 6-digit color hex code to a 3-digit code. For example, <code>#00ff00</code> becomes <code>#0f0</code>. This is less precise, but equally effective."
-    ],
-    "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
-      "expect($('h2')).to.have.class('red-text');"
-    ],
-    "challengeSeed": [
-      "<style>",
-      "  .red-text {",
-      "    color: #0f0;",
-      "  }",
-      "</style>",
-      "",
-      "<h1>hello world</h1>",
-      "<h2 class=\"red-text\">cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
-    ],
-    "challengeType": 0
-  },
-  {
-    "_id": "bad87fee1348bd9aedf08811",
-    "name": "Use RGB Codes for Precise Colors",
-    "difficulty": 0.026,
-    "description": [
-      "Change the RGB code to be red.",
-      "Another way to represent color in CSS is with RGB, or red-green-blue notation.",
-      "For each of the three colors, you specify a value between 0 and 256.",
-      "For example, black is <code>rgb(0, 0, 0)</code>, white is <code>rgb(255, 255, 255)</code>, bright green is <code>rgb(0, 255, 0)</code>. You can also get less intense colors by using values lower than 255. For example, light green is <code>rgb(0, 123, 0).",
-      "If you think about it, this is just as precise as using hex code, because 16 times 16 is 256. In practice, most developers use hex code since it's faster to say out loud and to type."
-    ],
-    "tests": [
-      "expect($('h2')).to.have.css('color', 'rgb(255, 0, 0)');",
-      "expect($('h2')).to.have.class('red-text');"
-    ],
-    "challengeSeed": [
-      "<style>",
-      "  .red-text {",
-      "    color: rgb(0, 255, 0);",
-      "  }",
-      "</style>",
-      "",
-      "<h1>hello world</h1>",
-      "<h2 class=\"red-text\">cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
-    ],
-    "challengeType": 0
-  },
+
   {
     "_id": "bad87fee1348bd9aedf08812",
     "name": "Add an Image to your Website",
     "difficulty": 0.027,
     "description": [
-      "Use an img element to add the image <code>http://bit.ly/cutegraycat</code> to your website.",
+      "Use an img element to add the image <code>http://bit.ly/fcc-kittens</code> to your website.",
       "You can add images to your website by using the <code>img</code> element.",
       "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"/&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
       "Try it with this image: <code>http://bit.ly/cutegraycat</code>."
     ],
     "tests": [
-      "expect($('img').attr('src')).to.equal('http://bit.ly/cutegraycat');"
+      "assert($('img').length > 0, 'Your webpage should have an image element.')",
+      "assert(!!$('img').attr('src'), 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
     ],
     "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
       "  .red-text {",
-      "    color: #ff0000;",
+      "    color: red;",
+      "  }",
+      "",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
       "  }",
       "</style>",
       "",
-      "<h1>hello world</h1>",
-      "<h2 class=\"red-text\">cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
   {
     "_id": "bad87fee1348bd9acdf08812",
-    "name": "Specify an Image Size TEST",
+    "name": "Specify an Image Size",
     "difficulty": 0.028,
     "description": [
-      "Create a class called <code>narrow-image</code> and use it to resize the image so that it's only 200 pixels wide",
-      "Uh-oh, our image is too big to fit on a mobile phone. As a result, our user will need to scroll horizontally to view the image. But we can fix this by specifying an image size.",
+      "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.",
       "CSS has an attribute called <code>width</code> that controls an element's width. Just like with fonts, we'll use pixels(px) to specify the images width.",
-      "Create a class called <code>narrow-image</code> and added it to the image element. Change the width to 200 pixels."
+      "Create a class called <code>smaller-image</code> and added it to the image element. Change the width to 100 pixels."
     ],
     "tests": [
-      "expect($('img')).to.have.class('narrow-image');",
-      "expect($('img')).to.have.css('width', 200px)"
+      "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
+      "assert($('img').width() === 100, 'Your image should be 100 pixels wide.')"
     ],
     "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
       "  .red-text {",
-      "    color: #ff0000;",
+      "    color: red;",
       "  }",
       "",
-      "  .wide-image {",
-      "    width: 400px;",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
       "  }",
       "</style>",
-      "<h1>hello world</h1>",
-      "<h2 class=\"red-text\">cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img src=\"http://bit.ly/cutegraycat\"/>"
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<img src='https://bit.ly/fcc-kittens'/>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
@@ -740,35 +678,43 @@
     "name": "Add a Border Around an Element",
     "difficulty": 0.029,
     "description": [
-      "Create a class called \"thick-green-border\" that puts a 5-pixel-wide black border around your cat photo.",
+      "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border around your cat photo.",
       "<code>CSS Borders</code> have attributes like style, color and width.",
       "We've created an example border around your h1 element. See if you can add a 10-pixel-wide green border around your cat photo."
     ],
     "tests": [
-      "expect($('img')).to.have.class('thick-green-border');",
-      "expect($('img')).to.have.css('border-color', 'rgb(0,255,0)'));",
-      "expect($('img')).to.have.css('border-width', '10px');"
+      "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
+      "assert($('img').hasClass('thick-green-border'), 'Your image element should have the class \"thick-green-border\".')",
+      "assert($('img').css('border-left-color') === 'rgb(0,128,0)', 'This test is broken. Sorry. Your image should have a green border.')",
+      "assert(parseInt($('img').css('border-left-width')) > 8, 'Your image should have a border with a width of 10 pixels.')"
     ],
     "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
-      "  .narrow-image {",
-      "    width: 400px;",
+      "  .red-text {",
+      "    color: red;",
       "  }",
       "",
-      "  .thin-red-border {",
-      "    border-style: solid;",
-      "    border-color: #ff0000;",
-      "    border-width: 5px;",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
       "  }",
       "",
-      "  .thick-green-border {",
-      "    border-style: solid;",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
+      "  }",
+      "",
+      "  .smaller-image {",
+      "    width: 100px;",
       "  }",
       "</style>",
-      "<h1 class=\"thin-red-border\">hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img class=\"narrow-image thick-green-border\" src=\"http://bit.ly/cutegraycat\"/>"
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<img class='smaller-image' src='https://bit.ly/fcc-kittens'/>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
@@ -782,30 +728,42 @@
       "You can specify a <code>border-radius</code> with pixels. This will affect how rounded the corners are. Add this attribute to your <code>thick-green-border</code> class and set it to 10 pixels."
     ],
     "tests": [
-      "expect($('img')).to.have.class('thick-green-border');",
-      "expect($('img')).to.have.css('border-radius', '10px');"
+      "assert($('img').hasClass('thick-green-border'), 'Your image element should have the class \"thick-green-border\".')",
+      "assert(parseInt($('img').css('border-top-left-radius')) > 8, 'Your image should have a border radius of 10 pixels')"
     ],
     "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
       "<style>",
-      "  .narrow-image {",
-      "    width: 200px;",
+      "  .red-text {",
+      "    color: red;",
       "  }",
       "",
-      "  .thin-red-border {",
-      "    border-style: solid;",
-      "    border-color: #ff0000;",
-      "    border-width: 5px;",
-      "    border-radius: 5px;",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
       "  }",
       "",
       "  .thick-green-border {",
+      "    border-color: green;",
+      "    border-width: 10px;",
       "    border-style: solid;",
       "  }",
+      "",
+      "  .smaller-image {",
+      "    width: 100px;",
+      "  }",
       "</style>",
-      "<h1 class=\"thin-red-border\">hello world</h1>",
-      "<h2>cat photo app</h2>",
-      "<p>lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
-      "<img class=\"thick-green-border narrow-image\" src=\"http://bit.ly/cutegraycat\"/>"
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+      "",
+      "<p class='red-text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+      "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
     ],
     "challengeType": 0
   },
