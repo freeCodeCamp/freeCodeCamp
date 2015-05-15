@@ -13,6 +13,17 @@
     "start": "node app.js",
     "test": "mocha"
   },
+  "license": "BSD-3-Clause",
+  "contributors" : [
+    {
+      "name": "Quincy Larson",
+      "url" : "https://github.com/QuincyLarson"
+    },
+    {
+      "name": "Nathan Leniz",
+      "url": "https://github.com/terakilobyte"
+    }
+  ],
   "dependencies": {
     "accepts": "~1.2.5",
     "async": "~0.9.0",
