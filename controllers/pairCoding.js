@@ -78,14 +78,13 @@ exports.refreshPairRequest = function(req, res, next) {
 
   // should also get the current challenge and bonfire
 
-  PairUser.findOne({user: req.user._id}, function(err, pairuser) {
+  PairUser.findOne({username: req.user.profile.username}, function(err, pairuser) {
     if (err) {
       return next(err);
     }
     if (!pairuser) {
       // already expired
-      console.log("Couldn't find a pair request for you.");
-      req.send('Your request could not be found. Please try again.');
+      res.status(404).send('Your request could not be found. Please try again.');
       return next();
     } else {
       // edit the request timeOnline
@@ -106,10 +105,10 @@ exports.refreshPairRequest = function(req, res, next) {
 }
 
 
-exports.removeStalePosts = function() {
+exports.removeStalePosts = function(mins) {
   // accessed from app.js, once an hour
   // this is the oldest possible time to keep
-  var cutoff = Date.now() - 60000;  // one hour
+  var cutoff = Date.now() - (mins * 60 * 1000);  // one hour
 
   // get all old pairusers and remove them.
   PairUser.find().where('timeOnline').lt(cutoff).exec(function(err, pairs) {

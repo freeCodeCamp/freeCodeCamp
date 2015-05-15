@@ -27,9 +27,12 @@
                 .modal-body
                     .text-center
                         .delay-half
-                            .modal-body(style="padding-top: 20px") Your request to pair program is about to expire. Renew it here, or ignore to let it expire automatically.
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='renew', id='renewPairRequest') Renew my request
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='ignore', id='ignorePairExpire', data-dismiss="modal") No, thanks
+                            .modal-body(style="padding-top: 20px") 
+                              h2 Your pair program request will expire in 5 minutes or less. 
+                              p Click 'renew' to get another hour. 
+                              p Click 'ignore' to let it expire automatically.
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='renew', id='renewPairRequest') Renew
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='ignore', id='ignorePairExpire', data-dismiss="modal") Ignore
   script.
     $('#renewPairRequest').on('click', function() {
       console.log("request renew button clicked");

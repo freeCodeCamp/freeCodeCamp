@@ -241,7 +241,7 @@ app.use(function (req, res, next) {
   if (pairStartTime === null) {
     return next();
   } else {
-    var minutes = .5;
+    var minutes = 60;
     var interval = Date.now() - (minutes * 60 * 1000);
 
     if (pairStartTime < interval) {
@@ -799,7 +799,7 @@ var pairCodingIntervalMinutes = 30;
 var pairCodingIntervalMilliSeconds = pairCodingIntervalMinutes * 60 * 1000;
 
 var pairCodingInterval = setInterval(function(){
-    pairCodingController.removeStalePosts();
+    pairCodingController.removeStalePosts(pairCodingIntervalMinutes);
 
     pairCodingController.removeStaleSlackUsers();
 }, pairCodingIntervalMilliSeconds);
