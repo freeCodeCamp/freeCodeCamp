@@ -29,7 +29,7 @@
       "Now check your email and click the link in the email from Slack",
       "Complete the sign up process, then update your biographical information and upload an image. A picture of your face works best. This is how people will see you in the chat room, so put your best foot forward.",
       "Now enter the general chat room and introduce yourself to our chat room by typing: \"hello world!\".",
-      "Note that you're expected to follow our Code of Conduct: <a href='/field-guide/what-is-free-code-camp's-code-of-conduct' target='_blank'>http://freecodecamp.com/field-guide/what-is-free-code-camp's-code-of-conduct</a>.",
+      "Note that you're expected to follow our Code of Conduct: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>",
       "Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
       "Keep the chat room open while you work through the other challenges. That way you ask for help if you get stuck on a challenge. You can also socialize when you feel like taking a break.",
       "You can also access this chat room by clicking the \"Chat\" button in the upper right hand corner."
@@ -493,11 +493,11 @@
     "_id": "bd7154d8c441eddfaeb5bdef",
     "name": "Get Started with Angular.js",
     "difficulty": 0.34,
-    "challengeSeed": "125671736",
+    "challengeSeed": "114684726",
     "description": [
-      "Angular.js is a popular client-side JavaScript framework. It will help you create buttery smooth browser-based interactions.",
-      "Codecademy has a fun, interactive Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
-      "Complete Unit 1 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
+      "In this course, we'll build a virtual shop entirely in Angular.js.",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
@@ -506,42 +506,49 @@
     "_id": "bd7155d8c441eddfaeb5bdef",
     "name": "Apply Angular.js Directives",
     "difficulty": 0.35,
-    "challengeSeed": "125671736",
+    "challengeSeed": "114684727",
     "description": [
-      "Complete Unit 2 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will can alter the behavior of DOM elements based on the directives you've used.",
+      "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7156d8c441eddfaeb5bdef",
-    "name": "Create Angular.js Services",
+    "name": "Power Forms with Angular.js",
     "difficulty": 0.36,
-    "challengeSeed": "125671736",
+    "challengeSeed": "114684729",
     "description": [
-      "Complete Unit 3 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "One area where Angular.js really shines is its powerful web forms.",
+      "Learn how to create reactive Angular.js forms, including real-time form validation.",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7157d8c441eddfaeb5bdef",
-    "name": "Structure Angular.js Routes",
+    "name": "Customize Angular.js Directives",
     "difficulty": 0.37,
-    "challengeSeed": "125671736",
+    "challengeSeed": "114685062",
     "description": [
-      "Complete Unit 4 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []
   },
   {
     "_id": "bd7158d8c441eddfaeb5bdef",
-    "name": "Build a Geolocation Angular App",
+    "name": "Create Angular.js Services",
     "difficulty": 0.38,
-    "challengeSeed": "125671736",
+    "challengeSeed": "114685060",
     "description": [
-      "Complete Unit 5 of <a href='http://www.codecademy.com/learn/learn-angularjs' target='_blank'>http://www.codecademy.com/learn/learn-angularjs</a>"
+      "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",
+      "We'll learn how to use services in this final Code School Angular.js challenge.",
+      "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."
     ],
     "challengeType": 2,
     "tests": []

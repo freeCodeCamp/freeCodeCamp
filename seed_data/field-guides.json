@@ -4,7 +4,7 @@
     "name": "How do I use this guide?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "  <h2 class='text-left'>This guide will answer many of your questions about learning to code and getting a coding job.</h2>",
+      "  <h2 class='text-left'>This guide strives to provide clear answers to common questions about Free Code Camp, learning to code, and getting a coding job.</h2>",
       "  <h3 class='text-left'>If you're logged in, you can click the \"Next article\" button to go to your next article.</h3>",
       "  <h3 class='text-left'>You can also click the \"Show me all articles\" button to browse all the questions we answer.</h3>",
       "</div>"
@@ -222,10 +222,10 @@
   },
   {
     "_id": "bd7158d9c436eddfaeb5bd3f",
-    "name": "Can I jump around in this Field Guide?",
+    "name": "Can I jump around in this guide?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "  <h2>This Field Guide was designed as a reference for you. You shouldn't try to read it all today.</h2>",
+      "  <h2>This guide was designed as a reference for you. You shouldn't try to read it all today.</h2>",
       "  <h3>Feel free to come back any time and jump around, reading any articles that seem interesting to you at the time.</h3>",
       "  <h3>If you're currently doing our \"Browse our Field Guide\" Waypoint, go ahead and mark that challenge complete and move on to your next Waypoint.</h3>",
       "</div>"
@@ -284,11 +284,17 @@
       "    <ol>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.atlanta/' target='_blank'>Atlanta</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.bandung/' target='_blank'>Bandung</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.belgrade/' target='_blank'>Belgrade</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.bengaluru/' target='_blank'>Bengaluru</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.berkeley/' target='_blank'>Berkeley</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.cape.town/' target='_blank'>Cape Town</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.chicago/' target='_blank'>Chicago</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.berlin/' target='_blank'>Berlin</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.cincinnati/' target='_blank'>Cincinnati</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.delhi/' target='_blank'>Delhi</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.denver/' target='_blank'>Denver</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.dubai/' target='_blank'>Dubai</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.hk/' target='_blank'>Hong Kong</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.hyderabad/' target='_blank'>Hyderabad</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.kalamazoo/' target='_blank'>Kalamazoo</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.karachi/' target='_blank'>Karachi</a></li>",
@@ -298,29 +304,36 @@
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.miami/' target='_blank'>Miami</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.minneapolis/' target='_blank'>Minneapolis</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.missoula/' target='_blank'>Missoula</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.mysore/' target='_blank'>Mysore</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.nashville/' target='_blank'>Nashville</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.neworleans/' target='_blank'>New Orleans</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.new.york.city/' target='_blank'>New York City</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.orlando.fl/' target='_blank'>Orlando</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.oxford.al/' target='_blank'>Oxford, Alabama</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.paris/' target='_blank'>Paris</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.philadelphia/' target='_blank'>Philadelphia</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.pittsburgh.pa/' target='_blank'>Pittsburgh</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.tempe.phoenix.scottsdale/' target='_blank'>Phoenix</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.portland/' target='_blank'>Portland</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.providence/' target='_blank'>Providence</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.raleigh/' target='_blank'>Raleigh</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.richmond/' target='_blank'>Richmond</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.rio.de.janeiro/' target='_blank'>Rio de Janeiro</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.sacramento/' target='_blank'>Sacramento</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.san.bernardino/' target='_blank'>San Bernardino</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.san.diego/' target='_blank'>San Diego</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.san.francisco' target='_blank'>San Francisco</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.san.jose' target='_blank'>San Jose</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.tempe.phoenix.scottsdale/' target='_blank'>Scottsdale</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.seattle/' target='_blank'>Seattle</a></li>",
+      "      <li><a href='https://www.facebook.com/groups/free.code.camp.solo/' target='_blank'>Solo</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.taipei/' target='_blank'>Taipei</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.tampa/' target='_blank'>Tampa</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.tempe.phoenix.scottsdale/' target='_blank'>Tempe</a></li>",
       "      <li><a href='https://www.facebook.com/groups/free.code.camp.washington.dc/' target='_blank'>Washington, DC</a></li>",
       "    </ol>",
       "  </h3>",
-      "  <h3>If you didn't see your city on this list, you should create your own Facebook group for your city. Please follow these steps:</h3>",
+      "  <h2>If you didn't see your city on this list, you should create your own Facebook group for your city. Please follow these steps:</h2>",
       "  <h3>",
       "    <ol>",
       "      <li>Sign in to Facebook.</li>",
@@ -361,24 +374,6 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd3c",
-    "name": "How can I reach Free Code Camp's team to interview them for my publication?",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "  <h2>We're happy to do a quick interview for your publication or show. Here's whom you should contact about what, and how to best reach them:</h2>",
-      "  <h3>",
-      "    <ol>",
-      "      <li>Want to talk to about Free Code Camp's curriculum or long-term vision? Reach out to Quincy Larson. He's <a href='https://twitter.com/ossia' target='_blank'>@ossia</a> on Twitter and <a href='https://freecode.slack.com/team/quincylarson' target='_blank'>@quincylarson</a> on Slack.</li>",
-      "      <li>Want to talk about Free Code Camp's open source codebase, infrastructure, or JavaScript in general? Talk to Nathan Leniz. He's <a href='https://twitter.com/terakilobyte' target='_blank'>@terakilobyte</a> on Twitter and <a href='https://freecode.slack.com/team/terakilobyte' target='_blank'>@terakilobyte</a> on Slack.</li>",
-      "      <li>Want to explore our efforts to empower nonprofits with code? Michael D. Johnson eats, sleeps and breathes that. He's <a href='https://twitter.com/figitalboy' target='_blank'>@figitalboy</a> on Twitter and <a href='https://freecode.slack.com/team/codenonprofit' target='_blank'>@codenonprofit</a> on Slack.</li>",
-      "      <li>Want to get a camper's perspective on our community? Talk with Bianca Mihai (<a href='https://freecode.slack.com/team/biancamihai' target='_blank'>@biancamihai</a> on Slack and <a href='https://twitter.com/bubuslubu' target='_blank'>@bubuslubu</a> on Twitter) or Suzanne Atkinson (<a href='https://freecode.slack.com/team/adventurebear' target='_blank'>@adventurebear</a> on Slack and <a href='https://twitter.com/SteelCityCoach' target='_blank'>@steelcitycoach</a> on Twitter).",
-      "    </ol>",
-      "  </h3>",
-      "  <h3>We strive to be helpful and transparent in everything we do. We'll do what we can to help you share our community with your audience.</h3>",
-      "</div>"
-    ]
-  },
-  {
     "_id": "bd7158d9c442eddfaeb5bdef",
     "name": "How do I best use the Global Control Shortcuts for Mac?",
     "description": [
@@ -404,7 +399,7 @@
   },
   {
     "_id": "bd7158d9c445eddfaeb5bdef",
-    "name": "How can I get to Inbox Zero with Gmail Shortcuts?",
+    "name": "How can I get to Inbox Zero with Gmail shortcuts?",
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
       "  <h2>These Gmail Shortcuts will save you hours and help you get to Inbox Zero.</h2><br/>",
@@ -574,7 +569,7 @@
   },
   {
     "_id": "bd7158d9c451eddfaeb5bdee",
-    "name": "What is Free Code Camp's Code of Conduct?",
+    "name": "What is the Free Code Camp Code of Conduct?",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "  <h2>Free Code Camp is friendly place to learn to code. We're committed to keeping it that way.</h2>",
@@ -598,7 +593,7 @@
   },
   {
     "_id": "bd7158d9c451eddfaeb5bdef",
-    "name": "What is Free Code Camp's Privacy Policy?",
+    "name": "What is the Free Code Camp Privacy Policy?",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "  <h3>Free Code Camp is committed to respecting the privacy of visitors to our web sites and web applications. The guidelines below explain how we protect the privacy of visitors to FreeCodeCamp.com and its features.</h3>",
@@ -634,6 +629,39 @@
       "  <h2>Acceptance of Privacy Policy Terms and Conditions</h2>",
       "  <h3>By using this site, you signify your agreement to the terms and conditions of this FreeCodeCamp.com Privacy Policy. If you do not agree to these terms, please do not use this site. We reserve the right, at our sole discretion, to change, modify, add, or remove portions of this policy at any time. All amended terms automatically take effect 30 days after they are initially posted on the site. Please check this page periodically for any modifications. Your continued use of FreeCodeCamp.com following the posting of any changes to these terms shall mean that you have accepted those changes.</h3>",
       "  <h3>If you have any questions or concerns, please send an email to <a href=\"mailto:team@freecodecamp.com\" target=\"_blank\">team@freecodecamp.com</a>.</h3>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfaeb5bd3c",
+    "name": "How can I reach the Free Code Camp team to interview them for my publication?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2>We're happy to do a quick interview for your publication or show. Here's whom you should contact about what, and how to best reach them:</h2>",
+      "  <h3>",
+      "    <ol>",
+      "      <li>Want to talk to about Free Code Camp's curriculum or long-term vision? Reach out to Quincy Larson. He's <a href='https://twitter.com/ossia' target='_blank'>@ossia</a> on Twitter and @quincylarson on Slack.</li>",
+      "      <li>Want to talk about Free Code Camp's open source codebase, infrastructure, or JavaScript in general? Talk to Nathan Leniz. He's <a href='https://twitter.com/terakilobyte' target='_blank'>@terakilobyte</a> on Twitter and @terakilobyte on Slack.</li>",
+      "      <li>Want to explore our efforts to empower nonprofits with code? Michael D. Johnson eats, sleeps and breathes that. He's <a href='https://twitter.com/figitalboy' target='_blank'>@figitalboy</a> on Twitter and @codenonprofit on Slack.</li>",
+      "      <li>Want to get a camper's perspective on our community? Talk with Bianca Mihai (@biancamihai on Slack and <a href='https://twitter.com/bubuslubu' target='_blank'>@bubuslubu</a> on Twitter) or Suzanne Atkinson (@adventurebear on Slack and <a href='https://twitter.com/SteelCityCoach' target='_blank'>@steelcitycoach</a> on Twitter).",
+      "    </ol>",
+      "  </h3>",
+      "  <h3>We strive to be helpful and transparent in everything we do. We'll do what we can to help you share our community with your audience.</h3>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfadb5bd3e",
+    "name": "How can I contribute to this guide?",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h3>Contributing to our field guide is a great way to establish your history on GitHub, add to your portfolio, and help other campers. If you have a question about JavaScript or programming in general that you'd like us to add to the field guide, here are two ways to get it into the guide:</h3>",
+      "  <h3>",
+      "    <ol>",
+      "      <li>You can message @alex-dixon in Slack with your question.</li>",
+      "      <li>You can also contribute to this field guide directly via GitHub pull request, by cloning Free Code Camp's <a href='https://github.com/FreeCodeCamp/freecodecamp'>main repository</a> and modifying <a href='https://github.com/FreeCodeCamp/freecodecamp/blob/master/seed_data/field-guides.json'>field-guides.json</a>.</li>",
+      "    </ol>",
+      "  </h3>",
       "</div>"
     ]
   }

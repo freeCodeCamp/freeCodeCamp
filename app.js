@@ -183,7 +183,7 @@ app.use(helmet.csp({
         '*.twitter.com'
     ].concat(trusted),
     frameSrc: [
-        
+
         '*.gitter.im',
         '*.gitter.im https:',
         '*.vimeo.com',
@@ -332,7 +332,7 @@ app.post(
 );
 
 app.get('/privacy', function(req, res) {
-  res.redirect(301, '/field-guide/what-is-free-code-camp\'s-privacy-policy');
+  res.redirect(301, '/field-guide/what-is-the-free-code-camp-privacy-policy?');
 });
 
 app.get('/api/slack', function(req, res) {
