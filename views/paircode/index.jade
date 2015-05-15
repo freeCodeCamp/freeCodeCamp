@@ -1,27 +1,20 @@
 extends ../layout
 
 block content
-		script.
-			var user = !{JSON.stringify(user)};
-			var page = !{JSON.stringify(page)};
-		.panel.panel-info
-			.panel-heading.text-center Find a Coding Partner
-			.panel_body
-				.col-xs-12
-				.text-center
-					#story-list.story-list(style="margin:10px")
-						if (user.profile.userSlack !== '')
-								if (page === 'pairUser')
-									include ./add-paircode.jade
-									
-								else if (page === 'pairWithUser')
-									include ./pairWith
-								else 
-									include ./add-paircode.jade
-									include ./online
-						else
-							.spacer
-								.spacer
-									.spacer
-										a(href="/account")
-											button.btn.btn-big.btn-primary.btn-responsive(type="button") You need to update your Slack handle in your profile. Click here to update now
+    script.
+      var user = !{JSON.stringify(user)};
+      console.log("is there a user?", user)
+      var page = !{JSON.stringify(page)};
+    .panel.panel-info
+      .panel-heading.text-center Find a Coding Partner
+      .panel_body.col-xs-12.text-center.panel
+        #story-list.story-list(style="margin:10px")
+          if (user.profile.userSlack !== '')
+                include ./add-paircode.jade
+                include ./online
+          else
+            .spacer
+              .spacer
+                .spacer
+                  a(href="/account")
+                    button.btn.btn-big.btn-primary.btn-responsive(type="button") You need to update your Slack handle in your profile. Click here to update now

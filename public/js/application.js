@@ -17,3 +17,4 @@
 //= require lib/bootstrap.min
 //= require lib/moment/moment
 //= require main
+//= require paircode

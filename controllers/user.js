@@ -217,6 +217,13 @@ exports.getAccountAngular = function(req, res) {
   });
 };
 
+exports.getUserPairStatus = function(req, res) {
+  // only returns pair info for the pair code timer.
+  res.json({
+    user: req.user.pair
+  });
+}
+
 /**
  * Unique username check API Call
  */

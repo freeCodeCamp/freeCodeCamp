@@ -22,12 +22,12 @@
   #expired-paircode-request.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
-                .modal-header.challenge-list-header= "Renew pair programming request?"
+                .modal-header.challenge-list-header= "Renew pair request?"
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
                     .text-center
-                        .animated.zoomInDown.delay-half
-                            span= "Your pair req"
+                        .delay-half
+                            .modal-body(style="padding-top: 20px") Your request to pair program is about to expire. Renew it here, or ignore to let it expire automatically.
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='renew', id='renewPairRequest') Renew my request
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='ignore', id='ignorePairExpire', data-dismiss="modal") No, thanks
   script.

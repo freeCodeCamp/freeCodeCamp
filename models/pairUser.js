@@ -2,17 +2,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var PairUserSchema = new mongoose.Schema({
-	user: { 
-		type: Schema.Types.ObjectId, 
-		ref: 'User' 
-	},
 	username: String,
-	comment: {type: String, default: "Come pair with me."},
-	tags: {type:[String], default: []},
-	details: {type: String, default: ""},
+  userPic: String,
+  userSlack: String,
+  bonfire: String,
+  challenge: String,
 	timeOnline: {type:Date, default: null},
-	userSlack: String
-	
+  fiveMinuteWarning: Boolean
 });
 
 

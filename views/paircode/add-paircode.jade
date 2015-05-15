@@ -1,29 +1,42 @@
 script.
   var slackHandle = !{JSON.stringify(slackHandle)}
-if (!user.pair.onlineStatus)
-  h2 You are not online. 
-  h4 Make a new pair request to let others know you are available.
-  h4 You will stay online for approximately 30 minutes
-  form.input-group.col-md-12.col-sm-12.col-xs-12(name='pairSubmit', method="POST", action="/pair-coding/setOnline")
-    input#comment.big-text-field.field-responsive.form-control(placeholder='What would you like to grok today?', name='comment', type='text', autofocus)
-    input#userSlack.big-text-field.field-responsive.form-control(placeholder=slackHandle, name='slackUser', type='text', value=slackHandle, required)
-    input#moreDetails.big-text-field.field-responsive.form-control.collapse(placeholder='more details', name='details', type='text')
-    button#pair-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
-    button#addDetails.btn.btn-big.btn-primary.btn-responsive(type='button') Add Details
+  console.log("do you have access to page/" , page)
+if (page !=='request-submitted')
+  .row
+    .col-xs-12
+      .col-xs-6
+        .col-xs-12
+          h2 Instructions
+          ol(style="text-align: left") 
+            li Your request is active for an hour.
+            li You must be logged into and active on Slack in order to participate.
+            li Stale requests are automatically removed once an hour.
+            li You will get a warning if you are on the Free Code Camp website when your request is close to expiring.
+      .col-xs-6
+        h2 You are not online. 
+        form.input-group.col-md-12.col-sm-12.col-xs-12(name='pairSubmit', method="POST", action="/pair-coding/setOnline")
+          input#comment.big-text-field.field-responsive.form-control(placeholder='What would you like to grok today?', name='comment', type='text', autofocus)
+          input#userSlack.big-text-field.field-responsive.form-control(placeholder=slackHandle, name='slackUser', type='text', value=slackHandle, required)
+          input#moreDetails.big-text-field.field-responsive.form-control.collapse(placeholder='more details', name='details', type='text')
+          button#pair-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
+          button#addDetails.btn.btn-big.btn-primary.btn-responsive(type='button') Add Details 
+    .spacer
 else
-  h2 You are online.
-  button.btn.bt-big.btn-primary.btn-responsive(type="button")#go-offline Go Offline
-  .spacer
-  .collapse
-    form.input-group(method="POST", action="/pair-coding/edit-request", name="paircode-edit")
-      input#comment.big-text-field.field-responsive.form-control(placeholder='What do you want to grok now?', name='comment', type='text' autofocus)
-      input#moreDetails.big-text-field.field-responsive.form-control(placeholder='What do you want to grok now?', name='comment', type='text' autofocus)
-      span.input-group-btn
-        button#edit-paircode-submit.btn.btn-big.btn-primary.btn-responsive(type="submit") Edit
-script.
-  $('#addDetails').click(function() {
-    $('#moreDetails').toggleClass('collapse');
-    });
+  .row
+    .text-center.col-xs-12
+    h2 You are online.
+    button.btn.bt-big.btn-primary.btn-responsive(type="button")#go-offline Go Offline
+    .spacer
+    .collapse
+      form.input-group(method="POST", action="/pair-coding/edit-request", name="paircode-edit")
+        input#comment.big-text-field.field-responsive.form-control(placeholder='What do you want to grok now?', name='comment', type='text' autofocus)
+        input#moreDetails.big-text-field.field-responsive.form-control(placeholder='What do you want to grok now?', name='comment', type='text' autofocus)
+        span.input-group-btn
+          button#edit-paircode-submit.btn.btn-big.btn-primary.btn-responsive(type="submit") Edit
+  script.
+    $('#addDetails').click(function() {
+      $('#moreDetails').toggleClass('collapse');
+      });
   
 
 

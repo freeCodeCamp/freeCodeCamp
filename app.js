@@ -236,18 +236,28 @@ app.use(function (req, res, next) {
 });
 
 app.use(function (req, res, next) {
-  if (req.user && req.user.pair.expireStatus === 'notify') {
-    req.user.pair.expireStatus = 'norequest';
-    console.log(req.flash());
+  var pairStartTime = req.session.pair.start;
 
-    req.flash('errors', {
-      msg: "Your pair request was removed and you are listed as being offline."
-    });
-    
-    next();
+  if (pairStartTime === null) {
+    return next();
   } else {
+    var minutes = .5;
+    var interval = Date.now() - (minutes * 60 * 1000);
+
+    if (pairStartTime < interval) {
+      req.session.pair.start = null;
+      req.flash('errors', {
+        msg: "Your pair programming request automatically expired."
+      });
+    }
     next();
   }
+
+
+   
+
+
+  // TODO the warning function
 });
 
 app.use(function (req, res, next) {
@@ -296,8 +306,6 @@ app.get('/pair-coding', pairCodingController.index);
 app.post('/pair-coding/setOnline', pairCodingController.setOnline);
 app.get('/pair-coding/setOffline', pairCodingController.setOffline);
 app.get('/pair-coding/refresh', pairCodingController.refreshPairRequest);
-app.post('/pair-coding/edit-request', pairCodingController.editPairRequest);
-app.get('/pair-coding/:onlinePostuserName', pairCodingController.returnPair);
 
 app.get('/install-screenhero', function(req, res) {
     res.redirect(301, '/field-guide/install-screenhero');
@@ -571,6 +579,7 @@ app.post(
 app.all('/account', passportConf.isAuthenticated);
 
 app.get('/account/api', userController.getAccountAngular);
+app.get('/account/api/paircode', userController.getUserPairStatus);
 
 /**
  * API routes
@@ -793,7 +802,6 @@ var pairCodingInterval = setInterval(function(){
     pairCodingController.removeStalePosts();
 
     pairCodingController.removeStaleSlackUsers();
-    console.log("removed stale from app.js");
 }, pairCodingIntervalMilliSeconds);
 
 module.exports = app;
