@@ -157,6 +157,10 @@ module.exports = {
     }
   },
 
+  catPhotoSubmit: function catPhotoSubmit(req, res) {
+    res.send('Success! You have submitted your cat photo.')
+  },
+
   nonprofits: function nonprofits(req, res) {
     res.render('resources/nonprofits', {
       title: 'A guide to our Nonprofit Projects'
