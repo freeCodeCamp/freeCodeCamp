@@ -2,7 +2,6 @@
   // runs every time a page loads.
 
   $.get('/account/api/paircode').success(function(data) {
-    console.log("data from API", data.user);
 
     var pairData = data.user;
 
@@ -31,7 +30,7 @@
 })();
 
 
-// globally exposed function for the modal
+// one globally exposed function for the modal
 function renewPairRequest() {
   $('#expired-paircode-request').modal('hide');
   $.get('/pair-coding/refresh').success(function(data) {

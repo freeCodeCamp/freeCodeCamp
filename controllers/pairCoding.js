@@ -1,9 +1,11 @@
 var User = require('./../models/User'),
   mongodb = require('mongodb'),
-  User = require('./../models/User');
-  PairUser = require('./../models/pairUser');
-  var https = require('https');
-  var secrets = require('./../config/secrets')
+  User = require('./../models/User'),
+  PairUser = require('./../models/pairUser'),
+  Courseware = require('./../models/Courseware'),
+  Bonfire = require('./../models/Bonfire'),
+  https = require('https'),
+  secrets = require('./../config/secrets');
 
 
 exports.index = function(req, res){
@@ -19,6 +21,7 @@ exports.index = function(req, res){
     return res.redirect('/account');
 
   } else {
+    res.locals.moment = require('moment');
     PairUser.find().exec(function(err, pairUsers) {
       var page = 'page';
       if (req.session.pair.start) {
@@ -34,22 +37,33 @@ exports.index = function(req, res){
   }
 };
 
-var newPairRequest = function(user) {
-  var pairCode = new PairUser({});
-    pairCode.username = user.profile.username;
-    pairCode.userPic = user.profile.picture;
-    pairCode.userSlack = user.profile.slackHandle;
-    pairCode.bonfire = "bonfire test for now";
-    pairCode.challenge = "challenge test for now";
-    pairCode.timeOnline = Date.now();
-    pairCode.fiveMinuteWarning = false;
+var newPairRequest = function(user, bonfireSelected, coursewareSelected, comment) {
+  getNextCourseware(user, function(courseware) {
+    if (coursewareSelected) {
+      var nextCourseware = courseware;
+    }
 
-    pairCode.save(function(err) {
-      if (err) {
-        return res.sendStatus(400);
+    getNextBonfire(user, function(bonfire) {
+      if (bonfireSelected) {
+        var nextBonfire = bonfire;
       }
-    });
 
+      var pairCode = new PairUser({});
+      pairCode.username = user.profile.username;
+      pairCode.userPic = user.profile.picture;
+      pairCode.userSlack = user.profile.slackHandle;
+      pairCode.bonfire = nextBonfire;
+      pairCode.challenge = nextCourseware;
+      pairCode.comment = comment || '';
+      pairCode.timeOnline = Date.now();
+
+      pairCode.save(function(err) {
+        if (err) {
+          return res.sendStatus(400);
+        }
+      });
+    });
+  }); 
 };
 
 exports.setOnline = function(req, res, next) {
@@ -60,9 +74,15 @@ exports.setOnline = function(req, res, next) {
     flaggedForRemoval: false,
     removed: false
   }
+
+  console.log(req.body);
+
+  var bonfire = req.body.bonfireSelected;
+  var courseware = req.body.challengeSelected;
+  var comment = req.body.comment || '';
   
   // add new request to the database here
-  newPairRequest(req.user);
+  newPairRequest(req.user, bonfire, courseware, comment);
 
   res.redirect('/pair-coding');
 };
@@ -76,31 +96,38 @@ exports.refreshPairRequest = function(req, res, next) {
     flaggedForRemoval: false
   }
 
-  // should also get the current challenge and bonfire
+  var user = req.user;
 
-  PairUser.findOne({username: req.user.profile.username}, function(err, pairuser) {
-    if (err) {
-      return next(err);
-    }
-    if (!pairuser) {
-      // already expired
-      res.status(404).send('Your request could not be found. Please try again.');
-      return next();
-    } else {
-      // edit the request timeOnline
-      pairuser.timeOnline = new Date();
-      pairuser.save(function(err) {
+  getNextBonfire(user, function(bonfire) {
+    getNextCourseware(user, function(courseware) {
+      PairUser.findOne({username: req.user.profile.username}, function(err, pairuser) {
         if (err) {
           return next(err);
-        } else {
-          // acts as middleware to keep the user on the page.
-          console.log("Your request was successfully refreshed.");
-          return res.send(200);
         }
+        if (!pairuser) {
+          // already expired
+          res.status(404).send('Your request could not be found. Please try again.');
+          return next();
+        } else {
+          // edit the request timeOnline
+          pairuser.timeOnline = new Date();
+          pairuser.bonfire = bonfire;
+          pairuser.challenge = courseware;
+          pairuser.save(function(err) {
+            if (err) {
+              return next(err);
+            } else {
+              // acts as middleware to keep the user on the page.
+              console.log("Your request was successfully refreshed.");
+              return res.send(200);
+            }
 
+          });
+        }
       });
-    }
+    });
   });
+
 
 }
 
@@ -219,7 +246,6 @@ function takeUserOffline(user) {
 };
 
 
-
 exports.setOffline = function(req, res, next){
   // change the user's online status
   req.session.pair = {
@@ -233,6 +259,37 @@ exports.setOffline = function(req, res, next){
   return res.redirect('/pair-coding');
 
 };
+
+function getNextCourseware(user, cb) {
+  // returns a String value to use in the form
+  var nextCourseware = user.uncompletedCoursewares[0];
+
+  Courseware.findOne({'_id' : nextCourseware}).exec(function(err, courseware) {
+    if (err) return next(err);
+    if (!courseware) {
+      return bc("all completed");
+    } else {
+      return cb(courseware.name);
+    }
+  });
+}
+
+function getNextBonfire(user, cb) {
+  // returns a String value to use in the form
+  var nextBonfire = user.uncompletedBonfires[0];
+  var name;
+  Bonfire.findOne({'_id' : nextBonfire}).exec(function(err, bonfire) {
+    if (err) return next(err);
+    if (!bonfire) {
+      return cb("all completed");
+    } 
+    else {
+      name = bonfire.name;
+      return cb(name);
+    }
+  });
+  
+}
 
 
 

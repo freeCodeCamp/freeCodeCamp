@@ -4,11 +4,10 @@
 if requests.length===0
   h2 Nobody online
 else 
-  script(src='/js/lib/moment/moment.js')
   h2 Current Pair Requests
   ul 
     each val, index in requests 
-      li
+      li: a(href='https://freecode.slack.com/messages/@'+val.username+'/', target='blank')
         .story-list
           .col-xs-12.text-left.pair-request-listing
             h2.col-xs-1.positive-5= index+1
@@ -16,14 +15,16 @@ else
               img.img-news(src=val.userPic)
             .col-xs-7
               .row
-                .story-headline
-                  a(href='https://freecode.slack.com/messages/@'+val.username+'/', target="blank")= val.username
-              .row
-                em: span.pair-request-listing= 'Bonfire: ' + val.bonfire 
+                h2.story-headline(style='margin-bottom: 10px')= val.username
+              if val.comment 
+                p(style='margin-bottom: 0')= val.comment
+              if val.bonfire
+                span(style='margin-bottom: 0')= 'Current bonfire: ' + val.bonfire 
                 br
-                span.pair-request-listing= 'Challenge: ' + val.challenge 
+              if val.challenge
+                span(style='margin-bottom: 0')= 'Current challenge: ' + val.challenge 
             .col-xs-2
-              p= (val.timeOnline)
+              p= moment(val.timeOnline).fromNow()
 
 script.
   $('#edit-pair-request').on('click', function () {

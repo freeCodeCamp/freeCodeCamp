@@ -7,18 +7,25 @@ if (page !=='request-submitted')
         .col-xs-12
           h2 Instructions
           ol(style="text-align: left") 
+            li You can specify that you want help on your current bonfire, challenge, or both.
             li Your request is active for an hour.
             li You must be logged into and active on Slack in order to participate.
             li Stale requests are automatically removed once an hour.
             li You will get a warning if you are on the Free Code Camp website when your request is close to expiring.
       .col-xs-6
-        h2 You are not online. 
+        h2 What would you like to pair on? 
         form.input-group.col-md-12.col-sm-12.col-xs-12(name='pairSubmit', method="POST", action="/pair-coding/setOnline")
-          input#comment.big-text-field.field-responsive.form-control(placeholder='What would you like to grok today?', name='comment', type='text', autofocus)
-          input#userSlack.big-text-field.field-responsive.form-control(placeholder=slackHandle, name='slackUser', type='text', value=slackHandle, required)
-          input#moreDetails.big-text-field.field-responsive.form-control.collapse(placeholder='more details', name='details', type='text')
+          .col-xs-12.pair-request
+            .col-xs-6.form-group
+              input(type="checkbox", style="margin: 15px", value="true", name="bonfireSelected")
+              label(for="bonfireSelected"): h4 Bonfire
+            .col-xs-6.form-group
+              input(type="checkbox", style="margin: 15px", value="true", name="challengeSelected")
+              label(for="challengeSelected"): h4 Challenge   
+          input#comment.big-text-field.field-responsive.form-control(placeholder='Add details (optional)', name='comment', type='text', autofocus)
+          input#userSlack.big-text-field.field-responsive.form-control.collapse(placeholder=slackHandle, name='slackUser', type='text', value=slackHandle, required)
+          .spacer
           button#pair-submit.btn.btn-big.btn-primary.btn-responsive(type='submit') Submit
-          button#addDetails.btn.btn-big.btn-primary.btn-responsive(type='button') Add Details 
     .spacer
 else
   .row

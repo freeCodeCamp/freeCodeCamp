@@ -1,6 +1,7 @@
 extends ../layout
 
 block content
+    script(src='/js/lib/moment/moment.js')
     script.
       var user = !{JSON.stringify(user)};
       var page = !{JSON.stringify(page)};
@@ -9,7 +10,7 @@ block content
       .panel_body.col-xs-12.text-center.panel
         #story-list.story-list(style="margin:10px")
           if (user.profile.userSlack !== '')
-                include ./add-paircode.jade
+                include ./add-paircode
                 include ./online
           else
             .spacer

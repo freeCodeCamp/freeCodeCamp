@@ -7,8 +7,8 @@ var PairUserSchema = new mongoose.Schema({
   userSlack: String,
   bonfire: String,
   challenge: String,
-	timeOnline: {type:Date, default: null},
-  fiveMinuteWarning: Boolean
+  comment: String,
+	timeOnline: {type:Date, default: null}
 });
 
 
