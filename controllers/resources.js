@@ -19,14 +19,15 @@ var async = require('async'),
   debug = require('debug')('freecc:cntr:resources'),
   cheerio = require('cheerio'),
   request = require('request'),
-  R = require('ramda');
+  R = require('ramda'),
+  _ = require('lodash');
 
 /**
  * Cached values
  */
 var allBonfireIds, allBonfireNames, allCoursewareIds, allCoursewareNames,
   allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
-  allBonfireIndexesAndNames;
+  allBonfireIndexesAndNames, challengeMap;
 
 /**
  * GET /
@@ -45,6 +46,35 @@ Array.zip = function(left, right, combinerFunction) {
 };
 
 module.exports = {
+  getChallengeMapWithIds: function() {
+    // TODO finish this
+    var challengeMapWithIds = {};
+    Object.keys(challengeMap).
+      forEach(function(key) {
+        var onlyIds = challengeMap[key].challenges.map(function(elem) {
+          return elem.challengeId;
+        });
+        challengeMapWithIds[key] = onlyIds;
+      });
+    return challengeMapWithIds;
+  },
+
+  getChallengeMapWithNames: function() {
+    var challengeMapWithNames = {};
+    Object.keys(challengeMap).
+      forEach(function(key) {
+        var onlyNames = challengeMap[key].challenges.map(function(elem) {
+          return elem.challengeName;
+        });
+        challengeMapWithNames[key] = onlyNames;
+      });
+    return challengeMapWithNames;
+  },
+
+  getChallengeName: function(challengeId) {
+
+  },
+
   sitemap: function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
     var now = moment(new Date()).format('YYYY-MM-DD');
