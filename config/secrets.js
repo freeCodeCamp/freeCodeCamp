@@ -14,7 +14,8 @@ module.exports = {
   },
 
   slack: {
-    key: process.env.SLACK_KEY
+    key: process.env.SLACK_KEY,
+    token: process.env.SLACK_TOKEN
   },
 
   mandrill: {

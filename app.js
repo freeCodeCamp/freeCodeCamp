@@ -44,6 +44,7 @@ var express = require('express'),
     coursewareController = require('./controllers/courseware'),
     fieldGuideController = require('./controllers/fieldGuide'),
     challengeMapController = require('./controllers/challengeMap'),
+    pairCodingController = require('./controllers/pairCoding.js'),
 
     /**
      *  Stories
@@ -56,6 +57,12 @@ var express = require('express'),
     secrets = require('./config/secrets'),
     passportConf = require('./config/passport');
 
+  /**
+   * API keys and Passport configuration.
+   */
+  secrets = require('./config/secrets'),
+  passportConf = require('./config/passport');
+
 /**
  * Create Express server.
  */
@@ -66,9 +73,9 @@ var app = express();
  */
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function () {
-    console.error(
-        'MongoDB Connection Error. Please make sure that MongoDB is running.'
-    );
+  console.error(
+    'MongoDB Connection Error. Please make sure that MongoDB is running.'
+  );
 });
 
 /**
@@ -92,11 +99,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressValidator({
-    customValidators: {
-        matchRegex: function (param, regex) {
-            return regex.test(param);
-        }
+  customValidators: {
+    matchRegex: function (param, regex) {
+      return regex.test(param);
     }
+  }
 }));
 app.use(methodOverride());
 app.use(cookieParser());
@@ -204,6 +211,31 @@ app.use(function (req, res, next) {
 app.use(express.static(__dirname + '/public', {maxAge: 86400000 }));
 
 app.use(function (req, res, next) {
+  var pairStartTime = req.session.pair.start;
+
+  if (pairStartTime === null) {
+    return next();
+  } else {
+    var minutes = 60;
+    var interval = Date.now() - (minutes * 60 * 1000);
+
+    if (pairStartTime < interval) {
+      req.session.pair.start = null;
+      req.flash('errors', {
+        msg: "Your pair programming request automatically expired."
+      });
+    }
+    next();
+  }
+
+
+   
+
+
+  // TODO the warning function
+});
+
+app.use(function (req, res, next) {
     // Remember original destination before login.
     var path = req.path.split('/')[1];
     if (/auth|login|logout|signin|signup|fonts|favicon/i.test(path)) {
@@ -254,6 +286,11 @@ app.get('/map', challengeMapController.challengeMap);
 app.get('/live-pair-programming', function(req, res) {
     res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
 });
+
+app.get('/pair-coding', pairCodingController.index);
+app.post('/pair-coding/setOnline', pairCodingController.setOnline);
+app.get('/pair-coding/setOffline', pairCodingController.setOffline);
+app.get('/pair-coding/refresh', pairCodingController.refreshPairRequest);
 
 app.get('/install-screenhero', function(req, res) {
     res.redirect(301, '/field-guide/install-screenhero');
@@ -475,6 +512,7 @@ app.get(
 app.all('/account', passportConf.isAuthenticated);
 
 app.get('/account/api', userController.getAccountAngular);
+app.get('/account/api/paircode', userController.getUserPairStatus);
 
 /**
  * API routes
@@ -570,6 +608,7 @@ app.get('/account/unlink/:provider', userController.getOauthUnlink);
 
 app.get('/sitemap.xml', resourcesController.sitemap);
 
+
 /**
  * OAuth sign-in routes.
  */
@@ -640,6 +679,8 @@ app.get(
   userController.returnUser
 );
 
+
+
 /**
  * 500 Error Handler.
  */
@@ -690,5 +731,18 @@ app.listen(app.get('port'), function () {
     app.get('env')
   );
 });
+
+/**
+ * Check the db every n minutes and remove users from /pair-coding
+*/
+
+var pairCodingIntervalMinutes = 30;
+var pairCodingIntervalMilliSeconds = pairCodingIntervalMinutes * 60 * 1000;
+
+var pairCodingInterval = setInterval(function(){
+    pairCodingController.removeStalePosts(pairCodingIntervalMinutes);
+
+    pairCodingController.removeStaleSlackUsers();
+}, pairCodingIntervalMilliSeconds);
 
 module.exports = app;
