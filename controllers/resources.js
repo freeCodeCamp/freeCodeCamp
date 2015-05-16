@@ -158,7 +158,7 @@ module.exports = {
   },
 
   catPhotoSubmit: function catPhotoSubmit(req, res) {
-    res.send('Success! You have submitted your cat photo.')
+    res.send('Success! You have submitted your cat photo. Return to your website by typing any letter into your code editor.')
   },
 
   nonprofits: function nonprofits(req, res) {

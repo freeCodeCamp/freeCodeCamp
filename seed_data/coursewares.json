@@ -1262,7 +1262,7 @@
       ""
     ],
     "tests": [
-      "assert($('[placeholder]').length > 0, 'Your text field should have the placeholder text of \"type a cat photo URL here\".')"
+      "assert($('[placeholder]').length > 0, 'Your text field should have the placeholder text of \"enter cat photo URL\".')"
     ],
     "challengeSeed": [
       "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1511,57 +1511,135 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aedf08831",
-    "name": "Use HTML5 to Specify an Input Type",
-    "difficulty" : 0.043,
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08832",
-    "name": "Create a Text Area",
-    "difficulty" : 0.044,
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
-  },
-
-  {
     "_id" : "bad87fee1348bd9aedf08834",
     "name": "Create a Set of Radio Buttons",
-    "difficulty" : 0.045,
+    "difficulty" : 0.043,
     "description": [
-      "",
+      "Add to your form a pair of <code>radio buttons</code> with the options of \"indoor\" and \"outdoor\".",
+      "You can use <code>radio buttons</code> for questions that can only have only one answer.",
       ""
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "assert($('input[type=\"radio\"').length > 1, 'Your webpage should have two radio button elements.')"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+      "<style>",
+      "  .red-text {",
+      "    color: red;",
+      "  }",
+      "",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-color: green;",
+      "    border-width: 10px;",
+      "    border-style: solid;",
+      "    border-radius: 50%;",
+      "  }",
+      "",
+      "  .smaller-image {",
+      "    width: 100px;",
+      "  }",
+      "</style>",
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p>Click here for <a href='#'>cat photos</a>.</p>",
+      "",
+      "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+      "",
+      "<p>Things cats love:</p>",
+      "<ul>",
+      "  <li>cat nip</li>",
+      "  <li>laser pointers</li>",
+      "  <li>lasagna</li>",
+      "</ul>",
+      "<p>Top 3 things cats hate:</p>",
+      "<ol>",
+      "  <li>flea treatment</li>",
+      "  <li>thunder</li>",
+      "  <li>other cats</li>",
+      "</ol>",
+      "<form action=\"/submit-cat-photo\">",
+      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <button type='submit'>Submit</button>",
+      "</form>"
+    ],
+    "challengeType": 0,
+    "completionMessage": ""
+  },
+
+  {
+    "_id" : "bad87fee1348bd9aede08835",
+    "name": "Check a Radio Button by Default",
+    "difficulty" : 0.044,
+    "description": [
+      "Clean up your form by adding linebreaks between form elements, then set one of your radio buttons to checked by default.",
+      ""
+    ],
+    "tests": [
+      "assert($('input[type=\"radio\"').prop('checked'), 'One of the radio buttons on your form should be checked by default.')"
+    ],
+    "challengeSeed": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+      "<style>",
+      "  .red-text {",
+      "    color: red;",
+      "  }",
+      "",
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-color: green;",
+      "    border-width: 10px;",
+      "    border-style: solid;",
+      "    border-radius: 50%;",
+      "  }",
+      "",
+      "  .smaller-image {",
+      "    width: 100px;",
+      "  }",
+      "</style>",
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p>Click here for <a href='#'>cat photos</a>.</p>",
+      "",
+      "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+      "",
+      "<p>Things cats love:</p>",
+      "<ul>",
+      "  <li>cat nip</li>",
+      "  <li>laser pointers</li>",
+      "  <li>lasagna</li>",
+      "</ul>",
+      "<p>Top 3 things cats hate:</p>",
+      "<ol>",
+      "  <li>flea treatment</li>",
+      "  <li>thunder</li>",
+      "  <li>other cats</li>",
+      "</ol>",
+      "<form action=\"/submit-cat-photo\">",
+      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='radio' name='indoor-outdoor'>Indoor",
+      "  <input type='radio' name='indoor-outdoor'>Outdoor",
+      "  <button type='submit'>Submit</button>",
+      "</form>"
     ],
     "challengeType": 0,
     "completionMessage": ""
@@ -1570,36 +1648,67 @@
   {
     "_id" : "bad87fee1348bd9aedf08835",
     "name": "Create a Set of Checkboxes",
-    "difficulty" : 0.046,
+    "difficulty" : 0.045,
     "description": [
-      "",
-      ""
+      "Create a set of three checkboxes."
     ],
     "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
+      "assert($('input[type=\"checkbox\"').length > 2, 'Your webpage should have three checkbox elements.')"
     ],
     "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08836",
-    "name": "Create a HTML Form",
-    "difficulty" : 0.047,
-    "description": [
+      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+      "<style>",
+      "  .red-text {",
+      "    color: red;",
+      "  }",
       "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
+      "  h2 {",
+      "    font-family: Lobster, Monospace;",
+      "  }",
+      "",
+      "  p {",
+      "    font-size: 16px;",
+      "    font-family: Monospace;",
+      "  }",
+      "",
+      "  .thick-green-border {",
+      "    border-color: green;",
+      "    border-width: 10px;",
+      "    border-style: solid;",
+      "    border-radius: 50%;",
+      "  }",
+      "",
+      "  .smaller-image {",
+      "    width: 100px;",
+      "  }",
+      "</style>",
+      "",
+      "<h2 class='red-text'>Cat Photo App</h2>",
+      "",
+      "<p>Click here for <a href='#'>cat photos</a>.</p>",
+      "",
+      "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+      "",
+      "<p>Things cats love:</p>",
+      "<ul>",
+      "  <li>cat nip</li>",
+      "  <li>laser pointers</li>",
+      "  <li>lasagna</li>",
+      "</ul>",
+      "<p>Top 3 things cats hate:</p>",
+      "<ol>",
+      "  <li>flea treatment</li>",
+      "  <li>thunder</li>",
+      "  <li>other cats</li>",
+      "</ol>",
+      "<form action=\"/submit-cat-photo\">",
+      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <br>",
+      "  <input type='radio' name='indoor-outdoor' checked>Indoor",
+      "  <input type='radio' name='indoor-outdoor'>Outdoor",
+      "  <br>",
+      "  <button type='submit'>Submit</button>",
+      "</form>"
     ],
     "challengeType": 0,
     "completionMessage": ""
@@ -1609,25 +1718,6 @@
     "_id" : "bad87fee1348bd9aedf08841",
     "name": "Change the background of element",
     "difficulty" : 0.048,
-    "description": [
-      "",
-      ""
-    ],
-    "tests": [
-      "expect($('h1')).to.have.class('text-center');",
-      "expect($('h1')).to.have.text('hello world');"
-    ],
-    "challengeSeed": [
-      "<h1>hello world</h1>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
-  },
-
-  {
-    "_id" : "bad87fee1348bd9aedf08842",
-    "name": "Make an element translucent",
-    "difficulty" : 0.049,
     "description": [
       "",
       ""
