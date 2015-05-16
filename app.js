@@ -222,7 +222,7 @@ app.use(function (req, res, next) {
     if (pairStartTime < interval) {
       req.session.pair.start = null;
       req.flash('errors', {
-        msg: "Your pair programming request automatically expired."
+        msg: "Your pair programming request has expired."
       });
     }
     next();

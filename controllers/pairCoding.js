@@ -267,7 +267,7 @@ function getNextCourseware(user, cb) {
   Courseware.findOne({'_id' : nextCourseware}).exec(function(err, courseware) {
     if (err) return next(err);
     if (!courseware) {
-      return bc("all completed");
+      return cb("all completed");
     } else {
       return cb(courseware.name);
     }
