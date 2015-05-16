@@ -2,13 +2,14 @@ extends ../layout
 block content
     script.
         var challengeName = 'Account View'
+        
     .panel.panel-info.min-height-1000(ng-controller="profileValidationController")
         .panel-heading.text-center Update your portfolio here:
         .panel-body
           .container.text-center
               form.form-horizontal(action='/account/profile', method='POST', novalidate='novalidate', name='profileForm' ng-show="asyncComplete")
                 input(type='hidden', name='_csrf', value=_csrf)
-
+                
                 .col-sm-4.col-sm-offset-5
                   h2 Bio
 
@@ -116,6 +117,16 @@ block content
                     alert(type='danger')
                         span.ion-close-circled
                         |  Your name must be fewer than 15 characters.
+                .form-group
+                  label.col-sm-3.col-sm-offset-2.control-label(for='slackHandle') Slack
+                  .col-sm-4
+                    .input-group.twitter-input
+                        span.input-group-addon @
+                        input.form-control(type='text', name='slackHandle', autocomplete="off", id='slackHandle', ng-model='user.profile.slackHandle', ng-maxlength='25', ng-pattern="/^[A-z0-9_]+$/")
+                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.slackHandle.$error.pattern")
+                    alert(type='danger')
+                        span.ion-close-circled
+                        | Your Slack handle should only contain letters, numbers and underscores (az10_).
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') Github
                   .col-sm-4

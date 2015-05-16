@@ -1,0 +1,41 @@
+.spacer
+- var requests = onlineUsers
+
+if requests.length===0
+  h2 Nobody online
+else 
+  h2 Current Pair Requests
+  ul 
+    each val, index in requests 
+      li: a(href='https://freecode.slack.com/messages/@'+val.username+'/', target='blank')
+        .story-list
+          .col-xs-12.text-left.pair-request-listing
+            h2.col-xs-1.positive-5= index+1
+            .col-xs-2
+              img.img-news(src=val.userPic)
+            .col-xs-7
+              .row
+                h2.story-headline(style='margin-bottom: 10px')= val.username
+              if val.comment 
+                p(style='margin-bottom: 0')= val.comment
+              if val.bonfire
+                span(style='margin-bottom: 0')= 'Current bonfire: ' + val.bonfire 
+                br
+              if val.challenge
+                span(style='margin-bottom: 0')= 'Current challenge: ' + val.challenge 
+            .col-xs-2
+              p= moment(val.timeOnline).fromNow()
+
+script.
+  $('#edit-pair-request').on('click', function () {
+    $('div#edit-comment').toggleClass('collapse');
+  });
+  $('#go-offline').on('click', function() {
+    $.ajax({
+      url: '/pair-coding/setOffline'
+    }).done(function(){
+    window.location.reload(true);
+    });
+  });
+
+   

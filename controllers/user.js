@@ -215,6 +215,13 @@ exports.getAccountAngular = function(req, res) {
   });
 };
 
+exports.getUserPairStatus = function(req, res) {
+  // only returns pair info for the pair code timer.
+  res.json({
+    user: req.session.pair
+  });
+}
+
 /**
  * Unique username check API Call
  */
@@ -455,6 +462,7 @@ exports.postUpdateProfile = function(req, res, next) {
         user.profile.location = req.body.location.trim() || '';
         user.profile.githubProfile = req.body.githubProfile.trim() || '';
         user.profile.facebookProfile = req.body.facebookProfile.trim() || '';
+        user.profile.slackHandle = req.body.slackHandle.trim() || '';
         user.profile.linkedinProfile = req.body.linkedinProfile.trim() || '';
         user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
         user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
@@ -469,6 +477,7 @@ exports.postUpdateProfile = function(req, res, next) {
         user.portfolio.website3Title = req.body.website3Title.trim() || '';
         user.portfolio.website3Link = req.body.website3Link.trim() || '';
         user.portfolio.website3Image = req.body.website3Image.trim() || '';
+        user.profile.slackHandle = req.body.slackHandle.trim() || '';
 
 
         user.save(function (err) {

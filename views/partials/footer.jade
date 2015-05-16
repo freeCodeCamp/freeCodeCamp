@@ -19,3 +19,26 @@
             span.sr-only Free Code Camp on Twitter
         a.ion-locked(href="/privacy")
             span.sr-only Free Code Camp's Privacy Policy
+  #expired-paircode-request.modal(tabindex='-1')
+        .modal-dialog.animated.zoomIn.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header= "Renew pair request?"
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    .text-center
+                        .delay-half
+                            .modal-body(style="padding-top: 20px") 
+                              h2 Your pair program request will expire in 5 minutes or less. 
+                              p Click 'renew' to get another hour. 
+                              p Click 'ignore' to let it expire automatically.
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='renew', id='renewPairRequest') Renew
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block(name='ignore', id='ignorePairExpire', data-dismiss="modal") Ignore
+  script.
+    $('#renewPairRequest').on('click', function() {
+      console.log("request renew button clicked");
+      renewPairRequest();
+    });
+    $('#ignorePairExpire').on('click', function() {
+      console.log("OK, your request will be deleted in five minutes.");
+    });
+

@@ -68,6 +68,14 @@ var userSchema = new mongoose.Schema({
         facebookProfile: {
           type: String,
           default: ''
+        },
+        slackHandle: {
+          type: String,
+          default: ''
+        },
+        slackId: {
+          type: String,
+          default: ''
         }
     },
     portfolio: {
