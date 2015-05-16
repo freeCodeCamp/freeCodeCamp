@@ -8,7 +8,7 @@ else
   h2 Current Pair Requests
   ul 
     each val, index in requests 
-      li
+      li: a(href='https://freecode.slack.com/messages/@'+val.username+'/', target='blank')
         .story-list
           .col-xs-12.text-left.pair-request-listing
             h2.col-xs-1.positive-5= index+1
@@ -16,12 +16,14 @@ else
               img.img-news(src=val.userPic)
             .col-xs-7
               .row
-                .story-headline
-                  a(href='https://freecode.slack.com/messages/@'+val.username+'/', target="blank")= val.username
+                div.story-headline(style='margin-bottom: 10px')
+                  span= val.username
               .row
-                em: span.pair-request-listing= 'Bonfire: ' + val.bonfire 
+                if val.bonfire
+                  span.pair-request-listing= 'Next bonfire: ' + val.bonfire 
                 br
-                span.pair-request-listing= 'Challenge: ' + val.challenge 
+                if val.challenge
+                  span.pair-request-listing= 'Next challenge: ' + val.challenge 
             .col-xs-2
               p= (val.timeOnline)
 

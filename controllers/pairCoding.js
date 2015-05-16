@@ -1,9 +1,11 @@
 var User = require('./../models/User'),
   mongodb = require('mongodb'),
-  User = require('./../models/User');
-  PairUser = require('./../models/pairUser');
-  var https = require('https');
-  var secrets = require('./../config/secrets')
+  User = require('./../models/User'),
+  PairUser = require('./../models/pairUser'),
+  Courseware = require('./../models/Courseware'),
+  Bonfire = require('./../models/Bonfire'),
+  https = require('https'),
+  secrets = require('./../config/secrets');
 
 
 exports.index = function(req, res){
@@ -34,22 +36,33 @@ exports.index = function(req, res){
   }
 };
 
-var newPairRequest = function(user) {
-  var pairCode = new PairUser({});
-    pairCode.username = user.profile.username;
-    pairCode.userPic = user.profile.picture;
-    pairCode.userSlack = user.profile.slackHandle;
-    pairCode.bonfire = "bonfire test for now";
-    pairCode.challenge = "challenge test for now";
-    pairCode.timeOnline = Date.now();
-    pairCode.fiveMinuteWarning = false;
+var newPairRequest = function(user, bonfireSelected, coursewareSelected) {
+  getNextCourseware(user, function(courseware) {
+    if (coursewareSelected) {
+      var nextCourseware = courseware;
+    }
 
-    pairCode.save(function(err) {
-      if (err) {
-        return res.sendStatus(400);
+    getNextBonfire(user, function(bonfire) {
+      if (bonfireSelected) {
+        var nextBonfire = bonfire;
       }
-    });
 
+      var pairCode = new PairUser({});
+      pairCode.username = user.profile.username;
+      pairCode.userPic = user.profile.picture;
+      pairCode.userSlack = user.profile.slackHandle;
+      pairCode.bonfire = nextBonfire;
+      pairCode.challenge = nextCourseware;
+      pairCode.timeOnline = Date.now();
+      pairCode.fiveMinuteWarning = false;
+
+      pairCode.save(function(err) {
+        if (err) {
+          return res.sendStatus(400);
+        }
+      });
+    });
+  }); 
 };
 
 exports.setOnline = function(req, res, next) {
@@ -60,9 +73,14 @@ exports.setOnline = function(req, res, next) {
     flaggedForRemoval: false,
     removed: false
   }
+
+  console.log(req.body);
+
+  var bonfire = req.body.bonfireSelected;
+  var courseware = req.body.challengeSelected;
   
   // add new request to the database here
-  newPairRequest(req.user);
+  newPairRequest(req.user, bonfire, courseware);
 
   res.redirect('/pair-coding');
 };
@@ -233,6 +251,37 @@ exports.setOffline = function(req, res, next){
   return res.redirect('/pair-coding');
 
 };
+
+function getNextCourseware(user, cb) {
+  // returns a String value to use in the form
+  var nextCourseware = user.uncompletedCoursewares[0];
+
+  Courseware.findOne({'_id' : nextCourseware}).exec(function(err, courseware) {
+    if (err) return next(err);
+    if (!courseware) {
+      return bc("all completed");
+    } else {
+      return cb(courseware.name);
+    }
+  });
+}
+
+function getNextBonfire(user, cb) {
+  // returns a String value to use in the form
+  var nextBonfire = user.uncompletedBonfires[0];
+  var name;
+  Bonfire.findOne({'_id' : nextBonfire}).exec(function(err, bonfire) {
+    if (err) return next(err);
+    if (!bonfire) {
+      return cb("all completed");
+    } 
+    else {
+      name = bonfire.name;
+      return cb(name);
+    }
+  });
+  
+}
 
 
 

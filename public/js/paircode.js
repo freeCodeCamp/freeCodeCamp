@@ -31,7 +31,7 @@
 })();
 
 
-// globally exposed function for the modal
+// one globally exposed function for the modal
 function renewPairRequest() {
   $('#expired-paircode-request').modal('hide');
   $.get('/pair-coding/refresh').success(function(data) {
