@@ -370,7 +370,7 @@
   {
     "_id": "bad87fee1348bd9aecf08806",
     "name": "Use a CSS Class to Style an Element",
-    "difficulty": 0.0185,
+    "difficulty": 0.019,
     "description": [
       "Create a CSS class called <code>.red-text</code> and apply it to the <code>h2</code> element.",
       "Classes are reusable styles that can be added to HTML elements.",
@@ -400,7 +400,7 @@
   {
     "_id": "bad87fee1348bd9aefe08806",
     "name": "Use a CSS Class to Style Multiple Elements",
-    "difficulty": 0.019,
+    "difficulty": 0.020,
     "description": [
       "Apply the \"red-text\" class to the <code>h2</code> and <code>p</code> elements.",
       "Remember that you can attach classes to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
@@ -427,7 +427,7 @@
   {
     "_id": "bad87fee1348bd9aedf08806",
     "name": "Change the Font Size of an Element",
-    "difficulty": 0.020,
+    "difficulty": 0.021,
     "description": [
       "Set the font size of all <code>p</code> elements to 16 pixels",
       "Font size is controlled by the <code>font-size</code> CSS attribute, like this: <code>h1 { font-size: 30px; }</code>.",
@@ -454,7 +454,7 @@
   {
     "_id": "bad87fee1348bd9aede08807",
     "name": "Set the Font of an Element",
-    "difficulty": 0.0205,
+    "difficulty": 0.022,
     "description": [
       "Make all paragraph elements use the \"Monospace\" font.",
       "You can set an element's font by using the <code>font-family</code> attribute.",
@@ -484,7 +484,7 @@
   {
     "_id": "bad87fee1348bd9aedf08807",
     "name": "Import a Google Font",
-    "difficulty": 0.021,
+    "difficulty": 0.023,
     "description": [
       "Apply the font-family of Lobster to your h2 element.",
       "First, you'll need to make a <code>call</code> to Google to grab the \"Lobster\" font and loads it into your HTML.",
@@ -517,7 +517,7 @@
   {
     "_id": "bad87fee1348bd9aedf08808",
     "name": "Specify How Fonts Should Degrade",
-    "difficulty": 0.022,
+    "difficulty": 0.024,
     "description": [
       "Make all h2 elements use \"Lobster\" as their font family, but degrade to the \"Monospace\" font when the Lobster font isn't available.",
       "Commented out your call to Google Fonts, so that our \"Lobter\" isn't available.",
@@ -556,7 +556,7 @@
   {
     "_id": "bad87fee1348bd9aedf08809",
     "name": "Using Important to Override Styles",
-    "difficulty": 0.023,
+    "difficulty": 0.025,
     "description": [
       "Create a \"blue-text\" class that gives an element the font-color of blue. Also create a \"urgently-red\" class that give an element the font-color of red, but use <code>!important</code> to ensure the element is rendered as being red. Apply both classes to your <code>h2</code> element.",
       "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
@@ -599,7 +599,7 @@
   {
     "_id": "bad87fee1348bd9aedf08812",
     "name": "Add an Image to your Website",
-    "difficulty": 0.027,
+    "difficulty": 0.026,
     "description": [
       "Use an img element to add the image <code>http://bit.ly/fcc-kittens</code> to your website.",
       "You can add images to your website by using the <code>img</code> element.",
@@ -637,7 +637,7 @@
   {
     "_id": "bad87fee1348bd9acdf08812",
     "name": "Specify an Image Size",
-    "difficulty": 0.028,
+    "difficulty": 0.027,
     "description": [
       "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.",
       "CSS has an attribute called <code>width</code> that controls an element's width. Just like with fonts, we'll use pixels(px) to specify the images width.",
@@ -676,7 +676,7 @@
   {
     "_id": "bad87fee1348bd9bedf08813",
     "name": "Add a Border Around an Element",
-    "difficulty": 0.029,
+    "difficulty": 0.028,
     "description": [
       "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border around your cat photo.",
       "<code>CSS Borders</code> have attributes like style, color and width.",
@@ -721,7 +721,7 @@
   {
     "_id": "bad87fee1348bd9aedf08814",
     "name": "Add Rounded Corners with a Border Radius",
-    "difficulty": 0.030,
+    "difficulty": 0.029,
     "description": [
       "Give your cat photo a border radius of 10 pixels.",
       "Your cat photo currently has sharp corners. We can round out those corners with a CSS attribute called <code>border-radius</code>.",
@@ -770,7 +770,7 @@
   {
     "_id": "bad87fee1348bd9aedf08815",
     "name": "Make an Image Circular with a Border Radius",
-    "difficulty": 0.031,
+    "difficulty": 0.030,
     "description": [
       "Give your cat photo a <code>border-radius</code> of 50%.",
       "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage."
@@ -818,7 +818,7 @@
   {
     "_id": "bad87fee1348bd9aedf08816",
     "name": "Use an Anchor Tag to Link to an External Page",
-    "difficulty": 0.033,
+    "difficulty": 0.031,
     "description": [
       "Create an <code>anchor tag</code> hyperlink that links to http://catphotoapp.com and has the anchor text \"cat photos\".",
       "Here's a diagram of an <code>anchor tag</code>. In this case, it's used in the middle of a paragraph element, which means a link will appear in the middle of the sentence.",
@@ -869,7 +869,7 @@
   {
     "_id": "bad87fee1348bd9aede08817",
     "name": "Wrap an Anchor Element in a Paragraph",
-    "difficulty": 0.0335,
+    "difficulty": 0.032,
     "description": [
       "Now nest your anchor element inside a <code>paragraph</code> element. For example, \"click here for cat photos\", where only \"cat photos\" is a link.",
       "Again, here's a diagram of an <code>anchor tag</code> for your reference:",
@@ -923,7 +923,7 @@
   {
     "_id": "bad87fee1348bd9aedf08817",
     "name": "Make Dead Links using the Hash Symbol",
-    "difficulty": 0.034,
+    "difficulty": 0.033,
     "description": [
       "Use the hash symbol(#) to turn your <code>anchor</code> element's link into a dead link.",
       "Sometimes you want to add <code>anchor</code> elements to your website before you know where they will link.",
@@ -975,7 +975,7 @@
   {
     "_id": "bad87fee1348bd9aedf08820",
     "name": "Turn an Image into a Link",
-    "difficulty": 0.035,
+    "difficulty": 0.034,
     "description": [
       "Wrap the your cat's image element inside an anchor element that is a dead link.",
       "You can make elements into links by wrapping them in an <code>anchor tag</code>.",
@@ -1028,7 +1028,7 @@
   {
     "_id": "bad87fee1348bd9aedf08818",
     "name": "Add Alt Text to an image",
-    "difficulty": 0.036,
+    "difficulty": 0.035,
     "description": [
       "Add the <code>alt text</code> \"A cute orange cat lying on its back\" to our cat photo",
       "<code>alt text</code> is what browsers will display if they fail to load the image. <code>alt text</code> is also important for blind or visually impaired users to understand what an image portrays. Search engines also look at <code>alt text</code>.",
@@ -1262,7 +1262,7 @@
       ""
     ],
     "tests": [
-      "assert($('[placeholder]').length > 0, 'Your text field should have the placeholder text of \"enter cat photo URL\".')"
+      "assert($('[placeholder]').length > 0, 'Your text field should have the placeholder text of \"cat photo URL\".')"
     ],
     "challengeSeed": [
       "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1373,7 +1373,7 @@
       "  <li>thunder</li>",
       "  <li>other cats</li>",
       "</ol>",
-      "<input type='text' placeholder='enter cat photo URL'>"
+      "<input type='text' placeholder='cat photo URL'>"
     ],
     "challengeType": 0,
     "completionMessage": ""
@@ -1437,7 +1437,7 @@
       "  <li>other cats</li>",
       "</ol>",
       "<form action=\"/submit-cat-photo\">",
-      "  <input type='text' placeholder='enter cat photo URL'>",
+      "  <input type='text' placeholder='cat photo URL'>",
       "</form>"
     ],
     "challengeType": 0,
@@ -1502,7 +1502,7 @@
       "  <li>other cats</li>",
       "</ol>",
       "<form action=\"/submit-cat-photo\">",
-      "  <input type='text' placeholder='enter cat photo URL'>",
+      "  <input type='text' placeholder='cat photo URL'>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -1569,7 +1569,7 @@
       "  <li>other cats</li>",
       "</ol>",
       "<form action=\"/submit-cat-photo\">",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -1637,7 +1637,7 @@
       "<form action=\"/submit-cat-photo\">",
       "  <label><input type='radio' name='indoor-outdoor'> Indoor</label>",
       "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -1708,7 +1708,7 @@
       "  <label><input type='checkbox' name='personality'> Loving</label>",
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -1782,7 +1782,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -1859,7 +1859,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -1932,7 +1932,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2005,7 +2005,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2079,7 +2079,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2153,7 +2153,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2228,7 +2228,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2304,7 +2304,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2381,7 +2381,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2391,7 +2391,7 @@
   {
     "_id" : "bad87fee1348bd9aedf08845",
     "name": "Use Bootstrap Text Primary Class instead of Custom CSS",
-    "difficulty" : 0.056,
+    "difficulty" : 0.055,
     "description": [
       "Delete the following from your style tag: <code>.red-text</code>, <code>p</code>, <code>.smaller-image</code>. Delete the <code>p</code> element with the dead link. Remove your <code>red-text</code> class from your <code>h2</code> element and instead apply the <code>text-primary</code> Bootstrap class. Replace the <code>smaller-image</code> class on your top image with the <code>img-responsive</code> class."
     ],
@@ -2468,7 +2468,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2479,7 +2479,7 @@
   {
     "_id" : "bad87fee1348bd9aede08845",
     "name": "Create a Custom Heading",
-    "difficulty" : 0.057,
+    "difficulty" : 0.056,
     "description": [
       "Wrap your first image and your h2 element in a <code>&#60;div class='row'&#62;</code> element. Wrap your h2 text in a <code>&#60;div class='col-xs-8'&#62;</code> and your image in a <code>&#60;div class='col-xs-4'&#62;</code> so that they are on the same line."
     ],
@@ -2541,7 +2541,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2552,7 +2552,7 @@
   {
     "_id" : "bad87fee1348bd9aedd08845",
     "name": "Add Font Awesome Icons to our Buttons",
-    "difficulty" : 0.058,
+    "difficulty" : 0.057,
     "description": [
       "Use Font Awesome to add a \"like\" icon to your like button.",
       "You should add a <code>&#60;i class=\"fa fa-thumbs-up\"&#62;</code> within your like button's element."
@@ -2617,7 +2617,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2628,7 +2628,7 @@
   {
     "_id" : "bad87fee1348bd9aedc08845",
     "name": "Add Font Awesome Icons all of our Buttons",
-    "difficulty" : 0.059,
+    "difficulty" : 0.058,
     "description": [
       "Use Font Awesome to add a \"info-circle\" icon to your info button and a \"trash\" button to your delete button.",
       "You should add a <code>&#60;i class=\"fa fa-thumbs-up\"&#62;</code> within your like button's element."
@@ -2694,7 +2694,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2705,7 +2705,7 @@
   {
     "_id" : "bad87fee1348bd9aedb08845",
     "name": "Use Bootstrap to Responsively Style a Radio Buttons",
-    "difficulty" : 0.060,
+    "difficulty" : 0.059,
     "description": [
       "Wrap all of your radio buttons in a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them in a <code>&#60;div class='col-xs-6'&#62;</code> element."
     ],
@@ -2770,7 +2770,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2781,7 +2781,7 @@
   {
     "_id" : "bad87fee1348bd9aeda08845",
     "name": "Use Bootstrap to Responsively Style Checkboxes",
-    "difficulty" : 0.061,
+    "difficulty" : 0.060,
     "description": [
       "Wrap all your checkboxes in a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them in a <code>&#60;div class='col-xs-4'&#62;</code> element."
     ],
@@ -2853,7 +2853,7 @@
       "  <label><input type='checkbox' name='personality'> Lazy</label>",
       "  <label><input type='checkbox' name='personality'> Crazy</label>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2863,14 +2863,14 @@
 
   {
     "_id" : "bad87fee1348bd9aed908845",
-    "name": "Use a Bootstrap Input Group",
-    "difficulty" : 0.062,
+    "name": "Style a Text Input with Bootstrap",
+    "difficulty" : 0.061,
     "description": [
-      "Wrap all your checkboxes in a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them in a <code>&#60;div class='col-xs-4'&#62;</code> element."
+      "Give your form's text input field in a class of \"form-control\". Give your form's submit button the classes \"btn btn-primary\"."
     ],
     "tests": [
-      "assert($('.row').length > 3, 'Wrap your all of your checkboxes inside one div with the class \"row\".')",
-      "assert($('.col-xs-4').length > 6, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')"
+      "assert($('.btn-primary').length > 1, 'Give your form's submit button the classes \"btn btn-primary\".')",
+      "assert($('.form-control').length > 0, 'Give your form's text input field in a class of \"form-control\".')"
     ],
     "challengeSeed": [
       "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -2945,7 +2945,7 @@
       "    </div>",
       "  </div>",
       "  <br>",
-      "  <input type='text' placeholder='enter cat photo URL' required>",
+      "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
     ],
@@ -2955,13 +2955,15 @@
 
   {
     "_id" : "bad87fee1348bd9aec908845",
-    "name": "Use a Bootstrap Input Group",
-    "difficulty" : 0.063,
+    "name": "Line up Form Elements Responsively with Bootstrap",
+    "difficulty" : 0.062,
     "description": [
-      "Wrap all your checkboxes in a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them in a <code>&#60;div class='col-xs-4'&#62;</code> element."
+      "Wrap both your form's text input field and submit button within a div with the class \"row\". Wrap your form's text input field within a div with the class of \"col-xs-7\". Wrap your form's submit button the in a div with the class \"col-xs-5\"."
     ],
     "tests": [
-
+      "assert($('.row').length > 4, 'Wrap your all of your checkboxes inside one div with the class \"row\".')",
+      "assert($('.col-xs-5').length > 0, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')",
+      "assert($('.col-xs-7').length > 0, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')"
     ],
     "challengeSeed": [
       "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -3036,32 +3038,18 @@
       "    </div>",
       "  </div>",
       "  <br>",
-      "  <div class='input-group'>",
-      "    <input type='text' placeholder='' class='form-control'/>",
-      "      <span class='input-group-btn'>",
-      "        <button type='button' class='btn btn-big btn-primary btn-responsive'>Submit</button>",
-      "      </span>",
-      "  </div>",
+      "  <input type='text' class='form-control' placeholder='cat photo URL' required>",
+      "  <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
       "</form>"
     ],
     "challengeType": 0,
     "completionMessage": ""
   },
 
-
-
-
-
-
-
-
-
-
-
   {
     "_id": "bad88fee1348bd9aedf08825",
     "name": "Adjusting the Padding of an Element",
-    "difficulty": 0.999,
+    "difficulty": 0.063,
     "description": [
       "Change the <code>padding</code> of the green box to match that of the red box.",
       "An element's <code>padding</code> controls the amount of space between an element and its <code>border</code>.",
@@ -3112,7 +3100,7 @@
   {
     "_id": "bad87fee1348bd9aedf08822",
     "name": "Adjust the Margin of an Element",
-    "difficulty": 0.999,
+    "difficulty": 0.064,
     "description": [
       "Change the <code>margin</code> of the green box to match that of the red box.",
       "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -3165,7 +3153,7 @@
   {
     "_id": "bad87fee1348bd9aedf08823",
     "name": "Add a Negative Margin to an Element",
-    "difficulty": 0.999,
+    "difficulty": 0.065,
     "description": [
       "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the blue box.",
       "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -3217,7 +3205,7 @@
   {
     "_id": "bad87fee1348bd9aedf08824",
     "name": "Add Different Padding to Each Side of an Element TEST",
-    "difficulty": 0.999,
+    "difficulty": 0.066,
     "description": [
       "Give the green box a padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Sometimes you will want to customize an element so that it has different padding on each of its sides.",
@@ -3270,7 +3258,7 @@
   {
     "_id": "bad87fee1248bd9aedf08824",
     "name": "Add Different a Margin to Each Side of an Element TEST",
-    "difficulty": 0.999,
+    "difficulty": 0.067,
     "description": [
       "Give the green box a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Sometimes you will want to customize an element so that it has a different margin on each of its sides.",
@@ -3323,7 +3311,7 @@
   {
     "_id": "bad87fee1348bd9aedf08826",
     "name": "Use Clockwise Notation to Specify an Element's Padding",
-    "difficulty": 0.999,
+    "difficulty": 0.068,
     "description": [
       "Use <code>Clockwise Notation</code> to give an element padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
