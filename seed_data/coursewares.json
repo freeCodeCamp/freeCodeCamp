@@ -2882,13 +2882,14 @@
 
   {
     "_id" : "bad87fee1348bd9aed908845",
-    "name": "Style a Text Input with Bootstrap",
+    "name": "Style a Text Input with the Bootstrap Form Control Class",
     "difficulty" : 0.061,
     "description": [
-      "Give your form's text input field in a class of \"form-control\". Give your form's submit button the classes \"btn btn-primary\"."
+      "Give your form's text input field in a class of \"form-control\". Give your form's submit button the classes \"btn btn-primary\" and give it the Font Awesome icon of \"fa-paper-plane\"."
     ],
     "tests": [
       "assert($('.btn-primary').length > 1, 'Give your form's submit button the classes \"btn btn-primary\".')",
+      "assert($('.fa-paper-plane').length > 0, 'You should add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;i&#62;</code> within your submit button element.')",
       "assert($('.form-control').length > 0, 'Give your form's text input field in a class of \"form-control\".')"
     ],
     "challengeSeed": [
@@ -3066,104 +3067,9 @@
   },
 
   {
-    "_id" : "bad87fee1348bd9aeb908845",
-    "name": "Line up Form Elements Responsively with Bootstrap",
-    "difficulty" : 0.063,
-    "description": [
-      "."
-    ],
-    "tests": [
-      "assert($('.row').length > 4, 'Wrap your all of your checkboxes inside one div with the class \"row\".')",
-      "assert($('.col-xs-5').length > 0, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')",
-      "assert($('.col-xs-7').length > 0, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')"
-    ],
-    "challengeSeed": [
-      "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
-      "<style>",
-      "  h2 {",
-      "    font-family: Lobster, Monospace;",
-      "  }",
-      "",
-      "  .thick-green-border {",
-      "    border-color: green;",
-      "    border-width: 10px;",
-      "    border-style: solid;",
-      "    border-radius: 50%;",
-      "  }",
-      "",
-      "</style>",
-      "",
-      "<div class='row'>",
-      "  <div class='col-xs-8'>",
-      "    <h2 class='text-primary text-center'>CatPhotoApp</h2>",
-      "  </div>",
-      "  <div class='col-xs-4'>",
-      "    <a href='#'><img class='img-responsive thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
-      "  </div>",
-      "</div>",
-      "<br>",
-      "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
-      "<br>",
-      "<div class='row'>",
-      "  <div class='col-xs-4'>",
-      "    <button class='btn btn-block btn-primary'><i class='fa fa-thumbs-up'></i> Like</button>",
-      "  </div>",
-      "  <div class='col-xs-4'>",
-      "    <button class='btn btn-block btn-info'><i class='fa fa-info-circle'></i> Info</button>",
-      "  </div>",
-      "  <div class='col-xs-4'>",
-      "    <button class='btn btn-block btn-danger'><i class='fa fa-trash'></i> Delete</button>",
-      "  </div>",
-      "</div>",
-      "<p>Things cats love:</p>",
-      "<ul>",
-      "  <li>cat nip</li>",
-      "  <li>laser pointers</li>",
-      "  <li>lasagna</li>",
-      "</ul>",
-      "<p>Top 3 things cats hate:</p>",
-      "<ol>",
-      "  <li>flea treatment</li>",
-      "  <li>thunder</li>",
-      "  <li>other cats</li>",
-      "</ol>",
-      "<form action=\"/submit-cat-photo\">",
-      "  <br>",
-      "  <div class='row'>",
-      "    <div class='col-xs-6'>",
-      "      <label><input type='radio' name='indoor-outdoor'> Indoor</label>",
-      "    </div>",
-      "    <div class='col-xs-6'>",
-      "      <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-      "    </div>",
-      "  </div>",
-      "  <br>",
-      "  <div class='row'>",
-      "    <div class='col-xs-4'>",
-      "      <label><input type='checkbox' name='personality'> Loving</label>",
-      "    </div>",
-      "    <div class='col-xs-4'>",
-      "      <label><input type='checkbox' name='personality'> Lazy</label>",
-      "    </div>",
-      "    <div class='col-xs-4'>",
-      "      <label><input type='checkbox' name='personality'> Crazy</label>",
-      "    </div>",
-      "  </div>",
-      "  <br>",
-      "  <input type='text' class='form-control' placeholder='cat photo URL' required>",
-      "  <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
-      "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
-  },
-
-
-
-  {
     "_id": "bad88fee1348bd9aedf08825",
     "name": "Adjusting the Padding of an Element",
-    "difficulty": 0.063,
+    "difficulty": 0.064,
     "description": [
       "Change the <code>padding</code> of the green box to match that of the red box.",
       "An element's <code>padding</code> controls the amount of space between an element and its <code>border</code>.",
@@ -3214,7 +3120,7 @@
   {
     "_id": "bad87fee1348bd9aedf08822",
     "name": "Adjust the Margin of an Element",
-    "difficulty": 0.064,
+    "difficulty": 0.065,
     "description": [
       "Change the <code>margin</code> of the green box to match that of the red box.",
       "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -3267,7 +3173,7 @@
   {
     "_id": "bad87fee1348bd9aedf08823",
     "name": "Add a Negative Margin to an Element",
-    "difficulty": 0.065,
+    "difficulty": 0.066,
     "description": [
       "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the blue box.",
       "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -3319,7 +3225,7 @@
   {
     "_id": "bad87fee1348bd9aedf08824",
     "name": "Add Different Padding to Each Side of an Element TEST",
-    "difficulty": 0.066,
+    "difficulty": 0.067,
     "description": [
       "Give the green box a padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Sometimes you will want to customize an element so that it has different padding on each of its sides.",
@@ -3372,7 +3278,7 @@
   {
     "_id": "bad87fee1248bd9aedf08824",
     "name": "Add Different a Margin to Each Side of an Element TEST",
-    "difficulty": 0.067,
+    "difficulty": 0.068,
     "description": [
       "Give the green box a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Sometimes you will want to customize an element so that it has a different margin on each of its sides.",
@@ -3425,7 +3331,7 @@
   {
     "_id": "bad87fee1348bd9aedf08826",
     "name": "Use Clockwise Notation to Specify an Element's Padding",
-    "difficulty": 0.068,
+    "difficulty": 0.069,
     "description": [
       "Use <code>Clockwise Notation</code> to give an element padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
       "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
@@ -3473,11 +3379,337 @@
     "challengeType": 0
   },
 
+  {
+    "_id": "bad87fee1348bd9aede08826",
+    "name": "Use Hex Codes for Precise Colors",
+    "difficulty": 0.070,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aedd08826",
+    "name": "Use Shortened Hex Codes for Colors",
+    "difficulty": 0.071,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9acdd08826",
+    "name": "Learn how Script Tags and Document Ready Work",
+    "difficulty": 0.072,
+    "description": [
+      "Test"
+    ],
+    "tests": [
+      "assert($('#target').hasClass('disabled'), 'The button with the ID of \"target\" should continue to have the \"disabled\" class.')",
+      "assert($('#target').attr('disabled', true), 'Enable the button with the ID of \"target\" by using jQuery.')"
+    ],
+    "challengeSeed": [
+      "<script>",
+      "  $(document).ready(function() {",
+      "    $('#target').attr('disabled', true)",
+      "  });",
+      "</script>",
+      "<button id='target' class='btn btn-primary btn-block'>Enable this button with jQuery</button>"
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aedc08826",
+    "name": "Target Elements by Selectors Using jQuery",
+    "difficulty": 0.073,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aedb08826",
+    "name": "Target Elements by Class Using jQuery",
+    "difficulty": 0.074,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aeda08826",
+    "name": "Target an element by ID Using jQuery",
+    "difficulty": 0.075,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aed908826",
+    "name": "Change the CSS of an Element Using jQuery",
+    "difficulty": 0.076,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aed808826",
+    "name": "Disable an Element Using jQuery",
+    "difficulty": 0.077,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aed708826",
+    "name": "Remove an Element Using jQuery",
+    "difficulty": 0.078,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aed608826",
+    "name": "Move an Element Using jQuery",
+    "difficulty": 0.079,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aed508826",
+    "name": "Clone an Element Using jQuery",
+    "difficulty": 0.080,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aed408826",
+    "name": "Animate an Element Using jQuery",
+    "difficulty": 0.081,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aed308826",
+    "name": "Target the Parent of an Element Using jQuery",
+    "difficulty": 0.082,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aed208826",
+    "name": "Target the Children of an Element Using jQuery",
+    "difficulty": 0.083,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+
+  {
+    "_id": "bad87fee1348bd9aed108826",
+    "name": "Target a Specific Child of an Element Using jQuery",
+    "difficulty": 0.084,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aed008826",
+    "name": "Target Even Numbered Elements Using jQuery",
+    "difficulty": 0.085,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aecc08826",
+    "name": "Read Data from an Element Using jQuery",
+    "difficulty": 0.086,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9aebc08826",
+    "name": "Get Data from an URL Using jQuery",
+    "difficulty": 0.087,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9ae9c08826",
+    "name": "Loop through JSON Data Using jQuery",
+    "difficulty": 0.089,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
+
+  {
+    "_id": "bad87fee1348bd9ae8c08826",
+    "name": "Setup Click Events Using jQuery",
+    "difficulty": 0.089,
+    "description": [
+
+    ],
+    "tests": [
+
+    ],
+    "challengeSeed": [
+
+    ],
+    "challengeType": 0
+  },
 
   {
     "_id": "bd7123d8c441eddfaeb5bdef",
     "name": "Learn Basic Computer Science",
-    "difficulty": 0.18,
+    "difficulty": 0.90,
     "challengeSeed": "114628241",
     "description": [
       "Stanford has an excellent free online Computer Science curriculum. This interactive course uses a modified version of JavaScript. It will cover a lot of concepts quickly.",
@@ -3871,8 +4103,8 @@
     "challengeSeed": "125658022",
     "description": [
       "Now you're ready to start our Zipline challenges. These front-end development challenges will give you many opportunities to apply the HTML, CSS, jQuery and JavaScript you've learned to build static (database-less) applications.",
-      "For many of these challenges, you will be using JSON data from API endpoints. This takes some getting used to.",
-      "You will use the following two functions in many Ziplines: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse'>JSON.parse()</a> and <a href='http://api.jquery.com/jquery.each/'>jQuery $.each()</a>.",
+      "For many of these challenges, you will be using JSON data from external API endpoints, such as Twitch.tv and Twitter. Note that you don't need to have a database to use these data.",
+      "The easiest way to manipulate these data is with <a href='http://api.jquery.com/jquery.getjson/' target='_blank'>jQuery $.getJSON()</a>.",
       "Whatever you do, don't get discouraged! Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck.",
       "We'll build these challenges using CodePen, a popular tool for creating, sharing, and discovering static web applications.",
       "Go to <a href='http://codepen.io' target='_blank'>http://codepen.io</a> and create an account.",
@@ -3904,7 +4136,7 @@
       "<span class='text-info'>Bonus User Story:</span> As a user, I can search through the streams listed.",
       "<span class='text-info'>Hint:</span> Here's an example call to Twitch.tv's JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
       "<span class='text-info'>Hint:</span> The relevant documentation about this API call is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
-      "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"notmichaelmcdonald\",\"RobotCaleb\",\"comster404\",\"brunofin\",\"thomasballinger\",\"joe_at_underflow\",\"noobs2ninjas\",\"mdwasp\",\"beohoff\",\"xenocomagain\"]</code>",
+      "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"comster404\",\"brunofin\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
       "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
       "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
     ],
