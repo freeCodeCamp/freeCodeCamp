@@ -19,14 +19,16 @@ var async = require('async'),
   debug = require('debug')('freecc:cntr:resources'),
   cheerio = require('cheerio'),
   request = require('request'),
-  R = require('ramda');
+  R = require('ramda'),
+  _ = require('lodash'),
+  fs = require('fs');
 
 /**
  * Cached values
  */
 var allBonfireIds, allBonfireNames, allCoursewareIds, allCoursewareNames,
   allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
-  allBonfireIndexesAndNames;
+  allBonfireIndexesAndNames, challengeMap;
 
 /**
  * GET /
@@ -44,7 +46,55 @@ Array.zip = function(left, right, combinerFunction) {
   return results;
 };
 
+buildChallengeMap = function() {
+  challengeMap = {};
+  fs.readdir(__dirname + '../seed_data/challenges', function(err, files) {
+    if (err) {
+      debug(err);
+    } else {
+      var keyCounter = 0;
+      files = files.sort(function(a, b) {
+        return a.order < b.order ? a : b;
+      });
+      files.forEach(function(file) {
+        challengeMap[keyCounter++] = file;
+      });
+    }
+  });
+};
+
 module.exports = {
+
+  getChallengeMapWithIds: function() {
+    // TODO finish this
+    if (challengeMap === null) {
+      buildChallengeMap();
+    }
+    var challengeMapWithIds = {};
+    Object.keys(challengeMap).
+      forEach(function(key) {
+        var onlyIds = challengeMap[key].challenges.map(function(elem) {
+          return elem.challengeId;
+        });
+        challengeMapWithIds[key] = onlyIds;
+      });
+    return challengeMapWithIds;
+  },
+
+  getChallengeMapWithNames: function() {
+    var challengeMapWithNames = {};
+    Object.keys(challengeMap).
+      forEach(function(key) {
+        var onlyNames = challengeMap[key].challenges.map(function(elem) {
+          return elem.challengeName;
+        });
+        challengeMapWithNames[key] = onlyNames;
+      });
+    return challengeMapWithNames;
+  },
+
+
+
   sitemap: function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
     var now = moment(new Date()).format('YYYY-MM-DD');

@@ -1,0 +1,55 @@
+[
+  {
+    "_id": "bd7124d8c441eddfaeb5bdef",
+    "name": "Learn how Free Code Camp Works",
+    "difficulty": 0.01,
+    "challengeSeed": "125407438",
+    "description": [
+      "Watch this 1-minute video, or simply read this summary:",
+      "Welcome to Free Code Camp. We're a community of busy people learning to code by building projects for nonprofits.",
+      "We built this community because learning to code is hard. But anyone who can stay motivated can learn to code. And to stay motivated, you just need to: <ol><li>make friends with people who code</li><li>code a little every day</li><ol>",
+      "All our challenges are <ol><li>free</li><li>self-paced</li><li>browser-based</li></ol>",
+      "We'll spend <ol><li>200 hours learning tools like HTML, CSS, JavaScript, Node.js and databases</li><li>600 hours building practice projects</li><li>800 hours building full stack solutions for nonprofits</li></ol>",
+      "By the end, we'll <ol><li>be good at coding</li><li>have the portfolio of apps with happy users to prove it</li></ol>",
+      "Once you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
+      "Now it's time to join our chat room. Click the \"I've completed this challenge\" button to move on to your next challenge."
+    ],
+    "challengeType": 2,
+    "tests": []
+  },
+  {
+    "_id": "bd7125d8c441eddfaeb5bd0f",
+    "name": "Join Our Chat Room",
+    "difficulty": 0.02,
+    "challengeSeed": "124555254",
+    "description": [
+      "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper to pair program with.",
+      "Make sure your Free Code Camp account includes your email address. You can do this here: <a href='/account' target='_blank'>http://freecodecamp.com/account</a>.",
+      "Click this link, which will email you an invite to Free Code Camp's Slack chat room: <a href='/api/slack' target='_blank'>http://freecodecamp.com/api/slack</a>.",
+      "Now check your email and click the link in the email from Slack",
+      "Complete the sign up process, then update your biographical information and upload an image. A picture of your face works best. This is how people will see you in the chat room, so put your best foot forward.",
+      "Now enter the general chat room and introduce yourself to our chat room by typing: \"hello world!\".",
+      "Note that you're expected to follow our Code of Conduct: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>",
+      "Tell your fellow campers how you found Free Code Camp. Also tell us why you want to learn to code.",
+      "Keep the chat room open while you work through the other challenges. That way you ask for help if you get stuck on a challenge. You can also socialize when you feel like taking a break.",
+      "You can also access this chat room by clicking the \"Chat\" button in the upper right hand corner."
+    ],
+    "challengeType": 2,
+    "tests": []
+  },
+  {
+    "_id": "bd7125d8c441eddfaeb5bdff",
+    "name": "Preview our Challenge Map",
+    "difficulty": 0.03,
+    "challengeSeed": "125407437",
+    "description": [
+      "Before you start learning how to code, we'd like to introduce you to a few things.",
+      "Let's look at our Challenge Map. Click on the \"Map\" button in the upper right hand corner. This map shows all the challenges that will teach you how to code.",
+      "You should complete all these challenges in order.",
+      "Once you finish these Waypoint challenges, you'll move on to Bonfires (algorithm practice), then Ziplines (front end development practice) and finally Basejumps (full stack development practice). After that, you'll start building projects for nonprofits.",
+      "This challenge map is just for your reference. When you return to FreeCodeCamp.com, we'll automatically redirect you to the next challenge that you should be doing."
+    ],
+    "challengeType": 2,
+    "tests": []
+  }
+]
