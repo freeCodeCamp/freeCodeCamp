@@ -23,6 +23,9 @@ var debug = require('debug')('freecc:cntr:courseware'),
     R = require('ramda'),
     moment = require('moment');
 
+var challengeMapWithNames = resources.getChallengeMapWithNames();
+var challengeMapWithIds = resources.getChallengeMapWithIds();
+
 exports.showAllChallenges = function(req, res) {
   var completedList = [];
   if (req.user) {
@@ -47,8 +50,6 @@ exports.returnNextChallenge = function(req, res, next) {
   // serve index + 1 challenge
   // otherwise increment block key and serve the first challenge in that block
   var nextChallengeName;
-  var challengeMapWithNames = resources.getChallengeMapWithNames();
-  var challengeMapWithIds = resources.getChallengeMapWithIds();
   var challengeId = req.user.currentChallenge.challengeId;
   var challengeBlock = req.user.currentChallenge.challengeBlock;
   var indexOfChallenge = challengeMapWithIds[challengeBlock]
@@ -188,14 +189,19 @@ exports.returnIndividualChallenge = function(req, res, next) {
 /*
 challengeBlock {
   0: {
-    "name": "basic_html,
-    "challenges: [],
+    "name": "basic_html",
+    "challenges: []
+  },
+  1: {
+    "name": "basic_css",
+    "challenges": [],
   }
 }
 
-userCurrentChallenge {
+currentChallenge{
   "challengeBlock": number,
-  "challengeId": _id
+  "challengeId": _id,
+  "challengeName": string
 }
  */
 

@@ -31,7 +31,7 @@
       "You may need to turn the string into an array before you can reverse it.",
       "Your result must be a string."
     ],
-    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}\n\nreverseString('hello');",
+    "challengeSeed": "function reverseString(str) {\n  return str;\n}\n\nreverseString('hello');",
     "MDNlinks" : ["Global String Object", "String.split()", "Array.reverse()", "Array.join()"]
   },
   {
@@ -50,7 +50,7 @@
       "Factorials are often represented with the shorthand notation n!",
       "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f"
     ],
-    "challengeSeed": "function factorialize(num) {\n  return num;\r\n}\n\nfactorialize(5);",
+    "challengeSeed": "function factorialize(num) {\n  return num;\n}\n\nfactorialize(5);",
     "MDNlinks" : ["Arithmetic Operators"]
   },
   {
@@ -83,7 +83,7 @@
       "Return the length of the longest word in the provided sentence.",
       "Your response should be a number."
     ],
-    "challengeSeed": "function findLongestWord(str) {\n  return str.length;\r\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');",
+    "challengeSeed": "function findLongestWord(str) {\n  return str.length;\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');",
     "tests": [
       "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.be.a('Number');",
       "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.equal(6);",
@@ -101,7 +101,7 @@
       "Return the provided string with the first letter of each word capitalized.",
       "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'."
     ],
-    "challengeSeed": "function titleCase(str) {\n  return str;\r\n}\n\ntitleCase(\"I'm a little tea pot\");",
+    "challengeSeed": "function titleCase(str) {\n  return str;\n}\n\ntitleCase(\"I'm a little tea pot\");",
     "tests": [
       "expect(titleCase(\"I'm a little tea pot\")).to.be.a('String');",
       "expect(titleCase(\"I'm a little tea pot\")).to.equal(\"I'm A Little Tea Pot\");",
@@ -119,7 +119,7 @@
       "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
       "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays."
     ],
-    "challengeSeed": "function largestOfFour(arr) {\n  // You can do this!\r\n  return arr;\r\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);",
+    "challengeSeed": "function largestOfFour(arr) {\n  // You can do this!\n  return arr;\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);",
     "tests": [
       "expect(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).to.be.a('array');",
       "(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.eql([5,27,39,1001]);",
@@ -135,7 +135,7 @@
       "Check if a string (first argument) ends with the given target string (second argument)."
     ],
 
-    "challengeSeed": "function end(str, target) {\n  // \"Never give up and good luck will find you.\"\r\n  // -- Falcor\r\n  return str;\r\n}\n\nend('Bastian', 'n');",
+    "challengeSeed": "function end(str, target) {\n  // \"Never give up and good luck will find you.\"\n  // -- Falcor\n  return str;\n}\n\nend('Bastian', 'n');",
     "tests": [
       "assert.strictEqual(end('Bastian', 'n'), true, 'should equal true if target equals end of string');",
       "assert.strictEqual(end('He has to give me a new name', 'name'), true, 'should equal true if target equals end of string');",
@@ -150,7 +150,7 @@
     "description": [
       "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number."
     ],
-    "challengeSeed": "function repeat(str, num) {\n  // repeat after me\r\n  return str;\r\n}\n\nrepeat('abc', 3);",
+    "challengeSeed": "function repeat(str, num) {\n  // repeat after me\n  return str;\n}\n\nrepeat('abc', 3);",
     "tests": [
       "assert.strictEqual(repeat('*', 3), '***', 'should repeat a string n times');",
       "assert.strictEqual(repeat('abc', 3), 'abcabcabc', 'should repeat a string n times');",
@@ -166,7 +166,7 @@
       "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
       "Note that the three dots at the end add to the string length."
     ],
-    "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunk\r\n  return str;\r\n}\n\ntruncate('A-tisket a-tasket A green and yellow basket', 11);",
+    "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunk\n  return str;\n}\n\ntruncate('A-tisket a-tasket A green and yellow basket', 11);",
     "tests": [
       "expect(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...');",
       "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
@@ -181,7 +181,7 @@
     "description": [
       "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array."
     ],
-    "challengeSeed": "function chunk(arr, size) {\n  // Break it up.\r\n  return arr;\r\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);",
+    "challengeSeed": "function chunk(arr, size) {\n  // Break it up.\n  return arr;\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);",
     "tests": [
       "assert.deepEqual(chunk(['a', 'b', 'c', 'd'], 2), [['a', 'b'], ['c', 'd']], 'should return chunked arrays');",
       "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'should return chunked arrays');",
@@ -196,7 +196,7 @@
     "description": [
       "Return the remaining elements of an array after chopping off n elements from the head."
     ],
-    "challengeSeed": "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
+    "challengeSeed": "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\n  return arr;\n}\n\nslasher([1, 2, 3], 2);",
     "tests": [
       "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
       "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
@@ -232,7 +232,7 @@
       "Remove all falsey values from an array.",
       "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN."
     ],
-    "challengeSeed": "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\r\n  return arr;\r\n}\n\nbouncer([7, 'ate', '', false, 9]);",
+    "challengeSeed": "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\n  return arr;\n}\n\nbouncer([7, 'ate', '', false, 9]);",
     "tests": [
       "assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9], 'should remove falsey values');",
       "assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c'], 'should return full array if no falsey elements');",
@@ -247,7 +247,7 @@
     "description":[
       "Make a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument)."
     ],
-    "challengeSeed":"function where(collection, source) {\n  var arr = [];\r\n  // What's in a name?\r\n  return arr;\r\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });",
+    "challengeSeed":"function where(collection, source) {\n  var arr = [];\n  // What's in a name?\n  return arr;\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });",
     "tests":[
       "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
       "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');"
@@ -261,7 +261,7 @@
     "description":[
       "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments."
     ],
-    "challengeSeed": "function destroyer(arr) {\n  // Remove all the values\r\n  return arr;\r\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);",
+    "challengeSeed": "function destroyer(arr) {\n  // Remove all the values\n  return arr;\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);",
     "tests": [
       "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
       "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
@@ -276,7 +276,7 @@
       "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
       "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index)."
     ],
-    "challengeSeed": "function where(arr, num) {\n  // Find my place in this sorted array.\r\n  return num;\r\n}\n\nwhere([40, 60], 50);",
+    "challengeSeed": "function where(arr, num) {\n  // Find my place in this sorted array.\n  return num;\n}\n\nwhere([40, 60], 50);",
     "tests": [
       "expect(where([10, 20, 30, 40, 50], 35)).to.equal(3);",
       "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);"
@@ -290,7 +290,7 @@
       "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
       "The lowest number will not always come first."
     ],
-    "challengeSeed": "function sumAll(arr) {\n  return(1);\r\n}\n\nsumAll([1, 4]);",
+    "challengeSeed": "function sumAll(arr) {\n  return(1);\n}\n\nsumAll([1, 4]);",
     "tests": [
       "expect(sumAll([1, 4])).to.be.a('Number');",
       "expect(sumAll([1, 4])).to.equal(10);",
@@ -307,7 +307,7 @@
     "description": [
       "Compare two arrays and return a new array with any items not found in both of the original arrays."
     ],
-    "challengeSeed": "function diff(arr1, arr2) {\n  var newArr = [];\r\n  // Same, same; but different.\r\n  return newArr;\r\n}\n\ndiff([1, 2, 3, 5], [1, 2, 3, 4, 5]);",
+    "challengeSeed": "function diff(arr1, arr2) {\n  var newArr = [];\n  // Same, same; but different.\n  return newArr;\n}\n\ndiff([1, 2, 3, 5], [1, 2, 3, 4, 5]);",
     "tests": [
       "expect(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])).to.be.a('array');",
       "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
@@ -333,7 +333,7 @@
       "Convert the number be a roman numeral.",
       "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\">roman numerals</a> answers should be provided in upper-case."
     ],
-    "challengeSeed": "function convert(num) {\n return num;\r\n}\n\nconvert(36);",
+    "challengeSeed": "function convert(num) {\n return num;\n}\n\nconvert(36);",
     "MDNlinks" : ["Array.splice()", "Array.indexOf()", "Array.join()"]
   },
   {
@@ -354,7 +354,7 @@
       "Third argument is what you will be replacing the second argument with (after).",
       "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word 'Book' with the word 'dog', it should be replaced as 'Dog'"
     ],
-    "challengeSeed": "function replace(str, before, after) {\n return str;\r\n}\n\nreplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");",
+    "challengeSeed": "function replace(str, before, after) {\n return str;\n}\n\nreplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");",
     "MDNlinks" : ["Array.splice()", "String.replace()", "Array.join()"]
   },
   {
@@ -373,7 +373,7 @@
       "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
       "If a word begins with a vowel you just add \"way\" to the end."
     ],
-    "challengeSeed": "function translate(str) {\n return str;\r\n}\n\ntranslate(\"consonant\");",
+    "challengeSeed": "function translate(str) {\n return str;\n}\n\ntranslate(\"consonant\");",
     "MDNlinks" : ["Array.indexOf()", "Array.push()", "Array.join()", "String.substr()", "String.split()"]
   },
   {
@@ -390,7 +390,7 @@
       "<a href=\"http://en.wikipedia.org/wiki/Base_pair\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
       "Return the provided character as the first element in each array."
     ],
-    "challengeSeed": "function pair(str) {\n return str;\r\n}\n\npair(\"GCG\");",
+    "challengeSeed": "function pair(str) {\n return str;\n}\n\npair(\"GCG\");",
     "MDNlinks" : ["Array.push()", "String.split()"]
   },
   {
@@ -418,7 +418,7 @@
       "Check if a value is classified as a boolean primitive. Return true or false.",
       "Boolean primitives are true and false."
     ],
-    "challengeSeed": "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\r\n  return bool;\r\n}\n\nboo(null);",
+    "challengeSeed": "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\n  return bool;\n}\n\nboo(null);",
     "tests": [
       "assert.strictEqual(boo(true), true);",
       "assert.strictEqual(boo(false), true);",
@@ -441,7 +441,7 @@
       "The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.",
       "Check the assertion tests for examples."
     ],
-    "challengeSeed": "function unite(arr1, arr2, arr3) {\n  return arr1;\r\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
+    "challengeSeed": "function unite(arr1, arr2, arr3) {\n  return arr1;\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
     "tests": [
       "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
       "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');"
@@ -454,7 +454,7 @@
     "description": [
       "Convert the characters \"&\", \"<\", \">\", '\"', and \"'\", in a string to their corresponding HTML entities."
     ],
-    "challengeSeed": "function convert(str) {\n  // &colon;&rpar;\r\n  return str;\r\n}\n\nconvert('Dolce & Gabbana');",
+    "challengeSeed": "function convert(str) {\n  // &colon;&rpar;\n  return str;\n}\n\nconvert('Dolce & Gabbana');",
     "tests": [
       "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
       "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
@@ -468,7 +468,7 @@
     "description": [
       "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes."
     ],
-    "challengeSeed": "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\r\n  // --David St. Hubbins\r\n  return str;\r\n}\n\nspinalCase('This Is Spinal Tap');",
+    "challengeSeed": "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\n  // --David St. Hubbins\n  return str;\n}\n\nspinalCase('This Is Spinal Tap');",
     "tests": [
       "assert.strictEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap', 'should return spinal case from string with spaces');",
       "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'should return spinal case from string with camel case');",
@@ -486,7 +486,7 @@
       "The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.",
       "As an example, passing 4 to the function should return 5 because all the odd Fibonacci numbers under 4 are 1, 1, and 3."
     ],
-    "challengeSeed": "function sumFibs(num) {\n  return num;\r\n}\n\nsumFibs(4);",
+    "challengeSeed": "function sumFibs(num) {\n  return num;\n}\n\nsumFibs(4);",
     "tests": [
       "expect(sumFibs(1)).to.be.a('number');",
       "expect(sumFibs(1000)).to.equal(1785);",
@@ -506,7 +506,7 @@
       "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.",
       "The provided number may not be a prime."
     ],
-    "challengeSeed": "function sumPrimes(num) {\n  return num;\r\n}\n\nsumPrimes(10);",
+    "challengeSeed": "function sumPrimes(num) {\n  return num;\n}\n\nsumPrimes(10);",
     "tests": [
       "expect(sumPrimes(10)).to.be.a('number');",
       "expect(sumPrimes(10)).to.equal(17);",
@@ -521,7 +521,7 @@
       "Find the smallest number that is evenly divisible by all numbers in the provided range.",
       "The range will be an array of two numbers that will not necessarily be in numerical order."
     ],
-    "challengeSeed": "function smallestCommons(arr) {\n  return arr;\r\n}\r\n\n\nsmallestCommons([1,5]);",
+    "challengeSeed": "function smallestCommons(arr) {\n  return arr;\n}\n\n\nsmallestCommons([1,5]);",
     "tests": [
       "expect(smallestCommons([1,5])).to.be.a('number');",
       "expect(smallestCommons([1,5])).to.equal(60);",
@@ -536,7 +536,7 @@
     "description": [
       "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument)."
     ],
-    "challengeSeed": "function find(arr, func) {\n  var num = 0;\r\n  return num;\r\n}\n\nfind([1, 2, 3, 4], function(num){ return num % 2 === 0; });",
+    "challengeSeed": "function find(arr, func) {\n  var num = 0;\n  return num;\n}\n\nfind([1, 2, 3, 4], function(num){ return num % 2 === 0; });",
     "tests": [
       "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'should return first found value');",
       "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'should return undefined if not found');"
@@ -550,7 +550,7 @@
     "description": [
       "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true."
     ],
-    "challengeSeed": "function drop(arr, func) {\n  // Drop them elements.\r\n  return arr;\r\n}\n\ndrop([1, 2, 3], function(n) {return n < 3; });",
+    "challengeSeed": "function drop(arr, func) {\n  // Drop them elements.\n  return arr;\n}\n\ndrop([1, 2, 3], function(n) {return n < 3; });",
     "tests": [
       "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
       "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
@@ -565,7 +565,7 @@
     "description": [
       "Flatten a nested array. You must account for varying levels of nesting."
     ],
-    "challengeSeed": "function steamroller(arr) {\n  // I'm a steamroller, baby\r\n  return arr;\r\n}\n\nsteamroller([1, [2], [3, [[4]]]]);",
+    "challengeSeed": "function steamroller(arr) {\n  // I'm a steamroller, baby\n  return arr;\n}\n\nsteamroller([1, [2], [3, [[4]]]]);",
     "tests": [
       "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
       "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
@@ -581,7 +581,7 @@
       "Return an English translated sentence of the passed binary string.",
       "The binary string will be space separated."
     ],
-    "challengeSeed": "function binaryAgent(str) {\n  return str;\r\n}\n\nbinaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');",
+    "challengeSeed": "function binaryAgent(str) {\n  return str;\n}\n\nbinaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');",
     "tests": [
       "expect(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111')).to.equal(\"Aren't bonfires fun!?\");",
       "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
@@ -615,7 +615,7 @@
       "For this, check to see if the property defined in the second argument is present on every element of the collection.",
       "Remember, you can access object properties through either dot notation or [] notation."
     ],
-    "challengeSeed": "function every(collection, pre) {\n  // Does everyone have one of these?\r\n  return pre;\r\n}\n\nevery([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');",
+    "challengeSeed": "function every(collection, pre) {\n  // Does everyone have one of these?\n  return pre;\n}\n\nevery([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');",
     "tests": [
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
@@ -651,7 +651,7 @@
       "All functions that take an argument have an arity of 1, and the argument will be a string.",
       "These methods must be the only available means for interacting with the object."
     ],
-    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();",
+    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\n};\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();",
     "tests": [
       "expect(Object.keys(bob).length).to.eql(6);",
       "expect(bob instanceof Person).to.be.true;",
@@ -681,7 +681,7 @@
       "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
       "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418"
     ],
-    "challengeSeed": "function orbitalPeriod(arr) {\n  var GM = 398600.4418;\n  var earthRadius = 6367.4447;\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
+    "challengeSeed": "function orbitalPeriod(arr) {\n  var GM = 398600.4418;\n  var earthRadius = 6367.4447;\n  return arr;\n}\n\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
     "tests": [
       "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
       "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
@@ -732,7 +732,7 @@
       "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
       "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both."
     ],
-    "challengeSeed": "function sym(args) {\n  return arguments;\r\n}\n\nsym([1, 2, 3], [5, 2, 1, 4]);",
+    "challengeSeed": "function sym(args) {\n  return arguments;\n}\n\nsym([1, 2, 3], [5, 2, 1, 4]);",
     "tests": [
       "expect(sym([1, 2, 3], [5, 2, 1, 4])).to.eqls([3, 5, 4])",
       "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
@@ -747,7 +747,7 @@
     "description": [
       "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.", "cid is a 2d array listing available currency.", "Return the string \"Insufficient Funds\" if cash-in-drawer is less than the change due. Return the string \"Closed\" if cash-in-drawer is equal to the change due.", "Otherwise, return change in coin and bills, sorted in highest to lowest order."
     ],
-    "challengeSeed": "function drawer(price, cash, cid) {\n  var change;\r\n  // Here is your change, ma'am.\r\n  return change;\r\n}\r\n\r\n// Example cash-in-drawer array:\r\n// [['PENNY', 1.01],\r\n// ['NICKEL', 2.05],\r\n// ['DIME', 3.10],\r\n// ['QUARTER', 4.25],\r\n// ['ONE', 90.00],\r\n// ['FIVE', 55.00],\r\n// ['TEN', 20.00],\r\n// ['TWENTY', 60.00],\r\n// ['ONE HUNDRED', 100.00]]\n\ndrawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]);",
+    "challengeSeed": "function drawer(price, cash, cid) {\n  var change;\n  // Here is your change, ma'am.\n  return change;\n}\n\n// Example cash-in-drawer array:\n// [['PENNY', 1.01],\n// ['NICKEL', 2.05],\n// ['DIME', 3.10],\n// ['QUARTER', 4.25],\n// ['ONE', 90.00],\n// ['FIVE', 55.00],\n// ['TEN', 20.00],\n// ['TWENTY', 60.00],\n// ['ONE HUNDRED', 100.00]]\n\ndrawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]);",
     "tests": [
       "expect(drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]])).to.be.a('array');",
       "expect(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]])).to.be.a('string');",
@@ -765,7 +765,7 @@
     "description": [
       "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order."
     ],
-    "challengeSeed": "function inventory(arr1, arr2) {\n    // All inventory must be accounted for or you're fired!\r\n    return arr1;\r\n}\n\n// Example inventory lists\r\nvar curInv = [\r\n    [21, 'Bowling Ball'],\r\n    [2, 'Dirty Sock'],\r\n    [1, 'Hair Pin'],\r\n    [5, 'Microphone']\r\n];\r\n\r\nvar newInv = [\r\n    [2, 'Hair Pin'],\r\n    [3, 'Half-Eaten Apple'],\r\n    [67, 'Bowling Ball'],\r\n    [7, 'Toothpaste']\r\n];\r\n\r\ninventory(curInv, newInv);",
+    "challengeSeed": "function inventory(arr1, arr2) {\n    // All inventory must be accounted for or you're fired!\n    return arr1;\n}\n\n// Example inventory lists\nvar curInv = [\n    [21, 'Bowling Ball'],\n    [2, 'Dirty Sock'],\n    [1, 'Hair Pin'],\n    [5, 'Microphone']\n];\n\nvar newInv = [\n    [2, 'Hair Pin'],\n    [3, 'Half-Eaten Apple'],\n    [67, 'Bowling Ball'],\n    [7, 'Toothpaste']\n];\n\ninventory(curInv, newInv);",
     "tests": [
       "expect(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']])).to.be.a('array');",
       "assert.equal(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]).length, 6);",

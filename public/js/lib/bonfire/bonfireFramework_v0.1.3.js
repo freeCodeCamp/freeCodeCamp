@@ -33,9 +33,6 @@ editor.setOption("extraKeys", {
             cm.replaceSelection(spaces);
         }
     },
-
-
-
     "Ctrl-Enter": function() {
         bonfireExecute();
         return false;
@@ -48,22 +45,6 @@ var attempts = 0;
 if (attempts) {
     attempts = 0;
 }
-
-// Default value for editor if one isn't provided in (i.e. a challenge)
-var nonChallengeValue = '/*Welcome to Bonfire, Free Code Camp\'s future CoderByte replacement.\n' +
-    'Please feel free to use Bonfire as an in-browser playground and linting tool.\n' +
-    'Note that you can also write tests using Chai.js by using the keywords assert and expect */\n\n' +
-    'function test() {\n' +
-    '  assert(2 !== 3, "2 is not equal to 3");\n' +
-    '  return [1,2,3].map(function(elem) {\n' +
-    '    return elem * elem;\n' +
-    '  });\n' +
-    '}\n' +
-    'expect(test()).to.be.a("array");\n\n' +
-    'assert.deepEqual(test(), [1,4,9]);\n\n' +
-    'var foo = test();\n' +
-    'foo.should.be.a("array");\n\n' +
-    'test();\n';
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
     lineNumbers: false,

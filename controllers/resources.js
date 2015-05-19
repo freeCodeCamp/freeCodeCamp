@@ -45,9 +45,17 @@ Array.zip = function(left, right, combinerFunction) {
   return results;
 };
 
+buildChallengeMap = function() {
+
+};
+
 module.exports = {
+
   getChallengeMapWithIds: function() {
     // TODO finish this
+    if (challengeMap === null) {
+      buildChallengeMap();
+    }
     var challengeMapWithIds = {};
     Object.keys(challengeMap).
       forEach(function(key) {
@@ -71,9 +79,7 @@ module.exports = {
     return challengeMapWithNames;
   },
 
-  getChallengeName: function(challengeId) {
 
-  },
 
   sitemap: function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
