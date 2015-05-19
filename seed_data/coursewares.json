@@ -3420,14 +3420,15 @@
     ],
     "tests": [
       "assert($('#target').hasClass('disabled'), 'The button with the ID of \"target\" should continue to have the \"disabled\" class.')",
-      "assert($('#target').attr('disabled', true), 'Enable the button with the ID of \"target\" by using jQuery.')"
+      "assert(!!$('#target[disabled]'), 'Enable the button with the ID of \"target\" by using jQuery.')",
+      "expect($('#target')).to.exist()"
     ],
     "challengeSeed": [
-      "<script>",
+      "fccss",
       "  $(document).ready(function() {",
       "    $('#target').attr('disabled', true)",
       "  });",
-      "</script>",
+      "fcces",
       "<button id='target' class='btn btn-primary btn-block'>Enable this button with jQuery</button>"
     ],
     "challengeType": 0
