@@ -20,7 +20,8 @@ var async = require('async'),
   cheerio = require('cheerio'),
   request = require('request'),
   R = require('ramda'),
-  _ = require('lodash');
+  _ = require('lodash'),
+  fs = require('fs');
 
 /**
  * Cached values
@@ -46,7 +47,20 @@ Array.zip = function(left, right, combinerFunction) {
 };
 
 buildChallengeMap = function() {
-
+  challengeMap = {};
+  fs.readdir(__dirname + '../seed_data/challenges', function(err, files) {
+    if (err) {
+      debug(err);
+    } else {
+      var keyCounter = 0;
+      files = files.sort(function(a, b) {
+        return a.order < b.order ? a : b;
+      });
+      files.forEach(function(file) {
+        challengeMap[keyCounter++] = file;
+      });
+    }
+  });
 };
 
 module.exports = {
