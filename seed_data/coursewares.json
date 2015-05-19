@@ -157,8 +157,7 @@
     ],
     "challengeSeed": [
       "<h1>Hello</h1>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf0887a",
@@ -176,8 +175,7 @@
     ],
     "challengeSeed": [
       "<h1>Hello World</h1>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08801",
@@ -194,8 +192,7 @@
     "challengeSeed": [
       "<h1>Hello World</h1>",
       "<h2>CatPhotoApp</h2>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aeaf08801",
@@ -214,8 +211,7 @@
       "<h1>Hello World</h1>",
       "<h2>CatPhotoApp</h2>",
       "<p>Hello Paragraph</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08802",
@@ -242,8 +238,7 @@
       "",
       "<p>Hello Paragraph</p>",
       "-->"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08804",
@@ -269,8 +264,7 @@
       "",
       "<p>Hello Paragraph</p>",
       "-->"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08833",
@@ -294,8 +288,7 @@
       "<br/>",
       "",
       "<p>Hello Paragraph</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fed1348bd9aedf08833",
@@ -320,8 +313,7 @@
       "<br/>",
       "",
       "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08803",
@@ -340,8 +332,7 @@
       "<h2>CatPhotoApp</h2>",
       "",
       "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08805",
@@ -364,8 +355,7 @@
       "<h2 style='color: red'>CatPhotoApp</h2>",
       "",
       "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aecf08806",
@@ -395,8 +385,7 @@
       "<h2>CatPhotoApp</h2>",
       "",
       "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aefe08806",
@@ -422,8 +411,7 @@
       "<h2 class='red-text'>CatPhotoApp</h2>",
       "",
       "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08806",
@@ -449,8 +437,7 @@
       "<h2 class='red-text'>CatPhotoApp</h2>",
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aede08807",
@@ -479,8 +466,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08807",
@@ -512,8 +498,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08808",
@@ -551,8 +536,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08809",
@@ -593,8 +577,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -632,8 +615,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9acdf08812",
@@ -671,8 +653,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9bedf08813",
@@ -715,8 +696,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08814",
@@ -764,8 +744,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08815",
@@ -812,8 +791,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08816",
@@ -863,8 +841,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aede08817",
@@ -917,8 +894,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -970,8 +946,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08820",
@@ -1023,8 +998,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08818",
@@ -1076,8 +1050,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -1130,9 +1103,7 @@
       "",
       "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
       "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1191,9 +1162,7 @@
       "  <li>laser pointers</li>",
       "  <li>lasagna</li>",
       "</ul>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1254,9 +1223,7 @@
       "  <li>thunder</li>",
       "  <li>other cats</li>",
       "</ol>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1318,9 +1285,7 @@
       "  <li>other cats</li>",
       "</ol>",
       "<input type='text'>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1383,9 +1348,7 @@
       "  <li>other cats</li>",
       "</ol>",
       "<input type='text' placeholder='cat photo URL'>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1449,9 +1412,7 @@
       "<form action=\"/submit-cat-photo\">",
       "  <input type='text' placeholder='cat photo URL'>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1517,9 +1478,7 @@
       "  <input type='text' placeholder='cat photo URL'>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1589,9 +1548,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1659,9 +1616,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1730,9 +1685,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1804,9 +1757,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -1881,8 +1832,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd8acde08812",
@@ -1954,8 +1904,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -2027,8 +1976,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348cd8acef08812",
@@ -2101,8 +2049,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348cd8acef08811",
@@ -2175,8 +2122,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348cd8acef08813",
@@ -2250,8 +2196,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348ce8acef08814",
@@ -2326,8 +2271,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad88fee1348ce8acef08815",
@@ -2403,8 +2347,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -2490,9 +2433,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -2563,9 +2504,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -2639,9 +2578,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -2716,9 +2653,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -2792,9 +2727,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -2875,9 +2808,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -2968,9 +2899,7 @@
       "  <input type='text' placeholder='cat photo URL' required>",
       "  <button type='submit'>Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -3061,9 +2990,7 @@
       "  <input type='text' class='form-control' placeholder='cat photo URL' required>",
       "  <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
       "</form>"
-    ],
-    "challengeType": 0,
-    "completionMessage": ""
+    ]
   },
 
   {
@@ -3114,8 +3041,7 @@
       "  <h5 class=\"box red-box\">padding</h5>",
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08822",
@@ -3167,8 +3093,7 @@
       "  <h5 class=\"box red-box\">padding</h5>",
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08823",
@@ -3219,8 +3144,7 @@
       "  <h5 class=\"box red-box\">padding</h5>",
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08824",
@@ -3272,8 +3196,7 @@
       "  <h5 class=\"box red-box\">padding</h5>",
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1248bd9aedf08824",
@@ -3325,8 +3248,7 @@
       "  <h5 class=\"box red-box\">padding</h5>",
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
-    ],
-    "challengeType": 0
+    ]
   },
   {
     "_id": "bad87fee1348bd9aedf08826",
@@ -3375,8 +3297,7 @@
       "  <h5 class=\"box red-box\">padding</h5>",
       "  <h5 class=\"box green-box\">padding</h5>",
       "</div>"
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3391,8 +3312,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3407,8 +3327,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3430,8 +3349,7 @@
       "  });",
       "fcces",
       "<button id='target' class='btn btn-primary btn-block'>Enable this button with jQuery</button>"
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3446,8 +3364,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3462,8 +3379,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3478,8 +3394,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3494,8 +3409,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3510,8 +3424,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3526,8 +3439,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3542,8 +3454,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3558,8 +3469,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3574,8 +3484,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3590,8 +3499,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3606,8 +3514,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
 
@@ -3623,8 +3530,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3639,8 +3545,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3655,8 +3560,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3671,8 +3575,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3687,8 +3590,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
@@ -3703,8 +3605,7 @@
     ],
     "challengeSeed": [
 
-    ],
-    "challengeType": 0
+    ]
   },
 
   {
