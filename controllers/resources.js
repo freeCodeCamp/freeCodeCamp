@@ -91,7 +91,7 @@ module.exports = {
     } else {
       allChallengeIds = [];
       Object.keys(challengeMapWithIds).forEach(function(key) {
-        allChallengeIds.push(challengeMapWithIds[key].challenges);
+        allChallengeIds.push(challengeMapWithIds[key]);
       });
       allChallengeIds = R.flatten(allChallengeIds);
     }

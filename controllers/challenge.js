@@ -41,7 +41,10 @@ exports.showAllChallenges = function(req, res) {
 };
 
 exports.getStuff = function(req, res, next) {
-  res.send({withNames: challengeMapWithNames, withIds: challengeMapWithIds});
+  res.render('coursewares/getstuff', {
+    stuff: resources.allChallengeIds(),
+    stuffWithIds: challengeMapWithIds
+  });
 };
 
 exports.returnNextChallenge = function(req, res, next) {
@@ -68,58 +71,52 @@ exports.returnNextChallenge = function(req, res, next) {
   var nextChallengeId;
   var nextChallengeBlock;
 
-  var challengeId = req.user.currentChallenge.challengeId;
+  var challengeId = String(req.user.currentChallenge.challengeId);
   var challengeBlock = req.user.currentChallenge.challengeBlock;
-  debug('this is the user challenge block', challengeBlock);
   var indexOfChallenge = challengeMapWithIds[challengeBlock]
     .indexOf(challengeId);
 
-  debug('Logging first two challenge blocks for sanity', challengeMapWithIds[0], challengeMapWithIds[1]);
-
-
-  debug('these are the damn keys on challengeMapWithIds...', Object.keys(challengeMapWithIds));
   if (indexOfChallenge + 1
     < challengeMapWithIds[challengeBlock].length) {
-    debug('advancing to next challange in current block');
+    debug('this is index', indexOfChallenge);
+    debug('current block advance');
+    debug(challengeMapWithNames[challengeBlock][+indexOfChallenge + 1])
     nextChallengeName =
-      challengeMapWithNames[challengeBlock][indexOfChallenge + 1];
-    nextChallengeId = challengeMapWithIds[challengeBlock][indexOfChallenge + 1];
-    nextChallengeBlock = challengeBlock;
+      challengeMapWithNames[challengeBlock][++indexOfChallenge];
   } else if (typeof challengeMapWithIds[++challengeBlock] !== 'undefined') {
-    debug('Advancing to next block');
+    debug('next block advance');
     nextChallengeName = R.head(challengeMapWithNames[challengeBlock]);
-    nextChallengeId = R.head(challengeMapWithNames[challengeBlock]);
-    nextChallengeBlock = challengeBlock;
   } else {
-    debug('completed all challenges');
+    debug('finished, no advance');
     req.flash('errors', {
       msg: 'It looks like you have finished all of our challenges.' +
       ' Great job! Now on to helping nonprofits!'
     });
     nextChallengeName = R.head(challengeMapWithNames[0].challenges);
-    nextChallengeId = R.head(challengeMapWithNames[0].challenges);
-    nextChallengeBlock = 0;
   }
-  req.user.currentChallenge = {
-    challengeId: nextChallengeId,
-    challengeName: nextChallengeName,
-    challengeBlock: nextChallengeBlock
-  };
-  req.user.save();
+
+  debug('Should be sending user to challenge %s', nextChallengeName);
   var nameString = nextChallengeName.trim()
     .toLowerCase()
-    .replace(/[^\w\s]/g, '')
     .replace(/\s/g, '-')
-  debug('this is the namestring we\'re going to look up', nameString);
   return res.redirect('../challenges/' + nameString);
 };
 
 exports.returnCurrentChallenge = function(req, res, next) {
-  debug('these are the damn keys on challengeMapWithIds...', Object.keys(challengeMapWithIds));
-  debug('sanity check', challengeMapWithIds[0], challengeMapWithIds[1]);
   if (!req.user) {
    return res.redirect('../challenges/learn-how-free-code-camp-works');
   }
+  var completed = req.user.completedChallenges.map(function (elem) {
+    return elem._id;
+  });
+
+  req.user.uncompletedChallenges = resources.allChallengeIds()
+    .filter(function (elem) {
+      if (completed.indexOf(elem) === -1) {
+        return elem;
+      }
+    });
+  req.user.save();
   if (!req.user.currentChallenge) {
     req.user.currentChallenge = {};
     req.user.currentChallenge.challengeId = challengeMapWithIds['0'][0];
@@ -130,17 +127,15 @@ exports.returnCurrentChallenge = function(req, res, next) {
   }
   var nameString = req.user.currentChallenge.challengeName.trim()
     .toLowerCase()
-    .replace(/[^\w\s]/g, '')
     .replace(/\s/g, '-');
-  debug('this is the namestring we\'re going to look up', nameString);
   return res.redirect('../challenges/' + nameString);
 };
 
 exports.returnIndividualChallenge = function(req, res, next) {
+  debug('this is the user\'s current challenge info', req.user.currentChallenge);
   var dashedName = req.params.challengeName;
 
   var challengeName = dashedName.replace(/\-/g, ' ');
-  debug('looking for %s', challengeName);
 
   Challenge.find({'name': new RegExp(challengeName, 'i')},
     function(err, challengeFromMongo) {
@@ -149,7 +144,6 @@ exports.returnIndividualChallenge = function(req, res, next) {
       }
       // Handle not found
       if (challengeFromMongo.length < 1) {
-        debug(challengeFromMongo);
         req.flash('errors', {
           msg: '404: We couldn\'t find a challenge with that name. ' +
           'Please double check the name.'
@@ -157,13 +151,28 @@ exports.returnIndividualChallenge = function(req, res, next) {
         return res.redirect('/challenges');
       }
       var challenge = challengeFromMongo.pop();
-      debug(challenge);
 
       // Redirect to full name if the user only entered a partial
       var dashedNameFull = challenge.name.toLowerCase().replace(/\s/g, '-');
       if (dashedNameFull !== dashedName) {
         return res.redirect('../challenges/' + dashedNameFull);
+      } else {
+        req.user.currentChallenge = {
+          challengeId: challenge._id,
+          challengeName: challenge.name,
+          challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
+              map(function(key) {
+                return challengeMapWithIds[key]
+                  .filter(function(elem) {
+                    return String(elem) === String(challenge._id);
+                  }).map(function() {
+                    return key;
+                  });
+              })
+          ))
+        };
       }
+      req.user.save();
 
       var challengeType = {
         0: function() {
@@ -289,8 +298,7 @@ exports.completedChallenge = function (req, res, next) {
 };
 
 exports.completedZiplineOrBasejump = function (req, res, next) {
-  debug('Inside controller for completed zipline or basejump with data %s',
-    req.body.coursewareInfo);
+
   var isCompletedWith = req.body.coursewareInfo.completedWith || false;
   var isCompletedDate = Math.round(+new Date());
   var coursewareHash = req.body.coursewareInfo.coursewareHash;
@@ -332,10 +340,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
           if (err) {
             return next(err);
           }
-          debug('this is the user object returned %s,' +
-            ' this is the req.user._id %s, ' +
-            'this is the pairedWith._id %s', user, req.user._id, pairedWith._id);
-          debug(req.user._id.toString() === pairedWith._id.toString());
+
           if (req.user._id.toString() === pairedWith._id.toString()) {
             return res.sendStatus(200);
           }
