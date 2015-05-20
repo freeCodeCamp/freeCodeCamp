@@ -28,7 +28,8 @@
         "",
         "",
         "meetBonfire(\"You can do this!\");"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id": "a202eed8fc186c8434cb6d61",
@@ -52,7 +53,8 @@
         "",
         "reverseString('hello');"
       ],
-      "MDNlinks": ["Global String Object", "String.split()", "Array.reverse()", "Array.join()"]
+      "MDNlinks": ["Global String Object", "String.split()", "Array.reverse()", "Array.join()"],
+      "challengeType": 5
     },
     {
       "_id": "a302f7aae1aa3152a5b413bc",
@@ -77,7 +79,8 @@
         "",
         "factorialize(5);"
       ],
-      "MDNlinks": ["Arithmetic Operators"]
+      "MDNlinks": ["Arithmetic Operators"],
+      "challengeType": 5
     },
     {
       "_id": "aaa48de84e1ecc7c742e1124",
@@ -108,7 +111,8 @@
         "",
         "palindrome(\"eye\");"
       ],
-      "MDNlinks": ["String.replace()", "String.toLowerCase()"]
+      "MDNlinks": ["String.replace()", "String.toLowerCase()"],
+      "challengeType": 5
     },
     {
       "_id": "a26cbbe9ad8655a977e1ceb5",
@@ -132,7 +136,8 @@
         "expect(findLongestWord('Google do a barrel roll')).to.equal(6);",
         "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);"
       ],
-      "MDNlinks": ["String.split()", "String.length"]
+      "MDNlinks": ["String.split()", "String.length"],
+      "challengeType": 5
     },
     {
       "_id": "ab6137d4e35944e21037b769",
@@ -155,7 +160,8 @@
         "expect(titleCase(\"sHoRt AnD sToUt\")).to.equal(\"Short And Stout\");",
         "expect(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")).to.equal(\"Here Is My Handle Here Is My Spout\");"
       ],
-      "MDNlinks": ["String.charAt()"]
+      "MDNlinks": ["String.charAt()"],
+      "challengeType": 5
     },
     {
       "_id": "a789b3483989747d63b0e427",
@@ -179,7 +185,8 @@
         "(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.eql([5,27,39,1001]);",
         "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]).should.eql([9,35,97,1000000]));"
       ],
-      "MDNlinks": ["Comparison Operators"]
+      "MDNlinks": ["Comparison Operators"],
+      "challengeType": 5
     },
     {
       "_id": "acda2fb1324d9b0fa741e6b5",
@@ -203,7 +210,8 @@
         "assert.strictEqual(end('He has to give me a new name', 'name'), true, 'should equal true if target equals end of string');",
         "assert.strictEqual(end('If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing', 'mountain'), false, 'should equal false if target does not equal end of string');"
       ],
-      "MDNlinks": ["String.substr()"]
+      "MDNlinks": ["String.substr()"],
+      "challengeType": 5
     },
     {
       "_id": "afcc8d540bea9ea2669306b6",
@@ -225,7 +233,8 @@
         "assert.strictEqual(repeat('abc', 3), 'abcabcabc', 'should repeat a string n times');",
         "assert.strictEqual(repeat('abc', -2), '', 'should return an empty string for negative numbers');"
       ],
-      "MDNlinks": ["Global String Object"]
+      "MDNlinks": ["Global String Object"],
+      "challengeType": 5
     },
     {
       "_id": "ac6993d51946422351508a41",
@@ -248,7 +257,8 @@
         "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
         "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length');"
       ],
-      "MDNlinks": ["String.slice()"]
+      "MDNlinks": ["String.slice()"],
+      "challengeType": 5
     },
     {
       "_id": "a9bd25c716030ec90084d8a1",
@@ -270,7 +280,8 @@
         "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'should return chunked arrays');",
         "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'should return the last chunk as remaining elements');"
       ],
-      "MDNlinks": ["Array.push()"]
+      "MDNlinks": ["Array.push()"],
+      "challengeType": 5
     },
     {
       "_id": "ab31c21b530c0dafa9e241ee",
@@ -292,7 +303,8 @@
         "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
         "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array when n >= array.length');"
       ],
-      "MDNlinks": ["Array.slice()", "Array.splice()"]
+      "MDNlinks": ["Array.slice()", "Array.splice()"],
+      "challengeType": 5
     },
     {
       "_id": "af2170cad53daa0770fabdea",
@@ -318,7 +330,8 @@
         "expect(mutation(['Mary', 'Army'])).to.be.true;",
         "expect(mutation(['Alien', 'line'])).to.be.true;"
       ],
-      "MDNlinks": ["Array.sort()"]
+      "MDNlinks": ["Array.sort()"],
+      "challengeType": 5
     },
     {
       "_id": "adf08ec01beb4f99fc7a68f2",
@@ -341,7 +354,8 @@
         "assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c'], 'should return full array if no falsey elements');",
         "assert.deepEqual(bouncer([false, null, 0]), [], 'should return empty array if all elements are falsey');"
       ],
-      "MDNlinks": ["Boolean Objects", "Array.filter()"]
+      "MDNlinks": ["Boolean Objects", "Array.filter()"],
+      "challengeType": 5
     },
     {
       "_id":"a8e512fbe388ac2f9198f0fa",
@@ -363,7 +377,8 @@
         "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
         "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');"
       ],
-      "MDNlinks": ["Global Object", "Object.hasOwnProperty()", "Object.keys()"]
+      "MDNlinks": ["Global Object", "Object.hasOwnProperty()", "Object.keys()"],
+      "challengeType": 5
     },
     {
       "_id":"a39963a4c10bc8b4d4f06d7e",
@@ -384,7 +399,8 @@
         "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
         "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
       ],
-      "MDNlinks": ["Arguments object","Array.filter()"]
+      "MDNlinks": ["Arguments object","Array.filter()"],
+      "challengeType": 5
     },
     {
       "_id": "a24c1a4622e3c05097f71d67",
@@ -429,7 +445,8 @@
         "expect(sumAll([5, 10])).to.equal(45);",
         "expect(sumAll([10, 5])).to.equal(45);"
       ],
-      "MDNlinks": ["Math.max()", "Math.min()", "Array.reduce()"]
+      "MDNlinks": ["Math.max()", "Math.min()", "Array.reduce()"],
+      "challengeType": 5
     },
     {
       "_id": "a5de63ebea8dbee56860f4f2",
@@ -479,7 +496,8 @@
         "",
         "convert(36);"
       ],
-      "MDNlinks": ["Array.splice()", "Array.indexOf()", "Array.join()"]
+      "MDNlinks": ["Array.splice()", "Array.indexOf()", "Array.join()"],
+      "challengeType": 5
     },
     {
       "_id": "a0b5010f579e69b815e7c5d6",
@@ -506,7 +524,8 @@
         "",
         "replace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");"
       ],
-      "MDNlinks": ["Array.splice()", "String.replace()", "Array.join()"]
+      "MDNlinks": ["Array.splice()", "String.replace()", "Array.join()"],
+      "challengeType": 5
     },
     {
       "_id": "aa7697ea2477d1316795783b",
@@ -531,7 +550,8 @@
         "",
         "translate(\"consonant\");"
       ],
-      "MDNlinks": ["Array.indexOf()", "Array.push()", "Array.join()", "String.substr()", "String.split()"]
+      "MDNlinks": ["Array.indexOf()", "Array.push()", "Array.join()", "String.substr()", "String.split()"],
+      "challengeType": 5
     },
     {
       "_id": "afd15382cdfb22c9efe8b7de",
@@ -554,7 +574,8 @@
         "",
         "pair(\"GCG\");"
       ],
-      "MDNlinks": ["Array.push()", "String.split()"]
+      "MDNlinks": ["Array.push()", "String.split()"],
+      "challengeType": 5
     },
     {
       "_id": "af7588ade1100bde429baf20",
@@ -577,7 +598,8 @@
         "expect(fearNotLetter('abcdefghjklmno')).to.equal('i');",
         "expect(fearNotLetter('yz')).to.be.undefined;"
       ],
-      "MDNlinks": ["String.charCodeAt()"]
+      "MDNlinks": ["String.charCodeAt()"],
+      "challengeType": 5
     },
     {
       "_id": "a77dbc43c33f39daa4429b4f",
@@ -605,7 +627,8 @@
         "assert.strictEqual(boo(NaN), false);",
         "assert.strictEqual(boo('a'), false);"
       ],
-      "MDNlinks": ["Boolean Objects"]
+      "MDNlinks": ["Boolean Objects"],
+      "challengeType": 5
     },
     {
       "_id": "a105e963526e7de52b219be9",
@@ -627,7 +650,8 @@
       "tests": [
         "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
         "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id": "a6b0bb188d873cb2c8729495",
@@ -648,7 +672,8 @@
         "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
         "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
       ],
-      "MDNlinks": ["RegExp"]
+      "MDNlinks": ["RegExp"],
+      "challengeType": 5
     },
     {
       "_id": "a103376db3ba46b2d50db289",
@@ -672,7 +697,8 @@
         "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'should return spinal case from string with snake case');",
         "assert.strictEqual(spinalCase('Teletubbies say Eh-oh'), 'teletubbies-say-eh-oh', 'should return spinal case from string with spaces and hyphens');"
       ],
-      "MDNlinks": ["RegExp", "String.replace()"]
+      "MDNlinks": ["RegExp", "String.replace()"],
+      "challengeType": 5
     },
     {
       "_id": "a5229172f011153519423690",
@@ -698,7 +724,8 @@
         "expect(sumFibs(75024)).to.equal(60696);",
         "expect(sumFibs(75025)).to.equal(135721);"
       ],
-      "MDNlinks": ["Remainder"]
+      "MDNlinks": ["Remainder"],
+      "challengeType": 5
     },
     {
       "_id": "a3bfc1673c0526e06d3ac698",
@@ -720,7 +747,8 @@
         "expect(sumPrimes(10)).to.be.a('number');",
         "expect(sumPrimes(10)).to.equal(17);",
         "expect(sumPrimes(977)).to.equal(73156);"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id": "ae9defd7acaf69703ab432ea",
@@ -743,7 +771,8 @@
         "expect(smallestCommons([1,5])).to.equal(60);",
         "expect(smallestCommons([5,1])).to.equal(60);",
         "(smallestCommons([1,13])).should.equal(360360);"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id": "a6e40f1041b06c996f7b2406",
@@ -786,7 +815,8 @@
         "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
         "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
       ],
-      "MDNlinks": ["Arguments object", "Array.shift()"]
+      "MDNlinks": ["Arguments object", "Array.shift()"],
+      "challengeType": 5
     },
     {
       "_id": "ab306dbdcc907c7ddfc30830",
@@ -808,7 +838,8 @@
         "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
         "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');"
       ],
-      "MDNlinks": ["Array.isArray()"]
+      "MDNlinks": ["Array.isArray()"],
+      "challengeType": 5
     },
     {
       "_id": "a8d97bd4c764e91f9d2bda01",
@@ -830,7 +861,8 @@
         "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
       ],
       "MDNlinks": ["String.charCodeAt()", "String.fromCharCode()"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id" : "a3f503de51cfab748ff001aa",
@@ -854,7 +886,8 @@
         "expect(pairwise([1,1,1], 2)).to.equal(1);",
         "expect(pairwise([0, 0, 0, 0, 1, 1], 1)).to.equal(10);",
         "expect(pairwise([], 100)).to.equal(0);"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id": "a10d2431ad0c6a099a4b8b52",
@@ -877,7 +910,8 @@
         "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
         "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
       ],
-      "MDNlinks": ["Object.hasOwnProperty()", "Object.getOwnPropertyNames()"]
+      "MDNlinks": ["Object.hasOwnProperty()", "Object.getOwnPropertyNames()"],
+      "challengeType": 5
     },
     {
       "_id": "a97fd23d9b809dac9921074f",
@@ -902,7 +936,8 @@
         "expect(add(2, '3')).to.be.undefined;",
         "expect(add(2)([3])).to.be.undefined;"
       ],
-      "MDNlinks": ["Global Function Object", "Arguments object"]
+      "MDNlinks": ["Global Function Object", "Arguments object"],
+      "challengeType": 5
     },
     {
       "_id": "a2f1d72d9b908d0bd72bb9f6",
@@ -938,7 +973,8 @@
         "expect(bob.getFullName()).to.eql('George Carlin');",
         "bob.setFullName('Bob Ross');"
       ],
-      "MDNlinks": ["Closures", "Details of the Object Model"]
+      "MDNlinks": ["Closures", "Details of the Object Model"],
+      "challengeType": 5
     },
     {
       "_id": "af4afb223120f7348cdfc9fd",
@@ -964,7 +1000,8 @@
         "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
         "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
       ],
-      "MDNlinks": ["Math.pow()"]
+      "MDNlinks": ["Math.pow()"],
+      "challengeType": 5
     },
     {
       "_id": "aff0395860f5d3034dc0bfc9",
@@ -1009,7 +1046,8 @@
         "",
         "",
         "telephoneCheck(\"555-555-5555\");"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id": "a3f503de51cf954ede28891d",
@@ -1068,7 +1106,8 @@
         "assert.deepEqual(drawer(3.26, 100.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['TWENTY', 60.00], ['TEN', 20.00], ['FIVE', 15], ['ONE', 1], ['QUARTER', 0.50], ['DIME', 0.20], ['PENNY', 0.04] ], 'return correct change with multiple coins and bills');",
         "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), 'Insufficient Funds', 'insufficient funds');",
         "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.50], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), \"Closed\", 'cash-in-drawer equals change');"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id": "a56138aff60341a09ed6c480",
@@ -1107,7 +1146,8 @@
         "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], []), [[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']]);",
         "assert.deepEqual(inventory([], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[67, 'Bowling Ball'], [2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [7, 'Toothpaste']]);",
         "assert.deepEqual(inventory([[0, 'Bowling Ball'], [0, 'Dirty Sock'], [0, 'Hair Pin'], [0, 'Microphone']], [[1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [1, 'Bowling Ball'], [1, 'Toothpaste']]), [[1, 'Bowling Ball'], [0, 'Dirty Sock'], [1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [0, 'Microphone'], [1, 'Toothpaste']]);"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id": "a7bf700cd123b9a54eef01d5",
@@ -1132,7 +1172,8 @@
         "expect(permAlone('abcdefa')).to.equal(3600);",
         "expect(permAlone('abfdefa')).to.equal(2640);",
         "expect(permAlone('zzzzzzzz')).to.equal(0);"
-      ]
+      ],
+      "challengeType": 5
     },
     {
       "_id": "a19f0fbe1872186acd434d5a",
@@ -1160,7 +1201,8 @@
         "assert.deepEqual(friendly(['2017-01-01', '2017-01-01']), ['January 1st, 2017'], 'since we do not duplicate only return once');",
         "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th, 2023']);"
       ],
-      "MDNlinks": ["String.split()", "String.substr()", "parseInt()"]
+      "MDNlinks": ["String.split()", "String.substr()", "parseInt()"],
+      "challengeType": 5
     }
   ]
 }
