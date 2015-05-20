@@ -61,15 +61,21 @@ exports.returnNextChallenge = function(req, res, next) {
         return elem;
       }
     });
-  req.user.save();
+  // It's not important to wait for the save to finish as the updated user
+  // object is already in memory! We'll just check to see if there was an
+  // error saving and log it out to investigate in our logs.
+  req.user.save(function(err, data) {
+    if (err) {
+      debug('%s saving user!', err);
+    }
+  });
   // find the user's current challenge and block
   // look in that block and find the index of their current challenge
-  // if index + 1 <= block.challenges.length - 1
+  // if index + 1 < block.challenges.length
   // serve index + 1 challenge
   // otherwise increment block key and serve the first challenge in that block
+  // unless the next block is undefined, which means no next block
   var nextChallengeName;
-  var nextChallengeId;
-  var nextChallengeBlock;
 
   var challengeId = String(req.user.currentChallenge.challengeId);
   var challengeBlock = req.user.currentChallenge.challengeBlock;
@@ -78,16 +84,11 @@ exports.returnNextChallenge = function(req, res, next) {
 
   if (indexOfChallenge + 1
     < challengeMapWithIds[challengeBlock].length) {
-    debug('this is index', indexOfChallenge);
-    debug('current block advance');
-    debug(challengeMapWithNames[challengeBlock][+indexOfChallenge + 1])
     nextChallengeName =
       challengeMapWithNames[challengeBlock][++indexOfChallenge];
   } else if (typeof challengeMapWithIds[++challengeBlock] !== 'undefined') {
-    debug('next block advance');
     nextChallengeName = R.head(challengeMapWithNames[challengeBlock]);
   } else {
-    debug('finished, no advance');
     req.flash('errors', {
       msg: 'It looks like you have finished all of our challenges.' +
       ' Great job! Now on to helping nonprofits!'
@@ -95,7 +96,6 @@ exports.returnNextChallenge = function(req, res, next) {
     nextChallengeName = R.head(challengeMapWithNames[0].challenges);
   }
 
-  debug('Should be sending user to challenge %s', nextChallengeName);
   var nameString = nextChallengeName.trim()
     .toLowerCase()
     .replace(/\s/g, '-')
@@ -132,7 +132,6 @@ exports.returnCurrentChallenge = function(req, res, next) {
 };
 
 exports.returnIndividualChallenge = function(req, res, next) {
-  debug('this is the user\'s current challenge info', req.user.currentChallenge);
   var dashedName = req.params.challengeName;
 
   var challengeName = dashedName.replace(/\-/g, ' ');
@@ -187,7 +186,7 @@ exports.returnIndividualChallenge = function(req, res, next) {
             verb: resources.randomVerb(),
             phrase: resources.randomPhrase(),
             compliment: resources.randomCompliment(),
-            coursewareHash: challenge._id,
+            challengeId: challenge._id,
             environment: resources.whichEnvironment(),
             challengeType: challenge.challengeType
           });
@@ -205,7 +204,7 @@ exports.returnIndividualChallenge = function(req, res, next) {
             verb: resources.randomVerb(),
             phrase: resources.randomPhrase(),
             compliment: resources.randomCompliment(),
-            coursewareHash: challenge._id,
+            challengeId: challenge._id,
             challengeType: challenge.challengeType
           });
         },
@@ -221,7 +220,7 @@ exports.returnIndividualChallenge = function(req, res, next) {
             verb: resources.randomVerb(),
             phrase: resources.randomPhrase(),
             compliment: resources.randomCompliment(),
-            coursewareHash: challenge._id,
+            challengeId: challenge._id,
             challengeType: challenge.challengeType
           });
         },
@@ -236,7 +235,7 @@ exports.returnIndividualChallenge = function(req, res, next) {
             verb: resources.randomVerb(),
             phrase: resources.randomPhrase(),
             compliment: resources.randomCompliment(),
-            coursewareHash: challenge._id,
+            challengeId: challenge._id,
             challengeType: challenge.challengeType
           });
         },
@@ -251,7 +250,7 @@ exports.returnIndividualChallenge = function(req, res, next) {
             verb: resources.randomVerb(),
             phrase: resources.randomPhrase(),
             compliment: resources.randomCompliment(),
-            coursewareHash: challenge._id,
+            challengeId: challenge._id,
             challengeType: challenge.challengeType
           });
         }
