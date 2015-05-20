@@ -127,16 +127,16 @@ $(document).ready(function() {
         case 1:
         case 2:
           $.post(
-            '/completed-courseware/',
+            '/completed-challenge/',
             {
-              coursewareInfo: {
-                coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName
+              challengeInfo: {
+                challengeId: challengeId,
+                challengeName: challengeName
               }
             }).success(
             function(res) {
               if (res) {
-                window.location.href = '/challenges';
+                window.location.href = '/challenges/next-challenge';
               }
             }
           );
@@ -147,16 +147,16 @@ $(document).ready(function() {
           $.post(
             '/completed-zipline-or-basejump/',
             {
-              coursewareInfo: {
-                coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName,
+              challengeInfo: {
+                challengeId: challengeId,
+                challengeName: challengeName,
                 completedWith: didCompleteWith,
                 publicURL: publicURL,
                 challengeType: challengeType
               }
             }).success(
             function() {
-              window.location.href = '/challenges';
+              window.location.href = '/challenges/next-challenge';
             }).fail(
             function() {
               window.location.href = '/challenges';
@@ -169,9 +169,9 @@ $(document).ready(function() {
           $.post(
             '/completed-zipline-or-basejump/',
             {
-              coursewareInfo: {
-                coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName,
+              challengeInfo: {
+                challengeId: challengeId,
+                challengeName: challengeName,
                 completedWith: didCompleteWith,
                 publicURL: publicURL,
                 githubURL: githubURL,
@@ -179,7 +179,7 @@ $(document).ready(function() {
                 verified: false
               }
             }).success(function() {
-              window.location.href = '/challenges';
+              window.location.href = '/challenges/next-challenge';
             }).fail(function() {
               window.location.replace(window.location.href);
             });

@@ -36,25 +36,26 @@ var express = require('express'),
     /**
      * Controllers (route handlers).
      */
-    homeController = require('./controllers/home'),
-    resourcesController = require('./controllers/resources'),
-    userController = require('./controllers/user'),
-    nonprofitController = require('./controllers/nonprofits'),
-    bonfireController = require('./controllers/bonfire'),
-    coursewareController = require('./controllers/courseware'),
-    fieldGuideController = require('./controllers/fieldGuide'),
-    challengeMapController = require('./controllers/challengeMap'),
+  homeController = require('./controllers/home'),
+  resourcesController = require('./controllers/resources'),
+  userController = require('./controllers/user'),
+  nonprofitController = require('./controllers/nonprofits'),
+  bonfireController = require('./controllers/bonfire'),
+  coursewareController = require('./controllers/courseware'),
+  fieldGuideController = require('./controllers/fieldGuide'),
+  challengeMapController = require('./controllers/challengeMap'),
+  challengeController = require('./controllers/challenge'),
 
     /**
      *  Stories
      */
-    storyController = require('./controllers/story'),
+  storyController = require('./controllers/story'),
 
-    /**
-     * API keys and Passport configuration.
-     */
-    secrets = require('./config/secrets'),
-    passportConf = require('./config/passport');
+  /**
+   * API keys and Passport configuration.
+   */
+  secrets = require('./config/secrets'),
+  passportConf = require('./config/passport');
 
 /**
  * Create Express server.
@@ -537,17 +538,24 @@ app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
  * Courseware related routes
  */
 
-app.get('/challenges/', coursewareController.returnNextCourseware);
+app.get('/getstuff', challengeController.getStuff);
+
+
+app.get('/challenges/next-challenge', challengeController.returnNextChallenge);
 
 app.get(
-    '/challenges/:coursewareName',
-    coursewareController.returnIndividualCourseware
+    '/challenges/:challengeName',
+    challengeController.returnIndividualChallenge
 );
 
-app.post('/completed-courseware/', coursewareController.completedCourseware);
+app.get('/challenges/', challengeController.returnCurrentChallenge);
+// todo refactor these routes
+app.post('/completed-challenge/', challengeController.completedChallenge);
 
 app.post('/completed-zipline-or-basejump',
-  coursewareController.completedZiplineOrBasejump);
+  challengeController.completedZiplineOrBasejump);
+
+app.post('/completed-bonfire', challengeController.completedBonfire);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username',

@@ -28,7 +28,8 @@ var async = require('async'),
  */
 var allBonfireIds, allBonfireNames, allCoursewareIds, allCoursewareNames,
   allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
-  allBonfireIndexesAndNames, challengeMap;
+  allBonfireIndexesAndNames, challengeMap, challengeMapWithIds,
+  challengeMapWithNames, allChallengeIds;
 
 /**
  * GET /
@@ -46,54 +47,72 @@ Array.zip = function(left, right, combinerFunction) {
   return results;
 };
 
-buildChallengeMap = function() {
-  challengeMap = {};
-  fs.readdir(__dirname + '../seed_data/challenges', function(err, files) {
-    if (err) {
-      debug(err);
-    } else {
-      var keyCounter = 0;
-      files = files.sort(function(a, b) {
-        return a.order < b.order ? a : b;
-      });
-      files.forEach(function(file) {
-        challengeMap[keyCounter++] = file;
-      });
-    }
-  });
-};
+(function() {
+  if (!challengeMap) {
+    var localChallengeMap = {};
+    var files = fs.readdirSync(__dirname + '/../seed_data/challenges');
+    var keyCounter = 0;
+    files = files.map(function (file) {
+      return require(__dirname +
+        '/../seed_data/challenges/' + file);
+    });
+    files = files.sort(function (a, b) {
+      return a.order - b.order;
+    });
+    files.forEach(function (file) {
+      localChallengeMap[keyCounter++] = file;
+    });
+    challengeMap = _.cloneDeep(localChallengeMap);
+  }
+})();
+
 
 module.exports = {
 
   getChallengeMapWithIds: function() {
-    // TODO finish this
-    if (challengeMap === null) {
-      buildChallengeMap();
-    }
-    var challengeMapWithIds = {};
-    Object.keys(challengeMap).
-      forEach(function(key) {
-        var onlyIds = challengeMap[key].challenges.map(function(elem) {
-          return elem.challengeId;
+    if (challengeMapWithIds) {
+      return challengeMapWithIds;
+    } else {
+      challengeMapWithIds = {};
+      Object.keys(challengeMap).forEach(function (key) {
+        var onlyIds = challengeMap[key].challenges.map(function (elem) {
+          return elem._id;
         });
         challengeMapWithIds[key] = onlyIds;
       });
-    return challengeMapWithIds;
+      return challengeMapWithIds;
+    }
+  },
+
+  allChallengeIds: function() {
+
+    if (allChallengeIds) {
+      return allChallengeIds;
+    } else {
+      allChallengeIds = [];
+      Object.keys(challengeMapWithIds).forEach(function(key) {
+        allChallengeIds.push(challengeMapWithIds[key].challenges);
+      });
+      allChallengeIds = R.flatten(allChallengeIds);
+    }
+    return allChallengeIds;
   },
 
   getChallengeMapWithNames: function() {
-    var challengeMapWithNames = {};
-    Object.keys(challengeMap).
-      forEach(function(key) {
-        var onlyNames = challengeMap[key].challenges.map(function(elem) {
-          return elem.challengeName;
+    if (challengeMapWithNames) {
+      return challengeMapWithNames;
+    } else {
+      challengeMapWithNames = {};
+      Object.keys(challengeMap).
+        forEach(function (key) {
+          var onlyNames = challengeMap[key].challenges.map(function (elem) {
+            return elem.name;
+          });
+          challengeMapWithNames[key] = onlyNames;
         });
-        challengeMapWithNames[key] = onlyNames;
-      });
-    return challengeMapWithNames;
+      return challengeMapWithNames;
+    }
   },
-
-
 
   sitemap: function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';

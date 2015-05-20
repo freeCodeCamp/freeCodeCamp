@@ -20,7 +20,8 @@
       ],
       "challengeSeed": [
         "<h1>Hello</h1>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf0887a",
@@ -38,7 +39,8 @@
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08801",
@@ -55,7 +57,8 @@
       "challengeSeed": [
         "<h1>Hello World</h1>",
         "<h2>CatPhotoApp</h2>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aeaf08801",
@@ -74,7 +77,8 @@
         "<h1>Hello World</h1>",
         "<h2>CatPhotoApp</h2>",
         "<p>Hello Paragraph</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08802",
@@ -101,7 +105,8 @@
         "",
         "<p>Hello Paragraph</p>",
         "-->"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08804",
@@ -127,7 +132,8 @@
         "",
         "<p>Hello Paragraph</p>",
         "-->"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08833",
@@ -151,7 +157,8 @@
         "<br/>",
         "",
         "<p>Hello Paragraph</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fed1348bd9aedf08833",
@@ -176,7 +183,8 @@
         "<br/>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08803",
@@ -195,7 +203,8 @@
         "<h2>CatPhotoApp</h2>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08805",
@@ -218,7 +227,8 @@
         "<h2 style='color: red'>CatPhotoApp</h2>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aecf08806",
@@ -248,7 +258,8 @@
         "<h2>CatPhotoApp</h2>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aefe08806",
@@ -274,7 +285,8 @@
         "<h2 class='red-text'>CatPhotoApp</h2>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08806",
@@ -300,7 +312,8 @@
         "<h2 class='red-text'>CatPhotoApp</h2>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aede08807",
@@ -329,7 +342,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08807",
@@ -361,7 +375,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08808",
@@ -399,7 +414,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08809",
@@ -440,7 +456,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -478,7 +495,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9acdf08812",
@@ -516,7 +534,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9bedf08813",
@@ -559,7 +578,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08814",
@@ -607,7 +627,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08815",
@@ -654,7 +675,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08816",
@@ -704,7 +726,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aede08817",
@@ -757,7 +780,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -809,7 +833,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08820",
@@ -861,7 +886,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08818",
@@ -913,7 +939,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -966,7 +993,8 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1025,7 +1053,8 @@
         "  <li>laser pointers</li>",
         "  <li>lasagna</li>",
         "</ul>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1086,7 +1115,8 @@
         "  <li>thunder</li>",
         "  <li>other cats</li>",
         "</ol>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1148,7 +1178,8 @@
         "  <li>other cats</li>",
         "</ol>",
         "<input type='text'>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1211,7 +1242,8 @@
         "  <li>other cats</li>",
         "</ol>",
         "<input type='text' placeholder='cat photo URL'>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1275,7 +1307,8 @@
         "<form action=\"/submit-cat-photo\">",
         "  <input type='text' placeholder='cat photo URL'>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1411,7 +1444,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1479,7 +1513,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType" : 0
     },
 
     {
@@ -1548,7 +1583,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType" : 0
     },
 
     {
@@ -1620,7 +1656,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType" : 0
     }
   ]
 }

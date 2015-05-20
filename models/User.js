@@ -150,7 +150,19 @@ var userSchema = new mongoose.Schema({
   finishedWaypoints: { type: Boolean, default: false },
   sendMonthlyEmail: { type: Boolean, default: true },
   challengesHash: {},
-  currentChallenge: {}
+  currentChallenge: {},
+  completedChallenges: [
+      {
+        completedDate: Long,
+        _id: String,
+        name: String,
+        completedWith: String,
+        solution: String,
+        githubLink: String,
+        verified: Boolean
+      }
+  ],
+  uncompletedChallenges: Array
 });
 
 /**

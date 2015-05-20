@@ -32,11 +32,12 @@ Challenge.remove({}, function(err, data) {
     console.log('Deleted ', data);
   }
   challenges.forEach(function (file) {
-    Challenge.create(require('./challenges/' + file), function (err, data) {
+    Challenge.create(require('./challenges/' + file).challenges, function (err, data) {
       if (err) {
         console.log(err);
       } else {
         console.log('Successfully parsed %s', file);
+        console.log(data);
       }
     });
   });
