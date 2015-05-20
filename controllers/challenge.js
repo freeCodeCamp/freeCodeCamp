@@ -98,7 +98,7 @@ exports.returnNextChallenge = function(req, res, next) {
 
   var nameString = nextChallengeName.trim()
     .toLowerCase()
-    .replace(/\s/g, '-')
+    .replace(/\s/g, '-');
   return res.redirect('../challenges/' + nameString);
 };
 
