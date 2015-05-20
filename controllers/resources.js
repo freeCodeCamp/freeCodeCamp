@@ -29,7 +29,7 @@ var async = require('async'),
 var allBonfireIds, allBonfireNames, allCoursewareIds, allCoursewareNames,
   allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
   allBonfireIndexesAndNames, challengeMap, challengeMapWithIds,
-  challengeMapWithNames, allChallengeIds;
+  challengeMapWithNames, allChallengeIds, allChallenges;
 
 /**
  * GET /
@@ -70,9 +70,7 @@ Array.zip = function(left, right, combinerFunction) {
 module.exports = {
 
   getChallengeMapWithIds: function() {
-    if (challengeMapWithIds) {
-      return challengeMapWithIds;
-    } else {
+    if (!challengeMapWithIds) {
       challengeMapWithIds = {};
       Object.keys(challengeMap).forEach(function (key) {
         var onlyIds = challengeMap[key].challenges.map(function (elem) {
@@ -80,17 +78,15 @@ module.exports = {
         });
         challengeMapWithIds[key] = onlyIds;
       });
-      return challengeMapWithIds;
     }
+    return challengeMapWithIds;
   },
 
   allChallengeIds: function() {
 
-    if (allChallengeIds) {
-      return allChallengeIds;
-    } else {
+    if (!allChallengeIds) {
       allChallengeIds = [];
-      Object.keys(challengeMapWithIds).forEach(function(key) {
+      Object.keys(this.getChallengeMapWithIds()).forEach(function(key) {
         allChallengeIds.push(challengeMapWithIds[key]);
       });
       allChallengeIds = R.flatten(allChallengeIds);
@@ -98,10 +94,19 @@ module.exports = {
     return allChallengeIds;
   },
 
+  allChallenges: function() {
+    if (!allChallenges) {
+      allChallenges = [];
+      Object.keys(this.getChallengeMapWithNames()).forEach(function(key) {
+        allChallenges.push(challengeMap[key].challenges);
+      });
+      allChallenges = R.flatten(allChallenges);
+    }
+    return allChallenges;
+  },
+
   getChallengeMapWithNames: function() {
-    if (challengeMapWithNames) {
-      return challengeMapWithNames;
-    } else {
+    if (!challengeMapWithNames) {
       challengeMapWithNames = {};
       Object.keys(challengeMap).
         forEach(function (key) {
@@ -110,8 +115,8 @@ module.exports = {
           });
           challengeMapWithNames[key] = onlyNames;
         });
-      return challengeMapWithNames;
     }
+    return challengeMapWithNames;
   },
 
   sitemap: function sitemap(req, res, next) {

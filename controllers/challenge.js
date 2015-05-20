@@ -253,6 +253,10 @@ exports.returnIndividualChallenge = function(req, res, next) {
             challengeId: challenge._id,
             challengeType: challenge.challengeType
           });
+        },
+
+        5: function() {
+          // bonfire
         }
       };
 
