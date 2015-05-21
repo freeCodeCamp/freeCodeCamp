@@ -139,7 +139,7 @@ exports.returnIndividualChallenge = function(req, res, next) {
   Challenge.find({'name': new RegExp(challengeName, 'i')},
     function(err, challengeFromMongo) {
       if (err) {
-        next(err);
+        return next(err);
       }
       // Handle not found
       if (challengeFromMongo.length < 1) {
@@ -292,8 +292,8 @@ exports.completedBonfire = function (req, res, next) {
   var challengeName = req.body.challengeInfo.challengeName;
 
   if (isCompletedWith) {
-    var paired = User.find({'profile.username': isCompletedWith
-      .toLowerCase()}).limit(1);
+    var paired = User.find({'profile.username': isCompletedWith.toLowerCase()})
+      .limit(1);
     paired.exec(function (err, pairedWith) {
       if (err) {
         return next(err);
@@ -366,6 +366,7 @@ exports.completedBonfire = function (req, res, next) {
       if (err) {
         return next(err);
       }
+      // NOTE(berks): Under certain conditions the res is never ended
       if (user) {
         res.send(true);
       }
@@ -420,7 +421,9 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
   }
 
   if (isCompletedWith) {
-    var paired = User.find({'profile.username': isCompletedWith.toLowerCase()}).limit(1);
+    var paired = User.find({'profile.username': isCompletedWith.toLowerCase()})
+      .limit(1);
+
     paired.exec(function (err, pairedWithFromMongo) {
       if (err) {
         return next(err);
@@ -499,6 +502,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
       if (err) {
         return next(err);
       }
+      // NOTE(berks): under certain conditions this will not close the response.
       if (user) {
         return res.sendStatus(200);
       }
