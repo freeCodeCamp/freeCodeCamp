@@ -109,19 +109,27 @@ exports.returnCurrentChallenge = function(req, res, next) {
         return elem;
       }
     });
-  req.user.save();
   if (!req.user.currentChallenge) {
     req.user.currentChallenge = {};
     req.user.currentChallenge.challengeId = challengeMapWithIds['0'][0];
     req.user.currentChallenge.challengeName = challengeMapWithNames['0'][0];
     req.user.currentChallenge.challengeBlock = '0';
-    req.user.save();
-    return res.redirect('../challenges/learn-how-free-code-camp-works');
+    req.user.save(function(err) {
+      if (err) {
+        return next(err);
+      }
+      return res.redirect('../challenges/learn-how-free-code-camp-works');
+    });
   }
   var nameString = req.user.currentChallenge.challengeName.trim()
     .toLowerCase()
     .replace(/\s/g, '-');
-  return res.redirect('../challenges/' + nameString);
+  req.user.save(function(err) {
+    if (err) {
+      return next(err);
+    }
+    return res.redirect('../challenges/' + nameString);
+  });
 };
 
 exports.returnIndividualChallenge = function(req, res, next) {
@@ -163,7 +171,6 @@ exports.returnIndividualChallenge = function(req, res, next) {
           ))
         };
       }
-      req.user.save();
 
       var challengeType = {
         0: function() {
@@ -269,9 +276,12 @@ exports.returnIndividualChallenge = function(req, res, next) {
           });
         }
       };
-
-      return challengeType[challenge.challengeType]();
-
+      req.user.save(function(err) {
+        if (err) {
+          return next(err);
+        }
+        return challengeType[challenge.challengeType]();
+      });
     });
 };
 
