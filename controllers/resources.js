@@ -1,17 +1,13 @@
 var async = require('async'),
   User = require('../models/User'),
   Challenge = require('./../models/Challenge'),
-  Courseware = require('./../models/Courseware'),
-  Bonfire = require('./../models/Bonfire'),
   Story = require('./../models/Story'),
   FieldGuide = require('./../models/FieldGuide'),
   Nonprofit = require('./../models/Nonprofit'),
   Comment = require('./../models/Comment'),
   resources = require('./resources.json'),
   secrets = require('./../config/secrets'),
-  bonfires = require('../seed_data/bonfires.json'),
   nonprofits = require('../seed_data/nonprofits.json'),
-  coursewares = require('../seed_data/coursewares.json'),
   fieldGuides = require('../seed_data/field-guides.json'),
   moment = require('moment'),
   Twit = require('twit'),
@@ -19,14 +15,16 @@ var async = require('async'),
   debug = require('debug')('freecc:cntr:resources'),
   cheerio = require('cheerio'),
   request = require('request'),
-  R = require('ramda');
+  R = require('ramda'),
+  _ = require('lodash'),
+  fs = require('fs');
 
 /**
  * Cached values
  */
-var allBonfireIds, allBonfireNames, allCoursewareIds, allCoursewareNames,
-  allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
-  allBonfireIndexesAndNames;
+var allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
+  challengeMap, challengeMapWithIds,
+  challengeMapWithNames, allChallengeIds, allChallenges;
 
 /**
  * GET /
@@ -44,7 +42,78 @@ Array.zip = function(left, right, combinerFunction) {
   return results;
 };
 
+(function() {
+  if (!challengeMap) {
+    var localChallengeMap = {};
+    var files = fs.readdirSync(__dirname + '/../seed_data/challenges');
+    var keyCounter = 0;
+    files = files.map(function (file) {
+      return require(__dirname +
+        '/../seed_data/challenges/' + file);
+    });
+    files = files.sort(function (a, b) {
+      return a.order - b.order;
+    });
+    files.forEach(function (file) {
+      localChallengeMap[keyCounter++] = file;
+    });
+    challengeMap = _.cloneDeep(localChallengeMap);
+  }
+})();
+
+
 module.exports = {
+
+  getChallengeMapWithIds: function() {
+    if (!challengeMapWithIds) {
+      challengeMapWithIds = {};
+      Object.keys(challengeMap).forEach(function (key) {
+        var onlyIds = challengeMap[key].challenges.map(function (elem) {
+          return elem._id;
+        });
+        challengeMapWithIds[key] = onlyIds;
+      });
+    }
+    return challengeMapWithIds;
+  },
+
+  allChallengeIds: function() {
+
+    if (!allChallengeIds) {
+      allChallengeIds = [];
+      Object.keys(this.getChallengeMapWithIds()).forEach(function(key) {
+        allChallengeIds.push(challengeMapWithIds[key]);
+      });
+      allChallengeIds = R.flatten(allChallengeIds);
+    }
+    return allChallengeIds;
+  },
+
+  allChallenges: function() {
+    if (!allChallenges) {
+      allChallenges = [];
+      Object.keys(this.getChallengeMapWithNames()).forEach(function(key) {
+        allChallenges.push(challengeMap[key].challenges);
+      });
+      allChallenges = R.flatten(allChallenges);
+    }
+    return allChallenges;
+  },
+
+  getChallengeMapWithNames: function() {
+    if (!challengeMapWithNames) {
+      challengeMapWithNames = {};
+      Object.keys(challengeMap).
+        forEach(function (key) {
+          var onlyNames = challengeMap[key].challenges.map(function (elem) {
+            return elem.name;
+          });
+          challengeMapWithNames[key] = onlyNames;
+        });
+    }
+    return challengeMapWithNames;
+  },
+
   sitemap: function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
     var now = moment(new Date()).format('YYYY-MM-DD');
@@ -66,28 +135,16 @@ module.exports = {
         },
 
         challenges: function (callback) {
-          Courseware.aggregate()
+          Challenge.aggregate()
             .group({_id: 1, names: { $addToSet: '$name'}})
             .exec(function (err, challenges) {
               if (err) {
-                debug('Courseware err: ', err);
+                debug('Challenge err: ', err);
                 callback(err);
               } else {
                 callback(null, challenges[0].names);
               }
             });
-        },
-        bonfires: function (callback) {
-          Bonfire.aggregate()
-          .group({_id: 1, names: { $addToSet: '$name'}})
-          .exec(function (err, bonfires) {
-            if (err) {
-              debug('Bonfire err: ', err);
-              callback(err);
-            } else {
-              callback(null, bonfires[0].names);
-            }
-          });
         },
         stories: function (callback) {
           Story.aggregate()
@@ -136,7 +193,6 @@ module.exports = {
               now: now,
               users: results.users,
               challenges: results.challenges,
-              bonfires: results.bonfires,
               stories: results.stories,
               nonprofits: results.nonprofits,
               fieldGuides: results.fieldGuides
@@ -155,6 +211,10 @@ module.exports = {
         title: "Watch us code live on Twitch.tv"
       });
     }
+  },
+
+  catPhotoSubmit: function catPhotoSubmit(req, res) {
+    res.send('Success! You have submitted your cat photo. Return to your website by typing any letter into your code editor.')
   },
 
   nonprofits: function nonprofits(req, res) {
@@ -285,52 +345,6 @@ module.exports = {
       Math.random() * resources.compliments.length)];
   },
 
-  allBonfireIds: function() {
-    if (allBonfireIds) {
-      return allBonfireIds;
-    } else {
-      allBonfireIds = bonfires.
-        map(function (elem) {
-          return {
-            _id: elem._id,
-            difficulty: elem.difficulty
-          };
-        }).
-        sort(function (a, b) {
-          return a.difficulty - b.difficulty;
-        }).
-        map(function (elem) {
-          return elem._id;
-        });
-      return allBonfireIds;
-    }
-  },
-
-  bonfiresIndexesAndNames: function() {
-    if (allBonfireIndexesAndNames) {
-      return allBonfireIndexesAndNames
-    } else {
-      var obj = {};
-      bonfires.forEach(function(elem) {
-        obj[elem._id] = elem.name;
-      });
-      allBonfireIndexesAndNames = obj;
-      return allBonfireIndexesAndNames;
-    }
-  },
-
-  ensureBonfireNames: function(completedBonfires) {
-    return completedBonfires.map(function(elem) {
-      return ({
-        name: this.bonfiresIndexesAndNames()[elem._id],
-        _id: elem.id,
-        completedDate: elem.completedDate,
-        completedWith: elem.completedWith,
-        solution: elem.solution
-      });
-    }.bind(this));
-  },
-
   allFieldGuideIds: function() {
     if (allFieldGuideIds) {
       return allFieldGuideIds;
@@ -340,31 +354,6 @@ module.exports = {
           return elem._id;
         });
       return allFieldGuideIds;
-    }
-  },
-
-  allBonfireNames: function() {
-    if (allBonfireNames) {
-      return allBonfireNames;
-    } else {
-      allBonfireNames = bonfires.
-        map(function (elem) {
-          return {
-            name: elem.name,
-            difficulty: elem.difficulty,
-            _id: elem._id
-          };
-        }).
-        sort(function (a, b) {
-          return a.difficulty - b.difficulty;
-        }).
-        map(function (elem) {
-          return {
-            name: elem.name,
-            _id: elem._id
-          };
-        });
-      return allBonfireNames;
     }
   },
 
@@ -393,54 +382,6 @@ module.exports = {
           };
         });
       return allNonprofitNames;
-    }
-  },
-
-  allCoursewareIds: function() {
-    if (allCoursewareIds) {
-      return allCoursewareIds;
-    } else {
-      allCoursewareIds = coursewares.
-        map(function (elem) {
-          return {
-            _id: elem._id,
-            difficulty: elem.difficulty
-          };
-        }).
-        sort(function (a, b) {
-          return a.difficulty - b.difficulty;
-        }).
-        map(function (elem) {
-          return elem._id;
-        });
-      return allCoursewareIds;
-    }
-  },
-
-  allCoursewareNames: function() {
-    if (allCoursewareNames) {
-      return allCoursewareNames;
-    } else {
-      allCoursewareNames = coursewares.
-        map(function (elem) {
-          return {
-            name: elem.name,
-            difficulty: elem.difficulty,
-            challengeType: elem.challengeType,
-            _id: elem._id
-          };
-        }).
-        sort(function (a, b) {
-          return a.difficulty - b.difficulty;
-        }).
-        map(function (elem) {
-        return {
-          name: elem.name,
-          challengeType: elem.challengeType,
-          _id: elem._id
-        };
-      });
-      return allCoursewareNames;
     }
   },
 

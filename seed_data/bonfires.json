@@ -14,7 +14,18 @@
       "expect(meetBonfire()).to.be.a(\"boolean\");",
       "expect(meetBonfire()).to.be.true;"
     ],
-    "challengeSeed": "function meetBonfire(argument) {\n  // Good luck!\n  console.log(\"you can read this function's argument in the developer tools\", argument);\n\n  return false;\n}\n\n\n\nmeetBonfire(\"You can do this!\");"
+    "challengeSeed": [
+      "function meetBonfire(argument) {",
+      "  // Good luck!",
+      "  console.log(\"you can read this function's argument in the developer tools\", argument);",
+      "",
+      "  return false;",
+      "}",
+      "",
+      "",
+      "",
+      "meetBonfire(\"You can do this!\");"
+    ]
   },
   {
     "_id": "a202eed8fc186c8434cb6d61",
@@ -31,8 +42,14 @@
       "You may need to turn the string into an array before you can reverse it.",
       "Your result must be a string."
     ],
-    "challengeSeed": "function reverseString(str) {\n  return str;\r\n}\n\nreverseString('hello');",
-    "MDNlinks" : ["Global String Object", "String.split()", "Array.reverse()", "Array.join()"]
+    "challengeSeed": [
+      "function reverseString(str) {",
+      "  return str;",
+      "}",
+      "",
+      "reverseString('hello');"
+    ],
+    "MDNlinks": ["Global String Object", "String.split()", "Array.reverse()", "Array.join()"]
   },
   {
     "_id": "a302f7aae1aa3152a5b413bc",
@@ -50,8 +67,14 @@
       "Factorials are often represented with the shorthand notation n!",
       "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f"
     ],
-    "challengeSeed": "function factorialize(num) {\n  return num;\r\n}\n\nfactorialize(5);",
-    "MDNlinks" : ["Arithmetic Operators"]
+    "challengeSeed": [
+      "function factorialize(num) {",
+      "  return num;",
+      "}",
+      "",
+      "factorialize(5);"
+    ],
+    "MDNlinks": ["Arithmetic Operators"]
   },
   {
     "_id": "aaa48de84e1ecc7c742e1124",
@@ -72,8 +95,17 @@
       "assert.deepEqual(palindrome(\"never odd or even\"), true);",
       "assert.deepEqual(palindrome(\"nope\"), false);"
     ],
-    "challengeSeed": "function palindrome(str) {\n  // Good luck!\n  return true;\n}\n\n\n\npalindrome(\"eye\");",
-    "MDNlinks" : ["String.replace()", "String.toLowerCase()"]
+    "challengeSeed": [
+      "function palindrome(str) {",
+      "  // Good luck!",
+      "  return true;",
+      "}",
+      "",
+      "",
+      "",
+      "palindrome(\"eye\");"
+    ],
+    "MDNlinks": ["String.replace()", "String.toLowerCase()"]
   },
   {
     "_id": "a26cbbe9ad8655a977e1ceb5",
@@ -83,7 +115,13 @@
       "Return the length of the longest word in the provided sentence.",
       "Your response should be a number."
     ],
-    "challengeSeed": "function findLongestWord(str) {\n  return str.length;\r\n}\n\nfindLongestWord('The quick brown fox jumped over the lazy dog');",
+    "challengeSeed": [
+      "function findLongestWord(str) {",
+      "  return str.length;",
+      "}",
+      "",
+      "findLongestWord('The quick brown fox jumped over the lazy dog');"
+    ],
     "tests": [
       "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.be.a('Number');",
       "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.equal(6);",
@@ -91,7 +129,7 @@
       "expect(findLongestWord('Google do a barrel roll')).to.equal(6);",
       "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);"
     ],
-    "MDNlinks" : ["String.split()", "String.length"]
+    "MDNlinks": ["String.split()", "String.length"]
   },
   {
     "_id": "ab6137d4e35944e21037b769",
@@ -101,14 +139,20 @@
       "Return the provided string with the first letter of each word capitalized.",
       "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'."
     ],
-    "challengeSeed": "function titleCase(str) {\n  return str;\r\n}\n\ntitleCase(\"I'm a little tea pot\");",
+    "challengeSeed": [
+      "function titleCase(str) {",
+      "  return str;",
+      "}",
+      "",
+      "titleCase(\"I'm a little tea pot\");"
+    ],
     "tests": [
       "expect(titleCase(\"I'm a little tea pot\")).to.be.a('String');",
       "expect(titleCase(\"I'm a little tea pot\")).to.equal(\"I'm A Little Tea Pot\");",
       "expect(titleCase(\"sHoRt AnD sToUt\")).to.equal(\"Short And Stout\");",
       "expect(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")).to.equal(\"Here Is My Handle Here Is My Spout\");"
     ],
-    "MDNlinks" : ["String.charAt()"]
+    "MDNlinks": ["String.charAt()"]
   },
   {
     "_id": "a789b3483989747d63b0e427",
@@ -119,13 +163,20 @@
       "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
       "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays."
     ],
-    "challengeSeed": "function largestOfFour(arr) {\n  // You can do this!\r\n  return arr;\r\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);",
+    "challengeSeed": [
+      "function largestOfFour(arr) {",
+      "  // You can do this!",
+      "  return arr;",
+      "}",
+      "",
+      "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
+    ],
     "tests": [
       "expect(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).to.be.a('array');",
       "(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.eql([5,27,39,1001]);",
       "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]).should.eql([9,35,97,1000000]));"
     ],
-    "MDNlinks" : ["Comparison Operators"]
+    "MDNlinks": ["Comparison Operators"]
   },
   {
     "_id": "acda2fb1324d9b0fa741e6b5",
@@ -135,13 +186,21 @@
       "Check if a string (first argument) ends with the given target string (second argument)."
     ],
 
-    "challengeSeed": "function end(str, target) {\n  // \"Never give up and good luck will find you.\"\r\n  // -- Falcor\r\n  return str;\r\n}\n\nend('Bastian', 'n');",
+    "challengeSeed": [
+      "function end(str, target) {",
+      "  // \"Never give up and good luck will find you.\"",
+      "  // -- Falcor",
+      "  return str;",
+      "}",
+      "",
+      "end('Bastian', 'n');"
+    ],
     "tests": [
       "assert.strictEqual(end('Bastian', 'n'), true, 'should equal true if target equals end of string');",
       "assert.strictEqual(end('He has to give me a new name', 'name'), true, 'should equal true if target equals end of string');",
       "assert.strictEqual(end('If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing', 'mountain'), false, 'should equal false if target does not equal end of string');"
     ],
-    "MDNlinks" : ["String.substr()"]
+    "MDNlinks": ["String.substr()"]
   },
   {
     "_id": "afcc8d540bea9ea2669306b6",
@@ -150,13 +209,20 @@
     "description": [
       "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number."
     ],
-    "challengeSeed": "function repeat(str, num) {\n  // repeat after me\r\n  return str;\r\n}\n\nrepeat('abc', 3);",
+    "challengeSeed": [
+      "function repeat(str, num) {",
+      "  // repeat after me",
+      "  return str;",
+      "}",
+      "",
+      "repeat('abc', 3);"
+    ],
     "tests": [
       "assert.strictEqual(repeat('*', 3), '***', 'should repeat a string n times');",
       "assert.strictEqual(repeat('abc', 3), 'abcabcabc', 'should repeat a string n times');",
       "assert.strictEqual(repeat('abc', -2), '', 'should return an empty string for negative numbers');"
     ],
-    "MDNlinks" : ["Global String Object"]
+    "MDNlinks": ["Global String Object"]
   },
   {
     "_id": "ac6993d51946422351508a41",
@@ -166,13 +232,20 @@
       "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
       "Note that the three dots at the end add to the string length."
     ],
-    "challengeSeed":"function truncate(str, num) {\n  // Clear out that junk in your trunk\r\n  return str;\r\n}\n\ntruncate('A-tisket a-tasket A green and yellow basket', 11);",
+    "challengeSeed": [
+      "function truncate(str, num) {",
+      "  // Clear out that junk in your trunk",
+      "  return str;",
+      "}",
+      "",
+      "truncate('A-tisket a-tasket A green and yellow basket', 11);"
+    ],
     "tests": [
       "expect(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...');",
       "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
       "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length');"
     ],
-    "MDNlinks" : ["String.slice()"]
+    "MDNlinks": ["String.slice()"]
   },
   {
     "_id": "a9bd25c716030ec90084d8a1",
@@ -181,13 +254,20 @@
     "description": [
       "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array."
     ],
-    "challengeSeed": "function chunk(arr, size) {\n  // Break it up.\r\n  return arr;\r\n}\n\nchunk(['a', 'b', 'c', 'd'], 2);",
+    "challengeSeed": [
+      "function chunk(arr, size) {",
+      "  // Break it up.",
+      "  return arr;",
+      "}",
+      "",
+      "chunk(['a', 'b', 'c', 'd'], 2);"
+    ],
     "tests": [
       "assert.deepEqual(chunk(['a', 'b', 'c', 'd'], 2), [['a', 'b'], ['c', 'd']], 'should return chunked arrays');",
       "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'should return chunked arrays');",
       "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'should return the last chunk as remaining elements');"
     ],
-    "MDNlinks" : ["Array.push()"]
+    "MDNlinks": ["Array.push()"]
   },
   {
     "_id": "ab31c21b530c0dafa9e241ee",
@@ -196,13 +276,20 @@
     "description": [
       "Return the remaining elements of an array after chopping off n elements from the head."
     ],
-    "challengeSeed": "function slasher(arr, howMany) {\n  // it doesn't always pay to be first\r\n  return arr;\r\n}\n\nslasher([1, 2, 3], 2);",
+    "challengeSeed": [
+      "function slasher(arr, howMany) {",
+      "  // it doesn't always pay to be first",
+      "  return arr;",
+      "}",
+      "",
+      "slasher([1, 2, 3], 2);"
+    ],
     "tests": [
       "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
       "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
       "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array when n >= array.length');"
     ],
-    "MDNlinks" : ["Array.slice()", "Array.splice()"]
+    "MDNlinks": ["Array.slice()", "Array.splice()"]
   },
   {
     "_id": "af2170cad53daa0770fabdea",
@@ -214,7 +301,13 @@
       "The arguments ['hello', 'hey'] should return false because the string 'hello' does not contain a 'y'.",
       "Another example, ['Alien', 'line'], should return true because all of the letters in 'line' are present in 'Alien'."
     ],
-    "challengeSeed": "function mutation(arr) {\n  return arr;\n}\n\nmutation(['hello', 'hey']);",
+    "challengeSeed": [
+      "function mutation(arr) {",
+      "  return arr;",
+      "}",
+      "",
+      "mutation(['hello', 'hey']);"
+    ],
     "tests": [
       "expect(mutation(['hello', 'hey'])).to.be.false;",
       "expect(mutation(['hello', 'Hello'])).to.be.true;",
@@ -222,7 +315,7 @@
       "expect(mutation(['Mary', 'Army'])).to.be.true;",
       "expect(mutation(['Alien', 'line'])).to.be.true;"
     ],
-    "MDNlinks" : ["Array.sort()"]
+    "MDNlinks": ["Array.sort()"]
   },
   {
     "_id": "adf08ec01beb4f99fc7a68f2",
@@ -232,13 +325,20 @@
       "Remove all falsey values from an array.",
       "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN."
     ],
-    "challengeSeed": "function bouncer(arr) {\n  // Don't show a false ID to this bouncer.\r\n  return arr;\r\n}\n\nbouncer([7, 'ate', '', false, 9]);",
+    "challengeSeed": [
+      "function bouncer(arr) {",
+      "  // Don't show a false ID to this bouncer.",
+      "  return arr;",
+      "}",
+      "",
+      "bouncer([7, 'ate', '', false, 9]);"
+    ],
     "tests": [
       "assert.deepEqual(bouncer([7, 'ate', '', false, 9]), [7, 'ate', 9], 'should remove falsey values');",
       "assert.deepEqual(bouncer(['a', 'b', 'c']), ['a', 'b', 'c'], 'should return full array if no falsey elements');",
       "assert.deepEqual(bouncer([false, null, 0]), [], 'should return empty array if all elements are falsey');"
     ],
-    "MDNlinks" : ["Boolean Objects", "Array.filter()"]
+    "MDNlinks": ["Boolean Objects", "Array.filter()"]
   },
   {
     "_id":"a8e512fbe388ac2f9198f0fa",
@@ -247,12 +347,20 @@
     "description":[
       "Make a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument)."
     ],
-    "challengeSeed":"function where(collection, source) {\n  var arr = [];\r\n  // What's in a name?\r\n  return arr;\r\n}\n\nwhere([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });",
+    "challengeSeed": [
+      "function where(collection, source) {",
+      "  var arr = [];",
+      "  // What's in a name?",
+      "  return arr;",
+      "}",
+      "",
+      "where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' });"
+    ],
     "tests":[
       "assert.deepEqual(where([{ first: 'Romeo', last: 'Montague' }, { first: 'Mercutio', last: null }, { first: 'Tybalt', last: 'Capulet' }], { last: 'Capulet' }), [{ first: 'Tybalt', last: 'Capulet' }], 'should return an array of objects');",
       "assert.deepEqual(where([{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], { 'a': 1 }), [{ 'a': 1 }, { 'a': 1 }, { 'a': 1, 'b': 2 }], 'should return with multiples');"
     ],
-    "MDNlinks" : ["Global Object", "Object.hasOwnProperty()", "Object.keys()"]
+    "MDNlinks": ["Global Object", "Object.hasOwnProperty()", "Object.keys()"]
   },
   {
     "_id":"a39963a4c10bc8b4d4f06d7e",
@@ -261,12 +369,19 @@
     "description":[
       "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments."
     ],
-    "challengeSeed": "function destroyer(arr) {\n  // Remove all the values\r\n  return arr;\r\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);",
+    "challengeSeed": [
+      "function destroyer(arr) {",
+      "  // Remove all the values",
+      "  return arr;",
+      "}",
+      "",
+      "destroyer([1, 2, 3, 1, 2, 3], 2, 3);"
+    ],
     "tests": [
       "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
       "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
     ],
-    "MDNlinks" : ["Arguments object","Array.filter()"]
+    "MDNlinks": ["Arguments object","Array.filter()"]
   },
   {
     "_id": "a24c1a4622e3c05097f71d67",
@@ -276,7 +391,14 @@
       "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
       "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index)."
     ],
-    "challengeSeed": "function where(arr, num) {\n  // Find my place in this sorted array.\r\n  return num;\r\n}\n\nwhere([40, 60], 50);",
+    "challengeSeed": [
+      "function where(arr, num) {",
+      "  // Find my place in this sorted array.",
+      "  return num;",
+      "}",
+      "",
+      "where([40, 60], 50);"
+    ],
     "tests": [
       "expect(where([10, 20, 30, 40, 50], 35)).to.equal(3);",
       "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);"
@@ -290,7 +412,13 @@
       "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
       "The lowest number will not always come first."
     ],
-    "challengeSeed": "function sumAll(arr) {\n  return(1);\r\n}\n\nsumAll([1, 4]);",
+    "challengeSeed": [
+      "function sumAll(arr) {",
+      "  return(1);",
+      "}",
+      "",
+      "sumAll([1, 4]);"
+    ],
     "tests": [
       "expect(sumAll([1, 4])).to.be.a('Number');",
       "expect(sumAll([1, 4])).to.equal(10);",
@@ -298,7 +426,7 @@
       "expect(sumAll([5, 10])).to.equal(45);",
       "expect(sumAll([10, 5])).to.equal(45);"
     ],
-    "MDNlinks" : ["Math.max()", "Math.min()", "Array.reduce()"]
+    "MDNlinks": ["Math.max()", "Math.min()", "Array.reduce()"]
   },
   {
     "_id": "a5de63ebea8dbee56860f4f2",
@@ -307,7 +435,15 @@
     "description": [
       "Compare two arrays and return a new array with any items not found in both of the original arrays."
     ],
-    "challengeSeed": "function diff(arr1, arr2) {\n  var newArr = [];\r\n  // Same, same; but different.\r\n  return newArr;\r\n}\n\ndiff([1, 2, 3, 5], [1, 2, 3, 4, 5]);",
+    "challengeSeed": [
+      "function diff(arr1, arr2) {",
+      "  var newArr = [];",
+      "  // Same, same; but different.",
+      "  return newArr;",
+      "}",
+      "",
+      "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
+    ],
     "tests": [
       "expect(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])).to.be.a('array');",
       "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
@@ -333,8 +469,14 @@
       "Convert the number be a roman numeral.",
       "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\">roman numerals</a> answers should be provided in upper-case."
     ],
-    "challengeSeed": "function convert(num) {\n return num;\r\n}\n\nconvert(36);",
-    "MDNlinks" : ["Array.splice()", "Array.indexOf()", "Array.join()"]
+    "challengeSeed": [
+      "function convert(num) {",
+      " return num;",
+      "}",
+      "",
+      "convert(36);"
+    ],
+    "MDNlinks": ["Array.splice()", "Array.indexOf()", "Array.join()"]
   },
   {
     "_id": "a0b5010f579e69b815e7c5d6",
@@ -354,8 +496,14 @@
       "Third argument is what you will be replacing the second argument with (after).",
       "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word 'Book' with the word 'dog', it should be replaced as 'Dog'"
     ],
-    "challengeSeed": "function replace(str, before, after) {\n return str;\r\n}\n\nreplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");",
-    "MDNlinks" : ["Array.splice()", "String.replace()", "Array.join()"]
+    "challengeSeed": [
+      "function replace(str, before, after) {",
+      " return str;",
+      "}",
+      "",
+      "replace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");"
+    ],
+    "MDNlinks": ["Array.splice()", "String.replace()", "Array.join()"]
   },
   {
     "_id": "aa7697ea2477d1316795783b",
@@ -373,8 +521,14 @@
       "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
       "If a word begins with a vowel you just add \"way\" to the end."
     ],
-    "challengeSeed": "function translate(str) {\n return str;\r\n}\n\ntranslate(\"consonant\");",
-    "MDNlinks" : ["Array.indexOf()", "Array.push()", "Array.join()", "String.substr()", "String.split()"]
+    "challengeSeed": [
+      "function translate(str) {",
+      " return str;",
+      "}",
+      "",
+      "translate(\"consonant\");"
+    ],
+    "MDNlinks": ["Array.indexOf()", "Array.push()", "Array.join()", "String.substr()", "String.split()"]
   },
   {
     "_id": "afd15382cdfb22c9efe8b7de",
@@ -390,8 +544,14 @@
       "<a href=\"http://en.wikipedia.org/wiki/Base_pair\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
       "Return the provided character as the first element in each array."
     ],
-    "challengeSeed": "function pair(str) {\n return str;\r\n}\n\npair(\"GCG\");",
-    "MDNlinks" : ["Array.push()", "String.split()"]
+    "challengeSeed": [
+      "function pair(str) {",
+      " return str;",
+      "}",
+      "",
+      "pair(\"GCG\");"
+    ],
+    "MDNlinks": ["Array.push()", "String.split()"]
   },
   {
     "_id": "af7588ade1100bde429baf20",
@@ -401,14 +561,20 @@
       "Find the missing letter in the passed letter range and return it.",
       "If all letters are present in the range, return undefined."
     ],
-    "challengeSeed": "function fearNotLetter(str) {\n  return str;\n}\n\nfearNotLetter('abce');",
+    "challengeSeed": [
+      "function fearNotLetter(str) {",
+      "  return str;",
+      "}",
+      "",
+      "fearNotLetter('abce');"
+    ],
     "tests": [
       "expect(fearNotLetter('abce')).to.equal('d');",
       "expect(fearNotLetter('bcd')).to.be.undefined;",
       "expect(fearNotLetter('abcdefghjklmno')).to.equal('i');",
       "expect(fearNotLetter('yz')).to.be.undefined;"
     ],
-    "MDNlinks" : ["String.charCodeAt()"]
+    "MDNlinks": ["String.charCodeAt()"]
   },
   {
     "_id": "a77dbc43c33f39daa4429b4f",
@@ -418,7 +584,14 @@
       "Check if a value is classified as a boolean primitive. Return true or false.",
       "Boolean primitives are true and false."
     ],
-    "challengeSeed": "function boo(bool) {\n  // What is the new fad diet for ghost developers? The Boolean.\r\n  return bool;\r\n}\n\nboo(null);",
+    "challengeSeed": [
+      "function boo(bool) {",
+      "  // What is the new fad diet for ghost developers? The Boolean.",
+      "  return bool;",
+      "}",
+      "",
+      "boo(null);"
+    ],
     "tests": [
       "assert.strictEqual(boo(true), true);",
       "assert.strictEqual(boo(false), true);",
@@ -429,7 +602,7 @@
       "assert.strictEqual(boo(NaN), false);",
       "assert.strictEqual(boo('a'), false);"
     ],
-    "MDNlinks" : ["Boolean Objects"]
+    "MDNlinks": ["Boolean Objects"]
   },
   {
     "_id": "a105e963526e7de52b219be9",
@@ -441,7 +614,13 @@
       "The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.",
       "Check the assertion tests for examples."
     ],
-    "challengeSeed": "function unite(arr1, arr2, arr3) {\n  return arr1;\r\n}\n\nunite([1, 2, 3], [5, 2, 1, 4], [2, 1]);",
+    "challengeSeed": [
+      "function unite(arr1, arr2, arr3) {",
+      "  return arr1;",
+      "}",
+      "",
+      "unite([1, 2, 3], [5, 2, 1, 4], [2, 1]);"
+    ],
     "tests": [
       "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
       "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');"
@@ -454,12 +633,19 @@
     "description": [
       "Convert the characters \"&\", \"<\", \">\", '\"', and \"'\", in a string to their corresponding HTML entities."
     ],
-    "challengeSeed": "function convert(str) {\n  // &colon;&rpar;\r\n  return str;\r\n}\n\nconvert('Dolce & Gabbana');",
+    "challengeSeed": [
+      "function convert(str) {",
+      "  // &colon;&rpar;",
+      "  return str;",
+      "}",
+      "",
+      "convert('Dolce & Gabbana');"
+    ],
     "tests": [
       "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
       "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
     ],
-    "MDNlinks" : ["RegExp"]
+    "MDNlinks": ["RegExp"]
   },
   {
     "_id": "a103376db3ba46b2d50db289",
@@ -468,14 +654,22 @@
     "description": [
       "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes."
     ],
-    "challengeSeed": "function spinalCase(str) {\n  // \"It's such a fine line between stupid, and clever.\"\r\n  // --David St. Hubbins\r\n  return str;\r\n}\n\nspinalCase('This Is Spinal Tap');",
+    "challengeSeed": [
+      "function spinalCase(str) {",
+      "  // \"It's such a fine line between stupid, and clever.\"",
+      "  // --David St. Hubbins",
+      "  return str;",
+      "}",
+      "",
+      "spinalCase('This Is Spinal Tap');"
+    ],
     "tests": [
       "assert.strictEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap', 'should return spinal case from string with spaces');",
       "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'should return spinal case from string with camel case');",
       "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'should return spinal case from string with snake case');",
       "assert.strictEqual(spinalCase('Teletubbies say Eh-oh'), 'teletubbies-say-eh-oh', 'should return spinal case from string with spaces and hyphens');"
     ],
-    "MDNlinks" : ["RegExp", "String.replace()"]
+    "MDNlinks": ["RegExp", "String.replace()"]
   },
   {
     "_id": "a5229172f011153519423690",
@@ -486,7 +680,13 @@
       "The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.",
       "As an example, passing 4 to the function should return 5 because all the odd Fibonacci numbers under 4 are 1, 1, and 3."
     ],
-    "challengeSeed": "function sumFibs(num) {\n  return num;\r\n}\n\nsumFibs(4);",
+    "challengeSeed": [
+      "function sumFibs(num) {",
+      "  return num;",
+      "}",
+      "",
+      "sumFibs(4);"
+    ],
     "tests": [
       "expect(sumFibs(1)).to.be.a('number');",
       "expect(sumFibs(1000)).to.equal(1785);",
@@ -495,7 +695,7 @@
       "expect(sumFibs(75024)).to.equal(60696);",
       "expect(sumFibs(75025)).to.equal(135721);"
     ],
-    "MDNlinks" : ["Remainder"]
+    "MDNlinks": ["Remainder"]
   },
   {
     "_id": "a3bfc1673c0526e06d3ac698",
@@ -506,7 +706,13 @@
       "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.",
       "The provided number may not be a prime."
     ],
-    "challengeSeed": "function sumPrimes(num) {\n  return num;\r\n}\n\nsumPrimes(10);",
+    "challengeSeed": [
+      "function sumPrimes(num) {",
+      "  return num;",
+      "}",
+      "",
+      "sumPrimes(10);"
+    ],
     "tests": [
       "expect(sumPrimes(10)).to.be.a('number');",
       "expect(sumPrimes(10)).to.equal(17);",
@@ -521,7 +727,14 @@
       "Find the smallest number that is evenly divisible by all numbers in the provided range.",
       "The range will be an array of two numbers that will not necessarily be in numerical order."
     ],
-    "challengeSeed": "function smallestCommons(arr) {\n  return arr;\r\n}\r\n\n\nsmallestCommons([1,5]);",
+    "challengeSeed": [
+      "function smallestCommons(arr) {",
+      "  return arr;",
+      "}",
+      "",
+      "",
+      "smallestCommons([1,5]);"
+    ],
     "tests": [
       "expect(smallestCommons([1,5])).to.be.a('number');",
       "expect(smallestCommons([1,5])).to.equal(60);",
@@ -536,12 +749,19 @@
     "description": [
       "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument)."
     ],
-    "challengeSeed": "function find(arr, func) {\n  var num = 0;\r\n  return num;\r\n}\n\nfind([1, 2, 3, 4], function(num){ return num % 2 === 0; });",
+    "challengeSeed": [
+      "function find(arr, func) {",
+      "  var num = 0;",
+      "  return num;",
+      "}",
+      "",
+      "find([1, 2, 3, 4], function(num){ return num % 2 === 0; });"
+    ],
     "tests": [
       "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'should return first found value');",
       "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'should return undefined if not found');"
     ],
-    "MDNlinks" : ["Array.some()"]
+    "MDNlinks": ["Array.some()"]
   },
   {
     "_id": "a5deed1811a43193f9f1c841",
@@ -550,13 +770,20 @@
     "description": [
       "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true."
     ],
-    "challengeSeed": "function drop(arr, func) {\n  // Drop them elements.\r\n  return arr;\r\n}\n\ndrop([1, 2, 3], function(n) {return n < 3; });",
+    "challengeSeed": [
+      "function drop(arr, func) {",
+      "  // Drop them elements.",
+      "  return arr;",
+      "}",
+      "",
+      "drop([1, 2, 3], function(n) {return n < 3; });"
+    ],
     "tests": [
       "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
       "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
       "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
     ],
-    "MDNlinks" : ["Arguments object", "Array.shift()"]
+    "MDNlinks": ["Arguments object", "Array.shift()"]
   },
   {
     "_id": "ab306dbdcc907c7ddfc30830",
@@ -565,13 +792,20 @@
     "description": [
       "Flatten a nested array. You must account for varying levels of nesting."
     ],
-    "challengeSeed": "function steamroller(arr) {\n  // I'm a steamroller, baby\r\n  return arr;\r\n}\n\nsteamroller([1, [2], [3, [[4]]]]);",
+    "challengeSeed": [
+      "function steamroller(arr) {",
+      "  // I'm a steamroller, baby",
+      "  return arr;",
+      "}",
+      "",
+      "steamroller([1, [2], [3, [[4]]]]);"
+    ],
     "tests": [
       "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
       "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
       "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');"
     ],
-    "MDNlinks" : ["Array.isArray()"]
+    "MDNlinks": ["Array.isArray()"]
   },
   {
     "_id": "a8d97bd4c764e91f9d2bda01",
@@ -581,12 +815,19 @@
       "Return an English translated sentence of the passed binary string.",
       "The binary string will be space separated."
     ],
-    "challengeSeed": "function binaryAgent(str) {\n  return str;\r\n}\n\nbinaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');",
+    "challengeSeed": [
+      "function binaryAgent(str) {",
+      "  return str;",
+      "}",
+      "",
+      "binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');"
+    ],
     "tests": [
       "expect(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111')).to.equal(\"Aren't bonfires fun!?\");",
       "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
       ],
-      "MDNlinks" : ["String.charCodeAt()", "String.fromCharCode()"]
+      "MDNlinks": ["String.charCodeAt()", "String.fromCharCode()"
+    ]
   },
   {
     "_id" : "a3f503de51cfab748ff001aa",
@@ -597,7 +838,13 @@
       "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7.",
       "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!"
     ],
-    "challengeSeed": "function pairwise(arr, arg) {\n  return arg;\n}\n\npairwise([1,4,2,3,0,5], 7);",
+    "challengeSeed": [
+      "function pairwise(arr, arg) {",
+      "  return arg;",
+      "}",
+      "",
+      "pairwise([1,4,2,3,0,5], 7);"
+    ],
     "tests": [
       "expect(pairwise([1, 4, 2, 3, 0, 5], 7)).to.equal(11);",
       "expect(pairwise([1, 3, 2, 4], 4)).to.equal(1);",
@@ -615,12 +862,19 @@
       "For this, check to see if the property defined in the second argument is present on every element of the collection.",
       "Remember, you can access object properties through either dot notation or [] notation."
     ],
-    "challengeSeed": "function every(collection, pre) {\n  // Does everyone have one of these?\r\n  return pre;\r\n}\n\nevery([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');",
+    "challengeSeed": [
+      "function every(collection, pre) {",
+      "  // Does everyone have one of these?",
+      "  return pre;",
+      "}",
+      "",
+      "every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');"
+    ],
     "tests": [
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
       "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
     ],
-    "MDNlinks" : ["Object.hasOwnProperty()", "Object.getOwnPropertyNames()"]
+    "MDNlinks": ["Object.hasOwnProperty()", "Object.getOwnPropertyNames()"]
   },
   {
     "_id": "a97fd23d9b809dac9921074f",
@@ -631,7 +885,13 @@
       "For example, add(2, 3) should return 5, and add(2) should return a function that is waiting for an argument so that <code>var sum2And = add(2); return sum2And(3); // 5</code>",
       "If either argument isn't a valid number, return undefined."
     ],
-    "challengeSeed": "function add() {\n  return false;\n}\n\nadd(2,3);",
+    "challengeSeed": [
+      "function add() {",
+      "  return false;",
+      "}",
+      "",
+      "add(2,3);"
+    ],
     "tests": [
       "expect(add(2, 3)).to.equal(5);",
       "expect(add(2)(3)).to.equal(5);",
@@ -651,7 +911,14 @@
       "All functions that take an argument have an arity of 1, and the argument will be a string.",
       "These methods must be the only available means for interacting with the object."
     ],
-    "challengeSeed": "var Person = function(firstAndLast) {\n    return firstAndLast;\r\n};\n\nvar bob = new Person('Bob Ross');\nbob.getFullName();",
+    "challengeSeed": [
+      "var Person = function(firstAndLast) {",
+      "    return firstAndLast;",
+      "};",
+      "",
+      "var bob = new Person('Bob Ross');",
+      "bob.getFullName();"
+    ],
     "tests": [
       "expect(Object.keys(bob).length).to.eql(6);",
       "expect(bob instanceof Person).to.be.true;",
@@ -668,7 +935,7 @@
       "expect(bob.getFullName()).to.eql('George Carlin');",
       "bob.setFullName('Bob Ross');"
     ],
-    "MDNlinks" : ["Closures", "Details of the Object Model"]
+    "MDNlinks": ["Closures", "Details of the Object Model"]
   },
   {
     "_id": "af4afb223120f7348cdfc9fd",
@@ -681,12 +948,20 @@
       "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
       "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418"
     ],
-    "challengeSeed": "function orbitalPeriod(arr) {\n  var GM = 398600.4418;\n  var earthRadius = 6367.4447;\n  return arr;\r\n}\r\n\r\norbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);",
+    "challengeSeed": [
+      "function orbitalPeriod(arr) {",
+      "  var GM = 398600.4418;",
+      "  var earthRadius = 6367.4447;",
+      "  return arr;",
+      "}",
+      "",
+      "orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);"
+    ],
     "tests": [
       "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
       "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
     ],
-    "MDNlinks" : ["Math.pow()"]
+    "MDNlinks": ["Math.pow()"]
   },
   {
     "_id": "aff0395860f5d3034dc0bfc9",
@@ -722,7 +997,16 @@
       "assert.deepEqual(telephoneCheck(\"2(757)6227382\"), false);",
       "assert.deepEqual(telephoneCheck(\"2(757)622-7382\"), false);"
     ],
-    "challengeSeed": "function telephoneCheck(str) {\n  // Good luck!\n  return true;\n}\n\n\n\ntelephoneCheck(\"555-555-5555\");"
+    "challengeSeed": [
+      "function telephoneCheck(str) {",
+      "  // Good luck!",
+      "  return true;",
+      "}",
+      "",
+      "",
+      "",
+      "telephoneCheck(\"555-555-5555\");"
+    ]
   },
   {
     "_id": "a3f503de51cf954ede28891d",
@@ -732,7 +1016,13 @@
       "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
       "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both."
     ],
-    "challengeSeed": "function sym(args) {\n  return arguments;\r\n}\n\nsym([1, 2, 3], [5, 2, 1, 4]);",
+    "challengeSeed": [
+      "function sym(args) {",
+      "  return arguments;",
+      "}",
+      "",
+      "sym([1, 2, 3], [5, 2, 1, 4]);"
+    ],
     "tests": [
       "expect(sym([1, 2, 3], [5, 2, 1, 4])).to.eqls([3, 5, 4])",
       "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
@@ -747,7 +1037,26 @@
     "description": [
       "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.", "cid is a 2d array listing available currency.", "Return the string \"Insufficient Funds\" if cash-in-drawer is less than the change due. Return the string \"Closed\" if cash-in-drawer is equal to the change due.", "Otherwise, return change in coin and bills, sorted in highest to lowest order."
     ],
-    "challengeSeed": "function drawer(price, cash, cid) {\n  var change;\r\n  // Here is your change, ma'am.\r\n  return change;\r\n}\r\n\r\n// Example cash-in-drawer array:\r\n// [['PENNY', 1.01],\r\n// ['NICKEL', 2.05],\r\n// ['DIME', 3.10],\r\n// ['QUARTER', 4.25],\r\n// ['ONE', 90.00],\r\n// ['FIVE', 55.00],\r\n// ['TEN', 20.00],\r\n// ['TWENTY', 60.00],\r\n// ['ONE HUNDRED', 100.00]]\n\ndrawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]);",
+    "challengeSeed": [
+      "function drawer(price, cash, cid) {",
+      "  var change;",
+      "  // Here is your change, ma'am.",
+      "  return change;",
+      "}",
+      "",
+      "// Example cash-in-drawer array:",
+      "// [['PENNY', 1.01],",
+      "// ['NICKEL', 2.05],",
+      "// ['DIME', 3.10],",
+      "// ['QUARTER', 4.25],",
+      "// ['ONE', 90.00],",
+      "// ['FIVE', 55.00],",
+      "// ['TEN', 20.00],",
+      "// ['TWENTY', 60.00],",
+      "// ['ONE HUNDRED', 100.00]]",
+      "",
+      "drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]);"
+    ],
     "tests": [
       "expect(drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]])).to.be.a('array');",
       "expect(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]])).to.be.a('string');",
@@ -765,7 +1074,29 @@
     "description": [
       "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order."
     ],
-    "challengeSeed": "function inventory(arr1, arr2) {\n    // All inventory must be accounted for or you're fired!\r\n    return arr1;\r\n}\n\n// Example inventory lists\r\nvar curInv = [\r\n    [21, 'Bowling Ball'],\r\n    [2, 'Dirty Sock'],\r\n    [1, 'Hair Pin'],\r\n    [5, 'Microphone']\r\n];\r\n\r\nvar newInv = [\r\n    [2, 'Hair Pin'],\r\n    [3, 'Half-Eaten Apple'],\r\n    [67, 'Bowling Ball'],\r\n    [7, 'Toothpaste']\r\n];\r\n\r\ninventory(curInv, newInv);",
+    "challengeSeed": [
+      "function inventory(arr1, arr2) {",
+      "    // All inventory must be accounted for or you're fired!",
+      "    return arr1;",
+      "}",
+      "",
+      "// Example inventory lists",
+      "var curInv = [",
+      "    [21, 'Bowling Ball'],",
+      "    [2, 'Dirty Sock'],",
+      "    [1, 'Hair Pin'],",
+      "    [5, 'Microphone']",
+      "];",
+      "",
+      "var newInv = [",
+      "    [2, 'Hair Pin'],",
+      "    [3, 'Half-Eaten Apple'],",
+      "    [67, 'Bowling Ball'],",
+      "    [7, 'Toothpaste']",
+      "];",
+      "",
+      "inventory(curInv, newInv);"
+    ],
     "tests": [
       "expect(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']])).to.be.a('array');",
       "assert.equal(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]).length, 6);",
@@ -783,7 +1114,13 @@
       "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
       "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating."
     ],
-    "challengeSeed": "function permAlone(str) {\n  return str;\n}\n\npermAlone('aab');",
+    "challengeSeed": [
+      "function permAlone(str) {",
+      "  return str;",
+      "}",
+      "",
+      "permAlone('aab');"
+    ],
     "tests": [
       "expect(permAlone('aab')).to.be.a.number;",
       "expect(permAlone('aab')).to.equal(2);",
@@ -805,7 +1142,13 @@
       "Secondly, if the starting year is the current year, and the ending year can be inferred by the reader, the year should be omitted.",
       "Input date is formatted as YYYY-MM-DD"
     ],
-    "challengeSeed": "function friendly(str) {\n  return str;\n}\n\nfriendly(['2015-07-01', '2015-07-04']);",
+    "challengeSeed": [
+      "function friendly(str) {",
+      "  return str;",
+      "}",
+      "",
+      "friendly(['2015-07-01', '2015-07-04']);"
+    ],
     "tests": [
       "assert.deepEqual(friendly(['2015-07-01', '2015-07-04']), ['July 1st','4th'], 'ending month should be omitted since it is already mentioned');",
       "assert.deepEqual(friendly(['2015-12-01', '2016-02-03']), ['December 1st','February 3rd'], 'one month apart can be inferred it is the next year');",
@@ -814,6 +1157,6 @@
       "assert.deepEqual(friendly(['2017-01-01', '2017-01-01']), ['January 1st, 2017'], 'since we do not duplicate only return once');",
       "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th, 2023']);"
     ],
-    "MDNlinks" : ["String.split()", "String.substr()", "parseInt()"]
+    "MDNlinks": ["String.split()", "String.substr()", "parseInt()"]
   }
 ]

@@ -36,25 +36,24 @@ var express = require('express'),
     /**
      * Controllers (route handlers).
      */
-    homeController = require('./controllers/home'),
-    resourcesController = require('./controllers/resources'),
-    userController = require('./controllers/user'),
-    nonprofitController = require('./controllers/nonprofits'),
-    bonfireController = require('./controllers/bonfire'),
-    coursewareController = require('./controllers/courseware'),
-    fieldGuideController = require('./controllers/fieldGuide'),
-    challengeMapController = require('./controllers/challengeMap'),
+  homeController = require('./controllers/home'),
+  resourcesController = require('./controllers/resources'),
+  userController = require('./controllers/user'),
+  nonprofitController = require('./controllers/nonprofits'),
+  fieldGuideController = require('./controllers/fieldGuide'),
+  challengeMapController = require('./controllers/challengeMap'),
+  challengeController = require('./controllers/challenge'),
 
     /**
      *  Stories
      */
-    storyController = require('./controllers/story'),
+  storyController = require('./controllers/story'),
 
-    /**
-     * API keys and Passport configuration.
-     */
-    secrets = require('./config/secrets'),
-    passportConf = require('./config/passport');
+  /**
+   * API keys and Passport configuration.
+   */
+  secrets = require('./config/secrets'),
+  passportConf = require('./config/passport');
 
 /**
  * Create Express server.
@@ -335,6 +334,8 @@ app.get('/privacy', function(req, res) {
   res.redirect(301, '/field-guide/what-is-the-free-code-camp-privacy-policy?');
 });
 
+app.get('/submit-cat-photo', resourcesController.catPhotoSubmit);
+
 app.get('/api/slack', function(req, res) {
   if (req.user) {
     if (req.user.email) {
@@ -489,37 +490,9 @@ app.get('/api/trello', resourcesController.trelloCalls);
 app.get('/api/codepen/twitter/:screenName', resourcesController.codepenResources.twitter);
 
 /**
- * Bonfire related routes
- */
-
-app.get('/field-guide/getFieldGuideList', fieldGuideController.showAllFieldGuides);
-
-app.get('/playground', bonfireController.index);
-
-app.get('/bonfires', bonfireController.returnNextBonfire);
-
-app.get('/bonfire-json-generator', bonfireController.returnGenerator);
-
-app.post('/bonfire-json-generator', bonfireController.generateChallenge);
-
-app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
-
-app.post('/bonfire-challenge-generator', bonfireController.testBonfire);
-
-app.get(
-  '/bonfires/:bonfireName',
-  bonfireController.returnIndividualBonfire
-);
-
-app.get('/bonfire', function(req, res) {
-  res.redirect(301, '/playground');
-});
-
-app.post('/completed-bonfire/', bonfireController.completedBonfire);
-
-/**
  * Field Guide related routes
  */
+app.get('/field-guide/getFieldGuideList', fieldGuideController.showAllFieldGuides);
 
 
 app.get('/field-guide/:fieldGuideName',
@@ -532,20 +505,24 @@ app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
 
 
 /**
- * Courseware related routes
+ * Challenge related routes
  */
 
-app.get('/challenges/', coursewareController.returnNextCourseware);
+app.get('/challenges/next-challenge', challengeController.returnNextChallenge);
 
 app.get(
-    '/challenges/:coursewareName',
-    coursewareController.returnIndividualCourseware
+    '/challenges/:challengeName',
+    challengeController.returnIndividualChallenge
 );
 
-app.post('/completed-courseware/', coursewareController.completedCourseware);
+app.get('/challenges/', challengeController.returnCurrentChallenge);
+// todo refactor these routes
+app.post('/completed-challenge/', challengeController.completedChallenge);
 
 app.post('/completed-zipline-or-basejump',
-  coursewareController.completedZiplineOrBasejump);
+  challengeController.completedZiplineOrBasejump);
+
+app.post('/completed-bonfire', challengeController.completedBonfire);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username',

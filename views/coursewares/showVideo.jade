@@ -28,12 +28,7 @@ block content
                 br
             .button-spacer
         script(type="text/javascript").
-                var tests = !{JSON.stringify(tests)};
-                var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
-                var challengeName = !{JSON.stringify(name)};
-                var passedCoursewareName = challengeName;
-                var started = Math.floor(Date.now());
-                var challengeType = !{JSON.stringify(challengeType)};
+
                 var controlEnterHandler = function(e) {
                     $('body').unbind('keypress');
                     if (e.ctrlKey && e.keyCode == 13) {
@@ -76,3 +71,7 @@ block content
                                 h1 #{name}
         script.
             $('body').bind('keypress', controlEnterHandler);
+    script.
+        var challenge_Id = !{JSON.stringify(challengeId)};
+        var challenge_Name = !{JSON.stringify(name)};
+        var challengeType = !{JSON.stringify(challengeType)};

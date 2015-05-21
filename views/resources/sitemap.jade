@@ -39,13 +39,6 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
       changefreq daily
       priority= 0.5
 
-  each bonfire in bonfires
-    url
-      loc #{appUrl}/bonfires/#{bonfire.replace(/\s/g, '-')}
-      lastmod= now
-      changefreq weekly
-      priority= 0.5
-
   each challenge in challenges
     url
       loc #{appUrl}/challenges/#{challenge.replace(/\s/g, '-')}

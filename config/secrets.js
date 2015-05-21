@@ -56,7 +56,7 @@ module.exports = {
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
     callbackURL: '/auth/linkedin/callback',
-    scope: ['r_fullprofile', 'r_emailaddress'],
+    scope: ['r_basicprofile', 'r_emailaddress'],
     passReqToCallback: true
   }
 };
