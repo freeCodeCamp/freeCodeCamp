@@ -40,8 +40,6 @@ var express = require('express'),
   resourcesController = require('./controllers/resources'),
   userController = require('./controllers/user'),
   nonprofitController = require('./controllers/nonprofits'),
-  bonfireController = require('./controllers/bonfire'),
-  coursewareController = require('./controllers/courseware'),
   fieldGuideController = require('./controllers/fieldGuide'),
   challengeMapController = require('./controllers/challengeMap'),
   challengeController = require('./controllers/challenge'),
@@ -492,11 +490,6 @@ app.get('/api/trello', resourcesController.trelloCalls);
 app.get('/api/codepen/twitter/:screenName', resourcesController.codepenResources.twitter);
 
 /**
- * Bonfire related routes
- */
-app.post('/completed-bonfire/', challengeController.completedBonfire);
-
-/**
  * Field Guide related routes
  */
 app.get('/field-guide/getFieldGuideList', fieldGuideController.showAllFieldGuides);
@@ -512,7 +505,7 @@ app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
 
 
 /**
- * Courseware related routes
+ * Challenge related routes
  */
 
 app.get('/getstuff', challengeController.getStuff);
