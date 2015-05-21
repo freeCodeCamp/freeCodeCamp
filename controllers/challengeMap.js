@@ -1,7 +1,7 @@
-var User = require('../models/User'),
-    resources = require('./resources'),
+var R = require('ramda'),
     debug = require('debug')('freecc:cntr:challengeMap'),
-    R = require('ramda');
+    User = require('../models/User'),
+    resources = require('./resources');
 
 var challengeTypes = {
   'HTML_CSS_JQ': 0,
@@ -13,7 +13,7 @@ var challengeTypes = {
 };
 
 module.exports = {
-  challengeMap: function challengeMap(req, res) {
+  challengeMap: function challengeMap(req, res, next) {
     var completedList = [];
 
     if (req.user) {
@@ -76,10 +76,10 @@ module.exports = {
     });
 
     function numberWithCommas(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
-    var date1 = new Date("10/15/2014");
+    var date1 = new Date('10/15/2014');
     var date2 = new Date();
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));

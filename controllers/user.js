@@ -102,15 +102,13 @@ exports.getEmailSignup = function(req, res) {
  */
 
 exports.postEmailSignup = function(req, res, next) {
+  req.assert('email', 'valid email required').isEmail();
+  var errors = req.validationErrors();
 
-
-    req.assert('email', 'valid email required').isEmail();
-    var errors = req.validationErrors();
-
-    if (errors) {
-        req.flash('errors', errors);
-        return res.redirect('/email-signup');
-    }
+  if (errors) {
+      req.flash('errors', errors);
+      return res.redirect('/email-signup');
+  }
 
   var possibleUserData = req.body;
 
@@ -134,7 +132,8 @@ exports.postEmailSignup = function(req, res, next) {
     password: req.body.password,
     profile: {
       username: req.body.username.trim(),
-      picture: 'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png'
+      picture:
+        'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png'
     }
   });
 
@@ -149,7 +148,9 @@ exports.postEmailSignup = function(req, res, next) {
       });
       return res.redirect('/email-signup');
     }
-    User.findOne({'profile.username': req.body.username }, function(err, existingUsername) {
+    User.findOne(
+      { 'profile.username': req.body.username },
+      function(err, existingUsername) {
       if (err) {
         return next(err);
       }
@@ -181,8 +182,10 @@ exports.postEmailSignup = function(req, res, next) {
         text: [
           'Greetings from San Francisco!\n\n',
           'Thank you for joining our community.\n',
-          'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
-          'And if you have a moment, check out our blog: blog.freecodecamp.com.\n',
+          'Feel free to email us at this address if you have ',
+          'any questions about Free Code Camp.\n',
+          'And if you have a moment, check out our blog: ',
+          'blog.freecodecamp.com.\n',
           'Good luck with the challenges!\n\n',
           '- the Volunteer Camp Counselor Team'
         ].join('')
@@ -220,28 +223,33 @@ exports.getAccountAngular = function(req, res) {
  */
 
 exports.checkUniqueUsername = function(req, res, next) {
-    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
-        if (err) { return next(err); }
-        if (data == 1) {
-            return res.send(true);
-        } else {
-            return res.send(false);
-        }
-    });
+  User.count(
+    { 'profile.username': req.params.username.toLowerCase() },
+    function (err, data) {
+    if (err) { return next(err); }
+    if (data === 1) {
+      return res.send(true);
+    } else {
+      return res.send(false);
+    }
+  });
 };
 
 /**
  * Existing username check
  */
 exports.checkExistingUsername = function(req, res, next) {
-    User.count({'profile.username': req.params.username.toLowerCase()}, function (err, data) {
-        if (err) { return next(err); }
-        if (data === 1) {
-            return res.send(true);
-        } else {
-            return res.send(false);
-        }
-    });
+  User.count(
+    { 'profile.username': req.params.username.toLowerCase() },
+    function (err, data) {
+      if (err) { return next(err); }
+      if (data === 1) {
+          return res.send(true);
+      } else {
+          return res.send(false);
+      }
+    }
+  );
 };
 
 /**
@@ -249,14 +257,17 @@ exports.checkExistingUsername = function(req, res, next) {
  */
 
 exports.checkUniqueEmail = function(req, res, next) {
-    User.count({'email': decodeURIComponent(req.params.email).toLowerCase()}, function (err, data) {
-        if (err) { return next(err); }
-        if (data === 1) {
-            return res.send(true);
-        } else {
-            return res.send(false);
-        }
-    });
+  User.count(
+    { email: decodeURIComponent(req.params.email).toLowerCase() },
+    function (err, data) {
+      if (err) { return next(err); }
+      if (data === 1) {
+        return res.send(true);
+      } else {
+        return res.send(false);
+      }
+    }
+  );
 };
 
 
@@ -266,117 +277,133 @@ exports.checkUniqueEmail = function(req, res, next) {
  */
 
 exports.returnUser = function(req, res, next) {
-  User.find({'profile.username': req.params.username.toLowerCase()}, function(err, user) {
-    if (err) { debug('Username err: ', err); next(err); }
-    if (user[0]) {
-      user = user[0];
-
-      user.progressTimestamps = user.progressTimestamps.sort(function(a, b) {
-        return a - b;
-      });
-
-      var timeObject = Object.create(null);
-      R.forEach(function(time) {
-        timeObject[moment(time).format('YYYY-MM-DD')] = time;
-      }, user.progressTimestamps);
-
-      var tmpLongest = 1;
-      var timeKeys = R.keys(timeObject);
-
-      user.longestStreak = 0;
-      for (var i = 1; i <= timeKeys.length; i++) {
-        if (moment(timeKeys[i - 1]).add(1, 'd').toString()
-          === moment(timeKeys[i]).toString()) {
-          tmpLongest++;
-          if (tmpLongest > user.longestStreak) {
-            user.longestStreak = tmpLongest;
-          }
-        } else {
-          tmpLongest = 1;
-        }
+  User.find(
+    { 'profile.username': req.params.username.toLowerCase() },
+    function(err, user) {
+      if (err) {
+        debug('Username err: ', err);
+        return next(err);
       }
+      if (user[0]) {
+        user = user[0];
 
-      timeKeys = timeKeys.reverse();
-      tmpLongest = 1;
+        user.progressTimestamps = user.progressTimestamps.sort(function(a, b) {
+          return a - b;
+        });
 
-      user.currentStreak = 1;
-      var today = moment(Date.now()).format('YYYY-MM-DD');
+        var timeObject = Object.create(null);
+        R.forEach(function(time) {
+          timeObject[moment(time).format('YYYY-MM-DD')] = time;
+        }, user.progressTimestamps);
 
-      if (moment(today).toString() === moment(timeKeys[0]).toString() ||
-          moment(today).subtract(1, 'd').toString() ===
-          moment(timeKeys[0]).toString()) {
+        var tmpLongest = 1;
+        var timeKeys = R.keys(timeObject);
+
+        user.longestStreak = 0;
         for (var i = 1; i <= timeKeys.length; i++) {
-          if (moment(timeKeys[i - 1]).subtract(1, 'd').toString()
+          if (moment(timeKeys[i - 1]).add(1, 'd').toString()
             === moment(timeKeys[i]).toString()) {
-            debug(timeKeys[i - 1], timeKeys[i]);
             tmpLongest++;
-            if (tmpLongest > user.currentStreak) {
-              user.currentStreak = tmpLongest;
+            if (tmpLongest > user.longestStreak) {
+              user.longestStreak = tmpLongest;
             }
           } else {
-            break;
+            tmpLongest = 1;
           }
         }
-      } else {
+
+        timeKeys = timeKeys.reverse();
+        tmpLongest = 1;
+
         user.currentStreak = 1;
-      }
+        var today = moment(Date.now()).format('YYYY-MM-DD');
 
-      user.save(function(err) {
-        if (err) {
-          return next(err);
+        if (
+          moment(today).toString() === moment(timeKeys[0]).toString() ||
+          moment(today).subtract(1, 'd').toString() ===
+            moment(timeKeys[0]).toString()
+        ) {
+          for (var _i = 1; _i <= timeKeys.length; _i++) {
+
+            if (
+              moment(timeKeys[_i - 1]).subtract(1, 'd').toString() ===
+                moment(timeKeys[_i]).toString()
+            ) {
+
+              debug(timeKeys[_i - 1], timeKeys[_i]);
+              tmpLongest++;
+
+              if (tmpLongest > user.currentStreak) {
+                user.currentStreak = tmpLongest;
+              }
+            } else {
+              break;
+            }
+          }
+        } else {
+          user.currentStreak = 1;
         }
-      });
 
-      var data = {};
-      var progressTimestamps = user.progressTimestamps;
-      progressTimestamps.forEach(function(timeStamp) {
-        data[(timeStamp / 1000)] = 1;
-      });
+        user.save(function(err) {
+          if (err) {
+            return next(err);
+          }
 
-      user.currentStreak = user.currentStreak || 1;
-      user.longestStreak = user.longestStreak || 1;
-      var challenges = user.completedCoursewares.filter(function ( obj ) {
-        return !!obj.solution;
-      });
-      res.render('account/show', {
-        title: 'Camper ' + user.profile.username + '\'s portfolio',
-        username: user.profile.username,
-        name: user.profile.name,
-        location: user.profile.location,
-        githubProfile: user.profile.githubProfile,
-        linkedinProfile: user.profile.linkedinProfile,
-        codepenProfile: user.profile.codepenProfile,
-        facebookProfile: user.profile.facebookProfile,
-        twitterHandle: user.profile.twitterHandle,
-        bio: user.profile.bio,
-        picture: user.profile.picture,
-        progressTimestamps: user.progressTimestamps,
-        website1Link: user.portfolio.website1Link,
-        website1Title: user.portfolio.website1Title,
-        website1Image: user.portfolio.website1Image,
-        website2Link: user.portfolio.website2Link,
-        website2Title: user.portfolio.website2Title,
-        website2Image: user.portfolio.website2Image,
-        website3Link: user.portfolio.website3Link,
-        website3Title: user.portfolio.website3Title,
-        website3Image: user.portfolio.website3Image,
-        challenges: challenges,
-        bonfires: user.completedChallenges.filter(function(challenge) {
-          return challenge.challengeType === 5;
-        }),
-        calender: data,
-        moment: moment,
-        longestStreak: user.longestStreak + (user.longestStreak === 1 ? " day" : " days"),
-        currentStreak: user.currentStreak + (user.currentStreak === 1 ? " day" : " days")
-      });
+          var data = {};
+          var progressTimestamps = user.progressTimestamps;
+          progressTimestamps.forEach(function(timeStamp) {
+            data[(timeStamp / 1000)] = 1;
+          });
 
-    } else {
-      req.flash('errors', {
-        msg: "404: We couldn't find a page with that url. Please double check the link."
-      });
-      return res.redirect('/');
+          user.currentStreak = user.currentStreak || 1;
+          user.longestStreak = user.longestStreak || 1;
+          var challenges = user.completedCoursewares.filter(function ( obj ) {
+            return !!obj.solution;
+          });
+
+          res.render('account/show', {
+            title: 'Camper ' + user.profile.username + '\'s portfolio',
+            username: user.profile.username,
+            name: user.profile.name,
+            location: user.profile.location,
+            githubProfile: user.profile.githubProfile,
+            linkedinProfile: user.profile.linkedinProfile,
+            codepenProfile: user.profile.codepenProfile,
+            facebookProfile: user.profile.facebookProfile,
+            twitterHandle: user.profile.twitterHandle,
+            bio: user.profile.bio,
+            picture: user.profile.picture,
+            progressTimestamps: user.progressTimestamps,
+            website1Link: user.portfolio.website1Link,
+            website1Title: user.portfolio.website1Title,
+            website1Image: user.portfolio.website1Image,
+            website2Link: user.portfolio.website2Link,
+            website2Title: user.portfolio.website2Title,
+            website2Image: user.portfolio.website2Image,
+            website3Link: user.portfolio.website3Link,
+            website3Title: user.portfolio.website3Title,
+            website3Image: user.portfolio.website3Image,
+            challenges: challenges,
+            bonfires: user.completedChallenges.filter(function(challenge) {
+              return challenge.challengeType === 5;
+            }),
+            calender: data,
+            moment: moment,
+            longestStreak: user.longestStreak +
+              (user.longestStreak === 1 ? ' day' : ' days'),
+            currentStreak: user.currentStreak +
+              (user.currentStreak === 1 ? ' day' : ' days')
+          });
+        });
+      } else {
+        req.flash('errors', {
+          msg: "404: We couldn't find a page with that url. " +
+            'Please double check the link.'
+        });
+        return res.redirect('/');
+      }
     }
-  });
+  );
 };
 
 
@@ -385,9 +412,9 @@ exports.returnUser = function(req, res, next) {
  * Update profile information.
  */
 
-exports.updateProgress = function(req, res) {
+exports.updateProgress = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
-    if (err) return next(err);
+    if (err) { return next(err); }
     user.email = req.body.email || '';
     user.profile.name = req.body.name || '';
     user.profile.gender = req.body.gender || '';
@@ -395,7 +422,7 @@ exports.updateProgress = function(req, res) {
     user.profile.website = req.body.website || '';
 
     user.save(function(err) {
-      if (err) return next(err);
+      if (err) { return next(err); }
       req.flash('success', { msg: 'Profile information updated.' });
       res.redirect('/account');
     });
@@ -409,8 +436,8 @@ exports.updateProgress = function(req, res) {
 
 exports.postUpdateProfile = function(req, res, next) {
 
-  User.findById(req.user.id, function(err, user) {
-    if (err) return next(err);
+  User.findById(req.user.id, function(err) {
+    if (err) { return next(err); }
     var errors = req.validationErrors();
     if (errors) {
       req.flash('errors', errors);
@@ -422,63 +449,72 @@ exports.postUpdateProfile = function(req, res, next) {
         return next(err);
       }
       var user = req.user;
-      if (existingEmail && existingEmail.email != user.email) {
+      if (existingEmail && existingEmail.email !== user.email) {
         req.flash('errors', {
-          msg: "An account with that email address already exists."
+          msg: 'An account with that email address already exists.'
         });
         return res.redirect('/account');
       }
-      User.findOne({ 'profile.username': req.body.username }, function(err, existingUsername) {
-        if (err) {
-          return next(err);
-        }
-        var user = req.user;
-        if (existingUsername && existingUsername.profile.username !== user.profile.username) {
-          req.flash('errors', {
-            msg: 'An account with that username already exists.'
-          });
-          return res.redirect('/account');
-        }
-        user.email = req.body.email.trim() || '';
-        user.profile.name = req.body.name.trim() || '';
-        user.profile.username = req.body.username.trim() || '';
-        user.profile.location = req.body.location.trim() || '';
-        user.profile.githubProfile = req.body.githubProfile.trim() || '';
-        user.profile.facebookProfile = req.body.facebookProfile.trim() || '';
-        user.profile.linkedinProfile = req.body.linkedinProfile.trim() || '';
-        user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
-        user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
-        user.profile.bio = req.body.bio.trim() || '';
-        user.profile.picture = req.body.picture.trim() || 'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png';
-        user.portfolio.website1Title = req.body.website1Title.trim() || '';
-        user.portfolio.website1Link = req.body.website1Link.trim() || '';
-        user.portfolio.website1Image = req.body.website1Image.trim() || '';
-        user.portfolio.website2Title = req.body.website2Title.trim() || '';
-        user.portfolio.website2Link = req.body.website2Link.trim() || '';
-        user.portfolio.website2Image = req.body.website2Image.trim() || '';
-        user.portfolio.website3Title = req.body.website3Title.trim() || '';
-        user.portfolio.website3Link = req.body.website3Link.trim() || '';
-        user.portfolio.website3Image = req.body.website3Image.trim() || '';
-
-
-        user.save(function (err) {
+      User.findOne(
+        { 'profile.username': req.body.username },
+        function(err, existingUsername) {
           if (err) {
             return next(err);
           }
-          resources.updateUserStoryPictures(
-            user._id.toString(),
-            user.profile.picture,
-            user.profile.username,
-            function(err) {
-              if (err) { return next(err); }
-              req.flash('success', {
-                msg: 'Profile information updated.'
-              });
-              res.redirect('/account');
+          var user = req.user;
+          if (
+            existingUsername &&
+            existingUsername.profile.username !== user.profile.username
+          ) {
+            req.flash('errors', {
+              msg: 'An account with that username already exists.'
+            });
+            return res.redirect('/account');
+          }
+          user.email = req.body.email.trim() || '';
+          user.profile.name = req.body.name.trim() || '';
+          user.profile.username = req.body.username.trim() || '';
+          user.profile.location = req.body.location.trim() || '';
+          user.profile.githubProfile = req.body.githubProfile.trim() || '';
+          user.profile.facebookProfile = req.body.facebookProfile.trim() || '';
+          user.profile.linkedinProfile = req.body.linkedinProfile.trim() || '';
+          user.profile.codepenProfile = req.body.codepenProfile.trim() || '';
+          user.profile.twitterHandle = req.body.twitterHandle.trim() || '';
+          user.profile.bio = req.body.bio.trim() || '';
+
+          user.profile.picture = req.body.picture.trim() ||
+            'https://s3.amazonaws.com/freecodecamp/' +
+            'camper-image-placeholder.png';
+          user.portfolio.website1Title = req.body.website1Title.trim() || '';
+          user.portfolio.website1Link = req.body.website1Link.trim() || '';
+          user.portfolio.website1Image = req.body.website1Image.trim() || '';
+          user.portfolio.website2Title = req.body.website2Title.trim() || '';
+          user.portfolio.website2Link = req.body.website2Link.trim() || '';
+          user.portfolio.website2Image = req.body.website2Image.trim() || '';
+          user.portfolio.website3Title = req.body.website3Title.trim() || '';
+          user.portfolio.website3Link = req.body.website3Link.trim() || '';
+          user.portfolio.website3Image = req.body.website3Image.trim() || '';
+
+
+          user.save(function (err) {
+            if (err) {
+              return next(err);
             }
-          );
-        });
-      });
+            resources.updateUserStoryPictures(
+              user._id.toString(),
+              user.profile.picture,
+              user.profile.username,
+              function(err) {
+                if (err) { return next(err); }
+                req.flash('success', {
+                  msg: 'Profile information updated.'
+                });
+                res.redirect('/account');
+              }
+            );
+          });
+        }
+      );
     });
   });
 };
@@ -538,7 +574,7 @@ exports.getOauthUnlink = function(req, res, next) {
   User.findById(req.user.id, function(err, user) {
     if (err) { return next(err); }
 
-    user[provider] = undefined;
+    user[provider] = null;
     user.tokens =
       _.reject(user.tokens, function(token) {
         return token.kind === provider;
@@ -557,7 +593,7 @@ exports.getOauthUnlink = function(req, res, next) {
  * Reset Password page.
  */
 
-exports.getReset = function(req, res) {
+exports.getReset = function(req, res, next) {
   if (req.isAuthenticated()) {
     return res.redirect('/');
   }
@@ -607,8 +643,8 @@ exports.postReset = function(req, res, next) {
           }
 
           user.password = req.body.password;
-          user.resetPasswordToken = undefined;
-          user.resetPasswordExpires = undefined;
+          user.resetPasswordToken = null;
+          user.resetPasswordExpires = null;
 
           user.save(function(err) {
             if (err) { return done(err); }

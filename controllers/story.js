@@ -1,16 +1,13 @@
-/* eslint-disable no-catch-shadow, no-unused-vars */
-var R = require('ramda'),
-  debug = require('debug')('freecc:cntr:story'),
+var moment = require('moment'),
+  mongodb = require('mongodb'),
+  nodemailer = require('nodemailer'),
+  sanitizeHtml = require('sanitize-html'),
+  MongoClient = mongodb.MongoClient,
+  resources = require('./resources'),
+  secrets = require('../config/secrets'),
   Story = require('./../models/Story'),
   Comment = require('./../models/Comment'),
-  User = require('./../models/User'),
-  moment = require('moment'),
-  resources = require('./resources'),
-  mongodb = require('mongodb'),
-  MongoClient = mongodb.MongoClient,
-  secrets = require('../config/secrets'),
-  nodemailer = require('nodemailer'),
-  sanitizeHtml = require('sanitize-html');
+  User = require('./../models/User');
 
 function hotRank(timeValue, rank) {
   /*
@@ -128,7 +125,8 @@ exports.returnIndividualStory = function(req, res, next) {
 
     if (story.length < 1) {
       req.flash('errors', {
-        msg: "404: We couldn't find a story with that name. Please double check the name."
+        msg: "404: We couldn't find a story with that name. " +
+          'Please double check the name.'
       });
 
       return res.redirect('/news/');
@@ -148,7 +146,7 @@ exports.returnIndividualStory = function(req, res, next) {
       if (votedObj.length > 0) {
         userVoted = true;
       }
-    } catch(err) {
+    } catch(e) {
       userVoted = false;
     }
     res.render('stories/index', {
@@ -229,15 +227,14 @@ exports.upvote = function(req, res, next) {
     );
     story.markModified('rank');
     story.save();
-    User.find({'_id': story.author.userId}, function(err, user) {
-      'use strict';
+    User.find({ '_id': story.author.userId }, function(err, user) {
       if (err) {
         return next(err);
       }
       user = user.pop();
       user.progressTimestamps.push(Date.now() || 0);
-      user.save(function (err, user) {
-        req.user.save(function (err, user) {
+      user.save(function (err) {
+        req.user.save(function (err) {
           if (err) {
             return next(err);
           }
@@ -339,61 +336,64 @@ exports.storySubmission = function(req, res, next) {
   if (link.search(/^https?:\/\//g) === -1) {
     link = 'http://' + link;
   }
-  Story.count({'storyLink': new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i')}, function (err, storyCount) {
-    if (err) {
-      return res.status(500);
-    }
-
-    // if duplicate storyLink add unique number
-    storyLink = (storyCount === 0) ? storyLink : storyLink + ' ' + storyCount;
-
-    var link = data.link;
-    if (link.search(/^https?:\/\//g) === -1) {
-      link = 'http://' + link;
-    }
-    var story = new Story({
-      headline: sanitizeHtml(data.headline, {
-        allowedTags: [],
-        allowedAttributes: []
-      }).replace(/&quot;/g, '"'),
-      timePosted: Date.now(),
-      link: link,
-      description: sanitizeHtml(data.description, {
-        allowedTags: [],
-        allowedAttributes: []
-      }).replace(/&quot;/g, '"'),
-      rank: 1,
-      upVotes: [({
-        upVotedBy: req.user._id,
-        upVotedByUsername: req.user.profile.username
-      })],
-      author: {
-        picture: req.user.profile.picture,
-        userId: req.user._id,
-        username: req.user.profile.username,
-        email: req.user.email
-      },
-      comments: [],
-      image: data.image,
-      storyLink: storyLink,
-      metaDescription: data.storyMetaDescription,
-      originalStoryAuthorEmail: req.user.email
-    });
-    story.save(function (err) {
+  Story.count(
+    { storyLink: new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i') },
+    function (err, storyCount) {
       if (err) {
         return res.status(500);
       }
-      req.user.progressTimestamps.push(Date.now() || 0);
-      req.user.save(function (err, user) {
-        if (err) {
-          return next(err);
-        }
+
+      // if duplicate storyLink add unique number
+      storyLink = (storyCount === 0) ? storyLink : storyLink + ' ' + storyCount;
+
+      var link = data.link;
+      if (link.search(/^https?:\/\//g) === -1) {
+        link = 'http://' + link;
+      }
+      var story = new Story({
+        headline: sanitizeHtml(data.headline, {
+          allowedTags: [],
+          allowedAttributes: []
+        }).replace(/&quot;/g, '"'),
+        timePosted: Date.now(),
+        link: link,
+        description: sanitizeHtml(data.description, {
+          allowedTags: [],
+          allowedAttributes: []
+        }).replace(/&quot;/g, '"'),
+        rank: 1,
+        upVotes: [({
+          upVotedBy: req.user._id,
+          upVotedByUsername: req.user.profile.username
+        })],
+        author: {
+          picture: req.user.profile.picture,
+          userId: req.user._id,
+          username: req.user.profile.username,
+          email: req.user.email
+        },
+        comments: [],
+        image: data.image,
+        storyLink: storyLink,
+        metaDescription: data.storyMetaDescription,
+        originalStoryAuthorEmail: req.user.email
       });
-      res.send(JSON.stringify({
-        storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
-      }));
-    });
-  });
+      story.save(function (err) {
+        if (err) {
+          return res.status(500);
+        }
+        req.user.progressTimestamps.push(Date.now() || 0);
+        req.user.save(function (err) {
+          if (err) {
+            return next(err);
+          }
+        });
+        res.send(JSON.stringify({
+          storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
+        }));
+      });
+    }
+  );
 };
 
   exports.commentSubmit = function(req, res, next) {
@@ -513,58 +513,76 @@ exports.storySubmission = function(req, res, next) {
         return next(err);
       }
       try {
-        // Based on the context retrieve the parent object of the comment (Story/Comment)
-        Context.find({'_id': data.associatedPost}, function (err, associatedContext) {
-          if (err) {
-            return next(err);
-          }
-          associatedContext = associatedContext.pop();
-          if (associatedContext) {
-            associatedContext.comments.push(data._id);
-            associatedContext.save(function (err) {
-              if (err) {
-                return next(err);
-              }
-              res.send(true);
-            });
-          }
-          // Find the author of the parent object
-          User.findOne({'profile.username': associatedContext.author.username}, function(err, recipient) {
+        // Based on the context retrieve the parent
+        // object of the comment (Story/Comment)
+        Context.find(
+          { '_id': data.associatedPost },
+          function (err, associatedContext) {
             if (err) {
               return next(err);
             }
-            // If the emails of both authors differ, only then proceed with email notification
-            if (typeof data.author !== 'undefined' && data.author.email && typeof recipient !== 'undefined' && recipient.email && (data.author.email !== recipient.email)) {
-              var transporter = nodemailer.createTransport({
-                service: 'Mandrill',
-                auth: {
-                  user: secrets.mandrill.user,
-                  pass: secrets.mandrill.password
-                }
-              });
-
-              var mailOptions = {
-                to: recipient.email,
-                from: 'Team@freecodecamp.com',
-                subject: data.author.username + ' replied to your post on Camper News',
-                text: [
-                  'Just a quick heads-up: ' + data.author.username + ' replied to you on Camper News.',
-                  'You can keep this conversation going.',
-                  'Just head back to the discussion here: http://freecodecamp.com/news/' + data.originalStoryLink,
-                  '- the Free Code Camp Volunteer Team'
-                ].join('\n')
-              };
-
-              transporter.sendMail(mailOptions, function (err) {
+            associatedContext = associatedContext.pop();
+            if (associatedContext) {
+              associatedContext.comments.push(data._id);
+              associatedContext.save(function (err) {
                 if (err) {
-                  return err;
+                  return next(err);
                 }
+                res.send(true);
               });
             }
-          });
-        });
+            // Find the author of the parent object
+            User.findOne(
+              { 'profile.username': associatedContext.author.username },
+              function(err, recipient) {
+                if (err) {
+                  return next(err);
+                }
+                // If the emails of both authors differ,
+                // only then proceed with email notification
+                if (
+                  typeof data.author !== 'undefined' &&
+                  data.author.email &&
+                  typeof recipient !== 'undefined' &&
+                  recipient.email &&
+                  (data.author.email !== recipient.email)
+                ) {
+                  var transporter = nodemailer.createTransport({
+                    service: 'Mandrill',
+                    auth: {
+                      user: secrets.mandrill.user,
+                      pass: secrets.mandrill.password
+                    }
+                  });
+
+                  var mailOptions = {
+                    to: recipient.email,
+                    from: 'Team@freecodecamp.com',
+                    subject: data.author.username +
+                      ' replied to your post on Camper News',
+                    text: [
+                      'Just a quick heads-up: ',
+                      data.author.username,
+                      ' replied to you on Camper News.',
+                      'You can keep this conversation going.',
+                      'Just head back to the discussion here: ',
+                      'http://freecodecamp.com/news/',
+                      data.originalStoryLink,
+                      '- the Free Code Camp Volunteer Team'
+                    ].join('\n')
+                  };
+
+                  transporter.sendMail(mailOptions, function (err) {
+                    if (err) {
+                      return err;
+                    }
+                  });
+                }
+              }
+            );
+          }
+        );
       } catch (e) {
-        // delete comment
         return next(err);
       }
     });
