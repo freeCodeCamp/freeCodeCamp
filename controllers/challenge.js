@@ -40,27 +40,6 @@ function getMDNlinks(links) {
   return populatedLinks;
 }
 
-exports.showAllChallenges = function(req, res) {
-  var completedList = [];
-  if (req.user) {
-    completedList = req.user.completedChallenges.map(function (elem) {
-      return elem._id;
-    });
-  }
-  var noDuplicatedCoursewares = R.uniq(completedList);
-  var data = {};
-  data.coursewareList = resources.allCoursewareNames();
-  data.completedList = noDuplicatedCoursewares;
-  res.send(data);
-};
-
-exports.getStuff = function(req, res, next) {
-  res.render('coursewares/getstuff', {
-    stuff: resources.allChallengeIds(),
-    stuffWithIds: challengeMapWithIds
-  });
-};
-
 exports.returnNextChallenge = function(req, res, next) {
   if (!req.user) {
    return res.redirect('../challenges/learn-how-free-code-camp-works');
@@ -451,7 +430,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
 
         req.user.completedChallenges.push({
           _id: challengeId,
-          name: req.body.challengeInfo.coursewareName,
+          name: req.body.challengeInfo.challengeName,
           completedWith: pairedWith._id,
           completedDate: isCompletedDate,
           solution: solutionLink,

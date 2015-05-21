@@ -508,9 +508,6 @@ app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
  * Challenge related routes
  */
 
-app.get('/getstuff', challengeController.getStuff);
-
-
 app.get('/challenges/next-challenge', challengeController.returnNextChallenge);
 
 app.get(
