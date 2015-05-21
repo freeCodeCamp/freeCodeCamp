@@ -248,7 +248,6 @@ exports.returnIndividualChallenge = function(req, res, next) {
         },
 
         5: function() {
-          debug('challenge MDNLinks', challenge.MDNlinks);
           res.render('bonfire/show', {
             completedWith: null,
             title: challenge.name,
@@ -291,7 +290,6 @@ exports.completedBonfire = function (req, res, next) {
         return next(err);
       } else {
         var index = req.user.uncompletedChallenges.indexOf(challengeId);
-        debug('This is the index', index);
         if (index > -1) {
           req.user.progressTimestamps.push(Date.now() || 0);
           req.user.uncompletedChallenges.splice(index, 1);
@@ -299,7 +297,6 @@ exports.completedBonfire = function (req, res, next) {
         pairedWith = pairedWith.pop();
 
         index = pairedWith.uncompletedChallenges.indexOf(challengeId);
-        debug('This is the index of the search for bonfire', index);
         if (index > -1) {
           pairedWith.progressTimestamps.push(Date.now() || 0);
           pairedWith.uncompletedChallenges.splice(index, 1);
@@ -350,8 +347,6 @@ exports.completedBonfire = function (req, res, next) {
     });
 
     var index = req.user.uncompletedChallenges.indexOf(challengeId);
-    debug('this is the challengeId we got', challengeId);
-    debug('This is the index of the search for bonfire', index);
     if (index > -1) {
 
       req.user.progressTimestamps.push(Date.now() || 0);
