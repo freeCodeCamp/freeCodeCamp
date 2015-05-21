@@ -23,7 +23,7 @@ var async = require('async'),
  * Cached values
  */
 var allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
-  allBonfireIndexesAndNames, challengeMap, challengeMapWithIds,
+  challengeMap, challengeMapWithIds,
   challengeMapWithNames, allChallengeIds, allChallenges;
 
 /**

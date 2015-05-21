@@ -12,7 +12,7 @@ mongoose.connect(secrets.db);
 var challenges = fs.readdirSync(__dirname + '/challenges');
 
 var counter = 0;
-var offerings = 3;
+var offerings = 2 + challenges.length;
 
 var CompletionMonitor = function() {
   counter++;
@@ -37,12 +37,11 @@ Challenge.remove({}, function(err, data) {
         console.log(err);
       } else {
         console.log('Successfully parsed %s', file);
-        console.log(data);
+        CompletionMonitor();
       }
     });
   });
 });
-/*
 FieldGuide.remove({}, function(err, data) {
   if (err) {
     console.error(err);
@@ -76,4 +75,3 @@ Nonprofit.remove({}, function(err, data) {
   });
   console.log('nonprofits');
 });
-*/

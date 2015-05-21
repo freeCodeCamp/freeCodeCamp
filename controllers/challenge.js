@@ -54,14 +54,7 @@ exports.returnNextChallenge = function(req, res, next) {
         return elem;
       }
     });
-  // It's not important to wait for the save to finish as the updated user
-  // object is already in memory! We'll just check to see if there was an
-  // error saving and log it out to investigate in our logs.
-  req.user.save(function(err, data) {
-    if (err) {
-      debug('%s saving user!', err);
-    }
-  });
+
   // find the user's current challenge and block
   // look in that block and find the index of their current challenge
   // if index + 1 < block.challenges.length
@@ -92,7 +85,13 @@ exports.returnNextChallenge = function(req, res, next) {
   var nameString = nextChallengeName.trim()
     .toLowerCase()
     .replace(/\s/g, '-');
-  return res.redirect('../challenges/' + nameString);
+
+  req.user.save(function(err) {
+    if (err) {
+      return next(err);
+    }
+    return res.redirect('../challenges/' + nameString);
+  });
 };
 
 exports.returnCurrentChallenge = function(req, res, next) {
@@ -255,7 +254,7 @@ exports.returnIndividualChallenge = function(req, res, next) {
         },
 
         5: function() {
-          res.render('bonfire/show', {
+          res.render('coursewares/showBonfire', {
             completedWith: null,
             title: challenge.name,
             dashedName: dashedName,
