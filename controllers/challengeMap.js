@@ -1,20 +1,7 @@
-var async = require('async'),
-  User = require('../models/User'),
-  Bonfire = require('./../models/Bonfire'),
-  Story = require('./../models/Story'),
-  Nonprofit = require('./../models/Nonprofit'),
-  Comment = require('./../models/Comment'),
-  Challenge = require('./../models/Challenge'),
-  resources = require('./resources'),
-  steps = resources.steps,
-  secrets = require('./../config/secrets'),
-  nonprofits = require('../seed_data/nonprofits.json'),
-  moment = require('moment'),
-  https = require('https'),
-  debug = require('debug')('freecc:cntr:resources'),
-  cheerio = require('cheerio'),
-  request = require('request'),
-  R = require('ramda');
+var User = require('../models/User'),
+    resources = require('./resources'),
+    debug = require('debug')('freecc:cntr:challengeMap'),
+    R = require('ramda');
 
 var challengeTypes = {
   'HTML_CSS_JQ': 0,
