@@ -32,9 +32,8 @@ block content
                         var userLoggedIn = false;
                 br
             script(type="text/javascript").
-                var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
-                var challengeName = !{JSON.stringify(name)};
-                var passedCoursewareName = challengeName;
+                var challenge_Id = !{JSON.stringify(challengeId)};
+                var challenge_Name = !{JSON.stringify(name)};
                 var started = Math.floor(Date.now());
                 var challengeType = !{JSON.stringify(challengeType)};
                 var controlEnterHandler = function (e) {

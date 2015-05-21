@@ -373,7 +373,9 @@ exports.returnUser = function(req, res, next) {
         website3Title: user.portfolio.website3Title,
         website3Image: user.portfolio.website3Image,
         challenges: challenges,
-        bonfires: user.completedBonfires,
+        bonfires: user.completedChallenges.filter(function(challenge) {
+          return challenge.challengeType === 5;
+        }),
         calender: data,
         moment: moment,
         longestStreak: user.longestStreak + (user.longestStreak === 1 ? " day" : " days"),

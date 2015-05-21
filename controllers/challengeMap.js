@@ -27,33 +27,15 @@ var challengeTypes = {
 
 module.exports = {
   challengeMap: function challengeMap(req, res) {
-    var completedBonfires = [];
     var completedList = [];
 
     if (req.user) {
-      completedBonfires = req.user.completedChallenges
-        .filter(function (elem) {
-          return elem.challengeType === challengeTypes.BONFIRE;
-        })
-        .map(function(elem) {
-          return elem._id;
-        });
+      completedList = req.user.completedChallenges;
     }
 
-    if (req.user) {
-      completedList = req.user.completedChallenges
-        .filter(function (elem) {
-          return elem.challengeType !== challengeTypes.BONFIRE;
-        });
-    }
-
-    var noDuplicateBonfires = R.uniq(completedBonfires);
     var noDuplicatedChallenges = R.uniq(completedList);
 
-    var completedBonfireList = noDuplicateBonfires
-      .map(function(bonfire) {
-        return bonfire._id;
-      });
+
     var challengeList = resources.allChallenges();
     var completedChallengeList = noDuplicatedChallenges
       .map(function(challenge) {
@@ -120,7 +102,6 @@ module.exports = {
         debug('User err: ', err);
         return next(err);
       }
-      debug('Data for render is: ', completedBonfireList, completedChallengeList);
       res.render('challengeMap/show', {
         daysRunning: daysRunning,
         camperCount: numberWithCommas(camperCount),
@@ -129,7 +110,6 @@ module.exports = {
         waypoints: waypoints,
         ziplines: ziplines,
         basejumps: basejumps,
-        completedBonfireList: completedBonfireList,
         completedChallengeList: completedChallengeList
       });
     });

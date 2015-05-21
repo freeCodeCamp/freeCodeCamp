@@ -26,10 +26,23 @@ var debug = require('debug')('freecc:cntr:courseware'),
 var challengeMapWithNames = resources.getChallengeMapWithNames();
 var challengeMapWithIds = resources.getChallengeMapWithIds();
 
+function getMDNlinks(links) {
+  // takes in an array of links, which are strings
+  var populatedLinks = [];
+
+  // for each key value, push the corresponding link from the MDNlinks object into a new array
+  if (links) {
+    links.forEach(function (value, index) {
+      populatedLinks.push(MDNlinks[value]);
+    });
+  }
+  return populatedLinks;
+}
+
 exports.showAllChallenges = function(req, res) {
   var completedList = [];
   if (req.user) {
-    completedList = req.user.completedCoursewares.map(function (elem) {
+    completedList = req.user.completedChallenges.map(function (elem) {
       return elem._id;
     });
   }
@@ -150,7 +163,6 @@ exports.returnIndividualChallenge = function(req, res, next) {
         return res.redirect('/challenges');
       }
       var challenge = challengeFromMongo.pop();
-
       // Redirect to full name if the user only entered a partial
       var dashedNameFull = challenge.name.toLowerCase().replace(/\s/g, '-');
       if (dashedNameFull !== dashedName) {
@@ -256,7 +268,25 @@ exports.returnIndividualChallenge = function(req, res, next) {
         },
 
         5: function() {
-          // bonfire
+          res.render('bonfire/show', {
+            completedWith: null,
+            title: challenge.name,
+            dashedName: dashedName,
+            name: challenge.name,
+            difficulty: Math.floor(+challenge.difficulty),
+            brief: challenge.description.shift(),
+            details: challenge.description,
+            tests: challenge.tests,
+            challengeSeed: challenge.challengeSeed,
+            verb: resources.randomVerb(),
+            phrase: resources.randomPhrase(),
+            compliment: resources.randomCompliment(),
+            bonfires: challenge,
+            challengeId: challenge._id,
+            MDNkeys: challenge.MDNlinks,
+            MDNlinks: getMDNlinks(challenge.MDNlinks),
+            challengeType: challenge.challengeType
+          });
         }
       };
 
@@ -265,15 +295,103 @@ exports.returnIndividualChallenge = function(req, res, next) {
     });
 };
 
-exports.completedBonfire = function(req, res, next) {
+exports.completedBonfire = function (req, res, next) {
+  var isCompletedWith = req.body.challengeInfo.completedWith || '';
+  var isCompletedDate = Math.round(+new Date());
+  var challengeId = req.body.challengeInfo.challengeId;
+  var isSolution = req.body.challengeInfo.solution;
+  var challengeName = req.body.challengeInfo.challengeName;
 
+  if (isCompletedWith) {
+    var paired = User.find({'profile.username': isCompletedWith
+      .toLowerCase()}).limit(1);
+    paired.exec(function (err, pairedWith) {
+      if (err) {
+        return next(err);
+      } else {
+        var index = req.user.uncompletedChallenges.indexOf(challengeId);
+        debug('This is the index', index);
+        if (index > -1) {
+          req.user.progressTimestamps.push(Date.now() || 0);
+          req.user.uncompletedChallenges.splice(index, 1);
+        }
+        pairedWith = pairedWith.pop();
+
+        index = pairedWith.uncompletedChallenges.indexOf(challengeId);
+        debug('This is the index of the search for bonfire', index);
+        if (index > -1) {
+          pairedWith.progressTimestamps.push(Date.now() || 0);
+          pairedWith.uncompletedChallenges.splice(index, 1);
+
+        }
+
+        pairedWith.completedChallenges.push({
+          _id: challengeId,
+          name: challengeName,
+          completedWith: req.user._id,
+          completedDate: isCompletedDate,
+          solution: isSolution,
+          challengeType: 5
+        });
+
+        req.user.completedChallenges.push({
+          _id: challengeId,
+          name: challengeName,
+          completedWith: pairedWith._id,
+          completedDate: isCompletedDate,
+          solution: isSolution,
+          challengeType: 5
+        });
+
+        req.user.save(function (err, user) {
+          if (err) {
+            return next(err);
+          }
+          pairedWith.save(function (err, paired) {
+            if (err) {
+              return next(err);
+            }
+            if (user && paired) {
+              res.send(true);
+            }
+          });
+        });
+      }
+    });
+  } else {
+    req.user.completedChallenges.push({
+      _id: challengeId,
+      name: challengeName,
+      completedWith: null,
+      completedDate: isCompletedDate,
+      solution: isSolution,
+      challengeType: 5
+    });
+
+    var index = req.user.uncompletedChallenges.indexOf(challengeId);
+    debug('this is the challengeId we got', challengeId);
+    debug('This is the index of the search for bonfire', index);
+    if (index > -1) {
+
+      req.user.progressTimestamps.push(Date.now() || 0);
+      req.user.uncompletedChallenges.splice(index, 1);
+    }
+
+    req.user.save(function (err, user) {
+      if (err) {
+        return next(err);
+      }
+      if (user) {
+        res.send(true);
+      }
+    });
+  }
 };
 
 exports.completedChallenge = function (req, res, next) {
 
   var isCompletedDate = Math.round(+new Date());
   var challengeId = req.body.challengeInfo.challengeId;
-
 
   req.user.completedChallenges.push({
     _id: challengeId,
@@ -302,12 +420,12 @@ exports.completedChallenge = function (req, res, next) {
 
 exports.completedZiplineOrBasejump = function (req, res, next) {
 
-  var isCompletedWith = req.body.coursewareInfo.completedWith || false;
+  var isCompletedWith = req.body.challengeInfo.completedWith || false;
   var isCompletedDate = Math.round(+new Date());
-  var coursewareHash = req.body.coursewareInfo.coursewareHash;
-  var solutionLink = req.body.coursewareInfo.publicURL;
-  var githubLink = req.body.coursewareInfo.challengeType === '4'
-    ? req.body.coursewareInfo.githubURL : true;
+  var challengeId = req.body.challengeInfo.challengeId;
+  var solutionLink = req.body.challengeInfo.publicURL;
+  var githubLink = req.body.challengeInfo.challengeType === '4'
+    ? req.body.challengeInfo.githubURL : true;
   if (!solutionLink || !githubLink) {
     req.flash('errors', {
       msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
@@ -322,16 +440,16 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
       if (err) {
         return next(err);
       } else {
-        var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
+        var index = req.user.uncompletedChallenges.indexOf(challengeId);
         if (index > -1) {
           req.user.progressTimestamps.push(Date.now() || 0);
-          req.user.uncompletedCoursewares.splice(index, 1);
+          req.user.uncompletedChallenges.splice(index, 1);
         }
         var pairedWith = pairedWithFromMongo.pop();
 
-        req.user.completedCoursewares.push({
-          _id: coursewareHash,
-          name: req.body.coursewareInfo.coursewareName,
+        req.user.completedChallenges.push({
+          _id: challengeId,
+          name: req.body.challengeInfo.coursewareName,
           completedWith: pairedWith._id,
           completedDate: isCompletedDate,
           solution: solutionLink,
@@ -347,16 +465,16 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
           if (req.user._id.toString() === pairedWith._id.toString()) {
             return res.sendStatus(200);
           }
-          index = pairedWith.uncompletedCoursewares.indexOf(coursewareHash);
+          index = pairedWith.uncompletedChallenges.indexOf(challengeId);
           if (index > -1) {
             pairedWith.progressTimestamps.push(Date.now() || 0);
-            pairedWith.uncompletedCoursewares.splice(index, 1);
+            pairedWith.uncompletedChallenges.splice(index, 1);
 
           }
 
-          pairedWith.completedCoursewares.push({
-            _id: coursewareHash,
-            name: req.body.coursewareInfo.coursewareName,
+          pairedWith.completedChallenges.push({
+            _id: challengeId,
+            name: req.body.challengeInfo.coursewareName,
             completedWith: req.user._id,
             completedDate: isCompletedDate,
             solution: solutionLink,
@@ -376,9 +494,9 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
     });
   } else {
 
-    req.user.completedCoursewares.push({
-      _id: coursewareHash,
-      name: req.body.coursewareInfo.coursewareName,
+    req.user.completedChallenges.push({
+      _id: challengeId,
+      name: req.body.challengeInfo.challengeName,
       completedWith: null,
       completedDate: isCompletedDate,
       solution: solutionLink,
@@ -386,10 +504,10 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
       verified: false
     });
 
-    var index = req.user.uncompletedCoursewares.indexOf(coursewareHash);
+    var index = req.user.uncompletedChallenges.indexOf(challengeId);
     if (index > -1) {
       req.user.progressTimestamps.push(Date.now() || 0);
-      req.user.uncompletedCoursewares.splice(index, 1);
+      req.user.uncompletedChallenges.splice(index, 1);
     }
 
     req.user.save(function (err, user) {
@@ -402,23 +520,3 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
     });
   }
 };
-
-/*
-challengeBlock {
-  0: {
-    "name": "basic_html",
-    "challenges: []
-  },
-  1: {
-    "name": "basic_css",
-    "challenges": [],
-  }
-}
-
-currentChallenge{
-  "challengeBlock": number,
-  "challengeId": _id,
-  "challengeName": string
-}
- */
-

@@ -5,7 +5,6 @@ block content
         var waypointList = !{JSON.stringify(waypoints)};
         var ziplineList = !{JSON.stringify(ziplines)};
         var basejumpList = !{JSON.stringify(basejumps)};
-        var completedBonfires = !{JSON.stringify(completedBonfireList)};
         var completedChallenges = !{JSON.stringify(completedChallengeList)};
     .panel.panel-info
         .panel-heading.text-center
@@ -52,19 +51,19 @@ block content
                     h3.negative-15
                         ol
                             for bonfire in bonfires
-                                if completedBonfireList.indexOf(bonfire._id) > -1
+                                if completedChallengeList.indexOf(bonfire._id) > -1
                                     .row
                                         .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
                                         .col-xs-12.col-sm-9.col-md-10
                                             li.faded
-                                                a(href="/bonfires/#{bonfire.name}")= bonfire.name
+                                                a(href="/challenges/#{bonfire.name}")= bonfire.name
                                 else
                                     .row
                                         .hidden-xs.col-sm-3.col-md-2
                                             span
                                         .col-xs-12.col-sm-9.col-md-10
                                             li
-                                                a(href="/bonfires/#{bonfire.name}")= bonfire.name
+                                                a(href="/challenges/#{bonfire.name}")= bonfire.name
                 h2
                     span.fa.fa-angle-double-right
                     | &nbsp; Ziplines (200 hours of front end development)

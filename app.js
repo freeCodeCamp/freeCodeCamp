@@ -494,35 +494,12 @@ app.get('/api/codepen/twitter/:screenName', resourcesController.codepenResources
 /**
  * Bonfire related routes
  */
-
-app.get('/field-guide/getFieldGuideList', fieldGuideController.showAllFieldGuides);
-
-app.get('/playground', bonfireController.index);
-
-app.get('/bonfires', bonfireController.returnNextBonfire);
-
-app.get('/bonfire-json-generator', bonfireController.returnGenerator);
-
-app.post('/bonfire-json-generator', bonfireController.generateChallenge);
-
-app.get('/bonfire-challenge-generator', bonfireController.publicGenerator);
-
-app.post('/bonfire-challenge-generator', bonfireController.testBonfire);
-
-app.get(
-  '/bonfires/:bonfireName',
-  bonfireController.returnIndividualBonfire
-);
-
-app.get('/bonfire', function(req, res) {
-  res.redirect(301, '/playground');
-});
-
-app.post('/completed-bonfire/', bonfireController.completedBonfire);
+app.post('/completed-bonfire/', challengeController.completedBonfire);
 
 /**
  * Field Guide related routes
  */
+app.get('/field-guide/getFieldGuideList', fieldGuideController.showAllFieldGuides);
 
 
 app.get('/field-guide/:fieldGuideName',

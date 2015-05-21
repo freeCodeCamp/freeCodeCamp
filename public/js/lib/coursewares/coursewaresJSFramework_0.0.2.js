@@ -112,7 +112,7 @@ $('#submitButton').on('click', function () {
 
 function bonfireExecute() {
   attempts++;
-  ga('send', 'event',  'Challenge', 'ran-code', challengeName);
+  ga('send', 'event',  'Challenge', 'ran-code', challenge_Name);
   userTests= null;
   $('#codeOutput').empty();
   var userJavaScript = myCodeMirror.getValue();
@@ -193,6 +193,8 @@ var createTestDisplay = function() {
 };
 
 var expect = chai.expect;
+var assert = chai.assert;
+var should = chai.should;
 
 
 var reassembleTest = function(test, data) {
@@ -236,7 +238,7 @@ var runTests = function(err, data) {
 
 function showCompletion() {
   var time = Math.floor(Date.now()) - started;
-  ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time +', Attempts: ' + attempts);
+  ga('send', 'event',  'Challenge', 'solved', challenge_Name + ', Time: ' + time +', Attempts: ' + attempts);
   $('#complete-courseware-dialog').modal('show');
   $('#complete-courseware-dialog').keydown(function(e) {
     if (e.ctrlKey && e.keyCode == 13) {

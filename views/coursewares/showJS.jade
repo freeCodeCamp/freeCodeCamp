@@ -45,8 +45,8 @@ block content
                 script(type="text/javascript").
                     var tests = !{JSON.stringify(tests)};
                     var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var challengeId = !{JSON.stringify(challengeId)};
-                    var challengeName = !{JSON.stringify(name)};
+                    var challenge_Id = !{JSON.stringify(challengeId)};
+                    var challenge_Name = !{JSON.stringify(name)};
                     var challengeType = !{JSON.stringify(challengeType)};
                     var started = Math.floor(Date.now());
 
@@ -55,7 +55,7 @@ block content
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true, style='display: none;')
-                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.1.js')
+                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.2.js')
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content

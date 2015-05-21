@@ -139,7 +139,7 @@ function doLinting () {
 //$('#testSuite').empty();
 function showCompletion() {
     var time = Math.floor(Date.now()) - started;
-    ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time);
+    ga('send', 'event',  'Challenge', 'solved', challenge_Name + ', Time: ' + time);
     $('#next-courseware-button').removeAttr('disabled');
     $('#next-courseware-button').addClass('animated tada');
     if (!userLoggedIn) {

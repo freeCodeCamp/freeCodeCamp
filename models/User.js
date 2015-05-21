@@ -124,7 +124,10 @@ var userSchema = new mongoose.Schema({
     uncompletedCoursewares: Array,
     completedCoursewares: [
       {
-        completedDate: Long,
+        completedDate: {
+          type: Long,
+          default: Date.now()
+        },
         _id: String,
         name: String,
         completedWith: String,
@@ -159,7 +162,11 @@ var userSchema = new mongoose.Schema({
         completedWith: String,
         solution: String,
         githubLink: String,
-        verified: Boolean
+        verified: Boolean,
+        challengeType: {
+          type: Number,
+          default: 0
+        }
       }
   ],
   uncompletedChallenges: Array

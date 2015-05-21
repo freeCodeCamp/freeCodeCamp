@@ -64,18 +64,19 @@ var after = editor.charCoords({line: editor.getCursor().line + 1, ch: 0}, "local
 if (info.top + info.clientHeight < after)
     editor.scrollTo(null, after - info.clientHeight + 3);
 
+
 var editorValue;
 
 
 var challengeSeed = challengeSeed || null;
 var tests = tests || [];
 
-
-if (challengeSeed !== null) {
-    editorValue = challengeSeed;
-} else {
-    editorValue = nonChallengeValue;
-}
+var allSeeds = '';
+(function() {
+  challengeSeed.forEach(function(elem) {
+    allSeeds += elem + '\n';
+  });
+})();
 
 
 myCodeMirror.setValue(editorValue);
