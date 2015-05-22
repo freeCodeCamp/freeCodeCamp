@@ -56,6 +56,9 @@ exports.postSignin = function(req, res, next) {
       if (/hotStories/.test(req.session.returnTo)) {
         return res.redirect('../news');
       }
+      if (/field-guide/.test(req.session.returnTo)) {
+        return res.redirect('../field-guide');
+      }
       return res.redirect(req.session.returnTo || '/');
     });
   })(req, res, next);
