@@ -129,7 +129,7 @@ exports.returnIndividualStory = function(req, res, next) {
     if (story.length < 1) {
       req.flash('errors', {
         msg: "404: We couldn't find a story with that name. " +
-        "Please double check the name."
+          'Please double check the name.'
       });
 
       return res.redirect('/news/');
@@ -149,7 +149,7 @@ exports.returnIndividualStory = function(req, res, next) {
       if (votedObj.length > 0) {
         userVoted = true;
       }
-    } catch(err) {
+    } catch(e) {
       userVoted = false;
     }
     res.render('stories/index', {

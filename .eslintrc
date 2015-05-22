@@ -7,6 +7,10 @@
     "mocha": true,
     "node": true
   },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
   "globals": {
     "window": true,
     "$": true,
@@ -41,7 +45,7 @@
     "valid-jsdoc": 2,
     "valid-typeof": 2,
 
-    "block-scoped-var": 2,
+    "block-scoped-var": 0,
     "complexity": 0,
     "consistent-return": 2,
     "curly": 2,
@@ -215,6 +219,21 @@
     "max-params": 0,
     "max-statements": 0,
     "no-bitwise": 1,
-    "no-plusplus": 0
+    "no-plusplus": 0,
+
+    "react/display-name": 1,
+    "react/jsx-boolean-value": 1,
+    "react/jsx-quotes": [1, "single", "avoid-escape"],
+    "react/jsx-no-undef": 1,
+    "react/jsx-sort-props": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/no-did-mount-set-state": 2,
+    "react/no-did-update-set-state": 2,
+    "react/no-multi-comp": 2,
+    "react/prop-types": 2,
+    "react/react-in-jsx-scope": 1,
+    "react/self-closing-comp": 1,
+    "react/wrap-multilines": 1
   }
 }
