@@ -8,6 +8,11 @@
 */
 var links =
 	{
+  // ========= NON MDN REFS
+  "Currying": "https://leanpub.com/javascript-allonge/read#pabc",
+  "Smallest Common Multiple": "https://www.mathsisfun.com/least-common-multiple.html",
+  "Permutations": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html",
+
 	// ========= GLOBAL OBJECTS
 	"Global Array Object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
 	"Global Object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
@@ -16,6 +21,8 @@ var links =
 	"RegExp" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
 	"Global Function Object": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
 	"Arguments object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments",
+  "Closures": "https://developer.mozilla.org/en-US/docs/" +
+  "Web/JavaScript/Closures",
 
 	// ========= GLOBAL OBJECT METHODS
 	"parseInt()" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt",
@@ -78,7 +85,7 @@ var links =
 	"Arithmetic Operators" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators",
 	"Comparison Operators" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators",
 	"Details of the Object Model" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model",
-	"Closures" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
+  "For Loops": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for"
 	};
 
 module.exports = links;
