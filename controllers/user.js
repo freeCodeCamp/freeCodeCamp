@@ -53,6 +53,9 @@ exports.postSignin = function(req, res, next) {
         return next(err);
       }
       req.flash('success', { msg: 'Success! You are logged in.' });
+      if (/hotStories/.test(req.session.returnTo)) {
+        return res.redirect('../news');
+      }
       return res.redirect(req.session.returnTo || '/');
     });
   })(req, res, next);
