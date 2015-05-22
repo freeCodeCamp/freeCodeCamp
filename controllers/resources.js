@@ -9,7 +9,7 @@ var async = require('async'),
   _ = require('lodash'),
   fs = require('fs'),
 
-  constantStrings = require('constantStrings.json'),
+  constantStrings = require('./constantStrings.json'),
   User = require('../models/User'),
   Challenge = require('./../models/Challenge'),
   Story = require('./../models/Story'),
