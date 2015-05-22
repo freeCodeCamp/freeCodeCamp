@@ -332,7 +332,7 @@
     ],
     "difficulty": "2.02",
     "description": [
-      "Convert the number be a roman numeral.",
+      "Convert the given number into a roman numeral.",
       "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\">roman numerals</a> answers should be provided in upper-case."
     ],
     "challengeSeed": "function convert(num) {\n return num;\r\n}\n\nconvert(36);",
