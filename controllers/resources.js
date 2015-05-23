@@ -588,12 +588,14 @@ module.exports = {
 
   getHelp: function(req, res, next) {
     var userName = req.user.profile.username;
-    var code = req.body.payload.code;
+    var code = req.body.payload.code ? '\n```\n' +
+      req.body.payload.code + '\n```\n'
+      : '';
     var challenge = req.body.payload.challenge;
 
     slack.send({
-      text: "*" + userName + "* wants help with " + challenge + "\n```\n"
-        + code + "\n```\n Hey, *" + userName + "*, if no one helps you right " +
+      text: "*" + userName + "* wants help with " + challenge + " " +
+        code +  "Hey, *" + userName + "*, if no one helps you right " +
         "away, try typing out your problem in detail to me. Like this: " +
         "http://en.wikipedia.org/wiki/Rubber_duck_debugging",
       channel: '#help',
@@ -601,7 +603,6 @@ module.exports = {
       icon_emoji: ":hatched_chick:"
     });
     return res.sendStatus(200);
-
   },
 
   getPair: function(req, res, next) {

@@ -7,10 +7,8 @@ block content
             h1= title
         .panel-body
             div!= description
-            .spacer
-            .spacer
-            .spacer
             .col-xs-12.col-sm-6.col-sm-offset-3
+                .spacer
                 .text-center
                     if user && user.uncompletedFieldGuides.length > 0
                         .next-field-guide-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)

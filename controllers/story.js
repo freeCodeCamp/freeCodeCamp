@@ -558,12 +558,10 @@ exports.storySubmission = function(req, res, next) {
                   ' replied to your post on Camper News',
                 text: [
                   'Just a quick heads-up: ',
-                  data.author.username,
-                  ' replied to you on Camper News.',
+                  data.author.username + ' replied to you on Camper News.',
                   'You can keep this conversation going.',
                   'Just head back to the discussion here: ',
-                  'http://freecodecamp.com/news/',
-                  data.originalStoryLink,
+                  'http://freecodecamp.com/news/' + data.originalStoryLink,
                   '- the Free Code Camp Volunteer Team'
                 ].join('\n')
               };

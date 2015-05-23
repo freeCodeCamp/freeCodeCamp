@@ -150,7 +150,6 @@ var userSchema = new mongoose.Schema({
 
   // needsMigration has been deprecated, use needsSomeDataModeled
   needsMigration: { type: Boolean, default: true },
-  finishedWaypoints: { type: Boolean, default: false },
   sendMonthlyEmail: { type: Boolean, default: true },
   challengesHash: {},
   currentChallenge: {},
