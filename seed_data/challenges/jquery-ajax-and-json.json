@@ -10,8 +10,7 @@
         "Test"
       ],
       "tests": [
-        "assert($('#target').hasClass('disabled'), 'The button with the ID of \"target\" should continue to have the \"disabled\" class.')",
-        "assert(!!$('#target[disabled]'), 'Enable the button with the ID of \"target\" by using jQuery.')",
+        "assert(typeof $('#target').attr('disabled') === 'undefined', 'Change the disabled attribute of the \"target\" button to false');",
         "expect($('#target')).to.exist()"
       ],
       "challengeSeed": [
@@ -21,7 +20,8 @@
         "  });",
         "fcces",
         "<button id='target' class='btn btn-primary btn-block'>Enable this button with jQuery</button>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -51,7 +51,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -66,7 +67,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -81,7 +83,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -96,7 +99,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -126,7 +130,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -141,7 +146,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -156,7 +162,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -171,7 +178,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -186,7 +194,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
 
@@ -202,7 +211,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -217,7 +227,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -232,7 +243,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -247,7 +259,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -262,7 +275,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -277,7 +291,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     }
   ]
 }

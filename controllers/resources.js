@@ -9,6 +9,7 @@ var async = require('async'),
   _ = require('lodash'),
   fs = require('fs'),
 
+
   constantStrings = require('./constantStrings.json'),
   User = require('../models/User'),
   Challenge = require('./../models/Challenge'),
@@ -19,7 +20,9 @@ var async = require('async'),
   resources = require('./resources.json'),
   secrets = require('./../config/secrets'),
   nonprofits = require('../seed_data/nonprofits.json'),
-  fieldGuides = require('../seed_data/field-guides.json');
+  fieldGuides = require('../seed_data/field-guides.json'),
+  Slack = require('node-slack'),
+  slack = new Slack(secrets.slackHook);
 
 /**
  * Cached values
@@ -581,5 +584,20 @@ module.exports = {
     slack: function() {
 
     }
+  },
+
+  getHelp: function(req, res, next) {
+    var userName = req.user.profile.username;
+    var code = req.body.payload.code;
+    var challenge = req.body.payload.challenge;
+
+    slack.send({
+      text: "User " + userName + " needs help with challenge " +
+      "" + challenge + "!\n```\n" + code + "\n```",
+      channel: '#help',
+      username: userName
+    });
+    return res.sendStatus(200);
+
   }
 };
