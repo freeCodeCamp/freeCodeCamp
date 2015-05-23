@@ -11,13 +11,14 @@
   },
   "scripts": {
     "start": "node app.js",
+    "lint": "eslint --ext=.js,.jsx .",
     "test": "mocha"
   },
   "license": "BSD-3-Clause",
-  "contributors" : [
+  "contributors": [
     {
       "name": "Quincy Larson",
-      "url" : "https://github.com/QuincyLarson"
+      "url": "https://github.com/QuincyLarson"
     },
     {
       "name": "Nathan Leniz",
@@ -82,10 +83,13 @@
     "yui": "~3.18.1"
   },
   "devDependencies": {
+    "babel-eslint": "^3.1.7",
     "blessed": "~0.0.37",
     "bower-main-files": "~0.0.4",
     "browser-sync": "~1.8.1",
     "chai": "~1.10.0",
+    "eslint": "^0.21.2",
+    "eslint-plugin-react": "^2.3.0",
     "gulp": "~3.8.8",
     "gulp-eslint": "~0.9.0",
     "gulp-inject": "~1.0.2",

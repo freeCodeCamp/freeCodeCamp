@@ -107,11 +107,11 @@ var tests = tests || [];
 var allSeeds = '';
 (function() {
     challengeSeed.forEach(function(elem) {
-        allSeeds += elem + '\n';
+        allSeeds += elem.replace(/fccss/g, '<script>').replace(/fcces/g,'</script>') + '\n';
     });
+  editor.setValue(allSeeds);
 })();
 
-editor.setValue(allSeeds);
 
 function doLinting () {
     editor.operation(function () {
@@ -139,7 +139,7 @@ function doLinting () {
 //$('#testSuite').empty();
 function showCompletion() {
     var time = Math.floor(Date.now()) - started;
-    ga('send', 'event',  'Challenge', 'solved', challengeName + ', Time: ' + time);
+    ga('send', 'event',  'Challenge', 'solved', challenge_Name + ', Time: ' + time);
     $('#next-courseware-button').removeAttr('disabled');
     $('#next-courseware-button').addClass('animated tada');
     if (!userLoggedIn) {

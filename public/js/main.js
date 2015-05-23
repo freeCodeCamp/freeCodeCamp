@@ -47,28 +47,6 @@ $(document).ready(function() {
     }
   });
 
-  function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash, bonfireName) {
-    $('#complete-bonfire-dialog').modal('show');
-    // Only post to server if there is an authenticated user
-    if ($('.signup-btn-nav').length < 1) {
-      $.post(
-        '/completed-bonfire',
-        {
-          bonfireInfo: {
-            completedWith: didCompleteWith,
-            solution: bonfireSolution,
-            bonfireHash: thisBonfireHash,
-            bonfireName: bonfireName
-          }
-        },
-        function(res) {
-          if (res) {
-            window.location.href = '/bonfires'
-          }
-        });
-    }
-  }
-
   function completedFieldGuide(fieldGuideId) {
     if ($('.signup-btn-nav').length < 1) {
       $.post(
@@ -85,15 +63,6 @@ $(document).ready(function() {
         });
     }
   }
-
-  $('.next-bonfire-button').on('click', function() {
-    var bonfireSolution = myCodeMirror.getValue();
-    var thisBonfireHash = passedBonfireHash || null;
-    var bonfireName = $('#bonfire-name').text();
-    var didCompleteWith = $('#completed-with').val() || null;
-    completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash, bonfireName);
-
-  });
 
   $('.next-field-guide-button').on('click', function() {
     var fieldGuideId = $('#fieldGuideId').text();
@@ -112,66 +81,70 @@ $(document).ready(function() {
     $('#complete-zipline-or-basejump-dialog').modal('show');
   });
 
-  $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
-    editor.focus();
-  });
-
   $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
     editor.focus();
   });
-
+  var challengeTypes = {
+    'HTML_CSS_JQ': 0,
+    'JAVASCRIPT': 1,
+    'VIDEO': 2,
+    'ZIPLINE': 3,
+    'BASEJUMP': 4,
+    'BONFIRE': 5
+  };
   $('#next-courseware-button').on('click', function() {
     if ($('.signup-btn-nav').length < 1) {
       switch (challengeType) {
-        case 0:
-        case 1:
-        case 2:
+        case challengeTypes.HTML_CSS_JQ:
+        case challengeTypes.JAVASCRIPT:
+        case challengeTypes.VIDEO:
+          console.log(challenge_Id);
           $.post(
-            '/completed-courseware/',
+            '/completed-challenge/',
             {
-              coursewareInfo: {
-                coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName
+              challengeInfo: {
+                challengeId: challenge_Id,
+                challengeName: challenge_Name
               }
             }).success(
             function(res) {
               if (res) {
-                window.location.href = '/challenges';
+                window.location.href = '/challenges/next-challenge';
               }
             }
           );
           break;
-        case 3:
+        case challengeTypes.ZIPLINE:
           var didCompleteWith = $('#completed-with').val() || null;
           var publicURL = $('#public-url').val() || null;
           $.post(
             '/completed-zipline-or-basejump/',
             {
-              coursewareInfo: {
-                coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName,
+              challengeInfo: {
+                challengeId: challenge_Id,
+                challengeName: challenge_Name,
                 completedWith: didCompleteWith,
                 publicURL: publicURL,
                 challengeType: challengeType
               }
             }).success(
             function() {
-              window.location.href = '/challenges';
+              window.location.href = '/challenges/next-challenge';
             }).fail(
             function() {
               window.location.href = '/challenges';
             });
           break;
-        case 4:
+        case challengeTypes.BASEJUMP:
           var didCompleteWith = $('#completed-with').val() || null;
           var publicURL = $('#public-url').val() || null;
           var githubURL = $('#github-url').val() || null;
           $.post(
             '/completed-zipline-or-basejump/',
             {
-              coursewareInfo: {
-                coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName,
+              challengeInfo: {
+                challengeId: challenge_Id,
+                challengeName: challenge_Name,
                 completedWith: didCompleteWith,
                 publicURL: publicURL,
                 githubURL: githubURL,
@@ -179,11 +152,31 @@ $(document).ready(function() {
                 verified: false
               }
             }).success(function() {
-              window.location.href = '/challenges';
+              window.location.href = '/challenges/next-challenge';
             }).fail(function() {
               window.location.replace(window.location.href);
             });
           break;
+        case challengeTypes.BONFIRE:
+          var bonfireSolution = myCodeMirror.getValue();
+          var didCompleteWith = $('#completed-with').val() || null;
+          $.post(
+            '/completed-bonfire/',
+            {
+              challengeInfo: {
+                challengeId: challenge_Id,
+                challengeName: challenge_Name,
+                completedWith: didCompleteWith,
+                challengeType: challengeType,
+                solution: bonfireSolution
+              }
+            },
+            function(res) {
+              if (res) {
+                window.location.href = '/challenges/next-challenge';
+              }
+            }
+          );
         default:
           break;
       }
