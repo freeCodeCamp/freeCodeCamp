@@ -16,6 +16,28 @@ $(document).ready(function() {
 
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
+  $('#i-need-help').on('click', function() {
+    var editorValue = editor.getValue();
+    var currentLocation = window.location.href
+    console.log('clicked!');
+    $.post(
+      '/get-help',
+      {
+        payload: {
+          code: editorValue,
+          challenge: currentLocation
+        }
+      },
+      function(res) {
+        console.log(res);
+        if (res) {
+          window.location.href = 'https://freecode.slack.com/messages/help/'
+        }
+      }
+    );
+
+  });
+
   $('.checklist-element').each(function() {
     var checklistElementId = $(this).attr('id');
     if(!!localStorage[checklistElementId]) {
@@ -372,28 +394,28 @@ profileValidation.directive('uniqueUsername', ['$http', function($http) {
 
 profileValidation.directive('existingUsername',
   ['$http', function($http) {
-  return {
-    restrict: 'A',
-    require: 'ngModel',
-    link: function (scope, element, attrs, ngModel) {
-      element.bind('keyup', function (event) {
-        if (element.val().length > 0) {
-          ngModel.$setValidity('exists', false);
-        } else {
-          element.removeClass('ng-dirty');
-          ngModel.$setPristine();
-        }
-        if (element.val()) {
-          $http
-            .get('/api/checkExistingUsername/' + element.val())
-            .success(function (data) {
-              ngModel.$setValidity('exists', data);
-            });
-        }
-      });
-    }
-  };
-}]);
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function (scope, element, attrs, ngModel) {
+        element.bind('keyup', function (event) {
+          if (element.val().length > 0) {
+            ngModel.$setValidity('exists', false);
+          } else {
+            element.removeClass('ng-dirty');
+            ngModel.$setPristine();
+          }
+          if (element.val()) {
+            $http
+              .get('/api/checkExistingUsername/' + element.val())
+              .success(function (data) {
+                ngModel.$setValidity('exists', data);
+              });
+          }
+        });
+      }
+    };
+  }]);
 
 profileValidation.directive('uniqueEmail', ['$http', function($http) {
   return {

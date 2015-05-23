@@ -226,6 +226,9 @@ app.get('/nonprofit-project-instructions', function(req, res) {
     res.redirect(301, '/field-guide/how-do-free-code-camp\'s-nonprofit-projects-work');
 });
 
+app.post('/get-help', resourcesController.getHelp);
+
+
 app.get('/chat', resourcesController.chat);
 
 app.get('/twitch', resourcesController.twitch);

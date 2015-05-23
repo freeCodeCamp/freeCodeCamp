@@ -79,7 +79,8 @@ exports.signout = function(req, res) {
  * Signup page.
  */
 
-exports.getEmailSignin = function(req, res) {
+exports.getEmailSignin = function(req, res) //noinspection Eslint
+{
   if (req.user) {
     return res.redirect('/');
   }
