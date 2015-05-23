@@ -402,7 +402,8 @@
     "tests": [
       "expect(where([10, 20, 30, 40, 50], 35)).to.equal(3);",
       "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);"
-    ]
+    ],
+    "MDNlinks" : ["Array.sort()"]
   },
   {
     "_id": "a3566b1109230028080c9345",
@@ -453,7 +454,7 @@
       "assert.includeMembers(diff([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), ['piglet', 4], 'arrays with numbers and strings');",
       "assert.deepEqual(diff([], ['snuffleupagus', 'cookie monster', 'elmo']), ['snuffleupagus', 'cookie monster', 'elmo'], 'empty array');"
     ],
-    "MDNlinks" : ["String.slice()", "Array.filter()", "Array.indexOf()", "String.concat()"]
+    "MDNlinks" : ["Comparison Operators", "String.slice()", "Array.filter()", "Array.indexOf()", "String.concat()"]
   },
   {
     "_id": "a7f4d8f2483413a6ce226cac",
@@ -467,7 +468,7 @@
     ],
     "difficulty": "2.02",
     "description": [
-      "Convert the number be a roman numeral.",
+      "Convert the given number into a roman numeral.",
       "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\">roman numerals</a> answers should be provided in upper-case."
     ],
     "challengeSeed": [
@@ -625,7 +626,8 @@
     "tests": [
       "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
       "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');"
-    ]
+    ],
+    "MDNlinks" : ["Array.reduce()"]
   },
   {
     "_id": "a6b0bb188d873cb2c8729495",
@@ -718,7 +720,8 @@
       "expect(sumPrimes(10)).to.be.a('number');",
       "expect(sumPrimes(10)).to.equal(17);",
       "expect(sumPrimes(977)).to.equal(73156);"
-    ]
+    ],
+    "MDNlinks" : ["For Loops", "Array.push()"]
   },
   {
     "_id": "ae9defd7acaf69703ab432ea",
@@ -741,7 +744,8 @@
       "expect(smallestCommons([1,5])).to.equal(60);",
       "expect(smallestCommons([5,1])).to.equal(60);",
       "(smallestCommons([1,13])).should.equal(360360);"
-    ]
+    ],
+    "MDNlinks" : ["Smallest Common Multiple"]
   },
   {
     "_id": "a6e40f1041b06c996f7b2406",
@@ -831,30 +835,6 @@
     ]
   },
   {
-    "_id" : "a3f503de51cfab748ff001aa",
-    "name": "Pairwise",
-    "difficulty": "2.16",
-    "description": [
-      "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
-      "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7.",
-      "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!"
-    ],
-    "challengeSeed": [
-      "function pairwise(arr, arg) {",
-      "  return arg;",
-      "}",
-      "",
-      "pairwise([1,4,2,3,0,5], 7);"
-    ],
-    "tests": [
-      "expect(pairwise([1, 4, 2, 3, 0, 5], 7)).to.equal(11);",
-      "expect(pairwise([1, 3, 2, 4], 4)).to.equal(1);",
-      "expect(pairwise([1,1,1], 2)).to.equal(1);",
-      "expect(pairwise([0, 0, 0, 0, 1, 1], 1)).to.equal(10);",
-      "expect(pairwise([], 100)).to.equal(0);"
-    ]
-  },
-  {
     "_id": "a10d2431ad0c6a099a4b8b52",
     "name": "Everything Be True",
     "difficulty": "2.21",
@@ -900,7 +880,7 @@
       "expect(add(2, '3')).to.be.undefined;",
       "expect(add(2)([3])).to.be.undefined;"
     ],
-    "MDNlinks": ["Global Function Object", "Arguments object"]
+    "MDNlinks": ["Global Function Object", "Arguments object", "Closures", "Currying"]
   },
   {
     "_id": "a2f1d72d9b908d0bd72bb9f6",
@@ -965,6 +945,25 @@
     "MDNlinks": ["Math.pow()"]
   },
   {
+    "_id" : "a3f503de51cfab748ff001aa",
+    "name": "Pairwise",
+    "difficulty": "3.51",
+    "description": [
+      "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
+      "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7.",
+      "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!"
+    ],
+    "challengeSeed": "function pairwise(arr, arg) {\n  return arg;\n}\n\npairwise([1,4,2,3,0,5], 7);",
+    "tests": [
+      "expect(pairwise([1, 4, 2, 3, 0, 5], 7)).to.equal(11);",
+      "expect(pairwise([1, 3, 2, 4], 4)).to.equal(1);",
+      "expect(pairwise([1,1,1], 2)).to.equal(1);",
+      "expect(pairwise([0, 0, 0, 0, 1, 1], 1)).to.equal(10);",
+      "expect(pairwise([], 100)).to.equal(0);"
+    ],
+    "MDNlinks" : ["Array.reduce()"]
+  },
+  {
     "_id": "aff0395860f5d3034dc0bfc9",
     "name": "Validate US Telephone Numbers",
     "difficulty": "4.01",
@@ -998,6 +997,7 @@
       "assert.deepEqual(telephoneCheck(\"2(757)6227382\"), false);",
       "assert.deepEqual(telephoneCheck(\"2(757)622-7382\"), false);"
     ],
+    "MDNlinks" : ["RegExp"],
     "challengeSeed": [
       "function telephoneCheck(str) {",
       "  // Good luck!",
@@ -1029,7 +1029,8 @@
       "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
       "assert.deepEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');",
       "assert.deepEqual(sym([1, 1]), [1], 'should return an array of unique values');"
-    ]
+    ],
+    "MDNlinks" : ["Array.reduce()"]
   },
   {
     "_id": "aa2e6f85cab2ab736c9a9b24",
@@ -1066,7 +1067,8 @@
       "assert.deepEqual(drawer(3.26, 100.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['TWENTY', 60.00], ['TEN', 20.00], ['FIVE', 15], ['ONE', 1], ['QUARTER', 0.50], ['DIME', 0.20], ['PENNY', 0.04] ], 'return correct change with multiple coins and bills');",
       "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), 'Insufficient Funds', 'insufficient funds');",
       "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.50], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), \"Closed\", 'cash-in-drawer equals change');"
-    ]
+    ],
+    "MDNlinks" : ["Global Object"]
   },
   {
     "_id": "a56138aff60341a09ed6c480",
@@ -1105,7 +1107,8 @@
       "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], []), [[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']]);",
       "assert.deepEqual(inventory([], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[67, 'Bowling Ball'], [2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [7, 'Toothpaste']]);",
       "assert.deepEqual(inventory([[0, 'Bowling Ball'], [0, 'Dirty Sock'], [0, 'Hair Pin'], [0, 'Microphone']], [[1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [1, 'Bowling Ball'], [1, 'Toothpaste']]), [[1, 'Bowling Ball'], [0, 'Dirty Sock'], [1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [0, 'Microphone'], [1, 'Toothpaste']]);"
-    ]
+    ],
+    "MDNlinks" : ["Global Array Object"]
   },
   {
     "_id": "a7bf700cd123b9a54eef01d5",
@@ -1130,7 +1133,8 @@
       "expect(permAlone('abcdefa')).to.equal(3600);",
       "expect(permAlone('abfdefa')).to.equal(2640);",
       "expect(permAlone('zzzzzzzz')).to.equal(0);"
-    ]
+    ],
+    "MDNlinks" : ["Permutations", "RegExp"]
   },
   {
     "_id": "a19f0fbe1872186acd434d5a",

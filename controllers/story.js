@@ -19,9 +19,10 @@ function hotRank(timeValue, rank) {
    * Ranking...
    * f(ts, 1, rank) = log(10)z + (ts)/45000;
    */
+  var time48Hours = 172800000;
   var hotness;
   var z = Math.log(rank) / Math.log(10);
-  hotness = z + (timeValue / 115200000);
+  hotness = z + (timeValue / time48Hours);
   return hotness;
 
 }

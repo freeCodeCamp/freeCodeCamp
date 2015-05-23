@@ -159,7 +159,9 @@ var trusted = [
   '*.ytimg.com',
   '*.bitly.com',
   'http://cdn.inspectlet.com/',
-  'http://hn.inspectlet.com/'
+  'http://hn.inspectlet.com/',
+  '*.simplyhired.com',
+  '*.simply-partner.com'
 ];
 
 app.use(helmet.csp({
@@ -324,10 +326,14 @@ app.get(
     nonprofitController.returnIndividualNonprofit
 );
 
-app.post(
-  '/update-progress',
-  passportConf.isAuthenticated,
-  userController.updateProgress
+app.get(
+  '/jobs',
+  resourcesController.jobs
+);
+
+app.get(
+  '/jobs-form',
+  resourcesController.jobsForm
 );
 
 app.get('/privacy', function(req, res) {

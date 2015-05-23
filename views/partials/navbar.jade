@@ -15,7 +15,7 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
 
             if user
                 li
-                    a(href='/challenges') Current Challenge
+                    a(href='/challenges') Learn
             li
                 a(href='/map') Map
             if (user && user.sentSlackInvite)
@@ -27,7 +27,9 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             li
                 a(href='/news') News
             li
-                a(href='/field-guide') Field Guide
+                a(href='/field-guide') Guide
+            li.hidden-xs.hidden-sm
+                a(href='/jobs') Jobs
             if !user
                 li &thinsp; &thinsp; &thinsp;
                 li

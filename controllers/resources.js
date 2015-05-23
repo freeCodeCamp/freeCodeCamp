@@ -218,6 +218,18 @@ module.exports = {
     }
   },
 
+  jobs: function jobs(req, res) {
+    res.render('resources/jobs', {
+      title: 'Job Board for Front End Developer and Full Stack JavaScript Developer Jobs'
+    });
+  },
+
+  jobsForm: function jobsForm(req, res) {
+    res.render('resources/jobs-form', {
+      title: 'Employer Partnership Form for Job Postings, Recruitment and Corporate Sponsorships'
+    });
+  },
+
   catPhotoSubmit: function catPhotoSubmit(req, res) {
     res.send(
       'Success! You have submitted your cat photo. Return to your website ' +
@@ -233,7 +245,7 @@ module.exports = {
 
   nonprofitsForm: function nonprofitsForm(req, res) {
     res.render('resources/nonprofits-form', {
-      title: 'A guide to our Nonprofit Projects'
+      title: 'Nonprofit Projects Proposal Form'
     });
   },
 
@@ -245,7 +257,7 @@ module.exports = {
 
   agileProjectManagersForm: function agileProjectManagersForm(req, res) {
     res.render('resources/pmi-acp-agile-project-managers-form', {
-      title: 'Get Agile Project Management Experience for the PMI-ACP'
+      title: 'Agile Project Management Program Application Form'
     });
   },
 
