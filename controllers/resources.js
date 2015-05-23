@@ -592,10 +592,28 @@ module.exports = {
     var challenge = req.body.payload.challenge;
 
     slack.send({
-      text: "User " + userName + " needs help with challenge " +
-      "" + challenge + "!\n```\n" + code + "\n```",
+      text: "*" + userName + "* wants help with " + challenge + "\n```\n"
+        + code + "\n```\n Hey, *" + userName + "*, if no one helps you right " +
+        "away, try typing out your problem in detail to me. Like this: " +
+        "http://en.wikipedia.org/wiki/Rubber_duck_debugging",
       channel: '#help',
-      username: userName
+      username: "Debuggy the Rubber Duck",
+      icon_emoji: ":hatched_chick:"
+    });
+    return res.sendStatus(200);
+
+  },
+
+  getPair: function(req, res, next) {
+    var userName = req.user.profile.username;
+    var challenge = req.body.payload.challenge;
+    console.log('test');
+
+    slack.send({
+      text: "Anyone want to pair with *" + userName + "* on " + challenge + "? (In the meantime, keep coding, *" + userName + "*)",
+      channel: '#letspair',
+      username: "Perry the Matchmaker",
+      icon_emoji: ":dancers:"
     });
     return res.sendStatus(200);
 

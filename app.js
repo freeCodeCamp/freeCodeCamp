@@ -228,6 +228,7 @@ app.get('/nonprofit-project-instructions', function(req, res) {
 
 app.post('/get-help', resourcesController.getHelp);
 
+app.post('/get-pair', resourcesController.getPair);
 
 app.get('/chat', resourcesController.chat);
 

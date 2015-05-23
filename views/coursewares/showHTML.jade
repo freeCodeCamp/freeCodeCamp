@@ -19,7 +19,6 @@ block content
     script(src='/js/lib/codemirror/mode/css/css.js')
     script(src='/js/lib/codemirror/mode/htmlmixed/htmlmixed.js')
     .row.courseware-height
-        .btn.btn-warning#i-need-help I need help!
         .col-xs-12.col-sm-12.col-md-3.col-lg-3
             .well
                 .row
@@ -44,6 +43,10 @@ block content
                     |  Go to my next challenge
                     br
                     |  (ctrl + enter)
+                .button-spacer
+                a.btn.btn-warning.btn-big.btn-block#i-want-help Get help
+                .button-spacer
+                a.btn.btn-success.btn-big.btn-block#i-want-to-pair Find a Pair
                 script.
                     var userLoggedIn = true;
             - else

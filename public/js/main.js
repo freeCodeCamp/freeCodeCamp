@@ -16,26 +16,40 @@ $(document).ready(function() {
 
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
-  $('#i-need-help').on('click', function() {
+  $('#i-want-help').on('click', function() {
     var editorValue = editor.getValue();
-    var currentLocation = window.location.href
-    console.log('clicked!');
+    var currentLocation = window.location.href;
     $.post(
       '/get-help',
       {
         payload: {
           code: editorValue,
+          challenge: currentLocation,
+        }
+      },
+      function(res) {
+        if (res) {
+          window.open('https://freecode.slack.com/messages/help/', '_blank')
+        }
+      }
+    );
+  });
+
+  $('#i-want-to-pair').on('click', function() {
+    var currentLocation = window.location.href;
+    $.post(
+      '/get-pair',
+      {
+        payload: {
           challenge: currentLocation
         }
       },
       function(res) {
-        console.log(res);
         if (res) {
-          window.location.href = 'https://freecode.slack.com/messages/help/'
+          window.open('https://freecode.slack.com/messages/letspair/', '_blank')
         }
       }
     );
-
   });
 
   $('.checklist-element').each(function() {
