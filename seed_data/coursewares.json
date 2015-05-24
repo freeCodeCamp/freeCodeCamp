@@ -47,8 +47,7 @@
       "Let's look at our Challenge Map. Click on the \"Map\" button in the upper right hand corner. This map shows all the challenges that will teach you how to code.",
       "You should complete all these challenges in order.",
       "Once you finish these Waypoint challenges, you'll move on to Bonfires (algorithm practice), then Ziplines (front end development practice) and finally Basejumps (full stack development practice). After that, you'll start building projects for nonprofits.",
-      "This challenge map is just for your reference. You can always just press the \"Learn\" button, and it will take you to your next challenge.",
-      "Finally, please note that our open-source curriculum is a work in progress. Our volunteer community is constantly improving it. If you encounter a bug or something you think is unnecessarily hard, let us know: <a href='https://github.com/FreeCodeCamp/freecodecamp/issues'>https://github.com/FreeCodeCamp/freecodecamp/issues</a>."
+      "This challenge map is just for your reference. You can always just press the \"Learn\" button, and it will take you to your next challenge."
     ],
     "challengeType": 2,
     "tests": []
