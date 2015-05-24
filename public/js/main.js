@@ -24,7 +24,7 @@ $(document).ready(function() {
       {
         payload: {
           code: editorValue,
-          challenge: currentLocation,
+          challenge: currentLocation
         }
       },
       function(res) {
@@ -33,6 +33,27 @@ $(document).ready(function() {
         }
       }
     );
+  });
+
+  $('#i-want-help-editorless').on('click', function() {
+    var currentLocation = window.location.href;
+    $.post(
+      '/get-help',
+      {
+        payload: {
+          challenge: currentLocation
+        }
+      },
+      function(res) {
+        if (res) {
+          window.open('https://freecode.slack.com/messages/help/', '_blank')
+        }
+      }
+    );
+  });
+
+  $('#report-issue').on('click', function() {
+    window.open('https://github.com/freecodecamp/freecodecamp/issues/new?title=Challenge '+ window.location.href +' has an issue &body=Please%20tell%20us%20in%20detail%20here%20how%20we%20can%20make%20this%20challenge%20better.', '_blank')
   });
 
   $('#i-want-to-pair').on('click', function() {

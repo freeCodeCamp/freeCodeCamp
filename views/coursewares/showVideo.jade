@@ -27,6 +27,14 @@ block content
                         var userLoggedIn = false;
                 br
             .button-spacer
+            .btn-group.input-group.btn-group-justified
+                .btn.btn-success#i-want-help-editorless
+                    i.fa.fa-medkit
+                        | &nbsp; Get help from our community
+                .btn.btn-success#report-issue
+                    i.fa.fa-bug
+                        | &nbsp; Report a bug or typo in this challenge
+            .button-spacer
         script(type="text/javascript").
 
                 var controlEnterHandler = function(e) {

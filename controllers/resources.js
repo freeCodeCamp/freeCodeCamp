@@ -594,13 +594,13 @@ module.exports = {
     var challenge = req.body.payload.challenge;
 
     slack.send({
-      text: "*" + userName + "* wants help with " + challenge + " " +
+      text: "*" + userName + "* wants help with " + challenge + ". " +
         code +  "Hey, *" + userName + "*, if no one helps you right " +
         "away, try typing out your problem in detail to me. Like this: " +
         "http://en.wikipedia.org/wiki/Rubber_duck_debugging",
       channel: '#help',
       username: "Debuggy the Rubber Duck",
-      icon_emoji: ":hatched_chick:"
+      icon_url: "https://pbs.twimg.com/profile_images/3609875545/569237541c920fa78d78902069615caf.jpeg"
     });
     return res.sendStatus(200);
   },
@@ -608,15 +608,18 @@ module.exports = {
   getPair: function(req, res, next) {
     var userName = req.user.profile.username;
     var challenge = req.body.payload.challenge;
-    console.log('test');
-
     slack.send({
-      text: "Anyone want to pair with *" + userName + "* on " + challenge + "? (In the meantime, keep coding, *" + userName + "*)",
+      text: "Anyone want to pair with *" + userName + "* on " + challenge +
+      "?\nMake sure you install Screen Hero here:" +
+      "http://freecodecamp.com/field-guide/how-do-i-install-screenhero\n" +
+      "Then start your pair program session with *" + userName +
+      "* by typing \"/hero @" + userName + "\" into Slack.\n* And"+ userName +
+      "*, be sure to launch Screen Hero, then keep coding." +
+      "Another camper may pair with you soon.",
       channel: '#letspair',
-      username: "Perry the Matchmaker",
-      icon_emoji: ":dancers:"
+      username: "Companion Cube",
+      icon_url: "https://lh3.googleusercontent.com/-f6xDPDV2rPE/AAAAAAAAAAI/AAAAAAAAAAA/mdlESXQu11Q/photo.jpg"
     });
     return res.sendStatus(200);
-
   }
 };
