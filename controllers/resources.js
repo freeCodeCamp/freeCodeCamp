@@ -436,12 +436,12 @@ module.exports = {
     }
   },
 
-  allFieldGuideNames: function() {
+  allFieldGuideNamesAndIds: function() {
     if (allFieldGuideNames) {
       return allFieldGuideNames;
     } else {
       allFieldGuideNames = fieldGuides.map(function (elem) {
-        return { name: elem.name };
+        return { name: elem.name, id: elem._id };
       });
       return allFieldGuideNames;
     }

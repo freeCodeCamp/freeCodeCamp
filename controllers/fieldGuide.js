@@ -54,16 +54,16 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
 };
 
 exports.showAllFieldGuides = function(req, res) {
-  var data = {};
-  data.fieldGuideList = resources.allFieldGuideNames();
-  data.fieldGuideIds = resources.allFieldGuideIds();
+  var allFieldGuideNamesAndIds = resources.allFieldGuideNamesAndIds();
 
+  var completedFieldGuides = [];
   if (req.user && req.user.completedFieldGuides) {
-    data.completedFieldGuides = req.user.completedFieldGuides;
-  } else {
-    data.completedFieldGuides = [];
+    completedFieldGuides = req.user.completedFieldGuides;
   }
-  res.send(data);
+  res.render('field-guide/all-articles', {
+    allFieldGuideNamesAndIds: allFieldGuideNamesAndIds,
+    completedFieldGuides: completedFieldGuides
+  });
 };
 
 exports.returnNextFieldGuide = function(req, res, next) {

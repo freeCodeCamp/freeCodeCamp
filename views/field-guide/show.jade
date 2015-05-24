@@ -13,18 +13,11 @@ block content
                     if user && user.uncompletedFieldGuides.length > 0
                         .next-field-guide-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
                         .ten-pixel-break
-                    #showAllButton.btn.btn-info.btn-big.btn-block Show me all articles
+                    a.btn.btn-info.btn-big.btn-block(href='/field-guide/all-articles') Show me all articles
                     if !user
                         .ten-pixel-break
-                        a.btn.btn-big.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+                        a.btn.btn-big.signup-btn.btn-block(href='/login') Start learning to code (it's free)
         .spacer
-    #show-all-dialog.modal(tabindex='-1')
-        .modal-dialog.animated.fadeInUp.fast-animation
-            .modal-content
-                .modal-header.all-list-header Field Guide Articles
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    include ../partials/field-guide
     #fieldGuideId.hidden= fieldGuideId
     script.
         $(document).ready(function() {

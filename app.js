@@ -502,8 +502,7 @@ app.get('/api/codepen/twitter/:screenName', resourcesController.codepenResources
 /**
  * Field Guide related routes
  */
-app.get('/field-guide/getFieldGuideList', fieldGuideController.showAllFieldGuides);
-
+app.get('/field-guide/all-articles', fieldGuideController.showAllFieldGuides);
 
 app.get('/field-guide/:fieldGuideName',
         fieldGuideController.returnIndividualFieldGuide

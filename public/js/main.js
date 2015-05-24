@@ -220,10 +220,6 @@ $(document).ready(function() {
     }
   });
 
-  $('#showAllButton').on('click', function() {
-    $('#show-all-dialog').modal('show');
-  });
-
   $('.next-challenge-button').on('click', function() {
     l = location.pathname.split('/');
     window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
