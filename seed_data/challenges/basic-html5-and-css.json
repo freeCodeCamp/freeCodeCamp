@@ -1,10 +1,10 @@
 {
-  "name": "Basic HTML5 and CSS",
+  "name": "Waypoint: Basic HTML5 and CSS",
   "order" : 0.002,
   "challenges": [
     {
       "_id": "bd7123c8c441eddfaeb5bdef",
-      "name": "Use HTML Elements",
+      "name": "Waypoint: Use HTML Elements",
       "difficulty": 0.0085,
       "description": [
         "Welcome to Free Code Camp's first coding challenge! Click on the button below for further instructions.",
@@ -25,7 +25,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf0887a",
-      "name": "Use the h2 Element",
+      "name": "Waypoint: Use the h2 Element",
       "difficulty": 0.010,
       "description": [
         "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element.",
@@ -44,7 +44,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08801",
-      "name": "Use the Paragraph Element",
+      "name": "Waypoint: Use the Paragraph Element",
       "difficulty": 0.011,
       "description": [
         "Create a paragraph element below the h2 element, and give it the text \"Hello Paragraph\".",
@@ -62,7 +62,7 @@
     },
     {
       "_id": "bad87fee1348bd9aeaf08801",
-      "name": "Add a Line Break to Visually Separate Elements",
+      "name": "Waypoint: Add a Line Break to Visually Separate Elements",
       "difficulty": 0.012,
       "description": [
         "Add a <code>line break</code> between the <code>&#60;h2&#62</code> and <code>&#60;p&#62</code> elements.",
@@ -82,7 +82,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08802",
-      "name": "Uncomment HTML",
+      "name": "Waypoint: Uncomment HTML",
       "difficulty": 0.013,
       "description": [
         "Uncomment the <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
@@ -110,7 +110,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08804",
-      "name": "Comment out HTML",
+      "name": "Waypoint: Comment out HTML",
       "difficulty": 0.014,
       "description": [
         "Comment out the <code>h1</code> element and the <code>p</code> element, but leave the <code>h2</code> element uncommented.",
@@ -137,7 +137,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08833",
-      "name": "Use Lorem Ipsum Text as a Placeholder",
+      "name": "Waypoint: Use Lorem Ipsum Text as a Placeholder",
       "difficulty": 0.015,
       "description": [
         "Change the text in the <code>p</code> element to use the first few words of <code>Kitty Ipsum</code> text.",
@@ -162,7 +162,7 @@
     },
     {
       "_id": "bad87fed1348bd9aedf08833",
-      "name": "Delete HTML Elements",
+      "name": "Waypoint: Delete HTML Elements",
       "difficulty": 0.016,
       "description": [
         "Delete the h1 and br elements so we can simplify our view.",
@@ -188,7 +188,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08803",
-      "name": "Change the Color of Text",
+      "name": "Waypoint: Change the Color of Text",
       "difficulty": 0.017,
       "description": [
         "Change the <code>h2</code> element's style so that its text color is red.",
@@ -208,7 +208,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08805",
-      "name": "Use CSS Selectors to Style Elements",
+      "name": "Waypoint: Use CSS Selectors to Style Elements",
       "difficulty": 0.018,
       "description": [
         "Delete your <code>h2</code> element's <code>style</code> tag and write the CSS to make all <code>h2</code> elements blue.",
@@ -232,7 +232,7 @@
     },
     {
       "_id": "bad87fee1348bd9aecf08806",
-      "name": "Use a CSS Class to Style an Element",
+      "name": "Waypoint: Use a CSS Class to Style an Element",
       "difficulty": 0.019,
       "description": [
         "Create a CSS class called \"red-text\" and apply it to your <code>h2</code> element.",
@@ -263,7 +263,7 @@
     },
     {
       "_id": "bad87fee1348bd9aefe08806",
-      "name": "Use a CSS Class to Style Multiple Elements",
+      "name": "Waypoint: Use a CSS Class to Style Multiple Elements",
       "difficulty": 0.020,
       "description": [
         "Apply the \"red-text\" class to the <code>h2</code> and <code>p</code> elements.",
@@ -290,7 +290,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08806",
-      "name": "Change the Font Size of an Element",
+      "name": "Waypoint: Change the Font Size of an Element",
       "difficulty": 0.021,
       "description": [
         "Create a second <code>p</code> element. Then set the font size of all <code>p</code> elements to 16 pixels.",
@@ -317,7 +317,7 @@
     },
     {
       "_id": "bad87fee1348bd9aede08807",
-      "name": "Set the Font Family of an Element",
+      "name": "Waypoint: Set the Font Family of an Element",
       "difficulty": 0.022,
       "description": [
         "Make all paragraph elements use the \"Monospace\" font.",
@@ -347,7 +347,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08807",
-      "name": "Import a Google Font",
+      "name": "Waypoint: Import a Google Font",
       "difficulty": 0.023,
       "description": [
         "Apply the <code>font-family</code> of \"Lobster\" to your <code>h2</code> element.",
@@ -380,7 +380,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08808",
-      "name": "Specify How Fonts Should Degrade",
+      "name": "Waypoint: Specify How Fonts Should Degrade",
       "difficulty": 0.024,
       "description": [
         "Make all your <code>h2</code> elements use \"Lobster\" as their font family, but degrade to the \"Monospace\" font when the \"Lobster\" font isn't available.",
@@ -419,7 +419,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08809",
-      "name": "Using Important to Override Styles",
+      "name": "Waypoint: Using Important to Override Styles",
       "difficulty": 0.025,
       "description": [
         "Create a \"blue-text\" class that gives an element the font-color of blue. Also create a \"urgently-red\" class that give an element the font-color of red, but use <code>!important</code> to ensure the element is rendered as being red. Apply both classes to your <code>h2</code> element.",
@@ -462,7 +462,7 @@
 
     {
       "_id": "bad87fee1348bd9aedf08812",
-      "name": "Add an Image to your Website",
+      "name": "Waypoint: Add an Image to your Website",
       "difficulty": 0.026,
       "description": [
         "Use an <code>img</code> element to add the image <code>http://bit.ly/fcc-kittens</code> to your website.",
@@ -500,7 +500,7 @@
     },
     {
       "_id": "bad87fee1348bd9acdf08812",
-      "name": "Specify an Image Size",
+      "name": "Waypoint: Specify an Image Size",
       "difficulty": 0.027,
       "description": [
         "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.",
@@ -539,7 +539,7 @@
     },
     {
       "_id": "bad87fee1348bd9bedf08813",
-      "name": "Add a Border Around an Element",
+      "name": "Waypoint: Add a Border Around an Element",
       "difficulty": 0.028,
       "description": [
         "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border around an HTML element, and apply it to your cat photo.",
@@ -583,7 +583,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08814",
-      "name": "Add Rounded Corners with a Border Radius",
+      "name": "Waypoint: Add Rounded Corners with a Border Radius",
       "difficulty": 0.029,
       "description": [
         "Give your cat photo a border radius of 10 pixels.",
@@ -632,7 +632,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08815",
-      "name": "Make an Image Circular with a Border Radius",
+      "name": "Waypoint: Make an Image Circular with a Border Radius",
       "difficulty": 0.030,
       "description": [
         "Give your cat photo a <code>border-radius</code> of 50%.",
@@ -680,7 +680,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08816",
-      "name": "Use an Anchor Tag to Link to an External Page",
+      "name": "Waypoint: Use an Anchor Tag to Link to an External Page",
       "difficulty": 0.031,
       "description": [
         "Create an <code>anchor</code> element that links to http://catphotoapp.com and has \"cat photos\" as its anchor text (link text).",
@@ -731,7 +731,7 @@
     },
     {
       "_id": "bad87fee1348bd9aede08817",
-      "name": "Wrap an Anchor Element within a Paragraph",
+      "name": "Waypoint: Wrap an Anchor Element within a Paragraph",
       "difficulty": 0.032,
       "description": [
         "Now wrap your anchor element within a <code>paragraph</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
@@ -786,7 +786,7 @@
 
     {
       "_id": "bad87fee1348bd9aedf08817",
-      "name": "Make Dead Links using the Hash Symbol",
+      "name": "Waypoint: Make Dead Links using the Hash Symbol",
       "difficulty": 0.033,
       "description": [
         "Use the hash symbol(#) to turn your <code>anchor</code> element's link into a dead link.",
@@ -838,7 +838,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08820",
-      "name": "Turn an Image into a Link",
+      "name": "Waypoint: Turn an Image into a Link",
       "difficulty": 0.034,
       "description": [
         "Wrap your <code>img</code> element inside an anchor element with a dead link.",
@@ -891,7 +891,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08818",
-      "name": "Add Alt Text to an image",
+      "name": "Waypoint: Add Alt Text to an image",
       "difficulty": 0.035,
       "description": [
         "Add the <code>alt text</code> \"A cute orange cat lying on its back\" to our cat photo",
@@ -945,7 +945,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedf08827",
-      "name": "Create a Bulleted Unordered List",
+      "name": "Waypoint: Create a Bulleted Unordered List",
       "difficulty" : 0.036,
       "description": [
         "Replace the paragraph elements with an unordered list of three things that cats love.",
@@ -999,7 +999,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedf08828",
-      "name": "Create an Ordered List",
+      "name": "Waypoint: Create an Ordered List",
       "difficulty" : 0.037,
       "description": [
         "Create an <code>ordered list</code> of the the top 3 things cats hate the most.",
@@ -1059,7 +1059,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedf08829",
-      "name": "Create a Text Field",
+      "name": "Waypoint: Create a Text Field",
       "difficulty" : 0.038,
       "description": [
         "Now we'll create a web form. Create a text field under your lists.",
@@ -1121,7 +1121,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedf08830",
-      "name": "Add Placeholder Text to a Text Field",
+      "name": "Waypoint: Add Placeholder Text to a Text Field",
       "difficulty" : 0.039,
       "description": [
         "Add the placeholder text \"type a cat photo URL here\" to your text field.",
@@ -1184,7 +1184,7 @@
 
     {
       "_id" : "bad87fee1348bd9aede08830",
-      "name": "Create a basic Form Element",
+      "name": "Waypoint: Create a basic Form Element",
       "difficulty" : 0.040,
       "description": [
         "Wrap your text field in a <code>&#60;form&#62;</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element.",
@@ -1248,7 +1248,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedd08830",
-      "name": "Add a Submit Button to a Form",
+      "name": "Waypoint: Add a Submit Button to a Form",
       "difficulty" : 0.041,
       "description": [
         "Add a submit button to your form field.",
@@ -1313,7 +1313,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedc08830",
-      "name": "Use HTML5 to Make a Field Required",
+      "name": "Waypoint: Use HTML5 to Make a Field Required",
       "difficulty" : 0.042,
       "description": [
         "Make it required for your user to input text into your form before being able to submit it.",
@@ -1379,7 +1379,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedf08834",
-      "name": "Create a Set of Radio Buttons",
+      "name": "Waypoint: Create a Set of Radio Buttons",
       "difficulty" : 0.043,
       "description": [
         "Add to your form a pair of <code>radio buttons</code> that are wrapped in <code>label</code> elements and share a <code>name</code> attribute, with the options of \"indoor\" and \"outdoor\".",
@@ -1450,7 +1450,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedf08835",
-      "name": "Create a Set of Checkboxes",
+      "name": "Waypoint: Create a Set of Checkboxes",
       "difficulty" : 0.044,
       "description": [
         "Add to your form a set of three <code>checkbox</code> elements that are wrapped in <code>label</code> elements and share the same <code>name</code> attribute.",
@@ -1519,7 +1519,7 @@
 
     {
       "_id" : "bad87fee1348bd9aede08835",
-      "name": "Clean up your form using Linebreaks",
+      "name": "Waypoint: Clean up your form using Linebreaks",
       "difficulty" : 0.045,
       "description": [
         "Clean up your form by adding linebreaks between form elements.",
@@ -1589,7 +1589,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedd08835",
-      "name": "Check Radio Buttons and Checkboxes by Default",
+      "name": "Waypoint: Check Radio Buttons and Checkboxes by Default",
       "difficulty" : 0.046,
       "description": [
         "Set one of your radio buttons and one of your checkboxes to be checked by default.",

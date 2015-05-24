@@ -1,10 +1,10 @@
 {
-  "name": "Basic JavaScript",
+  "name": "Waypoint: Basic JavaScript",
   "order" : 0.006,
   "challenges": [
     {
       "_id": "bd7129d8c441eddfaeb5bdef",
-      "name": "Build an Adventure Game",
+      "name": "Waypoint: Build an Adventure Game",
       "difficulty": 0.24,
       "challengeSeed": "114604814",
       "description": [
@@ -15,11 +15,12 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-x9DnD/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-x9DnD/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7130d8c441eddfaeb5bdef",
-      "name": "Build Rock Paper Scissors",
+      "name": "Waypoint: Build Rock Paper Scissors",
       "difficulty": 0.25,
       "challengeSeed": "114604815",
       "description": [
@@ -28,11 +29,12 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-Bthev-mskY8/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-Bthev-mskY8/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7131d8c441eddfaeb5bdef",
-      "name": "Learn JavaScript For Loops",
+      "name": "Waypoint: Learn JavaScript For Loops",
       "difficulty": 0.26,
       "challengeSeed": "114614220",
       "description": [
@@ -41,11 +43,12 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-XEDZA/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-XEDZA/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7132d8c441eddfaeb5bdef",
-      "name": "Learn JavaScript While Loops",
+      "name": "Waypoint: Learn JavaScript While Loops",
       "difficulty": 0.27,
       "challengeSeed": "114612889",
       "description": [
@@ -53,11 +56,12 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7133d8c441eddfaeb5bdef",
-      "name": "Learn Control Flow",
+      "name": "Waypoint: Learn Control Flow",
       "difficulty": 0.28,
       "challengeSeed": "114612888",
       "description": [
@@ -67,11 +71,12 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-ZA2rb/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ZA2rb/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7134d8c441eddfaeb5bdef",
-      "name": "Build a Contact List",
+      "name": "Waypoint: Build a Contact List",
       "difficulty": 0.29,
       "challengeSeed": "114612887",
       "description": [
@@ -80,11 +85,12 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7135d8c441eddfaeb5bdef",
-      "name": "Build an Address Book",
+      "name": "Waypoint: Build an Address Book",
       "difficulty": 0.30,
       "challengeSeed": "114612885",
       "description": [
@@ -93,11 +99,12 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/building-an-address-book/0/1?curriculum_id=506324b3a7dffd00020bf661' target='_blank'>http://www.codecademy.com/courses/building-an-address-book/0/1?curriculum_id=506324b3a7dffd00020bf661</a>."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7136d8c441eddfaeb5bdef",
-      "name": "Build a Cash Register",
+      "name": "Waypoint: Build a Cash Register",
       "difficulty": 0.31,
       "challengeSeed": "114612882",
       "description": [
@@ -106,11 +113,12 @@
         "Be sure to also complete the final section: <a href='http://www.codecademy.com/courses/close-the-super-makert/0/1' target='_blank'>http://www.codecademy.com/courses/close-the-super-makert/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7118d8c441eddfaeb5bdef",
-      "name": "Discover Chrome's DevTools",
+      "name": "Waypoint: Discover Chrome's DevTools",
       "difficulty": 0.32,
       "challengeSeed": "110752743",
       "description": [
@@ -120,11 +128,12 @@
         "Go to <a href='http://discover-devtools.codeschool.com' target='_blank'>http://discover-devtools.codeschool.com</a> and complete this short course."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7138d8c441eddfaeb5bdef",
-      "name": "Learn Regular Expressions",
+      "name": "Waypoint: Learn Regular Expressions",
       "difficulty": 0.33,
       "challengeSeed": "112547802",
       "description": [
@@ -134,11 +143,12 @@
         "Note that you can click \"continue\" to move on to the next step as soon as all the tasks have green check marks beside them. You can often do this just by using the wildcard \"dot\" operator, but try to use the techniques that each lesson recommends."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+    "challengeType": 0
     },
     {
       "_id": "bd7139d8c441eddfaeb5bdef",
-      "name": "Pair Program on Bonfires",
+      "name": "Waypoint: Pair Program on Bonfires",
       "difficulty": 0.44,
       "challengeSeed": "119657641",
       "description": [
@@ -161,7 +171,8 @@
         "Mark this challenge as complete and move on to the Bonfires."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "challengeType": 0
     }
   ]
 }

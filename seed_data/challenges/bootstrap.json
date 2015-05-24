@@ -74,7 +74,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd8acde08812",
@@ -146,9 +147,9 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
-
     {
       "_id": "bad87fee1348cd8acdf08812",
       "name": "Create a Bootstrap Button",
@@ -218,7 +219,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348cd8acef08812",
@@ -291,7 +293,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348cd8acef08811",
@@ -364,7 +367,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348cd8acef08813",
@@ -438,7 +442,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348ce8acef08814",
@@ -513,7 +518,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad88fee1348ce8acef08815",
@@ -589,7 +595,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -675,7 +682,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -746,7 +754,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -820,7 +829,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -895,7 +905,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -969,7 +980,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1050,7 +1062,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1141,7 +1154,8 @@
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1232,7 +1246,8 @@
         "  <input type='text' class='form-control' placeholder='cat photo URL' required>",
         "  <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
         "</form>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1283,7 +1298,8 @@
         "  <h5 class=\"box red-box\">padding</h5>",
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08822",
@@ -1335,7 +1351,8 @@
         "  <h5 class=\"box red-box\">padding</h5>",
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08823",
@@ -1386,7 +1403,8 @@
         "  <h5 class=\"box red-box\">padding</h5>",
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08824",
@@ -1438,7 +1456,8 @@
         "  <h5 class=\"box red-box\">padding</h5>",
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1248bd9aedf08824",
@@ -1490,7 +1509,8 @@
         "  <h5 class=\"box red-box\">padding</h5>",
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
-      ]
+      ],
+      "challengeType": 0
     },
     {
       "_id": "bad87fee1348bd9aedf08826",
@@ -1539,7 +1559,8 @@
         "  <h5 class=\"box red-box\">padding</h5>",
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
@@ -1554,7 +1575,8 @@
       ],
       "challengeSeed": [
 
-      ]
+      ],
+      "challengeType": 0
     },
 
     {
