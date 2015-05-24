@@ -77,9 +77,9 @@
         "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
         "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
         "Give your workspace a name.",
-        "Choose Node.js in the selection area below the name field",
-        "Click the Create button",
-        "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button",
+        "Choose Node.js in the selection area below the name field.",
+        "Click the Create button.",
+        "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button.",
         "Click the \"Start Editing\" button.",
         "In the lower right hand corner you should see a terminal window. In this window use the following commands. You don't need to know what these mean at this point.",
         "Run this command: <code>sudo npm install how-to-npm -g</code>",
@@ -96,19 +96,45 @@
       "difficulty": 0.40,
       "challengeSeed": "126411561",
       "description": [
-        "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
+        "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud. We'll do the first 7 steps of Node School's LearnYouNode challenges.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
         "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
         "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
         "Give your workspace a name.",
-        "Choose Node.js in the selection area below the name field",
-        "Click the Create button",
-        "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button",
+        "Choose Node.js in the selection area below the name field.",
+        "Click the Create button.",
+        "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button.",
         "Click the \"Start Editing\" button.",
         "In the lower right hand corner you should see a terminal window. In this window use the following commands. You don't need to know what these mean at this point.",
         "Run this command: <code>sudo npm install learnyounode -g</code>",
         "Now start this tutorial by running <code>learnyounode</code>",
         "Note that you can resize the c9.io's windows by dragging their borders.",
+        "Follow the directions and work through the tutorial's steps 1 through 7 before moving on."
+      ],
+      "challengeType": 2,
+      "tests": []
+    },
+    {
+      "_id": "bd7153d8c441eddfaeb5bdfe",
+      "name": "Continue working with Node.js Servers",
+      "difficulty": 0.41,
+      "challengeSeed": "126411561",
+      "description": [
+        "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 8 through 10.",
+        "Return to the c9.io workspace you created Now start this tutorial by running <code>learnyounode</code>",
+        "Follow the directions and work through all of the the tutorial's steps before moving on."
+      ],
+      "challengeType": 2,
+      "tests": []
+    },
+    {
+      "_id": "bd7153d8c441eddfaeb5bdfd",
+      "name": "Finish working with Node.js Servers",
+      "difficulty": 0.42,
+      "challengeSeed": "126411561",
+      "description": [
+        "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 11 through 13.",
+        "Return to the c9.io workspace you created for the previous LearnYouNode challenges and start the tutorial by running <code>learnyounode</code>",
         "Follow the directions and work through all of the the tutorial's steps before moving on."
       ],
       "challengeType": 2,
@@ -117,7 +143,7 @@
     {
       "_id": "bd7153d8c441eddfaeb5bd1f",
       "name": "Build Web Apps with Express.js",
-      "difficulty": 0.41,
+      "difficulty": 0.43,
       "challengeSeed": "126411559",
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
@@ -125,9 +151,9 @@
         "Open up <a href='http://c9.io' target='_blank'>http://c9.io</a> and sign in to your account.",
         "Click on Create New Workspace at the top right of the c9.io page, then click on the \"Create a new workspace\" popup that appears below it the button after you click on it.",
         "Give your workspace a name.",
-        "Choose Node.js in the selection area below the name field",
-        "Click the Create button",
-        "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button",
+        "Choose Node.js in the selection area below the name field.",
+        "Click the Create button.",
+        "Wait for the workspace to finish processing and select it on the left sidebar, below the Create New Workspace button.",
         "Click the \"Start Editing\" button.",
         "In the lower right hand corner you should see a terminal window. In this window use the following commands. You don't need to know what these mean at this point.",
         "Run this command: <code>git clone http://github.com/reddock/fcc_express && chmod 744 fcc_express/setup.sh && fcc_express/setup.sh && source ~/.profile</code>",
@@ -141,7 +167,7 @@
     {
       "_id": "bd7140d8c441eddfaeb5bdef",
       "name": "Manage Source Code with Git",
-      "difficulty": 0.43,
+      "difficulty": 0.44,
       "challengeSeed": "114635309",
       "description": [
         "Version Control Systems like Git ensure that, no matter how you experiment with your code, you can always roll back your app to a stable previous state.",

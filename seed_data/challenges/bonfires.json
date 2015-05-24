@@ -44,7 +44,8 @@
       "description": [
         "Reverse the provided string.",
         "You may need to turn the string into an array before you can reverse it.",
-        "Your result must be a string."
+        "Your result must be a string.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function reverseString(str) {",
@@ -70,7 +71,8 @@
         "Return the factorial of the provided integer.",
         "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
         "Factorials are often represented with the shorthand notation n!",
-        "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f"
+        "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function factorialize(num) {",
@@ -90,7 +92,8 @@
         "Return true if the given string is a palindrome. Otherwise, return false.",
         "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
         "You'll need to remove punctuation and turn everything lower case in order to check for palindromes.",
-        "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others."
+        "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "tests": [
         "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
@@ -120,7 +123,8 @@
       "difficulty": "1.04",
       "description": [
         "Return the length of the longest word in the provided sentence.",
-        "Your response should be a number."
+        "Your response should be a number.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function findLongestWord(str) {",
@@ -145,7 +149,8 @@
       "difficulty": "1.05",
       "description": [
         "Return the provided string with the first letter of each word capitalized.",
-        "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'."
+        "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function titleCase(str) {",
@@ -170,7 +175,8 @@
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
-        "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays."
+        "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function largestOfFour(arr) {",
@@ -193,7 +199,8 @@
       "name": "Confirm the Ending",
       "difficulty": "1.07",
       "description": [
-        "Check if a string (first argument) ends with the given target string (second argument)."
+        "Check if a string (first argument) ends with the given target string (second argument).",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
 
       "challengeSeed": [
@@ -218,7 +225,8 @@
       "name": "Repeat a string repeat a string",
       "difficulty": "1.08",
       "description": [
-        "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number."
+        "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function repeat(str, num) {",
@@ -242,7 +250,8 @@
       "difficulty": "1.09",
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
-        "Note that the three dots at the end add to the string length."
+        "Note that the three dots at the end add to the string length.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function truncate(str, num) {",
@@ -265,7 +274,8 @@
       "name": "Chunky Monkey",
       "difficulty": "1.10",
       "description": [
-        "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array."
+        "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function chunk(arr, size) {",
@@ -288,7 +298,8 @@
       "name": "Slasher Flick",
       "difficulty": "1.11",
       "description": [
-        "Return the remaining elements of an array after chopping off n elements from the head."
+        "Return the remaining elements of an array after chopping off n elements from the head.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function slasher(arr, howMany) {",
@@ -314,7 +325,8 @@
         "Return true if the string in the first element of the array contains the letters of the string in the second element of the array.",
         "For example, ['hello', 'Hello'], should return true because all of the letters in the second string are present in the first, ignoring case.",
         "The arguments ['hello', 'hey'] should return false because the string 'hello' does not contain a 'y'.",
-        "Another example, ['Alien', 'line'], should return true because all of the letters in 'line' are present in 'Alien'."
+        "Another example, ['Alien', 'line'], should return true because all of the letters in 'line' are present in 'Alien'.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function mutation(arr) {",
@@ -339,7 +351,8 @@
       "difficulty": "1.50",
       "description": [
         "Remove all falsey values from an array.",
-        "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN."
+        "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function bouncer(arr) {",
@@ -362,7 +375,8 @@
       "name":"Where art thou",
       "difficulty":"1.55",
       "description":[
-        "Make a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument)."
+        "Make a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument).",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function where(collection, source) {",
@@ -385,7 +399,8 @@
       "name":"Seek and Destroy",
       "difficulty":"1.60",
       "description":[
-        "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments."
+        "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function destroyer(arr) {",
@@ -408,7 +423,8 @@
       "difficulty": "1.61",
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
-        "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index)."
+        "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index).",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function where(arr, num) {",
@@ -429,7 +445,8 @@
       "difficulty": "2.00",
       "description": [
         "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
-        "The lowest number will not always come first."
+        "The lowest number will not always come first.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function sumAll(arr) {",
@@ -453,7 +470,8 @@
       "name": "Diff Two Arrays",
       "difficulty": "2.01",
       "description": [
-        "Compare two arrays and return a new array with any items not found in both of the original arrays."
+        "Compare two arrays and return a new array with any items not found in both of the original arrays.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function diff(arr1, arr2) {",
@@ -487,7 +505,8 @@
       "difficulty": "2.02",
       "description": [
         "Convert the number be a roman numeral.",
-        "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\">roman numerals</a> answers should be provided in upper-case."
+        "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\">roman numerals</a> answers should be provided in upper-case.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function convert(num) {",
@@ -515,7 +534,8 @@
         "First argument is the sentence the perform the search and replace on.",
         "Second argument is the word that you will be replacing (before).",
         "Third argument is what you will be replacing the second argument with (after).",
-        "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word 'Book' with the word 'dog', it should be replaced as 'Dog'"
+        "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word 'Book' with the word 'dog', it should be replaced as 'Dog'",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function replace(str, before, after) {",
@@ -541,7 +561,8 @@
       "description": [
         "Translate the provided string to pig latin.",
         "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
-        "If a word begins with a vowel you just add \"way\" to the end."
+        "If a word begins with a vowel you just add \"way\" to the end.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function translate(str) {",
@@ -565,7 +586,8 @@
       "description": [
         "The DNA strand is missing the pairing element. Match each character with the missing element and return the results as a 2d array.",
         "<a href=\"http://en.wikipedia.org/wiki/Base_pair\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
-        "Return the provided character as the first element in each array."
+        "Return the provided character as the first element in each array.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function pair(str) {",
@@ -583,7 +605,8 @@
       "difficulty": "2.05",
       "description" : [
         "Find the missing letter in the passed letter range and return it.",
-        "If all letters are present in the range, return undefined."
+        "If all letters are present in the range, return undefined.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function fearNotLetter(str) {",
@@ -607,7 +630,8 @@
       "difficulty": "2.06",
       "description": [
         "Check if a value is classified as a boolean primitive. Return true or false.",
-        "Boolean primitives are true and false."
+        "Boolean primitives are true and false.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function boo(bool) {",
@@ -638,7 +662,8 @@
         "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
         "In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.",
         "The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.",
-        "Check the assertion tests for examples."
+        "Check the assertion tests for examples.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function unite(arr1, arr2, arr3) {",
@@ -658,7 +683,8 @@
       "name": "Convert HTML Entities",
       "difficulty": "2.07",
       "description": [
-        "Convert the characters \"&\", \"<\", \">\", '\"', and \"'\", in a string to their corresponding HTML entities."
+        "Convert the characters \"&\", \"<\", \">\", '\"', and \"'\", in a string to their corresponding HTML entities.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function convert(str) {",
@@ -680,7 +706,8 @@
       "name": "Spinal Tap Case",
       "difficulty": "2.08",
       "description": [
-        "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes."
+        "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function spinalCase(str) {",
@@ -707,7 +734,8 @@
       "description": [
         "Return the sum of all odd Fibonacci numbers up to and including the passed number if it is a Fibonacci number.",
         "The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.",
-        "As an example, passing 4 to the function should return 5 because all the odd Fibonacci numbers under 4 are 1, 1, and 3."
+        "As an example, passing 4 to the function should return 5 because all the odd Fibonacci numbers under 4 are 1, 1, and 3.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function sumFibs(num) {",
@@ -734,7 +762,8 @@
       "description": [
         "Sum all the prime numbers up to and including the provided number.",
         "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.",
-        "The provided number may not be a prime."
+        "The provided number may not be a prime.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function sumPrimes(num) {",
@@ -756,7 +785,8 @@
       "difficulty": "2.11",
       "description": [
         "Find the smallest number that is evenly divisible by all numbers in the provided range.",
-        "The range will be an array of two numbers that will not necessarily be in numerical order."
+        "The range will be an array of two numbers that will not necessarily be in numerical order.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function smallestCommons(arr) {",
@@ -779,7 +809,8 @@
       "name": "Finders Keepers",
       "difficulty": "2.12",
       "description": [
-        "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument)."
+        "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument).",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function find(arr, func) {",
@@ -800,7 +831,8 @@
       "name": "Drop it like it's hot",
       "difficulty": "2.13",
       "description": [
-        "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true."
+        "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function drop(arr, func) {",
@@ -823,7 +855,8 @@
       "name": "Steamroller",
       "difficulty": "2.14",
       "description": [
-        "Flatten a nested array. You must account for varying levels of nesting."
+        "Flatten a nested array. You must account for varying levels of nesting.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function steamroller(arr) {",
@@ -847,7 +880,8 @@
       "difficulty": "2.15",
       "description": [
         "Return an English translated sentence of the passed binary string.",
-        "The binary string will be space separated."
+        "The binary string will be space separated.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function binaryAgent(str) {",
@@ -871,7 +905,8 @@
       "description": [
         "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
         "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7.",
-        "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!"
+        "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function pairwise(arr, arg) {",
@@ -896,7 +931,8 @@
       "description": [
         "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
         "For this, check to see if the property defined in the second argument is present on every element of the collection.",
-        "Remember, you can access object properties through either dot notation or [] notation."
+        "Remember, you can access object properties through either dot notation or [] notation.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function every(collection, pre) {",
@@ -920,7 +956,8 @@
       "description": [
         "Create a function that sums two arguments together. If only one argument is provided, return a function that expects one additional argument and will return the sum.",
         "For example, add(2, 3) should return 5, and add(2) should return a function that is waiting for an argument so that <code>var sum2And = add(2); return sum2And(3); // 5</code>",
-        "If either argument isn't a valid number, return undefined."
+        "If either argument isn't a valid number, return undefined.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function add() {",
@@ -947,7 +984,8 @@
         "Fill in the object constructor with the methods specified in the tests.",
         "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), and setFullName(firstAndLast).",
         "All functions that take an argument have an arity of 1, and the argument will be a string.",
-        "These methods must be the only available means for interacting with the object."
+        "These methods must be the only available means for interacting with the object.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "var Person = function(firstAndLast) {",
@@ -985,7 +1023,8 @@
         "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
         "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\">on wikipedia</a>.",
         "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
-        "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418"
+        "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function orbitalPeriod(arr) {",
@@ -1011,7 +1050,8 @@
         "Return true if the passed string is a valid US phone number",
         "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
         "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
-        "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false."
+        "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "tests": [
         "expect(telephoneCheck(\"555-555-5555\")).to.be.a(\"boolean\");",
@@ -1055,7 +1095,8 @@
       "difficulty": "4.02",
       "description": [
         "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
-        "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both."
+        "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function sym(args) {",
@@ -1076,7 +1117,8 @@
       "name": "Cash Register",
       "difficulty": "4.03",
       "description": [
-        "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.", "cid is a 2d array listing available currency.", "Return the string \"Insufficient Funds\" if cash-in-drawer is less than the change due. Return the string \"Closed\" if cash-in-drawer is equal to the change due.", "Otherwise, return change in coin and bills, sorted in highest to lowest order."
+        "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.", "cid is a 2d array listing available currency.", "Return the string \"Insufficient Funds\" if cash-in-drawer is less than the change due. Return the string \"Closed\" if cash-in-drawer is equal to the change due.", "Otherwise, return change in coin and bills, sorted in highest to lowest order.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function drawer(price, cash, cid) {",
@@ -1114,7 +1156,8 @@
       "name": "Inventory Update",
       "difficulty": "4.04",
       "description": [
-        "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order."
+        "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function inventory(arr1, arr2) {",
@@ -1155,7 +1198,8 @@
       "difficulty": "4.05",
       "description": [
         "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
-        "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating."
+        "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function permAlone(str) {",
@@ -1184,7 +1228,8 @@
         "It must not show any redundant information in the date range.",
         "For example, if the year and month are the same then only the day range should be displayed.",
         "Secondly, if the starting year is the current year, and the ending year can be inferred by the reader, the year should be omitted.",
-        "Input date is formatted as YYYY-MM-DD"
+        "Input date is formatted as YYYY-MM-DD",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function friendly(str) {",
