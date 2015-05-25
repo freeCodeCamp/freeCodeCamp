@@ -606,7 +606,7 @@
     },
     {
       "_id": "af7588ade1100bde429baf20",
-      "name" : "Missing letters",
+      "name" : "Bonfire: Missing letters",
       "difficulty": "2.05",
       "description" : [
         "Find the missing letter in the passed letter range and return it.",

@@ -67,6 +67,8 @@ Array.zip = function(left, right, combinerFunction) {
     });
     challengeMap = _.cloneDeep(localChallengeMap);
   }
+  //todo remove this debug
+  debug(challengeMap);
 })();
 
 
