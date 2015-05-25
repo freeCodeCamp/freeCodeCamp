@@ -239,10 +239,28 @@ var runTests = function(err, data) {
 function showCompletion() {
   var time = Math.floor(Date.now()) - started;
   ga('send', 'event',  'Challenge', 'solved', challenge_Name + ', Time: ' + time +', Attempts: ' + attempts);
-  $('#complete-courseware-dialog').modal('show');
-  $('#complete-courseware-dialog').keydown(function(e) {
-    if (e.ctrlKey && e.keyCode == 13) {
-      $('#next-courseware-button').click();
+  var bonfireSolution = myCodeMirror.getValue();
+  var didCompleteWith = $('#completed-with').val() || null;
+  $.post(
+    '/completed-bonfire/',
+    {
+      challengeInfo: {
+        challengeId: challenge_Id,
+        challengeName: challenge_Name,
+        completedWith: didCompleteWith,
+        challengeType: challengeType,
+        solution: bonfireSolution
+      }
+    }, function(res) {
+      if (res) {
+        $('#complete-courseware-dialog').modal('show');
+        $('#complete-courseware-dialog').keydown(function (e) {
+          if (e.ctrlKey && e.keyCode == 13) {
+            $('#next-courseware-button').click();
+          }
+        });
+      }
     }
-  });
+  );
+
 }

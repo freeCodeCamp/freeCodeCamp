@@ -215,29 +215,10 @@ $(document).ready(function() {
             });
           break;
         case challengeTypes.BONFIRE:
-          var bonfireSolution = myCodeMirror.getValue();
-          var didCompleteWith = $('#completed-with').val() || null;
-          $.post(
-            '/completed-bonfire/',
-            {
-              challengeInfo: {
-                challengeId: challenge_Id,
-                challengeName: challenge_Name,
-                completedWith: didCompleteWith,
-                challengeType: challengeType,
-                solution: bonfireSolution
-              }
-            },
-            function(res) {
-              if (res) {
-                window.location.href = '/challenges/next-challenge';
-              }
-            }
-          );
+          window.location.href = '/challenges/next-challenge';
         default:
           break;
       }
-
     }
   });
 

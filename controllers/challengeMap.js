@@ -23,7 +23,7 @@ module.exports = {
     var noDuplicatedChallenges = R.uniq(completedList);
 
 
-    var challengeList = resources.allChallenges();
+    var challengeList = resources.getChallengeMapForDisplay();
     var completedChallengeList = noDuplicatedChallenges
       .map(function(challenge) {
         return challenge._id;

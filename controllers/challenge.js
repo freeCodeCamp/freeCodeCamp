@@ -135,7 +135,8 @@ exports.returnCurrentChallenge = function(req, res, next) {
   }
   var nameString = req.user.currentChallenge.challengeName.trim()
     .toLowerCase()
-    .replace(/\s/g, '-');
+    .replace(/\s/g, '-')
+    .replace(/[^a-z0-9\-]/gi, '');
   req.user.save(function(err) {
     if (err) {
       return next(err);
@@ -147,7 +148,10 @@ exports.returnCurrentChallenge = function(req, res, next) {
 exports.returnIndividualChallenge = function(req, res, next) {
   var dashedName = req.params.challengeName;
 
-  var challengeName = dashedName.replace(/\-/g, ' ');
+  var challengeName = dashedName.replace(/\-/g, ' ')
+    .split(' ')
+    .slice(1)
+    .join(' ');
 
   Challenge.find({'name': new RegExp(challengeName, 'i')},
     function(err, challengeFromMongo) {
@@ -164,7 +168,10 @@ exports.returnIndividualChallenge = function(req, res, next) {
       }
       var challenge = challengeFromMongo.pop();
       // Redirect to full name if the user only entered a partial
-      var dashedNameFull = challenge.name.toLowerCase().replace(/\s/g, '-');
+      var dashedNameFull = challenge.name
+        .toLowerCase()
+        .replace(/\s/g, '-')
+        .replace(/[^a-z0-9\-]/gi, '');
       if (dashedNameFull !== dashedName) {
         return res.redirect('../challenges/' + dashedNameFull);
       } else {
@@ -317,44 +324,62 @@ exports.completedBonfire = function (req, res, next) {
           req.user.uncompletedChallenges.splice(index, 1);
         }
         pairedWith = pairedWith.pop();
+        if (pairedWith) {
 
-        index = pairedWith.uncompletedChallenges.indexOf(challengeId);
-        if (index > -1) {
-          pairedWith.progressTimestamps.push(Date.now() || 0);
-          pairedWith.uncompletedChallenges.splice(index, 1);
+          index = pairedWith.uncompletedChallenges.indexOf(challengeId);
+          if (index > -1) {
+            pairedWith.progressTimestamps.push(Date.now() || 0);
+            pairedWith.uncompletedChallenges.splice(index, 1);
 
+          }
+
+          pairedWith.completedChallenges.push({
+            _id: challengeId,
+            name: challengeName,
+            completedWith: req.user._id,
+            completedDate: isCompletedDate,
+            solution: isSolution,
+            challengeType: 5
+          });
+
+          req.user.completedChallenges.push({
+            _id: challengeId,
+            name: challengeName,
+            completedWith: pairedWith._id,
+            completedDate: isCompletedDate,
+            solution: isSolution,
+            challengeType: 5
+          });
         }
+        // User said they paired, but pair wasn't found
+          req.user.completedChallenges.push({
+            _id: challengeId,
+            name: challengeName,
+            completedWith: null,
+            completedDate: isCompletedDate,
+            solution: isSolution,
+            challengeType: 5
+          });
 
-        pairedWith.completedChallenges.push({
-          _id: challengeId,
-          name: challengeName,
-          completedWith: req.user._id,
-          completedDate: isCompletedDate,
-          solution: isSolution,
-          challengeType: 5
-        });
-
-        req.user.completedChallenges.push({
-          _id: challengeId,
-          name: challengeName,
-          completedWith: pairedWith._id,
-          completedDate: isCompletedDate,
-          solution: isSolution,
-          challengeType: 5
-        });
 
         req.user.save(function (err, user) {
           if (err) {
             return next(err);
           }
-          pairedWith.save(function (err, paired) {
-            if (err) {
-              return next(err);
-            }
-            if (user && paired) {
+          if (pairedWith) {
+            pairedWith.save(function (err, paired) {
+              if (err) {
+                return next(err);
+              }
+              if (user && paired) {
+                res.send(true);
+              }
+            });
+          } else {
+            if (user) {
               res.send(true);
             }
-          });
+          }
         });
       }
     });
