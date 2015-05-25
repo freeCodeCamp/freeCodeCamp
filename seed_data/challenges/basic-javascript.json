@@ -1,5 +1,5 @@
 {
-  "name": "Waypoint: Basic JavaScript",
+  "name": "Basic JavaScript",
   "order" : 0.006,
   "challenges": [
     {
@@ -125,7 +125,14 @@
         "It's time to learn the most powerful tool your browser has - the Development Tools!",
         "If you aren't already using Chrome, you'll want to download it here: <a href='http://www.google.com/chrome/' target='_blank'>http://www.google.com/chrome/</a>. While it's true that Firefox has a tool called Firebug that is very similar to Chrome's DevTools, we will use Chrome for this challenge.",
         "Note that this course, jointly produced by Google and Code School, is technologically impressive, but occasionally buggy. If you encounter a bug, just ignore it and keep going.",
-        "Go to <a href='http://discover-devtools.codeschool.com' target='_blank'>http://discover-devtools.codeschool.com</a> and complete this short course."
+        "Go to <a href='http://discover-devtools.codeschool.com' target='_blank'>http://discover-devtools.codeschool.com</a>.",
+        "Complete \"Chapter 1: Getting Started & Basic DOM and Styles\".",
+        "Complete \"Chapter 2: Advanced DOM and Styles\".",
+        "Complete \"Chapter 3: Working with the Console\".",
+        "Complete \"Chapter 4: Debugging JavaScript\".",
+        "Complete \"Chapter 5: Improving Network Performance\".",
+        "Complete \"Chapter 6: Improving Performance\".",
+        "Complete \"Chapter 7: Memory Profiling\".",
       ],
       "challengeType": 2,
       "tests": [],
@@ -138,9 +145,17 @@
       "challengeSeed": "112547802",
       "description": [
         "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
-        "Check out <a href='http://www.regexr.com' target='_blank'>http://www.regexr.com</a>. It's a Regular Expression Sandbox.",
-        "Now go to <a href='http://www.regexone.com' target='_blank'>http://www.regexone.com</a> and complete the tutorial and exercises 1 - 6.",
-        "Note that you can click \"continue\" to move on to the next step as soon as all the tasks have green check marks beside them. You can often do this just by using the wildcard \"dot\" operator, but try to use the techniques that each lesson recommends."
+        "Check out <a href='http://www.regexr.com' target='_blank'>http://www.regexr.com</a>. It's a Regular Expression Sandbox for experimenting with Regular Expressions.",
+        "Now go to <a href='http://www.regexone.com' target='_blank'>http://www.regexone.com</a>.",
+        "Note that you can click \"continue\" to move on to the next step as soon as all the tasks have green check marks beside them. You can often do this just by using the wildcard \"dot\" operator, but try to use the techniques that each lesson recommends.",
+        "Complete \"Complete the 15-lesson tutorial\"",
+        "Complete \"Complete Practical Example 1: Matching a scientific or decimal number\"",
+        "Complete \"Complete Practical Example 2: Matching phone numbers\"",
+        "Complete \"Complete Practical Example 3: Matching emails\"",
+        "Complete \"Complete Practical Example 4: Matching HTML\"",
+        "Complete \"Complete Practical Example 5: Matching specific filenames\"",
+        "Complete \"Complete Practical Example 6: Trimming whitespace from start and end of line\"",
+        "Once you've completed these challenges, move on to our next Waypoint."
       ],
       "challengeType": 2,
       "tests": [],
@@ -156,7 +171,7 @@
         "Pair Programming is where two people code together on the same computer. It is an efficient way to collaborate, and widely practiced at software companies. Pair Programming is one of the core concepts of \"Agile\" Software Development, which you will hear more about later.",
         "Many people use Skype or Google Hangouts to pair program, but if you talk with professional software engineers, they will tell you that it's not really pair programming unless both people have the ability to use the keyboard and mouse.",
         "The most popular tool for pair programming is Screen Hero. You can download Screen Hero for <a href='http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjowLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLnppcD9zb3VyY2U9d2ViIn0=' target='_blank'>Mac</a> or <a href='http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjoxLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLXNldHVwLmV4ZSJ9' target='_blank'>Windows</a>. Create your new user account from within the app.",
-        "We have a special chat room for people ready to pair program. Go to our Slack chatroom and navigate to the #letspair channel and type \"Hello Pair Programmers!\"",
+        "We have a special chat room for people ready to pair program. Go to our Slack chat room, navigate to the #letspair channel and type \"Hello Pair Programmers!\"",
         "If someone is available, they will be your \"pair\" - the person you pair programming with.",
         "If no one gets back to you in the first few minutes, don't worry. There will be lots of opportunities to pair program in the future.",
         "If someone does get back to you, private message them and ask for the email address they used to register Screen Hero.",
@@ -168,7 +183,7 @@
         "Once you you finish pair programming, end the session in Screen Hero session.",
         "Congratulations! You have completed your first pair programming session.",
         "Pair program as much as possible with different campers until you've completed all the Bonfire challenges. This is a big time investment, but the JavaScript practice you get will be well worth it!",
-        "Mark this challenge as complete and move on to the Bonfires."
+        "Mark this Waypoint complete and move on."
       ],
       "challengeType": 2,
       "tests": [],

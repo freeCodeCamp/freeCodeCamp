@@ -1,0 +1,131 @@
+{
+  "name": "Object Oriented JavaScript",
+  "order" : 0.006,
+  "challenges": [
+    {
+      "_id": "bd7129d8c441eddfaeb5bddf",
+      "name": "Waypoint: Scope Your Variables",
+      "difficulty": 0.01,
+      "challengeSeed": "114604814",
+      "description": [
+        "Objects will allow you to build applications more efficiently by using small, reusable blocks of code.",
+        "This course for Udacity will help you learn Object-Oriented Programming in JavaScript.",
+        "First, we'll learn how JavaScript works in terms of scopes. You'll learn the difference between a \"Lexical Scope\" and an Execution Context.",
+        "This theoretical foundation is useful for understanding when an a variable can be accessed and when it can't.",
+        "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
+        "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2593668697/m-2541189051'>https://www.udacity.com/course/viewer#!/c-ud015/l-2593668697/m-2541189051</a> and start the course.",
+        "Once you've completed this first section of scopes, mark this Waypoint complete and move on to the next one."
+      ],
+      "_id": "bd7131d8c441eddfaeb5bdbf",
+      "name": "Waypoint: Reference your Current Object with This",
+      "difficulty": 0.03,
+      "challengeSeed": "114614220",
+      "description": [
+        "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
+        "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2593668699/m-2780408563'>https://www.udacity.com/course/viewer#!/c-ud015/l-2593668699/m-2780408563</a> and start the course.",
+        "Once you've completed this section of using the keyword \"this\", mark this Waypoint complete and move on to the next one."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "challengeType": 0
+    },
+    {
+      "_id": "bd7132d8c441eddfaeb5bdaf",
+      "name": "Waypoint: Traverse the Prototype Chain",
+      "difficulty": 0.04,
+      "challengeSeed": "114612889",
+      "description": [
+        "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
+        "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2593668700/m-2616738615'>https://www.udacity.com/course/viewer#!/c-ud015/l-2593668700/m-2616738615</a> and start the course.",
+        "Once you've completed this section on prototype chain traversal, mark this Waypoint complete and move on to the next one."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "challengeType": 0
+    },
+    {
+      "_id": "bd7133d8c441eddfaeb5bd0f",
+      "name": "Waypoint: Reuse Code with Decorators",
+      "difficulty": 0.05,
+      "challengeSeed": "114612888",
+      "description": [
+        "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
+        "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468536/m-2697628561'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468536/m-2697628561</a> and start the course.",
+        "Once you've completed this section of decorators, mark this Waypoint complete and move on to the next one."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "challengeType": 0
+    },
+    {
+      "_id": "bd7134d8c441eddfaeb5bd1f",
+      "name": "Waypoint: Build Objects with Functional Classes",
+      "difficulty": 0.06,
+      "challengeSeed": "114612887",
+      "description": [
+        "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
+        "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468537/m-2961989110'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468537/m-2961989110</a> and start the course.",
+        "Once you've completed this section of functional classes, mark this Waypoint complete and move on to the next one."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "challengeType": 0
+    },
+    {
+      "_id": "bd7135d8c441eddfaeb5bd2f",
+      "name": "Waypoint: Build Objects with Prototypal Classes",
+      "difficulty": 0.07,
+      "challengeSeed": "114612885",
+      "description": [
+        "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
+        "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468538/m-3034538557'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468538/m-3034538557</a> and start the course.",
+        "Once you've completed this section of prototypal classes, mark this Waypoint complete and move on to the next one."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "challengeType": 0
+    },
+    {
+      "_id": "bd7136d8c441eddfaeb5bd3f",
+      "name": "Waypoint: Understand Pseudoclassical Patterns",
+      "difficulty": 0.08,
+      "challengeSeed": "114612882",
+      "description": [
+        "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
+        "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468539/e-2783098540/m-2695768694'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468539/e-2783098540/m-2695768694</a> and start the course.",
+        "Once you've completed this section pseudoclasses, mark this Waypoint complete and move on to the next one."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "challengeType": 0
+    },
+    {
+      "_id": "bd7136d8c441eddfaeb5bd4f",
+      "name": "Waypoint: Subclass one Object to Another",
+      "difficulty": 0.09,
+      "challengeSeed": "114612882",
+      "description": [
+        "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
+        "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468540/m-2785128536'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468540/m-2785128536</a> and start the course.",
+        "Once you've completed this section on subclassing, mark this Waypoint complete and move on to the next one."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "challengeType": 0
+    },
+    {
+      "_id": "bd7136d8c441eddfaeb5bd5f",
+      "name": "Waypoint: Use Pseudoclassical Subclasses",
+      "difficulty": 0.10,
+      "challengeSeed": "114612882",
+      "description": [
+        "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
+        "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468541/e-2693158566/m-2688408703'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468541/e-2693158566/m-2688408703</a> and start the course.",
+        "Once you've completed this final section on pseudoclassical subclassing, mark this Waypoint complete and move on."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "challengeType": 0
+    }
+  ]
+}
