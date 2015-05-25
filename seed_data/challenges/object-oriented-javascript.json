@@ -15,12 +15,17 @@
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2593668697/m-2541189051'>https://www.udacity.com/course/viewer#!/c-ud015/l-2593668697/m-2541189051</a> and start the course.",
         "Once you've completed this first section of scopes, mark this Waypoint complete and move on to the next one."
-      ],
+      ]
+    },
+    {
       "_id": "bd7131d8c441eddfaeb5bdbf",
       "name": "Waypoint: Reference your Current Object with This",
       "difficulty": 0.03,
       "challengeSeed": "114614220",
       "description": [
+        "In this section, you'll learn how you can use \"this\" to dynamically point to your current object.",
+        "For example, if we were inside the function <code>camper.completeCourse()</code>, \"this\" would refer to the specific camper we were running the function on.",
+        "Note that this section has several trick questions, designed to make you think. Don't get hung up on them, just keep moving forward.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2593668699/m-2780408563'>https://www.udacity.com/course/viewer#!/c-ud015/l-2593668699/m-2780408563</a> and start the course.",
         "Once you've completed this section of using the keyword \"this\", mark this Waypoint complete and move on to the next one."
@@ -35,6 +40,8 @@
       "difficulty": 0.04,
       "challengeSeed": "114612889",
       "description": [
+        "Next we'll learn about the multiple ways you can create a copy of an object.",
+        "We'll also learn how an object's missing attributes can traverse the \"prototype chain\".",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2593668700/m-2616738615'>https://www.udacity.com/course/viewer#!/c-ud015/l-2593668700/m-2616738615</a> and start the course.",
         "Once you've completed this section on prototype chain traversal, mark this Waypoint complete and move on to the next one."
@@ -49,6 +56,9 @@
       "difficulty": 0.05,
       "challengeSeed": "114612888",
       "description": [
+        "In this section, we'll learn about the Decorator Pattern.",
+        "The Decorator pattern will help you \"decorate\" an existing object with additional attributes. This pattern helps you reuse code, reducing the total amount of code you'll need to write and maintain.",
+        "It's a convenient way to add functionality to objects without changing their underlying structure.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468536/m-2697628561'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468536/m-2697628561</a> and start the course.",
         "Once you've completed this section of decorators, mark this Waypoint complete and move on to the next one."
@@ -63,6 +73,8 @@
       "difficulty": 0.06,
       "challengeSeed": "114612887",
       "description": [
+        "Now we'll go over the simplest way to implement a JavaScript class.",
+        "A class is a set of functions that you can use to easily produce similar objects.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468537/m-2961989110'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468537/m-2961989110</a> and start the course.",
         "Once you've completed this section of functional classes, mark this Waypoint complete and move on to the next one."
@@ -77,6 +89,9 @@
       "difficulty": 0.07,
       "challengeSeed": "114612885",
       "description": [
+        "Now we'll learn how one object can be prototyped off of another object.",
+        "Prototype objects delegate their \"failed lookups\" up the \"prototype chain\".",
+        "This means that if I create a second object based off another object, then try to access an attribute the second object doesn't have, JavaScript will \"fall through\" to the original object to see whether it has that attribute.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468538/m-3034538557'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468538/m-3034538557</a> and start the course.",
         "Once you've completed this section of prototypal classes, mark this Waypoint complete and move on to the next one."
@@ -91,6 +106,9 @@
       "difficulty": 0.08,
       "challengeSeed": "114612882",
       "description": [
+        "JavaScript doesn't have the traditional \"classes\" that lower-level languages like C and Java have.",
+        "Instead, JavaScript does some tricks to allow you to write code as though it had these traditional classes. We call these \"pseudo-classes\".",
+        "In this section, we'll learn how to build these pseudo-classes, and some tricks for later figuring out where these objects came from.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468539/e-2783098540/m-2695768694'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468539/e-2783098540/m-2695768694</a> and start the course.",
         "Once you've completed this section pseudoclasses, mark this Waypoint complete and move on to the next one."
@@ -105,6 +123,8 @@
       "difficulty": 0.09,
       "challengeSeed": "114612882",
       "description": [
+        "Now we know the three ways of creating objects (through functions, prototyping and pseudo classing).",
+        "Let's learn how to subclass one object to another. This will give our new object the attributes of the original object. It will allow us to make further modifications new object without affecting the original object.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468540/m-2785128536'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468540/m-2785128536</a> and start the course.",
         "Once you've completed this section on subclassing, mark this Waypoint complete and move on to the next one."
@@ -119,6 +139,7 @@
       "difficulty": 0.10,
       "challengeSeed": "114612882",
       "description": [
+        "This final section will teach us how to create subclasses from pseudo classes.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468541/e-2693158566/m-2688408703'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468541/e-2693158566/m-2688408703</a> and start the course.",
         "Once you've completed this final section on pseudoclassical subclassing, mark this Waypoint complete and move on."
