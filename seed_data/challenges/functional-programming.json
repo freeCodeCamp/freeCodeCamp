@@ -3,7 +3,7 @@
   "order" : 0.010,
   "challenges": [
     {
-      "_id": "bd7129d8c441eddfaeb5bedf",
+      "_id": "bd7129d8c441eddfbeb5bddf",
       "name": "Waypoint: Practice Functional Programming",
       "difficulty": 0.01,
       "challengeSeed": "114604814",
