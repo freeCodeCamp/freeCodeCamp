@@ -33,9 +33,9 @@ var express = require('express'),
   forceDomain = require('forcedomain'),
   lessMiddleware = require('less-middleware'),
 
-    /**
-     * Controllers (route handlers).
-     */
+  /**
+   * Controllers (route handlers).
+   */
   homeController = require('./controllers/home'),
   resourcesController = require('./controllers/resources'),
   userController = require('./controllers/user'),
@@ -44,9 +44,9 @@ var express = require('express'),
   challengeMapController = require('./controllers/challengeMap'),
   challengeController = require('./controllers/challenge'),
 
-    /**
-     *  Stories
-     */
+  /**
+   *  Stories
+   */
   storyController = require('./controllers/story'),
 
   /**
@@ -65,9 +65,9 @@ var app = express();
  */
 mongoose.connect(secrets.db);
 mongoose.connection.on('error', function () {
-    console.error(
-        'MongoDB Connection Error. Please make sure that MongoDB is running.'
-    );
+  console.error(
+    'MongoDB Connection Error. Please make sure that MongoDB is running.'
+  );
 });
 
 /**
@@ -91,11 +91,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressValidator({
-    customValidators: {
-        matchRegex: function (param, regex) {
-            return regex.test(param);
-        }
+  customValidators: {
+    matchRegex: function (param, regex) {
+      return regex.test(param);
     }
+  }
 }));
 app.use(methodOverride());
 app.use(cookieParser());
@@ -117,11 +117,11 @@ app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
 app.use(helmet.frameguard());
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers',
-               'Origin, X-Requested-With, Content-Type, Accept'
-              );
-    next();
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
 });
 
 var trusted = [
@@ -165,35 +165,35 @@ var trusted = [
 ];
 
 app.use(helmet.csp({
-    defaultSrc: trusted,
-    scriptSrc: [
-        '*.optimizely.com',
-        '*.aspnetcdn.com',
-        '*.d3js.org'
-    ].concat(trusted),
-    'connect-src': [
-    ].concat(trusted),
-    styleSrc: trusted,
-    imgSrc: [
-          /* allow all input since we have user submitted images for public profile*/
-        '*'
-    ].concat(trusted),
-    fontSrc: ['*.googleapis.com'].concat(trusted),
-    mediaSrc: [
-        '*.amazonaws.com',
-        '*.twitter.com'
-    ].concat(trusted),
-    frameSrc: [
+  defaultSrc: trusted,
+  scriptSrc: [
+    '*.optimizely.com',
+    '*.aspnetcdn.com',
+    '*.d3js.org'
+  ].concat(trusted),
+  'connect-src': [
+  ].concat(trusted),
+  styleSrc: trusted,
+  imgSrc: [
+    /* allow all input since we have user submitted images for public profile*/
+    '*'
+  ].concat(trusted),
+  fontSrc: ['*.googleapis.com'].concat(trusted),
+  mediaSrc: [
+    '*.amazonaws.com',
+    '*.twitter.com'
+  ].concat(trusted),
+  frameSrc: [
 
-        '*.gitter.im',
-        '*.gitter.im https:',
-        '*.vimeo.com',
-        '*.twitter.com',
-        '*.ghbtns.com'
-    ].concat(trusted),
-    reportOnly: false, // set to true if you only want to report errors
-    setAllHeaders: false, // set to true if you want to set all headers
-    safari5: false // set to true if you want to force buggy CSP in Safari 5
+    '*.gitter.im',
+    '*.gitter.im https:',
+    '*.vimeo.com',
+    '*.twitter.com',
+    '*.ghbtns.com'
+  ].concat(trusted),
+  reportOnly: false, // set to true if you only want to report errors
+  setAllHeaders: false, // set to true if you want to set all headers
+  safari5: false // set to true if you want to force buggy CSP in Safari 5
 }));
 
 app.use(function (req, res, next) {
@@ -205,20 +205,16 @@ app.use(function (req, res, next) {
 app.use(express.static(__dirname + '/public', {maxAge: 86400000 }));
 
 app.use(function (req, res, next) {
-    // Remember original destination before login.
-    var path = req.path.split('/')[1];
-    if (/auth|login|logout|signin|signup|fonts|favicon/i.test(path)) {
-        return next();
-    } else if (/\/stories\/comments\/\w+/i.test(req.path)) {
-        return next();
-    }
-    req.session.returnTo = req.path;
-    next();
+  // Remember original destination before login.
+  var path = req.path.split('/')[1];
+  if (/auth|login|logout|signin|signup|fonts|favicon/i.test(path)) {
+    return next();
+  } else if (/\/stories\/comments\/\w+/i.test(req.path)) {
+    return next();
+  }
+  req.session.returnTo = req.path;
+  next();
 });
-
-// User migration middleware
-
-app.use(userController.userMigration);
 
 /**
  * Main routes.
@@ -227,7 +223,7 @@ app.use(userController.userMigration);
 app.get('/', homeController.index);
 
 app.get('/nonprofit-project-instructions', function(req, res) {
-    res.redirect(301, '/field-guide/how-do-free-code-camp\'s-nonprofit-projects-work');
+  res.redirect(301, '/field-guide/how-do-free-code-camp\'s-nonprofit-projects-work');
 });
 
 app.post('/get-help', resourcesController.getHelp);
@@ -260,14 +256,14 @@ app.get('/cats.json', function(req, res) {
 // Agile Project Manager Onboarding
 
 app.get('/pmi-acp-agile-project-managers',
-        resourcesController.agileProjectManagers);
+  resourcesController.agileProjectManagers);
 
 app.get('/agile', function(req, res) {
   res.redirect(301, '/pmi-acp-agile-project-managers');
 });
 
 app.get('/pmi-acp-agile-project-managers-form',
-        resourcesController.agileProjectManagersForm);
+  resourcesController.agileProjectManagersForm);
 
 // Nonprofit Onboarding
 
@@ -280,31 +276,31 @@ app.get('/nonprofits-form', resourcesController.nonprofitsForm);
 app.get('/map', challengeMapController.challengeMap);
 
 app.get('/live-pair-programming', function(req, res) {
-    res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
+  res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
 });
 
 app.get('/install-screenhero', function(req, res) {
-    res.redirect(301, '/field-guide/install-screenhero');
+  res.redirect(301, '/field-guide/install-screenhero');
 });
 
 app.get('/guide-to-our-nonprofit-projects', function(req, res) {
-    res.redirect(301, '/field-guide/a-guide-to-our-nonprofit-projects');
+  res.redirect(301, '/field-guide/a-guide-to-our-nonprofit-projects');
 });
 
 app.get('/chromebook', function(req, res) {
-    res.redirect(301, '/field-guide/chromebook');
+  res.redirect(301, '/field-guide/chromebook');
 });
 
 app.get('/deploy-a-website', function(req, res) {
-    res.redirect(301, '/field-guide/deploy-a-website');
+  res.redirect(301, '/field-guide/deploy-a-website');
 });
 
 app.get('/gmail-shortcuts', function(req, res) {
-    res.redirect(301, '/field-guide/gmail-shortcuts');
+  res.redirect(301, '/field-guide/gmail-shortcuts');
 });
 
 app.get('/nodeschool-challenges', function(req, res) {
-    res.redirect(301, '/field-guide/nodeschool-challenges');
+  res.redirect(301, '/field-guide/nodeschool-challenges');
 });
 
 
@@ -349,8 +345,8 @@ app.post('/email-signin', userController.postSignin);
 app.get('/nonprofits/directory', nonprofitController.nonprofitsDirectory);
 
 app.get(
-    '/nonprofits/:nonprofitName',
-    nonprofitController.returnIndividualNonprofit
+  '/nonprofits/:nonprofitName',
+  nonprofitController.returnIndividualNonprofit
 );
 
 app.get(
@@ -528,8 +524,8 @@ app.get('/api/codepen/twitter/:screenName', resourcesController.codepenResources
 app.get('/field-guide/all-articles', fieldGuideController.showAllFieldGuides);
 
 app.get('/field-guide/:fieldGuideName',
-        fieldGuideController.returnIndividualFieldGuide
-       );
+  fieldGuideController.returnIndividualFieldGuide
+);
 
 app.get('/field-guide/', fieldGuideController.returnNextFieldGuide);
 
@@ -540,14 +536,19 @@ app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
  * Challenge related routes
  */
 
-app.get('/challenges/next-challenge', challengeController.returnNextChallenge);
+app.get('/challenges/next-challenge',
+  userController.userMigration,
+  challengeController.returnNextChallenge);
 
 app.get(
-    '/challenges/:challengeName',
-    challengeController.returnIndividualChallenge
+  '/challenges/:challengeName',
+  userController.userMigration,
+  challengeController.returnIndividualChallenge
 );
 
-app.get('/challenges/', challengeController.returnCurrentChallenge);
+app.get('/challenges/',
+  userController.userMigration,
+  challengeController.returnCurrentChallenge);
 // todo refactor these routes
 app.post('/completed-challenge/', challengeController.completedChallenge);
 
@@ -558,12 +559,12 @@ app.post('/completed-bonfire', challengeController.completedBonfire);
 
 // Unique Check API route
 app.get('/api/checkUniqueUsername/:username',
-        userController.checkUniqueUsername
-       );
+  userController.checkUniqueUsername
+);
 
 app.get('/api/checkExistingUsername/:username',
-        userController.checkExistingUsername
-       );
+  userController.checkExistingUsername
+);
 
 app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
 

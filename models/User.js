@@ -168,7 +168,7 @@ var userSchema = new mongoose.Schema({
         }
       }
   ],
-  uncompletedChallenges: Array
+  uncompletedChallenges: Array,
 });
 
 /**

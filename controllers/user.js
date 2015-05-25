@@ -6,7 +6,7 @@ var _ = require('lodash'),
   User = require('../models/User'),
   secrets = require('../config/secrets'),
   moment = require('moment'),
-  debug = require('debug')('freecc:cntr:challenges'),
+  debug = require('debug')('freecc:cntr:userController'),
   resources = require('./resources'),
   R = require('ramda');
 
@@ -21,15 +21,17 @@ var _ = require('lodash'),
  * challenge structure
  */
 exports.userMigration = function(req, res, next) {
-  debug('user migration called');
-  var user = req.user;
-  if (!user.migratedToUnifiedChallengeStructure && user) {
-    user.migratedToUnifiedChallengeStructure = true;
-    user.completedChallenges = R.filter(function (elem) {
+  if (req.user && req.user.completedChallenges.length === 0) {
+    debug('user migration called');
+     debug('Completed coursewares', req.user.completedCoursewares);
+        debug('Completed bonfires', req.user.completedBonfires);
+    req.user.completedChallenges = R.filter(function (elem) {
       return elem; // getting rid of undefined
     }, R.concat(
-      user.completedCoursewares,
-      user.completedBonfires.map(function (bonfire) {
+      req.user.completedCoursewares,
+      req.user.completedBonfires.map(function (bonfire) {
+        debug('Completed coursewares', req.user.completedCoursewares);
+        debug('Completed bonfires', req.user.completedBonfires);
         return ({
           completedDate: bonfire.completedDate,
           _id: bonfire._id,
@@ -42,15 +44,11 @@ exports.userMigration = function(req, res, next) {
         });
       })
     ));
-    user.save(function (err) {
-      if (err) {
-        next(err);
-      } else {
-        next(req, res);
-      }
-    })
+    debug(req.user.completedChallenges);
+    next();
+  } else {
+    next();
   }
-  next(req, res);
 };
 
 /**
