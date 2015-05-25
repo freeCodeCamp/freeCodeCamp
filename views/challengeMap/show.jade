@@ -14,7 +14,7 @@ block content
                 img.img-responsive.img-center.border-radius-5(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner-dino.png')
             else
                 img.img-responsive.img-center.border-radius-5(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
-            .col-xs-12.col-md-8.col-md-offset-2
+            .col-xs-12.col-md-10.col-md-offset-1
                 h2.text-center
                     span.text-primary #{camperCount} &thinsp;
                     | campers have joined our community
@@ -22,88 +22,25 @@ block content
                     | since we launched &thinsp;
                     span.text-primary #{daysRunning} &thinsp;
                     | days ago.
-                h2
-                    span.fa.fa-flag
-                    | &nbsp; Waypoints (200 hours of lessons)
+                .spacer
+                h3.negative-15
+                    ol
+                        for challenge in challengeList
+                            if completedChallengeList.indexOf(challenge._id) > -1
+                                .row
+                                    .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
+                                    .col-xs-12.col-sm-9.col-md-10
+                                        li.faded
+                                            a(href="/challenges/#{challenge.name}")= challenge.name
 
-                .col-xs-12.no-right-padding
-                    h3.negative-15
-                        ol
-                            for waypoint in waypoints
-                                if completedChallengeList.indexOf(waypoint._id) > -1
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li.faded
-                                                a(href="/challenges/#{waypoint.name}")= waypoint.name
+                            else
+                                .row
+                                    .hidden-xs.col-sm-3.col-md-2
+                                        span
+                                    .col-xs-12.col-sm-9.col-md-10
+                                        li
+                                            a(href="/challenges/#{challenge.name}")= challenge.name
 
-                                else
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2
-                                            span
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li
-                                                a(href="/challenges/#{waypoint.name}")= waypoint.name
-                h2
-                    span.ion-bonfire
-                    | &nbsp; Bonfires (200 hours of JavaScript algorithm practice)
-                .col-xs-12
-                    h3.negative-15
-                        ol
-                            for bonfire in bonfires
-                                if completedChallengeList.indexOf(bonfire._id) > -1
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li.faded
-                                                a(href="/challenges/#{bonfire.name}")= bonfire.name
-                                else
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2
-                                            span
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li
-                                                a(href="/challenges/#{bonfire.name}")= bonfire.name
-                h2
-                    span.fa.fa-angle-double-right
-                    | &nbsp; Ziplines (200 hours of front end development)
-                .col-xs-12
-                    h3.negative-15
-                        ol
-                            for zipline in ziplines
-                                if completedChallengeList.indexOf(zipline._id) > -1
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li.faded
-                                                a(href="/challenges/#{zipline.name}")= zipline.name
-                                else
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2
-                                            span
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li
-                                                a(href="/challenges/#{zipline.name}")= zipline.name
-                h2
-                    span.fa.fa-level-down
-                    | &nbsp; Basejumps (200 hours of full stack development)
-                .col-xs-12
-                    h3.negative-15
-                        ol
-                            for basejump in basejumps
-                                if completedChallengeList.indexOf(basejump._id) > -1
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li.faded
-                                                a(href="/challenges/#{basejump.name}")= basejump.name
-                                else
-                                    .row
-                                        .hidden-xs.col-sm-3.col-md-2
-                                            span
-                                        .col-xs-12.col-sm-9.col-md-10
-                                            li
-                                                a(href="/challenges/#{basejump.name}")= basejump.name
                 h2
                     span.ion-ios-heart &nbsp; Nonprofit Projects (800 hours of real-world experience)*
                     h3.negative-15

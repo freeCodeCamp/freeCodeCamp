@@ -4,7 +4,7 @@
   "challenges": [
     {
       "_id": "bd7124d8c441eddfaeb5bdef",
-      "name": "Learn how Free Code Camp Works",
+      "name": "Waypoint: Learn how Free Code Camp Works",
       "difficulty": 0.001,
       "challengeSeed": "125407438",
       "description": [
@@ -22,7 +22,7 @@
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd0f",
-      "name": "Join Our Chat Room",
+      "name": "Waypoint: Join Our Chat Room",
       "difficulty": 0.002,
       "challengeSeed": "124555254",
       "description": [
@@ -42,7 +42,7 @@
     },
     {
       "_id": "bd7125d8c441eddfaeb5bdff",
-      "name": "Preview our Challenge Map",
+      "name": "Waypoint: Preview our Challenge Map",
       "difficulty": 0.003,
       "challengeSeed": "125407437",
       "description": [
@@ -58,7 +58,7 @@
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd1f",
-      "name": "Browse our Field Guide",
+      "name": "Waypoint: Browse our Field Guide",
       "difficulty": 0.004,
       "challengeSeed": "125407435",
       "description": [
@@ -73,7 +73,7 @@
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd2f",
-      "name": "Customize your Portfolio Page",
+      "name": "Waypoint: Customize your Portfolio Page",
       "difficulty": 0.005,
       "challengeSeed": "125407433",
       "description": [
@@ -90,7 +90,7 @@
     },
     {
       "_id": "bd7126d8c441eddfaeb5bd3f",
-      "name": "Try Camper News",
+      "name": "Waypoint: Try Camper News",
       "difficulty": 0.006,
       "challengeSeed": "124553410",
       "description": [
@@ -109,7 +109,7 @@
     },
     {
       "_id": "bd7126d8c441eddfaeb5bd3e",
-      "name": "Meet Other Campers in your City",
+      "name": "Waypoint: Meet Other Campers in your City",
       "difficulty": 0.007,
       "challengeSeed": "127358841",
       "description": [
@@ -127,7 +127,7 @@
     },
     {
       "_id": "bd7137d8c441eddfaeb5bdef",
-      "name": "Get Help the Hacker Way with RSAP",
+      "name": "Waypoint: Get Help the Hacker Way with RSAP",
       "difficulty": 0.008,
       "challengeSeed": "125407432",
       "description": [

@@ -4,7 +4,7 @@
   "challenges": [
     {
       "_id": "bd7154d8c441eddfaeb5bdef",
-      "name": "Get Started with Angular.js",
+      "name": "Waypoint: Get Started with Angular.js",
       "difficulty": 0.34,
       "challengeSeed": "114684726",
       "description": [
@@ -17,7 +17,7 @@
     },
     {
       "_id": "bd7155d8c441eddfaeb5bdef",
-      "name": "Apply Angular.js Directives",
+      "name": "Waypoint: Apply Angular.js Directives",
       "difficulty": 0.35,
       "challengeSeed": "114684727",
       "description": [
@@ -30,7 +30,7 @@
     },
     {
       "_id": "bd7156d8c441eddfaeb5bdef",
-      "name": "Power Forms with Angular.js",
+      "name": "Waypoint: Power Forms with Angular.js",
       "difficulty": 0.36,
       "challengeSeed": "114684729",
       "description": [
@@ -43,7 +43,7 @@
     },
     {
       "_id": "bd7157d8c441eddfaeb5bdef",
-      "name": "Customize Angular.js Directives",
+      "name": "Waypoint: Customize Angular.js Directives",
       "difficulty": 0.37,
       "challengeSeed": "114685062",
       "description": [
@@ -55,7 +55,7 @@
     },
     {
       "_id": "bd7158d8c441eddfaeb5bdef",
-      "name": "Create Angular.js Services",
+      "name": "Waypoint: Create Angular.js Services",
       "difficulty": 0.38,
       "challengeSeed": "114685060",
       "description": [
@@ -68,7 +68,7 @@
     },
     {
       "_id": "bd7153d8c441eddfaeb5bd0f",
-      "name": "Manage Packages with NPM",
+      "name": "Waypoint: Manage Packages with NPM",
       "difficulty": 0.39,
       "challengeSeed": "126433450",
       "description": [
@@ -92,7 +92,7 @@
     },
     {
       "_id": "bd7153d8c441eddfaeb5bdff",
-      "name": "Start a Node.js Server",
+      "name": "Waypoint: Start a Node.js Server",
       "difficulty": 0.40,
       "challengeSeed": "126411561",
       "description": [
@@ -116,7 +116,7 @@
     },
     {
       "_id": "bd7153d8c441eddfaeb5bdfe",
-      "name": "Continue working with Node.js Servers",
+      "name": "Waypoint: Continue working with Node.js Servers",
       "difficulty": 0.41,
       "challengeSeed": "126411561",
       "description": [
@@ -129,7 +129,7 @@
     },
     {
       "_id": "bd7153d8c441eddfaeb5bdfd",
-      "name": "Finish working with Node.js Servers",
+      "name": "Waypoint: Finish working with Node.js Servers",
       "difficulty": 0.42,
       "challengeSeed": "126411561",
       "description": [
@@ -142,7 +142,7 @@
     },
     {
       "_id": "bd7153d8c441eddfaeb5bd1f",
-      "name": "Build Web Apps with Express.js",
+      "name": "Waypoint: Build Web Apps with Express.js",
       "difficulty": 0.43,
       "challengeSeed": "126411559",
       "description": [
@@ -166,7 +166,7 @@
     },
     {
       "_id": "bd7140d8c441eddfaeb5bdef",
-      "name": "Manage Source Code with Git",
+      "name": "Waypoint: Manage Source Code with Git",
       "difficulty": 0.44,
       "challengeSeed": "114635309",
       "description": [

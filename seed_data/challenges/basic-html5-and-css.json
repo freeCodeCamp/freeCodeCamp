@@ -4,7 +4,7 @@
   "challenges": [
     {
       "_id": "bd7123c8c441eddfaeb5bdef",
-      "name": "Waypoint: Use HTML Elements",
+      "name": "Waypoint: Say Hello to HTML Elements",
       "difficulty": 0.0085,
       "description": [
         "Welcome to Free Code Camp's first coding challenge! Click on the button below for further instructions.",
@@ -25,7 +25,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf0887a",
-      "name": "Waypoint: Use the h2 Element",
+      "name": "Waypoint: Headline with the h2 Element",
       "difficulty": 0.010,
       "description": [
         "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element.",
@@ -44,7 +44,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08801",
-      "name": "Waypoint: Use the Paragraph Element",
+      "name": "Waypoint: Inform with the Paragraph Element",
       "difficulty": 0.011,
       "description": [
         "Create a paragraph element below the h2 element, and give it the text \"Hello Paragraph\".",
@@ -62,7 +62,7 @@
     },
     {
       "_id": "bad87fee1348bd9aeaf08801",
-      "name": "Waypoint: Add a Line Break to Visually Separate Elements",
+      "name": "Waypoint: Visually Separate Elements with Line Breaks",
       "difficulty": 0.012,
       "description": [
         "Add a <code>line break</code> between the <code>&#60;h2&#62</code> and <code>&#60;p&#62</code> elements.",
@@ -137,7 +137,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08833",
-      "name": "Waypoint: Use Lorem Ipsum Text as a Placeholder",
+      "name": "Waypoint: Fill in the Blank with Placeholder Text",
       "difficulty": 0.015,
       "description": [
         "Change the text in the <code>p</code> element to use the first few words of <code>Kitty Ipsum</code> text.",
@@ -263,7 +263,7 @@
     },
     {
       "_id": "bad87fee1348bd9aefe08806",
-      "name": "Waypoint: Use a CSS Class to Style Multiple Elements",
+      "name": "Waypoint: Style Multiple Elements with a CSS Classes",
       "difficulty": 0.020,
       "description": [
         "Apply the \"red-text\" class to the <code>h2</code> and <code>p</code> elements.",
@@ -419,7 +419,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08809",
-      "name": "Waypoint: Using Important to Override Styles",
+      "name": "Waypoint: Override Styles with Important",
       "difficulty": 0.025,
       "description": [
         "Create a \"blue-text\" class that gives an element the font-color of blue. Also create a \"urgently-red\" class that give an element the font-color of red, but use <code>!important</code> to ensure the element is rendered as being red. Apply both classes to your <code>h2</code> element.",
@@ -462,7 +462,7 @@
 
     {
       "_id": "bad87fee1348bd9aedf08812",
-      "name": "Waypoint: Add an Image to your Website",
+      "name": "Waypoint: Add Images to your Website",
       "difficulty": 0.026,
       "description": [
         "Use an <code>img</code> element to add the image <code>http://bit.ly/fcc-kittens</code> to your website.",
@@ -500,7 +500,7 @@
     },
     {
       "_id": "bad87fee1348bd9acdf08812",
-      "name": "Waypoint: Specify an Image Size",
+      "name": "Waypoint: Size your Images",
       "difficulty": 0.027,
       "description": [
         "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.",
@@ -539,7 +539,7 @@
     },
     {
       "_id": "bad87fee1348bd9bedf08813",
-      "name": "Waypoint: Add a Border Around an Element",
+      "name": "Waypoint: Add Borders Around your Elements",
       "difficulty": 0.028,
       "description": [
         "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border around an HTML element, and apply it to your cat photo.",
@@ -632,7 +632,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08815",
-      "name": "Waypoint: Make an Image Circular with a Border Radius",
+      "name": "Waypoint: Make Circular Images with a Border Radius",
       "difficulty": 0.030,
       "description": [
         "Give your cat photo a <code>border-radius</code> of 50%.",
@@ -680,7 +680,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08816",
-      "name": "Waypoint: Use an Anchor Tag to Link to an External Page",
+      "name": "Waypoint: Link to External Pages with Anchor Elements",
       "difficulty": 0.031,
       "description": [
         "Create an <code>anchor</code> element that links to http://catphotoapp.com and has \"cat photos\" as its anchor text (link text).",
@@ -891,7 +891,7 @@
     },
     {
       "_id": "bad87fee1348bd9aedf08818",
-      "name": "Waypoint: Add Alt Text to an image",
+      "name": "Waypoint: Add Alt Text to an Image for Accessibility",
       "difficulty": 0.035,
       "description": [
         "Add the <code>alt text</code> \"A cute orange cat lying on its back\" to our cat photo",
@@ -1184,7 +1184,7 @@
 
     {
       "_id" : "bad87fee1348bd9aede08830",
-      "name": "Waypoint: Create a basic Form Element",
+      "name": "Waypoint: Create a Form Element",
       "difficulty" : 0.040,
       "description": [
         "Wrap your text field in a <code>&#60;form&#62;</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element.",
@@ -1313,7 +1313,7 @@
 
     {
       "_id" : "bad87fee1348bd9aedc08830",
-      "name": "Waypoint: Use HTML5 to Make a Field Required",
+      "name": "Waypoint: Use HTML5 to Require a Field",
       "difficulty" : 0.042,
       "description": [
         "Make it required for your user to input text into your form before being able to submit it.",
@@ -1593,7 +1593,8 @@
       "difficulty" : 0.046,
       "description": [
         "Set one of your radio buttons and one of your checkboxes to be checked by default.",
-        ""
+        "You set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
+        "Just add the word \"checked\" to the inside of your input element. For example, <code>&#60;input type='radio' name='test-name' checked&#62;</code>."
       ],
       "tests": [
         "assert($('input[type=\"radio\"').prop('checked'), 'One of the radio buttons on your form should be checked by default.')",

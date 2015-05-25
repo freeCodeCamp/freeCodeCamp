@@ -29,52 +29,6 @@ module.exports = {
         return challenge._id;
       });
 
-    var bonfireList = challengeList
-      .filter(function(challenge) {
-        return challenge.challengeType === challengeTypes.BONFIRE;
-      })
-      .map(function(bonfire) {
-        return ({
-          '_id': bonfire._id,
-          'name': bonfire.name
-        });
-      });
-
-    var waypoints = challengeList.filter(function(challenge) {
-      if (challenge.challengeType === challengeTypes.VIDEO
-          || challenge.challengeType === challengeTypes.HTML_CSS_JQ
-          || challenge.challengeType === challengeTypes.JAVASCRIPT) {
-        return challenge;
-      }
-    }).map(function(waypoint) {
-      return ({
-        '_id': waypoint._id,
-        'name': waypoint.name
-      });
-    });
-
-    var ziplines = challengeList.filter(function(challenge) {
-      if (challenge.challengeType === challengeTypes.ZIPLINE) {
-        return challenge;
-      }
-    }).map(function(zipline) {
-      return ({
-        '_id': zipline._id,
-        'name': zipline.name
-      });
-    });
-
-    var basejumps = challengeList.filter(function(challenge) {
-      if (challenge.challengeType === challengeTypes.BASEJUMP) {
-        return challenge;
-      }
-    }).map(function(basejump) {
-      return ({
-        '_id': basejump._id,
-        'name': basejump.name
-      });
-    });
-
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
@@ -93,10 +47,7 @@ module.exports = {
         daysRunning: daysRunning,
         camperCount: numberWithCommas(camperCount),
         title: "A map of all Free Code Camp's Challenges",
-        bonfires: bonfireList,
-        waypoints: waypoints,
-        ziplines: ziplines,
-        basejumps: basejumps,
+        challengeList: challengeList,
         completedChallengeList: completedChallengeList
       });
     });

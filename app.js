@@ -234,6 +234,25 @@ app.get('/chat', resourcesController.chat);
 
 app.get('/twitch', resourcesController.twitch);
 
+app.get('/cats.json', function(req, res) {
+  res.send(
+    [
+      {
+        "name": "cute",
+        "imageLink": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRaP1ecF2jerISkdhjr4R9yM9-8ClUy-TA36MnDiFBukd5IvEME0g"
+      },
+      {
+        "name": "grumpy",
+        "imageLink": "http://cdn.grumpycats.com/wp-content/uploads/2012/09/GC-Gravatar-copy.png"
+      },
+      {
+        "name": "mischievous",
+        "imageLink": "http://www.kittenspet.com/wp-content/uploads/2012/08/cat_with_funny_face_3-200x200.jpg"
+      }
+    ]
+  )
+});
+
 // Agile Project Manager Onboarding
 
 app.get('/pmi-acp-agile-project-managers',
