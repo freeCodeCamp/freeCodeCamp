@@ -10,6 +10,49 @@ var _ = require('lodash'),
   resources = require('./resources'),
   R = require('ramda');
 
+
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns null
+ * Middleware to migrate users from fragmented challenge structure to unified
+ * challenge structure
+ */
+exports.userMigration = function(req, res, next) {
+  debug('user migration called');
+  var user = req.user;
+  if (!user.migratedToUnifiedChallengeStructure && user) {
+    user.migratedToUnifiedChallengeStructure = true;
+    user.completedChallenges = R.filter(function (elem) {
+      return elem; // getting rid of undefined
+    }, R.concat(
+      user.completedCoursewares,
+      user.completedBonfires.map(function (bonfire) {
+        return ({
+          completedDate: bonfire.completedDate,
+          _id: bonfire._id,
+          name: bonfire.name,
+          completedWith: bonfire.completedWith,
+          solution: bonfire.solution,
+          githubLink: '',
+          verified: false,
+          challengeType: 5
+        });
+      })
+    ));
+    user.save(function (err) {
+      if (err) {
+        next(err);
+      } else {
+        next(req, res);
+      }
+    })
+  }
+  next(req, res);
+};
+
 /**
  * GET /signin
  * Siginin page.

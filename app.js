@@ -216,6 +216,10 @@ app.use(function (req, res, next) {
     next();
 });
 
+// User migration middleware
+
+app.use(userController.userMigration);
+
 /**
  * Main routes.
  */
