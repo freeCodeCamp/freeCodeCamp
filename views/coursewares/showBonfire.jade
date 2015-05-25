@@ -16,7 +16,7 @@ block content
     script(type='text/javascript', src='/js/lib/jailed/jailed.js')
     script(type='text/javascript', src='/js/lib/coursewares/sandbox.js')
 
-    .row
+    .row(ng-controller="pairedWithController")
         .col-xs-12.col-sm-12.col-md-4.bonfire-top
             #testCreatePanel
                 h1#bonfire-name.text-center= name
@@ -79,6 +79,18 @@ block content
                                             span.ion-arrow-up-b
                                             | Less information
 
+                if (user)
+                    form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                        .form-group.text-center
+                            .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
+                                // extra field to distract password tools like lastpass from injecting css into our username field
+                                input.form-control(ng-show="false")
+                                label(for="existingUser") If you're pairing with someone, enter their FreeCodeCamp username here
+                                input.form-control#completed-with(name="existingUser", placeholder="Pair Username", existing-username='', ng-model="existingUser", autofocus)
+                            .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
+                                alert(type='danger')
+                                    span.ion-close-circled
+                                    | Username not found
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
                 .button-spacer
                 .btn-group.input-group.btn-group-justified
@@ -122,23 +134,13 @@ block content
             .modal-content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body(ng-controller="pairedWithController")
+                .modal-body
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
                     - if (user)
-                        form.form-horizontal(novalidate='novalidate', name='completedWithForm')
-                            .form-group.text-center
-                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
-                                    // extra field to distract password tools like lastpass from injecting css into our username field
-                                    input.form-control(ng-show="false")
-                                    input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser", autofocus)
-                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
-                                    alert(type='danger')
-                                        span.ion-close-circled
-                                        | Username not found
 
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next bonfire (ctrl + enter)
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge (ctrl + enter)
 
 
                         - if (user.progressTimestamps.length > 2)
