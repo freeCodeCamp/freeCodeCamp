@@ -28,7 +28,7 @@ var async = require('async'),
  * Cached values
  */
 var allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
-  challengeMap, challengeMapWithIds,
+  challengeMap, challengeMapForDisplay, challengeMapWithIds,
   challengeMapWithNames, allChallengeIds, allChallenges;
 
 /**
@@ -67,12 +67,23 @@ Array.zip = function(left, right, combinerFunction) {
     });
     challengeMap = _.cloneDeep(localChallengeMap);
   }
-  //todo remove this debug
-  debug(challengeMap);
 })();
 
 
 module.exports = {
+
+  getChallengeMapForDisplay: function() {
+    if (!challengeMapForDisplay) {
+      challengeMapForDisplay = {};
+      Object.keys(challengeMap).forEach(function(key) {
+        challengeMapForDisplay[key] = {
+          name: challengeMap[key].name,
+          challenges: challengeMap[key].challenges
+        }
+      });
+    }
+    return challengeMapForDisplay;
+  },
 
   getChallengeMapWithIds: function() {
     if (!challengeMapWithIds) {

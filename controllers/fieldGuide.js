@@ -5,7 +5,8 @@ var R = require('ramda'),
 exports.returnIndividualFieldGuide = function(req, res, next) {
   var dashedName = req.params.fieldGuideName;
 
-  var fieldGuideName = dashedName.replace(/\-/g, ' ');
+  var fieldGuideName = dashedName.replace(/\-/g, ' ')
+  .replace(/[^a-z0-9\s]/gi, '');
 
   if (req.user) {
     var completed = req.user.completedFieldGuides;
@@ -39,7 +40,9 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
 
       var fieldGuide = R.head(fieldGuideFromMongo);
       var dashedNameFull =
-        fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
+        fieldGuide.name.toLowerCase()
+          .replace(/\s/g, '-')
+          .replace(/[^a-z0-9\-]/gi, '');
 
       if (dashedNameFull !== dashedName) {
         return res.redirect('../field-guide/' + dashedNameFull);
@@ -68,7 +71,7 @@ exports.showAllFieldGuides = function(req, res) {
 
 exports.returnNextFieldGuide = function(req, res, next) {
   if (!req.user) {
-    return res.redirect('/field-guide/how-do-i-use-this-guide?');
+    return res.redirect('/field-guide/how-do-i-use-this-guide');
   }
 
   var displayedFieldGuides =
@@ -89,9 +92,11 @@ exports.returnNextFieldGuide = function(req, res, next) {
           ].join('')
         });
       }
-      return res.redirect('../field-guide/how-do-i-use-this-guide?');
+      return res.redirect('../field-guide/how-do-i-use-this-guide');
     }
-    var nameString = fieldGuide.name.toLowerCase().replace(/\s/g, '-');
+    var nameString = fieldGuide.name.toLowerCase()
+      .replace(/\s/g, '-')
+      .replace(/[^a-z0-9\-]/gi, '');
     return res.redirect('../field-guide/' + nameString);
   });
 };

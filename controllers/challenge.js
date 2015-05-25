@@ -135,7 +135,8 @@ exports.returnCurrentChallenge = function(req, res, next) {
   }
   var nameString = req.user.currentChallenge.challengeName.trim()
     .toLowerCase()
-    .replace(/\s/g, '-');
+    .replace(/\s/g, '-')
+    .replace(/[^a-z0-9\-]/gi, '');
   req.user.save(function(err) {
     if (err) {
       return next(err);
@@ -147,7 +148,10 @@ exports.returnCurrentChallenge = function(req, res, next) {
 exports.returnIndividualChallenge = function(req, res, next) {
   var dashedName = req.params.challengeName;
 
-  var challengeName = dashedName.replace(/\-/g, ' ');
+  var challengeName = dashedName.replace(/\-/g, ' ')
+    .split(' ')
+    .slice(1)
+    .join(' ');
 
   Challenge.find({'name': new RegExp(challengeName, 'i')},
     function(err, challengeFromMongo) {
@@ -164,7 +168,10 @@ exports.returnIndividualChallenge = function(req, res, next) {
       }
       var challenge = challengeFromMongo.pop();
       // Redirect to full name if the user only entered a partial
-      var dashedNameFull = challenge.name.toLowerCase().replace(/\s/g, '-');
+      var dashedNameFull = challenge.name
+        .toLowerCase()
+        .replace(/\s/g, '-')
+        .replace(/[^a-z0-9\-]/gi, '');
       if (dashedNameFull !== dashedName) {
         return res.redirect('../challenges/' + dashedNameFull);
       } else {
