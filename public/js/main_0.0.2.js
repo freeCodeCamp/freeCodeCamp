@@ -154,6 +154,7 @@ $(document).ready(function() {
     'BONFIRE': 5
   };
   $('#next-courseware-button').on('click', function() {
+    $('#next-courseware-button').unbind('click');
     if ($('.signup-btn-nav').length < 1) {
       switch (challengeType) {
         case challengeTypes.HTML_CSS_JQ:
@@ -172,6 +173,9 @@ $(document).ready(function() {
               if (res) {
                 window.location.href = '/challenges/next-challenge';
               }
+            }).fail(
+            function() {
+              window.location.href="/challenges";
             }
           );
           break;
