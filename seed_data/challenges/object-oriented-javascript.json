@@ -9,7 +9,7 @@
       "challengeSeed": "114604814",
       "description": [
         "Objects will allow you to build applications more efficiently by using small, reusable blocks of code.",
-        "This course for Udacity will help you learn Object-Oriented Programming in JavaScript.",
+        "This course on Udacity will help you learn Object-Oriented Programming in JavaScript.",
         "First, we'll learn how JavaScript works in terms of scopes. You'll learn the difference between a \"Lexical Scope\" and an Execution Context.",
         "This theoretical foundation is useful for understanding when an a variable can be accessed and when it can't.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
@@ -24,12 +24,12 @@
       "difficulty": 0.03,
       "challengeSeed": "114614220",
       "description": [
-        "In this section, you'll learn how you can use \"this\" to dynamically point to your current object.",
-        "For example, if we were inside the function <code>camper.completeCourse()</code>, \"this\" would refer to the specific camper we were running the function on.",
+        "In this section, you'll learn how you can use <code>this</code> to dynamically point to your current object.",
+        "For example, if we were inside the function <code>camper.completeCourse()</code>, <code>this</code> would refer to the specific camper we were running the function on.",
         "Note that this section has several trick questions, designed to make you think. Don't get hung up on them, just keep moving forward.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2593668699/m-2780408563'>https://www.udacity.com/course/viewer#!/c-ud015/l-2593668699/m-2780408563</a> and start the course.",
-        "Once you've completed this section of using the keyword \"this\", mark this Waypoint complete and move on to the next one."
+        "Once you've completed this section of using the keyword <code>this</code>, mark this Waypoint complete and move on to the next one."
       ],
       "challengeType": 2,
       "tests": []
@@ -73,6 +73,7 @@
       "description": [
         "Now we'll go over the simplest way to implement a JavaScript class.",
         "A class is a set of functions that you can use to easily produce similar objects.",
+        "You may have heard JavaScript doesn't have classes. This is <em>technically</em> true, but don't let it get in the way of the very important ideas in this section.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468537/m-2961989110'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468537/m-2961989110</a> and start the course.",
         "Once you've completed this section of functional classes, mark this Waypoint complete and move on to the next one."
@@ -87,7 +88,7 @@
       "challengeSeed": "114612885",
       "description": [
         "Now we'll learn how one object can be prototyped off of another object.",
-        "Prototype objects delegate their \"failed lookups\" up the \"prototype chain\".",
+        "Objects delegate their \"failed lookups\" up the \"prototype chain\".",
         "This means that if I create a second object based off another object, then try to access an attribute the second object doesn't have, JavaScript will \"fall through\" to the original object to see whether it has that attribute.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2794468538/m-3034538557'>https://www.udacity.com/course/viewer#!/c-ud015/l-2794468538/m-3034538557</a> and start the course.",
