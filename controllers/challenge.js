@@ -175,20 +175,22 @@ exports.returnIndividualChallenge = function(req, res, next) {
       if (dashedNameFull !== dashedName) {
         return res.redirect('../challenges/' + dashedNameFull);
       } else {
-        req.user.currentChallenge = {
-          challengeId: challenge._id,
-          challengeName: challenge.name,
-          challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
-              map(function(key) {
-                return challengeMapWithIds[key]
-                  .filter(function(elem) {
-                    return String(elem) === String(challenge._id);
-                  }).map(function() {
-                    return key;
-                  });
-              })
-          ))
-        };
+        if (req.user) {
+          req.user.currentChallenge = {
+            challengeId: challenge._id,
+            challengeName: challenge.name,
+            challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
+                map(function (key) {
+                  return challengeMapWithIds[key]
+                    .filter(function (elem) {
+                      return String(elem) === String(challenge._id);
+                    }).map(function () {
+                      return key;
+                    });
+                })
+            ))
+          };
+        }
       }
 
       var challengeType = {
@@ -295,12 +297,16 @@ exports.returnIndividualChallenge = function(req, res, next) {
           });
         }
       };
-      req.user.save(function(err) {
-        if (err) {
-          return next(err);
-        }
+      if (req.user) {
+        req.user.save(function (err) {
+          if (err) {
+            return next(err);
+          }
+          return challengeType[challenge.challengeType]();
+        });
+      } else {
         return challengeType[challenge.challengeType]();
-      });
+      }
     });
 };
 

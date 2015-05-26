@@ -21,20 +21,21 @@ block content
                 a.btn.btn-primary.btn-big.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
+                .button-spacer
+                .btn-group.input-group.btn-group-justified
+                    .btn.btn-success.btn-big#i-want-help-editorless
+                        i.fa.fa-medkit
+                            | &nbsp; Get help
+                    .btn.btn-success.btn-big#report-issue
+                        i.fa.fa-bug
+                            | &nbsp; Report a bug
+                .button-spacer
             - else
                 a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
                 br
-            .button-spacer
-            .btn-group.input-group.btn-group-justified
-                .btn.btn-success.btn-big#i-want-help-editorless
-                    i.fa.fa-medkit
-                        | &nbsp; Get help
-                .btn.btn-success.btn-big#report-issue
-                    i.fa.fa-bug
-                        | &nbsp; Report a bug
-            .button-spacer
+
         script(type="text/javascript").
 
                 var controlEnterHandler = function(e) {
