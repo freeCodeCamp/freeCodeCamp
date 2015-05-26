@@ -474,7 +474,7 @@
       ],
       "tests": [
         "assert($('img').length > 0, 'Your webpage should have an image element.')",
-        "assert($('img').attr('src').toString() ===  'http://bit.ly/fcc-kittens', 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
+        "assert(!!$('img').filter(function(index) { return /kittens/gi.test($('img').attr('src')); }).length > 0, 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -692,7 +692,7 @@
       ],
       "tests": [
         "assert((/photo/gi).test($('a').text()), 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
-        "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'You need an <code>anchor</code> element that links to <code>http&#58;//catphotoapp.com<code>.')"
+        "assert($('a').filter(function(index) { return /com/gi.test($('a').attr('href')); }).length > 0, 'You need an <code>anchor</code> element that links to <code>http&#58;//catphotoapp.com<code>.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1595,13 +1595,13 @@
       "name": "Waypoint: Check Radio Buttons and Checkboxes by Default",
       "difficulty" : 0.046,
       "description": [
-        "Set one of your radio buttons and one of your checkboxes to be checked by default.",
+        "Set the first of your radio buttons and the first of your checkboxes to both be checked by default.",
         "You set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
-        "Just add the word \"checked\" to the inside of your input element. For example, <code>&#60;input type='radio' name='test-name' checked&#62;</code>."
+        "To do this, just add the word \"checked\" to the inside of an input element. For example, <code>&#60;input type='radio' name='test-name' checked&#62;</code>."
       ],
       "tests": [
-        "assert($('input[type=\"radio\"').prop('checked'), 'One of the radio buttons on your form should be checked by default.')",
-        "assert($('input[type=\"checkbox\"').prop('checked'), 'One of the checkboxes on your form should be checked by default.')"
+        "assert($('input[type=\"radio\"').prop('checked'), 'Your first radio button on your form should be checked by default.')",
+        "assert($('input[type=\"checkbox\"').prop('checked'), 'Your first checkbox on your form should be checked by default.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
