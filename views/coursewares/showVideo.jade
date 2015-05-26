@@ -16,20 +16,21 @@ block content
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
-            - if (user)
+            if (user)
                 a.btn.btn-primary.btn-big.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
                 .button-spacer
-                .btn-group.input-group.btn-group-justified
-                    .btn.btn-success.btn-big#i-want-help-editorless
-                        i.fa.fa-medkit
-                            | &nbsp; Get help
-                    .btn.btn-success.btn-big#report-issue
-                        i.fa.fa-bug
-                            | &nbsp; Report a bug
+                if (user.sentSlackInvite)
+                    .btn-group.input-group.btn-group-justified
+                        .btn.btn-success.btn-big#i-want-help-editorless
+                            i.fa.fa-medkit
+                                | &nbsp; Get help
+                        .btn.btn-success.btn-big#report-issue
+                            i.fa.fa-bug
+                                | &nbsp; Report a bug
                 .button-spacer
-            - else
+            else
                 a.btn.btn-big.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;

@@ -16,19 +16,20 @@ block content
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
-            - if (user)
+            if (user)
                 a.btn.btn-primary.btn-big.btn-block#completed-zipline-or-basejump I've completed this challenge  (ctrl + enter)
-                .button-spacer
-                .btn-group.input-group.btn-group-justified
-                    .btn.btn-success.btn-big#i-want-help-editorless
-                        i.fa.fa-medkit
-                            | &nbsp; Help
-                    .btn.btn-success.btn-big#i-want-to-pair
-                        i.fa.fa-user-plus
-                            | &nbsp; Pair
-                    .btn.btn-success.btn-big#report-issue
-                        i.fa.fa-bug
-                            | &nbsp; Bug
+                if (user.sentSlackInvite)
+                    .button-spacer
+                    .btn-group.input-group.btn-group-justified
+                        .btn.btn-success.btn-big#i-want-help-editorless
+                            i.fa.fa-medkit
+                                | &nbsp; Help
+                        .btn.btn-success.btn-big#i-want-to-pair
+                            i.fa.fa-user-plus
+                                | &nbsp; Pair
+                        .btn.btn-success.btn-big#report-issue
+                            i.fa.fa-bug
+                                | &nbsp; Bug
                 .button-spacer
                 script.
                     var userLoggedIn = true;

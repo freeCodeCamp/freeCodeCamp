@@ -91,7 +91,7 @@ block content
                                     span.ion-close-circled
                                     | Username not found
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                if (user)
+                if (user && user.sentSlackInvite)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
                         label.btn.btn-success#i-want-help

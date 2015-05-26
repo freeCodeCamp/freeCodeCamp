@@ -35,8 +35,8 @@ block content
                                             span.ion-arrow-up-b
                                             | Less information
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                .button-spacer
-                if (user)
+                if (user && user.sentSlackInvite)
+                    .button-spacer
                     .btn-group.input-group.btn-group-justified
                         label.btn.btn-success#i-want-help
                             i.fa.fa-medkit
