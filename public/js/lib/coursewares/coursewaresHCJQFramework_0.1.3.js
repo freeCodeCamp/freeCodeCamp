@@ -148,6 +148,7 @@ function showCompletion() {
     $('body').keydown(function(e) {
         if (e.ctrlKey && e.keyCode == 13) {
             $('#next-courseware-button').click();
+            $('#next-courseware-button').unbind('click');
         }
     });
 }
