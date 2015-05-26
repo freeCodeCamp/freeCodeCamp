@@ -147,10 +147,11 @@ block content
                                         th.col-xs-6 Link
                                 for challenge in challenges
                                     tr
-                                        td.col-xs-4= challenge.name
+                                        td.col-xs-4
+                                            a(href='/challenges/' + challenge.name, target='_blank')= challenge.name
                                         td.col-xs-2= moment(challenge.completedDate, 'x').format("MMM DD, YYYY")
                                         td.col-xs-6
-                                            a(href="http://" + challenge.solution, target='_blank') View my solution
+                                            a(href=challenge.solution, target='_blank') View my solution
 
                         br
                     - if (bonfires.length > 0)
