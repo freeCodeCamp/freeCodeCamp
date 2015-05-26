@@ -34,6 +34,7 @@
         "<code>h2</code> elements are slightly smaller than <code>h1</code> elements. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements."
       ],
       "tests": [
+        "assert(($('h2').length > 0), 'Create an <code>h2</code> elements.')",
         "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your h2 element should have the text \"CatPhotoApp\"')",
         "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your h1 element should have the text \"Hello World\"')"
       ],
@@ -47,11 +48,12 @@
       "name": "Waypoint: Inform with the Paragraph Element",
       "difficulty": 0.011,
       "description": [
-        "Create a paragraph element below the h2 element, and give it the text \"Hello Paragraph\".",
+        "Create a paragraph element below the h2 element, and give it the text \"Hello Paragraph\". As soon as you create the opening <code>&#60;p&#62;</code> tag, one of our tests will pass (since this is valid HTML). Be sure to close the element by adding a closing <code>&#60;/p&#62;</code> tag.",
         "Paragraph elements are the preferred element for normal-sized paragraph text on websites.",
         "You can create a paragraph element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
       ],
       "tests": [
+        "assert(($('p').length > 0), 'Create an <code>h2</code> elements.')",
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your paragraph element should have the text \"Hello Paragraph\"')"
       ],
       "challengeSeed": [
