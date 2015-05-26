@@ -25,7 +25,7 @@ block content
                     .col-xs-12
                         h2.text-center= name
                         .bonfire-instructions
-                            p!= brief
+                            p.wrappable!= brief
                             #brief-instructions
                                 #more-info.btn.btn-primary.btn-block.btn-primary-ghost
                                     span.ion-arrow-down-b
@@ -33,7 +33,7 @@ block content
                             #long-instructions.row.hide
                                 .col-xs-12
                                     for sentence in details
-                                        p!= sentence
+                                        p.wrappable!= sentence
                                     #less-info.btn.btn-primary.btn-block.btn-primary-ghost
                                         span.ion-arrow-up-b
                                         | Less information
