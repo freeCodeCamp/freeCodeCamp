@@ -273,7 +273,10 @@ app.get('/nonprofits/getNonprofitList', nonprofitController.showAllNonprofits);
 
 app.get('/nonprofits-form', resourcesController.nonprofitsForm);
 
-app.get('/map', challengeMapController.challengeMap);
+app.get('/map',
+  userController.userMigration,
+  challengeMapController.challengeMap
+);
 
 app.get('/live-pair-programming', function(req, res) {
   res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
