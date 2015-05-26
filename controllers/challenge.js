@@ -147,7 +147,7 @@ exports.returnCurrentChallenge = function(req, res, next) {
 exports.returnIndividualChallenge = function(req, res, next) {
   var dashedName = req.params.challengeName;
 
-  var challengeName = /^(bonfire|waypoint)/.test(dashedName) ? dashedName
+  var challengeName = /^(bonfire|waypoint|zipline|basejump)/.test(dashedName) ? dashedName
       .replace(/\-/g, ' ')
       .split(' ')
       .slice(1)
