@@ -1188,8 +1188,8 @@
       ],
       "tests": [
         "assert($('.row').length > 4, 'Wrap your all of your checkboxes inside one div with the class \"row\".')",
-        "assert($('.col-xs-5').length > 0, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')",
-        "assert($('.col-xs-7').length > 0, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')"
+        "assert($('.col-xs-5').length > 0, 'Wrap your form submission button in a div with the class \"col-xs-5\".')",
+        "assert($('.col-xs-7').length > 0, 'Wrap your form text area in a div with the class \"col-xs-7\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
