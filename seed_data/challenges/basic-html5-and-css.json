@@ -48,12 +48,12 @@
       "name": "Waypoint: Inform with the Paragraph Element",
       "difficulty": 0.011,
       "description": [
-        "Create a paragraph element below the h2 element, and give it the text \"Hello Paragraph\". As soon as you create the opening <code>&#60;p&#62;</code> tag, one of our tests will pass (since this is valid HTML). Be sure to close the element by adding a closing <code>&#60;/p&#62;</code> tag.",
+        "Create a paragraph element below your h2 element, and give it the text \"Hello Paragraph\". As soon as you create the opening <code>&#60;p&#62;</code> tag, one of our tests will pass (since this is valid HTML). Be sure to close the element by adding a closing <code>&#60;/p&#62;</code> tag.",
         "Paragraph elements are the preferred element for normal-sized paragraph text on websites.",
         "You can create a paragraph element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert(($('p').length > 0), 'Create an <code>h2</code> elements.')",
+        "assert(($('p').length > 0), 'Create a paragraph element.')",
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your paragraph element should have the text \"Hello Paragraph\"')"
       ],
       "challengeSeed": [
@@ -68,7 +68,7 @@
       "difficulty": 0.012,
       "description": [
         "Add a <code>line break</code> between the <code>&#60;h2&#62</code> and <code>&#60;p&#62</code> elements.",
-        "You can create an line break element with <code>&#60;br&#47&#62</code>.",
+        "You can create a line break element with <code>&#60;br&#47&#62</code>.",
         "Note that <code>&#60;br&#47&#62</code> has no closing tag. It is a <code>self-closing</code> element. See how a forward-slash precedes the closing bracket?",
         "You'll encounter other <code>self-closing</code> element tags soon."
       ],
