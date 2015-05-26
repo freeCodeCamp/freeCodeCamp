@@ -859,8 +859,8 @@
         "Add <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button's element, and a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button."
       ],
       "tests": [
-        "assert($('.fa-trash').length > 0, 'You should add a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your like button element.')",
-        "assert($('.fa-info-circle').length > 0, 'You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your like button element.')"
+        "assert($('.fa-trash').length > 0, 'You should add a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button element.')",
+        "assert($('.fa-info-circle').length > 0, 'You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button element.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
