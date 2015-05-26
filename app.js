@@ -538,7 +538,8 @@ app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
 
 app.get('/challenges/next-challenge',
   userController.userMigration,
-  challengeController.returnNextChallenge);
+  challengeController.returnNextChallenge
+);
 
 app.get(
   '/challenges/:challengeName',

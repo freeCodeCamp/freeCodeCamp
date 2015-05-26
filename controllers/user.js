@@ -22,16 +22,11 @@ var _ = require('lodash'),
  */
 exports.userMigration = function(req, res, next) {
   if (req.user && req.user.completedChallenges.length === 0) {
-    debug('user migration called');
-     debug('Completed coursewares', req.user.completedCoursewares);
-        debug('Completed bonfires', req.user.completedBonfires);
     req.user.completedChallenges = R.filter(function (elem) {
       return elem; // getting rid of undefined
     }, R.concat(
       req.user.completedCoursewares,
       req.user.completedBonfires.map(function (bonfire) {
-        debug('Completed coursewares', req.user.completedCoursewares);
-        debug('Completed bonfires', req.user.completedBonfires);
         return ({
           completedDate: bonfire.completedDate,
           _id: bonfire._id,
@@ -44,7 +39,6 @@ exports.userMigration = function(req, res, next) {
         });
       })
     ));
-    debug(req.user.completedChallenges);
     next();
   } else {
     next();
@@ -378,7 +372,6 @@ exports.returnUser = function(req, res, next) {
                 moment(timeKeys[_i]).toString()
             ) {
 
-              debug(timeKeys[_i - 1], timeKeys[_i]);
               tmpLongest++;
 
               if (tmpLongest > user.currentStreak) {

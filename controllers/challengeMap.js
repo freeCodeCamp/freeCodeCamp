@@ -40,7 +40,6 @@ module.exports = {
 
     User.count({}, function (err, camperCount) {
       if (err) {
-        debug('User err: ', err);
         return next(err);
       }
       res.render('challengeMap/show', {
