@@ -56,7 +56,7 @@ var allTests = '';
     });
 })();
 
-var otherTestsForNow = "<script src='/js/lib/coursewares/iFrameScripts_0.0.1.js'></script>";
+var otherTestsForNow = "<script src='/js/lib/coursewares/iFrameScripts_0.0.2.js'></script>";
 
 var delay;
 // Initialize CodeMirror editor with a nice html5 canvas demo.

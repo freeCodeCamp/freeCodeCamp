@@ -17,6 +17,7 @@ $(document).ready(function() {
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
   $('#i-want-help').on('click', function() {
+    /*
     var editorValue = editor.getValue();
     var currentLocation = window.location.href;
     $.post(
@@ -33,9 +34,11 @@ $(document).ready(function() {
         }
       }
     );
+    */
   });
 
   $('#i-want-help-editorless').on('click', function() {
+    /*
     var currentLocation = window.location.href;
     $.post(
       '/get-help',
@@ -50,6 +53,7 @@ $(document).ready(function() {
         }
       }
     );
+    */
   });
 
   $('#report-issue').on('click', function() {

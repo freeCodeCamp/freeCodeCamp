@@ -147,10 +147,12 @@ exports.returnCurrentChallenge = function(req, res, next) {
 exports.returnIndividualChallenge = function(req, res, next) {
   var dashedName = req.params.challengeName;
 
-  var challengeName = dashedName.replace(/\-/g, ' ')
-    .split(' ')
-    .slice(1)
-    .join(' ');
+  var challengeName = /^(bonfire|waypoint|zipline|basejump)/i.test(dashedName) ? dashedName
+      .replace(/\-/g, ' ')
+      .split(' ')
+      .slice(1)
+      .join(' ')
+    : dashedName.replace(/\-/g, ' ');
 
   Challenge.find({'name': new RegExp(challengeName, 'i')},
     function(err, challengeFromMongo) {
@@ -455,6 +457,8 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
   var solutionLink = req.body.challengeInfo.publicURL;
   var githubLink = req.body.challengeInfo.challengeType === '4'
     ? req.body.challengeInfo.githubURL : true;
+  var challengeType = req.body.challengeInfo.challengeType === '4' ?
+    4 : 3;
   if (!solutionLink || !githubLink) {
     req.flash('errors', {
       msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
@@ -485,6 +489,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
           completedDate: isCompletedDate,
           solution: solutionLink,
           githubLink: githubLink,
+          challengeType: challengeType,
           verified: false
         });
 
@@ -510,6 +515,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
             completedDate: isCompletedDate,
             solution: solutionLink,
             githubLink: githubLink,
+            challengeType: challengeType,
             verified: false
           });
           pairedWith.save(function (err, paired) {
@@ -532,6 +538,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
       completedDate: isCompletedDate,
       solution: solutionLink,
       githubLink: githubLink,
+      challengeType: challengeType,
       verified: false
     });
 

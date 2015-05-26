@@ -3,9 +3,19 @@ require('dotenv').load();
 var User = require('../models/User.js'),
     secrets = require('../config/secrets'),
     mongoose = require('mongoose'),
-    R = require('ramda');
+    R = require('ramda'),
+    ziplines = require('./challenges/ziplines.json'),
+    basejumps = require('./challenges/basejumps.json');
 
 mongoose.connect(secrets.db);
+
+var ziplineIds = ziplines.challenges.map(function(elem) {
+  return elem._id;
+});
+var basejumpIds = basejumps.challenges.map(function(elem) {
+  return elem._id;
+});
+var ziplineAndBaseJumpIds = R.concat(ziplineIds, basejumpIds);
 
 function userModelAssurity(cb) {
   console.log('userModelAssurity');
@@ -91,23 +101,22 @@ function userModelMigration(cb) {
     }
     */
     user.needsMigration = false;
-    user.completedChallenges = R.filter(function(elem) {
-      return elem; // getting rid of undefined
-    }, R.concat(
-      user.completedCoursewares,
-      user.completedBonfires.map(function(bonfire) {
+    user.completedChallenges = user.completedChallenges.map(function(elem) {
+      if (ziplineAndBaseJumpIds.indexOf(elem._id) > 0) {
         return ({
-          completedDate: bonfire.completedDate,
-          _id: bonfire._id,
-          name: bonfire.name,
-          completedWith: bonfire.completedWith,
-          solution: bonfire.solution,
-          githubLink: '',
-          verified: false,
-          challengeType: 5
+          _id: elem._id,
+          name: elem.name,
+          completedWith: elem.completedWith,
+          completedDate: elem.completedDate,
+          solution: elem.solution,
+          githubLink: elem.githubLink,
+          verified: elem.verified,
+          challengeType: typeof elem.githubLink === 'boolean' ? 4 : 3
         });
-      })
-    ));
+      } else {
+        return elem;
+      }
+    });
 
     var self = this;
     user.save(function (err) {

@@ -46,9 +46,9 @@ block content
                 if (user.sentSlackInvite)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
-                        label.btn.btn-success#i-want-help
+                        label.btn.btn-success#i-want-help(disabled)
                             i.fa.fa-medkit
-                                | &nbsp; Help
+                                | &nbsp; Help(disabled)
                         label.btn.btn-success#report-issue
                             i.fa.fa-bug
                                 | &nbsp; Bug
@@ -91,4 +91,4 @@ block content
                             .animated.zoomInDown.delay-half
                                 span.completion-icon.ion-checkmark-circled.text-primary
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-    script(src="/js/lib/coursewares/coursewaresHCJQFramework_0.1.2.js")
+    script(src="/js/lib/coursewares/coursewaresHCJQFramework_0.1.3.js")
