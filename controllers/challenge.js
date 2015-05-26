@@ -457,6 +457,8 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
   var solutionLink = req.body.challengeInfo.publicURL;
   var githubLink = req.body.challengeInfo.challengeType === '4'
     ? req.body.challengeInfo.githubURL : true;
+  var challengeType = req.body.challengeInfo.challengeType === '4' ?
+    4 : 3;
   if (!solutionLink || !githubLink) {
     req.flash('errors', {
       msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
@@ -487,6 +489,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
           completedDate: isCompletedDate,
           solution: solutionLink,
           githubLink: githubLink,
+          challengeType: challengeType,
           verified: false
         });
 
@@ -512,6 +515,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
             completedDate: isCompletedDate,
             solution: solutionLink,
             githubLink: githubLink,
+            challengeType: challengeType,
             verified: false
           });
           pairedWith.save(function (err, paired) {
@@ -534,6 +538,7 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
       completedDate: isCompletedDate,
       solution: solutionLink,
       githubLink: githubLink,
+      challengeType: challengeType,
       verified: false
     });
 

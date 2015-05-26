@@ -398,8 +398,8 @@ exports.returnUser = function(req, res, next) {
 
           user.currentStreak = user.currentStreak || 1;
           user.longestStreak = user.longestStreak || 1;
-          var challenges = user.completedCoursewares.filter(function ( obj ) {
-            return !!obj.solution;
+          var challenges = user.completedChallenges.filter(function ( obj ) {
+            return obj.challengeType === 3 || obj.challengeType === 4;
           });
 
           res.render('account/show', {
