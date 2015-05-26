@@ -18,8 +18,8 @@ function storyLinkCleanup(cb) {
     console.log(i++);
     this.pause();
     story.storyLink = story.storyLink.
-      replace(/[^a-z0-9\s]/gi, '').
       replace(/\s+/g, ' ').
+      replace(/[^a-z0-9\s]/gi, '').
       toLowerCase().
       trim();
     story.save(function (err) {
