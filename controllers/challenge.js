@@ -130,7 +130,6 @@ exports.returnCurrentChallenge = function(req, res, next) {
       if (err) {
         return next(err);
       }
-      return res.redirect('../challenges/learn-how-free-code-camp-works');
     });
   }
   var nameString = req.user.currentChallenge.challengeName.trim()
