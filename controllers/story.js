@@ -137,7 +137,9 @@ exports.returnIndividualStory = function(req, res, next) {
     }
 
     story = story.pop();
-    var dashedNameFull = story.storyLink.toLowerCase().replace(/\s/g, '-');
+    var dashedNameFull = story.storyLink.toLowerCase()
+      .replace(/\s+/g, ' ')
+      .replace(/\s/g, '-');
     if (dashedNameFull !== dashedName) {
       return res.redirect('../news/' + dashedNameFull);
     }
@@ -328,9 +330,6 @@ exports.storySubmission = function(req, res, next) {
     return next(new Error('Not authorized'));
   }
   var storyLink = data.headline
-    .replace(/\'/g, '')
-    .replace(/\"/g, '')
-    .replace(/,/g, '')
     .replace(/\s+/g, ' ')
     .replace(/[^a-z0-9\s]/gi, '')
     .toLowerCase()
