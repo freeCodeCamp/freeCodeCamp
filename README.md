@@ -110,7 +110,7 @@ Project Structure
 | **models**/Challenge.js            | Mongoose schema and model for Challenge.                    |
 | **public**/                        | Static assets (fonts, css, js, img).                        |
 | **public**/**js**/application.js   | Specify client-side JavaScript dependencies.                |
-| **public**/**js**/main_0.0.1.js          | Place your client-side JavaScript here.                     |
+| **public**/**js**/main_0.0.2.js          | Place your client-side JavaScript here.                     |
 | **public**/**css**/main.less       | Main stylesheet for the app.                                |
 | **views/account**/                 | Templates for *login, password reset, signup, profile*.     |
 | **views/partials**/flash.jade      | Error, info and success flash notifications.                |
