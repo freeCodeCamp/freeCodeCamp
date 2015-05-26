@@ -474,7 +474,7 @@
       ],
       "tests": [
         "assert($('img').length > 0, 'Your webpage should have an image element.')",
-        "assert(!!$('img').attr('src'), 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
+        "assert($('img').attr('src').toString() ===  'http://bit.ly/fcc-kittens', 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
