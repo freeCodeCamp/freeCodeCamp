@@ -1,6 +1,10 @@
 extends layout
 block content
     .jumbotron
+        if (user && user.progressTimestamps.length > 0)
+            .col-xs-12
+                .embed-responsive.embed-responsive-16by9
+                    iframe.embed-responsive-item(src='//player.vimeo.com/video/128853855')
         .text-center
             h1.hug-top Code with Us
             h2 Let's learn to code by building projects for nonprofits
