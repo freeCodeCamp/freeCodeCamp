@@ -58,5 +58,6 @@ module.exports = {
     callbackURL: '/auth/linkedin/callback',
     scope: ['r_basicprofile', 'r_emailaddress'],
     passReqToCallback: true
-  }
+  },
+  slackHook: process.env.SLACK_WEBHOOK,
 };

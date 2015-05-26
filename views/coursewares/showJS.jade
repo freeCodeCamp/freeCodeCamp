@@ -5,7 +5,7 @@ block content
     script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
     script(src='/js/lib/codemirror/addon/lint/lint.js')
     script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
-    script(src='//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js')
+    script(src='/bower_components/jshint/dist/jshint.js')
     script(src='/js/lib/chai/chai.js')
     link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
@@ -13,7 +13,7 @@ block content
     link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Ubuntu+Mono")
     script(src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(src='/js/lib/jailed/jailed.js')
-    script(src='/js/lib/bonfire/bonfireInit.js')
+    script(src='/js/lib/coursewares/sandbox.js')
     .row
         .col-xs-12.col-sm-12.col-md-4.bonfire-top
             #testCreatePanel
@@ -30,12 +30,24 @@ block content
                                 #long-instructions.row.hide
                                     .col-xs-12
                                         for sentence in details
-                                            p!= sentence
+                                            p.wrappable!= sentence
                                         #less-info.btn.btn-primary.btn-block.btn-primary-ghost
                                             span.ion-arrow-up-b
                                             | Less information
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                br
+                .button-spacer
+                if (user)
+                    .btn-group.input-group.btn-group-justified
+                        label.btn.btn-success#i-want-help
+                            i.fa.fa-medkit
+                                | &nbsp; Help
+                        label.btn.btn-success#i-want-to-pair
+                            i.fa.fa-user-plus
+                                | &nbsp; Pair
+                        label.btn.btn-success#report-issue
+                            i.fa.fa-bug
+                                | &nbsp; Bug
+                    .spacer
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeOutput(style='display: none;')
@@ -45,10 +57,9 @@ block content
                 script(type="text/javascript").
                     var tests = !{JSON.stringify(tests)};
                     var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
-                    var challengeName = !{JSON.stringify(name)};
+                    var challenge_Id = !{JSON.stringify(challengeId)};
+                    var challenge_Name = !{JSON.stringify(name)};
                     var challengeType = !{JSON.stringify(challengeType)};
-                    var passedCoursewareName = challengeName;
                     var started = Math.floor(Date.now());
 
         .col-xs-12.col-sm-12.col-md-8
@@ -56,7 +67,7 @@ block content
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true, style='display: none;')
-                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.1.js')
+                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.2.js')
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content

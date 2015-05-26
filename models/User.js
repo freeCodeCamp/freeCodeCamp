@@ -124,7 +124,10 @@ var userSchema = new mongoose.Schema({
     uncompletedCoursewares: Array,
     completedCoursewares: [
       {
-        completedDate: Long,
+        completedDate: {
+          type: Long,
+          default: Date.now()
+        },
         _id: String,
         name: String,
         completedWith: String,
@@ -147,9 +150,25 @@ var userSchema = new mongoose.Schema({
 
   // needsMigration has been deprecated, use needsSomeDataModeled
   needsMigration: { type: Boolean, default: true },
-  finishedWaypoints: { type: Boolean, default: false },
   sendMonthlyEmail: { type: Boolean, default: true },
-  challengesHash: {}
+  challengesHash: {},
+  currentChallenge: {},
+  completedChallenges: [
+      {
+        completedDate: Long,
+        _id: String,
+        name: String,
+        completedWith: String,
+        solution: String,
+        githubLink: String,
+        verified: Boolean,
+        challengeType: {
+          type: Number,
+          default: 0
+        }
+      }
+  ],
+  uncompletedChallenges: Array,
 });
 
 /**

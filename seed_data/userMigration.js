@@ -1,9 +1,9 @@
+/*eslint-disable block-scoped-var */
 require('dotenv').load();
-var mongodb = require('mongodb'),
-  User = require('../models/User.js'),
-  newChallenges = require('./challengeMapping.json'),
-  secrets = require('../config/secrets');
-  mongoose = require('mongoose');
+var User = require('../models/User.js'),
+    secrets = require('../config/secrets'),
+    mongoose = require('mongoose'),
+    R = require('ramda');
 
 mongoose.connect(secrets.db);
 
@@ -57,6 +57,7 @@ function userModelMigration(cb) {
 
   stream.on('data', function (user) {
     console.log(i++);
+    /*
     if (user.challengesHash) {
       this.pause();
       user.needsMigration = false;
@@ -88,6 +89,25 @@ function userModelMigration(cb) {
         user.progressTimestamps.push(bonfire.completedDate);
       });
     }
+    */
+    user.needsMigration = false;
+    user.completedChallenges = R.filter(function(elem) {
+      return elem; // getting rid of undefined
+    }, R.concat(
+      user.completedCoursewares,
+      user.completedBonfires.map(function(bonfire) {
+        return ({
+          completedDate: bonfire.completedDate,
+          _id: bonfire._id,
+          name: bonfire.name,
+          completedWith: bonfire.completedWith,
+          solution: bonfire.solution,
+          githubLink: '',
+          verified: false,
+          challengeType: 5
+        });
+      })
+    ));
 
     var self = this;
     user.save(function (err) {

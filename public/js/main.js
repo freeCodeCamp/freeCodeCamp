@@ -16,6 +16,63 @@ $(document).ready(function() {
 
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
+  $('#i-want-help').on('click', function() {
+    var editorValue = editor.getValue();
+    var currentLocation = window.location.href;
+    $.post(
+      '/get-help',
+      {
+        payload: {
+          code: editorValue,
+          challenge: currentLocation
+        }
+      },
+      function(res) {
+        if (res) {
+          window.open('https://freecode.slack.com/messages/help/', '_blank')
+        }
+      }
+    );
+  });
+
+  $('#i-want-help-editorless').on('click', function() {
+    var currentLocation = window.location.href;
+    $.post(
+      '/get-help',
+      {
+        payload: {
+          challenge: currentLocation
+        }
+      },
+      function(res) {
+        if (res) {
+          window.open('https://freecode.slack.com/messages/help/', '_blank')
+        }
+      }
+    );
+  });
+
+  $('#report-issue').on('click', function() {
+    window.open('https://github.com/freecodecamp/freecodecamp/issues/new?title=Challenge '+ window.location.href +' has an issue &body=Please%20tell%20us%20in%20detail%20here%20how%20we%20can%20make%20this%20challenge%20better.', '_blank')
+  });
+
+  $('#i-want-to-pair').on('click', function() {
+    var currentLocation = window.location.href;
+    $.post(
+      '/get-pair',
+      {
+        payload: {
+          challenge: currentLocation
+        }
+      },
+      function(res) {
+        if (res) {
+          window.open('https://freecode.slack.com/messages/letspair/', '_blank')
+        }
+      }
+    );
+  });
+
   $('.checklist-element').each(function() {
     var checklistElementId = $(this).attr('id');
     if(!!localStorage[checklistElementId]) {
@@ -47,28 +104,6 @@ $(document).ready(function() {
     }
   });
 
-  function completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash, bonfireName) {
-    $('#complete-bonfire-dialog').modal('show');
-    // Only post to server if there is an authenticated user
-    if ($('.signup-btn-nav').length < 1) {
-      $.post(
-        '/completed-bonfire',
-        {
-          bonfireInfo: {
-            completedWith: didCompleteWith,
-            solution: bonfireSolution,
-            bonfireHash: thisBonfireHash,
-            bonfireName: bonfireName
-          }
-        },
-        function(res) {
-          if (res) {
-            window.location.href = '/bonfires'
-          }
-        });
-    }
-  }
-
   function completedFieldGuide(fieldGuideId) {
     if ($('.signup-btn-nav').length < 1) {
       $.post(
@@ -85,15 +120,6 @@ $(document).ready(function() {
         });
     }
   }
-
-  $('.next-bonfire-button').on('click', function() {
-    var bonfireSolution = myCodeMirror.getValue();
-    var thisBonfireHash = passedBonfireHash || null;
-    var bonfireName = $('#bonfire-name').text();
-    var didCompleteWith = $('#completed-with').val() || null;
-    completedBonfire(didCompleteWith, bonfireSolution, thisBonfireHash, bonfireName);
-
-  });
 
   $('.next-field-guide-button').on('click', function() {
     var fieldGuideId = $('#fieldGuideId').text();
@@ -112,66 +138,70 @@ $(document).ready(function() {
     $('#complete-zipline-or-basejump-dialog').modal('show');
   });
 
-  $('#complete-bonfire-dialog').on('hidden.bs.modal', function() {
-    editor.focus();
-  });
-
   $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
     editor.focus();
   });
-
+  var challengeTypes = {
+    'HTML_CSS_JQ': 0,
+    'JAVASCRIPT': 1,
+    'VIDEO': 2,
+    'ZIPLINE': 3,
+    'BASEJUMP': 4,
+    'BONFIRE': 5
+  };
   $('#next-courseware-button').on('click', function() {
     if ($('.signup-btn-nav').length < 1) {
       switch (challengeType) {
-        case 0:
-        case 1:
-        case 2:
+        case challengeTypes.HTML_CSS_JQ:
+        case challengeTypes.JAVASCRIPT:
+        case challengeTypes.VIDEO:
+          console.log(challenge_Id);
           $.post(
-            '/completed-courseware/',
+            '/completed-challenge/',
             {
-              coursewareInfo: {
-                coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName
+              challengeInfo: {
+                challengeId: challenge_Id,
+                challengeName: challenge_Name
               }
             }).success(
             function(res) {
               if (res) {
-                window.location.href = '/challenges';
+                window.location.href = '/challenges/next-challenge';
               }
             }
           );
           break;
-        case 3:
+        case challengeTypes.ZIPLINE:
           var didCompleteWith = $('#completed-with').val() || null;
           var publicURL = $('#public-url').val() || null;
           $.post(
             '/completed-zipline-or-basejump/',
             {
-              coursewareInfo: {
-                coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName,
+              challengeInfo: {
+                challengeId: challenge_Id,
+                challengeName: challenge_Name,
                 completedWith: didCompleteWith,
                 publicURL: publicURL,
                 challengeType: challengeType
               }
             }).success(
             function() {
-              window.location.href = '/challenges';
+              window.location.href = '/challenges/next-challenge';
             }).fail(
             function() {
               window.location.href = '/challenges';
             });
           break;
-        case 4:
+        case challengeTypes.BASEJUMP:
           var didCompleteWith = $('#completed-with').val() || null;
           var publicURL = $('#public-url').val() || null;
           var githubURL = $('#github-url').val() || null;
           $.post(
             '/completed-zipline-or-basejump/',
             {
-              coursewareInfo: {
-                coursewareHash: passedCoursewareHash,
-                coursewareName: passedCoursewareName,
+              challengeInfo: {
+                challengeId: challenge_Id,
+                challengeName: challenge_Name,
                 completedWith: didCompleteWith,
                 publicURL: publicURL,
                 githubURL: githubURL,
@@ -179,20 +209,17 @@ $(document).ready(function() {
                 verified: false
               }
             }).success(function() {
-              window.location.href = '/challenges';
+              window.location.href = '/challenges/next-challenge';
             }).fail(function() {
               window.location.replace(window.location.href);
             });
           break;
+        case challengeTypes.BONFIRE:
+          window.location.href = '/challenges/next-challenge';
         default:
           break;
       }
-
     }
-  });
-
-  $('#showAllButton').on('click', function() {
-    $('#show-all-dialog').modal('show');
   });
 
   $('.next-challenge-button').on('click', function() {
@@ -379,28 +406,28 @@ profileValidation.directive('uniqueUsername', ['$http', function($http) {
 
 profileValidation.directive('existingUsername',
   ['$http', function($http) {
-  return {
-    restrict: 'A',
-    require: 'ngModel',
-    link: function (scope, element, attrs, ngModel) {
-      element.bind('keyup', function (event) {
-        if (element.val().length > 0) {
-          ngModel.$setValidity('exists', false);
-        } else {
-          element.removeClass('ng-dirty');
-          ngModel.$setPristine();
-        }
-        if (element.val()) {
-          $http
-            .get('/api/checkExistingUsername/' + element.val())
-            .success(function (data) {
-              ngModel.$setValidity('exists', data);
-            });
-        }
-      });
-    }
-  };
-}]);
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function (scope, element, attrs, ngModel) {
+        element.bind('keyup', function (event) {
+          if (element.val().length > 0) {
+            ngModel.$setValidity('exists', false);
+          } else {
+            element.removeClass('ng-dirty');
+            ngModel.$setPristine();
+          }
+          if (element.val()) {
+            $http
+              .get('/api/checkExistingUsername/' + element.val())
+              .success(function (data) {
+                ngModel.$setValidity('exists', data);
+              });
+          }
+        });
+      }
+    };
+  }]);
 
 profileValidation.directive('uniqueEmail', ['$http', function($http) {
   return {

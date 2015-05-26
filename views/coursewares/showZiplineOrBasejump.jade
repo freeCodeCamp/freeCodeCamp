@@ -11,14 +11,25 @@ block content
                                 .col-xs-3.col-sm-1.col-md-2.padded-ionic-icon.text-center
                                     input(type='checkbox' class='challenge-list-checkbox')
                                 .col-xs-9.col-sm-11.col-md-10
-                                    li
-                                        .step-text!= step
+                                    li.step-text.wrappable!= step
         .col-xs-12.col-sm-12.col-md-8
             .embed-responsive.embed-responsive-16by9
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
             - if (user)
-                a.btn.btn-primary.btn-lg.btn-block#completed-zipline-or-basejump I've completed this challenge  (ctrl + enter)
+                a.btn.btn-primary.btn-big.btn-block#completed-zipline-or-basejump I've completed this challenge  (ctrl + enter)
+                .button-spacer
+                .btn-group.input-group.btn-group-justified
+                    .btn.btn-success.btn-big#i-want-help-editorless
+                        i.fa.fa-medkit
+                            | &nbsp; Help
+                    .btn.btn-success.btn-big#i-want-to-pair
+                        i.fa.fa-user-plus
+                            | &nbsp; Pair
+                    .btn.btn-success.btn-big#report-issue
+                        i.fa.fa-bug
+                            | &nbsp; Bug
+                .button-spacer
                 script.
                     var userLoggedIn = true;
             - else
@@ -27,9 +38,8 @@ block content
                         var userLoggedIn = false;
                 br
             script(type="text/javascript").
-                var passedCoursewareHash = !{JSON.stringify(coursewareHash)};
-                var challengeName = !{JSON.stringify(name)};
-                var passedCoursewareName = challengeName;
+                var challenge_Id = !{JSON.stringify(challengeId)};
+                var challenge_Name = !{JSON.stringify(name)};
                 var started = Math.floor(Date.now());
                 var challengeType = !{JSON.stringify(challengeType)};
                 var controlEnterHandler = function (e) {

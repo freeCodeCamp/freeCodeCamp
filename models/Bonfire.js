@@ -15,7 +15,7 @@ var bonfireSchema = new mongoose.Schema({
     difficulty: String,
     description: Array,
     tests: Array,
-    challengeSeed: String,
+    challengeSeed: Array,
     MDNlinks: [String]
 });
 

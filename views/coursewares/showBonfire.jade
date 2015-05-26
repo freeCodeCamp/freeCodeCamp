@@ -6,7 +6,7 @@ block content
     script(type='text/javascript', src='/js/lib/codemirror/addon/edit/matchbrackets.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/lint/lint.js')
     script(type='text/javascript', src='/js/lib/codemirror/addon/lint/javascript-lint.js')
-    script(type='text/javascript', src='//ajax.aspnetcdn.com/ajax/jshint/r07/jshint.js')
+    script(type='text/javascript', src='/bower_components/jshint/dist/jshint.js')
     script(type='text/javascript', src='/js/lib/chai/chai.js')
     link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
@@ -14,9 +14,9 @@ block content
     link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Ubuntu+Mono")
     script(type='text/javascript', src='/js/lib/codemirror/mode/javascript/javascript.js')
     script(type='text/javascript', src='/js/lib/jailed/jailed.js')
-    script(type='text/javascript', src='/js/lib/bonfire/bonfireInit.js')
+    script(type='text/javascript', src='/js/lib/coursewares/sandbox.js')
 
-    .row
+    .row(ng-controller="pairedWithController")
         .col-xs-12.col-sm-12.col-md-4.bonfire-top
             #testCreatePanel
                 h1#bonfire-name.text-center= name
@@ -58,9 +58,6 @@ block content
                             i.ion-ios-flame
                             i.ion-ios-flame
                             i.ion-ios-flame
-                p.text-center Tips: Use&thinsp;
-                    a(href='/field-guide/how-do-i-get-help-when-I-get-stuck') RSAP
-                    | . Try to pair program. Write your own code.
                 .well
                     .row
                         .col-xs-12
@@ -73,7 +70,7 @@ block content
                                 #long-instructions.row.hide
                                     .col-xs-12
                                         for sentence in details
-                                            p!= sentence
+                                            p.wrappable!= sentence
                                         #MDN-links
                                             p Here are some helpful links:
                                             for link, index in MDNlinks
@@ -82,8 +79,31 @@ block content
                                             span.ion-arrow-up-b
                                             | Less information
 
+                if (user)
+                    form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                        .form-group.text-center
+                            .col-xs-12
+                                // extra field to distract password tools like lastpass from injecting css into our username field
+                                input.form-control(ng-show="false")
+                                input.form-control#completed-with(name="existingUser", placeholder="Your pair's username if pairing", existing-username='', ng-model="existingUser")
+                            .col-xs-12(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
+                                alert(type='danger')
+                                    span.ion-close-circled
+                                    | Username not found
                 #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                br
+                if (user)
+                    .button-spacer
+                    .btn-group.input-group.btn-group-justified
+                        label.btn.btn-success#i-want-help
+                            i.fa.fa-medkit
+                                | &nbsp; Help
+                        label.btn.btn-success#i-want-to-pair
+                            i.fa.fa-user-plus
+                                | &nbsp; Pair
+                        label.btn.btn-success#report-issue
+                            i.fa.fa-bug
+                                | &nbsp; Bug
+                .button-spacer
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeOutput(style='display: none;')
@@ -93,9 +113,10 @@ block content
                 script(type="text/javascript").
                     var tests = !{JSON.stringify(tests)};
                     var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var passedBonfireHash = !{JSON.stringify(bonfireHash)};
-                    var challengeName = !{JSON.stringify(name)};
+                    var challenge_Id = !{JSON.stringify(challengeId)};
+                    var challenge_Name = !{JSON.stringify(name)};
                     var started = Math.floor(Date.now());
+                    var challengeType = !{JSON.stringify(challengeType)};
                     var _ = R;
                     var dashed = !{JSON.stringify(dashedName)};
 
@@ -104,36 +125,24 @@ block content
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true, style='display: none;')
-                script(src='/js/lib/bonfire/bonfireFramework_v0.1.3.js')
+                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.2.js')
 
-
-
-    #complete-bonfire-dialog.modal(tabindex='-1')
+    #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body(ng-controller="pairedWithController")
+                .modal-body
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
                     - if (user)
-                        form.form-horizontal(novalidate='novalidate', name='completedWithForm')
-                            .form-group.text-center
-                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
-                                    // extra field to distract password tools like lastpass from injecting css into our username field
-                                    input.form-control(ng-show="false")
-                                    input.form-control#completed-with(name="existingUser", placeholder="If you paired, enter your pair's username here", existing-username='', ng-model="existingUser", autofocus)
-                                .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
-                                    alert(type='danger')
-                                        span.ion-close-circled
-                                        | Username not found
 
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block.next-bonfire-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next bonfire (ctrl + enter)
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge (ctrl + enter)
 
 
                         - if (user.progressTimestamps.length > 2)
-                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/bonfires/#{dashedName}&hashtags=LearnToCode, JavaScript")
+                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Bonfire:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript")
                                 i.fa.fa-twitter &thinsp;
                                     = phrase
                     - else

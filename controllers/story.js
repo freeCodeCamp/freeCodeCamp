@@ -19,9 +19,10 @@ function hotRank(timeValue, rank) {
    * Ranking...
    * f(ts, 1, rank) = log(10)z + (ts)/45000;
    */
+  var time48Hours = 172800000;
   var hotness;
   var z = Math.log(rank) / Math.log(10);
-  hotness = z + (timeValue / 115200000);
+  hotness = z + (timeValue / time48Hours);
   return hotness;
 
 }
@@ -128,14 +129,17 @@ exports.returnIndividualStory = function(req, res, next) {
 
     if (story.length < 1) {
       req.flash('errors', {
-        msg: "404: We couldn't find a story with that name. Please double check the name."
+        msg: "404: We couldn't find a story with that name. " +
+          'Please double check the name.'
       });
 
       return res.redirect('/news/');
     }
 
     story = story.pop();
-    var dashedNameFull = story.storyLink.toLowerCase().replace(/\s/g, '-');
+    var dashedNameFull = story.storyLink.toLowerCase()
+      .replace(/\s+/g, ' ')
+      .replace(/\s/g, '-');
     if (dashedNameFull !== dashedName) {
       return res.redirect('../news/' + dashedNameFull);
     }
@@ -148,7 +152,7 @@ exports.returnIndividualStory = function(req, res, next) {
       if (votedObj.length > 0) {
         userVoted = true;
       }
-    } catch(err) {
+    } catch(e) {
       userVoted = false;
     }
     res.render('stories/index', {
@@ -229,12 +233,10 @@ exports.upvote = function(req, res, next) {
     );
     story.markModified('rank');
     story.save();
-    User.find({'_id': story.author.userId}, function(err, user) {
-      'use strict';
+    User.findOne({'_id': story.author.userId}, function(err, user) {
       if (err) {
         return next(err);
       }
-      user = user.pop();
       user.progressTimestamps.push(Date.now() || 0);
       user.save(function (err, user) {
         req.user.save(function (err, user) {
@@ -328,9 +330,6 @@ exports.storySubmission = function(req, res, next) {
     return next(new Error('Not authorized'));
   }
   var storyLink = data.headline
-    .replace(/\'/g, '')
-    .replace(/\"/g, '')
-    .replace(/,/g, '')
     .replace(/\s+/g, ' ')
     .replace(/[^a-z0-9\s]/gi, '')
     .toLowerCase()
@@ -339,7 +338,7 @@ exports.storySubmission = function(req, res, next) {
   if (link.search(/^https?:\/\//g) === -1) {
     link = 'http://' + link;
   }
-  Story.count({'storyLink': new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i')}, function (err, storyCount) {
+  Story.count({ storyLink: new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i')}, function (err, storyCount) {
     if (err) {
       return res.status(500);
     }
@@ -513,7 +512,8 @@ exports.storySubmission = function(req, res, next) {
         return next(err);
       }
       try {
-        // Based on the context retrieve the parent object of the comment (Story/Comment)
+        // Based on the context retrieve the parent
+        // object of the comment (Story/Comment)
         Context.find({'_id': data.associatedPost}, function (err, associatedContext) {
           if (err) {
             return next(err);
@@ -533,8 +533,15 @@ exports.storySubmission = function(req, res, next) {
             if (err) {
               return next(err);
             }
-            // If the emails of both authors differ, only then proceed with email notification
-            if (typeof data.author !== 'undefined' && data.author.email && typeof recipient !== 'undefined' && recipient.email && (data.author.email !== recipient.email)) {
+            // If the emails of both authors differ,
+            // only then proceed with email notification
+            if (
+              typeof data.author !== 'undefined' &&
+              data.author.email &&
+              typeof recipient !== 'undefined' &&
+              recipient.email &&
+              (data.author.email !== recipient.email)
+            ) {
               var transporter = nodemailer.createTransport({
                 service: 'Mandrill',
                 auth: {
@@ -546,11 +553,14 @@ exports.storySubmission = function(req, res, next) {
               var mailOptions = {
                 to: recipient.email,
                 from: 'Team@freecodecamp.com',
-                subject: data.author.username + ' replied to your post on Camper News',
+                subject: data.author.username +
+                  ' replied to your post on Camper News',
                 text: [
-                  'Just a quick heads-up: ' + data.author.username + ' replied to you on Camper News.',
+                  'Just a quick heads-up: ',
+                  data.author.username + ' replied to you on Camper News.',
                   'You can keep this conversation going.',
-                  'Just head back to the discussion here: http://freecodecamp.com/news/' + data.originalStoryLink,
+                  'Just head back to the discussion here: ',
+                  'http://freecodecamp.com/news/' + data.originalStoryLink,
                   '- the Free Code Camp Volunteer Team'
                 ].join('\n')
               };
