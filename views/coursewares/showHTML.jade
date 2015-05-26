@@ -33,7 +33,7 @@ block content
                             #long-instructions.row.hide
                                 .col-xs-12
                                     for sentence in details
-                                        p!= sentence
+                                        p.wrappable!= sentence
                                     #less-info.btn.btn-primary.btn-block.btn-primary-ghost
                                         span.ion-arrow-up-b
                                         | Less information

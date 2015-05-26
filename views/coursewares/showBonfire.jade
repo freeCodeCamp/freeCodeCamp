@@ -70,7 +70,7 @@ block content
                                 #long-instructions.row.hide
                                     .col-xs-12
                                         for sentence in details
-                                            p!= sentence
+                                            p.wrappable!= sentence
                                         #MDN-links
                                             p Here are some helpful links:
                                             for link, index in MDNlinks
