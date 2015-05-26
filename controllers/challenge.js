@@ -136,7 +136,7 @@ exports.returnCurrentChallenge = function(req, res, next) {
   var nameString = req.user.currentChallenge.challengeName.trim()
     .toLowerCase()
     .replace(/\s/g, '-')
-    .replace(/[^a-z0-9\-]/gi, '');
+    .replace(/[^a-z0-9\-\/.]/gi, '');
   req.user.save(function(err) {
     if (err) {
       return next(err);
@@ -171,7 +171,7 @@ exports.returnIndividualChallenge = function(req, res, next) {
       var dashedNameFull = challenge.name
         .toLowerCase()
         .replace(/\s/g, '-')
-        .replace(/[^a-z0-9\-]/gi, '');
+        .replace(/[^a-z0-9\-\.]/gi, '');
       if (dashedNameFull !== dashedName) {
         return res.redirect('../challenges/' + dashedNameFull);
       } else {
