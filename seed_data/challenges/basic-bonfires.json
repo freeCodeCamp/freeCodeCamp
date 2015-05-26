@@ -836,7 +836,7 @@
         "expect(smallestCommons([1,5])).to.be.a('number');",
         "expect(smallestCommons([1,5])).to.equal(60);",
         "expect(smallestCommons([5,1])).to.equal(60);",
-        "(smallestCommons([1,13])).should.equal(360360);"
+        "expect(smallestCommons([1,13])).to.equal(360360);"
       ],
       "MDNlinks" : ["Smallest Common Multiple"],
       "challengeType": 5
