@@ -53,7 +53,7 @@
         "You can create a paragraph element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert(($('p').length > 0), 'Create an <code>h2</code> elements.')",
+        "assert(($('p').length > 0), 'Create an <code>p</code> elements.')",
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your paragraph element should have the text \"Hello Paragraph\"')"
       ],
       "challengeSeed": [
