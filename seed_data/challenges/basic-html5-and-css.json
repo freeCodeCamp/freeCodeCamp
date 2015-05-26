@@ -1671,7 +1671,7 @@
         "These next few Waypoints will give you a brief tour of three important aspects of the space surrounding HTML elements: <code>padding</code>, <code>margin</code>, and <code>border</code>. Change the <code>padding</code> of your green box to match that of your red box.",
         "An element's <code>padding</code> controls the amount of space between the element and its <code>border</code>.",
         "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the green box.",
-        "When you increase the green box's padding, it will increase the distance between the text \"padding\" and the border around it."
+        "When you increase the green box's <code>padding</code>, it will increase the distance between the text \"padding\" and the border around it."
       ],
       "tests": [
         "assert($('.green-box').css('padding-top') === '20px', 'Your <code>green-box</code> class should give elements 20px of padding.')"
@@ -1722,7 +1722,7 @@
         "Change the <code>margin</code> of the green box to match that of the red box.",
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "Here, we can see that the green box and the red box and the green box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
-        "When you increase the green box's padding, it will increase the distance between its border and surrounding elements."
+        "When you increase the green box's <code>margin</code>, it will increase the distance between its border and surrounding elements."
       ],
       "tests": [
         "assert($('.green-box').css('margin-top') === '20px', 'Your <code>green-box</code> class should give elements 20px of margin.')"
