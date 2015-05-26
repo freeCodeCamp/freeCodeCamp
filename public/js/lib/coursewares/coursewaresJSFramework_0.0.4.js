@@ -194,7 +194,7 @@ var createTestDisplay = function() {
 
 var expect = chai.expect;
 var assert = chai.assert;
-var should = chai.should;
+var should = chai.should();
 
 
 var reassembleTest = function(test, data) {
