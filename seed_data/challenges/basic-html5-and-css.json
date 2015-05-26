@@ -425,6 +425,7 @@
       "difficulty": 0.025,
       "description": [
         "Create a \"blue-text\" class that gives an element the font-color of blue. Also create a \"urgently-red\" class that give an element the font-color of red, but use <code>!important</code> to ensure the element is rendered as being red. Apply both classes to your <code>h2</code> element.",
+        "You can add more than one class to an element by seperating the class declarations with a space, like this: <code>&#60;h2 class='green-text giant-text'&#62;This will be giant green text&#60;/h2&#62;</code>.",
         "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
         "If there's a conflict in the CSS, the browser will use whichever style declaration is closest to the bottom of the CSS document (whichever declaration comes last). Note that in-line style declarations are the final authority in how an HTML element will be rendered.",
         "There's one way to ensure that an element is rendered with a certain style, regardless of where that declaration is located. That one way is to use <code>!important</code>.",
