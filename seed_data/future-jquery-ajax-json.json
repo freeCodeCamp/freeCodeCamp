@@ -295,6 +295,35 @@
 
       ],
       "challengeType": 0
+    },
+    {
+      "_id": "bad87fee1348bd9aede08826",
+      "name": "Waypoint: Use Hex Codes for Precise Colors",
+      "difficulty": 0.071,
+      "description": [
+
+      ],
+      "tests": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "challengeType": 0
+    },
+    {
+      "_id": "bad87fee1348bd9aedd08826",
+      "name": "Waypoint: Use Shortened Hex Codes for Colors",
+      "difficulty": 0.071,
+      "description": [
+
+      ],
+      "tests": [
+
+      ],
+      "challengeSeed": [
+
+      ]
     }
   ]
 }

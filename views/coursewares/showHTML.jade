@@ -33,12 +33,12 @@ block content
                             #long-instructions.row.hide
                                 .col-xs-12
                                     for sentence in details
-                                        p.wrappable!= sentence
+                                        p!= sentence
                                     #less-info.btn.btn-primary.btn-block.btn-primary-ghost
                                         span.ion-arrow-up-b
                                         | Less information
-            - if (user)
                 br
+            - if (user)
                 a.btn.btn-primary.btn-big.btn-block#next-courseware-button
                     |  Go to my next challenge
                     br
