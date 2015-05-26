@@ -4,7 +4,7 @@
   "challenges": [
     {
       "_id": "bd7112d8c441eddfaeb5bded",
-      "name": "Get Started with jQuery",
+      "name": "Waypoint: Get Started with jQuery",
       "difficulty": 0.13,
       "challengeSeed": "125671865",
       "description": [
@@ -19,7 +19,7 @@
     },
     {
       "_id": "bd7113d8c441eddfaeb5bdef",
-      "name": "Write Functions with jQuery",
+      "name": "Waypoint: Write Functions with jQuery",
       "difficulty": 0.14,
       "challengeSeed": "125658029",
       "description": [
@@ -33,7 +33,7 @@
     },
     {
       "_id": "bd7114d8c441eddfaeb5bdef",
-      "name": "Harness Dynamic HTML",
+      "name": "Waypoint: Harness Dynamic HTML",
       "difficulty": 0.15,
       "challengeSeed": "125658028",
       "description": [
@@ -46,7 +46,7 @@
     },
     {
       "_id": "bd7115d8c441eddfaeb5bdef",
-      "name": "Listen for jQuery Events",
+      "name": "Waypoint: Listen for jQuery Events",
       "difficulty": 0.16,
       "challengeSeed": "125658027",
       "description": [
@@ -59,7 +59,7 @@
     },
     {
       "_id": "bd7116d8c441eddfaeb5bdef",
-      "name": "Trigger jQuery Effects",
+      "name": "Waypoint: Trigger jQuery Effects",
       "difficulty": 0.17,
       "challengeSeed": "125658025",
       "description": [
