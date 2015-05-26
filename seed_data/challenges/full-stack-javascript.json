@@ -144,7 +144,7 @@
       "_id": "bd7153d8c441eddfaeb5bdfe",
       "name": "Waypoint: Continue working with Node.js Servers",
       "difficulty": 0.41,
-      "challengeSeed": "126411561",
+      "challengeSeed": "128836506",
       "description": [
         "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 8 through 10.",
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
@@ -161,7 +161,7 @@
       "_id": "bd7153d8c441eddfaeb5bdfd",
       "name": "Waypoint: Finish working with Node.js Servers",
       "difficulty": 0.42,
-      "challengeSeed": "126411561",
+      "challengeSeed": "128836507",
       "description": [
         "Let's continue the LearnYouNode Node School challenge. For this Waypoint, we'll do challenges 11 through 13.",
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",

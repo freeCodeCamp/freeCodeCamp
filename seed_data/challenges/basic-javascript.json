@@ -15,8 +15,7 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-x9DnD/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-x9DnD/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     },
     {
       "_id": "bd7130d8c441eddfaeb5bdef",
@@ -29,8 +28,7 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-Bthev-mskY8/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-Bthev-mskY8/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     },
     {
       "_id": "bd7131d8c441eddfaeb5bdef",
@@ -43,8 +41,7 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-XEDZA/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-XEDZA/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     },
     {
       "_id": "bd7132d8c441eddfaeb5bdef",
@@ -56,8 +53,7 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     },
     {
       "_id": "bd7133d8c441eddfaeb5bdef",
@@ -71,8 +67,7 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-ZA2rb/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ZA2rb/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     },
     {
       "_id": "bd7134d8c441eddfaeb5bdef",
@@ -85,8 +80,7 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-3bmfN/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     },
     {
       "_id": "bd7135d8c441eddfaeb5bdef",
@@ -99,8 +93,7 @@
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/building-an-address-book/0/1?curriculum_id=506324b3a7dffd00020bf661' target='_blank'>http://www.codecademy.com/courses/building-an-address-book/0/1?curriculum_id=506324b3a7dffd00020bf661</a>."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     },
     {
       "_id": "bd7136d8c441eddfaeb5bdef",
@@ -113,12 +106,11 @@
         "Be sure to also complete the final section: <a href='http://www.codecademy.com/courses/close-the-super-makert/0/1' target='_blank'>http://www.codecademy.com/courses/close-the-super-makert/0/1</a>."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     },
     {
       "_id": "bd7118d8c441eddfaeb5bdef",
-      "name": "Waypoint: Discover Chrome's DevTools",
+      "name": "Waypoint: Discover Chrome DevTools",
       "difficulty": 0.32,
       "challengeSeed": "110752743",
       "description": [
@@ -135,8 +127,7 @@
         "Complete \"Chapter 7: Memory Profiling\"."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     },
     {
       "_id": "bd7138d8c441eddfaeb5bdef",
@@ -158,8 +149,7 @@
         "Once you've completed these challenges, move on to our next Waypoint."
       ],
       "challengeType": 2,
-      "tests": [],
-    "challengeType": 0
+      "tests": []
     }
   ]
 }
