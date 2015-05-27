@@ -532,7 +532,7 @@
         "Put the \"like\", \"Info\" and \"Delete\" buttons side-by-side by wrapping all three of them within one <code>&#60;div class=\"row\"&#62;</code> element, then each of them within a <code>&#60;div class=\"col-xs-4\"&#62;</code> element.",
         "Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
         "Here's a diagram of how Bootstrap's 12-column grid layout works:",
-        "<img class='img-responsive' src='https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png'>",
+        "<a href='http://getbootstrap.com/css/#grid-example-basic' target='_blank'><img class='img-responsive' src='https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png'></a>",
         "Note that in this illustration, we use the <code>col-md-*</code> class. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, we're specifying how many columns wide an element should be on a medium-sized screen, such as a laptop.",
         "In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where \"*\" is the number of columns wide the element should be, and \"xs\" means \"extra small\", like an extra-small mobile phone screen.",
         "The <code>row</code> class is applied to a <code>div</code>, and the buttons themselves can be wrapped within it."
@@ -1183,12 +1183,12 @@
       "name": "Waypoint: Line up Form Elements Responsively with Bootstrap",
       "difficulty" : 0.062,
       "description": [
-        "Wrap both your form's text input field and submit button within a div with the class \"row\". Wrap your form's text input field within a div with the class of \"col-xs-7\". Wrap your form's submit button the in a div with the class \"col-xs-5\".",
         "Now let's get your form input and your submission button on the same line. We'll do this the same way we have previously: by using a \"row\" element with \"col-xs-*\" elements withing it.",
+        "Wrap both your form's text input field and submit button within a div with the class \"row\". Wrap your form's text input field within a div with the class of \"col-xs-7\". Wrap your form's submit button the in a div with the class \"col-xs-5\".",
         "This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!"
       ],
       "tests": [
-        "assert($('.row').length > 4, 'Wrap your all of your checkboxes inside one div with the class \"row\".')",
+        "assert($('.row').length > 4, 'Wrap your form submission button and text area in a div with class \"row\".')",
         "assert($('.col-xs-5').length > 0, 'Wrap your form submission button in a div with the class \"col-xs-5\".')",
         "assert($('.col-xs-7').length > 0, 'Wrap your form text area in a div with the class \"col-xs-7\".')"
       ],
