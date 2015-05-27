@@ -60,7 +60,7 @@ var otherTestsForNow = "<script src='/js/lib/coursewares/iFrameScripts_0.0.2.js'
 
 var delay;
 // Initialize CodeMirror editor with a nice html5 canvas demo.
-editor.on("change", function () {
+editor.on("keypress", function () {
     clearTimeout(delay);
     delay = setTimeout(updatePreview, 300);
 });
