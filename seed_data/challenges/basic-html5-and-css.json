@@ -196,7 +196,7 @@
         "Change the <code>h2</code> element's style so that its text color is red.",
         "We can do this by changing the <code>style</code> of the <code>h2</code> element.",
         "The style that is responsible for the color of an element's text is the \"color\" style.",
-        "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;h2&#62;</code>"
+        "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;\/h2&#62;</code>"
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
@@ -265,7 +265,7 @@
     },
     {
       "_id": "bad87fee1348bd9aefe08806",
-      "name": "Waypoint: Style Multiple Elements with a CSS Classes",
+      "name": "Waypoint: Style Multiple Elements with a CSS Class",
       "difficulty": 0.020,
       "description": [
         "Apply the \"red-text\" class to the <code>h2</code> and <code>p</code> elements.",
