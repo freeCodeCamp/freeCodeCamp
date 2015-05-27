@@ -16,7 +16,7 @@
       ],
       "tests": [
         "assert($('img').hasClass('img-responsive'), 'Your new image should have the class \"img-responsive\".')",
-        "assert(new RegExp('http://bit.ly/fcc-kittens2', 'gi').text($('img').prop('src')), 'You should add a second image with the <code>src</code> of <code>http&#58;//bit.ly/fcc-kittens2</code>.')"
+        "assert(new RegExp('http://bit.ly/fcc-kittens2', 'gi').test($('img').prop('src')), 'You should add a second image with the <code>src</code> of <code>http&#58;//bit.ly/fcc-kittens2</code>.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
