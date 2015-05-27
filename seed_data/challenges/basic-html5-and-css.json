@@ -1395,8 +1395,8 @@
         "Here's an example of a radio button: <code>&#60;label&#62;&#60;input type='radio' name='indoor-outdoor'&#62; Indoor&#60;/label&#62;</code>"
       ],
       "tests": [
-        "assert($('input[type=\"radio\"').length > 1, 'Your webpage should have two radio button elements.')",
-        "assert($('input[type=\"radio\"').attr('name'), 'Both of your radio button should have <code>name</code> attributes with the same value.')",
+        "assert($('input[type=\"radio\"]').length > 1, 'Your webpage should have two radio button elements.')",
+        "assert($('input[type=\"radio\"]:nth-child(1)').attr('name') === 'indoor-outdoor', 'Give your radio buttons the <code>name</code> attribute of \"indoor-outdoor\".')",
         "assert($('label').length > 1, 'Each of your two radio button elements should be wrapped in a label element.')"
       ],
       "challengeSeed": [
