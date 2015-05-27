@@ -1183,12 +1183,12 @@
       "name": "Waypoint: Line up Form Elements Responsively with Bootstrap",
       "difficulty" : 0.062,
       "description": [
-        "Wrap both your form's text input field and submit button within a div with the class \"row\". Wrap your form's text input field within a div with the class of \"col-xs-7\". Wrap your form's submit button the in a div with the class \"col-xs-5\".",
         "Now let's get your form input and your submission button on the same line. We'll do this the same way we have previously: by using a \"row\" element with \"col-xs-*\" elements withing it.",
+        "Wrap both your form's text input field and submit button within a div with the class \"row\". Wrap your form's text input field within a div with the class of \"col-xs-7\". Wrap your form's submit button the in a div with the class \"col-xs-5\".",
         "This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!"
       ],
       "tests": [
-        "assert($('.row').length > 4, 'Wrap your all of your checkboxes inside one div with the class \"row\".')",
+        "assert($('.row').length > 4, 'Wrap your form submission button and text area in a div with class \"row\".')",
         "assert($('.col-xs-5').length > 0, 'Wrap your form submission button in a div with the class \"col-xs-5\".')",
         "assert($('.col-xs-7').length > 0, 'Wrap your form text area in a div with the class \"col-xs-7\".')"
       ],
