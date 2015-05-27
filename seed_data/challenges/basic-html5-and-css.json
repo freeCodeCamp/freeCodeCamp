@@ -1932,7 +1932,7 @@
       "name": "Waypoint: Use Clockwise Notation to Specify the Padding of an Element",
       "difficulty": 0.069,
       "description": [
-        "Use <code>Clockwise Notation</code> to give an element padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
+        "Use <code>Clockwise Notation</code> to give the \".green-box\" class a padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
         "You can also use this notation for margins!"
