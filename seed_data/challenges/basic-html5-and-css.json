@@ -93,9 +93,9 @@
         "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>."
       ],
       "tests": [
-        "assert(($('h1').length > 0), 'The h1 element should not commented. It should be visible in the browser.')",
-        "assert(($('h2').length > 0), 'The h2 element should not commented. It should be visible in the browser.')",
-        "assert(($('p').length > 0), 'The paragraph element should not commented. It should be visible in the browser.')"
+        "assert(($('h1').length > 0), 'The h1 element should not be commented. It should be visible in the browser.')",
+        "assert(($('h2').length > 0), 'The h2 element should not be commented. It should be visible in the browser.')",
+        "assert(($('p').length > 0), 'The paragraph element should not be commented. It should be visible in the browser.')"
       ],
       "challengeSeed": [
         "<!--",
