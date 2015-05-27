@@ -1256,7 +1256,7 @@
       "difficulty" : 0.041,
       "description": [
         "Add a submit button to your form field.",
-        "Let's add a submit button to your form. Clicking this button will send the date from your form to the URL you specified with your form's <code>action</code> attribute.",
+        "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
         "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;<code>"
       ],
       "tests": [
