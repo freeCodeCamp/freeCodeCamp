@@ -1013,8 +1013,8 @@
       "tests": [
         "assert($('ul').length > 0, 'You should have an <code>ul</code> element on your webpage.')",
         "assert($('ol').length > 0, 'You should have an <code>ol</code> element on your webpage.')",
-        "assert($('li').length > 5, 'You should have three <code>li</code> elements on within your <code>ul</code> element.')",
-        "assert($('li').length > 5, 'You should have three <code>li</code> elements on within your <code>ol</code> element.')"
+        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
+        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ol</code> element.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
