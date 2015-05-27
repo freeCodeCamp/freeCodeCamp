@@ -692,7 +692,7 @@
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert((/photo/gi).test($('a').text()), 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
+        "assert((/cat photos/gi).test($('a').text()), 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
         "assert($('a').filter(function(index) { return /com/gi.test($('a').attr('href')); }).length > 0, 'You need an <code>anchor</code> element that links to <code>http&#58;//catphotoapp.com<code>.')"
       ],
       "challengeSeed": [
