@@ -1087,9 +1087,17 @@ hr {
   color: @gray-light;
 }
 
-.iframe-scroll {
-  position: fixed !important;
-  margin-top: 75px;
+@media only screen and (min-width: 993px) {
+  .iframe-scroll {
+    position: fixed !important;
+    margin-top: 75px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .iframe-scroll {
+    height: auto;
+    overflow: auto;
+  }
 }
 
 //uncomment this to see the dimensions of all elements outlined in red
