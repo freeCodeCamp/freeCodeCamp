@@ -161,7 +161,7 @@
       ],
       "tests": [
         "assert($('.btn').length > 0, 'your new button should have the class \"btn\".');",
-        "assert(new RegExp('like this photo','gi').test($('.btn').text()), 'your button should have the test \"like this photo\"');"
+        "assert(new RegExp('like this photo','gi').test($('.btn').text()), 'your button should have the text \"like this photo\"');"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
