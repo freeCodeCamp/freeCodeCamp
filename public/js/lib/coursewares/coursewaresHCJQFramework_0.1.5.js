@@ -60,10 +60,11 @@ var otherTestsForNow = "<script src='/js/lib/coursewares/iFrameScripts_0.0.2.js'
 
 var delay;
 // Initialize CodeMirror editor with a nice html5 canvas demo.
-editor.on("keypress", function () {
+editor.on("keyup", function () {
   clearTimeout(delay);
   delay = setTimeout(updatePreview, 300);
 });
+
 var nodeEnv = prodOrDev === 'production' ? 'http://www.freecodecamp.com' : 'http://localhost:3001';
 function updatePreview() {
   goodTests = 0;

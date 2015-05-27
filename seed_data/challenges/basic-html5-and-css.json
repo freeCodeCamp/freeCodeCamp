@@ -90,8 +90,7 @@
         "Uncomment the <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
         "Commenting is a way that you can leave comments within your code without affecting the code itself.",
         "Commenting is also a convenient way to make code inactive without having to delete it entirely.",
-        "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>.",
-        "Lastly, someone's made a typo on one of the tags. Go ahead and fix it!"
+        "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>."
       ],
       "tests": [
         "assert($('h1').length > 0, 'The h1 element should not be commented. It should be visible in the browser.')",
@@ -102,7 +101,7 @@
         "<!--",
         "<h1>Hello World</h1>",
         "",
-        "<h>CatPhotoApp</h2>",
+        "<h2>CatPhotoApp</h2>",
         "",
         "<br/>",
         "",
