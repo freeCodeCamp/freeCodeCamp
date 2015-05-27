@@ -851,7 +851,7 @@
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "tests": [
-        "assert($('a').filter(function(index) { return /#/gi.test($('a')[index]); }).length > 1, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\".')"
+        "expect($('a').children('img').length, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\"').to.equal(1);"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
