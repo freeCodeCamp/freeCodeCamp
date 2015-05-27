@@ -1091,7 +1091,7 @@
       "name": "Waypoint: Style Text Inputs as Form Controls",
       "difficulty" : 0.061,
       "description": [
-        "Give your form's text input field in a class of \"form-control\". Give your form's submit button the classes \"btn btn-primary\" and give it the Font Awesome icon of \"fa-paper-plane\"."
+        "Give your form's text input field a class of \"form-control\". Give your form's submit button the classes \"btn btn-primary\" and give it the Font Awesome icon of \"fa-paper-plane\"."
       ],
       "tests": [
         "assert($('.btn-primary').length > 1, 'Give the submit button in your form the classes \"btn btn-primary\".')",
