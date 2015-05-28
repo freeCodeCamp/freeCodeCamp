@@ -734,7 +734,7 @@
       "name": "Waypoint: Add Borders Around your Elements",
       "difficulty": 0.028,
       "description": [
-        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border around an HTML element, and apply it to your cat photo.",
+        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply it to your cat photo.",
         "CSS borders have attributes like style, color and width.",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>."
       ],
