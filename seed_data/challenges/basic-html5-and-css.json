@@ -1571,12 +1571,12 @@
       "name": "Waypoint: Add a Submit Button to a Form",
       "difficulty": 0.041,
       "description": [
-        "Add a submit button to your form field.",
+        "Add a submit button to your form field with type <code>submit</code> and a test value of \"Submit\".",
         "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
         "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;<code>"
       ],
       "tests": [
-        "assert($('button').length > 0, 'Your form should have a button inside it.')"
+        "assert(new RegExp('<button type=.submit.>Submit</button>', 'gi').test(editor), 'Make sure you have completely declared your button!');"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
