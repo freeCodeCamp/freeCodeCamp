@@ -60,7 +60,7 @@
         "You can push these new commits to GitHub by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
         "Now you're ready to move on to your first Basejump. Click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it."
       ],
-      "challengeType": 4,
+      "challengeType": 2,
       "tests": []
     },
     {
