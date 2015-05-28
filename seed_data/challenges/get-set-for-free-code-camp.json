@@ -17,7 +17,7 @@
         "Once you make it through Free Code Camp, you will be able to get a coding job. There are far more job openings out there than there are qualified coders to fill them.",
         "Now it's time to join our chat room. Click the \"I've completed this challenge\" button to move on to your next challenge."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -47,7 +47,7 @@
         "You can also access this chat room by clicking the \"Chat\" button in the upper right hand corner.",
         "In order to keep our community a friendly and positive place to learn to code, please read and follow our Code of Conduct: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -73,7 +73,7 @@
         "This challenge map is just for your reference. You can always just press the \"Learn\" button, and it will take you to your next challenge.",
         "Finally, please note that our open-source curriculum is a work in progress. Our volunteer community is constantly improving it. If you think you've encountered a bug, typo, or something that seems confusing, please open a GitHub issue: <a href='https://github.com/FreeCodeCamp/freecodecamp/issues'>https://github.com/FreeCodeCamp/freecodecamp/issues</a>."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -98,7 +98,7 @@
         "When you click the Field Guide button, it will always take you back to whichever article you were last reading.",
         "Read a few field guide articles, then move on to your next challenge."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -125,7 +125,7 @@
         "Be sure to click the \"Update my Bio\" or \"Update my Social Links\" button to save this new information to your portfolio page.",
         "Once you're happy with your portfolio page, you can move on to your next challenge."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -154,7 +154,7 @@
         "When you submit a link, you'll get a point. You will also get a point each time someone upvotes your link.",
         "Now that you've learned how to use Camper News, let's move on to your next challenge."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -182,7 +182,7 @@
         "Our groups allow you to create events, coordinate those events, and share photos from the events afterward.",
         "Whether you're hosting a study group, pair programming at your local library, or going to a weekend hackathon, your city's group will help you make it happen."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -210,7 +210,7 @@
         "Here's our detailed field guide on getting help: <a href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank'>http://freecodecamp.com/field-guide/how-do-i-get-help-when-i-get-stuck</a>.",
         "Now you have a clear algorithm to follow when you need help! Let's start coding! Move on to your next challenge."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
