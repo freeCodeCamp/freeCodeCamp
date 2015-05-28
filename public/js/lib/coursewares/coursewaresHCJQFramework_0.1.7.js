@@ -106,7 +106,11 @@ var allSeeds = '';
     allSeeds += elem.replace(/fccss/g, '<script>').replace(/fcces/g,'</script>') + '\n';
   });
   editor.setValue(allSeeds);
-  editor.setCursor(15);
+  (function() {
+    setTimeout(function() {
+      editor.refresh();
+    }, 200);
+  })();
 })();
 
 
