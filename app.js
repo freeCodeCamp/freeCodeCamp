@@ -43,6 +43,7 @@ var express = require('express'),
   fieldGuideController = require('./controllers/fieldGuide'),
   challengeMapController = require('./controllers/challengeMap'),
   challengeController = require('./controllers/challenge'),
+  jobsController = require('./controllers/jobs'),
 
   /**
    *  Stories
@@ -159,9 +160,8 @@ var trusted = [
   '*.ytimg.com',
   '*.bitly.com',
   'http://cdn.inspectlet.com/',
-  'http://hn.inspectlet.com/',
-  '*.simplyhired.com',
-  '*.simply-partner.com'
+  'wss://inspectletws.herokuapp.com/',
+  'http://hn.inspectlet.com/'
 ];
 
 app.use(helmet.csp({
@@ -269,8 +269,6 @@ app.get('/pmi-acp-agile-project-managers-form',
 
 app.get('/nonprofits', resourcesController.nonprofits);
 
-app.get('/nonprofits/getNonprofitList', nonprofitController.showAllNonprofits);
-
 app.get('/nonprofits-form', resourcesController.nonprofitsForm);
 
 app.get('/map',
@@ -354,7 +352,7 @@ app.get(
 
 app.get(
   '/jobs',
-  resourcesController.jobs
+  jobsController.jobsDirectory
 );
 
 app.get(

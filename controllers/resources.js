@@ -234,12 +234,6 @@ module.exports = {
     }
   },
 
-  jobs: function jobs(req, res) {
-    res.render('resources/jobs', {
-      title: 'Job Board for Front End Developer and Full Stack JavaScript Developer Jobs'
-    });
-  },
-
   jobsForm: function jobsForm(req, res) {
     res.render('resources/jobs-form', {
       title: 'Employer Partnership Form for Job Postings, Recruitment and Corporate Sponsorships'
