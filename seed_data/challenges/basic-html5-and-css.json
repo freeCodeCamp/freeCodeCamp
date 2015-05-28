@@ -143,7 +143,7 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br/>",
+        "<br>",
         "",
         "<p>Hello Paragraph</p>",
         "-->"
@@ -180,7 +180,7 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br/>",
+        "<br>",
         "",
         "<p>Hello Paragraph</p>",
         "-->"
@@ -216,7 +216,7 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br/>",
+        "<br>",
         "",
         "<p>Hello Paragraph</p>"
       ],
@@ -252,7 +252,7 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br/>",
+        "<br>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
@@ -1103,7 +1103,7 @@
       ],
       "tests": [
         "expect($('a').children('img').length, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\"').to.equal(1);",
-        "expect(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Make sure to specify the \"src\" attritube as \"#\"').to.be.true;"
+        "expect(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Make sure to specify the \"src\" attribute as \"#\"').to.be.true;"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1425,7 +1425,7 @@
       "name": "Waypoint: Add Placeholder Text to a Text Field",
       "difficulty": 0.039,
       "description": [
-        "Add the placeholder text \"type a cat photo URL here\" to your text field.",
+        "Add the placeholder text \"cat photo URL\" to your text field.",
         "Placeholder text will appear in your text field before your user has inputed anything.",
         "For example: <code>&#60;input type='text' placeholder='this is placeholder text'&#62;</code>"
       ],
