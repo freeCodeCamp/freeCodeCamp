@@ -51,7 +51,7 @@ var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3
 
 
 var editorValueForIFrame;
-var iFrameScript = "<script src='/js/lib/coursewares/iFrameScripts_0.0.3.js'></script>";
+var iFrameScript = "<script src='/js/lib/coursewares/iFrameScripts_0.0.4.js'></script>";
 
 var delay;
 // Initialize CodeMirror editor with a nice html5 canvas demo.
