@@ -133,9 +133,9 @@
         "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>."
       ],
       "tests": [
-        "assert(($('h1').length > 0), 'The h1 element should not commented. It should be visible in the browser.')",
-        "assert(($('h2').length > 0), 'The h2 element should not commented. It should be visible in the browser.')",
-        "assert(($('p').length > 0), 'The paragraph element should not commented. It should be visible in the browser.')"
+        "assert($('h1').length > 0, 'The h1 element should not be commented. It should be visible in the browser.')",
+        "assert($('h2').length > 0, 'The h2 element should not be commented. It should be visible in the browser.')",
+        "assert($('p').length > 0, 'The paragraph element should not be commented. It should be visible in the browser.')"
       ],
       "challengeSeed": [
         "<!--",
@@ -911,7 +911,7 @@
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert((/photo/gi).test($('a').text()), 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
+        "assert((/cat photos/gi).test($('a').text()), 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
         "assert($('a').filter(function(index) { return /com/gi.test($('a').attr('href')); }).length > 0, 'You need an <code>anchor</code> element that links to <code>http&#58;//catphotoapp.com<code>.')"
       ],
       "challengeSeed": [
@@ -1099,7 +1099,7 @@
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "tests": [
-        "assert($('a').filter(function(index) { return /#/gi.test($('a')[index]); }).length > 1, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\".')"
+        "expect($('a').children('img').length, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\"').to.equal(1);"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1289,8 +1289,8 @@
       "tests": [
         "assert($('ul').length > 0, 'You should have an <code>ul</code> element on your webpage.')",
         "assert($('ol').length > 0, 'You should have an <code>ol</code> element on your webpage.')",
-        "assert($('li').length > 5, 'You should have three <code>li</code> elements on within your <code>ul</code> element.')",
-        "assert($('li').length > 5, 'You should have three <code>li</code> elements on within your <code>ol</code> element.')"
+        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
+        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ol</code> element.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1568,7 +1568,7 @@
       "difficulty": 0.041,
       "description": [
         "Add a submit button to your form field.",
-        "Let's add a submit button to your form. Clicking this button will send the date from your form to the URL you specified with your form's <code>action</code> attribute.",
+        "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
         "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;<code>"
       ],
       "tests": [
@@ -1646,8 +1646,8 @@
         "For example, if you wanted to make a text input field required, you can just add the word \"required\" within your <code>input</code> element use: <code>&#60;input type='text' required&#62;</code>"
       ],
       "tests": [
-        "assert($('input').prop('required'), 'Your text field have the property of being required.')",
-        "assert($('[placeholder]').length > 0, 'Your text field should have the placeholder text of \"cat photo URL\".')"
+        "assert($('input').prop('required'), 'Your text field should have the property of being required.')",
+        "assert(new RegExp('cat photo URL').test($('input').prop('placeholder')), 'Your text field should have the placeholder text of \"cat photo URL\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1932,7 +1932,7 @@
         "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
         "  <label><input type='checkbox' name='personality'> Loving</label>",
         "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Crazy</label>",
+        "  <label><input type='checkbox' name='personality'> Energetic</label>",
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
@@ -1959,8 +1959,8 @@
         "To do this, just add the word \"checked\" to the inside of an input element. For example, <code>&#60;input type='radio' name='test-name' checked&#62;</code>."
       ],
       "tests": [
-        "assert($('input[type=\"radio\"').prop('checked'), 'Your first radio button on your form should be checked by default.')",
-        "assert($('input[type=\"checkbox\"').prop('checked'), 'Your first checkbox on your form should be checked by default.')"
+        "assert($('input[type=\"radio\"]').prop('checked'), 'Your first radio button on your form should be checked by default.');",
+        "assert($('input[type=\"checkbox\"]').prop('checked'), 'Your first checkbox on your form should be checked by default.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -2014,7 +2014,7 @@
         "  <br>",
         "  <label><input type='checkbox' name='personality'> Loving</label>",
         "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Crazy</label>",
+        "  <label><input type='checkbox' name='personality'> Energetic</label>",
         "  <br>",
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
@@ -2228,7 +2228,9 @@
         "CSS allows you to control the padding of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes."
       ],
       "tests": [
+        "assert($('.green-box').css('padding-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of padding.')",
         "assert($('.green-box').css('padding-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of padding.')",
+        "assert($('.green-box').css('padding-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of padding.')",
         "assert($('.green-box').css('padding-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of padding.')"
       ],
       "challengeSeed": [
@@ -2349,14 +2351,16 @@
       "name": "Waypoint: Use Clockwise Notation to Specify the Padding of an Element",
       "difficulty": 0.069,
       "description": [
-        "Use <code>Clockwise Notation</code> to give an element padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
+        "Use <code>Clockwise Notation</code> to give the \".green-box\" class a padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
         "You can also use this notation for margins!"
       ],
       "tests": [
-        "assert($('.green-box').css('padding-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of padding.')",
-        "assert($('.green-box').css('padding-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of padding.')"
+        "assert($('.green-box').css('padding-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of padding.')",
+        "assert($('.green-box').css('padding-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of padding.')",
+        "assert($('.green-box').css('padding-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of padding.')",
+        "assert($('.green-box').css('padding-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of padding.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -2417,7 +2421,10 @@
       ],
       "tests": [
         "assert($('.green-box').css('margin-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of margin.')",
-        "assert($('.green-box').css('margin-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of margin.')"
+        "assert($('.green-box').css('margin-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of margin.')",
+        "assert($('.green-box').css('margin-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 20px of margin.')",
+        "assert($('.green-box').css('margin-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of margin.')"
+
       ],
       "challengeSeed": [
         "<style>",

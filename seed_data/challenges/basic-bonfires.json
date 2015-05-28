@@ -19,8 +19,7 @@
         "Add them as a new contact in Screen Hero, then click the monitor-looking button to attempt to share your screen with them.",
         "Once the Screen Hero session starts, your screen's margins will glow orange. You are now sharing your screen.",
         "Your pair will have their own cursor, and will be able to type text on his or her and keyboard.",
-        "Now it's time to tackle our Bonfires.",
-        "Go to <a href='http://freecodecamp.com/bonfires' target='_blank'>http://freecodecamp.com/bonfires</a> and start working through our Bonfire challenges.",
+        "Now it's time to tackle our Bonfires. You can begin them by advancing to the next challenge.",
         "Once you you finish pair programming, end the session in Screen Hero session.",
         "Congratulations! You have completed your first pair programming session.",
         "Pair program as much as possible with different campers until you've completed all the Bonfire challenges. This is a big time investment, but the JavaScript practice you get will be well worth it!",
@@ -447,6 +446,7 @@
       "tests": [
         "assert.deepEqual(chunk(['a', 'b', 'c', 'd'], 2), [['a', 'b'], ['c', 'd']], 'should return chunked arrays');",
         "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'should return chunked arrays');",
+        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'should return chunked arrays');",
         "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'should return the last chunk as remaining elements');"
       ],
       "MDNlinks": [

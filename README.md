@@ -60,24 +60,32 @@ touch .env
 
 ```
 
-Edit your .env file with the following API keys accordingly (if you only use email login, only the MONGOHQ_URL, SESSION_SECRET, MANDRILL_USER and MANDRILL_PASSWORD fields are necessary:
+Edit your .env file with the following API keys accordingly (if you only use email login, only the MONGOHQ_URL, SESSION_SECRET, MANDRILL_USER and MANDRILL_PASSWORD fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services.
 
 ```
 
 MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
-SESSION_SECRET='ANY ENGLISH PHRASE'
-MANDRILL_USER='THE EMAIL ADDRESS FROM YOUR MANDRILL ACCOUNT'
-MANDRILL_PASSWORD='YOUR MANDRILL PASSWORD'
-FACEBOOK_ID='FACEBOOK APP API KEY'
-FACEBOOK_SECRET='FACEBOOK SECRET'
-GITHUB_ID='GITHUB APP API KEY'
-GITHUB_SECRET='GITHUB APP SECRET'
-TWITTER_KEY='TWITTER APP API KEY'
-TWITTER_SECRET='TWITTER APP SECRET'
-GOOGLE_ID='GOOGLE APP API KEY'
-GOOGLE_SECRET='GOOGLE APP SECRET'
-LINKEDIN_ID='LINKEDIN APP API KEY'
-LINKEDIN_SECRET='LINKEDIN APP SECRET'
+BLOGGER_KEY=stuff
+FACEBOOK_ID=stuff
+FACEBOOK_SECRET=stuff
+GITHUB_ID=stuff
+GITHUB_SECRET=stuff
+GOOGLE_ID=stuff
+GOOGLE_SECRET=stuff
+LINKEDIN_ID=stuff
+LINKEDIN_SECRET=stuff
+MANDRILL_PASSWORD=stuff
+MANDRILL_USER=stuff
+SESSION_SECRET=secretstuff
+TRELLO_KEY=stuff
+TRELLO_SECRET=stuff
+TWITTER_KEY=stuff
+TWITTER_SECRET=stuff
+TWITTER_TOKEN=stuff
+TWITTER_TOKEN_SECRET=stuff
+SLACK_WEBHOOK=stuff
+PEER=stuff
+DEBUG=true
 
 ```
 
