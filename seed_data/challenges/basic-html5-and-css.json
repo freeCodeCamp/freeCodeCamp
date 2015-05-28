@@ -594,6 +594,9 @@
         "Now see if you can make sure the h2 element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, or changing the sequence of CSS class declarations."
       ],
       "tests": [
+        "assert(new RegExp('.blue-text', 'gi').test(editor), 'Ensure you implemented the css class \".blue-text\"');",
+        "assert(new RegExp('.urgently-red', 'gi').test(editor), 'Ensure you implemented the css class \".urgently-red\"');",
+        "assert(new RegExp('blue !important', 'gi').test(editor), 'Ensure you added the \"!important\" declaration!');",
         "assert($('h2').hasClass('blue-text'), 'Your h2 element should have the class \"blue-text\".')",
         "assert($('h2').hasClass('urgently-red'), 'Your h2 element should have the class \"urgently-red\".')",
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"

@@ -49,14 +49,9 @@ var libraryIncludes = "<script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.3
   "<style>body { padding: 0px 3px 0px 3px; }</style>" +
   "<script>var expect = chai.expect; var should = chai.should(); var assert = chai.assert;</script>";
 
-var allTests = '';
-(function() {
-  tests.forEach(function(elem) {
-    allTests += elem + ' ';
-  });
-})();
 
-var otherTestsForNow = "<script src='/js/lib/coursewares/iFrameScripts_0.0.2.js'></script>";
+var editorValueForIFrame;
+var iFrameScript = "<script src='/js/lib/coursewares/iFrameScripts_0.0.3.js'></script>";
 
 var delay;
 // Initialize CodeMirror editor with a nice html5 canvas demo.
@@ -67,12 +62,13 @@ editor.on("keyup", function () {
 
 var nodeEnv = prodOrDev === 'production' ? 'http://www.freecodecamp.com' : 'http://localhost:3001';
 function updatePreview() {
+  editorValueForIFrame = editor.getValue();
   goodTests = 0;
   var previewFrame = document.getElementById('preview');
   var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
   preview.open();
   $('#testSuite').empty();
-  preview.write(libraryIncludes + editor.getValue() + otherTestsForNow);
+  preview.write(libraryIncludes + editor.getValue() + iFrameScript);
   preview.close();
 
 }
@@ -104,7 +100,6 @@ var testSuccess = function() {
   }
 };
 var challengeSeed = challengeSeed || null;
-var tests = tests || [];
 var allSeeds = '';
 (function() {
   challengeSeed.forEach(function(elem) {
