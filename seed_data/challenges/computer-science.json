@@ -13,7 +13,7 @@
         "Despite being completely self-paced, Stanford's CS101 course is broken up into weeks. Each of the following challenges will address one of those weeks.",
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/</a> and complete the first week's course work."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -36,7 +36,7 @@
         "This will introduce us to loops, a fundamental feature of every programming language.",
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/</a> and complete Week 2."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -59,7 +59,7 @@
         "This challenge will also give you an understanding of how bits and bytes work.",
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/</a> and complete Week 3."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -82,7 +82,7 @@
         "Particularly important, you will learn about networks and TCP/IP - the protocol that powers the internet.",
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/</a> and complete Week 4."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -105,7 +105,7 @@
         "We'll also learn the difference between digital data and analog data.",
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/</a> and complete Week 5."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -129,7 +129,7 @@
         "We'll also learn about Computer Security and some of the more common vulnerabilities software systems have.",
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/</a> and complete Week 6, the final week of the course."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],

@@ -12,7 +12,7 @@
         "In this course, we'll build a virtual shop entirely in Angular.js.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -35,7 +35,7 @@
         "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -58,7 +58,7 @@
         "Learn how to create reactive Angular.js forms, including real-time form validation.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -80,7 +80,7 @@
         "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -103,7 +103,7 @@
         "We'll learn how to use services in this final Code School Angular.js challenge.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -155,7 +155,7 @@
         "Complete \"Finale\"",
         "Once you've completed these first 7 challenges, move on to our next waypoint."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -197,7 +197,7 @@
         "Complete \"HTTP Client\"",
         "Once you've completed these first 7 challenges, move on to our next waypoint."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -224,7 +224,7 @@
         "Complete \"Time Server\"",
         "Once you've completed these 3 challenges, move on to our next waypoint."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -251,7 +251,7 @@
         "Complete \"HTTP JSON API Server\"",
         "Once you've completed these final 3 challenges, move on to our next waypoint."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -292,7 +292,7 @@
         "Complete \"Time Server\"",
         "Once you've completed these challenges, move on to our next waypoint."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
@@ -315,7 +315,7 @@
         "Git is also a great way to share and contribute to open source software.",
         "Go to <a href='https://www.codeschool.com/courses/try-git' target='_blank'>https://www.codeschool.com/courses/try-git</a> and complete this short interactive course."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],

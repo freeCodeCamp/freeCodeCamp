@@ -21,7 +21,7 @@
       "challengeSeed": [
         "<h1>Hello</h1>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -51,7 +51,7 @@
       "challengeSeed": [
         "<h1>Hello World</h1>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -80,7 +80,7 @@
         "<h1>Hello World</h1>",
         "<h2>CatPhotoApp</h2>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -110,7 +110,7 @@
         "<h2>CatPhotoApp</h2>",
         "<p>Hello Paragraph</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -148,7 +148,7 @@
         "<p>Hello Paragraph</p>",
         "-->"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -185,7 +185,7 @@
         "<p>Hello Paragraph</p>",
         "-->"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -220,7 +220,7 @@
         "",
         "<p>Hello Paragraph</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -256,7 +256,7 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -286,7 +286,7 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -320,7 +320,7 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -361,7 +361,7 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -398,7 +398,7 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -435,7 +435,7 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -475,7 +475,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -518,7 +518,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -567,7 +567,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -620,7 +620,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -668,7 +668,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -717,7 +717,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -771,7 +771,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -830,7 +830,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -888,7 +888,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -949,7 +949,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1013,7 +1013,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1075,7 +1075,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1138,7 +1138,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1201,7 +1201,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1264,7 +1264,7 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1333,7 +1333,7 @@
         "  <li>lasagna</li>",
         "</ul>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1404,7 +1404,7 @@
         "  <li>other cats</li>",
         "</ol>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1477,7 +1477,7 @@
         "</ol>",
         "<input type='text'>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1550,7 +1550,7 @@
         "</ol>",
         "<input type='text' placeholder='cat photo URL'>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1624,7 +1624,7 @@
         "  <input type='text' placeholder='cat photo URL'>",
         "</form>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1700,7 +1700,7 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1780,7 +1780,7 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1858,7 +1858,7 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -1937,7 +1937,7 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -2020,7 +2020,7 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -2081,7 +2081,7 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -2144,7 +2144,7 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -2206,7 +2206,7 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -2271,7 +2271,7 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -2334,7 +2334,7 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -2397,7 +2397,7 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
@@ -2461,7 +2461,7 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 5,
+      "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",

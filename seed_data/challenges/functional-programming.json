@@ -15,7 +15,7 @@
         "This challenge will take several hours, but don't worry. Jafar's website will save your progress (using your browser's local storage) so you don't need to finish it in one sitting.",
         "If you've spent several minutes on one of these challenges, and still can't figure out its correct answer, you can click \"show answer\", then click \"run\" to advance to the next challenge. Be sure to read the correct answer and make sure you understand it before moving on."
       ],
-      "challengeType": 0,
+      "challengeType": 2,
       "tests": [],
       "nameCn": "",
       "descriptionCn": [],
