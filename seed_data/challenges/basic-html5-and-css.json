@@ -1103,7 +1103,7 @@
       ],
       "tests": [
         "expect($('a').children('img').length, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\"').to.equal(1);",
-        "expect(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Make sure to specify the \"src\" attritube as \"#\"').to.be.true;"
+        "expect(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Make sure to specify the \"src\" attribute as \"#\"').to.be.true;"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
