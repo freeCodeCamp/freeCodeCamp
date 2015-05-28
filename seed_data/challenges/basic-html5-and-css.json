@@ -1425,7 +1425,7 @@
       "name": "Waypoint: Add Placeholder Text to a Text Field",
       "difficulty": 0.039,
       "description": [
-        "Add the placeholder text \"type a cat photo URL here\" to your text field.",
+        "Add the placeholder text \"cat photo URL\" to your text field.",
         "Placeholder text will appear in your text field before your user has inputed anything.",
         "For example: <code>&#60;input type='text' placeholder='this is placeholder text'&#62;</code>"
       ],
