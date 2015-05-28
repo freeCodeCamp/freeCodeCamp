@@ -976,7 +976,7 @@
       ],
       "tests": [
         "assert((/photo/gi).test($('a').text()), 'You need an <code>anchor</code> element that links to \"catphotoapp.com\".')",
-        "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
+        "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"cat photos\"')",
         "assert($('a').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')"
       ],
       "challengeSeed": [
