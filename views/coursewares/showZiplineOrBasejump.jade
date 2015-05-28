@@ -91,12 +91,6 @@ block content
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid') Go to my next challenge (ctrl + enter)
                         script.
                           $('#complete-zipline-or-basejump-dialog').on('keypress', modalControlEnterHandler);
-
-                        if (user.progressTimestamps.length > 2)
-                            .button-spacer
-                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
-                                i.fa.fa-twitter &thinsp;
-                                    = phrase
                     else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
         script.

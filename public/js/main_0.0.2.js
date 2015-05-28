@@ -37,7 +37,7 @@ $(document).ready(function() {
   });
 
   $('#i-want-help-editorless').on('click', function() {
-    $('#help-modal-editorless').modal('hide');
+    $('#help-editorless-modal').modal('hide');
     var currentLocation = window.location.href;
     $.post(
       '/get-help',
@@ -134,6 +134,14 @@ $(document).ready(function() {
     $(this).unbind("error").attr("src", "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png");
   });
 
+  $('#completed-courseware').on('click', function() {
+    $('#complete-courseware-dialog').modal('show');
+  });
+
+  $('#completed-courseware-editorless').on('click', function() {
+    $('#complete-courseware-editorless-dialog').modal('show');
+  });
+
   $('#trigger-pair-modal').on('click', function() {
     $('#pair-modal').modal('show');
   });
@@ -157,6 +165,11 @@ $(document).ready(function() {
   $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
     editor.focus();
   });
+
+  $('#complete-challenge-dialog').on('hidden.bs.modal', function() {
+    editor.focus();
+  });
+
   var challengeTypes = {
     'HTML_CSS_JQ': 0,
     'JAVASCRIPT': 1,
@@ -172,7 +185,6 @@ $(document).ready(function() {
         case challengeTypes.HTML_CSS_JQ:
         case challengeTypes.JAVASCRIPT:
         case challengeTypes.VIDEO:
-          console.log(challenge_Id);
           $.post(
             '/completed-challenge/',
             {
