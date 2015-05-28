@@ -454,7 +454,7 @@
       "description": [
         "Make all paragraph elements use the \"Monospace\" font.",
         "You can set an element's font by using the <code>font-family</code> attribute.",
-        "For example, if you wanted to set your h2 element's font to \"San-serif\", you would use the following CSS: <code>h2 { font-family: 'San-serif'; }</code>"
+        "For example, if you wanted to set your h2 element's font to \"Sans-serif\", you would use the following CSS: <code>h2 { font-family: 'Sans-serif'; }</code>"
       ],
       "tests": [
         "assert($('p').css('font-family').match(/monospace/i), 'Your paragraph elements should use the font \"Monospace\".')"
