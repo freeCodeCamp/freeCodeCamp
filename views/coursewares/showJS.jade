@@ -38,13 +38,13 @@ block content
                 if (user && user.sentSlackInvite)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
-                        label.btn.btn-success#i-want-help
+                        label.btn.btn-success#trigger-help-modal
                             i.fa.fa-medkit
                                 | &nbsp; Help
-                        label.btn.btn-success#i-want-to-pair
+                        label.btn.btn-success#trigger-pair-modal
                             i.fa.fa-user-plus
                                 | &nbsp; Pair
-                        label.btn.btn-success#report-issue
+                        label.btn.btn-success#trigger-issue-modal
                             i.fa.fa-bug
                                 | &nbsp; Bug
                     .spacer
@@ -85,3 +85,4 @@ block content
                                     = phrase
                     - else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+    include ../partials/challenge-modals
