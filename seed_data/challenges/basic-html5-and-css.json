@@ -744,7 +744,7 @@
       "tests": [
         "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
         "assert($('img').hasClass('thick-green-border'), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
-        "assert(parseInt($('img').css('border-left-width')) > 8, 'Your <code>img</code> should have a border with a width of 10 pixels.')"
+        "assert(parseInt($('img').css('border-width')) >= 9 && new RegExp('solid').test($('img').css('border-style')), 'You need to specify a border width of 10px and a border style of \"solid\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
