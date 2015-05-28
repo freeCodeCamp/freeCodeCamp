@@ -1,6 +1,6 @@
 {
   "name": "Full Stack JavaScript",
-  "order" : 0.013,
+  "order": 0.013,
   "challenges": [
     {
       "_id": "bd7154d8c441eddfaeb5bdef",
@@ -12,8 +12,18 @@
         "In this course, we'll build a virtual shop entirely in Angular.js.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7155d8c441eddfaeb5bdef",
@@ -25,8 +35,18 @@
         "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7156d8c441eddfaeb5bdef",
@@ -38,8 +58,18 @@
         "Learn how to create reactive Angular.js forms, including real-time form validation.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7157d8c441eddfaeb5bdef",
@@ -50,8 +80,18 @@
         "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7158d8c441eddfaeb5bdef",
@@ -63,8 +103,18 @@
         "We'll learn how to use services in this final Code School Angular.js challenge.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bd0f",
@@ -105,8 +155,18 @@
         "Complete \"Finale\"",
         "Once you've completed these first 7 challenges, move on to our next waypoint."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bdff",
@@ -137,8 +197,18 @@
         "Complete \"HTTP Client\"",
         "Once you've completed these first 7 challenges, move on to our next waypoint."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bdfe",
@@ -154,8 +224,18 @@
         "Complete \"Time Server\"",
         "Once you've completed these 3 challenges, move on to our next waypoint."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bdfd",
@@ -171,8 +251,18 @@
         "Complete \"HTTP JSON API Server\"",
         "Once you've completed these final 3 challenges, move on to our next waypoint."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bd1f",
@@ -202,8 +292,18 @@
         "Complete \"Time Server\"",
         "Once you've completed these challenges, move on to our next waypoint."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7140d8c441eddfaeb5bdef",
@@ -215,8 +315,18 @@
         "Git is also a great way to share and contribute to open source software.",
         "Go to <a href='https://www.codeschool.com/courses/try-git' target='_blank'>https://www.codeschool.com/courses/try-git</a> and complete this short interactive course."
       ],
-      "challengeType": 2,
-      "tests": []
+      "challengeType": 0,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

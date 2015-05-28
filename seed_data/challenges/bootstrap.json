@@ -1,6 +1,6 @@
 {
   "name": "Responsive Design with Bootstrap",
-  "order" : 0.003,
+  "order": 0.003,
   "challenges": [
     {
       "_id": "bad87fee1348bd9acde08812",
@@ -76,7 +76,17 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd8acde08812",
@@ -149,7 +159,17 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348cd8acdf08812",
@@ -221,7 +241,17 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348cd8acef08812",
@@ -295,7 +325,17 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348cd8acef08811",
@@ -370,7 +410,17 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348cd8acef08813",
@@ -445,7 +495,17 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348ce8acef08814",
@@ -521,7 +581,17 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad88fee1348ce8acef08815",
@@ -602,13 +672,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08845",
+      "_id": "bad87fee1348bd9aedf08845",
       "name": "Waypoint: Ditch Custom CSS for Bootstrap",
-      "difficulty" : 0.055,
+      "difficulty": 0.055,
       "description": [
         "Delete the following from your style tag: <code>.red-text</code>, <code>p</code>, <code>.smaller-image</code>. Delete the <code>p</code> element with the dead link. Remove your <code>red-text</code> class from your <code>h2</code> element and instead apply the <code>text-primary</code> Bootstrap class. Replace the <code>smaller-image</code> class on your top image with the <code>img-responsive</code> class.",
         "We can clean up our code and make our Cat Photo App look more conventional by using Bootstrap's built-in styles instead of the custom styles we created earlier.",
@@ -691,13 +770,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aede08845",
+      "_id": "bad87fee1348bd9aede08845",
       "name": "Waypoint: Create a Custom Heading",
-      "difficulty" : 0.056,
+      "difficulty": 0.056,
       "description": [
         "Wrap your first image and your h2 element within a single <code>&#60;div class='row'&#62;</code> element. Wrap your h2 text within a <code>&#60;div class='col-xs-8'&#62;</code> and your image in a <code>&#60;div class='col-xs-4'&#62;</code> so that they are on the same line.",
         "We will make a simple heading for our Cat Photo App by putting them in the same row.",
@@ -770,13 +858,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedd08845",
+      "_id": "bad87fee1348bd9aedd08845",
       "name": "Waypoint: Add Font Awesome Icons to our Buttons",
-      "difficulty" : 0.057,
+      "difficulty": 0.057,
       "description": [
         "Use Font Awesome to add a \"like\" icon to your like button.",
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
@@ -846,13 +943,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedc08845",
+      "_id": "bad87fee1348bd9aedc08845",
       "name": "Waypoint: Add Font Awesome Icons all of our Buttons",
-      "difficulty" : 0.058,
+      "difficulty": 0.058,
       "description": [
         "Use Font Awesome to add a \"info-circle\" icon to your info button and a \"trash\" icon to your delete button.",
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
@@ -923,13 +1029,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedb08845",
+      "_id": "bad87fee1348bd9aedb08845",
       "name": "Waypoint: Responsively Style a Radio Buttons",
-      "difficulty" : 0.059,
+      "difficulty": 0.059,
       "description": [
         "Wrap all of your radio buttons within a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them within a <code>&#60;div class='col-xs-6'&#62;</code> element.",
         "You can use Bootstrap's <code>col-xs-*</code> classes on form elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is."
@@ -999,13 +1114,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aeda08845",
+      "_id": "bad87fee1348bd9aeda08845",
       "name": "Waypoint: Responsively Style Checkboxes",
-      "difficulty" : 0.060,
+      "difficulty": 0.060,
       "description": [
         "Wrap all your checkboxes in a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them in a <code>&#60;div class='col-xs-4'&#62;</code> element.",
         "You can use Bootstrap's <code>col-xs-*</code> classes on form elements, too! This way, our checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is."
@@ -1082,13 +1206,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aed908845",
+      "_id": "bad87fee1348bd9aed908845",
       "name": "Waypoint: Style Text Inputs as Form Controls",
-      "difficulty" : 0.061,
+      "difficulty": 0.061,
       "description": [
         "Give your form's text input field in a class of \"form-control\". Give your form's submit button the classes \"btn btn-primary\" and give it the Font Awesome icon of \"fa-paper-plane\"."
       ],
@@ -1174,13 +1307,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aec908845",
+      "_id": "bad87fee1348bd9aec908845",
       "name": "Waypoint: Line up Form Elements Responsively with Bootstrap",
-      "difficulty" : 0.062,
+      "difficulty": 0.062,
       "description": [
         "Wrap both your form's text input field and submit button within a div with the class \"row\". Wrap your form's text input field within a div with the class of \"col-xs-7\". Wrap your form's submit button the in a div with the class \"col-xs-5\".",
         "Now let's get your form input and your submission button on the same line. We'll do this the same way we have previously: by using a \"row\" element with \"col-xs-*\" elements withing it.",
@@ -1268,7 +1410,17 @@
         "  <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

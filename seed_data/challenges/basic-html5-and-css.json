@@ -1,6 +1,6 @@
 {
   "name": "Basic HTML5 and CSS",
-  "order" : 0.002,
+  "order": 0.002,
   "challenges": [
     {
       "_id": "bd7123c8c441eddfaeb5bdef",
@@ -21,7 +21,17 @@
       "challengeSeed": [
         "<h1>Hello</h1>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf0887a",
@@ -41,7 +51,17 @@
       "challengeSeed": [
         "<h1>Hello World</h1>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08801",
@@ -60,7 +80,17 @@
         "<h1>Hello World</h1>",
         "<h2>CatPhotoApp</h2>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aeaf08801",
@@ -80,7 +110,17 @@
         "<h2>CatPhotoApp</h2>",
         "<p>Hello Paragraph</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08802",
@@ -108,7 +148,17 @@
         "<p>Hello Paragraph</p>",
         "-->"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08804",
@@ -135,7 +185,17 @@
         "<p>Hello Paragraph</p>",
         "-->"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08833",
@@ -160,7 +220,17 @@
         "",
         "<p>Hello Paragraph</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fed1348bd9aedf08833",
@@ -186,7 +256,17 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08803",
@@ -196,7 +276,7 @@
         "Change the <code>h2</code> element's style so that its text color is red.",
         "We can do this by changing the <code>style</code> of the <code>h2</code> element.",
         "The style that is responsible for the color of an element's text is the \"color\" style.",
-        "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;\/h2&#62;</code>"
+        "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>"
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
@@ -206,7 +286,17 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08805",
@@ -230,7 +320,17 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aecf08806",
@@ -261,7 +361,17 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aefe08806",
@@ -288,7 +398,17 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08806",
@@ -315,7 +435,17 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aede08807",
@@ -345,7 +475,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08807",
@@ -378,7 +518,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08808",
@@ -417,7 +567,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08809",
@@ -460,9 +620,18 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
       "_id": "bad87fee1348bd9aedf08812",
       "name": "Waypoint: Add Images to your Website",
@@ -499,7 +668,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9acdf08812",
@@ -538,7 +717,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9bedf08813",
@@ -582,7 +771,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08814",
@@ -631,7 +830,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08815",
@@ -679,7 +888,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08816",
@@ -730,7 +949,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aede08817",
@@ -784,9 +1013,18 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
       "_id": "bad87fee1348bd9aedf08817",
       "name": "Waypoint: Make Dead Links using the Hash Symbol",
@@ -837,7 +1075,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08820",
@@ -890,7 +1138,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08818",
@@ -943,13 +1201,22 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08827",
+      "_id": "bad87fee1348bd9aedf08827",
       "name": "Waypoint: Create a Bulleted Unordered List",
-      "difficulty" : 0.036,
+      "difficulty": 0.036,
       "description": [
         "Replace the paragraph elements with an unordered list of three things that cats love.",
         "HTML has a special element for creating unordered lists, or bullet point-style lists.",
@@ -997,13 +1264,22 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08828",
+      "_id": "bad87fee1348bd9aedf08828",
       "name": "Waypoint: Create an Ordered List",
-      "difficulty" : 0.037,
+      "difficulty": 0.037,
       "description": [
         "Create an <code>ordered list</code> of the the top 3 things cats hate the most.",
         "HTML has a special element for creating ordered lists, or numbered-style lists.",
@@ -1057,13 +1333,22 @@
         "  <li>lasagna</li>",
         "</ul>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08829",
+      "_id": "bad87fee1348bd9aedf08829",
       "name": "Waypoint: Create a Text Field",
-      "difficulty" : 0.038,
+      "difficulty": 0.038,
       "description": [
         "Now we'll create a web form. Create a text field under your lists.",
         "Text inputs are a convenient way to get input from your user.",
@@ -1119,13 +1404,22 @@
         "  <li>other cats</li>",
         "</ol>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08830",
+      "_id": "bad87fee1348bd9aedf08830",
       "name": "Waypoint: Add Placeholder Text to a Text Field",
-      "difficulty" : 0.039,
+      "difficulty": 0.039,
       "description": [
         "Add the placeholder text \"type a cat photo URL here\" to your text field.",
         "Placeholder text will appear in your text field before your user has inputed anything.",
@@ -1183,13 +1477,22 @@
         "</ol>",
         "<input type='text'>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aede08830",
+      "_id": "bad87fee1348bd9aede08830",
       "name": "Waypoint: Create a Form Element",
-      "difficulty" : 0.040,
+      "difficulty": 0.040,
       "description": [
         "Wrap your text field in a <code>&#60;form&#62;</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element.",
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
@@ -1247,13 +1550,22 @@
         "</ol>",
         "<input type='text' placeholder='cat photo URL'>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedd08830",
+      "_id": "bad87fee1348bd9aedd08830",
       "name": "Waypoint: Add a Submit Button to a Form",
-      "difficulty" : 0.041,
+      "difficulty": 0.041,
       "description": [
         "Add a submit button to your form field.",
         "Let's add a submit button to your form. Clicking this button will send the date from your form to the URL you specified with your form's <code>action</code> attribute.",
@@ -1312,13 +1624,22 @@
         "  <input type='text' placeholder='cat photo URL'>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedc08830",
+      "_id": "bad87fee1348bd9aedc08830",
       "name": "Waypoint: Use HTML5 to Require a Field",
-      "difficulty" : 0.042,
+      "difficulty": 0.042,
       "description": [
         "Make it required for your user to input text into your form before being able to submit it.",
         "You can require your user to complete specific form fields before they will be able to submit your form.",
@@ -1379,13 +1700,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08834",
+      "_id": "bad87fee1348bd9aedf08834",
       "name": "Waypoint: Create a Set of Radio Buttons",
-      "difficulty" : 0.043,
+      "difficulty": 0.043,
       "description": [
         "Add to your form a pair of <code>radio buttons</code> that are wrapped in <code>label</code> elements and share a <code>name</code> attribute, with the options of \"indoor\" and \"outdoor\".",
         "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer.",
@@ -1450,13 +1780,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08835",
+      "_id": "bad87fee1348bd9aedf08835",
       "name": "Waypoint: Create a Set of Checkboxes",
-      "difficulty" : 0.044,
+      "difficulty": 0.044,
       "description": [
         "Add to your form a set of three <code>checkbox</code> elements that are wrapped in <code>label</code> elements and share the same <code>name</code> attribute.",
         "Forms commonly use <code>checkbox</code> elements for questions that may have more than one answer.",
@@ -1519,13 +1858,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType" : 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aede08835",
+      "_id": "bad87fee1348bd9aede08835",
       "name": "Waypoint: Clean up your form using Linebreaks",
-      "difficulty" : 0.045,
+      "difficulty": 0.045,
       "description": [
         "Clean up your form by adding linebreaks between form elements.",
         "Remember that you can create a linebreak element by using the code: <code>&#60;br&#62;</code>"
@@ -1589,13 +1937,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType" : 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedd08835",
+      "_id": "bad87fee1348bd9aedd08835",
       "name": "Waypoint: Check Radio Buttons and Checkboxes by Default",
-      "difficulty" : 0.046,
+      "difficulty": 0.046,
       "description": [
         "Set the first of your radio buttons and the first of your checkboxes to both be checked by default.",
         "You set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
@@ -1663,7 +2020,17 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType" : 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad88fee1348bd9aedf08825",
@@ -1714,7 +2081,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08822",
@@ -1767,7 +2144,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08823",
@@ -1819,7 +2206,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08824",
@@ -1872,7 +2269,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1248bd9aedf08824",
@@ -1925,7 +2332,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08826",
@@ -1976,7 +2393,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08726",
@@ -2027,7 +2454,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

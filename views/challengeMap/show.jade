@@ -56,18 +56,30 @@ block content
     #announcementModal.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
             .modal-content
-                .modal-header.challenge-list-header Share deep comics about coding
+                .modal-header.challenge-list-header We're adding new languages!
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
-                    h3.text-left Submit your favorite profound comic about coding to Camper News. Start the headline with: "Deep Code Comic:" then add a clever description that doesn't ruin the punchline.
-                    img.img-responsive.img-center(src='http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png')
-                    h3.text-left We'll publish the top 25 comics (and the campers who submitted them) in Wednesday's blog post. You'll also get 1 point for every upvote.
-                    a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='/news', target='_blank') Take me to Camper News
+                    .spacer
+                    h4.text-left 我們正在研究將Free Code Camp翻成中文! &thinsp;
+                        a(href='https://freecode.slack.com/messages/chinese')  請按這裡來參觀我們的中文聊天室
+                        | .
+                    h4.text-left Estamos trabajando a traducir Free Code Camp en español! &thinsp;
+                        a(href='https://freecode.slack.com/messages/espanol') Haz clic aquí para ir a nuestra sala de chat españal
+                        | .
+                    h4.text-left Nós estamos trabalhando para traduzir o Free Code Camp para o Português! &thinsp;
+                        a(href='https://freecode.slack.com/messages/portugues') Clique aqui para visitar nossa sala de bate-papo em Português
+                        | .
+                    h4.text-left Nous travaillons pour traduire Free Code Camp en Français! &thinsp;
+                        a(href='https://freecode.slack.com/messages/francais') Cliquez ici pour visiter notre salle de chat Français
+                        | .
+                    h4.text-left Мы работаем над переводом Free Code Camp на русский язык! &thinsp;
+                        a(href='https://freecode.slack.com/messages/russian') Нажмите здесь, чтобы посетить русский чат
+                        | .
                     a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up!
     script.
         $(document).ready(function () {
-            if (!localStorage || !localStorage.deepComic) {
+            if (!localStorage || !localStorage.multiLingual) {
                 $('#announcementModal').modal('show');
-                localStorage.deepComic = "true";
+                localStorage.multiLingual = "true";
             }
         });

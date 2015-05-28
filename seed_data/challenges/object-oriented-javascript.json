@@ -16,7 +16,17 @@
         "Go to <a href='https://www.udacity.com/course/viewer#!/c-ud015/l-2593668697/m-2541189051' target='_blank'>https://www.udacity.com/course/viewer#!/c-ud015/l-2593668697/m-2541189051</a> and start the course.",
         "Once you've completed this first section of scopes, mark this Waypoint complete and move on to the next one."
       ],
-      "challengeType": 2
+      "challengeType": 2,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7131d8c441eddfaeb5bdbf",
@@ -32,7 +42,17 @@
         "Once you've completed this section of using the keyword <code>this</code>, mark this Waypoint complete and move on to the next one."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7132d8c441eddfaeb5bdaf",
@@ -47,7 +67,17 @@
         "Once you've completed this section on prototype chain traversal, mark this Waypoint complete and move on to the next one."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7133d8c441eddfaeb5bd0f",
@@ -63,7 +93,17 @@
         "Once you've completed this section of decorators, mark this Waypoint complete and move on to the next one."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7134d8c441eddfaeb5bd1f",
@@ -79,7 +119,17 @@
         "Once you've completed this section of functional classes, mark this Waypoint complete and move on to the next one."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7135d8c441eddfaeb5bd2f",
@@ -95,7 +145,17 @@
         "Once you've completed this section of prototypal classes, mark this Waypoint complete and move on to the next one."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7136d8c441eddfaeb5bd3f",
@@ -111,7 +171,17 @@
         "Once you've completed this section pseudoclasses, mark this Waypoint complete and move on to the next one."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7136d8c441eddfaeb5bd4f",
@@ -126,7 +196,17 @@
         "Once you've completed this section on subclassing, mark this Waypoint complete and move on to the next one."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7136d8c441eddfaeb5bd5f",
@@ -140,7 +220,17 @@
         "Once you've completed this final section on pseudoclassical subclassing, mark this Waypoint complete and move on."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }
