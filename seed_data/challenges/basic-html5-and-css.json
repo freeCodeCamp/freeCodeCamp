@@ -454,7 +454,7 @@
       "description": [
         "Make all paragraph elements use the \"Monospace\" font.",
         "You can set an element's font by using the <code>font-family</code> attribute.",
-        "For example, if you wanted to set your h2 element's font to \"San-serif\", you would use the following CSS: <code>h2 { font-family: 'San-serif'; }</code>"
+        "For example, if you wanted to set your h2 element's font to \"Sans-serif\", you would use the following CSS: <code>h2 { font-family: 'Sans-serif'; }</code>"
       ],
       "tests": [
         "assert($('p').css('font-family').match(/monospace/i), 'Your paragraph elements should use the font \"Monospace\".')"
@@ -594,6 +594,9 @@
         "Now see if you can make sure the h2 element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, or changing the sequence of CSS class declarations."
       ],
       "tests": [
+        "assert(new RegExp('.blue-text', 'gi').test(editor), 'Ensure you implemented the css class \".blue-text\"')",
+        "assert(new RegExp('.urgently-red', 'gi').test(editor), 'Ensure you implemented the css class \".urgently-red\"')",
+        "assert(new RegExp('red !important', 'gi').test(editor), 'Ensure you added the \"!important\" declaration!')",
         "assert($('h2').hasClass('blue-text'), 'Your h2 element should have the class \"blue-text\".')",
         "assert($('h2').hasClass('urgently-red'), 'Your h2 element should have the class \"urgently-red\".')",
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
@@ -734,14 +737,14 @@
       "name": "Waypoint: Add Borders Around your Elements",
       "difficulty": 0.028,
       "description": [
-        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border around an HTML element, and apply it to your cat photo.",
+        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply it to your cat photo.",
         "CSS borders have attributes like style, color and width.",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>."
       ],
       "tests": [
         "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
-        "assert($('img').hasClass('thick-green-border'), 'Your image element should have the class \"thick-green-border\".')",
-        "assert(parseInt($('img').css('border-left-width')) > 8, 'Your image should have a border with a width of 10 pixels.')"
+        "assert($('img').hasClass('thick-green-border'), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
+        "assert(parseInt($('img').css('border-width')) >= 9 && new RegExp('solid').test($('img').css('border-style')), 'You need to specify a border width of 10px and a border style of \"solid\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -911,7 +914,7 @@
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert((/cat photos/gi).test($('a').text()), 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
+        "assert((/cat photos/gi).test($('a').text()), 'Your <code>anchor</code> element should have the anchor text of \"cat photos\"')",
         "assert($('a').filter(function(index) { return /com/gi.test($('a').attr('href')); }).length > 0, 'You need an <code>anchor</code> element that links to <code>http&#58;//catphotoapp.com<code>.')"
       ],
       "challengeSeed": [
@@ -973,7 +976,7 @@
       ],
       "tests": [
         "assert((/photo/gi).test($('a').text()), 'You need an <code>anchor</code> element that links to \"catphotoapp.com\".')",
-        "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
+        "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"cat photos\"')",
         "assert($('a').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')"
       ],
       "challengeSeed": [
@@ -1099,7 +1102,8 @@
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "tests": [
-        "expect($('a').children('img').length, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\"').to.equal(1);"
+        "expect($('a').children('img').length, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\"').to.equal(1);",
+        "expect(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Make sure to specify the \"src\" attribute as \"#\"').to.be.true;"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1421,7 +1425,7 @@
       "name": "Waypoint: Add Placeholder Text to a Text Field",
       "difficulty": 0.039,
       "description": [
-        "Add the placeholder text \"type a cat photo URL here\" to your text field.",
+        "Add the placeholder text \"cat photo URL\" to your text field.",
         "Placeholder text will appear in your text field before your user has inputed anything.",
         "For example: <code>&#60;input type='text' placeholder='this is placeholder text'&#62;</code>"
       ],
@@ -1567,12 +1571,12 @@
       "name": "Waypoint: Add a Submit Button to a Form",
       "difficulty": 0.041,
       "description": [
-        "Add a submit button to your form field.",
+        "Add a submit button to your form field with type <code>submit</code> and a test value of \"Submit\".",
         "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
         "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;<code>"
       ],
       "tests": [
-        "assert($('button').length > 0, 'Your form should have a button inside it.')"
+        "assert(new RegExp('<button type=.submit.>Submit</button>', 'gi').test(editor), 'Make sure you have completely declared your button!');"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -2420,10 +2424,10 @@
         "You can also use this notation for margins!"
       ],
       "tests": [
-        "assert($('.green-box').css('margin-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of margin.')",
+        "assert($('.green-box').css('margin-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of margin.')",
+        "assert($('.green-box').css('margin-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of margin.')",
         "assert($('.green-box').css('margin-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of margin.')",
-        "assert($('.green-box').css('margin-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 20px of margin.')",
-        "assert($('.green-box').css('margin-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of margin.')"
+        "assert($('.green-box').css('margin-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of margin.')"
 
       ],
       "challengeSeed": [
