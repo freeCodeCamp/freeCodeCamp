@@ -66,8 +66,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Encabezado con el elemento h2",
+      "descriptionEs": [
+        "Agrega una etiqueta <code>h2</code> que diga \"CatPhotoApp\" para crear un segundo <code>elemento</code> HTML debajo de tu elemento <code>h1</code> \"Hello World\".",
+        "El elemento h2 que ingreses creará un elemento h2 en el sitio web.",
+        "Este elemento le dice al navegador cómo mostrar el texto que contiene.",
+        "Los elementos <code>h2</code> son ligeramente más pequeños que los elementos <code>h1</code>. También hay elementos <code>h3</code>, <code>h4</code>, <code>h5</code> y <code>h6</code>."
+	  ],
       "namePt": "",
       "descriptionPt": []
     },
