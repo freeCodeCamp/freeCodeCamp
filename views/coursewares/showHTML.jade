@@ -38,7 +38,7 @@ block content
                                         span.ion-arrow-up-b
                                         | Less information
                 br
-            - if (user)
+            if (user)
                 a.btn.btn-primary.btn-big.btn-block#next-courseware-button
                     |  Go to my next challenge
                     br
@@ -46,16 +46,16 @@ block content
                 if (user.sentSlackInvite)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
-                        label.btn.btn-success#i-want-help(disabled)
+                        label.btn.btn-success#trigger-help-modal
                             i.fa.fa-medkit
-                                | &nbsp; Help(disabled)
-                        label.btn.btn-success#report-issue
+                                | &nbsp; Help
+                        label.btn.btn-success#trigger-issue-modal
                             i.fa.fa-bug
                                 | &nbsp; Bug
                     .button-spacer
                 script.
                     var userLoggedIn = true;
-            - else
+            else
                 a.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                     script.
                         var userLoggedIn = false;
@@ -91,4 +91,5 @@ block content
                             .animated.zoomInDown.delay-half
                                 span.completion-icon.ion-checkmark-circled.text-primary
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+    include ../partials/challenge-modals
     script(src="/js/lib/coursewares/coursewaresHCJQFramework_0.1.7.js")

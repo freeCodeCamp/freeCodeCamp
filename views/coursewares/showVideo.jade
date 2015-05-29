@@ -17,16 +17,16 @@ block content
                 iframe.embed-responsive-item(src='//player.vimeo.com/video/#{video}')
             br
             if (user)
-                a.btn.btn-primary.btn-big.btn-block#completed-courseware I've completed this challenge  (ctrl + enter)
+                a.btn.btn-primary.btn-big.btn-block#completed-courseware-editorless I've completed this challenge  (ctrl + enter)
                 script.
                     var userLoggedIn = true;
                 .button-spacer
                 if (user.sentSlackInvite)
                     .btn-group.input-group.btn-group-justified
-                        .btn.btn-success.btn-big#i-want-help-editorless(disabled)
+                        .btn.btn-success.btn-big#trigger-help-editorless-modal
                             i.fa.fa-medkit
-                                | &nbsp; Get help(disabled)
-                        .btn.btn-success.btn-big#report-issue
+                                | &nbsp; Get help
+                        .btn.btn-success.btn-big#trigger-issue-modal
                             i.fa.fa-bug
                                 | &nbsp; Report a bug
                 .button-spacer
@@ -41,22 +41,21 @@ block content
                 var controlEnterHandler = function(e) {
                     $('body').unbind('keypress');
                     if (e.ctrlKey && e.keyCode == 13) {
-                      $('#complete-courseware-dialog').modal('show');
+                      $('#complete-courseware-editorless-dialog').modal('show');
                     } else {
                       $('body').bind('keypress', controlEnterHandler);
                     }
                 };
                 var modalControlEnterHandler = function(e) {
-                  $('#complete-courseware-dialog').unbind('keypress');
+                  $('#complete-courseware-editorless-dialog').unbind('keypress');
                   if (e.ctrlKey && e.keyCode == 13) {
                     $('#next-courseware-button').click();
                   } else {
-                    $('#complete-courseware-dialog').bind('keypress', modalControlEnterHandler);
+                    $('#complete-courseware-editorless-dialog').bind('keypress', modalControlEnterHandler);
                   }
                 };
 
-
-    #complete-courseware-dialog.modal(tabindex='-1')
+    #complete-courseware-editorless-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
@@ -65,17 +64,17 @@ block content
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
-                        - if (user)
+                        if (user)
                             a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) On to my next challenge (ctrl + enter)
                             script.
-                              $('#complete-courseware-dialog').bind('keypress', modalControlEnterHandler);
+                              $('#complete-courseware-editorless-dialog').bind('keypress', modalControlEnterHandler);
 
-                            - if (user.progressTimestamps.length > 2)
+                            if (user.progressTimestamps.length > 2)
                                 .button-spacer
-                                a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20Challenge:%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
+                                a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
                                     i.fa.fa-twitter &thinsp;
                                     = phrase
-                        - else
+                        else
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
                                 h1 #{name}
         script.
@@ -84,3 +83,4 @@ block content
         var challenge_Id = !{JSON.stringify(challengeId)};
         var challenge_Name = !{JSON.stringify(name)};
         var challengeType = !{JSON.stringify(challengeType)};
+    include ../partials/challenge-modals

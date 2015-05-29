@@ -234,12 +234,6 @@ module.exports = {
     }
   },
 
-  jobs: function jobs(req, res) {
-    res.render('resources/jobs', {
-      title: 'Job Board for Front End Developer and Full Stack JavaScript Developer Jobs'
-    });
-  },
-
   jobsForm: function jobsForm(req, res) {
     res.render('resources/jobs-form', {
       title: 'Employer Partnership Form for Job Postings, Recruitment and Corporate Sponsorships'
@@ -607,8 +601,8 @@ module.exports = {
     var challenge = req.body.payload.challenge;
 
     slack.send({
-      text: "*" + userName + "* wants help with " + challenge + ". " +
-        code +  "Hey, *" + userName + "*, if no one helps you right " +
+      text: "*@" + userName + "* wants help with " + challenge + ". " +
+        code +  "Hey, *@" + userName + "*, if no one helps you right " +
         "away, try typing out your problem in detail to me. Like this: " +
         "http://en.wikipedia.org/wiki/Rubber_duck_debugging",
       channel: '#help',
@@ -622,11 +616,11 @@ module.exports = {
     var userName = req.user.profile.username;
     var challenge = req.body.payload.challenge;
     slack.send({
-      text: "Anyone want to pair with @" + userName + " on " + challenge +
-      "?\nMake sure you install Screen Hero here:" +
+      text: "Anyone want to pair with *@" + userName + "* on " + challenge +
+      "?\nMake sure you install Screen Hero here: " +
       "http://freecodecamp.com/field-guide/how-do-i-install-screenhero\n" +
       "Then start your pair program session with *" + userName +
-      "* by typing \"/hero @" + userName + "\" into Slack.\n And *"+ userName +
+      "* by typing \"/hero @" + userName + "\" into Slack.\n And *@"+ userName +
       "*, be sure to launch Screen Hero, then keep coding. " +
       "Another camper may pair with you soon.",
       channel: '#letspair',
