@@ -383,7 +383,7 @@
       "description": [
         "Apply the \"red-text\" class to the <code>h2</code> and <code>p</code> elements.",
         "Remember that you can attach classes to HTML elements by using the <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
-        "Remember that "
+        "Remember that CSS selectors require a period at the beginning like this: <code>.red-text { color: blue; }</code>, but that class declarations don't use a period, like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
@@ -426,6 +426,7 @@
       ],
       "tests": [
         "assert($('p').length > 1, 'You need 2 paragraph elements with Kitty Ipsum text.')",
+        "assert(editor.match(/<\\/p>/g).length > 1, 'Be sure that each of your <code>p</code> elements has a closing tag.')",
         "assert($('p').css('font-size') === '16px', 'Your paragraph elements should have the font-size of 16px.')"
       ],
       "challengeSeed": [
@@ -503,7 +504,9 @@
         "Now you can set \"Lobster\" as a font-family attribute on your <code>h2</code> element."
       ],
       "tests": [
-        "assert($('h2').css('font-family').match(/lobster/i), 'Your h2 element should use the font \"Lobster\".')"
+        "assert(new RegExp('googleapis', 'gi').test(editor), 'Import the \"Lobster\" font.')",
+        "assert($('h2').css('font-family').match(/lobster/i), 'Your <code>h2</code> element should use the font \"Lobster\".')",
+        "assert($('p').css('font-family').match(/monospace/i), 'Your <code>p</code> element should still use the font \"Monospace\".')"
       ],
       "challengeSeed": [
         "<style>",
@@ -588,8 +591,8 @@
       "name": "Waypoint: Override Styles with Important",
       "difficulty": 0.025,
       "description": [
-        "Create a \"blue-text\" class that gives an element the font-color of blue. Also create a \"urgently-red\" class that give an element the font-color of red, but use <code>!important</code> to ensure the element is rendered as being red. Apply both classes to your <code>h2</code> element.",
-        "You can add more than one class to an element by seperating the class declarations with a space, like this: <code>&#60;h2 class='green-text giant-text'&#62;This will be giant green text&#60;/h2&#62;</code>.",
+        "Create a \"blue-text\" class that gives an element the font-color of blue. Also create an \"urgently-red\" class that gives an element the font-color of red, but add <code>!important</code> to the class to ensure the element is rendered as being red. Apply both classes to your <code>h2</code> element.",
+        "You can add more than one class to an element by separating the class declarations with a space, like this: <code>&#60;h2 class='green-text giant-text'&#62;This will be giant green text&#60;/h2&#62;</code>.",
         "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
         "If there's a conflict in the CSS, the browser will use whichever style declaration is closest to the bottom of the CSS document (whichever declaration comes last). Note that in-line style declarations are the final authority in how an HTML element will be rendered.",
         "There's one way to ensure that an element is rendered with a certain style, regardless of where that declaration is located. That one way is to use <code>!important</code>.",
@@ -598,9 +601,9 @@
         "Now see if you can make sure the h2 element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, or changing the sequence of CSS class declarations."
       ],
       "tests": [
-        "assert(new RegExp('.blue-text', 'gi').test(editor), 'Ensure you implemented the css class \".blue-text\"')",
-        "assert(new RegExp('.urgently-red', 'gi').test(editor), 'Ensure you implemented the css class \".urgently-red\"')",
-        "assert(new RegExp('red !important', 'gi').test(editor), 'Ensure you added the \"!important\" declaration!')",
+        "assert(new RegExp('.blue-text', 'gi').test(editor), 'Create the CSS class \"blue-text\"')",
+        "assert(new RegExp('.urgently-red', 'gi').test(editor), 'Create the CSS class \"urgently-red\"')",
+        "assert(new RegExp('red.?!important', 'gi').test(editor), 'Add the \"!important\" declaration!')",
         "assert($('h2').hasClass('blue-text'), 'Your h2 element should have the class \"blue-text\".')",
         "assert($('h2').hasClass('urgently-red'), 'Your h2 element should have the class \"urgently-red\".')",
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
@@ -741,14 +744,15 @@
       "name": "Waypoint: Add Borders Around your Elements",
       "difficulty": 0.028,
       "description": [
-        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply it to your cat photo.",
+        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply that class to your cat photo.",
         "CSS borders have attributes like style, color and width.",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>."
       ],
       "tests": [
         "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
         "assert($('img').hasClass('thick-green-border'), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
-        "assert(parseInt($('img').css('border-width')) >= 9 && new RegExp('solid').test($('img').css('border-style')), 'You need to specify a border width of 10px and a border style of \"solid\".')"
+        "assert(parseInt($('img').css('border-top-width')), 'Give your image a border width of 10px.')",
+        "assert(new RegExp('border-style:.?solid', 'gi').test(editor), 'Give your image a border style of \"solid\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
