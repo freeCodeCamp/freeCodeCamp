@@ -16,7 +16,7 @@
         "To enable the \"Go to my next challenge\" button on this exercise, change your <code>h1</code> tag's text to say \"Hello World\" instead of \"Hello\"."
       ],
       "tests": [
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your h1 element should have the text \"Hello World\"')"
+        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
       ],
       "challengeSeed": [
         "<h1>Hello</h1>"
@@ -45,9 +45,9 @@
       ],
       "tests": [
         "assert(($('h2').length > 0), 'Create an <code>h2</code> element.')",
-        "assert(new RegExp('</h2>', 'gi').test(editor), 'Be sure to complete your h2 element with a closing tag.');",
-        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your h2 element should have the text \"CatPhotoApp\"')",
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your h1 element should have the text \"Hello World\"')"
+        "assert(new RegExp('</h2>', 'gi').test(editor), 'Be sure to complete your <code>h2</code> element with a closing tag.')",
+        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\"')",
+        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>"
@@ -74,9 +74,9 @@
         "You can create a paragraph element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert(($('p').length > 0), 'Create a paragraph element.')",
-        "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your paragraph element should have the text \"Hello Paragraph\"')",
-        "assert(new RegExp('</p>', 'gi').test(editor), 'Be sure to complete your paragraph element with a closing tag.');"
+        "assert(($('p').length > 0), 'Create a <code>p</code> element.')",
+        "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your <code>p</code> element should have the text \"Hello Paragraph\"')",
+        "assert(new RegExp('</p>', 'gi').test(editor), 'Be sure to complete your <code>p</code> element with a closing tag.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -105,7 +105,7 @@
         "You'll encounter other <code>self-closing</code> element tags soon."
       ],
       "tests": [
-        "assert(($('br').length > 0), 'You should have a br element between your h2 and paragraph elements.')"
+        "assert(($('br').length > 0), 'Add a <code>br</code> element between your <code>h2</code> and <code>p</code> elements.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -135,9 +135,10 @@
         "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>."
       ],
       "tests": [
-        "assert($('h1').length > 0, 'The h1 element should not be commented. It should be visible in the browser.')",
-        "assert($('h2').length > 0, 'The h2 element should not be commented. It should be visible in the browser.')",
-        "assert($('p').length > 0, 'The paragraph element should not be commented. It should be visible in the browser.')"
+        "assert($('h1').length > 0, 'Your <code>h1</code> element should not be commented. It should be visible in the browser.')",
+        "assert($('h2').length > 0, 'Your <code>h2</code> element should not be commented. It should be visible in the browser.')",
+        "assert($('p').length > 0, 'Your <code>p</code> element should not be commented. It should be visible in the browser.')",
+        "assert(!new RegExp('-->', 'gi').test(editor), 'Be sure to delete the <code>--&#62;</code> that ends the comment.')"
       ],
       "challengeSeed": [
         "<!--",
@@ -205,13 +206,13 @@
       "difficulty": 0.015,
       "description": [
         "Change the text in the <code>p</code> element to use the first few words of <code>Kitty Ipsum</code> text.",
-        "Web developers traditionally use <code>Lorem Ipsum</code> as placeholder text. It's called Lorem Ipsum text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
-        "Lorem Ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
+        "Web developers traditionally use <code>Lorem Ipsum</code> as placeholder text. It's called <code>Lorem Ipsum</code> text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
+        "<code>Lorem Ipsum</code> text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
         "Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called <a href='http://kittyipsum.com/'>Kitty Ipsum</a>!",
         "Here are the first few words of Kitty Ipsum text, which you can copy and paste into the right position: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "tests": [
-        "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your paragraph element should contain the first few words of the famous Kitty Ipsum text.')"
+        "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your <code>p</code> element should contain the first few words of the provided Kitty Ipsum text.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -239,15 +240,15 @@
       "name": "Waypoint: Delete HTML Elements",
       "difficulty": 0.016,
       "description": [
-        "Delete the h1 and br elements so we can simplify our view.",
-        "Our phone doesn't have much space, for HTML elements.",
+        "Delete your <code>h1</code> and <code>br</code> elements so we can simplify our view.",
+        "Our phone doesn't have much space vertical space.",
         "Let's remove the unnecessary elements so we can start building our CatPhotoApp."
       ],
       "tests": [
-        "assert(($('h1').length == 0), 'Delete the h1 element.')",
-        "assert(($('h2').length > 0), 'Leave the h2 element on the page.')",
-        "assert(($('br').length == 0), 'Delete the br element.')",
-        "assert(($('p').length > 0), 'Leave the paragraph element on the page.')"
+        "assert(($('h1').length == 0), 'Delete your <code>h1</code> element.')",
+        "assert(($('h2').length > 0), 'Leave your <code>h2</code> element on the page.')",
+        "assert(($('br').length == 0), 'Delete your <code>br</code> element.')",
+        "assert(($('p').length > 0), 'Leave your <code>p</code> element on the page.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -281,7 +282,7 @@
         "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>"
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
+        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')"
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
@@ -314,8 +315,8 @@
         "Note that it's important to have <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of your element's styles."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your h2 element should be blue.')",
-        "assert(!$('h2').attr('style'), 'You should remove the style attribute from your h2 element.')"
+        "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your <code>h2</code> element should be blue.')",
+        "assert(!$('h2').attr('style'), 'You should remove the style attribute from your <code>h2</code> element.')"
       ],
       "challengeSeed": [
         "<h2 style='color: red'>CatPhotoApp</h2>",
@@ -346,11 +347,11 @@
         "You can see that we've created a CSS class called \"blue-text\" within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>",
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
-        "Instead of creating a new Style tag, try removing the h2 style declaration from the existing style element, and replace it with the class declaration for \".red-text\"."
+        "Instead of creating a new <code>style</code> element, try removing the <code>h2</code> style declaration from your existing style element, and replace it with the class declaration for \".red-text\"."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
-        "assert($('h2').hasClass('red-text'), 'You h2 element should have the class \"red-text\".')"
+        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')",
+        "assert($('h2').hasClass('red-text'), 'You <code>h2</code> element should have the class \"red-text\".')"
       ],
       "challengeSeed": [
         "<style>",
@@ -381,7 +382,8 @@
       "difficulty": 0.020,
       "description": [
         "Apply the \"red-text\" class to the <code>h2</code> and <code>p</code> elements.",
-        "Remember that you can attach classes to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
+        "Remember that you can attach classes to HTML elements by using the <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
+        "Remember that "
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
