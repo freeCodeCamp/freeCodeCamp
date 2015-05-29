@@ -28,8 +28,16 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Saluda a los Elementos HTML",
+      "descriptionEs": [
+        "¡Bienvenido/a al primer desafío de programación de Free Code Camp! Haz click en el botón de abajo para tener más instrucciones.",
+        "Genial. Ahora puedes leer el resto de las instrucciones de este desafío.",
+        "Puedes editar tu <code>código</code> en tu <code>editor de texto</code>, que hemos incrustado en esta página web.",
+        "¿Ves el código en tu editor de texto que dice <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Ese es un <code>elemento</code> HTML.",
+        "La mayoría de los elementos HTML tienen una <code>etiqueta de apertura</code> y una <code>etiqueta de cierre</code>. Las etiquetas de apertura se ven como: <code>&#60;h1&#62;</code>. Las etiquetas de cierre se ven como: <code>&#60;/h1&#62;</code>. Fíjate que la única diferencia entre las etiquetas de apertura y de cierre es que estas últimas tienen un / después de su signo de apertura (<).",
+        "Una vez que hayas completado cada desafío, y que hayas pasado todas sus pruebas, el botón \"Ir a mi siguiente desafío\" se activará. Haz click en él - o presiona control y enter al mismo tiempo - para avanzar al siguiente desafío.",
+        "Para activar el botón \"Ir a mi siguiente desafío\" de este ejercicio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\"."
+	  ],
       "namePt": "",
       "descriptionPt": []
     },
