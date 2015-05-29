@@ -625,8 +625,8 @@ module.exports = {
       text: "Anyone want to pair with @" + userName + " on " + challenge +
       "?\nMake sure you install Screen Hero here:" +
       "http://freecodecamp.com/field-guide/how-do-i-install-screenhero\n" +
-      "Then start your pair program session with *" + userName +
-      "* by typing \"/hero @" + userName + "\" into Slack.\n And *"+ userName +
+      "Then start your pair program session with *@" + userName +
+      "* by typing \"/hero @" + userName + "\" into Slack.\n And *@"+ userName +
       "*, be sure to launch Screen Hero, then keep coding. " +
       "Another camper may pair with you soon.",
       channel: '#letspair',

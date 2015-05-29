@@ -44,7 +44,8 @@
         "<code>h2</code> elements are slightly smaller than <code>h1</code> elements. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements."
       ],
       "tests": [
-        "assert(($('h2').length > 0), 'Create an <code>h2</code> elements.')",
+        "assert(($('h2').length > 0), 'Create an <code>h2</code> element.')",
+        "assert(new RegExp('</h2>', 'gi').test(editor), 'Be sure to complete your h2 element with a closing tag.');",
         "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your h2 element should have the text \"CatPhotoApp\"')",
         "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your h1 element should have the text \"Hello World\"')"
       ],
@@ -74,7 +75,8 @@
       ],
       "tests": [
         "assert(($('p').length > 0), 'Create a paragraph element.')",
-        "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your paragraph element should have the text \"Hello Paragraph\"')"
+        "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your paragraph element should have the text \"Hello Paragraph\"')",
+        "assert(new RegExp('</p>', 'gi').test(editor), 'Be sure to complete your paragraph element with a closing tag.');"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -1573,10 +1575,11 @@
       "description": [
         "Add a submit button to your form field with type <code>submit</code> and a test value of \"Submit\".",
         "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
-        "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;<code>"
+        "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;</code>"
       ],
       "tests": [
-        "assert(new RegExp('<button type=.submit.>Submit</button>', 'gi').test(editor), 'Make sure you have completely declared your button!');"
+        "assert(new RegExp('<button>', 'gi').test(editor), 'Your form should have a button inside it.');",
+        "assert(new RegExp('</button>', 'gi').test(editor), 'Be sure to complete your button element with a closing tag.');"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
