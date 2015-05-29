@@ -23,9 +23,9 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Aprende Informática Básica",
       "descriptionEs": [
-        "Stanford tiene un excelente currículo de Informática. Este curso interactivo utiliza una versión modificada de JavaScript. Este curso cubrirá rapidamente varias de las ideas.",
-        "Vale recaldar que Harvard también tiene una excelente introducción a Informática en un curso llamado CS50, pero este curso toma más de 100 horas para completar y no utiliza JavaScript.",
-        "A pesar de que puedes llevarlo a tu propio ritmo, el curso de Stanford CS101 esta separado en semanas. Cada uno de los desafíos apuntará a cada una de esas semanas.",
+        "Stanford tiene en internet un excelente currículo gratuito sobre Informática. Este curso interactivo utiliza una versión modificada de JavaScript. En él se cubrirán varios conceptos rápidamente.",
+        "Vale recalcar que Harvard también tiene un excelente curso de introducción a la informática llamado CS50, pero éste toma más de 100 horas para completar y no utiliza JavaScript.",
+        "A pesar de que puedes llevarlo a tu propio ritmo, el curso de Stanford CS101 está separado en semanas. Cada uno de los desafíos apuntará a cada una de esas semanas.",
         "Ingresa a <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/</a> y completa la primera semana del curso."
       ],
       "namePt": "",
@@ -51,8 +51,8 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Aprende Loops",
       "descriptionEs": [
-        "Ahora apuntaremos a completar la Semana 2 del curso de Introducción a Informática de Stanford.",
-        "Esto nos introducirá a los loops, una característica fundamental de cada lenguaje de programación",
+        "Ahora apuntaremos a completar la semana 2 del curso de Introducción a Informática de Stanford.",
+        "Esto nos introducirá a los loops (bucles), una característica fundamental de todos los lenguajes de programación",
         "Ingresa a <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/</a> y completa la segunda semana del curso."
       ],
       "namePt": "",
@@ -78,7 +78,7 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Aprende sobre el Hardware de las Computadoras",
       "descriptionEs": [
-        "La semana 3 del curso de Introducción a Informática de Stanford cubrira el hardware de las computadoras y explicará sobre la ley de Moore y el crecimiento exponencial del precio-desempeño de los procesadores.",
+        "La semana 3 del curso de Introducción a Informática de Stanford cubrirá el hardware de las computadoras y explicará la ley de Moore sobre el crecimiento exponencial del precio-desempeño de los procesadores.",
         "Este desafío también te dará un entendimiento más amplio sobre como funcionan los bits y bytes.",
         "Ingresa a <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/</a> y completa la tercera semana del curso."
       ],
@@ -105,7 +105,7 @@
       "descriptionRu": [],
       "nameEs": "Waypoint: Aprende sobre Redes de Computadoras",
       "descriptionEs": [
-        "Ahora que ya hemos aprendido sobre, es hora de aprender sobre el software que corre encima de ello.",
+        "Ahora que ya hemos aprendido sobre hardware, es hora de aprender sobre el software que corre encima de él.",
         "Es importante recalcar que aprenderás sobre como funcionan las redes y TCP/IP - el protocolo que potencia el internet.",
         "Ingresa a <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/</a> y completa la cuarta semana del curso."
       ],
@@ -130,10 +130,10 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "Waypoint: Aprende sobre la Lógica Booleana",
+      "nameEs": "Waypoint: Aprende Lógica Booleana",
       "descriptionEs": [
-        "Ahora trabajaremos más ejercicios de tablas y aprenderemos sobre la lógica booleana.",
-        "También aprenderemos la diferencia entre data digital y data análoga.",
+        "Ahora trabajaremos más ejercicios de tablas y aprenderemos lógica booleana.",
+        "También aprenderemos la diferencia entre datos digitales y datos análogos.",
         "Ingresa a <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/</a> y completa la quinta semana del curso."
       ],
       "namePt": "",
@@ -161,7 +161,7 @@
       "nameEs": "Waypoint: Aprende sobre Seguridad Informática",
       "descriptionEs": [
         "¡Ya casi completamos el curso de Introducción a la Informática!",
-        "Aprenderemos sobre una de más importante invención del siglo 20 - las hojas de cálculo.",
+        "Aprenderemos sobre una de la más importante invención del siglo 20 - la hoja de cálculo.",
         "También aprenderemos sobre la Seguridad Informática y sobre algunas de las vulnerabilidades más comúnes en los sistemas de software."
         "Ingresa a <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/</a> y completa la sexta y final semana del curso."
       ],
