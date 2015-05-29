@@ -21,13 +21,13 @@ block content
                 if (user.sentSlackInvite)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
-                        .btn.btn-success.btn-big#i-want-help-editorless(disabled)
+                        .btn.btn-success.btn-big#trigger-help-editorless-modal
                             i.fa.fa-medkit
-                                | &nbsp; Help(disabled)
-                        .btn.btn-success.btn-big#i-want-to-pair
+                                | &nbsp; Help
+                        .btn.btn-success.btn-big#trigger-pair-modal
                             i.fa.fa-user-plus
                                 | &nbsp; Pair
-                        .btn.btn-success.btn-big#report-issue
+                        .btn.btn-success.btn-big#trigger-issue-modal
                             i.fa.fa-bug
                                 | &nbsp; Bug
                 .button-spacer
@@ -69,7 +69,7 @@ block content
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
-                    - if (user)
+                    if (user)
                         form.form-horizontal(novalidate='novalidate', name='completedWithForm')
                             .form-group.text-center
                                 .col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2.animated.fadeIn
@@ -91,13 +91,8 @@ block content
                         a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid') Go to my next challenge (ctrl + enter)
                         script.
                           $('#complete-zipline-or-basejump-dialog').on('keypress', modalControlEnterHandler);
-
-                        if (user.progressTimestamps.length > 2)
-                            .button-spacer
-                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank")
-                                i.fa.fa-twitter &thinsp;
-                                    = phrase
                     else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
         script.
             $('body').on('keypress', controlEnterHandler);
+    include ../partials/challenge-modals
