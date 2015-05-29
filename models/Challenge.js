@@ -16,7 +16,17 @@ var challengeSchema = new mongoose.Schema({
   tests: Array,
   challengeSeed: Array,
   challengeType: Number, // 0 = html, 1 = javascript only, 2 = video, 3 = zipline, 4 = basejump
-  MDNlinks: Array
+  MDNlinks: Array,
+  nameCn: String,
+  descriptionCn: Array,
+  nameFr: String,
+  descriptionFr: Array,
+  nameRu: String,
+  descriptionRu: Array,
+  nameEs: String,
+  descriptionEs: Array,
+  namePt: String,
+  descriptionPt: Array
 });
 
 module.exports = mongoose.model('Challenge', challengeSchema);

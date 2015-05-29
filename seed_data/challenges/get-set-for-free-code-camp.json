@@ -1,6 +1,6 @@
 {
   "name": "Get Set for Free Code Camp",
-  "order" : 0.001,
+  "order": 0.001,
   "challenges": [
     {
       "_id": "bd7124d8c441eddfaeb5bdef",
@@ -18,7 +18,17 @@
         "Now it's time to join our chat room. Click the \"I've completed this challenge\" button to move on to your next challenge."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd0f",
@@ -38,7 +48,17 @@
         "In order to keep our community a friendly and positive place to learn to code, please read and follow our Code of Conduct: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7125d8c441eddfaeb5bdff",
@@ -54,7 +74,17 @@
         "Finally, please note that our open-source curriculum is a work in progress. Our volunteer community is constantly improving it. If you think you've encountered a bug, typo, or something that seems confusing, please open a GitHub issue: <a href='https://github.com/FreeCodeCamp/freecodecamp/issues'>https://github.com/FreeCodeCamp/freecodecamp/issues</a>."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd1f",
@@ -69,7 +99,17 @@
         "Read a few field guide articles, then move on to your next challenge."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd2f",
@@ -86,7 +126,17 @@
         "Once you're happy with your portfolio page, you can move on to your next challenge."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7126d8c441eddfaeb5bd3f",
@@ -105,7 +155,17 @@
         "Now that you've learned how to use Camper News, let's move on to your next challenge."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7126d8c441eddfaeb5bd3e",
@@ -123,7 +183,17 @@
         "Whether you're hosting a study group, pair programming at your local library, or going to a weekend hackathon, your city's group will help you make it happen."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7137d8c441eddfaeb5bdef",
@@ -141,7 +211,17 @@
         "Now you have a clear algorithm to follow when you need help! Let's start coding! Move on to your next challenge."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

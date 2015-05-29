@@ -1,6 +1,6 @@
 {
   "name": "jQuery",
-  "order" : 0.004,
+  "order": 0.004,
   "challenges": [
     {
       "_id": "bd7112d8c441eddfaeb5bded",
@@ -15,7 +15,17 @@
         "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-bay3D/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-bay3D/0/1</a> and complete the first section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7113d8c441eddfaeb5bdef",
@@ -29,7 +39,17 @@
         "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-GfjC6/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-GfjC6/0/1</a> and complete the second section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7114d8c441eddfaeb5bdef",
@@ -42,7 +62,17 @@
         "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-v6phg/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-v6phg/0/1</a> and complete the third section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7115d8c441eddfaeb5bdef",
@@ -55,7 +85,17 @@
         "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-JwhI1/0/1</a> and complete the fourth section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7116d8c441eddfaeb5bdef",
@@ -68,7 +108,17 @@
         "Go to <a href='http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1' target='_blank'>http://www.codecademy.com/courses/web-beginner-en-jtFIC/0/1</a> and complete the fifth section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

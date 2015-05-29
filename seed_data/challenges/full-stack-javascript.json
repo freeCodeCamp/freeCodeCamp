@@ -1,6 +1,6 @@
 {
   "name": "Full Stack JavaScript",
-  "order" : 0.013,
+  "order": 0.013,
   "challenges": [
     {
       "_id": "bd7154d8c441eddfaeb5bdef",
@@ -13,7 +13,17 @@
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7155d8c441eddfaeb5bdef",
@@ -26,7 +36,17 @@
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7156d8c441eddfaeb5bdef",
@@ -39,7 +59,17 @@
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7157d8c441eddfaeb5bdef",
@@ -51,7 +81,17 @@
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7158d8c441eddfaeb5bdef",
@@ -64,7 +104,17 @@
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bd0f",
@@ -106,7 +156,17 @@
         "Once you've completed these first 7 challenges, move on to our next waypoint."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bdff",
@@ -138,7 +198,17 @@
         "Once you've completed these first 7 challenges, move on to our next waypoint."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bdfe",
@@ -155,7 +225,17 @@
         "Once you've completed these 3 challenges, move on to our next waypoint."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bdfd",
@@ -172,7 +252,17 @@
         "Once you've completed these final 3 challenges, move on to our next waypoint."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7153d8c441eddfaeb5bd1f",
@@ -195,15 +285,25 @@
         "Note that you can resize the c9.io's windows by dragging their borders.",
         "Make sure that you are always in your project's \"workspace\" directory. You can always navigate back to this directory by running this command: <code>cd ~/workspace</code>.",
         "Complete \"Hello World\"",
-        "Complete \"Juggling Async\"",
-        "Complete \"Time Server\"",
-        "Complete \"HTTP Collect\"",
-        "Complete \"Juggling Async\"",
-        "Complete \"Time Server\"",
+        "Complete \"Jade\"",
+        "Complete \"Good Old Form\"",
+        "Complete \"Stylish CSS\"",
+        "Complete \"Session and Cookie\"",
+        "Complete \"JSON Me\"",
         "Once you've completed these challenges, move on to our next waypoint."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd7140d8c441eddfaeb5bdef",
@@ -216,7 +316,17 @@
         "Go to <a href='https://www.codeschool.com/courses/try-git' target='_blank'>https://www.codeschool.com/courses/try-git</a> and complete this short interactive course."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

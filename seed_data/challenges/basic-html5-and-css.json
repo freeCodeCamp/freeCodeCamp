@@ -1,6 +1,6 @@
 {
   "name": "Basic HTML5 and CSS",
-  "order" : 0.002,
+  "order": 0.002,
   "challenges": [
     {
       "_id": "bd7123c8c441eddfaeb5bdef",
@@ -21,7 +21,17 @@
       "challengeSeed": [
         "<h1>Hello</h1>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf0887a",
@@ -41,7 +51,17 @@
       "challengeSeed": [
         "<h1>Hello World</h1>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08801",
@@ -60,7 +80,17 @@
         "<h1>Hello World</h1>",
         "<h2>CatPhotoApp</h2>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aeaf08801",
@@ -80,7 +110,17 @@
         "<h2>CatPhotoApp</h2>",
         "<p>Hello Paragraph</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08802",
@@ -93,9 +133,9 @@
         "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>."
       ],
       "tests": [
-        "assert(($('h1').length > 0), 'The h1 element should not commented. It should be visible in the browser.')",
-        "assert(($('h2').length > 0), 'The h2 element should not commented. It should be visible in the browser.')",
-        "assert(($('p').length > 0), 'The paragraph element should not commented. It should be visible in the browser.')"
+        "assert($('h1').length > 0, 'The h1 element should not be commented. It should be visible in the browser.')",
+        "assert($('h2').length > 0, 'The h2 element should not be commented. It should be visible in the browser.')",
+        "assert($('p').length > 0, 'The paragraph element should not be commented. It should be visible in the browser.')"
       ],
       "challengeSeed": [
         "<!--",
@@ -103,12 +143,22 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br/>",
+        "<br>",
         "",
         "<p>Hello Paragraph</p>",
         "-->"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08804",
@@ -130,12 +180,22 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br/>",
+        "<br>",
         "",
         "<p>Hello Paragraph</p>",
         "-->"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08833",
@@ -156,11 +216,21 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br/>",
+        "<br>",
         "",
         "<p>Hello Paragraph</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fed1348bd9aedf08833",
@@ -182,11 +252,21 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br/>",
+        "<br>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08803",
@@ -196,7 +276,7 @@
         "Change the <code>h2</code> element's style so that its text color is red.",
         "We can do this by changing the <code>style</code> of the <code>h2</code> element.",
         "The style that is responsible for the color of an element's text is the \"color\" style.",
-        "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;h2&#62;</code>"
+        "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>"
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
@@ -206,7 +286,17 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08805",
@@ -230,7 +320,17 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aecf08806",
@@ -261,11 +361,21 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aefe08806",
-      "name": "Waypoint: Style Multiple Elements with a CSS Classes",
+      "name": "Waypoint: Style Multiple Elements with a CSS Class",
       "difficulty": 0.020,
       "description": [
         "Apply the \"red-text\" class to the <code>h2</code> and <code>p</code> elements.",
@@ -288,7 +398,17 @@
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08806",
@@ -315,7 +435,17 @@
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aede08807",
@@ -324,7 +454,7 @@
       "description": [
         "Make all paragraph elements use the \"Monospace\" font.",
         "You can set an element's font by using the <code>font-family</code> attribute.",
-        "For example, if you wanted to set your h2 element's font to \"San-serif\", you would use the following CSS: <code>h2 { font-family: 'San-serif'; }</code>"
+        "For example, if you wanted to set your h2 element's font to \"Sans-serif\", you would use the following CSS: <code>h2 { font-family: 'Sans-serif'; }</code>"
       ],
       "tests": [
         "assert($('p').css('font-family').match(/monospace/i), 'Your paragraph elements should use the font \"Monospace\".')"
@@ -345,7 +475,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08807",
@@ -378,7 +518,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08808",
@@ -417,7 +567,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08809",
@@ -434,6 +594,9 @@
         "Now see if you can make sure the h2 element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, or changing the sequence of CSS class declarations."
       ],
       "tests": [
+        "assert(new RegExp('.blue-text', 'gi').test(editor), 'Ensure you implemented the css class \".blue-text\"')",
+        "assert(new RegExp('.urgently-red', 'gi').test(editor), 'Ensure you implemented the css class \".urgently-red\"')",
+        "assert(new RegExp('red !important', 'gi').test(editor), 'Ensure you added the \"!important\" declaration!')",
         "assert($('h2').hasClass('blue-text'), 'Your h2 element should have the class \"blue-text\".')",
         "assert($('h2').hasClass('urgently-red'), 'Your h2 element should have the class \"urgently-red\".')",
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
@@ -460,9 +623,18 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
       "_id": "bad87fee1348bd9aedf08812",
       "name": "Waypoint: Add Images to your Website",
@@ -499,7 +671,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9acdf08812",
@@ -538,21 +720,31 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9bedf08813",
       "name": "Waypoint: Add Borders Around your Elements",
       "difficulty": 0.028,
       "description": [
-        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border around an HTML element, and apply it to your cat photo.",
+        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply it to your cat photo.",
         "CSS borders have attributes like style, color and width.",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>."
       ],
       "tests": [
         "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
-        "assert($('img').hasClass('thick-green-border'), 'Your image element should have the class \"thick-green-border\".')",
-        "assert(parseInt($('img').css('border-left-width')) > 8, 'Your image should have a border with a width of 10 pixels.')"
+        "assert($('img').hasClass('thick-green-border'), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
+        "assert(parseInt($('img').css('border-width')) >= 9 && new RegExp('solid').test($('img').css('border-style')), 'You need to specify a border width of 10px and a border style of \"solid\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -582,7 +774,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08814",
@@ -631,7 +833,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08815",
@@ -679,7 +891,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08816",
@@ -692,7 +914,7 @@
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert((/photo/gi).test($('a').text()), 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
+        "assert((/cat photos/gi).test($('a').text()), 'Your <code>anchor</code> element should have the anchor text of \"cat photos\"')",
         "assert($('a').filter(function(index) { return /com/gi.test($('a').attr('href')); }).length > 0, 'You need an <code>anchor</code> element that links to <code>http&#58;//catphotoapp.com<code>.')"
       ],
       "challengeSeed": [
@@ -730,7 +952,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aede08817",
@@ -744,7 +976,7 @@
       ],
       "tests": [
         "assert((/photo/gi).test($('a').text()), 'You need an <code>anchor</code> element that links to \"catphotoapp.com\".')",
-        "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"See my cat photos\"')",
+        "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"cat photos\"')",
         "assert($('a').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')"
       ],
       "challengeSeed": [
@@ -784,9 +1016,18 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
       "_id": "bad87fee1348bd9aedf08817",
       "name": "Waypoint: Make Dead Links using the Hash Symbol",
@@ -837,7 +1078,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08820",
@@ -851,7 +1102,8 @@
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "tests": [
-        "assert($('a').filter(function(index) { return /#/gi.test($('a')[index]); }).length > 1, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\".')"
+        "expect($('a').children('img').length, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\"').to.equal(1);",
+        "expect(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Make sure to specify the \"src\" attribute as \"#\"').to.be.true;"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -890,7 +1142,17 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08818",
@@ -943,13 +1205,22 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08827",
+      "_id": "bad87fee1348bd9aedf08827",
       "name": "Waypoint: Create a Bulleted Unordered List",
-      "difficulty" : 0.036,
+      "difficulty": 0.036,
       "description": [
         "Replace the paragraph elements with an unordered list of three things that cats love.",
         "HTML has a special element for creating unordered lists, or bullet point-style lists.",
@@ -997,13 +1268,22 @@
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08828",
+      "_id": "bad87fee1348bd9aedf08828",
       "name": "Waypoint: Create an Ordered List",
-      "difficulty" : 0.037,
+      "difficulty": 0.037,
       "description": [
         "Create an <code>ordered list</code> of the the top 3 things cats hate the most.",
         "HTML has a special element for creating ordered lists, or numbered-style lists.",
@@ -1013,8 +1293,8 @@
       "tests": [
         "assert($('ul').length > 0, 'You should have an <code>ul</code> element on your webpage.')",
         "assert($('ol').length > 0, 'You should have an <code>ol</code> element on your webpage.')",
-        "assert($('li').length > 5, 'You should have three <code>li</code> elements on within your <code>ul</code> element.')",
-        "assert($('li').length > 5, 'You should have three <code>li</code> elements on within your <code>ol</code> element.')"
+        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
+        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ol</code> element.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1057,13 +1337,22 @@
         "  <li>lasagna</li>",
         "</ul>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08829",
+      "_id": "bad87fee1348bd9aedf08829",
       "name": "Waypoint: Create a Text Field",
-      "difficulty" : 0.038,
+      "difficulty": 0.038,
       "description": [
         "Now we'll create a web form. Create a text field under your lists.",
         "Text inputs are a convenient way to get input from your user.",
@@ -1119,20 +1408,30 @@
         "  <li>other cats</li>",
         "</ol>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08830",
+      "_id": "bad87fee1348bd9aedf08830",
       "name": "Waypoint: Add Placeholder Text to a Text Field",
-      "difficulty" : 0.039,
+      "difficulty": 0.039,
       "description": [
-        "Add the placeholder text \"type a cat photo URL here\" to your text field.",
+        "Add the placeholder text \"cat photo URL\" to your text field.",
         "Placeholder text will appear in your text field before your user has inputed anything.",
         "For example: <code>&#60;input type='text' placeholder='this is placeholder text'&#62;</code>"
       ],
       "tests": [
-        "assert($('[placeholder]').length > 0, 'Your text field should have the placeholder text of \"cat photo URL\".')"
+        "assert($('[placeholder]').length > 0, 'Your text field should have a placeholder attribute.')",
+        "assert(/url/gi.test($('input').attr('placeholder')), 'Your placeholder field should have the value of \"cat photo URL\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1182,13 +1481,22 @@
         "</ol>",
         "<input type='text'>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aede08830",
+      "_id": "bad87fee1348bd9aede08830",
       "name": "Waypoint: Create a Form Element",
-      "difficulty" : 0.040,
+      "difficulty": 0.040,
       "description": [
         "Wrap your text field in a <code>&#60;form&#62;</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element.",
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
@@ -1246,20 +1554,29 @@
         "</ol>",
         "<input type='text' placeholder='cat photo URL'>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedd08830",
+      "_id": "bad87fee1348bd9aedd08830",
       "name": "Waypoint: Add a Submit Button to a Form",
-      "difficulty" : 0.041,
+      "difficulty": 0.041,
       "description": [
-        "Add a submit button to your form field.",
-        "Let's add a submit button to your form. Clicking this button will send the date from your form to the URL you specified with your form's <code>action</code> attribute.",
+        "Add a submit button to your form field with type <code>submit</code> and a test value of \"Submit\".",
+        "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
         "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;<code>"
       ],
       "tests": [
-        "assert($('button').length > 0, 'Your form should have a button inside it.')"
+        "assert(new RegExp('<button type=.submit.>Submit</button>', 'gi').test(editor), 'Make sure you have completely declared your button!');"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1311,21 +1628,30 @@
         "  <input type='text' placeholder='cat photo URL'>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedc08830",
+      "_id": "bad87fee1348bd9aedc08830",
       "name": "Waypoint: Use HTML5 to Require a Field",
-      "difficulty" : 0.042,
+      "difficulty": 0.042,
       "description": [
         "Make it required for your user to input text into your form before being able to submit it.",
         "You can require your user to complete specific form fields before they will be able to submit your form.",
         "For example, if you wanted to make a text input field required, you can just add the word \"required\" within your <code>input</code> element use: <code>&#60;input type='text' required&#62;</code>"
       ],
       "tests": [
-        "assert($('input').prop('required'), 'Your text field have the property of being required.')",
-        "assert($('[placeholder]').length > 0, 'Your text field should have the placeholder text of \"cat photo URL\".')"
+        "assert($('input').prop('required'), 'Your text field should have the property of being required.')",
+        "assert(new RegExp('cat photo URL').test($('input').prop('placeholder')), 'Your text field should have the placeholder text of \"cat photo URL\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1378,13 +1704,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08834",
+      "_id": "bad87fee1348bd9aedf08834",
       "name": "Waypoint: Create a Set of Radio Buttons",
-      "difficulty" : 0.043,
+      "difficulty": 0.043,
       "description": [
         "Add to your form a pair of <code>radio buttons</code> that are wrapped in <code>label</code> elements and share a <code>name</code> attribute, with the options of \"indoor\" and \"outdoor\".",
         "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer.",
@@ -1394,8 +1729,8 @@
         "Here's an example of a radio button: <code>&#60;label&#62;&#60;input type='radio' name='indoor-outdoor'&#62; Indoor&#60;/label&#62;</code>"
       ],
       "tests": [
-        "assert($('input[type=\"radio\"').length > 1, 'Your webpage should have two radio button elements.')",
-        "assert($('input[type=\"radio\"').attr('name'), 'Both of your radio button should have <code>name</code> attributes with the same value.')",
+        "assert($('input[type=\"radio\"]').length > 1, 'Your webpage should have two radio button elements.')",
+        "assert($('input[type=\"radio\"]:nth-child(1)').attr('name') === 'indoor-outdoor', 'Give your radio buttons the <code>name</code> attribute of \"indoor-outdoor\".')",
         "assert($('label').length > 1, 'Each of your two radio button elements should be wrapped in a label element.')"
       ],
       "challengeSeed": [
@@ -1449,21 +1784,30 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedf08835",
+      "_id": "bad87fee1348bd9aedf08835",
       "name": "Waypoint: Create a Set of Checkboxes",
-      "difficulty" : 0.044,
+      "difficulty": 0.044,
       "description": [
         "Add to your form a set of three <code>checkbox</code> elements that are wrapped in <code>label</code> elements and share the same <code>name</code> attribute.",
         "Forms commonly use <code>checkbox</code> elements for questions that may have more than one answer.",
         "For example: <code>&#60;label&#62;&#60;input type='checkbox' name='personality'&#62; Loving&#60;/label&#62;</code>"
       ],
       "tests": [
-        "assert($('input[type=\"checkbox\"').length > 2, 'Your webpage should have three checkbox elements.')",
-        "assert($('label').length > 2, 'Each of your three checkbox elements should be wrapped in a label element.')"
+        "assert($('input[type=\"checkbox\"]').length > 2, 'Your webpage should have three checkbox elements.')",
+        "assert($('label').length > 4, 'Each of your three checkbox elements should be wrapped in a label element.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1518,13 +1862,22 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType" : 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aede08835",
+      "_id": "bad87fee1348bd9aede08835",
       "name": "Waypoint: Clean up your form using Linebreaks",
-      "difficulty" : 0.045,
+      "difficulty": 0.045,
       "description": [
         "Clean up your form by adding linebreaks between form elements.",
         "Remember that you can create a linebreak element by using the code: <code>&#60;br&#62;</code>"
@@ -1583,26 +1936,35 @@
         "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
         "  <label><input type='checkbox' name='personality'> Loving</label>",
         "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Crazy</label>",
+        "  <label><input type='checkbox' name='personality'> Energetic</label>",
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType" : 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
-
     {
-      "_id" : "bad87fee1348bd9aedd08835",
+      "_id": "bad87fee1348bd9aedd08835",
       "name": "Waypoint: Check Radio Buttons and Checkboxes by Default",
-      "difficulty" : 0.046,
+      "difficulty": 0.046,
       "description": [
         "Set the first of your radio buttons and the first of your checkboxes to both be checked by default.",
         "You set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
         "To do this, just add the word \"checked\" to the inside of an input element. For example, <code>&#60;input type='radio' name='test-name' checked&#62;</code>."
       ],
       "tests": [
-        "assert($('input[type=\"radio\"').prop('checked'), 'Your first radio button on your form should be checked by default.')",
-        "assert($('input[type=\"checkbox\"').prop('checked'), 'Your first checkbox on your form should be checked by default.')"
+        "assert($('input[type=\"radio\"]').prop('checked'), 'Your first radio button on your form should be checked by default.');",
+        "assert($('input[type=\"checkbox\"]').prop('checked'), 'Your first checkbox on your form should be checked by default.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1656,13 +2018,23 @@
         "  <br>",
         "  <label><input type='checkbox' name='personality'> Loving</label>",
         "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Crazy</label>",
+        "  <label><input type='checkbox' name='personality'> Energetic</label>",
         "  <br>",
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
-      "challengeType" : 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad88fee1348bd9aedf08825",
@@ -1713,7 +2085,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08822",
@@ -1766,7 +2148,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08823",
@@ -1818,7 +2210,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08824",
@@ -1830,7 +2232,9 @@
         "CSS allows you to control the padding of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes."
       ],
       "tests": [
+        "assert($('.green-box').css('padding-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of padding.')",
         "assert($('.green-box').css('padding-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of padding.')",
+        "assert($('.green-box').css('padding-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of padding.')",
         "assert($('.green-box').css('padding-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of padding.')"
       ],
       "challengeSeed": [
@@ -1871,7 +2275,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1248bd9aedf08824",
@@ -1924,21 +2338,33 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08826",
       "name": "Waypoint: Use Clockwise Notation to Specify the Padding of an Element",
       "difficulty": 0.069,
       "description": [
-        "Use <code>Clockwise Notation</code> to give an element padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
+        "Use <code>Clockwise Notation</code> to give the \".green-box\" class a padding of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
         "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
         "You can also use this notation for margins!"
       ],
       "tests": [
-        "assert($('.green-box').css('padding-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of padding.')",
-        "assert($('.green-box').css('padding-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of padding.')"
+        "assert($('.green-box').css('padding-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of padding.')",
+        "assert($('.green-box').css('padding-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of padding.')",
+        "assert($('.green-box').css('padding-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of padding.')",
+        "assert($('.green-box').css('padding-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of padding.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -1975,7 +2401,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bad87fee1348bd9aedf08726",
@@ -1984,12 +2420,14 @@
       "description": [
         "Let's try this again, but with <code>margin</code> this time. Use <code>Clockwise Notation</code> to give an element a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> attributes, you can specify them all in one line, like this: <code>margin: 10px 20px 10px 20px;</code>.",
-        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
-        "You can also use this notation for margins!"
+        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions."
       ],
       "tests": [
-        "assert($('.green-box').css('margin-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of margin.')",
-        "assert($('.green-box').css('margin-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of margin.')"
+        "assert($('.green-box').css('margin-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of margin.')",
+        "assert($('.green-box').css('margin-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of margin.')",
+        "assert($('.green-box').css('margin-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of margin.')",
+        "assert($('.green-box').css('margin-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of margin.')"
+
       ],
       "challengeSeed": [
         "<style>",
@@ -2026,7 +2464,17 @@
         "  <h5 class=\"box green-box\">padding</h5>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }

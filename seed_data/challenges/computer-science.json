@@ -1,6 +1,6 @@
 {
   "name": "Computer Science",
-  "order" : 0.005,
+  "order": 0.005,
   "challenges": [
     {
       "_id": "bd7123d8c441eddfaeb5bdef",
@@ -14,7 +14,17 @@
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/</a> and complete the first week's course work."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd8124d8c441eddfaeb5bdef",
@@ -27,7 +37,17 @@
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/</a> and complete Week 2."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd8125d8c441eddfaeb5bdef",
@@ -40,7 +60,17 @@
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/</a> and complete Week 3."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd8126d8c441eddfaeb5bdef",
@@ -53,7 +83,17 @@
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/</a> and complete Week 4."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd8127d8c441eddfaeb5bdef",
@@ -66,7 +106,17 @@
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/</a> and complete Week 5."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     },
     {
       "_id": "bd8128d8c441eddfaeb5bdef",
@@ -80,7 +130,17 @@
         "Go to <a href='https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/' target='_blank'>https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/</a> and complete Week 6, the final week of the course."
       ],
       "challengeType": 2,
-      "tests": []
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
     }
   ]
 }
