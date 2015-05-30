@@ -334,8 +334,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Cambia el color del texto",
+      "descriptionEs": [
+        "Cambia el estilo del elemento <code>h2</code> de manera que el color de su texto sea rojo.",
+        "Podemos hacer esto por medio de cambiar el <code>estilo</code> del elemento <code>h2</code>.",
+        "El estilo responsable del color de texto de un elemento es el estilo \"color\".",
+        "Así es como podrías volver el color de texto de tu elemento <code>h2</code> en azul: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>"
+      ],
       "namePt": "",
       "descriptionPt": []
     },
