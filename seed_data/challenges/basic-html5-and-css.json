@@ -219,8 +219,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Comenta en HTML",
+      "descriptionEs": [
+        "Comenta el elemento <code>h1</code> y el elemento <code>p</code>, pero deja sin comentar el elemento <code>h2</code>.",
+        "Recuerda que para comenzar un comentario, necesitas usar <code>&#60;!--</code> y para terminar un comentario, necesitas usar <code>--&#62;</code>.",
+        "Aquí necesitarás terminar el comentario antes que comience el elemento h2."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
