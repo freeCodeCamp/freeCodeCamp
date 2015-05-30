@@ -690,7 +690,7 @@
       "name": "Waypoint: Ditch Custom CSS for Bootstrap",
       "difficulty": 0.055,
       "description": [
-        "Delete the following from your style tag: <code>.red-text</code>, <code>p</code>, <code>.smaller-image</code>. Delete the <code>p</code> element with the dead link. Remove your <code>red-text</code> class from your <code>h2</code> element and instead apply the <code>text-primary</code> Bootstrap class. Replace the <code>smaller-image</code> class on your top image with the <code>img-responsive</code> class.",
+        "<ol><li>Delete <code>.red-text</code>, <code>p</code>, and <code>.smaller-image</code> from your <code>style</code> element.</li> <li>Delete the <code>p</code> element that contains the dead link.</li> <li>Remove the <code>red-text</code> class from your <code>h2</code> element and replace it with the <code>text-primary</code> Bootstrap class.</li> <li>Remove the <code>smaller-image</code> class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class.</li></ol>",
         "We can clean up our code and make our Cat Photo App look more conventional by using Bootstrap's built-in styles instead of the custom styles we created earlier.",
         "Don't worry - there will be plenty of time to customize our CSS later."
       ],
@@ -881,7 +881,9 @@
         "Go ahead and add a <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> within your like button's element."
       ],
       "tests": [
-        "assert($('.fa-thumbs-up').length > 0, 'You should add a <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> within your like button element.')"
+        "assert($('.fa-thumbs-up').length > 0, 'Add a <code>i</code> element with the classes \"fa\" and \"fa-thumbs-up\".')",
+        "assert($('button').children('i').length > 0, 'Wrap your <code>i</code> element within your <code>button</code> element.')",
+        "assert(editor.match(/<\\/i>/g), 'Be sure to close your <code>i</code> element with a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",

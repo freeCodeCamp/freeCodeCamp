@@ -1110,8 +1110,9 @@
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "tests": [
-        "expect($('a').children('img').length, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\"').to.equal(1);",
-        "expect(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Make sure to specify the \"src\" attribute as \"#\"').to.be.true;"
+        "assert(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Your <code>anchor</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')",
+        "assert($('a').children('img').length > 0, 'Wrap your image element inside an anchor element.')",
+        "assert(editor.match(/<\\/a>/g).length > 1, 'Be sure that each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1512,7 +1513,9 @@
       ],
       "tests": [
         "assert($('form').length > 0, 'Wrap your text input element within a <code>form</code> element.')",
-        "assert($('form').attr('action'), 'Your <code>form</code> element should have an <code>action</code> attribute.')"
+        "assert($('form').attr('action'), 'Your <code>form</code> element should have an <code>action</code> attribute.')",
+        "assert(editor.match(/<\\/form>/g), 'Make sure your <code>form</code> elements has a closing tag.')",
+        "assert(editor.match(/\\/submit-cat-photo/ig), 'Make sure your <code>form</code> action is set to <code>/submit-cat-photo</code>.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -2113,7 +2116,7 @@
       "description": [
         "Change the <code>margin</code> of the green box to match that of the red box.",
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
-        "Here, we can see that the green box and the red box and the green box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
+        "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
         "When you increase the green box's <code>margin</code>, it will increase the distance between its border and surrounding elements."
       ],
       "tests": [
