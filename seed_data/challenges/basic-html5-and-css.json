@@ -134,8 +134,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Separa Elementos Visualmente con Saltos de Línea",
+      "descriptionEs": [
+        "Agrega un <code>salto de línea</code> entre los elementos <code>&#60;h2&#62</code> y <code>&#60;p&#62</code>.",
+        "Puedes crear un elemento de salto de línea con <code>&#60;br&#47&#62</code>.",
+        "Fíjate que <code>&#60;br&#47&#62</code> no tiene etiqueta de cierre. Es un elemento <code>auto-cerrado</code>. ¿Ves cómo un / precede el signo de cierre (>)?",
+        "Luego te encontrarás con otras etiquetas de elementos <code>auto-cerrados</code>."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
