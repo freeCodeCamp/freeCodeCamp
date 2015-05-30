@@ -100,8 +100,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Informa con el Elemento Párrafo",
+      "descriptionEs": [
+        "Crea un elemento párrafo debajo de tu elemento h2, y dale el texto \"Hello Paragraph\". Apenas escribas la etiqueta de apertura <code>&#60;p&#62;</code>, una de nuestras pruebas pasarán (ya que ésta es HTML válido). Asegúrate de cerrar el elemento agregando la etiqueta de cierre <code>&#60;/p&#62;</code>.",
+        "Los elementos párrafo son los principales elementos para los párrafos de texto en tamaño normal en sitios web.",
+        "Tú puedes crear un elemento párrafo como éste: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
+	  ],
       "namePt": "",
       "descriptionPt": []
     },
