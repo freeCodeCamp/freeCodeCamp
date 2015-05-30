@@ -854,7 +854,7 @@
         "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage."
       ],
       "tests": [
-        "assert(parseInt($('img').css('border-top-left-radius')) > 48, 'Your image should have a border radius of 50 percent, making it perfectly circular.')"
+        "assert(parseInt($('img').css('border-top-left-radius')) > 48, 'Your image should have a border radius of 50 percent&#44; making it perfectly circular.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
