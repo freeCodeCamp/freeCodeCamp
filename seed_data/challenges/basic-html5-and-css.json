@@ -1587,8 +1587,10 @@
         "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;</code>"
       ],
       "tests": [
-        "assert(new RegExp('<button>', 'gi').test(editor), 'Your form should have a button inside it.');",
-        "assert(new RegExp('</button>', 'gi').test(editor), 'Be sure to complete your button element with a closing tag.');"
+        "assert($('form').children('button').length > 0, 'Your form should have a button inside it.')",
+        "assert($('button').attr('type') === 'submit', 'Your submit button should have be of input type \"submit\".')",
+        "assert($('button').text().match(/submit/gi), 'Your submit button should have the text \"submit\".')",
+        "assert(editor.match(/<\\/button>/g), 'Be sure that your <code>button</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
