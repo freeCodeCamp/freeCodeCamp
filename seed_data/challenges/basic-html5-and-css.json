@@ -177,8 +177,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Quitar comentarios HTML",
+      "descriptionEs": [
+        "Quitar el comentario a los elementos <code>h1</code>, <code>h2</code> y <code>p</code>.",
+        "Crear comentarios es una forma en la que puedes dejar mensajes dentro de tu código sin afectar el resultado.",
+        "Agregar comentarios es también una forma conveniente de desactivar tu código sin tener que borrarlo por completo.",
+        "Puedes comenzar un comentario con <code>&#60;!--</code> y terminar de comentar con <code>--&#62;</code>."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
