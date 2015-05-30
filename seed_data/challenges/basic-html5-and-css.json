@@ -258,8 +258,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Llena espacios con texto de relleno",
+      "descriptionEs": [
+        "Cambia el texto en el elemento <code>p</code> para usar las primeras palabras del texto <code>Kitty Ipsum</code>.",
+        "Los desarrolladores web tradicionalmente usan <code>Lorem Ipsum</code> como texto de relleno. Se llama texto Lorem Ipsum porque esas son las primeras dos palabras de una cita famosa de Cicerón de la Roma Antigua.",
+        "El texto Lorem Ipsum ha sido usado como texto de relleno en las imprentas desde el siglo 16, y esta tradición continúa en la web.",
+        "Bueno, 5 siglos es bastante. Ya que estamos construyendo una aplicación de fotos de gatos (CatPhotoApp), ¡usemos algo llamado <a href='http://kittyipsum.com/'>Kitty Ipsum</a>!",
+        "Aquí están las primeras palabras del texto Kitty Ipsum, que puedes copiar y pegar en la posición correcta: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -294,8 +300,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Borra elementos HTML",
+      "descriptionEs": [
+        "Borra los elementos h1 y br para simplificar nuestra vista.",
+        "Nuestro teléfono no tiene mucho espacio para elementos HTML.",
+        "Removamos los elementos innecesarios para que empecemos a construir nuestra CatPhotoApp."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
