@@ -1430,8 +1430,8 @@
         "For example: <code>&#60;input type='text' placeholder='this is placeholder text'&#62;</code>"
       ],
       "tests": [
-        "assert($('[placeholder]').length > 0, 'Your text field should have a placeholder attribute.')",
-        "assert(/url/gi.test($('input').attr('placeholder')), 'Your placeholder field should have the value of \"cat photo URL\".')"
+        "assert($('input[placeholder]').length > 0, 'Your text field should have a placeholder attribute.')",
+        "assert($('input').attr('placeholder') === 'cat photo URL', 'Your placeholder field should have the value of \"cat photo URL\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
