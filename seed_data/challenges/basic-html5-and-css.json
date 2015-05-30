@@ -977,15 +977,17 @@
       "name": "Waypoint: Wrap an Anchor Element within a Paragraph",
       "difficulty": 0.032,
       "description": [
-        "Now wrap your anchor element within a <code>paragraph</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
-        "Again, here's a diagram of an <code>anchor tag</code> for your reference:",
+        "Now wrap your anchor element within a <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
+        "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<img class='img-responsive' alt='a diagram of how anchor tags are composed with the same text as on the following line' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert((/photo/gi).test($('a').text()), 'You need an <code>anchor</code> element that links to \"catphotoapp.com\".')",
-        "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"cat photos\"')",
-        "assert($('a').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')"
+        "assert($('a').attr('href').match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
+        "assert($('a').text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
+        "assert($('a').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')",
+        "assert($('p').text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
+        "assert(editor.match(/<\\/p>/g).length > 2, 'Be sure that each of your <code>p</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1294,7 +1296,7 @@
       "name": "Waypoint: Create an Ordered List",
       "difficulty": 0.037,
       "description": [
-        "Create an <code>ordered list</code> of the the top 3 things cats hate the most.",
+        "Create an <code>ordered list</code> of the top 3 things cats hate the most.",
         "HTML has a special element for creating ordered lists, or numbered-style lists.",
         "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
         "For example: <code>&#60;ol&#62;&#60;li&#62;hydrogen&#60;/li&#62;&#60;li&#62;helium&#60;/li&#62;&#60;ol&#62;</code> would create a numbered list of \"hydrogen\" and \"helium\"."

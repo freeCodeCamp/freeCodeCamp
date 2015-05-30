@@ -1231,7 +1231,7 @@
       "tests": [
         "assert($('.btn-primary').length > 1, 'Give the submit button in your form the classes \"btn btn-primary\".')",
         "assert($('.fa-paper-plane').length > 0, 'Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit button element.')",
-        "assert($('.form-control').length > 0, 'Give the the text input field in your form the class \"form-control\".')"
+        "assert($('.form-control').length > 0, 'Give the text input field in your form the class \"form-control\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
