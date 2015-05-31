@@ -346,8 +346,6 @@ exports.storySubmission = function(req, res, next) {
     // if duplicate storyLink add unique number
     storyLink = (storyCount === 0) ? storyLink : storyLink + ' ' + storyCount;
 
-    debug(storyLink);
-
     var link = data.link;
     if (link.search(/^https?:\/\//g) === -1) {
       link = 'http://' + link;
