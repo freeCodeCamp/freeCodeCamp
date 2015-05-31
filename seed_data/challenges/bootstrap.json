@@ -180,8 +180,8 @@
         "Bootstrap has its own button styles, which look much better than the plain HTML ones."
       ],
       "tests": [
-        "assert($('.btn').length > 0, 'your new button should have the class \"btn\".');",
-        "assert(new RegExp('like this photo','gi').test($('.btn').text()), 'your button should have the text \"like this photo\"');"
+        "assert($('button').hasClass('btn'), 'Your new button should have the class \"btn\".')",
+        "assert(new RegExp('like this photo','gi').test($('button.btn').text()), 'Your button should have the text \"like this photo\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
