@@ -26,7 +26,12 @@ module.exports = {
       .map(function(challenge) {
         return challenge._id;
       });
-    var challengeList = resources.getChallengeMapForDisplay(completedChallengeList);
+    var challengeList = resources.getChallengeMapForDisplay();
+    Object.keys(challengeList).forEach(function(key) {
+      challengeList[key].completed = challengeList[key].challenges.filter(function(elem) {
+        return completedChallengeList.indexOf(elem._id) > 0;
+      });
+    });
 
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
