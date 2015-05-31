@@ -349,8 +349,8 @@
         "Note that this button will still need the <code>btn</code> class."
       ],
       "tests": [
-        "assert($('.btn-primary').length > 0, 'Your new button should have the class \"btn-primary\".')",
-        "assert($('.btn').length > 0, 'Your new button should have the class \"btn\".')"
+        "assert($('button').hasClass('btn-primary'), 'Your button should have the class \"btn-primary\".')",
+        "assert($('button').hasClass('btn-block') && $('button').hasClass('btn'), 'Your button should still have the \"btn\" and \"btn-block\" classes.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
