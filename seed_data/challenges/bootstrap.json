@@ -515,13 +515,14 @@
       "name": "Waypoint: Warn your Users of a Dangerous Action",
       "difficulty": 0.053,
       "description": [
-        "Create a button with the text \"delete\" and give it the class <code>btn-danger</code>.",
+        "Create a button with the text \"Delete\" and give it the class <code>btn-danger</code>.",
         "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-danger</code> class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.",
         "Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes."
       ],
       "tests": [
-        "assert($('.btn-danger').length > 0, 'Your new button should have the class \"btn-danger\".')",
-        "assert($('.btn-block').length > 1, 'Both of your Bootstrap buttons should have the class \"btn-block\".')"
+        "assert($('button').hasClass('btn-danger'), 'Your new button should have the class \"btn-danger\".')",
+        "assert($('button.btn-block.btn').length > 2, 'All of your Bootstrap buttons should have the \"btn\" and \"btn-block\" classes.')",
+        "assert(new RegExp('delete', 'gi').test($('button.btn-danger').text()), 'Your new button should have the text \"delete\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
