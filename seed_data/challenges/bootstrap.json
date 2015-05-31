@@ -599,7 +599,7 @@
       "name": "Waypoint: Use the Bootstrap Grid to Put Elements Side By Side",
       "difficulty": 0.054,
       "description": [
-        "Put the \"like\", \"Info\" and \"Delete\" buttons side-by-side by wrapping all three of them within one <code>&#60;div class=\"row\"&#62;</code> element, then each of them within a <code>&#60;div class=\"col-xs-4\"&#62;</code> element.",
+        "Put the \"Like\", \"Info\" and \"Delete\" buttons side-by-side by wrapping all three of them within one <code>&#60;div class=\"row\"&#62;</code> element, then each of them within a <code>&#60;div class=\"col-xs-4\"&#62;</code> element.",
         "Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
         "Here's a diagram of how Bootstrap's 12-column grid layout works:",
         "<a href='http://getbootstrap.com/css/#grid-example-basic' target='_blank'><img class='img-responsive' src='https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png'></a>",

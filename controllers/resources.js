@@ -72,13 +72,14 @@ Array.zip = function(left, right, combinerFunction) {
 
 module.exports = {
 
-  getChallengeMapForDisplay: function() {
+  getChallengeMapForDisplay: function(completedChallengeList) {
     if (!challengeMapForDisplay) {
       challengeMapForDisplay = {};
       Object.keys(challengeMap).forEach(function(key) {
         challengeMapForDisplay[key] = {
           name: challengeMap[key].name,
-          challenges: challengeMap[key].challenges
+          challenges: challengeMap[key].challenges,
+          completedCount: challengeMap[key].challenges //ToDo count number of uncompleted challenges
         }
       });
     }

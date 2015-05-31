@@ -22,12 +22,11 @@ module.exports = {
 
     var noDuplicatedChallenges = R.uniq(completedList);
 
-
-    var challengeList = resources.getChallengeMapForDisplay();
     var completedChallengeList = noDuplicatedChallenges
       .map(function(challenge) {
         return challenge._id;
       });
+    var challengeList = resources.getChallengeMapForDisplay(completedChallengeList);
 
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');

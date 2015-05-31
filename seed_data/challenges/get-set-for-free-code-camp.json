@@ -47,7 +47,7 @@
       "description": [
         "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper to pair program with.",
         "Make sure your Free Code Camp account includes your email address. Please note that the email address you use will be invisible to the public, but Slack will make it visible to other campers in our slack chat rooms. You can do this here: <a href='/account' target='_blank'>http://freecodecamp.com/account</a>.",
-        "Click this link, which will email you an invite to Free Code Camp's Slack chat rooms: <a href='/api/slack' target='_blank'>http://freecodecamp.com/api/slack</a>.",
+        "Click this link, which will email you can invite to Free Code Camp's Slack chat rooms: <a href='/api/slack' target='_blank'>http://freecodecamp.com/api/slack</a>.",
         "Now check your email and click the link in the email from Slack.",
         "Complete the sign up process, then update your biographical information and upload an image. A picture of your face works best. This is how people will see you in our chat rooms, so put your best foot forward.",
         "Now enter the General chat room and introduce yourself to our chat room by typing: \"Hello world!\".",
