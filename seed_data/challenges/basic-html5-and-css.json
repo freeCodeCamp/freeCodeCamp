@@ -1039,7 +1039,7 @@
       "tests": [
         "assert($('a').attr('href').match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
         "assert($('a').text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
-        "assert($('a').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')",
+        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')",
         "assert($('p').text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
         "assert(editor.match(/<\\/p>/g).length > 2, 'Be sure that each of your <code>p</code> elements has a closing tag.')"
       ],
@@ -2537,7 +2537,7 @@
     },
     {
       "_id": "bad87fee1248bd9aedf08824",
-      "name": "Waypoint: Add Different a Margin to Each Side of an Element",
+      "name": "Waypoint: Add Different Margins to Each Side of an Element",
       "difficulty": 0.068,
       "description": [
         "Give the green box a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
