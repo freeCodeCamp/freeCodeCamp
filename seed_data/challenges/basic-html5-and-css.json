@@ -513,7 +513,7 @@
       "description": [
         "Make all of your <code>p</code> elements use the \"Monospace\" font.",
         "You can set an element's font by using the \"font-family\" attribute.",
-        "For example, if you wanted to set your <code>h2</code> element's font to \"Sans-serif\", you would use the following CSS: <code>h2 { font-family: 'Sans-serif'; }</code>"
+        "For example, if you wanted to set your <code>h2</code> element's font to \"Sans-serif\", you would use the following CSS: <code>h2 { font-family: Sans-serif; }</code>"
       ],
       "tests": [
         "assert($('p').css('font-family').match(/monospace/i), 'Your <code>p</code> elements should use the font \"Monospace\".')"
