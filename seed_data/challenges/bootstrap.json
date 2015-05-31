@@ -884,7 +884,7 @@
         "Go ahead and add a <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> within your like button's element."
       ],
       "tests": [
-        "assert($('.fa-thumbs-up').length > 0, 'Add a <code>i</code> element with the classes \"fa\" and \"fa-thumbs-up\".')",
+        "assert($('i').hasClass('fa fa-thumbs-up'), 'Add an <code>i</code> element with the classes \"fa\" and \"fa-thumbs-up\".')",
         "assert($('button').children('i').length > 0, 'Wrap your <code>i</code> element within your <code>button</code> element.')",
         "assert(editor.match(/<\\/i>/g), 'Be sure to close your <code>i</code> element with a closing tag.')"
       ],
