@@ -1720,8 +1720,7 @@
         "For example, if you wanted to make a text input field required, you can just add the word \"required\" within your <code>input</code> element use: <code>&#60;input type='text' required&#62;</code>"
       ],
       "tests": [
-        "assert($('input').prop('required'), 'Your text field should have the property of being required.')",
-        "assert(new RegExp('cat photo URL').test($('input').prop('placeholder')), 'Your text field should have the placeholder text of \"cat photo URL\".')"
+        "assert($('input').prop('required'), 'Your text field should have the property of being required.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1770,7 +1769,7 @@
         "  <li>other cats</li>",
         "</ol>",
         "<form action=\"/submit-cat-photo\">",
-        "  <input type='text'>",
+        "  <input type='text' placeholder='cat photo URL'>",
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
