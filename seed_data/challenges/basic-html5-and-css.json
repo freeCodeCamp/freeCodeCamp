@@ -1294,7 +1294,9 @@
       ],
       "tests": [
         "assert($('ul').length > 0, 'Create a <code>ul</code> element.')",
-        "assert($('li').length > 2, 'Add three <code>li</code> elements to your <code>ul</code> element.')"
+        "assert($('li').length > 2, 'Add three <code>li</code> elements to your <code>ul</code> element.')",
+        "assert(editor.match(/<\\/ul>/g), 'Be sure that your <code>ul</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/li>/g) && editor.match(/<\\/li>/g).length > 2, 'Be sure that each of your <code>li</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1359,7 +1361,10 @@
         "assert($('ul').length > 0, 'You should have an <code>ul</code> element on your webpage.')",
         "assert($('ol').length > 0, 'You should have an <code>ol</code> element on your webpage.')",
         "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
-        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ol</code> element.')"
+        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ol</code> element.')",
+        "assert(editor.match(/<\\/ol>/g), 'Be sure that your <code>ol</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/ul>/g), 'Be sure that your <code>ul</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/li>/g).length > 5, 'Be sure that each of your <code>li</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
