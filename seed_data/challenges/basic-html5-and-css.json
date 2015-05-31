@@ -805,8 +805,8 @@
       "tests": [
         "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
         "assert($('img').hasClass('thick-green-border'), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
-        "assert(parseInt($('img').css('border-top-width')), 'Give your image a border width of 10px.')",
-        "assert(new RegExp('border-style:.?solid', 'gi').test(editor), 'Give your image a border style of \"solid\".')"
+        "assert($('img').hasClass('thick-green-border') && parseInt($('img').css('border-top-width')), 'Give your image a border width of 10px.')",
+        "assert(new RegExp('solid', 'gi').test(editor), 'Give your image a border style of \"solid\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
