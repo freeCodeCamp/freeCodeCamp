@@ -1141,8 +1141,8 @@
         "You can use Bootstrap's <code>col-xs-*</code> classes on form elements, too! This way, our checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is."
       ],
       "tests": [
-        "assert($('.row').length > 3, 'Wrap your all of your checkboxes inside one div with the class \"row\".')",
-        "assert($('.col-xs-4').length > 6, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')"
+        "assert($('div.row:has(input[type=\\'checkbox\\'])').length > 0, 'Wrap all of your checkboxes inside one div with the class \"row\".')",
+        "assert($('div.col-xs-4:has(input[type=\\'checkbox\\'])').length > 2, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
