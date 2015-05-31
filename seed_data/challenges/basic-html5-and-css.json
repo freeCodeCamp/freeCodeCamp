@@ -354,7 +354,7 @@
       "description": [
         "Delete your <code>h2</code> element's style attribute and instead create a CSS <code>style</code> element. Add the necessary CSS to turn all <code>h2</code> elements blue.",
         "With CSS, there are hundreds of CSS \"attributes\" that you can use to change the way an element looks on your page.",
-        "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;h2&#62;</code>, you were giving that individual <code>h2</code> element an \"inline style\".",
+        "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were giving that individual <code>h2</code> element an \"inline style\".",
         "That's one way to add style to an element, but a better way is by using Cascading Style Sheets (CSS).",
         "At the top of your code, create a <code>style</code> element like this: <code>&#60;style&#62;&#60;/style&#62;</code>",
         "Inside that style element, you can create a \"CSS selector\" for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
@@ -398,8 +398,13 @@
         "Classes are reusable styles that can be added to HTML elements.",
         "Here's the anatomy of a CSS class:",
         "<img class='img-responsive' alt='a diagram of how style tags are composed, which is also described in detail on the following lines.' src='https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png'/>",
+<<<<<<< HEAD
         "Here you can see that we've created a CSS class called \"blue-text\" within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>",
+=======
+        "You can see that we've created a CSS class called \"blue-text\" within the <code>&#60;style&#62;</code> tag.",
+        "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
+>>>>>>> d403204a3133042b8b7828f29ba1932674e71a66
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
         "Instead of creating a new <code>style</code> element, try removing the <code>h2</code> style declaration from your existing style element, then replace it with the class declaration for \".red-text\"."
       ],
@@ -1161,7 +1166,7 @@
       "description": [
         "Wrap your <code>img</code> element inside an anchor element with a dead link.",
         "You can make elements into links by wrapping them in an <code>anchor tag</code>.",
-        "Wrap your image in an <code>anchor tag</code>. Here's an example: <code>&#60;a href='#'&#62;&#60;img src='http://bit.ly/fcc-kittens2'&#62;&#60;/a&#62;</code>",
+        "Wrap your image in an <code>anchor tag</code>. Here's an example: <code>&#60;a href='#'&#62;&#60;img src='http://bit.ly/fcc-kittens2'/&#62;&#60;/a&#62;</code>",
         "Remember to use the hash symbol as your <code>anchor tag</code>'s <code>href</code> property in order to turn it into a dead link.",
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
@@ -1290,7 +1295,7 @@
         "Replace the paragraph elements with an unordered list of three things that cats love.",
         "HTML has a special element for creating unordered lists, or bullet point-style lists.",
         "Unordered lists start with a <code>&#60;ul&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
-        "For example: <code>&#60;ul&#62;&#60;li&#62;milk&#60;/li&#62;&#60;li&#62;cheese&#60;/li&#62;&#60;ul&#62;</code> would create a bulleted list of \"milk\" and \"cheese\"."
+        "For example: <code>&#60;ul&#62;&#60;li&#62;milk&#60;/li&#62;&#60;li&#62;cheese&#60;/li&#62;&#60;/ul&#62;</code> would create a bulleted list of \"milk\" and \"cheese\"."
       ],
       "tests": [
         "assert($('ul').length > 0, 'Create a <code>ul</code> element.')",
@@ -1353,7 +1358,7 @@
         "Create an <code>ordered list</code> of the top 3 things cats hate the most.",
         "HTML has a special element for creating ordered lists, or numbered-style lists.",
         "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
-        "For example: <code>&#60;ol&#62;&#60;li&#62;hydrogen&#60;/li&#62;&#60;li&#62;helium&#60;/li&#62;&#60;ol&#62;</code> would create a numbered list of \"hydrogen\" and \"helium\"."
+        "For example: <code>&#60;ol&#62;&#60;li&#62;hydrogen&#60;/li&#62;&#60;li&#62;helium&#60;/li&#62;&#60;/ol&#62;</code> would create a numbered list of \"hydrogen\" and \"helium\"."
       ],
       "tests": [
         "assert($('ul').length > 0, 'You should have an <code>ul</code> element on your webpage.')",
