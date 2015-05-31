@@ -1807,7 +1807,7 @@
       ],
       "tests": [
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your webpage should have three checkbox elements.')",
-        "assert($('label').length > 4, 'Each of your three checkbox elements should be wrapped in a label element.')"
+        "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be wrapped in a label element.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
