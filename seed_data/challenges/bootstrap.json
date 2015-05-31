@@ -1232,9 +1232,9 @@
         "Give your form's text input field a class of <code>form-control</code>. Give your form's submit button the classes <code>btn btn-primary</code> and give it the Font Awesome icon of <code>fa-paper-plane</code>."
       ],
       "tests": [
-        "assert($('.btn-primary').length > 1, 'Give the submit button in your form the classes \"btn btn-primary\".')",
-        "assert($('.fa-paper-plane').length > 0, 'Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit button element.')",
-        "assert($('.form-control').length > 0, 'Give the text input field in your form the class \"form-control\".')"
+        "assert($('button[type=\\'submit\\']').hasClass('btn btn-primary'), 'Give the submit button in your form the classes \"btn btn-primary\".')",
+        "assert($('button[type=\\'submit\\']:has(i.fa.fa-paper-plane)').length > 0, 'Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit button element.')",
+        "assert($('input[type=\\'text\\']').hasClass('form-control'), 'Give the text input field in your form the class \"form-control\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
