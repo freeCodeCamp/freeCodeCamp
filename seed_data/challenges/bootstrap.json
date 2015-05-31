@@ -260,11 +260,12 @@
       "difficulty": 0.050,
       "description": [
         "Add Bootstrap's <code>btn-block</code> class to your Bootstrap button.",
-        "Normally, your buttons are only as wide as the text they contain. By making them <code>block elements</code>, your button will stretch to fill your page's entire horizontal space.",
+        "Normally, your buttons are only as wide as the text they contain. By making them <code>block</code> elements, your button will stretch to fill your page's entire horizontal space.",
         "Note that these buttons still need the <code>btn</code> class."
       ],
       "tests": [
-        "assert($('.btn-block').length > 0, 'your new button should have the class \"btn-block\".')"
+        "assert($('button').hasClass('btn'), 'Your button should still have the class \"btn\".')",
+        "assert($('button').hasClass('btn-block'), 'Your button should have the class \"btn-block\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
