@@ -2119,7 +2119,8 @@
       "tests": [
         "assert($('div').children('ol').length > 0, 'Wrap your <code>ol</code> element inside your <code>div</code> element.')",
         "assert($('div').children('p').length > 1, 'Wrap your <code>p</code> element inside your <code>div</code> element.')",
-        "assert($('div').children('ul').length > 0, 'Wrap your <code>ul</code> element inside your <code>div</code> element.')"
+        "assert($('div').children('ul').length > 0, 'Wrap your <code>ul</code> element inside your <code>div</code> element.')",
+        "assert(editor.match(/<\\/div>/g), 'Be sure that your <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -2198,12 +2199,12 @@
       "difficulty": 0.048,
       "description": [
         "Create a class called \"gray-background\" with the background color of gray. Assign this class to your <code>div</code> element.",
-        ""
+        "You can set an element's background color with the \"background-color\" attribute.",
+        "For example, if you wanted an element's background color to be \"green\", you'd use <code>.green-background { background-color: green; }</code>."
       ],
       "tests": [
-        "assert($('div').children('ol').length > 0, 'Wrap your <code>ol</code> element inside your <code>div</code> element.')",
-        "assert($('div').children('p').length > 1, 'Wrap your <code>p</code> element inside your <code>div</code> element.')",
-        "assert($('div').children('ul').length > 0, 'Wrap your <code>ul</code> element inside your <code>div</code> element.')"
+        "assert($('div').hasClass('gray-background'), 'Give your <code>div</code> element the class \"gray-background\".')",
+        "assert($('.gray-background').css('background-color') === 'rgb(128, 128, 128)', 'Your <code>div</code> element should have a gray background.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -2239,18 +2240,20 @@
         "",
         "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
         "",
-        "<p>Things cats love:</p>",
-        "<ul>",
-        "  <li>cat nip</li>",
-        "  <li>laser pointers</li>",
-        "  <li>lasagna</li>",
-        "</ul>",
-        "<p>Top 3 things cats hate:</p>",
-        "<ol>",
-        "  <li>flea treatment</li>",
-        "  <li>thunder</li>",
-        "  <li>other cats</li>",
-        "</ol>",
+        "<div>",
+        "  <p>Things cats love:</p>",
+        "  <ul>",
+        "    <li>cat nip</li>",
+        "    <li>laser pointers</li>",
+        "    <li>lasagna</li>",
+        "  </ul>",
+        "  <p>Top 3 things cats hate:</p>",
+        "  <ol>",
+        "    <li>flea treatment</li>",
+        "    <li>thunder</li>",
+        "    <li>other cats</li>",
+        "  </ol>",
+        "</div>",
         "",
         "<form action=\"/submit-cat-photo\">",
         "  <label><input type='radio' name='indoor-outdoor' checked> Indoor</label>",
