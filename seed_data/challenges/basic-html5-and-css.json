@@ -373,8 +373,16 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Usa selectores CSS para dar estilo a los elementos",
+      "descriptionEs": [
+        "Borra el atributo <code>style</code> de tu elemento <code>h2</code> y escribe el CSS para hacer todos los elementos <code>h2</code> de color azul.",
+        "Con CSS, hay cientos de <code>atributos CSS</code> que puedes usar para cambiar como un elemento se ve en una página web.",
+        "Cuando entraste <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;h2&#62;</code>, le estuviste dando a ese elemento h2 en particular un <code>estilo en línea</code>",
+        "Esa es una forma de agregar estilo a un elemento, pero una manera mejor es usando <code>Hojas de Estilo en Cascada (Cascading Style Sheets, CSS)</code>.",
+        "Al principio de tu código, crea una <code>etiqueta style</code> como ésta: <code>&#60;style&#62;&#60;/style&#62;</code>",
+        "Dentro de ese elemento style, puedes crear un <code>selector css</code> para todos los elementos <code>h2</code>. Por ejemplo, si querías que todos los elementos <code>h2</code> sean rojos, tu elemento style se vería así: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
+        "Fíjate que es importante tener <code>llaves de apertura y de cierre</code> (<code>{</code> y <code>}</code>) alrededor del estilo para cada elemento. También necesitas asegurarte que el estilo para tu elemento está entre las etiquetas style de apertura y cierre. Finalmente, asegúrate de agregar el punto y coma al final de cada uno de los estilos de tu elemento."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
