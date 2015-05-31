@@ -429,13 +429,14 @@
       "name": "Waypoint: Call out Optional Actions with Button Info",
       "difficulty": 0.052,
       "description": [
-        "Create a new block-level Bootstrap button below your \"like\" button with the text \"Info\", and add Bootstrap's <code>btn-info</code> and <code>btn-block</code> classes to it.",
+        "Create a new block-level Bootstrap button below your \"Like\" button with the text \"Info\", and add Bootstrap's <code>btn-info</code> and <code>btn-block</code> classes to it.",
         "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-info</code> class is used to call attention to optional actions that the user can take.",
         "Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes."
       ],
       "tests": [
-        "assert($('.btn-info').length > 0, 'your new button should have the class \"btn-info\".')",
-        "assert($('.btn-block').length > 1, 'Both of your Bootstrap buttons should have the class \"btn-block\".')"
+        "assert($('button').hasClass('btn-info'), 'Your new button should have the class \"btn-info\".')",
+        "assert($('button.btn-block.btn').length > 1, 'Both of your Bootstrap buttons should have the \"btn\" and \"btn-block\" classes.')",
+        "assert(new RegExp('info', 'gi').test($('button.btn-info').text()), 'Your new button should have the text \"Info\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
