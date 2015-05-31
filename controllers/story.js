@@ -330,8 +330,8 @@ exports.storySubmission = function(req, res, next) {
     return next(new Error('Not authorized'));
   }
   var storyLink = data.headline
-    .replace(/\s+/g, ' ')
     .replace(/[^a-z0-9\s]/gi, '')
+    .replace(/\s+/g, ' ')
     .toLowerCase()
     .trim();
   var link = data.link;
@@ -345,6 +345,8 @@ exports.storySubmission = function(req, res, next) {
 
     // if duplicate storyLink add unique number
     storyLink = (storyCount === 0) ? storyLink : storyLink + ' ' + storyCount;
+
+    debug(storyLink);
 
     var link = data.link;
     if (link.search(/^https?:\/\//g) === -1) {
@@ -389,7 +391,7 @@ exports.storySubmission = function(req, res, next) {
         }
       });
       res.send(JSON.stringify({
-        storyLink: story.storyLink.replace(/\s/g, '-').toLowerCase()
+        storyLink: story.storyLink.replace(/\s+/g, '-').toLowerCase()
       }));
     });
   });
