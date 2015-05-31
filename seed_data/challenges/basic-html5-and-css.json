@@ -2363,7 +2363,7 @@
     },
     {
       "_id": "bad87fee1248bd9aedf08824",
-      "name": "Waypoint: Add Different a Margin to Each Side of an Element",
+      "name": "Waypoint: Add Different Margins to Each Side of an Element",
       "difficulty": 0.068,
       "description": [
         "Give the green box a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
