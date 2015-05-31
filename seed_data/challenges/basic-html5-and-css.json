@@ -28,8 +28,16 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Saluda a los Elementos HTML",
+      "descriptionEs": [
+        "¡Bienvenido/a al primer desafío de programación de Free Code Camp! Haz click en el botón de abajo para tener más instrucciones.",
+        "Genial. Ahora puedes leer el resto de las instrucciones de este desafío.",
+        "Puedes editar tu <code>código</code> en tu <code>editor de texto</code>, que hemos incrustado en esta página web.",
+        "¿Ves el código en tu editor de texto que dice <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? Ese es un <code>elemento</code> HTML.",
+        "La mayoría de los elementos HTML tienen una <code>etiqueta de apertura</code> y una <code>etiqueta de cierre</code>. Las etiquetas de apertura se ven como: <code>&#60;h1&#62;</code>. Las etiquetas de cierre se ven como: <code>&#60;/h1&#62;</code>. Fíjate que la única diferencia entre las etiquetas de apertura y de cierre es que estas últimas tienen un / después de su signo de apertura (<).",
+        "Una vez que hayas completado cada desafío, y que hayas pasado todas sus pruebas, el botón \"Ir a mi siguiente desafío\" se activará. Haz click en él - o presiona control y enter al mismo tiempo - para avanzar al siguiente desafío.",
+        "Para activar el botón \"Ir a mi siguiente desafío\" de este ejercicio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\"."
+	  ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -59,8 +67,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Encabezado con el elemento h2",
+      "descriptionEs": [
+        "Agrega una etiqueta <code>h2</code> que diga \"CatPhotoApp\" para crear un segundo <code>elemento</code> HTML debajo de tu elemento <code>h1</code> \"Hello World\".",
+        "El elemento h2 que ingreses creará un elemento h2 en el sitio web.",
+        "Este elemento le dice al navegador cómo mostrar el texto que contiene.",
+        "Los elementos <code>h2</code> son ligeramente más pequeños que los elementos <code>h1</code>. También hay elementos <code>h3</code>, <code>h4</code>, <code>h5</code> y <code>h6</code>."
+	  ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -89,8 +102,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Informa con el Elemento Párrafo",
+      "descriptionEs": [
+        "Crea un elemento párrafo debajo de tu elemento h2, y dale el texto \"Hello Paragraph\". Apenas escribas la etiqueta de apertura <code>&#60;p&#62;</code>, una de nuestras pruebas pasarán (ya que ésta es HTML válido). Asegúrate de cerrar el elemento agregando la etiqueta de cierre <code>&#60;/p&#62;</code>.",
+        "Los elementos párrafo son los principales elementos para los párrafos de texto en tamaño normal en sitios web.",
+        "Tú puedes crear un elemento párrafo como éste: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
+	  ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -119,8 +136,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Separa Elementos Visualmente con Saltos de Línea",
+      "descriptionEs": [
+        "Agrega un <code>salto de línea</code> entre los elementos <code>&#60;h2&#62</code> y <code>&#60;p&#62</code>.",
+        "Puedes crear un elemento de salto de línea con <code>&#60;br&#47&#62</code>.",
+        "Fíjate que <code>&#60;br&#47&#62</code> no tiene etiqueta de cierre. Es un elemento <code>auto-cerrado</code>. ¿Ves cómo un / precede el signo de cierre (>)?",
+        "Luego te encontrarás con otras etiquetas de elementos <code>auto-cerrados</code>."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -158,8 +180,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Quitar comentarios HTML",
+      "descriptionEs": [
+        "Quitar el comentario a los elementos <code>h1</code>, <code>h2</code> y <code>p</code>.",
+        "Crear comentarios es una forma en la que puedes dejar mensajes dentro de tu código sin afectar el resultado.",
+        "Agregar comentarios es también una forma conveniente de desactivar tu código sin tener que borrarlo por completo.",
+        "Puedes comenzar un comentario con <code>&#60;!--</code> y terminar de comentar con <code>--&#62;</code>."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -195,8 +222,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Comenta en HTML",
+      "descriptionEs": [
+        "Comenta el elemento <code>h1</code> y el elemento <code>p</code>, pero deja sin comentar el elemento <code>h2</code>.",
+        "Recuerda que para comenzar un comentario, necesitas usar <code>&#60;!--</code> y para terminar un comentario, necesitas usar <code>--&#62;</code>.",
+        "Aquí necesitarás terminar el comentario antes que comience el elemento h2."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -230,8 +261,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Llena espacios con texto de relleno",
+      "descriptionEs": [
+        "Cambia el texto en el elemento <code>p</code> para usar las primeras palabras del texto <code>Kitty Ipsum</code>.",
+        "Los desarrolladores web tradicionalmente usan <code>Lorem Ipsum</code> como texto de relleno. Se llama texto Lorem Ipsum porque esas son las primeras dos palabras de una cita famosa de Cicerón de la Roma Antigua.",
+        "El texto Lorem Ipsum ha sido usado como texto de relleno en las imprentas desde el siglo 16, y esta tradición continúa en la web.",
+        "Bueno, 5 siglos es bastante. Ya que estamos construyendo una aplicación de fotos de gatos (CatPhotoApp), ¡usemos algo llamado <a href='http://kittyipsum.com/'>Kitty Ipsum</a>!",
+        "Aquí están las primeras palabras del texto Kitty Ipsum, que puedes copiar y pegar en la posición correcta: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -266,8 +303,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Borra elementos HTML",
+      "descriptionEs": [
+        "Borra los elementos h1 y br para simplificar nuestra vista.",
+        "Nuestro teléfono no tiene mucho espacio para elementos HTML.",
+        "Removamos los elementos innecesarios para que empecemos a construir nuestra CatPhotoApp."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -296,8 +337,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Cambia el color del texto",
+      "descriptionEs": [
+        "Cambia el estilo del elemento <code>h2</code> de manera que el color de su texto sea rojo.",
+        "Podemos hacer esto por medio de cambiar el <code>estilo</code> del elemento <code>h2</code>.",
+        "El estilo responsable del color de texto de un elemento es el estilo \"color\".",
+        "Así es como podrías volver el color de texto de tu elemento <code>h2</code> en azul: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>"
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -330,8 +376,16 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Usa selectores CSS para dar estilo a los elementos",
+      "descriptionEs": [
+        "Borra el atributo <code>style</code> de tu elemento <code>h2</code> y escribe el CSS para hacer todos los elementos <code>h2</code> de color azul.",
+        "Con CSS, hay cientos de <code>atributos CSS</code> que puedes usar para cambiar como un elemento se ve en una página web.",
+        "Cuando entraste <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;h2&#62;</code>, le estuviste dando a ese elemento h2 en particular un <code>estilo en línea</code>",
+        "Esa es una forma de agregar estilo a un elemento, pero una manera mejor es usando <code>Hojas de Estilo en Cascada (Cascading Style Sheets, CSS)</code>.",
+        "Al principio de tu código, crea una <code>etiqueta style</code> como ésta: <code>&#60;style&#62;&#60;/style&#62;</code>",
+        "Dentro de ese elemento style, puedes crear un <code>selector css</code> para todos los elementos <code>h2</code>. Por ejemplo, si querías que todos los elementos <code>h2</code> sean rojos, tu elemento style se vería así: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
+        "Fíjate que es importante tener <code>llaves de apertura y de cierre</code> (<code>{</code> y <code>}</code>) alrededor del estilo para cada elemento. También necesitas asegurarte que el estilo para tu elemento está entre las etiquetas style de apertura y cierre. Finalmente, asegúrate de agregar el punto y coma al final de cada uno de los estilos de tu elemento."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
