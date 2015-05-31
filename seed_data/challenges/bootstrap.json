@@ -791,7 +791,7 @@
       "name": "Waypoint: Create a Custom Heading",
       "difficulty": 0.056,
       "description": [
-        "Wrap your first image and your h2 element within a single <code>&#60;div class='row'&#62;</code> element. Wrap your h2 text within a <code>&#60;div class='col-xs-8'&#62;</code> and your image in a <code>&#60;div class='col-xs-4'&#62;</code> so that they are on the same line.",
+        "Wrap your first image and your <code>h2</code> element within a single <code>&#60;div class='row'&#62;</code> element. Wrap your <code>h2</code> text within a <code>&#60;div class='col-xs-8'&#62;</code> and your image in a <code>&#60;div class='col-xs-4'&#62;</code> so that they are on the same line.",
         "We will make a simple heading for our Cat Photo App by putting them in the same row.",
         "Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
         "Here's a diagram of how Bootstrap's 12-column grid layout works:",
@@ -801,9 +801,9 @@
         "Notice how the image is now just the right size to fit along the text?"
       ],
       "tests": [
-        "assert($('.row').length > 1, 'Your h2 and top image elements should both be wrapped together within a div with the class \"row\".')",
-        "assert($('.col-xs-4').length > 3, 'Wrap your top image inside a div with the class \"col-xs-4\".')",
-        "assert($('.col-xs-8').length > 0, 'Wrap your h2 element inside a div with the class \"col-xs-8\".')"
+        "assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0, 'Your h2 and top image elements should both be wrapped together within a div with the class \"row\".')",
+        "assert($('div.col-xs-4:has(img)').length > 0, 'Wrap your top image inside a div with the class \"col-xs-4\".')",
+        "assert($('div.col-xs-8:has(h2)').length > 0, 'Wrap your h2 element inside a div with the class \"col-xs-8\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
