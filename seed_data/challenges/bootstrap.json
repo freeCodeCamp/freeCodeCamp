@@ -1335,9 +1335,9 @@
         "This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!"
       ],
       "tests": [
-        "assert($('.row').length > 4, 'Wrap your form submission button and text area in a div with class \"row\".')",
-        "assert($('.col-xs-5').length > 0, 'Wrap your form submission button in a div with the class \"col-xs-5\".')",
-        "assert($('.col-xs-7').length > 0, 'Wrap your form text area in a div with the class \"col-xs-7\".')"
+        "assert($('div.row:has(input[type=\\'text\\'])').length > 0 &&  $('div.row:has(button[type=\\'submit\\'])').length > 0, 'Wrap your form submission button and text area in a div with class \"row\".')",
+        "assert($('div.col-xs-5:has(button[type=\\'submit\\'])').length > 0, 'Wrap your form submission button in a div with the class \"col-xs-5\".')",
+        "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Wrap your form text area in a div with the class \"col-xs-7\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
