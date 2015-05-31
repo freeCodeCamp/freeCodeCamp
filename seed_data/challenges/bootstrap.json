@@ -701,7 +701,7 @@
         "assert(!$('h2').hasClass('red-text'), 'You h2 element should no longer have the class \"red-text\".')",
         "assert($('h2').hasClass('text-primary'), 'You h2 element should now have the class \"text-primary\".')",
         "assert(!$('p').css('font-family').match(/monospace/i), 'Your paragraph elements should no longer use the font \"Monospace\".')",
-        "assert($('.img-responsive').length > 1, 'Remove the \"smaller-image\" class from your top image and replace it with the \"img-responsive\" class.')"
+        "assert($('img').hasClass('img-responsive') && !$('img').hasClass('smaller-image'), 'Remove the \"smaller-image\" class from your top image and replace it with the \"img-responsive\" class.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
