@@ -53,7 +53,7 @@
       ],
       "tests": [
         "assert(($('h2').length > 0), 'Create an <code>h2</code> element.')",
-        "assert(new RegExp('</h2>', 'gi').test(editor), 'Be sure to complete your <code>h2</code> element with a closing tag.')",
+        "assert(editor.match(/<\\/h2>/g) && editor.match(/<\\/h2>/g).length === editor.match(/<h2>/g).length, 'Be sure that your <code>h2</code> element has a closing tag.')",
         "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\"')",
         "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
       ],
@@ -2125,7 +2125,7 @@
         "assert($('div').children('ol').length > 0, 'Wrap your <code>ol</code> element inside your <code>div</code> element.')",
         "assert($('div').children('p').length > 1, 'Wrap your <code>p</code> element inside your <code>div</code> element.')",
         "assert($('div').children('ul').length > 0, 'Wrap your <code>ul</code> element inside your <code>div</code> element.')",
-        "assert(editor.match(/<\\/div>/g), 'Be sure that your <code>div</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Be sure that your <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
