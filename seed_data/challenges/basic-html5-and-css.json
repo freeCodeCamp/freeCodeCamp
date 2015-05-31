@@ -53,7 +53,7 @@
       ],
       "tests": [
         "assert(($('h2').length > 0), 'Create an <code>h2</code> element.')",
-        "assert(editor.match(/<\\/h2>/g) && editor.match(/<\\/h2>/g).length === editor.match(/<h2>/g).length, 'Be sure that your <code>h2</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/h2>/g) && editor.match(/<\\/h2>/g).length === editor.match(/<h2>/g).length, 'Make sureyour <code>h2</code> element has a closing tag.')",
         "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\"')",
         "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
       ],
@@ -89,7 +89,7 @@
       "tests": [
         "assert(($('p').length > 0), 'Create a <code>p</code> element.')",
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your <code>p</code> element should have the text \"Hello Paragraph\".')",
-        "assert(new RegExp('</p>', 'gi').test(editor), 'Be sure to complete your <code>p</code> element with a closing tag.')"
+        "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p>/g).length, 'Make sureyour <code>p</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -480,7 +480,7 @@
       ],
       "tests": [
         "assert($('p').length > 1, 'You need 2 <code>p</code> elements with Kitty Ipsum text.')",
-        "assert(editor.match(/<\\/p>/g).length > 1, 'Be sure that each of your <code>p</code> elements has a closing tag.')",
+        "assert(editor.match(/<\\/p>/g).length > 1, 'Make sureeach of your <code>p</code> elements has a closing tag.')",
         "assert($('p').css('font-size') === '16px', 'Give your <code>p</code> elements the font-size of 16px.')"
       ],
       "challengeSeed": [
@@ -1041,7 +1041,7 @@
         "assert($('a').text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')",
         "assert($('p').text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
-        "assert(editor.match(/<\\/p>/g).length > 2, 'Be sure that each of your <code>p</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/p>/g).length > 2, 'Make sureeach of your <code>p</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1168,7 +1168,7 @@
       "tests": [
         "assert(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Your <code>anchor</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')",
         "assert($('a').children('img').length > 0, 'Wrap your image element inside an anchor element.')",
-        "assert(editor.match(/<\\/a>/g).length > 1, 'Be sure that each of your <code>a</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/a>/g).length > 1, 'Make sureeach of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1295,8 +1295,8 @@
       "tests": [
         "assert($('ul').length > 0, 'Create a <code>ul</code> element.')",
         "assert($('li').length > 2, 'Add three <code>li</code> elements to your <code>ul</code> element.')",
-        "assert(editor.match(/<\\/ul>/g), 'Be sure that your <code>ul</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/li>/g) && editor.match(/<\\/li>/g).length > 2, 'Be sure that each of your <code>li</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/ul>/g), 'Make sureyour <code>ul</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/li>/g) && editor.match(/<\\/li>/g).length > 2, 'Make sureeach of your <code>li</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1362,9 +1362,9 @@
         "assert($('ol').length > 0, 'You should have an <code>ol</code> element on your webpage.')",
         "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
         "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ol</code> element.')",
-        "assert(editor.match(/<\\/ol>/g), 'Be sure that your <code>ol</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/ul>/g), 'Be sure that your <code>ul</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/li>/g).length > 5, 'Be sure that each of your <code>li</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/ol>/g), 'Make sureyour <code>ol</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/ul>/g), 'Make sureyour <code>ul</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/li>/g).length > 5, 'Make sureeach of your <code>li</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1651,7 +1651,7 @@
         "assert($('form').children('button').length > 0, 'Your form should have a button inside it.')",
         "assert($('button').attr('type') === 'submit', 'Your submit button should have be of input type \"submit\".')",
         "assert($('button').text().match(/submit/gi), 'Your submit button should have the text \"submit\".')",
-        "assert(editor.match(/<\\/button>/g), 'Be sure that your <code>button</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/button>/g), 'Make sureyour <code>button</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -2125,7 +2125,7 @@
         "assert($('div').children('ol').length > 0, 'Wrap your <code>ol</code> element inside your <code>div</code> element.')",
         "assert($('div').children('p').length > 1, 'Wrap your <code>p</code> element inside your <code>div</code> element.')",
         "assert($('div').children('ul').length > 0, 'Wrap your <code>ul</code> element inside your <code>div</code> element.')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Be sure that your <code>div</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sureyour <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
