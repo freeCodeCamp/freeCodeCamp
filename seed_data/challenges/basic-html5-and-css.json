@@ -398,13 +398,8 @@
         "Classes are reusable styles that can be added to HTML elements.",
         "Here's the anatomy of a CSS class:",
         "<img class='img-responsive' alt='a diagram of how style tags are composed, which is also described in detail on the following lines.' src='https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png'/>",
-<<<<<<< HEAD
-        "Here you can see that we've created a CSS class called \"blue-text\" within the <code>&#60;style&#62;</code> tag.",
-        "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>",
-=======
         "You can see that we've created a CSS class called \"blue-text\" within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>",
->>>>>>> d403204a3133042b8b7828f29ba1932674e71a66
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
         "Instead of creating a new <code>style</code> element, try removing the <code>h2</code> style declaration from your existing style element, then replace it with the class declaration for \".red-text\"."
       ],
