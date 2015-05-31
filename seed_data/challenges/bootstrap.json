@@ -1056,8 +1056,8 @@
         "You can use Bootstrap's <code>col-xs-*</code> classes on form elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is."
       ],
       "tests": [
-        "assert($('.row').length > 2, 'Wrap your all of your radio buttons inside one div with the class \"row\".')",
-        "assert($('.col-xs-6').length > 1, 'Wrap each of your radio buttons inside its own div with the class \"col-xs-6\".')"
+        "assert($('div.row:has(input[type=\\'radio\\'])').length > 0, 'Wrap all of your radio buttons inside one div with the class \"row\".')",
+        "assert($('div.col-xs-6:has(input[type=\\'radio\\'])').length > 1, 'Wrap each of your radio buttons inside its own div with the class \"col-xs-6\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
