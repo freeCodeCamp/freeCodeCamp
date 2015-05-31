@@ -16,7 +16,7 @@
         "To enable the \"Go to my next challenge\" button on this exercise, change your <code>h1</code> tag's text to say \"Hello World\" instead of \"Hello\"."
       ],
       "tests": [
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your h1 element should have the text \"Hello World\"')"
+        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
       ],
       "challengeSeed": [
         "<h1>Hello</h1>"
@@ -39,14 +39,15 @@
       "difficulty": 0.010,
       "description": [
         "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element.",
-        "The h2 element you enter will create an h2 element on the website.",
+        "The <code>h2</code> element you enter will create an <code>h2</code> element on the website.",
         "This element tells the browser how to render the text that it contains.",
         "<code>h2</code> elements are slightly smaller than <code>h1</code> elements. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements."
       ],
       "tests": [
-        "assert(($('h2').length > 0), 'Create an <code>h2</code> elements.')",
-        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your h2 element should have the text \"CatPhotoApp\"')",
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your h1 element should have the text \"Hello World\"')"
+        "assert(($('h2').length > 0), 'Create an <code>h2</code> element.')",
+        "assert(new RegExp('</h2>', 'gi').test(editor), 'Be sure to complete your <code>h2</code> element with a closing tag.')",
+        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\"')",
+        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>"
@@ -68,13 +69,14 @@
       "name": "Waypoint: Inform with the Paragraph Element",
       "difficulty": 0.011,
       "description": [
-        "Create a paragraph element below your h2 element, and give it the text \"Hello Paragraph\". As soon as you create the opening <code>&#60;p&#62;</code> tag, one of our tests will pass (since this is valid HTML). Be sure to close the element by adding a closing <code>&#60;/p&#62;</code> tag.",
-        "Paragraph elements are the preferred element for normal-sized paragraph text on websites.",
-        "You can create a paragraph element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
+        "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\".",
+        "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
+        "You can create a <code>p</code> element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert(($('p').length > 0), 'Create a paragraph element.')",
-        "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your paragraph element should have the text \"Hello Paragraph\"')"
+        "assert(($('p').length > 0), 'Create a <code>p</code> element.')",
+        "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your <code>p</code> element should have the text \"Hello Paragraph\".')",
+        "assert(new RegExp('</p>', 'gi').test(editor), 'Be sure to complete your <code>p</code> element with a closing tag.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -97,13 +99,13 @@
       "name": "Waypoint: Visually Separate Elements with Line Breaks",
       "difficulty": 0.012,
       "description": [
-        "Add a <code>line break</code> between the <code>&#60;h2&#62</code> and <code>&#60;p&#62</code> elements.",
-        "You can create a line break element with <code>&#60;br&#47&#62</code>.",
-        "Note that <code>&#60;br&#47&#62</code> has no closing tag. It is a <code>self-closing</code> element. See how a forward-slash precedes the closing bracket?",
-        "You'll encounter other <code>self-closing</code> element tags soon."
+        "Add a <code>br</code> element to your page, preferably between two of your elements.",
+        "<code>br</code> elements, also known as \"line break\" elements, can be created with <code>&#60;br&#62</code>.",
+        "Note that <code>&#60;br&#62</code> has no closing tag. It is a \"self-closing\" element.",
+        "You'll encounter other self-closing element tags soon."
       ],
       "tests": [
-        "assert(($('br').length > 0), 'You should have a br element between your h2 and paragraph elements.')"
+        "assert(($('br').length > 0), 'Add a <code>br</code> element to your page, preferably between two of your elements.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -127,15 +129,16 @@
       "name": "Waypoint: Uncomment HTML",
       "difficulty": 0.013,
       "description": [
-        "Uncomment the <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
+        "Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
         "Commenting is a way that you can leave comments within your code without affecting the code itself.",
         "Commenting is also a convenient way to make code inactive without having to delete it entirely.",
         "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>."
       ],
       "tests": [
-        "assert($('h1').length > 0, 'The h1 element should not be commented. It should be visible in the browser.')",
-        "assert($('h2').length > 0, 'The h2 element should not be commented. It should be visible in the browser.')",
-        "assert($('p').length > 0, 'The paragraph element should not be commented. It should be visible in the browser.')"
+        "assert($('h1').length > 0, 'Make your <code>h1</code> element visible on your page by uncommenting it.')",
+        "assert($('h2').length > 0, 'Make your <code>h2</code> element visible on your page by uncommenting it.')",
+        "assert($('p').length > 0, 'Make your <code>p</code> element visible on your page by uncommenting it.')",
+        "assert(!new RegExp('-->', 'gi').test(editor), 'Be sure to delete the <code>--&#62;</code> that ends the comment.')"
       ],
       "challengeSeed": [
         "<!--",
@@ -165,14 +168,14 @@
       "name": "Waypoint: Comment out HTML",
       "difficulty": 0.014,
       "description": [
-        "Comment out the <code>h1</code> element and the <code>p</code> element, but leave the <code>h2</code> element uncommented.",
+        "Comment out your <code>h1</code> element and your <code>p</code> element, but leave your <code>h2</code> element uncommented.",
         "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>.",
-        "Here you'll need to end the comment before the h2 element begins."
+        "Here you'll need to end the comment before your <code>h2</code> element begins."
       ],
       "tests": [
-        "assert(($('h1').length == 0), 'The h1 element should be commented. It should not be visible in the browser.')",
-        "assert(($('h2').length > 0), 'The h2 element should not commented. It should be visible in the browser.')",
-        "assert(($('p').length == 0), 'The paragraph element should be commented. It should not be visible in the browser.')"
+        "assert(($('h1').length === 0), 'Comment out your <code>h1</code> element so that it is not visible on your page.')",
+        "assert(($('h2').length > 0), 'Leave your <code>h2</code> element uncommented so that is not visible on your page.')",
+        "assert(($('p').length === 0), 'Comment out your <code>p</code> element so that it is not visible on your page.')"
       ],
       "challengeSeed": [
         "<!--",
@@ -202,14 +205,14 @@
       "name": "Waypoint: Fill in the Blank with Placeholder Text",
       "difficulty": 0.015,
       "description": [
-        "Change the text in the <code>p</code> element to use the first few words of <code>Kitty Ipsum</code> text.",
-        "Web developers traditionally use <code>Lorem Ipsum</code> as placeholder text. It's called Lorem Ipsum text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
-        "Lorem Ipsum text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
-        "Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called <a href='http://kittyipsum.com/'>Kitty Ipsum</a>!",
-        "Here are the first few words of Kitty Ipsum text, which you can copy and paste into the right position: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+        "Replace the text inside your <code>p</code> element with the first few words of the provided \"Ktty Ipsum\" text.",
+        "Web developers traditionally use \"Lorem Ipsum\" text as placeholder text. It's called \"Lorem Ipsum\" text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
+        "\"Lorem Ipsum\" text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
+        "Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called \"Kitty Ipsum\"!",
+        "Here are the first few words of \"Kitty Ipsum\" text, which you can copy and paste into the right position: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "tests": [
-        "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your paragraph element should contain the first few words of the famous Kitty Ipsum text.')"
+        "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your <code>p</code> element should contain the first few words of the provided \"Kitty Ipsum\" text.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -237,15 +240,15 @@
       "name": "Waypoint: Delete HTML Elements",
       "difficulty": 0.016,
       "description": [
-        "Delete the h1 and br elements so we can simplify our view.",
-        "Our phone doesn't have much space, for HTML elements.",
+        "Delete your <code>h1</code> and <code>br</code> elements so we can simplify our view.",
+        "Our phone doesn't have much vertical space.",
         "Let's remove the unnecessary elements so we can start building our CatPhotoApp."
       ],
       "tests": [
-        "assert(($('h1').length == 0), 'Delete the h1 element.')",
-        "assert(($('h2').length > 0), 'Leave the h2 element on the page.')",
-        "assert(($('br').length == 0), 'Delete the br element.')",
-        "assert(($('p').length > 0), 'Leave the paragraph element on the page.')"
+        "assert(($('h1').length == 0), 'Delete your <code>h1</code> element.')",
+        "assert(($('h2').length > 0), 'Leave your <code>h2</code> element on the page.')",
+        "assert(($('br').length == 0), 'Delete your <code>br</code> element.')",
+        "assert(($('p').length > 0), 'Leave your <code>p</code> element on the page.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -273,13 +276,13 @@
       "name": "Waypoint: Change the Color of Text",
       "difficulty": 0.017,
       "description": [
-        "Change the <code>h2</code> element's style so that its text color is red.",
-        "We can do this by changing the <code>style</code> of the <code>h2</code> element.",
+        "Change your <code>h2</code> element's style so that its text color is red.",
+        "We can do this by changing the \"style\" of your <code>h2</code> element.",
         "The style that is responsible for the color of an element's text is the \"color\" style.",
-        "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>"
+        "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
+        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')"
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
@@ -303,17 +306,17 @@
       "name": "Waypoint: Use CSS Selectors to Style Elements",
       "difficulty": 0.018,
       "description": [
-        "Delete your <code>h2</code> element's <code>style</code> tag and write the CSS to make all <code>h2</code> elements blue.",
-        "With CSS, there are hundreds of <code>CSS attributes</code> that you can use to change the way an element looks on a web page.",
-        "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;h2&#62;</code>, you were giving that individual h2 element an <code>inline style</code>",
-        "That's one way to add style to an element, but a better way is by using <code>Cascading Style Sheets (CSS)</code>.",
-        "At the top of your code, create a <code>style tag</code> like this: <code>&#60;style&#62;&#60;/style&#62;</code>",
-        "Inside that style element, you can create a <code>css selector</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
-        "Note that it's important to have <code>opening and closing curly braces</code> (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of your element's styles."
+        "Delete your <code>h2</code> element's style attribute and instead create a CSS <code>style</code> element. Add the necessary CSS to turn all <code>h2</code> elements blue.",
+        "With CSS, there are hundreds of CSS \"attributes\" that you can use to change the way an element looks on your page.",
+        "When you entered <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;h2&#62;</code>, you were giving that individual <code>h2</code> element an \"inline style\".",
+        "That's one way to add style to an element, but a better way is by using Cascading Style Sheets (CSS).",
+        "At the top of your code, create a <code>style</code> element like this: <code>&#60;style&#62;&#60;/style&#62;</code>",
+        "Inside that style element, you can create a \"CSS selector\" for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, your style element would look like this: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
+        "Note that it's important to have both opening and closing curly braces (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of your element's styles."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your h2 element should be blue.')",
-        "assert(!$('h2').attr('style'), 'You should remove the style attribute from your h2 element.')"
+        "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your <code>h2</code> element should be blue.')",
+        "assert(!$('h2').attr('style'), 'Remove the style attribute from your <code>h2</code> element.')"
       ],
       "challengeSeed": [
         "<h2 style='color: red'>CatPhotoApp</h2>",
@@ -341,14 +344,14 @@
         "Classes are reusable styles that can be added to HTML elements.",
         "Here's the anatomy of a CSS class:",
         "<img class='img-responsive' alt='a diagram of how style tags are composed, which is also described in detail on the following lines.' src='https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png'/>",
-        "You can see that we've created a CSS class called \"blue-text\" within the <code>&#60;style&#62;</code> tag.",
+        "Here you can see that we've created a CSS class called \"blue-text\" within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>",
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
-        "Instead of creating a new Style tag, try removing the h2 style declaration from the existing style element, and replace it with the class declaration for \".red-text\"."
+        "Instead of creating a new <code>style</code> element, try removing the <code>h2</code> style declaration from your existing style element, then replace it with the class declaration for \".red-text\"."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
-        "assert($('h2').hasClass('red-text'), 'You h2 element should have the class \"red-text\".')"
+        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')",
+        "assert($('h2').hasClass('red-text'), 'Your <code>h2</code> element should have the class \"red-text\".')"
       ],
       "challengeSeed": [
         "<style>",
@@ -378,14 +381,15 @@
       "name": "Waypoint: Style Multiple Elements with a CSS Class",
       "difficulty": 0.020,
       "description": [
-        "Apply the \"red-text\" class to the <code>h2</code> and <code>p</code> elements.",
-        "Remember that you can attach classes to HTML elements by using the <code>class=\"class\"</code> within the relevant element's opening tag."
+        "Apply the \"red-text\" class to your <code>h2</code> and <code>p</code> elements.",
+        "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
+        "Remember that CSS selectors require a period at the beginning like this: <code>.red-text { color: blue; }</code>, but that class declarations don't use a period, like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')",
-        "assert($('h2').hasClass('red-text'), 'You h2 element should have the class \"red-text\".')",
-        "assert($('p').css('color') === 'rgb(255, 0, 0)', 'Your paragraph element should be red.')",
-        "assert($('p').hasClass('red-text'), 'You paragraph element should have the class \"red-text\".')"
+        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')",
+        "assert($('h2').hasClass('red-text'), 'Your <code>h2</code> element should have the class \"red-text\".')",
+        "assert($('p').css('color') === 'rgb(255, 0, 0)', 'Your <code>p</code> element should be red.')",
+        "assert($('p').hasClass('red-text'), 'Your <code>p</code> element should have the class \"red-text\".')"
       ],
       "challengeSeed": [
         "<style>",
@@ -415,14 +419,15 @@
       "name": "Waypoint: Change the Font Size of an Element",
       "difficulty": 0.021,
       "description": [
-        "Create a second <code>p</code> element. Then, inside your <code>&#60;style&#62;</code> element, set the font size of all <code>p</code> elements to 16 pixels.",
-        "Font size is controlled by the <code>font-size</code> CSS attribute, like this: <code>h1 { font-size: 30px; }</code>.",
-        "First, create a second paragraph element with the following Kitty Ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
-        "See if you can figure out how to give both of your paragraph elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your \"red-text\" class."
+        "Create a second <code>p</code> element. Then, inside your <code>&#60;style&#62;</code> element, set the \"font-size\" of all <code>p</code> elements to 16 pixels.",
+        "Font size is controlled by the \"font-size\" CSS attribute, like this: <code>h1 { font-size: 30px; }</code>.",
+        "First, create a second <code>p</code> element with the following Kitty Ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+        "See if you can figure out how to give both of your <code>p</code> elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your \"red-text\" class."
       ],
       "tests": [
-        "assert($('p').length > 1, 'You need 2 paragraph elements with Kitty Ipsum text.')",
-        "assert($('p').css('font-size') === '16px', 'Your paragraph elements should have the font-size of 16px.')"
+        "assert($('p').length > 1, 'You need 2 <code>p</code> elements with Kitty Ipsum text.')",
+        "assert(editor.match(/<\\/p>/g).length > 1, 'Be sure that each of your <code>p</code> elements has a closing tag.')",
+        "assert($('p').css('font-size') === '16px', 'Give your <code>p</code> elements the font-size of 16px.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -452,12 +457,12 @@
       "name": "Waypoint: Set the Font Family of an Element",
       "difficulty": 0.022,
       "description": [
-        "Make all paragraph elements use the \"Monospace\" font.",
-        "You can set an element's font by using the <code>font-family</code> attribute.",
-        "For example, if you wanted to set your h2 element's font to \"Sans-serif\", you would use the following CSS: <code>h2 { font-family: 'Sans-serif'; }</code>"
+        "Make all of your <code>p</code> elements use the \"Monospace\" font.",
+        "You can set an element's font by using the \"font-family\" attribute.",
+        "For example, if you wanted to set your <code>h2</code> element's font to \"Sans-serif\", you would use the following CSS: <code>h2 { font-family: 'Sans-serif'; }</code>"
       ],
       "tests": [
-        "assert($('p').css('font-family').match(/monospace/i), 'Your paragraph elements should use the font \"Monospace\".')"
+        "assert($('p').css('font-family').match(/monospace/i), 'Your <code>p</code> elements should use the font \"Monospace\".')"
       ],
       "challengeSeed": [
         "<style>",
@@ -493,13 +498,15 @@
       "difficulty": 0.023,
       "description": [
         "Apply the <code>font-family</code> of \"Lobster\" to your <code>h2</code> element.",
-        "First, you'll need to make a <code>call</code> to Google to grab the \"Lobster\" font and load it into your HTML.",
+        "First, you'll need to make a \"call\" to Google to grab the \"Lobster\" font and load it into your HTML.",
         "Copy the following code snippet and paste it into your code editor above your <code>style</code> element:",
         "<code>&#60;link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'&#62;</code>",
         "Now you can set \"Lobster\" as a font-family attribute on your <code>h2</code> element."
       ],
       "tests": [
-        "assert($('h2').css('font-family').match(/lobster/i), 'Your h2 element should use the font \"Lobster\".')"
+        "assert(new RegExp('googleapis', 'gi').test(editor), 'Import the \"Lobster\" font.')",
+        "assert($('h2').css('font-family').match(/lobster/i), 'Your <code>h2</code> element should use the font \"Lobster\".')",
+        "assert($('p').css('font-family').match(/monospace/i), 'Your <code>p</code> element should still use the font \"Monospace\".')"
       ],
       "challengeSeed": [
         "<style>",
@@ -584,8 +591,8 @@
       "name": "Waypoint: Override Styles with Important",
       "difficulty": 0.025,
       "description": [
-        "Create a \"blue-text\" class that gives an element the font-color of blue. Also create a \"urgently-red\" class that give an element the font-color of red, but use <code>!important</code> to ensure the element is rendered as being red. Apply both classes to your <code>h2</code> element.",
-        "You can add more than one class to an element by seperating the class declarations with a space, like this: <code>&#60;h2 class='green-text giant-text'&#62;This will be giant green text&#60;/h2&#62;</code>.",
+        "Create a \"blue-text\" class that gives an element the font-color of blue. Also create an \"urgently-red\" class that gives an element the font-color of red, but add <code>!important</code> to the class to ensure the element is rendered as being red. Apply both classes to your <code>h2</code> element.",
+        "You can add more than one class to an element by separating the class declarations with a space, like this: <code>&#60;h2 class='green-text giant-text'&#62;This will be giant green text&#60;/h2&#62;</code>.",
         "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
         "If there's a conflict in the CSS, the browser will use whichever style declaration is closest to the bottom of the CSS document (whichever declaration comes last). Note that in-line style declarations are the final authority in how an HTML element will be rendered.",
         "There's one way to ensure that an element is rendered with a certain style, regardless of where that declaration is located. That one way is to use <code>!important</code>.",
@@ -594,9 +601,9 @@
         "Now see if you can make sure the h2 element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, or changing the sequence of CSS class declarations."
       ],
       "tests": [
-        "assert(new RegExp('.blue-text', 'gi').test(editor), 'Ensure you implemented the css class \".blue-text\"')",
-        "assert(new RegExp('.urgently-red', 'gi').test(editor), 'Ensure you implemented the css class \".urgently-red\"')",
-        "assert(new RegExp('red !important', 'gi').test(editor), 'Ensure you added the \"!important\" declaration!')",
+        "assert(new RegExp('.blue-text', 'gi').test(editor), 'Create the CSS class \"blue-text\"')",
+        "assert(new RegExp('.urgently-red', 'gi').test(editor), 'Create the CSS class \"urgently-red\"')",
+        "assert(new RegExp('red.?!important', 'gi').test(editor), 'Add the \"!important\" declaration!')",
         "assert($('h2').hasClass('blue-text'), 'Your h2 element should have the class \"blue-text\".')",
         "assert($('h2').hasClass('urgently-red'), 'Your h2 element should have the class \"urgently-red\".')",
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
@@ -737,14 +744,15 @@
       "name": "Waypoint: Add Borders Around your Elements",
       "difficulty": 0.028,
       "description": [
-        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply it to your cat photo.",
+        "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply that class to your cat photo.",
         "CSS borders have attributes like style, color and width.",
         "For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>."
       ],
       "tests": [
         "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
         "assert($('img').hasClass('thick-green-border'), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
-        "assert(parseInt($('img').css('border-width')) >= 9 && new RegExp('solid').test($('img').css('border-style')), 'You need to specify a border width of 10px and a border style of \"solid\".')"
+        "assert(parseInt($('img').css('border-top-width')), 'Give your image a border width of 10px.')",
+        "assert(new RegExp('border-style:.?solid', 'gi').test(editor), 'Give your image a border style of \"solid\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -969,15 +977,17 @@
       "name": "Waypoint: Wrap an Anchor Element within a Paragraph",
       "difficulty": 0.032,
       "description": [
-        "Now wrap your anchor element within a <code>paragraph</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
-        "Again, here's a diagram of an <code>anchor tag</code> for your reference:",
+        "Now wrap your anchor element within a <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
+        "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<img class='img-responsive' alt='a diagram of how anchor tags are composed with the same text as on the following line' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>"
       ],
       "tests": [
-        "assert((/photo/gi).test($('a').text()), 'You need an <code>anchor</code> element that links to \"catphotoapp.com\".')",
-        "assert($('a').filter(function(index) { return /photo/gi.test($('a')[index]); }).length === 1, 'Your <code>anchor</code> element should have the anchor text of \"cat photos\"')",
-        "assert($('a').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')"
+        "assert($('a').attr('href').match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
+        "assert($('a').text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
+        "assert($('a').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')",
+        "assert($('p').text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
+        "assert(editor.match(/<\\/p>/g).length > 2, 'Be sure that each of your <code>p</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1102,8 +1112,9 @@
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "tests": [
-        "expect($('a').children('img').length, 'Wrap your image element inside an anchor element that has its <code>href</code> attribute set to \"#\"').to.equal(1);",
-        "expect(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Make sure to specify the \"src\" attribute as \"#\"').to.be.true;"
+        "assert(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Your <code>anchor</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')",
+        "assert($('a').children('img').length > 0, 'Wrap your image element inside an anchor element.')",
+        "assert(editor.match(/<\\/a>/g).length > 1, 'Be sure that each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1285,7 +1296,7 @@
       "name": "Waypoint: Create an Ordered List",
       "difficulty": 0.037,
       "description": [
-        "Create an <code>ordered list</code> of the the top 3 things cats hate the most.",
+        "Create an <code>ordered list</code> of the top 3 things cats hate the most.",
         "HTML has a special element for creating ordered lists, or numbered-style lists.",
         "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
         "For example: <code>&#60;ol&#62;&#60;li&#62;hydrogen&#60;/li&#62;&#60;li&#62;helium&#60;/li&#62;&#60;ol&#62;</code> would create a numbered list of \"hydrogen\" and \"helium\"."
@@ -1504,7 +1515,9 @@
       ],
       "tests": [
         "assert($('form').length > 0, 'Wrap your text input element within a <code>form</code> element.')",
-        "assert($('form').attr('action'), 'Your <code>form</code> element should have an <code>action</code> attribute.')"
+        "assert($('form').attr('action'), 'Your <code>form</code> element should have an <code>action</code> attribute.')",
+        "assert(editor.match(/<\\/form>/g), 'Make sure your <code>form</code> elements has a closing tag.')",
+        "assert(editor.match(/\\/submit-cat-photo/ig), 'Make sure your <code>form</code> action is set to <code>/submit-cat-photo</code>.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1573,10 +1586,13 @@
       "description": [
         "Add a submit button to your form field with type <code>submit</code> and a test value of \"Submit\".",
         "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
-        "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;<code>"
+        "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;</code>"
       ],
       "tests": [
-        "assert(new RegExp('<button type=.submit.>Submit</button>', 'gi').test(editor), 'Make sure you have completely declared your button!');"
+        "assert($('form').children('button').length > 0, 'Your form should have a button inside it.')",
+        "assert($('button').attr('type') === 'submit', 'Your submit button should have be of input type \"submit\".')",
+        "assert($('button').text().match(/submit/gi), 'Your submit button should have the text \"submit\".')",
+        "assert(editor.match(/<\\/button>/g), 'Be sure that your <code>button</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -2104,7 +2120,7 @@
       "description": [
         "Change the <code>margin</code> of the green box to match that of the red box.",
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
-        "Here, we can see that the green box and the red box and the green box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
+        "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
         "When you increase the green box's <code>margin</code>, it will increase the distance between its border and surrounding elements."
       ],
       "tests": [
@@ -2420,8 +2436,7 @@
       "description": [
         "Let's try this again, but with <code>margin</code> this time. Use <code>Clockwise Notation</code> to give an element a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> attributes, you can specify them all in one line, like this: <code>margin: 10px 20px 10px 20px;</code>.",
-        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
-        "You can also use this notation for margins!"
+        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions."
       ],
       "tests": [
         "assert($('.green-box').css('margin-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of margin.')",

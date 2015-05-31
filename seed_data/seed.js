@@ -2,17 +2,19 @@ require('dotenv').load();
 var Challenge = require('../models/Challenge.js'),
   FieldGuide = require('../models/FieldGuide.js'),
   Nonprofit = require('../models/Nonprofit.js'),
+  Job = require('../models/Job.js'),
   mongoose = require('mongoose'),
   secrets = require('../config/secrets'),
   fieldGuides = require('./field-guides.json'),
   nonprofits = require('./nonprofits.json'),
+  jobs = require('./jobs.json'),
   fs = require('fs');
 
 mongoose.connect(secrets.db);
 var challenges = fs.readdirSync(__dirname + '/challenges');
 
 var counter = 0;
-var offerings = 2 + challenges.length;
+var offerings = 3 + challenges.length;
 
 var CompletionMonitor = function() {
   counter++;
@@ -42,6 +44,7 @@ Challenge.remove({}, function(err, data) {
     });
   });
 });
+
 FieldGuide.remove({}, function(err, data) {
   if (err) {
     console.error(err);
@@ -74,4 +77,21 @@ Nonprofit.remove({}, function(err, data) {
     CompletionMonitor();
   });
   console.log('nonprofits');
+});
+
+Job.remove({}, function(err, data) {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log('Deleted ', data);
+  }
+  Job.create(jobs, function(err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Saved ', data);
+    }
+    CompletionMonitor();
+  });
+  console.log('jobs');
 });

@@ -17,7 +17,7 @@ $(document).ready(function() {
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
   $('#i-want-help').on('click', function() {
-    /*
+    $('#help-modal').modal('hide');
     var editorValue = editor.getValue();
     var currentLocation = window.location.href;
     $.post(
@@ -34,11 +34,10 @@ $(document).ready(function() {
         }
       }
     );
-    */
   });
 
   $('#i-want-help-editorless').on('click', function() {
-    /*
+    $('#help-editorless-modal').modal('hide');
     var currentLocation = window.location.href;
     $.post(
       '/get-help',
@@ -53,14 +52,15 @@ $(document).ready(function() {
         }
       }
     );
-    */
   });
 
   $('#report-issue').on('click', function() {
-    window.open('https://github.com/freecodecamp/freecodecamp/issues/new?title=Challenge '+ window.location.href +' has an issue &body=Please%20tell%20us%20in%20detail%20here%20how%20we%20can%20make%20this%20challenge%20better.', '_blank')
+    $('#issue-modal').modal('hide');
+    window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screen shots if possible.', '_blank')
   });
 
   $('#i-want-to-pair').on('click', function() {
+    $('#pair-modal').modal('hide');
     var currentLocation = window.location.href;
     $.post(
       '/get-pair',
@@ -138,6 +138,26 @@ $(document).ready(function() {
     $('#complete-courseware-dialog').modal('show');
   });
 
+  $('#completed-courseware-editorless').on('click', function() {
+    $('#complete-courseware-editorless-dialog').modal('show');
+  });
+
+  $('#trigger-pair-modal').on('click', function() {
+    $('#pair-modal').modal('show');
+  });
+
+  $('#trigger-help-modal').on('click', function() {
+    $('#help-modal').modal('show');
+  });
+
+  $('#trigger-help-editorless-modal').on('click', function() {
+    $('#help-editorless-modal').modal('show');
+  });
+
+  $('#trigger-issue-modal').on('click', function() {
+    $('#issue-modal').modal('show');
+  });
+
   $('#completed-zipline-or-basejump').on('click', function() {
     $('#complete-zipline-or-basejump-dialog').modal('show');
   });
@@ -145,6 +165,11 @@ $(document).ready(function() {
   $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
     editor.focus();
   });
+
+  $('#complete-challenge-dialog').on('hidden.bs.modal', function() {
+    editor.focus();
+  });
+
   var challengeTypes = {
     'HTML_CSS_JQ': 0,
     'JAVASCRIPT': 1,
@@ -160,7 +185,6 @@ $(document).ready(function() {
         case challengeTypes.HTML_CSS_JQ:
         case challengeTypes.JAVASCRIPT:
         case challengeTypes.VIDEO:
-          console.log(challenge_Id);
           $.post(
             '/completed-challenge/',
             {

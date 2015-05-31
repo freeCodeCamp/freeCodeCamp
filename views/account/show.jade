@@ -23,15 +23,15 @@ block content
                         else
                             img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
                         h1.text-center.negative-5.profile-social-icons
-                            - if (twitterHandle)
+                            if (twitterHandle)
                                 a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}", target='_blank')
-                            - if (githubProfile)
+                            if (githubProfile)
                                 a.fa.fa-github-square.text-primary(title="@#{username}'s GitHub Profile", href=githubProfile, target='_blank')
-                            - if (codepenProfile)
+                            if (codepenProfile)
                                 a.ion-social-codepen.text-primary(title="@#{username}'s CodePen Profile", href=codepenProfile, target='_blank')
-                            - if (linkedinProfile)
+                            if (linkedinProfile)
                                 a.fa.fa-linkedin-square.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedinProfile, target='_blank')
-                            - if (facebookProfile)
+                            if (facebookProfile)
                                 a.fa.fa-facebook-square.text-primary(title="@#{username}'s Facebook Profile", href=facebookProfile, target='_blank')
                     .visible-md.visible-lg
                         .col-xs-12.col-sm-12.col-md-4.text-justify
@@ -137,7 +137,7 @@ block content
                                 h4.col-sm-6.text-left Current Streak: #{currentStreak}
 
 
-                    - if (challenges.length > 0)
+                    if (challenges.length > 0)
                         .col-sm-12
                             table.table.table-striped
                                 thead
@@ -154,7 +154,7 @@ block content
                                             a(href=challenge.solution, target='_blank') View my solution
 
                         br
-                    - if (bonfires.length > 0)
+                    if (bonfires.length > 0)
                         .col-sm-12
                             table.table.table-striped
                                 thead
