@@ -449,7 +449,10 @@ module.exports = {
       return allFieldGuideNames;
     } else {
       allFieldGuideNames = fieldGuides.map(function (elem) {
-        return { name: elem.name, id: elem._id };
+        return {
+          name: elem.name,
+          dashedName: elem.dashedName,
+          id: elem._id };
       });
       return allFieldGuideNames;
     }
