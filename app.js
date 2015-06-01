@@ -381,7 +381,7 @@ app.get('/api/slack', function(req, res) {
       };
 
       var options = {
-        url: 'https://freecode.slack.com/api/users.admin.invite',
+        url: 'https://freecodecamp.slack.com/api/users.admin.invite',
         method: 'POST',
         headers: headers,
         form: invite
