@@ -1,6 +1,6 @@
 var moment = require('moment'),
-  Job = require('./../models/Job'),
-  resources = require('./resources');
+  Job = require('./../../models/Job'),
+  resources = require('./../resources/resources');
 
 exports.jobsDirectory = function(req, res, next) {
   Job.find({}, function(err, jobs) {

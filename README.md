@@ -126,7 +126,7 @@ Project Structure
 | **views/partials**/footer.jade     | Footer partial template.                                    |
 | **views**/layout.jade              | Base template.                                              |
 | **views**/home.jade                | Home page template.                                         |
-| app.js                             | Main application file.                                      |
+| server.js                             | Main application file.                                      |
 
 
 List of Packages
@@ -155,7 +155,7 @@ List of Packages
 | github-api                      | GitHub API library.                                                  |
 | jade                            | Template engine for Express.                                         |
 | less                            | LESS compiler. Used implicitly by connect-assets.                    |
-| helmet                          | Restricts Cross site requests. You can modify its settings in app.js |
+| helmet                          | Restricts Cross site requests. You can modify its settings in server.js |
 | mongoose                        | MongoDB ODM.                                                         |
 | nodemailer                      | Node.js library for sending emails.                                  |
 | passport                        | Simple and elegant authentication library for node.js                |

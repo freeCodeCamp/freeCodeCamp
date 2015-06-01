@@ -1,6 +1,6 @@
 var moment = require('moment'),
-    Nonprofit = require('./../models/Nonprofit'),
-    resources = require('./resources');
+    Nonprofit = require('./../../models/Nonprofit'),
+    resources = require('./../resources/resources');
 
 exports.nonprofitsDirectory = function(req, res, next) {
   Nonprofit.find({estimatedHours: { $gt: 0 } }, function(err, nonprofits) {

@@ -31,10 +31,10 @@
  */
 
 var R = require('ramda'),
-    Challenge = require('./../models/Challenge'),
-    User = require('./../models/User'),
-    resources = require('./resources'),
-    MDNlinks = require('./../seed_data/bonfireMDNlinks');
+    Challenge = require('./../../models/Challenge'),
+    User = require('./../../models/User'),
+    resources = require('./../resources/resources'),
+    MDNlinks = require('./../../seed_data/bonfireMDNlinks');
 
 var challengeMapWithNames = resources.getChallengeMapWithNames();
 var challengeMapWithIds = resources.getChallengeMapWithIds();

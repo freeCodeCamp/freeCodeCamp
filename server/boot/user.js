@@ -3,68 +3,62 @@ var _ = require('lodash'),
   crypto = require('crypto'),
   nodemailer = require('nodemailer'),
   passport = require('passport'),
-  User = require('../models/User'),
-  secrets = require('../config/secrets'),
+  User = require('../../models/User'),
+  secrets = require('../../config/secrets'),
   moment = require('moment'),
   debug = require('debug')('freecc:cntr:userController'),
-  resources = require('./resources'),
+  resources = require('./../resources/resources'),
   R = require('ramda');
 
 
-
-/**
- *
- * @param req
- * @param res
- * @returns null
- * Middleware to migrate users from fragmented challenge structure to unified
- * challenge structure
- */
-exports.userMigration = function(req, res, next) {
-  if (req.user && req.user.completedChallenges.length === 0) {
-    req.user.completedChallenges = R.filter(function (elem) {
-      return elem; // getting rid of undefined
-    }, R.concat(
-      req.user.completedCoursewares,
-      req.user.completedBonfires.map(function (bonfire) {
-        return ({
-          completedDate: bonfire.completedDate,
-          _id: bonfire._id,
-          name: bonfire.name,
-          completedWith: bonfire.completedWith,
-          solution: bonfire.solution,
-          githubLink: '',
-          verified: false,
-          challengeType: 5
-        });
-      })
-    ));
-    next();
-  } else {
-    next();
-  }
-};
+router.get('/login', function(req, res) {
+  res.redirect(301, '/signin');
+});
+router.get('/logout', function(req, res) {
+  res.redirect(301, '/signout');
+});
+router.get('/signin', getSignin);
+router.post('/signin', postSignin);
+router.get('/signout', signout);
+router.get('/forgot', getForgot);
+router.post('/forgot', postForgot);
+router.get('/reset/:token', getReset);
+router.post('/reset/:token', postReset);
+router.get('/email-signup', getEmailSignup);
+router.get('/email-signin', getEmailSignin);
+router.post('/email-signup', postEmailSignup);
+router.post('/email-signin', postSignin);
+router.get('/account/api', getAccountAngular);
+router.get('/api/checkUniqueUsername/:username', checkUniqueUsername);
+router.get('/api/checkExistingUsername/:username', checkExistingUsername);
+router.get('/api/checkUniqueEmail/:email', checkUniqueEmail);
+router.post('/account/profile', postUpdateProfile);
+router.post('/account/password', postUpdatePassword);
+router.post('/account/delete', postDeleteAccount);
+router.get('/account/unlink/:provider', getOauthUnlink);
+router.get('/account', getAccount);
+router.get('/:username', returnUser); // Ensure this is the last route!
 
 /**
  * GET /signin
  * Siginin page.
  */
 
-exports.getSignin = function(req, res) {
+function getSignin (req, res) {
   if (req.user) {
     return res.redirect('/');
   }
   res.render('account/signin', {
     title: 'Free Code Camp Login'
   });
-};
+}
 
 /**
  * POST /signin
  * Sign in using email and password.
  */
 
-exports.postSignin = function(req, res, next) {
+function postSignin (req, res, next) {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password cannot be blank').notEmpty();
 
@@ -97,53 +91,52 @@ exports.postSignin = function(req, res, next) {
       return res.redirect(req.session.returnTo || '/');
     });
   })(req, res, next);
-};
+}
 
 /**
  * GET /signout
  * Log out.
  */
 
-exports.signout = function(req, res) {
+function signout (req, res) {
   req.logout();
   res.redirect('/');
-};
+}
 
 /**
  * GET /email-signup
  * Signup page.
  */
 
-exports.getEmailSignin = function(req, res) //noinspection Eslint
-{
+function getEmailSignin (req, res) {
   if (req.user) {
     return res.redirect('/');
   }
   res.render('account/email-signin', {
     title: 'Sign in to your Free Code Camp Account'
   });
-};
+}
 
 /**
  * GET /signin
  * Signup page.
  */
 
-exports.getEmailSignup = function(req, res) {
+function getEmailSignup (req, res) {
   if (req.user) {
     return res.redirect('/');
   }
   res.render('account/email-signup', {
     title: 'Create Your Free Code Camp Account'
   });
-};
+}
 
 /**
  * POST /email-signup
  * Create a new local account.
  */
 
-exports.postEmailSignup = function(req, res, next) {
+function postEmailSignup (req, res, next) {
   req.assert('email', 'valid email required').isEmail();
   var errors = req.validationErrors();
 
@@ -237,34 +230,34 @@ exports.postEmailSignup = function(req, res, next) {
       });
     });
   });
-};
+}
 
 /**
  * GET /account
  * Profile page.
  */
 
-exports.getAccount = function(req, res) {
+function getAccount (req, res) {
   res.render('account/account', {
     title: 'Manage your Free Code Camp Account'
   });
-};
+}
 
 /**
  * Angular API Call
  */
 
-exports.getAccountAngular = function(req, res) {
+function getAccountAngular (req, res) {
   res.json({
     user: req.user
   });
-};
+}
 
 /**
  * Unique username check API Call
  */
 
-exports.checkUniqueUsername = function(req, res, next) {
+function checkUniqueUsername (req, res, next) {
   User.count(
     { 'profile.username': req.params.username.toLowerCase() },
     function (err, data) {
@@ -275,12 +268,12 @@ exports.checkUniqueUsername = function(req, res, next) {
       return res.send(false);
     }
   });
-};
+}
 
 /**
  * Existing username check
  */
-exports.checkExistingUsername = function(req, res, next) {
+function checkExistingUsername (req, res, next) {
   User.count(
     { 'profile.username': req.params.username.toLowerCase() },
     function (err, data) {
@@ -292,13 +285,13 @@ exports.checkExistingUsername = function(req, res, next) {
       }
     }
   );
-};
+}
 
 /**
  * Unique email check API Call
  */
 
-exports.checkUniqueEmail = function(req, res, next) {
+function checkUniqueEmail (req, res, next) {
   User.count(
     { email: decodeURIComponent(req.params.email).toLowerCase() },
     function (err, data) {
@@ -310,7 +303,7 @@ exports.checkUniqueEmail = function(req, res, next) {
       }
     }
   );
-};
+}
 
 
 /**
@@ -318,7 +311,7 @@ exports.checkUniqueEmail = function(req, res, next) {
  * Public Profile page.
  */
 
-exports.returnUser = function(req, res, next) {
+function returnUser (req, res, next) {
   User.find(
     { 'profile.username': req.params.username.toLowerCase() },
     function(err, user) {
@@ -445,37 +438,14 @@ exports.returnUser = function(req, res, next) {
       }
     }
   );
-};
-
-
-/**
- * POST /update-progress
- * Update profile information.
- */
-
-exports.updateProgress = function(req, res, next) {
-  User.findById(req.user.id, function(err, user) {
-    if (err) { return next(err); }
-    user.email = req.body.email || '';
-    user.profile.name = req.body.name || '';
-    user.profile.gender = req.body.gender || '';
-    user.profile.location = req.body.location || '';
-    user.profile.website = req.body.website || '';
-
-    user.save(function(err) {
-      if (err) { return next(err); }
-      req.flash('success', { msg: 'Profile information updated.' });
-      res.redirect('/account');
-    });
-  });
-};
+}
 
 /**
  * POST /account/profile
  * Update profile information.
  */
 
-exports.postUpdateProfile = function(req, res, next) {
+function postUpdateProfile (req, res, next) {
 
   User.findById(req.user.id, function(err) {
     if (err) { return next(err); }
@@ -558,14 +528,14 @@ exports.postUpdateProfile = function(req, res, next) {
       );
     });
   });
-};
+}
 
 /**
  * POST /account/password
  * Update current password.
  */
 
-exports.postUpdatePassword = function(req, res, next) {
+function postUpdatePassword (req, res, next) {
   req.assert('password', 'Password must be at least 4 characters long').len(4);
   req.assert('confirmPassword', 'Passwords do not match')
     .equals(req.body.password);
@@ -589,28 +559,28 @@ exports.postUpdatePassword = function(req, res, next) {
       res.redirect('/account');
     });
   });
-};
+}
 
 /**
  * POST /account/delete
  * Delete user account.
  */
 
-exports.postDeleteAccount = function(req, res, next) {
+function postDeleteAccount (req, res, next) {
   User.remove({ _id: req.user.id }, function(err) {
     if (err) { return next(err); }
     req.logout();
     req.flash('info', { msg: 'Your account has been deleted.' });
     res.redirect('/');
   });
-};
+}
 
 /**
  * GET /account/unlink/:provider
  * Unlink OAuth provider.
  */
 
-exports.getOauthUnlink = function(req, res, next) {
+function getOauthUnlink (req, res, next) {
   var provider = req.params.provider;
   User.findById(req.user.id, function(err, user) {
     if (err) { return next(err); }
@@ -627,14 +597,14 @@ exports.getOauthUnlink = function(req, res, next) {
       res.redirect('/account');
     });
   });
-};
+}
 
 /**
  * GET /reset/:token
  * Reset Password page.
  */
 
-exports.getReset = function(req, res, next) {
+function getReset (req, res, next) {
   if (req.isAuthenticated()) {
     return res.redirect('/');
   }
@@ -654,14 +624,14 @@ exports.getReset = function(req, res, next) {
         token: req.params.token
       });
     });
-};
+}
 
 /**
  * POST /reset/:token
  * Process the reset password request.
  */
 
-exports.postReset = function(req, res, next) {
+function postReset (req, res, next) {
   var errors = req.validationErrors();
 
   if (errors) {
@@ -728,28 +698,28 @@ exports.postReset = function(req, res, next) {
     if (err) { return next(err); }
     res.redirect('/');
   });
-};
+}
 
 /**
  * GET /forgot
  * Forgot Password page.
  */
 
-exports.getForgot = function(req, res) {
+function getForgot (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect('/');
   }
   res.render('account/forgot', {
     title: 'Forgot Password'
   });
-};
+}
 
 /**
  * POST /forgot
  * Create a random token, then the send user an email with a reset link.
  */
 
-exports.postForgot = function(req, res, next) {
+function postForgot (req, res, next) {
   var errors = req.validationErrors();
 
   if (errors) {
@@ -826,4 +796,6 @@ exports.postForgot = function(req, res, next) {
     if (err) { return next(err); }
     res.redirect('/forgot');
   });
-};
+}
+
+module.exports = router;

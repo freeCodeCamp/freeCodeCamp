@@ -1,16 +1,33 @@
 /* eslint-disable no-catch-shadow, no-unused-vars */
 var R = require('ramda'),
   debug = require('debug')('freecc:cntr:story'),
-  Story = require('./../models/Story'),
-  Comment = require('./../models/Comment'),
-  User = require('./../models/User'),
+  Story = require('./../../models/Story'),
+  Comment = require('./../../models/Comment'),
+  User = require('./../../models/User'),
   moment = require('moment'),
-  resources = require('./resources'),
+  resources = require('./../resources/resources'),
   mongodb = require('mongodb'),
   MongoClient = mongodb.MongoClient,
-  secrets = require('../config/secrets'),
+  secrets = require('../../config/secrets'),
   nodemailer = require('nodemailer'),
-  sanitizeHtml = require('sanitize-html');
+  sanitizeHtml = require('sanitize-html'),
+  express = require('express'),
+  router = express.Router();
+
+router.get('/stories/hotStories', hotJSON);
+router.get('/stories/recentStories', recentJSON);
+router.get('/stories/comments/:id', comments);
+router.post('/stories/comment/', commentSubmit);
+router.post('/stories/comment/:id/comment', commentOnCommentSubmit);
+router.put('/stories/comment/:id/edit', commentEdit);
+router.get('/stories/submit', submitNew);
+router.get('/stories/submit/new-story', preSubmit);
+router.post('/stories/preliminary', newStory);
+router.post('/stories/', storySubmission);
+router.get('/news/', hot);
+router.post('/stories/search', getStories);
+router.get('/news/:storyName', returnIndividualStory);
+router.post('/stories/upvote/', upvote);
 
 function hotRank(timeValue, rank) {
   /*
@@ -27,7 +44,7 @@ function hotRank(timeValue, rank) {
 
 }
 
-exports.hotJSON = function(req, res, next) {
+function hotJSON(req, res, next) {
   var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
   story.exec(function(err, stories) {
     if (err) {
@@ -45,9 +62,9 @@ exports.hotJSON = function(req, res, next) {
     }).slice(0, sliceVal));
 
   });
-};
+}
 
-exports.recentJSON = function(req, res, next) {
+function recentJSON(req, res, next) {
   var story = Story.find({}).sort({'timePosted': -1}).limit(100);
   story.exec(function(err, stories) {
     if (err) {
@@ -55,37 +72,37 @@ exports.recentJSON = function(req, res, next) {
     }
     return res.json(stories);
   });
-};
+}
 
-exports.hot = function(req, res) {
+function hot(req, res) {
   return res.render('stories/index', {
     title: 'Hot stories currently trending on Camper News',
     page: 'hot'
   });
-};
+}
 
-exports.submitNew = function(req, res) {
+function submitNew(req, res) {
   return res.render('stories/index', {
     title: 'Submit a new story to Camper News',
     page: 'submit'
   });
-};
+}
 
-exports.search = function(req, res) {
+function search(req, res) {
   return res.render('stories/index', {
     title: 'Search the archives of Camper News',
     page: 'search'
   });
-};
+}
 
-exports.recent = function(req, res) {
+function recent(req, res) {
   return res.render('stories/index', {
     title: 'Recently submitted stories on Camper News',
     page: 'recent'
   });
-};
+}
 
-exports.preSubmit = function(req, res) {
+function preSubmit(req, res) {
 
   var data = req.query;
   var cleanData = sanitizeHtml(data.url, {
@@ -113,10 +130,10 @@ exports.preSubmit = function(req, res) {
     storyImage: image,
     storyMetaDescription: description
   });
-};
+}
 
 
-exports.returnIndividualStory = function(req, res, next) {
+function returnIndividualStory(req, res, next) {
   var dashedName = req.params.storyName;
 
   var storyName = dashedName.replace(/\-/g, ' ').trim();
@@ -130,7 +147,7 @@ exports.returnIndividualStory = function(req, res, next) {
     if (story.length < 1) {
       req.flash('errors', {
         msg: "404: We couldn't find a story with that name. " +
-          'Please double check the name.'
+        'Please double check the name.'
       });
 
       return res.redirect('/news/');
@@ -173,9 +190,9 @@ exports.returnIndividualStory = function(req, res, next) {
       hasUserVoted: userVoted
     });
   });
-};
+}
 
-exports.getStories = function(req, res, next) {
+function getStories(req, res, next) {
   MongoClient.connect(secrets.db, function(err, database) {
     if (err) {
       return next(err);
@@ -215,9 +232,9 @@ exports.getStories = function(req, res, next) {
       return res.sendStatus(404);
     });
   });
-};
+}
 
-exports.upvote = function(req, res, next) {
+function upvote(req, res, next) {
   var data = req.body.data;
   Story.find({'_id': data.id}, function(err, story) {
     if (err) {
@@ -252,9 +269,9 @@ exports.upvote = function(req, res, next) {
     });
     return res.send(story);
   });
-};
+}
 
-exports.comments = function(req, res, next) {
+function comments(req, res, next) {
   var data = req.params.id;
   Comment.find({'_id': data}, function(err, comment) {
     if (err) {
@@ -263,9 +280,9 @@ exports.comments = function(req, res, next) {
     comment = comment.pop();
     return res.send(comment);
   });
-};
+}
 
-exports.newStory = function(req, res, next) {
+function newStory(req, res, next) {
   if (!req.user) {
     return next(new Error('Must be logged in'));
   }
@@ -322,9 +339,9 @@ exports.newStory = function(req, res, next) {
       });
     }
   }
-};
+}
 
-exports.storySubmission = function(req, res, next) {
+function storySubmission(req, res, next) {
   var data = req.body.data;
   if (!req.user) {
     return next(new Error('Not authorized'));
@@ -393,189 +410,190 @@ exports.storySubmission = function(req, res, next) {
       }));
     });
   });
-};
+}
 
-  exports.commentSubmit = function(req, res, next) {
-    var data = req.body.data;
-    if (!req.user) {
+function commentSubmit(req, res, next) {
+  var data = req.body.data;
+  if (!req.user) {
+    return next(new Error('Not authorized'));
+  }
+  var sanitizedBody = sanitizeHtml(data.body,
+    {
+      allowedTags: [],
+      allowedAttributes: []
+    }).replace(/&quot;/g, '"');
+  if (data.body !== sanitizedBody) {
+    req.flash('errors', {
+      msg: 'HTML is not allowed'
+    });
+    return res.send(true);
+  }
+  var comment = new Comment({
+    associatedPost: data.associatedPost,
+    originalStoryLink: data.originalStoryLink,
+    originalStoryAuthorEmail: data.originalStoryAuthorEmail,
+    body: sanitizedBody,
+    rank: 0,
+    upvotes: 0,
+    author: {
+      picture: req.user.profile.picture,
+      userId: req.user._id,
+      username: req.user.profile.username,
+      email: req.user.email
+    },
+    comments: [],
+    topLevel: true,
+    commentOn: Date.now()
+  });
+
+  commentSave(comment, Story, res, next);
+}
+
+function commentOnCommentSubmit(req, res, next) {
+  var data = req.body.data;
+  if (!req.user) {
+    return next(new Error('Not authorized'));
+  }
+
+  var sanitizedBody = sanitizeHtml(data.body,
+    {
+      allowedTags: [],
+      allowedAttributes: []
+    }).replace(/&quot;/g, '"');
+  if (data.body !== sanitizedBody) {
+    req.flash('errors', {
+      msg: 'HTML is not allowed'
+    });
+    return res.send(true);
+  }
+  var comment = new Comment({
+    associatedPost: data.associatedPost,
+    body: sanitizedBody,
+    rank: 0,
+    upvotes: 0,
+    originalStoryLink: data.originalStoryLink,
+    originalStoryAuthorEmail: data.originalStoryAuthorEmail,
+    author: {
+      picture: req.user.profile.picture,
+      userId: req.user._id,
+      username: req.user.profile.username,
+      email: req.user.email
+    },
+    comments: [],
+    topLevel: false,
+    commentOn: Date.now()
+  });
+  commentSave(comment, Comment, res, next);
+}
+
+function commentEdit(req, res, next) {
+
+  Comment.find({'_id': req.params.id}, function(err, cmt) {
+    if (err) {
+      return next(err);
+    }
+    cmt = cmt.pop();
+
+    if (!req.user && cmt.author.userId !== req.user._id) {
       return next(new Error('Not authorized'));
     }
-    var sanitizedBody = sanitizeHtml(data.body,
-      {
-        allowedTags: [],
-        allowedAttributes: []
-      }).replace(/&quot;/g, '"');
-    if (data.body !== sanitizedBody) {
+
+
+    var sanitizedBody = sanitizeHtml(req.body.body, {
+      allowedTags: [],
+      allowedAttributes: []
+    }).replace(/&quot;/g, '"');
+    if (req.body.body !== sanitizedBody) {
       req.flash('errors', {
         msg: 'HTML is not allowed'
       });
       return res.send(true);
     }
-    var comment = new Comment({
-      associatedPost: data.associatedPost,
-      originalStoryLink: data.originalStoryLink,
-      originalStoryAuthorEmail: data.originalStoryAuthorEmail,
-      body: sanitizedBody,
-      rank: 0,
-      upvotes: 0,
-      author: {
-        picture: req.user.profile.picture,
-        userId: req.user._id,
-        username: req.user.profile.username,
-        email: req.user.email
-      },
-      comments: [],
-      topLevel: true,
-      commentOn: Date.now()
-    });
 
-    commentSave(comment, Story, res, next);
-  };
-
-  exports.commentOnCommentSubmit = function(req, res, next) {
-    var data = req.body.data;
-    if (!req.user) {
-      return next(new Error('Not authorized'));
-    }
-
-    var sanitizedBody = sanitizeHtml(data.body,
-      {
-        allowedTags: [],
-        allowedAttributes: []
-      }).replace(/&quot;/g, '"');
-    if (data.body !== sanitizedBody) {
-      req.flash('errors', {
-        msg: 'HTML is not allowed'
-      });
-      return res.send(true);
-    }
-    var comment = new Comment({
-      associatedPost: data.associatedPost,
-      body: sanitizedBody,
-      rank: 0,
-      upvotes: 0,
-      originalStoryLink: data.originalStoryLink,
-      originalStoryAuthorEmail: data.originalStoryAuthorEmail,
-      author: {
-        picture: req.user.profile.picture,
-        userId: req.user._id,
-        username: req.user.profile.username,
-        email: req.user.email
-      },
-      comments: [],
-      topLevel: false,
-      commentOn: Date.now()
-    });
-    commentSave(comment, Comment, res, next);
-  };
-
-  exports.commentEdit = function(req, res, next) {
-
-    Comment.find({'_id': req.params.id}, function(err, cmt) {
+    cmt.body = sanitizedBody;
+    cmt.commentOn = Date.now();
+    cmt.save(function (err) {
       if (err) {
         return next(err);
       }
-      cmt = cmt.pop();
+      res.send(true);
+    });
 
-      if (!req.user && cmt.author.userId !== req.user._id) {
-        return next(new Error('Not authorized'));
-      }
+  });
 
+}
 
-      var sanitizedBody = sanitizeHtml(req.body.body, {
-        allowedTags: [],
-        allowedAttributes: []
-      }).replace(/&quot;/g, '"');
-      if (req.body.body !== sanitizedBody) {
-        req.flash('errors', {
-          msg: 'HTML is not allowed'
-        });
-        return res.send(true);
-      }
-
-      cmt.body = sanitizedBody;
-      cmt.commentOn = Date.now();
-      cmt.save(function (err) {
+function commentSave(comment, Context, res, next) {
+  comment.save(function(err, data) {
+    if (err) {
+      return next(err);
+    }
+    try {
+      // Based on the context retrieve the parent
+      // object of the comment (Story/Comment)
+      Context.find({'_id': data.associatedPost}, function (err, associatedContext) {
         if (err) {
           return next(err);
         }
-        res.send(true);
-      });
-
-    });
-
-  };
-
-  function commentSave(comment, Context, res, next) {
-    comment.save(function(err, data) {
-      if (err) {
-        return next(err);
-      }
-      try {
-        // Based on the context retrieve the parent
-        // object of the comment (Story/Comment)
-        Context.find({'_id': data.associatedPost}, function (err, associatedContext) {
-          if (err) {
-            return next(err);
-          }
-          associatedContext = associatedContext.pop();
-          if (associatedContext) {
-            associatedContext.comments.push(data._id);
-            associatedContext.save(function (err) {
-              if (err) {
-                return next(err);
-              }
-              res.send(true);
-            });
-          }
-          // Find the author of the parent object
-          User.findOne({'profile.username': associatedContext.author.username}, function(err, recipient) {
+        associatedContext = associatedContext.pop();
+        if (associatedContext) {
+          associatedContext.comments.push(data._id);
+          associatedContext.save(function (err) {
             if (err) {
               return next(err);
             }
-            // If the emails of both authors differ,
-            // only then proceed with email notification
-            if (
-              typeof data.author !== 'undefined' &&
-              data.author.email &&
-              typeof recipient !== 'undefined' &&
-              recipient.email &&
-              (data.author.email !== recipient.email)
-            ) {
-              var transporter = nodemailer.createTransport({
-                service: 'Mandrill',
-                auth: {
-                  user: secrets.mandrill.user,
-                  pass: secrets.mandrill.password
-                }
-              });
-
-              var mailOptions = {
-                to: recipient.email,
-                from: 'Team@freecodecamp.com',
-                subject: data.author.username +
-                  ' replied to your post on Camper News',
-                text: [
-                  'Just a quick heads-up: ',
-                  data.author.username + ' replied to you on Camper News.',
-                  'You can keep this conversation going.',
-                  'Just head back to the discussion here: ',
-                  'http://freecodecamp.com/news/' + data.originalStoryLink,
-                  '- the Free Code Camp Volunteer Team'
-                ].join('\n')
-              };
-
-              transporter.sendMail(mailOptions, function (err) {
-                if (err) {
-                  return err;
-                }
-              });
-            }
+            res.send(true);
           });
+        }
+        // Find the author of the parent object
+        User.findOne({'profile.username': associatedContext.author.username}, function(err, recipient) {
+          if (err) {
+            return next(err);
+          }
+          // If the emails of both authors differ,
+          // only then proceed with email notification
+          if (
+            typeof data.author !== 'undefined' &&
+            data.author.email &&
+            typeof recipient !== 'undefined' &&
+            recipient.email &&
+            (data.author.email !== recipient.email)
+          ) {
+            var transporter = nodemailer.createTransport({
+              service: 'Mandrill',
+              auth: {
+                user: secrets.mandrill.user,
+                pass: secrets.mandrill.password
+              }
+            });
+
+            var mailOptions = {
+              to: recipient.email,
+              from: 'Team@freecodecamp.com',
+              subject: data.author.username +
+              ' replied to your post on Camper News',
+              text: [
+                'Just a quick heads-up: ',
+                data.author.username + ' replied to you on Camper News.',
+                'You can keep this conversation going.',
+                'Just head back to the discussion here: ',
+                'http://freecodecamp.com/news/' + data.originalStoryLink,
+                '- the Free Code Camp Volunteer Team'
+              ].join('\n')
+            };
+
+            transporter.sendMail(mailOptions, function (err) {
+              if (err) {
+                return err;
+              }
+            });
+          }
         });
-      } catch (e) {
-        // delete comment
-        return next(err);
-      }
-    });
-  }
+      });
+    } catch (e) {
+      return next(err);
+    }
+  });
+}
+
+module.exports = router;

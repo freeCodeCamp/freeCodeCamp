@@ -1,6 +1,6 @@
 var R = require('ramda'),
-    FieldGuide = require('./../models/FieldGuide'),
-    resources = require('./resources'),
+    FieldGuide = require('./../../models/FieldGuide'),
+    resources = require('./../resources/resources'),
     debug = require('debug')('freecc:fieldguides');
 
 exports.returnIndividualFieldGuide = function(req, res, next) {

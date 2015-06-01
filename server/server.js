@@ -21,8 +21,8 @@ var express = require('express'),
   methodOverride = require('method-override'),
   bodyParser = require('body-parser'),
   helmet = require('helmet'),
-  frameguard = require('frameguard'),
-  csp = require('helmet-csp'),
+  //frameguard = require('frameguard'),
+  //csp = require('helmet-csp'),
   MongoStore = require('connect-mongo')(session),
   flash = require('express-flash'),
   path = require('path'),
@@ -36,25 +36,23 @@ var express = require('express'),
   /**
    * Controllers (route handlers).
    */
-  homeController = require('./controllers/home'),
-  resourcesController = require('./controllers/resources'),
-  userController = require('./controllers/user'),
-  nonprofitController = require('./controllers/nonprofits'),
-  fieldGuideController = require('./controllers/fieldGuide'),
-  challengeMapController = require('./controllers/challengeMap'),
-  challengeController = require('./controllers/challenge'),
-  jobsController = require('./controllers/jobs'),
-
-  /**
-   *  Stories
-   */
-  storyController = require('./controllers/story'),
+  homeController = require('./boot/home'),
+  resourcesController = require('./resources/resources'),
+  userController = require('./boot/user'),
+  nonprofitController = require('./boot/nonprofits'),
+  fieldGuideController = require('./boot/fieldGuide'),
+  challengeMapController = require('./boot/challengeMap'),
+  challengeController = require('./boot/challenge'),
+  jobsController = require('./boot/jobs'),
+  redirects = require('./boot/redirects'),
+  utility = require('./boot/utility'),
+  storyController = require('./boot/story'),
 
   /**
    * API keys and Passport configuration.
    */
-  secrets = require('./config/secrets'),
-  passportConf = require('./config/passport');
+  secrets = require('./../config/secrets'),
+  passportConf = require('./../config/passport');
 
 /**
  * Create Express server.
@@ -216,128 +214,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-/**
- * Main routes.
- */
-
-app.get('/', homeController.index);
-
-app.get('/nonprofit-project-instructions', function(req, res) {
-  res.redirect(301, '/field-guide/how-do-free-code-camp\'s-nonprofit-projects-work');
-});
-
-app.post('/get-help', resourcesController.getHelp);
-
-app.post('/get-pair', resourcesController.getPair);
-
-app.get('/chat', resourcesController.chat);
-
-app.get('/twitch', resourcesController.twitch);
-
-app.get('/cats.json', function(req, res) {
-  res.send(
-    [
-      {
-        "name": "cute",
-        "imageLink": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRaP1ecF2jerISkdhjr4R9yM9-8ClUy-TA36MnDiFBukd5IvEME0g"
-      },
-      {
-        "name": "grumpy",
-        "imageLink": "http://cdn.grumpycats.com/wp-content/uploads/2012/09/GC-Gravatar-copy.png"
-      },
-      {
-        "name": "mischievous",
-        "imageLink": "http://www.kittenspet.com/wp-content/uploads/2012/08/cat_with_funny_face_3-200x200.jpg"
-      }
-    ]
-  )
-});
-
-// Agile Project Manager Onboarding
-
-app.get('/pmi-acp-agile-project-managers',
-  resourcesController.agileProjectManagers);
-
-app.get('/agile', function(req, res) {
-  res.redirect(301, '/pmi-acp-agile-project-managers');
-});
-
-app.get('/pmi-acp-agile-project-managers-form',
-  resourcesController.agileProjectManagersForm);
-
-// Nonprofit Onboarding
-
-app.get('/nonprofits', resourcesController.nonprofits);
-
-app.get('/nonprofits-form', resourcesController.nonprofitsForm);
-
-app.get('/map',
-  userController.userMigration,
-  challengeMapController.challengeMap
-);
-
-app.get('/live-pair-programming', function(req, res) {
-  res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
-});
-
-app.get('/install-screenhero', function(req, res) {
-  res.redirect(301, '/field-guide/install-screenhero');
-});
-
-app.get('/guide-to-our-nonprofit-projects', function(req, res) {
-  res.redirect(301, '/field-guide/a-guide-to-our-nonprofit-projects');
-});
-
-app.get('/chromebook', function(req, res) {
-  res.redirect(301, '/field-guide/chromebook');
-});
-
-app.get('/deploy-a-website', function(req, res) {
-  res.redirect(301, '/field-guide/deploy-a-website');
-});
-
-app.get('/gmail-shortcuts', function(req, res) {
-  res.redirect(301, '/field-guide/gmail-shortcuts');
-});
-
-app.get('/nodeschool-challenges', function(req, res) {
-  res.redirect(301, '/field-guide/nodeschool-challenges');
-});
 
 
-app.get('/learn-to-code', challengeMapController.challengeMap);
-app.get('/about', function(req, res) {
-  res.redirect(301, '/map');
-});
-app.get('/signin', userController.getSignin);
 
-app.get('/login', function(req, res) {
-  res.redirect(301, '/signin');
-});
-
-app.post('/signin', userController.postSignin);
-
-app.get('/signout', userController.signout);
-
-app.get('/logout', function(req, res) {
-  res.redirect(301, '/signout');
-});
-
-app.get('/forgot', userController.getForgot);
-
-app.post('/forgot', userController.postForgot);
-
-app.get('/reset/:token', userController.getReset);
-
-app.post('/reset/:token', userController.postReset);
-
-app.get('/email-signup', userController.getEmailSignup);
-
-app.get('/email-signin', userController.getEmailSignin);
-
-app.post('/email-signup', userController.postEmailSignup);
-
-app.post('/email-signin', userController.postSignin);
 
 /**
  * Nonprofit Project routes.
@@ -355,169 +234,25 @@ app.get(
   jobsController.jobsDirectory
 );
 
-app.get(
-  '/jobs-form',
-  resourcesController.jobsForm
-);
 
-app.get('/privacy', function(req, res) {
-  res.redirect(301, '/field-guide/what-is-the-free-code-camp-privacy-policy?');
-});
 
-app.get('/submit-cat-photo', resourcesController.catPhotoSubmit);
 
-app.get('/api/slack', function(req, res) {
-  if (req.user) {
-    if (req.user.email) {
-      var invite = {
-        'email': req.user.email,
-        'token': process.env.SLACK_KEY,
-        'set_active': true
-      };
 
-      var headers = {
-        'User-Agent': 'Node Browser/0.0.1',
-        'Content-Type': 'application/x-www-form-urlencoded'
-      };
 
-      var options = {
-        url: 'https://freecode.slack.com/api/users.admin.invite',
-        method: 'POST',
-        headers: headers,
-        form: invite
-      };
-
-      request(options, function (error, response, body) {
-        if (!error && response.statusCode === 200) {
-          req.flash('success', {
-            msg: "We've successfully requested an invite for you. Please check your email and follow the instructions from Slack."
-          });
-          req.user.sentSlackInvite = true;
-          req.user.save(function(err, user) {
-            if (err) {
-              next(err);
-            }
-            return res.redirect('back');
-          });
-        } else {
-          req.flash('errors', {
-            msg: "The invitation email did not go through for some reason. Please try again or <a href='mailto:team@freecodecamp.com?subject=slack%20invite%20failed%20to%20send>email us</a>."
-          });
-          return res.redirect('back');
-        }
-      });
-    } else {
-      req.flash('notice', {
-        msg: "Before we can send your Slack invite, we need your email address. Please update your profile information here."
-      });
-      return res.redirect('/account');
-    }
-  } else {
-    req.flash('notice', {
-      msg: "You need to sign in to Free Code Camp before we can send you a Slack invite."
-    });
-    return res.redirect('/account');
-  }
-});
 
 /**
  * Camper News routes.
  */
-app.get(
-  '/stories/hotStories',
-  storyController.hotJSON
-);
 
-app.get(
-  '/stories/recentStories',
-  storyController.recentJSON
-);
 
-app.get(
-  '/stories/comments/:id',
-  storyController.comments
-);
-
-app.post(
-  '/stories/comment/',
-  storyController.commentSubmit
-);
-
-app.post(
-  '/stories/comment/:id/comment',
-  storyController.commentOnCommentSubmit
-);
-
-app.put(
-  '/stories/comment/:id/edit',
-  storyController.commentEdit
-);
-
-app.get(
-  '/stories/submit',
-  storyController.submitNew
-);
-
-app.get(
-  '/stories/submit/new-story',
-  storyController.preSubmit
-);
-
-app.post(
-  '/stories/preliminary',
-  storyController.newStory
-);
-
-app.post(
-  '/stories/',
-  storyController.storySubmission
-);
-
-app.get(
-  '/news/',
-  storyController.hot
-);
-
-app.post(
-  '/stories/search',
-  storyController.getStories
-);
-
-app.get(
-  '/news/:storyName',
-  storyController.returnIndividualStory
-);
-
-app.post(
-  '/stories/upvote/',
-  storyController.upvote
-);
-
-app.get(
-  '/unsubscribe/:email',
-  resourcesController.unsubscribe
-);
-
-app.get(
-  '/unsubscribed',
-  resourcesController.unsubscribed
-);
 
 app.all('/account', passportConf.isAuthenticated);
 
-app.get('/account/api', userController.getAccountAngular);
 
 /**
  * API routes
  */
 
-app.get('/api/github', resourcesController.githubCalls);
-
-app.get('/api/blogger', resourcesController.bloggerCalls);
-
-app.get('/api/trello', resourcesController.trelloCalls);
-
-app.get('/api/codepen/twitter/:screenName', resourcesController.codepenResources.twitter);
 
 /**
  * Field Guide related routes
@@ -560,27 +295,8 @@ app.post('/completed-zipline-or-basejump',
 app.post('/completed-bonfire', challengeController.completedBonfire);
 
 // Unique Check API route
-app.get('/api/checkUniqueUsername/:username',
-  userController.checkUniqueUsername
-);
 
-app.get('/api/checkExistingUsername/:username',
-  userController.checkExistingUsername
-);
 
-app.get('/api/checkUniqueEmail/:email', userController.checkUniqueEmail);
-
-app.get('/account', userController.getAccount);
-
-app.post('/account/profile', userController.postUpdateProfile);
-
-app.post('/account/password', userController.postUpdatePassword);
-
-app.post('/account/delete', userController.postDeleteAccount);
-
-app.get('/account/unlink/:provider', userController.getOauthUnlink);
-
-app.get('/sitemap.xml', resourcesController.sitemap);
 
 /**
  * OAuth sign-in routes.
@@ -646,11 +362,6 @@ app.get(
   }
 );
 
-// put this route last
-app.get(
-  '/:username',
-  userController.returnUser
-);
 
 /**
  * 500 Error Handler.
