@@ -6,9 +6,7 @@ process.on('uncaughtException', function (err) {
     err.message
   );
   console.error(err.stack);
-  /* eslint-disable no-process-exit */
-  process.exit(1);
-  /* eslint-enable no-process-exit */
+  process.exit(1); // eslint-disable-line
 });
 
 var express = require('express'),
@@ -21,32 +19,29 @@ var express = require('express'),
   methodOverride = require('method-override'),
   bodyParser = require('body-parser'),
   helmet = require('helmet'),
-  //frameguard = require('frameguard'),
-  //csp = require('helmet-csp'),
   MongoStore = require('connect-mongo')(session),
   flash = require('express-flash'),
   path = require('path'),
   mongoose = require('mongoose'),
   passport = require('passport'),
   expressValidator = require('express-validator'),
-  request = require('request'),
+  // request = require('request'),
   forceDomain = require('forcedomain'),
   lessMiddleware = require('less-middleware'),
 
   /**
-   * Controllers (route handlers).
+   * routers.
    */
-  homeController = require('./boot/home'),
-  resourcesController = require('./resources/resources'),
-  userController = require('./boot/user'),
-  nonprofitController = require('./boot/nonprofits'),
-  fieldGuideController = require('./boot/fieldGuide'),
-  challengeMapController = require('./boot/challengeMap'),
-  challengeController = require('./boot/challenge'),
-  jobsController = require('./boot/jobs'),
-  redirects = require('./boot/redirects'),
-  utility = require('./boot/utility'),
-  storyController = require('./boot/story'),
+  homeRouter = require('./boot/home'),
+  resourcesRouter = require('./resources/resources'),
+  userRouter = require('./boot/user'),
+  fieldGuideRouter = require('./boot/fieldGuide'),
+  challengeMapRouter = require('./boot/challengeMap'),
+  challengeRouter = require('./boot/challenge'),
+  jobsRouter = require('./boot/jobs'),
+  redirectsRouter = require('./boot/redirects'),
+  utilityRouter = require('./boot/utility'),
+  storyRouter = require('./boot/story'),
 
   /**
    * API keys and Passport configuration.
@@ -85,10 +80,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use(compress());
-app.use(lessMiddleware(__dirname + '/public'));
+app.use(lessMiddleware(path.join(__dirname, '/public')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator({
   customValidators: {
     matchRegex: function (param, regex) {
@@ -189,9 +184,12 @@ app.use(helmet.csp({
     '*.twitter.com',
     '*.ghbtns.com'
   ].concat(trusted),
-  reportOnly: false, // set to true if you only want to report errors
-  setAllHeaders: false, // set to true if you want to set all headers
-  safari5: false // set to true if you want to force buggy CSP in Safari 5
+  // set to true if you only want to report errors
+  reportOnly: false,
+  // set to true if you want to set all headers
+  setAllHeaders: false,
+  // set to true if you want to force buggy CSP in Safari 5
+  safari5: false
 }));
 
 app.use(function (req, res, next) {
@@ -200,7 +198,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static(__dirname + '/public', {maxAge: 86400000 }));
+app.use(
+  express.static(path.join(__dirname, '/public'), { maxAge: 86400000 })
+);
 
 app.use(function (req, res, next) {
   // Remember original destination before login.
@@ -214,89 +214,50 @@ app.use(function (req, res, next) {
   next();
 });
 
+// add sub routers
+app.use(homeRouter);
+app.use(resourcesRouter);
+app.use(userRouter);
+app.use(fieldGuideRouter);
+app.use(challengeMapRouter);
+app.use(challengeRouter);
+app.use(jobsRouter);
+app.use(redirectsRouter);
+app.use(utilityRouter);
+app.use(storyRouter);
 
-
-
-
-/**
- * Nonprofit Project routes.
- */
-
-app.get('/nonprofits/directory', nonprofitController.nonprofitsDirectory);
-
-app.get(
-  '/nonprofits/:nonprofitName',
-  nonprofitController.returnIndividualNonprofit
-);
-
+/*
 app.get(
   '/jobs',
   jobsController.jobsDirectory
 );
 
-
-
-
-
-
-
-/**
- * Camper News routes.
- */
-
-
-
 app.all('/account', passportConf.isAuthenticated);
-
-
-/**
- * API routes
- */
-
-
-/**
- * Field Guide related routes
- */
 app.get('/field-guide/all-articles', fieldGuideController.showAllFieldGuides);
-
 app.get('/field-guide/:fieldGuideName',
   fieldGuideController.returnIndividualFieldGuide
 );
-
 app.get('/field-guide/', fieldGuideController.returnNextFieldGuide);
-
 app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
-
-
-/**
- * Challenge related routes
- */
-
 app.get('/challenges/next-challenge',
   userController.userMigration,
   challengeController.returnNextChallenge
 );
-
 app.get(
   '/challenges/:challengeName',
   userController.userMigration,
   challengeController.returnIndividualChallenge
 );
-
 app.get('/challenges/',
   userController.userMigration,
   challengeController.returnCurrentChallenge);
+
 // todo refactor these routes
 app.post('/completed-challenge/', challengeController.completedChallenge);
-
 app.post('/completed-zipline-or-basejump',
   challengeController.completedZiplineOrBasejump);
-
 app.post('/completed-bonfire', challengeController.completedBonfire);
-
-// Unique Check API route
-
-
+*/
 
 /**
  * OAuth sign-in routes.
@@ -369,8 +330,9 @@ app.get(
 if (process.env.NODE_ENV === 'development') {
   app.use(errorHandler({ log: true }));
 } else {
-  // error handling in production
-  app.use(function(err, req, res, next) {
+  // error handling in production disabling eslint due to express parity rules
+  // for error handlers
+  app.use(function(err, req, res, next) { // eslint-disable-line
 
     // respect err.status
     if (err.status) {

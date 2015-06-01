@@ -1,7 +1,7 @@
 var R = require('ramda'),
+    // debug = require('debug')('freecc:fieldguides'),
     FieldGuide = require('./../../models/FieldGuide'),
-    resources = require('./../resources/resources'),
-    debug = require('debug')('freecc:fieldguides');
+    resources = require('./../resources/resources');
 
 exports.returnIndividualFieldGuide = function(req, res, next) {
   var dashedName = req.params.fieldGuideName;

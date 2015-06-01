@@ -151,13 +151,22 @@ function getPair(req, res) {
   var userName = req.user.profile.username;
   var challenge = req.body.payload.challenge;
   slack.send({
-    text: 'Anyone want to pair with *@' + userName + '* on ' + challenge +
-      '?\nMake sure you install Screen Hero here: ' +
-      'http://freecodecamp.com/field-guide/how-do-i-install-screenhero\n' +
-      'Then start your pair program session with *@' + userName +
-      '* by typing \"/hero @' + userName + '\" into Slack.\n And *@'+ userName +
-      '*, be sure to launch Screen Hero, then keep coding. ' +
-      'Another camper may pair with you soon.',
+    text: [
+      'Anyone want to pair with *@',
+      userName,
+      '* on ',
+      challenge,
+      '?\nMake sure you install Screen Hero here: ',
+      'http://freecodecamp.com/field-guide/how-do-i-install-screenhero\n',
+      'Then start your pair program session with *@',
+      userName,
+      '* by typing \"/hero @',
+      userName,
+      '\" into Slack.\n And *@',
+      userName,
+      '*, be sure to launch Screen Hero, then keep coding. ',
+      'Another camper may pair with you soon.'
+    ].join(''),
     channel: '#letspair',
     username: 'Companion Cube',
     'icon_url': 'https://lh3.googleusercontent.com/-f6xDPDV2rPE/AAAAAAAAAAI/' +

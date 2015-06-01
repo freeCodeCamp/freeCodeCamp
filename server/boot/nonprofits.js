@@ -1,9 +1,13 @@
-var moment = require('moment'),
-    Nonprofit = require('./../../models/Nonprofit'),
-    resources = require('./../resources/resources');
+var express = require('express'),
+    Nonprofit = require('./../../models/Nonprofit');
 
-exports.nonprofitsDirectory = function(req, res, next) {
-  Nonprofit.find({estimatedHours: { $gt: 0 } }, function(err, nonprofits) {
+var router = express.Router();
+
+router.get('/nonprofits/directory', nonprofitsDirectory);
+router.get('/nonprofits/:nonprofitName', returnIndividualNonprofit);
+
+function nonprofitsDirectory(req, res, next) {
+  Nonprofit.find({ estimatedHours: { $gt: 0 } }, function(err, nonprofits) {
     if (err) { return next(err); }
 
     res.render('nonprofits/directory', {
@@ -11,9 +15,9 @@ exports.nonprofitsDirectory = function(req, res, next) {
       nonprofits: nonprofits
     });
   });
-};
+}
 
-exports.returnIndividualNonprofit = function(req, res, next) {
+function returnIndividualNonprofit(req, res, next) {
   var dashedName = req.params.nonprofitName;
   var nonprofitName = dashedName.replace(/\-/g, ' ');
 
@@ -91,9 +95,10 @@ exports.returnIndividualNonprofit = function(req, res, next) {
       });
     }
   );
-};
+}
 
-exports.interestedInNonprofit = function(req, res, next) {
+/*
+function interestedInNonprofit(req, res, next) {
   if (req.user) {
     Nonprofit.findOne(
       { name: new RegExp(req.params.nonprofitName.replace(/-/, ' '), 'i') },
@@ -115,4 +120,7 @@ exports.interestedInNonprofit = function(req, res, next) {
       }
     );
   }
-};
+}
+*/
+
+module.exports = router;

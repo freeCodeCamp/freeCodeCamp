@@ -5,8 +5,6 @@ var router = express.Router();
 
 router.get('/', index);
 
-
-
 function index(req, res, next) {
   if (req.user && !req.user.profile.picture) {
     req.user.profile.picture =

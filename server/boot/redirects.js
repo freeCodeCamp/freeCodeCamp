@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-
 router.get('/nonprofit-project-instructions', function(req, res) {
-  res.redirect(301, '/field-guide/how-do-free-code-camp\'s-nonprofit-projects-work');
+  res.redirect(
+    301,
+    '/field-guide/how-do-free-code-camp\'s-nonprofit-projects-work'
+  );
 });
 
 router.get('/agile', function(req, res) {

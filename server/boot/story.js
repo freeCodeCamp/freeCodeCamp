@@ -1,18 +1,16 @@
-/* eslint-disable no-catch-shadow, no-unused-vars */
-var R = require('ramda'),
-  debug = require('debug')('freecc:cntr:story'),
-  Story = require('./../../models/Story'),
-  Comment = require('./../../models/Comment'),
-  User = require('./../../models/User'),
-  moment = require('moment'),
-  resources = require('./../resources/resources'),
-  mongodb = require('mongodb'),
-  MongoClient = mongodb.MongoClient,
-  secrets = require('../../config/secrets'),
-  nodemailer = require('nodemailer'),
-  sanitizeHtml = require('sanitize-html'),
-  express = require('express'),
-  router = express.Router();
+var nodemailer = require('nodemailer'),
+    sanitizeHtml = require('sanitize-html'),
+    express = require('express'),
+    moment = require('moment'),
+    // debug = require('debug')('freecc:cntr:story'),
+    Story = require('./../../models/Story'),
+    Comment = require('./../../models/Comment'),
+    User = require('./../../models/User'),
+    resources = require('./../resources/resources'),
+    mongodb = require('mongodb'),
+    MongoClient = mongodb.MongoClient,
+    secrets = require('../../config/secrets'),
+    router = express.Router();
 
 router.get('/stories/hotStories', hotJSON);
 router.get('/stories/recentStories', recentJSON);
@@ -88,6 +86,8 @@ function submitNew(req, res) {
   });
 }
 
+/*
+ * no used anywhere
 function search(req, res) {
   return res.render('stories/index', {
     title: 'Search the archives of Camper News',
@@ -101,6 +101,7 @@ function recent(req, res) {
     page: 'recent'
   });
 }
+*/
 
 function preSubmit(req, res) {
 
@@ -250,16 +251,16 @@ function upvote(req, res, next) {
     );
     story.markModified('rank');
     story.save();
+    // NOTE(Berks): This logic is full of wholes and race conditions
+    // this could be the source of many 'can't set headers after they are sent'
+    // errors. This needs cleaning
     User.findOne({'_id': story.author.userId}, function(err, user) {
-      if (err) {
-        return next(err);
-      }
+      if (err) { return next(err); }
+
       user.progressTimestamps.push(Date.now() || 0);
-      user.save(function (err, user) {
-        req.user.save(function (err, user) {
-          if (err) {
-            return next(err);
-          }
+      user.save(function (err) {
+        req.user.save(function (err) {
+          if (err) { return next(err); }
         });
         req.user.progressTimestamps.push(Date.now() || 0);
         if (err) {
@@ -351,13 +352,18 @@ function storySubmission(req, res, next) {
     .replace(/\s+/g, ' ')
     .toLowerCase()
     .trim();
+
   var link = data.link;
+
   if (link.search(/^https?:\/\//g) === -1) {
     link = 'http://' + link;
   }
-  Story.count({ storyLink: new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i')}, function (err, storyCount) {
+
+  Story.count({
+    storyLink: new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i')
+  }, function (err, storyCount) {
     if (err) {
-      return res.status(500);
+      return next(err);
     }
 
     // if duplicate storyLink add unique number
@@ -397,17 +403,17 @@ function storySubmission(req, res, next) {
     });
     story.save(function (err) {
       if (err) {
-        return res.status(500);
+        return next(err);
       }
       req.user.progressTimestamps.push(Date.now() || 0);
-      req.user.save(function (err, user) {
+      req.user.save(function (err) {
         if (err) {
           return next(err);
         }
+        res.send(JSON.stringify({
+          storyLink: story.storyLink.replace(/\s+/g, '-').toLowerCase()
+        }));
       });
-      res.send(JSON.stringify({
-        storyLink: story.storyLink.replace(/\s+/g, '-').toLowerCase()
-      }));
     });
   });
 }
@@ -531,7 +537,9 @@ function commentSave(comment, Context, res, next) {
     try {
       // Based on the context retrieve the parent
       // object of the comment (Story/Comment)
-      Context.find({'_id': data.associatedPost}, function (err, associatedContext) {
+      Context.find({
+        '_id': data.associatedPost
+      }, function (err, associatedContext) {
         if (err) {
           return next(err);
         }
@@ -546,7 +554,9 @@ function commentSave(comment, Context, res, next) {
           });
         }
         // Find the author of the parent object
-        User.findOne({'profile.username': associatedContext.author.username}, function(err, recipient) {
+        User.findOne({
+          'profile.username': associatedContext.author.username
+        }, function(err, recipient) {
           if (err) {
             return next(err);
           }

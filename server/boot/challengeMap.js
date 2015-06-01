@@ -1,5 +1,5 @@
 var R = require('ramda'),
-  debug = require('debug')('freecc:cntr:challengeMap'), //eslint-disable-line
+  // debug = require('debug')('freecc:cntr:challengeMap'),
   User = require('../../models/User'),
   resources = require('./../resources/resources'),
   middleware = require('../resources/middleware'),
@@ -18,8 +18,6 @@ router.get('/learn-to-code', function(req, res) {
 router.get('/about', function(req, res) {
   res.redirect(301, '/map');
 });
-
-
 
 function challengeMap(req, res, next) {
   var completedList = [];

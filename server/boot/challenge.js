@@ -147,12 +147,14 @@ exports.returnCurrentChallenge = function(req, res, next) {
 exports.returnIndividualChallenge = function(req, res, next) {
   var dashedName = req.params.challengeName;
 
-  var challengeName = /^(bonfire|waypoint|zipline|basejump)/i.test(dashedName) ? dashedName
-      .replace(/\-/g, ' ')
-      .split(' ')
-      .slice(1)
-      .join(' ')
-    : dashedName.replace(/\-/g, ' ');
+  var challengeName =
+    (/^(bonfire|waypoint|zipline|basejump)/i).test(dashedName) ?
+      dashedName
+        .replace(/\-/g, ' ')
+        .split(' ')
+        .slice(1)
+        .join(' ') :
+      dashedName.replace(/\-/g, ' ');
 
   Challenge.find({'name': new RegExp(challengeName, 'i')},
     function(err, challengeFromMongo) {
@@ -175,23 +177,21 @@ exports.returnIndividualChallenge = function(req, res, next) {
         .replace(/[^a-z0-9\-\.]/gi, '');
       if (dashedNameFull !== dashedName) {
         return res.redirect('../challenges/' + dashedNameFull);
-      } else {
-        if (req.user) {
-          req.user.currentChallenge = {
-            challengeId: challenge._id,
-            challengeName: challenge.name,
-            challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
-                map(function (key) {
-                  return challengeMapWithIds[key]
-                    .filter(function (elem) {
-                      return String(elem) === String(challenge._id);
-                    }).map(function () {
-                      return key;
-                    });
-                })
-            ))
-          };
-        }
+      } else if (req.user) {
+        req.user.currentChallenge = {
+          challengeId: challenge._id,
+          challengeName: challenge.name,
+          challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
+              map(function (key) {
+                return challengeMapWithIds[key]
+                  .filter(function (elem) {
+                    return String(elem) === String(challenge._id);
+                  }).map(function () {
+                    return key;
+                  });
+              })
+          ))
+        };
       }
 
       var challengeType = {
@@ -379,13 +379,11 @@ exports.completedBonfire = function (req, res, next) {
                 return next(err);
               }
               if (user && paired) {
-                res.send(true);
+                return res.send(true);
               }
             });
-          } else {
-            if (user) {
-              res.send(true);
-            }
+          } else if (user) {
+            res.send(true);
           }
         });
       }

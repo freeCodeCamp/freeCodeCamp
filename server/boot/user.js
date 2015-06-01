@@ -37,7 +37,8 @@ router.post('/account/password', postUpdatePassword);
 router.post('/account/delete', postDeleteAccount);
 router.get('/account/unlink/:provider', getOauthUnlink);
 router.get('/account', getAccount);
-router.get('/:username', returnUser); // Ensure this is the last route!
+// Ensure this is the last route!
+router.get('/:username', returnUser);
 
 /**
  * GET /signin
@@ -273,6 +274,7 @@ function checkUniqueUsername (req, res, next) {
 /**
  * Existing username check
  */
+
 function checkExistingUsername (req, res, next) {
   User.count(
     { 'profile.username': req.params.username.toLowerCase() },
@@ -748,7 +750,8 @@ function postForgot (req, res, next) {
         }
 
         user.resetPasswordToken = token;
-        user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+        // 3600000 = 1 hour
+        user.resetPasswordExpires = Date.now() + 3600000;
 
         user.save(function(err) {
           if (err) { return done(err); }
