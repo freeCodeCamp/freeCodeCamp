@@ -114,7 +114,7 @@ passport.use(new FacebookStrategy(secrets.facebook, function(req, accessToken, r
                 'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
                 "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
                 'Good luck with the challenges!\n\n',
-                '- Our All-Volunteer Team'
+                '- the Free Code Camp Volunteer Team'
               ].join('')
             };
             transporter.sendMail(mailOptions, function(err) {
@@ -189,7 +189,7 @@ passport.use(new GitHubStrategy(secrets.github, function(req, accessToken, refre
                 'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
                 "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
                 'Good luck with the challenges!\n\n',
-                '- the Volunteer Camp Counselor Team'
+                '- the Free Code Camp Volunteer Team'
               ].join('')
             };
             transporter.sendMail(mailOptions, function(err) {
@@ -311,7 +311,7 @@ passport.use(new GoogleStrategy(secrets.google, function(req, accessToken, refre
                 'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
                 "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
                 'Good luck with the challenges!\n\n',
-                '- the Volunteer Camp Counselor Team'
+                '- the Free Code Camp Volunteer Team'
               ].join('')
             };
             transporter.sendMail(mailOptions, function(err) {
@@ -387,7 +387,7 @@ passport.use(new LinkedInStrategy(secrets.linkedin, function(req, accessToken, r
                 'Feel free to email us at this address if you have any questions about Free Code Camp.\n',
                 "And if you have a moment, check out our blog: blog.freecodecamp.com.\n",
                 'Good luck with the challenges!\n\n',
-                '- the Volunteer Camp Counselor Team'
+                '- the Free Code Camp Volunteer Team'
               ].join('')
             };
             transporter.sendMail(mailOptions, function(err) {
