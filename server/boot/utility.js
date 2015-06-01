@@ -1,19 +1,21 @@
 var express = require('express'),
-  async = require('async'),
-  moment = require('moment'),
-  Twit = require('twit'),
-  debug = require('debug')('freecc:cntr:resources'),
-  request = require('request'),
-  constantStrings = require('./constantStrings.json'),
-  User = require('../../models/User'),
-  Challenge = require('./../../models/Challenge'),
-  Story = require('./../../models/Story'),
-  FieldGuide = require('./../../models/FieldGuide'),
-  Nonprofit = require('./../../models/Nonprofit'),
-  secrets = require('./../../config/secrets'),
-  Slack = require('node-slack'),
-  slack = new Slack(secrets.slackHook);
-router = express.Router();
+    async = require('async'),
+    moment = require('moment'),
+    Twit = require('twit'),
+    Slack = require('node-slack'),
+    request = require('request'),
+    debug = require('debug')('freecc:cntr:resources'),
+    constantStrings = require('./constantStrings.json'),
+
+    User = require('../../models/User'),
+    Challenge = require('./../../models/Challenge'),
+    Story = require('./../../models/Story'),
+    FieldGuide = require('./../../models/FieldGuide'),
+    Nonprofit = require('./../../models/Nonprofit'),
+    secrets = require('./../../config/secrets');
+
+var slack = new Slack(secrets.slackHook);
+var router = express.Router();
 
 router.get('/api/github', githubCalls);
 router.get('/api/blogger', bloggerCalls);
@@ -389,7 +391,7 @@ function githubCalls(req, res, next) {
   );
 }
 
-function trelloCalls(req, res, next) { //eslint-disable-line
+function trelloCalls(req, res, next) {
   request(
     'https://trello.com/1/boards/BA3xVpz9/cards?key=' +
     secrets.trello.key,
@@ -403,7 +405,7 @@ function trelloCalls(req, res, next) { //eslint-disable-line
     });
 }
 
-function bloggerCalls(req, res, next) { //eslint-disable-line
+function bloggerCalls(req, res, next) {
   request(
     'https://www.googleapis.com/blogger/v3/blogs/2421288658305323950/' +
       'posts?key=' +
@@ -419,7 +421,7 @@ function bloggerCalls(req, res, next) { //eslint-disable-line
   );
 }
 
-function getCats(req, res) { //eslint-disable-line
+function getCats(req, res) {
   res.send(
     [
       {
