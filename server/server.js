@@ -226,32 +226,12 @@ app.use(redirectsRouter);
 app.use(utilityRouter);
 app.use(storyRouter);
 
-/*
-app.all('/account', passportConf.isAuthenticated);
-app.get('/challenges/next-challenge',
-  userController.userMigration,
-  challengeController.returnNextChallenge
-);
-app.get(
-  '/challenges/:challengeName',
-  userController.userMigration,
-  challengeController.returnIndividualChallenge
-);
-app.get('/challenges/',
-  userController.userMigration,
-  challengeController.returnCurrentChallenge);
-
-// todo refactor these routes
-app.post('/completed-challenge/', challengeController.completedChallenge);
-app.post('/completed-zipline-or-basejump',
-  challengeController.completedZiplineOrBasejump);
-app.post('/completed-bonfire', challengeController.completedBonfire);
-*/
 
 /**
  * OAuth sign-in routes.
  */
 
+app.all('/account', passportConf.isAuthenticated);
 var passportOptions = {
   successRedirect: '/',
   failureRedirect: '/login'

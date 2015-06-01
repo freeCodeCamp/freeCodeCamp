@@ -1,19 +1,20 @@
 var R = require('ramda');
 
-/**
+/*
+ * Middleware to migrate users from fragmented challenge structure to unified
+ * challenge structure
  *
  * @param req
  * @param res
  * @returns null
- * Middleware to migrate users from fragmented challenge structure to unified
- * challenge structure
  */
-exports.userMigration = function(req, res, next) {
+exports.userMigration = function userMigration(req, res, next) {
   if (!req.user || req.user.completedChallenges.length !== 0) {
     return next();
   }
   req.user.completedChallenges = R.filter(function (elem) {
-    return elem; // getting rid of undefined
+    // getting rid of undefined
+    return elem;
   }, R.concat(
       req.user.completedCoursewares,
       req.user.completedBonfires.map(function (bonfire) {

@@ -31,13 +31,33 @@
  */
 
 var R = require('ramda'),
+    express = require('express'),
     Challenge = require('./../../models/Challenge'),
     User = require('./../../models/User'),
     resources = require('./../resources/resources'),
+    userMigration = require('../resources/middleware').userMigration,
     MDNlinks = require('./../../seed_data/bonfireMDNlinks');
 
+var router = express.Router();
 var challengeMapWithNames = resources.getChallengeMapWithNames();
 var challengeMapWithIds = resources.getChallengeMapWithIds();
+
+router.get(
+  '/challenges/next-challenge',
+  userMigration,
+  returnNextChallenge
+);
+
+router.get(
+  '/challenges/:challengeName',
+  userMigration,
+  returnIndividualChallenge
+);
+
+router.get('/challenges/', userMigration, returnCurrentChallenge);
+router.post('/completed-challenge/', completedChallenge);
+router.post('/completed-zipline-or-basejump', completedZiplineOrBasejump);
+router.post('/completed-bonfire', completedBonfire);
 
 function getMDNlinks(links) {
   // takes in an array of links, which are strings
@@ -53,7 +73,7 @@ function getMDNlinks(links) {
   return populatedLinks;
 }
 
-exports.returnNextChallenge = function(req, res, next) {
+function returnNextChallenge(req, res, next) {
   if (!req.user) {
    return res.redirect('../challenges/learn-how-free-code-camp-works');
   }
@@ -105,9 +125,9 @@ exports.returnNextChallenge = function(req, res, next) {
     }
     return res.redirect('../challenges/' + nameString);
   });
-};
+}
 
-exports.returnCurrentChallenge = function(req, res, next) {
+function returnCurrentChallenge(req, res, next) {
   if (!req.user) {
    return res.redirect('../challenges/learn-how-free-code-camp-works');
   }
@@ -142,9 +162,9 @@ exports.returnCurrentChallenge = function(req, res, next) {
     }
     return res.redirect('../challenges/' + nameString);
   });
-};
+}
 
-exports.returnIndividualChallenge = function(req, res, next) {
+function returnIndividualChallenge(req, res, next) {
   var dashedName = req.params.challengeName;
 
   var challengeName =
@@ -309,9 +329,9 @@ exports.returnIndividualChallenge = function(req, res, next) {
         return challengeType[challenge.challengeType]();
       }
     });
-};
+}
 
-exports.completedBonfire = function (req, res, next) {
+function completedBonfire(req, res, next) {
   var isCompletedWith = req.body.challengeInfo.completedWith || '';
   var isCompletedDate = Math.round(+new Date());
   var challengeId = req.body.challengeInfo.challengeId;
@@ -415,9 +435,9 @@ exports.completedBonfire = function (req, res, next) {
       }
     });
   }
-};
+}
 
-exports.completedChallenge = function (req, res, next) {
+function completedChallenge(req, res, next) {
 
   var isCompletedDate = Math.round(+new Date());
   var challengeId = req.body.challengeInfo.challengeId;
@@ -445,9 +465,9 @@ exports.completedChallenge = function (req, res, next) {
       res.sendStatus(200);
     }
   });
-};
+}
 
-exports.completedZiplineOrBasejump = function (req, res, next) {
+function completedZiplineOrBasejump(req, res, next) {
 
   var isCompletedWith = req.body.challengeInfo.completedWith || false;
   var isCompletedDate = Math.round(+new Date());
@@ -556,4 +576,6 @@ exports.completedZiplineOrBasejump = function (req, res, next) {
       }
     });
   }
-};
+}
+
+module.exports = router;
