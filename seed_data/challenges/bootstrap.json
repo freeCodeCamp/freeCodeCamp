@@ -7,12 +7,12 @@
       "name": "Waypoint: Mobile Responsive Images",
       "difficulty": 0.047,
       "description": [
-        "Now let's go back to our Cat Photo App. This time, we'll style it using the popular Twitter Bootstrap responsive CSS framework. First, add a new image with the <code>src</code> attribute of \"http://bit.ly/fcc-kittens2\", and add the <code>img-responsive</code> Bootstrap class to that image.",
+        "Now let's go back to our Cat Photo App. This time, we'll style it using the popular Twitter Bootstrap responsive CSS framework. First, add a new image with the <code>src</code> attribute of \"http://bit.ly/fcc-kittens2\", and add the \"img-responsive\" Bootstrap class to that image.",
         "It would be great if the image could be exactly the width of our phone's screen.",
-        "Fortunately, we have access to a <code>Responsive CSS Framework</code> called Bootstrap. You can add Bootstrap to any app just by including it with <code>&#60;link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/&#62;</code> at the top of your HTML. But we've gone ahead and automatically added it to your Cat Photo App for you.",
+        "Fortunately, we have access to a Responsive CSS Framework called Bootstrap. You can add Bootstrap to any app just by including it with <code>&#60;link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/&#62;</code> at the top of your HTML. But we've gone ahead and automatically added it to your Cat Photo App for you.",
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
         "With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.",
-        "Now all you need to do is add the <code>img-responsive</code> class to your image."
+        "Now all you need to do is add the \"img-responsive\" class to your image."
       ],
       "tests": [
         "assert($('img').hasClass('img-responsive'), 'Your new image should have the class \"img-responsive\".')",
@@ -93,12 +93,12 @@
       "name": "Waypoint: Center Text with Bootstrap",
       "difficulty": 0.048,
       "description": [
-        "Add Bootstrap's <code>text-center</code> class to your h2 element.",
-        "Now that we're using Bootstrap, we can center our heading elements to make them look better. All we need to do is add the class <code>text-center</code> to our h1 and h2 elements.",
+        "Add Bootstrap's \"text-center\" class to your <code>h2</code> element.",
+        "Now that we're using Bootstrap, we can center our heading elements to make them look better. All we need to do is add the class <code>text-center</code> to our <code>h1</code> and <code>h2</code> elements.",
         "Remember that you can add several classes to the same element by separating each of them with a space, like this: <code>&#60h2 class=\"text-red text-center\"&#62your text&#60/h2&#62</code>."
       ],
       "tests": [
-        "assert($('h2').hasClass('text-center'), 'Your h2 element should be centered by applying the class \"text-center\"')"
+        "assert($('h2').hasClass('text-center'), 'Your <code>h2</code> element should be centered by applying the class \"text-center\"')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -176,12 +176,13 @@
       "name": "Waypoint: Create a Bootstrap Button",
       "difficulty": 0.049,
       "description": [
-        "Create a new button below your large kitten photo with the class \"btn\" and the text of \"like this photo\".",
-        "Bootstrap has its own button styles, which look much better than the plain HTML ones."
+        "Create a new <code>button</code> element below your large kitten photo. Give it the class \"btn\" and the text of \"like this photo\".",
+        "Bootstrap has its own styles for <code>button</code> elements, which look much better than the plain HTML ones."
       ],
       "tests": [
         "assert($('button').hasClass('btn'), 'Your new button should have the class \"btn\".')",
-        "assert(new RegExp('like this photo','gi').test($('button.btn').text()), 'Your button should have the text \"like this photo\".')"
+        "assert(new RegExp('like this photo','gi').test($('button.btn').text()), 'Your button should have the text \"like this photo\".')",
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -259,13 +260,16 @@
       "name": "Waypoint: Create a Block Element Bootstrap Button",
       "difficulty": 0.050,
       "description": [
-        "Add Bootstrap's <code>btn-block</code> class to your Bootstrap button.",
-        "Normally, your buttons are only as wide as the text they contain. By making them <code>block</code> elements, your button will stretch to fill your page's entire horizontal space.",
-        "Note that these buttons still need the <code>btn</code> class."
+        "Add Bootstrap's \"btn-block\" class to your Bootstrap button.",
+        "Normally, your <code>button</code> elements are only as wide as the text that they contain. By making them block elements, your button will stretch to fill your page's entire horizontal space.",
+        "This image illustrates the difference between \"inline\" elements and \"block-level\" elements:",
+        "<img class='img-responsive' src='https://www.evernote.com/l/AHTFU358y71AV6mokPeuTEgrZVdUJ4A8v3AB/image.png' alt='An \"inline\" button is as small as the text it contains. In this image, it's centered. Below it is a \"block-level\" button, which stretches to fill the entire horizontal space.'>",
+        "Note that these buttons still need the \"btn\" class."
       ],
       "tests": [
         "assert($('button').hasClass('btn'), 'Your button should still have the class \"btn\".')",
-        "assert($('button').hasClass('btn-block'), 'Your button should have the class \"btn-block\".')"
+        "assert($('button').hasClass('btn-block'), 'Your button should have the class \"btn-block\".')",
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -344,13 +348,14 @@
       "name": "Waypoint: Taste the Bootstrap Button Color Rainbow",
       "difficulty": 0.051,
       "description": [
-        "Add Bootstrap's <code>btn-primary</code> class to your button.",
-        "The <code>btn-primary</code> class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.",
-        "Note that this button will still need the <code>btn</code> class."
+        "Add Bootstrap's \"btn-primary\" class to your button.",
+        "The \"btn-primary\" class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.",
+        "Note that this button will still need the \"btn\" and \"btn-block\" classes."
       ],
       "tests": [
         "assert($('button').hasClass('btn-primary'), 'Your button should have the class \"btn-primary\".')",
-        "assert($('button').hasClass('btn-block') && $('button').hasClass('btn'), 'Your button should still have the \"btn\" and \"btn-block\" classes.')"
+        "assert($('button').hasClass('btn-block') && $('button').hasClass('btn'), 'Your button should still have the \"btn\" and \"btn-block\" classes.')",
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -429,14 +434,15 @@
       "name": "Waypoint: Call out Optional Actions with Button Info",
       "difficulty": 0.052,
       "description": [
-        "Create a new block-level Bootstrap button below your \"Like\" button with the text \"Info\", and add Bootstrap's <code>btn-info</code> and <code>btn-block</code> classes to it.",
-        "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-info</code> class is used to call attention to optional actions that the user can take.",
-        "Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes."
+        "Create a new block-level Bootstrap button below your \"Like\" button with the text \"Info\", and add Bootstrap's \"btn-info\" and \"btn-block\" classes to it.",
+        "Bootstrap comes with several pre-defined colors for buttons. The \"btn-info\" class is used to call attention to optional actions that the user can take.",
+        "Note that these buttons still need the \"btn\" and \"btn-block\" classes."
       ],
       "tests": [
         "assert($('button').hasClass('btn-info'), 'Your new button should have the class \"btn-info\".')",
         "assert($('button.btn-block.btn').length > 1, 'Both of your Bootstrap buttons should have the \"btn\" and \"btn-block\" classes.')",
-        "assert(new RegExp('info', 'gi').test($('button.btn-info').text()), 'Your new button should have the text \"Info\".')"
+        "assert(new RegExp('info', 'gi').test($('button.btn-info').text()), 'Your new button should have the text \"Info\".')",
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -515,14 +521,15 @@
       "name": "Waypoint: Warn your Users of a Dangerous Action",
       "difficulty": 0.053,
       "description": [
-        "Create a button with the text \"Delete\" and give it the class <code>btn-danger</code>.",
-        "Bootstrap comes with several pre-defined colors for buttons. The <code>btn-danger</code> class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.",
-        "Note that these buttons still need the <code>btn</code> and <code>btn-block</code> classes."
+        "Create a button with the text \"Delete\" and give it the class \"btn-danger\".",
+        "Bootstrap comes with several pre-defined colors for buttons. The \"btn-danger\" class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.",
+        "Note that these buttons still need the \"btn\" and \"btn-block\" classes."
       ],
       "tests": [
         "assert($('button').hasClass('btn-danger'), 'Your new button should have the class \"btn-danger\".')",
         "assert($('button.btn-block.btn').length > 2, 'All of your Bootstrap buttons should have the \"btn\" and \"btn-block\" classes.')",
-        "assert(new RegExp('delete', 'gi').test($('button.btn-danger').text()), 'Your new button should have the text \"delete\".')"
+        "assert(new RegExp('delete', 'gi').test($('button.btn-danger').text()), 'Your new button should have the text \"delete\".')",
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -608,11 +615,13 @@
         "<a href='http://getbootstrap.com/css/#grid-example-basic' target='_blank'><img class='img-responsive' src='https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png'></a>",
         "Note that in this illustration, we use the <code>col-md-*</code> class. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, we're specifying how many columns wide an element should be on a medium-sized screen, such as a laptop.",
         "In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where \"*\" is the number of columns wide the element should be, and \"xs\" means \"extra small\", like an extra-small mobile phone screen.",
-        "The <code>row</code> class is applied to a <code>div</code>, and the buttons themselves can be wrapped within it."
+        "The \"row\" class is applied to a <code>div</code>, and the buttons themselves can be wrapped within it."
       ],
       "tests": [
-        "assert($('div.row:has(button)').length > 0, 'Your buttons should be wrapped within a div with the class \"row\".')",
-        "assert($('div.col-xs-4').length > 2, 'Each of your Bootstrap buttons should be wrapped in a div with the class \"col-xs-4\".')"
+        "assert($('div.row:has(button)').length > 2, 'Your buttons should be wrapped within a div with the class \"row\".')",
+        "assert($('div.col-xs-4').length > 2, 'Each of your Bootstrap buttons should be wrapped in a div with the class \"col-xs-4\".')",
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -693,7 +702,7 @@
       "name": "Waypoint: Ditch Custom CSS for Bootstrap",
       "difficulty": 0.055,
       "description": [
-        "<ol><li>Delete <code>.red-text</code>, <code>p</code>, and <code>.smaller-image</code> from your <code>style</code> element.</li> <li>Delete the <code>p</code> element that contains the dead link.</li> <li>Remove the <code>red-text</code> class from your <code>h2</code> element and replace it with the <code>text-primary</code> Bootstrap class.</li> <li>Remove the <code>smaller-image</code> class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class.</li></ol>",
+        "Delete the \".red-text\", \"p\", and \".smaller-image\" CSS declarations from your <code>style</code> element. Then Delete the <code>p</code> element that contains a dead link. Then remove the \"red-text\" class from your <code>h2</code> element and replace it with the \"text-primary\" Bootstrap class. Finally, remove the \"smaller-image\" class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class.",
         "We can clean up our code and make our Cat Photo App look more conventional by using Bootstrap's built-in styles instead of the custom styles we created earlier.",
         "Don't worry - there will be plenty of time to customize our CSS later."
       ],
@@ -796,14 +805,15 @@
         "Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
         "Here's a diagram of how Bootstrap's 12-column grid layout works:",
         "<a href='http://getbootstrap.com/css/#grid' target='_blank'><img class='img-responsive' src='https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png'></a>",
-        "Note that in this illustration, we use the <code>col-md-*</code> class. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, we're specifying how many columns wide an element should be on a medium-sized screen, such as a laptop.",
-        "In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where \"*\" is the number of columns wide the element should be, and \"xs\" means \"extra small\", like an extra-small mobile phone screen.",
+        "Note that in this illustration, we use the \"col-md-*\" class. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, we're specifying how many columns wide an element should be on a medium-sized screen, such as a laptop.",
+        "In the Cat Photo App that we're building, we'll use \"col-xs-*\", where \"*\" is the number of columns wide the element should be, and \"xs\" means \"extra small\", like an extra-small mobile phone screen.",
         "Notice how the image is now just the right size to fit along the text?"
       ],
       "tests": [
-        "assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0, 'Your h2 and top image elements should both be wrapped together within a div with the class \"row\".')",
-        "assert($('div.col-xs-4:has(img)').length > 0, 'Wrap your top image inside a div with the class \"col-xs-4\".')",
-        "assert($('div.col-xs-8:has(h2)').length > 0, 'Wrap your h2 element inside a div with the class \"col-xs-8\".')"
+        "assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0, 'Your <code>h2</code> element and topmost <code>img</code> element should both be wrapped together within a <code>div</code> element with the class \"row\".')",
+        "assert($('div.col-xs-4:has(img)').length > 0, 'Wrap your topmost <code>img</code> element within a <code>div</code> with the class \"col-xs-4\".')",
+        "assert($('div.col-xs-8:has(h2)').length > 0, 'Wrap your <code>h2</code> element within a <code>div</code> with the class \"col-xs-8\".')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -880,13 +890,14 @@
       "difficulty": 0.057,
       "description": [
         "Use Font Awesome to add a \"like\" icon to your like button.",
-        "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
+        "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the \".svg\" file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
         "Go ahead and add a <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> within your like button's element."
       ],
       "tests": [
         "assert($('i').hasClass('fa fa-thumbs-up'), 'Add an <code>i</code> element with the classes \"fa\" and \"fa-thumbs-up\".')",
         "assert($('button').children('i').length > 0, 'Wrap your <code>i</code> element within your <code>button</code> element.')",
-        "assert(editor.match(/<\\/i>/g), 'Be sure to close your <code>i</code> element with a closing tag.')"
+        "assert(editor.match(/<\\/i>/g), 'Be sure to close your <code>i</code> element with a closing tag.')",
+        "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length === editor.match(/<i>/g).length, 'Make sure your <code>i</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -967,12 +978,13 @@
       "difficulty": 0.058,
       "description": [
         "Use Font Awesome to add a \"info-circle\" icon to your info button and a \"trash\" icon to your delete button.",
-        "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
+        "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the \".svg\" file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
         "Add <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button's element, and a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button."
       ],
       "tests": [
         "assert($('i').hasClass('fa fa-trash'), 'You should add a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button element.')",
-        "assert($('i').hasClass('fa fa-info-circle'), 'You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button element.')"
+        "assert($('i').hasClass('fa fa-info-circle'), 'You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button element.')",
+        "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length === editor.match(/<i>/g).length, 'Make sure each of your <code>i</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1053,11 +1065,12 @@
       "difficulty": 0.059,
       "description": [
         "Wrap all of your radio buttons within a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them within a <code>&#60;div class='col-xs-6'&#62;</code> element.",
-        "You can use Bootstrap's <code>col-xs-*</code> classes on form elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is."
+        "You can use Bootstrap's \"col-xs-*\" classes on <code>form</code> elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is."
       ],
       "tests": [
-        "assert($('div.row:has(input[type=\\'radio\\'])').length > 0, 'Wrap all of your radio buttons inside one div with the class \"row\".')",
-        "assert($('div.col-xs-6:has(input[type=\\'radio\\'])').length > 1, 'Wrap each of your radio buttons inside its own div with the class \"col-xs-6\".')"
+        "assert($('div.row:has(input[type=\\'radio\\'])').length > 0, 'Wrap all of your radio buttons inside one <code>div</code> with the class \"row\".')",
+        "assert($('div.col-xs-6:has(input[type=\\'radio\\'])').length > 1, 'Wrap each of your radio buttons inside its own <code>div</code> with the class \"col-xs-6\".')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1138,11 +1151,12 @@
       "difficulty": 0.060,
       "description": [
         "Wrap all your checkboxes in a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them in a <code>&#60;div class='col-xs-4'&#62;</code> element.",
-        "You can use Bootstrap's <code>col-xs-*</code> classes on form elements, too! This way, our checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is."
+        "You can use Bootstrap's \"col-xs-*\" classes on <code>form</code> elements, too! This way, our checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is."
       ],
       "tests": [
-        "assert($('div.row:has(input[type=\\'checkbox\\'])').length > 0, 'Wrap all of your checkboxes inside one div with the class \"row\".')",
-        "assert($('div.col-xs-4:has(input[type=\\'checkbox\\'])').length > 2, 'Wrap each of your checkboxes inside its own div with the class \"col-xs-4\".')"
+        "assert($('div.row:has(input[type=\\'checkbox\\'])').length > 0, 'Wrap all of your checkboxes inside one <code>div</code> with the class \"row\".')",
+        "assert($('div.col-xs-4:has(input[type=\\'checkbox\\'])').length > 2, 'Wrap each of your checkboxes inside its own <code>div</code> with the class \"col-xs-4\".')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1229,12 +1243,14 @@
       "name": "Waypoint: Style Text Inputs as Form Controls",
       "difficulty": 0.061,
       "description": [
-        "Give your form's text input field a class of <code>form-control</code>. Give your form's submit button the classes <code>btn btn-primary</code> and give it the Font Awesome icon of <code>fa-paper-plane</code>."
+        "Give your form's text input field a class of \"form-control\". Give your form's submit button the classes \"btn btn-primary\". Also give this button the Font Awesome icon of \"fa-paper-plane\".",
+        "You can add the \"fa-paper-plane\" Font Awesome icon by adding <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element."
       ],
       "tests": [
         "assert($('button[type=\\'submit\\']').hasClass('btn btn-primary'), 'Give the submit button in your form the classes \"btn btn-primary\".')",
-        "assert($('button[type=\\'submit\\']:has(i.fa.fa-paper-plane)').length > 0, 'Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit button element.')",
-        "assert($('input[type=\\'text\\']').hasClass('form-control'), 'Give the text input field in your form the class \"form-control\".')"
+        "assert($('button[type=\\'submit\\']:has(i.fa.fa-paper-plane)').length > 0, 'Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.')",
+        "assert($('input[type=\\'text\\']').hasClass('form-control'), 'Give the text <code>input<code> in your form the class \"form-control\".')",
+        "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length === editor.match(/<i>/g).length, 'Make sure each of your <code>i</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1330,14 +1346,15 @@
       "name": "Waypoint: Line up Form Elements Responsively with Bootstrap",
       "difficulty": 0.062,
       "description": [
-        "Now let's get your form input and your submission button on the same line. We'll do this the same way we have previously: by using a \"row\" element with \"col-xs-*\" elements within it.",
-        "Wrap both your form's text input field and submit button within a div with the class \"row\". Wrap your form's text input field within a div with the class of \"col-xs-7\". Wrap your form's submit button the in a div with the class \"col-xs-5\".",
+        "Now let's get your form <code>input</code> and your submission <code>button</code> on the same line. We'll do this the same way we have previously: by using a <code>div</code> element with the class \"row\", and other <code>div</code> elements within it using the \"col-xs-*\" class.",
+        "Wrap both your form's text <code>input</code> and submit <code>button</code> within a <code>div</code> with the class \"row\". Wrap your form's text <code>input</code> within a div with the class of \"col-xs-7\". Wrap your form's submit <code>button</code> in a <code>div</code> with the class \"col-xs-5\".",
         "This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!"
       ],
       "tests": [
         "assert($('div.row:has(input[type=\\'text\\'])').length > 0 &&  $('div.row:has(button[type=\\'submit\\'])').length > 0, 'Wrap your form submission button and text area in a div with class \"row\".')",
         "assert($('div.col-xs-5:has(button[type=\\'submit\\'])').length > 0, 'Wrap your form submission button in a div with the class \"col-xs-5\".')",
-        "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Wrap your form text area in a div with the class \"col-xs-7\".')"
+        "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Wrap your form text area in a div with the class \"col-xs-7\".')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
