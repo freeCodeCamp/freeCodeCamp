@@ -37,7 +37,18 @@
         "Ahora es el momento de ingresar a nuestra sala de chat. Dale click al botón de \"I've completed this challenge\" para continuar con el siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Wegpunkt: Lerne wie Free Code Camp funktioniert",
+      "descriptionDe": [
+        "Sieh dir das kurze Video an oder lies einfach diese Übersicht:",
+        "Willkommen im Free Code Camp. Wir sind eine Gemeinschaft aus eifrigen Personen, die Programmieren lernen, indem sie Projekte für gemeinnützige Organisationen umsetzen.",
+        "Programmieren zu lernen ist hart, weshalb wir diese Gemeinschaft ins Leben gerufen haben. Jeder, der motiviert bleiben kann, ist auch in der Lage Programmieren zu lernen. Und um motiviert zu bleiben, musst du nur: <ol><li>Freunde finden, die programmieren</li><li>jeden Tag ein wenig programmieren</li></ol>",
+        "Alle unsere Lektionen sind <ol><li>kostenlos</li><li>selbstbestimmt</li><li>Browser-basiert</li></ol>",
+        "Wir werden <ol><li>200 Stunden mit Werkzeugen wie HTML, CSS, JavaScript, Node.js und Datenbanken arbeiten</li><li>600 Stunden Projekte umsetzen</li><li>800 Stunden komplette Lösungen für gemeinnützige Organisationen erstellen</li></ol>",
+        "Am Ende werden wir <ol><li>gut im Programmieren sein</li><li>ein Portfolio aus Anwendungen mit zufriedenen Nutzern vorweisen können</li></ol>",
+        "Wenn du das Free Code Camp abgeschlossen hast, wirst du in der Lage sein einen Job in der Branche zu bekommen. Es gibt sehr viel mehr offene Stellen als fähige Programmierer, um sie zu besetzen.",
+        "Jetzt wird es Zeit unserem Chat beizutreten. Klicke auf \"I've completed this challenge\" um zur nächsten Lektion fortzufahren."
+      ]
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd0f",
