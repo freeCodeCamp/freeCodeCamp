@@ -229,7 +229,7 @@ exports.postEmailSignup = function(req, res, next) {
           'And if you have a moment, check out our blog: ',
           'blog.freecodecamp.com.\n',
           'Good luck with the challenges!\n\n',
-          '- the Volunteer Camp Counselor Team'
+          '- the Free Code Camp Volunteer Team'
         ].join('')
       };
       transporter.sendMail(mailOptions, function(err) {
