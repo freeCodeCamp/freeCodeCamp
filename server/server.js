@@ -227,18 +227,7 @@ app.use(utilityRouter);
 app.use(storyRouter);
 
 /*
-app.get(
-  '/jobs',
-  jobsController.jobsDirectory
-);
-
 app.all('/account', passportConf.isAuthenticated);
-app.get('/field-guide/all-articles', fieldGuideController.showAllFieldGuides);
-app.get('/field-guide/:fieldGuideName',
-  fieldGuideController.returnIndividualFieldGuide
-);
-app.get('/field-guide/', fieldGuideController.returnNextFieldGuide);
-app.post('/completed-field-guide/', fieldGuideController.completedFieldGuide);
 app.get('/challenges/next-challenge',
   userController.userMigration,
   challengeController.returnNextChallenge

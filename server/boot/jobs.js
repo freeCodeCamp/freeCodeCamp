@@ -1,6 +1,10 @@
+var express = require('express');
 var Job = require('./../../models/Job');
+var router = express.Router();
 
-exports.jobsDirectory = function(req, res, next) {
+router.get('/jobs', jobsDirectory);
+
+function jobsDirectory(req, res, next) {
   Job.find({}, function(err, jobs) {
     if (err) { return next(err); }
 
@@ -9,4 +13,6 @@ exports.jobsDirectory = function(req, res, next) {
       jobs: jobs
     });
   });
-};
+}
+
+module.exports = router;

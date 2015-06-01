@@ -1,9 +1,17 @@
 var R = require('ramda'),
+    express = require('express'),
     // debug = require('debug')('freecc:fieldguides'),
     FieldGuide = require('./../../models/FieldGuide'),
     resources = require('./../resources/resources');
 
-exports.returnIndividualFieldGuide = function(req, res, next) {
+var router = express.Router();
+
+router.get('/field-guide/all-articles', showAllFieldGuides);
+router.get('/field-guide/:fieldGuideName', returnIndividualFieldGuide);
+router.get('/field-guide/', returnNextFieldGuide);
+router.post('/completed-field-guide/', completedFieldGuide);
+
+function returnIndividualFieldGuide(req, res, next) {
   var dashedName = req.params.fieldGuideName;
   if (req.user) {
     var completed = req.user.completedFieldGuides;
@@ -48,9 +56,9 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
       });
     }
   );
-};
+}
 
-exports.showAllFieldGuides = function(req, res) {
+function showAllFieldGuides(req, res) {
   var allFieldGuideNamesAndIds = resources.allFieldGuideNamesAndIds();
 
   var completedFieldGuides = [];
@@ -61,9 +69,9 @@ exports.showAllFieldGuides = function(req, res) {
     allFieldGuideNamesAndIds: allFieldGuideNamesAndIds,
     completedFieldGuides: completedFieldGuides
   });
-};
+}
 
-exports.returnNextFieldGuide = function(req, res, next) {
+function returnNextFieldGuide(req, res, next) {
   if (!req.user) {
     return res.redirect('/field-guide/how-do-i-use-this-guide');
   }
@@ -91,9 +99,9 @@ exports.returnNextFieldGuide = function(req, res, next) {
     var nameString = fieldGuide.name.toLowerCase().replace(/\s/g, '-');
     return res.redirect('../field-guide/' + nameString);
   });
-};
+}
 
-exports.completedFieldGuide = function (req, res, next) {
+function completedFieldGuide(req, res, next) {
   var fieldGuideId = req.body.fieldGuideInfo.fieldGuideId;
 
   req.user.completedFieldGuides.push(fieldGuideId);
@@ -110,4 +118,6 @@ exports.completedFieldGuide = function (req, res, next) {
     }
     res.send(true);
   });
-};
+}
+
+module.exports = router;

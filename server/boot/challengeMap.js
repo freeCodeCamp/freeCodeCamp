@@ -6,10 +6,7 @@ var R = require('ramda'),
   express = require('express'),
   router = express.Router();
 
-router.get('/map',
-  middleware.userMigration,
-  challengeMap
-);
+router.get('/map', middleware.userMigration, challengeMap);
 
 router.get('/learn-to-code', function(req, res) {
   res.redirect(301, '/map');
