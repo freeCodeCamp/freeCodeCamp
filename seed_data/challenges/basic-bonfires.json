@@ -530,7 +530,7 @@
         "expect(mutation(['floor', 'for'])).to.be.true;"
       ],
       "MDNlinks": [
-        "Array.sort()"
+        "Array.indexOf()"
       ],
       "challengeType": 5,
       "nameCn": "",

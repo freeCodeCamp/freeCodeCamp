@@ -6,6 +6,10 @@ var fieldGuideSchema = new mongoose.Schema({
         type: String,
         unique: false
     },
+    dashedName: {
+        type: String,
+        unique: false
+    },
     description: {
         type: Array,
         unique: false
