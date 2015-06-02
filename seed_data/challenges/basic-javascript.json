@@ -22,8 +22,14 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Construye un Juego de Aventura",
+      "descriptionEs": [
+        "Ahora que sabes algo de Informática básica, ¡vamos a programar con JavaScript!",
+        "Vamos a trabajar a través del famoso curso interactivo de Codecademy sobre JavaScript.",
+        "Este curso nos enseñará lo básico de JavaScript mientras nos va guiando a través del proceso de construir aplicaciones web interesantes, ¡todo dentro del ambiente amigable para el estudiante de Codecademy!",
+        "Anda a <a href='http://www.codecademy.com/courses/getting-started-v2/0/1' target='_blank'>http://www.codecademy.com/courses/getting-started-v2/0/1</a> y completa la sección.",
+        "Asegúrate de completar también esta sección: <a href='http://www.codecademy.com/courses/javascript-beginner-en-x9DnD/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-x9DnD/0/1</a>."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
