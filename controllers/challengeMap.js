@@ -29,7 +29,7 @@ module.exports = {
     var challengeList = resources.getChallengeMapForDisplay();
     Object.keys(challengeList).forEach(function(key) {
       challengeList[key].completed = challengeList[key].challenges.filter(function(elem) {
-        return completedChallengeList.indexOf(elem._id) > 0;
+        return completedChallengeList.indexOf(elem._id) > -1;
       });
     });
 
@@ -41,6 +41,7 @@ module.exports = {
     var date2 = new Date();
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    challengeList[0].completed[0] +=
 
     User.count({}, function (err, camperCount) {
       if (err) {

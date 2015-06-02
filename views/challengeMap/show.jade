@@ -2,7 +2,7 @@ extends ../layout
 block content
     script.
         var completedChallenges = !{JSON.stringify(completedChallengeList)};
-        var challengeList = !{JSON.stringify(challengeList)}
+        var challengeList = !{JSON.stringify(challengeList)};
     .panel.panel-info
         .panel-heading.text-center
             h1 Challenge Map
@@ -26,8 +26,16 @@ block content
                 ol
                     for challengeBlock in challengeList
                         .row
-                            .hidden-xs.col-sm-3.col-md-2
-                                span.negative-10
+                            if (user)
+                                if (challengeBlock.completed.length === challengeBlock.challenges.length)
+                                    .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.large-p.negative-10
+                                else
+                                    .hidden-xs.col-sm-3.col-md-2
+                                        .progress.progress-bar-padding.text-center.thin-progress-bar
+                                            .progress-bar(role='progressbar', aria-valuenow=((challengeBlock.completed.length / challengeBlock.challenges.length) * 100), aria-valuemin='0', aria-valuemax='100', style='width: ' + ((challengeBlock.completed.length / challengeBlock.challenges.length) * 100) + '%;')
+                            else
+                                .hidden-xs.col-sm-3
+                                    span.negative-10
                             .col-xs-12.col-sm-9.col-md-10
                                 li.large-p.negative-10
                                     a(href='#' + challengeBlock.dashedName)= challengeBlock.name
