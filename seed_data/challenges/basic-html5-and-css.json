@@ -16,7 +16,7 @@
         "To enable the \"Go to my next challenge\" button on this exercise, change your <code>h1</code> tag's text to say \"Hello World\" instead of \"Hello\"."
       ],
       "tests": [
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
+        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".')"
       ],
       "challengeSeed": [
         "<h1>Hello</h1>"
@@ -54,8 +54,8 @@
       "tests": [
         "assert(($('h2').length > 0), 'Create an <code>h2</code> element.')",
         "assert(editor.match(/<\\/h2>/g) && editor.match(/<\\/h2>/g).length === editor.match(/<h2>/g).length, 'Make sure your <code>h2</code> element has a closing tag.')",
-        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\"')",
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
+        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\".')",
+        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>"
@@ -84,7 +84,7 @@
       "description": [
         "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\".",
         "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
-        "You can create a <code>p</code> element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
+        "You can create a <code>p</code> element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>."
       ],
       "tests": [
         "assert(($('p').length > 0), 'Create a <code>p</code> element.')",
@@ -106,7 +106,7 @@
       "descriptionEs": [
         "Crea un elemento párrafo debajo de tu elemento h2, y dale el texto \"Hello Paragraph\". Apenas escribas la etiqueta de apertura <code>&#60;p&#62;</code>, una de nuestras pruebas pasarán (ya que ésta es HTML válido). Asegúrate de cerrar el elemento agregando la etiqueta de cierre <code>&#60;/p&#62;</code>.",
         "Los elementos párrafo son los principales elementos para los párrafos de texto en tamaño normal en sitios web.",
-        "Tú puedes crear un elemento párrafo como éste: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>"
+        "Tú puedes crear un elemento párrafo como éste: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>."
 	  ],
       "namePt": "",
       "descriptionPt": []
@@ -122,7 +122,7 @@
         "You'll encounter other self-closing element tags soon."
       ],
       "tests": [
-        "assert(($('br').length > 0), 'Add a <code>br</code> element to your page, preferably between two of your elements.')"
+        "assert(($('br').length > 0), 'Add a <code>br</code> element to your page preferably between two of your elements.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -362,7 +362,9 @@
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your <code>h2</code> element should be blue.')",
-        "assert(!$('h2').attr('style'), 'Remove the style attribute from your <code>h2</code> element.')"
+        "assert(!$('h2').attr('style'), 'Remove the style attribute from your <code>h2</code> element.')",
+        "assert(($('style').length > 0), 'Create a <code>style</code> element.')",
+        "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === editor.match(/<style>/g).length, 'Make sure each of your <code>style</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<h2 style='color: red'>CatPhotoApp</h2>",
