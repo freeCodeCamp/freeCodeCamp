@@ -1581,7 +1581,7 @@
       "tests": [
         "assert($('form').length > 0, 'Wrap your text input element within a <code>form</code> element.')",
         "assert($('form').attr('action'), 'Your <code>form</code> element should have an <code>action</code> attribute.')",
-        "assert(editor.match(/<\\/form>/g) && editor.match(/<\\/form>/g).length === editor.match(/<form>/g).length, 'Make sure your <code>form</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/form>/g) && editor.match(/<form/g) && editor.match(/<\\/form>/g).length === editor.match(/<form/g).length, 'Make sure your <code>form</code> element has a closing tag.')",
         "assert(editor.match(/\\/submit-cat-photo/ig), 'Make sure your <code>form</code> action is set to <code>/submit-cat-photo</code>.')"
       ],
       "challengeSeed": [
@@ -1657,7 +1657,7 @@
         "assert($('form').children('button').length > 0, 'Your form should have a button inside it.')",
         "assert($('button').attr('type') === 'submit', 'Your submit button should have be of input type \"submit\".')",
         "assert($('button').text().match(/submit/gi), 'Your submit button should have the text \"submit\".')",
-        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1726,12 +1726,12 @@
       "name": "Waypoint: Use HTML5 to Require a Field",
       "difficulty": 0.042,
       "description": [
-        "Make it required for your user to input text into your form before being able to submit it.",
+        "Make your text <code>input</code> a \"required\" field, so that your user can't submit the form without completing this field.",
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
         "For example, if you wanted to make a text input field required, you can just add the word \"required\" within your <code>input</code> element, you would use: <code>&#60;input type='text' required&#62;</code>."
       ],
       "tests": [
-        "assert($('input').prop('required'), 'Your text field should have the property of being required.')"
+        "assert($('input').prop('required'), 'Your text <code>input</code> element should have the \"required\" attribute.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1811,7 +1811,10 @@
       "tests": [
         "assert($('input[type=\"radio\"]').length > 1, 'Your page should have two radio button elements.')",
         "assert($('input[type=\"radio\"]:nth-child(1)').attr('name') === 'indoor-outdoor', 'Give your radio buttons the <code>name</code> attribute of \"indoor-outdoor\".')",
-        "assert($('label').length > 1, 'Each of your two radio button elements should be wrapped in a label element.')"
+        "assert($('label').length > 1, 'Each of your two radio button elements should be wrapped in a label element.')",
+        "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
+        "assert($('label').text().match(/indoor/gi), 'One of your radio buttons should have the label \"indoor\".')",
+        "assert($('label').text().match(/outdoor/gi), 'One of your radio buttons should have the label \"outdoor\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1881,13 +1884,15 @@
       "name": "Waypoint: Create a Set of Checkboxes",
       "difficulty": 0.044,
       "description": [
-        "Add to your form a set of three checkbox elements. Each checkbox should be wrapped within its own <code>label</code> element. All three should share the same <code>name</code> attribute.",
+        "Add to your form a set of three checkbox elements. Each checkbox should be wrapped within its own <code>label</code> element. All three should share the <code>name</code> attribute of \"personality\".",
         "Forms commonly use checkbox inputs for questions that may have more than one answer.",
         "For example: <code>&#60;label&#62;&#60;input type='checkbox' name='personality'&#62; Loving&#60;/label&#62;</code>."
       ],
       "tests": [
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
-        "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be wrapped in its own <code>label</code> element.')"
+        "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be wrapped in its own <code>label</code> element.')",
+        "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
+        "assert($('input[type=\"checkbox\"]:nth-child(1)').attr('name') === 'trait', 'Give your radio buttons the <code>name</code> attribute of \"personality\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
