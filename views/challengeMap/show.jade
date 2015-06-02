@@ -29,16 +29,22 @@ block content
                             if (user)
                                 if (challengeBlock.completed.length === challengeBlock.challenges.length)
                                     .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.large-p.negative-10
+                                    .col-xs-12.col-sm-9.col-md-10
+                                        li.large-p.faded.negative-10
+                                            a(href='#' + challengeBlock.dashedName)= challengeBlock.name
                                 else
                                     .hidden-xs.col-sm-3.col-md-2
                                         .progress.progress-bar-padding.text-center.thin-progress-bar
                                             .progress-bar(role='progressbar', aria-valuenow=((challengeBlock.completed.length / challengeBlock.challenges.length) * 100), aria-valuemin='0', aria-valuemax='100', style='width: ' + ((challengeBlock.completed.length / challengeBlock.challenges.length) * 100) + '%;')
+                                    .col-xs-12.col-sm-9.col-md-10
+                                        li.large-p.negative-10
+                                            a(href='#' + challengeBlock.dashedName)= challengeBlock.name
                             else
                                 .hidden-xs.col-sm-3
                                     span.negative-10
-                            .col-xs-12.col-sm-9.col-md-10
-                                li.large-p.negative-10
-                                    a(href='#' + challengeBlock.dashedName)= challengeBlock.name
+                                .col-xs-12.col-sm-9.col-md-10
+                                    li.large-p.negative-10
+                                        a(href='#' + challengeBlock.dashedName)= challengeBlock.name
 
                 .row
                     .col-xs-12.col-sm-8.col-sm-offset-2.negative-28
