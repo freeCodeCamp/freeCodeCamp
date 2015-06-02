@@ -1,0 +1,45 @@
+{
+  "name": "comment",
+  "base": "PersistedModel",
+  "trackChanges": false,
+  "idInjection": true,
+  "properties": {
+    "associatedPost": {
+      "type": "string",
+      "required": true
+    },
+    "originalStoryLink": {
+      "type": "string",
+      "default": ""
+    },
+    "originalStoryAuthorEmail": {
+      "type": "string",
+      "default": ""
+    },
+    "body": {
+      "type": "string",
+      "default": ""
+    },
+    "rank": {
+      "type": "number",
+      "default": "-Infinity"
+    },
+    "upvotes": {
+      "type": "array",
+      "default": []
+    },
+    "author": {},
+    "comments": {
+      "type": "array",
+      "default": []
+    },
+    "commentOn": {
+      "type": "number",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

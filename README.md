@@ -114,8 +114,8 @@ Project Structure
 | **controllers**/home.js            | Controller for home page (index).                           |
 | **controllers**/user.js            | Controller for user account management.                     |
 | **controllers**/challenges.js      | Controller for rendering the challenges.                    |
-| **models**/User.js                 | Mongoose schema and model for User.                         |
-| **models**/Challenge.js            | Mongoose schema and model for Challenge.                    |
+| **models**/user.json                 | Mongoose schema and model for User.                         |
+| **models**/challenge.json            | Mongoose schema and model for Challenge.                    |
 | **public**/                        | Static assets (fonts, css, js, img).                        |
 | **public**/**js**/application.js   | Specify client-side JavaScript dependencies.                |
 | **public**/**js**/main_0.0.2.js          | Place your client-side JavaScript here.                     |
