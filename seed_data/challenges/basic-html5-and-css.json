@@ -16,7 +16,7 @@
         "To enable the \"Go to my next challenge\" button on this exercise, change your <code>h1</code> tag's text to say \"Hello World\" instead of \"Hello\"."
       ],
       "tests": [
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
+        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".')"
       ],
       "challengeSeed": [
         "<h1>Hello</h1>"
@@ -54,8 +54,8 @@
       "tests": [
         "assert(($('h2').length > 0), 'Create an <code>h2</code> element.')",
         "assert(editor.match(/<\\/h2>/g) && editor.match(/<\\/h2>/g).length === editor.match(/<h2>/g).length, 'Make sure your <code>h2</code> element has a closing tag.')",
-        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\"')",
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\"')"
+        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\".')",
+        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>"
@@ -122,7 +122,7 @@
         "You'll encounter other self-closing element tags soon."
       ],
       "tests": [
-        "assert(($('br').length > 0), 'Add a <code>br</code> element to your page, preferably between two of your elements.')"
+        "assert(($('br').length > 0), 'Add a <code>br</code> element to your page preferably between two of your elements.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -363,7 +363,9 @@
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your <code>h2</code> element should be blue.')",
-        "assert(!$('h2').attr('style'), 'Remove the style attribute from your <code>h2</code> element.')"
+        "assert(!$('h2').attr('style'), 'Remove the style attribute from your <code>h2</code> element.')",
+        "assert(($('style').length > 0), 'Create a <code>style</code> element.')",
+        "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === editor.match(/<style>/g).length, 'Make sure each of your <code>style</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<h2 style='color: red'>CatPhotoApp</h2>",
@@ -482,7 +484,6 @@
       "tests": [
         "assert($('p').length > 1, 'You need 2 <code>p</code> elements with Kitty Ipsum text.')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p>/g).length, 'Make sure each of your <code>p</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/p>/g).length > 1, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert($('p').css('font-size') === '16px', 'Give your <code>p</code> elements the font-size of 16px.')"
       ],
       "challengeSeed": [
@@ -1171,7 +1172,7 @@
       ],
       "tests": [
         "assert(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')",
-        "assert($('a').children('img').length > 0, 'Wrap your image element inside an <code>a</code> element.')",
+        "assert($('a').children('img').length > 0, 'Wrap your image element within an <code>a</code> element.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a>/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
