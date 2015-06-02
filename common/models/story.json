@@ -14,7 +14,7 @@
     },
     "timePosted": {
       "type": "number",
-      "default": 0
+      "default": "0"
     },
     "link": {
       "type": "string",
@@ -53,7 +53,7 @@
     "storyLink": {
       "type": "string",
       "default": ""
-    }
+    },
     "difficulty": "string",
     "description": "array",
     "tests": "array",

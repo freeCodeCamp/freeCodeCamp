@@ -28,8 +28,3 @@
   "acls": [],
   "methods": []
 }
-
-
-});
-
-module.exports = mongoose.model('Nonprofit', nonprofitSchema);
