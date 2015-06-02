@@ -89,7 +89,7 @@
       "tests": [
         "assert(($('p').length > 0), 'Create a <code>p</code> element.')",
         "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your <code>p</code> element should have the text \"Hello Paragraph\".')",
-        "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p>/g).length, 'Make sure your <code>p</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure your <code>p</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -364,7 +364,7 @@
       "tests": [
         "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your <code>h2</code> element should be blue.')",
         "assert(!$('h2').attr('style'), 'Remove the style attribute from your <code>h2</code> element.')",
-        "assert(($('style').length > 0), 'Create a <code>style</code> element.')",
+        "assert(($('style').length > 1), 'Create a <code>style</code> element.')",
         "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === editor.match(/<style>/g).length, 'Make sure each of your <code>style</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -483,7 +483,8 @@
       ],
       "tests": [
         "assert($('p').length > 1, 'You need 2 <code>p</code> elements with Kitty Ipsum text.')",
-        "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p>/g).length, 'Make sure each of your <code>p</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
+        "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($('p').text()), 'Your <code>p</code> element should contain the first few words of the provided additional \"Kitty Ipsum\" text.')",
         "assert($('p').css('font-size') === '16px', 'Give your <code>p</code> elements the font-size of 16px.')"
       ],
       "challengeSeed": [
@@ -711,7 +712,7 @@
       ],
       "tests": [
         "assert($('img').length > 0, 'Your page should have an image element.')",
-        "assert($('img').filter(function(index) { return /http://bit.ly/fcc-kittens/gi.test($('img').attr('src')); }).length > 0, 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
+        "assert($('img').filter(function(index) { return /http:\\/\\/bit\\.ly\\/fcc-kittens/gi.test($('img').attr('src')); }).length > 0, 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -973,7 +974,7 @@
       "name": "Waypoint: Link to External Pages with Anchor Elements",
       "difficulty": 0.031,
       "description": [
-        "Create an <code>a</code> element that links to http://catphotoapp.com and has \"cat photos\" as its anchor text (link text).",
+        "Create an <code>a</code> element, or \"anchor element\", that links to http://catphotoapp.com and has \"cat photos\" as its link text, or \"anchor text\".",
         "Here's a diagram of an <code>a</code> element. In this case, it's used in the middle of a paragraph element, which means your link will appear in the middle of your sentence.",
         "<img class='img-responsive' alt='a diagram of how anchor tags are composed with the same text as on the following line' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>."
@@ -981,7 +982,7 @@
       "tests": [
         "assert((/cat photos/gi).test($('a').text()), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($('a').filter(function(index) { return /com/gi.test($('a').attr('href')); }).length > 0, 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com<code>.')",
-        "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a>/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
