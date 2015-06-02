@@ -5,7 +5,7 @@ var express = require('express'),
     Slack = require('node-slack'),
     request = require('request'),
     debug = require('debug')('freecc:cntr:resources'),
-    constantStrings = require('./constantStrings.json'),
+    constantStrings = require('../resources/constantStrings.json'),
 
     User = require('../../models/User'),
     Challenge = require('./../../models/Challenge'),

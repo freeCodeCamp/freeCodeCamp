@@ -33,7 +33,6 @@ var express = require('express'),
    * routers.
    */
   homeRouter = require('./boot/home'),
-  resourcesRouter = require('./resources/resources'),
   userRouter = require('./boot/user'),
   fieldGuideRouter = require('./boot/fieldGuide'),
   challengeMapRouter = require('./boot/challengeMap'),
@@ -42,12 +41,12 @@ var express = require('express'),
   redirectsRouter = require('./boot/redirects'),
   utilityRouter = require('./boot/utility'),
   storyRouter = require('./boot/story'),
+  passportRouter = require('./boot/passport'),
 
   /**
    * API keys and Passport configuration.
    */
-  secrets = require('./../config/secrets'),
-  passportConf = require('./../config/passport');
+  secrets = require('./../config/secrets');
 
 /**
  * Create Express server.
@@ -199,7 +198,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(
-  express.static(path.join(__dirname, '/public'), { maxAge: 86400000 })
+  express.static(path.join(__dirname, '../public'), { maxAge: 86400000 })
 );
 
 app.use(function (req, res, next) {
@@ -216,7 +215,6 @@ app.use(function (req, res, next) {
 
 // add sub routers
 app.use(homeRouter);
-app.use(resourcesRouter);
 app.use(userRouter);
 app.use(fieldGuideRouter);
 app.use(challengeMapRouter);
@@ -225,73 +223,11 @@ app.use(jobsRouter);
 app.use(redirectsRouter);
 app.use(utilityRouter);
 app.use(storyRouter);
-
+app.use(passportRouter);
 
 /**
  * OAuth sign-in routes.
  */
-
-app.all('/account', passportConf.isAuthenticated);
-var passportOptions = {
-  successRedirect: '/',
-  failureRedirect: '/login'
-};
-
-app.get('/auth/twitter', passport.authenticate('twitter'));
-
-app.get(
-  '/auth/twitter/callback',
-  passport.authenticate('twitter', {
-    successRedirect: '/',
-    failureRedirect: '/login'
-  })
-);
-
-app.get(
-  '/auth/linkedin',
-  passport.authenticate('linkedin', {
-    state: 'SOME STATE'
-  })
-);
-
-app.get(
-  '/auth/linkedin/callback',
-  passport.authenticate('linkedin', passportOptions)
-);
-
-app.get(
-  '/auth/facebook',
-  passport.authenticate('facebook', {scope: ['email', 'user_location']})
-);
-
-app.get(
-  '/auth/facebook/callback',
-  passport.authenticate('facebook', passportOptions), function (req, res) {
-    res.redirect(req.session.returnTo || '/');
-  }
-);
-
-app.get('/auth/github', passport.authenticate('github'));
-
-app.get(
-  '/auth/github/callback',
-  passport.authenticate('github', passportOptions), function (req, res) {
-    res.redirect(req.session.returnTo || '/');
-  }
-);
-
-app.get(
-  '/auth/google',
-  passport.authenticate('google', {scope: 'profile email'})
-);
-
-app.get(
-  '/auth/google/callback',
-  passport.authenticate('google', passportOptions), function (req, res) {
-    res.redirect(req.session.returnTo || '/');
-  }
-);
-
 
 /**
  * 500 Error Handler.

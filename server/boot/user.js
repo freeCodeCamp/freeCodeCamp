@@ -1,16 +1,18 @@
 var _ = require('lodash'),
+  R = require('ramda'),
   async = require('async'),
   crypto = require('crypto'),
   nodemailer = require('nodemailer'),
   passport = require('passport'),
+  moment = require('moment'),
+  express = require('express'),
+  debug = require('debug')('freecc:cntr:userController'),
+
   User = require('../../models/User'),
   secrets = require('../../config/secrets'),
-  moment = require('moment'),
-  debug = require('debug')('freecc:cntr:userController'),
-  resources = require('./../resources/resources'),
-  R = require('ramda');
+  resources = require('./../resources/resources');
 
-
+var router = express.Router();
 router.get('/login', function(req, res) {
   res.redirect(301, '/signin');
 });

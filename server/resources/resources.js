@@ -41,12 +41,12 @@ Array.zip = function(left, right, combinerFunction) {
   if (!challengeMap) {
     var localChallengeMap = {};
     var files = fs.readdirSync(
-      path.join(__dirname, '/../seed_data/challenges')
+      path.join(__dirname, '../../seed_data/challenges')
     );
     var keyCounter = 0;
     files = files.map(function (file) {
       return require(
-        path.join(__dirname, '/../seed_data/challenges/' + file)
+        path.join(__dirname, '../../seed_data/challenges/' + file)
       );
     });
     files = files.sort(function (a, b) {

@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     eslint = require('gulp-eslint');
 
 var paths = {
-    server: './server.js',
+    server: './server/server.js',
     serverIgnore: []
 };
 
