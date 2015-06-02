@@ -214,8 +214,6 @@ app.use(function (req, res, next) {
 });
 
 // add sub routers
-app.use(homeRouter);
-app.use(userRouter);
 app.use(fieldGuideRouter);
 app.use(challengeMapRouter);
 app.use(challengeRouter);
@@ -224,6 +222,8 @@ app.use(redirectsRouter);
 app.use(utilityRouter);
 app.use(storyRouter);
 app.use(passportRouter);
+app.use(homeRouter);
+app.use(userRouter);
 
 /**
  * OAuth sign-in routes.
