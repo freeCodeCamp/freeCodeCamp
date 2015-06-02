@@ -1044,10 +1044,10 @@
       "tests": [
         "assert($('a').attr('href').match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
         "assert($('a').text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
-        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your anchor element should be wrapped within a paragraph element.')",
+        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your <code>a</code> element should be wrapped within a paragraph element.')",
         "assert($('p').text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
-        "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p>/g).length, 'Make sure your <code>p</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a>/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
+        "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1174,7 +1174,7 @@
       "tests": [
         "assert(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')",
         "assert($('a').children('img').length > 0, 'Wrap your image element within an <code>a</code> element.')",
-        "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a>/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1501,13 +1501,13 @@
       "name": "Waypoint: Add Placeholder Text to a Text Field",
       "difficulty": 0.039,
       "description": [
-        "Add the placeholder text \"cat photo URL\" to your text input.",
-        "Your placeholder text is what appears in your text input before your user has inputed anything.",
+        "Set the <code>placeholder</code> value of your text <code>input</code> to \"cat photo URL\".",
+        "Your placeholder text is what appears in your text <code>input</code> before your user has inputed anything.",
         "You can create placeholder text like so: <code>&#60;input type='text' placeholder='this is placeholder text'&#62;</code>."
       ],
       "tests": [
-        "assert($('input[placeholder]').length > 0, 'Your text field should have a placeholder attribute.')",
-        "assert($('input').attr('placeholder') === 'cat photo URL', 'Your placeholder field should have the value of \"cat photo URL\".')"
+        "assert($('input[placeholder]').length > 0, 'Add a <code>placeholder</code> attribute text <code>input</code> element.')",
+        "assert($('input').attr('placeholder').match(/cat\\s+photo\\s+URL/gi), 'Set the value of your placeholder attribute to \"cat photo URL\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
