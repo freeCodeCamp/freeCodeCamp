@@ -7,12 +7,12 @@ var express = require('express'),
     debug = require('debug')('freecc:cntr:resources'),
     constantStrings = require('../resources/constantStrings.json'),
 
-    User = require('../../models/User'),
-    Challenge = require('./../../models/Challenge'),
-    Story = require('./../../models/Story'),
-    FieldGuide = require('./../../models/FieldGuide'),
-    Nonprofit = require('./../../models/Nonprofit'),
-    secrets = require('./../../config/secrets');
+    User = require('../../common/models/User'),
+    Challenge = require('../../common/models/Challenge'),
+    Story = require('../../common/models/Story'),
+    FieldGuide = require('../../common/models/FieldGuide'),
+    Nonprofit = require('../../common/models/Nonprofit'),
+    secrets = require('../../config/secrets');
 
 var slack = new Slack(secrets.slackHook);
 var router = express.Router();

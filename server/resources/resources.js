@@ -1,6 +1,6 @@
 var async = require('async'),
   path = require('path'),
-  debug = require('debug')('freecc:cntr:resources'), // eslint-disable-line
+  // debug = require('debug')('freecc:cntr:resources'),
   cheerio = require('cheerio'),
   request = require('request'),
   R = require('ramda'),
@@ -8,8 +8,8 @@ var async = require('async'),
   fs = require('fs'),
 
 
-  Story = require('./../../models/Story'),
-  Comment = require('./../../models/Comment'),
+  Story = require('../../common/models/Story'),
+  Comment = require('../../common/models/Comment'),
   resources = require('./resources.json'),
   nonprofits = require('../../seed_data/nonprofits.json'),
   fieldGuides = require('../../seed_data/field-guides.json');

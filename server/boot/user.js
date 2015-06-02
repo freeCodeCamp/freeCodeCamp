@@ -8,7 +8,7 @@ var _ = require('lodash'),
   express = require('express'),
   debug = require('debug')('freecc:cntr:userController'),
 
-  User = require('../../models/User'),
+  User = require('../../common/models/User'),
   secrets = require('../../config/secrets'),
   resources = require('./../resources/resources');
 

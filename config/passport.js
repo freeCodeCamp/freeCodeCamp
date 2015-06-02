@@ -6,9 +6,9 @@ var _ = require('lodash'),
     GitHubStrategy = require('passport-github').Strategy,
     GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
     LinkedInStrategy = require('passport-linkedin-oauth2').Strategy,
-    OAuthStrategy = require('passport-oauth').OAuthStrategy,
-    OAuth2Strategy = require('passport-oauth').OAuth2Strategy,
-    User = require('../models/User'),
+    // OAuthStrategy = require('passport-oauth').OAuthStrategy,
+    // OAuth2Strategy = require('passport-oauth').OAuth2Strategy,
+    User = require('../common/models/User'),
     nodemailer = require('nodemailer'),
     secrets = require('./secrets');
 

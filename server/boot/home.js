@@ -1,7 +1,7 @@
-var message =
-  'Learn to Code JavaScript and get a Coding Job by Helping Nonprofits';
 var express = require('express');
 var router = express.Router();
+var message =
+  'Learn to Code JavaScript and get a Coding Job by Helping Nonprofits';
 
 router.get('/', index);
 

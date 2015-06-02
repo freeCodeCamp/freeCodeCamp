@@ -1,9 +1,9 @@
 var R = require('ramda'),
+  express = require('express'),
   // debug = require('debug')('freecc:cntr:challengeMap'),
-  User = require('../../models/User'),
+  User = require('../../common/models/User'),
   resources = require('./../resources/resources'),
   middleware = require('../resources/middleware'),
-  express = require('express'),
   router = express.Router();
 
 router.get('/map', middleware.userMigration, challengeMap);

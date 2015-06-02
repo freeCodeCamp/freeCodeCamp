@@ -1,11 +1,8 @@
 var mongoose = require('mongoose');
-var secrets = require('../config/secrets');
-
 /**
  *
  * @type {exports.Schema}
  */
-
 
 var bonfireSchema = new mongoose.Schema({
     name: {

@@ -1,5 +1,5 @@
 var express = require('express');
-var Job = require('./../../models/Job');
+var Job = require('../../common/models/Job');
 var router = express.Router();
 
 router.get('/jobs', jobsDirectory);

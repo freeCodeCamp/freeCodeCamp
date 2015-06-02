@@ -32,11 +32,11 @@
 
 var R = require('ramda'),
     express = require('express'),
-    Challenge = require('./../../models/Challenge'),
-    User = require('./../../models/User'),
-    resources = require('./../resources/resources'),
+    Challenge = require('../../common/models/Challenge'),
+    User = require('../../common/models/User'),
+    resources = require('../resources/resources'),
     userMigration = require('../resources/middleware').userMigration,
-    MDNlinks = require('./../../seed_data/bonfireMDNlinks');
+    MDNlinks = require('../../seed_data/bonfireMDNlinks');
 
 var router = express.Router();
 var challengeMapWithNames = resources.getChallengeMapWithNames();

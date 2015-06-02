@@ -1,5 +1,5 @@
 var express = require('express'),
-    Nonprofit = require('./../../models/Nonprofit');
+    Nonprofit = require('../../common/models/Nonprofit');
 
 var router = express.Router();
 
