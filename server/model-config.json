@@ -29,5 +29,33 @@
   "bonfire": {
     "dataSource": "db",
     "public": true
+  },
+  "challenge": {
+    "dataSource": "db",
+    "public": true
+  },
+  "comment": {
+    "dataSource": "db",
+    "public": true
+  },
+  "field-guide": {
+    "dataSource": "db",
+    "public": true
+  },
+  "job": {
+    "dataSource": "db",
+    "public": true
+  },
+  "nonprofit": {
+    "dataSource": "db",
+    "public": true
+  },
+  "story": {
+    "dataSource": "db",
+    "public": true
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
   }
 }
