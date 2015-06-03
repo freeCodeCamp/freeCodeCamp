@@ -557,7 +557,7 @@
       "description": [
         "Apply the <code>font-family</code> of \"Lobster\" to your <code>h2</code> element.",
         "First, you'll need to make a \"call\" to Google to grab the \"Lobster\" font and load it into your HTML.",
-        "Copy the following code snippet and paste it into your code editor above your <code>style</code> element:",
+        "Copy the following code snippet and paste it into your code editor:",
         "<code>&#60;link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'&#62;</code>.",
         "Now you can set \"Lobster\" as a font-family attribute on your <code>h2</code> element."
       ],
