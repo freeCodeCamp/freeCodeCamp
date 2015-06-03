@@ -98,7 +98,7 @@
     "gulp": "~3.8.8",
     "gulp-eslint": "~0.9.0",
     "gulp-inject": "~1.0.2",
-    "gulp-nodemon": "~1.0.4",
+    "gulp-nodemon": "^2.0.3",
     "mocha": "~2.0.1",
     "multiline": "~1.0.1",
     "supertest": "~0.15.0"
