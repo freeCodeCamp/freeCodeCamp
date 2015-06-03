@@ -182,7 +182,7 @@
       "tests": [
         "assert($('button').hasClass('btn'), 'Your new button should have the class \"btn\".')",
         "assert(new RegExp('like this photo','gi').test($('button.btn').text()), 'Your button should have the text \"like this photo\".')",
-        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -269,7 +269,7 @@
       "tests": [
         "assert($('button').hasClass('btn'), 'Your button should still have the class \"btn\".')",
         "assert($('button').hasClass('btn-block'), 'Your button should have the class \"btn-block\".')",
-        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -355,7 +355,7 @@
       "tests": [
         "assert($('button').hasClass('btn-primary'), 'Your button should have the class \"btn-primary\".')",
         "assert($('button').hasClass('btn-block') && $('button').hasClass('btn'), 'Your button should still have the \"btn\" and \"btn-block\" classes.')",
-        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -442,7 +442,7 @@
         "assert($('button').hasClass('btn-info'), 'Your new button should have the class \"btn-info\".')",
         "assert($('button.btn-block.btn').length > 1, 'Both of your Bootstrap buttons should have the \"btn\" and \"btn-block\" classes.')",
         "assert(new RegExp('info', 'gi').test($('button.btn-info').text()), 'Your new button should have the text \"Info\".')",
-        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -529,7 +529,7 @@
         "assert($('button').hasClass('btn-danger'), 'Your new button should have the class \"btn-danger\".')",
         "assert($('button.btn-block.btn').length > 2, 'All of your Bootstrap buttons should have the \"btn\" and \"btn-block\" classes.')",
         "assert(new RegExp('delete', 'gi').test($('button.btn-danger').text()), 'Your new button should have the text \"delete\".')",
-        "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -621,7 +621,7 @@
         "assert($('div.row:has(button)').length > 2, 'Your buttons should be wrapped within a div with the class \"row\".')",
         "assert($('div.col-xs-4').length > 2, 'Each of your Bootstrap buttons should be wrapped in a div with the class \"col-xs-4\".')",
         "assert(editor.match(/<\\/button>/g) && editor.match(/<\\/button>/g).length === editor.match(/<button>/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -813,7 +813,7 @@
         "assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0, 'Your <code>h2</code> element and topmost <code>img</code> element should both be wrapped together within a <code>div</code> element with the class \"row\".')",
         "assert($('div.col-xs-4:has(img)').length > 0, 'Wrap your topmost <code>img</code> element within a <code>div</code> with the class \"col-xs-4\".')",
         "assert($('div.col-xs-8:has(h2)').length > 0, 'Wrap your <code>h2</code> element within a <code>div</code> with the class \"col-xs-8\".')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -897,7 +897,7 @@
         "assert($('i').hasClass('fa fa-thumbs-up'), 'Add an <code>i</code> element with the classes \"fa\" and \"fa-thumbs-up\".')",
         "assert($('button').children('i').length > 0, 'Wrap your <code>i</code> element within your <code>button</code> element.')",
         "assert(editor.match(/<\\/i>/g), 'Be sure to close your <code>i</code> element with a closing tag.')",
-        "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length === editor.match(/<i>/g).length, 'Make sure your <code>i</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/i>/g) && editor.match(/<i/g) && editor.match(/<\\/i/g).length === editor.match(/<i/g).length, 'Make sure your <code>i</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -984,7 +984,7 @@
       "tests": [
         "assert($('i').hasClass('fa fa-trash'), 'You should add a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button element.')",
         "assert($('i').hasClass('fa fa-info-circle'), 'You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button element.')",
-        "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length === editor.match(/<i>/g).length, 'Make sure each of your <code>i</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/i>/g) && editor.match(/<i/g) && editor.match(/<\\/i/g).length === editor.match(/<i/g).length, 'Make sure each of your <code>i</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1070,7 +1070,7 @@
       "tests": [
         "assert($('div.row:has(input[type=\\'radio\\'])').length > 0, 'Wrap all of your radio buttons inside one <code>div</code> with the class \"row\".')",
         "assert($('div.col-xs-6:has(input[type=\\'radio\\'])').length > 1, 'Wrap each of your radio buttons inside its own <code>div</code> with the class \"col-xs-6\".')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1156,7 +1156,7 @@
       "tests": [
         "assert($('div.row:has(input[type=\\'checkbox\\'])').length > 0, 'Wrap all of your checkboxes inside one <code>div</code> with the class \"row\".')",
         "assert($('div.col-xs-4:has(input[type=\\'checkbox\\'])').length > 2, 'Wrap each of your checkboxes inside its own <code>div</code> with the class \"col-xs-4\".')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1250,7 +1250,7 @@
         "assert($('button[type=\\'submit\\']').hasClass('btn btn-primary'), 'Give the submit button in your form the classes \"btn btn-primary\".')",
         "assert($('button[type=\\'submit\\']:has(i.fa.fa-paper-plane)').length > 0, 'Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.')",
         "assert($('input[type=\\'text\\']').hasClass('form-control'), 'Give the text <code>input<code> in your form the class \"form-control\".')",
-        "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length === editor.match(/<i>/g).length, 'Make sure each of your <code>i</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/i>/g) && editor.match(/<i/g) && editor.match(/<\\/i/g).length === editor.match(/<i/g).length, 'Make sure each of your <code>i</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1354,7 +1354,7 @@
         "assert($('div.row:has(input[type=\\'text\\'])').length > 0 &&  $('div.row:has(button[type=\\'submit\\'])').length > 0, 'Wrap your form submission button and text area in a div with class \"row\".')",
         "assert($('div.col-xs-5:has(button[type=\\'submit\\'])').length > 0, 'Wrap your form submission button in a div with the class \"col-xs-5\".')",
         "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Wrap your form text area in a div with the class \"col-xs-7\".')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
