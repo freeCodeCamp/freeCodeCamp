@@ -23,26 +23,11 @@ var loopback = require('loopback'),
   MongoStore = require('connect-mongo')(session),
   flash = require('express-flash'),
   path = require('path'),
-  mongoose = require('mongoose'),
   passport = require('passport'),
   expressValidator = require('express-validator'),
   // request = require('request'),
   forceDomain = require('forcedomain'),
   lessMiddleware = require('less-middleware'),
-
-  /**
-   * routers.
-   */
-  homeRouter = require('./boot/home'),
-  userRouter = require('./boot/user'),
-  fieldGuideRouter = require('./boot/fieldGuide'),
-  challengeMapRouter = require('./boot/challengeMap'),
-  challengeRouter = require('./boot/challenge'),
-  jobsRouter = require('./boot/jobs'),
-  redirectsRouter = require('./boot/redirects'),
-  utilityRouter = require('./boot/utility'),
-  storyRouter = require('./boot/story'),
-  passportRouter = require('./boot/passport'),
 
   /**
    * API keys and Passport configuration.
@@ -200,18 +185,6 @@ app.use(function (req, res, next) {
   req.session.returnTo = req.path;
   next();
 });
-
-// add sub routers
-app.use(fieldGuideRouter);
-app.use(challengeMapRouter);
-app.use(challengeRouter);
-app.use(jobsRouter);
-app.use(redirectsRouter);
-app.use(utilityRouter);
-app.use(storyRouter);
-app.use(passportRouter);
-app.use(homeRouter);
-app.use(userRouter);
 
 /**
  * OAuth sign-in routes.
