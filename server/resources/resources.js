@@ -11,8 +11,8 @@ var async = require('async'),
   Story = require('../../common/models/Story'),
   Comment = require('../../common/models/Comment'),
   resources = require('./resources.json'),
-  nonprofits = require('../../seed_data/nonprofits.json'),
-  fieldGuides = require('../../seed_data/field-guides.json');
+  nonprofits = require('../../seed/nonprofits.json'),
+  fieldGuides = require('../../seed/field-guides.json');
 
 /**
  * Cached values
@@ -41,12 +41,12 @@ Array.zip = function(left, right, combinerFunction) {
   if (!challengeMap) {
     var localChallengeMap = {};
     var files = fs.readdirSync(
-      path.join(__dirname, '../../seed_data/challenges')
+      path.join(__dirname, '../../seed/challenges')
     );
     var keyCounter = 0;
     files = files.map(function (file) {
       return require(
-        path.join(__dirname, '../../seed_data/challenges/' + file)
+        path.join(__dirname, '../../seed/challenges/' + file)
       );
     });
     files = files.sort(function (a, b) {

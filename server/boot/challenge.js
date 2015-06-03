@@ -33,7 +33,7 @@
 var R = require('ramda'),
     resources = require('../resources/resources'),
     userMigration = require('../resources/middleware').userMigration,
-    MDNlinks = require('../../seed_data/bonfireMDNlinks');
+    MDNlinks = require('../../seed/bonfireMDNlinks');
 
 var challengeMapWithNames = resources.getChallengeMapWithNames();
 var challengeMapWithIds = resources.getChallengeMapWithIds();

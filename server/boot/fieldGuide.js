@@ -90,7 +90,7 @@ function returnNextFieldGuide(req, res, next) {
             "You've read all our current Field Guide entries. You can ",
             'contribute to our Field Guide ',
             "<a href='https://github.com/FreeCodeCamp/freecodecamp/blob/",
-            "staging/seed_data/field-guides.json'>here</a>."
+            "staging/seed/field-guides.json'>here</a>."
           ].join('')
         });
       }
