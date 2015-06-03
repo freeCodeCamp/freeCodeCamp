@@ -38,7 +38,7 @@
     "dataSource": "db",
     "public": true
   },
-  "field-guide": {
+  "fieldGuide": {
     "dataSource": "db",
     "public": true
   },

@@ -1,5 +1,5 @@
 {
-  "name": "bonfire",
+  "name": "story",
   "base": "PersistedModel",
   "trackChanges": false,
   "idInjection": true,
