@@ -683,7 +683,7 @@
       "      <li>Fork the Free Code Camp repository and <code>open seed_data/bonfires.json</code> to become familiar with the format of our bonfires.</li>",
       "      <li>Regardless of your bonfire's difficulty, put it as the last bonfire in the JSON file. Change one of the numbers in the ID to ensure that your bonfire has a unique ID.</li>",
       "      <li>In the terminal, run <code>node seed_data/seed.js</code>. Run <code>gulp</code>. You should be able to navigate to your new bonfire in the challenge map. Whenever you make a change to bonfire.json, you'll need to reseed in order to see these changes in the browser.</li>",
-      "      <li>Solved your own Bonfire. Confirmed that your tests work as expected and that your instructions are sufficiently clear.</li>",
+      "      <li>Solve your own Bonfire. Confirm that your tests work as expected and that your instructions are sufficiently clear.</li>",
       "      <li>Submit a pull request to Free Code Camp's Staging branch and in the pull request body, link to a gist that has your algorithmic solution.</li>",
       "    </ol>",
       "  </p>",

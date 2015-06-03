@@ -95,7 +95,7 @@ DEBUG=true
 mongod
 
 # Seed your database with the challenges
-node seed_data/seed.js
+node seed/
 
 # start the application
 gulp

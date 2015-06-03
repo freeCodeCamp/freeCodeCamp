@@ -237,7 +237,7 @@
       "name": "Waypoint: Fill in the Blank with Placeholder Text",
       "difficulty": 0.015,
       "description": [
-        "Replace the text inside your <code>p</code> element with the first few words of the provided \"Ktty Ipsum\" text.",
+        "Replace the text inside your <code>p</code> element with the first few words of the provided \"Kitty Ipsum\" text.",
         "Web developers traditionally use \"Lorem Ipsum\" text as placeholder text. It's called \"Lorem Ipsum\" text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
         "\"Lorem Ipsum\" text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
         "Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called \"Kitty Ipsum\"!",
