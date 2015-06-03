@@ -55,20 +55,21 @@ block content
                                 for assignedCamper in assignedCampers
                                     a(href='/' + assignedCamper.username class="interested-camper-image")
                                         img.profile-picture.float-right(src=assignedCamper.picture)
-            .spacer
             if (!buttonActive)
                 .col-xs-12.col-sm-8.col-sm-offset-2
                     .text-center
-                        a.btn.btn-primary.btn-big.btn-block.disabled(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project *
-                        p * Complete all our Bonfires, Ziplines, and Basejumps to unlock this.
+                        if !user
+                            a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+                            .button-spacer
+                        else
+                            a.btn.btn-primary.btn-big.btn-block.disabled(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project *
+                            p * Complete all our Bonfires, Ziplines, and Basejumps to unlock this.
                         a.btn.btn-info.btn-big.btn-block(href='/nonprofits/directory') Show all Nonprofit Projects
+                        .spacer
             if (buttonActive)
                 .col-xs-12.col-sm-8.col-sm-offset-2
                     .text-center
                         a.btn.btn-primary.btn-big.btn-block(href='/nonprofits/interested-in-nonprofit/#{dashedName}') I'm interested in building this project
+                        .button-spacer
                         a.btn.btn-info.btn-big.btn-block(href='/nonprofits/directory') Show all Nonprofit Projects
-            .row
-                .col-xs-12.text-center
-                    if !user
-                        a.btn.btn-cta.signup-btn.btn-primary(href="/login") Start learning to code (it's free)
-            .spacer
+                        .spacer

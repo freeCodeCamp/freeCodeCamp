@@ -14,7 +14,7 @@ Our campers (students) start by working through our free, self-paced, browser-ba
 
 80% of our campers are over 25, and nearly a fifth of our campers are women.
 
-This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Slack](http://freecode.slack.com), a [blog](http://blog.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp). 
+This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Slack](http://freecodecamp.slack.com), a [blog](http://blog.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp). 
 
 [Join our community](http://www.freecodecamp.com/signin)!
 
@@ -24,7 +24,7 @@ Contributing
 We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
 1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
-2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Slack](http://freecode.slack.com).
+2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Slack](http://freecodecamp.slack.com).
 3.  Fork the project ([Need help with forking a project?](https://help.github.com/articles/fork-a-repo/)). You'll do all of your work on your forked copy. 
 4.  Create a branch specific to the issue or feature you are working on. Push your work to that branch. ([Need help with branching?](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches))
 5.  Name the branch something like  `user-xxx` where user is your username and xxx is the issue number you are addressing.

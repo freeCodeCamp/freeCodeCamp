@@ -16,5 +16,8 @@ block content
                                 h2.negative-15= nonprofit.name
                                 h3.negative-15= nonprofit.whatDoesNonprofitDo
                                 a.text-center.btn.btn-primary.btn-lg(href='/nonprofits/' + nonprofit.name.toLowerCase().replace(/\s/g, '-')) Read more
-                        .spacer
-                        .spacer
+
+                .col-xs-12.col-sm-8.col-sm-offset-2
+                    if (!user)
+                        a.btn.btn-cta.signup-btn.btn-block(href="/nonprofits-form") My nonprofit needs coding help
+                    .spacer
