@@ -897,7 +897,7 @@
       "tests": [
         "assert($('i').hasClass('fa fa-thumbs-up'), 'Add an <code>i</code> element with the classes \"fa\" and \"fa-thumbs-up\".')",
         "assert($('button').children('i').length > 0, 'Wrap your <code>i</code> element within your <code>button</code> element.')",
-        "assert(editor.match(/<\\/i>/g) && editor.match(/<i/g) && editor.match(/<\\/i>/g).length === editor.match(/<i/g).length, 'Make sure your <code>i</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/i>/g), 'Make sure your <code>i</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -984,7 +984,7 @@
       "tests": [
         "assert($('i').hasClass('fa fa-trash'), 'You should add a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button element.')",
         "assert($('i').hasClass('fa fa-info-circle'), 'You should add a <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button element.')",
-        "assert(editor.match(/<\\/i>/g) && editor.match(/<i/g) && editor.match(/<\\/i/g).length === editor.match(/<i/g).length, 'Make sure each of your <code>i</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length > 2, 'Make sure each of your <code>i</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1250,7 +1250,7 @@
         "assert($('button[type=\\'submit\\']').hasClass('btn btn-primary'), 'Give the submit button in your form the classes \"btn btn-primary\".')",
         "assert($('button[type=\\'submit\\']:has(i.fa.fa-paper-plane)').length > 0, 'Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.')",
         "assert($('input[type=\\'text\\']').hasClass('form-control'), 'Give the text <code>input<code> in your form the class \"form-control\".')",
-        "assert(editor.match(/<\\/i>/g) && editor.match(/<i/g) && editor.match(/<\\/i/g).length === editor.match(/<i/g).length, 'Make sure each of your <code>i</code> elements has a closing tag.')"
+        "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length > 3, 'Make sure each of your <code>i</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
