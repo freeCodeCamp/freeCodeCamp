@@ -1,10 +1,12 @@
 
 module.exports = function(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
   var Nonprofit = app.models.Nonprofit;
 
   router.get('/nonprofits/directory', nonprofitsDirectory);
   router.get('/nonprofits/:nonprofitName', returnIndividualNonprofit);
+
+  app.use(router);
 
   function nonprofitsDirectory(req, res, next) {
     Nonprofit.find(

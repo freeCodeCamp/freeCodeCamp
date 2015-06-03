@@ -6,7 +6,7 @@ var R = require('ramda'),
 
 module.exports = function(app) {
   var User = app.models.User;
-  var router = app.Router();
+  var router = app.loopback.Router();
 
   router.get('/map', middleware.userMigration, challengeMap);
   router.get('/learn-to-code', function(req, res) {
@@ -15,6 +15,8 @@ module.exports = function(app) {
   router.get('/about', function(req, res) {
     res.redirect(301, '/map');
   });
+
+  app.use(router);
 
   function challengeMap(req, res, next) {
     var completedList = [];

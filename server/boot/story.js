@@ -8,7 +8,7 @@ var nodemailer = require('nodemailer'),
     secrets = require('../../config/secrets');
 
 module.exports = function(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
   var User = app.models.User;
   var Story = app.models.Story;
 
@@ -26,6 +26,8 @@ module.exports = function(app) {
   router.post('/stories/search', getStories);
   router.get('/news/:storyName', returnIndividualStory);
   router.post('/stories/upvote/', upvote);
+
+  app.use(router);
 
   function hotRank(timeValue, rank) {
     /*

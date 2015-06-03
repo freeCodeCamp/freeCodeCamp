@@ -11,7 +11,7 @@ var Rx = require('rx'),
 
 var slack = new Slack(secrets.slackHook);
 module.exports = function(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
   var User = app.models.User;
   var Challenge = app.models.Challenge;
   var Story = app.models.Store;
@@ -38,6 +38,8 @@ module.exports = function(app) {
   router.get('/cats.json', getCats);
 
   router.get('/api/slack', slackInvite);
+
+  app.use(router);
 
   function slackInvite(req, res, next) {
     if (req.user) {

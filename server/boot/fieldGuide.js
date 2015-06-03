@@ -4,13 +4,15 @@ var R = require('ramda'),
     resources = require('../resources/resources');
 
 module.exports = function(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
   var FieldGuide = app.models.FieldGuide;
 
   router.get('/field-guide/all-articles', showAllFieldGuides);
   router.get('/field-guide/:fieldGuideName', returnIndividualFieldGuide);
   router.get('/field-guide/', returnNextFieldGuide);
   router.post('/completed-field-guide/', completedFieldGuide);
+
+  app.use(router);
 
   function returnIndividualFieldGuide(req, res, next) {
     var dashedName = req.params.fieldGuideName;

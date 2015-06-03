@@ -2,7 +2,7 @@ var passport = require('passport'),
     passportConf = require('../../config/passport');
 
 module.exports = function(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
   var passportOptions = {
     successRedirect: '/',
     failureRedirect: '/login'
@@ -64,4 +64,6 @@ module.exports = function(app) {
       res.redirect(req.session.returnTo || '/');
     }
   );
+
+  app.use(router);
 };

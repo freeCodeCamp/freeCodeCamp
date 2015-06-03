@@ -2,8 +2,10 @@ var message =
   'Learn to Code JavaScript and get a Coding Job by Helping Nonprofits';
 
 module.exports = function(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
   router.get('/', index);
+
+  app.use(router);
 
   function index(req, res, next) {
     if (req.user && !req.user.profile.picture) {

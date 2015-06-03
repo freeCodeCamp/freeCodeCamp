@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
 
   router.get('/nonprofit-project-instructions', function(req, res) {
     res.redirect(
@@ -45,4 +45,6 @@ module.exports = function(app) {
       301, '/field-guide/what-is-the-free-code-camp-privacy-policy?'
     );
   });
+
+  app.use(router);
 };

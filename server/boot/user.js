@@ -11,7 +11,7 @@ var _ = require('lodash'),
   resources = require('./../resources/resources');
 
 module.exports = function(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
   var User = app.models.User;
 
   router.get('/login', function(req, res) {
@@ -42,6 +42,8 @@ module.exports = function(app) {
   router.get('/account', getAccount);
   // Ensure this is the last route!
   router.get('/:username', returnUser);
+
+  app.use(router);
 
   /**
   * GET /signin

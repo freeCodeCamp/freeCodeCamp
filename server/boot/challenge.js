@@ -54,7 +54,7 @@ function getMDNlinks(links) {
 }
 
 module.exports = function(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
   var Challenge = app.models.Challenge;
   var User = app.models.User;
 
@@ -74,6 +74,8 @@ module.exports = function(app) {
   router.post('/completed-challenge/', completedChallenge);
   router.post('/completed-zipline-or-basejump', completedZiplineOrBasejump);
   router.post('/completed-bonfire', completedBonfire);
+
+  app.use(router);
 
   function returnNextChallenge(req, res, next) {
     if (!req.user) {
