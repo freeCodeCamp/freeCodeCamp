@@ -1,7 +1,6 @@
 var R = require('ramda'),
     express = require('express'),
     // debug = require('debug')('freecc:fieldguides'),
-    FieldGuide = require('../../common/models/FieldGuide'),
     resources = require('../resources/resources');
 
 var router = express.Router();
