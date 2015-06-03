@@ -1893,7 +1893,7 @@
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
         "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be wrapped in its own <code>label</code> element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
-        "assert($('input[type=\"checkbox\"]:nth-child(1)').attr('name') === 'trait', 'Give your radio buttons the <code>name</code> attribute of \"personality\".')"
+        "assert($('input[type=\"checkbox\"]:nth-child(1)').attr('name') === 'personality', 'Give your radio buttons the <code>name</code> attribute of \"personality\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
