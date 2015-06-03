@@ -9,7 +9,8 @@ process.on('uncaughtException', function (err) {
   process.exit(1); // eslint-disable-line
 });
 
-var express = require('express'),
+var loopback = require('loopback'),
+  boot = require('loopback-boot'),
   accepts = require('accepts'),
   cookieParser = require('cookie-parser'),
   compress = require('compression'),
@@ -51,22 +52,7 @@ var express = require('express'),
 /**
  * Create Express server.
  */
-var app = express();
-
-/**
- * Connect to MongoDB.
- */
-mongoose.connect(secrets.db);
-mongoose.connection.on('error', function () {
-  console.error(
-    'MongoDB Connection Error. Please make sure that MongoDB is running.'
-  );
-});
-
-/**
- * Express configuration.
- */
-
+var app = loopback();
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -191,6 +177,7 @@ app.use(helmet.csp({
   safari5: false
 }));
 
+
 app.use(function (req, res, next) {
   // Make user object available in templates.
   res.locals.user = req.user;
@@ -198,9 +185,10 @@ app.use(function (req, res, next) {
 });
 
 app.use(
-  express.static(path.join(__dirname, '../public'), { maxAge: 86400000 })
+  loopback.static(path.join(__dirname, '../public'), { maxAge: 86400000 })
 );
 
+boot(app, __dirname);
 app.use(function (req, res, next) {
   // Remember original destination before login.
   var path = req.path.split('/')[1];
@@ -273,12 +261,19 @@ if (process.env.NODE_ENV === 'development') {
  * Start Express server.
  */
 
-app.listen(app.get('port'), function () {
-  console.log(
-    'FreeCodeCamp server listening on port %d in %s mode',
-    app.get('port'),
-    app.get('env')
-  );
-});
+app.start = function() {
+  app.listen(app.get('port'), function () {
+    console.log(
+      'FreeCodeCamp server listening on port %d in %s mode',
+      app.get('port'),
+      app.get('env')
+    );
+  });
+};
+
+// start the server if `$ node server.js`
+if (require.main === module) {
+  app.start();
+}
 
 module.exports = app;
