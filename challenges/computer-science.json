@@ -6,7 +6,7 @@
       "_id": "bd7123d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Basic Computer Science",
       "difficulty": 0.90,
-      "challengeSeed": "114628241",
+      "challengeSeed": ["114628241"],
       "description": [
         "Stanford has an excellent free online Computer Science curriculum. This interactive course uses a modified version of JavaScript. It will cover a lot of concepts quickly.",
         "Note that Harvard also has an excellent introduction to computer science course called CS50, but it takes more than 100 hours to complete, and doesn't use JavaScript.",
@@ -35,7 +35,7 @@
       "_id": "bd8124d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Loops",
       "difficulty": 0.19,
-      "challengeSeed": "114597348",
+      "challengeSeed": ["114597348"],
       "description": [
         "Now let's tackle week 2 of Stanford's Intro to Computer Science course.",
         "This will introduce us to loops, a fundamental feature of every programming language.",
@@ -62,7 +62,7 @@
       "_id": "bd8125d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Computer Hardware",
       "difficulty": 0.20,
-      "challengeSeed": "114597347",
+      "challengeSeed": ["114597347"],
       "description": [
         "Week 3 of Stanford's Intro to Computer Science covers computer hardware and explains Moore's law of exponential growth in the price-performance of processors.",
         "This challenge will also give you an understanding of how bits and bytes work.",
@@ -89,7 +89,7 @@
       "_id": "bd8126d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Computer Networking",
       "difficulty": 0.21,
-      "challengeSeed": "114604811",
+      "challengeSeed": ["114604811"],
       "description": [
         "Now that you've learned about computer hardware, it's time to learn about the software that runs on top of it.",
         "Particularly important, you will learn about networks and TCP/IP - the protocol that powers the internet.",
@@ -116,7 +116,7 @@
       "_id": "bd8127d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Boolean Logic",
       "difficulty": 0.22,
-      "challengeSeed": "114604812",
+      "challengeSeed": ["114604812"],
       "description": [
         "Now we'll do some more table exercises and learn boolean logic.",
         "We'll also learn the difference between digital data and analog data.",
@@ -143,7 +143,7 @@
       "_id": "bd8128d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Computer Security",
       "difficulty": 0.23,
-      "challengeSeed": "114604813",
+      "challengeSeed": ["114604813"],
       "description": [
         "We're almost done with Stanford's Introduction to Computer Science course!",
         "We'll learn about one of the most important inventions of the 20th century - spreadsheets.",
