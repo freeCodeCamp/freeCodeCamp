@@ -35,7 +35,7 @@ var R = require('ramda'),
     secrets = require('./../config/secrets');
 
 var generateKey =
-  require('loopback-component-passport/models/utils').generateKey;
+  require('loopback-component-passport/lib/models/utils').generateKey;
 /**
  * Create Express server.
  */
