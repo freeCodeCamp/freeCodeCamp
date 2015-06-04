@@ -59,6 +59,7 @@
     "lodash": "~2.4.1",
     "loopback": "^2.18.0",
     "loopback-boot": "^2.8.0",
+    "loopback-component-passport": "^1.3.1",
     "loopback-connector-mongodb": "^1.10.0",
     "lusca": "~1.0.2",
     "method-override": "~2.3.0",

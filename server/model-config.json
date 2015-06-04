@@ -57,5 +57,13 @@
   "user": {
     "dataSource": "db",
     "public": true
+  },
+  "userCredential": {
+    "dataSource": "db",
+    "public": true
+  },
+  "userIdentity": {
+    "dataSource": "db",
+    "public": true
   }
 }

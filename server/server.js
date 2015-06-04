@@ -9,35 +9,39 @@ process.on('uncaughtException', function (err) {
   process.exit(1); // eslint-disable-line
 });
 
-var loopback = require('loopback'),
-  boot = require('loopback-boot'),
-  accepts = require('accepts'),
-  cookieParser = require('cookie-parser'),
-  compress = require('compression'),
-  session = require('express-session'),
-  logger = require('morgan'),
-  errorHandler = require('errorhandler'),
-  methodOverride = require('method-override'),
-  bodyParser = require('body-parser'),
-  helmet = require('helmet'),
-  MongoStore = require('connect-mongo')(session),
-  flash = require('express-flash'),
-  path = require('path'),
-  passport = require('passport'),
-  expressValidator = require('express-validator'),
-  // request = require('request'),
-  forceDomain = require('forcedomain'),
-  lessMiddleware = require('less-middleware'),
+var R = require('ramda'),
+    loopback = require('loopback'),
+    boot = require('loopback-boot'),
+    accepts = require('accepts'),
+    cookieParser = require('cookie-parser'),
+    compress = require('compression'),
+    session = require('express-session'),
+    logger = require('morgan'),
+    errorHandler = require('errorhandler'),
+    methodOverride = require('method-override'),
+    bodyParser = require('body-parser'),
+    helmet = require('helmet'),
+    MongoStore = require('connect-mongo')(session),
+    flash = require('express-flash'),
+    path = require('path'),
+    passport = require('passport'),
+    expressValidator = require('express-validator'),
+    forceDomain = require('forcedomain'),
+    lessMiddleware = require('less-middleware'),
 
-  /**
-   * API keys and Passport configuration.
-   */
-  secrets = require('./../config/secrets');
+    passportProviders = require('./passport-providers'),
+    /**
+    * API keys and Passport configuration.
+    */
+    secrets = require('./../config/secrets');
 
 /**
  * Create Express server.
  */
 var app = loopback();
+var PassportConfigurator =
+  require('loopback-component-passport').PassportConfigurator;
+var passportConfigurator = new PassportConfigurator(app);
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -162,6 +166,7 @@ app.use(helmet.csp({
   safari5: false
 }));
 
+passportConfigurator.init();
 
 app.use(function (req, res, next) {
   // Make user object available in templates.
@@ -173,7 +178,11 @@ app.use(
   loopback.static(path.join(__dirname, '../public'), { maxAge: 86400000 })
 );
 
-boot(app, __dirname);
+boot(app, {
+  appRootDir: __dirname,
+  dev: process.env.NODE_ENV
+});
+
 app.use(function (req, res, next) {
   // Remember original destination before login.
   var path = req.path.split('/')[1];
@@ -184,6 +193,18 @@ app.use(function (req, res, next) {
   }
   req.session.returnTo = req.path;
   next();
+});
+
+passportConfigurator.setupModels({
+  userModel: app.models.user,
+  userIdentityModel: app.models.userIdentity,
+  userCredentialModel: app.models.userCredential
+});
+
+R.keys(passportProviders).map(function(strategy) {
+  var config = passportProviders[strategy];
+  config.session = config.session !== false;
+  passportConfigurator.configureProvider(strategy, config);
 });
 
 /**
