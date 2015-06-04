@@ -6,7 +6,7 @@
       "_id": "bd7124d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn how Free Code Camp Works",
       "difficulty": 0.001,
-      "challengeSeed": "125407438",
+      "challengeSeed": ["125407438"],
       "description": [
         "Watch this 1-minute video, or simply read this summary:",
         "Welcome to Free Code Camp. We're a community of busy people learning to code by building projects for nonprofits.",
@@ -43,7 +43,7 @@
       "_id": "bd7125d8c441eddfaeb5bd0f",
       "name": "Waypoint: Join Our Chat Room",
       "difficulty": 0.002,
-      "challengeSeed": "124555254",
+      "challengeSeed": ["124555254"],
       "description": [
         "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper to pair program with.",
         "Make sure your Free Code Camp account includes your email address. Please note that the email address you use will be invisible to the public, but Slack will make it visible to other campers in our slack chat rooms. You can do this here: <a href='/account' target='_blank'>http://freecodecamp.com/account</a>.",
@@ -84,7 +84,7 @@
       "_id": "bd7125d8c441eddfaeb5bdff",
       "name": "Waypoint: Preview our Challenge Map",
       "difficulty": 0.003,
-      "challengeSeed": "125407437",
+      "challengeSeed": ["125407437"],
       "description": [
         "Before you start learning how to code, we'd like to introduce you to a few things.",
         "Let's look at our Challenge Map. Click on the \"Map\" button in the upper right hand corner. This map shows all the challenges that will teach you how to code.",
@@ -117,7 +117,7 @@
       "_id": "bd7125d8c441eddfaeb5bd1f",
       "name": "Waypoint: Browse our Field Guide",
       "difficulty": 0.004,
-      "challengeSeed": "125407435",
+      "challengeSeed": ["125407435"],
       "description": [
         "Free Code Camp has an up-to-date field guide that will answer your many questions.",
         "Click the \"Field Guide\" button in the upper right hand corner.",
@@ -148,7 +148,7 @@
       "_id": "bd7125d8c441eddfaeb5bd2f",
       "name": "Waypoint: Customize your Portfolio Page",
       "difficulty": 0.005,
-      "challengeSeed": "125407433",
+      "challengeSeed": ["125407433"],
       "description": [
         "You and all your fellow campers have portfolio pages.",
         "To see your portfolio page, click your picture in the upper right hand corner.",
@@ -183,7 +183,7 @@
       "_id": "bd7126d8c441eddfaeb5bd3f",
       "name": "Waypoint: Try Camper News",
       "difficulty": 0.006,
-      "challengeSeed": "124553410",
+      "challengeSeed": ["124553410"],
       "description": [
         "Camper News is the best place for our campers to share and discuss helpful links.",
         "Click \"News\" in the upper right hand corner.",
@@ -222,7 +222,7 @@
       "_id": "bd7126d8c441eddfaeb5bd3e",
       "name": "Waypoint: Meet Other Campers in your City",
       "difficulty": 0.007,
-      "challengeSeed": "127358841",
+      "challengeSeed": ["127358841"],
       "description": [
         "One of the best ways to stay motivated when learning to code is to hang out with other campers.",
         "Slack and Camper News are great ways to communicate with other campers, but there's no substitute for meeting people in-person.",
@@ -259,7 +259,7 @@
       "_id": "bd7137d8c441eddfaeb5bdef",
       "name": "Waypoint: Get Help the Hacker Way with RSAP",
       "difficulty": 0.008,
-      "challengeSeed": "125407432",
+      "challengeSeed": ["125407432"],
       "description": [
         "Let's cover one last thing before you start working through our lessons: how to get help.",
         "Any time you get stuck or don't know what to do next, follow this simple algorithm (procedure): RSAP (Read, Search, Ask, Post).",

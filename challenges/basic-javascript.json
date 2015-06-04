@@ -6,7 +6,7 @@
       "_id": "bd7129d8c441eddfaeb5bdef",
       "name": "Waypoint: Build an Adventure Game",
       "difficulty": 0.24,
-      "challengeSeed": "114604814",
+      "challengeSeed": ["114604814"],
       "description": [
         "Now that you understand some Computer Science fundamentals, let's focus on programming JavaScript!",
         "We're going to work through Codecademy's famous interactive JavaScript course.",
@@ -31,7 +31,7 @@
       "_id": "bd7130d8c441eddfaeb5bdef",
       "name": "Waypoint: Build Rock Paper Scissors",
       "difficulty": 0.25,
-      "challengeSeed": "114604815",
+      "challengeSeed": ["114604815"],
       "description": [
         "Now we'll learn how JavaScript functions work, and use them to build a simple Rock Paper Scissors game.",
         "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-6LzGd/0/1</a> and complete the section.",
@@ -54,7 +54,7 @@
       "_id": "bd7131d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn JavaScript For Loops",
       "difficulty": 0.26,
-      "challengeSeed": "114614220",
+      "challengeSeed": ["114614220"],
       "description": [
         "Let's learn more about the loops that make virtually all programs possible - the \"For Loop\" and \"While Loop\". First, we'll learn the For Loop.",
         "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-NhsaT/0/1web</a> and complete both the both For and While loop section.",
@@ -77,7 +77,7 @@
       "_id": "bd7132d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn JavaScript While Loops",
       "difficulty": 0.27,
-      "challengeSeed": "114612889",
+      "challengeSeed": ["114612889"],
       "description": [
         "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-ASGIv/0/1</a> and complete the section.",
         "Be sure to also complete this section: <a href='http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-mrTNH-6VIZ9/0/1</a>."
@@ -99,7 +99,7 @@
       "_id": "bd7133d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Control Flow",
       "difficulty": 0.28,
-      "challengeSeed": "114612888",
+      "challengeSeed": ["114612888"],
       "description": [
         "Much of human reasoning can be broken down into what we call Boolean Logic. Lucky for us, computers can think the same way! Let's learn how to instruct our computers by writing \"If Statements\" and \"Else Statements\".",
         "We'll also learn some advanced \"Control Flow\" principals, such as ways we can exit loops early.",
@@ -123,7 +123,7 @@
       "_id": "bd7134d8c441eddfaeb5bdef",
       "name": "Waypoint: Build a Contact List",
       "difficulty": 0.29,
-      "challengeSeed": "114612887",
+      "challengeSeed": ["114612887"],
       "description": [
         "Up to this point, you've been working mostly with strings and numbers. Now we're going to learn more complicated data structures, like \"Arrays\" and \"Objects\".",
         "Go to <a href='http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1' target='_blank'>http://www.codecademy.com/courses/javascript-beginner-en-9Sgpi/0/1</a> and complete the section.",
@@ -146,7 +146,7 @@
       "_id": "bd7135d8c441eddfaeb5bdef",
       "name": "Waypoint: Build an Address Book",
       "difficulty": 0.30,
-      "challengeSeed": "114612885",
+      "challengeSeed": ["114612885"],
       "description": [
         "Let's learn more about objects.",
         "Go to <a href='http://www.codecademy.com/courses/spencer-sandbox/0/1' target='_blank'>http://www.codecademy.com/courses/spencer-sandbox/0/1</a> and complete the section.",
@@ -169,7 +169,7 @@
       "_id": "bd7136d8c441eddfaeb5bdef",
       "name": "Waypoint: Build a Cash Register",
       "difficulty": 0.31,
-      "challengeSeed": "114612882",
+      "challengeSeed": ["114612882"],
       "description": [
         "In this final Codecademy section, we'll learn even more about JavaScript objects.",
         "Go to <a href='http://www.codecademy.com/courses/objects-ii/0/1' target='_blank'>http://www.codecademy.com/courses/objects-ii/0/1</a> and complete this section.",
@@ -192,7 +192,7 @@
       "_id": "bd7118d8c441eddfaeb5bdef",
       "name": "Waypoint: Discover Chrome DevTools",
       "difficulty": 0.32,
-      "challengeSeed": "110752743",
+      "challengeSeed": ["110752743"],
       "description": [
         "It's time to learn the most powerful tool your browser has - the Development Tools!",
         "If you aren't already using Chrome, you'll want to download it here: <a href='http://www.google.com/chrome/' target='_blank'>http://www.google.com/chrome/</a>. While it's true that Firefox has a tool called Firebug that is very similar to Chrome's DevTools, we will use Chrome for this challenge.",
@@ -223,7 +223,7 @@
       "_id": "bd7138d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Regular Expressions",
       "difficulty": 0.33,
-      "challengeSeed": "112547802",
+      "challengeSeed": ["112547802"],
       "description": [
         "You can use a Regular Expression, or \"Regex\", to select specific types of characters in text.",
         "Check out <a href='http://www.regexr.com' target='_blank'>http://www.regexr.com</a>. It's a Regular Expression Sandbox for experimenting with Regular Expressions.",

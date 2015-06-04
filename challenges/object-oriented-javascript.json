@@ -6,7 +6,7 @@
       "_id": "bd7129d8c441eddfaeb5bddf",
       "name": "Waypoint: Scope Your Variables",
       "difficulty": 0.01,
-      "challengeSeed": "128836683",
+      "challengeSeed": ["128836683"],
       "description": [
         "Objects will allow you to build applications more efficiently by using small, reusable blocks of code.",
         "This course on Udacity will help you learn Object-Oriented Programming in JavaScript.",
@@ -32,7 +32,7 @@
       "_id": "bd7131d8c441eddfaeb5bdbf",
       "name": "Waypoint: Reference your Current Object with This",
       "difficulty": 0.03,
-      "challengeSeed": "128836508",
+      "challengeSeed": ["128836508"],
       "description": [
         "In this section, you'll learn how you can use the keyword <code>this</code> to dynamically point to your current object.",
         "For example, if we were inside the function <code>camper.completeCourse()</code>, <code>this</code> would refer to the specific camper upon which we were running the function.",
@@ -58,7 +58,7 @@
       "_id": "bd7132d8c441eddfaeb5bdaf",
       "name": "Waypoint: Traverse the Prototype Chain",
       "difficulty": 0.04,
-      "challengeSeed": "128836684",
+      "challengeSeed": ["128836684"],
       "description": [
         "Next we'll learn about the multiple ways you can create a copy of an object.",
         "We'll also learn how an object's missing attributes can traverse the \"prototype chain\".",
@@ -83,7 +83,7 @@
       "_id": "bd7133d8c441eddfaeb5bd0f",
       "name": "Waypoint: Reuse Code with Decorators",
       "difficulty": 0.05,
-      "challengeSeed": "128836681",
+      "challengeSeed": ["128836681"],
       "description": [
         "In this section, we'll learn about the \"Decorator Pattern\".",
         "The Decorator Pattern will help you \"decorate\" an existing object with additional attributes. This pattern helps you reuse code, reducing the total amount of code you'll need to write and maintain.",
@@ -109,7 +109,7 @@
       "_id": "bd7134d8c441eddfaeb5bd1f",
       "name": "Waypoint: Build Objects with Functional Classes",
       "difficulty": 0.06,
-      "challengeSeed": "128836503",
+      "challengeSeed": ["128836503"],
       "description": [
         "Now we'll go over the simplest way to implement a JavaScript class.",
         "A class is a set of functions that you can use to easily produce similar objects.",
@@ -135,7 +135,7 @@
       "_id": "bd7135d8c441eddfaeb5bd2f",
       "name": "Waypoint: Build Objects with Prototypal Classes",
       "difficulty": 0.07,
-      "challengeSeed": "128836505",
+      "challengeSeed": ["128836505"],
       "description": [
         "Now we'll learn how one object can be prototyped off of another object.",
         "Objects will delegate their \"failed lookups\" on up through the \"prototype chain\".",
@@ -161,7 +161,7 @@
       "_id": "bd7136d8c441eddfaeb5bd3f",
       "name": "Waypoint: Understand Pseudoclassical Patterns",
       "difficulty": 0.08,
-      "challengeSeed": "128836689",
+      "challengeSeed": ["128836689"],
       "description": [
         "JavaScript doesn't have the traditional \"classes\" that lower-level languages like C++ and Java have.",
         "Instead, JavaScript does some tricks to allow you to write code as though it had these traditional classes. We call these \"pseudo-classes\".",
@@ -187,7 +187,7 @@
       "_id": "bd7136d8c441eddfaeb5bd4f",
       "name": "Waypoint: Subclass one Object to Another",
       "difficulty": 0.09,
-      "challengeSeed": "128836686",
+      "challengeSeed": ["128836686"],
       "description": [
         "Now we know the three ways that we can create objects. Through: <ol><li>functions</li><li>prototyping</li><li>pseudo classing</li></ol>",
         "Let's learn how to \"subclass\" one object to another. This will give our new object the attributes of the original object. It will allow us to make further modifications to the new object without affecting the original object.",
@@ -212,7 +212,7 @@
       "_id": "bd7136d8c441eddfaeb5bd5f",
       "name": "Waypoint: Use Pseudoclassical Subclasses",
       "difficulty": 0.10,
-      "challengeSeed": "128836937",
+      "challengeSeed": ["128836937"],
       "description": [
         "This final section will teach us how to create subclasses from pseudo classes.",
         "You can save your progress by creating a free Udacity account, but note that it's also possible to complete this entire course without an account by following the links we provide.",

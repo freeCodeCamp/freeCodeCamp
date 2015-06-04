@@ -6,7 +6,7 @@
       "_id": "bd7158d8c443eddfaeb5bcef",
       "name": "Waypoint: Get Set for Basejumps",
       "difficulty": 2.00,
-      "challengeSeed": "128451852",
+      "challengeSeed": ["128451852"],
       "description": [
         "<span class='text-info'>Objective:</span> Get the MEAN stack running on Cloud 9, push your code to GitHub, and deploy it to Heroku.",
         "We'll build our Basejumps on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
@@ -67,7 +67,7 @@
       "_id": "bd7158d8c443eddfaeb5bdef",
       "name": "Basejump: Build a Voting App",
       "difficulty": 2.01,
-      "challengeSeed": "128451852",
+      "challengeSeed": ["128451852"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://voteplex.herokuapp.com/' target='_blank'>http://voteplex.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
@@ -102,7 +102,7 @@
       "_id": "bd7158d8c443eddfaeb5bdff",
       "name": "Basejump: Build a Nightlife Coordination App",
       "difficulty": 2.02,
-      "challengeSeed": "128451852",
+      "challengeSeed": ["128451852"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://sociallife.herokuapp.com/' target='_blank'>http://sociallife.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
@@ -133,7 +133,7 @@
       "_id": "bd7158d8c443eddfaeb5bd0e",
       "name": "Basejump: Chart the Stock Market",
       "difficulty": 2.03,
-      "challengeSeed": "128451852",
+      "challengeSeed": ["128451852"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://stockjump.herokuapp.com/' target='_blank'>http://stockjump.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
@@ -164,7 +164,7 @@
       "_id": "bd7158d8c443eddfaeb5bd0f",
       "name": "Basejump: Manage a Book Trading Club",
       "difficulty": 2.04,
-      "challengeSeed": "128451852",
+      "challengeSeed": ["128451852"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://bookoutpost.herokuapp.com/' target='_blank'>http://bookoutpost.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
@@ -195,7 +195,7 @@
       "_id": "bd7158d8c443eddfaeb5bdee",
       "name": "Basejump: Build a Pinterest Clone",
       "difficulty": 2.05,
-      "challengeSeed": "128451852",
+      "challengeSeed": ["128451852"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a full stack JavaScript app that successfully reverse-engineers this: <a href='http://linkterest.herokuapp.com/' target='_blank'>http://linkterest.herokuapp.com/</a> and deploy it to Heroku.",
         "Note that for each Basejump, you should create a new GitHub repository and a new Heroku project. If you can't remember how to do this, revisit <a href='/challenges/get-set-for-basejumps'>http://freecodecamp.com/challenges/get-set-for-basejumps</a>.",
