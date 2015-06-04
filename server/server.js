@@ -34,6 +34,8 @@ var R = require('ramda'),
     */
     secrets = require('./../config/secrets');
 
+var generateKey =
+  require('loopback-component-passport/models/utils').generateKey;
 /**
  * Create Express server.
  */
@@ -199,10 +201,30 @@ passportConfigurator.setupModels({
   userCredentialModel: app.models.userCredential
 });
 
+var passportOptions = {
+  profileToUser: function(provider, profile) {
+    var emails = profile.emails;
+    // NOTE(berks): get email or set to null.
+    // MongoDB indexs email but can be sparse(blank)
+    var email = emails && emails[0] && emails[0].value ?
+        emails[0].value :
+        null;
+
+    var username = provider + '.' + (profile.username || profile.id);
+    var password = generateKey('password');
+    var userObj = {
+      username: username,
+      password: password,
+      email: email
+    };
+    return userObj;
+  }
+};
+
 R.keys(passportProviders).map(function(strategy) {
   var config = passportProviders[strategy];
   config.session = config.session !== false;
-  passportConfigurator.configureProvider(strategy, config);
+  passportConfigurator.configureProvider(strategy, config, passportOptions);
 });
 
 /**
