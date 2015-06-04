@@ -6,7 +6,7 @@
       "_id": "bd7139d8c441eddfaeb5bdef",
       "name": "Waypoint: Pair Program on Bonfires",
       "difficulty": 0.44,
-      "challengeSeed": "119657641",
+      "challengeSeed": ["119657641"],
       "description": [
         "OK, we're finally ready to start pair programming!",
         "Pair Programming is where two people code together on the same computer. It is an efficient way to collaborate, and widely practiced at software companies. Pair Programming is one of the core concepts of \"Agile\" Software Development, which you will hear more about later.",
