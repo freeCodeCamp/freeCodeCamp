@@ -1,6 +1,6 @@
 {
-  "name": "bonfire",
-  "base": "PersistedModel",
+  "name": "user",
+  "base": "User",
   "trackChanges": false,
   "idInjection": true,
   "properties": {

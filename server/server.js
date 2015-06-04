@@ -9,64 +9,38 @@ process.on('uncaughtException', function (err) {
   process.exit(1); // eslint-disable-line
 });
 
-var express = require('express'),
-  accepts = require('accepts'),
-  cookieParser = require('cookie-parser'),
-  compress = require('compression'),
-  session = require('express-session'),
-  logger = require('morgan'),
-  errorHandler = require('errorhandler'),
-  methodOverride = require('method-override'),
-  bodyParser = require('body-parser'),
-  helmet = require('helmet'),
-  MongoStore = require('connect-mongo')(session),
-  flash = require('express-flash'),
-  path = require('path'),
-  mongoose = require('mongoose'),
-  passport = require('passport'),
-  expressValidator = require('express-validator'),
-  // request = require('request'),
-  forceDomain = require('forcedomain'),
-  lessMiddleware = require('less-middleware'),
+var R = require('ramda'),
+    loopback = require('loopback'),
+    boot = require('loopback-boot'),
+    accepts = require('accepts'),
+    cookieParser = require('cookie-parser'),
+    compress = require('compression'),
+    session = require('express-session'),
+    logger = require('morgan'),
+    errorHandler = require('errorhandler'),
+    methodOverride = require('method-override'),
+    bodyParser = require('body-parser'),
+    helmet = require('helmet'),
+    MongoStore = require('connect-mongo')(session),
+    flash = require('express-flash'),
+    path = require('path'),
+    expressValidator = require('express-validator'),
+    forceDomain = require('forcedomain'),
+    lessMiddleware = require('less-middleware'),
 
-  /**
-   * routers.
-   */
-  homeRouter = require('./boot/home'),
-  userRouter = require('./boot/user'),
-  fieldGuideRouter = require('./boot/fieldGuide'),
-  challengeMapRouter = require('./boot/challengeMap'),
-  challengeRouter = require('./boot/challenge'),
-  jobsRouter = require('./boot/jobs'),
-  redirectsRouter = require('./boot/redirects'),
-  utilityRouter = require('./boot/utility'),
-  storyRouter = require('./boot/story'),
-  passportRouter = require('./boot/passport'),
-
-  /**
-   * API keys and Passport configuration.
-   */
-  secrets = require('./../config/secrets');
+    passportProviders = require('./passport-providers'),
+    /**
+    * API keys and Passport configuration.
+    */
+    secrets = require('./../config/secrets');
 
 /**
  * Create Express server.
  */
-var app = express();
-
-/**
- * Connect to MongoDB.
- */
-mongoose.connect(secrets.db);
-mongoose.connection.on('error', function () {
-  console.error(
-    'MongoDB Connection Error. Please make sure that MongoDB is running.'
-  );
-});
-
-/**
- * Express configuration.
- */
-
+var app = loopback();
+var PassportConfigurator =
+  require('loopback-component-passport').PassportConfigurator;
+var passportConfigurator = new PassportConfigurator(app);
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -101,8 +75,7 @@ app.use(session({
     'autoReconnect': true
   })
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+
 app.use(flash());
 app.disable('x-powered-by');
 
@@ -191,6 +164,8 @@ app.use(helmet.csp({
   safari5: false
 }));
 
+passportConfigurator.init();
+
 app.use(function (req, res, next) {
   // Make user object available in templates.
   res.locals.user = req.user;
@@ -198,8 +173,13 @@ app.use(function (req, res, next) {
 });
 
 app.use(
-  express.static(path.join(__dirname, '../public'), { maxAge: 86400000 })
+  loopback.static(path.join(__dirname, '../public'), { maxAge: 86400000 })
 );
+
+boot(app, {
+  appRootDir: __dirname,
+  dev: process.env.NODE_ENV
+});
 
 app.use(function (req, res, next) {
   // Remember original destination before login.
@@ -213,17 +193,17 @@ app.use(function (req, res, next) {
   next();
 });
 
-// add sub routers
-app.use(fieldGuideRouter);
-app.use(challengeMapRouter);
-app.use(challengeRouter);
-app.use(jobsRouter);
-app.use(redirectsRouter);
-app.use(utilityRouter);
-app.use(storyRouter);
-app.use(passportRouter);
-app.use(homeRouter);
-app.use(userRouter);
+passportConfigurator.setupModels({
+  userModel: app.models.user,
+  userIdentityModel: app.models.userIdentity,
+  userCredentialModel: app.models.userCredential
+});
+
+R.keys(passportProviders).map(function(strategy) {
+  var config = passportProviders[strategy];
+  config.session = config.session !== false;
+  passportConfigurator.configureProvider(strategy, config);
+});
 
 /**
  * OAuth sign-in routes.
@@ -273,12 +253,19 @@ if (process.env.NODE_ENV === 'development') {
  * Start Express server.
  */
 
-app.listen(app.get('port'), function () {
-  console.log(
-    'FreeCodeCamp server listening on port %d in %s mode',
-    app.get('port'),
-    app.get('env')
-  );
-});
+app.start = function() {
+  app.listen(app.get('port'), function () {
+    console.log(
+      'FreeCodeCamp server listening on port %d in %s mode',
+      app.get('port'),
+      app.get('env')
+    );
+  });
+};
+
+// start the server if `$ node server.js`
+if (require.main === module) {
+  app.start();
+}
 
 module.exports = app;
