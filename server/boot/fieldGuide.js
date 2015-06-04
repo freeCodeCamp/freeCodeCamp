@@ -1,7 +1,7 @@
 var R = require('ramda'),
     // Rx = require('rx'),
     // debug = require('debug')('freecc:fieldguides'),
-    resources = require('../resources/resources');
+    utils = require('../utils');
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -19,7 +19,7 @@ module.exports = function(app) {
     if (req.user) {
       var completed = req.user.completedFieldGuides;
 
-      var uncompletedFieldGuides = resources.allFieldGuideIds()
+      var uncompletedFieldGuides = utils.allFieldGuideIds()
         .filter(function (elem) {
           if (completed.indexOf(elem) === -1) {
             return elem;
@@ -65,7 +65,7 @@ module.exports = function(app) {
   }
 
   function showAllFieldGuides(req, res) {
-    var allFieldGuideNamesAndIds = resources.allFieldGuideNamesAndIds();
+    var allFieldGuideNamesAndIds = utils.allFieldGuideNamesAndIds();
 
     var completedFieldGuides = [];
     if (req.user && req.user.completedFieldGuides) {

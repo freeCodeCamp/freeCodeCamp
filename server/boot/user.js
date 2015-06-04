@@ -7,12 +7,13 @@ var _ = require('lodash'),
   moment = require('moment'),
   debug = require('debug')('freecc:cntr:userController'),
 
-  secrets = require('../../config/secrets'),
-  resources = require('./../resources/resources');
+  secrets = require('../../config/secrets');
 
 module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
+  var Story = app.models.Story;
+  var Comment = app.models.Comment;
 
   router.get('/login', function(req, res) {
     res.redirect(301, '/signin');
@@ -523,7 +524,7 @@ module.exports = function(app) {
               if (err) {
                 return next(err);
               }
-              resources.updateUserStoryPictures(
+              updateUserStoryPictures(
                 user._id.toString(),
                 user.profile.picture,
                 user.profile.username,
@@ -819,5 +820,60 @@ module.exports = function(app) {
       if (err) { return next(err); }
       res.redirect('/forgot');
     });
+  }
+
+  function updateUserStoryPictures(userId, picture, username, cb) {
+
+    var counter = 0,
+      foundStories,
+      foundComments;
+
+    Story.find({ 'author.userId': userId }, function (err, stories) {
+      if (err) {
+        return cb(err);
+      }
+      foundStories = stories;
+      counter++;
+      saveStoriesAndComments();
+    });
+
+    Comment.find({ 'author.userId': userId }, function (err, comments) {
+      if (err) {
+        return cb(err);
+      }
+      foundComments = comments;
+      counter++;
+      saveStoriesAndComments();
+    });
+
+    function saveStoriesAndComments() {
+      if (counter !== 2) {
+        return;
+      }
+      var tasks = [];
+      R.forEach(function (comment) {
+        comment.author.picture = picture;
+        comment.author.username = username;
+        comment.markModified('author');
+        tasks.push(function (cb) {
+          comment.save(cb);
+        });
+      }, foundComments);
+
+      R.forEach(function (story) {
+        story.author.picture = picture;
+        story.author.username = username;
+        story.markModified('author');
+        tasks.push(function (cb) {
+          story.save(cb);
+        });
+      }, foundStories);
+      async.parallel(tasks, function (err) {
+        if (err) {
+          return cb(err);
+        }
+        cb();
+      });
+    }
   }
 };

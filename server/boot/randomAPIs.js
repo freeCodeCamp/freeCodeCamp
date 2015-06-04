@@ -6,7 +6,7 @@ var Rx = require('rx'),
     request = require('request'),
     debug = require('debug')('freecc:cntr:resources'),
 
-    constantStrings = require('../resources/constantStrings.json'),
+    constantStrings = require('../utils/constantStrings.json'),
     secrets = require('../../config/secrets');
 
 var slack = new Slack(secrets.slackHook);

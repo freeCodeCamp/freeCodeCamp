@@ -31,12 +31,12 @@
  */
 
 var R = require('ramda'),
-    resources = require('../resources/resources'),
-    userMigration = require('../resources/middleware').userMigration,
+    utils = require('../utils'),
+    userMigration = require('../utils/middleware').userMigration,
     MDNlinks = require('../../seed/bonfireMDNlinks');
 
-var challengeMapWithNames = resources.getChallengeMapWithNames();
-var challengeMapWithIds = resources.getChallengeMapWithIds();
+var challengeMapWithNames = utils.getChallengeMapWithNames();
+var challengeMapWithIds = utils.getChallengeMapWithIds();
 
 
 function getMDNlinks(links) {
@@ -85,7 +85,7 @@ module.exports = function(app) {
       return elem._id;
     });
 
-    req.user.uncompletedChallenges = resources.allChallengeIds()
+    req.user.uncompletedChallenges = utils.allChallengeIds()
       .filter(function (elem) {
         if (completed.indexOf(elem) === -1) {
           return elem;
@@ -139,7 +139,7 @@ module.exports = function(app) {
       return elem._id;
     });
 
-    req.user.uncompletedChallenges = resources.allChallengeIds()
+    req.user.uncompletedChallenges = utils.allChallengeIds()
       .filter(function (elem) {
         if (completed.indexOf(elem) === -1) {
           return elem;
@@ -228,11 +228,11 @@ module.exports = function(app) {
               details: challenge.description.slice(1),
               tests: challenge.tests,
               challengeSeed: challenge.challengeSeed,
-              verb: resources.randomVerb(),
-              phrase: resources.randomPhrase(),
-              compliment: resources.randomCompliment(),
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
               challengeId: challenge._id,
-              environment: resources.whichEnvironment(),
+              environment: utils.whichEnvironment(),
               challengeType: challenge.challengeType
             });
           },
@@ -246,9 +246,9 @@ module.exports = function(app) {
               details: challenge.description.slice(1),
               tests: challenge.tests,
               challengeSeed: challenge.challengeSeed,
-              verb: resources.randomVerb(),
-              phrase: resources.randomPhrase(),
-              compliment: resources.randomCompliment(),
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
               challengeId: challenge._id,
               challengeType: challenge.challengeType
             });
@@ -262,9 +262,9 @@ module.exports = function(app) {
               details: challenge.description,
               tests: challenge.tests,
               video: challenge.challengeSeed[0],
-              verb: resources.randomVerb(),
-              phrase: resources.randomPhrase(),
-              compliment: resources.randomCompliment(),
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
               challengeId: challenge._id,
               challengeType: challenge.challengeType
             });
@@ -277,9 +277,9 @@ module.exports = function(app) {
               name: challenge.name,
               details: challenge.description,
               video: challenge.challengeSeed[0],
-              verb: resources.randomVerb(),
-              phrase: resources.randomPhrase(),
-              compliment: resources.randomCompliment(),
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
               challengeId: challenge._id,
               challengeType: challenge.challengeType
             });
@@ -292,9 +292,9 @@ module.exports = function(app) {
               name: challenge.name,
               details: challenge.description,
               video: challenge.challengeSeed[0],
-              verb: resources.randomVerb(),
-              phrase: resources.randomPhrase(),
-              compliment: resources.randomCompliment(),
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
               challengeId: challenge._id,
               challengeType: challenge.challengeType
             });
@@ -311,9 +311,9 @@ module.exports = function(app) {
               details: challenge.description,
               tests: challenge.tests,
               challengeSeed: challenge.challengeSeed,
-              verb: resources.randomVerb(),
-              phrase: resources.randomPhrase(),
-              compliment: resources.randomCompliment(),
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
               bonfires: challenge,
               challengeId: challenge._id,
               MDNkeys: challenge.MDNlinks,

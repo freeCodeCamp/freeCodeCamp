@@ -3,7 +3,7 @@ var nodemailer = require('nodemailer'),
     moment = require('moment'),
     mongodb = require('mongodb'),
     // debug = require('debug')('freecc:cntr:story'),
-    resources = require('../resources/resources'),
+    utils = require('../utils'),
     MongoClient = mongodb.MongoClient,
     secrets = require('../../config/secrets');
 
@@ -327,7 +327,7 @@ module.exports = function(app) {
             storyURL: '/news/' + story.pop().storyLink
           });
         }
-        resources.getURLTitle(url, processResponse);
+        utils.getURLTitle(url, processResponse);
       }
     );
 

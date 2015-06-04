@@ -1,7 +1,7 @@
 var R = require('ramda'),
   // debug = require('debug')('freecc:cntr:challengeMap'),
-  resources = require('./../resources/resources'),
-  middleware = require('../resources/middleware');
+  utils = require('./../utils'),
+  middleware = require('../utils/middleware');
 
 
 module.exports = function(app) {
@@ -31,7 +31,7 @@ module.exports = function(app) {
       .map(function(challenge) {
         return challenge._id;
       });
-    var challengeList = resources.
+    var challengeList = utils.
       getChallengeMapForDisplay(completedChallengeList);
 
     Object.keys(challengeList).forEach(function(key) {
