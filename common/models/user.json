@@ -8,7 +8,12 @@
       "type": "string",
       "lowercase": true,
       "trim": true,
-      "sparse": true
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "sparse": true
+        }
+      }
     },
     "password": "string",
     "facebook": "string",
