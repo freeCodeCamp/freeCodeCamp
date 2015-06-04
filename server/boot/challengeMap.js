@@ -29,7 +29,7 @@ module.exports = function(app) {
 
     var completedChallengeList = noDuplicatedChallenges
       .map(function(challenge) {
-        return challenge._id;
+        return challenge.id;
       });
     var challengeList = utils.
       getChallengeMapForDisplay(completedChallengeList);
@@ -37,7 +37,7 @@ module.exports = function(app) {
     Object.keys(challengeList).forEach(function(key) {
       challengeList[key].completed = challengeList[key]
         .challenges.filter(function(elem) {
-        return completedChallengeList.indexOf(elem._id) > -1;
+        return completedChallengeList.indexOf(elem.id) > -1;
       });
     });
 

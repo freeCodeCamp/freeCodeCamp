@@ -40,7 +40,7 @@ MongoClient.connect(oldUri, function(err, database) {
           })
           .map(function(key) {
             return({
-              _id: coursewares[key].id,
+              id: coursewares[key].id,
               completedDate: user.challengesHash[key]
             });
           });

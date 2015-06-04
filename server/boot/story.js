@@ -184,7 +184,7 @@ module.exports = function(app) {
         rank: story.upVotes.length,
         upVotes: story.upVotes,
         comments: story.comments,
-        id: story._id,
+        id: story.id,
         timeAgo: moment(story.timePosted).fromNow(),
         image: story.image,
         page: 'show',
@@ -238,7 +238,7 @@ module.exports = function(app) {
 
   function upvote(req, res, next) {
     var data = req.body.data;
-    Story.find({'_id': data.id}, function(err, story) {
+    Story.find({'id': data.id}, function(err, story) {
       if (err) {
         return next(err);
       }
@@ -246,7 +246,7 @@ module.exports = function(app) {
       story.rank++;
       story.upVotes.push(
         {
-          upVotedBy: req.user._id,
+          upVotedBy: req.user.id,
           upVotedByUsername: req.user.username
         }
       );
@@ -280,7 +280,7 @@ module.exports = function(app) {
   function comments(req, res, next) {
     var data = req.params.id;
     Comment.find(
-      { where: {'_id': data } },
+      { where: {'id': data } },
       function(err, comment) {
         if (err) {
           return next(err);
@@ -396,12 +396,12 @@ module.exports = function(app) {
         }).replace(/&quot;/g, '"'),
         rank: 1,
         upVotes: [({
-          upVotedBy: req.user._id,
+          upVotedBy: req.user.id,
           upVotedByUsername: req.user.username
         })],
         author: {
           picture: req.user.picture,
-          userId: req.user._id,
+          userId: req.user.id,
           username: req.user.username,
           email: req.user.email
         },
@@ -453,7 +453,7 @@ module.exports = function(app) {
       upvotes: 0,
       author: {
         picture: req.user.picture,
-        userId: req.user._id,
+        userId: req.user.id,
         username: req.user.username,
         email: req.user.email
       },
@@ -495,7 +495,7 @@ module.exports = function(app) {
       originalStoryAuthorEmail: data.originalStoryAuthorEmail,
       author: {
         picture: req.user.picture,
-        userId: req.user._id,
+        userId: req.user.id,
         username: req.user.username,
         email: req.user.email
       },
@@ -514,7 +514,7 @@ module.exports = function(app) {
       }
       cmt = cmt.pop();
 
-      if (!req.user && cmt.author.userId !== req.user._id) {
+      if (!req.user && cmt.author.userId !== req.user.id) {
         return next(new Error('Not authorized'));
       }
 
@@ -558,7 +558,7 @@ module.exports = function(app) {
           }
           associatedContext = associatedContext.pop();
           if (associatedContext) {
-            associatedContext.comments.push(data._id);
+            associatedContext.comments.push(data.id);
             associatedContext.save(function (err) {
               if (err) {
                 return next(err);

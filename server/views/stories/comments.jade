@@ -25,7 +25,7 @@
                           // todo
                             if (commentDetails.author.username === DF105CFA89562196E702912B3818C6A5B46E80D262442FDF29976621E5AF0D23) {
                               if ((Date.now() - commentDetails.commentOn) < 600000){
-                               editButton = "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost edit-btn' id='" + commentDetails._id + "'>Edit</a> · ";
+                               editButton = "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost edit-btn' id='" + commentDetails.id + "'>Edit</a> · ";
                               }
                             }
                             $(div)
@@ -36,12 +36,12 @@
                                                     '<img class="media-object img-news" src="' + commentDetails.author.picture +'" alt="' + commentDetails.author.username + '">' +
                                                 '</a>' +
                                             '</div>' +
-                                            '<div class="media-body comment_' + commentDetails._id + '">' +
+                                            '<div class="media-body comment_' + commentDetails.id + '">' +
                                                 '<div class="media-body-wrapper">' +
                                                     '<p>' + commentDetails.body + '</p>' +
                                                         '<h6>' +
                                                             '<div class="clearfix comment-a-comment negative-15">' +
-                                                                "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' id='" + commentDetails._id + "'>Reply</a> · " +
+                                                                "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' id='" + commentDetails.id + "'>Reply</a> · " +
                                                                 editButton +
                                                                 "commented " + moment(commentDetails.commentOn).fromNow() + " by " +
                                                                 "<a href='/" + commentDetails.author.username + "'>@" + commentDetails.author.username + "</a>" +
@@ -56,7 +56,7 @@
 
                             sentinel += commentDetails.comments.length;
 
-                            renderComments(commentDetails.comments, '.comment_' + commentDetails._id, ++level);
+                            renderComments(commentDetails.comments, '.comment_' + commentDetails.id, ++level);
 
                         },
                         complete: function () {

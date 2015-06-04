@@ -527,7 +527,7 @@ module.exports = function(app) {
                 return next(err);
               }
               updateUserStoryPictures(
-                user._id.toString(),
+                user.id.toString(),
                 user.picture,
                 user.username,
                 function(err) {

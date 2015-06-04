@@ -3,7 +3,7 @@
   "order": 0.003,
   "challenges": [
     {
-      "_id": "bad87fee1348bd9acde08812",
+      "id": "bad87fee1348bd9acde08812",
       "name": "Waypoint: Mobile Responsive Images",
       "difficulty": 0.047,
       "description": [
@@ -89,7 +89,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd8acde08812",
+      "id": "bad87fee1348bd8acde08812",
       "name": "Waypoint: Center Text with Bootstrap",
       "difficulty": 0.048,
       "description": [
@@ -172,7 +172,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348cd8acdf08812",
+      "id": "bad87fee1348cd8acdf08812",
       "name": "Waypoint: Create a Bootstrap Button",
       "difficulty": 0.049,
       "description": [
@@ -256,7 +256,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348cd8acef08812",
+      "id": "bad87fee1348cd8acef08812",
       "name": "Waypoint: Create a Block Element Bootstrap Button",
       "difficulty": 0.050,
       "description": [
@@ -344,7 +344,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348cd8acef08811",
+      "id": "bad87fee1348cd8acef08811",
       "name": "Waypoint: Taste the Bootstrap Button Color Rainbow",
       "difficulty": 0.051,
       "description": [
@@ -430,7 +430,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348cd8acef08813",
+      "id": "bad87fee1348cd8acef08813",
       "name": "Waypoint: Call out Optional Actions with Button Info",
       "difficulty": 0.052,
       "description": [
@@ -517,7 +517,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348ce8acef08814",
+      "id": "bad87fee1348ce8acef08814",
       "name": "Waypoint: Warn your Users of a Dangerous Action",
       "difficulty": 0.053,
       "description": [
@@ -605,7 +605,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad88fee1348ce8acef08815",
+      "id": "bad88fee1348ce8acef08815",
       "name": "Waypoint: Use the Bootstrap Grid to Put Elements Side By Side",
       "difficulty": 0.054,
       "description": [
@@ -698,7 +698,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08845",
+      "id": "bad87fee1348bd9aedf08845",
       "name": "Waypoint: Ditch Custom CSS for Bootstrap",
       "difficulty": 0.055,
       "description": [
@@ -796,7 +796,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aede08845",
+      "id": "bad87fee1348bd9aede08845",
       "name": "Waypoint: Create a Custom Heading",
       "difficulty": 0.056,
       "description": [
@@ -885,7 +885,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedd08845",
+      "id": "bad87fee1348bd9aedd08845",
       "name": "Waypoint: Add Font Awesome Icons to our Buttons",
       "difficulty": 0.057,
       "description": [
@@ -973,7 +973,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedc08845",
+      "id": "bad87fee1348bd9aedc08845",
       "name": "Waypoint: Add Font Awesome Icons all of our Buttons",
       "difficulty": 0.058,
       "description": [
@@ -1060,7 +1060,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedb08845",
+      "id": "bad87fee1348bd9aedb08845",
       "name": "Waypoint: Responsively Style Radio Buttons",
       "difficulty": 0.059,
       "description": [
@@ -1146,7 +1146,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aeda08845",
+      "id": "bad87fee1348bd9aeda08845",
       "name": "Waypoint: Responsively Style Checkboxes",
       "difficulty": 0.060,
       "description": [
@@ -1239,7 +1239,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aed908845",
+      "id": "bad87fee1348bd9aed908845",
       "name": "Waypoint: Style Text Inputs as Form Controls",
       "difficulty": 0.061,
       "description": [
@@ -1342,7 +1342,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aec908845",
+      "id": "bad87fee1348bd9aec908845",
       "name": "Waypoint: Line up Form Elements Responsively with Bootstrap",
       "difficulty": 0.062,
       "description": [

@@ -272,7 +272,7 @@ $(document).ready(function() {
   });
 
   var upvoteHandler = function () {
-    var _id = storyId;
+    var id = storyId;
     $('#upvote').unbind('click');
     var alreadyUpvoted = false;
     for (var i = 0; i < upVotes.length; i++) {
@@ -285,7 +285,7 @@ $(document).ready(function() {
       $.post('/stories/upvote',
         {
           data: {
-            id: _id
+            id: id
           }
         })
         .fail(function (xhr, textStatus, errorThrown) {

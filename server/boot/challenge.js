@@ -82,7 +82,7 @@ module.exports = function(app) {
     return res.redirect('../challenges/learn-how-free-code-camp-works');
     }
     var completed = req.user.completedChallenges.map(function (elem) {
-      return elem._id;
+      return elem.id;
     });
 
     req.user.uncompletedChallenges = utils.allChallengeIds()
@@ -136,7 +136,7 @@ module.exports = function(app) {
     return res.redirect('../challenges/learn-how-free-code-camp-works');
     }
     var completed = req.user.completedChallenges.map(function (elem) {
-      return elem._id;
+      return elem.id;
     });
 
     req.user.uncompletedChallenges = utils.allChallengeIds()
@@ -203,13 +203,13 @@ module.exports = function(app) {
           return res.redirect('../challenges/' + dashedNameFull);
         } else if (req.user) {
           req.user.currentChallenge = {
-            challengeId: challenge._id,
+            challengeId: challenge.id,
             challengeName: challenge.name,
             challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
                 map(function (key) {
                   return challengeMapWithIds[key]
                     .filter(function (elem) {
-                      return String(elem) === String(challenge._id);
+                      return String(elem) === String(challenge.id);
                     }).map(function () {
                       return key;
                     });
@@ -231,7 +231,7 @@ module.exports = function(app) {
               verb: utils.randomVerb(),
               phrase: utils.randomPhrase(),
               compliment: utils.randomCompliment(),
-              challengeId: challenge._id,
+              challengeId: challenge.id,
               environment: utils.whichEnvironment(),
               challengeType: challenge.challengeType
             });
@@ -249,7 +249,7 @@ module.exports = function(app) {
               verb: utils.randomVerb(),
               phrase: utils.randomPhrase(),
               compliment: utils.randomCompliment(),
-              challengeId: challenge._id,
+              challengeId: challenge.id,
               challengeType: challenge.challengeType
             });
           },
@@ -265,7 +265,7 @@ module.exports = function(app) {
               verb: utils.randomVerb(),
               phrase: utils.randomPhrase(),
               compliment: utils.randomCompliment(),
-              challengeId: challenge._id,
+              challengeId: challenge.id,
               challengeType: challenge.challengeType
             });
           },
@@ -280,7 +280,7 @@ module.exports = function(app) {
               verb: utils.randomVerb(),
               phrase: utils.randomPhrase(),
               compliment: utils.randomCompliment(),
-              challengeId: challenge._id,
+              challengeId: challenge.id,
               challengeType: challenge.challengeType
             });
           },
@@ -295,7 +295,7 @@ module.exports = function(app) {
               verb: utils.randomVerb(),
               phrase: utils.randomPhrase(),
               compliment: utils.randomCompliment(),
-              challengeId: challenge._id,
+              challengeId: challenge.id,
               challengeType: challenge.challengeType
             });
           },
@@ -315,7 +315,7 @@ module.exports = function(app) {
               phrase: utils.randomPhrase(),
               compliment: utils.randomCompliment(),
               bonfires: challenge,
-              challengeId: challenge._id,
+              challengeId: challenge.id,
               MDNkeys: challenge.MDNlinks,
               MDNlinks: getMDNlinks(challenge.MDNlinks),
               challengeType: challenge.challengeType
@@ -365,18 +365,18 @@ module.exports = function(app) {
           }
 
           pairedWith.completedChallenges.push({
-            _id: challengeId,
+            id: challengeId,
             name: challengeName,
-            completedWith: req.user._id,
+            completedWith: req.user.id,
             completedDate: isCompletedDate,
             solution: isSolution,
             challengeType: 5
           });
 
           req.user.completedChallenges.push({
-            _id: challengeId,
+            id: challengeId,
             name: challengeName,
-            completedWith: pairedWith._id,
+            completedWith: pairedWith.id,
             completedDate: isCompletedDate,
             solution: isSolution,
             challengeType: 5
@@ -384,7 +384,7 @@ module.exports = function(app) {
         }
         // User said they paired, but pair wasn't found
         req.user.completedChallenges.push({
-          _id: challengeId,
+          id: challengeId,
           name: challengeName,
           completedWith: null,
           completedDate: isCompletedDate,
@@ -411,7 +411,7 @@ module.exports = function(app) {
       });
     } else {
       req.user.completedChallenges.push({
-        _id: challengeId,
+        id: challengeId,
         name: challengeName,
         completedWith: null,
         completedDate: isCompletedDate,
@@ -439,7 +439,7 @@ module.exports = function(app) {
     var challengeId = req.body.challengeInfo.challengeId;
 
     req.user.completedChallenges.push({
-      _id: challengeId,
+      id: challengeId,
       completedDate: isCompletedDate,
       name: req.body.challengeInfo.challengeName,
       solution: null,
@@ -495,9 +495,9 @@ module.exports = function(app) {
         var pairedWith = pairedWithFromMongo.pop();
 
         req.user.completedChallenges.push({
-          _id: challengeId,
+          id: challengeId,
           name: req.body.challengeInfo.challengeName,
-          completedWith: pairedWith._id,
+          completedWith: pairedWith.id,
           completedDate: isCompletedDate,
           solution: solutionLink,
           githubLink: githubLink,
@@ -508,7 +508,7 @@ module.exports = function(app) {
         req.user.save(function (err, user) {
           if (err) { return next(err); }
 
-          if (req.user._id.toString() === pairedWith._id.toString()) {
+          if (req.user.id.toString() === pairedWith.id.toString()) {
             return res.sendStatus(200);
           }
           index = pairedWith.uncompletedChallenges.indexOf(challengeId);
@@ -519,9 +519,9 @@ module.exports = function(app) {
           }
 
           pairedWith.completedChallenges.push({
-            _id: challengeId,
+            id: challengeId,
             name: req.body.challengeInfo.coursewareName,
-            completedWith: req.user._id,
+            completedWith: req.user.id,
             completedDate: isCompletedDate,
             solution: solutionLink,
             githubLink: githubLink,
@@ -541,7 +541,7 @@ module.exports = function(app) {
     } else {
 
       req.user.completedChallenges.push({
-        _id: challengeId,
+        id: challengeId,
         name: req.body.challengeInfo.challengeName,
         completedWith: null,
         completedDate: isCompletedDate,

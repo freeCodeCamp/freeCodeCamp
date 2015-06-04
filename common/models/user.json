@@ -108,7 +108,7 @@
     "resetPasswordExpires": "string",
     "uncompletedBonfires": "array",
     "completedBonfires": [{
-      "_id": "string",
+      "id": "string",
       "name": "string",
       "completedWith": "string",
       "completedDate": "string",
@@ -120,7 +120,7 @@
         "type": "string",
         "defaultFn": "now"
       },
-      "_id": "string",
+      "id": "string",
       "name": "string",
       "completedWith": "string",
       "solution": "string",
@@ -152,7 +152,7 @@
     "completedChallenges": {
       "type": [{
         "completedDate": "number",
-        "_id": "string",
+        "id": "string",
         "name": "string",
         "completedWith": "string",
         "solution": "string",

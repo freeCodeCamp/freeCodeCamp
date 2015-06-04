@@ -3,7 +3,7 @@
   "order": 0.002,
   "challenges": [
     {
-      "_id": "bd7123c8c441eddfaeb5bdef",
+      "id": "bd7123c8c441eddfaeb5bdef",
       "name": "Waypoint: Say Hello to HTML Elements",
       "difficulty": 0.0085,
       "description": [
@@ -42,7 +42,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf0887a",
+      "id": "bad87fee1348bd9aedf0887a",
       "name": "Waypoint: Headline with the h2 Element",
       "difficulty": 0.010,
       "description": [
@@ -78,7 +78,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08801",
+      "id": "bad87fee1348bd9aedf08801",
       "name": "Waypoint: Inform with the Paragraph Element",
       "difficulty": 0.011,
       "description": [
@@ -112,7 +112,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aeaf08801",
+      "id": "bad87fee1348bd9aeaf08801",
       "name": "Waypoint: Visually Separate Elements with Line Breaks",
       "difficulty": 0.012,
       "description": [
@@ -147,7 +147,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08802",
+      "id": "bad87fee1348bd9aedf08802",
       "name": "Waypoint: Uncomment HTML",
       "difficulty": 0.013,
       "description": [
@@ -191,7 +191,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08804",
+      "id": "bad87fee1348bd9aedf08804",
       "name": "Waypoint: Comment out HTML",
       "difficulty": 0.014,
       "description": [
@@ -233,7 +233,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08833",
+      "id": "bad87fee1348bd9aedf08833",
       "name": "Waypoint: Fill in the Blank with Placeholder Text",
       "difficulty": 0.015,
       "description": [
@@ -274,7 +274,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fed1348bd9aedf08833",
+      "id": "bad87fed1348bd9aedf08833",
       "name": "Waypoint: Delete HTML Elements",
       "difficulty": 0.016,
       "description": [
@@ -314,7 +314,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08803",
+      "id": "bad87fee1348bd9aedf08803",
       "name": "Waypoint: Change the Color of Text",
       "difficulty": 0.017,
       "description": [
@@ -349,7 +349,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08805",
+      "id": "bad87fee1348bd9aedf08805",
       "name": "Waypoint: Use CSS Selectors to Style Elements",
       "difficulty": 0.018,
       "description": [
@@ -393,7 +393,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aecf08806",
+      "id": "bad87fee1348bd9aecf08806",
       "name": "Waypoint: Use a CSS Class to Style an Element",
       "difficulty": 0.019,
       "description": [
@@ -434,7 +434,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aefe08806",
+      "id": "bad87fee1348bd9aefe08806",
       "name": "Waypoint: Style Multiple Elements with a CSS Class",
       "difficulty": 0.020,
       "description": [
@@ -472,7 +472,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08806",
+      "id": "bad87fee1348bd9aedf08806",
       "name": "Waypoint: Change the Font Size of an Element",
       "difficulty": 0.021,
       "description": [
@@ -511,7 +511,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aede08807",
+      "id": "bad87fee1348bd9aede08807",
       "name": "Waypoint: Set the Font Family of an Element",
       "difficulty": 0.022,
       "description": [
@@ -551,7 +551,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08807",
+      "id": "bad87fee1348bd9aedf08807",
       "name": "Waypoint: Import a Google Font",
       "difficulty": 0.023,
       "description": [
@@ -596,7 +596,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08808",
+      "id": "bad87fee1348bd9aedf08808",
       "name": "Waypoint: Specify How Fonts Should Degrade",
       "difficulty": 0.024,
       "description": [
@@ -645,7 +645,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08809",
+      "id": "bad87fee1348bd9aedf08809",
       "name": "Waypoint: Override Styles with Important",
       "difficulty": 0.025,
       "description": [
@@ -701,7 +701,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08812",
+      "id": "bad87fee1348bd9aedf08812",
       "name": "Waypoint: Add Images to your Website",
       "difficulty": 0.026,
       "description": [
@@ -749,7 +749,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9acdf08812",
+      "id": "bad87fee1348bd9acdf08812",
       "name": "Waypoint: Size your Images",
       "difficulty": 0.027,
       "description": [
@@ -798,7 +798,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9bedf08813",
+      "id": "bad87fee1348bd9bedf08813",
       "name": "Waypoint: Add Borders Around your Elements",
       "difficulty": 0.028,
       "description": [
@@ -853,7 +853,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08814",
+      "id": "bad87fee1348bd9aedf08814",
       "name": "Waypoint: Add Rounded Corners with a Border Radius",
       "difficulty": 0.029,
       "description": [
@@ -912,7 +912,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08815",
+      "id": "bad87fee1348bd9aedf08815",
       "name": "Waypoint: Make Circular Images with a Border Radius",
       "difficulty": 0.030,
       "description": [
@@ -970,7 +970,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08816",
+      "id": "bad87fee1348bd9aedf08816",
       "name": "Waypoint: Link to External Pages with Anchor Elements",
       "difficulty": 0.031,
       "description": [
@@ -1032,7 +1032,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aede08817",
+      "id": "bad87fee1348bd9aede08817",
       "name": "Waypoint: Wrap an Anchor Element within a Paragraph",
       "difficulty": 0.032,
       "description": [
@@ -1099,7 +1099,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08817",
+      "id": "bad87fee1348bd9aedf08817",
       "name": "Waypoint: Make Dead Links using the Hash Symbol",
       "difficulty": 0.033,
       "description": [
@@ -1161,7 +1161,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08820",
+      "id": "bad87fee1348bd9aedf08820",
       "name": "Waypoint: Turn an Image into a Link",
       "difficulty": 0.034,
       "description": [
@@ -1226,7 +1226,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08818",
+      "id": "bad87fee1348bd9aedf08818",
       "name": "Waypoint: Add Alt Text to an Image for Accessibility",
       "difficulty": 0.035,
       "description": [
@@ -1289,7 +1289,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08827",
+      "id": "bad87fee1348bd9aedf08827",
       "name": "Waypoint: Create a Bulleted Unordered List",
       "difficulty": 0.036,
       "description": [
@@ -1354,7 +1354,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08828",
+      "id": "bad87fee1348bd9aedf08828",
       "name": "Waypoint: Create an Ordered List",
       "difficulty": 0.037,
       "description": [
@@ -1426,7 +1426,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08829",
+      "id": "bad87fee1348bd9aedf08829",
       "name": "Waypoint: Create a Text Field",
       "difficulty": 0.038,
       "description": [
@@ -1497,7 +1497,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08830",
+      "id": "bad87fee1348bd9aedf08830",
       "name": "Waypoint: Add Placeholder Text to a Text Field",
       "difficulty": 0.039,
       "description": [
@@ -1570,7 +1570,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aede08830",
+      "id": "bad87fee1348bd9aede08830",
       "name": "Waypoint: Create a Form Element",
       "difficulty": 0.040,
       "description": [
@@ -1645,7 +1645,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedd08830",
+      "id": "bad87fee1348bd9aedd08830",
       "name": "Waypoint: Add a Submit Button to a Form",
       "difficulty": 0.041,
       "description": [
@@ -1722,7 +1722,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedc08830",
+      "id": "bad87fee1348bd9aedc08830",
       "name": "Waypoint: Use HTML5 to Require a Field",
       "difficulty": 0.042,
       "description": [
@@ -1797,7 +1797,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08834",
+      "id": "bad87fee1348bd9aedf08834",
       "name": "Waypoint: Create a Set of Radio Buttons",
       "difficulty": 0.043,
       "description": [
@@ -1880,7 +1880,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08835",
+      "id": "bad87fee1348bd9aedf08835",
       "name": "Waypoint: Create a Set of Checkboxes",
       "difficulty": 0.044,
       "description": [
@@ -1960,7 +1960,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aede18835",
+      "id": "bad87fee1348bd9aede18835",
       "name": "Waypoint: Clean up your form using Linebreaks",
       "difficulty": 0.045,
       "description": [
@@ -2039,7 +2039,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedd08835",
+      "id": "bad87fee1348bd9aedd08835",
       "name": "Waypoint: Check Radio Buttons and Checkboxes by Default",
       "difficulty": 0.046,
       "description": [
@@ -2122,7 +2122,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aede08835",
+      "id": "bad87fee1348bd9aede08835",
       "name": "Waypoint: Wrap Many Elements within a Single Div Element",
       "difficulty": 0.047,
       "description": [
@@ -2210,7 +2210,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aede07836",
+      "id": "bad87fee1348bd9aede07836",
       "name": "Waypoint: Give a Background Color to a Div Element",
       "difficulty": 0.048,
       "description": [
@@ -2296,7 +2296,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad88fee1348bd9aedf08825",
+      "id": "bad88fee1348bd9aedf08825",
       "name": "Waypoint: Adjusting the Padding of an Element",
       "difficulty": 0.064,
       "description": [
@@ -2357,7 +2357,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08822",
+      "id": "bad87fee1348bd9aedf08822",
       "name": "Waypoint: Adjust the Margin of an Element",
       "difficulty": 0.065,
       "description": [
@@ -2420,7 +2420,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08823",
+      "id": "bad87fee1348bd9aedf08823",
       "name": "Waypoint: Add a Negative Margin to an Element",
       "difficulty": 0.066,
       "description": [
@@ -2482,7 +2482,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08824",
+      "id": "bad87fee1348bd9aedf08824",
       "name": "Waypoint: Add Different Padding to Each Side of an Element",
       "difficulty": 0.067,
       "description": [
@@ -2547,7 +2547,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1248bd9aedf08824",
+      "id": "bad87fee1248bd9aedf08824",
       "name": "Waypoint: Add Different Margins to Each Side of an Element",
       "difficulty": 0.068,
       "description": [
@@ -2612,7 +2612,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08826",
+      "id": "bad87fee1348bd9aedf08826",
       "name": "Waypoint: Use Clockwise Notation to Specify the Padding of an Element",
       "difficulty": 0.069,
       "description": [
@@ -2674,7 +2674,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bad87fee1348bd9aedf08726",
+      "id": "bad87fee1348bd9aedf08726",
       "name": "Waypoint: Use Clockwise Notation to Specify the Margin of an Element",
       "difficulty": 0.070,
       "description": [

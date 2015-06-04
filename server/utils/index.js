@@ -78,7 +78,7 @@ module.exports = {
       challengeMapWithIds = {};
       Object.keys(challengeMap).forEach(function (key) {
         var onlyIds = challengeMap[key].challenges.map(function (elem) {
-          return elem._id;
+          return elem.id;
         });
         challengeMapWithIds[key] = onlyIds;
       });
@@ -147,7 +147,7 @@ module.exports = {
       return allFieldGuideIds;
     } else {
       allFieldGuideIds = fieldGuides.map(function (elem) {
-        return elem._id;
+        return elem.id;
       });
       return allFieldGuideIds;
     }
@@ -161,7 +161,7 @@ module.exports = {
         return {
           name: elem.name,
           dashedName: elem.dashedName,
-          id: elem._id
+          id: elem.id
         };
       });
       return allFieldGuideNames;

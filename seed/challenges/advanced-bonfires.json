@@ -3,7 +3,7 @@
   "order": 0.011,
   "challenges": [
     {
-      "_id": "aff0395860f5d3034dc0bfc9",
+      "id": "aff0395860f5d3034dc0bfc9",
       "name": "Bonfire: Validate US Telephone Numbers",
       "difficulty": "4.01",
       "description": [
@@ -63,7 +63,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a3f503de51cf954ede28891d",
+      "id": "a3f503de51cf954ede28891d",
       "name": "Bonfire: Symmetric Difference",
       "difficulty": "4.02",
       "description": [
@@ -100,7 +100,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "aa2e6f85cab2ab736c9a9b24",
+      "id": "aa2e6f85cab2ab736c9a9b24",
       "name": "Bonfire: Exact Change",
       "difficulty": "4.03",
       "description": [
@@ -155,7 +155,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a56138aff60341a09ed6c480",
+      "id": "a56138aff60341a09ed6c480",
       "name": "Bonfire: Inventory Update",
       "difficulty": "4.04",
       "description": [
@@ -209,7 +209,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a7bf700cd123b9a54eef01d5",
+      "id": "a7bf700cd123b9a54eef01d5",
       "name": "Bonfire: No repeats please",
       "difficulty": "4.05",
       "description": [
@@ -250,7 +250,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a19f0fbe1872186acd434d5a",
+      "id": "a19f0fbe1872186acd434d5a",
       "name": "Bonfire: Friendly Date Ranges",
       "difficulty": "4.06",
       "description": [

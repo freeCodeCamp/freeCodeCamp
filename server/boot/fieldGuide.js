@@ -57,7 +57,7 @@ module.exports = function(app) {
         }
         res.render('field-guide/show', {
           title: fieldGuide.name,
-          fieldGuideId: fieldGuide._id,
+          fieldGuideId: fieldGuide.id,
           description: fieldGuide.description.join('')
         });
       }
@@ -83,7 +83,7 @@ module.exports = function(app) {
     }
 
     var displayedFieldGuides =
-      FieldGuide.find({'_id': req.user.uncompletedFieldGuides[0]});
+      FieldGuide.find({'id': req.user.uncompletedFieldGuides[0]});
 
     displayedFieldGuides.exec(function(err, fieldGuide) {
       if (err) { return next(err); }

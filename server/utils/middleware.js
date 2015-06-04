@@ -20,7 +20,7 @@ exports.userMigration = function userMigration(req, res, next) {
       req.user.completedBonfires.map(function (bonfire) {
         return ({
           completedDate: bonfire.completedDate,
-          _id: bonfire._id,
+          id: bonfire.id,
           name: bonfire.name,
           completedWith: bonfire.completedWith,
           solution: bonfire.solution,
