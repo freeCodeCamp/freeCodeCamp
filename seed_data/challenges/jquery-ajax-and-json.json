@@ -6,7 +6,7 @@
       "_id": "bd7112d8c441eddfaeb5bded",
       "name": "Waypoint: Get Started with jQuery",
       "difficulty": 0.13,
-      "challengeSeed": "125671865",
+      "challengeSeed": ["125671865"],
       "description": [
         "jQuery is a powerful library built in Javascript for manipulating HTML elements.",
         "It's a lot easier to use than Javascript itself, so we'll learn it first.",
@@ -31,7 +31,7 @@
       "_id": "bd7113d8c441eddfaeb5bdef",
       "name": "Waypoint: Write Functions with jQuery",
       "difficulty": 0.14,
-      "challengeSeed": "125658029",
+      "challengeSeed": ["125658029"],
       "description": [
         "Now we're ready to write your first jQuery functions.",
         "Functions are little sub-programs. You can call a function and ask it to do something. Then it will return an answer.",
@@ -55,7 +55,7 @@
       "_id": "bd7114d8c441eddfaeb5bdef",
       "name": "Waypoint: Harness Dynamic HTML",
       "difficulty": 0.15,
-      "challengeSeed": "125658028",
+      "challengeSeed": ["125658028"],
       "description": [
         "Did you know that you can create HTML elements using jQuery?",
         "Let's learn some more advanced ways to use jQuery to manipulate the DOM.",
@@ -78,7 +78,7 @@
       "_id": "bd7115d8c441eddfaeb5bdef",
       "name": "Waypoint: Listen for jQuery Events",
       "difficulty": 0.16,
-      "challengeSeed": "125658027",
+      "challengeSeed": ["125658027"],
       "description": [
         "jQuery can listen for events, such as clicking a button, and respond to them.",
         "Here we'll learn how to use the jQuery <code>click()</code> function to respond to events in the browser.",
@@ -101,7 +101,7 @@
       "_id": "bd7116d8c441eddfaeb5bdef",
       "name": "Waypoint: Trigger jQuery Effects",
       "difficulty": 0.17,
-      "challengeSeed": "125658025",
+      "challengeSeed": ["125658025"],
       "description": [
         "We can use jQuery to do all kinds of visual effects and transitions.",
         "Let's explore some of the fun ways we can manipulate DOM elements with jQuery.",
