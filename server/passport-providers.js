@@ -38,33 +38,6 @@ module.exports = {
     link: true,
     failureFlash: true
   },
-  'github-login': {
-    provider: 'github',
-    module: 'passport-github',
-    clientID: process.env.GITHUB_ID,
-    clientSecret: process.env.GITHUB_SECRET,
-    authPath: '/auth/github',
-    callbackURL: '/auth/github/callback',
-    callbackPath: '/auth/github/callback',
-    successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
-    scope: ['email'],
-    failureFlash: true
-  },
-  'github-link': {
-    provider: 'github',
-    module: 'passport-github',
-    clientID: process.env.GITHUB_ID,
-    clientSecret: process.env.GITHUB_SECRET,
-    authPath: '/link/github',
-    callbackURL: '/link/github/callback',
-    callbackPath: '/link/github/callback',
-    successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
-    scope: ['email', 'user_likes'],
-    link: true,
-    failureFlash: true
-  },
   'google-login': {
     provider: 'google',
     module: 'passport-google-oauth2',

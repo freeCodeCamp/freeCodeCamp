@@ -24,7 +24,6 @@ var R = require('ramda'),
     MongoStore = require('connect-mongo')(session),
     flash = require('express-flash'),
     path = require('path'),
-    passport = require('passport'),
     expressValidator = require('express-validator'),
     forceDomain = require('forcedomain'),
     lessMiddleware = require('less-middleware'),
@@ -76,8 +75,7 @@ app.use(session({
     'autoReconnect': true
   })
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+
 app.use(flash());
 app.disable('x-powered-by');
 

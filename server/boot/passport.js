@@ -1,3 +1,4 @@
+/*
 var passport = require('passport'),
     passportConf = require('../../config/passport');
 
@@ -67,3 +68,4 @@ module.exports = function(app) {
 
   app.use(router);
 };
+*/

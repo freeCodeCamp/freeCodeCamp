@@ -3,7 +3,6 @@ var _ = require('lodash'),
   async = require('async'),
   crypto = require('crypto'),
   nodemailer = require('nodemailer'),
-  passport = require('passport'),
   moment = require('moment'),
   debug = require('debug')('freecc:cntr:userController'),
 
@@ -22,7 +21,7 @@ module.exports = function(app) {
     res.redirect(301, '/signout');
   });
   router.get('/signin', getSignin);
-  router.post('/signin', postSignin);
+  // router.post('/signin', postSignin);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
   router.post('/forgot', postForgot);
@@ -31,7 +30,7 @@ module.exports = function(app) {
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.post('/email-signup', postEmailSignup);
-  router.post('/email-signin', postSignin);
+  // router.post('/email-signin', postSignin);
   router.get('/account/api', getAccountAngular);
   router.get('/api/checkUniqueUsername/:username', checkUniqueUsername);
   router.get('/api/checkExistingUsername/:username', checkExistingUsername);
@@ -65,6 +64,8 @@ module.exports = function(app) {
   * Sign in using email and password.
   */
 
+ /*
+  * TODO(berks): this should be done using loopback
   function postSignin (req, res, next) {
     req.assert('email', 'Email is not valid').isEmail();
     req.assert('password', 'Password cannot be blank').notEmpty();
@@ -99,6 +100,7 @@ module.exports = function(app) {
       });
     })(req, res, next);
   }
+  */
 
   /**
   * GET /signout
