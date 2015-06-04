@@ -149,19 +149,22 @@
     },
     "challengesHash": {},
     "currentChallenge": {},
-    "completedChallenges": [{
-      "completedDate": "number",
-      "_id": "string",
-      "name": "string",
-      "completedWith": "string",
-      "solution": "string",
-      "githubLink": "string",
-      "verified": "boolean",
-      "challengeType": {
-        "type": "number",
-        "default": 0
-      }
-    }],
+    "completedChallenges": {
+      "type": [{
+        "completedDate": "number",
+        "_id": "string",
+        "name": "string",
+        "completedWith": "string",
+        "solution": "string",
+        "githubLink": "string",
+        "verified": "boolean",
+        "challengeType": {
+          "type": "number",
+          "default": 0
+        }
+      }],
+      "default": []
+    },
     "uncompletedChallenges": "array"
   },
   "validations": [],
