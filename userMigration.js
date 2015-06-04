@@ -10,10 +10,10 @@ var User = require('../models/User.js'),
 mongoose.connect(secrets.db);
 
 var ziplineIds = ziplines.challenges.map(function(elem) {
-  return elem._id;
+  return elem.id;
 });
 var basejumpIds = basejumps.challenges.map(function(elem) {
-  return elem._id;
+  return elem.id;
 });
 var ziplineAndBaseJumpIds = R.concat(ziplineIds, basejumpIds);
 
@@ -81,14 +81,14 @@ function userModelMigration(cb) {
       newChallenges.forEach(function (challenge) {
         if (oldChallenges.indexOf(challenge.oldNumber) !== -1 && challenge.newId) {
           user.completedCoursewares.push({
-            _id: challenge.newId,
+            id: challenge.newId,
             completedDate: user.challengesHash[challenge.oldNumber] * 1000
           });
         }
       });
 
       user.completedCoursewares.forEach(function (course) {
-        var indexOfCourse = user.uncompletedCoursewares.indexOf(course._id) !== -1;
+        var indexOfCourse = user.uncompletedCoursewares.indexOf(course.id) !== -1;
         if (indexOfCourse !== -1) {
           user.uncompletedCoursewares.splice(indexOfCourse, 1);
         }
@@ -102,9 +102,9 @@ function userModelMigration(cb) {
     */
     user.needsMigration = false;
     user.completedChallenges = user.completedChallenges.map(function(elem) {
-      if (ziplineAndBaseJumpIds.indexOf(elem._id) > 0) {
+      if (ziplineAndBaseJumpIds.indexOf(elem.id) > 0) {
         return ({
-          _id: elem._id,
+          id: elem.id,
           name: elem.name,
           completedWith: elem.completedWith,
           completedDate: elem.completedDate,
