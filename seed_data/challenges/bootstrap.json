@@ -702,7 +702,7 @@
       "name": "Waypoint: Ditch Custom CSS for Bootstrap",
       "difficulty": 0.055,
       "description": [
-        "Delete the \".red-text\", \"p\", and \".smaller-image\" CSS declarations from your <code>style</code> element. Then Delete the <code>p</code> element that contains a dead link. Then remove the \"red-text\" class from your <code>h2</code> element and replace it with the \"text-primary\" Bootstrap class. Finally, remove the \"smaller-image\" class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class.",
+        "Delete the \".red-text\", \"p\", and \".smaller-image\" CSS declarations from your <code>style</code> element so that the only declarations left in your <code>style</code> element are \"h2\" and \"thick-green-border\". Then Delete the <code>p</code> element that contains a dead link. Then remove the \"red-text\" class from your <code>h2</code> element and replace it with the \"text-primary\" Bootstrap class. Finally, remove the \"smaller-image\" class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class.",
         "We can clean up our code and make our Cat Photo App look more conventional by using Bootstrap's built-in styles instead of the custom styles we created earlier.",
         "Don't worry - there will be plenty of time to customize our CSS later."
       ],
@@ -890,7 +890,7 @@
       "name": "Waypoint: Add Font Awesome Icons to our Buttons",
       "difficulty": 0.057,
       "description": [
-        "Use Font Awesome to add a \"like\" icon to your like button.",
+        "Use Font Awesome to add a \"thumbs-up\" icon to your like button by giving it a <code>i</code> element with the classes \"fa\" and \"fa-thumbs-up\".",
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the \".svg\" file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
         "Go ahead and add a <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> within your like button's element."
       ],
