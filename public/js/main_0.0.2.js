@@ -171,12 +171,12 @@ $(document).ready(function() {
   });
 
   var challengeTypes = {
-    'HTML_CSS_JQ': 0,
-    'JAVASCRIPT': 1,
-    'VIDEO': 2,
-    'ZIPLINE': 3,
-    'BASEJUMP': 4,
-    'BONFIRE': 5
+    'HTML_CSS_JQ': '0',
+    'JAVASCRIPT': '1',
+    'VIDEO': '2',
+    'ZIPLINE': '3',
+    'BASEJUMP': '4',
+    'BONFIRE': '5'
   };
   $('#next-courseware-button').on('click', function() {
     $('#next-courseware-button').unbind('click');
