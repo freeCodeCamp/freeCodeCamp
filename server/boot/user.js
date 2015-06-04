@@ -406,27 +406,27 @@ module.exports = function(app) {
             });
 
             res.render('account/show', {
-              title: 'Camper ' + user.profile.username + '\'s portfolio',
-              username: user.profile.username,
-              name: user.profile.name,
-              location: user.profile.location,
-              githubProfile: user.profile.githubProfile,
-              linkedinProfile: user.profile.linkedinProfile,
-              codepenProfile: user.profile.codepenProfile,
-              facebookProfile: user.profile.facebookProfile,
-              twitterHandle: user.profile.twitterHandle,
-              bio: user.profile.bio,
-              picture: user.profile.picture,
+              title: 'Camper ' + user.username + '\'s portfolio',
+              username: user.username,
+              name: user.name,
+              location: user.location,
+              githubProfile: user.githubProfile,
+              linkedinProfile: user.linkedinProfile,
+              codepenProfile: user.codepenProfile,
+              facebookProfile: user.facebookProfile,
+              twitterHandle: user.twitterHandle,
+              bio: user.bio,
+              picture: user.picture,
               progressTimestamps: user.progressTimestamps,
-              website1Link: user.portfolio.website1Link,
-              website1Title: user.portfolio.website1Title,
-              website1Image: user.portfolio.website1Image,
-              website2Link: user.portfolio.website2Link,
-              website2Title: user.portfolio.website2Title,
-              website2Image: user.portfolio.website2Image,
-              website3Link: user.portfolio.website3Link,
-              website3Title: user.portfolio.website3Title,
-              website3Image: user.portfolio.website3Image,
+              website1Link: user.website1Link,
+              website1Title: user.website1Title,
+              website1Image: user.website1Image,
+              website2Link: user.website2Link,
+              website2Title: user.website2Title,
+              website2Image: user.website2Image,
+              website3Link: user.website3Link,
+              website3Title: user.website3Title,
+              website3Image: user.website3Image,
               challenges: challenges,
               bonfires: user.completedChallenges.filter(function(challenge) {
                 return challenge.challengeType === 5;
@@ -485,7 +485,7 @@ module.exports = function(app) {
             var user = req.user;
             if (
               existingUsername &&
-              existingUsername.profile.username !== user.profile.username
+              existingUsername.profile.username !== user.username
             ) {
               req.flash('errors', {
                 msg: 'An account with that username already exists.'
@@ -494,32 +494,32 @@ module.exports = function(app) {
             }
             var body = req.body || {};
             user.email = body.email.trim() || '';
-            user.profile.name = body.name.trim() || '';
-            user.profile.username = body.username.trim() || '';
-            user.profile.location = body.location.trim() || '';
+            user.name = body.name.trim() || '';
+            user.username = body.username.trim() || '';
+            user.location = body.location.trim() || '';
 
-            user.profile.githubProfile = body.githubProfile.trim() || '';
-            user.profile.facebookProfile = body.facebookProfile.trim() || '';
-            user.profile.linkedinProfile = body.linkedinProfile.trim() || '';
+            user.githubProfile = body.githubProfile.trim() || '';
+            user.facebookProfile = body.facebookProfile.trim() || '';
+            user.linkedinProfile = body.linkedinProfile.trim() || '';
 
-            user.profile.codepenProfile = body.codepenProfile.trim() || '';
-            user.profile.twitterHandle = body.twitterHandle.trim() || '';
-            user.profile.bio = body.bio.trim() || '';
+            user.codepenProfile = body.codepenProfile.trim() || '';
+            user.twitterHandle = body.twitterHandle.trim() || '';
+            user.bio = body.bio.trim() || '';
 
-            user.profile.picture = body.picture.trim() ||
+            user.picture = body.picture.trim() ||
               'https://s3.amazonaws.com/freecodecamp/' +
               'camper-image-placeholder.png';
-            user.portfolio.website1Title = body.website1Title.trim() || '';
-            user.portfolio.website1Link = body.website1Link.trim() || '';
-            user.portfolio.website1Image = body.website1Image.trim() || '';
+            user.website1Title = body.website1Title.trim() || '';
+            user.website1Link = body.website1Link.trim() || '';
+            user.website1Image = body.website1Image.trim() || '';
 
-            user.portfolio.website2Title = body.website2Title.trim() || '';
-            user.portfolio.website2Link = body.website2Link.trim() || '';
-            user.portfolio.website2Image = body.website2Image.trim() || '';
+            user.website2Title = body.website2Title.trim() || '';
+            user.website2Link = body.website2Link.trim() || '';
+            user.website2Image = body.website2Image.trim() || '';
 
-            user.portfolio.website3Title = body.website3Title.trim() || '';
-            user.portfolio.website3Link = body.website3Link.trim() || '';
-            user.portfolio.website3Image = body.website3Image.trim() || '';
+            user.website3Title = body.website3Title.trim() || '';
+            user.website3Link = body.website3Link.trim() || '';
+            user.website3Image = body.website3Image.trim() || '';
 
 
             user.save(function (err) {
@@ -528,8 +528,8 @@ module.exports = function(app) {
               }
               updateUserStoryPictures(
                 user._id.toString(),
-                user.profile.picture,
-                user.profile.username,
+                user.picture,
+                user.username,
                 function(err) {
                   if (err) { return next(err); }
                   req.flash('success', {

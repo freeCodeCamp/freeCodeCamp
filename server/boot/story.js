@@ -247,7 +247,7 @@ module.exports = function(app) {
       story.upVotes.push(
         {
           upVotedBy: req.user._id,
-          upVotedByUsername: req.user.profile.username
+          upVotedByUsername: req.user.username
         }
       );
       story.markModified('rank');
@@ -397,12 +397,12 @@ module.exports = function(app) {
         rank: 1,
         upVotes: [({
           upVotedBy: req.user._id,
-          upVotedByUsername: req.user.profile.username
+          upVotedByUsername: req.user.username
         })],
         author: {
-          picture: req.user.profile.picture,
+          picture: req.user.picture,
           userId: req.user._id,
-          username: req.user.profile.username,
+          username: req.user.username,
           email: req.user.email
         },
         comments: [],
@@ -452,9 +452,9 @@ module.exports = function(app) {
       rank: 0,
       upvotes: 0,
       author: {
-        picture: req.user.profile.picture,
+        picture: req.user.picture,
         userId: req.user._id,
-        username: req.user.profile.username,
+        username: req.user.username,
         email: req.user.email
       },
       comments: [],
@@ -494,9 +494,9 @@ module.exports = function(app) {
       originalStoryLink: data.originalStoryLink,
       originalStoryAuthorEmail: data.originalStoryAuthorEmail,
       author: {
-        picture: req.user.profile.picture,
+        picture: req.user.picture,
         userId: req.user._id,
-        username: req.user.profile.username,
+        username: req.user.username,
         email: req.user.email
       },
       comments: [],

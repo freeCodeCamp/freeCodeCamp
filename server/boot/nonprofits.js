@@ -53,7 +53,7 @@ module.exports = function(app) {
             if (req.user.completedCoursewares.length > 63) {
               var hasShownInterest =
                 nonprofit.interestedCampers.filter(function ( obj ) {
-                  return obj.username === req.user.profile.username;
+                  return obj.username === req.user.username;
                 });
 
               if (hasShownInterest.length === 0) {
@@ -110,8 +110,8 @@ module.exports = function(app) {
         function(err, nonprofit) {
           if (err) { return next(err); }
           nonprofit.interestedCampers.push({
-            username: req.user.profile.username,
-            picture: req.user.profile.picture,
+            username: req.user.username,
+            picture: req.user.picture,
             timeOfInterest: Date.now()
           });
           nonprofit.save(function(err) {

@@ -363,11 +363,11 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
   function($scope, $http) {
     $http.get('/account/api').success(function(data) {
       $scope.user = data.user;
-      $scope.user.profile.username = $scope.user.profile.username ? $scope.user.profile.username.toLowerCase() : undefined;
-      $scope.storedUsername = data.user.profile.username;
+      $scope.user.username = $scope.user.username ? $scope.user.username.toLowerCase() : undefined;
+      $scope.storedUsername = data.user.username;
       $scope.storedEmail = data.user.email;
       $scope.user.email = $scope.user.email ? $scope.user.email.toLowerCase() : undefined;
-      $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle ? $scope.user.profile.twitterHandle.toLowerCase() : undefined;
+      $scope.user.twitterHandle = $scope.user.twitterHandle ? $scope.user.twitterHandle.toLowerCase() : undefined;
       $scope.asyncComplete = true;
     });
   }

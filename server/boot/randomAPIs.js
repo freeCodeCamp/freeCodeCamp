@@ -134,7 +134,7 @@ module.exports = function(app) {
 
 
   function getHelp(req, res) {
-    var userName = req.user.profile.username;
+    var userName = req.user.username;
     var code = req.body.payload.code ? '\n```\n' +
     req.body.payload.code + '\n```\n'
       : '';
@@ -154,7 +154,7 @@ module.exports = function(app) {
   }
 
   function getPair(req, res) {
-    var userName = req.user.profile.username;
+    var userName = req.user.username;
     var challenge = req.body.payload.challenge;
     slack.send({
       text: [
@@ -201,7 +201,7 @@ module.exports = function(app) {
               } else {
                 Rx.Observable.from(users)
                   .map(function(user) {
-                    return user.profile.username;
+                    return user.username;
                   })
                   .toArray()
                   .subscribe(

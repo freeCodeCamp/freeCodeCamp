@@ -36,16 +36,16 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                     a.btn.signup-btn.signup-btn-nav(href='/login') Sign in
             else
                 li
-                    if (user.profile.username)
+                    if (user.username)
 
-                        a(href='/' + user.profile.username) [&nbsp;#{user.progressTimestamps.length}&nbsp;]
+                        a(href='/' + user.username) [&nbsp;#{user.progressTimestamps.length}&nbsp;]
 
                     else
                         a(href='/account') [&thinsp;#{user.progressTimestamps.length}&thinsp;]
                 .hidden-xs.hidden-sm
-                    if (user.profile.username)
-                        a(href='/' + user.profile.username)
-                            img.profile-picture.float-right(src='#{user.profile.picture}')
+                    if (user.username)
+                        a(href='/' + user.username)
+                            img.profile-picture.float-right(src='#{user.picture}')
                     else
                         a(href='/account')
-                            img.profile-picture.float-right(src='#{user.profile.picture}')
+                            img.profile-picture.float-right(src='#{user.picture}')

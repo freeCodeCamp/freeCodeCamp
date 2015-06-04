@@ -7,7 +7,7 @@ block content
         .panel-heading.text-center
             h1 #{username}'s portfolio
         .panel-body
-            if (user && user.profile.username === username)
+            if (user && user.username === username)
                 .row.text-center
                     .col-xs-12.col-sm-10.col-sm-offset-1
                         a.btn.btn-big.btn-primary.btn-block(href="/account") Update my portfolio page or manage my account

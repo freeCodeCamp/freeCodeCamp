@@ -8,8 +8,8 @@ module.exports = function(app) {
   app.use(router);
 
   function index(req, res, next) {
-    if (req.user && !req.user.profile.picture) {
-      req.user.profile.picture =
+    if (req.user && !req.user.picture) {
+      req.user.picture =
         'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png';
 
       req.user.save(function(err) {
