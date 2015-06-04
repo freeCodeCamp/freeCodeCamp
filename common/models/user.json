@@ -21,91 +21,87 @@
       "type": "array",
       "default": []
     },
-    "profile": {
-      "username": {
-        "type": "string",
-        "sparse": true,
-        "lowercase": true,
-        "trim": true
-      },
-      "bio": {
-        "type": "string",
-        "default": ""
-      },
-      "name": {
-        "type": "string",
-        "default": ""
-      },
-      "gender": {
-        "type": "string",
-        "default": ""
-      },
-      "location": {
-        "type": "string",
-        "default": ""
-      },
-      "picture": {
-        "type": "string",
-        "default": ""
-      },
-      "linkedinProfile": {
-        "type": "string",
-        "default": ""
-      },
-      "githubProfile": {
-        "type": "string",
-        "default": ""
-      },
-      "codepenProfile": {
-        "type": "string",
-        "default": ""
-      },
-      "twitterHandle": {
-        "type": "string",
-        "default": ""
-      },
-      "facebookProfile": {
-        "type": "string",
-        "default": ""
-      }
+    "username": {
+      "type": "string",
+      "sparse": true,
+      "lowercase": true,
+      "trim": true
     },
-    "portfolio": {
-      "website1Link": {
-        "type": "string",
-        "default": ""
-      },
-      "website1Title": {
-        "type": "string",
-        "default": ""
-      },
-      "website1Image": {
-        "type": "string",
-        "default": ""
-      },
-      "website2Link": {
-        "type": "string",
-        "default": ""
-      },
-      "website2Title": {
-        "type": "string",
-        "default": ""
-      },
-      "website2Image": {
-        "type": "string",
-        "default": ""
-      },
-      "website3Link": {
-        "type": "string",
-        "default": ""
-      },
-      "website3Title": {
-        "type": "string",
-        "default": ""
-      },
-      "website3Image": {
-        "type": "string",
-        "default": ""
-      }
+    "bio": {
+      "type": "string",
+      "default": ""
+    },
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "gender": {
+      "type": "string",
+      "default": ""
+    },
+    "location": {
+      "type": "string",
+      "default": ""
+    },
+    "picture": {
+      "type": "string",
+      "default": ""
+    },
+    "linkedinProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "githubProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "codepenProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "twitterHandle": {
+      "type": "string",
+      "default": ""
+    },
+    "facebookProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "website1Link": {
+      "type": "string",
+      "default": ""
+    },
+    "website1Title": {
+      "type": "string",
+      "default": ""
+    },
+    "website1Image": {
+      "type": "string",
+      "default": ""
+    },
+    "website2Link": {
+      "type": "string",
+      "default": ""
+    },
+    "website2Title": {
+      "type": "string",
+      "default": ""
+    },
+    "website2Image": {
+      "type": "string",
+      "default": ""
+    },
+    "website3Link": {
+      "type": "string",
+      "default": ""
+    },
+    "website3Title": {
+      "type": "string",
+      "default": ""
+    },
+    "website3Image": {
+      "type": "string",
+      "default": ""
     },
     "resetPasswordToken": "string",
     "sentSlackInvite": false,
