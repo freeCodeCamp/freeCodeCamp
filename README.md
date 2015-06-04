@@ -65,25 +65,36 @@ Edit your .env file with the following API keys accordingly (if you only use ema
 ```
 
 MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
-BLOGGER_KEY=stuff
+
 FACEBOOK_ID=stuff
 FACEBOOK_SECRET=stuff
+
 GITHUB_ID=stuff
 GITHUB_SECRET=stuff
+
 GOOGLE_ID=stuff
 GOOGLE_SECRET=stuff
+
 LINKEDIN_ID=stuff
 LINKEDIN_SECRET=stuff
+
 MANDRILL_PASSWORD=stuff
 MANDRILL_USER=stuff
-SESSION_SECRET=secretstuff
+
 TRELLO_KEY=stuff
 TRELLO_SECRET=stuff
+
 TWITTER_KEY=stuff
 TWITTER_SECRET=stuff
 TWITTER_TOKEN=stuff
 TWITTER_TOKEN_SECRET=stuff
+
+BLOGGER_KEY=stuff
 SLACK_WEBHOOK=stuff
+
+SESSION_SECRET=secretstuff
+COOKIE_SECRET='this is a secret'
+
 PEER=stuff
 DEBUG=true
 

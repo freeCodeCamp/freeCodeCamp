@@ -65,7 +65,7 @@ app.use(expressValidator({
   }
 }));
 app.use(methodOverride());
-app.use(cookieParser());
+app.use(cookieParser(secrets.cookieSecret));
 app.use(session({
   resave: true,
   saveUninitialized: true,
