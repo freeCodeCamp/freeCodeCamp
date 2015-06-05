@@ -30,7 +30,7 @@ $(document).ready(function() {
       },
       function(res) {
         if (res) {
-          window.open('https://freecode.slack.com/messages/help/', '_blank')
+          window.open('https://freecodecamp.slack.com/messages/help/', '_blank')
         }
       }
     );
@@ -48,7 +48,7 @@ $(document).ready(function() {
       },
       function(res) {
         if (res) {
-          window.open('https://freecode.slack.com/messages/help/', '_blank')
+          window.open('https://freecodecamp.slack.com/messages/help/', '_blank')
         }
       }
     );
@@ -71,7 +71,7 @@ $(document).ready(function() {
       },
       function(res) {
         if (res) {
-          window.open('https://freecode.slack.com/messages/letspair/', '_blank')
+          window.open('https://freecodecamp.slack.com/messages/letspair/', '_blank')
         }
       }
     );
@@ -171,12 +171,12 @@ $(document).ready(function() {
   });
 
   var challengeTypes = {
-    'HTML_CSS_JQ': 0,
-    'JAVASCRIPT': 1,
-    'VIDEO': 2,
-    'ZIPLINE': 3,
-    'BASEJUMP': 4,
-    'BONFIRE': 5
+    'HTML_CSS_JQ': '0',
+    'JAVASCRIPT': '1',
+    'VIDEO': '2',
+    'ZIPLINE': '3',
+    'BASEJUMP': '4',
+    'BONFIRE': '5'
   };
   $('#next-courseware-button').on('click', function() {
     $('#next-courseware-button').unbind('click');
@@ -272,7 +272,7 @@ $(document).ready(function() {
   });
 
   var upvoteHandler = function () {
-    var _id = storyId;
+    var id = storyId;
     $('#upvote').unbind('click');
     var alreadyUpvoted = false;
     for (var i = 0; i < upVotes.length; i++) {
@@ -285,7 +285,7 @@ $(document).ready(function() {
       $.post('/stories/upvote',
         {
           data: {
-            id: _id
+            id: id
           }
         })
         .fail(function (xhr, textStatus, errorThrown) {
@@ -363,11 +363,11 @@ profileValidation.controller('profileValidationController', ['$scope', '$http',
   function($scope, $http) {
     $http.get('/account/api').success(function(data) {
       $scope.user = data.user;
-      $scope.user.profile.username = $scope.user.profile.username ? $scope.user.profile.username.toLowerCase() : undefined;
-      $scope.storedUsername = data.user.profile.username;
+      $scope.user.username = $scope.user.username ? $scope.user.username.toLowerCase() : undefined;
+      $scope.storedUsername = data.user.username;
       $scope.storedEmail = data.user.email;
       $scope.user.email = $scope.user.email ? $scope.user.email.toLowerCase() : undefined;
-      $scope.user.profile.twitterHandle = $scope.user.profile.twitterHandle ? $scope.user.profile.twitterHandle.toLowerCase() : undefined;
+      $scope.user.twitterHandle = $scope.user.twitterHandle ? $scope.user.twitterHandle.toLowerCase() : undefined;
       $scope.asyncComplete = true;
     });
   }

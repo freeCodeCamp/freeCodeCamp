@@ -1,0 +1,179 @@
+{
+  "name": "user",
+  "base": "User",
+  "trackChanges": false,
+  "idInjection": true,
+  "properties": {
+    "email": {
+      "type": "string",
+      "lowercase": true,
+      "trim": true,
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "sparse": true
+        }
+      }
+    },
+    "password": "string",
+    "facebook": "string",
+    "twitter": "string",
+    "google": "string",
+    "github": "string",
+    "linkedin": "string",
+    "tokens": "array",
+    "progressTimestamps": {
+      "type": "array",
+      "default": []
+    },
+    "username": {
+      "type": "string",
+      "sparse": true,
+      "lowercase": true,
+      "trim": true
+    },
+    "bio": {
+      "type": "string",
+      "default": ""
+    },
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "gender": {
+      "type": "string",
+      "default": ""
+    },
+    "location": {
+      "type": "string",
+      "default": ""
+    },
+    "picture": {
+      "type": "string",
+      "default": ""
+    },
+    "linkedinProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "githubProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "codepenProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "twitterHandle": {
+      "type": "string",
+      "default": ""
+    },
+    "facebookProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "website1Link": {
+      "type": "string",
+      "default": ""
+    },
+    "website1Title": {
+      "type": "string",
+      "default": ""
+    },
+    "website1Image": {
+      "type": "string",
+      "default": ""
+    },
+    "website2Link": {
+      "type": "string",
+      "default": ""
+    },
+    "website2Title": {
+      "type": "string",
+      "default": ""
+    },
+    "website2Image": {
+      "type": "string",
+      "default": ""
+    },
+    "website3Link": {
+      "type": "string",
+      "default": ""
+    },
+    "website3Title": {
+      "type": "string",
+      "default": ""
+    },
+    "website3Image": {
+      "type": "string",
+      "default": ""
+    },
+    "resetPasswordToken": "string",
+    "sentSlackInvite": false,
+    "resetPasswordExpires": "string",
+    "uncompletedBonfires": "array",
+    "completedBonfires": [{
+      "id": "string",
+      "name": "string",
+      "completedWith": "string",
+      "completedDate": "string",
+      "solution": "string"
+    }],
+    "uncompletedCoursewares": "array",
+    "completedCoursewares": [{
+      "completedDate": {
+        "type": "string",
+        "defaultFn": "now"
+      },
+      "id": "string",
+      "name": "string",
+      "completedWith": "string",
+      "solution": "string",
+      "githubLink": "string",
+      "verified": "boolean"
+    }],
+    "completedFieldGuides": [],
+    "uncompletedFieldGuides": [],
+    "currentStreak": {
+      "type": "number",
+      "default": 0
+    },
+    "longestStreak": {
+      "type": "number",
+      "default": 0
+    },
+    "needsSomeDataModeled": { "type": "boolean", "default": false},
+
+    "needsMigration": {
+      "type": "boolean",
+      "default": true
+    },
+    "sendMonthlyEmail": {
+      "type": "boolean",
+      "default": true
+    },
+    "challengesHash": {},
+    "currentChallenge": {},
+    "completedChallenges": {
+      "type": [{
+        "completedDate": "number",
+        "id": "string",
+        "name": "string",
+        "completedWith": "string",
+        "solution": "string",
+        "githubLink": "string",
+        "verified": "boolean",
+        "challengeType": {
+          "type": "number",
+          "default": 0
+        }
+      }],
+      "default": []
+    },
+    "uncompletedChallenges": "array"
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

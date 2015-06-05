@@ -1,0 +1,30 @@
+{
+  "name": "nonprofit",
+  "base": "PersistedModel",
+  "trackChanges": false,
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "requestedDeliverables": "array",
+    "whatDoesNonprofitDo": "string",
+    "websiteLink": "string",
+    "stakeholderName": "string",
+    "stakeholderEmail": "string",
+    "endUser": "string",
+    "approvedDeliverables": "array",
+    "projectDescription": "string",
+    "logoUrl": "string",
+    "imageUrl": "string",
+    "estimatedHours": "number",
+    "interestedCampers": [],
+    "confirmedCampers": [],
+    "currentStatus": "string"
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

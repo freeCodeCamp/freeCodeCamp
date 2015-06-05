@@ -410,7 +410,7 @@ authForm.on('submit', function() {
   home.append(success);
   success.setContent(
     'Selected authentication providers have been removed' +
-    'from passportConfig.js, User.js, app.js, login.jade and profile.jade!'
+    'from passportConfig.js, User.js, server.js, login.jade and profile.jade!'
   );
   success.focus();
   screen.render();
@@ -710,7 +710,7 @@ home.on('select', function(child, index) {
         'New file {underline}cluster_app.js{/underline} has been created.',
         'Your app is now able to use more than 1 CPU by running',
         '{underline}node cluster_app.js{/underline}, which in turn',
-        'spawns multiple instances of {underline}app.js{/underline}'
+        'spawns multiple instances of {underline}server.js{/underline}'
       ].join(' '));
       success.focus();
       screen.render();
@@ -731,7 +731,7 @@ var os = require('os');
 var cluster = require('cluster');
 
 cluster.setupMaster({
-  exec: 'app.js'
+  exec: 'server.js'
 });
 
 cluster.on('exit', function(worker) {

@@ -1,0 +1,69 @@
+{
+  "name": "story",
+  "base": "PersistedModel",
+  "trackChanges": false,
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "headline": {
+      "type": "string",
+      "unique": false
+    },
+    "timePosted": {
+      "type": "number",
+      "default": "0"
+    },
+    "link": {
+      "type": "string",
+      "unique": false
+    },
+    "metaDescription": {
+      "type": "string",
+      "default": "",
+      "unique": false
+    },
+    "description": {
+      "type": "string",
+      "unique": false
+    },
+    "originalStoryAuthorEmail": {
+      "type": "string",
+      "default": ""
+    },
+    "rank": {
+      "type": "number",
+      "default": "-Infinity"
+    },
+    "upVotes": {
+      "type": "array",
+      "default": []
+    },
+    "author": {},
+    "comments": {
+      "type": "array",
+      "default": []
+    },
+    "image": {
+      "type": "string",
+      "default": ""
+    },
+    "storyLink": {
+      "type": "string",
+      "default": ""
+    },
+    "difficulty": "string",
+    "description": "array",
+    "tests": "array",
+    "challengeSeed": "array",
+    "MDNlinks": {
+      "type": "array"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

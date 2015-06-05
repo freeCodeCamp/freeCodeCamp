@@ -37,10 +37,10 @@ module.exports = {
   },
 
   twitter: {
-    consumerKey:      process.env.TWITTER_KEY,
-    consumerSecret:   process.env.TWITTER_SECRET,
-    token:            process.env.TWITTER_TOKEN,
-    tokenSecret:      process.env.TWITTER_TOKEN_SECRET,
+    consumerKey: process.env.TWITTER_KEY,
+    consumerSecret: process.env.TWITTER_SECRET,
+    token: process.env.TWITTER_TOKEN,
+    tokenSecret: process.env.TWITTER_TOKEN_SECRET,
     callbackURL: '/auth/twitter/callback',
     passReqToCallback: true
   },
@@ -60,4 +60,6 @@ module.exports = {
     passReqToCallback: true
   },
   slackHook: process.env.SLACK_WEBHOOK,
+
+  cookieSecret: process.env.COOKIE_SECRET
 };
