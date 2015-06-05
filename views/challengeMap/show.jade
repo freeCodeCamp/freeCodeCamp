@@ -6,8 +6,9 @@ block content
         .panel-heading.text-center
             h1 Challenge Map
         .panel-body
-            if (Math.random() > 0.99)
+            if (Math.random() > 0.999)
                 img.img-responsive.img-center.border-radius-5(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner-dino.png')
+                audio(autoplay src='https://s3.amazonaws.com/freecodecamp/t-rex-roar.mp3')
             else
                 img.img-responsive.img-center.border-radius-5(src='https://s3.amazonaws.com/freecodecamp/wide-social-banner.png')
             .col-xs-12.col-md-10.col-md-offset-1
@@ -85,30 +86,19 @@ block content
     #announcementModal.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
             .modal-content
-                .modal-header.challenge-list-header We're adding new languages!
+                .modal-header.challenge-list-header Join our Saturday Summit!
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
-                    .spacer
-                    h4.text-left 我們正在研究將Free Code Camp翻成中文! &thinsp;
-                        a(href='https://freecodecamp.slack.com/messages/chinese')  請按這裡來參觀我們的中文聊天室
+                    h3.text-left Saturday at Noon EDT: We'll live-stream our Saturday Summit on Twitch.tv.
+                    h3.text-left We'll announce our new Front End Development Certificate Program (it's free, of course) and our new "Free Code Camp On The Go" app. &thinsp;
+                        a(href='http://www.freecodecamp.com/twitch', target='_blank') Add us to your calendar here
                         | .
-                    h4.text-left Estamos trabajando a traducir Free Code Camp en español! &thinsp;
-                        a(href='https://freecodecamp.slack.com/messages/espanol') Haz clic aquí para ir a nuestra sala de chat español
-                        | .
-                    h4.text-left Nós estamos trabalhando para traduzir o Free Code Camp para o Português! &thinsp;
-                        a(href='https://freecodecamp.slack.com/messages/portugues') Clique aqui para visitar nossa sala de bate-papo em Português
-                        | .
-                    h4.text-left Nous travaillons pour traduire Free Code Camp en Français! &thinsp;
-                        a(href='https://freecodecamp.slack.com/messages/francais') Cliquez ici pour visiter notre salle de chat Français
-                        | .
-                    h4.text-left Мы работаем над переводом Free Code Camp на русский язык! &thinsp;
-                        a(href='https://freecodecamp.slack.com/messages/russian') Нажмите здесь, чтобы посетить русский чат
-                        | .
+                    a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='http://twitch.tv/freecodecamp', target='_blank') Follow us on Twitch.tv
                     a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up!
     script.
         $(document).ready(function () {
-            if (!localStorage || !localStorage.multiLingual) {
+            if (!localStorage || !localStorage.day234) {
                 $('#announcementModal').modal('show');
-                localStorage.multiLingual = "true";
+                localStorage.day234 = "true";
             }
         });
