@@ -1,12 +1,10 @@
 var R = require('ramda'),
     FieldGuide = require('./../models/FieldGuide'),
-    resources = require('./resources');
+    resources = require('./resources'),
+    debug = require('debug')('freecc:fieldguides');
 
 exports.returnIndividualFieldGuide = function(req, res, next) {
   var dashedName = req.params.fieldGuideName;
-
-  var fieldGuideName = dashedName.replace(/\-/g, ' ');
-
   if (req.user) {
     var completed = req.user.completedFieldGuides;
 
@@ -22,7 +20,7 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
   }
 
   FieldGuide.find(
-    { name: new RegExp(fieldGuideName, 'i') },
+    { dashedName: new RegExp(dashedName, 'i') },
     function(err, fieldGuideFromMongo) {
       if (err) {
         return next(err);
@@ -38,11 +36,10 @@ exports.returnIndividualFieldGuide = function(req, res, next) {
       }
 
       var fieldGuide = R.head(fieldGuideFromMongo);
-      var dashedNameFull =
         fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
 
-      if (dashedNameFull !== dashedName) {
-        return res.redirect('../field-guide/' + dashedNameFull);
+      if (fieldGuide.dashedName !== dashedName) {
+        return res.redirect('../field-guide/' + fieldGuide.dashedName);
       }
       res.render('field-guide/show', {
         title: fieldGuide.name,
@@ -68,7 +65,7 @@ exports.showAllFieldGuides = function(req, res) {
 
 exports.returnNextFieldGuide = function(req, res, next) {
   if (!req.user) {
-    return res.redirect('/field-guide/how-do-i-use-this-guide?');
+    return res.redirect('/field-guide/how-do-i-use-this-guide');
   }
 
   var displayedFieldGuides =
@@ -89,7 +86,7 @@ exports.returnNextFieldGuide = function(req, res, next) {
           ].join('')
         });
       }
-      return res.redirect('../field-guide/how-do-i-use-this-guide?');
+      return res.redirect('../field-guide/how-do-i-use-this-guide');
     }
     var nameString = fieldGuide.name.toLowerCase().replace(/\s/g, '-');
     return res.redirect('../field-guide/' + nameString);
