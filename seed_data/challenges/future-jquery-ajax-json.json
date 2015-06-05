@@ -7,19 +7,41 @@
       "name": "Waypoint: Learn how Script Tags and Document Ready Work",
       "difficulty": 0.072,
       "description": [
-        "Test"
+        "We've simplified our Cat Photo App and removed our <code>style</code> element. Add a <code>script</code> element to your page and create a <code>$(document).ready</code> function within it.",
+        "Add <code>$(document).ready(function() {</code> to your <code>script</code> element, and then close it on the following line with <code>});</code>."
       ],
       "tests": [
-        "assert(typeof $('#target').attr('disabled') === 'undefined', 'Change the disabled attribute of the \"target\" button to false');",
-        "expect($('#target')).to.exist()"
+        "assert(editor.match(/<script>/g), 'Create a <code>script</code> element.')",
+        "assert(editor.match(/<\\/script>/g) && editor.match(/<script/g) && editor.match(/<\\/script>/g).length === editor.match(/<script/g).length, 'Make sure your <code>script</code> element has a closing tag.')",
+        "assert(editor.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Add <code>$(document).ready(function() {</code> to the beginning of your <code>script</code> element.')",
+        "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>\\}\\);</code>.')"
       ],
       "challengeSeed": [
-        "fccss",
-        "  $(document).ready(function() {",
-        "    $('#target').attr('disabled', true)",
-        "  });",
-        "fcces",
-        "<button id='target' class='btn btn-primary btn-block'>Enable this button with jQuery</button>"
+        "<br>",
+        "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
+        "<br>",
+        "<div class='row'>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-primary'><i class='fa fa-thumbs-up'></i> Like</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-info'><i class='fa fa-info-circle'></i> Info</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-danger'><i class='fa fa-trash'></i> Delete</button>",
+        "  </div>",
+        "</div>",
+        "<br>",
+        "<form action='submit-cat-photo'>",
+        "  <div class='row'>",
+        "    <div class='col-xs-7'>",
+        "      <input type='text' class='form-control' placeholder='cat photo URL' required>",
+        "    </div>",
+        "    <div class='col-xs-5'>",
+        "      <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
+        "    </div>",
+        "  </div>",
+        "</form>"
       ],
       "challengeType": 0
     },

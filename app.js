@@ -622,7 +622,7 @@ app.get(
   }
 );
 
-// put this route last
+// put ths route last
 app.get(
   '/:username',
   userController.returnUser
