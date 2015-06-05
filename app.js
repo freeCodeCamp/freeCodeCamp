@@ -278,33 +278,8 @@ app.get('/map',
 );
 
 app.get('/live-pair-programming', function(req, res) {
-  res.redirect(301, '/field-guide/live-stream-pair-programming-on-twitch.tv');
+  res.redirect(301, '/twitch');
 });
-
-app.get('/install-screenhero', function(req, res) {
-  res.redirect(301, '/field-guide/install-screenhero');
-});
-
-app.get('/guide-to-our-nonprofit-projects', function(req, res) {
-  res.redirect(301, '/field-guide/a-guide-to-our-nonprofit-projects');
-});
-
-app.get('/chromebook', function(req, res) {
-  res.redirect(301, '/field-guide/chromebook');
-});
-
-app.get('/deploy-a-website', function(req, res) {
-  res.redirect(301, '/field-guide/deploy-a-website');
-});
-
-app.get('/gmail-shortcuts', function(req, res) {
-  res.redirect(301, '/field-guide/gmail-shortcuts');
-});
-
-app.get('/nodeschool-challenges', function(req, res) {
-  res.redirect(301, '/field-guide/nodeschool-challenges');
-});
-
 
 app.get('/learn-to-code', challengeMapController.challengeMap);
 app.get('/about', function(req, res) {
@@ -362,7 +337,7 @@ app.get(
 );
 
 app.get('/privacy', function(req, res) {
-  res.redirect(301, '/field-guide/what-is-the-free-code-camp-privacy-policy?');
+  res.redirect(301, '/field-guide/what-is-the-free-code-camp-privacy-policy');
 });
 
 app.get('/submit-cat-photo', resourcesController.catPhotoSubmit);
