@@ -659,7 +659,7 @@
         "Now see if you can make sure the <code>h2</code> element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, and without changing the sequence of CSS class declarations."
       ],
       "tests": [
-        "assert(new RegExp('.blue-text', 'gi').test(editor), 'Create the CSS class \"blue-text\"')",
+        "assert(new RegExp(/\.blue-text/gi).test(editor), 'Create the CSS class \"blue-text\"')",
         "assert(new RegExp('.urgently-red', 'gi').test(editor), 'Create the CSS class \"urgently-red\"')",
         "assert(new RegExp('red.?!important', 'gi').test(editor), 'Add the \"!important\" declaration!')",
         "assert($('h2').hasClass('blue-text'), 'Your h2 element should have the class \"blue-text\".')",
