@@ -182,7 +182,7 @@ exports.getStories = function(req, res, next) {
     }
     database.collection('stories').find({
       '$text': {
-        '$search': req.body.data.searchValue
+        '$search': req.body.data ? req.body.data.searchValue : ""
       }
     }, {
       headline: 1,
