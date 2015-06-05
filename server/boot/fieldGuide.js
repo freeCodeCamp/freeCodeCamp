@@ -1,6 +1,6 @@
 var R = require('ramda'),
     // Rx = require('rx'),
-    debug = require('debug')('freecc:fieldguides'),
+    // debug = require('debug')('freecc:fieldguides'),
     utils = require('../utils');
 
 module.exports = function(app) {
@@ -32,14 +32,7 @@ module.exports = function(app) {
       });
     }
 
-    // NOTE(berks): loopback might have issue with regex here.
-    var pattern = new RegExp(dashedNameFromQuery, 'i');
-    debug('looking for %s', pattern);
-    FieldGuide.find({ where:
-        { dashedName:
-          { like: pattern}
-        }
-      },
+    FieldGuide.find({ where: {'dashedName': dashedNameFromQuery}},
       function(err, fieldGuideFromMongo) {
         if (err) {
           return next(err);
@@ -57,9 +50,9 @@ module.exports = function(app) {
         var fieldGuide = R.head(fieldGuideFromMongo);
           fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
 
-        if (fieldGuide.dashedName !== dashedNameFromQuery) {
-          return res.redirect('../field-guide/' + fieldGuide.dashedName);
-        }
+        //if (fieldGuide.dashedName !== dashedNameFromQuery) {
+        //  return res.redirect('../field-guide/' + fieldGuide.dashedName);
+        //}
         res.render('field-guide/show', {
           title: fieldGuide.name,
           fieldGuideId: fieldGuide.id,
