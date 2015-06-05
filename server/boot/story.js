@@ -13,7 +13,6 @@ module.exports = function(app) {
   var Story = app.models.Story;
 
   router.get('/stories/hotStories', hotJSON);
-  router.get('/stories/recentStories', recentJSON);
   router.get('/stories/comments/:id', comments);
   router.post('/stories/comment/', commentSubmit);
   router.post('/stories/comment/:id/comment', commentOnCommentSubmit);
@@ -44,12 +43,18 @@ module.exports = function(app) {
   }
 
   function hotJSON(req, res, next) {
-    var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
-    story.exec(function(err, stories) {
+    //var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
+    //story.exec(function(err, stories) {
+    //  if (err) {
+    //    return next(err);
+    //  }
+    //Story.find([{$match: {}},
+    //  {$sort: {'timePosted': -1}},
+    //  {$limit: 1000}], function(err, stories) {
+    Story.find({order: 'timePosted DESC', limit: 1000}, function(err, stories) {
       if (err) {
         return next(err);
       }
-
       var foundationDate = 1413298800000;
 
       var sliceVal = stories.length >= 100 ? 100 : stories.length;
@@ -60,16 +65,6 @@ module.exports = function(app) {
           - hotRank(a.timePosted - foundationDate, a.rank, a.headline);
       }).slice(0, sliceVal));
 
-    });
-  }
-
-  function recentJSON(req, res, next) {
-    var story = Story.find({}).sort({'timePosted': -1}).limit(100);
-    story.exec(function(err, stories) {
-      if (err) {
-        return next(err);
-      }
-      return res.json(stories);
     });
   }
 
