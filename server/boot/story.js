@@ -22,9 +22,9 @@ module.exports = function(app) {
   router.get('/stories/submit/new-story', preSubmit);
   router.post('/stories/preliminary', newStory);
   router.post('/stories/', storySubmission);
-  router.get('/news/', hot);
+  router.get('/stories/', hot);
   router.post('/stories/search', getStories);
-  router.get('/news/:storyName', returnIndividualStory);
+  router.get('/stories/:storyName', returnIndividualStory);
   router.post('/stories/upvote/', upvote);
 
   app.use(router);
@@ -152,7 +152,7 @@ module.exports = function(app) {
           'Please double check the name.'
         });
 
-        return res.redirect('/news/');
+        return res.redirect('/stories/');
       }
 
       story = story.pop();
@@ -160,7 +160,7 @@ module.exports = function(app) {
         .replace(/\s+/g, ' ')
         .replace(/\s/g, '-');
       if (dashedNameFull !== dashedName) {
-        return res.redirect('../news/' + dashedNameFull);
+        return res.redirect('../stories/' + dashedNameFull);
       }
 
       var userVoted = false;
@@ -324,7 +324,7 @@ module.exports = function(app) {
           });
           return res.json({
             alreadyPosted: true,
-            storyURL: '/news/' + story.pop().storyLink
+            storyURL: '/stories/' + story.pop().storyLink
           });
         }
         utils.getURLTitle(url, processResponse);
@@ -600,7 +600,7 @@ module.exports = function(app) {
                   data.author.username + ' replied to you on Camper News.',
                   'You can keep this conversation going.',
                   'Just head back to the discussion here: ',
-                  'http://freecodecamp.com/news/' + data.originalStoryLink,
+                  'http://freecodecamp.com/stories/' + data.originalStoryLink,
                   '- the Free Code Camp Volunteer Team'
                 ].join('\n')
               };
