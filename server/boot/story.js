@@ -132,11 +132,12 @@ module.exports = function(app) {
 
 
   function returnIndividualStory(req, res, next) {
+    debug('hit return individual route');
     var dashedName = req.params.storyName;
 
     var storyName = dashedName.replace(/\-/g, ' ').trim();
 
-    Story.find({'storyLink': storyName}, function(err, story) {
+    Story.find({where: {'storyLink': storyName}}, function(err, story) {
       if (err) {
         return next(err);
       }
