@@ -2,7 +2,7 @@ var nodemailer = require('nodemailer'),
     sanitizeHtml = require('sanitize-html'),
     moment = require('moment'),
     mongodb = require('mongodb'),
-    // debug = require('debug')('freecc:cntr:story'),
+    debug = require('debug')('freecc:cntr:story'),
     utils = require('../utils'),
     MongoClient = mongodb.MongoClient,
     secrets = require('../../config/secrets');
@@ -55,6 +55,7 @@ module.exports = function(app) {
       if (err) {
         return next(err);
       }
+      debug(stories);
       var foundationDate = 1413298800000;
 
       var sliceVal = stories.length >= 100 ? 100 : stories.length;
