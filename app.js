@@ -12,6 +12,7 @@ process.on('uncaughtException', function (err) {
 });
 
 var express = require('express'),
+  hpp = require('hpp'),
   accepts = require('accepts'),
   cookieParser = require('cookie-parser'),
   compress = require('compression'),
@@ -85,7 +86,7 @@ if (process.env.NODE_ENV === 'production') {
     hostname: 'www.freecodecamp.com'
   }));
 }
-
+app.use(hpp());
 app.use(compress());
 app.use(lessMiddleware(__dirname + '/public'));
 app.use(logger('dev'));
