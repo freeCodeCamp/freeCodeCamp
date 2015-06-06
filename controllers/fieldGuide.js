@@ -87,8 +87,7 @@ exports.returnNextFieldGuide = function(req, res, next) {
       }
       return res.redirect('../field-guide/how-do-i-use-this-guide');
     }
-    var nameString = fieldGuide.name.toLowerCase().replace(/\s/g, '-');
-    return res.redirect('../field-guide/' + nameString);
+    return res.redirect('../field-guide/' + fieldGuide.dashedName);
   });
 };
 
