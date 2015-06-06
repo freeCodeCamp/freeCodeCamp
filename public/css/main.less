@@ -610,7 +610,9 @@ thead {
 }
 
 .hamburger-dropdown {
-  margin-top:  -5px !important;
+  @media (max-width: 991px) {
+    margin-top: -5px !important;
+  }
   @media (min-width: 768px) and (max-width: 991px) {
     width: 105%;
   }
