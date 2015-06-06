@@ -47,23 +47,52 @@
     },
 
     {
-      "_id": "bad87fee1348bd9aedc08826",
+      "_id": "bad87fee1348bd9bedc08826",
       "name": "Waypoint: Target Elements by Selectors Using jQuery",
       "difficulty": 0.073,
       "description": [
-
+        "Make all <code>img</code> elements bounce $('img').addClass('animated bounce')"
       ],
       "tests": [
 
       ],
       "challengeSeed": [
-
+        "fccss",
+        "  $(document).ready(function() {",
+        "",
+        "  });",
+        "fcces",
+        "<br>",
+        "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
+        "<br>",
+        "<div class='row'>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-primary'><i class='fa fa-thumbs-up'></i> Like</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-info'><i class='fa fa-info-circle'></i> Info</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-danger'><i class='fa fa-trash'></i> Delete</button>",
+        "  </div>",
+        "</div>",
+        "<br>",
+        "<form action='submit-cat-photo'>",
+        "  <div class='row'>",
+        "    <div class='col-xs-7'>",
+        "      <input type='text' class='form-control' placeholder='cat photo URL' required>",
+        "    </div>",
+        "    <div class='col-xs-5'>",
+        "      <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
+        "    </div>",
+        "  </div>",
+        "</form>"
       ],
       "challengeType": 0
     },
 
     {
-      "_id": "bad87fee1348bd9aedb08826",
+      "_id": "bad87fee1348bd9aedc08826",
       "name": "Waypoint: Target Elements by Class Using jQuery",
       "difficulty": 0.074,
       "description": [
@@ -73,14 +102,90 @@
 
       ],
       "challengeSeed": [
+        "fccss",
+        "  $(document).ready(function() {",
+        "    $('img').addClass('animated bounce');",
+        "    $('.btn').addClass('animated shake');",
+        "  });",
+        "fcces",
+        "<br>",
+        "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
+        "<br>",
+        "<div class='row'>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-primary'><i class='fa fa-thumbs-up'></i> Like</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-info'><i class='fa fa-info-circle'></i> Info</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-danger'><i class='fa fa-trash'></i> Delete</button>",
+        "  </div>",
+        "</div>",
+        "<br>",
+        "<form action='submit-cat-photo'>",
+        "  <div class='row'>",
+        "    <div class='col-xs-7'>",
+        "      <input type='text' class='form-control' placeholder='cat photo URL' required>",
+        "    </div>",
+        "    <div class='col-xs-5'>",
+        "      <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
+        "    </div>",
+        "  </div>",
+        "</form>"
+      ],
+      "challengeType": 0
+    },
 
+    {
+      "_id": "bad87fee1348bd9aedb08826",
+      "name": "Waypoint: Add an ID to an Element",
+      "difficulty": 0.075,
+      "description": [
+
+      ],
+      "tests": [
+        "assert($('form').attr('id') === 'cat-photo-form', 'Add an ID  <code>script</code> element has a closing tag.')"
+      ],
+      "challengeSeed": [
+        "fccss",
+        "  $(document).ready(function() {",
+        "    $('img').addClass('animated bounce');",
+        "    $('.btn').addClass('animated shake');",
+        "  });",
+        "fcces",
+        "<br>",
+        "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
+        "<br>",
+        "<div class='row'>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-primary'><i class='fa fa-thumbs-up'></i> Like</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-info'><i class='fa fa-info-circle'></i> Info</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-danger'><i class='fa fa-trash'></i> Delete</button>",
+        "  </div>",
+        "</div>",
+        "<br>",
+        "<form action='submit-cat-photo'>",
+        "  <div class='row'>",
+        "    <div class='col-xs-7'>",
+        "      <input type='text' class='form-control' placeholder='cat photo URL' required>",
+        "    </div>",
+        "    <div class='col-xs-5'>",
+        "      <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
+        "    </div>",
+        "  </div>",
+        "</form>"
       ],
       "challengeType": 0
     },
 
     {
       "_id": "bad87fee1348bd9aeda08826",
-      "name": "Waypoint: Target an element by ID Using jQuery",
+      "name": "Waypoint: Target Elements by ID Using jQuery",
       "difficulty": 0.075,
       "description": [
 
@@ -89,7 +194,37 @@
 
       ],
       "challengeSeed": [
-
+        "fccss",
+        "  $(document).ready(function() {",
+        "    $('img').addClass('animated bounce');",
+        "    $('.btn').addClass('animated shake');",
+        "  });",
+        "fcces",
+        "<br>",
+        "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
+        "<br>",
+        "<div class='row'>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-primary'><i class='fa fa-thumbs-up'></i> Like</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-info'><i class='fa fa-info-circle'></i> Info</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-danger'><i class='fa fa-trash'></i> Delete</button>",
+        "  </div>",
+        "</div>",
+        "<br>",
+        "<form action='submit-cat-photo' id='cat-photo-form'>",
+        "  <div class='row'>",
+        "    <div class='col-xs-7'>",
+        "      <input type='text' class='form-control' placeholder='cat photo URL' required>",
+        "    </div>",
+        "    <div class='col-xs-5'>",
+        "      <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
+        "    </div>",
+        "  </div>",
+        "</form>"
       ],
       "challengeType": 0
     },
@@ -105,7 +240,38 @@
 
       ],
       "challengeSeed": [
-
+        "fccss",
+        "  $(document).ready(function() {",
+        "    $('img').addClass('animated bounce');",
+        "    $('.btn').addClass('animated shake');",
+        "    $('.cat-photo-form').addClass('animated pulse');",
+        "  });",
+        "fcces",
+        "<br>",
+        "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
+        "<br>",
+        "<div class='row'>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-primary'><i class='fa fa-thumbs-up'></i> Like</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-info'><i class='fa fa-info-circle'></i> Info</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-danger'><i class='fa fa-trash'></i> Delete</button>",
+        "  </div>",
+        "</div>",
+        "<br>",
+        "<form action='submit-cat-photo' id='cat-photo-form'>",
+        "  <div class='row'>",
+        "    <div class='col-xs-7'>",
+        "      <input type='text' class='form-control' placeholder='cat photo URL' required>",
+        "    </div>",
+        "    <div class='col-xs-5'>",
+        "      <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
+        "    </div>",
+        "  </div>",
+        "</form>"
       ],
       "challengeType": 0
     },
