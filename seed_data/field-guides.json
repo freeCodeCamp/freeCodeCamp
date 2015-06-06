@@ -860,5 +860,101 @@
       "  </p>",
       "</div>"
     ]
+  },
+  {
+    "_id": "bd7158d9c436eddfadb5bd3d",
+    "name": "What is the agenda for Saturday Summit?",
+    "dashedName": "what-is-the-agenda-for-saturday-summit",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2>Here's our agenda for June 6, 2015:</h2>",
+      "  <ul>",
+      "    <li class='large-li'>12:00 Introductions to the streamers: Nathan (streaming), Michael, Briana, Quincy, Dan Raley</li>",
+      "    <li class='large-li'>12:05 Quincy: Introduce <a href='http://www.freecodecamp.com/danielraley' target='_blank'>Dan Raley</a> as responsible for Medium and our Field Guide.</li>",
+      "    <li class='large-li'>12:10 Update on our <a href='https://trello.com/b/m7zhwXka/fcc-translation' target='_blank'>translation effort</a></li>",
+      "    <li class='large-li'>12:15 Quincy: announce our new mobile experience</li>",
+      "    <li class='large-li'>12:20 Quincy: announce our new Front End Development certificate</li>",
+      "    <li class='large-li'>12:25 Briana: demo her Nonprofit project: <a href='http://fcc-cmf.herokuapp.com' target='_blank'>Columbus Songwriters Circle</a></li>",
+      "    <li class='large-li'>12:30 - 1:00 Questions and free discussion</li>",
+      "  </ul>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfadb5bd32",
+    "name": "How can I help the Free Code Camp translation effort?",
+    "dashedName": "how-can-i-help-the-free-code-camp-translation-effort",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <p class='h2'>Our translation effort is driven by bilingual campers like you.</h2>",
+      "  <p class='large-p'>If you're able to help us, you can join our <a href='https://trello.com/b/m7zhwXka/fcc-translation' target='_blank'>Trello board</a> by sending @quincylarson your email address in Slack.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfadb5bd31",
+    "name": "What if I speak a language that Free Code Camp does not yet support?",
+    "dashedName": "what-if-i-speak-a-language-that-free-code-camp-does-not-yet-support",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <p class='h2'>Translation is an all-or-nothing proposal.</h2>",
+      "  <p class='large-p'>We won't be able to add new languages to Free Code Camp until all of our challenges are translated into that langauge.</p>",
+      "  <p class='large-p'>In addition to translating these initially, we'll also need to maintain the translation as the challenges are gradually updated.</p>",
+      "  <p class='large-p'>If you're able to help us, you can join our <a href='https://trello.com/b/m7zhwXka/fcc-translation' target='_blank'>Trello board</a> by sending @quincylarson your email address in Slack.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfadb5bd30",
+    "name": "Can I do Free Code Camp completely in my native language?",
+    "dashedName": "can-i-do-free-code-camp-completely-in-my-native-language",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <p class='large-p'>The last 800 hours of free code camp involve building projects for nonprofits. These nonprofit projects will involve lots of meetings, correspondence, and pair programming, all of which will be conducted in English.</p>",
+      "  <p class='large-p'>You will need to be good enough with English to be able to participate in these meetings.</p>",
+      "  <p class='large-p'>We are translating our challenges into English is so that you can focus on learning to code, rather than focusing on learning English.</p>",
+      "  <p class='large-p'>Many non-native English speakers have succeeded in our nonprofit project program. With some effort, you can, too.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfadb5bd3c",
+    "name": "What is the new Free Code Camp Mobile Experience?",
+    "dashedName": "what-is-the-new-free-code-camp-mobile-experience",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2>We're building an on-the-go version of Free Code Camp.</h2>",
+      "  <img src='http://www.howardforums.com/attachment.php?attachmentid=97254&d=1378730537&stc=1' class='img-responsive img-center'>",
+      "  <p class='large-p'>It will be video-driven, with multiple-choice questions.</p>",
+      "  <img class='img-center img-responsive' src='https://www.edx.org/sites/default/files/upload/philip-guo-edx-first-blog-figure.png'>",
+      "  <p class='large-p'>These videos will be short - generally less than 6 minutes long.</p>",
+      "  <img src='http://a3.mzstatic.com/us/r1000/095/Purple/3f/58/42/mzl.xypmpeal.320x480-75.jpg' class='img-center img-responsive'>",
+      "  <p class='large-p'>We are considering focusing the mobile experience on code interview questions. Answering these common questions is a very different skill from coding itself.",
+      "  <p class='large-p'>We're still in the process of designing this. We'd love to hear your input.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "_id": "bd7158d9c436eddfadb5bd3b",
+    "name": "What is the Free Code Camp Front End Development Certificate?",
+    "dashedName": "what-is-the-free-code-camp-front-end-development-certificate",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2>We're creating a free Front End Development Certificate.</h2>",
+      "  <p class='large-p'>Here are the challenges that will make up our Basic Front End Development Certificate Program:</p>",
+      "  <ol>",
+      "    <li class='large-li'>HTML5 and CSS</li>",
+      "    <li class='large-li'>Responsive Design with Bootstrap</li>",
+      "    <li class='large-li'>jQuery, Ajax and JSON APIs (coming soon - will replace Codecademy jQuery challenges)</li>",
+      "    <li class='large-li'>Zipline: Use the Twitch.tv JSON API</li>",
+      "    <li class='large-li'>Zipline: Build a Random Quote Machine</li>",
+      "    <li class='large-li'>Zipline: Show the Local Weather</li>",
+      "    <li class='large-li'>Zipline: Stylize Stories on Camper News</li>",
+      "    <li class='large-li'>Zipline: Wikipedia Viewer</li>",
+      "  </ol>",
+      "  <p class='large-p'>This won't be a new curriculum - it will just the first 200 hours of our full stack JavaScript curriculum.</p>",
+      "  <p class='large-p'>All campers who have already completed these challenges are retroactively be eligible for the certificate!</p>",
+      "</div>"
+    ]
   }
 ]
