@@ -15,7 +15,7 @@ module.exports = function(app) {
   app.use(router);
 
   function returnIndividualFieldGuide(req, res, next) {
-    var dashedName = req.params.fieldGuideName;
+    var dashedNameFromQuery = req.params.fieldGuideName;
     if (req.user) {
       var completed = req.user.completedFieldGuides;
 
@@ -32,9 +32,7 @@ module.exports = function(app) {
       });
     }
 
-    // NOTE(berks): loopback might have issue with regex here.
-    FieldGuide.find(
-      { dashedName: new RegExp(dashedName, 'i') },
+    FieldGuide.find({ where: {'dashedName': dashedNameFromQuery}},
       function(err, fieldGuideFromMongo) {
         if (err) {
           return next(err);
@@ -46,15 +44,15 @@ module.exports = function(app) {
             'Please double check the name.'
           });
 
-          return res.redirect('/field-guide');
+          return res.redirect('/');
         }
 
         var fieldGuide = R.head(fieldGuideFromMongo);
           fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
 
-        if (fieldGuide.dashedName !== dashedName) {
-          return res.redirect('../field-guide/' + fieldGuide.dashedName);
-        }
+        //if (fieldGuide.dashedName !== dashedNameFromQuery) {
+        //  return res.redirect('../field-guide/' + fieldGuide.dashedName);
+        //}
         res.render('field-guide/show', {
           title: fieldGuide.name,
           fieldGuideId: fieldGuide.id,

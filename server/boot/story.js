@@ -2,7 +2,7 @@ var nodemailer = require('nodemailer'),
     sanitizeHtml = require('sanitize-html'),
     moment = require('moment'),
     mongodb = require('mongodb'),
-    // debug = require('debug')('freecc:cntr:story'),
+    debug = require('debug')('freecc:cntr:story'),
     utils = require('../utils'),
     MongoClient = mongodb.MongoClient,
     secrets = require('../../config/secrets');
@@ -13,7 +13,6 @@ module.exports = function(app) {
   var Story = app.models.Story;
 
   router.get('/stories/hotStories', hotJSON);
-  router.get('/stories/recentStories', recentJSON);
   router.get('/stories/comments/:id', comments);
   router.post('/stories/comment/', commentSubmit);
   router.post('/stories/comment/:id/comment', commentOnCommentSubmit);
@@ -22,9 +21,9 @@ module.exports = function(app) {
   router.get('/stories/submit/new-story', preSubmit);
   router.post('/stories/preliminary', newStory);
   router.post('/stories/', storySubmission);
-  router.get('/news/', hot);
+  router.get('/stories/', hot);
   router.post('/stories/search', getStories);
-  router.get('/news/:storyName', returnIndividualStory);
+  router.get('/stories/:storyName', returnIndividualStory);
   router.post('/stories/upvote/', upvote);
 
   app.use(router);
@@ -44,12 +43,19 @@ module.exports = function(app) {
   }
 
   function hotJSON(req, res, next) {
-    var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
-    story.exec(function(err, stories) {
+    //var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
+    //story.exec(function(err, stories) {
+    //  if (err) {
+    //    return next(err);
+    //  }
+    //Story.find([{$match: {}},
+    //  {$sort: {'timePosted': -1}},
+    //  {$limit: 1000}], function(err, stories) {
+    Story.find({order: 'timePosted DESC', limit: 1000}, function(err, stories) {
       if (err) {
         return next(err);
       }
-
+      debug(stories);
       var foundationDate = 1413298800000;
 
       var sliceVal = stories.length >= 100 ? 100 : stories.length;
@@ -60,16 +66,6 @@ module.exports = function(app) {
           - hotRank(a.timePosted - foundationDate, a.rank, a.headline);
       }).slice(0, sliceVal));
 
-    });
-  }
-
-  function recentJSON(req, res, next) {
-    var story = Story.find({}).sort({'timePosted': -1}).limit(100);
-    story.exec(function(err, stories) {
-      if (err) {
-        return next(err);
-      }
-      return res.json(stories);
     });
   }
 
@@ -136,11 +132,12 @@ module.exports = function(app) {
 
 
   function returnIndividualStory(req, res, next) {
+    debug('hit return individual route');
     var dashedName = req.params.storyName;
 
     var storyName = dashedName.replace(/\-/g, ' ').trim();
 
-    Story.find({'storyLink': storyName}, function(err, story) {
+    Story.find({where: {'storyLink': storyName}}, function(err, story) {
       if (err) {
         return next(err);
       }
@@ -152,7 +149,7 @@ module.exports = function(app) {
           'Please double check the name.'
         });
 
-        return res.redirect('/news/');
+        return res.redirect('/stories/');
       }
 
       story = story.pop();
@@ -160,7 +157,7 @@ module.exports = function(app) {
         .replace(/\s+/g, ' ')
         .replace(/\s/g, '-');
       if (dashedNameFull !== dashedName) {
-        return res.redirect('../news/' + dashedNameFull);
+        return res.redirect('../stories/' + dashedNameFull);
       }
 
       var userVoted = false;
@@ -324,7 +321,7 @@ module.exports = function(app) {
           });
           return res.json({
             alreadyPosted: true,
-            storyURL: '/news/' + story.pop().storyLink
+            storyURL: '/stories/' + story.pop().storyLink
           });
         }
         utils.getURLTitle(url, processResponse);
@@ -600,7 +597,7 @@ module.exports = function(app) {
                   data.author.username + ' replied to you on Camper News.',
                   'You can keep this conversation going.',
                   'Just head back to the discussion here: ',
-                  'http://freecodecamp.com/news/' + data.originalStoryLink,
+                  'http://freecodecamp.com/stories/' + data.originalStoryLink,
                   '- the Free Code Camp Volunteer Team'
                 ].join('\n')
               };
