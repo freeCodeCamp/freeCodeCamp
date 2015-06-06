@@ -14,7 +14,7 @@
     },
     "timePosted": {
       "type": "number",
-      "default": "0"
+      "default": 0
     },
     "link": {
       "type": "string",
@@ -35,7 +35,7 @@
     },
     "rank": {
       "type": "number",
-      "default": "-Infinity"
+      "default": 0
     },
     "upVotes": {
       "type": "array",
@@ -53,13 +53,6 @@
     "storyLink": {
       "type": "string",
       "default": ""
-    },
-    "difficulty": "string",
-    "description": "array",
-    "tests": "array",
-    "challengeSeed": "array",
-    "MDNlinks": {
-      "type": "array"
     }
   },
   "validations": [],

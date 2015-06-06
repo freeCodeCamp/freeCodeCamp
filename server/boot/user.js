@@ -323,7 +323,7 @@ module.exports = function(app) {
 
   function returnUser (req, res, next) {
     User.find(
-      { 'profile.username': req.params.username.toLowerCase() },
+      {where: { 'username': req.params.username.toLowerCase() }},
       function(err, user) {
         if (err) {
           debug('Username err: ', err);
