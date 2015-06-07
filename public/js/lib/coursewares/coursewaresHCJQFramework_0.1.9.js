@@ -16,6 +16,14 @@ var editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
   onKeyEvent: doLinting
 });
 
+var defaultKeymap = {
+  'Cmd-E': 'emmet.expand_abbreviation',
+  'Tab': 'emmet.expand_abbreviation_with_tab',
+  'Enter': 'emmet.insert_formatted_line_break_only'
+};
+
+emmetCodeMirror(editor, defaultKeymap);
+
 
 // Hijack tab key to insert two spaces instead
 editor.setOption("extraKeys", {

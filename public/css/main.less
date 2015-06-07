@@ -610,8 +610,11 @@ thead {
 }
 
 .hamburger-dropdown {
-  @media (max-width: 768px) {
-    margin-top:  -5px;
+  @media (max-width: 991px) {
+    margin-top: -5px !important;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 105%;
   }
 }
 
@@ -884,8 +887,7 @@ iframe.iphone {
 .hamburger-text {
   line-height: 0.75em;
   margin-top: 10px;
-  font-size: 16px;
-  margin-left: -8px;
+  font-size: 18px;
 }
 
 .tight-h3 {
