@@ -1,8 +1,7 @@
 {
   "name": "jQuery, Ajax and JSON",
-  "order" : 0.004,
-  "challenges": [
-    {
+  "order": 0.004,
+  "challenges": [{
       "_id": "bad87fee1348bd9acdd08826",
       "name": "Waypoint: Learn how Script Tags and Document Ready Work",
       "difficulty": 0.072,
@@ -54,7 +53,7 @@
         "Make all <code>img</code> elements bounce $('img').addClass('animated bounce')"
       ],
       "tests": [
-
+        "expect($('img'), 'Make sure you add the animated bounce class').to.have.class('animated bounce')"
       ],
       "challengeSeed": [
         "fccss",
@@ -483,8 +482,7 @@
 
       ],
       "challengeType": 0
-    },
-    {
+    }, {
       "_id": "bad87fee1348bd9aede08826",
       "name": "Waypoint: Use Hex Codes for Precise Colors",
       "difficulty": 0.071,
@@ -498,8 +496,7 @@
 
       ],
       "challengeType": 0
-    },
-    {
+    }, {
       "_id": "bad87fee1348bd9aedd08826",
       "name": "Waypoint: Use Shortened Hex Codes for Colors",
       "difficulty": 0.071,
