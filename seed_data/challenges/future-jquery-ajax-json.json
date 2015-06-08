@@ -53,7 +53,8 @@
         "Make all <code>img</code> elements bounce $('img').addClass('animated bounce')"
       ],
       "tests": [
-        "expect($('img'), 'Make sure you add the animated bounce class').to.have.class('animated bounce')"
+        "assert($('img').hasClass('animated') && $('img').hasClass('bounce'), 'Use the jQuery <code>addClass()</code> function to give the classes \"animated\" and \"bounce\" to your <code>img</code> element.')",
+        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -98,13 +99,13 @@
 
       ],
       "tests": [
-
+        "assert($('.btn').hasClass('animated') && $('.btn').hasClass('shake'), 'Use the jQuery <code>addClass()</code> function to give the classes \"animated\" and \"shake\" to all your elements with the class \"btn\".')",
+        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
         "    $('img').addClass('animated bounce');",
-        "    $('.btn').addClass('animated shake');",
         "  });",
         "fcces",
         "<br>",
@@ -144,7 +145,7 @@
 
       ],
       "tests": [
-        "assert($('form').attr('id') === 'cat-photo-form', 'Add an ID  <code>script</code> element has a closing tag.')"
+        "assert($('form').attr('id') === 'cat-photo-form', 'Add the ID of \"cat-photo-form\" to your <code>form</code> element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -190,7 +191,8 @@
 
       ],
       "tests": [
-
+        "assert($('#cat-photo-form') && $('#cat-photo-form').hasClass('animated') && $('#cat-photo-form').hasClass('pulse'), 'Select the element with the <code>id</code> of \"cat-photo-form\" and use the jQuery <code>addClass()</code> function to give it the classes of \"animated\" and \"pulse\".')",
+        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",

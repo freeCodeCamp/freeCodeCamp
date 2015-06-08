@@ -28,10 +28,12 @@ block content
                             h4.text-center.negative-10= name
                             .bonfire-instructions
                                 for sentence in details
-                                    p.wrappable.!= sentence
+                                    p.wrappable.negative-10!= sentence
                                 .negative-bottom-margin-30
                 if (user)
-                    a.btn.btn-primary.btn-sm.btn-block.negative-10#next-courseware-button Go to my next challenge (ctrl + enter)
+                    label.btn.btn-primary.btn-block.negative-10#next-courseware-button
+                        .ion-checkmark-circled
+                            | &nbsp; Go to my next challenge (ctrl + enter)
 
                     if (user.sentSlackInvite)
                         .button-spacer
@@ -46,7 +48,7 @@ block content
                     script.
                         var userLoggedIn = true;
                 else
-                    a.btn.signup-btn.btn-block.btn-sm.btn-block.negative-15(href='/login') Sign in so you can save your progress
+                    a.btn.signup-btn.btn-block.btn-block.negative-15(href='/login') Sign in so you can save your progress
                         script.
                             var userLoggedIn = false;
                 .button-spacer
