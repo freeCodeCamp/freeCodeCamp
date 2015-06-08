@@ -239,7 +239,7 @@
       ],
       "tests": [
         "assert(!editor.match(/nce\\'\\)\\;/g) && !editor.match(/ke\\'\\)\\;/g), 'Delete your <code>img</code> element selector statement and your \".btn\" selector statement.')",
-        "assert(editor.match(/css.*,.*background-color.*red.\\);/g), 'Select the element with the <code>id</code> of \"cat-photo-form\" give it the background color of red.')"
+        "assert(editor.match(/css.*,.*background-color.*gray.\\);/g), 'Select the element with the <code>id</code> of \"cat-photo-form\" give it the background color of gray.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -292,7 +292,7 @@
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
-        "    $('#cat-photo-form').css('background-color', 'red');",
+        "    $('#cat-photo-form').css('background-color', 'gray');",
         "  });",
         "fcces",
         "<br>",
