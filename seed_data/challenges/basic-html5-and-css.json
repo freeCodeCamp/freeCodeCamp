@@ -1037,7 +1037,7 @@
       "name": "Waypoint: Wrap an Anchor Element within a Paragraph",
       "difficulty": 0.032,
       "description": [
-        "Now wrap your <code>a</code> element within a <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
+        "Now wrap your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<img class='img-responsive' alt='a diagram of how anchor tags are composed with the same text as on the following line' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>."
@@ -1045,7 +1045,8 @@
       "tests": [
         "assert($('a').attr('href').match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
         "assert($('a').text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
-        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your <code>a</code> element should be wrapped within a paragraph element.')",
+        "assert($('p') && $('p').length > 2, 'Create a new <code>p</code> element around your <code>a</code> element. \"click here for\".')",
+        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your <code>a</code> element should be wrapped within your new <code>p</code> element.')",
         "assert($('p').text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
