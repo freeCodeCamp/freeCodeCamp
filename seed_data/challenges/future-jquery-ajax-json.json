@@ -238,14 +238,15 @@
 
       ],
       "tests": [
-
+        "assert(!editor.match(/nce\\'\\)\\;/g) && !editor.match(/ke\\'\\)\\;/g), 'Delete your <code>img</code> element selector statement and your \".btn\" selector statement.')",
+        "assert(editor.match(/css.*,.*background-color.*red.\\);/g), 'Select the element with the <code>id</code> of \"cat-photo-form\" give it the background color of red.')"
       ],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
         "    $('img').addClass('animated bounce');",
         "    $('.btn').addClass('animated shake');",
-        "    $('.cat-photo-form').addClass('animated pulse');",
+        "    $('#cat-photo-form').addClass('animated pulse');",
         "  });",
         "fcces",
         "<br>",
@@ -285,10 +286,40 @@
 
       ],
       "tests": [
-
+        "assert($('form button').attr('id') === 'submit-button', 'Add the ID of \"submit-button\" to your the <code>button</code> on your <code>form</code> element.')",
+        "assert($('#submit-button') && $('#submit-button').prop('disabled'), 'Disable your element with the id of \"submit-button\".')"
       ],
       "challengeSeed": [
-
+        "fccss",
+        "  $(document).ready(function() {",
+        "    $('#cat-photo-form').css('background-color', 'red');",
+        "  });",
+        "fcces",
+        "<br>",
+        "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
+        "<br>",
+        "<div class='row'>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-primary'><i class='fa fa-thumbs-up'></i> Like</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-info'><i class='fa fa-info-circle'></i> Info</button>",
+        "  </div>",
+        "  <div class='col-xs-4'>",
+        "    <button class='btn btn-block btn-danger'><i class='fa fa-trash'></i> Delete</button>",
+        "  </div>",
+        "</div>",
+        "<br>",
+        "<form action='submit-cat-photo' id='cat-photo-form'>",
+        "  <div class='row'>",
+        "    <div class='col-xs-7'>",
+        "      <input type='text' class='form-control' placeholder='cat photo URL' required>",
+        "    </div>",
+        "    <div class='col-xs-5'>",
+        "      <button type='submit' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
+        "    </div>",
+        "  </div>",
+        "</form>"
       ],
       "challengeType": 0
     },
@@ -329,22 +360,6 @@
       "_id": "bad87fee1348bd9aed508826",
       "name": "Waypoint: Clone an Element Using jQuery",
       "difficulty": 0.080,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "_id": "bad87fee1348bd9aed408826",
-      "name": "Waypoint: Animate an Element Using jQuery",
-      "difficulty": 0.081,
       "description": [
 
       ],
