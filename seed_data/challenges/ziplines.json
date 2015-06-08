@@ -18,7 +18,7 @@
         "Drag the windows around and press the buttons in the lower-right hand corner to change the orientation to suit your preference.",
         "Click the gear next to CSS. Then in the \"External CSS File or Another Pen\" text field, type \"bootstrap\" and scroll down until you see the latest version of Bootstrap. Click it.",
         "Verify that bootstrap is active by adding the following code to your HTML: <code>&lt;h1 class='text-primary'&gt;Hello CodePen!&lt;/h1&gt;</code>. The text's color should be Bootstrap blue.",
-        "Click the gear next to the JavaScript. Click the \"Latest version of...\" select box and choose jQuery.",
+        "Click the gear next to JavaScript. Click the \"Latest version of...\" select box and choose jQuery.",
         "Now add the following code to your JavaScript: <code>$(document).ready(function() { $('.text-primary').text('Hi CodePen!') });</code>. Click the \"Save\" button at the top. Your \"Hello CodePen!\" should change to \"Hi CodePen!\". This means that jQuery is working.",
         "Now you're ready for your first Zipline. Click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair."
       ],

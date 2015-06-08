@@ -339,6 +339,7 @@
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.chennai/' target='_blank'>Chennai</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.chicago/' target='_blank'>Chicago</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.cincinnati/' target='_blank'>Cincinnati</a></li>",
+      "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.clarksville.TN/' target='_blank'>Clarksville</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.cluj' target='_blank'>Cluj</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.coimbatore' target='_blank'>Coimbatore</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.coventry/' target='_blank'>Coventry</a></li>",
@@ -351,6 +352,7 @@
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.doha/' target='_blank'>Doha</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.dubai/' target='_blank'>Dubai</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.edmonton/' target='_blank'>Edmonton</a></li>",
+      "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.firenze/' target='_blank'>Firenze</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.northern.arizona/' target='_blank'>Flagstaff</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.florianopolis/' target='_blank'>Florianopolis</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.dallas/' target='_blank'>Fort Worth</a></li>",
@@ -432,6 +434,7 @@
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.saint.george/' target='_blank'>Saint George</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.saint.louis/' target='_blank'>Saint Louis</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.salt.lake.city/' target='_blank'>Salt Lake City</a></li>",
+      "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.salvador/' target='_blank'>Salvador</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.san.bernardino/' target='_blank'>San Bernardino</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.san.diego/' target='_blank'>San Diego</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.san.francisco' target='_blank'>San Francisco</a></li>",
@@ -858,25 +861,6 @@
       "      <li class='large-li'>You can also contribute to this field guide directly via GitHub pull request, by cloning Free Code Camp's <a href='https://github.com/FreeCodeCamp/freecodecamp'>main repository</a> and modifying <a href='https://github.com/FreeCodeCamp/freecodecamp/blob/master/seed_data/field-guides.json'>field-guides.json</a>.</li>",
       "    </ol>",
       "  </p>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c436eddfadb5bd3d",
-    "name": "What is the agenda for Saturday Summit?",
-    "dashedName": "what-is-the-agenda-for-saturday-summit",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "  <h2>Here's our agenda for June 6, 2015:</h2>",
-      "  <ul>",
-      "    <li class='large-li'>12:00 Introductions to the streamers: Nathan (streaming), Michael, Briana, Quincy, Dan Raley</li>",
-      "    <li class='large-li'>12:05 Quincy: Introduce <a href='http://www.freecodecamp.com/danielraley' target='_blank'>Dan Raley</a> as responsible for Medium and our Field Guide.</li>",
-      "    <li class='large-li'>12:10 Update on our <a href='https://trello.com/b/m7zhwXka/fcc-translation' target='_blank'>translation effort</a></li>",
-      "    <li class='large-li'>12:15 Quincy: announce our new mobile experience</li>",
-      "    <li class='large-li'>12:20 Quincy: announce our new Front End Development certificate</li>",
-      "    <li class='large-li'>12:25 Briana: demo her Nonprofit project: <a href='http://fcc-cmf.herokuapp.com' target='_blank'>Columbus Songwriters Circle</a></li>",
-      "    <li class='large-li'>12:30 - 1:00 Questions and free discussion</li>",
-      "  </ul>",
       "</div>"
     ]
   },
