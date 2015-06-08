@@ -9,6 +9,12 @@ var _ = require('lodash'),
   secrets = require('../../config/secrets');
 
 module.exports = function(app) {
+  // NOTE(berks): user email validation currently not needed but build in. This
+  // work around should let us sneak by
+  // see:
+  // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
+  delete app.models.User.validations.email;
+
   var router = app.loopback.Router();
   var User = app.models.User;
   var Story = app.models.Story;
