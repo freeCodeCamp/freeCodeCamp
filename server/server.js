@@ -216,9 +216,12 @@ var passportOptions = {
     var password = generateKey('password');
     var userObj = {
       username: username,
-      password: password,
-      email: email
+      password: password
     };
+
+    if (email) {
+      userObj.email = email;
+    }
     return userObj;
   }
 };
