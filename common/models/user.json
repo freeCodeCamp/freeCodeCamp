@@ -3,6 +3,7 @@
   "base": "User",
   "trackChanges": false,
   "idInjection": true,
+  "strict": true,
   "properties": {
     "email": {
       "type": "string",

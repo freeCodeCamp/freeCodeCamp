@@ -35,12 +35,8 @@ module.exports = function(app) {
   router.post('/reset/:token', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
-  router.post('/email-signup', postEmailSignup);
-  // router.post('/email-signin', postSignin);
+  // router.post('/email-signup', postEmailSignup);
   router.get('/account/api', getAccountAngular);
-  router.get('/api/checkUniqueUsername/:username', checkUniqueUsername);
-  router.get('/api/checkExistingUsername/:username', checkExistingUsername);
-  router.get('/api/checkUniqueEmail/:email', checkUniqueEmail);
   router.post('/account/profile', postUpdateProfile);
   router.post('/account/password', postUpdatePassword);
   router.post('/account/delete', postDeleteAccount);
@@ -64,49 +60,6 @@ module.exports = function(app) {
       title: 'Free Code Camp Login'
     });
   }
-
-  /**
-  * POST /signin
-  * Sign in using email and password.
-  */
-
- /*
-  * TODO(berks): this should be done using loopback
-  function postSignin (req, res, next) {
-    req.assert('email', 'Email is not valid').isEmail();
-    req.assert('password', 'Password cannot be blank').notEmpty();
-
-    var errors = req.validationErrors();
-
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/signin');
-    }
-
-    passport.authenticate('local', function(err, user, info) {
-      if (err) {
-        return next(err);
-      }
-      if (!user) {
-        req.flash('errors', { msg: info.message });
-        return res.redirect('/signin');
-      }
-      req.logIn(user, function(err) {
-        if (err) {
-          return next(err);
-        }
-        req.flash('success', { msg: 'Success! You are logged in.' });
-        if (/hotStories/.test(req.session.returnTo)) {
-          return res.redirect('../news');
-        }
-        if (/field-guide/.test(req.session.returnTo)) {
-          return res.redirect('../field-guide');
-        }
-        return res.redirect(req.session.returnTo || '/');
-      });
-    })(req, res, next);
-  }
-  */
 
   /**
   * GET /signout
@@ -147,107 +100,6 @@ module.exports = function(app) {
   }
 
   /**
-  * POST /email-signup
-  * Create a new local account.
-  */
-
-  function postEmailSignup (req, res, next) {
-    req.assert('email', 'valid email required').isEmail();
-    var errors = req.validationErrors();
-
-    if (errors) {
-        req.flash('errors', errors);
-        return res.redirect('/email-signup');
-    }
-
-    var possibleUserData = req.body;
-
-    if (possibleUserData.password.length < 8) {
-      req.flash('errors', {
-        msg: 'Your password is too short'
-      });
-      return res.redirect('email-signup');
-    }
-
-    if (possibleUserData.username.length < 5 || possibleUserData.length > 20) {
-      req.flash('errors', {
-        msg: 'Your username must be between 5 and 20 characters'
-      });
-      return res.redirect('email-signup');
-    }
-
-
-    var user = new User({
-      email: req.body.email.trim(),
-      password: req.body.password,
-      profile: {
-        username: req.body.username.trim(),
-        picture:
-          'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png'
-      }
-    });
-
-    User.findOne({ email: req.body.email }, function(err, existingEmail) {
-      if (err) {
-        return next(err);
-      }
-
-      if (existingEmail) {
-        req.flash('errors', {
-          msg: 'Account with that email address already exists.'
-        });
-        return res.redirect('/email-signup');
-      }
-      User.findOne(
-        { 'profile.username': req.body.username },
-        function(err, existingUsername) {
-        if (err) {
-          return next(err);
-        }
-        if (existingUsername) {
-          req.flash('errors', {
-            msg: 'Account with that username already exists.'
-          });
-          return res.redirect('/email-signup');
-        }
-
-        user.save(function(err) {
-          if (err) { return next(err); }
-          req.logIn(user, function(err) {
-            if (err) { return next(err); }
-            res.redirect('/email-signup');
-          });
-        });
-        var transporter = nodemailer.createTransport({
-          service: 'Mandrill',
-          auth: {
-            user: secrets.mandrill.user,
-            pass: secrets.mandrill.password
-          }
-        });
-        var mailOptions = {
-          to: user.email,
-          from: 'Team@freecodecamp.com',
-          subject: 'Welcome to Free Code Camp!',
-          text: [
-            'Greetings from San Francisco!\n\n',
-            'Thank you for joining our community.\n',
-            'Feel free to email us at this address if you have ',
-            'any questions about Free Code Camp.\n',
-            'And if you have a moment, check out our blog: ',
-            'blog.freecodecamp.com.\n',
-            'Good luck with the challenges!\n\n',
-            '- the Free Code Camp Volunteer Team'
-          ].join('')
-        };
-        transporter.sendMail(mailOptions, function(err) {
-          if (err) { return err; }
-        });
-      });
-    });
-  }
-
-  /**
   * GET /account
   * Profile page.
   */
@@ -266,59 +118,6 @@ module.exports = function(app) {
     res.json({
       user: req.user
     });
-  }
-
-  /**
-  * Unique username check API Call
-  */
-
-  function checkUniqueUsername (req, res, next) {
-    User.count(
-      { 'profile.username': req.params.username.toLowerCase() },
-      function (err, data) {
-      if (err) { return next(err); }
-      if (data === 1) {
-        return res.send(true);
-      } else {
-        return res.send(false);
-      }
-    });
-  }
-
-  /**
-  * Existing username check
-  */
-
-  function checkExistingUsername (req, res, next) {
-    User.count(
-      { 'profile.username': req.params.username.toLowerCase() },
-      function (err, data) {
-        if (err) { return next(err); }
-        if (data === 1) {
-            return res.send(true);
-        } else {
-            return res.send(false);
-        }
-      }
-    );
-  }
-
-  /**
-  * Unique email check API Call
-  */
-
-  function checkUniqueEmail (req, res, next) {
-    User.count(
-      { email: decodeURIComponent(req.params.email).toLowerCase() },
-      function (err, data) {
-        if (err) { return next(err); }
-        if (data === 1) {
-          return res.send(true);
-        } else {
-          return res.send(false);
-        }
-      }
-    );
   }
 
 
