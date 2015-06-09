@@ -213,16 +213,17 @@ var runTests = function(err, data) {
   } else if (userTests) {
     userTests.push(false);
     pushed = true;
-    userTests.forEach(function(test, ix, arr){
+    userTests.forEach(function(chaiTestFromJSON, indexOfTestArray, __testArray){
       try {
-        if (test) {
-          var output = eval(reassembleTest(test, data));
+        if (chaiTestFromJSON) {
+          var output = eval(reassembleTest(chaiTestFromJSON, data));
+          debugger;
         }
       } catch(error) {
         allTestsPassed = false;
-        arr[ix].err = error.message;
+        __testArray[indexOfTestArray].err = error.message;
       } finally {
-        if (!test) {
+        if (!chaiTestFromJSON) {
           createTestDisplay();
         }
       }
