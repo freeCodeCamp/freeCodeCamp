@@ -1,12 +1,12 @@
+/* eslint-disable no-process-exit */
 require('dotenv').load();
-var User = require('./../models/User'),
-  secrets = require('../config/secrets'),
-  mongodb = require('mongodb'),
-  MongoClient = mongodb.MongoClient;
+var secrets = require('../config/secrets'),
+    mongodb = require('mongodb'),
+    MongoClient = mongodb.MongoClient;
 
 MongoClient.connect(secrets.db, function(err, database) {
   if (err) {
-    console.log(err);
+    throw err;
   }
 
   database.collection('users').aggregate([
@@ -17,7 +17,9 @@ MongoClient.connect(secrets.db, function(err, database) {
     {$match: { 'email': { $not: /(test|fake)/i } } },
     {$group: { '_id': 1, 'emails': {$addToSet: '$email' } } }
   ], function(err, results) {
-    console.log('\"email\"\n\"'+results[0].emails.join('\"\n\"') + '\"');
+    if (err) { throw err; }
+
+    console.log('\"email\"\n\"' + results[0].emails.join('\"\n\"') + '\"');
     process.exit(0);
   });
 });
