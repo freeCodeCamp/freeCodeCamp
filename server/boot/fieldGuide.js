@@ -50,9 +50,9 @@ module.exports = function(app) {
         var fieldGuide = R.head(fieldGuideFromMongo);
           fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
 
-        //if (fieldGuide.dashedName !== dashedNameFromQuery) {
-        //  return res.redirect('../field-guide/' + fieldGuide.dashedName);
-        //}
+        // if (fieldGuide.dashedName !== dashedNameFromQuery) {
+        //   return res.redirect('../field-guide/' + fieldGuide.dashedName);
+        // }
         res.render('field-guide/show', {
           title: fieldGuide.name,
           fieldGuideId: fieldGuide.id,

@@ -1,4 +1,3 @@
-
 module.exports = function(app) {
   var router = app.loopback.Router();
   var Nonprofit = app.models.Nonprofit;

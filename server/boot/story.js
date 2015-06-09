@@ -42,8 +42,7 @@ module.exports = function(app) {
     return hotness;
   }
 
-  function hotJSON(req, res, next) { // no-unused-vars
-
+  function hotJSON(req, res, next) {
     Story.find({order: 'timePosted DESC', limit: 1000}, function(err, stories) {
       if (err) {
         return next(err);
