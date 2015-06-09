@@ -1303,8 +1303,8 @@
       "tests": [
         "assert($('ul').length > 0, 'Create a <code>ul</code> element.')",
         "assert($('li').length > 2, 'Add three <code>li</code> elements to your <code>ul</code> element.')",
-        "assert(editor.match(/<\\/ul>/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul>/g).length, 'Make sure your <code>ul</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/li>/g) && editor.match(/<\\/li>/g).length === editor.match(/<li>/g).length, 'Make sure your <code>li</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/ul>/g) && editor.match(/<ul/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul/g).length, 'Make sure your <code>ul</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/li>/g) && editor.match(/<li/g) && editor.match(/<\\/li>/g).length === editor.match(/<li/g).length, 'Make sure your <code>li</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
