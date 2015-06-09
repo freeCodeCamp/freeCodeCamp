@@ -65,25 +65,36 @@ Edit your .env file with the following API keys accordingly (if you only use ema
 ```
 
 MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
-BLOGGER_KEY=stuff
+
 FACEBOOK_ID=stuff
 FACEBOOK_SECRET=stuff
+
 GITHUB_ID=stuff
 GITHUB_SECRET=stuff
+
 GOOGLE_ID=stuff
 GOOGLE_SECRET=stuff
+
 LINKEDIN_ID=stuff
 LINKEDIN_SECRET=stuff
+
 MANDRILL_PASSWORD=stuff
 MANDRILL_USER=stuff
-SESSION_SECRET=secretstuff
+
 TRELLO_KEY=stuff
 TRELLO_SECRET=stuff
+
 TWITTER_KEY=stuff
 TWITTER_SECRET=stuff
 TWITTER_TOKEN=stuff
 TWITTER_TOKEN_SECRET=stuff
+
+BLOGGER_KEY=stuff
 SLACK_WEBHOOK=stuff
+
+SESSION_SECRET=secretstuff
+COOKIE_SECRET='this is a secret'
+
 PEER=stuff
 DEBUG=true
 
@@ -95,7 +106,7 @@ DEBUG=true
 mongod
 
 # Seed your database with the challenges
-node seed_data/seed.js
+node seed/
 
 # start the application
 gulp
@@ -114,8 +125,8 @@ Project Structure
 | **controllers**/home.js            | Controller for home page (index).                           |
 | **controllers**/user.js            | Controller for user account management.                     |
 | **controllers**/challenges.js      | Controller for rendering the challenges.                    |
-| **models**/User.js                 | Mongoose schema and model for User.                         |
-| **models**/Challenge.js            | Mongoose schema and model for Challenge.                    |
+| **models**/user.json                 | Mongoose schema and model for User.                         |
+| **models**/challenge.json            | Mongoose schema and model for Challenge.                    |
 | **public**/                        | Static assets (fonts, css, js, img).                        |
 | **public**/**js**/application.js   | Specify client-side JavaScript dependencies.                |
 | **public**/**js**/main_0.0.2.js          | Place your client-side JavaScript here.                     |
@@ -126,7 +137,7 @@ Project Structure
 | **views/partials**/footer.jade     | Footer partial template.                                    |
 | **views**/layout.jade              | Base template.                                              |
 | **views**/home.jade                | Home page template.                                         |
-| app.js                             | Main application file.                                      |
+| server.js                             | Main application file.                                      |
 
 
 List of Packages
@@ -155,7 +166,7 @@ List of Packages
 | github-api                      | GitHub API library.                                                  |
 | jade                            | Template engine for Express.                                         |
 | less                            | LESS compiler. Used implicitly by connect-assets.                    |
-| helmet                          | Restricts Cross site requests. You can modify its settings in app.js |
+| helmet                          | Restricts Cross site requests. You can modify its settings in server.js |
 | mongoose                        | MongoDB ODM.                                                         |
 | nodemailer                      | Node.js library for sending emails.                                  |
 | passport                        | Simple and elegant authentication library for node.js                |

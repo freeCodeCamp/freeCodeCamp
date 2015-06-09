@@ -1,0 +1,24 @@
+{
+  "name": "fieldGuide",
+  "base": "PersistedModel",
+  "trackChanges": false,
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "dashedName": {
+      "type": "string",
+      "unique": false
+    },
+    "description": {
+      "type": "array",
+      "unique": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

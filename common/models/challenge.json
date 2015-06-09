@@ -1,0 +1,32 @@
+{
+  "name": "challenge",
+  "base": "PersistedModel",
+  "trackChanges": false,
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "difficulty": "string",
+    "description": "array",
+    "tests": "array",
+    "challengeSeed": "array",
+    "challengeType": "string",
+    "MDNlinks": "array",
+    "nameCn": "string",
+    "descriptionCn": "array",
+    "nameFr": "string",
+    "descriptionFr": "array",
+    "nameRu": "string",
+    "descriptionRu": "array",
+    "nameEs": "string",
+    "descriptionEs": "array",
+    "namePt": "string",
+    "descriptionPt": "array"
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

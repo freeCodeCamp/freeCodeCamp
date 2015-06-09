@@ -1,0 +1,17 @@
+{
+  "name": "job",
+  "base": "PersistedModel",
+  "trackChanges": false,
+  "idInjection": true,
+  "properties": {
+    "position": "string",
+    "company": "string",
+    "logoUrl": "string",
+    "postingUrl": "string",
+    "copy": "array"
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

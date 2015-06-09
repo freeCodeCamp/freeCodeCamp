@@ -1,0 +1,23 @@
+{
+  "name": "bonfire",
+  "base": "PersistedModel",
+  "trackChanges": false,
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "difficulty": "string",
+    "description": "array",
+    "tests": "array",
+    "challengeSeed": "array",
+    "MDNlinks": {
+      "type": "array"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

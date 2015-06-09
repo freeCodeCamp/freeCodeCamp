@@ -1,0 +1,62 @@
+{
+  "name": "story",
+  "base": "PersistedModel",
+  "trackChanges": false,
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "headline": {
+      "type": "string",
+      "unique": false
+    },
+    "timePosted": {
+      "type": "number",
+      "default": 0
+    },
+    "link": {
+      "type": "string",
+      "unique": false
+    },
+    "metaDescription": {
+      "type": "string",
+      "default": "",
+      "unique": false
+    },
+    "description": {
+      "type": "string",
+      "unique": false
+    },
+    "originalStoryAuthorEmail": {
+      "type": "string",
+      "default": ""
+    },
+    "rank": {
+      "type": "number",
+      "default": 0
+    },
+    "upVotes": {
+      "type": "array",
+      "default": []
+    },
+    "author": {},
+    "comments": {
+      "type": "array",
+      "default": []
+    },
+    "image": {
+      "type": "string",
+      "default": ""
+    },
+    "storyLink": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

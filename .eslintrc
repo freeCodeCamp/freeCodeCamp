@@ -15,7 +15,8 @@
     "window": true,
     "$": true,
     "ga": true,
-    "jQuery": true
+    "jQuery": true,
+    "router": true
   },
   "rules": {
     "no-comma-dangle": 2,
