@@ -120,9 +120,9 @@
       "challengeSeed": "125407435",
       "description": [
         "Free Code Camp has an up-to-date field guide that will answer your many questions.",
-        "Click the \"Field Guide\" button in the upper right hand corner.",
+        "Click the \"Guide\" button in the upper right hand corner.",
         "You can browse the field guide at your convenience. Most of its articles take less than 1 minute to read.",
-        "When you click the Field Guide button, it will always take you back to whichever article you were last reading.",
+        "When you click the \"Guide\" button, it will always take you back to whichever article you were last reading.",
         "Read a few field guide articles, then move on to your next challenge."
       ],
       "challengeType": 2,
