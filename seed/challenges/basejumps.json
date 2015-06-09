@@ -58,7 +58,7 @@
         "Set the config flag for your Heroku environment and add MongoLab for your MongoDB instance by running the following command: <code>cd ~/workspace/dist && heroku config:set NODE_ENV=production && heroku addons:add mongolab</code>.",
         "As you build your app, you should frequently commit changes to your codebase. Make sure you're in the <code>~/workspace</code> directory by running <code>cd ~/workspace</code>. Then you can this code to stage the changes to your changes and commit them: <code>git commit -am \"your commit message\"</code>. Note that you should replace \"your commit message\" with a short summary of the changes you made to your code, such as \"added a records controller and corresponding routes\".",
         "You can push these new commits to GitHub by running <code>git push origin master</code>, and to Heroku by running <code>grunt --force && grunt buildcontrol:heroku</code>.",
-        "Now you're ready to move on to your first Basejump. Click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it."
+        "Now you're ready to move on to your first Basejump. Click the \"I've completed this challenge\" and move on."
       ],
       "challengeType": 2,
       "tests": []

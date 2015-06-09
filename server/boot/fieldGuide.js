@@ -91,17 +91,15 @@ module.exports = function(app) {
         if (req.user.completedFieldGuides.length > 0) {
           req.flash('success', {
             msg: [
-              "You've read all our current Field Guide entries. You can ",
-              'contribute to our Field Guide ',
-              "<a href='https://github.com/FreeCodeCamp/freecodecamp/blob/",
-              "staging/seed/field-guides.json'>here</a>."
+              "You've read all our current Field Guide entries. If you have ",
+              'ideas for other Field Guide articles, please let us know on ',
+              "<a href='https://github.com/freecodecamp/freecodecamp/issues/new?&body=Please describe your idea for a Field Guide article and include links if possible.'>GitHub</a>."
             ].join('')
           });
         }
         return res.redirect('../field-guide/how-do-i-use-this-guide');
       }
-      var nameString = fieldGuide.name.toLowerCase().replace(/\s/g, '-');
-      return res.redirect('../field-guide/' + nameString);
+      return res.redirect('../field-guide/' + fieldGuide.dashedName);
     });
   }
 

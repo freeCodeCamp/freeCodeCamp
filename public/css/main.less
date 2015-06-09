@@ -255,6 +255,10 @@ ul {
   font-size: 18px;
 }
 
+.large-li {
+  font-size: 18px;
+}
+
 .text-success {
   color: @brand-success;
 }
@@ -615,8 +619,11 @@ thead {
 }
 
 .hamburger-dropdown {
-  @media (max-width: 768px) {
-    margin-top:  -5px;
+  @media (max-width: 991px) {
+    margin-top: -5px !important;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 105%;
   }
 }
 
@@ -782,7 +789,7 @@ iframe.iphone {
     width: 100%;
     border-radius: 5px;
     overflow-y: visible;
-
+    height: 500px;
   }
 }
 
@@ -889,8 +896,7 @@ iframe.iphone {
 .hamburger-text {
   line-height: 0.75em;
   margin-top: 10px;
-  font-size: 16px;
-  margin-left: -8px;
+  font-size: 18px;
 }
 
 .tight-h3 {
@@ -1101,6 +1107,7 @@ hr {
   .iframe-scroll {
     position: fixed !important;
     margin-top: 75px;
+    z-index: 1;
   }
 }
 @media only screen and (max-width: 992px) {

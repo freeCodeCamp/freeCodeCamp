@@ -1,13 +1,8 @@
 nav.navbar.navbar-default.navbar-fixed-top.nav-height
     .navbar-header
         button.hamburger.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            .col-xs-6
+            .col-xs-12
                 span.hamburger-text Menu
-            .col-xs-6
-                span.sr-only Toggle navigation
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
         a.navbar-brand(href='/')
             img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz', alt='learn to code javascript at Free Code Camp logo')
     .collapse.navbar-collapse
@@ -25,10 +20,10 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                 li
                     a(href='/challenges/waypoint-join-our-chat-room') Chat
             li
-                a(href='/stories') News
+                a(href='/news') News
             li
                 a(href='/field-guide') Guide
-            li.hidden-xs.hidden-sm
+            li
                 a(href='/jobs') Jobs
             if !user
                 li &thinsp; &thinsp; &thinsp;
@@ -37,7 +32,6 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             else
                 li
                     if (user.username)
-
                         a(href='/' + user.username) [&nbsp;#{user.progressTimestamps.length}&nbsp;]
 
                     else

@@ -16,6 +16,14 @@ var editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
   onKeyEvent: doLinting
 });
 
+var defaultKeymap = {
+  'Cmd-E': 'emmet.expand_abbreviation',
+  'Tab': 'emmet.expand_abbreviation_with_tab',
+  'Enter': 'emmet.insert_formatted_line_break_only'
+};
+
+emmetCodeMirror(editor, defaultKeymap);
+
 
 // Hijack tab key to insert two spaces instead
 editor.setOption("extraKeys", {
@@ -78,19 +86,20 @@ setTimeout(updatePreview, 300);
  * "post" methods
  */
 
+var testResults = [];
 var postSuccess = function(data) {
   var testDoc = document.createElement("div");
   $(testDoc)
-    .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>")
-    .appendTo($('#testSuite'));
+    .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>");
+  $('#testSuite').append(testDoc);
   testSuccess();
 };
 
 var postError = function(data) {
   var testDoc = document.createElement("div");
   $(testDoc)
-    .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-vertical-center test-output wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>")
-    .prependTo($('#testSuite'))
+    .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-vertical-center test-output wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>");
+  $('#testSuite').append(testDoc);
 };
 var goodTests = 0;
 var testSuccess = function() {
@@ -99,6 +108,7 @@ var testSuccess = function() {
     showCompletion();
   }
 };
+
 var challengeSeed = challengeSeed || null;
 var allSeeds = '';
 (function() {
