@@ -37,7 +37,7 @@
         "La mayoría de los elementos HTML tienen una <code>etiqueta de apertura</code> y una <code>etiqueta de cierre</code>. Las etiquetas de apertura se ven como: <code>&#60;h1&#62;</code>. Las etiquetas de cierre se ven como: <code>&#60;/h1&#62;</code>. Fíjate que la única diferencia entre las etiquetas de apertura y de cierre es que estas últimas tienen un / después de su signo de apertura (<).",
         "Una vez que hayas completado cada desafío, y que hayas pasado todas sus pruebas, el botón \"Ir a mi siguiente desafío\" se activará. Haz click en él - o presiona control y enter al mismo tiempo - para avanzar al siguiente desafío.",
         "Para activar el botón \"Ir a mi siguiente desafío\" de este ejercicio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\"."
-	  ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -73,7 +73,7 @@
         "El elemento h2 que ingreses creará un elemento h2 en el sitio web.",
         "Este elemento le dice al navegador cómo mostrar el texto que contiene.",
         "Los elementos <code>h2</code> son ligeramente más pequeños que los elementos <code>h1</code>. También hay elementos <code>h3</code>, <code>h4</code>, <code>h5</code> y <code>h6</code>."
-	  ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -107,7 +107,7 @@
         "Crea un elemento párrafo debajo de tu elemento h2, y dale el texto \"Hello Paragraph\". Apenas escribas la etiqueta de apertura <code>&#60;p&#62;</code>, una de nuestras pruebas pasarán (ya que ésta es HTML válido). Asegúrate de cerrar el elemento agregando la etiqueta de cierre <code>&#60;/p&#62;</code>.",
         "Los elementos párrafo son los principales elementos para los párrafos de texto en tamaño normal en sitios web.",
         "Tú puedes crear un elemento párrafo como éste: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>."
-	  ],
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -203,7 +203,7 @@
         "assert(($('h1').length === 0), 'Comment out your <code>h1</code> element so that it is not visible on your page.')",
         "assert(($('h2').length > 0), 'Leave your <code>h2</code> element uncommented so that is not visible on your page.')",
         "assert(($('p').length === 0), 'Comment out your <code>p</code> element so that it is not visible on your page.')",
-        "assert(editor.match(/-->/g).length > 0, 'Be sure to close each of your comments with <code>--&#62;</code>.')"
+        "assert(editor.match(/-->/g).length > 1, 'Be sure to close each of your comments with <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<!--",
@@ -440,7 +440,7 @@
       "description": [
         "Apply the \"red-text\" class to your <code>h2</code> and <code>p</code> elements.",
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
-        "Remember that CSS selectors require a period at the beginning like this: <code>.red-text { color: blue; }</code>, but that class declarations don't use a period, like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
+        "Remember that CSS selectors require a period at the beginning like this: <code>.blue-text { color: blue; }</code>, but that class declarations don't use a period, like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')",
@@ -557,7 +557,7 @@
       "description": [
         "Apply the <code>font-family</code> of \"Lobster\" to your <code>h2</code> element.",
         "First, you'll need to make a \"call\" to Google to grab the \"Lobster\" font and load it into your HTML.",
-        "Copy the following code snippet and paste it into your code editor above your <code>style</code> element:",
+        "Copy the following code snippet and paste it into your code editor:",
         "<code>&#60;link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'&#62;</code>.",
         "Now you can set \"Lobster\" as a font-family attribute on your <code>h2</code> element."
       ],
@@ -602,7 +602,7 @@
       "description": [
         "Make all your <code>h2</code> elements use \"Lobster\" as their font family, but degrade to the \"Monospace\" font when the \"Lobster\" font isn't available.",
         "You can leave \"Lobster\" your <code>h2</code> element's font-family, and have it \"degrade\" to a different font when \"Lobster\" isn't available.",
-        "For example, if you wanted an element to use the \"Helvetica\" font, but also degrade to the \"Sans-Serif\" font when \"Helvetica\" wasn't available, you could do use this CSS style: <code>p { font-family: Helvetica, Sans-Serif; }</code>.",
+        "For example, if you wanted an element to use the \"Helvetica\" font, but also degrade to the \"Sans-Serif\" font when \"Helvetica\" wasn't available, you could use this CSS style: <code>p { font-family: Helvetica, Sans-Serif; }</code>.",
         "There are several default fonts that are available in all browsers. These include \"Monospace\", \"Serif\" and \"Sans-Serif\". See if you can set your <code>h2</code> elements to use \"Lobster\" and degrade to \"Monospace\".",
         "Now try commenting out your call to Google Fonts, so that the \"Lobster\" font isn't available. Notice how it degrades to the \"Monospace\" font."
       ],
@@ -659,8 +659,8 @@
         "Now see if you can make sure the <code>h2</code> element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, and without changing the sequence of CSS class declarations."
       ],
       "tests": [
-        "assert(new RegExp('.blue-text', 'gi').test(editor), 'Create the CSS class \"blue-text\"')",
-        "assert(new RegExp('.urgently-red', 'gi').test(editor), 'Create the CSS class \"urgently-red\"')",
+        "assert(new RegExp('\\.blue-text', 'gi').test(editor), 'Create the CSS class \"blue-text\"')",
+        "assert(new RegExp('\\.urgently-red', 'gi').test(editor), 'Create the CSS class \"urgently-red\"')",
         "assert(new RegExp('red.?!important', 'gi').test(editor), 'Add the \"!important\" declaration!')",
         "assert($('h2').hasClass('blue-text'), 'Your h2 element should have the class \"blue-text\".')",
         "assert($('h2').hasClass('urgently-red'), 'Your h2 element should have the class \"urgently-red\".')",
@@ -810,7 +810,8 @@
         "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
         "assert($('img').hasClass('thick-green-border'), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
         "assert($('img').hasClass('thick-green-border') && parseInt($('img').css('border-top-width')), 'Give your image a border width of 10px.')",
-        "assert(new RegExp('solid', 'gi').test(editor), 'Give your image a border style of \"solid\".')"
+        "assert(new RegExp('solid', 'gi').test(editor), 'Give your image a border style of \"solid\".')",
+        "assert($('img').css('border-left-color') === 'rgb(0, 128, 0)', 'Your <code>img</code> element should be green.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1036,7 +1037,7 @@
       "name": "Waypoint: Wrap an Anchor Element within a Paragraph",
       "difficulty": 0.032,
       "description": [
-        "Now wrap your <code>a</code> element within a <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
+        "Now wrap your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<img class='img-responsive' alt='a diagram of how anchor tags are composed with the same text as on the following line' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>."
@@ -1044,7 +1045,8 @@
       "tests": [
         "assert($('a').attr('href').match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
         "assert($('a').text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
-        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your <code>a</code> element should be wrapped within a paragraph element.')",
+        "assert($('p') && $('p').length > 2, 'Create a new <code>p</code> element around your <code>a</code> element. \"click here for\".')",
+        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your <code>a</code> element should be wrapped within your new <code>p</code> element.')",
         "assert($('p').text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
@@ -1301,8 +1303,8 @@
       "tests": [
         "assert($('ul').length > 0, 'Create a <code>ul</code> element.')",
         "assert($('li').length > 2, 'Add three <code>li</code> elements to your <code>ul</code> element.')",
-        "assert(editor.match(/<\\/ul>/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul>/g).length, 'Make sure your <code>ul</code> element has a closing tag.')",
-        "assert(editor.match(/<\\/li>/g) && editor.match(/<\\/li>/g).length === editor.match(/<li>/g).length, 'Make sure your <code>li</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/ul>/g) && editor.match(/<ul/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul/g).length, 'Make sure your <code>ul</code> element has a closing tag.')",
+        "assert(editor.match(/<\\/li>/g) && editor.match(/<li/g) && editor.match(/<\\/li>/g).length === editor.match(/<li/g).length, 'Make sure your <code>li</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1892,7 +1894,7 @@
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
         "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be wrapped in its own <code>label</code> element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
-        "assert($('input[type=\"checkbox\"]:nth-child(1)').attr('name') === 'trait', 'Give your radio buttons the <code>name</code> attribute of \"personality\".')"
+        "assert($('input[type=\"checkbox\"]:nth-child(1)').attr('name') === 'personality', 'Give your checkboxes buttons the <code>name</code> attribute of \"personality\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
