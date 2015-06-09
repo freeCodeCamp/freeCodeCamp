@@ -602,7 +602,7 @@
       "description": [
         "Make all your <code>h2</code> elements use \"Lobster\" as their font family, but degrade to the \"Monospace\" font when the \"Lobster\" font isn't available.",
         "You can leave \"Lobster\" your <code>h2</code> element's font-family, and have it \"degrade\" to a different font when \"Lobster\" isn't available.",
-        "For example, if you wanted an element to use the \"Helvetica\" font, but also degrade to the \"Sans-Serif\" font when \"Helvetica\" wasn't available, you could do use this CSS style: <code>p { font-family: Helvetica, Sans-Serif; }</code>.",
+        "For example, if you wanted an element to use the \"Helvetica\" font, but also degrade to the \"Sans-Serif\" font when \"Helvetica\" wasn't available, you could use this CSS style: <code>p { font-family: Helvetica, Sans-Serif; }</code>.",
         "There are several default fonts that are available in all browsers. These include \"Monospace\", \"Serif\" and \"Sans-Serif\". See if you can set your <code>h2</code> elements to use \"Lobster\" and degrade to \"Monospace\".",
         "Now try commenting out your call to Google Fonts, so that the \"Lobster\" font isn't available. Notice how it degrades to the \"Monospace\" font."
       ],
