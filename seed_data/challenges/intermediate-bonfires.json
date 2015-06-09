@@ -3,7 +3,7 @@
   "order": 0.009,
   "challenges": [
     {
-      "_id": "a2f1d72d9b908d0bd72bb9f6",
+      "id": "a2f1d72d9b908d0bd72bb9f6",
       "name": "Bonfire: Make a Person",
       "difficulty": "3.01",
       "description": [
@@ -54,7 +54,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "af4afb223120f7348cdfc9fd",
+      "id": "af4afb223120f7348cdfc9fd",
       "name": "Bonfire: Map the Debris",
       "difficulty": "3.02",
       "description": [
@@ -94,7 +94,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a3f503de51cfab748ff001aa",
+      "id": "a3f503de51cfab748ff001aa",
       "name": "Bonfire: Pairwise",
       "difficulty": "3.03",
       "description": [

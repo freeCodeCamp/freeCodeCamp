@@ -3,7 +3,7 @@
   "order": 0.012,
   "challenges": [
     {
-      "_id": "bd7158d8c442eddfbeb5bd1f",
+      "id": "bd7158d8c442eddfbeb5bd1f",
       "name": "Waypoint: Get Set for Ziplines",
       "difficulty": 1.00,
       "challengeSeed": "125658022",
@@ -37,7 +37,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7158d8c442eddfaeb5bd1f",
+      "id": "bd7158d8c442eddfaeb5bd1f",
       "name": "Zipline: Use the Twitch.tv JSON API",
       "difficulty": 1.01,
       "challengeSeed": "126411564",
@@ -72,7 +72,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7158d8c442eddfaeb5bd13",
+      "id": "bd7158d8c442eddfaeb5bd13",
       "name": "Zipline: Build a Random Quote Machine",
       "difficulty": 1.02,
       "challengeSeed": "126415122",
@@ -102,7 +102,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7158d8c442eddfaeb5bd10",
+      "id": "bd7158d8c442eddfaeb5bd10",
       "name": "Zipline: Show the Local Weather",
       "difficulty": 1.03,
       "challengeSeed": "126415127",
@@ -134,7 +134,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7158d8c442eddfaeb5bd18",
+      "id": "bd7158d8c442eddfaeb5bd18",
       "name": "Zipline: Stylize Stories on Camper News",
       "difficulty": 1.04,
       "challengeSeed": "126415129",
@@ -167,7 +167,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7158d8c442eddfaeb5bd19",
+      "id": "bd7158d8c442eddfaeb5bd19",
       "name": "Zipline: Wikipedia Viewer",
       "difficulty": 1.05,
       "challengeSeed": "126415131",
@@ -199,7 +199,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7158d8c442eddfaeb5bd0f",
+      "id": "bd7158d8c442eddfaeb5bd0f",
       "name": "Zipline: Build a Pomodoro Clock",
       "difficulty": 1.06,
       "challengeSeed": "126411567",
@@ -230,7 +230,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7158d8c442eddfaeb5bd17",
+      "id": "bd7158d8c442eddfaeb5bd17",
       "name": "Zipline: Build a JavaScript Calculator",
       "difficulty": 1.07,
       "challengeSeed": "126411565",
@@ -261,7 +261,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7158d8c442eddfaeb5bd1c",
+      "id": "bd7158d8c442eddfaeb5bd1c",
       "name": "Zipline: Build a Tic Tac Toe Game",
       "difficulty": 1.08,
       "challengeSeed": "126415123",

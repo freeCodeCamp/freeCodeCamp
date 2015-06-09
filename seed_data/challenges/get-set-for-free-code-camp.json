@@ -3,7 +3,7 @@
   "order": 0.001,
   "challenges": [
     {
-      "_id": "bd7124d8c441eddfaeb5bdef",
+      "id": "bd7124d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn how Free Code Camp Works",
       "difficulty": 0.001,
       "challengeSeed": "125407438",
@@ -40,7 +40,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7125d8c441eddfaeb5bd0f",
+      "id": "bd7125d8c441eddfaeb5bd0f",
       "name": "Waypoint: Join Our Chat Room",
       "difficulty": 0.002,
       "challengeSeed": "124555254",
@@ -81,7 +81,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7125d8c441eddfaeb5bdff",
+      "id": "bd7125d8c441eddfaeb5bdff",
       "name": "Waypoint: Preview our Challenge Map",
       "difficulty": 0.003,
       "challengeSeed": "125407437",
@@ -114,7 +114,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7125d8c441eddfaeb5bd1f",
+      "id": "bd7125d8c441eddfaeb5bd1f",
       "name": "Waypoint: Browse our Field Guide",
       "difficulty": 0.004,
       "challengeSeed": "125407435",
@@ -145,7 +145,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7125d8c441eddfaeb5bd2f",
+      "id": "bd7125d8c441eddfaeb5bd2f",
       "name": "Waypoint: Customize your Portfolio Page",
       "difficulty": 0.005,
       "challengeSeed": "125407433",
@@ -180,7 +180,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7126d8c441eddfaeb5bd3f",
+      "id": "bd7126d8c441eddfaeb5bd3f",
       "name": "Waypoint: Try Camper News",
       "difficulty": 0.006,
       "challengeSeed": "124553410",
@@ -219,7 +219,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7126d8c441eddfaeb5bd3e",
+      "id": "bd7126d8c441eddfaeb5bd3e",
       "name": "Waypoint: Meet Other Campers in your City",
       "difficulty": 0.007,
       "challengeSeed": "127358841",
@@ -256,7 +256,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7137d8c441eddfaeb5bdef",
+      "id": "bd7137d8c441eddfaeb5bdef",
       "name": "Waypoint: Get Help the Hacker Way with RSAP",
       "difficulty": 0.008,
       "challengeSeed": "125407432",

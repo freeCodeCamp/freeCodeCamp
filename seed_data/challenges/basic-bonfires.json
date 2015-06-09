@@ -3,7 +3,7 @@
   "order": 0.007,
   "challenges": [
     {
-      "_id": "bd7139d8c441eddfaeb5bdef",
+      "id": "bd7139d8c441eddfaeb5bdef",
       "name": "Waypoint: Pair Program on Bonfires",
       "difficulty": 0.44,
       "challengeSeed": "119657641",
@@ -39,7 +39,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "ad7123c8c441eddfaeb5bdef",
+      "id": "ad7123c8c441eddfaeb5bdef",
       "name": "Bonfire: Meet Bonfire",
       "difficulty": "0",
       "description": [
@@ -78,7 +78,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a202eed8fc186c8434cb6d61",
+      "id": "a202eed8fc186c8434cb6d61",
       "name": "Bonfire: Reverse a String",
       "difficulty": "1.01",
       "tests": [
@@ -119,7 +119,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a302f7aae1aa3152a5b413bc",
+      "id": "a302f7aae1aa3152a5b413bc",
       "name": "Bonfire: Factorialize a Number",
       "tests": [
         "expect(factorialize(5)).to.be.a(\"Number\");",
@@ -158,7 +158,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "aaa48de84e1ecc7c742e1124",
+      "id": "aaa48de84e1ecc7c742e1124",
       "name": "Bonfire: Check for Palindromes",
       "difficulty": "1.03",
       "description": [
@@ -204,7 +204,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a26cbbe9ad8655a977e1ceb5",
+      "id": "a26cbbe9ad8655a977e1ceb5",
       "name": "Bonfire: Find the Longest Word in a String",
       "difficulty": "1.04",
       "description": [
@@ -243,7 +243,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "ab6137d4e35944e21037b769",
+      "id": "ab6137d4e35944e21037b769",
       "name": "Bonfire: Title Case a Sentence",
       "difficulty": "1.05",
       "description": [
@@ -280,7 +280,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a789b3483989747d63b0e427",
+      "id": "a789b3483989747d63b0e427",
       "name": "Bonfire: Return Largest Numbers in Arrays",
       "difficulty": "1.06",
       "description": [
@@ -318,7 +318,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "acda2fb1324d9b0fa741e6b5",
+      "id": "acda2fb1324d9b0fa741e6b5",
       "name": "Bonfire: Confirm the Ending",
       "difficulty": "1.07",
       "description": [
@@ -357,7 +357,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "afcc8d540bea9ea2669306b6",
+      "id": "afcc8d540bea9ea2669306b6",
       "name": "Bonfire: Repeat a string repeat a string",
       "difficulty": "1.08",
       "description": [
@@ -393,7 +393,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "ac6993d51946422351508a41",
+      "id": "ac6993d51946422351508a41",
       "name": "Bonfire: Truncate a string",
       "difficulty": "1.09",
       "description": [
@@ -430,7 +430,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a9bd25c716030ec90084d8a1",
+      "id": "a9bd25c716030ec90084d8a1",
       "name": "Bonfire: Chunky Monkey",
       "difficulty": "1.10",
       "description": [
@@ -467,7 +467,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "ab31c21b530c0dafa9e241ee",
+      "id": "ab31c21b530c0dafa9e241ee",
       "name": "Bonfire: Slasher Flick",
       "difficulty": "1.11",
       "description": [
@@ -504,7 +504,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "af2170cad53daa0770fabdea",
+      "id": "af2170cad53daa0770fabdea",
       "name": "Bonfire: Mutations",
       "difficulty": "1.12",
       "description": [
@@ -546,7 +546,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "adf08ec01beb4f99fc7a68f2",
+      "id": "adf08ec01beb4f99fc7a68f2",
       "name": "Bonfire: Falsey Bouncer",
       "difficulty": "1.50",
       "description": [
@@ -584,7 +584,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a8e512fbe388ac2f9198f0fa",
+      "id": "a8e512fbe388ac2f9198f0fa",
       "name": "Bonfire: Where art thou",
       "difficulty": "1.55",
       "description": [
@@ -622,7 +622,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a39963a4c10bc8b4d4f06d7e",
+      "id": "a39963a4c10bc8b4d4f06d7e",
       "name": "Bonfire: Seek and Destroy",
       "difficulty": "1.60",
       "description": [
@@ -658,7 +658,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a24c1a4622e3c05097f71d67",
+      "id": "a24c1a4622e3c05097f71d67",
       "name": "Bonfire: Where do I belong",
       "difficulty": "1.61",
       "description": [
@@ -694,7 +694,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a3566b1109230028080c9345",
+      "id": "a3566b1109230028080c9345",
       "name": "Bonfire: Sum All Numbers in a Range",
       "difficulty": "2.00",
       "description": [
@@ -734,7 +734,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a5de63ebea8dbee56860f4f2",
+      "id": "a5de63ebea8dbee56860f4f2",
       "name": "Bonfire: Diff Two Arrays",
       "difficulty": "2.01",
       "description": [
@@ -779,7 +779,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a7f4d8f2483413a6ce226cac",
+      "id": "a7f4d8f2483413a6ce226cac",
       "name": "Bonfire: Roman Numeral Converter",
       "tests": [
         "expect(convert(12)).to.equal(\"XII\");",
@@ -819,7 +819,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a0b5010f579e69b815e7c5d6",
+      "id": "a0b5010f579e69b815e7c5d6",
       "name": "Bonfire: Search and Replace",
       "tests": [
         "expect(replace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
@@ -862,7 +862,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "aa7697ea2477d1316795783b",
+      "id": "aa7697ea2477d1316795783b",
       "name": "Bonfire: Pig Latin",
       "tests": [
         "expect(translate(\"california\")).to.equal(\"aliforniacay\");",
@@ -905,7 +905,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "afd15382cdfb22c9efe8b7de",
+      "id": "afd15382cdfb22c9efe8b7de",
       "name": "Bonfire: DNA Pairing",
       "tests": [
         "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'should return the dna pair');",
@@ -943,7 +943,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "af7588ade1100bde429baf20",
+      "id": "af7588ade1100bde429baf20",
       "name": "Bonfire: Missing letters",
       "difficulty": "2.05",
       "description": [
@@ -980,7 +980,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a77dbc43c33f39daa4429b4f",
+      "id": "a77dbc43c33f39daa4429b4f",
       "name": "Bonfire: Boo who",
       "difficulty": "2.06",
       "description": [
@@ -1022,7 +1022,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a105e963526e7de52b219be9",
+      "id": "a105e963526e7de52b219be9",
       "name": "Bonfire: Sorted Union",
       "difficulty": "2.07",
       "description": [
@@ -1059,7 +1059,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a6b0bb188d873cb2c8729495",
+      "id": "a6b0bb188d873cb2c8729495",
       "name": "Bonfire: Convert HTML Entities",
       "difficulty": "2.07",
       "description": [
@@ -1094,7 +1094,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a103376db3ba46b2d50db289",
+      "id": "a103376db3ba46b2d50db289",
       "name": "Bonfire: Spinal Tap Case",
       "difficulty": "2.08",
       "description": [
@@ -1133,7 +1133,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a5229172f011153519423690",
+      "id": "a5229172f011153519423690",
       "name": "Bonfire: Sum All Odd Fibonacci Numbers",
       "difficulty": "2.09",
       "description": [
@@ -1173,7 +1173,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a3bfc1673c0526e06d3ac698",
+      "id": "a3bfc1673c0526e06d3ac698",
       "name": "Bonfire: Sum All Primes",
       "difficulty": "2.10",
       "description": [
@@ -1211,7 +1211,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "ae9defd7acaf69703ab432ea",
+      "id": "ae9defd7acaf69703ab432ea",
       "name": "Bonfire: Smallest Common Multiple",
       "difficulty": "2.11",
       "description": [
@@ -1249,7 +1249,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a6e40f1041b06c996f7b2406",
+      "id": "a6e40f1041b06c996f7b2406",
       "name": "Bonfire: Finders Keepers",
       "difficulty": "2.12",
       "description": [
@@ -1284,7 +1284,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a5deed1811a43193f9f1c841",
+      "id": "a5deed1811a43193f9f1c841",
       "name": "Bonfire: Drop it",
       "difficulty": "2.13",
       "description": [
@@ -1321,7 +1321,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "ab306dbdcc907c7ddfc30830",
+      "id": "ab306dbdcc907c7ddfc30830",
       "name": "Bonfire: Steamroller",
       "difficulty": "2.14",
       "description": [
@@ -1357,7 +1357,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a8d97bd4c764e91f9d2bda01",
+      "id": "a8d97bd4c764e91f9d2bda01",
       "name": "Bonfire: Binary Agents",
       "difficulty": "2.15",
       "description": [
@@ -1393,7 +1393,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a10d2431ad0c6a099a4b8b52",
+      "id": "a10d2431ad0c6a099a4b8b52",
       "name": "Bonfire: Everything Be True",
       "difficulty": "2.21",
       "description": [
@@ -1431,7 +1431,7 @@
       "descriptionPt": []
     },
     {
-      "_id": "a97fd23d9b809dac9921074f",
+      "id": "a97fd23d9b809dac9921074f",
       "name": "Bonfire: Arguments Optional",
       "difficulty": "2.22",
       "description": [
