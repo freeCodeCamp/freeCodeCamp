@@ -2,7 +2,7 @@ var nodemailer = require('nodemailer'),
     sanitizeHtml = require('sanitize-html'),
     moment = require('moment'),
     mongodb = require('mongodb'),
-    debug = require('debug')('freecc:cntr:story'),
+    // debug = require('debug')('freecc:cntr:story'),
     utils = require('../utils'),
     MongoClient = mongodb.MongoClient,
     secrets = require('../../config/secrets');
@@ -42,20 +42,12 @@ module.exports = function(app) {
     return hotness;
   }
 
-  function hotJSON(req, res, next) {
-    //var story = Story.find({}).sort({'timePosted': -1}).limit(1000);
-    //story.exec(function(err, stories) {
-    //  if (err) {
-    //    return next(err);
-    //  }
-    //Story.find([{$match: {}},
-    //  {$sort: {'timePosted': -1}},
-    //  {$limit: 1000}], function(err, stories) {
+  function hotJSON(req, res, next) { // no-unused-vars
+
     Story.find({order: 'timePosted DESC', limit: 1000}, function(err, stories) {
       if (err) {
         return next(err);
       }
-      debug(stories);
       var foundationDate = 1413298800000;
 
       var sliceVal = stories.length >= 100 ? 100 : stories.length;
@@ -132,7 +124,6 @@ module.exports = function(app) {
 
 
   function returnIndividualStory(req, res, next) {
-    debug('hit return individual route');
     var dashedName = req.params.storyName;
 
     var storyName = dashedName.replace(/\-/g, ' ').trim();
@@ -198,7 +189,7 @@ module.exports = function(app) {
       }
       database.collection('stories').find({
         '$text': {
-          '$search': req.body.data ? req.body.data.searchValue : ""
+          '$search': req.body.data ? req.body.data.searchValue : ''
         }
       }, {
         headline: 1,
