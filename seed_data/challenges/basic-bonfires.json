@@ -8,6 +8,7 @@
       "difficulty": 0.44,
       "challengeSeed": "119657641",
       "description": [
+        "<i class='ion-alert-circled'></i>Please note that this video is a little outdated, for now you can read the following steps instead. We are working on a new video in the mean time.",
         "OK, we're finally ready to start pair programming!",
         "Pair Programming is where two people code together on the same computer. It is an efficient way to collaborate, and widely practiced at software companies. Pair Programming is one of the core concepts of \"Agile\" Software Development, which you will hear more about later.",
         "Many people use Skype or Google Hangouts to pair program, but if you talk with professional software engineers, they will tell you that it's not really pair programming unless both people have the ability to use the keyboard and mouse.",
