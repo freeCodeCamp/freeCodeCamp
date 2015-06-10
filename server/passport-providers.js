@@ -8,7 +8,8 @@ module.exports = {
     passwordField: 'password',
     authPath: '/auth/local',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: '/email-signin',
+    session: true,
     failureFlash: true
   },
   'facebook-login': {

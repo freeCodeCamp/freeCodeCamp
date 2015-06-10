@@ -36,6 +36,28 @@ module.exports = function(app) {
     });
   });
 
+  User.afterRemote('login', function(ctx, accessToken) {
+    var res = ctx.res;
+    var req = ctx.req;
+
+    var config = {
+      signed: !!req.signedCookies,
+      maxAge: 1000 * accessToken.ttl
+    };
+    if (accessToken && accessToken.id) {
+      res.cookie('access_token', accessToken.id, config);
+      res.cookie('userId', accessToken.userId, config);
+    }
+    res.redirect('/');
+  });
+
+  User.afterRemote('logout', function(ctx, result, next) {
+    var res = ctx.result;
+    res.clearCookie('access_token');
+    res.clearCookie('userId');
+    next();
+  });
+
   User.doesExist = function doesExist(username, email, cb) {
     debug('checking existence');
     var where = {};
