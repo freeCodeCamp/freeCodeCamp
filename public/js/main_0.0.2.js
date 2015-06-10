@@ -422,14 +422,18 @@ profileValidation.directive('uniqueUsername', ['$http', function($http) {
     link: function (scope, element, attrs, ngModel) {
       element.bind("keyup", function (event) {
         ngModel.$setValidity('unique', true);
-        if (element.val()) {
-          $http.get("/api/checkUniqueUsername/" + element.val()).success(function (data) {
-            if (element.val() === scope.storedUsername) {
-              ngModel.$setValidity('unique', true);
-            } else if (data) {
-              ngModel.$setValidity('unique', false);
-            }
-          });
+        var username = element.val();
+        if (username) {
+          var config = { params: { username: username } };
+          $http
+            .get('/api/users/exists', config)
+            .success(function (exists) {
+              if (username === scope.storedUsername) {
+                ngModel.$setValidity('unique', true);
+              } else if (exists) {
+                ngModel.$setValidity('unique', false);
+              }
+            });
         }
       });
     }
@@ -449,11 +453,13 @@ profileValidation.directive('existingUsername',
             element.removeClass('ng-dirty');
             ngModel.$setPristine();
           }
-          if (element.val()) {
+          var username = element.val();
+          if (username) {
+            var config = { params: { username: username } };
             $http
-              .get('/api/checkExistingUsername/' + element.val())
-              .success(function (data) {
-                ngModel.$setValidity('exists', data);
+              .get('/api/users/exists', config)
+              .success(function(exists) {
+                ngModel.$setValidity('exists', exists);
               });
           }
         });
@@ -468,14 +474,18 @@ profileValidation.directive('uniqueEmail', ['$http', function($http) {
     link: function getUnique (scope, element, attrs, ngModel) {
       element.bind("keyup", function (event) {
         ngModel.$setValidity('unique', true);
+        var email = element.val();
         if (element.val()) {
-          $http.get("/api/checkUniqueEmail/" + encodeURIComponent(element.val())).success(function (data) {
-            if (element.val() === scope.storedEmail) {
-              ngModel.$setValidity('unique', true);
-            } else if (data) {
-              ngModel.$setValidity('unique', false);
-            }
-          });
+          var config = { params: { email: email } };
+          $http
+            .get('/api/users/exists', config)
+            .success(function (exists) {
+              if (email === scope.storedEmail) {
+                ngModel.$setValidity('unique', true);
+              } else if (exists) {
+                ngModel.$setValidity('unique', false);
+              }
+            });
         };
       });
     }

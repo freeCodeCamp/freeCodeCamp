@@ -27,7 +27,6 @@ var R = require('ramda'),
     expressValidator = require('express-validator'),
     forceDomain = require('forcedomain'),
     lessMiddleware = require('less-middleware'),
-    hpp = require('hpp'),
 
     passportProviders = require('./passport-providers'),
     /**
@@ -60,7 +59,6 @@ app.use(lessMiddleware(path.join(__dirname, '/public')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(hpp());
 app.use(expressValidator({
   customValidators: {
     matchRegex: function (param, regex) {
@@ -216,9 +214,12 @@ var passportOptions = {
     var password = generateKey('password');
     var userObj = {
       username: username,
-      password: password,
-      email: email
+      password: password
     };
+
+    if (email) {
+      userObj.email = email;
+    }
     return userObj;
   }
 };

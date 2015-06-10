@@ -2,5 +2,8 @@
   "db": {
     "name": "db",
     "connector": "mongodb"
+  },
+  "mail": {
+    "connector": "mail"
   }
 }

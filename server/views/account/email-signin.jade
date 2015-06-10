@@ -2,7 +2,7 @@ extends ../layout
 block content
     .jumbotron.text-center(ng-controller="emailSignInController")
         h2 Sign in with an email address here:
-        form(method='POST', action='/email-signin')
+        form(method='POST', action='/auth/local')
             input(type='hidden', name='_csrf', value=_csrf)
             .col-sm-6.col-sm-offset-3
                 .form-group

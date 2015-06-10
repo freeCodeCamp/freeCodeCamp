@@ -1,4 +1,7 @@
 module.exports = function mountLoopBackExplorer(app) {
+  if (process.env.NODE_ENV === 'production') {
+    return;
+  }
   var explorer;
   try {
     explorer = require('loopback-explorer');

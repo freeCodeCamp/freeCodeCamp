@@ -2,7 +2,7 @@ extends ../layout
 block content
   .jumbotron.text-center
     h2 Sign up with an email address here:
-    form.form-horizontal(method='POST', action='/email-signup', name="signupForm", novalidate="novalidate")
+    form.form-horizontal(method='POST', action='/api/users', name="signupForm", novalidate="novalidate")
       input(type='hidden', name='_csrf', value=_csrf)
       .form-group
         .col-sm-6.col-sm-offset-3

@@ -8,7 +8,8 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -24,6 +25,10 @@
   },
   "Role": {
     "dataSource": "db",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "mail",
     "public": false
   },
   "bonfire": {

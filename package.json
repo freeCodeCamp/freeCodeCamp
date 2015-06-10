@@ -53,7 +53,6 @@
     "gulp-minify-css": "~0.5.1",
     "helmet": "~0.9.0",
     "helmet-csp": "^0.2.3",
-    "hpp": "^0.2.0",
     "jade": "~1.8.0",
     "less": "~1.7.5",
     "less-middleware": "~2.0.1",
@@ -97,6 +96,7 @@
     "gulp-eslint": "~0.9.0",
     "gulp-inject": "~1.0.2",
     "gulp-nodemon": "^2.0.3",
+    "loopback-explorer": "^1.7.2",
     "mocha": "~2.0.1",
     "multiline": "~1.0.1",
     "supertest": "~0.15.0"

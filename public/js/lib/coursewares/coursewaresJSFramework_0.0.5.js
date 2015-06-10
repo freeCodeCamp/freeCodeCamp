@@ -183,7 +183,7 @@ var createTestDisplay = function() {
       console.log('Should be displaying bad tests');
       $(testDoc)
         .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-output wrappable test-vertical-center grayed-out-test-output'>" + test.text + "</div><div class='col-xs-10 test-output wrappable'>" + test.err + "</div></div><div class='ten-pixel-break'/>")
-        .prependTo($('#testSuite'))
+        .appendTo($('#testSuite'));
     } else {
       $(testDoc)
         .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable grayed-out-test-output'>" + test.text + "</div></div><div class='ten-pixel-break'/>")
@@ -213,16 +213,17 @@ var runTests = function(err, data) {
   } else if (userTests) {
     userTests.push(false);
     pushed = true;
-    userTests.forEach(function(test, ix, arr){
+    userTests.forEach(function(chaiTestFromJSON, indexOfTestArray, __testArray){
       try {
-        if (test) {
-          var output = eval(reassembleTest(test, data));
+        if (chaiTestFromJSON) {
+          var output = eval(reassembleTest(chaiTestFromJSON, data));
+          debugger;
         }
       } catch(error) {
         allTestsPassed = false;
-        arr[ix].err = error.message;
+        __testArray[indexOfTestArray].err = error.message;
       } finally {
-        if (!test) {
+        if (!chaiTestFromJSON) {
           createTestDisplay();
         }
       }
