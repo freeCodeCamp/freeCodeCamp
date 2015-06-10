@@ -21,7 +21,6 @@ module.exports = function(app) {
     res.redirect(301, '/signout');
   });
   router.get('/signin', getSignin);
-  // router.post('/signin', postSignin);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
   router.post('/forgot', postForgot);
@@ -29,7 +28,6 @@ module.exports = function(app) {
   router.post('/reset/:token', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
-  // router.post('/email-signup', postEmailSignup);
   router.get('/account/api', getAccountAngular);
   router.post('/account/profile', postUpdateProfile);
   router.post('/account/password', postUpdatePassword);
@@ -121,15 +119,14 @@ module.exports = function(app) {
   */
 
   function returnUser (req, res, next) {
-    User.find(
-      {where: { 'username': req.params.username.toLowerCase() }},
+    User.findOne(
+      { where: { username: req.params.username.toLowerCase() } },
       function(err, user) {
         if (err) {
           debug('Username err: ', err);
           return next(err);
         }
-        if (user[0]) {
-          user = user[0];
+        if (user) {
           user.progressTimestamps =
             user.progressTimestamps.sort(function(a, b) {
               return a - b;

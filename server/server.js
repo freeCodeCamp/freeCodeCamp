@@ -212,7 +212,8 @@ var passportOptions = {
         emails[0].value :
         null;
 
-    var username = profile.username || profile.id;
+    var username = (profile.username || profile.id);
+    username = typeof username === 'string' ? username.toLowerCase() : username;
     var password = generateKey('password');
     var userObj = {
       username: username,

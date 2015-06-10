@@ -29,7 +29,6 @@
     },
     "username": {
       "type": "string",
-      "sparse": true,
       "lowercase": true,
       "trim": true
     },
