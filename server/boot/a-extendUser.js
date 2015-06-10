@@ -2,6 +2,11 @@ var debug = require('debug')('freecc:extendUser');
 
 module.exports = function(app) {
   var User = app.models.User;
+  // NOTE(berks): user email validation currently not needed but build in. This
+  // work around should let us sneak by
+  // see:
+  // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
+  delete User.validations.email;
   debug('setting up user hooks');
   // send verification email to new camper
   User.afterRemote('create', function(ctx, user, next) {
