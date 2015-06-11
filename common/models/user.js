@@ -1,4 +1,15 @@
+var Rx = require('rx');
 var debug = require('debug')('freecc:user:remote');
+
+function destroyById(id, Model) {
+  return Rx.Observable.create(function(observer) {
+    Model.destroyById(id, function(err) {
+      if (err) { return observer.onError(err); }
+      observer.onCompleted();
+    });
+    return Rx.Disposable(Rx.helpers.noop);
+  });
+}
 
 module.exports = function(User) {
   // NOTE(berks): user email validation currently not needed but build in. This
@@ -6,6 +17,9 @@ module.exports = function(User) {
   // see:
   // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
   delete User.validations.email;
+  var app = User.app;
+  var UserIdentity = app.models.UserIdentity;
+  var UserCredential = app.models.UserCredential;
   debug('setting up user hooks');
   // send verification email to new camper
   User.afterRemote('create', function(ctx, user, next) {
@@ -48,7 +62,7 @@ module.exports = function(User) {
     next();
   });
 
-  User.afterRemote('login', function(ctx, instance, next) {
+  User.afterRemote('login', function(ctx, instance) {
     var res = ctx.res;
     var req = ctx.req;
 
@@ -62,6 +76,7 @@ module.exports = function(User) {
       return res.redirect('/');
     }
 
+    /*
     var config = {
       signed: !!req.signedCookies,
       maxAge: 1000 * accessToken.ttl
@@ -70,10 +85,9 @@ module.exports = function(User) {
       res.cookie('access_token', accessToken.id, config);
       res.cookie('userId', accessToken.userId, config);
     }
+    */
     res.redirect('/');
   });
-
-
 
   User.afterRemote('logout', function(ctx, result, next) {
     var res = ctx.result;
@@ -137,4 +151,27 @@ module.exports = function(User) {
       }
     }
   );
+
+  User.observe('after delete', function(ctx, next) {
+    debug('removing user', ctx.where);
+    var id = ctx.where && ctx.where.id ? ctx.where.id : null;
+    if (!id) {
+      return next();
+    }
+    Rx.Observable.combineLatest(
+      destroyById(id, UserIdentity),
+      destroyById(id, UserCredential),
+      Rx.helpers.noop
+    ).subscribe(
+      Rx.helpers.noop,
+      function(err) {
+        debug('error deleting user %s stuff', id, err);
+        next(err);
+      },
+      function() {
+        debug('user stuff deleted for user %s', id);
+        next();
+      }
+    );
+  });
 };
