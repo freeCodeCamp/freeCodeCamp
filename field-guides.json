@@ -394,6 +394,8 @@
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.lagos/' target='_blank'>Lagos</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.lahore/' target='_blank'>Lahore</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.leesburg/' target='_blank'>Leesburg</a></li>",
+      "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.lehi/' target='_blank'>Lehi</a></li>",
+      "      <li class='large-li'><a href='https://www.facebook.com/groups/Free.Code.Camp.Lima/' target='_blank'>Lima</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.limassol/' target='_blank'>Limassol</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.london/' target='_blank'>London</a></li>",
       "      <li class='large-li'><a href='https://www.facebook.com/groups/free.code.camp.los.angeles/' target='_blank'>Los Angeles</a></li>",
@@ -506,22 +508,6 @@
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
       "  <h3>We have a growing <a href='https://www.linkedin.com/grp/home?gid=6966827' target='_blank'>alumni network on LinkedIn</a>. Once you've finished Free Code Camp and have gotten a coding job, we'd love to include you in this group, too!</h3>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c442eddfaeb5b2ef",
-    "name": "Why doesn't Free Code Camp teach technical interviewing skills?",
-    "dashedName": "why-doesnt-free-code-camp-teach-technical-interviewing-skills",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "  <h3>The skills you'll need to succeed in the job interview are quite different from the skills you'll need to succeed on the job.</h3><br>",
-      "  <p class='large-p'>Employers are gradually moving to a pair-programming interview format. You don't need to make special preparations for these types of interviews - just pair program like you would on any Free Code Camp project.</p>",
-      "  <p class='large-p'>If you intend to apply for a job at older tech companies like Apple, Microsoft, Google, Facebook or Amazon, you should prepare for your interviews by working through this single authoritative book: </p>",
-      "  <img src='http://a3.mzstatic.com/us/r1000/095/Purple/3f/58/42/mzl.xypmpeal.320x480-75.jpg' class='img-center img-responsive'>",
-      "  <p class='large-p'>You can download the 4th edition of this book in PDF form for free <a href='http://www.mktechnicalclasses.com/Notes/Cracking%20the%20Coding%20Interview,%204%20Edition%20-%20150%20Programming%20Interview%20Questions%20and%20Solutions.pdf' target='_blank'>here</a> or buy the 5th edition of the book <a href='http://www.amazon.com/gp/product/098478280X/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=098478280X&linkCode=as2&tag=out0b4b-20&linkId=4LOZ5JGICYZJO33D' target='_blank'>here</a>.",
-      "  <p class='large-p'>Many of the questions you'll be asked during your interviews will come straight out of this book, which is standard-issue in Silicon Valley.</p>",
-      "  <p class='large-p'>We may focus more on interview preparation in the future if we determine that it's necessary. In the mean time, Free Code Camp will continue to focus skills that are directly related to becoming a job-ready software engineer.",
       "</div>"
     ]
   },
