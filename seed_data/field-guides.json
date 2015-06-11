@@ -232,6 +232,23 @@
     ]
   },
   {
+    "_id": "bd7158d9c436eddfaeb5bd2e",
+    "name": "Can I add Free Code Camp to my LinkedIn profile?",
+    "dashedName": "can-i-add-free-code-camp-to-my-linkedin-profile",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h3>LinkedIn recognizes Free Code Camp as a university.</h3>",
+      "  <p class='large-p'>You can explore our alumni activity <a href='https://www.linkedin.com/edu/school?id=166029' target='_blank'>here</a>.</p>",
+      "  <p class='large-p'>You should add Free Code Camp to your LinkedIn profile. Here's how:</p>",
+      "  <ol>",
+      "    <li class='large-li'>Follow this link: <a href='https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp' target='_blank'>https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp</a></li>",
+      "    <li class='large-li'>Follow these instructions:<img class='img-responsive img-center' src='https://www.evernote.com/l/AHRnpH-PN-JPQa9_u8FSOzejNG-tX40h1fkB/image.png'></li>",
+      "  </ol>",
+      "  <p class='large-p'>Once you complete our curriculum (or complete at least one Nonprofit Project and then get a coding job), we will issue you an official Full Stack Web Development certificate that you can also add to your LinkedIn profile.</p>",
+      "</div>"
+    ]
+  },
+  {
     "_id": "bd7158d9c436eddfaeb5bd3f",
     "name": "Can I jump around in this guide?",
     "dashedName": "can-i-jump-around-in-this-guide",

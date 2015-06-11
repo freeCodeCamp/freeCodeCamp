@@ -227,6 +227,10 @@ app.get('/nonprofit-project-instructions', function(req, res) {
   res.redirect(301, '/field-guide/how-do-free-code-camps-nonprofit-projects-work');
 });
 
+app.get('/linkedin', function(req, res) {
+  res.redirect(301, '/field-guide/can-i-add-free-code-camp-to-my-linkedin-profile');
+});
+
 app.post('/get-help', resourcesController.getHelp);
 
 app.post('/get-pair', resourcesController.getPair);
