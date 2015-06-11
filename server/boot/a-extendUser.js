@@ -2,6 +2,11 @@ var debug = require('debug')('freecc:extendUser');
 
 module.exports = function(app) {
   var User = app.models.User;
+  // NOTE(berks): user email validation currently not needed but build in. This
+  // work around should let us sneak by
+  // see:
+  // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
+  delete User.validations.email;
   debug('setting up user hooks');
   // send verification email to new camper
   User.afterRemote('create', function(ctx, user, next) {
@@ -59,17 +64,26 @@ module.exports = function(app) {
   });
 
   User.doesExist = function doesExist(username, email, cb) {
+    if (!username && !email) {
+      return process.nextTick(function() {
+        cb(null, false);
+      });
+    }
     debug('checking existence');
     var where = {};
     if (username) {
-      where.username = username;
+      where.username = username.toLowerCase();
     } else {
-      where.email = email;
+      where.email = email ? email.toLowerCase() : email;
     }
+    debug('where', where);
     User.count(
-      { where: where },
+      where,
       function (err, count) {
-        if (err) { return cb(err); }
+        if (err) {
+          debug('err checking existance: ', err);
+          return cb(err);
+        }
         if (count > 0) {
           return cb(null, true);
         }
@@ -99,7 +113,8 @@ module.exports = function(app) {
         }
       ],
       http: {
-        path: '/exists'
+        path: '/exists',
+        verb: 'get'
       }
     }
   );

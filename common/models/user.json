@@ -29,7 +29,6 @@
     },
     "username": {
       "type": "string",
-      "sparse": true,
       "lowercase": true,
       "trim": true
     },
@@ -175,6 +174,12 @@
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [{
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$everyone",
+    "permission": "ALLOW",
+    "property": "doesExist"
+  }],
   "methods": []
 }

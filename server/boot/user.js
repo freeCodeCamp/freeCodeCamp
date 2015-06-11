@@ -9,12 +9,6 @@ var _ = require('lodash'),
   secrets = require('../../config/secrets');
 
 module.exports = function(app) {
-  // NOTE(berks): user email validation currently not needed but build in. This
-  // work around should let us sneak by
-  // see:
-  // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
-  delete app.models.User.validations.email;
-
   var router = app.loopback.Router();
   var User = app.models.User;
   var Story = app.models.Story;
@@ -27,7 +21,6 @@ module.exports = function(app) {
     res.redirect(301, '/signout');
   });
   router.get('/signin', getSignin);
-  // router.post('/signin', postSignin);
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
   router.post('/forgot', postForgot);
@@ -35,7 +28,6 @@ module.exports = function(app) {
   router.post('/reset/:token', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
-  // router.post('/email-signup', postEmailSignup);
   router.get('/account/api', getAccountAngular);
   router.post('/account/profile', postUpdateProfile);
   router.post('/account/password', postUpdatePassword);
@@ -127,15 +119,14 @@ module.exports = function(app) {
   */
 
   function returnUser (req, res, next) {
-    User.find(
-      {where: { 'username': req.params.username.toLowerCase() }},
+    User.findOne(
+      { where: { username: req.params.username.toLowerCase() } },
       function(err, user) {
         if (err) {
           debug('Username err: ', err);
           return next(err);
         }
-        if (user[0]) {
-          user = user[0];
+        if (user) {
           user.progressTimestamps =
             user.progressTimestamps.sort(function(a, b) {
               return a - b;
@@ -270,7 +261,9 @@ module.exports = function(app) {
         return res.redirect('/account');
       }
 
-      User.findOne({ email: req.body.email }, function(err, existingEmail) {
+      User.findOne({
+        where: { email: req.body.email }
+      }, function(err, existingEmail) {
         if (err) {
           return next(err);
         }
@@ -282,7 +275,7 @@ module.exports = function(app) {
           return res.redirect('/account');
         }
         User.findOne(
-          { 'profile.username': req.body.username },
+          { where: { username: req.body.username } },
           function(err, existingUsername) {
             if (err) {
               return next(err);
@@ -290,7 +283,7 @@ module.exports = function(app) {
             var user = req.user;
             if (
               existingUsername &&
-              existingUsername.profile.username !== user.username
+              existingUsername.username !== user.username
             ) {
               req.flash('errors', {
                 msg: 'An account with that username already exists.'
@@ -567,7 +560,7 @@ module.exports = function(app) {
       },
       function(token, done) {
         User.findOne({
-          email: req.body.email.toLowerCase()
+          where: { email: req.body.email.toLowerCase() }
         }, function(err, user) {
           if (err) { return done(err); }
           if (!user) {

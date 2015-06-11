@@ -10,6 +10,7 @@ process.on('uncaughtException', function (err) {
 });
 
 var R = require('ramda'),
+    assign = require('lodash').assign,
     loopback = require('loopback'),
     boot = require('loopback-boot'),
     accepts = require('accepts'),
@@ -202,6 +203,7 @@ passportConfigurator.setupModels({
 });
 
 var passportOptions = {
+  emailOptional: true,
   profileToUser: function(provider, profile) {
     var emails = profile.emails;
     // NOTE(berks): get email or set to null.
@@ -210,7 +212,8 @@ var passportOptions = {
         emails[0].value :
         null;
 
-    var username = provider + '.' + (profile.username || profile.id);
+    var username = (profile.username || profile.id);
+    username = typeof username === 'string' ? username.toLowerCase() : username;
     var password = generateKey('password');
     var userObj = {
       username: username,
@@ -227,7 +230,10 @@ var passportOptions = {
 R.keys(passportProviders).map(function(strategy) {
   var config = passportProviders[strategy];
   config.session = config.session !== false;
-  passportConfigurator.configureProvider(strategy, config, passportOptions);
+  passportConfigurator.configureProvider(
+    strategy,
+    assign(config, passportOptions)
+  );
 });
 
 /**
