@@ -1,32 +1,77 @@
 {
   "name": "challenge",
   "base": "PersistedModel",
-  "trackChanges": false,
   "idInjection": true,
+  "trackChanges": false,
   "properties": {
     "name": {
       "type": "string",
       "unique": true
     },
-    "difficulty": "string",
-    "description": "array",
-    "tests": "array",
-    "challengeSeed": "array",
-    "challengeType": "string",
-    "MDNlinks": "array",
-    "nameCn": "string",
-    "descriptionCn": "array",
-    "nameFr": "string",
-    "descriptionFr": "array",
-    "nameRu": "string",
-    "descriptionRu": "array",
-    "nameEs": "string",
-    "descriptionEs": "array",
-    "namePt": "string",
-    "descriptionPt": "array"
+    "difficulty": {
+      "type": "string"
+    },
+    "description": {
+      "type": "array"
+    },
+    "tests": {
+      "type": "array"
+    },
+    "challengeSeed": {
+      "type": "array"
+    },
+    "challengeType": {
+      "type": "string"
+    },
+    "MDNlinks": {
+      "type": "array"
+    },
+    "nameCn": {
+      "type": "string"
+    },
+    "descriptionCn": {
+      "type": "array"
+    },
+    "nameFr": {
+      "type": "string"
+    },
+    "descriptionFr": {
+      "type": "array"
+    },
+    "nameRu": {
+      "type": "string"
+    },
+    "descriptionRu": {
+      "type": "array"
+    },
+    "nameEs": {
+      "type": "string"
+    },
+    "descriptionEs": {
+      "type": "array"
+    },
+    "namePt": {
+      "type": "string"
+    },
+    "descriptionPt": {
+      "type": "array"
+    }
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": []
 }

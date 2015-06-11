@@ -1,28 +1,42 @@
 {
   "name": "user",
   "base": "User",
-  "trackChanges": false,
-  "idInjection": true,
   "strict": true,
+  "idInjection": true,
+  "trackChanges": false,
   "properties": {
     "email": {
       "type": "string",
-      "lowercase": true,
-      "trim": true,
       "index": {
         "mongodb": {
           "unique": true,
           "sparse": true
         }
-      }
+      },
+      "lowercase": true,
+      "trim": true
     },
-    "password": "string",
-    "facebook": "string",
-    "twitter": "string",
-    "google": "string",
-    "github": "string",
-    "linkedin": "string",
-    "tokens": "array",
+    "password": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "google": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "tokens": {
+      "type": "array"
+    },
     "progressTimestamps": {
       "type": "array",
       "default": []
@@ -108,32 +122,56 @@
       "type": "string",
       "default": ""
     },
-    "resetPasswordToken": "string",
-    "sentSlackInvite": false,
-    "resetPasswordExpires": "string",
-    "uncompletedBonfires": "array",
-    "completedBonfires": [{
-      "id": "string",
-      "name": "string",
-      "completedWith": "string",
-      "completedDate": "string",
-      "solution": "string"
-    }],
-    "uncompletedCoursewares": "array",
-    "completedCoursewares": [{
-      "completedDate": {
-        "type": "string",
-        "defaultFn": "now"
-      },
-      "id": "string",
-      "name": "string",
-      "completedWith": "string",
-      "solution": "string",
-      "githubLink": "string",
-      "verified": "boolean"
-    }],
-    "completedFieldGuides": [],
-    "uncompletedFieldGuides": [],
+    "resetPasswordToken": {
+      "type": "string"
+    },
+    "sentSlackInvite": {
+      "type": {
+        "type": false
+      }
+    },
+    "resetPasswordExpires": {
+      "type": "string"
+    },
+    "uncompletedBonfires": {
+      "type": "array"
+    },
+    "completedBonfires": {
+      "type": [
+        {
+          "id": "string",
+          "name": "string",
+          "completedWith": "string",
+          "completedDate": "string",
+          "solution": "string"
+        }
+      ]
+    },
+    "uncompletedCoursewares": {
+      "type": "array"
+    },
+    "completedCoursewares": {
+      "type": [
+        {
+          "completedDate": {
+            "type": "string",
+            "defaultFn": "now"
+          },
+          "id": "string",
+          "name": "string",
+          "completedWith": "string",
+          "solution": "string",
+          "githubLink": "string",
+          "verified": "boolean"
+        }
+      ]
+    },
+    "completedFieldGuides": {
+      "type": []
+    },
+    "uncompletedFieldGuides": {
+      "type": []
+    },
     "currentStreak": {
       "type": "number",
       "default": 0
@@ -142,8 +180,10 @@
       "type": "number",
       "default": 0
     },
-    "needsSomeDataModeled": { "type": "boolean", "default": false},
-
+    "needsSomeDataModeled": {
+      "type": "boolean",
+      "default": false
+    },
     "needsMigration": {
       "type": "boolean",
       "default": true
@@ -152,34 +192,50 @@
       "type": "boolean",
       "default": true
     },
-    "challengesHash": {},
-    "currentChallenge": {},
+    "challengesHash": {
+      "type": {}
+    },
+    "currentChallenge": {
+      "type": {}
+    },
     "completedChallenges": {
-      "type": [{
-        "completedDate": "number",
-        "id": "string",
-        "name": "string",
-        "completedWith": "string",
-        "solution": "string",
-        "githubLink": "string",
-        "verified": "boolean",
-        "challengeType": {
-          "type": "number",
-          "default": 0
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string",
+          "name": "string",
+          "completedWith": "string",
+          "solution": "string",
+          "githubLink": "string",
+          "verified": "boolean",
+          "challengeType": {
+            "type": "number",
+            "default": 0
+          }
         }
-      }],
+      ],
       "default": []
     },
-    "uncompletedChallenges": "array"
+    "uncompletedChallenges": {
+      "type": "array"
+    }
   },
   "validations": [],
   "relations": {},
-  "acls": [{
-    "accessType": "EXECUTE",
-    "principalType": "ROLE",
-    "principalId": "$everyone",
-    "permission": "ALLOW",
-    "property": "doesExist"
-  }],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "doesExist"
+    }
+  ],
   "methods": []
 }

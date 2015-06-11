@@ -1,6 +1,6 @@
-//var debug = require('debug')('freecc:models:userIdent');
+// var debug = require('debug')('freecc:models:userIdent');
 //
-//module.exports = function(UserIdent) {
+// module.exports = function(UserIdent) {
 //
 //  UserIdent.observe('before save', function(ctx, next) {
 //
@@ -24,4 +24,4 @@
 //      }
 //    });
 //  });
-//};
+// };
