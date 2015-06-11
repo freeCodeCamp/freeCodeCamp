@@ -427,10 +427,10 @@ profileValidation.directive('uniqueUsername', ['$http', function($http) {
           var config = { params: { username: username } };
           $http
             .get('/api/users/exists', config)
-            .success(function (exists) {
+            .success(function (result) {
               if (username === scope.storedUsername) {
                 ngModel.$setValidity('unique', true);
-              } else if (exists) {
+              } else if (result.exists) {
                 ngModel.$setValidity('unique', false);
               }
             });
@@ -458,8 +458,8 @@ profileValidation.directive('existingUsername',
             var config = { params: { username: username } };
             $http
               .get('/api/users/exists', config)
-              .success(function(exists) {
-                ngModel.$setValidity('exists', exists);
+              .success(function(result) {
+                ngModel.$setValidity('exists', result.exists);
               });
           }
         });
@@ -479,10 +479,10 @@ profileValidation.directive('uniqueEmail', ['$http', function($http) {
           var config = { params: { email: email } };
           $http
             .get('/api/users/exists', config)
-            .success(function (exists) {
+            .success(function(result) {
               if (email === scope.storedEmail) {
                 ngModel.$setValidity('unique', true);
-              } else if (exists.exists) {
+              } else if (result.exists) {
                 ngModel.$setValidity('unique', false);
               }
             });
