@@ -83,22 +83,21 @@ block content
                                                 li.large-p.negative-10
                                                     a(href="/challenges/#{challenge.name}")= challenge.name
 
-    //#announcementModal.modal(tabindex='-1')
-    //    .modal-dialog.animated.fadeInUp.fast-animation
-    //        .modal-content
-    //            .modal-header.challenge-list-header Join our Saturday Summit!
-    //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-    //            .modal-body
-    //                h3.text-left Saturday at Noon EDT: We'll live-stream our Saturday Summit on Twitch.tv.
-    //                h3.text-left We'll announce our new Front End Development Certificate Program (it's free, of course) and our new "Free Code Camp On The Go" app. &thinsp;
-    //                    a(href='http://www.freecodecamp.com/twitch', target='_blank') Add us to your calendar here
-    //                    | .
-    //                a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='http://twitch.tv/freecodecamp', target='_blank') Follow us on Twitch.tv
-    //                a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up!
-    //script.
-    //    $(document).ready(function () {
-    //        if (!localStorage || !localStorage.day234) {
-    //            $('#announcementModal').modal('show');
-    //            localStorage.day234 = "true";
-    //        }
-    //    });
+    #announcementModal.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header Add us on LinkedIn
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    img.img-responsive-img-center(src='https://www.evernote.com/l/AHTzkHwtg-BHj57bqqDL7WFF8WgrI5V8cxwB/image.png')
+                    h3.text-left LinkedIn now recognizes Free Code Camp as a university.
+                    h3.text-left Add Free Code Camp to your LinkedIn profile - it takes less than a minute.
+                    a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='/freecodecamp/linkedin', target='_blank') 
+                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up!
+    script.
+        $(document).ready(function () {
+            if (!localStorage || !localStorage.linkedIn) {
+                $('#announcementModal').modal('show');
+                localStorage.linkedIn = "true";
+            }
+        });
