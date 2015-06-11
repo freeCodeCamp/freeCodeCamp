@@ -201,7 +201,7 @@
       ],
       "tests": [
         "assert(($('h1').length === 0), 'Comment out your <code>h1</code> element so that it is not visible on your page.')",
-        "assert(($('h2').length > 0), 'Leave your <code>h2</code> element uncommented so that is not visible on your page.')",
+        "assert(($('h2').length > 0), 'Leave your <code>h2</code> element uncommented so that it is visible on your page.')",
         "assert(($('p').length === 0), 'Comment out your <code>p</code> element so that it is not visible on your page.')",
         "assert(editor.match(/-->/g).length > 1, 'Be sure to close each of your comments with <code>--&#62;</code>.')"
       ],
