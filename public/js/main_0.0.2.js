@@ -475,14 +475,16 @@ profileValidation.directive('uniqueEmail', ['$http', function($http) {
       element.bind("keyup", function (event) {
         ngModel.$setValidity('unique', true);
         var email = element.val();
-        if (element.val()) {
+        if (email) {
           var config = { params: { email: email } };
           $http
             .get('/api/users/exists', config)
             .success(function (exists) {
               if (email === scope.storedEmail) {
                 ngModel.$setValidity('unique', true);
-              } else if (exists) {
+                console.log('scoped.storedEmail', scoped.storedEmail);
+              } else if (exists.exists) {
+                console.log('setValid to false');
                 ngModel.$setValidity('unique', false);
               }
             });
