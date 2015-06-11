@@ -1,15 +1,6 @@
-var Rx = require('rx');
 var debug = require('debug')('freecc:user:remote');
-
-function destroyById(id, Model) {
-  return Rx.Observable.create(function(observer) {
-    Model.destroyById(id, function(err) {
-      if (err) { return observer.onError(err); }
-      observer.onCompleted();
-    });
-    return Rx.Disposable(Rx.helpers.noop);
-  });
-}
+var blacklistedUsernames =
+  require('../../server/utils/constants').blacklistedUsernames;
 
 module.exports = function(User) {
   // NOTE(berks): user email validation currently not needed but build in. This
@@ -17,9 +8,6 @@ module.exports = function(User) {
   // see:
   // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
   delete User.validations.email;
-  var app = User.app;
-  var UserIdentity = app.models.UserIdentity;
-  var UserCredential = app.models.UserCredential;
   debug('setting up user hooks');
   // send verification email to new camper
   User.afterRemote('create', function(ctx, user, next) {
@@ -103,6 +91,12 @@ module.exports = function(User) {
       });
     }
     debug('checking existence');
+
+    // check to see if username is on blacklist
+    if (username && blacklistedUsernames.indexOf(username) !== -1) {
+      return cb(null, true);
+    }
+
     var where = {};
     if (username) {
       where.username = username.toLowerCase();
@@ -151,27 +145,4 @@ module.exports = function(User) {
       }
     }
   );
-
-  User.observe('after delete', function(ctx, next) {
-    debug('removing user', ctx.where);
-    var id = ctx.where && ctx.where.id ? ctx.where.id : null;
-    if (!id) {
-      return next();
-    }
-    Rx.Observable.combineLatest(
-      destroyById(id, UserIdentity),
-      destroyById(id, UserCredential),
-      Rx.helpers.noop
-    ).subscribe(
-      Rx.helpers.noop,
-      function(err) {
-        debug('error deleting user %s stuff', id, err);
-        next(err);
-      },
-      function() {
-        debug('user stuff deleted for user %s', id);
-        next();
-      }
-    );
-  });
 };
