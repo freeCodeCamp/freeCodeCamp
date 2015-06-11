@@ -169,10 +169,12 @@
       "default": []
     },
     "completedFieldGuides": {
-      "type": []
+      "type": "array",
+      "default": []
     },
     "uncompletedFieldGuides": {
-      "type": []
+      "type": "array",
+      "default": []
     },
     "currentStreak": {
       "type": "number",

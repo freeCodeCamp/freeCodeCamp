@@ -7,7 +7,7 @@ module.exports = function(UserIdent) {
 
  UserIdent.observe('before save', function(ctx, next) {
   var userIdent = ctx.currentInstance || ctx.instance;
-  if (userIdent) {
+  if (!userIdent) {
     debug('no user identity instance found');
     return next();
   }

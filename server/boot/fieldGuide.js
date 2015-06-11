@@ -40,7 +40,7 @@ module.exports = function(app) {
 
         if (fieldGuideFromMongo.length < 1) {
           req.flash('errors', {
-            msg: "404: We couldn't find a field guide entry with that name. " +
+            msg: '404: We couldn\'t find a field guide entry with that name. ' +
             'Please double check the name.'
           });
 
@@ -75,29 +75,33 @@ module.exports = function(app) {
     });
   }
 
+  function showCompletedFieldGuideFunction(req, res) {
+    req.flash('success', {
+              msg: [
+                'You\'ve read all our current Field Guide entries. ' +
+                'If you have ideas for other Field Guide articles, ' +
+                'please let us know on ',
+                '<a href=\'https://github.com/freecodecamp/freecodecamp/' +
+                'issues/new?&body=Please describe your idea for a Field Guide' +
+                ' article and include links if possible.\'>GitHub</a>.'
+              ].join('')
+            });
+    return res.redirect('../field-guide/how-do-i-use-this-guide');
+  }
+
   function returnNextFieldGuide(req, res, next) {
     if (!req.user) {
       return res.redirect('/field-guide/how-do-i-use-this-guide');
     }
 
-    FieldGuide.find({'id': req.user.uncompletedFieldGuides[0]},
+    if (!req.user.uncompletedFieldGuides.length) {
+      return showCompletedFieldGuideFunction(req, res, next);
+    }
+
+    FieldGuide.findById(req.user.uncompletedFieldGuides[0],
       function(err, fieldGuide) {
 
         if (err) { return next(err); }
-        fieldGuide = fieldGuide.pop();
-
-        if (typeof fieldGuide === 'undefined') {
-          if (req.user.completedFieldGuides.length > 0) {
-            req.flash('success', {
-              msg: [
-                "You've read all our current Field Guide entries. If you have ",
-                'ideas for other Field Guide articles, please let us know on ',
-                "<a href='https://github.com/freecodecamp/freecodecamp/issues/new?&body=Please describe your idea for a Field Guide article and include links if possible.'>GitHub</a>."
-              ].join('')
-            });
-          }
-          return res.redirect('../field-guide/how-do-i-use-this-guide');
-        }
         return res.redirect('../field-guide/' + fieldGuide.dashedName);
       });
   }
