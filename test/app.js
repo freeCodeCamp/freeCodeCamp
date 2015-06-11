@@ -9,7 +9,7 @@ describe('GET /', function() {
   });
 });
 
-describe('GET /login', function() {
+describe('GET /signin', function() {
   it('should return 200 OK', function(done) {
     request(app)
       .get('/login')

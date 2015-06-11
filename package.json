@@ -97,6 +97,7 @@
     "gulp-inject": "~1.0.2",
     "gulp-nodemon": "^2.0.3",
     "loopback-explorer": "^1.7.2",
+    "loopback-testing": "^1.1.0",
     "mocha": "~2.0.1",
     "multiline": "~1.0.1",
     "supertest": "~0.15.0"
