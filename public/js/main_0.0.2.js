@@ -482,9 +482,7 @@ profileValidation.directive('uniqueEmail', ['$http', function($http) {
             .success(function (exists) {
               if (email === scope.storedEmail) {
                 ngModel.$setValidity('unique', true);
-                console.log('scoped.storedEmail', scoped.storedEmail);
               } else if (exists.exists) {
-                console.log('setValid to false');
                 ngModel.$setValidity('unique', false);
               }
             });
