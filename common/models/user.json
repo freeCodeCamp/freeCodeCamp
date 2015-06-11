@@ -242,5 +242,5 @@
       "property": "doesExist"
     }
   ],
-  "methods": []
+  "methods": ["login"]
 }
