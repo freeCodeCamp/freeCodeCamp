@@ -261,7 +261,9 @@ module.exports = function(app) {
         return res.redirect('/account');
       }
 
-      User.findOne({ email: req.body.email }, function(err, existingEmail) {
+      User.findOne({
+        where: { email: req.body.email }
+      }, function(err, existingEmail) {
         if (err) {
           return next(err);
         }
@@ -273,7 +275,7 @@ module.exports = function(app) {
           return res.redirect('/account');
         }
         User.findOne(
-          { 'profile.username': req.body.username },
+          { where: { username: req.body.username } },
           function(err, existingUsername) {
             if (err) {
               return next(err);
@@ -281,7 +283,7 @@ module.exports = function(app) {
             var user = req.user;
             if (
               existingUsername &&
-              existingUsername.profile.username !== user.username
+              existingUsername.username !== user.username
             ) {
               req.flash('errors', {
                 msg: 'An account with that username already exists.'
@@ -558,7 +560,7 @@ module.exports = function(app) {
       },
       function(token, done) {
         User.findOne({
-          email: req.body.email.toLowerCase()
+          where: { email: req.body.email.toLowerCase() }
         }, function(err, user) {
           if (err) { return done(err); }
           if (!user) {
