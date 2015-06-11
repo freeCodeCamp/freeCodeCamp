@@ -126,9 +126,8 @@
       "type": "string"
     },
     "sentSlackInvite": {
-      "type": {
-        "type": false
-      }
+      "type": "boolean",
+      "default": false
     },
     "resetPasswordExpires": {
       "type": "string"
@@ -145,10 +144,12 @@
           "completedDate": "string",
           "solution": "string"
         }
-      ]
+      ],
+      "default": []
     },
     "uncompletedCoursewares": {
-      "type": "array"
+      "type": "array",
+      "default": []
     },
     "completedCoursewares": {
       "type": [
@@ -164,7 +165,8 @@
           "githubLink": "string",
           "verified": "boolean"
         }
-      ]
+      ],
+      "default": []
     },
     "completedFieldGuides": {
       "type": []
@@ -217,7 +219,8 @@
       "default": []
     },
     "uncompletedChallenges": {
-      "type": "array"
+      "type": "array",
+      "default": []
     }
   },
   "validations": [],
