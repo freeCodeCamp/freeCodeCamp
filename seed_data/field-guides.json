@@ -519,16 +519,6 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd3e",
-    "name": "Does Free Code Camp have an alumni network?",
-    "dashedName": "does-free-code-camp-have-an-alumni-network",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "  <h3>We have a growing <a href='https://www.linkedin.com/grp/home?gid=6966827' target='_blank'>alumni network on LinkedIn</a>. Once you've finished Free Code Camp and have gotten a coding job, we'd love to include you in this group, too!</h3>",
-      "</div>"
-    ]
-  },
-  {
     "_id": "bd7158d9c442eddfaeb5bdef",
     "name": "How do I best use the Global Control Shortcuts for Mac?",
     "dashedName": "how-do-i-best-use-the-global-control-shortcuts-for-mac",
