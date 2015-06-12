@@ -61,7 +61,10 @@
   },
   "user": {
     "dataSource": "db",
-    "public": true
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   },
   "userCredential": {
     "dataSource": "db",

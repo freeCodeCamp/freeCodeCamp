@@ -1,7 +1,7 @@
 var R = require('ramda'),
-    // Rx = require('rx'),
-    // debug = require('debug')('freecc:fieldguides'),
-    utils = require('../utils');
+// Rx = require('rx'),
+// debug = require('debug')('freecc:fieldguides'),
+  utils = require('../utils');
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -40,7 +40,7 @@ module.exports = function(app) {
 
         if (fieldGuideFromMongo.length < 1) {
           req.flash('errors', {
-            msg: "404: We couldn't find a field guide entry with that name. " +
+            msg: '404: We couldn\'t find a field guide entry with that name. ' +
             'Please double check the name.'
           });
 
@@ -48,7 +48,7 @@ module.exports = function(app) {
         }
 
         var fieldGuide = R.head(fieldGuideFromMongo);
-          fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
+        fieldGuide.name.toLowerCase().replace(/\s/g, '-').replace(/\?/g, '');
 
         // if (fieldGuide.dashedName !== dashedNameFromQuery) {
         //   return res.redirect('../field-guide/' + fieldGuide.dashedName);
@@ -75,50 +75,53 @@ module.exports = function(app) {
     });
   }
 
+  function showCompletedFieldGuideFunction(req, res) {
+    req.flash('success', {
+              msg: [
+                'You\'ve read all our current Field Guide entries. ' +
+                'If you have ideas for other Field Guide articles, ' +
+                'please let us know on ',
+                '<a href=\'https://github.com/freecodecamp/freecodecamp/' +
+                'issues/new?&body=Please describe your idea for a Field Guide' +
+                ' article and include links if possible.\'>GitHub</a>.'
+              ].join('')
+            });
+    return res.redirect('../field-guide/how-do-i-use-this-guide');
+  }
+
   function returnNextFieldGuide(req, res, next) {
     if (!req.user) {
       return res.redirect('/field-guide/how-do-i-use-this-guide');
     }
 
-    var displayedFieldGuides =
-      FieldGuide.find({'id': req.user.uncompletedFieldGuides[0]});
-
-    displayedFieldGuides.exec(function(err, fieldGuide) {
-      if (err) { return next(err); }
-      fieldGuide = fieldGuide.pop();
-
-      if (typeof fieldGuide === 'undefined') {
-        if (req.user.completedFieldGuides.length > 0) {
-          req.flash('success', {
-            msg: [
-              "You've read all our current Field Guide entries. If you have ",
-              'ideas for other Field Guide articles, please let us know on ',
-              "<a href='https://github.com/freecodecamp/freecodecamp/issues/new?&body=Please describe your idea for a Field Guide article and include links if possible.'>GitHub</a>."
-            ].join('')
-          });
-        }
-        return res.redirect('../field-guide/how-do-i-use-this-guide');
-      }
-      return res.redirect('../field-guide/' + fieldGuide.dashedName);
-    });
-  }
-
-  function completedFieldGuide(req, res, next) {
-    var fieldGuideId = req.body.fieldGuideInfo.fieldGuideId;
-
-    req.user.completedFieldGuides.push(fieldGuideId);
-
-    var index = req.user.uncompletedFieldGuides.indexOf(fieldGuideId);
-    if (index > -1) {
-      req.user.progressTimestamps.push(Date.now());
-      req.user.uncompletedFieldGuides.splice(index, 1);
+    if (!req.user.uncompletedFieldGuides.length) {
+      return showCompletedFieldGuideFunction(req, res, next);
     }
 
-    req.user.save(function (err) {
-      if (err) {
-        return next(err);
-      }
-      res.send(true);
-    });
+    FieldGuide.findById(req.user.uncompletedFieldGuides[0],
+      function(err, fieldGuide) {
+
+        if (err) { return next(err); }
+        return res.redirect('../field-guide/' + fieldGuide.dashedName);
+      });
   }
 };
+
+function completedFieldGuide(req, res, next) {
+  var fieldGuideId = req.body.fieldGuideInfo.fieldGuideId;
+
+  req.user.completedFieldGuides.push(fieldGuideId);
+
+  var index = req.user.uncompletedFieldGuides.indexOf(fieldGuideId);
+  if (index > -1) {
+    req.user.progressTimestamps.push(Date.now());
+    req.user.uncompletedFieldGuides.splice(index, 1);
+  }
+
+  req.user.save(function (err) {
+    if (err) {
+      return next(err);
+    }
+    res.send(true);
+  });
+}

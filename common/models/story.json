@@ -1,8 +1,8 @@
 {
   "name": "story",
   "base": "PersistedModel",
-  "trackChanges": false,
   "idInjection": true,
+  "trackChanges": false,
   "properties": {
     "name": {
       "type": "string",
@@ -41,7 +41,9 @@
       "type": "array",
       "default": []
     },
-    "author": {},
+    "author": {
+      "type": {}
+    },
     "comments": {
       "type": "array",
       "default": []
@@ -57,6 +59,26 @@
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    }
+  ],
   "methods": []
 }

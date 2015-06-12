@@ -1,8 +1,8 @@
 {
   "name": "fieldGuide",
   "base": "PersistedModel",
-  "trackChanges": false,
   "idInjection": true,
+  "trackChanges": false,
   "properties": {
     "name": {
       "type": "string",
@@ -19,6 +19,19 @@
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": []
 }

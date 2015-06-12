@@ -4,6 +4,7 @@
     "connector": "mongodb"
   },
   "mail": {
+    "name": "mail",
     "connector": "mail"
   }
 }

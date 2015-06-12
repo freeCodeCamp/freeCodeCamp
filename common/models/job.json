@@ -1,17 +1,40 @@
 {
   "name": "job",
   "base": "PersistedModel",
-  "trackChanges": false,
   "idInjection": true,
+  "trackChanges": false,
   "properties": {
-    "position": "string",
-    "company": "string",
-    "logoUrl": "string",
-    "postingUrl": "string",
-    "copy": "array"
+    "position": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "logoUrl": {
+      "type": "string"
+    },
+    "postingUrl": {
+      "type": "string"
+    },
+    "copy": {
+      "type": "array"
+    }
   },
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": []
 }

@@ -654,7 +654,6 @@ module.exports = function(app) {
       R.forEach(function (comment) {
         comment.author.picture = picture;
         comment.author.username = username;
-        comment.markModified('author');
         tasks.push(function (cb) {
           comment.save(cb);
         });
@@ -663,7 +662,6 @@ module.exports = function(app) {
       R.forEach(function (story) {
         story.author.picture = picture;
         story.author.username = username;
-        story.markModified('author');
         tasks.push(function (cb) {
           story.save(cb);
         });

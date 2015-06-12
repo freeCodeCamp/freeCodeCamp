@@ -1,0 +1,1761 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for server/boot/challenge.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">server/boot/challenge.js</span></h1>
+    <h2>
+        Statements: <span class="metric">10.71% <small>(21 / 196)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 118)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">2.78% <small>(1 / 36)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">11.05% <small>(21 / 190)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">server/boot/</a> &#187; challenge.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Created by nathanleniz on 5/15/15.
+ * Copyright (c) 2015, Free Code Camp
+ All rights reserved.
+&nbsp;
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+&nbsp;
+ 1. Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+&nbsp;
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+&nbsp;
+ 3. Neither the name of the copyright holder nor the names of its contributors
+  may be used to endorse or promote products derived from this software
+  without specific prior written permission.
+&nbsp;
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS
+ BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+&nbsp;
+var R = require('ramda'),
+    utils = require('../utils'),
+    userMigration = require('../utils/middleware').userMigration,
+    MDNlinks = require('../../seed/bonfireMDNlinks');
+&nbsp;
+var challengeMapWithNames = utils.getChallengeMapWithNames();
+var challengeMapWithIds = utils.getChallengeMapWithIds();
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >function getMDNlinks(links) {</span>
+  // takes in an array of links, which are strings
+<span class="cstat-no" title="statement not covered" >  var populatedLinks = [];</span>
+&nbsp;
+  // for each key value, push the corresponding link
+  // from the MDNlinks object into a new array
+<span class="cstat-no" title="statement not covered" >  if (links) {</span>
+<span class="cstat-no" title="statement not covered" >    links.forEach(<span class="fstat-no" title="function not covered" >function (value) {</span></span>
+<span class="cstat-no" title="statement not covered" >      populatedLinks.push(MDNlinks[value]);</span>
+    });
+  }
+<span class="cstat-no" title="statement not covered" >  return populatedLinks;</span>
+}
+&nbsp;
+module.exports = function(app) {
+  var router = app.loopback.Router();
+  var Challenge = app.models.Challenge;
+  var User = app.models.User;
+&nbsp;
+  router.get(
+    '/challenges/next-challenge',
+    userMigration,
+    returnNextChallenge
+  );
+&nbsp;
+  router.get(
+    '/challenges/:challengeName',
+    userMigration,
+    returnIndividualChallenge
+  );
+&nbsp;
+  router.get('/challenges/', userMigration, returnCurrentChallenge);
+  router.post('/completed-challenge/', completedChallenge);
+  router.post('/completed-zipline-or-basejump', completedZiplineOrBasejump);
+  router.post('/completed-bonfire', completedBonfire);
+&nbsp;
+  app.use(router);
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function returnNextChallenge(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!req.user) {</span>
+<span class="cstat-no" title="statement not covered" >    return res.redirect('../challenges/learn-how-free-code-camp-works');</span>
+    }
+<span class="cstat-no" title="statement not covered" >    var completed = req.user.completedChallenges.map(<span class="fstat-no" title="function not covered" >function (elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >      return elem.id;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    req.user.uncompletedChallenges = utils.allChallengeIds()</span>
+      .filter(<span class="fstat-no" title="function not covered" >function (elem) {</span>
+<span class="cstat-no" title="statement not covered" >        if (completed.indexOf(elem) === -1) {</span>
+<span class="cstat-no" title="statement not covered" >          return elem;</span>
+        }
+      });
+&nbsp;
+    // find the user's current challenge and block
+    // look in that block and find the index of their current challenge
+    // if index + 1 &lt; block.challenges.length
+    // serve index + 1 challenge
+    // otherwise increment block key and serve the first challenge in that block
+    // unless the next block is undefined, which means no next block
+<span class="cstat-no" title="statement not covered" >    var nextChallengeName;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var challengeId = String(req.user.currentChallenge.challengeId);</span>
+<span class="cstat-no" title="statement not covered" >    var challengeBlock = req.user.currentChallenge.challengeBlock;</span>
+<span class="cstat-no" title="statement not covered" >    var indexOfChallenge = challengeMapWithIds[challengeBlock]</span>
+      .indexOf(challengeId);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (indexOfChallenge + 1</span>
+      &lt; challengeMapWithIds[challengeBlock].length) {
+<span class="cstat-no" title="statement not covered" >      nextChallengeName =</span>
+        challengeMapWithNames[challengeBlock][++indexOfChallenge];
+    } else <span class="cstat-no" title="statement not covered" >if (typeof challengeMapWithIds[++challengeBlock] !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >      nextChallengeName = R.head(challengeMapWithNames[challengeBlock]);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      req.flash('errors', {</span>
+        msg: 'It looks like you have finished all of our challenges.' +
+        ' Great job! Now on to helping nonprofits!'
+      });
+<span class="cstat-no" title="statement not covered" >      nextChallengeName = R.head(challengeMapWithNames[0].challenges);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var nameString = nextChallengeName.trim()</span>
+      .toLowerCase()
+      .replace(/\s/g, '-');
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    req.user.save(<span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        return next(err);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return res.redirect('../challenges/' + nameString);</span>
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function returnCurrentChallenge(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!req.user) {</span>
+<span class="cstat-no" title="statement not covered" >    return res.redirect('../challenges/learn-how-free-code-camp-works');</span>
+    }
+<span class="cstat-no" title="statement not covered" >    var completed = req.user.completedChallenges.map(<span class="fstat-no" title="function not covered" >function (elem) {</span></span>
+<span class="cstat-no" title="statement not covered" >      return elem.id;</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    req.user.uncompletedChallenges = utils.allChallengeIds()</span>
+      .filter(<span class="fstat-no" title="function not covered" >function (elem) {</span>
+<span class="cstat-no" title="statement not covered" >        if (completed.indexOf(elem) === -1) {</span>
+<span class="cstat-no" title="statement not covered" >          return elem;</span>
+        }
+      });
+<span class="cstat-no" title="statement not covered" >    if (!req.user.currentChallenge) {</span>
+<span class="cstat-no" title="statement not covered" >      req.user.currentChallenge = {};</span>
+<span class="cstat-no" title="statement not covered" >      req.user.currentChallenge.challengeId = challengeMapWithIds['0'][0];</span>
+<span class="cstat-no" title="statement not covered" >      req.user.currentChallenge.challengeName = challengeMapWithNames['0'][0];</span>
+<span class="cstat-no" title="statement not covered" >      req.user.currentChallenge.challengeBlock = '0';</span>
+<span class="cstat-no" title="statement not covered" >      req.user.save(<span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >          return next(err);</span>
+        }
+      });
+    }
+<span class="cstat-no" title="statement not covered" >    var nameString = req.user.currentChallenge.challengeName.trim()</span>
+      .toLowerCase()
+      .replace(/\s/g, '-')
+      .replace(/[^a-z0-9\-\/.]/gi, '');
+<span class="cstat-no" title="statement not covered" >    req.user.save(<span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        return next(err);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return res.redirect('../challenges/' + nameString);</span>
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function returnIndividualChallenge(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >    var dashedName = req.params.challengeName;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var challengeName =</span>
+      (/^(bonfire|waypoint|zipline|basejump)/i).test(dashedName) ?
+        dashedName
+          .replace(/\-/g, ' ')
+          .split(' ')
+          .slice(1)
+          .join(' ') :
+        dashedName.replace(/\-/g, ' ');
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    Challenge.find(</span>
+      { where: { name: new RegExp(challengeName, 'i') } },
+<span class="fstat-no" title="function not covered" >      function(err, challengeFromMongo) {</span>
+<span class="cstat-no" title="statement not covered" >        if (err) { <span class="cstat-no" title="statement not covered" >return next(err); </span>}</span>
+&nbsp;
+        // Handle not found
+<span class="cstat-no" title="statement not covered" >        if (challengeFromMongo.length &lt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >          req.flash('errors', {</span>
+            msg: '404: We couldn\'t find a challenge with that name. ' +
+            'Please double check the name.'
+          });
+<span class="cstat-no" title="statement not covered" >          return res.redirect('/challenges');</span>
+        }
+<span class="cstat-no" title="statement not covered" >        var challenge = challengeFromMongo.pop();</span>
+        // Redirect to full name if the user only entered a partial
+<span class="cstat-no" title="statement not covered" >        var dashedNameFull = challenge.name</span>
+          .toLowerCase()
+          .replace(/\s/g, '-')
+          .replace(/[^a-z0-9\-\.]/gi, '');
+<span class="cstat-no" title="statement not covered" >        if (dashedNameFull !== dashedName) {</span>
+<span class="cstat-no" title="statement not covered" >          return res.redirect('../challenges/' + dashedNameFull);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (req.user) {</span>
+<span class="cstat-no" title="statement not covered" >          req.user.currentChallenge = {</span>
+            challengeId: challenge.id,
+            challengeName: challenge.name,
+            challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
+                map(<span class="fstat-no" title="function not covered" >function (key) {</span>
+<span class="cstat-no" title="statement not covered" >                  return challengeMapWithIds[key]</span>
+                    .filter(<span class="fstat-no" title="function not covered" >function (elem) {</span>
+<span class="cstat-no" title="statement not covered" >                      return String(elem) === String(challenge.id);</span>
+                    }).map(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                      return key;</span>
+                    });
+                })
+            ))
+          };
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var challengeType = {</span>
+          0: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            res.render('coursewares/showHTML', {</span>
+              title: challenge.name,
+              dashedName: dashedName,
+              name: challenge.name,
+              brief: challenge.description[0],
+              details: challenge.description.slice(1),
+              tests: challenge.tests,
+              challengeSeed: challenge.challengeSeed,
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
+              challengeId: challenge.id,
+              environment: utils.whichEnvironment(),
+              challengeType: challenge.challengeType
+            });
+          },
+&nbsp;
+          1: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            res.render('coursewares/showJS', {</span>
+              title: challenge.name,
+              dashedName: dashedName,
+              name: challenge.name,
+              brief: challenge.description[0],
+              details: challenge.description.slice(1),
+              tests: challenge.tests,
+              challengeSeed: challenge.challengeSeed,
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
+              challengeId: challenge.id,
+              challengeType: challenge.challengeType
+            });
+          },
+&nbsp;
+          2: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            res.render('coursewares/showVideo', {</span>
+              title: challenge.name,
+              dashedName: dashedName,
+              name: challenge.name,
+              details: challenge.description,
+              tests: challenge.tests,
+              video: challenge.challengeSeed[0],
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
+              challengeId: challenge.id,
+              challengeType: challenge.challengeType
+            });
+          },
+&nbsp;
+          3: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            res.render('coursewares/showZiplineOrBasejump', {</span>
+              title: challenge.name,
+              dashedName: dashedName,
+              name: challenge.name,
+              details: challenge.description,
+              video: challenge.challengeSeed[0],
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
+              challengeId: challenge.id,
+              challengeType: challenge.challengeType
+            });
+          },
+&nbsp;
+          4: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            res.render('coursewares/showZiplineOrBasejump', {</span>
+              title: challenge.name,
+              dashedName: dashedName,
+              name: challenge.name,
+              details: challenge.description,
+              video: challenge.challengeSeed[0],
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
+              challengeId: challenge.id,
+              challengeType: challenge.challengeType
+            });
+          },
+&nbsp;
+          5: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >            res.render('coursewares/showBonfire', {</span>
+              completedWith: null,
+              title: challenge.name,
+              dashedName: dashedName,
+              name: challenge.name,
+              difficulty: Math.floor(+challenge.difficulty),
+              brief: challenge.description.shift(),
+              details: challenge.description,
+              tests: challenge.tests,
+              challengeSeed: challenge.challengeSeed,
+              verb: utils.randomVerb(),
+              phrase: utils.randomPhrase(),
+              compliment: utils.randomCompliment(),
+              bonfires: challenge,
+              challengeId: challenge.id,
+              MDNkeys: challenge.MDNlinks,
+              MDNlinks: getMDNlinks(challenge.MDNlinks),
+              challengeType: challenge.challengeType
+            });
+          }
+        };
+<span class="cstat-no" title="statement not covered" >        if (req.user) {</span>
+<span class="cstat-no" title="statement not covered" >          req.user.save(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >              return next(err);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return challengeType[challenge.challengeType]();</span>
+          });
+        } else {
+<span class="cstat-no" title="statement not covered" >          return challengeType[challenge.challengeType]();</span>
+        }
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function completedBonfire(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >    var isCompletedWith = req.body.challengeInfo.completedWith || '';</span>
+<span class="cstat-no" title="statement not covered" >    var isCompletedDate = Math.round(+new Date());</span>
+<span class="cstat-no" title="statement not covered" >    var challengeId = req.body.challengeInfo.challengeId;</span>
+<span class="cstat-no" title="statement not covered" >    var isSolution = req.body.challengeInfo.solution;</span>
+<span class="cstat-no" title="statement not covered" >    var challengeName = req.body.challengeInfo.challengeName;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (isCompletedWith) {</span>
+<span class="cstat-no" title="statement not covered" >      User.find({</span>
+        where: { 'profile.username': isCompletedWith.toLowerCase() },
+        limit: 1
+      }, <span class="fstat-no" title="function not covered" >function (err, pairedWith) {</span>
+<span class="cstat-no" title="statement not covered" >        if (err) { <span class="cstat-no" title="statement not covered" >return next(err); </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var index = req.user.uncompletedChallenges.indexOf(challengeId);</span>
+<span class="cstat-no" title="statement not covered" >        if (index &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >          req.user.progressTimestamps.push(Date.now() || 0);</span>
+<span class="cstat-no" title="statement not covered" >          req.user.uncompletedChallenges.splice(index, 1);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        pairedWith = pairedWith.pop();</span>
+<span class="cstat-no" title="statement not covered" >        if (pairedWith) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          index = pairedWith.uncompletedChallenges.indexOf(challengeId);</span>
+<span class="cstat-no" title="statement not covered" >          if (index &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >            pairedWith.progressTimestamps.push(Date.now() || 0);</span>
+<span class="cstat-no" title="statement not covered" >            pairedWith.uncompletedChallenges.splice(index, 1);</span>
+&nbsp;
+          }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          pairedWith.completedChallenges.push({</span>
+            id: challengeId,
+            name: challengeName,
+            completedWith: req.user.id,
+            completedDate: isCompletedDate,
+            solution: isSolution,
+            challengeType: 5
+          });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          req.user.completedChallenges.push({</span>
+            id: challengeId,
+            name: challengeName,
+            completedWith: pairedWith.id,
+            completedDate: isCompletedDate,
+            solution: isSolution,
+            challengeType: 5
+          });
+        }
+        // User said they paired, but pair wasn't found
+<span class="cstat-no" title="statement not covered" >        req.user.completedChallenges.push({</span>
+          id: challengeId,
+          name: challengeName,
+          completedWith: null,
+          completedDate: isCompletedDate,
+          solution: isSolution,
+          challengeType: 5
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        req.user.save(<span class="fstat-no" title="function not covered" >function (err, user) {</span></span>
+<span class="cstat-no" title="statement not covered" >          if (err) { <span class="cstat-no" title="statement not covered" >return next(err); </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (pairedWith) {</span>
+<span class="cstat-no" title="statement not covered" >            pairedWith.save(<span class="fstat-no" title="function not covered" >function (err, paired) {</span></span>
+<span class="cstat-no" title="statement not covered" >              if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                return next(err);</span>
+              }
+<span class="cstat-no" title="statement not covered" >              if (user &amp;&amp; paired) {</span>
+<span class="cstat-no" title="statement not covered" >                return res.send(true);</span>
+              }
+            });
+          } else <span class="cstat-no" title="statement not covered" >if (user) {</span>
+<span class="cstat-no" title="statement not covered" >            res.send(true);</span>
+          }
+        });
+      });
+    } else {
+<span class="cstat-no" title="statement not covered" >      req.user.completedChallenges.push({</span>
+        id: challengeId,
+        name: challengeName,
+        completedWith: null,
+        completedDate: isCompletedDate,
+        solution: isSolution,
+        challengeType: 5
+      });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var index = req.user.uncompletedChallenges.indexOf(challengeId);</span>
+<span class="cstat-no" title="statement not covered" >      if (index &gt; -1) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        req.user.progressTimestamps.push(Date.now() || 0);</span>
+<span class="cstat-no" title="statement not covered" >        req.user.uncompletedChallenges.splice(index, 1);</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      req.user.save(<span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) { <span class="cstat-no" title="statement not covered" >return next(err); </span>}</span>
+<span class="cstat-no" title="statement not covered" >        res.send(true);</span>
+      });
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function completedChallenge(req, res, next) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var isCompletedDate = Math.round(+new Date());</span>
+<span class="cstat-no" title="statement not covered" >    var challengeId = req.body.challengeInfo.challengeId;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    req.user.completedChallenges.push({</span>
+      id: challengeId,
+      completedDate: isCompletedDate,
+      name: req.body.challengeInfo.challengeName,
+      solution: null,
+      githubLink: null,
+      verified: true
+    });
+<span class="cstat-no" title="statement not covered" >    var index = req.user.uncompletedChallenges.indexOf(challengeId);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (index &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >      req.user.progressTimestamps.push(Date.now() || 0);</span>
+<span class="cstat-no" title="statement not covered" >      req.user.uncompletedChallenges.splice(index, 1);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    req.user.save(<span class="fstat-no" title="function not covered" >function (err, user) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) {</span>
+<span class="cstat-no" title="statement not covered" >        return next(err);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (user) {</span>
+<span class="cstat-no" title="statement not covered" >        res.sendStatus(200);</span>
+      }
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function completedZiplineOrBasejump(req, res, next) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var isCompletedWith = req.body.challengeInfo.completedWith || false;</span>
+<span class="cstat-no" title="statement not covered" >    var isCompletedDate = Math.round(+new Date());</span>
+<span class="cstat-no" title="statement not covered" >    var challengeId = req.body.challengeInfo.challengeId;</span>
+<span class="cstat-no" title="statement not covered" >    var solutionLink = req.body.challengeInfo.publicURL;</span>
+<span class="cstat-no" title="statement not covered" >    var githubLink = req.body.challengeInfo.challengeType === '4'</span>
+      ? req.body.challengeInfo.githubURL : true;
+<span class="cstat-no" title="statement not covered" >    var challengeType = req.body.challengeInfo.challengeType === '4' ?</span>
+      4 : 3;
+<span class="cstat-no" title="statement not covered" >    if (!solutionLink || !githubLink) {</span>
+<span class="cstat-no" title="statement not covered" >      req.flash('errors', {</span>
+        msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
+        'your work.'
+      });
+<span class="cstat-no" title="statement not covered" >      return res.sendStatus(403);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (isCompletedWith) {</span>
+<span class="cstat-no" title="statement not covered" >      User.find({</span>
+        where: { 'profile.username': isCompletedWith.toLowerCase() },
+        limit: 1
+      }, <span class="fstat-no" title="function not covered" >function (err, pairedWithFromMongo) {</span>
+<span class="cstat-no" title="statement not covered" >        if (err) { <span class="cstat-no" title="statement not covered" >return next(err); </span>}</span>
+<span class="cstat-no" title="statement not covered" >        var index = req.user.uncompletedChallenges.indexOf(challengeId);</span>
+<span class="cstat-no" title="statement not covered" >        if (index &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >          req.user.progressTimestamps.push(Date.now() || 0);</span>
+<span class="cstat-no" title="statement not covered" >          req.user.uncompletedChallenges.splice(index, 1);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        var pairedWith = pairedWithFromMongo.pop();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        req.user.completedChallenges.push({</span>
+          id: challengeId,
+          name: req.body.challengeInfo.challengeName,
+          completedWith: pairedWith.id,
+          completedDate: isCompletedDate,
+          solution: solutionLink,
+          githubLink: githubLink,
+          challengeType: challengeType,
+          verified: false
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        req.user.save(<span class="fstat-no" title="function not covered" >function (err, user) {</span></span>
+<span class="cstat-no" title="statement not covered" >          if (err) { <span class="cstat-no" title="statement not covered" >return next(err); </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (req.user.id.toString() === pairedWith.id.toString()) {</span>
+<span class="cstat-no" title="statement not covered" >            return res.sendStatus(200);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          index = pairedWith.uncompletedChallenges.indexOf(challengeId);</span>
+<span class="cstat-no" title="statement not covered" >          if (index &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >            pairedWith.progressTimestamps.push(Date.now() || 0);</span>
+<span class="cstat-no" title="statement not covered" >            pairedWith.uncompletedChallenges.splice(index, 1);</span>
+&nbsp;
+          }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          pairedWith.completedChallenges.push({</span>
+            id: challengeId,
+            name: req.body.challengeInfo.coursewareName,
+            completedWith: req.user.id,
+            completedDate: isCompletedDate,
+            solution: solutionLink,
+            githubLink: githubLink,
+            challengeType: challengeType,
+            verified: false
+          });
+<span class="cstat-no" title="statement not covered" >          pairedWith.save(<span class="fstat-no" title="function not covered" >function (err, paired) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >              return next(err);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (user &amp;&amp; paired) {</span>
+<span class="cstat-no" title="statement not covered" >              return res.sendStatus(200);</span>
+            }
+          });
+        });
+      });
+    } else {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      req.user.completedChallenges.push({</span>
+        id: challengeId,
+        name: req.body.challengeInfo.challengeName,
+        completedWith: null,
+        completedDate: isCompletedDate,
+        solution: solutionLink,
+        githubLink: githubLink,
+        challengeType: challengeType,
+        verified: false
+      });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var index = req.user.uncompletedChallenges.indexOf(challengeId);</span>
+<span class="cstat-no" title="statement not covered" >      if (index &gt; -1) {</span>
+<span class="cstat-no" title="statement not covered" >        req.user.progressTimestamps.push(Date.now() || 0);</span>
+<span class="cstat-no" title="statement not covered" >        req.user.uncompletedChallenges.splice(index, 1);</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      req.user.save(<span class="fstat-no" title="function not covered" >function (err, user) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >          return next(err);</span>
+        }
+        // NOTE(berks): under certain conditions this will not close
+        // the response.
+<span class="cstat-no" title="statement not covered" >        if (user) {</span>
+<span class="cstat-no" title="statement not covered" >          return res.sendStatus(200);</span>
+        }
+      });
+    }
+  }
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 11 2015 21:16:17 GMT-0400 (EDT)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
