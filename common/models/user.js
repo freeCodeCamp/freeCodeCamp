@@ -1,4 +1,6 @@
 var debug = require('debug')('freecc:user:remote');
+var blacklistedUsernames =
+  require('../../server/utils/constants').blacklistedUsernames;
 
 module.exports = function(User) {
   // NOTE(berks): user email validation currently not needed but build in. This
@@ -42,13 +44,6 @@ module.exports = function(User) {
     });
   });
 
-  User.beforeRemote('login', function(ctx, instance, next) {
-    debug('before called');
-
-    //debug(ctx, instance, next);
-    next();
-  });
-
   User.afterRemote('confirm', function(ctx, instance, next) {
     ctx.req.flash('success', {
       msg: [
@@ -59,7 +54,6 @@ module.exports = function(User) {
   });
 
   User.afterRemote('login', function(ctx, instance, next) {
-    debug('after called');
     var res = ctx.res;
     var req = ctx.req;
 
@@ -101,6 +95,18 @@ module.exports = function(User) {
           });
         });
       });
+      return res.redirect('/');
+    }
+
+    var config = {
+      signed: !!req.signedCookies,
+      maxAge: 1000 * accessToken.ttl
+    };
+    if (accessToken && accessToken.id) {
+      res.cookie('access_token', accessToken.id, config);
+      res.cookie('userId', accessToken.userId, config);
+    }
+    res.redirect('/');
   });
 
 
@@ -119,6 +125,12 @@ module.exports = function(User) {
       });
     }
     debug('checking existence');
+
+    // check to see if username is on blacklist
+    if (username && blacklistedUsernames.indexOf(username) !== -1) {
+      return cb(null, true);
+    }
+
     var where = {};
     if (username) {
       where.username = username.toLowerCase();

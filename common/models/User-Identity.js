@@ -4,7 +4,6 @@ var defaultProfileImage =
   require('../utils/constantStrings.json').defaultProfileImage;
 
 module.exports = function(UserIdent) {
-
  UserIdent.observe('before save', function(ctx, next) {
   var userIdent = ctx.currentInstance || ctx.instance;
   if (!userIdent) {
@@ -17,7 +16,6 @@ module.exports = function(UserIdent) {
       debug('no user attached to identity!');
       return next();
     }
-    debug('got user', user.username);
 
     var picture = userIdent.profile && userIdent.profile[0] ?
       userIdent.profile[0].value :
