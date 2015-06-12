@@ -1,11 +1,20 @@
 /* eslint-disable no-process-exit */
 require('dotenv').load();
-var assign = require('lodash/object/assign'),
-    Rx = require('rx'),
+var Rx = require('rx'),
+    uuid = require('node-uuid'),
+    assign = require('lodash/object/assign'),
     mongodb = require('mongodb'),
     secrets = require('../config/secrets');
 
 var MongoClient = mongodb.MongoClient;
+
+var providers = [
+  'facebook',
+  'twitter',
+  'google',
+  'github',
+  'linkedin'
+];
 
 function createConnection(URI) {
   return Rx.Observable.create(function(observer) {
@@ -48,6 +57,7 @@ function insertMany(db, collection, users, options) {
       if (err) {
         return observer.onError(err);
       }
+      observer.onNext();
       observer.onCompleted();
     });
   });
@@ -56,7 +66,8 @@ function insertMany(db, collection, users, options) {
 var count = 0;
 // will supply our db object
 var dbObservable = createConnection(secrets.db).shareReplay();
-dbObservable
+
+var users = dbObservable
   .flatMap(function(db) {
     // returns user document, n users per loop where n is the batchsize.
     return createQuery(db, 'users', {});
@@ -66,7 +77,17 @@ dbObservable
     assign(user, user.portfolio, user.profile);
     return user;
   })
-  // batch them into arrays of twenty documents
+  .map(function(user) {
+    if (user.username) {
+      return user;
+    }
+    user.username = 'fcc' + uuid.v4().slice(0, 8);
+    return user;
+  })
+  .shareReplay();
+
+// batch them into arrays of twenty documents
+var userSavesCount = users
   .bufferWithCount(20)
   // get bd object ready for insert
   .withLatestFrom(dbObservable, function(users, db) {
@@ -80,10 +101,45 @@ dbObservable
     return insertMany(dats.db, 'user', dats.users, { w: 1 });
   })
   // count how many times insert completes
-  .count()
+  .count();
+
+// create User Identities
+var userIdentityCount = users
+  .flatMap(function(user) {
+    var ids = providers
+      .map(function(provider) {
+        return {
+          provider: provider,
+          externalId: user[provider]
+        };
+      })
+      .filter(function(ident) {
+        return !!ident.externalId;
+      });
+
+    return Rx.Observable.from(ids);
+  })
+  .bufferWithCount(20)
+  .withLatestFrom(dbObservable, function(identities, db) {
+    return {
+      identities: identities,
+      db: db
+    };
+  })
+  .flatMap(function(dats) {
+    // bulk insert into new collection for loopback
+    return insertMany(dats.db, 'userIdentity', dats.identities, { w: 1 });
+  })
+  // count how many times insert completes
+  .count();
+
+Rx.Observable.merge(
+  userIdentityCount,
+  userSavesCount
+)
   .subscribe(
     function(_count) {
-      count = _count * 20;
+      count += _count * 20;
     },
     function(err) {
       console.log('an error occured', err);
