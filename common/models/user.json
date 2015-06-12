@@ -44,7 +44,8 @@
     "username": {
       "type": "string",
       "lowercase": true,
-      "trim": true
+      "trim": true,
+      "require": true
     },
     "bio": {
       "type": "string",
