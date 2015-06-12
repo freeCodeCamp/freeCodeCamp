@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for server/boot/challengeMap.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">server/boot/challengeMap.js</span></h1>
+    <h2>
+        Statements: <span class="metric">32.26% <small>(10 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">11.11% <small>(1 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">33.33% <small>(10 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">server/boot/</a> &#187; challengeMap.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var R = require('ramda'),
+  // debug = require('debug')('freecc:cntr:challengeMap'),
+  utils = require('./../utils'),
+  middleware = require('../utils/middleware');
+&nbsp;
+&nbsp;
+module.exports = function(app) {
+  var User = app.models.User;
+  var router = app.loopback.Router();
+&nbsp;
+  router.get('/map', middleware.userMigration, challengeMap);
+  router.get('/learn-to-code', <span class="fstat-no" title="function not covered" >function(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >    res.redirect(301, '/map');</span>
+  });
+  router.get('/about', <span class="fstat-no" title="function not covered" >function(req, res) {</span>
+<span class="cstat-no" title="statement not covered" >    res.redirect(301, '/map');</span>
+  });
+&nbsp;
+  app.use(router);
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function challengeMap(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >    var completedList = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (req.user) {</span>
+<span class="cstat-no" title="statement not covered" >      completedList = req.user.completedChallenges;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var noDuplicatedChallenges = R.uniq(completedList);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var completedChallengeList = noDuplicatedChallenges</span>
+      .map(<span class="fstat-no" title="function not covered" >function(challenge) {</span>
+<span class="cstat-no" title="statement not covered" >        return challenge.id;</span>
+      });
+<span class="cstat-no" title="statement not covered" >    var challengeList = utils.</span>
+      getChallengeMapForDisplay(completedChallengeList);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    Object.keys(challengeList).forEach(<span class="fstat-no" title="function not covered" >function(key) {</span></span>
+<span class="cstat-no" title="statement not covered" >      challengeList[key].completed = challengeList[key]</span>
+        .challenges.filter(<span class="fstat-no" title="function not covered" >function(elem) {</span>
+<span class="cstat-no" title="statement not covered" >        return completedChallengeList.indexOf(elem.id) &gt; -1;</span>
+      });
+    });
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function numberWithCommas(x) {</span>
+<span class="cstat-no" title="statement not covered" >      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var date1 = new Date('10/15/2014');</span>
+<span class="cstat-no" title="statement not covered" >    var date2 = new Date();</span>
+<span class="cstat-no" title="statement not covered" >    var timeDiff = Math.abs(date2.getTime() - date1.getTime());</span>
+<span class="cstat-no" title="statement not covered" >    var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    User.count(<span class="fstat-no" title="function not covered" >function(err, camperCount) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) { <span class="cstat-no" title="statement not covered" >return next(err); </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      res.render('challengeMap/show', {</span>
+        daysRunning: daysRunning,
+        camperCount: numberWithCommas(camperCount),
+        title: "A map of all Free Code Camp's Challenges",
+        challengeList: challengeList,
+        completedChallengeList: completedChallengeList
+      });
+    });
+  }
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 11 2015 21:16:17 GMT-0400 (EDT)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

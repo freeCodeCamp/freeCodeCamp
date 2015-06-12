@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/models/user.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">common/models/user.js</span></h1>
+    <h2>
+        Statements: <span class="metric">16.67% <small>(11 / 66)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">8.33% <small>(1 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">17.19% <small>(11 / 64)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">common/models/</a> &#187; user.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var debug = require('debug')('freecc:user:remote');
+var blacklistedUsernames =
+  require('../../server/utils/constants').blacklistedUsernames;
+&nbsp;
+module.exports = function(User) {
+  // NOTE(berks): user email validation currently not needed but build in. This
+  // work around should let us sneak by
+  // see:
+  // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
+  delete User.validations.email;
+  debug('setting up user hooks');
+  // send verification email to new camper
+  User.afterRemote('create', <span class="fstat-no" title="function not covered" >function(ctx, user, next) {</span>
+<span class="cstat-no" title="statement not covered" >    debug('user created, sending email');</span>
+<span class="cstat-no" title="statement not covered" >    if (!user.email) { <span class="cstat-no" title="statement not covered" >return next(); </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var mailOptions = {</span>
+      type: 'email',
+      to: user.email,
+      from: 'Team@freecodecamp.com',
+      subject: 'Welcome to Free Code Camp!',
+      redirect: '/',
+      text: [
+        'Greetings from San Francisco!\n\n',
+        'Thank you for joining our community.\n',
+        'Feel free to email us at this address if you have ',
+        'any questions about Free Code Camp.\n',
+        'And if you have a moment, check out our blog: ',
+        'blog.freecodecamp.com.\n',
+        'Good luck with the challenges!\n\n',
+        '- the Free Code Camp Volunteer Team'
+      ].join('')
+    };
+<span class="cstat-no" title="statement not covered" >    user.verify(mailOptions, <span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (err) { <span class="cstat-no" title="statement not covered" >return next(err); </span>}</span>
+<span class="cstat-no" title="statement not covered" >      debug('verification email sent');</span>
+<span class="cstat-no" title="statement not covered" >      ctx.req.flash('success', {</span>
+        msg: [
+          'Please check your email and click on the verification link '
+          + 'before logging in.'
+        ]
+      });
+<span class="cstat-no" title="statement not covered" >      ctx.res.redirect('/');</span>
+    });
+  });
+&nbsp;
+  User.afterRemote('confirm', <span class="fstat-no" title="function not covered" >function(ctx) {</span>
+<span class="cstat-no" title="statement not covered" >    ctx.req.flash('success', {</span>
+      msg: [
+        'You\'re email has been confirmed!'
+      ]
+    });
+<span class="cstat-no" title="statement not covered" >    ctx.res.redirect('/email-signin');</span>
+  });
+&nbsp;
+  User.afterRemote('login', <span class="fstat-no" title="function not covered" >function(ctx, instance, next) {</span>
+<span class="cstat-no" title="statement not covered" >    var res = ctx.res;</span>
+<span class="cstat-no" title="statement not covered" >    var req = ctx.req;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    User.findOne({where: {email: ctx.args.credentials.email}},</span>
+<span class="fstat-no" title="function not covered" >      function(err, response) {</span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >          return next(err);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (response.emailVerified !== true) {</span>
+<span class="cstat-no" title="statement not covered" >          return res.redirect('/');</span>
+        }
+<span class="cstat-no" title="statement not covered" >        User.login({</span>
+          email: ctx.args.credentials.email,
+          password: ctx.args.credentials.password,
+          ttl: Infinity
+        }, <span class="fstat-no" title="function not covered" >function(err, accessToken) {</span>
+<span class="cstat-no" title="statement not covered" >          if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            req.flash('errors', {</span>
+              msg: [
+                'Invalid username or password.'
+              ]
+            });
+<span class="cstat-no" title="statement not covered" >            return res.redirect('/');</span>
+          }
+<span class="cstat-no" title="statement not covered" >          var config = {</span>
+            signed: !!req.signedCookies,
+            maxAge: accessToken.ttl
+          };
+<span class="cstat-no" title="statement not covered" >          if (accessToken &amp;&amp; accessToken.id) {</span>
+<span class="cstat-no" title="statement not covered" >            res.cookie('access_token', accessToken.id, config);</span>
+<span class="cstat-no" title="statement not covered" >            res.cookie('userId', accessToken.userId, config);</span>
+          }
+<span class="cstat-no" title="statement not covered" >          req.logIn(response, <span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) {</span>
+<span class="cstat-no" title="statement not covered" >              return next(err);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            req.flash('success', { msg: 'Success! You are logged in.' });</span>
+<span class="cstat-no" title="statement not covered" >            return res.redirect('/');</span>
+          });
+        });
+      });
+<span class="cstat-no" title="statement not covered" >    return res.redirect('/');</span>
+  });
+&nbsp;
+  User.afterRemote('logout', <span class="fstat-no" title="function not covered" >function(ctx, result, next) {</span>
+<span class="cstat-no" title="statement not covered" >    var res = ctx.result;</span>
+<span class="cstat-no" title="statement not covered" >    res.clearCookie('access_token');</span>
+<span class="cstat-no" title="statement not covered" >    res.clearCookie('userId');</span>
+<span class="cstat-no" title="statement not covered" >    next();</span>
+  });
+&nbsp;
+  User.doesExist = <span class="fstat-no" title="function not covered" >function doesExist(username, email, cb) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!username &amp;&amp; !email) {</span>
+<span class="cstat-no" title="statement not covered" >      return process.nextTick(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >        cb(null, false);</span>
+      });
+    }
+<span class="cstat-no" title="statement not covered" >    debug('checking existence');</span>
+&nbsp;
+    // check to see if username is on blacklist
+<span class="cstat-no" title="statement not covered" >    if (username &amp;&amp; blacklistedUsernames.indexOf(username) !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >      return cb(null, true);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var where = {};</span>
+<span class="cstat-no" title="statement not covered" >    if (username) {</span>
+<span class="cstat-no" title="statement not covered" >      where.username = username.toLowerCase();</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      where.email = email ? email.toLowerCase() : email;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    debug('where', where);</span>
+<span class="cstat-no" title="statement not covered" >    User.count(</span>
+      where,
+<span class="fstat-no" title="function not covered" >      function (err, count) {</span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >          debug('err checking existance: ', err);</span>
+<span class="cstat-no" title="statement not covered" >          return cb(err);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (count &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >          return cb(null, true);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return cb(null, false);</span>
+      }
+    );
+  };
+&nbsp;
+  User.remoteMethod(
+    'doesExist',
+    {
+      description: 'checks whether a user exists using email or username',
+      accepts: [
+        {
+          arg: 'username',
+          type: 'string'
+        },
+        {
+          arg: 'email',
+          type: 'string'
+        }
+      ],
+      returns: [
+        {
+          arg: 'exists',
+          type: 'boolean'
+        }
+      ],
+      http: {
+        path: '/exists',
+        verb: 'get'
+      }
+    }
+  );
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 11 2015 21:16:17 GMT-0400 (EDT)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,50 +1,45 @@
 var request = require('supertest');
 var app = require('../server/server.js');
 
-describe('GET /', function() {
-  it('should return 200 OK', function(done) {
-    request(app)
-      .get('/')
-      .expect(200, done);
-  });
-});
+describe('#ROUTES', function() {
 
-describe('GET /signin', function() {
-  it('should return 200 OK', function(done) {
-    request(app)
-      .get('/login')
-      .expect(200, done);
+  describe('GET /', function () {
+    it('should return 200 OK', function (done) {
+      request(app)
+        .get('/')
+        .expect(200, done);
+    });
   });
-});
 
-describe('GET /signup', function() {
-  it('should return 200 OK', function(done) {
-    request(app)
-      .get('/signup')
-      .expect(200, done);
+  describe('GET /signin', function () {
+    it('should return 200 OK', function (done) {
+      request(app)
+        .get('/signin')
+        .expect(200, done);
+    });
   });
-});
 
-describe('GET /api', function() {
-  it('should return 200 OK', function(done) {
-    request(app)
-      .get('/api')
-      .expect(200, done);
+  describe('GET /email-signup', function () {
+    it('should return 200 OK', function (done) {
+      request(app)
+        .get('/email-signup')
+        .expect(200, done);
+    });
   });
-});
 
-describe('GET /contact', function() {
-  it('should return 200 OK', function(done) {
-    request(app)
-      .get('/contact')
-      .expect(200, done);
+  describe('GET /random-url', function () {
+    it('should return 302', function (done) {
+      request(app)
+        .get('/reset')
+        .expect(302, done);
+    });
   });
-});
 
-describe('GET /random-url', function() {
-  it('should return 404', function(done) {
-    request(app)
-      .get('/reset')
-      .expect(404, done);
+  describe('Get /camperName', function () {
+    it('should return 200', function (done) {
+      request(app)
+        .get('/terakilobyte')
+        .expect(200, done);
+    });
   });
 });
