@@ -44,7 +44,8 @@
     "username": {
       "type": "string",
       "lowercase": true,
-      "trim": true
+      "trim": true,
+      "id": true
     },
     "bio": {
       "type": "string",
@@ -226,7 +227,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "credentials": {
+      "type": "hasMany",
+      "model": "userCredential",
+      "foreignKey": ""
+    },
+    "identities": {
+      "type": "hasMany",
+      "model": "userIdentity",
+      "foreignKey": ""
+    }
+  },
   "acls": [
     {
       "accessType": "*",
@@ -242,5 +254,5 @@
       "property": "doesExist"
     }
   ],
-  "methods": ["login"]
+  "methods": []
 }

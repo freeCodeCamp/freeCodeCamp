@@ -8,6 +8,8 @@ module.exports = function(User) {
   // see:
   // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
   delete User.validations.email;
+  // set salt factor for passwords
+  User.settings.saltWorkFactor = 5;
   debug('setting up user hooks');
   // send verification email to new camper
   User.afterRemote('create', function(ctx, user, next) {
