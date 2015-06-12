@@ -44,7 +44,7 @@ module.exports = function(User) {
     });
   });
 
-  User.afterRemote('confirm', function(ctx, instance, next) {
+  User.afterRemote('confirm', function(ctx) {
     ctx.req.flash('success', {
       msg: [
         'You\'re email has been confirmed!'
@@ -95,21 +95,8 @@ module.exports = function(User) {
           });
         });
       });
-      return res.redirect('/');
-    }
-
-    var config = {
-      signed: !!req.signedCookies,
-      maxAge: 1000 * accessToken.ttl
-    };
-    if (accessToken && accessToken.id) {
-      res.cookie('access_token', accessToken.id, config);
-      res.cookie('userId', accessToken.userId, config);
-    }
-    res.redirect('/');
+    return res.redirect('/');
   });
-
-
 
   User.afterRemote('logout', function(ctx, result, next) {
     var res = ctx.result;
