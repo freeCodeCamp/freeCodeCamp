@@ -3,32 +3,46 @@ var debug = require('debug')('freecc:models:userIdent');
 var defaultProfileImage =
   require('../utils/constantStrings.json').defaultProfileImage;
 
+function getFirstImageFromProfile(profile) {
+  return profile && profile.photos && profile.photos[0] ?
+    profile.photos[0].value :
+    null;
+}
 module.exports = function(UserIdent) {
-
  UserIdent.observe('before save', function(ctx, next) {
-  var userIdent = ctx.currentInstance;
-  // treat userIdent as immutable
+  var userIdent = ctx.currentInstance || ctx.instance;
+  if (!userIdent) {
+    debug('no user identity instance found');
+    return next();
+  }
   userIdent.user(function(err, user) {
     if (err) { return next(err); }
-    debug('got user', user.username);
+    if (!user) {
+      debug('no user attached to identity!');
+      return next();
+    }
 
-    var picture = userIdent.profile && userIdent.profile[0] ?
-      userIdent.profile[0].value :
-      null;
+    var picture = getFirstImageFromProfile(userIdent.profile);
 
-    // check if user has picture
-    //  set user.picture from twitter
-    if (picture && !user.picture || user.picture === defaultProfileImage) {
-      debug('use has no pic');
+    debug('picture', picture, user.picture);
+    // check if picture was found
+    // check if user has no picture
+    // check if user has default picture
+    // set user.picture from oauth provider
+    if (
+      picture &&
+      (!user.picture || user.picture === defaultProfileImage)
+    ) {
+      debug('setting user picture');
       user.picture = userIdent.profile.photos[0].value;
-      user.save(function(err) {
+      return user.save(function(err) {
         if (err) { return next(err); }
         next();
       });
-    } else {
-      debug('exiting after user ident');
-      next();
     }
+
+    debug('exiting after user ident');
+    next();
   });
  });
 };

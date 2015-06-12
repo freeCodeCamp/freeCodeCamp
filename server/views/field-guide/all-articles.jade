@@ -1,5 +1,8 @@
 extends ../layout
 block content
+    script.
+        var completed = !{JSON.stringify(completedFieldGuides)}
+        var all = !{JSON.stringify(allFieldGuideNamesAndIds)}
     .col-xs-12.col-sm-12.col-md-12
         .panel.panel-info
             .panel-heading.text-center Read our Field Guide in any order

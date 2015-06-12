@@ -1,6 +1,6 @@
 [
   {
-    "_id": "bd7158d9c441eddfaeb5bdef",
+    "id": "bd7158d9c441eddfaeb5bdef",
     "name": "How do I use this guide?",
     "dashedName": "how-do-i-use-this-guide",
     "description": [
@@ -12,7 +12,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c441eddfaeb5bdff",
+    "id": "bd7158d9c441eddfaeb5bdff",
     "name": "What exactly is Free Code Camp?",
     "dashedName": "what-exactly-is-free-code-camp",
     "description": [
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c441eddfaeb5bd1f",
+    "id": "bd7158d9c441eddfaeb5bd1f",
     "name": "Why do I need Free Code Camp?",
     "dashedName": "why-do-i-need-free-code-camp",
     "description": [
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c441eddfaeb5bd2f",
+    "id": "bd7158d9c441eddfaeb5bd2f",
     "name": "What are the main advantages of Free Code Camp?",
     "dashedName": "what-are-the-main-advantages-of-free-code-camp",
     "description": [
@@ -65,7 +65,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c441eddfaeb5bd3f",
+    "id": "bd7158d9c441eddfaeb5bd3f",
     "name": "How does Free Code Camp work?",
     "dashedName": "how-does-free-code-camp-work",
     "description": [
@@ -87,7 +87,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c441eddfaeb5bd4f",
+    "id": "bd7158d9c441eddfaeb5bd4f",
     "name": "Will I really be able to get software engineering job after Free Code Camp?",
     "dashedName": "will-i-really-be-able-to-get-a-software-engineering-job-after-free-code-camp",
     "description": [
@@ -107,7 +107,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c440eddfaeb5bdef",
+    "id": "bd7158d9c440eddfaeb5bdef",
     "name": "What will I learn, and in what sequence?",
     "dashedName": "what-will-i-learn-and-in-what-sequence",
     "description": [
@@ -144,7 +144,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c434eddfaeb5bdef",
+    "id": "bd7158d9c434eddfaeb5bdef",
     "name": "How long does Free Code Camp take?",
     "dashedName": "how-long-does-free-code-camp-take",
     "description": [
@@ -182,7 +182,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c438eddfaeb5bdef",
+    "id": "bd7158d9c438eddfaeb5bdef",
     "name": "Why does Free Code Camp use JavaScript instead of Ruby or Python?",
     "dashedName": "why-does-free-code-camp-use-javascript-instead-of-ruby-or-python",
     "description": [
@@ -196,7 +196,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c437eddfaeb5bdef",
+    "id": "bd7158d9c437eddfaeb5bdef",
     "name": "What is pair programming, and why is it special?",
     "dashedName": "what-is-pair-programming-and-why-is-it-special",
     "description": [
@@ -209,7 +209,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd2f",
+    "id": "bd7158d9c436eddfaeb5bd2f",
     "name": "How do I get help when I get stuck?",
     "dashedName": "how-do-i-get-help-when-i-get-stuck",
     "description": [
@@ -232,7 +232,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd3f",
+    "id": "bd7158d9c436eddfaeb5bd3f",
     "name": "Can I jump around in this guide?",
     "dashedName": "can-i-jump-around-in-this-guide",
     "description": [
@@ -244,7 +244,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bdef",
+    "id": "bd7158d9c436eddfaeb5bdef",
     "name": "If Free Code Camp is free, how does it make money?",
     "dashedName": "if-free-code-camp-is-free-how-does-it-make-money",
     "description": [
@@ -257,7 +257,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c435eddfaeb5bdef",
+    "id": "bd7158d9c435eddfaeb5bdef",
     "name": "Does Free Code Camp have an application process?",
     "dashedName": "does-free-code-camp-have-an-application-process",
     "description": [
@@ -269,7 +269,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd3b",
+    "id": "bd7158d9c436eddfaeb5bd3b",
     "name": "How can I stream my live coding sessions on Free Code Camp's Twitch.tv channel?",
     "dashedName": "how-can-i-stream-my-live-coding-sessions-on-free-code-camps-twitch-tv-channel",
     "description": [
@@ -290,7 +290,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd3d",
+    "id": "bd7158d9c436eddfaeb5bd3d",
     "name": "How can I find other Free Code Camp campers in my city?",
     "dashedName": "how-can-i-find-other-free-code-camp-campers-in-my-city",
     "description": [
@@ -502,17 +502,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd3e",
-    "name": "Does Free Code Camp have an alumni network?",
-    "dashedName": "does-free-code-camp-have-an-alumni-network",
-    "description": [
-      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
-      "  <h3>We have a growing <a href='https://www.linkedin.com/grp/home?gid=6966827' target='_blank'>alumni network on LinkedIn</a>. Once you've finished Free Code Camp and have gotten a coding job, we'd love to include you in this group, too!</h3>",
-      "</div>"
-    ]
-  },
-  {
-    "_id": "bd7158d9c442eddfaeb5bdef",
+    "id": "bd7158d9c442eddfaeb5bdef",
     "name": "How do I best use the Global Control Shortcuts for Mac?",
     "dashedName": "how-do-i-best-use-the-global-control-shortcuts-for-mac",
     "description": [
@@ -537,7 +527,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c445eddfaeb5bdef",
+    "id": "bd7158d9c445eddfaeb5bdef",
     "name": "How can I get to Inbox Zero with Gmail shortcuts?",
     "dashedName": "how-can-i-get-to-inbox-zero-with-gmail-shortcuts",
     "description": [
@@ -566,7 +556,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c445eddfaeb5bdff",
+    "id": "bd7158d9c445eddfaeb5bdff",
     "name": "How can I deploy a website without writing any code at all?",
     "dashedName": "how-can-i-deploy-a-website-without-writing-any-code-at-all",
     "description": [
@@ -589,7 +579,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c446eddfaeb5bdef",
+    "id": "bd7158d9c446eddfaeb5bdef",
     "name": "How do Free Code Camp's Nonprofit Projects work?",
     "dashedName": "how-do-free-code-camps-nonprofit-projects-work",
     "description": [
@@ -664,7 +654,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c447eddfaeb5bdef",
+    "id": "bd7158d9c447eddfaeb5bdef",
     "name": "How do I install Screenhero?",
     "dashedName": "how-do-i-install-screenhero",
     "description": [
@@ -676,7 +666,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c451eddfaeb5bded",
+    "id": "bd7158d9c451eddfaeb5bded",
     "name": "What is the style guide for Bonfires?",
     "dashedName": "what-is-the-style-guide-for-bonfires",
     "description": [
@@ -712,7 +702,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c451eddfaeb5bdee",
+    "id": "bd7158d9c451eddfaeb5bdee",
     "name": "What is the Free Code Camp Code of Conduct?",
     "dashedName": "what-is-the-free-code-camp-code-of-conduct",
     "description": [
@@ -737,7 +727,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c451eddfaeb5bdef",
+    "id": "bd7158d9c451eddfaeb5bdef",
     "name": "What is the Free Code Camp Privacy Policy?",
     "dashedName": "what-is-the-free-code-camp-privacy-policy",
     "description": [
@@ -779,7 +769,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5bd3c",
+    "id": "bd7158d9c436eddfaeb5bd3c",
     "name": "How can I reach the Free Code Camp team to interview them for my publication?",
     "dashedName": "how-can-i-reach-the-free-code-camp-team-to-interview-them-for-my-publication",
     "description": [
@@ -798,7 +788,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfaeb5dd3b",
+    "id": "bd7158d9c436eddfaeb5dd3b",
     "name": "What other resources does Free Code Camp recommend to nonprofits?",
     "dashedName": "what-other-resources-does-free-code-camp-recommend-to-nonprofits",
     "description": [
@@ -840,7 +830,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfadb5bd3e",
+    "id": "bd7158d9c436eddfadb5bd3e",
     "name": "How can I contribute to this guide?",
     "dashedName": "how-can-i-contribute-to-this-guide",
     "description": [
@@ -856,7 +846,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfadb5bd32",
+    "id": "bd7158d9c436eddfadb5bd32",
     "name": "How can I help the Free Code Camp translation effort?",
     "dashedName": "how-can-i-help-the-free-code-camp-translation-effort",
     "description": [
@@ -867,7 +857,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfadb5bd31",
+    "id": "bd7158d9c436eddfadb5bd31",
     "name": "What if I speak a language that Free Code Camp does not yet support?",
     "dashedName": "what-if-i-speak-a-language-that-free-code-camp-does-not-yet-support",
     "description": [
@@ -880,7 +870,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfadb5bd30",
+    "id": "bd7158d9c436eddfadb5bd30",
     "name": "Can I do Free Code Camp completely in my native language?",
     "dashedName": "can-i-do-free-code-camp-completely-in-my-native-language",
     "description": [
@@ -893,7 +883,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfadb5bd3c",
+    "id": "bd7158d9c436eddfadb5bd3c",
     "name": "What is the new Free Code Camp Mobile Experience?",
     "dashedName": "what-is-the-new-free-code-camp-mobile-experience",
     "description": [
@@ -910,7 +900,7 @@
     ]
   },
   {
-    "_id": "bd7158d9c436eddfadb5bd3b",
+    "id": "bd7158d9c436eddfadb5bd3b",
     "name": "What is the Free Code Camp Front End Development Certificate?",
     "dashedName": "what-is-the-free-code-camp-front-end-development-certificate",
     "description": [
