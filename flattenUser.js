@@ -114,7 +114,8 @@ var userIdentityCount = users
       .map(function(provider) {
         return {
           provider: provider,
-          externalId: user[provider]
+          externalId: user[provider],
+          userId: user.id
         };
       })
       .filter(function(ident) {
