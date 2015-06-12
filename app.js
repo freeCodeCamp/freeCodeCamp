@@ -239,6 +239,8 @@ app.get('/chat', resourcesController.chat);
 
 app.get('/twitch', resourcesController.twitch);
 
+app.get('/calculator', resourcesController.calculator);
+
 app.get('/cats.json', function(req, res) {
   res.send(
     [

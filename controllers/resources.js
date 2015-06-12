@@ -283,6 +283,12 @@ module.exports = {
     });
   },
 
+  calculator: function calculator(req, res) {
+    res.render('resources/calculator', {
+      title: "Coding Bootcamp Cost Calculator"
+    });
+  },
+
   unsubscribe: function unsubscribe(req, res, next) {
     User.findOne({ email: req.params.email }, function(err, user) {
       if (user) {
