@@ -11,10 +11,10 @@ module.exports = function(User) {
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
 
-  User.validatesExclusionOf('username', {
-    inArray: blacklistedUsernames,
-    message: 'username is taken'
-  });
+  //User.validatesExclusionOf('username', {
+  //  inArray: blacklistedUsernames,
+  //  message: 'username is taken'
+  //});
 
   debug('setting up user hooks');
   // send verification email to new camper

@@ -36,11 +36,14 @@ function createQuery(db, collection, options, batchSize) {
     // or schedule getting next batch on nextTick
     cursor.each(function (err, doc) {
       if (err) {
+        console.log(err);
         return observer.onError(err);
       }
       if (!doc) {
+        console.log('hit complete');
         return observer.onCompleted();
       }
+      console.log('calling onnext');
       observer.onNext(doc);
     });
 
@@ -98,6 +101,7 @@ var userSavesCount = users
   })
   .flatMap(function(dats) {
     // bulk insert into new collection for loopback
+    console.log(dats);
     return insertMany(dats.db, 'user', dats.users, { w: 1 });
   })
   // count how many times insert completes
@@ -142,7 +146,7 @@ Rx.Observable.merge(
       count += _count * 20;
     },
     function(err) {
-      console.log('an error occured', err);
+      console.log('an error occured', err, err.stack);
     },
     function() {
       console.log('finished with %s documents processed', count);
