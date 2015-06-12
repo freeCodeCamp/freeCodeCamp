@@ -44,33 +44,63 @@ module.exports = function(User) {
 
   User.beforeRemote('login', function(ctx, instance, next) {
     debug('before called');
-    debug(ctx, instance, next);
+
+    //debug(ctx, instance, next);
     next();
   });
 
+  User.afterRemote('confirm', function(ctx, instance, next) {
+    ctx.req.flash('success', {
+      msg: [
+        'You\'re email has been confirmed!'
+      ]
+    });
+    ctx.res.redirect('/email-signin');
+  });
+
   User.afterRemote('login', function(ctx, instance, next) {
+    debug('after called');
     var res = ctx.res;
     var req = ctx.req;
 
-    if (!instance || instance.emailVerified !== true) {
-      debug(instance);
-      req.flash('errors', {
-        msg: [
-          'Please verify your email address.'
-        ]
+    User.findOne({where: {email: ctx.args.credentials.email}},
+      function(err, response) {
+        if (err) {
+          return next(err);
+        }
+        if (response.emailVerified !== true) {
+          return res.redirect('/');
+        }
+        User.login({
+          email: ctx.args.credentials.email,
+          password: ctx.args.credentials.password,
+          ttl: Infinity
+        }, function(err, accessToken) {
+          if (err) {
+            req.flash('errors', {
+              msg: [
+                'Invalid username or password.'
+              ]
+            });
+            return res.redirect('/');
+          }
+          var config = {
+            signed: !!req.signedCookies,
+            maxAge: accessToken.ttl
+          };
+          if (accessToken && accessToken.id) {
+            res.cookie('access_token', accessToken.id, config);
+            res.cookie('userId', accessToken.userId, config);
+          }
+          req.logIn(response, function(err) {
+            if (err) {
+              return next(err);
+            }
+            req.flash('success', { msg: 'Success! You are logged in.' });
+            return res.redirect('/');
+          });
+        });
       });
-      return res.redirect('/');
-    }
-
-    var config = {
-      signed: !!req.signedCookies,
-      maxAge: 1000 * accessToken.ttl
-    };
-    if (accessToken && accessToken.id) {
-      res.cookie('access_token', accessToken.id, config);
-      res.cookie('userId', accessToken.userId, config);
-    }
-    res.redirect('/');
   });
 
 
