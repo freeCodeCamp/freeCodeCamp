@@ -966,7 +966,8 @@
         "expect(fearNotLetter('yz')).to.be.undefined;"
       ],
       "MDNlinks": [
-        "String.charCodeAt()"
+        "String.charCodeAt()",
+        "String.fromCharCode()"
       ],
       "challengeType": 5,
       "nameCn": "",
