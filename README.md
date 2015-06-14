@@ -6,6 +6,9 @@
 Welcome to Free Code Camp's open source codebase!
 =======================
 
+#Note
+We're currently very close to moving from express to loopback. As such, please keep in mind that the instructions here for setting up and running the project do not directly translate to the staging branch. Additionally, the file structure is quite a bit different. As always, the staging branch is the appropriate place to branch off of to fix/add something!
+
 Free Code Camp is an open-source community of busy people who learn to code, then build projects for nonprofits. 
 
 Our campers (students) start by working through our free, self-paced, browser-based curriculum. Next, they build several practice projects. Finally, we pair two campers together with a stakeholder from a nonprofit organization, and help them build the solution the nonprofit has requested.
