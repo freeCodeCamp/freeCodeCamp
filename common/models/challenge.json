@@ -8,6 +8,9 @@
       "type": "string",
       "unique": true
     },
+    "dashedName": {
+      "type": "string"
+    },
     "difficulty": {
       "type": "string"
     },
