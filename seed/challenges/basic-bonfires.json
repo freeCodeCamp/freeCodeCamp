@@ -5,6 +5,7 @@
     {
       "id": "bd7139d8c441eddfaeb5bdef",
       "name": "Waypoint: Pair Program on Bonfires",
+      "dashedName": "waypoint-pair-program-on-bonfires",
       "difficulty": 0.44,
       "challengeSeed": ["119657641"],
       "description": [
@@ -42,6 +43,7 @@
     {
       "id": "ad7123c8c441eddfaeb5bdef",
       "name": "Bonfire: Meet Bonfire",
+      "dashedName": "bonfire-meet-bonfire",
       "difficulty": "0",
       "description": [
         "Click the button below for further instructions.",
@@ -81,6 +83,7 @@
     {
       "id": "a202eed8fc186c8434cb6d61",
       "name": "Bonfire: Reverse a String",
+      "dashedName": "bonfire-reverse-a-string",
       "difficulty": "1.01",
       "tests": [
         "expect(reverseString('hello')).to.be.a('String');",
@@ -122,6 +125,7 @@
     {
       "id": "a302f7aae1aa3152a5b413bc",
       "name": "Bonfire: Factorialize a Number",
+      "dashedName": "bonfire-factorialize-a-number",
       "tests": [
         "expect(factorialize(5)).to.be.a(\"Number\");",
         "expect(factorialize(5)).to.equal(120);",
@@ -161,6 +165,7 @@
     {
       "id": "aaa48de84e1ecc7c742e1124",
       "name": "Bonfire: Check for Palindromes",
+      "dashedName": "bonfire-check-for-palindromes",
       "difficulty": "1.03",
       "description": [
         "Return true if the given string is a palindrome. Otherwise, return false.",
@@ -207,6 +212,7 @@
     {
       "id": "a26cbbe9ad8655a977e1ceb5",
       "name": "Bonfire: Find the Longest Word in a String",
+      "dashedName": "bonfire-find-the-longest-word-in-a-string",
       "difficulty": "1.04",
       "description": [
         "Return the length of the longest word in the provided sentence.",
@@ -246,6 +252,7 @@
     {
       "id": "ab6137d4e35944e21037b769",
       "name": "Bonfire: Title Case a Sentence",
+      "dashedName": "bonfire-title-case-a-sentence",
       "difficulty": "1.05",
       "description": [
         "Return the provided string with the first letter of each word capitalized.",
@@ -283,6 +290,7 @@
     {
       "id": "a789b3483989747d63b0e427",
       "name": "Bonfire: Return Largest Numbers in Arrays",
+      "dashedName": "bonfire-return-largest-numbers-in-arrays",
       "difficulty": "1.06",
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
@@ -321,6 +329,7 @@
     {
       "id": "acda2fb1324d9b0fa741e6b5",
       "name": "Bonfire: Confirm the Ending",
+      "dashedName": "bonfire-confirm-the-ending",
       "difficulty": "1.07",
       "description": [
         "Check if a string (first argument) ends with the given target string (second argument).",
@@ -360,6 +369,7 @@
     {
       "id": "afcc8d540bea9ea2669306b6",
       "name": "Bonfire: Repeat a string repeat a string",
+      "dashedName": "bonfire-repeat-a-string-repeat-a-string",
       "difficulty": "1.08",
       "description": [
         "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number.",
@@ -396,6 +406,7 @@
     {
       "id": "ac6993d51946422351508a41",
       "name": "Bonfire: Truncate a string",
+      "dashedName": "bonfire-truncate-a-string",
       "difficulty": "1.09",
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
@@ -433,6 +444,7 @@
     {
       "id": "a9bd25c716030ec90084d8a1",
       "name": "Bonfire: Chunky Monkey",
+      "dashedName": "bonfire-chunky-monkey",
       "difficulty": "1.10",
       "description": [
         "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.",
@@ -470,6 +482,7 @@
     {
       "id": "ab31c21b530c0dafa9e241ee",
       "name": "Bonfire: Slasher Flick",
+      "dashedName": "bonfire-slasher-flick",
       "difficulty": "1.11",
       "description": [
         "Return the remaining elements of an array after chopping off n elements from the head.",
@@ -507,6 +520,7 @@
     {
       "id": "af2170cad53daa0770fabdea",
       "name": "Bonfire: Mutations",
+      "dashedName": "bonfire-mutations",
       "difficulty": "1.12",
       "description": [
         "Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.",
@@ -549,6 +563,7 @@
     {
       "id": "adf08ec01beb4f99fc7a68f2",
       "name": "Bonfire: Falsey Bouncer",
+      "dashedName": "bonfire-falsey-bouncer",
       "difficulty": "1.50",
       "description": [
         "Remove all falsey values from an array.",
@@ -587,6 +602,7 @@
     {
       "id": "a8e512fbe388ac2f9198f0fa",
       "name": "Bonfire: Where art thou",
+      "dashedName": "bonfire-where-art-thou",
       "difficulty": "1.55",
       "description": [
         "Make a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument).",
@@ -625,6 +641,7 @@
     {
       "id": "a39963a4c10bc8b4d4f06d7e",
       "name": "Bonfire: Seek and Destroy",
+      "dashedName": "bonfire-seek-and-destroy",
       "difficulty": "1.60",
       "description": [
         "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
@@ -661,6 +678,7 @@
     {
       "id": "a24c1a4622e3c05097f71d67",
       "name": "Bonfire: Where do I belong",
+      "dashedName": "bonfire-where-do-i-belong",
       "difficulty": "1.61",
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
@@ -697,6 +715,7 @@
     {
       "id": "a3566b1109230028080c9345",
       "name": "Bonfire: Sum All Numbers in a Range",
+      "dashedName": "bonfire-sum-all-numbers-in-a-range",
       "difficulty": "2.00",
       "description": [
         "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
@@ -736,7 +755,8 @@
     },
     {
       "id": "a5de63ebea8dbee56860f4f2",
-      "name": "Bonfire: Diff Two Arrays",
+      "name": "bonfire-diff-two-arrays",
+      "dashedName": "Bonfire: Diff Two Arrays",
       "difficulty": "2.01",
       "description": [
         "Compare two arrays and return a new array with any items not found in both of the original arrays.",
@@ -782,6 +802,7 @@
     {
       "id": "a7f4d8f2483413a6ce226cac",
       "name": "Bonfire: Roman Numeral Converter",
+      "dashedName": "bonfire-roman-numeral-converter",
       "tests": [
         "expect(convert(12)).to.equal(\"XII\");",
         "expect(convert(5)).to.equal(\"V\");",
@@ -822,6 +843,7 @@
     {
       "id": "a0b5010f579e69b815e7c5d6",
       "name": "Bonfire: Search and Replace",
+      "dashedName": "bonfire-search-and-replace",
       "tests": [
         "expect(replace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
         "expect(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")).to.equal(\"He is Sitting on the couch\");",
@@ -865,6 +887,7 @@
     {
       "id": "aa7697ea2477d1316795783b",
       "name": "Bonfire: Pig Latin",
+      "dashedName": "bonfire-pig-latin",
       "tests": [
         "expect(translate(\"california\")).to.equal(\"aliforniacay\");",
         "expect(translate(\"paragraphs\")).to.equal(\"aragraphspay\");",
@@ -908,6 +931,7 @@
     {
       "id": "afd15382cdfb22c9efe8b7de",
       "name": "Bonfire: DNA Pairing",
+      "dashedName": "bonfire-dna-pairing",
       "tests": [
         "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'should return the dna pair');",
         "assert.deepEqual(pair(\"TTGAG\"),[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']], 'should return the dna pair');",
@@ -946,6 +970,7 @@
     {
       "id": "af7588ade1100bde429baf20",
       "name": "Bonfire: Missing letters",
+      "dashedName": "bonfire-missing-letters",
       "difficulty": "2.05",
       "description": [
         "Find the missing letter in the passed letter range and return it.",
@@ -983,6 +1008,7 @@
     {
       "id": "a77dbc43c33f39daa4429b4f",
       "name": "Bonfire: Boo who",
+      "dashedName": "bonfire-boo-who",
       "difficulty": "2.06",
       "description": [
         "Check if a value is classified as a boolean primitive. Return true or false.",
@@ -1025,6 +1051,7 @@
     {
       "id": "a105e963526e7de52b219be9",
       "name": "Bonfire: Sorted Union",
+      "dashedName": "bonfire-sorted-union",
       "difficulty": "2.07",
       "description": [
         "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
@@ -1062,6 +1089,7 @@
     {
       "id": "a6b0bb188d873cb2c8729495",
       "name": "Bonfire: Convert HTML Entities",
+      "dashedName": "bonfire-convert-html-entities",
       "difficulty": "2.07",
       "description": [
         "Convert the characters \"&\", \"<\", \">\", '\"', and \"'\", in a string to their corresponding HTML entities.",
@@ -1097,6 +1125,7 @@
     {
       "id": "a103376db3ba46b2d50db289",
       "name": "Bonfire: Spinal Tap Case",
+      "dashedName": "bonfire-spinal-tap-case",
       "difficulty": "2.08",
       "description": [
         "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.",
@@ -1136,6 +1165,7 @@
     {
       "id": "a5229172f011153519423690",
       "name": "Bonfire: Sum All Odd Fibonacci Numbers",
+      "dashedName": "bonfire-sum-all-odd-fibonacci-numbers",
       "difficulty": "2.09",
       "description": [
         "Return the sum of all odd Fibonacci numbers up to and including the passed number if it is a Fibonacci number.",
@@ -1176,6 +1206,7 @@
     {
       "id": "a3bfc1673c0526e06d3ac698",
       "name": "Bonfire: Sum All Primes",
+      "dashedName": "bonfire-sum-all-primes",
       "difficulty": "2.10",
       "description": [
         "Sum all the prime numbers up to and including the provided number.",
@@ -1214,6 +1245,7 @@
     {
       "id": "ae9defd7acaf69703ab432ea",
       "name": "Bonfire: Smallest Common Multiple",
+      "dashedName": "bonfire-smallest-common-multiple",
       "difficulty": "2.11",
       "description": [
         "Find the smallest number that is evenly divisible by all numbers in the provided range.",
@@ -1252,6 +1284,7 @@
     {
       "id": "a6e40f1041b06c996f7b2406",
       "name": "Bonfire: Finders Keepers",
+      "dashedName": "bonfire-finders-keepers",
       "difficulty": "2.12",
       "description": [
         "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument).",
@@ -1287,6 +1320,7 @@
     {
       "id": "a5deed1811a43193f9f1c841",
       "name": "Bonfire: Drop it",
+      "dashedName": "bonfire-drop-it",
       "difficulty": "2.13",
       "description": [
         "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.",
@@ -1324,6 +1358,7 @@
     {
       "id": "ab306dbdcc907c7ddfc30830",
       "name": "Bonfire: Steamroller",
+      "dashedName": "bonfire-steamroller",
       "difficulty": "2.14",
       "description": [
         "Flatten a nested array. You must account for varying levels of nesting.",
@@ -1360,6 +1395,7 @@
     {
       "id": "a8d97bd4c764e91f9d2bda01",
       "name": "Bonfire: Binary Agents",
+      "dashedName": "bonfire-binary-agents",
       "difficulty": "2.15",
       "description": [
         "Return an English translated sentence of the passed binary string.",
@@ -1396,6 +1432,7 @@
     {
       "id": "a10d2431ad0c6a099a4b8b52",
       "name": "Bonfire: Everything Be True",
+      "dashedName": "bonfire-everything-be-true",
       "difficulty": "2.21",
       "description": [
         "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
@@ -1434,6 +1471,7 @@
     {
       "id": "a97fd23d9b809dac9921074f",
       "name": "Bonfire: Arguments Optional",
+      "dashedName": "bonfire-arguments-optional",
       "difficulty": "2.22",
       "description": [
         "Create a function that sums two arguments together. If only one argument is provided, return a function that expects one additional argument and will return the sum.",

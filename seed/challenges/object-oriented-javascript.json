@@ -5,6 +5,7 @@
     {
       "id": "bd7129d8c441eddfaeb5bddf",
       "name": "Waypoint: Scope Your Variables",
+      "dashedName": "waypoint-scope-your-variables",
       "difficulty": 0.01,
       "challengeSeed": ["128836683"],
       "description": [
@@ -31,6 +32,7 @@
     {
       "id": "bd7131d8c441eddfaeb5bdbf",
       "name": "Waypoint: Reference your Current Object with This",
+      "dashedName": "waypoint-reference-your-current-object-with-this",
       "difficulty": 0.03,
       "challengeSeed": ["128836508"],
       "description": [
@@ -57,6 +59,7 @@
     {
       "id": "bd7132d8c441eddfaeb5bdaf",
       "name": "Waypoint: Traverse the Prototype Chain",
+      "dashedName": "waypoint-traverse-the-prototype-chain",
       "difficulty": 0.04,
       "challengeSeed": ["128836684"],
       "description": [
@@ -82,6 +85,7 @@
     {
       "id": "bd7133d8c441eddfaeb5bd0f",
       "name": "Waypoint: Reuse Code with Decorators",
+      "dashedName": "waypoint-reuse-code-with-decorators",
       "difficulty": 0.05,
       "challengeSeed": ["128836681"],
       "description": [
@@ -108,6 +112,7 @@
     {
       "id": "bd7134d8c441eddfaeb5bd1f",
       "name": "Waypoint: Build Objects with Functional Classes",
+      "dashedName": "waypoint-build-objects-with-functional-classes",
       "difficulty": 0.06,
       "challengeSeed": ["128836503"],
       "description": [
@@ -134,6 +139,7 @@
     {
       "id": "bd7135d8c441eddfaeb5bd2f",
       "name": "Waypoint: Build Objects with Prototypal Classes",
+      "dashedName": "waypoint-build-objects-with-prototypal-classes",
       "difficulty": 0.07,
       "challengeSeed": ["128836505"],
       "description": [
@@ -160,6 +166,7 @@
     {
       "id": "bd7136d8c441eddfaeb5bd3f",
       "name": "Waypoint: Understand Pseudoclassical Patterns",
+      "dashedName": "waypoint-understand-pseudoclassical-patterns",
       "difficulty": 0.08,
       "challengeSeed": ["128836689"],
       "description": [
@@ -186,6 +193,7 @@
     {
       "id": "bd7136d8c441eddfaeb5bd4f",
       "name": "Waypoint: Subclass one Object to Another",
+      "dashedName": "waypoint-subclass-one-object-to-another",
       "difficulty": 0.09,
       "challengeSeed": ["128836686"],
       "description": [
@@ -211,6 +219,7 @@
     {
       "id": "bd7136d8c441eddfaeb5bd5f",
       "name": "Waypoint: Use Pseudoclassical Subclasses",
+      "dashedName": "waypoint-use-pseudoclassical-subclasses",
       "difficulty": 0.10,
       "challengeSeed": ["128836937"],
       "description": [
