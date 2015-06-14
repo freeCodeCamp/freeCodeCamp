@@ -5,6 +5,7 @@
     {
       "id": "bd7154d8c441eddfaeb5bdef",
       "name": "Waypoint: Get Started with Angular.js",
+      "dashedName": "waypoint-get-started-with-angularjs",
       "difficulty": 0.34,
       "challengeSeed": ["114684726"],
       "description": [
@@ -28,6 +29,7 @@
     {
       "id": "bd7155d8c441eddfaeb5bdef",
       "name": "Waypoint: Apply Angular.js Directives",
+      "dashedName": "waypoint-apply-angularjs-directives",
       "difficulty": 0.35,
       "challengeSeed": ["114684727"],
       "description": [
@@ -51,6 +53,7 @@
     {
       "id": "bd7156d8c441eddfaeb5bdef",
       "name": "Waypoint: Power Forms with Angular.js",
+      "dashedName": "waypoint-power-forms-with-angularjs",
       "difficulty": 0.36,
       "challengeSeed": ["114684729"],
       "description": [
@@ -74,6 +77,7 @@
     {
       "id": "bd7157d8c441eddfaeb5bdef",
       "name": "Waypoint: Customize Angular.js Directives",
+      "dashedName": "waypoint-customize-angularjs-directives",
       "difficulty": 0.37,
       "challengeSeed": ["114685062"],
       "description": [
@@ -96,6 +100,7 @@
     {
       "id": "bd7158d8c441eddfaeb5bdef",
       "name": "Waypoint: Create Angular.js Services",
+      "dashedName": "waypoint-create-angularjs-services",
       "difficulty": 0.38,
       "challengeSeed": ["114685060"],
       "description": [
@@ -119,6 +124,7 @@
     {
       "id": "bd7153d8c441eddfaeb5bd0f",
       "name": "Waypoint: Manage Packages with NPM",
+      "dashedName": "waypoint-manage-packages-with-npm",
       "difficulty": 0.39,
       "challengeSeed": ["126433450"],
       "description": [
@@ -172,6 +178,7 @@
     {
       "id": "bd7153d8c441eddfaeb5bdff",
       "name": "Waypoint: Start a Node.js Server",
+      "dashedName": "waypoint-start-a-nodejs-server",
       "difficulty": 0.40,
       "challengeSeed": ["126411561"],
       "description": [
@@ -214,6 +221,7 @@
     {
       "id": "bd7153d8c441eddfaeb5bdfe",
       "name": "Waypoint: Continue working with Node.js Servers",
+      "dashedName": "waypoint-continue-working-with-nodejs-servers",
       "difficulty": 0.41,
       "challengeSeed": ["128836506"],
       "description": [
@@ -241,6 +249,7 @@
     {
       "id": "bd7153d8c441eddfaeb5bdfd",
       "name": "Waypoint: Finish working with Node.js Servers",
+      "dashedName": "waypoint-finish-working-with-nodejs-servers",
       "difficulty": 0.42,
       "challengeSeed": ["128836507"],
       "description": [
@@ -268,6 +277,7 @@
     {
       "id": "bd7153d8c441eddfaeb5bd1f",
       "name": "Waypoint: Build Web Apps with Express.js",
+      "dashedName": "waypoint-build-web-apps-with-expressjs",
       "difficulty": 0.43,
       "challengeSeed": ["126411559"],
       "description": [
@@ -309,6 +319,7 @@
     {
       "id": "bd7140d8c441eddfaeb5bdef",
       "name": "Waypoint: Manage Source Code with Git",
+      "dashedName": "waypoint-manage-source-code-with-git",
       "difficulty": 0.44,
       "challengeSeed": ["114635309"],
       "description": [

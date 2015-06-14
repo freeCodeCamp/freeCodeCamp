@@ -5,6 +5,7 @@
     {
       "id": "bd7158d8c443eddfaeb5bcef",
       "name": "Waypoint: Get Set for Basejumps",
+      "dashedName": "waypoint-get-set-for-basejumps",
       "difficulty": 2.00,
       "challengeSeed": ["128451852"],
       "description": [
@@ -66,6 +67,7 @@
     {
       "id": "bd7158d8c443eddfaeb5bdef",
       "name": "Basejump: Build a Voting App",
+      "dashedName": "basejump-build-a-voting-app",
       "difficulty": 2.01,
       "challengeSeed": ["128451852"],
       "description": [
@@ -101,6 +103,7 @@
     {
       "id": "bd7158d8c443eddfaeb5bdff",
       "name": "Basejump: Build a Nightlife Coordination App",
+      "dashedName": "basejump-build-a-nightlife-coordination-app",
       "difficulty": 2.02,
       "challengeSeed": ["128451852"],
       "description": [
@@ -132,6 +135,7 @@
     {
       "id": "bd7158d8c443eddfaeb5bd0e",
       "name": "Basejump: Chart the Stock Market",
+      "dashedName": "basejump-chart-the-stock-market",
       "difficulty": 2.03,
       "challengeSeed": ["128451852"],
       "description": [
@@ -163,6 +167,7 @@
     {
       "id": "bd7158d8c443eddfaeb5bd0f",
       "name": "Basejump: Manage a Book Trading Club",
+      "dashedName": "basejump-manage-a-book-trading-club",
       "difficulty": 2.04,
       "challengeSeed": ["128451852"],
       "description": [
@@ -194,6 +199,7 @@
     {
       "id": "bd7158d8c443eddfaeb5bdee",
       "name": "Basejump: Build a Pinterest Clone",
+      "dashedName": "basejump-build-a-pinterest-clone",
       "difficulty": 2.05,
       "challengeSeed": ["128451852"],
       "description": [
