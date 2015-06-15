@@ -13,7 +13,7 @@
     "start": "node server/server.js",
     "lint": "eslint --ext=.js,.jsx .",
     "test": "mocha",
-    "postinstall": "bower cache clean && bower install"
+    "postinstall": "bower cache clean && bower install && gulp build"
   },
   "license": "BSD-3-Clause",
   "contributors": [

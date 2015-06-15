@@ -28,7 +28,7 @@ var CompletionMonitor = function() {
 
 Challenge.destroyAll(function(err, info) {
   if (err) {
-    console.err(err);
+    console.error(err);
   } else {
     console.log('Deleted ', info);
   }
