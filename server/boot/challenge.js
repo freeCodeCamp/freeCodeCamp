@@ -149,15 +149,9 @@ module.exports = function(app) {
       req.user.currentChallenge.challengeBlock = '0';
       req.user.currentChallenge.dashedName =
         challengeMapWithDashedNames['0'][0];
-      req.user.save(function(err) {
-        if (err) {
-          return next(err);
-        }
-      });
     }
 
-    var nameString = req.user.currentChallenge.dashedName =
-        challengeMapWithDashedNames['0'][0];
+    var nameString = req.user.currentChallenge.dashedName;
 
     req.user.save(function(err) {
       if (err) {
