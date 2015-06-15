@@ -37,6 +37,7 @@ var R = require('ramda'),
 
 var challengeMapWithNames = utils.getChallengeMapWithNames();
 var challengeMapWithIds = utils.getChallengeMapWithIds();
+var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
 
 
 function getMDNlinks(links) {
@@ -108,26 +109,22 @@ module.exports = function(app) {
     if (indexOfChallenge + 1
       < challengeMapWithIds[challengeBlock].length) {
       nextChallengeName =
-        challengeMapWithNames[challengeBlock][++indexOfChallenge];
+        challengeMapWithDashedNames[challengeBlock][++indexOfChallenge];
     } else if (typeof challengeMapWithIds[++challengeBlock] !== 'undefined') {
-      nextChallengeName = R.head(challengeMapWithNames[challengeBlock]);
+      nextChallengeName = R.head(challengeMapWithDashedNames[challengeBlock]);
     } else {
       req.flash('errors', {
         msg: 'It looks like you have finished all of our challenges.' +
         ' Great job! Now on to helping nonprofits!'
       });
-      nextChallengeName = R.head(challengeMapWithNames[0].challenges);
+      nextChallengeName = R.head(challengeMapWithDashedNames[0].challenges);
     }
-
-    var nameString = nextChallengeName.trim()
-      .toLowerCase()
-      .replace(/\s/g, '-');
 
     req.user.save(function(err) {
       if (err) {
         return next(err);
       }
-      return res.redirect('../challenges/' + nameString);
+      return res.redirect('../challenges/' + nextChallengeName);
     });
   }
 
@@ -150,16 +147,18 @@ module.exports = function(app) {
       req.user.currentChallenge.challengeId = challengeMapWithIds['0'][0];
       req.user.currentChallenge.challengeName = challengeMapWithNames['0'][0];
       req.user.currentChallenge.challengeBlock = '0';
+      req.user.currentChallenge.dashedName =
+        challengeMapWithDashedNames['0'][0];
       req.user.save(function(err) {
         if (err) {
           return next(err);
         }
       });
     }
-    var nameString = req.user.currentChallenge.challengeName.trim()
-      .toLowerCase()
-      .replace(/\s/g, '-')
-      .replace(/[^a-z0-9\-\/.]/gi, '');
+
+    var nameString = req.user.currentChallenge.dashedName =
+        challengeMapWithDashedNames['0'][0];
+
     req.user.save(function(err) {
       if (err) {
         return next(err);
@@ -172,12 +171,12 @@ module.exports = function(app) {
     var dashedName = req.params.challengeName;
 
     Challenge.findOne(
-      { dashedName: challengeName },
+      { where: { dashedName: dashedName }},
       function(err, challenge) {
         if (err) { return next(err); }
 
         // Handle not found
-        if (!challengeFromMongo) {
+        if (!challenge) {
           req.flash('errors', {
             msg: '404: We couldn\'t find a challenge with that name. ' +
             'Please double check the name.'
@@ -188,7 +187,8 @@ module.exports = function(app) {
         if (req.user) {
           req.user.currentChallenge = {
             challengeId: challenge.id,
-            challengeName: challenge.dashedName,
+            challengeName: challenge.name,
+            dashedName: challenge.dashedName,
             challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
                 map(function (key) {
                   return challengeMapWithIds[key]
