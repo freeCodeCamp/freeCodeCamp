@@ -5,6 +5,7 @@
     {
       "id": "bd7123d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Basic Computer Science",
+      "dashedName": "waypoint-learn-basic-computer-science",
       "difficulty": 0.90,
       "challengeSeed": ["114628241"],
       "description": [
@@ -34,6 +35,7 @@
     {
       "id": "bd8124d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Loops",
+      "dashedName": "waypoint-learn-loops",
       "difficulty": 0.19,
       "challengeSeed": ["114597348"],
       "description": [
@@ -61,6 +63,7 @@
     {
       "id": "bd8125d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Computer Hardware",
+      "dashedName": "waypoint-learn-computer-hardware",
       "difficulty": 0.20,
       "challengeSeed": ["114597347"],
       "description": [
@@ -88,6 +91,7 @@
     {
       "id": "bd8126d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Computer Networking",
+      "dashedName": "waypoint-learn-computer-networking",
       "difficulty": 0.21,
       "challengeSeed": ["114604811"],
       "description": [
@@ -115,6 +119,7 @@
     {
       "id": "bd8127d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Boolean Logic",
+      "dashedName": "waypoint-learn-boolean-logic",
       "difficulty": 0.22,
       "challengeSeed": ["114604812"],
       "description": [
@@ -142,6 +147,7 @@
     {
       "id": "bd8128d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Computer Security",
+      "dashedName": "waypoint-learn-computer-security",
       "difficulty": 0.23,
       "challengeSeed": ["114604813"],
       "description": [

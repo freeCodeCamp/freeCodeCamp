@@ -5,6 +5,7 @@
     {
       "id": "bd7123c8c441eddfaeb5bdef",
       "name": "Waypoint: Say Hello to HTML Elements",
+      "dashedName": "waypoint-say-hello-to-html-elements",
       "difficulty": 0.0085,
       "description": [
         "Welcome to Free Code Camp's first coding challenge! Click on the button below for further instructions.",
@@ -44,6 +45,7 @@
     {
       "id": "bad87fee1348bd9aedf0887a",
       "name": "Waypoint: Headline with the h2 Element",
+      "dashedName": "waypoint-headline-with-the-h2-element",
       "difficulty": 0.010,
       "description": [
         "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element.",
@@ -80,6 +82,7 @@
     {
       "id": "bad87fee1348bd9aedf08801",
       "name": "Waypoint: Inform with the Paragraph Element",
+      "dashedName": "waypoint-inform-with-the-paragraph-element",
       "difficulty": 0.011,
       "description": [
         "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\".",
@@ -114,6 +117,7 @@
     {
       "id": "bad87fee1348bd9aeaf08801",
       "name": "Waypoint: Visually Separate Elements with Line Breaks",
+      "dashedName": "waypoint-visually-separate-elements-with-line-breaks",
       "difficulty": 0.012,
       "description": [
         "Add a <code>br</code> element to your page, preferably between two of your elements.",
@@ -149,6 +153,7 @@
     {
       "id": "bad87fee1348bd9aedf08802",
       "name": "Waypoint: Uncomment HTML",
+      "dashedName": "waypoint-uncomment-html",
       "difficulty": 0.013,
       "description": [
         "Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
@@ -193,6 +198,7 @@
     {
       "id": "bad87fee1348bd9aedf08804",
       "name": "Waypoint: Comment out HTML",
+      "dashedName": "waypoint-comment-out-html",
       "difficulty": 0.014,
       "description": [
         "Comment out your <code>h1</code> element and your <code>p</code> element, but leave your <code>h2</code> element uncommented.",
@@ -235,6 +241,7 @@
     {
       "id": "bad87fee1348bd9aedf08833",
       "name": "Waypoint: Fill in the Blank with Placeholder Text",
+      "dashedName": "waypoint-fill-in-the-blank-with-placeholder-text",
       "difficulty": 0.015,
       "description": [
         "Replace the text inside your <code>p</code> element with the first few words of the provided \"Kitty Ipsum\" text.",
@@ -276,6 +283,7 @@
     {
       "id": "bad87fed1348bd9aedf08833",
       "name": "Waypoint: Delete HTML Elements",
+      "dashedName": "waypoint-delete-html-elements",
       "difficulty": 0.016,
       "description": [
         "Delete your <code>h1</code> and <code>br</code> elements so we can simplify our view.",
@@ -316,6 +324,7 @@
     {
       "id": "bad87fee1348bd9aedf08803",
       "name": "Waypoint: Change the Color of Text",
+      "dashedName": "waypoint-change-the-color-of-text",
       "difficulty": 0.017,
       "description": [
         "Change your <code>h2</code> element's style so that its text color is red.",
@@ -351,6 +360,7 @@
     {
       "id": "bad87fee1348bd9aedf08805",
       "name": "Waypoint: Use CSS Selectors to Style Elements",
+      "dashedName": "waypoint-use-css-selectors-to-style-elements",
       "difficulty": 0.018,
       "description": [
         "Delete your <code>h2</code> element's style attribute and instead create a CSS <code>style</code> element. Add the necessary CSS to turn all <code>h2</code> elements blue.",
@@ -395,6 +405,7 @@
     {
       "id": "bad87fee1348bd9aecf08806",
       "name": "Waypoint: Use a CSS Class to Style an Element",
+      "dashedName": "waypoint-use-a-css-class-to-style-an-element",
       "difficulty": 0.019,
       "description": [
         "Create a CSS class called \"red-text\" and apply it to your <code>h2</code> element.",
@@ -436,6 +447,7 @@
     {
       "id": "bad87fee1348bd9aefe08806",
       "name": "Waypoint: Style Multiple Elements with a CSS Class",
+      "dashedName": "waypoint－style－multiple-elements-with-a-css-class",
       "difficulty": 0.020,
       "description": [
         "Apply the \"red-text\" class to your <code>h2</code> and <code>p</code> elements.",
@@ -474,6 +486,7 @@
     {
       "id": "bad87fee1348bd9aedf08806",
       "name": "Waypoint: Change the Font Size of an Element",
+      "dashedName": "waypoint-change-the-font-size-of-an-element",
       "difficulty": 0.021,
       "description": [
         "Create a second <code>p</code> element. Then, inside your <code>&#60;style&#62;</code> element, set the \"font-size\" of all <code>p</code> elements to 16 pixels.",
@@ -513,6 +526,7 @@
     {
       "id": "bad87fee1348bd9aede08807",
       "name": "Waypoint: Set the Font Family of an Element",
+      "dashedName": "waypoint-set-the-font-family-of-an-element",
       "difficulty": 0.022,
       "description": [
         "Make all of your <code>p</code> elements use the \"Monospace\" font.",
@@ -553,6 +567,7 @@
     {
       "id": "bad87fee1348bd9aedf08807",
       "name": "Waypoint: Import a Google Font",
+      "dashedName": "waypoint-import-a-google-font",
       "difficulty": 0.023,
       "description": [
         "Apply the <code>font-family</code> of \"Lobster\" to your <code>h2</code> element.",
@@ -598,6 +613,7 @@
     {
       "id": "bad87fee1348bd9aedf08808",
       "name": "Waypoint: Specify How Fonts Should Degrade",
+      "dashedName": "waypoint-specify-how-fonts-should-degrade",
       "difficulty": 0.024,
       "description": [
         "Make all your <code>h2</code> elements use \"Lobster\" as their font family, but degrade to the \"Monospace\" font when the \"Lobster\" font isn't available.",
@@ -647,6 +663,7 @@
     {
       "id": "bad87fee1348bd9aedf08809",
       "name": "Waypoint: Override Styles with Important",
+      "dashedName": "waypoint-override-styles-with-important",
       "difficulty": 0.025,
       "description": [
         "Create an \"urgently-red\" class that gives an element the font-color of red, but add <code>!important</code> to the class to ensure the element is rendered as being red. Immediately below your \"urgently-red\" class declaration, create a \"blue-text\" class that gives an element the font-color of blue. Apply both classes to your <code>h2</code> element.",
@@ -703,6 +720,7 @@
     {
       "id": "bad87fee1348bd9aedf08812",
       "name": "Waypoint: Add Images to your Website",
+      "dashedName": "waypoint-add-images-to-your-website",
       "difficulty": 0.026,
       "description": [
         "Use an <code>img</code> element to add the image <code>http://bit.ly/fcc-kittens</code> to your website.",
@@ -751,6 +769,7 @@
     {
       "id": "bad87fee1348bd9acdf08812",
       "name": "Waypoint: Size your Images",
+      "dashedName": "waypoint-size-your-images",
       "difficulty": 0.027,
       "description": [
         "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.",
@@ -800,6 +819,7 @@
     {
       "id": "bad87fee1348bd9bedf08813",
       "name": "Waypoint: Add Borders Around your Elements",
+      "dashedName": "waypoint-add-borders-around-your-elements",
       "difficulty": 0.028,
       "description": [
         "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply that class to your cat photo.",
@@ -856,6 +876,7 @@
     {
       "id": "bad87fee1348bd9aedf08814",
       "name": "Waypoint: Add Rounded Corners with a Border Radius",
+      "dashedName": "waypoint-add-rounded-corners-with-a-border-radius",
       "difficulty": 0.029,
       "description": [
         "Give your cat photo a <code>border-radius</code> of 10 pixels.",
@@ -915,6 +936,7 @@
     {
       "id": "bad87fee1348bd9aedf08815",
       "name": "Waypoint: Make Circular Images with a Border Radius",
+      "dashedName": "waypoint-make-circular-images-with-a-border-radius",
       "difficulty": 0.030,
       "description": [
         "Give your cat photo a <code>border-radius</code> of 50%.",
@@ -973,6 +995,7 @@
     {
       "id": "bad87fee1348bd9aedf08816",
       "name": "Waypoint: Link to External Pages with Anchor Elements",
+      "dashedName": "waypoint-link-to-external-pages-with-anchor-elements",
       "difficulty": 0.031,
       "description": [
         "Create an <code>a</code> element, or \"anchor element\", that links to http://catphotoapp.com and has \"cat photos\" as its link text, or \"anchor text\".",
@@ -1035,6 +1058,7 @@
     {
       "id": "bad87fee1348bd9aede08817",
       "name": "Waypoint: Wrap an Anchor Element within a Paragraph",
+      "dashedName": "waypoint-wrap-an-anchor-element-within-a-paragraph",
       "difficulty": 0.032,
       "description": [
         "Now wrap your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
@@ -1103,6 +1127,7 @@
     {
       "id": "bad87fee1348bd9aedf08817",
       "name": "Waypoint: Make Dead Links using the Hash Symbol",
+      "dashedName": "waypoint-make-dead-links-using-the-hash-symbol",
       "difficulty": 0.033,
       "description": [
         "Use the hash symbol (#) to turn your <code>a</code> element's link into a dead link.",
@@ -1165,6 +1190,7 @@
     {
       "id": "bad87fee1348bd9aedf08820",
       "name": "Waypoint: Turn an Image into a Link",
+      "dashedName": "waypoint-turn-an-image-into-a-link",
       "difficulty": 0.034,
       "description": [
         "Wrap your <code>img</code> element inside an <code>a</code> element with a dead link.",
@@ -1230,6 +1256,7 @@
     {
       "id": "bad87fee1348bd9aedf08818",
       "name": "Waypoint: Add Alt Text to an Image for Accessibility",
+      "dashedName": "waypoint-add-alt-text-to-an-image-for-accessibility",
       "difficulty": 0.035,
       "description": [
         "Add an <code>alt</code> attribute with the text \"A cute orange cat lying on its back\" to our cat photo.",
@@ -1293,6 +1320,7 @@
     {
       "id": "bad87fee1348bd9aedf08827",
       "name": "Waypoint: Create a Bulleted Unordered List",
+      "dashedName": "waypoint-create-a-bulleted-unordered-list",
       "difficulty": 0.036,
       "description": [
         "Replace your <code>p</code> elements with an unordered list of three things that cats love.",
@@ -1358,6 +1386,7 @@
     {
       "id": "bad87fee1348bd9aedf08828",
       "name": "Waypoint: Create an Ordered List",
+      "dashedName": "waypoint-create-an-ordered-list",
       "difficulty": 0.037,
       "description": [
         "Create an ordered list of the top 3 things cats hate the most.",
@@ -1430,6 +1459,7 @@
     {
       "id": "bad87fee1348bd9aedf08829",
       "name": "Waypoint: Create a Text Field",
+      "dashedName": "waypoint-create-a-text-field",
       "difficulty": 0.038,
       "description": [
         "Now we'll create a web form. Create a text input under your lists.",
@@ -1501,6 +1531,7 @@
     {
       "id": "bad87fee1348bd9aedf08830",
       "name": "Waypoint: Add Placeholder Text to a Text Field",
+      "dashedName": "waypoint-add-placeholder-text-to-a-text-field",
       "difficulty": 0.039,
       "description": [
         "Set the <code>placeholder</code> value of your text <code>input</code> to \"cat photo URL\".",
@@ -1574,6 +1605,7 @@
     {
       "id": "bad87fee1348bd9aede08830",
       "name": "Waypoint: Create a Form Element",
+      "dashedName": "waypoint-create-a-form-element",
       "difficulty": 0.040,
       "description": [
         "Wrap your text field in a <code>form</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element.",
@@ -1649,6 +1681,7 @@
     {
       "id": "bad87fee1348bd9aedd08830",
       "name": "Waypoint: Add a Submit Button to a Form",
+      "dashedName": "waypoint-add-a-submit-button-to-a-form",
       "difficulty": 0.041,
       "description": [
         "Add a submit button to your <code>form</code> element with type \"submit\" and \"Submit\" as its text.",
@@ -1725,7 +1758,8 @@
     },
     {
       "id": "bad87fee1348bd9aedc08830",
-      "name": "Waypoint: Use HTML5 to Require a Field",
+      "name": "waypoint-use-html5-to-require-a-field",
+      "dashedName": "Waypoint: Use HTML5 to Require a Field",
       "difficulty": 0.042,
       "description": [
         "Make your text <code>input</code> a \"required\" field, so that your user can't submit the form without completing this field.",
@@ -1801,6 +1835,7 @@
     {
       "id": "bad87fee1348bd9aedf08834",
       "name": "Waypoint: Create a Set of Radio Buttons",
+      "dashedName": "waypoint-create-a-set-of-radio-buttons",
       "difficulty": 0.043,
       "description": [
         "Add to your form a pair of radio buttons. Each radio button should be wrapped within its own <code>label</code> element. They should share a common <code>name</code> attribute. One should have the option of \"indoor\" and the other should have the option of \"outdoor\".",
@@ -1884,6 +1919,7 @@
     {
       "id": "bad87fee1348bd9aedf08835",
       "name": "Waypoint: Create a Set of Checkboxes",
+      "dashedName": "waypoint-create-a-set-of-checkboxes",
       "difficulty": 0.044,
       "description": [
         "Add to your form a set of three checkbox elements. Each checkbox should be wrapped within its own <code>label</code> element. All three should share the <code>name</code> attribute of \"personality\".",
@@ -1964,6 +2000,7 @@
     {
       "id": "bad87fee1348bd9aede18835",
       "name": "Waypoint: Clean up your form using Linebreaks",
+      "dashedName": "waypoint-clean-up-your-form-using-linebreaks",
       "difficulty": 0.045,
       "description": [
         "Clean up your form by adding linebreaks between form elements.",
@@ -2043,6 +2080,7 @@
     {
       "id": "bad87fee1348bd9aedd08835",
       "name": "Waypoint: Check Radio Buttons and Checkboxes by Default",
+      "dashedName": "waypoint-check-radio-buttons-and-checkboxes-by-default",
       "difficulty": 0.046,
       "description": [
         "Set the first of your radio buttons and the first of your checkboxes to both be checked by default.",
@@ -2126,6 +2164,7 @@
     {
       "id": "bad87fee1348bd9aede08835",
       "name": "Waypoint: Wrap Many Elements within a Single Div Element",
+      "dashedName": "waypoint-wrap-many-elements-within-a-single-div-element",
       "difficulty": 0.047,
       "description": [
         "Wrap your \"Things cats love\" and \"Things cats hate\" lists all within a single <code>div</code> element.",
@@ -2214,6 +2253,7 @@
     {
       "id": "bad87fee1348bd9aede07836",
       "name": "Waypoint: Give a Background Color to a Div Element",
+      "dashedName": "waypoint-give-a-background-color-to-a-div-element",
       "difficulty": 0.048,
       "description": [
         "Create a class called \"gray-background\" with the background color of gray. Assign this class to your <code>div</code> element.",
@@ -2300,6 +2340,7 @@
     {
       "id": "bad88fee1348bd9aedf08825",
       "name": "Waypoint: Adjusting the Padding of an Element",
+      "dashedName": "waypoint-adjusting-the-padding-of-an-element",
       "difficulty": 0.064,
       "description": [
         "These next few Waypoints will give you a brief tour of three important aspects of the space surrounding HTML elements: <code>padding</code>, <code>margin</code>, and <code>border</code>. Change the <code>padding</code> of your green box to match that of your red box.",
@@ -2361,6 +2402,7 @@
     {
       "id": "bad87fee1348bd9aedf08822",
       "name": "Waypoint: Adjust the Margin of an Element",
+      "dashedName": "waypoint-adjust-the-margin-of-an-element",
       "difficulty": 0.065,
       "description": [
         "Change the <code>margin</code> of the green box to match that of the red box.",
@@ -2424,6 +2466,7 @@
     {
       "id": "bad87fee1348bd9aedf08823",
       "name": "Waypoint: Add a Negative Margin to an Element",
+      "dashedName": "waypoint-add-a-negative-margin-to-an-element",
       "difficulty": 0.066,
       "description": [
         "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the yellow box around it.",
@@ -2486,6 +2529,7 @@
     {
       "id": "bad87fee1348bd9aedf08824",
       "name": "Waypoint: Add Different Padding to Each Side of an Element",
+      "dashedName": "waypoint-add-different-padding-to-each-side-of-an-element",
       "difficulty": 0.067,
       "description": [
         "Give the green box a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
@@ -2551,6 +2595,7 @@
     {
       "id": "bad87fee1248bd9aedf08824",
       "name": "Waypoint: Add Different Margins to Each Side of an Element",
+      "dashedName": "waypoint-add-different-margins-to-each-side-of-an-element",
       "difficulty": 0.068,
       "description": [
         "Give the green box a <code>margin</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
@@ -2616,6 +2661,7 @@
     {
       "id": "bad87fee1348bd9aedf08826",
       "name": "Waypoint: Use Clockwise Notation to Specify the Padding of an Element",
+      "dashedName": "waypoint-use-clockwise-notation-to-specify-the-padding-of-an-element",
       "difficulty": 0.069,
       "description": [
         "Use Clockwise Notation to give the \".green-box\" class a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
@@ -2678,6 +2724,7 @@
     {
       "id": "bad87fee1348bd9aedf08726",
       "name": "Waypoint: Use Clockwise Notation to Specify the Margin of an Element",
+      "dashedName": "waypoint-use-clockwise-notation-to-specify-the-margin-of-an-element",
       "difficulty": 0.070,
       "description": [
         "Let's try this again, but with <code>margin</code> this time. Use <code>Clockwise Notation</code> to give an element a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",

@@ -119,13 +119,15 @@ module.exports = function(app) {
   */
 
   function returnUser (req, res, next) {
+    debug(req.params.username);
     User.findOne(
-      { where: { username: req.params.username.toLowerCase() } },
+      { where: { 'username': req.params.username.toLowerCase() } },
       function(err, user) {
         if (err) {
           debug('Username err: ', err);
           return next(err);
         }
+        debug(user);
         if (user) {
           user.progressTimestamps =
             user.progressTimestamps.sort(function(a, b) {
@@ -184,11 +186,6 @@ module.exports = function(app) {
             user.currentStreak = 1;
           }
 
-          user.save(function(err) {
-            if (err) {
-              return next(err);
-            }
-
             var data = {};
             var progressTimestamps = user.progressTimestamps;
             progressTimestamps.forEach(function(timeStamp) {
@@ -234,7 +231,6 @@ module.exports = function(app) {
               currentStreak: user.currentStreak +
                 (user.currentStreak === 1 ? ' day' : ' days')
             });
-          });
         } else {
           req.flash('errors', {
             msg: "404: We couldn't find a page with that url. " +

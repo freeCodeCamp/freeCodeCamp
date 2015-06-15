@@ -26,6 +26,7 @@ module.exports = function(app) {
   router.post('/get-help', getHelp);
   router.post('/get-pair', getPair);
   router.get('/chat', chat);
+  router.get('/bootcamp-calculator', bootcampCalculator);
   router.get('/twitch', twitch);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
@@ -323,6 +324,12 @@ module.exports = function(app) {
         title: 'Watch us code live on Twitch.tv'
       });
     }
+  }
+
+  function bootcampCalculator(req, res) {
+    res.render('resources/calculator', {
+      title: 'Coding Bootcamp Cost Calculator'
+    });
   }
 
   function jobsForm(req, res) {

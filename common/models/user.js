@@ -10,6 +10,16 @@ module.exports = function(User) {
   delete User.validations.email;
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
+
+  // username should not be in blacklist
+  User.validatesExclusionOf('username', {
+    'in': blacklistedUsernames,
+    message: 'is taken'
+  });
+
+  // username should be unique
+  User.validatesUniquenessOf('username');
+
   debug('setting up user hooks');
   // send verification email to new camper
   User.afterRemote('create', function(ctx, user, next) {

@@ -45,7 +45,7 @@
       "type": "string",
       "lowercase": true,
       "trim": true,
-      "id": true
+      "require": true
     },
     "bio": {
       "type": "string",

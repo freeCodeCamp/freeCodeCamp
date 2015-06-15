@@ -5,6 +5,7 @@
     {
       "id": "bd7129d8c441eddfaeb5bdef",
       "name": "Waypoint: Build an Adventure Game",
+      "dashedName": "waypoint-build-an-adventure-game",
       "difficulty": 0.24,
       "challengeSeed": ["114604814"],
       "description": [
@@ -30,6 +31,7 @@
     {
       "id": "bd7130d8c441eddfaeb5bdef",
       "name": "Waypoint: Build Rock Paper Scissors",
+      "dashedName": "waypoint-build-rock-paper-scissors",
       "difficulty": 0.25,
       "challengeSeed": ["114604815"],
       "description": [
@@ -53,6 +55,7 @@
     {
       "id": "bd7131d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn JavaScript For Loops",
+      "dashedName": "waypoint-learn-javascript-for-loops",
       "difficulty": 0.26,
       "challengeSeed": ["114614220"],
       "description": [
@@ -76,6 +79,7 @@
     {
       "id": "bd7132d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn JavaScript While Loops",
+      "dashedName": "waypoint-learn-javascript-while-loops",
       "difficulty": 0.27,
       "challengeSeed": ["114612889"],
       "description": [
@@ -98,6 +102,7 @@
     {
       "id": "bd7133d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Control Flow",
+      "dashedName": "waypoint-learn-control-flow",
       "difficulty": 0.28,
       "challengeSeed": ["114612888"],
       "description": [
@@ -122,6 +127,7 @@
     {
       "id": "bd7134d8c441eddfaeb5bdef",
       "name": "Waypoint: Build a Contact List",
+      "dashedName": "waypoint-build-a-contact-list",
       "difficulty": 0.29,
       "challengeSeed": ["114612887"],
       "description": [
@@ -145,6 +151,7 @@
     {
       "id": "bd7135d8c441eddfaeb5bdef",
       "name": "Waypoint: Build an Address Book",
+      "dashedName": "waypoint-build-an-address-book",
       "difficulty": 0.30,
       "challengeSeed": ["114612885"],
       "description": [
@@ -168,6 +175,7 @@
     {
       "id": "bd7136d8c441eddfaeb5bdef",
       "name": "Waypoint: Build a Cash Register",
+      "dashedName": "waypoint-build-a-cash-register",
       "difficulty": 0.31,
       "challengeSeed": ["114612882"],
       "description": [
@@ -191,6 +199,7 @@
     {
       "id": "bd7118d8c441eddfaeb5bdef",
       "name": "Waypoint: Discover Chrome DevTools",
+      "dashedName": "waypoint-discover-chrome-devTools",
       "difficulty": 0.32,
       "challengeSeed": ["110752743"],
       "description": [
@@ -222,6 +231,7 @@
     {
       "id": "bd7138d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Regular Expressions",
+      "dashedName": "waypoint-learn-regular-expressions",
       "difficulty": 0.33,
       "challengeSeed": ["112547802"],
       "description": [

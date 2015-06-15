@@ -5,6 +5,7 @@
     {
       "id": "bd7129d8c441eddfbeb5bddf",
       "name": "Waypoint: Practice Functional Programming",
+      "dashedName": "waypoint-practice-functional-programming",
       "difficulty": 0.01,
       "challengeSeed": ["129169463"],
       "description": [

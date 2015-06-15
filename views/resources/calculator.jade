@@ -1,0 +1,656 @@
+extends ../layout
+block content
+    .panel.panel-info
+        .panel-heading.text-center Coding Bootcamp Cost Calculator
+        .panel-body
+            .row
+                .col-xs-12.col-sm-10.col-sm-offset-1
+                    style.
+                        #lastYearIncome{
+                          clear:both;
+                          margin: 2% 0;
+                          width: 110px;
+                        }
+                        #income, #calculate {
+                          visibility:hidden;
+                        }
+                        .step {
+                          font-size: 2em;
+                          padding: 1%;
+                          clear: both;
+                        }
+                        .city-buttons {
+                          display: block;
+                          clear: right;
+                        }
+                        #four p{
+                          font-size: .6em;
+                          color: black;
+                        }
+                        .chart rect {
+                          fill: steelblue;
+                        }
+                        .chart text {
+                          fill: #121401;
+                          font: 10px sans-serif;
+                          text-anchor: end;
+                        }
+                        .axis path,
+                        .axis line {
+                          fill: none;
+                          stroke: #121401;
+                          stroke-width: 2px;
+                          shape-rendering: crispEdges;
+                        }
+                    html.
+                        <!--Live Logging for Testing-->
+                        <div id="target" class="step"></div>
+                        <div class="header">
+                        <!--Step 1-->
+                        <div id="one" class="step">Step 1: Choose your City</div>
+                        <div id="city-buttons">
+                        <ul>
+                        <li><span id="New York City">New York City</span></li>
+                        <li><span id="San Fransisco">San Fransisco</span></li>
+                        <li><span id="Austin">Austin</span></li>
+                        <li><span id="Los Angeles">Los Angeles</span></li>
+                        <li><span id="Chicago">Chicago</span></li>
+                        <li><span id="Other">Other</span></li>
+                        </ul>
+                        </div>
+                        &nbsp;
+                            <!--Step 2-->
+                            <div id="two" class="step">Step 2: Enter last Year's Income</div>
+                            <div id="income">
+                            <label>Last Years Income in $$:</label>
+                            <input type="number" placeholder="52000" class="form-control" id="lastYearIncome">
+                            </div>
+                            <!--Step 3-->
+                            <div id="three" class="step">Step 3: Calculate</div>
+                            <button id="calculate" type="submit" class="btn btn-default">Calculate</button>
+                            <!--Check Outputs Temp-->
+                            <!--Step 4-->
+                            <!--<div id="four" class="step">Clear the Chart and Start Over?</div>-->
+                            <svg class="chart"></svg>
+                        </div>
+                        <!--container-->
+                        <div class="footer">
+                        Sources: <a href="#">Link to Data Sources Here</a>
+                        <form>
+                            <label>
+                                <input type="radio" name="mode"
+                                       value="grouped">Grouped
+                            </label>
+                            <label>
+                                <input type="radio" name="mode"
+                                           value="stacked" checked>
+                                        Stacked
+                            </label>
+                        </form>
+                    script.
+                        $(document).ready(function () {
+                            var n = 4, // number of layers
+                                    m = 58, // number of samples per layer
+                                    stack = d3.layout.stack(),
+                                    layers = stack(d3.range(n).map(function () {
+                                        return bumpLayer(m, .1);
+                                    })),
+                                    yGroupMax = d3.max(layers, function (layer) {
+                                        return d3.max(layer, function (d) {
+                                            return d.y;
+                                        });
+                                    }),
+                                    yStackMax = d3.max(layers, function (layer) {
+                                        return d3.max(layer, function (d) {
+                                            return d.y0 + d.y;
+                                        });
+                                    });
+                            var margin = {
+                                        top: 40,
+                                        right: 10,
+                                        bottom: 20,
+                                        left: 10
+                                    },
+                                    width = 960 - margin.left - margin.right,
+                                    height = 500 - margin.top - margin.bottom;
+                            var x = d3.scale.ordinal()
+                                    .domain(d3.range(m))
+                                    .rangeRoundBands([0, width], .08);
+                            var y = d3.scale.linear()
+                                    .domain([0, yStackMax])
+                                    .range([height, 0]);
+                            var color = d3.scale.linear()
+                                    .domain([0, n - 1])
+                                    .range(["#aad", "#556"]);
+                            var xAxis = d3.svg.axis()
+                                    .scale(x)
+                                    .tickSize(0)
+                                    .tickPadding(6)
+                                    .orient("bottom");
+                            var svg = d3.select("body").append("svg")
+                                    .attr("width", width + margin.left + margin.right)
+                                    .attr("height", height + margin.top + margin.bottom)
+                                    .append("g")
+                                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                            var layer = svg.selectAll(".layer")
+                                    .data(layers)
+                                    .enter().append("g")
+                                    .attr("class", "layer")
+                                    .style("fill", function (d, i) {
+                                        return color(i);
+                                    });
+                            var rect = layer.selectAll("rect")
+                                    .data(function (d) {
+                                        return d;
+                                    })
+                                    .enter().append("rect")
+                                    .attr("x", function (d) {
+                                        return x(d.x);
+                                    })
+                                    .attr("y", height)
+                                    .attr("width", x.rangeBand())
+                                    .attr("height", 0);
+                            rect.transition()
+                                    .delay(function (d, i) {
+                                        return i * 10;
+                                    })
+                                    .attr("y", function (d) {
+                                        return y(d.y0 + d.y);
+                                    })
+                                    .attr("height", function (d) {
+                                        return y(d.y0) - y(d.y0 + d.y);
+                                    });
+                            svg.append("g")
+                                    .attr("class", "x axis")
+                                    .attr("transform", "translate(0," + height + ")")
+                                    .call(xAxis);
+                            d3.selectAll("input").on("change", change);
+                            var timeout = setTimeout(function () {
+                                d3.select("input[value=\"grouped\"]").property("checked", true).each(change);
+                            }, 2000);
+
+                            function change() {
+                                clearTimeout(timeout);
+                                if (this.value === "grouped") transitionGrouped();
+                                else transitionStacked();
+                            }
+
+                            function transitionGrouped() {
+                                y.domain([0, yGroupMax]);
+                                rect.transition()
+                                        .duration(500)
+                                        .delay(function (d, i) {
+                                            return i * 10;
+                                        })
+                                        .attr("x", function (d, i, j) {
+                                            return x(d.x) + x.rangeBand() / n * j;
+                                        })
+                                        .attr("width", x.rangeBand() / n)
+                                        .transition()
+                                        .attr("y", function (d) {
+                                            return y(d.y);
+                                        })
+                                        .attr("height", function (d) {
+                                            return height - y(d.y);
+                                        });
+                            }
+
+                            function transitionStacked() {
+                                y.domain([0, yStackMax]);
+                                rect.transition()
+                                        .duration(500)
+                                        .delay(function (d, i) {
+                                            return i * 10;
+                                        })
+                                        .attr("y", function (d) {
+                                            return y(d.y0 + d.y);
+                                        })
+                                        .attr("height", function (d) {
+                                            return y(d.y0) - y(d.y0 + d.y);
+                                        })
+                                        .transition()
+                                        .attr("x", function (d) {
+                                            return x(d.x);
+                                        })
+                                        .attr("width", x.rangeBand());
+                            }
+
+                            // Inspired by Lee Byron's test data generator.
+                            function bumpLayer(n, o) {
+                                function bump(a) {
+                                    var x = 1 / (.1 + Math.random()),
+                                            y = 2 * Math.random() - .5,
+                                            z = 10 / (.1 + Math.random());
+                                    for (var i = 0; i < n; i++) {
+                                        var w = (i / n - y) * z;
+                                        a[i] += x * Math.exp(-w * w);
+                                    }
+                                }
+
+                                var a = [], i;
+                                for (i = 0; i < n; ++i) a[i] = o + o * Math.random();
+                                for (i = 0; i < 5; ++i) bump(a);
+                                return a.map(function (d, i) {
+                                    return {x: i, y: Math.max(0, d)};
+                                });
+                            }
+                            var city = "";
+                            var lastYearincome = 52000;
+                            //major cities array to check against users location for housing costs
+                            var cityArray = ["San Fransisco", "Los Angeles", "Chicago", "Austin", "New York City"];
+                            //this is the raw bootcamps file allowing easy addition of new code camps
+                            var bootcamps = [{
+                                "name": "App Academy",
+                                "cost": "18000",
+                                "weeks": "12",
+                                "finance": false,
+                                "cities": [
+                                    "New York",
+                                    "San Francisco"
+                                ]
+                            }, {
+                                "name": "Viking Code School",
+                                "cost": "18000",
+                                "weeks": "14",
+                                "finance": false,
+                                "cities": [
+                                    "online"
+                                ]
+                            }, {
+                                "name": "Hack Reactor",
+                                "cost": "17780",
+                                "weeks": "12",
+                                "finance": true,
+                                "cities": [
+                                    "New York",
+                                    "San Francisco"
+                                ]
+                            }, {
+                                "name": "Hackbright Academy",
+                                "cost": "15000",
+                                "weeks": "10",
+                                "finance": true,
+                                "cities": [
+                                    "San Francisco"
+                                ]
+                            }, {
+                                "name": "Dev Bootcamp",
+                                "cost": "13950",
+                                "finance": true,
+                                "weeks": "19",
+                                "cities": [
+                                    "New York",
+                                    "San Francisco",
+                                    "Chicago"
+                                ]
+                            }, {
+                                "name": "General Asssembly",
+                                "cost": "11500",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "Washington, DC",
+                                    "Austin",
+                                    "Boston",
+                                    "Chicago",
+                                    "Hong Kong",
+                                    "London",
+                                    "Los Angeles",
+                                    "Melbourne",
+                                    "New York cities",
+                                    "San Francisco",
+                                    "Seattle",
+                                    "Singapore"
+                                ]
+                            }, {
+                                "name": "Angel Hack",
+                                "cost": "14250",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "San Francisco"
+                                ]
+                            }, {
+                                "name": "Bitmaker Labs",
+                                "cost": "12000",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "Toronto"
+                                ]
+                            }, {
+                                "name": "CoderVox",
+                                "cost": "9980",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "Austin"
+                                ]
+                            }, {
+                                "name": "Coding Dojo",
+                                "cost": "12500",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "New York",
+                                    "San Francisco",
+                                    "Chicago"
+                                ]
+                            }, {
+                                "name": "Epicodus",
+                                "cost": "4500",
+                                "finance": false,
+                                "weeks": "15",
+                                "cities": [
+                                    "Portland"
+                                ]
+                            }, {
+                                "name": "Flat Iron School",
+                                "cost": "15000",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "New York"
+                                ]
+                            }, {
+                                "name": "Galvanize",
+                                "cost": "21000",
+                                "finance": true,
+                                "weeks": "24",
+                                "cities": [
+                                    "Boulder",
+                                    "Denver",
+                                    "Seattle",
+                                    "San Francisco",
+                                    "Fort Collins"
+                                ]
+                            }, {
+                                "name": "The Iron Yard",
+                                "cost": "12000",
+                                "finance": true,
+                                "weeks": "19",
+                                "cities": [
+                                    "Atlanta",
+                                    "Austin",
+                                    "Colombia, SC",
+                                    "Charleston, SC",
+                                    "Houston",
+                                    "Greenville, SC",
+                                    "Las Vegas",
+                                    "Little Rock",
+                                    "Nashville",
+                                    "Orlando",
+                                    "Raleigh - Durham",
+                                    "Tampa - St. Petersburg",
+                                    "Washington DC"
+                                ]
+                            }, {
+                                "name": "Launch Academy",
+                                "cost": "12500",
+                                "finance": true,
+                                "weeks": "10",
+                                "cities": [
+                                    "Boston"
+                                ]
+                            }, {
+                                "name": "Maker Square",
+                                "cost": "16920",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "Los Angeles",
+                                    "San Francisco",
+                                    "Austin"
+                                ]
+                            }, {
+                                "name": "Refactor U",
+                                "cost": "13500",
+                                "finance": true,
+                                "weeks": "10",
+                                "cities": [
+                                    "Boulder"
+                                ]
+                            }, {
+                                "name": "Rocket U",
+                                "cost": "12500",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "New York",
+                                    "San Francisco",
+                                    "Chicago"
+                                ]
+                            }, {
+                                "name": "Sabio",
+                                "cost": "13450",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "Los Angeles"
+                                ]
+                            }, {
+                                "name": "Shillington School",
+                                "cost": "12950",
+                                "finance": true,
+                                "weeks": "12",
+                                "cities": [
+                                    "New York",
+                                    "Sydney",
+                                    "Brisbane",
+                                    "London",
+                                    "Manchester",
+                                    "Melbourne"
+                                ]
+                            }, {
+                                "name": "The Tech Academy",
+                                "cost": "9000",
+                                "finance": true,
+                                "weeks": "20",
+                                "cities": [
+                                    "Portland"
+                                ]
+                            }, {
+                                "name": "Turing School",
+                                "cost": "17500",
+                                "finance": true,
+                                "weeks": "27",
+                                "cities": [
+                                    "Denver"
+                                ]
+                            }, {
+                                "name": "Free Code Camp",
+                                "cost": "0",
+                                "finance": true,
+                                "weeks": "0",
+                                "cities": [
+                                    "Online"
+                                ]
+                            }];
+                            //reduce opacity for steps 2 through 4
+                            //the actual elements start out hidden via CSS
+                            $('#two').css({opacity: '0.25'});
+                            $('#three').css({opacity: '0.25'});
+                            $('#four').css({opacity: '0.25'});
+                            //step one event listener
+                            $('#city-buttons').on("click", "span", function () {
+                                $(this).addClass('animated tada');
+                                city = $(this).attr("id");
+                                //make next step visible
+                                $('#two').css({opacity: '1'});
+                                $('#income').css({visibility: 'visible'});
+                                //console.log(city);
+                            });
+                            //step two event listener
+                            $('#income').on("change", function () {
+                                console.log("Income Updated");
+                                lastYearincome = parseInt($('#lastYearIncome').val());
+                                //make next step visible
+                                $('#three').css({opacity: '1'});
+                                $('#calculate').css({visibility: 'visible'});
+                            });
+                            <!--Graph it-->
+                            $('#calculate').on("click", function () {
+                                //Make data logger visible
+                                $('#four').css({opacity: '1'});
+                                <!--Prep the data for D3 -->
+                                var categoryNames = ['Tuition', 'Finance', 'Housing', 'Working Cost'];
+                                bootcamps.forEach(function (camp) {
+                                    var x0 = 0;
+                                    //this just checks against main city array.
+                                    //when we refactor, this should check against this camp's cities array
+                                    //should not be a difficult change
+                                    if (cityArray.indexOf(city) >= 0) {
+                                        weeklyHousing = 0;
+                                    } else {
+                                        weeklyHousing = 500;
+                                    }
+                                    camp.mapping = [{
+                                        name: camp.name,
+                                        label: 'Tuition',
+                                        x0: x0,
+                                        x1: x0 += +camp.cost
+                                    }, {
+                                        name: camp.name,
+                                        label: 'Finance',
+                                        x0: +camp.cost,
+                                        x1: x0 += +Math.floor(camp.cost * .09519)
+                                    }, {
+                                        name: camp.name,
+                                        label: 'Housing',
+                                        x0: +Math.floor(camp.cost * 1.09519),
+                                        x1: x0 += weeklyHousing * camp.weeks
+                                    }, {
+                                        name: camp.name,
+                                        label: 'Working Cost',
+                                        x0: +(Math.floor(camp.cost * 1.09519) + weeklyHousing * camp.weeks),
+                                        x1: x0 += +(Math.floor(camp.weeks * lastYearincome / 50))
+                                    }];
+                                    camp.total = camp.mapping[camp.mapping.length - 1].x1;
+                                });
+                                console.log(bootcamps[0]);
+                                var margin = {
+                                            top: 30,
+                                            right: 60,
+                                            bottom: 50,
+                                            left: 140
+                                        },
+                                        width = 800 - margin.left - margin.right,
+                                        height = 600 - margin.top - margin.bottom;
+                                var barHeight = 20;
+                                var xScale = d3.scale.linear()
+                                        .domain([0, d3.max(bootcamps, function (d) {
+                                            return d.total;
+                                        })])
+                                        .rangeRound([0, width]);
+                                var yScale = d3.scale.ordinal()
+                                        .domain(bootcamps.map(function (d) {
+                                            return d.name;
+                                        }))
+                                        .rangeRoundBands([0, height], .1);
+                                console.log("yrangeroundband", yScale.rangeBand());
+                                var color = d3.scale.ordinal()
+                                        .range(["#f0ad4e", "#4A2B0F", "#215f1e", "#457E86"])
+                                        .domain(['Tuition', 'Finance', 'Housing', 'Working Cost']);
+                                var svg = d3.select("svg")
+                                        .attr("width", width + margin.left + margin.right)
+                                        .attr("height", height + margin.top + margin.bottom)
+                                        .append("g")
+                                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                                var selection = svg.selectAll(".series")
+                                        .data(bootcamps)
+                                        .enter().append("g")
+                                        .attr("class", "series")
+                                        .attr("transform", function (d) {
+                                            return "translate(0," + yScale(d.name) + ")";
+                                        });
+                                ;
+                                selection.selectAll("rect")
+                                        .data(function (d) {
+                                            return d.mapping;
+                                        })
+                                        .enter().append("rect")
+                                        .attr("width", function (d) {
+                                            return xScale((d.x1) - (d.x0));
+                                        })
+                                        .attr("x", function (d) {
+                                            return xScale(d.x0);
+                                        })
+                                        .attr("height", yScale.rangeBand())
+                                        .style("fill", function (d) {
+                                            return color(d.label);
+                                        })
+                                        .style("stroke", "white")
+                                        .on("mouseover", function (d) {
+                                            showPopover.call(this, d);
+                                        })
+                                        .on("mouseout", function (d) {
+                                            removePopovers();
+                                        });
+                                //axes
+                                //axes
+                                var xAxis = d3.svg.axis()
+                                        .scale(xScale)
+                                        .orient("bottom");
+                                var yAxis = d3.svg.axis()
+                                        .scale(yScale)
+                                        .orient("left");
+                                svg.append("g")
+                                        .attr("class", "y axis")
+                                        .call(yAxis);
+                                svg.append("g")
+                                        .attr("class", "x axis")
+                                        .attr("transform", "translate(0," + height + ")")
+                                        .call(xAxis)
+                                        .append("text")
+                                        .attr("x", 300)
+                                        .attr("y", 35)
+                                        .attr("dy", ".35em")
+                                        .style("text-anchor", "middle")
+                                        .text("Cost in $USD");
+                                //tooltips
+                                function removePopovers() {
+                                    $('.popover').each(function () {
+                                        $(this).remove();
+                                    });
+                                }
+
+                                function showPopover(d) {
+                                    $(this).popover({
+                                        title: d.name,
+                                        placement: 'auto top',
+                                        container: 'body',
+                                        trigger: 'manual',
+                                        html: true,
+                                        content: function () {
+                                            return d.label +
+                                                    "<br/>$" +
+                                                    d3.format(",")(d.value ? d.value : d.x1 - d.x0);
+                                        }
+                                    });
+                                    $(this).popover('show')
+                                }
+
+                                //legends
+                                var legend = svg.selectAll(".legend")
+                                        .data(categoryNames.slice().reverse())
+                                        .enter().append("g")
+                                        .attr("class", "legend")
+                                        .attr("transform", function (d, i) {
+                                            return "translate(30," + i * yScale.rangeBand() * 1.1 + ")";
+                                        });
+                                legend.append("rect")
+                                        .attr("x", width - yScale.rangeBand())
+                                        .attr("width", yScale.rangeBand())
+                                        .attr("height", yScale.rangeBand())
+                                        .style("fill", color)
+                                        .style("stroke", "white");
+                                legend.append("text")
+                                        .attr("x", width - yScale.rangeBand() * 1.2)
+                                        .attr("y", 12)
+                                        .attr("dy", ".35em")
+                                        .style("text-anchor", "end")
+                                        .text(function (d) {
+                                            return d;
+                                        });
+                            });
+                        });
