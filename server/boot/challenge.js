@@ -7,15 +7,15 @@
  modification, are permitted provided that the following conditions are met:
 
  1. Redistributions of source code must retain the above copyright notice,
-  this list of conditions and the following disclaimer.
+ this list of conditions and the following disclaimer.
 
  2. Redistributions in binary form must reproduce the above copyright notice,
-  this list of conditions and the following disclaimer in the documentation
-  and/or other materials provided with the distribution.
+ this list of conditions and the following disclaimer in the documentation
+ and/or other materials provided with the distribution.
 
  3. Neither the name of the copyright holder nor the names of its contributors
-  may be used to endorse or promote products derived from this software
-  without specific prior written permission.
+ may be used to endorse or promote products derived from this software
+ without specific prior written permission.
 
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -31,9 +31,9 @@
  */
 
 var R = require('ramda'),
-    utils = require('../utils'),
-    userMigration = require('../utils/middleware').userMigration,
-    MDNlinks = require('../../seed/bonfireMDNlinks');
+  utils = require('../utils'),
+  userMigration = require('../utils/middleware').userMigration,
+  MDNlinks = require('../../seed/bonfireMDNlinks');
 
 var challengeMapWithNames = utils.getChallengeMapWithNames();
 var challengeMapWithIds = utils.getChallengeMapWithIds();
@@ -79,7 +79,7 @@ module.exports = function(app) {
 
   function returnNextChallenge(req, res, next) {
     if (!req.user) {
-    return res.redirect('../challenges/learn-how-free-code-camp-works');
+      return res.redirect('../challenges/learn-how-free-code-camp-works');
     }
     var completed = req.user.completedChallenges.map(function (elem) {
       return elem.id;
@@ -133,7 +133,7 @@ module.exports = function(app) {
 
   function returnCurrentChallenge(req, res, next) {
     if (!req.user) {
-    return res.redirect('../challenges/learn-how-free-code-camp-works');
+      return res.redirect('../challenges/learn-how-free-code-camp-works');
     }
     var completed = req.user.completedChallenges.map(function (elem) {
       return elem.id;
@@ -171,40 +171,24 @@ module.exports = function(app) {
   function returnIndividualChallenge(req, res, next) {
     var dashedName = req.params.challengeName;
 
-    var challengeName =
-      (/^(bonfire|waypoint|zipline|basejump)/i).test(dashedName) ?
-        dashedName
-          .replace(/\-/g, ' ')
-          .split(' ')
-          .slice(1)
-          .join(' ') :
-        dashedName.replace(/\-/g, ' ');
-
-    Challenge.find(
-      { where: { name: new RegExp(challengeName, 'i') } },
-      function(err, challengeFromMongo) {
+    Challenge.findOne(
+      { dashedName: challengeName },
+      function(err, challenge) {
         if (err) { return next(err); }
 
         // Handle not found
-        if (challengeFromMongo.length < 1) {
+        if (!challengeFromMongo) {
           req.flash('errors', {
             msg: '404: We couldn\'t find a challenge with that name. ' +
             'Please double check the name.'
           });
           return res.redirect('/challenges');
         }
-        var challenge = challengeFromMongo.pop();
         // Redirect to full name if the user only entered a partial
-        var dashedNameFull = challenge.name
-          .toLowerCase()
-          .replace(/\s/g, '-')
-          .replace(/[^a-z0-9\-\.]/gi, '');
-        if (dashedNameFull !== dashedName) {
-          return res.redirect('../challenges/' + dashedNameFull);
-        } else if (req.user) {
+        if (req.user) {
           req.user.currentChallenge = {
             challengeId: challenge.id,
-            challengeName: challenge.name,
+            challengeName: challenge.dashedName,
             challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
                 map(function (key) {
                   return challengeMapWithIds[key]
