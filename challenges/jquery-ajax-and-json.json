@@ -5,6 +5,7 @@
     {
       "id": "bd7112d8c441eddfaeb5bded",
       "name": "Waypoint: Get Started with jQuery",
+      "dashedName": "waypoint-get-started-with-jquery",
       "difficulty": 0.13,
       "challengeSeed": ["125671865"],
       "description": [
@@ -30,6 +31,7 @@
     {
       "id": "bd7113d8c441eddfaeb5bdef",
       "name": "Waypoint: Write Functions with jQuery",
+      "dashedName": "waypoint-write-functions-with-jquery",
       "difficulty": 0.14,
       "challengeSeed": ["125658029"],
       "description": [
@@ -54,6 +56,7 @@
     {
       "id": "bd7114d8c441eddfaeb5bdef",
       "name": "Waypoint: Harness Dynamic HTML",
+      "dashedName": "waypoint-harness-dynamic-html",
       "difficulty": 0.15,
       "challengeSeed": ["125658028"],
       "description": [
@@ -77,6 +80,7 @@
     {
       "id": "bd7115d8c441eddfaeb5bdef",
       "name": "Waypoint: Listen for jQuery Events",
+      "dashedName": "waypoint-listen-for-jquery-events",
       "difficulty": 0.16,
       "challengeSeed": ["125658027"],
       "description": [
@@ -100,6 +104,7 @@
     {
       "id": "bd7116d8c441eddfaeb5bdef",
       "name": "Waypoint: Trigger jQuery Effects",
+      "dashedName": "waypoint-trigger-jquery-effects",
       "difficulty": 0.17,
       "challengeSeed": ["125658025"],
       "description": [

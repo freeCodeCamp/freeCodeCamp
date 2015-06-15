@@ -5,6 +5,7 @@
     {
       "id": "bad87fee1348bd9acde08812",
       "name": "Waypoint: Mobile Responsive Images",
+      "dashedName": "waypoint-mobile-responsive-images",
       "difficulty": 0.047,
       "description": [
         "Now let's go back to our Cat Photo App. This time, we'll style it using the popular Twitter Bootstrap responsive CSS framework. First, add a new image with the <code>src</code> attribute of \"http://bit.ly/fcc-kittens2\", and add the \"img-responsive\" Bootstrap class to that image.",
@@ -91,6 +92,7 @@
     {
       "id": "bad87fee1348bd8acde08812",
       "name": "Waypoint: Center Text with Bootstrap",
+      "dashedName": "waypoint-center-text-with-bootstrap",
       "difficulty": 0.048,
       "description": [
         "Add Bootstrap's \"text-center\" class to your <code>h2</code> element.",
@@ -174,6 +176,7 @@
     {
       "id": "bad87fee1348cd8acdf08812",
       "name": "Waypoint: Create a Bootstrap Button",
+      "dashedName": "waypoint-create-a-bootstrap-button",
       "difficulty": 0.049,
       "description": [
         "Create a new <code>button</code> element below your large kitten photo. Give it the class \"btn\" and the text of \"like this photo\".",
@@ -258,6 +261,7 @@
     {
       "id": "bad87fee1348cd8acef08812",
       "name": "Waypoint: Create a Block Element Bootstrap Button",
+      "dashedName": "waypoint-create-a-block-element-bootstrap-button",
       "difficulty": 0.050,
       "description": [
         "Add Bootstrap's \"btn-block\" class to your Bootstrap button.",
@@ -346,6 +350,7 @@
     {
       "id": "bad87fee1348cd8acef08811",
       "name": "Waypoint: Taste the Bootstrap Button Color Rainbow",
+      "dashedName": "waypoint-taste-the-bootstrap-button-color-rainbow",
       "difficulty": 0.051,
       "description": [
         "Add Bootstrap's \"btn-primary\" class to your button.",
@@ -432,6 +437,7 @@
     {
       "id": "bad87fee1348cd8acef08813",
       "name": "Waypoint: Call out Optional Actions with Button Info",
+      "dashedName": "waypoint-call-out-optional-actions-with-button-info",
       "difficulty": 0.052,
       "description": [
         "Create a new block-level Bootstrap button below your \"Like\" button with the text \"Info\", and add Bootstrap's \"btn-info\" and \"btn-block\" classes to it.",
@@ -519,6 +525,7 @@
     {
       "id": "bad87fee1348ce8acef08814",
       "name": "Waypoint: Warn your Users of a Dangerous Action",
+      "dashedName": "waypoint-warn-your-users-of-a-dangerous-action",
       "difficulty": 0.053,
       "description": [
         "Create a button with the text \"Delete\" and give it the class \"btn-danger\".",
@@ -607,6 +614,7 @@
     {
       "id": "bad88fee1348ce8acef08815",
       "name": "Waypoint: Use the Bootstrap Grid to Put Elements Side By Side",
+      "dashedName": "waypoint-use-the-bootstrap-grid-to-put-elements-side-by-side",
       "difficulty": 0.054,
       "description": [
         "Put the \"Like\", \"Info\" and \"Delete\" buttons side-by-side by wrapping all three of them within one <code>&#60;div class=\"row\"&#62;</code> element, then each of them within a <code>&#60;div class=\"col-xs-4\"&#62;</code> element.",
@@ -700,6 +708,7 @@
     {
       "id": "bad87fee1348bd9aedf08845",
       "name": "Waypoint: Ditch Custom CSS for Bootstrap",
+      "dashedName": "waypoint-ditch-custom-css-for-bootstrap",
       "difficulty": 0.055,
       "description": [
         "Delete the \".red-text\", \"p\", and \".smaller-image\" CSS declarations from your <code>style</code> element so that the only declarations left in your <code>style</code> element are \"h2\" and \"thick-green-border\". Then Delete the <code>p</code> element that contains a dead link. Then remove the \"red-text\" class from your <code>h2</code> element and replace it with the \"text-primary\" Bootstrap class. Finally, remove the \"smaller-image\" class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class.",
@@ -799,6 +808,7 @@
     {
       "id": "bad87fee1348bd9aede08845",
       "name": "Waypoint: Create a Custom Heading",
+      "dashedName": "waypoint-create-a-custom-heading",
       "difficulty": 0.056,
       "description": [
         "Wrap your first image and your <code>h2</code> element within a single <code>&#60;div class='row'&#62;</code> element. Wrap your <code>h2</code> text within a <code>&#60;div class='col-xs-8'&#62;</code> and your image in a <code>&#60;div class='col-xs-4'&#62;</code> so that they are on the same line.",
@@ -888,6 +898,7 @@
     {
       "id": "bad87fee1348bd9aedd08845",
       "name": "Waypoint: Add Font Awesome Icons to our Buttons",
+      "dashedName": "waypoint-add-font-awesome-icons-to-our-buttons",
       "difficulty": 0.057,
       "description": [
         "Use Font Awesome to add a \"thumbs-up\" icon to your like button by giving it a <code>i</code> element with the classes \"fa\" and \"fa-thumbs-up\".",
@@ -974,7 +985,8 @@
     },
     {
       "id": "bad87fee1348bd9aedc08845",
-      "name": "Waypoint: Add Font Awesome Icons all of our Buttons",
+      "name": "Waypoint: Add Font Awesome Icons to all of our Buttons",
+      "dashedName": "waypoint-add-font-awesome-icons-to-all-of-our-Buttons",
       "difficulty": 0.058,
       "description": [
         "Use Font Awesome to add a \"info-circle\" icon to your info button and a \"trash\" icon to your delete button.",
@@ -1062,6 +1074,7 @@
     {
       "id": "bad87fee1348bd9aedb08845",
       "name": "Waypoint: Responsively Style Radio Buttons",
+      "dashedName": "waypoint-responsively-style-radio-buttons",
       "difficulty": 0.059,
       "description": [
         "Wrap all of your radio buttons within a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them within a <code>&#60;div class='col-xs-6'&#62;</code> element.",
@@ -1148,6 +1161,7 @@
     {
       "id": "bad87fee1348bd9aeda08845",
       "name": "Waypoint: Responsively Style Checkboxes",
+      "dashedName": "waypoint-responsively-style-checkboxes",
       "difficulty": 0.060,
       "description": [
         "Wrap all your checkboxes in a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them in a <code>&#60;div class='col-xs-4'&#62;</code> element.",
@@ -1241,6 +1255,7 @@
     {
       "id": "bad87fee1348bd9aed908845",
       "name": "Waypoint: Style Text Inputs as Form Controls",
+      "dashedName": "waypoint-style-text-inputs-as-form-controls",
       "difficulty": 0.061,
       "description": [
         "Give your form's text input field a class of \"form-control\". Give your form's submit button the classes \"btn btn-primary\". Also give this button the Font Awesome icon of \"fa-paper-plane\".",
@@ -1344,6 +1359,7 @@
     {
       "id": "bad87fee1348bd9aec908845",
       "name": "Waypoint: Line up Form Elements Responsively with Bootstrap",
+      "dashedName": "waypoint-line-up-form-elements-responsively-with-bootstrap",
       "difficulty": 0.062,
       "description": [
         "Now let's get your form <code>input</code> and your submission <code>button</code> on the same line. We'll do this the same way we have previously: by using a <code>div</code> element with the class \"row\", and other <code>div</code> elements within it using the \"col-xs-*\" class.",

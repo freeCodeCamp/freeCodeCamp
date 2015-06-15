@@ -5,6 +5,7 @@
     {
       "id": "bd7124d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn how Free Code Camp Works",
+      "dashedName": "waypoint-learn-how-free-code-camp-works",
       "difficulty": 0.001,
       "challengeSeed": ["125407438"],
       "description": [
@@ -53,6 +54,7 @@
     {
       "id": "bd7125d8c441eddfaeb5bd0f",
       "name": "Waypoint: Join Our Chat Room",
+      "dashedName": "waypoint-join-our-chat-room",
       "difficulty": 0.002,
       "challengeSeed": ["124555254"],
       "description": [
@@ -107,6 +109,7 @@
     {
       "id": "bd7125d8c441eddfaeb5bdff",
       "name": "Waypoint: Preview our Challenge Map",
+      "dashedName": "waypoint-preview-our-challenge-map",
       "difficulty": 0.003,
       "challengeSeed": ["125407437"],
       "description": [
@@ -149,6 +152,7 @@
     {
       "id": "bd7125d8c441eddfaeb5bd1f",
       "name": "Waypoint: Browse our Field Guide",
+      "dashedName": "waypoint-browse-our-field-guide",
       "difficulty": 0.004,
       "challengeSeed": ["125407435"],
       "description": [
@@ -188,6 +192,7 @@
     {
       "id": "bd7125d8c441eddfaeb5bd2f",
       "name": "Waypoint: Customize your Portfolio Page",
+      "dashedName": "waypoint-customize-your-portfolio-page",
       "difficulty": 0.005,
       "challengeSeed": ["125407433"],
       "description": [
@@ -233,6 +238,7 @@
     {
       "id": "bd7126d8c441eddfaeb5bd3f",
       "name": "Waypoint: Try Camper News",
+      "dashedName": "waypoint-try-camper-news",
       "difficulty": 0.006,
       "challengeSeed": ["124553410"],
       "description": [
@@ -284,6 +290,7 @@
     {
       "id": "bd7126d8c441eddfaeb5bd3e",
       "name": "Waypoint: Meet Other Campers in your City",
+      "dashedName": "waypoint-meet-other-campers-in-your-city",
       "difficulty": 0.007,
       "challengeSeed": ["127358841"],
       "description": [
@@ -332,6 +339,7 @@
     {
       "id": "bd7137d8c441eddfaeb5bdef",
       "name": "Waypoint: Get Help the Hacker Way with RSAP",
+      "dashedName": "waypoint-get-help-the-hacker-way-with-rsap",
       "difficulty": 0.008,
       "challengeSeed": ["125407432"],
       "description": [
