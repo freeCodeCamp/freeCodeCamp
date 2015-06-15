@@ -180,7 +180,8 @@
         "assert.deepEqual(palindrome(\"not a palindrome\"), false);",
         "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
         "assert.deepEqual(palindrome(\"never odd or even\"), true);",
-        "assert.deepEqual(palindrome(\"nope\"), false);"
+        "assert.deepEqual(palindrome(\"nope\"), false);",
+        "assert.deepEqual(palindrome(\"almostomla\"), false);"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
