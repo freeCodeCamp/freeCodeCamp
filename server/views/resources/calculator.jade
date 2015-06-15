@@ -372,7 +372,7 @@ block content
                                 //make next step visible
                                 $('#four').css({opacity: '1'});
                                 <!--Prep the data for D3 -->
-                                var categoryNames = ['Opportunity Cost at Current Wage', 'Housing Cost', 'Financing Cost', 'Tuition / Wage Garnishing'];
+                                var categoryNames = ['Opportunity Cost at Current Wage', 'Financing Cost', 'Housing Cost', 'Tuition / Wage Garnishing'];
                                 bootcamps.forEach(function (camp) {
                                     var x0 = 0;
                                     if (camp.cities.indexOf(city) > -1) {
@@ -382,28 +382,52 @@ block content
                                     }
                                     camp.mapping = [{
                                         name: camp.name,
-                                        label: 'Tuition or Wage Garnishing',
+                                        label: 'Opportunity Cost at Current Wage',
+                                        value: +camp.cost,
                                         x0: x0,
                                         x1: x0 += +camp.cost
                                     }, {
                                         name: camp.name,
                                         label: 'Financing Cost',
+                                        value: +Math.floor(camp.cost * .09519),
                                         x0: +camp.cost,
                                         x1: camp.finance ? x0 += +Math.floor(camp.cost * .09519) : 0
                                     }, {
                                         name: camp.name,
                                         label: 'Housing Cost',
+                                        value: +weeklyHousing * camp.weeks,
                                         x0: camp.finance ? +Math.floor(camp.cost * 1.09519) : camp.cost,
                                         x1: x0 += weeklyHousing * camp.weeks
                                     }, {
                                         name: camp.name,
-                                        label: 'Opportunity Cost at Current Wage',
+                                        label: 'Tuition / Wage Garnishing',
+                                        value: +(Math.floor(camp.weeks * lastYearincome / 50)),
                                         x0: camp.finance ? +(Math.floor(camp.cost * 1.09519) + weeklyHousing * camp.weeks) : +camp.cost + weeklyHousing * camp.weeks,
                                         x1: x0 += +(Math.floor(camp.weeks * lastYearincome / 50))
                                     }];
                                     camp.total = camp.mapping[camp.mapping.length - 1].x1;
                                 });
                                 bootcamps.sort(function(a, b) { return a.total - b.total; });
+                                maxValue = 0;
+                                bootcamps.forEach(function (camp) {
+                                    camp.mapping.forEach(function (thing) {
+                                        //console.log(thing.value );
+                                        if (thing.value > maxValue) {
+                                            maxValue = thing.value;
+                                            console.log(maxValue);
+                                        }
+                                    });
+                                });
+                                var xStackMax = d3.max(bootcamps, function (d) {
+                                            return d.total;
+                                        }), //Scale for Stacked
+                                        xGroupMax = bootcamps.map(function (camp) {                        //Scale for Grouped
+                                            return camp.mapping.reduce(function (a, b) {
+                                                return a.value > b.value ? a.value : b.value;
+                                            });
+                                        }).reduce(function (a, b) {
+                                            return a > b ? a : b;
+                                        });
                                 var margin = {
                                             top: 30,
                                             right: 60,
@@ -411,21 +435,21 @@ block content
                                             left: 140
                                         },
                                         width = 800 - margin.left - margin.right,
-                                        height = 600 - margin.top - margin.bottom;
+                                        height = 1200 - margin.top - margin.bottom;
                                 var barHeight = 20;
                                 var xScale = d3.scale.linear()
-                                        .domain([0, d3.max(bootcamps, function (d) {
-                                            return d.total;
-                                        })])
+                                        .domain([0, xStackMax])
                                         .rangeRound([0, width]);
-                                var yScale = d3.scale.ordinal()
+                                var y0Scale = d3.scale.ordinal()
                                         .domain(bootcamps.map(function (d) {
                                             return d.name;
                                         }))
                                         .rangeRoundBands([0, height], .1);
+                                var y1Scale = d3.scale.ordinal()
+                                        .domain(categoryNames).rangeRoundBands([0, y0Scale.rangeBand()]);
                                 var color = d3.scale.ordinal()
-                                        .range(["#215f1e", "#5f5c1e", "#1e215f", "#5c1e5f"])
-                                        .domain(['Tuition', 'Finance', 'Housing', 'Working Cost']);
+                                    .range(["#215f1e", "#5f5c1e", "#1e215f", "#5c1e5f"])
+                                    .domain(categoryNames);
                                 var svg = d3.select("svg")
                                         .attr("width", width + margin.left + margin.right)
                                         .attr("height", height + margin.top + margin.bottom)
@@ -436,21 +460,16 @@ block content
                                         .enter().append("g")
                                         .attr("class", "series")
                                         .attr("transform", function (d) {
-                                            return "translate(0," + yScale(d.name) + ")";
+                                            return "translate(0," + y0Scale(d.name) + ")";
                                         });
-                                ;
-                                selection.selectAll("rect")
+                                var rect = selection.selectAll("rect")
                                         .data(function (d) {
                                             return d.mapping;
                                         })
                                         .enter().append("rect")
-                                        .attr("width", function (d) {
-                                            return xScale((d.x1) - (d.x0));
-                                        })
-                                        .attr("x", function (d) {
-                                            return xScale(d.x0);
-                                        })
-                                        .attr("height", yScale.rangeBand())
+                                        .attr("x", 0)
+                                        .attr("width", 0)
+                                        .attr("height", y0Scale.rangeBand())
                                         .style("fill", function (d) {
                                             return color(d.label);
                                         })
@@ -461,13 +480,68 @@ block content
                                         .on("mouseout", function (d) {
                                             removePopovers();
                                         });
-                                //axes
+                                rect.transition()
+                                        .delay(function (d, i) {
+                                            return i * 10;
+                                        })
+                                        .attr("x", function (d) {
+                                            return xScale(d.x0);
+                                        })
+                                        .attr("width", function (d) {
+                                            return xScale((d.x1) - (d.x0));
+                                        });
+                                d3.selectAll("input").on("change", change);
+                                var timeout = setTimeout(function () {
+                                    d3.select("input[value=\"grouped\"]").property("checked", true).each(change);
+                                }, 2000);
+
+                                function change() {
+                                    clearTimeout(timeout);
+                                    if (this.value === "grouped") transitionGrouped();
+                                    else transitionStacked();
+                                }
+
+                                function transitionGrouped() {
+                                    xScale.domain = ([0, xGroupMax]);
+                                    rect.transition()
+                                            .duration(500)
+                                            .delay(function (d, i) {
+                                                return i * 10;
+                                            })
+                                            .attr("width", function (d) {
+                                                return xScale((d.x1) - (d.x0));
+                                            })
+                                            .transition()
+                                            .attr("y", function (d) {
+                                                return y1Scale(d.label);
+                                            })
+                                            .attr("x", 0)
+                                            .attr("height", y1Scale.rangeBand())
+                                }
+
+                                function transitionStacked() {
+                                    xScale.domain = ([0, xStackMax]);
+                                    rect.transition()
+                                            .duration(500)
+                                            .delay(function (d, i) {
+                                                return i * 10;
+                                            })
+                                            .attr("x", function (d) {
+                                                return xScale(d.x0);
+                                            })
+                                            .transition()
+                                            .attr("y", function (d) {
+                                                return y0Scale(d.label);
+                                            })
+                                            .attr("height", y0Scale.rangeBand())
+                                }
+
                                 //axes
                                 var xAxis = d3.svg.axis()
                                         .scale(xScale)
                                         .orient("bottom");
                                 var yAxis = d3.svg.axis()
-                                        .scale(yScale)
+                                        .scale(y0Scale)
                                         .orient("left");
                                 svg.append("g")
                                         .attr("class", "y axis")
@@ -511,16 +585,16 @@ block content
                                         .enter().append("g")
                                         .attr("class", "legend")
                                         .attr("transform", function (d, i) {
-                                            return "translate(30," + i * yScale.rangeBand() * 1.1 + ")";
+                                            return "translate(30," + i * y0Scale.rangeBand() * 1.1 + ")";
                                         });
                                 legend.append("rect")
-                                        .attr("x", width - yScale.rangeBand())
-                                        .attr("width", yScale.rangeBand())
-                                        .attr("height", yScale.rangeBand())
+                                        .attr("x", width - y0Scale.rangeBand())
+                                        .attr("width", y0Scale.rangeBand())
+                                        .attr("height", y0Scale.rangeBand())
                                         .style("fill", color)
                                         .style("stroke", "white");
                                 legend.append("text")
-                                        .attr("x", width - yScale.rangeBand() * 1.2)
+                                        .attr("x", width - y0Scale.rangeBand() * 1.2)
                                         .attr("y", 12)
                                         .attr("dy", ".35em")
                                         .style("text-anchor", "end")
