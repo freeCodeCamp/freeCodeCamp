@@ -1758,8 +1758,8 @@
     },
     {
       "id": "bad87fee1348bd9aedc08830",
-      "name": "waypoint-use-html5-to-require-a-field",
-      "dashedName": "Waypoint: Use HTML5 to Require a Field",
+      "name": "Waypoint: Use HTML5 to Require a Field",
+      "dashedName": "waypoint-use-html5-to-require-a-field",
       "difficulty": 0.042,
       "description": [
         "Make your text <code>input</code> a \"required\" field, so that your user can't submit the form without completing this field.",
