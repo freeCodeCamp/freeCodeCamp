@@ -16,6 +16,14 @@ var providers = [
   'linkedin'
 ];
 
+// create async console.logs
+function debug() {
+  var args = [].slice.call(arguments);
+  process.nextTick(function() {
+    console.log.apply(console, args);
+  });
+}
+
 function createConnection(URI) {
   return Rx.Observable.create(function(observer) {
     MongoClient.connect(URI, function(err, database) {
@@ -33,6 +41,7 @@ function createQuery(db, collection, options, batchSize) {
     cursor.batchSize(batchSize || 20);
     // Cursor.each will yield all doc from a batch in the same tick,
     // or schedule getting next batch on nextTick
+    debug('opening cursor for %s', collection);
     cursor.each(function (err, doc) {
       if (err) {
         return observer.onError(err);
@@ -44,6 +53,7 @@ function createQuery(db, collection, options, batchSize) {
     });
 
     return Rx.Disposable.create(function () {
+      debug('closing cursor for %s', collection);
       cursor.close();
     });
   });
@@ -132,18 +142,42 @@ var userIdentityCount = users
   // count how many times insert completes
   .count();
 
-Rx.Observable.merge(
+var storyCount = dbObservable
+  .flatMap(function(db) {
+    return createQuery(db, 'stories', {});
+  })
+  .bufferWithCount(20)
+  .withLatestFrom(dbObservable, function(stories, db) {
+    return {
+      stories: stories,
+      db: db
+    };
+  })
+  .flatMap(function(dats) {
+    return insertMany(dats.db, 'stories', dats.stories, { w: 1 });
+  })
+  .count();
+
+Rx.Observable.combineLatest(
   userIdentityCount,
-  userSavesCount
+  userSavesCount,
+  storyCount,
+  function(userIdentCount, userCount, storyCount) {
+    return {
+      userIdentCount: userIdentCount * 20,
+      userCount: userCount * 20,
+      storyCount: storyCount * 20
+    };
+  }
 )
   .subscribe(
-    function(_count) {
-      count += _count * 20;
+    function(countObj) {
+      count = countObj;
     },
     function(err) {
       console.error('an error occured', err, err.stack);
     },
     function() {
-      console.log('finished with %s documents processed', count);
+      console.log('finished with ', count);
     }
   );
