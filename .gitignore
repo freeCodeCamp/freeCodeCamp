@@ -26,3 +26,4 @@ Thumbs.db
 bower_components
 main.css
 bundle.js
+coverage
