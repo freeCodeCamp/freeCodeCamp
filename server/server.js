@@ -127,6 +127,7 @@ var trusted = [
   '*.ytimg.com',
   '*.bitly.com',
   'http://cdn.inspectlet.com/',
+  'https://cdn.inspeclet.com/',
   'wss://inspectletws.herokuapp.com/',
   'http://hn.inspectlet.com/',
   '*.googleapis.com',
