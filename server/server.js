@@ -128,7 +128,9 @@ var trusted = [
   '*.bitly.com',
   'http://cdn.inspectlet.com/',
   'wss://inspectletws.herokuapp.com/',
-  'http://hn.inspectlet.com/'
+  'http://hn.inspectlet.com/',
+  '*.googleapis.com',
+  '*.gstatic.com'
 ];
 
 app.use(helmet.csp({
