@@ -99,6 +99,8 @@ var trusted = [
   '104.236.218.15',
   '*.freecodecamp.com',
   'http://www.freecodecamp.com',
+  'https://www.freecodecamp.com',
+  'https://freecodecamp.com',
   'ws://freecodecamp.com/',
   'ws://www.freecodecamp.com/',
   '*.gstatic.com',
