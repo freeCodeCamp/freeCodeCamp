@@ -142,7 +142,10 @@ app.use(helmet.csp({
   ].concat(trusted),
   'connect-src': [
   ].concat(trusted),
-  styleSrc: trusted,
+  styleSrc: [
+    'http://fonts.googleapis.com/*',
+    'http://fonts.gstatic.com/*'
+  ].concat(trusted),
   imgSrc: [
     /* allow all input since we have user submitted images for public profile*/
     '*'
