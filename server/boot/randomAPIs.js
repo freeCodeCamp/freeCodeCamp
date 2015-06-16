@@ -7,6 +7,7 @@ var Rx = require('rx'),
     debug = require('debug')('freecc:cntr:resources'),
 
     constantStrings = require('../utils/constantStrings.json'),
+    bootcampJson = require('../utils/bootcamps.json'),
     secrets = require('../../config/secrets');
 
 var slack = new Slack(secrets.slackHook);
@@ -328,7 +329,8 @@ module.exports = function(app) {
 
   function bootcampCalculator(req, res) {
     res.render('resources/calculator', {
-      title: 'Coding Bootcamp Cost Calculator'
+      title: 'Coding Bootcamp Cost Calculator',
+      bootcampJson: bootcampJson
     });
   }
 
