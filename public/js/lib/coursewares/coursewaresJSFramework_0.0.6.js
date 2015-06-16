@@ -40,6 +40,66 @@ editor.setOption("extraKeys", {
 });
 
 
+/*
+	Local Storage Update System By Andrew Cay(Resto)
+	localBonfire: singleton object that contains properties and methods related to
+		dealing with the localStorage system.
+	The keys work off of the variable challenge_name to make unique identifiers per bonfire
+	
+	Two extra functionalities: 
+	Added anonymous version checking system incase of future updates to the system
+	Added keyup listener to editor(myCodeMirror) so the last update has been saved to storage
+*/
+var localBonfire = {
+	version: 0.01,
+	keyVersion:"saveVersion",
+	keyStamp: challenge_Name + 'Stamp',
+	keyValue: challenge_Name + 'Val',
+	stampExpireTime: (1000 *60) *60 *24,
+	updateWait: 1500,// 1.5 seconds
+	updateTimeoutId: null
+};
+localBonfire.getEditorValue = function(){
+	return localStorage.getItem(localBonfire.keyValue);
+};
+localBonfire.getStampTime = function(){
+	//localstorage always saves as strings.
+	return Number.parseInt( localStorage.getItem(localBonfire.keyStamp) );
+};
+localBonfire.isAlive = function(){// returns true if IDE was edited within expire time
+	return ( Date.now() - localBonfire.getStampTime() < localBonfire.stampExpireTime );
+};
+localBonfire.updateStorage = function(){
+	if(typeof(Storage) !== undefined) {
+		var stamp = Date.now(),
+			value = editor.getValue();
+		localStorage.setItem(localBonfire.keyValue, value);
+		localStorage.setItem(localBonfire.keyStamp, stamp);
+	} else {
+		if( debugging ){
+			console.log('no web storage');
+		}
+	}
+	localBonfire.updateTimeoutId = null;
+	console.log('updated!');
+};
+// ANONYMOUS 1 TIME UPDATE VERSION
+(function(){
+	var savedVersion = localStorage.getItem('saveVersion');
+	if( savedVersion === null ){
+		localStorage.setItem(localBonfire.keyVersion, localBonfire.version);//just write current version
+	}else{
+		//do checking if not current version
+		if( savedVersion !== localBonfire.version ){
+			//update version
+		}
+	}
+})();
+
+editor.on('keyup', function(codMir, event){ 
+	window.clearTimeout(localBonfire.updateTimeoutId);
+	localBonfire.updateTimeoutId = window.setTimeout(localBonfire.updateStorage, localBonfire.updateWait);
+});
 
 var attempts = 0;
 if (attempts) {
@@ -71,15 +131,15 @@ var editorValue;
 var challengeSeed = challengeSeed || null;
 var tests = tests || [];
 
+
 var allSeeds = '';
 (function() {
   challengeSeed.forEach(function(elem) {
-    allSeeds += elem + '\n';
+	allSeeds += elem + '\n';
   });
 })();
 
-editorValue = allSeeds;
-
+editorValue = (localBonfire.isAlive())? localBonfire.getEditorValue() : allSeeds;
 
 myCodeMirror.setValue(editorValue);
 
