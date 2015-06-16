@@ -5,91 +5,49 @@ block content
         .panel-body
             .row
                 .col-xs-12.col-sm-10.col-sm-offset-1
-                    style.
-                        #lastYearIncome{
-                          clear:both;
-                          margin: 2% 0;
-                          width: 110px;
-                        }
-                        #income, #calculate {
-                          visibility:hidden;
-                        }
-                        .step {
-                          font-size: 2em;
-                          padding: 1%;
-                          clear: both;
-                        }
-                        .city-buttons {
-                          display: block;
-                          clear: right;
-                        }
-                        #four p{
-                          font-size: .6em;
-                          color: black;
-                        }
-                        .chart rect {
-                          fill: steelblue;
-                        }
-                        .chart text {
-                          fill: #121401;
-                          font: 13px sans-serif;
-                          text-anchor: end;
-                        }
-                        .axis path,
-                        .axis line {
-                          fill: none;
-                          stroke: #121401;
-                          stroke-width: 2px;
-                          shape-rendering: crispEdges;
-                        }
-                    html.
-                        <!--Live Logging for Testing-->
-                        <div id="target" class="step"></div>
-                        <div class="header">
-                            <!--Step 1-->
-                            <div id="one" class="step">Where do you live?</div>
-                            <div id="city-buttons">
-                                <button class='btn btn-primary btn-block' href='#' id="New York City">New York City</button>
-                                <button class='btn btn-primary btn-block' href='#' id="San Fransisco">San Fransisco</button>
-                                <button class='btn btn-primary btn-block' href='#' id="Austin">Austin</button>
-                                <button class='btn btn-primary btn-block' href='#' id="Los Angeles">Los Angeles</button>
-                                <button class='btn btn-primary btn-block' href='#' id="Chicago">Chicago</button>
-                                <button class='btn btn-primary btn-block' href='#' id="Other">Other</button>
-                            </div>
-                            &nbsp;
-                            <!--Step 2-->
-                            <div id="two" class="step">How much money did you make last year (in USD)?</div>
-                            <div id="income">
-                                <button class='btn btn-primary btn-block' href='#' id="0">$0</button>
-                                <button class='btn btn-primary btn-block' href='#' id="20000">$20,000</button>
-                                <button class='btn btn-primary btn-block' href='#' id="40000">$40,000</button>
-                                <button class='btn btn-primary btn-block' href='#' id="60000">$60,000</button>
-                                <button class='btn btn-primary btn-block' href='#' id="80000">$80,000</button>
-                                <button class='btn btn-primary btn-block' href='#' id="100000">$100,000</button>
-                            </div>
-                            <!--Step 4-->
-                            <!--<div id="four" class="step">Clear the Chart and Start Over?</div>-->
-                            <svg class="chart"></svg>
-                        </div>
-                        <!--container-->
-                        <div class="footer">
-                        Sources: <a href="#">Link to Data Sources Here</a>
-                        <form>
-                            <label>
-                                <input type="radio" name="mode"
-                                       value="grouped">Grouped
-                            </label>
-                            <label>
-                                <input type="radio" name="mode"
-                                           value="stacked" checked>
-                                        Stacked
-                            </label>
-                        </form>
+                    h2#one Where do you live?
+                        #city-buttons
+                            button#austin.btn.btn-primary.btn-block Austin
+                            button#brisbane.btn.btn-primary.btn-block Brisbane
+                            button#boulder.btn.btn-primary.btn-block Boulder
+                            button#chicago.btn.btn-primary.btn-block Chicago
+                            button#denver.btn.btn-primary.btn-block Denver
+                            button#hong-kong.btn.btn-primary.btn-block Hong Kong
+                            button#london.btn.btn-primary.btn-block London
+                            button#los-angeles.btn.btn-primary.btn-block Los Angeles
+                            button#manchester.btn.btn-primary.btn-block Manchester
+                            button#melbourne.btn.btn-primary.btn-block Melbourne
+                            button#san-francisco.btn.btn-primary.btn-block San Fransisco
+                            button#new-york-city.btn.btn-primary.btn-block New York City
+                            button#portland.btn.btn-primary.btn-block Portland
+                            button#singapore.btn.btn-primary.btn-block Singapore
+                            button#seattle.btn.btn-primary.btn-block Seattle
+                            button#toronto.btn.btn-primary.btn-block Toronto
+                            button#other.btn.btn-primary.btn-block Other
+                    h2#two How much money did you make last year (in USD)?
+                        #income
+                            button#0.btn.btn-primary.btn-block(href='#') $0
+                            button#20000.btn.btn-primary.btn-block(href='#') $20,000
+                            button#40000.btn.btn-primary.btn-block(href='#') $40,000
+                            button#60000.btn.btn-primary.btn-block(href='#') $60,000
+                            button#80000.btn.btn-primary.btn-block(href='#') $80,000
+                            button#100000.btn.btn-primary.btn-block(href='#') $100,000
+                    svg.chart
+                    | Sources:
+                    a(href='#') Link to Data Sources Here
+                    form
+                        label
+                            input(type='radio', name='mode', value='grouped')
+                            | Grouped
+                        label
+                            input(type='radio', name='mode', value='stacked')
+                            | Stacked
+
                     script.
                         $(document).ready(function () {
                             var city = "";
                             //major cities array to check against users location for housing costs
-                            var cityArray = ["San Fransisco", "Los Angeles", "Chicago", "Austin", "New York City"];
+                            var cityArray = ["san-fransisco", "los-angeles", "chicago", "austin", "new-york-city"];
                             //this is the raw bootcamps file allowing easy addition of new code camps
                             var bootcamps = [{
                                 "name": "App Academy",
@@ -98,8 +56,8 @@ block content
                                 "finance": false,
                                 "housing": "500",
                                 "cities": [
-                                    "New York",
-                                    "San Francisco"
+                                    "new-york-city",
+                                    "san-francisco"
                                 ]
                             }, {
                                 "name": "Viking Code School",
@@ -117,8 +75,8 @@ block content
                                 "weeks": "12",
                                 "finance": true,
                                 "cities": [
-                                    "New York",
-                                    "San Francisco"
+                                    "new-york-city",
+                                    "san-francisco"
                                 ]
                             }, {
                                 "name": "Hack Reactor Online",
@@ -127,8 +85,7 @@ block content
                                 "weeks": "12",
                                 "finance": true,
                                 "cities": [
-                                    "New York",
-                                    "San Francisco"
+                                    "online"
                                 ]
                             }, {
                                 "name": "Hackbright Academy",
@@ -137,7 +94,7 @@ block content
                                 "weeks": "10",
                                 "finance": true,
                                 "cities": [
-                                    "San Francisco"
+                                    "san-francisco"
                                 ]
                             }, {
                                 "name": "Dev Bootcamp",
@@ -146,9 +103,9 @@ block content
                                 "housing": "500",
                                 "weeks": "19",
                                 "cities": [
-                                    "New York",
-                                    "San Francisco",
-                                    "Chicago"
+                                    "new-york-city",
+                                    "san-francisco",
+                                    "chicago"
                                 ]
                             }, {
                                 "name": "General Asssembly",
@@ -157,18 +114,18 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "Washington, DC",
-                                    "Austin",
-                                    "Boston",
-                                    "Chicago",
-                                    "Hong Kong",
-                                    "London",
-                                    "Los Angeles",
-                                    "Melbourne",
-                                    "New York cities",
-                                    "San Francisco",
-                                    "Seattle",
-                                    "Singapore"
+                                    "washington-dc",
+                                    "austin",
+                                    "boston",
+                                    "chicago",
+                                    "hong-kong",
+                                    "london",
+                                    "los-angeles",
+                                    "melbourne",
+                                    "new-york-city",
+                                    "san-francisco",
+                                    "seattle",
+                                    "singapore"
                                 ]
                             }, {
                                 "name": "Angel Hack",
@@ -177,7 +134,7 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "San Francisco"
+                                    "san-francisco"
                                 ]
                             }, {
                                 "name": "Bitmaker Labs",
@@ -186,7 +143,7 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "Toronto"
+                                    "toronto"
                                 ]
                             }, {
                                 "name": "CoderVox",
@@ -195,7 +152,7 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "Austin"
+                                    "austin"
                                 ]
                             }, {
                                 "name": "Coding Dojo",
@@ -204,9 +161,9 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "New York",
-                                    "San Francisco",
-                                    "Chicago"
+                                    "new-york-city",
+                                    "san-francisco",
+                                    "chicago"
                                 ]
                             }, {
                                 "name": "Epicodus",
@@ -215,7 +172,7 @@ block content
                                 "finance": false,
                                 "weeks": "15",
                                 "cities": [
-                                    "Portland"
+                                    "portland"
                                 ]
                             }, {
                                 "name": "Flat Iron School",
@@ -224,7 +181,7 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "New York"
+                                    "new-york-city"
                                 ]
                             }, {
                                 "name": "Galvanize",
@@ -233,11 +190,10 @@ block content
                                 "finance": true,
                                 "weeks": "24",
                                 "cities": [
-                                    "Boulder",
-                                    "Denver",
-                                    "Seattle",
-                                    "San Francisco",
-                                    "Fort Collins"
+                                    "boulder",
+                                    "denver",
+                                    "seattle",
+                                    "san-francisco"
                                 ]
                             }, {
                                 "name": "The Iron Yard",
@@ -246,19 +202,8 @@ block content
                                 "finance": true,
                                 "weeks": "19",
                                 "cities": [
-                                    "Atlanta",
-                                    "Austin",
-                                    "Colombia, SC",
-                                    "Charleston, SC",
-                                    "Houston",
-                                    "Greenville, SC",
-                                    "Las Vegas",
-                                    "Little Rock",
-                                    "Nashville",
-                                    "Orlando",
-                                    "Raleigh - Durham",
-                                    "Tampa - St. Petersburg",
-                                    "Washington DC"
+                                    "austin",
+                                    "washington-dc"
                                 ]
                             }, {
                                 "name": "Launch Academy",
@@ -267,7 +212,7 @@ block content
                                 "finance": true,
                                 "weeks": "10",
                                 "cities": [
-                                    "Boston"
+                                    "boston"
                                 ]
                             }, {
                                 "name": "Maker Square",
@@ -276,9 +221,9 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "Los Angeles",
-                                    "San Francisco",
-                                    "Austin"
+                                    "los-angeles",
+                                    "san-francisco",
+                                    "austin"
                                 ]
                             }, {
                                 "name": "Refactor U",
@@ -287,7 +232,7 @@ block content
                                 "finance": true,
                                 "weeks": "10",
                                 "cities": [
-                                    "Boulder"
+                                    "boulder"
                                 ]
                             }, {
                                 "name": "Rocket U",
@@ -296,9 +241,9 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "New York",
-                                    "San Francisco",
-                                    "Chicago"
+                                    "new-york-city",
+                                    "san-francisco",
+                                    "chicago"
                                 ]
                             }, {
                                 "name": "Sabio",
@@ -307,7 +252,7 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "Los Angeles"
+                                    "los-angeles"
                                 ]
                             }, {
                                 "name": "Shillington School",
@@ -316,12 +261,12 @@ block content
                                 "finance": true,
                                 "weeks": "12",
                                 "cities": [
-                                    "New York",
-                                    "Sydney",
-                                    "Brisbane",
-                                    "London",
-                                    "Manchester",
-                                    "Melbourne"
+                                    "new-york-city",
+                                    "sydney",
+                                    "brisbane",
+                                    "london",
+                                    "manchester",
+                                    "melbourne"
                                 ]
                             }, {
                                 "name": "The Tech Academy",
@@ -330,7 +275,7 @@ block content
                                 "finance": true,
                                 "weeks": "20",
                                 "cities": [
-                                    "Portland"
+                                    "portland"
                                 ]
                             }, {
                                 "name": "Turing School",
@@ -339,7 +284,7 @@ block content
                                 "finance": true,
                                 "weeks": "27",
                                 "cities": [
-                                    "Denver"
+                                    "denver"
                                 ]
                             }, {
                                 "name": "Free Code Camp",
@@ -348,11 +293,9 @@ block content
                                 "finance": false,
                                 "weeks": "0",
                                 "cities": [
-                                    "Online"
+                                    "online"
                                 ]
                             }];
-                            //reduce opacity for steps 2 through 4
-                            //the actual elements start out hidden via CSS
                             $('#two').css({opacity: '0.25'});
                             $('#three').css({opacity: '0.25'});
                             $('#four').css({opacity: '0.25'});
@@ -491,9 +434,13 @@ block content
                                             return xScale((d.x1) - (d.x0));
                                         });
                                 d3.selectAll("input").on("change", change);
-                                var timeout = setTimeout(function () {
-                                    d3.select("input[value=\"grouped\"]").property("checked", true).each(change);
-                                }, 2000);
+                                var timeout= setTimeout(function () {
+                                    d3.select("input[value=\"stacked\"]").property("checked",true).each(change);
+                                    // d3.select("input[value=\"stacked\"]").property("checked",true).each(change);
+                                }, 4000);
+                                var timeout= setTimeout(function () {
+                                    d3.select("input[value=\"grouped\"]").property("checked",true).each(change);
+                                }, 1500);
 
                                 function change() {
                                     clearTimeout(timeout);
