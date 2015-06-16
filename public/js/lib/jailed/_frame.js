@@ -36,7 +36,7 @@ try {
   blobUrl = blobUrl.getBlob();
 }
 
-var worker = new Worker(URL.createObjectURL('https:' + blobUrl));
+var worker = new Worker(URL.createObjectURL(blobUrl));
 
 // telling worker to load _pluginWeb.js (see blob code above)
 worker.postMessage({
