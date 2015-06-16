@@ -90,10 +90,10 @@ block content
                                 alert(type='danger')
                                     span.ion-close-circled
                                     | Username not found
-				#submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-				.button-spacer
-				#resetButton.btn.btn-danger.btn-big.btn-block(data-toggle='modal', data-target='#reset-modal', data-backdrop='true')
-					  | Reset Code
+		#submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
+		.button-spacer
+		#resetButton.btn.btn-danger.btn-big.btn-block(data-toggle='modal', data-target='#reset-modal', data-backdrop='true')
+			  | Reset Code
                 if (user && user.sentSlackInvite)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
