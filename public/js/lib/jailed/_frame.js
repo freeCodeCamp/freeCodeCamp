@@ -12,7 +12,7 @@ var __jailed__path__ = scripts[scripts.length-1].src
     .split('?')[0]
     .split('/')
     .slice(0, -1)
-    .join('/')+'/';
+    .join('/') + '/';
 
 // creating worker as a blob enables import of local files
 var blobCode = [
