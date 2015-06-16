@@ -439,8 +439,17 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Utiliza una clase CSS para darle estilo a un elemento",
+      "descriptionEs": [
+        "Crea una clase CSS llamada \"red-text\" y aplicala a tu elemento <code>h2</code>.",
+        "Las clases son estilos reutilizables que pueden ser añadidos a elementos HTML",
+        "Esta es la anatomía de una clase CSS:",
+        "<img class='img-responsive' alt='a diagram of how style tags are composed, which is also described in detail on the following lines.' src='https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png'/>",
+        "Puedes ver que hemos creado una clase CSS llamada \"blue-text\" dentro de la etiqueta <code>&#60;style&#62;</code>.",
+        "Puedes aplicar una clase a un elemento HTML de esta manera: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
+        "Nota que en el elemento CSS <code>style</code>, las clases deberían comenzar con un punto. En los elementos HTML, las declaraciones de clase, NO deberían comenzar con punto. ",
+        "En vez de de crear un nuevo elemento <code>style</code>, prueba remover la declaración de estilo de <code>h2</code> y reemplazarla por la declaración \"red-text\"."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
