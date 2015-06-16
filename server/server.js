@@ -2,32 +2,34 @@ require('dotenv').load();
 require('pmx').init();
 // handle uncaught exceptions. Forever will restart process on shutdown
 
-var R = require('ramda'),
-    assign = require('lodash').assign,
-    loopback = require('loopback'),
-    boot = require('loopback-boot'),
-    accepts = require('accepts'),
-    cookieParser = require('cookie-parser'),
-    compress = require('compression'),
-    session = require('express-session'),
-    logger = require('morgan'),
-    errorHandler = require('errorhandler'),
-    methodOverride = require('method-override'),
-    bodyParser = require('body-parser'),
-    helmet = require('helmet'),
-    MongoStore = require('connect-mongo')(session),
-    flash = require('express-flash'),
-    path = require('path'),
-    expressValidator = require('express-validator'),
-    forceDomain = require('forcedomain'),
-    lessMiddleware = require('less-middleware'),
-    pmx = require('pmx'),
+var https = require('https'),
+  sslConfig = require('./ssl-config'),
+  R = require('ramda'),
+  assign = require('lodash').assign,
+  loopback = require('loopback'),
+  boot = require('loopback-boot'),
+  accepts = require('accepts'),
+  cookieParser = require('cookie-parser'),
+  compress = require('compression'),
+  session = require('express-session'),
+  logger = require('morgan'),
+  errorHandler = require('errorhandler'),
+  methodOverride = require('method-override'),
+  bodyParser = require('body-parser'),
+  helmet = require('helmet'),
+  MongoStore = require('connect-mongo')(session),
+  flash = require('express-flash'),
+  path = require('path'),
+  expressValidator = require('express-validator'),
+  forceDomain = require('forcedomain'),
+  lessMiddleware = require('less-middleware'),
+  pmx = require('pmx'),
 
-    passportProviders = require('./passport-providers'),
-    /**
-    * API keys and Passport configuration.
-    */
-    secrets = require('./../config/secrets');
+  passportProviders = require('./passport-providers'),
+  /**
+   * API keys and Passport configuration.
+   */
+  secrets = require('./../config/secrets');
 
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
@@ -218,8 +220,8 @@ var passportOptions = {
     // NOTE(berks): get email or set to null.
     // MongoDB indexs email but can be sparse(blank)
     var email = emails && emails[0] && emails[0].value ?
-        emails[0].value :
-        null;
+      emails[0].value :
+      null;
 
     var username = (profile.username || profile.id);
     username = typeof username === 'string' ? username.toLowerCase() : username;
@@ -295,15 +297,33 @@ if (process.env.NODE_ENV === 'development') {
  * Start Express server.
  */
 
-app.start = function() {
-  app.listen(app.get('port'), function () {
-    console.log(
-      'FreeCodeCamp server listening on port %d in %s mode',
-      app.get('port'),
-      app.get('env')
-    );
-  });
+var options = {
+  key: sslConfig.privateKey,
+  cert: sslConfig.certificate
 };
+
+if (process.env.NODE_ENV === 'production') {
+  app.start = function() {
+    var server = https.createServer(options, app);
+    server.listen('https://' + process.env.HOST + ':' + app.get('port'), function () {
+      console.log(
+        'FreeCodeCamp server listening on port %d in %s mode',
+        app.get('port'),
+        app.get('env')
+      );
+    });
+  };
+} else {
+  app.start = function () {
+    app.listen(app.get('port'), function () {
+      console.log(
+        'FreeCodeCamp server listening on port %d in %s mode',
+        app.get('port'),
+        app.get('env')
+      );
+    });
+  };
+}
 
 // start the server if `$ node server.js`
 if (require.main === module) {
