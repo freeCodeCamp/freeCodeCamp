@@ -7,6 +7,7 @@ var Rx = require('rx'),
     debug = require('debug')('freecc:cntr:resources'),
 
     constantStrings = require('../utils/constantStrings.json'),
+    bootcampJson = require('../utils/bootcamps.json'),
     secrets = require('../../config/secrets');
 
 var slack = new Slack(secrets.slackHook);
@@ -27,6 +28,7 @@ module.exports = function(app) {
   router.post('/get-pair', getPair);
   router.get('/chat', chat);
   router.get('/bootcamp-calculator', bootcampCalculator);
+  router.get('/bootcamp-calculator.json', bootcampCalculatorJson);
   router.get('/twitch', twitch);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
@@ -37,7 +39,6 @@ module.exports = function(app) {
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
   router.get('/cats.json', getCats);
-
   router.get('/api/slack', slackInvite);
 
   app.use(router);
@@ -328,8 +329,13 @@ module.exports = function(app) {
 
   function bootcampCalculator(req, res) {
     res.render('resources/calculator', {
-      title: 'Coding Bootcamp Cost Calculator'
+      title: 'Coding Bootcamp Cost Calculator',
+      bootcampJson: bootcampJson
     });
+  }
+
+  function bootcampCalculatorJson(req, res) {
+    res.send(bootcampJson);
   }
 
   function jobsForm(req, res) {

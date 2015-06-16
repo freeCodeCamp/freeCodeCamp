@@ -16,7 +16,8 @@ var path = require('path'),
  */
 var allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
   challengeMap, challengeMapForDisplay, challengeMapWithIds,
-  challengeMapWithNames, allChallengeIds, allChallenges;
+  challengeMapWithNames, allChallengeIds, allChallenges,
+  challengeMapWithDashedNames;
 
 /**
  * GET /
@@ -98,17 +99,6 @@ module.exports = {
     return allChallengeIds;
   },
 
-  allChallenges: function () {
-    if (!allChallenges) {
-      allChallenges = [];
-      Object.keys(this.getChallengeMapWithNames()).forEach(function (key) {
-        allChallenges.push(challengeMap[key].challenges);
-      });
-      allChallenges = R.flatten(allChallenges);
-    }
-    return allChallenges;
-  },
-
   getChallengeMapWithNames: function () {
     if (!challengeMapWithNames) {
       challengeMapWithNames = {};
@@ -121,6 +111,20 @@ module.exports = {
         });
     }
     return challengeMapWithNames;
+  },
+
+  getChallengeMapWithDashedNames: function() {
+    if (!challengeMapWithDashedNames) {
+      challengeMapWithDashedNames = {};
+       Object.keys(challengeMap).
+        forEach(function (key) {
+          var onlyNames = challengeMap[key].challenges.map(function (elem) {
+            return elem.dashedName;
+          });
+          challengeMapWithDashedNames[key] = onlyNames;
+        });
+    }
+    return challengeMapWithDashedNames;
   },
 
 

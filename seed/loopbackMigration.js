@@ -1,10 +1,10 @@
 /* eslint-disable no-process-exit */
 require('dotenv').load();
 var Rx = require('rx'),
-    uuid = require('node-uuid'),
-    assign = require('lodash/object/assign'),
-    mongodb = require('mongodb'),
-    secrets = require('../config/secrets');
+  uuid = require('node-uuid'),
+  assign = require('lodash/object/assign'),
+  mongodb = require('mongodb'),
+  secrets = require('../config/secrets');
 
 var MongoClient = mongodb.MongoClient;
 
@@ -16,6 +16,14 @@ var providers = [
   'linkedin'
 ];
 
+// create async console.logs
+function debug() {
+  var args = [].slice.call(arguments);
+  process.nextTick(function() {
+    console.log.apply(console, args);
+  });
+}
+
 function createConnection(URI) {
   return Rx.Observable.create(function(observer) {
     MongoClient.connect(URI, function(err, database) {
@@ -23,32 +31,31 @@ function createConnection(URI) {
         return observer.onError(err);
       }
       observer.onNext(database);
+      observer.onCompleted();
     });
   });
 }
 
 function createQuery(db, collection, options, batchSize) {
   return Rx.Observable.create(function (observer) {
-    console.log('Creating cursor...');
     var cursor = db.collection(collection).find({}, options);
     cursor.batchSize(batchSize || 20);
     // Cursor.each will yield all doc from a batch in the same tick,
     // or schedule getting next batch on nextTick
+    debug('opening cursor for %s', collection);
     cursor.each(function (err, doc) {
       if (err) {
-        console.log(err);
         return observer.onError(err);
       }
       if (!doc) {
-        console.log('hit complete');
+        console.log('onCompleted');
         return observer.onCompleted();
       }
-      console.log('calling onnext');
       observer.onNext(doc);
     });
 
     return Rx.Disposable.create(function () {
-      console.log('Disposing cursor...');
+      debug('closing cursor for %s', collection);
       cursor.close();
     });
   });
@@ -101,7 +108,6 @@ var userSavesCount = users
   })
   .flatMap(function(dats) {
     // bulk insert into new collection for loopback
-    console.log(dats);
     return insertMany(dats.db, 'user', dats.users, { w: 1 });
   })
   // count how many times insert completes
@@ -138,18 +144,44 @@ var userIdentityCount = users
   // count how many times insert completes
   .count();
 
-Rx.Observable.merge(
+var storyCount = dbObservable
+  .flatMap(function(db) {
+    return createQuery(db, 'stories', {});
+  })
+  .bufferWithCount(20)
+  .withLatestFrom(dbObservable, function(stories, db) {
+    return {
+      stories: stories,
+      db: db
+    };
+  })
+  .flatMap(function(dats) {
+    return insertMany(dats.db, 'story', dats.stories, { w: 1 });
+  })
+  .count();
+
+Rx.Observable.combineLatest(
   userIdentityCount,
-  userSavesCount
-)
+  userSavesCount,
+  storyCount,
+  function(userIdentCount, userCount, storyCount) {
+    return {
+      userIdentCount: userIdentCount * 20,
+      userCount: userCount * 20,
+      storyCount: storyCount * 20
+    };
+  })
   .subscribe(
-    function(_count) {
-      count += _count * 20;
-    },
-    function(err) {
-      console.log('an error occured', err, err.stack);
-    },
-    function() {
-      console.log('finished with %s documents processed', count);
-    }
-  );
+  function(countObj) {
+    console.log('next');
+    count = countObj;
+  },
+  function(err) {
+    console.error('an error occured', err, err.stack);
+  },
+  function() {
+
+    console.log('finished with ', count);
+    process.exit(0);
+  }
+);

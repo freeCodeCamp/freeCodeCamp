@@ -1,13 +1,6 @@
 require('dotenv').load();
+require('pmx').init();
 // handle uncaught exceptions. Forever will restart process on shutdown
-process.on('uncaughtException', function (err) {
-  console.error(
-    (new Date()).toUTCString() + ' uncaughtException:',
-    err.message
-  );
-  console.error(err.stack);
-  process.exit(1); // eslint-disable-line
-});
 
 var R = require('ramda'),
     assign = require('lodash').assign,
@@ -28,6 +21,7 @@ var R = require('ramda'),
     expressValidator = require('express-validator'),
     forceDomain = require('forcedomain'),
     lessMiddleware = require('less-middleware'),
+    pmx = require('pmx'),
 
     passportProviders = require('./passport-providers'),
     /**
@@ -96,8 +90,13 @@ app.use(function(req, res, next) {
 var trusted = [
   "'self'",
   'blob:',
+  '104.236.218.15',
   '*.freecodecamp.com',
   'http://www.freecodecamp.com',
+  'https://www.freecodecamp.com',
+  'https://freecodecamp.com',
+  'https://freecodecamp.org',
+  '*.freecodecamp.org',
   'ws://freecodecamp.com/',
   'ws://www.freecodecamp.com/',
   '*.gstatic.com',
@@ -128,8 +127,11 @@ var trusted = [
   '*.ytimg.com',
   '*.bitly.com',
   'http://cdn.inspectlet.com/',
+  'https://cdn.inspeclet.com/',
   'wss://inspectletws.herokuapp.com/',
-  'http://hn.inspectlet.com/'
+  'http://hn.inspectlet.com/',
+  '*.googleapis.com',
+  '*.gstatic.com'
 ];
 
 app.use(helmet.csp({
@@ -137,22 +139,29 @@ app.use(helmet.csp({
   scriptSrc: [
     '*.optimizely.com',
     '*.aspnetcdn.com',
-    '*.d3js.org'
+    '*.d3js.org',
+    'https://cdn.inspectlet.com/inspectlet.js',
+    'http://cdn.inspectlet.com/inspectlet.js'
   ].concat(trusted),
   'connect-src': [
   ].concat(trusted),
-  styleSrc: trusted,
+  styleSrc: [
+    '*.googleapis.com',
+    '*.gstatic.com'
+  ].concat(trusted),
   imgSrc: [
     /* allow all input since we have user submitted images for public profile*/
     '*'
   ].concat(trusted),
-  fontSrc: ['*.googleapis.com'].concat(trusted),
+  fontSrc: [
+    '*.googleapis.com',
+    '*.gstatic.com'
+  ].concat(trusted),
   mediaSrc: [
     '*.amazonaws.com',
     '*.twitter.com'
   ].concat(trusted),
   frameSrc: [
-
     '*.gitter.im',
     '*.gitter.im https:',
     '*.vimeo.com',
@@ -243,9 +252,11 @@ R.keys(passportProviders).map(function(strategy) {
 /**
  * 500 Error Handler.
  */
+
 if (process.env.NODE_ENV === 'development') {
   app.use(errorHandler({ log: true }));
 } else {
+  app.use(pmx.expressErrorHandler());
   // error handling in production disabling eslint due to express parity rules
   // for error handlers
   app.use(function(err, req, res, next) { // eslint-disable-line

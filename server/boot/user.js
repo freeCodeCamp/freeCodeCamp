@@ -4,7 +4,7 @@ var _ = require('lodash'),
   crypto = require('crypto'),
   nodemailer = require('nodemailer'),
   moment = require('moment'),
-  debug = require('debug')('freecc:cntr:userController'),
+  //debug = require('debug')('freecc:cntr:userController'),
 
   secrets = require('../../config/secrets');
 
@@ -28,6 +28,7 @@ module.exports = function(app) {
   router.post('/reset/:token', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
+
   router.get('/account/api', getAccountAngular);
   router.post('/account/profile', postUpdateProfile);
   router.post('/account/password', postUpdatePassword);
@@ -97,6 +98,9 @@ module.exports = function(app) {
   */
 
   function getAccount (req, res) {
+    if (!req.user) {
+      return res.redirect('/');
+    }
     res.render('account/account', {
       title: 'Manage your Free Code Camp Account'
     });
@@ -108,7 +112,7 @@ module.exports = function(app) {
 
   function getAccountAngular (req, res) {
     res.json({
-      user: req.user
+      user: req.user || {}
     });
   }
 
@@ -119,15 +123,12 @@ module.exports = function(app) {
   */
 
   function returnUser (req, res, next) {
-    debug(req.params.username);
     User.findOne(
       { where: { 'username': req.params.username.toLowerCase() } },
       function(err, user) {
         if (err) {
-          debug('Username err: ', err);
           return next(err);
         }
-        debug(user);
         if (user) {
           user.progressTimestamps =
             user.progressTimestamps.sort(function(a, b) {
