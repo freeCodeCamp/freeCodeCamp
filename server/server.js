@@ -1,13 +1,6 @@
 require('dotenv').load();
+require('pmx').init();
 // handle uncaught exceptions. Forever will restart process on shutdown
-process.on('uncaughtException', function (err) {
-  console.error(
-    (new Date()).toUTCString() + ' uncaughtException:',
-    err.message
-  );
-  console.error(err.stack);
-  process.exit(1); // eslint-disable-line
-});
 
 var R = require('ramda'),
     assign = require('lodash').assign,
@@ -28,6 +21,7 @@ var R = require('ramda'),
     expressValidator = require('express-validator'),
     forceDomain = require('forcedomain'),
     lessMiddleware = require('less-middleware'),
+    pmx = require('pmx'),
 
     passportProviders = require('./passport-providers'),
     /**
@@ -248,9 +242,11 @@ R.keys(passportProviders).map(function(strategy) {
 /**
  * 500 Error Handler.
  */
+
 if (process.env.NODE_ENV === 'development') {
   app.use(errorHandler({ log: true }));
 } else {
+  app.use(pmx.expressErrorHandler());
   // error handling in production disabling eslint due to express parity rules
   // for error handlers
   app.use(function(err, req, res, next) { // eslint-disable-line

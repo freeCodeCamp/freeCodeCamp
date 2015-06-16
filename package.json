@@ -78,6 +78,7 @@
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
     "passport-twitter": "^1.0.3",
+    "pmx": "^0.3.16",
     "ramda": "~0.10.0",
     "request": "~2.53.0",
     "rx": "^2.5.3",
