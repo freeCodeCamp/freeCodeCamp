@@ -149,13 +149,15 @@ app.use(helmet.csp({
     /* allow all input since we have user submitted images for public profile*/
     '*'
   ].concat(trusted),
-  fontSrc: ['*.googleapis.com'].concat(trusted),
+  fontSrc: [
+    '*.googleapis.com',
+    '*.gstatic.com'
+  ].concat(trusted),
   mediaSrc: [
     '*.amazonaws.com',
     '*.twitter.com'
   ].concat(trusted),
   frameSrc: [
-
     '*.gitter.im',
     '*.gitter.im https:',
     '*.vimeo.com',
