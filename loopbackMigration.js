@@ -1,10 +1,10 @@
 /* eslint-disable no-process-exit */
 require('dotenv').load();
 var Rx = require('rx'),
-    uuid = require('node-uuid'),
-    assign = require('lodash/object/assign'),
-    mongodb = require('mongodb'),
-    secrets = require('../config/secrets');
+  uuid = require('node-uuid'),
+  assign = require('lodash/object/assign'),
+  mongodb = require('mongodb'),
+  secrets = require('../config/secrets');
 
 var MongoClient = mongodb.MongoClient;
 
@@ -31,6 +31,7 @@ function createConnection(URI) {
         return observer.onError(err);
       }
       observer.onNext(database);
+      observer.onCompleted();
     });
   });
 }
@@ -47,6 +48,7 @@ function createQuery(db, collection, options, batchSize) {
         return observer.onError(err);
       }
       if (!doc) {
+        console.log('onCompleted');
         return observer.onCompleted();
       }
       observer.onNext(doc);
@@ -154,7 +156,7 @@ var storyCount = dbObservable
     };
   })
   .flatMap(function(dats) {
-    return insertMany(dats.db, 'stories', dats.stories, { w: 1 });
+    return insertMany(dats.db, 'story', dats.stories, { w: 1 });
   })
   .count();
 
@@ -168,16 +170,18 @@ Rx.Observable.combineLatest(
       userCount: userCount * 20,
       storyCount: storyCount * 20
     };
-  }
-)
+  })
   .subscribe(
-    function(countObj) {
-      count = countObj;
-    },
-    function(err) {
-      console.error('an error occured', err, err.stack);
-    },
-    function() {
-      console.log('finished with ', count);
-    }
-  );
+  function(countObj) {
+    console.log('next');
+    count = countObj;
+  },
+  function(err) {
+    console.error('an error occured', err, err.stack);
+  },
+  function() {
+
+    console.log('finished with ', count);
+    process.exit(0);
+  }
+);
