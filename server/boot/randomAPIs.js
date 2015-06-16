@@ -28,6 +28,7 @@ module.exports = function(app) {
   router.post('/get-pair', getPair);
   router.get('/chat', chat);
   router.get('/bootcamp-calculator', bootcampCalculator);
+  router.get('/bootcamp-calculator.json', bootcampCalculatorJson);
   router.get('/twitch', twitch);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
@@ -38,7 +39,6 @@ module.exports = function(app) {
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
   router.get('/cats.json', getCats);
-
   router.get('/api/slack', slackInvite);
 
   app.use(router);
@@ -332,6 +332,10 @@ module.exports = function(app) {
       title: 'Coding Bootcamp Cost Calculator',
       bootcampJson: bootcampJson
     });
+  }
+
+  function bootcampCalculatorJson(req, res) {
+    res.send(bootcampJson);
   }
 
   function jobsForm(req, res) {

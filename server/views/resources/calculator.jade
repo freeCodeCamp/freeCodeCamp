@@ -5,115 +5,108 @@ block content
         .panel-body
             .row
                 .col-xs-12.col-sm-10.col-sm-offset-1
-                    h2#one Where do you live?
-                        #city-buttons
-                            .row
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#atlanta.btn.btn-primary.btn-block.btn-lg Atlanta
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#austin.btn.btn-primary.btn-block.btn-lg Austin
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#brisbane.btn.btn-primary.btn-block.btn-lg Brisbane
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#boulder.btn.btn-primary.btn-block.btn-lg Boulder
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#chicago.btn.btn-primary.btn-block.btn-lg Chicago
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#denver.btn.btn-primary.btn-block.btn-lg Denver
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#hong-kong.btn.btn-primary.btn-block.btn-lg Hong Kong
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#london.btn.btn-primary.btn-block.btn-lg London
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#los-angeles.btn.btn-primary.btn-block.btn-lg Los Angeles
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#manchester.btn.btn-primary.btn-block.btn-lg Manchester
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#melbourne.btn.btn-primary.btn-block.btn-lg Melbourne
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#new-york-city.btn.btn-primary.btn-block.btn-lg New York City
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#portland.btn.btn-primary.btn-block.btn-lg Portland
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#raleigh-durham.btn.btn-primary.btn-block.btn-lg Raleigh-Durham
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#san-francisco.btn.btn-primary.btn-block.btn-lg San Fransisco
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#seattle.btn.btn-primary.btn-block.btn-lg Seattle
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#singapore.btn.btn-primary.btn-block.btn-lg Singapore
-                                .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                    button#toronto.btn.btn-primary.btn-block.btn-lg Toronto
-                                .col-xs-12.btn-nav
-                                    button#other.btn.btn-primary.btn-block.btn-lg Other
-                    h2#two How much money did you make last year (in USD)?
-                        #income
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#0.btn.btn-primary.btn-block.btn-lg(href='#') $0
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#20000.btn.btn-primary.btn-block.btn-lg(href='#') $20,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#30000.btn.btn-primary.btn-block.btn-lg(href='#') $30,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#40000.btn.btn-primary.btn-block.btn-lg(href='#') $40,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#50000.btn.btn-primary.btn-block.btn-lg(href='#') $50,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#60000.btn.btn-primary.btn-block.btn-lg(href='#') $60,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#70000.btn.btn-primary.btn-block.btn-lg(href='#') $70,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#80000.btn.btn-primary.btn-block.btn-lg(href='#') $80,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#90000.btn.btn-primary.btn-block.btn-lg(href='#') $90,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#100000.btn.btn-primary.btn-block.btn-lg(href='#') $100,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#120000.btn.btn-primary.btn-block.btn-lg(href='#') $120,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#140000.btn.btn-primary.btn-block.btn-lg(href='#') $140,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#160000.btn.btn-primary.btn-block.btn-lg(href='#') $160,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#180000.btn.btn-primary.btn-block.btn-lg(href='#') $180,000
-                            .col-xs-12.col-sm-6.col-md-4.btn-nav
-                                button#200000.btn.btn-primary.btn-block.btn-lg(href='#') $200,000
-                    svg.chart
-                    | Sources:
-                    a(href='#') Link to Data Sources Here
-                    form
-                        label
-                            input(type='radio', name='mode', value='grouped')
-                            | Grouped
-                        label
-                            input(type='radio', name='mode', value='stacked')
-                            | Stacked
+                    h2.text-primary#chosen
+                    #chart-controls.initially-hidden
+                        form
+                            label
+                                input(type='radio', name='mode', value='grouped')
+                                | &thinsp; Grouped &nbsp;
+                            label
+                                input(type='radio', name='mode', value='stacked')
+                                | &thinsp; Stacked
+                            br
+                            a(href='/bootcamp-calculator.json') View Data Source JSON
+                    #city-buttons
+                        h2 Where do you live?
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#atlanta.btn.btn-primary.btn-block.btn-lg Atlanta
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#austin.btn.btn-primary.btn-block.btn-lg Austin
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#brisbane.btn.btn-primary.btn-block.btn-lg Brisbane
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#boulder.btn.btn-primary.btn-block.btn-lg Boulder
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#chicago.btn.btn-primary.btn-block.btn-lg Chicago
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#denver.btn.btn-primary.btn-block.btn-lg Denver
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#hong-kong.btn.btn-primary.btn-block.btn-lg Hong Kong
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#london.btn.btn-primary.btn-block.btn-lg London
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#los-angeles.btn.btn-primary.btn-block.btn-lg Los Angeles
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#manchester.btn.btn-primary.btn-block.btn-lg Manchester
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#melbourne.btn.btn-primary.btn-block.btn-lg Melbourne
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#new-york-city.btn.btn-primary.btn-block.btn-lg New York City
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#portland.btn.btn-primary.btn-block.btn-lg Portland
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#raleigh-durham.btn.btn-primary.btn-block.btn-lg Raleigh-Durham
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#san-francisco.btn.btn-primary.btn-block.btn-lg San Fransisco
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#seattle.btn.btn-primary.btn-block.btn-lg Seattle
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#singapore.btn.btn-primary.btn-block.btn-lg Singapore
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#toronto.btn.btn-primary.btn-block.btn-lg Toronto
+                        .col-xs-12.btn-nav
+                            button#other.btn.btn-primary.btn-block.btn-lg Other
+                    #income.hidden-by-default
+                        h2 How much money did you make last year (in USD)?
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#0.btn.btn-primary.btn-block.btn-lg(href='#') $0
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#20000.btn.btn-primary.btn-block.btn-lg(href='#') $20,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#30000.btn.btn-primary.btn-block.btn-lg(href='#') $30,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#40000.btn.btn-primary.btn-block.btn-lg(href='#') $40,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#50000.btn.btn-primary.btn-block.btn-lg(href='#') $50,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#60000.btn.btn-primary.btn-block.btn-lg(href='#') $60,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#70000.btn.btn-primary.btn-block.btn-lg(href='#') $70,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#80000.btn.btn-primary.btn-block.btn-lg(href='#') $80,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#90000.btn.btn-primary.btn-block.btn-lg(href='#') $90,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#100000.btn.btn-primary.btn-block.btn-lg(href='#') $100,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#120000.btn.btn-primary.btn-block.btn-lg(href='#') $120,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#140000.btn.btn-primary.btn-block.btn-lg(href='#') $140,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#160000.btn.btn-primary.btn-block.btn-lg(href='#') $160,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#180000.btn.btn-primary.btn-block.btn-lg(href='#') $180,000
+                        .col-xs-12.col-sm-6.col-md-4.btn-nav
+                            button#200000.btn.btn-primary.btn-block.btn-lg(href='#') $200,000
+                    #chart.hidden-by-default
+                        svg.chart
 
                     script.
-
                         $(document).ready(function () {
                             var bootcamps = !{JSON.stringify(bootcampJson)};
                             var city = "";
                             var cityArray = ["san-fransisco", "los-angeles", "chicago", "austin", "new-york-city", "melbourne", "hong-kong", "seattle", "singapore", "london", "toronto", "portland", "brisbane", "atlanta", "raleigh-durham"];
-                            $('#two').css({opacity: '0.25'});
-                            $('#three').css({opacity: '0.25'});
-                            $('#four').css({opacity: '0.25'});
-                            //step one event listener
                             $('#city-buttons').on("click", "button", function () {
-                                $(this).addClass('animated tada');
                                 city = $(this).attr("id");
-                                //make next step visible
-                                $('#two').css({opacity: '1'});
+                                $('#city-buttons').hide();
+                                $('#chosen').text('Coming from ' + city.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}));
                                 $('#income').css({visibility: 'visible'});
-                                //console.log(city);
                             });
-                            //step two event listener
                             $('#income').on("click", "button", function() {
-                                $(this).addClass('animated tada');
-                                var lastYearincome = parseInt($(this).attr("id"));
-                                //make next step visible
-                                $('#four').css({opacity: '1'});
-                                <!--Prep the data for D3 -->
+                                $('#income').hide();
+                                $('#chart').css({visibility: 'visible'});
+                                var lastYearsIncome = parseInt($(this).attr("id"));
+                                $('#chosen').append(' making $' + lastYearsIncome.toString().replace(/0000/, '0,000') + ', your true costs are:');
                                 var categoryNames = ['Opportunity Cost at Current Wage', 'Financing Cost', 'Housing Cost', 'Tuition / Wage Garnishing'];
                                 bootcamps.forEach(function (camp) {
                                     var x0 = 0;
@@ -143,9 +136,9 @@ block content
                                     }, {
                                         name: camp.name,
                                         label: 'Tuition / Wage Garnishing',
-                                        value: +(Math.floor(camp.weeks * lastYearincome / 50)),
+                                        value: +(Math.floor(camp.weeks * lastYearsIncome / 50)),
                                         x0: camp.finance ? +(Math.floor(camp.cost * 1.09519) + weeklyHousing * camp.weeks) : +camp.cost + weeklyHousing * camp.weeks,
-                                        x1: x0 += +(Math.floor(camp.weeks * lastYearincome / 50))
+                                        x1: x0 += +(Math.floor(camp.weeks * lastYearsIncome / 50))
                                     }];
                                     camp.total = camp.mapping[camp.mapping.length - 1].x1;
                                 });
