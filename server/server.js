@@ -1,39 +1,34 @@
 require('dotenv').load();
+require('pmx').init();
 // handle uncaught exceptions. Forever will restart process on shutdown
-process.on('uncaughtException', function (err) {
-  console.error(
-    (new Date()).toUTCString() + ' uncaughtException:',
-    err.message
-  );
-  console.error(err.stack);
-  process.exit(1); // eslint-disable-line
-});
 
-var R = require('ramda'),
-    assign = require('lodash').assign,
-    loopback = require('loopback'),
-    boot = require('loopback-boot'),
-    accepts = require('accepts'),
-    cookieParser = require('cookie-parser'),
-    compress = require('compression'),
-    session = require('express-session'),
-    logger = require('morgan'),
-    errorHandler = require('errorhandler'),
-    methodOverride = require('method-override'),
-    bodyParser = require('body-parser'),
-    helmet = require('helmet'),
-    MongoStore = require('connect-mongo')(session),
-    flash = require('express-flash'),
-    path = require('path'),
-    expressValidator = require('express-validator'),
-    forceDomain = require('forcedomain'),
-    lessMiddleware = require('less-middleware'),
+var https = require('https'),
+  sslConfig = require('./ssl-config'),
+  R = require('ramda'),
+  assign = require('lodash').assign,
+  loopback = require('loopback'),
+  boot = require('loopback-boot'),
+  accepts = require('accepts'),
+  cookieParser = require('cookie-parser'),
+  compress = require('compression'),
+  session = require('express-session'),
+  logger = require('morgan'),
+  errorHandler = require('errorhandler'),
+  methodOverride = require('method-override'),
+  bodyParser = require('body-parser'),
+  helmet = require('helmet'),
+  MongoStore = require('connect-mongo')(session),
+  flash = require('express-flash'),
+  path = require('path'),
+  expressValidator = require('express-validator'),
+  lessMiddleware = require('less-middleware'),
+  pmx = require('pmx'),
 
-    passportProviders = require('./passport-providers'),
-    /**
-    * API keys and Passport configuration.
-    */
-    secrets = require('./../config/secrets');
+  passportProviders = require('./passport-providers'),
+  /**
+   * API keys and Passport configuration.
+   */
+  secrets = require('./../config/secrets');
 
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
@@ -99,6 +94,10 @@ var trusted = [
   '104.236.218.15',
   '*.freecodecamp.com',
   'http://www.freecodecamp.com',
+  'https://www.freecodecamp.com',
+  'https://freecodecamp.com',
+  'https://freecodecamp.org',
+  '*.freecodecamp.org',
   'ws://freecodecamp.com/',
   'ws://www.freecodecamp.com/',
   '*.gstatic.com',
@@ -129,8 +128,12 @@ var trusted = [
   '*.ytimg.com',
   '*.bitly.com',
   'http://cdn.inspectlet.com/',
+  'https://cdn.inspeclet.com/',
   'wss://inspectletws.herokuapp.com/',
-  'http://hn.inspectlet.com/'
+  'http://hn.inspectlet.com/',
+  '*.googleapis.com',
+  '*.gstatic.com',
+  'https://hn.inspectlet.com/'
 ];
 
 app.use(helmet.csp({
@@ -138,22 +141,29 @@ app.use(helmet.csp({
   scriptSrc: [
     '*.optimizely.com',
     '*.aspnetcdn.com',
-    '*.d3js.org'
+    '*.d3js.org',
+    'https://cdn.inspectlet.com/inspectlet.js',
+    'http://cdn.inspectlet.com/inspectlet.js'
   ].concat(trusted),
   'connect-src': [
   ].concat(trusted),
-  styleSrc: trusted,
+  styleSrc: [
+    '*.googleapis.com',
+    '*.gstatic.com'
+  ].concat(trusted),
   imgSrc: [
     /* allow all input since we have user submitted images for public profile*/
     '*'
   ].concat(trusted),
-  fontSrc: ['*.googleapis.com'].concat(trusted),
+  fontSrc: [
+    '*.googleapis.com',
+    '*.gstatic.com'
+  ].concat(trusted),
   mediaSrc: [
     '*.amazonaws.com',
     '*.twitter.com'
   ].concat(trusted),
   frameSrc: [
-
     '*.gitter.im',
     '*.gitter.im https:',
     '*.vimeo.com',
@@ -210,8 +220,8 @@ var passportOptions = {
     // NOTE(berks): get email or set to null.
     // MongoDB indexs email but can be sparse(blank)
     var email = emails && emails[0] && emails[0].value ?
-        emails[0].value :
-        null;
+      emails[0].value :
+      null;
 
     var username = (profile.username || profile.id);
     username = typeof username === 'string' ? username.toLowerCase() : username;
@@ -244,9 +254,11 @@ R.keys(passportProviders).map(function(strategy) {
 /**
  * 500 Error Handler.
  */
+
 if (process.env.NODE_ENV === 'development') {
   app.use(errorHandler({ log: true }));
 } else {
+  app.use(pmx.expressErrorHandler());
   // error handling in production disabling eslint due to express parity rules
   // for error handlers
   app.use(function(err, req, res, next) { // eslint-disable-line
@@ -285,7 +297,23 @@ if (process.env.NODE_ENV === 'development') {
  * Start Express server.
  */
 
-app.start = function() {
+var options = {
+  key: sslConfig.privateKey,
+  cert: sslConfig.certificate
+};
+
+if (process.env.NODE_ENV === 'production') {
+  var server = https.createServer(options, app);
+  console.log('https://' + process.env.HOST + ':' + process.env.PORT);
+  server.listen(app.get('port'), function () {
+    console.log(
+      'FreeCodeCamp server listening on port %d in %s mode',
+      app.get('port'),
+      app.get('env')
+    );
+    app.emit('started', 'https://' + process.env.HOST + ':' + app.get('port'));
+  });
+} else {
   app.listen(app.get('port'), function () {
     console.log(
       'FreeCodeCamp server listening on port %d in %s mode',
@@ -293,11 +321,9 @@ app.start = function() {
       app.get('env')
     );
   });
-};
+}
 
 // start the server if `$ node server.js`
-if (require.main === module) {
-  app.start();
-}
+
 
 module.exports = app;
