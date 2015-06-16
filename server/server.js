@@ -313,18 +313,13 @@ if (process.env.NODE_ENV === 'production') {
     app.emit('started', 'https://' + process.env.HOST + ':' + app.get('port'));
   });
 } else {
-  app.start = function () {
-    app.listen(app.get('port'), function () {
-      console.log(
-        'FreeCodeCamp server listening on port %d in %s mode',
-        app.get('port'),
-        app.get('env')
-      );
-    });
-  };
-  if (require.main === module) {
-    app.start();
-  }
+  app.listen(app.get('port'), function () {
+    console.log(
+      'FreeCodeCamp server listening on port %d in %s mode',
+      app.get('port'),
+      app.get('env')
+    );
+  });
 }
 
 // start the server if `$ node server.js`
