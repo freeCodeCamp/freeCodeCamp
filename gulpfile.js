@@ -70,7 +70,7 @@ gulp.task('lint', function() {
     .pipe(eslint.format());
 });
 
-gulp.task('build', function() {
+gulp.task('less', function() {
   return gulp.src('./public/css/*.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
@@ -78,4 +78,8 @@ gulp.task('build', function() {
     .pipe(gulp.dest('./public/css/'));
 });
 
-gulp.task('default', ['build', 'serve', 'sync']);
+gulp.task('watch', ['less', 'serve', 'sync'], function() {
+  gulp.watch('./public/css/*.less', ['less']);
+});
+
+gulp.task('default', ['less', 'serve', 'sync', 'watch']);

@@ -1,21 +1,16 @@
 extends ../layout
 block content
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap2/bootstrap-switch.min.css')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js")
     .panel.panel-info
         .panel-heading.text-center Coding Bootcamp Cost Calculator
         .panel-body
             .row
                 .col-xs-12.col-sm-10.col-sm-offset-1
-                    h2.text-primary#chosen
+                    h3.text-primary#chosen Coming from _______, and making $_______, your true costs will be:
                     #chart-controls.initially-hidden
-                        form
-                            label
-                                input(type='radio', name='mode', value='grouped')
-                                | &thinsp; Grouped &nbsp;
-                            label
-                                input(type='radio', name='mode', value='stacked')
-                                | &thinsp; Stacked
-                            br
-                            a(href='/bootcamp-calculator.json') View Data Source JSON
+                        .text-center
+                            button#transform.btn.btn-primary.btn-lg.animated Transform
                     #city-buttons
                         h2 Where do you live?
                         .col-xs-12.col-sm-6.col-md-4.btn-nav
@@ -56,7 +51,7 @@ block content
                             button#toronto.btn.btn-primary.btn-block.btn-lg Toronto
                         .col-xs-12.btn-nav
                             button#other.btn.btn-primary.btn-block.btn-lg Other
-                    #income.hidden-by-default
+                    #income.initially-hidden
                         h2 How much money did you make last year (in USD)?
                         .col-xs-12.col-sm-6.col-md-4.btn-nav
                             button#0.btn.btn-primary.btn-block.btn-lg(href='#') $0
@@ -88,25 +83,39 @@ block content
                             button#180000.btn.btn-primary.btn-block.btn-lg(href='#') $180,000
                         .col-xs-12.col-sm-6.col-md-4.btn-nav
                             button#200000.btn.btn-primary.btn-block.btn-lg(href='#') $200,000
-                    #chart.hidden-by-default
-                        svg.chart
-
+                    #chart.initially-hidden
+                        .d3-centered
+                            svg.chart
+                    #explanation.initially-hidden
+                        .text-center
+                            a(href='/coding-bootcamp-cost-calculator.json') View Data Source JSON
+                            span &nbsp; &bullet; &nbsp;
+                            a(href='/coding-bootcamp-cost-calculator') Recalculate
+                        p.large-p Test
                     script.
                         $(document).ready(function () {
                             var bootcamps = !{JSON.stringify(bootcampJson)};
                             var city = "";
-                            var cityArray = ["san-fransisco", "los-angeles", "chicago", "austin", "new-york-city", "melbourne", "hong-kong", "seattle", "singapore", "london", "toronto", "portland", "brisbane", "atlanta", "raleigh-durham"];
+                            $( "body" ).data( "state", "stacked");
                             $('#city-buttons').on("click", "button", function () {
+                                $(this).addClass('animated pulse');
+                                setTimeout(function () {
+                                    $('#city-buttons').hide();
+                                    $('#chosen').text('Coming from ' + city.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}));
+                                    $('#income').addClass('animated fadeIn').show();
+                                }, 1000);
                                 city = $(this).attr("id");
-                                $('#city-buttons').hide();
-                                $('#chosen').text('Coming from ' + city.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}));
-                                $('#income').css({visibility: 'visible'});
                             });
                             $('#income').on("click", "button", function() {
-                                $('#income').hide();
-                                $('#chart').css({visibility: 'visible'});
+                                $(this).addClass('animated pulse');
+                                setTimeout(function () {
+                                    $('#income').hide();
+                                    $('#chart').show();
+                                    $('#chart-controls').addClass('animated fadeIn').show();
+                                    $('#explanation').addClass('animated fadeIn').show();
+                                }, 1000);
                                 var lastYearsIncome = parseInt($(this).attr("id"));
-                                $('#chosen').append(' making $' + lastYearsIncome.toString().replace(/0000/, '0,000') + ', your true costs are:');
+                                $('#chosen').append(', and making $' + lastYearsIncome.toString().replace(/0000/, '0,000') + ', your true costs will be:');
                                 var categoryNames = ['Opportunity Cost at Current Wage', 'Financing Cost', 'Housing Cost', 'Tuition / Wage Garnishing'];
                                 bootcamps.forEach(function (camp) {
                                     var x0 = 0;
@@ -117,7 +126,7 @@ block content
                                     }
                                     camp.mapping = [{
                                         name: camp.name,
-                                        label: 'Opportunity Cost at Current Wage',
+                                        label: 'Tuition / Wage Garnishing',
                                         value: +camp.cost,
                                         x0: x0,
                                         x1: x0 += +camp.cost
@@ -135,7 +144,7 @@ block content
                                         x1: x0 += weeklyHousing * camp.weeks
                                     }, {
                                         name: camp.name,
-                                        label: 'Tuition / Wage Garnishing',
+                                        label: 'Opportunity Cost at Current Wage',
                                         value: +(Math.floor(camp.weeks * lastYearsIncome / 50)),
                                         x0: camp.finance ? +(Math.floor(camp.cost * 1.09519) + weeklyHousing * camp.weeks) : +camp.cost + weeklyHousing * camp.weeks,
                                         x1: x0 += +(Math.floor(camp.weeks * lastYearsIncome / 50))
@@ -145,11 +154,9 @@ block content
                                 bootcamps.sort(function(a, b) { return a.total - b.total; });
                                 maxValue = 0;
                                 bootcamps.forEach(function (camp) {
-                                    camp.mapping.forEach(function (thing) {
-                                        //console.log(thing.value );
-                                        if (thing.value > maxValue) {
-                                            maxValue = thing.value;
-                                            console.log(maxValue);
+                                    camp.mapping.forEach(function (elem) {
+                                        if (elem.value > maxValue) {
+                                            maxValue = elem.value;
                                         }
                                     });
                                 });
@@ -225,19 +232,22 @@ block content
                                         .attr("width", function (d) {
                                             return xScale((d.x1) - (d.x0));
                                         });
-                                d3.selectAll("input").on("change", change);
-                                var timeout= setTimeout(function () {
-                                    d3.select("input[value=\"stacked\"]").property("checked",true).each(change);
-                                    // d3.select("input[value=\"stacked\"]").property("checked",true).each(change);
-                                }, 4000);
-                                var timeout= setTimeout(function () {
-                                    d3.select("input[value=\"grouped\"]").property("checked",true).each(change);
-                                }, 1500);
+                                d3.selectAll("#transform").on("click", function() {
+                                    $('#transform').addClass('pulse');
+                                    change();
+                                    setTimeout( function() {
+                                        $('#transform').removeClass('pulse');
+                                    }, 1000);
+                                });
 
                                 function change() {
-                                    clearTimeout(timeout);
-                                    if (this.value === "grouped") transitionGrouped();
-                                    else transitionStacked();
+                                    if ($("body").data("state") === "stacked") {
+                                        transitionGrouped();
+                                        $("body").data("state", "grouped");
+                                    } else {
+                                        transitionStacked();
+                                        $("body").data("state", "stacked");
+                                    }
                                 }
 
                                 function transitionGrouped() {
