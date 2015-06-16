@@ -1,95 +1,104 @@
-extends ../layout
+extends ../layout-wide
 block content
     script(src="../../../js/calculator.js")
-    .panel.panel-info
-        .panel-heading.text-center Coding Bootcamp Cost Calculator
-        .panel-body
-            .row
+    .row
+        .col-xs-12.col-sm-10.col-md-8.col-lg-6.col-sm-offset-1.col-md-offset-2.col-lg-offset-3
+            h3.text-center.text-primary#chosen Coming from _______, and making $_______, your true costs will be:
+            #city-buttons
+                .spacer
+                h2.text-center Where do you live?
+                .spacer
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#atlanta.btn.btn-primary.btn-block.btn-lg Atlanta
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#austin.btn.btn-primary.btn-block.btn-lg Austin
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#brisbane.btn.btn-primary.btn-block.btn-lg Brisbane
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#boulder.btn.btn-primary.btn-block.btn-lg Boulder
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#chicago.btn.btn-primary.btn-block.btn-lg Chicago
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#denver.btn.btn-primary.btn-block.btn-lg Denver
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#hong-kong.btn.btn-primary.btn-block.btn-lg Hong Kong
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#london.btn.btn-primary.btn-block.btn-lg London
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#los-angeles.btn.btn-primary.btn-block.btn-lg Los Angeles
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#manchester.btn.btn-primary.btn-block.btn-lg Manchester
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#melbourne.btn.btn-primary.btn-block.btn-lg Melbourne
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#new-york-city.btn.btn-primary.btn-block.btn-lg New York City
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#portland.btn.btn-primary.btn-block.btn-lg Portland
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#raleigh-durham.btn.btn-primary.btn-block.btn-lg Raleigh-Durham
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#san-francisco.btn.btn-primary.btn-block.btn-lg San Fransisco
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#seattle.btn.btn-primary.btn-block.btn-lg Seattle
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#singapore.btn.btn-primary.btn-block.btn-lg Singapore
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#toronto.btn.btn-primary.btn-block.btn-lg Toronto
+                .col-xs-12.btn-nav
+                    button#other.btn.btn-primary.btn-block.btn-lg Other
+                    .spacer
+            #income.initially-hidden
+                .spacer
+                h2.text-center How much money did you make last year (in USD)?
+                .spacer
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#0.btn.btn-primary.btn-block.btn-lg(href='#') $0
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#20000.btn.btn-primary.btn-block.btn-lg(href='#') $20,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#30000.btn.btn-primary.btn-block.btn-lg(href='#') $30,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#40000.btn.btn-primary.btn-block.btn-lg(href='#') $40,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#50000.btn.btn-primary.btn-block.btn-lg(href='#') $50,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#60000.btn.btn-primary.btn-block.btn-lg(href='#') $60,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#70000.btn.btn-primary.btn-block.btn-lg(href='#') $70,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#80000.btn.btn-primary.btn-block.btn-lg(href='#') $80,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#90000.btn.btn-primary.btn-block.btn-lg(href='#') $90,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#100000.btn.btn-primary.btn-block.btn-lg(href='#') $100,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#120000.btn.btn-primary.btn-block.btn-lg(href='#') $120,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#140000.btn.btn-primary.btn-block.btn-lg(href='#') $140,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#160000.btn.btn-primary.btn-block.btn-lg(href='#') $160,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#180000.btn.btn-primary.btn-block.btn-lg(href='#') $180,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#200000.btn.btn-primary.btn-block.btn-lg(href='#') $200,000
+                    .spacer
+            #chart.initially-hidden
+                .d3-centered
+                    svg.chart
+            #explanation.initially-hidden
                 .col-xs-12.col-sm-10.col-sm-offset-1
-                    h3.text-primary#chosen Coming from _______, and making $_______, your true costs will be:
-                    #city-buttons
-                        h2 Where do you live?
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#atlanta.btn.btn-primary.btn-block.btn-lg Atlanta
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#austin.btn.btn-primary.btn-block.btn-lg Austin
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#brisbane.btn.btn-primary.btn-block.btn-lg Brisbane
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#boulder.btn.btn-primary.btn-block.btn-lg Boulder
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#chicago.btn.btn-primary.btn-block.btn-lg Chicago
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#denver.btn.btn-primary.btn-block.btn-lg Denver
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#hong-kong.btn.btn-primary.btn-block.btn-lg Hong Kong
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#london.btn.btn-primary.btn-block.btn-lg London
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#los-angeles.btn.btn-primary.btn-block.btn-lg Los Angeles
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#manchester.btn.btn-primary.btn-block.btn-lg Manchester
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#melbourne.btn.btn-primary.btn-block.btn-lg Melbourne
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#new-york-city.btn.btn-primary.btn-block.btn-lg New York City
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#portland.btn.btn-primary.btn-block.btn-lg Portland
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#raleigh-durham.btn.btn-primary.btn-block.btn-lg Raleigh-Durham
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#san-francisco.btn.btn-primary.btn-block.btn-lg San Fransisco
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#seattle.btn.btn-primary.btn-block.btn-lg Seattle
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#singapore.btn.btn-primary.btn-block.btn-lg Singapore
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#toronto.btn.btn-primary.btn-block.btn-lg Toronto
-                        .col-xs-12.btn-nav
-                            button#other.btn.btn-primary.btn-block.btn-lg Other
-                            .spacer
-                    #income.initially-hidden
-                        h2 How much money did you make last year (in USD)?
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#0.btn.btn-primary.btn-block.btn-lg(href='#') $0
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#20000.btn.btn-primary.btn-block.btn-lg(href='#') $20,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#30000.btn.btn-primary.btn-block.btn-lg(href='#') $30,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#40000.btn.btn-primary.btn-block.btn-lg(href='#') $40,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#50000.btn.btn-primary.btn-block.btn-lg(href='#') $50,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#60000.btn.btn-primary.btn-block.btn-lg(href='#') $60,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#70000.btn.btn-primary.btn-block.btn-lg(href='#') $70,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#80000.btn.btn-primary.btn-block.btn-lg(href='#') $80,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#90000.btn.btn-primary.btn-block.btn-lg(href='#') $90,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#100000.btn.btn-primary.btn-block.btn-lg(href='#') $100,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#120000.btn.btn-primary.btn-block.btn-lg(href='#') $120,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#140000.btn.btn-primary.btn-block.btn-lg(href='#') $140,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#160000.btn.btn-primary.btn-block.btn-lg(href='#') $160,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#180000.btn.btn-primary.btn-block.btn-lg(href='#') $180,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#200000.btn.btn-primary.btn-block.btn-lg(href='#') $200,000
-                            .spacer
-                    #chart.initially-hidden
-                        .d3-centered
-                            svg.chart
-                    #explanation.initially-hidden
-                        .text-center
-                            .text-center
-                                button#transform.btn.btn-primary.btn-block.btn-lg Transform
-                            .button-spacer
-                            a(href='/coding-bootcamp-cost-calculator.json') View Data Source JSON
-                            span &nbsp; &bullet; &nbsp;
-                            a(href='/coding-bootcamp-cost-calculator') Recalculate
-                        p.large-p Test
+                    .text-center
+                        button#transform.btn.btn-primary.btn-lg Transform
+                        .button-spacer
+                        a(href='/coding-bootcamp-cost-calculator.json') View Data Source JSON
+                        span &nbsp; &bullet; &nbsp;
+                        a(href='/coding-bootcamp-cost-calculator') Recalculate
+                    h3 Notes:
+                    ol
+                        li.large-li For cash-up-front bootcamps, we assumed an APR of 6% and a term of 3 years.
+                        li.large-li For wage-garnishing bootcamps, we assume 18% of first year wages at their advertised starting annual salary of around $100,000.
+                        li.large-li We assume a cost of living of $500 for cities like San Francisco and New York City, and $400 per week for everywhere else.
+                        li.large-li The most substantial cost for most people is lost wages. A 40-hour-per-week job at the US Federal minimum wage would pay at least $15,000 per year. You can read more about economic cost
+                            a(href='https://en.wikipedia.org/wiki/Economic_cost' target='_blank')  here
+                            | .
+                        li.large-li Free Code Camp. We don't charge tuition or garnish wages. We're fully online so you don't have to move. We're self-paced so you don't have to quit your job. Thus, your true cost of attending Free Code Camp will be $0.

@@ -20,7 +20,7 @@ $(document).ready(function () {
     $(this).addClass('animated pulse');
     setTimeout(function () {
       $('#income').hide();
-      $('#chart').show();
+      $('#chart').addClass('animated fadeIn').show();
       $('#chart-controls').addClass('animated fadeIn').show();
       $('#explanation').addClass('animated fadeIn').show();
     }, 1000);
@@ -28,7 +28,7 @@ $(document).ready(function () {
     $('#chosen').text('Coming from ' + city.replace(/-/g, ' ').replace(/\w\S*/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       }) + ', and making $' + lastYearsIncome.toString().replace(/0000$/, '0,000') + ', your true costs will be:');
-    var categoryNames = ['Opportunity Cost at Current Wage', 'Financing Cost', 'Housing Cost', 'Tuition / Wage Garnishing'];
+    var categoryNames = ['Lost Wages', 'Financing Cost', 'Housing Cost', 'Tuition / Wage Garnishing'];
     bootcamps.forEach(function (camp) {
       var x0 = 0;
       if (camp.cities.indexOf(city) > -1) {
@@ -56,7 +56,7 @@ $(document).ready(function () {
         x1: x0 += weeklyHousing * camp.weeks
       }, {
         name: camp.name,
-        label: 'Opportunity Cost at Current Wage',
+        label: 'Lost Wages',
         value: +(Math.floor(camp.weeks * lastYearsIncome / 50)),
         x0: camp.finance ? +(Math.floor(camp.cost * 1.09519) + weeklyHousing * camp.weeks) : +camp.cost + weeklyHousing * camp.weeks,
         x1: x0 += +(Math.floor(camp.weeks * lastYearsIncome / 50))
