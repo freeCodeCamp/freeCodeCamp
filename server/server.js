@@ -127,6 +127,7 @@ var trusted = [
   '*.ytimg.com',
   '*.bitly.com',
   'http://cdn.inspectlet.com/',
+  'https://cdn.inspeclet.com/',
   'wss://inspectletws.herokuapp.com/',
   'http://hn.inspectlet.com/',
   '*.googleapis.com',
@@ -138,7 +139,9 @@ app.use(helmet.csp({
   scriptSrc: [
     '*.optimizely.com',
     '*.aspnetcdn.com',
-    '*.d3js.org'
+    '*.d3js.org',
+    'https://cdn.inspectlet.com/inspectlet.js',
+    'http://cdn.inspectlet.com/inspectlet.js'
   ].concat(trusted),
   'connect-src': [
   ].concat(trusted),
