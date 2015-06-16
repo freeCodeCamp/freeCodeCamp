@@ -54,13 +54,10 @@ module.exports = function(User) {
     });
   });
 
-  User.afterRemoteError('login', function(ctx, usr, next) {
+  User.afterRemoteError('login', function(ctx) {
     var res = ctx.res;
     var req = ctx.req;
-    // var args = ctx.args;
 
-
-    debug('after pass lgin');
     req.flash('errors', {
       msg: 'Invalid username or password.'
     });
