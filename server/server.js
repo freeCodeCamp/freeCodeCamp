@@ -306,6 +306,7 @@ if (process.env.NODE_ENV === 'production') {
   app.start = function() {
     var server = https.createServer(options, app);
     console.log(process.env.HOST, process.env.PORT);
+    console.log(options.cert);
     server.listen('https://' + process.env.HOST + ':' + app.get('port'), function () {
       console.log(
         'FreeCodeCamp server listening on port %d in %s mode',
