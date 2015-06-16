@@ -21,7 +21,6 @@ var https = require('https'),
   flash = require('express-flash'),
   path = require('path'),
   expressValidator = require('express-validator'),
-  forceDomain = require('forcedomain'),
   lessMiddleware = require('less-middleware'),
   pmx = require('pmx'),
 
@@ -303,18 +302,16 @@ var options = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  app.start = function() {
-    var server = https.createServer(options, app);
-    console.log('https://' + process.env.HOST + ':' + process.env.PORT);
-    server.listen('https://' + process.env.HOST + ':' + app.get('port'), function () {
-      console.log(
-        'FreeCodeCamp server listening on port %d in %s mode',
-        app.get('port'),
-        app.get('env')
-      );
-      app.emit('started', 'https://' + process.env.HOST + ':' + app.get('port'));
-    });
-  };
+  var server = https.createServer(options, app);
+  console.log('https://' + process.env.HOST + ':' + process.env.PORT);
+  server.listen('https://' + process.env.HOST + ':' + app.get('port'), function () {
+    console.log(
+      'FreeCodeCamp server listening on port %d in %s mode',
+      app.get('port'),
+      app.get('env')
+    );
+    app.emit('started', 'https://' + process.env.HOST + ':' + app.get('port'));
+  });
 } else {
   app.start = function () {
     app.listen(app.get('port'), function () {
@@ -325,11 +322,12 @@ if (process.env.NODE_ENV === 'production') {
       );
     });
   };
+  if (require.main === module) {
+    app.start();
+  }
 }
 
 // start the server if `$ node server.js`
-if (require.main === module) {
-  app.start();
-}
+
 
 module.exports = app;
