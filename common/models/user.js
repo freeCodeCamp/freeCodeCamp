@@ -44,7 +44,7 @@ module.exports = function(User) {
       res.cookie('access_token', accessToken.id, config);
       res.cookie('userId', accessToken.userId, config);
     }
-
+    debug('before pass login');
     return req.logIn(user, function(err) {
       if (err) {
         return next(err);
@@ -52,6 +52,19 @@ module.exports = function(User) {
       req.flash('success', { msg: 'Success! You are logged in.' });
       return res.redirect('/');
     });
+  });
+
+  User.afterRemoteError('login', function(ctx, usr, next) {
+    var res = ctx.res;
+    var req = ctx.req;
+    // var args = ctx.args;
+
+
+    debug('after pass lgin');
+    req.flash('errors', {
+      msg: 'Invalid username or password.'
+    });
+    return res.redirect('/');
   });
 
   User.afterRemote('logout', function(ctx, result, next) {
