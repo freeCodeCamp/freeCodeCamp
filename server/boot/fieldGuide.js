@@ -1,6 +1,6 @@
 var R = require('ramda'),
 // Rx = require('rx'),
-// debug = require('debug')('freecc:fieldguides'),
+  debug = require('debug')('freecc:fieldguides'),
   utils = require('../utils');
 
 module.exports = function(app) {
@@ -102,6 +102,11 @@ module.exports = function(app) {
       function(err, fieldGuide) {
 
         if (err) { return next(err); }
+        if (!fieldGuide) {
+          debug('bad juju in field guide %s',
+            req.user.uncompletedFieldGuides[0]);
+          return res.redirect('../field-guide/how-do-i-use-this-guide');
+        }
         return res.redirect('../field-guide/' + fieldGuide.dashedName);
       });
   }

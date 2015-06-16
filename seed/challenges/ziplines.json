@@ -173,8 +173,8 @@
     },
     {
       "id": "bd7158d8c442eddfaeb5bd19",
-      "name": "zipline-wikipedia-viewer",
-      "dashedName": "Zipline: Wikipedia Viewer",
+      "name": "Zipline: Wikipedia Viewer",
+      "dashedName": "zipline-wikipedia-viewer",
       "difficulty": 1.05,
       "challengeSeed": ["126415131"],
       "description": [

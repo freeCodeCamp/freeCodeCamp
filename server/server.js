@@ -96,6 +96,7 @@ app.use(function(req, res, next) {
 var trusted = [
   "'self'",
   'blob:',
+  '104.236.218.15',
   '*.freecodecamp.com',
   'http://www.freecodecamp.com',
   'ws://freecodecamp.com/',
