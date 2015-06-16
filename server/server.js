@@ -132,7 +132,8 @@ var trusted = [
   'wss://inspectletws.herokuapp.com/',
   'http://hn.inspectlet.com/',
   '*.googleapis.com',
-  '*.gstatic.com'
+  '*.gstatic.com',
+  'https://hn.inspectlet.com/'
 ];
 
 app.use(helmet.csp({
