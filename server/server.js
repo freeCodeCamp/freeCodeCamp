@@ -312,6 +312,7 @@ if (process.env.NODE_ENV === 'production') {
         app.get('port'),
         app.get('env')
       );
+      app.emit('started', 'https://' + process.env.HOST + ':' + app.get('port'));
     });
   };
 } else {
