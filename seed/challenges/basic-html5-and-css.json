@@ -831,7 +831,7 @@
         "assert($('img').hasClass('thick-green-border'), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
         "assert($('img').hasClass('thick-green-border') && parseInt($('img').css('border-top-width')), 'Give your image a border width of 10px.')",
         "assert(new RegExp('solid', 'gi').test(editor), 'Give your image a border style of \"solid\".')",
-        "assert($('img').css('border-left-color') === 'rgb(0, 128, 0)', 'Your <code>img</code> element should be green.')"
+        "assert($('img').css('border-left-color') === 'rgb(0, 128, 0)', 'The border around your <code>img</code> element should be green.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
