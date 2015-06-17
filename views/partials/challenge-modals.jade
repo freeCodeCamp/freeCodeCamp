@@ -50,3 +50,14 @@
                 h3 This will open a help request in our Help chat room.
                 a.btn.btn-lg.btn-primary.btn-block#i-want-help-editorless(name='_csrf', value=_csrf) Ask for help
                 a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
+
+#reset-modal.modal.fade(role='dialog', aria-hidden='true', style='display: none;')
+  .modal-dialog.animated.zoomIn.fast-animation
+    .modal-content
+      .modal-header.challenge-list-header
+        | Reset Everything?
+        a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+      .modal-body.text-center
+        h3 Your progress will be lost if you do!
+        button#reset-code.btn.btn-lg.btn-danger.btn-block(name='_', data-dismiss='modal', onclick='editor.setValue(allSeeds);') Reset
+        a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
