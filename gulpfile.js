@@ -78,6 +78,8 @@ gulp.task('less', function() {
     .pipe(gulp.dest('./public/css/'));
 });
 
+gulp.task('build', ['less']);
+
 gulp.task('watch', ['less', 'serve', 'sync'], function() {
   gulp.watch('./public/css/*.less', ['less']);
 });

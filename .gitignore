@@ -27,3 +27,4 @@ bower_components
 main.css
 bundle.js
 coverage
+.remote-sync.json

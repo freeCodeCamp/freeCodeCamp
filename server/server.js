@@ -2,9 +2,7 @@ require('dotenv').load();
 require('pmx').init();
 // handle uncaught exceptions. Forever will restart process on shutdown
 
-var https = require('https'),
-  sslConfig = require('./ssl-config'),
-  R = require('ramda'),
+var R = require('ramda'),
   assign = require('lodash').assign,
   loopback = require('loopback'),
   boot = require('loopback-boot'),
@@ -54,10 +52,12 @@ app.use(compress());
 app.use(lessMiddleware(path.join(__dirname, '/public')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(expressValidator({
   customValidators: {
-    matchRegex: function (param, regex) {
+    matchRegex: function(param, regex) {
       return regex.test(param);
     }
   }
@@ -145,8 +145,7 @@ app.use(helmet.csp({
     'https://cdn.inspectlet.com/inspectlet.js',
     'http://cdn.inspectlet.com/inspectlet.js'
   ].concat(trusted),
-  'connect-src': [
-  ].concat(trusted),
+  'connect-src': [].concat(trusted),
   styleSrc: [
     '*.googleapis.com',
     '*.gstatic.com'
@@ -180,14 +179,16 @@ app.use(helmet.csp({
 
 passportConfigurator.init();
 
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   // Make user object available in templates.
   res.locals.user = req.user;
   next();
 });
 
 app.use(
-  loopback.static(path.join(__dirname, '../public'), { maxAge: 86400000 })
+  loopback.static(path.join(__dirname, '../public'), {
+    maxAge: 86400000
+  })
 );
 
 boot(app, {
@@ -195,7 +196,7 @@ boot(app, {
   dev: process.env.NODE_ENV
 });
 
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   // Remember original destination before login.
   var path = req.path.split('/')[1];
   if (/auth|login|logout|signin|signup|fonts|favicon/i.test(path)) {
@@ -224,7 +225,8 @@ var passportOptions = {
       null;
 
     var username = (profile.username || profile.id);
-    username = typeof username === 'string' ? username.toLowerCase() : username;
+    username = typeof username === 'string' ? username.toLowerCase() :
+      username;
     var password = generateKey('password');
     var userObj = {
       username: username,
@@ -256,7 +258,9 @@ R.keys(passportProviders).map(function(strategy) {
  */
 
 if (process.env.NODE_ENV === 'development') {
-  app.use(errorHandler({ log: true }));
+  app.use(errorHandler({
+    log: true
+  }));
 } else {
   app.use(pmx.expressErrorHandler());
   // error handling in production disabling eslint due to express parity rules
@@ -279,12 +283,16 @@ if (process.env.NODE_ENV === 'development') {
 
     var message = 'opps! Something went wrong. Please try again later';
     if (type === 'html') {
-      req.flash('errors', { msg: message });
+      req.flash('errors', {
+        msg: message
+      });
       return res.redirect('/');
       // json
     } else if (type === 'json') {
       res.setHeader('Content-Type', 'application/json');
-      return res.send({ message: message });
+      return res.send({
+        message: message
+      });
       // plain text
     } else {
       res.setHeader('Content-Type', 'text/plain');
@@ -297,31 +305,14 @@ if (process.env.NODE_ENV === 'development') {
  * Start Express server.
  */
 
-var options = {
-  key: sslConfig.privateKey,
-  cert: sslConfig.certificate
-};
 
-if (process.env.NODE_ENV === 'production') {
-  var server = https.createServer(options, app);
-  console.log('https://' + process.env.HOST + ':' + process.env.PORT);
-  server.listen(app.get('port'), function () {
-    console.log(
-      'FreeCodeCamp server listening on port %d in %s mode',
-      app.get('port'),
-      app.get('env')
-    );
-    app.emit('started', 'https://' + process.env.HOST + ':' + app.get('port'));
-  });
-} else {
-  app.listen(app.get('port'), function () {
-    console.log(
-      'FreeCodeCamp server listening on port %d in %s mode',
-      app.get('port'),
-      app.get('env')
-    );
-  });
-}
+app.listen(app.get('port'), function() {
+  console.log(
+    'FreeCodeCamp server listening on port %d in %s mode',
+    app.get('port'),
+    app.get('env')
+  );
+});
 
 // start the server if `$ node server.js`
 
