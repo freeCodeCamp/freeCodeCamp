@@ -105,7 +105,7 @@ module.exports = {
     clientSecret: process.env.LINKEDIN_SECRET,
     scope: ['r_fullprofile', 'r_emailaddress'],
     oAuthOptions: {
-      state: process.ENV.LINKED_STATE
+      state: process.env.LINKED_STATE
     },
     failureFlash: true
   },
@@ -122,7 +122,7 @@ module.exports = {
     clientSecret: process.env.LINKEDIN_SECRET,
     scope: ['r_fullprofile', 'r_emailaddress'],
     authOptions: {
-      state: process.ENV.LINKED_STATE
+      state: process.env.LINKED_STATE
     },
     failureFlash: true
   }
