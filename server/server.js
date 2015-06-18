@@ -145,7 +145,8 @@ app.use(helmet.csp({
     '*.aspnetcdn.com',
     '*.d3js.org',
     'https://cdn.inspectlet.com/inspectlet.js',
-    'http://cdn.inspectlet.com/inspectlet.js'
+    'http://cdn.inspectlet.com/inspectlet.js',
+    'http://www.freecodecamp.org'
   ].concat(trusted),
   'connect-src': [].concat(trusted),
   styleSrc: [
