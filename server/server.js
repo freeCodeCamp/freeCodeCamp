@@ -257,7 +257,8 @@ R.keys(passportProviders).map(function(strategy) {
  * 500 Error Handler.
  */
 
-if (process.env.NODE_ENV === 'development') {
+//if (process.env.NODE_ENV === 'development') {
+if (true) {
   app.use(errorHandler({
     log: true
   }));
