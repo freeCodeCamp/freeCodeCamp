@@ -103,7 +103,7 @@ module.exports = {
     failureRedirect: failureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
-    scope: ['r_fullprofile', 'r_emailaddress'],
+    scope: ['r_basicprofile', 'r_emailaddress'],
     failureFlash: true
   },
   'linkedin-link': {
@@ -117,7 +117,7 @@ module.exports = {
     failureRedirect: failureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
-    scope: ['r_fullprofile', 'r_emailaddress'],
+    scope: ['r_basicprofile', 'r_emailaddress'],
     failureFlash: true
   }
 };
