@@ -98,6 +98,8 @@ var trusted = [
   'https://freecodecamp.com',
   'https://freecodecamp.org',
   '*.freecodecamp.org',
+  // NOTE(berks): add the following as the blob above was not covering www
+  'http://www.freecodecamp.org',
   'ws://freecodecamp.com/',
   'ws://www.freecodecamp.com/',
   '*.gstatic.com',
