@@ -1,5 +1,6 @@
 require('dotenv').load();
-require('pmx').init();
+var pmx = require('pmx');
+pmx.init();
 // handle uncaught exceptions. Forever will restart process on shutdown
 
 var R = require('ramda'),
@@ -20,7 +21,6 @@ var R = require('ramda'),
   path = require('path'),
   expressValidator = require('express-validator'),
   lessMiddleware = require('less-middleware'),
-  pmx = require('pmx'),
 
   passportProviders = require('./passport-providers'),
   /**
@@ -42,11 +42,11 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-//if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
 //  app.use(forceDomain({
 //    hostname: 'www.freecodecamp.com'
 //  }));
-//}
+// }
 
 app.use(compress());
 app.use(lessMiddleware(path.join(__dirname, '/public')));
@@ -262,6 +262,8 @@ R.keys(passportProviders).map(function(strategy) {
 
 // if (process.env.NODE_ENV === 'development') {
 if (true) { // eslint-disable-line
+  // NOTE(berks): adding pmx here for Beta test. Remove for production
+  app.use(pmx.expressErrorHandler());
   app.use(errorHandler({
     log: true
   }));
