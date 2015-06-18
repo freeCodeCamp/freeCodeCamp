@@ -257,8 +257,8 @@ R.keys(passportProviders).map(function(strategy) {
  * 500 Error Handler.
  */
 
-//if (process.env.NODE_ENV === 'development') {
-if (true) {
+// if (process.env.NODE_ENV === 'development') {
+if (true) { // eslint-disable-line
   app.use(errorHandler({
     log: true
   }));

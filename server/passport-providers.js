@@ -104,6 +104,9 @@ module.exports = {
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
     scope: ['r_fullprofile', 'r_emailaddress'],
+    oAuthOptions: {
+      state: process.ENV.LINKED_STATE
+    },
     failureFlash: true
   },
   'linkedin-link': {
@@ -118,6 +121,9 @@ module.exports = {
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
     scope: ['r_fullprofile', 'r_emailaddress'],
+    authOptions: {
+      state: process.ENV.LINKED_STATE
+    },
     failureFlash: true
   }
 };
