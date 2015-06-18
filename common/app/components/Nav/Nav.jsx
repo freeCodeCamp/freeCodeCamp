@@ -1,31 +1,30 @@
-var React = require('react'),
-    bootStrap = require('react-bootstrap'),
-    Navbar = bootStrap.Navbar,
-    Nav = bootStrap.Nav,
-    NavItem = bootStrap.NavItem,
-    NavItemFCC = require('./NavItem.jsx');
+import React from 'react';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import NavItemFCC from './NavItem.jsx';
 
-var NavBarComp = React.createClass({
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  propTypes: { signedIn: React.PropTypes.bool },
+  static displayName = 'Nav'
+  static propTypes = {
+    signedIn: React.PropTypes.bool
+  }
 
-  getDefaultProps: function() {
-    return { signedIn: false };
-  },
-
-  _renderBrand: function() {
+  renderBrand() {
     var fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
     return (
       <a href='/'>
         <img
-          src={ fCClogo }
           alt='learn to code javascript at Free Code Camp logo'
-          className='img-responsive nav-logo' />
+          className='img-responsive nav-logo'
+          src={ fCClogo } />
       </a>
     );
-  },
+  }
 
-  _renderSignin: function() {
+  renderSignin() {
     if (this.props.signedIn) {
       return (
         <NavItem
@@ -36,27 +35,26 @@ var NavBarComp = React.createClass({
     } else {
       return (
         <NavItemFCC
+          aClassName='btn signup-btn signup-btn-nav'
           eventKey={ 2 }
-          href='/login'
-          aClassName='btn signup-btn signup-btn-nav'>
-            Sign In
+          href='/login'>
+          Sign In
         </NavItemFCC>
       );
     }
-  },
+  }
 
-  render: function() {
-
+  render() {
     return (
       <Navbar
         brand={ this._renderBrand() }
+        className='nav-height'
         fixedTop={ true }
-        toggleNavKey={ 0 }
-        className='nav-height'>
+        toggleNavKey={ 0 }>
         <Nav
-          right={ true }
+          className='hamburger-dropdown'
           eventKey={ 0 }
-          className='hamburger-dropdown'>
+          right={ true }>
           <NavItem
             eventKey={ 1 }
             href='/Challenges'>
@@ -77,5 +75,4 @@ var NavBarComp = React.createClass({
       </Navbar>
     );
   }
-});
-module.exports = NavBarComp;
+}
