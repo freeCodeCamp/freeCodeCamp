@@ -42,12 +42,6 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// if (process.env.NODE_ENV === 'production') {
-//  app.use(forceDomain({
-//    hostname: 'www.freecodecamp.com'
-//  }));
-// }
-
 app.use(compress());
 app.use(lessMiddleware(path.join(__dirname, '/public')));
 app.use(logger('dev'));
