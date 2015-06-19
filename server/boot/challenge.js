@@ -45,22 +45,16 @@ module.exports = function(app) {
   var Challenge = app.models.Challenge;
   var User = app.models.User;
 
-  router.get(
-    '/challenges/next-challenge',
-    userMigration,
-    returnNextChallenge
-  );
-
-  router.get(
-    '/challenges/:challengeName',
-    userMigration,
-    returnIndividualChallenge
-  );
-
-  router.get('/challenges/', userMigration, returnCurrentChallenge);
   router.post('/completed-challenge/', completedChallenge);
   router.post('/completed-zipline-or-basejump', completedZiplineOrBasejump);
   router.post('/completed-bonfire', completedBonfire);
+
+  // the follow routes are covered by userMigration
+  router.use(userMigration);
+  router.get('/challenges/next-challenge', returnNextChallenge);
+  router.get('/challenges/:challengeName', returnIndividualChallenge);
+  router.get('/challenges/', returnCurrentChallenge);
+  router.get('/map', challengeMap);
 
   app.use(router);
 
@@ -532,5 +526,52 @@ module.exports = function(app) {
         }
       });
     }
+  }
+
+  function challengeMap(req, res, next) {
+    var completedList = [];
+
+    if (req.user) {
+      completedList = req.user.completedChallenges;
+    }
+
+    var noDuplicatedChallenges = R.uniq(completedList);
+
+    var completedChallengeList = noDuplicatedChallenges
+      .map(function(challenge) {
+        // backwards compatibility
+        return (challenge.id || challenge._id);
+      });
+    var challengeList = utils.
+      getChallengeMapForDisplay(completedChallengeList);
+
+    Object.keys(challengeList).forEach(function(key) {
+      challengeList[key].completed = challengeList[key]
+        .challenges.filter(function(elem) {
+        // backwards compatibility hack
+        return completedChallengeList.indexOf(elem.id || elem._id) > -1;
+      });
+    });
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    var date1 = new Date('10/15/2014');
+    var date2 = new Date();
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    User.count(function(err, camperCount) {
+      if (err) { return next(err); }
+
+      res.render('challengeMap/show', {
+        daysRunning: daysRunning,
+        camperCount: numberWithCommas(camperCount),
+        title: "A map of all Free Code Camp's Challenges",
+        challengeList: challengeList,
+        completedChallengeList: completedChallengeList
+      });
+    });
   }
 };
