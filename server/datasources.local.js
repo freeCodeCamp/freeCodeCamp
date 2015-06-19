@@ -3,6 +3,7 @@ var secrets = require('../config/secrets');
 module.exports = {
   db: {
     connector: 'mongodb',
+    timeout: 10000,
     url: process.env.MONGOHQ_URL
   },
   mail: {
