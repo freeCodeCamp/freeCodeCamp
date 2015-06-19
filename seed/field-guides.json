@@ -863,7 +863,7 @@
     "description": [
       "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
       "  <p class='h2'>Translation is an all-or-nothing proposal.</h2>",
-      "  <p class='large-p'>We won't be able to add new languages to Free Code Camp until all of our challenges are translated into that langauge.</p>",
+      "  <p class='large-p'>We won't be able to add new languages to Free Code Camp until all of our challenges are translated into that language.</p>",
       "  <p class='large-p'>In addition to translating these initially, we'll also need to maintain the translation as the challenges are gradually updated.</p>",
       "  <p class='large-p'>If you're able to help us, you can join our <a href='https://trello.com/b/m7zhwXka/fcc-translation' target='_blank'>Trello board</a> by sending @quincylarson your email address in Slack.</p>",
       "</div>"
