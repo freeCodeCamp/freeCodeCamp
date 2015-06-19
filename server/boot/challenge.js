@@ -32,27 +32,13 @@
 
 var R = require('ramda'),
   utils = require('../utils'),
-  userMigration = require('../utils/middleware').userMigration,
-  MDNlinks = require('../../seed/bonfireMDNlinks');
+  userMigration = require('../utils/middleware').userMigration;
 
 var challengeMapWithNames = utils.getChallengeMapWithNames();
 var challengeMapWithIds = utils.getChallengeMapWithIds();
 var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
 
-
-function getMDNlinks(links) {
-  // takes in an array of links, which are strings
-  var populatedLinks = [];
-
-  // for each key value, push the corresponding link
-  // from the MDNlinks object into a new array
-  if (links) {
-    links.forEach(function (value) {
-      populatedLinks.push(MDNlinks[value]);
-    });
-  }
-  return populatedLinks;
-}
+var getMDNLinks = utils.getMDNLinks;
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -295,7 +281,7 @@ module.exports = function(app) {
               bonfires: challenge,
               challengeId: challenge.id,
               MDNkeys: challenge.MDNlinks,
-              MDNlinks: getMDNlinks(challenge.MDNlinks),
+              MDNlinks: getMDNLinks(challenge.MDNlinks),
               challengeType: challenge.challengeType
             });
           }
