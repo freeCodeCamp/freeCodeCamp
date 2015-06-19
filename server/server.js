@@ -1,5 +1,6 @@
 require('dotenv').load();
-require('pmx').init();
+var pmx = require('pmx');
+pmx.init();
 // handle uncaught exceptions. Forever will restart process on shutdown
 
 var R = require('ramda'),
@@ -20,7 +21,6 @@ var R = require('ramda'),
   path = require('path'),
   expressValidator = require('express-validator'),
   lessMiddleware = require('less-middleware'),
-  pmx = require('pmx'),
 
   passportProviders = require('./passport-providers'),
   /**
@@ -41,12 +41,6 @@ var passportConfigurator = new PassportConfigurator(app);
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
-//if (process.env.NODE_ENV === 'production') {
-//  app.use(forceDomain({
-//    hostname: 'www.freecodecamp.com'
-//  }));
-//}
 
 app.use(compress());
 app.use(lessMiddleware(path.join(__dirname, '/public')));
@@ -98,6 +92,8 @@ var trusted = [
   'https://freecodecamp.com',
   'https://freecodecamp.org',
   '*.freecodecamp.org',
+  // NOTE(berks): add the following as the blob above was not covering www
+  'http://www.freecodecamp.org',
   'ws://freecodecamp.com/',
   'ws://www.freecodecamp.com/',
   '*.gstatic.com',
@@ -143,7 +139,8 @@ app.use(helmet.csp({
     '*.aspnetcdn.com',
     '*.d3js.org',
     'https://cdn.inspectlet.com/inspectlet.js',
-    'http://cdn.inspectlet.com/inspectlet.js'
+    'http://cdn.inspectlet.com/inspectlet.js',
+    'http://www.freecodecamp.org'
   ].concat(trusted),
   'connect-src': [].concat(trusted),
   styleSrc: [
@@ -259,6 +256,8 @@ R.keys(passportProviders).map(function(strategy) {
 
 // if (process.env.NODE_ENV === 'development') {
 if (true) { // eslint-disable-line
+  // NOTE(berks): adding pmx here for Beta test. Remove for production
+  app.use(pmx.expressErrorHandler());
   app.use(errorHandler({
     log: true
   }));

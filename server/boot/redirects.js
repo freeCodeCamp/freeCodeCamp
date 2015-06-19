@@ -18,5 +18,13 @@ module.exports = function(app) {
     );
   });
 
+  router.get('/learn-to-code', function(req, res) {
+    res.redirect(301, '/map');
+  });
+
+  router.get('/about', function(req, res) {
+    res.redirect(301, '/map');
+  });
+
   app.use(router);
 };
