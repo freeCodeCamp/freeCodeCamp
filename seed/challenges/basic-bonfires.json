@@ -754,8 +754,8 @@
     },
     {
       "id": "a5de63ebea8dbee56860f4f2",
-      "name": "bonfire-diff-two-arrays",
-      "dashedName": "Bonfire: Diff Two Arrays",
+      "name": "Bonfire: Diff Two Arrays",
+      "dashedName": "bonfire-diff-two-arrays",
       "difficulty": "2.01",
       "description": [
         "Compare two arrays and return a new array with any items not found in both of the original arrays.",
