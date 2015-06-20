@@ -53,10 +53,10 @@ editor.setOption("extraKeys", {
 var codeStorage = {
 	version: 0.01,
 	keyVersion:"saveVersion",
-	keyValue: challenge_Name + 'Val',
+	keyValue: null,//where the value of the editor is saved
 	updateWait: 2000,// 2 seconds
 	updateTimeoutId: null,
-	eventArray: []//for saves
+	eventArray: []//for firing saves
 };
 // Returns true if the editor code was saved since last key press (use this if you want to make a "saved" notification somewhere")
 codeStorage.hasSaved = function(){
@@ -64,6 +64,9 @@ codeStorage.hasSaved = function(){
 };
 codeStorage.onSave = function(func){
 	codeStorage.eventArray.push(func);
+};
+codeStorage.setSaveKey = function(key){
+	codeStorage.keyValue = key + 'Val';
 };
 codeStorage.getEditorValue = function(){
 	return localStorage.getItem(codeStorage.keyValue);
@@ -83,24 +86,28 @@ codeStorage.updateStorage = function(){
 		func();
 	});
 };
-// ANONYMOUS 1 TIME UPDATE VERSION
+//Update Version
 (function(){
 	var savedVersion = localStorage.getItem('saveVersion');
 	if( savedVersion === null ){
 		localStorage.setItem(codeStorage.keyVersion, codeStorage.version);//just write current version
 	}else{
-		//do checking if not current version
 		if( savedVersion !== codeStorage.version ){
-			//update version
+			//Update version
 		}
 	}
 })();
 
+
+
+///Set everything up one page
 /// Update local save when editor has changed 
-editor.on('keyup', function(codMir, event){
+codeStorage.setSaveKey(challenge_Name);
+editor.on('keyup', function(){
 	window.clearTimeout(codeStorage.updateTimeoutId);
 	codeStorage.updateTimeoutId = window.setTimeout(codeStorage.updateStorage, codeStorage.updateWait);
 });
+
 
 var attempts = 0;
 if (attempts) {
