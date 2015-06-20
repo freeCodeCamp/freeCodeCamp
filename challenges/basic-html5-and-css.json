@@ -1541,7 +1541,7 @@
       ],
       "tests": [
         "assert($('input[placeholder]').length > 0, 'Add a <code>placeholder</code> attribute text <code>input</code> element.')",
-        "assert($('input').attr('placeholder').match(/cat\\s+photo\\s+URL/gi), 'Set the value of your placeholder attribute to \"cat photo URL\".')"
+        "assert($('input') && $('input').attr('placeholder') && $('input').attr('placeholder').match(/cat\\s+photo\\s+URL/gi), 'Set the value of your placeholder attribute to \"cat photo URL\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
