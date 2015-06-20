@@ -37,7 +37,18 @@
         "Ahora es el momento de ingresar a nuestra sala de chat. Dale click al botón de \"I've completed this challenge\" para continuar con el siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameNl": "Waypoint: Leer hoe Free Code Camp Werkt",
+      "descriptionNl": [
+        "Bekijk deze video van 1 minuut, of lees gewoon de samenvatting:",
+        "Welkom bij Free Code Camp. Wij zijn een gemeenschap van drukke mensen die aan het leren zijn hoe je moet programmeren door het maken van projecten voor non-profit bedrijven.",
+        "We hebben deze gemeenschap gemaakt omdat het leren hoe je moet programmeren moeilijk is. Maar iedereen die gemotiveerd kan blijven kan leren hoe je moet programmeren. En om gemotiveerd te blijven,  moet je gewoon: <ol><li>vrienden maken met mensen die kunnen programmeren</li><li>een beetje programmeren iedere dag</li></ol>",
+        "Al onze uitdagingen zijn <ol><li>gratis</li><li>op je eigen tempo</li><li>in jouw browser</li><ol>",
+        "We zullen <ol><li>200 uur aan het leren van hulpmiddelen zoals HTML, CSS, JavaScript, Node.js en databanken</li><li>600 uur aan het maken van oefen projecten</li><li>800 uur aan het bouwen van full stack oplossingen voor non-profit bedrijven</li></ol> besteden",
+        "Aan het einde, zullen we <ol><li>goed zijn in programmeren</li><li>de portefeuille hebben van apps met blije gebruikers om het te bewijzen</li></ol>",
+        "Als je klaar bent met Free Code Camp, dan kan je een baan krijgen als programmeur. Er zijn veel meer vacatures voor programmeurs dan dat er gekwalificeerde programmeurs zijn om ze te op te vullen.",
+        "Nu is het tijd omin  onze chatroom binnen te treden. Klik op de \"I've completed this challenge\" knop om door te gaan naar de volgende uitdaging."
+      ]
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd0f",
@@ -78,7 +89,20 @@
         "Para mantener a nuestra comunidad como un lugar de aprendizaje positivo y amigable, por favor lee y sigue nuestro Código de Conducta: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameNl": "Waypoint: Treed toe in onze Chatroom",
+      "descriptionNl": [
+        "Nu gaan we toe treden in de Free Code Camp chatroom. Je kan hier op ieder moment van de dag komen om uit te hangen, vragen te stellen, of één andere camper vinden met wie je kan paar programmeren.",
+        "Zorg ervoor dat joguw Free Code Camp account een email addres heeft. Merk op dat het email addres dat je gebruikt onzichtbaar zal zijn voor het publiek, maar Slack zal het zichtbaar maken voor andere campers in onze chatroom. Je kan dit hier doen: <a href='/account' target='_blank'>http://freecodecamp.com/account</a>.",
+        "Klik op deze link, dat zal je dan een email sturen met een uitnodiging om de Free Code Camp Slack chatrooms te betreden: : <a href='/api/slack' target='_blank'>http://freecodecamp.com/api/slack</a>.",
+        "Bekijk nu jouw emails en klik op de link in de email van Slack.",
+        "Maak de inschrijf proces af, en werk dan jouw biografie af en upload dan een afbeelding. Een afbeelding van jouw gezicht werkt het beste. Dit is hoe andere mensen je zullen zien in de chatrooms, dus zet je beste beentje voor.",
+        "Treed nu toe in de #General chatroom (Engels) of #Nederlands (Nederlands) en stel jezelf voor door \"Hello World!\" (Engels) of \"Hallo Wereld!\" (Nederlands) te typen in de chatroom. ",
+        "Vertel de andere campers hoe je Free Code Camp hebt gevonden. Vertel ons ook waarom je wilt leren hoe je moet programmeren. ",
+        "Hoe de chatroom open terwijl je de challenges doet. Op die manier kan je voor hulp vragen als je vastloopt op een challenge. Je kan ook socialiseren als je een pauze wilt nemen.",
+        "Je kan ook in de chatroom komen door op de \"Chat\" knop te klikken rechtsbovenin.",
+        "Om onze gemeenscahp een vriendelijke plaats om te leren hoe je moet programmeren te houden, lees en houd u A.U.B. onze gedragscode: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
+      ]
     },
     {
       "_id": "bd7125d8c441eddfaeb5bdff",
@@ -111,7 +135,9 @@
         "Para terminar, ten en cuenta que nuestra currícula open-source es un trabajo en progreso. Nuestra comunidad de voluntarios está mejorandola constantemente. Si crees que te has topado con algún bug, error ortográfico o algo que parezca confuso, haznos el favor de abrir un ticket a través de Github: <a href='https://github.com/FreeCodeCamp/freecodecamp/issues'>https://github.com/FreeCodeCamp/freecodecamp/issues</a>."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameNl": "",
+      "descriptionNl": []
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd1f",
@@ -142,7 +168,9 @@
         "Lee algunos de nuestros artículos, luego continúa con tu siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameNl": "",
+      "descriptionNl": []
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd2f",
@@ -177,7 +205,9 @@
         "Una vez que estés satisfecho con tu página de portafolio, puedes seguir con el siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameNl": "",
+      "descriptionNl": []
     },
     {
       "_id": "bd7126d8c441eddfaeb5bd3f",
@@ -216,7 +246,9 @@
         "Ahora que has aprendido a utilizar las Noticias de Campers, continuaremos con el siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameNl": "",
+      "descriptionNl": []
     },
     {
       "_id": "bd7126d8c441eddfaeb5bd3e",
@@ -253,7 +285,9 @@
         "En caso seas el anfitrión de un grupo de estudio, estes programando en pares en una biblioteca local o piensen en ir a un hackathon de fin de semana, tu grupo local te ayudará a hacerlo."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameNl": "",
+      "descriptionNl": []
     },
     {
       "_id": "bd7137d8c441eddfaeb5bdef",
@@ -290,7 +324,9 @@
         "Ahora que tienes en claro el procedimiento a seguir cuando necesites ayuda. ¡Empecémos a programar! Continua con el siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameNl": "",
+      "descriptionNl": []
     }
   ]
 }
