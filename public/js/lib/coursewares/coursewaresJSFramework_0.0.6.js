@@ -55,11 +55,15 @@ var codeStorage = {
 	keyVersion:"saveVersion",
 	keyValue: challenge_Name + 'Val',
 	updateWait: 2000,// 2 seconds
-	updateTimeoutId: null
+	updateTimeoutId: null,
+	eventArray: []//for saves
 };
 // Returns true if the editor code was saved since last key press (use this if you want to make a "saved" notification somewhere")
 codeStorage.hasSaved = function(){
 	return ( updateTimeoutId === null );
+};
+codeStorage.onSave = function(func){
+	codeStorage.eventArray.push(func);
 };
 codeStorage.getEditorValue = function(){
 	return localStorage.getItem(codeStorage.keyValue);
@@ -75,6 +79,9 @@ codeStorage.updateStorage = function(){
 		}
 	}
 	codeStorage.updateTimeoutId = null;
+	codeStorage.eventArray.forEach(function(func){
+		func();
+	});
 };
 // ANONYMOUS 1 TIME UPDATE VERSION
 (function(){
