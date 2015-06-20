@@ -32,7 +32,9 @@
 
 var R = require('ramda'),
   utils = require('../utils'),
-  userMigration = require('../utils/middleware').userMigration;
+  saveUser = require('../utils/rx').saveUser,
+  userMigration = require('../utils/middleware').userMigration,
+  ifNoUserRedirectTo = require('../utils/middleware').ifNoUserRedirectTo;
 
 var challengeMapWithNames = utils.getChallengeMapWithNames();
 var challengeMapWithIds = utils.getChallengeMapWithIds();
@@ -51,23 +53,30 @@ module.exports = function(app) {
 
   // the follow routes are covered by userMigration
   router.use(userMigration);
-  router.get('/challenges/next-challenge', returnNextChallenge);
-  router.get('/challenges/:challengeName', returnIndividualChallenge);
-  router.get('/challenges/', returnCurrentChallenge);
   router.get('/map', challengeMap);
+  router.get(
+    '/challenges/next-challenge',
+    ifNoUserRedirectTo('../challenges/learn-how-free-code-camp-works'),
+    returnNextChallenge
+  );
+
+  router.get('/challenges/:challengeName', returnIndividualChallenge);
+
+  router.get(
+    '/challenges/',
+    ifNoUserRedirectTo('../challenges/learn-how-free-code-camp-works'),
+    returnCurrentChallenge
+  );
 
   app.use(router);
 
   function returnNextChallenge(req, res, next) {
-    if (!req.user) {
-      return res.redirect('../challenges/learn-how-free-code-camp-works');
-    }
     var completed = req.user.completedChallenges.map(function (elem) {
       return elem.id;
     });
 
     req.user.uncompletedChallenges = utils.allChallengeIds()
-      .filter(function (elem) {
+      .filter(function(elem) {
         if (completed.indexOf(elem) === -1) {
           return elem;
         }
@@ -100,18 +109,17 @@ module.exports = function(app) {
       nextChallengeName = R.head(challengeMapWithDashedNames[0].challenges);
     }
 
-    req.user.save(function(err) {
-      if (err) {
-        return next(err);
-      }
-      return res.redirect('../challenges/' + nextChallengeName);
-    });
+    saveUser(req.user)
+      .subscribe(
+        function() {},
+        next,
+        function() {
+          res.redirect('../challenges/' + nextChallengeName);
+        }
+      );
   }
 
   function returnCurrentChallenge(req, res, next) {
-    if (!req.user) {
-      return res.redirect('../challenges/learn-how-free-code-camp-works');
-    }
     var completed = req.user.completedChallenges.map(function (elem) {
       return elem.id;
     });
@@ -133,12 +141,14 @@ module.exports = function(app) {
 
     var nameString = req.user.currentChallenge.dashedName;
 
-    req.user.save(function(err) {
-      if (err) {
-        return next(err);
-      }
-      return res.redirect('../challenges/' + nameString);
-    });
+    saveUser(req.user)
+      .subscribe(
+        function() {},
+        next,
+        function() {
+          res.redirect('../challenges/' + nameString);
+        }
+      );
   }
 
   function returnIndividualChallenge(req, res, next) {
@@ -152,8 +162,10 @@ module.exports = function(app) {
         // Handle not found
         if (!challenge) {
           req.flash('errors', {
-            msg: '404: We couldn\'t find a challenge with that name. ' +
-            'Please double check the name.'
+            msg:
+              '404: We couldn\'t find a challenge with the name `' +
+              dashedName +
+              '` Please double check the name.'
           });
           return res.redirect('/challenges');
         }
@@ -167,8 +179,9 @@ module.exports = function(app) {
                 map(function (key) {
                   return challengeMapWithIds[key]
                     .filter(function (elem) {
-                      return String(elem) === String(challenge.id);
-                    }).map(function () {
+                      return String(elem) === challenge.id;
+                    })
+                    .map(function () {
                       return key;
                     });
                 })
@@ -176,120 +189,48 @@ module.exports = function(app) {
           };
         }
 
-        var challengeType = {
-          0: function() {
-            res.render('coursewares/showHTML', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              brief: challenge.description[0],
-              details: challenge.description.slice(1),
-              tests: challenge.tests,
-              challengeSeed: challenge.challengeSeed,
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              environment: utils.whichEnvironment(),
-              challengeType: challenge.challengeType
-            });
-          },
-
-          1: function() {
-            res.render('coursewares/showJS', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              brief: challenge.description[0],
-              details: challenge.description.slice(1),
-              tests: challenge.tests,
-              challengeSeed: challenge.challengeSeed,
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              challengeType: challenge.challengeType
-            });
-          },
-
-          2: function() {
-            res.render('coursewares/showVideo', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              details: challenge.description,
-              tests: challenge.tests,
-              video: challenge.challengeSeed[0],
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              challengeType: challenge.challengeType
-            });
-          },
-
-          3: function() {
-            res.render('coursewares/showZiplineOrBasejump', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              details: challenge.description,
-              video: challenge.challengeSeed[0],
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              challengeType: challenge.challengeType
-            });
-          },
-
-          4: function() {
-            res.render('coursewares/showZiplineOrBasejump', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              details: challenge.description,
-              video: challenge.challengeSeed[0],
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              challengeType: challenge.challengeType
-            });
-          },
-
-          5: function() {
-            res.render('coursewares/showBonfire', {
-              completedWith: null,
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              difficulty: Math.floor(+challenge.difficulty),
-              brief: challenge.description.shift(),
-              details: challenge.description,
-              tests: challenge.tests,
-              challengeSeed: challenge.challengeSeed,
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              bonfires: challenge,
-              challengeId: challenge.id,
-              MDNkeys: challenge.MDNlinks,
-              MDNlinks: getMDNLinks(challenge.MDNlinks),
-              challengeType: challenge.challengeType
-            });
-          }
+        var commonLocals = {
+          title: challenge.name,
+          dashedName: dashedName,
+          name: challenge.name,
+          details: challenge.description.slice(1),
+          tests: challenge.tests,
+          challengeSeed: challenge.challengeSeed,
+          verb: utils.randomVerb(),
+          phrase: utils.randomPhrase(),
+          compliment: utils.randomCompliment(),
+          challengeId: challenge.id,
+          challengeType: challenge.challengeType,
+          // video challenges
+          video: challenge.challengeSeed[0],
+          // bonfires specific
+          difficulty: Math.floor(+challenge.difficulty),
+          brief: challenge.description.shift(),
+          bonfires: challenge,
+          MDNkeys: challenge.MDNlinks,
+          MDNlinks: getMDNLinks(challenge.MDNlinks),
+          // htmls specific
+          environment: utils.whichEnvironment()
         };
-        if (req.user) {
-          req.user.save(function (err) {
-            if (err) {
-              return next(err);
+
+        var challengeView = {
+          0: 'coursewares/showHTML',
+          1: 'coursewares/showJS',
+          2: 'coursewares/showVideo',
+          3: 'coursewares/showZiplineOrBasejump',
+          4: 'coursewares/showZiplineOrBasejump',
+          5: 'coursewares/showBonfire'
+        };
+
+        saveUser(req.user)
+          .subscribe(
+            function() {},
+            next,
+            function() {
+              var view = challengeView[challenge.challengeType];
+              res.render(view, commonLocals);
             }
-            return challengeType[challenge.challengeType]();
-          });
-        } else {
-          return challengeType[challenge.challengeType]();
-        }
+          );
       });
   }
 

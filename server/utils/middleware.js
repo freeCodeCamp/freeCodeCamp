@@ -33,3 +33,13 @@ exports.userMigration = function userMigration(req, res, next) {
   );
   return next();
 };
+
+exports.ifNoUserRedirectTo = function ifNoUserRedirectTo(url) {
+  return function(req, res, next) {
+    if (req.user) {
+      return next();
+    }
+    return res.redirect(url);
+  };
+};
+
