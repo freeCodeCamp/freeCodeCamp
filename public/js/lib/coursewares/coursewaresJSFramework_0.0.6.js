@@ -45,8 +45,8 @@ editor.setOption("extraKeys", {
 	localBonfire: singleton object that contains properties and methods related to
 		dealing with the localStorage system.
 	The keys work off of the variable challenge_name to make unique identifiers per bonfire
-	
-	Two extra functionalities: 
+
+	Two extra functionalities:
 	Added anonymous version checking system incase of future updates to the system
 	Added keyup listener to editor(myCodeMirror) so the last update has been saved to storage
 */
@@ -81,7 +81,6 @@ localBonfire.updateStorage = function(){
 		}
 	}
 	localBonfire.updateTimeoutId = null;
-	console.log('updated!');
 };
 // ANONYMOUS 1 TIME UPDATE VERSION
 (function(){
@@ -96,7 +95,7 @@ localBonfire.updateStorage = function(){
 	}
 })();
 
-editor.on('keyup', function(codMir, event){ 
+editor.on('keyup', function(codMir, event){
 	window.clearTimeout(localBonfire.updateTimeoutId);
 	localBonfire.updateTimeoutId = window.setTimeout(localBonfire.updateStorage, localBonfire.updateWait);
 });
@@ -106,6 +105,10 @@ if (attempts) {
   attempts = 0;
 }
 
+var resetEditor = function() {
+  editor.setValue(allSeeds);
+  localBonfire.updateStorage();
+};
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
   lineNumbers: false,
