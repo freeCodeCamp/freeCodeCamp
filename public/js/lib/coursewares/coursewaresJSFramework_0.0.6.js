@@ -42,7 +42,7 @@ editor.setOption("extraKeys", {
 
 /*
 	Local Storage Update System By Andrew Cay(Resto)
-	localBonfire: singleton object that contains properties and methods related to
+	codeStorage: singleton object that contains properties and methods related to
 		dealing with the localStorage system.
 	The keys work off of the variable challenge_name to make unique identifiers per bonfire
 
@@ -50,54 +50,49 @@ editor.setOption("extraKeys", {
 	Added anonymous version checking system incase of future updates to the system
 	Added keyup listener to editor(myCodeMirror) so the last update has been saved to storage
 */
-var localBonfire = {
+var codeStorage = {
 	version: 0.01,
 	keyVersion:"saveVersion",
-	keyStamp: challenge_Name + 'Stamp',
 	keyValue: challenge_Name + 'Val',
-	stampExpireTime: (1000 *60) *60 *24,
-	updateWait: 1500,// 1.5 seconds
+	updateWait: 2000,// 2 seconds
 	updateTimeoutId: null
 };
-localBonfire.getEditorValue = function(){
-	return localStorage.getItem(localBonfire.keyValue);
+// Returns true if the editor code was saved since last key press (use this if you want to make a "saved" notification somewhere")
+codeStorage.hasSaved = function(){
+	return ( updateTimeoutId === null );
 };
-localBonfire.getStampTime = function(){
-	//localstorage always saves as strings.
-	return Number.parseInt( localStorage.getItem(localBonfire.keyStamp) );
+codeStorage.getEditorValue = function(){
+	return localStorage.getItem(codeStorage.keyValue);
 };
-localBonfire.isAlive = function(){// returns true if IDE was edited within expire time
-	return ( Date.now() - localBonfire.getStampTime() < localBonfire.stampExpireTime );
-};
-localBonfire.updateStorage = function(){
+codeStorage.updateStorage = function(){
 	if(typeof(Storage) !== undefined) {
-		var stamp = Date.now(),
-			value = editor.getValue();
-		localStorage.setItem(localBonfire.keyValue, value);
-		localStorage.setItem(localBonfire.keyStamp, stamp);
+		var value = editor.getValue();
+		localStorage.setItem(codeStorage.keyValue, value);
 	} else {
+		var debugging = false;
 		if( debugging ){
 			console.log('no web storage');
 		}
 	}
-	localBonfire.updateTimeoutId = null;
+	codeStorage.updateTimeoutId = null;
 };
 // ANONYMOUS 1 TIME UPDATE VERSION
 (function(){
 	var savedVersion = localStorage.getItem('saveVersion');
 	if( savedVersion === null ){
-		localStorage.setItem(localBonfire.keyVersion, localBonfire.version);//just write current version
+		localStorage.setItem(codeStorage.keyVersion, codeStorage.version);//just write current version
 	}else{
 		//do checking if not current version
-		if( savedVersion !== localBonfire.version ){
+		if( savedVersion !== codeStorage.version ){
 			//update version
 		}
 	}
 })();
 
+/// Update local save when editor has changed 
 editor.on('keyup', function(codMir, event){
-	window.clearTimeout(localBonfire.updateTimeoutId);
-	localBonfire.updateTimeoutId = window.setTimeout(localBonfire.updateStorage, localBonfire.updateWait);
+	window.clearTimeout(codeStorage.updateTimeoutId);
+	codeStorage.updateTimeoutId = window.setTimeout(codeStorage.updateStorage, codeStorage.updateWait);
 });
 
 var attempts = 0;
@@ -107,7 +102,7 @@ if (attempts) {
 
 var resetEditor = function() {
   editor.setValue(allSeeds);
-  localBonfire.updateStorage();
+  codeStorage.updateStorage();
 };
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
@@ -145,7 +140,7 @@ var allSeeds = '';
   });
 })();
 
-editorValue = (localBonfire.isAlive())? localBonfire.getEditorValue() : allSeeds;
+editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
 
 myCodeMirror.setValue(editorValue);
 
