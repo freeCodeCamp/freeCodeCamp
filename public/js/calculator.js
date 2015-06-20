@@ -154,6 +154,10 @@ $(document).ready(function () {
       }, 1000);
     });
 
+    d3.selectAll("#chart").on("click", function () {
+      change();
+    });
+
     function change() {
       if ($("body").data("state") === "stacked") {
         transitionGrouped();
