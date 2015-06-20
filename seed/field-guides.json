@@ -921,5 +921,45 @@
       "  <p class='large-p'>All campers who have already completed these challenges are retroactively be eligible for the certificate!</p>",
       "</div>"
     ]
+  },
+  {
+    "id": "bd7158d9c436eddfadb5bd3c",
+    "name": "What is the new Free Code Camp Mobile Experience?",
+    "dashedName": "what-is-the-new-free-code-camp-mobile-experience",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2>We're building an on-the-go version of Free Code Camp.</h2>",
+      "  <img src='http://www.howardforums.com/attachment.php?attachmentid=97254&d=1378730537&stc=1' class='img-responsive img-center'>",
+      "  <p class='large-p'>It will be video-driven, with multiple-choice questions.</p>",
+      "  <img class='img-center img-responsive' src='https://www.edx.org/sites/default/files/upload/philip-guo-edx-first-blog-figure.png'>",
+      "  <p class='large-p'>These videos will be short - generally less than 6 minutes long.</p>",
+      "  <img src='http://a3.mzstatic.com/us/r1000/095/Purple/3f/58/42/mzl.xypmpeal.320x480-75.jpg' class='img-center img-responsive'>",
+      "  <p class='large-p'>We are considering focusing the mobile experience on code interview questions. Answering these common questions is a very different skill from coding itself.",
+      "  <p class='large-p'>We're still in the process of designing this. We'd love to hear your input.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "id": "bd7158d9c436eddfadb5bd2b",
+    "name": "test",
+    "dashedName": "what-is-the-free-code-camp-front-end-development-certificate",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2>We're creating a free Front End Development Certificate.</h2>",
+      "  <p class='large-p'>Here are the challenges that will make up our Basic Front End Development Certificate Program:</p>",
+      "  <ol>",
+      "    <li class='large-li'>HTML5 and CSS</li>",
+      "    <li class='large-li'>Responsive Design with Bootstrap</li>",
+      "    <li class='large-li'>jQuery, Ajax and JSON APIs (coming soon - will replace Codecademy jQuery challenges)</li>",
+      "    <li class='large-li'>Zipline: Use the Twitch.tv JSON API</li>",
+      "    <li class='large-li'>Zipline: Build a Random Quote Machine</li>",
+      "    <li class='large-li'>Zipline: Show the Local Weather</li>",
+      "    <li class='large-li'>Zipline: Stylize Stories on Camper News</li>",
+      "    <li class='large-li'>Zipline: Wikipedia Viewer</li>",
+      "  </ol>",
+      "  <p class='large-p'>This won't be a new curriculum - it will just the first 200 hours of our full stack JavaScript curriculum.</p>",
+      "  <p class='large-p'>All campers who have already completed these challenges are retroactively be eligible for the certificate!</p>",
+      "</div>"
+    ]
   }
 ]
