@@ -31,6 +31,7 @@
  */
 
 var R = require('ramda'),
+  debug = require('debug')('freecc:challenges'),
   utils = require('../utils'),
   saveUser = require('../utils/rx').saveUser,
   userMigration = require('../utils/middleware').userMigration,
@@ -41,6 +42,18 @@ var challengeMapWithIds = utils.getChallengeMapWithIds();
 var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
 
 var getMDNLinks = utils.getMDNLinks;
+
+var challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+function dasherize(name) {
+  return ('' + name)
+    .toLowerCase()
+    .replace(/\s/g, '-')
+    .replace(/[^a-z0-9\-\.]/gi, '');
+}
+
+function unDasherize(name) {
+  return ('' + name).replace(/\-/g, ' ');
+}
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -56,7 +69,7 @@ module.exports = function(app) {
   router.get('/map', challengeMap);
   router.get(
     '/challenges/next-challenge',
-    ifNoUserRedirectTo('../challenges/learn-how-free-code-camp-works'),
+    ifNoUserRedirectTo('/challenges/learn-how-free-code-camp-works'),
     returnNextChallenge
   );
 
@@ -64,7 +77,7 @@ module.exports = function(app) {
 
   router.get(
     '/challenges/',
-    ifNoUserRedirectTo('../challenges/learn-how-free-code-camp-works'),
+    ifNoUserRedirectTo('/challenges/learn-how-free-code-camp-works'),
     returnCurrentChallenge
   );
 
@@ -114,7 +127,7 @@ module.exports = function(app) {
         function() {},
         next,
         function() {
-          res.redirect('../challenges/' + nextChallengeName);
+          res.redirect('/challenges/' + nextChallengeName);
         }
       );
   }
@@ -146,30 +159,43 @@ module.exports = function(app) {
         function() {},
         next,
         function() {
-          res.redirect('../challenges/' + nameString);
+          res.redirect('/challenges/' + nameString);
         }
       );
   }
 
   function returnIndividualChallenge(req, res, next) {
-    var dashedName = req.params.challengeName;
+    var origChallengeName = req.params.challengeName;
+    var unDashedName = unDasherize(origChallengeName);
 
+    var challengeName = challangesRegex.test(unDashedName) ?
+      // remove first word if matches
+      unDashedName.split(' ').slice(1).join(' ') :
+      unDashedName;
+
+    debug('looking for ', challengeName);
     Challenge.findOne(
-      { where: { dashedName: dashedName }},
+      { where: { name: { like: challengeName, options: 'i' } } },
       function(err, challenge) {
         if (err) { return next(err); }
 
         // Handle not found
         if (!challenge) {
+          debug('did not find challenge for ' + origChallengeName);
           req.flash('errors', {
             msg:
               '404: We couldn\'t find a challenge with the name `' +
-              dashedName +
+              origChallengeName +
               '` Please double check the name.'
           });
           return res.redirect('/challenges');
         }
         // Redirect to full name if the user only entered a partial
+        if (dasherize(challenge.name) !== origChallengeName) {
+          debug('redirecting to fullname');
+          return res.redirect('/challenges/' + dasherize(challenge.name));
+        }
+
         if (req.user) {
           req.user.currentChallenge = {
             challengeId: challenge.id,
@@ -191,7 +217,7 @@ module.exports = function(app) {
 
         var commonLocals = {
           title: challenge.name,
-          dashedName: dashedName,
+          dashedName: origChallengeName,
           name: challenge.name,
           details: challenge.description.slice(1),
           tests: challenge.tests,
@@ -243,7 +269,7 @@ module.exports = function(app) {
 
     if (isCompletedWith) {
       User.find({
-        where: { 'profile.username': isCompletedWith.toLowerCase() },
+        where: { username: isCompletedWith.toLowerCase() },
         limit: 1
       }, function (err, pairedWith) {
         if (err) { return next(err); }
@@ -382,7 +408,7 @@ module.exports = function(app) {
 
     if (isCompletedWith) {
       User.find({
-        where: { 'profile.username': isCompletedWith.toLowerCase() },
+        where: { username: isCompletedWith.toLowerCase() },
         limit: 1
       }, function (err, pairedWithFromMongo) {
         if (err) { return next(err); }
