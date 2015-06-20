@@ -41,6 +41,7 @@ module.exports = {
   },
   'google-login': {
     provider: 'google',
+    authScheme: 'oauth',
     module: 'passport-google-oauth2',
     clientID: process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
@@ -54,6 +55,7 @@ module.exports = {
   },
   'google-link': {
     provider: 'google',
+    authScheme: 'oauth',
     module: 'passport-google-oauth2',
     clientID: process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
@@ -94,7 +96,7 @@ module.exports = {
   },
   'linkedin-login': {
     provider: 'linkedin',
-    authScheme: 'oauth',
+    authScheme: 'oauth2',
     module: 'passport-linkedin-oauth2',
     authPath: '/auth/linkedin',
     callbackURL: '/auth/linkedin/callback',
@@ -103,12 +105,15 @@ module.exports = {
     failureRedirect: failureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
-    scope: ['r_fullprofile', 'r_emailaddress'],
+    scope: ['r_basicprofile', 'r_emailaddress'],
+    authOptions: {
+      state: process.env.LINKEDIN_STATE
+    },
     failureFlash: true
   },
   'linkedin-link': {
     provider: 'linkedin',
-    authScheme: 'oauth',
+    authScheme: 'oauth2',
     module: 'passport-linkedin-oauth2',
     authPath: '/link/linkedin',
     callbackURL: '/link/linkedin/callback',
@@ -117,7 +122,10 @@ module.exports = {
     failureRedirect: failureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
-    scope: ['r_fullprofile', 'r_emailaddress'],
+    scope: ['r_basicprofile', 'r_emailaddress'],
+    authOptions: {
+      state: process.env.LINKEDIN_STATE
+    },
     failureFlash: true
   }
 };

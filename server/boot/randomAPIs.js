@@ -27,8 +27,8 @@ module.exports = function(app) {
   router.post('/get-help', getHelp);
   router.post('/get-pair', getPair);
   router.get('/chat', chat);
-  router.get('/bootcamp-calculator', bootcampCalculator);
-  router.get('/bootcamp-calculator.json', bootcampCalculatorJson);
+  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
+  router.get('/coding-bootcamp-cost-calculator.json', bootcampCalculatorJson);
   router.get('/twitch', twitch);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);

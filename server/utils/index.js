@@ -7,6 +7,7 @@ var path = require('path'),
     fs = require('fs'),
 
 
+    MDNlinks = require('../../seed/bonfireMDNlinks'),
     resources = require('./resources.json'),
     nonprofits = require('../../seed/nonprofits.json'),
     fieldGuides = require('../../seed/field-guides.json');
@@ -16,7 +17,7 @@ var path = require('path'),
  */
 var allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
   challengeMap, challengeMapForDisplay, challengeMapWithIds,
-  challengeMapWithNames, allChallengeIds, allChallenges,
+  challengeMapWithNames, allChallengeIds,
   challengeMapWithDashedNames;
 
 /**
@@ -216,5 +217,18 @@ module.exports = {
         }
       });
     })();
+  },
+
+  getMDNLinks: function(links) {
+    if (!links) {
+      return [];
+    }
+    // takes in an array of links, which are strings
+
+    // for each key value, push the corresponding link
+    // from the MDNlinks object into a new array
+    return links.map(function(value) {
+      return MDNlinks[value];
+    });
   }
 };

@@ -230,7 +230,7 @@
         "permAlone('aab');"
       ],
       "tests": [
-        "expect(permAlone('aab')).to.be.a.number;",
+        "expect(permAlone('aab')).to.be.a('number');",
         "expect(permAlone('aab')).to.equal(2);",
         "expect(permAlone('aaa')).to.equal(0);",
         "expect(permAlone('aabb')).to.equal(8);",

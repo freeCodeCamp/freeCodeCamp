@@ -84,10 +84,16 @@ block content
             label.negative-10.btn.btn-primary.btn-block#submitButton
                 i.fa.fa-play
                     | &nbsp; Run code (ctrl + enter)
-
+            #resetButton.btn.btn-danger.btn-big.btn-block(data-toggle='modal', data-target='#reset-modal', data-backdrop='true') Reset Code
             if (user && user.sentSlackInvite)
                 .button-spacer
                 .btn-group.input-group.btn-group-justified
+                    label.btn.btn-success#trigger-help-modal
+                        i.fa.fa-refresh
+                            | &nbsp; Reset
+                    label.btn.btn-success#trigger-help-modal
+                        i.fa.fa-refresh
+                            | &nbsp; Reset
                     label.btn.btn-success#trigger-help-modal
                         i.fa.fa-medkit
                             | &nbsp; Help
@@ -119,7 +125,7 @@ block content
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true, style='display: none;')
-                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.5.js')
+                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.6.js')
 
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
@@ -140,6 +146,15 @@ block content
                                     = phrase
                     else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+    #reset-modal.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header Clear your code?
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    h3 This will restore your code editor to its original state.
+                    a.btn.btn-lg.btn-info.btn-block#reset-button(href='#', data-dismiss='modal', aria-hidden='true') Clear my code
+                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
     script.
         var MDNlinks = !{JSON.stringify(MDNlinks)};

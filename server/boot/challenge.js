@@ -32,49 +32,29 @@
 
 var R = require('ramda'),
   utils = require('../utils'),
-  userMigration = require('../utils/middleware').userMigration,
-  MDNlinks = require('../../seed/bonfireMDNlinks');
+  userMigration = require('../utils/middleware').userMigration;
 
 var challengeMapWithNames = utils.getChallengeMapWithNames();
 var challengeMapWithIds = utils.getChallengeMapWithIds();
 var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
 
-
-function getMDNlinks(links) {
-  // takes in an array of links, which are strings
-  var populatedLinks = [];
-
-  // for each key value, push the corresponding link
-  // from the MDNlinks object into a new array
-  if (links) {
-    links.forEach(function (value) {
-      populatedLinks.push(MDNlinks[value]);
-    });
-  }
-  return populatedLinks;
-}
+var getMDNLinks = utils.getMDNLinks;
 
 module.exports = function(app) {
   var router = app.loopback.Router();
   var Challenge = app.models.Challenge;
   var User = app.models.User;
 
-  router.get(
-    '/challenges/next-challenge',
-    userMigration,
-    returnNextChallenge
-  );
-
-  router.get(
-    '/challenges/:challengeName',
-    userMigration,
-    returnIndividualChallenge
-  );
-
-  router.get('/challenges/', userMigration, returnCurrentChallenge);
   router.post('/completed-challenge/', completedChallenge);
   router.post('/completed-zipline-or-basejump', completedZiplineOrBasejump);
   router.post('/completed-bonfire', completedBonfire);
+
+  // the follow routes are covered by userMigration
+  router.use(userMigration);
+  router.get('/challenges/next-challenge', returnNextChallenge);
+  router.get('/challenges/:challengeName', returnIndividualChallenge);
+  router.get('/challenges/', returnCurrentChallenge);
+  router.get('/map', challengeMap);
 
   app.use(router);
 
@@ -295,7 +275,7 @@ module.exports = function(app) {
               bonfires: challenge,
               challengeId: challenge.id,
               MDNkeys: challenge.MDNlinks,
-              MDNlinks: getMDNlinks(challenge.MDNlinks),
+              MDNlinks: getMDNLinks(challenge.MDNlinks),
               challengeType: challenge.challengeType
             });
           }
@@ -546,5 +526,52 @@ module.exports = function(app) {
         }
       });
     }
+  }
+
+  function challengeMap(req, res, next) {
+    var completedList = [];
+
+    if (req.user) {
+      completedList = req.user.completedChallenges;
+    }
+
+    var noDuplicatedChallenges = R.uniq(completedList);
+
+    var completedChallengeList = noDuplicatedChallenges
+      .map(function(challenge) {
+        // backwards compatibility
+        return (challenge.id || challenge._id);
+      });
+    var challengeList = utils.
+      getChallengeMapForDisplay(completedChallengeList);
+
+    Object.keys(challengeList).forEach(function(key) {
+      challengeList[key].completed = challengeList[key]
+        .challenges.filter(function(elem) {
+        // backwards compatibility hack
+        return completedChallengeList.indexOf(elem.id || elem._id) > -1;
+      });
+    });
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    var date1 = new Date('10/15/2014');
+    var date2 = new Date();
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    User.count(function(err, camperCount) {
+      if (err) { return next(err); }
+
+      res.render('challengeMap/show', {
+        daysRunning: daysRunning,
+        camperCount: numberWithCommas(camperCount),
+        title: "A map of all Free Code Camp's Challenges",
+        challengeList: challengeList,
+        completedChallengeList: completedChallengeList
+      });
+    });
   }
 };

@@ -1,344 +1,104 @@
-extends ../layout
+extends ../layout-wide
 block content
-    .panel.panel-info
-        .panel-heading.text-center Coding Bootcamp Cost Calculator
-        .panel-body
-            .row
+    script(src="../../../js/calculator.js")
+    .row
+        .col-xs-12.col-sm-10.col-md-8.col-lg-6.col-sm-offset-1.col-md-offset-2.col-lg-offset-3
+            h3.text-center.text-primary#chosen Coming from _______, and making $_______, your true costs will be:
+            #city-buttons
+                .spacer
+                h2.text-center Where do you live?
+                .spacer
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#atlanta.btn.btn-primary.btn-block.btn-lg Atlanta
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#austin.btn.btn-primary.btn-block.btn-lg Austin
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#brisbane.btn.btn-primary.btn-block.btn-lg Brisbane
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#boulder.btn.btn-primary.btn-block.btn-lg Boulder
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#chicago.btn.btn-primary.btn-block.btn-lg Chicago
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#denver.btn.btn-primary.btn-block.btn-lg Denver
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#hong-kong.btn.btn-primary.btn-block.btn-lg Hong Kong
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#london.btn.btn-primary.btn-block.btn-lg London
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#los-angeles.btn.btn-primary.btn-block.btn-lg Los Angeles
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#manchester.btn.btn-primary.btn-block.btn-lg Manchester
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#melbourne.btn.btn-primary.btn-block.btn-lg Melbourne
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#new-york-city.btn.btn-primary.btn-block.btn-lg New York City
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#portland.btn.btn-primary.btn-block.btn-lg Portland
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#raleigh-durham.btn.btn-primary.btn-block.btn-lg Raleigh-Durham
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#san-francisco.btn.btn-primary.btn-block.btn-lg San Fransisco
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#seattle.btn.btn-primary.btn-block.btn-lg Seattle
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#singapore.btn.btn-primary.btn-block.btn-lg Singapore
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#toronto.btn.btn-primary.btn-block.btn-lg Toronto
+                .col-xs-12.btn-nav
+                    button#other.btn.btn-primary.btn-block.btn-lg Other
+                    .spacer
+            #income.initially-hidden
+                .spacer
+                h2.text-center How much money did you make last year (in USD)?
+                .spacer
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#0.btn.btn-primary.btn-block.btn-lg(href='#') $0
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#20000.btn.btn-primary.btn-block.btn-lg(href='#') $20,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#30000.btn.btn-primary.btn-block.btn-lg(href='#') $30,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#40000.btn.btn-primary.btn-block.btn-lg(href='#') $40,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#50000.btn.btn-primary.btn-block.btn-lg(href='#') $50,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#60000.btn.btn-primary.btn-block.btn-lg(href='#') $60,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#70000.btn.btn-primary.btn-block.btn-lg(href='#') $70,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#80000.btn.btn-primary.btn-block.btn-lg(href='#') $80,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#90000.btn.btn-primary.btn-block.btn-lg(href='#') $90,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#100000.btn.btn-primary.btn-block.btn-lg(href='#') $100,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#120000.btn.btn-primary.btn-block.btn-lg(href='#') $120,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#140000.btn.btn-primary.btn-block.btn-lg(href='#') $140,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#160000.btn.btn-primary.btn-block.btn-lg(href='#') $160,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#180000.btn.btn-primary.btn-block.btn-lg(href='#') $180,000
+                .col-xs-12.col-sm-12.col-md-4.btn-nav
+                    button#200000.btn.btn-primary.btn-block.btn-lg(href='#') $200,000
+                    .spacer
+            #chart.initially-hidden
+                .d3-centered
+                    svg.chart
+            #explanation.initially-hidden
                 .col-xs-12.col-sm-10.col-sm-offset-1
-                    h2.text-primary#chosen
-                    #chart-controls.initially-hidden
-                        form
-                            label
-                                input(type='radio', name='mode', value='grouped')
-                                | &thinsp; Grouped &nbsp;
-                            label
-                                input(type='radio', name='mode', value='stacked')
-                                | &thinsp; Stacked
-                            br
-                            a(href='/bootcamp-calculator.json') View Data Source JSON
-                    #city-buttons
-                        h2 Where do you live?
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#atlanta.btn.btn-primary.btn-block.btn-lg Atlanta
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#austin.btn.btn-primary.btn-block.btn-lg Austin
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#brisbane.btn.btn-primary.btn-block.btn-lg Brisbane
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#boulder.btn.btn-primary.btn-block.btn-lg Boulder
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#chicago.btn.btn-primary.btn-block.btn-lg Chicago
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#denver.btn.btn-primary.btn-block.btn-lg Denver
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#hong-kong.btn.btn-primary.btn-block.btn-lg Hong Kong
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#london.btn.btn-primary.btn-block.btn-lg London
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#los-angeles.btn.btn-primary.btn-block.btn-lg Los Angeles
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#manchester.btn.btn-primary.btn-block.btn-lg Manchester
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#melbourne.btn.btn-primary.btn-block.btn-lg Melbourne
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#new-york-city.btn.btn-primary.btn-block.btn-lg New York City
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#portland.btn.btn-primary.btn-block.btn-lg Portland
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#raleigh-durham.btn.btn-primary.btn-block.btn-lg Raleigh-Durham
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#san-francisco.btn.btn-primary.btn-block.btn-lg San Fransisco
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#seattle.btn.btn-primary.btn-block.btn-lg Seattle
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#singapore.btn.btn-primary.btn-block.btn-lg Singapore
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#toronto.btn.btn-primary.btn-block.btn-lg Toronto
-                        .col-xs-12.btn-nav
-                            button#other.btn.btn-primary.btn-block.btn-lg Other
-                    #income.hidden-by-default
-                        h2 How much money did you make last year (in USD)?
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#0.btn.btn-primary.btn-block.btn-lg(href='#') $0
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#20000.btn.btn-primary.btn-block.btn-lg(href='#') $20,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#30000.btn.btn-primary.btn-block.btn-lg(href='#') $30,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#40000.btn.btn-primary.btn-block.btn-lg(href='#') $40,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#50000.btn.btn-primary.btn-block.btn-lg(href='#') $50,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#60000.btn.btn-primary.btn-block.btn-lg(href='#') $60,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#70000.btn.btn-primary.btn-block.btn-lg(href='#') $70,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#80000.btn.btn-primary.btn-block.btn-lg(href='#') $80,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#90000.btn.btn-primary.btn-block.btn-lg(href='#') $90,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#100000.btn.btn-primary.btn-block.btn-lg(href='#') $100,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#120000.btn.btn-primary.btn-block.btn-lg(href='#') $120,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#140000.btn.btn-primary.btn-block.btn-lg(href='#') $140,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#160000.btn.btn-primary.btn-block.btn-lg(href='#') $160,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#180000.btn.btn-primary.btn-block.btn-lg(href='#') $180,000
-                        .col-xs-12.col-sm-6.col-md-4.btn-nav
-                            button#200000.btn.btn-primary.btn-block.btn-lg(href='#') $200,000
-                    #chart.hidden-by-default
-                        svg.chart
-
-                    script.
-                        $(document).ready(function () {
-                            var bootcamps = !{JSON.stringify(bootcampJson)};
-                            var city = "";
-                            var cityArray = ["san-fransisco", "los-angeles", "chicago", "austin", "new-york-city", "melbourne", "hong-kong", "seattle", "singapore", "london", "toronto", "portland", "brisbane", "atlanta", "raleigh-durham"];
-                            $('#city-buttons').on("click", "button", function () {
-                                city = $(this).attr("id");
-                                $('#city-buttons').hide();
-                                $('#chosen').text('Coming from ' + city.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();}));
-                                $('#income').css({visibility: 'visible'});
-                            });
-                            $('#income').on("click", "button", function() {
-                                $('#income').hide();
-                                $('#chart').css({visibility: 'visible'});
-                                var lastYearsIncome = parseInt($(this).attr("id"));
-                                $('#chosen').append(' making $' + lastYearsIncome.toString().replace(/0000/, '0,000') + ', your true costs are:');
-                                var categoryNames = ['Opportunity Cost at Current Wage', 'Financing Cost', 'Housing Cost', 'Tuition / Wage Garnishing'];
-                                bootcamps.forEach(function (camp) {
-                                    var x0 = 0;
-                                    if (camp.cities.indexOf(city) > -1) {
-                                        weeklyHousing = 0;
-                                    } else {
-                                        weeklyHousing = +camp.housing;
-                                    }
-                                    camp.mapping = [{
-                                        name: camp.name,
-                                        label: 'Opportunity Cost at Current Wage',
-                                        value: +camp.cost,
-                                        x0: x0,
-                                        x1: x0 += +camp.cost
-                                    }, {
-                                        name: camp.name,
-                                        label: 'Financing Cost',
-                                        value: +Math.floor(camp.cost * .09519),
-                                        x0: +camp.cost,
-                                        x1: camp.finance ? x0 += +Math.floor(camp.cost * .09519) : 0
-                                    }, {
-                                        name: camp.name,
-                                        label: 'Housing Cost',
-                                        value: +weeklyHousing * camp.weeks,
-                                        x0: camp.finance ? +Math.floor(camp.cost * 1.09519) : camp.cost,
-                                        x1: x0 += weeklyHousing * camp.weeks
-                                    }, {
-                                        name: camp.name,
-                                        label: 'Tuition / Wage Garnishing',
-                                        value: +(Math.floor(camp.weeks * lastYearsIncome / 50)),
-                                        x0: camp.finance ? +(Math.floor(camp.cost * 1.09519) + weeklyHousing * camp.weeks) : +camp.cost + weeklyHousing * camp.weeks,
-                                        x1: x0 += +(Math.floor(camp.weeks * lastYearsIncome / 50))
-                                    }];
-                                    camp.total = camp.mapping[camp.mapping.length - 1].x1;
-                                });
-                                bootcamps.sort(function(a, b) { return a.total - b.total; });
-                                maxValue = 0;
-                                bootcamps.forEach(function (camp) {
-                                    camp.mapping.forEach(function (thing) {
-                                        //console.log(thing.value );
-                                        if (thing.value > maxValue) {
-                                            maxValue = thing.value;
-                                            console.log(maxValue);
-                                        }
-                                    });
-                                });
-                                var xStackMax = d3.max(bootcamps, function (d) {
-                                            return d.total;
-                                        }), //Scale for Stacked
-                                        xGroupMax = bootcamps.map(function (camp) {
-                                            return camp.mapping.reduce(function (a, b) {
-                                                return a.value > b.value ? a.value : b.value;
-                                            });
-                                        }).reduce(function (a, b) {
-                                            return a > b ? a : b;
-                                        });
-                                var margin = {
-                                            top: 30,
-                                            right: 60,
-                                            bottom: 50,
-                                            left: 140
-                                        },
-                                        width = 800 - margin.left - margin.right,
-                                        height = 1200 - margin.top - margin.bottom;
-                                var barHeight = 20;
-                                var xScale = d3.scale.linear()
-                                        .domain([0, xStackMax])
-                                        .rangeRound([0, width]);
-                                var y0Scale = d3.scale.ordinal()
-                                        .domain(bootcamps.map(function (d) {
-                                            return d.name;
-                                        }))
-                                        .rangeRoundBands([0, height], .1);
-                                var y1Scale = d3.scale.ordinal()
-                                        .domain(categoryNames).rangeRoundBands([0, y0Scale.rangeBand()]);
-                                var color = d3.scale.ordinal()
-                                    .range(["#215f1e", "#5f5c1e", "#1e215f", "#5c1e5f"])
-                                    .domain(categoryNames);
-                                var svg = d3.select("svg")
-                                        .attr("width", width + margin.left + margin.right)
-                                        .attr("height", height + margin.top + margin.bottom)
-                                        .append("g")
-                                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-                                var selection = svg.selectAll(".series")
-                                        .data(bootcamps)
-                                        .enter().append("g")
-                                        .attr("class", "series")
-                                        .attr("transform", function (d) {
-                                            return "translate(0," + y0Scale(d.name) + ")";
-                                        });
-                                var rect = selection.selectAll("rect")
-                                        .data(function (d) {
-                                            return d.mapping;
-                                        })
-                                        .enter().append("rect")
-                                        .attr("x", 0)
-                                        .attr("width", 0)
-                                        .attr("height", y0Scale.rangeBand())
-                                        .style("fill", function (d) {
-                                            return color(d.label);
-                                        })
-                                        .style("stroke", "white")
-                                        .on("mouseover", function (d) {
-                                            showPopover.call(this, d);
-                                        })
-                                        .on("mouseout", function (d) {
-                                            removePopovers();
-                                        });
-                                rect.transition()
-                                        .delay(function (d, i) {
-                                            return i * 10;
-                                        })
-                                        .attr("x", function (d) {
-                                            return xScale(d.x0);
-                                        })
-                                        .attr("width", function (d) {
-                                            return xScale((d.x1) - (d.x0));
-                                        });
-                                d3.selectAll("input").on("change", change);
-                                var timeout= setTimeout(function () {
-                                    d3.select("input[value=\"stacked\"]").property("checked",true).each(change);
-                                    // d3.select("input[value=\"stacked\"]").property("checked",true).each(change);
-                                }, 4000);
-                                var timeout= setTimeout(function () {
-                                    d3.select("input[value=\"grouped\"]").property("checked",true).each(change);
-                                }, 1500);
-
-                                function change() {
-                                    clearTimeout(timeout);
-                                    if (this.value === "grouped") transitionGrouped();
-                                    else transitionStacked();
-                                }
-
-                                function transitionGrouped() {
-                                    xScale.domain = ([0, xGroupMax]);
-                                    rect.transition()
-                                            .duration(500)
-                                            .delay(function (d, i) {
-                                                return i * 10;
-                                            })
-                                            .attr("width", function (d) {
-                                                return xScale((d.x1) - (d.x0));
-                                            })
-                                            .transition()
-                                            .attr("y", function (d) {
-                                                return y1Scale(d.label);
-                                            })
-                                            .attr("x", 0)
-                                            .attr("height", y1Scale.rangeBand())
-                                }
-
-                                function transitionStacked() {
-                                    xScale.domain = ([0, xStackMax]);
-                                    rect.transition()
-                                            .duration(500)
-                                            .delay(function (d, i) {
-                                                return i * 10;
-                                            })
-                                            .attr("x", function (d) {
-                                                return xScale(d.x0);
-                                            })
-                                            .transition()
-                                            .attr("y", function (d) {
-                                                return y0Scale(d.label);
-                                            })
-                                            .attr("height", y0Scale.rangeBand())
-                                }
-
-                                //axes
-                                var xAxis = d3.svg.axis()
-                                        .scale(xScale)
-                                        .orient("bottom");
-                                var yAxis = d3.svg.axis()
-                                        .scale(y0Scale)
-                                        .orient("left");
-                                svg.append("g")
-                                        .attr("class", "y axis")
-                                        .call(yAxis);
-                                svg.append("g")
-                                        .attr("class", "x axis")
-                                        .attr("transform", "translate(0," + height + ")")
-                                        .call(xAxis)
-                                        .append("text")
-                                        .attr("x", 300)
-                                        .attr("y", 35)
-                                        .attr("dy", ".35em")
-                                        .style("text-anchor", "middle")
-                                        .text("Cost in $USD");
-                                //tooltips
-                                function removePopovers() {
-                                    $('.popover').each(function () {
-                                        $(this).remove();
-                                    });
-                                }
-
-                                function showPopover(d) {
-                                    $(this).popover({
-                                        title: d.name,
-                                        placement: 'auto top',
-                                        container: 'body',
-                                        trigger: 'manual',
-                                        html: true,
-                                        content: function () {
-                                            return d.label +
-                                                    "<br/>$" +
-                                                    d3.format(",")(d.value ? d.value : d.x1 - d.x0);
-                                        }
-                                    });
-                                    $(this).popover('show')
-                                }
-
-                                //legends
-                                var legend = svg.selectAll(".legend")
-                                        .data(categoryNames.slice().reverse())
-                                        .enter().append("g")
-                                        .attr("class", "legend")
-                                        .attr("transform", function (d, i) {
-                                            return "translate(30," + i * y0Scale.rangeBand() * 1.1 + ")";
-                                        });
-                                legend.append("rect")
-                                        .attr("x", width - y0Scale.rangeBand())
-                                        .attr("width", y0Scale.rangeBand())
-                                        .attr("height", y0Scale.rangeBand())
-                                        .style("fill", color)
-                                        .style("stroke", "white");
-                                legend.append("text")
-                                        .attr("x", width - y0Scale.rangeBand() * 1.2)
-                                        .attr("y", 12)
-                                        .attr("dy", ".35em")
-                                        .style("text-anchor", "end")
-                                        .text(function (d) {
-                                            return d;
-                                        });
-                                });
-                            });
+                    .text-center
+                        button#transform.btn.btn-primary.btn-lg Transform
+                        .button-spacer
+                        a(href='/coding-bootcamp-cost-calculator.json') View Data Source JSON
+                        span &nbsp; &bullet; &nbsp;
+                        a(href='/coding-bootcamp-cost-calculator') Recalculate
+                    h3 Notes:
+                    ol
+                        li.large-li For cash-up-front bootcamps, we assumed an APR of 6% and a term of 3 years.
+                        li.large-li For wage-garnishing bootcamps, we assume 18% of first year wages at their advertised starting annual salary of around $100,000.
+                        li.large-li We assume a cost of living of $500 for cities like San Francisco and New York City, and $400 per week for everywhere else.
+                        li.large-li The most substantial cost for most people is lost wages. A 40-hour-per-week job at the US Federal minimum wage would pay at least $15,000 per year. You can read more about economic cost
+                            a(href='https://en.wikipedia.org/wiki/Economic_cost' target='_blank')  here
+                            | .
+                        li.large-li Free Code Camp. We don't charge tuition or garnish wages. We're fully online so you don't have to move. We're self-paced so you don't have to quit your job. Thus, your true cost of attending Free Code Camp will be $0.
