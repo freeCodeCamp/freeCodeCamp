@@ -1065,7 +1065,7 @@
       "name": "Bonfire: Convert HTML Entities",
       "difficulty": "2.07",
       "description": [
-        "Convert the characters \"&\", \"<\", \">\", '\"', and \"'\", in a string to their corresponding HTML entities.",
+        "Convert the characters \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), in a string to their corresponding HTML entities.",
         "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -1078,10 +1078,12 @@
       ],
       "tests": [
         "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
+        "assert.strictEqual('<input type="submit">Submit</input>', '&lt;input type=&quot;submit&quot;&gt;Submit&lt;/input&gt;', 'should escape characters');",
         "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
       ],
       "MDNlinks": [
-        "RegExp"
+        "RegExp",
+        "HTML Entities"
       ],
       "challengeType": 5,
       "nameCn": "",
