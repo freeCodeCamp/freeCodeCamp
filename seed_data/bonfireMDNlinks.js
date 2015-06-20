@@ -12,6 +12,7 @@ var links =
   "Currying": "https://leanpub.com/javascript-allonge/read#pabc",
   "Smallest Common Multiple": "https://www.mathsisfun.com/least-common-multiple.html",
   "Permutations": "https://www.mathsisfun.com/combinatorics/combinations-permutations.html",
+  "HTML Entities": "http://dev.w3.org/html5/html-author/charref",
 
 	// ========= GLOBAL OBJECTS
 	"Global Array Object" : "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",

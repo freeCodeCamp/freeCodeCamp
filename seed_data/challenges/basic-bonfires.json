@@ -832,7 +832,7 @@
       "difficulty": "2.03",
       "description": [
         "Perform a search and replace on the sentence using the arguments provided and return the new sentence.",
-        "First argument is the sentence the perform the search and replace on.",
+        "First argument is the sentence to perform the search and replace on.",
         "Second argument is the word that you will be replacing (before).",
         "Third argument is what you will be replacing the second argument with (after).",
         "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word 'Book' with the word 'dog', it should be replaced as 'Dog'",
@@ -966,7 +966,8 @@
         "expect(fearNotLetter('yz')).to.be.undefined;"
       ],
       "MDNlinks": [
-        "String.charCodeAt()"
+        "String.charCodeAt()",
+        "String.fromCharCode()"
       ],
       "challengeType": 5,
       "nameCn": "",
@@ -1064,7 +1065,7 @@
       "name": "Bonfire: Convert HTML Entities",
       "difficulty": "2.07",
       "description": [
-        "Convert the characters \"&\", \"<\", \">\", '\"', and \"'\", in a string to their corresponding HTML entities.",
+        "Convert the characters \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), in a string to their corresponding HTML entities.",
         "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -1077,10 +1078,12 @@
       ],
       "tests": [
         "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
+        "assert.strictEqual('<input type="submit">Submit</input>', '&lt;input type=&quot;submit&quot;&gt;Submit&lt;/input&gt;', 'should escape characters');",
         "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
       ],
       "MDNlinks": [
-        "RegExp"
+        "RegExp",
+        "HTML Entities"
       ],
       "challengeType": 5,
       "nameCn": "",
