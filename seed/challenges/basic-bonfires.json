@@ -423,6 +423,7 @@
       ],
       "tests": [
         "expect(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...');",
+        "expect(truncate('Peter Piper picked a peck of pickled peppers', 14)).to.eqls('Peter Piper...');",
         "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
         "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length');"
       ],
@@ -657,7 +658,10 @@
       ],
       "tests": [
         "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
-        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
+        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');",
+        "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], 'should accept more than two additional arguments');",
+        "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], 'should remove correct values from an array');",
+        "assert.deepEqual(destroyer(['tree', 'hamburger', 53], 'tree', 53), ['hamburger'], 'should handle NaN-elements');"
       ],
       "MDNlinks": [
         "Arguments object",

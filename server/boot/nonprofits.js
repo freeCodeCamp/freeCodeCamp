@@ -9,7 +9,7 @@ module.exports = function(app) {
 
   function nonprofitsDirectory(req, res, next) {
     Nonprofit.find(
-      { where: { estimatedHours: { $gt: 0 } } },
+      { where: { estimatedHours: { gt: 0 } } },
       function(err, nonprofits) {
         if (err) { return next(err); }
 
