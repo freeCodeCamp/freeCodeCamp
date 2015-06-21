@@ -1,3 +1,7 @@
+$(document).ready(function() {
+  $('#reset-button').on('click', resetEditor);
+});
+
 var widgets = [];
 var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
   lineNumbers: true,
@@ -41,61 +45,68 @@ editor.setOption("extraKeys", {
 
 
 /*
-	Local Storage Update System By Andrew Cay(Resto)
-	codeStorage: singleton object that contains properties and methods related to
-		dealing with the localStorage system.
-	The keys work off of the variable challenge_name to make unique identifiers per bonfire
+  Local Storage Update System By Andrew Cay(Resto)
+  codeStorage: singleton object that contains properties and methods related to
+    dealing with the localStorage system.
+  The keys work off of the variable challenge_name to make unique identifiers per bonfire
 
-	Two extra functionalities:
-	Added anonymous version checking system incase of future updates to the system
-	Added keyup listener to editor(myCodeMirror) so the last update has been saved to storage
+  Two extra functionalities:
+  Added anonymous version checking system incase of future updates to the system
+  Added keyup listener to editor(myCodeMirror) so the last update has been saved to storage
 */
 var codeStorage = {
-	version: 0.01,
-	keyVersion:"saveVersion",
-	keyValue: null,//where the value of the editor is saved
-	updateWait: 2000,// 2 seconds
-	updateTimeoutId: null,
-	eventArray: []//for firing saves
+  version: 0.01,
+  keyVersion:"saveVersion",
+  keyValue: null,//where the value of the editor is saved
+  updateWait: 2000,// 2 seconds
+  updateTimeoutId: null,
+  eventArray: []//for firing saves
 };
 // Returns true if the editor code was saved since last key press (use this if you want to make a "saved" notification somewhere")
 codeStorage.hasSaved = function(){
-	return ( updateTimeoutId === null );
+  return ( updateTimeoutId === null );
 };
 codeStorage.onSave = function(func){
-	codeStorage.eventArray.push(func);
+  codeStorage.eventArray.push(func);
 };
 codeStorage.setSaveKey = function(key){
-	codeStorage.keyValue = key + 'Val';
+  codeStorage.keyValue = key + 'Val';
 };
 codeStorage.getEditorValue = function(){
-	return localStorage.getItem(codeStorage.keyValue);
+  return ('' + localStorage.getItem(codeStorage.keyValue));
 };
+
+codeStorage.isAlive = function() {
+  var val = this.getEditorValue()
+  return val !== 'null' &&
+    val !== 'undefined' &&
+    (val && val.length > 0);
+}
 codeStorage.updateStorage = function(){
-	if(typeof(Storage) !== undefined) {
-		var value = editor.getValue();
-		localStorage.setItem(codeStorage.keyValue, value);
-	} else {
-		var debugging = false;
-		if( debugging ){
-			console.log('no web storage');
-		}
-	}
-	codeStorage.updateTimeoutId = null;
-	codeStorage.eventArray.forEach(function(func){
-		func();
-	});
+  if(typeof(Storage) !== undefined) {
+    var value = editor.getValue();
+    localStorage.setItem(codeStorage.keyValue, value);
+  } else {
+    var debugging = false;
+    if( debugging ){
+      console.log('no web storage');
+    }
+  }
+  codeStorage.updateTimeoutId = null;
+  codeStorage.eventArray.forEach(function(func){
+    func();
+  });
 };
 //Update Version
 (function(){
-	var savedVersion = localStorage.getItem('saveVersion');
-	if( savedVersion === null ){
-		localStorage.setItem(codeStorage.keyVersion, codeStorage.version);//just write current version
-	}else{
-		if( savedVersion !== codeStorage.version ){
-			//Update version
-		}
-	}
+  var savedVersion = localStorage.getItem('saveVersion');
+  if( savedVersion === null ){
+    localStorage.setItem(codeStorage.keyVersion, codeStorage.version);//just write current version
+  }else{
+    if( savedVersion !== codeStorage.version ){
+      //Update version
+    }
+  }
 })();
 
 
@@ -104,8 +115,8 @@ codeStorage.updateStorage = function(){
 /// Update local save when editor has changed 
 codeStorage.setSaveKey(challenge_Name);
 editor.on('keyup', function(){
-	window.clearTimeout(codeStorage.updateTimeoutId);
-	codeStorage.updateTimeoutId = window.setTimeout(codeStorage.updateStorage, codeStorage.updateWait);
+  window.clearTimeout(codeStorage.updateTimeoutId);
+  codeStorage.updateTimeoutId = window.setTimeout(codeStorage.updateStorage, codeStorage.updateWait);
 });
 
 
@@ -114,9 +125,10 @@ if (attempts) {
   attempts = 0;
 }
 
-var resetEditor = function() {
+var resetEditor = function resetEditor() {
   editor.setValue(allSeeds);
   codeStorage.updateStorage();
+
 };
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
@@ -150,7 +162,7 @@ var tests = tests || [];
 var allSeeds = '';
 (function() {
   challengeSeed.forEach(function(elem) {
-	allSeeds += elem + '\n';
+  allSeeds += elem + '\n';
   });
 })();
 

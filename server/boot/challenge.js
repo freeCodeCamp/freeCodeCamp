@@ -335,7 +335,6 @@ module.exports = function(app) {
       // save user
       .flatMap(function(user) {
         // save user will do nothing if user is falsey
-        debug('saving user', user.username);
         return saveUser(user);
       })
       .subscribe(

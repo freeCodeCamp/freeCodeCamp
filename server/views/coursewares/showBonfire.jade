@@ -84,7 +84,7 @@ block content
             label.negative-10.btn.btn-primary.btn-block#submitButton
                 i.fa.fa-play
                     | &nbsp; Run code (ctrl + enter)
-            #resetButton.btn.btn-danger.btn-big.btn-block(data-toggle='modal', data-target='#reset-modal', data-backdrop='true') Reset Code
+            #trigger-reset-modal.btn.btn-danger.btn-big.btn-block(data-toggle='modal', data-target='#reset-modal', data-backdrop='true') Reset Code
             if (user && user.sentSlackInvite)
                 .button-spacer
                 .btn-group.input-group.btn-group-justified
