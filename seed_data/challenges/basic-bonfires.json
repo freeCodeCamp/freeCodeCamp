@@ -1078,7 +1078,7 @@
       ],
       "tests": [
         "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
-        "assert.strictEqual('<input type="submit">Submit</input>', '&lt;input type=&quot;submit&quot;&gt;Submit&lt;/input&gt;', 'should escape characters');",
+        "assert.strictEqual('<>', '&lt;&gt;', 'should escape characters');",
         "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
       ],
       "MDNlinks": [
