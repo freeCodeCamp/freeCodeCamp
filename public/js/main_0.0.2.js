@@ -331,7 +331,6 @@ $(document).ready(function() {
 
   $('#story-submit').on('click', storySubmitButtonHandler);
 
-  $('#reset-button').on('click', resetEditor);
 
   var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
     $('#comment-button').unbind('click');

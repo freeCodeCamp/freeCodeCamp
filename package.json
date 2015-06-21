@@ -70,6 +70,7 @@
     "node-slack": "0.0.7",
     "node-uuid": "^1.4.3",
     "nodemailer": "~1.3.0",
+    "object.assign": "^3.0.0",
     "passport-facebook": "^2.0.0",
     "passport-google-oauth2": "^0.1.6",
     "passport-linkedin-oauth2": "^1.2.1",

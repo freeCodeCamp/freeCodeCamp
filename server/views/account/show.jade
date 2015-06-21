@@ -47,88 +47,32 @@ block content
                         .background-svg.img-center
                             .points-on-top
                                 = "[ " + (progressTimestamps.length) + " ]"
-
-
-            .row
-                .col-xs-12
-                    if (website1Title && website1Link && website1Image)
-                        .row
-                            .col-xs-12.col-md-5
-                                img.img-center.img-responsive.portfolio-image(src=website1Image, alt="@#{username}'s #{website1Title}")
-                            .col-xs-12.col-md-7
-                                h3.text-center.wrappable.flat-top= website1Title
-                                a.btn.btn-lg.btn-block.btn-info(href=website1Link, target='_blank')
-                                    i.fa.icon-beaker
-                                    | Try it out
-                        br
-                    if (website1Title && website1Link && !website1Image)
-                        .col-xs-12.col-md-12
-                            h3.text-center.wrappable.flat-top= website1Title
-                            a.btn.btn-lg.btn-block.btn-info(href=website1Link, target='_blank')
-                                i.fa.icon-beaker
-                                | Try it out
-                            br
-                    if (website2Title && website2Link && website2Image)
-                        .row
-                            .col-xs-12.col-md-5
-                                img.img-responsive.portfolio-image.img-center(src=website2Image, alt="@#{username}'s #{website2Title}")
-                            .col-xs-12.col-md-7
-                                h3.text-center.wrappable.flat-top= website2Title
-                                a.btn.btn-lg.btn-block.btn-info(href=website2Link, target='_blank')
-                                    i.fa.icon-beaker
-                                    | Try it out
-                        br
-                    if (website2Title && website2Link && !website2Image)
-                        .col-xs-12.col-md-12
-                            h3.text-center.wrappable.flat-top= website2Title
-                            a.btn.btn-lg.btn-block.btn-info(href=website2Link, target='_blank')
-                                i.fa.icon-beaker
-                                | Try it out
-                            br
-                    if (website3Title && website3Link && website3Image)
-                        .row
-                            .col-xs-12.col-md-5
-                                img.img-responsive.portfolio-image.img-center(src=website3Image, alt="@#{username}'s #{website1Title}")
-                            .col-xs-12.col-md-7
-                                h3.text-center.wrappable.flat-top= website3Title
-                                a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
-                                    i.fa.icon-beaker
-                                    | Try it out
-                    if (website3Title && website3Link && !website3Image)
-                        .col-xs-12.col-md-12
-                            h3.text-center.wrappable.flat-top= website3Title
-                            a.btn.btn-lg.btn-block.btn-info(href=website3Link, target='_blank')
-                                i.fa.icon-beaker
-                                | Try it out
-
             .spacer
                 .hidden-xs.hidden-sm.col-md-12
                     #cal-heatmap.d3-centered
                         script.
                             $(document).ready(function () {
-                                setTimeout(function () {
-                                    var cal = new CalHeatMap();
-                                    var calendar = !{JSON.stringify(calender)};
-                                    cal.init({
-                                        itemSelector: "#cal-heatmap",
-                                        domain: "month",
-                                        subDomain: "x_day",
-                                        domainGutter: 10,
-                                        data: calendar,
-                                        cellSize: 15,
-                                        align: 'center',
-                                        cellRadius: 3,
-                                        cellPadding: 2,
-                                        tooltip: true,
-                                        range: 6,
-                                        start: new Date().setDate(new Date().getDate() - 150),
-                                        legendColors: ["#cccccc", "#215f1e"],
-                                        legend: [1, 2, 3],
-                                        label: {
-                                            position: "top"
-                                        }
-                                    });
-                                }, 300);
+                                var cal = new CalHeatMap();
+                                var calendar = !{JSON.stringify(calender)};
+                                cal.init({
+                                    itemSelector: "#cal-heatmap",
+                                    domain: "month",
+                                    subDomain: "x_day",
+                                    domainGutter: 10,
+                                    data: calendar,
+                                    cellSize: 15,
+                                    align: 'center',
+                                    cellRadius: 3,
+                                    cellPadding: 2,
+                                    tooltip: true,
+                                    range: 6,
+                                    start: new Date().setDate(new Date().getDate() - 150),
+                                    legendColors: ["#cccccc", "#215f1e"],
+                                    legend: [1, 2, 3],
+                                    label: {
+                                        position: "top"
+                                    }
+                                });
                             });
                     .row
                         .hidden-xs.col-sm-12.text-center
