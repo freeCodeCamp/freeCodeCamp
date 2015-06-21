@@ -13,12 +13,8 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
                     a(href='/challenges') Learn
             li
                 a(href='/map') Map
-            if (user && user.sentSlackInvite)
-                li
-                    a(href='/chat', target='_blank') Chat
-            else
-                li
-                    a(href='/challenges/waypoint-join-our-chat-room') Chat
+            li
+                a(href='//gitter.im/FreeCodeCamp/FreeCodeCamp', target='_blank') Chat
             li
                 a(href='/news') News
             li
