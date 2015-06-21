@@ -15,7 +15,7 @@ module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
   var Challenge = app.models.Challenge;
-  var Story = app.models.Store;
+  var Story = app.models.Story;
   var FieldGuide = app.models.FieldGuide;
   var Nonprofit = app.models.Nonprofit;
 
