@@ -1264,7 +1264,7 @@
       "tests": [
         "assert($('button[type=\\'submit\\']').hasClass('btn btn-primary'), 'Give the submit button in your form the classes \"btn btn-primary\".')",
         "assert($('button[type=\\'submit\\']:has(i.fa.fa-paper-plane)').length > 0, 'Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.')",
-        "assert($('input[type=\\'text\\']').hasClass('form-control'), 'Give the text <code>input<code> in your form the class \"form-control\".')",
+        "assert($('input[type=\\'text\\']').hasClass('form-control'), 'Give the text <code>input</code> in your form the class \"form-control\".')",
         "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length > 3, 'Make sure each of your <code>i</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
