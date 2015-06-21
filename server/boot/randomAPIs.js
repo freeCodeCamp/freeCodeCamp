@@ -13,7 +13,7 @@ module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
   var Challenge = app.models.Challenge;
-  var Story = app.models.Store;
+  var Story = app.models.Story;
   var FieldGuide = app.models.FieldGuide;
   var Nonprofit = app.models.Nonprofit;
 
@@ -76,15 +76,15 @@ module.exports = function(app) {
         users: function(callback) {
           User.find(
             {
-              where: { 'profile.username': { nlike: '' } },
-              fields: { 'profile.username': true }
+              where: { username: { nlike: '' } },
+              fields: { username: true }
             },
             function(err, users) {
               if (err) {
                 debug('User err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(users)
+                Rx.Observable.from(users, null, null, Rx.Scheduler.default)
                   .map(function(user) {
                     return user.username;
                   })
@@ -107,7 +107,7 @@ module.exports = function(app) {
                 debug('Challenge err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(challenges)
+                Rx.Observable.from(challenges, null, null, Rx.Scheduler.default)
                   .map(function(challenge) {
                     return challenge.name;
                   })
@@ -127,7 +127,7 @@ module.exports = function(app) {
                 debug('Story err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(stories)
+                Rx.Observable.from(stories, null, null, Rx.Scheduler.default)
                   .map(function(story) {
                     return story.link;
                   })
@@ -148,7 +148,7 @@ module.exports = function(app) {
                 debug('User err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(nonprofits)
+                Rx.Observable.from(nonprofits, null, null, Rx.Scheduler.default)
                   .map(function(nonprofit) {
                     return nonprofit.name;
                   })
@@ -168,7 +168,12 @@ module.exports = function(app) {
                 debug('User err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(fieldGuides)
+                Rx.Observable.from(
+                  fieldGuides,
+                  null,
+                  null,
+                  Rx.Scheduler.default
+                )
                   .map(function(fieldGuide) {
                     return fieldGuide.name;
                   })
@@ -184,7 +189,7 @@ module.exports = function(app) {
         if (err) {
           return next(err);
         }
-        setTimeout(function() {
+        process.nextTick(function() {
           res.header('Content-Type', 'application/xml');
           res.render('resources/sitemap', {
             appUrl: appUrl,
@@ -195,9 +200,13 @@ module.exports = function(app) {
             nonprofits: results.nonprofits,
             fieldGuides: results.fieldGuides
           });
-        }, 0);
+        });
       }
     );
+  }
+
+  function chat(req, res) {
+    res.redirect('//gitter.im/FreeCodeCamp/FreeCodeCamp');
   }
 
   function bootcampCalculator(req, res) {
@@ -260,7 +269,7 @@ module.exports = function(app) {
   }
 
   function unsubscribe(req, res, next) {
-    User.findOne({ email: req.params.email }, function(err, user) {
+    User.findOne({ where: { email: req.params.email } }, function(err, user) {
       if (user) {
         if (err) {
           return next(err);

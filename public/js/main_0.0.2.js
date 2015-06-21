@@ -271,6 +271,7 @@ $(document).ready(function() {
 
   $('#story-submit').on('click', storySubmitButtonHandler);
 
+
   var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
     $('#comment-button').unbind('click');
     var data = $('#comment-box').val();
