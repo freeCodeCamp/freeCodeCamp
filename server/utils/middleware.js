@@ -43,3 +43,11 @@ exports.ifNoUserRedirectTo = function ifNoUserRedirectTo(url) {
   };
 };
 
+exports.ifNoUserSend = function ifNoUserSend(sendThis) {
+  return function(req, res, next) {
+    if (req.user) {
+      return next();
+    }
+    return res.status(200).send(sendThis);
+  };
+};
