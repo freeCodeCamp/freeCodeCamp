@@ -219,8 +219,16 @@
       ],
       "namePt": "",
       "descriptionPt": [],
-      "nameNl": "",
-      "descriptionNl": []
+      "nameNl": "Waypoint: Pas je Portefeuille Pagina aan",
+      "descriptionNl": [
+        "Jij en alle andere campers hebben portefeuille paginas.",
+        "Om jouw portefeuille pagina te zien, klik op jouw profielfoto rechtsbovenin.",
+        "Jouw portefeuille pagina zal automatisch al je vooruitgang op Free Code Camp laten zien.",
+        "Klik op de \"Update my portfolio page or manage my account\" knop",
+        "Je kan je Github, Twitter en LinkedIn koppelen. Als je al een paar websites hebt gebouwd, kan je die ook koppelen.",
+        "Zorg dat je op de \"Update my Bio\" of \"Update my Social Links\" knop klikt om deze nieuwe informatie op te slaan op jouw portefeuille pagina.",
+        "Als je tevreden bent met jouw portefeuille pagina, kan je verder gaan met de volgende uitdaging."
+      ]
     },
     {
       "_id": "bd7126d8c441eddfaeb5bd3f",
