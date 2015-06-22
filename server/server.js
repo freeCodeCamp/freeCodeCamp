@@ -301,20 +301,15 @@ if (true) { // eslint-disable-line
   });
 }
 
-/**
- * Start Express server.
- */
-
-
-app.listen(app.get('port'), function() {
-  console.log(
-    'FreeCodeCamp server listening on port %d in %s mode',
-    app.get('port'),
-    app.get('env')
-  );
-});
+module.exports = app;
 
 // start the server if `$ node server.js`
-
-
-module.exports = app;
+if (require.main === module) {
+  app.listen(app.get('port'), function() {
+    console.log(
+      'FreeCodeCamp server listening on port %d in %s mode',
+      app.get('port'),
+      app.get('env')
+    );
+  });
+}
