@@ -1078,7 +1078,7 @@
       ],
       "tests": [
         "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
-        "assert.strictEqual('<>', '&lt;&gt;', 'should escape characters');",
+        "assert.strictEqual(convert('<>'), '&lt;&gt;', 'should escape characters');",
         "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
       ],
       "MDNlinks": [
