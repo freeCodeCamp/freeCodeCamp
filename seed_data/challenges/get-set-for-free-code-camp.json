@@ -317,8 +317,17 @@
       ],
       "namePt": "",
       "descriptionPt": [],
-      "nameNl": "",
-      "descriptionNl": []
+      "nameNl": "Waypoint: Ontmoet andere Campers in jouw Stad",
+      "descriptionNl": [
+        "Één van de beste manieren om gemotiveerd te blijven is door met andere campers te hangen.",
+        "Slack en Camper Nieuws zijn goede manieren om met andere campers te communiceren, maar het is geen plaatsvervanger voor het persoonlijk ontmoeten van mensen.",
+        "De makkelijkste manier om andere campers te ontmoeten in jouw stad is door in jouw stad zijn Facebook Groep toe te treden. Klik op <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city' target='_blank'>here</a> om onze groeiende lijst met lokale groepen te zien.",
+        "Klik op de koppeling voor jouw stad, en als Facebook is geladen klik dan op \"Join group\".",
+        "Onze lokale groepen zien nieuw, dus als je jouw stad niet op de lijst ziet staan, volg dan de instructies om een Facebook groep te maken voor jouw stad.",
+        "Als je geen Facebook account hebt, dan raden we je echt aan om er een te maken, zelfs al is het alleen voor het coördineren met campers in jouw stad door deze groep.",
+        "Onze groepen laten toe dat je evenementen maakt, deze evenementen coördineerd en de foto's van dit evenement deelt daarna.",
+        "Of je nou een studie groep organiseert, gaat paar programmeren bij jouw lokale bibliotheek, of naar een weekend hackathon gaat, jouw stad group zal je helpen dit te laten gebeuren."
+      ]
     },
     {
       "_id": "bd7137d8c441eddfaeb5bdef",
