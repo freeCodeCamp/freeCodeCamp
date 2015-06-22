@@ -176,8 +176,14 @@
       ],
       "namePt": "",
       "descriptionPt": [],
-      "nameNl": "",
-      "descriptionNl": []
+      "nameNl": "Waypoint: Bekijk onze Field Guide",
+      "descriptionNl": [
+        "Free Code Camp heeft een actuele field guide dat jouw vragen zal beantwoorden.",
+        "Klik op de \"Guide\" knop rechtsbovenin.",
+        "Je kan op je gemak door de field guide bladeren. Je kan de meeste artikelen lezen in minder dan een minuut.",
+        "Wanneer je op de \"Guide\" knop klikt, dan brengt het je terug naar het laatste artikel dat je aan het lezen was.",
+        "Lees een paar field guide artikelen, en ga dan verder naar de volgende uitdaging."
+      ]
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd2f",
