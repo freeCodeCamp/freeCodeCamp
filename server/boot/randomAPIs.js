@@ -8,7 +8,6 @@ var Rx = require('rx'),
     bootcampJson = require('../utils/bootcamps.json'),
     secrets = require('../../config/secrets');
 
-var slack = new Slack(secrets.slackHook);
 module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
