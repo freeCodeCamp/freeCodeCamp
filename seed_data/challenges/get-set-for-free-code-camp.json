@@ -101,7 +101,7 @@
         "Vertel de andere campers hoe je Free Code Camp hebt gevonden. Vertel ons ook waarom je wilt leren hoe je moet programmeren. ",
         "Hoe de chatroom open terwijl je de challenges doet. Op die manier kan je voor hulp vragen als je vastloopt op een challenge. Je kan ook socialiseren als je een pauze wilt nemen.",
         "Je kan ook in de chatroom komen door op de \"Chat\" knop te klikken rechtsbovenin.",
-        "Om onze gemeenscahp een vriendelijke plaats om te leren hoe je moet programmeren te houden, lees en houd u A.U.B. onze gedragscode: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
+        "Om onze gemeenschap een vriendelijke plaats om te leren hoe je moet programmeren te houden, lees en houd u A.U.B. aan onze gedragscode: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
       ]
     },
     {
@@ -136,8 +136,15 @@
       ],
       "namePt": "",
       "descriptionPt": [],
-      "nameNl": "",
-      "descriptionNl": []
+      "nameNl": "Waypoint: Bezichtig onze Uitdagingen Kaart",
+      "descriptionNl": [
+        "Voordat je begint met leren hoe je moet programmeren, willen we je eerst een paar dingen laten zien.",
+        "Laten we een kijkje nemen naar de Uitdagingen Kaart. Klik op de \"Map\" knop rechtsbovenin. Deze kaart laat alle uitdagingen zien die je zullen leren hoe je moet programmeren.",
+        "Je moet deze uitdagingen op volgorde moeten doen.",
+        "Als je deze Waypoint uidagingen hebt gedaan, ga je verder met Bonfires (algoritme oefenen), dan Ziplines (front end ontwikkeling oefenen) en dan Basejumps (full stack ontwikkeling oefenen). Daarna ga je projecten maken voor non-profit bedrijven.",
+        "Deze uitdagingen kaart is alleen een verwijzing voor je. Je kan altij op de \"Learn\" knop drukken, dat brengt je naar je volgende uitdaging.",
+        "Als laatste, weet wel dat ons open source leerplan nog een werk in uitvoering is. Onze vrijwilligersgemeenschap is altijd bezig om het te verbeteren. Als je denkt dat je een bug, typefout, of iets dat er verwarrend uitziet, maak A.U.B. een GitHub probleem aan: <a href='https://github.com/FreeCodeCamp/freecodecamp/issues'>https://github.com/FreeCodeCamp/freecodecamp/issues</a>."
+      ]
     },
     {
       "_id": "bd7125d8c441eddfaeb5bd1f",
