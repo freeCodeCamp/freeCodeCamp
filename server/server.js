@@ -1,7 +1,6 @@
 require('dotenv').load();
 var pmx = require('pmx');
 pmx.init();
-// handle uncaught exceptions. Forever will restart process on shutdown
 
 var R = require('ramda'),
   assign = require('lodash').assign,
@@ -303,8 +302,7 @@ if (true) { // eslint-disable-line
 
 module.exports = app;
 
-// start the server if `$ node server.js`
-if (require.main === module) {
+app.start = function () {
   app.listen(app.get('port'), function() {
     console.log(
       'FreeCodeCamp server listening on port %d in %s mode',
@@ -312,4 +310,29 @@ if (require.main === module) {
       app.get('env')
     );
   });
+};
+
+// start the server if `$ node server.js`
+if (require.main === module) {
+  if (process.env.NODE_ENV === 'production') {
+    console.log('waiting for db to connect');
+    var timeoutHandler;
+    var onConnect = function() {
+      console.log('db connected');
+      if (timeoutHandler) {
+        clearTimeout(timeoutHandler);
+      }
+      app.start();
+    };
+
+    var timeoutHandler = setTimeout(function() {
+      // purposely shutdown server
+      // pm2 should restart this in production
+      throw new Error('db did not connect, crashing hard');
+    }, 5000);
+
+    app.dataSources.db.on('connected', onConnect);
+  } else {
+    app.start();
+  }
 }
