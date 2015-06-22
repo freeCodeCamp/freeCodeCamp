@@ -187,6 +187,8 @@ app.use(
   })
 );
 
+// track when connecting to db starts
+var startTime = Date.now();
 boot(app, {
   appRootDir: __dirname,
   dev: process.env.NODE_ENV
@@ -315,10 +317,11 @@ app.start = function () {
 // start the server if `$ node server.js`
 if (require.main === module) {
   if (process.env.NODE_ENV === 'production') {
-    console.log('waiting for db to connect');
     var timeoutHandler;
+    console.log('waiting for db to connect');
+
     var onConnect = function() {
-      console.log('db connected');
+      console.log('db connected in %s ms', Date.now() - startTime);
       if (timeoutHandler) {
         clearTimeout(timeoutHandler);
       }
@@ -326,9 +329,15 @@ if (require.main === module) {
     };
 
     var timeoutHandler = setTimeout(function() {
+      var message =
+        'db did not after  ' +
+        (Date.now() - startTime) +
+        ' ms connect crashing hard';
+
+      console.log(message);
       // purposely shutdown server
       // pm2 should restart this in production
-      throw new Error('db did not connect, crashing hard');
+      throw new Error(message);
     }, 5000);
 
     app.dataSources.db.on('connected', onConnect);
