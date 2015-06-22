@@ -365,8 +365,16 @@
       ],
       "namePt": "",
       "descriptionPt": [],
-      "nameNl": "",
-      "descriptionNl": []
+      "nameNl": "Waypoint: Krijg Hulp op de Hacker Manier met RSAP",
+      "descriptionNl": [
+        "Laten we nog één laatste ding behandelen voordat je begint met het onze lessen: hoe je hulp krijgt.",
+        "Elk moment dat je vastloopt of niet weet wat je moet doen, volg dit simpele algoritme (procedure): RSAP (Read, Search, Ask, Post). In het Nederlands is dat Lees, Zoek, Vraag, Dien in",
+        "Als eerste, Lees - Lees de documentatie of de foutmelding. Een balngrijke vaardigheid die goede programeurs hebben is de mogelijkheid om te interpreteren en dan instructies te volgen.",
+        "Daarna, Zoek - Zoek op Google. Goede Google zoekopdrachten vragen veel oefening. Als je op Google zoekt, dan wil je meestal de taal of de framework die je gebruikt bij de zoekopdracht toevoegen. Je witl ook de resultaten limiteren tot een recente periode.",
+        "Dan, als je nog steeds jouw antwoord niet hebt gevonden, Vraag - Vraag het aan jouw vrienden. Als je problemen hebt, dan kan je andere campers om hulp vragen. We hebben een speciale chatroom specifiek voor het krijgen van hulp met hulpmiddelen die je leert kenne door Free Code Camp uitdagingen te doen. Ga naar <a href='https://freecodecamp.slack.com/messages/help/' target='_blank'>https://freecodecamp.slack.com/messages/help/</a>. Hoe deze chatroom open terwijl je de andere uitdagingen doet.",
+        "Als laatste, Dien in - Dien een vraag in op Stack Overflow. Voordat je dit probeert, lees de Stack Overflow instructies hoe je het beste een vraag kan stellen: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>.",
+        "Nu heb je een duidelijk algoritme die je kan volgen als je hulp nodig hebt! Laten we beginnen met programmeren! Ga naar de volgende uitdaging."
+      ]
     }
   ]
 }
