@@ -42,12 +42,12 @@
       "descriptionNl": [
         "Bekijk deze video van 1 minuut, of lees gewoon de samenvatting:",
         "Welkom bij Free Code Camp. Wij zijn een gemeenschap van drukke mensen die aan het leren zijn hoe je moet programmeren door het maken van projecten voor non-profit bedrijven.",
-        "We hebben deze gemeenschap gemaakt omdat het leren hoe je moet programmeren moeilijk is. Maar iedereen die gemotiveerd kan blijven kan leren hoe je moet programmeren. En om gemotiveerd te blijven,  moet je gewoon: <ol><li>vrienden maken met mensen die kunnen programmeren</li><li>een beetje programmeren iedere dag</li></ol>",
+        "We hebben deze gemeenschap gemaakt omdat het leren hoe je moet programmeren moeilijk is. Maar iedereen die gemotiveerd kan blijven kan leren hoe je moet programmeren. En om gemotiveerd te blijven moet je gewoon: <ol><li>vrienden maken met mensen die kunnen programmeren</li><li>een beetje programmeren iedere dag</li></ol>",
         "Al onze uitdagingen zijn <ol><li>gratis</li><li>op je eigen tempo</li><li>in jouw browser</li><ol>",
         "We zullen <ol><li>200 uur aan het leren van hulpmiddelen zoals HTML, CSS, JavaScript, Node.js en databanken</li><li>600 uur aan het maken van oefen projecten</li><li>800 uur aan het bouwen van full stack oplossingen voor non-profit bedrijven</li></ol> besteden",
         "Aan het einde, zullen we <ol><li>goed zijn in programmeren</li><li>de portefeuille hebben van apps met blije gebruikers om het te bewijzen</li></ol>",
         "Als je klaar bent met Free Code Camp, dan kan je een baan krijgen als programmeur. Er zijn veel meer vacatures voor programmeurs dan dat er gekwalificeerde programmeurs zijn om ze te op te vullen.",
-        "Nu is het tijd omin  onze chatroom binnen te treden. Klik op de \"I've completed this challenge\" knop om door te gaan naar de volgende uitdaging."
+        "Nu is het tijd om in onze chatroom binnen te treden. Klik op de \"I've completed this challenge\" knop om door te gaan naar de volgende uitdaging."
       ]
     },
     {
@@ -92,16 +92,16 @@
       "descriptionPt": [],
       "nameNl": "Waypoint: Treed toe in onze Chatroom",
       "descriptionNl": [
-        "Nu gaan we toe treden in de Free Code Camp chatroom. Je kan hier op ieder moment van de dag komen om uit te hangen, vragen te stellen, of één andere camper vinden met wie je kan paar programmeren.",
-        "Zorg ervoor dat joguw Free Code Camp account een email addres heeft. Merk op dat het email addres dat je gebruikt onzichtbaar zal zijn voor het publiek, maar Slack zal het zichtbaar maken voor andere campers in onze chatroom. Je kan dit hier doen: <a href='/account' target='_blank'>http://freecodecamp.com/account</a>.",
-        "Klik op deze link, dat zal je dan een email sturen met een uitnodiging om de Free Code Camp Slack chatrooms te betreden: : <a href='/api/slack' target='_blank'>http://freecodecamp.com/api/slack</a>.",
+        "Nu gaan we toe treden in de Free Code Camp chatroom. Je kan hier op ieder moment van de dag komen om uit te hangen, vragen te stellen, of een andere camper vinden met wie je kan paar programmeren.",
+        "Zorg ervoor dat jouw Free Code Camp account een email addres heeft. Merk op dat het email addres dat je gebruikt onzichtbaar zal zijn voor het publiek, maar Slack zal het zichtbaar maken voor andere campers in onze chatroom. Je kan dit hier doen: <a href='/account' target='_blank'>http://freecodecamp.com/account</a>.",
+        "Klik op deze link, dat zal je dan een email sturen met een uitnodiging om de Free Code Camp Slack chatrooms te betreden: <a href='/api/slack' target='_blank'>http://freecodecamp.com/api/slack</a>.",
         "Bekijk nu jouw emails en klik op de link in de email van Slack.",
-        "Maak de inschrijf proces af, en werk dan jouw biografie af en upload dan een afbeelding. Een afbeelding van jouw gezicht werkt het beste. Dit is hoe andere mensen je zullen zien in de chatrooms, dus zet je beste beentje voor.",
-        "Treed nu toe in de #General chatroom (Engels) of #Nederlands (Nederlands) en stel jezelf voor door \"Hello World!\" (Engels) of \"Hallo Wereld!\" (Nederlands) te typen in de chatroom. ",
-        "Vertel de andere campers hoe je Free Code Camp hebt gevonden. Vertel ons ook waarom je wilt leren hoe je moet programmeren. ",
-        "Hoe de chatroom open terwijl je de challenges doet. Op die manier kan je voor hulp vragen als je vastloopt op een challenge. Je kan ook socialiseren als je een pauze wilt nemen.",
+        "Maak het inschrijf proces af, en werk dan jouw biografie bij en upload dan een profielfoto. Een profielfoto van jouw gezicht werkt het beste. Dit is hoe andere mensen je zullen zien in de chatrooms, dus zet je beste beentje voor.",
+        "Treed nu toe in de #General chatroom (Engels) of #Nederlands (Nederlands) en stel jezelf voor door \"Hello World!\" (Engels) of \"Hallo Wereld!\" (Nederlands) te typen in de chatroom.",
+        "Vertel de andere campers hoe je Free Code Camp hebt gevonden. Vertel ons ook waarom je wilt leren hoe je moet programmeren.",
+        "Houd de chatroom open terwijl je de uitdagingen doet. Op die manier kan je voor hulp vragen als je vastloopt op een uitdaging. Je kan ook socialiseren als je een pauze wilt nemen.",
         "Je kan ook in de chatroom komen door op de \"Chat\" knop te klikken rechtsbovenin.",
-        "Om onze gemeenschap een vriendelijke plaats om te leren hoe je moet programmeren te houden, lees en houd u A.U.B. aan onze gedragscode: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
+        "Om onze gemeenschap een vriendelijke plaats om te leren hoe je moet programmeren te houden, lees en houd je A.U.B. aan onze gedragscode: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
       ]
     },
     {
@@ -181,8 +181,8 @@
         "Free Code Camp heeft een actuele field guide dat jouw vragen zal beantwoorden.",
         "Klik op de \"Guide\" knop rechtsbovenin.",
         "Je kan op je gemak door de field guide bladeren. Je kan de meeste artikelen lezen in minder dan een minuut.",
-        "Wanneer je op de \"Guide\" knop klikt, dan brengt het je terug naar het laatste artikel dat je aan het lezen was.",
-        "Lees een paar field guide artikelen, en ga dan verder naar de volgende uitdaging."
+        "Wanneer je op de \"Guide\" knop klikt, brengt het je terug naar het laatste artikel dat je aan het lezen was.",
+        "Lees een paar field guide artikelen en ga dan verder naar de volgende uitdaging."
       ]
     },
     {
@@ -227,7 +227,7 @@
         "Klik op de \"Update my portfolio page or manage my account\" knop",
         "Je kan je Github, Twitter en LinkedIn koppelen. Als je al een paar websites hebt gebouwd, kan je die ook koppelen.",
         "Zorg dat je op de \"Update my Bio\" of \"Update my Social Links\" knop klikt om deze nieuwe informatie op te slaan op jouw portefeuille pagina.",
-        "Als je tevreden bent met jouw portefeuille pagina, kan je verder gaan met de volgende uitdaging."
+        "Als je tevreden bent met jouw portefeuille pagina, dan kan je verder gaan met de volgende uitdaging."
       ]
     },
     {
@@ -270,15 +270,15 @@
       "descriptionPt": [],
       "nameNl": "Waypoint: Probeer Camper Nieuws",
       "descriptionNl": [
-        "Camper Nieuws is de beste plek voor onze campers om hoppelingen te delen en het te bespreken.",
+        "Camper Nieuws is de beste plek voor onze campers om koppelingen te delen en het te bespreken.",
         "Klik op \"News\" rechtsbovenin.",
-        "Je zal een afwisseling van koppelingen zien die zien ingediend. Klik op de \"Disucss\" knop onder eentje.",
+        "Je zal een afwisseling van koppelingen zien die zien ingediend. Klik op de \"Discuss\" knop onder eentje.",
         "Je kunt stemmen op koppelingen. Dit zal deze koppeling boven in de ranglijsten van de actuele koppelingen duwen.",
-        "Je kunt ook reageren op een koppeling. Als iemand op jouw koppeling reageert, dan krijg je een email notificatie zodat je terug kan komen en kan reageren geven.",
+        "Je kunt ook reageren op een koppeling. Als iemand op jouw koppeling reageert, dan krijg je een email notificatie zodat je terug kan komen en kan reageren.",
         "Je kan ook koppelingen indienen. Je kan de kopzin van de koppeling aanpassen en ook de originele aantekening laten staan.",
-        "Je kan de portefeuille paginas zien van campers die koppelingen hebben ingediends of hebben gereageerd op Camper Nieuws. Klik gewoon op hun profielfoto's.",
+        "Je kan de portefeuille paginas zien van campers die koppelingen hebben ingediend of hebben gereageerd op Camper Nieuws. Klik gewoon op hun profielfoto's.",
         "Als je een koppeling indiend, dan krijg je één punt. Je krijgt ook één punt als iemand op jouw koppeling stemt of reageert.",
-        "Nu dat je hebt geleerd hoe je Camper Nieuws moet gebruiken, laten we verder gaan naar naar de volgende uitdaging."
+        "Nu dat je hebt geleerd hoe je Camper Nieuws moet gebruiken, gaan we verder naar naar de volgende uitdaging."
       ]
     },
     {
@@ -322,11 +322,11 @@
         "Één van de beste manieren om gemotiveerd te blijven is door met andere campers te hangen.",
         "Slack en Camper Nieuws zijn goede manieren om met andere campers te communiceren, maar het is geen plaatsvervanger voor het persoonlijk ontmoeten van mensen.",
         "De makkelijkste manier om andere campers te ontmoeten in jouw stad is door in jouw stad zijn Facebook Groep toe te treden. Klik op <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city' target='_blank'>here</a> om onze groeiende lijst met lokale groepen te zien.",
-        "Klik op de koppeling voor jouw stad, en als Facebook is geladen klik dan op \"Join group\".",
-        "Onze lokale groepen zien nieuw, dus als je jouw stad niet op de lijst ziet staan, volg dan de instructies om een Facebook groep te maken voor jouw stad.",
-        "Als je geen Facebook account hebt, dan raden we je echt aan om er een te maken, zelfs al is het alleen voor het coördineren met campers in jouw stad door deze groep.",
-        "Onze groepen laten toe dat je evenementen maakt, deze evenementen coördineerd en de foto's van dit evenement deelt daarna.",
-        "Of je nou een studie groep organiseert, gaat paar programmeren bij jouw lokale bibliotheek, of naar een weekend hackathon gaat, jouw stad group zal je helpen dit te laten gebeuren."
+        "Klik op de koppeling voor jouw stad en als Facebook is geladen klik dan op \"Join group\".",
+        "Onze lokale groepen zijn nieuw, dus als je jouw stad niet op de lijst ziet staan, volg dan de instructies om een Facebook groep te maken voor jouw stad.",
+        "Als je geen Facebook account hebt, dan raden we je echt aan om er een te maken, zelfs al is het alleen voor het coördineren met campers in jouw stad door middel van deze groep.",
+        "Onze groepen laten toe dat je evenementen maakt, deze evenementen coördineerd en de foto's van dit evenement deelt als het evenement is afgelopen.",
+        "Of je nou een studie groep organiseert, gaat paar programmeren bij jouw lokale bibliotheek of naar een weekend hackathon gaat, jouw stad zijn groep zal je helpen dit te laten gebeuren."
       ]
     },
     {
@@ -368,11 +368,11 @@
       "nameNl": "Waypoint: Krijg Hulp op de Hacker Manier met RSAP",
       "descriptionNl": [
         "Laten we nog één laatste ding behandelen voordat je begint met het onze lessen: hoe je hulp krijgt.",
-        "Elk moment dat je vastloopt of niet weet wat je moet doen, volg dit simpele algoritme (procedure): RSAP (Read, Search, Ask, Post). In het Nederlands is dat Lees, Zoek, Vraag, Dien in",
+        "Als je vastloopt of niet weet wat je moet doen, volg dit simpele algoritme (procedure): RSAP (Read, Search, Ask, Post). In het Nederlands is dat Lees, Zoek, Vraag, Dien in",
         "Als eerste, Lees - Lees de documentatie of de foutmelding. Een balngrijke vaardigheid die goede programeurs hebben is de mogelijkheid om te interpreteren en dan instructies te volgen.",
-        "Daarna, Zoek - Zoek op Google. Goede Google zoekopdrachten vragen veel oefening. Als je op Google zoekt, dan wil je meestal de taal of de framework die je gebruikt bij de zoekopdracht toevoegen. Je witl ook de resultaten limiteren tot een recente periode.",
-        "Dan, als je nog steeds jouw antwoord niet hebt gevonden, Vraag - Vraag het aan jouw vrienden. Als je problemen hebt, dan kan je andere campers om hulp vragen. We hebben een speciale chatroom specifiek voor het krijgen van hulp met hulpmiddelen die je leert kenne door Free Code Camp uitdagingen te doen. Ga naar <a href='https://freecodecamp.slack.com/messages/help/' target='_blank'>https://freecodecamp.slack.com/messages/help/</a>. Hoe deze chatroom open terwijl je de andere uitdagingen doet.",
-        "Als laatste, Dien in - Dien een vraag in op Stack Overflow. Voordat je dit probeert, lees de Stack Overflow instructies hoe je het beste een vraag kan stellen: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>.",
+        "Daarna, Zoek - Zoek op Google. Goede Google zoekopdrachten vragen veel oefening. Als je op Google zoekt, dan wil je meestal de taal of de framework die je gebruikt bij de zoekopdracht toevoegen. Je wilt ook de resultaten limiteren tot een recente periode.",
+        "Dan, als je nog steeds jouw antwoord niet hebt gevonden, Vraag - Vraag het aan jouw vrienden. Als je problemen hebt, dan kan je andere campers om hulp vragen. We hebben een speciale chatroom specifiek voor het krijgen van hulp met hulpmiddelen die je leert kennen door Free Code Camp uitdagingen te doen. Ga naar <a href='https://freecodecamp.slack.com/messages/help/' target='_blank'>https://freecodecamp.slack.com/messages/help/</a>. Houd deze chatroom open terwijl je de andere uitdagingen doet.",
+        "Als laatste, Dien in - Dien een vraag in op Stack Overflow. Voordat je dit probeert, lees de Stack Overflow instructies over hoe je een goede vraag kan stellen: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>.",
         "Nu heb je een duidelijk algoritme die je kan volgen als je hulp nodig hebt! Laten we beginnen met programmeren! Ga naar de volgende uitdaging."
       ]
     }
