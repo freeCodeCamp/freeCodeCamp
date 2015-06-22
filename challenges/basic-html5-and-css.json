@@ -487,8 +487,12 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Estila multiples elementos con una clase CSS",
+      "descriptionEs": [
+        "Aplica la clase \"red-text\" a tus elementos <code>h2</code> y <code>p</code>.",
+        "Recuerda que puedes agregar clases a elementos HTML utilizando <code>class=\"your-class-here\"</code> dentro de la tag de entrada del mismo.",
+        "Recuerda que los selectores CSS requieren un punto al principio: <code>.blue-text { color: blue; }</code>, pero que las declaraciones de clase NO llevan punto: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
@@ -527,8 +531,13 @@
       "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
+      "nameEs": "Waypoint: Cambia el tamaño de fuente de un elemento.",
+      "descriptionEs": [
+        "Crea un segundo elemento <code>p</code>. Luego, dentro de tu elemento <code>&#60;style&#62;</code>, pon el \"font-size\" de todos los elementos <code>p</code> a 16 pixeles.",
+        "El tamaño de fuente es controlado por el atributo CSS \"font-size\", como aquí: <code>h1 { font-size: 30px; }</code>.",
+        "Primero, crea un segundo elemento <code>p</code> con el siguiente texto Kitty Ipsum: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+        "Ve si puedes encontrar una manera de darle a ambos elementos <code>p</code> un font-size de 16 pixeles (<code>16px</code>). Puedes hacer esto dentro de la misma etiqueta <code>&#60;style&#62;</code> que creamos para la clase \"red-text\"."
+      ],
       "namePt": "",
       "descriptionPt": []
     },
