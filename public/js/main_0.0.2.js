@@ -16,65 +16,9 @@ $(document).ready(function() {
 
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
-  $('#i-want-help').on('click', function() {
-    $('#help-modal').modal('hide');
-    var editorValue = editor.getValue();
-    var currentLocation = window.location.href;
-    $.post(
-      '/get-help',
-      {
-        payload: {
-          code: editorValue,
-          challenge: currentLocation
-        }
-      },
-      function(res) {
-        if (res) {
-          window.open('https://freecodecamp.slack.com/messages/help/', '_blank')
-        }
-      }
-    );
-  });
-
-  $('#i-want-help-editorless').on('click', function() {
-    $('#help-editorless-modal').modal('hide');
-    var currentLocation = window.location.href;
-    $.post(
-      '/get-help',
-      {
-        payload: {
-          challenge: currentLocation
-        }
-      },
-      function(res) {
-        if (res) {
-          window.open('https://freecodecamp.slack.com/messages/help/', '_blank')
-        }
-      }
-    );
-  });
-
   $('#report-issue').on('click', function() {
     $('#issue-modal').modal('hide');
     window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screen shots if possible.', '_blank')
-  });
-
-  $('#i-want-to-pair').on('click', function() {
-    $('#pair-modal').modal('hide');
-    var currentLocation = window.location.href;
-    $.post(
-      '/get-pair',
-      {
-        payload: {
-          challenge: currentLocation
-        }
-      },
-      function(res) {
-        if (res) {
-          window.open('https://freecodecamp.slack.com/messages/letspair/', '_blank')
-        }
-      }
-    );
   });
 
   $('.checklist-element').each(function() {
@@ -148,10 +92,6 @@ $(document).ready(function() {
 
   $('#trigger-help-modal').on('click', function() {
     $('#help-modal').modal('show');
-  });
-
-  $('#trigger-help-editorless-modal').on('click', function() {
-    $('#help-editorless-modal').modal('show');
   });
 
   $('#trigger-issue-modal').on('click', function() {
@@ -330,6 +270,7 @@ $(document).ready(function() {
   };
 
   $('#story-submit').on('click', storySubmitButtonHandler);
+
 
   var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
     $('#comment-button').unbind('click');

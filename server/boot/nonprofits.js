@@ -1,6 +1,13 @@
+var debug = require('debug')('freecc:nonprofits');
+var observeMethod = require('../utils/rx').observeMethod;
+var unDasherize = require('../utils').unDasherize;
+var dasherize = require('../utils').dasherize;
+
 module.exports = function(app) {
   var router = app.loopback.Router();
   var Nonprofit = app.models.Nonprofit;
+  var findNonprofits = observeMethod(Nonprofit, 'find');
+  var findOneNonprofit = observeMethod(Nonprofit, 'findOne');
 
   router.get('/nonprofits/directory', nonprofitsDirectory);
   router.get('/nonprofits/:nonprofitName', returnIndividualNonprofit);
@@ -8,57 +15,55 @@ module.exports = function(app) {
   app.use(router);
 
   function nonprofitsDirectory(req, res, next) {
-    Nonprofit.find(
-      { where: { estimatedHours: { $gt: 0 } } },
-      function(err, nonprofits) {
-        if (err) { return next(err); }
-
+    findNonprofits({ where: { estimatedHours: { gt: 0 } } }).subscribe(
+      function(nonprofits) {
         res.render('nonprofits/directory', {
           title: 'Nonprofits we help',
           nonprofits: nonprofits
         });
-      }
+      },
+      next
     );
   }
 
   function returnIndividualNonprofit(req, res, next) {
     var dashedName = req.params.nonprofitName;
-    var nonprofitName = dashedName.replace(/\-/g, ' ');
+    var nonprofitName = unDasherize(dashedName);
+    var query = { where: { name: {
+      like: nonprofitName,
+      options: 'i'
+    } } };
 
-    Nonprofit.find(
-      { where: { name: new RegExp(nonprofitName, 'i') } },
-      function(err, nonprofit) {
-        if (err) {
-          return next(err);
-        }
-
-        if (nonprofit.length < 1) {
+    debug('looking for %s', nonprofitName);
+    debug('query', query);
+    findOneNonprofit(query).subscribe(
+      function(nonprofit) {
+        if (!nonprofit) {
           req.flash('errors', {
             msg: "404: We couldn't find a nonprofit with that name. " +
               'Please double check the name.'
           });
-
           return res.redirect('/nonprofits');
         }
 
-        nonprofit = nonprofit.pop();
-        var dashedNameFull = nonprofit.name.toLowerCase().replace(/\s/g, '-');
+        var dashedNameFull = dasherize(nonprofit.name);
         if (dashedNameFull !== dashedName) {
           return res.redirect('../nonprofit/' + dashedNameFull);
         }
-        var buttonActive = false;
-        if (req.user) {
-          if (req.user.uncompletedBonfires.length === 0) {
-            if (req.user.completedCoursewares.length > 63) {
-              var hasShownInterest =
-                nonprofit.interestedCampers.filter(function ( obj ) {
-                  return obj.username === req.user.username;
-                });
 
-              if (hasShownInterest.length === 0) {
-                buttonActive = true;
-              }
-            }
+        var buttonActive = false;
+        if (
+          req.user &&
+          req.user.uncompletedBonfires.length === 0 &&
+          req.user.completedCoursewares.length > 63
+        ) {
+          var hasShownInterest =
+            nonprofit.interestedCampers.filter(function(user) {
+              return user.username === req.user.username;
+            });
+
+          if (hasShownInterest.length === 0) {
+            buttonActive = true;
           }
         }
 
@@ -97,33 +102,8 @@ module.exports = function(app) {
           buttonActive: buttonActive,
           currentStatus: nonprofit.currentStatus
         });
-      }
+      },
+      next
     );
   }
-
-  /*
-  function interestedInNonprofit(req, res, next) {
-    if (req.user) {
-      Nonprofit.findOne(
-        { name: new RegExp(req.params.nonprofitName.replace(/-/, ' '), 'i') },
-        function(err, nonprofit) {
-          if (err) { return next(err); }
-          nonprofit.interestedCampers.push({
-            username: req.user.username,
-            picture: req.user.picture,
-            timeOfInterest: Date.now()
-          });
-          nonprofit.save(function(err) {
-            if (err) { return next(err); }
-            req.flash('success', {
-            msg: 'Thanks for expressing interest in this nonprofit project! ' +
-                "We've added you to this project as an interested camper!"
-            });
-            res.redirect('back');
-          });
-        }
-      );
-    }
-  }
-  */
 };

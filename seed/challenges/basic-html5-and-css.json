@@ -943,7 +943,8 @@
         "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage."
       ],
       "tests": [
-        "assert(parseInt($('img').css('border-top-left-radius')) > 48, 'Your image should have a border radius of 50 percent&#44; making it perfectly circular.')"
+        "assert(parseInt($('img').css('border-top-left-radius')) > 48, 'Your image should have a border radius of 50 percent&#44; making it perfectly circular.')",
+        "assert(editor.match(/50%/g), 'Be sure to use a percentage instead of a pixel value.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1005,7 +1006,7 @@
       ],
       "tests": [
         "assert((/cat photos/gi).test($('a').text()), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
-        "assert($('a').filter(function(index) { return /com/gi.test($('a').attr('href')); }).length > 0, 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com<code>.')",
+        "assert(/http:\\/\\/catphotoapp\\.com/gi.test($('a').attr('href')), 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com<code>.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1540,7 +1541,7 @@
       ],
       "tests": [
         "assert($('input[placeholder]').length > 0, 'Add a <code>placeholder</code> attribute text <code>input</code> element.')",
-        "assert($('input').attr('placeholder').match(/cat\\s+photo\\s+URL/gi), 'Set the value of your placeholder attribute to \"cat photo URL\".')"
+        "assert($('input') && $('input').attr('placeholder') && $('input').attr('placeholder').match(/cat\\s+photo\\s+URL/gi), 'Set the value of your placeholder attribute to \"cat photo URL\".')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -1613,7 +1614,7 @@
         "For example: <code>&#60;form action=\"/url-where-you-want-to-submit-form-data\"&#62;&#60;/form&#62;</code>."
       ],
       "tests": [
-        "assert($('form').length > 0, 'Wrap your text input element within a <code>form</code> element.')",
+        "assert($('form') && $('form').children('input') && $('form').children('input').length > 0, 'Wrap your text input element within a <code>form</code> element.')",
         "assert($('form').attr('action'), 'Your <code>form</code> element should have an <code>action</code> attribute.')",
         "assert(editor.match(/<\\/form>/g) && editor.match(/<form/g) && editor.match(/<\\/form>/g).length === editor.match(/<form/g).length, 'Make sure your <code>form</code> element has a closing tag.')",
         "assert(editor.match(/\\/submit-cat-photo/ig), 'Make sure your <code>form</code> action is set to <code>/submit-cat-photo</code>.')"

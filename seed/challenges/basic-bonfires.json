@@ -14,7 +14,7 @@
         "Pair Programming is where two people code together on the same computer. It is an efficient way to collaborate, and widely practiced at software companies. Pair Programming is one of the core concepts of \"Agile\" Software Development, which you will hear more about later.",
         "Many people use Skype or Google Hangouts to pair program, but if you talk with professional software engineers, they will tell you that it's not really pair programming unless both people have the ability to use the keyboard and mouse.",
         "The most popular tool for pair programming is Screen Hero. You can download Screen Hero for <a href='http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjowLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLnppcD9zb3VyY2U9d2ViIn0=' target='_blank'>Mac</a> or <a href='http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjoxLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLXNldHVwLmV4ZSJ9' target='_blank'>Windows</a>. Create your new user account from within the app.",
-        "We have a special chat room for people ready to pair program. Go to our <a href='http://freecodecamp.slack.com/messages/letspair'>http://freecodecamp.slack.com/messages/letspair</a> and type \"Hello Pair Programmers!\"",
+        "We have a special chat room for people ready to pair program. Go to our <a href='//gitter.im/FreeCodeCamp/LetsPair' target='_blank'>LetsPair chatroom on gitter</a> and type \"Hello Pair Programmers!\"",
         "If someone is available, they will be your \"pair\" - the person you pair programming with.",
         "If no one gets back to you in the first few minutes, don't worry. There will be lots of opportunities to pair program in the future.",
         "If someone does get back to you, private message them and ask for the email address they used to register Screen Hero.",
@@ -180,7 +180,8 @@
         "assert.deepEqual(palindrome(\"not a palindrome\"), false);",
         "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true);",
         "assert.deepEqual(palindrome(\"never odd or even\"), true);",
-        "assert.deepEqual(palindrome(\"nope\"), false);"
+        "assert.deepEqual(palindrome(\"nope\"), false);",
+        "assert.deepEqual(palindrome(\"almostomla\"), false);"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
@@ -422,6 +423,7 @@
       ],
       "tests": [
         "expect(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...');",
+        "expect(truncate('Peter Piper picked a peck of pickled peppers', 14)).to.eqls('Peter Piper...');",
         "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length');",
         "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length');"
       ],
@@ -656,7 +658,10 @@
       ],
       "tests": [
         "assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], 'should remove correct values from an array');",
-        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');"
+        "assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], 'should remove correct values from an array');",
+        "assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], 'should accept more than two additional arguments');",
+        "assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], 'should remove correct values from an array');",
+        "assert.deepEqual(destroyer(['tree', 'hamburger', 53], 'tree', 53), ['hamburger'], 'should handle NaN-elements');"
       ],
       "MDNlinks": [
         "Arguments object",
@@ -754,8 +759,8 @@
     },
     {
       "id": "a5de63ebea8dbee56860f4f2",
-      "name": "bonfire-diff-two-arrays",
-      "dashedName": "Bonfire: Diff Two Arrays",
+      "name": "Bonfire: Diff Two Arrays",
+      "dashedName": "bonfire-diff-two-arrays",
       "difficulty": "2.01",
       "description": [
         "Compare two arrays and return a new array with any items not found in both of the original arrays.",
@@ -853,7 +858,7 @@
       "difficulty": "2.03",
       "description": [
         "Perform a search and replace on the sentence using the arguments provided and return the new sentence.",
-        "First argument is the sentence the perform the search and replace on.",
+        "First argument is the sentence to perform the search and replace on.",
         "Second argument is the word that you will be replacing (before).",
         "Third argument is what you will be replacing the second argument with (after).",
         "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word 'Book' with the word 'dog', it should be replaced as 'Dog'",
@@ -990,7 +995,8 @@
         "expect(fearNotLetter('yz')).to.be.undefined;"
       ],
       "MDNlinks": [
-        "String.charCodeAt()"
+        "String.charCodeAt()",
+        "String.fromCharCode()"
       ],
       "challengeType": 5,
       "nameCn": "",
@@ -1091,7 +1097,7 @@
       "dashedName": "bonfire-convert-html-entities",
       "difficulty": "2.07",
       "description": [
-        "Convert the characters \"&\", \"<\", \">\", '\"', and \"'\", in a string to their corresponding HTML entities.",
+        "Convert the characters \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), in a string to their corresponding HTML entities.",
         "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -1104,10 +1110,16 @@
       ],
       "tests": [
         "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
+        "assert.strictEqual(convert('Hamburgers < Pizza < Tacos'), 'Hamburgers &lt; Pizza &lt; Tacos', 'should escape characters');",
+        "assert.strictEqual(convert('Sixty > twelve'), 'Sixty &gt; twelve', 'should escape characters');",
+        "assert.strictEqual(convert('Stuff in \"quotation marks\"'), 'Stuff in &quot;quotation marks&quot;', 'should escape characters');",
+        "assert.strictEqual(convert(\"Shindler's List\"), 'Shindler&apos;s List', 'should escape characters');",
+        "assert.strictEqual(convert('<>'), '&lt;&gt;', 'should escape characters');",
         "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
       ],
       "MDNlinks": [
-        "RegExp"
+        "RegExp",
+        "HTML Entities"
       ],
       "challengeType": 5,
       "nameCn": "",

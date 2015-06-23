@@ -18,18 +18,17 @@ block content
             br
             if (user)
                 a.btn.btn-primary.btn-big.btn-block#completed-zipline-or-basejump I've completed this challenge  (ctrl + enter)
-                if (user.sentSlackInvite)
-                    .button-spacer
-                    .btn-group.input-group.btn-group-justified
-                        .btn.btn-success.btn-big#trigger-help-editorless-modal
-                            i.fa.fa-medkit
-                                | &nbsp; Help
-                        .btn.btn-success.btn-big#trigger-pair-modal
-                            i.fa.fa-user-plus
-                                | &nbsp; Pair
-                        .btn.btn-success.btn-big#trigger-issue-modal
-                            i.fa.fa-bug
-                                | &nbsp; Bug
+                .button-spacer
+                .btn-group.input-group.btn-group-justified
+                    .btn.btn-success.btn-big#trigger-help-modal
+                        i.fa.fa-medkit
+                            | &nbsp; Help
+                    .btn.btn-success.btn-big#trigger-pair-modal
+                        i.fa.fa-user-plus
+                            | &nbsp; Pair
+                    .btn.btn-success.btn-big#trigger-issue-modal
+                        i.fa.fa-bug
+                            | &nbsp; Bug
                 .button-spacer
                 script.
                     var userLoggedIn = true;

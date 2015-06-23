@@ -2,20 +2,17 @@ var Rx = require('rx'),
     Twit = require('twit'),
     async = require('async'),
     moment = require('moment'),
-    Slack = require('node-slack'),
     request = require('request'),
     debug = require('debug')('freecc:cntr:resources'),
-
     constantStrings = require('../utils/constantStrings.json'),
     bootcampJson = require('../utils/bootcamps.json'),
     secrets = require('../../config/secrets');
 
-var slack = new Slack(secrets.slackHook);
 module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
   var Challenge = app.models.Challenge;
-  var Story = app.models.Store;
+  var Story = app.models.Story;
   var FieldGuide = app.models.FieldGuide;
   var Nonprofit = app.models.Nonprofit;
 
@@ -24,8 +21,6 @@ module.exports = function(app) {
   router.get('/api/trello', trelloCalls);
   router.get('/api/codepen/twitter/:screenName', twitter);
   router.get('/sitemap.xml', sitemap);
-  router.post('/get-help', getHelp);
-  router.post('/get-pair', getPair);
   router.get('/chat', chat);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/coding-bootcamp-cost-calculator.json', bootcampCalculatorJson);
@@ -39,71 +34,8 @@ module.exports = function(app) {
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
   router.get('/cats.json', getCats);
-  router.get('/api/slack', slackInvite);
 
   app.use(router);
-
-  function slackInvite(req, res, next) {
-    if (req.user) {
-      if (req.user.email) {
-        var invite = {
-          'email': req.user.email,
-          'token': process.env.SLACK_KEY,
-          'set_active': true
-        };
-
-        var headers = {
-          'User-Agent': 'Node Browser/0.0.1',
-          'Content-Type': 'application/x-www-form-urlencoded'
-        };
-
-        var options = {
-          url: 'https://freecodecamp.slack.com/api/users.admin.invite',
-          method: 'POST',
-          headers: headers,
-          form: invite
-        };
-
-        request(options, function (error, response) {
-          if (!error && response.statusCode === 200) {
-            req.flash('success', {
-              msg: 'We\'ve successfully requested an invite for you.' +
-                ' Please check your email and follow the ' +
-                'instructions from Slack.'
-            });
-            req.user.sentSlackInvite = true;
-            req.user.save(function(err) {
-              if (err) {
-                return next(err);
-              }
-              return res.redirect('back');
-            });
-          } else {
-            req.flash('errors', {
-              msg: 'The invitation email did not go through for some reason.' +
-                ' Please try again or <a href=\'mailto:team@' +
-                'freecodecamp.com?subject=' +
-                'slack%20invite%20failed%20to%20send\'>' +
-                'email us</a>.'
-            });
-            return res.redirect('back');
-          }
-        });
-      } else {
-        req.flash('notice', {
-          msg: 'Before we can send your Slack invite, we need your email ' +
-            'address. Please update your profile information here.'
-        });
-        return res.redirect('/account');
-      }
-    } else {
-      req.flash('notice', {
-        msg: 'You need to sign in to Free Code Camp before ' +
-          'we can send you a Slack invite.'
-      });
-      return res.redirect('/account');
-    }
-  }
 
   function twitter(req, res, next) {
     // sends out random tweets about javascript
@@ -134,56 +66,6 @@ module.exports = function(app) {
     );
   }
 
-
-  function getHelp(req, res) {
-    var userName = req.user.username;
-    var code = req.body.payload.code ? '\n```\n' +
-    req.body.payload.code + '\n```\n'
-      : '';
-    var challenge = req.body.payload.challenge;
-
-    slack.send({
-      text: '*@' + userName + '* wants help with ' + challenge + '. ' +
-        code + 'Hey, *@' + userName + '*, if no one helps you right ' +
-        'away, try typing out your problem in detail to me. Like this: ' +
-        'http://en.wikipedia.org/wiki/Rubber_duck_debugging',
-      channel: '#help',
-      username: 'Debuggy the Rubber Duck',
-      'icon_url': 'https://pbs.twimg.com/profile_images/' +
-      '3609875545/569237541c920fa78d78902069615caf.jpeg'
-    });
-    return res.sendStatus(200);
-  }
-
-  function getPair(req, res) {
-    var userName = req.user.username;
-    var challenge = req.body.payload.challenge;
-    slack.send({
-      text: [
-        'Anyone want to pair with *@',
-        userName,
-        '* on ',
-        challenge,
-        '?\nMake sure you install Screen Hero here: ',
-        'http://freecodecamp.com/field-guide/how-do-i-install-screenhero\n',
-        'Then start your pair program session with *@',
-        userName,
-        '* by typing \"/hero @',
-        userName,
-        '\" into Slack.\n And *@',
-        userName,
-        '*, be sure to launch Screen Hero, then keep coding. ',
-        'Another camper may pair with you soon.'
-      ].join(''),
-      channel: '#letspair',
-      username: 'Companion Cube',
-      'icon_url':
-        'https://lh3.googleusercontent.com/-f6xDPDV2rPE/AAAAAAAAAAI/' +
-        'AAAAAAAAAAA/mdlESXQu11Q/photo.jpg'
-    });
-    return res.sendStatus(200);
-  }
-
   function sitemap(req, res, next) {
     var appUrl = 'http://www.freecodecamp.com';
     var now = moment(new Date()).format('YYYY-MM-DD');
@@ -193,15 +75,15 @@ module.exports = function(app) {
         users: function(callback) {
           User.find(
             {
-              where: { 'profile.username': { nlike: '' } },
-              fields: { 'profile.username': true }
+              where: { username: { nlike: '' } },
+              fields: { username: true }
             },
             function(err, users) {
               if (err) {
                 debug('User err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(users)
+                Rx.Observable.from(users, null, null, Rx.Scheduler.default)
                   .map(function(user) {
                     return user.username;
                   })
@@ -224,7 +106,7 @@ module.exports = function(app) {
                 debug('Challenge err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(challenges)
+                Rx.Observable.from(challenges, null, null, Rx.Scheduler.default)
                   .map(function(challenge) {
                     return challenge.name;
                   })
@@ -244,7 +126,7 @@ module.exports = function(app) {
                 debug('Story err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(stories)
+                Rx.Observable.from(stories, null, null, Rx.Scheduler.default)
                   .map(function(story) {
                     return story.link;
                   })
@@ -265,7 +147,7 @@ module.exports = function(app) {
                 debug('User err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(nonprofits)
+                Rx.Observable.from(nonprofits, null, null, Rx.Scheduler.default)
                   .map(function(nonprofit) {
                     return nonprofit.name;
                   })
@@ -285,7 +167,12 @@ module.exports = function(app) {
                 debug('User err: ', err);
                 callback(err);
               } else {
-                Rx.Observable.from(fieldGuides)
+                Rx.Observable.from(
+                  fieldGuides,
+                  null,
+                  null,
+                  Rx.Scheduler.default
+                )
                   .map(function(fieldGuide) {
                     return fieldGuide.name;
                   })
@@ -301,7 +188,7 @@ module.exports = function(app) {
         if (err) {
           return next(err);
         }
-        setTimeout(function() {
+        process.nextTick(function() {
           res.header('Content-Type', 'application/xml');
           res.render('resources/sitemap', {
             appUrl: appUrl,
@@ -312,19 +199,13 @@ module.exports = function(app) {
             nonprofits: results.nonprofits,
             fieldGuides: results.fieldGuides
           });
-        }, 0);
+        });
       }
     );
   }
 
   function chat(req, res) {
-    if (req.user && req.user.progressTimestamps.length > 5) {
-      res.redirect('http://freecodecamp.slack.com');
-    } else {
-      res.render('resources/chat', {
-        title: 'Watch us code live on Twitch.tv'
-      });
-    }
+    res.redirect('//gitter.im/FreeCodeCamp/FreeCodeCamp');
   }
 
   function bootcampCalculator(req, res) {
@@ -336,6 +217,10 @@ module.exports = function(app) {
 
   function bootcampCalculatorJson(req, res) {
     res.send(bootcampJson);
+  }
+
+  function chat(req, res) {
+    res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
   }
 
   function jobsForm(req, res) {
@@ -383,7 +268,7 @@ module.exports = function(app) {
   }
 
   function unsubscribe(req, res, next) {
-    User.findOne({ email: req.params.email }, function(err, user) {
+    User.findOne({ where: { email: req.params.email } }, function(err, user) {
       if (user) {
         if (err) {
           return next(err);

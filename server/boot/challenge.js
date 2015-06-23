@@ -31,63 +31,89 @@
  */
 
 var R = require('ramda'),
+  Rx = require('rx'),
+  assign = require('object.assign'),
+  debug = require('debug')('freecc:challenges'),
   utils = require('../utils'),
+
+  // this would be so much cleaner with destructering...
+  saveUser = require('../utils/rx').saveUser,
+  observableQueryFromModel = require('../utils/rx').observableQueryFromModel,
+
   userMigration = require('../utils/middleware').userMigration,
-  MDNlinks = require('../../seed/bonfireMDNlinks');
+  ifNoUserRedirectTo = require('../utils/middleware').ifNoUserRedirectTo,
+  ifNoUserSend = require('../utils/middleware').ifNoUserSend;
 
 var challengeMapWithNames = utils.getChallengeMapWithNames();
 var challengeMapWithIds = utils.getChallengeMapWithIds();
 var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
+var challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
 
+var dasherize = utils.dasherize;
+var unDasherize = utils.unDashedName;
 
-function getMDNlinks(links) {
-  // takes in an array of links, which are strings
-  var populatedLinks = [];
+var getMDNLinks = utils.getMDNLinks;
 
-  // for each key value, push the corresponding link
-  // from the MDNlinks object into a new array
-  if (links) {
-    links.forEach(function (value) {
-      populatedLinks.push(MDNlinks[value]);
-    });
+function updateUserProgress(user, challengeId, completedChallenge) {
+  var index = user.uncompletedChallenges.indexOf(challengeId);
+  if (index > -1) {
+    user.progressTimestamps.push(Date.now());
+    user.uncompletedChallenges.splice(index, 1);
   }
-  return populatedLinks;
+  user.completedChallenges.push(completedChallenge);
+  return user;
 }
 
 module.exports = function(app) {
   var router = app.loopback.Router();
   var Challenge = app.models.Challenge;
   var User = app.models.User;
+  var redirectNonUser =
+    ifNoUserRedirectTo('/challenges/learn-how-free-code-camp-works');
+  var send200toNonUser = ifNoUserSend(true);
 
+  router.post(
+    '/completed-challenge/',
+    send200toNonUser,
+    completedChallenge
+  );
+  router.post(
+    '/completed-zipline-or-basejump',
+    send200toNonUser,
+    completedZiplineOrBasejump
+  );
+  router.post(
+    '/completed-bonfire',
+    send200toNonUser,
+    completedBonfire
+  );
+
+  // the follow routes are covered by userMigration
+  router.use(userMigration);
+  router.get('/map', challengeMap);
   router.get(
     '/challenges/next-challenge',
-    userMigration,
+    redirectNonUser,
     returnNextChallenge
   );
 
-  router.get(
-    '/challenges/:challengeName',
-    userMigration,
-    returnIndividualChallenge
-  );
+  router.get('/challenges/:challengeName', returnIndividualChallenge);
 
-  router.get('/challenges/', userMigration, returnCurrentChallenge);
-  router.post('/completed-challenge/', completedChallenge);
-  router.post('/completed-zipline-or-basejump', completedZiplineOrBasejump);
-  router.post('/completed-bonfire', completedBonfire);
+  router.get(
+    '/challenges/',
+    redirectNonUser,
+    returnCurrentChallenge
+  );
 
   app.use(router);
 
   function returnNextChallenge(req, res, next) {
-    if (!req.user) {
-      return res.redirect('../challenges/learn-how-free-code-camp-works');
-    }
     var completed = req.user.completedChallenges.map(function (elem) {
       return elem.id;
     });
 
     req.user.uncompletedChallenges = utils.allChallengeIds()
-      .filter(function (elem) {
+      .filter(function(elem) {
         if (completed.indexOf(elem) === -1) {
           return elem;
         }
@@ -120,18 +146,17 @@ module.exports = function(app) {
       nextChallengeName = R.head(challengeMapWithDashedNames[0].challenges);
     }
 
-    req.user.save(function(err) {
-      if (err) {
-        return next(err);
-      }
-      return res.redirect('../challenges/' + nextChallengeName);
-    });
+    saveUser(req.user)
+      .subscribe(
+        function() {},
+        next,
+        function() {
+          res.redirect('/challenges/' + nextChallengeName);
+        }
+      );
   }
 
   function returnCurrentChallenge(req, res, next) {
-    if (!req.user) {
-      return res.redirect('../challenges/learn-how-free-code-camp-works');
-    }
     var completed = req.user.completedChallenges.map(function (elem) {
       return elem.id;
     });
@@ -142,6 +167,7 @@ module.exports = function(app) {
           return elem;
         }
       });
+
     if (!req.user.currentChallenge) {
       req.user.currentChallenge = {};
       req.user.currentChallenge.challengeId = challengeMapWithIds['0'][0];
@@ -153,42 +179,60 @@ module.exports = function(app) {
 
     var nameString = req.user.currentChallenge.dashedName;
 
-    req.user.save(function(err) {
-      if (err) {
-        return next(err);
-      }
-      return res.redirect('../challenges/' + nameString);
-    });
+    saveUser(req.user)
+      .subscribe(
+        function() {},
+        next,
+        function() {
+          res.redirect('/challenges/' + nameString);
+        }
+      );
   }
 
   function returnIndividualChallenge(req, res, next) {
-    var dashedName = req.params.challengeName;
+    var origChallengeName = req.params.challengeName;
+    var unDashedName = unDasherize(origChallengeName);
 
+    var challengeName = challangesRegex.test(unDashedName) ?
+      // remove first word if matches
+      unDashedName.split(' ').slice(1).join(' ') :
+      unDashedName;
+
+    debug('looking for ', challengeName);
     Challenge.findOne(
-      { where: { dashedName: dashedName }},
+      { where: { name: { like: challengeName, options: 'i' } } },
       function(err, challenge) {
         if (err) { return next(err); }
 
         // Handle not found
         if (!challenge) {
+          debug('did not find challenge for ' + origChallengeName);
           req.flash('errors', {
-            msg: '404: We couldn\'t find a challenge with that name. ' +
-            'Please double check the name.'
+            msg:
+              '404: We couldn\'t find a challenge with the name `' +
+              origChallengeName +
+              '` Please double check the name.'
           });
           return res.redirect('/challenges');
         }
         // Redirect to full name if the user only entered a partial
+        if (dasherize(challenge.name) !== origChallengeName) {
+          debug('redirecting to fullname');
+          return res.redirect('/challenges/' + dasherize(challenge.name));
+        }
+
         if (req.user) {
           req.user.currentChallenge = {
             challengeId: challenge.id,
             challengeName: challenge.name,
             dashedName: challenge.dashedName,
-            challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds).
-                map(function (key) {
+            challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds)
+                .map(function (key) {
                   return challengeMapWithIds[key]
                     .filter(function (elem) {
-                      return String(elem) === String(challenge.id);
-                    }).map(function () {
+                      return elem === ('' + challenge.id);
+                    })
+                    .map(function () {
                       return key;
                     });
                 })
@@ -196,261 +240,168 @@ module.exports = function(app) {
           };
         }
 
-        var challengeType = {
-          0: function() {
-            res.render('coursewares/showHTML', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              brief: challenge.description[0],
-              details: challenge.description.slice(1),
-              tests: challenge.tests,
-              challengeSeed: challenge.challengeSeed,
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              environment: utils.whichEnvironment(),
-              challengeType: challenge.challengeType
-            });
-          },
-
-          1: function() {
-            res.render('coursewares/showJS', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              brief: challenge.description[0],
-              details: challenge.description.slice(1),
-              tests: challenge.tests,
-              challengeSeed: challenge.challengeSeed,
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              challengeType: challenge.challengeType
-            });
-          },
-
-          2: function() {
-            res.render('coursewares/showVideo', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              details: challenge.description,
-              tests: challenge.tests,
-              video: challenge.challengeSeed[0],
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              challengeType: challenge.challengeType
-            });
-          },
-
-          3: function() {
-            res.render('coursewares/showZiplineOrBasejump', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              details: challenge.description,
-              video: challenge.challengeSeed[0],
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              challengeType: challenge.challengeType
-            });
-          },
-
-          4: function() {
-            res.render('coursewares/showZiplineOrBasejump', {
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              details: challenge.description,
-              video: challenge.challengeSeed[0],
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              challengeId: challenge.id,
-              challengeType: challenge.challengeType
-            });
-          },
-
-          5: function() {
-            res.render('coursewares/showBonfire', {
-              completedWith: null,
-              title: challenge.name,
-              dashedName: dashedName,
-              name: challenge.name,
-              difficulty: Math.floor(+challenge.difficulty),
-              brief: challenge.description.shift(),
-              details: challenge.description,
-              tests: challenge.tests,
-              challengeSeed: challenge.challengeSeed,
-              verb: utils.randomVerb(),
-              phrase: utils.randomPhrase(),
-              compliment: utils.randomCompliment(),
-              bonfires: challenge,
-              challengeId: challenge.id,
-              MDNkeys: challenge.MDNlinks,
-              MDNlinks: getMDNlinks(challenge.MDNlinks),
-              challengeType: challenge.challengeType
-            });
-          }
+        var commonLocals = {
+          title: challenge.name,
+          dashedName: origChallengeName,
+          name: challenge.name,
+          details: challenge.description.slice(1),
+          tests: challenge.tests,
+          challengeSeed: challenge.challengeSeed,
+          verb: utils.randomVerb(),
+          phrase: utils.randomPhrase(),
+          compliment: utils.randomCompliment(),
+          challengeId: challenge.id,
+          challengeType: challenge.challengeType,
+          // video challenges
+          video: challenge.challengeSeed[0],
+          // bonfires specific
+          difficulty: Math.floor(+challenge.difficulty),
+          brief: challenge.description.shift(),
+          bonfires: challenge,
+          MDNkeys: challenge.MDNlinks,
+          MDNlinks: getMDNLinks(challenge.MDNlinks),
+          // htmls specific
+          environment: utils.whichEnvironment()
         };
-        if (req.user) {
-          req.user.save(function (err) {
-            if (err) {
-              return next(err);
+
+        var challengeView = {
+          0: 'coursewares/showHTML',
+          1: 'coursewares/showJS',
+          2: 'coursewares/showVideo',
+          3: 'coursewares/showZiplineOrBasejump',
+          4: 'coursewares/showZiplineOrBasejump',
+          5: 'coursewares/showBonfire'
+        };
+
+        saveUser(req.user)
+          .subscribe(
+            function() {},
+            next,
+            function() {
+              var view = challengeView[challenge.challengeType];
+              res.render(view, commonLocals);
             }
-            return challengeType[challenge.challengeType]();
-          });
-        } else {
-          return challengeType[challenge.challengeType]();
-        }
+          );
       });
   }
 
   function completedBonfire(req, res, next) {
-    var isCompletedWith = req.body.challengeInfo.completedWith || '';
-    var isCompletedDate = Math.round(+new Date());
+    debug('compltedBonfire');
+    var completedWith = req.body.challengeInfo.completedWith || false;
     var challengeId = req.body.challengeInfo.challengeId;
-    var isSolution = req.body.challengeInfo.solution;
-    var challengeName = req.body.challengeInfo.challengeName;
 
-    if (isCompletedWith) {
-      User.find({
-        where: { 'profile.username': isCompletedWith.toLowerCase() },
-        limit: 1
-      }, function (err, pairedWith) {
-        if (err) { return next(err); }
+    var challengeData = {
+      id: challengeId,
+      name: req.body.challengeInfo.challengeName,
+      completedDate: Math.round(+new Date()),
+      solution: req.body.challengeInfo.solution,
+      challengeType: 5
+    };
 
-        var index = req.user.uncompletedChallenges.indexOf(challengeId);
-        if (index > -1) {
-          req.user.progressTimestamps.push(Date.now() || 0);
-          req.user.uncompletedChallenges.splice(index, 1);
-        }
-        pairedWith = pairedWith.pop();
+    observableQueryFromModel(
+        User,
+        'findOne',
+        { where: { username: ('' + completedWith).toLowerCase() } }
+      )
+      .doOnNext(function(pairedWith) {
+        debug('paired with ', pairedWith);
         if (pairedWith) {
-
-          index = pairedWith.uncompletedChallenges.indexOf(challengeId);
-          if (index > -1) {
-            pairedWith.progressTimestamps.push(Date.now() || 0);
-            pairedWith.uncompletedChallenges.splice(index, 1);
-
-          }
-
-          pairedWith.completedChallenges.push({
-            id: challengeId,
-            name: challengeName,
-            completedWith: req.user.id,
-            completedDate: isCompletedDate,
-            solution: isSolution,
-            challengeType: 5
-          });
-
-          req.user.completedChallenges.push({
-            id: challengeId,
-            name: challengeName,
-            completedWith: pairedWith.id,
-            completedDate: isCompletedDate,
-            solution: isSolution,
-            challengeType: 5
-          });
+          updateUserProgress(
+            pairedWith,
+            challengeId,
+            assign({ completedWith: req.user.id }, challengeData)
+          );
         }
-        // User said they paired, but pair wasn't found
-        req.user.completedChallenges.push({
-          id: challengeId,
-          name: challengeName,
-          completedWith: null,
-          completedDate: isCompletedDate,
-          solution: isSolution,
-          challengeType: 5
-        });
-
-        req.user.save(function (err, user) {
-          if (err) { return next(err); }
-
-          if (pairedWith) {
-            pairedWith.save(function (err, paired) {
-              if (err) {
-                return next(err);
-              }
-              if (user && paired) {
-                return res.send(true);
-              }
-            });
-          } else if (user) {
-            res.send(true);
+      })
+      .withLatestFrom(
+        Rx.Observable.just(req.user),
+        function(pairedWith, user) {
+          return {
+            user: user,
+            pairedWith: pairedWith
+          };
+        }
+      )
+      // side effects should always be done in do's and taps
+      .doOnNext(function(dats) {
+        updateUserProgress(
+          dats.user,
+          challengeId,
+          dats.pairedWith ?
+            // paired programmer found and adding to data
+            assign({ completedWith: dats.pairedWith.id }, challengeData) :
+            // user said they paired, but pair wasn't found
+            challengeData
+        );
+      })
+      // not iterate users
+      .flatMap(function(dats) {
+        debug('flatmap');
+        return Rx.Observable.from([dats.user, dats.pairedWith]);
+      })
+      // save user
+      .flatMap(function(user) {
+        // save user will do nothing if user is falsey
+        return saveUser(user);
+      })
+      .subscribe(
+        function(user) {
+          debug('onNext');
+          if (user) {
+            debug('user %s saved', user.username);
           }
-        });
-      });
-    } else {
-      req.user.completedChallenges.push({
-        id: challengeId,
-        name: challengeName,
-        completedWith: null,
-        completedDate: isCompletedDate,
-        solution: isSolution,
-        challengeType: 5
-      });
-
-      var index = req.user.uncompletedChallenges.indexOf(challengeId);
-      if (index > -1) {
-
-        req.user.progressTimestamps.push(Date.now() || 0);
-        req.user.uncompletedChallenges.splice(index, 1);
-      }
-
-      req.user.save(function (err) {
-        if (err) { return next(err); }
-        res.send(true);
-      });
-    }
+        },
+        next,
+        function() {
+          debug('completed');
+          return res.status(200).send(true);
+        }
+      );
   }
 
   function completedChallenge(req, res, next) {
 
-    var isCompletedDate = Math.round(+new Date());
+    var completedDate = Math.round(+new Date());
     var challengeId = req.body.challengeInfo.challengeId;
 
-    req.user.completedChallenges.push({
-      id: challengeId,
-      completedDate: isCompletedDate,
-      name: req.body.challengeInfo.challengeName,
-      solution: null,
-      githubLink: null,
-      verified: true
-    });
-    var index = req.user.uncompletedChallenges.indexOf(challengeId);
-
-    if (index > -1) {
-      req.user.progressTimestamps.push(Date.now() || 0);
-      req.user.uncompletedChallenges.splice(index, 1);
-    }
-
-    req.user.save(function (err, user) {
-      if (err) {
-        return next(err);
+    updateUserProgress(
+      req.user,
+      challengeId,
+      {
+        id: challengeId,
+        completedDate: completedDate,
+        name: req.body.challengeInfo.challengeName,
+        solution: null,
+        githubLink: null,
+        verified: true
       }
-      if (user) {
-        res.sendStatus(200);
-      }
-    });
+    );
+
+    saveUser(req.user)
+      .subscribe(
+        function() { },
+        next,
+        function() {
+          res.sendStatus(200);
+        }
+      );
   }
 
   function completedZiplineOrBasejump(req, res, next) {
 
-    var isCompletedWith = req.body.challengeInfo.completedWith || false;
-    var isCompletedDate = Math.round(+new Date());
+    var completedWith = req.body.challengeInfo.completedWith || false;
+    var completedDate = Math.round(+new Date());
     var challengeId = req.body.challengeInfo.challengeId;
     var solutionLink = req.body.challengeInfo.publicURL;
-    var githubLink = req.body.challengeInfo.challengeType === '4'
-      ? req.body.challengeInfo.githubURL : true;
+
+    var githubLink = req.body.challengeInfo.challengeType === '4' ?
+      req.body.challengeInfo.githubURL :
+      true;
+
     var challengeType = req.body.challengeInfo.challengeType === '4' ?
-      4 : 3;
+      4 :
+      3;
+
     if (!solutionLink || !githubLink) {
       req.flash('errors', {
         msg: 'You haven\'t supplied the necessary URLs for us to inspect ' +
@@ -459,92 +410,110 @@ module.exports = function(app) {
       return res.sendStatus(403);
     }
 
-    if (isCompletedWith) {
-      User.find({
-        where: { 'profile.username': isCompletedWith.toLowerCase() },
-        limit: 1
-      }, function (err, pairedWithFromMongo) {
-        if (err) { return next(err); }
-        var index = req.user.uncompletedChallenges.indexOf(challengeId);
-        if (index > -1) {
-          req.user.progressTimestamps.push(Date.now() || 0);
-          req.user.uncompletedChallenges.splice(index, 1);
+    var challengeData = {
+      id: challengeId,
+      name: req.body.challengeInfo.challengeName,
+      completedDate: completedDate,
+      solution: solutionLink,
+      githubLink: githubLink,
+      challengeType: challengeType,
+      verified: false
+    };
+
+    observableQueryFromModel(
+        User,
+        'findOne',
+        { where: { username: completedWith.toLowerCase() } }
+      )
+      .doOnNext(function(pairedWith) {
+        if (pairedWith) {
+          updateUserProgress(
+            pairedWith,
+            challengeId,
+            assign({ completedWith: req.user.id }, challengeData)
+          );
         }
-        var pairedWith = pairedWithFromMongo.pop();
-
-        req.user.completedChallenges.push({
-          id: challengeId,
-          name: req.body.challengeInfo.challengeName,
-          completedWith: pairedWith.id,
-          completedDate: isCompletedDate,
-          solution: solutionLink,
-          githubLink: githubLink,
-          challengeType: challengeType,
-          verified: false
-        });
-
-        req.user.save(function (err, user) {
-          if (err) { return next(err); }
-
-          if (req.user.id.toString() === pairedWith.id.toString()) {
-            return res.sendStatus(200);
+      })
+      .withLatestFrom(Rx.Observable.just(req.user), function(user, pairedWith) {
+        return {
+          user: user,
+          pairedWith: pairedWith
+        };
+      })
+      .doOnNext(function(dats) {
+        updateUserProgress(
+          dats.user,
+          challengeId,
+          dats.pairedWith ?
+            assign({ completedWith: dats.pairedWith.id }, challengeData) :
+            challengeData
+        );
+      })
+      .flatMap(function(dats) {
+        return Rx.Observable.from([dats.user, dats.pairedWith]);
+      })
+      // save users
+      .flatMap(function(user) {
+        // save user will do nothing if user is falsey
+        return saveUser(user);
+      })
+      .subscribe(
+        function(user) {
+          if (user) {
+            debug('user %s saved', user.username);
           }
-          index = pairedWith.uncompletedChallenges.indexOf(challengeId);
-          if (index > -1) {
-            pairedWith.progressTimestamps.push(Date.now() || 0);
-            pairedWith.uncompletedChallenges.splice(index, 1);
-
-          }
-
-          pairedWith.completedChallenges.push({
-            id: challengeId,
-            name: req.body.challengeInfo.coursewareName,
-            completedWith: req.user.id,
-            completedDate: isCompletedDate,
-            solution: solutionLink,
-            githubLink: githubLink,
-            challengeType: challengeType,
-            verified: false
-          });
-          pairedWith.save(function (err, paired) {
-            if (err) {
-              return next(err);
-            }
-            if (user && paired) {
-              return res.sendStatus(200);
-            }
-          });
-        });
-      });
-    } else {
-
-      req.user.completedChallenges.push({
-        id: challengeId,
-        name: req.body.challengeInfo.challengeName,
-        completedWith: null,
-        completedDate: isCompletedDate,
-        solution: solutionLink,
-        githubLink: githubLink,
-        challengeType: challengeType,
-        verified: false
-      });
-
-      var index = req.user.uncompletedChallenges.indexOf(challengeId);
-      if (index > -1) {
-        req.user.progressTimestamps.push(Date.now() || 0);
-        req.user.uncompletedChallenges.splice(index, 1);
-      }
-
-      req.user.save(function (err, user) {
-        if (err) {
-          return next(err);
+        },
+        next,
+        function() {
+          return res.status(200).send(true);
         }
-        // NOTE(berks): under certain conditions this will not close
-        // the response.
-        if (user) {
-          return res.sendStatus(200);
-        }
-      });
+      );
+  }
+
+  function challengeMap(req, res, next) {
+    var completedList = [];
+
+    if (req.user) {
+      completedList = req.user.completedChallenges;
     }
+
+    var noDuplicatedChallenges = R.uniq(completedList);
+
+    var completedChallengeList = noDuplicatedChallenges
+      .map(function(challenge) {
+        // backwards compatibility
+        return (challenge.id || challenge._id);
+      });
+    var challengeList = utils.
+      getChallengeMapForDisplay(completedChallengeList);
+
+    Object.keys(challengeList).forEach(function(key) {
+      challengeList[key].completed = challengeList[key]
+        .challenges.filter(function(elem) {
+        // backwards compatibility hack
+        return completedChallengeList.indexOf(elem.id || elem._id) > -1;
+      });
+    });
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    var date1 = new Date('10/15/2014');
+    var date2 = new Date();
+    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    User.count(function(err, camperCount) {
+      if (err) { return next(err); }
+
+      res.render('challengeMap/show', {
+        daysRunning: daysRunning,
+        camperCount: numberWithCommas(camperCount),
+        title: "A map of all Free Code Camp's Challenges",
+        challengeList: challengeList,
+        completedChallengeList: completedChallengeList
+      });
+    });
   }
 };

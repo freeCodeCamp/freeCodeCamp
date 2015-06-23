@@ -134,7 +134,8 @@
       "type": "string"
     },
     "uncompletedBonfires": {
-      "type": "array"
+      "type": "array",
+      "default": []
     },
     "completedBonfires": {
       "type": [

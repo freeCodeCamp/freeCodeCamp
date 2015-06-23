@@ -626,7 +626,7 @@
         "The \"row\" class is applied to a <code>div</code>, and the buttons themselves can be wrapped within it."
       ],
       "tests": [
-        "assert($('div.row:has(button)'), 'Your buttons should all be wrapped within the same <code>div</code> element with the class \"row\".')",
+        "assert($('div.row:has(button)').length > 0, 'Your buttons should all be wrapped within the same <code>div</code> element with the class \"row\".')",
         "assert($('div.col-xs-4:has(button)').length > 2, 'Each of your Bootstrap buttons should be wrapped within its own a <code>div</code> element with the class \"col-xs-4\".')",
         "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
@@ -1264,7 +1264,7 @@
       "tests": [
         "assert($('button[type=\\'submit\\']').hasClass('btn btn-primary'), 'Give the submit button in your form the classes \"btn btn-primary\".')",
         "assert($('button[type=\\'submit\\']:has(i.fa.fa-paper-plane)').length > 0, 'Add a <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.')",
-        "assert($('input[type=\\'text\\']').hasClass('form-control'), 'Give the text <code>input<code> in your form the class \"form-control\".')",
+        "assert($('input[type=\\'text\\']').hasClass('form-control'), 'Give the text <code>input</code> in your form the class \"form-control\".')",
         "assert(editor.match(/<\\/i>/g) && editor.match(/<\\/i/g).length > 3, 'Make sure each of your <code>i</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
