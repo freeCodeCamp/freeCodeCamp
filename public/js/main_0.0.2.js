@@ -30,7 +30,7 @@ $(document).ready(function() {
       },
       function(res) {
         if (res) {
-          window.open('https://freecodecamp.slack.com/messages/help/', '_blank')
+          window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
         }
       }
     );
@@ -48,7 +48,7 @@ $(document).ready(function() {
       },
       function(res) {
         if (res) {
-          window.open('https://freecodecamp.slack.com/messages/help/', '_blank')
+          window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
         }
       }
     );
@@ -71,7 +71,7 @@ $(document).ready(function() {
       },
       function(res) {
         if (res) {
-          window.open('https://freecodecamp.slack.com/messages/letspair/', '_blank')
+          window.open('https://gitter.im/FreeCodeCamp/LetsPair', '_blank')
         }
       }
     );
