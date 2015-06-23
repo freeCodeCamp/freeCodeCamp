@@ -47,20 +47,12 @@ var R = require('ramda'),
 var challengeMapWithNames = utils.getChallengeMapWithNames();
 var challengeMapWithIds = utils.getChallengeMapWithIds();
 var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
+var challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+
+var dasherize = utils.dasherize;
+var unDasherize = utils.unDashedName;
 
 var getMDNLinks = utils.getMDNLinks;
-
-var challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
-function dasherize(name) {
-  return ('' + name)
-    .toLowerCase()
-    .replace(/\s/g, '-')
-    .replace(/[^a-z0-9\-\.]/gi, '');
-}
-
-function unDasherize(name) {
-  return ('' + name).replace(/\-/g, ' ');
-}
 
 function updateUserProgress(user, challengeId, completedChallenge) {
   var index = user.uncompletedChallenges.indexOf(challengeId);

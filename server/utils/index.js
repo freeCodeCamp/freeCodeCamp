@@ -60,6 +60,17 @@ Array.zip = function(left, right, combinerFunction) {
 
 
 module.exports = {
+  dasherize: function dasherize(name) {
+    return ('' + name)
+      .toLowerCase()
+      .replace(/\s/g, '-')
+      .replace(/[^a-z0-9\-\.]/gi, '');
+  },
+
+  unDasherize: function unDasherize(name) {
+    return ('' + name).replace(/\-/g, ' ');
+  },
+
   getChallengeMapForDisplay: function () {
     if (!challengeMapForDisplay) {
       challengeMapForDisplay = {};
