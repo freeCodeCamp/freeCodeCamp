@@ -1,6 +1,5 @@
 var Rx = require('rx');
 var debug = require('debug')('freecc:rxUtils');
-var slice = Array.prototype.slice;
 
 exports.saveUser = function saveUser(user) {
   return new Rx.Observable.create(function(observer) {
