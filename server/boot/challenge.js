@@ -50,7 +50,7 @@ var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
 var challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
 
 var dasherize = utils.dasherize;
-var unDasherize = utils.unDashedName;
+var unDasherize = utils.unDasherize;
 
 var getMDNLinks = utils.getMDNLinks;
 
