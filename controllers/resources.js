@@ -231,13 +231,7 @@ module.exports = {
   },
 
   chat: function chat(req, res) {
-    if (req.user && req.user.progressTimestamps.length > 5) {
-      res.redirect('http://freecodecamp.slack.com');
-    } else {
-      res.render('resources/chat', {
-        title: 'Watch us code live on Twitch.tv'
-      });
-    }
+    res.redirect('//gitter.im/FreeCodeCamp/FreeCodeCamp');
   },
 
   jobsForm: function jobsForm(req, res) {
