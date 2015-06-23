@@ -87,7 +87,8 @@
         "assert.deepEqual(sym([1, 1]), [1], 'should return an array of unique values');"
       ],
       "MDNlinks": [
-        "Array.reduce()"
+        "Array.reduce()",
+        "Symmetric Difference"
       ],
       "challengeType": 5,
       "nameCn": "",
