@@ -43,7 +43,10 @@ module.exports = function(app) {
   }
 
   function hotJSON(req, res, next) {
-    Story.find({order: 'timePosted DESC', limit: 1000}, function(err, stories) {
+    Story.find({
+      order: 'timePosted DESC',
+      limit: 1000
+    }, function(err, stories) {
       if (err) {
         return next(err);
       }
@@ -127,7 +130,7 @@ module.exports = function(app) {
 
     var storyName = dashedName.replace(/\-/g, ' ').trim();
 
-    Story.find({where: {'storyLink': storyName}}, function(err, story) {
+    Story.find({ where: { storyLink: storyName } }, function(err, story) {
       if (err) {
         return next(err);
       }
@@ -225,7 +228,7 @@ module.exports = function(app) {
 
   function upvote(req, res, next) {
     var data = req.body.data;
-    Story.find({'id': data.id}, function(err, story) {
+    Story.find({ where: { id: data.id } }, function(err, story) {
       if (err) {
         return next(err);
       }
@@ -267,7 +270,7 @@ module.exports = function(app) {
   function comments(req, res, next) {
     var data = req.params.id;
     Comment.find(
-      { where: {'id': data } },
+      { where: { id: data } },
       function(err, comment) {
         if (err) {
           return next(err);
@@ -300,7 +303,7 @@ module.exports = function(app) {
       url = 'http://' + url;
     }
     Story.find(
-      { where: {'link': url} },
+      { where: { link: url } },
       function(err, story) {
         if (err) {
           return next(err);
@@ -357,7 +360,10 @@ module.exports = function(app) {
     }
 
     Story.count({
-      storyLink: { like: new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i') }
+      storyLink: {
+        like: ('^' + storyLink + '(?: [0-9]+)?$'),
+        options: 'i'
+      }
     }, function (err, storyCount) {
       if (err) {
         return next(err);
@@ -495,7 +501,7 @@ module.exports = function(app) {
 
   function commentEdit(req, res, next) {
 
-    Comment.find({ id: req.params.id }, function(err, cmt) {
+    Comment.find({ where: { id: req.params.id } }, function(err, cmt) {
       if (err) {
         return next(err);
       }
@@ -538,7 +544,7 @@ module.exports = function(app) {
         // Based on the context retrieve the parent
         // object of the comment (Story/Comment)
         Context.find({
-          id: data.associatedPost
+          where: { id: data.associatedPost }
         }, function (err, associatedContext) {
           if (err) {
             return next(err);
@@ -555,7 +561,7 @@ module.exports = function(app) {
           }
           // Find the author of the parent object
           User.findOne({
-            'profile.username': associatedContext.author.username
+            username: associatedContext.author.username
           }, function(err, recipient) {
             if (err) {
               return next(err);
