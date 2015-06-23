@@ -83,21 +83,21 @@ block content
                                                 li.large-p.negative-10
                                                     a(href="/challenges/#{challenge.name}")= challenge.name
 
-    #announcementModal.modal(tabindex='-1')
-        .modal-dialog.animated.fadeInUp.fast-animation
-            .modal-content
-                .modal-header.challenge-list-header Add us to your LinkedIn profile
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    h3.text-left LinkedIn now recognizes Free Code Camp as a university.
-                    img.img-responsive.img-center(src='https://www.evernote.com/l/AHTzkHwtg-BHj57bqqDL7WFF8WgrI5V8cxwB/image.png')
-                    h3.text-left It takes less than a minute to add Free Code Camp to your LinkedIn profile.
-                    a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='/linkedin', target='_blank') Show me how to do this
-                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up
-    script.
-        $(document).ready(function () {
-            if (!localStorage || !localStorage.linkedIn) {
-                $('#announcementModal').modal('show');
-                localStorage.linkedIn = "true";
-            }
-        });
+    //#announcementModal.modal(tabindex='-1')
+    //    .modal-dialog.animated.fadeInUp.fast-animation
+    //        .modal-content
+    //            .modal-header.challenge-list-header Add us to your LinkedIn profile
+    //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+    //            .modal-body
+    //                h3.text-left LinkedIn now recognizes Free Code Camp as a university.
+    //                img.img-responsive.img-center(src='https://www.evernote.com/l/AHTzkHwtg-BHj57bqqDL7WFF8WgrI5V8cxwB/image.png')
+    //                h3.text-left It takes less than a minute to add Free Code Camp to your LinkedIn profile.
+    //                a.btn.btn-lg.btn-info.btn-block(name='_csrf', value=_csrf, aria-hidden='true', href='/linkedin', target='_blank') Show me how to do this
+    //                a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up
+    //script.
+    //    $(document).ready(function () {
+    //        if (!localStorage || !localStorage.linkedIn) {
+    //            $('#announcementModal').modal('show');
+    //            localStorage.linkedIn = "true";
+    //        }
+    //    });
