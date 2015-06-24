@@ -11,6 +11,7 @@ module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
   var Story = app.models.Story;
+  var Comment = app.models.Comment;
 
   router.get('/stories/hotStories', hotJSON);
   router.get('/stories/comments/:id', comments);
