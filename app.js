@@ -239,6 +239,9 @@ app.get('/chat', resourcesController.chat);
 
 app.get('/twitch', resourcesController.twitch);
 
+app.get('/coding-bootcamp-cost-calculator', resourcesController.bootcampCalculator);
+app.get('/coding-bootcamp-cost-calculator.json', resourcesController.bootcampCalculatorJson);
+
 app.get('/cats.json', function(req, res) {
   res.send(
     [

@@ -8,8 +8,7 @@ var async = require('async'),
   R = require('ramda'),
   _ = require('lodash'),
   fs = require('fs'),
-
-
+  bootcampJson = require('./bootcamps.json'),
   constantStrings = require('./constantStrings.json'),
   User = require('../models/User'),
   Challenge = require('./../models/Challenge'),
@@ -247,6 +246,8 @@ module.exports = {
     );
   },
 
+
+
   nonprofits: function nonprofits(req, res) {
     res.render('resources/nonprofits', {
       title: 'A guide to our Nonprofit Projects'
@@ -275,6 +276,17 @@ module.exports = {
     res.render('resources/twitch', {
       title: "Enter Free Code Camp's Chat Rooms"
     });
+  },
+
+  bootcampCalculator: function bootcampCalculator(req, res) {
+    res.render('resources/calculator', {
+      title: 'Coding Bootcamp Cost Calculator',
+      bootcampJson: bootcampJson
+    });
+  },
+
+  bootcampCalculatorJson: function bootcampCalculatorJson(req, res) {
+    res.send(bootcampJson);
   },
 
   unsubscribe: function unsubscribe(req, res, next) {
