@@ -8,7 +8,7 @@
       "dashedName": "waypoint-mobile-responsive-images",
       "difficulty": 0.047,
       "description": [
-        "Now let's go back to our Cat Photo App. This time, we'll style it using the popular Twitter Bootstrap responsive CSS framework. First, add a new image with the <code>src</code> attribute of \"http://bit.ly/fcc-kittens2\", and add the \"img-responsive\" Bootstrap class to that image.",
+        "Now let's go back to our Cat Photo App. This time, we'll style it using the popular Bootstrap responsive CSS framework. First, add a new image with the <code>src</code> attribute of \"http://bit.ly/fcc-kittens2\", and add the \"img-responsive\" Bootstrap class to that image.",
         "It would be great if the image could be exactly the width of our phone's screen.",
         "Fortunately, we have access to a Responsive CSS Framework called Bootstrap. You can add Bootstrap to any app just by including it with <code>&#60;link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/&#62;</code> at the top of your HTML. But we've gone ahead and automatically added it to your Cat Photo App for you.",
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
