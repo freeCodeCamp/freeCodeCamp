@@ -234,14 +234,11 @@ module.exports = function(app) {
         return next(err);
       }
       story = story.pop();
-      story.rank++;
-      story.upVotes.push(
-        {
-          upVotedBy: req.user.id,
-          upVotedByUsername: req.user.username
-        }
-      );
-      story.markModified('rank');
+      story.rank += 1;
+      story.upVotes.push({
+        upVotedBy: req.user.id,
+        upVotedByUsername: req.user.username
+      });
       story.save();
       // NOTE(Berks): This logic is full of wholes and race conditions
       // this could be the source of many 'can't set headers after
