@@ -22,14 +22,15 @@
     },
     "rank": {
       "type": "number",
-      "default": "-Infinity"
+      "default": 0
     },
     "upvotes": {
       "type": "array",
       "default": []
     },
     "author": {
-      "type": {}
+      "type": {},
+      "default": {}
     },
     "comments": {
       "type": "array",
