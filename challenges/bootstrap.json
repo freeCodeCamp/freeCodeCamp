@@ -627,7 +627,7 @@
       ],
       "tests": [
         "assert($('div.row:has(button)').length > 0, 'Your buttons should all be wrapped within the same <code>div</code> element with the class \"row\".')",
-        "assert($('div.col-xs-4:has(button)').length > 2, 'Each of your Bootstrap buttons should be wrapped within its own a <code>div</code> element with the class \"col-xs-4\".')",
+        "assert($('div.col-xs-4:has(button)').length > 2, 'Each of your Bootstrap buttons should be wrapped within its own <code>div</code> element with the class \"col-xs-4\".')",
         "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
