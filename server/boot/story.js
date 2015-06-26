@@ -89,12 +89,18 @@ module.exports = function(app) {
   router.get('/stories/submit/new-story', preSubmit);
   router.post('/stories/preliminary', newStory);
   router.post('/stories/', storySubmission);
-  router.get('/stories/', hot);
+  router.get('/news/', hot);
   router.post('/stories/search', getStories);
-  router.get('/stories/:storyName', returnIndividualStory);
+  router.get('/news/:storyName', returnIndividualStory);
   router.post('/stories/upvote/', upvote);
+  router.get('/stories/:storyName', redirectToNews);
 
   app.use(router);
+
+  function redirectToNews(req, res) {
+    var url = req.originalUrl.replace(/^\/stories/, '/news');
+    return res.redirect(url);
+  }
 
   function hotJSON(req, res, next) {
     var query = {
