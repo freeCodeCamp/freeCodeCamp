@@ -96,18 +96,22 @@
     "blessed": "~0.0.37",
     "bower-main-files": "~0.0.4",
     "browser-sync": "~1.8.1",
+    "browserify": "^10.2.4",
     "chai": "~1.10.0",
+    "envify": "^3.4.0",
     "eslint": "^0.21.2",
     "eslint-plugin-react": "^2.3.0",
     "gulp": "~3.8.8",
     "gulp-eslint": "~0.9.0",
     "gulp-inject": "~1.0.2",
     "gulp-nodemon": "^2.0.3",
+    "gulp-notify": "^2.2.0",
     "istanbul": "^0.3.15",
     "loopback-explorer": "^1.7.2",
     "loopback-testing": "^1.1.0",
     "mocha": "~2.0.1",
     "multiline": "~1.0.1",
-    "supertest": "~0.15.0"
+    "supertest": "~0.15.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

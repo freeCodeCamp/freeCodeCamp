@@ -1,18 +1,49 @@
 var gulp = require('gulp'),
+  path = require('path'),
+
+  // utils
+  notify = require('gulp-notify'),
   debug = require('debug')('freecc:gulp'),
   bower = require('bower-main-files'),
+
+  // loopback client
+  browserify = require('browserify'),
+  boot = require('loopback-boot'),
+  envify = require('envify/custom'),
+  toVinylWithName = require('vinyl-source-stream'),
+
+  // server process
   nodemon = require('gulp-nodemon'),
   sync = require('browser-sync'),
-  reload = sync.reload,
+
   inject = require('gulp-inject'),
-  reloadDelay = 1000,
+  // css
   less = require('gulp-less'),
-  path = require('path'),
+
+  // lint
   eslint = require('gulp-eslint');
 
+
+var reloadDelay = 1000;
+var reload = sync.reload;
 var paths = {
   server: './server/server.js',
-  serverIgnore: []
+  serverIgnore: [
+    'gulpfile.js',
+    'public/',
+    'node_modules/'
+  ],
+  publicJs: './public/js',
+
+  loopback: {
+    client: './client/loopbackClient',
+    root: path.join(__dirname, 'client/'),
+    clientName: 'lbApp'
+  },
+
+  syncWatch: [
+    'public/**/*.*'
+  ]
 };
 
 gulp.task('inject', function() {
@@ -21,6 +52,35 @@ gulp.task('inject', function() {
       //ignorePath: '/public'
     }))
     .pipe(gulp.dest('views'));
+});
+
+// NOTE(berks): not using this for now as loopback client is just too large
+gulp.task('loopback', function() {
+  var config = {
+    basedir: __dirname,
+    debug: true,
+    cache: {},
+    packageCache: {},
+    fullPaths: true,
+    standalone: paths.loopback.clientName
+  };
+
+  var b = browserify(config);
+
+  // compile loopback for the client
+  b.require(paths.loopback.client);
+
+  boot.compileToBrowserify(paths.loopback.root, b);
+
+  // sub process.env for proper strings
+  b.transform(envify({
+    NODE_ENV: 'development'
+  }));
+
+  return b.bundle()
+    .on('error', errorNotifier)
+    .pipe(toVinylWithName(paths.loopback.clientName + '.js'))
+    .pipe(gulp.dest(paths.publicJs));
 });
 
 gulp.task('serve', function(cb) {
@@ -57,7 +117,7 @@ gulp.task('sync', ['serve'], function() {
   sync.init(null, {
     proxy: 'http://localhost:3000',
     logLeval: 'debug',
-    files: ['public/js/lib/*/*.{js, jsx}'],
+    files: paths.syncWatch,
     port: 3001,
     open: false,
     reloadDelay: reloadDelay
@@ -85,3 +145,16 @@ gulp.task('watch', ['less', 'serve', 'sync'], function() {
 });
 
 gulp.task('default', ['less', 'serve', 'sync', 'watch']);
+
+function errorNotifier() {
+  var args = Array.prototype.slice.call(arguments);
+
+  // Send error to notification center with gulp-notify
+  notify.onError({
+    title: 'Compile Error',
+    message: '<%= error %>'
+  }).apply(this, args);
+
+  // Keep gulp from hanging on this task
+  this.emit('end');
+}
