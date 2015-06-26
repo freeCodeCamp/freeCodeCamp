@@ -173,9 +173,10 @@ module.exports = function(app) {
           return res.redirect('/stories/');
         }
 
+        var username = req.user ? req.user.username : '';
         // true if any of votes are made by user
         var userVoted = story.upVotes.some(function(upvote) {
-          return upvote.upVotedByUsername === req.user.username;
+          return upvote.upVotedByUsername === username;
         });
 
         res.render('stories/index', {
