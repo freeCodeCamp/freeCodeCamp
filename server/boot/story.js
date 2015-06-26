@@ -168,15 +168,15 @@ module.exports = function(app) {
             msg: "404: We couldn't find a story with that name. " +
             'Please double check the name.'
           });
+          return res.redirect('/news');
+        }
 
-          var dashedNameFull = story.storyLink.toLowerCase()
-            .replace(/\s+/g, ' ')
-            .replace(/\s/g, '-');
+        var dashedNameFull = story.storyLink.toLowerCase()
+          .replace(/\s+/g, ' ')
+          .replace(/\s/g, '-');
 
-          if (dashedNameFull !== dashedName) {
-            return res.redirect('../stories/' + dashedNameFull);
-          }
-          return res.redirect('/stories/');
+        if (dashedNameFull !== dashedName) {
+          return res.redirect('../stories/' + dashedNameFull);
         }
 
         var username = req.user ? req.user.username : '';
