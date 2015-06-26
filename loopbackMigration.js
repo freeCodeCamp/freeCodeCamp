@@ -165,6 +165,7 @@ var commentCount = dbObservable
   .flatMap(function(db) {
     return createQuery(db, 'comments', {});
   })
+  .bufferWithCount(20)
   .withLatestFrom(dbObservable, function(comments, db) {
     return {
       comments: comments,
@@ -174,7 +175,6 @@ var commentCount = dbObservable
   .flatMap(function(dats) {
     return insertMany(dats.db, 'comment', dats.comments, { w: 1 });
   })
-  .bufferWithCount(20)
   .count();
 
 Rx.Observable.combineLatest(
