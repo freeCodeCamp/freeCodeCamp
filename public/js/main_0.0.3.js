@@ -30,7 +30,7 @@ $(document).ready(function() {
       },
       function(res) {
         if (res) {
-          window.open('https://freecodecamp.slack.com/messages/help/', '_blank')
+          window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
         }
       }
     );
@@ -48,7 +48,7 @@ $(document).ready(function() {
       },
       function(res) {
         if (res) {
-          window.open('https://freecodecamp.slack.com/messages/help/', '_blank')
+          window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
         }
       }
     );
@@ -71,7 +71,7 @@ $(document).ready(function() {
       },
       function(res) {
         if (res) {
-          window.open('https://freecodecamp.slack.com/messages/letspair/', '_blank')
+          window.open('https://gitter.im/FreeCodeCamp/LetsPair', '_blank')
         }
       }
     );
@@ -148,10 +148,6 @@ $(document).ready(function() {
 
   $('#trigger-help-modal').on('click', function() {
     $('#help-modal').modal('show');
-  });
-
-  $('#trigger-help-editorless-modal').on('click', function() {
-    $('#help-editorless-modal').modal('show');
   });
 
   $('#trigger-issue-modal').on('click', function() {
@@ -323,14 +319,12 @@ $(document).ready(function() {
       .fail(function (xhr, textStatus, errorThrown) {
         $('#story-submit').bind('click', storySubmitButtonHandler);
       })
-      .done(function (data, textStatus, xhr) {
-        window.location = '/stories/' + JSON.parse(data).storyLink;
+      .done(function(data, textStatus, xhr) {
+        window.location = '/stories/' + data.storyLink;
       });
-
   };
 
   $('#story-submit').on('click', storySubmitButtonHandler);
-
 
   var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
     $('#comment-button').unbind('click');

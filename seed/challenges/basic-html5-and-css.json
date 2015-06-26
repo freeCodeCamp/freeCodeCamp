@@ -1678,7 +1678,7 @@
         "You can create one like this: <code>&#60;input type='text'&#62;</code>. Note that <code>input</code> elements are self-closing."
       ],
       "tests": [
-        "assert($('input').length > 0, 'Your app should have an text field input element.')"
+        "assert($('input').length > 0, 'Your app should have a text field input element.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",

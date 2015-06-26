@@ -1,16 +1,84 @@
-var nodemailer = require('nodemailer'),
+var Rx = require('rx'),
+    nodemailer = require('nodemailer'),
+    assign = require('object.assign'),
     sanitizeHtml = require('sanitize-html'),
     moment = require('moment'),
     mongodb = require('mongodb'),
-    // debug = require('debug')('freecc:cntr:story'),
+    debug = require('debug')('freecc:cntr:story'),
     utils = require('../utils'),
+    observeMethod = require('../utils/rx').observeMethod,
+    saveUser = require('../utils/rx').saveUser,
+    saveInstance = require('../utils/rx').saveInstance,
     MongoClient = mongodb.MongoClient,
     secrets = require('../../config/secrets');
+
+var foundationDate = 1413298800000;
+var time48Hours = 172800000;
+
+var unDasherize = utils.unDasherize;
+var dasherize = utils.dasherize;
+var getURLTitle = utils.getURLTitle;
+
+var transporter = nodemailer.createTransport({
+  service: 'Mandrill',
+  auth: {
+    user: secrets.mandrill.user,
+    pass: secrets.mandrill.password
+  }
+});
+
+function sendMailWhillyNilly(mailOptions) {
+  transporter.sendMail(mailOptions, function(err) {
+    if (err) {
+      console.log('err sending mail whilly nilly', err);
+      console.log('logging err but not carring');
+    }
+  });
+}
+
+function hotRank(timeValue, rank) {
+  /*
+  * Hotness ranking algorithm: http://amix.dk/blog/post/19588
+  * tMS = postedOnDate - foundationTime;
+  * Ranking...
+  * f(ts, 1, rank) = log(10)z + (ts)/45000;
+  */
+  var z = Math.log(rank) / Math.log(10);
+  var hotness = z + (timeValue / time48Hours);
+  return hotness;
+}
+
+function sortByRank(a, b) {
+  return hotRank(b.timePosted - foundationDate, b.rank) -
+    hotRank(a.timePosted - foundationDate, a.rank);
+}
+
+function cleanData(data, opts) {
+  var options = assign(
+    {},
+    {
+      allowedTags: [],
+      allowedAttributes: []
+    },
+    opts || {}
+  );
+  return sanitizeHtml(data, options).replace(/&quot;;/g, '"');
+}
 
 module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
+  var findUserById = observeMethod(User, 'findById');
+  var findOneUser = observeMethod(User, 'findOne');
+
   var Story = app.models.Story;
+  var findStory = observeMethod(Story, 'find');
+  var findOneStory = observeMethod(Story, 'findOne');
+  var findStoryById = observeMethod(Story, 'findById');
+  var countStories = observeMethod(Story, 'count');
+
+  var Comment = app.models.Comment;
+  var findCommentById = observeMethod(Comment, 'findById');
 
   router.get('/stories/hotStories', hotJSON);
   router.get('/stories/comments/:id', comments);
@@ -21,43 +89,32 @@ module.exports = function(app) {
   router.get('/stories/submit/new-story', preSubmit);
   router.post('/stories/preliminary', newStory);
   router.post('/stories/', storySubmission);
-  router.get('/stories/', hot);
+  router.get('/news/', hot);
   router.post('/stories/search', getStories);
-  router.get('/stories/:storyName', returnIndividualStory);
+  router.get('/news/:storyName', returnIndividualStory);
   router.post('/stories/upvote/', upvote);
+  router.get('/stories/:storyName', redirectToNews);
 
   app.use(router);
 
-  function hotRank(timeValue, rank) {
-    /*
-    * Hotness ranking algorithm: http://amix.dk/blog/post/19588
-    * tMS = postedOnDate - foundationTime;
-    * Ranking...
-    * f(ts, 1, rank) = log(10)z + (ts)/45000;
-    */
-    var time48Hours = 172800000;
-    var hotness;
-    var z = Math.log(rank) / Math.log(10);
-    hotness = z + (timeValue / time48Hours);
-    return hotness;
+  function redirectToNews(req, res) {
+    var url = req.originalUrl.replace(/^\/stories/, '/news');
+    return res.redirect(url);
   }
 
   function hotJSON(req, res, next) {
-    Story.find({order: 'timePosted DESC', limit: 1000}, function(err, stories) {
-      if (err) {
-        return next(err);
-      }
-      var foundationDate = 1413298800000;
-
-      var sliceVal = stories.length >= 100 ? 100 : stories.length;
-      return res.json(stories.map(function(elem) {
-        return elem;
-      }).sort(function(a, b) {
-        return hotRank(b.timePosted - foundationDate, b.rank, b.headline)
-          - hotRank(a.timePosted - foundationDate, a.rank, a.headline);
-      }).slice(0, sliceVal));
-
-    });
+    var query = {
+      order: 'timePosted DESC',
+      limit: 1000
+    };
+    findStory(query).subscribe(
+      function(stories) {
+        var sliceVal = stories.length >= 100 ? 100 : stories.length;
+        var data = stories.sort(sortByRank).slice(0, sliceVal);
+        res.json(data);
+      },
+      next
+    );
   }
 
   function hot(req, res) {
@@ -74,32 +131,11 @@ module.exports = function(app) {
     });
   }
 
-  /*
-  * no used anywhere
-  function search(req, res) {
-    return res.render('stories/index', {
-      title: 'Search the archives of Camper News',
-      page: 'search'
-    });
-  }
-
-  function recent(req, res) {
-    return res.render('stories/index', {
-      title: 'Recently submitted stories on Camper News',
-      page: 'recent'
-    });
-  }
-  */
-
   function preSubmit(req, res) {
-
     var data = req.query;
-    var cleanData = sanitizeHtml(data.url, {
-      allowedTags: [],
-      allowedAttributes: []
-    }).replace(/&quot;;/g, '"');
-    if (data.url.replace(/&/g, '&amp;') !== cleanData) {
+    var cleanedData = cleanData(data.url);
 
+    if (data.url.replace(/&/g, '&amp;') !== cleanedData) {
       req.flash('errors', {
         msg: 'The data for this post is malformed'
       });
@@ -121,64 +157,54 @@ module.exports = function(app) {
     });
   }
 
-
   function returnIndividualStory(req, res, next) {
     var dashedName = req.params.storyName;
+    var storyName = unDasherize(dashedName);
 
-    var storyName = dashedName.replace(/\-/g, ' ').trim();
-
-    Story.find({where: {'storyLink': storyName}}, function(err, story) {
-      if (err) {
-        return next(err);
-      }
-
-
-      if (story.length < 1) {
-        req.flash('errors', {
-          msg: "404: We couldn't find a story with that name. " +
-          'Please double check the name.'
-        });
-
-        return res.redirect('/stories/');
-      }
-
-      story = story.pop();
-      var dashedNameFull = story.storyLink.toLowerCase()
-        .replace(/\s+/g, ' ')
-        .replace(/\s/g, '-');
-      if (dashedNameFull !== dashedName) {
-        return res.redirect('../stories/' + dashedNameFull);
-      }
-
-      var userVoted = false;
-      try {
-        var votedObj = story.upVotes.filter(function(a) {
-          return a['upVotedByUsername'] === req.user['profile']['username'];
-        });
-        if (votedObj.length > 0) {
-          userVoted = true;
+    findOneStory({ where: { storyLink: storyName } }).subscribe(
+      function(story) {
+        if (!story) {
+          req.flash('errors', {
+            msg: "404: We couldn't find a story with that name. " +
+            'Please double check the name.'
+          });
+          return res.redirect('/news');
         }
-      } catch(e) {
-        userVoted = false;
-      }
-      res.render('stories/index', {
-        title: story.headline,
-        link: story.link,
-        originalStoryLink: dashedName,
-        originalStoryAuthorEmail: story.author.email || '',
-        author: story.author,
-        description: story.description,
-        rank: story.upVotes.length,
-        upVotes: story.upVotes,
-        comments: story.comments,
-        id: story.id,
-        timeAgo: moment(story.timePosted).fromNow(),
-        image: story.image,
-        page: 'show',
-        storyMetaDescription: story.metaDescription,
-        hasUserVoted: userVoted
-      });
-    });
+
+        var dashedNameFull = story.storyLink.toLowerCase()
+          .replace(/\s+/g, ' ')
+          .replace(/\s/g, '-');
+
+        if (dashedNameFull !== dashedName) {
+          return res.redirect('../stories/' + dashedNameFull);
+        }
+
+        var username = req.user ? req.user.username : '';
+        // true if any of votes are made by user
+        var userVoted = story.upVotes.some(function(upvote) {
+          return upvote.upVotedByUsername === username;
+        });
+
+        res.render('stories/index', {
+          title: story.headline,
+          link: story.link,
+          originalStoryLink: dashedName,
+          originalStoryAuthorEmail: story.author.email || '',
+          author: story.author,
+          description: story.description,
+          rank: story.upVotes.length,
+          upVotes: story.upVotes,
+          comments: story.comments,
+          id: story.id,
+          timeAgo: moment(story.timePosted).fromNow(),
+          image: story.image,
+          page: 'show',
+          storyMetaDescription: story.metaDescription,
+          hasUserVoted: userVoted
+        });
+      },
+      next
+    );
   }
 
   function getStories(req, res, next) {
@@ -224,57 +250,52 @@ module.exports = function(app) {
   }
 
   function upvote(req, res, next) {
-    var data = req.body.data;
-    Story.find({'id': data.id}, function(err, story) {
-      if (err) {
-        return next(err);
-      }
-      story = story.pop();
-      story.rank++;
-      story.upVotes.push(
-        {
+    var id = req.body.data.id;
+    var story$ = findStoryById(id).shareReplay();
+
+    story$.flatMap(function(story) {
+        // find story author
+        return findUserById(story.author.userId);
+      })
+      .flatMap(function(user) {
+        // if user deletes account then this will not exist
+        if (user) {
+          user.progressTimestamps.push(Date.now());
+        }
+        return saveUser(user);
+      })
+      .flatMap(function() {
+        req.user.progressTimestamps.push(Date.now());
+        return saveUser(req.user);
+      })
+      .flatMap(function() {
+        return story$;
+      })
+      .flatMap(function(story) {
+        debug('upvoting');
+        story.rank += 1;
+        story.upVotes.push({
           upVotedBy: req.user.id,
           upVotedByUsername: req.user.username
-        }
+        });
+        return saveInstance(story);
+      })
+      .subscribe(
+        function(story) {
+          return res.send(story);
+        },
+        next
       );
-      story.markModified('rank');
-      story.save();
-      // NOTE(Berks): This logic is full of wholes and race conditions
-      // this could be the source of many 'can't set headers after
-      // they are sent'
-      // errors. This needs cleaning
-      User.findOne(
-        { where: { id: story.author.userId } },
-        function(err, user) {
-          if (err) { return next(err); }
-
-          user.progressTimestamps.push(Date.now() || 0);
-          user.save(function (err) {
-            req.user.save(function (err) {
-              if (err) { return next(err); }
-            });
-            req.user.progressTimestamps.push(Date.now() || 0);
-            if (err) {
-              return next(err);
-            }
-          });
-        }
-      );
-      return res.send(story);
-    });
   }
 
   function comments(req, res, next) {
-    var data = req.params.id;
-    Comment.find(
-      { where: {'id': data } },
-      function(err, comment) {
-        if (err) {
-          return next(err);
-        }
-        comment = comment.pop();
-        return res.send(comment);
-      });
+    var id = req.params.id;
+    findCommentById(id).subscribe(
+      function(comment) {
+        res.send(comment);
+      },
+      next
+    );
   }
 
   function newStory(req, res, next) {
@@ -282,10 +303,8 @@ module.exports = function(app) {
       return next(new Error('Must be logged in'));
     }
     var url = req.body.data.url;
-    var cleanURL = sanitizeHtml(url, {
-      allowedTags: [],
-      allowedAttributes: []
-    }).replace(/&quot;/g, '"');
+    var cleanURL = cleanData(url);
+
     if (cleanURL !== url) {
       req.flash('errors', {
         msg: "The URL you submitted doesn't appear valid"
@@ -299,44 +318,46 @@ module.exports = function(app) {
     if (url.search(/^https?:\/\//g) === -1) {
       url = 'http://' + url;
     }
-    Story.find(
-      { where: {'link': url} },
-      function(err, story) {
-        if (err) {
-          return next(err);
-        }
-        if (story.length) {
-          req.flash('errors', {
-            msg: "Someone's already posted that link. Here's the discussion."
-          });
-          return res.json({
-            alreadyPosted: true,
-            storyURL: '/stories/' + story.pop().storyLink
-          });
-        }
-        utils.getURLTitle(url, processResponse);
-      }
-    );
 
-    function processResponse(err, story) {
-      if (err) {
-        res.json({
+    findStory({ where: { link: url } })
+      .map(function(stories) {
+        if (stories.length) {
+          return {
+            alreadyPosted: true,
+            storyURL: '/stories/' + stories.pop().storyLink
+          };
+        }
+        return {
           alreadyPosted: false,
-          storyURL: url,
-          storyTitle: '',
-          storyImage: '',
-          storyMetaDescription: ''
-        });
-      } else {
-        res.json({
-          alreadyPosted: false,
-          storyURL: url,
-          storyTitle: story.title,
-          storyImage: story.image,
-          storyMetaDescription: story.description
-        });
-      }
-    }
+          storyURL: url
+        };
+      })
+      .flatMap(function(data) {
+        if (data.alreadyPosted) {
+          return Rx.Observable.just(data);
+        }
+        return Rx.Observable.fromNodeCallback(getURLTitle)(data.storyURL)
+          .map(function(story) {
+            return {
+              alreadyPosted: false,
+              storyURL: data.storyURL,
+              storyTitle: story.title,
+              storyImage: story.image,
+              storyMetaDescription: story.description
+            };
+          });
+      })
+      .subscribe(
+        function(story) {
+          if (story.alreadyPosted) {
+            req.flash('errors', {
+              msg: "Someone's already posted that link. Here's the discussion."
+            });
+          }
+          res.json(story);
+        },
+        next
+      );
   }
 
   function storySubmission(req, res, next) {
@@ -356,63 +377,60 @@ module.exports = function(app) {
       link = 'http://' + link;
     }
 
-    Story.count({
-      storyLink: { like: new RegExp('^' + storyLink + '(?: [0-9]+)?$', 'i') }
-    }, function (err, storyCount) {
-      if (err) {
-        return next(err);
+    var query = {
+      storyLink: {
+        like: ('^' + storyLink + '(?: [0-9]+)?$'),
+        options: 'i'
       }
+    };
 
-      // if duplicate storyLink add unique number
-      storyLink = (storyCount === 0) ? storyLink : storyLink + ' ' + storyCount;
+    var savedStory = countStories(query)
+      .flatMap(function(storyCount) {
+        // if duplicate storyLink add unique number
+        storyLink = (storyCount === 0) ?
+          storyLink :
+          storyLink + ' ' + storyCount;
 
-      var link = data.link;
-      if (link.search(/^https?:\/\//g) === -1) {
-        link = 'http://' + link;
-      }
-      var story = new Story({
-        headline: sanitizeHtml(data.headline, {
-          allowedTags: [],
-          allowedAttributes: []
-        }).replace(/&quot;/g, '"'),
-        timePosted: Date.now(),
-        link: link,
-        description: sanitizeHtml(data.description, {
-          allowedTags: [],
-          allowedAttributes: []
-        }).replace(/&quot;/g, '"'),
-        rank: 1,
-        upVotes: [({
-          upVotedBy: req.user.id,
-          upVotedByUsername: req.user.username
-        })],
-        author: {
-          picture: req.user.picture,
-          userId: req.user.id,
-          username: req.user.username,
-          email: req.user.email
-        },
-        comments: [],
-        image: data.image,
-        storyLink: storyLink,
-        metaDescription: data.storyMetaDescription,
-        originalStoryAuthorEmail: req.user.email
-      });
-      story.save(function (err) {
-        if (err) {
-          return next(err);
+        var link = data.link;
+        if (link.search(/^https?:\/\//g) === -1) {
+          link = 'http://' + link;
         }
-        req.user.progressTimestamps.push(Date.now() || 0);
-        req.user.save(function (err) {
-          if (err) {
-            return next(err);
-          }
-          res.send(JSON.stringify({
-            storyLink: story.storyLink.replace(/\s+/g, '-').toLowerCase()
-          }));
+        var newStory = new Story({
+          headline: cleanData(data.headline),
+          timePosted: Date.now(),
+          link: link,
+          description: cleanData(data.description),
+          rank: 1,
+          upVotes: [({
+            upVotedBy: req.user.id,
+            upVotedByUsername: req.user.username
+          })],
+          author: {
+            picture: req.user.picture,
+            userId: req.user.id,
+            username: req.user.username,
+            email: req.user.email
+          },
+          comments: [],
+          image: data.image,
+          storyLink: storyLink,
+          metaDescription: data.storyMetaDescription,
+          originalStoryAuthorEmail: req.user.email
         });
+        return saveInstance(newStory);
       });
-    });
+
+    req.user.progressTimestamps.push(Date.now());
+    return saveUser(req.user)
+      .flatMap(savedStory)
+      .subscribe(
+        function(story) {
+          res.json({
+            storyLink: dasherize(story.storyLink)
+          });
+        },
+        next
+      );
   }
 
   function commentSubmit(req, res, next) {
@@ -420,11 +438,8 @@ module.exports = function(app) {
     if (!req.user) {
       return next(new Error('Not authorized'));
     }
-    var sanitizedBody = sanitizeHtml(data.body,
-      {
-        allowedTags: [],
-        allowedAttributes: []
-      }).replace(/&quot;/g, '"');
+    var sanitizedBody = cleanData(data.body);
+
     if (data.body !== sanitizedBody) {
       req.flash('errors', {
         msg: 'HTML is not allowed'
@@ -449,7 +464,13 @@ module.exports = function(app) {
       commentOn: Date.now()
     });
 
-    commentSave(comment, Story, res, next);
+    commentSave(comment, findStoryById).subscribe(
+      function() {},
+      next,
+      function() {
+        res.send(true);
+      }
+    );
   }
 
   function commentOnCommentSubmit(req, res, next) {
@@ -458,13 +479,7 @@ module.exports = function(app) {
       return next(new Error('Not authorized'));
     }
 
-    var sanitizedBody = sanitizeHtml(
-      data.body,
-      {
-        allowedTags: [],
-        allowedAttributes: []
-      }
-    ).replace(/&quot;/g, '"');
+    var sanitizedBody = cleanData(data.body);
 
     if (data.body !== sanitizedBody) {
       req.flash('errors', {
@@ -490,119 +505,101 @@ module.exports = function(app) {
       topLevel: false,
       commentOn: Date.now()
     });
-    commentSave(comment, Comment, res, next);
+    commentSave(comment, findCommentById).subscribe(
+      function() {},
+      next,
+      function() {
+        res.send(true);
+      }
+    );
   }
 
   function commentEdit(req, res, next) {
-
-    Comment.find({ id: req.params.id }, function(err, cmt) {
-      if (err) {
-        return next(err);
-      }
-      cmt = cmt.pop();
-
-      if (!req.user && cmt.author.userId !== req.user.id) {
-        return next(new Error('Not authorized'));
-      }
-
-      var sanitizedBody = sanitizeHtml(req.body.body, {
-        allowedTags: [],
-        allowedAttributes: []
-      }).replace(/&quot;/g, '"');
-      if (req.body.body !== sanitizedBody) {
-        req.flash('errors', {
-          msg: 'HTML is not allowed'
-        });
-        return res.send(true);
-      }
-
-      cmt.body = sanitizedBody;
-      cmt.commentOn = Date.now();
-      cmt.save(function(err) {
-        if (err) {
-          return next(err);
+    findCommentById(req.params.id)
+      .doOnNext(function(comment) {
+        if (!req.user && comment.author.userId !== req.user.id) {
+          throw new Error('Not authorized');
         }
-        res.send(true);
-      });
-
-    });
-
+      })
+      .flatMap(function(comment) {
+        var sanitizedBody = cleanData(req.body.body);
+        if (req.body.body !== sanitizedBody) {
+          req.flash('errors', {
+            msg: 'HTML is not allowed'
+          });
+        }
+        comment.body = sanitizedBody;
+        comment.commentOn = Date.now();
+        return saveInstance(comment);
+      })
+      .subscribe(
+        function() {
+          res.send(true);
+        },
+        next
+      );
   }
 
-  function commentSave(comment, Context, res, next) {
-    comment.save(function(err, data) {
-      if (err) {
-        return next(err);
-      }
-      try {
+  function commentSave(comment, findContextById) {
+    return saveInstance(comment)
+      .flatMap(function(comment) {
         // Based on the context retrieve the parent
         // object of the comment (Story/Comment)
-        Context.find({
-          id: data.associatedPost
-        }, function (err, associatedContext) {
-          if (err) {
-            return next(err);
-          }
-          associatedContext = associatedContext.pop();
-          if (associatedContext) {
-            associatedContext.comments.push(data.id);
-            associatedContext.save(function (err) {
-              if (err) {
-                return next(err);
-              }
-              res.send(true);
-            });
-          }
-          // Find the author of the parent object
-          User.findOne({
-            'profile.username': associatedContext.author.username
-          }, function(err, recipient) {
-            if (err) {
-              return next(err);
-            }
-            // If the emails of both authors differ,
-            // only then proceed with email notification
-            if (
-              typeof data.author !== 'undefined' &&
-              data.author.email &&
-              typeof recipient !== 'undefined' &&
-              recipient.email &&
-              (data.author.email !== recipient.email)
-            ) {
-              var transporter = nodemailer.createTransport({
-                service: 'Mandrill',
-                auth: {
-                  user: secrets.mandrill.user,
-                  pass: secrets.mandrill.password
-                }
-              });
+        return findContextById(comment.associatedPost);
+      })
+      .flatMap(function(associatedContext) {
+        if (associatedContext) {
+          associatedContext.comments.push(comment.id);
+        }
+        // NOTE(berks): saveInstance is safe
+        // it will automatically call onNext with null and onCompleted if
+        // argument is falsey or has no method save
+        return saveInstance(associatedContext);
+      })
+      .flatMap(function(associatedContext) {
+        // Find the author of the parent object
+        // if no username
+        var username = associatedContext && associatedContext.author ?
+          associatedContext.author.username :
+          null;
 
-              var mailOptions = {
-                to: recipient.email,
-                from: 'Team@freecodecamp.com',
-                subject: data.author.username +
-                ' replied to your post on Camper News',
-                text: [
-                  'Just a quick heads-up: ',
-                  data.author.username + ' replied to you on Camper News.',
-                  'You can keep this conversation going.',
-                  'Just head back to the discussion here: ',
-                  'http://freecodecamp.com/stories/' + data.originalStoryLink,
-                  '- the Free Code Camp Volunteer Team'
-                ].join('\n')
-              };
-
-              transporter.sendMail(mailOptions, function (err) {
-                if (err) {
-                  return err;
-                }
-              });
-            }
+        var query = { where: { username: username } };
+        return findOneUser(query);
+      })
+      // if no user is found we don't want to hit the doOnNext
+      // filter here will call onCompleted without running through the following
+      // steps
+      .filter(function(user) {
+        return !!user;
+      })
+      // if this is called user is guarenteed to exits
+      // this is a side effect, hence we use do/tap observable methods
+      .doOnNext(function(user) {
+        // If the emails of both authors differ,
+        // only then proceed with email notification
+        if (
+          comment.author &&
+          comment.author.email &&
+          user.email &&
+          (comment.author.email !== user.email)
+        ) {
+          sendMailWhillyNilly({
+            to: user.email,
+            from: 'Team@freecodecamp.com',
+            subject: comment.author.username +
+            ' replied to your post on Camper News',
+            text: [
+              'Just a quick heads-up: ',
+              comment.author.username,
+              ' replied to you on Camper News.',
+              'You can keep this conversation going.',
+              'Just head back to the discussion here: ',
+              'http://freecodecamp.com/stories/',
+              comment.originalStoryLink,
+              '- the Free Code Camp Volunteer Team'
+            ].join('\n')
           });
-        });
-      } catch (e) {
-        return next(err);
-      }
-    });
+        }
+      });
   }
 };

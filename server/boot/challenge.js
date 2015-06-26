@@ -41,25 +41,18 @@ var R = require('ramda'),
   observableQueryFromModel = require('../utils/rx').observableQueryFromModel,
 
   userMigration = require('../utils/middleware').userMigration,
-  ifNoUserRedirectTo = require('../utils/middleware').ifNoUserRedirectTo;
+  ifNoUserRedirectTo = require('../utils/middleware').ifNoUserRedirectTo,
+  ifNoUserSend = require('../utils/middleware').ifNoUserSend;
 
 var challengeMapWithNames = utils.getChallengeMapWithNames();
 var challengeMapWithIds = utils.getChallengeMapWithIds();
 var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
+var challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+
+var dasherize = utils.dasherize;
+var unDasherize = utils.unDasherize;
 
 var getMDNLinks = utils.getMDNLinks;
-
-var challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
-function dasherize(name) {
-  return ('' + name)
-    .toLowerCase()
-    .replace(/\s/g, '-')
-    .replace(/[^a-z0-9\-\.]/gi, '');
-}
-
-function unDasherize(name) {
-  return ('' + name).replace(/\-/g, ' ');
-}
 
 function updateUserProgress(user, challengeId, completedChallenge) {
   var index = user.uncompletedChallenges.indexOf(challengeId);
@@ -75,17 +68,32 @@ module.exports = function(app) {
   var router = app.loopback.Router();
   var Challenge = app.models.Challenge;
   var User = app.models.User;
+  var redirectNonUser =
+    ifNoUserRedirectTo('/challenges/learn-how-free-code-camp-works');
+  var send200toNonUser = ifNoUserSend(true);
 
-  router.post('/completed-challenge/', completedChallenge);
-  router.post('/completed-zipline-or-basejump', completedZiplineOrBasejump);
-  router.post('/completed-bonfire', completedBonfire);
+  router.post(
+    '/completed-challenge/',
+    send200toNonUser,
+    completedChallenge
+  );
+  router.post(
+    '/completed-zipline-or-basejump',
+    send200toNonUser,
+    completedZiplineOrBasejump
+  );
+  router.post(
+    '/completed-bonfire',
+    send200toNonUser,
+    completedBonfire
+  );
 
   // the follow routes are covered by userMigration
   router.use(userMigration);
   router.get('/map', challengeMap);
   router.get(
     '/challenges/next-challenge',
-    ifNoUserRedirectTo('/challenges/learn-how-free-code-camp-works'),
+    redirectNonUser,
     returnNextChallenge
   );
 
@@ -93,7 +101,7 @@ module.exports = function(app) {
 
   router.get(
     '/challenges/',
-    ifNoUserRedirectTo('/challenges/learn-how-free-code-camp-works'),
+    redirectNonUser,
     returnCurrentChallenge
   );
 
@@ -308,7 +316,6 @@ module.exports = function(app) {
       .withLatestFrom(
         Rx.Observable.just(req.user),
         function(pairedWith, user) {
-          debug('yo');
           return {
             user: user,
             pairedWith: pairedWith

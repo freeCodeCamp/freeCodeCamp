@@ -22,14 +22,15 @@
     },
     "rank": {
       "type": "number",
-      "default": "-Infinity"
+      "default": 0
     },
     "upvotes": {
       "type": "array",
       "default": []
     },
     "author": {
-      "type": {}
+      "type": {},
+      "default": {}
     },
     "comments": {
       "type": "array",
@@ -48,6 +49,12 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
     },
     {
       "accessType": "EXECUTE",

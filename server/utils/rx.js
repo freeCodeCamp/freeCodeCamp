@@ -1,25 +1,32 @@
 var Rx = require('rx');
 var debug = require('debug')('freecc:rxUtils');
 
-exports.saveUser = function saveUser(user) {
+exports.saveInstance = function saveInstance(instance) {
   return new Rx.Observable.create(function(observer) {
-    if (!user || typeof user.save !== 'function') {
-      debug('no user or save method');
+    if (!instance || typeof instance.save !== 'function') {
+      debug('no instance or save method');
       observer.onNext();
       return observer.onCompleted();
     }
-    user.save(function(err, savedUser) {
+    instance.save(function(err, savedInstance) {
       if (err) {
         return observer.onError(err);
       }
-      debug('user saved');
-      observer.onNext(savedUser);
+      debug('instance saved');
+      observer.onNext(savedInstance);
       observer.onCompleted();
     });
   });
 };
 
+// alias saveInstance
+exports.saveUser = exports.saveInstance;
+
 exports.observableQueryFromModel =
   function observableQueryFromModel(Model, method, query) {
     return Rx.Observable.fromNodeCallback(Model[method], Model)(query);
   };
+
+exports.observeMethod = function observeMethod(Model, method) {
+  return Rx.Observable.fromNodeCallback(Model[method], Model);
+};

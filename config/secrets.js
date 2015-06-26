@@ -13,10 +13,6 @@ module.exports = {
     key: process.env.BLOGGER_KEY
   },
 
-  slack: {
-    key: process.env.SLACK_KEY
-  },
-
   mandrill: {
     user: process.env.MANDRILL_USER,
     password: process.env.MANDRILL_PASSWORD

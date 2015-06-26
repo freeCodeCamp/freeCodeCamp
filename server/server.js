@@ -1,7 +1,6 @@
 require('dotenv').load();
 var pmx = require('pmx');
 pmx.init();
-// handle uncaught exceptions. Forever will restart process on shutdown
 
 var R = require('ramda'),
   assign = require('lodash').assign,
@@ -188,6 +187,8 @@ app.use(
   })
 );
 
+// track when connecting to db starts
+var startTime = Date.now();
 boot(app, {
   appRootDir: __dirname,
   dev: process.env.NODE_ENV
@@ -254,10 +255,7 @@ R.keys(passportProviders).map(function(strategy) {
  * 500 Error Handler.
  */
 
-// if (process.env.NODE_ENV === 'development') {
-if (true) { // eslint-disable-line
-  // NOTE(berks): adding pmx here for Beta test. Remove for production
-  app.use(pmx.expressErrorHandler());
+if (process.env.NODE_ENV === 'development') {
   app.use(errorHandler({
     log: true
   }));
@@ -301,20 +299,46 @@ if (true) { // eslint-disable-line
   });
 }
 
-/**
- * Start Express server.
- */
+module.exports = app;
 
-
-app.listen(app.get('port'), function() {
-  console.log(
-    'FreeCodeCamp server listening on port %d in %s mode',
-    app.get('port'),
-    app.get('env')
-  );
-});
+app.start = function () {
+  app.listen(app.get('port'), function() {
+    console.log(
+      'FreeCodeCamp server listening on port %d in %s mode',
+      app.get('port'),
+      app.get('env')
+    );
+  });
+};
 
 // start the server if `$ node server.js`
+if (require.main === module) {
+  if (process.env.NODE_ENV === 'production') {
+    var timeoutHandler;
+    console.log('waiting for db to connect');
 
+    var onConnect = function() {
+      console.log('db connected in %s ms', Date.now() - startTime);
+      if (timeoutHandler) {
+        clearTimeout(timeoutHandler);
+      }
+      app.start();
+    };
 
-module.exports = app;
+    var timeoutHandler = setTimeout(function() {
+      var message =
+        'db did not after  ' +
+        (Date.now() - startTime) +
+        ' ms connect crashing hard';
+
+      console.log(message);
+      // purposely shutdown server
+      // pm2 should restart this in production
+      throw new Error(message);
+    }, 5000);
+
+    app.dataSources.db.on('connected', onConnect);
+  } else {
+    app.start();
+  }
+}
