@@ -271,7 +271,7 @@
       "_id": "bd7126d8c431eddfaeb5bd3e",
       "name": "Waypoint: Add Free Code Camp to your LinkedIn Profile",
       "difficulty": 0.008,
-      "challengeSeed": "131574134",
+      "challengeSeed": ["131574134"],
       "description": [
         "LinkedIn is a critical tool for your job search later on.",
         "Add Free Code Camp to your LinkedIn profile by going to <a href='https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp' target='_blank'>https://www.linkedin.com/profile/edit-education?school=Free+Code+Camp</a>.",
