@@ -255,10 +255,7 @@ R.keys(passportProviders).map(function(strategy) {
  * 500 Error Handler.
  */
 
-// if (process.env.NODE_ENV === 'development') {
-if (true) { // eslint-disable-line
-  // NOTE(berks): adding pmx here for Beta test. Remove for production
-  app.use(pmx.expressErrorHandler());
+if (process.env.NODE_ENV === 'development') {
   app.use(errorHandler({
     log: true
   }));
