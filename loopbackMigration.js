@@ -7,6 +7,7 @@ var Rx = require('rx'),
   secrets = require('../config/secrets');
 
 var MongoClient = mongodb.MongoClient;
+Rx.config.longStackSupport = true;
 
 var providers = [
   'facebook',
@@ -160,28 +161,45 @@ var storyCount = dbObservable
   })
   .count();
 
+var commentCount = dbObservable
+  .flatMap(function(db) {
+    return createQuery(db, 'comments', {});
+  })
+  .bufferWithCount(20)
+  .withLatestFrom(dbObservable, function(comments, db) {
+    return {
+      comments: comments,
+      db: db
+    };
+  })
+  .flatMap(function(dats) {
+    return insertMany(dats.db, 'comment', dats.comments, { w: 1 });
+  })
+  .count();
+
 Rx.Observable.combineLatest(
   userIdentityCount,
   userSavesCount,
   storyCount,
-  function(userIdentCount, userCount, storyCount) {
+  commentCount,
+  function(userIdentCount, userCount, storyCount, commentCount) {
     return {
       userIdentCount: userIdentCount * 20,
       userCount: userCount * 20,
-      storyCount: storyCount * 20
+      storyCount: storyCount * 20,
+      commentCount: commentCount * 20
     };
   })
   .subscribe(
-  function(countObj) {
-    console.log('next');
-    count = countObj;
-  },
-  function(err) {
-    console.error('an error occured', err, err.stack);
-  },
-  function() {
-
-    console.log('finished with ', count);
-    process.exit(0);
-  }
-);
+    function(countObj) {
+      console.log('next');
+      count = countObj;
+    },
+    function(err) {
+      console.error('an error occured', err, err.stack);
+    },
+    function() {
+      console.log('finished with ', count);
+      process.exit(0);
+    }
+  );
