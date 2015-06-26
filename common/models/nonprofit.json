@@ -8,19 +8,10 @@
       "type": "string",
       "unique": true
     },
-    "requestedDeliverables": {
-      "type": "array"
-    },
     "whatDoesNonprofitDo": {
       "type": "string"
     },
     "websiteLink": {
-      "type": "string"
-    },
-    "stakeholderName": {
-      "type": "string"
-    },
-    "stakeholderEmail": {
       "type": "string"
     },
     "endUser": {
@@ -41,11 +32,8 @@
     "estimatedHours": {
       "type": "number"
     },
-    "interestedCampers": {
-      "type": []
-    },
-    "confirmedCampers": {
-      "type": []
+    "moneySaved": {
+      "type": "number"
     },
     "currentStatus": {
       "type": "string"

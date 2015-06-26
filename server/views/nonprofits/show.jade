@@ -43,6 +43,9 @@ block content
                                     if (approvedOther)
                                         .ion-settings &nbsp; Other tools
                             h3 Project Status: #{currentStatus}
+                            if (moneySaved > 0)
+                                h3.text-primary Estimated Cost Savings for Nonprofit: $#{moneySaved.toString().replace(/000$/, ',000')}
+
                             if (interestedCampers && interestedCampers.length > 0)
                                 h3 Interested campers:
                                 .col-xs-12.text-left

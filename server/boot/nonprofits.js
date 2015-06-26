@@ -15,11 +15,22 @@ module.exports = function(app) {
   app.use(router);
 
   function nonprofitsDirectory(req, res, next) {
-    findNonprofits({ where: { estimatedHours: { gt: 0 } } }).subscribe(
+    var sum = 0;
+    findNonprofits({}).subscribe(
       function(nonprofits) {
+        nonprofits = nonprofits.sort(function(a, b) {
+            return b.moneySaved - a.moneySaved;
+        });
+        totalSavings = function() {
+          for(i = 0; i < nonprofits.length; i++) {
+            sum += nonprofits[i].moneySaved;
+          }
+          return sum;
+        }();
         res.render('nonprofits/directory', {
           title: 'Nonprofits we help',
-          nonprofits: nonprofits
+          nonprofits: nonprofits,
+          totalSavings: totalSavings.toString().replace(/000$/, ',000')
         });
       },
       next
@@ -67,6 +78,8 @@ module.exports = function(app) {
           }
         }
 
+
+
         res.render('nonprofits/show', {
           dashedName: dashedNameFull,
           title: nonprofit.name,
@@ -100,6 +113,7 @@ module.exports = function(app) {
           interestedCampers: nonprofit.interestedCampers,
           assignedCampers: nonprofit.assignedCampers,
           buttonActive: buttonActive,
+          moneySaved: nonprofit.moneySaved,
           currentStatus: nonprofit.currentStatus
         });
       },

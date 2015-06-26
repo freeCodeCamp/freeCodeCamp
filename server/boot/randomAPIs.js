@@ -30,7 +30,6 @@ module.exports = function(app) {
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
   router.get('/our-sponsors', sponsors);
-  router.get('/become-a-sponsor', becomeASponsor);
   router.get('/jobs-form', jobsForm);
   router.get('/submit-cat-photo', catPhotoSubmit);
   router.get('/unsubscribe/:email', unsubscribe);
@@ -241,12 +240,6 @@ module.exports = function(app) {
 
   function sponsors(req, res) {
     res.render('sponsors/sponsors', {
-      title: 'The Sponsors who make Free Code Camp Possible'
-    });
-  }
-
-  function becomeASponsor(req, res) {
-    res.render('sponsors/become-a-sponsor', {
       title: 'The Sponsors who make Free Code Camp Possible'
     });
   }
