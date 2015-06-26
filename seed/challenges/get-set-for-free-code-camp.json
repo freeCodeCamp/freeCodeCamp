@@ -237,7 +237,7 @@
       "challengeSeed": ["127358841"],
       "description": [
         "One of the best ways to stay motivated when learning to code is to hang out with other campers.",
-        "Our chat room and Camper News are great ways to communicate with other campers, but there's no substitute for meeting people in-person.",
+        "Gitter and Camper News are great ways to communicate with other campers, but there's no substitute for meeting people in-person.",
         "The easiest way to meet other campers in your city is to join your city's Facebook Group. Click <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city' target='_blank'>here</a> to view our growing list of local groups.",
         "Click the link to your city, then, once Facebook loads, click \"Join group\".",
         "Our local groups are new, so if you don't see your city on this list, you should follow the directions to create a Facebook group for your city.",
@@ -256,7 +256,7 @@
       "nameEs": "Waypoint: Encuentrate con otros Campers en tu Ciudad",
       "descriptionEs": [
         "Una de las mejores maneras de mantenerte motivado cuando estás aprendiendo a programar es pasar el rato con otros campers.",
-        "Slack y Noticias de Campers son una muy buena forma de comunicarte con otros campers, pero no hay ningún substituto para conocerlos en persona.",
+        "Gitter y Noticias de Campers son una muy buena forma de comunicarte con otros campers, pero no hay ningún substituto para conocerlos en persona.",
         "La forma más fácil de encontrarte con otros campers en tu ciudad es unirte al grupo de Facebook de tu ciudad o país. Dale click a <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city' target='_blank'>here</a> para ver la lista de grupos locales.",
         "Dale click al link de tu ciudad o país y una vez que Facebook cargue, dale click a \"Join group\".",
         "Nuestros grupos locales son pocos, asi que en caso no veas tu ciudad o país en la lista, solamente sigue las instrucciones para crear un grupo de Facebook para ello.",
@@ -328,7 +328,7 @@
         "Cualquier momento en el que te atasques o no sepas que hacer, sigue este simple algoritmo (procedimiento): RSAP (Read, Search, Ask, Post). Que en español vendría a ser Lee, Busca, Pregunta, Publica.",
         "Primero, Lee - Lee la documentación o el mensaje de error. El punto fuerte de un buen programador es la habilidad de interpretar y seguir instrucciones.",
         "Luego, Busca - Busca en Google. Buenas búsquedas o queries requieren bastante práctica. Cuando búsques en Google, idealmente tienes que incluir el lenguaje o framework que estés usando. También tendrás que limitar los resultados de búsqueda a un periodo reciente.",
-        "Ahora, en caso no hayas encontrado la respuesta a tu pregunta, Pregunta - Pregunta a tus amigos. En caso estes en problemas, puedes preguntar a otros campers. Tenemos una sala de chat especificamente para obtener ayuda sobre las herramientas que utilizamos en los desafíos de Free Code Camp. Ingresa a <a href='https://freecodecamp.slack.com/messages/help/' target='_blank'>https://freecodecamp.slack.com/messages/help/</a>. Mantén este chat abierto mientras trabajas en los desafíos subsiguientes.",
+        "Ahora, en caso no hayas encontrado la respuesta a tu pregunta, Pregunta - Pregunta a tus amigos. En caso estes en problemas, puedes preguntar a otros campers. Tenemos una sala de chat especificamente para obtener ayuda sobre las herramientas que utilizamos en los desafíos de Free Code Camp. Ingresa a <a href='https://gitter.im/FreeCodeCamp/Help' target='_blank'>https://gitter.im/FreeCodeCamp/Help</a>. Mantén este chat abierto mientras trabajas en los desafíos subsiguientes.",
         "Finalmente, Publica - Publica tu pregunta en Stack Overflow. Antes de hacer esto lee la guía de Stack Overflow para publicar buenas preguntas: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>. Tendrás que hacerlo en inglés, en caso no sepas como, pide que te ayuden a traducir tu pregunta en el canal #espanol de Slack.",
         "Aquí está nuestra guia detallada en como obtener ayuda: <a href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank'>http://freecodecamp.com/field-guide/how-do-i-get-help-when-i-get-stuck</a>.",
         "Ahora que tienes en claro el procedimiento a seguir cuando necesites ayuda. ¡Empecémos a programar! Continua con el siguiente desafío."

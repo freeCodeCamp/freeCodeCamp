@@ -319,10 +319,9 @@ $(document).ready(function() {
       .fail(function (xhr, textStatus, errorThrown) {
         $('#story-submit').bind('click', storySubmitButtonHandler);
       })
-      .done(function (data, textStatus, xhr) {
-        window.location = '/news/' + JSON.parse(data).storyLink;
+      .done(function(data, textStatus, xhr) {
+        window.location = '/stories/' + data.storyLink;
       });
-
   };
 
   $('#story-submit').on('click', storySubmitButtonHandler);
