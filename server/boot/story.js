@@ -4,7 +4,7 @@ var Rx = require('rx'),
     sanitizeHtml = require('sanitize-html'),
     moment = require('moment'),
     mongodb = require('mongodb'),
-    // debug = require('debug')('freecc:cntr:story'),
+    debug = require('debug')('freecc:cntr:story'),
     utils = require('../utils'),
     observeMethod = require('../utils/rx').observeMethod,
     saveUser = require('../utils/rx').saveUser,
@@ -251,18 +251,9 @@ module.exports = function(app) {
 
   function upvote(req, res, next) {
     var id = req.body.data.id;
-    var savedStory = findStoryById(id)
-      .flatMap(function(story) {
-        story.rank += 1;
-        story.upVotes.push({
-          upVotedBy: req.user.id,
-          upVotedByUsername: req.user.username
-        });
-        return saveInstance(story);
-      })
-      .shareReplay();
+    var story$ = findStoryById(id).shareReplay();
 
-    savedStory.flatMap(function(story) {
+    story$.flatMap(function(story) {
         // find story author
         return findUserById(story.author.userId);
       })
@@ -277,7 +268,18 @@ module.exports = function(app) {
         req.user.progressTimestamps.push(Date.now());
         return saveUser(req.user);
       })
-      .flatMap(savedStory)
+      .flatMap(function() {
+        return story$;
+      })
+      .flatMap(function(story) {
+        debug('upvoting');
+        story.rank += 1;
+        story.upVotes.push({
+          upVotedBy: req.user.id,
+          upVotedByUsername: req.user.username
+        });
+        return saveInstance(story);
+      })
       .subscribe(
         function(story) {
           return res.send(story);
