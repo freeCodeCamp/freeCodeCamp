@@ -7,6 +7,7 @@ var Rx = require('rx'),
   secrets = require('../config/secrets');
 
 var MongoClient = mongodb.MongoClient;
+Rx.config.longStackSupport = true;
 
 var providers = [
   'facebook',
@@ -164,6 +165,7 @@ var commentCount = dbObservable
   .flatMap(function(db) {
     return createQuery(db, 'comments', {});
   })
+  .bufferWithCount(20)
   .withLatestFrom(dbObservable, function(comments, db) {
     return {
       comments: comments,
@@ -173,7 +175,6 @@ var commentCount = dbObservable
   .flatMap(function(dats) {
     return insertMany(dats.db, 'comment', dats.comments, { w: 1 });
   })
-  .buffer(20)
   .count();
 
 Rx.Observable.combineLatest(
@@ -198,7 +199,6 @@ Rx.Observable.combineLatest(
       console.error('an error occured', err, err.stack);
     },
     function() {
-
       console.log('finished with ', count);
       process.exit(0);
     }
