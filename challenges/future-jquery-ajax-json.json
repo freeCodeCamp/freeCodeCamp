@@ -18,6 +18,8 @@
         "assert(editor.match(/\\n\\s+?\\}\\);/g), 'Close your <code>$(document).ready(function() {</code> function with <code>\\}\\);</code>.')"
       ],
       "challengeSeed": [
+        "",
+        "<!-- You shouldn't need to modify code below this line -->",
         "<br>",
         "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
         "<br>",
@@ -65,6 +67,7 @@
         "",
         "  });",
         "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
         "<br>",
         "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
         "<br>",
@@ -112,6 +115,7 @@
         "    $('img').addClass('animated bounce');",
         "  });",
         "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
         "<br>",
         "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
         "<br>",
@@ -159,6 +163,7 @@
         "    $('.btn').addClass('animated shake');",
         "  });",
         "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
         "<br>",
         "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
         "<br>",
@@ -207,6 +212,7 @@
         "    $('.btn').addClass('animated shake');",
         "  });",
         "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
         "<br>",
         "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
         "<br>",
@@ -256,6 +262,7 @@
         "    $('#cat-photo-form').addClass('animated pulse');",
         "  });",
         "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
         "<br>",
         "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
         "<br>",
@@ -303,6 +310,7 @@
         "    $('#cat-photo-form').css('background-color', 'gray');",
         "  });",
         "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
         "<br>",
         "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
         "<br>",
@@ -351,6 +359,7 @@
         "    $('#submit-button').prop('disabled', 'true');",
         "  });",
         "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
         "<br>",
         "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
         "<br>",
@@ -382,48 +391,41 @@
 
     {
       "id": "bad87fee1348bd9aed608826",
-      "name":  "Waypoint: Move an Element Using jQuery",
-      "dashedName":  "waypoint-move-an-element-using-jquery",
+      "name":  "Waypoint: Use appendTo to Move Elements with jQuery",
+      "dashedName":  "waypoint-use-appendto-to-move-elements-with-jquery",
       "difficulty": 0.079,
       "description": [
-
+        "$('.btn').appendTo('#right-well')"
       ],
       "tests": [
-
+        "assert($('#left-well').children().length === 0, 'Your left well should not have any buttons inside it.')",
+        "assert($('#right-well').children().length === 6, 'Your right well should have all 6 buttons inside it.')"
       ],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
-        "    $('#cat-photo-form').css('background-color', 'gray');",
-        "    $('#submit-button').prop('disabled', 'true');",
-        "    $('img').remove();",
+        "",
         "  });",
         "fcces",
-        "<br>",
-        "<img src='http://bit.ly/fcc-kittens2' class='img-responsive'>",
-        "<br>",
+        "<!-- You shouldn't need to modify code below this line -->",
         "<div class='row'>",
-        "  <div class='col-xs-4'>",
-        "    <button class='btn btn-block btn-primary'><i class='fa fa-thumbs-up'></i> Like</button>",
-        "  </div>",
-        "  <div class='col-xs-4'>",
-        "    <button class='btn btn-block btn-info'><i class='fa fa-info-circle'></i> Info</button>",
-        "  </div>",
-        "  <div class='col-xs-4'>",
-        "    <button class='btn btn-block btn-danger'><i class='fa fa-trash'></i> Delete</button>",
-        "  </div>",
-        "</div>",
-        "<br>",
-        "<form action='submit-cat-photo' id='cat-photo-form'>",
-        "  <div class='row'>",
-        "    <div class='col-xs-7'>",
-        "      <input type='text' class='form-control' placeholder='cat photo URL' required>",
-        "    </div>",
-        "    <div class='col-xs-5'>",
-        "      <button type='submit' id='submit-button' class='btn btn-primary'><i class='fa fa-paper-plane'></i> Submit</button>",
+        "  <div class='col-xs-6'>",
+        "    <h4>#left-well</h4>",
+        "    <div class='well' id='left-well'>",
+        "      <button class='btn btn-default target' id='target1'>#target1</button>",
+        "      <button class='btn btn-default target' id='target2'>#target2</button>",
+        "      <button class='btn btn-default target' id='target3'>#target3</button>",
         "    </div>",
         "  </div>",
-        "</form>"
+        "  <div class='col-xs-6'>",
+        "    <h4>#right-well</h4>",
+        "    <div class='well' id='right-well'>",
+        "      <button class='btn btn-default target' id='target4'>#target4</button>",
+        "      <button class='btn btn-default target' id='target5'>#target5</button>",
+        "      <button class='btn btn-default target' id='target6'>#target6</button>",
+        "    </div>",
+        "  </div>",
+        "</div>"
       ],
       "challengeType": 0
     },
@@ -434,13 +436,36 @@
       "dashedName":  "waypoint-clone-an-element-using-jquery",
       "difficulty": 0.080,
       "description": [
-
+        "Clone the #target1 element and append it to the #left-well element. $('#target1').clone().appendTo('#left-well')"
       ],
       "tests": [
-
+        "assert($('#left-well').children().length > 3, 'You should have at least 4 button elements in your #left-well element')"
       ],
       "challengeSeed": [
-
+        "fccss",
+        "  $(document).ready(function() {",
+        "",
+        "  });",
+        "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
+        "<div class='row'>",
+        "  <div class='col-xs-6'>",
+        "    <h4>#left-well</h4>",
+        "    <div class='well' id='left-well'>",
+        "      <button class='btn btn-default target' id='target1'>#target1</button>",
+        "      <button class='btn btn-default target' id='target2'>#target2</button>",
+        "      <button class='btn btn-default target' id='target3'>#target3</button>",
+        "    </div>",
+        "  </div>",
+        "  <div class='col-xs-6'>",
+        "    <h4>#right-well</h4>",
+        "    <div class='well' id='right-well'>",
+        "      <button class='btn btn-default target' id='target4'>#target4</button>",
+        "      <button class='btn btn-default target' id='target5'>#target5</button>",
+        "      <button class='btn btn-default target' id='target6'>#target6</button>",
+        "    </div>",
+        "  </div>",
+        "</div>"
       ],
       "challengeType": 0
     },
@@ -451,13 +476,37 @@
       "dashedName":  "waypoint-target-the-parent-of-an-element-using-jquery",
       "difficulty": 0.082,
       "description": [
-
+        "Change the parent of the #target1 element to have the background color of red.",
+        "$('#target1').parent().css('background-color', 'red')"
       ],
       "tests": [
 
       ],
       "challengeSeed": [
-
+        "fccss",
+        "  $(document).ready(function() {",
+        "",
+        "  });",
+        "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
+        "<div class='row'>",
+        "  <div class='col-xs-6'>",
+        "    <h4>#left-well</h4>",
+        "    <div class='well' id='left-well'>",
+        "      <button class='btn btn-default target' id='target1'>#target1</button>",
+        "      <button class='btn btn-default target' id='target2'>#target2</button>",
+        "      <button class='btn btn-default target' id='target3'>#target3</button>",
+        "    </div>",
+        "  </div>",
+        "  <div class='col-xs-6'>",
+        "    <h4>#right-well</h4>",
+        "    <div class='well' id='right-well'>",
+        "      <button class='btn btn-default target' id='target4'>#target4</button>",
+        "      <button class='btn btn-default target' id='target5'>#target5</button>",
+        "      <button class='btn btn-default target' id='target6'>#target6</button>",
+        "    </div>",
+        "  </div>",
+        "</div>"
       ],
       "challengeType": 0
     },
@@ -468,13 +517,37 @@
       "dashedName":  "waypoint-target-the-children-of-an-element-using-jquery",
       "difficulty": 0.083,
       "description": [
-
+        "Change the color of all the #left-well element's children to blue.",
+        "$('#right-well').children().css('background-color', 'blue')"
       ],
       "tests": [
 
       ],
       "challengeSeed": [
-
+        "fccss",
+        "  $(document).ready(function() {",
+        "",
+        "  });",
+        "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
+        "<div class='row'>",
+        "  <div class='col-xs-6'>",
+        "    <h4>#left-well</h4>",
+        "    <div class='well' id='left-well'>",
+        "      <button class='btn btn-default target' id='target1'>#target1</button>",
+        "      <button class='btn btn-default target' id='target2'>#target2</button>",
+        "      <button class='btn btn-default target' id='target3'>#target3</button>",
+        "    </div>",
+        "  </div>",
+        "  <div class='col-xs-6'>",
+        "    <h4>#right-well</h4>",
+        "    <div class='well' id='right-well'>",
+        "      <button class='btn btn-default target' id='target4'>#target4</button>",
+        "      <button class='btn btn-default target' id='target5'>#target5</button>",
+        "      <button class='btn btn-default target' id='target6'>#target6</button>",
+        "    </div>",
+        "  </div>",
+        "</div>"
       ],
       "challengeType": 0
     },
