@@ -40,7 +40,17 @@
         "Para activar el botón \"Ir a mi siguiente desafío\" de este ejercicio, cambia tu texto de la etiqueta <code>h1</code> para que diga \"Hello World\" en lugar de \"Hello\"."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Begrüße die HTML Elemente",
+      "descriptionDe": [
+        "Willkommen bei der ersten Programmier-Challenge von Free Code Camp! Klicke auf den folgenden Button für weitere Instruktionen.",
+        "Sehr gut. Jetzt kannst du den Rest der Instruktionen für diese Challenge lesen.",
+        "Mithilfe des eingebauten <code>Text Editors</code> kannst du den <code>Code</code> bearbeiten.",
+        "Siehst du den Code <code>&#60;h1&#62;Hallo&#60;/h1&#62;</code> im Editor? Das ist ein HTML <code>Element</code>.",
+        "Die meisten HTML Elemente haben eine <code>öffnende Auszeichnung (Tag)</code> und eine <code>sich schließende</code>. Öffnende Tags sehen so aus: <code>&#60;h1&#62;</code>. Schließende Tags so: <code>&#60;/h1&#62;</code>. Beachte, dass der einzige Unterschied zwischen öffnenden und schließenden Tags in dem Slash besteht, das bei schließenden Tags auf die sich öffnende spitze Klammer folgt.",
+        "Sobald du eine Challenge abgeschlossen hast und alle Tests erfolgreich sind, wird der Button \"Go to my next challenge\" aktiv. Klicke auf diesen – oder drücke Steuerung (Control) und gleichzeitig Enter – um zur nächsten Challenge zu gehen.",
+        "Um den Button \"Go to my next challenge\" dieser Lektion zu aktivieren, ändere den Inhalt des <code>h1</code> Tags von \"Hello\" zu \"Hello World\"."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf0887a",
@@ -77,7 +87,14 @@
         "Los elementos <code>h2</code> son ligeramente más pequeños que los elementos <code>h1</code>. También hay elementos <code>h3</code>, <code>h4</code>, <code>h5</code> y <code>h6</code>."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Überschrift mit dem h2 Element",
+      "descriptionDe": [
+        "Füge unter <code>h1</code> \"Hello World\" ein zweites HTML Element <code>h2</code> hinzu, in dem \"CatPhotoApp\" steht.",
+        "Das eingetragene <code>h2</code> Element wird ein <code>h2</code> Element auf der Website erzeugen.",
+        "Dieses Element sagt dem Browser, wie der darin enthaltene Text gerendert wird.",
+        "<code>h2</code> Elemente sind ein wenig kleiner als <code>h2</code> Elemente. Es gibt auch <code>h3</code>, <code>h4</code>, <code>h5</code> und <code>h6</code> Elemente."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08801",
@@ -112,7 +129,13 @@
         "Tú puedes crear un elemento párrafo como éste: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Informiere mit dem Paragraph Element",
+      "descriptionDe": [
+        "Erstelle ein <code>p</code> Element unter deinem <code>h2</code> Element und füge den Text \"Hello Paragraph\" ein.",
+        "<code>p</code> Elemente sind das bevorzugte Element für normalen Paragraphen-Text auf einer Website. P ist die Abkürzung für \"Paragraph\".",
+        "Du kannst ein <code>p</code> Element so erzeugen: <code>&#60;p&#62;Ich bin ein p Element!&#60;/p&#62;</code>"
+      ]
     },
     {
       "id": "bad87fee1348bd9aeaf08801",
@@ -148,7 +171,14 @@
         "Luego te encontrarás con otras etiquetas de elementos <code>auto-cerrados</code>."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Trenne Elemente visuell mit Zeilenumbrüchen",
+      "descriptionDe": [
+        "Füge ein <code>br</code> Element zu deiner Seite hinzu, am besten zwischen zwei anderen Elementen.",
+        "<code>br</code> Elemente – auch Zeilenumbrüche oder \"line breaks\" genannt – können mit <code>&#60;br&#62</code> erstellt werden.",
+        "Beachte, dass <code>&#60;br&#62</code> keinen schließenden Tag hat. Es ist ein selbst schließendes oder \"self-closing\" Element.",
+        "Du wirst bald mehr selbstschließende Elemente kennenlernen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08802",
@@ -193,7 +223,14 @@
         "Puedes comenzar un comentario con <code>&#60;!--</code> y terminar de comentar con <code>--&#62;</code>."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: HTML entkommentieren",
+      "descriptionDe": [
+        "Entkommentiere deine <code>h1</code>, <code>h2</code> und <code>p</code> Elemente.",
+        "Kommentieren erlaubt dir Kommentare innerhalb des Codes zu hinterlassen, ohne diesen selbst zu beeinflussen.",
+        "Dies ist auch ein guter Weg, um Code inaktiv zu machen ohne diesen komplett löschen zu müssen.",
+        "Du kannst einen Kommentar mit <code>&#60;!--</code> starten und ihn mit <code>--&#62;</code> wieder beenden."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08804",
@@ -236,7 +273,13 @@
         "Aquí necesitarás terminar el comentario antes que comience el elemento h2."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: HTML auskommentieren",
+      "descriptionDe": [
+        "Kommentiere die Elemente <code>h1</code> und <code>p</code> aus, aber lasse dein <code>h2</code> Element unkommentiert.",
+        "Denk daran, dass du einen Kommentar mit <code>&#60;!--</code> anfangen und mit <code>--&#62;</code> wieder beenden kannst.",
+        "Hier wirst du deinen Kommentar vor dem <code>h2</code> Element beenden müssen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08833",
@@ -278,7 +321,15 @@
         "Aquí están las primeras palabras del texto Kitty Ipsum, que puedes copiar y pegar en la posición correcta: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Fülle die Lücken mit Platzhalter-Text",
+      "descriptionDe": [
+        "Ersetze den Text in deinem <code>p</code> Element mit den ersten Wörtern des zur Verfügung gestellten \"Kitty Ipsum\" Textes.",
+        "Webentwickler nutzen für gewöhnlich \"Lorem Ipsum\" Text als Platzhalter. Es heißt \"Lorem Ipsum\", weil es die ersten zwei Wörter aus einer bekannten Passage von Cicero des alten Roms sind.",
+        "\"Lorem Ipsum\" Text wurde seit dem 16. Jahrhundert von Schriftsetzern als Platzhalter verwendet. Und diese Tradition setzt sich im Web fort.",
+        "Nun gut, fünf Jahrhunderte sind lange genug. Da wir eine CatPhotoApp entwickeln, lass uns stattdessen lieber \"Kitty Ipsum\" nutzen!",
+        "Hier sind die ersten paar Wörter von \"Kitty Ipsum\", die du kopieren und an die richtige Stelle einfügen kannst: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+      ]
     },
     {
       "id": "bad87fed1348bd9aedf08833",
@@ -319,7 +370,13 @@
         "Removamos los elementos innecesarios para que empecemos a construir nuestra CatPhotoApp."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Entferne HTML Elemente",
+      "descriptionDe": [
+        "Lösche die Elemente <code>h1</code> und <code>br</code>, damit wir etwas Ordnung schaffen.",
+        "Unser Smartphone hat nicht sehr viel vertikalen Raum.",
+        "Lass uns die unwichtigen Elemente entfernen, damit wir unsere CatPhotoApp bauen können."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08803",
@@ -355,7 +412,13 @@
         "Así es como podrías volver el color de texto de tu elemento <code>h2</code> en azul: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Ändere die Farbe des Textes",
+      "descriptionDe": [
+        "Ändere den Style des <code>h2</code> Elements, damit die Textfarbe Rot ist.",
+        "Wir können das bewerkstelligen, indem wir den \"style\" des <code>h2</code> Elements ändern.",
+        "So könntest du die Textfarbe des <code>h2</code> Elements in Blau ändern: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08805",
@@ -400,7 +463,17 @@
         "Fíjate que es importante tener <code>llaves de apertura y de cierre</code> (<code>{</code> y <code>}</code>) alrededor del estilo para cada elemento. También necesitas asegurarte que el estilo para tu elemento está entre las etiquetas style de apertura y cierre. Finalmente, asegúrate de agregar el punto y coma al final de cada uno de los estilos de tu elemento."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Nutze CSS Selektoren um Elemente zu gestalten",
+      "descriptionDe": [
+        "Lösche das Style Attribute deines <code>h2</code> Elements und erstelle stattdessen ein CSS <code>style</code> Element. Füge das notwendige CSS hinzu, um alle <code>h2</code> Elemente Blau zu färben.",
+        "CSS liefert dir hunderte Attribute oder \"attributes\" um HTML Elemente auf deiner Seite zu gestalten.",
+        "Mit <code>&#60;h2 style=\"color: red\"&#62;CatPhotoApp&#60;/h2&#62;</code> hast du dem einzelnen <code>h2</code> Element einen sogenannten \"inline style\" gegeben.",
+        "Das ist ein Weg, um Elemente zu gestalten. Es ist aber besser, Cascading Style Sheets (CSS) zu benutzen.",
+        "Erstelle über deinem Code ein <code>style</code> Element: <code>&#60;style&#62;&#60;/style&#62;</code>",
+        "Innerhalb des Style Elements kannst du einen CSS Selektor oder \"selector\" für alle <code>h2</code> Elemente erstellen. Wenn du zum Beispiel alle <code>h2</code> Elemente Rot färben willst, schreibst du: <code>&#60;style&#62;h2 {color: red;}&#60;/style&#62;</code>",
+        "Beachte, dass du öffnende und schließende geschwungene Klammern (<code>{</code> und <code>}</code>) um jeden Style setzen solltest. Außerdem sollten deine Styles innerhalb dieser Klammern stehen. Zum Schluss benötigst du am Ende jedes Styles ein Semikolon."
+      ]
     },
     {
       "id": "bad87fee1348bd9aecf08806",
@@ -442,7 +515,18 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Nutze eine CSS Klasse um ein Element zu gestalten",
+      "descriptionDe": [
+        "Erstelle eine CSS Klasse namens \"red-text\" und füge sie zu deinem <code>h2</code> Element hinzu.",
+        "Klassen sind wiederverwendbare Styles, die HTML Elementen zugewiesen werden können.",
+        "So sieht eine CSS Klasse aus:",
+        "<img class='img-responsive' alt='Ein Beispiel, wie Styles geschrieben werden. Das wird im Detail in den folgenden Zeilen beschrieben.' src='https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png'/>",
+        "Du siehst, dass wir die CSS Klasse \"blue-text\" innerhalb von <code>&#60;style&#62;</code> geschrieben haben.",
+        "Du kannst eine Klasse folgendermaßen einem HTML Element beifügen: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
+        "Beachte, dass Klassen in deinem CSS <code>style</code> Element mit einem Punkt beginngen sollten. In deinen Klassen-Deklarationen von HTML Elementen sollten diese nicht mit einem Punkt beginnen.",
+        "Anstatt ein neues <code>style</code> Element zu erstellen, versuche die <code>h2</code> Style-Deklaration von deinem bereits bestehenden Style Element zu entfernen und sie mit der Klassen-Deklaration \".red-text\" zu ersetzen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aefe08806",
@@ -481,7 +565,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Gestalte mehrere Elemente mit einer CSS Klasse",
+      "descriptionDe": [
+        "Füge den <code>h2</code> und <code>p</code> Elementen die Klasse \"red-text\" hinzu.",
+        "Du kannst Klassen zu HTML Elementen hinzufügen, indem du zum Beispiel <code>class=\"deine-klasse\"</code> innerhalb des öffnenden Tags schreibst.",
+        "Du weißt, es gehört ein Punkt vor CSS Klassen: <code>.red-text { color: blue; }</code>. Aber diese Klassen-Deklarationen brauchen keinen Punkt: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08806",
@@ -521,7 +611,14 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Ändere die Schriftgröße eines Elements",
+      "descriptionDe": [
+        "Erstelle ein zweites <code>p</code> Element. Ändere dann innerhalb deines <code>&#60;style&#62;</code> Elements die Schriftgröße oder \"font-size\" von allen <code>p</code> Elementen auf 16 Pixel.",
+        "Schriftgröße wird von dem CSS Attribut \"font-size\" kontrolliert: <code>h1 { font-size: 30px; }</code>.",
+        "Zuerst erstellst du ein zweites <code>p</code> Element mit dem folgenden Kitty Ipsum Text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+        "Versuche nun beiden <code>p</code> Elementen die Schriftgröße von 16 Pixeln (<code>16px</code>) zu geben. Du kannst das innerhalb des selben <code>&#60;style&#62;</code> Tags machen, welches wir für deine \"red-text\" Klasse erstellt haben."
+      ]
     },
     {
       "id": "bad87fee1348bd9aede08807",
@@ -562,7 +659,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Definiere die Schriftart eines Elements",
+      "descriptionDe": [
+        "Definiere für alle <code>p</code> Elemente die Schriftart \"Monospace\".",
+        "Du kannst einem Element mit \"font-family\" eine Schriftart zuweisen.",
+        "Wenn du zum Beispiel deinem <code>h2</code> Element die Schriftart \"Sans-serif\" zuweisen willst, kannst du das mit dem folgenden CSS tun: <code>h2 { font-family: Sans-serif; }</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08807",
@@ -608,7 +711,15 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Importiere eine Google Font",
+      "descriptionDe": [
+        "Füge dem <code>h2</code> Element die Schriftart oder <code>font-family</code> \"Lobster\" hinzu.",
+        "Zuerst musst du Google Fonts in dein HTML einbinden, um auf \"Lobster\" zugreifen zu können.",
+        "Kopiere den folgenden Code und füge diesen in deinen Editor über dem <code>style</code> Element ein:",
+        "<code>&#60;link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'&#62;</code>.",
+        "Jetzt kannst du \"Lobster\" als font-family Attribut zu deinem <code>h2</code> Element hinzufügen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08808",
@@ -658,7 +769,15 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Spezifiziere die Rangfolge von Schriftarten",
+      "descriptionDe": [
+        "Füge allen <code>h2</code> Elementen die Schriftart \"Lobster\" hinzu und definiere \"Monospace\" als Ersatzschrift, wenn \"Lobster\" nicht verfügbar ist.",
+        "Du kannst \"Lobster\" als Schriftart deines <code>h2</code> Elements belassen, aber gleichzeitig dafür sorgen, dass eine alternative Schrift geladen wird, wenn \"Lobster\" nicht zur Verfügung steht.",
+        "Wenn du zum Beispiel einem Element die Schriftart \"Helvetica\" geben möchtest, aber gleichzeitig die alternative Schrift \"Sans-Serif\" laden willst, wenn \"Helvetica\" nicht verfügbar ist, kannst du diesen CSS Style verwenden: <code>p { font-family: Helvetica, Sans-Serif; }</code>.",
+        "Es gibt verschiedene Schriftarten, die jedem Browser standardmäßig zur Verfügung stehen. Das sind unter anderem \"Monospace\", \"Serif\" und \"Sans-Serif\". Probiere deinem <code>h2</code> Element gleichzeitig die Schriftart \"Lobster\" und als Alternative \"Monospace\" zu geben.",
+        "Jetzt versuche den Aufruf von Google Fonts in deinem HTML auszukommentieren, sodass \"Lobster\" nicht zur Verfügung steht. Beachte, wie nun die Schriftart \"Monospace\" geladen wird."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08809",
@@ -715,7 +834,18 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Überschreibe Styles mit Important",
+      "descriptionDe": [
+        "Erstelle eine \"urgently-red\" Klasse, welche einem Element die Schriftfarbe Rot verleiht, füge aber <code>!important</code> zur Klasse hinzu um sicherzustellen, dass die Farbe auch übernommen wird. Erstelle direkt unter deiner \"urgently-red\" Klasse eine weitere Klasse namens \"blue-text\", die einem Element die Schriftfarbe Blau gibt. Füge beide Klassen zu deinem <code>h2</code> Element hinzu.",
+        "Du kannst mehrere Klassen zu einem Element hinzufügen, indem du sie mit einem Leerzeichen trennst: <code>&#60;h2 class='green-text giant-text'&#62;Das wird ein großer grüner Text&#60;/h2&#62;</code>.",
+        "Ab und zu erhalten HTML Elemente ähnliche Informationen von verschiedenen CSS Klassen.",
+        "Wenn es einen solchen Konflikt gibt, wird der Browser die Styles verwenden, welche am Ende des CSS Dokuments stehen. Beachte, dass Inline Styles die höchste Priorität haben.",
+        "Es gibt einen Weg um sicherzustellen, dass ein bestimmter Style akzeptiert wird. Egal wo dieser sich befindet. Die Rede ist von <code>!important</code>.",
+        "Verwirrt? Hier ist die Hierarchie, in der Styles angewandt werden: <code>!important</code> schlägt alle anderen Styles und Inline Styles kommen vor Style Tag Deklarationen.",
+        "Ein Beispiel für CSS Styles, die <code>!important</code> verwenden: <code>&#60;style&#62; .urgently-blue { color: blue !important; } &#60;/style&#62;</code>.",
+        "Jetzt stelle sicher, dass dein <code>h2</code> Element die Farbe Rot erhält, ohne die \"blue-text\" Klasse zu entfernen, einen Inline Style anzuwenden oder die Reihenfolge der CSS Klassen zu verändern."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08812",
@@ -764,7 +894,14 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Füge Bilder zu deiner Website hinzu",
+      "descriptionDe": [
+        "Nutze ein <code>img</code> Element um das Bild <code>http://bit.ly/fcc-kittens</code> einzufügen.",
+        "Du kannst <code>img</code> Elemente verwenden, um Bilder in deine Website einzubauen. Um zur URL des Bildes zu verweisen, benutzt du das <code>src</code> Attribut.",
+        "Ein Beispiel dafür wäre <code>&#60img src=\"www.bild-quelle.com/bild.jpg\"/&#62</code>. Beachte, dass <code>img</code> Elemente in den meisten Fällen selbstschließend sind.",
+        "Versuche es mit diesem Bild: <code>http://bit.ly/fcc-kittens</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9acdf08812",
@@ -814,7 +951,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Skaliere deine Bilder",
+      "descriptionDe": [
+        "Erstelle eine Klasse mit dem Namen <code>smaller-image</code> und verwende sie, um dein Bild auf 100 Pixel zu skalieren.",
+        "Die Breite eines Elements wird mit dem CSS Attribut <code>width</code> kontrolliert. Wie bei Schriftarten verwenden wir Pixel (px) um die Größe zu definieren.",
+        "Wenn wir also die CSS Klasse \"larger-image\" erstellen wollen, um HTML Elementen eine Breite von 500 Pixeln zu verleihen, verwenden wir: <code>&#60;style&#62; .larger-image { width: 500px; } &#60;/style&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9bedf08813",
@@ -871,7 +1014,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Füge Rahmen zu deinen Elementen hinzu",
+      "descriptionDe": [
+        "Erstelle die Klasse \"thick-green-border\", welche einen 10 Pixel dicken, grünen Rahmen mit dem Style \"solid\" um ein HTML Element setzt. Füge diese Klasse zu deinem Katzenfoto hinzu.",
+        "CSS Rahmen haben Attribute wie Style, Color und Width.",
+        "Wenn wir nun einen roten, 5 Pixel dicken Rahmen um ein HTML Element setzen wollen, würden wir so vorgehen: <code>&#60;style&#62; .thin-red-border { border-color: red; border-width: 5px; border-style: solid; } &#60;/style&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08814",
@@ -931,7 +1080,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Füge abgerundete Ecken mit Border Radius hinzu",
+      "descriptionDe": [
+        "Gib deinem Katzenbild einen <code>border-radius</code> von 10 Pixeln.",
+        "Das Bild hat nun spitze Ecken. Wir können diese Ecken mit dem CSS Attribut <code>border-radius</code> abrunden.",
+        "Du kannst einen <code>border-radius</code> mit Pixeln deklarieren. Das beeinflusst die Rundung der Ecken. Füge dieses Attribut zu deiner <code>thick-green-border</code> Klasse hinzu und setze es auf 10 Pixel."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08815",
@@ -991,7 +1146,12 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Erstelle runde Bilder mit einem Border Radius",
+      "descriptionDe": [
+        "Gib deinem Katzenfoto einen <code>border-radius</code> von 50 %.",
+        "Du kannst einem <code>border-radius</code> neben Pixeln auch Prozentwerte zuweisen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08816",
@@ -1054,7 +1214,14 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Verlinke externe Seiten mit Anker Elementen",
+      "descriptionDe": [
+        "Erstelle ein <code>a</code> Element oder \"Anker Element\", das auf http://catphotoapp.com verlinkt und den Link-Text \"cat photos\" oder \"anchor text\" beinhaltet.",
+        "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
+        "<img class='img-responsive' alt='Ein Beispiel wie Anker Tags geschrieben werden.' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
+        "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href='http://freecodecamp.com'&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aede08817",
@@ -1123,7 +1290,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint Umschließe ein Anker Element mit einem Paragraphen",
+      "descriptionDe":[
+        "Jetzt umschließe dein <code>a</code> Element mit einem <code>p</code> Element und dem Text \"click here for cat photos\". Nur \"cat photos\" soll ein Link ein – der Rest normaler Text.",
+        "Hier ist nochmal ein Beispiel für ein <code>a</code> Element: <img class='img-responsive' alt='Ein Beispiel wie Anker Tags geschrieben werden.' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
+        "So könnte es aussehen: <code>&#60;p&#62;Hier ist ein &#60;a href='http://freecodecamp.com'&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08817",
@@ -1186,7 +1359,14 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Erstelle tote Links mit dem Hash Symbol",
+      "descriptionDe": [
+        "Nutze das Hash Symbol (#) um deine <code>a</code> Elemente zu toten Links zu machen.",
+        "Manchmal wirst du <code>a</code> Elemente zu deiner Website hinzufügen möchten, ohne dass du das Ziel des Links kennst.",
+        "Das ist auch nützlich, wenn du die Funktion eines Links mit <code>jQuery</code> verändern willst. Das werden wir noch behandeln.",
+        "Ersetze den Inhalt des <code>href</code> Attributs deines <code>a</code> Elements mit einem Hash Symbol um einen toten Link zu erzeugen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08820",
@@ -1252,7 +1432,15 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Verlinke ein Bild",
+      "descriptionDe": [
+        "Umschließe dein <code>img</code> Element mit einem <code>a</code> Element als toten Link.",
+        "Du kannst jedes Element in einen Link verwandeln, indem du es mit einem <code>a</code> Element umschließt.",
+        "Umschließe nun dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel: <code>&#60;a href='#'&#62;&#60;img src='http://bit.ly/fcc-kittens2'/&#62;&#60;/a&#62;</code>.",
+        "Vergewissere dich, dass du ein Hash Symbol (#) innerhalb des <code>href</code> Attributs des <code>a</code> Elements nutzt, um daraus einen toten Link zu machen.",
+        "Sobald du das gemacht hast, kannst du mit der Maus über dein Bild fahren. Der normale Mauszeiger sollte nun zu einer Hand für Links werden. Das Bild ist jetzt ein Link."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08818",
@@ -1316,7 +1504,15 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Füge Alt Text für mehr Barrierefreiheit hinzu",
+      "descriptionDe": [
+        "Füge zu unserem Katzen-Bild ein <code>alt</code> Attribut mit dem Text \"A cute orange cat lying on its back\" hinzu.",
+        "<code>alt</code> Attribute – auch \"Alt Text\" genannt – werden vom Browser angezeigt, wenn sie ein Bild nicht laden können. Für blinde oder visuell eingeschränkte Menschen sind sie ebenfalls wichtig um zu verstehen, was ein Bild darstellt. Zudem werden diese Texte von Suchmaschinen genutzt.",
+        "Kurz gesagt: Jedes Bild sollte ein <code>alt</code> Attribut beinhalten!",
+        "<code>alt</code> Attribute sind nützlich um Personen – und Web Crawlers wie Google – zu sagen was in einem Foto abgebildet wird. Das ist extrem wichtig, damit blinde oder visuell eingeschränkte Menschen den Inhalt der Website verstehen.",
+        "Du kannst das <code>alt</code> Attribut direkt in das Img Element einfügen: <code>&#60img src=\"www.bild-quelle.com/bild.jpg\" alt=\"Dein Alt Text.\"/&#62</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08827",
@@ -1382,7 +1578,14 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Erstelle eine ungeordnete Liste",
+      "descriptionDe": [
+        "Ersetze deine <code>p</code> Elemente mit drei Dingen, die Katzen lieben – in einer ungeordneten Liste.",
+        "HTML hat ein spezielles Element zum Erstellen von ungeordneten Listen.",
+        "ungeordnete Listen starten mit einem <code>&#60;ul&#62;</code> Element. Dann beinhalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
+        "Als Beispiel: <code>&#60;ul&#62;&#60;li&#62;Milch&#60;/li&#62;&#60;li&#62;Käse&#60;/li&#62;&#60;/ul&#62;</code> würde eine ungeordnete Liste für \"Milch\" und \"Käse\" erstellen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08828",
@@ -1455,7 +1658,14 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Erstelle eine geordnete Liste",
+      "descriptionDe": [
+        "Erstelle eine geordnete Liste von den drei Dingen, die Katzen am meisten hassen.",
+        "HTML beinhaltet ein spezielles Element für geordnete Listen.",
+        "Geordnete Listen starten mit einem <code>&#60;ol&#62;</code> Element. Dann enthalten sie eine gewisse Anzahl an <code>&#60;li&#62;</code> Elementen.",
+        "Als beispiel: <code>&#60;ol&#62;&#60;li&#62;hydrogen&#60;/li&#62;&#60;li&#62;Helium&#60;/li&#62;&#60;/ol&#62;</code> würde eine nummerierte Liste aus \"Hydrogen\" und \"Helium\" erstellen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08829",
@@ -1527,7 +1737,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Erstelle ein Textfeld",
+      "descriptionDe": [
+        "Nun erstellen wir ein Web Formular. Erstelle ein Textfeld unter deinen Listen.",
+        "Eingabefelder sind ein guter Weg, um Daten von Nutzern zu erhalten.",
+        "So kannst du eines erstellen: <code>&#60;input type='text'&#62;</code>. Beachte, dass <code>input</code> Elemente selbstschließend sind."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08830",
@@ -1601,7 +1817,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Füge Platzhalter zu einem Textfeld hinzu",
+      "descriptionDe": [
+        "Setze bei deinem <code>input</code> Element den Wert für <code>placeholder</code> auf \"cat photo URL\".",
+        "Platzhalter erscheinen in <code>input</code> Feldern, bevor der Nutzer etwas eingibt.",
+        "Du kannst Platzhalter auf folgende Weise erstellen: <code>&#60;input type='text' placeholder='Das ist ein Platzhalter.'&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aede08830",
@@ -1677,7 +1899,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Erstelle ein Formular",
+      "descriptionDe": [
+        "Umschließe dein Textfeld mit einem <code>form</code> Element. Füge anschließend das Attribut <code>action=\"/submit-cat-photo\"</code> hinzu.",
+        "Du kannst Web Formulare bauen, die Daten zu einem Server übertragen – und das nur mit HTML. Das wird möglich, indem du eine Aktion für dein <code>form</code> Element bestimmst.",
+        "Zum Beispiel: <code>&#60;form action=\"/url-wohin-du-deine-formular-daten-senden-willst\"&#62;&#60;/form&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedd08830",
@@ -1755,7 +1983,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Füge eine Schaltfläche zum Senden hinzu",
+      "descriptionDe": [
+        "Füge eine Schaltfläche zum Senden mit dem Typ \"submit\" und \"Submit\" als Text zu deinem <code>form</code> Element hinzu.",
+        "Lass uns nun eine Schaltfläche zum Senden zu deinem Formlar hinzufügen. Durch einen Klick auf diese Schaltfläche werden die Daten des Formulars an die URL gesendet, welche du in dem <code>action</code> Attribut deines Formulars angegeben hast.",
+        "Hier ist ein Beispiel einer solchen Schaltfläche: <code>&#60;button type='submit'&#62;Diese Schaltfläche überträgt die Daten des Formulars.&#60;/button&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedc08830",
@@ -1831,7 +2065,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Nutze HTML5 um ein Pflichtfeld zu erstellen",
+      "descriptionDe": [
+        "Mache aus deinem <code>input</code> Feld ein Pflichtfeld – \"required\" – damit deine Nutzer das Formular nicht abschicken können, ohne dieses Feld auszufüllen.",
+        "Du kannst bestimmte Felder eines Formulars als Pflichtfelder deklarieren. Damit ist es deinen Nutzern nicht mehr möglich, das Formular abzuschicken, ohne die Pflichtfelder auszufüllen.",
+        "Um zum Beispiel ein Textfeld als Pflichtfeld zu deklarieren, kannst du einfach ein \"required\" innerhalb deines <code>input</code> Elements hinzufügen: <code>&#60;input type='text' required&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08834",
@@ -1915,7 +2155,16 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Erstelle ein paar Optionsfelder",
+      "descriptionDe": [
+        "Füge ein paar Optionsfelder zu deinem Formular hinzu. Jedes Optionsfeld sollte innerhalb seines eigenen <code>label</code> Elements liegen. Sie sollten außerdem ein <code>name</code> Attribut teilen. Eines davon sollte die Option \"indoor\" und das andere die Option \"outdoor\" haben.",
+        "Du kannst Optionsfelder für Fragen verwenden, auf die der Nutzer nur eine Antwort geben soll.",
+        "Optionsfelder sind lediglich ein weiterer Typ von <code>input</code> Elementen.",
+        "Jedes deiner Optionsfelder sollte innerhalb des eigenen <code>label</code> Elements liegen.",
+        "Alle Optionsfelder mit Bezug zueinander sollten das gleiche <code>name</code> Attribut teilen.",
+        "Ein Beispiel eines Optionsfeldes: <code>&#60;label&#62;&#60;input type='radio' name='indoor-outdoor'&#62; Indoor&#60;/label&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08835",
@@ -1996,7 +2245,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Erstelle ein paar Kontrollkästchen",
+      "descriptionDe": [
+        "Füge deinem Formular drei Kontrollkästchen hinzu. Jedes dieser Elemente sollte innerhalb seines eigenen <code>label</code> Elements stehen. Alle sollten das gleiche <code>name</code> Attribut \"personality\" teilen.",
+        "Formulare nutzen Kontrollkästchen meistens für Fragen, die mehrerer Antworten bedürfen.",
+        "Als Beispiel: <code>&#60;label&#62;&#60;input type='checkbox' name='personality'&#62; liebevoll&#60;/label&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aede18835",
@@ -2076,7 +2331,12 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Strukturiere dein Formular mit Zeilenumbrüchen",
+      "descriptionDe": [
+        "Schaffe ein wenig Ordnung in deinem Formular, indem du Zeilenumbrüche zwischen den Eingabefeldern verwendest.",
+        "Du weißt, Zeilenumbrüche können mit folgendem Code erstellt werden: <code>&#60;br&#62;</code>"
+      ]
     },
     {
       "id": "bad87fee1348bd9aedd08835",
@@ -2160,7 +2420,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Standardmäßig ausgewählte Optionsfelder und Kontrollkästchen",
+      "descriptionDe": [
+        "Stelle sicher, dass jeweilse dein erstes Optionsfeld und Kontrollkästchen standardmäßig markiert sind.",
+        "Das kannst du erreichen, indem beiden das Attribut <code>checked</code> beigefügt wird.",
+        "Um das zu bewerkstelligen, füge einfach \"checked\" innerhalb eines Eingabefeldes hinzu. Als Beispiel: <code>&#60;input type='radio' name='test-name' checked&#62;</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aede08835",
@@ -2249,7 +2515,15 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Umschließe viele Elemente mit einem einzigen Div Element",
+      "descriptionDe": [
+        "Umschließe deine \"Thins cats love\" und \"Things cats hate\" Listen mit einem <code>div</code> Element.",
+        "Das <code>div</code> Element oder \"Division\" ist ein allgemeiner Container für andere Elemente.",
+        "Dieses Element wird von allen HTML Elementen wahrscheinlich am häufigsten verwendet. Es ist nützlich um die CSS Stile der eigenen Klasse an die enthaltenen Elemente zu vererben.",
+        "Wie jedes andere Element – das sich nicht selbst schließt –  kannst du ein <code>div</code> Element mit <code>&#60;div&#62;</code> öffnen und mit <code>&#60;/div&#62;</code> wieder schließen.",
+        "Versuche deine öffnende <code>div</code> Auszeichnung überhalb des <code>p</code> Elements von  \"Things cats love\" und das schließende <code>div</code> unterhalb der schließenden <code>ol</code> Auszeichnung zu platzieren. Damit befinden sich beide Listen innerhalb eines <code>div</code>."
+      ]
     },
     {
       "id": "bad87fee1348bd9aede07836",
@@ -2336,7 +2610,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Gib dem Div Element einen farbigen Hintergrund",
+      "descriptionDe": [
+        "Erstelle eine Klasse namens \"gray-background\" mit der Hintergrund-Farbe grau. Füge diese Klasse deinem <code>div</code> Element hinzu.",
+        "Du kannst die Hintergrund-Farbe eines Elements mit der Eigenschaft \"background-color\" bestimmen.",
+        "Willst du den Hintergrund eines Elements zum Beispiel grün – \"green\" – einfärben, kannst du <code>.green-background { background-color: green; }</code> innerhalb deines <code>style</code> Elements verwenden."
+      ]
     },
     {
       "id": "bad88fee1348bd9aedf08825",
@@ -2398,7 +2678,14 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Wegpunkt: Justiere den Innenabstand eines Elements",
+      "descriptionDe": [
+        "Die nächsten Wegpunkte werden dir drei wichtige Aspekte von Raum – und Zeit! – bei HTML Elementen näher bringen: <code>padding</code>, <code>margin</code> und <code>border</code>. Das mit der Zeit war ein Scherz. Gleiche nun den Innenabstand – <code>padding</code> – deiner grünen Box dem der roten Box an.",
+        "<code>padding</code> kontrolliert den Raum oder Abstand zwischen dem Inhalt eines Elements und dessen Rahmen – <code>border</code>.",
+        "Wir sehen in diesem Beispiel, dass sich die grüne Box und die rote Box innerhalb der gelben Box befinden. Beachte, dass die rote Box mehr <code>padding</code> hat als die grüne Box.",
+        "Wenn du den Innenabstand der grünen Box – also <code>padding</code> – erhöhst, wird sich die Entfernung zwischen dem Text \"padding\" und dem Rahmen darum erhöhen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08822",
@@ -2462,7 +2749,14 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Passe den Außenabstand eines Elements an",
+      "descriptionDe": [
+        "Gleiche den Außenabstand – <code>margin</code> der grünen Box dem der roten Box an.",
+        "<code>margin</code> kontrolliert den Abstand zwischen dem Rahmen eines Elements und den benachbarten Elementen.",
+        "Die grüne und die rote Box befinden sich beide erneut innerhalb der gelben Box. Beachte, dass die rote Box mehr <code>margin</code> aufweist als ihr Erzfeind – die grüne Box.",
+        "Wenn du den Außenabstand – <code>margin</code> – der grünen Box erhöhst, wird sich der Abstand zwischen ihrem Rahmen und den benachbarten Elementen vergrößern."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08823",
@@ -2525,7 +2819,14 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Füge einem Element negativen Außenabstand hinzu",
+      "descriptionDe": [
+        "Passe den Außenabstand – <code>margin</code> – der grünen Box mit einem negativen Wert an, damit sie die gelbe Box horizontal ausfüllt.",
+        "<code>margin</code> kontrolliert den Abstand zwischen dem Rahmen eines Elements und den benachbarten Elementen.",
+        "Wenn du dem Außenabstand eines Elements einen negativen Wert zuweist, wird das Element größer.",
+        "Versuche den Außenabstand auf einen negativen Wert wie bei der roten Box zu setzen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08824",
@@ -2591,7 +2892,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Wegpunkt: Gib jeder Seite eines Elements unterschiedlichen Innenabstand",
+      "descriptionDe": [
+        "Verleihe der grünen Box einen Innenabstand – <code>padding</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
+        "Manchmal wirst du einem Element unterschiedlichen Innenabstand – also <code>padding</code> – auf jeder Seite geben wollen.",
+        "CSS erlaubt dir den Innenabstand eines Elements auf allen Seiten einzeln mit den Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu steuern."
+      ]
     },
     {
       "id": "bad87fee1248bd9aedf08824",
@@ -2657,7 +2964,12 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Wegpunkt: Füge jeder Seite eines Elements unterschiedlichen Außenabstand hinzu",
+      "descriptionDe": [
+        "Gib der grünen Box einen Außenabstand – also <code>margin</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
+        "CSS erlaubt dir ebenfalls den Außenabstand auf jeder Seite einzeln mit den Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu steuern."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08826",
@@ -2720,7 +3032,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Wegpunkt: Nutze die Notation im Uhrzeigersinn um den Innenabstand eines Elements zu bestimmen",
+      "descriptionDe": [
+        "Gib der Klasse \".green-box\" mit einer Notation im Uhrzeigersinn einen Innenabstand – <code>padding</code> – von 40 Pixeln auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite.",
+        "Anstatt die Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu verwenden, kannst du sie alle in einer Zeile schreiben: <code>padding: 10px 20px 10px 20px;</code>.",
+        "Diese vier Werte funktionieren wie eine Uhr: oben, rechts, unten und links. Sie bedeuten exakt das selbe wie die seitenspezifischen Anweisungen."
+      ]
     },
     {
       "id": "bad87fee1348bd9aedf08726",
@@ -2784,7 +3102,13 @@
       "nameEs": "",
       "descriptionEs": [],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Wegpunkt: Nutze die Notation im Uhrzeigersinn um den Außenabstand eines Elements zu bestimmen",
+      "descriptionDe": [
+        "Versuchen wir das noch einmal, aber diesmal mit dem Außenabstand – also <code>margin</code>. Nutze die Notation im Uhrzeigersinn – auch <code>Clockwise Notation</code> genannt – um einem Element 40 Pixel Außenabstand auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite zu verleihen.",
+        "Anstatt die Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu verwenden, kannst du alle in eine Zeile schreiben: <code>margin: 10px 20px 10px 20px;</code>.",
+        "Diese vier Werte funktionieren wieder wie eine Uhr: oben, rechts, unten und links. Sie meinen exakt das gleiche wie die seitenspezifischen Anweisungen."
+      ]
     }
   ]
 }

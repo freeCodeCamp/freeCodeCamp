@@ -38,7 +38,18 @@
         "Ahora es el momento de ingresar a nuestra sala de chat. Dale click al botón de \"I've completed this challenge\" para continuar con el siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Lerne wie Free Code Camp funktioniert",
+      "descriptionDe": [
+        "Sieh dir das kurze Video an oder lies einfach diese Übersicht:",
+        "Willkommen im Free Code Camp. Wir sind eine Community aus eifrigen Personen, die Programmieren lernen, indem sie Projekte für gemeinnützige Organisationen umsetzen.",
+        "Programmieren zu lernen ist hart, weshalb wir diese Community ins Leben gerufen haben. Jeder, der motiviert bleiben kann, ist auch in der Lage Programmieren zu lernen. Und um motiviert zu bleiben, musst du nur: <ol><li>Freunde finden, die programmieren</li><li>jeden Tag ein wenig programmieren</li></ol>",
+        "All unsere Challenges sind <ol><li>kostenlos</li><li>selbstbestimmt</li><li>Browser-basiert</li></ol>",
+        "Wir werden <ol><li>200 Stunden mit Werkzeugen wie HTML, CSS, JavaScript, Node.js und Datenbanken arbeiten</li><li>600 Stunden Projekte umsetzen</li><li>800 Stunden komplette Lösungen für gemeinnützige Organisationen erstellen</li></ol>",
+        "Am Ende werden wir <ol><li>gut im Programmieren sein</li><li>ein Portfolio aus Anwendungen mit zufriedenen Nutzern vorweisen können</li></ol>",
+        "Wenn du das Free Code Camp abgeschlossen hast, wirst du in der Lage sein einen Job in der Branche zu bekommen. Es gibt sehr viel mehr offene Stellen als fähige Programmierer, um sie zu besetzen.",
+        "Jetzt wird es Zeit unserem Chat beizutreten. Klicke auf \"I've completed this challenge\" um zur nächsten Challenge fortzufahren."
+      ]
     },
     {
       "id": "bd7125d8c441eddfaeb5bd0f",
@@ -85,7 +96,20 @@
         "Para mantener a nuestra comunidad como un lugar de aprendizaje positivo y amigable, por favor lee y sigue nuestro Código de Conducta: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Trete unserem Chat-Raum bei",
+      "descriptionDe": [
+        "Nun werden wir dem Chat-Raum von Free Code Camp beitreten. Du kannst jederzeit vorbei kommen um abzuhängen, Fragen zu stellen oder andere Camper für Paarprogrammierung zu finden.",
+        "Stelle sicher, dass deine Email Adresse in deinem Free Code Camp Account hinterlegt ist. Bitte beachte, dass deine Email Adresse für die Öffentlichkeit nicht einsehbar ist, aber für andere Camper in Slack wird sie sichtbar sein. Du kannst sie hier eintragen: <a href='/account' target='_blank'>http://freecodecamp.com/account</a>.",
+        "Klicke auf diesen Link, um von Slack eine Einladung zu den Chat-Räumen von Free Code Camp zu erhalten: <a href='/api/slack' target='_blank'>http://freecodecamp.com/api/slack</a>.",
+        "Kontrolliere jetzt dein Email Postfach und klicke in der Email von Slack auf den Link.",
+        "Beende die Registrierung und vervollständige dein Profil. Vergiss nicht, dein Profil-Bild hochzuladen. Ein Bild von deinem Gesicht ist am besten. So werden dich andere Personen im Chat sehen, also zeige dich von deiner Schokoladenseite.",
+        "Jetzt betrete den General Chat-Raum und stelle dich den anderen vor, indem du folgendes schreibst: \"Hello world!\".",
+        "Teile den anderen Campern mit, wie du auf Free Code Camp gestoßen bist. Wir interessieren uns auch dafür, warum du Programmieren lernen willst – aber auf englisch bitte, sonst versteht dich kaum einer.",
+        "Behalte den Chat geöffnet, während du an den Challenges arbeitest. Auf diesem Weg kannst du schnell nach Hilfe fragen, wenn du nicht weiter kommst. Du kannst auch jederzeit mit uns chatten, wenn du eine Pause einlegen möchtest.",
+        "Du kannst den Chat auch über die Schaltfläche \"Chat\" oben rechts auf dieser Seite erreichen.",
+        "Damit diese Community ein freundlicher und positiver Ort zum Lernen bleibt, lies und folge bitte unseren Verhaltensregeln: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
+      ]
     },
     {
       "id": "bd7125d8c441eddfaeb5bdff",
@@ -119,7 +143,16 @@
         "Para terminar, ten en cuenta que nuestra currícula open-source es un trabajo en progreso. Nuestra comunidad de voluntarios está mejorandola constantemente. Si crees que te has topado con algún bug, error ortográfico o algo que parezca confuso, haznos el favor de abrir un ticket a través de Github: <a href='https://github.com/FreeCodeCamp/freecodecamp/issues'>https://github.com/FreeCodeCamp/freecodecamp/issues</a>."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Besuche die Challenge Map",
+      "descriptionDe": [
+        "Bevor du startest, wollen wir dir ein paar Dinge zeigen.",
+        "Betrachte die Challenge Map. Klicke auf \"Map\" oben rechts auf dieser Seite. Diese Übersicht zeigt dir alle Challenges.",
+        "Du solltest alle Challenges in der gezeigten Reihenfolge abschließen.",
+        "Hast du alle Waypoint-Challenges beendet, folgen die Bonfires (Algorithmen), darauf Ziplines (Frontend Development) und zum Schluss Basejumps (Full Stack Development). Danach wirst du anfangen, Projekte für gemeinnützige Organisationen umzusetzen.",
+        "Diese Challenge Map dient dir als Orientierung. Du kannst einfach auf \"Learn\" klicken und direkt zur nächsten Challenge fortfahren.",
+        "Bitte beachte, dass unser Open Source Lehrplan nicht fertig ist. Unsere freiwillige Community verbessert diesen stetig. Wenn du einen Bug, Rechtschreib-Fehler oder etwas gefunden hast, das dir komisch vorkommt, öffne bitte ein GitHub Issue: <a href='https://github.com/FreeCodeCamp/freecodecamp/issues'>https://github.com/FreeCodeCamp/freecodecamp/issues</a>. Wie gehabt bitte in englischer Sprache."
+      ]
     },
     {
       "id": "bd7125d8c441eddfaeb5bd1f",
@@ -151,7 +184,15 @@
         "Lee algunos de nuestros artículos, luego continúa con tu siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Stöbere in unserem Field Guide",
+      "descriptionDe": [
+        "Free Code Camp hat einen aktuellen Field Guide, welcher viele deiner Fragen beantworten wird.",
+        "Klicke oben rechts auf \"Field Guide\".",
+        "Du kannst im Field Guide nach Lust und Laune stöbern. Die meisten der Artikel sind in weniger als einer Minute gelesen.",
+        "Wenn du auf den besagten Field Guide in der Navigation klickst, wirst du direkt zu dem Artikel geleitet, den du als letztes gelesen hast.",
+        "Lies ein paar der Artikel, dann schreite zu deiner nächsten Challenge voran."
+      ]
     },
     {
       "id": "bd7125d8c441eddfaeb5bd2f",
@@ -187,7 +228,17 @@
         "Una vez que estés satisfecho con tu página de portafolio, puedes seguir con el siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Personalisiere deine Portfolio-Seite",
+      "descriptionDe": [
+        "Du und die anderen Camper habt Portfolio-Seiten.",
+        "Um zu deinem Portfolio zu gelangen, klicke oben rechts auf dein Bild.",
+        "Dein Portfolio wird deinen Fortschritt im Free Code Camp automatisch anzeigen.",
+        "Klicke auf \"Update my portfolio page or manage my account\"",
+        "Du kannst deine GitHub, Twitter und LinkedIn Accounts verlinken. Wenn du bereits ein paar Websites gebaut hast, kannst du sie ebenfalls präsentieren.",
+        "Stelle sicher, dass du auf \"Update my Bio\" oder \"Update my Social Links\" klickst, um diese neuen Informationen zu speichern.",
+        "Sobald du zufrieden mit deinem Portfolio bist, kannst du zur nächsten Challenge fortfahren."
+      ]
     },
     {
       "id": "bd7126d8c441eddfaeb5bd3f",
@@ -227,7 +278,19 @@
         "Ahora que has aprendido a utilizar las Noticias de Campers, continuaremos con el siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Verpasse nicht die Camper News",
+      "descriptionDe": [
+        "Camper News ist der beste Ort für unsere Camper, nützliche Links zu teilen und zu diskutieren.",
+        "Klicke oben rechts auf \"News\".",
+        "Du wirst eine Vielzahl an Links sehen, die bereits geteilt wurden. Klicke auf \"Discuss\" unter einem von ihnen.",
+        "Du kannst Links bewerten. Das wird den Link in der Platzierung weiter nach oben befördern.",
+        "Du kannst einen Link auch kommentieren. Wenn jemand auf deinen Kommentar antwortet, wirst du per Email benachrichtigt, sodass du zurück kommen und reagieren kannst.",
+        "Du kannst ebenfalls Links teilen. Bearbeite den Titel des Links und hinterlasse einen ersten Kommentar, um die Diskussion zu starten.",
+        "Du kannst dir das Portfolio jedes Campers anschauen, der einen Link geteilt hat. Klicke dazu einfach auf ihr Bild.",
+        "Sobald du einen Link teilst, erhältst du einen Punkt. Jedes Mal, wenn jemand deinen Link bewertet, erhältst du zusätzlich einen Punkt.",
+        "Jetzt da du gelernt hast, was Camper News ist, kanns du zur nächsten Challenge gehen."
+      ]
     },
     {
       "id": "bd7126d8c441eddfaeb5bd3e",
@@ -265,7 +328,18 @@
         "En caso seas el anfitrión de un grupo de estudio, estes programando en pares en una biblioteca local o piensen en ir a un hackathon de fin de semana, tu grupo local te ayudará a hacerlo."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Treffe andere Camper in deiner Stadt",
+      "descriptionDe": [
+        "Der beste Weg, motiviert am Ball zu bleiben, ist mit anderen Campern abzuhängen.",
+        "Slack und Camper News sind super Wege zur Kommunikation mit anderen Campern. Es gibt aber nichts vergleichbares, Personen im echten Leben zu treffen.",
+        "Um leicht andere Camper in deiner Stadt zu treffen, solltest du der Facebook Gruppe deiner Stadt beitreten. Klicke <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city' target='_blank'>hier</a> um unsere wachsende Liste der lokalen Gruppen zu sehen.",
+        "Klicke auf den Link zu deiner Stadt. Sobald Facebook geladen ist, klicke auf \"Gruppe beitreten\".",
+        "Unsere lokalen Gruppen sind neu. Solltest du deine Stadt also nicht in der Liste sehen, erstelle doch bitte eine Facebook Gruppe deiner Stadt indem du den Anweisungen dazu folgst.",
+        "Wenn du keinen Facebook Account hast, empfehlen wir dir einen zu erstellen. Auch wenn dieser nur dazu dient, sich mit anderen Campern in deiner Stadt zu koordinieren.",
+        "Unsere Gruppen erlauben dir, Events zu planen und Fotos davon zu teilen.",
+        "Egal ob du eine Studenten-Gruppe, Paarprogrammierung an deiner lokalen Bibliothek oder einen Hackathon am Wochenende anbieten willst. Die Gruppe deiner Stadt macht das alles möglich."
+      ]
     },
     {
       "_id": "bd7126d8c431eddfaeb5bd3e",
@@ -334,7 +408,18 @@
         "Ahora que tienes en claro el procedimiento a seguir cuando necesites ayuda. ¡Empecémos a programar! Continua con el siguiente desafío."
       ],
       "namePt": "",
-      "descriptionPt": []
+      "descriptionPt": [],
+      "nameDe": "Waypoint: Der Weg des Hackers – Hilfe erhalten mit RSAP",
+      "descriptionDe": [
+        "Lass uns eine letzte Sache behandeln, bevor du mit den Lektionen beginnst: Wie du Hilfe bekommst.",
+        "Immer wenn du nicht weiter kommst oder du nicht weißt, was als nächstes zu Tun ist, kannst du diesem einfachen Algorithmus (Prozedur) folgen: RSAP (Read, Search, Ask, Post – Lesen, Suchen, Fragen, Posten).",
+        "Erstens, R – Lies die Dokumentation oder die Fehler-Meldung. Eine wichtige Eigenschaft aller Coder ist es, Anweisungen zu interpretieren und zu folgen.",
+        "Danach, S – Suche bei Google. Es bedarf viel Übung, gute Such-Anfragen zu stellen. Wenn du bei Google suchst, solltest du die Sprache oder das Framework angeben, welches du benutzt. Außerdem wirst du die aktuellsten Ergebnisse haben wollen.",
+        "Wenn du keine Antwort auf deine Frage erhalten hast, folge A – Frage deine Freunde. Wenn du Probleme hast, kannst du andere Camper fragen. Wir haben einen speziellen Chat-Raum zur Unterstützung beim Lernen eingerichtet. Gehe zu <a href='https://freecode.slack.com/messages/help/' target='_blank'>https://freecode.slack.com/messages/help/</a>. Behalte diesen Chat offen, solange du an den Challenges arbeitest.",
+        "Und zum Schluss, P – Poste auf Stack Overflow. Bevor du das tust, lies bitte den Leitfaden für gute Fragen auf Stack Overflow: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>.",
+        "Hier ist unser detaillierter Field Guide um Hilfe zu erhalten: <a href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank'>http://freecodecamp.com/field-guide/how-do-i-get-help-when-i-get-stuck</a>.",
+        "Jetzt hast du einen klaren Algorithmus, dem du folgen kannst wenn du Hilfe benötigst. Fangen wir an zu programmieren! Gehe zur nächsten Challenge."
+      ]
     }
   ]
 }
