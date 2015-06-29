@@ -10,6 +10,7 @@ var R = require('ramda'),
   cookieParser = require('cookie-parser'),
   compress = require('compression'),
   session = require('express-session'),
+  expressState = require('express-state'),
   logger = require('morgan'),
   errorHandler = require('errorhandler'),
   methodOverride = require('method-override'),
@@ -34,6 +35,7 @@ var generateKey =
  * Create Express server.
  */
 var app = loopback();
+expressState.extend(app);
 var PassportConfigurator =
   require('loopback-component-passport').PassportConfigurator;
 var passportConfigurator = new PassportConfigurator(app);
