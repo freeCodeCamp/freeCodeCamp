@@ -350,6 +350,23 @@ $(document).ready(function() {
   };
 
   $('#comment-button').on('click', commentSubmitButtonHandler);
+  
+  //fakeiphone positioning hotfix 
+  if($('.iphone-position')!=undefined && $('.iphone') !=undefined){
+    var startIphonePosition = parseInt($('.iphone-position').css('top').replace('px', ''));
+    var startIphone = parseInt($('.iphone').css('top').replace('px', ''));
+    $(window).on('scroll', function(){
+    	if((($('.courseware-height').height() + $('.courseware-height').offset().top)-$(window).scrollTop()-$('.iphone-position').height()) <= 0){
+    		$('.iphone-position').css('top', startIphonePosition+(($('.courseware-height').height() + $('.courseware-height').offset().top)-$(window).scrollTop()-$('.iphone-position').height()));
+    		$('.iphone').css('top', startIphonePosition+(($('.courseware-height').height() + $('.courseware-height').offset().top)-$(window).scrollTop()-$('.iphone-position').height())+120);
+    	}
+    	else{
+    		$('.iphone-position').css('top', startIphonePosition);
+    		$('.iphone').css('top', startIphone);
+    	}
+    });
+  }
+  
 });
 
 var profileValidation = angular.module('profileValidation',
