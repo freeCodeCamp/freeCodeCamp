@@ -29,8 +29,8 @@
   "dependencies": {
     "accepts": "~1.2.5",
     "async": "~0.9.0",
-    "babel-core": "^5.6.15",
-    "babel-loader": "^5.2.2",
+    "babel-core": "5.6.15",
+    "babel-loader": "5.2.2",
     "bcrypt-nodejs": "~0.0.3",
     "body-parser": "~1.9.3",
     "chai-jquery": "~2.0.0",
