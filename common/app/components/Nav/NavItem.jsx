@@ -1,12 +1,13 @@
-var React = require('react/addons');
-var joinClasses = require('react-bootstrap/lib/utils/joinClasses');
-var classSet = React.addons.classSet;
-var BootstrapMixin = require('react-bootstrap').BootstrapMixin;
+import React from 'react';
+import classnames from 'classnames';
 
-var NavItem = React.createClass({
-  mixins: [BootstrapMixin],
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  propTypes: {
+  static displayName = 'NavItem'
+  static propTypes = {
     onSelect: React.PropTypes.func,
     active: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
@@ -14,31 +15,41 @@ var NavItem = React.createClass({
     title: React.PropTypes.string,
     eventKey: React.PropTypes.any,
     target: React.PropTypes.string
-  },
+  }
 
-  getDefaultProps: function () {
-    return {
-      href: '#'
+  handleClick(e) {
+    if (this.props.onSelect) {
+      e.preventDefault();
+
+      if (!this.props.disabled) {
+        this.props.onSelect(
+          this.props.eventKey,
+          this.props.href,
+          this.props.target
+        );
+      }
+    }
+  }
+
+  render() {
+    const {
+      disabled,
+      active,
+      href,
+      title,
+      target,
+      children,
+    } = this.props;
+
+    const classes = {
+      'active': active,
+      'disabled': disabled
     };
-  },
-
-  render: function () {
-    var {
-          disabled,
-          active,
-          href,
-          title,
-          target,
-          children,
-        } = this.props,
-        props = this.props,
-        classes = {
-          'active': active,
-          'disabled': disabled
-        };
 
     return (
-      <li {...props} className={joinClasses(props.className, classSet(classes))}>
+      <li
+        className={ joinClasses(props.className, classSet(classes)) }
+        { ...this.props }>
         <a
           href={href}
           title={title}
@@ -50,17 +61,5 @@ var NavItem = React.createClass({
         </a>
       </li>
     );
-  },
-
-  handleClick: function (e) {
-    if (this.props.onSelect) {
-      e.preventDefault();
-
-      if (!this.props.disabled) {
-        this.props.onSelect(this.props.eventKey, this.props.href, this.props.target);
-      }
-    }
   }
-});
-
-module.exports = NavItem;
+}

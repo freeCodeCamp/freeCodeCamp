@@ -12,7 +12,7 @@ export default {
   getComponents(cb) {
     require.ensure([], require => {
       cb(null, [
-        require('./components/Jobs')
+        require('./components/Jobs.jsx')
       ]);
     });
   }

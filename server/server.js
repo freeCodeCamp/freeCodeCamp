@@ -22,6 +22,7 @@ var R = require('ramda'),
   lessMiddleware = require('less-middleware'),
 
   passportProviders = require('./passport-providers'),
+  rxMiddleware = require('./utils/rx').rxMiddleware,
   /**
    * API keys and Passport configuration.
    */
@@ -175,11 +176,15 @@ app.use(helmet.csp({
 
 passportConfigurator.init();
 
+// add rx methods to express
+app.use(rxMiddleware());
+
 app.use(function(req, res, next) {
   // Make user object available in templates.
   res.locals.user = req.user;
   next();
 });
+
 
 app.use(
   loopback.static(path.join(__dirname, '../public'), {
@@ -187,7 +192,6 @@ app.use(
   })
 );
 
-// track when connecting to db starts
 var startTime = Date.now();
 boot(app, {
   appRootDir: __dirname,

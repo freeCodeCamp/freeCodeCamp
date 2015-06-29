@@ -1,0 +1,9 @@
+doctype html
+html(ng-app='profileValidation', lang='en')
+  head
+    include partials/universal-head
+  body.top-and-bottom-margins
+    .container
+      include partials/flash
+      #fcc!= markup
+    script!= state

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
-import NavItemFCC from './NavItem.jsx';
 
 export default class extends React.Component {
   constructor(props) {
@@ -34,12 +33,12 @@ export default class extends React.Component {
       );
     } else {
       return (
-        <NavItemFCC
-          aClassName='btn signup-btn signup-btn-nav'
+        <NavItem
+          className='btn signup-btn signup-btn-nav'
           eventKey={ 2 }
           href='/login'>
           Sign In
-        </NavItemFCC>
+        </NavItem>
       );
     }
   }

@@ -12,6 +12,11 @@ var gulp = require('gulp'),
   envify = require('envify/custom'),
   toVinylWithName = require('vinyl-source-stream'),
 
+  // react app
+  webpack = require('gulp-webpack'),
+  webpackConfig = require('./webpack.config.js'),
+  webpackConfigNode = require('./webpack.config.node.js'),
+
   // server process
   nodemon = require('gulp-nodemon'),
   sync = require('browser-sync'),
@@ -39,6 +44,16 @@ var paths = {
     client: './client/loopbackClient',
     root: path.join(__dirname, 'client/'),
     clientName: 'lbApp'
+  },
+
+  client: {
+    src: './client',
+    dest: 'public/js'
+  },
+
+  node: {
+    src: './client',
+    dest: 'server/server'
   },
 
   syncWatch: [
@@ -82,6 +97,20 @@ gulp.task('loopback', function() {
     .pipe(toVinylWithName(paths.loopback.clientName + '.js'))
     .pipe(gulp.dest(paths.publicJs));
 });
+
+gulp.task('pack-client', function() {
+  return gulp.src(paths.client.src)
+    .pipe(webpack(webpackConfig))
+    .pipe(gulp.dest(paths.client.dest));
+});
+
+gulp.task('pack-node', function() {
+  return gulp.src(paths.node.src)
+    .pipe(webpack(webpackConfigNode))
+    .pipe(gulp.dest(paths.node.dest));
+});
+
+gulp.task('pack', ['pack-client', 'pack-node']);
 
 gulp.task('serve', function(cb) {
   var called = false;
