@@ -342,8 +342,9 @@
       ]
     },
     {
-      "_id": "bd7126d8c431eddfaeb5bd3e",
+      "id": "bd7126d8c431eddfaeb5bd3e",
       "name": "Waypoint: Add Free Code Camp to your LinkedIn Profile",
+      "dashedName": "waypoint-add-free-code-camp-to-your-linkedin-profile",
       "difficulty": 0.008,
       "challengeSeed": ["131574134"],
       "description": [
@@ -372,7 +373,6 @@
       "descriptionPt": []
     },
     {
-      "_id": "bd7137d8c441eddfaeb5bdef",
       "id": "bd7137d8c441eddfaeb5bdef",
       "name": "Waypoint: Get Help the Hacker Way with RSAP",
       "dashedName": "waypoint-get-help-the-hacker-way-with-rsap",

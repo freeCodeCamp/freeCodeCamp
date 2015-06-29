@@ -165,7 +165,8 @@ module.exports = function(app) {
           if (
             moment(today).toString() === moment(timeKeys[0]).toString() ||
             moment(today).subtract(1, 'd').toString() ===
-              moment(timeKeys[0]).toString()
+              moment(timeKeys[0]).toString() || moment(today).subtract(2, 'd').toString() ===
+            moment(timeKeys[0]).toString()
           ) {
             for (var _i = 1; _i <= timeKeys.length; _i++) {
 
