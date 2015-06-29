@@ -1,3 +1,4 @@
+require('babel/register');
 var pm2 = require('pm2');
 pm2.connect(function() {
   pm2.start({

@@ -1,3 +1,4 @@
+require('babel/register');
 var gulp = require('gulp'),
   path = require('path'),
 
@@ -118,6 +119,7 @@ gulp.task('serve', function(cb) {
     script: paths.server,
     ext: '.js',
     ignore: paths.serverIgnore,
+    exec: './node_modules/.bin/babel-node',
     env: {
       'NODE_ENV': 'development',
       'DEBUG': process.env.DEBUG || 'freecc:*'

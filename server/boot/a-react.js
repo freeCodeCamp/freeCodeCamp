@@ -1,13 +1,13 @@
-// appFactory is an es6 module
-var debug = require('debug')('freecc:servereact');
-var app$ = require('../common/app/app-stream.jsx').default;
-var Cat = require('thundercats').Cat;
+import debugFactory from 'debug';
+import app$ from '../common/app/app-stream.jsx';
+import { Cat } from 'thundercats';
 
-var routes = [
+const debug = debugFactory('freecc:servereact');
+const routes = [
   '/jobs'
 ];
 
-module.exports = function(app) {
+export default function reactSubRouter(app) {
   var router = app.Router();
 
   routes.forEach(function(route) {
@@ -54,4 +54,4 @@ module.exports = function(app) {
         next
       );
   }
-};
+}

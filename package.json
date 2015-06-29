@@ -10,7 +10,7 @@
     "npm": "2.3.0"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "start": "babel-node server/server.js",
     "lint": "eslint --ext=.js,.jsx .",
     "test": "mocha",
     "postinstall": "bower cache clean && bower install && gulp build"
