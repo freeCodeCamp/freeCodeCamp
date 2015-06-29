@@ -16,6 +16,7 @@
         "Now all you need to do is add the \"img-responsive\" class to your image."
       ],
       "tests": [
+        "assert($('img').length > 1, 'You should have a total of two images.')",
         "assert($('img').hasClass('img-responsive'), 'Your new image should have the class \"img-responsive\".')",
         "assert(new RegExp('http://bit.ly/fcc-kittens2', 'gi').test($('img.img-responsive').attr('src')), 'Add a second image with the <code>src</code> of <code>http&#58;//bit.ly/fcc-kittens2</code>.')"
       ],
