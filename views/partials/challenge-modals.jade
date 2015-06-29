@@ -4,12 +4,11 @@
             .modal-header.challenge-list-header Ready to pair program?
                 a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
             .modal-body.text-center
-                h3 This will create a pair programming request.
                 h3 You'll need &thinsp;
                     a(href='/field-guide/how-do-i-install-screenhero' target='_blank') Screen Hero
                     | .
-                h3 Other campers may then message you about pair programming.
-                a.btn.btn-lg.btn-primary.btn-block#i-want-to-pair(name='_csrf', value=_csrf) Create my pair request
+                h3 Tell your fellow campers which challenge you are interested in pair programming on.
+                a.btn.btn-lg.btn-primary.btn-block#i-want-to-pair(name='_csrf', value=_csrf) Take me to the Pair Programming room
                 a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
 
 #issue-modal.modal(tabindex='-1')
@@ -33,7 +32,6 @@
                     a(href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank') RSAP
                     | .
                 h3 If you've already read the errors and searched Google, you should ask for help.
-                h3 This will open a help request in our Help chat room.
                 a.btn.btn-lg.btn-primary.btn-block#i-want-help(name='_csrf', value=_csrf) Ask for help
                 a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
 
@@ -47,6 +45,5 @@
                     a(href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank') RSAP
                     | .
                 h3 If you've already read the errors and searched Google, you should ask for help.
-                h3 This will open a help request in our Help chat room.
                 a.btn.btn-lg.btn-primary.btn-block#i-want-help-editorless(name='_csrf', value=_csrf) Ask for help
                 a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
