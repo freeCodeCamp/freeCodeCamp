@@ -350,6 +350,23 @@ $(document).ready(function() {
   };
 
   $('#comment-button').on('click', commentSubmitButtonHandler);
+  
+  if($('.scroll-locker') != undefined){
+        function lockTop(initOff){
+            if ($(window).width() >= 992) {
+                $('.scroll-locker').css('position', 'fixed').css('top', initOff).css('width', $($('.scroll-locker').parent()).width()).css('max-height', '75%');
+            }
+            else{
+                $('.scroll-locker').css('position', 'inherit').css('top', 'inherit').css('width', 'inherit').css('max-height', '');
+            }
+        }
+        var initOff = ($('.scroll-locker').offset().top - $(window).scrollTop());
+        lockTop(initOff);
+        $(window).on('resize', function(){
+            lockTop(initOff);
+        });
+    }
+  
 });
 
 var profileValidation = angular.module('profileValidation',
