@@ -22,22 +22,6 @@ block content
     .row.courseware-height
         .col-xs-12.col-sm-12.col-md-3.col-lg-3
             .scroll-locker(style= "overflow-y: auto; overflow-x: hidden;")
-                script.
-                    $(document).ready(function(){
-                        function lockTop(initOff){
-                            if ($(window).width() >= 992) {
-                                $('.scroll-locker').css('position', 'fixed').css('top', initOff).css('width', $($('.scroll-locker').parent()).width()).css('max-height', '750px');
-                            }
-                            else{
-                                $('.scroll-locker').css('position', 'inherit').css('top', 'inherit').css('width', 'inherit').css('max-height', '');
-                            }
-                        }
-                        var initOff = ($('.scroll-locker').offset().top - $(window).scrollTop());
-                        lockTop(initOff);
-                        $(window).on('resize', function(){
-                            lockTop(initOff);
-                        });
-                    });
                 .well
                     .row
                     .col-xs-12
@@ -77,10 +61,7 @@ block content
                     var prodOrDev = !{JSON.stringify(environment)};
                     var challengeType = !{JSON.stringify(challengeType)};
                     var started = Math.floor(Date.now());
-                br
-                br
-                br
-                br
+                div(style = "height: 150px;")
         .col-xs-12.col-sm-12.col-md-5.col-lg-6
             #mainEditorPanel
                 form.code
