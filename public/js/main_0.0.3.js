@@ -56,7 +56,7 @@ $(document).ready(function() {
 
   $('#report-issue').on('click', function() {
     $('#issue-modal').modal('hide');
-    window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screen shots if possible.', '_blank')
+    window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.', '_blank')
   });
 
   $('#i-want-to-pair').on('click', function() {
