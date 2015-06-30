@@ -6,7 +6,7 @@
       "id": "bd7123c8c441eddfaeb5bdef",
       "name": "Waypoint: Say Hello to HTML Elements",
       "dashedName": "waypoint-say-hello-to-html-elements",
-      "difficulty": 0.0085,
+      "difficulty": 0.001,
       "description": [
         "Welcome to Free Code Camp's first coding challenge! Click on the button below for further instructions.",
         "Awesome. Now you can read the rest of this challenge's instructions.",
@@ -56,7 +56,7 @@
       "id": "bad87fee1348bd9aedf0887a",
       "name": "Waypoint: Headline with the h2 Element",
       "dashedName": "waypoint-headline-with-the-h2-element",
-      "difficulty": 0.010,
+      "difficulty": 0.002,
       "description": [
         "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element.",
         "The <code>h2</code> element you enter will create an <code>h2</code> element on the website.",
@@ -100,7 +100,7 @@
       "id": "bad87fee1348bd9aedf08801",
       "name": "Waypoint: Inform with the Paragraph Element",
       "dashedName": "waypoint-inform-with-the-paragraph-element",
-      "difficulty": 0.011,
+      "difficulty": 0.003,
       "description": [
         "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\".",
         "<code>p</code> elements are the preferred element for normal-sized paragraph text on websites. P is short for \"paragraph\".",
@@ -141,7 +141,7 @@
       "id": "bad87fee1348bd9aeaf08801",
       "name": "Waypoint: Visually Separate Elements with Line Breaks",
       "dashedName": "waypoint-visually-separate-elements-with-line-breaks",
-      "difficulty": 0.012,
+      "difficulty": 0.004,
       "description": [
         "Add a <code>br</code> element to your page, preferably between two of your elements.",
         "<code>br</code> elements, also known as \"line break\" elements, can be created with <code>&#60;br&#62</code>.",
@@ -184,7 +184,7 @@
       "id": "bad87fee1348bd9aedf08802",
       "name": "Waypoint: Uncomment HTML",
       "dashedName": "waypoint-uncomment-html",
-      "difficulty": 0.013,
+      "difficulty": 0.005,
       "description": [
         "Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
         "Commenting is a way that you can leave comments within your code without affecting the code itself.",
@@ -236,7 +236,7 @@
       "id": "bad87fee1348bd9aedf08804",
       "name": "Waypoint: Comment out HTML",
       "dashedName": "waypoint-comment-out-html",
-      "difficulty": 0.014,
+      "difficulty": 0.006,
       "description": [
         "Comment out your <code>h1</code> element and your <code>p</code> element, but leave your <code>h2</code> element uncommented.",
         "Remember that in order to start a comment, you need to use <code>&#60;!--</code> and to end a comment, you need to use <code>--&#62;</code>.",
@@ -285,7 +285,7 @@
       "id": "bad87fee1348bd9aedf08833",
       "name": "Waypoint: Fill in the Blank with Placeholder Text",
       "dashedName": "waypoint-fill-in-the-blank-with-placeholder-text",
-      "difficulty": 0.015,
+      "difficulty": 0.007,
       "description": [
         "Replace the text inside your <code>p</code> element with the first few words of the provided \"Kitty Ipsum\" text.",
         "Web developers traditionally use \"Lorem Ipsum\" text as placeholder text. It's called \"Lorem Ipsum\" text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
@@ -335,7 +335,7 @@
       "id": "bad87fed1348bd9aedf08833",
       "name": "Waypoint: Delete HTML Elements",
       "dashedName": "waypoint-delete-html-elements",
-      "difficulty": 0.016,
+      "difficulty": 0.008,
       "description": [
         "Delete your <code>h1</code> and <code>br</code> elements so we can simplify our view.",
         "Our phone doesn't have much vertical space.",
@@ -382,7 +382,7 @@
       "id": "bad87fee1348bd9aedf08803",
       "name": "Waypoint: Change the Color of Text",
       "dashedName": "waypoint-change-the-color-of-text",
-      "difficulty": 0.017,
+      "difficulty": 0.009,
       "description": [
         "Change your <code>h2</code> element's style so that its text color is red.",
         "We can do this by changing the \"style\" of your <code>h2</code> element.",
@@ -424,7 +424,7 @@
       "id": "bad87fee1348bd9aedf08805",
       "name": "Waypoint: Use CSS Selectors to Style Elements",
       "dashedName": "waypoint-use-css-selectors-to-style-elements",
-      "difficulty": 0.018,
+      "difficulty": 0.010,
       "description": [
         "Delete your <code>h2</code> element's style attribute and instead create a CSS <code>style</code> element. Add the necessary CSS to turn all <code>h2</code> elements blue.",
         "With CSS, there are hundreds of CSS \"attributes\" that you can use to change the way an element looks on your page.",
@@ -479,7 +479,7 @@
       "id": "bad87fee1348bd9aecf08806",
       "name": "Waypoint: Use a CSS Class to Style an Element",
       "dashedName": "waypoint-use-a-css-class-to-style-an-element",
-      "difficulty": 0.019,
+      "difficulty": 0.011,
       "description": [
         "Create a CSS class called \"red-text\" and apply it to your <code>h2</code> element.",
         "Classes are reusable styles that can be added to HTML elements.",
@@ -532,7 +532,7 @@
       "id": "bad87fee1348bd9aefe08806",
       "name": "Waypoint: Style Multiple Elements with a CSS Class",
       "dashedName": "waypoint－style－multiple-elements-with-a-css-class",
-      "difficulty": 0.020,
+      "difficulty": 0.012,
       "description": [
         "Apply the \"red-text\" class to your <code>h2</code> and <code>p</code> elements.",
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
@@ -577,7 +577,7 @@
       "id": "bad87fee1348bd9aedf08806",
       "name": "Waypoint: Change the Font Size of an Element",
       "dashedName": "waypoint-change-the-font-size-of-an-element",
-      "difficulty": 0.021,
+      "difficulty": 0.013,
       "description": [
         "Create a second <code>p</code> element. Then, inside your <code>&#60;style&#62;</code> element, set the \"font-size\" of all <code>p</code> elements to 16 pixels.",
         "Font size is controlled by the \"font-size\" CSS attribute, like this: <code>h1 { font-size: 30px; }</code>.",
@@ -624,7 +624,7 @@
       "id": "bad87fee1348bd9aede08807",
       "name": "Waypoint: Set the Font Family of an Element",
       "dashedName": "waypoint-set-the-font-family-of-an-element",
-      "difficulty": 0.022,
+      "difficulty": 0.014,
       "description": [
         "Make all of your <code>p</code> elements use the \"Monospace\" font.",
         "You can set an element's font by using the \"font-family\" attribute.",
@@ -671,7 +671,7 @@
       "id": "bad87fee1348bd9aedf08807",
       "name": "Waypoint: Import a Google Font",
       "dashedName": "waypoint-import-a-google-font",
-      "difficulty": 0.023,
+      "difficulty": 0.015,
       "description": [
         "Apply the <code>font-family</code> of \"Lobster\" to your <code>h2</code> element.",
         "First, you'll need to make a \"call\" to Google to grab the \"Lobster\" font and load it into your HTML.",
@@ -725,7 +725,7 @@
       "id": "bad87fee1348bd9aedf08808",
       "name": "Waypoint: Specify How Fonts Should Degrade",
       "dashedName": "waypoint-specify-how-fonts-should-degrade",
-      "difficulty": 0.024,
+      "difficulty": 0.016,
       "description": [
         "Make all your <code>h2</code> elements use \"Lobster\" as their font family, but degrade to the \"Monospace\" font when the \"Lobster\" font isn't available.",
         "You can leave \"Lobster\" your <code>h2</code> element's font-family, and have it \"degrade\" to a different font when \"Lobster\" isn't available.",
@@ -780,78 +780,10 @@
       ]
     },
     {
-      "id": "bad87fee1348bd9aedf08809",
-      "name": "Waypoint: Override Styles with Important",
-      "dashedName": "waypoint-override-styles-with-important",
-      "difficulty": 0.025,
-      "description": [
-        "Create an \"urgently-red\" class that gives an element the font-color of red, but add <code>!important</code> to the class to ensure the element is rendered as being red. Immediately below your \"urgently-red\" class declaration, create a \"blue-text\" class that gives an element the font-color of blue. Apply both classes to your <code>h2</code> element.",
-        "You can add more than one class to an element by separating the class declarations with a space, like this: <code>&#60;h2 class='green-text giant-text'&#62;This will be giant green text&#60;/h2&#62;</code>.",
-        "Sometimes HTML elements will receive conflicting information from CSS classes as to how they should be styled.",
-        "If there's a conflict in the CSS, the browser will use whichever style declaration is closest to the bottom of the CSS document (whichever declaration comes last). Note that in-line style declarations are the final authority in how an HTML element will be rendered.",
-        "There's one way to ensure that an element is rendered with a certain style, regardless of where that declaration is located. That one way is to use <code>!important</code>.",
-        "In case you're curious, this is the priority hierarchy for element styles: <code>!important</code> beats inline styles, which beats CSS class selectors, which beats CSS selector. That is, <code>!important</code> trumps all other styles, and inline styles trump style tag declarations.",
-        "Here's an example of a CSS style that uses <code>!important</code>: <code>&#60;style&#62; .urgently-blue { color: blue !important; } &#60;/style&#62;</code>.",
-        "Now see if you can make sure the <code>h2</code> element is rendered in the color red without removing the \"blue-text\" class, doing an in-line styling, and without changing the sequence of CSS class declarations."
-      ],
-      "tests": [
-        "assert(new RegExp('\\.blue-text', 'gi').test(editor), 'Create the CSS class \"blue-text\"')",
-        "assert(new RegExp('\\.urgently-red', 'gi').test(editor), 'Create the CSS class \"urgently-red\"')",
-        "assert(new RegExp('red.?!important', 'gi').test(editor), 'Add the \"!important\" declaration!')",
-        "assert($('h2').hasClass('blue-text'), 'Your h2 element should have the class \"blue-text\".')",
-        "assert($('h2').hasClass('urgently-red'), 'Your h2 element should have the class \"urgently-red\".')",
-        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your h2 element should be red.')"
-      ],
-      "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
-        "<style>",
-        "  .red-text {",
-        "    color: red;",
-        "  }",
-        "",
-        "  h2 {",
-        "    font-family: Lobster, Monospace;",
-        "  }",
-        "",
-        "  p {",
-        "    font-size: 16px;",
-        "    font-family: Monospace;",
-        "  }",
-        "</style>",
-        "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
-        "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
-      ],
-      "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "nameDe": "Waypoint: Überschreibe Styles mit Important",
-      "descriptionDe": [
-        "Erstelle eine \"urgently-red\" Klasse, welche einem Element die Schriftfarbe Rot verleiht, füge aber <code>!important</code> zur Klasse hinzu um sicherzustellen, dass die Farbe auch übernommen wird. Erstelle direkt unter deiner \"urgently-red\" Klasse eine weitere Klasse namens \"blue-text\", die einem Element die Schriftfarbe Blau gibt. Füge beide Klassen zu deinem <code>h2</code> Element hinzu.",
-        "Du kannst mehrere Klassen zu einem Element hinzufügen, indem du sie mit einem Leerzeichen trennst: <code>&#60;h2 class='green-text giant-text'&#62;Das wird ein großer grüner Text&#60;/h2&#62;</code>.",
-        "Ab und zu erhalten HTML Elemente ähnliche Informationen von verschiedenen CSS Klassen.",
-        "Wenn es einen solchen Konflikt gibt, wird der Browser die Styles verwenden, welche am Ende des CSS Dokuments stehen. Beachte, dass Inline Styles die höchste Priorität haben.",
-        "Es gibt einen Weg um sicherzustellen, dass ein bestimmter Style akzeptiert wird. Egal wo dieser sich befindet. Die Rede ist von <code>!important</code>.",
-        "Verwirrt? Hier ist die Hierarchie, in der Styles angewandt werden: <code>!important</code> schlägt alle anderen Styles und Inline Styles kommen vor Style Tag Deklarationen.",
-        "Ein Beispiel für CSS Styles, die <code>!important</code> verwenden: <code>&#60;style&#62; .urgently-blue { color: blue !important; } &#60;/style&#62;</code>.",
-        "Jetzt stelle sicher, dass dein <code>h2</code> Element die Farbe Rot erhält, ohne die \"blue-text\" Klasse zu entfernen, einen Inline Style anzuwenden oder die Reihenfolge der CSS Klassen zu verändern."
-      ]
-    },
-    {
       "id": "bad87fee1348bd9aedf08812",
       "name": "Waypoint: Add Images to your Website",
       "dashedName": "waypoint-add-images-to-your-website",
-      "difficulty": 0.026,
+      "difficulty": 0.017,
       "description": [
         "Use an <code>img</code> element to add the image <code>http://bit.ly/fcc-kittens</code> to your website.",
         "You can add images to your website by using the <code>img</code> element, and point to an specific image's URL using the <code>src</code> attribute.",
@@ -907,7 +839,7 @@
       "id": "bad87fee1348bd9acdf08812",
       "name": "Waypoint: Size your Images",
       "dashedName": "waypoint-size-your-images",
-      "difficulty": 0.027,
+      "difficulty": 0.018,
       "description": [
         "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.",
         "CSS has an attribute called <code>width</code> that controls an element's width. Just like with fonts, we'll use pixels(px) to specify the image's width.",
@@ -963,7 +895,7 @@
       "id": "bad87fee1348bd9bedf08813",
       "name": "Waypoint: Add Borders Around your Elements",
       "dashedName": "waypoint-add-borders-around-your-elements",
-      "difficulty": 0.028,
+      "difficulty": 0.019,
       "description": [
         "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply that class to your cat photo.",
         "CSS borders have attributes like style, color and width.",
@@ -1026,7 +958,7 @@
       "id": "bad87fee1348bd9aedf08814",
       "name": "Waypoint: Add Rounded Corners with a Border Radius",
       "dashedName": "waypoint-add-rounded-corners-with-a-border-radius",
-      "difficulty": 0.029,
+      "difficulty": 0.020,
       "description": [
         "Give your cat photo a <code>border-radius</code> of 10 pixels.",
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS attribute called <code>border-radius</code>.",
@@ -1092,7 +1024,7 @@
       "id": "bad87fee1348bd9aedf08815",
       "name": "Waypoint: Make Circular Images with a Border Radius",
       "dashedName": "waypoint-make-circular-images-with-a-border-radius",
-      "difficulty": 0.030,
+      "difficulty": 0.021,
       "description": [
         "Give your cat photo a <code>border-radius</code> of 50%.",
         "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage."
@@ -1157,7 +1089,7 @@
       "id": "bad87fee1348bd9aedf08816",
       "name": "Waypoint: Link to External Pages with Anchor Elements",
       "dashedName": "waypoint-link-to-external-pages-with-anchor-elements",
-      "difficulty": 0.031,
+      "difficulty": 0.022,
       "description": [
         "Create an <code>a</code> element, or \"anchor element\", that links to http://catphotoapp.com and has \"cat photos\" as its link text, or \"anchor text\".",
         "Here's a diagram of an <code>a</code> element. In this case, it's used in the middle of a paragraph element, which means your link will appear in the middle of your sentence.",
@@ -1227,7 +1159,7 @@
       "id": "bad87fee1348bd9aede08817",
       "name": "Waypoint: Wrap an Anchor Element within a Paragraph",
       "dashedName": "waypoint-wrap-an-anchor-element-within-a-paragraph",
-      "difficulty": 0.032,
+      "difficulty": 0.023,
       "description": [
         "Now wrap your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text.",
         "Again, here's a diagram of an <code>a</code> element for your reference:",
@@ -1302,7 +1234,7 @@
       "id": "bad87fee1348bd9aedf08817",
       "name": "Waypoint: Make Dead Links using the Hash Symbol",
       "dashedName": "waypoint-make-dead-links-using-the-hash-symbol",
-      "difficulty": 0.033,
+      "difficulty": 0.024,
       "description": [
         "Use the hash symbol (#) to turn your <code>a</code> element's link into a dead link.",
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
@@ -1372,7 +1304,7 @@
       "id": "bad87fee1348bd9aedf08820",
       "name": "Waypoint: Turn an Image into a Link",
       "dashedName": "waypoint-turn-an-image-into-a-link",
-      "difficulty": 0.034,
+      "difficulty": 0.025,
       "description": [
         "Wrap your <code>img</code> element inside an <code>a</code> element with a dead link.",
         "You can make elements into links by wrapping them within an <code>a</code> element.",
@@ -1446,7 +1378,7 @@
       "id": "bad87fee1348bd9aedf08818",
       "name": "Waypoint: Add Alt Text to an Image for Accessibility",
       "dashedName": "waypoint-add-alt-text-to-an-image-for-accessibility",
-      "difficulty": 0.035,
+      "difficulty": 0.026,
       "description": [
         "Add an <code>alt</code> attribute with the text \"A cute orange cat lying on its back\" to our cat photo.",
         "<code>alt</code> attributes, also known as \"alt text\", are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. Search engines also look at <code>alt</code> attributes.",
@@ -1518,7 +1450,7 @@
       "id": "bad87fee1348bd9aedf08827",
       "name": "Waypoint: Create a Bulleted Unordered List",
       "dashedName": "waypoint-create-a-bulleted-unordered-list",
-      "difficulty": 0.036,
+      "difficulty": 0.027,
       "description": [
         "Replace your <code>p</code> elements with an unordered list of three things that cats love.",
         "HTML has a special element for creating unordered lists, or bullet point-style lists.",
@@ -1591,7 +1523,7 @@
       "id": "bad87fee1348bd9aedf08828",
       "name": "Waypoint: Create an Ordered List",
       "dashedName": "waypoint-create-an-ordered-list",
-      "difficulty": 0.037,
+      "difficulty": 0.028,
       "description": [
         "Create an ordered list of the top 3 things cats hate the most.",
         "HTML has a special element for creating ordered lists, or numbered-style lists.",
@@ -1671,7 +1603,7 @@
       "id": "bad87fee1348bd9aedf08829",
       "name": "Waypoint: Create a Text Field",
       "dashedName": "waypoint-create-a-text-field",
-      "difficulty": 0.038,
+      "difficulty": 0.029,
       "description": [
         "Now we'll create a web form. Create a text input under your lists.",
         "Text inputs are a convenient way to get input from your user.",
@@ -1749,7 +1681,7 @@
       "id": "bad87fee1348bd9aedf08830",
       "name": "Waypoint: Add Placeholder Text to a Text Field",
       "dashedName": "waypoint-add-placeholder-text-to-a-text-field",
-      "difficulty": 0.039,
+      "difficulty": 0.030,
       "description": [
         "Set the <code>placeholder</code> value of your text <code>input</code> to \"cat photo URL\".",
         "Your placeholder text is what appears in your text <code>input</code> before your user has inputed anything.",
@@ -1829,7 +1761,7 @@
       "id": "bad87fee1348bd9aede08830",
       "name": "Waypoint: Create a Form Element",
       "dashedName": "waypoint-create-a-form-element",
-      "difficulty": 0.040,
+      "difficulty": 0.031,
       "description": [
         "Wrap your text field in a <code>form</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element.",
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
@@ -1911,7 +1843,7 @@
       "id": "bad87fee1348bd9aedd08830",
       "name": "Waypoint: Add a Submit Button to a Form",
       "dashedName": "waypoint-add-a-submit-button-to-a-form",
-      "difficulty": 0.041,
+      "difficulty": 0.032,
       "description": [
         "Add a submit button to your <code>form</code> element with type \"submit\" and \"Submit\" as its text.",
         "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
@@ -1995,7 +1927,7 @@
       "id": "bad87fee1348bd9aedc08830",
       "name": "Waypoint: Use HTML5 to Require a Field",
       "dashedName": "waypoint-use-html5-to-require-a-field",
-      "difficulty": 0.042,
+      "difficulty": 0.033,
       "description": [
         "Make your text <code>input</code> a \"required\" field, so that your user can't submit the form without completing this field.",
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
@@ -2077,7 +2009,7 @@
       "id": "bad87fee1348bd9aedf08834",
       "name": "Waypoint: Create a Set of Radio Buttons",
       "dashedName": "waypoint-create-a-set-of-radio-buttons",
-      "difficulty": 0.043,
+      "difficulty": 0.034,
       "description": [
         "Add to your form a pair of radio buttons. Each radio button should be wrapped within its own <code>label</code> element. They should share a common <code>name</code> attribute. One should have the option of \"indoor\" and the other should have the option of \"outdoor\".",
         "You can use radio buttons for questions where you want the user to only give you one answer.",
@@ -2170,7 +2102,7 @@
       "id": "bad87fee1348bd9aedf08835",
       "name": "Waypoint: Create a Set of Checkboxes",
       "dashedName": "waypoint-create-a-set-of-checkboxes",
-      "difficulty": 0.044,
+      "difficulty": 0.035,
       "description": [
         "Add to your form a set of three checkbox elements. Each checkbox should be wrapped within its own <code>label</code> element. All three should share the <code>name</code> attribute of \"personality\".",
         "Forms commonly use checkbox inputs for questions that may have more than one answer.",
@@ -2257,7 +2189,7 @@
       "id": "bad87fee1348bd9aede18835",
       "name": "Waypoint: Clean up your form using Linebreaks",
       "dashedName": "waypoint-clean-up-your-form-using-linebreaks",
-      "difficulty": 0.045,
+      "difficulty": 0.036,
       "description": [
         "Clean up your form by adding linebreaks between form elements.",
         "Remember that you can create a linebreak element by using the code: <code>&#60;br&#62;</code>."
@@ -2342,7 +2274,7 @@
       "id": "bad87fee1348bd9aedd08835",
       "name": "Waypoint: Check Radio Buttons and Checkboxes by Default",
       "dashedName": "waypoint-check-radio-buttons-and-checkboxes-by-default",
-      "difficulty": 0.046,
+      "difficulty": 0.037,
       "description": [
         "Set the first of your radio buttons and the first of your checkboxes to both be checked by default.",
         "You set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
@@ -2432,7 +2364,7 @@
       "id": "bad87fee1348bd9aede08835",
       "name": "Waypoint: Wrap Many Elements within a Single Div Element",
       "dashedName": "waypoint-wrap-many-elements-within-a-single-div-element",
-      "difficulty": 0.047,
+      "difficulty": 0.038,
       "description": [
         "Wrap your \"Things cats love\" and \"Things cats hate\" lists all within a single <code>div</code> element.",
         "The <code>div</code> element, or \"Division\" element, is a general purpose container for other elements.",
@@ -2529,7 +2461,7 @@
       "id": "bad87fee1348bd9aede07836",
       "name": "Waypoint: Give a Background Color to a Div Element",
       "dashedName": "waypoint-give-a-background-color-to-a-div-element",
-      "difficulty": 0.048,
+      "difficulty": 0.039,
       "description": [
         "Create a class called \"gray-background\" with the background color of gray. Assign this class to your <code>div</code> element.",
         "You can set an element's background color with the \"background-color\" attribute.",
@@ -2622,7 +2554,7 @@
       "id": "bad88fee1348bd9aedf08825",
       "name": "Waypoint: Adjusting the Padding of an Element",
       "dashedName": "waypoint-adjusting-the-padding-of-an-element",
-      "difficulty": 0.064,
+      "difficulty": 0.040,
       "description": [
         "These next few Waypoints will give you a brief tour of three important aspects of the space surrounding HTML elements: <code>padding</code>, <code>margin</code>, and <code>border</code>. Change the <code>padding</code> of your green box to match that of your red box.",
         "An element's <code>padding</code> controls the amount of space between the element and its <code>border</code>.",
@@ -2691,7 +2623,7 @@
       "id": "bad87fee1348bd9aedf08822",
       "name": "Waypoint: Adjust the Margin of an Element",
       "dashedName": "waypoint-adjust-the-margin-of-an-element",
-      "difficulty": 0.065,
+      "difficulty": 0.041,
       "description": [
         "Change the <code>margin</code> of the green box to match that of the red box.",
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -2762,7 +2694,7 @@
       "id": "bad87fee1348bd9aedf08823",
       "name": "Waypoint: Add a Negative Margin to an Element",
       "dashedName": "waypoint-add-a-negative-margin-to-an-element",
-      "difficulty": 0.066,
+      "difficulty": 0.042,
       "description": [
         "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the yellow box around it.",
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -2832,7 +2764,7 @@
       "id": "bad87fee1348bd9aedf08824",
       "name": "Waypoint: Add Different Padding to Each Side of an Element",
       "dashedName": "waypoint-add-different-padding-to-each-side-of-an-element",
-      "difficulty": 0.067,
+      "difficulty": 0.043,
       "description": [
         "Give the green box a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Sometimes you will want to customize an element so that it has different <code>padding</code> on each of its sides.",
@@ -2904,7 +2836,7 @@
       "id": "bad87fee1248bd9aedf08824",
       "name": "Waypoint: Add Different Margins to Each Side of an Element",
       "dashedName": "waypoint-add-different-margins-to-each-side-of-an-element",
-      "difficulty": 0.068,
+      "difficulty": 0.044,
       "description": [
         "Give the green box a <code>margin</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Sometimes you will want to customize an element so that it has a different <code>margin</code> on each of its sides.",
@@ -2975,7 +2907,7 @@
       "id": "bad87fee1348bd9aedf08826",
       "name": "Waypoint: Use Clockwise Notation to Specify the Padding of an Element",
       "dashedName": "waypoint-use-clockwise-notation-to-specify-the-padding-of-an-element",
-      "difficulty": 0.069,
+      "difficulty": 0.044,
       "description": [
         "Use Clockwise Notation to give the \".green-box\" class a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
@@ -3041,10 +2973,10 @@
       ]
     },
     {
-      "id": "bad87fee1348bd9aedf08726",
+      "id": "bad87fee1348bd9afdf08726",
       "name": "Waypoint: Use Clockwise Notation to Specify the Margin of an Element",
       "dashedName": "waypoint-use-clockwise-notation-to-specify-the-margin-of-an-element",
-      "difficulty": 0.070,
+      "difficulty": 0.045,
       "description": [
         "Let's try this again, but with <code>margin</code> this time. Use <code>Clockwise Notation</code> to give an element a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> attributes, you can specify them all in one line, like this: <code>margin: 10px 20px 10px 20px;</code>.",
@@ -3108,6 +3040,315 @@
         "Versuchen wir das noch einmal, aber diesmal mit dem Außenabstand – also <code>margin</code>. Nutze die Notation im Uhrzeigersinn – auch <code>Clockwise Notation</code> genannt – um einem Element 40 Pixel Außenabstand auf der oberen und linken Seite, aber nur 20 Pixel auf der unteren und rechten Seite zu verleihen.",
         "Anstatt die Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu verwenden, kannst du alle in eine Zeile schreiben: <code>margin: 10px 20px 10px 20px;</code>.",
         "Diese vier Werte funktionieren wieder wie eine Uhr: oben, rechts, unten und links. Sie meinen exakt das gleiche wie die seitenspezifischen Anweisungen."
+      ]
+    },
+
+
+
+    {
+      "id": "bad87fee1348bd9aedf08736",
+      "name": "Waypoint: Style the HTML Body Element",
+      "dashedName": "waypoint-style-the-html-body-element",
+      "difficulty": 0.046,
+      "description": [
+        "Now let's start fresh and talk about CSS inheritance.",
+        "Every HTML page has <code>body</code> element.",
+        "We can prove that the <code>body</code> element exists here by giving it a \"background-color\" of blue.",
+        "We can do this by adding <code>body { background-color: blue; }</code> to our <code>style</code> element."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Give your <code>body</code> element the background-color of blue.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad87fee1348bd9aedf08746",
+      "name": "Waypoint: Inherit Styles from the Body Element",
+      "dashedName": "waypoint-inherit-styles-from-the-body-element",
+      "difficulty": 0.047,
+      "description": [
+        "Every HTML page has <code>body</code> element.",
+        "You can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.",
+        "Let's prove this by creating a <code>h2</code> element with the text \"somebody\".",
+        "Then, let's add the font family of \"Monospace\" to the our <code>body</code> element's style declaration.",
+        "See how this gives our <code>h2</code> element the font-family of "
+      ],
+      "tests": [
+        "assert(($('body').css('color') === 'rgb(0, 128, 0)'), 'Give your <code>body</code> element the \"color\" attribute of green.')",
+        "assert(($('body').css('font-family').match(/Monospace/i)), 'Give your <code>body</code> element the \"font-family\" attribute of \"Monospace\".')",
+        "assert(($('h1').length > 0), 'Create an <code>h1</code> element.')",
+        "assert(($('h1').length > 0 && $('h1').text().match(/hello world/i)), 'Your <code>h1</code> element should have the text \"Hello World\".')",
+        "assert(($('h1').length > 0 && $('h1').css('font-family').match(/monospace/i)), 'Your <code>h1</code> element should inherit the font \"Monospace\" from your <code>body</code> element.')",
+        "assert(($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)'), 'Your <code>h1</code> element should inherit the color green.')",
+        "assert(editor.match(/<\\/h1>/g) && editor.match(/<h1/g) && editor.match(/<\\/h1>/g).length === editor.match(/<h1/g).length, 'Make sure your <code>h1</code> element has a closing tag.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: black;",
+        "  }",
+        "",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad87fee1348bd9aedf08756",
+      "name": "Waypoint: Prioritize One Style Over Another",
+      "dashedName": "waypoint-prioritize-one-style-over-another",
+      "difficulty": 0.048,
+      "description": [
+        "Create a CSS class called \"pink-text\" that gives an element the color pink.",
+        "Give your <code>h1</code> element the class of \"pink-text\"."
+      ],
+      "tests": [
+        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($('h1').css('color') === 'rgb(255, 192, 203)', 'Your <code>h1</code> element should be pink.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: black;",
+        "    font-family: Monospace;",
+        "    color: green;",
+        "  }",
+        "</style>",
+        "<h1>Hello World!</h1>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad87fee1348bd9aedf04756",
+      "name": "Waypoint: Override Styles in Subsequent CSS",
+      "dashedName": "waypoint-override-styles-in-subsequent-css",
+      "difficulty": 0.049,
+      "description": [
+        "HTML has an element that is automatically a part of every web page called the <code>body</code> element.",
+        "You can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.",
+        "Let's prove this by creating a <code>h2</code> element with the text \"somebody\".",
+        "Then, let's add the font family of \"Monospace\" to the our <code>body</code> element's style declaration.",
+        "See how this gives our <code>h2</code> element the font-family of "
+      ],
+      "tests": [
+        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
+        "assert($('h1').css('color') === 'rgb(0, 0, 255)', 'Your <code>h1</code> element should be blue.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: black;",
+        "    font-family: Monospace;",
+        "    color: red;",
+        "  }",
+        "  .pink-text {",
+        "    color: pink;",
+        "  }",
+        "</style>",
+        "<h1 class='pink-text'>Hello World!</h1>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad87fee1348bd9aedf06756",
+      "name": "Waypoint: Override Class Declarations with Inline Styles",
+      "dashedName": "waypoint-override-class-declarations-with-inline-styles",
+      "difficulty": 0.052,
+      "description": [
+        "<code>&lt;h1 style=\"color: white\"&rt;</code>"
+      ],
+      "tests": [
+        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
+        "assert(!$('h1').hasClass('white-text'), 'Your <code>h1</code> element should have the inline style of \"color: white\".')",
+        "assert($('h1').css('color') === 'rgb(255, 255, 255)', 'Your <code>h1</code> element should be white.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: black;",
+        "    font-family: Monospace;",
+        "    color: red;",
+        "  }",
+        "  .pink-text {",
+        "    color: pink;",
+        "  }",
+        "  .green-text {",
+        "    color: green;",
+        "  }",
+        "</style>",
+        "<h1 class='blue-text green-text'>Hello World!</h1>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad87fee1348bd9aedf07756",
+      "name": "Waypoint: Override All Other Styles with !important",
+      "dashedName": "waypoint-all-other-styles-with-important",
+      "difficulty": 0.053,
+      "description": [
+      ],
+      "tests": [
+        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
+        "assert(!$('h1').hasClass('white-text'), 'Your <code>h1</code> element should have the inline style of \"color: white\".')",
+        "assert($('h1').hasClass('yellow-text'), 'Your <code>h1</code> element should have the class \"yellow-text\".')",
+        "assert($('h1').css('color') === 'rgb(255, 255, 0)', 'Your <code>h1</code> element should be yellow.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: black;",
+        "    font-family: Monospace;",
+        "    color: red;",
+        "  }",
+        "  .pink-text {",
+        "    color: pink;",
+        "  }",
+        "  .green-text {",
+        "    color: green;",
+        "  }",
+        "</style>",
+        "<h1 class='blue-text green-text' style='color: white'>Hello World!</h1>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad87fee1348bd9aedf08726",
+      "name": "Waypoint: Use Hex Code for Specific Colors",
+      "dashedName": "waypoint-use-hex-code-for-specific-colors",
+      "difficulty": 0.054,
+      "description": [
+        ""
+      ],
+      "tests": [
+
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  .injected-text {",
+        "    margin-bottom: -25px;",
+        "    text-align: center;",
+        "  }",
+        "",
+        "  .box {",
+        "    border-style: solid;",
+        "    border-color: black;",
+        "    border-width: 5px;",
+        "    text-align: center;",
+        "  }",
+        "",
+        "  .yellow-box {",
+        "    background-color: yellow;",
+        "    padding: 20px 40px 20px 40px;",
+        "  }",
+        "  ",
+        "  .red-box {",
+        "    background-color:red;",
+        "    margin: 20px 40px 20px 40px;",
+        "  }",
+        "",
+        "  .green-box {",
+        "    background-color: green;",
+        "  }",
+        "</style>",
+        "<h5 class=\"injected-text\">margin</h5>",
+        "",
+        "<div class=\"box yellow-box\">",
+        "  <h5 class=\"box red-box\">padding</h5>",
+        "  <h5 class=\"box green-box\">padding</h5>",
+        "</div>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": [
       ]
     }
   ]
