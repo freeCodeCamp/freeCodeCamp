@@ -20,11 +20,6 @@ var allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
   challengeMapWithNames, allChallengeIds,
   challengeMapWithDashedNames;
 
-/**
- * GET /
- * Resources.
- */
-
 Array.zip = function(left, right, combinerFunction) {
   var counter,
     results = [];
@@ -60,6 +55,17 @@ Array.zip = function(left, right, combinerFunction) {
 
 
 module.exports = {
+  dasherize: function dasherize(name) {
+    return ('' + name)
+      .toLowerCase()
+      .replace(/\s/g, '-')
+      .replace(/[^a-z0-9\-\.]/gi, '');
+  },
+
+  unDasherize: function unDasherize(name) {
+    return ('' + name).replace(/\-/g, ' ').trim();
+  },
+
   getChallengeMapForDisplay: function () {
     if (!challengeMapForDisplay) {
       challengeMapForDisplay = {};
@@ -188,35 +194,37 @@ module.exports = {
     return process.env.NODE_ENV;
   },
 
-  getURLTitle: function (url, callback) {
-    (function () {
-      var result = {title: '', image: '', url: '', description: ''};
-      request(url, function (error, response, body) {
-        if (!error && response.statusCode === 200) {
-          var $ = cheerio.load(body);
-          var metaDescription = $("meta[name='description']");
-          var metaImage = $("meta[property='og:image']");
-          var urlImage = metaImage.attr('content') ?
-            metaImage.attr('content') :
-            '';
+  getURLTitle: function(url, callback) {
+    var result = {
+      title: '',
+      image: '',
+      url: '',
+      description: ''
+    };
+    request(url, function(err, response, body) {
+      if (err || response.statusCode !== 200) {
+        return callback(new Error('failed'));
+      }
+      var $ = cheerio.load(body);
+      var metaDescription = $("meta[name='description']");
+      var metaImage = $("meta[property='og:image']");
+      var urlImage = metaImage.attr('content') ?
+        metaImage.attr('content') :
+        '';
 
-          var metaTitle = $('title');
-          var description = metaDescription.attr('content') ?
-            metaDescription.attr('content') :
-            '';
+      var metaTitle = $('title');
+      var description = metaDescription.attr('content') ?
+        metaDescription.attr('content') :
+        '';
 
-          result.title = metaTitle.text().length < 90 ?
-            metaTitle.text() :
-          metaTitle.text().slice(0, 87) + '...';
+      result.title = metaTitle.text().length < 90 ?
+        metaTitle.text() :
+      metaTitle.text().slice(0, 87) + '...';
 
-          result.image = urlImage;
-          result.description = description;
-          callback(null, result);
-        } else {
-          callback(new Error('failed'));
-        }
-      });
-    })();
+      result.image = urlImage;
+      result.description = description;
+      callback(null, result);
+    });
   },
 
   getMDNLinks: function(links) {

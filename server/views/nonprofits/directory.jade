@@ -7,6 +7,8 @@ block content
             .panel-heading.text-center Nonprofits We Help
             .panel-body
                 .col-xs-12.col-sm-12.col-md-10.col-md-offset-1
+                    h1.text-primary.text-center Our campers have saved nonprofits $#{totalSavings}.
+                    .spacer
                     for nonprofit in nonprofits
                         .spacer
                         .row
@@ -15,8 +17,10 @@ block content
                             .col-xs-12.col-sm-9
                                 h2.negative-15= nonprofit.name
                                 h3.negative-15= nonprofit.whatDoesNonprofitDo
+                                if (nonprofit.moneySaved > 0)
+                                    h4.negative-15.text-primary Estimated Cost Savings for Nonprofit: $#{nonprofit.moneySaved.toString().replace(/000$/, ',000')}
                                 a.text-center.btn.btn-primary.btn-lg(href='/nonprofits/' + nonprofit.name.toLowerCase().replace(/\s/g, '-')) Read more
-
+                    .spacer
                 .col-xs-12.col-sm-8.col-sm-offset-2
                     if (!user)
                         a.btn.btn-cta.signup-btn.btn-block(href="/nonprofits-form") My nonprofit needs coding help

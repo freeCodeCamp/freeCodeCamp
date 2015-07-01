@@ -4,7 +4,7 @@ var _ = require('lodash'),
   crypto = require('crypto'),
   nodemailer = require('nodemailer'),
   moment = require('moment'),
-  //debug = require('debug')('freecc:cntr:userController'),
+  // debug = require('debug')('freecc:cntr:userController'),
 
   secrets = require('../../config/secrets');
 
