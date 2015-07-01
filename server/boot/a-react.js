@@ -1,8 +1,11 @@
 import debugFactory from 'debug';
-import app$ from '../common/app/app-stream.jsx';
+import { app$ } from '../common/app';
 import { Cat } from 'thundercats';
 
 const debug = debugFactory('freecc:servereact');
+
+// add routes here as they slowly get reactified
+// remove their individual controllers
 const routes = [
   '/jobs'
 ];

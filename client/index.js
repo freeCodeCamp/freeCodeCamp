@@ -2,7 +2,7 @@ import BrowserHistory from 'react-router/lib/BrowserHistory';
 import debugFactory from 'debug';
 import { Cat } from 'thundercats';
 
-import app$ from '../common/app/app$.jsx';
+import { app$ } from '../common/app';
 
 const debug = debugFactory('fcc:client');
 const DOMContianer = document.getElemenetById('#fCC');

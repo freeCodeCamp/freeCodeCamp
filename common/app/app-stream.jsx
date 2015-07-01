@@ -3,13 +3,13 @@ import React from 'react';
 import { Route, Router } from 'react-router';
 
 // components
-import App from './App.jsx';
-import Jobs from './routes/Jobs';
-import NotFound from './components/NotFound';
+import { App } from './App.jsx';
+import { Jobs } from './routes/Jobs';
+import { NotFound } from './components/NotFound';
 
 const router$ = Rx.Observable.fromNodeCallback(Router.run, Router);
 
-export const routes = (
+const routes = (
   <Route handler={ App }>
     <Route
       component={ Jobs }
