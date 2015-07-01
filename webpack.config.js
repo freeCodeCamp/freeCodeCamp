@@ -4,7 +4,7 @@ module.exports = {
   devtool: 'sourcemap',
   entry: './client',
   output: {
-    filename: 'fcc.js',
+    filename: 'bundle.js',
     path: path.join(__dirname, '/public/js'),
     publicPath: 'public/'
   },

@@ -1,4 +1,4 @@
-require('babel/register');
+require('babel-core/register');
 var gulp = require('gulp'),
   path = require('path'),
 
@@ -54,7 +54,7 @@ var paths = {
 
   node: {
     src: './client',
-    dest: 'server/server'
+    dest: 'common/app'
   },
 
   syncWatch: [
@@ -100,15 +100,15 @@ gulp.task('loopback', function() {
 });
 
 gulp.task('pack-client', function() {
-  return gulp.src(paths.client.src)
+  return gulp.src(webpackConfig.entry)
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest(paths.client.dest));
+    .pipe(gulp.dest(webpackConfig.output.path));
 });
 
 gulp.task('pack-node', function() {
-  return gulp.src(paths.node.src)
+  return gulp.src(webpackConfigNode.entry)
     .pipe(webpack(webpackConfigNode))
-    .pipe(gulp.dest(paths.node.dest));
+    .pipe(gulp.dest(webpackConfigNode.output.path));
 });
 
 gulp.task('pack', ['pack-client', 'pack-node']);

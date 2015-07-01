@@ -14,12 +14,12 @@ var nodeModules = fs.readdirSync('node_modules')
 module.exports = {
   devtool: 'sourcemap',
   target: 'node',
-  entry: './server/appEntry',
+  entry: './common/app',
   // keeps webpack from bundling modules
   externals: nodeModules,
   output: {
-    filename: 'fcc.js',
-    path: path.join(__dirname, '/public/js'),
+    filename: 'app-stream.bundle.js',
+    path: path.join(__dirname, '/server'),
     publicPath: 'public/'
   },
   module: {
