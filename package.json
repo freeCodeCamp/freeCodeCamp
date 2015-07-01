@@ -29,6 +29,7 @@
   "dependencies": {
     "accepts": "~1.2.5",
     "async": "~0.9.0",
+    "babel": "5.6.14",
     "babel-core": "5.6.15",
     "babel-loader": "5.2.2",
     "bcrypt-nodejs": "~0.0.3",
