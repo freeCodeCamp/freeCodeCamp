@@ -3226,11 +3226,11 @@
         "  .pink-text {",
         "    color: pink;",
         "  }",
-        "  .green-text {",
-        "    color: green;",
+        "  .blue-text {",
+        "    color: blue;",
         "  }",
         "</style>",
-        "<h1 class='blue-text green-text'>Hello World!</h1>"
+        "<h1 class='pink-text blue-text'>Hello World!</h1>"
       ],
       "challengeType": 0,
       "nameCn": "",
@@ -3248,17 +3248,17 @@
     },
     {
       "id": "bad87fee1348bd9aedf07756",
-      "name": "Waypoint: Override All Other Styles with !important",
-      "dashedName": "waypoint-all-other-styles-with-important",
+      "name": "Waypoint: Override All Other Styles by using Important",
+      "dashedName": "waypoint-override-all-other-styles-by-using-important",
       "difficulty": 0.053,
       "description": [
+        "<code>.pink-text { color: pink !important; }</code>"
       ],
       "tests": [
         "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
         "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
         "assert(!$('h1').hasClass('white-text'), 'Your <code>h1</code> element should have the inline style of \"color: white\".')",
-        "assert($('h1').hasClass('yellow-text'), 'Your <code>h1</code> element should have the class \"yellow-text\".')",
-        "assert($('h1').css('color') === 'rgb(255, 255, 0)', 'Your <code>h1</code> element should be yellow.')"
+        "assert($('h1').css('color') === 'rgb(255, 192, 203)', 'Your <code>h1</code> element should be pink.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3270,11 +3270,11 @@
         "  .pink-text {",
         "    color: pink;",
         "  }",
-        "  .green-text {",
-        "    color: green;",
+        "  .blue-text {",
+        "    color: blue;",
         "  }",
         "</style>",
-        "<h1 class='blue-text green-text' style='color: white'>Hello World!</h1>"
+        "<h1 class='pink-text blue-text' style='color: white'>Hello World!</h1>"
       ],
       "challengeType": 0,
       "nameCn": "",
