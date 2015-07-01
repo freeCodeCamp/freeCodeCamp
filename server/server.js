@@ -303,6 +303,7 @@ module.exports = app;
 
 app.start = function () {
   app.listen(app.get('port'), function() {
+    app.emit('started');
     console.log(
       'FreeCodeCamp server listening on port %d in %s mode',
       app.get('port'),
