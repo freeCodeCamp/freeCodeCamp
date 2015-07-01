@@ -12,10 +12,11 @@ block content
                 .text-center
                     if user && user.uncompletedFieldGuides.length > 0
                         .next-field-guide-button.btn.btn-primary.btn-big.btn-block Next article (ctrl + enter)
-                        .ten-pixel-break
+                        .button-spacer
+                    .button-spacer
                     a.btn.btn-info.btn-big.btn-block(href='/field-guide/all-articles') Show me all articles
                     if !user
-                        .ten-pixel-break
+                        .button-spacer
                         a.btn.btn-big.signup-btn.btn-block(href='/login') Start learning to code (it's free)
         .spacer
     #fieldGuideId.hidden= fieldGuideId
