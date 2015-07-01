@@ -355,9 +355,11 @@ $(document).ready(function() {
         function lockTop(initOff){
             if ($(window).width() >= 992) {
                 $('.scroll-locker').css('position', 'fixed').css('top', initOff).css('width', $($('.scroll-locker').parent()).width()).css('max-height', '75%');
+                $('.well').css('margin-right', '6px');
             }
             else{
                 $('.scroll-locker').css('position', 'inherit').css('top', 'inherit').css('width', 'inherit').css('max-height', '');
+                $('.well').css('margin-right', '');
             }
         }
         var initOff = ($('.scroll-locker').offset().top - $(window).scrollTop());
