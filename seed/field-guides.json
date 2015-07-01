@@ -232,6 +232,34 @@
     ]
   },
   {
+    "id": "bd7158d9c435eddfaeb5bdcf",
+    "name": "What are the Official Free Code Camp Chat Rooms?",
+    "dashedName": "what-are-the-official-free-code-camp-chat-rooms",
+    "description": [
+      "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
+      "  <h3>We have 3 official chat rooms:</h3>",
+      "  <ol>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/FreeCodeCamp'>Free Code Camp</a> - a friendly place where you can hang out and chat</li>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/Help'>Help</a> - the best place to get help from your fellow campers</li>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/LetsPair'>LetsPair</a> - the best room to find a fellow campers to pair program with</li>",
+      "  </ol>",
+      "  <h3>We also have language-specific chat rooms:</h3>",
+      "  <ul>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/Arabic'>Arabic</a></li>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/Chinese'>Chinese</a></li>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/Dutch'>Dutch</a></li>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/Francais'>French</a></li>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/Deutsch'>German</a></li>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/Portugues'>Portugues</a></li>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/Russian'>Russian</a></li>",
+      "    <li class='large-li'><a href='//gitter.im/FreeCodeCamp/Espanol'>Spanish</a></li>",
+      "  </ul>",
+      "  <h3>Finally, we have one room for <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city'>each of our local Campsites</a>.</h3>",
+      "  <p class='large-p'>If you think we should add a chat room, please message @quincylarson in Gitter.</p>",
+      "</div>"
+    ]
+  },
+  {
     "id": "bd7158d9c436eddfaeb5bd3f",
     "name": "Can I jump around in this guide?",
     "dashedName": "can-i-jump-around-in-this-guide",
