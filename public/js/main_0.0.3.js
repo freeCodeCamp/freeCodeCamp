@@ -56,7 +56,7 @@ $(document).ready(function() {
 
   $('#report-issue').on('click', function() {
     $('#issue-modal').modal('hide');
-    window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screen shots if possible.', '_blank')
+    window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.', '_blank')
   });
 
   $('#i-want-to-pair').on('click', function() {
@@ -348,6 +348,48 @@ $(document).ready(function() {
         window.location.reload();
       });
   };
+
+    //fakeiphone positioning hotfix
+    if($('.iphone-position').html() !==undefined || $('.iphone').html() !== undefined){
+        var startIphonePosition = parseInt($('.iphone-position').css('top').replace('px', ''));
+        var startIphone = parseInt($('.iphone').css('top').replace('px', ''));
+        $(window).on('scroll', function(){
+            if((($('.courseware-height').height() + $('.courseware-height').offset().top)-$(window).scrollTop()-$('.iphone-position').height()) <= 0){
+                $('.iphone-position').css('top', startIphonePosition+(($('.courseware-height').height() + $('.courseware-height').offset().top)-$(window).scrollTop()-$('.iphone-position').height()));
+                $('.iphone').css('top', startIphonePosition+(($('.courseware-height').height() + $('.courseware-height').offset().top)-$(window).scrollTop()-$('.iphone-position').height())+120);
+            }
+            else{
+                $('.iphone-position').css('top', startIphonePosition);
+                $('.iphone').css('top', startIphone);
+            }
+        });
+    }
+
+    if($('.scroll-locker') != undefined){
+        function lockTop(initOff){
+            $(window).scroll(function() {
+                if ($(window).width() >= 992) {
+                    if ((($('.scroll-locker').offset().top - $(window).scrollTop()) + $('.scroll-locker').height()) >= ($('.fcc-footer').offset().top - $(window).scrollTop())) {
+                        $('.scroll-locker').css('position', 'fixed').css('top', initOff).css('width', $($('.scroll-locker').parent()).width()).css('max-height', '75%').css('overflow-y', 'auto').css('overflow-x', 'hidden');
+                        $('.well').css('margin-right', '6px');
+                    }
+                    else {
+                        $('.scroll-locker').css('position', 'fixed').css('bottom', $('.fcc-footer') - (($('.scroll-locker').offset().top - $(window).scrollTop()) + $('.scroll-locker').height()) - ($('.fcc-footer').offset().top - $(window).scrollTop())).css('width', $($('.scroll-locker').parent()).width()).css('max-height', '75%').css('overflow-y', 'auto').css('overflow-x', 'hidden');
+                        $('.well').css('margin-right', '6px');
+                    }
+                }
+                else {
+                    $('.scroll-locker').css('position', 'inherit').css('top', 'inherit').css('width', '100%').css('max-height', '').css('overflow-y', 'auto').css('overflow-x', 'hidden');
+                    $('.well').css('margin-right', '');
+                }
+            });
+        }
+        var initOff = ($('.scroll-locker').offset().top - $(window).scrollTop());
+        lockTop(initOff);
+        $(window).on('resize', function(){
+            lockTop(initOff);
+        });
+    }
 
   $('#comment-button').on('click', commentSubmitButtonHandler);
 });

@@ -204,7 +204,7 @@
       "  <h3>Pair programming is where two people code together on one computer.</h3>",
       "  <img class='img-responsive img-center' src='http://cs10.org/sp15/resources/images/pairprogramming.jpg'>",
       "  <p class='large-p'>You discuss different approaches to solving problems, and keep each other motivated. The result is better code than either of you could have written by yourselves. Because of its benefits, many engineers pair program full time. And it's the best way to learn coding. Thanks to tools that allow two people to share mouse and keyboard inputs, you can pair program with a friend without needing to be in the same room.</p>",
-      "  <p class='large-p'>By pair programming with other Free Code Camp students on our coding challenges. Eventually, you'll work with people at nonprofits to build real-life software solutions.</p>",
+      "  <p class='large-p'>By pair programming with other campers on our coding challenges you'll develop the necessary skills to work with people at nonprofits to build real-life software solutions.</p>",
       "</div>"
     ]
   },
@@ -466,7 +466,7 @@
       "    <ol>",
       "      <li class='large-li'>Follow <a href='http://www.hdpvrcapture.com/wordpress/?p=5951' target='_blank'>this tutorial</a> to set up your computer for streaming.</li>",
       "      <li class='large-li'>Contact Jason Ruekert - he's @jsonify in Gitter. He's in charge of our Twitch.tv channel. Tell him what you'd like to stream, and when you're available to stream.</li>",
-      "      <li class='large-li'>Jason will pair with you using Screen Hero to verify your computer is configured properly to stream.</li>",
+      "      <li class='large-li'>Jason will pair with you using Screenhero to verify your computer is configured properly to stream.</li>",
       "    </ol>",
       "  </p>",
       "  <p class='large-p'>Be respectful of your audience. Everything you stream should be related to coding JavaScript, and should be acceptable for children. (Yes, children do sometimes watch our Twitch stream to learn to code).</p>",
@@ -876,7 +876,7 @@
       "    <ul>",
       "      <li class='large-li'>&#8226; Gitter has robust private messaging functionality. It's the main way our team communicates, and we recommend it over email.</li>",
       "      <li class='large-li'>&#8226; Trello is great for managing projects. Work with your stakeholder to create Trello cards, and update these cards regularly as you make progress on them.</li>",
-      "      <li class='large-li'>&#8226; Screen Hero or Team Viewer - These are the ideal way to pair program. Tools like TMUX are good, but difficult to use. We discourage you from using screen sharing tools where only one person has control of the keyboard and mouse - that isn't real pair programming.</li>",
+      "      <li class='large-li'>&#8226; Screenhero or Team Viewer - These are the ideal way to pair program. Tools like TMUX are good, but difficult to use. We discourage you from using screen sharing tools where only one person has control of the keyboard and mouse - that isn't real pair programming.</li>",
       "      <li class='large-li'>&#8226; Write clear and readable code, commit messages, branch names, and pull request messages.</li>",
       "    </ul>",
       "  </p>",
@@ -901,7 +901,7 @@
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
       "  <h3><a href=\"http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjowLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLnppcD9zb3VyY2U9d2ViIn0=\">Download for Mac</a></h3>",
       "  <h3><a href=\"http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjoxLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLXNldHVwLmV4ZSJ9\"> Download for Windows</a></h3>",
-      "  <p class='large-p'>You'll use Screen Hero to pair program starting with <a href='/challenges/pair-program-on-bonfires'>http://freecodecamp.com/challenges/pair-program-on-bonfires</a></p>",
+      "  <p class='large-p'>You'll use Screenhero to pair program starting with <a href='/challenges/pair-program-on-bonfires'>http://freecodecamp.com/challenges/pair-program-on-bonfires</a></p>",
       "</div>"
     ]
   },
@@ -972,7 +972,7 @@
     "dashedName": "what-is-the-free-code-camp-privacy-policy",
     "description": [
       "<div class='col-xs-12 col-sm-10 col-sm-offset-1'>",
-      "  <p class='large-p'>Free Code Camp is committed to respecting the privacy of visitors to our web sites and web applications. The guidelines below explain how we protect the privacy of visitors to FreeCodeCamp.com and its features.</p>",
+      "  <p class='large-p'>Free Code Camp is committed to respecting the privacy of visitors to our websites and web applications. The guidelines below explain how we protect the privacy of visitors to FreeCodeCamp.com and its features.</p>",
       "  <h3>Personally Identifiable Information</h3>",
       "  <p class='large-p'>Free Code Camp protects the identity of visitors to FreeCodeCamp.com by limiting the collection of personally identifiable information.</p>",
       "  <p class='large-p'>Free Code Camp does not knowingly collect or solicit personally identifiable information from or about children under 13, except as permitted by law. If we discover we have received any information from a child under 13 in violation of this policy, we will delete that information immediately. If you believe Free Code Camp has any information from or about anyone under 13, please email us at <a href=\"mailto:team@freecodecamp.com\" target=\"_blank\">team@freecodecamp.com</a>.</p>",
@@ -994,8 +994,8 @@
       "  <p class='large-p'>All of the content on FreeCodeCamp.com is copyrighted by Free Code Camp. If you'd like to redistribute it beyond simply sharing it through social media, please contact us at <a href=\"mailto:team@freecodecamp.com\" target=\"_blank\">team@freecodecamp.com</a>.</p>",
       "  <h3>Contacting Us</h3>",
       "  <p class='large-p'>If you have questions about Free Code Camp, or to correct, update, or remove personally identifiable information, please email us at <a href=\"mailto:team@freecodecamp.com\" target=\"_blank\">team@freecodecamp.com</a>.</p>",
-      "  <h3>Links to Other Web sites</h3>",
-      "  <p class='large-p'>Free Code Camp's sites each contain links to other Web sites. Free Code Camp is not responsible for the privacy practices or content of these third-party Web sites. We urge all FreeCodeCamp.com visitors to follow safe Internet practices: Do not supply Personally Identifiable Information to these Web sites unless you have verified their security and privacy policies.</p>",
+      "  <h3>Links to Other Websites</h3>",
+      "  <p class='large-p'>Free Code Camp's sites each contain links to other Websites. Free Code Camp is not responsible for the privacy practices or content of these third-party Websites. We urge all FreeCodeCamp.com visitors to follow safe Internet practices: Do not supply Personally Identifiable Information to these Websites unless you have verified their security and privacy policies.</p>",
       "  <h3>Data Retention</h3>",
       "  <p class='large-p'>We retain your information for as long as necessary to permit us to use it for the purposes that we have communicated to you and comply with applicable law or regulations.</p>",
       "  <h3>Business Transfers</h3>",
@@ -1157,7 +1157,7 @@
       "    <li class='large-li'>Zipline: Stylize Stories on Camper News</li>",
       "    <li class='large-li'>Zipline: Wikipedia Viewer</li>",
       "  </ol>",
-      "  <p class='large-p'>This won't be a new curriculum - it will just the first 200 hours of our full stack JavaScript curriculum.</p>",
+      "  <p class='large-p'>This won't be a new curriculum - it will just be the first 200 hours of our full stack JavaScript curriculum.</p>",
       "  <p class='large-p'>All campers who have already completed these challenges are retroactively eligible for the certificate!</p>",
       "</div>"
     ]
