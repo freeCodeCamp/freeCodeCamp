@@ -195,7 +195,7 @@
         "assert($('h1').length > 0, 'Make your <code>h1</code> element visible on your page by uncommenting it.')",
         "assert($('h2').length > 0, 'Make your <code>h2</code> element visible on your page by uncommenting it.')",
         "assert($('p').length > 0, 'Make your <code>p</code> element visible on your page by uncommenting it.')",
-        "assert(!new RegExp('-->', 'gi').test(editor), 'Be sure to delete the <code>--&#62;</code> that ends the comment.')"
+        "assert(!new RegExp('-->', 'gi').test(editor), 'Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<!--",
@@ -492,7 +492,8 @@
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')",
-        "assert($('h2').hasClass('red-text'), 'Your <code>h2</code> element should have the class \"red-text\".')"
+        "assert($('h2').hasClass('red-text'), 'Your <code>h2</code> element should have the class \"red-text\".')",
+        "assert($('h2').attr('style') === undefined, 'Please make sure there is no inline <code> style =  </code> in you <code>h2</code> and change the color by using the css class <code> red-text </code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -734,8 +735,8 @@
         "Now try commenting out your call to Google Fonts, so that the \"Lobster\" font isn't available. Notice how it degrades to the \"Monospace\" font."
       ],
       "tests": [
-        "assert($('h2').css('font-family').match(/lobster/i), 'Your h2 element should use the font \"Lobster\".')",
-        "assert($('h2').css('font-family').match(/monospace/i), 'Your h2 element should degrade to the font \"Monospace\" when \"Lobster\" is not available.')"
+        "assert($('h2').css('font-family').match(/^\"?lobster/i), 'Your h2 element should use the font \"Lobster\".')",
+        "assert($('h2').css('font-family').match(/lobster\"?,monospace/i), 'Your h2 element should degrade to the font \"Monospace\" when \"Lobster\" is not available.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",

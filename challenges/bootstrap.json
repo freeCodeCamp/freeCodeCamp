@@ -622,7 +622,7 @@
         "Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
         "Here's a diagram of how Bootstrap's 12-column grid layout works:",
         "<a href='http://getbootstrap.com/css/#grid-example-basic' target='_blank'><img class='img-responsive' src='https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png'></a>",
-        "Note that in this illustration, we use the <code>col-md-*</code> class. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, we're specifying how many columns wide an element should be on a medium-sized screen, such as a laptop.",
+        "Note that in this illustration, the <code>col-md-*</code> class is being used. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.",
         "In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where \"*\" is the number of columns wide the element should be, and \"xs\" means \"extra small\", like an extra-small mobile phone screen.",
         "The \"row\" class is applied to a <code>div</code>, and the buttons themselves can be wrapped within it."
       ],
