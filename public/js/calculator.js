@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var bootcamps = ''
-  $.getJSON('/coding-bootcamp-cost-calculator.json', function(data) {
+  $.getJSON('/json/bootcamps.json', function(data) {
     bootcamps = data;
   });
   var city = "";

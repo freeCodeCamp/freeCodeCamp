@@ -5,7 +5,6 @@ var Rx = require('rx'),
     request = require('request'),
     debug = require('debug')('freecc:cntr:resources'),
     constantStrings = require('../utils/constantStrings.json'),
-    bootcampJson = require('../utils/bootcamps.json'),
     secrets = require('../../config/secrets');
 
 module.exports = function(app) {
@@ -22,8 +21,6 @@ module.exports = function(app) {
   router.get('/api/codepen/twitter/:screenName', twitter);
   router.get('/sitemap.xml', sitemap);
   router.get('/chat', chat);
-  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
-  router.get('/coding-bootcamp-cost-calculator.json', bootcampCalculatorJson);
   router.get('/twitch', twitch);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
@@ -207,13 +204,6 @@ module.exports = function(app) {
 
   function chat(req, res) {
     res.redirect('//gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function bootcampCalculator(req, res) {
-    res.render('resources/calculator', {
-      title: 'Coding Bootcamp Cost Calculator',
-      bootcampJson: bootcampJson
-    });
   }
 
   function bootcampCalculatorJson(req, res) {

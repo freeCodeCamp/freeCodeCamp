@@ -8,6 +8,13 @@ module.exports = function(app) {
     );
   });
 
+  router.get('/coding-bootcamp-cost-calculator', function(req, res) {
+    res.redirect(
+      301,
+      '/field-guide/can-i-calculate-the-true-cost-of-a-bootcamp-with-a-coding-bootcamp-cost-calculator'
+    );
+  });
+
   router.get('/agile', function(req, res) {
     res.redirect(301, '/pmi-acp-agile-project-managers');
   });
