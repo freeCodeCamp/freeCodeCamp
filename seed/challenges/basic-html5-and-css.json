@@ -195,7 +195,7 @@
         "assert($('h1').length > 0, 'Make your <code>h1</code> element visible on your page by uncommenting it.')",
         "assert($('h2').length > 0, 'Make your <code>h2</code> element visible on your page by uncommenting it.')",
         "assert($('p').length > 0, 'Make your <code>p</code> element visible on your page by uncommenting it.')",
-        "assert(!new RegExp('-->', 'gi').test(editor), 'Be sure to delete the <code>--&#62;</code> that ends the comment.')"
+        "assert(!new RegExp('-->', 'gi').test(editor), 'Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<!--",
