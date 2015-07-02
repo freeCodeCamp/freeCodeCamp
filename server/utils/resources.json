@@ -1,7 +1,7 @@
 {
   "announcements": [
     ["Some of Code School's courses are no longer free. We're switching to NodeSchool.io for our Node.js and Express.js challenges.", "http://freecodecamp.com/nodeschool-challenges"],
-    ["Screen Hero is now free on Windows and Mac! Follow these special instructions to install it.", "http://freecodecamp.com/install-screenhero"]
+    ["Screenhero is now free on Windows and Mac! Follow these special instructions to install it.", "http://freecodecamp.com/install-screenhero"]
   ],
   "questions": [{
     "question": "Time Complexity of Accessing Array Index (int a = ARR[5];)",
