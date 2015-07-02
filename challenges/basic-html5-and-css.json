@@ -735,8 +735,8 @@
         "Now try commenting out your call to Google Fonts, so that the \"Lobster\" font isn't available. Notice how it degrades to the \"Monospace\" font."
       ],
       "tests": [
-        "assert($('h2').css('font-family').match(/lobster/i), 'Your h2 element should use the font \"Lobster\".')",
-        "assert($('h2').css('font-family').match(/monospace/i), 'Your h2 element should degrade to the font \"Monospace\" when \"Lobster\" is not available.')"
+        "assert($('h2').css('font-family').match(/^\"?lobster/i), 'Your h2 element should use the font \"Lobster\".')",
+        "assert($('h2').css('font-family').match(/lobster\"?,monospace/i), 'Your h2 element should degrade to the font \"Monospace\" when \"Lobster\" is not available.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
