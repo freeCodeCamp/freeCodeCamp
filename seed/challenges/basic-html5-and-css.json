@@ -138,49 +138,6 @@
       ]
     },
     {
-      "id": "bad87fee1348bd9aeaf08801",
-      "name": "Waypoint: Visually Separate Elements with Line Breaks",
-      "dashedName": "waypoint-visually-separate-elements-with-line-breaks",
-      "difficulty": 0.004,
-      "description": [
-        "Add a <code>br</code> element to your page, preferably between two of your elements.",
-        "<code>br</code> elements, also known as \"line break\" elements, can be created with <code>&#60;br&#62</code>.",
-        "Note that <code>&#60;br&#62</code> has no closing tag. It is a \"self-closing\" element.",
-        "You'll encounter other self-closing element tags soon."
-      ],
-      "tests": [
-        "assert(($('br').length > 0), 'Add a <code>br</code> element to your page preferably between two of your elements.')"
-      ],
-      "challengeSeed": [
-        "<h1>Hello World</h1>",
-        "<h2>CatPhotoApp</h2>",
-        "<p>Hello Paragraph</p>"
-      ],
-      "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "Waypoint: Separa Elementos Visualmente con Saltos de Línea",
-      "descriptionEs": [
-        "Agrega un <code>salto de línea</code> entre los elementos <code>&#60;h2&#62</code> y <code>&#60;p&#62</code>.",
-        "Puedes crear un elemento de salto de línea con <code>&#60;br&#47&#62</code>.",
-        "Fíjate que <code>&#60;br&#47&#62</code> no tiene etiqueta de cierre. Es un elemento <code>auto-cerrado</code>. ¿Ves cómo un / precede el signo de cierre (>)?",
-        "Luego te encontrarás con otras etiquetas de elementos <code>auto-cerrados</code>."
-      ],
-      "namePt": "",
-      "descriptionPt": [],
-      "nameDe": "Waypoint: Trenne Elemente visuell mit Zeilenumbrüchen",
-      "descriptionDe": [
-        "Füge ein <code>br</code> Element zu deiner Seite hinzu, am besten zwischen zwei anderen Elementen.",
-        "<code>br</code> Elemente – auch Zeilenumbrüche oder \"line breaks\" genannt – können mit <code>&#60;br&#62</code> erstellt werden.",
-        "Beachte, dass <code>&#60;br&#62</code> keinen schließenden Tag hat. Es ist ein selbst schließendes oder \"self-closing\" Element.",
-        "Du wirst bald mehr selbstschließende Elemente kennenlernen."
-      ]
-    },
-    {
       "id": "bad87fee1348bd9aedf08802",
       "name": "Waypoint: Uncomment HTML",
       "dashedName": "waypoint-uncomment-html",
@@ -202,8 +159,6 @@
         "<h1>Hello World</h1>",
         "",
         "<h2>CatPhotoApp</h2>",
-        "",
-        "<br>",
         "",
         "<p>Hello Paragraph</p>",
         "-->"
@@ -254,8 +209,6 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br>",
-        "",
         "<p>Hello Paragraph</p>",
         "-->"
       ],
@@ -301,8 +254,6 @@
         "",
         "<h2>CatPhotoApp</h2>",
         "",
-        "<br>",
-        "",
         "<p>Hello Paragraph</p>"
       ],
       "challengeType": 0,
@@ -337,22 +288,19 @@
       "dashedName": "waypoint-delete-html-elements",
       "difficulty": 0.008,
       "description": [
-        "Delete your <code>h1</code> and <code>br</code> elements so we can simplify our view.",
+        "Delete your <code>h1</code> element so we can simplify our view.",
         "Our phone doesn't have much vertical space.",
         "Let's remove the unnecessary elements so we can start building our CatPhotoApp."
       ],
       "tests": [
         "assert(($('h1').length == 0), 'Delete your <code>h1</code> element.')",
         "assert(($('h2').length > 0), 'Leave your <code>h2</code> element on the page.')",
-        "assert(($('br').length == 0), 'Delete your <code>br</code> element.')",
         "assert(($('p').length > 0), 'Leave your <code>p</code> element on the page.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
         "",
         "<h2>CatPhotoApp</h2>",
-        "",
-        "<br>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
@@ -373,7 +321,7 @@
       "descriptionPt": [],
       "nameDe": "Waypoint: Entferne HTML Elemente",
       "descriptionDe": [
-        "Lösche die Elemente <code>h1</code> und <code>br</code>, damit wir etwas Ordnung schaffen.",
+        "Lösche die Elemente <code>h1</code>, damit wir etwas Ordnung schaffen.",
         "Unser Smartphone hat nicht sehr viel vertikalen Raum.",
         "Lass uns die unwichtigen Elemente entfernen, damit wir unsere CatPhotoApp bauen können."
       ]
@@ -2187,91 +2135,6 @@
       ]
     },
     {
-      "id": "bad87fee1348bd9aede18835",
-      "name": "Waypoint: Clean up your form using Linebreaks",
-      "dashedName": "waypoint-clean-up-your-form-using-linebreaks",
-      "difficulty": 0.036,
-      "description": [
-        "Clean up your form by adding linebreaks between form elements.",
-        "Remember that you can create a linebreak element by using the code: <code>&#60;br&#62;</code>."
-      ],
-      "tests": [
-        "assert($('br').length > 1, 'Add at least 2 line breaks to visually separate your form elements.')"
-      ],
-      "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
-        "<style>",
-        "  .red-text {",
-        "    color: red;",
-        "  }",
-        "",
-        "  h2 {",
-        "    font-family: Lobster, Monospace;",
-        "  }",
-        "",
-        "  p {",
-        "    font-size: 16px;",
-        "    font-family: Monospace;",
-        "  }",
-        "",
-        "  .thick-green-border {",
-        "    border-color: green;",
-        "    border-width: 10px;",
-        "    border-style: solid;",
-        "    border-radius: 50%;",
-        "  }",
-        "",
-        "  .smaller-image {",
-        "    width: 100px;",
-        "  }",
-        "</style>",
-        "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
-        "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
-        "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
-        "",
-        "<p>Things cats love:</p>",
-        "<ul>",
-        "  <li>cat nip</li>",
-        "  <li>laser pointers</li>",
-        "  <li>lasagna</li>",
-        "</ul>",
-        "<p>Top 3 things cats hate:</p>",
-        "<ol>",
-        "  <li>flea treatment</li>",
-        "  <li>thunder</li>",
-        "  <li>other cats</li>",
-        "</ol>",
-        "<form action=\"/submit-cat-photo\">",
-        "  <label><input type='radio' name='indoor-outdoor'> Indoor</label>",
-        "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <label><input type='checkbox' name='personality'> Loving</label>",
-        "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Energetic</label>",
-        "  <input type='text' placeholder='cat photo URL' required>",
-        "  <button type='submit'>Submit</button>",
-        "</form>"
-      ],
-      "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "nameDe": "Waypoint: Strukturiere dein Formular mit Zeilenumbrüchen",
-      "descriptionDe": [
-        "Schaffe ein wenig Ordnung in deinem Formular, indem du Zeilenumbrüche zwischen den Eingabefeldern verwendest.",
-        "Du weißt, Zeilenumbrüche können mit folgendem Code erstellt werden: <code>&#60;br&#62;</code>"
-      ]
-    },
-    {
       "id": "bad87fee1348bd9aedd08835",
       "name": "Waypoint: Check Radio Buttons and Checkboxes by Default",
       "dashedName": "waypoint-check-radio-buttons-and-checkboxes-by-default",
@@ -2334,11 +2197,9 @@
         "<form action=\"/submit-cat-photo\">",
         "  <label><input type='radio' name='indoor-outdoor'> Indoor</label>",
         "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <br>",
         "  <label><input type='checkbox' name='personality'> Loving</label>",
         "  <label><input type='checkbox' name='personality'> Lazy</label>",
         "  <label><input type='checkbox' name='personality'> Energetic</label>",
-        "  <br>",
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
@@ -2429,11 +2290,9 @@
         "<form action=\"/submit-cat-photo\">",
         "  <label><input type='radio' name='indoor-outdoor' checked> Indoor</label>",
         "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <br>",
         "  <label><input type='checkbox' name='personality' checked> Loving</label>",
         "  <label><input type='checkbox' name='personality'> Lazy</label>",
         "  <label><input type='checkbox' name='personality'> Energetic</label>",
-        "  <br>",
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
@@ -2524,11 +2383,9 @@
         "<form action=\"/submit-cat-photo\">",
         "  <label><input type='radio' name='indoor-outdoor' checked> Indoor</label>",
         "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <br>",
         "  <label><input type='checkbox' name='personality' checked> Loving</label>",
         "  <label><input type='checkbox' name='personality'> Lazy</label>",
         "  <label><input type='checkbox' name='personality'> Energetic</label>",
-        "  <br>",
         "  <input type='text' placeholder='cat photo URL' required>",
         "  <button type='submit'>Submit</button>",
         "</form>"
