@@ -394,6 +394,7 @@ module.exports = function(app) {
         {quote: "Knowledge keeps about as well as fish.", source: "@Alfred North Whitehead"},
         {quote: "It all began, I said, when I decided that some experts don't really know enough to make a pronouncement of doom on a human being.  And I said I hoped they would be careful about what they said to others; they might be believed and that could be the beginning of the end.", source: "@Norman Cousins, Anatomy of an Illness"},
         {quote: "Do not go gentle into that good night.  Rage, rage against the dying of the light.",source: "@Dylan Thomas"},
+        {quote: "It's a trap!",source: "@Admiral Ackbar"}/*This one is mine :p*/,
         {quote: "For you will look smart and feel ignorant and the patient will not know which day it is for you and you will pretend to be smart out of ignorance.", source: "@John Stone, Gaudeamus Igitur"}
     ];
     res.send(quoteArr[Math.floor(Math.random() * (quoteArr.length-1 - 0 + 1)) + 0]);
