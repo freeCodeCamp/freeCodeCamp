@@ -1,4 +1,5 @@
 /* eslint-disable no-process-exit */
+require('babel/register');
 require('dotenv').load();
 var fs = require('fs'),
     path = require('path'),
