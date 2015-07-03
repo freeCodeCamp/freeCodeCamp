@@ -35,6 +35,7 @@ module.exports = function(app) {
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
   router.get('/cats.json', getCats);
+  router.get('/randQoutes.json', randQoutes);
 
   app.use(router);
 
@@ -373,6 +374,30 @@ module.exports = function(app) {
         res.end(JSON.stringify(blog));
       }
     );
+  }
+  function randQoutes(req, res){
+    //NOTE FOR ADDING QUOTES: Please follow the structure set below for quotes to avoid creating difficulty for people attempting the zipline. A real API would enforce a standard data format anyway. All credit to AdventureBear for compiling the original quotes
+    var quoteArr = [
+        {quote: "There are two types of people in this world.  Those that enter a room and say 'Here I am!' and those that enter a room and say 'There you are!'", source: "Unknown"},
+        {quote: "Because it's there.", source: "@George Mallory on climbing mountains"},
+        {quote: "Footsteps always follow us, whenever it is snowing.  They always show us where we've been, but never where we're going.", source: "@Winnie the Pooh's A-Z"},
+        {quote: "For I know the plans that I have for you.", source: "@The Lord, Jer 29:11"},
+        {quote: "The only way to climb properly is to realize that just getting up a route is nothing, the way it is done is everything.", source: "@Royal Robbins"},
+        {quote: "Small minds discuss people.  Average minds discuss events.  Great minds discuss ideas.", source: "@Unkown"},
+        {quote: "The significant problems we face cannot be solved at the same level of thinking we were at when we created them.", source: "@Albert Einstein"},
+        {quote: "We must not cease from exploration and the end of all our exploring will be to arrive where we began and to know the place for the first time.", source: "@T S Eliot"},
+        {quote: "One man asked another on the death of a mutual friend, 'How much did he leave?' His friend responded, 'He left it all.'", source: "@Proverb"},
+        {quote: "It is more noble to give yourself completely to one individual than to labor diligently for the salvation of the masses.", source: "@Dag Hammarskjold, Sec. Gen. of the UN"},
+        {quote: "Maps are a way of organizing wonder.", source: "@Edward Tufte"},
+        {quote: "I have decided to make my life my argument.", source: "@Albert Schweitzer"},
+        {quote: "Now it's a sqirt mecca for mystery artist, but back then it was just magic.", source: "@Jim Snyder on Kayaking"},
+        {quote: "Knowledge keeps about as well as fish.", source: "@Alfred North Whitehead"},
+        {quote: "It all began, I said, when I decided that some experts don't really know enough to make a pronouncement of doom on a human being.  And I said I hoped they would be careful about what they said to others; they might be believed and that could be the beginning of the end.", source: "@Norman Cousins, Anatomy of an Illness"},
+        {quote: "Do not go gentle into that good night.  Rage, rage against the dying of the light.",source: "@Dylan Thomas"},
+        {quote: "It's a trap!",source: "@Admiral Ackbar"}/*This one is mine :p*/,
+        {quote: "For you will look smart and feel ignorant and the patient will not know which day it is for you and you will pretend to be smart out of ignorance.", source: "@John Stone, Gaudeamus Igitur"}
+    ];
+    res.send(quoteArr[Math.floor(Math.random() * (quoteArr.length-1 - 0 + 1)) + 0]);
   }
 
   function getCats(req, res) {
