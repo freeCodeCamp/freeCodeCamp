@@ -28,10 +28,8 @@ module.exports = function(app) {
   router.get('/nonprofits-form', nonprofitsForm);
   router.get('/our-sponsors', sponsors);
   router.get('/jobs-form', jobsForm);
-  router.get('/submit-cat-photo', catPhotoSubmit);
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
-  router.get('/cats.json', getCats);
 
   app.use(router);
 
@@ -362,28 +360,6 @@ module.exports = function(app) {
           'Can\'t connect to Blogger';
         res.end(JSON.stringify(blog));
       }
-    );
-  }
-
-  function getCats(req, res) {
-    res.send(
-      [
-        {
-          'name': 'cute',
-          'imageLink': 'https://encrypted-tbn3.gstatic.com/images' +
-            '?q=tbn:ANd9GcRaP1ecF2jerISkdhjr4R9yM9-8ClUy-TA36MnDiFBukd5IvEME0g'
-        },
-        {
-          'name': 'grumpy',
-          'imageLink': 'http://cdn.grumpycats.com/wp-content/uploads/' +
-            '2012/09/GC-Gravatar-copy.png'
-        },
-        {
-          'name': 'mischievous',
-          'imageLink': 'http://www.kittenspet.com/wp-content' +
-            '/uploads/2012/08/cat_with_funny_face_3-200x200.jpg'
-        }
-      ]
     );
   }
 };

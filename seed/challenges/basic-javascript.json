@@ -197,38 +197,6 @@
       "descriptionPt": []
     },
     {
-      "id": "bd7118d8c441eddfaeb5bdef",
-      "name": "Waypoint: Discover Chrome DevTools",
-      "dashedName": "waypoint-discover-chrome-devTools",
-      "difficulty": 0.32,
-      "challengeSeed": ["110752743"],
-      "description": [
-        "It's time to learn the most powerful tool your browser has - the Development Tools!",
-        "If you aren't already using Chrome, you'll want to download it here: <a href='http://www.google.com/chrome/' target='_blank'>http://www.google.com/chrome/</a>. While it's true that Firefox has a tool called Firebug that is very similar to Chrome's DevTools, we will use Chrome for this challenge.",
-        "Note that this course, jointly produced by Google and Code School, is technologically impressive, but occasionally buggy. If you encounter a bug, just ignore it and keep going.",
-        "Go to <a href='http://discover-devtools.codeschool.com' target='_blank'>http://discover-devtools.codeschool.com</a>.",
-        "Complete \"Chapter 1: Getting Started & Basic DOM and Styles\".",
-        "Complete \"Chapter 2: Advanced DOM and Styles\".",
-        "Complete \"Chapter 3: Working with the Console\".",
-        "Complete \"Chapter 4: Debugging JavaScript\".",
-        "Complete \"Chapter 5: Improving Network Performance\".",
-        "Complete \"Chapter 6: Improving Performance\".",
-        "Complete \"Chapter 7: Memory Profiling\"."
-      ],
-      "challengeType": 2,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
       "id": "bd7138d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn Regular Expressions",
       "dashedName": "waypoint-learn-regular-expressions",

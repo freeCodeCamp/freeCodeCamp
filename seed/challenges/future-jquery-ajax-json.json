@@ -524,7 +524,7 @@
       "id": "bad87fee1348bd9ae9c08826",
       "name":  "Waypoint: Loop through JSON Data Using jQuery",
       "dashedName":  "waypoint-loop-through-json-data-using-jquery",
-      "difficulty": 0.089,
+      "difficulty": 0.088,
       "description": [
 
       ],
@@ -549,38 +549,50 @@
 
       ],
       "challengeSeed": [
-
+        "fccss",
+        "  $(document).ready(function() {",
+        "",
+        "  });",
+        "fcces",
+        "<!-- You shouldn't need to modify code below this line -->",
+        "<button id='count-presses-button' class='btn btn-primary btn-block btn-lg>Press me</button>",
+        "<span id='times-pressed'>"
       ],
       "challengeType": 0
-    }, {
-      "id": "bad87fee1348bd9aede08826",
-      "name":  "Waypoint: Use Hex Codes for Precise Colors",
-      "dashedName":  "waypoint-use-hex-codes-for-precise-colors",
-      "difficulty": 0.071,
+    },
+    {
+      "id": "bad88fee1348bd9ae8c08826",
+      "name":  "Waypoint: Wire AJAX Call into a jQuery Click Event",
+      "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
+      "difficulty": 0.089,
       "description": [
-
+        "<img src='https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png'>"
       ],
       "tests": [
 
       ],
       "challengeSeed": [
-
+        "fccss",
+        "  var random = function() { return Math.floor(Math.random() * 3) }",
+        "  $(document).ready(function() {",
+        "<!-- Don't change code above this line -->",
+        "",
+        "    $('#cat-button').on('click', function() {",
+        "      $.getJSON('/json/cats.json', function( json ) {",
+        "        var kitten = json[random()];",
+        "        $(\"<img src='\" + kitten.imageLink + \"'>\").appendTo('#output');",
+        "        $(\"<h3>Code name: \" + kitten.codeNames[random()] + \"</h3>\").appendTo('#output');",
+        "      });",
+        "    });",
+        "",
+        "<!-- Don't change code below this line -->",
+        "  });",
+        "fcces",
+        "<button id='cat-button' class='btn btn-primary btn-block btn-lg'>Cat Button</button>",
+        "<div class='jumbotron' id='output'>",
+        "</div>"
       ],
       "challengeType": 0
-    }, {
-      "id": "bad87fee1348bd9aedd08826",
-      "name":  "Waypoint: Use Shortened Hex Codes for Colors",
-      "dashedName":  "waypoint-use-shortened-hex-codes-for-colors",
-      "difficulty": 0.071,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-
-      ]
     }
   ]
 }
