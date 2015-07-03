@@ -1,5 +1,5 @@
 import debugFactory from 'debug';
-import { app$ } from '../common/app';
+import { app$ } from '../../common/app';
 import { Cat } from 'thundercats';
 
 const debug = debugFactory('freecc:servereact');
@@ -11,7 +11,7 @@ const routes = [
 ];
 
 export default function reactSubRouter(app) {
-  var router = app.Router();
+  var router = app.loopback.Router();
 
   routes.forEach(function(route) {
     router.get(route, serveReactApp);
