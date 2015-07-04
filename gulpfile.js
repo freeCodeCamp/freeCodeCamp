@@ -39,7 +39,8 @@ var paths = {
   serverIgnore: [
     'gulpfile.js',
     'public/',
-    'node_modules/'
+    'node_modules/',
+    'client/'
   ],
   publicJs: './public/js',
 
@@ -125,7 +126,7 @@ gulp.task('serve', function(cb) {
   var called = false;
   nodemon({
     script: paths.server,
-    ext: '.js',
+    ext: '.js .json',
     ignore: paths.serverIgnore,
     exec: './node_modules/.bin/babel-node',
     env: {
