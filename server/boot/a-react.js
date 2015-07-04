@@ -10,7 +10,7 @@ const debug = debugFactory('freecc:servereact');
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
-  '/mobile'
+  '/Hikes'
 ];
 
 export default function reactSubRouter(app) {

@@ -1,5 +1,5 @@
-import jobRoute from './Jobs';
-import mobileRoute from './Mobile';
+import Jobs from './Jobs';
+import Hikes from './Hikes';
 
 export default {
   path: '/',
@@ -7,8 +7,8 @@ export default {
     setTimeout(() => {
       cb(null, [
         // require('./Bonfires'),
-        jobRoute,
-        mobileRoute
+        Jobs,
+        Hikes
       ]);
     }, 0);
   }

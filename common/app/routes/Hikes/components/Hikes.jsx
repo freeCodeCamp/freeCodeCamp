@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 export default React.createClass({
-  displayName: 'Mobile',
+  displayName: 'Hikes',
   propTypes: {
     id: PropTypes.string
   },
