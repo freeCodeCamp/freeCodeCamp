@@ -1,65 +1,86 @@
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
+import BootstrapMixin from 'react-bootstrap/lib/BootstrapMixin';
 
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export default React.createClass({
+  displayName: 'FCCNavItem',
+  mixins: [BootstrapMixin],
 
-  static displayName = 'NavItem'
-  static propTypes = {
-    onSelect: React.PropTypes.func,
+  propTypes: {
     active: React.PropTypes.bool,
+    'aria-controls': React.PropTypes.string,
     disabled: React.PropTypes.bool,
-    href: React.PropTypes.string,
-    title: React.PropTypes.string,
     eventKey: React.PropTypes.any,
-    target: React.PropTypes.string
-  }
+    href: React.PropTypes.string,
+    linkId: React.PropTypes.string,
+    onSelect: React.PropTypes.func,
+    role: React.PropTypes.string,
+    target: React.PropTypes.string,
+    title: React.PropTypes.node
+  },
+
+  getDefaultProps() {
+    return {
+      href: '#'
+    };
+  },
 
   handleClick(e) {
     if (this.props.onSelect) {
       e.preventDefault();
 
       if (!this.props.disabled) {
-        this.props.onSelect(
-          this.props.eventKey,
-          this.props.href,
-          this.props.target
-        );
+        this.props.onSelect(this.props.eventKey, this.props.href, this.props.target);
       }
     }
-  }
+  },
 
   render() {
-    const {
+    let {
+      role,
+      linkId,
       disabled,
       active,
       href,
       title,
       target,
       children,
+      'aria-controls': ariaControls,  // eslint-disable-line react/prop-types
+      className,
+      ...props
     } = this.props;
 
-    const classes = {
-      'active': active,
-      'disabled': disabled
+    let classes = {
+      active,
+      disabled
     };
+
+    let linkProps = {
+      role,
+      href,
+      title,
+      target,
+      id: linkId,
+      onClick: this.handleClick,
+      ref: 'anchor'
+    };
+
+    if (!role && href === '#') {
+      linkProps.role = 'button';
+    }
 
     return (
       <li
-        className={ joinClasses(props.className, classSet(classes)) }
-        { ...this.props }>
+        {...props}
+        role='presentation'>
         <a
-          href={href}
-          title={title}
-          target={target}
-          className={ this.props.aClassName }
-          onClick={this.handleClick}
-          ref="anchor">
+          { ...linkProps }
+          aria-selected={ active }
+          aria-controls={ ariaControls }
+          className={ className }>
           { children }
         </a>
       </li>
     );
   }
-}
+});
