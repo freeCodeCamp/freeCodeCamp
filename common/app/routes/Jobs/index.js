@@ -1,3 +1,5 @@
+import Jobs from './components/Jobs.jsx';
+
 /*
  *  show: /jobs
  *  showOne: /jobs/:id
@@ -8,12 +10,9 @@
 
 export default {
   path: '/jobs/(:jobId)',
-
   getComponents(cb) {
-    require.ensure([], require => {
-      cb(null, [
-        require('./components/Jobs.jsx')
-      ]);
-    });
+    setTimeout(() => {
+      cb(null, Jobs);
+    }, 0);
   }
 };

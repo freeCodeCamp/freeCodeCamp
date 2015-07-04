@@ -1,5 +1,6 @@
 require('babel-core/register');
-var gulp = require('gulp'),
+var Rx = require('rx'),
+  gulp = require('gulp'),
   path = require('path'),
 
   // utils
@@ -30,6 +31,7 @@ var gulp = require('gulp'),
   eslint = require('gulp-eslint');
 
 
+Rx.longStackSupport = true;
 var reloadDelay = 1000;
 var reload = sync.reload;
 var paths = {
@@ -105,6 +107,12 @@ gulp.task('pack-client', function() {
     .pipe(gulp.dest(webpackConfig.output.path));
 });
 
+gulp.task('pack-watch', function() {
+  return gulp.src(webpackConfig.entry)
+    .pipe(webpack(Object.assign(webpackConfig, { watch: true })))
+    .pipe(gulp.dest(webpackConfig.output.path));
+});
+
 gulp.task('pack-node', function() {
   return gulp.src(webpackConfigNode.entry)
     .pipe(webpack(webpackConfigNode))
@@ -175,7 +183,7 @@ gulp.task('watch', ['less', 'serve', 'sync'], function() {
   gulp.watch('./public/css/*.less', ['less']);
 });
 
-gulp.task('default', ['less', 'serve', 'sync', 'watch']);
+gulp.task('default', ['less', 'serve', 'sync', 'watch', 'pack-watch']);
 
 function errorNotifier() {
   var args = Array.prototype.slice.call(arguments);

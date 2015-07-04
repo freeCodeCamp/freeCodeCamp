@@ -90,7 +90,7 @@
     "ramda": "~0.10.0",
     "react": "^0.13.3",
     "react-bootstrap": "^0.23.5",
-    "react-router": "^1.0.0-beta1",
+    "react-router": "^1.0.0-beta3",
     "request": "~2.53.0",
     "rx": "^2.5.3",
     "sanitize-html": "~1.6.1",

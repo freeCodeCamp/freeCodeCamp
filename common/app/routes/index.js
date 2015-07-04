@@ -1,11 +1,15 @@
+import jobRoute from './Jobs';
+import mobileRoute from './Mobile';
+
 export default {
   path: '/',
-  getRoutes(cb) {
-    require.ensure([], require => {
+  getChildRoutes(locationState, cb) {
+    setTimeout(() => {
       cb(null, [
         // require('./Bonfires'),
-        require('./Jobs')
+        jobRoute,
+        mobileRoute
       ]);
-    });
+    }, 0);
   }
 };
