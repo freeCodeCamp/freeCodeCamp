@@ -384,11 +384,14 @@ $(document).ready(function() {
                 }
             });
         }
-        var initOff = ($('.scroll-locker').offset().top - $(window).scrollTop());
-        lockTop(initOff);
-        $(window).on('resize', function(){
-            lockTop(initOff);
-        });
+        var $scrollLocker = $('.scroll-locker');
+        if ($scrollLocker.offset()) {
+          var initOff = $scrollLocker.offset().top - $(window).scrollTop();
+          lockTop(initOff);
+          $(window).on('resize', function(){
+              lockTop(initOff);
+          });
+        }
     }
 
   $('#comment-button').on('click', commentSubmitButtonHandler);
