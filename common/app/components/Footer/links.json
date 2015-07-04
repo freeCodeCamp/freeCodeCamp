@@ -1,43 +1,43 @@
 [
   {
     "className": "ion-speakerphone",
-    "content": "&nbsp;Blog&nbsp;&nbsp;",
+    "content": " Blog  ",
     "href": "http://blog.freecodecamp.com",
     "target": "_blank"
   },
   {
     "className": "ion-social-twitch-outline",
-    "content": "&nbsp;Twitch&nbsp;&nbsp;",
+    "content": " Twitch  ",
     "href": "http://www.twitch.tv/freecodecamp",
     "target": "_blank"
   },
   {
     "className": "ion-social-github",
-    "content": "&nbsp;Github&nbsp;&nbsp;",
+    "content": " Github  ",
     "href": "http://github.com/freecodecamp",
     "target": "_blank"
   },
   {
     "className": "ion-social-twitter",
-    "content": "&nbsp;Twitter&nbsp;&nbsp;",
+    "content": " Twitter  ",
     "href": "http://twitter.com/freecodecamp",
     "target": "_blank"
   },
   {
     "className": "ion-social-facebook",
-    "content": "&nbsp;Facebook&nbsp;&nbsp;",
+    "content": " Facebook  ",
     "href": "http://facebook.com/freecodecamp",
     "target": "_blank"
   },
   {
     "className": "ion-information-circled",
-    "content": "&nbsp;About&nbsp;&nbsp;",
+    "content": " About  ",
     "href": "/learn-to-code",
     "target": "_self"
   },
   {
     "className": "ion-locked",
-    "content": "&nbsp;Privacy&nbsp;&nbsp;",
+    "content": " Privacy  ",
     "href": "/privacy'",
     "target": "_self"
   }
