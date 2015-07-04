@@ -1,6 +1,28 @@
 import React from 'react';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
+
+import navLinks from './links.json';
 import FCCNavItem from './NavItem.jsx';
+
+const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
+const navElements = navLinks.map((navItem, index) => {
+  return (
+    <NavItem
+      eventKey={ index + 1 }
+      href={ navItem.link }>
+      { navItem.content }
+    </NavItem>
+  );
+});
+
+const logoElement = (
+  <a href='/'>
+    <img
+      alt='learn to code javascript at Free Code Camp logo'
+      className='img-responsive nav-logo'
+      src={ fCClogo } />
+  </a>
+);
 
 export default class extends React.Component {
   constructor(props) {
@@ -13,15 +35,6 @@ export default class extends React.Component {
   }
 
   renderBrand() {
-    var fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
-    return (
-      <a href='/'>
-        <img
-          alt='learn to code javascript at Free Code Camp logo'
-          className='img-responsive nav-logo'
-          src={ fCClogo } />
-      </a>
-    );
   }
 
   renderSignin() {
@@ -47,7 +60,7 @@ export default class extends React.Component {
   render() {
     return (
       <Navbar
-        brand={ this.renderBrand() }
+        brand={ logoElement }
         className='nav-height'
         fixedTop={ true }
         toggleNavKey={ 0 }>
@@ -55,21 +68,7 @@ export default class extends React.Component {
           className='hamburger-dropdown'
           eventKey={ 0 }
           right={ true }>
-          <NavItem
-            eventKey={ 1 }
-            href='/Challenges'>
-            Challenges
-          </NavItem>
-          <NavItem
-            eventKey={ 1 }
-            href='Chat'>
-            Chat
-          </NavItem>
-          <NavItem
-            eventKey={ 2 }
-            href='/bonfires'>
-            Bonfires
-          </NavItem>
+          { navElements }
           { this.renderSignin() }
         </Nav>
       </Navbar>
