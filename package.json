@@ -91,6 +91,7 @@
     "react": "^0.13.3",
     "react-bootstrap": "^0.23.5",
     "react-router": "^1.0.0-beta3",
+    "react-video": "https://github.com/BerkeleyTrue/react-video",
     "request": "~2.53.0",
     "rx": "^2.5.3",
     "sanitize-html": "~1.6.1",

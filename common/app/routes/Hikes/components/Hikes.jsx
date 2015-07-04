@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import { Row } from 'react-bootstrap';
+import Video from 'react-video';
 
 export default React.createClass({
   displayName: 'Hikes',
@@ -12,7 +14,9 @@ export default React.createClass({
     } = this.props.params;
 
     return (
-      <h2>Hello { id }</h2>
+      <Video
+        from='vimeo'
+        videoId={ 132543959 } />
     );
   }
 });
