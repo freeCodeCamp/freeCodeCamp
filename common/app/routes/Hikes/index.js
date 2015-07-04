@@ -1,7 +1,7 @@
 import Hikes from './components/Hikes.jsx';
 
 export default {
-  path: 'hikes',
+  path: 'hikes(/:id)',
 
   getComponents(cb) {
     setTimeout(() => {

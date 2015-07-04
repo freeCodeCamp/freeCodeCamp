@@ -10,7 +10,9 @@ const debug = debugFactory('freecc:servereact');
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
-  '/Hikes'
+  '/Hikes',
+  '/Hikes/:id',
+  '/jobs'
 ];
 
 export default function reactSubRouter(app) {
@@ -29,29 +31,21 @@ export default function reactSubRouter(app) {
     // returns a router wrapped app
     app$(location)
       // if react-router does not find a route send down the chain
-      .filter(function(initialState) {
-        console.log('initialState', initialState);
-        /*
-        var state = data.state;
-        // this may not work with react-router 1.0.0
-        var notFound = state.routes.some(route => route.isNotFound);
-        if (notFound) {
-          debug('tried to find %s but got 404', state.path);
-          next();
+      .filter(function([ initialState ]) {
+        if (!initialState) {
+          debug('tried to find %s but got 404', location.pathname);
+          return next();
         }
-        return !notFound;
-        */
-        return true;
+        return !!initialState;
       })
-      .flatMap(function(initialState) {
+      .flatMap(function([ initialState ]) {
         // call thundercats renderToString
         // prefetches data and sets up it up for current state
         return fcc.renderToString(
-          React.createElement(Router, initialState[0])
+          React.createElement(Router, initialState)
         );
       })
       // makes sure we only get one onNext and closes subscription
-      .firstOrDefault()
       .flatMap(function({ data, markup }) {
         debug('react rendered');
         res.expose(data, 'data');

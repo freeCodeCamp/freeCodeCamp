@@ -9,7 +9,7 @@ export default React.createClass({
   render() {
     const {
       id
-    } = this.props;
+    } = this.props.params;
 
     return (
       <h2>Hello { id }</h2>
