@@ -11,6 +11,7 @@ export default class extends React.Component {
         <a
           className={ link.className}
           href={ link.href }
+          key={ link.content }
           target={ link.target }>
           { this.renderContent(mobile, link.content) }
         </a>
