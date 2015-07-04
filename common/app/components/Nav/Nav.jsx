@@ -46,7 +46,7 @@ export default class extends React.Component {
   render() {
     return (
       <Navbar
-        brand={ this._renderBrand() }
+        brand={ this.renderBrand() }
         className='nav-height'
         fixedTop={ true }
         toggleNavKey={ 0 }>
@@ -69,7 +69,7 @@ export default class extends React.Component {
             href='/bonfires'>
             Bonfires
           </NavItem>
-          { this._renderSignin() }
+          { this.renderSignin() }
         </Nav>
       </Navbar>
     );
