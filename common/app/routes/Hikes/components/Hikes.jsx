@@ -16,7 +16,7 @@ export default React.createClass({
     return (
       <Video
         from='vimeo'
-        videoId={ 132543959 } />
+        videoId={ '132543959' } />
     );
   }
 });
