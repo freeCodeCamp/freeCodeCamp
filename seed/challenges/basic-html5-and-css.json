@@ -821,7 +821,7 @@
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
-	  "descriptionFr": [],
+         "descriptionFr": [],
       "nameRu": "",
       "descriptionRu": [],
       "nameEs": "",
@@ -835,7 +835,7 @@
         "Ein Beispiel dafür wäre <code>&#60img src=\"www.bild-quelle.com/bild.jpg\"/&#62</code>. Beachte, dass <code>img</code> Elemente in den meisten Fällen selbstschließend sind.",
         "Versuche es mit diesem Bild: <code>http://bit.ly/fcc-kittens</code>."
       ]
-	},
+       },
     {
       "id": "bad87fee1348bd9acdf08812",
       "name": "Waypoint: Size your Images",
