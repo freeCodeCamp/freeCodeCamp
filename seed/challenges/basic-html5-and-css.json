@@ -1459,6 +1459,7 @@
         "For example: <code>&#60;ul&#62;&#60;li&#62;milk&#60;/li&#62;&#60;li&#62;cheese&#60;/li&#62;&#60;/ul&#62;</code> would create a bulleted list of \"milk\" and \"cheese\"."
       ],
       "tests": [
+		"assert(!editor.match(/<\\/p>/g) && !editor.match(/<p>/g), 'Remove all <code>p</code> elements')",
         "assert($('ul').length > 0, 'Create a <code>ul</code> element.')",
         "assert($('li').length > 2, 'Add three <code>li</code> elements to your <code>ul</code> element.')",
         "assert(editor.match(/<\\/ul>/g) && editor.match(/<ul/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul/g).length, 'Make sure your <code>ul</code> element has a closing tag.')",
