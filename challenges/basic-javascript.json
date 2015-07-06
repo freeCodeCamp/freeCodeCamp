@@ -1,0 +1,334 @@
+{
+  "name": "Basic JavaScript",
+  "order": 0.006,
+  "challenges": [
+    {
+      "_id": "bd7123c9c441eddfaeb5bdef",
+      "name": "Meet Booleans",
+      "dashedNname": "waypoint-meet-booleans",
+      "difficulty": "9.98",
+      "description": [
+        "Return true",
+        "Some additional directions"
+      ],
+      "tests": [
+        "expect(welcomeToBooleans()).to.be.a(\"boolean\");",
+        "expect(welcomeToBooleans()).to.be.true;"
+      ],
+      "challengeSeed": [
+        "function welcomeToBooleans() {",
+        "// Good luck!",
+        "return false;",
+        "}",
+        "",
+        "welcomeToBooleans();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c442eddfaeb5bdef",
+      "name": "Define Your Name",
+      "difficulty": "9.9801",
+      "description": [
+        "Set the value of <code>myName</code> to your name by typing your name in quotes.",
+        "Currently <code>myName</code> is empty. Type in your name and hit the submit button.",
+        "Look at the <code>ourName</code> example if you get stuck."
+      ],
+      "tests": [
+        "expect(myName).to.be.a(\"string\");",
+        "expect(myName).length.not.to.be(0);"
+      ],
+      "challengeSeed": [
+        "// ourName = \"Free Code Camp\";",
+        "myName = \"\";"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c443eddfaeb5bdef",
+      "name": "Start Using Variables",
+      "difficulty": "9.9802",
+      "description": [
+        "Now, use the <code>var</code> keyword to create a <code>variable</code> called <code>myName</code>. Set its value to your name.",
+        "<code>Variables</code> are used to store values.",
+        "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
+        "Look at the <code>ourName</code> example if you get stuck."
+      ],
+      "tests": [
+        "expect(myName).to.be.a(\"string\");",
+        "expect(myName).length.not.to.be(0);"
+      ],
+      "challengeSeed": [
+        "// var ourName = \"Free Code Camp\";",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c444eddfaeb5bdef",
+      "name": "Define Your First and Last Name",
+      "difficulty": "9.9803",
+      "description": [
+        "Now, use the <code>var</code> keyword to create a <code>variable</code> called <code>myFirstName</code> and set its value to your first name. Then set a variable called <code>myLastName</code> to your last name.",
+        "<code>Variables</code> are used to store values.",
+        "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>lower camel case</code>. An example of lower camel case is: lowerCamelCase.",
+        "Look at the <code>ourFirstName</code> and <code>ourLastName</code> examples if you get stuck."
+      ],
+      "tests": [
+        "expect(myFirstName).to.be.a(\"string\");",
+        "expect(myFirstName).length.not.to.be(0);",
+        "expect(myLastName).to.be.a(\"string\");",
+        "expect(myLastName).length.not.to.be(0);"
+      ],
+      "challengeSeed": [
+        "// var ourFirstName = \"Free\";",
+        "// var ourLastName = \"Code Camp\";",
+        "",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c445eddfaeb5bdef",
+      "name": "Combine Two Strings into One String",
+      "difficulty": "9.9804",
+      "description": [
+        "Make a variable called <code>myName</code> by adding the string of your first name to the string of your last name.",
+        "Strings can be combined in a process called <code>concatenation</code>.",
+        "Be sure to include a space at the end of your first string. Otherwise the two strings will not have a space between them.",
+        "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>lower camel case</code>. An example of lower camel case is: lowerCamelCase.",
+        "Look at the <code>ourName</code> example if you get stuck."
+      ],
+      "tests": [
+        "expect(myName).to.be.a(\"string\");",
+        "expect(myName).length.not.to.be(0);",
+        "expect((/\\s+/).test(myName)).to.be.true;"
+      ],
+      "challengeSeed": [
+        "// var ourName = \"Free \" + \"Code Camp\";",
+        "",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c446eddfaeb5bdef",
+      "name": "Combine Two Variables into One Variable",
+      "difficulty": "9.9805",
+      "description": [
+        "Make the variables <code>myFirstName</code>, <code>myLastName</code>, and <code>myFullName</code>. Concatenate my <code>myFirstName</code> to <code>myLastName</code> to create <code>myFullName</code>.",
+        "Strings can be combined in a process called <code>concatenation</code>.",
+        "Be sure to include a space at the end of <code>myFirstName</code>. Otherwise <code>myFullName</code> will not contain a space between your first and last names.",
+        "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>lower camel case</code>. An example of lower camel case is: lowerCamelCase.",
+        "Look at the <code>ourFullName</code> example if you get stuck."
+      ],
+      "tests": [
+        "expect(myFirstName).to.be.a(\"string\");",
+        "expect(myLastName).to.be.a(\"string\");",
+        "expect(myFullName).to.be.a(\"string\");",
+        "expect(myFullName).length.not.to.be(0);",
+        "expect((/\\s+/).test(myFullName)).to.be.true;"
+      ],
+      "challengeSeed": [
+        "// var ourFirstName = \"Free \";",
+        "// var ourLastName = \"Code Camp\";",
+        "// var ourFullName = ourFirstName + ourLastName;",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c447eddfaeb5bdef",
+      "name": "Concatenate Both Variables and Strings into the Same Variable",
+      "difficulty": "9.9806",
+      "description": [
+        "Make the variables <code>myFirstName</code>, <code>myLastName</code>, and <code>myFullName</code>. Concatenate my <code>myFirstName</code> to <code>myLastName</code> to create <code>myFullName</code>, but this time add the space as a separate string, not as part of <code>myFirstName</code> or <code>myLastName</code>.",
+        "Strings can be combined in a process called <code>concatenation</code>.",
+        "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>lower camel case</code>. An example of lower camel case is: lowerCamelCase.",
+        "Look at the <code>ourFullName</code> example if you get stuck."
+      ],
+      "tests": [
+        "expect(myFirstName).to.be.a(\"string\");",
+        "expect(myLastName).to.be.a(\"string\");",
+        "expect(myFullName).to.be.a(\"string\");",
+        "expect(myFullName).length.not.to.be(0);",
+        "expect((/\\s+/).test(myFullName)).to.be.true;"
+      ],
+      "challengeSeed": [
+        "// var ourFirstName = \"Free\";",
+        "// var ourLastName = \"Code Camp\";",
+        "// var ourFullName = ourFirstName + \" \" + ourLastName;",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c448eddfaeb5bdef",
+      "name": "Check the Length Property of a String Variable",
+      "difficulty": "9.9809",
+      "description": [
+        "Use the <code>.length</code> property to count the number of characters in the <code>lastNameLength</code> variable.",
+        "For example, if we created a variable <code>var firstName = \"Julie\"</code>, we could find out how long the string \"Julie\" is by using the <code>firstName.length</code> property."
+      ],
+      "tests": [
+        "expect(lastNameLength).to.equal(4);"
+      ],
+      "challengeSeed": [
+        "var firstName = \"Madeline\";",
+        "",
+        "var firstNameLength = firstName.length;",
+        "",
+        "var lastName = \"Chen\";",
+        "",
+        "var lastNameLength = lastName;",
+        "",
+        "",
+        "",
+        "// You can ignore this.",
+        "// We use this to show you the value of your variable in your output box.",
+        "// We'll learn about functions soon.",
+        "function returnValue(lastNameLength) {",
+        "  return lastNameLength;",
+        "}",
+        "returnValue(lastNameLength);"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c549eddfaeb5bdef",
+      "name": "Use Bracket Notation to Find the First Character in a String",
+      "difficulty": "9.9810",
+      "description": [
+        "Use <code>bracket notation</code> to find the first character in a the <code>firstLetterOfLastName</code> variable.",
+        "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
+        "Computers don't start counting at 1 like humans do. They start at 0.",
+        "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+        "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
+      ],
+      "tests": [
+        "expect(firstLetterOfLastName).to.equal('C');"
+      ],
+      "challengeSeed": [
+        "var firstName = \"Madeline\";",
+        "",
+        "var firstLetterOfFirstName = firstName[0];",
+        "",
+        "var lastName = \"Chen\";",
+        "",
+        "var firstLetterOfLastName = lastName;",
+        "",
+        "",
+        "// You can ignore this.",
+        "// We use this to show you the value of your variable in your output box.",
+        "// We'll learn about functions soon.",
+        "function returnValue(firstLetterOfLastName) {",
+        "  return firstLetterOfLastName;",
+        "}",
+        "returnValue(firstLetterOfLastName);"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c450eddfaeb5bdef",
+      "name": "Use Bracket Notation to Find the Nth Character in a String",
+      "difficulty": "9.9811",
+      "description": [
+        "Use <code>bracket notation</code> to find the 3rd character in the <code>lastName</code> variable.",
+        "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
+        "Computers don't start counting at 1 like humans do. They start at 0.",
+        "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+        "Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
+      ],
+      "tests": [
+        "expect(thirdLetterOfLastName).to.equal('e');"
+      ],
+      "challengeSeed": [
+        "var firstName = \"Madeline\";",
+        "",
+        "var secondLetterOfFirstName = firstName[1];",
+        "",
+        "var lastName = \"Chen\";",
+        "",
+        "var thirdLetterOfLastName = lastName;",
+        "",
+        "",
+        "// You can ignore this.",
+        "// We use this to show you the value of your variable in your output box.",
+        "// We'll learn about functions soon.",
+        "function returnValue(thirdLetterOfLastName) {",
+        "  return thirdLetterOfLastName;",
+        "}",
+        "returnValue(thirdLetterOfLastName);"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c451eddfaeb5bdef",
+      "name": "Use Bracket Notation to Find the Last Character in a String",
+      "difficulty": "9.9812",
+      "description": [
+        "Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
+        "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+        "In order to get the last letter of a string, you can subtract one from the string's length.",
+        "For example, if <code>var firstName = \"Julie\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
+        "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+      ],
+      "tests": [
+        "expect(lastLetterOfLastName).to.equal('n');"
+      ],
+      "challengeSeed": [
+        "var firstName = \"Madeline\";",
+        "",
+        "var lastLetterOfFirstName = firstName[firstName.length - 1];",
+        "",
+        "var lastName = \"Chen\";",
+        "",
+        "var lastLetterOfLastName = lastName;",
+        "",
+        "",
+        "// You can ignore this.",
+        "// We use this to show you the value of your variable in your output box.",
+        "// We'll learn about functions soon.",
+        "function returnValue(lastLetterOfLastName) {",
+        "  return lastLetterOfLastName;",
+        "}",
+        "returnValue(lastLetterOfLastName);"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "bd7123c9c452eddfaeb5bdef",
+      "name": "Use Bracket Notation to Find the Nth to Last Character in a String",
+      "difficulty": "9.9813",
+      "description": [
+        "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> variable.",
+        "For example, the character at index 0 in the word \"Julie\" is \"J\". So if <code>var firstName = \"Julie\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
+        "In order to get the last letter of a string, you can subtract one from the string's length.",
+        "For example, if <code>var firstName = \"Julie\"</code>, you can get the value of the third-to-last letter of the string by using <code>firstName[firstName.length - 3]</code>.",
+        "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+      ],
+      "tests": [
+        "expect(secondToLastLetterOfLastName).to.equal('e');"
+      ],
+      "challengeSeed": [
+        "var firstName = \"Madeline\";",
+        "",
+        "var thirdToLastLetterOfFirstName = firstName[firstName.length - 2];",
+        "",
+        "var lastName = \"Chen\";",
+        "",
+        "var secondToLastLetterOfLastName = lastName;",
+        "",
+        "",
+        "// You can ignore this.",
+        "// We use this to show you the value of your variable in your output box.",
+        "// We'll learn about functions soon.",
+        "function returnValue(secondToLastLetterOfLastName) {",
+        "  return secondToLastLetterOfLastName;",
+        "}",
+        "returnValue(secondToLastLetterOfLastName);"
+      ],
+      "challengeType": 1
+    }
+  ]
+}
