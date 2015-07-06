@@ -717,8 +717,8 @@
         "Don't worry - there will be plenty of time to customize our CSS later."
       ],
       "tests": [
-        "assert(!$('h2').hasClass('red-text'), 'You h2 element should no longer have the class \"red-text\".')",
-        "assert($('h2').hasClass('text-primary'), 'You h2 element should now have the class \"text-primary\".')",
+        "assert(!$('h2').hasClass('red-text'), 'Your h2 element should no longer have the class \"red-text\".')",
+        "assert($('h2').hasClass('text-primary'), 'Your h2 element should now have the class \"text-primary\".')",
         "assert(!$('p').css('font-family').match(/monospace/i), 'Your paragraph elements should no longer use the font \"Monospace\".')",
         "assert(!$('img').hasClass('smaller-image'), 'Remove the \"smaller-image\" class from your top image.')",
         "assert($('.img-responsive').length > 1, 'Add the \"img-responsive\" class to your top image.')"
