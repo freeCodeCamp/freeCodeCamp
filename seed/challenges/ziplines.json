@@ -144,7 +144,7 @@
       "difficulty": 1.04,
       "challengeSeed": ["126415129"],
       "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/Wveezv' target='_blank'>http://codepen.io/GeoffStorbeck/full/Wveezv</a>.",
+        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/fccziplines/full/VLXMwW' target='_blank'>http://codepen.io/fccziplines/full/VLXMwW</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
