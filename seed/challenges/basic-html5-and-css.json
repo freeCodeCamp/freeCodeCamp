@@ -1800,7 +1800,7 @@
       ],
       "tests": [
         "assert($('form').children('button').length > 0, 'Your form should have a button inside it.')",
-        "assert($('button').attr('type') === 'submit', 'Your submit button should have be of input type \"submit\".')",
+        "assert($('button').attr('type') === 'submit', 'Your submit button should have the type \"submit\".')",
         "assert($('button').text().match(/submit/gi), 'Your submit button should have the text \"submit\".')",
         "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
       ],
