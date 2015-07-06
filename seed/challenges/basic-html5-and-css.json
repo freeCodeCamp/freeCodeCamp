@@ -2378,7 +2378,7 @@
         "assert($('div').children('ol').length > 0, 'Wrap your <code>ol</code> element inside your <code>div</code> element.')",
         "assert($('div').children('p').length > 1, 'Wrap your <code>p</code> element inside your <code>div</code> element.')",
         "assert($('div').children('ul').length > 0, 'Wrap your <code>ul</code> element inside your <code>div</code> element.')",
-        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure your <code>div</code> element has a closing tag.')"
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === (editor.match(/<div>/g) && editor.match(/<div>/g).length), 'Make sure your <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
