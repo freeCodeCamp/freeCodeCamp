@@ -99,7 +99,7 @@
 }, {
   "name": "DevMountain",
   "cost": "8900",
-  "housing": "0",
+  "housing": "400",
   "finance": true,
   "weeks": "12",
   "cities": [
