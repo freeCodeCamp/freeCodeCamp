@@ -1,19 +1,6 @@
 extends layout
 block content
     .jumbotron
-        if (user && user.progressTimestamps.length > 0)
-            .col-xs-12
-                .embed-responsive.embed-responsive-16by9
-                    iframe.embed-responsive-item(src='//player.vimeo.com/video/129168884')
-                br
-            h3 Note: If you're using Firefox and the buttons aren't working, do a full refresh (control + f5 on Windows and command + shift + r on Mac). We're working on this.
-            h3 Note: If you've already completed the HTML, CSS, Bootstrap Waypoints, you do not need to do these new Waypoints.
-            h3 Note: If you were already doing full stack JavaScript Waypoints (Node.js, Angular.js), go ahead and start the Bonfires (Basic Algorithm Scripting).
-            h3 Thanks for your patience everyone! We're confident these curriculum improvements will better prepare you for your nonprofit projects and for the workplace.
-            br
-            br
-            br
-            br
         .text-center
             h1.hug-top Code with Us
             h2 Let's learn to code by building projects for nonprofits
@@ -43,7 +30,12 @@ block content
                         a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
                     .button-spacer
                     a.btn.btn-cta.btn-success.btn-block(href="/nonprofits") My nonprofit needs coding help
-                    .big-break
+            h2 As seen in:
+            img.img-center.img-responsive(src='https://s3.amazonaws.com/freecodecamp/as-seen-on.png')
+            .spacer
+            h2 We're a proven way to start your software engineering career:
+            img.img-center.img-responsive(src='https://s3.amazonaws.com/freecodecamp/linkedin-alumni.png')
+            .spacer
             h2 Campers you'll hang out with:
             .row
                 .col-xs-12.col-sm-12.col-md-4
@@ -74,8 +66,8 @@ block content
                     .landing-skill-icon.fa.fa-database.font-awesome-padding
                     h2.black-text Databases
                 .col-xs-12.col-sm-12.col-md-3
-                    .landing-skill-icon.ion-social-chrome
-                    h2.black-text DevTools
+                    .landing-skill-icon.ion-social-github
+                    h2.black-text Git
                 .col-xs-12.col-sm-12.col-md-3
                     .landing-skill-icon.ion-social-nodejs
                     h2.black-text Node.js
