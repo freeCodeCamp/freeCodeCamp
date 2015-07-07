@@ -144,7 +144,9 @@ app.use(helmet.csp({
     'http://cdn.inspectlet.com/inspectlet.js',
     'http://www.freecodecamp.org'
   ].concat(trusted),
-  'connect-src': [].concat(trusted),
+  'connect-src': [
+    'vimeo.com'
+  ].concat(trusted),
   styleSrc: [
     '*.googleapis.com',
     '*.gstatic.com'
