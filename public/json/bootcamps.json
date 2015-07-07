@@ -97,6 +97,16 @@
     "chicago"
   ]
 }, {
+  "name": "DevMountain",
+  "cost": "8900",
+  "housing": "0",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "provo",
+    "salt-lake-city"
+  ]
+}, {
   "name": "Epicodus",
   "cost": "4500",
   "housing": "400",
