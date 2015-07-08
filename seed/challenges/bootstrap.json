@@ -1417,13 +1417,18 @@
     },
     {
       "id": "bad87fee1348bd9aec908846",
-      "name": "Waypoint: Build a jQuery Playground in Bootstrap",
-      "dashedName": "waypoint-line-up-form-elements-responsively-with-bootstrap",
+      "name": "Waypoint: Create a Bootstrap Headline",
+      "dashedName": "waypoint-create-a-bootstrap-headline",
       "difficulty": 18,
       "description": [
+
       ],
       "tests": [
-
+        "assert($('h3') && $('h3').length > 0, 'Add a <code>h3</code> element to your page.')",
+        "assert(editor.match(/<\\/h3>/g) && editor.match(/<h3/g) && editor.match(/<\\/h3>/g).length === editor.match(/<h3/g).length, 'Make sure your <code>h3</code> element has a closing tag.')",
+        "assert($('h3').hasClass('text-primary'), 'Your <code>h3</code> element should be colored by applying the class \"text-primary\"')",
+        "assert($('h3').hasClass('text-center'), 'Your <code>h3</code> element should be centered by applying the class \"text-center\"')",
+        "assert.isTrue((/jquery(\\s)+playground/gi).test($('h3').text()), 'Your <code>h3</code> element should have the text \"jQuery Playground\".')"
       ],
       "challengeSeed": [
         "",
@@ -1443,16 +1448,47 @@
       "descriptionPt": []
     },
     {
+      "id": "bad87fee1348bd9bec908846",
+      "name": "Waypoint: Create a Bootstrap Row",
+      "dashedName": "waypoint-create-a-bootstrap-row",
+      "difficulty": 18.5,
+      "description": [
+      ],
+      "tests": [
+        "assert($('div').length > 0, 'Add a <code>div</code> element to your page.')",
+        "assert($('div').hasClass('row'), 'Your <code>div</code> element should have the class \"row\"')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure your <code>div</code> element has a closing tag.')"
+      ],
+      "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
+        "",
+        ""
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
       "id": "bad87fee1348bd9aec908847",
-      "name": "Waypoint: Build a jQuery Playground in Bootstrap",
-      "dashedName": "waypoint-line-up-form-elements-responsively-with-bootstrap",
+      "name": "Waypoint: Split your Bootstrap Row",
+      "dashedName": "waypoint-split-your-bootstrap-row",
       "difficulty": 19,
       "description": [
       ],
       "tests": [
-
+         "assert($('div.row').children('div.col-xs-6').length > 1, 'Wrap two <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.')"
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "</div>"
       ],
@@ -1470,15 +1506,19 @@
     },
     {
       "id": "bad87fee1348bd9aec908848",
-      "name": "Waypoint: Build a jQuery Playground in Bootstrap",
-      "dashedName": "waypoint-line-up-form-elements-responsively-with-bootstrap",
+      "name": "Waypoint: Create Bootstrap Wells",
+      "dashedName": "waypoint-create-bootstrap-wells",
       "difficulty": 20,
       "description": [
       ],
       "tests": [
-
+        "assert($('div').length > 4, 'Add two <code>div</code> elements inside your <code>div class=\"row\"></code> element both with the class \"col-xs-6\"')",
+        "assert($('div.row').children('div.col-xs-6').length > 1, 'Wrap both of your <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
+        "assert($('div.col-xs-6').children('div.well').length > 1, 'Wrap both of your <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
+        "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.')"
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "  <div class='col-xs-6'>",
         "  </div>",
@@ -1509,6 +1549,7 @@
 
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "  <div class='col-xs-6'>",
         "    <div class='well'>",
@@ -1543,6 +1584,7 @@
 
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "  <div class='col-xs-6'>",
         "    <div class='well'>",
@@ -1583,6 +1625,7 @@
 
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "  <div class='col-xs-6'>",
         "    <div class='well'>",
@@ -1623,6 +1666,7 @@
 
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "  <div class='col-xs-6'>",
         "    <div class='well'>",
@@ -1663,6 +1707,7 @@
 
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "  <div class='col-xs-6'>",
         "    <div class='well' id='left-well'>",
@@ -1703,6 +1748,7 @@
 
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "  <div class='col-xs-6'>",
         "    <h4>#left-well</h4>",
@@ -1745,6 +1791,7 @@
 
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "  <div class='col-xs-6'>",
         "    <h4>#left-well</h4>",
@@ -1778,8 +1825,8 @@
     },
     {
       "id": "bad87fee1348bd9aec908857",
-      "name": "Waypoint: Build a jQuery Playground in Bootstrap",
-      "dashedName": "waypoint-line-up-form-elements-responsively-with-bootstrap",
+      "name": "Waypoint: Use Comments to Clarify Code",
+      "dashedName": "waypoint-use-comments-to-clarify-code",
       "difficulty": 28,
       "description": [
         "add <!-- You shouldn't need to modify code below this line -->"
@@ -1788,6 +1835,7 @@
 
       ],
       "challengeSeed": [
+        "<h3 class='text-primary text-center'>jQuery Playground</h3>",
         "<div class='row'>",
         "  <div class='col-xs-6'>",
         "    <h4>#left-well</h4>",
