@@ -3179,8 +3179,7 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
     },
     {
       "id": "bad87fee1348bd9aedf08725",
@@ -3213,8 +3212,7 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
     },
     {
       "id": "bad87fee1348bd9aedf08724",
@@ -3247,8 +3245,7 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
     },
     {
       "id": "bad87fee1348bd9aedf08723",
@@ -3281,8 +3278,7 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
     },
     {
       "id": "bad87fee1348bd9aedf08722",
@@ -3315,8 +3311,7 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
     },
     {
       "id": "bad87fee1348bd9aedf08721",
@@ -3349,8 +3344,7 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
     },
     {
       "id": "bad87fee1348bd9aede08720",
@@ -3383,8 +3377,7 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
     },
     {
       "id": "bad87fee1348bd9aedf08720",
@@ -3417,8 +3410,7 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
     },
     {
       "id": "bad87fee1348bd9aedf08719",
@@ -3451,25 +3443,24 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
     },
     {
-      "id": "bad87fee1348bd9aedf08718",
-      "name": "Waypoint: Use RGB code for Colors Instead of Hex Code",
-      "dashedName": "waypoint-use-rgb-code-for-colors-instead-of-hex-code",
+      "id": "bad87fee1348bd9aede08718",
+      "name": "Waypoint: Use RGB to Color Elements Instead of Hex Code",
+      "dashedName": "waypoint-use-rgb-to-color-elements-instead-of-hex-code",
       "difficulty": 0.063,
       "description": [
-        "Use hex code instead of a color."
+        "Use RGB code instead of a color or hex code."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
+        "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
       ],
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: #F00;",
+        "    background-color: #000;",
         "  }",
         "</style>"
       ],
@@ -3485,8 +3476,304 @@
       "namePt": "",
       "descriptionPt": [],
       "nameDe": "",
-      "descriptionDe": [
-      ]
+      "descriptionDe": []
+    },
+    {
+      "id": "bad88fee1348bd9aedf08726",
+      "name": "Waypoint: Use RGB to Color Elements White",
+      "dashedName": "waypoint-use-rgb-to-color-elements-white",
+      "difficulty": 0.064,
+      "description": [
+        "Use hex code instead of a color."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(255, 255, 255)', 'Give your <code>body</code> element the background-color of red.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,255,255); }</code>.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: rgb(0, 0, 255);",
+        "  }",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad89fee1348bd9aedf08724",
+      "name": "Waypoint: Use RGB to Color Elements Red",
+      "dashedName": "waypoint-use-rgb-to-color-elements-red",
+      "difficulty": 0.065,
+      "description": [
+        "Use hex code instead of a color."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #FFFFFF;",
+        "  }",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad80fee1348bd9aedf08723",
+      "name": "Waypoint: Use RGB to Color Elements Green",
+      "dashedName": "waypoint-use-rgb-to-color-elements-green",
+      "difficulty": 0.066,
+      "description": [
+        "Use hex code instead of a color."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(0, 255, 0)', 'Give your <code>body</code> element the background-color of green.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(0,255,0); }</code>.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #FF0000;",
+        "  }",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad81fee1348bd9aedf08722",
+      "name": "Waypoint: Use RGB to Color Elements Blue",
+      "dashedName": "waypoint-use-rgb-to-color-elements-blue",
+      "difficulty": 0.067,
+      "description": [
+        "Use hex code instead of a color."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(0, 0, 255)', 'Give your <code>body</code> element the background-color of blue.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(0,0,255); }</code>.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #00FF00;",
+        "  }",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad82fee1348bd9aedf08721",
+      "name": "Waypoint: Use RGB to Mix Colors",
+      "dashedName": "waypoint-use-rgb-to-mix-colors",
+      "difficulty": 0.068,
+      "description": [
+        "Use hex code instead of a orange."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(255, 165, 0)', 'Give your <code>body</code> element the background-color of orange.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,165,0); }</code>.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #0000FF;",
+        "  }",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad83fee1348bd9aede08720",
+      "name": "Waypoint: Use RGB to Color Elements Gray",
+      "dashedName": "waypoint-use-rgb-to-color-elements-gray",
+      "difficulty": 0.069,
+      "description": [
+        "Use hex code instead of a color."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(128, 128, 128)', 'Give your <code>body</code> element the background-color of gray.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*128\\s*,\\s*128\\s*,\\s*128\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(128,128,128); }</code>.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: FFA500;",
+        "  }",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad84fee1348bd9aedf08720",
+      "name": "Waypoint: Use RGB Alpha for Specific Shades of Gray",
+      "dashedName": "waypoint-use-rgb-alpha-for-specific-shades-of-gray",
+      "difficulty": 0.070,
+      "description": [
+        "Use hex code instead of a color."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(17, 17, 17)', 'Give your <code>body</code> element the background-color of a light gray.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #808080;",
+        "  }",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad85fee1348bd9aedf08720",
+      "name": "Waypoint: Use RGB Alpha to Make an Element Translucent",
+      "dashedName": "waypoint-use-rgb-alpha-to-make-an-element-translucent",
+      "difficulty": 0.071,
+      "description": [
+        "Use hex code instead of a color."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(17, 17, 17)', 'Give your <code>body</code> element the background-color of a light gray.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #808080;",
+        "  }",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad86fee1348bd9aedf08720",
+      "name": "Waypoint: Use RGB Alpha to make an Element Nearly Opaque",
+      "dashedName": "waypoint-use-rgb-alpha-to-make-an-element-nearly-opaque",
+      "difficulty": 0.072,
+      "description": [
+        "Use hex code instead of a color."
+      ],
+      "tests": [
+        "assert($('body').css('background-color') === 'rgb(17, 17, 17)', 'Give your <code>body</code> element the background-color of a light gray.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: #808080;",
+        "  }",
+        "</style>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
     }
   ]
 }
