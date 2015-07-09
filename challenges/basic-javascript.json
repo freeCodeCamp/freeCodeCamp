@@ -719,10 +719,10 @@
       ],
       "challengeSeed":[
         "//var ourDog = {",
-        "   //\"name\": \"Camper\"",
-        "   //\"legs\": 4",
-        "   //\"tails\": 1",
-        "   //\"friends\": ['everything!']",
+        "//   \"name\": \"Camper\"",
+        "//   \"legs\": 4",
+        "//   \"tails\": 1",
+        "//   \"friends\": ['everything!']",
         "//};",
         "",
         "/* add the name(string), legs(number), tails(number) and friends(array) properties to myDog.",
@@ -743,12 +743,226 @@
       "difficulty":"9.9823",
       "description":[
         "",
+        "Now that we have an objects we need to know how to add and remove properties from it",
+        "We add properties to objects like this",
+        "<code>myObject['myProperty'] = \"myValue\";</code>",
+        "They can also be deleted like this",
+        "<code>delete(myObject[\"myProperty\"]);</code>",
+        "Let's add the property bark",
         ""
       ],
       "tests":[
-        "assert(1==2);"
+        "assert(myDog.bark != undefined, 'The property tails should have been deleted');",
+        "assert(myDog.tails == undefined, 'The property tails should have been deleted');"
       ],
       "challengeSeed":[
+        "//var ourDog = {",
+        "//\"name\": \"Camper\"",
+        "//\"legs\": 4",
+        "//\"tails\": 1",
+        "//\"friends\": [\"everything!\"]",
+        "//};",
+        "",
+        "//Re-create myDog",
+        "",
+        "var myDog = {",
+        "   \"name\": _,",
+        "   \"legs\": _,",
+        "   \"tails\": _,",
+        "   \"friends\": []",
+        "};",
+        "",
+        "//Let's add the property age to myDog",
+        "",
+        "",
+        "//Now delete the property tails",
+        "",
+        "",
+        "(function(z){return(z);})(myDog);"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"bh1111c1c11feddfaeb5bdef",
+      "name":"Looping with for",
+      "dashedName":"waypoint-looping-with-for",
+      "difficulty":"9.9824",
+      "description":[
+        "",
+        "Loops are a critical part of any program! The next few challenges",
+        "first we will be taking a look at the for loop",
+        "<code>",
+        "var ourArray = [];",
+        "for(var i = 0; i < 5; i++){",
+        "   ourArray.push(i);",
+        "}",
+        "</code>",
+        "ourArray now contains [0,1,2,3,4] ",
+        "Let's try getting a for loop to work by pushing values to an array"
+      ],
+      "tests":[
+        "assert(editor.getValue().match(/for\\(/g), 'You should be using a for loop for this!');",
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
+      ],
+      "challengeSeed":[
+        "var myArray = [];",
+        "//Push the numbers 0-4 to myArray",
+        "",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"bh1111c1c11feddfaeb1bdef",
+      "name":"Looping with while",
+      "dashedName":"waypoint-looping-with-while",
+      "difficulty":"9.9825",
+      "description":[
+        "",
+        "Loops are a critical part of any program! The next few challenges",
+        "first we will be taking a look at the for loop",
+        "<code>",
+        "var ourArray = [];",
+        "var i = 0;",
+        "while(i < 5){",
+        "   ourArray.push(i);",
+        "   i++;",
+        "}",
+        "</code>",
+        "Let's try getting a for loop to work by pushing values to an array"
+      ],
+      "tests":[
+        "assert(editor.getValue().match(/while\\(/g), 'You should be using a while loop for this!');",
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
+      ],
+      "challengeSeed":[
+        "var myArray = [];",
+        "//Push the numbers 0-4 to myArray",
+        "",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"bh1111c1c11feddfaeb2bdef",
+      "name":"Looping with do while",
+      "dashedName":"waypoint-looping-with-do-while",
+      "difficulty":"9.9826",
+      "description":[
+        "",
+        "Let's now take a look at the do - while loop",
+        "<code>",
+        "var ourArray = [];",
+        "var i = 0;",
+        "do{",
+        "   ourArray.push(i);",
+        "   i++;",
+        "}while(i<5);",
+        "</code>",
+        "A do - while has a very special difference when compared to the for and while loops. The do while loop is guaranteed to execute preform it's action once regardless of whether or not the condition inside the while is met!",
+        "Let's try getting a do - while loop to work by pushing values to an array"
+      ],
+      "tests":[
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');",
+        "assert((function(){if(editor.getValue().match(/do/g) && editor.getValue(/while/g).match()){return(true);}else{return(false);}})(), 'You should be using a do while loop for this!');"
+      ],
+      "challengeSeed":[
+        "var myArray = [];",
+        "//Push the numbers 0-4 to myArray",
+        "",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"bh1111c1c11feddfaeb3bdef",
+      "name":"Looping with recursion",
+      "dashedName":"waypoint-looping-with-recursion",
+      "difficulty":"9.9827",
+      "description":[
+        "",
+        "The next method of looping that we'll examine is called recursion",
+        "A recursive function (a function that uses recursion) is a function that calls itself until a predefined condition is met",
+        "<code>",
+        "var ourArray = [];",
+        "var i = 0;",
+        "function loop(){",
+        "   ourArray.push(i);",
+        "   i++;",
+        "   if(i < 5){",
+        "       loop()",
+        "   }",
+        "}",
+        "</code>",
+        "ourArray now contains [0,1,2,3,4] ",
+        "Let's try getting recursion to work by pushing values to an array"
+      ],
+      "tests":[
+        "assert((function(){if(!editor.getValue().match(/do/g) && !editor.getValue().match(/while/g) && !editor.getValue().match(/for/g)){return(true);}else{return(false);}})(), 'You should be using recursion for this!')",
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
+      ],
+      "challengeSeed":[
+        "var myArray = [];",
+        "//Push the numbers 0-4 to myArray",
+        "",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"bh1111c1c11feddfaeb4bdef",
+      "name":"Looping with map",
+      "dashedName":"waypoint-looping-with-map",
+      "difficulty":"9.9828",
+      "description":[
+        "",
+        "Loops are a critical part of any program! The next few challenges",
+        "first we will be taking a look at the for loop",
+        "<code>",
+        "var ourArray = [];",
+        "for(var i = 0; i < 5; i++){",
+        "   ourArray.push(i);",
+        "}",
+        "</code>",
+        "ourArray now contains [0,1,2,3,4] ",
+        "Let's try getting a for loop to work by pushing values to an array"
+      ],
+      "tests":[
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
+      ],
+      "challengeSeed":[
+        "var myArray = [];",
+        "//Push the numbers 0-4 to myArray",
+        "",
+        ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"bh1111c1c11feddfaeb6bdef",
+      "name":"Looping with reduce",
+      "dashedName":"waypoint-looping-with-reduce",
+      "difficulty":"9.9829",
+      "description":[
+        "",
+        "Loops are a critical part of any program! The next few challenges",
+        "first we will be taking a look at the for loop",
+        "<code>",
+        "var ourArray = [];",
+        "for(var i = 0; i < 5; i++){",
+        "   ourArray.push(i);",
+        "}",
+        "</code>",
+        "ourArray now contains [0,1,2,3,4] ",
+        "Let's try getting a for loop to work by pushing values to an array"
+      ],
+      "tests":[
+        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
+      ],
+      "challengeSeed":[
+        "var myArray = [];",
+        "//Push the numbers 0-4 to myArray",
+        "",
         ""
       ],
       "challengeType": 1
