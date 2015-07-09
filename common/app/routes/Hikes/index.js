@@ -1,4 +1,6 @@
 import Hikes from './components/Hikes.jsx';
+import Lecture from './components/Lecture.jsx';
+import Question from './components/Question.jsx';
 
 /*
  * show video /hikes/someVideo
@@ -6,11 +8,13 @@ import Hikes from './components/Hikes.jsx';
  */
 
 export default {
-  path: 'hikes(/:id)',
-
-  getComponents(cb) {
-    setTimeout(() => {
-      cb(null, Hikes);
-    }, 0);
-  }
+  path: 'hikes',
+  component: Hikes,
+  childRoutes: [{
+    path: ':id',
+    component: Lecture
+  }, {
+    path: ':id/question/:questionId',
+    component: Question
+  }]
 };

@@ -1,22 +1,35 @@
 import React, { PropTypes } from 'react';
-import { Row } from 'react-bootstrap';
-import Video from 'react-video';
+import stampit from 'react-stampit';
+import { Panel, Row } from 'react-bootstrap';
+// import debugFactory from 'debug';
 
-export default React.createClass({
+import HikesMap from './Map.jsx';
+
+// const debug = debugFactory('freecc:hikes');
+
+export default stampit(React, {
   displayName: 'Hikes',
+
   propTypes: {
-    id: PropTypes.string
+    children: PropTypes.element
+  },
+
+  renderMap() {
+    return (
+      <HikesMap />
+    );
   },
 
   render() {
-    const {
-      id
-    } = this.props.params;
-
     return (
-      <Video
-        from='vimeo'
-        videoId={ '132543959' } />
+      <div>
+        <Panel>
+          <h1>Hikes!</h1>
+        </Panel>
+        <Row>
+          { this.props.children || this.renderMap() }
+        </Row>
+      </div>
     );
   }
 });
