@@ -26,7 +26,7 @@ export default function reactSubRouter(app) {
 
   function serveReactApp(req, res, next) {
     const fcc = new Cat();
-    const location = new Location(req.path, req.query)
+    const location = new Location(req.path, req.query);
 
     // returns a router wrapped app
     app$(location)
