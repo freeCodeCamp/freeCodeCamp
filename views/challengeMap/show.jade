@@ -86,18 +86,17 @@ block content
     #announcementModal.modal(tabindex='-1')
         .modal-dialog.animated.fadeInUp.fast-animation
             .modal-content
-                .modal-header.challenge-list-header Share your workspace selfie
+                .modal-header.challenge-list-header Our chat is slow right now
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
-                    h3.text-left Your workspace selfie should be part of our upcoming mosaic.
-                    img.img-responsive.img-center(src='https://www.evernote.com/l/Ajm69Uj6uvJLzo7PAj8wGjjbSvGyN0ME-5YB/image.png')
-                    h3.text-left Take a selfie of you at your workspace with Free Code Camp open.
-                    h3.text-left Share it on Instagram, Twitter or Facebook with the hashtag #freecodecamp.
+                    h3.text-left Please note that Gitter.im, our chat client, is really slow right now.
+                    h3.text-left Gitter is working to fix this ASAP. If you can't join our chat room, please try again later.
+                    h3.text-left Thank you for your patience. In the meantime, happy coding!
                     a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up
     script.
         $(document).ready(function () {
-            if (!localStorage || !localStorage.selfie) {
+            if (!localStorage || !localStorage.gitter) {
                 $('#announcementModal').modal('show');
-                localStorage.selfie = "true";
+                localStorage.gitter = "true";
             }
         });
