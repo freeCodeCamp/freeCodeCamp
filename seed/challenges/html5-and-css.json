@@ -1562,7 +1562,7 @@
         "Create an <code>input</code> element of type \"text\" below your lists."
       ],
       "tests": [
-        "assert($('input').length > 0, 'Your app should have a text field input element.')"
+        "assert($('input[type=text]').length > 0, 'Your app should have a text field input element.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
