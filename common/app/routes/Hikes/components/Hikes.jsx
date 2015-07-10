@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import stampit from 'react-stampit';
-import { Panel, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 // import debugFactory from 'debug';
 
 import HikesMap from './Map.jsx';
@@ -23,9 +23,6 @@ export default stampit(React, {
   render() {
     return (
       <div>
-        <Panel>
-          <h1>Hikes!</h1>
-        </Panel>
         <Row>
           { this.props.children || this.renderMap() }
         </Row>

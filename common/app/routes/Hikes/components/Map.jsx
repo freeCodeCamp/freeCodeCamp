@@ -1,7 +1,7 @@
 import React from 'react';
 import stampit from 'react-stampit';
 import { Link } from 'react-router';
-import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import { ListGroup, ListGroupItem, Panel } from 'react-bootstrap';
 import videos from '../videos.json';
 
 export default stampit(React, {
@@ -20,9 +20,14 @@ export default stampit(React, {
     });
 
     return (
-      <ListGroup>
-        { vidElements }
-      </ListGroup>
+      <div>
+        <Panel>
+          <h2>Welcome To Hikes!</h2>
+        </Panel>
+        <ListGroup>
+          { vidElements }
+        </ListGroup>
+      </div>
     );
   }
 });
