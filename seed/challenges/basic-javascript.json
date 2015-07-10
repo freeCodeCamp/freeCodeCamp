@@ -908,64 +908,6 @@
         ""
       ],
       "challengeType": 1
-    },
-    {
-      "_id":"bh1111c1c11feddfaeb4bdef",
-      "name":"Looping with map",
-      "dashedName":"waypoint-looping-with-map",
-      "difficulty":"9.9828",
-      "description":[
-        "",
-        "Loops are a critical part of any program! The next few challenges",
-        "first we will be taking a look at the for loop",
-        "<code>",
-        "var ourArray = [];",
-        "for(var i = 0; i < 5; i++){",
-        "   ourArray.push(i);",
-        "}",
-        "</code>",
-        "ourArray now contains [0,1,2,3,4] ",
-        "Let's try getting a for loop to work by pushing values to an array"
-      ],
-      "tests":[
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
-      ],
-      "challengeSeed":[
-        "var myArray = [];",
-        "//Push the numbers 0-4 to myArray",
-        "",
-        ""
-      ],
-      "challengeType": 1
-    },
-    {
-      "_id":"bh1111c1c11feddfaeb6bdef",
-      "name":"Looping with reduce",
-      "dashedName":"waypoint-looping-with-reduce",
-      "difficulty":"9.9829",
-      "description":[
-        "",
-        "Loops are a critical part of any program! The next few challenges",
-        "first we will be taking a look at the for loop",
-        "<code>",
-        "var ourArray = [];",
-        "for(var i = 0; i < 5; i++){",
-        "   ourArray.push(i);",
-        "}",
-        "</code>",
-        "ourArray now contains [0,1,2,3,4] ",
-        "Let's try getting a for loop to work by pushing values to an array"
-      ],
-      "tests":[
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
-      ],
-      "challengeSeed":[
-        "var myArray = [];",
-        "//Push the numbers 0-4 to myArray",
-        "",
-        ""
-      ],
-      "challengeType": 1
     }
   ]
 }
