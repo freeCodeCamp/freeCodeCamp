@@ -39,6 +39,7 @@ var paths = {
   serverIgnore: [
     'gulpfile.js',
     'public/',
+    '!public/js/bundle.js',
     'node_modules/',
     'client/'
   ],
