@@ -83,20 +83,20 @@ block content
                                                 li.large-p.negative-10
                                                     a(href="/challenges/#{challenge.name}")= challenge.name
 
-    #announcementModal.modal(tabindex='-1')
-        .modal-dialog.animated.fadeInUp.fast-animation
-            .modal-content
-                .modal-header.challenge-list-header Our chat is slow right now
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    h3.text-left Please note that Gitter.im, our chat client, is really slow right now.
-                    h3.text-left Gitter is working to fix this ASAP. If you can't join our chat room, please try again later.
-                    h3.text-left Thank you for your patience. In the meantime, happy coding!
-                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up
-    script.
-        $(document).ready(function () {
-            if (!localStorage || !localStorage.gitter) {
-                $('#announcementModal').modal('show');
-                localStorage.gitter = "true";
-            }
-        });
+    //#announcementModal.modal(tabindex='-1')
+    //    .modal-dialog.animated.fadeInUp.fast-animation
+    //        .modal-content
+    //            .modal-header.challenge-list-header Our chat is slow right now
+    //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+    //            .modal-body
+    //                h3.text-left Please note that Gitter.im, our chat client, is really slow right now.
+    //                h3.text-left Gitter is working to fix this ASAP. If you can't join our chat room, please try again later.
+    //                h3.text-left Thank you for your patience. In the meantime, happy coding!
+    //                a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up
+    //script.
+    //    $(document).ready(function () {
+    //        if (!localStorage || !localStorage.gitter) {
+    //            $('#announcementModal').modal('show');
+    //            localStorage.gitter = "true";
+    //        }
+    //    });
