@@ -2554,7 +2554,7 @@
       "dashedName": "waypoint-add-a-negative-margin-to-an-element",
       "difficulty": 0.042,
       "description": [
-        "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the yellow box around it.",
+        "Change the <code>margin</code> of the green box to -15 pixels, so it fills the entire horizontal width of the yellow box around it.",
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "If you set an element's <code>margin</code> to a negative value, the element will grow larger.",
         "Try to set the <code>margin</code> to a negative value like the one for the red box."
