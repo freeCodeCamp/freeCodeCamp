@@ -27,9 +27,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "The computer has 3 basic parts. (F, the computer has 4 basic parts: input, output, CPU, and memory)",
-        "CPU stands for Central Processing Unit. (T)",
-        "All parts can access the memory (F, only the CPU has access to the memory)"
+        ["The computer has 3 basic parts.", false, "The computer has 4 basic parts: input, output, CPU, and memory"],
+        ["CPU stands for Central Processing Unit.", true],
+        ["All parts can access the memory", false, "Only the CPU has access to the memory"]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -66,9 +66,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "The power supply isn't a necessary part of a computer since it's not one of the 4 main parts. (F, the computer needs power!)",
-        "A motherboard connects all of the working parts in a computer. (T)",
-        "Memory is usually categorized into 3 parts. (F, only 2 parts, RAM and long term memory such as a hard drive)"
+        ["The power supply isn't a necessary part of a computer since it's not one of the 4 main parts.", false, "The computer needs power!"],
+        ["A motherboard connects all of the working parts in a computer.", true],
+        ["Memory is usually categorized into 3 parts.", false, "Only 2 parts, RAM and long term memory such as a hard drive"]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -100,9 +100,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "1's and 0's are how we talk about little switches being on and off. (T)",
-        "1 means on, and 0 means off. (T)",
-        "There are some things which cannot be translated into binary. (F, everything can be expressed through binary code!)"
+        ["1's and 0's are how we talk about little switches being on and off.", true],
+        ["1 means on, and 0 means off.", true],
+        ["There are some things which cannot be translated into binary.", false, "everything can be expressed through binary code!"]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -136,9 +136,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "1 === on and 0 ===off. (T)",
-        "Not all numbers can be expressed through binary numeral notation. (F, all numbers can!)",
-        "If we have the opportunity to include base 2 to every given power, we can create any number. (T)"
+        ["1 === on and 0 ===off", true],
+        ["Not all numbers can be expressed through binary numeral notation.", false, "All numbers can!"],
+        ["If we have the opportunity to include base 2 to every given power, we can create any number.", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -175,9 +175,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "A Byte is the smallest possible amount of data. (F, a Byte is 8 bits)",
-        "A bit is the smallest possible amount of data (T)",
-        "A Kilobyte is 1024 Bytes. (T)"
+        ["A Byte is the smallest possible amount of data.", false, "A Byte is 8 bits."],
+        ["A bit is the smallest possible amount of data.", true],
+        ["A Kilobyte is 1024 Bytes.", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -213,8 +213,8 @@
       ],
       "challengeType": 6,
       "tests": [
-        "Data speed is measured in bits. (T)",
-        "Data size is measured in bits. (F, size is Bytes and speed is bits)"
+        ["Data speed is measured in bits.", true],
+        ["Data size is measured in bits.", false, "Size is Bytes and speed is bits."]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -246,9 +246,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "All digits, letters, and symbols have a binary Byte translation. (T)",
-        "It's good practice to memorize these. (F, you can just look these up as needed).",
-        "Everything can be expressed binarily, even pictures, sound, and video. (T)"
+        ["All digits, letters, and symbols have a binary Byte translation.", true],
+        ["It's good practice to memorize these.", false, "You can just look these up as needed."],
+        ["Everything can be expressed binarily, even pictures, sound, and video", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -285,9 +285,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "The most common type of computer is a Personal Computer, a PC. (T)",
-        "What makes Supercomputers 'super' is when multiple CPUs work on one problem, called parallel processing. (T)",
-        "Microcontrollers and workstation computers can perform roughly the same tasks. (F, a microcontroller can only perform a small specialized task while a workstation computer has a lot of power, though also specialized.)"
+        ["The most common type of computer is a Personal Computer, a PC.", true],
+        ["What makes Supercomputers 'super' is when multiple CPUs work on one problem, called parallel processing.", true],
+        ["Microcontrollers and workstation computers can perform roughly the same tasks.", false, "A microcontroller can only perform a small specialized task while a workstation computer has a lot of power, though also specialized."]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -326,9 +326,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "A motherboard must connect the CPU, the memory, and the network. (F, a motherboard is a motherboard as long as it connects the CPU and the memory).",
-        "Expansion slots allow users to add capabilities to a computer. (T)",
-        "Ports help the computer access information. (T)"
+        ["A motherboard must connect the CPU, the memory, and the network.", false, "A motherboard is a motherboard as long as it connects the CPU and the memory."],
+        ["Expansion slots allow users to add capabilities to a computer.", true],
+        ["Ports help the computer access information.", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -366,9 +366,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "You can connect to a LAN from far away. (F, to connect to a LAN you must be physically near to it).",
-        "VPNs (Virtual Private Networks) and WANs (Wide Area Networks) do just about the same thing. (T)",
-        "VPNs and WANs both use the internet to connect LANs. (F, while both connect LANs, VPNs use the internet and WANs use a rented cable)."
+        ["You can connect to a LAN from far away.", false, "To connect to a LAN you must be physically near to it."],
+        ["VPNs (Virtual Private Networks) and WANs (Wide Area Networks) do just about the same thing.", true],
+        ["VPNs and WANs both use the internet to connect LANs.", false, "While both connect LANs, VPNs use the internet and WANs use a rented cable."]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -406,8 +406,8 @@
       ],
       "challengeType": 6,
       "tests": [
-        "IP addresses are necessary to use and participate in the internet. (T)",
-        "IP addresses are determined and assigned based on location (T)"
+        ["IP addresses are necessary to use and participate in the internet.", true],
+        ["IP addresses are determined and assigned based on location.", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -445,8 +445,8 @@
       ],
       "challengeType": 6,
       "tests": [
-        "Your computer sends a request for information. (T)",
-        "The Internet can be broken by a large chunk of routers and servers going down. (F, there are so many connections that even a large amount of routers and servers can stop functioning and your experience will still not be affected.)"
+        ["Your computer sends a request for information.", true],
+        ["The Internet can be broken by a large chunk of routers and servers going down.", false, "There are so many connections that even a large amount of routers and servers can stop functioning and your experience will still not be affected."]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -479,7 +479,7 @@
       ],
       "challengeType": 6,
       "tests": [
-        "Safari, Chrome, and Firefox are all examples of application software. (T)"
+        ["Safari, Chrome, and Firefox are all examples of application software.", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -501,8 +501,7 @@
         "133166912"
       ],
       "description": [
-        "Programmers (a.k.a.",
-        "coders, developers, or software engineers) solve problems by turning big ideas into tiny steps that a computer can understand.",
+        "Programmers (a.k.a. coders, developers, or software engineers) solve problems by turning big ideas into tiny steps that a computer can understand.",
         "In this video, we'll discuss what programmers do.",
         "Programmers can also be called coders, developers, or software engineers, and what all of these peple do is take ideas and turn them into functional code.",
         "It's not just creating that code, but also maintaining it.",
@@ -515,9 +514,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "Computers look at code one line at a time. (T)",
-        "Programmers and developers are totally different professions with very little in common. (F, those titles are so similar they could even describe the same job position.) ",
-        "Programmers take ideas and break them down into little tiny steps the computer can understand (T)"
+        ["Computers look at code one line at a time", true],
+        ["Programmers and developers are totally different professions with very little in common.", false, "Those titles are so similar they could even describe the same job position."],
+        ["Programmers take ideas and break them down into little tiny steps the computer can understand", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -553,8 +552,8 @@
       ],
       "challengeType": 6,
       "tests": [
-        "The console serves only small, unnecessary purposes. (F, The console's main purpose is to debug, which is a vital step in creating code).",
-        "You can console strings (sets of words), numbers, and booleans (true/false statements) (T)"
+        ["The console serves only small, unnecessary purposes.", "The console's main purpose is to debug, which is a vital step in creating code."],
+        ["You can console strings (sets of words), numbers, and booleans (true/false statements)", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -622,9 +621,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "Source code is a text document. (T)",
-        "Javascript is a compiler language. (F, Javascript is an interpreter language)",
-        "Free Code Camp is open source. (T)"
+        ["Source code is a text document.", true],
+        ["Javascript is a compiler language.", false, "Javascript is an interpreter language"],
+        ["Free Code Camp is open source.", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -673,9 +672,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "Routers have to know the whole internet. (F, routers just have to know the stops around them to send information in the right direction).",
-        "Packets are little peices of binary code. (T)",
-        "Packets have to be sent in one piece. (F, packets can be broken up into frames)."
+        ["Routers have to know the whole internet.", false, "Routers just have to know the stops around them to send information in the right direction."],
+        ["Packets are little peices of binary code.", true],
+        ["Packets have to be sent in one piece.", false, "packets can be broken up into frames."]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -710,9 +709,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "Chips have transistors, little switches that can store a 1 or a 0. (T)",
-        "Moore's Law is the observation that technology doubles in speed every year. (F, Moore's Law is the observation that the number of transistors per chip doubles every 2 years).",
-        "Moore's Law has slowed down in recent years. (F, somehow this continues to be true)."
+        ["Chips have transistors, little switches that can store a 1 or a 0.", true],
+        ["Moore's Law is the observation that technology doubles in speed every year.", false, "Moore's Law is the observation that the number of transistors per chip doubles every 2 years)."],
+        ["Moore's Law has slowed down in recent years.", false, "Somehow this continues to be true."]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -750,8 +749,8 @@
       ],
       "challengeType": 6,
       "tests": [
-        "Digital files can be made from analog sounds and analog sounds can be made from digital files. (T)",
-        "Compression is not worth it, because it lessens quality. (F, sometimes compression is a great idea. It depends on what you're trying to do and what your end goal for the product is)."
+        ["Digital files can be made from analog sounds and analog sounds can be made from digital files.", true],
+        ["Compression is not worth it, because it lessens quality.", false, "Sometimes compression is a great idea. It depends on what you're trying to do and what your end goal for the product is."]
       ],
       "nameCn": "",
       "descriptionCn": [],
@@ -803,9 +802,9 @@
       ],
       "challengeType": 6,
       "tests": [
-        "Passwords should be shared with all of your accounts (F, don't reuse important passwords)",
-        "If you don't trust a site or an email, open a new browser and re-enter the intended location. (T)",
-        "Keeping software updated will help protect your computer and your information. (T)"
+        ["Passwords should be shared with all of your accounts.", false, "Don't reuse important passwords"],
+        ["If you don't trust a site or an email, open a new browser and re-enter the intended location.", true],
+        ["Keeping software updated will help protect your computer and your information.", true]
       ],
       "nameCn": "",
       "descriptionCn": [],
