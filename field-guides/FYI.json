@@ -20,8 +20,7 @@
     "description": [
       "<script src=\"/js/calculator.js\"></script>",
       "<div class=\"row\">",
-      "  <div class=\"col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-md-offset-2 col-lg-offset-3\">",
-      "    <h1 class=\"text-center\">Coding Bootcamp Cost Calculator</h1>",
+      "  <div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
       "    <h3 id=\"chosen\" class=\"text-center text-primary\">Coming from _______, and making $_______, your true costs will be:</h3>",
       "    <div id=\"city-buttons\">",
       "      <div class=\"spacer\"></div>",
