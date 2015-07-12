@@ -1,0 +1,32 @@
+{
+  "name": "Functional Programming",
+  "order": 0.050,
+  "challenges": [
+    {
+      "id": "bd7129d8c441eddfbeb5bddf",
+      "name": "Hike: Computer Security",
+      "dashedName": "waypoint-computer-security",
+      "difficulty": 0.01,
+      "challengeSeed": ["133186284"],
+      "description": [
+        "The basics of computer security, and how to make sure you protect your information. Let's cover computer security. The first thing we're going to talk about is something called a dictionary attack which has to do with your passwords. When creating your passwords, some sites require extremely specific and complicated passwords, which is actually a bit unnecessary. The type of attacks they're trying to gaurd you from are dictionary attacks. Dictionary attacks are programmed to try every word in the dictionary, or in its own database of common words and passwords, as the password for a large mass of usernames. If your password is Kangaroo, they're probably going to break into your account. Most passwords aren't this simple, but that doesn't matter. They attack such a massive amount of accounts that they only need a few passwords that are relatively simple. When creating a password, you want to use different cases, numbers, and symbols, but one of the most effective ways to create a good password is to throw some random letters in there (ex: kangarooSyCA67). Also, stay away from sequential numbers. Phishing, another thing to watch out for, is emails or webpages that mimic other valid sites to try and trick people into entering their personal information, though the site truly isn't connected to the site it's trying to mimic. In general, two ways to safeguard from these attacks are checking the address in the browser and to open a new browser and go to the website that is claiming to contact you. Let's also discuss encryption and HTTPS. If you are at Starbucks trying to access your bank account, you have reason to be suspicious that someone could see and take your information. You will want to look for a green HTTPS instead of HTTP at the beginning of the web address. That means that the site you're sending your information to is encrypting your passwords and other information, scrambling up data according to a code that only they know. In general, whenever you're showing private or sensitive information, check for HTTPS. A few other general tips: don't share passwords between important accounts. If a site you use gets hacked into, your password may be compromised regardless of its strength. Also, don't download strange files. If you don't recognise the file type like .pdf, .txt, .jpg, be wary. Some of these files you download can be very powerful and even run your computer from the inside. Lastly, keep your software updated, particularly software that interacts with the internet. One way that information can be compromised is when 'bad guys' find holes and gaps in security of older versions of softwares. Those bugs have been patched in newer versions, so if you keep everything updated, you'll avoid lots of problems. These are all very basic things you should know about how to keep your information safe on your computer."
+      ],
+      "challengeType": 6,
+      "tests": [
+        "Q1: Passwords should be shared with all of your accounts (F, don't reuse important passwords)",
+        "Q2: If you don't trust a site or an email, open a new browser and re-enter the intended location. (T)",
+        "Q3: Keeping software updated will help protect your computer and your information. (T)"
+      ],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}
