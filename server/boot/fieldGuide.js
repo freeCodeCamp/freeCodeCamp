@@ -23,6 +23,7 @@ module.exports = function(app) {
     var dashedName = req.params.fieldGuideName;
     var userSave = Rx.Observable.just(req.user)
       .filter(function(user) {
+        debug('filtering user', !!user);
         return !!user;
       })
       .map(function(user) {
@@ -38,6 +39,7 @@ module.exports = function(app) {
         return user;
       })
       .flatMap(function(user) {
+        debug('saving user');
         return saveUser(user);
       });
 
@@ -46,13 +48,14 @@ module.exports = function(app) {
     debug('find fieldGuide', query);
     Rx.Observable.combineLatest(
       // find that field guide
-      findOneFieldGuide(query),
+      findOneFieldGuide(query).tap(function() { console.log('foo'); }),
       userSave,
       Rx.helpers.identity
     )
       .subscribe(
         // don't care about return from userSave
         function(fieldGuide) {
+          debug('onNext', fieldGuide);
           if (!fieldGuide) {
             req.flash('errors', {
               msg: '404: We couldn\'t find a field guide entry with ' +
@@ -70,7 +73,10 @@ module.exports = function(app) {
             description: fieldGuide.description.join('')
           });
         },
-        next
+        next,
+        function() {
+          debug('onCompleted called');
+        }
     );
   }
 

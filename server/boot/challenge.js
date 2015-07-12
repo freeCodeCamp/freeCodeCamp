@@ -264,13 +264,15 @@ module.exports = function(app) {
           environment: utils.whichEnvironment()
         };
 
+        //TODO Berkeley
         var challengeView = {
           0: 'coursewares/showHTML',
           1: 'coursewares/showJS',
           2: 'coursewares/showVideo',
           3: 'coursewares/showZiplineOrBasejump',
           4: 'coursewares/showZiplineOrBasejump',
-          5: 'coursewares/showBonfire'
+          5: 'coursewares/showBonfire',
+          6: 'coursewares/showHike'
         };
 
         saveUser(req.user)
