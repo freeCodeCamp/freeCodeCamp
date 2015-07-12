@@ -181,7 +181,8 @@ module.exports = {
         return {
           name: elem.name,
           dashedName: elem.dashedName,
-          id: elem.id
+          id: elem.id,
+          category: elem.category
         };
       });
       return allFieldGuideNames;

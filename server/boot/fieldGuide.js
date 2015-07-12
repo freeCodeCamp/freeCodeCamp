@@ -88,9 +88,33 @@ module.exports = function(app) {
       completedFieldGuides = req.user.completedFieldGuides;
     }
 
+    // order here determine order on page
+    const categories = [
+      'orientation',
+      'FYI',
+      'outreach',
+      'contact'
+    ];
+
+    // produces an array of arrays of field guides ordered by the above
+    // i.e. [[...orientFieldGuides][...FYIfieldGuides]...]
+    const orderFieldGuides = categories
+      .reduce((ordered, category) => {
+
+        const fieldGuidesForCategory = allFieldGuideNamesAndIds
+          .filter(fieldGuide => {
+            return category === fieldGuide.category;
+          });
+
+        return ordered.concat([fieldGuidesForCategory]);
+      }, []);
+
     res.render('field-guide/all-articles', {
+      // leaving this property as legacy.
       allFieldGuideNamesAndIds: allFieldGuideNamesAndIds,
-      completedFieldGuides: completedFieldGuides
+      completedFieldGuides: completedFieldGuides,
+      categories: categories,
+      fieldGuides: orderFieldGuides
     });
   }
 
