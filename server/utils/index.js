@@ -9,8 +9,17 @@ var path = require('path'),
 
     MDNlinks = require('../../seed/bonfireMDNlinks'),
     resources = require('./resources.json'),
-    nonprofits = require('../../seed/nonprofits.json'),
-    fieldGuides = require('../../seed/field-guides.json');
+    nonprofits = require('../../seed/nonprofits.json');
+
+var fieldGuides = fs.readdirSync(
+    path.join(__dirname, '../../seed/field-guides')
+  )
+  .map(function(file) {
+    return require('../../seed/field-guides/' + file);
+  })
+  .reduce(function(allGuides, categoryGuides) {
+    return allGuides.concat(categoryGuides);
+  }, []);
 
 /**
  * Cached values
@@ -38,15 +47,15 @@ Array.zip = function(left, right, combinerFunction) {
       path.join(__dirname, '../../seed/challenges')
     );
     var keyCounter = 0;
-    files = files.map(function (file) {
+    files = files.map(function(file) {
       return require(
         path.join(__dirname, '../../seed/challenges/' + file)
       );
     });
-    files = files.sort(function (a, b) {
+    files = files.sort(function(a, b) {
       return a.order - b.order;
     });
-    files.forEach(function (file) {
+    files.forEach(function(file) {
       localChallengeMap[keyCounter++] = file;
     });
     challengeMap = _.cloneDeep(localChallengeMap);
@@ -66,10 +75,10 @@ module.exports = {
     return ('' + name).replace(/\-/g, ' ').trim();
   },
 
-  getChallengeMapForDisplay: function () {
+  getChallengeMapForDisplay: function() {
     if (!challengeMapForDisplay) {
       challengeMapForDisplay = {};
-      Object.keys(challengeMap).forEach(function (key) {
+      Object.keys(challengeMap).forEach(function(key) {
         challengeMapForDisplay[key] = {
           name: challengeMap[key].name,
           dashedName: challengeMap[key].name.replace(/\s/g, '-'),
@@ -81,11 +90,11 @@ module.exports = {
     return challengeMapForDisplay;
   },
 
-  getChallengeMapWithIds: function () {
+  getChallengeMapWithIds: function() {
     if (!challengeMapWithIds) {
       challengeMapWithIds = {};
-      Object.keys(challengeMap).forEach(function (key) {
-        var onlyIds = challengeMap[key].challenges.map(function (elem) {
+      Object.keys(challengeMap).forEach(function(key) {
+        var onlyIds = challengeMap[key].challenges.map(function(elem) {
           return elem.id;
         });
         challengeMapWithIds[key] = onlyIds;
@@ -94,11 +103,11 @@ module.exports = {
     return challengeMapWithIds;
   },
 
-  allChallengeIds: function () {
+  allChallengeIds: function() {
 
     if (!allChallengeIds) {
       allChallengeIds = [];
-      Object.keys(this.getChallengeMapWithIds()).forEach(function (key) {
+      Object.keys(this.getChallengeMapWithIds()).forEach(function(key) {
         allChallengeIds.push(challengeMapWithIds[key]);
       });
       allChallengeIds = R.flatten(allChallengeIds);
@@ -106,12 +115,12 @@ module.exports = {
     return allChallengeIds;
   },
 
-  getChallengeMapWithNames: function () {
+  getChallengeMapWithNames: function() {
     if (!challengeMapWithNames) {
       challengeMapWithNames = {};
       Object.keys(challengeMap).
-        forEach(function (key) {
-          var onlyNames = challengeMap[key].challenges.map(function (elem) {
+        forEach(function(key) {
+          var onlyNames = challengeMap[key].challenges.map(function(elem) {
             return elem.name;
           });
           challengeMapWithNames[key] = onlyNames;
@@ -124,8 +133,8 @@ module.exports = {
     if (!challengeMapWithDashedNames) {
       challengeMapWithDashedNames = {};
        Object.keys(challengeMap).
-        forEach(function (key) {
-          var onlyNames = challengeMap[key].challenges.map(function (elem) {
+        forEach(function(key) {
+          var onlyNames = challengeMap[key].challenges.map(function(elem) {
             return elem.dashedName;
           });
           challengeMapWithDashedNames[key] = onlyNames;
@@ -135,40 +144,40 @@ module.exports = {
   },
 
 
-  randomPhrase: function () {
+  randomPhrase: function() {
     return resources.phrases[
       Math.floor(Math.random() * resources.phrases.length)
       ];
   },
 
-  randomVerb: function () {
+  randomVerb: function() {
     return resources.verbs[
       Math.floor(Math.random() * resources.verbs.length)
       ];
   },
 
-  randomCompliment: function () {
+  randomCompliment: function() {
     return resources.compliments[
       Math.floor(Math.random() * resources.compliments.length)
       ];
   },
 
-  allFieldGuideIds: function () {
+  allFieldGuideIds: function() {
     if (allFieldGuideIds) {
       return allFieldGuideIds;
     } else {
-      allFieldGuideIds = fieldGuides.map(function (elem) {
+      allFieldGuideIds = fieldGuides.map(function(elem) {
         return elem.id;
       });
       return allFieldGuideIds;
     }
   },
 
-  allFieldGuideNamesAndIds: function () {
+  allFieldGuideNamesAndIds: function() {
     if (allFieldGuideNames) {
       return allFieldGuideNames;
     } else {
-      allFieldGuideNames = fieldGuides.map(function (elem) {
+      allFieldGuideNames = fieldGuides.map(function(elem) {
         return {
           name: elem.name,
           dashedName: elem.dashedName,
@@ -179,18 +188,18 @@ module.exports = {
     }
   },
 
-  allNonprofitNames: function () {
+  allNonprofitNames: function() {
     if (allNonprofitNames) {
       return allNonprofitNames;
     } else {
-      allNonprofitNames = nonprofits.map(function (elem) {
+      allNonprofitNames = nonprofits.map(function(elem) {
         return {name: elem.name};
       });
       return allNonprofitNames;
     }
   },
 
-  whichEnvironment: function () {
+  whichEnvironment: function() {
     return process.env.NODE_ENV;
   },
 

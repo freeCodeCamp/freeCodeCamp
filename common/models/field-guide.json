@@ -15,6 +15,9 @@
     "description": {
       "type": "array",
       "unique": false
+    },
+    "category": {
+      "type": "string"
     }
   },
   "validations": [],
