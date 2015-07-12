@@ -41,14 +41,16 @@ module.exports = function(app) {
       .flatMap(function(user) {
         debug('saving user');
         return saveUser(user);
-      });
+      })
+      // always call onNext
+      .defaultIfEmpty(null);
 
     var query = { where: { dashedName: { like: dashedName, options: 'i' } } };
 
     debug('find fieldGuide', query);
     Rx.Observable.combineLatest(
       // find that field guide
-      findOneFieldGuide(query).tap(function() { console.log('foo'); }),
+      findOneFieldGuide(query),
       userSave,
       Rx.helpers.identity
     )
