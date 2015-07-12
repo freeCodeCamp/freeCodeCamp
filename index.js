@@ -4,16 +4,20 @@ require('dotenv').load();
 var fs = require('fs'),
     path = require('path'),
     app = require('../server/server'),
-    fieldGuides = require('./field-guides.json'),
     nonprofits = require('./nonprofits.json'),
     jobs = require('./jobs.json');
+
+function getFilesFor(dir) {
+  return fs.readdirSync(path.join(__dirname, '/' + dir));
+}
 
 var Challenge = app.models.Challenge;
 var FieldGuide = app.models.FieldGuide;
 var Nonprofit = app.models.Nonprofit;
 var Job = app.models.Job;
 var counter = 0;
-var challenges = fs.readdirSync(path.join(__dirname, '/challenges'));
+var challenges = getFilesFor('challenges');
+var fieldGuides = getFilesFor('field-guides');
 var offerings = 3 + challenges.length;
 
 var CompletionMonitor = function() {
@@ -33,10 +37,10 @@ Challenge.destroyAll(function(err, info) {
   } else {
     console.log('Deleted ', info);
   }
-  challenges.forEach(function (file) {
+  challenges.forEach(function(file) {
     Challenge.create(
       require('./challenges/' + file).challenges,
-      function (err) {
+      function(err) {
         if (err) {
           console.log(err);
         } else {
@@ -54,14 +58,16 @@ FieldGuide.destroyAll(function(err, info) {
   } else {
     console.log('Deleted ', info);
   }
-  FieldGuide.create(fieldGuides, function(err, data) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('Saved ', data);
-    }
-    CompletionMonitor();
-    console.log('field guides');
+  fieldGuides.forEach(function(file) {
+    FieldGuide.create(require('./field-guides/' + file), function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Saved ', data);
+      }
+      CompletionMonitor();
+      console.log('field guides');
+    });
   });
 });
 
