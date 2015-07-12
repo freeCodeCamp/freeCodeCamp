@@ -3,42 +3,6 @@
   "order": 0.013,
   "challenges": [
     {
-      "id": "bd7158d8c442eddfaeb5bd1f",
-      "name": "Zipline: Use the Twitch.tv JSON API",
-      "dashedName": "zipline-use-the-twitchtv-json-api",
-      "difficulty": 1.01,
-      "challengeSeed": ["126411564"],
-      "description": [
-        "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/GJKRxZ' target='_blank'>http://codepen.io/GeoffStorbeck/full/GJKRxZ</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
-        "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
-        "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
-        "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
-        "<span class='text-info'>User Story:</span> As a user, I can see whether Free Code Camp is currently streaming on Twitch.tv.",
-        "<span class='text-info'>User Story:</span> As a user, I can click the status output and be sent directly to the Free Code Camp's Twitch.tv channel.",
-        "<span class='text-info'>User Story:</span> As a user, if Free Code Camp is streaming, I can see additional details about what they are streaming.",
-        "<span class='text-info'>Bonus User Story:</span> As a user, I can search through the streams listed.",
-        "<span class='text-info'>Hint:</span> Here's an example call to Twitch.tv's JSON API: <code>https://api.twitch.tv/kraken/streams/freecodecamp</code>.",
-        "<span class='text-info'>Hint:</span> The relevant documentation about this API call is here: <a href='https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel' target='_blank'>https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel</a>.",
-        "<span class='text-info'>Hint:</span> Here's an array of the Twitch.tv usernames of people who regularly stream coding: <code>[\"freecodecamp\", \"storbeck\", \"terakilobyte\", \"habathcx\",\"RobotCaleb\",\"comster404\",\"brunofin\",\"thomasballinger\",\"noobs2ninjas\",\"beohoff\"]</code>",
-        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try using <a href='http://api.jquery.com/jquery.getjson/'>jQuery's $.getJSON()</a> to consume APIs.",
-        "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
-        "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
-      ],
-      "challengeType": 3,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
       "id": "bd7158d8c442eddfaeb5bd18",
       "name": "Zipline: Stylize Stories on Camper News",
       "dashedName": "zipline-stylize-stories-on-camper-news",
@@ -46,7 +10,7 @@
       "challengeSeed": ["126415129"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/Wveezv' target='_blank'>http://codepen.io/GeoffStorbeck/full/Wveezv</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
         "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
@@ -55,7 +19,7 @@
         "<span class='text-info'>User Story:</span> As a user, I can click a link to go directly to the post's discussion page.",
         "<span class='text-info'>Bonus User Story:</span> As a user, I can see how many upvotes each story has.",
         "<span class='text-info'>Hint:</span> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/stories/hotStories</code>.",
-        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try using <a href='http://api.jquery.com/jquery.getjson/'>jQuery's $.getJSON()</a> to consume APIs.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck' target='_blank'>RSAP</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
         "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -80,7 +44,7 @@
       "challengeSeed": ["126415131"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/MwgQea' target='_blank'>http://codepen.io/GeoffStorbeck/full/MwgQea</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
         "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
@@ -88,7 +52,7 @@
         "<span class='text-info'>Bonus User Story:</span>As a user, I can click a button to see a random Wikipedia entry.",
         "<span class='text-info'>Bonus User Story:</span>As a user, when I type in the search box, I can see a dropdown menu with autocomplete options for matching Wikipedia entries.",
         "<span class='text-info'>Hint:</span> Here's an entry on using Wikipedia's API: <code>http://www.mediawiki.org/wiki/API:Main_page</code>.",
-        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try using <a href='http://api.jquery.com/jquery.getjson/'>jQuery's $.getJSON()</a> to consume APIs.",
+        "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck' target='_blank'>RSAP</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
         "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
@@ -113,7 +77,7 @@
       "challengeSeed": ["126411565"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/GeoffStorbeck/full/zxgaqw' target='_blank'>http://codepen.io/GeoffStorbeck/full/zxgaqw</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
         "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
@@ -145,7 +109,7 @@
       "challengeSeed": ["126415123"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> that successfully reverse-engineers this: <a href='http://codepen.io/alex-dixon/full/JogOpQ/' target='_blank'>http://codepen.io/alex-dixon/full/JogOpQ/</a>.",
-        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code. Figure it out for yourself.",
+        "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
         "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
