@@ -244,7 +244,7 @@ module.exports = function(app) {
           title: challenge.name,
           dashedName: origChallengeName,
           name: challenge.name,
-          details: challenge.description.slice(1),
+          details: challenge.description,
           tests: challenge.tests,
           challengeSeed: challenge.challengeSeed,
           verb: utils.randomVerb(),
@@ -256,7 +256,6 @@ module.exports = function(app) {
           video: challenge.challengeSeed[0],
           // bonfires specific
           difficulty: Math.floor(+challenge.difficulty),
-          brief: challenge.description.shift(),
           bonfires: challenge,
           MDNkeys: challenge.MDNlinks,
           MDNlinks: getMDNLinks(challenge.MDNlinks),
