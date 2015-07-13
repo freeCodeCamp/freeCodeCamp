@@ -6,6 +6,14 @@ var utils = require('../utils');
 
 var allFieldGuideNamesAndIds = utils.allFieldGuideNamesAndIds();
 
+// order here determine order on all-articles page
+const categories = [
+  'orientation',
+  'FYI',
+  'outreach',
+  'contact'
+];
+
 module.exports = function(app) {
   var router = app.loopback.Router();
   var FieldGuide = app.models.FieldGuide;
@@ -87,14 +95,6 @@ module.exports = function(app) {
     if (req.user && req.user.completedFieldGuides) {
       completedFieldGuides = req.user.completedFieldGuides;
     }
-
-    // order here determine order on page
-    const categories = [
-      'orientation',
-      'FYI',
-      'outreach',
-      'contact'
-    ];
 
     // produces an array of arrays of field guides ordered by the above
     // i.e. [[...orientFieldGuides][...FYIfieldGuides]...]

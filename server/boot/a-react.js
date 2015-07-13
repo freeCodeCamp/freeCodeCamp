@@ -3,7 +3,7 @@ import Router from 'react-router';
 import Location from 'react-router/lib/Location';
 import debugFactory from 'debug';
 import { app$ } from '../../common/app';
-import { Cat } from 'thundercats';
+import { RenderToString } from 'thundercats-react';
 
 const debug = debugFactory('freecc:servereact');
 
@@ -25,23 +25,23 @@ export default function reactSubRouter(app) {
   app.use(router);
 
   function serveReactApp(req, res, next) {
-    const fcc = new Cat();
     const location = new Location(req.path, req.query);
 
     // returns a router wrapped app
     app$(location)
       // if react-router does not find a route send down the chain
-      .filter(function([ initialState ]) {
+      .filter(function({ initialState }) {
         if (!initialState) {
           debug('tried to find %s but got 404', location.pathname);
           return next();
         }
         return !!initialState;
       })
-      .flatMap(function([ initialState ]) {
+      .flatMap(function({ initialState, AppCat }) {
         // call thundercats renderToString
         // prefetches data and sets up it up for current state
-        return fcc.renderToString(
+        return RenderToString(
+          AppCat(),
           React.createElement(Router, initialState)
         );
       })

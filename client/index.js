@@ -3,20 +3,23 @@ import React from 'react';
 import { Router } from 'react-router';
 import { history } from 'react-router/lib/BrowserHistory';
 import debugFactory from 'debug';
-import { Cat } from 'thundercats';
+import { Render } from 'thundercats-react';
 
 import { app$ } from '../common/app';
 
 const debug = debugFactory('fcc:client');
 const DOMContianer = document.getElementById('fcc');
-const fcc = new Cat();
 
 Rx.longStackSupport = !!debug.enabled;
 
 // returns an observable
 app$(history)
-  .flatMap(([ initialState ]) => {
-    return fcc.render(React.createElement(Router, initialState), DOMContianer);
+  .flatMap(({ initialState, AppCat }) => {
+    return Render(
+      AppCat(),
+      React.createElement(Router, initialState),
+      DOMContianer
+    );
   })
   .subscribe(
     () => {

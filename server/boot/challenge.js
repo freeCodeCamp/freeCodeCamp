@@ -108,7 +108,7 @@ module.exports = function(app) {
   app.use(router);
 
   function returnNextChallenge(req, res, next) {
-    var completed = req.user.completedChallenges.map(function (elem) {
+    var completed = req.user.completedChallenges.map(function(elem) {
       return elem.id;
     });
 
@@ -157,12 +157,12 @@ module.exports = function(app) {
   }
 
   function returnCurrentChallenge(req, res, next) {
-    var completed = req.user.completedChallenges.map(function (elem) {
+    var completed = req.user.completedChallenges.map(function(elem) {
       return elem.id;
     });
 
     req.user.uncompletedChallenges = utils.allChallengeIds()
-      .filter(function (elem) {
+      .filter(function(elem) {
         if (completed.indexOf(elem) === -1) {
           return elem;
         }
@@ -227,12 +227,12 @@ module.exports = function(app) {
             challengeName: challenge.name,
             dashedName: challenge.dashedName,
             challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds)
-                .map(function (key) {
+                .map(function(key) {
                   return challengeMapWithIds[key]
-                    .filter(function (elem) {
+                    .filter(function(elem) {
                       return elem === ('' + challenge.id);
                     })
-                    .map(function () {
+                    .map(function() {
                       return key;
                     });
                 })
@@ -263,15 +263,14 @@ module.exports = function(app) {
           environment: utils.whichEnvironment()
         };
 
-        //TODO Berkeley
+        // TODO Berkeley
         var challengeView = {
           0: 'coursewares/showHTML',
           1: 'coursewares/showJS',
           2: 'coursewares/showVideo',
           3: 'coursewares/showZiplineOrBasejump',
           4: 'coursewares/showZiplineOrBasejump',
-          5: 'coursewares/showBonfire',
-          6: 'coursewares/showHike'
+          5: 'coursewares/showBonfire'
         };
 
         saveUser(req.user)

@@ -1,33 +1,46 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import stampit from 'react-stampit';
 import { Link } from 'react-router';
+import { contain } from 'thundercats-react';
 import { ListGroup, ListGroupItem, Panel } from 'react-bootstrap';
-import videos from '../videos.json';
 
-export default stampit(React, {
-  displayName: 'HikesMap',
+export default contain(
+  {
+    store: 'hikesStore',
+    fetchAction: 'hikesActions.fetchHikes'
+  },
+  stampit(React, {
+    displayName: 'HikesMap',
 
-  render() {
+    propTypes: {
+      hikes: PropTypes.array
+    },
 
-    const vidElements = videos.map(({ title, id }) => {
+    render() {
+      const {
+        hikes
+      } = this.props;
+
+      const vidElements = hikes.map(({ name, id }) => {
+        return (
+          <ListGroupItem key={ id }>
+            <Link to={ `/hikes/${id}` }>
+              <h3>{ name }</h3>
+            </Link>
+          </ListGroupItem>
+        );
+      });
+
       return (
-        <ListGroupItem key={ id }>
-          <Link to={ `/hikes/${id}` }>
-            <h3>{ title }</h3>
-          </Link>
-        </ListGroupItem>
+        <div>
+          <Panel>
+            <h2>Welcome To Hikes!</h2>
+          </Panel>
+          <ListGroup>
+            { vidElements }
+          </ListGroup>
+        </div>
       );
-    });
-
-    return (
-      <div>
-        <Panel>
-          <h2>Welcome To Hikes!</h2>
-        </Panel>
-        <ListGroup>
-          { vidElements }
-        </ListGroup>
-      </div>
-    );
-  }
-});
+    }
+  })
+);
