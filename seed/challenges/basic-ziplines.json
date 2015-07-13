@@ -42,7 +42,7 @@
       "name": "Zipline: Build a Personal Portfolio Webpage",
       "dashedName": "zipline-build-a-personal-portfolio-webpage",
       "difficulty": 1.01,
-      "challengeSeed": ["126415122"],
+      "challengeSeed": ["133315782"],
       "description": [
         "<span class='text-info'>Objective:</span> Build a <a href='http://codepen.io' target='_blank'>CodePen.io</a> app that successfully reverse-engineers this: <a href='http://codepen.io/ThiagoFerreir4/full/eNMxEp' target='_blank'>http://codepen.io/ThiagoFerreir4/full/eNMxEp</a>.",
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",

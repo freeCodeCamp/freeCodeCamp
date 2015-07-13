@@ -7,7 +7,7 @@
       "name": "Waypoint: Save your Code Revisions Forever with Git",
       "dashedName": "waypoint-save-your-code-revisions-forever-with-git",
       "difficulty": 0.01,
-      "challengeSeed": ["126433450"],
+      "challengeSeed": ["133316034"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
