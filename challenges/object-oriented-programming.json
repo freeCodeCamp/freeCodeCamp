@@ -7,7 +7,7 @@
       "name": "Waypoint: Learn Scope Chains and Closures",
       "dashedName": "waypoint-learn-scope-chains-and-closures",
       "difficulty": 0.01,
-      "challengeSeed": ["126433450"],
+      "challengeSeed": ["133316031"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
@@ -47,7 +47,7 @@
       "name": "Waypoint: Use Prototypes for Inheriting Properties",
       "dashedName": "waypoint-use-prototypes-for-inheriting-properties",
       "difficulty": 0.02,
-      "challengeSeed": ["126433450"],
+      "challengeSeed": ["133316036"],
       "description": [
         "We'll build this Waypoint on Cloud 9, a powerful online code editor with a full Ubuntu Linux workspace, all running in the cloud.",
         "If you don't already have Cloud 9 account, create one now at <a href='http://c9.io' target='_blank'>http://c9.io</a>.",
