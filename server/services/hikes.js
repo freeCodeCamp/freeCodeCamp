@@ -4,7 +4,11 @@ export default function hikesService(app) {
   return {
     name: 'hikes',
     read: (req, resource, params, config, cb) => {
-      Challenge.find({ where: { challengeType: '6' } }, (err, hikes) => {
+      const query = {
+        where: { challengeType: '6' },
+        order: 'difficulty ASC'
+      };
+      Challenge.find(query, (err, hikes) => {
         if (err) {
           return cb(err);
         }
