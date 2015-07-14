@@ -21,11 +21,11 @@ export default contain(
         hikes
       } = this.props;
 
-      const vidElements = hikes.map(({ name, id }) => {
+      const vidElements = hikes.map(({ title, id }) => {
         return (
           <ListGroupItem key={ id }>
             <Link to={ `/hikes/${id}` }>
-              <h3>{ name }</h3>
+              <h3>{ title }</h3>
             </Link>
           </ListGroupItem>
         );
