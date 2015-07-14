@@ -7,6 +7,8 @@ var fs = require('fs'),
     nonprofits = require('./nonprofits.json'),
     jobs = require('./jobs.json');
 
+var challangesRegex = /^(bonfire:|waypoint:|zipline:|basejump:|hikes:)/i;
+
 function getFilesFor(dir) {
   return fs.readdirSync(path.join(__dirname, '/' + dir));
 }
@@ -38,8 +40,15 @@ Challenge.destroyAll(function(err, info) {
     console.log('Deleted ', info);
   }
   challenges.forEach(function(file) {
+    var challenges = require('./challenges/' + file).challenges
+      .map(function(challenge) {
+        // NOTE(berks): add title for displaying in views
+        challenge.title = challenge.name.replace(challangesRegex, '').trim();
+        return challenge;
+      });
+
     Challenge.create(
-      require('./challenges/' + file).challenges,
+      challenges,
       function(err) {
         if (err) {
           console.log(err);
