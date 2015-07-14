@@ -35,7 +35,10 @@ var generateKey =
  * Create Express server.
  */
 var app = loopback();
+
 expressState.extend(app);
+app.set('state namespace', '__fcc__');
+
 var PassportConfigurator =
   require('loopback-component-passport').PassportConfigurator;
 var passportConfigurator = new PassportConfigurator(app);
@@ -309,7 +312,7 @@ if (process.env.NODE_ENV === 'development') {
 
 module.exports = app;
 
-app.start = function () {
+app.start = function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
     console.log(
