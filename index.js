@@ -7,7 +7,7 @@ var fs = require('fs'),
     nonprofits = require('./nonprofits.json'),
     jobs = require('./jobs.json');
 
-var challangesRegex = /^(bonfire:|waypoint:|zipline:|basejump:|hikes:)/i;
+var challangesRegex = /^(bonfire:|waypoint:|zipline:|basejump:|hike:)/i;
 
 function getFilesFor(dir) {
   return fs.readdirSync(path.join(__dirname, '/' + dir));
