@@ -11,10 +11,10 @@ export default {
   path: 'hikes',
   component: Hikes,
   childRoutes: [{
-    path: ':id',
+    path: ':dashedName',
     component: Lecture
   }, {
-    path: ':id/question/:questionId',
+    path: ':dashedName/questions',
     component: Question
   }]
 };

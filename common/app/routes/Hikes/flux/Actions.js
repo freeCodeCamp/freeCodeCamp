@@ -14,17 +14,20 @@ export default Actions({
   // set hikes on store
   setHikes(hikes) {
     return {
+      currentHike: hikes[0],
       hikes,
       isPrimed: true
     };
   },
 
-  getHike(id) {
-    return { id };
-  },
+  getHike: null,
 
   reEmit() {
     return helpers.identity;
+  },
+
+  setCurrentHike(currentHike) {
+    return { currentHike };
   }
 })
   .refs({ displayName: 'HikesActions' })
@@ -45,4 +48,30 @@ export default Actions({
         });
       }
     );
+
+    instance.getHike.subscribe(({ isPrimed, hikes, dashedName }) => {
+      if (isPrimed) {
+        return instance.reEmit();
+      }
+      if (hikes && hikes.length) {
+        const filterRegex = new RegExp(dashedName, 'i');
+        const potentialHike = hikes
+          .filter((hike) => {
+            return filterRegex.test(hike.dashedName);
+          })
+          .reduce((sum, hike) => {
+            return hike;
+          });
+
+        if (potentialHike) {
+          return instance.setCurrentHike(potentialHike);
+        }
+      }
+      service.read('hikes', { dashedName }, null, (err, hike) => {
+        if (err) {
+          debug('error occurred fetching hike', err);
+        }
+        return instance.setCurrentHike(hike);
+      });
+    });
   });
