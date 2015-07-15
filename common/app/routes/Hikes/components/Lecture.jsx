@@ -39,27 +39,36 @@ export default contain(
       debug('loading questions');
     },
 
+    renderQuestions(questions) {
+      return questions.map(([question]) => {
+        return (
+          <Panel>
+            <p>{ question }</p>
+          </Panel>
+        );
+      });
+    },
+
     render() {
       const {
         title,
         challengeSeed = ['1'],
-        description = []
+        description = [],
+        tests: questions
       } = this.props.currentHike;
 
       const [ id ] = challengeSeed;
 
+      const videoTitle = <h2>{ title }</h2>;
       return (
         <Col xs={ 12 }>
           <Row>
-            <Panel className={ 'text-center' }>
-              <h2>{ title }</h2>
+            <Panel className={ 'text-center' } title={ videoTitle }>
+              <Vimeo
+                onError={ this.handleError }
+                onFinish= { this.handleFinish }
+                videoId={ id } />
             </Panel>
-          </Row>
-          <Row>
-            <Vimeo
-              onError={ this.handleError }
-              onFinish= { this.handleFinish }
-              videoId={ id } />
           </Row>
           <Row>
             <Col xs={ 12 }>
@@ -68,6 +77,11 @@ export default contain(
                   { description.join('\n') }
                 </p>
               </Panel>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              { this.renderQuestions(questions) }
             </Col>
           </Row>
         </Col>

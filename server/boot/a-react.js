@@ -10,8 +10,8 @@ const debug = debugFactory('freecc:servereact');
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
-  '/Hikes',
-  '/Hikes/:id',
+  '/hikes',
+  '/hikes/*',
   '/jobs'
 ];
 
