@@ -40,8 +40,13 @@ export default contain(
     },
 
     render() {
-      const { title, challengeSeed } = this.props.currentHike;
-      const [ id ] = challengeSeed || ['1'];
+      const {
+        title,
+        challengeSeed = ['1'],
+        description = []
+      } = this.props.currentHike;
+
+      const [ id ] = challengeSeed;
 
       return (
         <Col xs={ 12 }>
@@ -55,6 +60,15 @@ export default contain(
               onError={ this.handleError }
               onFinish= { this.handleFinish }
               videoId={ id } />
+          </Row>
+          <Row>
+            <Col xs={ 12 }>
+              <Panel>
+                <p>
+                  { description.join('\n') }
+                </p>
+              </Panel>
+            </Col>
           </Row>
         </Col>
       );
