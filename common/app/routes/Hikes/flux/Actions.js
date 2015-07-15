@@ -1,3 +1,4 @@
+import { helpers } from 'rx';
 import { Actions } from 'thundercats';
 import debugFactory from 'debug';
 import Fetchr from 'fetchr';
@@ -11,23 +12,36 @@ export default Actions({
   // start fetching hikes
   fetchHikes: null,
   // set hikes on store
-  setHikes: null,
+  setHikes(hikes) {
+    return {
+      hikes,
+      isPrimed: true
+    };
+  },
 
   getHike(id) {
     return { id };
+  },
+
+  reEmit() {
+    return helpers.identity;
   }
 })
   .refs({ displayName: 'HikesActions' })
   .init(({ instance }) => {
     // set up hikes fetching
-    // TODO(berks): check if store is already primed
     instance.fetchHikes.subscribe(
-      () => {
+      ({ isPrimed }) => {
+        if (isPrimed) {
+          debug('already primed');
+          return instance.reEmit();
+        }
+        debug('fetching');
         service.read('hikes', null, null, (err, hikes) => {
           if (err) {
-            debug('an error occured fetching hikes', err);
+            debug('an error occurred fetching hikes', err);
           }
-          instance.setHikes({ hikes });
+          instance.setHikes(hikes);
         });
       }
     );

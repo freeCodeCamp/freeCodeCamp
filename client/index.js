@@ -9,14 +9,24 @@ import { app$ } from '../common/app';
 
 const debug = debugFactory('fcc:client');
 const DOMContianer = document.getElementById('fcc');
+const catState = window.__fcc__.data || {};
 
 Rx.longStackSupport = !!debug.enabled;
 
 // returns an observable
 app$(history)
-  .flatMap(({ initialState, AppCat }) => {
+  .flatMap(
+    ({ AppCat }) => {
+      const appCat = AppCat();
+      return appCat
+        .hydrate(catState)
+        .map(() => appCat);
+    },
+    ({ initialState }, appCat) => ({ initialState, appCat })
+  )
+  .flatMap(({ initialState, appCat }) => {
     return Render(
-      AppCat(),
+      appCat,
       React.createElement(Router, initialState),
       DOMContianer
     );

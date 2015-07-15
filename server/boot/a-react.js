@@ -40,6 +40,7 @@ export default function reactSubRouter(app) {
       .flatMap(function({ initialState, AppCat }) {
         // call thundercats renderToString
         // prefetches data and sets up it up for current state
+        debug('rendering to string');
         return RenderToString(
           AppCat(),
           React.createElement(Router, initialState)

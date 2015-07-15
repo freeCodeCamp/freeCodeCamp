@@ -7,13 +7,15 @@ import { ListGroup, ListGroupItem, Panel } from 'react-bootstrap';
 export default contain(
   {
     store: 'hikesStore',
-    fetchAction: 'hikesActions.fetchHikes'
+    fetchAction: 'hikesActions.fetchHikes',
+    getPayload: (props) => ({ isPrimed: props.isPrimed })
   },
   stampit(React, {
     displayName: 'HikesMap',
 
     propTypes: {
-      hikes: PropTypes.array
+      hikes: PropTypes.array,
+      isPrimed: PropTypes.bool
     },
 
     render() {
@@ -21,10 +23,10 @@ export default contain(
         hikes
       } = this.props;
 
-      const vidElements = hikes.map(({ title, id }) => {
+      const vidElements = hikes.map(({ title, dashedName}) => {
         return (
-          <ListGroupItem key={ id }>
-            <Link to={ `/hikes/${id}` }>
+          <ListGroupItem key={ dashedName }>
+            <Link to={ `/hikes/${dashedName}` }>
               <h3>{ title }</h3>
             </Link>
           </ListGroupItem>
