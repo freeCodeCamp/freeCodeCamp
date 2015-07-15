@@ -41,7 +41,7 @@ export default contain(
 
     render() {
       const { title, challengeSeed } = this.props.currentHike;
-      const [ id ] = challengeSeed;
+      const [ id ] = challengeSeed || ['1'];
 
       return (
         <Col xs={ 12 }>

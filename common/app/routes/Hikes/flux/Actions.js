@@ -67,10 +67,11 @@ export default Actions({
           return instance.setCurrentHike(potentialHike);
         }
       }
-      service.read('hikes', { dashedName }, null, (err, hike) => {
+      service.read('hikes', { dashedName }, null, (err, hikes) => {
         if (err) {
           debug('error occurred fetching hike', err);
         }
+        const [hike] = hikes;
         return instance.setCurrentHike(hike);
       });
     });
