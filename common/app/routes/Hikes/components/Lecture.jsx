@@ -52,9 +52,7 @@ export default contain(
     render() {
       const {
         title,
-        challengeSeed = ['1'],
-        description = [],
-        tests: questions
+        challengeSeed = ['1']
       } = this.props.currentHike;
 
       const [ id ] = challengeSeed;
@@ -69,20 +67,6 @@ export default contain(
                 onFinish= { this.handleFinish }
                 videoId={ id } />
             </Panel>
-          </Row>
-          <Row>
-            <Col xs={ 12 }>
-              <Panel>
-                <p>
-                  { description.join('\n') }
-                </p>
-              </Panel>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12}>
-              { this.renderQuestions(questions) }
-            </Col>
           </Row>
         </Col>
       );
