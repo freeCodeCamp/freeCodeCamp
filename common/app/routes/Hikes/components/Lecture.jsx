@@ -41,7 +41,7 @@ export default contain(
     handleFinish() {
       debug('loading questions');
       const { dashedName } = this.props.params;
-      this.transitionTo(`hikes/${dashedName}/questions/1`);
+      this.transitionTo(`/hikes/${dashedName}/questions/1`);
     },
 
     render() {

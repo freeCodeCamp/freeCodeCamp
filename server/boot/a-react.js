@@ -32,7 +32,7 @@ export default function reactSubRouter(app) {
       // if react-router does not find a route send down the chain
       .filter(function({ initialState }) {
         if (!initialState) {
-          debug('tried to find %s but got 404', location.pathname);
+          debug('react tried to find %s but got 404', location.pathname);
           return next();
         }
         return !!initialState;
