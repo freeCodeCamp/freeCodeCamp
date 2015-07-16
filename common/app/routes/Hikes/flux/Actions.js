@@ -1,5 +1,6 @@
 import { helpers } from 'rx';
 import { Actions } from 'thundercats';
+import assign from 'object.assign';
 import debugFactory from 'debug';
 import Fetchr from 'fetchr';
 
@@ -20,15 +21,13 @@ export default Actions({
     };
   },
 
-  getHike: null,
 
   reEmit() {
     return helpers.identity;
   },
 
-  setCurrentHike(currentHike) {
-    return { currentHike };
-  }
+  fetchCurrentHike: null,
+  setCurrentHike: null
 })
   .refs({ displayName: 'HikesActions' })
   .init(({ instance }) => {
@@ -36,10 +35,8 @@ export default Actions({
     instance.fetchHikes.subscribe(
       ({ isPrimed }) => {
         if (isPrimed) {
-          debug('already primed');
           return instance.reEmit();
         }
-        debug('fetching');
         service.read('hikes', null, null, (err, hikes) => {
           if (err) {
             debug('an error occurred fetching hikes', err);
@@ -49,30 +46,31 @@ export default Actions({
       }
     );
 
-    instance.getHike.subscribe(({ isPrimed, hikes, dashedName }) => {
+    instance.fetchCurrentHike.subscribe(({ isPrimed, dashedName }) => {
       if (isPrimed) {
-        return instance.reEmit();
-      }
-      if (hikes && hikes.length) {
-        const filterRegex = new RegExp(dashedName, 'i');
-        const potentialHike = hikes
-          .filter((hike) => {
-            return filterRegex.test(hike.dashedName);
-          })
-          .reduce((sum, hike) => {
-            return hike;
-          });
+        return instance.setCurrentHike({
+          transformer: (oldState) => {
+            const { hikes } = oldState;
+            const filterRegex = new RegExp(dashedName, 'i');
+            const potentialHike = hikes
+              .filter(({ dashedName }) => {
+                return filterRegex.test(dashedName);
+              })
+              .reduce((throwAway, hike) => {
+                return hike;
+              });
 
-        if (potentialHike) {
-          return instance.setCurrentHike(potentialHike);
-        }
+            // TODO(berks): do something when potential hike does not exist
+            return assign({}, oldState, { currentHike: potentialHike });
+          }
+        });
       }
       service.read('hikes', { dashedName }, null, (err, hikes) => {
         if (err) {
           debug('error occurred fetching hike', err);
         }
-        const [hike] = hikes;
-        return instance.setCurrentHike(hike);
+        const [currentHike] = hikes;
+        return instance.setCurrentHike({ set: { currentHike } });
       });
     });
   });

@@ -11,18 +11,16 @@ const debug = debugFactory('freecc:hikes');
 export default contain(
   {
     store: 'hikesStore',
-    fetchAction: 'hikesActions.getHike',
-    getPayload({ currentHike, hikes, params: { dashedName } }) {
+    fetchAction: 'hikesActions.fetchCurrentHike',
+    getPayload({ currentHike, params: { dashedName } }) {
       const filterRegex = new RegExp(dashedName, 'i');
       if (currentHike && filterRegex.test(currentHike.dashedName)) {
         return {
-          hikes: [],
           isPrimed: true,
           dashedName
         };
       }
       return {
-        hikes,
         isPrimed: false,
         dashedName: dashedName
       };
@@ -32,8 +30,9 @@ export default contain(
     displayName: 'Lecture',
 
     propTypes: {
-      params: PropTypes.object,
-      currentHike: PropTypes.object
+      currentHike: PropTypes.object,
+      dashedName: PropTypes.string,
+      params: PropTypes.object
     },
 
     handleError: debug,

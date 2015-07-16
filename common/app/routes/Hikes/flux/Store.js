@@ -19,7 +19,7 @@ export default Store(initialValue)
     instance.register(
       fromMany(
         setter(setHikes),
-        setter(setCurrentHike),
+        setCurrentHike,
         transformer(reEmit)
       )
     );

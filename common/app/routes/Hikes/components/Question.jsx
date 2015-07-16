@@ -16,26 +16,21 @@ const debug = debugFactory('freecc:hikes');
 export default contain(
   {
     store: 'hikesStore',
-    map({ hikes, currentHike }) {
+    map({ currentHike }) {
       const { tests = [] } = currentHike;
-      return {
-        hikes,
-        currentHike,
-        tests
-      };
+
+      return { currentHike, tests };
     },
-    fetchAction: 'hikesActions.getHike',
-    getPayload({ currentHike, hikes, params: { dashedName } }) {
+    fetchAction: 'hikesActions.fetchCurrentHike',
+    getPayload({ currentHike, params: { dashedName } }) {
       const filterRegex = new RegExp(dashedName, 'i');
       if (currentHike && filterRegex.test(currentHike.dashedName)) {
         return {
-          hikes: [],
           isPrimed: true,
           dashedName
         };
       }
       return {
-        hikes,
         isPrimed: false,
         dashedName: dashedName
       };
@@ -46,9 +41,9 @@ export default contain(
     displayName: 'Question',
 
     propTypes: {
-      params: PropTypes.object,
       currentHike: PropTypes.object,
       dashedName: PropTypes.string,
+      params: PropTypes.object,
       tests: PropTypes.array
     },
 
