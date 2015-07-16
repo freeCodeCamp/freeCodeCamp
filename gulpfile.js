@@ -43,6 +43,7 @@ var paths = {
     'node_modules/',
     'client/'
   ],
+
   publicJs: './public/js',
 
   loopback: {
