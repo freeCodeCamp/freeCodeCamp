@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Col, Row, Panel } from 'react-bootstrap';
+import { Button, Col, Row, Panel } from 'react-bootstrap';
 import { Navigation } from 'react-router';
 import { contain } from 'thundercats-react';
 import stampit from 'react-stampit';
@@ -50,6 +50,11 @@ export default contain(
         challengeSeed = ['1'],
         description = []
       } = this.props.currentHike;
+      const transcript = description.map(line => {
+        return (
+          <p>{ line }</p>
+        );
+      });
 
       const [ id ] = challengeSeed;
 
@@ -68,8 +73,16 @@ export default contain(
             <Col xs={ 12 }>
               <Panel>
                 <p>
-                  { description.join('\n') }
+                  { transcript }
                 </p>
+              </Panel>
+              <Panel>
+                <Button
+                  block={ true }
+                  bsSize='large'
+                  onClick={ ::this.handleFinish }>
+                  Take me to the Questions
+                </Button>
               </Panel>
             </Col>
           </Row>
