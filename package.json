@@ -89,7 +89,7 @@
     "pmx": "^0.3.16",
     "ramda": "~0.10.0",
     "react": "^0.13.3",
-    "react-bootstrap": "^0.23.5",
+    "react-bootstrap": "^0.23.7",
     "react-router": "https://github.com/BerkeleyTrue/react-router#freecodecamp",
     "react-stampit": "git+https://github.com/BerkeleyTrue/react-stampit.git#fcc",
     "react-vimeo": "^0.0.3",
