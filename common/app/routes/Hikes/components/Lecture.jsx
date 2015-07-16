@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
-import { contain } from 'thundercats-react';
 import { Col, Row, Panel } from 'react-bootstrap';
+import { Navigation } from 'react-router';
+import { contain } from 'thundercats-react';
 import stampit from 'react-stampit';
 import Vimeo from 'react-vimeo';
 import debugFactory from 'debug';
@@ -31,28 +32,23 @@ export default contain(
     displayName: 'Lecture',
 
     propTypes: {
-      params: PropTypes.object
+      params: PropTypes.object,
+      currentHike: PropTypes.object
     },
 
     handleError: debug,
+
     handleFinish() {
       debug('loading questions');
-    },
-
-    renderQuestions(questions) {
-      return questions.map(([question]) => {
-        return (
-          <Panel>
-            <p>{ question }</p>
-          </Panel>
-        );
-      });
+      const { dashedName } = this.props.params;
+      this.transitionTo(`hikes/${dashedName}/questions/1`);
     },
 
     render() {
       const {
         title,
-        challengeSeed = ['1']
+        challengeSeed = ['1'],
+        description = []
       } = this.props.currentHike;
 
       const [ id ] = challengeSeed;
@@ -64,12 +60,21 @@ export default contain(
             <Panel className={ 'text-center' } title={ videoTitle }>
               <Vimeo
                 onError={ this.handleError }
-                onFinish= { this.handleFinish }
+                onFinish= { ::this.handleFinish }
                 videoId={ id } />
             </Panel>
+          </Row>
+          <Row>
+            <Col xs={ 12 }>
+              <Panel>
+                <p>
+                  { description.join('\n') }
+                </p>
+              </Panel>
+            </Col>
           </Row>
         </Col>
       );
     }
-  })
+  }).compose(Navigation)
 );

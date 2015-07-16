@@ -91,7 +91,7 @@
     "react": "^0.13.3",
     "react-bootstrap": "^0.23.5",
     "react-router": "https://github.com/BerkeleyTrue/react-router#freecodecamp",
-    "react-stampit": "^0.6.1",
+    "react-stampit": "git+https://github.com/BerkeleyTrue/react-stampit.git#fcc",
     "react-vimeo": "^0.0.3",
     "request": "~2.53.0",
     "rx": "^2.5.3",

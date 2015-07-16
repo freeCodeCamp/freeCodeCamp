@@ -14,7 +14,7 @@ export default {
     path: ':dashedName',
     component: Lecture
   }, {
-    path: ':dashedName/questions',
+    path: ':dashedName/questions/:number',
     component: Question
   }]
 };
