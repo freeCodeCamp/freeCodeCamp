@@ -1,8 +1,16 @@
 import React, { PropTypes } from 'react';
-import { Col, Row, Panel } from 'react-bootstrap';
-import { contain } from 'thundercats-react';
+import { Navigation } from 'react-router';
 import stampit from 'react-stampit';
-// import debugFactory from 'debug';
+import { contain } from 'thundercats-react';
+import {
+  Button,
+  Col,
+  Row,
+  Panel
+} from 'react-bootstrap';
+import debugFactory from 'debug';
+
+const debug = debugFactory('freecc:hikes');
 
 export default contain(
   {
@@ -38,7 +46,25 @@ export default contain(
     propTypes: {
       params: PropTypes.object,
       currentHike: PropTypes.object,
+      dashedName: PropTypes.string,
       tests: PropTypes.array
+    },
+
+    onAnswer(answer, userAnswer, e) {
+      if (e && e.preventDefault) {
+        e.preventDefault();
+      }
+      if (answer === userAnswer) {
+        debug('correct answer!');
+        return this.onCorrectAnswer();
+      }
+      return debug('incorrect');
+    },
+
+    onCorrectAnswer() {
+      const { dashedName, number } = this.props.params;
+      const nextQ = +number + 1;
+      this.transitionTo(`/hikes/${ dashedName }/questions/${ nextQ }`);
     },
 
     render() {
@@ -48,14 +74,30 @@ export default contain(
       const [question, answer, info] = tests[number - 1] || [];
 
       return (
-        <Col xs={ 12 }>
+        <Col
+          xs={ 8 }
+          xsOffset={ 2 }>
           <Row>
             <Panel>
               <p>{ question }</p>
+            </Panel>
+            <Panel>
+              <Button
+                bsSize='large'
+                className='pull-left'
+                onClick={ this.onAnswer.bind(this, answer, false) }>
+                false
+              </Button>
+              <Button
+                bsSize='large'
+                className='pull-right'
+                onClick={ this.onAnswer.bind(this, answer, true) }>
+                true
+              </Button>
             </Panel>
           </Row>
         </Col>
       );
     }
-  })
+  }).compose(Navigation)
 );
