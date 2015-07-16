@@ -44,17 +44,19 @@ export default contain(
       this.transitionTo(`/hikes/${dashedName}/questions/1`);
     },
 
+    renderTranscript(transcript) {
+      return transcript.map((line, index) => (
+          <p key={ index }>{ line }</p>
+        )
+      );
+    },
+
     render() {
       const {
         title,
         challengeSeed = ['1'],
         description = []
       } = this.props.currentHike;
-      const transcript = description.map(line => {
-        return (
-          <p>{ line }</p>
-        );
-      });
 
       const [ id ] = challengeSeed;
 
@@ -73,7 +75,7 @@ export default contain(
             <Col xs={ 12 }>
               <Panel>
                 <p>
-                  { transcript }
+                  { this.renderTranscript(description) }
                 </p>
               </Panel>
               <Panel>
