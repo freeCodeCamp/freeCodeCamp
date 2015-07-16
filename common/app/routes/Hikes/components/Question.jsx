@@ -42,9 +42,11 @@ export default contain(
     },
 
     render() {
-      const { tests: [test =[]] } = this.props;
+      const { tests } = this.props;
+      const { number = '1' } = this.props.params;
 
-      const [question, answer, info] = test;
+      const [question, answer, info] = tests[number - 1] || [];
+
       return (
         <Col xs={ 12 }>
           <Row>
