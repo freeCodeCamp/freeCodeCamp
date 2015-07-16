@@ -848,6 +848,68 @@
         ""
       ],
       "challengeType": 1
+    },
+    {
+      "_id":"bh1111c1c11feddfaeb9bdef",
+      "name":"Random Numbers",
+      "dashedName":"waypoint-random-numbers",
+      "difficulty":"9.9827",
+      "description":[
+        "",
+        "Random numbers are a very useful for creating random behaviours and games",
+        "Javascript has a <code>Math.random()</code> method that can generate a random decimal number",
+        "Let's have a go of <code>Math.random()</code> now be getting <code>myFunction</code> to return a random number"
+      ],
+      "tests":[
+        "assert(typeof(myFunction()) === 'number', 'myFunction should return a random number');",
+        "assert((myFunction()+''). match(/\\./g), 'The number returned by myFunction should be a decimal');",
+        "assert(editor.getValue().match(/Math\\.random/g).length >= 2, 'You should be using Math.random to generate the random decimal number');"
+      ],
+      "challengeSeed":[
+        "",
+        "function myFunction(){",
+        " //Change the 0 to Math.random()",
+        " return(0);",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"bh1111c1c12feddfaeb1bdef",
+      "name":"Random Whole Numbers",
+      "dashedName":"waypoint-random-whole-numbers",
+      "difficulty":"9.9828",
+      "description":[
+        "",
+        "While it's great that we can create random decimal numbers it's a lot more useful to generate a random whole number",
+        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
+        "This technique gives us a whole number between zero and nine",
+        "Let's give this technique a go now"
+      ],
+      "tests":[],
+      "challengeSeed":[
+        "function myFunction(){",
+        " //Make myFunction return a random number between zero and nine instead of a float",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"",
+      "name":"Random Whole Numbers In a Range",
+      "dashedName":"waypoint-random-whole-numbers-in-a-range",
+      "difficulty":"9.9829",
+      "description":[
+        "",
+        ""
+      ],
+      "tests":[],
+      "challengeSeed":[],
+      "challengeType": 1
     }
   ]
 }
