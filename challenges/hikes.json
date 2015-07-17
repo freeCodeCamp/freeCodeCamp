@@ -576,10 +576,18 @@
       ],
       "description": [
         "Variables are used frequently in Javascript and many other coding languages.",
-        "Here we show a few simple examples of how."
+        "In this video, we're going to talk about variables in code.",
+        "Variables, just like in Algebra, are when you have a letter or a word and it represents something else.",
+        "Here we're doing var x = \"Briana\". When we reference \"x\" later on, it's going to know that's Briana.",
+        "When we console.log(x), it's going to output \"Briana\".",
+        "But be careful - if we put console.log(\"x\"), with the x in quotation marks, it will output the letter \"x\".",
+        "What I want you to take away from this video is that variables exist in code, and you can store everything from a simple string all the way up to a function, all within a simple name."
       ],
       "challengeType": 6,
-      "tests": [],
+      "tests": [
+        ["Variables are useful in coding languages like JavaScript.", true],
+        ["Variables can't stand for anything that isn't a string, number, or boolean.", false, "Variables can stand for things ranging from simple to very complex"]
+      ],
       "nameCn": "",
       "descriptionCn": [],
       "nameFr": "",
