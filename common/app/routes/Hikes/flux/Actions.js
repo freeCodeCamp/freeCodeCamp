@@ -24,7 +24,7 @@ export default Actions({
       ({ isPrimed }) => {
         if (isPrimed) {
           return instance.setHikes({
-            transformer: (oldState) => {
+            transform: (oldState) => {
               const { hikes } = oldState;
               const newState = {
                 currentHike: (oldState.currentHike || hikes[0] || {})
@@ -50,7 +50,7 @@ export default Actions({
     instance.fetchCurrentHike.subscribe(({ isPrimed, dashedName }) => {
       if (isPrimed) {
         return instance.setCurrentHike({
-          transformer: (oldState) => {
+          transform: (oldState) => {
             const { hikes } = oldState;
             const filterRegex = new RegExp(dashedName, 'i');
             const potentialHike = hikes
