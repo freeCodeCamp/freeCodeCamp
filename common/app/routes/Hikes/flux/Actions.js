@@ -1,4 +1,3 @@
-import { helpers } from 'rx';
 import { Actions } from 'thundercats';
 import assign from 'object.assign';
 import debugFactory from 'debug';
@@ -13,18 +12,7 @@ export default Actions({
   // start fetching hikes
   fetchHikes: null,
   // set hikes on store
-  setHikes(hikes) {
-    return {
-      currentHike: hikes[0],
-      hikes,
-      isPrimed: true
-    };
-  },
-
-
-  reEmit() {
-    return helpers.identity;
-  },
+  setHikes: null,
 
   fetchCurrentHike: null,
   setCurrentHike: null
@@ -35,13 +23,26 @@ export default Actions({
     instance.fetchHikes.subscribe(
       ({ isPrimed }) => {
         if (isPrimed) {
-          return instance.reEmit();
+          return instance.setHikes({
+            transformer: (oldState) => {
+              const { hikes } = oldState;
+              const newState = {
+                currentHike: (oldState.currentHike || hikes[0] || {})
+              };
+              return assign({}, oldState, newState);
+            }
+          });
         }
         service.read('hikes', null, null, (err, hikes) => {
           if (err) {
             debug('an error occurred fetching hikes', err);
           }
-          instance.setHikes(hikes);
+          instance.setHikes({
+            set: {
+              hikes: hikes,
+              currentHike: hikes[0] || {}
+            }
+          });
         });
       }
     );

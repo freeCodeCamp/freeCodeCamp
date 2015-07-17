@@ -8,14 +8,13 @@ export default contain(
   {
     store: 'hikesStore',
     fetchAction: 'hikesActions.fetchHikes',
-    getPayload: (props) => ({ isPrimed: props.isPrimed })
+    getPayload: ({ hikes }) => ({ isPrimed: (hikes && !!hikes.length) })
   },
   stampit(React, {
     displayName: 'HikesMap',
 
     propTypes: {
-      hikes: PropTypes.array,
-      isPrimed: PropTypes.bool
+      hikes: PropTypes.array
     },
 
     render() {

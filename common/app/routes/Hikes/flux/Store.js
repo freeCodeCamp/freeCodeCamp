@@ -1,9 +1,8 @@
 import { Store } from 'thundercats';
 
-const { fromMany, setter, transformer } = Store;
+const { fromMany } = Store;
 const initialValue = {
   hikes: [],
-  isPrimed: false,
   currentHike: {}
 };
 
@@ -13,15 +12,9 @@ export default Store(initialValue)
     const [cat] = args;
     let {
       setHikes,
-      setCurrentHike,
-      reEmit
+      setCurrentHike
     } = cat.getActions('hikesActions');
-    instance.register(
-      fromMany(
-        setter(setHikes),
-        setCurrentHike,
-        transformer(reEmit)
-      )
-    );
+    instance.register(fromMany(setHikes, setCurrentHike));
+
     return instance;
   });
