@@ -45,9 +45,8 @@ export default stampit(React, {
           `/hikes/${ dashedName }/questions/${ nextQuestionIndex + 1 }`
         );
       }
-      // next questions does not exit
-      // find next hike
-      //
+      // next questions does not exist;
+      debug('finding next hike');
       const nextHike = [].slice.call(hikes)
         // hikes is in oder of difficulty, lets get reverse order
         .reverse()
@@ -62,7 +61,8 @@ export default stampit(React, {
       if (nextHike) {
         return this.transitionTo(`/hikes/${ nextHike.dashedName }`);
       }
-      debug('next Hike was not found');
+      debug('next Hike was not found, currentHike %s', currentHike.dashedName);
+      this.transitionTo('/hikes');
     });
   },
 
