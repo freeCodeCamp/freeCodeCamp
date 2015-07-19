@@ -10,9 +10,14 @@ const service = new Fetchr({
 
 function getCurrentHike(hikes =[{}], dashedName, currentHike) {
   if (!dashedName) {
+    debug('no dashedName');
     return hikes[0];
   }
+
   const filterRegex = new RegExp(dashedName, 'i');
+  if (currentHike && filterRegex.test(currentHike.dashedName)) {
+    return currentHike;
+  }
 
   return hikes
     .filter(({ dashedName }) => {
@@ -37,11 +42,11 @@ export default Actions({
         if (isPrimed) {
           return instance.setHikes({
             transform: (oldState) => {
-              const { hikes, currentContext } = oldState;
+              const { hikes } = oldState;
               const currentHike = getCurrentHike(
                 hikes,
                 dashedName,
-                currentContext
+                oldState.currentHike
               );
               return assign({}, oldState, { currentHike });
             }
