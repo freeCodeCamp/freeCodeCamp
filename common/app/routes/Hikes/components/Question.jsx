@@ -48,7 +48,7 @@ export default stampit(React, {
       // next questions does not exit
       // find next hike
       //
-      const nextHike = hikes
+      const nextHike = [].slice.call(hikes)
         // hikes is in oder of difficulty, lets get reverse order
         .reverse()
         // now lets find the hike with the difficulty right above this one
