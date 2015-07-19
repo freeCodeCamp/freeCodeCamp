@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { Navigation, TransitionHook } from 'react-router';
-import stampit from 'react-stampit';
 import debugFactory from 'debug';
 import {
   Button,
@@ -12,9 +11,13 @@ import {
 
 const debug = debugFactory('freecc:hikes');
 
-export default stampit(React, {
-  state: { showInfo: false },
+export default React.createClass({
+  getInitialState: () => ({ showInfo: false }),
   displayName: 'Question',
+  mixins: [
+    Navigation,
+    TransitionHook
+  ],
 
   propTypes: {
     currentHike: PropTypes.object,
@@ -127,6 +130,4 @@ export default stampit(React, {
       </Col>
     );
   }
-})
-  .compose(Navigation)
-  .compose(TransitionHook);
+});

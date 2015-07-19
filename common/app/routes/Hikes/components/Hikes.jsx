@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import stampit from 'react-stampit';
 import { Row } from 'react-bootstrap';
 import { contain } from 'thundercats-react';
 // import debugFactory from 'debug';
@@ -20,7 +19,7 @@ export default contain(
       return props.params.dashedName !== nextProps.params.dashedName;
     }
   },
-  stampit(React, {
+  React.createClass({
     displayName: 'Hikes',
 
     propTypes: {

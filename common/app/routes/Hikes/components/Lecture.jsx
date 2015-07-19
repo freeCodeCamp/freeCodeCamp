@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react';
 import { Button, Col, Row, Panel } from 'react-bootstrap';
 import { Navigation } from 'react-router';
-import stampit from 'react-stampit';
 import Vimeo from 'react-vimeo';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:hikes');
 
-export default stampit(React, {
+export default React.createClass({
   displayName: 'Lecture',
+  mixin: [Navigation],
 
   propTypes: {
     currentHike: PropTypes.object,
@@ -68,4 +68,4 @@ export default stampit(React, {
       </Col>
     );
   }
-}).compose(Navigation);
+});

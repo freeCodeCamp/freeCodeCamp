@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react';
-import stampit from 'react-stampit';
 import { Link } from 'react-router';
 import { ListGroup, ListGroupItem, Panel } from 'react-bootstrap';
 
-export default stampit(React, {
+export default React.createClass({
   displayName: 'HikesMap',
 
   propTypes: {
