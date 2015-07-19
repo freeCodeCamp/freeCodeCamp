@@ -19,6 +19,7 @@ function getCurrentHike(hikes =[{}], dashedName, currentHike) {
     return currentHike;
   }
 
+  debug('setting new hike');
   return hikes
     .filter(({ dashedName }) => {
       return filterRegex.test(dashedName);

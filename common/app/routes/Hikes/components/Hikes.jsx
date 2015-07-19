@@ -15,7 +15,10 @@ export default contain(
     getPayload: ({ hikes, params }) => ({
       isPrimed: (hikes && !!hikes.length),
       dashedName: params.dashedName
-    })
+    }),
+    shouldContainerFetch(props, nextProps) {
+      return props.params.dashedName !== nextProps.params.dashedName;
+    }
   },
   stampit(React, {
     displayName: 'Hikes',
