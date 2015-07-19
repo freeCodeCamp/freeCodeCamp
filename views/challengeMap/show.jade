@@ -83,19 +83,19 @@ block content
                                                 li.large-p.negative-10
                                                     a(href="/challenges/#{challenge.name}")= challenge.name
 
-    #announcementModal.modal(tabindex='-1')
-        .modal-dialog.animated.fadeInUp.fast-animation
-            .modal-content
-                .modal-header.challenge-list-header The chat service we use is doing maintenance.
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    h3.text-left Please note that Gitter.im, our chat client, won't be available between 3 AM and 5 AM EST.
-                    h3.text-left Thank you for your patience. In the meantime, happy coding!
-                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up
-    script.
-        $(document).ready(function () {
-            if (!localStorage || !localStorage.gitter2) {
-                $('#announcementModal').modal('show');
-                localStorage.gitter2 = "true";
-            }
-        });
+    //#announcementModal.modal(tabindex='-1')
+    //    .modal-dialog.animated.fadeInUp.fast-animation
+    //        .modal-content
+    //            .modal-header.challenge-list-header The chat service we use is doing maintenance.
+    //                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+    //            .modal-body
+    //                h3.text-left Please note that Gitter.im, our chat client, won't be available between 3 AM and 5 AM EST.
+    //                h3.text-left Thank you for your patience. In the meantime, happy coding!
+    //                a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Thanks for the heads-up
+    //script.
+    //    $(document).ready(function () {
+    //        if (!localStorage || !localStorage.gitter2) {
+    //            $('#announcementModal').modal('show');
+    //            localStorage.gitter2 = "true";
+    //        }
+    //    });
