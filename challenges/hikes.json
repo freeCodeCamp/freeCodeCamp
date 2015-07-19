@@ -552,7 +552,7 @@
       ],
       "challengeType": 6,
       "tests": [
-        ["The console serves only small, unnecessary purposes.", "The console's main purpose is to debug, which is a vital step in creating code."],
+        ["The console serves only small, unnecessary purposes.", false, "The console's main purpose is to debug, which is a vital step in creating code."],
         ["You can console strings (sets of words), numbers, and booleans (true/false statements)", true]
       ],
       "nameCn": "",
