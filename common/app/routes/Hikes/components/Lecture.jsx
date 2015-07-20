@@ -46,7 +46,7 @@ export default React.createClass({
           <Panel className={ 'text-center' } title={ videoTitle }>
             <Vimeo
               onError={ this.handleError }
-              onFinish= { ::this.handleFinish }
+              onFinish= { this.handleFinish }
               videoId={ id } />
           </Panel>
         </Row>
@@ -59,7 +59,7 @@ export default React.createClass({
               <Button
                 block={ true }
                 bsSize='large'
-                onClick={ ::this.handleFinish }>
+                onClick={ this.handleFinish }>
                 Take me to the Questions
               </Button>
             </Panel>
