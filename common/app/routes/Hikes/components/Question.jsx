@@ -26,15 +26,17 @@ export default React.createClass({
     params: PropTypes.object
   },
 
-  onAnswer(answer, userAnswer, info, e) {
-    if (e && e.preventDefault) {
-      e.preventDefault();
-    }
-    if (answer === userAnswer) {
-      debug('correct answer!');
-      this.setState({ showInfo: true });
-    }
-    return debug('incorrect');
+  onAnswer(answer, userAnswer) {
+    return (e) => {
+      if (e && e.preventDefault) {
+        e.preventDefault();
+      }
+      if (answer === userAnswer) {
+        debug('correct answer!');
+        this.setState({ showInfo: true });
+      }
+      return debug('incorrect');
+    };
   },
 
   onCorrectAnswer() {
@@ -77,7 +79,7 @@ export default React.createClass({
     return (
       <Modal
         backdrop={ false }
-        onHide={ ::this.onCorrectAnswer }
+        onHide={ this.onCorrectAnswer }
         show={ showInfo }>
         <Modal.Body>
           <h3>
@@ -88,7 +90,7 @@ export default React.createClass({
           <Button
             block={ true }
             bsSize='large'
-            onClick={ ::this.onCorrectAnswer }>
+            onClick={ this.onCorrectAnswer }>
             To next questions
           </Button>
         </Modal.Footer>
@@ -116,13 +118,13 @@ export default React.createClass({
             <Button
               bsSize='large'
               className='pull-left'
-              onClick={ this.onAnswer.bind(this, answer, false, info) }>
+              onClick={ this.onAnswer(answer, false, info) }>
               false
             </Button>
             <Button
               bsSize='large'
               className='pull-right'
-              onClick={ this.onAnswer.bind(this, answer, true, info) }>
+              onClick={ this.onAnswer(answer, true, info) }>
               true
             </Button>
           </Panel>
