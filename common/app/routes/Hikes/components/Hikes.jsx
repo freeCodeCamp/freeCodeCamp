@@ -43,9 +43,10 @@ export default contain(
 
     render() {
       const { hikes, children, currentHike } = this.props;
+      const preventOverflow = { overflow: 'hidden' };
       return (
         <div>
-          <Row>
+          <Row style={ preventOverflow }>
             { this.renderChild(children, hikes, currentHike) ||
               this.renderMap(hikes) }
           </Row>

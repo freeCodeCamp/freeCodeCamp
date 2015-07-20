@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Spring } from 'react-motion';
 import { Navigation, TransitionHook } from 'react-router';
 import debugFactory from 'debug';
 import {
@@ -12,11 +13,8 @@ import {
 const debug = debugFactory('freecc:hikes');
 
 export default React.createClass({
-  getInitialState: () => ({
-    showInfo: false,
-    shake: false
-  }),
   displayName: 'Question',
+
   mixins: [
     Navigation,
     TransitionHook
@@ -27,6 +25,50 @@ export default React.createClass({
     dashedName: PropTypes.string,
     hikes: PropTypes.array,
     params: PropTypes.object
+  },
+
+  getInitialState: () => ({
+    mouse: [0, 0],
+    delta: [0, 0],
+    isPressed: false,
+    showInfo: false,
+    shake: false
+  }),
+
+  getTweenValues() {
+    const { mouse: [x, y] } = this.state;
+    return {
+      val: { x, y },
+      config: [120, 17]
+    };
+  },
+
+  handleMouseDown({ pageX, pageY }) {
+    const { mouse: [pressX, pressY] } = this.state;
+    const dx = pageX - pressX;
+    const dy = pageY - pressY;
+    this.setState({
+      isPressed: true,
+      delta: [dx, dy],
+      mouse: [pageX - dx, pageY - dy]
+    });
+  },
+
+  handleMouseUp() {
+    this.setState({
+      isPressed: false,
+      mouse: [0, 0],
+      delta: [0, 0]
+    });
+  },
+
+  handleMouseMove({ pageX, pageY }) {
+    const { isPressed, delta: [dx, dy] } = this.state;
+    if (isPressed) {
+      this.setState({
+        mouse: [pageX - dx, pageY - dy]
+      });
+    }
   },
 
   hideInfo() {
@@ -120,6 +162,25 @@ export default React.createClass({
     );
   },
 
+  renderQuestion(question, shake) {
+    return ({ val: { x } }) => {
+      const style = {
+        WebkitTransform: `translate3d(${ x }px, 0, 0)`,
+        transform: `translate3d(${ x }px, 0, 0)`
+      };
+      return (
+        <Panel
+          className={ shake ? 'animated shake' : '' }
+          onMouseDown={ this.handleMouseDown }
+          onMouseMove={this.handleMouseMove}
+          onMouseUp={ this.handleMouseUp }
+          style={ style }>
+          <p>{ question }</p>
+        </Panel>
+      );
+    };
+  },
+
   render() {
     const { showInfo, shake } = this.state;
     const { currentHike: { tests = [] } } = this.props;
@@ -129,12 +190,13 @@ export default React.createClass({
 
     return (
       <Col
+        onMouseUp={ this.handleMouseUp }
         xs={ 8 }
         xsOffset={ 2 }>
         <Row>
-          <Panel className={ shake ? 'animated shake' : '' }>
-            <p>{ question }</p>
-          </Panel>
+          <Spring endValue={ this.getTweenValues }>
+            { this.renderQuestion(question, shake) }
+          </Spring>
           { this.renderInfo(showInfo, info) }
           <Panel>
             <Button

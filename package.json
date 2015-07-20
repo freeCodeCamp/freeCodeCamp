@@ -90,6 +90,7 @@
     "ramda": "~0.10.0",
     "react": "^0.13.3",
     "react-bootstrap": "^0.23.7",
+    "react-motion": "~0.1.0",
     "react-router": "https://github.com/BerkeleyTrue/react-router#freecodecamp",
     "react-vimeo": "^0.0.3",
     "request": "~2.53.0",
