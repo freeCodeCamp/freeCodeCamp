@@ -12,7 +12,10 @@ import {
 const debug = debugFactory('freecc:hikes');
 
 export default React.createClass({
-  getInitialState: () => ({ showInfo: false }),
+  getInitialState: () => ({
+    showInfo: false,
+    shake: false
+  }),
   displayName: 'Question',
   mixins: [
     Navigation,
@@ -26,6 +29,10 @@ export default React.createClass({
     params: PropTypes.object
   },
 
+  hideInfo() {
+    this.setState({ showInfo: false });
+  },
+
   onAnswer(answer, userAnswer) {
     return (e) => {
       if (e && e.preventDefault) {
@@ -33,9 +40,22 @@ export default React.createClass({
       }
       if (answer === userAnswer) {
         debug('correct answer!');
-        this.setState({ showInfo: true });
+        return this.onCorrectAnswer();
       }
-      return debug('incorrect');
+      debug('incorrect');
+      this.setState({
+        showInfo: true,
+        shake: true
+      });
+
+      if (this.disposeTimeout) {
+        clearTimeout(this.disposeTimeout);
+        this.disposeTimeout = null;
+      }
+      this.disposeTimeout = setTimeout(
+        () => this.setState({ shake: false }),
+        500
+      );
     };
   },
 
@@ -44,31 +64,30 @@ export default React.createClass({
     const { dashedName, number } = this.props.params;
     const { difficulty, tests } = currentHike;
     const nextQuestionIndex = +number;
-    this.setState({ showInfo: false }, () => {
-      if (tests[nextQuestionIndex]) {
-        return this.transitionTo(
-          `/hikes/${ dashedName }/questions/${ nextQuestionIndex + 1 }`
-        );
-      }
-      // next questions does not exist;
-      debug('finding next hike');
-      const nextHike = [].slice.call(hikes)
-        // hikes is in oder of difficulty, lets get reverse order
-        .reverse()
-        // now lets find the hike with the difficulty right above this one
-        .reduce((lowerHike, hike) => {
-          if (hike.difficulty > difficulty) {
-            return hike;
-          }
-          return lowerHike;
-        }, null);
 
-      if (nextHike) {
-        return this.transitionTo(`/hikes/${ nextHike.dashedName }`);
-      }
-      debug('next Hike was not found, currentHike %s', currentHike.dashedName);
-      this.transitionTo('/hikes');
-    });
+    if (tests[nextQuestionIndex]) {
+      return this.transitionTo(
+        `/hikes/${ dashedName }/questions/${ nextQuestionIndex + 1 }`
+      );
+    }
+    // next questions does not exist;
+    debug('finding next hike');
+    const nextHike = [].slice.call(hikes)
+      // hikes is in oder of difficulty, lets get reverse order
+      .reverse()
+      // now lets find the hike with the difficulty right above this one
+      .reduce((lowerHike, hike) => {
+        if (hike.difficulty > difficulty) {
+          return hike;
+        }
+        return lowerHike;
+      }, null);
+
+    if (nextHike) {
+      return this.transitionTo(`/hikes/${ nextHike.dashedName }`);
+    }
+    debug('next Hike was not found, currentHike %s', currentHike.dashedName);
+    this.transitionTo('/hikes');
   },
 
   routerWillLeave(/* nextState, router, cb[optional] */) {
@@ -76,22 +95,25 @@ export default React.createClass({
   },
 
   renderInfo(showInfo, info) {
+    if (!info) {
+      return null;
+    }
     return (
       <Modal
-        backdrop={ false }
-        onHide={ this.onCorrectAnswer }
+        backdrop={ true }
+        onHide={ this.hideInfo }
         show={ showInfo }>
         <Modal.Body>
           <h3>
-            { info || 'correct!' }
+            { info }
           </h3>
         </Modal.Body>
         <Modal.Footer>
           <Button
             block={ true }
             bsSize='large'
-            onClick={ this.onCorrectAnswer }>
-            To next questions
+            onClick={ this.hideInfo }>
+            hide
           </Button>
         </Modal.Footer>
       </Modal>
@@ -99,7 +121,7 @@ export default React.createClass({
   },
 
   render() {
-    const { showInfo } = this.state;
+    const { showInfo, shake } = this.state;
     const { currentHike: { tests = [] } } = this.props;
     const { number = '1' } = this.props.params;
 
@@ -110,7 +132,7 @@ export default React.createClass({
         xs={ 8 }
         xsOffset={ 2 }>
         <Row>
-          <Panel>
+          <Panel className={ shake ? 'animated shake' : '' }>
             <p>{ question }</p>
           </Panel>
           { this.renderInfo(showInfo, info) }
