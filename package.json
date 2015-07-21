@@ -98,7 +98,7 @@
     "sanitize-html": "~1.6.1",
     "source-map-support": "^0.3.2",
     "thundercats": "^2.0.0",
-    "thundercats-react": "0.0.5",
+    "thundercats-react": "0.0.6",
     "twit": "~1.1.20",
     "uglify-js": "~2.4.15",
     "validator": "~3.22.1",
