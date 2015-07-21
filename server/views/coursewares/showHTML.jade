@@ -29,7 +29,7 @@ block content
                             .bonfire-instructions
                                 for sentence in details
                                     p.wrappable.negative-10!= sentence
-                                .negative-bottom-margin-30
+                                .negative-30-bottom
                 if (user)
                     label.btn.btn-primary.btn-block.negative-10#next-courseware-button
                         .ion-checkmark-circled
@@ -79,7 +79,7 @@ block content
                         a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                     .modal-body
                         .text-center
-                            .animated.zoomInDown.delay-half
+                            .animated.zoomInDown
                                 span.completion-icon.ion-checkmark-circled.text-primary
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
     include ../partials/challenge-modals

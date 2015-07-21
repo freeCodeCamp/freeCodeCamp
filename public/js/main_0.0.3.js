@@ -250,11 +250,6 @@ $(document).ready(function() {
     }
   });
 
-  $('.next-challenge-button').on('click', function() {
-    l = location.pathname.split('/');
-    window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
-  });
-
   // Bonfire instructions functions
   $('#more-info').on('click', function() {
     ga('send', 'event',  'Challenge', 'more-info', challengeName);

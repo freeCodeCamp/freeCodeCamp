@@ -64,7 +64,7 @@ block content
                             .bonfire-instructions
                                 for sentence in details
                                     p.wrappable.negative-10!= sentence
-                                .negative-bottom-margin-30
+                                .negative-30-bottom
                                     #MDN-links
                                         p.negative-10 Here are some helpful links:
                                         for link, index in MDNlinks
@@ -130,7 +130,7 @@ block content
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
                 .modal-body
                     .text-center
-                        .animated.zoomInDown.delay-half
+                        .animated.zoomInDown
                             span.completion-icon.ion-checkmark-circled.text-primary
                     if (user)
 
