@@ -1162,5 +1162,83 @@
       "  <p class='large-p'>All campers who have already completed these challenges are retroactively eligible for the certificate!</p>",
       "</div>"
     ]
+  },
+  {
+    "id": "bd7158d9c436eddfadb5bd3c",
+    "name": "What is the new Free Code Camp Mobile Experience?",
+    "dashedName": "what-is-the-new-free-code-camp-mobile-experience",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2>We're building an on-the-go version of Free Code Camp.</h2>",
+      "  <img src='http://www.howardforums.com/attachment.php?attachmentid=97254&d=1378730537&stc=1' class='img-responsive img-center'>",
+      "  <p class='large-p'>It will be video-driven, with multiple-choice questions.</p>",
+      "  <img class='img-center img-responsive' src='https://www.edx.org/sites/default/files/upload/philip-guo-edx-first-blog-figure.png'>",
+      "  <p class='large-p'>These videos will be short - generally less than 6 minutes long.</p>",
+      "  <img src='http://a3.mzstatic.com/us/r1000/095/Purple/3f/58/42/mzl.xypmpeal.320x480-75.jpg' class='img-center img-responsive'>",
+      "  <p class='large-p'>We are considering focusing the mobile experience on code interview questions. Answering these common questions is a very different skill from coding itself.",
+      "  <p class='large-p'>We're still in the process of designing this. We'd love to hear your input.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "id": "bd7158d9c436eddfadb5bd2b",
+    "name": "What kind of questions can I ask to stimulate my Campsite?",
+    "dashedName": "what-kind-of-questions-can-i-ask-to-stimulate-my-campsite",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2>A great way to stimulate your Campsite is by asking questions.</h2>",
+      "  <p class='large-p'>You can ask questions like</p>",
+      "  <ol>",
+      "    <li class='large-li'>What is everyone working on this week?</li>",
+      "    <li class='large-li'>How did you approach a specific waypoint, bonfire, zipline, basejump?</li>",
+      "    <li class='large-li'>Would anyone be interested in meeting up to pair program together this week?</li>",
+      "    <li class='large-li'>Did everyone hear about \"insert recent announcement\"?</li>",
+      "    <li class='large-li'>What are some parts of free code camp you'd like to give additional focus to?</li>",
+      "  </ol>",
+      "  <p class='large-p'>You can also provide useful links for other members to relevant resources that you find helpful.</p>",
+      "</div>"
+    ]
+  },
+  {
+    "id": "bd7158d9c436eddfadb5bd4b",
+    "name": "How do I know who is in charge of my Campsite on Facebook?",
+    "dashedName": "how-to-know-who-is-in-charge-of-your-campsite",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2></h2>",
+      "  <p class='large-p'>Each Campsite has members that are designated as Admins who can approve new members and also designate other Admins for the group. The steps below will show you how to find out who is an Admin for your Campsite.</p>",
+      "  <ol>",
+      "    <li class='large-li'>First, click the Members tab below the cover photo. Then the click on the dropdown box that says \"all members\".</li>",
+      "<img src='https://evernote.com/shard/s586/sh/2cf8c6fc-9a0a-4c2e-84fd-f2eb511caa18/25e53838b383f95e03a320ecf0659868' class='img-center img-responsive'>",
+      "    <li class='large-li'>Next, use the drop down box to select\"Admins\"</li>",
+      "<img src='https://evernote.com/shard/s586/sh/48390fd7-07cf-4101-8fae-2ecf31ec483b/86ce099032435ec46e96f4329b5f04c5' class='img-center img-responsive'>",
+      "    <li class='large-li'>You should now be able to see who is designated as an Admin for your Campsite.</li>",
+      "<img src='https://evernote.com/shard/s586/sh/ff733209-2172-43a7-b3ce-151393f40ee6/158578dd7b95cbad12111a5c65abf248' class='img-center img-responsive'>",
+      "  </ol>",
+      "</div>"
+    ]
+  },
+  {
+    "id": "bd7158d9c436eddfadb5bd9b",
+    "name": "5 Steps to organizing a successful Campsite event.",
+    "dashedName": "5-steps-to-organizing-a-successful-campsite-event",
+    "description": [
+      "<div class=\"col-xs-12 col-sm-10 col-sm-offset-1\">",
+      "  <h2>Meet-ups and in-person programming sessions are fun! This Field Guide will help you with organizing a successful Campsite event.</h2>",
+      "  <p class='large-p'>With a little planning and communication having a successful Campsite event can be easy! Here are some steps to help you in doing this.</p>",
+      "  <ol>",
+      "    <li class='large-li'>Determine the topic for the event (code and coffee, hack session, invite campers to another organization's event).</li>",
+      "    <li class='large-li'>Set a date and time.</li>",
+      "    <li class='large-li'>Find a suitable location. Campsite events should always take place in a public space (library, cafe, hackerspace).</li>",
+      "    <li class='large-li'>Create an event on your Campsite's Facebook page for the event, and link to it on your Campsite Facebook Group page.</li>",
+      "    <li class='large-li'>Follow-up with reminder posts for the event 1 week prior to the event and then again the day before the event.</li>",
+      "  </ol>",
+      "  <p class='large-p'>On the day of the event arrive early, get setup, greet members, and kick the event off. Don't forget to thank everyone afterwards and extend invites to future events.</p>",
+      "  <p class='large-p'>A good practice is to follow-up with everyone that attended and find out what they thought. What did they expect? What did they like? What would they have done differently? What would they like to see for future events?</p>",
+      "  <p class='large-p'>Try to take some pictures and post them on your Campsite's Facebook group page.</p>",
+      "</div>"
+    ]
   }
-]
+  ]
+
+
