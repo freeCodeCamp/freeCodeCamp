@@ -3,6 +3,7 @@ import React from 'react';
 import { Router } from 'react-router';
 import { history } from 'react-router/lib/BrowserHistory';
 import debugFactory from 'debug';
+import { hydrate } from 'thundercats';
 import { Render } from 'thundercats-react';
 
 import { app$ } from '../common/app';
@@ -18,8 +19,7 @@ app$(history)
   .flatMap(
     ({ AppCat }) => {
       const appCat = AppCat();
-      return appCat
-        .hydrate(catState)
+      return hydrate(appCat, catState)
         .map(() => appCat);
     },
     ({ initialState }, appCat) => ({ initialState, appCat })
