@@ -30,6 +30,7 @@ export default React.createClass({
 
   getInitialState: () => ({
     mouse: [0, 0],
+    correct: false,
     delta: [0, 0],
     isPressed: false,
     showInfo: false,
@@ -56,6 +57,13 @@ export default React.createClass({
   },
 
   handleMouseUp() {
+    const { correct } = this.state;
+    if (correct) {
+      return this.setState({
+        isPressed: false,
+        delta: [0, 0]
+      });
+    }
     this.setState({
       isPressed: false,
       mouse: [0, 0],
@@ -90,20 +98,30 @@ export default React.createClass({
       if (e && e.preventDefault) {
         e.preventDefault();
       }
+
+      if (this.disposeTimeout) {
+        clearTimeout(this.disposeTimeout);
+        this.disposeTimeout = null;
+      }
+
       if (answer === userAnswer) {
         debug('correct answer!');
-        return this.onCorrectAnswer();
+        this.setState({
+          correct: true,
+          mouse: [ userAnswer ? 1000 : -1000, 0]
+        });
+        this.disposeTimeout = setTimeout(() => {
+          this.onCorrectAnswer();
+        }, 1000);
+        return;
       }
+
       debug('incorrect');
       this.setState({
         showInfo: true,
         shake: true
       });
 
-      if (this.disposeTimeout) {
-        clearTimeout(this.disposeTimeout);
-        this.disposeTimeout = null;
-      }
       this.disposeTimeout = setTimeout(
         () => this.setState({ shake: false }),
         500
@@ -145,7 +163,9 @@ export default React.createClass({
   routerWillLeave(nextState, router, cb) {
     // TODO(berks): do animated transitions here stuff here
     this.setState({
-      showInfo: false
+      showInfo: false,
+      correct: false,
+      mouse: [0, 0]
     }, cb);
   },
 
