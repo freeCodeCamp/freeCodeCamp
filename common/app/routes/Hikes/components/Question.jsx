@@ -11,6 +11,8 @@ import {
 } from 'react-bootstrap';
 
 const debug = debugFactory('freecc:hikes');
+const ANSWER_THRESHOLD = 250;
+
 
 export default React.createClass({
   displayName: 'Question',
@@ -62,13 +64,22 @@ export default React.createClass({
     });
   },
 
-  handleMouseMove({ pageX, pageY }) {
-    const { isPressed, delta: [dx, dy] } = this.state;
-    if (isPressed) {
-      this.setState({
-        mouse: [pageX - dx, pageY - dy]
-      });
-    }
+  handleMouseMove(answer) {
+    return ({ pageX, pageY }) => {
+      const { isPressed, delta: [dx, dy] } = this.state;
+      if (isPressed) {
+        const mouse = [pageX - dx, pageY - dy];
+        if (mouse[0] >= ANSWER_THRESHOLD) {
+          this.handleMouseUp();
+          return this.onAnswer(answer, true)();
+        }
+        if (mouse[0] <= -ANSWER_THRESHOLD) {
+          this.handleMouseUp();
+          return this.onAnswer(answer, false)();
+        }
+        this.setState({ mouse });
+      }
+    };
   },
 
   hideInfo() {
@@ -162,7 +173,7 @@ export default React.createClass({
     );
   },
 
-  renderQuestion(question, shake) {
+  renderQuestion(question, answer, shake) {
     return ({ val: { x } }) => {
       const style = {
         WebkitTransform: `translate3d(${ x }px, 0, 0)`,
@@ -170,10 +181,10 @@ export default React.createClass({
       };
       return (
         <Panel
-          className={ shake ? 'animated shake' : '' }
+          className={ shake ? 'animated swing shake' : '' }
           onMouseDown={ this.handleMouseDown }
           onMouseLeave={ this.handleMouseUp }
-          onMouseMove={ this.handleMouseMove }
+          onMouseMove={ this.handleMouseMove(answer) }
           onMouseUp={ this.handleMouseUp }
           style={ style }>
           <p>{ question }</p>
@@ -196,7 +207,7 @@ export default React.createClass({
         xsOffset={ 2 }>
         <Row>
           <Spring endValue={ this.getTweenValues }>
-            { this.renderQuestion(question, shake) }
+            { this.renderQuestion(question, answer, shake) }
           </Spring>
           { this.renderInfo(showInfo, info) }
           <Panel>
