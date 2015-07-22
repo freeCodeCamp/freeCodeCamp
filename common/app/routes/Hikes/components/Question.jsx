@@ -41,7 +41,7 @@ export default React.createClass({
     const { mouse: [x, y] } = this.state;
     return {
       val: { x, y },
-      config: [120, 17]
+      config: [120, 10]
     };
   },
 
