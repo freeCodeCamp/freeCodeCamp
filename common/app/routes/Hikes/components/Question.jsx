@@ -172,7 +172,8 @@ export default React.createClass({
         <Panel
           className={ shake ? 'animated shake' : '' }
           onMouseDown={ this.handleMouseDown }
-          onMouseMove={this.handleMouseMove}
+          onMouseLeave={ this.handleMouseUp }
+          onMouseMove={ this.handleMouseMove }
           onMouseUp={ this.handleMouseUp }
           style={ style }>
           <p>{ question }</p>
