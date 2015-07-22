@@ -206,15 +206,17 @@ export default React.createClass({
     );
   },
 
-  renderQuestion(question, answer, shake) {
+  renderQuestion(number, question, answer, shake) {
     return ({ val: { x } }) => {
       const style = {
         WebkitTransform: `translate3d(${ x }px, 0, 0)`,
         transform: `translate3d(${ x }px, 0, 0)`
       };
+      const title = <h4>Question { number }</h4>;
       return (
         <Panel
           className={ shake ? 'animated swing shake' : '' }
+          header={ title }
           onMouseDown={ this.handleMouseDown }
           onMouseLeave={ this.handleMouseUp }
           onMouseMove={ this.handleMouseMove(answer) }
@@ -243,7 +245,7 @@ export default React.createClass({
         xsOffset={ 2 }>
         <Row>
           <Spring endValue={ this.getTweenValues }>
-            { this.renderQuestion(question, answer, shake) }
+            { this.renderQuestion(number, question, answer, shake) }
           </Spring>
           { this.renderInfo(showInfo, info) }
           <Panel>
