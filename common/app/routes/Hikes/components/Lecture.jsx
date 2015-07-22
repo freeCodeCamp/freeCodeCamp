@@ -8,7 +8,7 @@ const debug = debugFactory('freecc:hikes');
 
 export default React.createClass({
   displayName: 'Lecture',
-  mixin: [Navigation],
+  mixins: [Navigation],
 
   propTypes: {
     currentHike: PropTypes.object,
