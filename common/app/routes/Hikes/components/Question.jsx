@@ -11,7 +11,7 @@ import {
 } from 'react-bootstrap';
 
 const debug = debugFactory('freecc:hikes');
-const ANSWER_THRESHOLD = 250;
+const ANSWER_THRESHOLD = 200;
 
 export default React.createClass({
   displayName: 'Question',
@@ -45,7 +45,10 @@ export default React.createClass({
     };
   },
 
-  handleMouseDown({ pageX, pageY }) {
+  handleMouseDown({ pageX, pageY, touches }) {
+    if (touches) {
+      ({ pageX, pageY } = touches[0]);
+    }
     const { mouse: [pressX, pressY] } = this.state;
     const dx = pageX - pressX;
     const dy = pageY - pressY;
@@ -72,7 +75,15 @@ export default React.createClass({
   },
 
   handleMouseMove(answer) {
-    return ({ pageX, pageY }) => {
+    return (e) => {
+      let { pageX, pageY, touches } = e;
+
+      if (touches) {
+        e.preventDefault();
+        // these reassins the values of pageX, pageY from touches
+        ({ pageX, pageY } = touches[0]);
+      }
+
       const { isPressed, delta: [dx, dy] } = this.state;
       if (isPressed) {
         const mouse = [pageX - dx, pageY - dy];
@@ -208,6 +219,9 @@ export default React.createClass({
           onMouseLeave={ this.handleMouseUp }
           onMouseMove={ this.handleMouseMove(answer) }
           onMouseUp={ this.handleMouseUp }
+          onTouchEnd={ this.handleMouseUp }
+          onTouchMove={ this.handleMouseMove(answer) }
+          onTouchStart={ this.handleMouseDown }
           style={ style }>
           <p>{ question }</p>
         </Panel>
