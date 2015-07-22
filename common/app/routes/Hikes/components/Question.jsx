@@ -13,7 +13,6 @@ import {
 const debug = debugFactory('freecc:hikes');
 const ANSWER_THRESHOLD = 250;
 
-
 export default React.createClass({
   displayName: 'Question',
 
@@ -143,8 +142,11 @@ export default React.createClass({
     this.transitionTo('/hikes');
   },
 
-  routerWillLeave(/* nextState, router, cb[optional] */) {
+  routerWillLeave(nextState, router, cb) {
     // TODO(berks): do animated transitions here stuff here
+    this.setState({
+      showInfo: false
+    }, cb);
   },
 
   renderInfo(showInfo, info) {
