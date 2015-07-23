@@ -9,6 +9,7 @@ import {
   Panel,
   Row
 } from 'react-bootstrap';
+import { ajax$ } from '../../../../utils/ajax$.js';
 
 const debug = debugFactory('freecc:hikes');
 const ANSWER_THRESHOLD = 200;
@@ -143,32 +144,41 @@ export default React.createClass({
   onCorrectAnswer() {
     const { hikes, currentHike } = this.props;
     const { dashedName, number } = this.props.params;
-    const { difficulty, tests } = currentHike;
+    const { id, name, difficulty, tests } = currentHike;
     const nextQuestionIndex = +number;
+    const ajaxOptions = {
+      url: '/completed-challenge',
+      method: 'POST',
+      body: { id, name }
+    };
+    ajax$(ajaxOptions).subscribeOnCompleted(() => {
+      if (tests[nextQuestionIndex]) {
+        return this.transitionTo(
+          `/hikes/${ dashedName }/questions/${ nextQuestionIndex + 1 }`
+        );
+      }
+      // next questions does not exist;
+      debug('finding next hike');
+      const nextHike = [].slice.call(hikes)
+        // hikes is in oder of difficulty, lets get reverse order
+        .reverse()
+        // now lets find the hike with the difficulty right above this one
+        .reduce((lowerHike, hike) => {
+          if (hike.difficulty > difficulty) {
+            return hike;
+          }
+          return lowerHike;
+        }, null);
 
-    if (tests[nextQuestionIndex]) {
-      return this.transitionTo(
-        `/hikes/${ dashedName }/questions/${ nextQuestionIndex + 1 }`
+      if (nextHike) {
+        return this.transitionTo(`/hikes/${ nextHike.dashedName }`);
+      }
+      debug(
+        'next Hike was not found, currentHike %s',
+        currentHike.dashedName
       );
-    }
-    // next questions does not exist;
-    debug('finding next hike');
-    const nextHike = [].slice.call(hikes)
-      // hikes is in oder of difficulty, lets get reverse order
-      .reverse()
-      // now lets find the hike with the difficulty right above this one
-      .reduce((lowerHike, hike) => {
-        if (hike.difficulty > difficulty) {
-          return hike;
-        }
-        return lowerHike;
-      }, null);
-
-    if (nextHike) {
-      return this.transitionTo(`/hikes/${ nextHike.dashedName }`);
-    }
-    debug('next Hike was not found, currentHike %s', currentHike.dashedName);
-    this.transitionTo('/hikes');
+      this.transitionTo('/hikes');
+    });
   },
 
   routerWillLeave(nextState, router, cb) {

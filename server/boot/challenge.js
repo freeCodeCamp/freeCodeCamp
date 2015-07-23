@@ -361,16 +361,18 @@ module.exports = function(app) {
 
   function completedChallenge(req, res, next) {
 
-    var completedDate = Math.round(+new Date());
-    var challengeId = req.body.challengeInfo.challengeId;
+    const completedDate = Math.round(+new Date());
+    const { id, name } = req.body;
+    const { challengeId, challengeName } = req.body.challengeInfo || {};
 
+    debug('saving challenge progress');
     updateUserProgress(
       req.user,
-      challengeId,
+      id || challengeId,
       {
-        id: challengeId,
+        id: id || challengeId,
         completedDate: completedDate,
-        name: req.body.challengeInfo.challengeName,
+        name: name || challengeName,
         solution: null,
         githubLink: null,
         verified: true
