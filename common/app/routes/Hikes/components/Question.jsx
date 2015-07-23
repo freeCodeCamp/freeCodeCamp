@@ -9,7 +9,8 @@ import {
   Panel,
   Row
 } from 'react-bootstrap';
-import { ajax$ } from '../../../../utils/ajax$.js';
+
+import { postJSON$ } from '../../../../utils/ajax-stream.js';
 
 const debug = debugFactory('freecc:hikes');
 const ANSWER_THRESHOLD = 200;
@@ -146,12 +147,8 @@ export default React.createClass({
     const { dashedName, number } = this.props.params;
     const { id, name, difficulty, tests } = currentHike;
     const nextQuestionIndex = +number;
-    const ajaxOptions = {
-      url: '/completed-challenge',
-      method: 'POST',
-      body: { id, name }
-    };
-    ajax$(ajaxOptions).subscribeOnCompleted(() => {
+
+    postJSON$('/completed-challenge', { id, name }).subscribeOnCompleted(() => {
       if (tests[nextQuestionIndex]) {
         return this.transitionTo(
           `/hikes/${ dashedName }/questions/${ nextQuestionIndex + 1 }`
