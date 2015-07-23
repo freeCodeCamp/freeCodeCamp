@@ -3,11 +3,11 @@
   "order": 0.005,
   "challenges": [
     {
-      "_id":"bd7123c9c441eddfaeb4bdef",
-      "name":"Welcome To Comments",
-      "dashedName":"waypoint-welcome-to-comments",
-      "difficulty":"9.98",
-      "description":[
+      "id": "bd7123c9c441eddfaeb4bdef",
+      "name": "Welcome To Comments",
+      "dashedName": "waypoint-welcome-to-comments",
+      "difficulty": "9.98",
+      "description": [
         "",
         "A comment is a very useful line of code that is not actually ran by the machine executing it. With this property comments are the perfect way of creating notes to yourself or anyone else who reads your code describing what the code does",
         "It's an extremely important part in writing good, efficient and maintainable code and a requirement by most employers",
@@ -18,18 +18,18 @@
         "These comment out everything in between <code> /* </code> and <code> */ </code>",
         "Try creating one of each now."
       ],
-      "tests":[
+      "tests": [
         "assert(editor.getValue().match(/(\\/\\*)...../g), 'Make sure you have at least one \/\\* \\*\/ style comment that has at least five letters in it');",
         "assert(editor.getValue().match(/(\\*\\/)/g), 'Make sure that you  close the coment with a \\*\/');",
         "assert(editor.getValue().match(/(\\/\\/)...../g), 'Make sure that there is at least one \\/\\/ style comment with at least five letters in it');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
 
       ],
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c441eddfaeb5bdef",
+      "id": "bd7123c9c441eddfaeb5bdef",
       "name": "Unconditionally Loving Booleans",
       "dashedName": "waypoint-unconditionally-loving-booleans",
       "difficulty": "9.98001",
@@ -55,7 +55,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c443eddfaeb5bdef",
+      "id": "bd7123c9c443eddfaeb5bdef",
       "name": "Start Using Variables",
       "dashedName": "waypoint-start-using-variables",
       "difficulty": "9.9801",
@@ -83,7 +83,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c444eddfaeb5bdef",
+      "id": "bd7123c9c444eddfaeb5bdef",
       "name": "Define Your First and Last Name",
       "dashedName": "waypoint-define-your-first-and-last-name",
       "difficulty": "9.9802",
@@ -111,7 +111,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c448eddfaeb5bdef",
+      "id": "bd7123c9c448eddfaeb5bdef",
       "name": "Check the Length Property of a String Variable",
       "dashedName": "waypoint-check-the-length-property-of-a-string-variable",
       "difficulty": "9.9809",
@@ -142,7 +142,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c549eddfaeb5bdef",
+      "id": "bd7123c9c549eddfaeb5bdef",
       "name": "Use Bracket Notation to Find the First Character in a String",
       "dashedName": "waypoint-use-bracket-notation-to-find-the-first-character-in-a-string",
       "difficulty": "9.9810",
@@ -174,7 +174,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c450eddfaeb5bdef",
+      "id": "bd7123c9c450eddfaeb5bdef",
       "name": "Use Bracket Notation to Find the Nth Character in a String",
       "dashedName": "waypoint-use-bracket-notation-to-find-the-nth-character-in-a-string",
       "difficulty": "9.9811",
@@ -205,7 +205,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c451eddfaeb5bdef",
+      "id": "bd7123c9c451eddfaeb5bdef",
       "name": "Use Bracket Notation to Find the Last Character in a String",
       "dashedName": "waypoint-use-bracket-notation-to-find-the-last-character-in-a-string",
       "difficulty": "9.9812",
@@ -235,7 +235,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c452eddfaeb5bdef",
+      "id": "bd7123c9c452eddfaeb5bdef",
       "name": "Use Bracket Notation to Find the Nth to Last Character in a String",
       "dashedName": "waypoint-use-bracket-notation-to-find-the-nth-to-last-character-in-a-string",
       "difficulty": "9.9813",
@@ -265,7 +265,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bh1111c1c11feddfaeb3bdef",
+      "id": "bh1111c1c11feddfaeb3bdef",
       "name": "Magical Maths Addition",
       "dashedName": "waypoint-magical-maths-addition",
       "difficulty": "9.98141",
@@ -289,7 +289,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bh1111c1c11feddfaeb4bdef",
+      "id": "bh1111c1c11feddfaeb4bdef",
       "name": "Magical Maths Subtraction",
       "dashedName": "waypoint-magical-maths-subtraction",
       "difficulty": "9.98142",
@@ -313,7 +313,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bh1111c1c11feddfaeb5bdef",
+      "id": "bh1111c1c11feddfaeb5bdef",
       "name": "Magical Maths Multiplication",
       "dashedName": "waypoint-magical-maths-multiplication",
       "difficulty": "9.98143",
@@ -337,7 +337,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bh1111c1c11feddfaeb6bdef",
+      "id": "bh1111c1c11feddfaeb6bdef",
       "name": "Magical Maths Division",
       "dashedName": "waypoint-magical-maths-division",
       "difficulty": "9.9814",
@@ -361,7 +361,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bh1111c1c11feddfaeb4bdef",
+      "id": "bh1111c1c11feddfaeb4bdef",
       "name": "Creating Decimals",
       "dashedName": "waypoint-creating-decimals",
       "difficulty": "9.9815",
@@ -386,7 +386,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7993c9c69feddfaeb7bdef",
+      "id": "bd7993c9c69feddfaeb7bdef",
       "name": "Working With Decimals",
       "dashedName": "waypoint-working-with-decimals",
       "difficulty": "9.98151",
@@ -411,7 +411,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7993c9c69feddfaeb8bdef",
+      "id": "bd7993c9c69feddfaeb8bdef",
       "name": "An Array Of new Information",
       "dashedName": "waypoint-an-array-of-new-information",
       "difficulty": "9.9816",
@@ -439,19 +439,19 @@
       "challengeType": 1
     },
     {
-      "_id":"bh1111c1c11feddfaeb7bdef",
-      "name":"Nesting Arrays",
-      "dashedName":"waypoint-nesting-arrays",
-      "difficulty":"9.98161",
-      "description":[
+      "id": "bh1111c1c11feddfaeb7bdef",
+      "name": "Nesting Arrays",
+      "dashedName": "waypoint-nesting-arrays",
+      "difficulty": "9.98161",
+      "description": [
         "",
         "We are also able to create arrays within arrays. This technique is called <code>nesting</code>.",
         "Let's now go create a nested array called <code>myArray</code>"
       ],
-      "tests":[
+      "tests": [
         "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray) === 'object'){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var myArray = [];",
         "",
         "",
@@ -460,11 +460,11 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9997c9c79feddfaeb9bdef",
-      "name":"Accessing data with Indexes",
-      "dashedName":"waypoint-accessing-data-with-indexes",
-      "difficulty":"9.9817",
-      "description":[
+      "id": "bg9997c9c79feddfaeb9bdef",
+      "name": "Accessing data with Indexes",
+      "dashedName": "waypoint-accessing-data-with-indexes",
+      "difficulty": "9.9817",
+      "description": [
         "",
         "Once an array has been created we can access the data we have stored in them using indexes",
         "Indexes are written in the same way as bracket notation that we covered earlier",
@@ -475,10 +475,10 @@
         "</code>",
         "Create a var called <code>data</code> and set it to equal the first value of <code>myArray</code>"
       ],
-      "tests":[
+      "tests": [
         "assert((function(){if(typeof(myArray) != 'undefined' && typeof(data) != 'undefined' && myArray[0] == data){return(true);}else{return(false);}})(), 'the variable data should equal the first value of myArray');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "//var ourArray = [1,2,3]",
         "//var ourData = ourArray[0]//equals 1",
         "",
@@ -491,7 +491,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bg9994c9c69feddfaeb9bdef",
+      "id": "bg9994c9c69feddfaeb9bdef",
       "name": "Manipulating Arrays With pop()",
       "dashedName": "waypoint-manipulating-arrays-with-pop",
       "difficulty": "9.9818",
@@ -523,7 +523,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bg9995c9c69feddfaeb9bdef",
+      "id": "bg9995c9c69feddfaeb9bdef",
       "name": "Manipulating Arrays With push()",
       "dashedName": "waypoint-manipulating-arrays-with-push",
       "difficulty": "9.9818",
@@ -546,7 +546,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bg9996c9c69feddfaeb9bdef",
+      "id": "bg9996c9c69feddfaeb9bdef",
       "name": "Manipulating Arrays With shift()",
       "dashedName": "waypoint-manipulating-arrays-with-shift",
       "difficulty": "9.9817",
@@ -570,7 +570,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bg9997c9c69feddfaeb9bdef",
+      "id": "bg9997c9c69feddfaeb9bdef",
       "name": "Manipulating Arrays With unshift()",
       "dashedName": "waypoint-manipulating-arrays-with-unshift",
       "difficulty": "9.9818",
@@ -593,11 +593,11 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9997c9c89feddfaeb9bdef",
-      "name":"Make it functional",
-      "dashedName":"waypoint-make-it-functional",
-      "difficulty":"9.9819",
-      "description":[
+      "id": "bg9997c9c89feddfaeb9bdef",
+      "name": "Make it functional",
+      "dashedName": "waypoint-make-it-functional",
+      "difficulty": "9.9819",
+      "description": [
         "",
         "In JavaScript we can divide up our code into separate and reusable parts called functions",
         "here's and example of a function",
@@ -610,10 +610,10 @@
         "<code>functionName();</code>",
         "Let's try creating and calling a function now."
       ],
-      "tests":[
+      "tests": [
         "assert(f==data);"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "//var ourData = 'function called!';",
         "//function ourFunction(ourData) {/*ourData is being passed to this function as an argument*/",
         "//return(data);",
@@ -634,19 +634,19 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9997c9c99feddfaeb9bdef",
-      "name":"Doing things inside functions",
-      "dashedName":"waypoint-doing-things-inside-functions",
-      "difficulty":"9.982",
-      "description":[
+      "id": "bg9997c9c99feddfaeb9bdef",
+      "name": "Doing things inside functions",
+      "dashedName": "waypoint-doing-things-inside-functions",
+      "difficulty": "9.982",
+      "description": [
         "",
         "A function that takes the value you give it and returns it isn't very useful! So now let's get our functions to do something!",
         "Starting from where we were last time let's make our function revers whatever we give it by chaining <code> .split('') </code>, <code> .reverse() </code> and <code> .join('') </code>"
       ],
-      "tests":[
+      "tests": [
         "assert(f==data.split('').reverse().join(''), 'myFunction should now return the reversed version of data (!dellaC noitcnuF)');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "//You can reverse strings like this",
         "//var notReversed = 'String';",
         "//var reversed = notReversed.split('').reverse().join('');",
@@ -667,11 +667,11 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9997c9c99feddfaeb9bdef",
-      "name":"Keeping In The Scope Of Things",
-      "dashedName":"waypoint-keeping-in-the-scope-of-things",
-      "difficulty":"9.9821",
-      "description":[
+      "id": "bg9997c9c99feddfaeb9bdef",
+      "name": "Keeping In The Scope Of Things",
+      "dashedName": "waypoint-keeping-in-the-scope-of-things",
+      "difficulty": "9.9821",
+      "description": [
         "",
         "All variables are contained in something called a <code> scope </code>.",
         "A Scope defines where are variable can be accessed.",
@@ -695,11 +695,11 @@
         "</code>",
         "Let's give this a go!"
       ],
-      "tests":[
+      "tests": [
         "assert(Global == access(Global), 'access should return your Global var');",
         "assert(Global != localChange(Global), 'localChange should return your Global var');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "//Create Your global variable with any value here",
         "var Global = _;",
         "",
@@ -723,11 +723,11 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9998c9c99feddfaeb9bdef",
-      "name":"I Object!",
-      "dashedName":"waypoint-i-object",
-      "difficulty":"9.9822",
-      "description":[
+      "id": "bg9998c9c99feddfaeb9bdef",
+      "name": "I Object!",
+      "dashedName": "waypoint-i-object",
+      "difficulty": "9.9822",
+      "description": [
         "",
         "A very important data type in javascript is the <code> Object </code>",
         "<code> Objects </code> a similar to <code> arrays </code> except that instead of using indexes to access and modify their data, Objects have what are called <code> properties </code>",
@@ -744,13 +744,13 @@
         "Let's try to make a Object that represents a dog called myDog!"
 
       ],
-      "tests":[
+      "tests": [
         "assert((function(z){if(z.hasOwnProperty('name') && z.name != undefined && typeof(z.name) == 'string'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property name and it should be a string');",
         "assert((function(z){if(z.hasOwnProperty('legs') && z.legs != undefined && typeof(z.legs) == 'number'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property legs and it should be a number');",
         "assert((function(z){if(z.hasOwnProperty('tails') && z.tails != undefined && typeof(z.tails) == 'number'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property tails and it should be a number');",
         "assert((function(z){if(z.hasOwnProperty('friends') && z.friends != undefined && Array.isArray(z.friends)){return(true);}else{return(false);}})(myDog), 'myDog should contain the property friends and it should be an array');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "//var ourDog = {",
         "//   \"name\": \"Camper\"",
         "//   \"legs\": 4",
@@ -770,11 +770,11 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9999c9c99feddfaeb9bdef",
-      "name":"Manipulating Objects",
-      "dashedName":"waypoint-manipulating-objects",
-      "difficulty":"9.9823",
-      "description":[
+      "id": "bg9999c9c99feddfaeb9bdef",
+      "name": "Manipulating Objects",
+      "dashedName": "waypoint-manipulating-objects",
+      "difficulty": "9.9823",
+      "description": [
         "",
         "Now that we have an objects we need to know how to add and remove properties from it",
         "We add properties to objects like this",
@@ -784,11 +784,11 @@
         "Let's add the property bark",
         ""
       ],
-      "tests":[
+      "tests": [
         "assert(myDog.bark != undefined, 'The property tails should have been deleted');",
         "assert(myDog.tails == undefined, 'The property tails should have been deleted');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "//var ourDog = {",
         "//\"name\": \"Camper\"",
         "//\"legs\": 4",
@@ -816,11 +816,11 @@
       "challengeType": 1
     },
     {
-      "_id":"bh1111c1c11feddfaeb5bdef",
-      "name":"Looping with for",
-      "dashedName":"waypoint-looping-with-for",
-      "difficulty":"9.9824",
-      "description":[
+      "id": "bh1111c1c11feddfaeb5bdef",
+      "name": "Looping with for",
+      "dashedName": "waypoint-looping-with-for",
+      "difficulty": "9.9824",
+      "description": [
         "",
         "Loops are a critical part of any program! The next few challenges",
         "first we will be taking a look at the for loop",
@@ -833,11 +833,11 @@
         "ourArray now contains [0,1,2,3,4] ",
         "Let's try getting a for loop to work by pushing values to an array"
       ],
-      "tests":[
+      "tests": [
         "assert(editor.getValue().match(/for\\(/g), 'You should be using a for loop for this!');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var myArray = [];",
         "//Push the numbers 0-4 to myArray",
         "",
@@ -846,11 +846,11 @@
       "challengeType": 1
     },
     {
-      "_id":"bh1111c1c11feddfaeb1bdef",
-      "name":"Looping with while",
-      "dashedName":"waypoint-looping-with-while",
-      "difficulty":"9.9825",
-      "description":[
+      "id": "bh1111c1c11feddfaeb1bdef",
+      "name": "Looping with while",
+      "dashedName": "waypoint-looping-with-while",
+      "difficulty": "9.9825",
+      "description": [
         "",
         "Loops are a critical part of any program! The next few challenges",
         "first we will be taking a look at the for loop",
@@ -864,11 +864,11 @@
         "</code>",
         "Let's try getting a for loop to work by pushing values to an array"
       ],
-      "tests":[
+      "tests": [
         "assert(editor.getValue().match(/while\\(/g), 'You should be using a while loop for this!');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var myArray = [];",
         "//Push the numbers 0-4 to myArray",
         "",
@@ -877,11 +877,11 @@
       "challengeType": 1
     },
     {
-      "_id":"bh1111c1c11feddfaeb2bdef",
-      "name":"Looping with do while",
-      "dashedName":"waypoint-looping-with-do-while",
-      "difficulty":"9.9826",
-      "description":[
+      "id": "bh1111c1c11feddfaeb2bdef",
+      "name": "Looping with do while",
+      "dashedName": "waypoint-looping-with-do-while",
+      "difficulty": "9.9826",
+      "description": [
         "",
         "Let's now take a look at the do - while loop",
         "<code>",
@@ -895,11 +895,11 @@
         "A do - while has a very special difference when compared to the for and while loops. The do while loop is guaranteed to execute preform it's action once regardless of whether or not the condition inside the while is met!",
         "Let's try getting a do - while loop to work by pushing values to an array"
       ],
-      "tests":[
+      "tests": [
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');",
         "assert((function(){if(editor.getValue().match(/do/g) && editor.getValue(/while/g).match()){return(true);}else{return(false);}})(), 'You should be using a do while loop for this!');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "var myArray = [];",
         "//Push the numbers 0-4 to myArray",
         "",
