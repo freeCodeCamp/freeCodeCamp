@@ -8,9 +8,9 @@ const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 const navElements = navLinks.map((navItem, index) => {
   return (
     <NavItem
-      key={ index }
       eventKey={ index + 1 }
-      href={ navItem.link }>
+      href={ navItem.link }
+      key={ index }>
       { navItem.content }
     </NavItem>
   );
