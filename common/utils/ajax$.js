@@ -16,8 +16,10 @@
  * and limitations under the License.
  */
 
+import debugFactory from 'debug';
 import { AnonymousObservable, helpers } from 'rx';
 
+const debug = debugFactory('freecc:ajax$');
 const root = typeof window !== 'undefined' ? window : {};
 
 // Gets the proper XMLHttpRequest for support for older IE
@@ -221,6 +223,10 @@ export function ajax$(options) {
         };
       }
 
+      debug(
+        'ajax$ sending content',
+        settings.hasContent && settings.body
+      );
       xhr.send(settings.hasContent && settings.body || null);
     } catch (e) {
       observer.onError(e);
@@ -241,7 +247,16 @@ export function ajax$(options) {
   * from the Ajax POST.
   */
 export function post$(url, body) {
-  return ajax$({ url: url, body: body, method: 'POST' });
+  return ajax$({ url, body, method: 'POST' });
+}
+
+export function postJSON$(url, body) {
+  return ajax$({
+    url,
+    body: JSON.stringify(body),
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' }
+  });
 }
 
 /**
