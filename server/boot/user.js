@@ -45,7 +45,7 @@ module.exports = function(app) {
   * Siginin page.
   */
 
-  function getSignin (req, res) {
+  function getSignin(req, res) {
     if (req.user) {
       return res.redirect('/');
     }
@@ -59,7 +59,7 @@ module.exports = function(app) {
   * Log out.
   */
 
-  function signout (req, res) {
+  function signout(req, res) {
     req.logout();
     res.redirect('/');
   }
@@ -69,7 +69,7 @@ module.exports = function(app) {
   * Signup page.
   */
 
-  function getEmailSignin (req, res) {
+  function getEmailSignin(req, res) {
     if (req.user) {
       return res.redirect('/');
     }
@@ -83,7 +83,7 @@ module.exports = function(app) {
   * Signup page.
   */
 
-  function getEmailSignup (req, res) {
+  function getEmailSignup(req, res) {
     if (req.user) {
       return res.redirect('/');
     }
@@ -97,7 +97,7 @@ module.exports = function(app) {
   * Profile page.
   */
 
-  function getAccount (req, res) {
+  function getAccount(req, res) {
     if (!req.user) {
       return res.redirect('/');
     }
@@ -110,7 +110,7 @@ module.exports = function(app) {
   * Angular API Call
   */
 
-  function getAccountAngular (req, res) {
+  function getAccountAngular(req, res) {
     res.json({
       user: req.user || {}
     });
@@ -122,7 +122,7 @@ module.exports = function(app) {
   * Public Profile page.
   */
 
-  function returnUser (req, res, next) {
+  function returnUser(req, res, next) {
     User.findOne(
       { where: { 'username': req.params.username.toLowerCase() } },
       function(err, user) {
@@ -162,11 +162,13 @@ module.exports = function(app) {
           user.currentStreak = 1;
           var today = moment(Date.now()).format('YYYY-MM-DD');
 
+          const yesterday = moment(today).subtract(1, 'd').toString();
+          const yesteryesterday = moment(today).subtract(2, 'd').toString();
+
           if (
             moment(today).toString() === moment(timeKeys[0]).toString() ||
-            moment(today).subtract(1, 'd').toString() ===
-              moment(timeKeys[0]).toString() || moment(today).subtract(2, 'd').toString() ===
-            moment(timeKeys[0]).toString()
+            yesterday === moment(timeKeys[0]).toString() ||
+            yesteryesterday === moment(timeKeys[0]).toString()
           ) {
             for (var _i = 1; _i <= timeKeys.length; _i++) {
 
@@ -196,7 +198,7 @@ module.exports = function(app) {
 
             user.currentStreak = user.currentStreak || 1;
             user.longestStreak = user.longestStreak || 1;
-            var challenges = user.completedChallenges.filter(function ( obj ) {
+            var challenges = user.completedChallenges.filter(function( obj ) {
               return obj.challengeType === 3 || obj.challengeType === 4;
             });
 
@@ -249,7 +251,7 @@ module.exports = function(app) {
   * Update profile information.
   */
 
-  function postUpdateProfile (req, res, next) {
+  function postUpdateProfile(req, res, next) {
 
     User.findById(req.user.id, function(err) {
       if (err) { return next(err); }
@@ -318,7 +320,7 @@ module.exports = function(app) {
             user.website3Image = body.website3Image.trim() || '';
 
 
-            user.save(function (err) {
+            user.save(function(err) {
               if (err) {
                 return next(err);
               }
@@ -346,7 +348,7 @@ module.exports = function(app) {
   * Update current password.
   */
 
-  function postUpdatePassword (req, res, next) {
+  function postUpdatePassword(req, res, next) {
     req.assert('password', 'Password must be at least 4 characters long')
       .len(4);
 
@@ -379,7 +381,7 @@ module.exports = function(app) {
   * Delete user account.
   */
 
-  function postDeleteAccount (req, res, next) {
+  function postDeleteAccount(req, res, next) {
     User.destroyById(req.user.id, function(err) {
       if (err) { return next(err); }
       req.logout();
@@ -393,7 +395,7 @@ module.exports = function(app) {
   * Unlink OAuth provider.
   */
 
-  function getOauthUnlink (req, res, next) {
+  function getOauthUnlink(req, res, next) {
     var provider = req.params.provider;
     User.findById(req.user.id, function(err, user) {
       if (err) { return next(err); }
@@ -417,7 +419,7 @@ module.exports = function(app) {
   * Reset Password page.
   */
 
-  function getReset (req, res, next) {
+  function getReset(req, res, next) {
     if (req.isAuthenticated()) {
       return res.redirect('/');
     }
@@ -448,7 +450,7 @@ module.exports = function(app) {
   * Process the reset password request.
   */
 
-  function postReset (req, res, next) {
+  function postReset(req, res, next) {
     var errors = req.validationErrors();
 
     if (errors) {
@@ -526,7 +528,7 @@ module.exports = function(app) {
   * Forgot Password page.
   */
 
-  function getForgot (req, res) {
+  function getForgot(req, res) {
     if (req.isAuthenticated()) {
       return res.redirect('/');
     }
@@ -540,7 +542,7 @@ module.exports = function(app) {
   * Create a random token, then the send user an email with a reset link.
   */
 
-  function postForgot (req, res, next) {
+  function postForgot(req, res, next) {
     var errors = req.validationErrors();
 
     if (errors) {
@@ -626,7 +628,7 @@ module.exports = function(app) {
       foundStories,
       foundComments;
 
-    Story.find({ 'author.userId': userId }, function (err, stories) {
+    Story.find({ 'author.userId': userId }, function(err, stories) {
       if (err) {
         return cb(err);
       }
@@ -635,7 +637,7 @@ module.exports = function(app) {
       saveStoriesAndComments();
     });
 
-    Comment.find({ 'author.userId': userId }, function (err, comments) {
+    Comment.find({ 'author.userId': userId }, function(err, comments) {
       if (err) {
         return cb(err);
       }
@@ -649,22 +651,22 @@ module.exports = function(app) {
         return;
       }
       var tasks = [];
-      R.forEach(function (comment) {
+      R.forEach(function(comment) {
         comment.author.picture = picture;
         comment.author.username = username;
-        tasks.push(function (cb) {
+        tasks.push(function(cb) {
           comment.save(cb);
         });
       }, foundComments);
 
-      R.forEach(function (story) {
+      R.forEach(function(story) {
         story.author.picture = picture;
         story.author.username = username;
-        tasks.push(function (cb) {
+        tasks.push(function(cb) {
           story.save(cb);
         });
       }, foundStories);
-      async.parallel(tasks, function (err) {
+      async.parallel(tasks, function(err) {
         if (err) {
           return cb(err);
         }
