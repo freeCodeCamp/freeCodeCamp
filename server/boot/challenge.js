@@ -55,10 +55,12 @@ var unDasherize = utils.unDasherize;
 var getMDNLinks = utils.getMDNLinks;
 
 function updateUserProgress(user, challengeId, completedChallenge) {
-  var index = user.uncompletedChallenges.indexOf(challengeId);
-  if (index > -1) {
+  var alreadyCompleted = user.completedChallenges.some(({ id }) => {
+    return id === challengeId;
+  });
+
+  if (alreadyCompleted) {
     user.progressTimestamps.push(Date.now());
-    user.uncompletedChallenges.splice(index, 1);
   }
   user.completedChallenges.push(completedChallenge);
   return user;
@@ -108,16 +110,6 @@ module.exports = function(app) {
   app.use(router);
 
   function returnNextChallenge(req, res, next) {
-    var completed = req.user.completedChallenges.map(function(elem) {
-      return elem.id;
-    });
-
-    req.user.uncompletedChallenges = utils.allChallengeIds()
-      .filter(function(elem) {
-        if (completed.indexOf(elem) === -1) {
-          return elem;
-        }
-      });
 
     // find the user's current challenge and block
     // look in that block and find the index of their current challenge
@@ -157,17 +149,6 @@ module.exports = function(app) {
   }
 
   function returnCurrentChallenge(req, res, next) {
-    var completed = req.user.completedChallenges.map(function(elem) {
-      return elem.id;
-    });
-
-    req.user.uncompletedChallenges = utils.allChallengeIds()
-      .filter(function(elem) {
-        if (completed.indexOf(elem) === -1) {
-          return elem;
-        }
-      });
-
     if (!req.user.currentChallenge) {
       req.user.currentChallenge = {};
       req.user.currentChallenge.challengeId = challengeMapWithIds['0'][0];
@@ -365,7 +346,6 @@ module.exports = function(app) {
     const { id, name } = req.body;
     const { challengeId, challengeName } = req.body.challengeInfo || {};
 
-    debug('saving challenge progress');
     updateUserProgress(
       req.user,
       id || challengeId,
@@ -381,7 +361,7 @@ module.exports = function(app) {
 
     saveUser(req.user)
       .subscribe(
-        function() { },
+        function(user) { debug('user save', user && user.progressTimestamps); },
         next,
         function() {
           res.sendStatus(200);

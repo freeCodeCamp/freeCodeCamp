@@ -133,10 +133,6 @@
     "resetPasswordExpires": {
       "type": "string"
     },
-    "uncompletedBonfires": {
-      "type": "array",
-      "default": []
-    },
     "completedBonfires": {
       "type": [
         {
