@@ -8,11 +8,10 @@
       "dashedName": "waypoint-say-hello-to-html-elements",
       "difficulty": 0.001,
       "description": [
-        "Welcome to Free Code Camp's first coding challenge! Click on the button below for further instructions.",
-        "Awesome. Now you can read the rest of this challenge's instructions.",
+        "Welcome to Free Code Camp's first coding challenge!",
         "You can edit <code>code</code> in your <code>text editor</code>, which we've embedded into this web page.",
         "Do you see the code in your text editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.",
-        "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference between opening and closing tags is that closing tags have a slash after their opening angle bracket.",
+        "Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>. Opening tags look like this: <code>&#60;h1&#62;</code>. Closing tags look like this: <code>&#60;/h1&#62;</code>. Note that the only difference between opening tags and closing tags is that closing tags have a slash after their opening angle bracket.",
         "Once you've completed each challenge, and all its tests are passing, the \"Go to my next challenge\" button will become enabled. Click it - or press control and enter at the same time - to advance to the next challenge.",
         "To enable the \"Go to my next challenge\" button on this exercise, change your <code>h1</code> tag's text to say \"Hello World\" instead of \"Hello\"."
       ],
@@ -240,11 +239,10 @@
       "dashedName": "waypoint-fill-in-the-blank-with-placeholder-text",
       "difficulty": 0.007,
       "description": [
-        "Replace the text inside your <code>p</code> element with the first few words of the provided \"Kitty Ipsum\" text.",
         "Web developers traditionally use \"Lorem Ipsum\" text as placeholder text. It's called \"Lorem Ipsum\" text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
         "\"Lorem Ipsum\" text has been used as placeholder text by typesetters since the 16th century, and this tradition continues on the web.",
         "Well, 5 centuries is long enough. Since we're building a CatPhotoApp, let's use something called \"Kitty Ipsum\"!",
-        "Here are the first few words of \"Kitty Ipsum\" text, which you can copy and paste into the right position: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
+        "Replace the text inside your <code>p</code> element with the first few words of this \"Kitty Ipsum\" text: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "tests": [
         "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your <code>p</code> element should contain the first few words of the provided \"Kitty Ipsum\" text.')"
@@ -528,9 +526,9 @@
       "dashedName": "waypoint-change-the-font-size-of-an-element",
       "difficulty": 0.013,
       "description": [
-        "Create a second <code>p</code> element. Then, inside your <code>&#60;style&#62;</code> element, set the \"font-size\" of all <code>p</code> elements to 16 pixels.",
+        "Create a second <code>p</code> element with the following Kitty Ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+        "Then, inside your <code>&#60;style&#62;</code> element, set the \"font-size\" of all <code>p</code> elements to 16 pixels.",
         "Font size is controlled by the \"font-size\" CSS attribute, like this: <code>h1 { font-size: 30px; }</code>.",
-        "First, create a second <code>p</code> element with the following Kitty Ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "See if you can figure out how to give both of your <code>p</code> elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your \"red-text\" class."
       ],
       "tests": [
@@ -676,15 +674,15 @@
       "dashedName": "waypoint-specify-how-fonts-should-degrade",
       "difficulty": 0.016,
       "description": [
-        "Make all your <code>h2</code> elements use \"Lobster\" as their font family, but degrade to the \"Monospace\" font when the \"Lobster\" font isn't available.",
-        "You can leave \"Lobster\" your <code>h2</code> element's font-family, and have it \"degrade\" to a different font when \"Lobster\" isn't available.",
+        "There are several default fonts that are available in all browsers. These include \"Monospace\", \"Serif\" and \"Sans-Serif\". Leave \"Lobster\" as the font-family for your <code>h2</code> elements. Make them \"degrade\" to \"Monospace\" when \"Lobster\" isn't available.",
         "For example, if you wanted an element to use the \"Helvetica\" font, but also degrade to the \"Sans-Serif\" font when \"Helvetica\" wasn't available, you could use this CSS style: <code>p { font-family: Helvetica, Sans-Serif; }</code>.",
-        "There are several default fonts that are available in all browsers. These include \"Monospace\", \"Serif\" and \"Sans-Serif\". See if you can set your <code>h2</code> elements to use \"Lobster\" and degrade to \"Monospace\".",
-        "Now try commenting out your call to Google Fonts, so that the \"Lobster\" font isn't available. Notice how it degrades to the \"Monospace\" font."
+        "Now comment out your call to Google Fonts, so that the \"Lobster\" font isn't available. Notice how it degrades to the \"Monospace\" font."
       ],
       "tests": [
         "assert($('h2').css('font-family').match(/^\"?lobster/i), 'Your h2 element should use the font \"Lobster\".')",
-        "assert($('h2').css('font-family').match(/lobster\"?,monospace/i), 'Your h2 element should degrade to the font \"Monospace\" when \"Lobster\" is not available.')"
+        "assert($('h2').css('font-family').match(/lobster.*,.*monospace/i), 'Your h2 element should degrade to the font \"Monospace\" when \"Lobster\" is not available.')",
+        "assert(new RegExp('<!--', 'gi').test(editor), 'Comment out your call to Google for the \"Lobster\" font by putting <code>&#60!-- in front of it.')",
+        "assert(new RegExp('-->', 'gi').test(editor), 'Be sure to close your comment by deleting all trailing comment tags&#44; i.e. <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
