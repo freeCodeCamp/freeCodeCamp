@@ -279,7 +279,8 @@
     "dashedName": "what-are-the-official-free-code-camp-chat-rooms",
     "description": [
       "<div class=\"text-left col-xs-12 col-md-10 col-md-offset-1\">",
-      "  <h3>The following are our official chat rooms:</h3>",
+      "  <h3>The following are our official chat rooms.</h3>",
+      "  <p class='text-danger'>Please note that all chat rooms listed here are publicly accessible and indexed by search engines, so only share email addresses or other sensitive information in private messages.</p>",
       "  <table class=\"table table-striped\">",
       "    <tr><td><a href='//gitter.im/freecodecamp/FreeCodeCamp' target='_blank'>FreeCodeCamp</a></td><td>our main chat room - hang out and chat about life and learning to code</td></tr>",
       "    <tr><td><a href='//gitter.im/freecodecamp/Help' target='_blank'>Help</a></td><td>get help with our coding challenges from your fellow campers</td></tr>",
@@ -303,7 +304,7 @@
       "    <tr><td><a href='//gitter.im/freecodecamp/Saving' target='_blank'>Saving</a></td><td>chat about saving, investing, and home economics</td></tr>",
       "    <tr><td><a href='//gitter.im/freecodecamp/SelfImprovement' target='_blank'>SelfImprovement</a></td><td>chat about productivity, self improvement and quantified self</td></tr>",
       "  </table>",
-      "  <p>You'll note that we do not have religion or politics chat rooms. Please don't discuss those things here :)</p>",
+      "  <p>You'll note that we do not have religion or politics chat rooms. Please don't discuss those things at Free Code Camp :)</p>",
       "  <h3>We also have language-specific chat rooms:</h3>",
       "  <table class=\"table table-striped\">",
       "    <tr><td><a href='//gitter.im/freecodecamp/Arabic' target='_blank'>Arabic</a></td></tr>",
