@@ -10,6 +10,7 @@ var R = require('ramda'),
   cookieParser = require('cookie-parser'),
   compress = require('compression'),
   session = require('express-session'),
+  expressState = require('express-state'),
   logger = require('morgan'),
   errorHandler = require('errorhandler'),
   methodOverride = require('method-override'),
@@ -22,6 +23,7 @@ var R = require('ramda'),
   lessMiddleware = require('less-middleware'),
 
   passportProviders = require('./passport-providers'),
+  rxMiddleware = require('./utils/rx').rxMiddleware,
   /**
    * API keys and Passport configuration.
    */
@@ -33,6 +35,10 @@ var generateKey =
  * Create Express server.
  */
 var app = loopback();
+
+expressState.extend(app);
+app.set('state namespace', '__fcc__');
+
 var PassportConfigurator =
   require('loopback-component-passport').PassportConfigurator;
 var passportConfigurator = new PassportConfigurator(app);
@@ -141,7 +147,9 @@ app.use(helmet.csp({
     'http://cdn.inspectlet.com/inspectlet.js',
     'http://www.freecodecamp.org'
   ].concat(trusted),
-  'connect-src': [].concat(trusted),
+  'connect-src': [
+    'vimeo.com'
+  ].concat(trusted),
   styleSrc: [
     '*.googleapis.com',
     '*.gstatic.com'
@@ -175,11 +183,15 @@ app.use(helmet.csp({
 
 passportConfigurator.init();
 
+// add rx methods to express
+app.use(rxMiddleware());
+
 app.use(function(req, res, next) {
   // Make user object available in templates.
   res.locals.user = req.user;
   next();
 });
+
 
 app.use(
   loopback.static(path.join(__dirname, '../public'), {
@@ -187,7 +199,6 @@ app.use(
   })
 );
 
-// track when connecting to db starts
 var startTime = Date.now();
 boot(app, {
   appRootDir: __dirname,
@@ -301,7 +312,7 @@ if (process.env.NODE_ENV === 'development') {
 
 module.exports = app;
 
-app.start = function () {
+app.start = function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
     console.log(

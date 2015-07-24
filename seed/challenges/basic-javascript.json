@@ -3,7 +3,7 @@
   "order": 0.006,
   "challenges": [
     {
-      "_id":"bd7123c9c441eddfaeb4bdef",
+      "id":"bd7123c9c441eddfaeb4bdef",
       "name":"Welcome To Comments",
       "dashedName":"waypoint-welcome-to-comments",
       "difficulty":"9.98",
@@ -29,7 +29,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c441eddfaeb5bdef",
+      "id": "bd7123c9c441eddfaeb5bdef",
       "name": "Unconditionally Loving Booleans",
       "dashedName": "waypoint-unconditionally-loving-booleans",
       "difficulty": "9.98001",
@@ -55,7 +55,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c443eddfaeb5bdef",
+      "id": "bd7123c9c443eddfaeb5bdef",
       "name": "Start Using Variables",
       "dashedName": "waypoint-start-using-variables",
       "difficulty": "9.9801",
@@ -83,7 +83,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c444eddfaeb5bdef",
+      "id": "bd7123c9c444eddfaeb5bdef",
       "name": "Define Your First and Last Name",
       "dashedName": "waypoint-define-your-first-and-last-name",
       "difficulty": "9.9802",
@@ -111,7 +111,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c448eddfaeb5bdef",
+      "id": "bd7123c9c448eddfaeb5bdef",
       "name": "Check the Length Property of a String Variable",
       "dashedName": "waypoint-check-the-length-property-of-a-string-variable",
       "difficulty": "9.9809",
@@ -142,7 +142,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c549eddfaeb5bdef",
+      "id": "bd7123c9c549eddfaeb5bdef",
       "name": "Use Bracket Notation to Find the First Character in a String",
       "dashedName": "waypoint-use-bracket-notation-to-find-the-first-character-in-a-string",
       "difficulty": "9.9810",
@@ -174,7 +174,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c450eddfaeb5bdef",
+      "id": "bd7123c9c450eddfaeb5bdef",
       "name": "Use Bracket Notation to Find the Nth Character in a String",
       "dashedName": "waypoint-use-bracket-notation-to-find-the-nth-character-in-a-string",
       "difficulty": "9.9811",
@@ -205,7 +205,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c451eddfaeb5bdef",
+      "id": "bd7123c9c451eddfaeb5bdef",
       "name": "Use Bracket Notation to Find the Last Character in a String",
       "dashedName": "waypoint-use-bracket-notation-to-find-the-last-character-in-a-string",
       "difficulty": "9.9812",
@@ -235,7 +235,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7123c9c452eddfaeb5bdef",
+      "id": "bd7123c9c452eddfaeb5bdef",
       "name": "Use Bracket Notation to Find the Nth to Last Character in a String",
       "dashedName": "waypoint-use-bracket-notation-to-find-the-nth-to-last-character-in-a-string",
       "difficulty": "9.9813",
@@ -265,7 +265,7 @@
       "challengeType": 1
     },
     {
-      "_id": "cf1111c1c11feddfaeb3bdef",
+      "id": "cf1111c1c11feddfaeb3bdef",
       "name": "Magical Maths Addition",
       "dashedName": "waypoint-magical-maths-addition",
       "difficulty": "9.98141",
@@ -289,7 +289,7 @@
       "challengeType": 1
     },
     {
-      "_id": "cf1111c1c11feddfaeb4bdef",
+      "id": "cf1111c1c11feddfaeb4bdef",
       "name": "Magical Maths Subtraction",
       "dashedName": "waypoint-magical-maths-subtraction",
       "difficulty": "9.98142",
@@ -313,7 +313,7 @@
       "challengeType": 1
     },
     {
-      "_id": "cf1111c1c11feddfaeb5bdef",
+      "id": "cf1111c1c11feddfaeb5bdef",
       "name": "Magical Maths Multiplication",
       "dashedName": "waypoint-magical-maths-multiplication",
       "difficulty": "9.98143",
@@ -337,7 +337,7 @@
       "challengeType": 1
     },
     {
-      "_id": "cf1111c1c11feddfaeb6bdef",
+      "id": "cf1111c1c11feddfaeb6bdef",
       "name": "Magical Maths Division",
       "dashedName": "waypoint-magical-maths-division",
       "difficulty": "9.9814",
@@ -361,7 +361,7 @@
       "challengeType": 1
     },
     {
-      "_id": "cf1111c1c11feddfaeb4bdef",
+      "id": "cf1111c1c11feddfaeb4bdef",
       "name": "Creating Decimals",
       "dashedName": "waypoint-creating-decimals",
       "difficulty": "9.9815",
@@ -386,7 +386,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7993c9c69feddfaeb7bdef",
+      "id": "bd7993c9c69feddfaeb7bdef",
       "name": "Working With Decimals",
       "dashedName": "waypoint-working-with-decimals",
       "difficulty": "9.98151",
@@ -411,7 +411,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7993c9c69feddfaeb8bdef",
+      "id": "bd7993c9c69feddfaeb8bdef",
       "name": "An Array Of new Information",
       "dashedName": "waypoint-an-array-of-new-information",
       "difficulty": "9.9816",
@@ -439,7 +439,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c11feddfaeb7bdef",
+      "id":"cf1111c1c11feddfaeb7bdef",
       "name":"Nesting Arrays",
       "dashedName":"waypoint-nesting-arrays",
       "difficulty":"9.98161",
@@ -460,7 +460,7 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9997c9c79feddfaeb9bdef",
+      "id":"bg9997c9c79feddfaeb9bdef",
       "name":"Accessing data with Indexes",
       "dashedName":"waypoint-accessing-data-with-indexes",
       "difficulty":"9.9817",
@@ -492,7 +492,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c11feddfaeb8bdef",
+      "id":"cf1111c1c11feddfaeb8bdef",
       "name":"Modifying Data With Indexes",
       "dashedName":"waypoint-modifying-data-with-indexes",
       "difficulty":"9.98171",
@@ -525,7 +525,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bg9994c9c69feddfaeb9bdef",
+      "id": "bg9994c9c69feddfaeb9bdef",
       "name": "Manipulating Arrays With pop()",
       "dashedName": "waypoint-manipulating-arrays-with-pop",
       "difficulty": "9.9818",
@@ -557,7 +557,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bg9995c9c69feddfaeb9bdef",
+      "id": "bg9995c9c69feddfaeb9bdef",
       "name": "Manipulating Arrays With push()",
       "dashedName": "waypoint-manipulating-arrays-with-push",
       "difficulty": "9.9818",
@@ -580,7 +580,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bg9996c9c69feddfaeb9bdef",
+      "id": "bg9996c9c69feddfaeb9bdef",
       "name": "Manipulating Arrays With shift()",
       "dashedName": "waypoint-manipulating-arrays-with-shift",
       "difficulty": "9.9817",
@@ -604,7 +604,7 @@
       "challengeType": 1
     },
     {
-      "_id": "bg9997c9c69feddfaeb9bdef",
+      "id": "bg9997c9c69feddfaeb9bdef",
       "name": "Manipulating Arrays With unshift()",
       "dashedName": "waypoint-manipulating-arrays-with-unshift",
       "difficulty": "9.9818",
@@ -627,7 +627,7 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9997c9c89feddfaeb9bdef",
+      "id":"bg9997c9c89feddfaeb9bdef",
       "name":"Make it functional",
       "dashedName":"waypoint-make-it-functional",
       "difficulty":"9.9819",
@@ -665,7 +665,7 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9998c9c99feddfaeb9bdef",
+      "id":"bg9998c9c99feddfaeb9bdef",
       "name":"I Object!",
       "dashedName":"waypoint-i-object",
       "difficulty":"9.9822",
@@ -712,7 +712,7 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9999c9c99feddfaeb9bdef",
+      "id":"bg9999c9c99feddfaeb9bdef",
       "name":"Manipulating Objects",
       "dashedName":"waypoint-manipulating-objects",
       "difficulty":"9.9823",
@@ -758,7 +758,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c11feddfaeb5bdef",
+      "id":"cf1111c1c11feddfaeb5bdef",
       "name":"Looping with for",
       "dashedName":"waypoint-looping-with-for",
       "difficulty":"9.9824",
@@ -788,7 +788,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c11feddfaeb1bdef",
+      "id":"cf1111c1c11feddfaeb1bdef",
       "name":"Looping with while",
       "dashedName":"waypoint-looping-with-while",
       "difficulty":"9.9825",
@@ -819,7 +819,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c11feddfaeb2bdef",
+      "id":"cf1111c1c11feddfaeb2bdef",
       "name":"Looping with do while",
       "dashedName":"waypoint-looping-with-do-while",
       "difficulty":"9.9826",
@@ -850,7 +850,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c11feddfaeb9bdef",
+      "id":"cf1111c1c11feddfaeb9bdef",
       "name":"Random Numbers",
       "dashedName":"waypoint-random-numbers",
       "difficulty":"9.9827",
@@ -877,7 +877,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c12feddfaeb1bdef",
+      "id":"cf1111c1c12feddfaeb1bdef",
       "name":"Random Whole Numbers",
       "dashedName":"waypoint-random-whole-numbers",
       "difficulty":"9.9828",
@@ -907,7 +907,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c12feddfaeb2bdef",
+      "id":"cf1111c1c12feddfaeb2bdef",
       "name":"Random Whole Numbers In a Range",
       "dashedName":"waypoint-random-whole-numbers-in-a-range",
       "difficulty":"9.9829",
@@ -936,7 +936,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c12feddfaeb3bdef",
+      "id":"cf1111c1c12feddfaeb3bdef",
       "name":"If Else Statements",
       "dashedName":"waypoint-if-else-statements",
       "difficulty":"9.983",
@@ -971,7 +971,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c12feddfaeb6bdef",
+      "id":"cf1111c1c12feddfaeb6bdef",
       "name":"An Intro To RegEx",
       "dashedName":"waypoint-an-intro-to-regex",
       "difficulty":"9.984",
@@ -1008,7 +1008,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c12feddfaeb7bdef",
+      "id":"cf1111c1c12feddfaeb7bdef",
       "name":"Finding Numbers",
       "dashedName":"waypoint-finding-numbers",
       "difficulty":"9.985",
@@ -1040,7 +1040,7 @@
       "challengeType": 1
     },
     {
-      "_id":"cf1111c1c12feddfaeb8bdef",
+      "id":"cf1111c1c12feddfaeb8bdef",
       "name":"Finding WhiteSpace",
       "dashedName":"waypoint-finding-whitespace",
       "difficulty":"9.987",

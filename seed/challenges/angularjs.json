@@ -1,0 +1,125 @@
+{
+  "name": "AngularJS",
+  "order": 0.015,
+  "challenges": [
+    {
+      "id": "bd7154d8c441eddfaeb5bdef",
+      "name": "Waypoint: Get Started with Angular.js",
+      "dashedName": "waypoint-get-started-with-angularjs",
+      "difficulty": 0.34,
+      "challengeSeed": ["114684726"],
+      "description": [
+        "Code School has a short, free Angular.js course. This will give us a quick tour of Angular.js's mechanics and features.",
+        "In this course, we'll build a virtual shop entirely in Angular.js.",
+        "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7155d8c441eddfaeb5bdef",
+      "name": "Waypoint: Apply Angular.js Directives",
+      "dashedName": "waypoint-apply-angularjs-directives",
+      "difficulty": 0.35,
+      "challengeSeed": ["114684727"],
+      "description": [
+        "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will can alter the behavior of DOM elements based on the directives you've used.",
+        "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
+        "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7156d8c441eddfaeb5bdef",
+      "name": "Waypoint: Power Forms with Angular.js",
+      "dashedName": "waypoint-power-forms-with-angularjs",
+      "difficulty": 0.36,
+      "challengeSeed": ["114684729"],
+      "description": [
+        "One area where Angular.js really shines is its powerful web forms.",
+        "Learn how to create reactive Angular.js forms, including real-time form validation.",
+        "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7157d8c441eddfaeb5bdef",
+      "name": "Waypoint: Customize Angular.js Directives",
+      "dashedName": "waypoint-customize-angularjs-directives",
+      "difficulty": 0.37,
+      "challengeSeed": ["114685062"],
+      "description": [
+        "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
+        "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7158d8c441eddfaeb5bdef",
+      "name": "Waypoint: Create Angular.js Services",
+      "dashedName": "waypoint-create-angularjs-services",
+      "difficulty": 0.38,
+      "challengeSeed": ["114685060"],
+      "description": [
+        "Services are functions that you can use and reuse throughout your Angular.js app to get things done.",
+        "We'll learn how to use services in this final Code School Angular.js challenge.",
+        "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}

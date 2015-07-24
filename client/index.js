@@ -1,20 +1,44 @@
-import BrowserHistory from 'react-router/lib/BrowserHistory';
+import Rx from 'rx';
+import React from 'react';
+import { Router } from 'react-router';
+import { history } from 'react-router/lib/BrowserHistory';
 import debugFactory from 'debug';
-import { Cat } from 'thundercats';
+import { hydrate } from 'thundercats';
+import { Render } from 'thundercats-react';
 
-import AppFactory from '../common/app/appFactory';
+import { app$ } from '../common/app';
 
 const debug = debugFactory('fcc:client');
-const DOMContianer = document.getElemenetById('#fCC');
-const fcc = new Cat();
+const DOMContianer = document.getElementById('fcc');
+const catState = window.__fcc__.data || {};
+
+Rx.longStackSupport = !!debug.enabled;
 
 // returns an observable
-fcc.render(AppFactory(BrowserHistory), DOMContianer)
+app$(history)
+  .flatMap(
+    ({ AppCat }) => {
+      const appCat = AppCat();
+      return hydrate(appCat, catState)
+        .map(() => appCat);
+    },
+    ({ initialState }, appCat) => ({ initialState, appCat })
+  )
+  .flatMap(({ initialState, appCat }) => {
+    return Render(
+      appCat,
+      React.createElement(Router, initialState),
+      DOMContianer
+    );
+  })
   .subscribe(
-    function() {
+    () => {
       debug('react rendered');
     },
-    function(err) {
+    err => {
       debug('an error has occured', err.stack);
+    },
+    () => {
+      debug('react closed subscription');
     }
   );

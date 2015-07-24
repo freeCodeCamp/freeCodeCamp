@@ -6,6 +6,14 @@ var utils = require('../utils');
 
 var allFieldGuideNamesAndIds = utils.allFieldGuideNamesAndIds();
 
+// order here determine order on all-articles page
+const categories = [
+  'orientation',
+  'FYI',
+  'outreach',
+  'contact'
+];
+
 module.exports = function(app) {
   var router = app.loopback.Router();
   var FieldGuide = app.models.FieldGuide;
@@ -23,6 +31,7 @@ module.exports = function(app) {
     var dashedName = req.params.fieldGuideName;
     var userSave = Rx.Observable.just(req.user)
       .filter(function(user) {
+        debug('filtering user', !!user);
         return !!user;
       })
       .map(function(user) {
@@ -38,8 +47,11 @@ module.exports = function(app) {
         return user;
       })
       .flatMap(function(user) {
+        debug('saving user');
         return saveUser(user);
-      });
+      })
+      // always call onNext
+      .defaultIfEmpty(null);
 
     var query = { where: { dashedName: { like: dashedName, options: 'i' } } };
 
@@ -53,6 +65,7 @@ module.exports = function(app) {
       .subscribe(
         // don't care about return from userSave
         function(fieldGuide) {
+          debug('onNext', fieldGuide);
           if (!fieldGuide) {
             req.flash('errors', {
               msg: '404: We couldn\'t find a field guide entry with ' +
@@ -70,7 +83,10 @@ module.exports = function(app) {
             description: fieldGuide.description.join('')
           });
         },
-        next
+        next,
+        function() {
+          debug('onCompleted called');
+        }
     );
   }
 
@@ -80,9 +96,25 @@ module.exports = function(app) {
       completedFieldGuides = req.user.completedFieldGuides;
     }
 
+    // produces an array of arrays of field guides ordered by the above
+    // i.e. [[...orientFieldGuides][...FYIfieldGuides]...]
+    const orderFieldGuides = categories
+      .reduce((ordered, category) => {
+
+        const fieldGuidesForCategory = allFieldGuideNamesAndIds
+          .filter(fieldGuide => {
+            return category === fieldGuide.category;
+          });
+
+        return ordered.concat([fieldGuidesForCategory]);
+      }, []);
+
     res.render('field-guide/all-articles', {
+      // leaving this property as legacy.
       allFieldGuideNamesAndIds: allFieldGuideNamesAndIds,
-      completedFieldGuides: completedFieldGuides
+      completedFieldGuides: completedFieldGuides,
+      categories: categories,
+      fieldGuides: orderFieldGuides
     });
   }
 

@@ -1,0 +1,10 @@
+doctype html
+html(ng-app='profileValidation', lang='en')
+  head
+    include partials/small-head
+  body.top-and-bottom-margins(style='overflow: hidden')
+    .container
+      include partials/flash
+      #fcc!= markup
+    script!= state
+    script(src='/js/bundle.js')

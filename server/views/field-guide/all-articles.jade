@@ -9,9 +9,11 @@ block content
             .panel-body
                 .col-xs-12.col-md-10.col-md-offset-1
                     .col-xs-12.no-right-padding
+                      each category, index in categories
+                        h2.text-center= category.charAt(0).toUpperCase() + category.slice(1)
                         h3
                             ol
-                                each fieldGuide in allFieldGuideNamesAndIds
+                                each fieldGuide in fieldGuides[index]
                                     if completedFieldGuides.indexOf(fieldGuide.id) > -1
                                         .row
                                             .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center

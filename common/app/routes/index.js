@@ -1,11 +1,14 @@
+// import Jobs from './Jobs';
+import Hikes from './Hikes';
+
 export default {
   path: '/',
-  getRoutes(cb) {
-    require.ensure([], require => {
+  getChildRoutes(locationState, cb) {
+    setTimeout(() => {
       cb(null, [
-        // require('./Bonfires'),
-        require('./Jobs')
+        // Jobs,
+        Hikes
       ]);
-    });
+    }, 0);
   }
 };

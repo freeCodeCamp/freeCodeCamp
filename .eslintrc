@@ -185,10 +185,12 @@
     "sort-vars": 0,
     "space-after-keywords": [
       2,
-      "always",
-      { "checkFunctionKeyword": false }
+      "always"
     ],
-    "space-after-function-names": "never",
+    "space-before-function-paren": [
+      2,
+      "never"
+    ],
     "space-before-blocks": [
       2,
       "always"
