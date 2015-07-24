@@ -1,0 +1,255 @@
+{
+  "name": "user",
+  "base": "User",
+  "strict": true,
+  "idInjection": true,
+  "trackChanges": false,
+  "properties": {
+    "email": {
+      "type": "string",
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "sparse": true
+        }
+      },
+      "lowercase": true,
+      "trim": true
+    },
+    "password": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "google": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "tokens": {
+      "type": "array"
+    },
+    "progressTimestamps": {
+      "type": "array",
+      "default": []
+    },
+    "username": {
+      "type": "string",
+      "lowercase": true,
+      "trim": true,
+      "require": true
+    },
+    "bio": {
+      "type": "string",
+      "default": ""
+    },
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "gender": {
+      "type": "string",
+      "default": ""
+    },
+    "location": {
+      "type": "string",
+      "default": ""
+    },
+    "picture": {
+      "type": "string",
+      "default": ""
+    },
+    "linkedinProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "githubProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "codepenProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "twitterHandle": {
+      "type": "string",
+      "default": ""
+    },
+    "facebookProfile": {
+      "type": "string",
+      "default": ""
+    },
+    "website1Link": {
+      "type": "string",
+      "default": ""
+    },
+    "website1Title": {
+      "type": "string",
+      "default": ""
+    },
+    "website1Image": {
+      "type": "string",
+      "default": ""
+    },
+    "website2Link": {
+      "type": "string",
+      "default": ""
+    },
+    "website2Title": {
+      "type": "string",
+      "default": ""
+    },
+    "website2Image": {
+      "type": "string",
+      "default": ""
+    },
+    "website3Link": {
+      "type": "string",
+      "default": ""
+    },
+    "website3Title": {
+      "type": "string",
+      "default": ""
+    },
+    "website3Image": {
+      "type": "string",
+      "default": ""
+    },
+    "resetPasswordToken": {
+      "type": "string"
+    },
+    "sentSlackInvite": {
+      "type": "boolean",
+      "default": false
+    },
+    "resetPasswordExpires": {
+      "type": "string"
+    },
+    "completedBonfires": {
+      "type": [
+        {
+          "id": "string",
+          "name": "string",
+          "completedWith": "string",
+          "completedDate": "string",
+          "solution": "string"
+        }
+      ],
+      "default": []
+    },
+    "uncompletedCoursewares": {
+      "type": "array",
+      "default": []
+    },
+    "completedCoursewares": {
+      "type": [
+        {
+          "completedDate": {
+            "type": "string",
+            "defaultFn": "now"
+          },
+          "id": "string",
+          "name": "string",
+          "completedWith": "string",
+          "solution": "string",
+          "githubLink": "string",
+          "verified": "boolean"
+        }
+      ],
+      "default": []
+    },
+    "completedFieldGuides": {
+      "type": "array",
+      "default": []
+    },
+    "uncompletedFieldGuides": {
+      "type": "array",
+      "default": []
+    },
+    "currentStreak": {
+      "type": "number",
+      "default": 0
+    },
+    "longestStreak": {
+      "type": "number",
+      "default": 0
+    },
+    "needsSomeDataModeled": {
+      "type": "boolean",
+      "default": false
+    },
+    "needsMigration": {
+      "type": "boolean",
+      "default": true
+    },
+    "sendMonthlyEmail": {
+      "type": "boolean",
+      "default": true
+    },
+    "challengesHash": {
+      "type": {}
+    },
+    "currentChallenge": {
+      "type": {}
+    },
+    "completedChallenges": {
+      "type": [
+        {
+          "completedDate": "number",
+          "id": "string",
+          "name": "string",
+          "completedWith": "string",
+          "solution": "string",
+          "githubLink": "string",
+          "verified": "boolean",
+          "challengeType": {
+            "type": "number",
+            "default": 0
+          }
+        }
+      ],
+      "default": []
+    },
+    "uncompletedChallenges": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "validations": [],
+  "relations": {
+    "credentials": {
+      "type": "hasMany",
+      "model": "userCredential",
+      "foreignKey": ""
+    },
+    "identities": {
+      "type": "hasMany",
+      "model": "userIdentity",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "doesExist"
+    }
+  ],
+  "methods": []
+}

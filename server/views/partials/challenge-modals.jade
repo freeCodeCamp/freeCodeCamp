@@ -1,0 +1,63 @@
+#pair-modal.modal(tabindex='-1')
+    .modal-dialog.animated.zoomIn.fast-animation
+        .modal-content
+            .modal-header.challenge-list-header Ready to pair program?
+                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+            .modal-body.text-center
+<<<<<<< HEAD:views/partials/challenge-modals.jade
+=======
+                h3 This will take you to our pair programming room where you can request a pair.
+>>>>>>> 01c72656c8b3d220a181fd8a302f464947364b96:server/views/partials/challenge-modals.jade
+                h3 You'll need &thinsp;
+                    a(href='/field-guide/how-do-i-install-screenhero' target='_blank') Screenhero
+                    | .
+<<<<<<< HEAD:views/partials/challenge-modals.jade
+                h3 Tell your fellow campers which challenge you are interested in pair programming on.
+                a.btn.btn-lg.btn-primary.btn-block#i-want-to-pair(name='_csrf', value=_csrf) Take me to the Pair Programming room
+=======
+                h3 Other campers may then message you about pair programming.
+                a.btn.btn-lg.btn-primary.btn-block(href='https://gitter.im/FreeCodeCamp/LetsPair', data-dismiss='modal', aria-hidden='true' target='_blank') Take me to the pair programming room
+>>>>>>> 01c72656c8b3d220a181fd8a302f464947364b96:server/views/partials/challenge-modals.jade
+                a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
+
+#issue-modal.modal(tabindex='-1')
+    .modal-dialog.animated.zoomIn.fast-animation
+        .modal-content
+            .modal-header.challenge-list-header Did you find a bug?
+                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+            .modal-body.text-center
+                h3 This will open our GitHub Issues page.
+                h3 Please tell us how to reproduce the bug and link us to screenshots if possible.
+                a.btn.btn-lg.btn-primary.btn-block#report-issue(name='_csrf', value=_csrf) Create my GitHub issue
+                a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
+
+#help-modal.modal(tabindex='-1')
+    .modal-dialog.animated.zoomIn.fast-animation
+        .modal-content
+            .modal-header.challenge-list-header Need some help?
+                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+            .modal-body.text-center
+                h3 Remember to use &thinsp;
+                    a(href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank') RSAP
+                    | .
+                h3 If you've already read the errors and searched Google, you should ask for help.
+<<<<<<< HEAD:views/partials/challenge-modals.jade
+                a.btn.btn-lg.btn-primary.btn-block#i-want-help(name='_csrf', value=_csrf) Ask for help
+                a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
+
+#help-editorless-modal.modal(tabindex='-1')
+    .modal-dialog.animated.zoomIn.fast-animation
+        .modal-content
+            .modal-header.challenge-list-header Need some help?
+                a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+            .modal-body.text-center
+                h3 Remember to use &thinsp;
+                    a(href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank') RSAP
+                    | .
+                h3 If you've already read the errors and searched Google, you should ask for help.
+                a.btn.btn-lg.btn-primary.btn-block#i-want-help-editorless(name='_csrf', value=_csrf) Ask for help
+=======
+                h3 This will take you to our help room.
+                a.btn.btn-lg.btn-primary.btn-block(href='https://gitter.im/FreeCodeCamp/LetsPair', data-dismiss='modal', aria-hidden='true' target='_blank') Take me to the help room
+>>>>>>> 01c72656c8b3d220a181fd8a302f464947364b96:server/views/partials/challenge-modals.jade
+                a.btn.btn-lg.btn-info.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel

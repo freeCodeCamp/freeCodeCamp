@@ -90,7 +90,7 @@ var testResults = [];
 var postSuccess = function(data) {
   var testDoc = document.createElement("div");
   $(testDoc)
-    .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>");
+    .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-checkmark-circled big-success-icon'></i></div><div class='col-xs-10 test-output test-vertical-center wrappable'>" + JSON.parse(data) + "</div>");
   $('#testSuite').append(testDoc);
   testSuccess();
 };
@@ -98,7 +98,7 @@ var postSuccess = function(data) {
 var postError = function(data) {
   var testDoc = document.createElement("div");
   $(testDoc)
-    .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-vertical-center test-output wrappable'>" + JSON.parse(data) + "</div></div><div class='ten-pixel-break'/>");
+    .html("<div class='row'><div class='col-xs-2 text-center'><i class='ion-close-circled big-error-icon'></i></div><div class='col-xs-10 test-vertical-center test-output wrappable'>" + JSON.parse(data) + "</div>");
   $('#testSuite').append(testDoc);
 };
 var goodTests = 0;

@@ -24,7 +24,11 @@ node_modules
 .DS_Store
 Thumbs.db
 bower_components
-.eslintignore
-.eslintrc
 main.css
 bundle.js
+coverage
+.remote-sync.json
+
+server/*.bundle.js
+public/js/*.bundle.js
+*.map

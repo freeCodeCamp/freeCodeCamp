@@ -1,0 +1,15 @@
+doctype html
+html(lang='en')
+  head
+    include partials/small-head
+  body.top-and-bottom-margins
+    include partials/navbar
+    .container
+      .row
+        .panel.panel-info
+          p redirecting you... please wait...
+    include partials/footer
+    script.
+      setTimeout(function() {
+        window.location = 'http://freecodecamp.com'
+      }, 500);

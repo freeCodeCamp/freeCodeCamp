@@ -1,15 +1,16 @@
+<img src="https://s3.amazonaws.com/freecodecamp/wide-social-banner.png">
+
 [![Throughput Graph](https://graphs.waffle.io/freecodecamp/freecodecamp/throughput.svg)](https://waffle.io/freecodecamp/freecodecamp/metrics)
 
-[![Stories in Ready](https://badge.waffle.io/FreeCodeCamp/freecodecamp.png?label=ready&title=Ready)](https://waffle.io/FreeCodeCamp/freecodecamp)
-<img src="https://s3.amazonaws.com/freecodecamp/logo4.0LG.png">
+[![Join the chat at https://gitter.im/freecodecamp/freecodecamp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/freecodecamp/freecodecamp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Welcome to Free Code Camp's open source codebase!
 =======================
 
 #Note
-We're currently very close to moving from express to loopback. As such, please keep in mind that the instructions here for setting up and running the project do not directly translate to the staging branch. Additionally, the file structure is quite a bit different. As always, the staging branch is the appropriate place to branch off of to fix/add something!
+We're currently very close to moving from Express to Loopback. As such, please keep in mind that the instructions here for setting up and running the project do not directly translate to the staging branch. Additionally, the file structure is quite a bit different. As always, the staging branch is the appropriate place to branch off of to fix/add something!
 
-Free Code Camp is an open-source community of busy people who learn to code, then build projects for nonprofits. 
+Free Code Camp is an open-source community of busy people who learn to code, then build projects for nonprofits.
 
 Our campers (students) start by working through our free, self-paced, browser-based curriculum. Next, they build several practice projects. Finally, we pair two campers together with a stakeholder from a nonprofit organization, and help them build the solution the nonprofit has requested.
 
@@ -17,7 +18,7 @@ Our campers (students) start by working through our free, self-paced, browser-ba
 
 80% of our campers are over 25, and nearly a fifth of our campers are women.
 
-This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Slack](http://freecodecamp.slack.com), a [blog](http://blog.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp). 
+This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [blog](http://blog.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp).
 
 [Join our community](http://www.freecodecamp.com/signin)!
 
@@ -27,8 +28,8 @@ Contributing
 We welcome pull requests from Free Code Camp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
 
 1.  Check our [public Waffle Board](https://waffle.io/freecodecamp/freecodecamp).
-2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Slack](http://freecodecamp.slack.com).
-3.  Fork the project ([Need help with forking a project?](https://help.github.com/articles/fork-a-repo/)). You'll do all of your work on your forked copy. 
+2.  Pick an issue that nobody has claimed and start working on it. If your issue isn't on the board, open an issue. If you think you can fix it yourself, start working on it. Feel free to ask for help in our [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp)
+3.  Fork the project ([Need help with forking a project?](https://help.github.com/articles/fork-a-repo/)). You'll do all of your work on your forked copy.
 4.  Create a branch specific to the issue or feature you are working on. Push your work to that branch. ([Need help with branching?](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches))
 5.  Name the branch something like  `user-xxx` where user is your username and xxx is the issue number you are addressing.
 6.  You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [AirBnB's JavaScript Style Guide](https://github.com/airbnb/javascript).  Please do not ignore any linting errors, as they are meant to **help** you. Make sure none of your JavaScript is longer than 80 characters per line.
@@ -68,25 +69,36 @@ Edit your .env file with the following API keys accordingly (if you only use ema
 ```
 
 MONGOHQ_URL='mongodb://localhost:27017/freecodecamp'
-BLOGGER_KEY=stuff
+
 FACEBOOK_ID=stuff
 FACEBOOK_SECRET=stuff
+
 GITHUB_ID=stuff
 GITHUB_SECRET=stuff
+
 GOOGLE_ID=stuff
 GOOGLE_SECRET=stuff
+
 LINKEDIN_ID=stuff
 LINKEDIN_SECRET=stuff
+
 MANDRILL_PASSWORD=stuff
 MANDRILL_USER=stuff
-SESSION_SECRET=secretstuff
+
 TRELLO_KEY=stuff
 TRELLO_SECRET=stuff
+
 TWITTER_KEY=stuff
 TWITTER_SECRET=stuff
 TWITTER_TOKEN=stuff
 TWITTER_TOKEN_SECRET=stuff
+
+BLOGGER_KEY=stuff
 SLACK_WEBHOOK=stuff
+
+SESSION_SECRET=secretstuff
+COOKIE_SECRET='this is a secret'
+
 PEER=stuff
 DEBUG=true
 
@@ -98,7 +110,7 @@ DEBUG=true
 mongod
 
 # Seed your database with the challenges
-node seed_data/seed.js
+node seed/
 
 # start the application
 gulp
@@ -117,8 +129,8 @@ Project Structure
 | **controllers**/home.js            | Controller for home page (index).                           |
 | **controllers**/user.js            | Controller for user account management.                     |
 | **controllers**/challenges.js      | Controller for rendering the challenges.                    |
-| **models**/User.js                 | Mongoose schema and model for User.                         |
-| **models**/Challenge.js            | Mongoose schema and model for Challenge.                    |
+| **models**/user.json                 | Mongoose schema and model for User.                         |
+| **models**/challenge.json            | Mongoose schema and model for Challenge.                    |
 | **public**/                        | Static assets (fonts, css, js, img).                        |
 | **public**/**js**/application.js   | Specify client-side JavaScript dependencies.                |
 | **public**/**js**/main_0.0.2.js          | Place your client-side JavaScript here.                     |
@@ -129,7 +141,7 @@ Project Structure
 | **views/partials**/footer.jade     | Footer partial template.                                    |
 | **views**/layout.jade              | Base template.                                              |
 | **views**/home.jade                | Home page template.                                         |
-| app.js                             | Main application file.                                      |
+| server.js                             | Main application file.                                      |
 
 
 List of Packages
@@ -158,7 +170,7 @@ List of Packages
 | github-api                      | GitHub API library.                                                  |
 | jade                            | Template engine for Express.                                         |
 | less                            | LESS compiler. Used implicitly by connect-assets.                    |
-| helmet                          | Restricts Cross site requests. You can modify its settings in app.js |
+| helmet                          | Restricts Cross site requests. You can modify its settings in server.js |
 | mongoose                        | MongoDB ODM.                                                         |
 | nodemailer                      | Node.js library for sending emails.                                  |
 | passport                        | Simple and elegant authentication library for node.js                |

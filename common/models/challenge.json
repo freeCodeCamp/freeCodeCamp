@@ -1,0 +1,83 @@
+{
+  "name": "challenge",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "trackChanges": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "dashedName": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "string"
+    },
+    "description": {
+      "type": "array"
+    },
+    "tests": {
+      "type": "array"
+    },
+    "challengeSeed": {
+      "type": "array"
+    },
+    "challengeType": {
+      "type": "string"
+    },
+    "MDNlinks": {
+      "type": "array"
+    },
+    "nameCn": {
+      "type": "string"
+    },
+    "descriptionCn": {
+      "type": "array"
+    },
+    "nameFr": {
+      "type": "string"
+    },
+    "descriptionFr": {
+      "type": "array"
+    },
+    "nameRu": {
+      "type": "string"
+    },
+    "descriptionRu": {
+      "type": "array"
+    },
+    "nameEs": {
+      "type": "string"
+    },
+    "descriptionEs": {
+      "type": "array"
+    },
+    "namePt": {
+      "type": "string"
+    },
+    "descriptionPt": {
+      "type": "array"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": []
+}

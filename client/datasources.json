@@ -1,0 +1,10 @@
+{
+  "remote": {
+    "name": "remote",
+    "connector": "remote"
+  },
+  "local": {
+    "name": "local",
+    "connector": "memory"
+  }
+}

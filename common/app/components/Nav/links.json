@@ -1,0 +1,16 @@
+[{
+  "content": "Map",
+  "link": "/map"
+}, {
+  "content": "Chat",
+  "link": "//gitter.im/FreeCodeCamp/FreeCodeCamp"
+},{
+  "content": "News",
+  "link": "/news"
+},{
+  "content": "Guide",
+  "link": "/field-guide"
+},{
+  "content": "Jobs",
+  "link": "/jobs"
+}]
