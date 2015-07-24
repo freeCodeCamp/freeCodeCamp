@@ -1,5 +1,10 @@
 import React from 'react';
-import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import {
+  Col,
+  Nav,
+  Navbar,
+  NavItem
+} from 'react-bootstrap';
 
 import navLinks from './links.json';
 import FCCNavItem from './NavItem.jsx';
@@ -25,6 +30,14 @@ const logoElement = (
   </a>
 );
 
+const toggleButton = (
+  <button className='hamburger'>
+    <Col xs={ 12 }>
+      <span className='hamburger-text'>Menu</span>
+    </Col>
+  </button>
+);
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -33,9 +46,6 @@ export default class extends React.Component {
   static displayName = 'Nav'
   static propTypes = {
     signedIn: React.PropTypes.bool
-  }
-
-  renderBrand() {
   }
 
   renderSignin() {
@@ -64,9 +74,9 @@ export default class extends React.Component {
         brand={ logoElement }
         className='nav-height'
         fixedTop={ true }
+        toggleButton={ toggleButton }
         toggleNavKey={ 0 }>
         <Nav
-          className='hamburger-dropdown'
           eventKey={ 0 }
           right={ true }>
           { navElements }
