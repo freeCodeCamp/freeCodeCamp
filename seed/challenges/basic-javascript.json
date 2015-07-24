@@ -1,13 +1,13 @@
 {
   "name": "Basic JavaScript",
-  "order": 0.005,
+  "order": 0.006,
   "challenges": [
     {
-      "id": "bd7123c9c441eddfaeb4bdef",
-      "name": "Welcome To Comments",
-      "dashedName": "waypoint-welcome-to-comments",
-      "difficulty": "9.98",
-      "description": [
+      "id":"bd7123c9c441eddfaeb4bdef",
+      "name":"Welcome To Comments",
+      "dashedName":"waypoint-welcome-to-comments",
+      "difficulty":"9.98",
+      "description":[
         "",
         "A comment is a very useful line of code that is not actually ran by the machine executing it. With this property comments are the perfect way of creating notes to yourself or anyone else who reads your code describing what the code does",
         "It's an extremely important part in writing good, efficient and maintainable code and a requirement by most employers",
@@ -18,12 +18,12 @@
         "These comment out everything in between <code> /* </code> and <code> */ </code>",
         "Try creating one of each now."
       ],
-      "tests": [
+      "tests":[
         "assert(editor.getValue().match(/(\\/\\*)...../g), 'Make sure you have at least one \/\\* \\*\/ style comment that has at least five letters in it');",
         "assert(editor.getValue().match(/(\\*\\/)/g), 'Make sure that you  close the coment with a \\*\/');",
         "assert(editor.getValue().match(/(\\/\\/)...../g), 'Make sure that there is at least one \\/\\/ style comment with at least five letters in it');"
       ],
-      "challengeSeed": [
+      "challengeSeed":[
 
       ],
       "challengeType": 1
@@ -265,7 +265,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb3bdef",
+      "id": "cf1111c1c11feddfaeb3bdef",
       "name": "Magical Maths Addition",
       "dashedName": "waypoint-magical-maths-addition",
       "difficulty": "9.98141",
@@ -289,7 +289,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb4bdef",
+      "id": "cf1111c1c11feddfaeb4bdef",
       "name": "Magical Maths Subtraction",
       "dashedName": "waypoint-magical-maths-subtraction",
       "difficulty": "9.98142",
@@ -313,7 +313,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb5bdef",
+      "id": "cf1111c1c11feddfaeb5bdef",
       "name": "Magical Maths Multiplication",
       "dashedName": "waypoint-magical-maths-multiplication",
       "difficulty": "9.98143",
@@ -337,7 +337,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb6bdef",
+      "id": "cf1111c1c11feddfaeb6bdef",
       "name": "Magical Maths Division",
       "dashedName": "waypoint-magical-maths-division",
       "difficulty": "9.9814",
@@ -361,7 +361,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb4bdef",
+      "id": "cf1111c1c11feddfaeb4bdef",
       "name": "Creating Decimals",
       "dashedName": "waypoint-creating-decimals",
       "difficulty": "9.9815",
@@ -439,19 +439,19 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb7bdef",
-      "name": "Nesting Arrays",
-      "dashedName": "waypoint-nesting-arrays",
-      "difficulty": "9.98161",
-      "description": [
+      "id":"cf1111c1c11feddfaeb7bdef",
+      "name":"Nesting Arrays",
+      "dashedName":"waypoint-nesting-arrays",
+      "difficulty":"9.98161",
+      "description":[
         "",
         "We are also able to create arrays within arrays. This technique is called <code>nesting</code>.",
         "Let's now go create a nested array called <code>myArray</code>"
       ],
-      "tests": [
+      "tests":[
         "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray) === 'object'){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
       ],
-      "challengeSeed": [
+      "challengeSeed":[
         "var myArray = [];",
         "",
         "",
@@ -460,25 +460,26 @@
       "challengeType": 1
     },
     {
-      "id": "bg9997c9c79feddfaeb9bdef",
-      "name": "Accessing data with Indexes",
-      "dashedName": "waypoint-accessing-data-with-indexes",
-      "difficulty": "9.9817",
-      "description": [
+      "id":"bg9997c9c79feddfaeb9bdef",
+      "name":"Accessing data with Indexes",
+      "dashedName":"waypoint-accessing-data-with-indexes",
+      "difficulty":"9.9817",
+      "description":[
         "",
         "Once an array has been created we can access the data we have stored in them using indexes",
         "Indexes are written in the same way as bracket notation that we covered earlier",
         "Example:",
         "<code>",
-        "var array = [1,2,3]",
-        "array[0]//equals 1",
+        "var array = [1,2,3];",
+        "array[0];//equals 1",
+        "var data = array[1];",
         "</code>",
         "Create a var called <code>data</code> and set it to equal the first value of <code>myArray</code>"
       ],
-      "tests": [
+      "tests":[
         "assert((function(){if(typeof(myArray) != 'undefined' && typeof(data) != 'undefined' && myArray[0] == data){return(true);}else{return(false);}})(), 'the variable data should equal the first value of myArray');"
       ],
-      "challengeSeed": [
+      "challengeSeed":[
         "//var ourArray = [1,2,3]",
         "//var ourData = ourArray[0]//equals 1",
         "",
@@ -487,6 +488,39 @@
         "",
         "",
         "if(typeof(myArray) != 'undefined' && typeof(data) != 'undefined'){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', data = ' + JSON.stringify(z));})(myArray, data);}"
+      ],
+      "challengeType": 1
+    },
+    {
+      "id":"cf1111c1c11feddfaeb8bdef",
+      "name":"Modifying Data With Indexes",
+      "dashedName":"waypoint-modifying-data-with-indexes",
+      "difficulty":"9.98171",
+      "description":[
+        "",
+        "We are able to modify the data store in an array be using indexes",
+        "Example:",
+        "<code>",
+        "var ourArray = [1,2,3];",
+        "ourArray[0] = 3;//ourArray equals [3,2,3]",
+        "</code>",
+        "Now Let's modify <code>myArray</code> using an index",
+        ""
+      ],
+      "tests":[
+        "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return(true);}else{return(false);}})(), 'myArray should now be [3,2,3]');",
+        "assert((function(){if(editor.getValue().match(/[0]/g).length >= 2 && editor.getValue().match(/=/g).length >= 2){return(true);}else{return(false);}})(), 'You should be using indexes to modify the values in myArray');"
+      ],
+      "challengeSeed":[
+        "//var ourArray = [1,2,3];",
+        "//ourArray[0] = 3;",
+        "",
+        "var myArray = [1,2,3];",
+        "",
+        "",
+        "",
+        "",
+        "if(typeof(myArray) != 'undefined'){(function(){return(myArray);})();}"
       ],
       "challengeType": 1
     },
@@ -593,141 +627,49 @@
       "challengeType": 1
     },
     {
-      "id": "bg9997c9c89feddfaeb9bdef",
-      "name": "Make it functional",
-      "dashedName": "waypoint-make-it-functional",
-      "difficulty": "9.9819",
-      "description": [
+      "id":"bg9997c9c89feddfaeb9bdef",
+      "name":"Make it functional",
+      "dashedName":"waypoint-make-it-functional",
+      "difficulty":"9.9819",
+      "description":[
         "",
         "In JavaScript we can divide up our code into separate and reusable parts called functions",
         "here's and example of a function",
         "<code>",
-          "function funcitonName (one, two ,three){",
-          "   /*Some Code*/",
+          "function functionName (a, b){",
+          "   return(a + b);",
           "}",
         "</code>",
         "our function can be called like this",
         "<code>functionName();</code>",
-        "Let's try creating and calling a function now."
+        "Let's try creating and calling a function now called <code>myFunction</code>"
       ],
-      "tests": [
-        "assert(f==data);"
+      "tests":[
+        "assert((function(){if(typeof(f) !== 'undefined' && typeof(f) === 'number' && f === 9){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
       ],
-      "challengeSeed": [
-        "//var ourData = 'function called!';",
-        "//function ourFunction(ourData) {/*ourData is being passed to this function as an argument*/",
-        "//return(data);",
-        "//}",
-        "",
-        "var data = 'Function Called!';",
-        "",
-        "//Create a function called myFunction that takes data as an argument and returns it like the example above",
-        "",
+      "challengeSeed":[
+        "var a = 4;",
+        "var b = 5;",
+        "//Don not modify the above!",
+        "//Create a function called myFunction that adds a and b",
         "",
         "",
         "",
         "",
         "//Don't modify this!",
-        "var f=myFunction(data);",
-        "(function(){var f=myFunction(data);return(f);})('');"
+        "if(typeof(myFunction) != 'undefined'){",
+        "var f=myFunction(a,b);",
+        "(function(){return(f);})();",
+        "}"
       ],
       "challengeType": 1
     },
     {
-      "id": "bg9997c9c99feddfaeb9bdef",
-      "name": "Doing things inside functions",
-      "dashedName": "waypoint-doing-things-inside-functions",
-      "difficulty": "9.982",
-      "description": [
-        "",
-        "A function that takes the value you give it and returns it isn't very useful! So now let's get our functions to do something!",
-        "Starting from where we were last time let's make our function revers whatever we give it by chaining <code> .split('') </code>, <code> .reverse() </code> and <code> .join('') </code>"
-      ],
-      "tests": [
-        "assert(f==data.split('').reverse().join(''), 'myFunction should now return the reversed version of data (!dellaC noitcnuF)');"
-      ],
-      "challengeSeed": [
-        "//You can reverse strings like this",
-        "//var notReversed = 'String';",
-        "//var reversed = notReversed.split('').reverse().join('');",
-        "",
-        "var data = 'Function Called!';",
-        "",
-        "function myFunction(data){",
-        "   ",
-        "   return(data);",
-        "}",
-        "",
-        "",
-        "",
-        "//Don't modify this!",
-        "var f=myFunction(data);",
-        "(function(f){return(f);})(f);"
-      ],
-      "challengeType": 1
-    },
-    {
-      "id": "bg9997c9c99feddfaeb9bdef",
-      "name": "Keeping In The Scope Of Things",
-      "dashedName": "waypoint-keeping-in-the-scope-of-things",
-      "difficulty": "9.9821",
-      "description": [
-        "",
-        "All variables are contained in something called a <code> scope </code>.",
-        "A Scope defines where are variable can be accessed.",
-        "All variables created outside any functions exist in what is called the <code> global scope </code>",
-        "All variables are container or are scope to inside that function.",
-        "<code>",
-        "var variable = 'Global Scope'",
-        "function test(){",
-        "   return(variable);",
-        "}",
-        "test();//Returns Global Scope",
-        "",
-        "function change(){",
-        "   variable = 'test';",
-        "   return(variable);",
-        "}",
-        "",
-        "change();//Returns test",
-        "variable //equals Global Scope",
-        "",
-        "</code>",
-        "Let's give this a go!"
-      ],
-      "tests": [
-        "assert(Global == access(Global), 'access should return your Global var');",
-        "assert(Global != localChange(Global), 'localChange should return your Global var');"
-      ],
-      "challengeSeed": [
-        "//Create Your global variable with any value here",
-        "var Global = _;",
-        "",
-        "//Make access() return you global variable",
-        "function access(){",
-        "   ",
-        "}",
-        "",
-        "access();",
-        "",
-        "//Pass you global variable into localChange and modify it within the function",
-        "function localChange(){",
-        "   ",
-        "}",
-        "",
-        "//Don't forget to call localChange here and pass your global variable",
-        "",
-        "",
-        "(function(x,y,z){return('access returns: ' + y(x) + ' & localChange returns: ' + z(x));})(Global, access, localChange);"
-      ],
-      "challengeType": 1
-    },
-    {
-      "id": "bg9998c9c99feddfaeb9bdef",
-      "name": "I Object!",
-      "dashedName": "waypoint-i-object",
-      "difficulty": "9.9822",
-      "description": [
+      "id":"bg9998c9c99feddfaeb9bdef",
+      "name":"I Object!",
+      "dashedName":"waypoint-i-object",
+      "difficulty":"9.9822",
+      "description":[
         "",
         "A very important data type in javascript is the <code> Object </code>",
         "<code> Objects </code> a similar to <code> arrays </code> except that instead of using indexes to access and modify their data, Objects have what are called <code> properties </code>",
@@ -744,13 +686,13 @@
         "Let's try to make a Object that represents a dog called myDog!"
 
       ],
-      "tests": [
+      "tests":[
         "assert((function(z){if(z.hasOwnProperty('name') && z.name != undefined && typeof(z.name) == 'string'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property name and it should be a string');",
         "assert((function(z){if(z.hasOwnProperty('legs') && z.legs != undefined && typeof(z.legs) == 'number'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property legs and it should be a number');",
         "assert((function(z){if(z.hasOwnProperty('tails') && z.tails != undefined && typeof(z.tails) == 'number'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property tails and it should be a number');",
         "assert((function(z){if(z.hasOwnProperty('friends') && z.friends != undefined && Array.isArray(z.friends)){return(true);}else{return(false);}})(myDog), 'myDog should contain the property friends and it should be an array');"
       ],
-      "challengeSeed": [
+      "challengeSeed":[
         "//var ourDog = {",
         "//   \"name\": \"Camper\"",
         "//   \"legs\": 4",
@@ -770,11 +712,11 @@
       "challengeType": 1
     },
     {
-      "id": "bg9999c9c99feddfaeb9bdef",
-      "name": "Manipulating Objects",
-      "dashedName": "waypoint-manipulating-objects",
-      "difficulty": "9.9823",
-      "description": [
+      "id":"bg9999c9c99feddfaeb9bdef",
+      "name":"Manipulating Objects",
+      "dashedName":"waypoint-manipulating-objects",
+      "difficulty":"9.9823",
+      "description":[
         "",
         "Now that we have an objects we need to know how to add and remove properties from it",
         "We add properties to objects like this",
@@ -784,11 +726,11 @@
         "Let's add the property bark",
         ""
       ],
-      "tests": [
+      "tests":[
         "assert(myDog.bark != undefined, 'The property tails should have been deleted');",
         "assert(myDog.tails == undefined, 'The property tails should have been deleted');"
       ],
-      "challengeSeed": [
+      "challengeSeed":[
         "//var ourDog = {",
         "//\"name\": \"Camper\"",
         "//\"legs\": 4",
@@ -816,11 +758,11 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb5bdef",
-      "name": "Looping with for",
-      "dashedName": "waypoint-looping-with-for",
-      "difficulty": "9.9824",
-      "description": [
+      "id":"cf1111c1c11feddfaeb5bdef",
+      "name":"Looping with for",
+      "dashedName":"waypoint-looping-with-for",
+      "difficulty":"9.9824",
+      "description":[
         "",
         "Loops are a critical part of any program! The next few challenges",
         "first we will be taking a look at the for loop",
@@ -833,11 +775,11 @@
         "ourArray now contains [0,1,2,3,4] ",
         "Let's try getting a for loop to work by pushing values to an array"
       ],
-      "tests": [
+      "tests":[
         "assert(editor.getValue().match(/for\\(/g), 'You should be using a for loop for this!');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
-      "challengeSeed": [
+      "challengeSeed":[
         "var myArray = [];",
         "//Push the numbers 0-4 to myArray",
         "",
@@ -846,11 +788,11 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb1bdef",
-      "name": "Looping with while",
-      "dashedName": "waypoint-looping-with-while",
-      "difficulty": "9.9825",
-      "description": [
+      "id":"cf1111c1c11feddfaeb1bdef",
+      "name":"Looping with while",
+      "dashedName":"waypoint-looping-with-while",
+      "difficulty":"9.9825",
+      "description":[
         "",
         "Loops are a critical part of any program! The next few challenges",
         "first we will be taking a look at the for loop",
@@ -864,11 +806,11 @@
         "</code>",
         "Let's try getting a for loop to work by pushing values to an array"
       ],
-      "tests": [
+      "tests":[
         "assert(editor.getValue().match(/while\\(/g), 'You should be using a while loop for this!');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
-      "challengeSeed": [
+      "challengeSeed":[
         "var myArray = [];",
         "//Push the numbers 0-4 to myArray",
         "",
@@ -877,11 +819,11 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb2bdef",
-      "name": "Looping with do while",
-      "dashedName": "waypoint-looping-with-do-while",
-      "difficulty": "9.9826",
-      "description": [
+      "id":"cf1111c1c11feddfaeb2bdef",
+      "name":"Looping with do while",
+      "dashedName":"waypoint-looping-with-do-while",
+      "difficulty":"9.9826",
+      "description":[
         "",
         "Let's now take a look at the do - while loop",
         "<code>",
@@ -895,15 +837,236 @@
         "A do - while has a very special difference when compared to the for and while loops. The do while loop is guaranteed to execute preform it's action once regardless of whether or not the condition inside the while is met!",
         "Let's try getting a do - while loop to work by pushing values to an array"
       ],
-      "tests": [
+      "tests":[
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');",
         "assert((function(){if(editor.getValue().match(/do/g) && editor.getValue(/while/g).match()){return(true);}else{return(false);}})(), 'You should be using a do while loop for this!');"
       ],
-      "challengeSeed": [
+      "challengeSeed":[
         "var myArray = [];",
         "//Push the numbers 0-4 to myArray",
         "",
         ""
+      ],
+      "challengeType": 1
+    },
+    {
+      "id":"cf1111c1c11feddfaeb9bdef",
+      "name":"Random Numbers",
+      "dashedName":"waypoint-random-numbers",
+      "difficulty":"9.9827",
+      "description":[
+        "",
+        "Random numbers are a very useful for creating random behaviours and games",
+        "Javascript has a <code>Math.random()</code> method that can generate a random decimal number",
+        "Let's have a go of <code>Math.random()</code> now be getting <code>myFunction</code> to return a random number"
+      ],
+      "tests":[
+        "assert(typeof(myFunction()) === 'number', 'myFunction should return a random number');",
+        "assert((myFunction()+''). match(/\\./g), 'The number returned by myFunction should be a decimal');",
+        "assert(editor.getValue().match(/Math\\.random/g).length >= 2, 'You should be using Math.random to generate the random decimal number');"
+      ],
+      "challengeSeed":[
+        "",
+        "function myFunction(){",
+        " //Change the 0 to Math.random()",
+        " return(0);",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "id":"cf1111c1c12feddfaeb1bdef",
+      "name":"Random Whole Numbers",
+      "dashedName":"waypoint-random-whole-numbers",
+      "difficulty":"9.9828",
+      "description":[
+        "",
+        "While it's great that we can create random decimal numbers it's a lot more useful to generate a random whole number",
+        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
+        "This technique gives us a whole number between zero and nine",
+        "Example:",
+        "<code>Math.floor(Math.random()*10);</code>",
+        "Let's give this technique a go now"
+      ],
+      "tests":[
+        "assert(typeof(myFunction()) == 'number', 'The result of myFunction should be a number');",
+        "assert(editor.getValue().match(/Math.random/g), 'You should be using Math.random to create a random number');",
+        "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random but 10 to make it a number that\\'s greater then zero');",
+        "assert(editor.getValue().match(/Math.floor/g), 'You should use Math.floor to remove the decimal part of the number');"
+      ],
+      "challengeSeed":[
+        "function myFunction(){",
+        " //Make myFunction return a random number between zero and nine instead of a float",
+        " return(Math.random());",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "id":"cf1111c1c12feddfaeb2bdef",
+      "name":"Random Whole Numbers In a Range",
+      "dashedName":"waypoint-random-whole-numbers-in-a-range",
+      "difficulty":"9.9829",
+      "description":[
+        "",
+        "We can use a certain mathematical expression to get a random number between between twp numbers.",
+        "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
+        "By using this we can control the output of the random number.",
+        ""
+      ],
+      "tests":[
+        "assert(myFunction() >= min, 'The random number that\\'s generated by myFunction should be greater than or equal to the minimum number');",
+        "assert(myFunction() <= max, 'The random number that\\'s generated by myFunction should be less than or equal to the maximum number');",
+        "assert((function(){if(editor.getValue().match(/max/g).length >= 2 && editor.getValue().match(/min/g).length >= 3 && editor.getValue().match(/Math.floor/g) && editor.getValue().match(/Math.random/g)){return(true);}else{return(false);}})(), 'You should be using the function given in the description to calculate the random in number in a range');"
+      ],
+      "challengeSeed":[
+        " var min = 0;",
+        " var max = 12;",
+        "function myFunction(){",
+        " //Make myFunction return a random number between zero and nine instead of a float",
+        " return(Math.random());",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "id":"cf1111c1c12feddfaeb3bdef",
+      "name":"If Else Statements",
+      "dashedName":"waypoint-if-else-statements",
+      "difficulty":"9.983",
+      "description":[
+        "",
+        "We can use if statements in JavaScript to only execute code if a certain condition is met",
+        "if statements require some sort of boolean condition evaluate",
+        "Example:",
+        "<code>if(1==2){",
+        " return(true);",
+        "}",
+        "else{",
+        " return(false);",
+        "}</code>",
+        "Let's have a go of using if statements now by making a coin-flip game",
+        "Create an if else statement to return <code>heads</code> if the flip var is zero and to return <code>tails</code> if it's not"
+      ],
+      "tests":[
+        "assert((function(){if(myFunction() == 'heads' || myFunction() == 'tails'){return(true);}else{return(false);}})(), 'myFunction should either return heads or tails');",
+        "assert(editor.getValue().match(/if/g).length >= 3, 'You should have created a new if statement');",
+        "assert(editor.getValue().match(/else/g).length >= 2, 'You should have created a new else statement');"
+      ],
+      "challengeSeed":[
+        "function myFunction(){",
+        " var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
+        " //Create and if else statement here to return heads if flip is 0 otherwise return false",
+        " ",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "id":"cf1111c1c12feddfaeb6bdef",
+      "name":"An Intro To RegEx",
+      "dashedName":"waypoint-an-intro-to-regex",
+      "difficulty":"9.984",
+      "description":[
+        "",
+        "RegEx is a powerful tool we can use to find certain words or patterns in strings",
+        "RegEx can look difficult at first but there's not much to getting it working",
+        "If we wanted to find the number of times the word \"the\" occured in the string \"The dog chased the cat\" We could use the following RegEx:",
+        "<code>\/the+\/gi</code>",
+        "Let's break this down a bit",
+        "\"The\" is the pattern we want to match",
+        "\"+\" means we are looking for one or more occurrences of this pattern",
+        "\"g\" means that it searhces the whole string",
+        "\"i\" means that we are ignoring the case(upper or lower) of what we are looking for",
+        "Let's try finding the word and in the string \"John and Alan went to the shop and got some milk\" by replacing the <code>.+</code> in the currnet RegEx with something that will find the word \"and\" and count how many times it occurs"
+      ],
+      "tests":[
+        "assert(test==2, 'You\\'re RegEx should have found two occurances of the word \"and\"');",
+        "assert(editor.getValue().match(/\\/and\\+\\/gi/), 'You should have used this RegEx to find the word \"and\"');"
+      ],
+      "challengeSeed":[
+        "var test = (function(){",
+        " var testString = \"John and Alan went to the shop and got some milk\";",
+        "",
+        "//Do Not Modify Above",
+        "",
+        " var expression = /.+/gi;",
+        "",
+        "//Do Not Modify Below",
+        "",
+        " return(testString.match(expression).length);",
+        "})();(function(){return(test);})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "id":"cf1111c1c12feddfaeb7bdef",
+      "name":"Finding Numbers",
+      "dashedName":"waypoint-finding-numbers",
+      "difficulty":"9.985",
+      "description":[
+        "",
+        "We can use special selectors in RegEx to select a particular type of value",
+        "One such selector is the digit selector <code>\\d</code> which is used to grab the numbers in a string",
+        "It is used like this:",
+        "<code>/\\d+/g</code>",
+        ""
+      ],
+      "tests":[
+        "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
+        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\d+/gi to find the numbers in the testString');"
+      ],
+      "challengeSeed":[
+        "var test = (function(){",
+        " var testString = \"There's 3 cats but 4 dogs.\"",
+        "",
+        "//Do Not Modify Above",
+        "",
+        " var expression = /.+/gi;",
+        "",
+        "//Do Not Modify Below",
+        "",
+        " return(testString.match(expression).length);",
+        "})();(function(){return(test);})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "id":"cf1111c1c12feddfaeb8bdef",
+      "name":"Finding WhiteSpace",
+      "dashedName":"waypoint-finding-whitespace",
+      "difficulty":"9.987",
+      "description":[
+        "",
+        "We can also use selectors like <code>\\s</code> to find spaces in a string",
+        "It is used like this:",
+        "<code>/\\s+/g</code>",
+        ""
+      ],
+      "tests":[
+        "assert(test === 7, 'Your RegEx should have found seven spaces in the testString');",
+        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\s+/gi to find the spaces in the testString');"
+      ],
+      "challengeSeed":[
+        "var test = (function(){",
+        " var testString = \"How many spaces are there in this sentance.\";",
+        "",
+        "//Do Not Modify Above",
+        "",
+        " var expression = /.+/gi;",
+        "",
+        "//Do Not Modify Below",
+        "",
+        " return(testString.match(expression).length);",
+        "})();(function(){return(test);})();"
       ],
       "challengeType": 1
     }
