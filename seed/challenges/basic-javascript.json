@@ -19,9 +19,9 @@
         "Try creating one of each now."
       ],
       "tests":[
-        "assert(editor.getValue().match(/(\\/\\*)...../g), 'Make sure you have at least one \/\\* \\*\/ style comment that has at least three letters in it');",
+        "assert(editor.getValue().match(/(\\/\\*)...../g), 'Make sure you have at least one \/\\* \\*\/ style comment that has at least five letters in it');",
         "assert(editor.getValue().match(/(\\*\\/)/g), 'Make sure that you  close the coment with a \\*\/');",
-        "assert(editor.getValue().match(/(\\/\\/)...../g), 'Make sure that there is at least one \\/\\/ style comment with at least three letters in it');"
+        "assert(editor.getValue().match(/(\\/\\/)...../g), 'Make sure that there is at least one \\/\\/ style comment with at least five letters in it');"
       ],
       "challengeSeed":[
 
@@ -69,8 +69,7 @@
         "Look at the <code>ourName</code> example if you get stuck."
       ],
       "tests": [
-        "assert(typeof(myName) == 'string', \"You're new variable should be a string\");",
-        "assert(myName.length > 0, \"You're string should have something in it!\");"
+        "assert((function(){/**/if(typeof(myName) !== 'undefined' && typeof(myName) == 'string' && myName.length > 0){return(true);}else{return(false);}/**/})(), 'myName should be a string that contains at least one character in it');"
       ],
       "challengeSeed": [
         "// var ourName = \"Free Code Camp\";",
@@ -78,34 +77,8 @@
         "// You can ignore this.",
         "// We use this to show you the value of your variable in your output box.",
         "// We'll learn about functions soon.",
-        "(function(v){return(v);})(ourName);"
-      ],
-      "challengeType": 1
-    },
-    {
-      "_id": "bd7123c9c442eddfaeb5bdef",
-      "name": "Define Your Name",
-      "dashedName": "waypoint-define-your-name",
-      "difficulty": "9.9802",
-      "description": [
         "",
-        "In this challenge we are going to take a look at strings.",
-        "Strings are a data type for words and sentences",
-        "Now we are going to set the value of <code>myName</code> to your name by typing your name in quotes.",
-        "Currently <code>myName</code> is empty. Type in your name and hit the submit button.",
-        "Look at the <code>ourName</code> example if you get stuck."
-      ],
-      "tests": [
-        "assert(typeof(myName) == 'string', 'The variable <code> myName </code> should be a string');",
-        "assert(myName.length > 0, 'Give the string <code> myName </code> a value');"
-      ],
-      "challengeSeed": [
-        "// ourName = \"Free Code Camp\";",
-        "myName = \"\";",
-        "// You can ignore this.",
-        "// We use this to show you the value of your variable in your output box.",
-        "// We'll learn about functions soon.",
-        "(function(v){return(v);})(myName);"
+        "if(typeof(myName) !== 'undefined'){(function(v){return(v);})(myName);}"
       ],
       "challengeType": 1
     },
@@ -113,7 +86,7 @@
       "_id": "bd7123c9c444eddfaeb5bdef",
       "name": "Define Your First and Last Name",
       "dashedName": "waypoint-define-your-first-and-last-name",
-      "difficulty": "9.9804",
+      "difficulty": "9.9802",
       "description": [
         "",
         "Programs will almost always have several different variables that are used to keep track of several different pieces of data",
@@ -121,64 +94,19 @@
         "You can assign these variables to be equal to your first and last names respectively."
       ],
       "tests": [
-        "assert(typeof(myFirstName) == 'string', 'myFirstName should be set to a string');",
-        "assert(typeof(myLastName) == 'string', 'myLastName should be set to a string');",
-        "assert(myFirstName.length > 0, 'myFirstName Should not be empty');",
-        "assert(myLastName.length > 0, 'myLastName should not be empty');",
-        "assert(typeof(myName) == 'string', 'The variable <code> myName </code> should be a string');",
-        "assert(myName.length > 0, 'Give the string <code> myName </code> a value');"
+        "assert((function(){if(typeof(myFirstName) !== 'undefined' && typeof(myFirstName) == 'string' && myFirstName.length > 0){return(true);}else{return(false);}})(), 'myFirstName should be a string with a least one character in it');",
+        "assert((function(){if(typeof(myLastName) !== 'undefined' && typeof(myLastName) == 'string' && myLastName.length > 0){return(true);}else{return(false);}})(), 'myLastName should be a string with a least one character in it');"
       ],
       "challengeSeed": [
         "// ourName = \"Free Code Camp\";",
         "// var ourFirstName = \"Free\";",
         "// var ourLastName = \"Code Camp\";",
         "",
-        "var myName = \"\";",
-        "",
         "",
         "// You can ignore this.",
         "// We use this to show you the value of your variable in your output box.",
         "// We'll learn about functions soon.",
-        "(function(v){return(v);})(myName);"
-      ],
-      "challengeType": 1
-    },
-    {
-      "_id": "bd7123c9c445eddfaeb5bdef",
-      "name": "Combine Two Strings into One String",
-      "dashedName": "waypoint-combine-two-variables-into-one-string",
-      "difficulty": "9.9805",
-      "description": [
-        "Make a variable called <code>myName</code> by adding the string of your first name to the string of your last name.",
-        "Strings can be combined in a process called <code>concatenation</code>.",
-        "We are now going to take the two variables myFirstName and myLastName and assign them values",
-        "Once we have given values to our two variables we can now concatenate them together with a space in between them",
-        "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>lower camel case</code>. An example of lower camel case is: lowerCamelCase.",
-        "Look at the <code>ourName</code> example if you get stuck."
-      ],
-      "tests": [
-        "assert(typeof(myFirstName) == 'string', 'myFirstName should be set to a string');",
-        "assert(typeof(myLastName) == 'string', 'myLastName should be set to a string');",
-        "assert(myFirstName.length > 0, 'myFirstName Should not be empty');",
-        "assert(myLastName.length > 0, 'myLastName should not be empty');",
-        "assert(typeof(myName) == 'string', 'myName should be a string');",
-        "assert(myName.length > 0, \"You're string should have something in it!\");",
-        "assert((/\\s+/).test(myName) == true, 'myName shuold contain a space');"
-      ],
-      "challengeSeed": [
-        "// var ourFirstName = \"Free\";",
-        "// var ourLastName = \"Code Camp\";",
-        "// var ourName = ourFirstName + \" \" + ourLastName;",
-        "",
-        "var myFirstName = \"\";",
-        "var myLastName = \"\";",
-        "var myName;",
-        "",
-        "",
-        "// You can ignore this.",
-        "// We use this to show you the value of your variable in your output box.",
-        "// We'll learn about functions soon.",
-        "(function(v){return(v);})(myName);"
+        "if(typeof(myFirstName) !== 'undefined' && typeof(myLastName) !== 'undefined'){(function(y,z){return(y + ', ' + z);})(myFirstName, myLastName);}"
       ],
       "challengeType": 1
     },
@@ -193,7 +121,7 @@
         "For example, if we created a variable <code>var firstName = \"Julie\"</code>, we could find out how long the string \"Julie\" is by using the <code>firstName.length</code> property."
       ],
       "tests": [
-        "assert(lastNameLength == 4, 'lastNameLength should have a length of 4');"
+        "(function(){if(typeof(lastNameLength) != 'undefined' && typeof(lastNameLength) == 'number' && lastNameLength == 4){return(true);}else}{return(false);}}, 'lastNameLength should be equal to four')()"
       ],
       "challengeSeed": [
         "var firstName = \"Madeline\";",
@@ -209,7 +137,7 @@
         "// You can ignore this.",
         "// We use this to show you the value of your variable in your output box.",
         "// We'll learn about functions soon.",
-        "(function(v){return(v);})(lastNameLength);"
+        "if(typeof(lastNameLength) != 'undefined')(function(v){return(v);})(lastNameLength);}"
       ],
       "challengeType": 1
     },
@@ -226,7 +154,7 @@
         "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(firstLetterOfLastName == 'C', 'The first letter of firstLetterOfLastName should be a C');"
+        "assert((function(){if(typeof(firstLetterOfLastName) != 'undefined' && typeof(firstLetterOfLastName) == 'string' && firstLetterOfLastName == 'C'){return(true);}else{return(false);}})(), 'The first letter of firstLetterOfLastName should be a C');"
       ],
       "challengeSeed": [
         "var firstName = \"Madeline\";",
@@ -253,11 +181,11 @@
       "description": [
         "Just like the last lesson where we used <code> Bracket Notation </code> to access the first letter we can use the same method to get the letters ar other positions",
         "Don't forget that computers start counting at 0 so the first letter is actually the zeroth one",
-        "Let's now try to set <code> thirdLetterOfLastName </code> to equal the third letter of the <code> lastName </code> variable",
+        "Let's now try to set <code> thirdLetterOfLastName </code> to equal the <code>third letter</code> of the <code> lastName </code> variable",
         "Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(thirdLetterOfLastName == 'e', thirdLetterOfLastName);"
+        "assert(thirdLetterOfLastName == 'e', 'The third last letter of lastName should be an e');"
       ],
       "challengeSeed": [
         "var firstName = \"Madeline\";",
@@ -289,7 +217,8 @@
         "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(lastLetterOfLastName == 'n', 'lastLetterOfLastName should be <code>n</code>');"
+        "assert(lastLetterOfLastName == 'n', 'lastLetterOfLastName should be <code>n</code>');",
+        "assert(editor.getValue().match(/\\.length/g), 'You have to use .length to get the last letter');"
       ],
       "challengeSeed": [
         "var firstName = \"Madeline\";",
@@ -318,7 +247,8 @@
         "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(secondToLastLetterOfLastName == 'e', 'secondToLastLetterOfLastName should be e');"
+        "assert(secondToLastLetterOfLastName == 'e', 'secondToLastLetterOfLastName should be e');",
+        "assert(editor.getValue().match(/\\.length/g), 'You have to use .length to get the third last letter');"
       ],
       "challengeSeed": [
         "var firstName = \"Madeline\";",
@@ -335,35 +265,123 @@
       "challengeType": 1
     },
     {
-      "_id": "bd7993c9c69feddfaeb6bdef",
-      "name": "Magical Maths",
-      "dashedName": "waypoint-magical-maths",
-      "difficulty": "9.9814",
+      "_id": "cf1111c1c11feddfaeb3bdef",
+      "name": "Magical Maths Addition",
+      "dashedName": "waypoint-magical-maths-addition",
+      "difficulty": "9.98141",
       "description": [
         "",
         "In JavaScript whole numbers (called integers) can be really easily to preform mathematical functions",
         "Let's try a few of the most commonly used ones now",
         "We use <code> + </code> for addition",
-        "We use <code> - </code> for subtraction",
-        "We use <code> * </code> for multiplication",
-        "We use <code> / </code> for division",
-        "Replace the <code> _ </code> with correct number to achieve the result in the comment."
+        "Replace the <code> 0 </code> with correct number to achieve the result in the comment."
       ],
       "tests": [
-        "assert(add==20, 'The result of the sum in add should be 20');",
-        "assert(subtract==12, 'The result of the sum in add should be 12');",
-        "assert(multiply==80, 'The result of the sum in add should be 80');",
-        "assert(divide==2, 'The result of the sum in add should be 2');"
+        "assert((function(){if(add == 20 && editor.getValue().match(/\\+/g)){return(true);}else{return(false);}})(), 'Add should be the result of a sum and be equal to 20');"
       ],
       "challengeSeed": [
-        "var add = 10 + _;//equals 20",
-        "var subtract = 45 - _;//equals 12",
-        "var multiply = 8 * _;//equals 80",
-        "var divide = 66 / _;//equals 2",
+        "var add = 10 + 0;//equals 20",
         "",
         "",
         "",
-        "(function(w,x,y,z){return('add='+w+', subtract='+x+', multiply='+y+', divide='+z);})(add,subtract,multiply,divide);"
+        "(function(z){return('add='+z);})(add);"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "cf1111c1c11feddfaeb4bdef",
+      "name": "Magical Maths Subtraction",
+      "dashedName": "waypoint-magical-maths-subtraction",
+      "difficulty": "9.98142",
+      "description": [
+        "",
+        "In JavaScript whole numbers (called integers) can be really easily to preform mathematical functions",
+        "Let's try a few of the most commonly used ones now",
+        "We use <code> - </code> for subtraction",
+        "Replace the <code> 0 </code> with correct number to achieve the result in the comment."
+      ],
+      "tests": [
+        "assert((function(){if(subtract == 12 && editor.getValue().match(/\\-/g)){return(true);}else{return(false);}})(), 'Subtract should be the result of a sum and be equal to 12');"
+      ],
+      "challengeSeed": [
+        "var subtract = 45 - 0;//equals 12",
+        "",
+        "",
+        "",
+        "(function(z){return('subtract='+z);})(subtract);"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "cf1111c1c11feddfaeb5bdef",
+      "name": "Magical Maths Multiplication",
+      "dashedName": "waypoint-magical-maths-multiplication",
+      "difficulty": "9.98143",
+      "description": [
+        "",
+        "In JavaScript whole numbers (called integers) can be really easily to preform mathematical functions",
+        "Let's try a few of the most commonly used ones now",
+        "We use <code> * </code> for multiplication",
+        "Replace the <code> 0 </code> with correct number to achieve the result in the comment."
+      ],
+      "tests": [
+        "assert((function(){if(multiply == 80 && editor.getValue().match(/\\*/g)){return(true);}else{return(false);}})(), 'Multiply should be the result of a sum and be equal to 80');"
+      ],
+      "challengeSeed": [
+        "var multiply = 8 * 0;//equals 80",
+        "",
+        "",
+        "",
+        "(function(z){return('multiply='+z);})(multiply);"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "cf1111c1c11feddfaeb6bdef",
+      "name": "Magical Maths Division",
+      "dashedName": "waypoint-magical-maths-division",
+      "difficulty": "9.9814",
+      "description": [
+        "",
+        "In JavaScript whole numbers (called integers) can be really easily to preform mathematical functions",
+        "Let's try a few of the most commonly used ones now",
+        "We use <code> / </code> for division",
+        "Replace the <code> 0 </code> with correct number to achieve the result in the comment."
+      ],
+      "tests": [
+        "assert((function(){if(divide == 2 && editor.getValue().match(/\\//g)){return(true);}else{return(false);}})(), 'Divide should be the result of a sum and be equal to 2');"
+      ],
+      "challengeSeed": [
+        "var divide = 66 / 0;//equals 2",
+        "",
+        "",
+        "",
+        "(function(z){return('divide='+z);})(divide);"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id": "cf1111c1c11feddfaeb4bdef",
+      "name": "Creating Decimals",
+      "dashedName": "waypoint-creating-decimals",
+      "difficulty": "9.9815",
+      "description": [
+        "",
+        "in JavaScript we can can work with decimal numbers",
+        "These decal numbers are known as floats.",
+        "Let's create a float now called myFloat and give it a value"
+      ],
+      "tests": [
+        "assert((function(){if(typeof(myFloat) != 'undefined' && typeof(myFloat) == 'number' && editor.getValue().match(/\\./g).length >=2){return(true);}else{return(false);}})(), 'myFloat should be a decimal point number');"
+      ],
+      "challengeSeed": [
+        "//var ourFloat = 5.7",
+        "//Create a number with a decimal point here called myFloat",
+        "",
+        "",
+        "",
+        "",
+        "if(typeof(myFloat) != 'undefined'){(function(z){return(z);})(myFloat);}"
       ],
       "challengeType": 1
     },
@@ -371,7 +389,7 @@
       "_id": "bd7993c9c69feddfaeb7bdef",
       "name": "Working With Decimals",
       "dashedName": "waypoint-working-with-decimals",
-      "difficulty": "9.9815",
+      "difficulty": "9.98151",
       "description": [
         "",
         "in JavaScript we can can work with decimal numbers",
@@ -379,20 +397,16 @@
         "Let's take a look at working with floats now"
       ],
       "tests": [
-        "assert(add == 13.5, 'The result of add should be 13.5');",
-        "assert(subtract == 7.25, 'The result of subtract should be 7.25');",
         "assert(multiply == 15, 'The result of multiply should be 3.75');",
         "assert(divide == 2.25, 'The result of divide should be 2.25');"
       ],
       "challengeSeed": [
-        "var add = 9 + _;//equals 13.5",
-        "var subtract = 12 - _;//equals 7.25",
-        "var multiply = 3.75 * _;//equals 15",
-        "var divide = 9 / _;//equals 2.25",
+        "var multiply = 3.75 * 0;//equals 15",
+        "var divide = 9 / 0;//equals 2.25",
         "",
         "",
         "",
-        "(function(w,x,y,z){return('add='+w+', subtract='+x+', multiply='+y+', divide='+z);})(add,subtract,multiply,divide);"
+        "(function(y,z){return('multiply='+y+', divide='+z);})(multiply,divide);"
       ],
       "challengeType": 1
     },
@@ -405,18 +419,17 @@
         "",
         "In JavaScript we can store lists or collections of data in what are called arrays",
         "Arrays are distinguished by the <code> [ </code> and <code> ] </code> around the data. Each piece of data is separated be a <code> , </code>",
-        "Now let's create a new array called <code> myArray </code> with a <code> string </code>, a <code> number </code> and a <code> array </code> with a <code> , </code> separating each one",
+        "Now let's create a new array called <code> myArray </code> with a <code> string </code> and a <code> number </code> with a <code> , </code> separating each one",
         "Refer to the example if you get stuck",
         ""
       ],
       "tests": [
         "assert(typeof(myArray) == 'object', 'myArray should be an array');",
-        "assert(myArray[0] !== undefined && typeof(myArray[0]) == 'string', 'The fist item in myArray should be a string');",
-        "assert(myArray[1] !== undefined && typeof(myArray[1]) == 'number', 'The second item in myArray should be a number');",
-        "assert(myArray[2] !== undefined && typeof(myArray[2]) == 'object', 'The third item in myArray should be an array');"
+        "assert(typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) == 'string', 'The fist item in myArray should be a string');",
+        "assert(typeof(myArray[1]) !== 'undefined' && typeof(myArray[1]) == 'number', 'The second item in myArray should be a number');"
       ],
       "challengeSeed": [
-        "//var array = ['John', 23,  [2, 'cat']];",
+        "//var array = ['John', 23];",
         "",
         "var myArray = [];",
         "",
@@ -426,10 +439,96 @@
       "challengeType": 1
     },
     {
+      "_id":"cf1111c1c11feddfaeb7bdef",
+      "name":"Nesting Arrays",
+      "dashedName":"waypoint-nesting-arrays",
+      "difficulty":"9.98161",
+      "description":[
+        "",
+        "We are also able to create arrays within arrays. This technique is called <code>nesting</code>.",
+        "Let's now go create a nested array called <code>myArray</code>"
+      ],
+      "tests":[
+        "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray) === 'object'){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
+      ],
+      "challengeSeed":[
+        "var myArray = [];",
+        "",
+        "",
+        "if(typeof(myArray) !== 'undefined'){(function(){return(myArray);})();}"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"bg9997c9c79feddfaeb9bdef",
+      "name":"Accessing data with Indexes",
+      "dashedName":"waypoint-accessing-data-with-indexes",
+      "difficulty":"9.9817",
+      "description":[
+        "",
+        "Once an array has been created we can access the data we have stored in them using indexes",
+        "Indexes are written in the same way as bracket notation that we covered earlier",
+        "Example:",
+        "<code>",
+        "var array = [1,2,3];",
+        "array[0];//equals 1",
+        "var data = array[1];",
+        "</code>",
+        "Create a var called <code>data</code> and set it to equal the first value of <code>myArray</code>"
+      ],
+      "tests":[
+        "assert((function(){if(typeof(myArray) != 'undefined' && typeof(data) != 'undefined' && myArray[0] == data){return(true);}else{return(false);}})(), 'the variable data should equal the first value of myArray');"
+      ],
+      "challengeSeed":[
+        "//var ourArray = [1,2,3]",
+        "//var ourData = ourArray[0]//equals 1",
+        "",
+        "var myArray = [1,2,3];",
+        "",
+        "",
+        "",
+        "if(typeof(myArray) != 'undefined' && typeof(data) != 'undefined'){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', data = ' + JSON.stringify(z));})(myArray, data);}"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"cf1111c1c11feddfaeb8bdef",
+      "name":"Modifying Data With Indexes",
+      "dashedName":"waypoint-modifying-data-with-indexes",
+      "difficulty":"9.98171",
+      "description":[
+        "",
+        "We are able to modify the data store in an array be using indexes",
+        "Example:",
+        "<code>",
+        "var ourArray = [1,2,3];",
+        "ourArray[0] = 3;//ourArray equals [3,2,3]",
+        "</code>",
+        "Now Let's modify <code>myArray</code> using an index",
+        ""
+      ],
+      "tests":[
+        "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return(true);}else{return(false);}})(), 'myArray should now be [3,2,3]');",
+        "assert((function(){if(editor.getValue().match(/[0]/g).length >= 2 && editor.getValue().match(/=/g).length >= 2){return(true);}else{return(false);}})(), 'You should be using indexes to modify the values in myArray');"
+      ],
+      "challengeSeed":[
+        "//var ourArray = [1,2,3];",
+        "//ourArray[0] = 3;",
+        "",
+        "var myArray = [1,2,3];",
+        "",
+        "",
+        "",
+        "",
+        "if(typeof(myArray) != 'undefined'){(function(){return(myArray);})();}"
+      ],
+      "challengeType": 1
+    },
+    {
       "_id": "bg9994c9c69feddfaeb9bdef",
       "name": "Manipulating Arrays With pop()",
       "dashedName": "waypoint-manipulating-arrays-with-pop",
-      "difficulty": "9.9817",
+      "difficulty": "9.9818",
       "description": [
         "",
         "When and array has been defined we still have the ability to make changes to it afterwards",
@@ -528,38 +627,6 @@
       "challengeType": 1
     },
     {
-      "_id":"bg9997c9c79feddfaeb9bdef",
-      "name":"Manipulating Arrays Indexes",
-      "dashedName":"waypoint-manipulating-arrays-indexes",
-      "difficulty":"9.9818",
-      "description":[
-        "",
-        "With Arrays, we can access and modify the data inside them using indexes much like we did with strings. The major difference between using indexes with arrays versus using them in strings is that you cannot modify data in a string using and index.",
-        "In Arrays though we are freely allowed to change values in an array.",
-        "Let's have a go and accessing the <code> last </code> item in myArray and changing the middle value tp <code> 25 </code>",
-        "Take a look at the commented out example above if you get stuck"
-      ],
-      "tests":[
-        "assert((function(a){if(a[0] != undefined && a[0] == 'Paul' && a[1] != undefined && a[1] == 25 && a[2][0] != undefined && a[2][0] == 'dog' && a[2][1] != undefined && a[2][1] == 3){return(true);}else{return(false);}})(myArray), 'myArray should be [\"John\", \"David\",\"Paul\"]');",
-        "assert((function(l){if(l[0] != undefined && l[0] == 'dog' && l[1] != undefined && l[1] == 3){return(true);}else{return(false);}})(last), 'The last variable in myArray should be [\"dog\", 3]');"
-      ],
-      "challengeSeed":[
-        "//var ourArray = ['Alpha', 'Beta', 'Gamma'];",
-        "//ourArray[0];//the first item in the array is 'Alpha'",
-        "//ouArray[1] = 'Omega';//The second item int the array is nom Omega instead of Beta",
-        "",
-        "var myArray = ['Paul', 23, ['dog', 3]];",
-        "var last = _;//Set this to be the last variable in the array using an index",
-        "",
-        "//Now set the second item in the Array to be 25 using an index'",
-        "",
-        "",
-        "",
-        "(function(y,z){return('myArray = ' + JSON.stringify(y) + ', last = ' + JSON.stringify(z));})(myArray, last);"
-      ],
-      "challengeType": 1
-    },
-    {
       "_id":"bg9997c9c89feddfaeb9bdef",
       "name":"Make it functional",
       "dashedName":"waypoint-make-it-functional",
@@ -569,123 +636,31 @@
         "In JavaScript we can divide up our code into separate and reusable parts called functions",
         "here's and example of a function",
         "<code>",
-          "function funcitonName (one, two ,three){",
-          "   /*Some Code*/",
+          "function functionName (a, b){",
+          "   return(a + b);",
           "}",
         "</code>",
         "our function can be called like this",
         "<code>functionName();</code>",
-        "Let's try creating and calling a function now."
+        "Let's try creating and calling a function now called <code>myFunction</code>"
       ],
       "tests":[
-        "assert(f==data);"
+        "assert((function(){if(typeof(f) !== 'undefined' && typeof(f) === 'number' && f === 9){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
       ],
       "challengeSeed":[
-        "//var ourData = 'function called!';",
-        "//function ourFunction(ourData) {/*ourData is being passed to this function as an argument*/",
-        "//return(data);",
-        "//}",
-        "",
-        "var data = 'Function Called!';",
-        "",
-        "//Create a function called myFunction that takes data as an argument and returns it like the example above",
-        "",
+        "var a = 4;",
+        "var b = 5;",
+        "//Don not modify the above!",
+        "//Create a function called myFunction that adds a and b",
         "",
         "",
         "",
         "",
         "//Don't modify this!",
-        "var f=myFunction(data);",
-        "(function(){var f=myFunction(data);return(f);})('');"
-      ],
-      "challengeType": 1
-    },
-    {
-      "_id":"bg9997c9c99feddfaeb9bdef",
-      "name":"Doing things inside functions",
-      "dashedName":"waypoint-doing-things-inside-functions",
-      "difficulty":"9.982",
-      "description":[
-        "",
-        "A function that takes the value you give it and returns it isn't very useful! So now let's get our functions to do something!",
-        "Starting from where we were last time let's make our function revers whatever we give it by chaining <code> .split('') </code>, <code> .reverse() </code> and <code> .join('') </code>"
-      ],
-      "tests":[
-        "assert(f==data.split('').reverse().join(''), 'myFunction should now return the reversed version of data (!dellaC noitcnuF)');"
-      ],
-      "challengeSeed":[
-        "//You can reverse strings like this",
-        "//var notReversed = 'String';",
-        "//var reversed = notReversed.split('').reverse().join('');",
-        "",
-        "var data = 'Function Called!';",
-        "",
-        "function myFunction(data){",
-        "   ",
-        "   return(data);",
-        "}",
-        "",
-        "",
-        "",
-        "//Don't modify this!",
-        "var f=myFunction(data);",
-        "(function(f){return(f);})(f);"
-      ],
-      "challengeType": 1
-    },
-    {
-      "_id":"bg9997c9c99feddfaeb9bdef",
-      "name":"Keeping In The Scope Of Things",
-      "dashedName":"waypoint-keeping-in-the-scope-of-things",
-      "difficulty":"9.9821",
-      "description":[
-        "",
-        "All variables are contained in something called a <code> scope </code>.",
-        "A Scope defines where are variable can be accessed.",
-        "All variables created outside any functions exist in what is called the <code> global scope </code>",
-        "All variables are container or are scope to inside that function.",
-        "<code>",
-        "var variable = 'Global Scope'",
-        "function test(){",
-        "   return(variable);",
-        "}",
-        "test();//Returns Global Scope",
-        "",
-        "function change(){",
-        "   variable = 'test';",
-        "   return(variable);",
-        "}",
-        "",
-        "change();//Returns test",
-        "variable //equals Global Scope",
-        "",
-        "</code>",
-        "Let's give this a go!"
-      ],
-      "tests":[
-        "assert(Global == access(Global), 'access should return your Global var');",
-        "assert(Global != localChange(Global), 'localChange should return your Global var');"
-      ],
-      "challengeSeed":[
-        "//Create Your global variable with any value here",
-        "var Global = _;",
-        "",
-        "//Make access() return you global variable",
-        "function access(){",
-        "   ",
-        "}",
-        "",
-        "access();",
-        "",
-        "//Pass you global variable into localChange and modify it within the function",
-        "function localChange(){",
-        "   ",
-        "}",
-        "",
-        "//Don't forget to call localChange here and pass your global variable",
-        "",
-        "",
-        "(function(x,y,z){return('access returns: ' + y(x) + ' & localChange returns: ' + z(x));})(Global, access, localChange);"
+        "if(typeof(myFunction) != 'undefined'){",
+        "var f=myFunction(a,b);",
+        "(function(){return(f);})();",
+        "}"
       ],
       "challengeType": 1
     },
@@ -783,7 +758,7 @@
       "challengeType": 1
     },
     {
-      "_id":"bh1111c1c11feddfaeb5bdef",
+      "_id":"cf1111c1c11feddfaeb5bdef",
       "name":"Looping with for",
       "dashedName":"waypoint-looping-with-for",
       "difficulty":"9.9824",
@@ -813,7 +788,7 @@
       "challengeType": 1
     },
     {
-      "_id":"bh1111c1c11feddfaeb1bdef",
+      "_id":"cf1111c1c11feddfaeb1bdef",
       "name":"Looping with while",
       "dashedName":"waypoint-looping-with-while",
       "difficulty":"9.9825",
@@ -844,7 +819,7 @@
       "challengeType": 1
     },
     {
-      "_id":"bh1111c1c11feddfaeb2bdef",
+      "_id":"cf1111c1c11feddfaeb2bdef",
       "name":"Looping with do while",
       "dashedName":"waypoint-looping-with-do-while",
       "difficulty":"9.9826",
@@ -875,37 +850,223 @@
       "challengeType": 1
     },
     {
-      "_id":"bh1111c1c11feddfaeb3bdef",
-      "name":"Looping with recursion",
-      "dashedName":"waypoint-looping-with-recursion",
+      "_id":"cf1111c1c11feddfaeb9bdef",
+      "name":"Random Numbers",
+      "dashedName":"waypoint-random-numbers",
       "difficulty":"9.9827",
       "description":[
         "",
-        "The next method of looping that we'll examine is called recursion",
-        "A recursive function (a function that uses recursion) is a function that calls itself until a predefined condition is met",
-        "<code>",
-        "var ourArray = [];",
-        "var i = 0;",
-        "function loop(){",
-        "   ourArray.push(i);",
-        "   i++;",
-        "   if(i < 5){",
-        "       loop()",
-        "   }",
-        "}",
-        "</code>",
-        "ourArray now contains [0,1,2,3,4] ",
-        "Let's try getting recursion to work by pushing values to an array"
+        "Random numbers are a very useful for creating random behaviours and games",
+        "Javascript has a <code>Math.random()</code> method that can generate a random decimal number",
+        "Let's have a go of <code>Math.random()</code> now be getting <code>myFunction</code> to return a random number"
       ],
       "tests":[
-        "assert((function(){if(!editor.getValue().match(/do/g) && !editor.getValue().match(/while/g) && !editor.getValue().match(/for/g)){return(true);}else{return(false);}})(), 'You should be using recursion for this!')",
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
+        "assert(typeof(myFunction()) === 'number', 'myFunction should return a random number');",
+        "assert((myFunction()+''). match(/\\./g), 'The number returned by myFunction should be a decimal');",
+        "assert(editor.getValue().match(/Math\\.random/g).length >= 2, 'You should be using Math.random to generate the random decimal number');"
       ],
       "challengeSeed":[
-        "var myArray = [];",
-        "//Push the numbers 0-4 to myArray",
         "",
+        "function myFunction(){",
+        " //Change the 0 to Math.random()",
+        " return(0);",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"cf1111c1c12feddfaeb1bdef",
+      "name":"Random Whole Numbers",
+      "dashedName":"waypoint-random-whole-numbers",
+      "difficulty":"9.9828",
+      "description":[
+        "",
+        "While it's great that we can create random decimal numbers it's a lot more useful to generate a random whole number",
+        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
+        "This technique gives us a whole number between zero and nine",
+        "Example:",
+        "<code>Math.floor(Math.random()*10);</code>",
+        "Let's give this technique a go now"
+      ],
+      "tests":[
+        "assert(typeof(myFunction()) == 'number', 'The result of myFunction should be a number');",
+        "assert(editor.getValue().match(/Math.random/g), 'You should be using Math.random to create a random number');",
+        "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random but 10 to make it a number that\\'s greater then zero');",
+        "assert(editor.getValue().match(/Math.floor/g), 'You should use Math.floor to remove the decimal part of the number');"
+      ],
+      "challengeSeed":[
+        "function myFunction(){",
+        " //Make myFunction return a random number between zero and nine instead of a float",
+        " return(Math.random());",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"cf1111c1c12feddfaeb2bdef",
+      "name":"Random Whole Numbers In a Range",
+      "dashedName":"waypoint-random-whole-numbers-in-a-range",
+      "difficulty":"9.9829",
+      "description":[
+        "",
+        "We can use a certain mathematical expression to get a random number between between twp numbers.",
+        "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
+        "By using this we can control the output of the random number.",
         ""
+      ],
+      "tests":[
+        "assert(myFunction() >= min, 'The random number that\\'s generated by myFunction should be greater than or equal to the minimum number');",
+        "assert(myFunction() <= max, 'The random number that\\'s generated by myFunction should be less than or equal to the maximum number');",
+        "assert((function(){if(editor.getValue().match(/max/g).length >= 2 && editor.getValue().match(/min/g).length >= 3 && editor.getValue().match(/Math.floor/g) && editor.getValue().match(/Math.random/g)){return(true);}else{return(false);}})(), 'You should be using the function given in the description to calculate the random in number in a range');"
+      ],
+      "challengeSeed":[
+        " var min = 0;",
+        " var max = 12;",
+        "function myFunction(){",
+        " //Make myFunction return a random number between zero and nine instead of a float",
+        " return(Math.random());",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"cf1111c1c12feddfaeb3bdef",
+      "name":"If Else Statements",
+      "dashedName":"waypoint-if-else-statements",
+      "difficulty":"9.983",
+      "description":[
+        "",
+        "We can use if statements in JavaScript to only execute code if a certain condition is met",
+        "if statements require some sort of boolean condition evaluate",
+        "Example:",
+        "<code>if(1==2){",
+        " return(true);",
+        "}",
+        "else{",
+        " return(false);",
+        "}</code>",
+        "Let's have a go of using if statements now by making a coin-flip game",
+        "Create an if else statement to return <code>heads</code> if the flip var is zero and to return <code>tails</code> if it's not"
+      ],
+      "tests":[
+        "assert((function(){if(myFunction() == 'heads' || myFunction() == 'tails'){return(true);}else{return(false);}})(), 'myFunction should either return heads or tails');",
+        "assert(editor.getValue().match(/if/g).length >= 3, 'You should have created a new if statement');",
+        "assert(editor.getValue().match(/else/g).length >= 2, 'You should have created a new else statement');"
+      ],
+      "challengeSeed":[
+        "function myFunction(){",
+        " var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
+        " //Create and if else statement here to return heads if flip is 0 otherwise return false",
+        " ",
+        "}",
+        "",
+        "(function(){return(myFunction());})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"cf1111c1c12feddfaeb6bdef",
+      "name":"An Intro To RegEx",
+      "dashedName":"waypoint-an-intro-to-regex",
+      "difficulty":"9.984",
+      "description":[
+        "",
+        "RegEx is a powerful tool we can use to find certain words or patterns in strings",
+        "RegEx can look difficult at first but there's not much to getting it working",
+        "If we wanted to find the number of times the word \"the\" occured in the string \"The dog chased the cat\" We could use the following RegEx:",
+        "<code>\/the+\/gi</code>",
+        "Let's break this down a bit",
+        "\"The\" is the pattern we want to match",
+        "\"+\" means we are looking for one or more occurrences of this pattern",
+        "\"g\" means that it searhces the whole string",
+        "\"i\" means that we are ignoring the case(upper or lower) of what we are looking for",
+        "Let's try finding the word and in the string \"John and Alan went to the shop and got some milk\" by replacing the <code>.+</code> in the currnet RegEx with something that will find the word \"and\" and count how many times it occurs"
+      ],
+      "tests":[
+        "assert(test==2, 'You\\'re RegEx should have found two occurances of the word \"and\"');",
+        "assert(editor.getValue().match(/\\/and\\+\\/gi/), 'You should have used this RegEx to find the word \"and\"');"
+      ],
+      "challengeSeed":[
+        "var test = (function(){",
+        " var testString = \"John and Alan went to the shop and got some milk\";",
+        "",
+        "//Do Not Modify Above",
+        "",
+        " var expression = /.+/gi;",
+        "",
+        "//Do Not Modify Below",
+        "",
+        " return(testString.match(expression).length);",
+        "})();(function(){return(test);})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"cf1111c1c12feddfaeb7bdef",
+      "name":"Finding Numbers",
+      "dashedName":"waypoint-finding-numbers",
+      "difficulty":"9.985",
+      "description":[
+        "",
+        "We can use special selectors in RegEx to select a particular type of value",
+        "One such selector is the digit selector <code>\\d</code> which is used to grab the numbers in a string",
+        "It is used like this:",
+        "<code>/\\d+/g</code>",
+        ""
+      ],
+      "tests":[
+        "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
+        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\d+/gi to find the numbers in the testString');"
+      ],
+      "challengeSeed":[
+        "var test = (function(){",
+        " var testString = \"There's 3 cats but 4 dogs.\"",
+        "",
+        "//Do Not Modify Above",
+        "",
+        " var expression = /.+/gi;",
+        "",
+        "//Do Not Modify Below",
+        "",
+        " return(testString.match(expression).length);",
+        "})();(function(){return(test);})();"
+      ],
+      "challengeType": 1
+    },
+    {
+      "_id":"cf1111c1c12feddfaeb8bdef",
+      "name":"Finding WhiteSpace",
+      "dashedName":"waypoint-finding-whitespace",
+      "difficulty":"9.987",
+      "description":[
+        "",
+        "We can also use selectors like <code>\\s</code> to find spaces in a string",
+        "It is used like this:",
+        "<code>/\\s+/g</code>",
+        ""
+      ],
+      "tests":[
+        "assert(test === 7, 'Your RegEx should have found seven spaces in the testString');",
+        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\s+/gi to find the spaces in the testString');"
+      ],
+      "challengeSeed":[
+        "var test = (function(){",
+        " var testString = \"How many spaces are there in this sentance.\";",
+        "",
+        "//Do Not Modify Above",
+        "",
+        " var expression = /.+/gi;",
+        "",
+        "//Do Not Modify Below",
+        "",
+        " return(testString.match(expression).length);",
+        "})();(function(){return(test);})();"
       ],
       "challengeType": 1
     }
