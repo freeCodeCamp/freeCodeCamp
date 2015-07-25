@@ -19,13 +19,19 @@ export default contain(
     displayName: 'FreeCodeCamp',
 
     propTypes: {
-      children: PropTypes.node
+      children: PropTypes.node,
+      username: PropTypes.string,
+      points: PropTypes.number,
+      picture: PropTypes.string
     },
 
     render() {
+      const { username, points, picture } = this.props;
+      const navProps = { username, points, picture };
       return (
         <div>
-          <Nav />
+          <Nav
+            { ...navProps }/>
           <Row>
             { this.props.children }
           </Row>
