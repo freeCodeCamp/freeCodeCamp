@@ -6,8 +6,9 @@
     "url": "https://github.com/freecodecamp/freecodecamp.git"
   },
   "scripts": {
+    "build-production": "webpack",
     "start": "babel-node server/server.js",
-    "prestart-production": "bower cache clean && bower install && gulp build",
+    "prestart-production": "bower cache clean && bower install && gulp build && npm run build-production",
     "start-production": "node pm2Start",
     "lint": "eslint --ext=.js,.jsx .",
     "test": "mocha"

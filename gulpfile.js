@@ -62,6 +62,10 @@ var paths = {
   ]
 };
 
+var webpackOptions = {
+  devtool: 'inline-source-map'
+};
+
 function errorHandler() {
   var args = Array.prototype.slice.call(arguments);
 
@@ -87,14 +91,22 @@ gulp.task('inject', function() {
 gulp.task('pack-client', function() {
   return gulp.src(webpackConfig.entry)
     .pipe(plumber({ errorHandler }))
-    .pipe(webpack(webpackConfig))
+    .pipe(webpack(Object.assign(
+      {},
+      webpackConfig,
+      webpackOptions
+    )))
     .pipe(gulp.dest(webpackConfig.output.path));
 });
 
 gulp.task('pack-watch', function() {
   return gulp.src(webpackConfig.entry)
     .pipe(plumber({ errorHandler }))
-    .pipe(webpack(Object.assign(webpackConfig, { watch: true })))
+    .pipe(webpack(Object.assign(
+      {},
+      webpackConfig,
+      { watch: true }
+    )))
     .pipe(gulp.dest(webpackConfig.output.path));
 });
 
