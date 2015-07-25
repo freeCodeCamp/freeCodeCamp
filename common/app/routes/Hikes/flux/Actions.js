@@ -32,12 +32,12 @@ export default Actions({
   setHikes: null
 })
   .refs({ displayName: 'HikesActions' })
-  .init(({ instance, args: [services] }) => {
+  .init(({ instance: hikeActions, args: [services] }) => {
     // set up hikes fetching
-    instance.fetchHikes.subscribe(
+    hikeActions.fetchHikes.subscribe(
       ({ isPrimed, dashedName }) => {
         if (isPrimed) {
-          return instance.setHikes({
+          return hikeActions.setHikes({
             transform: (oldState) => {
               const { hikes } = oldState;
               const currentHike = getCurrentHike(
@@ -53,7 +53,7 @@ export default Actions({
           if (err) {
             debug('an error occurred fetching hikes', err);
           }
-          instance.setHikes({
+          hikeActions.setHikes({
             set: {
               hikes: hikes,
               currentHike: getCurrentHike(hikes, dashedName)
