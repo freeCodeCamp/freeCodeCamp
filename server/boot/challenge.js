@@ -121,6 +121,7 @@ module.exports = function(app) {
 
     var challengeId = String(req.user.currentChallenge.challengeId);
     var challengeBlock = req.user.currentChallenge.challengeBlock;
+    // TODO(berks) fix index call here
     var indexOfChallenge = challengeMapWithIds[challengeBlock]
       .indexOf(challengeId);
 
