@@ -4,15 +4,10 @@ var Rx = require('rx'),
   path = require('path'),
 
   // utils
+  plumber = require('gulp-plumber'),
   notify = require('gulp-notify'),
   debug = require('debug')('freecc:gulp'),
   bower = require('bower-main-files'),
-
-  // loopback client
-  browserify = require('browserify'),
-  boot = require('loopback-boot'),
-  envify = require('envify/custom'),
-  toVinylWithName = require('vinyl-source-stream'),
 
   // react app
   webpack = require('gulp-webpack'),
@@ -67,57 +62,45 @@ var paths = {
   ]
 };
 
+function errorHandler() {
+  var args = Array.prototype.slice.call(arguments);
+
+  // Send error to notification center with gulp-notify
+  notify.onError({
+    title: 'Compile Error',
+    message: '<%= error %>'
+  }).apply(this, args);
+
+  // Keep gulp from hanging on this task
+  this.emit('end');
+}
+
 gulp.task('inject', function() {
   gulp.src('views/home.jade')
+    .pipe(plumber({ errorHandler }))
     .pipe(inject(gulp.src(bower()), {
       //ignorePath: '/public'
     }))
     .pipe(gulp.dest('views'));
 });
 
-// NOTE(berks): not using this for now as loopback client is just too large
-gulp.task('loopback', function() {
-  var config = {
-    basedir: __dirname,
-    debug: true,
-    cache: {},
-    packageCache: {},
-    fullPaths: true,
-    standalone: paths.loopback.clientName
-  };
-
-  var b = browserify(config);
-
-  // compile loopback for the client
-  b.require(paths.loopback.client);
-
-  boot.compileToBrowserify(paths.loopback.root, b);
-
-  // sub process.env for proper strings
-  b.transform(envify({
-    NODE_ENV: 'development'
-  }));
-
-  return b.bundle()
-    .on('error', errorNotifier)
-    .pipe(toVinylWithName(paths.loopback.clientName + '.js'))
-    .pipe(gulp.dest(paths.publicJs));
-});
-
 gulp.task('pack-client', function() {
   return gulp.src(webpackConfig.entry)
+    .pipe(plumber({ errorHandler }))
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest(webpackConfig.output.path));
 });
 
 gulp.task('pack-watch', function() {
   return gulp.src(webpackConfig.entry)
+    .pipe(plumber({ errorHandler }))
     .pipe(webpack(Object.assign(webpackConfig, { watch: true })))
     .pipe(gulp.dest(webpackConfig.output.path));
 });
 
 gulp.task('pack-node', function() {
   return gulp.src(webpackConfigNode.entry)
+    .pipe(plumber({ errorHandler }))
     .pipe(webpack(webpackConfigNode))
     .pipe(gulp.dest(webpackConfigNode.output.path));
 });
@@ -174,6 +157,7 @@ gulp.task('lint', function() {
 
 gulp.task('less', function() {
   return gulp.src('./public/css/*.less')
+    .pipe(plumber({ errorHandler }))
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
@@ -188,15 +172,3 @@ gulp.task('watch', ['less', 'serve', 'sync'], function() {
 
 gulp.task('default', ['less', 'serve', 'sync', 'watch', 'pack-watch']);
 
-function errorNotifier() {
-  var args = Array.prototype.slice.call(arguments);
-
-  // Send error to notification center with gulp-notify
-  notify.onError({
-    title: 'Compile Error',
-    message: '<%= error %>'
-  }).apply(this, args);
-
-  // Keep gulp from hanging on this task
-  this.emit('end');
-}

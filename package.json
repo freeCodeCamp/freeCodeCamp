@@ -117,6 +117,7 @@
     "gulp-inject": "~1.0.2",
     "gulp-nodemon": "^2.0.3",
     "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
     "istanbul": "^0.3.15",
     "loopback-explorer": "^1.7.2",
     "loopback-testing": "^1.1.0",
