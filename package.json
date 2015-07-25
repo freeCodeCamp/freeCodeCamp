@@ -11,9 +11,10 @@
   },
   "scripts": {
     "start": "babel-node server/server.js",
+    "prestart-production": "bower cache clean && bower install && gulp build",
+    "start-production": "node pm2Start",
     "lint": "eslint --ext=.js,.jsx .",
-    "test": "mocha",
-    "postinstall": "bower cache clean && bower install && gulp build"
+    "test": "mocha"
   },
   "license": "BSD-3-Clause",
   "contributors": [
