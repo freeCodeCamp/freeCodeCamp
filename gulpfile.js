@@ -81,7 +81,7 @@ function errorHandler() {
 
 gulp.task('inject', function() {
   gulp.src('views/home.jade')
-    .pipe(plumber({ errorHandler }))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(inject(gulp.src(bower()), {
       //ignorePath: '/public'
     }))
@@ -90,7 +90,7 @@ gulp.task('inject', function() {
 
 gulp.task('pack-client', function() {
   return gulp.src(webpackConfig.entry)
-    .pipe(plumber({ errorHandler }))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(webpack(Object.assign(
       {},
       webpackConfig,
@@ -101,7 +101,7 @@ gulp.task('pack-client', function() {
 
 gulp.task('pack-watch', function() {
   return gulp.src(webpackConfig.entry)
-    .pipe(plumber({ errorHandler }))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(webpack(Object.assign(
       {},
       webpackConfig,
@@ -112,7 +112,7 @@ gulp.task('pack-watch', function() {
 
 gulp.task('pack-node', function() {
   return gulp.src(webpackConfigNode.entry)
-    .pipe(plumber({ errorHandler }))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(webpack(webpackConfigNode))
     .pipe(gulp.dest(webpackConfigNode.output.path));
 });
@@ -169,7 +169,7 @@ gulp.task('lint', function() {
 
 gulp.task('less', function() {
   return gulp.src('./public/css/*.less')
-    .pipe(plumber({ errorHandler }))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
