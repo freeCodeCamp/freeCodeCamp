@@ -1,8 +1,9 @@
 import Rx from 'rx';
 import React from 'react';
+import Fetchr from 'fetchr';
+import debugFactory from 'debug';
 import { Router } from 'react-router';
 import { history } from 'react-router/lib/BrowserHistory';
-import debugFactory from 'debug';
 import { hydrate } from 'thundercats';
 import { Render } from 'thundercats-react';
 
@@ -11,6 +12,9 @@ import { app$ } from '../common/app';
 const debug = debugFactory('fcc:client');
 const DOMContianer = document.getElementById('fcc');
 const catState = window.__fcc__.data || {};
+const services = new Fetchr({
+  xhrPath: '/services'
+});
 
 Rx.longStackSupport = !!debug.enabled;
 
@@ -18,7 +22,7 @@ Rx.longStackSupport = !!debug.enabled;
 app$(history)
   .flatMap(
     ({ AppCat }) => {
-      const appCat = AppCat();
+      const appCat = AppCat(null, services);
       return hydrate(appCat, catState)
         .map(() => appCat);
     },
