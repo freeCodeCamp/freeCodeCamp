@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { contain } from 'thundercats';
+import { contain } from 'thundercats-react';
 import { Grid, Row } from 'react-bootstrap';
 
 export default contain(
