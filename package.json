@@ -5,10 +5,6 @@
     "type": "git",
     "url": "https://github.com/freecodecamp/freecodecamp.git"
   },
-  "engines": {
-    "node": "0.10.35",
-    "npm": "2.3.0"
-  },
   "scripts": {
     "start": "babel-node server/server.js",
     "prestart-production": "bower cache clean && bower install && gulp build",
