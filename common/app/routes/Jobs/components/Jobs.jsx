@@ -5,7 +5,7 @@ import { Grid, Row } from 'react-bootstrap';
 export default contain(
   {
     store: 'jobsStore',
-    actions: 'jobActions'
+    fetchAction: 'jobActions.getJobs'
   },
   React.createClass({
     displayName: 'Jobs',
