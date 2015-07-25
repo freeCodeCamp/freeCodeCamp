@@ -1,28 +1,26 @@
 import React, { PropTypes } from 'react';
-import { createContainer } from 'thundercats';
+import { contain } from 'thundercats';
 import { Grid, Row } from 'react-bootstrap';
 
-@createContainer({
-  store: 'JobsStore'
-})
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export default contain(
+  {
+    store: 'jobsStore',
+    actions: 'jobActions'
+  },
+  React.createClass({
+    displayName: 'Jobs',
+    propTypes: {
+      jobs: PropTypes.array
+    },
 
-
-  static displayName = 'Jobs'
-  static propTypes = {
-    jobs: PropTypes.array
-  }
-
-  render() {
-    return (
-      <Grid>
-        <Row>
-          foo
-        </Row>
-      </Grid>
-    );
-  }
-}
+    render() {
+      return (
+        <Grid>
+          <Row>
+            foo
+          </Row>
+        </Grid>
+      );
+    }
+  })
+);
