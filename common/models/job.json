@@ -32,13 +32,13 @@
       "type": "string"
     },
     "isApproverd": {
-      "type": "bool"
+      "type": "boolean"
     },
     "isHighlighted": {
-      "type": "bool"
+      "type": "boolean"
     },
-    "isValid": {
-      "type": "bool"
+    "isPaid": {
+      "type": "boolean"
     },
     "createdOn": {
       "type": "date"

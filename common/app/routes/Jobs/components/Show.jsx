@@ -14,7 +14,7 @@ export default contain(
 
     renderJobs(jobs =[]) {
       return jobs.map((
-        { id, company, position, description, logoUrl },
+        { id, company, position, description, logo },
         index
       ) => {
         const header = (
@@ -33,8 +33,9 @@ export default contain(
             eventKey={ index }
             header={ header }
             key={ id }>
-            <Thumbnail alt='171x180' src={ logoUrl } />
+            <Thumbnail alt='171x180' src={ logo } />
             <p>{ description }</p>
+
           </Panel>
         );
       });
