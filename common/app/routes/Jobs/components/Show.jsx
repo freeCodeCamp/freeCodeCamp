@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { contain } from 'thundercats-react';
-import { Accordion, Thumbnail, Panel } from 'react-bootstrap';
+import { Accordion, Thumbnail, Panel, Well } from 'react-bootstrap';
+import moment from 'moment';
 
 export default contain(
   {
@@ -13,8 +14,24 @@ export default contain(
     },
 
     renderJobs(jobs =[]) {
+      const thumbnailStyle = {
+        backgroundColor: 'white',
+        maxHeight: '200px',
+        maxWidth: '200px'
+      };
       return jobs.map((
-        { id, company, position, description, logo },
+        {
+          id,
+          company,
+          position,
+          description,
+          logo,
+          city,
+          state,
+          email,
+          phone,
+          postedOn
+        },
         index
       ) => {
         const header = (
@@ -33,9 +50,17 @@ export default contain(
             eventKey={ index }
             header={ header }
             key={ id }>
-            <Thumbnail alt='171x180' src={ logo } />
+            <Thumbnail
+              alt='200x200' src={ logo }
+              style={ thumbnailStyle } />
+            <Well>
+              Location: { city }, { state }
+              <br />
+              Contact: { email || phone || 'N/A' }
+              <br />
+              Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+            </Well>
             <p>{ description }</p>
-
           </Panel>
         );
       });

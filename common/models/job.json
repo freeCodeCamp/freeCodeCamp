@@ -16,7 +16,10 @@
     "city": {
       "type": "string"
     },
-    "contact": {
+    "email": {
+      "type": "string"
+    },
+    "phone": {
       "type": "string"
     },
     "state": {
@@ -40,8 +43,9 @@
     "isPaid": {
       "type": "boolean"
     },
-    "createdOn": {
-      "type": "date"
+    "postedOn": {
+      "type": "date",
+      "defaultFn": "now"
     }
   },
   "validations": [],
