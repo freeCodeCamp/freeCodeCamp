@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { cloneElement, PropTypes } from 'react';
 import { contain } from 'thundercats-react';
-import { Grid, Row } from 'react-bootstrap';
+import { Button, Jumbotron, Row } from 'react-bootstrap';
+import ShowJobs from './Show.jsx';
 
 export default contain(
   {
@@ -10,16 +11,51 @@ export default contain(
   React.createClass({
     displayName: 'Jobs',
     propTypes: {
+      children: PropTypes.element,
       jobs: PropTypes.array
     },
 
-    render() {
+    renderShow(jobs) {
       return (
-        <Grid>
+        <ShowJobs jobs={ jobs }/>
+      );
+    },
+
+    renderChild(child, jobs) {
+      if (!child) {
+        return null;
+      }
+      return cloneElement(
+        child,
+        { jobs }
+      );
+    },
+
+    render() {
+      const { children, jobs } = this.props;
+
+      return (
+        <div>
           <Row>
-            foo
+            <Jumbotron>
+              <h1>Free Code Camps' Job Board</h1>
+              <p>
+                Need to find the best junior developers?
+                Want to find dedicated developers eager to join your company?
+                Sign up now to post your job!
+              </p>
+              <Button
+                bsSize='large'
+                className='signup-btn'>
+                Try the first month 20% off!
+              </Button>
+            </Jumbotron>
           </Row>
-        </Grid>
+          <Row>
+            { this.renderChild(children, jobs) ||
+              this.renderShow(jobs) }
+            </Row>
+        </div>
       );
     }
   })
