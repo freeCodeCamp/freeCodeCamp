@@ -3,32 +3,28 @@
     "id": "bd7167d8c441cbafaeb5bdef",
     "company": "Livestream",
     "position": "Junior Backend Developer (Node.js)",
-    "logoUrl": "https://s3.amazonaws.com/prod-heroku/greenhouse_job_boards/logos/000/001/189/resized/livestream_logo-rgb_standard-cc718e67ce1a0f6fa400f609bdefe605.png?1429547161",
-    "postingUrl": "https://boards.greenhouse.io/livestream/jobs/59458?t=ek25h0#.VWeTk1xVhBc?source=freecodecamp.com",
+    "logo": "https://s3.amazonaws.com/prod-heroku/greenhouse_job_boards/logos/000/001/189/resized/livestream_logo-rgb_standard-cc718e67ce1a0f6fa400f609bdefe605.png?1429547161",
     "description": "foo job"
   },
   {
     "id": "bd7167d8c442cbafaeb5bdef",
     "company": "Adobe",
     "position": "Junior JavaScript Engineer",
-    "logoUrl": "http://cdn-3.famouslogos.us/images/adobe-logo.jpg",
-    "postingUrl": "https://adobe.taleo.net/careersection/2/jobdetail.ftl?job=32619&lang=en",
+    "logo": "http://cdn-3.famouslogos.us/images/adobe-logo.jpg",
     "description": "foo job"
   },
   {
     "id": "bd7167d8c443cbafaeb5bdef",
     "company": "Bookspan",
     "position": "Full Stack JavaScript Developer (Junior)",
-    "logoUrl": "https://tm-prod.global.ssl.fastly.net/uploaded/companies/227/small_logo.png?v=db9dbe",
-    "postingUrl": "http://bookspan.theresumator.com/apply/10190b666b74087b537f4659756f7c5679000704722064232c1d2e3b2b102501310437/Fullstack-Javascript-Developer-junior?source=freecodecamp.com&sid=zvi9YD9OcHwoDZNgM3XI9uPszGvqxJo6eHf",
+    "logo": "https://tm-prod.global.ssl.fastly.net/uploaded/companies/227/small_logo.png?v=db9dbe",
     "description": "foo job"
   },
   {
     "id": "bd7167d8c444cbafaeb5bdef",
     "company": "Good Eggs",
     "position": "Full Stack Developer",
-    "logoUrl": "https://d1qb2nb5cznatu.cloudfront.net/startups/i/72165-64efbd521cdfe3357c811758f5436e7d-medium_jpg.jpg",
-    "postingUrl": "http://www.jobscore.com/jobs2/goodeggs/full-stack-developer/cQ_hd-0USr4Om7eJe4iefn?Board=freecodecamp.com",
+    "logo": "https://d1qb2nb5cznatu.cloudfront.net/startups/i/72165-64efbd521cdfe3357c811758f5436e7d-medium_jpg.jpg",
     "description": "foo job"
   }
 ]
