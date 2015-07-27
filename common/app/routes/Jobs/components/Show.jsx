@@ -38,7 +38,7 @@ export default contain(
           <div>
             <h4 style={{ display: 'inline-block' }}>{ company }</h4>
             <h5
-              className='pull-right'
+              className='pull-right hidden-xs hidden-md'
               style={{ display: 'inline-block' }}>
               { position }
             </h5>
@@ -54,6 +54,7 @@ export default contain(
               alt='200x200' src={ logo }
               style={ thumbnailStyle } />
             <Well>
+              Position: { position }
               Location: { city }, { state }
               <br />
               Contact: { email || phone || 'N/A' }
