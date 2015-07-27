@@ -105,6 +105,7 @@ gulp.task('pack-watch', function() {
     .pipe(webpack(Object.assign(
       {},
       webpackConfig,
+      webpackOptions,
       { watch: true }
     )))
     .pipe(gulp.dest(webpackConfig.output.path));
