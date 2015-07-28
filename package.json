@@ -106,6 +106,7 @@
   "devDependencies": {
     "babel-eslint": "^3.1.7",
     "blessed": "~0.0.37",
+    "bower": "^1.4.1",
     "bower-main-files": "~0.0.4",
     "browser-sync": "~1.8.1",
     "browserify": "^10.2.4",
