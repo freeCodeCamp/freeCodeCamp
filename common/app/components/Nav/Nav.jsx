@@ -71,7 +71,9 @@ export default class extends React.Component {
           className='hidden-xs hidden-sm'
           eventKey={ 2 }>
           <a href={ '/' + username }>
-            <img src={ picture } />
+            <img
+              className='profile-picture float-right'
+              src={ picture } />
           </a>
         </div>
       );
