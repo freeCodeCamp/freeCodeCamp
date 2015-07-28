@@ -1478,8 +1478,8 @@
       "tests": [
         "assert($('ul').length > 0, 'You should have an <code>ul</code> element on your page.')",
         "assert($('ol').length > 0, 'You should have an <code>ol</code> element on your page.')",
-        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
-        "assert($('li').length > 5, 'You should have three <code>li</code> elements within your <code>ol</code> element.')",
+        "assert($('ul li').length > 5, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
+        "assert($('ol li').length > 5, 'You should have three <code>li</code> elements within your <code>ol</code> element.')",
         "assert(editor.match(/<\\/ul>/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul>/g).length, 'Make sure your <code>ul</code> element has a closing tag.')",
         "assert(editor.match(/<\\/ol>/g) && editor.match(/<\\/ol>/g).length === editor.match(/<ol>/g).length, 'Make sure your <code>ol</code> element has a closing tag.')",
         "assert(editor.match(/<\\/li>/g) && editor.match(/<li>/g) && editor.match(/<\\/li>/g).length === editor.match(/<li>/g).length, 'Make sure your <code>li</code> element has a closing tag.')"
