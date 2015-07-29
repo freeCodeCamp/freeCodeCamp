@@ -13,7 +13,7 @@
     "lint": "eslint --ext=.js,.jsx .",
     "test": "mocha"
   },
-  "license": "BSD-3-Clause",
+  "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "contributors": [
     {
       "name": "Quincy Larson",
