@@ -2588,8 +2588,8 @@
     },
     {
       "id": "bad87dee1348bd9aede07836",
-      "name": "Waypoint: Use a CSS ID to Style an Element",
-      "dashedName": "waypoint-use-a-css-id-to-style-an-element",
+      "name": "Waypoint: Use an ID Attribute to Style an Element",
+      "dashedName": "waypoint-use-an-id-attribute-to-style-an-element",
       "difficulty": 0.0392,
       "description": [
         "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
@@ -3331,21 +3331,23 @@
       "descriptionDe": []
     },
     {
-      "id": "bad87fee1348bd9aedf06756",
-      "name": "Waypoint: Override Class Declarations with Inline Styles",
-      "dashedName": "waypoint-override-class-declarations-with-inline-styles",
+      "id": "bad87fee1348bd8aedf06756",
+      "name": "Waypoint: Override Class Declarations by Styling ID Attributes",
+      "dashedName": "waypoint-override-class-declarations-by-styling-id-attributes",
       "difficulty": 0.052,
       "description": [
         "We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.",
-        "But we're not done yet. There are other ways that you can override CSS. Do you remember inline styles?",
-        "Use an in-line style to try to make our <code>h1</code> element white. Remember, in line styles look like this: <code>&#60;h1 style=\"color: green\"&#62;</code>",
-        "Leave the \"blue-text\" and \"pink-text\" classes on your <code>h1</code> element."
+        "But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?",
+        "Let's override your \"pink-text\" and \"blue-text\" classes, and make your <code>h1</code> element orange, by giving the <code>h1</code> element an id and then styling that id.",
+        "Give your <code>h1</code> element the id attribute of \"orange-text\". Remember, id styles look like this: <code>&#60;h1 id=\"orange-text\"&#62;</code>",
+        "Leave the \"blue-text\" and \"pink-text\" classes on your <code>h1</code> element.",
+        "Create a CSS declaration for your \"orange-text\" id in your <code>style</code> element. Here's and example of what this looks like: <code>#brown-text { color: brown; }</code>"
       ],
       "tests": [
         "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
         "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
-        "assert(!$('h1').hasClass('white-text'), 'Your <code>h1</code> element should have the inline style of \"color: white\".')",
-        "assert($('h1').css('color') === 'rgb(255, 255, 255)', 'Your <code>h1</code> element should be white.')"
+        "assert($('h1').attr('id') === 'orange-text', 'Give your <code>h1</code> element the id of \"orange-text\".')",
+        "assert($('h1').css('color') === 'rgb(255, 165, 0)', 'Your <code>h1</code> element should be orange.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3378,23 +3380,22 @@
       "descriptionDe": []
     },
     {
-      "id": "bad87fee1348bd9aedf07756",
-      "name": "Waypoint: Override All Other Styles by using Important",
-      "dashedName": "waypoint-override-all-other-styles-by-using-important",
-      "difficulty": 0.053,
+      "id": "bad87fee1348bd9aedf06756",
+      "name": "Waypoint: Override Class Declarations with Inline Styles",
+      "dashedName": "waypoint-override-class-declarations-with-inline-styles",
+      "difficulty": 0.052,
       "description": [
-        "Yay! we just proved that in-line styles will override the CSS declarations in your <code>style</code> element.",
-        "But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.",
-        "In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use <code>!important</code>.",
-        "Let's go all the way back to our body declaration. This was the weakest of all, being overridden by class declarations, id declarations, and in-line styles.",
-        "Add the keyword <code>!important</code> to your body' element's color declaration to make 100% sure that your <code>h1</code> element will be green.",
-        "An example of how to do this is: <code>color: red !important;</code>"
+        "So we've proven that id declarations override class declarations, regardless of where they are declared in your <code>style</code> element CSS.",
+        "There are other ways that you can override CSS. Do you remember inline styles?",
+        "Use an in-line style to try to make our <code>h1</code> element white. Remember, in line styles look like this: <code>&#60;h1 style=\"color: green\"&#62;</code>",
+        "Leave the \"blue-text\" and \"pink-text\" classes on your <code>h1</code> element."
       ],
       "tests": [
         "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
         "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
-        "assert(!$('h1').hasClass('white-text'), 'Your <code>h1</code> element should have the inline style of \"color: white\".')",
-        "assert($('h1').css('color') === 'rgb(0, 192, 0)', 'Your <code>h1</code> element should be green.')"
+        "assert($('h1').attr('id') === 'orange-text', 'Your <code>h1</code> element should have the id of \"orange-text\".')",
+        "assert(editor.match(/<h1.*style/gi) && editor.match(/<h1.*style.*color:/gi).length > 0, 'Give your <code>h1</code> element the inline style of \"color: white\".')",
+        "assert($('h1').css('color') === 'rgb(255, 255, 255)', 'Your <code>h1</code> element should be white.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3403,6 +3404,9 @@
         "    font-family: Monospace;",
         "    color: green;",
         "  }",
+        "  #orange-text {",
+        "    color: orange;",
+        "  }",
         "  .pink-text {",
         "    color: pink;",
         "  }",
@@ -3410,7 +3414,61 @@
         "    color: blue;",
         "  }",
         "</style>",
-        "<h1 class='pink-text blue-text' style='color: white'>Hello World!</h1>"
+        "<h1 id='orange-text' class='pink-text blue-text'>Hello World!</h1>"
+      ],
+      "challengeType": 0,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": [],
+      "nameDe": "",
+      "descriptionDe": []
+    },
+    {
+      "id": "bad87fee1348bd9aedf07756",
+      "name": "Waypoint: Override All Other Styles by using Important",
+      "dashedName": "waypoint-override-all-other-styles-by-using-important",
+      "difficulty": 0.053,
+      "description": [
+        "Yay! we just proved that in-line styles will override all the CSS declarations in your <code>style</code> element.",
+        "But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.",
+        "In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use <code>!important</code>.",
+        "Let's go all the way back to our \"pink-text\" class declaration. Remember that our \"pink-text\" class was overridden by subsequent class declarations, id declarations, and in-line styles.",
+        "Let's add the keyword <code>!important</code> to your body' element's color declaration to make 100% sure that your <code>h1</code> element will be pink.",
+        "An example of how to do this is: <code>color: red !important;</code>"
+      ],
+      "tests": [
+        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
+        "assert($('h1').attr('id') === 'orange-text', 'Your <code>h1</code> element should have the id of \"orange-text\".')",
+        "assert(editor.match(/<h1.*style/gi) && editor.match(/<h1.*style.*color:/gi).length > 0, 'Your <code>h1</code> element should have the inline style of \"color: white\".')",
+        "assert(editor.match(/pink.*\\!important/gi) && editor.match(/pink.*\\!important;/gi).length > 0, 'Your \"pink-text\" class should have the !important keyword to override all other declarations.')",
+        "assert($('h1').css('color') === 'rgb(255, 192, 203)', 'Your <code>h1</code> element should be pink.')"
+      ],
+      "challengeSeed": [
+        "<style>",
+        "  body {",
+        "    background-color: black;",
+        "    font-family: Monospace;",
+        "    color: green;",
+        "  }",
+        "  #orange-text {",
+        "    color: orange;",
+        "  }",
+        "  .pink-text {",
+        "    color: pink;",
+        "  }",
+        "  .blue-text {",
+        "    color: blue;",
+        "  }",
+        "</style>",
+        "<h1 id='orange-text' class='pink-text blue-text' style='color: white'>Hello World!</h1>"
       ],
       "challengeType": 0,
       "nameCn": "",
@@ -3432,12 +3490,14 @@
       "dashedName": "waypoint-use-hex-code-for-specific-colors",
       "difficulty": 0.054,
       "description": [
-        "",
-        "Use hex code instead of a color."
+        "Did you know there other ways to represent colors in CSS? One of these ways is called hexadecimal code, or \"hex code\" for short.",
+        "\"Decimal\" means the numbers zero through nine - the numbers that people use in everyday life. \"Hexadecimal\" includes these 10 numbers, plus the letters A, B, C, D, E and F. This means that Hexidecimal has a total of 16 possible values, instead of the 10 possible values that our normal base-10 number system gives us.",
+        "With CSS, we use 6 hexidecimal number to represent colors. For example, <code>#000000</code> is the lowest possible value, and it represents the color black.",
+        "Replace the word \"black\" in our <code>body</code> element's background-color with its \"hex code\" representation, <code>#000000</code>. "
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Give your <code>body</code> element the background-color of black.')",
-        "assert(editor.match(/#000000/g) && editor.match(/#000000/g).length > 0, 'Use hex code the color black instead of the word \"black\". For example <code>body: { color: #000000; }</code>.')"
+        "assert(editor.match(/#000000/g) && editor.match(/#000000/g).length > 0, 'Use the hex code for the color black instead of the word \"black\". For example <code>body: { color: #000000; }</code>.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3466,7 +3526,9 @@
       "dashedName": "waypoint-use-hex-code-to-color-elements-white",
       "difficulty": 0.055,
       "description": [
-        "Use hex code instead of a color."
+        "0 is the lowest number in hex code, and represents a complete absence of color.",
+        "F is the highest number in hex code, and it represents the maximum possible brightness.",
+        "Let's turn our <code>body</code> element's background-color white by changing its hex code to <code>#FFFFFF</code>."
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(255, 255, 255)', 'Your <code>body</code> element should have the background-color of white.')",
@@ -3499,7 +3561,11 @@
       "dashedName": "waypoint-use-hex-code-to-color-elements-red",
       "difficulty": 0.056,
       "description": [
-        "Use hex code instead of a color."
+        "You may be wondering why we use 6 digits to represent a color instead of just one or two. The answer is that using 6 digits gives us a huge variety.",
+        "How many colors are possible? 16 colors and 6 positions means we have 16 to the 6th power, or more than 16 million possible colors!",
+        "Hex code follows the red-green-blue, or \"RGB\" format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
+        "So to get the absolute brightest red, you would just use F for the first and second digits (the highest possible value) and 0 for the third, fourth, fifth and sixth digits (the lowest possible value).",
+        "Make the <code>body</code> element's background color red by giving it the hex code value of <code>#FF0000</code>."
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
@@ -3532,7 +3598,9 @@
       "dashedName": "waypoint-use-hex-code-to-color-elements-green",
       "difficulty": 0.057,
       "description": [
-        "Use hex code instead of a color."
+        "Remember that hex code follows the red-green-blue, or \"RGB\" format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
+        "So to get the absolute brightest green, you would just use F for the third and fourth digits (the highest possible value) and 0 for all the other digits (the lowest possible value).",
+        "Make the <code>body</code> element's background color green by giving it the hex code value of <code>#00FF00</code>."
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(0, 255, 0)', 'Give your <code>body</code> element the background-color of green.')",
@@ -3565,7 +3633,9 @@
       "dashedName": "waypoint-use-hex-code-to-color-elements-blue",
       "difficulty": 0.058,
       "description": [
-        "Use hex code instead of a color."
+        "Hex code follows the red-green-blue, or \"RGB\" format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
+        "So to get the absolute brightest blue, we use F for the fifth and sixth digits (the highest possible value) and 0 for all the other digits (the lowest possible value).",
+        "Make the <code>body</code> element's background color blue by giving it the hex code value of <code>#0000FF</code>."
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(0, 0, 255)', 'Give your <code>body</code> element the background-color of blue.')",
@@ -3598,7 +3668,9 @@
       "dashedName": "waypoint-use-hex-code-to-mix-colors",
       "difficulty": 0.059,
       "description": [
-        "Use hex code instead of a orange."
+        "From these three pure colors (red, green and blue), we can create 16 million other colors.",
+        "For example, orange is pure red, mixed with some green, and no blue.",
+        "Make the <code>body</code> element's background color orange by giving it the hex code value of <code>#FFA500</code>."
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(255, 165, 0)', 'Give your <code>body</code> element the background-color of orange.')",
@@ -3631,7 +3703,9 @@
       "dashedName": "waypoint-use-hex-code-to-color-elements-gray",
       "difficulty": 0.060,
       "description": [
-        "Use hex code instead of a color."
+        "From these three pure colors (red, green and blue), we can create 16 million other colors.",
+        "We can also create different shades of gray by evenly mixing all three colors.",
+        "Make the <code>body</code> element's background color gray by giving it the hex code value of <code>#808080</code>."
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(128, 128, 128)', 'Give your <code>body</code> element the background-color of gray.')",
@@ -3664,7 +3738,8 @@
       "dashedName": "waypoint-use-hex-code-for-specific-shades-of-gray",
       "difficulty": 0.061,
       "description": [
-        "Use hex code instead of a color."
+        "We can also create other shades of gray by evenly mixing all three colors. We can go very close to true black.",
+        "Make the <code>body</code> element's background color a dark gray by giving it the hex code value of <code>#111111</code>."
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(17, 17, 17)', 'Give your <code>body</code> element the background-color of a light gray.')",
@@ -3697,7 +3772,10 @@
       "dashedName": "waypoint-use-abbreviated-hex-code",
       "difficulty": 0.062,
       "description": [
-        "Use hex code instead of a color."
+        "Many people feel overwhelmed by the possibilities of more than 16 million colors. And it's difficult to remember hex code. Fortunately, you can shorten it.",
+        "For example, red, which is #FF0000 in hex code, can be shortened to #F00. That is, one digit for red, one digit for green, one digit for blue.",
+        "This reduces the total number of possible colors to around 4,000. But browsers will interpret #FF0000 and #F00 as exactly the same color.",
+        "Go ahead, try using #F00 to turn the <code>body</code> element's background-color red."
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
@@ -3730,7 +3808,11 @@
       "dashedName": "waypoint-use-rgb-to-color-elements-instead-of-hex-code",
       "difficulty": 0.063,
       "description": [
-        "Use RGB code instead of a color or hex code."
+        "Another way you can represent colors in CSS is by using RGB values.",
+        "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)<code> for white.",
+        "Instead of using six hexadecimal digits like you do with hex code, with RGB you specify the brightness of each color with a number between 0 and 255.",
+        "If you do the math, 16 times 16 is 256 total values. So RGB, which starts counting from zero, has the exact same number of possible values as hex code.",
+        "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
@@ -3739,7 +3821,7 @@
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: #000;",
+        "    background-color: #F00;",
         "  }",
         "</style>"
       ],
@@ -3763,7 +3845,9 @@
       "dashedName": "waypoint-use-rgb-to-color-elements-white",
       "difficulty": 0.064,
       "description": [
-        "Use hex code instead of a color."
+        "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)<code> for white.",
+        "Instead of using six hexadecimal digits like you do with hex code, with RGB you specify the brightness of each color with a number between 0 and 255.",
+        "Change the <code>body</code> element's background color from the RGB value for black to the RGB value for white: <code>rgb(255, 255, 255)</code>"
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(255, 255, 255)', 'Give your <code>body</code> element the background-color of red.')",
@@ -3796,11 +3880,13 @@
       "dashedName": "waypoint-use-rgb-to-color-elements-red",
       "difficulty": 0.065,
       "description": [
-        "Use hex code instead of a color."
+        "Just like with hex code, you can represent different colors in RGB by using combinations of different values.",
+        "These values follow the pattern of RGB: the first number represents red, the second number represents green, and the third number represents blue.",
+        "Change the <code>body</code> element's background color to the RGB value green: <code>rgb(0, 255, 0)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
+        "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of green.')",
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color green. For example <code>body: { color: rgb(255,0,0); }</code>.')"
       ],
       "challengeSeed": [
         "<style>",
