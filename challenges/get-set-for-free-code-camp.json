@@ -156,16 +156,19 @@
     },
     {
       "id": "bd7125d8c441eddfaeb5bd1f",
-      "name": "Waypoint: Browse our Field Guide",
-      "dashedName": "waypoint-browse-our-field-guide",
+      "name": "Waypoint: Browse our Wiki",
+      "dashedName": "waypoint-browse-our-wiki",
       "difficulty": 0.004,
       "challengeSeed": ["125407435"],
       "description": [
-        "Free Code Camp has an up-to-date field guide that will answer your many questions.",
-        "Click the \"Guide\" button in the upper right hand corner.",
-        "You can browse the field guide at your convenience. Most of its articles take less than 1 minute to read.",
-        "When you click the \"Guide\" button, it will always take you back to whichever article you were last reading.",
-        "Read a few field guide articles, then move on to your next challenge."
+        "Free Code Camp has an up-to-date wiki that will answer your many questions.",
+        "Click the \"Wiki\" button in the upper right hand corner.",
+        "You can browse our wiki at your convenience. Most of its articles take less than 1 minute to read.",
+        "All of our Wiki articles are contributed by our community. You can update our wiki articles, and even create wiki articles of your own.",
+        "Read <a href=''>Install NPM</a>",
+        "Read <a href=''>Install NPM</a>",
+        "Read <a href=''>Install NPM</a>",
+        "Now you can move on to your next challenge."
       ],
       "challengeType": 2,
       "tests": [],
@@ -385,7 +388,7 @@
         "Next, S - Search Google. Good Google queries take a lot of practice. When you search Google, you usually want to include the language or framework you're using. You also want to limit the results to a recent period.",
         "Then, if you still haven't found an answer to your question, A - Ask your friends. If you have trouble, you can ask your fellow campers. We have a special chat room specifically for getting help with tools you learn through these Free Code Camp Challenges. Go to <a href='https://gitter.im/FreeCodeCamp/Help' target='_blank'>https://gitter.im/FreeCodeCamp/Help</a>. Keep this chat open while you work on the remaining challenges.",
         "Finally, P - Post on Stack Overflow. Before you attempt to do this, read Stack Overflow's guide to asking good questions: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>.",
-        "Here's our detailed field guide on getting help: <a href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank'>http://freecodecamp.com/field-guide/how-do-i-get-help-when-i-get-stuck</a>.",
+        "Here's our detailed wiki article on getting help: <a href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank'>http://freecodecamp.com/field-guide/how-do-i-get-help-when-i-get-stuck</a>.",
         "Now you have a clear algorithm to follow when you need help! Let's start coding! Move on to your next challenge."
       ],
       "challengeType": 2,
