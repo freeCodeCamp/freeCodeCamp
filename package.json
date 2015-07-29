@@ -106,7 +106,6 @@
   "devDependencies": {
     "babel-eslint": "^3.1.7",
     "blessed": "~0.0.37",
-    "bower": "^1.4.1",
     "bower-main-files": "~0.0.4",
     "browser-sync": "~1.8.1",
     "browserify": "^10.2.4",
@@ -125,7 +124,6 @@
     "loopback-testing": "^1.1.0",
     "mocha": "~2.0.1",
     "multiline": "~1.0.1",
-    "pm2": "^0.14.5",
     "supertest": "~0.15.0",
     "vinyl-source-stream": "^1.1.0"
   }
