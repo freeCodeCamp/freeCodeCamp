@@ -126,10 +126,6 @@
     "resetPasswordToken": {
       "type": "string"
     },
-    "sentSlackInvite": {
-      "type": "boolean",
-      "default": false
-    },
     "resetPasswordExpires": {
       "type": "string"
     },
@@ -249,6 +245,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "doesExist"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "about"
     }
   ],
   "methods": []

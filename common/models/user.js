@@ -93,7 +93,7 @@ module.exports = function(User) {
     debug('where', where);
     User.count(
       where,
-      function (err, count) {
+      function(err, count) {
         if (err) {
           debug('err checking existance: ', err);
           return cb(err);
@@ -128,6 +128,54 @@ module.exports = function(User) {
       ],
       http: {
         path: '/exists',
+        verb: 'get'
+      }
+    }
+  );
+
+  User.about = function about(username, cb) {
+    if (!username) {
+      // Zalgo!!
+      return process.nextTick(() => {
+        cb(
+          new TypeError('FCC: username should be a string but got %s', username)
+        );
+      });
+    }
+    User.findOne({ where: { username } }, (err, user) => {
+      if (err) {
+        cb(err);
+      }
+      if (!user || user.username !== username) {
+        cb(new Error('FCC: no user found for %s', username));
+      }
+      const aboutUser = {
+        username: user.username,
+        bio: user.bio,
+        github: user.githubProfile
+      };
+      cb(null, aboutUser);
+    });
+  };
+
+  User.remoteMethod(
+    'about',
+    {
+      description: 'get public info about user',
+      accepts: [
+        {
+          arg: 'username',
+          type: 'string'
+        }
+      ],
+      returns: [
+        {
+          arg: 'about',
+          type: 'object'
+        }
+      ],
+      http: {
+        path: '/about',
         verb: 'get'
       }
     }
