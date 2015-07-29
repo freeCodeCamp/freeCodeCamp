@@ -1,7 +1,8 @@
 import { Store } from 'thundercats';
 
-const { createRegistrar, setter } = Store;
+const { createRegistrar, setter, fromMany } = Store;
 const initValue = {
+  title: 'Learn To Code | Free Code Camp',
   username: null,
   picture: null,
   points: 0
@@ -10,9 +11,10 @@ const initValue = {
 export default Store(initValue)
   .refs({ displayName: 'AppStore' })
   .init(({ instance: appStore, args: [cat] }) => {
-    const { setUser } = cat.getActions('appActions');
+    const { setUser, setTitle } = cat.getActions('appActions');
     const register = createRegistrar(appStore);
-    register(setter(setUser));
+
+    register(setter(fromMany(setUser, setTitle)));
 
     return appStore;
   });

@@ -20,9 +20,26 @@ export default contain(
 
     propTypes: {
       children: PropTypes.node,
-      username: PropTypes.string,
       points: PropTypes.number,
-      picture: PropTypes.string
+      picture: PropTypes.string,
+      title: PropTypes.string,
+      username: PropTypes.string
+    },
+
+    componentDidMount() {
+      const title = this.props.title;
+      this.setTitle(title);
+    },
+
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.title !== this.props.title) {
+        this.setTitle(nextProps.title);
+      }
+    },
+
+    setTitle(title) {
+      const doc = typeof document !== 'undefined' ? document : {};
+      doc.title = title;
     },
 
     render() {

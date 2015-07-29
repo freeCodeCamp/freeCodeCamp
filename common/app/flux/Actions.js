@@ -4,6 +4,10 @@ import debugFactory from 'debug';
 const debug = debugFactory('freecc:app:actions');
 
 export default Actions({
+  setTitle(title = 'Learn To Code') {
+    return { title: title + '| Free Code Camp' };
+  },
+
   setUser({ username, picture, progressTimestamps = [] }) {
     return {
       username,
@@ -11,6 +15,7 @@ export default Actions({
       points: progressTimestamps.length
     };
   },
+
   getUser: null
 })
   .refs({ displayName: 'AppActions' })
@@ -28,4 +33,5 @@ export default Actions({
         return appActions.setUser(user);
       });
     });
+    return appActions;
   });
