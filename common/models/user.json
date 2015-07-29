@@ -252,6 +252,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "about"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "giveBrowniePoints"
     }
   ],
   "methods": []

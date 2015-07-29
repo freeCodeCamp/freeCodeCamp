@@ -1,6 +1,27 @@
-var debug = require('debug')('freecc:user:remote');
-var blacklistedUsernames =
-  require('../../server/utils/constants').blacklistedUsernames;
+import { Observable } from 'rx';
+import moment from 'moment';
+import debugFactory from 'debug';
+
+import { saveUser, observeMethod } from '../../server/utils/rx';
+import { blacklistedUsernames } from '../../server/utils/constants';
+
+const debug = debugFactory('freecc:user:remote');
+
+function getAboutProfile({
+  username,
+  githubProfile: github,
+  progressTimestamps = []
+}) {
+  return {
+    username,
+    github,
+    browniePoints: progressTimestamps.length
+  };
+}
+
+function nextTick(fn) {
+  return process.nextTick(fn);
+}
 
 module.exports = function(User) {
   // NOTE(berks): user email validation currently not needed but build in. This
@@ -73,7 +94,7 @@ module.exports = function(User) {
 
   User.doesExist = function doesExist(username, email, cb) {
     if (!username && !email) {
-      return process.nextTick(function() {
+      return nextTick(function() {
         cb(null, false);
       });
     }
@@ -136,7 +157,7 @@ module.exports = function(User) {
   User.about = function about(username, cb) {
     if (!username) {
       // Zalgo!!
-      return process.nextTick(() => {
+      return nextTick(() => {
         cb(
           new TypeError('FCC: username should be a string but got %s', username)
         );
@@ -149,11 +170,7 @@ module.exports = function(User) {
       if (!user || user.username !== username) {
         return cb(new Error('FCC: no user found for %s', username));
       }
-      const aboutUser = {
-        username: user.username,
-        bio: user.bio,
-        github: user.githubProfile
-      };
+      const aboutUser = getAboutProfile(user);
       return cb(null, aboutUser);
     });
   };
@@ -180,4 +197,106 @@ module.exports = function(User) {
       }
     }
   );
+
+  User.giveBrowniePoints =
+    function giveBrowniePoints(receiver, giver, data = {}, cb) {
+      const findUser = observeMethod(User, 'findOne');
+      if (!receiver) {
+        return nextTick(() => {
+          cb(new TypeError('receiver should be a string but got %s', receiver));
+        });
+      }
+      if (!giver) {
+        return nextTick(() => {
+          cb(new TypeError('giver should be a string but got %s'));
+        });
+      }
+      const oneHourAgo = moment().subtract(1, 'hour').valueOf();
+      const user$ = findUser({ where: { username: receiver }});
+
+      user$
+        .tapOnNext((user) => {
+          if (!user) {
+            throw new Error('count not find receiver for %s', receiver);
+          }
+        })
+        .flatMap(({ progressTimestamps = [] }) => {
+          debug('progressTimestamps', progressTimestamps);
+          return Observable.from(progressTimestamps);
+        })
+        // filter out non objects
+        .filter((timestamp) => !!timestamp || typeof timestamp === 'object')
+        // filterout timestamps older then an hour
+        .filter(({ timestamp = 0 }) => {
+          debug('timestamp', timestamp);
+          return timestamp >= oneHourAgo;
+        })
+        // filter out brownie points given by giver
+        .filter((browniePoint) => {
+          debug('browniePoint', browniePoint);
+          return browniePoint.giver === giver;
+        })
+        // no results means this is the first brownie point given by giver
+        // so return -1 to indicate receiver should receive point
+        .firstOrDefault(null, -1)
+        .flatMap((browniePointsFromGiver) => {
+          debug('bronie points from giver', browniePointsFromGiver, giver);
+          if (browniePointsFromGiver === -1) {
+
+            return user$.flatMap((user) => {
+              user.progressTimestamps.push({
+                giver,
+                timestamp: Date.now(),
+                ...data
+              });
+              return saveUser(user);
+            });
+          }
+          return Observable.throw(
+            new Error('giver already gave receiver points')
+          );
+        })
+        .subscribe(
+          (user) => {
+            cb(null, getAboutProfile(user));
+          },
+          cb,
+          () => {
+            debug('brownie points assigned completed');
+          }
+        );
+    };
+
+  User.remoteMethod(
+    'giveBrowniePoints',
+    {
+      description: 'Give this user brownie points',
+      accepts: [
+        {
+          arg: 'receiver',
+          type: 'string',
+          required: true
+        },
+        {
+          arg: 'giver',
+          type: 'string',
+          required: true
+        },
+        {
+          arg: 'data',
+          type: 'object'
+        }
+      ],
+      returns: [
+        {
+          arg: 'about',
+          type: 'object'
+        }
+      ],
+      http: {
+        path: '/give-brownie-points',
+        verb: 'get'
+      }
+    }
+    );
 };
