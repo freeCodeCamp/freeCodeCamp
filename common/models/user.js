@@ -144,17 +144,17 @@ module.exports = function(User) {
     }
     User.findOne({ where: { username } }, (err, user) => {
       if (err) {
-        cb(err);
+        return cb(err);
       }
       if (!user || user.username !== username) {
-        cb(new Error('FCC: no user found for %s', username));
+        return cb(new Error('FCC: no user found for %s', username));
       }
       const aboutUser = {
         username: user.username,
         bio: user.bio,
         github: user.githubProfile
       };
-      cb(null, aboutUser);
+      return cb(null, aboutUser);
     });
   };
 
