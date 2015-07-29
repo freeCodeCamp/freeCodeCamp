@@ -221,26 +221,22 @@ module.exports = function(User) {
           }
         })
         .flatMap(({ progressTimestamps = [] }) => {
-          debug('progressTimestamps', progressTimestamps);
           return Observable.from(progressTimestamps);
         })
         // filter out non objects
         .filter((timestamp) => !!timestamp || typeof timestamp === 'object')
         // filterout timestamps older then an hour
         .filter(({ timestamp = 0 }) => {
-          debug('timestamp', timestamp);
           return timestamp >= oneHourAgo;
         })
         // filter out brownie points given by giver
         .filter((browniePoint) => {
-          debug('browniePoint', browniePoint);
           return browniePoint.giver === giver;
         })
         // no results means this is the first brownie point given by giver
         // so return -1 to indicate receiver should receive point
         .firstOrDefault(null, -1)
         .flatMap((browniePointsFromGiver) => {
-          debug('bronie points from giver', browniePointsFromGiver, giver);
           if (browniePointsFromGiver === -1) {
 
             return user$.flatMap((user) => {
