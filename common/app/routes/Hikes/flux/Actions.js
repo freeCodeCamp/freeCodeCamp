@@ -1,12 +1,8 @@
 import { Actions } from 'thundercats';
 import assign from 'object.assign';
 import debugFactory from 'debug';
-import Fetchr from 'fetchr';
 
 const debug = debugFactory('freecc:hikes:actions');
-const service = new Fetchr({
-  xhrPath: '/services'
-});
 
 function getCurrentHike(hikes =[{}], dashedName, currentHike) {
   if (!dashedName) {
@@ -36,12 +32,12 @@ export default Actions({
   setHikes: null
 })
   .refs({ displayName: 'HikesActions' })
-  .init(({ instance }) => {
+  .init(({ instance: hikeActions, args: [services] }) => {
     // set up hikes fetching
-    instance.fetchHikes.subscribe(
+    hikeActions.fetchHikes.subscribe(
       ({ isPrimed, dashedName }) => {
         if (isPrimed) {
-          return instance.setHikes({
+          return hikeActions.setHikes({
             transform: (oldState) => {
               const { hikes } = oldState;
               const currentHike = getCurrentHike(
@@ -53,11 +49,11 @@ export default Actions({
             }
           });
         }
-        service.read('hikes', null, null, (err, hikes) => {
+        services.read('hikes', null, null, (err, hikes) => {
           if (err) {
             debug('an error occurred fetching hikes', err);
           }
-          instance.setHikes({
+          hikeActions.setHikes({
             set: {
               hikes: hikes,
               currentHike: getCurrentHike(hikes, dashedName)

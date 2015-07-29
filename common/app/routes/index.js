@@ -1,4 +1,4 @@
-// import Jobs from './Jobs';
+import Jobs from './Jobs';
 import Hikes from './Hikes';
 
 export default {
@@ -6,7 +6,7 @@ export default {
   getChildRoutes(locationState, cb) {
     setTimeout(() => {
       cb(null, [
-        // Jobs,
+        Jobs,
         Hikes
       ]);
     }, 0);

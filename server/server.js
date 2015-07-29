@@ -2,8 +2,7 @@ require('dotenv').load();
 var pmx = require('pmx');
 pmx.init();
 
-var R = require('ramda'),
-  assign = require('lodash').assign,
+var assign = require('lodash').assign,
   loopback = require('loopback'),
   boot = require('loopback-boot'),
   accepts = require('accepts'),
@@ -145,7 +144,7 @@ app.use(helmet.csp({
     '*.d3js.org',
     'https://cdn.inspectlet.com/inspectlet.js',
     'http://cdn.inspectlet.com/inspectlet.js',
-    'http://www.freecodecamp.org'
+    'http://beta.freecodecamp.com'
   ].concat(trusted),
   'connect-src': [
     'vimeo.com'
@@ -199,7 +198,6 @@ app.use(
   })
 );
 
-var startTime = Date.now();
 boot(app, {
   appRootDir: __dirname,
   dev: process.env.NODE_ENV
@@ -249,7 +247,7 @@ var passportOptions = {
   }
 };
 
-R.keys(passportProviders).map(function(strategy) {
+Object.keys(passportProviders).map(function(strategy) {
   var config = passportProviders[strategy];
   config.session = config.session !== false;
   passportConfigurator.configureProvider(
@@ -310,8 +308,6 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
-module.exports = app;
-
 app.start = function() {
   app.listen(app.get('port'), function() {
     app.emit('started');
@@ -323,34 +319,12 @@ app.start = function() {
   });
 };
 
+module.exports = app;
+
 // start the server if `$ node server.js`
+// in production use `$npm start-production`
+// or `$node server/production` to start the server
+// and wait for DB handshake
 if (require.main === module) {
-  if (process.env.NODE_ENV === 'production') {
-    var timeoutHandler;
-    console.log('waiting for db to connect');
-
-    var onConnect = function() {
-      console.log('db connected in %s ms', Date.now() - startTime);
-      if (timeoutHandler) {
-        clearTimeout(timeoutHandler);
-      }
-      app.start();
-    };
-
-    var timeoutHandler = setTimeout(function() {
-      var message =
-        'db did not after  ' +
-        (Date.now() - startTime) +
-        ' ms connect crashing hard';
-
-      console.log(message);
-      // purposely shutdown server
-      // pm2 should restart this in production
-      throw new Error(message);
-    }, 5000);
-
-    app.dataSources.db.on('connected', onConnect);
-  } else {
-    app.start();
-  }
+  app.start();
 }

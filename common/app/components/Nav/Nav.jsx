@@ -1,5 +1,11 @@
-import React from 'react';
-import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import React, { PropTypes } from 'react';
+import {
+  Col,
+  CollapsibleNav,
+  Nav,
+  Navbar,
+  NavItem
+} from 'react-bootstrap';
 
 import navLinks from './links.json';
 import FCCNavItem from './NavItem.jsx';
@@ -25,6 +31,14 @@ const logoElement = (
   </a>
 );
 
+const toggleButton = (
+  <button className='hamburger'>
+    <Col xs={ 12 }>
+      <span className='hamburger-text'>Menu</span>
+    </Col>
+  </button>
+);
+
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -32,19 +46,36 @@ export default class extends React.Component {
 
   static displayName = 'Nav'
   static propTypes = {
-    signedIn: React.PropTypes.bool
+    points: PropTypes.number,
+    picture: PropTypes.string,
+    signedIn: PropTypes.bool,
+    username: PropTypes.string
   }
 
-  renderBrand() {
+  renderPoints(username, points) {
+    if (!username) {
+      return null;
+    }
+    return (
+      <NavItem
+        href={ '/' + username }>
+        [ { points } ]
+      </NavItem>
+    );
   }
 
-  renderSignin() {
-    if (this.props.signedIn) {
+  renderSignin(username, picture) {
+    if (username) {
       return (
-        <NavItem
+        <div
+          className='hidden-xs hidden-sm'
           eventKey={ 2 }>
-          Show Picture
-        </NavItem>
+          <a href={ '/' + username }>
+            <img
+              className='profile-picture float-right'
+              src={ picture } />
+          </a>
+        </div>
       );
     } else {
       return (
@@ -59,19 +90,24 @@ export default class extends React.Component {
   }
 
   render() {
+    const { username, points, picture } = this.props;
     return (
       <Navbar
         brand={ logoElement }
         className='nav-height'
         fixedTop={ true }
+        toggleButton={ toggleButton }
         toggleNavKey={ 0 }>
-        <Nav
-          className='hamburger-dropdown'
-          eventKey={ 0 }
-          right={ true }>
-          { navElements }
-          { this.renderSignin() }
-        </Nav>
+        <CollapsibleNav eventKey={ 0 }>
+          <Nav
+            className='hamburger-dropdown'
+            navbar={ true }
+            right={ true }>
+            { navElements }
+            { this.renderPoints(username, points)}
+            { this.renderSignin(username, picture) }
+          </Nav>
+        </CollapsibleNav>
       </Navbar>
     );
   }

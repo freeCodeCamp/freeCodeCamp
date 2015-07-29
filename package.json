@@ -5,15 +5,13 @@
     "type": "git",
     "url": "https://github.com/freecodecamp/freecodecamp.git"
   },
-  "engines": {
-    "node": "0.10.35",
-    "npm": "2.3.0"
-  },
   "scripts": {
+    "build-production": "webpack",
     "start": "babel-node server/server.js",
+    "prestart-production": "bower cache clean && bower install && gulp build && npm run build-production",
+    "start-production": "node pm2Start",
     "lint": "eslint --ext=.js,.jsx .",
-    "test": "mocha",
-    "postinstall": "bower cache clean && bower install && gulp build"
+    "test": "mocha"
   },
   "license": "BSD-3-Clause",
   "contributors": [
@@ -120,6 +118,7 @@
     "gulp-inject": "~1.0.2",
     "gulp-nodemon": "^2.0.3",
     "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
     "istanbul": "^0.3.15",
     "loopback-explorer": "^1.7.2",
     "loopback-testing": "^1.1.0",

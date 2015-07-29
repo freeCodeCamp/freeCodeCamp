@@ -1,8 +1,0 @@
-{
-  "restApiRoot": "/api",
-  "remoting": {
-    "context": {
-      "enableHttpContext": false
-    }
-  }
-}

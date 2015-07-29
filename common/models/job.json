@@ -10,14 +10,42 @@
     "company": {
       "type": "string"
     },
-    "logoUrl": {
+    "logo": {
       "type": "string"
     },
-    "postingUrl": {
+    "city": {
       "type": "string"
     },
-    "copy": {
-      "type": "array"
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "location": {
+      "type": "geopoint"
+    },
+    "description": {
+      "type": "string"
+    },
+    "isApproverd": {
+      "type": "boolean"
+    },
+    "isHighlighted": {
+      "type": "boolean"
+    },
+    "isPaid": {
+      "type": "boolean"
+    },
+    "postedOn": {
+      "type": "date",
+      "defaultFn": "now"
     }
   },
   "validations": [],
