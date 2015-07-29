@@ -265,7 +265,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb3bdef",
+      "id": "bd1111c1c11feddfaeb3bdef",
       "name": "Magical Maths Addition",
       "dashedName": "waypoint-magical-maths-addition",
       "difficulty": "9.98141",
@@ -289,7 +289,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb4bdef",
+      "id": "bd1111c1c11feddfaeb4bdef",
       "name": "Magical Maths Subtraction",
       "dashedName": "waypoint-magical-maths-subtraction",
       "difficulty": "9.98142",
@@ -313,7 +313,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb5bdef",
+      "id": "bd1111c1c11feddfaeb5bdef",
       "name": "Magical Maths Multiplication",
       "dashedName": "waypoint-magical-maths-multiplication",
       "difficulty": "9.98143",
@@ -337,7 +337,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb6bdef",
+      "id": "bd1111c1c11feddfaeb6bdef",
       "name": "Magical Maths Division",
       "dashedName": "waypoint-magical-maths-division",
       "difficulty": "9.9814",
@@ -361,7 +361,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb4bdef",
+      "id": "bd1111c1c11feddfaeb4bdee",
       "name": "Creating Decimals",
       "dashedName": "waypoint-creating-decimals",
       "difficulty": "9.9815",
@@ -439,7 +439,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb7bdef",
+      "id": "bd1111c1c11feddfaeb7bdef",
       "name": "Nesting Arrays",
       "dashedName": "waypoint-nesting-arrays",
       "difficulty": "9.98161",
@@ -667,7 +667,7 @@
       "challengeType": 1
     },
     {
-      "id": "bg9997c9c99feddfaeb9bdef",
+      "id": "bg9997c9c99feddfaeb9bdee",
       "name": "Keeping In The Scope Of Things",
       "dashedName": "waypoint-keeping-in-the-scope-of-things",
       "difficulty": "9.9821",
@@ -816,7 +816,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb5bdef",
+      "id": "bd1111c1c11feddfaeb5bdee",
       "name": "Looping with for",
       "dashedName": "waypoint-looping-with-for",
       "difficulty": "9.9824",
@@ -846,7 +846,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb1bdef",
+      "id": "bd1111c1c11feddfaeb1bdef",
       "name": "Looping with while",
       "dashedName": "waypoint-looping-with-while",
       "difficulty": "9.9825",
@@ -877,7 +877,7 @@
       "challengeType": 1
     },
     {
-      "id": "bh1111c1c11feddfaeb2bdef",
+      "id": "bd1111c1c11feddfaeb2bdef",
       "name": "Looping with do while",
       "dashedName": "waypoint-looping-with-do-while",
       "difficulty": "9.9826",

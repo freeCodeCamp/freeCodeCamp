@@ -1325,9 +1325,8 @@
       "dashedName": "waypoint-add-alt-text-to-an-image-for-accessibility",
       "difficulty": 0.026,
       "description": [
-        "<code>alt</code> attributes, also known as \"alt text\", are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. Search engines also look at <code>alt</code> attributes.",
+        "<code>alt</code> attributes, also known as \"alt text\", are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. And search engines also look at <code>alt</code> attributes.",
         "In short, every image should have an <code>alt</code> attribute!",
-        "<code>alt</code> attributes are a useful way to tell people (and web crawlers like Google) what is pictured in a photo. It's extremely important for helping blind or visually impaired people understand the content of your website.",
         "You can add an <code>alt</code> attribute right in the img element like this: <code>&#60img src=\"www.your-image-source.com/your-image.jpg\" alt=\"your alt text\"/&#62</code>.",
         "Add an <code>alt</code> attribute with the text \"A cute orange cat lying on its back\" to our cat photo."
       ],
@@ -1957,9 +1956,9 @@
       "dashedName": "waypoint-create-a-set-of-radio-buttons",
       "difficulty": 0.034,
       "description": [
-        "You can use radio buttons for questions where you want the user to only give you one answer.",
+        "You can use \"radio buttons\" for questions where you want the user to only give you one answer.",
         "Radio buttons are a type of <code>input</code>.",
-        "Each of your radio buttons should be wrapped within its own <code>label</code> elements.",
+        "Each of your radio buttons should be wrapped within its own <code>label</code> element.",
         "All related radio buttons should have the same <code>name</code> attribute.",
         "Here's an example of a radio button: <code>&#60;label&#62;&#60;input type='radio' name='indoor-outdoor'&#62; Indoor&#60;/label&#62;</code>.",
         "Add to your form a pair of radio buttons. Each radio button should be wrapped within its own <code>label</code> element. They should share a common <code>name</code> attribute. One should have the option of \"indoor\" and the other should have the option of \"outdoor\"."
@@ -2050,9 +2049,12 @@
       "dashedName": "waypoint-create-a-set-of-checkboxes",
       "difficulty": 0.035,
       "description": [
-        "Forms commonly use checkbox inputs for questions that may have more than one answer.",
-        "For example: <code>&#60;label&#62;&#60;input type='checkbox' name='personality'&#62; Loving&#60;/label&#62;</code>.",
-        "Add to your form a set of three checkbox elements. Each checkbox should be wrapped within its own <code>label</code> element. All three should share the <code>name</code> attribute of \"personality\"."
+        "Forms commonly use \"checkboxes\" for questions that may have more than one answer.",
+        "Checkboxes are a type of <code>input</code>.",
+        "Each of your checkboxes should be wrapped within its own <code>label</code> element.",
+        "All related checkbox inputs should have the same <code>name</code> attribute.",
+        "Here's an example of a checkbox: <code>&#60;label&#62;&#60;input type='checkbox' name='personality'&#62; Loving&#60;/label&#62;</code>.",
+        "Add to your form a set of three checkboxes. Each checkbox should be wrapped within its own <code>label</code> element. All three should share the <code>name</code> attribute of \"personality\"."
       ],
       "tests": [
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
@@ -2320,9 +2322,9 @@
       "dashedName": "waypoint-give-a-background-color-to-a-div-element",
       "difficulty": 0.039,
       "description": [
-        "Create a class called \"gray-background\" with the background color of gray. Assign this class to your <code>div</code> element.",
         "You can set an element's background color with the \"background-color\" attribute.",
-        "For example, if you wanted an element's background color to be \"green\", you'd use <code>.green-background { background-color: green; }</code> within your <code>style</code> element."
+        "For example, if you wanted an element's background color to be \"green\", you'd use <code>.green-background { background-color: green; }</code> within your <code>style</code> element.",
+        "Create a class called \"gray-background\" with the background color of gray. Assign this class to your <code>div</code> element."
       ],
       "tests": [
         "assert($('div').hasClass('gray-background'), 'Give your <code>div</code> element the class \"gray-background\".')",
@@ -2411,10 +2413,12 @@
       "dashedName": "waypoint-adjusting-the-padding-of-an-element",
       "difficulty": 0.040,
       "description": [
-        "These next few Waypoints will give you a brief tour of three important aspects of the space surrounding HTML elements: <code>padding</code>, <code>margin</code>, and <code>border</code>. Change the <code>padding</code> of your green box to match that of your red box.",
+        "You may have already noticed this, but all HTML elements are essentially little rectangles.",
+        "Three important attributes control the space that surrounds each HTML element: <code>padding</code>, <code>margin</code>, and <code>border</code>.",
         "An element's <code>padding</code> controls the amount of space between the element and its <code>border</code>.",
         "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>padding</code> than the green box.",
-        "When you increase the green box's <code>padding</code>, it will increase the distance between the text \"padding\" and the border around it."
+        "When you increase the green box's <code>padding</code>, it will increase the distance between the text \"padding\" and the border around it.",
+        "Change the <code>padding</code> of your green box to match that of your red box."
       ],
       "tests": [
         "assert($('.green-box').css('padding-top') === '20px', 'Your <code>green-box</code> class should give elements 20px of padding.')"
@@ -2480,10 +2484,10 @@
       "dashedName": "waypoint-adjust-the-margin-of-an-element",
       "difficulty": 0.041,
       "description": [
-        "Change the <code>margin</code> of the green box to match that of the red box.",
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "Here, we can see that the green box and the red box are nested within the yellow box. Note that the red box has more <code>margin</code> than the green box, making it appear smaller.",
-        "When you increase the green box's <code>margin</code>, it will increase the distance between its border and surrounding elements."
+        "When you increase the green box's <code>margin</code>, it will increase the distance between its border and surrounding elements.",
+        "Change the <code>margin</code> of the green box to match that of the red box."
       ],
       "tests": [
         "assert($('.green-box').css('margin-top') === '20px', 'Your <code>green-box</code> class should give elements 20px of margin.')"
@@ -2551,10 +2555,10 @@
       "dashedName": "waypoint-add-a-negative-margin-to-an-element",
       "difficulty": 0.042,
       "description": [
-        "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the yellow box around it.",
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "If you set an element's <code>margin</code> to a negative value, the element will grow larger.",
-        "Try to set the <code>margin</code> to a negative value like the one for the red box."
+        "Try to set the <code>margin</code> to a negative value like the one for the red box.",
+        "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the yellow box around it."
       ],
       "tests": [
         "assert($('.green-box').css('margin-top') === '-15px', 'Your <code>green-box</code> class should give elements -15px of margin.')"
@@ -2621,9 +2625,9 @@
       "dashedName": "waypoint-add-different-padding-to-each-side-of-an-element",
       "difficulty": 0.043,
       "description": [
-        "Give the green box a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Sometimes you will want to customize an element so that it has different <code>padding</code> on each of its sides.",
-        "CSS allows you to control the <code>padding</code> of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes."
+        "CSS allows you to control the <code>padding</code> of an element on all four sides with <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes.",
+        "Give the green box a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side."
       ],
       "tests": [
         "assert($('.green-box').css('padding-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of padding.')",
@@ -2764,9 +2768,9 @@
       "dashedName": "waypoint-use-clockwise-notation-to-specify-the-padding-of-an-element",
       "difficulty": 0.044,
       "description": [
-        "Use Clockwise Notation to give the \".green-box\" class a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
-        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions."
+        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.",
+        "Use Clockwise Notation to give the \".green-box\" class a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side."
       ],
       "tests": [
         "assert($('.green-box').css('padding-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of <code>padding</code>.')",
@@ -2833,9 +2837,10 @@
       "dashedName": "waypoint-use-clockwise-notation-to-specify-the-margin-of-an-element",
       "difficulty": 0.045,
       "description": [
-        "Let's try this again, but with <code>margin</code> this time. Use <code>Clockwise Notation</code> to give an element a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
+        "Let's try this again, but with <code>margin</code> this time.",
         "Instead of specifying an element's <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> attributes, you can specify them all in one line, like this: <code>margin: 10px 20px 10px 20px;</code>.",
-        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions."
+        "These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific margin instructions.",
+        "Use <code>Clockwise Notation</code> to give an element a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side."
       ],
       "tests": [
         "assert($('.green-box').css('margin-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of <code>margin</code>.')",
@@ -2897,9 +2902,6 @@
         "Diese vier Werte funktionieren wieder wie eine Uhr: oben, rechts, unten und links. Sie meinen exakt das gleiche wie die seitenspezifischen Anweisungen."
       ]
     },
-
-
-
     {
       "id": "bad87fee1348bd9aedf08736",
       "name": "Waypoint: Style the HTML Body Element",
@@ -2908,8 +2910,8 @@
       "description": [
         "Now let's start fresh and talk about CSS inheritance.",
         "Every HTML page has <code>body</code> element.",
-        "We can prove that the <code>body</code> element exists here by giving it a \"background-color\" of blue.",
-        "We can do this by adding <code>body { background-color: blue; }</code> to our <code>style</code> element."
+        "We can prove that the <code>body</code> element exists here by giving it a \"background-color\" of black.",
+        "We can do this by adding <code>body { background-color: black; }</code> to our <code>style</code> element."
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Give your <code>body</code> element the background-color of black.')"
@@ -2939,20 +2941,20 @@
       "dashedName": "waypoint-inherit-styles-from-the-body-element",
       "difficulty": 0.047,
       "description": [
-        "Every HTML page has <code>body</code> element.",
-        "You can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.",
-        "Let's prove this by creating a <code>h2</code> element with the text \"somebody\".",
-        "Then, let's add the font family of \"Monospace\" to the our <code>body</code> element's style declaration.",
-        "See how this gives our <code>h2</code> element the font-family of "
+        "Now we've proven that every HTML page has a <code>body</code> element, and that its <code>body</code> element can also be styled with CSS.",
+        "Remember, you can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.",
+        "First, create a <code>h1</code> element with the text \"Hello World\".",
+        "Then, let's give all elements on your page the color of \"green\" by adding <code>color: green;</code> to your <code>body</code> element's style declaration.",
+        "Finally, give your <code>body</code> element the font-family of \"Monospace\" by adding <code>font-family: Monospace;</code> to your <code>body</code> element's style declaration."
       ],
       "tests": [
-        "assert(($('body').css('color') === 'rgb(0, 128, 0)'), 'Give your <code>body</code> element the \"color\" attribute of green.')",
-        "assert(($('body').css('font-family').match(/Monospace/i)), 'Give your <code>body</code> element the \"font-family\" attribute of \"Monospace\".')",
         "assert(($('h1').length > 0), 'Create an <code>h1</code> element.')",
         "assert(($('h1').length > 0 && $('h1').text().match(/hello world/i)), 'Your <code>h1</code> element should have the text \"Hello World\".')",
+        "assert(editor.match(/<\\/h1>/g) && editor.match(/<h1/g) && editor.match(/<\\/h1>/g).length === editor.match(/<h1/g).length, 'Make sure your <code>h1</code> element has a closing tag.')",
+        "assert(($('body').css('color') === 'rgb(0, 128, 0)'), 'Give your <code>body</code> element the \"color\" attribute of green.')",
+        "assert(($('body').css('font-family').match(/Monospace/i)), 'Give your <code>body</code> element the \"font-family\" attribute of \"Monospace\".')",
         "assert(($('h1').length > 0 && $('h1').css('font-family').match(/monospace/i)), 'Your <code>h1</code> element should inherit the font \"Monospace\" from your <code>body</code> element.')",
-        "assert(($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)'), 'Your <code>h1</code> element should inherit the color green.')",
-        "assert(editor.match(/<\\/h1>/g) && editor.match(/<h1/g) && editor.match(/<\\/h1>/g).length === editor.match(/<h1/g).length, 'Make sure your <code>h1</code> element has a closing tag.')"
+        "assert(($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)'), 'Your <code>h1</code> element should inherit the color green from your <code>body</code> element.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3020,10 +3022,7 @@
       "difficulty": 0.049,
       "description": [
         "HTML has an element that is automatically a part of every web page called the <code>body</code> element.",
-        "You can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles.",
-        "Let's prove this by creating a <code>h2</code> element with the text \"somebody\".",
-        "Then, let's add the font family of \"Monospace\" to the our <code>body</code> element's style declaration.",
-        "See how this gives our <code>h2</code> element the font-family of "
+        "You can style your <code>body</code> element just like any other HTML element, and all your other elements will inherit your <code>body</code> element's styles."
       ],
       "tests": [
         "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
