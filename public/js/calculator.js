@@ -1,6 +1,10 @@
 $(document).ready(function () {
   var bootcamps = ''
+<<<<<<< HEAD
+  $.getJSON('/coding-bootcamp-cost-calculator.json', function(data) {
+=======
   $.getJSON('/json/bootcamps.json', function(data) {
+>>>>>>> 01c72656c8b3d220a181fd8a302f464947364b96
     bootcamps = data;
   });
   var city = "";
@@ -28,7 +32,11 @@ $(document).ready(function () {
     $('#chosen').text('Coming from ' + city.replace(/-/g, ' ').replace(/\w\S*/g, function (txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
       }) + ', and making $' + lastYearsIncome.toString().replace(/0000$/, '0,000') + ', your true costs will be:');
+<<<<<<< HEAD
+    var categoryNames = ['Lost Wages', 'Financing Cost', 'Housing Cost', 'Tuition'];
+=======
     var categoryNames = ['Lost Wages', 'Financing Cost', 'Housing Cost', 'Tuition / Wage Garnishing'];
+>>>>>>> 01c72656c8b3d220a181fd8a302f464947364b96
     bootcamps.forEach(function (camp) {
       var x0 = 0;
       if (camp.cities.indexOf(city) > -1) {
@@ -38,7 +46,11 @@ $(document).ready(function () {
       }
       camp.mapping = [{
         name: camp.name,
+<<<<<<< HEAD
+        label: 'Tuition',
+=======
         label: 'Tuition / Wage Garnishing',
+>>>>>>> 01c72656c8b3d220a181fd8a302f464947364b96
         value: +camp.cost,
         x0: x0,
         x1: x0 += +camp.cost
