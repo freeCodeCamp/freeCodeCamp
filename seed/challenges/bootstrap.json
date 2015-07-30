@@ -325,7 +325,7 @@
         "    <label><input type='checkbox' name='personality'> Crazy</label>",
         "    <input type='text' placeholder='cat photo URL' required>",
         "    <button type='submit'>Submit</button>",
-        "  </form>",,
+        "  </form>",
         "</div>"
       ],
       "challengeType": 0,
