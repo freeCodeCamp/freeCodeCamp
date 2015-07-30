@@ -3804,8 +3804,8 @@
     },
     {
       "id": "bad87fee1348bd9aede08718",
-      "name": "Waypoint: Use RGB to Color Elements Instead of Hex Code",
-      "dashedName": "waypoint-use-rgb-to-color-elements-instead-of-hex-code",
+      "name": "Waypoint: Use RGB values to Color Elements",
+      "dashedName": "waypoint-use-rgb-values-to-color-elements",
       "difficulty": 0.063,
       "description": [
         "Another way you can represent colors in CSS is by using RGB values.",
@@ -3815,8 +3815,8 @@
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of black. For example <code>body: { color: rgb(0, 0, 0); }</code>.')",
+        "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Your <code>body</code> element's the background-color should be black.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3850,13 +3850,13 @@
         "Change the <code>body</code> element's background color from the RGB value for black to the RGB value for white: <code>rgb(255, 255, 255)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 255, 255)', 'Give your <code>body</code> element the background-color of red.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,255,255); }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of white. For example <code>body: { color: rgb(255,255,255); }</code>.')",
+        "assert($('body').css('background-color') === 'rgb(255, 255, 255)', 'Your <code>body</code> element's the background-color should be white.')"
       ],
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: rgb(0, 0, 255);",
+        "    background-color: rgb(0, 0, 0)",
         "  }",
         "</style>"
       ],
@@ -3882,16 +3882,16 @@
       "description": [
         "Just like with hex code, you can represent different colors in RGB by using combinations of different values.",
         "These values follow the pattern of RGB: the first number represents red, the second number represents green, and the third number represents blue.",
-        "Change the <code>body</code> element's background color to the RGB value green: <code>rgb(0, 255, 0)</code>"
+        "Change the <code>body</code> element's background color to the RGB value red: <code>rgb(255, 0, 0)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of green.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color green. For example <code>body: { color: rgb(255,0,0); }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of red. For example <code>body: { color: rgb(255, 0, 0); }</code>.')",
+        "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Your <code>body</code> element's the background-color should be red.')"
       ],
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: #FFFFFF;",
+        "    background-color: rgb(255, 255, 255)",
         "  }",
         "</style>"
       ],
@@ -3915,16 +3915,16 @@
       "dashedName": "waypoint-use-rgb-to-color-elements-green",
       "difficulty": 0.066,
       "description": [
-        "Use hex code instead of a color."
+        "Now change the <code>body</code> element's background color to the RGB value green: <code>rgb(0, 255, 0)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 255, 0)', 'Give your <code>body</code> element the background-color of green.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(0,255,0); }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of green. For example <code>body: { color: rgb(0, 255, 0); }</code>.')",
+        "assert($('body').css('background-color') === 'rgb(0, 255, 0)', 'Your <code>body</code> element's the background-color should be green.')"
       ],
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: #FF0000;",
+        "    background-color: rgb(255, 0, 0);",
         "  }",
         "</style>"
       ],
@@ -3948,16 +3948,16 @@
       "dashedName": "waypoint-use-rgb-to-color-elements-blue",
       "difficulty": 0.067,
       "description": [
-        "Use hex code instead of a color."
+        "Change the <code>body</code> element's background color to the RGB value blue: <code>rgb(0, 0, 255)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 0, 255)', 'Give your <code>body</code> element the background-color of blue.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(0,0,255); }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of blue. For example <code>body: { color: rgb(0, 0, 255); }</code>.')",
+        "assert($('body').css('background-color') === 'rgb(0, 0, 255)', 'Your <code>body</code> element's the background-color should be blue.')"
       ],
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: #00FF00;",
+        "    background-color: rgb(0, 255, 0);",
         "  }",
         "</style>"
       ],
@@ -3981,16 +3981,17 @@
       "dashedName": "waypoint-use-rgb-to-mix-colors",
       "difficulty": 0.068,
       "description": [
-        "Use hex code instead of a orange."
+        "Just like with hex code, you can mix colors in RGB by using combinations of different values.",
+        "Change the <code>body</code> element's background color to the RGB value orange: <code>rgb(255, 165, 0)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 165, 0)', 'Give your <code>body</code> element the background-color of orange.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,165,0); }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of orange. For example <code>body: { color: rgb(255, 165, 0); }</code>.')",
+        "assert($('body').css('background-color') === 'rgb(255, 165, 0)', 'Your <code>body</code> element's the background-color should be orange.')"
       ],
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: #0000FF;",
+        "    background-color: rgb(0, 0, 255);",
         "  }",
         "</style>"
       ],
@@ -4014,115 +4015,17 @@
       "dashedName": "waypoint-use-rgb-to-color-elements-gray",
       "difficulty": 0.069,
       "description": [
-        "Use hex code instead of a color."
+        "With RGB values, we can make an element gray by using combinations of the same value for all three colors.",
+        "Change the <code>body</code> element's background color to the RGB value for gray: <code>rgb(128, 128, 128)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(128, 128, 128)', 'Give your <code>body</code> element the background-color of gray.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*128\\s*,\\s*128\\s*,\\s*128\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(128,128,128); }</code>.')"
+        "assert(editor.match(/rgb\\s*\\(\\s*128\\s*,\\s*128\\s*,\\s*128\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of gray. For example <code>body: { color: rgb(128, 128, 128); }</code>.')",
+        "assert($('body').css('background-color') === 'rgb(128, 128, 128)', 'Your <code>body</code> element's the background-color should be gray.')"
       ],
       "challengeSeed": [
         "<style>",
         "  body {",
-        "    background-color: FFA500;",
-        "  }",
-        "</style>"
-      ],
-      "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "nameDe": "",
-      "descriptionDe": []
-    },
-    {
-      "id": "bad84fee1348bd9aedf08720",
-      "name": "Waypoint: Use RGB Alpha for Specific Shades of Gray",
-      "dashedName": "waypoint-use-rgb-alpha-for-specific-shades-of-gray",
-      "difficulty": 0.070,
-      "description": [
-        "Use hex code instead of a color."
-      ],
-      "tests": [
-        "assert($('body').css('background-color') === 'rgb(17, 17, 17)', 'Give your <code>body</code> element the background-color of a light gray.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: #808080;",
-        "  }",
-        "</style>"
-      ],
-      "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "nameDe": "",
-      "descriptionDe": []
-    },
-    {
-      "id": "bad85fee1348bd9aedf08720",
-      "name": "Waypoint: Use RGB Alpha to Make an Element Translucent",
-      "dashedName": "waypoint-use-rgb-alpha-to-make-an-element-translucent",
-      "difficulty": 0.071,
-      "description": [
-        "Use hex code instead of a color."
-      ],
-      "tests": [
-        "assert($('body').css('background-color') === 'rgb(17, 17, 17)', 'Give your <code>body</code> element the background-color of a light gray.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: #808080;",
-        "  }",
-        "</style>"
-      ],
-      "challengeType": 0,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": [],
-      "nameDe": "",
-      "descriptionDe": []
-    },
-    {
-      "id": "bad86fee1348bd9aedf08720",
-      "name": "Waypoint: Use RGB Alpha to make an Element Nearly Opaque",
-      "dashedName": "waypoint-use-rgb-alpha-to-make-an-element-nearly-opaque",
-      "difficulty": 0.072,
-      "description": [
-        "Use hex code instead of a color."
-      ],
-      "tests": [
-        "assert($('body').css('background-color') === 'rgb(17, 17, 17)', 'Give your <code>body</code> element the background-color of a light gray.')",
-        "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB code instead of hex for the color red. For example <code>body: { color: rgb(255,0,0); }</code>.')"
-      ],
-      "challengeSeed": [
-        "<style>",
-        "  body {",
-        "    background-color: #808080;",
+        "    background-color: rgb(255, 165, 0);",
         "  }",
         "</style>"
       ],
