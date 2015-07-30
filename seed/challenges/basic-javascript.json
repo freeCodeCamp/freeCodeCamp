@@ -1226,7 +1226,10 @@
       "description":[
         "",
         "Now that we have our random numbers we need to go and check for when they are all the same that means we should count it as a win",
-        "du"
+        "Different numbers will have different values so we need to return the matched number or null",
+        "If we get a match we should change the value of win to the number that we have three of or leave it as null",
+        "",
+        "<code>This Is Not Done Yet</code>"
       ],
       "tests":[
         "assert(typeof(runSlots($(''))[0]) == 'number', 'SlotOne should be a random number');",
@@ -1243,6 +1246,8 @@
         "   ",
         "   var images = ['http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens'];",
         "   ",
+        "   var win = null;",
+        "   ",
         "   slotOne = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
         "   slotTwo = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
         "   slotThree = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
@@ -1254,7 +1259,7 @@
         "   /*Don't modify below here*/",
         "   ",
         "   if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
-        "     $('.logger').html(slotOne + ' ' + slotTwo + ' ' + slotThree);",
+        "     $('.logger').html(win);",
         "   }",
         "   return([slotOne, slotTwo, slotThree]);",
         "  }",
