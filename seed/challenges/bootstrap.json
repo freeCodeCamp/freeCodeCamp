@@ -1068,7 +1068,7 @@
       "difficulty": 13,
       "description": [
         "Use Font Awesome to add a \"info-circle\" icon to your info button and a \"trash\" icon to your delete button.",
-        "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the \".svg\" file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
+        "Font Awesome is a convenient library of icons. These icons are characters of a web font so they can be treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
         "Add <code>&#60;i class=\"fa fa-info-circle\"&#62;&#60;/i&#62;</code> within your info button's element, and a <code>&#60;i class=\"fa fa-trash\"&#62;&#60;/i&#62;</code> within your delete button."
       ],
       "tests": [
