@@ -365,7 +365,7 @@ $(document).ready(function() {
         });
     }
 
-    if($('.scroll-locker') != undefined){
+    if($('.scroll-locker').html() != undefined){
         function lockTop(initOff){
             $(window).scroll(function() {
                 if ($(window).width() >= 992) {
