@@ -6,6 +6,7 @@ import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
 
 const debug = debugFactory('freecc:user:remote');
+const BROWNIEPOINTS_TIMEOUT = [30, 'seconds'];
 
 function getAboutProfile({
   username,
@@ -213,7 +214,10 @@ module.exports = function(User) {
           cb(new TypeError('giver should be a string but got %s'));
         });
       }
-      const oneHourAgo = moment().subtract(1, 'hour').valueOf();
+      let temp = moment();
+      const browniePoints = temp
+        .subtract.apply(temp, BROWNIEPOINTS_TIMEOUT)
+        .valueOf();
       const user$ = findUser({ where: { username: receiver }});
 
       user$
@@ -229,7 +233,7 @@ module.exports = function(User) {
         .filter((timestamp) => !!timestamp || typeof timestamp === 'object')
         // filterout timestamps older then an hour
         .filter(({ timestamp = 0 }) => {
-          return timestamp >= oneHourAgo;
+          return timestamp >= browniePoints;
         })
         // filter out brownie points given by giver
         .filter((browniePoint) => {
