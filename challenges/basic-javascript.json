@@ -121,7 +121,7 @@
         "For example, if we created a variable <code>var firstName = \"Julie\"</code>, we could find out how long the string \"Julie\" is by using the <code>firstName.length</code> property."
       ],
       "tests": [
-        "(function(){if(typeof(lastNameLength) != 'undefined' && typeof(lastNameLength) == 'number' && lastNameLength == 4){return(true);}else{return(false);}})(), 'lastNameLength should be equal to four')()"
+        "assert((function(){if(typeof(lastNameLength) != 'undefined' && typeof(lastNameLength) == 'number' && lastNameLength == 4){return(true);}else{return(false);}})(), 'lastNameLength should be equal to four')"
       ],
       "challengeSeed": [
         "var firstName = \"Madeline\";",
@@ -368,20 +368,19 @@
       "description": [
         "",
         "in JavaScript we can can work with decimal numbers",
-        "These decal numbers are known as floats.",
-        "Let's create a float now called myFloat and give it a value"
+        "Let's create a variable <code>myfloat</code> and give it a decimal value."
       ],
       "tests": [
-        "assert((function(){if(typeof(myFloat) != 'undefined' && typeof(myFloat) == 'number' && editor.getValue().match(/\\./g).length >=2){return(true);}else{return(false);}})(), 'myFloat should be a decimal point number');"
+        "assert((function(){if(typeof(myDecimal) != 'undefined' && typeof(myDecimal) == 'number' && editor.getValue().match(/\\./g).length >=2){return(true);}else{return(false);}})(), 'myFloat should be a decimal point number');"
       ],
       "challengeSeed": [
-        "//var ourFloat = 5.7",
+        "//var ourDecimal = 5.7",
         "//Create a number with a decimal point here called myFloat",
         "",
         "",
         "",
         "",
-        "if(typeof(myFloat) != 'undefined'){(function(z){return(z);})(myFloat);}"
+        "(function(){if(typeof(myDecimal) != 'undefined'){return(myDecimal);}})();"
       ],
       "challengeType": 1
     },
