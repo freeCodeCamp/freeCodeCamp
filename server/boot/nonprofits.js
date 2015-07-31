@@ -1,3 +1,4 @@
+var Rx = require('rx');
 var debug = require('debug')('freecc:nonprofits');
 var observeMethod = require('../utils/rx').observeMethod;
 var unDasherize = require('../utils').unDasherize;
@@ -15,18 +16,19 @@ module.exports = function(app) {
   app.use(router);
 
   function nonprofitsDirectory(req, res, next) {
-    var sum = 0;
-    findNonprofits({}).subscribe(
-      function(nonprofits) {
-        nonprofits = nonprofits.sort(function(a, b) {
-            return b.moneySaved - a.moneySaved;
-        });
-        totalSavings = function() {
-          for(i = 0; i < nonprofits.length; i++) {
-            sum += nonprofits[i].moneySaved;
-          }
-          return sum;
-        }();
+    findNonprofits({
+      order: 'moneySaved DESC'
+    })
+      .flatMap(
+        (nonprofits = []) => {
+          // turn array of nonprofits into observable array
+          return Rx.Observable.from(nonprofits)
+            .pluck('moneySaved')
+            .reduce((sum, moneySaved = 0) => sum + moneySaved, 0);
+        },
+        (nonprofits = [], totalSavings) => ({ nonprofits, totalSavings })
+      )
+      .subscribe(({ nonprofits, totalSavings }) => {
         res.render('nonprofits/directory', {
           title: 'Nonprofits we help',
           nonprofits: nonprofits,
@@ -77,8 +79,6 @@ module.exports = function(app) {
             buttonActive = true;
           }
         }
-
-
 
         res.render('nonprofits/show', {
           dashedName: dashedNameFull,

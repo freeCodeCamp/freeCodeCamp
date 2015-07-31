@@ -10,6 +10,7 @@ import HikesMap from './Map.jsx';
 export default contain(
   {
     store: 'hikesStore',
+    actions: ['appActions'],
     fetchAction: 'hikesActions.fetchHikes',
     getPayload: ({ hikes, params }) => ({
       isPrimed: (hikes && !!hikes.length),
@@ -23,9 +24,15 @@ export default contain(
     displayName: 'Hikes',
 
     propTypes: {
+      appActions: PropTypes.object,
       children: PropTypes.element,
       currentHike: PropTypes.object,
       hikes: PropTypes.array
+    },
+
+    componentWillMount() {
+      const { appActions } = this.props;
+      appActions.setTitle('Hikes');
     },
 
     renderMap(hikes) {

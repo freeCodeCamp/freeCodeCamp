@@ -1,28 +1,62 @@
-import React, { PropTypes } from 'react';
-import { createContainer } from 'thundercats';
-import { Grid, Row } from 'react-bootstrap';
+import React, { cloneElement, PropTypes } from 'react';
+import { contain } from 'thundercats-react';
+import { Button, Jumbotron, Row } from 'react-bootstrap';
+import ShowJobs from './Show.jsx';
 
-@createContainer({
-  store: 'JobsStore'
-})
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export default contain(
+  {
+    store: 'jobsStore',
+    fetchAction: 'jobActions.getJobs'
+  },
+  React.createClass({
+    displayName: 'Jobs',
+    propTypes: {
+      children: PropTypes.element,
+      jobs: PropTypes.array
+    },
 
+    renderShow(jobs) {
+      return (
+        <ShowJobs jobs={ jobs }/>
+      );
+    },
 
-  static displayName = 'Jobs'
-  static propTypes = {
-    jobs: PropTypes.array
-  }
+    renderChild(child, jobs) {
+      if (!child) {
+        return null;
+      }
+      return cloneElement(
+        child,
+        { jobs }
+      );
+    },
 
-  render() {
-    return (
-      <Grid>
-        <Row>
-          foo
-        </Row>
-      </Grid>
-    );
-  }
-}
+    render() {
+      const { children, jobs } = this.props;
+
+      return (
+        <div>
+          <Row>
+            <Jumbotron>
+              <h1>Free Code Camps' Job Board</h1>
+              <p>
+                Need to find the best junior developers?
+                Want to find dedicated developers eager to join your company?
+                Sign up now to post your job!
+              </p>
+              <Button
+                bsSize='large'
+                className='signup-btn'>
+                Try the first month 20% off!
+              </Button>
+            </Jumbotron>
+          </Row>
+          <Row>
+            { this.renderChild(children, jobs) ||
+              this.renderShow(jobs) }
+            </Row>
+        </div>
+      );
+    }
+  })
+);

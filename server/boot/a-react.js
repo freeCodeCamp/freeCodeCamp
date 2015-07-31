@@ -1,11 +1,12 @@
 import React from 'react';
 import Router from 'react-router';
+import Fetchr from 'fetchr';
 import Location from 'react-router/lib/Location';
 import debugFactory from 'debug';
 import { app$ } from '../../common/app';
 import { RenderToString } from 'thundercats-react';
 
-const debug = debugFactory('freecc:servereact');
+const debug = debugFactory('freecc:react-server');
 
 // add routes here as they slowly get reactified
 // remove their individual controllers
@@ -25,6 +26,7 @@ export default function reactSubRouter(app) {
   app.use(router);
 
   function serveReactApp(req, res, next) {
+    const services = new Fetchr({ req });
     const location = new Location(req.path, req.query);
 
     // returns a router wrapped app
@@ -42,16 +44,20 @@ export default function reactSubRouter(app) {
         // prefetches data and sets up it up for current state
         debug('rendering to string');
         return RenderToString(
-          AppCat(),
+          AppCat(null, services),
           React.createElement(Router, initialState)
         );
       })
       // makes sure we only get one onNext and closes subscription
       .flatMap(function({ data, markup }) {
         debug('react rendered');
+        const { title } = data.AppStore;
         res.expose(data, 'data');
         // now render jade file with markup injected from react
-        return res.render$('layout-react', { markup: markup });
+        return res.render$(
+          'layout-react',
+          { markup, title }
+        );
       })
       .subscribe(
         function(markup) {

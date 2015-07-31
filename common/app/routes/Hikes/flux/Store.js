@@ -7,11 +7,10 @@ const initialValue = {
 
 export default Store(initialValue)
   .refs({ displayName: 'HikesStore'})
-  .init(({ instance, args }) => {
-    const [cat] = args;
+  .init(({ instance: hikeStore, args: [cat] }) => {
 
     let { setHikes } = cat.getActions('hikesActions');
-    instance.register(setHikes);
+    hikeStore.register(setHikes);
 
-    return instance;
+    return hikeStore;
   });

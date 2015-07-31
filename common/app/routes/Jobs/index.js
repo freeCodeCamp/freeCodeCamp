@@ -9,10 +9,6 @@ import Jobs from './components/Jobs.jsx';
  */
 
 export default {
-  path: '/jobs/(:jobId)',
-  getComponents(cb) {
-    setTimeout(() => {
-      cb(null, Jobs);
-    }, 0);
-  }
+  path: 'jobs',
+  component: Jobs
 };

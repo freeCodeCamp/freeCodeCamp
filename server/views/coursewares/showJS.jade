@@ -1,88 +1,105 @@
 extends ../layout-wide
 block content
-    script(src='/js/lib/codemirror/lib/codemirror.js')
-    script(src='/js/lib/codemirror/addon/edit/closebrackets.js')
-    script(src='/js/lib/codemirror/addon/edit/matchbrackets.js')
-    script(src='/js/lib/codemirror/addon/lint/lint.js')
-    script(src='/js/lib/codemirror/addon/lint/javascript-lint.js')
-    script(src='/bower_components/jshint/dist/jshint.js')
-    script(src='/js/lib/chai/chai.js')
+    script(type='text/javascript', src='/js/lib/codemirror/lib/codemirror.js')
+    script(type='text/javascript', src='/js/lib/codemirror/addon/edit/closebrackets.js')
+    script(type='text/javascript', src='/js/lib/codemirror/addon/edit/matchbrackets.js')
+    script(type='text/javascript', src='/js/lib/codemirror/addon/lint/lint.js')
+    script(type='text/javascript', src='/js/lib/codemirror/addon/lint/javascript-lint.js')
+    script(type='text/javascript', src='/bower_components/jshint/dist/jshint.js')
+    script(type='text/javascript', src='/js/lib/chai/chai.js')
     link(rel='stylesheet', href='/js/lib/codemirror/lib/codemirror.css')
     link(rel='stylesheet', href='/js/lib/codemirror/addon/lint/lint.css')
     link(rel='stylesheet', href='/js/lib/codemirror/theme/monokai.css')
     link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Ubuntu+Mono")
-    script(src='/js/lib/codemirror/mode/javascript/javascript.js')
-    script(src='/js/lib/jailed/jailed.js')
-    script(src='/js/lib/coursewares/sandbox.js')
-    .row
-        .col-xs-12.col-sm-12.col-md-4.bonfire-top
+    script(type='text/javascript', src='/js/lib/codemirror/mode/javascript/javascript.js')
+    script(type='text/javascript', src='/js/lib/jailed/jailed.js')
+    script(type='text/javascript', src='/js/lib/coursewares/sandbox.js')
+    .row(ng-controller="pairedWithController")
+        .col-xs-12.col-sm-12.col-md-4.col-lg-3
             .scroll-locker
-                #testCreatePanel
-                    h1.text-center= name
-                    .well
-                        .row
+                #testCreatePanel.well
+                    h3.text-center.negative-10= name
+                    .row
+                        .col-xs-12
+                            .bonfire-instructions
+                                for sentence in details
+                                    p.wrappable.negative-10!= sentence
+                                .negative-bottom-margin-30
+                                    #MDN-links
+                                        p.negative-10 Here are some helpful links:
+                                        for link, index in MDNlinks
+                                            .negative-10
+                                                ul: li: a(href="" + link, target="_blank") !{MDNkeys[index]}
+                if (user)
+                    form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                        .form-group.text-center.negative-10
                             .col-xs-12
-                                .bonfire-instructions
-                                    p.wrappable= brief
-                                    #brief-instructions
-                                        #more-info.btn.btn-primary.btn-block.btn-primary-ghost
-                                            span.ion-arrow-down-b
-                                            | More information
-                                    #long-instructions.row.hide
-                                        .col-xs-12
-                                            for sentence in details
-                                                p.wrappable!= sentence
-                                            #less-info.btn.btn-primary.btn-block.btn-primary-ghost
-                                                span.ion-arrow-up-b
-                                                | Less information
-                    #submitButton.btn.btn-primary.btn-big.btn-block Run code (ctrl + enter)
-                    .button-spacer
-                    .btn-group.input-group.btn-group-justified
-                        label.btn.btn-success#trigger-help-modal
-                            i.fa.fa-medkit
-                                | &nbsp; Help
-                        label.btn.btn-success#trigger-pair-modal
-                            i.fa.fa-user-plus
-                                | &nbsp; Pair
-                        label.btn.btn-success#trigger-issue-modal
-                            i.fa.fa-bug
-                                | &nbsp; Bug
-                        .spacer
-                    form.code
-                        .form-group.codeMirrorView
-                            textarea#codeOutput(style='display: none;')
-                    br
-                    #testSuite
-                    br
-                    script(type="text/javascript").
-                        var tests = !{JSON.stringify(tests)};
-                        var challengeSeed = !{JSON.stringify(challengeSeed)};
-                        var challenge_Id = !{JSON.stringify(challengeId)};
-                        var challenge_Name = !{JSON.stringify(name)};
-                        var challengeType = !{JSON.stringify(challengeType)};
-                        var started = Math.floor(Date.now());
-
+                                // extra field to distract password tools like lastpass from injecting css into our username field
+                label.negative-10.btn.btn-primary.btn-block#submitButton
+                    i.fa.fa-play
+                        | &nbsp; Run code (ctrl + enter)
+                .button-spacer
+                .btn-group.input-group.btn-group-justified
+                    label.btn.btn-success#trigger-reset-modal
+                        i.fa.fa-refresh
+                            | &nbsp; Reset
+                    label.btn.btn-success#trigger-help-modal
+                        i.fa.fa-medkit
+                            | &nbsp; Help
+                    label.btn.btn-success#trigger-issue-modal
+                        i.fa.fa-bug
+                            | &nbsp; Bug
+                .button-spacer
+                form.code
+                    .form-group.codeMirrorView
+                        textarea#codeOutput(style='display: none;')
+                br
+                #testSuite.negative-10
+                br
+                script(type="text/javascript").
+                    var tests = !{JSON.stringify(tests)};
+                    var challengeSeed = !{JSON.stringify(challengeSeed)};
+                    var challenge_Id = !{JSON.stringify(challengeId)};
+                    var challenge_Name = !{JSON.stringify(name)};
+                    var started = Math.floor(Date.now());
+                    var challengeType = !{JSON.stringify(challengeType)};
+                    var _ = R;
+                    var dashed = !{JSON.stringify(dashedName)};
         .col-xs-12.col-sm-12.col-md-8
             #mainEditorPanel
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeEditor(autofocus=true, style='display: none;')
-                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.5.js')
+                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.6.js')
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
                 .modal-header.challenge-list-header= compliment
                     a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body(ng-controller="pairedWithController")
+                .modal-body
                     .text-center
                         .animated.zoomInDown.delay-half
                             span.completion-icon.ion-checkmark-circled.text-primary
                     if (user)
-                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf, ng-disabled='completedWithForm.$invalid && existingUser.length > 0') Go to my next challenge (ctrl + enter)
-                        if (points && points > 2)
-                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript" target="_blank")
+                        a.animated.fadeIn.btn.btn-lg.btn-primary.btn-block#next-courseware-button(name='_csrf', value=_csrf) Go to my next challenge (ctrl + enter)
+                        if (user.progressTimestamps.length > 2)
+                            a.animated.fadeIn.btn.btn-lg.btn-block.btn-twitter(target="_blank", href="https://twitter.com/intent/tweet?text=I%20just%20#{verb}%20%40FreeCodeCamp%20#{name}&url=http%3A%2F%2Ffreecodecamp.com/challenges/#{dashedName}&hashtags=LearnToCode, JavaScript")
                                 i.fa.fa-twitter &thinsp;
                                     = phrase
                     else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
+    #reset-modal.modal(tabindex='-1')
+        .modal-dialog.animated.fadeInUp.fast-animation
+            .modal-content
+                .modal-header.challenge-list-header Clear your code?
+                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    h3 This will restore your code editor to its original state.
+                    a.btn.btn-lg.btn-info.btn-block#reset-button(href='#', data-dismiss='modal', aria-hidden='true') Clear my code
+                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
+    script.
+        var MDNlinks = !{JSON.stringify(MDNlinks)};
+        if (!MDNlinks.length) {
+            $('#MDN-links').addClass('collapse');
+        }
