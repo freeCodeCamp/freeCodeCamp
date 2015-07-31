@@ -265,10 +265,6 @@ module.exports = function(app) {
         return saveUser(user);
       })
       .flatMap(function() {
-        req.user.progressTimestamps.push(Date.now());
-        return saveUser(req.user);
-      })
-      .flatMap(function() {
         return story$;
       })
       .flatMap(function(story) {
