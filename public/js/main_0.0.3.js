@@ -4,6 +4,12 @@ $(document).ready(function() {
     ga('send', 'event',  'Challenge', 'load', challengeName);
   }
 
+  $(document).ready(function() {
+    if ($('#reset-button').html() != undefined) {
+      $('#reset-button').on('click', resetEditor);
+    }
+  });
+
   var CSRF_HEADER = 'X-CSRF-Token';
 
   var setCSRFToken = function(securityToken) {
@@ -144,6 +150,10 @@ $(document).ready(function() {
 
   $('#trigger-pair-modal').on('click', function() {
     $('#pair-modal').modal('show');
+  });
+
+  $('#trigger-reset-modal').on('click', function() {
+    $('#reset-modal').modal('show');
   });
 
   $('#trigger-help-modal').on('click', function() {
