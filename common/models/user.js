@@ -206,12 +206,14 @@ module.exports = function(User) {
       const findUser = observeMethod(User, 'findOne');
       if (!receiver) {
         return nextTick(() => {
-          cb(new TypeError('receiver should be a string but got %s', receiver));
+          cb(
+            new TypeError(`receiver should be a string but got ${ receiver }`)
+          );
         });
       }
       if (!giver) {
         return nextTick(() => {
-          cb(new TypeError('giver should be a string but got %s'));
+          cb(new TypeError(`giver should be a string but got ${ giver }`));
         });
       }
       let temp = moment();
@@ -223,7 +225,7 @@ module.exports = function(User) {
       user$
         .tapOnNext((user) => {
           if (!user) {
-            throw new Error('count not find receiver for %s', receiver);
+            throw new Error(`could not find receiver for ${ receiver }`);
           }
         })
         .flatMap(({ progressTimestamps = [] }) => {
@@ -255,7 +257,7 @@ module.exports = function(User) {
             });
           }
           return Observable.throw(
-            new Error('giver already gave receiver points')
+            new Error(`${ giver } already gave ${ receiver } points`)
           );
         })
         .subscribe(
