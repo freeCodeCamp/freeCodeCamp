@@ -110,21 +110,6 @@ var testSuccess = function() {
   }
 };
 
-var challengeSeed = challengeSeed || null;
-var allSeeds = '';
-(function() {
-  challengeSeed.forEach(function(elem) {
-    allSeeds += elem.replace(/fccss/g, '<script>').replace(/fcces/g,'</script>') + '\n';
-  });
-  editor.setValue(allSeeds);
-  (function() {
-    setTimeout(function() {
-      editor.refresh();
-    }, 200);
-  })();
-})();
-
-
 function doLinting () {
   editor.operation(function () {
     for (var i = 0; i < widgets.length; ++i)
@@ -263,3 +248,17 @@ var resetEditor = function resetEditor() {
   updatePreview();
   codeStorage.updateStorage();
 };
+
+var challengeSeed = challengeSeed || null;
+var allSeeds = '';
+(function() {
+  challengeSeed.forEach(function(elem) {
+    allSeeds += elem.replace(/fccss/g, '<script>').replace(/fcces/g,'</script>') + '\n';
+  });
+  editor.setValue(allSeeds);
+  (function() {
+    setTimeout(function() {
+      editor.refresh();
+    }, 200);
+  })();
+})();

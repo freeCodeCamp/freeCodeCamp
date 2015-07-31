@@ -1104,20 +1104,21 @@
     },
     {
       "id": "bad87fee1348bd9aede08817",
-      "name": "Waypoint: Wrap an Anchor Element within a Paragraph",
-      "dashedName": "waypoint-wrap-an-anchor-element-within-a-paragraph",
+      "name": "Waypoint: Nest an Anchor Element within a Paragraph",
+      "dashedName": "waypoint-nest-an-anchor-element-within-a-paragraph",
       "difficulty": 1.23,
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
         "<img class='img-responsive' alt='a diagram of how anchor tags are composed with the same text as on the following line' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
-        "Now wrap your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link - the rest is plain text."
+        "\"Nesting\" just means putting one element inside of another element.",
+        "Now nest your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
       ],
       "tests": [
         "assert($('a').attr('href').match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
         "assert($('a').text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert($('p') && $('p').length > 2, 'Create a new <code>p</code> element around your <code>a</code> element. \"click here for\".')",
-        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your <code>a</code> element should be wrapped within your new <code>p</code> element.')",
+        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
         "assert($('p').text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
@@ -1252,14 +1253,14 @@
       "dashedName": "waypoint-turn-an-image-into-a-link",
       "difficulty": 1.25,
       "description": [
-        "You can make elements into links by wrapping them within an <code>a</code> element.",
-        "Wrap your image within an <code>a</code> element. Here's an example: <code>&#60;a href='#'&#62;&#60;img src='http://bit.ly/fcc-kittens2'/&#62;&#60;/a&#62;</code>.",
+        "You can make elements into links by nesting them within an <code>a</code> element.",
+        "Nest your image within an <code>a</code> element. Here's an example: <code>&#60;a href='#'&#62;&#60;img src='http://bit.ly/fcc-kittens2'/&#62;&#60;/a&#62;</code>.",
         "Remember to use the hash symbol (#) as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.",
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "tests": [
         "assert(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')",
-        "assert($('a').children('img').length > 0, 'Wrap your image element within an <code>a</code> element.')",
+        "assert($('a').children('img').length > 0, 'Nest your image element within an <code>a</code> element.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1398,7 +1399,12 @@
       "description": [
         "HTML has a special element for creating unordered lists, or bullet point-style lists.",
         "Unordered lists start with a <code>&#60;ul&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
-        "For example: <code>&#60;ul&#62;&#60;li&#62;milk&#60;/li&#62;&#60;li&#62;cheese&#60;/li&#62;&#60;/ul&#62;</code> would create a bulleted list of \"milk\" and \"cheese\".",
+        "For example: ",
+        "<code>&#60;ul&#62;</code>",
+        "&thinsp;&thinsp;<code>&#60;li&#62;milk&#60;/li&#62;</code>",
+        "&thinsp;&thinsp;<code>&#60;li&#62;cheese&#60;/li&#62;</code>",
+        "<code>&#60;/ul&#62;</code>",
+        "would create a bulleted list of \"milk\" and \"cheese\".",
         "Replace your <code>p</code> elements with an unordered list of three things that cats love."
       ],
       "tests": [
@@ -1710,10 +1716,10 @@
       "description": [
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
         "For example: <code>&#60;form action=\"/url-where-you-want-to-submit-form-data\"&#62;&#60;/form&#62;</code>.",
-        "Wrap your text field in a <code>form</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element."
+        "Nest your text field in a <code>form</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element."
       ],
       "tests": [
-        "assert($('form') && $('form').children('input') && $('form').children('input').length > 0, 'Wrap your text input element within a <code>form</code> element.')",
+        "assert($('form') && $('form').children('input') && $('form').children('input').length > 0, 'Nest your text input element within a <code>form</code> element.')",
         "assert($('form').attr('action'), 'Your <code>form</code> element should have an <code>action</code> attribute.')",
         "assert(editor.match(/<\\/form>/g) && editor.match(/<form/g) && editor.match(/<\\/form>/g).length === editor.match(/<form/g).length, 'Make sure your <code>form</code> element has a closing tag.')",
         "assert(editor.match(/\\/submit-cat-photo/ig), 'Make sure your <code>form</code> action is set to <code>/submit-cat-photo</code>.')"
@@ -1958,15 +1964,15 @@
       "description": [
         "You can use \"radio buttons\" for questions where you want the user to only give you one answer.",
         "Radio buttons are a type of <code>input</code>.",
-        "Each of your radio buttons should be wrapped within its own <code>label</code> element.",
+        "Each of your radio buttons should be nested within its own <code>label</code> element.",
         "All related radio buttons should have the same <code>name</code> attribute.",
         "Here's an example of a radio button: <code>&#60;label&#62;&#60;input type='radio' name='indoor-outdoor'&#62; Indoor&#60;/label&#62;</code>.",
-        "Add to your form a pair of radio buttons. Each radio button should be wrapped within its own <code>label</code> element. They should share a common <code>name</code> attribute. One should have the option of \"indoor\" and the other should have the option of \"outdoor\"."
+        "Add to your form a pair of radio buttons. Each radio button should be nested within its own <code>label</code> element. They should share a common <code>name</code> attribute. One should have the option of \"indoor\" and the other should have the option of \"outdoor\"."
       ],
       "tests": [
         "assert($('input[type=\"radio\"]').length > 1, 'Your page should have two radio button elements.')",
         "assert($('input[type=\"radio\"]:nth-child(1)').attr('name') === 'indoor-outdoor', 'Give your radio buttons the <code>name</code> attribute of \"indoor-outdoor\".')",
-        "assert($('label').length > 1, 'Each of your two radio button elements should be wrapped in a label element.')",
+        "assert($('label').length > 1, 'Each of your two radio button elements should be nested in a label element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
         "assert($('label').text().match(/indoor/gi), 'One of your radio buttons should have the label \"indoor\".')",
         "assert($('label').text().match(/outdoor/gi), 'One of your radio buttons should have the label \"outdoor\".')"
@@ -2051,14 +2057,14 @@
       "description": [
         "Forms commonly use \"checkboxes\" for questions that may have more than one answer.",
         "Checkboxes are a type of <code>input</code>.",
-        "Each of your checkboxes should be wrapped within its own <code>label</code> element.",
+        "Each of your checkboxes should be nested within its own <code>label</code> element.",
         "All related checkbox inputs should have the same <code>name</code> attribute.",
         "Here's an example of a checkbox: <code>&#60;label&#62;&#60;input type='checkbox' name='personality'&#62; Loving&#60;/label&#62;</code>.",
-        "Add to your form a set of three checkboxes. Each checkbox should be wrapped within its own <code>label</code> element. All three should share the <code>name</code> attribute of \"personality\"."
+        "Add to your form a set of three checkboxes. Each checkbox should be nested within its own <code>label</code> element. All three should share the <code>name</code> attribute of \"personality\"."
       ],
       "tests": [
         "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
-        "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be wrapped in its own <code>label</code> element.')",
+        "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be nested in its own <code>label</code> element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
         "assert($('input[type=\"checkbox\"]:nth-child(1)').attr('name') === 'personality', 'Give your checkboxes buttons the <code>name</code> attribute of \"personality\".')"
       ],
@@ -2223,20 +2229,20 @@
     },
     {
       "id": "bad87fee1348bd9aede08835",
-      "name": "Waypoint: Wrap Many Elements within a Single Div Element",
-      "dashedName": "waypoint-wrap-many-elements-within-a-single-div-element",
+      "name": "Waypoint: Nest Many Elements within a Single Div Element",
+      "dashedName": "waypoint-nest-many-elements-within-a-single-div-element",
       "difficulty": 1.38,
       "description": [
         "The <code>div</code> element, or \"Division\" element, is a general purpose container for other elements.",
         "The <code>div</code> element is probably the most commonly used HTML element of all. It's useful for passing the CSS of its own class declarations down to all the elements that it contains.",
         "Just like any other non-self-closing element, you can open a <code>div</code> element with <code>&#60;div&#62;</code> and close it on another line with <code>&#60;/div&#62;</code>.",
         "Try putting your opening <code>div</code> tag above your \"Things cats love\" <code>p</code> element and your closing <code>div</code> tag after your closing <code>ol</code> tag so that both of your lists are within one <code>div</code>.",
-        "Wrap your \"Things cats love\" and \"Things cats hate\" lists all within a single <code>div</code> element."
+        "Nest your \"Things cats love\" and \"Things cats hate\" lists all within a single <code>div</code> element."
       ],
       "tests": [
-        "assert($('div').children('ol').length > 0, 'Wrap your <code>ol</code> element inside your <code>div</code> element.')",
-        "assert($('div').children('p').length > 1, 'Wrap your <code>p</code> element inside your <code>div</code> element.')",
-        "assert($('div').children('ul').length > 0, 'Wrap your <code>ul</code> element inside your <code>div</code> element.')",
+        "assert($('div').children('ol').length > 0, 'Nest your <code>ol</code> element inside your <code>div</code> element.')",
+        "assert($('div').children('p').length > 1, 'Nest your <code>p</code> element inside your <code>div</code> element.')",
+        "assert($('div').children('ul').length > 0, 'Nest your <code>ul</code> element inside your <code>div</code> element.')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure your <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [
