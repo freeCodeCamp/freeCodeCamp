@@ -1392,6 +1392,7 @@
         "   var slotTwo;",
         "   var slotThree;",
         "   ",
+        "   //Placeholder",
         "   var images = ['http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens'];",
         "   ",
         "   slotOne = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
