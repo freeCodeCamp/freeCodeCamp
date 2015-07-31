@@ -5,7 +5,7 @@ $(document).ready(function() {
   }
 
   $(document).ready(function() {
-    if ($('#reset-button').html() != undefined) {
+    if (typeof editor !== 'undefined') {
       $('#reset-button').on('click', resetEditor);
     }
   });
