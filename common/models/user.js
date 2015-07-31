@@ -10,12 +10,14 @@ const debug = debugFactory('freecc:user:remote');
 function getAboutProfile({
   username,
   githubProfile: github,
-  progressTimestamps = []
+  progressTimestamps = [],
+  bio
 }) {
   return {
     username,
     github,
-    browniePoints: progressTimestamps.length
+    browniePoints: progressTimestamps.length,
+    bio
   };
 }
 
@@ -294,5 +296,5 @@ module.exports = function(User) {
         verb: 'get'
       }
     }
-    );
+  );
 };
