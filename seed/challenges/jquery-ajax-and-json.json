@@ -7,7 +7,7 @@
       "id": "bad87fee1348bd9acdd08826",
       "name":  "Waypoint: Learn how Script Tags and Document Ready Work",
       "dashedName":  "waypoint-learn-how-script-tags-and-document-ready-work",
-      "difficulty": 0.072,
+      "difficulty": 3.01,
       "description": [
         "Now we're ready to learn jQuery, the most popular JavaScript tool of all time. Don't worry about JavaScript itself - we will cover it soon.",
         "Before we can start using jQuery, we need to add some things to our HTML.",
@@ -51,7 +51,7 @@
       "id": "bad87fee1348bd9bedc08826",
       "name":  "Waypoint: Target HTML Elements with Selectors Using jQuery",
       "dashedName":  "waypoint-target-html-elements-with-selectors-using-jquery",
-      "difficulty": 0.073,
+      "difficulty": 3.02,
       "description": [
         "Now we have a \"document ready function\". We'll learn more about functions later. The important thing to know is that code you put inside this function will run as soon as your browser has loaded your page.",
         "This is important because without your \"document ready function\", your code may run before your HTML is rendered, which would cause bugs.",
@@ -101,7 +101,7 @@
       "id": "bad87fee1348bd9aedc08826",
       "name":  "Waypoint: Target Elements by Class Using jQuery",
       "dashedName":  "waypoint-target-elements-by-class-using-jquery",
-      "difficulty": 0.074,
+      "difficulty": 3.03,
       "description": [
         "You see how we made all of your <code>button</code> elements bounce? We selected them with <code>$('button')</code>, then we added some CSS classes to them with <code>.addClass('animated bounce');</code>.",
         "You just used jQuery's <code>.addClass()</code> function, which allows you to add classes to elements.",
@@ -151,7 +151,7 @@
       "id": "bad87fee1348bd9aeda08826",
       "name":  "Waypoint: Target Elements by ID Using jQuery",
       "dashedName":  "waypoint-target-elements-by-id-using-jquery",
-      "difficulty": 0.075,
+      "difficulty": 3.04,
       "description": [
         "You can also target elements by their id attributes.",
         "First target your <code>div</code> element with the class \"target3\" by using the <code>$('#target3')</code> selector.",
@@ -203,7 +203,7 @@
       "id": "bad87fee1348bd9aeda08726",
       "name":  "Waypoint: Delete your jQuery Functions",
       "dashedName":  "waypoint-delete-your-jquery-functions",
-      "difficulty": 0.075,
+      "difficulty": 3.05,
       "description": [
         "These animations were cool at first, but now they're getting kind of distracting.",
         "Delete all three of these jQuery functions from your \"document ready function\", but leave your \"document ready function\" itself intact."
@@ -255,7 +255,7 @@
       "id": "bad87fee1348bd9aed908626",
       "name":  "Waypoint: Target the same element with multiple jQuery Selectors",
       "dashedName":  "waypoint-target-the-same-element-with-multiple-jQuery-Selectors",
-      "difficulty": 0.076,
+      "difficulty": 3.06,
       "description": [
         "Now you know three ways of targeting elements: by type (<code>$('button')</code>), by class (<code>($('.btn')</code>), and by id (<code>($'#target1')</code>).",
         "Use each of these jQuery selectors to target your <code>button</code> element with the class \"btn\" and the id \"target1\".",
@@ -306,7 +306,7 @@
       "id": "bad87fee1348bd9aed918626",
       "name":  "Waypoint: Remove Classes from an element with jQuery",
       "dashedName":  "waypoint-remove-classes-from-an-element-with-jquery",
-      "difficulty": 0.076,
+      "difficulty": 3.07,
       "description": [
         "In the same way you can add classes to an element with jQuery's <code>addClass()</code> function, you can remove them with jQuery's <code>removeClass()</code> function.",
         "Let's remove the \"btn-default\" class from all of our <code>button</code> elements.",
@@ -356,7 +356,7 @@
       "id": "bad87fee1348bd9aed908826",
       "name":  "Waypoint: Change the CSS of an Element Using jQuery",
       "dashedName":  "waypoint-change-the-css-of-an-element-using-jquery",
-      "difficulty": 0.076,
+      "difficulty": 3.08,
       "description": [
         "We can also change the CSS of an HTML element directly with jQuery.",
         "Delete your jQuery selectors, leaving an empty \"document ready function\".",
@@ -411,7 +411,7 @@
       "id": "bad87fee1348bd9aed808826",
       "name":  "Waypoint: Disable an Element Using jQuery",
       "dashedName":  "waypoint-disable-an-element-using-jquery",
-      "difficulty": 0.077,
+      "difficulty": 3.09,
       "description": [
         "You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.",
         "When you disable a button, it will become grayed-out and can no longer be clicked.",
@@ -463,7 +463,7 @@
       "id": "bad87fee1348bd9aed708826",
       "name":  "Waypoint: Remove an Element Using jQuery",
       "dashedName":  "waypoint-remove-an-element-using-jquery",
-      "difficulty": 0.078,
+      "difficulty": 3.10,
       "description": [
         "Now let's remove an HTML element from your page using jQuery.",
         "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely."
@@ -512,7 +512,7 @@
       "id": "bad87fee1348bd9aed608826",
       "name":  "Waypoint: Use appendTo to Move Elements with jQuery",
       "dashedName":  "waypoint-use-appendto-to-move-elements-with-jquery",
-      "difficulty": 0.079,
+      "difficulty": 3.11,
       "description": [
         "Now let's try moving elements from one <code>div</code> to another.",
         "jQuery has a function called <code>appendTo()</code> that allows you to select HTML elements and append them to another element.",
@@ -565,7 +565,7 @@
       "id": "bad87fee1348bd9aed508826",
       "name":  "Waypoint: Clone an Element Using jQuery",
       "dashedName":  "waypoint-clone-an-element-using-jquery",
-      "difficulty": 0.080,
+      "difficulty": 3.12,
       "description": [
         "In addition to moving elements, you can also copy them from one place to another.",
         "jQuery has a function called <code>clone()</code> that makes a copy of an element.",
@@ -620,17 +620,27 @@
       "id": "bad87fee1348bd9aed308826",
       "name":  "Waypoint: Target the Parent of an Element Using jQuery",
       "dashedName":  "waypoint-target-the-parent-of-an-element-using-jquery",
-      "difficulty": 0.082,
+      "difficulty": 3.13,
       "description": [
-        "Change the parent of the #target1 element to have the background color of red.",
-        "$('#target1').parent().css('background-color', 'red')"
+        "Every HTML elements has a \"parent\" element from which it \"inherits\" properties.",
+        "For example, your \"jQuery Playground\" <code>h3</code> element has the parent element of <code>&#60;div class='container-fluid'&#62</code>, which itself has the parent <code>body</code>.",
+        "jQuery has a function called <code>parent()</code> that allows you to access the parent of whichever element you've selected.",
+        "Give the parent of the <code>#target1</code> element background-color of red.",
+        "Here's an example of how you would use the <code>parent()</code> function: <code>$('#left-well').parent().css('background-color', 'blue')</code>"
       ],
       "tests": [
-
+        "assert($('#left-well').css('background-color') === 'rgb(255, 0, 0)', 'Your \"target1\" element should have red text.')",
+        "assert(!editor.match(/\\.parent\\(\\)\\.css/g), 'You should use the <code>parent()</code> function to modify this element.')",
+        "assert(!editor.match(/<div class=\\'well\\' id=\\'left-well\\'>/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
+        "    $('#target1').css('color', 'red');",
+        "    $('#target1').prop('disabled', true);",
+        "    $('#target4').remove();",
+        "    $('#target2').appendTo('#right-well');",
+        "    $('#target5').clone().appendTo('#left-well');",
         "",
         "  });",
         "fcces",
@@ -666,17 +676,28 @@
       "id": "bad87fee1348bd9aed208826",
       "name":  "Waypoint: Target the Children of an Element Using jQuery",
       "dashedName":  "waypoint-target-the-children-of-an-element-using-jquery",
-      "difficulty": 0.083,
+      "difficulty": 3.14,
       "description": [
-        "Change the color of all the #left-well element's children to blue.",
-        "$('#right-well').children().css('background-color', 'blue')"
+        "Many HTML elements has a \"children\" element from which they \"inherits\" properties.",
+        "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class='container-fluid'&#62</code> element.",
+        "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
+        "Give all the children of your <code>#right-well</code> element a color of green.",
+        "Here's an example of how you would use the <code>children()</code> function: <code>$('#left-well').children().css('color', 'blue')</code>"
       ],
       "tests": [
-
+        "assert($('#target6').css('color') === 'rgb(0, 0, 255)', 'Your \"target6\" element should have green text.')",
+        "assert(!editor.match(/\\.children\\(\\)\\.css/g), 'You should use the <code>children()</code> function to modify these elements.')",
+        "assert(!editor.match(/<div class=\\'well\\' id=\\'right-well\\'>/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
         "  $(document).ready(function() {",
+        "    $('#target1').css('color', 'red');",
+        "    $('#target1').prop('disabled', true);",
+        "    $('#target4').remove();",
+        "    $('#target2').appendTo('#right-well');",
+        "    $('#target5').clone().appendTo('#left-well');",
+        "    $('#target1').parent().css('background-color', 'red');",
         "",
         "  });",
         "fcces",
@@ -707,13 +728,11 @@
       ],
       "challengeType": 0
     },
-
-
     {
       "id": "bad87fee1348bd9aed108826",
       "name":  "Waypoint: Target a Specific Child of an Element Using jQuery",
       "dashedName":  "waypoint-target-a-specific-child-of-an-element-using-jquery",
-      "difficulty": 0.084,
+      "difficulty": 3.15,
       "description": [
 
       ],
@@ -730,7 +749,7 @@
       "id": "bad87fee1348bd9aed008826",
       "name":  "Waypoint: Target Even Numbered Elements Using jQuery",
       "dashedName":  "waypoint-target-even-numbered-elements-using-jquery",
-      "difficulty": 0.085,
+      "difficulty": 3.16,
       "description": [
 
       ],
@@ -747,7 +766,58 @@
       "id": "bad87fee1348bd9aecc08826",
       "name":  "Waypoint: Read Data from an Element Using jQuery",
       "dashedName":  "Waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 0.086,
+      "difficulty": 3.17,
+      "description": [
+
+      ],
+      "tests": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "challengeType": 0
+    },
+
+    {
+      "id": "bad87fee1348bd9aecc08826",
+      "name":  "Waypoint: Trigger onHover Events with jQuery",
+      "dashedName":  "Waypoint-trigger-onhover-events-with-jquery",
+      "difficulty": 3.18,
+      "description": [
+
+      ],
+      "tests": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "challengeType": 0
+    },
+
+    {
+      "id": "bad87fee1348bd9aeca08826",
+      "name":  "Waypoint: Trigger onClick Events with jQuery",
+      "dashedName":  "Waypoint-trigger-onClick-events-with-jquery",
+      "difficulty": 3.19,
+      "description": [
+
+      ],
+      "tests": [
+
+      ],
+      "challengeSeed": [
+
+      ],
+      "challengeType": 0
+    },
+
+    {
+      "id": "bad87fee1348bd9aecb08826",
+      "name":  "Waypoint: Use jQuery to Modify the Entire Page",
+      "dashedName":  "Waypoint-use-jquery-to-modify-the-entire-page",
+      "difficulty": 3.20,
       "description": [
 
       ],
@@ -764,7 +834,7 @@
       "id": "bad87fee1348bd9aebc08826",
       "name":  "Waypoint: Get Data from an URL Using jQuery",
       "dashedName":  "waypoint-get-data-from-a-url-using-jquery",
-      "difficulty": 0.087,
+      "difficulty": 3.21,
       "description": [
 
       ],
@@ -781,7 +851,7 @@
       "id": "bad87fee1348bd9ae9c08826",
       "name":  "Waypoint: Loop through JSON Data Using jQuery",
       "dashedName":  "waypoint-loop-through-json-data-using-jquery",
-      "difficulty": 0.088,
+      "difficulty": 3.22,
       "description": [
 
       ],
@@ -798,7 +868,7 @@
       "id": "bad87fee1348bd9ae8c08826",
       "name":  "Waypoint: Setup Click Events Using jQuery",
       "dashedName":  "waypoint-setup-click-events-using-jquery",
-      "difficulty": 0.089,
+      "difficulty": 3.23,
       "description": [
 
       ],
@@ -821,7 +891,7 @@
       "id": "bad88fee1348bd9ae8c08826",
       "name":  "Waypoint: Wire AJAX Call into a jQuery Click Event",
       "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 0.090,
+      "difficulty": 3.24,
       "description": [
         "<img src='https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png'>"
       ],
