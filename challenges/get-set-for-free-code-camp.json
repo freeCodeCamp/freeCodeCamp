@@ -6,7 +6,7 @@
       "id": "bd7124d8c441eddfaeb5bdef",
       "name": "Waypoint: Learn how Free Code Camp Works",
       "dashedName": "waypoint-learn-how-free-code-camp-works",
-      "difficulty": 0.001,
+      "difficulty": 0.01,
       "challengeSeed": ["125407438"],
       "description": [
         "Watch this 1-minute video, or simply read this summary:",
@@ -55,7 +55,7 @@
       "id": "bd7125d8c441eddfaeb5bd0f",
       "name": "Waypoint: Join Our Chat Room",
       "dashedName": "waypoint-join-our-chat-room",
-      "difficulty": 0.002,
+      "difficulty": 0.02,
       "challengeSeed": ["131574135"],
       "description": [
         "Now we're going to join the Free Code Camp chat room. You can come here any time of day to hang out, ask questions, or find another camper to pair program with.",
@@ -115,7 +115,7 @@
       "id": "bd7125d8c441eddfaeb5bdff",
       "name": "Waypoint: Preview our Challenge Map",
       "dashedName": "waypoint-preview-our-challenge-map",
-      "difficulty": 0.003,
+      "difficulty": 0.03,
       "challengeSeed": ["125407437"],
       "description": [
         "Before you start learning how to code, we'd like to introduce you to a few things.",
@@ -158,7 +158,7 @@
       "id": "bd7125d8c441eddfaeb5bd1f",
       "name": "Waypoint: Browse our Wiki",
       "dashedName": "waypoint-browse-our-wiki",
-      "difficulty": 0.004,
+      "difficulty": 0.04,
       "challengeSeed": ["125407435"],
       "description": [
         "Free Code Camp has an up-to-date wiki that will answer your many questions.",
@@ -201,7 +201,7 @@
       "id": "bd7125d8c441eddfaeb5bd2f",
       "name": "Waypoint: Customize your Portfolio Page",
       "dashedName": "waypoint-customize-your-portfolio-page",
-      "difficulty": 0.005,
+      "difficulty": 0.05,
       "challengeSeed": ["125407433"],
       "description": [
         "You and all your fellow campers have portfolio pages.",
@@ -247,7 +247,7 @@
       "id": "bd7126d8c441eddfaeb5bd3f",
       "name": "Waypoint: Try Camper News",
       "dashedName": "waypoint-try-camper-news",
-      "difficulty": 0.006,
+      "difficulty": 0.06,
       "challengeSeed": ["124553410"],
       "description": [
         "Camper News is the best place for our campers to share and discuss helpful links.",
@@ -299,7 +299,7 @@
       "id": "bd7126d8c441eddfaeb5bd3e",
       "name": "Waypoint: Meet Other Campers in your City",
       "dashedName": "waypoint-meet-other-campers-in-your-city",
-      "difficulty": 0.007,
+      "difficulty": 0.07,
       "challengeSeed": ["127358841"],
       "description": [
         "One of the best ways to stay motivated when learning to code is to hang out with other campers.",
@@ -348,7 +348,7 @@
       "id": "bd7126d8c431eddfaeb5bd3e",
       "name": "Waypoint: Add Free Code Camp to your LinkedIn Profile",
       "dashedName": "waypoint-add-free-code-camp-to-your-linkedin-profile",
-      "difficulty": 0.008,
+      "difficulty": 0.08,
       "challengeSeed": ["131574134"],
       "description": [
         "LinkedIn is a critical tool for your job search later on.",
@@ -379,7 +379,7 @@
       "id": "bd7137d8c441eddfaeb5bdef",
       "name": "Waypoint: Get Help the Hacker Way with RSAP",
       "dashedName": "waypoint-get-help-the-hacker-way-with-rsap",
-      "difficulty": 0.009,
+      "difficulty": 0.09,
       "challengeSeed": ["125407432"],
       "description": [
         "Let's cover one last thing before you start working through our lessons: how to get help.",
