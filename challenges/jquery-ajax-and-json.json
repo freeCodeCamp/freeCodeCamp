@@ -375,6 +375,7 @@
         "    $('button').addClass('animated bounce');",
         "    $('.well').addClass('animated shake');",
         "    $('#target3').addClass('animated fadeOut');",
+        "    $('button').removeClass('btn-default');",
         "",
         "  });",
         "fcces",
@@ -464,13 +465,12 @@
       "dashedName":  "waypoint-remove-an-element-using-jquery",
       "difficulty": 0.078,
       "description": [
-        "Now let's remove an HTML element entirely using jQuery.",
-        "jQuery has a "
-
+        "Now let's remove an HTML element from your page using jQuery.",
+        "jQuery has a function called <code>.remove()</code> that will remove an HTML element entirely."
       ],
       "tests": [
-        "assert($('img').length === 0, 'Use jQuery to remove your <code>img</code> element from your page.')",
-        "assert(editor.match(/<img/g), 'You should still have an <code>img</code> element in your HTML but jQuery should remove it.')"
+        "assert($('#target4').length === 0, 'Use jQuery to remove your \"target4\" element from your page.')",
+        "assert(editor.match(/id='target4/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
