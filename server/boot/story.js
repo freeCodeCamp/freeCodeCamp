@@ -59,6 +59,7 @@ module.exports = function(app) {
   var countStories = observeMethod(Story, 'count');
 
   router.get('/news/hot', hotJSON);
+  router.get('/stories/hotStories', hotJSON);
   router.get('/stories/submit', submitNew);
   router.get('/stories/submit/new-story', preSubmit);
   router.post('/stories/preliminary', newStory);
