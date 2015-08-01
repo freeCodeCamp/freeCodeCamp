@@ -100,9 +100,10 @@ block content
                         i.fa.fa-bug
                             | &nbsp; Bug
                 .button-spacer
-                form.code
-                    .form-group.codeMirrorView
-                        textarea#codeOutput(style='display: none;')
+                .editorScrollDiv(style = "overflow-y: scroll; overflow-x: hidden;")
+                    form.code
+                        .codeMirrorView
+                            textarea#codeOutput(style='display: none;')
                 br
                 #testSuite.negative-10
                 br
