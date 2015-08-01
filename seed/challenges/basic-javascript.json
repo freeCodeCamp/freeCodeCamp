@@ -1109,7 +1109,7 @@
         "For this we will need to generate three random numbers between <code>1</code> and <code>5</code> to represent the possible values of each individual slot",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>",
         "Generate the random numbers by using the system we used earlier in /challenges/random-whole-numbers-in-a-range",
-        "<code> Math.floor(Math.random() * (5 - 1 + 1)) + 1; </code>."
+        "<code> Math.floor(Math.random() * (5 - 1 + 1)) + 1; </code>"
       ],
       "tests":[
         "assert(typeof(runSlots($('.slot'))[0]) == 'number', 'SlotOne should be a random number');",
