@@ -154,8 +154,10 @@ var scrapeTests = function(userJavaScript) {
 };
 
 function removeComments(userJavaScript) {
-  var regex = new RegExp(/(\/\*[^(\*\/)]*\*\/)|\/\/[^\n]*/g);
-  return userJavaScript.replace(regex, '');
+  var singleLineComment = new RegExp("^ *//.*$", 'g'),
+      multiLineComment = new RegExp(/^ *\/\*[\s\S]*\*\//g);
+  return userJavaScript.replace(singleLineComment, '')
+    .replace(multiLineComment, '');
 }
 
 function removeLogs(userJavaScript) {
