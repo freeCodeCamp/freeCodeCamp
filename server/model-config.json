@@ -31,15 +31,7 @@
     "dataSource": "mail",
     "public": false
   },
-  "bonfire": {
-    "dataSource": "db",
-    "public": true
-  },
   "challenge": {
-    "dataSource": "db",
-    "public": true
-  },
-  "comment": {
     "dataSource": "db",
     "public": true
   },
