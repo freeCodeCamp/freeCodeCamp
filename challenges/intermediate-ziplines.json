@@ -18,7 +18,7 @@
         "<span class='text-info'>User Story:</span> As a user, I can click on a post to be taken to the story's original URL.",
         "<span class='text-info'>User Story:</span> As a user, I can click a link to go directly to the post's discussion page.",
         "<span class='text-info'>Bonus User Story:</span> As a user, I can see how many upvotes each story has.",
-        "<span class='text-info'>Hint:</span> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/stories/hotStories</code>.",
+        "<span class='text-info'>Hint:</span> Here's the Camper News Hot Stories API endpoint: <code>http://www.freecodecamp.com/news/hot</code>.",
         "Remember to use <a href='/field-guide/how-do-i-get-help-when-I-get-stuck' target='_blank'>RSAP</a> if you get stuck.",
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. If you pair programmed, you should also include the Free Code Camp username of your pair.",
         "If you'd like immediate feedback on your project, click this button and paste in a link to your CodePen project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
