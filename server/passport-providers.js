@@ -127,5 +127,19 @@ module.exports = {
       state: process.env.LINKEDIN_STATE
     },
     failureFlash: true
+  },
+  'github-login': {
+    provider: 'github',
+    authScheme: 'oauth2',
+    module: 'passport-github',
+    authPath: '/auth/github',
+    callbackURL: '/auth/github/callback',
+    callbackPath: '/auth/github/callback',
+    successRedirect: successRedirect,
+    failureRedirect: failureRedirect,
+    clientID: process.env.GITHUB_ID,
+    clientSecret: process.env.GITHUB_SECRET,
+    scope: ['email'],
+    failureFlash: true
   }
 };
