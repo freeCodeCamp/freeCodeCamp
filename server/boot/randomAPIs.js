@@ -21,6 +21,7 @@ module.exports = function(app) {
   router.get('/api/codepen/twitter/:screenName', twitter);
   router.get('/sitemap.xml', sitemap);
   router.get('/chat', chat);
+  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/twitch', twitch);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
@@ -201,15 +202,13 @@ module.exports = function(app) {
   }
 
   function chat(req, res) {
-    res.redirect('//gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function bootcampCalculatorJson(req, res) {
-    res.send(bootcampJson);
-  }
-
-  function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
+  }
+
+  function bootcampCalculator(req, res) {
+    res.render('resources/calculator', {
+      title: 'Coding Bootcamp Cost Calculator'
+    });
   }
 
   function jobsForm(req, res) {
