@@ -6,16 +6,19 @@ import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
 
 const debug = debugFactory('freecc:user:remote');
+const BROWNIEPOINTS_TIMEOUT = [30, 'seconds'];
 
 function getAboutProfile({
   username,
   githubProfile: github,
-  progressTimestamps = []
+  progressTimestamps = [],
+  bio
 }) {
   return {
     username,
     github,
-    browniePoints: progressTimestamps.length
+    browniePoints: progressTimestamps.length,
+    bio
   };
 }
 
@@ -203,21 +206,26 @@ module.exports = function(User) {
       const findUser = observeMethod(User, 'findOne');
       if (!receiver) {
         return nextTick(() => {
-          cb(new TypeError('receiver should be a string but got %s', receiver));
+          cb(
+            new TypeError(`receiver should be a string but got ${ receiver }`)
+          );
         });
       }
       if (!giver) {
         return nextTick(() => {
-          cb(new TypeError('giver should be a string but got %s'));
+          cb(new TypeError(`giver should be a string but got ${ giver }`));
         });
       }
-      const oneHourAgo = moment().subtract(1, 'hour').valueOf();
+      let temp = moment();
+      const browniePoints = temp
+        .subtract.apply(temp, BROWNIEPOINTS_TIMEOUT)
+        .valueOf();
       const user$ = findUser({ where: { username: receiver }});
 
       user$
         .tapOnNext((user) => {
           if (!user) {
-            throw new Error('count not find receiver for %s', receiver);
+            throw new Error(`could not find receiver for ${ receiver }`);
           }
         })
         .flatMap(({ progressTimestamps = [] }) => {
@@ -227,7 +235,7 @@ module.exports = function(User) {
         .filter((timestamp) => !!timestamp || typeof timestamp === 'object')
         // filterout timestamps older then an hour
         .filter(({ timestamp = 0 }) => {
-          return timestamp >= oneHourAgo;
+          return timestamp >= browniePoints;
         })
         // filter out brownie points given by giver
         .filter((browniePoint) => {
@@ -249,7 +257,7 @@ module.exports = function(User) {
             });
           }
           return Observable.throw(
-            new Error('giver already gave receiver points')
+            new Error(`${ giver } already gave ${ receiver } points`)
           );
         })
         .subscribe(
@@ -294,5 +302,5 @@ module.exports = function(User) {
         verb: 'get'
       }
     }
-    );
+  );
 };

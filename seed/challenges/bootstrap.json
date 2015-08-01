@@ -12,7 +12,7 @@
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
         "With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.",
         "You can add Bootstrap to any app just by including it with <code>&#60;link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/&#62;</code> at the top of your HTML. But we've gone ahead and automatically added it to your Cat Photo App for you.",
-        "To get started, we should wrap all of our HTML in a <code>div</code> element with the class \"fluid-container\"."
+        "To get started, we should nest all of our HTML in a <code>div</code> element with the class \"fluid-container\"."
       ],
       "tests": [
         "assert($('div').hasClass('container-fluid'), 'Your <code>div</code> element should have the class \"row\"')",
@@ -703,12 +703,12 @@
         "<a href='http://getbootstrap.com/css/#grid-example-basic' target='_blank'><img class='img-responsive' src='https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png'></a>",
         "Note that in this illustration, the <code>col-md-*</code> class is being used. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.",
         "In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where \"*\" is the number of columns wide the element should be, and \"xs\" means \"extra small\", like an extra-small mobile phone screen.",
-        "Put the \"Like\", \"Info\" and \"Delete\" buttons side-by-side by wrapping all three of them within one <code>&#60;div class=\"row\"&#62;</code> element, then each of them within a <code>&#60;div class=\"col-xs-4\"&#62;</code> element.",
-        "The \"row\" class is applied to a <code>div</code>, and the buttons themselves can be wrapped within it."
+        "Put the \"Like\", \"Info\" and \"Delete\" buttons side-by-side by nesting all three of them within one <code>&#60;div class=\"row\"&#62;</code> element, then each of them within a <code>&#60;div class=\"col-xs-4\"&#62;</code> element.",
+        "The \"row\" class is applied to a <code>div</code>, and the buttons themselves can be nested within it."
       ],
       "tests": [
-        "assert($('div.row:has(button)').length > 0, 'Your buttons should all be wrapped within the same <code>div</code> element with the class \"row\".')",
-        "assert($('div.col-xs-4:has(button)').length > 2, 'Each of your Bootstrap buttons should be wrapped within its own <code>div</code> element with the class \"col-xs-4\".')",
+        "assert($('div.row:has(button)').length > 0, 'Your buttons should all be nested within the same <code>div</code> element with the class \"row\".')",
+        "assert($('div.col-xs-4:has(button)').length > 2, 'Each of your Bootstrap buttons should be nested within its own <code>div</code> element with the class \"col-xs-4\".')",
         "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
@@ -897,13 +897,13 @@
         "<a href='http://getbootstrap.com/css/#grid' target='_blank'><img class='img-responsive' src='https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png'></a>",
         "Note that in this illustration, we use the \"col-md-*\" class. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, we're specifying how many columns wide an element should be on a medium-sized screen, such as a laptop.",
         "In the Cat Photo App that we're building, we'll use \"col-xs-*\", where \"*\" is the number of columns wide the element should be, and \"xs\" means \"extra small\", like an extra-small mobile phone screen.",
-        "Wrap your first image and your <code>h2</code> element within a single <code>&#60;div class='row'&#62;</code> element. Wrap your <code>h2</code> text within a <code>&#60;div class='col-xs-8'&#62;</code> and your image in a <code>&#60;div class='col-xs-4'&#62;</code> so that they are on the same line.",
+        "Nest your first image and your <code>h2</code> element within a single <code>&#60;div class='row'&#62;</code> element. Nest your <code>h2</code> text within a <code>&#60;div class='col-xs-8'&#62;</code> and your image in a <code>&#60;div class='col-xs-4'&#62;</code> so that they are on the same line.",
         "Notice how the image is now just the right size to fit along the text?"
       ],
       "tests": [
-        "assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0, 'Your <code>h2</code> element and topmost <code>img</code> element should both be wrapped together within a <code>div</code> element with the class \"row\".')",
-        "assert($('div.col-xs-4:has(img)').length > 0, 'Wrap your topmost <code>img</code> element within a <code>div</code> with the class \"col-xs-4\".')",
-        "assert($('div.col-xs-8:has(h2)').length > 0, 'Wrap your <code>h2</code> element within a <code>div</code> with the class \"col-xs-8\".')",
+        "assert($('div.row:has(h2)').length > 0 && $('div.row:has(img)').length > 0, 'Your <code>h2</code> element and topmost <code>img</code> element should both be nested together within a <code>div</code> element with the class \"row\".')",
+        "assert($('div.col-xs-4:has(img)').length > 0, 'Nest your topmost <code>img</code> element within a <code>div</code> with the class \"col-xs-4\".')",
+        "assert($('div.col-xs-8:has(h2)').length > 0, 'Nest your <code>h2</code> element within a <code>div</code> with the class \"col-xs-8\".')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -985,7 +985,7 @@
       ],
       "tests": [
         "assert($('i').hasClass('fa fa-thumbs-up'), 'Add an <code>i</code> element with the classes \"fa\" and \"fa-thumbs-up\".')",
-        "assert($('button').children('i').length > 0, 'Wrap your <code>i</code> element within your <code>button</code> element.')",
+        "assert($('button').children('i').length > 0, 'Nest your <code>i</code> element within your <code>button</code> element.')",
         "assert(editor.match(/<\\/i>/g), 'Make sure your <code>i</code> element has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1151,11 +1151,11 @@
       "difficulty": 2.14,
       "description": [
         "You can use Bootstrap's \"col-xs-*\" classes on <code>form</code> elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.",
-        "Wrap all of your radio buttons within a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them within a <code>&#60;div class='col-xs-6'&#62;</code> element."
+        "Nest all of your radio buttons within a <code>&#60;div class='row'&#62;</code> element. Then nest each of them within a <code>&#60;div class='col-xs-6'&#62;</code> element."
       ],
       "tests": [
-        "assert($('div.row:has(input[type=\\'radio\\'])').length > 0, 'Wrap all of your radio buttons inside one <code>div</code> with the class \"row\".')",
-        "assert($('div.col-xs-6:has(input[type=\\'radio\\'])').length > 1, 'Wrap each of your radio buttons inside its own <code>div</code> with the class \"col-xs-6\".')",
+        "assert($('div.row:has(input[type=\\'radio\\'])').length > 0, 'Nest all of your radio buttons inside one <code>div</code> with the class \"row\".')",
+        "assert($('div.col-xs-6:has(input[type=\\'radio\\'])').length > 1, 'Nest each of your radio buttons inside its own <code>div</code> with the class \"col-xs-6\".')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1236,11 +1236,11 @@
       "difficulty": 2.15,
       "description": [
         "You can use Bootstrap's \"col-xs-*\" classes on <code>form</code> elements, too! This way, our checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.",
-        "Wrap all your checkboxes in a <code>&#60;div class='row'&#62;</code> element. Then wrap each of them in a <code>&#60;div class='col-xs-4'&#62;</code> element."
+        "Nest all your checkboxes in a <code>&#60;div class='row'&#62;</code> element. Then nest each of them in a <code>&#60;div class='col-xs-4'&#62;</code> element."
       ],
       "tests": [
-        "assert($('div.row:has(input[type=\\'checkbox\\'])').length > 0, 'Wrap all of your checkboxes inside one <code>div</code> with the class \"row\".')",
-        "assert($('div.col-xs-4:has(input[type=\\'checkbox\\'])').length > 2, 'Wrap each of your checkboxes inside its own <code>div</code> with the class \"col-xs-4\".')",
+        "assert($('div.row:has(input[type=\\'checkbox\\'])').length > 0, 'Nest all of your checkboxes inside one <code>div</code> with the class \"row\".')",
+        "assert($('div.col-xs-4:has(input[type=\\'checkbox\\'])').length > 2, 'Nest each of your checkboxes inside its own <code>div</code> with the class \"col-xs-4\".')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1429,13 +1429,13 @@
       "difficulty": 2.17,
       "description": [
         "Now let's get your form <code>input</code> and your submission <code>button</code> on the same line. We'll do this the same way we have previously: by using a <code>div</code> element with the class \"row\", and other <code>div</code> elements within it using the \"col-xs-*\" class.",
-        "Wrap both your form's text <code>input</code> and submit <code>button</code> within a <code>div</code> with the class \"row\". Wrap your form's text <code>input</code> within a div with the class of \"col-xs-7\". Wrap your form's submit <code>button</code> in a <code>div</code> with the class \"col-xs-5\".",
+        "Nest both your form's text <code>input</code> and submit <code>button</code> within a <code>div</code> with the class \"row\". Nest your form's text <code>input</code> within a div with the class of \"col-xs-7\". Nest your form's submit <code>button</code> in a <code>div</code> with the class \"col-xs-5\".",
         "This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!"
       ],
       "tests": [
-        "assert($('div.row:has(input[type=\\'text\\'])').length > 0 &&  $('div.row:has(button[type=\\'submit\\'])').length > 0, 'Wrap your form submission button and text area in a div with class \"row\".')",
-        "assert($('div.col-xs-5:has(button[type=\\'submit\\'])').length > 0, 'Wrap your form submission button in a div with the class \"col-xs-5\".')",
-        "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Wrap your form text area in a div with the class \"col-xs-7\".')",
+        "assert($('div.row:has(input[type=\\'text\\'])').length > 0 &&  $('div.row:has(button[type=\\'submit\\'])').length > 0, 'Nest your form submission button and text area in a div with class \"row\".')",
+        "assert($('div.col-xs-5:has(button[type=\\'submit\\'])').length > 0, 'Nest your form submission button in a div with the class \"col-xs-5\".')",
+        "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Nest your form text area in a div with the class \"col-xs-7\".')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1566,7 +1566,7 @@
       "difficulty": 2.18,
       "description": [
         "Now let's make sure all the content on your page is mobile-responsive.",
-        "Let's wrap your <code>h3</code> element within a <code>div<code> element with the class \"containter-fluid\"."
+        "Let's nest your <code>h3</code> element within a <code>div<code> element with the class \"containter-fluid\"."
       ],
       "tests": [
         "assert($('div').hasClass('container-fluid'), 'Your <code>div</code> element should have the class \"row\"')",
@@ -1632,7 +1632,7 @@
         "Create two <code>div</code> elements within your row, both with the class \"col-xs-6\"."
       ],
       "tests": [
-        "assert($('div.row').children('div.col-xs-6').length > 1, 'Wrap two <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
+        "assert($('div.row').children('div.col-xs-6').length > 1, 'Nest two <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.')"
       ],
       "challengeSeed": [
@@ -1661,12 +1661,12 @@
       "difficulty": 2.21,
       "description": [
         "Bootstrap has a class called \"well\" that can create a visual sense of depth for your columns.",
-        "Wrap one <code>div</code> element with the class \"well\" within each of your \"col-xs-6\" <code>div</code> elements."
+        "Nest one <code>div</code> element with the class \"well\" within each of your \"col-xs-6\" <code>div</code> elements."
       ],
       "tests": [
         "assert($('div').length > 4, 'Add two <code>div</code> elements inside your <code>div class=\"row\"></code> element both with the class \"col-xs-6\"')",
-        "assert($('div.row').children('div.col-xs-6').length > 1, 'Wrap both of your <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
-        "assert($('div.col-xs-6').children('div.well').length > 1, 'Wrap both of your <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
+        "assert($('div.row').children('div.col-xs-6').length > 1, 'Nest both of your <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
+        "assert($('div.col-xs-6').children('div.well').length > 1, 'Nest both of your <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.')"
       ],
       "challengeSeed": [
@@ -1699,10 +1699,10 @@
       "difficulty": 2.22,
       "description": [
         "Now we're several <code>div</code> elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our <code>button</code> elements.",
-        "Wrap three <code>button</code> elements within each of your \"well\" <code>div</code> elements."
+        "Nest three <code>button</code> elements within each of your \"well\" <code>div</code> elements."
       ],
       "tests": [
-        "assert($('div.well').children('button').length > 5, 'Wrap three <code>button</code> elements within each of your <code>div</code> elements with class \"well\".')",
+        "assert($('div.well').children('button').length > 5, 'Nest three <code>button</code> elements within each of your <code>div</code> elements with class \"well\".')",
         "assert($('button') && $('button').length > 5, 'You should have a total of 6 <code>button</code> elements.')"
       ],
       "challengeSeed": [

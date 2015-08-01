@@ -1,7 +1,3 @@
-$(document).ready(function() {
-  $('#reset-button').on('click', resetEditor);
-});
-
 var widgets = [];
 var myCodeMirror = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
   lineNumbers: true,
@@ -44,92 +40,11 @@ editor.setOption("extraKeys", {
 });
 
 
-/*
-  Local Storage Update System By Andrew Cay(Resto)
-  codeStorage: singleton object that contains properties and methods related to
-    dealing with the localStorage system.
-  The keys work off of the variable challenge_name to make unique identifiers per bonfire
-
-  Two extra functionalities:
-  Added anonymous version checking system incase of future updates to the system
-  Added keyup listener to editor(myCodeMirror) so the last update has been saved to storage
-*/
-var codeStorage = {
-  version: 0.01,
-  keyVersion:"saveVersion",
-  keyValue: null,//where the value of the editor is saved
-  updateWait: 2000,// 2 seconds
-  updateTimeoutId: null,
-  eventArray: []//for firing saves
-};
-// Returns true if the editor code was saved since last key press (use this if you want to make a "saved" notification somewhere")
-codeStorage.hasSaved = function(){
-  return ( updateTimeoutId === null );
-};
-codeStorage.onSave = function(func){
-  codeStorage.eventArray.push(func);
-};
-codeStorage.setSaveKey = function(key){
-  codeStorage.keyValue = key + 'Val';
-};
-codeStorage.getEditorValue = function(){
-  return ('' + localStorage.getItem(codeStorage.keyValue));
-};
-
-codeStorage.isAlive = function() {
-  var val = this.getEditorValue()
-  return val !== 'null' &&
-    val !== 'undefined' &&
-    (val && val.length > 0);
-}
-codeStorage.updateStorage = function(){
-  if(typeof(Storage) !== undefined) {
-    var value = editor.getValue();
-    localStorage.setItem(codeStorage.keyValue, value);
-  } else {
-    var debugging = false;
-    if( debugging ){
-      console.log('no web storage');
-    }
-  }
-  codeStorage.updateTimeoutId = null;
-  codeStorage.eventArray.forEach(function(func){
-    func();
-  });
-};
-//Update Version
-(function(){
-  var savedVersion = localStorage.getItem('saveVersion');
-  if( savedVersion === null ){
-    localStorage.setItem(codeStorage.keyVersion, codeStorage.version);//just write current version
-  }else{
-    if( savedVersion !== codeStorage.version ){
-      //Update version
-    }
-  }
-})();
-
-
-
-///Set everything up one page
-/// Update local save when editor has changed 
-codeStorage.setSaveKey(challenge_Name);
-editor.on('keyup', function(){
-  window.clearTimeout(codeStorage.updateTimeoutId);
-  codeStorage.updateTimeoutId = window.setTimeout(codeStorage.updateStorage, codeStorage.updateWait);
-});
-
-
 var attempts = 0;
 if (attempts) {
   attempts = 0;
 }
 
-var resetEditor = function resetEditor() {
-  editor.setValue(allSeeds);
-  codeStorage.updateStorage();
-
-};
 
 var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
   lineNumbers: false,
@@ -152,24 +67,6 @@ var after = editor.charCoords({
 if (info.top + info.clientHeight < after)
   editor.scrollTo(null, after - info.clientHeight + 3);
 
-var editorValue;
-
-
-var challengeSeed = challengeSeed || null;
-var tests = tests || [];
-
-
-var allSeeds = '';
-(function() {
-  challengeSeed.forEach(function(elem) {
-  allSeeds += elem + '\n';
-  });
-})();
-
-editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
-
-myCodeMirror.setValue(editorValue);
-
 function doLinting() {
   editor.operation(function() {
     for (var i = 0; i < widgets.length; ++i)
@@ -191,7 +88,7 @@ function doLinting() {
       }));
     }
   });
-};
+}
 
 $('#submitButton').on('click', function() {
   bonfireExecute();
@@ -368,3 +265,102 @@ function showCompletion() {
   );
 
 }
+
+
+/*
+ Local Storage Update System By Andrew Cay(Resto)
+ codeStorage: singleton object that contains properties and methods related to
+ dealing with the localStorage system.
+ The keys work off of the variable challenge_name to make unique identifiers per bonfire
+
+ Two extra functionalities:
+ Added anonymous version checking system incase of future updates to the system
+ Added keyup listener to editor(myCodeMirror) so the last update has been saved to storage
+ */
+var codeStorage = {
+  version: 0.01,
+  keyVersion:"saveVersion",
+  keyValue: null,//where the value of the editor is saved
+  updateWait: 2000,// 2 seconds
+  updateTimeoutId: null,
+  eventArray: []//for firing saves
+};
+// Returns true if the editor code was saved since last key press (use this if you want to make a "saved" notification somewhere")
+codeStorage.hasSaved = function(){
+  return ( updateTimeoutId === null );
+};
+codeStorage.onSave = function(func){
+  codeStorage.eventArray.push(func);
+};
+codeStorage.setSaveKey = function(key){
+  codeStorage.keyValue = key + 'Val';
+};
+codeStorage.getEditorValue = function(){
+  return ('' + localStorage.getItem(codeStorage.keyValue));
+};
+
+codeStorage.isAlive = function() {
+  var val = this.getEditorValue()
+  return val !== 'null' &&
+    val !== 'undefined' &&
+    (val && val.length > 0);
+}
+codeStorage.updateStorage = function(){
+  if(typeof(Storage) !== undefined) {
+    var value = editor.getValue();
+    localStorage.setItem(codeStorage.keyValue, value);
+  } else {
+    var debugging = false;
+    if( debugging ){
+      console.log('no web storage');
+    }
+  }
+  codeStorage.updateTimeoutId = null;
+  codeStorage.eventArray.forEach(function(func){
+    func();
+  });
+};
+//Update Version
+(function(){
+  var savedVersion = localStorage.getItem('saveVersion');
+  if( savedVersion === null ){
+    localStorage.setItem(codeStorage.keyVersion, codeStorage.version);//just write current version
+  }else{
+    if( savedVersion !== codeStorage.version ){
+      //Update version
+    }
+  }
+})();
+
+
+
+///Set everything up one page
+/// Update local save when editor has changed
+codeStorage.setSaveKey(challenge_Name);
+editor.on('keyup', function(){
+  window.clearTimeout(codeStorage.updateTimeoutId);
+  codeStorage.updateTimeoutId = window.setTimeout(codeStorage.updateStorage, codeStorage.updateWait);
+});
+
+var editorValue;
+
+
+var challengeSeed = challengeSeed || null;
+var tests = tests || [];
+
+
+var allSeeds = '';
+(function() {
+  challengeSeed.forEach(function(elem) {
+    allSeeds += elem + '\n';
+  });
+})();
+
+editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
+
+myCodeMirror.setValue(editorValue);
+
+var resetEditor = function resetEditor() {
+  editor.setValue(allSeeds);
+  codeStorage.updateStorage();
+};

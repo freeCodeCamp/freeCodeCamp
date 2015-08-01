@@ -88,15 +88,6 @@ block content
                                     = phrase
                     else
                         a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
-    #reset-modal.modal(tabindex='-1')
-        .modal-dialog.animated.fadeInUp.fast-animation
-            .modal-content
-                .modal-header.challenge-list-header Clear your code?
-                    a.close.closing-x(href='#', data-dismiss='modal', aria-hidden='true') ×
-                .modal-body
-                    h3 This will restore your code editor to its original state.
-                    a.btn.btn-lg.btn-info.btn-block#reset-button(href='#', data-dismiss='modal', aria-hidden='true') Clear my code
-                    a.btn.btn-lg.btn-primary.btn-block(href='#', data-dismiss='modal', aria-hidden='true') Cancel
     include ../partials/challenge-modals
     script.
         var MDNlinks = !{JSON.stringify(MDNlinks)};
