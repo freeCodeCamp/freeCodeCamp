@@ -12,7 +12,6 @@ module.exports = function(app) {
   var User = app.models.User;
   var Challenge = app.models.Challenge;
   var Story = app.models.Story;
-  var FieldGuide = app.models.FieldGuide;
   var Nonprofit = app.models.Nonprofit;
 
   router.get('/api/github', githubCalls);
@@ -21,6 +20,7 @@ module.exports = function(app) {
   router.get('/api/codepen/twitter/:screenName', twitter);
   router.get('/sitemap.xml', sitemap);
   router.get('/chat', chat);
+  router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/twitch', twitch);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
@@ -154,31 +154,6 @@ module.exports = function(app) {
                   );
               }
             });
-        },
-        fieldGuides: function(callback) {
-          FieldGuide.find(
-            { field: { name: true } },
-            function(err, fieldGuides) {
-              if (err) {
-                debug('User err: ', err);
-                callback(err);
-              } else {
-                Rx.Observable.from(
-                  fieldGuides,
-                  null,
-                  null,
-                  Rx.Scheduler.default
-                )
-                  .map(function(fieldGuide) {
-                    return fieldGuide.name;
-                  })
-                  .toArray()
-                  .subscribe(
-                    callback.bind(callback, null),
-                    callback
-                  );
-              }
-            });
         }
       }, function(err, results) {
         if (err) {
@@ -192,8 +167,7 @@ module.exports = function(app) {
             users: results.users,
             challenges: results.challenges,
             stories: results.stories,
-            nonprofits: results.nonprofits,
-            fieldGuides: results.fieldGuides
+            nonprofits: results.nonprofits
           });
         });
       }
@@ -201,15 +175,13 @@ module.exports = function(app) {
   }
 
   function chat(req, res) {
-    res.redirect('//gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function bootcampCalculatorJson(req, res) {
-    res.send(bootcampJson);
-  }
-
-  function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
+  }
+
+  function bootcampCalculator(req, res) {
+    res.render('resources/calculator', {
+      title: 'Coding Bootcamp Cost Calculator'
+    });
   }
 
   function jobsForm(req, res) {

@@ -3,8 +3,8 @@ block content
     if (user)
       script.
         var isLoggedIn = true;
-        var B3BA669EC5C1DD70FB478221E067A7E1B686929C569F5E73561B69C8F42129B = !{JSON.stringify(user.id)};
-        var DF105CFA89562196E702912B3818C6A5B46E80D262442FDF29976621E5AF0D23 = !{JSON.stringify(user.username)};
+        var userId = !{JSON.stringify(user.id)};
+        var username = !{JSON.stringify(user.username)};
     else
       script.
         var isLoggedIn = false;

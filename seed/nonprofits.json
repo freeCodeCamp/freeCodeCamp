@@ -84,7 +84,7 @@
     "moneySaved": 40000
   },
   {
-    "id": "bd1325d8c464cbafaeb4bdef",
+    "id": "bd1225d8c464cbafaeb4bdef",
     "whatDoesNonprofitDo": "We empower youth with technology by providing age appropriate resources and education.",
     "websiteLink": "http://savvycyberkids.org/",
     "name": "Savvy Cyber Kids",
@@ -262,5 +262,80 @@
     "estimatedHours": 200,
     "currentStatus": "open",
     "moneySaved": 0
+  },
+  {
+    "id": "bd1325d8c464cbafaeb4bdef",
+    "whatDoesNonprofitDo": "SOLACE Foundation provides drug overdose prevention and awareness training as well as grief support for bereaved families.",
+    "websiteLink": "https://www.facebook.com/www.solaceorangecounty.org",
+    "name": "The Solace Foundation of Orange County",
+    "endUser": "Donors",
+    "approvedDeliverables": ["Website"],
+    "projectDescription": "Campers will build a basic website that accepts donations.",
+    "logoUrl": "http://i.imgur.com/79E3nP0.png",
+    "imageUrl": "http://i.imgur.com/kCWN1iT.jpg",
+    "interestedCampers": [],
+    "confirmedCampers": [],
+    "estimatedHours": 100
+  },
+  {
+    "id": "bd1325d8c463cbafaeb4bdef",
+    "whatDoesNonprofitDo": "We are an interdisciplinary team that works towards harmony among humans and nature through three distinct branches: sustainable agriculture, environmental education and applied and appropriate technology; focused in Líbano, Tolima, Colombia.",
+    "websiteLink": "string",
+    "name": "QET America",
+    "endUser": "Donors",
+    "approvedDeliverables": ["Website"],
+    "projectDescription": "Campers will build a multiple language website (English, Spanish) that accepts donations.",
+    "logoUrl": "http://i.imgur.com/jPuiPOy.jpg",
+    "imageUrl": "http://i.imgur.com/zaaL2pj.jpg",
+    "interestedCampers": [],
+    "confirmedCampers": [],
+    "estimatedHours": 100
+  },
+  {
+    "id": "bd1325d8c462cbafaeb4bdef",
+    "whatDoesNonprofitDo": "1to1 Movement provides free environmental education in schools",
+    "websiteLink": "http://1to1movement.org/",
+    "stakeholderName": "string",
+    "stakeholderEmail": "string",
+    "name": "1 to 1 Movement",
+    "endUser": "Pledgers",
+    "approvedDeliverables": ["Web App"],
+    "projectDescription": "Campers will build a simple, social, data-driven application that allows people to see the impact of their actions. User can make a pledge and track the outcome. Will make use of the D3.js visualization library.",
+    "logoUrl": "http://i.imgur.com/jaqxg0O.png",
+    "imageUrl": "http://i.imgur.com/GXSWTZw.jpg",
+    "interestedCampers": [],
+    "confirmedCampers": [],
+    "estimatedHours": 300
+  },
+
+  {
+    "id": "bd1325d8c464cbcfaeb4bdef",
+    "whatDoesNonprofitDo": "Our missions is to elevate the national dialogue and engage the American people around climate change policy and the promotion of real clean energy solutions in the United States.",
+    "websiteLink": "http://www.usclimateplan.org/",
+    "name": "US Climate Plan",
+    "endUser": "Donors",
+    "approvedDeliverables": ["Website"],
+    "projectDescription": "Campers will build a basic website for sharing information, feeds from different campaign’s websites.",
+    "logoUrl": "http://i.imgur.com/uAyUiMN.png",
+    "imageUrl": "http://i.imgur.com/2Og5tqy.jpg",
+    "interestedCampers": [],
+    "confirmedCampers": [],
+    "estimatedHours": 100
+  },
+  {
+    "id": "bd1325d8c461cbafaeb4bdef",
+    "whatDoesNonprofitDo": "We empower the community through improved literacy.",
+    "websiteLink": "http://www.tleliteracy.com/",
+    "stakeholderName": "Darlene Brown",
+    "stakeholderEmail": "string",
+    "name": "The Learning Exchange",
+    "endUser": "string",
+    "approvedDeliverables": ["Website"],
+    "projectDescription": "Campers will build a simple website to replace essentialskillsquebec.com. Site will host many documents related to the Nine Essential Skills.",
+    "logoUrl": "http://i.imgur.com/jXQY01H.png",
+    "imageUrl": "http://i.imgur.com/iUXBpeL.jpg",
+    "interestedCampers": [],
+    "confirmedCampers": [],
+    "estimatedHours": 100
   }
 ]

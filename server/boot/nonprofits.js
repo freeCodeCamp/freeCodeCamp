@@ -64,21 +64,21 @@ module.exports = function(app) {
           return res.redirect('../nonprofit/' + dashedNameFull);
         }
 
-        var buttonActive = false;
-        if (
-          req.user &&
-          req.user.uncompletedBonfires.length === 0 &&
-          req.user.completedCoursewares.length > 63
-        ) {
-          var hasShownInterest =
-            nonprofit.interestedCampers.filter(function(user) {
-              return user.username === req.user.username;
-            });
-
-          if (hasShownInterest.length === 0) {
-            buttonActive = true;
-          }
-        }
+        //We need to create logic that verifies completion. Defaulting to false for now.
+        //var buttonActive = false;
+        //if (
+        //  req.user &&
+        //  req.user.completedCoursewares.length > 63
+        //) {
+        //  var hasShownInterest =
+        //    nonprofit.interestedCampers.filter(function(user) {
+        //      return user.username === req.user.username;
+        //    });
+        //
+        //  if (hasShownInterest.length === 0) {
+        //    buttonActive = true;
+        //  }
+        //}
 
         res.render('nonprofits/show', {
           dashedName: dashedNameFull,
@@ -112,7 +112,7 @@ module.exports = function(app) {
           whatDoesNonprofitDo: nonprofit.whatDoesNonprofitDo,
           interestedCampers: nonprofit.interestedCampers,
           assignedCampers: nonprofit.assignedCampers,
-          buttonActive: buttonActive,
+          buttonActive: false,
           moneySaved: nonprofit.moneySaved,
           currentStatus: nonprofit.currentStatus
         });
