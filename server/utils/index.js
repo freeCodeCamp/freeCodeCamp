@@ -11,20 +11,10 @@ var path = require('path'),
     resources = require('./resources.json'),
     nonprofits = require('../../seed/nonprofits.json');
 
-var fieldGuides = fs.readdirSync(
-    path.join(__dirname, '../../seed/field-guides')
-  )
-  .map(function(file) {
-    return require('../../seed/field-guides/' + file);
-  })
-  .reduce(function(allGuides, categoryGuides) {
-    return allGuides.concat(categoryGuides);
-  }, []);
-
 /**
  * Cached values
  */
-var allFieldGuideIds, allFieldGuideNames, allNonprofitNames,
+var allNonprofitNames,
   challengeMap, challengeMapForDisplay, challengeMapWithIds,
   challengeMapWithNames, allChallengeIds,
   challengeMapWithDashedNames;
@@ -160,33 +150,6 @@ module.exports = {
     return resources.compliments[
       Math.floor(Math.random() * resources.compliments.length)
       ];
-  },
-
-  allFieldGuideIds: function() {
-    if (allFieldGuideIds) {
-      return allFieldGuideIds;
-    } else {
-      allFieldGuideIds = fieldGuides.map(function(elem) {
-        return elem.id;
-      });
-      return allFieldGuideIds;
-    }
-  },
-
-  allFieldGuideNamesAndIds: function() {
-    if (allFieldGuideNames) {
-      return allFieldGuideNames;
-    } else {
-      allFieldGuideNames = fieldGuides.map(function(elem) {
-        return {
-          name: elem.name,
-          dashedName: elem.dashedName,
-          id: elem.id,
-          category: elem.category
-        };
-      });
-      return allFieldGuideNames;
-    }
   },
 
   allNonprofitNames: function() {

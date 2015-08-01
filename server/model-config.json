@@ -35,10 +35,6 @@
     "dataSource": "db",
     "public": true
   },
-  "fieldGuide": {
-    "dataSource": "db",
-    "public": true
-  },
   "job": {
     "dataSource": "db",
     "public": true

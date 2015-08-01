@@ -114,28 +114,6 @@ $(document).ready(function() {
     }
   });
 
-  function completedFieldGuide(fieldGuideId) {
-    if ($('.signup-btn-nav').length < 1) {
-      $.post(
-        '/completed-field-guide',
-        {
-          fieldGuideInfo: {
-            fieldGuideId: fieldGuideId
-          }
-        },
-        function(res) {
-          if (res) {
-            window.location.href = '/field-guide'
-          }
-        });
-    }
-  }
-
-  $('.next-field-guide-button').on('click', function() {
-    var fieldGuideId = $('#fieldGuideId').text();
-    completedFieldGuide(fieldGuideId);
-  });
-
   $("img").error(function () {
     $(this).unbind("error").attr("src", "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png");
   });
