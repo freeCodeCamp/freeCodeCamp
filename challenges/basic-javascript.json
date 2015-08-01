@@ -448,7 +448,7 @@
         "Let's now go create a nested array called <code>myArray</code>"
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray) === 'object'){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
+        "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) === 'object' && editor.getValue().match(/[[]]/g).length >= 1){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
       ],
       "challengeSeed":[
         "var myArray = [];",
@@ -548,7 +548,7 @@
         "//console.log(removed); //Gives 3",
         "",
         "var myArray = ['John', 23, ['cat', 2]];",
-        "var removed = _;//This should be ['cat', 2] and myArray should now be ['John', 23]",
+        "var removed = myArray;//This should be ['cat', 2] and myArray should now be ['John', 23]",
         "",
         "",
         "(function(y, z){return('myArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z));})(myArray, removed);"
@@ -566,7 +566,7 @@
         "Let's take the code we had last time and <code> push </code> this value to the end: <code> ['dog', 3] </code>"
       ],
       "tests": [
-        "assert((function(d){if(d[2] != undefined && d[0] == 'John' && d[1] == 23 && d[2][0] == 'dog' && d[2][1] == 3){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23, [\"dog\", 3]])');"
+        "assert((function(d){if(d[2] != undefined && d[0] == 'John' && d[1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23, [\"dog\", 3]])');"
       ],
       "challengeSeed": [
         "var myArray = ['John', 23, ['cat', 2]];",
@@ -595,7 +595,7 @@
       ],
       "challengeSeed": [
         "var myArray = ['John', 23, ['dog', 3]];",
-        "var removed = _;//This should be ['John'] and myArray should now be ['John', 23]",
+        "var removed = myArray;//This should be ['John'] and myArray should now be ['John', 23]",
         "",
         "",
         "(function(y, z){return('myArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z));})(myArray, removed);"
@@ -644,7 +644,7 @@
         "Let's try creating and calling a function now called <code>myFunction</code>"
       ],
       "tests":[
-        "assert((function(){if(typeof(f) !== 'undefined' && typeof(f) === 'number' && f === 9){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
+        "assert((function(){if(typeof(f) !== 'undefined' && typeof(f) === 'number' && f === a + b  && editor.getValue().match(RegExp('return\\\\(a\\\\+b\\\\)', 'g')).length >= 1){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
       ],
       "challengeSeed":[
         "var a = 4;",
@@ -726,7 +726,7 @@
         ""
       ],
       "tests":[
-        "assert(myDog.bark != undefined, 'The property tails should have been deleted');",
+        "assert(myDog.bark != undefined, 'You should have added the property bark to myDog');",
         "assert(myDog.tails == undefined, 'The property tails should have been deleted');"
       ],
       "challengeSeed":[
@@ -740,9 +740,9 @@
         "//Re-create myDog",
         "",
         "var myDog = {",
-        "   \"name\": _,",
-        "   \"legs\": _,",
-        "   \"tails\": _,",
+        "   \"name\": 'Camper',",
+        "   \"legs\": 4,",
+        "   \"tails\": 1,",
         "   \"friends\": []",
         "};",
         "",
@@ -1021,7 +1021,7 @@
       ],
       "tests":[
         "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
-        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\d+/gi to find the numbers in the testString');"
+        "assert(editorValue.match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\d+/gi to find the numbers in the testString');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1052,7 +1052,7 @@
       ],
       "tests":[
         "assert(test === 7, 'Your RegEx should have found seven spaces in the testString');",
-        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\s+/gi to find the spaces in the testString');"
+        "assert(editorValue.match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\s+/gi to find the spaces in the testString');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1083,14 +1083,14 @@
         "<code> Math.floor(Math.random() * (5 - 1 + 1)) + 1; </code>"
       ],
       "tests":[
-        "assert(typeof(runSlots($(''))[0]) == 'number', 'SlotOne should be a random number');",
-        "assert(typeof(runSlots($(''))[1]) == 'number', 'SlotTwo should be a random number');",
-        "assert(typeof(runSlots($(''))[2]) == 'number', 'SlotThree should be a random number');",
-        "assert(editor.getValue().match(/Math.floor\\(Math.random\\(\\) \\* \\(5 \\- 1 \\+ 1\\)\\) \\+ 1/g).length === 3);"
+        "assert(typeof(runSlots($('.slot'))[0]) == 'number', 'SlotOne should be a random number');",
+        "assert(typeof(runSlots($('.slot'))[1]) == 'number', 'SlotTwo should be a random number');",
+        "assert(typeof(runSlots($('.slot'))[2]) == 'number', 'SlotThree should be a random number');",
+        "assert(editorValue.match(/Math.floor\\(Math.random\\(\\) \\* \\(5 \\- 1 \\+ 1\\)\\) \\+ 1/g).length === 3);"
       ],
       "challengeSeed":[
         "fccss",
-        "  function runSlots(slots){",
+        "  function runSlots(){",
         "   var slotOne;",
         "   var slotTwo;",
         "   var slotThree;",
@@ -1111,7 +1111,7 @@
         "",
         "  $(document).ready(function(){",
         "     $('.go').click(function(){",
-        "       runSlots(slots);",
+        "       runSlots();",
         "     });",
         "   });",
         "fcces",
