@@ -847,15 +847,18 @@
     },
 
     {
-      "id": "bad84fee1348bd9aecc08826",
-      "name":  "Waypoint: Read Data from an Element Using jQuery",
-      "dashedName":  "Waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
+      "id": "bad87fee1348bd9aecb08826",
+      "name":  "Waypoint: Use jQuery to Modify the Entire Page",
+      "dashedName":  "waypoint-use-jquery-to-modify-the-entire-page",
+      "difficulty": 3.20,
       "description": [
-
+        "We're done playing with our jQuery playground. Let's tear it down!",
+        "jQuery can target the <code>body</code> element as well.",
+        "Here's how we would make the entire body fade out: <code> $('body').addClass('animated fadeOut')</code>",
+        "But let's do something more dramatic. Add the classes \"animated\" and \"hinge\" to your <code>body</code> element."
       ],
       "tests": [
-
+        "assert($('body').hasClass('animated') && $('body').hasClass('hinge'), 'Add the classes \"animated\" and \"hinge\" to your <code>body</code> element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -896,149 +899,6 @@
         "      </div>",
         "    </div>",
         "  </div>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9aecc08826",
-      "name":  "Waypoint: Trigger onHover Events with jQuery",
-      "dashedName":  "Waypoint-trigger-onhover-events-with-jquery",
-      "difficulty": 3.18,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9aeca08826",
-      "name":  "Waypoint: Trigger onClick Events with jQuery",
-      "dashedName":  "Waypoint-trigger-onClick-events-with-jquery",
-      "difficulty": 3.19,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9aecb08826",
-      "name":  "Waypoint: Use jQuery to Modify the Entire Page",
-      "dashedName":  "Waypoint-use-jquery-to-modify-the-entire-page",
-      "difficulty": 3.20,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9aebc08826",
-      "name":  "Waypoint: Get Data from an URL Using jQuery",
-      "dashedName":  "waypoint-get-data-from-a-url-using-jquery",
-      "difficulty": 3.21,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9ae9c08826",
-      "name":  "Waypoint: Loop through JSON Data Using jQuery",
-      "dashedName":  "waypoint-loop-through-json-data-using-jquery",
-      "difficulty": 3.22,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9ae8c08826",
-      "name":  "Waypoint: Setup Click Events Using jQuery",
-      "dashedName":  "waypoint-setup-click-events-using-jquery",
-      "difficulty": 3.23,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  $(document).ready(function() {",
-        "",
-        "  });",
-        "fcces",
-        "<!-- You shouldn't need to modify code below this line -->",
-        "<button id='count-presses-button' class='btn btn-primary btn-block btn-lg>Press me</button>",
-        "<span id='times-pressed'>"
-      ],
-      "challengeType": 0
-    },
-    {
-      "id": "bad88fee1348bd9ae8c08826",
-      "name":  "Waypoint: Wire AJAX Call into a jQuery Click Event",
-      "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 3.24,
-      "description": [
-        "<img src='https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png'>"
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  var random = function() { return Math.floor(Math.random() * 3) }",
-        "  $(document).ready(function() {",
-        "<!-- Don't change code above this line -->",
-        "",
-        "    $('#cat-button').on('click', function() {",
-        "      $.getJSON('/json/cats.json', function( json ) {",
-        "        var kitten = json[random()];",
-        "        $(\"<img src='\" + kitten.imageLink + \"'>\").appendTo('#output');",
-        "        $(\"<h3>Code name: \" + kitten.codeNames[random()] + \"</h3>\").appendTo('#output');",
-        "      });",
-        "    });",
-        "",
-        "<!-- Don't change code below this line -->",
-        "  });",
-        "fcces",
-        "<button id='cat-button' class='btn btn-primary btn-block btn-lg'>Cat Button</button>",
-        "<div class='jumbotron' id='output'>",
         "</div>"
       ],
       "challengeType": 0
