@@ -66,11 +66,12 @@ block content
                     var _ = R;
                     var dashed = !{JSON.stringify(dashedName)};
         .col-xs-12.col-sm-12.col-md-8
-            #mainEditorPanel
-                form.code
-                    .form-group.codeMirrorView
-                        textarea#codeEditor(autofocus=true, style='display: none;')
-                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.6.js')
+            .editorScrollDiv(style = "overflow-y: scroll; overflow-x: hidden;")
+                #mainEditorPanel
+                    form.code
+                        .codeMirrorView
+                            textarea#codeEditor(autofocus=true, style='display: none;')
+                    script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.6.js')
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
             .modal-content
