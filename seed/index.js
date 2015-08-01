@@ -14,13 +14,11 @@ function getFilesFor(dir) {
 }
 
 var Challenge = app.models.Challenge;
-var FieldGuide = app.models.FieldGuide;
 var Nonprofit = app.models.Nonprofit;
 var Job = app.models.Job;
 var counter = 0;
 var challenges = getFilesFor('challenges');
-var fieldGuides = getFilesFor('field-guides');
-var offerings = 3 + challenges.length;
+var offerings = 2 + challenges.length;
 
 var CompletionMonitor = function() {
   counter++;
@@ -58,25 +56,6 @@ Challenge.destroyAll(function(err, info) {
         }
       }
     );
-  });
-});
-
-FieldGuide.destroyAll(function(err, info) {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('Deleted ', info);
-  }
-  fieldGuides.forEach(function(file) {
-    FieldGuide.create(require('./field-guides/' + file), function(err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('Saved ', data);
-      }
-      CompletionMonitor();
-      console.log('field guides');
-    });
   });
 });
 

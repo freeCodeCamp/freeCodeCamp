@@ -114,28 +114,6 @@ $(document).ready(function() {
     }
   });
 
-  function completedFieldGuide(fieldGuideId) {
-    if ($('.signup-btn-nav').length < 1) {
-      $.post(
-        '/completed-field-guide',
-        {
-          fieldGuideInfo: {
-            fieldGuideId: fieldGuideId
-          }
-        },
-        function(res) {
-          if (res) {
-            window.location.href = '/field-guide'
-          }
-        });
-    }
-  }
-
-  $('.next-field-guide-button').on('click', function() {
-    var fieldGuideId = $('#fieldGuideId').text();
-    completedFieldGuide(fieldGuideId);
-  });
-
   $("img").error(function () {
     $(this).unbind("error").attr("src", "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png");
   });
@@ -277,34 +255,32 @@ $(document).ready(function() {
     $('#long-instructions').hide();
   });
 
-  var upvoteHandler = function () {
-    var id = storyId;
-    $('#upvote').unbind('click');
+  function upvoteHandler(e) {
+    e.preventDefault();
+    var upvoteBtn = this;
+    var id = upvoteBtn.id;
+    var upVotes = $(upvoteBtn).data().upVotes;
+    var username = typeof username !== 'undefined' ? username : '';
     var alreadyUpvoted = false;
     for (var i = 0; i < upVotes.length; i++) {
-      if (upVotes[i].upVotedBy === B3BA669EC5C1DD70FB478221E067A7E1B686929C569F5E73561B69C8F42129B) {
+      if (upVotes[i].upVotedBy === username) {
         alreadyUpvoted = true;
         break;
       }
     }
     if (!alreadyUpvoted) {
-      $.post('/stories/upvote',
-        {
-          data: {
-            id: id
-          }
+      $.post('/stories/upvote', { id: id })
+        .fail(function(xhr, textStatus, errorThrown) {
+          $(upvoteBtn).bind('click', upvoteHandler);
         })
-        .fail(function (xhr, textStatus, errorThrown) {
-          $('#upvote').bind('click', upvoteHandler);
-        })
-        .done(function (data, textStatus, xhr) {
-          $('#upvote').text('Upvoted!').addClass('disabled');
+        .done(function(data, textStatus, xhr) {
+          $(upvoteBtn).text('Upvoted!').addClass('disabled');
 
           $('#storyRank').text(data.rank + " points");
         });
     }
   };
-  $('#upvote').on('click', upvoteHandler);
+  $('#story-list').on('click', 'button.btn-upvote', upvoteHandler);
 
   var storySubmitButtonHandler = function storySubmitButtonHandler() {
 
@@ -322,7 +298,6 @@ $(document).ready(function() {
           description: description,
           storyMetaDescription: storyMetaDescription,
           rank: 1,
-          comments: [],
           image: storyImage
         }
       })
@@ -335,29 +310,6 @@ $(document).ready(function() {
   };
 
   $('#story-submit').on('click', storySubmitButtonHandler);
-
-  var commentSubmitButtonHandler = function commentSubmitButtonHandler() {
-    $('#comment-button').unbind('click');
-    var data = $('#comment-box').val();
-
-    $('#comment-button').attr('disabled', 'disabled');
-    $.post('/stories/comment/',
-      {
-        data: {
-          associatedPost: storyId,
-          originalStoryLink: originalStoryLink,
-          originalStoryAuthorEmail: originalStoryAuthorEmail,
-          body: data
-        }
-      })
-      .fail(function (xhr, textStatus, errorThrown) {
-        $('#comment-button').attr('disabled', false);
-        $('#comment-button').bind('click', commentSubmitButtonHandler);
-      })
-      .done(function (data, textStatus, xhr) {
-        window.location.reload();
-      });
-  };
 
     //fakeiphone positioning hotfix
     if($('.iphone-position').html() !==undefined || $('.iphone').html() !== undefined){
@@ -405,9 +357,7 @@ $(document).ready(function() {
             lockTop(initOff);
           });
         }
-   }
-
-  $('#comment-button').on('click', commentSubmitButtonHandler);
+    }
 });
 
 var profileValidation = angular.module('profileValidation',

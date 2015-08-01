@@ -2,7 +2,6 @@ script.
     var storyId = !{JSON.stringify(id)};
     var originalStoryLink = !{JSON.stringify(originalStoryLink)};
     var originalStoryAuthorEmail = !{JSON.stringify(originalStoryAuthorEmail)};
-    var comments = !{JSON.stringify(comments)};
     var upVotes = !{JSON.stringify(upVotes)};
     var image = !{JSON.stringify(image)};
     var hasUserVoted = !{JSON.stringify(hasUserVoted)};
@@ -26,52 +25,19 @@ h3.row
             .col-xs-12
                 h4= description
                 .negative-5
-                    if !user
-                        a#upvote.btn.signup-btn.btn-xs(href='/signin') Sign in to reply or upvote
+                    if !hasUserVoted
+                        a#upvote.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvote
                         |  &thinsp;·&thinsp;
                     else
-                        a#reply-to-main-post.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Reply
-                        |  &thinsp;·&thinsp;&thinsp;
-                        if !hasUserVoted
-                            a#upvote.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvote
-                            |  &thinsp;·&thinsp;
-                        else
-                            a#upvote.btn.disabled.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvoted!
-                            |  &thinsp;·&thinsp;
+                        a#upvote.btn.disabled.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvoted!
+                        |  &thinsp;·&thinsp;
                     span#storyRank= rank + (rank > 1 ? " points" : " point")
                     |  &thinsp;·&thinsp;
                     span Posted #{timeAgo}
                     span &thinsp;by&thinsp;
                         a(href="/" + author.username) @#{author.username}
 
-if (user !== null)
-    .col-xs-12#reply-area
-    .hidden-element#initial-comment-submit
-        form.form-horizontal.control-label-story-submission
-            .col-xs-12
-                .input-group
-                    input#comment-box.big-text-field.field-responsive.form-control(type='text', placeholder='Enter your reply', autofocus)
-                    span.input-group-btn
-                        button#comment-button.btn.btn-big.btn-primary.btn-responsive(type='button') Send
-                span.spacer.pull-left#textarea_feedback
-
 script.
     if (image) {
         $('#image-display').removeClass('hidden-element')
     }
-    $('#reply-to-main-post').on('click', function() {
-        $('#initial-comment-submit').removeClass('hidden-element');
-        $(this).unbind('click');
-        $('.comment-to-comment-formgroup').empty();
-    });
-    var text_max = 140;
-    $('#textarea_feedback').html(text_max + ' characters remaining');
-    $('#comment-box').keyup(function (e) {
-        if (e.which === 13 || e === 13) {
-            $('#comment-button').click();
-        }
-        var text_length = $('#comment-box').val().length;
-        var text_remaining = text_max - text_length;
-        $('#textarea_feedback').html(text_remaining + ' characters remaining');
-    });
-include comments

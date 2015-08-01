@@ -71,7 +71,7 @@
         "Keep the chat room open while you work through the other challenges. That way you ask for help if you get stuck on a challenge. You can also socialize when you feel like taking a break.",
         "You can also download a desktop or mobile chat application here: <a href='https://gitter.im/apps' target='_blank'>https://gitter.im/apps</a>",
         "You can also access this chat room by clicking the \"Chat\" button in the upper right hand corner.",
-        "In order to keep our community a friendly and positive place to learn to code, please read and follow our Code of Conduct: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>",
+        "In order to keep our community a friendly and positive place to learn to code, please read and follow our Code of Conduct: <a href='https://github.com/FreeCodeCamp/freecodecamp/wiki/Code-of-Conduct' target='_blank'>https://github.com/FreeCodeCamp/freecodecamp/wiki/Code-of-Conduct</a>",
         "Now you're ready to move on. Click the \"I've completed this challenge\" button to move on to your next challenge."
       ],
       "challengeType": 2,
@@ -93,7 +93,7 @@
         "Comentale a otros campers como es que encontraste Free Code Camp. También hablanos sobre las razones por las cuales decidiste aprender a programar.",
         "Mantén la sala de chat abierta mientras estás trabajando otros desafíos. De esa manera podrás pedir ayuda en caso te quedes atascado en algún de ellos. También puedes socializar cuando sientas que necesitas un descanso.",
         "Puedes acceder a la sala de chat dándole click al botón de \"Chat\" en la parte superior derecha de la página.",
-        "Para mantener a nuestra comunidad como un lugar de aprendizaje positivo y amigable, por favor lee y sigue nuestro Código de Conducta: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
+        "Para mantener a nuestra comunidad como un lugar de aprendizaje positivo y amigable, por favor lee y sigue nuestro Código de Conducta: <a href='/https://github.com/FreeCodeCamp/freecodecamp/wiki/Code-of-Conduct' target='_blank'>https://github.com/FreeCodeCamp/freecodecamp/wiki/Code-of-Conduct</a>"
       ],
       "namePt": "",
       "descriptionPt": [],
@@ -108,7 +108,7 @@
         "Teile den anderen Campern mit, wie du auf Free Code Camp gestoßen bist. Wir interessieren uns auch dafür, warum du Programmieren lernen willst – aber auf englisch bitte, sonst versteht dich kaum einer.",
         "Behalte den Chat geöffnet, während du an den Challenges arbeitest. Auf diesem Weg kannst du schnell nach Hilfe fragen, wenn du nicht weiter kommst. Du kannst auch jederzeit mit uns chatten, wenn du eine Pause einlegen möchtest.",
         "Du kannst den Chat auch über die Schaltfläche \"Chat\" oben rechts auf dieser Seite erreichen.",
-        "Damit diese Community ein freundlicher und positiver Ort zum Lernen bleibt, lies und folge bitte unseren Verhaltensregeln: <a href='/field-guide/what-is-the-free-code-camp-code-of-conduct?' target='_blank'>http://freecodecamp.com/field-guide/what-is-the-free-code-camp-code-of-conduct?</a>"
+        "Damit diese Community ein freundlicher und positiver Ort zum Lernen bleibt, lies und folge bitte unseren Verhaltensregeln: <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/Code-of-Conduct' target='_blank'>https://github.com/FreeCodeCamp/freecodecamp/wiki/Code-of-Conduct</a>"
       ]
     },
     {
@@ -254,9 +254,8 @@
         "Click \"News\" in the upper right hand corner.",
         "You'll see a variety of links that have been submitted. Click on the \"Discuss\" button under one of them.",
         "You can upvote links. This will push the link up the rankings of hot links.",
-        "You can also comment on a link. If someone responds to your comment, you'll get an email notification so you can come back and respond to them.",
-        "You can also submit links. You can modify the link's headline and also leave an initial comment about the link.",
-        "You can view the portfolio pages of any camper who has posted links or comments on Camper News. Just click on their photo.",
+        "You can also submit links.",
+        "You can view the portfolio pages of any camper who has posted links on Camper News. Just click on their photo.",
         "When you submit a link, you'll get a point. You will also get a point each time someone upvotes your link.",
         "Now that you've learned how to use Camper News, let's move on to your next challenge."
       ],
@@ -304,7 +303,7 @@
       "description": [
         "One of the best ways to stay motivated when learning to code is to hang out with other campers.",
         "Gitter and Camper News are great ways to communicate with other campers, but there's no substitute for meeting people in-person.",
-        "The easiest way to meet other campers in your city is to join your city's Facebook Group. Click <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city' target='_blank'>here</a> to view our growing list of local groups.",
+        "The easiest way to meet other campers in your city is to join your city's Facebook Group. Click <a href='https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites' target='_blank'>here</a> to view our growing list of local groups.",
         "Click the link to your city, then, once Facebook loads, click \"Join group\".",
         "Our local groups are new, so if you don't see your city on this list, you should follow the directions to create a Facebook group for your city.",
         "If you don't have a Facebook account, we strongly recommend you create one, even if it's just for the purpose of coordinating with campers in your city through this group.",
@@ -323,7 +322,7 @@
       "descriptionEs": [
         "Una de las mejores maneras de mantenerte motivado cuando estás aprendiendo a programar es pasar el rato con otros campers.",
         "Gitter y Noticias de Campers son una muy buena forma de comunicarte con otros campers, pero no hay ningún substituto para conocerlos en persona.",
-        "La forma más fácil de encontrarte con otros campers en tu ciudad es unirte al grupo de Facebook de tu ciudad o país. Dale click a <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city' target='_blank'>here</a> para ver la lista de grupos locales.",
+        "La forma más fácil de encontrarte con otros campers en tu ciudad es unirte al grupo de Facebook de tu ciudad o país. Dale click a <a href='https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites' target='_blank'>here</a> para ver la lista de grupos locales.",
         "Dale click al link de tu ciudad o país y una vez que Facebook cargue, dale click a \"Join group\".",
         "Nuestros grupos locales son pocos, asi que en caso no veas tu ciudad o país en la lista, solamente sigue las instrucciones para crear un grupo de Facebook para ello.",
         "Si no tienes una cuenta de Facebook, te recomendamos que crees una, asi sea solamente con el proposito de coordinar con otros campers en tu ciudad a través del grupo",
@@ -336,7 +335,7 @@
       "descriptionDe": [
         "Der beste Weg, motiviert am Ball zu bleiben, ist mit anderen Campern abzuhängen.",
         "Slack und Camper News sind super Wege zur Kommunikation mit anderen Campern. Es gibt aber nichts vergleichbares, Personen im echten Leben zu treffen.",
-        "Um leicht andere Camper in deiner Stadt zu treffen, solltest du der Facebook Gruppe deiner Stadt beitreten. Klicke <a href='/field-guide/how-can-i-find-other-free-code-camp-campers-in-my-city' target='_blank'>hier</a> um unsere wachsende Liste der lokalen Gruppen zu sehen.",
+        "Um leicht andere Camper in deiner Stadt zu treffen, solltest du der Facebook Gruppe deiner Stadt beitreten. Klicke <a href='https://github.com/FreeCodeCamp/freecodecamp/wiki/List-of-Free-Code-Camp-city-based-Campsites' target='_blank'>hier</a> um unsere wachsende Liste der lokalen Gruppen zu sehen.",
         "Klicke auf den Link zu deiner Stadt. Sobald Facebook geladen ist, klicke auf \"Gruppe beitreten\".",
         "Unsere lokalen Gruppen sind neu. Solltest du deine Stadt also nicht in der Liste sehen, erstelle doch bitte eine Facebook Gruppe deiner Stadt indem du den Anweisungen dazu folgst.",
         "Wenn du keinen Facebook Account hast, empfehlen wir dir einen zu erstellen. Auch wenn dieser nur dazu dient, sich mit anderen Campern in deiner Stadt zu koordinieren.",
@@ -388,7 +387,7 @@
         "Next, S - Search Google. Good Google queries take a lot of practice. When you search Google, you usually want to include the language or framework you're using. You also want to limit the results to a recent period.",
         "Then, if you still haven't found an answer to your question, A - Ask your friends. If you have trouble, you can ask your fellow campers. We have a special chat room specifically for getting help with tools you learn through these Free Code Camp Challenges. Go to <a href='https://gitter.im/FreeCodeCamp/Help' target='_blank'>https://gitter.im/FreeCodeCamp/Help</a>. Keep this chat open while you work on the remaining challenges.",
         "Finally, P - Post on Stack Overflow. Before you attempt to do this, read Stack Overflow's guide to asking good questions: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>.",
-        "Here's our detailed wiki article on getting help: <a href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank'>http://freecodecamp.com/field-guide/how-do-i-get-help-when-i-get-stuck</a>.",
+        "Here's our detailed wiki article on getting help: <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>http://freecodecamp.com//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck</a>.",
         "Now you have a clear algorithm to follow when you need help! Let's start coding! Move on to your next challenge."
       ],
       "challengeType": 2,
@@ -407,7 +406,7 @@
         "Luego, Busca - Busca en Google. Buenas búsquedas o queries requieren bastante práctica. Cuando búsques en Google, idealmente tienes que incluir el lenguaje o framework que estés usando. También tendrás que limitar los resultados de búsqueda a un periodo reciente.",
         "Ahora, en caso no hayas encontrado la respuesta a tu pregunta, Pregunta - Pregunta a tus amigos. En caso estes en problemas, puedes preguntar a otros campers. Tenemos una sala de chat especificamente para obtener ayuda sobre las herramientas que utilizamos en los desafíos de Free Code Camp. Ingresa a <a href='https://gitter.im/FreeCodeCamp/Help' target='_blank'>https://gitter.im/FreeCodeCamp/Help</a>. Mantén este chat abierto mientras trabajas en los desafíos subsiguientes.",
         "Finalmente, Publica - Publica tu pregunta en Stack Overflow. Antes de hacer esto lee la guía de Stack Overflow para publicar buenas preguntas: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>. Tendrás que hacerlo en inglés, en caso no sepas como, pide que te ayuden a traducir tu pregunta en el canal #espanol de Slack.",
-        "Aquí está nuestra guia detallada en como obtener ayuda: <a href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank'>http://freecodecamp.com/field-guide/how-do-i-get-help-when-i-get-stuck</a>.",
+        "Aquí está nuestra guia detallada en como obtener ayuda: <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>http://freecodecamp.com//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck</a>.",
         "Ahora que tienes en claro el procedimiento a seguir cuando necesites ayuda. ¡Empecémos a programar! Continua con el siguiente desafío."
       ],
       "namePt": "",
@@ -420,7 +419,7 @@
         "Danach, S – Suche bei Google. Es bedarf viel Übung, gute Such-Anfragen zu stellen. Wenn du bei Google suchst, solltest du die Sprache oder das Framework angeben, welches du benutzt. Außerdem wirst du die aktuellsten Ergebnisse haben wollen.",
         "Wenn du keine Antwort auf deine Frage erhalten hast, folge A – Frage deine Freunde. Wenn du Probleme hast, kannst du andere Camper fragen. Wir haben einen speziellen Chat-Raum zur Unterstützung beim Lernen eingerichtet. Gehe zu <a href='https://freecode.slack.com/messages/help/' target='_blank'>https://freecode.slack.com/messages/help/</a>. Behalte diesen Chat offen, solange du an den Challenges arbeitest.",
         "Und zum Schluss, P – Poste auf Stack Overflow. Bevor du das tust, lies bitte den Leitfaden für gute Fragen auf Stack Overflow: <a href='http://stackoverflow.com/help/how-to-ask'>http://stackoverflow.com/help/how-to-ask</a>.",
-        "Hier ist unser detaillierter Field Guide um Hilfe zu erhalten: <a href='/field-guide/how-do-i-get-help-when-i-get-stuck' target='_blank'>http://freecodecamp.com/field-guide/how-do-i-get-help-when-i-get-stuck</a>.",
+        "Hier ist unser detaillierter Field Guide um Hilfe zu erhalten: <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>http://freecodecamp.com//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck</a>.",
         "Jetzt hast du einen klaren Algorithmus, dem du folgen kannst wenn du Hilfe benötigst. Fangen wir an zu programmieren! Gehe zur nächsten Challenge."
       ]
     }

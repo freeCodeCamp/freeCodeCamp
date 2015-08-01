@@ -162,14 +162,6 @@
       ],
       "default": []
     },
-    "completedFieldGuides": {
-      "type": "array",
-      "default": []
-    },
-    "uncompletedFieldGuides": {
-      "type": "array",
-      "default": []
-    },
     "currentStreak": {
       "type": "number",
       "default": 0

@@ -12,7 +12,6 @@ module.exports = function(app) {
   var router = app.loopback.Router();
   var User = app.models.User;
   var Story = app.models.Story;
-  var Comment = app.models.Comment;
 
   router.get('/login', function(req, res) {
     res.redirect(301, '/signin');
@@ -623,55 +622,23 @@ module.exports = function(app) {
   }
 
   function updateUserStoryPictures(userId, picture, username, cb) {
-
-    var counter = 0,
-      foundStories,
-      foundComments;
-
     Story.find({ 'author.userId': userId }, function(err, stories) {
-      if (err) {
-        return cb(err);
-      }
-      foundStories = stories;
-      counter++;
-      saveStoriesAndComments();
-    });
+      if (err) { return cb(err); }
 
-    Comment.find({ 'author.userId': userId }, function(err, comments) {
-      if (err) {
-        return cb(err);
-      }
-      foundComments = comments;
-      counter++;
-      saveStoriesAndComments();
-    });
-
-    function saveStoriesAndComments() {
-      if (counter !== 2) {
-        return;
-      }
-      var tasks = [];
-      R.forEach(function(comment) {
-        comment.author.picture = picture;
-        comment.author.username = username;
-        tasks.push(function(cb) {
-          comment.save(cb);
-        });
-      }, foundComments);
-
-      R.forEach(function(story) {
+      const tasks = [];
+      stories.forEach(function(story) {
         story.author.picture = picture;
         story.author.username = username;
         tasks.push(function(cb) {
           story.save(cb);
         });
-      }, foundStories);
+      });
       async.parallel(tasks, function(err) {
         if (err) {
           return cb(err);
         }
         cb();
       });
-    }
+    });
   }
 };
