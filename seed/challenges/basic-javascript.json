@@ -1070,6 +1070,35 @@
       "challengeType": 1
     },
     {
+      "id":"cf1111c1c13feddfaeb3bdef",
+      "name":"Inverting a Match",
+      "dashedName":"waypoint-inverting-a-match",
+      "difficulty":"9.987",
+      "description":[
+        "",
+        "Use <code>/\\S+/gi;</code> to match everything that ins't a space in the string",
+        "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example"
+      ],
+      "tests":[
+        "assert(test === 36, 'Your RegEx should have found seven spaces in the testString');",
+        "assert(editorValue.match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression /\\S+/gi to find the spaces in the testString');"
+      ],
+      "challengeSeed":[
+        "var test = (function(){",
+        " var testString = \"How many spaces are there in this sentance.\";",
+        "",
+        "//Do Not Modify Above",
+        "",
+        " var expression = /.+/gi;",
+        "",
+        "//Do Not Modify Below",
+        "",
+        " return(testString.match(expression).length);",
+        "})();(function(){return(test);})();"
+      ],
+      "challengeType":1
+    },
+    {
       "id":"cf1111c1c12feddfaeb9bdef",
       "name":"Creating a slots machine",
       "dashedName":"creating-a-slots-machine",
