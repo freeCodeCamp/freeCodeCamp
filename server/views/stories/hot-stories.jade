@@ -9,7 +9,7 @@
             return name.trim().toLowerCase().replace(/\s/g, '-');
         }
         $.ajax({
-            url: '/stories/hotStories',
+            url: '/news/hot',
             type: 'GET'
         })
                 .success(
@@ -18,6 +18,12 @@
                         var div  = document.createElement('div');
                         var linkedName = getLinkedName(data[i].storyLink);
                         var rank = data[i].rank;
+                        var alreadyUpvoted = false;
+                        if (typeof username !== 'undefined') {
+                          alreadyUpvoted = data[i].upVotes.some(function(vote) {
+                            return vote.upVotedByUsername === username
+                          });
+                        }
 
                         $(div)
                         .html(
@@ -38,7 +44,11 @@
                                     " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +
                                 "</div>" +
                                 "<div class='col-xs-12'>" +
-                                    "<br><a class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost' href='/stories/" + linkedName + "'>discuss</a>" +
+                                  "<br>" +
+                                  (typeof username !== 'undefined' ?
+                                    "<button id='" + data[i].id + "' class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost btn-upvote'>upvote</button>" :
+                                    "<a href='/signup' class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost btn-upvote'>upvote</a>") +
+                                    "<a class='btn btn-no-shadow btn-primary btn-block btn-primary-ghost' href='/news/" + linkedName + "'>more info...</a>" +
                                 "</div>" +
                             "</div>" +
                             "<div class='hidden-xs row media-stories'>" +
@@ -56,7 +66,10 @@
                                                 "</a>" +
                                             "</div>" +
                                             "<div class='story-byline col-xs-12 wrappable'>" +
-                                                "<a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' href='/stories/" + linkedName + "'>discuss</a> · " +
+                                                (typeof username !== 'undefined' ?
+                                                  "<button id='" + data[i].id + "' class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost btn-upvote'>upvote</button>" :
+                                                  "<a href='/signin' class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost'>upvote</a>") +
+                                                " · <a class='btn btn-no-shadow btn-primary btn-xs btn-primary-ghost' href='/news/" + linkedName + "'>more info...</a> · " +
                                                 rank + (rank > 1 ? " points" : " point") + " · posted " +
                                                 moment(data[i].timePosted).fromNow() +
                                                 " by <a href='/" + data[i].author.username + "'>@" + data[i].author.username + "</a> " +
@@ -68,5 +81,13 @@
                         );
                         $(div).addClass('story-list news-box')
                         $(div).appendTo($('#story-list'));
+                        $(div).find('.btn-upvote').each(function(idx, btn) {
+                          var $btn = $(btn);
+                          if (alreadyUpvoted) {
+                            $btn.addClass('disabled');
+                            $btn.text('upvoted!');
+                          }
+                          $btn.data('upVotes', data[i].upVotes);
+                        });
                     }
                 });

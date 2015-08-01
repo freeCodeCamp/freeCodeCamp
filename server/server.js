@@ -208,7 +208,7 @@ app.use(function(req, res, next) {
   var path = req.path.split('/')[1];
   if (/auth|login|logout|signin|signup|fonts|favicon/i.test(path)) {
     return next();
-  } else if (/\/stories\/comments\/\w+/i.test(req.path)) {
+  } else if (/\/stories\/\w+/i.test(req.path)) {
     return next();
   }
   req.session.returnTo = req.path;

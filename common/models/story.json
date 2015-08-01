@@ -44,10 +44,6 @@
     "author": {
       "type": {}
     },
-    "comments": {
-      "type": "array",
-      "default": []
-    },
     "image": {
       "type": "string",
       "default": ""
