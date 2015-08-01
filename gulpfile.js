@@ -126,7 +126,7 @@ gulp.task('serve', function(cb) {
     script: paths.server,
     ext: '.js .json',
     ignore: paths.serverIgnore,
-    exec: './node_modules/.bin/babel-node',
+    exec: path.join(__dirname, 'node_modules/.bin/babel-node'),
     env: {
       'NODE_ENV': 'development',
       'DEBUG': process.env.DEBUG || 'freecc:*'
