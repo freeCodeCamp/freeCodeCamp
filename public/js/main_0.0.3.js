@@ -311,6 +311,10 @@ $(document).ready(function() {
 
   $('#story-submit').on('click', storySubmitButtonHandler);
 
+    if($('.editorScrollDiv').html() !== 'undefined'){
+        $('.editorScrollDiv').css("height",$(window).height()-($('.navbar').height()+$('.footer').height()+100) + "px");
+    }
+
     //fakeiphone positioning hotfix
     if($('.iphone-position').html() !==undefined || $('.iphone').html() !== undefined){
         var startIphonePosition = parseInt($('.iphone-position').css('top').replace('px', ''));
