@@ -426,7 +426,7 @@ module.exports = function(app) {
       {
         where: {
           resetPasswordToken: req.params.token,
-          resetPasswordExpires: Date.now()
+          resetPasswordExpires: { gte: Date.now() }
         }
       },
       function(err, user) {
@@ -463,7 +463,7 @@ module.exports = function(app) {
           {
             where: {
               resetPasswordToken: req.params.token,
-              resetPasswordExpires: Date.now()
+              resetPasswordExpires: { gte: Date.now() }
             }
           },
           function(err, user) {
