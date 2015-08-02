@@ -368,14 +368,14 @@
       "description": [
         "",
         "in JavaScript we can can work with decimal numbers",
-        "Let's create a variable <code>myfloat</code> and give it a decimal value."
+        "Let's create a variable <code>myDecimal</code> and give it a decimal value."
       ],
       "tests": [
-        "assert((function(){if(typeof(myDecimal) != 'undefined' && typeof(myDecimal) == 'number' && editor.getValue().match(/\\./g).length >=2){return(true);}else{return(false);}})(), 'myFloat should be a decimal point number');"
+        "assert((function(){if(typeof(myDecimal) != 'undefined' && typeof(myDecimal) == 'number' && editor.getValue().match(/\\./g).length >=2){return(true);}else{return(false);}})(), 'myDecimal should be a decimal point number');"
       ],
       "challengeSeed": [
         "//var ourDecimal = 5.7",
-        "//Create a number with a decimal point here called myFloat",
+        "//Create a number with a decimal point here called myDecimal",
         "",
         "",
         "",
