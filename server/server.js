@@ -188,8 +188,8 @@ app.use(rxMiddleware());
 app.use(function(req, res, next) {
   // add beta warning
   req.flash('info', {
-    msg: `warning: you are on expiramentel branch of Free Code Camp:
-      You're progress here may or may not be saved to the main site`
+    msg: `warning: you are on experimental branch of Free Code Camp:
+      Your progress here may or may not be saved to the main site`
   });
 
   // Make user object available in templates.
