@@ -112,7 +112,7 @@
       ],
       "tests": [
         "assert($('.well').hasClass('animated') && $('.well').hasClass('shake'), 'Use the jQuery <code>addClass()</code> function to give the classes \"animated\" and \"shake\" to all your elements with the class \"well\".')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(!editor.match(/class\\.\\*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -630,8 +630,8 @@
       ],
       "tests": [
         "assert($('#left-well').css('background-color') === 'rgb(255, 0, 0)', 'Your \"target1\" element should have red text.')",
-        "assert(!editor.match(/\\.parent\\(\\)\\.css/g), 'You should use the <code>parent()</code> function to modify this element.')",
-        "assert(!editor.match(/<div class=\\'well\\' id=\\'left-well\\'>/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(editor.match(/\\.parent\\(\\)\\.css/g), 'You should use the <code>parent()</code> function to modify this element.')",
+        "assert(editor.match(/<div class=\\'well\\' id=\\'left-well\\'>/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
