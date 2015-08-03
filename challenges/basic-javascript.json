@@ -14,7 +14,7 @@
         "Let's take a look at the two ways in which we can write a comment in JavaScript",
         "<code> //This is a comment </code>",
         "These comment out the entire line that they are on",
-        "<code> /*This also is a comment*/ </code>",
+        "<code> /*This is also a comment*/ </code>",
         "These comment out everything in between <code> /* </code> and <code> */ </code>",
         "Try creating one of each now."
       ],
