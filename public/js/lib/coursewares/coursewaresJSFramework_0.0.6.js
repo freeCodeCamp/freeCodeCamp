@@ -211,6 +211,7 @@ var runTests = function(err, data) {
     }];
     createTestDisplay();
   }
+  //Add blocks to test exploits here!
   else if(editorValue.match(/if\s\(null\)\sconsole\.log\(1\);/gi)){
       allTestsPassed = false;
       userTests = [{
