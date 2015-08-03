@@ -202,7 +202,7 @@ module.exports = function(User) {
   );
 
   User.giveBrowniePoints =
-    function giveBrowniePoints(receiver, giver, data = {}, cb) {
+    function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
       const findUser = observeMethod(User, 'findOne');
       if (!receiver) {
         return nextTick(() => {
@@ -262,9 +262,15 @@ module.exports = function(User) {
         })
         .subscribe(
           (user) => {
-            cb(null, getAboutProfile(user));
+            return cb(
+              null,
+              getAboutProfile(user),
+              dev ?
+                { giver, receiver, data } :
+                null
+            );
           },
-          cb,
+          (e) => cb(e, null, dev ? { giver, receiver, data } : null),
           () => {
             debug('brownie points assigned completed');
           }
@@ -289,17 +295,25 @@ module.exports = function(User) {
         {
           arg: 'data',
           type: 'object'
+        },
+        {
+          arg: 'debug',
+          type: 'boolean'
         }
       ],
       returns: [
         {
           arg: 'about',
           type: 'object'
+        },
+        {
+          arg: 'debug',
+          type: 'object'
         }
       ],
       http: {
         path: '/give-brownie-points',
-        verb: 'get'
+        verb: 'POST'
       }
     }
   );

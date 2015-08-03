@@ -9,6 +9,7 @@ var Rx = require('rx'),
     saveUser = require('../utils/rx').saveUser,
     saveInstance = require('../utils/rx').saveInstance,
     MongoClient = mongodb.MongoClient,
+    validator = require('validator'),
     secrets = require('../../config/secrets');
 
 var foundationDate = 1413298800000;
@@ -262,9 +263,8 @@ module.exports = function(app) {
       return next(new Error('Must be logged in'));
     }
     var url = req.body.data.url;
-    var cleanURL = cleanData(url);
 
-    if (cleanURL !== url) {
+    if (!validator.isURL(url)) {
       req.flash('errors', {
         msg: "The URL you submitted doesn't appear valid"
       });

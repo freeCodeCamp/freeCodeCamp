@@ -110,6 +110,7 @@ function bonfireExecute() {
       runTests('Error', null);
     } else {
       codeOutput.setValue(message.output);
+      codeOutput.setValue(codeOutput.getValue().replace(/\\\"/gi,''));
       message.input = removeLogs(message.input);
       runTests(null, message);
     }
