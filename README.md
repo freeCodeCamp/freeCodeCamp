@@ -7,9 +7,6 @@
 Welcome to Free Code Camp's open source codebase!
 =======================
 
-#Note
-We're currently very close to moving from Express to Loopback. As such, please keep in mind that the instructions here for setting up and running the project do not directly translate to the staging branch. Additionally, the file structure is quite a bit different. As always, the staging branch is the appropriate place to branch off of to fix/add something!
-
 Free Code Camp is an open-source community of busy people who learn to code, then build projects for nonprofits.
 
 Our campers (students) start by working through our free, self-paced, browser-based curriculum. Next, they build several practice projects. Finally, we pair two campers together with a stakeholder from a nonprofit organization, and help them build the solution the nonprofit has requested.
@@ -20,7 +17,14 @@ Our campers (students) start by working through our free, self-paced, browser-ba
 
 This code is running live at [FreeCodeCamp.com](http://www.FreeCodeCamp.com). We also have [Gitter](https://gitter.im/FreeCodeCamp/FreeCodeCamp), a [blog](http://blog.freecodecamp.com), and even a [Twitch.tv channel](http://twitch.tv/freecodecamp).
 
-[Join our community](http://www.freecodecamp.com/signin)!
+[Join our community here](http://www.freecodecamp.com/signin).
+
+*Note: We're currently very close to moving from Express to Loopback. As such, please keep in mind that the instructions here for setting up and running the project do not directly translate to the staging branch. Additionally, the file structure is quite a bit different. As always, the staging branch is the appropriate place to branch off of to fix/add something.*
+
+Wiki
+------------
+
+We would love your help expanding our [wiki](https://gitter.im/freecodecamp/freecodecamp/wiki) with more information about learning to code and getting a coding job.
 
 Contributing
 ------------
