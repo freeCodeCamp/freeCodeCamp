@@ -121,23 +121,26 @@
         "For example, if we created a variable <code>var firstName = \"Julie\"</code>, we could find out how long the string \"Julie\" is by using the <code>firstName.length</code> property."
       ],
       "tests": [
-        "assert((function(){if(typeof(lastNameLength) != 'undefined' && typeof(lastNameLength) == 'number' && lastNameLength == 4){return(true);}else{return(false);}})(), 'lastNameLength should be equal to four')"
+        "assert((function(){if(typeof(lastNameLength) != 'undefined' && typeof(lastNameLength) == 'number' && lastNameLength == 4){return(true);}else{return(false);}})(), 'lastNameLength should be equal to four')",
+        "assert((function(){if(editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using .length like this <code>lastName.length</code>');"
       ],
       "challengeSeed": [
+        "var firstNameLength = 0;",
+        "var lastNameLength = 0;",
         "var firstName = \"Madeline\";",
         "",
-        "var firstNameLength = firstName.length;",
+        "firstNameLength = firstName.length;",
         "",
         "var lastName = \"Chen\";",
         "",
-        "var lastNameLength = lastName;",
+        "lastNameLength = lastName;",
         "",
         "",
         "",
         "// You can ignore this.",
         "// We use this to show you the value of your variable in your output box.",
         "// We'll learn about functions soon.",
-        "if(typeof(lastNameLength) != 'undefined')(function(v){return(v);})(lastNameLength);}"
+        "if(typeof(lastNameLength) != 'undefined'){(function(v){return(v);})(lastNameLength);}"
       ],
       "challengeType": 1
     },
