@@ -261,31 +261,31 @@ block content
         .panel-heading.text-center Manage your account here:
         .panel-body
             if (!user.google || !user.facebook || !user.linkedin || !user.twitter)
-                if (!user.google)
+                if (!user.github)
                     .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/auth/google')
-                            i.fa.fa-google-plus
-                            | Link Google with my account
-                if (!user.facebook)
-                    .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/auth/facebook')
-                            i.fa.fa-facebook
-                            | Link Facebook with my account
-                //if (!user.github)
-                //    .col-xs-12
-                //        a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
-                //            i.fa.fa-github
-                //            | Link GitHub with my account
-                if (!user.linkedin)
-                    .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/auth/linkedin')
-                            i.fa.fa-linkedin
-                            | Link LinkedIn with my account
+                        a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
+                            i.fa.fa-github
+                            | Link GitHub with my account
                 if (!user.twitter)
                     .col-xs-12
                         a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/auth/twitter')
                             i.fa.fa-twitter
                             | Link Twitter with my account
+                if (!user.google)
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social.disabled(href='#')
+                            i.fa.fa-google-plus
+                            | Link Google with my account
+                if (!user.facebook)
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-facebook.btn-link-social.disabled(href='#')
+                            i.fa.fa-facebook
+                            | Link Facebook with my account
+                if (!user.linkedin)
+                    .col-xs-12
+                        a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social.disabled(href='#')
+                            i.fa.fa-linkedin
+                            | Link LinkedIn with my account
             .col-xs-12
                 a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
                     span.ion-android-exit
