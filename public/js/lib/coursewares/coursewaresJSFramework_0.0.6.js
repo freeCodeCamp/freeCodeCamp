@@ -210,7 +210,16 @@ var runTests = function(err, data) {
       err: "No user tests were run."
     }];
     createTestDisplay();
-  } else if (userTests) {
+  }
+  else if(editorValue.match(/if\s\(null\)\sconsole\.log\(1\);/gi)){
+      allTestsPassed = false;
+      userTests = [{
+          text: "Program Execution Failure",
+          err: "Invalid if (null) console.log(1); detected"
+      }];
+      createTestDisplay();
+  }
+  else if (userTests) {
     userTests.push(false);
     pushed = true;
     userTests.forEach(function(chaiTestFromJSON, indexOfTestArray,
