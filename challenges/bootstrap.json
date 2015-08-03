@@ -797,8 +797,8 @@
         "Delete the \".red-text\", \"p\", and \".smaller-image\" CSS declarations from your <code>style</code> element so that the only declarations left in your <code>style</code> element are \"h2\" and \"thick-green-border\". Then Delete the <code>p</code> element that contains a dead link. Then remove the \"red-text\" class from your <code>h2</code> element and replace it with the \"text-primary\" Bootstrap class. Finally, remove the \"smaller-image\" class from your first <code>img</code> element and replace it with the <code>img-responsive</code> class."
       ],
       "tests": [
-        "assert(!$('h2').hasClass('red-text'), 'You h2 element should no longer have the class \"red-text\".')",
-        "assert($('h2').hasClass('text-primary'), 'You h2 element should now have the class \"text-primary\".')",
+        "assert(!$('h2').hasClass('red-text'), 'Your h2 element should no longer have the class \"red-text\".')",
+        "assert($('h2').hasClass('text-primary'), 'Your h2 element should now have the class \"text-primary\".')",
         "assert(!$('p').css('font-family').match(/monospace/i), 'Your paragraph elements should no longer use the font \"Monospace\".')",
         "assert(!$('img').hasClass('smaller-image'), 'Remove the \"smaller-image\" class from your top image.')",
         "assert($('.img-responsive').length > 1, 'Add the \"img-responsive\" class to your top image.')"
