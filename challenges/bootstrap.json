@@ -1743,7 +1743,7 @@
       ],
       "tests": [
         "assert($('.btn').length > 5, 'Apply the \"btn\" class to each of your <code>button</code> elements.')",
-        "assert($('.btn').length > 5, 'Apply the \"btn-default\" class to each of your <code>button</code> elements.')"
+        "assert($('.btn-default').length > 5, 'Apply the \"btn-default\" class to each of your <code>button</code> elements.')"
       ],
       "challengeSeed": [
         "<div class='container-fluid'>",
