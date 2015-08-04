@@ -1566,7 +1566,7 @@
       "difficulty": 2.18,
       "description": [
         "Now let's make sure all the content on your page is mobile-responsive.",
-        "Let's nest your <code>h3</code> element within a <code>div<code> element with the class \"containter-fluid\"."
+        "Let's nest your <code>h3</code> element within a <code>div<code> element with the class \"container-fluid\"."
       ],
       "tests": [
         "assert($('div').hasClass('container-fluid'), 'Your <code>div</code> element should have the class \"container-fluid\"')",
