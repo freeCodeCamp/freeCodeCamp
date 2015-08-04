@@ -122,7 +122,7 @@
       ],
       "tests": [
         "assert((function(){if(typeof(lastNameLength) != 'undefined' && typeof(lastNameLength) == 'number' && lastNameLength == 4){return(true);}else{return(false);}})(), 'lastNameLength should be equal to four')",
-        "assert((function(){if(editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using .length like this <code>lastName.length</code>');"
+        "assert((function(){if(editor.getValue().match(/\\.length/gi) && editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi) && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>');"
       ],
       "challengeSeed": [
         "var firstNameLength = 0;",
@@ -597,7 +597,7 @@
       ],
       "tests": [
         "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
-        "assert((function(d){if(d == 'John'){return(true);}else{return(false);}})(removed), 'Removed should contain \"John\"');"
+        "assert((function(d){if(d === 'John' && typeof(removed) === 'function'){return(true);}else{return(false);}})(removed), 'Removed should contain \"John\"');"
       ],
       "challengeSeed": [
         "var myArray = ['John', 23, ['dog', 3]];",
@@ -781,7 +781,7 @@
         "Let's try getting a for loop to work by pushing values to an array"
       ],
       "tests":[
-        "assert(editor.getValue().match(/for\\(/g), 'You should be using a for loop for this!');",
+        "assert(editor.getValue().match(/for\\(/g), 'You should be using a for loop for this.');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
       "challengeSeed":[
@@ -812,7 +812,7 @@
         "Let's try getting a for loop to work by pushing values to an array"
       ],
       "tests":[
-        "assert(editor.getValue().match(/while\\(/g), 'You should be using a while loop for this!');",
+        "assert(editor.getValue().match(/while\\(/g), 'You should be using a while loop for this.');",
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
       "challengeSeed":[
@@ -844,7 +844,7 @@
       ],
       "tests":[
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');",
-        "assert((function(){if(editor.getValue().match(/do/g) && editor.getValue(/while/g).match()){return(true);}else{return(false);}})(), 'You should be using a do while loop for this!');"
+        "assert((function(){if(editor.getValue().match(/do/g) && editor.getValue(/while/g).match()){return(true);}else{return(false);}})(), 'You should be using a do while loop for this.');"
       ],
       "challengeSeed":[
         "var myArray = [];",

@@ -795,7 +795,7 @@
         "You can also target all the even-numbered elements.",
         "Note that computers start counting at zero, so technically, the first element is actually element number zero, which is an odd number.",
         "So what a human would consider odd numbers: 1, 3, 5, 7 - a computer would actually consider odd numbers.",
-        "Here's how you would target all the odd-numbered elements with class \"target\" and give them classes: <code>$('.target:odd').addClass('animated shake');",
+        "Here's how you would target all the odd-numbered elements with class \"target\" and give them classes: <code>$('.target:odd').addClass('animated shake');</code>",
         "Try selecting all the even-numbered elements - that is, what your browser will consider even-numbered elements - and giving them the classes of \"animated\" and \"shake\"."
       ],
       "tests": [
