@@ -19,27 +19,13 @@
     "password": {
       "type": "string"
     },
-    "facebook": {
-      "type": "string"
-    },
-    "twitter": {
-      "type": "string"
-    },
-    "google": {
-      "type": "string"
-    },
-    "github": {
-      "type": "string"
-    },
-    "linkedin": {
-      "type": "string"
-    },
-    "tokens": {
-      "type": "array"
-    },
     "progressTimestamps": {
       "type": "array",
       "default": []
+    },
+    "isGithubCool": {
+      "type": "boolean",
+      "default": false
     },
     "username": {
       "type": "string",
@@ -123,12 +109,6 @@
       "type": "string",
       "default": ""
     },
-    "resetPasswordToken": {
-      "type": "string"
-    },
-    "resetPasswordExpires": {
-      "type": "string"
-    },
     "completedBonfires": {
       "type": [
         {
@@ -170,20 +150,9 @@
       "type": "number",
       "default": 0
     },
-    "needsSomeDataModeled": {
-      "type": "boolean",
-      "default": false
-    },
-    "needsMigration": {
-      "type": "boolean",
-      "default": true
-    },
     "sendMonthlyEmail": {
       "type": "boolean",
       "default": true
-    },
-    "challengesHash": {
-      "type": {}
     },
     "currentChallenge": {
       "type": {}
@@ -204,10 +173,6 @@
           }
         }
       ],
-      "default": []
-    },
-    "uncompletedChallenges": {
-      "type": "array",
       "default": []
     }
   },
