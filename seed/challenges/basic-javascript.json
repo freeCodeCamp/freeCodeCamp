@@ -121,23 +121,26 @@
         "For example, if we created a variable <code>var firstName = \"Julie\"</code>, we could find out how long the string \"Julie\" is by using the <code>firstName.length</code> property."
       ],
       "tests": [
-        "assert((function(){if(typeof(lastNameLength) != 'undefined' && typeof(lastNameLength) == 'number' && lastNameLength == 4){return(true);}else{return(false);}})(), 'lastNameLength should be equal to four')"
+        "assert((function(){if(typeof(lastNameLength) != 'undefined' && typeof(lastNameLength) == 'number' && lastNameLength == 4){return(true);}else{return(false);}})(), 'lastNameLength should be equal to four')",
+        "assert((function(){if(editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using .length like this <code>lastName.length</code>');"
       ],
       "challengeSeed": [
+        "var firstNameLength = 0;",
+        "var lastNameLength = 0;",
         "var firstName = \"Madeline\";",
         "",
-        "var firstNameLength = firstName.length;",
+        "firstNameLength = firstName.length;",
         "",
         "var lastName = \"Chen\";",
         "",
-        "var lastNameLength = lastName;",
+        "lastNameLength = lastName;",
         "",
         "",
         "",
         "// You can ignore this.",
         "// We use this to show you the value of your variable in your output box.",
         "// We'll learn about functions soon.",
-        "if(typeof(lastNameLength) != 'undefined')(function(v){return(v);})(lastNameLength);}"
+        "if(typeof(lastNameLength) != 'undefined'){(function(v){return(v);})(lastNameLength);}"
       ],
       "challengeType": 1
     },
@@ -154,16 +157,19 @@
         "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert((function(){if(typeof(firstLetterOfLastName) != 'undefined' && typeof(firstLetterOfLastName) == 'string' && firstLetterOfLastName == 'C'){return(true);}else{return(false);}})(), 'The first letter of firstLetterOfLastName should be a C');"
+        "assert((function(){if(typeof(firstLetterOfLastName) != 'undefined' && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) == 'string' && firstLetterOfLastName == 'C'){return(true);}else{return(false);}})(), 'The first letter of firstLetterOfLastName should be a C');"
       ],
       "challengeSeed": [
+        "var firstLetterOfLastName = \"\"",
+        "var firstLetterOfLastName = \"\"",
+        "",
         "var firstName = \"Madeline\";",
         "",
-        "var firstLetterOfFirstName = firstName[0];",
+        "firstLetterOfFirstName = firstName[0];",
         "",
         "var lastName = \"Chen\";",
         "",
-        "var firstLetterOfLastName = lastName;",
+        "firstLetterOfLastName = lastName;",
         "",
         "",
         "// You can ignore this.",
@@ -562,7 +568,7 @@
       "difficulty": "9.9818",
       "description": [
         "",
-        "Now that we've learn how to <code> pop </code> things from the end of the array, we need to learn how to <code> push </code> stuff back to the end",
+        "Now that we've learned how to <code> pop </code> things from the end of the array, we need to learn how to <code> push </code> stuff back to the end",
         "Let's take the code we had last time and <code> push </code> this value to the end: <code> ['dog', 3] </code>"
       ],
       "tests": [
@@ -644,7 +650,7 @@
         "Let's try creating and calling a function now called <code>myFunction</code>"
       ],
       "tests":[
-        "assert((function(){if(typeof(f) !== 'undefined' && typeof(f) === 'number' && f === a + b  && editor.getValue().match(RegExp('return\\\\(a\\\\+b\\\\)', 'g')).length >= 1){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
+        "assert((function(){if(typeof(f) !== 'undefined' && typeof(f) === 'number' && f === a + b  && editor.getValue().match(/return/gi).length >= 1 && editor.getValue().match(/a/gi).length >= 1 && editor.getValue().match(/b/gi).length >= 1 && editor.getValue().match(/\\+/gi).length >= 1){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
       ],
       "challengeSeed":[
         "var a = 4;",
@@ -794,7 +800,7 @@
       "description":[
         "",
         "Loops are a critical part of any program! The next few challenges",
-        "first we will be taking a look at the for loop",
+        "first we will be taking a look at the while loop",
         "<code>",
         "var ourArray = [];",
         "var i = 0;",

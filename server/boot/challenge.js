@@ -372,7 +372,7 @@ module.exports = function(app) {
 
   function completedZiplineOrBasejump(req, res, next) {
 
-    var completedWith = req.body.challengeInfo.completedWith || false;
+    var completedWith = req.body.challengeInfo.completedWith || '';
     var completedDate = Math.round(+new Date());
     var challengeId = req.body.challengeInfo.challengeId;
     var solutionLink = req.body.challengeInfo.publicURL;
@@ -423,17 +423,17 @@ module.exports = function(app) {
           pairedWith: pairedWith
         };
       })
-      .doOnNext(function(dats) {
+      .doOnNext(function({ user, pairedWith }) {
         updateUserProgress(
-          dats.user,
+          user,
           challengeId,
-          dats.pairedWith ?
-            assign({ completedWith: dats.pairedWith.id }, challengeData) :
+          pairedWith ?
+            assign({ completedWith: pairedWith.id }, challengeData) :
             challengeData
         );
       })
-      .flatMap(function(dats) {
-        return Rx.Observable.from([dats.user, dats.pairedWith]);
+      .flatMap(function({ user, pairedWith }) {
+        return Rx.Observable.from([user, pairedWith]);
       })
       // save users
       .flatMap(function(user) {
