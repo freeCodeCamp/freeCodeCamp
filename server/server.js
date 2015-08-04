@@ -65,6 +65,9 @@ var passportOptions = {
     if (email) {
       userObj.email = email;
     }
+    if (provider === 'github-login') {
+      userObj.isGithubCool = true;
+    }
     return userObj;
   }
 };
