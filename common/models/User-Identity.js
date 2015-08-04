@@ -41,19 +41,22 @@ export default function(UserIdent) {
       userChanged = true;
     }
 
-    // if user is not github cool
-    // and user signed in with github
+    // if user signed in with github
+    // and user is not github cool
+    // or username is different from github username
     // then make them github cool
     // and set their username from their github profile.
-    if (!user.isGithubCool && userIdent.provider === 'github-login') {
-      debug(`
-        user isn't github cool yet but signed in with github
-        lets make them cool!
-      `);
+    if (
+      userIdent.provider === 'github-login' &&
+      (!user.isGithubCool ||
+        user.username !== userIdent.provider.username.toLowerCase())
+    ) {
+      debug("user isn't github cool or username from github is different");
       user.isGithubCool = true;
       user.username = userIdent.profile.username.toLowerCase();
       userChanged = true;
     }
+
 
     if (userChanged) {
       return user.save(function(err) {
