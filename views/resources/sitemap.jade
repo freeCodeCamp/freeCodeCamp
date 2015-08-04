@@ -46,13 +46,6 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
       changefreq weekly
       priority= 0.5
 
-  each story in stories
-    url
-      loc #{appUrl}/news/#{story.replace(/\s/g, '-')}
-      lastmod= now
-      changefreq daily
-      priority= 0.9
-
   each nonprofit in nonprofits
     url
       loc #{appUrl}/nonprofits/#{nonprofit.replace(/\s/g, '-')}
