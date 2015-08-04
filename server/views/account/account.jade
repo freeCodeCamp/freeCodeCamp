@@ -32,7 +32,7 @@ block content
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (path to public profile) *
                   .col-sm-4
-                    input.form-control(type='text', placeholder='username' name='username', autocomplete="off", id='username', ng-model='user.username', required='required', ng-minlength='5', ng-maxlength='20', ng-keypress='', unique-username='', ng-pattern="/^[A-z0-9_]+$/")
+                    input.form-control(type='text', placeholder='username' name='username', autocomplete="off", id='username', ng-model='user.username', required='required', ng-minlength='5', ng-maxlength='20', ng-keypress='', unique-username='', ng-pattern="/^[A-z0-9_]+$/", ng-disabled='user.isGithubCool')
                   .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.username.$error.pattern")
                     alert(type='danger')
                       span.ion-close-circled
@@ -53,6 +53,10 @@ block content
                     alert(type='danger')
                       span.ion-close-circled
                       | That username is already in use.
+                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="user.isGithubCool")
+                    alert(type='info')
+                      span.ion-close-circled
+                      | You are GithubCool! Your username cannot be changed.
 
                 .form-group
                   label.col-sm-3.col-sm-offset-2.control-label(for='email') Email *
