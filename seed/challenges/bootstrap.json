@@ -12,7 +12,7 @@
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
         "With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.",
         "You can add Bootstrap to any app just by including it with <code>&#60;link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/&#62;</code> at the top of your HTML. But we've gone ahead and automatically added it to your Cat Photo App for you.",
-        "To get started, we should nest all of our HTML in a <code>div</code> element with the class \"fluid-container\"."
+        "To get started, we should nest all of our HTML in a <code>div</code> element with the class \"container-fluid\"."
       ],
       "tests": [
         "assert($('div').hasClass('container-fluid'), 'Your <code>div</code> element should have the class \"row\"')",
