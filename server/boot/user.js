@@ -214,19 +214,7 @@ module.exports = function(app) {
               bio: user.bio,
               picture: user.picture,
               progressTimestamps: user.progressTimestamps,
-              website1Link: user.website1Link,
-              website1Title: user.website1Title,
-              website1Image: user.website1Image,
-              website2Link: user.website2Link,
-              website2Title: user.website2Title,
-              website2Image: user.website2Image,
-              website3Link: user.website3Link,
-              website3Title: user.website3Title,
-              website3Image: user.website3Image,
               challenges: challenges,
-              bonfires: user.completedChallenges.filter(function(challenge) {
-                return challenge.challengeType === 5;
-              }),
               calender: data,
               moment: moment,
               longestStreak: user.longestStreak +
