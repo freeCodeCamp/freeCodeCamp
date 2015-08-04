@@ -161,9 +161,9 @@ module.exports = function(User) {
     if (!username) {
       // Zalgo!!
       return nextTick(() => {
-        cb(
-          new TypeError('FCC: username should be a string but got %s', username)
-        );
+        cb(new TypeError(
+            `username should be a string but got ${ username }`
+        ));
       });
     }
     User.findOne({ where: { username } }, (err, user) => {
@@ -171,7 +171,7 @@ module.exports = function(User) {
         return cb(err);
       }
       if (!user || user.username !== username) {
-        return cb(new Error('FCC: no user found for %s', username));
+        return cb(new Error(`no user found for ${ username }`));
       }
       const aboutUser = getAboutProfile(user);
       return cb(null, aboutUser);
