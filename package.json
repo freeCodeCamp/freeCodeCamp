@@ -66,7 +66,7 @@
     "lodash": "^3.9.3",
     "loopback": "https://github.com/FreeCodeCamp/loopback.git#fix/no-password",
     "loopback-boot": "^2.8.0",
-    "loopback-component-passport": "1.4.0",
+    "loopback-component-passport": "^1.5.0",
     "loopback-connector-mongodb": "^1.10.0",
     "lusca": "~1.0.2",
     "method-override": "~2.3.0",
