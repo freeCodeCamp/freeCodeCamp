@@ -259,7 +259,7 @@
       "challengeSeed": [
         "var firstName = \"Madeline\";",
         "",
-        "var thirdToLastLetterOfFirstName = firstName[firstName.length - 2];",
+        "var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];",
         "",
         "var lastName = \"Chen\";",
         "",
@@ -725,9 +725,9 @@
         "",
         "Now that we have an objects we need to know how to add and remove properties from it",
         "We add properties to objects like this",
-        "<code>myObject['myProperty'] = \"myValue\";</code>",
+        "<code>myObject.myProperty = \"myValue\";</code>",
         "They can also be deleted like this",
-        "<code>delete(myObject[\"myProperty\"]);</code>",
+        "<code>delete(myObject.myProperty);</code>",
         "Let's add the property bark",
         ""
       ],
