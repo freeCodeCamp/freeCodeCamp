@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "imageLink": "http://rs611.pbsrc.com/albums/tt194/allypopper423/Funny-Cat-Green-Avacado.jpg~c200",
+    "imageLink": "https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",
     "codeNames": [
       "Juggernaut",
       "Mrs. Wallace",
@@ -10,7 +10,7 @@
   },
   {
     "id": 1,
-    "imageLink": "http://cdn.grumpycats.com/wp-content/uploads/2012/09/GC-Gravatar-copy.png",
+    "imageLink": "https://s3.amazonaws.com/freecodecamp/grumpy-cat.jpg",
     "codeNames": [
       "Oscar",
       "Scrooge",
@@ -19,7 +19,7 @@
   },
   {
     "id": 2,
-    "imageLink": "http://www.kittenspet.com/wp-content/uploads/2012/08/cat_with_funny_face_3-200x200.jpg",
+    "imageLink": "https://s3.amazonaws.com/freecodecamp/mischievous-cat.jpg",
     "codeNames": [
       "The Doctor",
       "Loki",
