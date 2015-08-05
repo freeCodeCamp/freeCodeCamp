@@ -209,6 +209,9 @@ module.exports = function(app) {
         progressTimestamps.forEach(function(timeStamp) {
           data[(timeStamp / 1000)] = 1;
         });
+        var challenges = user.completedChallenges.filter(function( obj ) {
+          return obj.challengeType === 3 || obj.challengeType === 4;
+        });
 
         user.currentStreak = user.currentStreak || 1;
         user.longestStreak = user.longestStreak || 1;
@@ -229,6 +232,7 @@ module.exports = function(app) {
           picture: user.picture,
           progressTimestamps: user.progressTimestamps,
           calender: data,
+          challenges: challenges,
           moment: moment,
           longestStreak: user.longestStreak +
             (user.longestStreak === 1 ? ' day' : ' days'),
