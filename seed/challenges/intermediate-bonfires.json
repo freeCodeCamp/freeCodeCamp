@@ -356,7 +356,7 @@
         "  return arr1;",
         "}",
         "",
-        "unite([1, 2, 3], [5, 2, 1, 4], [2, 1]);"
+        "unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
       ],
       "tests": [
         "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
