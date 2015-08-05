@@ -38,13 +38,13 @@ function createConnection(URI) {
 }
 
 function createQuery(db, collection, options, batchSize) {
-  return Rx.Observable.create(function (observer) {
+  return Rx.Observable.create(function(observer) {
     var cursor = db.collection(collection).find({}, options);
     cursor.batchSize(batchSize || 20);
     // Cursor.each will yield all doc from a batch in the same tick,
     // or schedule getting next batch on nextTick
     debug('opening cursor for %s', collection);
-    cursor.each(function (err, doc) {
+    cursor.each(function(err, doc) {
       if (err) {
         return observer.onError(err);
       }
@@ -55,7 +55,7 @@ function createQuery(db, collection, options, batchSize) {
       observer.onNext(doc);
     });
 
-    return Rx.Disposable.create(function () {
+    return Rx.Disposable.create(function() {
       debug('closing cursor for %s', collection);
       cursor.close();
     });
@@ -161,33 +161,15 @@ var storyCount = dbObservable
   })
   .count();
 
-var commentCount = dbObservable
-  .flatMap(function(db) {
-    return createQuery(db, 'comments', {});
-  })
-  .bufferWithCount(20)
-  .withLatestFrom(dbObservable, function(comments, db) {
-    return {
-      comments: comments,
-      db: db
-    };
-  })
-  .flatMap(function(dats) {
-    return insertMany(dats.db, 'comment', dats.comments, { w: 1 });
-  })
-  .count();
-
 Rx.Observable.combineLatest(
   userIdentityCount,
   userSavesCount,
   storyCount,
-  commentCount,
-  function(userIdentCount, userCount, storyCount, commentCount) {
+  function(userIdentCount, userCount, storyCount) {
     return {
       userIdentCount: userIdentCount * 20,
       userCount: userCount * 20,
-      storyCount: storyCount * 20,
-      commentCount: commentCount * 20
+      storyCount: storyCount * 20
     };
   })
   .subscribe(
