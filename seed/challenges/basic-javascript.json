@@ -601,7 +601,7 @@
       ],
       "challengeSeed": [
         "var myArray = ['John', 23, ['dog', 3]];",
-        "var removed = myArray;//This should be ['John'] and myArray should now be ['John', 23]",
+        "var removed = myArray;//This should be ['John'] and myArray should now be [23, ['dog', 3]]",
         "",
         "",
         "(function(y, z){return('myArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z));})(myArray, removed);"
@@ -752,7 +752,7 @@
         "   \"friends\": []",
         "};",
         "",
-        "//Let's add the property age to myDog",
+        "//Let's add the property bark to myDog",
         "",
         "",
         "//Now delete the property tails",
