@@ -1027,7 +1027,7 @@
       ],
       "tests":[
         "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
-        "assert(editorValue.match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\d+/gi to find the numbers in the testString');"
+        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\d+/gi to find the numbers in the testString');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1058,7 +1058,7 @@
       ],
       "tests":[
         "assert(test === 7, 'Your RegEx should have found seven spaces in the testString');",
-        "assert(editorValue.match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\s+/gi to find the spaces in the testString');"
+        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\s+/gi to find the spaces in the testString');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1087,7 +1087,7 @@
       ],
       "tests":[
         "assert(test === 36, 'Your RegEx should have found seven spaces in the testString');",
-        "assert(editorValue.match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression /\\S+/gi to find the spaces in the testString');"
+        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression /\\S+/gi to find the spaces in the testString');"
       ],
       "challengeSeed":[
         "var test = (function(){",
