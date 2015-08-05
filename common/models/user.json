@@ -27,6 +27,10 @@
       "type": "boolean",
       "default": false
     },
+    "isMigrationGrandfathered": {
+      "type": "boolean",
+      "default": false
+    },
     "username": {
       "type": "string",
       "lowercase": true,
