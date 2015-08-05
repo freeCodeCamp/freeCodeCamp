@@ -92,6 +92,8 @@ var users = dbObservable
     user.username = 'fcc' + uuid.v4().slice(0, 8);
     if (user.github) {
       user.isGithubCool = true;
+    } else {
+      user.isMigrationGrandfathered = true;
     }
     return user;
   })

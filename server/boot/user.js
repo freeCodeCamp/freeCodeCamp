@@ -122,113 +122,123 @@ module.exports = function(app) {
   */
 
   function returnUser(req, res, next) {
+    const username = req.params.username.toLowerCase();
+    const { path } = req;
     User.findOne(
-      { where: { 'username': req.params.username.toLowerCase() } },
+      { where: { username } },
       function(err, user) {
         if (err) {
           return next(err);
         }
-        if (user) {
-          user.progressTimestamps =
-            user.progressTimestamps.sort(function(a, b) {
-              return a - b;
-            });
-
-          var timeObject = Object.create(null);
-          R.forEach(function(time) {
-            timeObject[moment(time).format('YYYY-MM-DD')] = time;
-          }, user.progressTimestamps);
-
-          var tmpLongest = 1;
-          var timeKeys = R.keys(timeObject);
-
-          user.longestStreak = 0;
-          for (var i = 1; i <= timeKeys.length; i++) {
-            if (moment(timeKeys[i - 1]).add(1, 'd').toString()
-              === moment(timeKeys[i]).toString()) {
-              tmpLongest++;
-              if (tmpLongest > user.longestStreak) {
-                user.longestStreak = tmpLongest;
-              }
-            } else {
-              tmpLongest = 1;
-            }
-          }
-
-          timeKeys = timeKeys.reverse();
-          tmpLongest = 1;
-
-          user.currentStreak = 1;
-          var today = moment(Date.now()).format('YYYY-MM-DD');
-
-          const yesterday = moment(today).subtract(1, 'd').toString();
-          const yesteryesterday = moment(today).subtract(2, 'd').toString();
-
-          if (
-            moment(today).toString() === moment(timeKeys[0]).toString() ||
-            yesterday === moment(timeKeys[0]).toString() ||
-            yesteryesterday === moment(timeKeys[0]).toString()
-          ) {
-            for (var _i = 1; _i <= timeKeys.length; _i++) {
-
-              if (
-                moment(timeKeys[_i - 1]).subtract(1, 'd').toString() ===
-                  moment(timeKeys[_i]).toString()
-              ) {
-
-                tmpLongest++;
-
-                if (tmpLongest > user.currentStreak) {
-                  user.currentStreak = tmpLongest;
-                }
-              } else {
-                break;
-              }
-            }
-          } else {
-            user.currentStreak = 1;
-          }
-
-            var data = {};
-            var progressTimestamps = user.progressTimestamps;
-            progressTimestamps.forEach(function(timeStamp) {
-              data[(timeStamp / 1000)] = 1;
-            });
-
-            user.currentStreak = user.currentStreak || 1;
-            user.longestStreak = user.longestStreak || 1;
-            var challenges = user.completedChallenges.filter(function( obj ) {
-              return obj.challengeType === 3 || obj.challengeType === 4;
-            });
-
-            res.render('account/show', {
-              title: 'Camper ' + user.username + '\'s portfolio',
-              username: user.username,
-              name: user.name,
-              location: user.location,
-              githubProfile: user.githubProfile,
-              linkedinProfile: user.linkedinProfile,
-              codepenProfile: user.codepenProfile,
-              facebookProfile: user.facebookProfile,
-              twitterHandle: user.twitterHandle,
-              bio: user.bio,
-              picture: user.picture,
-              progressTimestamps: user.progressTimestamps,
-              challenges: challenges,
-              calender: data,
-              moment: moment,
-              longestStreak: user.longestStreak +
-                (user.longestStreak === 1 ? ' day' : ' days'),
-              currentStreak: user.currentStreak +
-                (user.currentStreak === 1 ? ' day' : ' days')
-            });
-        } else {
+        if (!user) {
           req.flash('errors', {
-            msg: "404: We couldn't find a page with that url. " +
-              'Please double check the link.'
+            msg: `404: We couldn't find path ${ path }`
           });
           return res.redirect('/');
         }
+        if (!user.isGithubCool && !user.isMigrationGrandfathered) {
+          req.flash('errors', {
+            msg: `
+              user ${ username } has not completed account signup
+            `
+          });
+          return res.redirect('/');
+        }
+        user.progressTimestamps =
+          user.progressTimestamps.sort(function(a, b) {
+            return a - b;
+          });
+
+        var timeObject = Object.create(null);
+        R.forEach(function(time) {
+          timeObject[moment(time).format('YYYY-MM-DD')] = time;
+        }, user.progressTimestamps);
+
+        var tmpLongest = 1;
+        var timeKeys = R.keys(timeObject);
+
+        user.longestStreak = 0;
+        for (var i = 1; i <= timeKeys.length; i++) {
+          if (moment(timeKeys[i - 1]).add(1, 'd').toString()
+            === moment(timeKeys[i]).toString()) {
+            tmpLongest++;
+            if (tmpLongest > user.longestStreak) {
+              user.longestStreak = tmpLongest;
+            }
+          } else {
+            tmpLongest = 1;
+          }
+        }
+
+        timeKeys = timeKeys.reverse();
+        tmpLongest = 1;
+
+        user.currentStreak = 1;
+        var today = moment(Date.now()).format('YYYY-MM-DD');
+
+        const yesterday = moment(today).subtract(1, 'd').toString();
+        const yesteryesterday = moment(today).subtract(2, 'd').toString();
+
+        if (
+          moment(today).toString() === moment(timeKeys[0]).toString() ||
+          yesterday === moment(timeKeys[0]).toString() ||
+          yesteryesterday === moment(timeKeys[0]).toString()
+        ) {
+          for (var _i = 1; _i <= timeKeys.length; _i++) {
+
+            if (
+              moment(timeKeys[_i - 1]).subtract(1, 'd').toString() ===
+                moment(timeKeys[_i]).toString()
+            ) {
+
+              tmpLongest++;
+
+              if (tmpLongest > user.currentStreak) {
+                user.currentStreak = tmpLongest;
+              }
+            } else {
+              break;
+            }
+          }
+        } else {
+          user.currentStreak = 1;
+        }
+
+        var data = {};
+        var progressTimestamps = user.progressTimestamps;
+        progressTimestamps.forEach(function(timeStamp) {
+          data[(timeStamp / 1000)] = 1;
+        });
+        var challenges = user.completedChallenges.filter(function( obj ) {
+          return obj.challengeType === 3 || obj.challengeType === 4;
+        });
+
+        user.currentStreak = user.currentStreak || 1;
+        user.longestStreak = user.longestStreak || 1;
+
+        res.render('account/show', {
+          title: 'Camper ' + user.username + '\'s portfolio',
+          username: user.username,
+          name: user.name,
+          isMigrationGrandfathered: user.isMigrationGrandfathered,
+          isGithubCool: user.isGithubCool,
+          location: user.location,
+          githubProfile: user.githubProfile,
+          linkedinProfile: user.linkedinProfile,
+          codepenProfile: user.codepenProfile,
+          facebookProfile: user.facebookProfile,
+          twitterHandle: user.twitterHandle,
+          bio: user.bio,
+          picture: user.picture,
+          progressTimestamps: user.progressTimestamps,
+          calender: data,
+          challenges: challenges,
+          moment: moment,
+          longestStreak: user.longestStreak +
+            (user.longestStreak === 1 ? ' day' : ' days'),
+          currentStreak: user.currentStreak +
+            (user.currentStreak === 1 ? ' day' : ' days')
+        });
       }
     );
   }
