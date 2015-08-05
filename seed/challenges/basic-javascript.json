@@ -259,7 +259,7 @@
       "challengeSeed": [
         "var firstName = \"Madeline\";",
         "",
-        "var thirdToLastLetterOfFirstName = firstName[firstName.length - 2];",
+        "var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];",
         "",
         "var lastName = \"Chen\";",
         "",
