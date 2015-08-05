@@ -423,7 +423,7 @@
       "description": [
         "",
         "In JavaScript we can store lists or collections of data in what are called arrays",
-        "Arrays are distinguished by the <code> [ </code> and <code> ] </code> around the data. Each piece of data is separated be a <code> , </code>",
+        "Arrays are distinguished by the <code> [ </code> and <code> ] </code> around the data. Each piece of data is separated by a <code> , </code>",
         "Now let's create a new array called <code> myArray </code> with a <code> string </code> and a <code> number </code> with a <code> , </code> separating each one",
         "Refer to the example if you get stuck",
         ""
