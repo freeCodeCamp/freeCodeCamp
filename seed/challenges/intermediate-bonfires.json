@@ -675,7 +675,8 @@
       "tests": [
         "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
         "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
-        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');"
+        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');",
+        "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'should work with actual objects');"
       ],
       "MDNlinks": [
         "Array.isArray()"
