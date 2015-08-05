@@ -86,13 +86,13 @@ var users = dbObservable
   .map(function(user) {
     // flatten user
     assign(user, user.portfolio, user.profile);
-    return user;
-  })
-  .map(function(user) {
     if (user.username) {
       return user;
     }
     user.username = 'fcc' + uuid.v4().slice(0, 8);
+    if (user.github) {
+      user.isGithubCool = true;
+    }
     return user;
   })
   .shareReplay();
@@ -122,7 +122,7 @@ var userIdentityCount = users
         return {
           provider: provider,
           externalId: user[provider],
-          userId: user.id
+          userId: user._id || user.id
         };
       })
       .filter(function(ident) {
