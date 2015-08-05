@@ -1,6 +1,6 @@
 {
-  "name": "Object Oriented Programming",
-  "order" : 0.008,
+  "name": "Object Oriented and Functional Programming",
+  "order" : 0.009,
   "challenges": [
     {
       "id": "bd7153d8c44eeddfaeb5bd0f",
@@ -73,6 +73,34 @@
         "Complete \"Implicit This\"",
         "Note that you can skip the last challenge.",
         "Once you've completed these steps, move on to our next challenge."
+      ],
+      "challengeType": 2,
+      "tests": [],
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "bd7129d8c441eddfbeb5bddf",
+      "name": "Waypoint: Practice Functional Programming",
+      "dashedName": "waypoint-practice-functional-programming",
+      "difficulty": 0.01,
+      "challengeSeed": ["129169463"],
+      "description": [
+        "Functional programming holds the key to unlocking JavaScript's powerful asynchronous features.",
+        "Jafar Husain's interactive Functional Programming course will familiarize you with the various ways you can recombine these functions.",
+        "Functional programming in JavaScript involves using five key functions: \"map\", \"reduce\", \"filter\", \"concatAll\", and \"zip\".",
+        "Click here to go to the challenge: <a href='http://jhusain.github.io/learnrx/' target='_blank'>http://jhusain.github.io/learnrx/</a>.",
+        "You only need to complete the first 27 steps of this tutorial.",
+        "This challenge will take several hours, but don't worry. Jafar's website will save your progress (using your browser's local storage) so you don't need to finish it in one sitting.",
+        "If you've spent several minutes on one of these challenges, and still can't figure out its correct answer, you can click \"show answer\", then click \"run\" to advance to the next challenge. Be sure to read the correct answer and make sure you understand it before moving on."
       ],
       "challengeType": 2,
       "tests": [],

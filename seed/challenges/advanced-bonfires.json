@@ -1,55 +1,46 @@
 {
   "name": "Advanced Algorithm Scripting",
-  "order": 0.011,
+  "order": 0.010,
   "challenges": [
     {
-      "id": "aff0395860f5d3034dc0bfc9",
-      "name": "Bonfire: Validate US Telephone Numbers",
-      "dashedName": "bonfire-validate-us-telephone-numbers",
-      "difficulty": "4.01",
+      "id": "a2f1d72d9b908d0bd72bb9f6",
+      "name": "Bonfire: Make a Person",
+      "dashedName": "bonfire-make-a-person",
+      "difficulty": "3.01",
       "description": [
-        "Return true if the passed string is a valid US phone number",
-        "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
-        "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
-        "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false.",
+        "Fill in the object constructor with the methods specified in the tests.",
+        "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), and setFullName(firstAndLast).",
+        "All functions that take an argument have an arity of 1, and the argument will be a string.",
+        "These methods must be the only available means for interacting with the object.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "tests": [
-        "expect(telephoneCheck(\"555-555-5555\")).to.be.a(\"boolean\");",
-        "assert.deepEqual(telephoneCheck(\"1 555-555-5555\"), true);",
-        "assert.deepEqual(telephoneCheck(\"1 (555) 555-5555\"), true);",
-        "assert.deepEqual(telephoneCheck(\"5555555555\"), true);",
-        "assert.deepEqual(telephoneCheck(\"555-555-5555\"), true);",
-        "assert.deepEqual(telephoneCheck(\"(555)555-5555\"), true);",
-        "assert.deepEqual(telephoneCheck(\"1(555)555-5555\"), true);",
-        "assert.deepEqual(telephoneCheck(\"1 555 555 5555\"), true);",
-        "assert.deepEqual(telephoneCheck(\"555-555-5555\"), true);",
-        "assert.deepEqual(telephoneCheck(\"1 456 789 4444\"), true);",
-        "assert.deepEqual(telephoneCheck(\"123**&!!asdf#\"), false);",
-        "assert.deepEqual(telephoneCheck(\"55555555\"), false);",
-        "assert.deepEqual(telephoneCheck(\"(6505552368)\"), false);",
-        "assert.deepEqual(telephoneCheck(\"2 (757) 622-7382\"), false);",
-        "assert.deepEqual(telephoneCheck(\"0 (757) 622-7382\"), false);",
-        "assert.deepEqual(telephoneCheck(\"-1 (757) 622-7382\"), false);",
-        "assert.deepEqual(telephoneCheck(\"2 757 622-7382\"), false);",
-        "assert.deepEqual(telephoneCheck(\"10 (757) 622-7382\"), false);",
-        "assert.deepEqual(telephoneCheck(\"27576227382\"), false);",
-        "assert.deepEqual(telephoneCheck(\"(275)76227382\"), false);",
-        "assert.deepEqual(telephoneCheck(\"2(757)6227382\"), false);",
-        "assert.deepEqual(telephoneCheck(\"2(757)622-7382\"), false);"
-      ],
       "challengeSeed": [
-        "function telephoneCheck(str) {",
-        "  // Good luck!",
-        "  return true;",
-        "}",
+        "var Person = function(firstAndLast) {",
+        "    return firstAndLast;",
+        "};",
         "",
-        "",
-        "",
-        "telephoneCheck(\"555-555-5555\");"
+        "var bob = new Person('Bob Ross');",
+        "bob.getFullName();"
+      ],
+      "tests": [
+        "expect(Object.keys(bob).length).to.eql(6);",
+        "expect(bob instanceof Person).to.be.true;",
+        "expect(bob.firstName).to.be.undefined();",
+        "expect(bob.lastName).to.be.undefined();",
+        "expect(bob.getFirstName()).to.eql('Bob');",
+        "expect(bob.getLastName()).to.eql('Ross');",
+        "expect(bob.getFullName()).to.eql('Bob Ross');",
+        "bob.setFirstName('Happy');",
+        "expect(bob.getFirstName()).to.eql('Happy');",
+        "bob.setLastName('Trees');",
+        "expect(bob.getLastName()).to.eql('Trees');",
+        "bob.setFullName('George Carlin');",
+        "expect(bob.getFullName()).to.eql('George Carlin');",
+        "bob.setFullName('Bob Ross');"
       ],
       "MDNlinks": [
-        "RegExp"
+        "Closures",
+        "Details of the Object Model"
       ],
       "challengeType": 5,
       "nameCn": "",
@@ -64,31 +55,33 @@
       "descriptionPt": []
     },
     {
-      "id": "a3f503de51cf954ede28891d",
-      "name": "Bonfire: Symmetric Difference",
-      "dashedName": "bonfire-symmetric-difference",
-      "difficulty": "4.02",
+      "id": "af4afb223120f7348cdfc9fd",
+      "name": "Bonfire: Map the Debris",
+      "dashedName": "bonfire-map-the-debris",
+      "difficulty": "3.02",
       "description": [
-        "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
-        "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both.",
+        "Return a new array that transforms the element's average altitude into their orbital periods.",
+        "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
+        "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on wikipedia</a>.",
+        "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
+        "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function sym(args) {",
-        "  return arguments;",
+        "function orbitalPeriod(arr) {",
+        "  var GM = 398600.4418;",
+        "  var earthRadius = 6367.4447;",
+        "  return arr;",
         "}",
         "",
-        "sym([1, 2, 3], [5, 2, 1, 4]);"
+        "orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);"
       ],
       "tests": [
-        "expect(sym([1, 2, 3], [5, 2, 1, 4])).to.equal([3, 5, 4]);",
-        "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
-        "assert.deepEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');",
-        "assert.deepEqual(sym([1, 1]), [1], 'should return an array of unique values');"
+        "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
+        "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
       ],
       "MDNlinks": [
-        "Array.reduce()",
-        "Symmetric Difference"
+        "Math.pow()"
       ],
       "challengeType": 5,
       "nameCn": "",
@@ -103,190 +96,32 @@
       "descriptionPt": []
     },
     {
-      "id": "aa2e6f85cab2ab736c9a9b24",
-      "name": "Bonfire: Exact Change",
-      "dashedName": "bonfire-exact-change",
-      "difficulty": "4.03",
+      "id": "a3f503de51cfab748ff001aa",
+      "name": "Bonfire: Pairwise",
+      "dashedName": "bonfire-pairwise",
+      "difficulty": "3.03",
       "description": [
-        "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.",
-        "cid is a 2d array listing available currency.",
-        "Return the string \"Insufficient Funds\" if cash-in-drawer is less than the change due. Return the string \"Closed\" if cash-in-drawer is equal to the change due.",
-        "Otherwise, return change in coin and bills, sorted in highest to lowest order.",
+        "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
+        "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7.",
+        "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function drawer(price, cash, cid) {",
-        "  var change;",
-        "  // Here is your change, ma'am.",
-        "  return change;",
+        "function pairwise(arr, arg) {",
+        "  return arg;",
         "}",
         "",
-        "// Example cash-in-drawer array:",
-        "// [['PENNY', 1.01],",
-        "// ['NICKEL', 2.05],",
-        "// ['DIME', 3.10],",
-        "// ['QUARTER', 4.25],",
-        "// ['ONE', 90.00],",
-        "// ['FIVE', 55.00],",
-        "// ['TEN', 20.00],",
-        "// ['TWENTY', 60.00],",
-        "// ['ONE HUNDRED', 100.00]]",
-        "",
-        "drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]);"
+        "pairwise([1,4,2,3,0,5], 7);"
       ],
       "tests": [
-        "expect(drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]])).to.be.a('array');",
-        "expect(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]])).to.be.a('string');",
-        "expect(drawer(19.50, 20.00, [['PENNY', 0.50], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]])).to.be.a('string');",
-        "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['QUARTER', 0.50]], 'return correct change');",
-        "assert.deepEqual(drawer(3.26, 100.00, [['PENNY', 1.01], ['NICKEL', 2.05], ['DIME', 3.10], ['QUARTER', 4.25], ['ONE', 90.00], ['FIVE', 55.00], ['TEN', 20.00], ['TWENTY', 60.00], ['ONE HUNDRED', 100.00]]), [['TWENTY', 60.00], ['TEN', 20.00], ['FIVE', 15], ['ONE', 1], ['QUARTER', 0.50], ['DIME', 0.20], ['PENNY', 0.04] ], 'return correct change with multiple coins and bills');",
-        "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.01], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), 'Insufficient Funds', 'insufficient funds');",
-        "assert.deepEqual(drawer(19.50, 20.00, [['PENNY', 0.50], ['NICKEL', 0], ['DIME', 0], ['QUARTER', 0], ['ONE', 0], ['FIVE', 0], ['TEN', 0], ['TWENTY', 0], ['ONE HUNDRED', 0]]), \"Closed\", 'cash-in-drawer equals change');"
+        "expect(pairwise([1, 4, 2, 3, 0, 5], 7)).to.equal(11);",
+        "expect(pairwise([1, 3, 2, 4], 4)).to.equal(1);",
+        "expect(pairwise([1,1,1], 2)).to.equal(1);",
+        "expect(pairwise([0, 0, 0, 0, 1, 1], 1)).to.equal(10);",
+        "expect(pairwise([], 100)).to.equal(0);"
       ],
       "MDNlinks": [
-        "Global Object"
-      ],
-      "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "a56138aff60341a09ed6c480",
-      "name": "Bonfire: Inventory Update",
-      "dashedName": "bonfire-inventory-update",
-      "difficulty": "4.04",
-      "description": [
-        "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
-      ],
-      "challengeSeed": [
-        "function inventory(arr1, arr2) {",
-        "    // All inventory must be accounted for or you're fired!",
-        "    return arr1;",
-        "}",
-        "",
-        "// Example inventory lists",
-        "var curInv = [",
-        "    [21, 'Bowling Ball'],",
-        "    [2, 'Dirty Sock'],",
-        "    [1, 'Hair Pin'],",
-        "    [5, 'Microphone']",
-        "];",
-        "",
-        "var newInv = [",
-        "    [2, 'Hair Pin'],",
-        "    [3, 'Half-Eaten Apple'],",
-        "    [67, 'Bowling Ball'],",
-        "    [7, 'Toothpaste']",
-        "];",
-        "",
-        "inventory(curInv, newInv);"
-      ],
-      "tests": [
-        "expect(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']])).to.be.a('array');",
-        "assert.equal(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]).length, 6);",
-        "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[88, 'Bowling Ball'], [2, 'Dirty Sock'], [3, 'Hair Pin'], [3, 'Half-Eaten Apple'], [5, 'Microphone'], [7, 'Toothpaste']]);",
-        "assert.deepEqual(inventory([[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']], []), [[21, 'Bowling Ball'], [2, 'Dirty Sock'], [1, 'Hair Pin'], [5, 'Microphone']]);",
-        "assert.deepEqual(inventory([], [[2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [67, 'Bowling Ball'], [7, 'Toothpaste']]), [[67, 'Bowling Ball'], [2, 'Hair Pin'], [3, 'Half-Eaten Apple'], [7, 'Toothpaste']]);",
-        "assert.deepEqual(inventory([[0, 'Bowling Ball'], [0, 'Dirty Sock'], [0, 'Hair Pin'], [0, 'Microphone']], [[1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [1, 'Bowling Ball'], [1, 'Toothpaste']]), [[1, 'Bowling Ball'], [0, 'Dirty Sock'], [1, 'Hair Pin'], [1, 'Half-Eaten Apple'], [0, 'Microphone'], [1, 'Toothpaste']]);"
-      ],
-      "MDNlinks": [
-        "Global Array Object"
-      ],
-      "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "a7bf700cd123b9a54eef01d5",
-      "name": "Bonfire: No repeats please",
-      "dashedName": "bonfire-no-repeats-please",
-      "difficulty": "4.05",
-      "description": [
-        "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
-        "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
-      ],
-      "challengeSeed": [
-        "function permAlone(str) {",
-        "  return str;",
-        "}",
-        "",
-        "permAlone('aab');"
-      ],
-      "tests": [
-        "expect(permAlone('aab')).to.be.a('number');",
-        "expect(permAlone('aab')).to.equal(2);",
-        "expect(permAlone('aaa')).to.equal(0);",
-        "expect(permAlone('aabb')).to.equal(8);",
-        "expect(permAlone('abcdefa')).to.equal(3600);",
-        "expect(permAlone('abfdefa')).to.equal(2640);",
-        "expect(permAlone('zzzzzzzz')).to.equal(0);"
-      ],
-      "MDNlinks": [
-        "Permutations",
-        "RegExp"
-      ],
-      "challengeType": 5,
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
-      "id": "a19f0fbe1872186acd434d5a",
-      "name": "Bonfire: Friendly Date Ranges",
-      "dashedName": "bonfire-friendly-date-ranges",
-      "difficulty": "4.06",
-      "description": [
-        "Implement a way of converting two dates into a more friendly date range that could be presented to a user.",
-        "It must not show any redundant information in the date range.",
-        "For example, if the year and month are the same then only the day range should be displayed.",
-        "Secondly, if the starting year is the current year, and the ending year can be inferred by the reader, the year should be omitted.",
-        "Input date is formatted as YYYY-MM-DD",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
-      ],
-      "challengeSeed": [
-        "function friendly(str) {",
-        "  return str;",
-        "}",
-        "",
-        "friendly(['2015-07-01', '2015-07-04']);"
-      ],
-      "tests": [
-        "assert.deepEqual(friendly(['2015-07-01', '2015-07-04']), ['July 1st','4th'], 'ending month should be omitted since it is already mentioned');",
-        "assert.deepEqual(friendly(['2015-12-01', '2016-02-03']), ['December 1st','February 3rd'], 'two months apart can be inferred if it is the next year');",
-        "assert.deepEqual(friendly(['2015-12-01', '2017-02-03']), ['December 1st, 2015','February 3rd, 2017']);",
-        "assert.deepEqual(friendly(['2016-03-01', '2016-05-05']), ['March 1st','May 5th'], 'one month apart can be inferred it is the same year');",
-        "assert.deepEqual(friendly(['2017-01-01', '2017-01-01']), ['January 1st, 2017'], 'since we do not duplicate only return once');",
-        "assert.deepEqual(friendly(['2022-09-05', '2023-09-04']), ['September 5th, 2022','September 4th, 2023']);"
-      ],
-      "MDNlinks": [
-        "String.split()",
-        "String.substr()",
-        "parseInt()"
+        "Array.reduce()"
       ],
       "challengeType": 5,
       "nameCn": "",
