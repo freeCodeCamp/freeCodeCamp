@@ -278,34 +278,11 @@ module.exports = function(app) {
               return res.redirect('/account');
             }
             var body = req.body || {};
-            user.email = body.email.trim() || '';
-            user.name = body.name.trim() || '';
-            user.username = body.username.trim() || '';
-            user.location = body.location.trim() || '';
-
-            user.githubProfile = body.githubProfile.trim() || '';
             user.facebookProfile = body.facebookProfile.trim() || '';
             user.linkedinProfile = body.linkedinProfile.trim() || '';
-
             user.codepenProfile = body.codepenProfile.trim() || '';
             user.twitterHandle = body.twitterHandle.trim() || '';
             user.bio = body.bio.trim() || '';
-
-            user.picture = body.picture.trim() ||
-              'https://s3.amazonaws.com/freecodecamp/' +
-              'camper-image-placeholder.png';
-            user.website1Title = body.website1Title.trim() || '';
-            user.website1Link = body.website1Link.trim() || '';
-            user.website1Image = body.website1Image.trim() || '';
-
-            user.website2Title = body.website2Title.trim() || '';
-            user.website2Link = body.website2Link.trim() || '';
-            user.website2Image = body.website2Image.trim() || '';
-
-            user.website3Title = body.website3Title.trim() || '';
-            user.website3Link = body.website3Link.trim() || '';
-            user.website3Image = body.website3Image.trim() || '';
-
 
             user.save(function(err) {
               if (err) {
