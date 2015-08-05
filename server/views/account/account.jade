@@ -2,108 +2,27 @@ extends ../layout
 block content
     script.
         var challengeName = 'Account View'
-    .panel.panel-info.min-height-1000(ng-controller="profileValidationController")
+    .panel.panel-info(ng-controller="profileValidationController")
         .panel-heading.text-center Update your portfolio here:
         .panel-body
-          .container.text-center
+            if (!user.github)
+                .col-xs-12
+                    a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
+                        i.fa.fa-github
+                        | Link GitHub with my account
+            .col-xs-12
               form.form-horizontal(action='/account/profile', method='POST', novalidate='novalidate', name='profileForm' ng-show="asyncComplete")
                 input(type='hidden', name='_csrf', value=_csrf)
-
-                .col-sm-4.col-sm-offset-5
-                  h2 Bio
-
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='name') Name *
-                  .col-sm-4
-                      input.form-control(type='text', placeholder='Name', name='name', autocomplete="off", ng-model='user.name', ng-minlength='3', ng-maxlength='50', required='required', id='name')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.name.$invalid && profileForm.name.$error.required")
-                      alert(type='danger')
-                        span.ion-close-circled(id='#name-error')
-                        |  Your name is required.
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show='profileForm.name.$error.minlength && !profileForm.name.$pristine')
-                      alert(type='danger')
-                        span.ion-close-circled
-                        |  Your name must be at least 3 characters.
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show='profileForm.name.$error.maxlength && !profileForm.name.$pristine')
-                      alert(type='danger')
-                        span.ion-close-circled
-                        |  Your name must be fewer than 50 characters.
-
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='username') Username (path to public profile) *
-                  .col-sm-4
-                    input.form-control(type='text', placeholder='username' name='username', autocomplete="off", id='username', ng-model='user.username', required='required', ng-minlength='5', ng-maxlength='20', ng-keypress='', unique-username='', ng-pattern="/^[A-z0-9_]+$/")
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.username.$error.pattern")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | Your username should only contain letters, numbers and underscores (az10_).
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.username.$error.required")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | Your username is required.
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.username.$error.minlength && !profileForm.username.$pristine")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | Your username must be at least 5 characters.
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.username.$error.maxlength && !profileForm.username.$pristine")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | Your username must be fewer than 15 characters.
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.username.$error.unique && !profileForm.username.$pristine && $scope.storedUsername !== user.username")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | That username is already in use.
-
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Email *
-                  .col-sm-4
-                    input.form-control(type='email', name='email', id='email', autocomplete="off", ng-model='user.email', required='required', ng-keypress='', unique-email='')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.email.$error.required")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | Your email address is required.
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.$error.email && !profileForm.email.$pristine")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | Please enter a valid email format.
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.email.$error.unique && !profileForm.email.$pristine")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | That email is already in use.
-
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='location') Location
-                  .col-sm-4
-                    input.form-control(type='text', name='location', autocomplete="off", id='location', ng-model='user.location')
-
-                .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='email') Link to Profile Photo (1:1 ratio)
-                    .col-sm-4
-                        input.form-control(type='url', name='picture', id='picture', ng-model='user.picture', placeholder='http://www.example.com/image.jpg')
-                    .col-sm-4.col-sm-offset-5(ng-show="profileForm.picture.$error.url && !profileForm.picture.$pristine")
-                        alert(type='danger')
-                            span.ion-close-circled
-                            | Please enter a valid URL format (http://www.example.com/image.jpg).
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='bio') Bio (140 characters)
+                  label.col-sm-3.col-sm-offset-1.control-label(for='bio') Bio (140 characters)
                   .col-sm-4
                     input.form-control(type='text', name='bio', autocomplete="off", ng-model='user.bio', ng-maxlength='140', id='bio')
                   .col-sm-4.col-sm-offset-5(ng-cloak, ng-show='profileForm.bio.$error.maxlength && !profileForm.bio.$pristine')
                     alert(type='danger')
                       span.ion-close-circled
                       | Your bio must be fewer than 140 characters.
-
                 .form-group
-                  .col-sm-offset-5.col-sm-4
-                      button.btn.btn-primary.btn-block(type='submit', ng-disabled='profileForm.$invalid')
-                          span.ion-edit
-                          | Update my Bio
-
-                .col-sm-4.col-sm-offset-5
-                    h2 Social Profiles
-
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Twitter
+                  label.col-sm-3.col-sm-offset-1.control-label(for='email') Twitter
                   .col-sm-4
                     .input-group.twitter-input
                         span.input-group-addon @
@@ -116,17 +35,9 @@ block content
                     alert(type='danger')
                         span.ion-close-circled
                         |  Your name must be fewer than 15 characters.
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') GitHub
-                  .col-sm-4
-                    input.form-control(type='url', name='githubProfile', id='githubProfile', autocomplete="off", ng-model='user.githubProfile', placeholder='http://')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.githubProfile.$error.url && !profileForm.githubProfile.$pristine")
-                    alert(type='danger')
-                      span.ion-close-circled
-                      | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') CodePen
+                  label.col-sm-3.col-sm-offset-1.control-label(for='email') CodePen
                   .col-sm-4
                     input.form-control(type='url', name='codepenProfile', id='codepenProfile', autocomplete="off", ng-model='user.codepenProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.codepenProfile.$error.url && !profileForm.codepenProfile.$pristine")
@@ -135,7 +46,7 @@ block content
                       | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') LinkedIn
+                  label.col-sm-3.col-sm-offset-1.control-label(for='email') LinkedIn
                   .col-sm-4
                     input.form-control(type='url', name='linkedinProfile', id='linkedinProfile', autocomplete="off", ng-model='user.linkedinProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.linkedinProfile.$error.url && !profileForm.linkedinProfile.$pristine")
@@ -144,7 +55,7 @@ block content
                       | Please enter a valid URL format (http://www.example.com).
 
                 .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='email') Facebook
+                  label.col-sm-3.col-sm-offset-1.control-label(for='email') Facebook
                   .col-sm-4
                     input.form-control(type='url', name='facebookProfile', id='facebookProfile', autocomplete="off", ng-model='user.facebookProfile', placeholder='http://')
                   .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.facebookProfile.$error.url && !profileForm.facebookProfile.$pristine")
@@ -152,120 +63,14 @@ block content
                       span.ion-close-circled
                       | Please enter a valid URL format (http://www.example.com).
 
-                .form-group
-                  .col-sm-offset-5.col-sm-4
-                      button.btn.btn-primary.btn-block(type='submit', ng-disabled='profileForm.$invalid')
-                          span.ion-edit
-                          | Update my Social Links
-
-                .col-sm-4.col-sm-offset-5.negative-bottom
-                    h2 Portfolio
-
-                .col-sm-4.col-sm-offset-5.flat-top
-                    h3 First Portfolio Project
-
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='website1Title') Title
-                  .col-sm-4
-                    input.form-control(type='text', name='website1Title', id='website1Title', autocomplete="off", ng-model='user.website1Title', ng-maxlength='140')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.website1Title.$error.maxlength && !profileForm.website1Title.$pristine")
-                    alert(type='danger')
-                        span.ion-close-circled
-                        | Portfolio project title must be fewer than 140 characters.
-
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='website1Link') Link
-                  .col-sm-4
-                     input.form-control(type='url', name='website1Link', id='website1Link', autocomplete="off", ng-model='user.website1Link', placeholder='http://')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.website1Link.$error.url && !profileForm.website1Link.$pristine")
-                    alert(type='danger')
-                        span.ion-close-circled
-                        | Please enter a valid URL format (http://www.example.com).
-
-                .form-group
-                  label.col-sm-3.col-sm-offset-2.control-label(for='website1Image') Image Link (4:3 ratio)
-                  .col-sm-4
-                    input.form-control(type='url', name='website1Image', id='website1Image', autocomplete="off", ng-model='user.website1Image', placeholder='http://www.example.com/image.jpg')
-                  .col-sm-4.col-sm-offset-5(ng-show="profileForm.website1Image.$error.url && !profileForm.website1Image.$pristine")
-                      alert(type='danger')
-                          span.ion-close-circled
-                          | Please enter a valid URL format (http://www.example.com/image.jpg).
-
-                .col-sm-4.col-sm-offset-5.flat-top
-                    h3 Second Portfolio Project
-
-                .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website2Title') Title
-                    .col-sm-4
-                        input.form-control(type='text', name='website2Title', id='website2Title', autocomplete="off", ng-model='user.website2Title', ng-maxlength='140')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.website2Title.$error.maxlength && !profileForm.website2Title.$pristine")
-                    alert(type='danger')
-                        span.ion-close-circled
-                        | Portfolio project title must be fewer than 140 characters.
-
-                .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website2Link') Link
-                    .col-sm-4
-                        input.form-control(type='url', name='website2Link', id='website2Link', autocomplete="off", ng-model='user.website2Link', placeholder='http://')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.website2Link.$error.url && !profileForm.website2Link.$pristine")
-                    alert(type='danger')
-                        span.ion-close-circled
-                        | Please enter a valid URL format (http://www.example.com).
-                .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website2Image') Image Link (4:3 ratio)
-                    .col-sm-4
-                        input.form-control(type='url', name='website2Image', id='website2Image', autocomplete="off", ng-model='user.website2Image', placeholder='http://www.example.com/image.jpg')
-                    .col-sm-4.col-sm-offset-5(ng-show="profileForm.website2Image.$error.url && !profileForm.website2Image.$pristine")
-                        alert(type='danger')
-                            span.ion-close-circled
-                            | Please enter a valid URL format (http://www.example.com/image.jpg).
-
-                .col-sm-4.col-sm-offset-5.flat-top
-                    h3 Third Portfolio Project
-
-                .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website3Title') Title
-                    .col-sm-4
-                        input.form-control(type='text', name='website3Title', id='website3Title', autocomplete="off", ng-model='user.website3Title', ng-maxlength='140')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.website3Title.$error.maxlength && !profileForm.website3Title.$pristine")
-                    alert(type='danger')
-                        span.ion-close-circled
-                        | Portfolio project title must be fewer than 140 characters.
-
-                .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website3Link') Link
-                    .col-sm-4
-                        input.form-control(type='url', name='website3Link', id='website3Link', autocomplete="off", ng-model='user.website3Link', placeholder='http://')
-                  .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.website3Link.$error.url && !profileForm.website3Link.$pristine")
-                    alert(type='danger')
-                        span.ion-close-circled
-                        | Please enter a valid URL format (http://www.example.com).
-
-                .form-group
-                    label.col-sm-3.col-sm-offset-2.control-label(for='website3Image') Image Link (4:3 ratio)
-                    .col-sm-4
-                        input.form-control(type='url', name='website3Image', id='website3Image', autocomplete="off", ng-model='user.website3Image', placeholder='http://www.example.com/image.jpg', ng-pattern='/[\.](jpg|png|jpeg|gif)(\s+)?$/')
-                    .col-sm-4.col-sm-offset-5(ng-show="profileForm.website3Image.$error.url && !profileForm.website3Image.$pristine")
-                        alert(type='danger')
-                            span.ion-close-circled
-                            | Please enter a valid URL format (http://www.example.com/image.jpg).
-
-                .form-group
-                    .col-sm-offset-5.col-sm-4
-                        button.btn.btn-primary.btn-block(type='submit', ng-disabled='profileForm.$invalid')
-                            span.ion-edit
-                            | Update my Portfolio
-                        br
+                button.btn.btn-lg.btn-block.btn-primary.btn-link-social(type='submit', ng-disabled='profileForm.$invalid')
+                    span.ion-edit
+                    | Update my info
 
     .panel.panel-info
         .panel-heading.text-center Manage your account here:
         .panel-body
             if (!user.google || !user.facebook || !user.linkedin || !user.twitter)
-                if (!user.github)
-                    .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
-                            i.fa.fa-github
-                            | Link GitHub with my account
                 if (!user.twitter)
                     .col-xs-12
                         a.btn.btn-lg.btn-block.btn-twitter.btn-link-social.disabled(href='#')

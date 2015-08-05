@@ -12,7 +12,7 @@
         "Bootstrap will figure out how wide your screen is and respond by resizing your HTML elements - hence the name <code>Responsive Design</code>.",
         "With responsive design, there is no need to design a mobile version of your website. It will look good on devices with screens of any width.",
         "You can add Bootstrap to any app just by including it with <code>&#60;link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'/&#62;</code> at the top of your HTML. But we've gone ahead and automatically added it to your Cat Photo App for you.",
-        "To get started, we should nest all of our HTML in a <code>div</code> element with the class \"fluid-container\"."
+        "To get started, we should nest all of our HTML in a <code>div</code> element with the class \"container-fluid\"."
       ],
       "tests": [
         "assert($('div').hasClass('container-fluid'), 'Your <code>div</code> element should have the class \"row\"')",
@@ -1566,7 +1566,7 @@
       "difficulty": 2.18,
       "description": [
         "Now let's make sure all the content on your page is mobile-responsive.",
-        "Let's nest your <code>h3</code> element within a <code>div<code> element with the class \"containter-fluid\"."
+        "Let's nest your <code>h3</code> element within a <code>div<code> element with the class \"container-fluid\"."
       ],
       "tests": [
         "assert($('div').hasClass('container-fluid'), 'Your <code>div</code> element should have the class \"container-fluid\"')",
@@ -1743,7 +1743,7 @@
       ],
       "tests": [
         "assert($('.btn').length > 5, 'Apply the \"btn\" class to each of your <code>button</code> elements.')",
-        "assert($('.btn').length > 5, 'Apply the \"btn-default\" class to each of your <code>button</code> elements.')"
+        "assert($('.btn-default').length > 5, 'Apply the \"btn-default\" class to each of your <code>button</code> elements.')"
       ],
       "challengeSeed": [
         "<div class='container-fluid'>",

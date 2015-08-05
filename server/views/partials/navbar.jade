@@ -7,10 +7,6 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz', alt='learn to code javascript at Free Code Camp logo')
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
-
-            if user
-                li
-                    a(href='/challenges') Learn
             li
                 a(href='/map') Map
             li
@@ -18,7 +14,7 @@ nav.navbar.navbar-default.navbar-fixed-top.nav-height
             li
                 a(href='/news') News
             li
-                a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/Home') Wiki
+                a(href='//github.com/FreeCodeCamp/freecodecamp/wiki/Home', target='_blank') Wiki
             if !user
                 li &thinsp; &thinsp; &thinsp;
                 li
