@@ -734,11 +734,11 @@
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to an specific image's URL using the <code>src</code> attribute.",
         "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"/&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
-        "Try it with this image: <code>http://bit.ly/fcc-kittens</code>."
+        "Try it with this image: <code>https://bit.ly/fcc-relaxing-cat</code>."
       ],
       "tests": [
         "assert($('img').length > 0, 'Your page should have an image element.')",
-        "assert($('img').filter(function(index) { return /http:\\/\\/bit\\.ly\\/fcc-kittens/gi.test($('img').attr('src')); }).length > 0, 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
+        "assert($('img').filter(function(index) { return /http:\\/\\/bit\\.ly\\/fcc-relaxing-cat/gi.test($('img').attr('src')); }).length > 0, 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -775,10 +775,10 @@
       "descriptionPt": [],
       "nameDe": "Waypoint: Füge Bilder zu deiner Website hinzu",
       "descriptionDe": [
-        "Nutze ein <code>img</code> Element um das Bild <code>http://bit.ly/fcc-kittens</code> einzufügen.",
+        "Nutze ein <code>img</code> Element um das Bild <code>https://bit.ly/fcc-relaxing-cat</code> einzufügen.",
         "Du kannst <code>img</code> Elemente verwenden, um Bilder in deine Website einzubauen. Um zur URL des Bildes zu verweisen, benutzt du das <code>src</code> Attribut.",
         "Ein Beispiel dafür wäre <code>&#60img src=\"www.bild-quelle.com/bild.jpg\"/&#62</code>. Beachte, dass <code>img</code> Elemente in den meisten Fällen selbstschließend sind.",
-        "Versuche es mit diesem Bild: <code>http://bit.ly/fcc-kittens</code>."
+        "Versuche es mit diesem Bild: <code>https://bit.ly/fcc-relaxing-cat</code>."
       ]
     },
     {
@@ -814,7 +814,7 @@
         "",
         "<h2 class='red-text'>CatPhotoApp</h2>",
         "",
-        "<img src='http://bit.ly/fcc-relaxing-cat'/>",
+        "<img src='https://bit.ly/fcc-relaxing-cat'/>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -877,7 +877,7 @@
         "",
         "<h2 class='red-text'>CatPhotoApp</h2>",
         "",
-        "<img class='smaller-image' src='http://bit.ly/fcc-relaxing-cat'/>",
+        "<img class='smaller-image' src='https://bit.ly/fcc-relaxing-cat'/>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -943,7 +943,7 @@
         "",
         "<h2 class='red-text'>CatPhotoApp</h2>",
         "",
-        "<img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/>",
+        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1009,7 +1009,7 @@
         "",
         "<h2 class='red-text'>CatPhotoApp</h2>",
         "",
-        "<img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/>",
+        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1078,7 +1078,7 @@
         "",
         "<h2 class='red-text'>CatPhotoApp</h2>",
         "",
-        "<img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/>",
+        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1155,7 +1155,7 @@
         "",
         "<a href='http://www.catphotoapp.com'>cat photos</a>",
         "",
-        "<img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/>",
+        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1223,7 +1223,7 @@
         "",
         "<p>Click here for <a href='http://www.catphotoapp.com'>cat photos</a>.</p>",
         "",
-        "<img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/>",
+        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1295,7 +1295,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/>",
+        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1366,7 +1366,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1445,7 +1445,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1521,7 +1521,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1596,7 +1596,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1675,7 +1675,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1757,7 +1757,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1839,7 +1839,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1920,7 +1920,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2010,7 +2010,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2101,7 +2101,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2186,7 +2186,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2278,7 +2278,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2369,7 +2369,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
@@ -2457,7 +2457,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
@@ -2547,7 +2547,7 @@
         "",
         "<p>Click here for <a href='#'>cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='http://bit.ly/fcc-relaxing-cat'/></a>",
+        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-relaxing-cat'/></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
