@@ -677,7 +677,7 @@
       "description":[
         "",
         "A very important data type in javascript is the <code> Object </code>",
-        "<code> Objects </code> a similar to <code> arrays </code> except that instead of using indexes to access and modify their data, Objects have what are called <code> properties </code>",
+        "<code> Objects </code> are similar to <code> arrays </code> except that instead of using indexes to access and modify their data, Objects have what are called <code> properties </code>",
         "Here's a sample Object",
         "<code>",
         "var cat = {",
