@@ -3348,11 +3348,11 @@
       "dashedName": "waypoint-override-all-other-styles-by-using-important",
       "difficulty": 1.53,
       "description": [
-        "Yay! we just proved that in-line styles will override all the CSS declarations in your <code>style</code> element.",
+        "Yay! We just proved that in-line styles will override all the CSS declarations in your <code>style</code> element.",
         "But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.",
         "In many situations, you will use CSS libraries. These may accidentally override your own CSS. So when you absolutely need to be sure that an element has specific CSS, you can use <code>!important</code>.",
         "Let's go all the way back to our \"pink-text\" class declaration. Remember that our \"pink-text\" class was overridden by subsequent class declarations, id declarations, and in-line styles.",
-        "Let's add the keyword <code>!important</code> to your body' element's color declaration to make 100% sure that your <code>h1</code> element will be pink.",
+        "Let's add the keyword <code>!important</code> to your pink-text element's color declaration to make 100% sure that your <code>h1</code> element will be pink.",
         "An example of how to do this is: <code>color: red !important;</code>"
       ],
       "tests": [
