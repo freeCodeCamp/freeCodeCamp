@@ -48,7 +48,9 @@ module.exports = function(User) {
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
       user.username = user.username.trim().toLowerCase();
-      user.email = user.email.trim().toLowerCase();
+      user.email = typeof user.email === 'string' ?
+        user.email.trim().toLowerCase() :
+        user.email;
     }
     next();
   });
