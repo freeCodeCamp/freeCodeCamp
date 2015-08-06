@@ -27,6 +27,18 @@
       "type": "boolean",
       "default": false
     },
+    "githubId": {
+      "type": "string"
+    },
+    "githubURL": {
+      "type": "string"
+    },
+    "githubEmail": {
+      "type": "string"
+    },
+    "joinedGithubOn": {
+      "type": "date"
+    },
     "isMigrationGrandfathered": {
       "type": "boolean",
       "default": false
