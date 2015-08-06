@@ -503,7 +503,7 @@
       "difficulty":"9.98171",
       "description":[
         "",
-        "We are able to modify the data store in an array be using indexes",
+        "We are able to modify the data stored in an array by using indexes",
         "Example:",
         "<code>",
         "var ourArray = [1,2,3];",
@@ -536,10 +536,10 @@
       "difficulty": "9.9818",
       "description": [
         "",
-        "When and array has been defined we still have the ability to make changes to it afterwards",
+        "When an array has been defined we still have the ability to make changes to it afterwards",
         "One common way in which we can manipulate the data in an array is through <code> .pop() </code>",
-        "<code> .pop() </code> is used to \"pop\" a value from the end of an array. We can retrieve this value by preforming the pop in a variable declaration.",
-        "any type of variable can be \"popped\" from and array",
+        "<code> .pop() </code> is used to \"pop\" a value from the end of an array. We can retrieve this value by performing the pop in a variable declaration.",
+        "Any type of variable can be \"popped\" from an array",
         "Let's try <code> .pop() </code> now"
       ],
       "tests": [
@@ -639,13 +639,13 @@
       "description":[
         "",
         "In JavaScript we can divide up our code into separate and reusable parts called functions",
-        "here's and example of a function",
+        "Here's an example of a function",
         "<code>",
         "function functionName (a, b){",
         "   return(a + b);",
         "}",
         "</code>",
-        "our function can be called like this",
+        "Our function can be called like this",
         "<code>functionName();</code>",
         "Let's try creating and calling a function now called <code>myFunction</code>"
       ],
@@ -688,7 +688,7 @@
         "};",
         "</code>",
         "Objects are useful for storing data in a structured way or in a way that represents a real world object like a cat.",
-        "Let's try to make a Object that represents a dog called myDog!"
+        "Let's try to make an Object that represents a dog called myDog!"
 
       ],
       "tests":[
