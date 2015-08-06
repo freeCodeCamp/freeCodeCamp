@@ -12,9 +12,7 @@
           "unique": true,
           "sparse": true
         }
-      },
-      "lowercase": true,
-      "trim": true
+      }
     },
     "password": {
       "type": "string"
@@ -45,9 +43,12 @@
     },
     "username": {
       "type": "string",
-      "lowercase": true,
-      "trim": true,
-      "require": true
+      "require": true,
+      "index": {
+        "mongodb": {
+          "unique": true
+        }
+      }
     },
     "bio": {
       "type": "string",

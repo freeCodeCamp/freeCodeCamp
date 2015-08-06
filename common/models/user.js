@@ -44,6 +44,14 @@ module.exports = function(User) {
   // username should be unique
   User.validatesUniquenessOf('username');
 
+  User.observe('before save', function({ instance: user }, next) {
+    if (user) {
+      user.username = user.username.trim().toLowerCase();
+      user.email = user.email.trim().toLowerCase();
+    }
+    next();
+  });
+
   debug('setting up user hooks');
   User.afterRemote('confirm', function(ctx) {
     ctx.req.flash('success', {
