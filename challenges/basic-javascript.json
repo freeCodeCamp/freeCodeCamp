@@ -4,18 +4,17 @@
   "challenges": [
     {
       "id":"bd7123c9c441eddfaeb4bdef",
-      "name":"Welcome To Comments",
-      "dashedName":"waypoint-welcome-to-comments",
+      "name":"Waypoint: Comment your JavaScript Code",
+      "dashedName":"waypoint-comment-your-javascript-code",
       "difficulty":"9.98",
       "description":[
-        "",
         "A comment is a very useful line of code that is not actually ran by the machine executing it. With this property comments are the perfect way of creating notes to yourself or anyone else who reads your code describing what the code does",
         "It's an extremely important part in writing good, efficient and maintainable code and a requirement by most employers",
         "Let's take a look at the two ways in which we can write a comment in JavaScript",
-        "<code> //This is a comment </code>",
+        "<code>//This is a comment </code>",
         "These comment out the entire line that they are on",
-        "<code> /*This is also a comment*/ </code>",
-        "These comment out everything in between <code> /* </code> and <code> */ </code>",
+        "<code>/*This is also a comment*/ </code>",
+        "These comment out everything in between <code>/*</code>and <code>*/</code>",
         "Try creating one of each now."
       ],
       "tests":[
@@ -30,15 +29,15 @@
     },
     {
       "id": "bd7123c9c441eddfaeb5bdef",
-      "name": "Unconditionally Loving Booleans",
-      "dashedName": "waypoint-unconditionally-loving-booleans",
+      "name": "Waypoint: Understand Boolean Values",
+      "dashedName": "waypoint-understand-boolean-values",
       "difficulty": "9.98001",
       "description": [
         "Return true",
         "A boolean is a type of variable that represents either true or false (Named after the British mathematician George Boole).",
-        "Booleans are often the result of a function or a comparative operation, for example <code> 1==1 </code> is true whereas <code> 1==2 </code> is false.",
-        "They are most commonly found inside <code> if </code> statements which we shall cover later",
-        "For now Let's modify our <code> welcomeToBooleans </code> function so that it will return <code> true </code> instead of <code> false </code> when the run button is clicked"
+        "Booleans are often the result of a function or a comparative operation, for example <code>1==1</code>is true whereas <code>1==2</code>is false.",
+        "They are most commonly found inside <code>if</code>statements which we shall cover later",
+        "For now Let's modify our <code>welcomeToBooleans</code>function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked"
       ],
       "tests": [
         "assert(typeof(welcomeToBooleans())=='boolean', 'The value returned by welcomeToBooleans() should be a boolean value. (true of false)');",
@@ -56,11 +55,10 @@
     },
     {
       "id": "bd7123c9c443eddfaeb5bdef",
-      "name": "Start Using Variables",
-      "dashedName": "waypoint-start-using-variables",
+      "name": "Declare JavaScript Variables",
+      "dashedName": "waypoint-assign-values-to-javascript-variables",
       "difficulty": "9.9801",
       "description": [
-        "",
         "Now, use the <code>var</code> keyword to create a <code>variable</code> called <code>myName</code>. Set its value to your name.",
         "<code>Variables</code> are used to store values.",
         "The name variable comes from the fact that it's value, varies!",
@@ -84,13 +82,12 @@
     },
     {
       "id": "bd7123c9c444eddfaeb5bdef",
-      "name": "Define Your First and Last Name",
+      "name": "Declare String Variables",
       "dashedName": "waypoint-define-your-first-and-last-name",
       "difficulty": "9.9802",
       "description": [
-        "",
         "Programs will almost always have several different variables that are used to keep track of several different pieces of data",
-        "We are now going to go and create two new variables <code> myFirstName </code> and <code> myLastName </code> that are strings",
+        "We are now going to go and create two new variables <code>myFirstName</code>and <code>myLastName</code>that are strings",
         "You can assign these variables to be equal to your first and last names respectively."
       ],
       "tests": [
@@ -116,7 +113,6 @@
       "dashedName": "waypoint-check-the-length-property-of-a-string-variable",
       "difficulty": "9.9809",
       "description": [
-        "",
         "Use the <code>.length</code> property to count the number of characters in the <code>lastNameLength</code> variable.",
         "For example, if we created a variable <code>var firstName = \"Julie\"</code>, we could find out how long the string \"Julie\" is by using the <code>firstName.length</code> property."
       ],
@@ -185,9 +181,9 @@
       "dashedName": "waypoint-use-bracket-notation-to-find-the-nth-character-in-a-string",
       "difficulty": "9.9811",
       "description": [
-        "Just like the last lesson where we used <code> Bracket Notation </code> to access the first letter we can use the same method to get the letters ar other positions",
+        "Just like the last lesson where we used <code>Bracket Notation</code>to access the first letter we can use the same method to get the letters ar other positions",
         "Don't forget that computers start counting at 0 so the first letter is actually the zeroth one",
-        "Let's now try to set <code> thirdLetterOfLastName </code> to equal the <code>third letter</code> of the <code> lastName </code> variable",
+        "Let's now try to set <code>thirdLetterOfLastName</code>to equal the <code>third letter</code> of the <code>lastName</code>variable",
         "Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
@@ -242,7 +238,7 @@
     },
     {
       "id": "bd7123c9c452eddfaeb5bdef",
-      "name": "Use Bracket Notation to Find the Nth to Last Character in a String",
+      "name": "Use Bracket Notation to Find the Nth-to-Last Character in a String",
       "dashedName": "waypoint-use-bracket-notation-to-find-the-nth-to-last-character-in-a-string",
       "difficulty": "9.9813",
       "description": [
@@ -272,15 +268,14 @@
     },
     {
       "id": "cf1111c1c11feddfaeb3bdef",
-      "name": "Magical Maths Addition",
+      "name": "Add Two Numbers with JavaScript",
       "dashedName": "waypoint-magical-maths-addition",
       "difficulty": "9.98141",
       "description": [
-        "",
         "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
         "Let's try a few of the most commonly used ones now",
-        "We use <code> + </code> for addition",
-        "Replace the <code> 0 </code> with correct number to achieve the result in the comment."
+        "We use <code>+</code>for addition",
+        "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
         "assert((function(){if(add == 20 && editor.getValue().match(/\\+/g)){return(true);}else{return(false);}})(), 'Add should be the result of a sum and be equal to 20');"
@@ -296,15 +291,14 @@
     },
     {
       "id": "cf1111c1c11feddfaeb4bdef",
-      "name": "Magical Maths Subtraction",
+      "name": "Subtract One Number from Another with JavaScript",
       "dashedName": "waypoint-magical-maths-subtraction",
       "difficulty": "9.98142",
       "description": [
-        "",
         "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
         "Let's try a few of the most commonly used ones now",
-        "We use <code> - </code> for subtraction",
-        "Replace the <code> 0 </code> with correct number to achieve the result in the comment."
+        "We use <code>-</code>for subtraction",
+        "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
         "assert((function(){if(subtract == 12 && editor.getValue().match(/\\-/g)){return(true);}else{return(false);}})(), 'Subtract should be the result of a sum and be equal to 12');"
@@ -320,15 +314,14 @@
     },
     {
       "id": "cf1231c1c11feddfaeb5bdef",
-      "name": "Magical Maths Multiplication",
+      "name": "Multiply Two Numbers with JavaScript",
       "dashedName": "waypoint-magical-maths-multiplication",
       "difficulty": "9.98143",
       "description": [
-        "",
         "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
         "Let's try a few of the most commonly used ones now",
-        "We use <code> * </code> for multiplication",
-        "Replace the <code> 0 </code> with correct number to achieve the result in the comment."
+        "We use <code>*</code>for multiplication",
+        "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
         "assert((function(){if(multiply == 80 && editor.getValue().match(/\\*/g)){return(true);}else{return(false);}})(), 'Multiply should be the result of a sum and be equal to 80');"
@@ -344,15 +337,14 @@
     },
     {
       "id": "cf1111c1c11feddfaeb6bdef",
-      "name": "Magical Maths Division",
+      "name": "Divide One Number by Another with JavaScript",
       "dashedName": "waypoint-magical-maths-division",
       "difficulty": "9.9814",
       "description": [
-        "",
         "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
         "Let's try a few of the most commonly used ones now",
-        "We use <code> / </code> for division",
-        "Replace the <code> 0 </code> with correct number to achieve the result in the comment."
+        "We use <code>/</code>for division",
+        "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
         "assert((function(){if(divide == 2 && editor.getValue().match(/\\//g)){return(true);}else{return(false);}})(), 'Divide should be the result of a sum and be equal to 2');"
@@ -368,11 +360,10 @@
     },
     {
       "id": "cf1391c1c11feddfaeb4bdef",
-      "name": "Creating Decimals",
+      "name": "Create Decimal Numbers with JavaScript",
       "dashedName": "waypoint-creating-decimals",
       "difficulty": "9.9815",
       "description": [
-        "",
         "in JavaScript we can can work with decimal numbers",
         "Let's create a variable <code>myDecimal</code> and give it a decimal value."
       ],
@@ -392,14 +383,11 @@
     },
     {
       "id": "bd7993c9c69feddfaeb7bdef",
-      "name": "Working With Decimals",
+      "name": "Perform Arithmetic Operations on Decimals with JavaScript",
       "dashedName": "waypoint-working-with-decimals",
       "difficulty": "9.98151",
       "description": [
-        "",
-        "in JavaScript we can can work with decimal numbers",
-        "These decal numbers are known as floats.",
-        "Let's take a look at working with floats now"
+        "In JavaScript we can can work with decimal numbers."
       ],
       "tests": [
         "assert(multiply == 15, 'The result of multiply should be 3.75');",
@@ -417,14 +405,13 @@
     },
     {
       "id": "bd7993c9c69feddfaeb8bdef",
-      "name": "An Array Of new Information",
+      "name": "Store Multiple Values in one Variable using JavaScript Arrays",
       "dashedName": "waypoint-an-array-of-new-information",
       "difficulty": "9.9816",
       "description": [
-        "",
         "In JavaScript we can store lists or collections of data in what are called arrays",
-        "Arrays are distinguished by the <code> [ </code> and <code> ] </code> around the data. Each piece of data is separated by a <code> , </code>",
-        "Now let's create a new array called <code> myArray </code> with a <code> string </code> and a <code> number </code> with a <code> , </code> separating each one",
+        "Arrays are distinguished by the <code>[</code>and <code>]</code>around the data. Each piece of data is separated by a <code>, </code>",
+        "Now let's create a new array called <code>myArray</code>with a <code>string</code>and a <code>number</code>with a <code>,</code>separating each one",
         "Refer to the example if you get stuck",
         ""
       ],
@@ -445,11 +432,10 @@
     },
     {
       "id":"cf1111c1c11feddfaeb7bdef",
-      "name":"Nesting Arrays",
+      "name":"Nest one Array within Another Array",
       "dashedName":"waypoint-nesting-arrays",
       "difficulty":"9.98161",
       "description":[
-        "",
         "We are also able to create arrays within arrays. This technique is called <code>nesting</code>.",
         "Let's now go create a nested array called <code>myArray</code>"
       ],
@@ -466,11 +452,10 @@
     },
     {
       "id":"bg9997c9c79feddfaeb9bdef",
-      "name":"Accessing data with Indexes",
+      "name":"Access Array Data with Indexes",
       "dashedName":"waypoint-accessing-data-with-indexes",
       "difficulty":"9.9817",
       "description":[
-        "",
         "Once an array has been created we can access the data we have stored in them using indexes",
         "Indexes are written in the same way as bracket notation that we covered earlier",
         "Example:",
@@ -498,11 +483,10 @@
     },
     {
       "id":"cf1111c1c11feddfaeb8bdef",
-      "name":"Modifying Data With Indexes",
+      "name":"Modify Array Data With Indexes",
       "dashedName":"waypoint-modifying-data-with-indexes",
       "difficulty":"9.98171",
       "description":[
-        "",
         "We are able to modify the data stored in an array by using indexes",
         "Example:",
         "<code>",
@@ -531,16 +515,15 @@
     },
     {
       "id": "bg9994c9c69feddfaeb9bdef",
-      "name": "Manipulating Arrays With pop()",
+      "name": "Manipulate Arrays With pop()",
       "dashedName": "waypoint-manipulating-arrays-with-pop",
       "difficulty": "9.9818",
       "description": [
-        "",
         "When an array has been defined we still have the ability to make changes to it afterwards",
-        "One common way in which we can manipulate the data in an array is through <code> .pop() </code>",
-        "<code> .pop() </code> is used to \"pop\" a value from the end of an array. We can retrieve this value by performing the pop in a variable declaration.",
+        "One common way in which we can manipulate the data in an array is through <code>.pop() </code>",
+        "<code>.pop()</code>is used to \"pop\" a value from the end of an array. We can retrieve this value by performing the pop in a variable declaration.",
         "Any type of variable can be \"popped\" from an array",
-        "Let's try <code> .pop() </code> now"
+        "Let's try <code>.pop()</code>now"
       ],
       "tests": [
         "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
@@ -563,13 +546,12 @@
     },
     {
       "id": "bg9995c9c69feddfaeb9bdef",
-      "name": "Manipulating Arrays With push()",
+      "name": "Manipulate Arrays With push()",
       "dashedName": "waypoint-manipulating-arrays-with-push",
       "difficulty": "9.9818",
       "description": [
-        "",
-        "Now that we've learned how to <code> pop </code> things from the end of the array, we need to learn how to <code> push </code> stuff back to the end",
-        "Let's take the code we had last time and <code> push </code> this value to the end: <code> ['dog', 3] </code>"
+        "Now that we've learned how to <code>pop</code>things from the end of the array, we need to learn how to <code>push</code>stuff back to the end",
+        "Let's take the code we had last time and <code>push</code>this value to the end: <code>['dog', 3] </code>"
       ],
       "tests": [
         "assert((function(d){if(d[2] != undefined && d[0] == 'John' && d[1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23, [\"dog\", 3]])');"
@@ -586,14 +568,13 @@
     },
     {
       "id": "bg9996c9c69feddfaeb9bdef",
-      "name": "Manipulating Arrays With shift()",
+      "name": "Manipulate Arrays With shift()",
       "dashedName": "waypoint-manipulating-arrays-with-shift",
       "difficulty": "9.9817",
       "description": [
-        "",
-        "Another common way in which we can manipulate the data in an array is through <code> .shift() </code>",
-        "<code> .shift() </code> is used to \"shift\" a value from the start of an array. We can retrieve this value by preforming the shift in a variable declaration.",
-        "Let's try <code> .shift() </code> now"
+        "Another common way in which we can manipulate the data in an array is through <code>.shift() </code>",
+        "<code>.shift()</code>is used to \"shift\" a value from the start of an array. We can retrieve this value by preforming the shift in a variable declaration.",
+        "Let's try <code>.shift()</code>now"
       ],
       "tests": [
         "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
@@ -610,13 +591,12 @@
     },
     {
       "id": "bg9997c9c69feddfaeb9bdef",
-      "name": "Manipulating Arrays With unshift()",
+      "name": "Manipulate Arrays With unshift()",
       "dashedName": "waypoint-manipulating-arrays-with-unshift",
       "difficulty": "9.9818",
       "description": [
-        "",
-        "Now that we've learned how to <code> shift </code> things from the start of the array, we need to learn how to <code> unshift </code> stuff back to the start",
-        "Let's take the code we had last time and <code> unshift </code> this value to the end: <code> 'Paul' </code>"
+        "Now that we've learned how to <code>shift</code>things from the start of the array, we need to learn how to <code>unshift</code>stuff back to the start",
+        "Let's take the code we had last time and <code>unshift</code>this value to the end: <code>'Paul' </code>"
       ],
       "tests": [
         "assert((function(d){if(d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])');"
@@ -633,11 +613,10 @@
     },
     {
       "id":"bg9997c9c89feddfaeb9bdef",
-      "name":"Make it functional",
+      "name":"Write Reusable JavaScript with Functions",
       "dashedName":"waypoint-make-it-functional",
       "difficulty":"9.9819",
       "description":[
-        "",
         "In JavaScript we can divide up our code into separate and reusable parts called functions",
         "Here's an example of a function",
         "<code>",
@@ -671,13 +650,12 @@
     },
     {
       "id":"bg9998c9c99feddfaeb9bdef",
-      "name":"I Object!",
+      "name":"Build JavaScript Objects",
       "dashedName":"waypoint-i-object",
       "difficulty":"9.9822",
       "description":[
-        "",
-        "A very important data type in javascript is the <code> Object </code>",
-        "<code> Objects </code> are similar to <code> arrays </code> except that instead of using indexes to access and modify their data, Objects have what are called <code> properties </code>",
+        "A very important data type in javascript is the <code>Object</code>",
+        "<code>Objects</code>are similar to <code>arrays</code> except that instead of using indexes to access and modify their data, Objects have what are called <code>properties </code>",
         "Here's a sample Object",
         "<code>",
         "var cat = {",
@@ -718,11 +696,10 @@
     },
     {
       "id":"bg9999c9c99feddfaeb9bdef",
-      "name":"Manipulating Objects",
+      "name":"Manipulate JavaScript Objects",
       "dashedName":"waypoint-manipulating-objects",
       "difficulty":"9.9823",
       "description":[
-        "",
         "Now that we have an objects we need to know how to add and remove properties from it",
         "We add properties to objects like this",
         "<code>myObject.myProperty = \"myValue\";</code>",
@@ -764,11 +741,10 @@
     },
     {
       "id":"cf1111c1c11feddfaeb5bdef",
-      "name":"Looping with for",
+      "name":"Iterate with JavaScript For Loops",
       "dashedName":"waypoint-looping-with-for",
       "difficulty":"9.9824",
       "description":[
-        "",
         "Loops are a critical part of any program! The next few challenges",
         "first we will be taking a look at the for loop",
         "<code>",
@@ -794,11 +770,10 @@
     },
     {
       "id":"cf1111c1c11feddfaeb1bdef",
-      "name":"Looping with while",
+      "name":"Iterate with JavaScript While Loops",
       "dashedName":"waypoint-looping-with-while",
       "difficulty":"9.9825",
       "description":[
-        "",
         "Loops are a critical part of any program! The next few challenges",
         "first we will be taking a look at the while loop",
         "<code>",
@@ -825,11 +800,10 @@
     },
     {
       "id":"cf1111c1c11feddfaeb2bdef",
-      "name":"Looping with do while",
+      "name":"Iterate with JavaScript Do-While Loops",
       "dashedName":"waypoint-looping-with-do-while",
       "difficulty":"9.9826",
       "description":[
-        "",
         "Let's now take a look at the do - while loop",
         "<code>",
         "var ourArray = [];",
@@ -856,11 +830,10 @@
     },
     {
       "id":"cf1111c1c11feddfaeb9bdef",
-      "name":"Random Numbers",
+      "name":"Generate Random Fractions with JavaScript",
       "dashedName":"waypoint-random-numbers",
       "difficulty":"9.9827",
       "description":[
-        "",
         "Random numbers are a very useful for creating random behaviours and games",
         "Javascript has a <code>Math.random()</code> method that can generate a random decimal number",
         "Let's have a go of <code>Math.random()</code> now be getting <code>myFunction</code> to return a random number"
@@ -883,11 +856,10 @@
     },
     {
       "id":"cf1111c1c12feddfaeb1bdef",
-      "name":"Random Whole Numbers",
+      "name":"Generate Random Whole Numbers with JavaScript",
       "dashedName":"waypoint-random-whole-numbers",
       "difficulty":"9.9828",
       "description":[
-        "",
         "While it's great that we can create random decimal numbers it's a lot more useful to generate a random whole number",
         "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
         "This technique gives us a whole number between zero and nine",
@@ -913,11 +885,10 @@
     },
     {
       "id":"cf1111c1c12feddfaeb2bdef",
-      "name":"Random Whole Numbers In a Range",
+      "name":"Generate Random Whole Numbers within a Range",
       "dashedName":"waypoint-random-whole-numbers-in-a-range",
       "difficulty":"9.9829",
       "description":[
-        "",
         "We can use a certain mathematical expression to get a random number between between twp numbers.",
         "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
         "By using this we can control the output of the random number.",
@@ -942,11 +913,10 @@
     },
     {
       "id":"cf1111c1c12feddfaeb3bdef",
-      "name":"If Else Statements",
+      "name":"Use Conditional Logic with If Else Statements",
       "dashedName":"waypoint-if-else-statements",
       "difficulty":"9.983",
       "description":[
-        "",
         "We can use if statements in JavaScript to only execute code if a certain condition is met",
         "if statements require some sort of boolean condition evaluate",
         "Example:",
@@ -977,11 +947,10 @@
     },
     {
       "id":"cf1111c1c12feddfaeb6bdef",
-      "name":"An Intro To RegEx",
+      "name":"Sift through Text with Regular Expressions",
       "dashedName":"waypoint-an-intro-to-regex",
       "difficulty":"9.984",
       "description":[
-        "",
         "RegEx is a powerful tool we can use to find certain words or patterns in strings",
         "RegEx can look difficult at first but there's not much to getting it working",
         "If we wanted to find the number of times the word \"the\" occured in the string \"The dog chased the cat\" We could use the following RegEx:",
@@ -1014,16 +983,14 @@
     },
     {
       "id":"cf1111c1c12feddfaeb7bdef",
-      "name":"Finding Numbers",
+      "name":"Find Numbers with Regular Expressions",
       "dashedName":"waypoint-finding-numbers",
       "difficulty":"9.985",
       "description":[
-        "",
         "We can use special selectors in RegEx to select a particular type of value",
         "One such selector is the digit selector <code>\\d</code> which is used to grab the numbers in a string",
         "It is used like this:",
-        "<code>/\\d+/g</code>",
-        ""
+        "<code>/\\d+/g</code>"
       ],
       "tests":[
         "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
@@ -1046,15 +1013,13 @@
     },
     {
       "id":"cf1111c1c12feddfaeb8bdef",
-      "name":"Finding WhiteSpace",
+      "name":"Find White Space with Regular Expressions",
       "dashedName":"waypoint-finding-whitespace",
       "difficulty":"9.986",
       "description":[
-        "",
         "We can also use selectors like <code>\\s</code> to find spaces in a string",
         "It is used like this:",
-        "<code>/\\s+/g</code>",
-        ""
+        "<code>/\\s+/g</code>"
       ],
       "tests":[
         "assert(test === 7, 'Your RegEx should have found seven spaces in the testString');",
@@ -1077,12 +1042,11 @@
     },
     {
       "id":"cf1111c1c13feddfaeb3bdef",
-      "name":"Inverting a Match",
+      "name":"Invert Regular Expression Matches with JavaScript",
       "dashedName":"waypoint-inverting-a-match",
       "difficulty":"9.987",
       "description":[
-        "",
-        "Use <code>/\\S+/gi;</code> to match everything that ins't a space in the string",
+        "Use <code>/\\S+/gi;</code> to match everything that isn't a space in the string",
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example"
       ],
       "tests":[
@@ -1106,16 +1070,15 @@
     },
     {
       "id":"cf1111c1c12feddfaeb9bdef",
-      "name":"Creating a slots machine",
+      "name":"Create a JavaScript Slot Machine",
       "dashedName":"creating-a-slots-machine",
       "difficulty":"9.988",
       "description":[
-        "",
         "We are now going to try and combine some of the stuff we've just learnt abd create the logic for a slot machine game",
         "For this we will need to generate three random numbers between <code>1</code> and <code>5</code> to represent the possible values of each individual slot",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>",
         "Generate the random numbers by using the system we used earlier in /challenges/random-whole-numbers-in-a-range",
-        "<code> Math.floor(Math.random() * (5 - 1 + 1)) + 1; </code>"
+        "<code>Math.floor(Math.random() * (5 - 1 + 1)) + 1; </code>"
       ],
       "tests":[
         "assert(typeof(runSlots($('.slot'))[0]) == 'number', 'SlotOne should be a random number');",
@@ -1261,18 +1224,17 @@
     },
     {
       "id":"cf1111c1c13feddfaeb1bdef",
-      "name":"Setting Up The Slot Machine Slots",
+      "name":"Add your JavaScript Slot Machine Slots",
       "dashedName":"setting-up-the-slot-machine-slots",
       "difficulty":"9.989",
       "description":[
-        "",
         "Now that we have our random numbers we need to go and check for when they are all the same that means we should count it as a win",
         "Different numbers will have different values so we need to return the matched number or null",
         "If we get a match we should change the value of win to the number that we have three of or leave it as null",
         "Let's create an if statement with multiple conditions to check that all the numbers are equal",
-        "<code>if(slotOne !== slotTwo || slotTwo !== slotThree){",
-        " return(null);",
-        "}</code>"
+        "<code>if(slotOne !== slotTwo || slotTwo !== slotThree){</code>",
+        "<code> return(null);</code>",
+        "<code>}</code>"
       ],
       "tests":[
         "assert((function(){var data = runSlots();if(data == null){return(true)}else{if(data[0] == data[1] && data[1] == data[2]){return(true);}else{return(false);}}})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return null');"
@@ -1421,11 +1383,10 @@
     },
     {
       "id":"cf1111c1c13feddfaeb2bdef",
-      "name":"Giving The Slot Machine Life",
+      "name":"Bring your JavaScript Slot Machine to Life",
       "dashedName":"giving-the-slot-machine-life",
       "difficulty":"9.990",
       "description":[
-        "",
         "Now we can detect a win let's get the slot machine to look like it works",
         "We're going to use the jQuery selector <code>$('.slot')</code> to select all of the slots",
         "Once they are all selected we can use bracket notation to access each individual one like this",
