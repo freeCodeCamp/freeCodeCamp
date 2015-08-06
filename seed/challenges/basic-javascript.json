@@ -834,8 +834,8 @@
       "dashedName": "waypoint-generate-random-fractions-with-javascript",
       "difficulty":"9.9827",
       "description":[
-        "Random numbers are a very useful for creating random behaviours and games",
-        "Javascript has a <code>Math.random()</code> method that can generate a random decimal number",
+        "Random numbers are very useful for creating random behaviours and games",
+        "JavaScript has a <code>Math.random()</code> method that can generate a random decimal number",
         "Let's have a go of <code>Math.random()</code> now be getting <code>myFunction</code> to return a random number"
       ],
       "tests":[
