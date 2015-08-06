@@ -6,7 +6,12 @@
   "properties": {
     "name": {
       "type": "string",
-      "unique": true
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
     },
     "title": {
       "type": "string"

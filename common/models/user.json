@@ -10,6 +10,7 @@
       "index": {
         "mongodb": {
           "unique": true,
+          "background": true,
           "sparse": true
         }
       }
@@ -46,7 +47,8 @@
       "require": true,
       "index": {
         "mongodb": {
-          "unique": true
+          "unique": true,
+          "background": true
         }
       }
     },
