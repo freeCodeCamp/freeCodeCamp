@@ -30,12 +30,3 @@ exports.observableQueryFromModel =
 exports.observeMethod = function observeMethod(context, methodName) {
   return Rx.Observable.fromNodeCallback(context[methodName], context);
 };
-
-// add rx methods to express
-exports.rxMiddleware = function rxMiddleware() {
-  return function rxMiddleware(req, res, next) {
-    // render to observable
-    res.render$ = Rx.Observable.fromNodeCallback(res.render, res);
-    next();
-  };
-};

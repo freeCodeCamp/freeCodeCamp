@@ -1,27 +1,60 @@
 {
   "initial:before": {
-    "loopback#favicon": {}
+    "loopback#favicon": {
+      "params": "$!../public/favicon.ico"
+    }
   },
   "initial": {
-    "compression": {}
+    "compression": {},
+    "morgan": {
+      "params": "dev"
+    }
   },
   "session": {
+    "./middlewares/sessions.js": {}
+  },
+  "auth:before": {
+    "./middlewares/add-return-to": {}
   },
   "auth": {
   },
   "parse": {
+    "body-parser#json": {},
+    "body-parser#urlencoded": {
+      "params": { "extended": true }
+    },
+    "method-override": {},
+    "./middlewares/cookie-parser": {}
+  },
+  "parse:after": {
+    "./middlewares/validator": {}
+  },
+  "routes:before": {
+    "express-flash": {},
+    "helmet#xssFilter": {},
+    "helmet#noSniff": {},
+    "helmet#frameguard": {},
+    "./middlewares/constant-headers": {},
+    "./middlewares/csp": {},
+    "./middlewares/express-rx": {},
+    "./middlewares/global-locals": {}
   },
   "routes": {
   },
   "files": {
     "loopback#static": {
-      "params": "$!../public"
+      "params": [
+        "$!../public",
+        {
+          "maxAge": "86400000"
+        }
+      ]
     }
   },
   "final": {
-    "loopback#urlNotFound": {}
   },
   "final:after": {
-    "errorhandler": {}
+    "./middlewares/keymetrics": {},
+    "./middlewares/error-handlers": {}
   }
 }

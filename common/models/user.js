@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import uuid from 'node-uuid';
 import moment from 'moment';
 import debugFactory from 'debug';
 
@@ -44,6 +45,14 @@ module.exports = function(User) {
   // username should be unique
   User.validatesUniquenessOf('username');
 
+  User.observe('before save', function({ instance: user }, next) {
+    if (user) {
+      user.username = user.username.trim().toLowerCase();
+      user.email = user.email.trim().toLowerCase();
+    }
+    next();
+  });
+
   debug('setting up user hooks');
   User.afterRemote('confirm', function(ctx) {
     ctx.req.flash('success', {
@@ -52,6 +61,11 @@ module.exports = function(User) {
       ]
     });
     ctx.res.redirect('/email-signin');
+  });
+
+  User.beforeRemote('create', function({ req }, notUsed, next) {
+    req.body.username = 'fcc' + uuid.v4().slice(0, 8);
+    next();
   });
 
   User.afterRemote('login', function(ctx, user, next) {
@@ -161,9 +175,9 @@ module.exports = function(User) {
     if (!username) {
       // Zalgo!!
       return nextTick(() => {
-        cb(
-          new TypeError('FCC: username should be a string but got %s', username)
-        );
+        cb(new TypeError(
+            `username should be a string but got ${ username }`
+        ));
       });
     }
     User.findOne({ where: { username } }, (err, user) => {
@@ -171,7 +185,7 @@ module.exports = function(User) {
         return cb(err);
       }
       if (!user || user.username !== username) {
-        return cb(new Error('FCC: no user found for %s', username));
+        return cb(new Error(`no user found for ${ username }`));
       }
       const aboutUser = getAboutProfile(user);
       return cb(null, aboutUser);
@@ -202,7 +216,7 @@ module.exports = function(User) {
   );
 
   User.giveBrowniePoints =
-    function giveBrowniePoints(receiver, giver, data = {}, cb) {
+    function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
       const findUser = observeMethod(User, 'findOne');
       if (!receiver) {
         return nextTick(() => {
@@ -262,9 +276,15 @@ module.exports = function(User) {
         })
         .subscribe(
           (user) => {
-            cb(null, getAboutProfile(user));
+            return cb(
+              null,
+              getAboutProfile(user),
+              dev ?
+                { giver, receiver, data } :
+                null
+            );
           },
-          cb,
+          (e) => cb(e, null, dev ? { giver, receiver, data } : null),
           () => {
             debug('brownie points assigned completed');
           }
@@ -289,17 +309,25 @@ module.exports = function(User) {
         {
           arg: 'data',
           type: 'object'
+        },
+        {
+          arg: 'debug',
+          type: 'boolean'
         }
       ],
       returns: [
         {
           arg: 'about',
           type: 'object'
+        },
+        {
+          arg: 'debug',
+          type: 'object'
         }
       ],
       http: {
         path: '/give-brownie-points',
-        verb: 'get'
+        verb: 'POST'
       }
     }
   );

@@ -1528,7 +1528,8 @@
         "  <li>cat nip</li>",
         "  <li>laser pointers</li>",
         "  <li>lasagna</li>",
-        "</ul>"
+        "</ul>",
+        "<p>Top 3 things cats hate:</p>"
       ],
       "challengeType": 0,
       "nameCn": "",
@@ -1561,7 +1562,7 @@
         "Create an <code>input</code> element of type \"text\" below your lists."
       ],
       "tests": [
-        "assert($('input').length > 0, 'Your app should have a text field input element.')"
+        "assert($('input[type=text]').length > 0, 'Your app should have a text field input element.')"
       ],
       "challengeSeed": [
         "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
@@ -2150,7 +2151,7 @@
         "Set the first of your radio buttons and the first of your checkboxes to both be checked by default."
       ],
       "tests": [
-        "assert($('input[type=\"radio\"]').prop('checked'), 'Your first radio button on your form should be checked by default.');",
+        "assert($('input[type=\"radio\"]').prop('checked'), 'Your first radio button on your form should be checked by default.')",
         "assert($('input[type=\"checkbox\"]').prop('checked'), 'Your first checkbox on your form should be checked by default.')"
       ],
       "challengeSeed": [
@@ -2738,7 +2739,7 @@
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
         "If you set an element's <code>margin</code> to a negative value, the element will grow larger.",
         "Try to set the <code>margin</code> to a negative value like the one for the red box.",
-        "Change the <code>margin</code> of the green box to a negative value, so it fills the entire horizontal width of the yellow box around it."
+        "Change the <code>margin</code> of the green box to -15 pixels, so it fills the entire horizontal width of the yellow box around it."
       ],
       "tests": [
         "assert($('.green-box').css('margin-top') === '-15px', 'Your <code>green-box</code> class should give elements -15px of margin.')"

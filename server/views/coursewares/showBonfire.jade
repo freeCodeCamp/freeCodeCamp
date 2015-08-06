@@ -100,6 +100,7 @@ block content
                         i.fa.fa-bug
                             | &nbsp; Bug
                 .button-spacer
+
                 form.code
                     .form-group.codeMirrorView
                         textarea#codeOutput(style='display: none;')
@@ -117,11 +118,12 @@ block content
                     var dashed = !{JSON.stringify(dashedName)};
 
         .col-xs-12.col-sm-12.col-md-8
-            #mainEditorPanel
-                form.code
-                    .form-group.codeMirrorView
-                        textarea#codeEditor(autofocus=true, style='display: none;')
-                script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.6.js')
+            .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
+                #mainEditorPanel
+                    form.code
+                        .form-group.codeMirrorView
+                            textarea#codeEditor(autofocus=true, style='display: none;')
+                    script(src='/js/lib/coursewares/coursewaresJSFramework_0.0.6.js')
 
     #complete-courseware-dialog.modal(tabindex='-1')
         .modal-dialog.animated.zoomIn.fast-animation
