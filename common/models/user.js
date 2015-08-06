@@ -1,4 +1,5 @@
 import { Observable } from 'rx';
+import uuid from 'node-uuid';
 import moment from 'moment';
 import debugFactory from 'debug';
 
@@ -60,6 +61,11 @@ module.exports = function(User) {
       ]
     });
     ctx.res.redirect('/email-signin');
+  });
+
+  User.beforeRemote('create', function({ req }, notUsed, next) {
+    req.body.username = 'fcc' + uuid.v4().slice(0, 8);
+    next();
   });
 
   User.afterRemote('login', function(ctx, user, next) {
