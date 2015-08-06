@@ -103,7 +103,7 @@
       "difficulty": "2.02",
       "description": [
         "Convert the given number into a roman numeral.",
-        "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\">roman numerals</a> answers should be provided in upper-case.",
+        "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target="_blank">roman numerals</a> answers should be provided in upper-case.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
@@ -356,7 +356,7 @@
         "  return arr1;",
         "}",
         "",
-        "unite([1, 2, 3], [5, 2, 1, 4], [2, 1]);"
+        "unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
       ],
       "tests": [
         "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
@@ -675,7 +675,8 @@
       "tests": [
         "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
         "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
-        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');"
+        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');",
+        "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'should work with actual objects');"
       ],
       "MDNlinks": [
         "Array.isArray()"

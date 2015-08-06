@@ -1,3 +1,4 @@
+import assign from 'object.assign';
 import debugFactory from 'debug';
 
 const debug = debugFactory('freecc:models:userIdent');
@@ -8,6 +9,39 @@ function getFirstImageFromProfile(profile) {
   return profile && profile.photos && profile.photos[0] ?
     profile.photos[0].value :
     null;
+}
+
+// using es6 argument destructing
+function setProfileFromGithub(
+  user,
+  {
+    profileUrl: githubURL,
+    username
+  },
+  {
+    location,
+    email: githubEmail,
+    id: githubId,
+    'created_at': joinedGithubOn,
+    blog: website,
+    name
+  }
+) {
+  return assign(
+    user,
+    { isGithubCool: true, isMigrationGrandfathered: false },
+    {
+      name,
+      username: username.toLowerCase(),
+      location,
+      joinedGithubOn,
+      website,
+      githubId,
+      githubURL,
+      githubEmail,
+      githubProfile: githubURL
+    }
+  );
 }
 
 export default function(UserIdent) {
@@ -25,7 +59,8 @@ export default function(UserIdent) {
       return next();
     }
 
-    const picture = getFirstImageFromProfile(userIdent.profile);
+    const { profile } = userIdent;
+    const picture = getFirstImageFromProfile(profile);
 
     debug('picture', picture, user.picture);
     // check if picture was found
@@ -41,19 +76,10 @@ export default function(UserIdent) {
       userChanged = true;
     }
 
-    // if user signed in with github
-    // and user is not github cool
-    // or username is different from github username
-    // then make them github cool
-    // and set their username from their github profile.
-    if (
-      userIdent.provider === 'github-login' &&
-      (!user.isGithubCool ||
-        user.username !== userIdent.provider.username.toLowerCase())
-    ) {
+    // if user signed in with github refresh their info
+    if (userIdent.provider === 'github-login') {
       debug("user isn't github cool or username from github is different");
-      user.isGithubCool = true;
-      user.username = userIdent.profile.username.toLowerCase();
+      setProfileFromGithub(user, profile, profile._json);
       userChanged = true;
     }
 
