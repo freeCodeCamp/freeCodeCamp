@@ -257,9 +257,9 @@
       "dashedName":  "waypoint-target-the-same-element-with-multiple-jQuery-Selectors",
       "difficulty": 3.06,
       "description": [
-        "Now you know three ways of targeting elements: by type (<code>$('button')</code>), by class (<code>($('.btn')</code>), and by id (<code>($'#target1')</code>).",
+        "Now you know three ways of targeting elements: by type <code>$('button')</code>, by class <code>$('.btn')</code>), and by id <code>$('#target1')</code>).",
         "Use each of these jQuery selectors to target your <code>button</code> element with the class \"btn\" and the id \"target1\".",
-        "Use the <code>addClass()</code> jQuery function to give the element one new class for each selector: \"animated\", \"shake\", and \"button-primary\"."
+        "Use the <code>addClass()</code> jQuery function to give the element one new class for each selector: \"animated\", \"shake\", and \"btn-primary\"."
       ],
       "tests": [
         "assert(editor.match(/\\$\\(\\'button\\'\\)/g), 'Use the <code>$\\(\\'button\\'\\)</code> selector.')",
