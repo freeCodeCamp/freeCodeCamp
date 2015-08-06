@@ -60,7 +60,7 @@
         "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your \"document ready function\": <code>$('button').addClass('animated bounce')</code>."
       ],
       "tests": [
-        "assert($('button').hasClass('animated') && $('button').hasClass('bounce'), 'Use the jQuery <code>addClass()</code> function to give the classes \"animated\" and \"bounce\" to your <code>img</code> element.')",
+        "assert($('button').hasClass('animated') && $('button').hasClass('bounce'), 'Use the jQuery <code>addClass()</code> function to give the classes \"animated\" and \"bounce\" to your <code>button</code> element.')",
         "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
