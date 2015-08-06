@@ -3402,7 +3402,7 @@
       "dashedName": "waypoint-use-hex-code-for-specific-colors",
       "difficulty": 1.54,
       "description": [
-        "Did you know there other ways to represent colors in CSS? One of these ways is called hexadecimal code, or \"hex code\" for short.",
+        "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or \"hex code\" for short.",
         "\"Decimal\" means the numbers zero through nine - the numbers that people use in everyday life. \"Hexadecimal\" includes these 10 numbers, plus the letters A, B, C, D, E and F. This means that Hexidecimal has a total of 16 possible values, instead of the 10 possible values that our normal base-10 number system gives us.",
         "With CSS, we use 6 hexidecimal number to represent colors. For example, <code>#000000</code> is the lowest possible value, and it represents the color black.",
         "Replace the word \"black\" in our <code>body</code> element's background-color with its \"hex code\" representation, <code>#000000</code>. "
