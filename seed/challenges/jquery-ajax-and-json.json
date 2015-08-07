@@ -1,6 +1,6 @@
 {
-  "name":  "jQuery, Ajax, and JSON",
-  "dashedName":  "jquery-ajax-and-json",
+  "name":  "jQuery",
+  "dashedName":  "jquery",
   "order": 0.004,
   "challenges": [
     {
