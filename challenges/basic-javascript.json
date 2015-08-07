@@ -573,12 +573,12 @@
       "difficulty": "9.9817",
       "description": [
         "Another common way in which we can manipulate the data in an array is through <code>.shift() </code>",
-        "<code>.shift()</code>is used to \"shift\" a value from the start of an array. We can retrieve this value by preforming the shift in a variable declaration.",
+        "<code>.shift()</code>is used to \"shift\" a value from the start of an array. We can retrieve this value by performing the shift in a variable declaration.",
         "Let's try <code>.shift()</code>now"
       ],
       "tests": [
         "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
-        "assert((function(d){if(d === 'John' && typeof(removed) === 'function'){return(true);}else{return(false);}})(removed), 'Removed should contain \"John\"');"
+        "assert((function(d){if(d === 'John' && typeof(removed) === 'string'){return(true);}else{return(false);}})(removed), 'Removed should contain \"John\"');"
       ],
       "challengeSeed": [
         "var myArray = ['John', 23, ['dog', 3]];",
@@ -834,8 +834,8 @@
       "dashedName": "waypoint-generate-random-fractions-with-javascript",
       "difficulty":"9.9827",
       "description":[
-        "Random numbers are a very useful for creating random behaviours and games",
-        "Javascript has a <code>Math.random()</code> method that can generate a random decimal number",
+        "Random numbers are very useful for creating random behaviours and games",
+        "JavaScript has a <code>Math.random()</code> method that can generate a random decimal number",
         "Let's have a go of <code>Math.random()</code> now be getting <code>myFunction</code> to return a random number"
       ],
       "tests":[
@@ -1046,7 +1046,7 @@
       "dashedName": "waypoint-invert-regular-expression-matches-with-javaScript",
       "difficulty":"9.987",
       "description":[
-        "Use <code>/\\S+/gi;</code> to match everything that isn't a space in the string",
+        "Use <code>/\\S/gi;</code> to match everything that isn't a space in the string",
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example"
       ],
       "tests":[

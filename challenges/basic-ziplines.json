@@ -17,9 +17,9 @@
         "Go to <a href='http://codepen.io' target='_blank'>http://codepen.io</a> and create an account.",
         "Click your user image in the top right corner, then click the \"New pen\" button that drops down.",
         "Drag the windows around and press the buttons in the lower-right hand corner to change the orientation to suit your preference.",
-        "Click the gear next to CSS. Then in the \"External CSS File or Another Pen\" text field, type \"bootstrap\" and scroll down until you see the latest version of Bootstrap. Click it.",
+        "Click the gear next to CSS. Click the \"Quick-add...\" select box and choose Bootstrap.",
         "Verify that bootstrap is active by adding the following code to your HTML: <code>&lt;h1 class='text-primary'&gt;Hello CodePen!&lt;/h1&gt;</code>. The text's color should be Bootstrap blue.",
-        "Click the gear next to JavaScript. Click the \"Latest version of...\" select box and choose jQuery.",
+        "Click the gear next to JavaScript. Click the \"Quick-add...\" select box and choose jQuery.",
         "Now add the following code to your JavaScript: <code>$(document).ready(function() { $('.text-primary').text('Hi CodePen!') });</code>. Click the \"Save\" button at the top. Your \"Hello CodePen!\" should change to \"Hi CodePen!\". This means that jQuery is working.",
         "You can use this CodePen that you've just created as a starting point for your Ziplines. Just click the \"fork\" button at the top of your CodePen and it will create a duplicate CodePen.",
         "Now you're ready for your first Zipline. Click the \"I've completed this challenge\" button."
