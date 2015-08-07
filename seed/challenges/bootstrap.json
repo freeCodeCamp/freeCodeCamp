@@ -1533,7 +1533,7 @@
         "Now let's build something from scratch to practice our HTML, CSS and Bootstrap skills.",
         "We'll build a jQuery playground, which we'll soon put to use in our jQuery challenges.",
         "To start with, create an <code>h3</code> element, with the text \"jQuery Playground\".",
-        "Color your <code>h3</code> element with the \"text-primary\" Bootstrap class, and center it with the \"text-center\" bootstrap class."
+        "Color your <code>h3</code> element with the \"text-primary\" Bootstrap class, and center it with the \"text-center\" Bootstrap class."
       ],
       "tests": [
         "assert($('h3') && $('h3').length > 0, 'Add a <code>h3</code> element to your page.')",
