@@ -10,11 +10,10 @@
       "index": {
         "mongodb": {
           "unique": true,
+          "background": true,
           "sparse": true
         }
-      },
-      "lowercase": true,
-      "trim": true
+      }
     },
     "password": {
       "type": "string"
@@ -27,11 +26,31 @@
       "type": "boolean",
       "default": false
     },
+    "githubId": {
+      "type": "string"
+    },
+    "githubURL": {
+      "type": "string"
+    },
+    "githubEmail": {
+      "type": "string"
+    },
+    "joinedGithubOn": {
+      "type": "date"
+    },
+    "isMigrationGrandfathered": {
+      "type": "boolean",
+      "default": false
+    },
     "username": {
       "type": "string",
-      "lowercase": true,
-      "trim": true,
-      "require": true
+      "require": true,
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
     },
     "bio": {
       "type": "string",
@@ -70,42 +89,6 @@
       "default": ""
     },
     "facebookProfile": {
-      "type": "string",
-      "default": ""
-    },
-    "website1Link": {
-      "type": "string",
-      "default": ""
-    },
-    "website1Title": {
-      "type": "string",
-      "default": ""
-    },
-    "website1Image": {
-      "type": "string",
-      "default": ""
-    },
-    "website2Link": {
-      "type": "string",
-      "default": ""
-    },
-    "website2Title": {
-      "type": "string",
-      "default": ""
-    },
-    "website2Image": {
-      "type": "string",
-      "default": ""
-    },
-    "website3Link": {
-      "type": "string",
-      "default": ""
-    },
-    "website3Title": {
-      "type": "string",
-      "default": ""
-    },
-    "website3Image": {
       "type": "string",
       "default": ""
     },
