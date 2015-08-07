@@ -1,12 +1,29 @@
 var _ = require('lodash'),
-  R = require('ramda'),
-  async = require('async'),
-  crypto = require('crypto'),
-  nodemailer = require('nodemailer'),
-  moment = require('moment'),
-  // debug = require('debug')('freecc:cntr:userController'),
+    async = require('async'),
+    crypto = require('crypto'),
+    nodemailer = require('nodemailer'),
+    moment = require('moment'),
+    // debug = require('debug')('freecc:cntr:userController'),
 
-  secrets = require('../../config/secrets');
+    secrets = require('../../config/secrets');
+
+function calcCurrentStreak(cals) {
+  const revCals = cals.slice().reverse();
+  let streakBroken = false;
+  return revCals
+    .reduce((current, cal, index) => {
+      // if streak not borken and diff between this cal and the call after it
+      // is equal to zero
+      // moment.diff will return the days between rounded down
+      if (
+        !streakBroken &&
+        moment(revCals[index === 0 ? 0 : index - 1]).diff(cal, 'days') === 0
+      ) {
+        return current + 1;
+      }
+      return 1;
+    }, 1);
+}
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -39,11 +56,6 @@ module.exports = function(app) {
 
   app.use(router);
 
-  /**
-  * GET /signin
-  * Siginin page.
-  */
-
   function getSignin(req, res) {
     if (req.user) {
       return res.redirect('/');
@@ -53,20 +65,10 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * GET /signout
-  * Log out.
-  */
-
   function signout(req, res) {
     req.logout();
     res.redirect('/');
   }
-
-  /**
-  * GET /email-signup
-  * Signup page.
-  */
 
   function getEmailSignin(req, res) {
     if (req.user) {
@@ -77,11 +79,6 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * GET /signin
-  * Signup page.
-  */
-
   function getEmailSignup(req, res) {
     if (req.user) {
       return res.redirect('/');
@@ -90,11 +87,6 @@ module.exports = function(app) {
       title: 'Create Your Free Code Camp Account'
     });
   }
-
-  /**
-  * GET /account
-  * Profile page.
-  */
 
   function getAccount(req, res) {
     if (!req.user) {
@@ -105,21 +97,11 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * Angular API Call
-  */
-
   function getAccountAngular(req, res) {
     res.json({
       user: req.user || {}
     });
   }
-
-
-  /**
-  * GET /campers/:username
-  * Public Profile page.
-  */
 
   function returnUser(req, res, next) {
     const username = req.params.username.toLowerCase();
@@ -144,77 +126,39 @@ module.exports = function(app) {
           });
           return res.redirect('/');
         }
-        user.progressTimestamps =
-          user.progressTimestamps.sort(function(a, b) {
-            return a - b;
+
+        var cals = user
+          .progressTimestamps
+          .map(objOrNum => {
+            return typeof objOrNum === 'number' ?
+              objOrNum :
+              objOrNum.timestamp;
+          })
+          .map(time => {
+            return moment(time).format('YYYY-MM-DD');
           });
 
-        var timeObject = Object.create(null);
-        R.forEach(function(time) {
-          timeObject[moment(time).format('YYYY-MM-DD')] = time;
-        }, user.progressTimestamps);
+        user.currentStreak = calcCurrentStreak(cals);
 
-        var tmpLongest = 1;
-        var timeKeys = R.keys(timeObject);
-
-        user.longestStreak = 0;
-        for (var i = 1; i <= timeKeys.length; i++) {
-          if (moment(timeKeys[i - 1]).add(1, 'd').toString()
-            === moment(timeKeys[i]).toString()) {
-            tmpLongest++;
-            if (tmpLongest > user.longestStreak) {
-              user.longestStreak = tmpLongest;
-            }
-          } else {
-            tmpLongest = 1;
-          }
+        if (user.currentStreak > user.longestStreak) {
+          user.longestStreak = user.currentStreak;
         }
 
-        timeKeys = timeKeys.reverse();
-        tmpLongest = 1;
+        const data = user
+          .progressTimestamps
+          .map((objOrNum) => {
+            return typeof objOrNum === 'number' ?
+              objOrNum :
+              objOrNum.timestamp;
+          })
+          .reduce((data, timeStamp) => {
+            data[(timeStamp / 1000)] = 1;
+            return data;
+          }, {});
 
-        user.currentStreak = 1;
-        var today = moment(Date.now()).format('YYYY-MM-DD');
-
-        const yesterday = moment(today).subtract(1, 'd').toString();
-        const yesteryesterday = moment(today).subtract(2, 'd').toString();
-
-        if (
-          moment(today).toString() === moment(timeKeys[0]).toString() ||
-          yesterday === moment(timeKeys[0]).toString() ||
-          yesteryesterday === moment(timeKeys[0]).toString()
-        ) {
-          for (var _i = 1; _i <= timeKeys.length; _i++) {
-
-            if (
-              moment(timeKeys[_i - 1]).subtract(1, 'd').toString() ===
-                moment(timeKeys[_i]).toString()
-            ) {
-
-              tmpLongest++;
-
-              if (tmpLongest > user.currentStreak) {
-                user.currentStreak = tmpLongest;
-              }
-            } else {
-              break;
-            }
-          }
-        } else {
-          user.currentStreak = 1;
-        }
-
-        var data = {};
-        var progressTimestamps = user.progressTimestamps;
-        progressTimestamps.forEach(function(timeStamp) {
-          data[(timeStamp / 1000)] = 1;
-        });
-        var challenges = user.completedChallenges.filter(function( obj ) {
+        const challenges = user.completedChallenges.filter(function(obj) {
           return obj.challengeType === 3 || obj.challengeType === 4;
         });
-
-        user.currentStreak = user.currentStreak || 1;
-        user.longestStreak = user.longestStreak || 1;
 
         res.render('account/show', {
           title: 'Camper ' + user.username + '\'s portfolio',
@@ -234,10 +178,8 @@ module.exports = function(app) {
           calender: data,
           challenges: challenges,
           moment: moment,
-          longestStreak: user.longestStreak +
-            (user.longestStreak === 1 ? ' day' : ' days'),
-          currentStreak: user.currentStreak +
-            (user.currentStreak === 1 ? ' day' : ' days')
+          longestStreak: user.longestStreak,
+          currentStreak: user.currentStreak
         });
       }
     );

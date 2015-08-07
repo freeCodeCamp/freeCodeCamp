@@ -28,7 +28,9 @@ function updateUserProgress(user, challengeId, completedChallenge) {
   });
 
   if (alreadyCompleted) {
-    user.progressTimestamps.push(Date.now());
+    user.progressTimestamps.push({
+      timestamp: Date.now()
+    });
   }
   user.completedChallenges.push(completedChallenge);
   return user;
@@ -330,7 +332,12 @@ module.exports = function(app) {
 
     saveUser(req.user)
       .subscribe(
-        function(user) { debug('user save', user && user.progressTimestamps); },
+        function(user) {
+          debug(
+            'user save points %s',
+            user && user.progressTimestamps && user.progressTimestamps.length
+          );
+        },
         next,
         function() {
           res.sendStatus(200);
