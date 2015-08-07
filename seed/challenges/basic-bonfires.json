@@ -608,7 +608,7 @@
       "dashedName": "bonfire-where-art-thou",
       "difficulty": "1.55",
       "description": [
-        "Make a function that looks through a list (first argument) and returns an array of all objects that have equivalent property values (second argument).",
+        "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property values (second argument).",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
