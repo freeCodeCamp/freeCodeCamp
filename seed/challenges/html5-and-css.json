@@ -3516,7 +3516,7 @@
       ],
       "tests": [
         "assert($('body').css('background-color') === 'rgb(0, 255, 0)', 'Give your <code>body</code> element the background-color of green.')",
-        "assert(editor.match(/#00FF00/g) && editor.match(/#00FF00/g).length > 0, 'Use hex code the color green instead of the word \"green\". For example <code>body: { color: #00FF00; }</code>.')"
+        "assert(editor.match(/#00[Ff]{2}00/g) && editor.match(/#00[Ff]{2}00/g).length > 0, 'Use hex code the color green instead of the word \"green\". For example <code>body: { color: #00FF00; }</code>.')"
       ],
       "challengeSeed": [
         "<style>",
