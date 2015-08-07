@@ -385,7 +385,7 @@ module.exports = function(app) {
           );
         }
       })
-      .withLatestFrom(Rx.Observable.just(req.user), function(user, pairedWith) {
+      .withLatestFrom(Rx.Observable.just(req.user), function(pairedWith, user) {
         return {
           user: user,
           pairedWith: pairedWith

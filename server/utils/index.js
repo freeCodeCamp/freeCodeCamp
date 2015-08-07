@@ -62,7 +62,12 @@ module.exports = {
   },
 
   unDasherize: function unDasherize(name) {
-    return ('' + name).replace(/\-/g, ' ').trim();
+    return ('' + name)
+      // replace dash with space
+      .replace(/\-/g, ' ')
+      // strip nonalphanumarics chars except whitespace
+      .replace(/[^a-zA-Z\d\s]/g, '')
+      .trim();
   },
 
   getChallengeMapForDisplay: function() {
