@@ -1,11 +1,10 @@
 {
-  "name": "AngularJS",
+  "title": "AngularJS",
   "order": 0.017,
   "challenges": [
     {
       "id": "bd7154d8c441eddfaeb5bdef",
-      "name": "Waypoint: Get Started with Angular.js",
-      "dashedName": "waypoint-get-started-with-angularjs",
+      "title": "Waypoint: Get Started with Angular.js",
       "difficulty": 0.34,
       "challengeSeed": ["114684726"],
       "description": [
@@ -28,8 +27,7 @@
     },
     {
       "id": "bd7155d8c441eddfaeb5bdef",
-      "name": "Waypoint: Apply Angular.js Directives",
-      "dashedName": "waypoint-apply-angularjs-directives",
+      "title": "Waypoint: Apply Angular.js Directives",
       "difficulty": 0.35,
       "challengeSeed": ["114684727"],
       "description": [
@@ -52,8 +50,7 @@
     },
     {
       "id": "bd7156d8c441eddfaeb5bdef",
-      "name": "Waypoint: Power Forms with Angular.js",
-      "dashedName": "waypoint-power-forms-with-angularjs",
+      "title": "Waypoint: Power Forms with Angular.js",
       "difficulty": 0.36,
       "challengeSeed": ["114684729"],
       "description": [
@@ -76,8 +73,7 @@
     },
     {
       "id": "bd7157d8c441eddfaeb5bdef",
-      "name": "Waypoint: Customize Angular.js Directives",
-      "dashedName": "waypoint-customize-angularjs-directives",
+      "title": "Waypoint: Customize Angular.js Directives",
       "difficulty": 0.37,
       "challengeSeed": ["114685062"],
       "description": [
@@ -99,8 +95,7 @@
     },
     {
       "id": "bd7158d8c441eddfaeb5bdef",
-      "name": "Waypoint: Create Angular.js Services",
-      "dashedName": "waypoint-create-angularjs-services",
+      "title": "Waypoint: Create Angular.js Services",
       "difficulty": 0.38,
       "challengeSeed": ["114685060"],
       "description": [

@@ -1,11 +1,10 @@
 {
-  "name": "HTML5 and CSS",
+  "title": "HTML5 and CSS",
   "order": 0.002,
   "challenges": [
     {
       "id": "bd7123c8c441eddfaeb5bdef",
-      "name": "Waypoint: Say Hello to HTML Elements",
-      "dashedName": "waypoint-say-hello-to-html-elements",
+      "title": "Waypoint: Say Hello to HTML Elements",
       "difficulty": 1.01,
       "description": [
         "Welcome to Free Code Camp's first coding challenge!",
@@ -53,8 +52,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf0887a",
-      "name": "Waypoint: Headline with the h2 Element",
-      "dashedName": "waypoint-headline-with-the-h2-element",
+      "title": "Waypoint: Headline with the h2 Element",
       "difficulty": 1.02,
       "description": [
         "Add an <code>h2</code> tag that says \"CatPhotoApp\" to create a second HTML <code>element</code> below your \"Hello World\" <code>h1</code> element.",
@@ -97,8 +95,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08801",
-      "name": "Waypoint: Inform with the Paragraph Element",
-      "dashedName": "waypoint-inform-with-the-paragraph-element",
+      "title": "Waypoint: Inform with the Paragraph Element",
       "difficulty": 1.03,
       "description": [
         "Create a <code>p</code> element below your <code>h2</code> element, and give it the text \"Hello Paragraph\".",
@@ -138,8 +135,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08802",
-      "name": "Waypoint: Uncomment HTML",
-      "dashedName": "waypoint-uncomment-html",
+      "title": "Waypoint: Uncomment HTML",
       "difficulty": 1.04,
       "description": [
         "Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.",
@@ -188,8 +184,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08804",
-      "name": "Waypoint: Comment out HTML",
-      "dashedName": "waypoint-comment-out-html",
+      "title": "Waypoint: Comment out HTML",
       "difficulty": 1.05,
       "description": [
         "Comment out your <code>h1</code> element and your <code>p</code> element, but leave your <code>h2</code> element uncommented.",
@@ -235,8 +230,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08833",
-      "name": "Waypoint: Fill in the Blank with Placeholder Text",
-      "dashedName": "waypoint-fill-in-the-blank-with-placeholder-text",
+      "title": "Waypoint: Fill in the Blank with Placeholder Text",
       "difficulty": 1.06,
       "description": [
         "Web developers traditionally use \"Lorem Ipsum\" text as placeholder text. It's called \"Lorem Ipsum\" text because those are the first two words of a famous passage by Cicero of Ancient Rome.",
@@ -282,8 +276,7 @@
     },
     {
       "id": "bad87fed1348bd9aedf08833",
-      "name": "Waypoint: Delete HTML Elements",
-      "dashedName": "waypoint-delete-html-elements",
+      "title": "Waypoint: Delete HTML Elements",
       "difficulty": 1.07,
       "description": [
         "Delete your <code>h1</code> element so we can simplify our view.",
@@ -326,8 +319,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08803",
-      "name": "Waypoint: Change the Color of Text",
-      "dashedName": "waypoint-change-the-color-of-text",
+      "title": "Waypoint: Change the Color of Text",
       "difficulty": 1.08,
       "description": [
         "Change your <code>h2</code> element's style so that its text color is red.",
@@ -368,8 +360,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08805",
-      "name": "Waypoint: Use CSS Selectors to Style Elements",
-      "dashedName": "waypoint-use-css-selectors-to-style-elements",
+      "title": "Waypoint: Use CSS Selectors to Style Elements",
       "difficulty": 1.09,
       "description": [
         "Delete your <code>h2</code> element's style attribute and instead create a CSS <code>style</code> element. Add the necessary CSS to turn all <code>h2</code> elements blue.",
@@ -423,8 +414,7 @@
     },
     {
       "id": "bad87fee1348bd9aecf08806",
-      "name": "Waypoint: Use a CSS Class to Style an Element",
-      "dashedName": "waypoint-use-a-css-class-to-style-an-element",
+      "title": "Waypoint: Use a CSS Class to Style an Element",
       "difficulty": 1.11,
       "description": [
         "Create a CSS class called \"red-text\" and apply it to your <code>h2</code> element.",
@@ -477,8 +467,7 @@
     },
     {
       "id": "bad87fee1348bd9aefe08806",
-      "name": "Waypoint: Style Multiple Elements with a CSS Class",
-      "dashedName": "waypoint－style－multiple-elements-with-a-css-class",
+      "title": "Waypoint: Style Multiple Elements with a CSS Class",
       "difficulty": 1.12,
       "description": [
         "Apply the \"red-text\" class to your <code>h2</code> and <code>p</code> elements.",
@@ -522,8 +511,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08806",
-      "name": "Waypoint: Change the Font Size of an Element",
-      "dashedName": "waypoint-change-the-font-size-of-an-element",
+      "title": "Waypoint: Change the Font Size of an Element",
       "difficulty": 1.13,
       "description": [
         "Create a second <code>p</code> element with the following Kitty Ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
@@ -569,8 +557,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08807",
-      "name": "Waypoint: Set the Font Family of an Element",
-      "dashedName": "waypoint-set-the-font-family-of-an-element",
+      "title": "Waypoint: Set the Font Family of an Element",
       "difficulty": 1.14,
       "description": [
         "Make all of your <code>p</code> elements use the \"Monospace\" font.",
@@ -616,8 +603,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08807",
-      "name": "Waypoint: Import a Google Font",
-      "dashedName": "waypoint-import-a-google-font",
+      "title": "Waypoint: Import a Google Font",
       "difficulty": 1.15,
       "description": [
         "Apply the <code>font-family</code> of \"Lobster\" to your <code>h2</code> element.",
@@ -670,8 +656,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08808",
-      "name": "Waypoint: Specify How Fonts Should Degrade",
-      "dashedName": "waypoint-specify-how-fonts-should-degrade",
+      "title": "Waypoint: Specify How Fonts Should Degrade",
       "difficulty": 1.16,
       "description": [
         "There are several default fonts that are available in all browsers. These include \"Monospace\", \"Serif\" and \"Sans-Serif\". Leave \"Lobster\" as the font-family for your <code>h2</code> elements. Make them \"degrade\" to \"Monospace\" when \"Lobster\" isn't available.",
@@ -728,8 +713,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08812",
-      "name": "Waypoint: Add Images to your Website",
-      "dashedName": "waypoint-add-images-to-your-website",
+      "title": "Waypoint: Add Images to your Website",
       "difficulty": 1.17,
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to an specific image's URL using the <code>src</code> attribute.",
@@ -783,8 +767,7 @@
     },
     {
       "id": "bad87fee1348bd9acdf08812",
-      "name": "Waypoint: Size your Images",
-      "dashedName": "waypoint-size-your-images",
+      "title": "Waypoint: Size your Images",
       "difficulty": 1.18,
       "description": [
         "CSS has an attribute called <code>width</code> that controls an element's width. Just like with fonts, we'll use pixels(px) to specify the image's width.",
@@ -839,8 +822,7 @@
     },
     {
       "id": "bad87fee1348bd9bedf08813",
-      "name": "Waypoint: Add Borders Around your Elements",
-      "dashedName": "waypoint-add-borders-around-your-elements",
+      "title": "Waypoint: Add Borders Around your Elements",
       "difficulty": 1.19,
       "description": [
         "CSS borders have attributes like style, color and width.",
@@ -902,8 +884,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08814",
-      "name": "Waypoint: Add Rounded Corners with a Border Radius",
-      "dashedName": "waypoint-add-rounded-corners-with-a-border-radius",
+      "title": "Waypoint: Add Rounded Corners with a Border Radius",
       "difficulty": 1.20,
       "description": [
         "Your cat photo currently has sharp corners. We can round out those corners with a CSS attribute called <code>border-radius</code>.",
@@ -968,8 +949,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08815",
-      "name": "Waypoint: Make Circular Images with a Border Radius",
-      "dashedName": "waypoint-make-circular-images-with-a-border-radius",
+      "title": "Waypoint: Make Circular Images with a Border Radius",
       "difficulty": 1.21,
       "description": [
         "In addition to pixels, you can also specify a <code>border-radius</code> using a percentage.",
@@ -1033,8 +1013,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08816",
-      "name": "Waypoint: Link to External Pages with Anchor Elements",
-      "dashedName": "waypoint-link-to-external-pages-with-anchor-elements",
+      "title": "Waypoint: Link to External Pages with Anchor Elements",
       "difficulty": 1.22,
       "description": [
         "<code>a</code> elements or \"anchor\" elements, are used to link to content outside of the current page.",
@@ -1104,8 +1083,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08817",
-      "name": "Waypoint: Nest an Anchor Element within a Paragraph",
-      "dashedName": "waypoint-nest-an-anchor-element-within-a-paragraph",
+      "title": "Waypoint: Nest an Anchor Element within a Paragraph",
       "difficulty": 1.23,
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
@@ -1180,8 +1158,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08817",
-      "name": "Waypoint: Make Dead Links using the Hash Symbol",
-      "dashedName": "waypoint-make-dead-links-using-the-hash-symbol",
+      "title": "Waypoint: Make Dead Links using the Hash Symbol",
       "difficulty": 1.24,
       "description": [
         "Sometimes you want to add <code>a</code> elements to your website before you know where they will link.",
@@ -1249,8 +1226,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08820",
-      "name": "Waypoint: Turn an Image into a Link",
-      "dashedName": "waypoint-turn-an-image-into-a-link",
+      "title": "Waypoint: Turn an Image into a Link",
       "difficulty": 1.25,
       "description": [
         "You can make elements into links by nesting them within an <code>a</code> element.",
@@ -1322,8 +1298,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08818",
-      "name": "Waypoint: Add Alt Text to an Image for Accessibility",
-      "dashedName": "waypoint-add-alt-text-to-an-image-for-accessibility",
+      "title": "Waypoint: Add Alt Text to an Image for Accessibility",
       "difficulty": 1.26,
       "description": [
         "<code>alt</code> attributes, also known as \"alt text\", are what browsers will display if they fail to load the image. <code>alt</code> attributes are also important for blind or visually impaired users to understand what an image portrays. And search engines also look at <code>alt</code> attributes.",
@@ -1393,8 +1368,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08827",
-      "name": "Waypoint: Create a Bulleted Unordered List",
-      "dashedName": "waypoint-create-a-bulleted-unordered-list",
+      "title": "Waypoint: Create a Bulleted Unordered List",
       "difficulty": 1.27,
       "description": [
         "HTML has a special element for creating unordered lists, or bullet point-style lists.",
@@ -1471,8 +1445,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08828",
-      "name": "Waypoint: Create an Ordered List",
-      "dashedName": "waypoint-create-an-ordered-list",
+      "title": "Waypoint: Create an Ordered List",
       "difficulty": 1.28,
       "description": [
         "HTML has a special element for creating ordered lists, or numbered-style lists.",
@@ -1552,8 +1525,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08829",
-      "name": "Waypoint: Create a Text Field",
-      "dashedName": "waypoint-create-a-text-field",
+      "title": "Waypoint: Create a Text Field",
       "difficulty": 1.29,
       "description": [
         "Now let's create a web form.",
@@ -1631,8 +1603,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08830",
-      "name": "Waypoint: Add Placeholder Text to a Text Field",
-      "dashedName": "waypoint-add-placeholder-text-to-a-text-field",
+      "title": "Waypoint: Add Placeholder Text to a Text Field",
       "difficulty": 1.30,
       "description": [
         "Your placeholder text is what appears in your text <code>input</code> before your user has inputed anything.",
@@ -1711,8 +1682,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08830",
-      "name": "Waypoint: Create a Form Element",
-      "dashedName": "waypoint-create-a-form-element",
+      "title": "Waypoint: Create a Form Element",
       "difficulty": 1.31,
       "description": [
         "You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your <code>form</code> element.",
@@ -1793,8 +1763,7 @@
     },
     {
       "id": "bad87fee1348bd9aedd08830",
-      "name": "Waypoint: Add a Submit Button to a Form",
-      "dashedName": "waypoint-add-a-submit-button-to-a-form",
+      "title": "Waypoint: Add a Submit Button to a Form",
       "difficulty": 1.32,
       "description": [
         "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
@@ -1877,8 +1846,7 @@
     },
     {
       "id": "bad87fee1348bd9aedc08830",
-      "name": "Waypoint: Use HTML5 to Require a Field",
-      "dashedName": "waypoint-use-html5-to-require-a-field",
+      "title": "Waypoint: Use HTML5 to Require a Field",
       "difficulty": 1.33,
       "description": [
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
@@ -1959,8 +1927,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08834",
-      "name": "Waypoint: Create a Set of Radio Buttons",
-      "dashedName": "waypoint-create-a-set-of-radio-buttons",
+      "title": "Waypoint: Create a Set of Radio Buttons",
       "difficulty": 1.34,
       "description": [
         "You can use \"radio buttons\" for questions where you want the user to only give you one answer.",
@@ -2052,8 +2019,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08835",
-      "name": "Waypoint: Create a Set of Checkboxes",
-      "dashedName": "waypoint-create-a-set-of-checkboxes",
+      "title": "Waypoint: Create a Set of Checkboxes",
       "difficulty": 1.35,
       "description": [
         "Forms commonly use \"checkboxes\" for questions that may have more than one answer.",
@@ -2142,8 +2108,7 @@
     },
     {
       "id": "bad87fee1348bd9aedd08835",
-      "name": "Waypoint: Check Radio Buttons and Checkboxes by Default",
-      "dashedName": "waypoint-check-radio-buttons-and-checkboxes-by-default",
+      "title": "Waypoint: Check Radio Buttons and Checkboxes by Default",
       "difficulty": 1.37,
       "description": [
         "You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
@@ -2230,8 +2195,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08835",
-      "name": "Waypoint: Nest Many Elements within a Single Div Element",
-      "dashedName": "waypoint-nest-many-elements-within-a-single-div-element",
+      "title": "Waypoint: Nest Many Elements within a Single Div Element",
       "difficulty": 1.38,
       "description": [
         "The <code>div</code> element, or \"Division\" element, is a general purpose container for other elements.",
@@ -2325,8 +2289,7 @@
     },
     {
       "id": "bad87fed1348bd9aede07836",
-      "name": "Waypoint: Give a Background Color to a Div Element",
-      "dashedName": "waypoint-give-a-background-color-to-a-div-element",
+      "title": "Waypoint: Give a Background Color to a Div Element",
       "difficulty": 1.39,
       "description": [
         "You can set an element's background color with the \"background-color\" attribute.",
@@ -2412,8 +2375,7 @@
     },
     {
       "id": "bad87eee1348bd9aede07836",
-      "name": "Waypoint: Set the ID of an Element",
-      "dashedName": "waypoint-set-the-id-of-an-element",
+      "title": "Waypoint: Set the ID of an Element",
       "difficulty": 1.391,
       "description": [
         "In addition to classes, each HTML element can also have an <code>id</code> attribute.",
@@ -2500,8 +2462,7 @@
     },
     {
       "id": "bad87dee1348bd9aede07836",
-      "name": "Waypoint: Use an ID Attribute to Style an Element",
-      "dashedName": "waypoint-use-an-id-attribute-to-style-an-element",
+      "title": "Waypoint: Use an ID Attribute to Style an Element",
       "difficulty": 1.392,
       "description": [
         "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
@@ -2590,8 +2551,7 @@
     },
     {
       "id": "bad88fee1348bd9aedf08825",
-      "name": "Waypoint: Adjusting the Padding of an Element",
-      "dashedName": "waypoint-adjusting-the-padding-of-an-element",
+      "title": "Waypoint: Adjusting the Padding of an Element",
       "difficulty": 1.40,
       "description": [
         "You may have already noticed this, but all HTML elements are essentially little rectangles.",
@@ -2661,8 +2621,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08822",
-      "name": "Waypoint: Adjust the Margin of an Element",
-      "dashedName": "waypoint-adjust-the-margin-of-an-element",
+      "title": "Waypoint: Adjust the Margin of an Element",
       "difficulty": 1.41,
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -2732,8 +2691,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08823",
-      "name": "Waypoint: Add a Negative Margin to an Element",
-      "dashedName": "waypoint-add-a-negative-margin-to-an-element",
+      "title": "Waypoint: Add a Negative Margin to an Element",
       "difficulty": 1.42,
       "description": [
         "An element's <code>margin</code> controls the amount of space between an element's <code>border</code> and surrounding elements.",
@@ -2802,8 +2760,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08824",
-      "name": "Waypoint: Add Different Padding to Each Side of an Element",
-      "dashedName": "waypoint-add-different-padding-to-each-side-of-an-element",
+      "title": "Waypoint: Add Different Padding to Each Side of an Element",
       "difficulty": 1.43,
       "description": [
         "Sometimes you will want to customize an element so that it has different <code>padding</code> on each of its sides.",
@@ -2874,8 +2831,7 @@
     },
     {
       "id": "bad87fee1248bd9aedf08824",
-      "name": "Waypoint: Add Different Margins to Each Side of an Element",
-      "dashedName": "waypoint-add-different-margins-to-each-side-of-an-element",
+      "title": "Waypoint: Add Different Margins to Each Side of an Element",
       "difficulty": 1.44,
       "description": [
         "Give the green box a <code>margin</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side.",
@@ -2945,8 +2901,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08826",
-      "name": "Waypoint: Use Clockwise Notation to Specify the Padding of an Element",
-      "dashedName": "waypoint-use-clockwise-notation-to-specify-the-padding-of-an-element",
+      "title": "Waypoint: Use Clockwise Notation to Specify the Padding of an Element",
       "difficulty": 1.44,
       "description": [
         "Instead of specifying an element's <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code> attributes, you can specify them all in one line, like this: <code>padding: 10px 20px 10px 20px;</code>.",
@@ -3014,8 +2969,7 @@
     },
     {
       "id": "bad87fee1348bd9afdf08726",
-      "name": "Waypoint: Use Clockwise Notation to Specify the Margin of an Element",
-      "dashedName": "waypoint-use-clockwise-notation-to-specify-the-margin-of-an-element",
+      "title": "Waypoint: Use Clockwise Notation to Specify the Margin of an Element",
       "difficulty": 1.45,
       "description": [
         "Let's try this again, but with <code>margin</code> this time.",
@@ -3028,7 +2982,6 @@
         "assert($('.green-box').css('margin-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of <code>margin</code>.')",
         "assert($('.green-box').css('margin-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of <code>margin</code>.')",
         "assert($('.green-box').css('margin-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of <code>margin</code>.')"
-
       ],
       "challengeSeed": [
         "<style>",
@@ -3085,8 +3038,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08736",
-      "name": "Waypoint: Style the HTML Body Element",
-      "dashedName": "waypoint-style-the-html-body-element",
+      "title": "Waypoint: Style the HTML Body Element",
       "difficulty": 1.46,
       "description": [
         "Now let's start fresh and talk about CSS inheritance.",
@@ -3118,8 +3070,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08746",
-      "name": "Waypoint: Inherit Styles from the Body Element",
-      "dashedName": "waypoint-inherit-styles-from-the-body-element",
+      "title": "Waypoint: Inherit Styles from the Body Element",
       "difficulty": 1.47,
       "description": [
         "Now we've proven that every HTML page has a <code>body</code> element, and that its <code>body</code> element can also be styled with CSS.",
@@ -3161,8 +3112,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08756",
-      "name": "Waypoint: Prioritize One Style Over Another",
-      "dashedName": "waypoint-prioritize-one-style-over-another",
+      "title": "Waypoint: Prioritize One Style Over Another",
       "difficulty": 1.48,
       "description": [
         "Sometimes your HTML elements will receive multiple styles that conflict with one another.",
@@ -3201,8 +3151,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf04756",
-      "name": "Waypoint: Override Styles in Subsequent CSS",
-      "dashedName": "waypoint-override-styles-in-subsequent-css",
+      "title": "Waypoint: Override Styles in Subsequent CSS",
       "difficulty": 1.49,
       "description": [
         "Our \"pink-text\" class overrode our <code>body</code> element's CSS declaration!",
@@ -3244,8 +3193,7 @@
     },
     {
       "id": "bad87fee1348bd8aedf06756",
-      "name": "Waypoint: Override Class Declarations by Styling ID Attributes",
-      "dashedName": "waypoint-override-class-declarations-by-styling-id-attributes",
+      "title": "Waypoint: Override Class Declarations by Styling ID Attributes",
       "difficulty": 1.52,
       "description": [
         "We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.",
@@ -3293,8 +3241,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf06756",
-      "name": "Waypoint: Override Class Declarations with Inline Styles",
-      "dashedName": "waypoint-override-class-declarations-with-inline-styles",
+      "title": "Waypoint: Override Class Declarations with Inline Styles",
       "difficulty": 1.52,
       "description": [
         "So we've proven that id declarations override class declarations, regardless of where they are declared in your <code>style</code> element CSS.",
@@ -3344,8 +3291,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf07756",
-      "name": "Waypoint: Override All Other Styles by using Important",
-      "dashedName": "waypoint-override-all-other-styles-by-using-important",
+      "title": "Waypoint: Override All Other Styles by using Important",
       "difficulty": 1.53,
       "description": [
         "Yay! We just proved that in-line styles will override all the CSS declarations in your <code>style</code> element.",
@@ -3398,8 +3344,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08726",
-      "name": "Waypoint: Use Hex Code for Specific Colors",
-      "dashedName": "waypoint-use-hex-code-for-specific-colors",
+      "title": "Waypoint: Use Hex Code for Specific Colors",
       "difficulty": 1.54,
       "description": [
         "Did you know there other ways to represent colors in CSS? One of these ways is called hexadecimal code, or \"hex code\" for short.",
@@ -3434,8 +3379,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08725",
-      "name": "Waypoint: Use Hex Code to Color Elements White",
-      "dashedName": "waypoint-use-hex-code-to-color-elements-white",
+      "title": "Waypoint: Use Hex Code to Color Elements White",
       "difficulty": 1.55,
       "description": [
         "0 is the lowest number in hex code, and represents a complete absence of color.",
@@ -3469,8 +3413,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08724",
-      "name": "Waypoint: Use Hex Code to Color Elements Red",
-      "dashedName": "waypoint-use-hex-code-to-color-elements-red",
+      "title": "Waypoint: Use Hex Code to Color Elements Red",
       "difficulty": 1.56,
       "description": [
         "You may be wondering why we use 6 digits to represent a color instead of just one or two. The answer is that using 6 digits gives us a huge variety.",
@@ -3506,8 +3449,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08723",
-      "name": "Waypoint: Use Hex Code to Color Elements Green",
-      "dashedName": "waypoint-use-hex-code-to-color-elements-green",
+      "title": "Waypoint: Use Hex Code to Color Elements Green",
       "difficulty": 1.57,
       "description": [
         "Remember that hex code follows the red-green-blue, or \"RGB\" format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
@@ -3541,8 +3483,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08722",
-      "name": "Waypoint: Use Hex Code to Color Elements Blue",
-      "dashedName": "waypoint-use-hex-code-to-color-elements-blue",
+      "title": "Waypoint: Use Hex Code to Color Elements Blue",
       "difficulty": 1.58,
       "description": [
         "Hex code follows the red-green-blue, or \"RGB\" format. The first two digits of hex code represent the amount of red in the color. The third and fourth digit represent the amount of green. The fifth and sixth represent the amount of blue.",
@@ -3576,8 +3517,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08721",
-      "name": "Waypoint: Use Hex Code to Mix Colors",
-      "dashedName": "waypoint-use-hex-code-to-mix-colors",
+      "title": "Waypoint: Use Hex Code to Mix Colors",
       "difficulty": 1.59,
       "description": [
         "From these three pure colors (red, green and blue), we can create 16 million other colors.",
@@ -3611,8 +3551,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08720",
-      "name": "Waypoint: Use Hex Code to Color Elements Gray",
-      "dashedName": "waypoint-use-hex-code-to-color-elements-gray",
+      "title": "Waypoint: Use Hex Code to Color Elements Gray",
       "difficulty": 1.60,
       "description": [
         "From these three pure colors (red, green and blue), we can create 16 million other colors.",
@@ -3646,8 +3585,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08720",
-      "name": "Waypoint: Use Hex Code for Specific Shades of Gray",
-      "dashedName": "waypoint-use-hex-code-for-specific-shades-of-gray",
+      "title": "Waypoint: Use Hex Code for Specific Shades of Gray",
       "difficulty": 1.61,
       "description": [
         "We can also create other shades of gray by evenly mixing all three colors. We can go very close to true black.",
@@ -3680,8 +3618,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08719",
-      "name": "Waypoint: Use Abbreviated Hex Code",
-      "dashedName": "waypoint-use-abbreviated-hex-code",
+      "title": "Waypoint: Use Abbreviated Hex Code",
       "difficulty": 1.62,
       "description": [
         "Many people feel overwhelmed by the possibilities of more than 16 million colors. And it's difficult to remember hex code. Fortunately, you can shorten it.",
@@ -3716,8 +3653,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08718",
-      "name": "Waypoint: Use RGB values to Color Elements",
-      "dashedName": "waypoint-use-rgb-values-to-color-elements",
+      "title": "Waypoint: Use RGB values to Color Elements",
       "difficulty": 1.63,
       "description": [
         "Another way you can represent colors in CSS is by using RGB values.",
@@ -3753,8 +3689,7 @@
     },
     {
       "id": "bad88fee1348bd9aedf08726",
-      "name": "Waypoint: Use RGB to Color Elements White",
-      "dashedName": "waypoint-use-rgb-to-color-elements-white",
+      "title": "Waypoint: Use RGB to Color Elements White",
       "difficulty": 1.64,
       "description": [
         "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)<code> for white.",
@@ -3788,8 +3723,7 @@
     },
     {
       "id": "bad89fee1348bd9aedf08724",
-      "name": "Waypoint: Use RGB to Color Elements Red",
-      "dashedName": "waypoint-use-rgb-to-color-elements-red",
+      "title": "Waypoint: Use RGB to Color Elements Red",
       "difficulty": 1.65,
       "description": [
         "Just like with hex code, you can represent different colors in RGB by using combinations of different values.",
@@ -3823,8 +3757,7 @@
     },
     {
       "id": "bad80fee1348bd9aedf08723",
-      "name": "Waypoint: Use RGB to Color Elements Green",
-      "dashedName": "waypoint-use-rgb-to-color-elements-green",
+      "title": "Waypoint: Use RGB to Color Elements Green",
       "difficulty": 1.66,
       "description": [
         "Now change the <code>body</code> element's background color to the RGB value green: <code>rgb(0, 255, 0)</code>"
@@ -3856,8 +3789,7 @@
     },
     {
       "id": "bad81fee1348bd9aedf08722",
-      "name": "Waypoint: Use RGB to Color Elements Blue",
-      "dashedName": "waypoint-use-rgb-to-color-elements-blue",
+      "title": "Waypoint: Use RGB to Color Elements Blue",
       "difficulty": 1.67,
       "description": [
         "Change the <code>body</code> element's background color to the RGB value blue: <code>rgb(0, 0, 255)</code>"
@@ -3889,8 +3821,7 @@
     },
     {
       "id": "bad82fee1348bd9aedf08721",
-      "name": "Waypoint: Use RGB to Mix Colors",
-      "dashedName": "waypoint-use-rgb-to-mix-colors",
+      "title": "Waypoint: Use RGB to Mix Colors",
       "difficulty": 1.68,
       "description": [
         "Just like with hex code, you can mix colors in RGB by using combinations of different values.",
@@ -3923,8 +3854,7 @@
     },
     {
       "id": "bad83fee1348bd9aede08720",
-      "name": "Waypoint: Use RGB to Color Elements Gray",
-      "dashedName": "waypoint-use-rgb-to-color-elements-gray",
+      "title": "Waypoint: Use RGB to Color Elements Gray",
       "difficulty": 1.69,
       "description": [
         "With RGB values, we can make an element gray by using combinations of the same value for all three colors.",

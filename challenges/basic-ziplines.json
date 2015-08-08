@@ -1,11 +1,10 @@
 {
-  "name": "Basic Front End Development Projects",
+  "title": "Basic Front End Development Projects",
   "order": 0.008,
   "challenges": [
     {
       "id": "bd7158d8c442eddfbeb5bd1f",
-      "name": "Waypoint: Get Set for Ziplines",
-      "dashedName": "waypoint-get-set-for-ziplines",
+      "title": "Waypoint: Get Set for Ziplines",
       "difficulty": 1.00,
       "challengeSeed": ["125658022"],
       "description": [
@@ -39,8 +38,7 @@
     },
     {
       "id": "bd7158d8c242eddfaeb5bd13",
-      "name": "Zipline: Build a Personal Portfolio Webpage",
-      "dashedName": "zipline-build-a-personal-portfolio-webpage",
+      "title": "Zipline: Build a Personal Portfolio Webpage",
       "difficulty": 1.01,
       "challengeSeed": ["133315782"],
       "description": [
@@ -75,8 +73,7 @@
     },
     {
       "id": "bd7158d8c442eddfaeb5bd13",
-      "name": "Zipline: Build a Random Quote Machine",
-      "dashedName": "zipline-build-a-random-quote-machine",
+      "title": "Zipline: Build a Random Quote Machine",
       "difficulty": 1.02,
       "challengeSeed": ["126415122"],
       "description": [
@@ -107,8 +104,7 @@
     },
     {
       "id": "bd7158d8c442eddfaeb5bd10",
-      "name": "Zipline: Show the Local Weather",
-      "dashedName": "zipline-show-the-local-weather",
+      "title": "Zipline: Show the Local Weather",
       "difficulty": 1.03,
       "challengeSeed": ["126415127"],
       "description": [
@@ -140,8 +136,7 @@
     },
     {
       "id": "bd7158d8c442eddfaeb5bd0f",
-      "name": "Zipline: Build a Pomodoro Clock",
-      "dashedName": "zipline-build-a-pomodoro-clock",
+      "title": "Zipline: Build a Pomodoro Clock",
       "difficulty": 1.04,
       "challengeSeed": ["126411567"],
       "description": [
@@ -172,8 +167,7 @@
     },
     {
       "id": "bd7158d8c442eddfaeb5bd1f",
-      "name": "Zipline: Use the Twitch.tv JSON API",
-      "dashedName": "zipline-use-the-twitchtv-json-api",
+      "title": "Zipline: Use the Twitch.tv JSON API",
       "difficulty": 1.05,
       "challengeSeed": ["126411564"],
       "description": [

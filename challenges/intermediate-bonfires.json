@@ -1,11 +1,10 @@
 {
-  "name": "Intermediate Algorithm Scripting",
+  "title": "Intermediate Algorithm Scripting",
   "order": 0.009,
   "challenges": [
     {
       "id": "a3566b1109230028080c9345",
-      "name": "Bonfire: Sum All Numbers in a Range",
-      "dashedName": "bonfire-sum-all-numbers-in-a-range",
+      "title": "Bonfire: Sum All Numbers in a Range",
       "difficulty": "2.00",
       "description": [
         "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
@@ -45,8 +44,7 @@
     },
     {
       "id": "a5de63ebea8dbee56860f4f2",
-      "name": "Bonfire: Diff Two Arrays",
-      "dashedName": "bonfire-diff-two-arrays",
+      "title": "Bonfire: Diff Two Arrays",
       "difficulty": "2.01",
       "description": [
         "Compare two arrays and return a new array with any items not found in both of the original arrays.",
@@ -91,8 +89,7 @@
     },
     {
       "id": "a7f4d8f2483413a6ce226cac",
-      "name": "Bonfire: Roman Numeral Converter",
-      "dashedName": "bonfire-roman-numeral-converter",
+      "title": "Bonfire: Roman Numeral Converter",
       "tests": [
         "expect(convert(12)).to.equal(\"XII\");",
         "expect(convert(5)).to.equal(\"V\");",
@@ -132,8 +129,7 @@
     },
     {
       "id": "a0b5010f579e69b815e7c5d6",
-      "name": "Bonfire: Search and Replace",
-      "dashedName": "bonfire-search-and-replace",
+      "title": "Bonfire: Search and Replace",
       "tests": [
         "expect(replace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
         "expect(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")).to.equal(\"He is Sitting on the couch\");",
@@ -176,8 +172,7 @@
     },
     {
       "id": "aa7697ea2477d1316795783b",
-      "name": "Bonfire: Pig Latin",
-      "dashedName": "bonfire-pig-latin",
+      "title": "Bonfire: Pig Latin",
       "tests": [
         "expect(translate(\"california\")).to.equal(\"aliforniacay\");",
         "expect(translate(\"paragraphs\")).to.equal(\"aragraphspay\");",
@@ -220,8 +215,7 @@
     },
     {
       "id": "afd15382cdfb22c9efe8b7de",
-      "name": "Bonfire: DNA Pairing",
-      "dashedName": "bonfire-dna-pairing",
+      "title": "Bonfire: DNA Pairing",
       "tests": [
         "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'should return the dna pair');",
         "assert.deepEqual(pair(\"TTGAG\"),[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']], 'should return the dna pair');",
@@ -259,8 +253,7 @@
     },
     {
       "id": "af7588ade1100bde429baf20",
-      "name": "Bonfire: Missing letters",
-      "dashedName": "bonfire-missing-letters",
+      "title": "Bonfire: Missing letters",
       "difficulty": "2.05",
       "description": [
         "Find the missing letter in the passed letter range and return it.",
@@ -298,8 +291,7 @@
     },
     {
       "id": "a77dbc43c33f39daa4429b4f",
-      "name": "Bonfire: Boo who",
-      "dashedName": "bonfire-boo-who",
+      "title": "Bonfire: Boo who",
       "difficulty": "2.06",
       "description": [
         "Check if a value is classified as a boolean primitive. Return true or false.",
@@ -341,8 +333,7 @@
     },
     {
       "id": "a105e963526e7de52b219be9",
-      "name": "Bonfire: Sorted Union",
-      "dashedName": "bonfire-sorted-union",
+      "title": "Bonfire: Sorted Union",
       "difficulty": "2.07",
       "description": [
         "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
@@ -382,8 +373,7 @@
     },
     {
       "id": "a6b0bb188d873cb2c8729495",
-      "name": "Bonfire: Convert HTML Entities",
-      "dashedName": "bonfire-convert-html-entities",
+      "title": "Bonfire: Convert HTML Entities",
       "difficulty": "2.07",
       "description": [
         "Convert the characters \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), in a string to their corresponding HTML entities.",
@@ -424,8 +414,7 @@
     },
     {
       "id": "a103376db3ba46b2d50db289",
-      "name": "Bonfire: Spinal Tap Case",
-      "dashedName": "bonfire-spinal-tap-case",
+      "title": "Bonfire: Spinal Tap Case",
       "difficulty": "2.08",
       "description": [
         "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.",
@@ -464,8 +453,7 @@
     },
     {
       "id": "a5229172f011153519423690",
-      "name": "Bonfire: Sum All Odd Fibonacci Numbers",
-      "dashedName": "bonfire-sum-all-odd-fibonacci-numbers",
+      "title": "Bonfire: Sum All Odd Fibonacci Numbers",
       "difficulty": "2.09",
       "description": [
         "Return the sum of all odd Fibonacci numbers up to and including the passed number if it is a Fibonacci number.",
@@ -505,8 +493,7 @@
     },
     {
       "id": "a3bfc1673c0526e06d3ac698",
-      "name": "Bonfire: Sum All Primes",
-      "dashedName": "bonfire-sum-all-primes",
+      "title": "Bonfire: Sum All Primes",
       "difficulty": "2.10",
       "description": [
         "Sum all the prime numbers up to and including the provided number.",
@@ -544,8 +531,7 @@
     },
     {
       "id": "ae9defd7acaf69703ab432ea",
-      "name": "Bonfire: Smallest Common Multiple",
-      "dashedName": "bonfire-smallest-common-multiple",
+      "title": "Bonfire: Smallest Common Multiple",
       "difficulty": "2.11",
       "description": [
         "Find the smallest number that is evenly divisible by all numbers in the provided range.",
@@ -583,8 +569,7 @@
     },
     {
       "id": "a6e40f1041b06c996f7b2406",
-      "name": "Bonfire: Finders Keepers",
-      "dashedName": "bonfire-finders-keepers",
+      "title": "Bonfire: Finders Keepers",
       "difficulty": "2.12",
       "description": [
         "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument).",
@@ -619,8 +604,7 @@
     },
     {
       "id": "a5deed1811a43193f9f1c841",
-      "name": "Bonfire: Drop it",
-      "dashedName": "bonfire-drop-it",
+      "title": "Bonfire: Drop it",
       "difficulty": "2.13",
       "description": [
         "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.",
@@ -657,8 +641,7 @@
     },
     {
       "id": "ab306dbdcc907c7ddfc30830",
-      "name": "Bonfire: Steamroller",
-      "dashedName": "bonfire-steamroller",
+      "title": "Bonfire: Steamroller",
       "difficulty": "2.14",
       "description": [
         "Flatten a nested array. You must account for varying levels of nesting.",
@@ -695,8 +678,7 @@
     },
     {
       "id": "a8d97bd4c764e91f9d2bda01",
-      "name": "Bonfire: Binary Agents",
-      "dashedName": "bonfire-binary-agents",
+      "title": "Bonfire: Binary Agents",
       "difficulty": "2.15",
       "description": [
         "Return an English translated sentence of the passed binary string.",
@@ -732,8 +714,7 @@
     },
     {
       "id": "a10d2431ad0c6a099a4b8b52",
-      "name": "Bonfire: Everything Be True",
-      "dashedName": "bonfire-everything-be-true",
+      "title": "Bonfire: Everything Be True",
       "difficulty": "2.21",
       "description": [
         "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
@@ -753,7 +734,6 @@
         "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
         "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');",
         "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'female'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
-
       ],
       "MDNlinks": [
         "Object.hasOwnProperty()",
@@ -773,8 +753,7 @@
     },
     {
       "id": "a97fd23d9b809dac9921074f",
-      "name": "Bonfire: Arguments Optional",
-      "dashedName": "bonfire-arguments-optional",
+      "title": "Bonfire: Arguments Optional",
       "difficulty": "2.22",
       "description": [
         "Create a function that sums two arguments together. If only one argument is provided, return a function that expects one additional argument and will return the sum.",

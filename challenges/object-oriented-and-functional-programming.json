@@ -1,11 +1,10 @@
 {
-  "name": "Object Oriented and Functional Programming",
+  "title": "Object Oriented and Functional Programming",
   "order" : 0.010,
   "challenges": [
     {
       "id": "bd7153d8c44eeddfaeb5bd0f",
-      "name": "Waypoint: Learn Scope Chains and Closures",
-      "dashedName": "waypoint-learn-scope-chains-and-closures",
+      "title": "Waypoint: Learn Scope Chains and Closures",
       "difficulty": 0.01,
       "challengeSeed": ["133316031"],
       "description": [
@@ -44,8 +43,7 @@
     },
     {
       "id": "bd7153d8b44eeddfaeb5bd0f",
-      "name": "Waypoint: Use Prototypes for Inheriting Properties",
-      "dashedName": "waypoint-use-prototypes-for-inheriting-properties",
+      "title": "Waypoint: Use Prototypes for Inheriting Properties",
       "difficulty": 0.02,
       "challengeSeed": ["133316036"],
       "description": [
@@ -89,8 +87,7 @@
     },
     {
       "id": "bd7129d8c441eddfbeb5bddf",
-      "name": "Waypoint: Practice Functional Programming",
-      "dashedName": "waypoint-practice-functional-programming",
+      "title": "Waypoint: Practice Functional Programming",
       "difficulty": 0.01,
       "challengeSeed": ["129169463"],
       "description": [

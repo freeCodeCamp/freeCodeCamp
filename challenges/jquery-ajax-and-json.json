@@ -1,12 +1,10 @@
 {
-  "name":  "jQuery",
-  "dashedName":  "jquery",
+  "title":  "jQuery",
   "order": 0.004,
   "challenges": [
     {
       "id": "bad87fee1348bd9acdd08826",
-      "name":  "Waypoint: Learn how Script Tags and Document Ready Work",
-      "dashedName":  "waypoint-learn-how-script-tags-and-document-ready-work",
+      "title":  "Waypoint: Learn how Script Tags and Document Ready Work",
       "difficulty": 3.01,
       "description": [
         "Now we're ready to learn jQuery, the most popular JavaScript tool of all time. Don't worry about JavaScript itself - we will cover it soon.",
@@ -46,11 +44,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9bedc08826",
-      "name":  "Waypoint: Target HTML Elements with Selectors Using jQuery",
-      "dashedName":  "waypoint-target-html-elements-with-selectors-using-jquery",
+      "title":  "Waypoint: Target HTML Elements with Selectors Using jQuery",
       "difficulty": 3.02,
       "description": [
         "Now we have a \"document ready function\". We'll learn more about functions later. The important thing to know is that code you put inside this function will run as soon as your browser has loaded your page.",
@@ -96,11 +92,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aedc08826",
-      "name":  "Waypoint: Target Elements by Class Using jQuery",
-      "dashedName":  "waypoint-target-elements-by-class-using-jquery",
+      "title":  "Waypoint: Target Elements by Class Using jQuery",
       "difficulty": 3.03,
       "description": [
         "You see how we made all of your <code>button</code> elements bounce? We selected them with <code>$('button')</code>, then we added some CSS classes to them with <code>.addClass('animated bounce');</code>.",
@@ -149,8 +143,7 @@
     },
     {
       "id": "bad87fee1348bd9aeda08826",
-      "name":  "Waypoint: Target Elements by ID Using jQuery",
-      "dashedName":  "waypoint-target-elements-by-id-using-jquery",
+      "title":  "Waypoint: Target Elements by ID Using jQuery",
       "difficulty": 3.04,
       "description": [
         "You can also target elements by their id attributes.",
@@ -198,11 +191,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aeda08726",
-      "name":  "Waypoint: Delete your jQuery Functions",
-      "dashedName":  "waypoint-delete-your-jquery-functions",
+      "title":  "Waypoint: Delete your jQuery Functions",
       "difficulty": 3.05,
       "description": [
         "These animations were cool at first, but now they're getting kind of distracting.",
@@ -253,8 +244,7 @@
     },
     {
       "id": "bad87fee1348bd9aed908626",
-      "name":  "Waypoint: Target the same element with multiple jQuery Selectors",
-      "dashedName":  "waypoint-target-the-same-element-with-multiple-jQuery-Selectors",
+      "title":  "Waypoint: Target the same element with multiple jQuery Selectors",
       "difficulty": 3.06,
       "description": [
         "Now you know three ways of targeting elements: by type <code>$('button')</code>, by class <code>$('.btn')</code>), and by id <code>$('#target1')</code>).",
@@ -304,8 +294,7 @@
     },
     {
       "id": "bad87fee1348bd9aed918626",
-      "name":  "Waypoint: Remove Classes from an element with jQuery",
-      "dashedName":  "waypoint-remove-classes-from-an-element-with-jquery",
+      "title":  "Waypoint: Remove Classes from an element with jQuery",
       "difficulty": 3.07,
       "description": [
         "In the same way you can add classes to an element with jQuery's <code>addClass()</code> function, you can remove them with jQuery's <code>removeClass()</code> function.",
@@ -354,8 +343,7 @@
     },
     {
       "id": "bad87fee1348bd9aed908826",
-      "name":  "Waypoint: Change the CSS of an Element Using jQuery",
-      "dashedName":  "waypoint-change-the-css-of-an-element-using-jquery",
+      "title":  "Waypoint: Change the CSS of an Element Using jQuery",
       "difficulty": 3.08,
       "description": [
         "We can also change the CSS of an HTML element directly with jQuery.",
@@ -406,11 +394,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aed808826",
-      "name":  "Waypoint: Disable an Element Using jQuery",
-      "dashedName":  "waypoint-disable-an-element-using-jquery",
+      "title":  "Waypoint: Disable an Element Using jQuery",
       "difficulty": 3.09,
       "description": [
         "You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.",
@@ -458,11 +444,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aed708826",
-      "name":  "Waypoint: Remove an Element Using jQuery",
-      "dashedName":  "waypoint-remove-an-element-using-jquery",
+      "title":  "Waypoint: Remove an Element Using jQuery",
       "difficulty": 3.10,
       "description": [
         "Now let's remove an HTML element from your page using jQuery.",
@@ -507,11 +491,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aed608826",
-      "name":  "Waypoint: Use appendTo to Move Elements with jQuery",
-      "dashedName":  "waypoint-use-appendto-to-move-elements-with-jquery",
+      "title":  "Waypoint: Use appendTo to Move Elements with jQuery",
       "difficulty": 3.11,
       "description": [
         "Now let's try moving elements from one <code>div</code> to another.",
@@ -560,11 +542,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aed508826",
-      "name":  "Waypoint: Clone an Element Using jQuery",
-      "dashedName":  "waypoint-clone-an-element-using-jquery",
+      "title":  "Waypoint: Clone an Element Using jQuery",
       "difficulty": 3.12,
       "description": [
         "In addition to moving elements, you can also copy them from one place to another.",
@@ -615,11 +595,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aed308826",
-      "name":  "Waypoint: Target the Parent of an Element Using jQuery",
-      "dashedName":  "waypoint-target-the-parent-of-an-element-using-jquery",
+      "title":  "Waypoint: Target the Parent of an Element Using jQuery",
       "difficulty": 3.13,
       "description": [
         "Every HTML elements has a \"parent\" element from which it \"inherits\" properties.",
@@ -671,11 +649,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aed208826",
-      "name":  "Waypoint: Target the Children of an Element Using jQuery",
-      "dashedName":  "waypoint-target-the-children-of-an-element-using-jquery",
+      "title":  "Waypoint: Target the Children of an Element Using jQuery",
       "difficulty": 3.14,
       "description": [
         "Many HTML elements has a \"children\" element from which they \"inherits\" properties.",
@@ -730,8 +706,7 @@
     },
     {
       "id": "bad87fee1348bd9aed108826",
-      "name":  "Waypoint: Target a Specific Child of an Element Using jQuery",
-      "dashedName":  "waypoint-target-a-specific-child-of-an-element-using-jquery",
+      "title":  "Waypoint: Target a Specific Child of an Element Using jQuery",
       "difficulty": 3.15,
       "description": [
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
@@ -785,11 +760,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aed008826",
-      "name":  "Waypoint: Target Even Numbered Elements Using jQuery",
-      "dashedName":  "waypoint-target-even-numbered-elements-using-jquery",
+      "title":  "Waypoint: Target Even Numbered Elements Using jQuery",
       "difficulty": 3.16,
       "description": [
         "You can also target all the even-numbered elements.",
@@ -845,11 +818,9 @@
       ],
       "challengeType": 0
     },
-
     {
       "id": "bad87fee1348bd9aecb08826",
-      "name":  "Waypoint: Use jQuery to Modify the Entire Page",
-      "dashedName":  "waypoint-use-jquery-to-modify-the-entire-page",
+      "title":  "Waypoint: Use jQuery to Modify the Entire Page",
       "difficulty": 3.20,
       "description": [
         "We're done playing with our jQuery playground. Let's tear it down!",

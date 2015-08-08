@@ -1,11 +1,10 @@
 {
-  "name": "Git",
+  "title": "Git",
   "order" : 0.014,
   "challenges": [
     {
       "id": "bd7353d8c341eddeaeb5bd0f",
-      "name": "Waypoint: Save your Code Revisions Forever with Git",
-      "dashedName": "waypoint-save-your-code-revisions-forever-with-git",
+      "title": "Waypoint: Save your Code Revisions Forever with Git",
       "difficulty": 0.01,
       "challengeSeed": ["133316034"],
       "description": [
