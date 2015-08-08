@@ -52,11 +52,12 @@ function setProfileFromGithub(
     username
   },
   {
-    location,
-    email: githubEmail,
     id: githubId,
+    'avatar_url': picture,
+    email: githubEmail,
     'created_at': joinedGithubOn,
     blog: website,
+    location,
     name
   }
 ) {
@@ -69,6 +70,7 @@ function setProfileFromGithub(
       location,
       joinedGithubOn,
       website,
+      picture,
       githubId,
       githubURL,
       githubEmail,
