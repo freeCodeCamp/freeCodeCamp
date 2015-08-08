@@ -75,8 +75,8 @@ module.exports = {
       challengeMapForDisplay = {};
       Object.keys(challengeMap).forEach(function(key) {
         challengeMapForDisplay[key] = {
-          name: challengeMap[key].name,
-          dashedName: challengeMap[key].name.replace(/\s/g, '-'),
+          name: challengeMap[key].title,
+          dashedName: challengeMap[key].title.replace(/\s/g, '-'),
           challenges: challengeMap[key].challenges,
           completedCount: challengeMap[key].challenges
         };

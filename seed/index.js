@@ -41,7 +41,9 @@ Challenge.destroyAll(function(err, info) {
     var challenges = require('./challenges/' + file).challenges
       .map(function(challenge) {
         // NOTE(berks): add title for displaying in views
-        challenge.title = challenge.name.replace(challangesRegex, '').trim();
+        //challenge.title = challenge.name.replace(challangesRegex, '').trim();
+        challenge.name = challenge.title.replace(/[^a-zA-Z0-9 ]/g, ''); // Remove non-alphanumwhitespace chars
+        challenge.dashedName = challenge.name.replace(/\s/g, '-'); // Replace with dasherize();
         return challenge;
       });
 

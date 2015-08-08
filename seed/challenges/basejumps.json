@@ -1,11 +1,10 @@
 {
-  "name": "Full Stack JavaScript Projects",
+  "title": "Full Stack JavaScript Projects",
   "order": 0.019,
   "challenges": [
     {
       "id": "bd7158d8c443eddfaeb5bcef",
-      "name": "Waypoint: Get Set for Basejumps",
-      "dashedName": "waypoint-get-set-for-basejumps",
+      "title": "Waypoint: Get Set for Basejumps",
       "difficulty": 2.00,
       "challengeSeed": ["128451852"],
       "description": [
@@ -65,8 +64,7 @@
     },
     {
       "id": "bd7158d8c443eddfaeb5bdef",
-      "name": "Basejump: Build a Voting App",
-      "dashedName": "basejump-build-a-voting-app",
+      "title": "Basejump: Build a Voting App",
       "difficulty": 2.01,
       "challengeSeed": ["133315786"],
       "description": [
@@ -102,8 +100,7 @@
     },
     {
       "id": "bd7158d8c443eddfaeb5bdff",
-      "name": "Basejump: Build a Nightlife Coordination App",
-      "dashedName": "basejump-build-a-nightlife-coordination-app",
+      "title": "Basejump: Build a Nightlife Coordination App",
       "difficulty": 2.02,
       "challengeSeed": ["133315781"],
       "description": [
@@ -136,8 +133,7 @@
     },
     {
       "id": "bd7158d8c443eddfaeb5bd0e",
-      "name": "Basejump: Chart the Stock Market",
-      "dashedName": "basejump-chart-the-stock-market",
+      "title": "Basejump: Chart the Stock Market",
       "difficulty": 2.03,
       "challengeSeed": ["133315787"],
       "description": [
@@ -169,8 +165,7 @@
     },
     {
       "id": "bd7158d8c443eddfaeb5bd0f",
-      "name": "Basejump: Manage a Book Trading Club",
-      "dashedName": "basejump-manage-a-book-trading-club",
+      "title": "Basejump: Manage a Book Trading Club",
       "difficulty": 2.04,
       "challengeSeed": ["133316032"],
       "description": [
@@ -202,8 +197,7 @@
     },
     {
       "id": "bd7158d8c443eddfaeb5bdee",
-      "name": "Basejump: Build a Pinterest Clone",
-      "dashedName": "basejump-build-a-pinterest-clone",
+      "title": "Basejump: Build a Pinterest Clone",
       "difficulty": 2.05,
       "challengeSeed": ["133315784"],
       "description": [

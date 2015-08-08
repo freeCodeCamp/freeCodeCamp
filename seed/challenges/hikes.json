@@ -1,11 +1,10 @@
 {
-  "name": "Hikes",
+  "title": "Hikes",
   "order": 0.050,
   "challenges": [
     {
       "id": "bd7128d8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 1: The 4 Basic Parts of a Computer",
-      "dashedName": "hike-computer-basics-1-the-4-basic-parts-of-a-computer",
+      "title": "Hike: Computer Basics 1: The 4 Basic Parts of a Computer",
       "difficulty": 9.01,
       "challengeSeed": [
         "132542064"
@@ -44,8 +43,7 @@
     },
     {
       "id": "bd7127d8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 2: More Computer Hardware",
-      "dashedName": "hike-computer-basics-2-more-computer-hardware",
+      "title": "Hike: Computer Basics 2: More Computer Hardware",
       "difficulty": 9.02,
       "challengeSeed": [
         "132542458"
@@ -83,8 +81,7 @@
     },
     {
       "id": "bd7126d8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 3: Intro to Binary Code",
-      "dashedName": "hike-computer-basics-3-intro-to-binary-code",
+      "title": "Hike: Computer Basics 3: Intro to Binary Code",
       "difficulty": 9.03,
       "challengeSeed": [
         "132542757"
@@ -117,8 +114,7 @@
     },
     {
       "id": "bd7125d8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 4: Decoding a Binary Number",
-      "dashedName": "hike-computer-basics-4-decoding-a-binary-number",
+      "title": "Hike: Computer Basics 4: Decoding a Binary Number",
       "difficulty": 9.04,
       "challengeSeed": [
         "132543332"
@@ -153,8 +149,7 @@
     },
     {
       "id": "bd7124d8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 5: How To Measure Data Size",
-      "dashedName": "hike-computer-basics-5-how-to-measure-data-size",
+      "title": "Hike: Computer Basics 5: How To Measure Data Size",
       "difficulty": 9.05,
       "challengeSeed": [
         "132543959"
@@ -192,8 +187,7 @@
     },
     {
       "id": "bd7123d8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 6: Measuring Data Speed",
-      "dashedName": "hike-computer-basics-6-measuring-data-speed",
+      "title": "Hike: Computer Basics 6: Measuring Data Speed",
       "difficulty": 9.06,
       "challengeSeed": [
         "132545171"
@@ -229,8 +223,7 @@
     },
     {
       "id": "bd7122d8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 7: Binary Bytes",
-      "dashedName": "hike-computer-basics-7-binary-bytes",
+      "title": "Hike: Computer Basics 7: Binary Bytes",
       "difficulty": 9.07,
       "challengeSeed": [
         "132545417"
@@ -263,8 +256,7 @@
     },
     {
       "id": "bd7121d8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 8: Types of Computers",
-      "dashedName": "hike-computer-basics-8-types-of-computers",
+      "title": "Hike: Computer Basics 8: Types of Computers",
       "difficulty": 9.08,
       "challengeSeed": [
         "132546182"
@@ -302,8 +294,7 @@
     },
     {
       "id": "bd7120d8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 9: More on the Motherboard",
-      "dashedName": "hike-computer-basics-9-more-on-the-motherboard",
+      "title": "Hike: Computer Basics 9: More on the Motherboard",
       "difficulty": 9.09,
       "challengeSeed": [
         "132547285"
@@ -343,8 +334,7 @@
     },
     {
       "id": "bd712fd8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 10: Data Networks",
-      "dashedName": "hike-computer-basics-10-data-networks",
+      "title": "Hike: Computer Basics 10: Data Networks",
       "difficulty": 9.10,
       "challengeSeed": [
         "132547590"
@@ -383,8 +373,7 @@
     },
     {
       "id": "bd712ed8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 11: IP Addresses",
-      "dashedName": "hike-computer-basics-11-ip-addresses",
+      "title": "Hike: Computer Basics 11: IP Addresses",
       "difficulty": 9.11,
       "challengeSeed": [
         "132548071"
@@ -422,8 +411,7 @@
     },
     {
       "id": "bd712dd8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 12: How the Internet Works",
-      "dashedName": "hike-computer-basics-12-how-the-internet-works",
+      "title": "Hike: Computer Basics 12: How the Internet Works",
       "difficulty": 9.12,
       "challengeSeed": [
         "132548579"
@@ -461,8 +449,7 @@
     },
     {
       "id": "bd712cd8c441eddfbeb5bddf",
-      "name": "Hike: Computer Basics 13: Software",
-      "dashedName": "hike-computer-basics-13-software",
+      "title": "Hike: Computer Basics 13: Software",
       "difficulty": 9.13,
       "challengeSeed": [
         "132548908"
@@ -494,8 +481,7 @@
     },
     {
       "id": "bd712bd8c441eddfbeb5bddf",
-      "name": "Hike: What Do Programmers Do?",
-      "dashedName": "hike-what-do-programmers-do",
+      "title": "Hike: What Do Programmers Do?",
       "difficulty": 9.14,
       "challengeSeed": [
         "133166912"
@@ -531,8 +517,7 @@
     },
     {
       "id": "bd712ad8c441eddfbeb5bddf",
-      "name": "Hike: Console and Logging",
-      "dashedName": "hike-console-and-logging",
+      "title": "Hike: Console and Logging",
       "difficulty": 9.15,
       "challengeSeed": [
         "133170880"
@@ -568,8 +553,7 @@
     },
     {
       "id": "bd7119d8c441eddfbeb5bddf",
-      "name": "Hike: Variables In Code",
-      "dashedName": "hike-variables-in-code",
+      "title": "Hike: Variables In Code",
       "difficulty": 9.16,
       "challengeSeed": [
         "133172920"
@@ -601,8 +585,7 @@
     },
     {
       "id": "bd7029d8c441eddfbeb5bddf",
-      "name": "Hike: Source Code",
-      "dashedName": "hike-source-code",
+      "title": "Hike: Source Code",
       "difficulty": 9.17,
       "challengeSeed": [
         "133177129"
@@ -646,8 +629,7 @@
     },
     {
       "id": "bd7129d8b441eddfbeb5bddf",
-      "name": "Hike: Routers and Packets",
-      "dashedName": "hike-routers-and-packets",
+      "title": "Hike: Routers and Packets",
       "difficulty": 9.18,
       "challengeSeed": [
         "133181251"
@@ -697,8 +679,7 @@
     },
     {
       "id": "bd7129d8a441eddfbeb5bddf",
-      "name": "Hike: Hardware: Chips and Moore's Law",
-      "dashedName": "hike-chips-and-moores-law",
+      "title": "Hike: Hardware: Chips and Moore's Law",
       "difficulty": 9.19,
       "challengeSeed": [
         "133182057"
@@ -734,8 +715,7 @@
     },
     {
       "id": "bd7129d80441eddfbeb5bddf",
-      "name": "Hike: Analog vs Digital and File Compression",
-      "dashedName": "hike-analog-vs-digital-and-file-compression",
+      "title": "Hike: Analog vs Digital and File Compression",
       "difficulty": 9.20,
       "challengeSeed": [
         "133182587"
@@ -773,8 +753,7 @@
     },
     {
       "id": "bd7129d89441eddfbeb5bddf",
-      "name": "Hike: Computer Security",
-      "dashedName": "hike-computer-security",
+      "title": "Hike: Computer Security",
       "difficulty": 9.21,
       "challengeSeed": [
         "133186284"

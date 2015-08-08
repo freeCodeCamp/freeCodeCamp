@@ -1,11 +1,10 @@
 {
-  "name": "Advanced Algorithm Scripting",
+  "title": "Advanced Algorithm Scripting",
   "order": 0.011,
   "challenges": [
     {
       "id": "a2f1d72d9b908d0bd72bb9f6",
-      "name": "Bonfire: Make a Person",
-      "dashedName": "bonfire-make-a-person",
+      "title": "Bonfire: Make a Person",
       "difficulty": "3.01",
       "description": [
         "Fill in the object constructor with the methods specified in the tests.",
@@ -56,8 +55,7 @@
     },
     {
       "id": "af4afb223120f7348cdfc9fd",
-      "name": "Bonfire: Map the Debris",
-      "dashedName": "bonfire-map-the-debris",
+      "title": "Bonfire: Map the Debris",
       "difficulty": "3.02",
       "description": [
         "Return a new array that transforms the element's average altitude into their orbital periods.",
@@ -97,8 +95,7 @@
     },
     {
       "id": "a3f503de51cfab748ff001aa",
-      "name": "Bonfire: Pairwise",
-      "dashedName": "bonfire-pairwise",
+      "title": "Bonfire: Pairwise",
       "difficulty": "3.03",
       "description": [
         "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",

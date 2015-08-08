@@ -1,11 +1,10 @@
 {
-  "name": "Get Set for Free Code Camp",
+  "title": "Get Set for Free Code Camp",
   "order": 0.001,
   "challenges": [
     {
       "id": "bd7124d8c441eddfaeb5bdef",
-      "name": "Waypoint: Learn how Free Code Camp Works",
-      "dashedName": "waypoint-learn-how-free-code-camp-works",
+      "title": "Waypoint: Learn how Free Code Camp Works",
       "difficulty": 0.01,
       "challengeSeed": ["125407438"],
       "description": [
@@ -56,8 +55,7 @@
     },
     {
       "id": "bd7125d8c441eddfaeb5bd0f",
-      "name": "Waypoint: Join Our Chat Room",
-      "dashedName": "waypoint-join-our-chat-room",
+      "title": "Waypoint: Join Our Chat Room",
       "difficulty": 0.02,
       "challengeSeed": ["131574135"],
       "description": [
@@ -118,8 +116,7 @@
     },
     {
       "id": "bd7125d8c441eddfaeb5bdff",
-      "name": "Waypoint: Preview our Challenge Map",
-      "dashedName": "waypoint-preview-our-challenge-map",
+      "title": "Waypoint: Preview our Challenge Map",
       "difficulty": 0.03,
       "challengeSeed": ["125407437"],
       "description": [
@@ -160,8 +157,7 @@
     },
     {
       "id": "bd7125d8c441eddfaeb5bd1f",
-      "name": "Waypoint: Browse our Wiki",
-      "dashedName": "waypoint-browse-our-wiki",
+      "title": "Waypoint: Browse our Wiki",
       "difficulty": 0.04,
       "challengeSeed": ["125407435"],
       "description": [
@@ -200,8 +196,7 @@
     },
     {
       "id": "bd7125d8c441eddfaeb5bd2f",
-      "name": "Waypoint: Customize your Portfolio Page",
-      "dashedName": "waypoint-customize-your-portfolio-page",
+      "title": "Waypoint: Customize your Portfolio Page",
       "difficulty": 0.05,
       "challengeSeed": ["125407433"],
       "description": [
@@ -246,8 +241,7 @@
     },
     {
       "id": "bd7126d8c441eddfaeb5bd3f",
-      "name": "Waypoint: Try Camper News",
-      "dashedName": "waypoint-try-camper-news",
+      "title": "Waypoint: Try Camper News",
       "difficulty": 0.06,
       "challengeSeed": ["124553410"],
       "description": [
@@ -297,8 +291,7 @@
     },
     {
       "id": "bd7126d8c441eddfaeb5bd3e",
-      "name": "Waypoint: Meet Other Campers in your City",
-      "dashedName": "waypoint-meet-other-campers-in-your-city",
+      "title": "Waypoint: Meet Other Campers in your City",
       "difficulty": 0.07,
       "challengeSeed": ["127358841"],
       "description": [
@@ -345,8 +338,7 @@
     },
     {
       "id": "bd7126d8c431eddfaeb5bd3e",
-      "name": "Waypoint: Add Free Code Camp to your LinkedIn Profile",
-      "dashedName": "waypoint-add-free-code-camp-to-your-linkedin-profile",
+      "title": "Waypoint: Add Free Code Camp to your LinkedIn Profile",
       "difficulty": 0.08,
       "challengeSeed": ["131574134"],
       "description": [
@@ -376,8 +368,7 @@
     },
     {
       "id": "bd7137d8c441eddfaeb5bdef",
-      "name": "Waypoint: Get Help the Hacker Way with RSAP",
-      "dashedName": "waypoint-get-help-the-hacker-way-with-rsap",
+      "title": "Waypoint: Get Help the Hacker Way with RSAP",
       "difficulty": 0.09,
       "challengeSeed": ["125407432"],
       "description": [
