@@ -2,12 +2,11 @@
 require('babel/register');
 require('dotenv').load();
 var fs = require('fs'),
+    _ = require('lodash'),
     path = require('path'),
     app = require('../server/server'),
     nonprofits = require('./nonprofits.json'),
     jobs = require('./jobs.json');
-
-var challangesRegex = /^(bonfire:|waypoint:|zipline:|basejump:|hike:)/i;
 
 function getFilesFor(dir) {
   return fs.readdirSync(path.join(__dirname, '/' + dir));
@@ -38,12 +37,15 @@ Challenge.destroyAll(function(err, info) {
     console.log('Deleted ', info);
   }
   challenges.forEach(function(file) {
-    var challenges = require('./challenges/' + file).challenges
+    var challengeSpec = require('./challenges/' + file);
+    var challenges = challengeSpec.challenges
       .map(function(challenge) {
         // NOTE(berks): add title for displaying in views
-        //challenge.title = challenge.name.replace(challangesRegex, '').trim();
-        challenge.name = challenge.title.replace(/[^a-zA-Z0-9 ]/g, ''); // Remove non-alphanumwhitespace chars
-        challenge.dashedName = challenge.name.replace(/\s/g, '-'); // Replace with dasherize();
+        challenge.name =
+          _.capitalize(challenge.type) +
+          ': ' +
+          challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
+        challenge.dashedName = challenge.name.toLowerCase().replace(/\s/g, '-');
         return challenge;
       });
 
