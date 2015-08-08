@@ -1,11 +1,10 @@
 {
-  "name": "MongoDB",
+  "title": "MongoDB",
   "order" : 0.016,
   "challenges": [
     {
       "id": "bd7243d8c341eddeaeb5bd0f",
-      "name": "Waypoint: Store Data in MongoDB",
-      "dashedName": "waypoint-store-data-in-mongodb",
+      "title": "Waypoint: Store Data in MongoDB",
       "difficulty": 0.01,
       "challengeSeed": ["133316035"],
       "description": [
