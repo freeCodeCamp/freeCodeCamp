@@ -16,6 +16,9 @@
     "title": {
       "type": "string"
     },
+    "type": {
+      "type": "string"
+    },
     "dashedName": {
       "type": "string"
     },

@@ -4,7 +4,7 @@
   "challenges": [
     {
       "id": "bd7124d8c441eddfaeb5bdef",
-      "title": "Waypoint: Learn how Free Code Camp Works",
+      "title": "Learn how Free Code Camp Works",
       "difficulty": 0.01,
       "challengeSeed": ["125407438"],
       "description": [
@@ -20,6 +20,7 @@
         "We'll provide you with the most rigorous curriculum and the most supportive community on earth. All you need to do sit down, day after day, and put in the hard work.",
         "Now it's time to join our chat room. Click the \"I've completed this challenge\" button to move on to your next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -55,7 +56,7 @@
     },
     {
       "id": "bd7125d8c441eddfaeb5bd0f",
-      "title": "Waypoint: Join Our Chat Room",
+      "title": "Join Our Chat Room",
       "difficulty": 0.02,
       "challengeSeed": ["131574135"],
       "description": [
@@ -77,6 +78,7 @@
         "In order to keep our community a friendly and positive place to learn to code, please read and follow our Code of Conduct: <a href='https://github.com/FreeCodeCamp/freecodecamp/wiki/Code-of-Conduct' target='_blank'>https://github.com/FreeCodeCamp/freecodecamp/wiki/Code-of-Conduct</a>",
         "Now you're ready to move on. Click the \"I've completed this challenge\" button to move on to your next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -116,7 +118,7 @@
     },
     {
       "id": "bd7125d8c441eddfaeb5bdff",
-      "title": "Waypoint: Preview our Challenge Map",
+      "title": "Preview our Challenge Map",
       "difficulty": 0.03,
       "challengeSeed": ["125407437"],
       "description": [
@@ -126,6 +128,7 @@
         "In addition to our Waypoint challenges, like the one you're doing now, we have algorithm practice challenges (Bonfires), front end development challenges (Ziplines) and full stack development challenges (Basejumps). After you finish all of these, you'll start building projects for nonprofits.",
         "Please note that our open-source curriculum is a work in progress. Our volunteer community is constantly improving it. If you think you've encountered a bug, typo, or something that seems confusing, be sure to click the \"bug\" button to create a GitHub issue."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -157,7 +160,7 @@
     },
     {
       "id": "bd7125d8c441eddfaeb5bd1f",
-      "title": "Waypoint: Browse our Wiki",
+      "title": "Browse our Wiki",
       "difficulty": 0.04,
       "challengeSeed": ["125407435"],
       "description": [
@@ -167,6 +170,7 @@
         "All of our Wiki articles are contributed by our community. You can update our wiki articles, and even create wiki articles of your own.",
         "Now you can move on to your next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -196,7 +200,7 @@
     },
     {
       "id": "bd7125d8c441eddfaeb5bd2f",
-      "title": "Waypoint: Customize your Portfolio Page",
+      "title": "Customize your Portfolio Page",
       "difficulty": 0.05,
       "challengeSeed": ["125407433"],
       "description": [
@@ -208,6 +212,7 @@
         "Your portfolio page also shows off your progress through Free Code Camp. If you get Brownie Points on several days in a row, you'll get streak.",
         "Once you're happy with your portfolio page, you can move on to your next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -241,7 +246,7 @@
     },
     {
       "id": "bd7126d8c441eddfaeb5bd3f",
-      "title": "Waypoint: Try Camper News",
+      "title": "Try Camper News",
       "difficulty": 0.06,
       "challengeSeed": ["124553410"],
       "description": [
@@ -254,6 +259,7 @@
         "When you submit a link, you'll get a Brownie Point. You'll also get a Brownie Point each time someone upvotes your link.",
         "Now that you've learned how to use Camper News, let's move on to your next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -291,7 +297,7 @@
     },
     {
       "id": "bd7126d8c441eddfaeb5bd3e",
-      "title": "Waypoint: Meet Other Campers in your City",
+      "title": "Meet Other Campers in your City",
       "difficulty": 0.07,
       "challengeSeed": ["127358841"],
       "description": [
@@ -303,6 +309,7 @@
         "Our Campsites allow you to create events, coordinate those events, and share photos from the events afterward.",
         "Whether you're hosting a study group, pair programming at your local library, or going to a weekend hackathon, your city's Campsite will help you make it happen."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -338,7 +345,7 @@
     },
     {
       "id": "bd7126d8c431eddfaeb5bd3e",
-      "title": "Waypoint: Add Free Code Camp to your LinkedIn Profile",
+      "title": "Add Free Code Camp to your LinkedIn Profile",
       "difficulty": 0.08,
       "challengeSeed": ["131574134"],
       "description": [
@@ -353,6 +360,7 @@
         "Make your LinkedIn profile as complete as possible. Unlike other social networks, with LinkedIn, it's perfectly fine if you don't want to add a photo.",
         "Let's keep moving. We're almost ready to start coding!"
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -368,7 +376,7 @@
     },
     {
       "id": "bd7137d8c441eddfaeb5bdef",
-      "title": "Waypoint: Get Help the Hacker Way with RSAP",
+      "title": "Get Help the Hacker Way with RSAP",
       "difficulty": 0.09,
       "challengeSeed": ["125407432"],
       "description": [
@@ -381,6 +389,7 @@
         "Here's our detailed wiki article on getting help: <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>http://freecodecamp.com//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck</a>.",
         "Now you have a clear algorithm to follow when you need help! Let's start coding! Move on to your next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",

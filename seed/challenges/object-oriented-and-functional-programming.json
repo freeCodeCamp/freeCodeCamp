@@ -4,7 +4,7 @@
   "challenges": [
     {
       "id": "bd7153d8c44eeddfaeb5bd0f",
-      "title": "Waypoint: Learn Scope Chains and Closures",
+      "title": "Learn Scope Chains and Closures",
       "difficulty": 0.01,
       "challengeSeed": ["133316031"],
       "description": [
@@ -28,6 +28,7 @@
         "Complete \"Garbage Collection\"",
         "Once you've completed these steps, move on to our next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -43,7 +44,7 @@
     },
     {
       "id": "bd7153d8b44eeddfaeb5bd0f",
-      "title": "Waypoint: Use Prototypes for Inheriting Properties",
+      "title": "Use Prototypes for Inheriting Properties",
       "difficulty": 0.02,
       "challengeSeed": ["133316036"],
       "description": [
@@ -72,6 +73,7 @@
         "Note that you can skip the last challenge.",
         "Once you've completed these steps, move on to our next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -87,7 +89,7 @@
     },
     {
       "id": "bd7129d8c441eddfbeb5bddf",
-      "title": "Waypoint: Practice Functional Programming",
+      "title": "Practice Functional Programming",
       "difficulty": 0.01,
       "challengeSeed": ["129169463"],
       "description": [
@@ -99,6 +101,7 @@
         "This challenge will take several hours, but don't worry. Jafar's website will save your progress (using your browser's local storage) so you don't need to finish it in one sitting.",
         "If you've spent several minutes on one of these challenges, and still can't figure out its correct answer, you can click \"show answer\", then click \"run\" to advance to the next challenge. Be sure to read the correct answer and make sure you understand it before moving on."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",

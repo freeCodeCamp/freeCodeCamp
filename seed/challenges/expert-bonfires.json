@@ -4,7 +4,7 @@
   "challenges": [
     {
       "id": "aff0395860f5d3034dc0bfc9",
-      "title": "Bonfire: Validate US Telephone Numbers",
+      "title": "Validate US Telephone Numbers",
       "difficulty": "4.01",
       "description": [
         "Return true if the passed string is a valid US phone number",
@@ -50,6 +50,7 @@
       "MDNlinks": [
         "RegExp"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -64,7 +65,7 @@
     },
     {
       "id": "a3f503de51cf954ede28891d",
-      "title": "Bonfire: Symmetric Difference",
+      "title": "Symmetric Difference",
       "difficulty": "4.02",
       "description": [
         "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
@@ -88,6 +89,7 @@
         "Array.reduce()",
         "Symmetric Difference"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -102,7 +104,7 @@
     },
     {
       "id": "aa2e6f85cab2ab736c9a9b24",
-      "title": "Bonfire: Exact Change",
+      "title": "Exact Change",
       "difficulty": "4.03",
       "description": [
         "Design a cash register drawer function that accepts purchase price as the first argument, payment as the second argument, and cash-in-drawer (cid) as the third argument.",
@@ -143,6 +145,7 @@
       "MDNlinks": [
         "Global Object"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -157,7 +160,7 @@
     },
     {
       "id": "a56138aff60341a09ed6c480",
-      "title": "Bonfire: Inventory Update",
+      "title": "Inventory Update",
       "difficulty": "4.04",
       "description": [
         "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order.",
@@ -197,6 +200,7 @@
       "MDNlinks": [
         "Global Array Object"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -211,7 +215,7 @@
     },
     {
       "id": "a7bf700cd123b9a54eef01d5",
-      "title": "Bonfire: No repeats please",
+      "title": "No repeats please",
       "difficulty": "4.05",
       "description": [
         "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
@@ -238,6 +242,7 @@
         "Permutations",
         "RegExp"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -252,7 +257,7 @@
     },
     {
       "id": "a19f0fbe1872186acd434d5a",
-      "title": "Bonfire: Friendly Date Ranges",
+      "title": "Friendly Date Ranges",
       "difficulty": "4.06",
       "description": [
         "Implement a way of converting two dates into a more friendly date range that could be presented to a user.",
@@ -282,6 +287,7 @@
         "String.substr()",
         "parseInt()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
