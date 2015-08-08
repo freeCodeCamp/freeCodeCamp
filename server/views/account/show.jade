@@ -77,8 +77,8 @@ block content
                     .row
                         .hidden-xs.col-sm-12.text-center
                             .row.text-primary
-                                h4.col-sm-6.text-right Longest Streak: #{longestStreak}
-                                h4.col-sm-6.text-left Current Streak: #{currentStreak}
+                                h4.col-sm-6.text-right Longest Streak: #{longestStreak + longestStreak === 1 ? ' day' : ' days'}
+                                h4.col-sm-6.text-left Current Streak: #{currentStreak + currentStreak === 1 ? ' day' : ' days'}
 
 
                     if (challenges.length > 0)

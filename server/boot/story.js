@@ -234,7 +234,9 @@ module.exports = function(app) {
       .flatMap(function(user) {
         // if user deletes account then this will not exist
         if (user) {
-          user.progressTimestamps.push(Date.now());
+          user.progressTimestamps.push({
+            timestamp: Date.now()
+          });
         }
         return saveUser(user);
       })
@@ -378,7 +380,9 @@ module.exports = function(app) {
         return saveInstance(newStory);
       });
 
-    req.user.progressTimestamps.push(Date.now());
+    req.user.progressTimestamps.push({
+      timestamp: Date.now()
+    });
     return saveUser(req.user)
       .flatMap(savedStory)
       .subscribe(

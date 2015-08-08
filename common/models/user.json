@@ -10,11 +10,10 @@
       "index": {
         "mongodb": {
           "unique": true,
+          "background": true,
           "sparse": true
         }
-      },
-      "lowercase": true,
-      "trim": true
+      }
     },
     "password": {
       "type": "string"
@@ -27,11 +26,31 @@
       "type": "boolean",
       "default": false
     },
+    "githubId": {
+      "type": "string"
+    },
+    "githubURL": {
+      "type": "string"
+    },
+    "githubEmail": {
+      "type": "string"
+    },
+    "joinedGithubOn": {
+      "type": "date"
+    },
+    "isMigrationGrandfathered": {
+      "type": "boolean",
+      "default": false
+    },
     "username": {
       "type": "string",
-      "lowercase": true,
-      "trim": true,
-      "require": true
+      "require": true,
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
     },
     "bio": {
       "type": "string",
