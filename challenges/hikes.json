@@ -4,7 +4,7 @@
   "challenges": [
     {
       "id": "bd7128d8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 1: The 4 Basic Parts of a Computer",
+      "title": "Computer Basics 1: The 4 Basic Parts of a Computer",
       "difficulty": 9.01,
       "challengeSeed": [
         "132542064"
@@ -24,6 +24,7 @@
         "You can't get to the memory from the input or the output without the use of the CPU.",
         "So, just to review, we've got 4 basic parts of the computer: the input, the output, CPU, and memory."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["The computer has 3 basic parts.", false, "The computer has 4 basic parts: input, output, CPU, and memory"],
@@ -43,7 +44,7 @@
     },
     {
       "id": "bd7127d8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 2: More Computer Hardware",
+      "title": "Computer Basics 2: More Computer Hardware",
       "difficulty": 9.02,
       "challengeSeed": [
         "132542458"
@@ -62,6 +63,7 @@
         "So let's do a quick review.",
         "In addition to the four basic parts of input, output, CPU, and memory, we also usually have a motherboard, expansion cards, and a power supply."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["The power supply isn't a necessary part of a computer since it's not one of the 4 main parts.", false, "The computer needs power!"],
@@ -81,7 +83,7 @@
     },
     {
       "id": "bd7126d8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 3: Intro to Binary Code",
+      "title": "Computer Basics 3: Intro to Binary Code",
       "difficulty": 9.03,
       "challengeSeed": [
         "132542757"
@@ -95,6 +97,7 @@
         "We're going to go into how you decode a number in binary, but as you can probably guess, translating binary can be done with a quick google search.",
         "The most important part of this is you undrestand the concept that even simple things like 1's and 0's can translate into something really complex that is the basis for all of the computer languages that exist today."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["1's and 0's are how we talk about little switches being on and off.", true],
@@ -114,7 +117,7 @@
     },
     {
       "id": "bd7125d8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 4: Decoding a Binary Number",
+      "title": "Computer Basics 4: Decoding a Binary Number",
       "difficulty": 9.04,
       "challengeSeed": [
         "132543332"
@@ -130,6 +133,7 @@
         "If it's a 0, we disregard it.",
         "In this video, our number adds up to 75."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["1 === on and 0 ===off", true],
@@ -149,7 +153,7 @@
     },
     {
       "id": "bd7124d8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 5: How To Measure Data Size",
+      "title": "Computer Basics 5: How To Measure Data Size",
       "difficulty": 9.05,
       "challengeSeed": [
         "132543959"
@@ -168,6 +172,7 @@
         "Then it's Gigabyte, 1024 Bytes to the power of three; Terabyte, 1024 Bytes to the power of 4, and Petabyte, 1024 to the power of 5.",
         "These get much bigger really quickly!"
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["A Byte is the smallest possible amount of data.", false, "A Byte is 8 bits."],
@@ -187,7 +192,7 @@
     },
     {
       "id": "bd7123d8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 6: Measuring Data Speed",
+      "title": "Computer Basics 6: Measuring Data Speed",
       "difficulty": 9.06,
       "challengeSeed": [
         "132545171"
@@ -205,6 +210,7 @@
         "The main takeaway here is that speed is usually measured in bits and size is measured in Bytes.",
         "Additionally, if you have an internet speed that says however many bits per second, keep in mind they are talking about something 8 times less than Bytes, how you are thinking about data."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Data speed is measured in bits.", true],
@@ -223,7 +229,7 @@
     },
     {
       "id": "bd7122d8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 7: Binary Bytes",
+      "title": "Computer Basics 7: Binary Bytes",
       "difficulty": 9.07,
       "challengeSeed": [
         "132545417"
@@ -237,6 +243,7 @@
         "So, all of the numbers, letters, and symbols in your javascript can be translated.",
         "There are a lot of languages that computers can work with, and what I want you to get away from this video is that all data in your computer boils down to binary Bytes."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["All digits, letters, and symbols have a binary Byte translation.", true],
@@ -256,7 +263,7 @@
     },
     {
       "id": "bd7121d8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 8: Types of Computers",
+      "title": "Computer Basics 8: Types of Computers",
       "difficulty": 9.08,
       "challengeSeed": [
         "132546182"
@@ -275,6 +282,7 @@
         "It's both a Mac and a PC.",
         "The last type of computer we'll talk about is a microcontroller, the type of computer you might have in your car that is really good at a small specialized task, but wouldn't be used the same way a PC would be."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["The most common type of computer is a Personal Computer, a PC.", true],
@@ -294,7 +302,7 @@
     },
     {
       "id": "bd7120d8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 9: More on the Motherboard",
+      "title": "Computer Basics 9: More on the Motherboard",
       "difficulty": 9.09,
       "challengeSeed": [
         "132547285"
@@ -315,6 +323,7 @@
         "On your computer, you probably know there's a place to connect USB, firewire, SD card, ethernet, even an audio plug-in to listen through headphones.",
         "These are all considered ports, a place on the motherboard where you can connect the CPU to some outside source to either get or give information."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["A motherboard must connect the CPU, the memory, and the network.", false, "A motherboard is a motherboard as long as it connects the CPU and the memory."],
@@ -334,7 +343,7 @@
     },
     {
       "id": "bd712fd8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 10: Data Networks",
+      "title": "Computer Basics 10: Data Networks",
       "difficulty": 9.10,
       "challengeSeed": [
         "132547590"
@@ -354,6 +363,7 @@
         "You might think that these are connected over the internet, and in the case of a VPN (Virtual Private Network, which is basically the same conceptionally as a WAN), you're right.",
         "However, a WAN usually rents a cable from an internet company to creat the connection."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["You can connect to a LAN from far away.", false, "To connect to a LAN you must be physically near to it."],
@@ -373,7 +383,7 @@
     },
     {
       "id": "bd712ed8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 11: IP Addresses",
+      "title": "Computer Basics 11: IP Addresses",
       "difficulty": 9.11,
       "challengeSeed": [
         "132548071"
@@ -393,6 +403,7 @@
         "However, it is specific enough that you could google \"Where's the best ice cream near me\" and google could give you information close to your location.",
         "This is done using your IP address."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["IP addresses are necessary to use and participate in the internet.", true],
@@ -411,7 +422,7 @@
     },
     {
       "id": "bd712dd8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 12: How the Internet Works",
+      "title": "Computer Basics 12: How the Internet Works",
       "difficulty": 9.12,
       "challengeSeed": [
         "132548579"
@@ -431,6 +442,7 @@
         "Now, this explaination is really quite basic.",
         "For more information, check out web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Your computer sends a request for information.", true],
@@ -449,7 +461,7 @@
     },
     {
       "id": "bd712cd8c441eddfbeb5bddf",
-      "title": "Hike: Computer Basics 13: Software",
+      "title": "Computer Basics 13: Software",
       "difficulty": 9.13,
       "challengeSeed": [
         "132548908"
@@ -464,6 +476,7 @@
         "There are three main operating systems: Windows, Mac, and Linux.",
         "Applications comprise all other software, like your web browser, games, things like Photoshop, how you view your mail, editing documents, etc."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Safari, Chrome, and Firefox are all examples of application software.", true]
@@ -481,7 +494,7 @@
     },
     {
       "id": "bd712bd8c441eddfbeb5bddf",
-      "title": "Hike: What Do Programmers Do?",
+      "title": "What Do Programmers Do?",
       "difficulty": 9.14,
       "challengeSeed": [
         "133166912"
@@ -498,6 +511,7 @@
         "Computers just read straight down like you would read a book.",
         "Programmers are the ones responsible for breaking their ideas down into the little tiny steps and writing them in a way that computers can understand them."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Computers look at code one line at a time", true],
@@ -517,7 +531,7 @@
     },
     {
       "id": "bd712ad8c441eddfbeb5bddf",
-      "title": "Hike: Console and Logging",
+      "title": "Console and Logging",
       "difficulty": 9.15,
       "challengeSeed": [
         "133170880"
@@ -535,6 +549,7 @@
         "This will also work with numbers and booleans, which are true/false statements.",
         "When consoling words, it's important to put it inside of quotations so it recognizes it's a string."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["The console serves only small, unnecessary purposes.", false, "The console's main purpose is to debug, which is a vital step in creating code."],
@@ -553,7 +568,7 @@
     },
     {
       "id": "bd7119d8c441eddfbeb5bddf",
-      "title": "Hike: Variables In Code",
+      "title": "Variables In Code",
       "difficulty": 9.16,
       "challengeSeed": [
         "133172920"
@@ -567,6 +582,7 @@
         "But be careful - if we put console.log(\"x\"), with the x in quotation marks, it will output the letter \"x\".",
         "What I want you to take away from this video is that variables exist in code, and you can store everything from a simple string all the way up to a function, all within a simple name."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Variables are useful in coding languages like JavaScript.", true],
@@ -585,7 +601,7 @@
     },
     {
       "id": "bd7029d8c441eddfbeb5bddf",
-      "title": "Hike: Source Code",
+      "title": "Source Code",
       "difficulty": 9.17,
       "challengeSeed": [
         "133177129"
@@ -610,6 +626,7 @@
         "It's a great way for websites and software to grow in a strong and fast way because of the community working together to improve it.",
         "One unwritten rule of contributing to open source projects is that you should generally submit your improvements to also be open source, and by giving that improvement back to the public, you let others use your improvement as well."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Source code is a text document.", true],
@@ -629,7 +646,7 @@
     },
     {
       "id": "bd7129d8b441eddfbeb5bddf",
-      "title": "Hike: Routers and Packets",
+      "title": "Routers and Packets",
       "difficulty": 9.18,
       "challengeSeed": [
         "133181251"
@@ -660,6 +677,7 @@
         "They can take whichever route is open, whichever is fastest, and since they have the end IP address, all of the routers know where to send them.",
         "Once they get to the end destination, that computer knows how to put all of the information back together."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Routers have to know the whole internet.", false, "Routers just have to know the stops around them to send information in the right direction."],
@@ -679,7 +697,7 @@
     },
     {
       "id": "bd7129d8a441eddfbeb5bddf",
-      "title": "Hike: Hardware: Chips and Moore's Law",
+      "title": "Hardware: Chips and Moore's Law",
       "difficulty": 9.19,
       "challengeSeed": [
         "133182057"
@@ -696,6 +714,7 @@
         "Moore's Law is the observation that the amount of transistors fit on each chip has doubled every two years since 1965.",
         "This is important because it's making technology more affordable and accessible."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Chips have transistors, little switches that can store a 1 or a 0.", true],
@@ -715,7 +734,7 @@
     },
     {
       "id": "bd7129d80441eddfbeb5bddf",
-      "title": "Hike: Analog vs Digital and File Compression",
+      "title": "Analog vs Digital and File Compression",
       "difficulty": 9.20,
       "challengeSeed": [
         "133182587"
@@ -735,6 +754,7 @@
         "In images, it's done by measuring groups of pixels by 16 instead of individually.",
         "The takeaway from this video is that you'll want to use digital files as they're a higher quality, and when you're looking at compression, you want to decide how far you are willing to go to ensure the user still has the best possible experience."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Digital files can be made from analog sounds and analog sounds can be made from digital files.", true],
@@ -753,7 +773,7 @@
     },
     {
       "id": "bd7129d89441eddfbeb5bddf",
-      "title": "Hike: Computer Security",
+      "title": "Computer Security",
       "difficulty": 9.21,
       "challengeSeed": [
         "133186284"
@@ -787,6 +807,7 @@
         "Those bugs have been patched in newer versions, so if you keep everything updated, you'll avoid lots of problems.",
         "These are all very basic things you should know about how to keep your information safe on your computer."
       ],
+      "type": "hike",
       "challengeType": 6,
       "tests": [
         ["Passwords should be shared with all of your accounts.", false, "Don't reuse important passwords"],

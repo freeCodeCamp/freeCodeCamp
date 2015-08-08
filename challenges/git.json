@@ -4,7 +4,7 @@
   "challenges": [
     {
       "id": "bd7353d8c341eddeaeb5bd0f",
-      "title": "Waypoint: Save your Code Revisions Forever with Git",
+      "title": "Save your Code Revisions Forever with Git",
       "difficulty": 0.01,
       "challengeSeed": ["133316034"],
       "description": [
@@ -34,6 +34,7 @@
         "Complete \"Merge Tada!\"",
         "Once you've completed these steps, move on to our next challenge."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",

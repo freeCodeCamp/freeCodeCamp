@@ -4,7 +4,7 @@
   "challenges": [
     {
       "id": "bd7158d8c443eddfaeb5bcef",
-      "title": "Waypoint: Get Set for Basejumps",
+      "title": "Get Set for Basejumps",
       "difficulty": 2.00,
       "challengeSeed": ["128451852"],
       "description": [
@@ -59,12 +59,13 @@
         "If you need further guidance on using Yeoman Angular-Fullstack Generator, check out: <a href='https://github.com/clnhll/guidetobasejumps' target='_blank'>https://github.com/clnhll/guidetobasejumps</a>.",
         "Now you're ready to move on to your first Basejump. Click the \"I've completed this challenge\" and move on."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": []
     },
     {
       "id": "bd7158d8c443eddfaeb5bdef",
-      "title": "Basejump: Build a Voting App",
+      "title": "Build a Voting App",
       "difficulty": 2.01,
       "challengeSeed": ["133315786"],
       "description": [
@@ -85,6 +86,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
+      "type": "basejumps",
       "challengeType": 4,
       "tests": [],
       "nameCn": "",
@@ -100,7 +102,7 @@
     },
     {
       "id": "bd7158d8c443eddfaeb5bdff",
-      "title": "Basejump: Build a Nightlife Coordination App",
+      "title": "Build a Nightlife Coordination App",
       "difficulty": 2.02,
       "challengeSeed": ["133315781"],
       "description": [
@@ -118,6 +120,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
+      "type": "basejumps",
       "challengeType": 4,
       "tests": [],
       "nameCn": "",
@@ -133,7 +136,7 @@
     },
     {
       "id": "bd7158d8c443eddfaeb5bd0e",
-      "title": "Basejump: Chart the Stock Market",
+      "title": "Chart the Stock Market",
       "difficulty": 2.03,
       "challengeSeed": ["133315787"],
       "description": [
@@ -150,6 +153,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
+      "type": "basejumps",
       "challengeType": 4,
       "tests": [],
       "nameCn": "",
@@ -165,7 +169,7 @@
     },
     {
       "id": "bd7158d8c443eddfaeb5bd0f",
-      "title": "Basejump: Manage a Book Trading Club",
+      "title": "Manage a Book Trading Club",
       "difficulty": 2.04,
       "challengeSeed": ["133316032"],
       "description": [
@@ -182,6 +186,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
+      "type": "basejumps",
       "challengeType": 4,
       "tests": [],
       "nameCn": "",
@@ -197,7 +202,7 @@
     },
     {
       "id": "bd7158d8c443eddfaeb5bdee",
-      "title": "Basejump: Build a Pinterest Clone",
+      "title": "Build a Pinterest Clone",
       "difficulty": 2.05,
       "challengeSeed": ["133315784"],
       "description": [
@@ -217,6 +222,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku. If you pair programmed with a friend, enter his or her Free Code Camp username as well so that you both get credit for completing it.",
         "If you'd like immediate feedback on your project, click this button and paste in a link to your Heroku project. Otherwise, we'll review it before you start your nonprofit projects.<br><br><a class='btn btn-primary btn-block' href='https://twitter.com/intent/tweet?text=Check%20out%20the%20project%20I%20just%20built%20with%20%40FreeCodeCamp:%20%0A%20%23LearnToCode%20%23JavaScript' target='_blank'>Click here then add your link to your tweet's text</a>"
       ],
+      "type": "basejumps",
       "challengeType": 4,
       "tests": [],
       "nameCn": "",

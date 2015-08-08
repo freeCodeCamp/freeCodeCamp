@@ -4,7 +4,7 @@
   "challenges": [
     {
       "id": "bd7139d8c441eddfaeb5bdef",
-      "title": "Waypoint: Pair Program on Bonfires",
+      "title": "Pair Program on Bonfires",
       "difficulty": 0.44,
       "challengeSeed": [
         "119657641"
@@ -28,6 +28,7 @@
         "Pair program as much as possible with different campers until you've completed all the Bonfire challenges. This is a big time investment, but the JavaScript practice you get will be well worth it!",
         "Mark this Waypoint complete and move on."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -43,7 +44,7 @@
     },
     {
       "id": "ad7123c8c441eddfaeb5bdef",
-      "title": "Bonfire: Meet Bonfire",
+      "title": "Meet Bonfire",
       "difficulty": "0",
       "description": [
         "Your goal is to fix the failing test.",
@@ -67,6 +68,7 @@
         "",
         "meetBonfire(\"You can do this!\");"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -81,7 +83,7 @@
     },
     {
       "id": "a202eed8fc186c8434cb6d61",
-      "title": "Bonfire: Reverse a String",
+      "title": "Reverse a String",
       "difficulty": "1.01",
       "tests": [
         "expect(reverseString('hello')).to.be.a('String');",
@@ -108,6 +110,7 @@
         "Array.reverse()",
         "Array.join()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -122,7 +125,7 @@
     },
     {
       "id": "a302f7aae1aa3152a5b413bc",
-      "title": "Bonfire: Factorialize a Number",
+      "title": "Factorialize a Number",
       "tests": [
         "expect(factorialize(5)).to.be.a(\"Number\");",
         "expect(factorialize(5)).to.equal(120);",
@@ -147,6 +150,7 @@
       "MDNlinks": [
         "Arithmetic Operators"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -161,7 +165,7 @@
     },
     {
       "id": "aaa48de84e1ecc7c742e1124",
-      "title": "Bonfire: Check for Palindromes",
+      "title": "Check for Palindromes",
       "difficulty": "1.03",
       "description": [
         "Return true if the given string is a palindrome. Otherwise, return false.",
@@ -194,6 +198,7 @@
         "String.replace()",
         "String.toLowerCase()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -208,7 +213,7 @@
     },
     {
       "id": "a26cbbe9ad8655a977e1ceb5",
-      "title": "Bonfire: Find the Longest Word in a String",
+      "title": "Find the Longest Word in a String",
       "difficulty": "1.04",
       "description": [
         "Return the length of the longest word in the provided sentence.",
@@ -233,6 +238,7 @@
         "String.split()",
         "String.length"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -247,7 +253,7 @@
     },
     {
       "id": "ab6137d4e35944e21037b769",
-      "title": "Bonfire: Title Case a Sentence",
+      "title": "Title Case a Sentence",
       "difficulty": "1.05",
       "description": [
         "Return the provided string with the first letter of each word capitalized.",
@@ -270,6 +276,7 @@
       "MDNlinks": [
         "String.charAt()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -284,7 +291,7 @@
     },
     {
       "id": "a789b3483989747d63b0e427",
-      "title": "Bonfire: Return Largest Numbers in Arrays",
+      "title": "Return Largest Numbers in Arrays",
       "difficulty": "1.06",
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
@@ -308,6 +315,7 @@
       "MDNlinks": [
         "Comparison Operators"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -322,7 +330,7 @@
     },
     {
       "id": "acda2fb1324d9b0fa741e6b5",
-      "title": "Bonfire: Confirm the Ending",
+      "title": "Confirm the Ending",
       "difficulty": "1.07",
       "description": [
         "Check if a string (first argument) ends with the given target string (second argument).",
@@ -347,6 +355,7 @@
       "MDNlinks": [
         "String.substr()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -361,7 +370,7 @@
     },
     {
       "id": "afcc8d540bea9ea2669306b6",
-      "title": "Bonfire: Repeat a string repeat a string",
+      "title": "Repeat a string repeat a string",
       "difficulty": "1.08",
       "description": [
         "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number.",
@@ -383,6 +392,7 @@
       "MDNlinks": [
         "Global String Object"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -397,7 +407,7 @@
     },
     {
       "id": "ac6993d51946422351508a41",
-      "title": "Bonfire: Truncate a string",
+      "title": "Truncate a string",
       "difficulty": "1.09",
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
@@ -421,6 +431,7 @@
       "MDNlinks": [
         "String.slice()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -435,7 +446,7 @@
     },
     {
       "id": "a9bd25c716030ec90084d8a1",
-      "title": "Bonfire: Chunky Monkey",
+      "title": "Chunky Monkey",
       "difficulty": "1.10",
       "description": [
         "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.",
@@ -458,6 +469,7 @@
       "MDNlinks": [
         "Array.push()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -472,7 +484,7 @@
     },
     {
       "id": "ab31c21b530c0dafa9e241ee",
-      "title": "Bonfire: Slasher Flick",
+      "title": "Slasher Flick",
       "difficulty": "1.11",
       "description": [
         "Return the remaining elements of an array after chopping off n elements from the head.",
@@ -495,6 +507,7 @@
         "Array.slice()",
         "Array.splice()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -509,7 +522,7 @@
     },
     {
       "id": "af2170cad53daa0770fabdea",
-      "title": "Bonfire: Mutations",
+      "title": "Mutations",
       "difficulty": "1.12",
       "description": [
         "Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.",
@@ -537,6 +550,7 @@
       "MDNlinks": [
         "Array.indexOf()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -551,7 +565,7 @@
     },
     {
       "id": "adf08ec01beb4f99fc7a68f2",
-      "title": "Bonfire: Falsey Bouncer",
+      "title": "Falsey Bouncer",
       "difficulty": "1.50",
       "description": [
         "Remove all falsey values from an array.",
@@ -575,6 +589,7 @@
         "Boolean Objects",
         "Array.filter()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -589,7 +604,7 @@
     },
     {
       "id": "a8e512fbe388ac2f9198f0fa",
-      "title": "Bonfire: Where art thou",
+      "title": "Where art thou",
       "difficulty": "1.55",
       "description": [
         "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property values (second argument).",
@@ -613,6 +628,7 @@
         "Object.hasOwnProperty()",
         "Object.keys()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -627,7 +643,7 @@
     },
     {
       "id": "a39963a4c10bc8b4d4f06d7e",
-      "title": "Bonfire: Seek and Destroy",
+      "title": "Seek and Destroy",
       "difficulty": "1.60",
       "description": [
         "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
@@ -652,6 +668,7 @@
         "Arguments object",
         "Array.filter()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -666,7 +683,7 @@
     },
     {
       "id": "a24c1a4622e3c05097f71d67",
-      "title": "Bonfire: Where do I belong",
+      "title": "Where do I belong",
       "difficulty": "1.61",
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
@@ -688,6 +705,7 @@
         "expect(where([10, 20, 30, 40, 50], 35)).to.equal(3);",
         "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],

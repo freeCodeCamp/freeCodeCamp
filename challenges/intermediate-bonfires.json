@@ -4,7 +4,7 @@
   "challenges": [
     {
       "id": "a3566b1109230028080c9345",
-      "title": "Bonfire: Sum All Numbers in a Range",
+      "title": "Sum All Numbers in a Range",
       "difficulty": "2.00",
       "description": [
         "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
@@ -30,6 +30,7 @@
         "Math.min()",
         "Array.reduce()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -44,7 +45,7 @@
     },
     {
       "id": "a5de63ebea8dbee56860f4f2",
-      "title": "Bonfire: Diff Two Arrays",
+      "title": "Diff Two Arrays",
       "difficulty": "2.01",
       "description": [
         "Compare two arrays and return a new array with any items not found in both of the original arrays.",
@@ -75,6 +76,7 @@
         "Array.indexOf()",
         "String.concat()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -89,7 +91,7 @@
     },
     {
       "id": "a7f4d8f2483413a6ce226cac",
-      "title": "Bonfire: Roman Numeral Converter",
+      "title": "Roman Numeral Converter",
       "tests": [
         "expect(convert(12)).to.equal(\"XII\");",
         "expect(convert(5)).to.equal(\"V\");",
@@ -115,6 +117,7 @@
         "Array.indexOf()",
         "Array.join()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -129,7 +132,7 @@
     },
     {
       "id": "a0b5010f579e69b815e7c5d6",
-      "title": "Bonfire: Search and Replace",
+      "title": "Search and Replace",
       "tests": [
         "expect(replace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
         "expect(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")).to.equal(\"He is Sitting on the couch\");",
@@ -158,6 +161,7 @@
         "String.replace()",
         "Array.join()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -172,7 +176,7 @@
     },
     {
       "id": "aa7697ea2477d1316795783b",
-      "title": "Bonfire: Pig Latin",
+      "title": "Pig Latin",
       "tests": [
         "expect(translate(\"california\")).to.equal(\"aliforniacay\");",
         "expect(translate(\"paragraphs\")).to.equal(\"aragraphspay\");",
@@ -201,6 +205,7 @@
         "String.substr()",
         "String.split()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -215,7 +220,7 @@
     },
     {
       "id": "afd15382cdfb22c9efe8b7de",
-      "title": "Bonfire: DNA Pairing",
+      "title": "DNA Pairing",
       "tests": [
         "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'should return the dna pair');",
         "assert.deepEqual(pair(\"TTGAG\"),[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']], 'should return the dna pair');",
@@ -239,6 +244,7 @@
         "Array.push()",
         "String.split()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -253,7 +259,7 @@
     },
     {
       "id": "af7588ade1100bde429baf20",
-      "title": "Bonfire: Missing letters",
+      "title": "Missing letters",
       "difficulty": "2.05",
       "description": [
         "Find the missing letter in the passed letter range and return it.",
@@ -277,6 +283,7 @@
         "String.charCodeAt()",
         "String.fromCharCode()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -291,7 +298,7 @@
     },
     {
       "id": "a77dbc43c33f39daa4429b4f",
-      "title": "Bonfire: Boo who",
+      "title": "Boo who",
       "difficulty": "2.06",
       "description": [
         "Check if a value is classified as a boolean primitive. Return true or false.",
@@ -319,6 +326,7 @@
       "MDNlinks": [
         "Boolean Objects"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -333,7 +341,7 @@
     },
     {
       "id": "a105e963526e7de52b219be9",
-      "title": "Bonfire: Sorted Union",
+      "title": "Sorted Union",
       "difficulty": "2.07",
       "description": [
         "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
@@ -359,6 +367,7 @@
         "Arguments object",
         "Array.reduce()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -373,7 +382,7 @@
     },
     {
       "id": "a6b0bb188d873cb2c8729495",
-      "title": "Bonfire: Convert HTML Entities",
+      "title": "Convert HTML Entities",
       "difficulty": "2.07",
       "description": [
         "Convert the characters \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), in a string to their corresponding HTML entities.",
@@ -400,6 +409,7 @@
         "RegExp",
         "HTML Entities"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -414,7 +424,7 @@
     },
     {
       "id": "a103376db3ba46b2d50db289",
-      "title": "Bonfire: Spinal Tap Case",
+      "title": "Spinal Tap Case",
       "difficulty": "2.08",
       "description": [
         "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.",
@@ -439,6 +449,7 @@
         "RegExp",
         "String.replace()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -453,7 +464,7 @@
     },
     {
       "id": "a5229172f011153519423690",
-      "title": "Bonfire: Sum All Odd Fibonacci Numbers",
+      "title": "Sum All Odd Fibonacci Numbers",
       "difficulty": "2.09",
       "description": [
         "Return the sum of all odd Fibonacci numbers up to and including the passed number if it is a Fibonacci number.",
@@ -479,6 +490,7 @@
       "MDNlinks": [
         "Remainder"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -493,7 +505,7 @@
     },
     {
       "id": "a3bfc1673c0526e06d3ac698",
-      "title": "Bonfire: Sum All Primes",
+      "title": "Sum All Primes",
       "difficulty": "2.10",
       "description": [
         "Sum all the prime numbers up to and including the provided number.",
@@ -517,6 +529,7 @@
         "For Loops",
         "Array.push()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -531,7 +544,7 @@
     },
     {
       "id": "ae9defd7acaf69703ab432ea",
-      "title": "Bonfire: Smallest Common Multiple",
+      "title": "Smallest Common Multiple",
       "difficulty": "2.11",
       "description": [
         "Find the smallest number that is evenly divisible by all numbers in the provided range.",
@@ -555,6 +568,7 @@
       "MDNlinks": [
         "Smallest Common Multiple"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -569,7 +583,7 @@
     },
     {
       "id": "a6e40f1041b06c996f7b2406",
-      "title": "Bonfire: Finders Keepers",
+      "title": "Finders Keepers",
       "difficulty": "2.12",
       "description": [
         "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument).",
@@ -590,6 +604,7 @@
       "MDNlinks": [
         "Array.some()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -604,7 +619,7 @@
     },
     {
       "id": "a5deed1811a43193f9f1c841",
-      "title": "Bonfire: Drop it",
+      "title": "Drop it",
       "difficulty": "2.13",
       "description": [
         "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.",
@@ -627,6 +642,7 @@
         "Arguments object",
         "Array.shift()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -641,7 +657,7 @@
     },
     {
       "id": "ab306dbdcc907c7ddfc30830",
-      "title": "Bonfire: Steamroller",
+      "title": "Steamroller",
       "difficulty": "2.14",
       "description": [
         "Flatten a nested array. You must account for varying levels of nesting.",
@@ -664,6 +680,7 @@
       "MDNlinks": [
         "Array.isArray()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -678,7 +695,7 @@
     },
     {
       "id": "a8d97bd4c764e91f9d2bda01",
-      "title": "Bonfire: Binary Agents",
+      "title": "Binary Agents",
       "difficulty": "2.15",
       "description": [
         "Return an English translated sentence of the passed binary string.",
@@ -700,6 +717,7 @@
         "String.charCodeAt()",
         "String.fromCharCode()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -714,7 +732,7 @@
     },
     {
       "id": "a10d2431ad0c6a099a4b8b52",
-      "title": "Bonfire: Everything Be True",
+      "title": "Everything Be True",
       "difficulty": "2.21",
       "description": [
         "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
@@ -739,6 +757,7 @@
         "Object.hasOwnProperty()",
         "Object.getOwnPropertyNames()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -753,7 +772,7 @@
     },
     {
       "id": "a97fd23d9b809dac9921074f",
-      "title": "Bonfire: Arguments Optional",
+      "title": "Arguments Optional",
       "difficulty": "2.22",
       "description": [
         "Create a function that sums two arguments together. If only one argument is provided, return a function that expects one additional argument and will return the sum.",
@@ -779,6 +798,7 @@
         "Global Function Object",
         "Arguments object"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
