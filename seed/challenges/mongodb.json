@@ -1,5 +1,5 @@
 {
-  "title": "MongoDB",
+  "name": "MongoDB",
   "order" : 0.016,
   "challenges": [
     {
