@@ -19,6 +19,9 @@
     "type": {
       "type": "string"
     },
+    "order": {
+      "type": "number"
+    },
     "dashedName": {
       "type": "string"
     },
