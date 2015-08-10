@@ -17,23 +17,25 @@ var Nonprofit = app.models.Nonprofit;
 var Job = app.models.Job;
 var counter = 0;
 var challenges = getFilesFor('challenges');
+// plus two accounts for nonprofits and jobs seed.
+var numberToSave = challenges.length + 1;
 
 function completionMonitor() {
   // Increment counter
   counter++;
 
   // Exit if all challenges have been checked
-  if (counter > challenges.length) {
+  if (counter >= numberToSave) {
     process.exit(0);
   }
 
   // Log where in the seed order we're currently at
-  console.log('Call: ' + counter + "/" + challenges.length);
+  console.log('Call: ' + counter + '/' + numberToSave);
 }
 
 Challenge.destroyAll(function(err, info) {
   if (err) {
-    console.error(err);
+    throw err;
   } else {
     console.log('Deleted ', info);
   }
@@ -41,6 +43,13 @@ Challenge.destroyAll(function(err, info) {
     var challengeSpec = require('./challenges/' + file);
     var order = challengeSpec.order;
     var block = challengeSpec.name;
+
+    // challenge file has no challenges...
+    if (challengeSpec.challenges.length === 0) {
+      console.log('file %s has no challenges', file);
+      completionMonitor();
+      return;
+    }
 
     var challenges = challengeSpec.challenges
       .map(function(challenge, index) {
@@ -64,10 +73,10 @@ Challenge.destroyAll(function(err, info) {
       challenges,
       function(err) {
         if (err) {
-          console.log(err);
+          throw err;
         } else {
           console.log('Successfully parsed %s', file);
-          completionMonitor();
+          completionMonitor(err);
         }
       }
     );
@@ -82,28 +91,28 @@ Nonprofit.destroyAll(function(err, info) {
   }
   Nonprofit.create(nonprofits, function(err, data) {
     if (err) {
-      console.log(err);
+      throw err;
     } else {
       console.log('Saved ', data);
     }
-    completionMonitor();
+    completionMonitor(err);
     console.log('nonprofits');
   });
 });
 
 Job.destroyAll(function(err, info) {
   if (err) {
-    console.error(err);
+    throw err;
   } else {
     console.log('Deleted ', info);
   }
   Job.create(jobs, function(err, data) {
     if (err) {
-      console.log(err);
+      console.log('error: ', err);
     } else {
       console.log('Saved ', data);
     }
     console.log('jobs');
-    completionMonitor();
+    completionMonitor(err);
   });
 });
