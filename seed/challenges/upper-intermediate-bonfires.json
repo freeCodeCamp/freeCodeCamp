@@ -13,7 +13,6 @@
         "These methods must be the only available means for interacting with the object.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "type": "bonfire",
       "challengeSeed": [
         "var Person = function(firstAndLast) {",
         "    return firstAndLast;",
@@ -42,6 +41,7 @@
         "Closures",
         "Details of the Object Model"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -56,7 +56,7 @@
     },
     {
       "id": "af4afb223120f7348cdfc9fd",
-      "title": "Bonfire: Map the Debris",
+      "title": "Map the Debris",
       "dashedName": "bonfire-map-the-debris",
       "difficulty": "3.02",
       "description": [
@@ -83,6 +83,7 @@
       "MDNlinks": [
         "Math.pow()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -105,7 +106,6 @@
         "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "type": "bonfire",
       "challengeSeed": [
         "function pairwise(arr, arg) {",
         "  return arg;",
@@ -123,6 +123,7 @@
       "MDNlinks": [
         "Array.reduce()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
