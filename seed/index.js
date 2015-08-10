@@ -2,12 +2,11 @@
 require('babel/register');
 require('dotenv').load();
 var fs = require('fs'),
+    _ = require('lodash'),
     path = require('path'),
     app = require('../server/server'),
     nonprofits = require('./nonprofits.json'),
     jobs = require('./jobs.json');
-
-var challangesRegex = /^(bonfire:|waypoint:|zipline:|basejump:|hike:)/i;
 
 function getFilesFor(dir) {
   return fs.readdirSync(path.join(__dirname, '/' + dir));
@@ -18,30 +17,55 @@ var Nonprofit = app.models.Nonprofit;
 var Job = app.models.Job;
 var counter = 0;
 var challenges = getFilesFor('challenges');
-var offerings = 2 + challenges.length;
+// plus two accounts for nonprofits and jobs seed.
+var numberToSave = challenges.length + 1;
 
-var CompletionMonitor = function() {
+function completionMonitor() {
+  // Increment counter
   counter++;
-  console.log('call ' + counter);
 
-  if (counter < offerings) {
-    return;
-  } else {
+  // Exit if all challenges have been checked
+  if (counter >= numberToSave) {
     process.exit(0);
   }
-};
+
+  // Log where in the seed order we're currently at
+  console.log('Call: ' + counter + '/' + numberToSave);
+}
 
 Challenge.destroyAll(function(err, info) {
   if (err) {
-    console.error(err);
+    throw err;
   } else {
     console.log('Deleted ', info);
   }
   challenges.forEach(function(file) {
-    var challenges = require('./challenges/' + file).challenges
-      .map(function(challenge) {
+    var challengeSpec = require('./challenges/' + file);
+    var order = challengeSpec.order;
+    var block = challengeSpec.name;
+
+    // challenge file has no challenges...
+    if (challengeSpec.challenges.length === 0) {
+      console.log('file %s has no challenges', file);
+      completionMonitor();
+      return;
+    }
+
+    var challenges = challengeSpec.challenges
+      .map(function(challenge, index) {
         // NOTE(berks): add title for displaying in views
-        challenge.title = challenge.name.replace(challangesRegex, '').trim();
+        challenge.name =
+          _.capitalize(challenge.type) +
+          ': ' +
+          challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
+
+        challenge.dashedName = challenge.name
+          .toLowerCase()
+          .replace(/\:/g, '')
+          .replace(/\s/g, '-');
+        challenge.order = +('' + order + (index + 1));
+        challenge.block = block;
+
         return challenge;
       });
 
@@ -49,10 +73,10 @@ Challenge.destroyAll(function(err, info) {
       challenges,
       function(err) {
         if (err) {
-          console.log(err);
+          throw err;
         } else {
           console.log('Successfully parsed %s', file);
-          CompletionMonitor();
+          completionMonitor(err);
         }
       }
     );
@@ -67,28 +91,28 @@ Nonprofit.destroyAll(function(err, info) {
   }
   Nonprofit.create(nonprofits, function(err, data) {
     if (err) {
-      console.log(err);
+      throw err;
     } else {
       console.log('Saved ', data);
     }
-    CompletionMonitor();
+    completionMonitor(err);
     console.log('nonprofits');
   });
 });
 
 Job.destroyAll(function(err, info) {
   if (err) {
-    console.error(err);
+    throw err;
   } else {
     console.log('Deleted ', info);
   }
   Job.create(jobs, function(err, data) {
     if (err) {
-      console.log(err);
+      console.log('error: ', err);
     } else {
       console.log('Saved ', data);
     }
     console.log('jobs');
-    CompletionMonitor();
+    completionMonitor(err);
   });
 });

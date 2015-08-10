@@ -4,8 +4,7 @@
   "challenges": [
     {
       "id": "bd7154d8c441eddfaeb5bdef",
-      "name": "Waypoint: Get Started with Angular.js",
-      "dashedName": "waypoint-get-started-with-angularjs",
+      "title": "Get Started with Angular.js",
       "difficulty": 0.34,
       "challengeSeed": ["114684726"],
       "description": [
@@ -13,6 +12,7 @@
         "In this course, we'll build a virtual shop entirely in Angular.js.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/1/section/1/video/1</a> and complete the section."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -28,8 +28,7 @@
     },
     {
       "id": "bd7155d8c441eddfaeb5bdef",
-      "name": "Waypoint: Apply Angular.js Directives",
-      "dashedName": "waypoint-apply-angularjs-directives",
+      "title": "Apply Angular.js Directives",
       "difficulty": 0.35,
       "challengeSeed": ["114684727"],
       "description": [
@@ -37,6 +36,7 @@
         "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -52,8 +52,7 @@
     },
     {
       "id": "bd7156d8c441eddfaeb5bdef",
-      "name": "Waypoint: Power Forms with Angular.js",
-      "dashedName": "waypoint-power-forms-with-angularjs",
+      "title": "Power Forms with Angular.js",
       "difficulty": 0.36,
       "challengeSeed": ["114684729"],
       "description": [
@@ -61,6 +60,7 @@
         "Learn how to create reactive Angular.js forms, including real-time form validation.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/3/section/1/video/1</a> and complete the section."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -76,14 +76,14 @@
     },
     {
       "id": "bd7157d8c441eddfaeb5bdef",
-      "name": "Waypoint: Customize Angular.js Directives",
-      "dashedName": "waypoint-customize-angularjs-directives",
+      "title": "Customize Angular.js Directives",
       "difficulty": 0.37,
       "challengeSeed": ["114685062"],
       "description": [
         "Now we'll learn how to modify existing Angular.js directives, and even build directives of your own.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/1/video/1</a> and complete the section."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",
@@ -99,8 +99,7 @@
     },
     {
       "id": "bd7158d8c441eddfaeb5bdef",
-      "name": "Waypoint: Create Angular.js Services",
-      "dashedName": "waypoint-create-angularjs-services",
+      "title": "Create Angular.js Services",
       "difficulty": 0.38,
       "challengeSeed": ["114685060"],
       "description": [
@@ -108,6 +107,7 @@
         "We'll learn how to use services in this final Code School Angular.js challenge.",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1</a> and complete the section."
       ],
+      "type": "waypoint",
       "challengeType": 2,
       "tests": [],
       "nameCn": "",

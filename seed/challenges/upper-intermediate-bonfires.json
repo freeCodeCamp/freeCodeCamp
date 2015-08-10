@@ -4,8 +4,7 @@
   "challenges": [
     {
       "id": "a2f1d72d9b908d0bd72bb9f6",
-      "name": "Bonfire: Make a Person",
-      "dashedName": "bonfire-make-a-person",
+      "title": "Make a Person",
       "difficulty": "3.01",
       "description": [
         "Fill in the object constructor with the methods specified in the tests.",
@@ -42,6 +41,7 @@
         "Closures",
         "Details of the Object Model"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -56,7 +56,7 @@
     },
     {
       "id": "af4afb223120f7348cdfc9fd",
-      "name": "Bonfire: Map the Debris",
+      "title": "Map the Debris",
       "dashedName": "bonfire-map-the-debris",
       "difficulty": "3.02",
       "description": [
@@ -83,6 +83,7 @@
       "MDNlinks": [
         "Math.pow()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -97,8 +98,7 @@
     },
     {
       "id": "a3f503de51cfab748ff001aa",
-      "name": "Bonfire: Pairwise",
-      "dashedName": "bonfire-pairwise",
+      "title": "Pairwise",
       "difficulty": "3.03",
       "description": [
         "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
@@ -123,6 +123,7 @@
       "MDNlinks": [
         "Array.reduce()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
