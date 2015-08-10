@@ -17,18 +17,19 @@ var Nonprofit = app.models.Nonprofit;
 var Job = app.models.Job;
 var counter = 0;
 var challenges = getFilesFor('challenges');
-var offerings = 2 + challenges.length;
 
-var CompletionMonitor = function() {
+function completionMonitor() {
+  // Increment counter
   counter++;
-  console.log('call ' + counter);
 
-  if (counter < offerings) {
-    return;
-  } else {
+  // Exit if all challenges have been checked
+  if (counter > challenges.length) {
     process.exit(0);
   }
-};
+
+  // Log where in the seed order we're currently at
+  console.log('Call: ' + counter + "/" + challenges.length);
+}
 
 Challenge.destroyAll(function(err, info) {
   if (err) {
@@ -66,7 +67,7 @@ Challenge.destroyAll(function(err, info) {
           console.log(err);
         } else {
           console.log('Successfully parsed %s', file);
-          CompletionMonitor();
+          completionMonitor();
         }
       }
     );
@@ -85,7 +86,7 @@ Nonprofit.destroyAll(function(err, info) {
     } else {
       console.log('Saved ', data);
     }
-    CompletionMonitor();
+    completionMonitor();
     console.log('nonprofits');
   });
 });
@@ -103,6 +104,6 @@ Job.destroyAll(function(err, info) {
       console.log('Saved ', data);
     }
     console.log('jobs');
-    CompletionMonitor();
+    completionMonitor();
   });
 });
