@@ -1,8 +1,7 @@
 extends ../layout
 block content
     script.
-        var completedChallenges = !{JSON.stringify(completedChallengeList)};
-        var challengeList = !{JSON.stringify(challengeList)};
+        var challenges = !{JSON.stringify(challenges)};
     .bg-danger.default-border-radius
         p &nbsp;&nbsp;&nbsp;&nbsp;
             a(href='https://github.com/FreeCodeCamp/freecodecamp/wiki/beta' target='_blank') You're using our experimental beta site. None of your progress here will be saved. Please click this to learn more.
@@ -28,10 +27,10 @@ block content
                     .col-xs-12.col-sm-8.col-sm-offset-2
                         h3 800 Hours of Practice:
                 ol
-                    for challengeBlock in challengeList
+                    for challengeBlock in blocks
                         .row
                             if (user)
-                                if (challengeBlock.completed.length === challengeBlock.challenges.length)
+                                if (challengeBlock.completed === 100)
                                     .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.large-p.negative-10
                                     .col-xs-12.col-sm-9.col-md-10
                                         li.large-p.faded.negative-10
@@ -39,7 +38,7 @@ block content
                                 else
                                     .hidden-xs.col-sm-3.col-md-2
                                         .progress.progress-bar-padding.text-center.thin-progress-bar
-                                            .progress-bar(role='progressbar', aria-valuenow=((challengeBlock.completed.length / challengeBlock.challenges.length) * 100), aria-valuemin='0', aria-valuemax='100', style='width: ' + ((challengeBlock.completed.length / challengeBlock.challenges.length) * 100) + '%;')
+                                            .progress-bar(role='progressbar', aria-valuenow=(challengeBlock.completed), aria-valuemin='0', aria-valuemax='100', style='width: ' + challengeBlock.completed + '%;')
                                     .col-xs-12.col-sm-9.col-md-10
                                         li.large-p.negative-10
                                             a(href='#' + challengeBlock.dashedName)= challengeBlock.name
@@ -74,7 +73,7 @@ block content
                             li.large-p.negative-10 300-hour Nonprofit Project
                 hr
 
-                for challengeBlock in challengeList
+                for challengeBlock in blocks
                     .row
                         a(href='#' name=challengeBlock.dashedName)
                         .spacer.negative-55
@@ -86,12 +85,12 @@ block content
                         .col-xs-12
                             ol
                                 for challenge in challengeBlock.challenges
-                                    if completedChallengeList.indexOf(challenge.id || challenge._id) > -1
+                                    if challenge.completed
                                         .row
                                             .hidden-xs.col-sm-3.col-md-2.text-primary.ion-checkmark-circled.padded-ionic-icon.text-center.large-p.negative-10
                                             .col-xs-12.col-sm-9.col-md-10
                                                 li.faded.large-p.negative-10
-                                                    a(href="/challenges/#{challenge.dashedName}")= challenge.name
+                                                    a(href="/challenges/#{challenge.dashedName}")= challenge.title
 
                                     else
                                         .row
@@ -99,7 +98,7 @@ block content
                                                 span.negative-10
                                             .col-xs-12.col-sm-9.col-md-10
                                                 li.large-p.negative-10
-                                                    a(href="/challenges/#{challenge.dashedName}")= challenge.name
+                                                    a(href="/challenges/#{challenge.dashedName}")= challenge.title
 
     //#announcementModal.modal(tabindex='-1')
     //    .modal-dialog.animated.fadeInUp.fast-animation

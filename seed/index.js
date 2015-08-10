@@ -39,6 +39,8 @@ Challenge.destroyAll(function(err, info) {
   challenges.forEach(function(file) {
     var challengeSpec = require('./challenges/' + file);
     var order = challengeSpec.order;
+    var block = challengeSpec.name;
+
     var challenges = challengeSpec.challenges
       .map(function(challenge, index) {
         // NOTE(berks): add title for displaying in views
@@ -46,11 +48,14 @@ Challenge.destroyAll(function(err, info) {
           _.capitalize(challenge.type) +
           ': ' +
           challenge.title.replace(/[^a-zA-Z0-9\s]/g, '');
+
         challenge.dashedName = challenge.name
           .toLowerCase()
           .replace(/\:/g, '')
           .replace(/\s/g, '-');
         challenge.order = +('' + order + (index + 1));
+        challenge.block = block;
+
         return challenge;
       });
 

@@ -25,6 +25,9 @@
     "dashedName": {
       "type": "string"
     },
+    "block": {
+      "type": "string"
+    },
     "difficulty": {
       "type": "string"
     },

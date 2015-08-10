@@ -1,17 +1,24 @@
-var R = require('ramda'),
-  Rx = require('rx'),
-  assign = require('object.assign'),
-  debug = require('debug')('freecc:challenges'),
-  utils = require('../utils'),
+import _ from 'lodash';
+import moment from 'moment';
+import R from 'ramda';
+import { Observable } from 'rx';
+import assign from 'object.assign';
+import debugFactory from 'debug';
+import utils from '../utils';
 
-  // this would be so much cleaner with destructering...
-  saveUser = require('../utils/rx').saveUser,
-  observableQueryFromModel = require('../utils/rx').observableQueryFromModel,
+import {
+  saveUser,
+  observeMethod,
+  observableQueryFromModel
+} from '../utils/rx';
 
-  userMigration = require('../utils/middleware').userMigration,
-  ifNoUserRedirectTo = require('../utils/middleware').ifNoUserRedirectTo,
-  ifNoUserSend = require('../utils/middleware').ifNoUserSend;
+import {
+  userMigration,
+  ifNoUserRedirectTo,
+  ifNoUserSend
+} from '../utils/middleware';
 
+const debug = debugFactory('freecc:challenges');
 var challengeMapWithNames = utils.getChallengeMapWithNames();
 var challengeMapWithIds = utils.getChallengeMapWithIds();
 var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
@@ -21,6 +28,10 @@ var dasherize = utils.dasherize;
 var unDasherize = utils.unDasherize;
 
 var getMDNLinks = utils.getMDNLinks;
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 
 function updateUserProgress(user, challengeId, completedChallenge) {
   var alreadyCompleted = user.completedChallenges.some(({ id }) => {
@@ -37,12 +48,18 @@ function updateUserProgress(user, challengeId, completedChallenge) {
 }
 
 module.exports = function(app) {
-  var router = app.loopback.Router();
-  var Challenge = app.models.Challenge;
-  var User = app.models.User;
-  var redirectNonUser =
-    ifNoUserRedirectTo('/challenges/learn-how-free-code-camp-works');
-  var send200toNonUser = ifNoUserSend(true);
+  const router = app.loopback.Router();
+
+  const Challenge = app.models.Challenge;
+  const findChallenge$ = observeMethod(Challenge, 'find');
+
+  const User = app.models.User;
+  const userCount$ = observeMethod(User, 'count');
+
+  const send200toNonUser = ifNoUserSend(true);
+  const redirectNonUser = ifNoUserRedirectTo(
+    '/challenges/learn-how-free-code-camp-works'
+  );
 
   router.post(
     '/completed-challenge/',
@@ -182,7 +199,7 @@ module.exports = function(app) {
                 .map(function(key) {
                   return challengeMapWithIds[key]
                     .filter(function(elem) {
-                      return elem === ('' + challenge.id);
+                      return elem === '' + challenge.id;
                     })
                     .map(function() {
                       return key;
@@ -266,7 +283,7 @@ module.exports = function(app) {
         }
       })
       .withLatestFrom(
-        Rx.Observable.just(req.user),
+        Observable.just(req.user),
         function(pairedWith, user) {
           return {
             user: user,
@@ -289,7 +306,7 @@ module.exports = function(app) {
       // not iterate users
       .flatMap(function(dats) {
         debug('flatmap');
-        return Rx.Observable.from([dats.user, dats.pairedWith]);
+        return Observable.from([dats.user, dats.pairedWith]);
       })
       // save user
       .flatMap(function(user) {
@@ -392,7 +409,7 @@ module.exports = function(app) {
           );
         }
       })
-      .withLatestFrom(Rx.Observable.just(req.user), function(pairedWith, user) {
+      .withLatestFrom(Observable.just(req.user), function(pairedWith, user) {
         return {
           user: user,
           pairedWith: pairedWith
@@ -408,7 +425,7 @@ module.exports = function(app) {
         );
       })
       .flatMap(function({ user, pairedWith }) {
-        return Rx.Observable.from([user, pairedWith]);
+        return Observable.from([user, pairedWith]);
       })
       // save users
       .flatMap(function(user) {
@@ -428,50 +445,73 @@ module.exports = function(app) {
       );
   }
 
-  function challengeMap(req, res, next) {
-    var completedList = [];
+  function challengeMap({ user = {} }, res, next) {
+    const daysRunning = moment().diff(new Date('10/15/2014'), 'days');
 
-    if (req.user) {
-      completedList = req.user.completedChallenges;
-    }
+    // if user
+    // get the id's of all the users completed challenges
+    const completedChallenges = !user.completedChallenges ?
+      [] :
+      _.uniq(user.completedChallenges).map(({ id }) => id);
 
-    var noDuplicatedChallenges = R.uniq(completedList);
+    const camperCount$ = userCount$()
+      .map(camperCount => numberWithCommas(camperCount));
 
-    var completedChallengeList = noDuplicatedChallenges
-      .map(function(challenge) {
-        // backwards compatibility
-        return (challenge.id || challenge._id);
-      });
-    var challengeList = utils.
-      getChallengeMapForDisplay(completedChallengeList);
+    const query = {
+      order: 'order ASC'
+    };
 
-    Object.keys(challengeList).forEach(function(key) {
-      challengeList[key].completed = challengeList[key]
-        .challenges.filter(function(elem) {
-        // backwards compatibility hack
-        return completedChallengeList.indexOf(elem.id || elem._id) > -1;
-      });
-    });
+    // create a stream of all the challenges
+    const challenge$ = findChallenge$(query)
+      .flatMap(challenges => Observable.from(challenges))
+      .shareReplay();
 
-    function numberWithCommas(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
+    // create a stream of an array of all the challenge blocks
+    const blocks$ = challenge$
+      // mark challenge completed
+      .map(challenge => {
+        if (completedChallenges.indexOf(challenge.id) !== -1) {
+          challenge.completed = true;
+        }
+        return challenge;
+      })
+      // group challenges by block | returns a stream of observables
+      .groupBy(challenge => challenge.block)
+      // turn block group stream into an array
+      .flatMap(block$ => block$.toArray())
+      .map(blockArray => {
+        const completedCount = blockArray.reduce((sum, { completed }) => {
+          if (completed) {
+            return sum + 1;
+          }
+          return sum;
+        });
 
-    var date1 = new Date('10/15/2014');
-    var date2 = new Date();
-    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-    var daysRunning = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        return {
+          name: blockArray[0].block,
+          dashedName: dasherize(blockArray[0].block),
+          challenges: blockArray,
+          completed: completedCount / blockArray.length * 100
+        };
+      })
+      // turn stream of blocks into a stream of an array
+      .toArray();
 
-    User.count(function(err, camperCount) {
-      if (err) { return next(err); }
-
-      res.render('challengeMap/show', {
-        daysRunning: daysRunning,
-        camperCount: numberWithCommas(camperCount),
-        title: "A map of all Free Code Camp's Challenges",
-        challengeList: challengeList,
-        completedChallengeList: completedChallengeList
-      });
-    });
+    Observable.combineLatest(
+      camperCount$,
+      blocks$,
+      (camperCount, blocks) => ({ camperCount, blocks })
+    )
+      .subscribe(
+        ({ camperCount, blocks }) => {
+          res.render('challengeMap/show', {
+            blocks,
+            daysRunning,
+            camperCount,
+            title: "A map of all Free Code Camp's Challenges"
+          });
+        },
+        next
+      );
   }
 };
