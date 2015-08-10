@@ -35,7 +35,7 @@
         "A boolean is a type of variable that represents either true or false (Named after the British mathematician George Boole).",
         "Booleans are often the result of a function or a comparative operation, for example <code>1==1</code>is true whereas <code>1==2</code>is false.",
         "They are most commonly found inside <code>if</code>statements which we shall cover later",
-        "For now Let's modify our <code>welcomeToBooleans</code>function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked"
+        "For now let's modify our <code>welcomeToBooleans</code>function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked"
       ],
       "tests": [
         "assert(typeof(welcomeToBooleans())=='boolean', 'The value returned by welcomeToBooleans() should be a boolean value. (true of false)');",
@@ -59,8 +59,8 @@
       "description": [
         "Now, use the <code>var</code> keyword to create a <code>variable</code> called <code>myName</code>. Set its value to your name.",
         "<code>Variables</code> are used to store values.",
-        "The name variable comes from the fact that it's value, varies!",
-        "Now Let's create our first variable called myName and because it's a name let's make it a string!",
+        "The name variable comes from the fact that its value varies!",
+        "Now let's create our first variable called myName and because it's a name let's make it a string!",
         "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
         "Look at the <code>ourName</code> example if you get stuck."
       ],
@@ -362,7 +362,7 @@
       "title": "Create Decimal Numbers with JavaScript",
       "difficulty": "9.9815",
       "description": [
-        "In JavaScript we can can work with decimal numbers.",
+        "In JavaScript we can work with decimal numbers.",
         "Let's create a variable <code>myDecimal</code> and give it a decimal value."
       ],
       "tests": [
@@ -385,7 +385,7 @@
       "title": "Perform Arithmetic Operations on Decimals with JavaScript",
       "difficulty": "9.98151",
       "description": [
-        "In JavaScript we can can work with decimal numbers."
+        "In JavaScript we can work with decimal numbers."
       ],
       "tests": [
         "assert(multiply == 15, 'The result of multiply should be 3.75');",
