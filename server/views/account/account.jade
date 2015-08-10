@@ -3,74 +3,77 @@ block content
     script.
         var challengeName = 'Account View'
     .panel.panel-info(ng-controller="profileValidationController")
-        .panel-heading.text-center Update your portfolio here:
+        .panel-heading.text-center Manage your account here
         .panel-body
             if (!user.isGithubCool)
               .row
                 .col-xs-12
-                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
+                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
                       i.fa.fa-github
-                      | Link GitHub to unlock profile
+                      | Link my GitHub to unlock this profile
             else
               .row
                 .col-xs-12
-                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
+                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
                       i.fa.fa-github
-                      | Update Github Info
+                      | Update my profile from Github
 
                   if (!user.twitter)
                       .col-xs-12
-                          a.btn.btn-lg.btn-block.btn-twitter.btn-link-social.disabled(href='#')
+                          a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/link/twitter')
                               i.fa.fa-twitter
                               | Add my Twitter to my profile
-                  if (!user.google)
-                      .col-xs-12
-                          a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social.disabled(href='#')
-                              i.fa.fa-google-plus
-                              | Add my Google+ to my profile
                   if (!user.facebook)
                       .col-xs-12
-                          a.btn.btn-lg.btn-block.btn-facebook.btn-link-social.disabled(href='#')
+                          a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/link/facebook')
                               i.fa.fa-facebook
                               | Add my Facebook to my profile
                   if (!user.linkedin)
                       .col-xs-12
-                          a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social.disabled(href='#')
+                          a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/link/linkedin')
                               i.fa.fa-linkedin
                               | Add my LinkedIn to my profile
-
-            .spacer
-            .spacer
-            .row
-                .col-xs-6.col-sm-4.col-sm-offset-2
-                    a.btn.btn-warning.btn-block.btn-link-social(href='/logout')
-                        span.ion-android-exit
-                        | Sign me out of Free Code Camp
-                .col-xs-6.col-sm-4
-                    a.btn.btn-danger.btn-block.confirm-deletion.btn-link-social
-                        span.ion-trash-b
-                        | Delete my Free Code Camp account
-                    script.
-                        $('.confirm-deletion').on("click", function() {
-                          $('#modal-dialog').modal('show');
-                        });
-                    #modal-dialog.modal.animated.wobble
-                        .modal-dialog
-                            .modal-content
-                                .modal-header
-                                    a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
-                                    h3 Are you really leaving us?
-                                .modal-body
-                                    p Pro Tip: If you tweet feedback to&thinsp;
-                                        a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
-                                        | ,&thinsp;we'll act quickly on it!
-                                .modal-footer
-                                    a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
-                                        span.ion-happy
-                                        | Nevermind, I'll stick around
-                                    br
-                                    form(action='/account/delete', method='POST')
-                                        input(type='hidden', name='_csrf', value=_csrf)
-                                        button.btn.btn-danger.btn-block(type='submit')
-                                            span.ion-trash-b
-                                            | Yes, Delete my account
+                  if (!user.google)
+                      .col-xs-12
+                          a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/link/google')
+                              i.fa.fa-google-plus
+                              | Add my Google+ to my profile
+              .spacer
+              hr
+              .spacer
+              .col-xs-12
+                a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
+                    span.ion-android-exit
+                    | Sign me out of Free Code Camp
+              .col-xs-12
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
+                    span.ion-email
+                    | Email us at team@freecodecamp.com
+              .col-xs-12
+                a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
+                    span.ion-trash-b
+                    | Delete my Free Code Camp account
+                script.
+                    $('.confirm-deletion').on("click", function() {
+                      $('#modal-dialog').modal('show');
+                    });
+                #modal-dialog.modal.animated.wobble
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                a.close(href='#', data-dismiss='modal', aria-hidden='true') ×
+                                h3 Are you really leaving us?
+                            .modal-body
+                                p Pro Tip: If you tweet feedback to&thinsp;
+                                    a(href="https://twitter.com/intent/tweet?text=Hey%20@freecodecamp") @FreeCodeCamp
+                                    | ,&thinsp;we'll act quickly on it!
+                            .modal-footer
+                                a.btn.btn-success.btn-block(href='#', data-dismiss='modal', aria-hidden='true')
+                                    span.ion-happy
+                                    | Nevermind, I'll stick around
+                                br
+                                form(action='/account/delete', method='POST')
+                                    input(type='hidden', name='_csrf', value=_csrf)
+                                    button.btn.btn-danger.btn-block(type='submit')
+                                        span.ion-trash-b
+                                        | Yes, Delete my account
