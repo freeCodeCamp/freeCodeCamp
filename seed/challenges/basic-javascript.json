@@ -272,9 +272,9 @@
       "dashedName": "waypoint-add-two-numbers-with-javascript",
       "difficulty": "9.98141",
       "description": [
-        "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
-        "Let's try a few of the most commonly used ones now",
-        "We use <code>+</code>for addition",
+        "In JavaScript whole numbers (called integers) can be easily used to perform mathematical functions.",
+        "Let's try a few of the most commonly used ones now.",
+        "We use <code>+</code>for addition.",
         "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
@@ -295,9 +295,9 @@
       "dashedName": "waypoint-subtract-one-number-from-another-with-javascript",
       "difficulty": "9.98142",
       "description": [
-        "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
-        "Let's try a few of the most commonly used ones now",
-        "We use <code>-</code>for subtraction",
+        "In JavaScript whole numbers (called integers) can be easily used to perform mathematical functions.",
+        "Let's try a few of the most commonly used ones now.",
+        "We use <code>-</code>for subtraction.",
         "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
@@ -318,9 +318,9 @@
       "dashedName": "waypoint-multiply-two-numbers-with-javascript",
       "difficulty": "9.98143",
       "description": [
-        "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
-        "Let's try a few of the most commonly used ones now",
-        "We use <code>*</code>for multiplication",
+        "In JavaScript whole numbers (called integers) can be easily used to perform mathematical functions.",
+        "Let's try a few of the most commonly used ones now.",
+        "We use <code>*</code>for multiplication.",
         "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
@@ -341,9 +341,9 @@
       "dashedName": "waypoint-divide-one-number-by-another-with-javascript",
       "difficulty": "9.9814",
       "description": [
-        "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
-        "Let's try a few of the most commonly used ones now",
-        "We use <code>/</code>for division",
+        "In JavaScript whole numbers (called integers) can be easily used to perform mathematical functions.",
+        "Let's try a few of the most commonly used ones now.",
+        "We use <code>/</code>for division.",
         "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
@@ -364,7 +364,7 @@
       "dashedName": "waypoint-create-decimal-numbers-with-javascript",
       "difficulty": "9.9815",
       "description": [
-        "in JavaScript we can can work with decimal numbers",
+        "In JavaScript we can can work with decimal numbers.",
         "Let's create a variable <code>myDecimal</code> and give it a decimal value."
       ],
       "tests": [
