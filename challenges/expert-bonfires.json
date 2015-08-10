@@ -1,5 +1,5 @@
 {
-  "name": "Advanced Algorithm Scripting",
+  "name": "Expert Algorithm Scripting",
   "order": 0.013,
   "challenges": [
     {
@@ -258,7 +258,6 @@
     {
       "id": "a19f0fbe1872186acd434d5a",
       "title": "Friendly Date Ranges",
-      "dashedName": "bonfire-friendly-date-ranges",
       "difficulty": "4.06",
       "description": [
         "Implement a way of converting two dates into a more friendly date range that could be presented to a user.",
