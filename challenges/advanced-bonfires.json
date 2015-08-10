@@ -5,7 +5,6 @@
     {
       "id": "aff0395860f5d3034dc0bfc9",
       "title": "Validate US Telephone Numbers",
-      "type": "bonfire",
       "difficulty": "4.01",
       "description": [
         "Return true if the passed string is a valid US phone number",
@@ -51,6 +50,7 @@
       "MDNlinks": [
         "RegExp"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -72,7 +72,6 @@
         "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "type": "bonfire",
       "challengeSeed": [
         "function sym(args) {",
         "  return arguments;",
@@ -90,6 +89,7 @@
         "Array.reduce()",
         "Symmetric Difference"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -113,7 +113,6 @@
         "Otherwise, return change in coin and bills, sorted in highest to lowest order.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "type": "bonfire",
       "challengeSeed": [
         "function drawer(price, cash, cid) {",
         "  var change;",
@@ -146,6 +145,7 @@
       "MDNlinks": [
         "Global Object"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -166,7 +166,6 @@
         "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "type": "bonfire",
       "challengeSeed": [
         "function inventory(arr1, arr2) {",
         "    // All inventory must be accounted for or you're fired!",
