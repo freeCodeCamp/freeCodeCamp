@@ -1432,9 +1432,9 @@
         "This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!"
       ],
       "tests": [
-        "assert($('div.row:has(input[type=\\'text\\'])').length > 0 &&  $('div.row:has(button[type=\\'submit\\'])').length > 0, 'Nest your form submission button and text area in a div with class \"row\".')",
+        "assert($('div.row:has(input[type=\\'text\\'])').length > 0 &&  $('div.row:has(button[type=\\'submit\\'])').length > 0, 'Nest your form submission button and text input in a div with class \"row\".')",
         "assert($('div.col-xs-5:has(button[type=\\'submit\\'])').length > 0, 'Nest your form submission button in a div with the class \"col-xs-5\".')",
-        "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Nest your form text area in a div with the class \"col-xs-7\".')",
+        "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Nest your form text input in a div with the class \"col-xs-7\".')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
