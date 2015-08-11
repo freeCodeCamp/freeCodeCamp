@@ -30,6 +30,7 @@ module.exports = function(app) {
   router.get('/jobs-form', jobsForm);
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
+  router.get('/get-started', getStarted);
 
   app.use(router);
 
@@ -256,6 +257,12 @@ module.exports = function(app) {
   function unsubscribed(req, res) {
     res.render('resources/unsubscribed', {
       title: 'You have been unsubscribed'
+    });
+  }
+
+  function getStarted(req, res) {
+    res.render('resources/get-started', {
+      title: 'How to get started with Free Code Camp'
     });
   }
 

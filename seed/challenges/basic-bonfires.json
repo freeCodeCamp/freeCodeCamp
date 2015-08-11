@@ -3,46 +3,6 @@
   "order": 0.006,
   "challenges": [
     {
-      "id": "bd7139d8c441eddfaeb5bdef",
-      "title": "Pair Program on Bonfires",
-      "difficulty": 0.44,
-      "challengeSeed": [
-        "119657641"
-      ],
-      "description": [
-        "Please note that the video for this challenge is a little outdated, and doesn't perfectly match these steps. We plan to record a new video soon.",
-        "OK, we're finally ready to start pair programming!",
-        "Pair Programming is where two people code together on the same computer. It is an efficient way to collaborate, and widely practiced at software companies. Pair Programming is one of the core concepts of \"Agile\" Software Development, which you will hear more about later.",
-        "Many people use Skype or Google Hangouts to pair program, but if you talk with professional software engineers, they will tell you that it's not really pair programming unless both people have the ability to use the keyboard and mouse.",
-        "The most popular tool for pair programming is Screenhero. You can download Screenhero for <a href='http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjowLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLnppcD9zb3VyY2U9d2ViIn0=' target='_blank'>Mac</a> or <a href='http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjoxLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLXNldHVwLmV4ZSJ9' target='_blank'>Windows</a>. Create your new user account from within the app.",
-        "We have a special chat room for people ready to pair program. Go to our <a href='//gitter.im/FreeCodeCamp/LetsPair' target='_blank'>LetsPair chatroom on Gitter</a> and type \"Hello Pair Programmers!\"",
-        "If someone is available, they will be your \"pair\" - the person you pair programming with.",
-        "If no one gets back to you in the first few minutes, don't worry. There will be lots of opportunities to pair program in the future.",
-        "If someone does get back to you, private message them and ask for the email address they used to register Screenhero.",
-        "Add them as a new contact in Screenhero, then click the monitor-looking button to attempt to share your screen with them.",
-        "Once the Screenhero session starts, your screen's margins will glow orange. You are now sharing your screen.",
-        "Your pair will have their own cursor, and will be able to type text on his or her keyboard.",
-        "Now it's time to tackle our Bonfires. You can begin them by advancing to the next challenge.",
-        "Once you you finish pair programming, end the session in Screenhero session.",
-        "Congratulations! You have completed your first pair programming session.",
-        "Pair program as much as possible with different campers until you've completed all the Bonfire challenges. This is a big time investment, but the JavaScript practice you get will be well worth it!",
-        "Mark this Waypoint complete and move on."
-      ],
-      "type": "waypoint",
-      "challengeType": 2,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
       "id": "ad7123c8c441eddfaeb5bdef",
       "title": "Meet Bonfire",
       "difficulty": "0",
@@ -95,7 +55,7 @@
         "Reverse the provided string.",
         "You may need to turn the string into an array before you can reverse it.",
         "Your result must be a string.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function reverseString(str) {",
@@ -138,7 +98,7 @@
         "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
         "Factorials are often represented with the shorthand notation n!",
         "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function factorialize(num) {",
@@ -172,7 +132,7 @@
         "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
         "You'll need to remove punctuation and turn everything lower case in order to check for palindromes.",
         "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "tests": [
         "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
@@ -218,7 +178,7 @@
       "description": [
         "Return the length of the longest word in the provided sentence.",
         "Your response should be a number.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function findLongestWord(str) {",
@@ -258,7 +218,7 @@
       "description": [
         "Return the provided string with the first letter of each word capitalized.",
         "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function titleCase(str) {",
@@ -297,7 +257,7 @@
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
         "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function largestOfFour(arr) {",
@@ -334,7 +294,7 @@
       "difficulty": "1.07",
       "description": [
         "Check if a string (first argument) ends with the given target string (second argument).",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function end(str, target) {",
@@ -374,7 +334,7 @@
       "difficulty": "1.08",
       "description": [
         "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function repeat(str, num) {",
@@ -412,7 +372,7 @@
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
         "Note that the three dots at the end add to the string length.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function truncate(str, num) {",
@@ -450,7 +410,7 @@
       "difficulty": "1.10",
       "description": [
         "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function chunk(arr, size) {",
@@ -488,7 +448,7 @@
       "difficulty": "1.11",
       "description": [
         "Return the remaining elements of an array after chopping off n elements from the head.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function slasher(arr, howMany) {",
@@ -529,7 +489,7 @@
         "For example, ['hello', 'Hello'], should return true because all of the letters in the second string are present in the first, ignoring case.",
         "The arguments ['hello', 'hey'] should return false because the string 'hello' does not contain a 'y'.",
         "Lastly, ['Alien', 'line'], should return true because all of the letters in 'line' are present in 'Alien'.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function mutation(arr) {",
@@ -570,7 +530,7 @@
       "description": [
         "Remove all falsey values from an array.",
         "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function bouncer(arr) {",
@@ -608,7 +568,7 @@
       "difficulty": "1.55",
       "description": [
         "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property values (second argument).",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function where(collection, source) {",
@@ -647,7 +607,7 @@
       "difficulty": "1.60",
       "description": [
         "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function destroyer(arr) {",
@@ -688,7 +648,7 @@
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
         "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index).",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function where(arr, num) {",
