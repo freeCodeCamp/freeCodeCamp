@@ -43,7 +43,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9bedc08826",
@@ -92,7 +93,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aedc08826",
@@ -142,7 +144,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aeda08826",
@@ -193,7 +196,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aeda08726",
@@ -245,7 +249,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed908626",
@@ -296,7 +301,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed918626",
@@ -346,7 +352,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed908826",
@@ -400,7 +407,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed808826",
@@ -451,7 +459,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed708826",
@@ -499,7 +508,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed608826",
@@ -551,7 +561,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed508826",
@@ -605,7 +616,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed308826",
@@ -660,7 +672,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed208826",
@@ -716,7 +729,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed108826",
@@ -773,7 +787,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9aed008826",
@@ -832,11 +847,12 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
     {
       "id": "bad87fee1348bd9bed008826",
-      "name":  "Waypoint: Target Odd Numbered Elements Using jQuery",
+      "title": "Target Odd Numbered Elements Using jQuery",
       "dashedName":  "waypoint-target-odd-numbered-elements-using-jquery",
       "difficulty": 3.165,
       "description": [
@@ -892,7 +908,8 @@
         "  </div>",
         "</div>"
       ],
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     },
 
     {
@@ -951,487 +968,8 @@
         "</div>"
       ],
       "type": "waypoint",
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9aeca08826",
-      "name":  "Waypoint: Trigger on click Events with jQuery",
-      "dashedName":  "waypoint-trigger-onclick-events-with-jquery",
-      "difficulty": 3.19,
-      "description": [
-        "<code>.on('click', function() {</code>",
-        "",
-        "});</code>"
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  $(document).ready(function() {</code>",
-        "",
-        "<code>  });</code>",
-        "fcces",
-        "",
-        "<!-- You shouldn't need to modify code below this line -->",
-        "",
-        "<div class='container-fluid'>",
-        "  <form action=\"/submit-cat-photo\">",
-        "    <label><input type='radio' name='indoor-outdoor'> Indoor</label>",
-        "    <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "    <input type='text' placeholder='cat photo URL' required>",
-        "    <button type='submit'>Submit</button>",
-        "  </form>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad84fee1348bd9aecc58826",
-      "name":  "Waypoint: Read Data from an Element Using jQuery",
-      "dashedName":  "waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
-      "description": [
-        "Let's make everything roll with <code>rollOut</code>."
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  $(document).ready(function() {",
-        "    $('button').on('click', function() {",
-        "",
-        "    });",
-        "  });",
-        "fcces",
-        "",
-        "<!-- You shouldn't need to modify code below this line -->",
-        "",
-        "<div class='container-fluid'>",
-        "  <div class='row'>",
-        "    <div class='col-xs-2'>",
-        "      <input type='checkbox' id='check-me'>",
-        "    </div>",
-        "    <div class='col-xs-10'>",
-        "      <p>#check-me</p>",
-        "    </div>",
-        "  <button class='btn btn-block btn-primary'>#click-me</button>",
-        "  <span>Is the checkbox checked?</span>",
-        "  <span id='checked-state'></span>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad84fee1348bd9aecc48826",
-      "name":  "Waypoint: Read Data from an Element Using jQuery",
-      "dashedName":  "waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
-      "description": [
-        "Let's make everything roll with <code>rollOut</code>."
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  $(document).ready(function() {",
-        "    $('button').on('click', function() {",
-        "      $('#click-me').addClass('animated shake');",
-        "    });",
-        "  });",
-        "fcces",
-        "",
-        "<!-- You shouldn't need to modify code below this line -->",
-        "",
-        "<div class='container-fluid'>",
-        "  <div class='row'>",
-        "    <div class='col-xs-2'>",
-        "      <input type='checkbox' id='check-me'>",
-        "    </div>",
-        "    <div class='col-xs-10'>",
-        "      <p>#check-me</p>",
-        "    </div>",
-        "  <button class='btn btn-block btn-primary'>#click-me</button>",
-        "  <span>Is the checkbox checked?</span>",
-        "  <span id='checked-state'></span>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad84fee1348bd9aecc38826",
-      "name":  "Waypoint: Read Data from an Element Using jQuery",
-      "dashedName":  "waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
-      "description": [
-        "Let's make everything roll with <code>rollOut</code>."
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  $(document).ready(function() {",
-        "    $('button').on('click', function() {",
-        "      $('#click-me').addClass('animated shake');",
-        "      $('#checked-state').text('happy text');",
-        "    });",
-        "  });",
-        "fcces",
-        "",
-        "<!-- You shouldn't need to modify code below this line -->",
-        "",
-        "<div class='container-fluid'>",
-        "  <div class='row'>",
-        "    <div class='col-xs-2'>",
-        "      <input type='checkbox' id='check-me'>",
-        "    </div>",
-        "    <div class='col-xs-10'>",
-        "      <p>#check-me</p>",
-        "    </div>",
-        "  <button class='btn btn-block btn-primary'>#click-me</button>",
-        "  <span>Is the checkbox checked?</span>",
-        "  <span id='checked-state'></span>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad84fee1348bd9aecc28826",
-      "name":  "Waypoint: Read Data from an Element Using jQuery",
-      "dashedName":  "waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
-      "description": [
-        "Let's make everything roll with <code>rollOut</code>."
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  $(document).ready(function() {",
-        "    $('button').on('click', function() {",
-        "      $('#click-me').addClass('animated shake');",
-        "      $('#checked-state').text($('#check-me').prop('checked'));",
-        "    });",
-        "  });",
-        "fcces",
-        "",
-        "<!-- You shouldn't need to modify code below this line -->",
-        "",
-        "<div class='container-fluid'>",
-        "  <div class='row'>",
-        "    <div class='col-xs-2'>",
-        "      <input type='checkbox' id='check-me'>",
-        "    </div>",
-        "    <div class='col-xs-10'>",
-        "      <p>#check-me</p>",
-        "    </div>",
-        "  <button class='btn btn-block btn-primary'>#click-me</button>",
-        "  <span>Is the checkbox checked?</span>",
-        "  <span id='checked-state'></span>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad84fee1348bd9aecc18826",
-      "name":  "Waypoint: Read Data from an Element Using jQuery",
-      "dashedName":  "waypoint-read-data-from-an-element-using-jquery",
-      "difficulty": 3.17,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  $(document).ready(function() {",
-        "    $('button').on('click', function() {",
-        "      $('#click-me').addClass('animated shake');",
-        "      $('#checked-state').text($('#check-me').prop('checked'));",
-        "    });",
-        "  });",
-        "fcces",
-        "",
-        "<!-- You shouldn't need to modify code below this line -->",
-        "",
-        "<div class='container-fluid'>",
-        "  <div class='row'>",
-        "    <div class='col-xs-2'>",
-        "      <input type='checkbox' id='check-me'>",
-        "    </div>",
-        "    <div class='col-xs-10'>",
-        "      <p>#check-me</p>",
-        "    </div>",
-        "  <button class='btn btn-block btn-primary'>#click-me</button>",
-        "  <span>Is the checkbox checked?</span>",
-        "  <span id='checked-state'></span>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9aecc08826",
-      "name":  "Waypoint: Trigger onHover Events with jQuery",
-      "dashedName":  "waypoint-trigger-onhover-events-with-jquery",
-      "difficulty": 3.18,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-
-      ],
-      "challengeType": 0
-    },
-
-
-    {
-      "id": "bad87fee1348bd9aebc08726",
-      "name":  "Waypoint: Learn how JSON Works",
-      "dashedName":  "waypoint-learn-how-json-works",
-      "difficulty": 3.21,
-      "description": [
-        "JSON stands for \"JavaScript Object Notation\". It's how you create objects in JavaScript.",
-        "JSON is a series of \"key-value pairs\". Everything on the left of the colon (<code>:</code>) is the \"key\" you use to unlock the \"value\" on the right of the colon."
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "[",
-        "  {",
-        "    \"id\": 0,",
-        "    \"imageLink\": \"http://rs611.pbsrc.com/albums/tt194/allypopper423/Funny-Cat-Green-Avacado.jpg~c200\",",
-        "    \"codeNames\": [",
-        "      \"Juggernaut\",",
-        "      \"Mrs. Wallace\",",
-        "      \"Buttercup\"",
-        "    ]",
-        "  },",
-        "  {",
-        "    \"id\": 1,",
-        "    \"imageLink\": \"http://cdn.grumpycats.com/wp-content/uploads/2012/09/GC-Gravatar-copy.png\",",
-        "    \"codeNames\": [",
-        "      \"Oscar\",",
-        "      \"Scrooge\",",
-        "      \"Tyrion\"",
-        "    ]",
-        "  },",
-        "  {",
-        "    \"id\": 2,",
-        "    \"imageLink\": \"http://www.kittenspet.com/wp-content/uploads/2012/08/cat_with_funny_face_3-200x200.jpg\",",
-        "    \"codeNames\": [",
-        "      \"The Doctor\",",
-        "      \"Loki\",",
-        "      \"Joker\"",
-        "    ]",
-        "  }",
-        "]"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9aebc08826",
-      "name":  "Waypoint: Get Data from an URL Using jQuery",
-      "dashedName":  "waypoint-get-data-from-a-url-using-jquery",
-      "difficulty": 3.21,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "",
-        "  $(document).ready(function() {",
-        "",
-        "    $('#cat-button').on('click', function() {",
-        "      $.getJSON('/json/cats.json', function( json ) {",
-        "",
-        "      });",
-        "    });",
-        "",
-        "  });",
-        "fcces",
-        "<button id='cat-button' class='btn btn-primary btn-block btn-lg'>#cat-button</button>",
-        "<div class='jumbotron' id='output'>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad87fee1348bd9ae9c08826",
-      "name":  "Waypoint: Loop through JSON Data Using jQuery",
-      "dashedName":  "waypoint-loop-through-json-data-using-jquery",
-      "difficulty": 3.22,
-      "description": [
-
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "",
-        "  $(document).ready(function() {",
-        "",
-        "    $('#cat-button').on('click', function() {",
-        "      $.getJSON('/json/cats.json', function( json ) {",
-        "",
-        "      });",
-        "    });",
-        "",
-        "  });",
-        "fcces",
-        "<button id='cat-button' class='btn btn-primary btn-block btn-lg'>#cat-button</button>",
-        "<div class='jumbotron' id='output'>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad88fee1348bd9ae8c08726",
-      "name":  "Waypoint: Wire AJAX Call into a jQuery Click Event",
-      "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 3.24,
-      "description": [
-        "<img src='https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png'>"
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  var random = function() { return Math.floor(Math.random() * 3) }",
-        "  $(document).ready(function() {",
-        "",
-        "    $('#cat-button').on('click', function() {",
-        "      $.getJSON('/json/cats.json', function( json ) {",
-        "",
-        "      });",
-        "    });",
-        "",
-        "  });",
-        "fcces",
-        "<button id='cat-button' class='btn btn-primary btn-block btn-lg'>#cat-button</button>",
-        "<div class='jumbotron' id='output'>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad88fee1348bd9ae8c08626",
-      "name":  "Waypoint: Wire AJAX Call into a jQuery Click Event",
-      "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 3.24,
-      "description": [
-        "<img src='https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png'>"
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  var random = function() { return Math.floor(Math.random() * 3) }",
-        "  $(document).ready(function() {",
-        "",
-        "    $('#cat-button').on('click', function() {",
-        "      $.getJSON('/json/cats.json', function( json ) {",
-        "        var kitten = json[random()];",
-        "      });",
-        "    });",
-        "",
-        "  });",
-        "fcces",
-        "<button id='cat-button' class='btn btn-primary btn-block btn-lg'>#cat-button</button>",
-        "<div class='jumbotron' id='output'>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad88fee1348bd9ae8c08526",
-      "name":  "Waypoint: Wire AJAX Call into a jQuery Click Event",
-      "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 3.24,
-      "description": [
-        "<img src='https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png'>"
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  var random = function() { return Math.floor(Math.random() * 3) }",
-        "  $(document).ready(function() {",
-        "",
-        "    $('#cat-button').on('click', function() {",
-        "      $.getJSON('/json/cats.json', function( json ) {",
-        "        var kitten = json[random()];",
-        "        $(\"<img src='\" + kitten.imageLink + \"'>\").appendTo('#output');",
-        "      });",
-        "    });",
-        "",
-        "  });",
-        "fcces",
-        "<button id='cat-button' class='btn btn-primary btn-block btn-lg'>#cat-button</button>",
-        "<div class='jumbotron' id='output'>",
-        "</div>"
-      ],
-      "challengeType": 0
-    },
-
-    {
-      "id": "bad88fee1348bd9ae8c08426",
-      "name":  "Waypoint: Wire AJAX Call into a jQuery Click Event",
-      "dashedName":  "waypoint-wire-ajax-call-into-a-jquery-click-event",
-      "difficulty": 3.24,
-      "description": [
-        "<img src='https://www.evernote.com/l/AjmAQ5BxGrFGRrWl_j2eSpGZMfrunfse89gB/image.png'>"
-      ],
-      "tests": [
-
-      ],
-      "challengeSeed": [
-        "fccss",
-        "  var random = function() { return Math.floor(Math.random() * 3) }",
-        "  $(document).ready(function() {",
-        "",
-        "    $('#cat-button').on('click', function() {",
-        "      $.getJSON('/json/cats.json', function( json ) {",
-        "        var kitten = json[random()];",
-        "        $(\"<img src='\" + kitten.imageLink + \"'>\").appendTo('#output');",
-        "        $(\"<h3>Code name: \" + kitten.codeNames[random()] + \"</h3>\").appendTo('#output');",
-        "      });",
-        "    });",
-        "",
-        "  });",
-        "fcces",
-        "<button id='cat-button' class='btn btn-primary btn-block btn-lg'>#cat-button</button>",
-        "<div class='jumbotron' id='output'>",
-        "</div>"
-      ],
-      "challengeType": 0
+      "challengeType": 0,
+      "type": "waypoint"
     }
   ]
 }
