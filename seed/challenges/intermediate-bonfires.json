@@ -187,7 +187,7 @@
       "difficulty": "2.04",
       "description": [
         "Translate the provided string to pig latin.",
-        "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target="_blank">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
+        "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
         "If a word begins with a vowel you just add \"way\" to the end.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
@@ -229,7 +229,7 @@
       "difficulty": "2.05",
       "description": [
         "The DNA strand is missing the pairing element. Match each character with the missing element and return the results as a 2d array.",
-        "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target="_blank">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
+        "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
         "Return the provided character as the first element in each array.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
