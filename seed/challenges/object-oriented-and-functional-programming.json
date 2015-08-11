@@ -1,6 +1,287 @@
 {
-  "name": "Object Oriented and Functional Programming - Coming Soon",
-  "order" : 0.010,
+  "name": "Object Oriented and Functional Programming \n - \n Under Construction From Challenge 4 Onwards",
+  "order" : 0.009,
+  "note": [
+    "inheritance"
+  ],
   "challenges": [
+    {
+      "id":"cf1111c1c15feddfaeb1bdef",
+      "title":"Waypoint: A Review On Objects",
+      "difficulty":0,
+      "description":[
+        "",
+        "Before we dive into Object Oriented Programming Let's take a quick look over objects in javascript"
+      ],
+      "tests":[
+        "assert(motorBike.wheels===2, 'You should have given motorBike two wheels');",
+        "assert(motorBike.engine===1, 'You should have given motorBike one engine');",
+        "assert(motorBike.seats===1, 'You should have given motorBike one seat');"
+      ],
+      "challengeSeed":[
+        "//Here is a sample Object",
+        "var car = {",
+        " \"wheels\":4,",
+        " \"engine\":1,",
+        " \"seats\":5",
+        "};",
+        "",
+        "//Now Let's make a similar Object called motorBike",
+        "//Give it two wheels, one engine and one seat",
+        "var motorBike = {",
+        " \"wheels\":0,",
+        " \"engine\":0,",
+        " \"seats\":0",
+        "};",
+        "",
+        "(function(){return(JSON.stringify(motorBike));})();"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c15feddfaeb2bdef",
+      "title":"Waypoint: Constructing Objects",
+      "difficulty":0,
+      "description":[
+        "",
+        "We are also able to create Objects using functions"
+      ],
+      "tests":[
+        "assert((new Car()).wheels === 4, \"myCar.wheels should be four. Make sure that you haven't changed this value\");",
+        "assert(typeof((new Car()).engine) === 'number', 'myCar.engine should be a number');",
+        "assert(typeof((new Car()).seats) === 'number', 'myCar.seats should be a number');"
+      ],
+      "challengeSeed":[
+        "//Let's add the properties engine and seats to the car in the same way that the property wheels has been added below. They should both be numbers",
+        "var Car = function(){",
+        " this.wheels = 4;",
+        "};",
+        "",
+        "//Instantiated Here",
+        "var myCar = new Car();",
+        "",
+        "(function(){return(JSON.stringify(myCar));})();"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c15feddfaeb3bdef",
+      "title":"Waypoint: Understanding Public and Private Properties",
+      "difficulty":0,
+      "description":[
+        "",
+        "In the last challenge we use the <code>this</code> to reference public properties the current object or function.",
+        "We can also create variables and functions that aren't accessible from outside the Object"
+      ],
+      "tests":[
+        "assert(answers.Q1===true, 'The number Gear is Publicly Accessible');",
+        "assert(answers.Q2===true, 'The function getGear is Publicly Accessible');",
+        "assert(answers.Q3===false, 'The function addStyle is not Publicly Accessible');"
+      ],
+      "challengeSeed":[
+        "//Let's create an object with a two functions. One attached as a property and one not.",
+        "var Car = function(){",
+        "   this.gear = 1;",
+        "   function addStyle(styleMe){",
+        "       return('The Current Gear Is: ' + styleMe);",
+        "   }",
+        "   this.getGear = function(){",
+        "       return(addStyle(this.gear));",
+        "   };",
+        "};",
+        "",
+        "//Quick Quiz!",
+        "//Say whether the follow statements are true or false in the answers object below",
+        "",
+        "//Statement One",
+        "//The number gear publicly accessible",
+        "",
+        "//Statement Two",
+        "//The function getGear publicly accessible",
+        "",
+        "//Statement Three",
+        "//The function addStyle publicly accessible",
+        "",
+        "var answers = {",
+        "   'Q1':false,",
+        "   'Q2':false,",
+        "   'Q3':false",
+        "};",
+        "",
+        "//Instantiated Here",
+        "var myCar = new Car();",
+        "",
+        "(function(){return(JSON.stringify(answers));})();"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c13feddfaeb6bdef",
+      "title":"Waypoint: Instantiation",
+      "difficulty":0,
+      "description":[
+        "",
+        "Instantiation at it's most basic level is where you are creating a copy of an object from a template for use at a later time"
+      ],
+      "tests":[
+        "assert((new Car()).wheels === 4, 'The property wheels should be four in the object constructor');",
+        "assert(typeof((new Car()).engine) === 'undefined', 'There should not be a property engine in the object constructor');",
+        "assert(myCar.wheels === 4, 'The property wheels of myCar should be four');",
+        "assert(typeof(myCar.engine) === 'number', 'The property engine of myCar should be a number');"
+      ],
+      "challengeSeed":[
+        "var Car = function(){",
+        "   this.wheels = 4;",
+        "};",
+        "",
+        "var myCar = new Car();",
+        "",
+        "//Add the property engine to myCar using dot notation and make it a number",
+        "",
+        "",
+        "(function(){return(JSON.stringify(myCar));})();"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c13feddfaeb9bdef",
+      "title":"Waypoint: Inheritance",
+      "difficulty":0,
+      "description":[
+        ""
+      ],
+      "tests":[
+        "assert(1==2, '');"
+      ],
+      "challengeSeed":[
+        "Under Construction"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c14feddfaeb1bdef",
+      "title":"Waypoint: Prototypical Inheritance",
+      "difficulty":0,
+      "description":[
+        ""
+      ],
+      "tests":[
+        "assert(1==2, '');"
+      ],
+      "challengeSeed":[
+        "Under Construction"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c13feddfaeb7bdef",
+      "title":"Waypoint: Closures",
+      "difficulty":0,
+      "description":[
+        ""
+      ],
+      "tests":[
+        "assert(1==2, '');"
+      ],
+      "challengeSeed":[
+        "Under Construction"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c14feddfaeb3bdef",
+      "title":"Waypoint: Factories",
+      "difficulty":0,
+      "description":[
+        ""
+      ],
+      "tests":[
+        "assert(1==2, '');"
+      ],
+      "challengeSeed":[
+        "Under Construction"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c14feddfaeb5bdef",
+      "title":"Waypoint: Pure Functions",
+      "Note":"May need a waypoint before each topic to announce what it is :p",
+      "difficulty":0,
+      "description":[
+        ""
+      ],
+      "tests":[
+        "assert(1==2, '');"
+      ],
+      "challengeSeed":[
+        "Under Construction"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c14feddfaeb6bdef",
+      "title":"Waypoint: Currying Functions",
+      "difficulty":0,
+      "description":[
+        ""
+      ],
+      "tests":[
+        "assert(1==2, '');"
+      ],
+      "challengeSeed":[
+        "Under Construction"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c14feddfaeb7bdef",
+      "title":"Waypoint: Composition",
+      "difficulty":0,
+      "description":[
+        ""
+      ],
+      "tests":[
+        "assert(1==2, '');"
+      ],
+      "challengeSeed":[
+        "Under Construction"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c14feddfaeb8bdef",
+      "title":"Waypoint: Functors",
+      "difficulty":0,
+      "description":[
+        ""
+      ],
+      "tests":[
+        "assert(1==2, '');"
+      ],
+      "challengeSeed":[
+        "Under Construction"
+      ],
+      "challengeType":1
+    },
+    {
+      "id":"cf1111c1c14feddfaeb9bdef",
+      "title":"Waypoint: Currying Functions",
+      "Notes":[
+        "",
+        ""
+      ],
+      "difficulty":0,
+      "description":[
+        ""
+      ],
+      "tests":[
+        "assert(1==2, '');"
+      ],
+      "challengeSeed":[
+        "Under Construction"
+      ],
+      "challengeType":1
+    }
   ]
 }
