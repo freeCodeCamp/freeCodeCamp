@@ -4,8 +4,7 @@
   "challenges": [
     {
       "id": "bad87fee1348bd9acde08712",
-      "name": "Waypoint: Use Responsive Design with Bootstrap Fluid Containers",
-      "dashedName": "waypoint-use-responsive-design-with-bootstrap-fluid-containers",
+      "title": "Use Responsive Design with Bootstrap Fluid Containers",
       "difficulty": 2.01,
       "description": [
         "Now let's go back to our Cat Photo App. This time, we'll style it using the popular Bootstrap responsive CSS framework.",
@@ -15,7 +14,7 @@
         "To get started, we should nest all of our HTML in a <code>div</code> element with the class \"container-fluid\"."
       ],
       "tests": [
-        "assert($('div').hasClass('container-fluid'), 'Your <code>div</code> element should have the class \"row\"')",
+        "assert($('div').hasClass('container-fluid'), 'Your <code>div</code> element should have the class \"container-fluid\"')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -74,6 +73,7 @@
         "  <button type='submit'>Submit</button>",
         "</form>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -88,8 +88,7 @@
     },
     {
       "id": "bad87fee1348bd9acde08812",
-      "name": "Waypoint: Make Images Mobile Responsive",
-      "dashedName": "waypoint-make-images-mobile-responsive",
+      "title": "Make Images Mobile Responsive",
       "difficulty": 2.02,
       "description": [
         "First, Add a new image with the <code>src</code> attribute of \"http://bit.ly/fcc-running-cats\".",
@@ -159,6 +158,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -173,8 +173,7 @@
     },
     {
       "id": "bad87fee1348bd8acde08812",
-      "name": "Waypoint: Center Text with Bootstrap",
-      "dashedName": "waypoint-center-text-with-bootstrap",
+      "title": "Center Text with Bootstrap",
       "difficulty": 2.03,
       "description": [
         "Now that we're using Bootstrap, we can center our heading elements to make them look better. All we need to do is add the class <code>text-center</code> to our <code>h1</code> and <code>h2</code> elements.",
@@ -242,6 +241,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -256,8 +256,7 @@
     },
     {
       "id": "bad87fee1348cd8acdf08812",
-      "name": "Waypoint: Create a Bootstrap Button",
-      "dashedName": "waypoint-create-a-bootstrap-button",
+      "title": "Create a Bootstrap Button",
       "difficulty": 2.04,
       "description": [
         "Bootstrap has its own styles for <code>button</code> elements, which look much better than the plain HTML ones.",
@@ -327,6 +326,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -341,8 +341,7 @@
     },
     {
       "id": "bad87fee1348cd8acef08812",
-      "name": "Waypoint: Create a Block Element Bootstrap Button",
-      "dashedName": "waypoint-create-a-block-element-bootstrap-button",
+      "title": "Create a Block Element Bootstrap Button",
       "difficulty": 2.05,
       "description": [
         "Normally, your <code>button</code> elements are only as wide as the text that they contain. By making them block elements, your button will stretch to fill your page's entire horizontal space.",
@@ -416,6 +415,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -430,8 +430,7 @@
     },
     {
       "id": "bad87fee1348cd8acef08811",
-      "name": "Waypoint: Taste the Bootstrap Button Color Rainbow",
-      "dashedName": "waypoint-taste-the-bootstrap-button-color-rainbow",
+      "title": "Taste the Bootstrap Button Color Rainbow",
       "difficulty": 2.06,
       "description": [
         "The \"btn-primary\" class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.",
@@ -503,6 +502,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -517,8 +517,7 @@
     },
     {
       "id": "bad87fee1348cd8acef08813",
-      "name": "Waypoint: Call out Optional Actions with Button Info",
-      "dashedName": "waypoint-call-out-optional-actions-with-button-info",
+      "title": "Call out Optional Actions with Button Info",
       "difficulty": 2.07,
       "description": [
         "Bootstrap comes with several pre-defined colors for buttons. The \"btn-info\" class is used to call attention to optional actions that the user can take.",
@@ -591,6 +590,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -605,8 +605,7 @@
     },
     {
       "id": "bad87fee1348ce8acef08814",
-      "name": "Waypoint: Warn your Users of a Dangerous Action",
-      "dashedName": "waypoint-warn-your-users-of-a-dangerous-action",
+      "title": "Warn your Users of a Dangerous Action",
       "difficulty": 2.08,
       "description": [
         "Bootstrap comes with several pre-defined colors for buttons. The \"btn-danger\" class is the button color you'll use to notify users that the button performs a destructive action, such as deleting a cat photo.",
@@ -680,6 +679,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -694,8 +694,7 @@
     },
     {
       "id": "bad88fee1348ce8acef08815",
-      "name": "Waypoint: Use the Bootstrap Grid to Put Elements Side By Side",
-      "dashedName": "waypoint-use-the-bootstrap-grid-to-put-elements-side-by-side",
+      "title": "Use the Bootstrap Grid to Put Elements Side By Side",
       "difficulty": 2.09,
       "description": [
         "Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
@@ -774,6 +773,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -787,9 +787,8 @@
       "descriptionPt": []
     },
     {
-      "id": "bad87fee1348bd9aedf08745",
-      "name": "Waypoint: Ditch Custom CSS for Bootstrap",
-      "dashedName": "waypoint-ditch-custom-css-for-bootstrap",
+      "id": "bad87fee1348bd9aedf08845",
+      "title": "Ditch Custom CSS for Bootstrap",
       "difficulty": 2.10,
       "description": [
         "We can clean up our code and make our Cat Photo App look more conventional by using Bootstrap's built-in styles instead of the custom styles we created earlier.",
@@ -873,6 +872,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -988,8 +988,7 @@
     },
     {
       "id": "bad87fee1348bd9aede08845",
-      "name": "Waypoint: Create a Custom Heading",
-      "dashedName": "waypoint-create-a-custom-heading",
+      "title": "Create a Custom Heading",
       "difficulty": 2.11,
       "description": [
         "We will make a simple heading for our Cat Photo App by putting them in the same row.",
@@ -1063,6 +1062,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1077,8 +1077,7 @@
     },
     {
       "id": "bad87fee1348bd9aedd08845",
-      "name": "Waypoint: Add Font Awesome Icons to our Buttons",
-      "dashedName": "waypoint-add-font-awesome-icons-to-our-buttons",
+      "title": "Add Font Awesome Icons to our Buttons",
       "difficulty": 2.12,
       "description": [
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the \".svg\" file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
@@ -1148,6 +1147,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1162,8 +1162,7 @@
     },
     {
       "id": "bad87fee1348bd9aedc08845",
-      "name": "Waypoint: Add Font Awesome Icons to all of our Buttons",
-      "dashedName": "waypoint-add-font-awesome-icons-to-all-of-our-Buttons",
+      "title": "Add Font Awesome Icons to all of our Buttons",
       "difficulty": 2.13,
       "description": [
         "Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the \".svg\" file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.",
@@ -1233,6 +1232,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1247,8 +1247,7 @@
     },
     {
       "id": "bad87fee1348bd9aedb08845",
-      "name": "Waypoint: Responsively Style Radio Buttons",
-      "dashedName": "waypoint-responsively-style-radio-buttons",
+      "title": "Responsively Style Radio Buttons",
       "difficulty": 2.14,
       "description": [
         "You can use Bootstrap's \"col-xs-*\" classes on <code>form</code> elements, too! This way, our radio buttons will be evenly spread out across the page, regardless of how wide the screen resolution is.",
@@ -1318,6 +1317,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1332,8 +1332,7 @@
     },
     {
       "id": "bad87fee1348bd9aeda08845",
-      "name": "Waypoint: Responsively Style Checkboxes",
-      "dashedName": "waypoint-responsively-style-checkboxes",
+      "title": "Responsively Style Checkboxes",
       "difficulty": 2.15,
       "description": [
         "You can use Bootstrap's \"col-xs-*\" classes on <code>form</code> elements, too! This way, our checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.",
@@ -1410,6 +1409,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1424,8 +1424,7 @@
     },
     {
       "id": "bad87fee1348bd9aed908845",
-      "name": "Waypoint: Style Text Inputs as Form Controls",
-      "dashedName": "waypoint-style-text-inputs-as-form-controls",
+      "title": "Style Text Inputs as Form Controls",
       "difficulty": 2.16,
       "description": [
         "You can add the \"fa-paper-plane\" Font Awesome icon by adding <code>&#60;i class=\"fa fa-paper-plane\"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.",
@@ -1511,6 +1510,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1525,8 +1525,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908845",
-      "name": "Waypoint: Line up Form Elements Responsively with Bootstrap",
-      "dashedName": "waypoint-line-up-form-elements-responsively-with-bootstrap",
+      "title": "Line up Form Elements Responsively with Bootstrap",
       "difficulty": 2.17,
       "description": [
         "Now let's get your form <code>input</code> and your submission <code>button</code> on the same line. We'll do this the same way we have previously: by using a <code>div</code> element with the class \"row\", and other <code>div</code> elements within it using the \"col-xs-*\" class.",
@@ -1534,9 +1533,9 @@
         "This is the last challenge we'll do for our Cat Photo App for now. We hope you've enjoyed learning Font Awesome, Bootstrap, and responsive design!"
       ],
       "tests": [
-        "assert($('div.row:has(input[type=\\'text\\'])').length > 0 &&  $('div.row:has(button[type=\\'submit\\'])').length > 0, 'Nest your form submission button and text area in a div with class \"row\".')",
+        "assert($('div.row:has(input[type=\\'text\\'])').length > 0 &&  $('div.row:has(button[type=\\'submit\\'])').length > 0, 'Nest your form submission button and text input in a div with class \"row\".')",
         "assert($('div.col-xs-5:has(button[type=\\'submit\\'])').length > 0, 'Nest your form submission button in a div with the class \"col-xs-5\".')",
-        "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Nest your form text area in a div with the class \"col-xs-7\".')",
+        "assert($('div.col-xs-7:has(input[type=\\'text\\'])').length > 0, 'Nest your form text input in a div with the class \"col-xs-7\".')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1613,6 +1612,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1627,14 +1627,13 @@
     },
     {
       "id": "bad87fee1348bd9aec908846",
-      "name": "Waypoint: Create a Bootstrap Headline",
-      "dashedName": "waypoint-create-a-bootstrap-headline",
+      "title": "Create a Bootstrap Headline",
       "difficulty": 2.18,
       "description": [
         "Now let's build something from scratch to practice our HTML, CSS and Bootstrap skills.",
         "We'll build a jQuery playground, which we'll soon put to use in our jQuery challenges.",
         "To start with, create an <code>h3</code> element, with the text \"jQuery Playground\".",
-        "Color your <code>h3</code> element with the \"text-primary\" Bootstrap class, and center it with the \"text-center\" bootstrap class."
+        "Color your <code>h3</code> element with the \"text-primary\" Bootstrap class, and center it with the \"text-center\" Bootstrap class."
       ],
       "tests": [
         "assert($('h3') && $('h3').length > 0, 'Add a <code>h3</code> element to your page.')",
@@ -1648,6 +1647,7 @@
         "",
         ""
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1662,8 +1662,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908746",
-      "name": "Waypoint: House our page within a Bootstrap Container Fluid Div",
-      "dashedName": "waypoint-house-our-page-within-a-bootstrap-container-fluid-div",
+      "title": "House our page within a Bootstrap Container Fluid Div",
       "difficulty": 2.18,
       "description": [
         "Now let's make sure all the content on your page is mobile-responsive.",
@@ -1678,6 +1677,7 @@
         "",
         ""
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1692,8 +1692,7 @@
     },
     {
       "id": "bad87fee1348bd9bec908846",
-      "name": "Waypoint: Create a Bootstrap Row",
-      "dashedName": "waypoint-create-a-bootstrap-row",
+      "title": "Create a Bootstrap Row",
       "difficulty": 2.19,
       "description": [
         "Now we'll create a Bootstrap row for our inline elements.",
@@ -1711,6 +1710,7 @@
         "",
         ""
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1725,8 +1725,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908847",
-      "name": "Waypoint: Split your Bootstrap Row",
-      "dashedName": "waypoint-split-your-bootstrap-row",
+      "title": "Split your Bootstrap Row",
       "difficulty": 2.20,
       "description": [
         "Now that we have a Bootstrap Row, let's split it into two columns to house our elements.",
@@ -1743,6 +1742,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1757,8 +1757,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908848",
-      "name": "Waypoint: Create Bootstrap Wells",
-      "dashedName": "waypoint-create-bootstrap-wells",
+      "title": "Create Bootstrap Wells",
       "difficulty": 2.21,
       "description": [
         "Bootstrap has a class called \"well\" that can create a visual sense of depth for your columns.",
@@ -1781,6 +1780,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1795,8 +1795,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908849",
-      "name": "Waypoint: Add Elements within your Bootstrap Wells",
-      "dashedName": "waypoint-add-elements-within-your-bootstrap-wells",
+      "title": "Add Elements within your Bootstrap Wells",
       "difficulty": 2.22,
       "description": [
         "Now we're several <code>div</code> elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our <code>button</code> elements.",
@@ -1821,6 +1820,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1835,8 +1835,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908850",
-      "name": "Waypoint: Apply the Default Bootstrap Button Style",
-      "dashedName": "waypoint-apply-the-default-bootstrap-button-style",
+      "title": "Apply the Default Bootstrap Button Style",
       "difficulty": 2.23,
       "description": [
         "Bootstrap has another button class called \"btn-default\"",
@@ -1867,6 +1866,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1881,8 +1881,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908852",
-      "name": "Waypoint: Create a Class to Target with jQuery Selectors",
-      "dashedName": "waypoint-create-a-class-to-target-with-jquery-selectors",
+      "title": "Create a Class to Target with jQuery Selectors",
       "difficulty": 2.24,
       "description": [
         "Not every class needs to have corresponding CSS. Sometimes we create classes just for the purpose of selecting these elements more easily using jQuery.",
@@ -1912,6 +1911,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1926,8 +1926,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908853",
-      "name": "Waypoint: Add ID Attributes to Bootstrap Elements",
-      "dashedName": "waypoint-add-id-attributes-to-bootstrap-elements",
+      "title": "Add ID Attributes to Bootstrap Elements",
       "difficulty": 2.25,
       "description": [
         "Recall that in addition to class attributes, you can give each of your elements an id attribute.",
@@ -1961,6 +1960,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -1975,8 +1975,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908854",
-      "name": "Waypoint: Label Bootstrap Wells",
-      "dashedName": "waypoint-label-bootstrap-wells",
+      "title": "Label Bootstrap Wells",
       "difficulty": 2.26,
       "description": [
         "For the sake of clarity, let's label both of our wells with their ids.",
@@ -1984,7 +1983,7 @@
         "Above your right-well, inside its \"col-xs-6\" <code>div</code> element, add a <code>h4</code> element with the text \"#right-well\"."
       ],
       "tests": [
-        "assert($('.col-xs-12').children('h4') && $('.col-xs-12').children('h4').length > 1, 'Add an <code>h4</code> element to each of your <code>&#60;div class=\\'col-xs-6\\'&#62;</code> elements.');",
+        "assert($('.col-xs-6').children('h4') && $('.col-xs-6').children('h4').length > 1, 'Add an <code>h4</code> element to each of your <code>&#60;div class=\\'col-xs-6\\'&#62;</code> elements.');",
         "assert(new RegExp('#left-well','gi').test($('h4').text()), 'One <code>h4</code> element should have the text \"#left-well\".');",
         "assert(new RegExp('#right-well','gi').test($('h4').text()), 'One <code>h4</code> element should have the text \"#right-well\".');"
       ],
@@ -2009,6 +2008,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -2023,8 +2023,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908855",
-      "name": "Waypoint: Give Each Element a Unique ID",
-      "dashedName": "waypoint-give-each-element-a-unique-id",
+      "title": "Give Each Element a Unique ID",
       "difficulty": 2.27,
       "description": [
         "We will also want to be able to use jQuery to target each button by its unique id.",
@@ -2061,6 +2060,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -2075,8 +2075,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908856",
-      "name": "Waypoint: Label Bootstrap Buttons",
-      "dashedName": "waypoint-label-bootstrap-buttons",
+      "title": "Label Bootstrap Buttons",
       "difficulty": 2.28,
       "description": [
         "Just like we labled our wells, we want to label our buttons.",
@@ -2113,6 +2112,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
@@ -2127,8 +2127,7 @@
     },
     {
       "id": "bad87fee1348bd9aec908857",
-      "name": "Waypoint: Use Comments to Clarify Code",
-      "dashedName": "waypoint-use-comments-to-clarify-code",
+      "title": "Use Comments to Clarify Code",
       "difficulty": 2.29,
       "description": [
         "When we start using jQuery, we will modify HTML elements without needing to actually change them in HTML.",
@@ -2137,9 +2136,9 @@
         "Add a comment at the top of your HTML that says <code>You shouldn't need to modify code below this line</code>."
       ],
       "tests": [
-        "assert(editor.match(/<!--/g).length > 1, 'Start a comment with <code>&#60;!--</code>.')",
-        "assert(editor.match(/this line/g).length > 1, 'Your comment should have the text <code>You shouldn't need to modify code below this line</code>')",
-        "assert(editor.match(/-->/g).length > 1, 'Be sure to close your comment with <code>--&#62;</code>.')"
+        "assert(editor.match(/<!--/g) && editor.match(/<!--/g).length > 0, 'Start a comment with <code>&#60;!--</code>.')",
+        "assert(editor.match(/this line/g) && editor.match(/this line/g).length > 0, \"Your comment should have the text <code>You shouldn't need to modify code below this line</code>\")",
+        "assert(editor.match(/-->/g) && editor.match(/-->/g).length > 0, 'Be sure to close your comment with <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<div class='container-fluid'>",
@@ -2164,6 +2163,7 @@
         "  </div>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
