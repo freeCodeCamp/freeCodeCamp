@@ -3,7 +3,7 @@
   "order": 0.013,
   "challenges": [
     {
-      "id": "aff0395860f5d3034dc0bfc9",
+      "id": "aff0495970f5d3034dc0bfc9",
       "title": "Validate US Telephone Numbers",
       "difficulty": "4.01",
       "description": [
@@ -64,7 +64,7 @@
       "descriptionPt": []
     },
     {
-      "id": "a3f503de51cf954ede28891d",
+      "id": "a3f512de51cf954ede28891d",
       "title": "Symmetric Difference",
       "difficulty": "4.02",
       "description": [
@@ -103,7 +103,7 @@
       "descriptionPt": []
     },
     {
-      "id": "aa2e6f85cab2ab736c9a9b24",
+      "id": "aa2e6f96cab3ab736c9a9b24",
       "title": "Exact Change",
       "difficulty": "4.03",
       "description": [
@@ -159,7 +159,7 @@
       "descriptionPt": []
     },
     {
-      "id": "a56138aff60341a09ed6c480",
+      "id": "a56244aff60341a09ed6c480",
       "title": "Inventory Update",
       "difficulty": "4.04",
       "description": [
@@ -214,7 +214,7 @@
       "descriptionPt": []
     },
     {
-      "id": "a7bf700cd123b9a54eef01d5",
+      "id": "a8bf800cd123b9a54eef01d5",
       "title": "No repeats please",
       "difficulty": "4.05",
       "description": [
@@ -256,7 +256,7 @@
       "descriptionPt": []
     },
     {
-      "id": "a19f0fbe1872186acd434d5a",
+      "id": "a19f0fbe1872186acd434d54",
       "title": "Friendly Date Ranges",
       "difficulty": "4.06",
       "description": [
