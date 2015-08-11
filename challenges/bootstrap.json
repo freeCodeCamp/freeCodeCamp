@@ -787,7 +787,7 @@
       "descriptionPt": []
     },
     {
-      "id": "bad87fee1348bd9aedf08845",
+      "id": "bad87fee1347bd9aedf08845",
       "title": "Ditch Custom CSS for Bootstrap",
       "difficulty": 2.10,
       "description": [
@@ -887,8 +887,7 @@
     },
     {
       "id": "bad87fee1348bd9aedf08845",
-      "name": "Waypoint: Use Spans for Inline Elements",
-      "dashedName": "waypoint-use-spans-for-inline-elements",
+      "title": "Use Spans for Inline Elements",
       "difficulty": 2.105,
       "description": [
         "You can use use spans to create inline elements. Remember when we used the \"btn-block\" class to make the button grow fill the entire row?",
@@ -974,6 +973,7 @@
         "  </form>",
         "</div>"
       ],
+      "type": "waypoint",
       "challengeType": 0,
       "nameCn": "",
       "descriptionCn": [],
