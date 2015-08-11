@@ -51,6 +51,14 @@ module.exports = function(User) {
       user.email = typeof user.email === 'string' ?
         user.email.trim().toLowerCase() :
         user.email;
+
+      if (!user.progressTimestamps) {
+        user.progressTimestamps = [];
+      }
+
+      if (user.progressTimestamps.length === 0) {
+        user.progressTimestamps.push({ timestamp: Date.now() });
+      }
     }
     next();
   });
