@@ -1071,17 +1071,17 @@
       "title": "Create a JavaScript Slot Machine",
       "difficulty":"9.988",
       "description":[
-        "We are now going to try and combine some of the stuff we've just learnt abd create the logic for a slot machine game",
+        "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game",
         "For this we will need to generate three random numbers between <code>1</code> and <code>5</code> to represent the possible values of each individual slot",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>",
         "Generate the random numbers by using the system we used earlier in /challenges/random-whole-numbers-in-a-range",
         "<code>Math.floor(Math.random() * (5 - 1 + 1)) + 1; </code>"
       ],
       "tests":[
-        "assert(typeof(runSlots($('.slot'))[0]) == 'number', 'SlotOne should be a random number');",
-        "assert(typeof(runSlots($('.slot'))[1]) == 'number', 'SlotTwo should be a random number');",
-        "assert(typeof(runSlots($('.slot'))[2]) == 'number', 'SlotThree should be a random number');",
-        "assert((function(){if(editor.match(/Math.floor\\(Math\\.random\\(\\)\\s\\*\\s\\(5\\s\\-\\s1\\s\\+\\s1\\)\\)\\s\\+\\s1;/gi) !== null){return(editor.match(/Math.floor\\(Math\\.random\\(\\)\\s\\*\\s\\(5\\s\\-\\s1\\s\\+\\s1\\)\\)\\s\\+\\s1;/gi).length >= 3);}else{return(false);}})(), 'You should have used Math.floor(Math.random() * (5 - 1 + 1)) + 1; three times to generate your random numbers');"
+        "assert(typeof(runSlots($('.slot'))[0]) == 'number', 'slotOne should be a random number');",
+        "assert(typeof(runSlots($('.slot'))[1]) == 'number', 'slotTwo should be a random number');",
+        "assert(typeof(runSlots($('.slot'))[2]) == 'number', 'slotThree should be a random number');",
+        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?5\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi) !== null){return(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?5\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi).length >= 3);}else{return(false);}})(), 'You should have used Math.floor(Math.random() * (5 - 1 + 1)) + 1; three times to generate your random numbers');"
       ],
       "challengeSeed":[
         "fccss",
