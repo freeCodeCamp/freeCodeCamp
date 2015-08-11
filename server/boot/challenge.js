@@ -458,7 +458,10 @@ module.exports = function(app) {
       .map(camperCount => numberWithCommas(camperCount));
 
     const query = {
-      order: 'order ASC'
+      order: [
+        'order ASC',
+        'suborder ASC'
+      ]
     };
 
     // create a stream of all the challenges

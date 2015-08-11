@@ -22,6 +22,9 @@
     "order": {
       "type": "number"
     },
+    "suborder": {
+      "type": "number"
+    },
     "dashedName": {
       "type": "string"
     },
