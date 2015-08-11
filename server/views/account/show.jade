@@ -10,7 +10,7 @@ block content
             if (user && user.username === username)
                 .row.text-center
                     .col-xs-12.col-sm-10.col-sm-offset-1
-                        a.btn.btn-big.btn-primary.btn-block(href="/account") Update my portfolio page or manage my account
+                        a.btn.btn-big.btn-primary.btn-block(href="/account") Manage my account
                         .button-spacer
                     .col-xs-12.col-sm-10.col-sm-offset-1
                         a.btn.btn-big.btn-success.btn-block(href="/signout") Sign out of Free Code Camp
@@ -23,16 +23,16 @@ block content
                         else
                             img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
                         h1.text-center.negative-5.profile-social-icons
-                            if (twitterHandle)
-                                a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href="http://twitter.com/#{twitterHandle}", target='_blank')
-                            if (githubProfile)
-                                a.fa.fa-github-square.text-primary(title="@#{username}'s GitHub Profile", href=githubProfile, target='_blank')
-                            if (codepenProfile)
-                                a.ion-social-codepen.text-primary(title="@#{username}'s CodePen Profile", href=codepenProfile, target='_blank')
-                            if (linkedinProfile)
-                                a.fa.fa-linkedin-square.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedinProfile, target='_blank')
-                            if (facebookProfile)
-                                a.fa.fa-facebook-square.text-primary(title="@#{username}'s Facebook Profile", href=facebookProfile, target='_blank')
+                            if (twitter)
+                                a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href=twitter, target='_blank')
+                            if (github)
+                                a.fa.fa-github-square.text-primary(title="@#{username}'s GitHub Profile", href=github, target='_blank')
+                            if (linkedin)
+                                a.fa.fa-linkedin-square.text-primary(title="@#{username}'s LinkedIn Profile", href=linkedin, target='_blank')
+                            if (facebook)
+                                a.fa.fa-facebook-square.text-primary(title="@#{username}'s Facebook Profile", href=facebook, target='_blank')
+                            if (google)
+                                a.fa.fa-google-square.text-primary(title="@#{username}'s Google Profile", href=google, target='_blank')
                     .visible-md.visible-lg
                         .col-xs-12.col-sm-12.col-md-4.text-justify
                             h1.flat-top.wrappable= name
@@ -77,8 +77,8 @@ block content
                     .row
                         .hidden-xs.col-sm-12.text-center
                             .row.text-primary
-                                h4.col-sm-6.text-right Longest Streak: #{longestStreak}
-                                h4.col-sm-6.text-left Current Streak: #{currentStreak}
+                              h4.col-sm-6.text-right Longest Streak: #{longestStreak} #{longestStreak + longestStreak === 1 ? ' day' : ' days'}
+                                h4.col-sm-6.text-left Current Streak: #{currentStreak} #{currentStreak + currentStreak === 1 ? ' day' : ' days'}
 
 
                     if (challenges.length > 0)

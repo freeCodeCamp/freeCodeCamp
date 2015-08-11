@@ -3,45 +3,34 @@
   "order": 0.009,
   "challenges": [
     {
-      "id": "a2f1d72d9b908d0bd72bb9f6",
-      "name": "Bonfire: Make a Person",
-      "dashedName": "bonfire-make-a-person",
-      "difficulty": "3.01",
+      "id": "a3566b1109230028080c9345",
+      "title": "Sum All Numbers in a Range",
+      "difficulty": "2.00",
       "description": [
-        "Fill in the object constructor with the methods specified in the tests.",
-        "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), and setFullName(firstAndLast).",
-        "All functions that take an argument have an arity of 1, and the argument will be a string.",
-        "These methods must be the only available means for interacting with the object.",
+        "We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.",
+        "The lowest number will not always come first.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "var Person = function(firstAndLast) {",
-        "    return firstAndLast;",
-        "};",
+        "function sumAll(arr) {",
+        "  return(1);",
+        "}",
         "",
-        "var bob = new Person('Bob Ross');",
-        "bob.getFullName();"
+        "sumAll([1, 4]);"
       ],
       "tests": [
-        "expect(Object.keys(bob).length).to.eql(6);",
-        "expect(bob instanceof Person).to.be.true;",
-        "expect(bob.firstName).to.be.undefined();",
-        "expect(bob.lastName).to.be.undefined();",
-        "expect(bob.getFirstName()).to.eql('Bob');",
-        "expect(bob.getLastName()).to.eql('Ross');",
-        "expect(bob.getFullName()).to.eql('Bob Ross');",
-        "bob.setFirstName('Happy');",
-        "expect(bob.getFirstName()).to.eql('Happy');",
-        "bob.setLastName('Trees');",
-        "expect(bob.getLastName()).to.eql('Trees');",
-        "bob.setFullName('George Carlin');",
-        "expect(bob.getFullName()).to.eql('George Carlin');",
-        "bob.setFullName('Bob Ross');"
+        "expect(sumAll([1, 4])).to.be.a('Number');",
+        "expect(sumAll([1, 4])).to.equal(10);",
+        "expect(sumAll([4, 1])).to.equal(10);",
+        "expect(sumAll([5, 10])).to.equal(45);",
+        "expect(sumAll([10, 5])).to.equal(45);"
       ],
       "MDNlinks": [
-        "Closures",
-        "Details of the Object Model"
+        "Math.max()",
+        "Math.min()",
+        "Array.reduce()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -55,34 +44,531 @@
       "descriptionPt": []
     },
     {
-      "id": "af4afb223120f7348cdfc9fd",
-      "name": "Bonfire: Map the Debris",
-      "dashedName": "bonfire-map-the-debris",
-      "difficulty": "3.02",
+      "id": "a5de63ebea8dbee56860f4f2",
+      "title": "Diff Two Arrays",
+      "difficulty": "2.01",
       "description": [
-        "Return a new array that transforms the element's average altitude into their orbital periods.",
-        "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
-        "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on wikipedia</a>.",
-        "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
-        "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418",
+        "Compare two arrays and return a new array with any items not found in both of the original arrays.",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function orbitalPeriod(arr) {",
-        "  var GM = 398600.4418;",
-        "  var earthRadius = 6367.4447;",
+        "function diff(arr1, arr2) {",
+        "  var newArr = [];",
+        "  // Same, same; but different.",
+        "  return newArr;",
+        "}",
+        "",
+        "diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);"
+      ],
+      "tests": [
+        "expect(diff([1, 2, 3, 5], [1, 2, 3, 4, 5])).to.be.a('array');",
+        "assert.deepEqual(diff(['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['pink wool'], 'arrays with only one difference');",
+        "assert.includeMembers(diff(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']), ['diorite', 'pink wool'], 'arrays with more than one difference');",
+        "assert.deepEqual(diff(['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']), [], 'arrays with no difference');",
+        "assert.deepEqual(diff([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], 'arrays with numbers');",
+        "assert.includeMembers(diff([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]), ['piglet', 4], 'arrays with numbers and strings');",
+        "assert.deepEqual(diff([], ['snuffleupagus', 'cookie monster', 'elmo']), ['snuffleupagus', 'cookie monster', 'elmo'], 'empty array');"
+      ],
+      "MDNlinks": [
+        "Comparison Operators",
+        "String.slice()",
+        "Array.filter()",
+        "Array.indexOf()",
+        "String.concat()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a7f4d8f2483413a6ce226cac",
+      "title": "Roman Numeral Converter",
+      "tests": [
+        "expect(convert(12)).to.equal(\"XII\");",
+        "expect(convert(5)).to.equal(\"V\");",
+        "expect(convert(9)).to.equal(\"IX\");",
+        "expect(convert(29)).to.equal(\"XXIX\");",
+        "expect(convert(16)).to.equal(\"XVI\");"
+      ],
+      "difficulty": "2.02",
+      "description": [
+        "Convert the given number into a roman numeral.",
+        "All <a href=\"http://www.mathsisfun.com/roman-numerals.html\" target=\"_blank\">roman numerals</a> answers should be provided in upper-case.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function convert(num) {",
+        " return num;",
+        "}",
+        "",
+        "convert(36);"
+      ],
+      "MDNlinks": [
+        "Array.splice()",
+        "Array.indexOf()",
+        "Array.join()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a0b5010f579e69b815e7c5d6",
+      "title": "Search and Replace",
+      "tests": [
+        "expect(replace(\"Let us go to the store\", \"store\", \"mall\")).to.equal(\"Let us go to the mall\");",
+        "expect(replace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\")).to.equal(\"He is Sitting on the couch\");",
+        "expect(replace(\"This has a spellngi error\", \"spellngi\", \"spelling\")).to.equal(\"This has a spelling error\");",
+        "expect(replace(\"His name is Tom\", \"Tom\", \"john\")).to.equal(\"His name is John\");",
+        "expect(replace(\"Let us get back to more Coding\", \"Coding\", \"bonfires\")).to.equal(\"Let us get back to more Bonfires\");"
+      ],
+      "difficulty": "2.03",
+      "description": [
+        "Perform a search and replace on the sentence using the arguments provided and return the new sentence.",
+        "First argument is the sentence to perform the search and replace on.",
+        "Second argument is the word that you will be replacing (before).",
+        "Third argument is what you will be replacing the second argument with (after).",
+        "NOTE: Preserve the case of the original word when you are replacing it. For example if you mean to replace the word 'Book' with the word 'dog', it should be replaced as 'Dog'",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function replace(str, before, after) {",
+        " return str;",
+        "}",
+        "",
+        "replace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\");"
+      ],
+      "MDNlinks": [
+        "Array.splice()",
+        "String.replace()",
+        "Array.join()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "aa7697ea2477d1316795783b",
+      "title": "Pig Latin",
+      "tests": [
+        "expect(translate(\"california\")).to.equal(\"aliforniacay\");",
+        "expect(translate(\"paragraphs\")).to.equal(\"aragraphspay\");",
+        "expect(translate(\"glove\")).to.equal(\"oveglay\");",
+        "expect(translate(\"algorithm\")).to.equal(\"algorithmway\");",
+        "expect(translate(\"eight\")).to.equal(\"eightway\");"
+      ],
+      "difficulty": "2.04",
+      "description": [
+        "Translate the provided string to pig latin.",
+        "<a href=\"http://en.wikipedia.org/wiki/Pig_Latin\" target=\"_blank\">Pig Latin</a> takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an \"ay\".",
+        "If a word begins with a vowel you just add \"way\" to the end.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function translate(str) {",
+        " return str;",
+        "}",
+        "",
+        "translate(\"consonant\");"
+      ],
+      "MDNlinks": [
+        "Array.indexOf()",
+        "Array.push()",
+        "Array.join()",
+        "String.substr()",
+        "String.split()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "afd15382cdfb22c9efe8b7de",
+      "title": "DNA Pairing",
+      "tests": [
+        "assert.deepEqual(pair(\"ATCGA\"),[['A','T'],['T','A'],['C','G'],['G','C'],['A','T']], 'should return the dna pair');",
+        "assert.deepEqual(pair(\"TTGAG\"),[['T','A'],['T','A'],['G','C'],['A','T'],['G','C']], 'should return the dna pair');",
+        "assert.deepEqual(pair(\"CTCTA\"),[['C','G'],['T','A'],['C','G'],['T','A'],['A','T']], 'should return the dna pair');"
+      ],
+      "difficulty": "2.05",
+      "description": [
+        "The DNA strand is missing the pairing element. Match each character with the missing element and return the results as a 2d array.",
+        "<a href=\"http://en.wikipedia.org/wiki/Base_pair\" target=\"_blank\">Base pairs</a> are a pair of AT and CG. Match the missing element to the provided character.",
+        "Return the provided character as the first element in each array.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function pair(str) {",
+        " return str;",
+        "}",
+        "",
+        "pair(\"GCG\");"
+      ],
+      "MDNlinks": [
+        "Array.push()",
+        "String.split()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "af7588ade1100bde429baf20",
+      "title": "Missing letters",
+      "difficulty": "2.05",
+      "description": [
+        "Find the missing letter in the passed letter range and return it.",
+        "If all letters are present in the range, return undefined.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function fearNotLetter(str) {",
+        "  return str;",
+        "}",
+        "",
+        "fearNotLetter('abce');"
+      ],
+      "tests": [
+        "expect(fearNotLetter('abce')).to.equal('d');",
+        "expect(fearNotLetter('bcd')).to.be.undefined;",
+        "expect(fearNotLetter('abcdefghjklmno')).to.equal('i');",
+        "expect(fearNotLetter('yz')).to.be.undefined;"
+      ],
+      "MDNlinks": [
+        "String.charCodeAt()",
+        "String.fromCharCode()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a77dbc43c33f39daa4429b4f",
+      "title": "Boo who",
+      "difficulty": "2.06",
+      "description": [
+        "Check if a value is classified as a boolean primitive. Return true or false.",
+        "Boolean primitives are true and false.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function boo(bool) {",
+        "  // What is the new fad diet for ghost developers? The Boolean.",
+        "  return bool;",
+        "}",
+        "",
+        "boo(null);"
+      ],
+      "tests": [
+        "assert.strictEqual(boo(true), true);",
+        "assert.strictEqual(boo(false), true);",
+        "assert.strictEqual(boo([1, 2, 3]), false);",
+        "assert.strictEqual(boo([].slice), false);",
+        "assert.strictEqual(boo({ 'a': 1 }), false);",
+        "assert.strictEqual(boo(1), false);",
+        "assert.strictEqual(boo(NaN), false);",
+        "assert.strictEqual(boo('a'), false);"
+      ],
+      "MDNlinks": [
+        "Boolean Objects"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a105e963526e7de52b219be9",
+      "title": "Sorted Union",
+      "difficulty": "2.07",
+      "description": [
+        "Write a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays.",
+        "In other words, all values present from all arrays should be included in their original order, but with no duplicates in the final array.",
+        "The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order.",
+        "Check the assertion tests for examples.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function unite(arr1, arr2, arr3) {",
+        "  return arr1;",
+        "}",
+        "",
+        "unite([1, 3, 2], [5, 2, 1, 4], [2, 1]);"
+      ],
+      "tests": [
+        "assert.deepEqual(unite([1, 3, 2], [5, 2, 1, 4], [2, 1]), [1, 3, 2, 5, 4], 'should return the union of the given arrays');",
+        "assert.deepEqual(unite([1, 3, 2], [1, [5]], [2, [4]]), [1, 3, 2, [5], [4]], 'should not flatten nested arrays');",
+        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1]), [1, 2, 3, 5], 'should correctly handle exactly two arguments');",
+        "assert.deepEqual(unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [ 1, 2, 3, 5, 4, 6, 7, 8 ], 'should correctly handle higher numbers of arguments');"
+      ],
+      "MDNlinks": [
+        "Arguments object",
+        "Array.reduce()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a6b0bb188d873cb2c8729495",
+      "title": "Convert HTML Entities",
+      "difficulty": "2.07",
+      "description": [
+        "Convert the characters \"&\", \"<\", \">\", '\"' (double quote), and \"'\" (apostrophe), in a string to their corresponding HTML entities.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function convert(str) {",
+        "  // &colon;&rpar;",
+        "  return str;",
+        "}",
+        "",
+        "convert('Dolce & Gabbana');"
+      ],
+      "tests": [
+        "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
+        "assert.strictEqual(convert('Hamburgers < Pizza < Tacos'), 'Hamburgers &lt; Pizza &lt; Tacos', 'should escape characters');",
+        "assert.strictEqual(convert('Sixty > twelve'), 'Sixty &gt; twelve', 'should escape characters');",
+        "assert.strictEqual(convert('Stuff in \"quotation marks\"'), 'Stuff in &quot;quotation marks&quot;', 'should escape characters');",
+        "assert.strictEqual(convert(\"Shindler's List\"), 'Shindler&apos;s List', 'should escape characters');",
+        "assert.strictEqual(convert('<>'), '&lt;&gt;', 'should escape characters');",
+        "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
+      ],
+      "MDNlinks": [
+        "RegExp",
+        "HTML Entities"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a103376db3ba46b2d50db289",
+      "title": "Spinal Tap Case",
+      "difficulty": "2.08",
+      "description": [
+        "Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function spinalCase(str) {",
+        "  // \"It's such a fine line between stupid, and clever.\"",
+        "  // --David St. Hubbins",
+        "  return str;",
+        "}",
+        "",
+        "spinalCase('This Is Spinal Tap');"
+      ],
+      "tests": [
+        "assert.strictEqual(spinalCase('This Is Spinal Tap'), 'this-is-spinal-tap', 'should return spinal case from string with spaces');",
+        "assert.strictEqual(spinalCase('thisIsSpinalTap'), 'this-is-spinal-tap', 'should return spinal case from string with camel case');",
+        "assert.strictEqual(spinalCase('The_Andy_Griffith_Show'), 'the-andy-griffith-show', 'should return spinal case from string with snake case');",
+        "assert.strictEqual(spinalCase('Teletubbies say Eh-oh'), 'teletubbies-say-eh-oh', 'should return spinal case from string with spaces and hyphens');"
+      ],
+      "MDNlinks": [
+        "RegExp",
+        "String.replace()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a5229172f011153519423690",
+      "title": "Sum All Odd Fibonacci Numbers",
+      "difficulty": "2.09",
+      "description": [
+        "Return the sum of all odd Fibonacci numbers up to and including the passed number if it is a Fibonacci number.",
+        "The first few numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8, and each subsequent number is the sum of the previous two numbers.",
+        "As an example, passing 4 to the function should return 5 because all the odd Fibonacci numbers under 4 are 1, 1, and 3.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function sumFibs(num) {",
+        "  return num;",
+        "}",
+        "",
+        "sumFibs(4);"
+      ],
+      "tests": [
+        "expect(sumFibs(1)).to.be.a('number');",
+        "expect(sumFibs(1000)).to.equal(1785);",
+        "expect(sumFibs(4000000)).to.equal(4613732);",
+        "expect(sumFibs(4)).to.equal(5);",
+        "expect(sumFibs(75024)).to.equal(60696);",
+        "expect(sumFibs(75025)).to.equal(135721);"
+      ],
+      "MDNlinks": [
+        "Remainder"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a3bfc1673c0526e06d3ac698",
+      "title": "Sum All Primes",
+      "difficulty": "2.10",
+      "description": [
+        "Sum all the prime numbers up to and including the provided number.",
+        "A prime number is defined as having only two divisors, 1 and itself. For example, 2 is a prime number because it's only divisible by 1 and 2. 1 isn't a prime number, because it's only divisible by itself.",
+        "The provided number may not be a prime.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function sumPrimes(num) {",
+        "  return num;",
+        "}",
+        "",
+        "sumPrimes(10);"
+      ],
+      "tests": [
+        "expect(sumPrimes(10)).to.be.a('number');",
+        "expect(sumPrimes(10)).to.equal(17);",
+        "expect(sumPrimes(977)).to.equal(73156);"
+      ],
+      "MDNlinks": [
+        "For Loops",
+        "Array.push()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "ae9defd7acaf69703ab432ea",
+      "title": "Smallest Common Multiple",
+      "difficulty": "2.11",
+      "description": [
+        "Find the smallest number that is evenly divisible by all numbers in the provided range.",
+        "The range will be an array of two numbers that will not necessarily be in numerical order.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function smallestCommons(arr) {",
         "  return arr;",
         "}",
         "",
-        "orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}]);"
+        "",
+        "smallestCommons([1,5]);"
       ],
       "tests": [
-        "expect(orbitalPeriod([{name : \"sputkin\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputkin\", orbitalPeriod: 86400}]);",
-        "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
+        "expect(smallestCommons([1,5])).to.be.a('number');",
+        "expect(smallestCommons([1,5])).to.equal(60);",
+        "expect(smallestCommons([5,1])).to.equal(60);",
+        "expect(smallestCommons([1,13])).to.equal(360360);"
       ],
       "MDNlinks": [
-        "Math.pow()"
+        "Smallest Common Multiple"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -96,33 +582,223 @@
       "descriptionPt": []
     },
     {
-      "id": "a3f503de51cfab748ff001aa",
-      "name": "Bonfire: Pairwise",
-      "dashedName": "bonfire-pairwise",
-      "difficulty": "3.03",
+      "id": "a6e40f1041b06c996f7b2406",
+      "title": "Finders Keepers",
+      "difficulty": "2.12",
       "description": [
-        "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
-        "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7.",
-        "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!",
+        "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument).",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
-        "function pairwise(arr, arg) {",
-        "  return arg;",
+        "function find(arr, func) {",
+        "  var num = 0;",
+        "  return num;",
         "}",
         "",
-        "pairwise([1,4,2,3,0,5], 7);"
+        "find([1, 2, 3, 4], function(num){ return num % 2 === 0; });"
       ],
       "tests": [
-        "expect(pairwise([1, 4, 2, 3, 0, 5], 7)).to.equal(11);",
-        "expect(pairwise([1, 3, 2, 4], 4)).to.equal(1);",
-        "expect(pairwise([1,1,1], 2)).to.equal(1);",
-        "expect(pairwise([0, 0, 0, 0, 1, 1], 1)).to.equal(10);",
-        "expect(pairwise([], 100)).to.equal(0);"
+        "assert.strictEqual(find([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'should return first found value');",
+        "assert.strictEqual(find([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'should return undefined if not found');"
       ],
       "MDNlinks": [
-        "Array.reduce()"
+        "Array.some()"
       ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a5deed1811a43193f9f1c841",
+      "title": "Drop it",
+      "difficulty": "2.13",
+      "description": [
+        "Drop the elements of an array (first argument), starting from the front, until the predicate (second argument) returns true.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function drop(arr, func) {",
+        "  // Drop them elements.",
+        "  return arr;",
+        "}",
+        "",
+        "drop([1, 2, 3], function(n) {return n < 3; });"
+      ],
+      "tests": [
+        "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
+        "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
+        "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);"
+      ],
+      "MDNlinks": [
+        "Arguments object",
+        "Array.shift()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "ab306dbdcc907c7ddfc30830",
+      "title": "Steamroller",
+      "difficulty": "2.14",
+      "description": [
+        "Flatten a nested array. You must account for varying levels of nesting.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function steamroller(arr) {",
+        "  // I'm a steamroller, baby",
+        "  return arr;",
+        "}",
+        "",
+        "steamroller([1, [2], [3, [[4]]]]);"
+      ],
+      "tests": [
+        "assert.deepEqual(steamroller([[['a']], [['b']]]), ['a', 'b'], 'should flatten nested arrays');",
+        "assert.deepEqual(steamroller([1, [2], [3, [[4]]]]), [1, 2, 3, 4], 'should flatten nested arrays');",
+        "assert.deepEqual(steamroller([1, [], [3, [[4]]]]), [1, 3, 4], 'should work with empty arrays');",
+        "assert.deepEqual(steamroller([1, {}, [3, [[4]]]]), [1, {}, 3, 4], 'should work with actual objects');"
+      ],
+      "MDNlinks": [
+        "Array.isArray()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a8d97bd4c764e91f9d2bda01",
+      "title": "Binary Agents",
+      "difficulty": "2.15",
+      "description": [
+        "Return an English translated sentence of the passed binary string.",
+        "The binary string will be space separated.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function binaryAgent(str) {",
+        "  return str;",
+        "}",
+        "",
+        "binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111');"
+      ],
+      "tests": [
+        "expect(binaryAgent('01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111')).to.equal(\"Aren't bonfires fun!?\");",
+        "expect(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001')).to.equal(\"I love FreeCodeCamp!\");"
+      ],
+      "MDNlinks": [
+        "String.charCodeAt()",
+        "String.fromCharCode()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a10d2431ad0c6a099a4b8b52",
+      "title": "Everything Be True",
+      "difficulty": "2.21",
+      "description": [
+        "Check if the predicate (second argument) returns truthy (defined) for all elements of a collection (first argument).",
+        "For this, check to see if the property defined in the second argument is present on every element of the collection.",
+        "Remember, you can access object properties through either dot notation or [] notation.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function every(collection, pre) {",
+        "  // Does everyone have one of these?",
+        "  return pre;",
+        "}",
+        "",
+        "every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex');"
+      ],
+      "tests": [
+        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], 'sex'), true, 'should return true if predicate returns truthy for all elements in the collection');",
+        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'male'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');",
+        "assert.strictEqual(every([{'user': 'Tinky-Winky', 'sex': 'female'}, {'user': 'Dipsy', 'sex': 'male'}, {'user': 'Laa-Laa', 'sex': 'female'}, {'user': 'Po', 'sex': 'female'}], {'sex': 'female'}), false, 'should return false if predicate returns falsey for any element in the collection');"
+      ],
+      "MDNlinks": [
+        "Object.hasOwnProperty()",
+        "Object.getOwnPropertyNames()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a97fd23d9b809dac9921074f",
+      "title": "Arguments Optional",
+      "difficulty": "2.22",
+      "description": [
+        "Create a function that sums two arguments together. If only one argument is provided, return a function that expects one additional argument and will return the sum.",
+        "For example, add(2, 3) should return 5, and add(2) should return a function that is waiting for an argument so that <code>var sum2And = add(2); return sum2And(3); // 5</code>",
+        "If either argument isn't a valid number, return undefined.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function add() {",
+        "  return false;",
+        "}",
+        "",
+        "add(2,3);"
+      ],
+      "tests": [
+        "expect(add(2, 3)).to.equal(5);",
+        "expect(add(2)(3)).to.equal(5);",
+        "expect(add('http://bit.ly/IqT6zt')).to.be.undefined;",
+        "expect(add(2, '3')).to.be.undefined;",
+        "expect(add(2)([3])).to.be.undefined;"
+      ],
+      "MDNlinks": [
+        "Global Function Object",
+        "Arguments object"
+      ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],

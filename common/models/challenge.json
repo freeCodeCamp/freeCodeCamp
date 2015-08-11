@@ -6,12 +6,26 @@
   "properties": {
     "name": {
       "type": "string",
-      "unique": true
+      "index": {
+        "mongodb": {
+          "unique": true,
+          "background": true
+        }
+      }
     },
     "title": {
       "type": "string"
     },
+    "type": {
+      "type": "string"
+    },
+    "order": {
+      "type": "number"
+    },
     "dashedName": {
+      "type": "string"
+    },
+    "block": {
       "type": "string"
     },
     "difficulty": {

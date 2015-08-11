@@ -2,12 +2,13 @@ require('dotenv').load();
 var pmx = require('pmx');
 pmx.init();
 
-var assign = require('lodash').assign,
-  loopback = require('loopback'),
-  boot = require('loopback-boot'),
-  expressState = require('express-state'),
-  path = require('path'),
-  passportProviders = require('./passport-providers');
+var uuid = require('node-uuid'),
+    assign = require('lodash').assign,
+    loopback = require('loopback'),
+    boot = require('loopback-boot'),
+    expressState = require('express-state'),
+    path = require('path'),
+    passportProviders = require('./passport-providers');
 
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
@@ -43,6 +44,41 @@ passportConfigurator.setupModels({
   userCredentialModel: app.models.userCredential
 });
 
+// using es6 argument destructing
+function setProfileFromGithub(
+  user,
+  {
+    profileUrl: githubURL,
+    username
+  },
+  {
+    id: githubId,
+    'avatar_url': picture,
+    email: githubEmail,
+    'created_at': joinedGithubOn,
+    blog: website,
+    location,
+    name
+  }
+) {
+  return assign(
+    user,
+    { isGithubCool: true, isMigrationGrandfathered: false },
+    {
+      name,
+      username: username.toLowerCase(),
+      location,
+      joinedGithubOn,
+      website,
+      picture,
+      githubId,
+      githubURL,
+      githubEmail,
+      githubProfile: githubURL
+    }
+  );
+}
+
 var passportOptions = {
   emailOptional: true,
   profileToUser: function(provider, profile) {
@@ -53,9 +89,9 @@ var passportOptions = {
       emails[0].value :
       null;
 
-    var username = (profile.username || profile.id);
-    username = typeof username === 'string' ? username.toLowerCase() :
-      username;
+    // create random username
+    // username will be assigned when camper signups for Github
+    var username = 'fcc' + uuid.v4().slice(0, 8);
     var password = generateKey('password');
     var userObj = {
       username: username,
@@ -65,8 +101,9 @@ var passportOptions = {
     if (email) {
       userObj.email = email;
     }
+
     if (provider === 'github-login') {
-      userObj.isGithubCool = true;
+      setProfileFromGithub(userObj, profile, profile._json);
     }
     return userObj;
   }

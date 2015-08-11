@@ -1,0 +1,140 @@
+{
+  "name": "Upper Intermediate Algorithm Scripting",
+  "order": 0.011,
+  "challenges": [
+    {
+      "id": "a2f1d72d9b908d0bd72bb9f6",
+      "title": "Make a Person",
+      "difficulty": "3.01",
+      "description": [
+        "Fill in the object constructor with the methods specified in the tests.",
+        "Those methods are getFirstName(), getLastName(), getFullName(), setFirstName(first), setLastName(last), and setFullName(firstAndLast).",
+        "All functions that take an argument have an arity of 1, and the argument will be a string.",
+        "These methods must be the only available means for interacting with the object.",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "var Person = function(firstAndLast) {",
+        "    return firstAndLast;",
+        "};",
+        "",
+        "var bob = new Person('Bob Ross');",
+        "bob.getFullName();"
+      ],
+      "tests": [
+        "expect(Object.keys(bob).length).to.eql(6);",
+        "expect(bob instanceof Person).to.be.true;",
+        "expect(bob.firstName).to.be.undefined();",
+        "expect(bob.lastName).to.be.undefined();",
+        "expect(bob.getFirstName()).to.eql('Bob');",
+        "expect(bob.getLastName()).to.eql('Ross');",
+        "expect(bob.getFullName()).to.eql('Bob Ross');",
+        "bob.setFirstName('Happy');",
+        "expect(bob.getFirstName()).to.eql('Happy');",
+        "bob.setLastName('Trees');",
+        "expect(bob.getLastName()).to.eql('Trees');",
+        "bob.setFullName('George Carlin');",
+        "expect(bob.getFullName()).to.eql('George Carlin');",
+        "bob.setFullName('Bob Ross');"
+      ],
+      "MDNlinks": [
+        "Closures",
+        "Details of the Object Model"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "af4afb223120f7348cdfc9fd",
+      "title": "Map the Debris",
+      "dashedName": "bonfire-map-the-debris",
+      "difficulty": "3.02",
+      "description": [
+        "Return a new array that transforms the element's average altitude into their orbital periods.",
+        "The array will contain objects in the format <code>{name: 'name', avgAlt: avgAlt}</code>.",
+        "You can read about orbital periods <a href=\"http://en.wikipedia.org/wiki/Orbital_period\" target='_blank'>on wikipedia</a>.",
+        "The values should be rounded to the nearest whole number. The body being orbited is Earth.",
+        "The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function orbitalPeriod(arr) {",
+        "  var GM = 398600.4418;",
+        "  var earthRadius = 6367.4447;",
+        "  return arr;",
+        "}",
+        "",
+        "orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}]);"
+      ],
+      "tests": [
+        "expect(orbitalPeriod([{name : \"sputnik\", avgAlt : 35873.5553}])).to.eqls([{name: \"sputnik\", orbitalPeriod: 86400}]);",
+        "expect(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])).to.eqls([{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]);"
+      ],
+      "MDNlinks": [
+        "Math.pow()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    },
+    {
+      "id": "a3f503de51cfab748ff001aa",
+      "title": "Pairwise",
+      "difficulty": "3.03",
+      "description": [
+        "Return the sum of all indices of elements of 'arr' that can be paired with one other element to form a sum that equals the value in the second argument 'arg'. If multiple sums are possible, return the smallest sum. Once an element has been used, it cannot be reused to pair with another.",
+        "For example, pairwise([1, 4, 2, 3, 0, 5], 7) should return 11 because 4, 2, 3 and 5 can be paired with each other to equal 7.",
+        "pairwise([1, 3, 2, 4], 4) would only equal 1, because only the first two elements can be paired to equal 4, and the first element has an index of 0!",
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+      ],
+      "challengeSeed": [
+        "function pairwise(arr, arg) {",
+        "  return arg;",
+        "}",
+        "",
+        "pairwise([1,4,2,3,0,5], 7);"
+      ],
+      "tests": [
+        "expect(pairwise([1, 4, 2, 3, 0, 5], 7)).to.equal(11);",
+        "expect(pairwise([1, 3, 2, 4], 4)).to.equal(1);",
+        "expect(pairwise([1,1,1], 2)).to.equal(1);",
+        "expect(pairwise([0, 0, 0, 0, 1, 1], 1)).to.equal(10);",
+        "expect(pairwise([], 100)).to.equal(0);"
+      ],
+      "MDNlinks": [
+        "Array.reduce()"
+      ],
+      "type": "bonfire",
+      "challengeType": 5,
+      "nameCn": "",
+      "descriptionCn": [],
+      "nameFr": "",
+      "descriptionFr": [],
+      "nameRu": "",
+      "descriptionRu": [],
+      "nameEs": "",
+      "descriptionEs": [],
+      "namePt": "",
+      "descriptionPt": []
+    }
+  ]
+}

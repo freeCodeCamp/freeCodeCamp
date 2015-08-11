@@ -21,25 +21,6 @@ block content
             |  That email address is already in use.
       .form-group
         .col-sm-6.col-sm-offset-3
-          input.form-control(type='text', name='username', ng-keypress='', autocomplete="off", id='username', placeholder='username', ng-model='username', unique-username='', required, ng-minlength=5, ng-maxlength=20, ng-pattern="/^[A-z0-9_]+$/")
-        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="profileForm.username.$error.pattern && !signupForm.username.$pristine")
-          alert(type='danger')
-            span.ion-close-circled
-            | Your username should only contain letters, numbers and underscores (az10_).
-        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="signupForm.username.$error.unique && !signupForm.username.$pristine")
-          alert(type='danger')
-            span.ion-close-circled
-            |  This username is taken.
-        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="signupForm.username.$error.minlength && !signupForm.username.$pristine")
-          alert(type='danger')
-            span.ion-close-circled
-            |  Your username must be at least 5 characters long.
-        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="signupForm.username.$error.maxlength && !signupForm.username.$pristine")
-          alert(type='danger')
-            span.ion-close-circled
-            |  Your usernames must be 20 characters or fewer.
-      .form-group
-        .col-sm-6.col-sm-offset-3
           input.form-control(type='password', ng-model='password', name='password', id='password', placeholder='password', required, ng-minlength=8)
         .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="signupForm.password.$error.minlength && !signupForm.password.$pristine")
           alert(type='danger')
