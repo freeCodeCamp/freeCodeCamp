@@ -2,7 +2,12 @@
   "name": "Object Oriented and Functional Programming \n - \n Under Construction From Challenge 4 Onwards",
   "order" : 0.009,
   "note": [
-    "inheritance"
+    "Waypoint: Closures",
+    "Waypoint: Factories",
+    "Waypoint: Pure Functions",
+    "Waypoint: Currying Functions",
+    "Waypoint: Functors",
+    "Waypoint: Currying Functions"
   ],
   "challenges": [
     {
@@ -74,9 +79,9 @@
         "We can also create variables and functions that aren't accessible from outside the Object"
       ],
       "tests":[
-        "assert(answers.Q1===true, 'The number Gear is Publicly Accessible');",
-        "assert(answers.Q2===true, 'The function getGear is Publicly Accessible');",
-        "assert(answers.Q3===false, 'The function addStyle is not Publicly Accessible');"
+        "assert(typeof(myBike.getSpeed)!=='undefined' && typeof(myBike.getSpeed) === 'function', 'The method getSpeed of myBike should be accessible outside the Object');",
+        "assert(typeof(myBike.speed) === 'undefined', 'We should not been able');",
+        "assert(typeof(myBike.addUnit === 'undefined'), '');"
       ],
       "challengeSeed":[
         "//Let's create an object with a two functions. One attached as a property and one not.",
@@ -90,33 +95,30 @@
         "   };",
         "};",
         "",
-        "//Quick Quiz!",
-        "//Say whether the follow statements are true or false in the answers object below",
+        "//Make the function getSpeed of Bike publicly accessible",
         "",
-        "//Statement One",
-        "//The number gear publicly accessible",
-        "",
-        "//Statement Two",
-        "//The function getGear publicly accessible",
-        "",
-        "//Statement Three",
-        "//The function addStyle publicly accessible",
-        "",
-        "var answers = {",
-        "   'Q1':false,",
-        "   'Q2':false,",
-        "   'Q3':false",
+        "var Bike = function(){",
+        "   speed = 100;",
+        "   function addUnit(value){",
+        "     return(value + \"KM/H\");",
+        "   }",
+        "   ",
+        "   getSpeed = function (){",
+        "       return(addUnit(speed));",
+        "   };",
+        "   ",
         "};",
         "",
         "//Instantiated Here",
         "var myCar = new Car();",
+        "var myBike = new Bike();",
         "",
-        "(function(){return(JSON.stringify(answers));})();"
+        "if(myBike.hasOwnProperty('getSpeed')){(function(){return(JSON.stringify(myBike.getSpeed()));})();};"
       ],
       "challengeType":1
     },
     {
-      "id":"cf1111c1c13feddfaeb6bdef",
+      "id":"cf1111c1c15feddfaeb4bdef",
       "title":"Waypoint: Instantiation",
       "difficulty":0,
       "description":[
@@ -144,7 +146,7 @@
       "challengeType":1
     },
     {
-      "id":"cf1111c1c13feddfaeb9bdef",
+      "id":"cf1111c1c15feddfaeb5bdef",
       "title":"Waypoint: Inheritance",
       "difficulty":0,
       "description":[
@@ -159,7 +161,7 @@
       "challengeType":1
     },
     {
-      "id":"cf1111c1c14feddfaeb1bdef",
+      "id":"cf1111c1c15feddfaeb6bdef",
       "title":"Waypoint: Prototypical Inheritance",
       "difficulty":0,
       "description":[
@@ -174,8 +176,8 @@
       "challengeType":1
     },
     {
-      "id":"cf1111c1c13feddfaeb7bdef",
-      "title":"Waypoint: Closures",
+      "id":"cf1111c1c15feddfaeb7bdef",
+      "title":"Waypoint: Using .map",
       "difficulty":0,
       "description":[
         ""
@@ -189,8 +191,8 @@
       "challengeType":1
     },
     {
-      "id":"cf1111c1c14feddfaeb3bdef",
-      "title":"Waypoint: Factories",
+      "id":"cf1111c1c15feddfaeb8bdef",
+      "title":"Waypoint: Using .reduce",
       "difficulty":0,
       "description":[
         ""
@@ -204,9 +206,8 @@
       "challengeType":1
     },
     {
-      "id":"cf1111c1c14feddfaeb5bdef",
-      "title":"Waypoint: Pure Functions",
-      "Note":"May need a waypoint before each topic to announce what it is :p",
+      "id":"cf1111c1c15feddfaeb9bdef",
+      "title":"Waypoint: Using .filter",
       "difficulty":0,
       "description":[
         ""
@@ -220,8 +221,8 @@
       "challengeType":1
     },
     {
-      "id":"cf1111c1c14feddfaeb6bdef",
-      "title":"Waypoint: Currying Functions",
+      "id":"cf1111c1c16feddfaeb1bdef",
+      "title":"Waypoint: Using .sort",
       "difficulty":0,
       "description":[
         ""
@@ -235,53 +236,34 @@
       "challengeType":1
     },
     {
-      "id":"cf1111c1c14feddfaeb7bdef",
-      "title":"Waypoint: Composition",
-      "difficulty":0,
-      "description":[
+      "id": "cf1111c1c16feddfaeb2bdef",
+      "title": "Waypoint: Using .reverse",
+      "difficulty": 0,
+      "description": [
         ""
       ],
-      "tests":[
+      "tests": [
         "assert(1==2, '');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "Under Construction"
       ],
-      "challengeType":1
+      "challengeType": 1
     },
     {
-      "id":"cf1111c1c14feddfaeb8bdef",
-      "title":"Waypoint: Functors",
-      "difficulty":0,
-      "description":[
+      "id": "cf1111c1c16feddfaeb3bdef",
+      "title": "Waypoint: Using .concat",
+      "difficulty": 0,
+      "description": [
         ""
       ],
-      "tests":[
+      "tests": [
         "assert(1==2, '');"
       ],
-      "challengeSeed":[
+      "challengeSeed": [
         "Under Construction"
       ],
-      "challengeType":1
-    },
-    {
-      "id":"cf1111c1c14feddfaeb9bdef",
-      "title":"Waypoint: Currying Functions",
-      "Notes":[
-        "",
-        ""
-      ],
-      "difficulty":0,
-      "description":[
-        ""
-      ],
-      "tests":[
-        "assert(1==2, '');"
-      ],
-      "challengeSeed":[
-        "Under Construction"
-      ],
-      "challengeType":1
+      "challengeType": 1
     }
   ]
 }
