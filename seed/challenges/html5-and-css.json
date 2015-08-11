@@ -384,7 +384,7 @@
         "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your <code>h2</code> element should be blue.')",
         "assert(!$('h2').attr('style'), 'Remove the style attribute from your <code>h2</code> element.')",
         "assert(($('style').length > 1), 'Create a <code>style</code> element.')",
-        "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === editor.match(/<style>/g).length, 'Make sure each of your <code>style</code> elements has a closing tag.')"
+        "assert(editor.match(/<style.*>.*<\\/style>/g) && editor.match(/<style.*>.*<\\/style>/g).length === editor.match(/<style.*>.*<\\/style>/g).length, 'Make sure each of your <code>style</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
         "<h2 style='color: red'>CatPhotoApp</h2>",
