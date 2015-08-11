@@ -3,49 +3,8 @@
   "order": 0.006,
   "challenges": [
     {
-      "id": "bd7139d8c441eddfaeb5bdef",
-      "name": "Waypoint: Pair Program on Bonfires",
-      "dashedName": "waypoint-pair-program-on-bonfires",
-      "difficulty": 0.44,
-      "challengeSeed": [
-        "119657641"
-      ],
-      "description": [
-        "Please note that the video for this challenge is a little outdated, and doesn't perfectly match these steps. We plan to record a new video soon.",
-        "OK, we're finally ready to start pair programming!",
-        "Pair Programming is where two people code together on the same computer. It is an efficient way to collaborate, and widely practiced at software companies. Pair Programming is one of the core concepts of \"Agile\" Software Development, which you will hear more about later.",
-        "Many people use Skype or Google Hangouts to pair program, but if you talk with professional software engineers, they will tell you that it's not really pair programming unless both people have the ability to use the keyboard and mouse.",
-        "The most popular tool for pair programming is Screenhero. You can download Screenhero for <a href='http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjowLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLnppcD9zb3VyY2U9d2ViIn0=' target='_blank'>Mac</a> or <a href='http://links.screenhero.com/e/c/eyJlbWFpbF9pZCI6Ik1qQTNNem9XQkNJQ1pBQUNjd0FYQVZrVEdnRkxNamtfX0JWZEdGVEpSZkVCWlRwbFpXRTBNamM0WVMxaE56SmlMVEV4WlRRdE9HUXpZUzFpWXpVNE1HRTJNalkxTldNNk1UUTJNVEEyQUE9PSIsInBvc2l0aW9uIjoxLCJocmVmIjoiaHR0cDovL2RsLnNjcmVlbmhlcm8uY29tL3NtYXJ0ZG93bmxvYWQvZklYQU1UUUJBTEtQQkhQTC9TY3JlZW5oZXJvLXNldHVwLmV4ZSJ9' target='_blank'>Windows</a>. Create your new user account from within the app.",
-        "We have a special chat room for people ready to pair program. Go to our <a href='//gitter.im/FreeCodeCamp/LetsPair' target='_blank'>LetsPair chatroom on Gitter</a> and type \"Hello Pair Programmers!\"",
-        "If someone is available, they will be your \"pair\" - the person you pair programming with.",
-        "If no one gets back to you in the first few minutes, don't worry. There will be lots of opportunities to pair program in the future.",
-        "If someone does get back to you, private message them and ask for the email address they used to register Screenhero.",
-        "Add them as a new contact in Screenhero, then click the monitor-looking button to attempt to share your screen with them.",
-        "Once the Screenhero session starts, your screen's margins will glow orange. You are now sharing your screen.",
-        "Your pair will have their own cursor, and will be able to type text on his or her keyboard.",
-        "Now it's time to tackle our Bonfires. You can begin them by advancing to the next challenge.",
-        "Once you you finish pair programming, end the session in Screenhero session.",
-        "Congratulations! You have completed your first pair programming session.",
-        "Pair program as much as possible with different campers until you've completed all the Bonfire challenges. This is a big time investment, but the JavaScript practice you get will be well worth it!",
-        "Mark this Waypoint complete and move on."
-      ],
-      "challengeType": 2,
-      "tests": [],
-      "nameCn": "",
-      "descriptionCn": [],
-      "nameFr": "",
-      "descriptionFr": [],
-      "nameRu": "",
-      "descriptionRu": [],
-      "nameEs": "",
-      "descriptionEs": [],
-      "namePt": "",
-      "descriptionPt": []
-    },
-    {
       "id": "ad7123c8c441eddfaeb5bdef",
-      "name": "Bonfire: Meet Bonfire",
-      "dashedName": "bonfire-meet-bonfire",
+      "title": "Meet Bonfire",
       "difficulty": "0",
       "description": [
         "Your goal is to fix the failing test.",
@@ -69,6 +28,7 @@
         "",
         "meetBonfire(\"You can do this!\");"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -83,8 +43,7 @@
     },
     {
       "id": "a202eed8fc186c8434cb6d61",
-      "name": "Bonfire: Reverse a String",
-      "dashedName": "bonfire-reverse-a-string",
+      "title": "Reverse a String",
       "difficulty": "1.01",
       "tests": [
         "expect(reverseString('hello')).to.be.a('String');",
@@ -96,7 +55,7 @@
         "Reverse the provided string.",
         "You may need to turn the string into an array before you can reverse it.",
         "Your result must be a string.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function reverseString(str) {",
@@ -111,6 +70,7 @@
         "Array.reverse()",
         "Array.join()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -125,8 +85,7 @@
     },
     {
       "id": "a302f7aae1aa3152a5b413bc",
-      "name": "Bonfire: Factorialize a Number",
-      "dashedName": "bonfire-factorialize-a-number",
+      "title": "Factorialize a Number",
       "tests": [
         "expect(factorialize(5)).to.be.a(\"Number\");",
         "expect(factorialize(5)).to.equal(120);",
@@ -139,7 +98,7 @@
         "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
         "Factorials are often represented with the shorthand notation n!",
         "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function factorialize(num) {",
@@ -151,6 +110,7 @@
       "MDNlinks": [
         "Arithmetic Operators"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -165,15 +125,14 @@
     },
     {
       "id": "aaa48de84e1ecc7c742e1124",
-      "name": "Bonfire: Check for Palindromes",
-      "dashedName": "bonfire-check-for-palindromes",
+      "title": "Check for Palindromes",
       "difficulty": "1.03",
       "description": [
         "Return true if the given string is a palindrome. Otherwise, return false.",
         "A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.",
         "You'll need to remove punctuation and turn everything lower case in order to check for palindromes.",
         "We'll pass strings with varying formats, such as \"racecar\", \"RaceCar\", and \"race CAR\" among others.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "tests": [
         "expect(palindrome(\"eye\")).to.be.a(\"boolean\");",
@@ -199,6 +158,7 @@
         "String.replace()",
         "String.toLowerCase()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -213,13 +173,12 @@
     },
     {
       "id": "a26cbbe9ad8655a977e1ceb5",
-      "name": "Bonfire: Find the Longest Word in a String",
-      "dashedName": "bonfire-find-the-longest-word-in-a-string",
+      "title": "Find the Longest Word in a String",
       "difficulty": "1.04",
       "description": [
         "Return the length of the longest word in the provided sentence.",
         "Your response should be a number.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function findLongestWord(str) {",
@@ -233,12 +192,14 @@
         "expect(findLongestWord('The quick brown fox jumped over the lazy dog')).to.equal(6);",
         "expect(findLongestWord('May the force be with you')).to.equal(5);",
         "expect(findLongestWord('Google do a barrel roll')).to.equal(6);",
-        "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);"
+        "expect(findLongestWord('What is the average airspeed velocity of an unladen swallow')).to.equal(8);",
+        "expect(findLongestWord('What if we try a super-long word such as otorhinolaryngology')).to.equal(19);"
       ],
       "MDNlinks": [
         "String.split()",
         "String.length"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -253,13 +214,12 @@
     },
     {
       "id": "ab6137d4e35944e21037b769",
-      "name": "Bonfire: Title Case a Sentence",
-      "dashedName": "bonfire-title-case-a-sentence",
+      "title": "Title Case a Sentence",
       "difficulty": "1.05",
       "description": [
         "Return the provided string with the first letter of each word capitalized.",
         "For the purpose of this exercise, you should also capitalize connecting words like 'the' and 'of'.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function titleCase(str) {",
@@ -277,6 +237,7 @@
       "MDNlinks": [
         "String.charAt()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -291,14 +252,13 @@
     },
     {
       "id": "a789b3483989747d63b0e427",
-      "name": "Bonfire: Return Largest Numbers in Arrays",
-      "dashedName": "bonfire-return-largest-numbers-in-arrays",
+      "title": "Return Largest Numbers in Arrays",
       "difficulty": "1.06",
       "description": [
         "Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.",
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i] .",
         "If you are writing your own Chai.js tests, be sure to use a deep equal statement instead of an equal statement when comparing arrays.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function largestOfFour(arr) {",
@@ -316,6 +276,7 @@
       "MDNlinks": [
         "Comparison Operators"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -330,12 +291,11 @@
     },
     {
       "id": "acda2fb1324d9b0fa741e6b5",
-      "name": "Bonfire: Confirm the Ending",
-      "dashedName": "bonfire-confirm-the-ending",
+      "title": "Confirm the Ending",
       "difficulty": "1.07",
       "description": [
         "Check if a string (first argument) ends with the given target string (second argument).",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function end(str, target) {",
@@ -356,6 +316,7 @@
       "MDNlinks": [
         "String.substr()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -370,12 +331,11 @@
     },
     {
       "id": "afcc8d540bea9ea2669306b6",
-      "name": "Bonfire: Repeat a string repeat a string",
-      "dashedName": "bonfire-repeat-a-string-repeat-a-string",
+      "title": "Repeat a string repeat a string",
       "difficulty": "1.08",
       "description": [
         "Repeat a given string (first argument) n times (second argument). Return an empty string if n is a negative number.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function repeat(str, num) {",
@@ -393,6 +353,7 @@
       "MDNlinks": [
         "Global String Object"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -407,13 +368,12 @@
     },
     {
       "id": "ac6993d51946422351508a41",
-      "name": "Bonfire: Truncate a string",
-      "dashedName": "bonfire-truncate-a-string",
+      "title": "Truncate a string",
       "difficulty": "1.09",
       "description": [
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a '...' ending.",
         "Note that the three dots at the end add to the string length.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function truncate(str, num) {",
@@ -432,6 +392,7 @@
       "MDNlinks": [
         "String.slice()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -446,12 +407,11 @@
     },
     {
       "id": "a9bd25c716030ec90084d8a1",
-      "name": "Bonfire: Chunky Monkey",
-      "dashedName": "bonfire-chunky-monkey",
+      "title": "Chunky Monkey",
       "difficulty": "1.10",
       "description": [
         "Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function chunk(arr, size) {",
@@ -470,6 +430,7 @@
       "MDNlinks": [
         "Array.push()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -484,12 +445,11 @@
     },
     {
       "id": "ab31c21b530c0dafa9e241ee",
-      "name": "Bonfire: Slasher Flick",
-      "dashedName": "bonfire-slasher-flick",
+      "title": "Slasher Flick",
       "difficulty": "1.11",
       "description": [
         "Return the remaining elements of an array after chopping off n elements from the head.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function slasher(arr, howMany) {",
@@ -508,6 +468,7 @@
         "Array.slice()",
         "Array.splice()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -522,15 +483,14 @@
     },
     {
       "id": "af2170cad53daa0770fabdea",
-      "name": "Bonfire: Mutations",
-      "dashedName": "bonfire-mutations",
+      "title": "Mutations",
       "difficulty": "1.12",
       "description": [
         "Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.",
         "For example, ['hello', 'Hello'], should return true because all of the letters in the second string are present in the first, ignoring case.",
         "The arguments ['hello', 'hey'] should return false because the string 'hello' does not contain a 'y'.",
         "Lastly, ['Alien', 'line'], should return true because all of the letters in 'line' are present in 'Alien'.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function mutation(arr) {",
@@ -551,6 +511,7 @@
       "MDNlinks": [
         "Array.indexOf()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -565,13 +526,12 @@
     },
     {
       "id": "adf08ec01beb4f99fc7a68f2",
-      "name": "Bonfire: Falsey Bouncer",
-      "dashedName": "bonfire-falsey-bouncer",
+      "title": "Falsey Bouncer",
       "difficulty": "1.50",
       "description": [
         "Remove all falsey values from an array.",
         "Falsey values in javascript are false, null, 0, \"\", undefined, and NaN.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function bouncer(arr) {",
@@ -590,6 +550,7 @@
         "Boolean Objects",
         "Array.filter()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -604,12 +565,11 @@
     },
     {
       "id": "a8e512fbe388ac2f9198f0fa",
-      "name": "Bonfire: Where art thou",
-      "dashedName": "bonfire-where-art-thou",
+      "title": "Where art thou",
       "difficulty": "1.55",
       "description": [
         "Make a function that looks through an array (first argument) and returns an array of all objects that have equivalent property values (second argument).",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function where(collection, source) {",
@@ -629,6 +589,7 @@
         "Object.hasOwnProperty()",
         "Object.keys()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -643,12 +604,11 @@
     },
     {
       "id": "a39963a4c10bc8b4d4f06d7e",
-      "name": "Bonfire: Seek and Destroy",
-      "dashedName": "bonfire-seek-and-destroy",
+      "title": "Seek and Destroy",
       "difficulty": "1.60",
       "description": [
         "You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function destroyer(arr) {",
@@ -669,6 +629,7 @@
         "Arguments object",
         "Array.filter()"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],
@@ -683,13 +644,12 @@
     },
     {
       "id": "a24c1a4622e3c05097f71d67",
-      "name": "Bonfire: Where do I belong",
-      "dashedName": "bonfire-where-do-i-belong",
+      "title": "Where do I belong",
       "difficulty": "1.61",
       "description": [
         "Return the lowest index at which a value (second argument) should be inserted into a sorted array (first argument).",
         "For example, where([1,2,3,4], 1.5) should return 1 because it is greater than 1 (0th index), but less than 2 (1st index).",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
         "function where(arr, num) {",
@@ -706,6 +666,7 @@
         "expect(where([10, 20, 30, 40, 50], 35)).to.equal(3);",
         "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);"
       ],
+      "type": "bonfire",
       "challengeType": 5,
       "nameCn": "",
       "descriptionCn": [],

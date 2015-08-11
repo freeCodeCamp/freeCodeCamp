@@ -4,8 +4,7 @@
   "challenges": [
     {
       "id":"bd7123c9c441eddfaeb4bdef",
-      "name": "Waypoint: Comment your JavaScript Code",
-      "dashedName": "waypoint-comment-your-javascript-code",
+      "title": "Comment your JavaScript Code",
       "difficulty":"9.98",
       "description":[
         "A comment is a very useful line of code that is not actually ran by the machine executing it. With this property comments are the perfect way of creating notes to yourself or anyone else who reads your code describing what the code does",
@@ -23,21 +22,20 @@
         "assert(editor.getValue().match(/(\\/\\/)...../g), 'Make sure that there is at least one \\/\\/ style comment with at least five letters in it');"
       ],
       "challengeSeed":[
-
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7123c9c441eddfaeb5bdef",
-      "name": "Waypoint: Understand Boolean Values",
-      "dashedName": "waypoint-understand-boolean-values",
+      "title": "Understand Boolean Values",
       "difficulty": "9.98001",
       "description": [
         "Return true",
         "A boolean is a type of variable that represents either true or false (Named after the British mathematician George Boole).",
         "Booleans are often the result of a function or a comparative operation, for example <code>1==1</code>is true whereas <code>1==2</code>is false.",
         "They are most commonly found inside <code>if</code>statements which we shall cover later",
-        "For now Let's modify our <code>welcomeToBooleans</code>function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked"
+        "For now let's modify our <code>welcomeToBooleans</code>function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked"
       ],
       "tests": [
         "assert(typeof(welcomeToBooleans())=='boolean', 'The value returned by welcomeToBooleans() should be a boolean value. (true of false)');",
@@ -51,18 +49,18 @@
         "",
         "welcomeToBooleans();"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7123c9c443eddfaeb5bdef",
-      "name": "Waypoint: Declare JavaScript Variables",
-      "dashedName": "waypoint-declare-javascript-variables",
+      "title": "Declare JavaScript Variables",
       "difficulty": "9.9801",
       "description": [
         "Now, use the <code>var</code> keyword to create a <code>variable</code> called <code>myName</code>. Set its value to your name.",
         "<code>Variables</code> are used to store values.",
-        "The name variable comes from the fact that it's value, varies!",
-        "Now Let's create our first variable called myName and because it's a name let's make it a string!",
+        "The name variable comes from the fact that its value varies!",
+        "Now let's create our first variable called myName and because it's a name let's make it a string!",
         "Be sure to use lowercase and uppercase letters properly. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
         "Look at the <code>ourName</code> example if you get stuck."
       ],
@@ -78,12 +76,12 @@
         "",
         "if(typeof(myName) !== 'undefined'){(function(v){return(v);})(myName);}"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7123c9c444eddfaeb5bdef",
-      "name": "Waypoint: Declare String Variables",
-      "dashedName": "waypoint-declare-string-variables",
+      "title": "Declare String Variables",
       "difficulty": "9.9802",
       "description": [
         "Programs will almost always have several different variables that are used to keep track of several different pieces of data",
@@ -105,12 +103,12 @@
         "// We'll learn about functions soon.",
         "if(typeof(myFirstName) !== 'undefined' && typeof(myLastName) !== 'undefined'){(function(y,z){return(y + ', ' + z);})(myFirstName, myLastName);}"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7123c9c448eddfaeb5bdef",
-      "name": "Waypoint: Check the Length Property of a String Variable",
-      "dashedName": "waypoint-check-the-length-property-of-a-string-variable",
+      "title": "Check the Length Property of a String Variable",
       "difficulty": "9.9809",
       "description": [
         "Use the <code>.length</code> property to count the number of characters in the <code>lastNameLength</code> variable.",
@@ -138,12 +136,12 @@
         "// We'll learn about functions soon.",
         "if(typeof(lastNameLength) != 'undefined'){(function(v){return(v);})(lastNameLength);}"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7123c9c549eddfaeb5bdef",
-      "name": "Waypoint: Use Bracket Notation to Find the First Character in a String",
-      "dashedName": "waypoint-use-bracket-notation-to-find-the-first-character-in-a-string",
+      "title": "Use Bracket Notation to Find the First Character in a String",
       "difficulty": "9.9810",
       "description": [
         "Use <code>bracket notation</code> to find the first character in a the <code>firstLetterOfLastName</code> variable.",
@@ -173,12 +171,12 @@
         "// We'll learn about functions soon.",
         "(function(v){return(v);})(firstLetterOfLastName);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7123c9c450eddfaeb5bdef",
-      "name": "Waypoint: Use Bracket Notation to Find the Nth Character in a String",
-      "dashedName": "waypoint-use-bracket-notation-to-find-the-nth-character-in-a-string",
+      "title": "Use Bracket Notation to Find the Nth Character in a String",
       "difficulty": "9.9811",
       "description": [
         "Just like the last lesson where we used <code>Bracket Notation</code>to access the first letter we can use the same method to get the letters ar other positions",
@@ -204,12 +202,12 @@
         "// We'll learn about functions soon.",
         "(function(v){return(v);})(thirdLetterOfLastName);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7123c9c451eddfaeb5bdef",
-      "name": "Waypoint: Use Bracket Notation to Find the Last Character in a String",
-      "dashedName": "waypoint-use-bracket-notation-to-find-the-last-character-in-a-string",
+      "title": "Use Bracket Notation to Find the Last Character in a String",
       "difficulty": "9.9812",
       "description": [
         "Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
@@ -234,12 +232,12 @@
         "",
         "(function(v){return(v);})(lastLetterOfLastName);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7123c9c452eddfaeb5bdef",
-      "name": "Waypoint: Use Bracket Notation to Find the Nth-to-Last Character in a String",
-      "dashedName": "waypoint-use-bracket-notation-to-find-the-nth-to-last-character-in-a-string",
+      "title": "Use Bracket Notation to Find the Nth-to-Last Character in a String",
       "difficulty": "9.9813",
       "description": [
         "Use <code>bracket notation</code> to find the second-to-last character in the <code>lastName</code> variable.",
@@ -264,17 +262,17 @@
         "",
         "(function(v){return(v);})(secondToLastLetterOfLastName);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb3bdef",
-      "name": "Waypoint: Add Two Numbers with JavaScript",
-      "dashedName": "waypoint-add-two-numbers-with-javascript",
+      "title": "Add Two Numbers with JavaScript",
       "difficulty": "9.98141",
       "description": [
-        "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
-        "Let's try a few of the most commonly used ones now",
-        "We use <code>+</code>for addition",
+        "In JavaScript whole numbers (called integers) can be easily used to perform mathematical functions.",
+        "Let's try a few of the most commonly used ones now.",
+        "We use <code>+</code>for addition.",
         "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
@@ -287,17 +285,17 @@
         "",
         "(function(z){return('add='+z);})(add);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb4bdef",
-      "name": "Waypoint: Subtract One Number from Another with JavaScript",
-      "dashedName": "waypoint-subtract-one-number-from-another-with-javascript",
+      "title": "Subtract One Number from Another with JavaScript",
       "difficulty": "9.98142",
       "description": [
-        "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
-        "Let's try a few of the most commonly used ones now",
-        "We use <code>-</code>for subtraction",
+        "In JavaScript whole numbers (called integers) can be easily used to perform mathematical functions.",
+        "Let's try a few of the most commonly used ones now.",
+        "We use <code>-</code>for subtraction.",
         "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
@@ -310,17 +308,17 @@
         "",
         "(function(z){return('subtract='+z);})(subtract);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "cf1231c1c11feddfaeb5bdef",
-      "name": "Waypoint: Multiply Two Numbers with JavaScript",
-      "dashedName": "waypoint-multiply-two-numbers-with-javascript",
+      "title": "Multiply Two Numbers with JavaScript",
       "difficulty": "9.98143",
       "description": [
-        "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
-        "Let's try a few of the most commonly used ones now",
-        "We use <code>*</code>for multiplication",
+        "In JavaScript whole numbers (called integers) can be easily used to perform mathematical functions.",
+        "Let's try a few of the most commonly used ones now.",
+        "We use <code>*</code>for multiplication.",
         "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
@@ -333,17 +331,17 @@
         "",
         "(function(z){return('multiply='+z);})(multiply);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "cf1111c1c11feddfaeb6bdef",
-      "name": "Waypoint: Divide One Number by Another with JavaScript",
-      "dashedName": "waypoint-divide-one-number-by-another-with-javascript",
+      "title": "Divide One Number by Another with JavaScript",
       "difficulty": "9.9814",
       "description": [
-        "In JavaScript whole numbers (called integers) can be easily used to preform mathematical functions",
-        "Let's try a few of the most commonly used ones now",
-        "We use <code>/</code>for division",
+        "In JavaScript whole numbers (called integers) can be easily used to perform mathematical functions.",
+        "Let's try a few of the most commonly used ones now.",
+        "We use <code>/</code>for division.",
         "Replace the <code>0</code>with correct number to achieve the result in the comment."
       ],
       "tests": [
@@ -356,15 +354,15 @@
         "",
         "(function(z){return('divide='+z);})(divide);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "cf1391c1c11feddfaeb4bdef",
-      "name": "Waypoint: Create Decimal Numbers with JavaScript",
-      "dashedName": "waypoint-create-decimal-numbers-with-javascript",
+      "title": "Create Decimal Numbers with JavaScript",
       "difficulty": "9.9815",
       "description": [
-        "in JavaScript we can can work with decimal numbers",
+        "In JavaScript we can work with decimal numbers.",
         "Let's create a variable <code>myDecimal</code> and give it a decimal value."
       ],
       "tests": [
@@ -379,15 +377,15 @@
         "",
         "(function(){if(typeof(myDecimal) != 'undefined'){return(myDecimal);}})();"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7993c9c69feddfaeb7bdef",
-      "name": "Waypoint: Perform Arithmetic Operations on Decimals with JavaScript",
-      "dashedName": "waypoint-perform-arithmetic-operations-on-decimals-with-javascript",
+      "title": "Perform Arithmetic Operations on Decimals with JavaScript",
       "difficulty": "9.98151",
       "description": [
-        "In JavaScript we can can work with decimal numbers."
+        "In JavaScript we can work with decimal numbers."
       ],
       "tests": [
         "assert(multiply == 15, 'The result of multiply should be 3.75');",
@@ -401,12 +399,12 @@
         "",
         "(function(y,z){return('multiply='+y+', divide='+z);})(multiply,divide);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bd7993c9c69feddfaeb8bdef",
-      "name": "Waypoint: Store Multiple Values in one Variable using JavaScript Arrays",
-      "dashedName": "waypoint-store-multiple-values-in-one-variable-using-javascript-arrays",
+      "title": "Store Multiple Values in one Variable using JavaScript Arrays",
       "difficulty": "9.9816",
       "description": [
         "In JavaScript we can store lists or collections of data in what are called arrays",
@@ -428,12 +426,12 @@
         "",
         "(function(z){return(z);})(myArray);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c11feddfaeb7bdef",
-      "name": "Waypoint: Nest one Array within Another Array",
-      "dashedName": "waypoint-nest-one-array-within-another-array",
+      "title": "Nest one Array within Another Array",
       "difficulty":"9.98161",
       "description":[
         "We are also able to create arrays within arrays. This technique is called <code>nesting</code>.",
@@ -448,12 +446,12 @@
         "",
         "if(typeof(myArray) !== 'undefined'){(function(){return(myArray);})();}"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"bg9997c9c79feddfaeb9bdef",
-      "name": "Waypoint: Access Array Data with Indexes",
-      "dashedName": "waypoint-access-array-data-with-indexes",
+      "title": "Access Array Data with Indexes",
       "difficulty":"9.9817",
       "description":[
         "Once an array has been created we can access the data we have stored in them using indexes",
@@ -479,12 +477,12 @@
         "",
         "if(typeof(myArray) != 'undefined' && typeof(data) != 'undefined'){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', data = ' + JSON.stringify(z));})(myArray, data);}"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c11feddfaeb8bdef",
-      "name": "Waypoint: Modify Array Data With Indexes",
-      "dashedName": "waypoint-modify-array-data-with-indexes",
+      "title": "Modify Array Data With Indexes",
       "difficulty":"9.98171",
       "description":[
         "We are able to modify the data stored in an array by using indexes",
@@ -511,12 +509,12 @@
         "",
         "if(typeof(myArray) != 'undefined'){(function(){return(myArray);})();}"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bg9994c9c69feddfaeb9bdef",
-      "name": "Waypoint: Manipulate Arrays With pop()",
-      "dashedName": "waypoint-manipulate-arrays-with-pop",
+      "title": "Manipulate Arrays With pop()",
       "difficulty": "9.9818",
       "description": [
         "When an array has been defined we still have the ability to make changes to it afterwards",
@@ -542,12 +540,12 @@
         "",
         "(function(y, z){return('myArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z));})(myArray, removed);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bg9995c9c69feddfaeb9bdef",
-      "name": "Waypoint: Manipulate Arrays With push()",
-      "dashedName": "waypoint-manipulate-arrays-with-push",
+      "title": "Manipulate Arrays With push()",
       "difficulty": "9.9818",
       "description": [
         "Now that we've learned how to <code>pop</code>things from the end of the array, we need to learn how to <code>push</code>stuff back to the end",
@@ -564,12 +562,12 @@
         "",
         "(function(z){return('myArray = ' + JSON.stringify(z));})(myArray);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bg9996c9c69feddfaeb9bdef",
-      "name": "Waypoint: Manipulate Arrays With shift()",
-      "dashedName": "waypoint-manipulate-arrays-with-shift",
+      "title": "Manipulate Arrays With shift()",
       "difficulty": "9.9817",
       "description": [
         "Another common way in which we can manipulate the data in an array is through <code>.shift() </code>",
@@ -587,12 +585,12 @@
         "",
         "(function(y, z){return('myArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z));})(myArray, removed);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id": "bg9997c9c69feddfaeb9bdef",
-      "name": "Waypoint: Manipulate Arrays With unshift()",
-      "dashedName": "waypoint-manipulate-arrays-with-unshift",
+      "title": "Manipulate Arrays With unshift()",
       "difficulty": "9.9818",
       "description": [
         "Now that we've learned how to <code>shift</code>things from the start of the array, we need to learn how to <code>unshift</code>stuff back to the start",
@@ -609,12 +607,12 @@
         "",
         "(function(y, z){return('myArray = ' + JSON.stringify(y));})(myArray);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"bg9997c9c89feddfaeb9bdef",
-      "name": "Waypoint: Write Reusable JavaScript with Functions",
-      "dashedName": "waypoint-write-reusable-javascript-with-functions",
+      "title": "Write Reusable JavaScript with Functions",
       "difficulty":"9.9819",
       "description":[
         "In JavaScript we can divide up our code into separate and reusable parts called functions",
@@ -646,12 +644,12 @@
         "(function(){return(f);})();",
         "}"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"bg9998c9c99feddfaeb9bdef",
-      "name": "Waypoint: Build JavaScript Objects",
-      "dashedName": "waypoint-build-javascript-objects",
+      "title": "Build JavaScript Objects",
       "difficulty":"9.9822",
       "description":[
         "A very important data type in javascript is the <code>Object</code>",
@@ -667,7 +665,6 @@
         "</code>",
         "Objects are useful for storing data in a structured way or in a way that represents a real world object like a cat.",
         "Let's try to make an Object that represents a dog called myDog!"
-
       ],
       "tests":[
         "assert((function(z){if(z.hasOwnProperty('name') && z.name != undefined && typeof(z.name) == 'string'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property name and it should be a string');",
@@ -692,12 +689,12 @@
         "",
         "(function(z){return(z);})(myDog);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"bg9999c9c99feddfaeb9bdef",
-      "name": "Waypoint: Manipulate JavaScript Objects",
-      "dashedName": "waypoint-manipulate-javascript-objects",
+      "title": "Manipulate JavaScript Objects",
       "difficulty":"9.9823",
       "description":[
         "Now that we have an objects we need to know how to add and remove properties from it",
@@ -737,12 +734,12 @@
         "",
         "(function(z){return(z);})(myDog);"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c11feddfaeb5bdef",
-      "name": "Waypoint: Iterate with JavaScript For Loops",
-      "dashedName": "waypoint-iterate-with-javascript-for-loops",
+      "title": "Iterate with JavaScript For Loops",
       "difficulty":"9.9824",
       "description":[
         "Loops are a critical part of any program! The next few challenges",
@@ -766,12 +763,12 @@
         "",
         ""
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c11feddfaeb1bdef",
-      "name": "Waypoint: Iterate with JavaScript While Loops",
-      "dashedName": "waypoint-iterate-with-javascript-while-loops",
+      "title": "Iterate with JavaScript While Loops",
       "difficulty":"9.9825",
       "description":[
         "Loops are a critical part of any program! The next few challenges",
@@ -796,12 +793,12 @@
         "",
         ""
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c11feddfaeb2bdef",
-      "name": "Waypoint: Iterate with JavaScript Do-While Loops",
-      "dashedName": "waypoint-iterate-with-javascript-do-while-loops",
+      "title": "Iterate with JavaScript Do-While Loops",
       "difficulty":"9.9826",
       "description":[
         "Let's now take a look at the do - while loop",
@@ -826,12 +823,12 @@
         "",
         ""
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c11feddfaeb9bdef",
-      "name": "Waypoint: Generate Random Fractions with JavaScript",
-      "dashedName": "waypoint-generate-random-fractions-with-javascript",
+      "title": "Generate Random Fractions with JavaScript",
       "difficulty":"9.9827",
       "description":[
         "Random numbers are very useful for creating random behaviours and games",
@@ -852,12 +849,12 @@
         "",
         "(function(){return(myFunction());})();"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c12feddfaeb1bdef",
-      "name": "Waypoint: Generate Random Whole Numbers with JavaScript",
-      "dashedName": "waypoint-generate-random-whole-numbers-with-javascript",
+      "title": "Generate Random Whole Numbers with JavaScript",
       "difficulty":"9.9828",
       "description":[
         "While it's great that we can create random decimal numbers it's a lot more useful to generate a random whole number",
@@ -881,12 +878,12 @@
         "",
         "(function(){return(myFunction());})();"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c12feddfaeb2bdef",
-      "name": "Waypoint: Generate Random Whole Numbers within a Range",
-      "dashedName": "waypoint-generate-random-whole-numbers-within-a-range",
+      "title": "Generate Random Whole Numbers within a Range",
       "difficulty":"9.9829",
       "description":[
         "We can use a certain mathematical expression to get a random number between between twp numbers.",
@@ -909,12 +906,12 @@
         "",
         "(function(){return(myFunction());})();"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c12feddfaeb3bdef",
-      "name": "Waypoint: Use Conditional Logic with If-Else Statements",
-      "dashedName": "waypoint-use-conditional-logic-with-if-else-statements",
+      "title": "Use Conditional Logic with If-Else Statements",
       "difficulty":"9.983",
       "description":[
         "We can use if statements in JavaScript to only execute code if a certain condition is met",
@@ -943,12 +940,12 @@
         "",
         "(function(){return(myFunction());})();"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c12feddfaeb6bdef",
-      "name": "Waypoint: Sift through Text with Regular Expressions",
-      "dashedName": "waypoint-sift-through-text-with-regular-expressions",
+      "title": "Sift through Text with Regular Expressions",
       "difficulty":"9.984",
       "description":[
         "RegEx is a powerful tool we can use to find certain words or patterns in strings",
@@ -979,12 +976,12 @@
         " return(testString.match(expression).length);",
         "})();(function(){return(test);})();"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c12feddfaeb7bdef",
-      "name": "Waypoint: Find Numbers with Regular Expressions",
-      "dashedName": "waypoint-find-numbers-with-regular-expressions",
+      "title": "Find Numbers with Regular Expressions",
       "difficulty":"9.985",
       "description":[
         "We can use special selectors in RegEx to select a particular type of value",
@@ -1009,12 +1006,12 @@
         " return(testString.match(expression).length);",
         "})();(function(){return(test);})();"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c12feddfaeb8bdef",
-      "name": "Waypoint: Find White Space with Regular Expressions",
-      "dashedName": "waypoint-find-white-space-with-regular-expressions",
+      "title": "Find White Space with Regular Expressions",
       "difficulty":"9.986",
       "description":[
         "We can also use selectors like <code>\\s</code> to find spaces in a string",
@@ -1038,12 +1035,12 @@
         " return(testString.match(expression).length);",
         "})();(function(){return(test);})();"
       ],
+      "type": "waypoint",
       "challengeType": 1
     },
     {
       "id":"cf1111c1c13feddfaeb3bdef",
-      "name": "Waypoint: Invert Regular Expression Matches with JavaScript",
-      "dashedName": "waypoint-invert-regular-expression-matches-with-javaScript",
+      "title": "Invert Regular Expression Matches with JavaScript",
       "difficulty":"9.987",
       "description":[
         "Use <code>/\\S/gi;</code> to match everything that isn't a space in the string",
@@ -1066,25 +1063,25 @@
         " return(testString.match(expression).length);",
         "})();(function(){return(test);})();"
       ],
+      "type": "waypoint",
       "challengeType":1
     },
     {
       "id":"cf1111c1c12feddfaeb9bdef",
-      "name": "Waypoint: Create a JavaScript Slot Machine",
-      "dashedName": "waypoint-create-a-javascript-slot-machine",
+      "title": "Create a JavaScript Slot Machine",
       "difficulty":"9.988",
       "description":[
-        "We are now going to try and combine some of the stuff we've just learnt abd create the logic for a slot machine game",
+        "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game",
         "For this we will need to generate three random numbers between <code>1</code> and <code>5</code> to represent the possible values of each individual slot",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>",
         "Generate the random numbers by using the system we used earlier in /challenges/random-whole-numbers-in-a-range",
         "<code>Math.floor(Math.random() * (5 - 1 + 1)) + 1; </code>"
       ],
       "tests":[
-        "assert(typeof(runSlots($('.slot'))[0]) == 'number', 'SlotOne should be a random number');",
-        "assert(typeof(runSlots($('.slot'))[1]) == 'number', 'SlotTwo should be a random number');",
-        "assert(typeof(runSlots($('.slot'))[2]) == 'number', 'SlotThree should be a random number');",
-        "assert((function(){if(editor.match(/Math.floor\\(Math\\.random\\(\\)\\s\\*\\s\\(5\\s\\-\\s1\\s\\+\\s1\\)\\)\\s\\+\\s1;/gi) !== null){return(editor.match(/Math.floor\\(Math\\.random\\(\\)\\s\\*\\s\\(5\\s\\-\\s1\\s\\+\\s1\\)\\)\\s\\+\\s1;/gi).length >= 3);}else{return(false);}})(), 'You should have used Math.floor(Math.random() * (5 - 1 + 1)) + 1; three times to generate your random numbers');"
+        "assert(typeof(runSlots($('.slot'))[0]) == 'number', 'slotOne should be a random number');",
+        "assert(typeof(runSlots($('.slot'))[1]) == 'number', 'slotTwo should be a random number');",
+        "assert(typeof(runSlots($('.slot'))[2]) == 'number', 'slotThree should be a random number');",
+        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?5\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi) !== null){return(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?5\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi).length >= 3);}else{return(false);}})(), 'You should have used Math.floor(Math.random() * (5 - 1 + 1)) + 1; three times to generate your random numbers');"
       ],
       "challengeSeed":[
         "fccss",
@@ -1220,12 +1217,12 @@
         " }",
         "</style>"
       ],
+      "type": "waypoint",
       "challengeType": 0
     },
     {
       "id":"cf1111c1c13feddfaeb1bdef",
-      "name": "Waypoint: Add your JavaScript Slot Machine Slots",
-      "dashedName": "waypoint-add-your-javascript-slot-machine-slots",
+      "title": "Add your JavaScript Slot Machine Slots",
       "difficulty":"9.989",
       "description":[
         "Now that we have our random numbers we need to go and check for when they are all the same that means we should count it as a win",
@@ -1379,12 +1376,12 @@
         " }",
         "</style>"
       ],
+      "type": "waypoint",
       "challengeType": 0
     },
     {
       "id":"cf1111c1c13feddfaeb2bdef",
-      "name": "Waypoint: Bring your JavaScript Slot Machine to Life",
-      "dashedName": "waypoint-bring-your-javascript-slot-machine-to-life",
+      "title": "Bring your JavaScript Slot Machine to Life",
       "difficulty":"9.990",
       "description":[
         "Now we can detect a win let's get the slot machine to look like it works",
@@ -1546,6 +1543,7 @@
         " }",
         "</style>"
       ],
+      "type": "waypoint",
       "challengeType": 0
     }
   ]

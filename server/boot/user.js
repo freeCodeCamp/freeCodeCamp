@@ -44,9 +44,7 @@ module.exports = function(app) {
   router.post('/reset/:token', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
-
   router.get('/account/api', getAccountAngular);
-  router.post('/account/profile', postUpdateProfile);
   router.post('/account/password', postUpdatePassword);
   router.post('/account/delete', postDeleteAccount);
   router.get('/account/unlink/:provider', getOauthUnlink);
@@ -167,11 +165,11 @@ module.exports = function(app) {
           isMigrationGrandfathered: user.isMigrationGrandfathered,
           isGithubCool: user.isGithubCool,
           location: user.location,
-          githubProfile: user.githubProfile,
-          linkedinProfile: user.linkedinProfile,
-          codepenProfile: user.codepenProfile,
-          facebookProfile: user.facebookProfile,
-          twitterHandle: user.twitterHandle,
+          githubProfile: user.github,
+          linkedinProfile: user.linkedin,
+          googleProfile: user.google,
+          facebookProfile: user.facebook,
+          twitterHandle: user.twitter,
           bio: user.bio,
           picture: user.picture,
           progressTimestamps: user.progressTimestamps,
@@ -183,80 +181,6 @@ module.exports = function(app) {
         });
       }
     );
-  }
-
-  /**
-  * POST /account/profile
-  * Update profile information.
-  */
-
-  function postUpdateProfile(req, res, next) {
-
-    User.findById(req.user.id, function(err) {
-      if (err) { return next(err); }
-      var errors = req.validationErrors();
-      if (errors) {
-        req.flash('errors', errors);
-        return res.redirect('/account');
-      }
-
-      User.findOne({
-        where: { email: req.body.email }
-      }, function(err, existingEmail) {
-        if (err) {
-          return next(err);
-        }
-        var user = req.user;
-        if (existingEmail && existingEmail.email !== user.email) {
-          req.flash('errors', {
-            msg: 'An account with that email address already exists.'
-          });
-          return res.redirect('/account');
-        }
-        User.findOne(
-          { where: { username: req.body.username } },
-          function(err, existingUsername) {
-            if (err) {
-              return next(err);
-            }
-            var user = req.user;
-            if (
-              existingUsername &&
-              existingUsername.username !== user.username
-            ) {
-              req.flash('errors', {
-                msg: 'An account with that username already exists.'
-              });
-              return res.redirect('/account');
-            }
-            var body = req.body || {};
-            user.facebookProfile = body.facebookProfile.trim() || '';
-            user.linkedinProfile = body.linkedinProfile.trim() || '';
-            user.codepenProfile = body.codepenProfile.trim() || '';
-            user.twitterHandle = body.twitterHandle.trim() || '';
-            user.bio = body.bio.trim() || '';
-
-            user.save(function(err) {
-              if (err) {
-                return next(err);
-              }
-              updateUserStoryPictures(
-                user.id.toString(),
-                user.picture,
-                user.username,
-                function(err) {
-                  if (err) { return next(err); }
-                  req.flash('success', {
-                    msg: 'Profile information updated.'
-                  });
-                  res.redirect('/account');
-                }
-              );
-            });
-          }
-        );
-      });
-    });
   }
 
   /**

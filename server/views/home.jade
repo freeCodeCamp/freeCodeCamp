@@ -1,8 +1,5 @@
 extends layout
 block content
-    .bg-danger.default-border-radius
-      p &nbsp;&nbsp;&nbsp;&nbsp;
-        a(href='https://github.com/FreeCodeCamp/freecodecamp/wiki/beta' target='_blank') You're using our experimental beta site. None of your progress here will be saved. Please click this to learn more.
     .jumbotron
         .text-center
             h1.hug-top Code with Us
@@ -10,7 +7,7 @@ block content
             .row
                 .col-xs-12.col-sm-12.col-md-3
                     h3.nowrap Get Connected
-                    img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_connect.svg.gz', alt='Get great references and connections for your reto help you get a job')
+                    img.img-responsive.landing-icon.img-center(src= 'https://s3.amazonaws.com/freecodecamp/landingIcons_connect.svg.gz', alt='Get great references and connections to start your software engineer career')
                     p.landing-p Join a community of busy, motivated professionals.
                 .col-xs-12.col-sm-12.col-md-3
                     h3.nowrap Learn JavaScript
@@ -27,13 +24,10 @@ block content
             .big-break
             .row
                 .col-xs-12.col-sm-8.col-sm-offset-2
-                    if (user)
-                        a.btn.btn-cta.signup-btn.btn-block(href="/challenges") Go to my next challenge
-                    else
-                        a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
+                    a.btn.btn-cta.signup-btn.btn-block(href="/login") Start learning to code (it's free)
                     .button-spacer
                     a.btn.btn-cta.btn-success.btn-block(href="/nonprofits") My nonprofit needs coding help
-            h2 As seen in:
+            h2 As featured in
             img.img-center.img-responsive(src='https://s3.amazonaws.com/freecodecamp/as-seen-on.png')
             .spacer
             h2 We're a proven way to start your software engineering career:
