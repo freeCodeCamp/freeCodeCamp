@@ -3,113 +3,54 @@ block content
     script.
         var challengeName = 'Account View'
     .panel.panel-info(ng-controller="profileValidationController")
-        .panel-heading.text-center Update your portfolio here:
+        .panel-heading.text-center Manage your account here
         .panel-body
             if (!user.isGithubCool)
               .row
                 .col-xs-12
-                  .text-left.btn-info.btn.btn-block.btn-link-social(href='http://www.freecodecamp.com/challenges/waypoint-join-our-chat-room')
-                    span Link your account to GitHub to update your portfolio page. Click here if you don’t have a GitHub account yet.
-              .row
-                .col-xs-12
-                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
+                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
                       i.fa.fa-github
-                      | Link GitHub with my account
+                      | Link my GitHub to unlock this profile
             else
               .row
                 .col-xs-12
-                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/auth/github')
+                  a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
                       i.fa.fa-github
-                      | Update Github Info
+                      | Update my profile from Github
 
-            .row
+                  if (!user.twitter)
+                      .col-xs-12
+                          a.btn.btn-lg.btn-block.btn-twitter.btn-link-social(href='/link/twitter')
+                              i.fa.fa-twitter
+                              | Add my Twitter to my profile
+                  if (!user.facebook)
+                      .col-xs-12
+                          a.btn.btn-lg.btn-block.btn-facebook.btn-link-social(href='/link/facebook')
+                              i.fa.fa-facebook
+                              | Add my Facebook to my profile
+                  if (!user.linkedin)
+                      .col-xs-12
+                          a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social(href='/link/linkedin')
+                              i.fa.fa-linkedin
+                              | Add my LinkedIn to my profile
+                  if (!user.google)
+                      .col-xs-12
+                          a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social(href='/link/google')
+                              i.fa.fa-google-plus
+                              | Add my Google+ to my profile
+              .spacer
+              hr
+              .spacer
               .col-xs-12
-                form.form-horizontal(action='/account/profile', method='POST', novalidate='novalidate', name='profileForm' ng-show="asyncComplete")
-                  input(type='hidden', name='_csrf', value=_csrf)
-                  .form-group
-                    label.col-sm-3.col-sm-offset-1.control-label(for='bio') Bio (140 characters)
-                    .col-sm-4
-                      input.form-control(type='text', name='bio', autocomplete="off", ng-model='user.bio', ng-maxlength='140', id='bio')
-                    .col-sm-4.col-sm-offset-5(ng-cloak, ng-show='profileForm.bio.$error.maxlength && !profileForm.bio.$pristine')
-                      alert(type='danger')
-                        span.ion-close-circled
-                        | Your bio must be fewer than 140 characters.
-                  .form-group
-                    label.col-sm-3.col-sm-offset-1.control-label(for='email') Twitter
-                    .col-sm-4
-                      .input-group.twitter-input
-                          span.input-group-addon @
-                          input.form-control(type='text', name='twitterHandle', autocomplete="off", id='twitterHandle', ng-model='user.twitterHandle', ng-maxlength='15', ng-pattern="/^[A-z0-9_]+$/")
-                    .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.twitterHandle.$error.pattern")
-                      alert(type='danger')
-                          span.ion-close-circled
-                          | Your Twitter handle should only contain letters, numbers and underscores (az10_).
-                    .col-sm-4.col-sm-offset-5(ng-cloak, ng-show='profileForm.twitterHandle.$error.maxlength && !profileForm.twitterHandle.$pristine')
-                      alert(type='danger')
-                          span.ion-close-circled
-                          |  Your name must be fewer than 15 characters.
-
-                  .form-group
-                    label.col-sm-3.col-sm-offset-1.control-label(for='email') CodePen
-                    .col-sm-4
-                      input.form-control(type='url', name='codepenProfile', id='codepenProfile', autocomplete="off", ng-model='user.codepenProfile', placeholder='http://')
-                    .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.codepenProfile.$error.url && !profileForm.codepenProfile.$pristine")
-                      alert(type='danger')
-                        span.ion-close-circled
-                        | Please enter a valid URL format (http://www.example.com).
-
-                  .form-group
-                    label.col-sm-3.col-sm-offset-1.control-label(for='email') LinkedIn
-                    .col-sm-4
-                      input.form-control(type='url', name='linkedinProfile', id='linkedinProfile', autocomplete="off", ng-model='user.linkedinProfile', placeholder='http://')
-                    .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.linkedinProfile.$error.url && !profileForm.linkedinProfile.$pristine")
-                      alert(type='danger')
-                        span.ion-close-circled
-                        | Please enter a valid URL format (http://www.example.com).
-
-                  .form-group
-                    label.col-sm-3.col-sm-offset-1.control-label(for='email') Facebook
-                    .col-sm-4
-                      input.form-control(type='url', name='facebookProfile', id='facebookProfile', autocomplete="off", ng-model='user.facebookProfile', placeholder='http://')
-                    .col-sm-4.col-sm-offset-5(ng-cloak, ng-show="profileForm.facebookProfile.$error.url && !profileForm.facebookProfile.$pristine")
-                      alert(type='danger')
-                        span.ion-close-circled
-                        | Please enter a valid URL format (http://www.example.com).
-
-                  button.btn.btn-lg.btn-block.btn-primary.btn-link-social(type='submit', ng-disabled='!user.isGithubCool || profileForm.$invalid')
-                      span.ion-edit
-                      | Update my info
-
-    .panel.panel-info
-        .panel-heading.text-center Manage your account here:
-        .panel-body
-            if (!user.google || !user.facebook || !user.linkedin || !user.twitter)
-                if (!user.twitter)
-                    .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-twitter.btn-link-social.disabled(href='#')
-                            i.fa.fa-twitter
-                            | Link Twitter with my account
-                if (!user.google)
-                    .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-google-plus.btn-link-social.disabled(href='#')
-                            i.fa.fa-google-plus
-                            | Link Google with my account
-                if (!user.facebook)
-                    .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-facebook.btn-link-social.disabled(href='#')
-                            i.fa.fa-facebook
-                            | Link Facebook with my account
-                if (!user.linkedin)
-                    .col-xs-12
-                        a.btn.btn-lg.btn-block.btn-linkedin.btn-link-social.disabled(href='#')
-                            i.fa.fa-linkedin
-                            | Link LinkedIn with my account
-            .col-xs-12
                 a.btn.btn-lg.btn-block.btn-warning.btn-link-social(href='/logout')
                     span.ion-android-exit
                     | Sign me out of Free Code Camp
-            .col-xs-12
-                a.btn.btn-lg.btn-block.btn-danger.confirm-deletion.btn-link-social
+              .col-xs-12
+                a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
+                    span.ion-email
+                    | Email us at team@freecodecamp.com
+              .col-xs-12
+                a.btn.btn-lg.btn-block.btn-danger.btn-link-social.confirm-deletion
                     span.ion-trash-b
                     | Delete my Free Code Camp account
                 script.

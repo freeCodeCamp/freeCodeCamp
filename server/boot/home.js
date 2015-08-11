@@ -10,13 +10,18 @@ module.exports = function(app) {
   app.use(router);
 
   function index(req, res, next) {
-    if (req.user && !req.user.picture) {
-      req.user.picture = defaultProfileImage;
+    if (req.user)
+      if (!req.user.picture) {
+        req.user.picture = defaultProfileImage;
 
-      req.user.save(function(err) {
-        if (err) { return next(err); }
-        res.render('home', { title: message });
-      });
+        req.user.save(function (err) {
+          if (err) {
+            return next(err);
+          }
+          res.render('get-started', {title: message});
+        });
+      } else {
+      res.render('resources/get-started', {title: message});
     } else {
       res.render('home', { title: message });
     }
