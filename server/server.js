@@ -102,7 +102,7 @@ var passportOptions = {
       userObj.email = email;
     }
 
-    if (provider === 'github-login') {
+    if (/github/.test(provider)) {
       setProfileFromGithub(userObj, profile, profile._json);
     }
     return userObj;

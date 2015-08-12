@@ -1,29 +1,29 @@
-var defaultProfileImage =
-  require('../../common/utils/constantStrings.json').defaultProfileImage;
-var message =
+import { defaultProfileImage } from '../../common/utils/constantStrings.json';
+
+const message =
   'Learn to Code JavaScript and get a Coding Job by Helping Nonprofits';
 
 module.exports = function(app) {
   var router = app.loopback.Router();
-  router.get('/', index);
+  router.get('/', addDefaultImage, index);
 
   app.use(router);
 
-  function index(req, res, next) {
-    if (req.user)
-      if (!req.user.picture) {
-        req.user.picture = defaultProfileImage;
-
-        req.user.save(function (err) {
-          if (err) {
-            return next(err);
-          }
-          res.render('get-started', {title: message});
-        });
-      } else {
-      res.render('resources/get-started', {title: message});
-    } else {
-      res.render('home', { title: message });
+  function addDefaultImage(req, res, next) {
+    if (!req.user || req.user.picture) {
+      return next();
     }
+    req.user.picture = defaultProfileImage;
+    req.user.save(function(err) {
+      if (err) { return next(err); }
+      next();
+    });
+  }
+
+  function index(req, res) {
+    if (req.user) {
+      return res.render('resources/get-started', { title: message });
+    }
+    res.render('home', { title: message });
   }
 };
