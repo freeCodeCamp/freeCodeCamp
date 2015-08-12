@@ -154,8 +154,8 @@
       "difficulty": 3.04,
       "description": [
         "You can also target elements by their id attributes.",
-        "First target your <code>div</code> element with the class \"target3\" by using the <code>$(\"#target3\")</code> selector.",
-        "Note that, just like with CSS declarations, you type a <code>#</code> before the class's name.",
+        "First target your <code>div</code> element with the id \"target3\" by using the <code>$(\"#target3\")</code> selector.",
+        "Note that, just like with CSS declarations, you type a <code>#</code> before the id's name.",
         "Then use jQuery's <code>.addClass()</code> function to add the classes \"animated\" and \"fadeOut\".",
         "Make all the <code>button</code> element with the id \"target3\" fadeOut. <code>$(\"#target3\").addClass(\"animated fadeOut\")</code>."
       ],
@@ -679,8 +679,8 @@
       ],
       "tests": [
         "assert($(\"#target6\").css(\"color\") === 'rgb(0, 255, 0), 'Your \"target6\" element should have green text.')",
-        "assert(!editor.match(/\\.children\\(\\)\\.css/g), 'You should use the <code>children&#40&#41</code> function to modify these elements.')",
-        "assert(!editor.match(/<div class=\"well\" id=\"right-well\">/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(editor.match(/\\.children\\(\\)\\.css/g), 'You should use the <code>children&#40&#41</code> function to modify these elements.')",
+        "assert(editor.match(/<div class=\"well\" id=\"right-well\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -730,7 +730,7 @@
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
         "Fortunately, jQuery has some other tricks for targeting the right elements.",
         "jQuery has a function called <code>:nth-child()</code> that will allow you select the nth element of a certain class or element type.",
-        "Make the first child in each of your well elements bounce.",
+        "Make the second child in each of your well elements bounce.",
         "Here's how you would give the third element in each well bounce: <code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>"
       ],
       "tests": [
