@@ -801,8 +801,8 @@ iframe.iphone {
     width: 280px;
     height: 500px;
     position: absolute;
-    top: 70px;
-    right: 25px;
+    top: 74px;
+    right: 20px;
     overflow-y: scroll;
   }
   @media(max-width: 991px) {
@@ -821,13 +821,12 @@ iframe.iphone {
 // To adjust right margin, negative values bring the image closer to the edge of the screen
 .iphone-position {
   position: absolute;
-  top: -50px;
-  right: -205px;
+  right: 0px;
   z-index: -1;
 }
 
 .courseware-height {
-  min-height: 650px;
+  min-height: 669px;
 }
 
 // This is used to give icons text for screen readers to read out, without needing the text to actually appear.
@@ -1127,13 +1126,6 @@ hr {
   color: @gray-light;
 }
 
-@media only screen and (min-width: 993px) {
-  .iframe-scroll {
-    position: fixed !important;
-    margin-top: 75px;
-    z-index: 1;
-  }
-}
 @media only screen and (max-width: 992px) {
   .iframe-scroll {
     height: auto;

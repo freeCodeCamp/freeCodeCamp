@@ -315,21 +315,6 @@ $(document).ready(function() {
         $('.editorScrollDiv').css("height",$(window).height()-($('.navbar').height()+$('.footer').height()+100) + "px");
     }
 
-    //fakeiphone positioning hotfix
-    if($('.iphone-position').html() !==undefined || $('.iphone').html() !== undefined){
-        var startIphonePosition = parseInt($('.iphone-position').css('top').replace('px', ''));
-        var startIphone = parseInt($('.iphone').css('top').replace('px', ''));
-        $(window).on('scroll', function(){
-            if((($('.courseware-height').height() + $('.courseware-height').offset().top)-$(window).scrollTop()-$('.iphone-position').height()) <= 0){
-                $('.iphone-position').css('top', startIphonePosition+(($('.courseware-height').height() + $('.courseware-height').offset().top)-$(window).scrollTop()-$('.iphone-position').height()));
-                $('.iphone').css('top', startIphonePosition+(($('.courseware-height').height() + $('.courseware-height').offset().top)-$(window).scrollTop()-$('.iphone-position').height())+120);
-            }
-            else{
-                $('.iphone-position').css('top', startIphonePosition);
-                $('.iphone').css('top', startIphone);
-            }
-        });
-    }
    if($('.scroll-locker').html() != undefined){
         function lockTop(initOff){
                 if ($(window).width() >= 992) {
