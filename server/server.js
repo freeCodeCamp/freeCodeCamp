@@ -66,6 +66,10 @@ var passportOptions = {
       userObj.email = email;
     }
 
+    if (!(/github/).test(provider)) {
+      userObj[provider.split('-')[0]] = profile.username;
+    }
+
     if (/github/.test(provider)) {
       setProfileFromGithub(userObj, profile, profile._json);
     }

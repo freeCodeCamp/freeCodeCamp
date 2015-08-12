@@ -92,6 +92,7 @@ module.exports = {
     failureRedirect: failureRedirect,
     consumerKey: process.env.TWITTER_KEY,
     consumerSecret: process.env.TWITTER_SECRET,
+    link: true,
     failureFlash: true
   },
   'linkedin-login': {
@@ -126,6 +127,7 @@ module.exports = {
     authOptions: {
       state: process.env.LINKEDIN_STATE
     },
+    link: true,
     failureFlash: true
   },
   'github-login': {
@@ -154,6 +156,7 @@ module.exports = {
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
     scope: ['email'],
+    link: true,
     failureFlash: true
   }
 };

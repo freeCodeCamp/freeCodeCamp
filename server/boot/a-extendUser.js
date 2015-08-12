@@ -1,8 +1,10 @@
-var Rx = require('rx');
-var debug = require('debug')('freecc:user:remote');
+import { Observable } from 'rx';
+import debugFactory from 'debug';
+
+const debug = debugFactory('freecc:user:remote');
 
 function destroyAllRelated(id, Model) {
-  return Rx.Observable.fromNodeCallback(
+  return Observable.fromNodeCallback(
     Model.destroyAll,
     Model
   )({ userId: id });
@@ -19,7 +21,7 @@ module.exports = function(app) {
     if (!id) {
       return next();
     }
-    Rx.Observable.combineLatest(
+    Observable.combineLatest(
       destroyAllRelated(id, UserIdentity),
       destroyAllRelated(id, UserCredential),
       function(identData, credData) {

@@ -24,7 +24,7 @@ export default function(UserIdent) {
       return next();
     }
 
-    const { profile } = userIdent;
+    const { profile, provider } = userIdent;
     const picture = getFirstImageFromProfile(profile);
 
     debug('picture', picture, user.picture);
@@ -41,8 +41,12 @@ export default function(UserIdent) {
       userChanged = true;
     }
 
+    if (!(/github/).test(provider)) {
+      user[provider.split('-')[0]] = profile.username;
+    }
+
     // if user signed in with github refresh their info
-    if (/github/.test(userIdent.provider)) {
+    if (/github/.test(provider)) {
       debug("user isn't github cool or username from github is different");
       setProfileFromGithub(user, profile, profile._json);
       userChanged = true;
