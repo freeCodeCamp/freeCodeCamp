@@ -63,7 +63,8 @@ Challenge.destroyAll(function(err, info) {
           .toLowerCase()
           .replace(/\:/g, '')
           .replace(/\s/g, '-');
-        challenge.order = +('' + order + (index + 1));
+        challenge.order = order;
+        challenge.suborder = index + 1;
         challenge.block = block;
 
         return challenge;
