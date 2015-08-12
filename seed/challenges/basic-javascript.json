@@ -438,7 +438,7 @@
         "Let's now go create a nested array called <code>myArray</code>"
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) === 'object' && editor.getValue().match(/\\[\\[/g).length >= 1 && editor.getValue().match(/\\]\\]/g).length >= 1){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
+        "assert((function(){if(myArray && myArray.constructor === Array && myArray.length>0){if(myArray[0] && myArray[0].constructor === Array && myArray[0].length>0){return(true);}}else{return(false);}})(),'myArray should contain at least one array');"
       ],
       "challengeSeed":[
         "var myArray = [];",
