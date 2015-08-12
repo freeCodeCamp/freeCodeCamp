@@ -98,7 +98,6 @@ TWITTER_TOKEN=stuff
 TWITTER_TOKEN_SECRET=stuff
 
 BLOGGER_KEY=stuff
-SLACK_WEBHOOK=stuff
 
 SESSION_SECRET=secretstuff
 COOKIE_SECRET='this is a secret'

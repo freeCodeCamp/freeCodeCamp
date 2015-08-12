@@ -141,5 +141,19 @@ module.exports = {
     clientSecret: process.env.GITHUB_SECRET,
     scope: ['email'],
     failureFlash: true
+  },
+  'github-link': {
+    provider: 'github',
+    authScheme: 'oauth2',
+    module: 'passport-github',
+    authPath: '/link/github',
+    callbackURL: '/link/github/callback',
+    callbackPath: '/link/github/callback',
+    successRedirect: successRedirect,
+    failureRedirect: failureRedirect,
+    clientID: process.env.GITHUB_ID,
+    clientSecret: process.env.GITHUB_SECRET,
+    scope: ['email'],
+    failureFlash: true
   }
 };

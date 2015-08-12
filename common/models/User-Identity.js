@@ -79,7 +79,7 @@ export default function(UserIdent) {
     }
 
     // if user signed in with github refresh their info
-    if (userIdent.provider === 'github-login') {
+    if (/github/.test(userIdent.provider)) {
       debug("user isn't github cool or username from github is different");
       setProfileFromGithub(user, profile, profile._json);
       userChanged = true;

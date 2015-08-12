@@ -38,9 +38,10 @@ function updateUserProgress(user, challengeId, completedChallenge) {
     return id === challengeId;
   });
 
-  if (alreadyCompleted) {
+  if (!alreadyCompleted) {
     user.progressTimestamps.push({
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      completedChallenge
     });
   }
   user.completedChallenges.push(completedChallenge);
@@ -458,7 +459,10 @@ module.exports = function(app) {
       .map(camperCount => numberWithCommas(camperCount));
 
     const query = {
-      order: 'order ASC'
+      order: [
+        'order ASC',
+        'suborder ASC'
+      ]
     };
 
     // create a stream of all the challenges

@@ -4,6 +4,10 @@
   "idInjection": true,
   "trackChanges": false,
   "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
     "name": {
       "type": "string",
       "index": {
@@ -20,6 +24,9 @@
       "type": "string"
     },
     "order": {
+      "type": "number"
+    },
+    "suborder": {
       "type": "number"
     },
     "dashedName": {
