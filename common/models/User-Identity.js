@@ -1,50 +1,13 @@
-import assign from 'object.assign';
 import debugFactory from 'debug';
+
+import {
+  setProfileFromGithub,
+  getFirstImageFromProfile
+} from '../../server/utils/auth';
 
 const debug = debugFactory('freecc:models:userIdent');
 
 const { defaultProfileImage } = require('../utils/constantStrings.json');
-
-function getFirstImageFromProfile(profile) {
-  return profile && profile.photos && profile.photos[0] ?
-    profile.photos[0].value :
-    null;
-}
-
-// using es6 argument destructing
-function setProfileFromGithub(
-  user,
-  {
-    profileUrl: githubURL,
-    username
-  },
-  {
-    id: githubId,
-    'avatar_url': picture,
-    email: githubEmail,
-    'created_at': joinedGithubOn,
-    blog: website,
-    location,
-    name
-  }
-) {
-  return assign(
-    user,
-    { isGithubCool: true, isMigrationGrandfathered: false },
-    {
-      name,
-      username: username.toLowerCase(),
-      location,
-      joinedGithubOn,
-      website,
-      picture,
-      githubId,
-      githubURL,
-      githubEmail,
-      githubProfile: githubURL
-    }
-  );
-}
 
 export default function(UserIdent) {
  UserIdent.observe('before save', function(ctx, next) {
