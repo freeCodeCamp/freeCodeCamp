@@ -4,6 +4,10 @@
   "idInjection": true,
   "trackChanges": false,
   "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
     "position": {
       "type": "string"
     },

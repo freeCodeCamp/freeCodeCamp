@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import moment from 'moment';
-import R from 'ramda';
 import { Observable } from 'rx';
 import assign from 'object.assign';
 import debugFactory from 'debug';
@@ -19,28 +18,29 @@ import {
 } from '../utils/middleware';
 
 const debug = debugFactory('freecc:challenges');
-var challengeMapWithNames = utils.getChallengeMapWithNames();
-var challengeMapWithIds = utils.getChallengeMapWithIds();
-var challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
-var challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+const challengeMapWithNames = utils.getChallengeMapWithNames();
+const challengeMapWithIds = utils.getChallengeMapWithIds();
+const challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
+const challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+const firstChallenge = 'waypoint-say-hello-to-html-elements';
 
-var dasherize = utils.dasherize;
-var unDasherize = utils.unDasherize;
-
-var getMDNLinks = utils.getMDNLinks;
+const dasherize = utils.dasherize;
+const unDasherize = utils.unDasherize;
+const getMDNLinks = utils.getMDNLinks;
 
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 function updateUserProgress(user, challengeId, completedChallenge) {
-  var alreadyCompleted = user.completedChallenges.some(({ id }) => {
+  const alreadyCompleted = user.completedChallenges.some(({ id }) => {
     return id === challengeId;
   });
 
-  if (alreadyCompleted) {
+  if (!alreadyCompleted) {
     user.progressTimestamps.push({
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      completedChallenge
     });
   }
   user.completedChallenges.push(completedChallenge);
@@ -50,8 +50,34 @@ function updateUserProgress(user, challengeId, completedChallenge) {
 module.exports = function(app) {
   const router = app.loopback.Router();
 
+  const challengesQuery = {
+    order: [
+      'order ASC',
+      'suborder ASC'
+    ]
+  };
+
+  // challenge model
   const Challenge = app.models.Challenge;
+  // challenge find query stream
   const findChallenge$ = observeMethod(Challenge, 'find');
+  // create a stream of all the challenges
+  const challenge$ = findChallenge$(challengesQuery)
+    .flatMap(challenges => Observable.from(challenges))
+    .shareReplay();
+
+  // create a stream of challenge blocks
+  const blocks$ = challenge$
+    // group challenges by block | returns a stream of observables
+    .groupBy(challenge => challenge.block)
+    // turn block group stream into an array
+    .flatMap(block$ => block$.toArray())
+    // turn array into stream of object
+    .map(blockArray => ({
+      name: blockArray[0].block,
+      dashedName: dasherize(blockArray[0].block),
+      challenges: blockArray
+    }));
 
   const User = app.models.User;
   const userCount$ = observeMethod(User, 'count');
@@ -104,36 +130,74 @@ module.exports = function(app) {
     // serve index + 1 challenge
     // otherwise increment block key and serve the first challenge in that block
     // unless the next block is undefined, which means no next block
-    var nextChallengeName;
+    let nextChallengeName = firstChallenge;
 
-    var challengeId = String(req.user.currentChallenge.challengeId);
-    var challengeBlock = req.user.currentChallenge.challengeBlock;
-    // TODO(berks) fix index call here
-    var indexOfChallenge = challengeMapWithIds[challengeBlock]
-      .indexOf(challengeId);
+    const challengeId = req.user.currentChallenge.challengeId;
+    // find challenge
+    return challenge$
+      .filter(({ id }) => id === challengeId)
+      // now lets find the block it belongs to
+      .flatMap(challenge => {
+        // find the index of the block this challenge resides in
+        const blockIndex$ = blocks$
+          .findIndex(({ name }) => name === challenge.block);
 
-    if (indexOfChallenge + 1
-      < challengeMapWithIds[challengeBlock].length) {
-      nextChallengeName =
-        challengeMapWithDashedNames[challengeBlock][++indexOfChallenge];
-    } else if (typeof challengeMapWithIds[++challengeBlock] !== 'undefined') {
-      nextChallengeName = R.head(challengeMapWithDashedNames[challengeBlock]);
-    } else {
-      req.flash('errors', {
-        msg: 'It looks like you have finished all of our challenges.' +
-        ' Great job! Now on to helping nonprofits!'
-      });
-      nextChallengeName = R.head(challengeMapWithDashedNames[0].challenges);
-    }
+        return blockIndex$
+          .flatMap(blockIndex => {
+            // could not find block?
+            if (blockIndex === -1) {
+              return Observable.throw(
+                'could not find challenge block for ' + challenge.block
+              );
+            }
+            const nextBlock$ = blocks$.elementAt(blockIndex + 1);
+            const firstChallengeOfNextBlock$ = nextBlock$
+              .map(block => block.challenges[0]);
 
-    saveUser(req.user)
+            return blocks$
+              .elementAt(blockIndex)
+              .flatMap(block => {
+                // find where our challenge lies in the block
+                const challengeIndex$ = Observable.from(block.challenges)
+                  .findIndex(({ id }) => id === challengeId);
+
+                // grab next challenge in this block
+                return challengeIndex$
+                  .map(index => {
+                    return block.challenges[index + 1];
+                  })
+                  .flatMap(nextChallenge => {
+                    if (!nextChallenge) {
+                      return firstChallengeOfNextBlock$;
+                    }
+                    return Observable.just(nextChallenge);
+                  });
+              });
+          });
+      })
+      .map(nextChallenge => {
+        nextChallengeName = nextChallenge.dashedName;
+        return nextChallengeName;
+      })
+      .flatMap(() => {
+        return saveUser(req.user);
+      })
       .subscribe(
         function() {},
         next,
         function() {
+          debug('next challengeName', nextChallengeName);
+          if (!nextChallengeName || nextChallengeName === firstChallenge) {
+            req.flash('errors', {
+              msg: 'It looks like you have finished all of our challenges.' +
+              ' Great job! Now on to helping nonprofits!'
+            });
+            return res.redirect('/challenges/' + firstChallenge);
+          }
           res.redirect('/challenges/' + nextChallengeName);
         }
       );
+
   }
 
   function returnCurrentChallenge(req, res, next) {
@@ -141,7 +205,6 @@ module.exports = function(app) {
       req.user.currentChallenge = {};
       req.user.currentChallenge.challengeId = challengeMapWithIds['0'][0];
       req.user.currentChallenge.challengeName = challengeMapWithNames['0'][0];
-      req.user.currentChallenge.challengeBlock = '0';
       req.user.currentChallenge.dashedName =
         challengeMapWithDashedNames['0'][0];
     }
@@ -194,18 +257,7 @@ module.exports = function(app) {
           req.user.currentChallenge = {
             challengeId: challenge.id,
             challengeName: challenge.name,
-            dashedName: challenge.dashedName,
-            challengeBlock: R.head(R.flatten(Object.keys(challengeMapWithIds)
-                .map(function(key) {
-                  return challengeMapWithIds[key]
-                    .filter(function(elem) {
-                      return elem === '' + challenge.id;
-                    })
-                    .map(function() {
-                      return key;
-                    });
-                })
-            ))
+            dashedName: challenge.dashedName
           };
         }
 
@@ -456,18 +508,6 @@ module.exports = function(app) {
 
     const camperCount$ = userCount$()
       .map(camperCount => numberWithCommas(camperCount));
-
-    const query = {
-      order: [
-        'order ASC',
-        'suborder ASC'
-      ]
-    };
-
-    // create a stream of all the challenges
-    const challenge$ = findChallenge$(query)
-      .flatMap(challenges => Observable.from(challenges))
-      .shareReplay();
 
     // create a stream of an array of all the challenge blocks
     const blocks$ = challenge$
