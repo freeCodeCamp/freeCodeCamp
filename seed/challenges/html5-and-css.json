@@ -1989,7 +1989,7 @@
       ],
       "tests": [
         "assert($('input[type=\"radio\"]').length > 1, 'Your page should have two radio button elements.')",
-        "assert($('input[type=\"radio\"]:nth-child(1)').attr('name') === 'indoor-outdoor', 'Give your radio buttons the <code>name</code> attribute of \"indoor-outdoor\".')",
+        "assert($('input[type=\"radio\"]:nth-child(1)').attr('name') === 'indoor-outdoor' && $('input[type=\"radio\"]:nth-child(2)').attr('name') === 'indoor-outdoor', 'Give your radio buttons the <code>name</code> attribute of \"indoor-outdoor\".')",
         "assert($('label').length > 1, 'Each of your two radio button elements should be nested in a label element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
         "assert($('label').text().match(/indoor/gi), 'One of your radio buttons should have the label \"indoor\".')",
