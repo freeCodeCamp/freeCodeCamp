@@ -11,17 +11,19 @@ const debug = debugFactory('freecc:react-server');
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
-  // '/hikes',
-  // '/hikes/*',
-  // '/jobs'
+  '/hikes',
+  '/hikes/*',
+  '/jobs'
 ];
 
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
 
-  routes.forEach(function(route) {
-    router.get(route, serveReactApp);
-  });
+  if (process.env.NODE_ENV === 'development') {
+    routes.forEach(function(route) {
+      router.get(route, serveReactApp);
+    });
+  }
 
   app.use(router);
 
