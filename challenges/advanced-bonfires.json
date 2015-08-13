@@ -11,7 +11,7 @@
         "The user may fill out the form field any way they choose as long as it is a valid US number. The following are all valid formats for US numbers:",
         "555-555-5555, (555)555-5555, (555) 555-5555, 555 555 5555, 5555555555, 1 555 555 5555",
         "For this challenge you will be presented with a string such as \"800-692-7753\" or \"8oo-six427676;laskdjf\". Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is \"1\". Return true if the string is a valid US phone number; otherwise false.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "tests": [
         "expect(telephoneCheck(\"555-555-5555\")).to.be.a(\"boolean\");",
@@ -70,7 +70,7 @@
       "description": [
         "Create a function that takes two or more arrays and returns an array of the symmetric difference of the provided arrays.",
         "The mathematical term symmetric difference refers to the elements in two sets that are in either the first or second set, but not in both.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function sym(args) {",
@@ -111,7 +111,7 @@
         "cid is a 2d array listing available currency.",
         "Return the string \"Insufficient Funds\" if cash-in-drawer is less than the change due. Return the string \"Closed\" if cash-in-drawer is equal to the change due.",
         "Otherwise, return change in coin and bills, sorted in highest to lowest order.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function drawer(price, cash, cid) {",
@@ -164,7 +164,7 @@
       "difficulty": "4.04",
       "description": [
         "Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery. Update current inventory item quantity, and if an item cannot be found, add the new item and quantity into the inventory array in alphabetical order.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function inventory(arr1, arr2) {",
@@ -220,7 +220,7 @@
       "description": [
         "Return the number of total permutations of the provided string that don't have repeated consecutive letters.",
         "For example, 'aab' should return 2 because it has 6 total permutations, but only 2 of them don't have the same letter (in this case 'a') repeating.",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function permAlone(str) {",
@@ -266,7 +266,7 @@
         "For example, if the year and month are the same then only the day range should be displayed.",
         "Secondly, if the starting year is the current year, and the ending year can be inferred by the reader, the year should be omitted.",
         "Input date is formatted as YYYY-MM-DD",
-        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck. Try to pair program. Write your own code."
+        "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
       "challengeSeed": [
         "function friendly(str) {",

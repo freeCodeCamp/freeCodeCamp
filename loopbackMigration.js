@@ -86,15 +86,19 @@ var users = dbObservable
   .map(function(user) {
     // flatten user
     assign(user, user.portfolio, user.profile);
-    if (user.username) {
-      return user;
+    if (!user.username) {
+      user.username = 'fcc' + uuid.v4().slice(0, 8);
     }
-    user.username = 'fcc' + uuid.v4().slice(0, 8);
     if (user.github) {
       user.isGithubCool = true;
     } else {
       user.isMigrationGrandfathered = true;
     }
+    providers.forEach(function(provider) {
+      user[provider + 'id'] = user[provider];
+      user[provider] = null;
+    });
+
     return user;
   })
   .shareReplay();
@@ -123,7 +127,7 @@ var userIdentityCount = users
       .map(function(provider) {
         return {
           provider: provider,
-          externalId: user[provider],
+          externalId: user[provider + 'id'],
           userId: user._id || user.id
         };
       })
