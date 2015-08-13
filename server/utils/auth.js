@@ -40,3 +40,7 @@ export function getFirstImageFromProfile(profile) {
     profile.photos[0].value :
     null;
 }
+
+export function getSocialProvider(provider) {
+  return provider.split('-')[0];
+}
