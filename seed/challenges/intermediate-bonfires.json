@@ -397,12 +397,12 @@
         "convert('Dolce & Gabbana');"
       ],
       "tests": [
-        "assert.strictEqual(convert('Dolce & Gabbana'), 'Dolce &amp; Gabbana', 'should escape characters');",
-        "assert.strictEqual(convert('Hamburgers < Pizza < Tacos'), 'Hamburgers &lt; Pizza &lt; Tacos', 'should escape characters');",
-        "assert.strictEqual(convert('Sixty > twelve'), 'Sixty &gt; twelve', 'should escape characters');",
-        "assert.strictEqual(convert('Stuff in \"quotation marks\"'), 'Stuff in &quot;quotation marks&quot;', 'should escape characters');",
-        "assert.strictEqual(convert(\"Shindler's List\"), 'Shindler&apos;s List', 'should escape characters');",
-        "assert.strictEqual(convert('<>'), '&lt;&gt;', 'should escape characters');",
+        "assert.match(convert('Dolce & Gabbana'), /Dolce &(amp|AMP|#x00026|#38); Gabbana/, 'should escape characters');",
+        "assert.match(convert('Hamburgers < Pizza < Tacos'), /Hamburgers &(lt|LT|#x0003C|#60); Pizza &(lt|LT|#x0003C|#60); Tacos/, 'should escape characters');",
+        "assert.match(convert('Sixty > twelve'), /Sixty &(gt|GT|#x0003E|#62); twelve/, 'should escape characters');",
+        "assert.match(convert('Stuff in \"quotation marks\"'), /Stuff in &(quot|QUOT|#x00022|#34);quotation marks&(quot|QUOT|#x00022|#34);/, 'should escape characters');",
+        "assert.match(convert(\"Shindler's List\"), /Shindler&(apos|#x00027|#39);s List/, 'should escape characters');",
+        "assert.match(convert('<>'), /&(lt|LT|#x0003C|#60);&(gt|GT|#x0003E|#62);/, 'should escape characters');",
         "assert.strictEqual(convert('abc'), 'abc', 'should handle strings with nothing to escape');"
       ],
       "MDNlinks": [
