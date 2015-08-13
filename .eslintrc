@@ -168,7 +168,6 @@
     "no-ternary": 0,
     "no-trailing-spaces": 1,
     "no-underscore-dangle": 0,
-    "no-extra-parens": 2,
     "one-var": 0,
     "operator-assignment": 0,
     "padded-blocks": 0,
