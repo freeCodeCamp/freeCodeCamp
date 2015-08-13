@@ -231,7 +231,7 @@ module.exports = function(app) {
 
   function twitch(req, res) {
     res.render('resources/twitch', {
-      title: 'Enter Free Code Camp\'s Chat Rooms'
+      title: 'Watch us code on Twitch.tv and LiveCoding.tv'
     });
   }
 

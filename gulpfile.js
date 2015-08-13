@@ -26,7 +26,8 @@ var Rx = require('rx'),
   eslint = require('gulp-eslint');
 
 
-Rx.longStackSupport = true;
+Rx.config.longStackSupport = true;
+
 var reloadDelay = 1000;
 var reload = sync.reload;
 var paths = {
@@ -83,7 +84,7 @@ gulp.task('inject', function() {
   gulp.src('views/home.jade')
     .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(inject(gulp.src(bower()), {
-      //ignorePath: '/public'
+      // ignorePath: '/public'
     }))
     .pipe(gulp.dest('views'));
 });

@@ -32,7 +32,7 @@
       "difficulty": 0.35,
       "challengeSeed": ["114684727"],
       "description": [
-        "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will can alter the behavior of DOM elements based on the directives you've used.",
+        "Directives serve as markers in your HTML. When Angular.js compiles your HTML, it will alter the behavior of DOM elements based on the directives you've used.",
         "Let's learn how these powerful directives work, and how to use them to make your web apps more dynamic",
         "Go to <a href='http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1' target='_blank'>http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/2/section/1/video/1</a> and complete the section."
       ],
