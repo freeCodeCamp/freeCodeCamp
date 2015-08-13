@@ -22,48 +22,49 @@ block content
     .row.courseware-height
         .col-xs-12.col-sm-12.col-md-3.col-lg-3
             .scroll-locker
-                .well
-                    .row
-                        .col-xs-12
-                            h3.text-center.negative-10= name
-                            .bonfire-instructions
-                                for sentence in details
-                                    p.wrappable.negative-10!= sentence
-                                .negative-bottom-margin-30
-                if (user)
-                    label.btn.btn-primary.btn-block.negative-10#next-courseware-button
-                        .ion-checkmark-circled
-                            | &nbsp; Go to my next challenge (ctrl + enter)
-                    .button-spacer
-                    .btn-group.input-group.btn-group-justified
-                        label.btn.btn-success#trigger-reset-modal
-                            i.fa.fa-refresh
-                                | &nbsp; Reset
-                        label.btn.btn-success#trigger-help-modal
-                            i.fa.fa-medkit
-                                | &nbsp; Help
-                        label.btn.btn-success#trigger-issue-modal
-                            i.fa.fa-bug
-                                | &nbsp; Bug
-                    script.
-                        var userLoggedIn = true;
-                else
-                    .button-spacer
-                    a.btn.signup-btn.btn-block.btn-block.negative-15(href='/login') Sign in so you can save your progress
+                .innerMarginFix(style = "width: 99%;")
+                    .well
+                        .row
+                            .col-xs-12
+                                h3.text-center.negative-10= name
+                                .bonfire-instructions
+                                    for sentence in details
+                                        p.wrappable.negative-10!= sentence
+                                    .negative-bottom-margin-30
+                    if (user)
+                        label.btn.btn-primary.btn-block.negative-10#next-courseware-button
+                            .ion-checkmark-circled
+                                | &nbsp; Go to my next challenge (ctrl + enter)
+                        .button-spacer
+                        .btn-group.input-group.btn-group-justified
+                            label.btn.btn-success#trigger-reset-modal
+                                i.fa.fa-refresh
+                                    | &nbsp; Reset
+                            label.btn.btn-success#trigger-help-modal
+                                i.fa.fa-medkit
+                                    | &nbsp; Help
+                            label.btn.btn-success#trigger-issue-modal
+                                i.fa.fa-bug
+                                    | &nbsp; Bug
                         script.
-                            var userLoggedIn = false;
-                .button-spacer
-                ul#testSuite.list-group
-                br
-                script(type="text/javascript").
-                    $('#next-courseware-button').attr('disabled', 'disabled');
-                    var tests = !{JSON.stringify(tests)};
-                    var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var challenge_Id = !{JSON.stringify(challengeId)};
-                    var challenge_Name = !{JSON.stringify(name)};
-                    var prodOrDev = !{JSON.stringify(environment)};
-                    var challengeType = !{JSON.stringify(challengeType)};
-                    var started = Math.floor(Date.now());
+                            var userLoggedIn = true;
+                    else
+                        .button-spacer
+                        a.btn.signup-btn.btn-block.btn-block.negative-15(href='/login') Sign in so you can save your progress
+                            script.
+                                var userLoggedIn = false;
+                    .button-spacer
+                    ul#testSuite.list-group
+                    br
+                    script(type="text/javascript").
+                        $('#next-courseware-button').attr('disabled', 'disabled');
+                        var tests = !{JSON.stringify(tests)};
+                        var challengeSeed = !{JSON.stringify(challengeSeed)};
+                        var challenge_Id = !{JSON.stringify(challengeId)};
+                        var challenge_Name = !{JSON.stringify(name)};
+                        var prodOrDev = !{JSON.stringify(environment)};
+                        var challengeType = !{JSON.stringify(challengeType)};
+                        var started = Math.floor(Date.now());
         .col-xs-12.col-sm-12.col-md-5.col-lg-6
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
                     #mainEditorPanel
