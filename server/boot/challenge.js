@@ -77,7 +77,11 @@ module.exports = function(app) {
       name: blockArray[0].block,
       dashedName: dasherize(blockArray[0].block),
       challenges: blockArray
-    }));
+    }))
+    .filter(({ name })=> {
+      return name !== 'Hikes';
+    })
+    .shareReplay();
 
   const User = app.models.User;
   const userCount$ = observeMethod(User, 'count');
@@ -135,6 +139,7 @@ module.exports = function(app) {
     const challengeId = req.user.currentChallenge.challengeId;
     // find challenge
     return challenge$
+      .filter(({ block }) => block !== 'Hikes')
       .filter(({ id }) => id === challengeId)
       // now lets find the block it belongs to
       .flatMap(challenge => {
@@ -537,6 +542,7 @@ module.exports = function(app) {
           completed: completedCount / blockArray.length * 100
         };
       })
+      .filter(({ name }) => name !== 'Hikes')
       // turn stream of blocks into a stream of an array
       .toArray();
 

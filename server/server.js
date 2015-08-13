@@ -10,11 +10,11 @@ var uuid = require('node-uuid'),
     path = require('path'),
     passportProviders = require('./passport-providers');
 
+var setProfileFromGithub = require('./utils/auth').setProfileFromGithub;
+var getSocialProvider = require('./utils/auth').getSocialProvider;
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
-/**
- * Create Express server.
- */
+
 var app = loopback();
 
 expressState.extend(app);
@@ -44,41 +44,6 @@ passportConfigurator.setupModels({
   userCredentialModel: app.models.userCredential
 });
 
-// using es6 argument destructing
-function setProfileFromGithub(
-  user,
-  {
-    profileUrl: githubURL,
-    username
-  },
-  {
-    id: githubId,
-    'avatar_url': picture,
-    email: githubEmail,
-    'created_at': joinedGithubOn,
-    blog: website,
-    location,
-    name
-  }
-) {
-  return assign(
-    user,
-    { isGithubCool: true, isMigrationGrandfathered: false },
-    {
-      name,
-      username: username.toLowerCase(),
-      location,
-      joinedGithubOn,
-      website,
-      picture,
-      githubId,
-      githubURL,
-      githubEmail,
-      githubProfile: githubURL
-    }
-  );
-}
-
 var passportOptions = {
   emailOptional: true,
   profileToUser: function(provider, profile) {
@@ -100,6 +65,10 @@ var passportOptions = {
 
     if (email) {
       userObj.email = email;
+    }
+
+    if (!(/github/).test(provider)) {
+      userObj[getSocialProvider(provider)] = profile.username;
     }
 
     if (/github/.test(provider)) {
