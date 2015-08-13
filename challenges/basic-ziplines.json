@@ -9,9 +9,7 @@
       "challengeSeed": ["125658022"],
       "description": [
         "Now you're ready to start our Zipline challenges. These front-end development challenges will give you many opportunities to apply the HTML, CSS, jQuery and JavaScript you've learned to build static (database-less) applications.",
-        "For many of these challenges, you will be using JSON data from external API endpoints, such as Twitch.tv and Twitter. Note that you don't need to have a database to use these data.",
-        "The easiest way to manipulate these data is with <a href='http://api.jquery.com/jquery.getjson/' target='_blank'>jQuery $.getJSON()</a>.",
-        "Whatever you do, don't get discouraged! Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>RSAP</a> if you get stuck.",
+         "Whatever you do, don't get discouraged! Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Post</a> if you get stuck.",
         "We'll build these challenges using CodePen, a popular tool for creating, sharing, and discovering static web applications.",
         "Go to <a href='http://codepen.io' target='_blank'>http://codepen.io</a> and create an account.",
         "Click your user image in the top right corner, then click the \"New pen\" button that drops down.",
