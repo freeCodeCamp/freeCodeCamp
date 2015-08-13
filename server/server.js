@@ -11,6 +11,7 @@ var uuid = require('node-uuid'),
     passportProviders = require('./passport-providers');
 
 var setProfileFromGithub = require('./utils/auth').setProfileFromGithub;
+var getSocialProvider = require('./utils/auth').getSocialProvider;
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
 
@@ -67,7 +68,7 @@ var passportOptions = {
     }
 
     if (!(/github/).test(provider)) {
-      userObj[provider.split('-')[0]] = profile.username;
+      userObj[getSocialProvider(provider)] = profile.username;
     }
 
     if (/github/.test(provider)) {
