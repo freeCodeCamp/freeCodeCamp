@@ -38,7 +38,7 @@
         "For now let's modify our <code>welcomeToBooleans</code>function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked"
       ],
       "tests": [
-        "assert(typeof(welcomeToBooleans())=='boolean', 'The value returned by welcomeToBooleans() should be a boolean value. (true of false)');",
+        "assert(typeof(welcomeToBooleans())==\"boolean\", 'The value returned by welcomeToBooleans() should be a boolean value. (true of false)');",
         "assert(welcomeToBooleans() == true, 'The value returned by welcomeToBooleans() should be true');"
       ],
       "challengeSeed": [
@@ -65,7 +65,7 @@
         "Look at the <code>ourName</code> example if you get stuck."
       ],
       "tests": [
-        "assert((function(){/**/if(typeof(myName) !== 'undefined' && typeof(myName) == 'string' && myName.length > 0){return(true);}else{return(false);}/**/})(), 'myName should be a string that contains at least one character in it');"
+        "assert((function(){/**/if(typeof(myName) !== \"undefined\" && typeof(myName) == \"string\" && myName.length > 0){return(true);}else{return(false);}/**/})(), 'myName should be a string that contains at least one character in it');"
       ],
       "challengeSeed": [
         "// var ourName = \"Free Code Camp\";",
@@ -74,7 +74,7 @@
         "// We use this to show you the value of your variable in your output box.",
         "// We'll learn about functions soon.",
         "",
-        "if(typeof(myName) !== 'undefined'){(function(v){return(v);})(myName);}"
+        "if(typeof(myName) !== \"undefined\"){(function(v){return(v);})(myName);}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -89,8 +89,8 @@
         "You can assign these variables to be equal to your first and last names respectively."
       ],
       "tests": [
-        "assert((function(){if(typeof(myFirstName) !== 'undefined' && typeof(myFirstName) == 'string' && myFirstName.length > 0){return(true);}else{return(false);}})(), 'myFirstName should be a string with a least one character in it');",
-        "assert((function(){if(typeof(myLastName) !== 'undefined' && typeof(myLastName) == 'string' && myLastName.length > 0){return(true);}else{return(false);}})(), 'myLastName should be a string with a least one character in it');"
+        "assert((function(){if(typeof(myFirstName) !== \"undefined\" && typeof(myFirstName) == \"string\" && myFirstName.length > 0){return(true);}else{return(false);}})(), 'myFirstName should be a string with a least one character in it');",
+        "assert((function(){if(typeof(myLastName) !== \"undefined\" && typeof(myLastName) == \"string\" && myLastName.length > 0){return(true);}else{return(false);}})(), 'myLastName should be a string with a least one character in it');"
       ],
       "challengeSeed": [
         "// ourName = \"Free Code Camp\";",
@@ -101,7 +101,7 @@
         "// You can ignore this.",
         "// We use this to show you the value of your variable in your output box.",
         "// We'll learn about functions soon.",
-        "if(typeof(myFirstName) !== 'undefined' && typeof(myLastName) !== 'undefined'){(function(y,z){return(y + ', ' + z);})(myFirstName, myLastName);}"
+        "if(typeof(myFirstName) !== \"undefined\" && typeof(myLastName) !== \"undefined\"){(function(y,z){return(y + ', ' + z);})(myFirstName, myLastName);}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -115,7 +115,7 @@
         "For example, if we created a variable <code>var firstName = \"Julie\"</code>, we could find out how long the string \"Julie\" is by using the <code>firstName.length</code> property."
       ],
       "tests": [
-        "assert((function(){if(typeof(lastNameLength) != 'undefined' && typeof(lastNameLength) == 'number' && lastNameLength == 4){return(true);}else{return(false);}})(), 'lastNameLength should be equal to four')",
+        "assert((function(){if(typeof(lastNameLength) != \"undefined\" && typeof(lastNameLength) == \"number\" && lastNameLength == 4){return(true);}else{return(false);}})(), 'lastNameLength should be equal to four')",
         "assert((function(){if(editor.getValue().match(/\\.length/gi) && editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi) && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>');"
       ],
       "challengeSeed": [
@@ -134,7 +134,7 @@
         "// You can ignore this.",
         "// We use this to show you the value of your variable in your output box.",
         "// We'll learn about functions soon.",
-        "if(typeof(lastNameLength) != 'undefined'){(function(v){return(v);})(lastNameLength);}"
+        "if(typeof(lastNameLength) != \"undefined\"){(function(v){return(v);})(lastNameLength);}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -151,7 +151,7 @@
         "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert((function(){if(typeof(firstLetterOfLastName) != 'undefined' && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) == 'string' && firstLetterOfLastName == 'C'){return(true);}else{return(false);}})(), 'The first letter of firstLetterOfLastName should be a C');"
+        "assert((function(){if(typeof(firstLetterOfLastName) != \"undefined\" && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) == \"string\" && firstLetterOfLastName == \"C\"){return(true);}else{return(false);}})(), 'The first letter of firstLetterOfLastName should be a C');"
       ],
       "challengeSeed": [
         "var firstLetterOfLastName = \"\"",
@@ -185,7 +185,7 @@
         "Try looking at the <code>secondLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(thirdLetterOfLastName == 'e', 'The third last letter of lastName should be an e');"
+        "assert(thirdLetterOfLastName == \"e\", 'The third last letter of lastName should be an e');"
       ],
       "challengeSeed": [
         "var firstName = \"Madeline\";",
@@ -217,7 +217,7 @@
         "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(lastLetterOfLastName == 'n', 'lastLetterOfLastName should be <code>n</code>');",
+        "assert(lastLetterOfLastName == \"n\", 'lastLetterOfLastName should be <code>n</code>');",
         "assert(editor.getValue().match(/\\.length/g), 'You have to use .length to get the last letter');"
       ],
       "challengeSeed": [
@@ -247,7 +247,7 @@
         "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert(secondToLastLetterOfLastName == 'e', 'secondToLastLetterOfLastName should be e');",
+        "assert(secondToLastLetterOfLastName == \"e\", 'secondToLastLetterOfLastName should be e');",
         "assert(editor.getValue().match(/\\.length/g), 'You have to use .length to get the third last letter');"
       ],
       "challengeSeed": [
@@ -366,7 +366,7 @@
         "Let's create a variable <code>myDecimal</code> and give it a decimal value."
       ],
       "tests": [
-        "assert((function(){if(typeof(myDecimal) != 'undefined' && typeof(myDecimal) == 'number' && editor.getValue().match(/\\./g).length >=2){return(true);}else{return(false);}})(), 'myDecimal should be a decimal point number');"
+        "assert((function(){if(typeof(myDecimal) != \"undefined\" && typeof(myDecimal) == \"number\" && editor.getValue().match(/\\./g).length >=2){return(true);}else{return(false);}})(), 'myDecimal should be a decimal point number');"
       ],
       "challengeSeed": [
         "//var ourDecimal = 5.7",
@@ -375,7 +375,7 @@
         "",
         "",
         "",
-        "(function(){if(typeof(myDecimal) != 'undefined'){return(myDecimal);}})();"
+        "(function(){if(typeof(myDecimal) != \"undefined\"){return(myDecimal);}})();"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -414,12 +414,12 @@
         ""
       ],
       "tests": [
-        "assert(typeof(myArray) == 'object', 'myArray should be an array');",
-        "assert(typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) == 'string', 'The fist item in myArray should be a string');",
-        "assert(typeof(myArray[1]) !== 'undefined' && typeof(myArray[1]) == 'number', 'The second item in myArray should be a number');"
+        "assert(typeof(myArray) == \"object\", 'myArray should be an array');",
+        "assert(typeof(myArray[0]) !== \"undefined\" && typeof(myArray[0]) == \"string\", 'The fist item in myArray should be a string');",
+        "assert(typeof(myArray[1]) !== \"undefined\" && typeof(myArray[1]) == \"number\", 'The second item in myArray should be a number');"
       ],
       "challengeSeed": [
-        "//var array = ['John', 23];",
+        "//var array = [\"John\", 23];",
         "",
         "var myArray = [];",
         "",
@@ -438,13 +438,13 @@
         "Let's now go create a nested array called <code>myArray</code>"
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) === 'object' && editor.getValue().match(/\\[\\[/g).length >= 1 && editor.getValue().match(/\\]\\]/g).length >= 1){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
+        "assert((function(){if(typeof(myArray) !== \"undefined\" && typeof(myArray) === \"object\" && typeof(myArray[0]) !== \"undefined\" && typeof(myArray[0]) === \"object\" && editor.getValue().match(/\\[\\[/g).length >= 1 && editor.getValue().match(/\\]\\]/g).length >= 1){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
       ],
       "challengeSeed":[
         "var myArray = [];",
         "",
         "",
-        "if(typeof(myArray) !== 'undefined'){(function(){return(myArray);})();}"
+        "if(typeof(myArray) !== \"undefined\"){(function(){return(myArray);})();}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -464,7 +464,7 @@
         "Create a var called <code>data</code> and set it to equal the first value of <code>myArray</code>"
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) != 'undefined' && typeof(data) != 'undefined' && myArray[0] == data){return(true);}else{return(false);}})(), 'the variable data should equal the first value of myArray');"
+        "assert((function(){if(typeof(myArray) != \"undefined\" && typeof(data) != \"undefined\" && myArray[0] == data){return(true);}else{return(false);}})(), 'the variable data should equal the first value of myArray');"
       ],
       "challengeSeed":[
         "//var ourArray = [1,2,3]",
@@ -474,7 +474,7 @@
         "",
         "",
         "",
-        "if(typeof(myArray) != 'undefined' && typeof(data) != 'undefined'){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', data = ' + JSON.stringify(z));})(myArray, data);}"
+        "if(typeof(myArray) != \"undefined\" && typeof(data) != \"undefined\"){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', data = ' + JSON.stringify(z));})(myArray, data);}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -494,7 +494,7 @@
         ""
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return(true);}else{return(false);}})(), 'myArray should now be [3,2,3]');",
+        "assert((function(){if(typeof(myArray) != \"undefined\" && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return(true);}else{return(false);}})(), 'myArray should now be [3,2,3]');",
         "assert((function(){if(editor.getValue().match(/[0]/g).length >= 2 && editor.getValue().match(/=/g).length >= 2){return(true);}else{return(false);}})(), 'You should be using indexes to modify the values in myArray');"
       ],
       "challengeSeed":[
@@ -506,7 +506,7 @@
         "",
         "",
         "",
-        "if(typeof(myArray) != 'undefined'){(function(){return(myArray);})();}"
+        "if(typeof(myArray) != \"undefined\"){(function(){return(myArray);})();}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -523,8 +523,8 @@
         "Let's try <code>.pop()</code>now"
       ],
       "tests": [
-        "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
-        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return(true);}else{return(false);}})(removed), 'myArray should only have the first two values left([\"cat\"], 2)');"
+        "assert((function(d){if(d[0] == \"John\" && d[1] == 23 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
+        "assert((function(d){if(d[0] == \"cat\" && d[1] == 2 && d[2] == undefined){return(true);}else{return(false);}})(removed), 'myArray should only have the first two values left([\"cat\"], 2)');"
       ],
       "challengeSeed": [
         "//var numbers = [1,2,3];",
@@ -533,8 +533,8 @@
         "//console.log(numbers); //Gives [1,2]",
         "//console.log(removed); //Gives 3",
         "",
-        "var myArray = ['John', 23, ['cat', 2]];",
-        "var removed = myArray;//This should be ['cat', 2] and myArray should now be ['John', 23]",
+        "var myArray = [\"John\", 23, [\"cat\", 2]];",
+        "var removed = myArray;//This should be [\"cat\", 2] and myArray should now be [\"John\", 23]",
         "",
         "",
         "(function(y, z){return('myArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z));})(myArray, removed);"
@@ -548,15 +548,15 @@
       "difficulty": "9.9818",
       "description": [
         "Now that we've learned how to <code>pop</code>things from the end of the array, we need to learn how to <code>push</code>stuff back to the end",
-        "Let's take the code we had last time and <code>push</code>this value to the end: <code>['dog', 3] </code>"
+        "Let's take the code we had last time and <code>push</code>this value to the end: <code>[\"dog\", 3] </code>"
       ],
       "tests": [
-        "assert((function(d){if(d[2] != undefined && d[0] == 'John' && d[1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23, [\"dog\", 3]])');"
+        "assert((function(d){if(d[2] != undefined && d[0] == \"John\" && d[1] == 23 && d[2][0] == \"dog\" && d[2][1] == 3 && d[2].length == 2){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23, [\"dog\", 3]])');"
       ],
       "challengeSeed": [
-        "var myArray = ['John', 23, ['cat', 2]];",
+        "var myArray = [\"John\", 23, [\"cat\", 2]];",
         "var removed = myArray.pop();",
-        "//Add a ['dog', 3] to the end of myArray using push",
+        "//Add a [\"dog\", 3] to the end of myArray using push",
         "",
         "",
         "(function(z){return('myArray = ' + JSON.stringify(z));})(myArray);"
@@ -574,12 +574,12 @@
         "Let's try <code>.shift()</code>now"
       ],
       "tests": [
-        "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
-        "assert((function(d){if(d === 'John' && typeof(removed) === 'string'){return(true);}else{return(false);}})(removed), 'Removed should contain \"John\"');"
+        "assert((function(d){if(d[0] == 23 && d[1][0] == \"dog\" && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
+        "assert((function(d){if(d === \"John\" && typeof(removed) === \"string\"){return(true);}else{return(false);}})(removed), 'Removed should contain \"John\"');"
       ],
       "challengeSeed": [
-        "var myArray = ['John', 23, ['dog', 3]];",
-        "var removed = myArray;//This should be ['John'] and myArray should now be [23, ['dog', 3]]",
+        "var myArray = [\"John\", 23, [\"dog\", 3]];",
+        "var removed = myArray;//This should be [\"John\"] and myArray should now be [23, [\"dog\", 3]]",
         "",
         "",
         "(function(y, z){return('myArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z));})(myArray, removed);"
@@ -593,15 +593,15 @@
       "difficulty": "9.9818",
       "description": [
         "Now that we've learned how to <code>shift</code>things from the start of the array, we need to learn how to <code>unshift</code>stuff back to the start",
-        "Let's take the code we had last time and <code>unshift</code>this value to the end: <code>'Paul' </code>"
+        "Let's take the code we had last time and <code>unshift</code>this value to the end: <code>\"Paul\" </code>"
       ],
       "tests": [
-        "assert((function(d){if(d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])');"
+        "assert((function(d){if(d[0].toLowerCase() == \"paul\" && d[1] == 23 && d[2][0] != undefined && d[2][0] == \"dog\" && d[2][1] != undefined && d[2][1] == 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])');"
       ],
       "challengeSeed": [
-        "var myArray = ['John', 23, ['dog', 3]];",
-        "var removed = myArray.shift();//This should be 'John' and myArray should now be [23, ['dog', 3]]",
-        "//Add 'Paul' to the start of myArray",
+        "var myArray = [\"John\", 23, [\"dog\", 3]];",
+        "var removed = myArray.shift();//This should be \"John\" and myArray should now be [23, [\"dog\", 3]]",
+        "//Add \"Paul\" to the start of myArray",
         "",
         "",
         "(function(y, z){return('myArray = ' + JSON.stringify(y));})(myArray);"
@@ -626,7 +626,7 @@
         "Let's try creating and calling a function now called <code>myFunction</code>"
       ],
       "tests":[
-        "assert((function(){if(typeof(f) !== 'undefined' && typeof(f) === 'number' && f === a + b  && editor.getValue().match(/return/gi).length >= 1 && editor.getValue().match(/a/gi).length >= 1 && editor.getValue().match(/b/gi).length >= 1 && editor.getValue().match(/\\+/gi).length >= 1){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
+        "assert((function(){if(typeof(f) !== \"undefined\" && typeof(f) === \"number\" && f === a + b  && editor.getValue().match(/return/gi).length >= 1 && editor.getValue().match(/a/gi).length >= 1 && editor.getValue().match(/b/gi).length >= 1 && editor.getValue().match(/\\+/gi).length >= 1){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
       ],
       "challengeSeed":[
         "var a = 4;",
@@ -638,7 +638,7 @@
         "",
         "",
         "//Don't modify this!",
-        "if(typeof(myFunction) != 'undefined'){",
+        "if(typeof(myFunction) != \"undefined\"){",
         "var f=myFunction(a,b);",
         "(function(){return(f);})();",
         "}"
@@ -666,17 +666,17 @@
         "Let's try to make an Object that represents a dog called myDog!"
       ],
       "tests":[
-        "assert((function(z){if(z.hasOwnProperty('name') && z.name != undefined && typeof(z.name) == 'string'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property name and it should be a string');",
-        "assert((function(z){if(z.hasOwnProperty('legs') && z.legs != undefined && typeof(z.legs) == 'number'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property legs and it should be a number');",
-        "assert((function(z){if(z.hasOwnProperty('tails') && z.tails != undefined && typeof(z.tails) == 'number'){return(true);}else{return(false);}})(myDog), 'myDog should contain the property tails and it should be a number');",
-        "assert((function(z){if(z.hasOwnProperty('friends') && z.friends != undefined && Array.isArray(z.friends)){return(true);}else{return(false);}})(myDog), 'myDog should contain the property friends and it should be an array');"
+        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name != undefined && typeof(z.name) == \"string\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property name and it should be a string');",
+        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs != undefined && typeof(z.legs) == \"number\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property legs and it should be a number');",
+        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails != undefined && typeof(z.tails) == \"number\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property tails and it should be a number');",
+        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends != undefined && Array.isArray(z.friends)){return(true);}else{return(false);}})(myDog), 'myDog should contain the property friends and it should be an array');"
       ],
       "challengeSeed":[
         "//var ourDog = {",
         "//   \"name\": \"Camper\"",
         "//   \"legs\": 4",
         "//   \"tails\": 1",
-        "//   \"friends\": ['everything!']",
+        "//   \"friends\": [\"everything!\"]",
         "//};",
         "",
         "/* add the name(string), legs(number), tails(number) and friends(array) properties to myDog.",
@@ -719,7 +719,7 @@
         "//Re-create myDog",
         "",
         "var myDog = {",
-        "   \"name\": 'Camper',",
+        "   \"name\": \"Camper\",",
         "   \"legs\": 4,",
         "   \"tails\": 1,",
         "   \"friends\": []",
@@ -835,7 +835,7 @@
         "Let's have a go of <code>Math.random()</code> now be getting <code>myFunction</code> to return a random number"
       ],
       "tests":[
-        "assert(typeof(myFunction()) === 'number', 'myFunction should return a random number');",
+        "assert(typeof(myFunction()) === \"number\", 'myFunction should return a random number');",
         "assert((myFunction()+''). match(/\\./g), 'The number returned by myFunction should be a decimal');",
         "assert(editor.getValue().match(/Math\\.random/g).length >= 2, 'You should be using Math.random to generate the random decimal number');"
       ],
@@ -864,7 +864,7 @@
         "Let's give this technique a go now"
       ],
       "tests":[
-        "assert(typeof(myFunction()) == 'number', 'The result of myFunction should be a number');",
+        "assert(typeof(myFunction()) == \"number\", 'The result of myFunction should be a number');",
         "assert(editor.getValue().match(/Math.random/g), 'You should be using Math.random to create a random number');",
         "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random but 10 to make it a number that\\'s greater then zero');",
         "assert(editor.getValue().match(/Math.floor/g), 'You should use Math.floor to remove the decimal part of the number');"
@@ -926,7 +926,7 @@
         "Create an if else statement to return <code>heads</code> if the flip var is zero and to return <code>tails</code> if it's not"
       ],
       "tests":[
-        "assert((function(){if(myFunction() == 'heads' || myFunction() == 'tails'){return(true);}else{return(false);}})(), 'myFunction should either return heads or tails');",
+        "assert((function(){if(myFunction() == \"heads\" || myFunction() == \"tails\"){return(true);}else{return(false);}})(), 'myFunction should either return heads or tails');",
         "assert(editor.getValue().match(/if/g).length >= 3, 'You should have created a new if statement');",
         "assert(editor.getValue().match(/else/g).length >= 2, 'You should have created a new else statement');"
       ],
@@ -1077,9 +1077,9 @@
         "<code>Math.floor(Math.random() * (5 - 1 + 1)) + 1; </code>"
       ],
       "tests":[
-        "assert(typeof(runSlots($('.slot'))[0]) == 'number', 'slotOne should be a random number');",
-        "assert(typeof(runSlots($('.slot'))[1]) == 'number', 'slotTwo should be a random number');",
-        "assert(typeof(runSlots($('.slot'))[2]) == 'number', 'slotThree should be a random number');",
+        "assert(typeof(runSlots($(\".slot\"))[0]) == \"number\", 'slotOne should be a random number');",
+        "assert(typeof(runSlots($(\".slot\"))[1]) == \"number\", 'slotTwo should be a random number');",
+        "assert(typeof(runSlots($(\".slot\"))[2]) == \"number\", 'slotThree should be a random number');",
         "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?5\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi) !== null){return(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?5\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi).length >= 3);}else{return(false);}})(), 'You should have used Math.floor(Math.random() * (5 - 1 + 1)) + 1; three times to generate your random numbers');"
       ],
       "challengeSeed":[
@@ -1089,7 +1089,7 @@
         "   var slotTwo;",
         "   var slotThree;",
         "   ",
-        "   var images = ['http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens'];",
+        "   var images = [\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\"];",
         "   ",
         "   /*Don't modify above here*/",
         "   ",
@@ -1097,48 +1097,48 @@
         "   ",
         "   /*Don't modify below here*/",
         "   ",
-        "   $('.logger').html('');",
-        "   $('.logger').html('Not A Win')",
+        "   $(\".logger\").html(\"\");",
+        "   $(\".logger\").html(\"Not A Win\")",
         "   ",
         "   if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
-        "     $('.logger').html(slotOne + ' ' + slotTwo + ' ' + slotThree);",
+        "     $(\".logger\").html(slotOne + \" \" + slotTwo + \" \" + slotThree);",
         "   }",
         "   return([slotOne, slotTwo, slotThree]);",
         "  }",
         "",
         "  $(document).ready(function(){",
-        "     $('.go').click(function(){",
+        "     $(\".go\").click(function(){",
         "       runSlots();",
         "     });",
         "   });",
         "fcces",
         " ",
         "<div>",
-        " <div class = 'container inset'>",
-        "   <div class = 'header inset'>",
-        "     <img src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz' alt='learn to code javascript at Free Code Camp logo' class='img-responsive nav-logo'>",
+        " <div class = \"container inset\">",
+        "   <div class = \"header inset\">",
+        "     <img src=\"https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz\" alt=\"learn to code javascript at Free Code Camp logo\" class=\"img-responsive nav-logo\">",
         "     <h2>FCC Slot Machine</h2>",
         "   </div>",
-        "   <div class = 'slots inset'>",
-        "     <div class = 'slot inset'>",
+        "   <div class = \"slots inset\">",
+        "     <div class = \"slot inset\">",
         "       ",
         "     </div>",
-        "     <div class = 'slot inset'>",
+        "     <div class = \"slot inset\">",
         "       ",
         "     </div>",
-        "     <div class = 'slot inset'>",
+        "     <div class = \"slot inset\">",
         "       ",
         "     </div>",
         "   </div>",
         "   <br/>",
-        "   <div class = 'outset'>",
-        "     <button class = 'go inset'>",
+        "   <div class = \"outset\">",
+        "     <button class = \"go inset\">",
         "       Go",
         "     </button>",
         "   </div>",
         "   <br/>",
-        "   <div class = 'foot inset'>",
-        "     <span class = 'logger'></span>",
+        "   <div class = \"foot inset\">",
+        "     <span class = \"logger\"></span>",
         "   </div>",
         " </div>",
         "</div>",
@@ -1242,62 +1242,62 @@
         "   var slotTwo;",
         "   var slotThree;",
         "   ",
-        "   var images = ['http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens'];",
+        "   var images = [\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\"];",
         "   ",
         "   slotOne = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
         "   slotTwo = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
         "   slotThree = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
         "   ",
-        "   $('.logger').html('');",
-        "   $('.logger').html('Not A Win')",
+        "   $(\".logger\").html(\"\");",
+        "   $(\".logger\").html(\"Not A Win\")",
         "   ",
-        "   /*Don't modify above here*/",
+        "   /*Don\"t modify above here*/",
         "   ",
         "   ",
         "   ",
-        "   /*Don't modify below here*/",
+        "   /*Don\"t modify below here*/",
         "   ",
         "   if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
-        "     $('.logger').html(slotOne);",
-        "     $('.logger').append(' ' + slotTwo);",
-        "     $('.logger').append(' ' + slotThree);",
+        "     $(\".logger\").html(slotOne);",
+        "     $(\".logger\").append(\" \" + slotTwo);",
+        "     $(\".logger\").append(\" \" + slotThree);",
         "   }",
         "   return([slotOne, slotTwo, slotThree]);",
         "  }",
         "",
         "  $(document).ready(function(){",
-        "     $('.go').click(function(){",
+        "     $(\".go\").click(function(){",
         "       runSlots();",
         "     });",
         "   });",
         "fcces",
         " ",
         "<div>",
-        " <div class = 'container inset'>",
-        "   <div class = 'header inset'>",
-        "     <img src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz' alt='learn to code javascript at Free Code Camp logo' class='img-responsive nav-logo'>",
+        " <div class = \"container inset\">",
+        "   <div class = \"header inset\">",
+        "     <img src=\"https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz\" alt=\"learn to code javascript at Free Code Camp logo\" class=\"img-responsive nav-logo\">",
         "     <h2>FCC Slot Machine</h2>",
         "   </div>",
-        "   <div class = 'slots inset'>",
-        "     <div class = 'slot inset'>",
+        "   <div class = \"slots inset\">",
+        "     <div class = \"slot inset\">",
         "       ",
         "     </div>",
-        "     <div class = 'slot inset'>",
+        "     <div class = \"slot inset\">",
         "       ",
         "     </div>",
-        "     <div class = 'slot inset'>",
+        "     <div class = \"slot inset\">",
         "       ",
         "     </div>",
         "   </div>",
         "   <br/>",
-        "   <div class = 'outset'>",
-        "     <button class = 'go inset'>",
+        "   <div class = \"outset\">",
+        "     <button class = \"go inset\">",
         "       Go",
         "     </button>",
         "   </div>",
         "   <br/>",
-        "   <div class = 'foot inset'>",
-        "     <span class = 'logger'></span>",
+        "   <div class = \"foot inset\">",
+        "     <span class = \"logger\"></span>",
         "   </div>",
         " </div>",
         "</div>",
@@ -1384,15 +1384,15 @@
       "difficulty":"9.990",
       "description":[
         "Now we can detect a win let's get the slot machine to look like it works",
-        "We're going to use the jQuery selector <code>$('.slot')</code> to select all of the slots",
+        "We're going to use the jQuery selector <code>$(\".slot\")</code> to select all of the slots",
         "Once they are all selected we can use bracket notation to access each individual one like this",
-        "<code>$($('.slot')[0]).html('')</code>",
+        "<code>$($(\".slot\")[0]).html(\"\")</code>",
         "This will grab the the first slot so that we can add the numbers we generate to them",
         "Use the above selector to display each number in the corresponding slot"
       ],
       "tests":[
-        "assert((function(){runSlots();if($($('.slot')[0]).html().replace(/\\s/gi, '') !== '' && $($('.slot')[1]).html().replace(/\\s/gi, '') !== '' && $($('.slot')[2]).html().replace(/\\s/gi, '') !== ''){return(true);}else{return(false);}})(), 'You should be displaying the result of the slot numbers in the corresponding slots');",
-        "assert((function(){if(editor.match( /\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)/gi )){if(editor.match( /\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\);/gi ) && editor.match( /\\.html\\(slotTwo\\);/gi ) && editor.match( /\\.html\\(slotThree\\);/gi )){return(true);}else{return(false);}}else{return(false);}})(), 'You should have used the the selector given in the description to select each slot and assign it the value of slotOne&#44; slotTwo and slotThree respectively');"
+        "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return(true);}else{return(false);}})(), 'You should be displaying the result of the slot numbers in the corresponding slots');",
+        "assert((function(){if(editor.match( /\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)/gi )){if(editor.match( /\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\);/gi ) && editor.match( /\\.html\\(slotTwo\\);/gi ) && editor.match( /\\.html\\(slotThree\\);/gi )){return(true);}else{return(false);}}else{return(false);}})(), 'You should have used the the selector given in the description to select each slot and assign it the value of slotOne&#44; slotTwo and slotThree respectively');"
       ],
       "challengeSeed":[
         "fccss",
@@ -1402,14 +1402,14 @@
         "   var slotThree;",
         "   ",
         "   //Placeholder",
-        "   var images = ['http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens','http://bit.ly/fcc-kittens'];",
+        "   var images = [\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\"];",
         "   ",
         "   slotOne = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
         "   slotTwo = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
         "   slotThree = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
         "   ",
-        "   $('.logger').html('');",
-        "   $('.logger').html('Not A Win')",
+        "   $(\".logger\").html(\"\");",
+        "   $(\".logger\").html(\"Not A Win\")",
         "   ",
         "   /*Don't modify above here*/",
         "   ",
@@ -1422,47 +1422,47 @@
         "   }",
         "   ",
         "   if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
-        "     $('.logger').html(slotOne);",
-        "     $('.logger').append(' ' + slotTwo);",
-        "     $('.logger').append(' ' + slotThree);",
+        "     $(\".logger\").html(slotOne);",
+        "     $(\".logger\").append(\" \" + slotTwo);",
+        "     $(\".logger\").append(\" \" + slotThree);",
         "   }",
         "   ",
         "   return([slotOne, slotTwo, slotThree]);",
         "  }",
         "",
         "  $(document).ready(function(){",
-        "     $('.go').click(function(){",
+        "     $(\".go\").click(function(){",
         "       runSlots();",
         "     });",
         "   });",
         "fcces",
         " ",
         "<div>",
-        " <div class = 'container inset'>",
-        "   <div class = 'header inset'>",
-        "     <img src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz' alt='learn to code javascript at Free Code Camp logo' class='img-responsive nav-logo'>",
+        " <div class = \"container inset\">",
+        "   <div class = \"header inset\">",
+        "     <img src=\"https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg.gz\" alt=\"learn to code javascript at Free Code Camp logo\" class=\"img-responsive nav-logo\">",
         "     <h2>FCC Slot Machine</h2>",
         "   </div>",
-        "   <div class = 'slots inset'>",
-        "     <div class = 'slot inset'>",
+        "   <div class = \"slots inset\">",
+        "     <div class = \"slot inset\">",
         "       ",
         "     </div>",
-        "     <div class = 'slot inset'>",
+        "     <div class = \"slot inset\">",
         "       ",
         "     </div>",
-        "     <div class = 'slot inset'>",
+        "     <div class = \"slot inset\">",
         "       ",
         "     </div>",
         "   </div>",
         "   <br/>",
-        "   <div class = 'outset'>",
-        "     <button class = 'go inset'>",
+        "   <div class = \"outset\">",
+        "     <button class = \"go inset\">",
         "       Go",
         "     </button>",
         "   </div>",
         "   <br/>",
-        "   <div class = 'foot inset'>",
-        "     <span class = 'logger'></span>",
+        "   <div class = \"foot inset\">",
+        "     <span class = \"logger\"></span>",
         "   </div>",
         " </div>",
         "</div>",
