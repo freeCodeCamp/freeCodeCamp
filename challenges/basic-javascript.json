@@ -1386,7 +1386,7 @@
         "Now we can detect a win let's get the slot machine to look like it works",
         "We're going to use the jQuery selector <code>$('.slot')</code> to select all of the slots",
         "Once they are all selected we can use bracket notation to access each individual one like this",
-        "<code>$($('.slot')[0])</code>",
+        "<code>$($('.slot')[0]).html('')</code>",
         "This will grab the the first slot so that we can add the numbers we generate to them",
         "Use the above selector to display each number in the corresponding slot"
       ],
