@@ -62,10 +62,10 @@
         "<code>h2</code> elements are slightly smaller than <code>h1</code> elements. There are also <code>h3</code>, <code>h4</code>, <code>h5</code> and <code>h6</code> elements."
       ],
       "tests": [
-        "assert(($('h2').length > 0), 'Create an <code>h2</code> element.')",
+        "assert(($(\"h2\").length > 0), 'Create an <code>h2</code> element.')",
         "assert(editor.match(/<\\/h2>/g) && editor.match(/<\\/h2>/g).length === editor.match(/<h2>/g).length, 'Make sure your <code>h2</code> element has a closing tag.')",
-        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($('h2').text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\".')",
-        "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".')"
+        "assert.isTrue((/cat(\\s)?photo(\\s)?app/gi).test($(\"h2\").text()), 'Your <code>h2</code> element should have the text \"CatPhotoApp\".')",
+        "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), 'Your <code>h1</code> element should have the text \"Hello World\".')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>"
@@ -105,8 +105,8 @@
         "You can create a <code>p</code> element like so: <code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>."
       ],
       "tests": [
-        "assert(($('p').length > 0), 'Create a <code>p</code> element.')",
-        "assert.isTrue((/hello(\\s)+paragraph/gi).test($('p').text()), 'Your <code>p</code> element should have the text \"Hello Paragraph\".')",
+        "assert(($(\"p\").length > 0), 'Create a <code>p</code> element.')",
+        "assert.isTrue((/hello(\\s)+paragraph/gi).test($(\"p\").text()), 'Your <code>p</code> element should have the text \"Hello Paragraph\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure your <code>p</code> element has a closing tag.')"
       ],
       "challengeSeed": [
@@ -147,10 +147,10 @@
         "You can start a comment with <code>&#60;!--</code> and end a comment with <code>--&#62;</code>."
       ],
       "tests": [
-        "assert($('h1').length > 0, 'Make your <code>h1</code> element visible on your page by uncommenting it.')",
-        "assert($('h2').length > 0, 'Make your <code>h2</code> element visible on your page by uncommenting it.')",
-        "assert($('p').length > 0, 'Make your <code>p</code> element visible on your page by uncommenting it.')",
-        "assert(!new RegExp('-->', 'gi').test(editor), 'Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.')"
+        "assert($(\"h1\").length > 0, 'Make your <code>h1</code> element visible on your page by uncommenting it.')",
+        "assert($(\"h2\").length > 0, 'Make your <code>h2</code> element visible on your page by uncommenting it.')",
+        "assert($(\"p\").length > 0, 'Make your <code>p</code> element visible on your page by uncommenting it.')",
+        "assert(!new RegExp(\"-->\", 'gi').test(editor), 'Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
         "<!--",
@@ -196,9 +196,9 @@
         "Here you'll need to end the comment before your <code>h2</code> element begins."
       ],
       "tests": [
-        "assert(($('h1').length === 0), 'Comment out your <code>h1</code> element so that it is not visible on your page.')",
-        "assert(($('h2').length > 0), 'Leave your <code>h2</code> element uncommented so that it is visible on your page.')",
-        "assert(($('p').length === 0), 'Comment out your <code>p</code> element so that it is not visible on your page.')",
+        "assert(($(\"h1\").length === 0), 'Comment out your <code>h1</code> element so that it is not visible on your page.')",
+        "assert(($(\"h2\").length > 0), 'Leave your <code>h2</code> element uncommented so that it is visible on your page.')",
+        "assert(($(\"p\").length === 0), 'Comment out your <code>p</code> element so that it is not visible on your page.')",
         "assert(editor.match(/-->/g).length > 1, 'Be sure to close each of your comments with <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
@@ -244,7 +244,7 @@
         "Replace the text inside your <code>p</code> element with the first few words of this \"Kitty Ipsum\" text: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "tests": [
-        "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($('p').text()), 'Your <code>p</code> element should contain the first few words of the provided \"Kitty Ipsum\" text.')"
+        "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($(\"p\").text()), ¬Your <code>p</code> element should contain the first few words of the provided \"Kitty Ipsum\" text.¬)"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -266,7 +266,7 @@
         "Cambia el texto en el elemento <code>p</code> para usar las primeras palabras del texto <code>Kitty Ipsum</code>.",
         "Los desarrolladores web tradicionalmente usan <code>Lorem Ipsum</code> como texto de relleno. Se llama texto Lorem Ipsum porque esas son las primeras dos palabras de una cita famosa de Cicerón de la Roma Antigua.",
         "El texto Lorem Ipsum ha sido usado como texto de relleno en las imprentas desde el siglo 16, y esta tradición continúa en la web.",
-        "Bueno, 5 siglos es bastante. Ya que estamos construyendo una aplicación de fotos de gatos (CatPhotoApp), ¡usemos algo llamado <a href='http://kittyipsum.com/'>Kitty Ipsum</a>!",
+        "Bueno, 5 siglos es bastante. Ya que estamos construyendo una aplicación de fotos de gatos (CatPhotoApp), ¡usemos algo llamado <a href=πhttp://kittyipsum.com/\">Kitty Ipsum</a>!",
         "Aquí están las primeras palabras del texto Kitty Ipsum, que puedes copiar y pegar en la posición correcta: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "namePt": "",
@@ -286,13 +286,13 @@
       "difficulty": 1.07,
       "description": [
         "Delete your <code>h1</code> element so we can simplify our view.",
-        "Our phone doesn't have much vertical space.",
-        "Let's remove the unnecessary elements so we can start building our CatPhotoApp."
+        "Our phone doesn¬t have much vertical space.",
+        "Let¬s remove the unnecessary elements so we can start building our CatPhotoApp."
       ],
       "tests": [
-        "assert(($('h1').length == 0), 'Delete your <code>h1</code> element.')",
-        "assert(($('h2').length > 0), 'Leave your <code>h2</code> element on the page.')",
-        "assert(($('p').length > 0), 'Leave your <code>p</code> element on the page.')"
+        "assert(($(\"h1\").length == 0), 'Delete your <code>h1</code> element.')",
+        "assert(($(\"h2\").length > 0), 'Leave your <code>h2</code> element on the page.')",
+        "assert(($(\"p\").length > 0), 'Leave your <code>p</code> element on the page.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -335,7 +335,7 @@
         "Here's how you would set your <code>h2</code> element's text color to blue: <code>&#60;h2 style=\"color: blue\"&#62;CatPhotoApp&#60;/h2&#62;</code>."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')"
+        "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.')"
       ],
       "challengeSeed": [
         "<h2>CatPhotoApp</h2>",
@@ -380,13 +380,13 @@
         "Note that it's important to have both opening and closing curly braces (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of your element's styles."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(0, 0, 255)', 'Your <code>h2</code> element should be blue.')",
-        "assert(!$('h2').attr('style'), 'Remove the style attribute from your <code>h2</code> element.')",
-        "assert(($('style').length > 1), 'Create a <code>style</code> element.')",
+        "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h2</code> element should be blue.')",
+        "assert(!$(\"h2\").attr(\"style\"), 'Remove the style attribute from your <code>h2</code> element.')",
+        "assert(($(\"style\").length > 1), 'Create a <code>style</code> element.')",
         "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === editor.match(/<style>/g).length, 'Make sure each of your <code>style</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
-        "<h2 style='color: red'>CatPhotoApp</h2>",
+        "<h2 style=\"color: red\">CatPhotoApp</h2>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
@@ -429,16 +429,16 @@
         "Create a CSS class called \"red-text\" and apply it to your <code>h2</code> element.",
         "Classes are reusable styles that can be added to HTML elements.",
         "Here's the anatomy of a CSS class:",
-        "<img class='img-responsive' alt='a diagram of how style tags are composed, which is also described in detail on the following lines.' src='https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png'/>",
+        "<img class=\"img-responsive\" alt=\"a diagram of how style tags are composed, which is also described in detail on the following lines.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\"/>",
         "You can see that we've created a CSS class called \"blue-text\" within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
         "Instead of creating a new <code>style</code> element, try removing the <code>h2</code> style declaration from your existing style element, then replace it with the class declaration for \".red-text\"."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')",
-        "assert($('h2').hasClass('red-text'), 'Your <code>h2</code> element should have the class \"red-text\".')",
-        "assert($('h2').attr('style') === undefined, 'Please make sure there is no inline <code> style =  </code> in you <code>h2</code> and change the color by using the css class <code> red-text </code>')"
+        "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.')",
+        "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should have the class \"red-text\".')",
+        "assert($(\"h2\").attr(\"style\") === undefined, 'Please make sure there is no inline <code> style =  </code> in you <code>h2</code> and change the color by using the css class <code> red-text </code>')"
       ],
       "challengeSeed": [
         "<style>",
@@ -464,7 +464,7 @@
         "Crea una clase CSS llamada \"red-text\" y aplicala a tu elemento <code>h2</code>.",
         "Las clases son estilos reutilizables que pueden ser añadidos a elementos HTML",
         "Esta es la anatomía de una clase CSS:",
-        "<img class='img-responsive' alt='a diagram of how style tags are composed, which is also described in detail on the following lines.' src='https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png'/>",
+        "<img class=\"img-responsive\" alt=\"a diagram of how style tags are composed, which is also described in detail on the following lines.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\"/>",
         "Puedes ver que hemos creado una clase CSS llamada \"blue-text\" dentro de la etiqueta <code>&#60;style&#62;</code>.",
         "Puedes aplicar una clase a un elemento HTML de esta manera: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
         "Nota que en el elemento CSS <code>style</code>, las clases deberían comenzar con un punto. En los elementos HTML, las declaraciones de clase, NO deberían comenzar con punto. ",
@@ -477,7 +477,7 @@
         "Erstelle eine CSS Klasse namens \"red-text\" und füge sie zu deinem <code>h2</code> Element hinzu.",
         "Klassen sind wiederverwendbare Styles, die HTML Elementen zugewiesen werden können.",
         "So sieht eine CSS Klasse aus:",
-        "<img class='img-responsive' alt='Ein Beispiel, wie Styles geschrieben werden. Das wird im Detail in den folgenden Zeilen beschrieben.' src='https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png'/>",
+        "<img class=\"img-responsive\" alt=\"Ein Beispiel, wie Styles geschrieben werden. Das wird im Detail in den folgenden Zeilen beschrieben.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\"/>",
         "Du siehst, dass wir die CSS Klasse \"blue-text\" innerhalb von <code>&#60;style&#62;</code> geschrieben haben.",
         "Du kannst eine Klasse folgendermaßen einem HTML Element beifügen: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
         "Beachte, dass Klassen in deinem CSS <code>style</code> Element mit einem Punkt beginngen sollten. In deinen Klassen-Deklarationen von HTML Elementen sollten diese nicht mit einem Punkt beginnen.",
@@ -494,10 +494,10 @@
         "Remember that CSS selectors require a period at the beginning like this: <code>.blue-text { color: blue; }</code>, but that class declarations don't use a period, like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
       ],
       "tests": [
-        "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')",
-        "assert($('h2').hasClass('red-text'), 'Your <code>h2</code> element should have the class \"red-text\".')",
-        "assert($('p').css('color') === 'rgb(255, 0, 0)', 'Your <code>p</code> element should be red.')",
-        "assert($('p').hasClass('red-text'), 'Your <code>p</code> element should have the class \"red-text\".')"
+        "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.')",
+        "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should have the class \"red-text\".')",
+        "assert($(\"p\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>p</code> element should be red.')",
+        "assert($(\"p\").hasClass(\"red-text\"), 'Your <code>p</code> element should have the class \"red-text\".')"
       ],
       "challengeSeed": [
         "<style>",
@@ -506,7 +506,7 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
         "<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
@@ -544,10 +544,10 @@
         "See if you can figure out how to give both of your <code>p</code> elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your \"red-text\" class."
       ],
       "tests": [
-        "assert($('p').length > 1, 'You need 2 <code>p</code> elements with Kitty Ipsum text.')",
+        "assert($(\"p\").length > 1, 'You need 2 <code>p</code> elements with Kitty Ipsum text.')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
-        "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($('p').text()), 'Your <code>p</code> element should contain the first few words of the provided additional \"Kitty Ipsum\" text.')",
-        "assert($('p').css('font-size') === '16px', 'Give your <code>p</code> elements the font-size of 16px.')"
+        "assert.isTrue((/Purr\\s+jump\\s+eat/gi).test($(\"p\").text()), 'Your <code>p</code> element should contain the first few words of the provided additional \"Kitty Ipsum\" text.')",
+        "assert($(\"p\").css(\"font-size\") === \"16px\", 'Give your <code>p</code> elements the font-size of 16px.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -556,9 +556,9 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -595,7 +595,7 @@
         "For example, if you wanted to set your <code>h2</code> element's font to \"Sans-serif\", you would use the following CSS: <code>h2 { font-family: Sans-serif; }</code>."
       ],
       "tests": [
-        "assert($('p').css('font-family').match(/monospace/i), 'Your <code>p</code> elements should use the font \"Monospace\".')"
+        "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'Your <code>p</code> elements should use the font \"Monospace\".')"
       ],
       "challengeSeed": [
         "<style>",
@@ -608,9 +608,9 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
@@ -640,13 +640,13 @@
         "Apply the <code>font-family</code> of \"Lobster\" to your <code>h2</code> element.",
         "First, you'll need to make a \"call\" to Google to grab the \"Lobster\" font and load it into your HTML.",
         "Copy the following code snippet and paste it into your code editor:",
-        "<code>&#60;link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'&#62;</code>.",
+        "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>.",
         "Now you can set \"Lobster\" as a font-family attribute on your <code>h2</code> element."
       ],
       "tests": [
-        "assert(new RegExp('googleapis', 'gi').test(editor), 'Import the \"Lobster\" font.')",
-        "assert($('h2').css('font-family').match(/lobster/i), 'Your <code>h2</code> element should use the font \"Lobster\".')",
-        "assert($('p').css('font-family').match(/monospace/i), 'Your <code>p</code> element should still use the font \"Monospace\".')"
+        "assert(new RegExp(\"googleapis\", \"gi\").test(editor), 'Import the \"Lobster\" font.')",
+        "assert($(\"h2\").css(\"font-family\").match(/lobster/i), 'Your <code>h2</code> element should use the font \"Lobster\".')",
+        "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'Your <code>p</code> element should still use the font \"Monospace\".')"
       ],
       "challengeSeed": [
         "<style>",
@@ -660,10 +660,10 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -682,7 +682,7 @@
         "Füge dem <code>h2</code> Element die Schriftart oder <code>font-family</code> \"Lobster\" hinzu.",
         "Zuerst musst du Google Fonts in dein HTML einbinden, um auf \"Lobster\" zugreifen zu können.",
         "Kopiere den folgenden Code und füge diesen in deinen Editor über dem <code>style</code> Element ein:",
-        "<code>&#60;link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'&#62;</code>.",
+        "<code>&#60;link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\"&#62;</code>.",
         "Jetzt kannst du \"Lobster\" als font-family Attribut zu deinem <code>h2</code> Element hinzufügen."
       ]
     },
@@ -696,13 +696,13 @@
         "Now comment out your call to Google Fonts, so that the \"Lobster\" font isn't available. Notice how it degrades to the \"Monospace\" font."
       ],
       "tests": [
-        "assert($('h2').css('font-family').match(/^\"?lobster/i), 'Your h2 element should use the font \"Lobster\".')",
-        "assert($('h2').css('font-family').match(/lobster.*,.*monospace/i), 'Your h2 element should degrade to the font \"Monospace\" when \"Lobster\" is not available.')",
-        "assert(new RegExp('<!--', 'gi').test(editor), 'Comment out your call to Google for the \"Lobster\" font by putting <code>&#60!-- in front of it.')",
-        "assert(new RegExp('-->', 'gi').test(editor), 'Be sure to close your comment by deleting all trailing comment tags&#44; i.e. <code>--&#62;</code>.')"
+        "assert($(\"h2\").css(\"font-family\").match(/^\"?lobster/i), 'Your h2 element should use the font \"Lobster\".')",
+        "assert($(\"h2\").css(\"font-family\").match(/lobster.*,.*monospace/i), 'Your h2 element should degrade to the font \"Monospace\" when \"Lobster\" is not available.')",
+        "assert(new RegExp(\"<!--\", \"gi\").test(editor), 'Comment out your call to Google for the \"Lobster\" font by putting <code>&#60!-- in front of it.')",
+        "assert(new RegExp(\"-->\", \"gi\").test(editor), 'Be sure to close your comment by deleting all trailing comment tags&#44; i.e. <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -718,10 +718,10 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -751,14 +751,14 @@
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to an specific image's URL using the <code>src</code> attribute.",
         "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"/&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
-        "Try it with this image: <code>http://bit.ly/fcc-kittens</code>."
+        "Try it with this image: <code>https://bit.ly/fcc-relaxing-cat</code>."
       ],
       "tests": [
-        "assert($('img').length > 0, 'Your page should have an image element.')",
-        "assert($('img').filter(function(index) { return /http:\\/\\/bit\\.ly\\/fcc-kittens/gi.test($('img').attr('src')); }).length > 0, 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
+        "assert($(\"img\").length > 0, 'Your page should have an image element.')",
+        "assert($(\"img\").filter(function(index) { return /http:\\/\\/bit\\.ly\\/fcc-relaxing-cat/gi.test($(\"img\").attr(\"src\")); }).length > 0, 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -774,10 +774,10 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -793,10 +793,10 @@
       "descriptionPt": [],
       "nameDe": "Waypoint: Füge Bilder zu deiner Website hinzu",
       "descriptionDe": [
-        "Nutze ein <code>img</code> Element um das Bild <code>http://bit.ly/fcc-kittens</code> einzufügen.",
+        "Nutze ein <code>img</code> Element um das Bild <code>https://bit.ly/fcc-relaxing-cat</code> einzufügen.",
         "Du kannst <code>img</code> Elemente verwenden, um Bilder in deine Website einzubauen. Um zur URL des Bildes zu verweisen, benutzt du das <code>src</code> Attribut.",
         "Ein Beispiel dafür wäre <code>&#60img src=\"www.bild-quelle.com/bild.jpg\"/&#62</code>. Beachte, dass <code>img</code> Elemente in den meisten Fällen selbstschließend sind.",
-        "Versuche es mit diesem Bild: <code>http://bit.ly/fcc-kittens</code>."
+        "Versuche es mit diesem Bild: <code>https://bit.ly/fcc-relaxing-cat</code>."
       ]
     },
     {
@@ -809,11 +809,11 @@
         "Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide."
       ],
       "tests": [
-        "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
-        "assert($('img').width() === 100, 'Your image should be 100 pixels wide.')"
+        "assert($(\"img\").hasClass(\"smaller-image\"), 'Your <code>img</code> element should have the class \"smaller-image\".')",
+        "assert($(\"img\").width() === 100, 'Your image should be 100 pixels wide.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -829,12 +829,12 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img src='https://bit.ly/fcc-kittens'/>",
+        "<img src=\"https://bit.ly/fcc-relaxing-cat\"/>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -865,14 +865,14 @@
         "Create a class called \"thick-green-border\" that puts a 10-pixel-wide green border with a style of \"solid\" around an HTML element, and apply that class to your cat photo."
       ],
       "tests": [
-        "assert($('img').hasClass('smaller-image'), 'Your <code>img</code> element should have the class \"smaller-image\".')",
-        "assert($('img').hasClass('thick-green-border'), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
-        "assert($('img').hasClass('thick-green-border') && parseInt($('img').css('border-top-width')), 'Give your image a border width of 10px.')",
-        "assert(new RegExp('solid', 'gi').test(editor), 'Give your image a border style of \"solid\".')",
-        "assert($('img').css('border-left-color') === 'rgb(0, 128, 0)', 'The border around your <code>img</code> element should be green.')"
+        "assert($(\"img\").hasClass(\"smaller-image\"), 'Your <code>img</code> element should have the class \"smaller-image\".')",
+        "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your <code>img</code> element should have the class \"thick-green-border\".')",
+        "assert($(\"img\").hasClass(\"thick-green-border\") && parseInt($(\"img\").css(\"border-top-width\")), 'Give your image a border width of 10px.')",
+        "assert(new RegExp(\"solid\", \"gi\").test(editor), 'Give your image a border style of \"solid\".')",
+        "assert($(\"img\").css(\"border-left-color\") === \"rgb(0, 128, 0)\", 'The border around your <code>img</code> element should be green.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -892,12 +892,12 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class='smaller-image' src='https://bit.ly/fcc-kittens'/>",
+        "<img class=\"smaller-image\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -928,11 +928,11 @@
         "Give your cat photo a <code>border-radius</code> of 10 pixels."
       ],
       "tests": [
-        "assert($('img').hasClass('thick-green-border'), 'Your image element should have the class \"thick-green-border\".')",
-        "assert(parseInt($('img').css('border-top-left-radius')) > 8, 'Your image should have a border radius of 10 pixels')"
+        "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your image element should have the class \"thick-green-border\".')",
+        "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 8, 'Your image should have a border radius of 10 pixels')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -958,12 +958,12 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -993,11 +993,11 @@
         "Give your cat photo a <code>border-radius</code> of 50%."
       ],
       "tests": [
-        "assert(parseInt($('img').css('border-top-left-radius')) > 48, 'Your image should have a border radius of 50 percent&#44; making it perfectly circular.')",
+        "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 48, 'Your image should have a border radius of 50 percent&#44; making it perfectly circular.')",
         "assert(editor.match(/50%/g), 'Be sure to use a percentage instead of a pixel value.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1024,12 +1024,12 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1056,17 +1056,17 @@
       "description": [
         "<code>a</code> elements or \"anchor\" elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<img class='img-responsive' alt='a diagram of how anchor tags are composed with the same text as on the following line' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
-        "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
+        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\"/>",
+        "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "Create an <code>a</code> element that links to <code>http://catphotoapp.com</code> and has \"cat photos\" as its \"anchor text\"."
       ],
       "tests": [
-        "assert((/cat photos/gi).test($('a').text()), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
-        "assert(/http:\\/\\/catphotoapp\\.com/gi.test($('a').attr('href')), 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com<code>.')",
+        "assert((/cat photos/gi).test($(\"a\").text()), \"Your <code>a</code> element should have the anchor text of \"cat photos\"\")",
+        "assert(/http:\\/\\/catphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com<code>.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1093,12 +1093,12 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1116,8 +1116,8 @@
       "descriptionDe": [
         "Erstelle ein <code>a</code> Element oder \"Anker Element\", das auf http://catphotoapp.com verlinkt und den Link-Text \"cat photos\" oder \"anchor text\" beinhaltet.",
         "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
-        "<img class='img-responsive' alt='Ein Beispiel wie Anker Tags geschrieben werden.' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
-        "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href='http://freecodecamp.com'&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>."
+        "<img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\"/>",
+        "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>."
       ]
     },
     {
@@ -1126,22 +1126,22 @@
       "difficulty": 1.23,
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
-        "<img class='img-responsive' alt='a diagram of how anchor tags are composed with the same text as on the following line' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
-        "Here's an example: <code>&#60;p&#62;Here's a &#60;a href='http://freecodecamp.com'&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
+        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\"/>",
+        "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "\"Nesting\" just means putting one element inside of another element.",
         "Now nest your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
       ],
       "tests": [
-        "assert($('a').attr('href').match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
-        "assert($('a').text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
-        "assert($('p') && $('p').length > 2, 'Create a new <code>p</code> element around your <code>a</code> element. \"click here for\".')",
-        "assert($('a[href=\\'http://www.catphotoapp.com\\']').parent().is('p'), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
-        "assert($('p').text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
+        "assert($(\"a\").attr(\"href\").match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
+        "assert($(\"a\").text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
+        "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element. \"click here for\".')",
+        "assert($(\"a[href=\"http://www.catphotoapp.com\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
+        "assert($(\"p\").text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1168,14 +1168,14 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<a href='http://www.catphotoapp.com'>cat photos</a>",
+        "<a href=\"http://www.catphotoapp.com\">cat photos</a>",
         "",
-        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1192,8 +1192,8 @@
       "nameDe": "Waypoint Umschließe ein Anker Element mit einem Paragraphen",
       "descriptionDe":[
         "Jetzt umschließe dein <code>a</code> Element mit einem <code>p</code> Element und dem Text \"click here for cat photos\". Nur \"cat photos\" soll ein Link ein – der Rest normaler Text.",
-        "Hier ist nochmal ein Beispiel für ein <code>a</code> Element: <img class='img-responsive' alt='Ein Beispiel wie Anker Tags geschrieben werden.' src='https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png'/>",
-        "So könnte es aussehen: <code>&#60;p&#62;Hier ist ein &#60;a href='http://freecodecamp.com'&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
+        "Hier ist nochmal ein Beispiel für ein <code>a</code> Element: <img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\"/>",
+        "So könnte es aussehen: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
       ]
     },
     {
@@ -1206,10 +1206,10 @@
         "Replace your <code>a</code> element's <code>href</code> attribute with a hash symbol (#) to turn it into a dead link."
       ],
       "tests": [
-        "assert($('a').attr('href') === '#', 'Your <code>anchor</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')"
+        "assert($(\"a\").attr(\"href\") === \"#\", 'Your <code>anchor</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1236,14 +1236,14 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='http://www.catphotoapp.com'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"http://www.catphotoapp.com\">cat photos</a>.</p>",
         "",
-        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1271,17 +1271,17 @@
       "difficulty": 1.25,
       "description": [
         "You can make elements into links by nesting them within an <code>a</code> element.",
-        "Nest your image within an <code>a</code> element. Here's an example: <code>&#60;a href='#'&#62;&#60;img src='http://bit.ly/fcc-kittens2'/&#62;&#60;/a&#62;</code>.",
+        "Nest your image within an <code>a</code> element. Here's an example: <code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>.",
         "Remember to use the hash symbol (#) as your <code>a</code> element's <code>href</code> property in order to turn it into a dead link.",
         "Once you've done this, hover over your image with your cursor. Your cursor's normal pointer should become the link clicking pointer. The photo is now a link."
       ],
       "tests": [
-        "assert($('a').children('img').length > 0, 'Nest your <code>img</code> element within an <code>a</code> element.')",
-        "assert(new RegExp('#').test($('a').children('img').parent().attr('href')), 'Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')",
+        "assert($(\"a\").children(\"img\").length > 0, 'Nest your <code>img</code> element within an <code>a</code> element.')",
+        "assert(new RegExp(\"#\").test($(\"a\").children(\"img\").parent().attr(\"href\")), 'Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to \"#\".')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1308,14 +1308,14 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1333,7 +1333,7 @@
       "descriptionDe": [
         "Umschließe dein <code>img</code> Element mit einem <code>a</code> Element als toten Link.",
         "Du kannst jedes Element in einen Link verwandeln, indem du es mit einem <code>a</code> Element umschließt.",
-        "Umschließe nun dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel: <code>&#60;a href='#'&#62;&#60;img src='http://bit.ly/fcc-kittens2'/&#62;&#60;/a&#62;</code>.",
+        "Umschließe nun dein Bild mit einem <code>a</code> Element. Hier ist ein Beispiel: <code>&#60;a href=\"#\"&#62;&#60;img src=\"http://bit.ly/fcc-running-cats\"/&#62;&#60;/a&#62;</code>.",
         "Vergewissere dich, dass du ein Hash Symbol (#) innerhalb des <code>href</code> Attributs des <code>a</code> Elements nutzt, um daraus einen toten Link zu machen.",
         "Sobald du das gemacht hast, kannst du mit der Maus über dein Bild fahren. Der normale Mauszeiger sollte nun zu einer Hand für Links werden. Das Bild ist jetzt ein Link."
       ]
@@ -1349,10 +1349,10 @@
         "Add an <code>alt</code> attribute with the text \"A cute orange cat lying on its back\" to our cat photo."
       ],
       "tests": [
-        "assert($('img').filter(function(){ return /cat/gi.test(this.alt) }).length > 0, 'Your image element should have an <code>alt</code> attribute set to \"A cute orange cat lying on its back\".')"
+        "assert($(\"img\").filter(function(){ return /cat/gi.test(this.alt) }).length > 0, 'Your image element should have an <code>alt</code> attribute set to \"A cute orange cat lying on its back\".')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1379,14 +1379,14 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1425,13 +1425,13 @@
         "Replace your <code>p</code> elements with an unordered list of three things that cats love."
       ],
       "tests": [
-        "assert($('ul').length > 0, 'Create a <code>ul</code> element.')",
-        "assert($('ul li').length > 2, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
+        "assert($(\"ul\").length > 0, 'Create a <code>ul</code> element.')",
+        "assert($(\"ul li\").length > 2, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
         "assert(editor.match(/<\\/ul>/g) && editor.match(/<ul/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul/g).length, 'Make sure your <code>ul</code> element has a closing tag.')",
         "assert(editor.match(/<\\/li>/g) && editor.match(/<li>/g) && editor.match(/<\\/li>/g).length === editor.match(/<li>/g).length, 'Make sure your <code>li</code> element has a closing tag.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1458,14 +1458,14 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
-        "<p class='red-text'>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
-        "<p class='red-text'>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
+        "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+        "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1498,16 +1498,16 @@
         "Create an ordered list of the top 3 things cats hate the most."
       ],
       "tests": [
-        "assert($('ul').length > 0, 'You should have an <code>ul</code> element on your page.')",
-        "assert($('ol').length > 0, 'You should have an <code>ol</code> element on your page.')",
-        "assert($('ul li').length > 2, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
-        "assert($('ol li').length > 2, 'You should have three <code>li</code> elements within your <code>ol</code> element.')",
+        "assert($(\"ul\").length > 0, 'You should have an <code>ul</code> element on your page.')",
+        "assert($(\"ol\").length > 0, 'You should have an <code>ol</code> element on your page.')",
+        "assert($(\"ul li\").length > 2, 'You should have three <code>li</code> elements within your <code>ul</code> element.')",
+        "assert($(\"ol li\").length > 2, 'You should have three <code>li</code> elements within your <code>ol</code> element.')",
         "assert(editor.match(/<\\/ul>/g) && editor.match(/<\\/ul>/g).length === editor.match(/<ul>/g).length, 'Make sure your <code>ul</code> element has a closing tag.')",
         "assert(editor.match(/<\\/ol>/g) && editor.match(/<\\/ol>/g).length === editor.match(/<ol>/g).length, 'Make sure your <code>ol</code> element has a closing tag.')",
         "assert(editor.match(/<\\/li>/g) && editor.match(/<li>/g) && editor.match(/<\\/li>/g).length === editor.match(/<li>/g).length, 'Make sure your <code>li</code> element has a closing tag.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1534,11 +1534,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1579,10 +1579,10 @@
         "Create an <code>input</code> element of type \"text\" below your lists."
       ],
       "tests": [
-        "assert($('input[type=text]').length > 0, 'Your app should have a text field input element.')"
+        "assert($(\"input[type=text]\").length > 0, 'Your app should have a text field input element.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1609,11 +1609,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1644,7 +1644,7 @@
       "descriptionDe": [
         "Nun erstellen wir ein Web Formular. Erstelle ein Textfeld unter deinen Listen.",
         "Eingabefelder sind ein guter Weg, um Daten von Nutzern zu erhalten.",
-        "So kannst du eines erstellen: <code>&#60;input type='text'&#62;</code>. Beachte, dass <code>input</code> Elemente selbstschließend sind."
+        "So kannst du eines erstellen: <code>&#60;input type=\"text\"&#62;</code>. Beachte, dass <code>input</code> Elemente selbstschließend sind."
       ]
     },
     {
@@ -1653,15 +1653,15 @@
       "difficulty": 1.30,
       "description": [
         "Your placeholder text is what appears in your text <code>input</code> before your user has inputed anything.",
-        "You can create placeholder text like so: <code>&#60;input type='text' placeholder='this is placeholder text'&#62;</code>.",
+        "You can create placeholder text like so: <code>&#60;input type=\"text\" placeholder=\"this is placeholder text\"&#62;</code>.",
         "Set the <code>placeholder</code> value of your text <code>input</code> to \"cat photo URL\"."
       ],
       "tests": [
-        "assert($('input[placeholder]').length > 0, 'Add a <code>placeholder</code> attribute text <code>input</code> element.')",
-        "assert($('input') && $('input').attr('placeholder') && $('input').attr('placeholder').match(/cat\\s+photo\\s+URL/gi), 'Set the value of your placeholder attribute to \"cat photo URL\".')"
+        "assert($(\"input[placeholder]\").length > 0, 'Add a <code>placeholder</code> attribute text <code>input</code> element.')",
+        "assert($(\"input\") && $(\"input\").attr(\"placeholder\") && $(\"input\").attr(\"placeholder\").match(/cat\\s+photo\\s+URL/gi), 'Set the value of your placeholder attribute to \"cat photo URL\".')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1688,11 +1688,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1706,7 +1706,7 @@
         "  <li>thunder</li>",
         "  <li>other cats</li>",
         "</ol>",
-        "<input type='text'>"
+        "<input type=\"text\">"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1724,7 +1724,7 @@
       "descriptionDe": [
         "Setze bei deinem <code>input</code> Element den Wert für <code>placeholder</code> auf \"cat photo URL\".",
         "Platzhalter erscheinen in <code>input</code> Feldern, bevor der Nutzer etwas eingibt.",
-        "Du kannst Platzhalter auf folgende Weise erstellen: <code>&#60;input type='text' placeholder='Das ist ein Platzhalter.'&#62;</code>."
+        "Du kannst Platzhalter auf folgende Weise erstellen: <code>&#60;input type=\"text\" placeholder=\"Das ist ein Platzhalter.\"&#62;</code>."
       ]
     },
     {
@@ -1737,13 +1737,13 @@
         "Nest your text field in a <code>form</code> element. Add the <code>action=\"/submit-cat-photo\"</code> attribute to this form element."
       ],
       "tests": [
-        "assert($('form') && $('form').children('input') && $('form').children('input').length > 0, 'Nest your text input element within a <code>form</code> element.')",
-        "assert($('form').attr('action'), 'Your <code>form</code> element should have an <code>action</code> attribute.')",
+        "assert($(\"form\") && $(\"form\").children(\"input\") && $(\"form\").children(\"input\").length > 0, 'Nest your text input element within a <code>form</code> element.')",
+        "assert($(\"form\").attr(\"action\"), 'Your <code>form</code> element should have an <code>action</code> attribute.')",
         "assert(editor.match(/<\\/form>/g) && editor.match(/<form/g) && editor.match(/<\\/form>/g).length === editor.match(/<form/g).length, 'Make sure your <code>form</code> element has a closing tag.')",
         "assert(editor.match(/\\/submit-cat-photo/ig), 'Make sure your <code>form</code> action is set to <code>/submit-cat-photo</code>.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1770,11 +1770,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1788,7 +1788,7 @@
         "  <li>thunder</li>",
         "  <li>other cats</li>",
         "</ol>",
-        "<input type='text' placeholder='cat photo URL'>"
+        "<input type=\"text\" placeholder=\"cat photo URL\">"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -1815,17 +1815,17 @@
       "difficulty": 1.32,
       "description": [
         "Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's <code>action</code> attribute.",
-        "Here's an example submit button: <code>&#60;button type='submit'&#62;this button submits the form&#60;/button&#62;</code>.",
+        "Here's an example submit button: <code>&#60;button type=\"submit\"&#62;this button submits the form&#60;/button&#62;</code>.",
         "Add a submit button to your <code>form</code> element with type \"submit\" and \"Submit\" as its text."
       ],
       "tests": [
-        "assert($('form').children('button').length > 0, 'Your form should have a button inside it.')",
-        "assert($('button').attr('type') === 'submit', 'Your submit button should have the attribute \"type\" set to \"submit\".')",
-        "assert($('button').text().match(/submit/gi), 'Your submit button should have the text \"submit\".')",
+        "assert($(\"form\").children(\"button\").length > 0, 'Your form should have a button inside it.')",
+        "assert($(\"button\").attr(\"type\") === \"submit\", 'Your submit button should have the attribute \"type\" set to \"submit\".')",
+        "assert($(\"button\").text().match(/submit/gi), 'Your submit button should have the text \"submit\".')",
         "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure your <code>button</code> element has a closing tag.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1852,11 +1852,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1871,7 +1871,7 @@
         "  <li>other cats</li>",
         "</ol>",
         "<form action=\"/submit-cat-photo\">",
-        "  <input type='text' placeholder='cat photo URL'>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\">",
         "</form>"
       ],
       "type": "waypoint",
@@ -1890,7 +1890,7 @@
       "descriptionDe": [
         "Füge eine Schaltfläche zum Senden mit dem Typ \"submit\" und \"Submit\" als Text zu deinem <code>form</code> Element hinzu.",
         "Lass uns nun eine Schaltfläche zum Senden zu deinem Formlar hinzufügen. Durch einen Klick auf diese Schaltfläche werden die Daten des Formulars an die URL gesendet, welche du in dem <code>action</code> Attribut deines Formulars angegeben hast.",
-        "Hier ist ein Beispiel einer solchen Schaltfläche: <code>&#60;button type='submit'&#62;Diese Schaltfläche überträgt die Daten des Formulars.&#60;/button&#62;</code>."
+        "Hier ist ein Beispiel einer solchen Schaltfläche: <code>&#60;button type=\"submit\"&#62;Diese Schaltfläche überträgt die Daten des Formulars.&#60;/button&#62;</code>."
       ]
     },
     {
@@ -1899,14 +1899,14 @@
       "difficulty": 1.33,
       "description": [
         "You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.",
-        "For example, if you wanted to make a text input field required, you can just add the word \"required\" within your <code>input</code> element, you would use: <code>&#60;input type='text' required&#62;</code>.",
+        "For example, if you wanted to make a text input field required, you can just add the word \"required\" within your <code>input</code> element, you would use: <code>&#60;input type=\"text\" required&#62;</code>.",
         "Make your text <code>input</code> a \"required\" field, so that your user can't submit the form without completing this field."
       ],
       "tests": [
-        "assert($('input').prop('required'), 'Your text <code>input</code> element should have the \"required\" attribute.')"
+        "assert($(\"input\").prop(\"required\"), 'Your text <code>input</code> element should have the \"required\" attribute.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -1933,11 +1933,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1952,8 +1952,8 @@
         "  <li>other cats</li>",
         "</ol>",
         "<form action=\"/submit-cat-photo\">",
-        "  <input type='text' placeholder='cat photo URL'>",
-        "  <button type='submit'>Submit</button>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\">",
+        "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
       "type": "waypoint",
@@ -1972,7 +1972,7 @@
       "descriptionDe": [
         "Mache aus deinem <code>input</code> Feld ein Pflichtfeld – \"required\" – damit deine Nutzer das Formular nicht abschicken können, ohne dieses Feld auszufüllen.",
         "Du kannst bestimmte Felder eines Formulars als Pflichtfelder deklarieren. Damit ist es deinen Nutzern nicht mehr möglich, das Formular abzuschicken, ohne die Pflichtfelder auszufüllen.",
-        "Um zum Beispiel ein Textfeld als Pflichtfeld zu deklarieren, kannst du einfach ein \"required\" innerhalb deines <code>input</code> Elements hinzufügen: <code>&#60;input type='text' required&#62;</code>."
+        "Um zum Beispiel ein Textfeld als Pflichtfeld zu deklarieren, kannst du einfach ein \"required\" innerhalb deines <code>input</code> Elements hinzufügen: <code>&#60;input type=\"text\" required&#62;</code>."
       ]
     },
     {
@@ -1984,19 +1984,19 @@
         "Radio buttons are a type of <code>input</code>.",
         "Each of your radio buttons should be nested within its own <code>label</code> element.",
         "All related radio buttons should have the same <code>name</code> attribute.",
-        "Here's an example of a radio button: <code>&#60;label&#62;&#60;input type='radio' name='indoor-outdoor'&#62; Indoor&#60;/label&#62;</code>.",
+        "Here's an example of a radio button: <code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>.",
         "Add to your form a pair of radio buttons. Each radio button should be nested within its own <code>label</code> element. They should share a common <code>name</code> attribute. One should have the option of \"indoor\" and the other should have the option of \"outdoor\"."
       ],
       "tests": [
-        "assert($('input[type=\"radio\"]').length > 1, 'Your page should have two radio button elements.')",
-        "assert($('input[type=\"radio\"]:nth-child(1)').attr('name') === 'indoor-outdoor' && $('input[type=\"radio\"]:nth-child(2)').attr('name') === 'indoor-outdoor', 'Give your radio buttons the <code>name</code> attribute of \"indoor-outdoor\".')",
-        "assert($('label').length > 1, 'Each of your two radio button elements should be nested in a label element.')",
+        "assert($(\"input[type=\"radio\"]\").length > 1, 'Your page should have two radio button elements.')",
+        "assert($(\"input[type=\"radio\"]:nth-child(1)\").attr(\"name\") === \"indoor-outdoor\" && $(\"input[type=\"radio\"]:nth-child(2)\").attr(\"name\") === \"indoor-outdoor\", 'Give your radio buttons the <code>name</code> attribute of \"indoor-outdoor\".')",
+        "assert($(\"label\").length > 1, 'Each of your two radio button elements should be nested in a label element.')",
         "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
-        "assert($('label').text().match(/indoor/gi), 'One of your radio buttons should have the label \"indoor\".')",
-        "assert($('label').text().match(/outdoor/gi), 'One of your radio buttons should have the label \"outdoor\".')"
+        "assert($(\"label\").text().match(/indoor/gi), 'One of your radio buttons should have the label \"indoor\".')",
+        "assert($(\"label\").text().match(/outdoor/gi), 'One of your radio buttons should have the label \"outdoor\".')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2023,11 +2023,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2042,8 +2042,8 @@
         "  <li>other cats</li>",
         "</ol>",
         "<form action=\"/submit-cat-photo\">",
-        "  <input type='text' placeholder='cat photo URL' required>",
-        "  <button type='submit'>Submit</button>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
       "type": "waypoint",
@@ -2065,7 +2065,7 @@
         "Optionsfelder sind lediglich ein weiterer Typ von <code>input</code> Elementen.",
         "Jedes deiner Optionsfelder sollte innerhalb des eigenen <code>label</code> Elements liegen.",
         "Alle Optionsfelder mit Bezug zueinander sollten das gleiche <code>name</code> Attribut teilen.",
-        "Ein Beispiel eines Optionsfeldes: <code>&#60;label&#62;&#60;input type='radio' name='indoor-outdoor'&#62; Indoor&#60;/label&#62;</code>."
+        "Ein Beispiel eines Optionsfeldes: <code>&#60;label&#62;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62; Indoor&#60;/label&#62;</code>."
       ]
     },
     {
@@ -2077,17 +2077,17 @@
         "Checkboxes are a type of <code>input</code>.",
         "Each of your checkboxes should be nested within its own <code>label</code> element.",
         "All related checkbox inputs should have the same <code>name</code> attribute.",
-        "Here's an example of a checkbox: <code>&#60;label&#62;&#60;input type='checkbox' name='personality'&#62; Loving&#60;/label&#62;</code>.",
+        "Here's an example of a checkbox: <code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>.",
         "Add to your form a set of three checkboxes. Each checkbox should be nested within its own <code>label</code> element. All three should share the <code>name</code> attribute of \"personality\"."
       ],
       "tests": [
-        "assert($('input[type=\"checkbox\"]').length > 2, 'Your page should have three checkbox elements.')",
-        "assert($('label:has(input[type=\"checkbox\"])').length > 2, 'Each of your three checkbox elements should be nested in its own <code>label</code> element.')",
-        "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.')",
-        "assert($('input[type=\"checkbox\"]:nth-child(1)').attr('name') === 'personality', 'Give your checkboxes buttons the <code>name</code> attribute of \"personality\".')"
+        "assert($(\"input[type=\"checkbox\"]\").length > 2, 'Your page should have three checkbox elements.')",
+        "assert($(\"label:has(input[type=\"checkbox\"])\").length > 2, 'Each of your three checkbox elements should be nested in its own <code>label</code> element.')",
+        "assert(editor.match(/<\\/label>/g) && editor.match(/<label/g) && editor.match(/<\\/label>/g).length === editor.match(/<label/g).length, \"Make sure each of your <code>label</code> elements has a closing tag.\")",
+        "assert($(\"input[type=\"checkbox\"]:nth-child(1)\").attr(\"name\") === \"personality\", 'Give your checkboxes buttons the <code>name</code> attribute of \"personality\".')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2114,11 +2114,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2133,10 +2133,10 @@
         "  <li>other cats</li>",
         "</ol>",
         "<form action=\"/submit-cat-photo\">",
-        "  <label><input type='radio' name='indoor-outdoor'> Indoor</label>",
-        "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <input type='text' placeholder='cat photo URL' required>",
-        "  <button type='submit'>Submit</button>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Indoor</label>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
       "type": "waypoint",
@@ -2155,7 +2155,7 @@
       "descriptionDe": [
         "Füge deinem Formular drei Kontrollkästchen hinzu. Jedes dieser Elemente sollte innerhalb seines eigenen <code>label</code> Elements stehen. Alle sollten das gleiche <code>name</code> Attribut \"personality\" teilen.",
         "Formulare nutzen Kontrollkästchen meistens für Fragen, die mehrerer Antworten bedürfen.",
-        "Als Beispiel: <code>&#60;label&#62;&#60;input type='checkbox' name='personality'&#62; liebevoll&#60;/label&#62;</code>."
+        "Als Beispiel: <code>&#60;label&#62;&#60;input type=\"checkbox\" name=\"personality\"&#62; liebevoll&#60;/label&#62;</code>."
       ]
     },
     {
@@ -2164,15 +2164,15 @@
       "difficulty": 1.37,
       "description": [
         "You can set a checkbox or radio button to be checked by default using the <code>checked</code> attribute.",
-        "To do this, just add the word \"checked\" to the inside of an input element. For example, <code>&#60;input type='radio' name='test-name' checked&#62;</code>.",
+        "To do this, just add the word \"checked\" to the inside of an input element. For example, <code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>.",
         "Set the first of your radio buttons and the first of your checkboxes to both be checked by default."
       ],
       "tests": [
-        "assert($('input[type=\"radio\"]').prop('checked'), 'Your first radio button on your form should be checked by default.')",
-        "assert($('input[type=\"checkbox\"]').prop('checked'), 'Your first checkbox on your form should be checked by default.')"
+        "assert($(\"input[type=\"radio\"]\").prop(\"checked\"), 'Your first radio button on your form should be checked by default.')",
+        "assert($(\"input[type=\"checkbox\"]\").prop(\"checked\"), 'Your first checkbox on your form should be checked by default.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2199,11 +2199,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2218,13 +2218,13 @@
         "  <li>other cats</li>",
         "</ol>",
         "<form action=\"/submit-cat-photo\">",
-        "  <label><input type='radio' name='indoor-outdoor'> Indoor</label>",
-        "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <label><input type='checkbox' name='personality'> Loving</label>",
-        "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Energetic</label>",
-        "  <input type='text' placeholder='cat photo URL' required>",
-        "  <button type='submit'>Submit</button>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Indoor</label>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Loving</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
       "type": "waypoint",
@@ -2243,7 +2243,7 @@
       "descriptionDe": [
         "Stelle sicher, dass jeweilse dein erstes Optionsfeld und Kontrollkästchen standardmäßig markiert sind.",
         "Das kannst du erreichen, indem beiden das Attribut <code>checked</code> beigefügt wird.",
-        "Um das zu bewerkstelligen, füge einfach \"checked\" innerhalb eines Eingabefeldes hinzu. Als Beispiel: <code>&#60;input type='radio' name='test-name' checked&#62;</code>."
+        "Um das zu bewerkstelligen, füge einfach \"checked\" innerhalb eines Eingabefeldes hinzu. Als Beispiel: <code>&#60;input type=\"radio\" name=\"test-name\" checked&#62;</code>."
       ]
     },
     {
@@ -2258,13 +2258,13 @@
         "Nest your \"Things cats love\" and \"Things cats hate\" lists all within a single <code>div</code> element."
       ],
       "tests": [
-        "assert($('div').children('ol').length > 0, 'Nest your <code>ol</code> element inside your <code>div</code> element.')",
-        "assert($('div').children('p').length > 1, 'Nest your <code>p</code> element inside your <code>div</code> element.')",
-        "assert($('div').children('ul').length > 0, 'Nest your <code>ul</code> element inside your <code>div</code> element.')",
+        "assert($(\"div\").children(\"ol\").length > 0, 'Nest your <code>ol</code> element inside your <code>div</code> element.')",
+        "assert($(\"div\").children(\"p\").length > 1, 'Nest your <code>p</code> element inside your <code>div</code> element.')",
+        "assert($(\"div\").children(\"ul\").length > 0, 'Nest your <code>ul</code> element inside your <code>div</code> element.')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<\\/div>/g).length === editor.match(/<div>/g).length, 'Make sure your <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2291,11 +2291,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2311,13 +2311,13 @@
         "</ol>",
         "",
         "<form action=\"/submit-cat-photo\">",
-        "  <label><input type='radio' name='indoor-outdoor' checked> Indoor</label>",
-        "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <label><input type='checkbox' name='personality' checked> Loving</label>",
-        "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Energetic</label>",
-        "  <input type='text' placeholder='cat photo URL' required>",
-        "  <button type='submit'>Submit</button>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
       "type": "waypoint",
@@ -2351,11 +2351,11 @@
         "Create a class called \"gray-background\" with the background color of gray. Assign this class to your <code>div</code> element."
       ],
       "tests": [
-        "assert($('div').hasClass('gray-background'), 'Give your <code>div</code> element the class \"gray-background\".')",
-        "assert($('.gray-background').css('background-color') === 'rgb(128, 128, 128)', 'Your <code>div</code> element should have a gray background.')"
+        "assert($(\"div\").hasClass(\"gray-background\"), 'Give your <code>div</code> element the class \"gray-background\".')",
+        "assert($(\".gray-background\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'Your <code>div</code> element should have a gray background.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2382,11 +2382,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
@@ -2404,13 +2404,13 @@
         "</div>",
         "",
         "<form action=\"/submit-cat-photo\">",
-        "  <label><input type='radio' name='indoor-outdoor' checked> Indoor</label>",
-        "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <label><input type='checkbox' name='personality' checked> Loving</label>",
-        "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Energetic</label>",
-        "  <input type='text' placeholder='cat photo URL' required>",
-        "  <button type='submit'>Submit</button>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
       "type": "waypoint",
@@ -2440,10 +2440,10 @@
         "Give your <code>form</code> element the id \"cat-photo-form\"."
       ],
       "tests": [
-        "assert($('form').attr('id') === 'cat-photo-form', 'Give your <code>form</code> element the id of \"cat-photo-form\".')"
+        "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of \"cat-photo-form\".')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2470,11 +2470,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
@@ -2492,13 +2492,13 @@
         "</div>",
         "",
         "<form action=\"/submit-cat-photo\">",
-        "  <label><input type='radio' name='indoor-outdoor' checked> Indoor</label>",
-        "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <label><input type='checkbox' name='personality' checked> Loving</label>",
-        "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Energetic</label>",
-        "  <input type='text' placeholder='cat photo URL' required>",
-        "  <button type='submit'>Submit</button>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
       "type": "waypoint",
@@ -2527,13 +2527,13 @@
         "Try giving your form, which now has the <code>id</code> attribute of \"cat-photo-form\", a green background."
       ],
       "tests": [
-        "assert($('form').attr('id') === 'cat-photo-form', 'Give your <code>form</code> element the id of \"cat-photo-form\".')",
-        "assert($('#cat-photo-form').css('background-color') === 'rgb(0, 128, 0)', 'Your <code>form</code> element should have the \"background-color\" of green.')",
+        "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of \"cat-photo-form\".')",
+        "assert($(\"#cat-photo-form\").css(\"background-color\") === \"rgb(0, 128, 0)\", 'Your <code>form</code> element should have the \"background-color\" of green.')",
         "assert(editor.match(/<form.*cat-photo-form.*>/gi) && editor.match(/<form.*cat-photo-form.*>/gi).length > 0, 'Make sure your <code>form</code> element has both an <code>id</code> attribute.')",
         "assert(!editor.match(/<form.*style.*>/gi) && !editor.match(/<form.*class.*>/gi), 'Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.')"
       ],
       "challengeSeed": [
-        "<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>",
+        "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
         "<style>",
         "  .red-text {",
         "    color: red;",
@@ -2560,11 +2560,11 @@
         "  }",
         "</style>",
         "",
-        "<h2 class='red-text'>CatPhotoApp</h2>",
+        "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<p>Click here for <a href='#'>cat photos</a>.</p>",
+        "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href='#'><img class='smaller-image thick-green-border' src='https://bit.ly/fcc-kittens'/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
@@ -2582,13 +2582,13 @@
         "</div>",
         "",
         "<form action=\"/submit-cat-photo\" id=\"cat-photo-form\">",
-        "  <label><input type='radio' name='indoor-outdoor' checked> Indoor</label>",
-        "  <label><input type='radio' name='indoor-outdoor'> Outdoor</label>",
-        "  <label><input type='checkbox' name='personality' checked> Loving</label>",
-        "  <label><input type='checkbox' name='personality'> Lazy</label>",
-        "  <label><input type='checkbox' name='personality'> Energetic</label>",
-        "  <input type='text' placeholder='cat photo URL' required>",
-        "  <button type='submit'>Submit</button>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\" checked> Indoor</label>",
+        "  <label><input type=\"radio\" name=\"indoor-outdoor\"> Outdoor</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\" checked> Loving</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Lazy</label>",
+        "  <label><input type=\"checkbox\" name=\"personality\"> Energetic</label>",
+        "  <input type=\"text\" placeholder=\"cat photo URL\" required>",
+        "  <button type=\"submit\">Submit</button>",
         "</form>"
       ],
       "type": "waypoint",
@@ -2619,7 +2619,7 @@
         "Change the <code>padding</code> of your green box to match that of your red box."
       ],
       "tests": [
-        "assert($('.green-box').css('padding-top') === '20px', 'Your <code>green-box</code> class should give elements 20px of padding.')"
+        "assert($(\".green-box\").css(\"padding-top\") === \"20px\", 'Your <code>green-box</code> class should give elements 20px of padding.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -2688,7 +2688,7 @@
         "Change the <code>margin</code> of the green box to match that of the red box."
       ],
       "tests": [
-        "assert($('.green-box').css('margin-top') === '20px', 'Your <code>green-box</code> class should give elements 20px of margin.')"
+        "assert($(\".green-box\").css(\"margin-top\") === \"20px\", 'Your <code>green-box</code> class should give elements 20px of margin.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -2759,7 +2759,7 @@
         "Change the <code>margin</code> of the green box to -15 pixels, so it fills the entire horizontal width of the yellow box around it."
       ],
       "tests": [
-        "assert($('.green-box').css('margin-top') === '-15px', 'Your <code>green-box</code> class should give elements -15px of margin.')"
+        "assert($(\".green-box\").css(\"margin-top\") === \"-15px\", 'Your <code>green-box</code> class should give elements -15px of margin.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -2828,10 +2828,10 @@
         "Give the green box a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side."
       ],
       "tests": [
-        "assert($('.green-box').css('padding-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of padding.')",
-        "assert($('.green-box').css('padding-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of padding.')",
-        "assert($('.green-box').css('padding-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of padding.')",
-        "assert($('.green-box').css('padding-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of padding.')"
+        "assert($(\".green-box\").css(\"padding-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of elements 40px of padding.')",
+        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'Your <code>green-box</code> class should give the left of elements 40px of padding.')",
+        "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'Your <code>green-box</code> class should give the right of elements 20px of padding.')",
+        "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>green-box</code> class should give the bottom of elements 20px of padding.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -2900,10 +2900,10 @@
         "CSS allows you to control the <code>margin</code> of an element on all four sides with <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, and <code>margin-left</code> attributes."
       ],
       "tests": [
-        "assert($('.green-box').css('margin-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of <code>margin</code>.')",
-        "assert($('.green-box').css('margin-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of <code>margin</code>.')",
-        "assert($('.green-box').css('margin-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of <code>margin</code>.')",
-        "assert($('.green-box').css('margin-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of <code>margin</code>.')"
+        "assert($(\".green-box\").css(\"margin-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of elements 40px of <code>margin</code>.')",
+        "assert($(\".green-box\").css(\"margin-left\") === \"40px\", 'Your <code>green-box</code> class should give the left of elements 40px of <code>margin</code>.')",
+        "assert($(\".green-box\").css(\"margin-right\") === \"20px\", 'Your <code>green-box</code> class should give the right of elements 20px of <code>margin</code>.')",
+        "assert($(\".green-box\").css(\"margin-bottom\") === \"20px\", 'Your <code>green-box</code> class should give the bottom of elements 20px of <code>margin</code>.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -2971,10 +2971,10 @@
         "Use Clockwise Notation to give the \".green-box\" class a <code>padding</code> of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side."
       ],
       "tests": [
-        "assert($('.green-box').css('padding-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of <code>padding</code>.')",
-        "assert($('.green-box').css('padding-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of <code>padding</code>.')",
-        "assert($('.green-box').css('padding-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of <code>padding</code>.')",
-        "assert($('.green-box').css('padding-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of <code>padding</code>.')"
+        "assert($(\".green-box\").css(\"padding-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of elements 40px of <code>padding</code>.')",
+        "assert($(\".green-box\").css(\"padding-right\") === \"20px\", 'Your <code>green-box</code> class should give the right of elements 20px of <code>padding</code>.')",
+        "assert($(\".green-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>green-box</code> class should give the bottom of elements 20px of <code>padding</code>.')",
+        "assert($(\".green-box\").css(\"padding-left\") === \"40px\", 'Your <code>green-box</code> class should give the left of elements 40px of <code>padding</code>.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3041,10 +3041,10 @@
         "Use <code>Clockwise Notation</code> to give an element a margin of 40 pixels on its top and left side, but only 20 pixels on its bottom and right side."
       ],
       "tests": [
-        "assert($('.green-box').css('margin-top') === '40px', 'Your <code>green-box</code> class should give the top of elements 40px of <code>margin</code>.')",
-        "assert($('.green-box').css('margin-right') === '20px', 'Your <code>green-box</code> class should give the right of elements 20px of <code>margin</code>.')",
-        "assert($('.green-box').css('margin-bottom') === '20px', 'Your <code>green-box</code> class should give the bottom of elements 20px of <code>margin</code>.')",
-        "assert($('.green-box').css('margin-left') === '40px', 'Your <code>green-box</code> class should give the left of elements 40px of <code>margin</code>.')"
+        "assert($(\".green-box\").css(\"margin-top\") === \"40px\", 'Your <code>green-box</code> class should give the top of elements 40px of <code>margin</code>.')",
+        "assert($(\".green-box\").css(\"margin-right\") === \"20px\", 'Your <code>green-box</code> class should give the right of elements 20px of <code>margin</code>.')",
+        "assert($(\".green-box\").css(\"margin-bottom\") === \"20px\", 'Your <code>green-box</code> class should give the bottom of elements 20px of <code>margin</code>.')",
+        "assert($(\".green-box\").css(\"margin-left\") === \"40px\", 'Your <code>green-box</code> class should give the left of elements 40px of <code>margin</code>.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3111,7 +3111,7 @@
         "We can do this by adding <code>body { background-color: black; }</code> to our <code>style</code> element."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Give your <code>body</code> element the background-color of black.')"
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the background-color of black.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3145,13 +3145,13 @@
         "Finally, give your <code>body</code> element the font-family of \"Monospace\" by adding <code>font-family: Monospace;</code> to your <code>body</code> element's style declaration."
       ],
       "tests": [
-        "assert(($('h1').length > 0), 'Create an <code>h1</code> element.')",
-        "assert(($('h1').length > 0 && $('h1').text().match(/hello world/i)), 'Your <code>h1</code> element should have the text \"Hello World\".')",
+        "assert(($(\"h1\").length > 0), 'Create an <code>h1</code> element.')",
+        "assert(($(\"h1\").length > 0 && $(\"h1\").text().match(/hello world/i)), 'Your <code>h1</code> element should have the text \"Hello World\".')",
         "assert(editor.match(/<\\/h1>/g) && editor.match(/<h1/g) && editor.match(/<\\/h1>/g).length === editor.match(/<h1/g).length, 'Make sure your <code>h1</code> element has a closing tag.')",
-        "assert(($('body').css('color') === 'rgb(0, 128, 0)'), 'Give your <code>body</code> element the \"color\" attribute of green.')",
-        "assert(($('body').css('font-family').match(/Monospace/i)), 'Give your <code>body</code> element the \"font-family\" attribute of \"Monospace\".')",
-        "assert(($('h1').length > 0 && $('h1').css('font-family').match(/monospace/i)), 'Your <code>h1</code> element should inherit the font \"Monospace\" from your <code>body</code> element.')",
-        "assert(($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)'), 'Your <code>h1</code> element should inherit the color green from your <code>body</code> element.')"
+        "assert(($(\"body\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Give your <code>body</code> element the \"color\" attribute of green.')",
+        "assert(($(\"body\").css(\"font-family\").match(/Monospace/i)), 'Give your <code>body</code> element the \"font-family\" attribute of \"Monospace\".')",
+        "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"font-family\").match(/monospace/i)), 'Your <code>h1</code> element should inherit the font \"Monospace\" from your <code>body</code> element.')",
+        "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Your <code>h1</code> element should inherit the color green from your <code>body</code> element.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3188,8 +3188,8 @@
         "Give your <code>h1</code> element the class of \"pink-text\"."
       ],
       "tests": [
-        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
-        "assert($('h1').css('color') === 'rgb(255, 192, 203)', 'Your <code>h1</code> element should be pink.')"
+        "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3227,9 +3227,9 @@
         "Apply the \"blue-text\" class to your <code>h1</code> element in addition to your \"pink-text\" class, and let's see which one wins."
       ],
       "tests": [
-        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
-        "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
-        "assert($('h1').css('color') === 'rgb(0, 0, 255)', 'Your <code>h1</code> element should be blue.')"
+        "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class \"blue-text\".')",
+        "assert($(\"h1\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h1</code> element should be blue.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3242,7 +3242,7 @@
         "    color: pink;",
         "  }",
         "</style>",
-        "<h1 class='pink-text'>Hello World!</h1>"
+        "<h1 class=\"pink-text\">Hello World!</h1>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -3272,10 +3272,10 @@
         "Create a CSS declaration for your \"orange-text\" id in your <code>style</code> element. Here's and example of what this looks like: <code>#brown-text { color: brown; }</code>"
       ],
       "tests": [
-        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
-        "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
-        "assert($('h1').attr('id') === 'orange-text', 'Give your <code>h1</code> element the id of \"orange-text\".')",
-        "assert($('h1').css('color') === 'rgb(255, 165, 0)', 'Your <code>h1</code> element should be orange.')"
+        "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class \"blue-text\".')",
+        "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Give your <code>h1</code> element the id of \"orange-text\".')",
+        "assert($(\"h1\").css(\"color\") === \"rgb(255, 165, 0)\", 'Your <code>h1</code> element should be orange.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3291,7 +3291,7 @@
         "    color: blue;",
         "  }",
         "</style>",
-        "<h1 class='pink-text blue-text'>Hello World!</h1>"
+        "<h1 class=\"pink-text blue-text\">Hello World!</h1>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -3319,11 +3319,11 @@
         "Leave the \"blue-text\" and \"pink-text\" classes on your <code>h1</code> element."
       ],
       "tests": [
-        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
-        "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
-        "assert($('h1').attr('id') === 'orange-text', 'Your <code>h1</code> element should have the id of \"orange-text\".')",
+        "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class \"blue-text\".')",
+        "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of \"orange-text\".')",
         "assert(editor.match(/<h1.*style/gi) && editor.match(/<h1.*style.*color:/gi).length > 0, 'Give your <code>h1</code> element the inline style of \"color: white\".')",
-        "assert($('h1').css('color') === 'rgb(255, 255, 255)', 'Your <code>h1</code> element should be white.')"
+        "assert($(\"h1\").css(\"color\") === \"rgb(255, 255, 255)\", 'Your <code>h1</code> element should be white.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3342,7 +3342,7 @@
         "    color: blue;",
         "  }",
         "</style>",
-        "<h1 id='orange-text' class='pink-text blue-text'>Hello World!</h1>"
+        "<h1 id=\"orange-text\" class=\"pink-text blue-text\">Hello World!</h1>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -3372,12 +3372,12 @@
         "An example of how to do this is: <code>color: red !important;</code>"
       ],
       "tests": [
-        "assert($('h1').hasClass('pink-text'), 'Your <code>h1</code> element should have the class \"pink-text\".')",
-        "assert($('h1').hasClass('blue-text'), 'Your <code>h1</code> element should have the class \"blue-text\".')",
-        "assert($('h1').attr('id') === 'orange-text', 'Your <code>h1</code> element should have the id of \"orange-text\".')",
+        "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class \"pink-text\".')",
+        "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class \"blue-text\".')",
+        "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of \"orange-text\".')",
         "assert(editor.match(/<h1.*style/gi) && editor.match(/<h1.*style.*color:/gi).length > 0, 'Your <code>h1</code> element should have the inline style of \"color: white\".')",
         "assert(editor.match(/pink.*\\!important/gi) && editor.match(/pink.*\\!important;/gi).length > 0, 'Your \"pink-text\" class should have the !important keyword to override all other declarations.')",
-        "assert($('h1').css('color') === 'rgb(255, 192, 203)', 'Your <code>h1</code> element should be pink.')"
+        "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.')"
       ],
       "challengeSeed": [
         "<style>",
@@ -3396,7 +3396,7 @@
         "    color: blue;",
         "  }",
         "</style>",
-        "<h1 id='orange-text' class='pink-text blue-text' style='color: white'>Hello World!</h1>"
+        "<h1 id=\"orange-text\" class=\"pink-text blue-text\" style=\"color: white\">Hello World!</h1>"
       ],
       "type": "waypoint",
       "challengeType": 0,
@@ -3424,7 +3424,7 @@
         "Replace the word \"black\" in our <code>body</code> element's background-color with its \"hex code\" representation, <code>#000000</code>. "
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Give your <code>body</code> element the background-color of black.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the background-color of black.')",
         "assert(editor.match(/#000000/g) && editor.match(/#000000/g).length > 0, 'Use the hex code for the color black instead of the word \"black\". For example <code>body: { color: #000000; }</code>.')"
       ],
       "challengeSeed": [
@@ -3459,7 +3459,7 @@
         "Let's turn our <code>body</code> element's background-color white by changing its hex code to <code>#FFFFFF</code>."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 255, 255)', 'Your <code>body</code> element should have the background-color of white.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'Your <code>body</code> element should have the background-color of white.')",
         "assert(editor.match(/#FFFFFF/ig) && editor.match(/#FFFFFF/ig).length > 0, 'Use hex code the color white instead of the word \"white\". For example <code>body: { color: #FFFFFF; }</code>.')"
       ],
       "challengeSeed": [
@@ -3496,7 +3496,7 @@
         "Make the <code>body</code> element's background color red by giving it the hex code value of <code>#FF0000</code>."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Give your <code>body</code> element the background-color of red.')",
         "assert(editor.match(/#FF0000/g) && editor.match(/#FF0000/g).length > 0, 'Use hex code the color red instead of the word \"red\". For example <code>body: { color: #FF0000; }</code>.')"
       ],
       "challengeSeed": [
@@ -3531,7 +3531,7 @@
         "Make the <code>body</code> element's background color green by giving it the hex code value of <code>#00FF00</code>."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 255, 0)', 'Give your <code>body</code> element the background-color of green.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'Give your <code>body</code> element the background-color of green.')",
         "assert(editor.match(/#00[Ff]{2}00/g) && editor.match(/#00[Ff]{2}00/g).length > 0, 'Use hex code the color green instead of the word \"green\". For example <code>body: { color: #00FF00; }</code>.')"
       ],
       "challengeSeed": [
@@ -3566,7 +3566,7 @@
         "Make the <code>body</code> element's background color blue by giving it the hex code value of <code>#0000FF</code>."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 0, 255)', 'Give your <code>body</code> element the background-color of blue.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'Give your <code>body</code> element the background-color of blue.')",
         "assert(editor.match(/#0000FF/g) && editor.match(/#0000FF/g).length > 0, 'Use hex code the color blue instead of the word \"blue\". For example <code>body: { color: #0000FF; }</code>.')"
       ],
       "challengeSeed": [
@@ -3601,7 +3601,7 @@
         "Make the <code>body</code> element's background color orange by giving it the hex code value of <code>#FFA500</code>."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 165, 0)', 'Give your <code>body</code> element the background-color of orange.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'Give your <code>body</code> element the background-color of orange.')",
         "assert(editor.match(/#FFA500/g) && editor.match(/#FFA500/g).length > 0, 'Use hex code the color orange instead of the word \"orange\". For example <code>body: { color: #FFA500; }</code>.')"
       ],
       "challengeSeed": [
@@ -3636,7 +3636,7 @@
         "Make the <code>body</code> element's background color gray by giving it the hex code value of <code>#808080</code>."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(128, 128, 128)', 'Give your <code>body</code> element the background-color of gray.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'Give your <code>body</code> element the background-color of gray.')",
         "assert(editor.match(/#808080/g) && editor.match(/#808080/g).length > 0, 'Use hex code the color gray instead of the word \"gray\". For example <code>body: { color: #808080; }</code>.')"
       ],
       "challengeSeed": [
@@ -3670,7 +3670,7 @@
         "Make the <code>body</code> element's background color a dark gray by giving it the hex code value of <code>#111111</code>."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(17, 17, 17)', 'Give your <code>body</code> element the background-color of a light gray.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(17, 17, 17)\", 'Give your <code>body</code> element the background-color of a light gray.')",
         "assert(editor.match(/#111111/g) && editor.match(/#111111/g).length > 0, 'Use hex code to make a light gray. For example <code>body: { color: #111111; }</code>.')"
       ],
       "challengeSeed": [
@@ -3706,7 +3706,7 @@
         "Go ahead, try using #F00 to turn the <code>body</code> element's background-color red."
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Give your <code>body</code> element the background-color of red.')",
         "assert(editor.match(/#F00/ig) && editor.match(/#F00/ig).length > 0, 'Use abbreviated hex code instead of a named color. For example <code>body: { color: #F00; }</code>.')"
       ],
       "challengeSeed": [
@@ -3743,7 +3743,7 @@
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 0, 0)', 'Give your <code>body</code> element the background-color of black.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the background-color of black.')",
         "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of black. For example <code>body&#58; { color&#58; rgb(0&#44; 0&#44; 0); }</code>.')"
       ],
       "challengeSeed": [
@@ -3778,7 +3778,7 @@
         "Change the <code>body</code> element's background color from the RGB value for black to the RGB value for white: <code>rgb(255, 255, 255)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 255, 255)', 'Give your <code>body</code> element the background-color of white.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 255, 255)\", 'Give your <code>body</code> element the background-color of white.')",
         "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*255\\s*,\\s*255\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of white. For example <code>body&#58; { background-color&#58; rgb(255&#44; 255 &#44; 255); }</code>.')"
       ],
       "challengeSeed": [
@@ -3813,7 +3813,7 @@
         "Change the <code>body</code> element's background color to the RGB value red: <code>rgb(255, 0, 0)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 0, 0)', 'Give your <code>body</code> element the background-color of red.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 0, 0)\", 'Give your <code>body</code> element the background-color of red.')",
         "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of red. For example <code>body&#58; { background-color&#58; rgb(255&#44; 0&#44; 0); }</code>.')"
       ],
       "challengeSeed": [
@@ -3846,7 +3846,7 @@
         "Now change the <code>body</code> element's background color to the RGB value green: <code>rgb(0, 255, 0)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 255, 0)', 'Give your <code>body</code> element the background-color of green.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 255, 0)\", 'Give your <code>body</code> element the background-color of green.')",
         "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*255\\s*,\\s*0\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of green. For example <code>body&#58; { background-color&#58; rgb(0&#44; 255&#44; 0); }</code>.')"
       ],
       "challengeSeed": [
@@ -3879,7 +3879,7 @@
         "Change the <code>body</code> element's background color to the RGB value blue: <code>rgb(0, 0, 255)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(0, 0, 255)', 'Give your <code>body</code> element the background-color of blue.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 255)\", 'Give your <code>body</code> element the background-color of blue.')",
         "assert(editor.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*255\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of blue. For example <code>body&#58; { background-color&#58; rgb(0&#44; 0&#44; 255); }</code>.')"
       ],
       "challengeSeed": [
@@ -3913,7 +3913,7 @@
         "Change the <code>body</code> element's background color to the RGB value orange: <code>rgb(255, 165, 0)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(255, 165, 0)', 'Give your <code>body</code> element the background-color of orange.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(255, 165, 0)\", 'Give your <code>body</code> element the background-color of orange.')",
         "assert(editor.match(/rgb\\s*\\(\\s*255\\s*,\\s*165\\s*,\\s*0\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of orange. For example <code>body&#58; { background-color&#58; rgb(255&#44; 165&#44; 0); }</code>.')"
       ],
       "challengeSeed": [
@@ -3947,7 +3947,7 @@
         "Change the <code>body</code> element's background color to the RGB value for gray: <code>rgb(128, 128, 128)</code>"
       ],
       "tests": [
-        "assert($('body').css('background-color') === 'rgb(128, 128, 128)', 'Give your <code>body</code> element the background-color of gray.')",
+        "assert($(\"body\").css(\"background-color\") === \"rgb(128, 128, 128)\", 'Give your <code>body</code> element the background-color of gray.')",
         "assert(editor.match(/rgb\\s*\\(\\s*128\\s*,\\s*128\\s*,\\s*128\\s*\\)/ig), 'Use RGB to give your <code>body</code> element the background-color of gray. For example <code>body&#58; { background-color&#58; rgb(128&#44; 128&#44; 128); }</code>.')"
       ],
       "challengeSeed": [
