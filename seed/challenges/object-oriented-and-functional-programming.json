@@ -1,6 +1,6 @@
 {
   "name": "Object Oriented and Functional Programming",
-  "order" : 0.009,
+  "order": 0.009,
   "note": [
     "Waypoint: Closures",
     "Waypoint: Factories",
