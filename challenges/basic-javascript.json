@@ -450,7 +450,7 @@
         "Let's now go create a nested array called <code>myArray</code>."
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) === 'object' && editor.getValue().match(/\\[(.*)?\\[/g).length >= 1 && editor.getValue().match(/\\](.*)?\\]/g).length >= 1){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
+        "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) === 'object' && editor.getValue().match(/\\[\s?\\[/g).length >= 1 && editor.getValue().match(/\\]\s?\\]/g).length >= 1){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
       ],
       "challengeSeed":[
         "var ourArray = [[\"the universe\", \"everything\"], 42];",
