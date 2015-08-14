@@ -7,13 +7,12 @@
       "title": "Comment your JavaScript Code",
       "difficulty":"9.98",
       "description":[
-        "Comment are lines of code that the computer intentionally ignores. Comments are a great way leave notes to yourself and other people who will later need to maintain your code and figure out what it does.",
-        "Employers will expect you to be able to writing readable code, and comments are a great way to improve readability.",
-        "Let's take a look at the two ways in which we can write a comment in JavaScript.",
-        "The double-slash comment will comment out all the text on the line that follows:",
-        "<code>//This is a comment. </code>",
-        "The slash-star-star-slash comment will comment out everything the <code>/*</code>and <code>*/</code> characters:",
-        "<code>/*This is also a comment*/ </code>",
+        "Comments are lines of code that your computer will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what it does.",
+        "Let's take a look at the two ways you can write comments in JavaScript.",
+        "The double-slash comment will comment out the remainder of the text on the current line:",
+        "<code>// This is a comment.</code>",
+        "The slash-star-star-slash comment will comment out everything between the <code>/*</code> and the <code>*/</code> characters:",
+        "<code>/* This is also a comment */</code>",
         "Try creating one of each."
       ],
       "tests":[
@@ -658,7 +657,7 @@
         "In JavaScript, we can divide up our code into reusable parts called <code>functions</code>.",
         "Here's an example of a function:",
         "<code>function functionName (a, b) {</code>",
-        "<code>   return(a + b);</code>",
+        "<code>&thinsp;&thinsp;return(a + b);</code>",
         "<code>}</code>",
         "We can \"call\" our function like this: <code>functionName();</code>, and it will run and return it's <code>return</code> value to us.",
         "Create and call a function called <code>myFunction</code>."
@@ -672,7 +671,7 @@
         "",
         "ourFunction = function() {",
         "  return a - b;",
-        "}",
+        "};",
         "",
         "//Don't modify above this line",
         "//Create a function called myFunction that returns the value of a plus b.",
