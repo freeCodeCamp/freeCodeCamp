@@ -470,24 +470,22 @@
       "title": "Access Array Data with Indexes",
       "difficulty":"9.9817",
       "description":[
-        "Once an array has been created we can access the data we have stored in them using indexes",
-        "Indexes are written in the same way as bracket notation that we covered earlier",
-        "Example:",
-        "<code>var array = [1,2,3];",
-        "array[0];//equals 1",
-        "var data = array[1];",
-        "</code>",
-        "Create a var called <code>data</code> and set it to equal the first value of <code>myArray</code>"
+        "We can access the data inside arrays using <code>indexes</code>.",
+        "Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array.",
+        "For example:",
+        "<code>var array = [1,2,3];</code>",
+        "<code>array[0]; //equals 1</code>",
+        "<code>var data = array[1];</code>",
+        "Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code>."
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) !== \"undefined\" && typeof(data) !== \"undefined\" && myArray[0] === data){return(true);}else{return(false);}})(), 'the variable data should equal the first value of myArray')"
+        "assert((function(){if(typeof(myArray) != 'undefined' && typeof(myData) != 'undefined' && myArray[0] == myData){return(true);}else{return(false);}})(), 'The variable <code>myData</code> should equal the first value of myArray');"
       ],
       "challengeSeed":[
         "//var ourArray = [1,2,3];",
         "//var ourData = ourArray[0]; // equals 1",
         "",
         "var myArray = [1,2,3];",
-        "",
         "",
         "",
         "// You can ignore everything below this line.",
@@ -503,22 +501,20 @@
       "title": "Modify Array Data With Indexes",
       "difficulty":"9.98171",
       "description":[
-        "We are able to modify the data stored in an array by using indexes",
-        "Example:",
-        "<code>",
-        "var ourArray = [1,2,3];",
-        "ourArray[0] = 3; // equals [3,2,3]",
-        "</code>",
-        "Now Let's modify <code>myArray</code> using an index."
+        "We can also modify the data stored in arrays by using indexes.",
+        "For example:",
+        "<code>var ourArray = [3,2,1];</code>",
+        "<code>ourArray[0] = 1; // equals [1,2,1]</code>",
+        "Now modify the data stored at index 0 of <code>myArray</code> to the value of 3."
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) !== \"undefined\" && myArray[0] === 3 && myArray[1] === 2 && myArray[2] === 3){return(true);}else{return(false);}})(), 'myArray should now be [3,2,3]')",
-        "assert((function(){if(editor.getValue().match(/[0]/g).length >= 2 && editor.getValue().match(/=/g).length >= 2){return(true);}else{return(false);}})(), 'You should be using indexes to modify the values in myArray')"
+        "assert((function(){if(typeof(myArray) != 'undefined' && myArray[0] == 3 && myArray[1] == 2 && myArray[2] == 3){return(true);}else{return(false);}})(), 'myArray should now be [3,2,3]');",
+        "assert((function(){if(editor.getValue().match(/[0]/g).length >= 2 && editor.getValue().match(/=/g).length >= 2){return(true);}else{return(false);}})(), 'You should be using indexes to modify the values in myArray');"
       ],
       "challengeSeed":[
-        "//var ourArray = [1,2,3];",
-        "//ourArray[0] = 3;",
-        "",
+        "var ourArray = [1,2,3];",
+        "ourArray[1] = 3;",
+        "// ourArray[1] now equals [1,3,3].",
         "var myArray = [1,2,3];",
         "",
         "",
@@ -537,15 +533,14 @@
       "title": "Manipulate Arrays With pop()",
       "difficulty": "9.9818",
       "description": [
-        "When an array has been defined we still have the ability to make changes to it afterwards",
-        "One common way in which we can manipulate the data in an array is through <code>.pop() </code>",
-        "<code>.pop()</code>is used to \"pop\" a value from the end of an array. We can retrieve this value by performing the pop in a variable declaration.",
-        "Any type of variable can be \"popped\" from an array",
-        "Let's try <code>.pop()</code>now"
+        "Another way to change the data in an array is with the <code>.pop()</code> function.",
+        "<code>.pop()</code>is used to \"pop\" a value off of the end of an array. We can retrieve this value by performing <code>pop()</code> in a variable declaration.",
+        "Any type of variable can be \"popped\" off of an array.",
+        "Use the <code>.pop()</code> function to remove the last item from myArray."
       ],
       "tests": [
-        "assert((function(d){if(d[0] === \"John\" && d[1] === 23 && d[2] === undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])')",
-        "assert((function(d){if(d[0] === \"cat\" && d[1] === 2 && d[2] === undefined){return(true);}else{return(false);}})(removed), 'myArray should only have the first two values left([\"cat\"], 2)')"
+        "assert((function(d){if(d[0] == 'John' && d[1] == 23 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
+        "assert((function(d){if(d[0] == 'cat' && d[1] == 2 && d[2] == undefined){return(true);}else{return(false);}})(removed), 'myArray should only have the first two values left([\"cat\"], 2)');"
       ],
       "challengeSeed": [
         "//var numbers = [1,2,3];",
@@ -555,7 +550,7 @@
         "//console.log(removed); // logs 3",
         "",
         "var myArray = [\"John\", 23, [\"cat\", 2]];",
-        "var removed = myArray;//This should be [\"cat\", 2] and myArray should now be [\"John\", 23]",
+        "var removed = myArray; // This should be [\"cat\", 2] and myArray should now be [\"John\", 23]",
         "",
         "",
         "// You can ignore everything below this line.",
@@ -571,15 +566,20 @@
       "title": "Manipulate Arrays With push()",
       "difficulty": "9.9818",
       "description": [
-        "Now that we've learned how to <code>pop</code>things from the end of the array, we need to learn how to <code>push</code>stuff back to the end",
-        "Let's take the code we had last time and <code>push</code>this value to the end: <code>[\"dog\", 3] </code>"
+        "Not only can you <code>pop()</code> data off of the end of an array, you can also <code>push()</code> data onto the end of an array.",
+        "Take the myArray array and <code>push()</code> this value to the end of it: <code>[\"dog\", 3]</code>."
       ],
       "tests": [
-        "assert((function(d){if(d[2] !== undefined && d[0] === \"John\" && d[1] === 23 && d[2][0] === \"dog\" && d[2][1] === 3 && d[2].length === 2){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23, [\"dog\", 3]])')"
+        "assert((function(d){if(d[2] != undefined && d[0] == 'John' && d[1] == 23 && d[2][0] == 'dog' && d[2][1] == 3 && d[2].length == 2){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23, [\"dog\", 3]])');"
       ],
       "challengeSeed": [
+        "var ourArray = [\"Stimpson\", \"J\", [\"cat\"]];",
+        "ourArray.pop();",
+        "ourArray.push([\"happy\", \"joy\"]);",
+        "// ourArray now equals [\"Stimpson\", \"J\", [\"happy\", \"joy\"]]",
+        "",
         "var myArray = [\"John\", 23, [\"cat\", 2]];",
-        "var removed = myArray.pop();",
+        "myArray.pop();",
         "//Add a [\"dog\", 3] to the end of myArray using push()",
         "",
         "",
@@ -596,23 +596,26 @@
       "title": "Manipulate Arrays With shift()",
       "difficulty": "9.9817",
       "description": [
-        "Another common way in which we can manipulate the data in an array is through <code>.shift() </code>",
-        "<code>.shift()</code>is used to \"shift\" a value from the start of an array. We can retrieve this value by performing the shift in a variable declaration.",
-        "Let's try <code>.shift()</code>now"
+        "<code>pop()</code> always removes the last element of an array. What if you want to remove the first? That's where <code>.shift()</code> comes in.",
+        "Take the myArray array and <code>shift()</code> the first value off of it."
       ],
       "tests": [
-        "assert((function(d){if(d[0] === 23 && d[1][0] === \"dog\" && d[1][1] === 3 && d[2] === undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])')",
-        "assert((function(d){if(d === \"John\" && typeof(removed) === \"string\"){return(true);}else{return(false);}})(removed), 'Removed should contain \"John\"')"
+        "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
+        "assert((function(d){if(d === 'John' && typeof(myRemoved) === 'string'){return(true);}else{return(false);}})(myRemoved), 'myRemoved should contain \"John\"');"
       ],
       "challengeSeed": [
+        "var ourArray = [\"Stimpson\", \"J\", [\"cat\"]];",
+        "ourRemoved = ourArray.shift();",
+        "// ourArray now equals [\"J\", [\"cat\"]]",
+        "",
         "var myArray = [\"John\", 23, [\"dog\", 3]];",
-        "var removed = myArray; // This should be [\"John\"] and myArray should now be [23, [\"dog\", 3]]",
+        "var myRemoved = myArray; // This should be [\"John\"] and myArray should now be [23, [\"dog\", 3]]",
         "",
         "",
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "(function(y, z){return('myArray = ' + JSON.stringify(y) + ' & removed = ' + JSON.stringify(z));})(myArray, removed);"
+        "(function(y, z){return('myArray = ' + JSON.stringify(y) + ' & myRemoved = ' + JSON.stringify(z));})(myArray, myRemoved);"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -626,12 +629,17 @@
         "Let's take the code we had last time and <code>unshift</code>this value to the end: <code>\"Paul\" </code>"
       ],
       "tests": [
-        "assert((function(d){if(d[0].toLowerCase() === \"paul\" && d[1] === 23 && d[2][0] !== undefined && d[2][0] === \"dog\" && d[2][1] !== undefined && d[2][1] === 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])')"
+        "assert((function(d){if(d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])');"
       ],
       "challengeSeed": [
+        "var ourArray = [\"Stimpson\", \"J\", [\"cat\"]];",
+        "ourArray.shift();",
+        "ourArray.unshift([\"happy\", \"joy\"]);",
+        "// ourArray now equals [[\"happy\", \"joy\"], \"Stimpson\", \"J\"]",
+        "",
         "var myArray = [\"John\", 23, [\"dog\", 3]];",
-        "var removed = myArray.shift(); // This should be \"John\" and myArray should now be [23, [\"dog\", 3]]",
-        "//Add \"Paul\" to the start of myArray",
+        "myArray.shift();",
+        "// Add \"Paul\" to the start of myArray",
         "",
         "",
         "// You can ignore everything below this line.",
@@ -647,16 +655,13 @@
       "title": "Write Reusable JavaScript with Functions",
       "difficulty":"9.9819",
       "description":[
-        "In JavaScript we can divide up our code into separate and reusable parts called functions",
-        "Here's an example of a function",
-        "<code>",
-        "function functionName (a, b){",
-        "   return(a + b);",
-        "}",
-        "</code>",
-        "Our function can be called like this",
-        "<code>functionName();</code>",
-        "Let's try creating and calling a function now called <code>myFunction</code>"
+        "In JavaScript, we can divide up our code into reusable parts called <code>functions</code>.",
+        "Here's an example of a function:",
+        "<code>function functionName (a, b) {</code>",
+        "<code>   return(a + b);</code>",
+        "<code>}</code>",
+        "We can \"call\" our function like this: <code>functionName();</code>, and it will run and return it's <code>return</code> value to us.",
+        "Create and call a function called <code>myFunction</code>."
       ],
       "tests":[
         "assert((function(){if(typeof(f) !== \"undefined\" && typeof(f) === \"number\" && f === a + b  && editor.getValue().match(/return/gi).length >= 1 && editor.getValue().match(/a/gi).length >= 1 && editor.getValue().match(/b/gi).length >= 1 && editor.getValue().match(/\\+/gi).length >= 1){return(true);}else{return(false);}})(), 'Your function should return the value of a + b')"
@@ -664,8 +669,13 @@
       "challengeSeed":[
         "var a = 4;",
         "var b = 5;",
-        "//Don not modify the above!",
-        "//Create a function called myFunction that adds a and b",
+        "",
+        "ourFunction = function() {",
+        "  return a - b;",
+        "}",
+        "",
+        "//Don't modify above this line",
+        "//Create a function called myFunction that returns the value of a plus b.",
         "",
         "",
         "",
@@ -686,18 +696,17 @@
       "title": "Build JavaScript Objects",
       "difficulty":"9.9822",
       "description":[
-        "A very important data type in javascript is the <code>Object</code>",
-        "<code>Objects</code>are similar to <code>arrays</code> except that instead of using indexes to access and modify their data, Objects have what are called <code>properties </code>",
-        "Here's a sample Object",
-        "<code>",
-        "var cat = {",
-        "   \"name\": \"Whiskers\",",
-        "   \"legs\": 4,",
-        "   \"tails\": 1,",
-        "   \"enemies\": [\"Water\", \"Dogs\"]",
-        "};",
+        "You may have heard the term <code>object</code> before.",
+        "Objects are similar to <code>arrays</code>, except that instead of using indexes to access and modify their data, you access the data in objects through what are called <code>properties</code>.",
+        "Here's a sample object:",
+        "<code>var cat = {</code>",
+        "<code>  \"name\": \"Whiskers\",</code>",
+        "<code>  \"legs\": 4,</code>",
+        "<code>  \"tails\": 1,</code>",
+        "<code>  \"enemies\": [\"Water\", \"Dogs\"]</code>",
+        "<code>};</code>",
         "</code>",
-        "Objects are useful for storing data in a structured way or in a way that represents a real world object like a cat.",
+        "Objects are useful for storing data in a structured way, and can represents real world objects, like a cats.",
         "Let's try to make an Object that represents a dog called myDog!"
       ],
       "tests":[
@@ -714,8 +723,8 @@
         "//   \"friends\": [\"everything!\"]",
         "//};",
         "",
-        "/* add the name(string), legs(number), tails(number) and friends(array) properties to myDog.",
-        "You can set them to whatever you want!*/",
+        "// add the name(string), legs(number), tails(number) and friends(array) properties to myDog.",
+        "// You can set them to whatever you want.",
         "",
         "var myDog = {",
         "   ",
@@ -733,17 +742,16 @@
       "title": "Manipulate JavaScript Objects",
       "difficulty":"9.9823",
       "description":[
-        "Now that we have an objects we need to know how to add and remove properties from it",
-        "We add properties to objects like this",
+        "There are many ways to add and add and remove properties from objects.",
+        "For example, we can add properties to objects like this:",
         "<code>myObject.myProperty = \"myValue\";</code>",
-        "They can also be deleted like this",
+        "We can also delete them like this:",
         "<code>delete(myObject.myProperty);</code>",
-        "Let's add the property bark",
-        ""
+        "Let's add the property \"bark\", and delete the property \"tails\"."
       ],
       "tests":[
-        "assert(myDog.bark !== undefined, 'You should have added the property bark to myDog')",
-        "assert(myDog.tails === undefined, 'The property tails should have been deleted')"
+        "assert(myDog.bark !== undefined, 'Add the property \"bark\" to myDog.')",
+        "assert(myDog.tails === undefined, 'Delete the property \"tails\" from myDog.')"
       ],
       "challengeSeed":[
         "//var ourDog = {",
@@ -780,16 +788,14 @@
       "title": "Iterate with JavaScript For Loops",
       "difficulty":"9.9824",
       "description":[
-        "Loops are a critical part of any program! The next few challenges",
-        "first we will be taking a look at the for loop",
-        "<code>",
-        "var ourArray = [];",
-        "for(var i = 0; i < 5; i++){",
-        "   ourArray.push(i);",
-        "}",
-        "</code>",
-        "ourArray now contains [0,1,2,3,4] ",
-        "Let's try getting a for loop to work by pushing values to an array"
+        "You can run the same code multiple times by using a loop.",
+        "The most common type of JavaScript loop is called a \"for loop\" because it runs \"for\" a specific number of times.",
+        "<code>var ourArray = [];</code>",
+        "<code>for(var i = 0; i < 5; i++) {</code>",
+        "<code>   ourArray.push(i);</code>",
+        "<code>}</code>",
+        "<code>ourArray</code> will now contain [0,1,2,3,4] ",
+        "Let's try getting a for loop to work by pushing values to an array."
       ],
       "tests":[
         "assert(editor.getValue().match(/for\\(/g), 'You should be using a for loop for this.')",
@@ -797,7 +803,7 @@
       ],
       "challengeSeed":[
         "var myArray = [];",
-        "//Push the numbers zero through four to myArray",
+        "//Push the numbers zero through four to myArray using a \"for loop\" like above.",
         "",
         ""
       ],
@@ -809,17 +815,15 @@
       "title": "Iterate with JavaScript While Loops",
       "difficulty":"9.9825",
       "description":[
-        "Loops are a critical part of any program! The next few challenges",
-        "first we will be taking a look at the while loop",
-        "<code>",
-        "var ourArray = [];",
-        "var i = 0;",
-        "while(i < 5){",
-        "   ourArray.push(i);",
-        "   i++;",
-        "}",
-        "</code>",
-        "Let's try getting a for loop to work by pushing values to an array"
+        "You can run the same code multiple times by using a loop.",
+        "Another type of JavaScript loop is called a \"while loop\" because it runs \"while\" something is true, and stops once that something is no longer true.",
+        "<code>var ourArray = [];</code>",
+        "<code>var i = 0;</code>",
+        "<code>while(i < 5) {</code>",
+        "<code>   ourArray.push(i);</code>",
+        "<code>   i++;</code>",
+        "<code>}</code>",
+        "Let's try getting a for loop to work by pushing values to an array."
       ],
       "tests":[
         "assert(editor.getValue().match(/while\\(/g), 'You should be using a while loop for this.')",
@@ -835,43 +839,13 @@
       "challengeType": 1
     },
     {
-      "id":"cf1111c1c11feddfaeb2bdef",
-      "title": "Iterate with JavaScript Do-While Loops",
-      "difficulty":"9.9826",
-      "description":[
-        "Let's now take a look at the do - while loop",
-        "<code>",
-        "var ourArray = [];",
-        "var i = 0;",
-        "do{",
-        "   ourArray.push(i);",
-        "   i++;",
-        "}while(i<5);",
-        "</code>",
-        "A do - while has a very special difference when compared to the for and while loops. The do while loop is guaranteed to execute preform it's action once regardless of whether or not the condition inside the while is met!",
-        "Let's try getting a do - while loop to work by pushing values to an array"
-      ],
-      "tests":[
-        "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]')",
-        "assert((function(){if(editor.getValue().match(/do/g) && editor.getValue(/while/g).match()){return(true);}else{return(false);}})(), 'You should be using a do while loop for this.')"
-      ],
-      "challengeSeed":[
-        "var myArray = [];",
-        "//Push the numbers zero through four to myArray",
-        "",
-        ""
-      ],
-      "type": "waypoint",
-      "challengeType": 1
-    },
-    {
       "id":"cf1111c1c11feddfaeb9bdef",
       "title": "Generate Random Fractions with JavaScript",
       "difficulty":"9.9827",
       "description":[
-        "Random numbers are very useful for creating random behaviours and games",
-        "JavaScript has a <code>Math.random()</code> method that can generate a random decimal number",
-        "Let's have a go of <code>Math.random()</code> now be getting <code>myFunction</code> to return a random number"
+        "Random numbers are useful for creating random behaviours and games.",
+        "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
+        "Use <code>Math.random()</code> to get <code>myFunction</code> to return a random number."
       ],
       "tests":[
         "assert(typeof(myFunction()) === \"number\", 'myFunction should return a random number')",
@@ -897,7 +871,7 @@
       "title": "Generate Random Whole Numbers with JavaScript",
       "difficulty":"9.9828",
       "description":[
-        "While it's great that we can create random decimal numbers it's a lot more useful to generate a random whole number",
+        "It's great that we can create random decimal numbers, but it's even more useful if we lot more useful to generate a random whole number.",
         "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
         "This technique gives us a whole number between zero and nine",
         "Example:",
