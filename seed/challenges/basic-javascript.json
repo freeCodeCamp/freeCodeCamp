@@ -116,7 +116,7 @@
         "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string \"Charles\" is by using the <code>firstName.length</code> property."
       ],
       "tests": [
-        "assert((function(){if(typeof(lastNameLength) != \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return(true);}else{return(false);}})(), 'lastNameLength should be equal to eight.')",
+        "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return(true);}else{return(false);}})(), 'lastNameLength should be equal to eight.')",
         "assert((function(){if(editor.getValue().match(/\\.length/gi) && editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi) && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>')"
       ],
       "challengeSeed": [
@@ -135,7 +135,7 @@
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "if(typeof(lastNameLength) != \"undefined\"){(function(v){return(v);})(lastNameLength);}"
+        "if(typeof(lastNameLength) !== \"undefined\"){(function(v){return(v);})(lastNameLength);}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -152,7 +152,7 @@
         "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
-        "assert((function(){if(typeof(firstLetterOfLastName) != \"undefined\" && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return(true);}else{return(false);}})(), 'The first letter of firstLetterOfLastName should be a L')"
+        "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return(true);}else{return(false);}})(), 'The first letter of firstLetterOfLastName should be a L')"
       ],
       "challengeSeed": [
         "var firstLetterOfLastName = \"\"",
@@ -277,7 +277,7 @@
       "description": [
         "Let's try to add two numbers using JavaScript.",
         "JavaScript uses the <code>+</code> symbol for addition.",
-        "Replace the <code>0</code> with the right number so you can get the result mentioned in the comment."
+        "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
         "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g)){return(true);}else{return(false);}})(), 'Make the variable <code>sum</code> equal 20')"
@@ -300,7 +300,7 @@
       "description": [
         "We can also subtract one number from another.",
         "JavaScript uses use the <code>-</code> symbol for subtraction.",
-        "Replace the <code>0</code> with the right number so you can get the result mentioned in the comment."
+        "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
         "assert((function(){if(difference === 12 && editor.getValue().match(/\\-/g)){return(true);}else{return(false);}})(), 'Make the variable <code>difference</code> equal 12')"
@@ -323,7 +323,7 @@
       "description": [
         "We can also multiply one number by another.",
         "JavaScript uses use the <code>*</code> symbol for multiplication.",
-        "Replace the <code>0</code> with the right number so you can get the result mentioned in the comment."
+        "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
         "assert((function(){if(product === 80 && editor.getValue().match(/\\*/g)){return(true);}else{return(false);}})(), 'Make the variable <code>product</code> equal 80.')"
@@ -346,10 +346,10 @@
       "description": [
         "We can also divide one number by another.",
         "JavaScript uses use the <code>/</code> symbol for division.",
-        "Replace the <code>0</code> with the right number so you can get the result mentioned in the comment."
+        "Replace the <code>0</code> with the correct number so you can get the result mentioned in the comment."
       ],
       "tests": [
-        "assert((function(){if(quotient === 2 && editor.getValue().match(/\\//g)){return(true);}else{return(false);}})(), 'Make the variable <code>quotient</code> equal 2.)"
+        "assert((function(){if(quotient === 2 && editor.getValue().match(/\\//g)){return(true);}else{return(false);}})(), 'Make the variable <code>quotient</code> equal 2.')"
       ],
       "challengeSeed": [
         "var quotient = 66 / 0; //make this equal to 2 by changing the 0 into the appropriate number.",
@@ -371,10 +371,10 @@
         "Let's create a variable <code>myDecimal</code> and give it a decimal value."
       ],
       "tests": [
-        "assert((function(){if(typeof(myDecimal) != \"undefined\" && typeof(myDecimal) === \"number\" && editor.getValue().match(/\\./g).length >=2){return(true);}else{return(false);}})(), 'myDecimal should be a decimal point number.')"
+        "assert((function(){if(typeof(myDecimal) !== \"undefined\" && typeof(myDecimal) === \"number\" && editor.getValue().match(/\\./g).length >=2){return(true);}else{return(false);}})(), 'myDecimal should be a decimal point number.')"
       ],
       "challengeSeed": [
-        "// var ourDecimal = 5.7",
+        "// var ourDecimal = 5.7;",
         "// Create a number with a decimal point here called myDecimal",
         "",
         "",
@@ -382,7 +382,7 @@
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "(function(){if(typeof(myDecimal) != \"undefined\"){return(myDecimal);}})();"
+        "(function(){if(typeof(myDecimal) !== \"undefined\"){return(myDecimal);}})();"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -392,22 +392,22 @@
       "title": "Perform Arithmetic Operations on Decimals with JavaScript",
       "difficulty": "9.98151",
       "description": [
-        "In JavaScript we can work with decimal numbers."
+        "In JavaScript, you can also perform calculations with decimal numbers, just like whole numbers.",
+        "Replace the <code>0.0</code> with the correct number so that you get the result mentioned in the comments."
       ],
       "tests": [
-        "assert(multiply === 15, 'The result of multiply should be 3.75.')",
-        "assert(divide === 2.25, 'The result of divide should be 2.25.')"
+        "assert((function(){if(product === 5.0 && editor.getValue().match(/\\*/g)){return(true);}else{return(false);}})(), 'Make the variable <code>product</code> equal 5.0.')"
       ],
       "challengeSeed": [
-        "var multiply = 3.75 * 0;//equals 15",
-        "var divide = 9 / 0;//equals 2.25",
+        "var quotient = 4.4 / 2.0; // equals 2.2",
+        "var product = 2.0 * 0.0; // equals 5.0",
         "",
         "",
         "",
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "(function(y,z){return('multiply='+y+', divide='+z);})(multiply,divide);"
+        "(function(y){return('product='+y);})(product);"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -417,15 +417,15 @@
       "title": "Store Multiple Values in one Variable using JavaScript Arrays",
       "difficulty": "9.9816",
       "description": [
-        "In JavaScript we can store lists or collections of data in what are called arrays",
-        "Arrays are distinguished by the <code>[</code>and <code>]</code>around the data. Each piece of data is separated by a <code>, </code>",
-        "Now let's create a new array called <code>myArray</code>with a <code>string</code>and a <code>number</code>with a <code>,</code>separating each one",
-        "Refer to the example if you get stuck."
+        "With JavaScript <code>array</code> variables, we can store several pieces of data in one place.",
+        "You start an array declaration with an opening bracket, end it with a closing bracket, and put a comma between each entry, like this: <code>var sandwich = [\"peanut butter\", \"jelly\", \"bread\"]</code>.",
+        "Now let's create a new array called <code>myArray</code> that contains both a <code>string</code> and a <code>number</code>.",
+        "Refer to the comments if you get stuck."
       ],
       "tests": [
-        "assert(typeof(myArray) === \"object\", 'myArray should be an array')",
-        "assert(typeof(myArray[0]) !== \"undefined\" && typeof(myArray[0]) === \"string\", 'The fist item in myArray should be a string')",
-        "assert(typeof(myArray[1]) !== \"undefined\" && typeof(myArray[1]) === \"number\", 'The second item in myArray should be a number')"
+        "assert(typeof(myArray) == 'object', 'myArray should be an array');",
+        "assert(typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) == 'string', 'The first item in myArray should be a string');",
+        "assert(typeof(myArray[1]) !== 'undefined' && typeof(myArray[1]) == 'number', 'The second item in myArray should be a number');"
       ],
       "challengeSeed": [
         "//var array = [\"John\", 23];",
@@ -446,13 +446,14 @@
       "title": "Nest one Array within Another Array",
       "difficulty":"9.98161",
       "description":[
-        "We are also able to create arrays within arrays. This technique is called <code>nesting</code>.",
-        "Let's now go create a nested array called <code>myArray</code>"
+        "You can also nest arrays within other arrays, like this: <code>[[\"Bulls\", 43], \"Jordan\"]</code>.",
+        "Let's now go create a nested array called <code>myArray</code>."
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) !== \"undefined\" && typeof(myArray) === \"object\" && typeof(myArray[0]) !== \"undefined\" && typeof(myArray[0]) === \"object\" && editor.getValue().match(/\\[\\[/g).length >= 1 && editor.getValue().match(/\\]\\]/g).length >= 1){return(true);}else{return(false);}})(), 'myArray should contain at least one array')"
+        "assert((function(){if(typeof(myArray) !== 'undefined' && typeof(myArray) === 'object' && typeof(myArray[0]) !== 'undefined' && typeof(myArray[0]) === 'object' && editor.getValue().match(/\\[(.*)?\\[/g).length >= 1 && editor.getValue().match(/\\](.*)?\\]/g).length >= 1){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
       ],
       "challengeSeed":[
+        "var ourArray = [[\"the universe\", \"everything\"], 42];",
         "var myArray = [];",
         "",
         "",
@@ -479,11 +480,11 @@
         "Create a var called <code>data</code> and set it to equal the first value of <code>myArray</code>"
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) != \"undefined\" && typeof(data) != \"undefined\" && myArray[0] === data){return(true);}else{return(false);}})(), 'the variable data should equal the first value of myArray')"
+        "assert((function(){if(typeof(myArray) !== \"undefined\" && typeof(data) !== \"undefined\" && myArray[0] === data){return(true);}else{return(false);}})(), 'the variable data should equal the first value of myArray')"
       ],
       "challengeSeed":[
-        "//var ourArray = [1,2,3]",
-        "//var ourData = ourArray[0]//equals 1",
+        "//var ourArray = [1,2,3];",
+        "//var ourData = ourArray[0]; // equals 1",
         "",
         "var myArray = [1,2,3];",
         "",
@@ -492,7 +493,7 @@
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "if(typeof(myArray) != \"undefined\" && typeof(data) != \"undefined\"){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', data = ' + JSON.stringify(z));})(myArray, data);}"
+        "if(typeof(myArray) !== \"undefined\" && typeof(data) !== \"undefined\"){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', data = ' + JSON.stringify(z));})(myArray, data);}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -506,12 +507,12 @@
         "Example:",
         "<code>",
         "var ourArray = [1,2,3];",
-        "ourArray[0] = 3;//ourArray equals [3,2,3]",
+        "ourArray[0] = 3; // equals [3,2,3]",
         "</code>",
         "Now Let's modify <code>myArray</code> using an index."
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) != \"undefined\" && myArray[0] === 3 && myArray[1] === 2 && myArray[2] === 3){return(true);}else{return(false);}})(), 'myArray should now be [3,2,3]')",
+        "assert((function(){if(typeof(myArray) !== \"undefined\" && myArray[0] === 3 && myArray[1] === 2 && myArray[2] === 3){return(true);}else{return(false);}})(), 'myArray should now be [3,2,3]')",
         "assert((function(){if(editor.getValue().match(/[0]/g).length >= 2 && editor.getValue().match(/=/g).length >= 2){return(true);}else{return(false);}})(), 'You should be using indexes to modify the values in myArray')"
       ],
       "challengeSeed":[
@@ -526,7 +527,7 @@
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "if(typeof(myArray) != \"undefined\"){(function(){return(myArray);})();}"
+        "if(typeof(myArray) !== \"undefined\"){(function(){return(myArray);})();}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -548,10 +549,10 @@
       ],
       "challengeSeed": [
         "//var numbers = [1,2,3];",
-        "//console.log(numbers); //Gives [1,2,3]",
+        "//console.log(numbers); // logs [1,2,3]",
         "//var removed = numbers.pop();",
-        "//console.log(numbers); //Gives [1,2]",
-        "//console.log(removed); //Gives 3",
+        "//console.log(numbers); // logs [1,2]",
+        "//console.log(removed); // logs 3",
         "",
         "var myArray = [\"John\", 23, [\"cat\", 2]];",
         "var removed = myArray;//This should be [\"cat\", 2] and myArray should now be [\"John\", 23]",
@@ -574,12 +575,12 @@
         "Let's take the code we had last time and <code>push</code>this value to the end: <code>[\"dog\", 3] </code>"
       ],
       "tests": [
-        "assert((function(d){if(d[2] != undefined && d[0] === \"John\" && d[1] === 23 && d[2][0] === \"dog\" && d[2][1] === 3 && d[2].length === 2){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23, [\"dog\", 3]])')"
+        "assert((function(d){if(d[2] !== undefined && d[0] === \"John\" && d[1] === 23 && d[2][0] === \"dog\" && d[2][1] === 3 && d[2].length === 2){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23, [\"dog\", 3]])')"
       ],
       "challengeSeed": [
         "var myArray = [\"John\", 23, [\"cat\", 2]];",
         "var removed = myArray.pop();",
-        "//Add a [\"dog\", 3] to the end of myArray using push",
+        "//Add a [\"dog\", 3] to the end of myArray using push()",
         "",
         "",
         "// You can ignore everything below this line.",
@@ -605,7 +606,7 @@
       ],
       "challengeSeed": [
         "var myArray = [\"John\", 23, [\"dog\", 3]];",
-        "var removed = myArray;//This should be [\"John\"] and myArray should now be [23, [\"dog\", 3]]",
+        "var removed = myArray; // This should be [\"John\"] and myArray should now be [23, [\"dog\", 3]]",
         "",
         "",
         "// You can ignore everything below this line.",
@@ -625,11 +626,11 @@
         "Let's take the code we had last time and <code>unshift</code>this value to the end: <code>\"Paul\" </code>"
       ],
       "tests": [
-        "assert((function(d){if(d[0].toLowerCase() === \"paul\" && d[1] === 23 && d[2][0] != undefined && d[2][0] === \"dog\" && d[2][1] != undefined && d[2][1] === 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])')"
+        "assert((function(d){if(d[0].toLowerCase() === \"paul\" && d[1] === 23 && d[2][0] !== undefined && d[2][0] === \"dog\" && d[2][1] !== undefined && d[2][1] === 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])')"
       ],
       "challengeSeed": [
         "var myArray = [\"John\", 23, [\"dog\", 3]];",
-        "var removed = myArray.shift();//This should be \"John\" and myArray should now be [23, [\"dog\", 3]]",
+        "var removed = myArray.shift(); // This should be \"John\" and myArray should now be [23, [\"dog\", 3]]",
         "//Add \"Paul\" to the start of myArray",
         "",
         "",
@@ -672,7 +673,7 @@
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "if(typeof(myFunction) != \"undefined\"){",
+        "if(typeof(myFunction) !== \"undefined\"){",
         "var f=myFunction(a,b);",
         "(function(){return(f);})();",
         "}"
@@ -700,10 +701,10 @@
         "Let's try to make an Object that represents a dog called myDog!"
       ],
       "tests":[
-        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name != undefined && typeof(z.name) === \"string\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property name and it should be a string')",
-        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs != undefined && typeof(z.legs) === \"number\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property legs and it should be a number')",
-        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails != undefined && typeof(z.tails) === \"number\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property tails and it should be a number')",
-        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends != undefined && Array.isArray(z.friends)){return(true);}else{return(false);}})(myDog), 'myDog should contain the property friends and it should be an array')"
+        "assert((function(z){if(z.hasOwnProperty(\"name\") && z.name !== undefined && typeof(z.name) === \"string\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property name and it should be a string')",
+        "assert((function(z){if(z.hasOwnProperty(\"legs\") && z.legs !== undefined && typeof(z.legs) === \"number\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property legs and it should be a number')",
+        "assert((function(z){if(z.hasOwnProperty(\"tails\") && z.tails !== undefined && typeof(z.tails) === \"number\"){return(true);}else{return(false);}})(myDog), 'myDog should contain the property tails and it should be a number')",
+        "assert((function(z){if(z.hasOwnProperty(\"friends\") && z.friends !== undefined && Array.isArray(z.friends)){return(true);}else{return(false);}})(myDog), 'myDog should contain the property friends and it should be an array')"
       ],
       "challengeSeed":[
         "//var ourDog = {",
@@ -741,7 +742,7 @@
         ""
       ],
       "tests":[
-        "assert(myDog.bark != undefined, 'You should have added the property bark to myDog')",
+        "assert(myDog.bark !== undefined, 'You should have added the property bark to myDog')",
         "assert(myDog.tails === undefined, 'The property tails should have been deleted')"
       ],
       "challengeSeed":[
@@ -796,7 +797,7 @@
       ],
       "challengeSeed":[
         "var myArray = [];",
-        "//Push the numbers 0-4 to myArray",
+        "//Push the numbers zero through four to myArray",
         "",
         ""
       ],
@@ -826,7 +827,7 @@
       ],
       "challengeSeed":[
         "var myArray = [];",
-        "//Push the numbers 0-4 to myArray",
+        "//Push the numbers zero through four to myArray",
         "",
         ""
       ],
@@ -856,7 +857,7 @@
       ],
       "challengeSeed":[
         "var myArray = [];",
-        "//Push the numbers 0-4 to myArray",
+        "//Push the numbers zero through four to myArray",
         "",
         ""
       ],
@@ -879,9 +880,9 @@
       ],
       "challengeSeed":[
         "",
-        "function myFunction(){",
-        " //Change the 0 to Math.random()",
-        " return(0);",
+        "function myFunction() {",
+        "  //Change the 0 to Math.random()",
+        "  return(0);",
         "}",
         "",
         "// You can ignore everything below this line.",
@@ -911,8 +912,8 @@
       ],
       "challengeSeed":[
         "function myFunction(){",
-        " //Make myFunction return a random number between zero and nine instead of a float",
-        " return(Math.random());",
+        "  // Make myFunction return a random number between zero and nine instead of a decimal",
+        "  return(Math.random());",
         "}",
         "",
         "// You can ignore everything below this line.",
@@ -929,8 +930,7 @@
       "description":[
         "We can use a certain mathematical expression to get a random number between between twp numbers.",
         "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
-        "By using this we can control the output of the random number.",
-        ""
+        "By using this we can control the output of the random number."
       ],
       "tests":[
         "assert(myFunction() >= min, 'The random number that\\'s generated by myFunction should be greater than or equal to the minimum number')",
@@ -940,9 +940,9 @@
       "challengeSeed":[
         " var min = 0;",
         " var max = 12;",
-        "function myFunction(){",
-        " //Make myFunction return a random number between zero and nine instead of a float",
-        " return(Math.random());",
+        "function myFunction() {",
+        "  // Make myFunction return a random number between zero and nine instead of a decimal",
+        "  return(Math.random());",
         "}",
         "",
         "// You can ignore everything below this line.",
@@ -976,8 +976,8 @@
       ],
       "challengeSeed":[
         "function myFunction(){",
-        " var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
-        " //Create and if else statement here to return heads if flip is 0 otherwise return false",
+        "  var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
+        "  // Create and if else statement here to return heads if flip is 0 otherwise return false",
         " ",
         "}",
         "",
@@ -1009,12 +1009,12 @@
         "assert(editor.getValue().match(/\\/and\\+\\/gi/), 'You should have used this RegEx to find the word \"and\"')"
       ],
       "challengeSeed":[
-        "var test = (function(){",
-        " var testString = \"John and Alan went to the shop and got some milk\";",
+        "var test = (function() {",
+        "  var testString = \"John and Alan went to the shop and got some milk\";",
         "",
-        "//Do not modify above this line.",
+        "  //Do not modify above this line.",
         "",
-        " var expression = /.+/gi;",
+        "  var expression = /.+/gi;",
         "",
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -1039,12 +1039,12 @@
         "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\d+/gi to find the numbers in the testString')"
       ],
       "challengeSeed":[
-        "var test = (function(){",
-        " var testString = \"There's 3 cats but 4 dogs.\"",
+        "var test = (function() {",
+        "  var testString = \"There's 3 cats but 4 dogs.\"",
         "",
         "//Do Not Modify Above",
         "",
-        " var expression = /.+/gi;",
+        "  var expression = /.+/gi;",
         "",
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -1069,11 +1069,11 @@
       ],
       "challengeSeed":[
         "var test = (function(){",
-        " var testString = \"How many spaces are there in this sentance.\";",
+        "  var testString = \"How many spaces are there in this sentance.\";",
         "",
-        "//Do Not Modify Above",
+        "  //Do Not Modify Above",
         "",
-        " var expression = /.+/gi;",
+        "  var expression = /.+/gi;",
         "",
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -1097,11 +1097,11 @@
       ],
       "challengeSeed":[
         "var test = (function(){",
-        " var testString = \"How many spaces are there in this sentance.\";",
+        "  var testString = \"How many spaces are there in this sentance.\";",
         "",
-        "//Do Not Modify Above",
+        "  // Do Not Modify Above",
         "",
-        " var expression = /.+/gi;",
+        "  var expression = /.+/gi;",
         "",
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -1137,11 +1137,11 @@
         "   ",
         "   var images = [\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\",\"https://bit.ly/fcc-relaxing-cat\"];",
         "   ",
-        "   /*Don't modify above this line*/",
+        "   //Don't modify above this line",
         "   ",
         "   ",
         "   ",
-        "   /*Don't modify below this line*/",
+        "   //Don't modify below this line",
         "   ",
         "   $(\".logger\").html(\"\");",
         "   $(\".logger\").html(\"Not A Win\")",
@@ -1297,11 +1297,11 @@
         "   $(\".logger\").html(\"\");",
         "   $(\".logger\").html(\"Not A Win\")",
         "   ",
-        "   /*Don't modify above this line*/",
+        "   //Don't modify above this line",
         "   ",
         "   ",
         "   ",
-        "   /*Don't modify below this line*/",
+        "   //Don't modify below this line",
         "   ",
         "   if(slotOne !== undefined && slotTwo !== undefined && slotThree !== undefined){",
         "     $(\".logger\").html(slotOne);",
@@ -1457,13 +1457,13 @@
         "   $(\".logger\").html(\"\");",
         "   $(\".logger\").html(\"Not A Win\")",
         "   ",
-        "   /*Don't modify above this line*/",
+        "   // Don't modify above this line",
         "   ",
         "   ",
         "   ",
-        "   /*Don't modify below this line*/",
+        "   // Don't modify below this line",
         "   ",
-        "   if(slotOne != slotTwo || slotTwo != slotThree){",
+        "   if(slotOne !== slotTwo || slotTwo !== slotThree){",
         "     return(null);",
         "   }",
         "   ",
@@ -1622,13 +1622,13 @@
         "   $('.logger').html('')",
         "   $('.logger').html('Not A Win')",
         "   ",
-        "   /*Don't modify above this line*/",
+        "   // Don't modify above this line",
         "   ",
         "   ",
         "   ",
-        "   /*Don't modify below this line*/",
+        "   // Don't modify below this line",
         "   ",
-        "   if(slotOne != slotTwo || slotTwo != slotThree){",
+        "   if(slotOne !== slotTwo || slotTwo !== slotThree){",
         "     return(null);",
         "   }",
         "   ",
