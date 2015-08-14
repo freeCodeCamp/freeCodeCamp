@@ -61,7 +61,7 @@
         "For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your \"document ready function\": <code>$(\"button\").addClass(\"animated bounce\")</code>."
       ],
       "tests": [
-        "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes \"animated\" and \"bounce\" to your <code>button</code> element.')",
+        "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes \"animated\" and \"bounce\" to your <code>button</code> elements.')",
         "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
@@ -108,7 +108,7 @@
         "First, let's target your <code>div</code> elements with the class \"well\" by using the <code>$(\".well\")</code> selector.",
         "Note that, just like with CSS declarations, you type a <code>.</code> before the class's name.",
         "Then use jQuery's <code>.addClass()</code> function to add the classes \"animated\" and \"shake\".",
-        "Here's the full code that you'll want to type into your \"document ready function\": <code>$(\".well\").addClass(\"animated shake\");</code>"
+        "For example, you could make all the elements with the class \"text-primary\" shake by adding the following to your \"document ready function\": <code>$(\".text-primary\").addClass(\"animated shake\");</code>"
       ],
       "tests": [
         "assert($(\".well\").hasClass(\"animated\") && $(\".well\").hasClass(\"shake\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes \"animated\" and \"shake\" to all your elements with the class \"well\".')",
@@ -157,12 +157,12 @@
         "First target your <code>div</code> element with the id \"target3\" by using the <code>$(\"#target3\")</code> selector.",
         "Note that, just like with CSS declarations, you type a <code>#</code> before the id's name.",
         "Then use jQuery's <code>.addClass()</code> function to add the classes \"animated\" and \"fadeOut\".",
-        "Make all the <code>button</code> element with the id \"target3\" fadeOut. <code>$(\"#target3\").addClass(\"animated fadeOut\")</code>."
+        "Here's how you'd make the <code>button</code> element with the id \"target6\" fade out: <code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
       ],
       "tests": [
         "assert($(\"#target3\").hasClass(\"animated\"), 'Select the <code>button</code>element with the <code>id</code> of \"target3\" and use the jQuery <code>addClass&#40&#41</code> function to give it the class of \"animated\".');",
-        "assert($(\"#target3\").hasClass(\"fadeOut\"), 'Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class \"fadeOut\".')",
-        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
+        "assert($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"), 'Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class \"fadeOut\".')",
+        "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
@@ -262,9 +262,9 @@
         "Use the <code>addClass()</code> jQuery function to give the element one new class for each selector: \"animated\", \"shake\", and \"btn-primary\"."
       ],
       "tests": [
-        "assert(editor.match(/\\$\\((\"button\"\\)/g), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
-        "assert(editor.match(/\\$\\(\"\\.btn\"\\)/g), 'Use the <code>$&#40\".btn\"\\&#41</code> selector.')",
-        "assert(editor.match(/\\$\\(\"#target1\"\\)/g), 'Use the <code>$&#40\"#target1\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\(.*button/g), 'Use the <code>$&#40\"button\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\(.*.btn/g), 'Use the <code>$&#40\".btn\"&#41</code> selector.')",
+        "assert(editor.match(/\\$\\(.*#target1/g), 'Use the <code>$&#40\"#target1\"&#41</code> selector.')",
         "assert(editor.match(/addClass/g) && editor.match(/addClass/g).length > 2, 'Only add one class with each of your three selectors.')",
         "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'Your  \"#target1\" element should have the classes \"animated\"&#130; \"shake\" and \"btn-primary\".')",
         "assert(!editor.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.')"
@@ -624,7 +624,7 @@
         "Here's an example of how you would use the <code>parent()</code> function: <code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>"
       ],
       "tests": [
-        "assert($(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)', 'Your \"target1\" element should have a red background.')",
+        "assert($(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)', 'Your \"left-well\" element should have a red background.')",
         "assert(editor.match(/\\.parent\\(\\)\\.css/g), 'You should use the <code>parent()</code> function to modify this element.')",
         "assert(editor.match(/<div class=\"well\" id=\"left-well\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
@@ -672,7 +672,7 @@
       "title": "Target the Children of an Element Using jQuery",
       "difficulty": 3.14,
       "description": [
-        "Many HTML elements has a \"children\" element from which they \"inherits\" properties.",
+        "Many HTML elements have \"children\" elements from which they \"inherit\" properties.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
         "Give all the children of your <code>#right-well</code> element a color of green.",
@@ -792,7 +792,7 @@
       "tests": [
         "assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'All the \"target\" elements that computer considers even should shake.')",
         "assert(editor.match(/\\:even/g), 'You should use the <code>&#58;even</code> function to modify these elements.')",
-        "assert(editor.match(/<button class=\\'btn btn-default target\\' id=\\'target3\\'>/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(editor.match(/<button class=\"btn btn-default target\" id=\"target3\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
       "challengeSeed": [
         "fccss",
