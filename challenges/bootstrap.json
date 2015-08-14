@@ -260,11 +260,11 @@
       "difficulty": 2.04,
       "description": [
         "Bootstrap has its own styles for <code>button</code> elements, which look much better than the plain HTML ones.",
-        "Create a new <code>button</code> element below your large kitten photo. Give it the class \"btn\" and the text of \"like this photo\"."
+        "Create a new <code>button</code> element below your large kitten photo. Give it the class \"btn\" and the text of \"like\"."
       ],
       "tests": [
+        "assert(new RegExp(\"like\",\"gi\").test($(\"button\").text()), 'Create a new <code>button</code> element with the text \"Like\".')",
         "assert($(\"button\").hasClass(\"btn\"), 'Your new button should have the class \"btn\".')",
-        "assert(new RegExp(\"like this photo\",\"gi\").test($(\"button.btn\").text()), 'Your button should have the text \"like this photo\".')",
         "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.')"
       ],
       "challengeSeed": [
@@ -303,6 +303,7 @@
         "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "  <img src=\"http://bit.ly/fcc-running-cats\" class=\"img-responsive\">",
+        "",
         "  <p>Things cats love:</p>",
         "  <ul>",
         "    <li>cat nip</li>",
@@ -525,9 +526,9 @@
         "Note that these buttons still need the \"btn\" and \"btn-block\" classes."
       ],
       "tests": [
-        "assert($(\"button\").hasClass(\"btn-info\"), 'Your new button should have the class \"btn-info\".')",
+        "assert(new RegExp(\"info\",\"gi\").test($(\"button\").text()), 'Create a new <code>button</code> element with the text \"Info\".')",
         "assert($(\"button.btn-block.btn\").length > 1, 'Both of your Bootstrap buttons should have the \"btn\" and \"btn-block\" classes.')",
-        "assert(new RegExp(\"info\", \"gi\").test($(\"button.btn-info\").text()), 'Your new button should have the text \"Info\".')",
+        "assert($(\"button\").hasClass(\"btn-info\"), 'Your new button should have the class \"btn-info\".')",
         "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.')"
       ],
       "challengeSeed": [
@@ -613,9 +614,9 @@
         "Note that these buttons still need the \"btn\" and \"btn-block\" classes."
       ],
       "tests": [
-        "assert($(\"button\").hasClass(\"btn-danger\"), 'Your new button should have the class \"btn-danger\".')",
+        "assert(new RegExp(\"delete\",\"gi\").test($(\"button\").text()), 'Create a new <code>button</code> element with the text \"delete\".')",
         "assert($(\"button.btn-block.btn\").length > 2, 'All of your Bootstrap buttons should have the \"btn\" and \"btn-block\" classes.')",
-        "assert(new RegExp(\"delete\", \"gi\").test($(\"button.btn-danger\").text()), 'Your new button should have the text \"delete\".')",
+        "assert($(\"button\").hasClass(\"btn-danger\"), 'Your new button should have the class \"btn-danger\".')",
         "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.')"
       ],
       "challengeSeed": [
@@ -699,7 +700,7 @@
       "description": [
         "Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
         "Here's a diagram of how Bootstrap's 12-column grid layout works:",
-        "<a href=\"http://getbootstrap.com/css/#grid-example-basic\" target=\"_blank\"><img class=\"img-responsive\" src=\"https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png\"></a>",
+        "<a href=\"https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png\" target=\"_blank\"><img class=\"img-responsive\" src=\"https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png\"></a>",
         "Note that in this illustration, the <code>col-md-*</code> class is being used. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.",
         "In the Cat Photo App that we're building, we'll use <code>col-xs-*</code>, where \"*\" is the number of columns wide the element should be, and \"xs\" means \"extra small\", like an extra-small mobile phone screen.",
         "Put the \"Like\", \"Info\" and \"Delete\" buttons side-by-side by nesting all three of them within one <code>&#60;div class=\"row\"&#62;</code> element, then each of them within a <code>&#60;div class=\"col-xs-4\"&#62;</code> element.",
@@ -950,7 +951,7 @@
         "      <button class=\"btn btn-block btn-danger\">Delete</button>",
         "    </div>",
         "  </div>",
-        "  <p>Things cats <span class=\"text-danger\">love:</span></p>",
+        "  <p>Things cats love:</p>",
         "  <ul>",
         "    <li>cat nip</li>",
         "    <li>laser pointers</li>",
@@ -994,7 +995,7 @@
         "We will make a simple heading for our Cat Photo App by putting them in the same row.",
         "Remember, Bootstrap uses a responsive grid system, which makes it easy to put elements into rows and specify each element's relative width. Most of Bootstrap's classes can be applied to a <code>div</code> element.",
         "Here's a diagram of how Bootstrap's 12-column grid layout works:",
-        "<a href=\"http://getbootstrap.com/css/#grid\" target=\"_blank\"><img class=\"img-responsive\" src=\"https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png\"></a>",
+        "<a href=\"https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png\" target=\"_blank\"><img class=\"img-responsive\" src=\"https://www.evernote.com/l/AHTwlE2XCLhGFYJzoye_QfsF3ho6y87via4B/image.png\"></a>",
         "Note that in this illustration, we use the \"col-md-*\" class. Here, \"md\" means \"medium\", and \"*\" is a number specifying how many columns wide the element should be. In this case, we're specifying how many columns wide an element should be on a medium-sized screen, such as a laptop.",
         "In the Cat Photo App that we're building, we'll use \"col-xs-*\", where \"*\" is the number of columns wide the element should be, and \"xs\" means \"extra small\", like an extra-small mobile phone screen.",
         "Nest your first image and your <code>h2</code> element within a single <code>&#60;div class=\"row\"&#62;</code> element. Nest your <code>h2</code> text within a <code>&#60;div class=\"col-xs-8\"&#62;</code> and your image in a <code>&#60;div class=\"col-xs-4\"&#62;</code> so that they are on the same line.",
@@ -1534,8 +1535,8 @@
       ],
       "tests": [
         "assert($(\"div.row:has(input[type=\\\"text\\\"])\").length > 0 &&  $(\"div.row:has(button[type=\\\"submit\\\"])\").length > 0, 'Nest your form submission button and text input in a div with class \"row\".')",
-        "assert($(\"div.col-xs-5:has(button[type=\\\"submit\\\"])\").length > 0, 'Nest your form submission button in a div with the class \"col-xs-5\".')",
         "assert($(\"div.col-xs-7:has(input[type=\\\"text\\\"])\").length > 0, 'Nest your form text input in a div with the class \"col-xs-7\".')",
+        "assert($(\"div.col-xs-5:has(button[type=\\\"submit\\\"])\").length > 0, 'Nest your form submission button in a div with the class \"col-xs-5\".')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -1666,7 +1667,7 @@
       "difficulty": 2.18,
       "description": [
         "Now let's make sure all the content on your page is mobile-responsive.",
-        "Let's nest your <code>h3</code> element within a <code>div<code> element with the class \"container-fluid\"."
+        "Let's nest your <code>h3</code> element within a <code>div</code> element with the class \"container-fluid\"."
       ],
       "tests": [
         "assert($(\"div\").hasClass(\"container-fluid\"), 'Your <code>div</code> element should have the class \"container-fluid\"')",
@@ -1699,15 +1700,15 @@
         "Create a <code>div</code> element with the class \"row\"."
       ],
       "tests": [
-        "assert($(\"div\").length > 1, 'Add a <code>div</code> element to your page.')",
+        "assert($(\"div\").length > 1, 'Add a <code>div</code> element below your <code>h3</code>element.')",
         "assert($(\"div\").hasClass(\"row\"), 'Your <code>div</code> element should have the class \"row\"')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure your <code>div</code> element has a closing tag.')"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
-        "</div>",
         "",
+        "</div>",
         ""
       ],
       "type": "waypoint",
@@ -1739,6 +1740,8 @@
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
         "  <div class=\"row\">",
+        "",
+        "",
         "  </div>",
         "</div>"
       ],
@@ -1764,8 +1767,7 @@
         "Nest one <code>div</code> element with the class \"well\" within each of your \"col-xs-6\" <code>div</code> elements."
       ],
       "tests": [
-        "assert($(\"div\").length > 4, 'Add two <code>div</code> elements inside your <code>div class=\"row\"></code> element both with the class \"col-xs-6\"')",
-        "assert($(\"div.row\").children(\"div.col-xs-6\").length > 1, 'Nest both of your <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
+        "assert($(\"div\").length > 4, 'Add two <code>div</code> elements inside your <code>div class=\"well\"></code> element both with the class \"col-xs-6\"')",
         "assert($(\"div.col-xs-6\").children(\"div.well\").length > 1, 'Nest both of your <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.')"
       ],
@@ -1774,8 +1776,10 @@
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
         "  <div class=\"row\">",
         "    <div class=\"col-xs-6\">",
+        "",
         "    </div>",
         "    <div class=\"col-xs-6\">",
+        "",
         "    </div>",
         "  </div>",
         "</div>"
@@ -1803,7 +1807,8 @@
       ],
       "tests": [
         "assert($(\"div.well\").children(\"button\").length > 5, 'Nest three <code>button</code> elements within each of your <code>div</code> elements with class \"well\".')",
-        "assert($(\"button\") && $(\"button\").length > 5, 'You should have a total of 6 <code>button</code> elements.')"
+        "assert($(\"button\") && $(\"button\").length > 5, 'You should have a total of 6 <code>button</code> elements.')",
+        "assert(editor.match(/<\\/button>/g) && editor.match(/<button/g) && editor.match(/<\\/button>/g).length === editor.match(/<button/g).length, 'Make sure all your <code>button</code> elements have closing tags.')"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
@@ -1811,10 +1816,16 @@
         "  <div class=\"row\">",
         "    <div class=\"col-xs-6\">",
         "      <div class=\"well\">",
+        "",
+        "",
+        "",
         "      </div>",
         "    </div>",
         "    <div class=\"col-xs-6\">",
         "      <div class=\"well\">",
+        "",
+        "",
+        "",
         "      </div>",
         "    </div>",
         "  </div>",
@@ -1838,7 +1849,7 @@
       "title": "Apply the Default Bootstrap Button Style",
       "difficulty": 2.23,
       "description": [
-        "Bootstrap has another button class called \"btn-default\"",
+        "Bootstrap has another button class called \"btn-default\".",
         "Apply both the \"btn\" and \"btn-default\" classes to each of your <code>button</code> elements."
       ],
       "tests": [
@@ -1985,13 +1996,15 @@
       "tests": [
         "assert($(\".col-xs-6\").children(\"h4\") && $(\".col-xs-6\").children(\"h4\").length > 1, 'Add an <code>h4</code> element to each of your <code>&#60;div class=\\\"col-xs-6\\\"&#62;</code> elements.');",
         "assert(new RegExp(\"#left-well\",\"gi\").test($(\"h4\").text()), 'One <code>h4</code> element should have the text \"#left-well\".');",
-        "assert(new RegExp(\"#right-well\",\"gi\").test($(\"h4\").text()), 'One <code>h4</code> element should have the text \"#right-well\".');"
+        "assert(new RegExp(\"#right-well\",\"gi\").test($(\"h4\").text()), 'One <code>h4</code> element should have the text \"#right-well\".');",
+        "assert(editor.match(/<\\/h4>/g) && editor.match(/<h4/g) && editor.match(/<\\/h4>/g).length === editor.match(/<h4/g).length, 'Make sure all your <code>h4</code> elements have closing tags.')"
       ],
       "challengeSeed": [
         "<div class=\"container-fluid\">",
         "  <h3 class=\"text-primary text-center\">jQuery Playground</h3>",
         "  <div class=\"row\">",
         "    <div class=\"col-xs-6\">",
+        "",
         "      <div class=\"well\" id=\"left-well\">",
         "        <button class=\"btn btn-default target\"></button>",
         "        <button class=\"btn btn-default target\"></button>",
@@ -1999,6 +2012,7 @@
         "      </div>",
         "    </div>",
         "    <div class=\"col-xs-6\">",
+        "",
         "      <div class=\"well\" id=\"right-well\">",
         "        <button class=\"btn btn-default target\"></button>",
         "        <button class=\"btn btn-default target\"></button>",
