@@ -340,8 +340,6 @@ $(document).ready(function() {
                     magiVal = 0;
                 }
 
-                console.log(magiVal);
-
                 $('.scroll-locker').css("min-height", $('.editorScrollDiv').height()).css("height",magiVal-185);
             }
             else {
