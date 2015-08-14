@@ -11,7 +11,7 @@
     "prestart-production": "bower cache clean && bower install && gulp build && npm run build-production",
     "start-production": "node pm2Start",
     "lint": "eslint --ext=.js,.jsx .",
-    "test": "mocha"
+    "test": "mocha --compilers js:babel/register"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "contributors": [
