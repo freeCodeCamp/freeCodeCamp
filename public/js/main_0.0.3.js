@@ -348,7 +348,6 @@ $(document).ready(function() {
             }
         }
         if ($('.scroll-locker').html()){
-            $('.scroll-locker').css('overflow-y', 'auto').css('overflow-x', 'hidden')
             lockTop();
             $(window).on('resize', function(){
               lockTop();
