@@ -31,6 +31,7 @@ module.exports = function(app) {
   router.get('/unsubscribe/:email', unsubscribe);
   router.get('/unsubscribed', unsubscribed);
   router.get('/get-started', getStarted);
+  router.get('/submit-cat-photo', submitCatPhoto);
 
   app.use(router);
 
@@ -177,6 +178,10 @@ module.exports = function(app) {
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
+  }
+
+  function submitCatPhoto(req, res) {
+    res.send('Submitted!');
   }
 
   function bootcampCalculator(req, res) {

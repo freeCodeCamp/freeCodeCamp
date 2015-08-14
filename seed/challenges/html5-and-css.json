@@ -244,7 +244,7 @@
         "Replace the text inside your <code>p</code> element with the first few words of this \"Kitty Ipsum\" text: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code>"
       ],
       "tests": [
-        "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($(\"p\").text()), ¬Your <code>p</code> element should contain the first few words of the provided \"Kitty Ipsum\" text.¬)"
+        "assert.isTrue((/Kitty(\\s)+ipsum(\\s)+dolor/gi).test($(\"p\").text()), 'Your <code>p</code> element should contain the first few words of the provided \"Kitty Ipsum\" text.')"
       ],
       "challengeSeed": [
         "<h1>Hello World</h1>",
@@ -286,8 +286,8 @@
       "difficulty": 1.07,
       "description": [
         "Delete your <code>h1</code> element so we can simplify our view.",
-        "Our phone doesn¬t have much vertical space.",
-        "Let¬s remove the unnecessary elements so we can start building our CatPhotoApp."
+        "Our phone doesn't have much vertical space.",
+        "Let's remove the unnecessary elements so we can start building our CatPhotoApp."
       ],
       "tests": [
         "assert(($(\"h1\").length == 0), 'Delete your <code>h1</code> element.')",
@@ -380,9 +380,9 @@
         "Note that it's important to have both opening and closing curly braces (<code>{</code> and <code>}</code>) around each element's style. You also need to make sure your element's style is between the opening and closing style tags. Finally, be sure to add the semicolon to the end of each of your element's styles."
       ],
       "tests": [
-        "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h2</code> element should be blue.')",
         "assert(!$(\"h2\").attr(\"style\"), 'Remove the style attribute from your <code>h2</code> element.')",
         "assert(($(\"style\").length > 1), 'Create a <code>style</code> element.')",
+        "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h2</code> element should be blue.')",
         "assert(editor.match(/<\\/style>/g) && editor.match(/<\\/style>/g).length === editor.match(/<style>/g).length, 'Make sure each of your <code>style</code> elements has a closing tag.')"
       ],
       "challengeSeed": [
@@ -429,7 +429,7 @@
         "Create a CSS class called \"red-text\" and apply it to your <code>h2</code> element.",
         "Classes are reusable styles that can be added to HTML elements.",
         "Here's the anatomy of a CSS class:",
-        "<img class=\"img-responsive\" alt=\"a diagram of how style tags are composed, which is also described in detail on the following lines.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\"/>",
+        "<img class=\"img-responsive\" alt=\"a diagram of how style tags are composed, which is also described in detail on the following lines.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\">",
         "You can see that we've created a CSS class called \"blue-text\" within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
@@ -464,7 +464,7 @@
         "Crea una clase CSS llamada \"red-text\" y aplicala a tu elemento <code>h2</code>.",
         "Las clases son estilos reutilizables que pueden ser añadidos a elementos HTML",
         "Esta es la anatomía de una clase CSS:",
-        "<img class=\"img-responsive\" alt=\"a diagram of how style tags are composed, which is also described in detail on the following lines.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\"/>",
+        "<img class=\"img-responsive\" alt=\"a diagram of how style tags are composed, which is also described in detail on the following lines.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\">",
         "Puedes ver que hemos creado una clase CSS llamada \"blue-text\" dentro de la etiqueta <code>&#60;style&#62;</code>.",
         "Puedes aplicar una clase a un elemento HTML de esta manera: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
         "Nota que en el elemento CSS <code>style</code>, las clases deberían comenzar con un punto. En los elementos HTML, las declaraciones de clase, NO deberían comenzar con punto. ",
@@ -477,7 +477,7 @@
         "Erstelle eine CSS Klasse namens \"red-text\" und füge sie zu deinem <code>h2</code> Element hinzu.",
         "Klassen sind wiederverwendbare Styles, die HTML Elementen zugewiesen werden können.",
         "So sieht eine CSS Klasse aus:",
-        "<img class=\"img-responsive\" alt=\"Ein Beispiel, wie Styles geschrieben werden. Das wird im Detail in den folgenden Zeilen beschrieben.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\"/>",
+        "<img class=\"img-responsive\" alt=\"Ein Beispiel, wie Styles geschrieben werden. Das wird im Detail in den folgenden Zeilen beschrieben.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\">",
         "Du siehst, dass wir die CSS Klasse \"blue-text\" innerhalb von <code>&#60;style&#62;</code> geschrieben haben.",
         "Du kannst eine Klasse folgendermaßen einem HTML Element beifügen: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
         "Beachte, dass Klassen in deinem CSS <code>style</code> Element mit einem Punkt beginngen sollten. In deinen Klassen-Deklarationen von HTML Elementen sollten diese nicht mit einem Punkt beginnen.",
@@ -750,12 +750,12 @@
       "difficulty": 1.17,
       "description": [
         "You can add images to your website by using the <code>img</code> element, and point to an specific image's URL using the <code>src</code> attribute.",
-        "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"/&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
+        "An example of this would be <code>&#60img src=\"www.your-image-source.com/your-image.jpg\"&#62</code>. Note that in most cases, <code>img</code> elements are self-closing.",
         "Try it with this image: <code>https://bit.ly/fcc-relaxing-cat</code>."
       ],
       "tests": [
         "assert($(\"img\").length > 0, 'Your page should have an image element.')",
-        "assert($(\"img\").filter(function(index) { return /http:\\/\\/bit\\.ly\\/fcc-relaxing-cat/gi.test($(\"img\").attr(\"src\")); }).length > 0, 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
+        "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat\", \"gi\").test($(\"img\").attr(\"src\")), 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
@@ -831,7 +831,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img src=\"https://bit.ly/fcc-relaxing-cat\"/>",
+        "<img src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -894,7 +894,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
+        "<img class=\"smaller-image\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -960,7 +960,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1026,7 +1026,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1056,12 +1056,12 @@
       "description": [
         "<code>a</code> elements or \"anchor\" elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\"/>",
+        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "Create an <code>a</code> element that links to <code>http://catphotoapp.com</code> and has \"cat photos\" as its \"anchor text\"."
       ],
       "tests": [
-        "assert((/cat photos/gi).test($(\"a\").text()), \"Your <code>a</code> element should have the anchor text of \"cat photos\"\")",
+        "assert((/cat photos/gi).test($(\"a\").text()), 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
         "assert(/http:\\/\\/catphotoapp\\.com/gi.test($(\"a\").attr(\"href\")), 'You need an <code>a</code> element that links to <code>http&#58;//catphotoapp.com<code>.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.')"
       ],
@@ -1095,7 +1095,7 @@
         "",
         "<h2 class=\"red-text\">CatPhotoApp</h2>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1116,7 +1116,7 @@
       "descriptionDe": [
         "Erstelle ein <code>a</code> Element oder \"Anker Element\", das auf http://catphotoapp.com verlinkt und den Link-Text \"cat photos\" oder \"anchor text\" beinhaltet.",
         "So sieht ein <code>a</code> Element aus. In diesem Fall wird es innerhalb eines Paragraphen Elements verwendet. Das bedeutet dein Link wird innerhalb des Satzes erscheinen.",
-        "<img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\"/>",
+        "<img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "Hier ist ein Beispiel: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>."
       ]
     },
@@ -1126,7 +1126,7 @@
       "difficulty": 1.23,
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\"/>",
+        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "\"Nesting\" just means putting one element inside of another element.",
         "Now nest your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
@@ -1134,8 +1134,8 @@
       "tests": [
         "assert($(\"a\").attr(\"href\").match(/catphotoapp.com/gi).length > 0, 'You need an <code>a</code> element that links to \"catphotoapp.com\".')",
         "assert($(\"a\").text().match(/cat\\sphotos/gi).length > 0, 'Your <code>a</code> element should have the anchor text of \"cat photos\"')",
-        "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element. \"click here for\".')",
-        "assert($(\"a[href=\"http://www.catphotoapp.com\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
+        "assert($(\"p\") && $(\"p\").length > 2, 'Create a new <code>p</code> element around your <code>a</code> element.')",
+        "assert($(\"a[href=\\\"http://www.catphotoapp.com\\\"]\").parent().is(\"p\"), 'Your <code>a</code> element should be nested within your new <code>p</code> element.')",
         "assert($(\"p\").text().match(/click\\shere\\sfor/gi), 'Your <code>p</code> element should have the text \"click here for\".')",
         "assert(editor.match(/<\\/p>/g) && editor.match(/<p/g) && editor.match(/<\\/p>/g).length === editor.match(/<p/g).length, 'Make sure each of your <code>p</code> elements has a closing tag.')",
         "assert(editor.match(/<\\/a>/g) && editor.match(/<a/g) && editor.match(/<\\/a>/g).length === editor.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.')"
@@ -1172,7 +1172,7 @@
         "",
         "<a href=\"http://www.catphotoapp.com\">cat photos</a>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1192,7 +1192,7 @@
       "nameDe": "Waypoint Umschließe ein Anker Element mit einem Paragraphen",
       "descriptionDe":[
         "Jetzt umschließe dein <code>a</code> Element mit einem <code>p</code> Element und dem Text \"click here for cat photos\". Nur \"cat photos\" soll ein Link ein – der Rest normaler Text.",
-        "Hier ist nochmal ein Beispiel für ein <code>a</code> Element: <img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\"/>",
+        "Hier ist nochmal ein Beispiel für ein <code>a</code> Element: <img class=\"img-responsive\" alt=\"Ein Beispiel wie Anker Tags geschrieben werden.\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
         "So könnte es aussehen: <code>&#60;p&#62;Hier ist ein &#60;a href=\"http://freecodecamp.com\"&#62; Link zum Free Code Camp&#60;/a&#62; für dich zum Folgen.&#60;/p&#62;</code>"
       ]
     },
@@ -1240,7 +1240,7 @@
         "",
         "<p>Click here for <a href=\"http://www.catphotoapp.com\">cat photos</a>.</p>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1312,7 +1312,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/>",
+        "<img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\">",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1383,7 +1383,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1462,7 +1462,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p class=\"red-text\">Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
         "<p class=\"red-text\">Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>"
@@ -1494,7 +1494,12 @@
       "description": [
         "HTML has a special element for creating ordered lists, or numbered-style lists.",
         "Ordered lists start with a <code>&#60;ol&#62;</code> element. Then they contain some number of <code>&#60;li&#62;</code> elements.",
-        "For example: <code>&#60;ol&#62;&#60;li&#62;hydrogen&#60;/li&#62;&#60;li&#62;helium&#60;/li&#62;&#60;/ol&#62;</code> would create a numbered list of \"hydrogen\" and \"helium\".",
+        "For example:",
+        "<code>&#60;ol&#62;</code>",
+        "&thinsp;&thinsp;<code>&#60;li&#62;hydrogen&#60;/li&#62;</code>",
+        "&thinsp;&thinsp;<code>&#60;li&#62;helium&#60;/li&#62;</code>",
+        "<code>&#60;/ol&#62;</code>",
+        "would create a numbered list of \"hydrogen\" and \"helium\".",
         "Create an ordered list of the top 3 things cats hate the most."
       ],
       "tests": [
@@ -1538,7 +1543,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1613,7 +1618,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1692,7 +1697,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1774,7 +1779,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1856,7 +1861,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -1937,7 +1942,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2027,7 +2032,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2118,7 +2123,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2203,7 +2208,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2295,7 +2300,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<p>Things cats love:</p>",
         "<ul>",
@@ -2386,7 +2391,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
@@ -2474,7 +2479,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
@@ -2564,7 +2569,7 @@
         "",
         "<p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"/></a>",
+        "<a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "<div>",
         "  <p>Things cats love:</p>",
