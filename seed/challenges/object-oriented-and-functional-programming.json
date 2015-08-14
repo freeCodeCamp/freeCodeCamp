@@ -15,13 +15,12 @@
       "title":"Waypoint: A Review On Objects",
       "difficulty":0,
       "description":[
-        "",
         "Before we dive into Object Oriented Programming Let's take a quick look over objects in javascript"
       ],
       "tests":[
-        "assert(motorBike.wheels===2, 'You should have given motorBike two wheels')",
-        "assert(motorBike.engine===1, 'You should have given motorBike one engine')",
-        "assert(motorBike.seats===1, 'You should have given motorBike one seat')"
+        "assert(motorBike.wheels===2, 'You should have given motorBike two wheels');",
+        "assert(motorBike.engine===1, 'You should have given motorBike one engine');",
+        "assert(motorBike.seats===1, 'You should have given motorBike one seat');"
       ],
       "challengeSeed":[
         "//Here is a sample Object",
@@ -48,13 +47,12 @@
       "title":"Waypoint: Constructing Objects",
       "difficulty":0,
       "description":[
-        "",
         "We are also able to create Objects using functions"
       ],
       "tests":[
         "assert((new Car()).wheels === 4, \"myCar.wheels should be four. Make sure that you haven't changed this value\");",
-        "assert(typeof((new Car()).engine) === 'number', 'myCar.engine should be a number')",
-        "assert(typeof((new Car()).seats) === 'number', 'myCar.seats should be a number')"
+        "assert(typeof((new Car()).engine) === 'number', 'myCar.engine should be a number');",
+        "assert(typeof((new Car()).seats) === 'number', 'myCar.seats should be a number');"
       ],
       "challengeSeed":[
         "//Let's add the properties engine and seats to the car in the same way that the property wheels has been added below. They should both be numbers",
@@ -74,14 +72,13 @@
       "title":"Waypoint: Understanding Public and Private Properties",
       "difficulty":0,
       "description":[
-        "",
         "In the last challenge we use the <code>this</code> to reference public properties the current object or function.",
         "We can also create variables and functions that aren't accessible from outside the Object"
       ],
       "tests":[
-        "assert(typeof(myBike.getSpeed)!=='undefined' && typeof(myBike.getSpeed) === 'function', 'The method getSpeed of myBike should be accessible outside the Object')",
-        "assert(typeof(myBike.speed) === 'undefined', 'We should not been able')",
-        "assert(typeof(myBike.addUnit === 'undefined'), '')"
+        "assert(typeof(myBike.getSpeed)!=='undefined' && typeof(myBike.getSpeed) === 'function', 'The method getSpeed of myBike should be accessible outside the Object');",
+        "assert(typeof(myBike.speed) === 'undefined', 'We should not been able');",
+        "assert(typeof(myBike.addUnit === 'undefined'), '');"
       ],
       "challengeSeed":[
         "//Let's create an object with a two functions. One attached as a property and one not.",
@@ -122,15 +119,14 @@
       "title":"Waypoint: Instantiation",
       "difficulty":0,
       "description":[
-        "",
         "Instantiation at it's most basic level is where you are creating a copy of an object from a template for use at a later time",
         "The instance inherits all the properties and methods of the original Object"
       ],
       "tests":[
-        "assert((new Car()).wheels === 4, 'The property wheels should be four in the object constructor')",
-        "assert(typeof((new Car()).engine) === 'undefined', 'There should not be a property engine in the object constructor')",
-        "assert(myCar.wheels === 4, 'The property wheels of myCar should be four')",
-        "assert(typeof(myCar.engine) === 'number', 'The property engine of myCar should be a number')"
+        "assert((new Car()).wheels === 4, 'The property wheels should be four in the object constructor');",
+        "assert(typeof((new Car()).engine) === 'undefined', 'There should not be a property engine in the object constructor');",
+        "assert(myCar.wheels === 4, 'The property wheels of myCar should be four');",
+        "assert(typeof(myCar.engine) === 'number', 'The property engine of myCar should be a number');"
       ],
       "challengeSeed":[
         "var Car = function(){",
@@ -151,7 +147,6 @@
       "title":"Waypoint: Using .map",
       "difficulty":0,
       "description":[
-        "",
         "<code>array = array.map(function(val){",
         " return(val+1);",
         "});</code>",
@@ -159,9 +154,9 @@
         "The map method is one of the easiest ways to iterate through an array or object there is. Let's use it now"
       ],
       "tests":[
-        "assert.deepEqual(array, [4,5,6,7,8], 'You should have added three to each value in the array')",
-        "assert(editor.getValue().match(/\\.map\\(/gi), 'You should be making use of the map method')",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'You should only modify the array with .map')"
+        "assert.deepEqual(array, [4,5,6,7,8], 'You should have added three to each value in the array');",
+        "assert(editor.getValue().match(/\\.map\\(/gi), 'You should be making use of the map method');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\]/gi), 'You should only modify the array with .map');"
       ],
       "challengeSeed":[
         "//Use map to add three to each value in the array",
@@ -178,20 +173,17 @@
       "title":"Waypoint: Using .reduce",
       "difficulty":0,
       "description":[
-        "",
         "Reduce can be useful for condensing and array or numbers into one value.",
-        "",
         "<code>var singleVal = array.reduce(function(previousVal, currentVal){",
         "   return(previousVal+currentVal);",
         "}</code>"
       ],
       "tests":[
-        "assert(singleVal == 30, 'singleVal should have been set to the result of you reduce operation')",
-        "assert(editor.getValue().match(/\\.reduce\\(/gi), 'You should have made use of the reduce method')"
+        "assert(singleVal == 30, 'singleVal should have been set to the result of you reduce operation');",
+        "assert(editor.getValue().match(/\\.reduce\\(/gi), 'You should have made use of the reduce method');"
       ],
       "challengeSeed":[
         "var array = [4,5,6,7,8];",
-        "",
         "var singleVal = 0;",
         "",
         "",
@@ -213,8 +205,8 @@
         "});</code>"
       ],
       "tests":[
-        "assert.deepEqual(array, [1,2,3,4,5], 'You should have removed all the values from the array that are less than six')",
-        "assert(editor.getValue().match(/array\\.filter\\(/gi), 'You should be using the filter method to remove the values from the array')",
+        "assert.deepEqual(array, [1,2,3,4,5], 'You should have removed all the values from the array that are less than six');",
+        "assert(editor.getValue().match(/array\\.filter\\(/gi), 'You should be using the filter method to remove the values from the array');",
         "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'You should only be using .filter to modify the contents of the array);"
       ],
       "challengeSeed":[
@@ -231,17 +223,15 @@
       "title":"Waypoint: Using .sort",
       "difficulty":0,
       "description":[
-        "",
         "You can use the method sort to easily sort the values in the array alphabetically or numerically",
         "<code>var array = [1,3,2];",
         "array = array.sort();</code>",
-        "This will return [1, 2, 3]",
-        ""
+        "This will return [1, 2, 3]"
       ],
       "tests":[
-        "assert.deepEqual(array, ['alpha', 'beta', 'charlie'], 'You should have sorted the array alphabetically')",
-        "assert(editor.getValue().match(/\\[\\'beta\\'\\,\\s\\'alpha\\'\\,\\s'charlie\\'\\];/gi), 'You should be sorting the array using sort')",
-        "assert(editor.getValue().match(/\\.sort\\(\\)/gi), 'You should have made use of the sort method')"
+        "assert.deepEqual(array, ['alpha', 'beta', 'charlie'], 'You should have sorted the array alphabetically');",
+        "assert(editor.getValue().match(/\\[\\'beta\\'\\,\\s\\'alpha\\'\\,\\s'charlie\\'\\];/gi), 'You should be sorting the array using sort');",
+        "assert(editor.getValue().match(/\\.sort\\(\\)/gi), 'You should have made use of the sort method');"
       ],
       "challengeSeed":[
         "var array = ['beta', 'alpha', 'charlie'];",
@@ -257,13 +247,12 @@
       "title": "Waypoint: Using .reverse",
       "difficulty": 0,
       "description": [
-        "",
         "You can use the reverse method to reverse the contents of an array"
       ],
       "tests": [
-        "assert.deepEqual(array, [7,6,5,4,3,2,1], 'You should reverse the array')",
-        "assert(editor.getValue().match(/\\.reverse\\(\\)/gi), '')",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), '')"
+        "assert.deepEqual(array, [7,6,5,4,3,2,1], 'You should reverse the array');",
+        "assert(editor.getValue().match(/\\.reverse\\(\\)/gi), '');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7/gi), '');"
       ],
       "challengeSeed": [
         "var array = [1,2,3,4,5,6,7];",
@@ -279,14 +268,13 @@
       "title": "Waypoint: Using .concat",
       "difficulty": 0,
       "description": [
-        "",
         "Concat can be used to merge the contents of two arrays into one",
         "<code>array = array.concat(otherArray);</code>"
       ],
       "tests": [
-        "assert.deepEqual(array, [1,2,3,4,5,6], 'You should concat the two arrays together')",
-        "assert(editor.getValue().match(/\\.concat\\(/gi), 'You should be using the concat method to merge the two arrays')",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'You should only modify the two arrays without changing the origional ones')"
+        "assert.deepEqual(array, [1,2,3,4,5,6], 'You should concat the two arrays together');",
+        "assert(editor.getValue().match(/\\.concat\\(/gi), 'You should be using the concat method to merge the two arrays');",
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\]/gi) && editor.getValue().match(/\\[4\\,5\\,6\\]/gi), 'You should only modify the two arrays without changing the origional ones');"
       ],
       "challengeSeed": [
         "var array = [1,2,3];",
@@ -310,8 +298,8 @@
         "<code>array = string.split(' ');</code>"
       ],
       "tests":[
-        "assert(typeof(array) === 'object' && array.length === 5, 'You should have split the string by it\\'s spaces')",
-        "assert(/\\.split\\(/gi, 'You should have made use of the split method on the string')"
+        "assert(typeof(array) === 'object' && array.length === 5, 'You should have split the string by it\\'s spaces');",
+        "assert(/\\.split\\(/gi, 'You should have made use of the split method on the string');"
       ],
       "challengeSeed":[
         "var string = \"Split me into an array\";",
@@ -327,13 +315,12 @@
       "title":"Waypoint: Using .join",
       "difficulty":0,
       "description":[
-        "",
         "We can use the join method to join each element in an array into a string separated by whatever delimiter you provide as an argument to the join operation",
         "<code>var joinMe = joinMe.join(\" \");</code>"
       ],
       "tests":[
-        "assert(typeof(joinMe) === 'string' && joinMe === \"Split me into an array\", 'You should have joined the arrays by it\\'s spaces')",
-        "assert(/\\.join\\(/gi, 'You should have made use of the join method on the array')"
+        "assert(typeof(joinMe) === 'string' && joinMe === \"Split me into an array\", 'You should have joined the arrays by it\\'s spaces');",
+        "assert(/\\.join\\(/gi, 'You should have made use of the join method on the array');"
       ],
       "challengeSeed":[
         "var joinMe = [\"Split\",\"me\",\"into\",\"an\",\"array\"];",
