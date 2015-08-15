@@ -452,7 +452,7 @@
         "Let's now go create a nested array called <code>myArray</code>."
       ],
       "tests":[
-        "assert((function(){if(typeof(myArray) !== \"undefined\" && typeof(myArray) === \"object\" && typeof(myArray[0]) !== \"undefined\" && typeof(myArray[0]) === \"object\" && editor.getValue().match(/\\[\\s?\\[/g).length >= 1 && editor.getValue().match(/\\]\\s?\\]/g).length >= 1){return(true);}else{return(false);}})(), 'myArray should contain at least one array');"
+        "assert(Array.isArray(myArray) && myArray.some(Array.isArray), '<code>myArray</code> should have at least one array nested within another array.');"
       ],
       "challengeSeed":[
         "var ourArray = [[\"the universe\", \"everything\", 42]];",
@@ -998,8 +998,9 @@
         "<code>the</code> is the pattern we want to match.",
         "<code>+</code> means we want to find one or more occurrences of this pattern.",
         "<code>g</code> means that we want to search the entire string for this pattern.",
-        "<code>i</code> means that we want to ignoring the case (uppercase or lowercase) when searching for the pattern.",
-        "Let's try counting the number of times the word <code>and</code> occurs in the string <code>John and Alan went to the shop and got some milk</code>. We can do this by replacing the <code>.+</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
+        "<code>i</code> means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.",
+        "<code>Regular expressions</code> are usually surrounded by <code>/</code> symbols.",
+        "Let's try selecting all the occurances of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>.+</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
       ],
       "tests":[
         "assert(test==2, 'Your <code>regular expression</code> should find two occurrences of the word <code>and</code>');",
@@ -1007,15 +1008,15 @@
       ],
       "challengeSeed":[
         "var test = (function() {",
-        "  var testString = \"John and Alan went to the shop and got some milk\";",
+        "  var testString = \"George Boole and Alan Turing went to the shop and got some milk\";",
         "  var expressionToGetMilk = /milk/gi;",
         "  // Only change code below this line.",
         "",
         "  var expression = /.+/gi;",
         "",
-        "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        " return(testString.match(expression).length);",
+        "  // Only change code above this line.",
+        "  // We use this function to show you the value of your variable in your output box.",
+        "  return(testString.match(expression).length);",
         "})();(function(){return(test);})();"
       ],
       "type": "waypoint",
@@ -1028,7 +1029,8 @@
       "description":[
         "We can use special selectors in <code>Regular Expressions</code> to select a particular type of value.",
         "One such selector is the digit selector <code>\\d</code> which is used to grab the numbers in a string.",
-        "It is used like this: <code>/\\d+/g</code>"
+        "It is used like this: <code>/\\d+/g</code>.",
+        "Use the <code>\\d</code> selector to select the number of numbers in the string."
       ],
       "tests":[
         "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
@@ -1036,15 +1038,15 @@
       ],
       "challengeSeed":[
         "var test = (function() {",
-        "  var testString = \"There's 3 cats but 4 dogs.\"",
+        "  var testString = \"There's 3 cats but 4 dogs.\";",
         "",
         "  // Only change code below this line.",
         "",
         "  var expression = /.+/gi;",
         "",
-        "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        " return(testString.match(expression).length);",
+        "  // Only change code above this line.",
+        "  // We use this function to show you the value of your variable in your output box.",
+        "  return(testString.match(expression).length);",
         "})();(function(){return(test);})();"
       ],
       "type": "waypoint",
