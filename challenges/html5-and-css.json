@@ -483,7 +483,7 @@
       "description": [
         "Apply the \"red-text\" class to your <code>h2</code> and <code>p</code> elements.",
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
-        "Remember that CSS selectors require a period at the beginning like this: <code>.blue-text { color: blue; }</code>, but that class declarations don't use a period, like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
+        "Remember that CSS class selectors require a period at the beginning like this: <code>.blue-text { color: blue; }</code>, but that class declarations don't use a period, like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
       ],
       "tests": [
         "assert($('h2').css('color') === 'rgb(255, 0, 0)', 'Your <code>h2</code> element should be red.')",
