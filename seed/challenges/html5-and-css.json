@@ -538,7 +538,7 @@
       "title": "Change the Font Size of an Element",
       "difficulty": 1.13,
       "description": [
-        "Create a second <code>p</code> element with the following <code>kitty ipsum text<code>: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
+        "Create a second <code>p</code> element with the following <code>kitty ipsum text</code>: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>",
         "Then, inside your <code>&#60;style&#62;</code> element, set the <code>font-size</code> of all <code>p</code> elements to 16 pixels.",
         "Font size is controlled by the <code>font-size</code> CSS attribute, like this: <code>h1 { font-size: 30px; }</code>.",
         "See if you can figure out how to give both of your <code>p</code> elements the font-size of 16 pixels (<code>16px</code>). You can do this inside the same <code>&#60;style&#62;</code> tag that we created for your <code>red-text</code> class."
