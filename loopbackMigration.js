@@ -124,6 +124,7 @@ var users = dbObservable
       user[provider + 'id'] = user[provider];
       user[provider] = null;
     });
+    user.rand = Math.random();
 
     return user;
   })
