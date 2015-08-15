@@ -7,7 +7,7 @@ import { saveUser, observeMethod } from '../../server/utils/rx';
 import { blacklistedUsernames } from '../../server/utils/constants';
 
 const debug = debugFactory('freecc:user:remote');
-const BROWNIEPOINTS_TIMEOUT = [30, 'seconds'];
+const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
 function getAboutProfile({
   username,
@@ -35,6 +35,11 @@ module.exports = function(User) {
   delete User.validations.email;
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
+  // set user.rand to random number
+  User.definition.rawProperties.updated.default =
+    User.definition.properties.updated.default = function() {
+      return Math.random();
+    };
 
   // username should not be in blacklist
   User.validatesExclusionOf('username', {

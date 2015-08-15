@@ -152,6 +152,10 @@
         }
       ],
       "default": []
+    },
+    "rand": {
+      "type": "number",
+      "index": true
     }
   },
   "validations": [],
