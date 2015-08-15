@@ -36,8 +36,8 @@ module.exports = function(User) {
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
   // set user.rand to random number
-  User.definition.rawProperties.updated.default =
-    User.definition.properties.updated.default = function() {
+  User.definition.rawProperties.rand.default =
+    User.definition.properties.rand.default = function() {
       return Math.random();
     };
 
