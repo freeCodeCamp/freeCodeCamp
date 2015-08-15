@@ -1571,7 +1571,7 @@
       "difficulty":"9.9901",
       "description":[
         "Now that we can detect when the player wins we are going to add an image to each slot depending on the random values we generate",
-        "<code>$($('.slot')[0]).html('&lt;img src = \"' + images[slotOne-1] + '\"&gt;');<code>"
+        "<code>$($('.slot')[0]).html('&lt;img src = \"' + images[slotOne-1] + '\"&gt;');</code>"
       ],
       "tests":[
         "assert(editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3, 'Use the provided code three times. One for each slot');",

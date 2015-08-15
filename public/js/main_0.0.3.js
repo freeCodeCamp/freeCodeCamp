@@ -359,6 +359,10 @@ $(document).ready(function() {
     }
 });
 
+function defCheck(a){
+    if(a !== 'undefined'){return(true);}else{return(false);}
+}
+
 var profileValidation = angular.module('profileValidation',
   ['ui.bootstrap']);
 profileValidation.controller('profileValidationController', ['$scope', '$http',
