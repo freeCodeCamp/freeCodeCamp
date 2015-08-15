@@ -15,7 +15,8 @@
       "title":"Waypoint: A Review On Objects",
       "difficulty":0,
       "description":[
-        "Before we dive into Object Oriented Programming Let's take a quick look over objects in javascript"
+        "Before we dive into Object Oriented Programming, let's revisit JavaScript objects.",
+        "Give your <code>motorBike</code> object the correct attributes."
       ],
       "tests":[
         "assert(motorBike.wheels===2, 'You should have given motorBike two wheels');",
@@ -47,7 +48,8 @@
       "title":"Waypoint: Constructing Objects",
       "difficulty":0,
       "description":[
-        "We are also able to create Objects using functions"
+        "We are also able to create objects using functions.",
+        ""
       ],
       "tests":[
         "assert((new Car()).wheels === 4, \"myCar.wheels should be four. Make sure that you haven't changed this value\");",
@@ -55,12 +57,11 @@
         "assert(typeof((new Car()).seats) === 'number', 'myCar.seats should be a number');"
       ],
       "challengeSeed":[
-        "//Let's add the properties engine and seats to the car in the same way that the property wheels has been added below. They should both be numbers",
+        "// Let's add the properties engine and seats to the car in the same way that the property wheels has been added below. They should both be numbers.",
         "var Car = function(){",
         " this.wheels = 4;",
         "};",
         "",
-        "//Instantiated Here",
         "var myCar = new Car();",
         "",
         "(function(){return(JSON.stringify(myCar));})();"
