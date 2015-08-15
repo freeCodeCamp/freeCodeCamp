@@ -5,8 +5,7 @@ pm2.connect(function() {
     script: 'server/production-start.js',
     'exec_mode': 'cluster',
     instances: process.env.INSTANCES || 1,
-    'max_memory_restart':
-      (process.env.MAX_MEMORY / process.env.INSTANCES || 1) || '300M',
+    'max_memory_restart': process.env.MAX_MEMORY || '300M',
     'NODE_ENV': 'production'
   }, function() {
     pm2.disconnect();
