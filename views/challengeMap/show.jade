@@ -2,6 +2,9 @@ extends ../layout
 block content
     script.
         var completedChallenges = !{JSON.stringify(completedChallengeList)};
+    .bg-danger.default-border-radius
+        p &nbsp;&nbsp;&nbsp;&nbsp;
+            a(href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/August-2015-Server-Maintenance' target='_blank') We're changing servers for the next few minutes. Please note that from now until this message goes away, newly created accounts and camper progress may be lost. Thank you for your patience.
     .panel.panel-info
         .panel-heading.text-center
             h1 Challenge Map
