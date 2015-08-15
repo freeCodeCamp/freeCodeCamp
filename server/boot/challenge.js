@@ -533,7 +533,7 @@ module.exports = function(app) {
             return sum + 1;
           }
           return sum;
-        });
+        }, 0);
 
         return {
           name: blockArray[0].block,
