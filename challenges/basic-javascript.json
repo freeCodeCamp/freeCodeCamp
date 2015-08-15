@@ -30,7 +30,7 @@
       "title": "Understand Boolean Values",
       "difficulty": "9.98001",
       "description": [
-        "In computer science, \"data structures\" are variables that hold data. JavaScript has seven of these. For example, the <code>Number</code> data structure holds numbers.",
+        "In computer science, <code>data structures</code> are things that hold data. JavaScript has seven of these. For example, the <code>Number</code> data structure holds numbers.",
         "Let's learn about the most basic data structure of all: the <code>Boolean</code>. Booleans can only hold the value of either true or false. They are basically little on-off switches.",
         "Let's modify our <code>welcomeToBooleans</code>function so that it will return <code>true</code>instead of <code>false</code>when the run button is clicked."
       ],
@@ -43,7 +43,7 @@
         "",
         "// don't change code above here",
         "",
-        "return false;",
+        "  return false;",
         "",
         "// don't change code below here",
         "}",
@@ -58,7 +58,7 @@
       "title": "Declare JavaScript Variables",
       "difficulty": "9.9801",
       "description": [
-        "When we store data in a <code>data structure</code>, we call it a <code>variables</code>. These variables are no different from the x and y variables you use in basic math.",
+        "When we store data in a <code>data structure</code>, we call it a <code>variable</code>. These variables are no different from the x and y variables you use in math.",
         "Let's create our first variable and call it \"myName\".",
         "You'll notice that in <code>myName</code>, we didn't use a space, and that the \"N\" is capitalized. JavaScript variables are written in <code>camel case</code>. An example of camel case is: camelCase.",
         "Now, use the <code>var</code> keyword to create a variable called <code>myName</code>. Set its value to your name, in double quotes.",
@@ -93,15 +93,15 @@
         "assert((function(){if(typeof(myLastName) !== \"undefined\" && typeof(myLastName) === \"string\" && myLastName.length > 0){return(true);}else{return(false);}})(), 'myLastName should be a string with a least one character in it');"
       ],
       "challengeSeed": [
-        "// ourName = \"Free Code Camp\";",
-        "// var ourFirstName = \"Free\";",
-        "// var ourLastName = \"Code Camp\";",
+        "// name = \"Alan Turing\";",
+        "// var firstName = \"Alan\";",
+        "// var lastName = \"Turing\";",
         "",
         "",
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "if(typeof(myFirstName) !== \"undefined\" && typeof(myLastName) !== \"undefined\"){(function(y,z){return(y + ', ' + z);})(myFirstName, myLastName);}"
+        "if(typeof(myFirstName) !== \"undefined\" && typeof(myLastName) !== \"undefined\"){(function(){return(myFirstName + ', ' + myLastName);})();}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -111,8 +111,9 @@
       "title": "Check the Length Property of a String Variable",
       "difficulty": "9.9809",
       "description": [
-        "Use the <code>.length</code> property to count the number of characters in the <code>lastNameLength</code> variable.",
-        "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string \"Charles\" is by using the <code>firstName.length</code> property."
+        "<code>data structures</code> have <code>properties</code>. For example, <code>strings</code> have a property called <code>.length</code> that will tell you how many characters are in the string.",
+        "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string \"Charles\" is by using the <code>firstName.length</code> property.",
+        "Use the <code>.length</code> property to count the number of characters in the <code>lastNameLength</code> variable."
       ],
       "tests": [
         "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return(true);}else{return(false);}})(), 'lastNameLength should be equal to eight.');",
@@ -134,7 +135,7 @@
         "// You can ignore everything below this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "if(typeof(lastNameLength) !== \"undefined\"){(function(v){return(v);})(lastNameLength);}"
+        "if(typeof(lastNameLength) !== \"undefined\"){(function(){return(lastNameLength);})();}"
       ],
       "type": "waypoint",
       "challengeType": 1
