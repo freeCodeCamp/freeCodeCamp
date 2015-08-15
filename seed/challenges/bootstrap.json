@@ -2095,7 +2095,7 @@
       "difficulty": 2.28,
       "description": [
         "Just like we labeled our wells, we want to label our buttons.",
-        "Give each of your <code>button<code> elements text that corresponds to their <code>id</code>."
+        "Give each of your <code>button</code> elements text that corresponds to their <code>id</code>."
       ],
       "tests": [
         "assert(new RegExp(\"#target1\",\"gi\").test($(\"#target1\").text()), 'Give your <code>button</code> element with the id <code>target1</code> the text <code>#target1</code>.')",
@@ -2153,7 +2153,7 @@
       ],
       "tests": [
         "assert(editor.match(/<!--/g) && editor.match(/<!--/g).length > 0, 'Start a comment with <code>&#60;!--</code>.')",
-        "assert(editor.match(/this line/g) && editor.match(/this line/g).length > 0, 'Your comment should have the text <code>You shouldn't need to modify code below this line</code>.')",
+        "assert(editor.match(/this line/g) && editor.match(/this line/g).length > 0, 'Your comment should have the text <code>You shouldn&#39;t need to modify code below this line</code>.')",
         "assert(editor.match(/-->/g) && editor.match(/-->/g).length > 0, 'Be sure to close your comment with <code>--&#62;</code>.')"
       ],
       "challengeSeed": [
