@@ -158,14 +158,14 @@ export default function(UserIdent) {
         userChanged = true;
       }
 
-      if (!(/github/).test(provider)) {
+      if (!(/github/).test(provider) && profile) {
         debug('setting social', provider, (/github/g).test(provider));
         debug('profile username', profile.username);
         user[provider] = profile.username;
       }
 
       // if user signed in with github refresh their info
-      if (/github/.test(provider)) {
+      if (/github/.test(provider) && profile && profile._json) {
         debug("user isn't github cool or username from github is different");
         setProfileFromGithub(user, profile, profile._json);
         userChanged = true;
