@@ -992,25 +992,23 @@
       "title": "Sift through Text with Regular Expressions",
       "difficulty":"9.984",
       "description":[
-        "RegEx is a powerful tool we can use to find certain words or patterns in strings.",
-        "RegEx can look difficult at first but there's not much to getting it working.",
-        "If we wanted to find the number of times the word <code>the</code> occurred in the string <code>The dog chased the cat</code> We could use the following RegEx:",
-        "<code>\/the+\/gi</code>",
+        "<code>Regular expressions</code> are way to find certain words or patterns inside of <code>strings</code>.",
+        "For example, if we wanted to find the number of times the word <code>the</code> occurred in the string <code>The dog chased the cat</code>, we could use the following <code>regular expression</code>: <code>\/the+\/gi</code>",
         "Let's break this down a bit:",
         "<code>the</code> is the pattern we want to match.",
-        "<code>+</code> means we are looking for one or more occurrences of this pattern.",
-        "<code>g</code> means that it searches the entire string.",
-        "<code>i</code> means that we are ignoring the case (uppercase or lowercase) of what we are looking for.",
-        "Let's try finding the word and in the string <code>John and Alan went to the shop and got some milk</code> by replacing the <code>.+</code> in the current RegEx with something that will find the word <code>and</code> and count how many times it occurs."
+        "<code>+</code> means we want to find one or more occurrences of this pattern.",
+        "<code>g</code> means that we want to search the entire string for this pattern.",
+        "<code>i</code> means that we want to ignoring the case (uppercase or lowercase) when searching for the pattern.",
+        "Let's try counting the number of times the word <code>and</code> occurs in the string <code>John and Alan went to the shop and got some milk</code>. We can do this by replacing the <code>.+</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
       ],
       "tests":[
-        "assert(test==2, 'Your <code>regular expression</code> should have found two occurrences of the word <code>and</code>');",
+        "assert(test==2, 'Your <code>regular expression</code> should find two occurrences of the word <code>and</code>');",
         "assert(editor.getValue().match(/\\/and\\+\\/gi/), 'You should have used <code>regular expressions</code> to find the word <code>and</code>');"
       ],
       "challengeSeed":[
         "var test = (function() {",
         "  var testString = \"John and Alan went to the shop and got some milk\";",
-        "",
+        "  var expressionToGetMilk = /milk/gi;",
         "  // Only change code below this line.",
         "",
         "  var expression = /.+/gi;",
@@ -1028,10 +1026,9 @@
       "title": "Find Numbers with Regular Expressions",
       "difficulty":"9.985",
       "description":[
-        "We can use special selectors in RegEx to select a particular type of value.",
+        "We can use special selectors in <code>Regular Expressions</code> to select a particular type of value.",
         "One such selector is the digit selector <code>\\d</code> which is used to grab the numbers in a string.",
-        "It is used like this:",
-        "<code>/\\d+/g</code>"
+        "It is used like this: <code>/\\d+/g</code>"
       ],
       "tests":[
         "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
