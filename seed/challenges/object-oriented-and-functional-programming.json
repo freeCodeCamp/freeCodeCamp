@@ -175,7 +175,7 @@
       "difficulty":0,
       "description":[
         "<code>array = array.map(function(val){</code>",
-        "<code>thinsp;thinsp;return(val+1);</code>",
+        "<code>&thinsp;&thinsp;return(val+1);</code>",
         "<code>});</code>",
         "",
         "The map method is one of the easiest ways to iterate through an array or object there is. Let's use it now."
@@ -203,8 +203,8 @@
       "description":[
         "Reduce can be useful for condensing and array or numbers into one value.",
         "<code>var singleVal = array.reduce(function(previousVal, currentVal){</code>",
-        "<code>thinsp;thinsp;return(previousVal+currentVal);</code>",
-        "<code>}</code>"
+        "<code>&thinsp;&thinsp;return(previousVal+currentVal);</code>",
+        "<code>});</code>"
       ],
       "tests":[
         "assert(singleVal == 30, 'singleVal should have been set to the result of you reduce operation');",
@@ -229,7 +229,7 @@
         "filter is a useful method that can filter out values that don't match a certain criteria",
         "Let's remove all the values less than six",
         "<code>array = array.filter(function(val) {</code>",
-        "<code>thinsp;thinsp;return(val<4);</code>",
+        "<code>&thinsp;&thinsp;return(val<4);</code>",
         "<code>});</code>"
       ],
       "tests":[
