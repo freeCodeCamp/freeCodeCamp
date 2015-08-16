@@ -170,7 +170,6 @@ module.exports = function(app) {
           googleProfile: user.google,
           facebookProfile: user.facebook,
           twitterHandle: user.twitter,
-          bio: user.bio,
           picture: user.picture,
           progressTimestamps: user.progressTimestamps,
           calender: data,
