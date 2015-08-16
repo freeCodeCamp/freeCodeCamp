@@ -6,7 +6,7 @@ var Rx = require('rx'),
   mongodb = require('mongodb'),
   secrets = require('../config/secrets');
 
-const batchSize = 100;
+const batchSize = 20;
 var MongoClient = mongodb.MongoClient;
 Rx.config.longStackSupport = true;
 
@@ -185,6 +185,7 @@ var userIdentityCount = users
   // count how many times insert completes
   .count();
 
+/*
 var storyCount = dbObservable
   .flatMap(function(db) {
     return createQuery(db, 'stories', {}, batchSize);
@@ -200,16 +201,17 @@ var storyCount = dbObservable
     return insertMany(dats.db, 'story', dats.stories, { w: 1 });
   })
   .count();
+  */
 
 Rx.Observable.combineLatest(
   userIdentityCount,
   userSavesCount,
-  storyCount,
-  function(userIdentCount, userCount, storyCount) {
+  // storyCount,
+  function(userIdentCount, userCount) {
     return {
       userIdentCount: userIdentCount * batchSize,
-      userCount: userCount * batchSize,
-      storyCount: storyCount * batchSize
+      userCount: userCount * batchSize
+      // storyCount: storyCount * batchSize
     };
   })
   .subscribe(
