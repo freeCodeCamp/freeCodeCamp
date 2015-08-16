@@ -83,6 +83,39 @@ module.exports = function(User) {
     next();
   });
 
+  User.on('resetPasswordRequest', function(info) {
+    const host = User.app.get('host');
+    // TODO(berks) get protocol as well
+    const url = `http://${host}/reset-password?access_token=` +
+      info.accessToken.id;
+
+    // the email of the requested user
+    debug(info.email);
+    // the temp access token to allow password reset
+    debug(info.accessToken.id);
+    // requires AccessToken.belongsTo(User)
+    var mailOptions = {
+      to: info.email,
+      from: 'Team@freecodecamp.com',
+      subject: 'Password Reset Request',
+      text: `
+        Hello,\n\n
+        This email is confirming that you requested to
+        reset your password for your Free Code Camp account.
+        This is your email: ${ info.email }.
+        Go to ${ url } to reset your password.
+        \n
+        Happy Coding!
+        \n
+      `
+    };
+
+    User.app.models.Email.send(mailOptions, function(err) {
+      if (err) { console.error(err); }
+      debug('email reset sent');
+    });
+  });
+
   User.afterRemote('login', function(ctx, user, next) {
     var res = ctx.res;
     var req = ctx.req;

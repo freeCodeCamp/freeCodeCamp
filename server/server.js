@@ -27,6 +27,7 @@ var passportConfigurator = new PassportConfigurator(app);
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(loopback.token());
 app.disable('x-powered-by');
 
 // adds passport initialization after session middleware phase is complete
