@@ -138,7 +138,7 @@
     },
     {
       "id":"cf1111c1c15feddfaeb4bdef",
-      "title":"Create Instances of JavaScript Objects from a Constructor Function",
+      "title":"Create Instances of Objects from a Constructor Function",
       "difficulty":0,
       "description":[
         "Sometimes you'll want to be able to easily create similar objects.",
