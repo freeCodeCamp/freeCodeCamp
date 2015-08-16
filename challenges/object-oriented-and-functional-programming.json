@@ -2,6 +2,7 @@
   "name": "Object Oriented and Functional Programming",
   "order": 0.010,
   "note": [
+    "Methods",
     "Closures",
     "Factories",
     "Pure Functions",
@@ -41,7 +42,7 @@
         "  // Only change code above this line.",
         "};",
         "",
-        "(function(){return(JSON.stringify(motorBike));})();"
+        "(function() {return(JSON.stringify(motorBike));})();"
       ],
       "challengeType":1,
           "type": "waypoint",
@@ -56,23 +57,31 @@
         "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engine</code> and <code>seats</code> attribute and set them to numbers."
       ],
       "tests":[
-        "assert(typeof((new Car()).engines) === 'number', '<code>engines</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof((new Car()).wheels) === 'number', '<code>wheels</code> should be have a <code>engines</code> attribute set to a number.');",
-        "assert(typeof((new Car()).seats) === 'number', '<code>seats</code> should be have a <code>engines</code> attribute set to a number.');"
+        "assert(typeof((new MotorBike()).engines) === 'number', '<code>engines</code> should be have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof((new MotorBike()).wheels) === 'number', '<code>wheels</code> should be have a <code>engines</code> attribute set to a number.');",
+        "assert(typeof((new MotorBike()).seats) === 'number', '<code>seats</code> should be have a <code>engines</code> attribute set to a number.');"
       ],
       "challengeSeed":[
         "// Let's add the properties engine and seats to the car in the same way that the property wheels has been added below. They should both be numbers.",
-        "var Car = function(){",
-        "  // Only change code below this line.",
+        "var Car = function() {",
         "  this.wheels = 4;",
         "  this.engines = 1;",
         "  this.seats = 1;",
         "};",
         "",
-        "var motorBike = new Car();",
+        "var myCar = new Car();",
+        "",
+        "// Only change code below this line.",
+        "var MotorBike = function() {",
+        "",
+        "",
+        "",
+        "};",
+        "",
+        "var myMotorBike = new MotorBike();",
         "// Only change code above this line.",
         "",
-        "(function(){return(JSON.stringify(myCar));})();"
+        "(function() {return(JSON.stringify(myMotorBike));})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -82,74 +91,80 @@
       "title":"Understanding Public and Private Properties",
       "difficulty":0,
       "description":[
-        "In the last challenge we use the <code>this</code> to reference public properties the current object or function.",
-        "We can also create variables and functions that aren't accessible from outside the object."
+        "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
+        "In the previous challenge, we used the <code>this</code> keyword to reference <code>public properties</code> and <code>public methods</code> of the current object.",
+        "We can also create <code>private properties</code> and <code>private methods</code>, which aren't accessible from outside the object.",
+        "To do this, we omit the word <code>this</code> from the <code>property</code> or <code>method</code> declaration.",
+        "See if you can keep <code>myBike.speed</code> and <code>myBike.addUnit</code> private, while making <code>myBike.getSpeed</code> publicly accessible."
       ],
       "tests":[
         "assert(typeof(myBike.getSpeed)!=='undefined' && typeof(myBike.getSpeed) === 'function', 'The method getSpeed of myBike should be accessible outside the object');",
         "assert(typeof(myBike.speed) === 'undefined', '<code>myBike.speed</code> should remain undefined.');",
-        "assert(typeof(myBike.addUnit === 'undefined'), '<code>myBike.addUnit</code> should remain undefined.');"
+        "assert(typeof(myBike.addUnit) === 'undefined', '<code>myBike.addUnit</code> should remain undefined.');"
       ],
       "challengeSeed":[
         "//Let's create an object with a two functions. One attached as a property and one not.",
-        "var Car = function(){",
-        "   this.gear = 1;",
-        "   function addStyle(styleMe){",
-        "       return('The Current Gear Is: ' + styleMe);",
-        "   }",
-        "   this.getGear = function(){",
-        "       return(addStyle(this.gear));",
-        "   };",
+        "var Car = function() {",
+        "  this.gear = 1;",
+        "  function addStyle(styleMe){",
+        "    return('The Current Gear Is: ' + styleMe);",
+        "  }",
+        "  this.getGear = function() {",
+        "    return(addStyle(this.gear));",
+        "  };",
         "};",
         "",
-        "//Make the function getSpeed of Bike publicly accessible",
-        "",
-        "var Bike = function(){",
-        "   speed = 100;",
-        "   function addUnit(value){",
-        "     return(value + \"KM/H\");",
-        "   }",
-        "   ",
-        "   getSpeed = function (){",
-        "       return(addUnit(speed));",
-        "   };",
-        "   ",
+        "var Bike = function() {",
+        "  // Do not modify the code above this line.",
+        "  this.speed = 100;",
+        "  function addUnit(value) {",
+        "    return(value + \"KM/H\");",
+        "  }",
+        "  ",
+        "  getSpeed = function () {",
+        "    return(addUnit(speed));",
+        "  };",
+        "  ",
         "};",
         "",
-        "//Instantiated Here",
+        "// Do not modify the code below this line.",
         "var myCar = new Car();",
         "var myBike = new Bike();",
         "",
-        "if(myBike.hasOwnProperty('getSpeed')){(function(){return(JSON.stringify(myBike.getSpeed()));})();};"
+        "if(myBike.hasOwnProperty('getSpeed')){(function() {return(JSON.stringify(myBike.getSpeed()));})();};"
       ],
       "challengeType":1,
       "type": "waypoint"
     },
     {
       "id":"cf1111c1c15feddfaeb4bdef",
-      "title":"Instantiation",
+      "title":"Create Instances of JavaScript Objects from a Constructor Function",
       "difficulty":0,
       "description":[
-        "Instantiation at it's most basic level is where you are creating a copy of an object from a template for use at a later time.",
-        "The instance inherits all the properties and methods of the original Object."
+        "Sometimes you'll want to be able to easily create similar objects.",
+        "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
+        "A function that creates objects is called a <code>constructor</code>.",
+        "You can create <code>instances</code> of an object using a <code>constructor</code>.",
+        "Each new <code>instance</code> of this object <code>inherits</code> all the <code>properties</code> and <code>methods</code> of your original object.",
+        "Then you can give the instance new properties."
       ],
       "tests":[
-        "assert((new Car()).wheels === 4, 'The property wheels should be four in the object constructor');",
-        "assert(typeof((new Car()).engine) === 'undefined', 'There should not be a property engine in the object constructor');",
+        "assert((new Car()).wheels === 4, 'The property <code>wheels</code> should still be 4 like in the object constructor');",
+        "assert(typeof((new Car()).engines) === 'undefined', 'There should not be a property engine in the object constructor');",
         "assert(myCar.wheels === 4, 'The property wheels of myCar should be four');",
-        "assert(typeof(myCar.engine) === 'number', 'The property engine of myCar should be a number');"
+        "assert(typeof(myCar.engines) === 'number', 'The property engine of myCar should be a number');"
       ],
       "challengeSeed":[
-        "var Car = function(){",
+        "var Car = function() {",
         "   this.wheels = 4;",
         "};",
         "",
         "var myCar = new Car();",
         "",
-        "//Add the property engine to myCar using dot notation and make it a number",
+        "//Add the property \"engines\" to myCar, and make it a number.",
         "",
         "",
-        "(function(){return(JSON.stringify(myCar));})();"
+        "(function() {return(JSON.stringify(myCar));})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -176,7 +191,7 @@
         "",
         "",
         "",
-        "(function(){return(array);})();"
+        "(function() {return(array);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -201,7 +216,7 @@
         "",
         "",
         "",
-        "(function(){return(singleVal);})()"
+        "(function() {return(singleVal);})()"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -227,7 +242,7 @@
         "",
         "",
         "",
-        "(function(){return(array);})();"
+        "(function() {return(array);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -252,7 +267,7 @@
         "",
         "",
         "",
-        "(function(){return(array);})();"
+        "(function() {return(array);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -274,7 +289,7 @@
         "",
         "",
         "",
-        "(function(){return(array);})();"
+        "(function() {return(array);})();"
       ],
       "challengeType": 1,
       "type": "waypoint"
@@ -299,7 +314,7 @@
         "",
         "",
         "",
-        "(function(){return(array);})()"
+        "(function() {return(array);})()"
       ],
       "challengeType": 1,
       "type": "waypoint"
@@ -322,7 +337,7 @@
         "",
         "var array = string;",
         "",
-        "(function(){return(array);})();"
+        "(function() {return(array);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
@@ -344,7 +359,7 @@
         "",
         "joinMe = joinMe;",
         "",
-        "(function(){return(joinMe);})();"
+        "(function() {return(joinMe);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
