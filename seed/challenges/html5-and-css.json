@@ -2441,7 +2441,7 @@
         "In addition to classes, each HTML element can also have an <code>id</code> attribute.",
         "There are several benefits to using <code>id</code> attributes, and you'll learn more about them once you start using jQuery.",
         "<code>id</code> attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice. So please don't give more than one element the same <code>id</code> attribute.",
-        "Here's an example of how you give your <code>h2</code> element the id of <code>cat-photo-app</code>: <code>&#60;ul id=\"cat-photo-app\"></code>",
+        "Here's an example of how you give your <code>h2</code> element the id of <code>cat-photo-app</code>: <code>&#60;h2 id=\"cat-photo-app\"></code>",
         "Give your <code>form</code> element the id <code>cat-photo-form</code>."
       ],
       "tests": [
