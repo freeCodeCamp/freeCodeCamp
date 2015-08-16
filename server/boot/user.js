@@ -1,11 +1,8 @@
 var _ = require('lodash'),
     async = require('async'),
-    crypto = require('crypto'),
-    nodemailer = require('nodemailer'),
     moment = require('moment'),
-    // debug = require('debug')('freecc:cntr:userController'),
+    debug = require('debug')('freecc:cntr:userController');
 
-    secrets = require('../../config/secrets');
 
 function calcCurrentStreak(cals) {
   const revCals = cals.slice().reverse();
@@ -40,8 +37,8 @@ module.exports = function(app) {
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
   router.post('/forgot', postForgot);
-  router.get('/reset/:token', getReset);
-  router.post('/reset/:token', postReset);
+  router.get('/reset-password', getReset);
+  router.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/account/api', getAccountAngular);
@@ -182,11 +179,6 @@ module.exports = function(app) {
     );
   }
 
-  /**
-  * POST /account/password
-  * Update current password.
-  */
-
   function postUpdatePassword(req, res, next) {
     req.assert('password', 'Password must be at least 4 characters long')
       .len(4);
@@ -215,11 +207,6 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * POST /account/delete
-  * Delete user account.
-  */
-
   function postDeleteAccount(req, res, next) {
     User.destroyById(req.user.id, function(err) {
       if (err) { return next(err); }
@@ -228,11 +215,6 @@ module.exports = function(app) {
       res.redirect('/');
     });
   }
-
-  /**
-  * GET /account/unlink/:provider
-  * Unlink OAuth provider.
-  */
 
   function getOauthUnlink(req, res, next) {
     var provider = req.params.provider;
@@ -253,119 +235,37 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * GET /reset/:token
-  * Reset Password page.
-  */
-
-  function getReset(req, res, next) {
-    if (req.isAuthenticated()) {
-      return res.redirect('/');
+  function getReset(req, res) {
+    if (!req.accessToken) {
+      req.flash('errors', { msg: 'access token invalid' });
+      return res.render('account/forgot');
     }
-    User.findOne(
-      {
-        where: {
-          resetPasswordToken: req.params.token,
-          resetPasswordExpires: { gte: Date.now() }
-        }
-      },
-      function(err, user) {
-        if (err) { return next(err); }
-        if (!user) {
-          req.flash('errors', {
-            msg: 'Password reset token is invalid or has expired.'
-          });
-          return res.redirect('/forgot');
-        }
-        res.render('account/reset', {
-          title: 'Password Reset',
-          token: req.params.token
-        });
-      });
+    res.render('account/reset', {
+      title: 'Password Reset',
+      accessToken: req.accessToken.id
+    });
   }
 
-  /**
-  * POST /reset/:token
-  * Process the reset password request.
-  */
-
   function postReset(req, res, next) {
-    var errors = req.validationErrors();
+    const errors = req.validationErrors();
+    const { password } = req.body;
 
     if (errors) {
       req.flash('errors', errors);
       return res.redirect('back');
     }
 
-    async.waterfall([
-      function(done) {
-        User.findOne(
-          {
-            where: {
-              resetPasswordToken: req.params.token,
-              resetPasswordExpires: { gte: Date.now() }
-            }
-          },
-          function(err, user) {
-            if (err) { return next(err); }
-            if (!user) {
-              req.flash('errors', {
-                msg: 'Password reset token is invalid or has expired.'
-              });
-              return res.redirect('back');
-            }
-
-            user.password = req.body.password;
-            user.resetPasswordToken = null;
-            user.resetPasswordExpires = null;
-
-            user.save(function(err) {
-              if (err) { return done(err); }
-              req.logIn(user, function(err) {
-                done(err, user);
-              });
-            });
-          });
-      },
-      function(user, done) {
-        var transporter = nodemailer.createTransport({
-          service: 'Mandrill',
-          auth: {
-            user: secrets.mandrill.user,
-            pass: secrets.mandrill.password
-          }
-        });
-        var mailOptions = {
-          to: user.email,
-          from: 'Team@freecodecamp.com',
-          subject: 'Your Free Code Camp password has been changed',
-          text: [
-            'Hello,\n\n',
-            'This email is confirming that you requested to',
-            'reset your password for your Free Code Camp account.',
-            'This is your email:',
-            user.email,
-            '\n'
-          ].join(' ')
-        };
-        transporter.sendMail(mailOptions, function(err) {
-          if (err) { return done(err); }
-          req.flash('success', {
-            msg: 'Success! Your password has been changed.'
-          });
-          done();
-        });
-      }
-    ], function(err) {
+    User.findById(req.accessToken.userId, function(err, user) {
       if (err) { return next(err); }
-      res.redirect('/');
+      user.updateAttribute('password', password, function(err) {
+      if (err) { return next(err); }
+
+        debug('password reset processed successfully');
+        req.flash('info', { msg: 'password reset processed successfully' });
+        res.redirect('/');
+      });
     });
   }
-
-  /**
-  * GET /forgot
-  * Forgot Password page.
-  */
 
   function getForgot(req, res) {
     if (req.isAuthenticated()) {
@@ -381,83 +281,29 @@ module.exports = function(app) {
   * Create a random token, then the send user an email with a reset link.
   */
 
-  function postForgot(req, res, next) {
-    var errors = req.validationErrors();
+  function postForgot(req, res) {
+    const errors = req.validationErrors();
+    const email = req.body.email.toLowerCase();
 
     if (errors) {
       req.flash('errors', errors);
       return res.redirect('/forgot');
     }
 
-    async.waterfall([
-      function(done) {
-        crypto.randomBytes(16, function(err, buf) {
-          if (err) { return done(err); }
-          var token = buf.toString('hex');
-          done(null, token);
-        });
-      },
-      function(token, done) {
-        User.findOne({
-          where: { email: req.body.email.toLowerCase() }
-        }, function(err, user) {
-          if (err) { return done(err); }
-          if (!user) {
-            req.flash('errors', {
-              msg: 'No account with that email address exists.'
-            });
-            return res.redirect('/forgot');
-          }
-
-          user.resetPasswordToken = token;
-          // 3600000 = 1 hour
-          user.resetPasswordExpires = Date.now() + 3600000;
-
-          user.save(function(err) {
-            if (err) { return done(err); }
-            done(null, token, user);
-          });
-        });
-      },
-      function(token, user, done) {
-        var transporter = nodemailer.createTransport({
-          service: 'Mandrill',
-          auth: {
-            user: secrets.mandrill.user,
-            pass: secrets.mandrill.password
-          }
-        });
-        var mailOptions = {
-          to: user.email,
-          from: 'Team@freecodecamp.com',
-          subject: 'Reset your Free Code Camp password',
-          text: [
-            'You are receiving this email because you (or someone else)\n',
-            'requested we reset your Free Code Camp account\'s password.\n\n',
-            'Please click on the following link, or paste this into your\n',
-            'browser to complete the process:\n\n',
-            'http://',
-            req.headers.host,
-            '/reset/',
-            token,
-            '\n\n',
-            'If you did not request this, please ignore this email and\n',
-            'your password will remain unchanged.\n'
-          ].join('')
-        };
-        transporter.sendMail(mailOptions, function(err) {
-          if (err) { return done(err); }
-          req.flash('info', {
-            msg: 'An e-mail has been sent to ' +
-            user.email +
-            ' with further instructions.'
-          });
-          done(null, 'done');
-        });
+    User.resetPassword({
+      email: email
+    }, function(err) {
+      if (err) {
+        req.flash('errors', err);
+        return res.redirect('/forgot');
       }
-    ], function(err) {
-      if (err) { return next(err); }
-      res.redirect('/forgot');
+
+      req.flash('info', {
+        msg: 'An e-mail has been sent to ' +
+        email +
+        ' with further instructions.'
+      });
+      res.render('account/forgot');
     });
   }
 

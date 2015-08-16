@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   .col-sm-8.col-sm-offset-2.jumbotron
-    form(action='/reset/#{token}', method='POST')
+    form(action='/reset-password?access_token=#{accessToken}', method='POST')
       h1 Reset Password
       input(type='hidden', name='_csrf', value=_csrf)
       .form-group
