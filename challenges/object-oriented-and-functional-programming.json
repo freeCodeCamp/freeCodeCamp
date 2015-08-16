@@ -227,7 +227,7 @@
       "difficulty":0,
       "description":[
         "filter is a useful method that can filter out values that don't match a certain criteria",
-        "Let's remove all the values less than six",
+        "Let's remove all the values greater than six",
         "<code>array = array.filter(function(val) {</code>",
         "<code>&thinsp;&thinsp;return(val<4);</code>",
         "<code>});</code>"
