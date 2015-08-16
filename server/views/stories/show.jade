@@ -23,19 +23,18 @@ h3.row
                         .col-xs-12.col-sm-12.col-md-6
                             h4= storyMetaDescription
             .col-xs-12
-                h4= description
-                .negative-5
-                    if !hasUserVoted
-                        a#upvote.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvote
-                        |  &thinsp;·&thinsp;
-                    else
-                        a#upvote.btn.disabled.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvoted!
-                        |  &thinsp;·&thinsp;
-                    span#storyRank= rank + (rank > 1 ? " points" : " point")
+                .spacer
+                if !hasUserVoted
+                    a#upvote.btn.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvote
                     |  &thinsp;·&thinsp;
-                    span Posted #{timeAgo}
-                    span &thinsp;by&thinsp;
-                        a(href="/" + author.username) @#{author.username}
+                else
+                    a#upvote.btn.disabled.btn-no-shadow.btn-primary.btn-xs.btn-primary-ghost Upvoted!
+                    |  &thinsp;·&thinsp;
+                span#storyRank= rank + (rank > 1 ? " points" : " point")
+                |  &thinsp;·&thinsp;
+                span Posted #{timeAgo}
+                span &thinsp;by&thinsp;
+                    a(href="/" + author.username) @#{author.username}
 
 script.
     if (image) {

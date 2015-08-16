@@ -167,7 +167,6 @@ module.exports = function(app) {
           originalStoryLink: dashedName,
           originalStoryAuthorEmail: story.author.email || '',
           author: story.author,
-          description: story.description,
           rank: story.upVotes.length,
           upVotes: story.upVotes,
           id: story.id,
