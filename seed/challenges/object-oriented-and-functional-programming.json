@@ -13,7 +13,7 @@
   "challenges": [
     {
       "id":"cf1111c1c15feddfaeb1bdef",
-      "title": "Declaring JavaScript Objects as Variables",
+      "title": "Declare JavaScript Objects as Variables",
       "difficulty":0,
       "description":[
         "Before we dive into Object Oriented Programming, let's revisit JavaScript objects.",
@@ -50,7 +50,7 @@
     },
     {
       "id":"cf1111c1c15feddfaeb2bdef",
-      "title": "Constructing JavaScript Objects with Functions",
+      "title": "Construct JavaScript Objects with Functions",
       "difficulty":0,
       "description":[
         "We are also able to create objects using <code>constructor</code> functions.",
@@ -88,7 +88,7 @@
     },
     {
       "id":"cf1111c1c15feddfaeb3bdef",
-      "title":"Understanding Public and Private Properties",
+      "title":"Make Object Properties Private",
       "difficulty":0,
       "description":[
         "Objects have their own attributes, called <code>properties</code>, and their own functions, called <code>methods</code>.",
@@ -138,7 +138,7 @@
     },
     {
       "id":"cf1111c1c15feddfaeb4bdef",
-      "title":"Create Instances of Objects from a Constructor Function",
+      "title":"Duplicate Instances of Objects from a Constructor Function",
       "difficulty":0,
       "description":[
         "Sometimes you'll want to be able to easily create similar objects.",
