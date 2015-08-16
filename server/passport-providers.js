@@ -41,7 +41,7 @@ module.exports = {
   },
   'google-login': {
     provider: 'google',
-    authScheme: 'oauth',
+    authScheme: 'oauth2',
     module: 'passport-google-oauth2',
     clientID: process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
@@ -55,7 +55,7 @@ module.exports = {
   },
   'google-link': {
     provider: 'google',
-    authScheme: 'oauth',
+    authScheme: 'oauth2',
     module: 'passport-google-oauth2',
     clientID: process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
