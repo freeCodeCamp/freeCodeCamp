@@ -509,7 +509,7 @@ module.exports = function(app) {
     // get the id's of all the users completed challenges
     const completedChallenges = !user.completedChallenges ?
       [] :
-      _.uniq(user.completedChallenges).map(({ id }) => id);
+      _.uniq(user.completedChallenges).map(({ id, _id }) => id || _id);
 
     const camperCount$ = userCount$()
       .map(camperCount => numberWithCommas(camperCount));
