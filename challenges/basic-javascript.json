@@ -1059,7 +1059,8 @@
       "description":[
         "We can also use selectors like <code>\\s</code> to find spaces in a string.",
         "It is used like this:",
-        "<code>/\\s+/g</code>"
+        "<code>/\\s+/g</code>",
+        "Select all the spaces in the sentence string."
       ],
       "tests":[
         "assert(test === 7, 'Your RegEx should have found seven spaces in the <code>testString</code>.');",
@@ -1067,15 +1068,15 @@
       ],
       "challengeSeed":[
         "var test = (function(){",
-        "  var testString = \"How many spaces are there in this sentence.\";",
+        "  var testString = \"How many spaces are there in this sentence?\";",
         "",
         "  // Only change code below this line.",
         "",
         "  var expression = /.+/gi;",
         "",
-        "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        " return(testString.match(expression).length);",
+        "  // Only change code above this line.",
+        "  // We use this function to show you the value of your variable in your output box.",
+        "  return(testString.match(expression).length);",
         "})();(function(){return(test);})();"
       ],
       "type": "waypoint",
@@ -1095,15 +1096,15 @@
       ],
       "challengeSeed":[
         "var test = (function(){",
-        "  var testString = \"How many spaces are there in this sentence.\";",
+        "  var testString = \"How many spaces are there in this sentence?\";",
         "",
         "  // Only change code below this line.",
         "",
-        "  var expression = /.+/gi;",
+        "  var expression = /./gi;",
         "",
-        "// Only change code above this line.",
-        "// We use this function to show you the value of your variable in your output box.",
-        " return(testString.match(expression).length);",
+        "  // Only change code above this line.",
+        "  // We use this function to show you the value of your variable in your output box.",
+        "  return(testString.match(expression).length);",
         "})();(function(){return(test);})();"
       ],
       "type": "waypoint",
@@ -1115,16 +1116,16 @@
       "difficulty":"9.988",
       "description":[
         "We are now going to try and combine some of the stuff we've just learned and create the logic for a slot machine game.",
-        "For this we will need to generate three random numbers between <code>1</code> and <code>5</code> to represent the possible values of each individual slot.",
+        "For this we will need to generate three random numbers between <code>1</code> and <code>3</code> to represent the possible values of each individual slot.",
         "Store the three random numbers in <code>slotOne</code>, <code>slotTwo</code> and <code>slotThree</code>.",
         "Generate the random numbers by using the system we used earlier:",
-        "<code>Math.floor(Math.random() * (5 - 1 + 1)) + 1;</code>"
+        "<code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code>"
       ],
       "tests":[
-        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\", '<code>slotOne</code> should be a random number.');",
-        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\", '<code>slotTwo</code> should be a random number.');",
-        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\", '<code>slotThree</code> should be a random number.');",
-        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?5\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi) !== null){return(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?5\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi).length >= 3);}else{return(false);}})(), 'You should have used <code>Math.floor(Math.random() * (5 - 1 + 1)) + 1;</code> three times to generate your random numbers.');"
+        "assert(typeof(runSlots($(\".slot\"))[0]) === \"number\", '<code>slotOne</code> should be a random number.')",
+        "assert(typeof(runSlots($(\".slot\"))[1]) === \"number\", '<code>slotTwo</code> should be a random number.')",
+        "assert(typeof(runSlots($(\".slot\"))[2]) === \"number\", '<code>slotThree</code> should be a random number.')",
+        "assert((function(){if(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi) !== null){return(editor.match(/Math\\.floor\\(\\s?Math\\.random\\(\\)\\s?\\*\\s?\\(\\s?3\\s?\\-\\s?1\\s?\\+\\s?1\\s?\\)\\s?\\)\\s?\\+\\s?1;/gi).length >= 3);}else{return(false);}})(), 'You should have used <code>Math.floor(Math.random() * (3 - 1 + 1)) + 1;</code> three times to generate your random numbers.')"
       ],
       "challengeSeed":[
         "fccss",
@@ -1133,7 +1134,7 @@
         "    var slotTwo;",
         "    var slotThree;",
         "   ",
-        "    var images = [\"http://i.imgur.com/9H17QFk.png\", \"http://i.imgur.com/9RmpXTy.png\", \"http://i.imgur.com/VJnmtt5.png\", \"http://i.imgur.com/XK735i8.png\", \"http://i.imgur.com/Vt32Bf7.png\"];",
+        "    var images = [\"http://i.imgur.com/9H17QFk.png\", \"http://i.imgur.com/9RmpXTy.png\", \"http://i.imgur.com/VJnmtt5.png\"];",
         "   ",
         "    // Only change code below this line.",
         "    ",
@@ -1268,16 +1269,17 @@
       "title": "Add your JavaScript Slot Machine Slots",
       "difficulty":"9.989",
       "description":[
-        "Now that we have our random numbers we need to go and check for when they are all the same that means we should count it as a win.",
-        "Different numbers will have different values so we need to return the matched number or null.",
-        "If we get a match we should change the value of win to the number that we have three of or leave it as null.",
-        "Let's create an if statement with multiple conditions to check that all the numbers are equal.",
+        "Now that our slots will each generate random numbers, we need to check whether they've all returned the same number.",
+        "If they have, we should notify our user that they've won.",
+        "Otherwise, we should return <code>null</code>, which is a JavaScript data structure that means nothing.",
+        "If all three numbers match, we should change the value of win to the number that we have three of or leave it as null.",
+        "Let's create an <code>if statement</code> with multiple conditions in order to check whether all numbers are equal.",
         "<code>if(slotOne !== slotTwo || slotTwo !== slotThree){</code>",
-        "<code> return(null);</code>",
+        "<code>&thinsp;&thinsp;return(null);</code>",
         "<code>}</code>"
       ],
       "tests":[
-        "assert((function(){var data = runSlots();if(data === null){return(true)}else{if(data[0] === data[1] && data[1] === data[2]){return(true);}else{return(false);}}})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return null.');"
+        "assert((function(){var data = runSlots();if(data === null){return(true)}else{if(data[0] === data[1] && data[1] === data[2]){return(true);}else{return(false);}}})(), 'If all three of our random numbers are the same we should return that number. Otherwise we should return null.')"
       ],
       "challengeSeed":[
         "fccss",
@@ -1286,11 +1288,11 @@
         "    var slotTwo;",
         "    var slotThree;",
         "    ",
-        "    var images = [\"http://i.imgur.com/9H17QFk.png\", \"http://i.imgur.com/9RmpXTy.png\", \"http://i.imgur.com/VJnmtt5.png\", \"http://i.imgur.com/XK735i8.png\", \"http://i.imgur.com/Vt32Bf7.png\"];",
+        "    var images = [\"http://i.imgur.com/9H17QFk.png\", \"http://i.imgur.com/9RmpXTy.png\", \"http://i.imgur.com/VJnmtt5.png\"];",
         "    ",
-        "    slotOne = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
-        "    slotTwo = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
-        "    slotThree = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
+        "    slotOne = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
+        "    slotTwo = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
+        "    slotThree = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
         "    ",
         "    $(\".logger\").html(\"\");",
         "    $(\".logger\").html(\"Not A Win\")",
@@ -1428,15 +1430,15 @@
       "difficulty":"9.990",
       "description":[
         "Now we can detect a win. Let's get this slot machine working.",
-        "We're going to use the jQuery selector <code>$(\".slot\")</code> to select all of the slots.",
-        "Once they are all selected we can use bracket notation to access each individual one like this.",
-        "<code>$($(\".slot\")[0]).html(\"\")</code>",
-        "This will grab the the first slot so that we can add the numbers we generate to them.",
-        "Use the above selector to display each number in the corresponding slot."
+        "Let's use the jQuery <code>selector</code> <code>$(\".slot\")</code> to select all of the slots.",
+        "Once they are all selected, we can use <code>bracket notation</code> to access each individual slot:",
+        "<code>$($(\".slot\")[0]).html(slotOne);</code>",
+        "This jQuery will select the first and update the slot's HTML to display the correct number.",
+        "Use the above selector to display each number in its corresponding slot."
       ],
       "tests":[
-        "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return(true);}else{return(false);}})(), 'You should be displaying the result of the slot numbers in the corresponding slots');",
-        "assert((function(){if(editor.match( /\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)/gi )){if(editor.match( /\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\);/gi ) && editor.match( /\\.html\\(slotTwo\\);/gi ) && editor.match( /\\.html\\(slotThree\\);/gi )){return(true);}else{return(false);}}else{return(false);}})(), 'You should have used the the selector given in the description to select each slot and assign it the value of slotOne&#44; slotTwo and slotThree respectively');"
+        "assert((function(){runSlots();if($($(\".slot\")[0]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[1]).html().replace(/\\s/gi, \"\") !== \"\" && $($(\".slot\")[2]).html().replace(/\\s/gi, \"\") !== \"\"){return(true);}else{return(false);}})(), 'You should be displaying the result of the slot numbers in the corresponding slots')",
+        "assert((function(){if(editor.match( /\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)/gi )){if(editor.match( /\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)/gi ).length >= 3 && editor.match( /\\.html\\(slotOne\\)/gi ) && editor.match( /\\.html\\(slotTwo\\)/gi ) && editor.match( /\\.html\\(slotThree\\)/gi )){return(true);}else{return(false);}}else{return(false);}})(), 'You should have used the the selector given in the description to select each slot and assign it the value of slotOne&#44; slotTwo and slotThree respectively')"
       ],
       "challengeSeed":[
         "fccss",
@@ -1445,11 +1447,11 @@
         "    var slotTwo;",
         "    var slotThree;",
         "    ",
-        "    var images = [\"http://i.imgur.com/9H17QFk.png\", \"http://i.imgur.com/9RmpXTy.png\", \"http://i.imgur.com/VJnmtt5.png\", \"http://i.imgur.com/XK735i8.png\", \"http://i.imgur.com/Vt32Bf7.png\"];",
+        "    var images = [\"http://i.imgur.com/9H17QFk.png\", \"http://i.imgur.com/9RmpXTy.png\", \"http://i.imgur.com/VJnmtt5.png\"];",
         "    ",
-        "    slotOne = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
-        "    slotTwo = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
-        "    slotThree = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
+        "    slotOne = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
+        "    slotTwo = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
+        "    slotThree = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
         "    ",
         "    $(\".logger\").html(\"\");",
         "    $(\".logger\").html(\"Not A Win\")",
@@ -1593,14 +1595,17 @@
       "title": "Give your JavaScript Slot Machine some stylish images",
       "difficulty":"9.9901",
       "description":[
-        "Now that we can detect when the player wins we are going to add an image to each slot depending on the random values we generate:",
-        "<code>$($('.slot')[0]).html('&lt;img src = \"' + images[slotOne-1] + '\"&gt;');</code>"
+        "Now let's add some images to our slots.",
+        "We've already set up the images for you in an array called <code>images</code>. We can use different indexes to grab each of these.",
+        "Here's how we would set the first slot to show a different image depending on which number its random number generates:",
+        "<code>$($('.slot')[0]).html('&lt;img src = \"' + images[slotOne-1] + '\"&gt;');</code>",
+        "Set up all three slots like this, then click the \"Go\" button to play the slot machine."
       ],
       "tests":[
-        "assert(editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3, 'Use the provided code three times. One for each slot');",
-        "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'You should have used the slotOne value at least once');",
-        "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >=8, 'You should have used the slotTwo value at least once');",
-        "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the slotThree value at least once');"
+        "assert(editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3, 'Use the provided code three times. One for each slot')",
+        "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'You should have used the slotOne value at least once')",
+        "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'You should have used the slotTwo value at least once')",
+        "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the slotThree value at least once')"
       ],
       "challengeSeed":[
         "fccss",
@@ -1609,11 +1614,11 @@
         "    var slotTwo;",
         "    var slotThree;",
         "    ",
-        "    var images = [\"http://i.imgur.com/9H17QFk.png\", \"http://i.imgur.com/9RmpXTy.png\", \"http://i.imgur.com/VJnmtt5.png\", \"http://i.imgur.com/XK735i8.png\", \"http://i.imgur.com/Vt32Bf7.png\"];",
+        "    var images = [\"http://i.imgur.com/9H17QFk.png\", \"http://i.imgur.com/9RmpXTy.png\", \"http://i.imgur.com/VJnmtt5.png\"];",
         "    ",
-        "    slotOne = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
-        "    slotTwo = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
-        "    slotThree = Math.floor(Math.random() * (5 - 1 + 1)) + 1;",
+        "    slotOne = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
+        "    slotTwo = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
+        "    slotThree = Math.floor(Math.random() * (3 - 1 + 1)) + 1;",
         "    ",
         "    $('.logger').html('');",
         "    $('.logger').html('Not A Win');",
