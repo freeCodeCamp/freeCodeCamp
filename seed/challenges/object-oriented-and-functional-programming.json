@@ -227,7 +227,7 @@
       "difficulty":0,
       "description":[
         "filter is a useful method that can filter out values that don't match a certain criteria",
-        "Let's remove all the values less than six",
+        "Let's remove all the values greater than six",
         "<code>array = array.filter(function(val) {</code>",
         "<code>&thinsp;&thinsp;return(val<4);</code>",
         "<code>});</code>"
@@ -235,7 +235,7 @@
       "tests":[
         "assert.deepEqual(array, [1,2,3,4,5], 'You should have removed all the values from the array that are less than six');",
         "assert(editor.getValue().match(/array\\.filter\\(/gi), 'You should be using the filter method to remove the values from the array');",
-        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'You should only be using .filter to modify the contents of the array);"
+        "assert(editor.getValue().match(/\\[1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9\\,10\\]/gi), 'You should only be using .filter to modify the contents of the array');"
       ],
       "challengeSeed":[
         "var array = [1,2,3,4,5,6,7,8,9,10];",
