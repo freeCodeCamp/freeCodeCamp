@@ -664,7 +664,11 @@
       ],
       "tests": [
         "expect(where([10, 20, 30, 40, 50], 35)).to.equal(3);",
-        "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);"
+        "expect(where([10, 20, 30, 40, 50], 30)).to.equal(2);",
+        "expect(where([40, 60], 50)).to.equal(1);",
+        "expect(where([5, 3, 20, 3], 3)).to.equal(0);",
+        "expect(where([2, 20, 10], 1)).to.equal(0);",
+        "expect(where([2, 5, 10], 15)).to.equal(3);"
       ],
       "type": "bonfire",
       "challengeType": 5,
