@@ -68,6 +68,7 @@ module.exports = function(app) {
 
   // create a stream of challenge blocks
   const blocks$ = challenge$
+    .map(challenge => challenge.toJSON())
     // group challenges by block | returns a stream of observables
     .groupBy(challenge => challenge.block)
     // turn block group stream into an array
@@ -139,6 +140,7 @@ module.exports = function(app) {
     const challengeId = req.user.currentChallenge.challengeId;
     // find challenge
     return challenge$
+      .map(challenge => challenge.toJSON())
       .filter(({ block }) => block !== 'Hikes')
       .filter(({ id }) => id === challengeId)
       // now lets find the block it belongs to
@@ -517,7 +519,8 @@ module.exports = function(app) {
     // create a stream of an array of all the challenge blocks
     const blocks$ = challenge$
       // mark challenge completed
-      .map(challenge => {
+      .map(challengeModel => {
+        const challenge = challengeModel.toJSON();
         if (completedChallenges.indexOf(challenge.id) !== -1) {
           challenge.completed = true;
         }
