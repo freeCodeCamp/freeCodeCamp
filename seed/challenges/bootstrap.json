@@ -898,7 +898,7 @@
         "<img class=\"img-responsive\" src=\"https://www.evernote.com/l/AHTFU358y71AV6mokPeuTEgrZVdUJ4A8v3AB/image.png\" alt=\"An \"inline\" button is as small as the text it contains. In this image, it's centered. Below it is a \"block-level\" button, which stretches to fill the entire horizontal space.'>",
         "By using the <code>span</code> element, you can put several elements together, and even style different parts of the same element differently.",
         "Nest the word \"love\" in your \"Things cats love\" element below within a <code>span</code> element. Then give that <code>span</code> the class <code>text-danger</code> to make the text red.",
-        "Here's how you would do this with the \"Top 3 things cats hate\" element: <code>&#60;p&#62;Top 3 things cats &#60;span class\"text-danger\"&#62;hate&#60;/span&#62;&#60;/p&#62;</code>"
+        "Here's how you would do this with the \"Top 3 things cats hate\" element: <code>&#60;p&#62;Top 3 things cats &#60;span class = \"text-danger\"&#62;hate&#60;/span&#62;&#60;/p&#62;</code>"
       ],
       "tests": [
         "assert($(\"p span\") && $(\"p span\").length > 0, 'Your <code>span</code> element should be inside your <code>p</code> element.')",
