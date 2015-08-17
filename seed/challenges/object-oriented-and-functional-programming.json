@@ -115,7 +115,7 @@
         "};",
         "",
         "var Bike = function() {",
-        "  // Do not modify the code above this line.",
+        "  // Only change code below this line.",
         "  this.speed = 100;",
         "  function addUnit(value) {",
         "    return(value + \"KM/H\");",
@@ -127,7 +127,7 @@
         "  ",
         "};",
         "",
-        "// Do not modify the code below this line.",
+        "// Only change code above this line.",
         "var myCar = new Car();",
         "var myBike = new Bike();",
         "",
@@ -138,7 +138,7 @@
     },
     {
       "id":"cf1111c1c15feddfaeb4bdef",
-      "title":"Duplicate Instances of Objects from a Constructor Function",
+      "title":"Make Instances of Objects with a Constructor Function",
       "difficulty":0,
       "description":[
         "Sometimes you'll want to be able to easily create similar objects.",
@@ -159,11 +159,13 @@
         "   this.wheels = 4;",
         "};",
         "",
+        "// Only change code below this line.",
         "var myCar = new Car();",
         "",
         "//Add the property \"engines\" to myCar, and make it a number.",
         "",
         "",
+        "// Only change code above this line.",
         "(function() {return(JSON.stringify(myCar));})();"
       ],
       "challengeType":1,
@@ -171,7 +173,7 @@
     },
     {
       "id":"cf1111c1c15feddfaeb7bdef",
-      "title":"Using .map",
+      "title":"Iterate over Arrays with .map",
       "difficulty":0,
       "description":[
         "<code>array = array.map(function(val){</code>",
@@ -188,9 +190,11 @@
       "challengeSeed":[
         "//Use map to add three to each value in the array",
         "var array = [1,2,3,4,5];",
+        "// Only change code below this line.",
         "",
         "",
         "",
+        "// Only change code above this line.",
         "(function() {return(array);})();"
       ],
       "challengeType":1,
@@ -198,7 +202,7 @@
     },
     {
       "id":"cf1111c1c15feddfaeb8bdef",
-      "title":"Using .reduce",
+      "title":"Condense arrays with .reduce",
       "difficulty":0,
       "description":[
         "Reduce can be useful for condensing and array or numbers into one value.",
@@ -213,17 +217,19 @@
       "challengeSeed":[
         "var array = [4,5,6,7,8];",
         "var singleVal = 0;",
+        "// Only change code below this line.",
         "",
         "",
         "",
-        "(function() {return(singleVal);})()"
+        "// Only change code above this line.",
+        "(function() {return(singleVal);})();"
       ],
       "challengeType":1,
       "type": "waypoint"
     },
     {
       "id":"cf1111c1c15feddfaeb9bdef",
-      "title":"Using .filter",
+      "title":"Filter Arrays with .filter",
       "difficulty":0,
       "description":[
         "filter is a useful method that can filter out values that don't match a certain criteria",
@@ -239,9 +245,11 @@
       ],
       "challengeSeed":[
         "var array = [1,2,3,4,5,6,7,8,9,10];",
+        "  // Only change code below this line.",
         "",
         "",
         "",
+        "  // Only change code above this line.",
         "(function() {return(array);})();"
       ],
       "challengeType":1,
@@ -249,7 +257,7 @@
     },
     {
       "id":"cf1111c1c16feddfaeb1bdef",
-      "title":"Using .sort",
+      "title": "Sort Arrays with .sort",
       "difficulty":0,
       "description":[
         "You can use the method sort to easily sort the values in the array alphabetically or numerically",
@@ -264,9 +272,11 @@
       ],
       "challengeSeed":[
         "var array = ['beta', 'alpha', 'charlie'];",
+        "// Only change code below this line.",
         "",
         "",
         "",
+        "  // Only change code above this line.",
         "(function() {return(array);})();"
       ],
       "challengeType":1,
@@ -274,7 +284,7 @@
     },
     {
       "id": "cf1111c1c16feddfaeb2bdef",
-      "title": "Using .reverse",
+      "title": "Reverse Arrays with .reverse",
       "difficulty": 0,
       "description": [
         "You can use the <code>.reverse()</code> function to reverse the contents of an array."
@@ -286,9 +296,11 @@
       ],
       "challengeSeed": [
         "var array = [1,2,3,4,5,6,7];",
+        "  // Only change code below this line.",
         "",
         "",
         "",
+        "  // Only change code above this line.",
         "(function() {return(array);})();"
       ],
       "challengeType": 1,
@@ -296,7 +308,7 @@
     },
     {
       "id": "cf1111c1c16feddfaeb3bdef",
-      "title": "Using .concat",
+      "title": "Concatenate Strings with .concat",
       "difficulty": 0,
       "description": [
         "<code>.concat()</code> can be used to merge the contents of two arrays into one.",
@@ -311,17 +323,19 @@
         "var array = [1,2,3];",
         "",
         "var concatMe = [4,5,6];",
+        "// Only change code below this line.",
         "",
         "",
         "",
-        "(function() {return(array);})()"
+        "// Only change code above this line.",
+        "(function() {return(array);})();"
       ],
       "challengeType": 1,
       "type": "waypoint"
     },
     {
       "id":"cf1111c1c16feddfaeb4bdef",
-      "title":"Using .split",
+      "title":"Split Strings with .split",
       "difficulty":0,
       "description":[
         "You can use the <code>.split()</code> method to split a string into an array.",
@@ -334,9 +348,11 @@
       ],
       "challengeSeed":[
         "var string = \"Split me into an array\";",
+        "// Only change code below this line.",
         "",
         "var array = string;",
         "",
+        "// Only change code above this line.",
         "(function() {return(array);})();"
       ],
       "challengeType":1,
@@ -344,7 +360,7 @@
     },
     {
       "id":"cf1111c1c16feddfaeb5bdef",
-      "title":"Using .join",
+      "title":"Join Strings with .join",
       "difficulty":0,
       "description":[
         "We can use the <code>.join()</code> method to join each element in an array into a string separated by whatever delimiter you provide as an argument to the join operation.",
@@ -356,9 +372,11 @@
       ],
       "challengeSeed":[
         "var joinMe = [\"Split\",\"me\",\"into\",\"an\",\"array\"];",
+        "// Only change code below this line.",
         "",
         "joinMe = joinMe;",
         "",
+        "// Only change code above this line.",
         "(function() {return(joinMe);})();"
       ],
       "challengeType":1,
