@@ -902,7 +902,7 @@
       ],
       "challengeSeed":[
         "function myFunction(){",
-        "  // Make myFunction return a random number between zero and nine instead of a decimal",
+        "  // Make myFunction return a random number between 'min' and 'max' instead of a decimal",
         "",
         "  // Only change code below this line.",
         "",
