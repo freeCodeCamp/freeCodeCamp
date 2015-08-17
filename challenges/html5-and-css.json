@@ -3681,8 +3681,8 @@
         "Make the <code>body</code> element's background color a dark gray by giving it the hex code value of <code>#111111</code>."
       ],
       "tests": [
-        "assert($(\"body\").css(\"background-color\") === \"rgb(17, 17, 17)\", 'Give your <code>body</code> element the <code>background-color</code> of a light gray.')",
-        "assert(editor.match(/#111111/g) && editor.match(/#111111/g).length > 0, 'Use <code>hex code</code> to make a light gray. For example <code>body { color&#58; #111111; }</code>.')"
+        "assert($(\"body\").css(\"background-color\") === \"rgb(17, 17, 17)\", 'Give your <code>body</code> element the <code>background-color</code> of a dark gray.')",
+        "assert(editor.match(/#111111/g) && editor.match(/#111111/g).length > 0, 'Use <code>hex code</code> to make a dark gray. For example <code>body { color&#58; #111111; }</code>.')"
       ],
       "challengeSeed": [
         "<style>",
