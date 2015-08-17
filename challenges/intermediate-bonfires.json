@@ -71,10 +71,10 @@
       ],
       "MDNlinks": [
         "Comparison Operators",
-        "String.slice()",
+        "Array.slice()",
         "Array.filter()",
         "Array.indexOf()",
-        "String.concat()"
+        "Array.concat()"
       ],
       "type": "bonfire",
       "challengeType": 5,
