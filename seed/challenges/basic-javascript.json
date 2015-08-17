@@ -924,7 +924,7 @@
       "title": "Generate Random Whole Numbers within a Range",
       "difficulty":"9.9829",
       "description":[
-        "We can use a certain mathematical expression to get a random number between between two numbers.",
+        "We can use a certain mathematical expression to get a random number between two numbers.",
         "<code>Math.floor(Math.random() * (max - min + 1)) + min</code>",
         "By using this we can control the output of a random number."
       ],
@@ -958,7 +958,7 @@
         "We can use if statements in JavaScript to only execute code if a certain condition is met.",
         "if statements require some sort of boolean condition evaluate.",
         "Example:",
-        "<code> if (1 == 2) {",
+        "<code> if (1 == 2) {</code>",
         "<code>&thinsp;&thinsp;return(true);</code>",
         "<code>}</code>",
         "<code>else {</code>",
