@@ -398,7 +398,8 @@
         "Replace the <code>0.0</code> with the correct number so that you get the result mentioned in the comments."
       ],
       "tests": [
-        "assert((function(){if(product === 5.0 && editor.getValue().match(/\\*/g)){return(true);}else{return(false);}})(), 'Make the variable <code>product</code> equal 5.0.');"
+        "assert((function(){if(product === 5.0 && editor.getValue().match(/\\*/g)){return(true);}else{return(false);}})(), 'Make the variable <code>product</code> equal 5.0.');",
+        "assert((function(){if(quotient === 2.2 && editor.getValue().match(/\\//g)){return(true);}else{return(false);}})(), 'Make the variable <code>quotient</code> equal 2.2.');"
       ],
       "challengeSeed": [
         "var quotient = 4.4 / 2.0; // equals 2.2",
@@ -553,9 +554,9 @@
         "//console.log(removed); // logs 3",
         "",
         "var myArray = [\"John\", 23, [\"cat\", 2]];",
-        "var removed = myArray; // This should be [\"cat\", 2] and myArray should now be [\"John\", 23]",
         "// Only change code below this line.",
         "",
+        "var removed = myArray; // This should be [\"cat\", 2] and myArray should now be [\"John\", 23]",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -902,7 +903,7 @@
       ],
       "challengeSeed":[
         "function myFunction(){",
-        "  // Make myFunction return a random number between <code>min</code> and <code>max</code> instead of a decimal",
+        "  // Make myFunction return a random number betweenzero and nine> instead of a decimal",
         "",
         "  // Only change code below this line.",
         "",
@@ -1092,7 +1093,7 @@
       ],
       "tests":[
         "assert(test === 36, 'Your RegEx should have found seven spaces in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\\\S/gi</code> to find the spaces in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\+S/gi</code> to find the spaces in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
