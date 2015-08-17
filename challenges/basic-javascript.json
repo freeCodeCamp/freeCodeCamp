@@ -992,7 +992,7 @@
       "title": "Sift through Text with Regular Expressions",
       "difficulty":"9.984",
       "description":[
-        "<code>Regular expressions</code> are way to find certain words or patterns inside of <code>strings</code>.",
+        "<code>Regular expressions</code> are used to find certain words or patterns inside of <code>strings</code>.",
         "For example, if we wanted to find the number of times the word <code>the</code> occurred in the string <code>The dog chased the cat</code>, we could use the following <code>regular expression</code>: <code>\/the+\/gi</code>",
         "Let's break this down a bit:",
         "<code>the</code> is the pattern we want to match.",
