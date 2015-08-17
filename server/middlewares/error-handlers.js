@@ -24,9 +24,11 @@ export default function prodErrorHandler() {
 
     var message = 'opps! Something went wrong. Please try again later';
     if (type === 'html') {
-      req.flash('errors', {
-        msg: message
-      });
+      if (typeof req.flash === 'function') {
+        req.flash('errors', {
+          msg: message
+        });
+      }
       return res.redirect('/');
       // json
     } else if (type === 'json') {
