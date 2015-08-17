@@ -100,12 +100,25 @@ function bonfireExecute() {
   userTests = null;
   $('#codeOutput').empty();
   var userJavaScript = myCodeMirror.getValue();
+  var failedCommentTest = false;
+  if(userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\*\//gi) == null){
+      failedCommentTest = true;
+  }
+  else if(!failedCommentTest && userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\/\*/gi).length > userJavaScript.match(/\*\//gi).length){
+      failedCommentTest = true;
+  }
   userJavaScript = removeComments(userJavaScript);
   userJavaScript = scrapeTests(userJavaScript);
   // simple fix in case the user forgets to invoke their function
 
   submit(userJavaScript, function(cls, message) {
-    if (cls) {
+    if(failedCommentTest){
+      myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
+      console.log('Caught Unfinished Comment');
+      codeOutput.setValue("Unfinished mulit-line comment");
+      failedCommentTest = false;
+    }
+    else if (cls) {
       codeOutput.setValue(message.error);
       runTests('Error', null);
     } else {
