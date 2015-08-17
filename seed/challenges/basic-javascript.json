@@ -963,7 +963,7 @@
         "<code>}</code>",
         "<code>else {</code>",
         "<code>&thinsp;&thinsp;return(false);</code>",
-        "<code>}</code>",
+        "<code>}</code></code>",
         "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
         "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero and to return <code>tails</code> if it's not."
       ],
