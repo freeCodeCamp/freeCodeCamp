@@ -2530,7 +2530,7 @@
       "difficulty": 1.392,
       "description": [
         "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
-        "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element: <code>#cat-photo-element { background-color: green; }></code>",
+        "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element: <code>#cat-photo-element { background-color: green; }</code>",
         "Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.",
         "Try giving your form, which now has the <code>id</code> attribute of <code>cat-photo-form</code>, a green background."
       ],
