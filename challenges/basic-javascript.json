@@ -157,7 +157,7 @@
         "assert((function(){if(typeof(firstLetterOfLastName) !== \"undefined\" && editor.getValue().match(/\\[0\\]/gi) && typeof(firstLetterOfLastName) === \"string\" && firstLetterOfLastName === \"L\"){return(true);}else{return(false);}})(), 'The first letter of firstLetterOfLastName should be a L');"
       ],
       "challengeSeed": [
-        "var firstLetterOfLastName = \"\";",
+        "var firstLetterOfFirstName = \"\";",
         "var firstLetterOfLastName = \"\";",
         "",
         "var firstName = \"Ada\";",
