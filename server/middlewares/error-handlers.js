@@ -22,7 +22,7 @@ export default function prodErrorHandler() {
     var accept = accepts(req);
     var type = accept.type('html', 'json', 'text');
 
-    var message = 'opps! Something went wrong. Please try again later';
+    var message = 'Oops! Something went wrong. Please try again later';
     if (type === 'html') {
       if (typeof req.flash === 'function') {
         req.flash('errors', {
