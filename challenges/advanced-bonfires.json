@@ -80,7 +80,7 @@
         "sym([1, 2, 3], [5, 2, 1, 4]);"
       ],
       "tests": [
-        "expect(sym([1, 2, 3], [5, 2, 1, 4])).to.equal([3, 5, 4]);",
+        "assert.deepEqual(sym([1, 2, 3], [5, 2, 1, 4]), [3, 5, 4], 'should return an array of unique values');",
         "assert.deepEqual(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'should return the symmetric difference of the given arrays');",
         "assert.deepEqual(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'should return an array of unique values');",
         "assert.deepEqual(sym([1, 1]), [1], 'should return an array of unique values');"
