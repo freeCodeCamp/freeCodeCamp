@@ -54,7 +54,7 @@
       "difficulty":0,
       "description":[
         "We are also able to create objects using <code>constructor</code> functions.",
-        "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engine</code> and <code>seats</code> attribute and set them to numbers."
+        "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
       ],
       "tests":[
         "assert(typeof((new MotorBike()).engines) === 'number', '<code>engines</code> should be have a <code>engines</code> attribute set to a number.');",
