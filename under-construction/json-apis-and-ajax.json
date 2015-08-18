@@ -1,6 +1,6 @@
 {
   "name": "JSON APIs and Ajax",
-  "order": 0.007,
+  "order": 0.0065,
   "challenges": [
     {
       "id": "bad87fed1348bd9aeca08826",
@@ -79,7 +79,6 @@
         "    }",
         "  ]",
         "",
-        "<code>  });</code>",
         "fcces",
         "",
         "<!-- You shouldn't need to modify code below this line -->",
