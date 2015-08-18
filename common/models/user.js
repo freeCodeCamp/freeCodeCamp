@@ -49,6 +49,7 @@ module.exports = function(User) {
 
   // username should be unique
   User.validatesUniquenessOf('username');
+  User.settings.emailVerificationRequired = false;
 
   User.observe('before save', function({ instance: user }, next) {
     if (user) {
@@ -116,25 +117,27 @@ module.exports = function(User) {
     });
   });
 
-  User.afterRemote('login', function(ctx, user, next) {
+  User.afterRemote('login', function(ctx, accessToken, next) {
     var res = ctx.res;
     var req = ctx.req;
     // var args = ctx.args;
 
-    var accessToken = {};
     var config = {
       signed: !!req.signedCookies,
       maxAge: accessToken.ttl
     };
+
     if (accessToken && accessToken.id) {
+      debug('setting cookies');
       res.cookie('access_token', accessToken.id, config);
       res.cookie('userId', accessToken.userId, config);
     }
-    debug('before pass login');
-    return req.logIn(user, function(err) {
+
+    return req.logIn({ id: accessToken.userId.toString() }, function(err) {
       if (err) {
         return next(err);
       }
+      debug('user logged in');
       req.flash('success', { msg: 'Success! You are logged in.' });
       return res.redirect('/');
     });
@@ -151,7 +154,7 @@ module.exports = function(User) {
   });
 
   User.afterRemote('logout', function(ctx, result, next) {
-    var res = ctx.result;
+    var res = ctx.res;
     res.clearCookie('access_token');
     res.clearCookie('userId');
     next();

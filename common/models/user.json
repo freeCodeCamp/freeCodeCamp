@@ -2,6 +2,7 @@
   "name": "user",
   "base": "User",
   "strict": true,
+  "emailVerificationRequired": false,
   "idInjection": true,
   "trackChanges": false,
   "properties": {
