@@ -3749,7 +3749,7 @@
       "description": [
         "Another way you can represent colors in CSS is by using <code>rgb</code> values.",
         "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)</code> for white.",
-        "Instead of using six hexadecimal digits like you do with hex code, with <code>rbg</code> you specify the brightness of each color with a number between 0 and 255.",
+        "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
         "If you do the math, 16 times 16 is 256 total values. So <code>rgb</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
