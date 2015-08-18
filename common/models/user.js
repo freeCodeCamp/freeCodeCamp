@@ -93,7 +93,7 @@ module.exports = function(User) {
       url = `http://${host}:${port}/reset-password?access_token=${token}`;
     } else {
       url =
-        `http://${host}/reset-password?access_token=${token}`;
+        `http://freecodecamp.com/reset-password?access_token=${token}`;
     }
 
     // the email of the requested user
