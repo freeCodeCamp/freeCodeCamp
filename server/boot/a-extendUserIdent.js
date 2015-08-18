@@ -1,5 +1,9 @@
+import{ Observable } from 'rx';
 import { observeMethod, observeQuery } from '../utils/rx';
 import { getSocialProvider } from '../utils/auth';
+import debugFactory from 'debug';
+
+const debug = debugFactory('fcc:userIdent');
 
 export default function({ models }) {
   const { User, UserIdentity, UserCredential } = models;
@@ -20,15 +24,18 @@ export default function({ models }) {
       options = {};
     }
     const user$ = findUserById(userId);
-    console.log('provider', provider);
-    console.log('id', profile.id);
-    findIdent({
-      provider: getSocialProvider(provider),
-      externalId: profile.id
-    })
+    const query = {
+      where: {
+        provider: getSocialProvider(provider),
+        externalId: profile.id
+      }
+    };
+
+    debug('link identity query', query);
+    findIdent(query)
       .flatMap(identity => {
         const modified = new Date();
-        if (!identity || identity.externalId !== profile.id) {
+        if (!identity) {
           return observeQuery(UserIdentity, 'create', {
             provider: getSocialProvider(provider),
             externalId: profile.id,
@@ -39,6 +46,11 @@ export default function({ models }) {
             created: modified,
             modified
           });
+        }
+        if (identity.userId !== userId) {
+          return Observable.throw(
+            new Error('An account is already linked to that profile')
+          );
         }
         identity.credentials = credentials;
         return observeQuery(identity, 'updateAttributes', {
