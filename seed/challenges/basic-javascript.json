@@ -859,7 +859,7 @@
       "title": "Generate Random Fractions with JavaScript",
       "difficulty":"9.9827",
       "description":[
-        "Random numbers are useful for creating random behaviours and games.",
+        "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
         "Use <code>Math.random()</code> to get <code>myFunction</code> to return a random number."
       ],
