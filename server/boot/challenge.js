@@ -21,7 +21,7 @@ const debug = debugFactory('freecc:challenges');
 const challengeMapWithNames = utils.getChallengeMapWithNames();
 const challengeMapWithIds = utils.getChallengeMapWithIds();
 const challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
-const challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
 const firstChallenge = 'waypoint-say-hello-to-html-elements';
 
 const dasherize = utils.dasherize;
@@ -232,7 +232,7 @@ module.exports = function(app) {
     var origChallengeName = req.params.challengeName;
     var unDashedName = unDasherize(origChallengeName);
 
-    var challengeName = challangesRegex.test(unDashedName) ?
+    var challengeName = challengesRegex.test(unDashedName) ?
       // remove first word if matches
       unDashedName.split(' ').slice(1).join(' ') :
       unDashedName;
