@@ -1,5 +1,6 @@
 const pathsOfNoReturn = [
   'link',
+  'bower_components',
   'auth',
   'login',
   'logout',
