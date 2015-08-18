@@ -85,10 +85,16 @@ module.exports = function(User) {
   });
 
   User.on('resetPasswordRequest', function(info) {
+    let url;
     const host = User.app.get('host');
-    // TODO(berks) get protocol as well
-    const url = `http://${host}/reset-password?access_token=` +
-      info.accessToken.id;
+    const { id: token } = info.accessToken;
+    if (process.env.NODE_ENV === 'development') {
+      const port = User.app.get('port');
+      url = `http://${host}:${port}/reset-password?access_token=${token}`;
+    } else {
+      url =
+        `http://${host}/reset-password?access_token=${token}`;
+    }
 
     // the email of the requested user
     debug(info.email);
