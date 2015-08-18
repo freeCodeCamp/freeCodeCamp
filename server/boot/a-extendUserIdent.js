@@ -47,7 +47,7 @@ export default function({ models }) {
             modified
           });
         }
-        if (identity.userId !== userId) {
+        if (identity.userId.toString() !== userId.toString()) {
           return Observable.throw(
             new Error('An account is already linked to that profile')
           );
