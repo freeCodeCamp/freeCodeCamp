@@ -5,36 +5,36 @@ var _ = require('lodash'),
 
 // returns number of days between two timestamps
 function dayDifference(timestamp1, timestamp2) {
-    return Math.abs((timestamp2 - timestamp1) / 86400000);
+  return Math.abs((timestamp2 - timestamp1) / 86400000);
 }
 
 // calculates the last streak and the longest streak (continuous timestamps where each is at most
 // 24 hours from the next one), and returns an array of [current streak, longest streak]
 function calculateStreaks(calendar) {
-    if (!calendar || !calendar.length || calendar.length < 2)
-        return [1, 1];
+  if (!calendar || !calendar.length || calendar.length < 2)
+    return [1, 1];
+
+  const sortedCalendar = calendar.sort();
+  let longestStreak = 1;
+  let currentStreak = 0;
+  let currentStreakStart = 0;
+  let numCalendarEntries = sortedCalendar.length;
+  sortedCalendar.forEach(function (calendarEntry, index, calendar) {
+    if (index === 0) return;
     
-	const sortedCalendar = calendar.sort();
-	let longestStreak = 1;
-	let currentStreak = 0;
-    let currentStreakStart = 0;
-	let numCalendarEntries = sortedCalendar.length;
-    sortedCalendar.forEach(function (calendarEntry, index, calendar) {
-        if (index === 0) return;
-        
-        if (dayDifference(calendarEntry, calendar[index - 1]) <= 1) {
-            currentStreak++;
-            
-            let currentStreakLength = Math.ceil(dayDifference(calendarEntry, calendar[currentStreakStart]));
-            if (currentStreakLength > longestStreak) {
-                longestStreak = currentStreakLength;
-            }
-        } else {
-            currentStreak = 0;
-            currentStreakStart = index;
-        }
-    });
-    return [Math.ceil(dayDifference(calendar[numCalendarEntries - 1], calendar[currentStreakStart])), longestStreak];
+    if (dayDifference(calendarEntry, calendar[index - 1]) <= 1) {
+      currentStreak++;
+      
+      let currentStreakLength = Math.ceil(dayDifference(calendarEntry, calendar[currentStreakStart]));
+      if (currentStreakLength > longestStreak) {
+        longestStreak = currentStreakLength;
+      }
+    } else {
+      currentStreak = 0;
+      currentStreakStart = index;
+    }
+  });
+  return [Math.ceil(dayDifference(calendar[numCalendarEntries - 1], calendar[currentStreakStart])), longestStreak];
 }
 
 module.exports = function(app) {
