@@ -1040,7 +1040,7 @@
       ],
       "challengeSeed":[
         "var test = (function() {",
-        "  var testString = \"There's 3 cats but 4 dogs.\";",
+        "  var testString = \"There are 3 cats but 4 dogs.\";",
         "",
         "  // Only change code below this line.",
         "",
