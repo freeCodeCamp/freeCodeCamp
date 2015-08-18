@@ -155,6 +155,10 @@ module.exports = function(app) {
           return obj.challengeType === 3 || obj.challengeType === 4;
         });
 
+        const bonfires = user.completedChallenges.filter(function(obj) {
+          return obj.challengeType === 5 && obj.name.match(/Bonfire/g);
+        });
+
         res.render('account/show', {
           title: 'Camper ' + user.username + '\'s portfolio',
           username: user.username,
@@ -171,6 +175,7 @@ module.exports = function(app) {
           progressTimestamps: user.progressTimestamps,
           calender: data,
           challenges: challenges,
+          bonfires: bonfires,
           moment: moment,
           longestStreak: user.longestStreak,
           currentStreak: user.currentStreak
