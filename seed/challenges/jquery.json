@@ -624,7 +624,7 @@
         "Here's an example of how you would use the <code>parent()</code> function: <code>$(\"#left-well\").parent().css(\"background-color\", \"blue\")</code>"
       ],
       "tests": [
-        "assert($(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)', 'Your <code>left-well</code> element should have a red background.')",
+        "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'Your <code>left-well</code> element should have a red background.')",
         "assert(editor.match(/\\.parent\\(\\)\\.css/g), 'You should use the <code>parent()</code> function to modify this element.')",
         "assert(editor.match(/<div class=\"well\" id=\"left-well\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
@@ -730,7 +730,7 @@
       "description": [
         "You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.",
         "Fortunately, jQuery has some other tricks for targeting the right elements.",
-        "jQuery has a function called <code>:nth-child()</code> that will allow you select the nth element of a certain class or element type.",
+        "jQuery uses CSS Selectors to target elements. <code>target:nth-child(n)</code> css selector allows you to select all the nth element with the target class or element type.",
         "Make the second child in each of your well elements bounce.",
         "Here's how you would give the third element in each well bounce: <code>$(\".target:nth-child(3)\").addClass(\"animated bounce\");</code>"
       ],

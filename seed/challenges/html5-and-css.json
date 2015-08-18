@@ -491,7 +491,7 @@
       "description": [
         "Apply the <code>red-text</code> class to your <code>h2</code> and <code>p</code> elements.",
         "Remember that you can attach classes to HTML elements by using <code>class=\"your-class-here\"</code> within the relevant element's opening tag.",
-        "Remember that CSS selectors require a period at the beginning like this: <code>.blue-text { color: blue; }</code>, but that class declarations don't use a period, like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
+        "Remember that CSS class selectors require a period at the beginning like this: <code>.blue-text { color: blue; }</code>, but that class declarations don't use a period, like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;h2&#62;</code>."
       ],
       "tests": [
         "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.')",
@@ -2530,14 +2530,14 @@
       "difficulty": 1.392,
       "description": [
         "One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.",
-        "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element: <code>#cat-photo-element { background-color: green; }></code>",
+        "Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element: <code>#cat-photo-element { background-color: green; }</code>",
         "Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.",
         "Try giving your form, which now has the <code>id</code> attribute of <code>cat-photo-form</code>, a green background."
       ],
       "tests": [
         "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.')",
         "assert($(\"#cat-photo-form\").css(\"background-color\") === \"rgb(0, 128, 0)\", 'Your <code>form</code> element should have the <code>background-color</code> of green.')",
-        "assert(editor.match(/<form.*cat-photo-form.*>/gi) && editor.match(/<form.*cat-photo-form.*>/gi).length > 0, 'Make sure your <code>form</code> element has both an <code>id</code> attribute.')",
+        "assert(editor.match(/<form.*cat-photo-form.*>/gi) && editor.match(/<form.*cat-photo-form.*>/gi).length > 0, 'Make sure your <code>form</code> element has an <code>id</code> attribute.')",
         "assert(!editor.match(/<form.*style.*>/gi) && !editor.match(/<form.*class.*>/gi), 'Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.')"
       ],
       "challengeSeed": [
