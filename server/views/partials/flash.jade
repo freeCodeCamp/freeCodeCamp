@@ -1,11 +1,11 @@
 .row
     .col-xs-12
-        if messages.errors
+        if (messages.errors || messages.error)
           .alert.alert-danger.fade.in
             button.close(type='button', data-dismiss='alert')
               span.ion-close-circled
-            for error in messages.errors
-              div!= error.msg
+            for error in (messages.errors || messages.error)
+              div!= error.msg || error
         if messages.info
           .alert.alert-info.fade.in
             button.close(type='button', data-dismiss='alert')

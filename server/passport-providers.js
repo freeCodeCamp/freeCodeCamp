@@ -1,5 +1,6 @@
 var successRedirect = '/';
 var failureRedirect = '/login';
+var linkFailureRedirect = '/account';
 module.exports = {
   local: {
     provider: 'local',
@@ -34,7 +35,7 @@ module.exports = {
     callbackURL: '/link/facebook/callback',
     callbackPath: '/link/facebook/callback',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: linkFailureRedirect,
     scope: ['email', 'user_likes'],
     link: true,
     failureFlash: true
@@ -63,7 +64,7 @@ module.exports = {
     callbackURL: '/link/google/callback',
     callbackPath: '/link/google/callback',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: linkFailureRedirect,
     scope: ['email', 'profile'],
     link: true,
     failureFlash: true
@@ -89,7 +90,7 @@ module.exports = {
     callbackURL: '/link/twitter/callback',
     callbackPath: '/link/twitter/callback',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: linkFailureRedirect,
     consumerKey: process.env.TWITTER_KEY,
     consumerSecret: process.env.TWITTER_SECRET,
     link: true,
@@ -120,7 +121,7 @@ module.exports = {
     callbackURL: '/link/linkedin/callback',
     callbackPath: '/link/linkedin/callback',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: linkFailureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
     scope: ['r_basicprofile', 'r_emailaddress'],
@@ -152,7 +153,7 @@ module.exports = {
     callbackURL: '/auth/github/callback/link',
     callbackPath: '/auth/github/callback/link',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: linkFailureRedirect,
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
     scope: ['email'],
