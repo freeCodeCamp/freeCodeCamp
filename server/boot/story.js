@@ -107,8 +107,12 @@ module.exports = function(app) {
     });
   }
 
-  function preSubmit(req, res) {
+  function preSubmit(req, res, next) {
     var data = req.query;
+    if (typeof data.url !== 'string') {
+      req.flash('errors', { msg: 'No URL supplied with story' });
+      return next(new TypeError('No URL supplied with story'));
+    }
     var cleanedData = cleanData(data.url);
 
     if (data.url.replace(/&/g, '&amp;') !== cleanedData) {
