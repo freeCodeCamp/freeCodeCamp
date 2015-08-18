@@ -17,7 +17,7 @@
       "difficulty":0,
       "description":[
         "Before we dive into Object Oriented Programming, let's revisit JavaScript objects.",
-        "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engine</code> and <code>seats</code> attribute and set them to numbers."
+        "Give your <code>motorBike</code> object a <code>wheels</code>, <code>engines</code> and <code>seats</code> attribute and set them to numbers."
       ],
       "tests":[
         "assert(typeof(motorBike.engines) === 'number', '<code>engines</code> should be have a <code>engines</code> attribute set to a number.');",
