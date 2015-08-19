@@ -22,67 +22,6 @@ $(document).ready(function() {
 
   setCSRFToken($('meta[name="csrf-token"]').attr('content'));
 
-  $('#i-want-help').on('click', function() {
-    $('#help-modal').modal('hide');
-    var editorValue = editor.getValue();
-    var currentLocation = window.location.href;
-    $.post(
-      '/get-help',
-      {
-        payload: {
-          code: editorValue,
-          challenge: currentLocation
-        }
-      },
-      function(res) {
-        if (res) {
-          window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
-        }
-      }
-    );
-  });
-
-  $('#i-want-help-editorless').on('click', function() {
-    $('#help-editorless-modal').modal('hide');
-    var currentLocation = window.location.href;
-    $.post(
-      '/get-help',
-      {
-        payload: {
-          challenge: currentLocation
-        }
-      },
-      function(res) {
-        if (res) {
-          window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
-        }
-      }
-    );
-  });
-
-  $('#report-issue').on('click', function() {
-    $('#issue-modal').modal('hide');
-    window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.', '_blank')
-  });
-
-  $('#i-want-to-pair').on('click', function() {
-    $('#pair-modal').modal('hide');
-    var currentLocation = window.location.href;
-    $.post(
-      '/get-pair',
-      {
-        payload: {
-          challenge: currentLocation
-        }
-      },
-      function(res) {
-        if (res) {
-          window.open('https://gitter.im/FreeCodeCamp/LetsPair', '_blank')
-        }
-      }
-    );
-  });
-
   $('.checklist-element').each(function() {
     var checklistElementId = $(this).attr('id');
     if(!!localStorage[checklistElementId]) {
@@ -118,41 +57,126 @@ $(document).ready(function() {
     $(this).unbind("error").attr("src", "https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png");
   });
 
-  $('#completed-courseware').on('click', function() {
-    $('#complete-courseware-dialog').modal('show');
-  });
+  function reBindModals(){
 
-  $('#completed-courseware-editorless').on('click', function() {
-    $('#complete-courseware-editorless-dialog').modal('show');
-  });
+      $('#i-want-help').unbind('click');
+      $('#i-want-help').on('click', function() {
+          $('#help-modal').modal('hide');
+          var editorValue = editor.getValue();
+          var currentLocation = window.location.href;
+          $.post(
+              '/get-help',
+              {
+                  payload: {
+                      code: editorValue,
+                      challenge: currentLocation
+                  }
+              },
+              function(res) {
+                  if (res) {
+                      window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
+                  }
+              }
+          );
+      });
 
-  $('#trigger-pair-modal').on('click', function() {
-    $('#pair-modal').modal('show');
-  });
+      $('#i-want-help-editorless').unbind('click');
+      $('#i-want-help-editorless').on('click', function() {
+          $('#help-editorless-modal').modal('hide');
+          var currentLocation = window.location.href;
+          $.post(
+              '/get-help',
+              {
+                  payload: {
+                      challenge: currentLocation
+                  }
+              },
+              function(res) {
+                  if (res) {
+                      window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
+                  }
+              }
+          );
+      });
 
-  $('#trigger-reset-modal').on('click', function() {
-    $('#reset-modal').modal('show');
-  });
+      $('#report-issue').unbind('click');
+      $('#report-issue').on('click', function() {
+          $('#issue-modal').modal('hide');
+          window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.', '_blank')
+      });
 
-  $('#trigger-help-modal').on('click', function() {
-    $('#help-modal').modal('show');
-  });
+      $('#i-want-help').unbind('click');
+      $('#i-want-to-pair').on('click', function() {
+          $('#pair-modal').modal('hide');
+          var currentLocation = window.location.href;
+          $.post(
+              '/get-pair',
+              {
+                  payload: {
+                      challenge: currentLocation
+                  }
+              },
+              function(res) {
+                  if (res) {
+                      window.open('https://gitter.im/FreeCodeCamp/LetsPair', '_blank')
+                  }
+              }
+          );
+      });
 
-  $('#trigger-issue-modal').on('click', function() {
-    $('#issue-modal').modal('show');
-  });
+      $('#completed-courseware').unbind('click');
+      $('#completed-courseware').on('click', function() {
+          $('#complete-courseware-dialog').modal('show');
+      });
 
-  $('#completed-zipline-or-basejump').on('click', function() {
-    $('#complete-zipline-or-basejump-dialog').modal('show');
-  });
+      $('#completed-courseware-editorless').unbind('click');
+      $('#completed-courseware-editorless').on('click', function() {
+          $('#complete-courseware-editorless-dialog').modal('show');
+      });
 
-  $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
-    editor.focus();
-  });
+      $('#trigger-pair-modal').unbind('click');
+      $('#trigger-pair-modal').on('click', function() {
+          $('#pair-modal').modal('show');
+      });
 
-  $('#complete-challenge-dialog').on('hidden.bs.modal', function() {
-    editor.focus();
-  });
+      $('#trigger-reset-modal').unbind('click');
+      $('#trigger-reset-modal').on('click', function() {
+          $('#reset-modal').modal('show');
+      });
+
+      $('#trigger-help-modal').unbind('click');
+      $('#trigger-help-modal').on('click', function() {
+          $('#help-modal').modal('show');
+      });
+
+      $('#trigger-issue-modal').unbind('click');
+      $('#trigger-issue-modal').on('click', function() {
+          $('#issue-modal').modal('show');
+      });
+
+      $('#completed-zipline-or-basejump').unbind('click');
+      $('#completed-zipline-or-basejump').on('click', function() {
+          $('#complete-zipline-or-basejump-dialog').modal('show');
+      });
+
+      $('#completed-courseware-dialog').unbind('click');
+      $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
+          editor.focus();
+      });
+
+      $('#completed-zipline-or-basejump').unbind('click');
+      $('#complete-zipline-or-basejump').on('hidden.bs.modal', function() {
+          editor.focus();
+      });
+  };
+
+
+
+    $(window).resize(function(){
+        reBindModals();
+    });
+
+    reBindModals();
 
   var challengeTypes = {
     'HTML_CSS_JQ': '0',

@@ -21,7 +21,7 @@ const debug = debugFactory('freecc:challenges');
 const challengeMapWithNames = utils.getChallengeMapWithNames();
 const challengeMapWithIds = utils.getChallengeMapWithIds();
 const challengeMapWithDashedNames = utils.getChallengeMapWithDashedNames();
-const challangesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
+const challengesRegex = /^(bonfire|waypoint|zipline|basejump)/i;
 const firstChallenge = 'waypoint-say-hello-to-html-elements';
 
 const dasherize = utils.dasherize;
@@ -137,7 +137,9 @@ module.exports = function(app) {
     // unless the next block is undefined, which means no next block
     let nextChallengeName = firstChallenge;
 
-    const challengeId = req.user.currentChallenge.challengeId;
+    const challengeId = req.user.currentChallenge ?
+      req.user.currentChallenge.challengeId :
+      'bd7123c8c441eddfaeb5bdef';
     // find challenge
     return challenge$
       .map(challenge => challenge.toJSON())
@@ -232,7 +234,7 @@ module.exports = function(app) {
     var origChallengeName = req.params.challengeName;
     var unDashedName = unDasherize(origChallengeName);
 
-    var challengeName = challangesRegex.test(unDashedName) ?
+    var challengeName = challengesRegex.test(unDashedName) ?
       // remove first word if matches
       unDashedName.split(' ').slice(1).join(' ') :
       unDashedName;
@@ -320,7 +322,7 @@ module.exports = function(app) {
 
     var challengeData = {
       id: challengeId,
-      name: req.body.challengeInfo.challengeName,
+      name: req.body.challengeInfo.challengeName || '',
       completedDate: Math.round(+new Date()),
       solution: req.body.challengeInfo.solution,
       challengeType: 5
@@ -399,7 +401,7 @@ module.exports = function(app) {
       {
         id: id || challengeId,
         completedDate: completedDate,
-        name: name || challengeName,
+        name: name || challengeName || '',
         solution: null,
         githubLink: null,
         verified: true
@@ -446,7 +448,7 @@ module.exports = function(app) {
 
     var challengeData = {
       id: challengeId,
-      name: req.body.challengeInfo.challengeName,
+      name: req.body.challengeInfo.challengeName || '',
       completedDate: completedDate,
       solution: solutionLink,
       githubLink: githubLink,
