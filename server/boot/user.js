@@ -11,8 +11,6 @@ function calcCurrentStreak(cals) {
   let streakBroken = false;
   const lastDayInStreak = revCals
     .reduce((current, cal, index) => {
-      debug('cal', cal);
-      debug('broken', streakBroken);
       const before = revCals[index === 0 ? 0 : index - 1];
       if (
         !streakBroken &&
@@ -28,11 +26,26 @@ function calcCurrentStreak(cals) {
   return Math.ceil(moment().diff(lastTimestamp, 'days', true));
 }
 
-// TODO(berks): calc longest streak
-/*
-function longestStreak(cals) {
+function calcLongestStreak(cals) {
+  let tail = cals[0];
+  const longest = cals.reduce((longest, head, index) => {
+    const last = cals[index === 0 ? 0 : index - 1];
+    // is streak broken
+    if (moment(head).diff(last, 'days', true) > daysBetween) {
+      tail = head;
+    }
+    if (dayDiff(longest) < dayDiff([head, tail])) {
+      return [head, tail];
+    }
+    return longest;
+  }, [cals[0], cals[0]]);
+
+  return Math.ceil(dayDiff(longest));
 }
-*/
+
+function dayDiff([head, tail]) {
+  return moment(head).diff(tail, 'days', true);
+}
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -144,10 +157,7 @@ module.exports = function(app) {
           .sort();
 
         user.currentStreak = calcCurrentStreak(cals);
-
-        if (user.currentStreak > user.longestStreak) {
-          user.longestStreak = user.currentStreak;
-        }
+        user.longestStreak = calcLongestStreak(cals);
 
         const data = user
           .progressTimestamps
