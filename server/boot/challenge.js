@@ -63,11 +63,13 @@ module.exports = function(app) {
   const findChallenge$ = observeMethod(Challenge, 'find');
   // create a stream of all the challenges
   const challenge$ = findChallenge$(challengesQuery)
+    .doOnNext(() => debug('query challenges'))
     .flatMap(challenges => Observable.from(challenges))
     .shareReplay();
 
   // create a stream of challenge blocks
   const blocks$ = challenge$
+    .doOnNext(() => debug('query challenges'))
     .map(challenge => challenge.toJSON())
     // group challenges by block | returns a stream of observables
     .groupBy(challenge => challenge.block)
@@ -128,18 +130,12 @@ module.exports = function(app) {
   app.use(router);
 
   function returnNextChallenge(req, res, next) {
-
-    // find the user's current challenge and block
-    // look in that block and find the index of their current challenge
-    // if index + 1 < block.challenges.length
-    // serve index + 1 challenge
-    // otherwise increment block key and serve the first challenge in that block
-    // unless the next block is undefined, which means no next block
     let nextChallengeName = firstChallenge;
 
     const challengeId = req.user.currentChallenge ?
       req.user.currentChallenge.challengeId :
       'bd7123c8c441eddfaeb5bdef';
+
     // find challenge
     return challenge$
       .map(challenge => challenge.toJSON())
