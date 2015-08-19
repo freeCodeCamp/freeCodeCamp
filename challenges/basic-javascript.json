@@ -1093,12 +1093,12 @@
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example."
       ],
       "tests":[
-        "assert(test === 36, 'Your RegEx should have found seven spaces in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\+S/gi</code> to find the spaces in the <code>testString</code>.');"
+        "assert(test === 49, 'Your RegEx should have found forty nine non-space characters in the <code>testString</code>.');",
+        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\S/gi</code> to find non-space characters in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
-        "  var testString = \"How many spaces are there in this sentence?\";",
+        "  var testString = \"How many non-space characters are there in this sentence?\";",
         "",
         "  // Only change code below this line.",
         "",
