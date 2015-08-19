@@ -253,13 +253,14 @@ var allSeeds = '';
 editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
 
 editor.setValue(editorValue);
+editor.refresh();
 
 var resetEditor = function resetEditor() {
   editor.setValue(allSeeds);
   updatePreview();
   codeStorage.updateStorage();
 };
-
+/*
 var challengeSeed = challengeSeed || null;
 var allSeeds = '';
 (function() {
@@ -273,3 +274,4 @@ var allSeeds = '';
     }, 200);
   })();
 })();
+*/
