@@ -956,7 +956,7 @@
       "difficulty":"9.983",
       "description":[
         "We can use if statements in JavaScript to only execute code if a certain condition is met.",
-        "if statements require some sort of boolean condition evaluate.",
+        "if statements require some sort of boolean condition to evaluate.",
         "Example:",
         "<code> if (1 == 2) {</code>",
         "<code>&thinsp;&thinsp;return(true);</code>",
@@ -965,7 +965,7 @@
         "<code>&thinsp;&thinsp;return(false);</code>",
         "<code>}</code>",
         "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
-        "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero and to return <code>tails</code> if it's not."
+        "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero, or else return <code>tails</code> if it's not."
       ],
       "tests":[
         "assert((function(){if(myFunction() === \"heads\" || myFunction() === \"tails\"){return(true);}else{return(false);}})(), 'myFunction should either return heads or tails');",
@@ -975,7 +975,7 @@
       "challengeSeed":[
         "function myFunction(){",
         "  var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
-        "  // Create and if else statement here to return \"heads\" if flip is 0. Otherwise return \"tails\".",
+        "  // Create an if-else statement here to return \"heads\" if flip is 0. Otherwise return \"tails\".",
         "",
         "  // Only change code below this line.",
         "",
