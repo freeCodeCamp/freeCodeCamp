@@ -20,7 +20,8 @@
         "",
         ""
       ],
-      "challengeType":1
+      "challengeType":1,
+      "type": "waypoint"
     },
     {
       "id":"cf1111c1c16feddfaeb7bdef",
@@ -46,7 +47,8 @@
         "",
         ""
       ],
-      "challengeType":1
+      "challengeType":1,
+      "type": "waypoint"
     }
   ]
 }
