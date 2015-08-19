@@ -937,7 +937,6 @@
         "var min = 0;",
         "var max = 9;",
         "function myFunction() {",
-        "  // Make myFunction return a random number between zero and nine instead of a decimal",
         "  // Only change code below this line.",
         "",
         "  return(Math.random());",
