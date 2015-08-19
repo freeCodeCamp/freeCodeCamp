@@ -40,6 +40,10 @@ script.
     });
     function executeSearch() {
         $('#stories').empty();
+        var spinner = document.createElement("div");
+        spinner.style = "text-align: center;";
+        $(spinner).html("<div class='spinner'><div>Loading...</div></div>");
+        $(spinner).appendTo($('#search-results'));
         var searchTerm = $('#searchArea').val();
         var getLinkedName = function getLinkedName(name) {
             return name.toLowerCase().replace(/\s/g, '-');
