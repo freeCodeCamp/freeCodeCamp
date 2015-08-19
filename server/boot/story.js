@@ -18,6 +18,7 @@ var time48Hours = 172800000;
 var unDasherize = utils.unDasherize;
 var dasherize = utils.dasherize;
 var getURLTitle = utils.getURLTitle;
+var ifNoUser401 = require('../utils/middleware').ifNoUser401;
 
 function hotRank(timeValue, rank) {
   /*
@@ -63,12 +64,12 @@ module.exports = function(app) {
   router.get('/stories/hotStories', hotJSON);
   router.get('/stories/submit', submitNew);
   router.get('/stories/submit/new-story', preSubmit);
-  router.post('/stories/preliminary', newStory);
-  router.post('/stories/', storySubmission);
+  router.post('/stories/preliminary', ifNoUser401, newStory);
+  router.post('/stories/', ifNoUser401, storySubmission);
   router.get('/news/', hot);
   router.post('/stories/search', getStories);
   router.get('/news/:storyName', returnIndividualStory);
-  router.post('/stories/upvote/', upvote);
+  router.post('/stories/upvote/', ifNoUser401, upvote);
   router.get('/stories/:storyName', redirectToNews);
 
   app.use(router);
@@ -107,8 +108,12 @@ module.exports = function(app) {
     });
   }
 
-  function preSubmit(req, res) {
+  function preSubmit(req, res, next) {
     var data = req.query;
+    if (typeof data.url !== 'string') {
+      req.flash('errors', { msg: 'No URL supplied with story' });
+      return next(new TypeError('No URL supplied with story'));
+    }
     var cleanedData = cleanData(data.url);
 
     if (data.url.replace(/&/g, '&amp;') !== cleanedData) {

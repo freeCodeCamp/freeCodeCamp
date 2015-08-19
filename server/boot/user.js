@@ -156,7 +156,7 @@ module.exports = function(app) {
         });
 
         const bonfires = user.completedChallenges.filter(function(obj) {
-          return obj.challengeType === 5 && obj.name.match(/Bonfire/g);
+          return obj.challengeType === 5 && (obj.name || '').match(/Bonfire/g);
         });
 
         res.render('account/show', {
