@@ -159,12 +159,10 @@ $(document).ready(function() {
           $('#complete-zipline-or-basejump-dialog').modal('show');
       });
 
-      $('#completed-courseware-dialog').unbind('click');
       $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
           editor.focus();
       });
 
-      $('#completed-zipline-or-basejump').unbind('click');
       $('#complete-zipline-or-basejump').on('hidden.bs.modal', function() {
           editor.focus();
       });
