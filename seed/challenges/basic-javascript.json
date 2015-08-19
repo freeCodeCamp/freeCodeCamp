@@ -113,7 +113,7 @@
       "description": [
         "<code>data structures</code> have <code>properties</code>. For example, <code>strings</code> have a property called <code>.length</code> that will tell you how many characters are in the string.",
         "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string \"Charles\" is by using the <code>firstName.length</code> property.",
-        "Use the <code>.length</code> property to count the number of characters in the <code>lastNameLength</code> variable."
+        "Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable."
       ],
       "tests": [
         "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return(true);}else{return(false);}})(), 'lastNameLength should be equal to eight.');",
