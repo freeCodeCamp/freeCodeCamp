@@ -314,7 +314,7 @@
       ],
       "tests": [
         "assert($(\".btn-default\").length === 0, 'Remove the <code>btn-default</code> class from all of your <code>button</code> elements.')",
-        "assert(editor.match(/btn btn-default/g), 'Only use jQuery to add these classes to the element.')"
+        "assert(editor.match(/btn btn-default/g), 'Only use jQuery to remove this class from the element.')"
       ],
       "challengeSeed": [
         "fccss",
