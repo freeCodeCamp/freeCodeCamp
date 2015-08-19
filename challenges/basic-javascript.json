@@ -958,7 +958,7 @@
         "We can use if statements in JavaScript to only execute code if a certain condition is met.",
         "if statements require some sort of boolean condition to evaluate.",
         "Example:",
-        "<code> if (1 == 2) {</code>",
+        "<code> if (1 === 2) {</code>",
         "<code>&thinsp;&thinsp;return(true);</code>",
         "<code>}</code>",
         "<code>else {</code>",
