@@ -137,7 +137,9 @@ module.exports = function(app) {
     // unless the next block is undefined, which means no next block
     let nextChallengeName = firstChallenge;
 
-    const challengeId = req.user.currentChallenge.challengeId;
+    const challengeId = req.user.currentChallenge ?
+      req.user.currentChallenge.challengeId :
+      'bd7123c8c441eddfaeb5bdef';
     // find challenge
     return challenge$
       .map(challenge => challenge.toJSON())
