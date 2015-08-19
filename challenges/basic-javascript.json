@@ -150,7 +150,7 @@
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
         "Computers don't start counting at 1 like humans do. They start at 0.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
-        "Use <code>bracket notation</code> to find the first character in a the <code>firstLetterOfLastName</code> variable.",
+        "Use <code>bracket notation</code> to find the first character in the <code>firstLetterOfLastName</code> variable.",
         "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
