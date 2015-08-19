@@ -1,27 +1,19 @@
 extends ../layout
 block content
-    .jumbotron.text-center(ng-controller="emailSignInController")
-        h2 Sign in with an email address here:
-        form(method='POST', action='/api/users/login')
-            input(type='hidden', name='_csrf', value=_csrf)
-            .col-sm-6.col-sm-offset-3
-                .form-group
-                    input.form-control(type='email', name='email', id='email', placeholder='Email', ng-model='email', autofocus=true)
-                    | {{ $scope.email }}
-                .form-group
-                    input.form-control(type='password', name='password', id='password', placeholder='Password', ng-model='password')
-                .form-group
-                    button.btn.btn-primary(type='submit')
-                        span.ion-android-hand
-                        | Login
-                    span &thinsp;&thinsp;
-                    a.btn.btn-info(href='/forgot') Forgot your password?
-        br
-        br
-        br
-        br
-        br
-        br
-        br
-        br
-        br
+    .jumbotron.text-center
+        .row
+            .col-xs-12
+                h2 Sign in with an email address here:
+                .col-sm-6.col-sm-offset-3
+                    form(method='POST', action='/api/users/login')
+                        input(type='hidden', name='_csrf', value=_csrf)
+                        .form-group
+                            input.input-lg.form-control(type='email', name='email', id='email', placeholder='Email', autofocus=true)
+                        .form-group
+                            input.input-lg.form-control(type='password', name='password', id='password', placeholder='Password')
+                        button.btn.btn-primary.btn-lg.btn-block(type='submit')
+                            span.ion-android-hand
+                            | Login
+                        .button-spacer
+                        .button-spacer
+                    a.btn.btn-info.btn-lg.btn-block(href='/forgot') Forgot your password?

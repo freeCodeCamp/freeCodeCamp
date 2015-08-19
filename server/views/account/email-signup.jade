@@ -1,51 +1,18 @@
 extends ../layout
 block content
+  script.
+    var challengeName = 'Email Signup'
   .jumbotron.text-center
     h2 Sign up with an email address here:
-    form.form-horizontal(method='POST', action='/api/users', name="signupForm", novalidate="novalidate")
-      input(type='hidden', name='_csrf', value=_csrf)
-      .form-group
-        .col-sm-6.col-sm-offset-3
-          input.form-control(type='email', ng-model='email', ng-keypress='', name='email', id='email', placeholder='email', autofocus, required, autocomplete="off", unique-email='')
-        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="signupForm.email.$error.required && !signupForm.email.$pristine")
-          alert(type='danger')
-            span.ion-close-circled
-            | Your email address is required.
-        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="signupForm.$error.email && !signupForm.email.$pristine")
-          alert(type='danger')
-            span.ion-close-circled
-            | Please enter a valid email format.
-        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="signupForm.email.$error.unique && !signupForm.email.$pristine")
-          alert(type='danger')
-            span.ion-close-circled
-            |  That email address is already in use.
-      .form-group
-        .col-sm-6.col-sm-offset-3
-          input.form-control(type='password', ng-model='password', name='password', id='password', placeholder='password', required, ng-minlength=8)
-        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="signupForm.password.$error.minlength && !signupForm.password.$pristine")
-          alert(type='danger')
-            span.ion-close-circled
-            |  Your password must be at least 8 characters long.
-      .form-group
-        .col-sm-6.col-sm-offset-3
-          input.form-control(type='password', ng-model='confirmPassword', name='confirmPassword', id='confirmPassword', placeholder='confirm password', required, ng-minlength=5)
-        .col-sm-6.col-sm-offset-3(ng-cloak, ng-show="(confirmPassword !== password) && !signupForm.confirmPassword.$pristine")
-          alert(type='danger')
-            span.ion-close-circled
-            |  Passwords must match.
-      .form-group
-        .col-sm-6.col-sm-offset-3
-          button.btn.btn-success(type='submit', ng-disabled='signupForm.$invalid')
-            span.ion-person-add
-            | Signup
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    script.
-        var challengeName = 'Email Signup'
+    form.form-horizontal(method='POST', action='/api/users', name="signupForm")
+        .row
+            .col-sm-6.col-sm-offset-3
+              input(type='hidden', name='_csrf', value=_csrf)
+              .form-group
+                  input.input-lg.form-control(type='email', name='email', id='email', placeholder='email', autofocus, required, autocomplete="off")
+              .form-group
+                  input.input-lg.form-control(type='password', name='password', id='password', placeholder='password', required, pattern=".{8,50}", title="Must be at least 8 characters and no longer than 50 characters.")
+              .form-group
+                  button.btn.btn-lg.btn-success.btn-block(type='submit')
+                    span.ion-person-add
+                    | Signup
