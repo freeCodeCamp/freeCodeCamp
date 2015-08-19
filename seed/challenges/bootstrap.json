@@ -133,7 +133,7 @@
         "",
         "  <p>Click here for <a href=\"#\">cat photos</a>.</p>",
         "",
-        "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"https://bit.ly/fcc-relaxing-cat\"></a>",
+        "  <a href=\"#\"><img class=\"smaller-image thick-green-border\" src=\"http://bit.ly/fcc-relaxing-cat\"></a>",
         "",
         "  <p>Things cats love:</p>",
         "  <ul>",
