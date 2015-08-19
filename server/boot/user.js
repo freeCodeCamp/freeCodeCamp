@@ -3,23 +3,38 @@ var _ = require('lodash'),
     moment = require('moment'),
     debug = require('debug')('freecc:cntr:userController');
 
+// returns number of days between two timestamps
+function dayDifference(timestamp1, timestamp2) {
+  return Math.abs((timestamp2 - timestamp1) / 86400000);
+}
 
-function calcCurrentStreak(cals) {
-  const revCals = cals.slice().reverse();
-  let streakBroken = false;
-  return revCals
-    .reduce((current, cal, index) => {
-      // if streak not borken and diff between this cal and the call after it
-      // is equal to zero
-      // moment.diff will return the days between rounded down
-      if (
-        !streakBroken &&
-        moment(revCals[index === 0 ? 0 : index - 1]).diff(cal, 'days') === 0
-      ) {
-        return current + 1;
+// calculates the last streak and the longest streak (continuous timestamps where each is at most
+// 24 hours from the next one), and returns an array of [current streak, longest streak]
+function calculateStreaks(calendar) {
+  if (!calendar || !calendar.length || calendar.length < 2)
+    return [1, 1];
+
+  const sortedCalendar = calendar.sort();
+  let longestStreak = 1;
+  let currentStreak = 0;
+  let currentStreakStart = 0;
+  let numCalendarEntries = sortedCalendar.length;
+  sortedCalendar.forEach(function (calendarEntry, index, calendar) {
+    if (index === 0) return;
+    
+    if (dayDifference(calendarEntry, calendar[index - 1]) <= 1) {
+      currentStreak++;
+      
+      let currentStreakLength = Math.ceil(dayDifference(calendarEntry, calendar[currentStreakStart]));
+      if (currentStreakLength > longestStreak) {
+        longestStreak = currentStreakLength;
       }
-      return 1;
-    }, 1);
+    } else {
+      currentStreak = 0;
+      currentStreakStart = index;
+    }
+  });
+  return [Math.ceil(dayDifference(calendar[numCalendarEntries - 1], calendar[currentStreakStart])), longestStreak];
 }
 
 module.exports = function(app) {
@@ -128,16 +143,9 @@ module.exports = function(app) {
             return typeof objOrNum === 'number' ?
               objOrNum :
               objOrNum.timestamp;
-          })
-          .map(time => {
-            return moment(time).format('YYYY-MM-DD');
           });
-
-        user.currentStreak = calcCurrentStreak(cals);
-
-        if (user.currentStreak > user.longestStreak) {
-          user.longestStreak = user.currentStreak;
-        }
+          
+        [user.currentStreak, user.longestStreak] = calculateStreaks(cals);
 
         const data = user
           .progressTimestamps
