@@ -755,7 +755,7 @@
       "title": "Manipulate JavaScript Objects",
       "difficulty":"9.9823",
       "description":[
-        "There are many ways to add and add and remove properties from objects.",
+        "There are many ways to add and remove properties from objects.",
         "For example, we can add properties to objects like this:",
         "<code>myObject.myProperty = \"myValue\";</code>",
         "We can also delete them like this:",
