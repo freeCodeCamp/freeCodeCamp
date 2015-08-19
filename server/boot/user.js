@@ -7,7 +7,7 @@ var _ = require('lodash'),
 const daysBetween = 1.5;
 
 function calcCurrentStreak(cals) {
-  const revCals = cals.slice().reverse();
+  const revCals = cals.concat([Date.now()]).slice().reverse();
   let streakBroken = false;
   const lastDayInStreak = revCals
     .reduce((current, cal, index) => {
