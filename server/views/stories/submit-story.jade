@@ -45,10 +45,3 @@
         if (storyImage) {
             $('#image-display').removeClass('hidden-element');
         }
-        var text_max = 140;
-        $('#textarea_feedback').html(text_max + ' characters remaining');
-        $('#description-box').keyup(function () {
-            var text_length = $('#description-box').val().length;
-            var text_remaining = text_max - text_length;
-            $('#textarea_feedback').html(text_remaining + ' characters remaining');
-        });

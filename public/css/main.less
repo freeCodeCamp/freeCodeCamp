@@ -85,9 +85,8 @@ h1, h2, h3, h4, h5, h6, p, li {
 // -------------------------
 
 .thumbnail {
-  padding: 0;
-  border-radius: 0;
-  box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
+  background-color: #EEEEEE;
+//  box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
 }
 
 // Font Icons
@@ -256,11 +255,15 @@ ul {
 }
 
 .large-p {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .large-li {
-  font-size: 18px;
+  font-size: 24px;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .text-success {
@@ -617,7 +620,6 @@ thead {
   border-radius: 5px;
 }
 
-
 .testimonial-copy {
   font-size: 20px;
   text-align: center;
@@ -683,7 +685,7 @@ thead {
     padding-right: 10px;
     &:hover {
       padding-top: 14px;
-      padding-bottom: 14px;
+      padding-bottom: 12px;
       color: #4a2b0f;
       background-color: #eee;
       text-decoration: none;
@@ -742,6 +744,11 @@ form.code span {
 #mainEditorPanel {
   height: 100%;
   width: 99%;
+}
+
+.scroll-locker {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .big-error-icon {
@@ -1026,6 +1033,10 @@ hr {
   margin: 18px 0;
 }
 
+.big-spacer {
+  padding: 30px 0 30px 0;
+}
+
 #reply-to-main-post, #upvote {
   cursor: pointer;
 }
@@ -1154,6 +1165,10 @@ hr {
 
 #submitButton {
   font: normal normal normal 14px/1 FontAwesome !important;
+}
+
+#testSuite > div >.row {
+  margin: 0!important;
 }
 
 //uncomment this to see the dimensions of all elements outlined in red

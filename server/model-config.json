@@ -49,10 +49,7 @@
   },
   "user": {
     "dataSource": "db",
-    "public": true,
-    "options": {
-      "emailVerificationRequired": true
-    }
+    "public": true
   },
   "userCredential": {
     "dataSource": "db",

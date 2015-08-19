@@ -71,6 +71,17 @@ editor.on("keyup", function () {
 var nodeEnv = prodOrDev === 'production' ? 'http://www.freecodecamp.com' : 'http://localhost:3001';
 function updatePreview() {
   editorValueForIFrame = editor.getValue();
+  var failedCommentTest = false;
+  if(editorValueForIFrame.match(/\<\!\-\-/gi) && editorValueForIFrame.match(/\-\-\>/gi) == null){
+    failedCommentTest = true;
+  }
+  else if(editorValueForIFrame.match(/\<\!\-\-/gi) && editorValueForIFrame.match(/\<\!\-\-/gi).length > editorValueForIFrame.match(/\-\-\>/gi).length){
+    failedCommentTest = true;
+  }
+  if(failedCommentTest){
+      editor.setValue(editor.getValue()+ "-->");
+      editorValueForIFrame = editorValueForIFrame + "-->";
+  }
   goodTests = 0;
   var previewFrame = document.getElementById('preview');
   var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
@@ -242,13 +253,14 @@ var allSeeds = '';
 editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
 
 editor.setValue(editorValue);
+editor.refresh();
 
 var resetEditor = function resetEditor() {
   editor.setValue(allSeeds);
   updatePreview();
   codeStorage.updateStorage();
 };
-
+/*
 var challengeSeed = challengeSeed || null;
 var allSeeds = '';
 (function() {
@@ -262,3 +274,4 @@ var allSeeds = '';
     }, 200);
   })();
 })();
+*/

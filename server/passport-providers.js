@@ -1,5 +1,6 @@
 var successRedirect = '/';
 var failureRedirect = '/login';
+var linkFailureRedirect = '/account';
 module.exports = {
   local: {
     provider: 'local',
@@ -34,14 +35,14 @@ module.exports = {
     callbackURL: '/link/facebook/callback',
     callbackPath: '/link/facebook/callback',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: linkFailureRedirect,
     scope: ['email', 'user_likes'],
     link: true,
     failureFlash: true
   },
   'google-login': {
     provider: 'google',
-    authScheme: 'oauth',
+    authScheme: 'oauth2',
     module: 'passport-google-oauth2',
     clientID: process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
@@ -55,7 +56,7 @@ module.exports = {
   },
   'google-link': {
     provider: 'google',
-    authScheme: 'oauth',
+    authScheme: 'oauth2',
     module: 'passport-google-oauth2',
     clientID: process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
@@ -63,7 +64,7 @@ module.exports = {
     callbackURL: '/link/google/callback',
     callbackPath: '/link/google/callback',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: linkFailureRedirect,
     scope: ['email', 'profile'],
     link: true,
     failureFlash: true
@@ -89,9 +90,10 @@ module.exports = {
     callbackURL: '/link/twitter/callback',
     callbackPath: '/link/twitter/callback',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: linkFailureRedirect,
     consumerKey: process.env.TWITTER_KEY,
     consumerSecret: process.env.TWITTER_SECRET,
+    link: true,
     failureFlash: true
   },
   'linkedin-login': {
@@ -119,13 +121,14 @@ module.exports = {
     callbackURL: '/link/linkedin/callback',
     callbackPath: '/link/linkedin/callback',
     successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
+    failureRedirect: linkFailureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
     scope: ['r_basicprofile', 'r_emailaddress'],
     authOptions: {
       state: process.env.LINKEDIN_STATE
     },
+    link: true,
     failureFlash: true
   },
   'github-login': {
@@ -140,6 +143,21 @@ module.exports = {
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
     scope: ['email'],
+    failureFlash: true
+  },
+  'github-link': {
+    provider: 'github',
+    authScheme: 'oauth2',
+    module: 'passport-github',
+    authPath: '/link/github',
+    callbackURL: '/auth/github/callback/link',
+    callbackPath: '/auth/github/callback/link',
+    successRedirect: successRedirect,
+    failureRedirect: linkFailureRedirect,
+    clientID: process.env.GITHUB_ID,
+    clientSecret: process.env.GITHUB_SECRET,
+    scope: ['email'],
+    link: true,
     failureFlash: true
   }
 };

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { contain } from 'thundercats-react';
-import { Accordion, Thumbnail, Panel, Well } from 'react-bootstrap';
+import { PanelGroup, Thumbnail, Panel, Well } from 'react-bootstrap';
 import moment from 'moment';
 
 export default contain(
@@ -46,22 +46,24 @@ export default contain(
         );
         return (
           <Panel
-            collapsable={ true }
+            collapsible={ true }
             eventKey={ index }
             header={ header }
             key={ id }>
-            <Thumbnail
-              alt='200x200' src={ logo }
-              style={ thumbnailStyle } />
             <Well>
-              Position: { position }
-              Location: { city }, { state }
-              <br />
-              Contact: { email || phone || 'N/A' }
-              <br />
-              Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+              <Thumbnail
+                alt='200x200' src={ logo }
+                style={ thumbnailStyle } />
+              <Panel>
+                Position: { position }
+                Location: { city }, { state }
+                <br />
+                Contact: { email || phone || 'N/A' }
+                <br />
+                Posted On: { moment(postedOn).format('MMMM Do, YYYY') }
+              </Panel>
+              <p>{ description }</p>
             </Well>
-            <p>{ description }</p>
           </Panel>
         );
       });
@@ -70,9 +72,9 @@ export default contain(
     render() {
       const { jobs } = this.props;
       return (
-        <Accordion>
+        <PanelGroup>
           { this.renderJobs(jobs) }
-        </Accordion>
+        </PanelGroup>
       );
     }
   })

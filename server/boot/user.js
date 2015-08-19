@@ -1,12 +1,38 @@
 var _ = require('lodash'),
-  R = require('ramda'),
-  async = require('async'),
-  crypto = require('crypto'),
-  nodemailer = require('nodemailer'),
-  moment = require('moment'),
-  // debug = require('debug')('freecc:cntr:userController'),
+    async = require('async'),
+    moment = require('moment'),
+    debug = require('debug')('freecc:cntr:userController');
 
-  secrets = require('../../config/secrets');
+
+const daysBetween = 1.5;
+
+function calcCurrentStreak(cals) {
+  const revCals = cals.slice().reverse();
+  let streakBroken = false;
+  const lastDayInStreak = revCals
+    .reduce((current, cal, index) => {
+      debug('cal', cal);
+      debug('broken', streakBroken);
+      const before = revCals[index === 0 ? 0 : index - 1];
+      if (
+        !streakBroken &&
+        moment(before).diff(cal, 'days', true) < daysBetween
+      ) {
+        return index;
+      }
+      streakBroken = true;
+      return current;
+    }, 0);
+
+  const lastTimestamp = revCals[lastDayInStreak];
+  return Math.ceil(moment().diff(lastTimestamp, 'days', true));
+}
+
+// TODO(berks): calc longest streak
+/*
+function longestStreak(cals) {
+}
+*/
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -23,13 +49,11 @@ module.exports = function(app) {
   router.get('/signout', signout);
   router.get('/forgot', getForgot);
   router.post('/forgot', postForgot);
-  router.get('/reset/:token', getReset);
-  router.post('/reset/:token', postReset);
+  router.get('/reset-password', getReset);
+  router.post('/reset-password', postReset);
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
-
   router.get('/account/api', getAccountAngular);
-  router.post('/account/profile', postUpdateProfile);
   router.post('/account/password', postUpdatePassword);
   router.post('/account/delete', postDeleteAccount);
   router.get('/account/unlink/:provider', getOauthUnlink);
@@ -38,11 +62,6 @@ module.exports = function(app) {
   router.get('/:username', returnUser);
 
   app.use(router);
-
-  /**
-  * GET /signin
-  * Siginin page.
-  */
 
   function getSignin(req, res) {
     if (req.user) {
@@ -53,20 +72,10 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * GET /signout
-  * Log out.
-  */
-
   function signout(req, res) {
     req.logout();
     res.redirect('/');
   }
-
-  /**
-  * GET /email-signup
-  * Signup page.
-  */
 
   function getEmailSignin(req, res) {
     if (req.user) {
@@ -77,11 +86,6 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * GET /signin
-  * Signup page.
-  */
-
   function getEmailSignup(req, res) {
     if (req.user) {
       return res.redirect('/');
@@ -90,11 +94,6 @@ module.exports = function(app) {
       title: 'Create Your Free Code Camp Account'
     });
   }
-
-  /**
-  * GET /account
-  * Profile page.
-  */
 
   function getAccount(req, res) {
     if (!req.user) {
@@ -105,21 +104,11 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * Angular API Call
-  */
-
   function getAccountAngular(req, res) {
     res.json({
       user: req.user || {}
     });
   }
-
-
-  /**
-  * GET /campers/:username
-  * Public Profile page.
-  */
 
   function returnUser(req, res, next) {
     const username = req.params.username.toLowerCase();
@@ -144,77 +133,44 @@ module.exports = function(app) {
           });
           return res.redirect('/');
         }
-        user.progressTimestamps =
-          user.progressTimestamps.sort(function(a, b) {
-            return a - b;
-          });
 
-        var timeObject = Object.create(null);
-        R.forEach(function(time) {
-          timeObject[moment(time).format('YYYY-MM-DD')] = time;
-        }, user.progressTimestamps);
+        var cals = user
+          .progressTimestamps
+          .map(objOrNum => {
+            return typeof objOrNum === 'number' ?
+              objOrNum :
+              objOrNum.timestamp;
+          })
+          .sort();
 
-        var tmpLongest = 1;
-        var timeKeys = R.keys(timeObject);
+        user.currentStreak = calcCurrentStreak(cals);
 
-        user.longestStreak = 0;
-        for (var i = 1; i <= timeKeys.length; i++) {
-          if (moment(timeKeys[i - 1]).add(1, 'd').toString()
-            === moment(timeKeys[i]).toString()) {
-            tmpLongest++;
-            if (tmpLongest > user.longestStreak) {
-              user.longestStreak = tmpLongest;
-            }
-          } else {
-            tmpLongest = 1;
-          }
+        if (user.currentStreak > user.longestStreak) {
+          user.longestStreak = user.currentStreak;
         }
 
-        timeKeys = timeKeys.reverse();
-        tmpLongest = 1;
+        const data = user
+          .progressTimestamps
+          .map((objOrNum) => {
+            return typeof objOrNum === 'number' ?
+              objOrNum :
+              objOrNum.timestamp;
+          })
+          .filter((timestamp) => {
+            return !!timestamp;
+          })
+          .reduce((data, timeStamp) => {
+            data[(timeStamp / 1000)] = 1;
+            return data;
+          }, {});
 
-        user.currentStreak = 1;
-        var today = moment(Date.now()).format('YYYY-MM-DD');
-
-        const yesterday = moment(today).subtract(1, 'd').toString();
-        const yesteryesterday = moment(today).subtract(2, 'd').toString();
-
-        if (
-          moment(today).toString() === moment(timeKeys[0]).toString() ||
-          yesterday === moment(timeKeys[0]).toString() ||
-          yesteryesterday === moment(timeKeys[0]).toString()
-        ) {
-          for (var _i = 1; _i <= timeKeys.length; _i++) {
-
-            if (
-              moment(timeKeys[_i - 1]).subtract(1, 'd').toString() ===
-                moment(timeKeys[_i]).toString()
-            ) {
-
-              tmpLongest++;
-
-              if (tmpLongest > user.currentStreak) {
-                user.currentStreak = tmpLongest;
-              }
-            } else {
-              break;
-            }
-          }
-        } else {
-          user.currentStreak = 1;
-        }
-
-        var data = {};
-        var progressTimestamps = user.progressTimestamps;
-        progressTimestamps.forEach(function(timeStamp) {
-          data[(timeStamp / 1000)] = 1;
-        });
-        var challenges = user.completedChallenges.filter(function( obj ) {
+        const challenges = user.completedChallenges.filter(function(obj) {
           return obj.challengeType === 3 || obj.challengeType === 4;
         });
 
-        user.currentStreak = user.currentStreak || 1;
-        user.longestStreak = user.longestStreak || 1;
+        const bonfires = user.completedChallenges.filter(function(obj) {
+          return obj.challengeType === 5 && (obj.name || '').match(/Bonfire/g);
+        });
 
         res.render('account/show', {
           title: 'Camper ' + user.username + '\'s portfolio',
@@ -223,104 +179,23 @@ module.exports = function(app) {
           isMigrationGrandfathered: user.isMigrationGrandfathered,
           isGithubCool: user.isGithubCool,
           location: user.location,
-          githubProfile: user.githubProfile,
-          linkedinProfile: user.linkedinProfile,
-          codepenProfile: user.codepenProfile,
-          facebookProfile: user.facebookProfile,
-          twitterHandle: user.twitterHandle,
-          bio: user.bio,
+          githubProfile: user.github,
+          linkedinProfile: user.linkedin,
+          googleProfile: user.google,
+          facebookProfile: user.facebook,
+          twitterHandle: user.twitter,
           picture: user.picture,
           progressTimestamps: user.progressTimestamps,
           calender: data,
           challenges: challenges,
+          bonfires: bonfires,
           moment: moment,
-          longestStreak: user.longestStreak +
-            (user.longestStreak === 1 ? ' day' : ' days'),
-          currentStreak: user.currentStreak +
-            (user.currentStreak === 1 ? ' day' : ' days')
+          longestStreak: user.longestStreak,
+          currentStreak: user.currentStreak
         });
       }
     );
   }
-
-  /**
-  * POST /account/profile
-  * Update profile information.
-  */
-
-  function postUpdateProfile(req, res, next) {
-
-    User.findById(req.user.id, function(err) {
-      if (err) { return next(err); }
-      var errors = req.validationErrors();
-      if (errors) {
-        req.flash('errors', errors);
-        return res.redirect('/account');
-      }
-
-      User.findOne({
-        where: { email: req.body.email }
-      }, function(err, existingEmail) {
-        if (err) {
-          return next(err);
-        }
-        var user = req.user;
-        if (existingEmail && existingEmail.email !== user.email) {
-          req.flash('errors', {
-            msg: 'An account with that email address already exists.'
-          });
-          return res.redirect('/account');
-        }
-        User.findOne(
-          { where: { username: req.body.username } },
-          function(err, existingUsername) {
-            if (err) {
-              return next(err);
-            }
-            var user = req.user;
-            if (
-              existingUsername &&
-              existingUsername.username !== user.username
-            ) {
-              req.flash('errors', {
-                msg: 'An account with that username already exists.'
-              });
-              return res.redirect('/account');
-            }
-            var body = req.body || {};
-            user.facebookProfile = body.facebookProfile.trim() || '';
-            user.linkedinProfile = body.linkedinProfile.trim() || '';
-            user.codepenProfile = body.codepenProfile.trim() || '';
-            user.twitterHandle = body.twitterHandle.trim() || '';
-            user.bio = body.bio.trim() || '';
-
-            user.save(function(err) {
-              if (err) {
-                return next(err);
-              }
-              updateUserStoryPictures(
-                user.id.toString(),
-                user.picture,
-                user.username,
-                function(err) {
-                  if (err) { return next(err); }
-                  req.flash('success', {
-                    msg: 'Profile information updated.'
-                  });
-                  res.redirect('/account');
-                }
-              );
-            });
-          }
-        );
-      });
-    });
-  }
-
-  /**
-  * POST /account/password
-  * Update current password.
-  */
 
   function postUpdatePassword(req, res, next) {
     req.assert('password', 'Password must be at least 4 characters long')
@@ -350,11 +225,6 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * POST /account/delete
-  * Delete user account.
-  */
-
   function postDeleteAccount(req, res, next) {
     User.destroyById(req.user.id, function(err) {
       if (err) { return next(err); }
@@ -363,11 +233,6 @@ module.exports = function(app) {
       res.redirect('/');
     });
   }
-
-  /**
-  * GET /account/unlink/:provider
-  * Unlink OAuth provider.
-  */
 
   function getOauthUnlink(req, res, next) {
     var provider = req.params.provider;
@@ -388,119 +253,37 @@ module.exports = function(app) {
     });
   }
 
-  /**
-  * GET /reset/:token
-  * Reset Password page.
-  */
-
-  function getReset(req, res, next) {
-    if (req.isAuthenticated()) {
-      return res.redirect('/');
+  function getReset(req, res) {
+    if (!req.accessToken) {
+      req.flash('errors', { msg: 'access token invalid' });
+      return res.render('account/forgot');
     }
-    User.findOne(
-      {
-        where: {
-          resetPasswordToken: req.params.token,
-          resetPasswordExpires: { gte: Date.now() }
-        }
-      },
-      function(err, user) {
-        if (err) { return next(err); }
-        if (!user) {
-          req.flash('errors', {
-            msg: 'Password reset token is invalid or has expired.'
-          });
-          return res.redirect('/forgot');
-        }
-        res.render('account/reset', {
-          title: 'Password Reset',
-          token: req.params.token
-        });
-      });
+    res.render('account/reset', {
+      title: 'Password Reset',
+      accessToken: req.accessToken.id
+    });
   }
 
-  /**
-  * POST /reset/:token
-  * Process the reset password request.
-  */
-
   function postReset(req, res, next) {
-    var errors = req.validationErrors();
+    const errors = req.validationErrors();
+    const { password } = req.body;
 
     if (errors) {
       req.flash('errors', errors);
       return res.redirect('back');
     }
 
-    async.waterfall([
-      function(done) {
-        User.findOne(
-          {
-            where: {
-              resetPasswordToken: req.params.token,
-              resetPasswordExpires: { gte: Date.now() }
-            }
-          },
-          function(err, user) {
-            if (err) { return next(err); }
-            if (!user) {
-              req.flash('errors', {
-                msg: 'Password reset token is invalid or has expired.'
-              });
-              return res.redirect('back');
-            }
-
-            user.password = req.body.password;
-            user.resetPasswordToken = null;
-            user.resetPasswordExpires = null;
-
-            user.save(function(err) {
-              if (err) { return done(err); }
-              req.logIn(user, function(err) {
-                done(err, user);
-              });
-            });
-          });
-      },
-      function(user, done) {
-        var transporter = nodemailer.createTransport({
-          service: 'Mandrill',
-          auth: {
-            user: secrets.mandrill.user,
-            pass: secrets.mandrill.password
-          }
-        });
-        var mailOptions = {
-          to: user.email,
-          from: 'Team@freecodecamp.com',
-          subject: 'Your Free Code Camp password has been changed',
-          text: [
-            'Hello,\n\n',
-            'This email is confirming that you requested to',
-            'reset your password for your Free Code Camp account.',
-            'This is your email:',
-            user.email,
-            '\n'
-          ].join(' ')
-        };
-        transporter.sendMail(mailOptions, function(err) {
-          if (err) { return done(err); }
-          req.flash('success', {
-            msg: 'Success! Your password has been changed.'
-          });
-          done();
-        });
-      }
-    ], function(err) {
+    User.findById(req.accessToken.userId, function(err, user) {
       if (err) { return next(err); }
-      res.redirect('/');
+      user.updateAttribute('password', password, function(err) {
+      if (err) { return next(err); }
+
+        debug('password reset processed successfully');
+        req.flash('info', { msg: 'password reset processed successfully' });
+        res.redirect('/');
+      });
     });
   }
-
-  /**
-  * GET /forgot
-  * Forgot Password page.
-  */
 
   function getForgot(req, res) {
     if (req.isAuthenticated()) {
@@ -516,83 +299,29 @@ module.exports = function(app) {
   * Create a random token, then the send user an email with a reset link.
   */
 
-  function postForgot(req, res, next) {
-    var errors = req.validationErrors();
+  function postForgot(req, res) {
+    const errors = req.validationErrors();
+    const email = req.body.email.toLowerCase();
 
     if (errors) {
       req.flash('errors', errors);
       return res.redirect('/forgot');
     }
 
-    async.waterfall([
-      function(done) {
-        crypto.randomBytes(16, function(err, buf) {
-          if (err) { return done(err); }
-          var token = buf.toString('hex');
-          done(null, token);
-        });
-      },
-      function(token, done) {
-        User.findOne({
-          where: { email: req.body.email.toLowerCase() }
-        }, function(err, user) {
-          if (err) { return done(err); }
-          if (!user) {
-            req.flash('errors', {
-              msg: 'No account with that email address exists.'
-            });
-            return res.redirect('/forgot');
-          }
-
-          user.resetPasswordToken = token;
-          // 3600000 = 1 hour
-          user.resetPasswordExpires = Date.now() + 3600000;
-
-          user.save(function(err) {
-            if (err) { return done(err); }
-            done(null, token, user);
-          });
-        });
-      },
-      function(token, user, done) {
-        var transporter = nodemailer.createTransport({
-          service: 'Mandrill',
-          auth: {
-            user: secrets.mandrill.user,
-            pass: secrets.mandrill.password
-          }
-        });
-        var mailOptions = {
-          to: user.email,
-          from: 'Team@freecodecamp.com',
-          subject: 'Reset your Free Code Camp password',
-          text: [
-            'You are receiving this email because you (or someone else)\n',
-            'requested we reset your Free Code Camp account\'s password.\n\n',
-            'Please click on the following link, or paste this into your\n',
-            'browser to complete the process:\n\n',
-            'http://',
-            req.headers.host,
-            '/reset/',
-            token,
-            '\n\n',
-            'If you did not request this, please ignore this email and\n',
-            'your password will remain unchanged.\n'
-          ].join('')
-        };
-        transporter.sendMail(mailOptions, function(err) {
-          if (err) { return done(err); }
-          req.flash('info', {
-            msg: 'An e-mail has been sent to ' +
-            user.email +
-            ' with further instructions.'
-          });
-          done(null, 'done');
-        });
+    User.resetPassword({
+      email: email
+    }, function(err) {
+      if (err) {
+        req.flash('errors', err);
+        return res.redirect('/forgot');
       }
-    ], function(err) {
-      if (err) { return next(err); }
-      res.redirect('/forgot');
+
+      req.flash('info', {
+        msg: 'An e-mail has been sent to ' +
+        email +
+        ' with further instructions.'
+      });
+      res.render('account/forgot');
     });
   }
 

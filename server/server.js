@@ -2,18 +2,19 @@ require('dotenv').load();
 var pmx = require('pmx');
 pmx.init();
 
-var assign = require('lodash').assign,
-  loopback = require('loopback'),
-  boot = require('loopback-boot'),
-  expressState = require('express-state'),
-  path = require('path'),
-  passportProviders = require('./passport-providers');
+var uuid = require('node-uuid'),
+    assign = require('lodash').assign,
+    loopback = require('loopback'),
+    boot = require('loopback-boot'),
+    expressState = require('express-state'),
+    path = require('path'),
+    passportProviders = require('./passport-providers');
 
+var setProfileFromGithub = require('./utils/auth').setProfileFromGithub;
+var getSocialProvider = require('./utils/auth').getSocialProvider;
 var generateKey =
   require('loopback-component-passport/lib/models/utils').generateKey;
-/**
- * Create Express server.
- */
+
 var app = loopback();
 
 expressState.extend(app);
@@ -26,6 +27,7 @@ var passportConfigurator = new PassportConfigurator(app);
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(loopback.token());
 app.disable('x-powered-by');
 
 // adds passport initialization after session middleware phase is complete
@@ -53,9 +55,9 @@ var passportOptions = {
       emails[0].value :
       null;
 
-    var username = (profile.username || profile.id);
-    username = typeof username === 'string' ? username.toLowerCase() :
-      username;
+    // create random username
+    // username will be assigned when camper signups for Github
+    var username = 'fcc' + uuid.v4().slice(0, 8);
     var password = generateKey('password');
     var userObj = {
       username: username,
@@ -65,8 +67,13 @@ var passportOptions = {
     if (email) {
       userObj.email = email;
     }
-    if (provider === 'github-login') {
-      userObj.isGithubCool = true;
+
+    if (!(/github/).test(provider)) {
+      userObj[getSocialProvider(provider)] = profile.username;
+    }
+
+    if (/github/.test(provider)) {
+      setProfileFromGithub(userObj, profile, profile._json);
     }
     return userObj;
   }

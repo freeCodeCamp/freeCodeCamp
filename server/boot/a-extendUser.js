@@ -1,8 +1,10 @@
-var Rx = require('rx');
-var debug = require('debug')('freecc:user:remote');
+import { Observable } from 'rx';
+import debugFactory from 'debug';
+
+const debug = debugFactory('freecc:user:remote');
 
 function destroyAllRelated(id, Model) {
-  return Rx.Observable.fromNodeCallback(
+  return Observable.fromNodeCallback(
     Model.destroyAll,
     Model
   )({ userId: id });
@@ -19,7 +21,7 @@ module.exports = function(app) {
     if (!id) {
       return next();
     }
-    Rx.Observable.combineLatest(
+    Observable.combineLatest(
       destroyAllRelated(id, UserIdentity),
       destroyAllRelated(id, UserCredential),
       function(identData, credData) {
@@ -70,7 +72,7 @@ module.exports = function(app) {
         'Feel free to email us at this address if you have ',
         'any questions about Free Code Camp.\n',
         'And if you have a moment, check out our blog: ',
-        'blog.freecodecamp.com.\n',
+        'blog.freecodecamp.com.\n\n',
         'Good luck with the challenges!\n\n',
         '- the Free Code Camp Volunteer Team'
       ].join('')
@@ -83,7 +85,7 @@ module.exports = function(app) {
         if (err) { return next(err); }
 
         ctx.req.flash('success', {
-          msg: [ 'thanks for joining freecodecamp!' ]
+          msg: [ "Welcome to Free Code Camp! We've created your account." ]
         });
         ctx.res.redirect('/');
       });

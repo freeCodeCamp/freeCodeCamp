@@ -2,6 +2,7 @@
   "name": "user",
   "base": "User",
   "strict": true,
+  "emailVerificationRequired": false,
   "idInjection": true,
   "trackChanges": false,
   "properties": {
@@ -72,25 +73,20 @@
       "type": "string",
       "default": ""
     },
-    "linkedinProfile": {
-      "type": "string",
-      "default": ""
+    "linkedin": {
+      "type": "string"
     },
-    "githubProfile": {
-      "type": "string",
-      "default": ""
+    "codepen": {
+      "type": "string"
     },
-    "codepenProfile": {
-      "type": "string",
-      "default": ""
+    "twitter": {
+      "type": "string"
     },
-    "twitterHandle": {
-      "type": "string",
-      "default": ""
+    "facebook": {
+      "type": "string"
     },
-    "facebookProfile": {
-      "type": "string",
-      "default": ""
+    "google": {
+      "type": "string"
     },
     "completedBonfires": {
       "type": [
@@ -157,6 +153,10 @@
         }
       ],
       "default": []
+    },
+    "rand": {
+      "type": "number",
+      "index": true
     }
   },
   "validations": [],
