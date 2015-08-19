@@ -3117,7 +3117,7 @@
       "difficulty": 1.46,
       "description": [
         "Now let's start fresh and talk about CSS inheritance.",
-        "Every HTML page has <code>body</code> element.",
+        "Every HTML page has a <code>body</code> element.",
         "We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.",
         "We can do this by adding <code>body { background-color: black; }</code> to our <code>style</code> element."
       ],
