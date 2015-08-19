@@ -16,9 +16,9 @@
         "Try creating one of each."
       ],
       "tests":[
-        "assert(editor.getValue().match(/(\\/\\/)...../g), 'Create a <code>\\/\\/</code> style comment that contains at least five letters');",
-        "assert(editor.getValue().match(/(\\/\\*)...../g), 'Create a <code>\/\\* \\*\/</code> style comment that contains at least five letters.');",
-        "assert(editor.getValue().match(/(\\*\\/)/g), 'Make sure that you close the comment with a <code>\\*\/</code>');"
+        "assert(editor.getValue().match(/(\\/\\/)...../g), 'Create a <code>//</code> style comment that contains at least five letters');",
+        "assert(editor.getValue().match(/(\\/\\*)[\\w\\W]{5,}(?=\\*\\/)/gm), 'Create a <code>/* */</code> style comment that contains at least five letters.');",
+        "assert(editor.getValue().match(/(\\*\\/)/g), 'Make sure that you close the comment with a <code>*/</code>');"
       ],
       "challengeSeed":[
       ],
