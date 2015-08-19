@@ -69,7 +69,6 @@ module.exports = function(app) {
 
   // create a stream of challenge blocks
   const blocks$ = challenge$
-    .doOnNext(() => debug('query challenges'))
     .map(challenge => challenge.toJSON())
     // group challenges by block | returns a stream of observables
     .groupBy(challenge => challenge.block)
