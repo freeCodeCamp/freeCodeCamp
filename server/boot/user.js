@@ -4,23 +4,32 @@ var _ = require('lodash'),
     debug = require('debug')('freecc:cntr:userController');
 
 
+const daysBetween = 1.5;
+
 function calcCurrentStreak(cals) {
   const revCals = cals.slice().reverse();
   let streakBroken = false;
-  return revCals
+  const lastDayInStreak = revCals
     .reduce((current, cal, index) => {
-      // if streak not borken and diff between this cal and the call after it
-      // is equal to zero
-      // moment.diff will return the days between rounded down
+      const before = revCals[index === 0 ? 0 : index - 1];
       if (
         !streakBroken &&
-        moment(revCals[index === 0 ? 0 : index - 1]).diff(cal, 'days') === 0
+        moment(before).diff(cal, 'days', true) < daysBetween
       ) {
-        return current + 1;
+        return index;
       }
-      return 1;
-    }, 1);
+      return current;
+    }, 0);
+
+  const lastTimestamp = revCals[lastDayInStreak];
+  return Math.ceil(moment().diff(lastTimestamp, 'days', true));
 }
+
+// TODO(berks): calc longest streak
+/*
+function longestStreak(cals) {
+}
+*/
 
 module.exports = function(app) {
   var router = app.loopback.Router();
@@ -129,9 +138,7 @@ module.exports = function(app) {
               objOrNum :
               objOrNum.timestamp;
           })
-          .map(time => {
-            return moment(time).format('YYYY-MM-DD');
-          });
+          .sort();
 
         user.currentStreak = calcCurrentStreak(cals);
 
@@ -145,6 +152,9 @@ module.exports = function(app) {
             return typeof objOrNum === 'number' ?
               objOrNum :
               objOrNum.timestamp;
+          })
+          .filter((timestamp) => {
+            return !!timestamp;
           })
           .reduce((data, timeStamp) => {
             data[(timeStamp / 1000)] = 1;
