@@ -11,6 +11,8 @@ function calcCurrentStreak(cals) {
   let streakBroken = false;
   const lastDayInStreak = revCals
     .reduce((current, cal, index) => {
+      debug('cal', cal);
+      debug('broken', streakBroken);
       const before = revCals[index === 0 ? 0 : index - 1];
       if (
         !streakBroken &&
@@ -18,6 +20,7 @@ function calcCurrentStreak(cals) {
       ) {
         return index;
       }
+      streakBroken = true;
       return current;
     }, 0);
 
