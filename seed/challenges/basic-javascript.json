@@ -889,7 +889,7 @@
       "title": "Generate Random Whole Numbers with JavaScript",
       "difficulty":"9.9828",
       "description":[
-        "It's great that we can create random decimal numbers, but it's even more useful if we lot more useful to generate a random whole number.",
+        "It's great that we can create random decimal numbers, but it's even more useful if we use it to generate a random whole number.",
         "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
         "This technique gives us a whole number between zero and nine",
         "Example:",
