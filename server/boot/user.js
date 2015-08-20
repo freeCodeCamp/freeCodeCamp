@@ -67,7 +67,6 @@ module.exports = function(app) {
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/account/api', getAccountAngular);
-  router.post('/account/password', postUpdatePassword);
   router.post('/account/delete', postDeleteAccount);
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/account', getAccount);
@@ -205,34 +204,6 @@ module.exports = function(app) {
         });
       }
     );
-  }
-
-  function postUpdatePassword(req, res, next) {
-    req.assert('password', 'Password must be at least 4 characters long')
-      .len(4);
-
-    req.assert('confirmPassword', 'Passwords do not match')
-      .equals(req.body.password);
-
-    var errors = req.validationErrors();
-
-    if (errors) {
-      req.flash('errors', errors);
-      return res.redirect('/account');
-    }
-
-    User.findById(req.user.id, function(err, user) {
-      if (err) { return next(err); }
-
-      user.password = req.body.password;
-
-      user.save(function(err) {
-        if (err) { return next(err); }
-
-        req.flash('success', { msg: 'Password has been changed.' });
-        res.redirect('/account');
-      });
-    });
   }
 
   function postDeleteAccount(req, res, next) {
