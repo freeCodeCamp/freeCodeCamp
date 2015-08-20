@@ -1,9 +1,11 @@
-var _ = require('lodash'),
-    async = require('async'),
-    moment = require('moment'),
-    debug = require('debug')('freecc:cntr:userController');
+import _ from 'lodash';
+import async from 'async';
+import moment from 'moment';
+import debugFactory from 'debug';
 
+import { ifNoUser401 } from '../utils/middleware';
 
+const debug = debugFactory('freecc:boot:user');
 const daysBetween = 1.5;
 
 function calcCurrentStreak(cals) {
@@ -67,7 +69,11 @@ module.exports = function(app) {
   router.get('/email-signup', getEmailSignup);
   router.get('/email-signin', getEmailSignin);
   router.get('/account/api', getAccountAngular);
-  router.post('/account/delete', postDeleteAccount);
+  router.post(
+    '/account/delete',
+    ifNoUser401,
+    postDeleteAccount
+  );
   router.get('/account/unlink/:provider', getOauthUnlink);
   router.get('/account', getAccount);
   // Ensure this is the last route!
