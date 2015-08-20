@@ -252,11 +252,11 @@ var allSeeds = '';
 
 editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
 
-editor.setValue(editorValue.replace(/\<script\>/gi, 'fccss').replace(/\<\/script\>/gi, 'fcces');
+editor.setValue(editorValue.replace((/fccss/gi), '<script>').replace((/fcces/gi), '</script>'));
 editor.refresh();
 
 var resetEditor = function resetEditor() {
-  editor.setValue(allSeeds);
+  editor.setValue(allSeeds.replace((/fccss/gi), '<script>').replace((/fcces/gi), '</script>'));
   updatePreview();
   codeStorage.updateStorage();
 };
