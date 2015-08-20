@@ -90,7 +90,8 @@
         "expect(factorialize(5)).to.be.a(\"Number\");",
         "expect(factorialize(5)).to.equal(120);",
         "expect(factorialize(10)).to.equal(3628800);",
-        "expect(factorialize(20)).to.equal(2432902008176640000);"
+        "expect(factorialize(20)).to.equal(2432902008176640000);",
+        "expect(factorialize(0)).to.equal(1);"
       ],
       "difficulty": "1.02",
       "description": [
