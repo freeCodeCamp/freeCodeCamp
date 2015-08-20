@@ -671,8 +671,8 @@
       "id": "bad87fee1348bd9aed208826",
       "title": "Target the Children of an Element Using jQuery",
       "difficulty": 3.14,
-      "description": [
-        "Many HTML elements have <code>children</code> elements from which they <code>inherit</code> properties.",
+      "description": [ 
+        "Many HTML elements have <code>children</code> elements from which <code>inherit</code> their properties.",
         "For example, every HTML element is a child of your <code>body</code> element, and your \"jQuery Playground\" <code>h3</code> element is a child of your <code>&#60;div class=\"container-fluid\"&#62</code> element.",
         "jQuery has a function called <code>children()</code> that allows you to access the children of whichever element you've selected.",
         "Give all the children of your <code>#right-well</code> element a color of green.",
