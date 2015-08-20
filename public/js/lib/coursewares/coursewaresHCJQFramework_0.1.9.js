@@ -252,7 +252,7 @@ var allSeeds = '';
 
 editorValue = (codeStorage.isAlive())? codeStorage.getEditorValue() : allSeeds;
 
-editor.setValue(editorValue);
+editor.setValue(editorValue.replace(/\<script\>/gi, 'fccss').replace(/\<\/script\>/gi, 'fcces');
 editor.refresh();
 
 var resetEditor = function resetEditor() {
@@ -260,7 +260,7 @@ var resetEditor = function resetEditor() {
   updatePreview();
   codeStorage.updateStorage();
 };
-
+/*
 var challengeSeed = challengeSeed || null;
 var allSeeds = '';
 (function() {
@@ -274,4 +274,4 @@ var allSeeds = '';
     }, 200);
   })();
 })();
-
+*/
