@@ -200,6 +200,7 @@ codeStorage.isAlive = function() {
     (val && val.length > 0);
 }
 codeStorage.updateStorage = function(){
+  document.getElementById('scroll-locker').dispatchEvent(new CustomEvent('previewUpdateSpy', {'detail': $('.scroll-locker').scrollTop()}));
   if(typeof(Storage) !== undefined) {
     var value = editor.getValue();
     localStorage.setItem(codeStorage.keyValue, value);
@@ -256,10 +257,14 @@ editor.setValue(editorValue.replace((/fccss/gi), '<script>').replace((/fcces/gi)
 editor.refresh();
 
 var resetEditor = function resetEditor() {
+  document.getElementById('scroll-locker').dispatchEvent(new CustomEvent('previewUpdateSpy', {'detail': $('.scroll-locker').scrollTop()}));
   editor.setValue(allSeeds.replace((/fccss/gi), '<script>').replace((/fcces/gi), '</script>'));
   updatePreview();
   codeStorage.updateStorage();
 };
+
+
+
 /*
 var challengeSeed = challengeSeed || null;
 var allSeeds = '';

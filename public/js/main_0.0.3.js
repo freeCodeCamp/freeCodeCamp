@@ -383,6 +383,21 @@ $(document).ready(function() {
               lockTop();
             });
         }
+       var execInProgress = false;
+       document.getElementById('scroll-locker').addEventListener('previewUpdateSpy', function(e){
+           if (!execInProgress){
+               execInProgress = true;
+               setTimeout(function(){
+                   if($($('.scroll-locker').children()[0]).height()-800 > e.detail){
+                       $('.scroll-locker').scrollTop(e.detail);
+                   }
+                   else {
+                       $('.scroll-locker').animate({"scrollTop":$($('.scroll-locker').children()[0]).height()}, 175);
+                   }
+                   execInProgress = false;
+               }, 750);
+           }
+       }, false);
     }
 });
 
