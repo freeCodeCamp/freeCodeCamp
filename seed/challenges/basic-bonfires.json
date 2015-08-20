@@ -506,7 +506,8 @@
         "expect(mutation(['Mary', 'Army'])).to.be.true;",
         "expect(mutation(['Mary', 'Aarmy'])).to.be.true;",
         "expect(mutation(['Alien', 'line'])).to.be.true;",
-        "expect(mutation(['floor', 'for'])).to.be.true;"
+        "expect(mutation(['floor', 'for'])).to.be.true;",
+        "expect(mutation(['hello', 'neo'])).to.be.false;"
       ],
       "MDNlinks": [
         "Array.indexOf()"
