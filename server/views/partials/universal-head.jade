@@ -14,20 +14,6 @@ meta(http-equiv='X-UA-Compatible', content='IE=edge')
 meta(name='viewport', content='width=device-width, initial-scale=1.0')
 meta(name='csrf-token', content=_csrf)
 script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
-script.
-    window.jQuery || document.write('<script src="/bower_components/jquery/dist/jquery.min.js"><\/script>');
-script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js")
-script.
-    if (typeof window.angular === 'undefined') {
-        document.write('<script src="/bower_components/angular/angular.min.js"><\/script>');
-    }
-script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap.min.js")
-script.
-    try {
-        angular.module('ui.bootstrap');
-    } catch (e) {
-        document.write('<script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"><\/script>');
-    }
 script(src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js")
 script.
     window.d3 || document.write('<script src="/bower_components/d3/d3.js"><\/script>');
@@ -41,7 +27,6 @@ script.
     window.moment || document.write('<script src="/bower_components/moment/min/moment.min.js"><\/script>');
 // Leave the below lines alone!
 script(src="/js/main_0.0.3.js")
-script(src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js")
 script(src="/bower_components/ramda/dist/ramda.min.js")
 script.
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
