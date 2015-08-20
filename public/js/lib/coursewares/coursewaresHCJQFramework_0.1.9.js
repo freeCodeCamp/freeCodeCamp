@@ -260,7 +260,7 @@ var resetEditor = function resetEditor() {
   updatePreview();
   codeStorage.updateStorage();
 };
-/*
+
 var challengeSeed = challengeSeed || null;
 var allSeeds = '';
 (function() {
@@ -274,4 +274,4 @@ var allSeeds = '';
     }, 200);
   })();
 })();
-*/
+
