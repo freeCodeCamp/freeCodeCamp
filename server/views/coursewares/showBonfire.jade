@@ -16,49 +16,11 @@ block content
     script(type='text/javascript', src='/js/lib/jailed/jailed.js')
     script(type='text/javascript', src='/js/lib/coursewares/sandbox.js')
 
-    .row(ng-controller="pairedWithController")
+    .row
         .col-xs-12.col-sm-12.col-md-4.col-lg-3
             .scroll-locker
                 #testCreatePanel.well
                     h3.text-center.negative-10= name
-                    .positive-15.positive-15-bottom
-                        h4.text-center.bonfire-flames Difficulty:&thinsp;
-                            if (difficulty == "0")
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                            if (difficulty == "1")
-                                i.ion-ios-flame
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                            if (difficulty == "2")
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                            if (difficulty == "3")
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                            if (difficulty == "4")
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame-outline
-                            if (difficulty == "5")
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
                     .row
                         .col-xs-12
                             .bonfire-instructions
@@ -72,16 +34,12 @@ block content
                                                 ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
 
                 if (user)
-                    form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                    form.form-horizontal(name='completedWithForm')
                         .form-group.text-center.negative-10
                             .col-xs-12
                                 // extra field to distract password tools like lastpass from injecting css into our username field
-                                input.form-control(ng-show="false")
-                                input.form-control#completed-with(name="existingUser", placeholder="Your pair's username if pairing", existing-username='', ng-model="existingUser")
-                            .col-xs-12(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
-                                alert(type='danger')
-                                    span.ion-close-circled
-                                    | Username not found
+                                input.form-control.hidden
+                                input.form-control#completed-with(placeholder="Your pair's username if pairing")
                 label.negative-10.btn.btn-primary.btn-block#submitButton
                     i.fa.fa-play
                         | &nbsp; Run code (ctrl + enter)
