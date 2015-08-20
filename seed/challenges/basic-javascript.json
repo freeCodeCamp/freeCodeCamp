@@ -113,7 +113,7 @@
       "description": [
         "<code>data structures</code> have <code>properties</code>. For example, <code>strings</code> have a property called <code>.length</code> that will tell you how many characters are in the string.",
         "For example, if we created a variable <code>var firstName = \"Charles\"</code>, we could find out how long the string \"Charles\" is by using the <code>firstName.length</code> property.",
-        "Use the <code>.length</code> property to count the number of characters in the <code>lastNameLength</code> variable."
+        "Use the <code>.length</code> property to count the number of characters in the <code>lastName</code> variable."
       ],
       "tests": [
         "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return(true);}else{return(false);}})(), 'lastNameLength should be equal to eight.');",
@@ -150,7 +150,7 @@
         "<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.",
         "Computers don't start counting at 1 like humans do. They start at 0.",
         "For example, the character at index 0 in the word \"Charles\" is \"C\". So if <code>var firstName = \"Charles\"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.",
-        "Use <code>bracket notation</code> to find the first character in a the <code>firstLetterOfLastName</code> variable.",
+        "Use <code>bracket notation</code> to find the first character in the <code>firstLetterOfLastName</code> variable.",
         "Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
@@ -216,7 +216,7 @@
         "In order to get the last letter of a string, you can subtract one from the string's length.",
         "For example, if <code>var firstName = \"Charles\"</code>, you can get the value of the last letter of the string by using <code>firstName[firstName.length - 1]</code>.",
         "Use <code>bracket notation</code> to find the last character in the <code>lastName</code> variable.",
-        "Try looking at the <code>lastLetterOfLastName</code> variable declaration if you get stuck."
+        "Try looking at the <code>lastLetterOfFirstName</code> variable declaration if you get stuck."
       ],
       "tests": [
         "assert(lastLetterOfLastName === \"e\", 'lastLetterOfLastName should be \"e\"');",
@@ -496,7 +496,7 @@
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
         "// You'll learn about functions soon.",
-        "if(typeof(myArray) !== \"undefined\" && typeof(data) !== \"undefined\"){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', data = ' + JSON.stringify(z));})(myArray, data);}"
+        "if(typeof(myArray) !== \"undefined\" && typeof(myData) !== \"undefined\"){(function(y,z){return('myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z));})(myArray, myData);}"
       ],
       "type": "waypoint",
       "challengeType": 1
@@ -755,7 +755,7 @@
       "title": "Manipulate JavaScript Objects",
       "difficulty":"9.9823",
       "description":[
-        "There are many ways to add and add and remove properties from objects.",
+        "There are many ways to add and remove properties from objects.",
         "For example, we can add properties to objects like this:",
         "<code>myObject.myProperty = \"myValue\";</code>",
         "We can also delete them like this:",
@@ -832,7 +832,7 @@
       "difficulty":"9.9825",
       "description":[
         "You can run the same code multiple times by using a loop.",
-        "Another type of JavaScript loop is called a \"while loop\" because it runs \"while\" something is true, and stops once that something is no longer true.",
+        "Another type of JavaScript loop is called a \"while loop\", because it runs \"while\" something is true and stops once that something is no longer true.",
         "<code>var ourArray = [];</code>",
         "<code>var i = 0;</code>",
         "<code>while(i < 5) {</code>",
@@ -859,7 +859,7 @@
       "title": "Generate Random Fractions with JavaScript",
       "difficulty":"9.9827",
       "description":[
-        "Random numbers are useful for creating random behaviours and games.",
+        "Random numbers are useful for creating random behavior.",
         "JavaScript has a <code>Math.random()</code> function that generates a random decimal number.",
         "Use <code>Math.random()</code> to get <code>myFunction</code> to return a random number."
       ],
@@ -956,16 +956,16 @@
       "difficulty":"9.983",
       "description":[
         "We can use if statements in JavaScript to only execute code if a certain condition is met.",
-        "if statements require some sort of boolean condition evaluate.",
+        "if statements require some sort of boolean condition to evaluate.",
         "Example:",
-        "<code> if (1 == 2) {</code>",
+        "<code> if (1 === 2) {</code>",
         "<code>&thinsp;&thinsp;return(true);</code>",
         "<code>}</code>",
         "<code>else {</code>",
         "<code>&thinsp;&thinsp;return(false);</code>",
         "<code>}</code>",
         "Let's use <code>if</code> and <code>else</code> statements to make a coin-flip game.",
-        "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero and to return <code>tails</code> if it's not."
+        "Create an <code>if-else statement</code> to return <code>heads</code> if the flip var is zero, or else return <code>tails</code> if it's not."
       ],
       "tests":[
         "assert((function(){if(myFunction() === \"heads\" || myFunction() === \"tails\"){return(true);}else{return(false);}})(), 'myFunction should either return heads or tails');",
@@ -975,7 +975,7 @@
       "challengeSeed":[
         "function myFunction(){",
         "  var flip = Math.floor(Math.random() * (1 - 0 + 1)) + 0;",
-        "  // Create and if else statement here to return \"heads\" if flip is 0. Otherwise return \"tails\".",
+        "  // Create an if-else statement here to return \"heads\" if flip is 0. Otherwise return \"tails\".",
         "",
         "  // Only change code below this line.",
         "",
@@ -1002,7 +1002,7 @@
         "<code>g</code> means that we want to search the entire string for this pattern.",
         "<code>i</code> means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.",
         "<code>Regular expressions</code> are usually surrounded by <code>/</code> symbols.",
-        "Let's try selecting all the occurances of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>.+</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
+        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>.+</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
       ],
       "tests":[
         "assert(test==2, 'Your <code>regular expression</code> should find two occurrences of the word <code>and</code>');",
@@ -1040,7 +1040,7 @@
       ],
       "challengeSeed":[
         "var test = (function() {",
-        "  var testString = \"There's 3 cats but 4 dogs.\";",
+        "  var testString = \"There are 3 cats but 4 dogs.\";",
         "",
         "  // Only change code below this line.",
         "",
@@ -1093,12 +1093,12 @@
         "You can invert any match by using the uppercase version of the selector <code>\\s</code> versus <code>\\S</code> for example."
       ],
       "tests":[
-        "assert(test === 36, 'Your RegEx should have found seven spaces in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\+S/gi</code> to find the spaces in the <code>testString</code>.');"
+        "assert(test === 49, 'Your RegEx should have found forty nine non-space characters in the <code>testString</code>.');",
+        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\S/gi</code> to find non-space characters in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
-        "  var testString = \"How many spaces are there in this sentence?\";",
+        "  var testString = \"How many non-space characters are there in this sentence?\";",
         "",
         "  // Only change code below this line.",
         "",
