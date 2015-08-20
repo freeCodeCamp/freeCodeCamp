@@ -154,7 +154,7 @@
       "difficulty": 3.04,
       "description": [
         "You can also target elements by their id attributes.",
-        "First target your <code>div</code> element with the id <code>target3</code> by using the <code>$(\"#target3\")</code> selector.",
+        "First target your <code>button</code> element with the id <code>target3</code> by using the <code>$(\"#target3\")</code> selector.",
         "Note that, just like with CSS declarations, you type a <code>#</code> before the id's name.",
         "Then use jQuery's <code>.addClass()</code> function to add the classes <code>animated</code> and <code>fadeOut</code>.",
         "Here's how you'd make the <code>button</code> element with the id <code>target6</code> fade out: <code>$(\"#target6\").addClass(\"animated fadeOut\")</code>."
