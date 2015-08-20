@@ -3117,7 +3117,7 @@
       "difficulty": 1.46,
       "description": [
         "Now let's start fresh and talk about CSS inheritance.",
-        "Every HTML page has <code>body</code> element.",
+        "Every HTML page has a <code>body</code> element.",
         "We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.",
         "We can do this by adding <code>body { background-color: black; }</code> to our <code>style</code> element."
       ],
@@ -3235,7 +3235,8 @@
         "Our \"pink-text\" class overrode our <code>body</code> element's CSS declaration!",
         "We just proved that our classes will override the <code>body</code> element's CSS. So the next logical question is, what can we do to override our <code>pink-text</code> class?",
         "Create an additional CSS class called <code>blue-text</code> that gives an element the color blue. Make sure it's below your <code>pink-text</code> class declaration.",
-        "Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins."
+        "Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins.",
+        "Applying multiple class attributes to a HTML element is done with a space between them like this: <code>class=\"class1 class2\"</code>"
       ],
       "tests": [
         "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.')",
@@ -3387,7 +3388,7 @@
         "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.')",
         "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.')",
         "assert(editor.match(/<h1.*style/gi) && editor.match(/<h1.*style.*color:/gi).length > 0, 'Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.')",
-        "assert(editor.match(/pink.*\\!important/gi) && editor.match(/pink.*\\!important;/gi).length > 0, 'Your <code>pink-text</code> class should have the <code>!important</code> keyword to override all other declarations.')",
+        "assert(editor.match(/pink.*\\!important;/gi), 'Your <code>pink-text</code> class should have the <code>!important</code> keyword to override all other declarations.')",
         "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.')"
       ],
       "challengeSeed": [
@@ -3431,7 +3432,7 @@
       "description": [
         "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
         "<code>Decimal</code> means the numbers zero through nine - the numbers that people use in everyday life. <code>Hexadecimal</code> includes these 10 numbers, plus the letters A, B, C, D, E and F. This means that Hexidecimal has a total of 16 possible values, instead of the 10 possible values that our normal base-10 number system gives us.",
-        "With CSS, we use 6 hexidecimal number to represent colors. For example, <code>#000000</code> is the lowest possible value, and it represents the color black.",
+        "With CSS, we use 6 hexadecimal numbers to represent colors. For example, <code>#000000</code> is the lowest possible value, and it represents the color black.",
         "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code>. "
       ],
       "tests": [
@@ -3749,7 +3750,7 @@
       "description": [
         "Another way you can represent colors in CSS is by using <code>rgb</code> values.",
         "RGB values look like this: <code>rgb(0, 0, 0)</code> for black and <code>rgb(255, 255, 255)</code> for white.",
-        "Instead of using six hexadecimal digits like you do with hex code, with <code>rbg</code> you specify the brightness of each color with a number between 0 and 255.",
+        "Instead of using six hexadecimal digits like you do with hex code, with <code>rgb</code> you specify the brightness of each color with a number between 0 and 255.",
         "If you do the math, 16 times 16 is 256 total values. So <code>rgb</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],
