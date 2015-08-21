@@ -461,8 +461,8 @@
       ],
       "tests": [
         "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements');",
-        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements when n < 1');",
-        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array when n >= array.length');"
+        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements');",
+        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array');"
       ],
       "MDNlinks": [
         "Array.slice()",
