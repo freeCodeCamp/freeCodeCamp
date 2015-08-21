@@ -759,7 +759,7 @@
         "For example, we can add properties to objects like this:",
         "<code>myObject.myProperty = \"myValue\";</code>",
         "We can also delete them like this:",
-        "<code>delete(myObject.myProperty);</code>",
+        "<code>delete myObject.myProperty;</code>",
         "Let's add the property \"bark\", and delete the property \"tails\"."
       ],
       "tests":[
@@ -775,7 +775,7 @@
         "// };",
         "",
         "// ourDog.bark = \"arf!\";",
-        "// delete(ourDog.tails);",
+        "// delete ourDog.tails;",
         "",
         "var myDog = {",
         "   \"name\": \"Camper\",",
