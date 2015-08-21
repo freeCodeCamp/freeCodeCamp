@@ -1769,7 +1769,7 @@
         "Nest one <code>div</code> element with the class <code>well</code> within each of your <code>col-xs-6</code> <code>div</code> elements."
       ],
       "tests": [
-        "assert($(\"div\").length > 4, 'Add two <code>div</code> elements inside each of your <code>div class=\"col-xs-6\"></code> elements both with the class <code>well</code>')",
+        "assert($(\"div\").length > 4, 'Add a <code>div</code> element with the class <code>well</code> inside each of your <code>div class=\"col-xs-6\"> elements</code>')",
         "assert($(\"div.col-xs-6\").children(\"div.well\").length > 1, 'Nest both of your <code>div class=\"col-xs-6\"</code> elements within your <code>div class=\"row\"</code> element.')",
         "assert(editor.match(/<\\/div>/g) && editor.match(/<div/g) && editor.match(/<\\/div>/g).length === editor.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.')"
       ],
