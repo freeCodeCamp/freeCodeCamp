@@ -818,6 +818,10 @@
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
       "challengeSeed":[
+        "ourArray = [];",
+        "for(var i = 0; i < 5; i++){",
+        "  ourArray.push(i);",
+        "}",
         "var myArray = [];",
         "//Push the numbers zero through four to myArray using a \"for loop\" like above.",
         "",
