@@ -774,7 +774,7 @@
         "//   \"friends\": [\"everything!\"]",
         "// };",
         "",
-        "// ourDog.bark(\"arf!\");",
+        "// ourDog.bark = \"arf!\";",
         "// delete(ourDog.tails);",
         "",
         "var myDog = {",
