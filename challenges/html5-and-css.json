@@ -755,7 +755,7 @@
       ],
       "tests": [
         "assert($(\"img\").length > 0, 'Your page should have an image element.')",
-        "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat\", \"gi\").test($(\"img\").attr(\"src\")), 'Your image should have have a <code>src</code> attribute that points to the kitten image.')"
+        "assert(new RegExp(\"\\/\\/bit.ly\\/fcc-relaxing-cat\", \"gi\").test($(\"img\").attr(\"src\")), 'Your image should have a <code>src</code> attribute that points to the kitten image.')"
       ],
       "challengeSeed": [
         "<link href=\"http://fonts.googleapis.com/css?family=Lobster\" rel=\"stylesheet\" type=\"text/css\">",
