@@ -432,9 +432,9 @@
       "challengeSeed": [
         "//var array = [\"John\", 23];",
         "",
-        "var myArray = [];",
         "// Only change code below this line.",
         "",
+        "var myArray = [];",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -457,9 +457,9 @@
       ],
       "challengeSeed":[
         "var ourArray = [[\"the universe\", \"everything\", 42]];",
-        "var myArray = [];",
         "// Only change code below this line.",
         "",
+        "var myArray = [];",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
