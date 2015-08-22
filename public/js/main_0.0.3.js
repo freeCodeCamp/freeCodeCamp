@@ -59,69 +59,17 @@ $(document).ready(function() {
 
   function reBindModals(){
 
-      $('#i-want-help').unbind('click');
-      $('#i-want-help').on('click', function() {
-          $('#help-modal').modal('hide');
-          var editorValue = editor.getValue();
-          var currentLocation = window.location.href;
-          $.post(
-              '/get-help',
-              {
-                  payload: {
-                      code: editorValue,
-                      challenge: currentLocation
-                  }
-              },
-              function(res) {
-                  if (res) {
-                      window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
-                  }
-              }
-          );
-      });
-
-      $('#i-want-help-editorless').unbind('click');
-      $('#i-want-help-editorless').on('click', function() {
-          $('#help-editorless-modal').modal('hide');
-          var currentLocation = window.location.href;
-          $.post(
-              '/get-help',
-              {
-                  payload: {
-                      challenge: currentLocation
-                  }
-              },
-              function(res) {
-                  if (res) {
-                      window.open('https://gitter.im/FreeCodeCamp/Help', '_blank')
-                  }
-              }
-          );
+      $('.close-modal').unbind('click');
+      $('.close-modal').on('click', function(){
+        setTimeout(function() {
+          $('#issue-modal').modal('hide');
+        }, 2000);
       });
 
       $('#report-issue').unbind('click');
       $('#report-issue').on('click', function() {
           $('#issue-modal').modal('hide');
           window.open('https://github.com/freecodecamp/freecodecamp/issues/new?&body=Challenge '+ window.location.href +' has an issue. Please describe how to reproduce it, and include links to screenshots if possible.', '_blank')
-      });
-
-      $('#i-want-help').unbind('click');
-      $('#i-want-to-pair').on('click', function() {
-          $('#pair-modal').modal('hide');
-          var currentLocation = window.location.href;
-          $.post(
-              '/get-pair',
-              {
-                  payload: {
-                      challenge: currentLocation
-                  }
-              },
-              function(res) {
-                  if (res) {
-                      window.open('https://gitter.im/FreeCodeCamp/LetsPair', '_blank')
-                  }
-              }
-          );
       });
 
       $('#completed-courseware').unbind('click');
