@@ -999,18 +999,17 @@
       "difficulty":"9.984",
       "description":[
         "<code>Regular expressions</code> are used to find certain words or patterns inside of <code>strings</code>.",
-        "For example, if we wanted to find the number of times the word <code>the</code> occurred in the string <code>The dog chased the cat</code>, we could use the following <code>regular expression</code>: <code>\/the+\/gi</code>",
+        "For example, if we wanted to find the word <code>the</code> in the string <code>The dog chased the cat</code>, we could use the following <code>regular expression</code>: <code>\/the\/gi</code>",
         "Let's break this down a bit:",
         "<code>the</code> is the pattern we want to match.",
-        "<code>+</code> means we want to find one or more occurrences of this pattern.",
-        "<code>g</code> means that we want to search the entire string for this pattern.",
+        "<code>g</code> means that we want to search the entire string for this pattern instead of just the first match.",
         "<code>i</code> means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.",
-        "<code>Regular expressions</code> are usually surrounded by <code>/</code> symbols.",
-        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>.+</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
+        "<code>Regular expressions</code> are written by surrounding the pattern with a <code>/</code> symbol.",
+        "Let's try selecting all the occurrences of the word <code>and</code> in the string <code>George Boole and Alan Turing went to the shop and got some milk</code>. We can do this by replacing the <code>...</code> part of our regular expression with the current <code>regular expression</code> with the word <code>and</code>."
       ],
       "tests":[
         "assert(test==2, 'Your <code>regular expression</code> should find two occurrences of the word <code>and</code>');",
-        "assert(editor.getValue().match(/\\/and\\+\\/gi/), 'You should have used <code>regular expressions</code> to find the word <code>and</code>');"
+        "assert(editor.getValue().match(/\\/and\\/gi/), 'You should have used <code>regular expressions</code> to find the word <code>and</code>');"
       ],
       "challengeSeed":[
         "var test = (function() {",
@@ -1018,7 +1017,7 @@
         "  var expressionToGetMilk = /milk/gi;",
         "  // Only change code below this line.",
         "",
-        "  var expression = /.+/gi;",
+        "  var expression = /.../gi;",
         "",
         "  // Only change code above this line.",
         "  // We use this function to show you the value of your variable in your output box.",
