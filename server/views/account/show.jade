@@ -30,10 +30,9 @@ block content
                         if (google)
                             a.fa.fa-google-square.text-primary(title="@#{username}'s Google Profile", href=google, target='_blank')
                     .col-xs-12.col-sm-12.text-center
-                        h1.flat-top.wrappable= name
+                        h2.flat-top.wrappable= name
                         h3.flat-top.bolded.wrappable= location
-                    .col-xs-12.col-sm-12.text-center
-                        = "[ " + (progressTimestamps.length) + " ]"
+                        h1= "[ " + (progressTimestamps.length) + " ]"
             .spacer
                 .hidden-xs.hidden-sm.col-md-12
                     #cal-heatmap.d3-centered
