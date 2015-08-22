@@ -1277,8 +1277,8 @@
       "description":[
         "Now that our slots will each generate random numbers, we need to check whether they've all returned the same number.",
         "If they have, we should notify our user that they've won.",
-        "Otherwise, we should return <code>null</code>, which is a JavaScript data structure that means nothing.",
-        "If all three numbers match, we should change the value of win to the number that we have three of or leave it as null.",
+        "Otherwise, we should return <code>null</code>, which is a JavaScript literal representing null or an \"empty\" value, i.e. no object value is present.",
+        "If all three numbers match, we should return the number that we have in three of slots or leave it as null.",
         "Let's create an <code>if statement</code> with multiple conditions in order to check whether all numbers are equal.",
         "<code>if(slotOne !== slotTwo || slotTwo !== slotThree){</code>",
         "<code>&thinsp;&thinsp;return(null);</code>",
