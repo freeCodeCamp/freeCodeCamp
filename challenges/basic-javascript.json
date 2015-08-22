@@ -894,11 +894,11 @@
       "difficulty":"9.9828",
       "description":[
         "It's great that we can create random decimal numbers, but it's even more useful if we use it to generate a random whole number.",
-        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
-        "This technique gives us a whole number between zero and nine",
+        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number.",
+        "This technique gives us a whole number between zero and nine.",
         "Example:",
         "<code>Math.floor(Math.random()*10);</code>",
-        "Let's give this technique a go now"
+        "Let's give this technique a go now."
       ],
       "tests":[
         "assert(typeof(myFunction()) === \"number\", 'The result of myFunction should be a number');",
