@@ -617,7 +617,7 @@
       "title": "Target the Parent of an Element Using jQuery",
       "difficulty": 3.13,
       "description": [
-        "Every HTML elements has a <code>parent</code> element from which it <code>inherits</code> properties.",
+        "Every HTML element has a <code>parent</code> element from which it <code>inherits</code> properties.",
         "For example, your <code>jQuery Playground</code> <code>h3</code> element has the parent element of <code>&#60;div class=\"container-fluid\"&#62</code>, which itself has the parent <code>body</code>.",
         "jQuery has a function called <code>parent()</code> that allows you to access the parent of whichever element you've selected.",
         "Give the parent of the <code>#target1</code> element background-color of red.",
