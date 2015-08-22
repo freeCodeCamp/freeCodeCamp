@@ -242,20 +242,6 @@ $(document).ready(function() {
           window.location = '/challenges/' + (parseInt(l[l.length - 1]) + 1);
       });
 
-      // Bonfire instructions functions
-      $('#more-info').unbind('click');
-      $('#more-info').on('click', function() {
-          ga('send', 'event',  'Challenge', 'more-info', challengeName);
-          $('#brief-instructions').hide();
-          $('#long-instructions').show().removeClass('hide');
-
-      });
-      $('#less-info').unbind('click');
-      $('#less-info').on('click', function() {
-          $('#brief-instructions').show();
-          $('#long-instructions').hide();
-      });
-
       $('#complete-courseware-dialog').on('hidden.bs.modal', function() {
           editor.focus();
       });
