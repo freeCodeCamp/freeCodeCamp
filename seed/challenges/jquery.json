@@ -786,7 +786,7 @@
       "difficulty": 3.16,
       "description": [
         "You can also target all the even-numbered elements.",
-        "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes: <code>$('.target:odd').addClass('animated shake');</code>",
+        "Here's how you would target all the odd-numbered elements with class <code>target</code> and give them classes: <code>$(\".target:odd\").addClass(\"animated shake\");</code>",
         "Try selecting all the even-numbered elements - that is, what your browser will consider even-numbered elements - and giving them the classes of <code>animated</code> and <code>shake</code>."
       ],
       "tests": [
