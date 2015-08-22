@@ -117,7 +117,7 @@
       ],
       "tests": [
         "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return(true);}else{return(false);}})(), 'lastNameLength should be equal to eight.');",
-        "assert ((function(){if(editor.getValue().match(/\\.length/gi) && editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi) && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>');"
+        "assert((function(){if(editor.getValue().match(/\\.length/gi) && editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi) && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>');"
       ],
       "challengeSeed": [
         "var firstNameLength = 0;",
