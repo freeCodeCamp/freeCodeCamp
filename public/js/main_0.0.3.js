@@ -62,8 +62,8 @@ $(document).ready(function() {
       $('.close-modal').unbind('click');
       $('.close-modal').on('click', function(){
         setTimeout(function() {
-          $('#issue-modal').modal('hide');
-        }, 2000);
+          $('#help-modal').modal('hide');
+        }, 200);
       });
 
       $('#report-issue').unbind('click');
