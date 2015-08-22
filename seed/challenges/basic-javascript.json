@@ -117,7 +117,7 @@
       ],
       "tests": [
         "assert((function(){if(typeof(lastNameLength) !== \"undefined\" && typeof(lastNameLength) === \"number\" && lastNameLength === 8){return(true);}else{return(false);}})(), 'lastNameLength should be equal to eight.');",
-        "assert((function(){if(editor.getValue().match(/\\.length/gi) && editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi) && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>');"
+        "assert ((function(){if(editor.getValue().match(/\\.length/gi) && editor.getValue().match(/\\.length/gi).length >= 2 && editor.getValue().match(/var lastNameLength \\= 0;/gi) && editor.getValue().match(/var lastNameLength \\= 0;/gi).length >= 1){return(true);}else{return(false);}})(), 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>');"
       ],
       "challengeSeed": [
         "var firstNameLength = 0;",
@@ -894,11 +894,11 @@
       "difficulty":"9.9828",
       "description":[
         "It's great that we can create random decimal numbers, but it's even more useful if we use it to generate a random whole number.",
-        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
-        "This technique gives us a whole number between zero and nine",
+        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number.",
+        "This technique gives us a whole number between zero and nine.",
         "Example:",
         "<code>Math.floor(Math.random()*10);</code>",
-        "Let's give this technique a go now"
+        "Let's give this technique a go now."
       ],
       "tests":[
         "assert(typeof(myFunction()) === \"number\", 'The result of myFunction should be a number');",
@@ -908,7 +908,7 @@
       ],
       "challengeSeed":[
         "function myFunction(){",
-        "  // Make myFunction return a random number betweenzero and nine> instead of a decimal",
+        "  // Make myFunction return a random number between zero and nine instead of a decimal",
         "",
         "  // Only change code below this line.",
         "",
