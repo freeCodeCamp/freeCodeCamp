@@ -432,9 +432,9 @@
       "challengeSeed": [
         "//var array = [\"John\", 23];",
         "",
-        "var myArray = [];",
         "// Only change code below this line.",
         "",
+        "var myArray = [];",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -457,9 +457,9 @@
       ],
       "challengeSeed":[
         "var ourArray = [[\"the universe\", \"everything\", 42]];",
-        "var myArray = [];",
         "// Only change code below this line.",
         "",
+        "var myArray = [];",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -634,7 +634,7 @@
       "difficulty": "9.9818",
       "description": [
         "Now that we've learned how to <code>shift</code>things from the start of the array, we need to learn how to <code>unshift</code>stuff back to the start",
-        "Let's take the code we had last time and <code>unshift</code>this value to the end: <code>\"Paul\" </code>"
+        "Let's take the code we had last time and <code>unshift</code>this value to the start: <code>\"Paul\" </code>"
       ],
       "tests": [
         "assert((function(d){if(d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])');"
@@ -759,7 +759,7 @@
         "For example, we can add properties to objects like this:",
         "<code>myObject.myProperty = \"myValue\";</code>",
         "We can also delete them like this:",
-        "<code>delete(myObject.myProperty);</code>",
+        "<code>delete myObject.myProperty;</code>",
         "Let's add the property \"bark\", and delete the property \"tails\"."
       ],
       "tests":[
@@ -774,8 +774,8 @@
         "//   \"friends\": [\"everything!\"]",
         "// };",
         "",
-        "// ourDog.bark(\"arf!\");",
-        "// delete(ourDog.tails);",
+        "// ourDog.bark = \"arf!\";",
+        "// delete ourDog.tails;",
         "",
         "var myDog = {",
         "   \"name\": \"Camper\",",
@@ -818,6 +818,10 @@
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
       "challengeSeed":[
+        "ourArray = [];",
+        "for(var i = 0; i < 5; i++){",
+        "  ourArray.push(i);",
+        "}",
         "var myArray = [];",
         "//Push the numbers zero through four to myArray using a \"for loop\" like above.",
         "",
@@ -889,7 +893,7 @@
       "title": "Generate Random Whole Numbers with JavaScript",
       "difficulty":"9.9828",
       "description":[
-        "It's great that we can create random decimal numbers, but it's even more useful if we lot more useful to generate a random whole number.",
+        "It's great that we can create random decimal numbers, but it's even more useful if we use it to generate a random whole number.",
         "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
         "This technique gives us a whole number between zero and nine",
         "Example:",
@@ -1604,7 +1608,7 @@
         "Set up all three slots like this, then click the \"Go\" button to play the slot machine."
       ],
       "tests":[
-        "assert(editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3, 'Use the provided code three times. One for each slot')",
+        "assert((editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\'\\.slot\\'\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3) || (editor.match(/\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi) && editor.match(/\\$\\(\\$\\(\\\"\\.slot\\\"\\)\\[\\d\\]\\)\\.html\\(\\'\\<img\\s?src\\s?=\\s?\"\\'\\s?\\+\\s?images\\[\\w+\\-1\\]\\s?\\+\\s?\\'\"\\>\\'\\);/gi).length >= 3), 'Use the provided code three times. One for each slot')",
         "assert(editor.match(/slotOne/gi) && editor.match(/slotOne/gi).length >= 7, 'You should have used the slotOne value at least once')",
         "assert(editor.match(/slotTwo/gi) && editor.match(/slotTwo/gi).length >= 8, 'You should have used the slotTwo value at least once')",
         "assert(editor.match(/slotThree/gi) && editor.match(/slotThree/gi).length >= 7, 'You should have used the slotThree value at least once')"

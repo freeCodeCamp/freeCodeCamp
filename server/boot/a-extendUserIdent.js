@@ -54,7 +54,7 @@ export default function({ models }) {
         }
         identity.credentials = credentials;
         return observeQuery(identity, 'updateAttributes', {
-          profile: getSocialProvider(provider),
+          profile,
           credentials,
           modified
         });
