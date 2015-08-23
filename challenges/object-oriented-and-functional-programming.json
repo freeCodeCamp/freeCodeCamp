@@ -180,7 +180,8 @@
         "<code>&thinsp;&thinsp;return(val+1);</code>",
         "<code>});</code>",
         "",
-        "The map method is one of the easiest ways to iterate through an array or object there is. Let's use it now."
+        "The map method is one of the easiest ways to iterate through an array or object there is. Let's use it now.",
+          "Use the map function to add 3 to every value in the variable `array`"
       ],
       "tests":[
         "assert.deepEqual(array, [4,5,6,7,8], 'You should have added three to each value in the array');",
