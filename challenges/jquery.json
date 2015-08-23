@@ -679,7 +679,7 @@
         "Here's an example of how you would use the <code>children()</code> function: <code>$(\"#left-well\").children().css(\"color\", \"blue\")</code>"
       ],
       "tests": [
-        "assert($(\"#target6\").css(\"color\") === 'rgb(0, 128, 0)', 'Your <code>target6</code> element should have green text.')",
+        "assert($(\"#right-well\").children().css(\"color\") === 'rgb(0, 128, 0)', 'All children of <code>#right-well</code> should have green text.')",
         "assert(editor.match(/\\.children\\(\\)\\.css/g), 'You should use the <code>children&#40&#41</code> function to modify these elements.')",
         "assert(editor.match(/<div class=\"well\" id=\"right-well\">/g), 'Only use jQuery to add these classes to the element.')"
       ],
