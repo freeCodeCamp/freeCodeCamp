@@ -31,10 +31,11 @@ block content
                                 for sentence in details
                                     p.wrappable.negative-10!= sentence
                                 .negative-bottom-margin-30
+                label.negative-10.btn.btn-primary.btn-block#submitButton
+                    i.fa.fa-play
+                        | &nbsp; Run code (ctrl + enter)
+                br
                 if (user)
-                    label.btn.btn-primary.btn-block.negative-10#next-courseware-button
-                        .ion-checkmark-circled
-                            | &nbsp; Go to my next challenge (ctrl + enter)
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
                         label.btn.btn-success#trigger-reset-modal
@@ -71,6 +72,9 @@ block content
                         form.code
                             .codeMirrorView
                                 textarea#codeEditor(autofocus=true, style='display: none;')
+                                script(src = '/js/lib/coursewares/commonFrameWork.js')
+                                script.
+                                    editor.setOption("mode", "text/html");
         .col-md-4.col-lg-3
             .hidden-xs.hidden-sm
                 img.iphone-position.iframe-scroll(src="https://s3.amazonaws.com/freecodecamp/iphone6-frame.png", style = "z-index: -2;")
@@ -88,4 +92,3 @@ block content
                                 span.completion-icon.ion-checkmark-circled.text-primary
                             a.animated.fadeIn.btn.btn-lg.signup-btn.btn-block(href='/login') Sign in so you can save your progress
     include ../partials/challenge-modals
-    script(src="/js/lib/coursewares/coursewaresHCJQFramework_0.1.9.js")
