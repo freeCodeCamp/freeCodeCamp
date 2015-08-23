@@ -115,9 +115,9 @@ DEBUG=true
 mongod
 
 # Create your mongo database. 
-Type "mongo" in your terminal to access the mongo shell 
-run this command: use freecodecamp
-then quit with control+d
+# Type "mongo" in your terminal to access the mongo shell 
+use freecodecamp
+# Exit the mongo shell with control + d
 
 # Seed your database with the challenges
 node seed/
