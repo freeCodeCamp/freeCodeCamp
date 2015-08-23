@@ -683,7 +683,7 @@
         "expect(drop([1, 2, 3, 4], function(n) {return n >= 3; })).to.eqls([3, 4]);",
         "expect(drop([1, 2, 3], function(n) {return n > 0; })).to.eqls([1, 2, 3]);",
         "expect(drop([1, 2, 3, 4], function(n) {return n > 5; })).to.eqls([]);",
-        "expect(drop([1, 2, 3, 7, 4], function(n) { return > 5; })).to.equals([7, 4]);"
+        "expect(drop([1, 2, 3, 7, 4], function(n) { return > 5; })).to.eqls([7, 4]);"
       ],
       "MDNlinks": [
         "Arguments object",
