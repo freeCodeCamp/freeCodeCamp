@@ -843,7 +843,7 @@
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
         "<code>&thinsp;&thinsp;i++;</code>",
         "<code>}</code>",
-        "Let's try getting a for loop to work by pushing values to an array."
+        "Let's try getting a while loop to work by pushing values to an array."
       ],
       "tests":[
         "assert(editor.getValue().match(/while/g), 'You should be using a while loop for this.');",
