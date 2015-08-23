@@ -428,8 +428,12 @@
       "description": [
         "Create a CSS class called <code>red-text</code> and apply it to your <code>h2</code> element.",
         "Classes are reusable styles that can be added to HTML elements.",
-        "Here's the anatomy of a CSS class:",
-        "<img class=\"img-responsive\" alt=\"a diagram of how style tags are composed, which is also described in detail on the following lines.\" src=\"https://www.evernote.com/l/AHSCzZV0l_dDLrqD8r9JsHaBWfEzdN0OpRwB/image.png\">",
+        "Here's an example CSS class declaration:",
+        "<code>&#60;style&#62;</code>",
+        "<code>&thinsp;&thinsp;.blue-text {</code>",
+        "<code>&thinsp;&thinsp;&thinsp;&thinsp;color: blue;</code>",
+        "<code>&thinsp;&thinsp;}</code>",
+        "<code>&#60;/style&#62;</code>",
         "You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.",
         "You can apply a class to an HTML element like this: <code>&#60;h2 class=\"blue-text\"&#62;CatPhotoApp&#60;/h2&#62;</code>.",
         "Note that in your CSS <code>style</code> element, classes should start with a period. In your HTML elements' class declarations, classes shouldn't start with a period.",
@@ -1056,7 +1060,7 @@
       "description": [
         "<code>a</code> elements, also known as <code>anchor</code> elements, are used to link to content outside of the current page.",
         "Here's a diagram of an <code>a</code> element. In this case, the <code>a</code> element is used in the middle of a paragraph element, which means the link will appear in the middle of a sentence.",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
+        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "Create an <code>a</code> element that links to <code>http://catphotoapp.com</code> and has \"cat photos\" as its <code>anchor text</code>."
       ],
@@ -1126,7 +1130,7 @@
       "difficulty": 1.23,
       "description": [
         "Again, here's a diagram of an <code>a</code> element for your reference:",
-        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"https://www.evernote.com/l/AHSaNaepx_lG9LhhPkVYmagcedpmAeITDsQB/image.png\">",
+        "<img class=\"img-responsive\" alt=\"a diagram of how anchor tags are composed with the same text as on the following line\" src=\"http://i.imgur.com/hviuZwe.png\">",
         "Here's an example: <code>&#60;p&#62;Here's a &#60;a href=\"http://freecodecamp.com\"&#62; link to Free Code Camp&#60;/a&#62; for you to follow.&#60;/p&#62;</code>.",
         "<code>Nesting</code> just means putting one element inside of another element.",
         "Now nest your <code>a</code> element within a new <code>p</code> element so that the surrounding paragraph says \"click here for cat photos\", but where only \"cat photos\" is a link, and the rest of the text is rest is plain text."
