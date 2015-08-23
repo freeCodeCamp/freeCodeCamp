@@ -66,6 +66,8 @@ bower install
 # Create a .env file and populate it with the necessary API keys and secrets:
 touch .env
 
+# Install Gulp globally
+npm install -g gulp
 ```
 
 Edit your .env file with the following API keys accordingly (if you only use email login, only the MONGOHQ_URL, SESSION_SECRET, MANDRILL_USER and MANDRILL_PASSWORD fields are necessary. Keep in mind if you want to use more services you'll have to get your own API keys for those services.
@@ -111,6 +113,11 @@ DEBUG=true
 
 # Start the mongo server
 mongod
+
+# Create your mongo database. 
+Type "mongo" in your terminal to access the mongo shell 
+run this command: use freecodecamp
+then quit with control+d
 
 # Seed your database with the challenges
 node seed/
