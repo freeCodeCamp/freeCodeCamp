@@ -176,14 +176,15 @@ if(typeof prodOrDev !== 'undefined') {
             editor.setValue(editor.getValue() + "-->");
             editorValueForIFrame = editorValueForIFrame + "-->";
         }
-        goodTests = 0;
         var previewFrame = document.getElementById('preview');
         var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+
+        //Here is the issue
+
         preview.open();
-        preview.write(libraryIncludes + editor.getValue());
+        //preview.write(libraryIncludes + editor.getValue());
         codeStorage.updateStorage();
         preview.close();
-
     }
 
     setTimeout(updatePreview, 300);
@@ -405,6 +406,20 @@ var runTests = function(err, data) {
             allTestsPassed = false;
             showCompletion();
         }
+        else{
+            if(challengeType === "0"){
+                $('#testSuite').empty();
+
+                editorValueForIFrame = editor.getValue();
+                goodTests = 0;
+                var previewFrame = document.getElementById('preview');
+                var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+                preview.open();
+                preview.write(libraryIncludes + editor.getValue() + "<script src = \"/js/lib/coursewares/iFrameScripts_0.0.4.js\"></script>");
+                codeStorage.updateStorage();
+                preview.close();
+            }
+        }
 
     }
 };
@@ -413,49 +428,39 @@ function bonfireExecute() {
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
     userTests = null;
-    if(challengeType === "0"){
-        $('#testSuite').empty();
-
-        editorValueForIFrame = editor.getValue();
-        goodTests = 0;
-        var previewFrame = document.getElementById('preview');
-        var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
-        preview.open();
-        preview.write(libraryIncludes + editor.getValue() + "<script src = \"/js/lib/coursewares/iFrameScripts_0.0.4.js\"></script>");
-        codeStorage.updateStorage();
-        preview.close();
+    var userJavaScript = myCodeMirror.getValue();
+    var failedCommentTest = false;
+    if (userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\*\//gi) == null) {
+        failedCommentTest = true;
     }
-    else {
-        var userJavaScript = myCodeMirror.getValue();
-        var failedCommentTest = false;
-        if (userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\*\//gi) == null) {
-            failedCommentTest = true;
-        }
-        else if (!failedCommentTest && userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\/\*/gi).length > userJavaScript.match(/\*\//gi).length) {
-            failedCommentTest = true;
-        }
-        userJavaScript = removeComments(userJavaScript);
-        userJavaScript = scrapeTests(userJavaScript);
-        // simple fix in case the user forgets to invoke their function
+    else if (!failedCommentTest && userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\/\*/gi).length > userJavaScript.match(/\*\//gi).length) {
+        failedCommentTest = true;
+    }
+    userJavaScript = removeComments(userJavaScript);
+    userJavaScript = scrapeTests(userJavaScript);
+    // simple fix in case the user forgets to invoke their function
 
-        submit(userJavaScript, function (cls, message) {
-            if (failedCommentTest) {
-                myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
-                console.log('Caught Unfinished Comment');
+    submit(userJavaScript, function (cls, message) {
+        if (failedCommentTest) {
+            myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
+            console.log('Caught Unfinished Comment');
+            if(challengeType !== 0)
                 codeOutput.setValue("Unfinished mulit-line comment");
-                failedCommentTest = false;
-            }
-            else if (cls) {
+            failedCommentTest = false;
+        }
+        else if (cls) {
+            if(challengeType !== 0)
                 codeOutput.setValue(message.error);
-                runTests('Error', null);
-            } else {
+            runTests('Error', null);
+        } else {
+            if(challengeType !== 0)
                 codeOutput.setValue(message.output);
+            if(challengeType !== 0)
                 codeOutput.setValue(codeOutput.getValue().replace(/\\\"/gi, ''));
-                message.input = removeLogs(message.input);
-                runTests(null, message);
-            }
-        });
-    }
+            message.input = removeLogs(message.input);
+            runTests(null, message);
+        }
+    });
 }
 
 $('#submitButton').on('click', function() {
