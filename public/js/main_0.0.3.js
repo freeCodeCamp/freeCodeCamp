@@ -62,7 +62,7 @@ $(document).ready(function() {
       $('.close-modal').unbind('click');
       $('.close-modal').on('click', function(){
         setTimeout(function() {
-          $('#help-modal').modal('hide');
+            $('.close-modal').parent().parent().parent().parent().modal('hide');
         }, 200);
       });
 
