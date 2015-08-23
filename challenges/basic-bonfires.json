@@ -14,7 +14,7 @@
       ],
       "tests": [
         "assert(typeof(meetBonfire()) === \"boolean\", 'The result should be a Boolean value of true or false.');",
-        "assert(meetBonfire() === true, 'Your meetBonfire() function should return true.');"
+        "assert(meetBonfire() === true, 'Your <code>meetBonfire()</code> function should return <code>true</code>.');"
       ],
       "challengeSeed": [
         "function meetBonfire(argument) {",
@@ -87,17 +87,17 @@
       "id": "a302f7aae1aa3152a5b413bc",
       "title": "Factorialize a Number",
       "tests": [
-        "assert(typeof(factorialize(5)) === \"number\", 'factorialize&#40;&#41; should return a number.');",
-        "assert(factorialize(5) === 120, '5 should return 120.');",
-        "assert(factorialize(10) === 3628800, '10 should return 3,628,800.');",
-        "assert(factorialize(20) === 2432902008176640000, '20 should return 2,432,902,008,176,640,000.');"
+        "assert(typeof(factorialize(5)) === \"number\", '<code>factorialize&#40;&#41;</code> should return a number.');",
+        "assert(factorialize(5) === 120, '<code>5</code> should return 120</code>.');",
+        "assert(factorialize(10) === 3628800, '<code>10</code> should return <code>3,628,800</code>.');",
+        "assert(factorialize(20) === 2432902008176640000, '<code>20</code> should return <code>2,432,902,008,176,640,000</code>.');"
       ],
       "difficulty": "1.02",
       "description": [
         "Return the factorial of the provided integer.",
         "If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.",
-        "Factorials are often represented with the shorthand notation n!",
-        "For example: 5! = 1 * 2 * 3 * 4 * 5 = 120f",
+        "Factorials are often represented with the shorthand notation <code>n!</code>",
+        "For example: <code>5! = 1 * 2 * 3 * 4 * 5 = 120</code>",
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "challengeSeed": [
@@ -135,14 +135,14 @@
         "Remember to use <a href='//github.com/FreeCodeCamp/freecodecamp/wiki/How-to-get-help-when-you-get-stuck' target='_blank'>Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
       "tests": [
-        "assert(palindrome(\"eye\")) === \"boolean\", '');",
-        "assert.deepEqual(palindrome(\"eye\"), true, '');",
-        "assert.deepEqual(palindrome(\"race car\"), true, '');",
-        "assert.deepEqual(palindrome(\"not a palindrome\"), false, '');",
-        "assert.deepEqual(palindrome(\"A man, a plan, a canal. Panama\"), true, '');",
-        "assert.deepEqual(palindrome(\"never odd or even\"), true, '');",
-        "assert.deepEqual(palindrome(\"nope\"), false, '');",
-        "assert.deepEqual(palindrome(\"almostomla\"), false, '');"
+        "assert(typeof(palindrome(\"eye\")) === \"boolean\", '<code>palindrome&#40;&#41;<code> should return a boolean.');",
+        "assert(palindrome(\"eye\") === true, '\"eye\" should return true.');",
+        "assert(palindrome(\"race car\") === true, '\"race car\" should return true.');",
+        "assert(palindrome(\"not a palindrome\") === false, '\"not a palindrome\" should return false.');",
+        "assert(palindrome(\"A man, a plan, a canal. Panama\") === true, '\"A man, a plan, a canal. Panama\" should return true.');",
+        "assert(palindrome(\"never odd or even\") === true, '\"never odd or even\" should return true.');",
+        "assert(palindrome(\"nope\") === false, '\"nope\" should return false.');",
+        "assert(palindrome(\"almostomla\") === false, '\"almostomla\" should return false.');"
       ],
       "challengeSeed": [
         "function palindrome(str) {",
@@ -152,7 +152,7 @@
         "",
         "",
         "",
-        "palindrome(\"eye\", '');"
+        "palindrome(\"eye\");"
       ],
       "MDNlinks": [
         "String.replace()",
@@ -185,15 +185,15 @@
         "  return str.length;",
         "}",
         "",
-        "findLongestWord('The quick brown fox jumped over the lazy dog', '');"
+        "findLongestWord('The quick brown fox jumped over the lazy dog');"
       ],
       "tests": [
-        "assert(findLongestWord('The quick brown fox jumped over the lazy dog')) === 'Number', '');",
-        "assert(findLongestWord('The quick brown fox jumped over the lazy dog') === 6, '');",
-        "assert(findLongestWord('May the force be with you') === 5, '');",
-        "assert(findLongestWord('Google do a barrel roll') === 6, '');",
-        "assert(findLongestWord('What is the average airspeed velocity of an unladen swallow') === 8, '');",
-        "assert(findLongestWord('What if we try a super-long word such as otorhinolaryngology') === 19, '');"
+        "assert(typeOf(findLongestWord(\"The quick brown fox jumped over the lazy dog\")) === 'number', '<code>findLongestWord&#40;&#41;</code> should return a number.');",
+        "assert(findLongestWord(\"The quick brown fox jumped over the lazy dog\") === 6, '\"The quick brown fox jumped over the lazy dog\" should return 6.');",
+        "assert(findLongestWord(\"May the force be with you\") === 5, '\"May the force be with you\" should return 5.');",
+        "assert(findLongestWord(\"Google do a barrel roll\") === 6, '\"Google do a barrel roll\" should return 6.');",
+        "assert(findLongestWord(\"What is the average airspeed velocity of an unladen swallow\") === 8, '\"What is the average airspeed velocity of an unladen swallow\" should return 8.');",
+        "assert(findLongestWord(\"What if we try a super-long word such as otorhinolaryngology\") === 19, '\"What if we try a super-long word such as otorhinolaryngology\" should return 18.');"
       ],
       "MDNlinks": [
         "String.split()",
@@ -229,7 +229,7 @@
         "titleCase(\"I'm a little tea pot\", '');"
       ],
       "tests": [
-        "assert(titleCase(\"I'm a little tea pot\")) === 'String', '');",
+        "assert(typeOf(titleCase(\"I'm a little tea pot\")) === 'String', '<code>titleCase&#40;&#41;</code> should return a string.');",
         "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", '');",
         "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", '');",
         "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", '');"
@@ -269,7 +269,7 @@
         "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]], '');"
       ],
       "tests": [
-        "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])) === 'array', '');",
+        "assert(typeOf(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])) === 'array', 'largestOfFour&#40;&#41; should return an array.');",
         "(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.eql([27,5,39,1001], '');",
         "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]).should.eql([9,35,97,1000000]), '');"
       ],
@@ -422,10 +422,10 @@
         "chunk(['a', 'b', 'c', 'd'], 2, '');"
       ],
       "tests": [
-        "assert.deepEqual(chunk(['a', 'b', 'c', 'd'], 2), [['a', 'b'], ['c', 'd']], 'should return chunked arrays', '');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'should return chunked arrays', '');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'should return chunked arrays', '');",
-        "assert.deepEqual(chunk([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'should return the last chunk as remaining elements', '');"
+        "assert(chunk(['a', 'b', 'c', 'd'], 2) === [['a', 'b'], ['c', 'd']], '<code>chunk(['a', 'b', 'c', 'd'], 2)</code> should return <code>[['a', 'b'], ['c', 'd']]</code>.');",
+        "assert(chunk([0, 1, 2, 3, 4, 5], 3) === [[0, 1, 2], [3, 4, 5]], '<code>chunk([0, 1, 2, 3, 4, 5]</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
+        "assert(chunk([0, 1, 2, 3, 4, 5], 2) === [[0, 1], [2, 3], [4, 5]], '<code>chunk([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');",
+        "assert(chunk([0, 1, 2, 3, 4, 5], 4) === [[0, 1, 2, 3], [4, 5]], '<code>chunk([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');"
       ],
       "MDNlinks": [
         "Array.push()"
@@ -460,9 +460,9 @@
         "slasher([1, 2, 3], 2, '');"
       ],
       "tests": [
-        "assert.deepEqual(slasher([1, 2, 3], 2), [3], 'should drop the first two elements', '');",
-        "assert.deepEqual(slasher([1, 2, 3], 0), [1, 2, 3], 'should return all elements', '');",
-        "assert.deepEqual(slasher([1, 2, 3], 9), [], 'should return an empty array', '');"
+        "assert(slasher([1, 2, 3], 2) === [3]), '<code>slasher([1, 2, 3], 2)</code>, [3] should return <code>[3]</code>.');",
+        "assert(slasher([1, 2, 3], 0) === [1, 2, 3]), '<code>slasher([1, 2, 3], 0)</code> should return <code>[1, 2, 3]</code>.');",
+        "assert(slasher([1, 2, 3], 9) === []), '<code>slasher([1, 2, 3], 9)</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Array.slice()",
