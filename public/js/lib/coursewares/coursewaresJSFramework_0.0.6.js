@@ -94,7 +94,7 @@ $('#submitButton').on('click', function() {
   bonfireExecute();
 });
 
-function bonfireExecute() {
+function bonfireExecute(callback) {
   attempts++;
   ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
   userTests = null;
@@ -127,6 +127,8 @@ function bonfireExecute() {
       message.input = removeLogs(message.input);
       runTests(null, message);
     }
+
+    if (callback) callback();
   });
 }
 
@@ -260,7 +262,9 @@ var runTests = function(err, data) {
   }
 };
 
+var shouldShowCompletion = true;  // indicates whether to post the succesful completion to server and display the completion dialog
 function showCompletion() {
+  if (!shouldShowCompletion) return;
   var time = Math.floor(Date.now()) - started;
   ga('send', 'event', 'Challenge', 'solved', challenge_Name + ', Time: ' + time +
     ', Attempts: ' + attempts);
@@ -390,5 +394,9 @@ var resetEditor = function resetEditor() {
 };
 
 $(document).ready(function(){
-    bonfireExecute();
+    // on startup, execute the bonfire, but don't log completion if it's done.
+    shouldShowCompletion = false;
+    bonfireExecute( function afterExecution(){
+      shouldShowCompletion = true;  // inidcate to show completion from now on
+    });
 });
