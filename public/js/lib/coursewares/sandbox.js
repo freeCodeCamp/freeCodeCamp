@@ -73,7 +73,9 @@ var reset = function() {
         setTimeout( function() {
             endLoading();
             console.log("resetting on fatal plugin error");
-            codeOutput.setValue("Sorry, your code is either too slow, has a fatal error, or contains an infinite loop.");
+            if(challengeType === 0){
+                codeOutput.setValue("Sorry, your code is either too slow, has a fatal error, or contains an infinite loop.");
+            }
             reset();
         }, 10);
     });

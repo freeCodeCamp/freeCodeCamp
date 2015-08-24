@@ -160,34 +160,76 @@ editor.on("keyup", function () {
     delay = setTimeout(updatePreview, 300);
 });
 
+function safeHTMLRun(test){
+    var previewFrame = document.getElementById('preview');
+    var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+    if(editor.getValue().match(/\<script\>/gi) !== null) {
+        var s = editor.getValue().split(/\<\s?script\s?\>/gi)[1].split(/\<\s?\/\s?script\s?\>/gi)[0];
+        submit(
+            s, function (cls, message) {
+                if (cls) {
+                    console.log(message.error);
+                    $('#mainEditorPanel').html("<div class = \"runTimeError\">" + message.error + "</div>" + $('#mainEditorPanel').html());
+                    $('.runTimeError').hide().fadeIn(function(){
+                        setTimeout(function(){
+                            $(this).remove();
+                        }, 3000)
+                    });
+                } else {
+                    if(test){
+                        preview.open();
+                        preview.write(libraryIncludes + editor.getValue() +iFrameScript);
+                        codeStorage.updateStorage();
+                        preview.close();
+                    }
+                    else{
+                        preview.open();
+                        preview.write(libraryIncludes + editor.getValue());
+                        codeStorage.updateStorage();
+                        preview.close();
+                    }
+                }
+            }
+        );
+    }
+    else {
+        if(test){
+            preview.open();
+            preview.write(libraryIncludes + editor.getValue() +iFrameScript);
+            codeStorage.updateStorage();
+            preview.close();
+        }
+        else{
+            preview.open();
+            preview.write(libraryIncludes + editor.getValue());
+            codeStorage.updateStorage();
+            preview.close();
+        }
+    }
+}
+
 if(typeof prodOrDev !== 'undefined') {
     var nodeEnv = prodOrDev === 'production' ? 'http://www.freecodecamp.com' : 'http://localhost:3001';
-
-    function updatePreview() {
-        editorValueForIFrame = editor.getValue();
-        var failedCommentTest = false;
-        if (editorValueForIFrame.match(/\<\!\-\-/gi) && editorValueForIFrame.match(/\-\-\>/gi) == null) {
-            failedCommentTest = true;
+    if(challengeType === "0")
+    {
+        function updatePreview() {
+            editorValueForIFrame = editor.getValue();
+            var failedCommentTest = false;
+            if (editorValueForIFrame.match(/\<\!\-\-/gi) && editorValueForIFrame.match(/\-\-\>/gi) == null) {
+                failedCommentTest = true;
+            }
+            else if (editorValueForIFrame.match(/\<\!\-\-/gi) && editorValueForIFrame.match(/\<\!\-\-/gi).length > editorValueForIFrame.match(/\-\-\>/gi).length) {
+                failedCommentTest = true;
+            }
+            if (failedCommentTest) {
+                editor.setValue(editor.getValue() + "-->");
+                editorValueForIFrame = editorValueForIFrame + "-->";
+            }
+            safeHTMLRun(false);
         }
-        else if (editorValueForIFrame.match(/\<\!\-\-/gi) && editorValueForIFrame.match(/\<\!\-\-/gi).length > editorValueForIFrame.match(/\-\-\>/gi).length) {
-            failedCommentTest = true;
-        }
-        if (failedCommentTest) {
-            editor.setValue(editor.getValue() + "-->");
-            editorValueForIFrame = editorValueForIFrame + "-->";
-        }
-        var previewFrame = document.getElementById('preview');
-        var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
 
-        //Here is the issue
-
-        preview.open();
-        //preview.write(libraryIncludes + editor.getValue());
-        codeStorage.updateStorage();
-        preview.close();
+        setTimeout(updatePreview, 300);
     }
-
-    setTimeout(updatePreview, 300);
 }
 /**
  * "post" methods
@@ -256,7 +298,6 @@ if (attempts) {
     attempts = 0;
 }
 
-console.log(challengeType);
 if(challengeType !== "0") {
     var codeOutput = CodeMirror.fromTextArea(document.getElementById("codeOutput"), {
         lineNumbers: false,
@@ -428,39 +469,45 @@ function bonfireExecute() {
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
     userTests = null;
-    var userJavaScript = myCodeMirror.getValue();
-    var failedCommentTest = false;
-    if (userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\*\//gi) == null) {
-        failedCommentTest = true;
-    }
-    else if (!failedCommentTest && userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\/\*/gi).length > userJavaScript.match(/\*\//gi).length) {
-        failedCommentTest = true;
-    }
-    userJavaScript = removeComments(userJavaScript);
-    userJavaScript = scrapeTests(userJavaScript);
-    // simple fix in case the user forgets to invoke their function
+    if(challengeType !== "0"){
+        var userJavaScript = myCodeMirror.getValue();
+        var failedCommentTest = false;
+        if (userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\*\//gi) == null) {
+            failedCommentTest = true;
+        }
+        else if (!failedCommentTest && userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\/\*/gi).length > userJavaScript.match(/\*\//gi).length) {
+            failedCommentTest = true;
+        }
+        userJavaScript = removeComments(userJavaScript);
+        userJavaScript = scrapeTests(userJavaScript);
+        // simple fix in case the user forgets to invoke their function
 
-    submit(userJavaScript, function (cls, message) {
-        if (failedCommentTest) {
-            myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
-            console.log('Caught Unfinished Comment');
-            if(challengeType !== 0)
+        submit(userJavaScript, function (cls, message) {
+            if (failedCommentTest) {
+                myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
+                console.log('Caught Unfinished Comment');
                 codeOutput.setValue("Unfinished mulit-line comment");
-            failedCommentTest = false;
-        }
-        else if (cls) {
-            if(challengeType !== 0)
+                failedCommentTest = false;
+            }
+            else if (cls) {
                 codeOutput.setValue(message.error);
-            runTests('Error', null);
-        } else {
-            if(challengeType !== 0)
+                runTests('Error', null);
+            } else {
                 codeOutput.setValue(message.output);
-            if(challengeType !== 0)
                 codeOutput.setValue(codeOutput.getValue().replace(/\\\"/gi, ''));
-            message.input = removeLogs(message.input);
-            runTests(null, message);
+                message.input = removeLogs(message.input);
+                runTests(null, message);
+            }
+        });
+    }
+    else {
+        editorValueForIFrame = editor.getValue();
+        if (failedCommentTest) {
+            editor.setValue(editor.getValue() + "-->");
+            editorValueForIFrame = editorValueForIFrame + "-->";
         }
-    });
+        safeHTMLRun(true);
+    }
 }
 
 $('#submitButton').on('click', function() {
