@@ -177,7 +177,7 @@
       "difficulty": 2.03,
       "description": [
         "Now that we're using Bootstrap, we can center our heading elements to make them look better. All we need to do is add the class <code>text-center</code> to our <code>h1</code> and <code>h2</code> elements.",
-        "Remember that you can add several classes to the same element by separating each of them with a space, like this: <code>&#60h2 class=\"text-red text-center\"&#62your text&#60/h2&#62</code>."
+        "Remember that you can add several classes to the same element by separating each of them with a space, like this: <code>&#60h2 class=\"red-text text-center\"&#62your text&#60/h2&#62</code>."
       ],
       "tests": [
         "assert($(\"h2\").hasClass(\"text-center\"), 'Your <code>h2</code> element should be centered by applying the class <code>text-center</code>')"
