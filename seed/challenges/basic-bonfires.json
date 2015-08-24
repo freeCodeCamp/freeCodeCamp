@@ -230,9 +230,9 @@
       ],
       "tests": [
         "assert(typeOf(titleCase(\"I'm a little tea pot\")) === 'String', '<code>titleCase&#40;&#41;</code> should return a string.');",
-        "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", '');",
-        "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", '');",
-        "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", '');"
+        "assert(titleCase(\"I'm a little tea pot\") === \"I&#39;m A Little Tea Pot\", '\"I'm a little tea pot\" should return \"I&#39;m A Little Tea Pot\"');",
+        "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", '\"sHoRt AnD sToUt\" should return \"Short And Stout\"');",
+        "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", '\"HERE IS MY HANDLE HERE IS MY SPOUT\" should return \"Here Is My Handle Here Is My Spout\"');"
       ],
       "MDNlinks": [
         "String.charAt()"
@@ -270,8 +270,8 @@
       ],
       "tests": [
         "assert(typeOf(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])) === 'array', 'largestOfFour&#40;&#41; should return an array.');",
-        "(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])).should.eql([27,5,39,1001], '');",
-        "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]).should.eql([9,35,97,1000000]), '');"
+        "(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]) === [27,5,39,1001], '<code>[[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]] should return <code>[27,5,39,1001]</code>.');",
+        "assert(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]) === [9,35,97,1000000], '<code>[[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]</code> should return <code>[9,35,97,1000000]</code>.');"
       ],
       "MDNlinks": [
         "Comparison Operators"
@@ -307,11 +307,11 @@
         "end('Bastian', 'n', '');"
       ],
       "tests": [
-        "assert.strictEqual(end('Bastian', 'n'), true, 'should equal true if target equals end of string', '');",
-        "assert.strictEqual(end('Connor', 'n'), false, 'should equal false if target does not equal end of string', '');",
-        "assert.strictEqual(end('Walking on water and developing software from a specification are easy if both are frozen.', 'specification'), false, 'should equal false if target does not equal end of string', '');",
-        "assert.strictEqual(end('He has to give me a new name', 'name'), true, 'should equal true if target equals end of string', '');",
-        "assert.strictEqual(end('If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing', 'mountain'), false, 'should equal false if target does not equal end of string', '');"
+        "assert(end('Bastian', 'n') === true, '<code>end&#40;\"Bastian\"&#44; \"n\"&#41;</code> should return true.');",
+        "assert(end('Connor', 'n') === false, '<code>end&#40;\"Connor\"&#44; \"n\"&#41; </code> should return false.');",
+        "assert(end('Walking on water and developing software from a specification are easy if both are frozen.', 'specification') === false, 'end&#40;Walking on water and developing software from a specification are easy if both are frozen.'&#44; 'specification'&#41; should return false.');",
+        "assert(end('He has to give me a new name', 'name') === true, '<code>end&#40;\"He has to give me a new name\"&#44; \"name\"&#41;</code> should return true.');",
+        "assert(end('If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing', 'mountain') === false, '<code>end&#40;'If you want to save our world&#44; you must hurry. We dont know how much longer we can withstand the nothing', 'mountain'&#41;</code> should return false.');"
       ],
       "MDNlinks": [
         "String.substr()"
@@ -346,9 +346,9 @@
         "repeat('abc', 3, '');"
       ],
       "tests": [
-        "assert.strictEqual(repeat('*', 3), '***', 'should repeat a string n times', '');",
-        "assert.strictEqual(repeat('abc', 3), 'abcabcabc', 'should repeat a string n times', '');",
-        "assert.strictEqual(repeat('abc', -2), '', 'should return an empty string for negative numbers', '');"
+        "assert(repeat('*', 3) === '***', '<code>repeat&#40;\"*\"&#44; 3&#41;</code> should return \"***\");",
+        "assert(repeat('abc', 3) === 'abcabcabc', '<code>repeat&#40;\"abc\"&#44; 3&#41;</code> should return \"abcabcabc\".');",
+        "assert(repeat('abc', -2) === '', '<code>repeat&#40;\"abc\"&#44; -2&#41;</code> should return \"\".');"
       ],
       "MDNlinks": [
         "Global String Object"
@@ -384,10 +384,10 @@
         "truncate('A-tisket a-tasket A green and yellow basket', 11, '');"
       ],
       "tests": [
-        "assert(truncate('A-tisket a-tasket A green and yellow basket', 11)).to.eqls('A-tisket...', '');",
-        "assert(truncate('Peter Piper picked a peck of pickled peppers', 14)).to.eqls('Peter Piper...', '');",
-        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is = length', '');",
-        "assert.strictEqual(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2), 'A-tisket a-tasket A green and yellow basket', 'should not truncate if string is < length', '');"
+        "assert(truncate('A-tisket a-tasket A green and yellow basket', 11) === 'A-tisket...', '<code>truncate&#40;\"A-tisket a-tasket A green and yellow basket\"&#44; 11&#41;</code> should return \"A-tisket...\".');",
+        "assert(truncate('Peter Piper picked a peck of pickled peppers', 14) === 'Peter Piper...', '<code>truncate&#40;\"Peter Piper picked a peck of pickled peppers\"&#44; 14&#41;</code> should return \"Peter Piper...\".);",
+        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length) === 'A-tisket a-tasket A green and yellow basket', <code>'truncate&#40;\"A-tisket a-tasket A green and yellow basket\"&#44; \"A-tisket a-tasket A green and yellow basket\".length&#41;</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
+        "assert(truncate('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2 === 'A-tisket a-tasket A green and yellow basket', '<code>truncate&#40;\"A-tisket a-tasket A green and yellow basket\"&#44; \"A-tisket a-tasket A green and yellow basket\".length + 2&#41;</code> should return \"A-tisket a-tasket A green and yellow basket\".);"
       ],
       "MDNlinks": [
         "String.slice()"
@@ -422,10 +422,10 @@
         "chunk(['a', 'b', 'c', 'd'], 2, '');"
       ],
       "tests": [
-        "assert(chunk(['a', 'b', 'c', 'd'], 2) === [['a', 'b'], ['c', 'd']], '<code>chunk(['a', 'b', 'c', 'd'], 2)</code> should return <code>[['a', 'b'], ['c', 'd']]</code>.');",
-        "assert(chunk([0, 1, 2, 3, 4, 5], 3) === [[0, 1, 2], [3, 4, 5]], '<code>chunk([0, 1, 2, 3, 4, 5]</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
-        "assert(chunk([0, 1, 2, 3, 4, 5], 2) === [[0, 1], [2, 3], [4, 5]], '<code>chunk([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');",
-        "assert(chunk([0, 1, 2, 3, 4, 5], 4) === [[0, 1, 2, 3], [4, 5]], '<code>chunk([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');"
+        "assert(chunk(['a', 'b', 'c', 'd'], 2) === [['a', 'b'], ['c', 'd']], '<code>chunk&#40;[\"a\"&#44; \"b\"&#44; \"c\"&#44; \"d\"], 2)</code> should return <code>[[\"a\"&#44; \"b\"]&#44; [\"c\"&#44; \"d\"]]</code>.');",
+        "assert(chunk([0, 1, 2, 3, 4, 5], 3) === [[0, 1, 2], [3, 4, 5]], '<code>chunk([0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]</code> should return <code>[[0&#44; 1&#44; 2]&#44; [3&#44; 4&#44; 5]]</code>.');",
+        "assert(chunk([0, 1, 2, 3, 4, 5], 2) === [[0, 1], [2, 3], [4, 5]], '<code>chunk([0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]&#44; 2)</code> should return <code>[[0&#44; 1]&#44; [2&#44; 3]&#44; [4&#44; 5]]</code>.');",
+        "assert(chunk([0, 1, 2, 3, 4, 5], 4) === [[0, 1, 2, 3], [4, 5]], '<code>chunk([0&#44; 1&#44; 2&#44; 3&#44; 4&#44; 5]&#44; 4)</code> should return <code>[[0&#44; 1&#44; 2&#44; 3]&#44; [4&#44; 5]]</code>.');"
       ],
       "MDNlinks": [
         "Array.push()"
@@ -460,9 +460,9 @@
         "slasher([1, 2, 3], 2, '');"
       ],
       "tests": [
-        "assert(slasher([1, 2, 3], 2) === [3]), '<code>slasher([1, 2, 3], 2)</code>, [3] should return <code>[3]</code>.');",
-        "assert(slasher([1, 2, 3], 0) === [1, 2, 3]), '<code>slasher([1, 2, 3], 0)</code> should return <code>[1, 2, 3]</code>.');",
-        "assert(slasher([1, 2, 3], 9) === []), '<code>slasher([1, 2, 3], 9)</code> should return <code>[]</code>.');"
+        "assert(slasher([1, 2, 3], 2) === [3]), '<code>slasher([1&#44; 2&#44; 3]&#44; 2)</code>&#44; [3] should return <code>[3]</code>.');",
+        "assert(slasher([1, 2, 3], 0) === [1, 2, 3]), '<code>slasher([1&#44; 2&#44; 3]&#44; 0)</code> should return <code>[1&#44; 2&#44; 3]</code>.');",
+        "assert(slasher([1, 2, 3], 9) === []), '<code>slasher([1&#44; 2&#44; 3]&#44; 9)</code> should return <code>[]</code>.');"
       ],
       "MDNlinks": [
         "Array.slice()",
