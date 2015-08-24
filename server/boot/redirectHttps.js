@@ -29,7 +29,7 @@ module.exports = function(loopbackApp) {
 
   loopbackApp.once('started', function() {
     app.listen(port, function() {
-      console.log('https redirect lisenting on port %s', port);
+      console.log('https redirect listening on port %s', port);
     });
   });
 };
