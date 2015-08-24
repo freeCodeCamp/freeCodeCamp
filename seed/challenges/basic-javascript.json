@@ -903,7 +903,7 @@
       "tests":[
         "assert(typeof(myFunction()) === \"number\", 'The result of myFunction should be a number');",
         "assert(editor.getValue().match(/Math.random/g), 'You should be using Math.random to create a random number');",
-        "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random by 10 to make it a number that\\'s greater then zero');",
+        "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random by 10 to make it a number that\\'s greater than zero');",
         "assert(editor.getValue().match(/Math.floor/g), 'You should use Math.floor to remove the decimal part of the number');"
       ],
       "challengeSeed":[
