@@ -670,8 +670,8 @@
         "<code>function functionName (a, b) {</code>",
         "<code>&thinsp;&thinsp;return(a + b);</code>",
         "<code>}</code>",
-        "We can \"call\" our function like this: <code>functionName();</code>, and it will run and return it's <code>return</code> value to us.",
-        "Create and call a function called <code>myFunction</code>."
+        "We can \"call\" our function like this: <code>functionName();</code>, and it will run and return its <code>return</code> value to us.",
+        "Create and call a function called <code>myFunction</code> that returns the sum of a and b."
       ],
       "tests":[
         "assert((function(){if(typeof(f) !== \"undefined\" && typeof(f) === \"number\" && f === a + b  && editor.getValue().match(/return/gi).length >= 1 && editor.getValue().match(/a/gi).length >= 1 && editor.getValue().match(/b/gi).length >= 1 && editor.getValue().match(/\\+/gi).length >= 1){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
@@ -684,9 +684,9 @@
         "  return a - b;",
         "};",
         "",
-        "//Don't modify above this line",
-        "//Create a function called myFunction that returns the value of a plus b.",
-        "  // Only change code below this line.",
+        "// Don't modify above this line",
+        "// Create a function called myFunction that returns the value of a plus b.",
+        "// Only change code below this line.",
         "",
         "",
         "",
