@@ -432,9 +432,9 @@
       "challengeSeed": [
         "//var array = [\"John\", 23];",
         "",
-        "var myArray = [];",
         "// Only change code below this line.",
         "",
+        "var myArray = [];",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -457,9 +457,9 @@
       ],
       "challengeSeed":[
         "var ourArray = [[\"the universe\", \"everything\", 42]];",
-        "var myArray = [];",
         "// Only change code below this line.",
         "",
+        "var myArray = [];",
         "",
         "// Only change code above this line.",
         "// We use this function to show you the value of your variable in your output box.",
@@ -606,7 +606,7 @@
         "Take the myArray array and <code>shift()</code> the first value off of it."
       ],
       "tests": [
-        "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the first two values left([\"John\", 23])');",
+        "assert((function(d){if(d[0] == 23 && d[1][0] == 'dog' && d[1][1] == 3 && d[2] == undefined){return(true);}else{return(false);}})(myArray), 'myArray should only have the last two values left([23, [\"dog\", 3]])');",
         "assert((function(d){if(d === 'John' && typeof(myRemoved) === 'string'){return(true);}else{return(false);}})(myRemoved), 'myRemoved should contain \"John\"');"
       ],
       "challengeSeed": [
@@ -634,7 +634,7 @@
       "difficulty": "9.9818",
       "description": [
         "Now that we've learned how to <code>shift</code>things from the start of the array, we need to learn how to <code>unshift</code>stuff back to the start",
-        "Let's take the code we had last time and <code>unshift</code>this value to the end: <code>\"Paul\" </code>"
+        "Let's take the code we had last time and <code>unshift</code>this value to the start: <code>\"Paul\" </code>"
       ],
       "tests": [
         "assert((function(d){if(d[0].toLowerCase() == 'paul' && d[1] == 23 && d[2][0] != undefined && d[2][0] == 'dog' && d[2][1] != undefined && d[2][1] == 3){return(true);}else{return(false);}})(myArray), 'myArray should now have [\"Paul\", 23, [\"dog\", 3]])');"
@@ -670,8 +670,8 @@
         "<code>function functionName (a, b) {</code>",
         "<code>&thinsp;&thinsp;return(a + b);</code>",
         "<code>}</code>",
-        "We can \"call\" our function like this: <code>functionName();</code>, and it will run and return it's <code>return</code> value to us.",
-        "Create and call a function called <code>myFunction</code>."
+        "We can \"call\" our function like this: <code>functionName();</code>, and it will run and return its <code>return</code> value to us.",
+        "Create and call a function called <code>myFunction</code> that returns the sum of a and b."
       ],
       "tests":[
         "assert((function(){if(typeof(f) !== \"undefined\" && typeof(f) === \"number\" && f === a + b  && editor.getValue().match(/return/gi).length >= 1 && editor.getValue().match(/a/gi).length >= 1 && editor.getValue().match(/b/gi).length >= 1 && editor.getValue().match(/\\+/gi).length >= 1){return(true);}else{return(false);}})(), 'Your function should return the value of a + b');"
@@ -684,9 +684,9 @@
         "  return a - b;",
         "};",
         "",
-        "//Don't modify above this line",
-        "//Create a function called myFunction that returns the value of a plus b.",
-        "  // Only change code below this line.",
+        "// Don't modify above this line",
+        "// Create a function called myFunction that returns the value of a plus b.",
+        "// Only change code below this line.",
         "",
         "",
         "",
@@ -759,7 +759,7 @@
         "For example, we can add properties to objects like this:",
         "<code>myObject.myProperty = \"myValue\";</code>",
         "We can also delete them like this:",
-        "<code>delete(myObject.myProperty);</code>",
+        "<code>delete myObject.myProperty;</code>",
         "Let's add the property \"bark\", and delete the property \"tails\"."
       ],
       "tests":[
@@ -774,8 +774,8 @@
         "//   \"friends\": [\"everything!\"]",
         "// };",
         "",
-        "// ourDog.bark(\"arf!\");",
-        "// delete(ourDog.tails);",
+        "// ourDog.bark = \"arf!\";",
+        "// delete ourDog.tails;",
         "",
         "var myDog = {",
         "   \"name\": \"Camper\",",
@@ -818,6 +818,10 @@
         "assert.deepEqual(myArray, [0,1,2,3,4], 'myArray should equal [0,1,2,3,4]');"
       ],
       "challengeSeed":[
+        "ourArray = [];",
+        "for(var i = 0; i < 5; i++){",
+        "  ourArray.push(i);",
+        "}",
         "var myArray = [];",
         "//Push the numbers zero through four to myArray using a \"for loop\" like above.",
         "",
@@ -839,7 +843,7 @@
         "<code>&thinsp;&thinsp;ourArray.push(i);</code>",
         "<code>&thinsp;&thinsp;i++;</code>",
         "<code>}</code>",
-        "Let's try getting a for loop to work by pushing values to an array."
+        "Let's try getting a while loop to work by pushing values to an array."
       ],
       "tests":[
         "assert(editor.getValue().match(/while/g), 'You should be using a while loop for this.');",
@@ -890,16 +894,16 @@
       "difficulty":"9.9828",
       "description":[
         "It's great that we can create random decimal numbers, but it's even more useful if we use it to generate a random whole number.",
-        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number",
-        "This technique gives us a whole number between zero and nine",
+        "To achieve this we can multiply the random number by ten and use the <code>Math.floor()</code> to convert the decimal number to a whole number.",
+        "This technique gives us a whole number between zero and nine.",
         "Example:",
         "<code>Math.floor(Math.random()*10);</code>",
-        "Let's give this technique a go now"
+        "Let's give this technique a go now."
       ],
       "tests":[
         "assert(typeof(myFunction()) === \"number\", 'The result of myFunction should be a number');",
         "assert(editor.getValue().match(/Math.random/g), 'You should be using Math.random to create a random number');",
-        "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random but 10 to make it a number that\\'s greater then zero');",
+        "assert(!(''+myFunction()).match(/\\./g), 'You should have multiplied the result of Math.random by 10 to make it a number that\\'s greater than zero');",
         "assert(editor.getValue().match(/Math.floor/g), 'You should use Math.floor to remove the decimal part of the number');"
       ],
       "challengeSeed":[
@@ -1272,8 +1276,8 @@
       "description":[
         "Now that our slots will each generate random numbers, we need to check whether they've all returned the same number.",
         "If they have, we should notify our user that they've won.",
-        "Otherwise, we should return <code>null</code>, which is a JavaScript data structure that means nothing.",
-        "If all three numbers match, we should change the value of win to the number that we have three of or leave it as null.",
+        "Otherwise, we should return <code>null</code>, which is a JavaScript literal representing null or an \"empty\" value, i.e. no object value is present.",
+        "If all three numbers match, we should return the number that we have in three of slots or leave it as null.",
         "Let's create an <code>if statement</code> with multiple conditions in order to check whether all numbers are equal.",
         "<code>if(slotOne !== slotTwo || slotTwo !== slotThree){</code>",
         "<code>&thinsp;&thinsp;return(null);</code>",

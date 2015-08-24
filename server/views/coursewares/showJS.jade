@@ -16,56 +16,56 @@ block content
     script(type='text/javascript', src='/js/lib/coursewares/sandbox.js')
     .row(ng-controller="pairedWithController")
         .col-xs-12.col-sm-12.col-md-4.col-lg-3
-            .scroll-locker(id = "scroll-locker")
-                .innerMarginFix(style = "width: 99%;")
-                    #testCreatePanel.well
-                        h3.text-center.negative-10= name
-                        .row
+            //.scroll-locker(id = "scroll-locker")
+            .innerMarginFix(style = "width: 99%;")
+                #testCreatePanel.well
+                    h3.text-center.negative-10= name
+                    .row
+                        .col-xs-12
+                            .bonfire-instructions
+                                for sentence in details
+                                    p.wrappable.negative-10!= sentence
+                                .negative-bottom-margin-30
+                                    #MDN-links
+                                        p.negative-10 Here are some helpful links:
+                                        for link, index in MDNlinks
+                                            .negative-10
+                                                ul: li: a(href="" + link, target="_blank") !{MDNkeys[index]}
+                if (user)
+                    form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                        .form-group.text-center.negative-10
                             .col-xs-12
-                                .bonfire-instructions
-                                    for sentence in details
-                                        p.wrappable.negative-10!= sentence
-                                    .negative-bottom-margin-30
-                                        #MDN-links
-                                            p.negative-10 Here are some helpful links:
-                                            for link, index in MDNlinks
-                                                .negative-10
-                                                    ul: li: a(href="" + link, target="_blank") !{MDNkeys[index]}
-                    if (user)
-                        form.form-horizontal(novalidate='novalidate', name='completedWithForm')
-                            .form-group.text-center.negative-10
-                                .col-xs-12
-                                    // extra field to distract password tools like lastpass from injecting css into our username field
-                    label.negative-10.btn.btn-primary.btn-block#submitButton
-                        i.fa.fa-play
-                            | &nbsp; Run code (ctrl + enter)
-                    .button-spacer
-                    .btn-group.input-group.btn-group-justified
-                        label.btn.btn-success#trigger-reset-modal
-                            i.fa.fa-refresh
-                                | &nbsp; Reset
-                        label.btn.btn-success#trigger-help-modal
-                            i.fa.fa-medkit
-                                | &nbsp; Help
-                        label.btn.btn-success#trigger-issue-modal
-                            i.fa.fa-bug
-                                | &nbsp; Bug
-                    .button-spacer
-                    form.code
-                        .form-group.codeMirrorView
-                            textarea#codeOutput(style='display: none;')
-                    br
-                    #testSuite.negative-10
-                    br
-                    script(type="text/javascript").
-                        var tests = !{JSON.stringify(tests)};
-                        var challengeSeed = !{JSON.stringify(challengeSeed)};
-                        var challenge_Id = !{JSON.stringify(challengeId)};
-                        var challenge_Name = !{JSON.stringify(name)};
-                        var started = Math.floor(Date.now());
-                        var challengeType = !{JSON.stringify(challengeType)};
-                        var _ = R;
-                        var dashed = !{JSON.stringify(dashedName)};
+                                // extra field to distract password tools like lastpass from injecting css into our username field
+                label.negative-10.btn.btn-primary.btn-block#submitButton
+                    i.fa.fa-play
+                        | &nbsp; Run code (ctrl + enter)
+                .button-spacer
+                .btn-group.input-group.btn-group-justified
+                    label.btn.btn-success#trigger-reset-modal
+                        i.fa.fa-refresh
+                            | &nbsp; Reset
+                    label.btn.btn-success#trigger-help-modal
+                        i.fa.fa-medkit
+                            | &nbsp; Help
+                    label.btn.btn-success#trigger-issue-modal
+                        i.fa.fa-bug
+                            | &nbsp; Bug
+                .button-spacer
+                form.code
+                    .form-group.codeMirrorView
+                        textarea#codeOutput(style='display: none;')
+                br
+                #testSuite.negative-10
+                br
+                script(type="text/javascript").
+                    var tests = !{JSON.stringify(tests)};
+                    var challengeSeed = !{JSON.stringify(challengeSeed)};
+                    var challenge_Id = !{JSON.stringify(challengeId)};
+                    var challenge_Name = !{JSON.stringify(name)};
+                    var started = Math.floor(Date.now());
+                    var challengeType = !{JSON.stringify(challengeType)};
+                    var _ = R;
+                    var dashed = !{JSON.stringify(dashedName)};
         .col-xs-12.col-sm-12.col-md-8
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
                 #mainEditorPanel

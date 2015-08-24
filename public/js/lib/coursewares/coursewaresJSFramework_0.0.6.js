@@ -330,7 +330,6 @@ codeStorage.isAlive = function() {
     (val && val.length > 0);
 }
 codeStorage.updateStorage = function(){
-  document.getElementById('scroll-locker').dispatchEvent(new CustomEvent('previewUpdateSpy', {'detail': $('.scroll-locker').scrollTop()}));
   if(typeof(Storage) !== undefined) {
     var value = editor.getValue();
     localStorage.setItem(codeStorage.keyValue, value);

@@ -18,104 +18,104 @@ block content
 
     .row(ng-controller="pairedWithController")
         .col-xs-12.col-sm-12.col-md-4.col-lg-3
-            .scroll-locker(id = "scroll-locker")
-                #testCreatePanel.well
-                    h3.text-center.negative-10= name
-                    .positive-15.positive-15-bottom
-                        h4.text-center.bonfire-flames Difficulty:&thinsp;
-                            if (difficulty == "0")
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                            if (difficulty == "1")
-                                i.ion-ios-flame
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                            if (difficulty == "2")
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                            if (difficulty == "3")
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame-outline
-                                i.ion-ios-flame-outline
-                            if (difficulty == "4")
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame-outline
-                            if (difficulty == "5")
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                                i.ion-ios-flame
-                    .row
+            //.scroll-locker(id = "scroll-locker")
+            #testCreatePanel.well
+                h3.text-center.negative-10= name
+                .positive-15.positive-15-bottom
+                    h4.text-center.bonfire-flames Difficulty:&thinsp;
+                        if (difficulty == "0")
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                        if (difficulty == "1")
+                            i.ion-ios-flame
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                        if (difficulty == "2")
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                        if (difficulty == "3")
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                            i.ion-ios-flame-outline
+                            i.ion-ios-flame-outline
+                        if (difficulty == "4")
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                            i.ion-ios-flame-outline
+                        if (difficulty == "5")
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                            i.ion-ios-flame
+                .row
+                    .col-xs-12
+                        .bonfire-instructions
+                            for sentence in details
+                                p.wrappable.negative-10!= sentence
+                            .negative-bottom-margin-30
+                                #MDN-links
+                                    p.negative-10 Here are some helpful links:
+                                    for link, index in MDNlinks
+                                        .negative-10
+                                            ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
+
+            if (user)
+                form.form-horizontal(novalidate='novalidate', name='completedWithForm')
+                    .form-group.text-center.negative-10
                         .col-xs-12
-                            .bonfire-instructions
-                                for sentence in details
-                                    p.wrappable.negative-10!= sentence
-                                .negative-bottom-margin-30
-                                    #MDN-links
-                                        p.negative-10 Here are some helpful links:
-                                        for link, index in MDNlinks
-                                            .negative-10
-                                                ul: li: a(href=""+link, target="_blank") !{MDNkeys[index]}
+                            // extra field to distract password tools like lastpass from injecting css into our username field
+                            input.form-control(ng-show="false")
+                            input.form-control#completed-with(name="existingUser", placeholder="Your pair's username if pairing", existing-username='', ng-model="existingUser")
+                        .col-xs-12(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
+                            alert(type='danger')
+                                span.ion-close-circled
+                                | Username not found
+            label.negative-10.btn.btn-primary.btn-block#submitButton
+                i.fa.fa-play
+                    | &nbsp; Run code (ctrl + enter)
+            .button-spacer
+            .btn-group.input-group.btn-group-justified
+                label.btn.btn-success#trigger-reset-modal
+                    i.fa.fa-refresh
+                        | &nbsp; Reset
+                label.btn.btn-success#trigger-help-modal
+                    i.fa.fa-medkit
+                        | &nbsp; Help
+                label.btn.btn-success#trigger-pair-modal
+                    i.fa.fa-user-plus
+                        | &nbsp; Pair
+                label.btn.btn-success#trigger-issue-modal
+                    i.fa.fa-bug
+                        | &nbsp; Bug
+            .button-spacer
 
-                if (user)
-                    form.form-horizontal(novalidate='novalidate', name='completedWithForm')
-                        .form-group.text-center.negative-10
-                            .col-xs-12
-                                // extra field to distract password tools like lastpass from injecting css into our username field
-                                input.form-control(ng-show="false")
-                                input.form-control#completed-with(name="existingUser", placeholder="Your pair's username if pairing", existing-username='', ng-model="existingUser")
-                            .col-xs-12(ng-cloak, ng-show="completedWithForm.$error.exists && !completedWithForm.existingUser.$pristine && existingUser.length > 0")
-                                alert(type='danger')
-                                    span.ion-close-circled
-                                    | Username not found
-                label.negative-10.btn.btn-primary.btn-block#submitButton
-                    i.fa.fa-play
-                        | &nbsp; Run code (ctrl + enter)
-                .button-spacer
-                .btn-group.input-group.btn-group-justified
-                    label.btn.btn-success#trigger-reset-modal
-                        i.fa.fa-refresh
-                            | &nbsp; Reset
-                    label.btn.btn-success#trigger-help-modal
-                        i.fa.fa-medkit
-                            | &nbsp; Help
-                    label.btn.btn-success#trigger-pair-modal
-                        i.fa.fa-user-plus
-                            | &nbsp; Pair
-                    label.btn.btn-success#trigger-issue-modal
-                        i.fa.fa-bug
-                            | &nbsp; Bug
-                .button-spacer
-
-                form.code
-                    .form-group.codeMirrorView
-                        textarea#codeOutput(style='display: none;')
-                br
-                #testSuite.negative-10
-                br
-                script(type="text/javascript").
-                    var tests = !{JSON.stringify(tests)};
-                    var challengeSeed = !{JSON.stringify(challengeSeed)};
-                    var challenge_Id = !{JSON.stringify(challengeId)};
-                    var challenge_Name = !{JSON.stringify(name)};
-                    var started = Math.floor(Date.now());
-                    var challengeType = !{JSON.stringify(challengeType)};
-                    var _ = R;
-                    var dashed = !{JSON.stringify(dashedName)};
+            form.code
+                .form-group.codeMirrorView
+                    textarea#codeOutput(style='display: none;')
+            br
+            #testSuite.negative-10
+            br
+            script(type="text/javascript").
+                var tests = !{JSON.stringify(tests)};
+                var challengeSeed = !{JSON.stringify(challengeSeed)};
+                var challenge_Id = !{JSON.stringify(challengeId)};
+                var challenge_Name = !{JSON.stringify(name)};
+                var started = Math.floor(Date.now());
+                var challengeType = !{JSON.stringify(challengeType)};
+                var _ = R;
+                var dashed = !{JSON.stringify(dashedName)};
 
         .col-xs-12.col-sm-12.col-md-8
             .editorScrollDiv(style = "overflow-y: auto; overflow-x: hidden;")
