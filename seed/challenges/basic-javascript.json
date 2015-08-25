@@ -1041,7 +1041,7 @@
       ],
       "tests":[
         "assert(test === 2, 'Your RegEx should have found two numbers in the testString');",
-        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\d+/gi to find the numbers in the testString');"
+        "assert(editor.getValue().match(/\\/\\\\d\\+\\//gi), 'You should be using the following expression /\\\\d+/gi to find the numbers in the testString');"
       ],
       "challengeSeed":[
         "var test = (function() {",
@@ -1071,7 +1071,7 @@
       ],
       "tests":[
         "assert(test === 7, 'Your RegEx should have found seven spaces in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\s+/gi to find the spaces in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\s\\+\\//gi), 'You should be using the following expression /\\\\s+/gi to find the spaces in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
@@ -1099,7 +1099,7 @@
       ],
       "tests":[
         "assert(test === 49, 'Your RegEx should have found forty nine non-space characters in the <code>testString</code>.');",
-        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\S/gi</code> to find non-space characters in the <code>testString</code>.');"
+        "assert(editor.getValue().match(/\\/\\\\S\\/gi/gi), 'You should be using the following expression <code>/\\\\S/gi</code> to find non-space characters in the <code>testString</code>.');"
       ],
       "challengeSeed":[
         "var test = (function(){",
