@@ -7,7 +7,7 @@ export default contain(
   {
   },
   React.createClass({
-    displayName: 'ShowJobs',
+    displayName: 'ListJobs',
 
     propTypes: {
       jobs: PropTypes.array
