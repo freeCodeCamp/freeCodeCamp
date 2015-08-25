@@ -493,7 +493,7 @@ function bonfireExecute() {
         // simple fix in case the user forgets to invoke their function
 
         if(userJavaScript.match(/function/gi)){
-            if(userJavaScript.match(/function\s+?\(|function\s+\w+\s*?\(/gi)){
+            if(userJavaScript.match(/function\s*?\(|function\s+\w+\s*?\(/gi)){
                 submit(userJavaScript, function (cls, message) {
                     if (failedCommentTest) {
                         myCodeMirror.setValue(myCodeMirror.getValue() + "*/");
