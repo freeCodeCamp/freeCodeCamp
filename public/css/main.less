@@ -73,6 +73,14 @@ h1, h2, h3, h4, h5, h6, p, li {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+ol {
+  counter-reset: section;
+  list-style-type: none;
+}
+ol li:before {
+  counter-increment: section;
+  content: counter(section) ". ";
+}
 
 // Alerts
 // -------------------------
