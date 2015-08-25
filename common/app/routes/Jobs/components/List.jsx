@@ -16,8 +16,8 @@ export default contain(
     renderJobs(jobs =[]) {
       const thumbnailStyle = {
         backgroundColor: 'white',
-        maxHeight: '200px',
-        maxWidth: '200px'
+        maxHeight: '100px',
+        maxWidth: '100px'
       };
       return jobs.map((
         {
