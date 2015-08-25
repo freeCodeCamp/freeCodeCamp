@@ -243,7 +243,7 @@ if(typeof prodOrDev !== 'undefined') {
                 editor.setValue(editor.getValue() + "-->");
                 editorValueForIFrame = editorValueForIFrame + "-->";
             }
-            if(!editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi) ) {
+            if(!editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi)){
                 safeHTMLRun(false);
             }
         }
@@ -476,7 +476,7 @@ function bonfireExecute() {
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
     userTests = null;
     $('#testSuite').empty();
-    if(challengeType !== "0"){
+    if(challengeType !== "0" && !editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi)){
         var userJavaScript = myCodeMirror.getValue();
         var failedCommentTest = false;
         if (userJavaScript.match(/\/\*/gi) && userJavaScript.match(/\*\//gi) == null) {
@@ -520,7 +520,7 @@ function bonfireExecute() {
             editor.setValue(editor.getValue() + "-->");
             editorValueForIFrame = editorValueForIFrame + "-->";
         }
-        if(!editor.getValue().match(/\$\(\$\)/gi) && challengeType === "0") {
+        if(!editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi) && challengeType === "0") {
             safeHTMLRun(true);
         }
     }
