@@ -243,7 +243,7 @@ if(typeof prodOrDev !== 'undefined') {
                 editor.setValue(editor.getValue() + "-->");
                 editorValueForIFrame = editorValueForIFrame + "-->";
             }
-            if(!editor.getValue().match(/\$\(\$\)/gi) ) {
+            if(!editor.getValue().match(/\$\s*?\(\s*?\$\s*?\)/gi) ) {
                 safeHTMLRun(false);
             }
         }
