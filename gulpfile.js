@@ -19,10 +19,12 @@ var Rx = require('rx'),
   sync = require('browser-sync'),
 
   inject = require('gulp-inject'),
+
   // css
   less = require('gulp-less'),
 
   // lint
+  jsonlint = require('gulp-jsonlint'),
   eslint = require('gulp-eslint');
 
 
@@ -60,6 +62,11 @@ var paths = {
 
   syncWatch: [
     'public/**/*.*'
+  ],
+
+  challenges: [
+    'seed/challenges/*.json',
+    'seed/under-construction/*.json'
   ]
 };
 
@@ -163,11 +170,19 @@ gulp.task('sync', ['serve'], function() {
   });
 });
 
-gulp.task('lint', function() {
+gulp.task('lint-js', function() {
   return gulp.src(['public/js/lib/**/*'])
     .pipe(eslint())
     .pipe(eslint.format());
 });
+
+gulp.task('lint-json', function() {
+  return gulp.src(paths.challenges)
+    .pipe(jsonlint())
+    .pipe(jsonlint.reporter());
+});
+
+gulp.task('test-challenges', ['lint-json']);
 
 gulp.task('less', function() {
   return gulp.src('./public/css/*.less')
@@ -182,6 +197,7 @@ gulp.task('build', ['less']);
 
 gulp.task('watch', ['less', 'serve', 'sync'], function() {
   gulp.watch('./public/css/*.less', ['less']);
+  gulp.watch(paths.challenges, ['test-challenges']);
 });
 
 gulp.task('default', ['less', 'serve', 'sync', 'watch', 'pack-watch']);
