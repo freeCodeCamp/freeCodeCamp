@@ -45,6 +45,7 @@
         "<span class='text-info'>Rule #1:</span> Don't look at the example project's code on CodePen. Figure it out for yourself.",
         "<span class='text-info'>Rule #2:</span> You may use whichever libraries or APIs you need.",
         "<span class='text-info'>Rule #3:</span> Reverse engineer the example project's functionality, and also feel free to personalize it.",
+        "<span class='text-info'>Hint:</span> If you don't want to start from scratch, you can fork this simple Bootstrap portfolio template on CodePen: <a href='http://codepen.io/FreeCodeCamp/pen/mJNqQj/' target='_blank'>http://codepen.io/FreeCodeCamp/pen/mJNqQj</a>.",
         "Here are the <a href='http://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> you must enable, and optional bonus user stories:",
         "<span class='text-info'>User Story:</span> As a user, I can access all of the portfolio webpage's content just by scrolling.",
         "<span class='text-info'>User Story:</span> As a user, I can click different buttons that will take me to the portfolio creator's different social media pages.",
