@@ -462,21 +462,6 @@ var runTests = function(err, data) {
             allTestsPassed = false;
             showCompletion();
         }
-        else{
-            if(challengeType === "0"){
-                $('#testSuite').empty();
-
-                editorValueForIFrame = editor.getValue();
-                goodTests = 0;
-                var previewFrame = document.getElementById('preview');
-                var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
-                preview.open();
-                preview.write(libraryIncludes + editor.getValue() + "<script src = \"/js/lib/coursewares/iFrameScripts_0.0.4.js\"></script>");
-                codeStorage.updateStorage();
-                preview.close();
-            }
-        }
-
     }
 };
 
@@ -484,6 +469,7 @@ function bonfireExecute() {
     attempts++;
     ga('send', 'event', 'Challenge', 'ran-code', challenge_Name);
     userTests = null;
+    $('#testSuite').empty();
     if(challengeType !== "0"){
         var userJavaScript = myCodeMirror.getValue();
         var failedCommentTest = false;
